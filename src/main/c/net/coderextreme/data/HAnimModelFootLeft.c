@@ -131,17 +131,23 @@ MetadataSet25.value = new MFNode();
 
 MetadataSet25.value[0] = MetadataString26;
 
-HAnimHumanoid24.metadata = MetadataSet25;
+HAnimHumanoid24.metadata = new SFNode();
+
+HAnimHumanoid24.metadata[0] = MetadataSet25;
 
 HAnimJoint HAnimJoint27 = createNode("HAnimJoint");
 HAnimJoint27.name = "humanoid_root";
 HAnimJoint27.DEF = "hanim_humanoid_root";
+HAnimJoint27.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint27.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint27.stiffness = new SFVec3f(new float[0,0,0]);
 //Might consider putting a HAnimSegment here, but that doesn't help with re-use of this foot model
 HAnimJoint HAnimJoint28 = createNode("HAnimJoint");
 HAnimJoint28.name = "l_talocrural";
 HAnimJoint28.DEF = "hanim_l_talocrural";
 HAnimJoint28.description = "connection joint of foot to leg above";
+HAnimJoint28.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint28.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint28.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment29 = createNode("HAnimSegment");
 HAnimSegment29.name = "l_talus";
@@ -216,6 +222,8 @@ HAnimJoint HAnimJoint45 = createNode("HAnimJoint");
 HAnimJoint45.name = "l_talocalcaneonavicular";
 HAnimJoint45.DEF = "hanim_l_talocalcaneonavicular";
 HAnimJoint45.center = new SFVec3f(new float[0,-0.3,0]);
+HAnimJoint45.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint45.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint45.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment46 = createNode("HAnimSegment");
 HAnimSegment46.name = "l_navicular";
@@ -298,6 +306,8 @@ HAnimJoint HAnimJoint64 = createNode("HAnimJoint");
 HAnimJoint64.name = "l_cuneonavicular_1";
 HAnimJoint64.DEF = "hanim_l_cuneonavicular_1";
 HAnimJoint64.center = new SFVec3f(new float[-0.1,-0.45,0]);
+HAnimJoint64.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint64.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint64.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment65 = createNode("HAnimSegment");
 HAnimSegment65.name = "l_cuneiform_1";
@@ -341,6 +351,8 @@ HAnimJoint HAnimJoint73 = createNode("HAnimJoint");
 HAnimJoint73.name = "l_tarsometatarsal_1";
 HAnimJoint73.DEF = "hanim_l_tarsometatarsal_1";
 HAnimJoint73.center = new SFVec3f(new float[-0.1,-0.6,0]);
+HAnimJoint73.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint73.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint73.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment74 = createNode("HAnimSegment");
 HAnimSegment74.name = "l_metatarsal_1";
@@ -384,6 +396,8 @@ HAnimJoint HAnimJoint82 = createNode("HAnimJoint");
 HAnimJoint82.name = "l_metatarsophalangeal_1";
 HAnimJoint82.DEF = "hanim_l_metatarsophalangeal_1";
 HAnimJoint82.center = new SFVec3f(new float[-0.1,-0.9,0]);
+HAnimJoint82.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint82.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint82.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment83 = createNode("HAnimSegment");
 HAnimSegment83.name = "l_tarsal_proximal_phalanx_1";
@@ -427,6 +441,8 @@ HAnimJoint HAnimJoint91 = createNode("HAnimJoint");
 HAnimJoint91.name = "l_tarsal_interphalangeal_1";
 HAnimJoint91.DEF = "hanim_l_tarsal_interphalangeal_1";
 HAnimJoint91.center = new SFVec3f(new float[-0.1,-1.05,0]);
+HAnimJoint91.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint91.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint91.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment92 = createNode("HAnimSegment");
 HAnimSegment92.name = "l_tarsal_distal_phalanx_1";
@@ -479,6 +495,8 @@ HAnimJoint HAnimJoint100 = createNode("HAnimJoint");
 HAnimJoint100.name = "l_cuneonavicular_2";
 HAnimJoint100.DEF = "hanim_l_cuneonavicular_2";
 HAnimJoint100.center = new SFVec3f(new float[0,-0.45,0]);
+HAnimJoint100.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint100.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint100.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment101 = createNode("HAnimSegment");
 HAnimSegment101.name = "l_cuneiform_2";
@@ -522,6 +540,8 @@ HAnimJoint HAnimJoint109 = createNode("HAnimJoint");
 HAnimJoint109.name = "l_tarsometatarsal_2";
 HAnimJoint109.DEF = "hanim_l_tarsometatarsal_2";
 HAnimJoint109.center = new SFVec3f(new float[0.05,-0.6,0]);
+HAnimJoint109.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint109.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint109.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment110 = createNode("HAnimSegment");
 HAnimSegment110.name = "l_metatarsal_2";
@@ -565,6 +585,8 @@ HAnimJoint HAnimJoint118 = createNode("HAnimJoint");
 HAnimJoint118.name = "l_metatarsophalangeal_2";
 HAnimJoint118.DEF = "hanim_l_metatarsophalangeal_2";
 HAnimJoint118.center = new SFVec3f(new float[0.05,-0.9,0]);
+HAnimJoint118.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint118.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint118.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment119 = createNode("HAnimSegment");
 HAnimSegment119.name = "l_tarsal_proximal_phalanx_2";
@@ -608,6 +630,8 @@ HAnimJoint HAnimJoint127 = createNode("HAnimJoint");
 HAnimJoint127.name = "l_tarsal_proximal_interphalangeal_2";
 HAnimJoint127.DEF = "hanim_l_tarsal_proximal_interphalangeal_2";
 HAnimJoint127.center = new SFVec3f(new float[0.05,-1.05,0]);
+HAnimJoint127.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint127.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint127.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment128 = createNode("HAnimSegment");
 HAnimSegment128.name = "l_tarsal_middle_phalanx_2";
@@ -651,6 +675,8 @@ HAnimJoint HAnimJoint136 = createNode("HAnimJoint");
 HAnimJoint136.name = "l_tarsal_distal_interphalangeal_2";
 HAnimJoint136.DEF = "hanim_l_tarsal_distal_interphalangeal_2";
 HAnimJoint136.center = new SFVec3f(new float[0.05,-1.12,0]);
+HAnimJoint136.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint136.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint136.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment137 = createNode("HAnimSegment");
 HAnimSegment137.name = "l_tarsal_distal_phalanx_2";
@@ -705,6 +731,8 @@ HAnimJoint HAnimJoint145 = createNode("HAnimJoint");
 HAnimJoint145.name = "l_cuneonavicular_3";
 HAnimJoint145.DEF = "hanim_l_cuneonavicular_3";
 HAnimJoint145.center = new SFVec3f(new float[0.1,-0.4,0]);
+HAnimJoint145.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint145.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint145.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment146 = createNode("HAnimSegment");
 HAnimSegment146.name = "l_cuneiform_3";
@@ -748,6 +776,8 @@ HAnimJoint HAnimJoint154 = createNode("HAnimJoint");
 HAnimJoint154.name = "l_tarsometatarsal_3";
 HAnimJoint154.DEF = "hanim_l_tarsometatarsal_3";
 HAnimJoint154.center = new SFVec3f(new float[0.15,-0.6,0]);
+HAnimJoint154.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint154.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint154.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment155 = createNode("HAnimSegment");
 HAnimSegment155.name = "l_metatarsal_3";
@@ -791,6 +821,8 @@ HAnimJoint HAnimJoint163 = createNode("HAnimJoint");
 HAnimJoint163.name = "l_metatarsophalangeal_3";
 HAnimJoint163.DEF = "hanim_l_metatarsophalangeal_3";
 HAnimJoint163.center = new SFVec3f(new float[0.15,-0.9,0]);
+HAnimJoint163.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint163.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint163.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment164 = createNode("HAnimSegment");
 HAnimSegment164.name = "l_tarsal_proximal_phalanx_3";
@@ -834,6 +866,8 @@ HAnimJoint HAnimJoint172 = createNode("HAnimJoint");
 HAnimJoint172.name = "l_tarsal_proximal_interphalangeal_3";
 HAnimJoint172.DEF = "hanim_l_tarsal_proximal_interphalangeal_3";
 HAnimJoint172.center = new SFVec3f(new float[0.15,-1.05,0]);
+HAnimJoint172.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint172.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint172.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment173 = createNode("HAnimSegment");
 HAnimSegment173.name = "l_tarsal_middle_phalanx_3";
@@ -877,6 +911,8 @@ HAnimJoint HAnimJoint181 = createNode("HAnimJoint");
 HAnimJoint181.name = "l_tarsal_distal_interphalangeal_3";
 HAnimJoint181.DEF = "hanim_l_tarsal_distal_interphalangeal_3";
 HAnimJoint181.center = new SFVec3f(new float[0.15,-1.13,0]);
+HAnimJoint181.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint181.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint181.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment182 = createNode("HAnimSegment");
 HAnimSegment182.name = "l_tarsal_distal_phalanx_3";
@@ -933,6 +969,8 @@ HAnimJoint HAnimJoint190 = createNode("HAnimJoint");
 HAnimJoint190.name = "l_calcaneocuboid";
 HAnimJoint190.DEF = "hanim_l_calcaneocuboid";
 HAnimJoint190.center = new SFVec3f(new float[0.2,0.3,0]);
+HAnimJoint190.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint190.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint190.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment191 = createNode("HAnimSegment");
 HAnimSegment191.name = "l_calcaneus";
@@ -977,6 +1015,8 @@ HAnimJoint HAnimJoint199 = createNode("HAnimJoint");
 HAnimJoint199.name = "l_transversetarsal";
 HAnimJoint199.DEF = "hanim_l_transversetarsal";
 HAnimJoint199.center = new SFVec3f(new float[0.21,-0.3,0]);
+HAnimJoint199.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint199.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint199.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment200 = createNode("HAnimSegment");
 HAnimSegment200.name = "l_cuboid";
@@ -1040,6 +1080,8 @@ HAnimJoint HAnimJoint213 = createNode("HAnimJoint");
 HAnimJoint213.name = "l_tarsometatarsal_4";
 HAnimJoint213.DEF = "hanim_l_tarsometatarsal_4";
 HAnimJoint213.center = new SFVec3f(new float[0.25,-0.58,0]);
+HAnimJoint213.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint213.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint213.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment214 = createNode("HAnimSegment");
 HAnimSegment214.name = "l_metatarsal_4";
@@ -1083,6 +1125,8 @@ HAnimJoint HAnimJoint222 = createNode("HAnimJoint");
 HAnimJoint222.name = "l_metatarsophalangeal_4";
 HAnimJoint222.DEF = "hanim_l_metatarsophalangeal_4";
 HAnimJoint222.center = new SFVec3f(new float[0.25,-0.87,0]);
+HAnimJoint222.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint222.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint222.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment223 = createNode("HAnimSegment");
 HAnimSegment223.name = "l_tarsal_proximal_phalanx_4";
@@ -1126,6 +1170,8 @@ HAnimJoint HAnimJoint231 = createNode("HAnimJoint");
 HAnimJoint231.name = "l_tarsal_proximal_interphalangeal_4";
 HAnimJoint231.DEF = "hanim_l_tarsal_proximal_interphalangeal_4";
 HAnimJoint231.center = new SFVec3f(new float[0.25,-1,0]);
+HAnimJoint231.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint231.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint231.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment232 = createNode("HAnimSegment");
 HAnimSegment232.name = "l_tarsal_middle_phalanx_4";
@@ -1169,6 +1215,8 @@ HAnimJoint HAnimJoint240 = createNode("HAnimJoint");
 HAnimJoint240.name = "l_tarsal_distal_interphalangeal_4";
 HAnimJoint240.DEF = "hanim_l_tarsal_distal_interphalangeal_4";
 HAnimJoint240.center = new SFVec3f(new float[0.25,-1.1,0]);
+HAnimJoint240.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint240.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint240.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment241 = createNode("HAnimSegment");
 HAnimSegment241.name = "l_tarsal_distal_phalanx_4";
@@ -1221,6 +1269,8 @@ HAnimJoint HAnimJoint249 = createNode("HAnimJoint");
 HAnimJoint249.name = "l_tarsometatarsal_5";
 HAnimJoint249.DEF = "hanim_l_tarsometatarsal_5";
 HAnimJoint249.center = new SFVec3f(new float[0.33,-0.52,0]);
+HAnimJoint249.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint249.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint249.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment250 = createNode("HAnimSegment");
 HAnimSegment250.name = "l_metatarsal_5";
@@ -1264,6 +1314,8 @@ HAnimJoint HAnimJoint258 = createNode("HAnimJoint");
 HAnimJoint258.name = "l_metatarsophalangeal_5";
 HAnimJoint258.DEF = "hanim_l_metatarsophalangeal_5";
 HAnimJoint258.center = new SFVec3f(new float[0.34,-0.8,0]);
+HAnimJoint258.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint258.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint258.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment259 = createNode("HAnimSegment");
 HAnimSegment259.name = "l_tarsal_proximal_phalanx_5";
@@ -1307,6 +1359,8 @@ HAnimJoint HAnimJoint267 = createNode("HAnimJoint");
 HAnimJoint267.name = "l_tarsal_proximal_interphalangeal_5";
 HAnimJoint267.DEF = "hanim_l_tarsal_proximal_interphalangeal_5";
 HAnimJoint267.center = new SFVec3f(new float[0.34,-0.95,0]);
+HAnimJoint267.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint267.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint267.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment268 = createNode("HAnimSegment");
 HAnimSegment268.name = "l_tarsal_middle_phalanx_5";
@@ -1350,6 +1404,8 @@ HAnimJoint HAnimJoint276 = createNode("HAnimJoint");
 HAnimJoint276.name = "l_tarsal_distal_interphalangeal_5";
 HAnimJoint276.DEF = "hanim_l_tarsal_distal_interphalangeal_5";
 HAnimJoint276.center = new SFVec3f(new float[0.34,-1.05,0]);
+HAnimJoint276.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint276.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint276.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment277 = createNode("HAnimSegment");
 HAnimSegment277.name = "l_tarsal_distal_phalanx_5";
@@ -1405,221 +1461,219 @@ HAnimJoint27.children = new MFNode();
 
 HAnimJoint27.children[0] = HAnimJoint28;
 
-HAnimHumanoid24.joints = new MFNode();
-
-HAnimHumanoid24.joints[0] = HAnimJoint27;
+HAnimHumanoid24.joints[1] = HAnimJoint27;
 
 HAnimJoint HAnimJoint285 = createNode("HAnimJoint");
 HAnimJoint285.USE = "hanim_humanoid_root";
-HAnimHumanoid24.joints[1] = HAnimJoint285;
+HAnimHumanoid24.joints[2] = HAnimJoint285;
 
 HAnimJoint HAnimJoint286 = createNode("HAnimJoint");
 HAnimJoint286.USE = "hanim_l_calcaneocuboid";
-HAnimHumanoid24.joints[2] = HAnimJoint286;
+HAnimHumanoid24.joints[3] = HAnimJoint286;
 
 HAnimJoint HAnimJoint287 = createNode("HAnimJoint");
 HAnimJoint287.USE = "hanim_l_cuneonavicular_1";
-HAnimHumanoid24.joints[3] = HAnimJoint287;
+HAnimHumanoid24.joints[4] = HAnimJoint287;
 
 HAnimJoint HAnimJoint288 = createNode("HAnimJoint");
 HAnimJoint288.USE = "hanim_l_cuneonavicular_2";
-HAnimHumanoid24.joints[4] = HAnimJoint288;
+HAnimHumanoid24.joints[5] = HAnimJoint288;
 
 HAnimJoint HAnimJoint289 = createNode("HAnimJoint");
 HAnimJoint289.USE = "hanim_l_cuneonavicular_3";
-HAnimHumanoid24.joints[5] = HAnimJoint289;
+HAnimHumanoid24.joints[6] = HAnimJoint289;
 
 HAnimJoint HAnimJoint290 = createNode("HAnimJoint");
 HAnimJoint290.USE = "hanim_l_metatarsophalangeal_1";
-HAnimHumanoid24.joints[6] = HAnimJoint290;
+HAnimHumanoid24.joints[7] = HAnimJoint290;
 
 HAnimJoint HAnimJoint291 = createNode("HAnimJoint");
 HAnimJoint291.USE = "hanim_l_metatarsophalangeal_2";
-HAnimHumanoid24.joints[7] = HAnimJoint291;
+HAnimHumanoid24.joints[8] = HAnimJoint291;
 
 HAnimJoint HAnimJoint292 = createNode("HAnimJoint");
 HAnimJoint292.USE = "hanim_l_metatarsophalangeal_3";
-HAnimHumanoid24.joints[8] = HAnimJoint292;
+HAnimHumanoid24.joints[9] = HAnimJoint292;
 
 HAnimJoint HAnimJoint293 = createNode("HAnimJoint");
 HAnimJoint293.USE = "hanim_l_metatarsophalangeal_4";
-HAnimHumanoid24.joints[9] = HAnimJoint293;
+HAnimHumanoid24.joints[10] = HAnimJoint293;
 
 HAnimJoint HAnimJoint294 = createNode("HAnimJoint");
 HAnimJoint294.USE = "hanim_l_metatarsophalangeal_5";
-HAnimHumanoid24.joints[10] = HAnimJoint294;
+HAnimHumanoid24.joints[11] = HAnimJoint294;
 
 HAnimJoint HAnimJoint295 = createNode("HAnimJoint");
 HAnimJoint295.USE = "hanim_l_talocalcaneonavicular";
-HAnimHumanoid24.joints[11] = HAnimJoint295;
+HAnimHumanoid24.joints[12] = HAnimJoint295;
 
 HAnimJoint HAnimJoint296 = createNode("HAnimJoint");
 HAnimJoint296.USE = "hanim_l_talocrural";
-HAnimHumanoid24.joints[12] = HAnimJoint296;
+HAnimHumanoid24.joints[13] = HAnimJoint296;
 
 HAnimJoint HAnimJoint297 = createNode("HAnimJoint");
 HAnimJoint297.USE = "hanim_l_tarsal_distal_interphalangeal_2";
-HAnimHumanoid24.joints[13] = HAnimJoint297;
+HAnimHumanoid24.joints[14] = HAnimJoint297;
 
 HAnimJoint HAnimJoint298 = createNode("HAnimJoint");
 HAnimJoint298.USE = "hanim_l_tarsal_distal_interphalangeal_3";
-HAnimHumanoid24.joints[14] = HAnimJoint298;
+HAnimHumanoid24.joints[15] = HAnimJoint298;
 
 HAnimJoint HAnimJoint299 = createNode("HAnimJoint");
 HAnimJoint299.USE = "hanim_l_tarsal_distal_interphalangeal_4";
-HAnimHumanoid24.joints[15] = HAnimJoint299;
+HAnimHumanoid24.joints[16] = HAnimJoint299;
 
 HAnimJoint HAnimJoint300 = createNode("HAnimJoint");
 HAnimJoint300.USE = "hanim_l_tarsal_distal_interphalangeal_5";
-HAnimHumanoid24.joints[16] = HAnimJoint300;
+HAnimHumanoid24.joints[17] = HAnimJoint300;
 
 HAnimJoint HAnimJoint301 = createNode("HAnimJoint");
 HAnimJoint301.USE = "hanim_l_tarsal_interphalangeal_1";
-HAnimHumanoid24.joints[17] = HAnimJoint301;
+HAnimHumanoid24.joints[18] = HAnimJoint301;
 
 HAnimJoint HAnimJoint302 = createNode("HAnimJoint");
 HAnimJoint302.USE = "hanim_l_tarsal_proximal_interphalangeal_2";
-HAnimHumanoid24.joints[18] = HAnimJoint302;
+HAnimHumanoid24.joints[19] = HAnimJoint302;
 
 HAnimJoint HAnimJoint303 = createNode("HAnimJoint");
 HAnimJoint303.USE = "hanim_l_tarsal_proximal_interphalangeal_3";
-HAnimHumanoid24.joints[19] = HAnimJoint303;
+HAnimHumanoid24.joints[20] = HAnimJoint303;
 
 HAnimJoint HAnimJoint304 = createNode("HAnimJoint");
 HAnimJoint304.USE = "hanim_l_tarsal_proximal_interphalangeal_4";
-HAnimHumanoid24.joints[20] = HAnimJoint304;
+HAnimHumanoid24.joints[21] = HAnimJoint304;
 
 HAnimJoint HAnimJoint305 = createNode("HAnimJoint");
 HAnimJoint305.USE = "hanim_l_tarsal_proximal_interphalangeal_5";
-HAnimHumanoid24.joints[21] = HAnimJoint305;
+HAnimHumanoid24.joints[22] = HAnimJoint305;
 
 HAnimJoint HAnimJoint306 = createNode("HAnimJoint");
 HAnimJoint306.USE = "hanim_l_tarsometatarsal_1";
-HAnimHumanoid24.joints[22] = HAnimJoint306;
+HAnimHumanoid24.joints[23] = HAnimJoint306;
 
 HAnimJoint HAnimJoint307 = createNode("HAnimJoint");
 HAnimJoint307.USE = "hanim_l_tarsometatarsal_2";
-HAnimHumanoid24.joints[23] = HAnimJoint307;
+HAnimHumanoid24.joints[24] = HAnimJoint307;
 
 HAnimJoint HAnimJoint308 = createNode("HAnimJoint");
 HAnimJoint308.USE = "hanim_l_tarsometatarsal_3";
-HAnimHumanoid24.joints[24] = HAnimJoint308;
+HAnimHumanoid24.joints[25] = HAnimJoint308;
 
 HAnimJoint HAnimJoint309 = createNode("HAnimJoint");
 HAnimJoint309.USE = "hanim_l_tarsometatarsal_4";
-HAnimHumanoid24.joints[25] = HAnimJoint309;
+HAnimHumanoid24.joints[26] = HAnimJoint309;
 
 HAnimJoint HAnimJoint310 = createNode("HAnimJoint");
 HAnimJoint310.USE = "hanim_l_tarsometatarsal_5";
-HAnimHumanoid24.joints[26] = HAnimJoint310;
+HAnimHumanoid24.joints[27] = HAnimJoint310;
 
 HAnimJoint HAnimJoint311 = createNode("HAnimJoint");
 HAnimJoint311.USE = "hanim_l_transversetarsal";
-HAnimHumanoid24.joints[27] = HAnimJoint311;
+HAnimHumanoid24.joints[28] = HAnimJoint311;
 
 HAnimSegment HAnimSegment312 = createNode("HAnimSegment");
 HAnimSegment312.USE = "hanim_l_calcaneus";
-HAnimHumanoid24.segments[28] = HAnimSegment312;
+HAnimHumanoid24.segments[29] = HAnimSegment312;
 
 HAnimSegment HAnimSegment313 = createNode("HAnimSegment");
 HAnimSegment313.USE = "hanim_l_cuboid";
-HAnimHumanoid24.segments[29] = HAnimSegment313;
+HAnimHumanoid24.segments[30] = HAnimSegment313;
 
 HAnimSegment HAnimSegment314 = createNode("HAnimSegment");
 HAnimSegment314.USE = "hanim_l_cuneiform_1";
-HAnimHumanoid24.segments[30] = HAnimSegment314;
+HAnimHumanoid24.segments[31] = HAnimSegment314;
 
 HAnimSegment HAnimSegment315 = createNode("HAnimSegment");
 HAnimSegment315.USE = "hanim_l_cuneiform_2";
-HAnimHumanoid24.segments[31] = HAnimSegment315;
+HAnimHumanoid24.segments[32] = HAnimSegment315;
 
 HAnimSegment HAnimSegment316 = createNode("HAnimSegment");
 HAnimSegment316.USE = "hanim_l_cuneiform_3";
-HAnimHumanoid24.segments[32] = HAnimSegment316;
+HAnimHumanoid24.segments[33] = HAnimSegment316;
 
 HAnimSegment HAnimSegment317 = createNode("HAnimSegment");
 HAnimSegment317.USE = "hanim_l_metatarsal_1";
-HAnimHumanoid24.segments[33] = HAnimSegment317;
+HAnimHumanoid24.segments[34] = HAnimSegment317;
 
 HAnimSegment HAnimSegment318 = createNode("HAnimSegment");
 HAnimSegment318.USE = "hanim_l_metatarsal_2";
-HAnimHumanoid24.segments[34] = HAnimSegment318;
+HAnimHumanoid24.segments[35] = HAnimSegment318;
 
 HAnimSegment HAnimSegment319 = createNode("HAnimSegment");
 HAnimSegment319.USE = "hanim_l_metatarsal_3";
-HAnimHumanoid24.segments[35] = HAnimSegment319;
+HAnimHumanoid24.segments[36] = HAnimSegment319;
 
 HAnimSegment HAnimSegment320 = createNode("HAnimSegment");
 HAnimSegment320.USE = "hanim_l_metatarsal_4";
-HAnimHumanoid24.segments[36] = HAnimSegment320;
+HAnimHumanoid24.segments[37] = HAnimSegment320;
 
 HAnimSegment HAnimSegment321 = createNode("HAnimSegment");
 HAnimSegment321.USE = "hanim_l_metatarsal_5";
-HAnimHumanoid24.segments[37] = HAnimSegment321;
+HAnimHumanoid24.segments[38] = HAnimSegment321;
 
 HAnimSegment HAnimSegment322 = createNode("HAnimSegment");
 HAnimSegment322.USE = "hanim_l_navicular";
-HAnimHumanoid24.segments[38] = HAnimSegment322;
+HAnimHumanoid24.segments[39] = HAnimSegment322;
 
 HAnimSegment HAnimSegment323 = createNode("HAnimSegment");
 HAnimSegment323.USE = "hanim_l_talus";
-HAnimHumanoid24.segments[39] = HAnimSegment323;
+HAnimHumanoid24.segments[40] = HAnimSegment323;
 
 HAnimSegment HAnimSegment324 = createNode("HAnimSegment");
 HAnimSegment324.USE = "hanim_l_tarsal_distal_phalanx_1";
-HAnimHumanoid24.segments[40] = HAnimSegment324;
+HAnimHumanoid24.segments[41] = HAnimSegment324;
 
 HAnimSegment HAnimSegment325 = createNode("HAnimSegment");
 HAnimSegment325.USE = "hanim_l_tarsal_distal_phalanx_2";
-HAnimHumanoid24.segments[41] = HAnimSegment325;
+HAnimHumanoid24.segments[42] = HAnimSegment325;
 
 HAnimSegment HAnimSegment326 = createNode("HAnimSegment");
 HAnimSegment326.USE = "hanim_l_tarsal_distal_phalanx_3";
-HAnimHumanoid24.segments[42] = HAnimSegment326;
+HAnimHumanoid24.segments[43] = HAnimSegment326;
 
 HAnimSegment HAnimSegment327 = createNode("HAnimSegment");
 HAnimSegment327.USE = "hanim_l_tarsal_distal_phalanx_4";
-HAnimHumanoid24.segments[43] = HAnimSegment327;
+HAnimHumanoid24.segments[44] = HAnimSegment327;
 
 HAnimSegment HAnimSegment328 = createNode("HAnimSegment");
 HAnimSegment328.USE = "hanim_l_tarsal_distal_phalanx_5";
-HAnimHumanoid24.segments[44] = HAnimSegment328;
+HAnimHumanoid24.segments[45] = HAnimSegment328;
 
 HAnimSegment HAnimSegment329 = createNode("HAnimSegment");
 HAnimSegment329.USE = "hanim_l_tarsal_middle_phalanx_2";
-HAnimHumanoid24.segments[45] = HAnimSegment329;
+HAnimHumanoid24.segments[46] = HAnimSegment329;
 
 HAnimSegment HAnimSegment330 = createNode("HAnimSegment");
 HAnimSegment330.USE = "hanim_l_tarsal_middle_phalanx_3";
-HAnimHumanoid24.segments[46] = HAnimSegment330;
+HAnimHumanoid24.segments[47] = HAnimSegment330;
 
 HAnimSegment HAnimSegment331 = createNode("HAnimSegment");
 HAnimSegment331.USE = "hanim_l_tarsal_middle_phalanx_4";
-HAnimHumanoid24.segments[47] = HAnimSegment331;
+HAnimHumanoid24.segments[48] = HAnimSegment331;
 
 HAnimSegment HAnimSegment332 = createNode("HAnimSegment");
 HAnimSegment332.USE = "hanim_l_tarsal_middle_phalanx_5";
-HAnimHumanoid24.segments[48] = HAnimSegment332;
+HAnimHumanoid24.segments[49] = HAnimSegment332;
 
 HAnimSegment HAnimSegment333 = createNode("HAnimSegment");
 HAnimSegment333.USE = "hanim_l_tarsal_proximal_phalanx_1";
-HAnimHumanoid24.segments[49] = HAnimSegment333;
+HAnimHumanoid24.segments[50] = HAnimSegment333;
 
 HAnimSegment HAnimSegment334 = createNode("HAnimSegment");
 HAnimSegment334.USE = "hanim_l_tarsal_proximal_phalanx_2";
-HAnimHumanoid24.segments[50] = HAnimSegment334;
+HAnimHumanoid24.segments[51] = HAnimSegment334;
 
 HAnimSegment HAnimSegment335 = createNode("HAnimSegment");
 HAnimSegment335.USE = "hanim_l_tarsal_proximal_phalanx_3";
-HAnimHumanoid24.segments[51] = HAnimSegment335;
+HAnimHumanoid24.segments[52] = HAnimSegment335;
 
 HAnimSegment HAnimSegment336 = createNode("HAnimSegment");
 HAnimSegment336.USE = "hanim_l_tarsal_proximal_phalanx_4";
-HAnimHumanoid24.segments[52] = HAnimSegment336;
+HAnimHumanoid24.segments[53] = HAnimSegment336;
 
 HAnimSegment HAnimSegment337 = createNode("HAnimSegment");
 HAnimSegment337.USE = "hanim_l_tarsal_proximal_phalanx_5";
-HAnimHumanoid24.segments[53] = HAnimSegment337;
+HAnimHumanoid24.segments[54] = HAnimSegment337;
 
 children[1] = HAnimHumanoid24;
 

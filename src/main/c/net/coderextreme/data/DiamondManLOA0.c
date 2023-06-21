@@ -187,17 +187,23 @@ MetadataString37.name = "usageRestrictions";
 MetadataString37.value = new MFString(new java.lang.String["PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."]);
 MetadataSet31.value[5] = MetadataString37;
 
-HAnimHumanoid30.metadata = MetadataSet31;
+HAnimHumanoid30.metadata = new SFNode();
+
+HAnimHumanoid30.metadata[0] = MetadataSet31;
 
 HAnimJoint HAnimJoint38 = createNode("HAnimJoint");
 HAnimJoint38.name = "humanoid_root";
 HAnimJoint38.DEF = "hanim_humanoid_root";
 HAnimJoint38.center = new SFVec3f(new float[0,0.824,0.0277]);
+HAnimJoint38.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint38.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint38.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimJoint HAnimJoint39 = createNode("HAnimJoint");
 HAnimJoint39.name = "sacroiliac";
 HAnimJoint39.DEF = "hanim_sacroiliac";
 HAnimJoint39.center = new SFVec3f(new float[0,0.9149,0.0016]);
+HAnimJoint39.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint39.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint39.stiffness = new SFVec3f(new float[0,0,0]);
 HAnimSegment HAnimSegment40 = createNode("HAnimSegment");
 HAnimSegment40.name = "pelvis";
@@ -238,9 +244,7 @@ HAnimJoint38.children = new MFNode();
 
 HAnimJoint38.children[0] = HAnimJoint39;
 
-HAnimHumanoid30.joints = new MFNode();
-
-HAnimHumanoid30.joints[0] = HAnimJoint38;
+HAnimHumanoid30.joints[1] = HAnimJoint38;
 
 HAnimSite HAnimSite47 = createNode("HAnimSite");
 HAnimSite47.name = "site_view";
@@ -274,19 +278,19 @@ Viewpoint51.orientation = new SFRotation(new float[1,0,0,-1.57079]);
 Viewpoint51.position = new SFVec3f(new float[0,3.4495,0]);
 HAnimSite47.children[3] = Viewpoint51;
 
-HAnimHumanoid30.viewpoints[1] = HAnimSite47;
+HAnimHumanoid30.viewpoints[2] = HAnimSite47;
 
 HAnimJoint HAnimJoint52 = createNode("HAnimJoint");
 HAnimJoint52.USE = "hanim_humanoid_root";
-HAnimHumanoid30.joints[2] = HAnimJoint52;
+HAnimHumanoid30.joints[3] = HAnimJoint52;
 
 HAnimJoint HAnimJoint53 = createNode("HAnimJoint");
 HAnimJoint53.USE = "hanim_sacroiliac";
-HAnimHumanoid30.joints[3] = HAnimJoint53;
+HAnimHumanoid30.joints[4] = HAnimJoint53;
 
 HAnimSegment HAnimSegment54 = createNode("HAnimSegment");
 HAnimSegment54.USE = "hanim_pelvis";
-HAnimHumanoid30.segments[4] = HAnimSegment54;
+HAnimHumanoid30.segments[5] = HAnimSegment54;
 
 children[3] = HAnimHumanoid30;
 

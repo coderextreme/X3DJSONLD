@@ -100,6 +100,8 @@ var X3D0 =  X3D(
                   name_ : SFString('humanoid_root'),
                   DEF_ : SFString('hanim_humanoid_root'),
                   center_ : SFVec3f([SFDouble(0), SFDouble(33.689999), SFDouble(-2.063)]),
+                  ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                  llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                   stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                   children_ : [
                     HAnimSegment(
@@ -135,6 +137,8 @@ var X3D0 =  X3D(
                       name_ : SFString('l_hip'),
                       DEF_ : SFString('hanim_l_hip'),
                       center_ : SFVec3f([SFDouble(3.383), SFDouble(32.919998), SFDouble(-2.063)]),
+                      ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                      llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                       stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                       children_ : [
                         HAnimSegment(
@@ -169,6 +173,8 @@ var X3D0 =  X3D(
                           name_ : SFString('l_knee'),
                           DEF_ : SFString('hanim_l_knee'),
                           center_ : SFVec3f([SFDouble(3.745), SFDouble(17.99), SFDouble(-2.063)]),
+                          ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                          llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                           stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                           children_ : [
                             HAnimSegment(
@@ -203,6 +209,8 @@ var X3D0 =  X3D(
                               name_ : SFString('l_ankle'),
                               DEF_ : SFString('hanim_l_ankle'),
                               center_ : SFVec3f([SFDouble(3.701), SFDouble(4.188), SFDouble(-1.915)]),
+                              ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                              llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                               stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                               children_ : [
                                 HAnimSegment(
@@ -237,6 +245,8 @@ var X3D0 =  X3D(
                                   name_ : SFString('l_midtarsal'),
                                   DEF_ : SFString('hanim_l_midtarsal'),
                                   center_ : SFVec3f([SFDouble(3.701), SFDouble(3.418), SFDouble(-0.4009)]),
+                                  ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                                  llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                                   stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                                   children_ : [
                                     HAnimSegment(
@@ -271,6 +281,8 @@ var X3D0 =  X3D(
                       name_ : SFString('r_hip'),
                       DEF_ : SFString('hanim_r_hip'),
                       center_ : SFVec3f([SFDouble(-3.383), SFDouble(32.919998), SFDouble(-2.063)]),
+                      ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                      llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                       stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                       children_ : [
                         HAnimSegment(
@@ -305,6 +317,8 @@ var X3D0 =  X3D(
                           name_ : SFString('r_knee'),
                           DEF_ : SFString('hanim_r_knee'),
                           center_ : SFVec3f([SFDouble(-3.745), SFDouble(17.99), SFDouble(-2.063)]),
+                          ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                          llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                           stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                           children_ : [
                             HAnimSegment(
@@ -339,6 +353,8 @@ var X3D0 =  X3D(
                               name_ : SFString('r_ankle'),
                               DEF_ : SFString('hanim_r_ankle'),
                               center_ : SFVec3f([SFDouble(-3.701), SFDouble(4.188), SFDouble(-1.915)]),
+                              ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                              llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                               stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                               children_ : [
                                 HAnimSegment(
@@ -373,6 +389,8 @@ var X3D0 =  X3D(
                                   name_ : SFString('r_midtarsal'),
                                   DEF_ : SFString('hanim_r_midtarsal'),
                                   center_ : SFVec3f([SFDouble(-3.701), SFDouble(3.418), SFDouble(-0.4009)]),
+                                  ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                                  llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                                   stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                                   children_ : [
                                     HAnimSegment(
@@ -407,6 +425,8 @@ var X3D0 =  X3D(
                       name_ : SFString('sacroiliac'),
                       DEF_ : SFString('hanim_sacroiliac'),
                       center_ : SFVec3f([SFDouble(0), SFDouble(30.98), SFDouble(-2.063)]),
+                      ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                      llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                       stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                       children_ : [
                         HAnimSegment(
@@ -441,6 +461,8 @@ var X3D0 =  X3D(
                           name_ : SFString('l_shoulder'),
                           DEF_ : SFString('hanim_l_shoulder'),
                           center_ : SFVec3f([SFDouble(5.199), SFDouble(51.119999), SFDouble(-2.106)]),
+                          ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                          llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                           stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                           children_ : [
                             HAnimSegment(
@@ -475,6 +497,8 @@ var X3D0 =  X3D(
                               name_ : SFString('l_elbow'),
                               DEF_ : SFString('hanim_l_elbow'),
                               center_ : SFVec3f([SFDouble(7.024), SFDouble(42.73), SFDouble(-2.051)]),
+                              ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                              llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                               stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                               children_ : [
                                 HAnimSegment(
@@ -509,6 +533,8 @@ var X3D0 =  X3D(
                                   name_ : SFString('l_wrist'),
                                   DEF_ : SFString('hanim_l_wrist'),
                                   center_ : SFVec3f([SFDouble(7.221), SFDouble(34), SFDouble(-2.015)]),
+                                  ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                                  llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                                   stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                                   children_ : [
                                     HAnimSegment(
@@ -543,6 +569,8 @@ var X3D0 =  X3D(
                           name_ : SFString('r_shoulder'),
                           DEF_ : SFString('hanim_r_shoulder'),
                           center_ : SFVec3f([SFDouble(-5.199), SFDouble(51.119999), SFDouble(-2.106)]),
+                          ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                          llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                           stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                           children_ : [
                             HAnimSegment(
@@ -577,6 +605,8 @@ var X3D0 =  X3D(
                               name_ : SFString('r_elbow'),
                               DEF_ : SFString('hanim_r_elbow'),
                               center_ : SFVec3f([SFDouble(-7.024), SFDouble(42.73), SFDouble(-2.051)]),
+                              ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                              llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                               stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                               children_ : [
                                 HAnimSegment(
@@ -611,6 +641,8 @@ var X3D0 =  X3D(
                                   name_ : SFString('r_wrist'),
                                   DEF_ : SFString('hanim_r_wrist'),
                                   center_ : SFVec3f([SFDouble(-7.221), SFDouble(34), SFDouble(-2.015)]),
+                                  ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                                  llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                                   stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                                   children_ : [
                                     HAnimSegment(
@@ -645,6 +677,8 @@ var X3D0 =  X3D(
                           name_ : SFString('vl5'),
                           DEF_ : SFString('hanim_vl5'),
                           center_ : SFVec3f([SFDouble(0), SFDouble(36.290001), SFDouble(-2.197)]),
+                          ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                          llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                           stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                           children_ : [
                             HAnimSegment(
@@ -679,6 +713,8 @@ var X3D0 =  X3D(
                               name_ : SFString('skullbase'),
                               DEF_ : SFString('hanim_skullbase'),
                               center_ : SFVec3f([SFDouble(0), SFDouble(54.84), SFDouble(-1.903)]),
+                              ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                              llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                               stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                               children_ : [
                                 HAnimSegment(

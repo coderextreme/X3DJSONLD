@@ -26,7 +26,8 @@ var mapToMethod2 = {
 		"IS" : "addSkin",
 		"HAnimJoint" : "addJoints",
 		"HAnimSegment" : "addSegments",
-		"HAnimSite" : "addViewpoints"
+		"HAnimSite" : "addViewpoints",
+		"MetadataSet" : "addMetadata"
 	},
 	"X3DPickSensorNode" : {
 		"IS" : "addPickedGeometry"

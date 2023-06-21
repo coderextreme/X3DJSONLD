@@ -202,6 +202,8 @@ var X3D0 =  new X3D({
                       name : new SFString("humanoid_root"),
                       DEF : new SFString("Joe_humanoid_root"),
                       center : new SFVec3f([0,0.875,0]),
+                      ulimit : new SFVec3f([0,0,0]),
+                      llimit : new SFVec3f([0,0,0]),
                       stiffness : new SFVec3f([0,0,0]),
                       children : new MFNode([
                         new HAnimSegment({
@@ -241,6 +243,8 @@ var X3D0 =  new X3D({
                           center : new SFVec3f([0,0.92,0]),
                           skinCoordIndex : new MFInt32([17,19,20,21,22,23,26,27,73,82,89,91,93]),
                           skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1,1,0.35,0.35,1]),
+                          ulimit : new SFVec3f([0,0,0]),
+                          llimit : new SFVec3f([0,0,0]),
                           stiffness : new SFVec3f([0,0,0]),
                           children : new MFNode([
                             new HAnimJoint({
@@ -249,6 +253,8 @@ var X3D0 =  new X3D({
                               center : new SFVec3f([0.1,0.92,0]),
                               skinCoordIndex : new MFInt32([89,90,94,95,96,97]),
                               skinCoordWeight : new MFFloat([0.65,1,1,1,1,1]),
+                              ulimit : new SFVec3f([0,0,0]),
+                              llimit : new SFVec3f([0,0,0]),
                               stiffness : new SFVec3f([0,0,0]),
                               children : new MFNode([
                                 new HAnimJoint({
@@ -257,6 +263,8 @@ var X3D0 =  new X3D({
                                   center : new SFVec3f([0.115,0.466,0]),
                                   skinCoordIndex : new MFInt32([334,335,336,337,338,339,340,341]),
                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
+                                  ulimit : new SFVec3f([0,0,0]),
+                                  llimit : new SFVec3f([0,0,0]),
                                   stiffness : new SFVec3f([0,0,0]),
                                   children : new MFNode([
                                     new HAnimJoint({
@@ -265,6 +273,8 @@ var X3D0 =  new X3D({
                                       center : new SFVec3f([0.115,0.069,0]),
                                       skinCoordIndex : new MFInt32([342,343,344,345]),
                                       skinCoordWeight : new MFFloat([1,1,1,1]),
+                                      ulimit : new SFVec3f([0,0,0]),
+                                      llimit : new SFVec3f([0,0,0]),
                                       stiffness : new SFVec3f([0,0,0]),
                                       children : new MFNode([
                                         new HAnimJoint({
@@ -273,6 +283,8 @@ var X3D0 =  new X3D({
                                           center : new SFVec3f([0.115,0.031,0.03]),
                                           skinCoordIndex : new MFInt32([346,347,348,71]),
                                           skinCoordWeight : new MFFloat([1,1,1,1]),
+                                          ulimit : new SFVec3f([0,0,0]),
+                                          llimit : new SFVec3f([0,0,0]),
                                           stiffness : new SFVec3f([0,0,0]),
                                           children : new MFNode([
                                             new HAnimJoint({
@@ -281,6 +293,8 @@ var X3D0 =  new X3D({
                                               center : new SFVec3f([0.115,0.037,0.09]),
                                               skinCoordIndex : new MFInt32([349,350,351,352]),
                                               skinCoordWeight : new MFFloat([1,1,1,1]),
+                                              ulimit : new SFVec3f([0,0,0]),
+                                              llimit : new SFVec3f([0,0,0]),
                                               stiffness : new SFVec3f([0,0,0]),
                                               children : new MFNode([
                                                 new HAnimJoint({
@@ -289,6 +303,8 @@ var X3D0 =  new X3D({
                                                   center : new SFVec3f([0.115,0.02,0.122]),
                                                   skinCoordIndex : new MFInt32([353,354,355,356,357,358,359,360,361]),
                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
+                                                  ulimit : new SFVec3f([0,0,0]),
+                                                  llimit : new SFVec3f([0,0,0]),
                                                   stiffness : new SFVec3f([0,0,0])})])})])})])})])})])}),
 
                             new HAnimJoint({
@@ -297,6 +313,8 @@ var X3D0 =  new X3D({
                               center : new SFVec3f([-0.1,0.92,0]),
                               skinCoordIndex : new MFInt32([91,92,98,99,100,101,362,363]),
                               skinCoordWeight : new MFFloat([0.65,1,0.8,1,1,1,0.4,0.8]),
+                              ulimit : new SFVec3f([0,0,0]),
+                              llimit : new SFVec3f([0,0,0]),
                               stiffness : new SFVec3f([0,0,0]),
                               children : new MFNode([
                                 new HAnimJoint({
@@ -305,6 +323,8 @@ var X3D0 =  new X3D({
                                   center : new SFVec3f([-0.05,0.466,0]),
                                   skinCoordIndex : new MFInt32([362,363,364,365,366,367,368,369,98]),
                                   skinCoordWeight : new MFFloat([0.6,0.2,1,1,1,1,1,1,0.2]),
+                                  ulimit : new SFVec3f([0,0,0]),
+                                  llimit : new SFVec3f([0,0,0]),
                                   stiffness : new SFVec3f([0,0,0]),
                                   children : new MFNode([
                                     new HAnimJoint({
@@ -313,6 +333,8 @@ var X3D0 =  new X3D({
                                       center : new SFVec3f([-0.115,0.069,0]),
                                       skinCoordIndex : new MFInt32([370,371,372,373]),
                                       skinCoordWeight : new MFFloat([1,1,1,1]),
+                                      ulimit : new SFVec3f([0,0,0]),
+                                      llimit : new SFVec3f([0,0,0]),
                                       stiffness : new SFVec3f([0,0,0]),
                                       children : new MFNode([
                                         new HAnimJoint({
@@ -321,6 +343,8 @@ var X3D0 =  new X3D({
                                           center : new SFVec3f([-0.1,0.015,-0.01]),
                                           skinCoordIndex : new MFInt32([374,375,376]),
                                           skinCoordWeight : new MFFloat([1,1,1]),
+                                          ulimit : new SFVec3f([0,0,0]),
+                                          llimit : new SFVec3f([0,0,0]),
                                           stiffness : new SFVec3f([0,0,0]),
                                           children : new MFNode([
                                             new HAnimJoint({
@@ -329,6 +353,8 @@ var X3D0 =  new X3D({
                                               center : new SFVec3f([-0.115,0.037,0.09]),
                                               skinCoordIndex : new MFInt32([377,378,379,380]),
                                               skinCoordWeight : new MFFloat([1,1,1,1]),
+                                              ulimit : new SFVec3f([0,0,0]),
+                                              llimit : new SFVec3f([0,0,0]),
                                               stiffness : new SFVec3f([0,0,0]),
                                               children : new MFNode([
                                                 new HAnimJoint({
@@ -337,6 +363,8 @@ var X3D0 =  new X3D({
                                                   center : new SFVec3f([-0.1,0.01,0.14]),
                                                   skinCoordIndex : new MFInt32([381,382,383,384,385,386,387,388,389]),
                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
+                                                  ulimit : new SFVec3f([0,0,0]),
+                                                  llimit : new SFVec3f([0,0,0]),
                                                   stiffness : new SFVec3f([0,0,0])})])})])})])})])})])})])}),
 
                         new HAnimJoint({
@@ -345,18 +373,24 @@ var X3D0 =  new X3D({
                           center : new SFVec3f([0,1.045,-0.095]),
                           skinCoordIndex : new MFInt32([28,76]),
                           skinCoordWeight : new MFFloat([1,1]),
+                          ulimit : new SFVec3f([0,0,0]),
+                          llimit : new SFVec3f([0,0,0]),
                           stiffness : new SFVec3f([0,0,0]),
                           children : new MFNode([
                             new HAnimJoint({
                               name : new SFString("vl4"),
                               DEF : new SFString("Joe_vl4"),
                               center : new SFVec3f([0,1.068,-0.085]),
+                              ulimit : new SFVec3f([0,0,0]),
+                              llimit : new SFVec3f([0,0,0]),
                               stiffness : new SFVec3f([0,0,0]),
                               children : new MFNode([
                                 new HAnimJoint({
                                   name : new SFString("vl3"),
                                   DEF : new SFString("Joe_vl3"),
                                   center : new SFVec3f([0,1.092,-0.0725]),
+                                  ulimit : new SFVec3f([0,0,0]),
+                                  llimit : new SFVec3f([0,0,0]),
                                   stiffness : new SFVec3f([0,0,0]),
                                   children : new MFNode([
                                     new HAnimJoint({
@@ -365,24 +399,32 @@ var X3D0 =  new X3D({
                                       center : new SFVec3f([0,1.12,-0.065]),
                                       skinCoordIndex : new MFInt32([16,18,25,83,84,85,86,87,88]),
                                       skinCoordWeight : new MFFloat([1,1,1,1,1,1,0.7,1,0.8]),
+                                      ulimit : new SFVec3f([0,0,0]),
+                                      llimit : new SFVec3f([0,0,0]),
                                       stiffness : new SFVec3f([0,0,0]),
                                       children : new MFNode([
                                         new HAnimJoint({
                                           name : new SFString("vl1"),
                                           DEF : new SFString("Joe_vl1"),
                                           center : new SFVec3f([0,1.1459,-0.0625]),
+                                          ulimit : new SFVec3f([0,0,0]),
+                                          llimit : new SFVec3f([0,0,0]),
                                           stiffness : new SFVec3f([0,0,0]),
                                           children : new MFNode([
                                             new HAnimJoint({
                                               name : new SFString("vt12"),
                                               DEF : new SFString("Joe_vt12"),
                                               center : new SFVec3f([0,1.179,-0.068]),
+                                              ulimit : new SFVec3f([0,0,0]),
+                                              llimit : new SFVec3f([0,0,0]),
                                               stiffness : new SFVec3f([0,0,0]),
                                               children : new MFNode([
                                                 new HAnimJoint({
                                                   name : new SFString("vt11"),
                                                   DEF : new SFString("Joe_vt11"),
                                                   center : new SFVec3f([0,1.2679,-0.081]),
+                                                  ulimit : new SFVec3f([0,0,0]),
+                                                  llimit : new SFVec3f([0,0,0]),
                                                   stiffness : new SFVec3f([0,0,0]),
                                                   children : new MFNode([
                                                     new HAnimJoint({
@@ -391,6 +433,8 @@ var X3D0 =  new X3D({
                                                       center : new SFVec3f([0,1.242,-0.09]),
                                                       skinCoordIndex : new MFInt32([15]),
                                                       skinCoordWeight : new MFFloat([1]),
+                                                      ulimit : new SFVec3f([0,0,0]),
+                                                      llimit : new SFVec3f([0,0,0]),
                                                       stiffness : new SFVec3f([0,0,0]),
                                                       children : new MFNode([
                                                         new HAnimJoint({
@@ -399,30 +443,40 @@ var X3D0 =  new X3D({
                                                           center : new SFVec3f([0,1.268,-0.1]),
                                                           skinCoordIndex : new MFInt32([13,14]),
                                                           skinCoordWeight : new MFFloat([1,1]),
+                                                          ulimit : new SFVec3f([0,0,0]),
+                                                          llimit : new SFVec3f([0,0,0]),
                                                           stiffness : new SFVec3f([0,0,0]),
                                                           children : new MFNode([
                                                             new HAnimJoint({
                                                               name : new SFString("vt8"),
                                                               DEF : new SFString("Joe_vt8"),
                                                               center : new SFVec3f([0,1.294,-0.11]),
+                                                              ulimit : new SFVec3f([0,0,0]),
+                                                              llimit : new SFVec3f([0,0,0]),
                                                               stiffness : new SFVec3f([0,0,0]),
                                                               children : new MFNode([
                                                                 new HAnimJoint({
                                                                   name : new SFString("vt7"),
                                                                   DEF : new SFString("Joe_vt7"),
                                                                   center : new SFVec3f([0,1.323,-0.1155]),
+                                                                  ulimit : new SFVec3f([0,0,0]),
+                                                                  llimit : new SFVec3f([0,0,0]),
                                                                   stiffness : new SFVec3f([0,0,0]),
                                                                   children : new MFNode([
                                                                     new HAnimJoint({
                                                                       name : new SFString("vt6"),
                                                                       DEF : new SFString("Joe_vt6"),
                                                                       center : new SFVec3f([0,1.352,-0.12]),
+                                                                      ulimit : new SFVec3f([0,0,0]),
+                                                                      llimit : new SFVec3f([0,0,0]),
                                                                       stiffness : new SFVec3f([0,0,0]),
                                                                       children : new MFNode([
                                                                         new HAnimJoint({
                                                                           name : new SFString("vt5"),
                                                                           DEF : new SFString("Joe_vt5"),
                                                                           center : new SFVec3f([0,1.381,-0.1235]),
+                                                                          ulimit : new SFVec3f([0,0,0]),
+                                                                          llimit : new SFVec3f([0,0,0]),
                                                                           stiffness : new SFVec3f([0,0,0]),
                                                                           children : new MFNode([
                                                                             new HAnimJoint({
@@ -431,18 +485,24 @@ var X3D0 =  new X3D({
                                                                               center : new SFVec3f([0,1.41,-0.1235]),
                                                                               skinCoordIndex : new MFInt32([81]),
                                                                               skinCoordWeight : new MFFloat([1]),
+                                                                              ulimit : new SFVec3f([0,0,0]),
+                                                                              llimit : new SFVec3f([0,0,0]),
                                                                               stiffness : new SFVec3f([0,0,0]),
                                                                               children : new MFNode([
                                                                                 new HAnimJoint({
                                                                                   name : new SFString("vt3"),
                                                                                   DEF : new SFString("Joe_vt3"),
                                                                                   center : new SFVec3f([0,1.438,-0.12]),
+                                                                                  ulimit : new SFVec3f([0,0,0]),
+                                                                                  llimit : new SFVec3f([0,0,0]),
                                                                                   stiffness : new SFVec3f([0,0,0]),
                                                                                   children : new MFNode([
                                                                                     new HAnimJoint({
                                                                                       name : new SFString("vt2"),
                                                                                       DEF : new SFString("Joe_vt2"),
                                                                                       center : new SFVec3f([0,1.468,-0.105]),
+                                                                                      ulimit : new SFVec3f([0,0,0]),
+                                                                                      llimit : new SFVec3f([0,0,0]),
                                                                                       stiffness : new SFVec3f([0,0,0]),
                                                                                       children : new MFNode([
                                                                                         new HAnimJoint({
@@ -451,6 +511,8 @@ var X3D0 =  new X3D({
                                                                                           center : new SFVec3f([0,1.497,-0.09]),
                                                                                           skinCoordIndex : new MFInt32([11,24]),
                                                                                           skinCoordWeight : new MFFloat([1,1]),
+                                                                                          ulimit : new SFVec3f([0,0,0]),
+                                                                                          llimit : new SFVec3f([0,0,0]),
                                                                                           stiffness : new SFVec3f([0,0,0]),
                                                                                           children : new MFNode([
                                                                                             new HAnimJoint({
@@ -459,42 +521,56 @@ var X3D0 =  new X3D({
                                                                                               center : new SFVec3f([0,1.525,-0.072]),
                                                                                               skinCoordIndex : new MFInt32([74,75]),
                                                                                               skinCoordWeight : new MFFloat([1,1]),
+                                                                                              ulimit : new SFVec3f([0,0,0]),
+                                                                                              llimit : new SFVec3f([0,0,0]),
                                                                                               stiffness : new SFVec3f([0,0,0]),
                                                                                               children : new MFNode([
                                                                                                 new HAnimJoint({
                                                                                                   name : new SFString("vc6"),
                                                                                                   DEF : new SFString("Joe_vc6"),
                                                                                                   center : new SFVec3f([0,1.54,-0.05]),
+                                                                                                  ulimit : new SFVec3f([0,0,0]),
+                                                                                                  llimit : new SFVec3f([0,0,0]),
                                                                                                   stiffness : new SFVec3f([0,0,0]),
                                                                                                   children : new MFNode([
                                                                                                     new HAnimJoint({
                                                                                                       name : new SFString("vc5"),
                                                                                                       DEF : new SFString("Joe_vc5"),
                                                                                                       center : new SFVec3f([0,1.552,-0.035]),
+                                                                                                      ulimit : new SFVec3f([0,0,0]),
+                                                                                                      llimit : new SFVec3f([0,0,0]),
                                                                                                       stiffness : new SFVec3f([0,0,0]),
                                                                                                       children : new MFNode([
                                                                                                         new HAnimJoint({
                                                                                                           name : new SFString("vc4"),
                                                                                                           DEF : new SFString("Joe_vc4"),
                                                                                                           center : new SFVec3f([0,1.5675,-0.0256]),
+                                                                                                          ulimit : new SFVec3f([0,0,0]),
+                                                                                                          llimit : new SFVec3f([0,0,0]),
                                                                                                           stiffness : new SFVec3f([0,0,0]),
                                                                                                           children : new MFNode([
                                                                                                             new HAnimJoint({
                                                                                                               name : new SFString("vc3"),
                                                                                                               DEF : new SFString("Joe_vc3"),
                                                                                                               center : new SFVec3f([0,1.58225,-0.0185]),
+                                                                                                              ulimit : new SFVec3f([0,0,0]),
+                                                                                                              llimit : new SFVec3f([0,0,0]),
                                                                                                               stiffness : new SFVec3f([0,0,0]),
                                                                                                               children : new MFNode([
                                                                                                                 new HAnimJoint({
                                                                                                                   name : new SFString("vc2"),
                                                                                                                   DEF : new SFString("Joe_vc2"),
                                                                                                                   center : new SFVec3f([0,1.595,-0.0175]),
+                                                                                                                  ulimit : new SFVec3f([0,0,0]),
+                                                                                                                  llimit : new SFVec3f([0,0,0]),
                                                                                                                   stiffness : new SFVec3f([0,0,0]),
                                                                                                                   children : new MFNode([
                                                                                                                     new HAnimJoint({
                                                                                                                       name : new SFString("vc1"),
                                                                                                                       DEF : new SFString("Joe_vc1"),
                                                                                                                       center : new SFVec3f([0,1.61,-0.015]),
+                                                                                                                      ulimit : new SFVec3f([0,0,0]),
+                                                                                                                      llimit : new SFVec3f([0,0,0]),
                                                                                                                       stiffness : new SFVec3f([0,0,0]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
@@ -503,6 +579,8 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([0,1.63,-0.01]),
                                                                                                                           skinCoordIndex : new MFInt32([0,1,2,3,4,5,6,7,8,9]),
                                                                                                                           skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1,1]),
+                                                                                                                          ulimit : new SFVec3f([0,0,0]),
+                                                                                                                          llimit : new SFVec3f([0,0,0]),
                                                                                                                           stiffness : new SFVec3f([0,0,0]),
                                                                                                                           displacers : new SFNode(
                                                                                                                             new HAnimDisplacer({
@@ -515,42 +593,56 @@ var X3D0 =  new X3D({
                                                                                                                               name : new SFString("l_eyelid_joint"),
                                                                                                                               DEF : new SFString("Joe_l_eyelid_joint"),
                                                                                                                               center : new SFVec3f([0.034,1.659,0.06]),
+                                                                                                                              ulimit : new SFVec3f([0,0,0]),
+                                                                                                                              llimit : new SFVec3f([0,0,0]),
                                                                                                                               stiffness : new SFVec3f([0,0,0])}),
 
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("l_eyeball_joint"),
                                                                                                                               DEF : new SFString("Joe_l_eyeball_joint"),
                                                                                                                               center : new SFVec3f([0.034,1.659,0.06]),
+                                                                                                                              ulimit : new SFVec3f([0,0,0]),
+                                                                                                                              llimit : new SFVec3f([0,0,0]),
                                                                                                                               stiffness : new SFVec3f([0,0,0])}),
 
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("l_eyebrow_joint"),
                                                                                                                               DEF : new SFString("Joe_l_eyebrow_joint"),
                                                                                                                               center : new SFVec3f([0.034,1.659,0.06]),
+                                                                                                                              ulimit : new SFVec3f([0,0,0]),
+                                                                                                                              llimit : new SFVec3f([0,0,0]),
                                                                                                                               stiffness : new SFVec3f([0,0,0])}),
 
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("r_eyelid_joint"),
                                                                                                                               DEF : new SFString("Joe_r_eyelid_joint"),
                                                                                                                               center : new SFVec3f([-0.034,1.659,0.06]),
+                                                                                                                              ulimit : new SFVec3f([0,0,0]),
+                                                                                                                              llimit : new SFVec3f([0,0,0]),
                                                                                                                               stiffness : new SFVec3f([0,0,0])}),
 
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("r_eyeball_joint"),
                                                                                                                               DEF : new SFString("Joe_r_eyeball_joint"),
                                                                                                                               center : new SFVec3f([-0.034,1.659,0.06]),
+                                                                                                                              ulimit : new SFVec3f([0,0,0]),
+                                                                                                                              llimit : new SFVec3f([0,0,0]),
                                                                                                                               stiffness : new SFVec3f([0,0,0])}),
 
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("r_eyebrow_joint"),
                                                                                                                               DEF : new SFString("Joe_r_eyebrow_joint"),
                                                                                                                               center : new SFVec3f([-0.034,1.659,0.06]),
+                                                                                                                              ulimit : new SFVec3f([0,0,0]),
+                                                                                                                              llimit : new SFVec3f([0,0,0]),
                                                                                                                               stiffness : new SFVec3f([0,0,0])}),
 
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("temporomandibular"),
                                                                                                                               DEF : new SFString("Joe_temporomandibular"),
                                                                                                                               center : new SFVec3f([0.034,1.659,0.06]),
+                                                                                                                              ulimit : new SFVec3f([0,0,0]),
+                                                                                                                              llimit : new SFVec3f([0,0,0]),
                                                                                                                               stiffness : new SFVec3f([0,0,0])})])})])})])})])})])})])})])}),
 
                                                                                                 new HAnimJoint({
@@ -559,6 +651,8 @@ var X3D0 =  new X3D({
                                                                                                   center : new SFVec3f([0.082,1.4488,-0.0353]),
                                                                                                   skinCoordIndex : new MFInt32([12]),
                                                                                                   skinCoordWeight : new MFFloat([1]),
+                                                                                                  ulimit : new SFVec3f([0,0,0]),
+                                                                                                  llimit : new SFVec3f([0,0,0]),
                                                                                                   stiffness : new SFVec3f([0,0,0]),
                                                                                                   children : new MFNode([
                                                                                                     new HAnimJoint({
@@ -567,6 +661,8 @@ var X3D0 =  new X3D({
                                                                                                       center : new SFVec3f([0.0962,1.4269,-0.0424]),
                                                                                                       skinCoordIndex : new MFInt32([79]),
                                                                                                       skinCoordWeight : new MFFloat([1]),
+                                                                                                      ulimit : new SFVec3f([0,0,0]),
+                                                                                                      llimit : new SFVec3f([0,0,0]),
                                                                                                       stiffness : new SFVec3f([0,0,0]),
                                                                                                       children : new MFNode([
                                                                                                         new HAnimJoint({
@@ -575,6 +671,8 @@ var X3D0 =  new X3D({
                                                                                                           center : new SFVec3f([0.2,1.44,-0.04]),
                                                                                                           skinCoordIndex : new MFInt32([41,42,44,80,102,103,104,105]),
                                                                                                           skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
+                                                                                                          ulimit : new SFVec3f([0,0,0]),
+                                                                                                          llimit : new SFVec3f([0,0,0]),
                                                                                                           stiffness : new SFVec3f([0,0,0]),
                                                                                                           children : new MFNode([
                                                                                                             new HAnimJoint({
@@ -583,6 +681,8 @@ var X3D0 =  new X3D({
                                                                                                               center : new SFVec3f([0.2,1.1388,-0.04]),
                                                                                                               skinCoordIndex : new MFInt32([45,46,47,109,110,111,112,113,115,116,117,118]),
                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]),
+                                                                                                              ulimit : new SFVec3f([0,0,0]),
+                                                                                                              llimit : new SFVec3f([0,0,0]),
                                                                                                               stiffness : new SFVec3f([0,0,0]),
                                                                                                               children : new MFNode([
                                                                                                                 new HAnimJoint({
@@ -591,6 +691,8 @@ var X3D0 =  new X3D({
                                                                                                                   center : new SFVec3f([0.2,0.87,-0.04]),
                                                                                                                   skinCoordIndex : new MFInt32([119,120,121,122,123,124,125,126]),
                                                                                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
+                                                                                                                  ulimit : new SFVec3f([0,0,0]),
+                                                                                                                  llimit : new SFVec3f([0,0,0]),
                                                                                                                   stiffness : new SFVec3f([0,0,0]),
                                                                                                                   children : new MFNode([
                                                                                                                     new HAnimJoint({
@@ -599,6 +701,8 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([0.1924,0.8472,-0.0534]),
                                                                                                                       skinCoordIndex : new MFInt32([127,128]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1]),
+                                                                                                                      ulimit : new SFVec3f([0,0,0]),
+                                                                                                                      llimit : new SFVec3f([0,0,0]),
                                                                                                                       stiffness : new SFVec3f([0,0,0]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
@@ -607,6 +711,8 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([0.1951,0.8226,0.0246]),
                                                                                                                           skinCoordIndex : new MFInt32([138,139,140,141,142,143]),
                                                                                                                           skinCoordWeight : new MFFloat([0.5,0.5,0.5,1,1,1]),
+                                                                                                                          ulimit : new SFVec3f([0,0,0]),
+                                                                                                                          llimit : new SFVec3f([0,0,0]),
                                                                                                                           stiffness : new SFVec3f([0,0,0]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
@@ -615,6 +721,8 @@ var X3D0 =  new X3D({
                                                                                                                               center : new SFVec3f([0.1955,0.8159,0.0464]),
                                                                                                                               skinCoordIndex : new MFInt32([144,145,146,147,148,149,150,151,152]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
+                                                                                                                              ulimit : new SFVec3f([0,0,0]),
+                                                                                                                              llimit : new SFVec3f([0,0,0]),
                                                                                                                               stiffness : new SFVec3f([0,0,0])})])})])}),
 
                                                                                                                     new HAnimJoint({
@@ -623,6 +731,8 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([0.1983,0.8024,-0.028]),
                                                                                                                       skinCoordIndex : new MFInt32([129,130]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1]),
+                                                                                                                      ulimit : new SFVec3f([0,0,0]),
+                                                                                                                      llimit : new SFVec3f([0,0,0]),
                                                                                                                       stiffness : new SFVec3f([0,0,0]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
@@ -631,6 +741,8 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([0.1983,0.7815,-0.028]),
                                                                                                                           skinCoordIndex : new MFInt32([138,139,140,153,154,155,163]),
                                                                                                                           skinCoordWeight : new MFFloat([0.5,0.5,0.5,1,1,1,0.5]),
+                                                                                                                          ulimit : new SFVec3f([0,0,0]),
+                                                                                                                          llimit : new SFVec3f([0,0,0]),
                                                                                                                           stiffness : new SFVec3f([0,0,0]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
@@ -639,6 +751,8 @@ var X3D0 =  new X3D({
                                                                                                                               center : new SFVec3f([0.2017,0.7363,-0.0248]),
                                                                                                                               skinCoordIndex : new MFInt32([166,167,168,169]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1]),
+                                                                                                                              ulimit : new SFVec3f([0,0,0]),
+                                                                                                                              llimit : new SFVec3f([0,0,0]),
                                                                                                                               stiffness : new SFVec3f([0,0,0]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
@@ -647,6 +761,8 @@ var X3D0 =  new X3D({
                                                                                                                                   center : new SFVec3f([0.2028,0.7139,-0.0236]),
                                                                                                                                   skinCoordIndex : new MFInt32([170,171,172,173,174,175,176,177,178]),
                                                                                                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
+                                                                                                                                  ulimit : new SFVec3f([0,0,0]),
+                                                                                                                                  llimit : new SFVec3f([0,0,0]),
                                                                                                                                   stiffness : new SFVec3f([0,0,0])})])})])})])}),
 
                                                                                                                     new HAnimJoint({
@@ -655,6 +771,8 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([0.1987,0.8029,-0.053]),
                                                                                                                       skinCoordIndex : new MFInt32([131,132]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1]),
+                                                                                                                      ulimit : new SFVec3f([0,0,0]),
+                                                                                                                      llimit : new SFVec3f([0,0,0]),
                                                                                                                       stiffness : new SFVec3f([0,0,0]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
@@ -663,6 +781,8 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([0.1987,0.7818,-0.053]),
                                                                                                                           skinCoordIndex : new MFInt32([156,157,163,164]),
                                                                                                                           skinCoordWeight : new MFFloat([1,1,0.5,0.5]),
+                                                                                                                          ulimit : new SFVec3f([0,0,0]),
+                                                                                                                          llimit : new SFVec3f([0,0,0]),
                                                                                                                           stiffness : new SFVec3f([0,0,0]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
@@ -671,6 +791,8 @@ var X3D0 =  new X3D({
                                                                                                                               center : new SFVec3f([0.2013,0.7273,-0.0503]),
                                                                                                                               skinCoordIndex : new MFInt32([179,180,181,182]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1]),
+                                                                                                                              ulimit : new SFVec3f([0,0,0]),
+                                                                                                                              llimit : new SFVec3f([0,0,0]),
                                                                                                                               stiffness : new SFVec3f([0,0,0]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
@@ -679,6 +801,8 @@ var X3D0 =  new X3D({
                                                                                                                                   center : new SFVec3f([0.2026,0.7011,-0.0494]),
                                                                                                                                   skinCoordIndex : new MFInt32([183,184,185,186,187,188,189,190,191]),
                                                                                                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
+                                                                                                                                  ulimit : new SFVec3f([0,0,0]),
+                                                                                                                                  llimit : new SFVec3f([0,0,0]),
                                                                                                                                   stiffness : new SFVec3f([0,0,0])})])})])})])}),
 
                                                                                                                     new HAnimJoint({
@@ -687,6 +811,8 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([0.1956,0.8019,-0.0794]),
                                                                                                                       skinCoordIndex : new MFInt32([133,134]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1]),
+                                                                                                                      ulimit : new SFVec3f([0,0,0]),
+                                                                                                                      llimit : new SFVec3f([0,0,0]),
                                                                                                                       stiffness : new SFVec3f([0,0,0]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
@@ -695,6 +821,8 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([0.1956,0.7815,-0.0794]),
                                                                                                                           skinCoordIndex : new MFInt32([158,159,164,165]),
                                                                                                                           skinCoordWeight : new MFFloat([1,1,0.5,0.5]),
+                                                                                                                          ulimit : new SFVec3f([0,0,0]),
+                                                                                                                          llimit : new SFVec3f([0,0,0]),
                                                                                                                           stiffness : new SFVec3f([0,0,0]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
@@ -703,6 +831,8 @@ var X3D0 =  new X3D({
                                                                                                                               center : new SFVec3f([0.1973,0.7287,-0.0777]),
                                                                                                                               skinCoordIndex : new MFInt32([192,193,194,195]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1]),
+                                                                                                                              ulimit : new SFVec3f([0,0,0]),
+                                                                                                                              llimit : new SFVec3f([0,0,0]),
                                                                                                                               stiffness : new SFVec3f([0,0,0]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
@@ -711,6 +841,8 @@ var X3D0 =  new X3D({
                                                                                                                                   center : new SFVec3f([0.1983,0.7045,-0.0767]),
                                                                                                                                   skinCoordIndex : new MFInt32([196,197,198,199,200,201,202,203,204]),
                                                                                                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
+                                                                                                                                  ulimit : new SFVec3f([0,0,0]),
+                                                                                                                                  llimit : new SFVec3f([0,0,0]),
                                                                                                                                   stiffness : new SFVec3f([0,0,0])})])})])})])}),
 
                                                                                                                     new HAnimJoint({
@@ -719,6 +851,8 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([0.1925,0.8066,-0.1036]),
                                                                                                                       skinCoordIndex : new MFInt32([135,136,137,165]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1,1,0.5]),
+                                                                                                                      ulimit : new SFVec3f([0,0,0]),
+                                                                                                                      llimit : new SFVec3f([0,0,0]),
                                                                                                                       stiffness : new SFVec3f([0,0,0]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
@@ -727,6 +861,8 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([0.1925,0.7866,-0.1036]),
                                                                                                                           skinCoordIndex : new MFInt32([160,161,162]),
                                                                                                                           skinCoordWeight : new MFFloat([1,1,1]),
+                                                                                                                          ulimit : new SFVec3f([0,0,0]),
+                                                                                                                          llimit : new SFVec3f([0,0,0]),
                                                                                                                           stiffness : new SFVec3f([0,0,0]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
@@ -735,6 +871,8 @@ var X3D0 =  new X3D({
                                                                                                                               center : new SFVec3f([0.1938,0.7452,-0.1024]),
                                                                                                                               skinCoordIndex : new MFInt32([205,206,207,208]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1]),
+                                                                                                                              ulimit : new SFVec3f([0,0,0]),
+                                                                                                                              llimit : new SFVec3f([0,0,0]),
                                                                                                                               stiffness : new SFVec3f([0,0,0]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
@@ -743,6 +881,8 @@ var X3D0 =  new X3D({
                                                                                                                                   center : new SFVec3f([0.1948,0.7277,-0.1017]),
                                                                                                                                   skinCoordIndex : new MFInt32([209,210,211,212,213,214,215,216,217]),
                                                                                                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
+                                                                                                                                  ulimit : new SFVec3f([0,0,0]),
+                                                                                                                                  llimit : new SFVec3f([0,0,0]),
                                                                                                                                   stiffness : new SFVec3f([0,0,0])})])})])})])})])})])})])})])})])}),
 
                                                                                                 new HAnimJoint({
@@ -751,6 +891,8 @@ var X3D0 =  new X3D({
                                                                                                   center : new SFVec3f([-0.03,1.46,0]),
                                                                                                   skinCoordIndex : new MFInt32([10]),
                                                                                                   skinCoordWeight : new MFFloat([1]),
+                                                                                                  ulimit : new SFVec3f([0,0,0]),
+                                                                                                  llimit : new SFVec3f([0,0,0]),
                                                                                                   stiffness : new SFVec3f([0,0,0]),
                                                                                                   children : new MFNode([
                                                                                                     new HAnimJoint({
@@ -759,6 +901,8 @@ var X3D0 =  new X3D({
                                                                                                       center : new SFVec3f([-0.09,1.41,-0.11]),
                                                                                                       skinCoordIndex : new MFInt32([77,29]),
                                                                                                       skinCoordWeight : new MFFloat([1,0.9]),
+                                                                                                      ulimit : new SFVec3f([0,0,0]),
+                                                                                                      llimit : new SFVec3f([0,0,0]),
                                                                                                       stiffness : new SFVec3f([0,0,0]),
                                                                                                       children : new MFNode([
                                                                                                         new HAnimJoint({
@@ -767,6 +911,8 @@ var X3D0 =  new X3D({
                                                                                                           center : new SFVec3f([-0.2,1.44,-0.04]),
                                                                                                           skinCoordIndex : new MFInt32([29,30,32,78,218,219,220,221,86,88]),
                                                                                                           skinCoordWeight : new MFFloat([0.1,1,1,1,1,1,1,1,0.3,0.2]),
+                                                                                                          ulimit : new SFVec3f([0,0,0]),
+                                                                                                          llimit : new SFVec3f([0,0,0]),
                                                                                                           stiffness : new SFVec3f([0,0,0]),
                                                                                                           children : new MFNode([
                                                                                                             new HAnimJoint({
@@ -775,6 +921,8 @@ var X3D0 =  new X3D({
                                                                                                               center : new SFVec3f([-0.2,1.1388,-0.04]),
                                                                                                               skinCoordIndex : new MFInt32([33,34,35,225,226,227,228,229,231,232,233,234]),
                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1,1,1,1]),
+                                                                                                              ulimit : new SFVec3f([0,0,0]),
+                                                                                                              llimit : new SFVec3f([0,0,0]),
                                                                                                               stiffness : new SFVec3f([0,0,0]),
                                                                                                               children : new MFNode([
                                                                                                                 new HAnimJoint({
@@ -783,6 +931,8 @@ var X3D0 =  new X3D({
                                                                                                                   center : new SFVec3f([-0.2,0.89,-0.04]),
                                                                                                                   skinCoordIndex : new MFInt32([235,236,237,238,239,240,241,242]),
                                                                                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
+                                                                                                                  ulimit : new SFVec3f([0,0,0]),
+                                                                                                                  llimit : new SFVec3f([0,0,0]),
                                                                                                                   stiffness : new SFVec3f([0,0,0]),
                                                                                                                   children : new MFNode([
                                                                                                                     new HAnimJoint({
@@ -791,6 +941,8 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([-0.2,0.85,0]),
                                                                                                                       skinCoordIndex : new MFInt32([243,244]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1]),
+                                                                                                                      ulimit : new SFVec3f([0,0,0]),
+                                                                                                                      llimit : new SFVec3f([0,0,0]),
                                                                                                                       stiffness : new SFVec3f([0,0,0]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
@@ -799,6 +951,8 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([-0.2,0.82,0.03]),
                                                                                                                           skinCoordIndex : new MFInt32([254,255,256,257,258,259]),
                                                                                                                           skinCoordWeight : new MFFloat([0.5,0.5,0.5,1,1,1]),
+                                                                                                                          ulimit : new SFVec3f([0,0,0]),
+                                                                                                                          llimit : new SFVec3f([0,0,0]),
                                                                                                                           stiffness : new SFVec3f([0,0,0]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
@@ -807,6 +961,8 @@ var X3D0 =  new X3D({
                                                                                                                               center : new SFVec3f([-0.2,0.8,0.05]),
                                                                                                                               skinCoordIndex : new MFInt32([260,261,262,263,264,265,266,267,268]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
+                                                                                                                              ulimit : new SFVec3f([0,0,0]),
+                                                                                                                              llimit : new SFVec3f([0,0,0]),
                                                                                                                               stiffness : new SFVec3f([0,0,0])})])})])}),
 
                                                                                                                     new HAnimJoint({
@@ -815,6 +971,8 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([-0.2,0.84,-0.015]),
                                                                                                                       skinCoordIndex : new MFInt32([245,246]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1]),
+                                                                                                                      ulimit : new SFVec3f([0,0,0]),
+                                                                                                                      llimit : new SFVec3f([0,0,0]),
                                                                                                                       stiffness : new SFVec3f([0,0,0]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
@@ -823,6 +981,8 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([-0.2,0.793,-0.015]),
                                                                                                                           skinCoordIndex : new MFInt32([254,255,256,269,270,271,279]),
                                                                                                                           skinCoordWeight : new MFFloat([0.5,0.5,0.5,1,1,1,0.5]),
+                                                                                                                          ulimit : new SFVec3f([0,0,0]),
+                                                                                                                          llimit : new SFVec3f([0,0,0]),
                                                                                                                           stiffness : new SFVec3f([0,0,0]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
@@ -831,6 +991,8 @@ var X3D0 =  new X3D({
                                                                                                                               center : new SFVec3f([-0.2,0.745,-0.015]),
                                                                                                                               skinCoordIndex : new MFInt32([282,283,284,285]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1]),
+                                                                                                                              ulimit : new SFVec3f([0,0,0]),
+                                                                                                                              llimit : new SFVec3f([0,0,0]),
                                                                                                                               stiffness : new SFVec3f([0,0,0]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
@@ -839,6 +1001,8 @@ var X3D0 =  new X3D({
                                                                                                                                   center : new SFVec3f([-0.2,0.72,-0.015]),
                                                                                                                                   skinCoordIndex : new MFInt32([286,287,288,289,290,291,292,293,294]),
                                                                                                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
+                                                                                                                                  ulimit : new SFVec3f([0,0,0]),
+                                                                                                                                  llimit : new SFVec3f([0,0,0]),
                                                                                                                                   stiffness : new SFVec3f([0,0,0])})])})])})])}),
 
                                                                                                                     new HAnimJoint({
@@ -847,6 +1011,8 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([-0.2,0.835,-0.04]),
                                                                                                                       skinCoordIndex : new MFInt32([247,248]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1]),
+                                                                                                                      ulimit : new SFVec3f([0,0,0]),
+                                                                                                                      llimit : new SFVec3f([0,0,0]),
                                                                                                                       stiffness : new SFVec3f([0,0,0]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
@@ -855,6 +1021,8 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([-0.2,0.788,-0.04]),
                                                                                                                           skinCoordIndex : new MFInt32([272,273,279,280]),
                                                                                                                           skinCoordWeight : new MFFloat([1,1,0.5,0.5]),
+                                                                                                                          ulimit : new SFVec3f([0,0,0]),
+                                                                                                                          llimit : new SFVec3f([0,0,0]),
                                                                                                                           stiffness : new SFVec3f([0,0,0]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
@@ -863,6 +1031,8 @@ var X3D0 =  new X3D({
                                                                                                                               center : new SFVec3f([-0.2,0.74,-0.04]),
                                                                                                                               skinCoordIndex : new MFInt32([295,296,297,298]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1]),
+                                                                                                                              ulimit : new SFVec3f([0,0,0]),
+                                                                                                                              llimit : new SFVec3f([0,0,0]),
                                                                                                                               stiffness : new SFVec3f([0,0,0]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
@@ -871,6 +1041,8 @@ var X3D0 =  new X3D({
                                                                                                                                   center : new SFVec3f([-0.2,0.7142,-0.04]),
                                                                                                                                   skinCoordIndex : new MFInt32([299,300,301,302,303,304,305,306,307]),
                                                                                                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
+                                                                                                                                  ulimit : new SFVec3f([0,0,0]),
+                                                                                                                                  llimit : new SFVec3f([0,0,0]),
                                                                                                                                   stiffness : new SFVec3f([0,0,0])})])})])})])}),
 
                                                                                                                     new HAnimJoint({
@@ -879,6 +1051,8 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([-0.2,0.835,-0.065]),
                                                                                                                       skinCoordIndex : new MFInt32([249,250]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1]),
+                                                                                                                      ulimit : new SFVec3f([0,0,0]),
+                                                                                                                      llimit : new SFVec3f([0,0,0]),
                                                                                                                       stiffness : new SFVec3f([0,0,0]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
@@ -887,6 +1061,8 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([-0.2,0.793,-0.065]),
                                                                                                                           skinCoordIndex : new MFInt32([274,275,280,281]),
                                                                                                                           skinCoordWeight : new MFFloat([1,1,0.5,0.5]),
+                                                                                                                          ulimit : new SFVec3f([0,0,0]),
+                                                                                                                          llimit : new SFVec3f([0,0,0]),
                                                                                                                           stiffness : new SFVec3f([0,0,0]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
@@ -895,6 +1071,8 @@ var X3D0 =  new X3D({
                                                                                                                               center : new SFVec3f([-0.2,0.74,-0.065]),
                                                                                                                               skinCoordIndex : new MFInt32([308,309,310,311]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1]),
+                                                                                                                              ulimit : new SFVec3f([0,0,0]),
+                                                                                                                              llimit : new SFVec3f([0,0,0]),
                                                                                                                               stiffness : new SFVec3f([0,0,0]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
@@ -903,6 +1081,8 @@ var X3D0 =  new X3D({
                                                                                                                                   center : new SFVec3f([-0.2,0.7177,-0.065]),
                                                                                                                                   skinCoordIndex : new MFInt32([312,313,314,315,316,317,318,319,320]),
                                                                                                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
+                                                                                                                                  ulimit : new SFVec3f([0,0,0]),
+                                                                                                                                  llimit : new SFVec3f([0,0,0]),
                                                                                                                                   stiffness : new SFVec3f([0,0,0])})])})])})])}),
 
                                                                                                                     new HAnimJoint({
@@ -911,6 +1091,8 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([-0.2,0.84,-0.085]),
                                                                                                                       skinCoordIndex : new MFInt32([251,252,253,281]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1,1,0.5]),
+                                                                                                                      ulimit : new SFVec3f([0,0,0]),
+                                                                                                                      llimit : new SFVec3f([0,0,0]),
                                                                                                                       stiffness : new SFVec3f([0,0,0]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
@@ -919,6 +1101,8 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([-0.2,0.79,-0.085]),
                                                                                                                           skinCoordIndex : new MFInt32([276,277,278]),
                                                                                                                           skinCoordWeight : new MFFloat([1,1,1]),
+                                                                                                                          ulimit : new SFVec3f([0,0,0]),
+                                                                                                                          llimit : new SFVec3f([0,0,0]),
                                                                                                                           stiffness : new SFVec3f([0,0,0]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
@@ -927,6 +1111,8 @@ var X3D0 =  new X3D({
                                                                                                                               center : new SFVec3f([-0.2,0.755,-0.085]),
                                                                                                                               skinCoordIndex : new MFInt32([321,322,323,324]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1]),
+                                                                                                                              ulimit : new SFVec3f([0,0,0]),
+                                                                                                                              llimit : new SFVec3f([0,0,0]),
                                                                                                                               stiffness : new SFVec3f([0,0,0]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
@@ -935,6 +1121,8 @@ var X3D0 =  new X3D({
                                                                                                                                   center : new SFVec3f([-0.2,0.735,-0.09]),
                                                                                                                                   skinCoordIndex : new MFInt32([325,326,327,328,329,330,331,332,333]),
                                                                                                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
+                                                                                                                                  ulimit : new SFVec3f([0,0,0]),
+                                                                                                                                  llimit : new SFVec3f([0,0,0]),
                                                                                                                                   stiffness : new SFVec3f([0,0,0])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])}),
                   skin : new SFNode(
                     new Shape({

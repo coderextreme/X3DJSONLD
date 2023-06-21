@@ -315,7 +315,7 @@ MetadataString65.setValue(["checks MetadataSet addValue() method"])
 
 MetadataSet63.addValue(MetadataString65)
 
-Text62.setMetadata(MetadataSet63)
+Text62.setValue(MetadataSet63)
 FontStyle66 = FontStyle()
 FontStyle66.setJustify(["MIDDLE","MIDDLE"])
 
@@ -761,7 +761,7 @@ MetadataString141.setName("findThisNameValue")
 MetadataString141.setDEF("FindableMetadataStringTest")
 MetadataString141.setValue(["test case"])
 
-Shape140.setMetadata(MetadataString141)
+Shape140.setValue(MetadataString141)
 Appearance142 = Appearance()
 Appearance142.setDEF("DeclarativeAppearanceExample")
 #DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance

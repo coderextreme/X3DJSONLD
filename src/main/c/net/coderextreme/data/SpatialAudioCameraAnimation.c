@@ -281,12 +281,19 @@ children[13] = Transform43;
 
 ListenerPointSource ListenerPointSource55 = createNode("ListenerPointSource");
 ListenerPointSource55.trackCurrentView = True;
+ListenerPointSource55.dopplerEnabled = "false";
 children[14] = ListenerPointSource55;
 
 StreamAudioDestination StreamAudioDestination56 = createNode("StreamAudioDestination");
+StreamAudioDestination56.channelCountMode = "MAX";
+StreamAudioDestination56.channelInterpretation = "SPEAKERS";
 SpatialSound SpatialSound57 = createNode("SpatialSound");
 SpatialSound57.DEF = "Audio1";
+SpatialSound57.distanceModel = "INVERSE";
+SpatialSound57.dopplerEnabled = "false";
 Gain Gain58 = createNode("Gain");
+Gain58.channelCountMode = "MAX";
+Gain58.channelInterpretation = "SPEAKERS";
 AudioClip AudioClip59 = createNode("AudioClip");
 AudioClip59.loop = True;
 AudioClip59.pauseTime = -1;
@@ -307,7 +314,11 @@ StreamAudioDestination56.children[0] = SpatialSound57;
 
 SpatialSound SpatialSound60 = createNode("SpatialSound");
 SpatialSound60.DEF = "Audio2";
+SpatialSound60.distanceModel = "INVERSE";
+SpatialSound60.dopplerEnabled = "false";
 Gain Gain61 = createNode("Gain");
+Gain61.channelCountMode = "MAX";
+Gain61.channelInterpretation = "SPEAKERS";
 AudioClip AudioClip62 = createNode("AudioClip");
 AudioClip62.loop = True;
 AudioClip62.pauseTime = -1;

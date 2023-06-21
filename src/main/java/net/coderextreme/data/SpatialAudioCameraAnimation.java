@@ -98,13 +98,13 @@ public class SpatialAudioCameraAnimation {
                   .setMaterial(new Material().setAmbientIntensity(0.0933f).setDiffuseColor(new float[] {1f,1f,1f}).setShininess(0.51f).setSpecularColor(new float[] {0.46f,0.46f,0.46f})))
                 .setGeometry(new Text().setString(new MFString11().getArray())
                   .setFontStyle(new FontStyle().setFamily(new MFString12().getArray()).setStyle("BOLD")))))))
-        .addChild(new ListenerPointSource().setTrackCurrentView(true))
-        .addChild(new StreamAudioDestination()
-          .addChild(new SpatialSound().setDEF("Audio1")
-            .addChild(new Gain()
+        .addChild(new ListenerPointSource().setTrackCurrentView(true).setDopplerEnabled("false"))
+        .addChild(new StreamAudioDestination().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
+          .addChild(new SpatialSound().setDEF("Audio1").setDistanceModel("INVERSE").setDopplerEnabled("false")
+            .addChild(new Gain().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
               .addChild(new AudioClip().setLoop(true).setPauseTime(-1d).setResumeTime(-1d).setStopTime(-1d).setUrl(new MFString13().getArray()))))
-          .addChild(new SpatialSound().setDEF("Audio2")
-            .addChild(new Gain()
+          .addChild(new SpatialSound().setDEF("Audio2").setDistanceModel("INVERSE").setDopplerEnabled("false")
+            .addChild(new Gain().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
               .addChild(new AudioClip().setLoop(true).setPauseTime(-1d).setResumeTime(-1d).setStopTime(-1d).setUrl(new MFString14().getArray()))))))      ;
     return X3D0;
     }

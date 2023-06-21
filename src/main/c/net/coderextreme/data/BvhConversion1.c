@@ -370,7 +370,9 @@ MetadataString67.name = "usageRestrictions";
 MetadataString67.value = new MFString(new java.lang.String["*TODO*"]);
 MetadataSet62.value[4] = MetadataString67;
 
-HAnimHumanoid61.metadata = MetadataSet62;
+HAnimHumanoid61.metadata = new SFNode();
+
+HAnimHumanoid61.metadata[0] = MetadataSet62;
 
 HAnimSite HAnimSite68 = createNode("HAnimSite");
 HAnimSite68.name = "HumanoidRoot_view";
@@ -383,15 +385,15 @@ HAnimSite68.children = new MFNode();
 
 HAnimSite68.children[0] = Viewpoint69;
 
-HAnimHumanoid61.viewpoints = new MFNode();
-
-HAnimHumanoid61.viewpoints[0] = HAnimSite68;
+HAnimHumanoid61.viewpoints[1] = HAnimSite68;
 
 HAnimJoint HAnimJoint70 = createNode("HAnimJoint");
 HAnimJoint70.name = "HumanoidRoot";
 HAnimJoint70.DEF = "Bvh1_HumanoidRoot";
 HAnimJoint70.scale = new SFVec3f(new float[0.0254,0.0254,0.0254]);
 HAnimJoint70.translation = new SFVec3f(new float[0,0.806,0.194]);
+HAnimJoint70.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint70.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint70.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH ROOT Hips, OFFSET 7.62 0.0 0.0, CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
 HAnimSegment HAnimSegment71 = createNode("HAnimSegment");
@@ -560,6 +562,8 @@ HAnimJoint HAnimJoint108 = createNode("HAnimJoint");
 HAnimJoint108.name = "l_hip";
 HAnimJoint108.DEF = "Bvh1_l_hip";
 HAnimJoint108.center = new SFVec3f(new float[7.62,0,0]);
+HAnimJoint108.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint108.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint108.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT LeftHip, OFFSET 7.62 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 HAnimSegment HAnimSegment109 = createNode("HAnimSegment");
@@ -607,6 +611,8 @@ HAnimJoint HAnimJoint117 = createNode("HAnimJoint");
 HAnimJoint117.name = "l_knee";
 HAnimJoint117.DEF = "Bvh1_l_knee";
 HAnimJoint117.center = new SFVec3f(new float[7.62,-44.449999,0]);
+HAnimJoint117.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint117.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint117.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT LeftKnee, OFFSET 0.0 -44.449999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 HAnimSegment HAnimSegment118 = createNode("HAnimSegment");
@@ -654,6 +660,8 @@ HAnimJoint HAnimJoint126 = createNode("HAnimJoint");
 HAnimJoint126.name = "l_ankle";
 HAnimJoint126.DEF = "Bvh1_l_ankle";
 HAnimJoint126.center = new SFVec3f(new float[7.62,-83.819998,0]);
+HAnimJoint126.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint126.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint126.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT LeftAnkle, OFFSET 0.0 -39.369999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 HAnimSegment HAnimSegment127 = createNode("HAnimSegment");
@@ -701,6 +709,8 @@ HAnimJoint HAnimJoint135 = createNode("HAnimJoint");
 HAnimJoint135.name = "l_midtarsal";
 HAnimJoint135.DEF = "Bvh1_l_midtarsal";
 HAnimJoint135.center = new SFVec3f(new float[7.62,-92.709998,-3.81]);
+HAnimJoint135.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint135.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint135.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT LeftAnkleEnd, OFFSET 0.0 -8.89 -3.81, CHANNELS 3 Zrotation Xrotation Yrotation
 HAnimSegment HAnimSegment136 = createNode("HAnimSegment");
@@ -773,6 +783,8 @@ HAnimJoint HAnimJoint147 = createNode("HAnimJoint");
 HAnimJoint147.name = "r_hip";
 HAnimJoint147.DEF = "Bvh1_r_hip";
 HAnimJoint147.center = new SFVec3f(new float[-7.62,0,0]);
+HAnimJoint147.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint147.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint147.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT RightHip, OFFSET -7.62 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 HAnimSegment HAnimSegment148 = createNode("HAnimSegment");
@@ -820,6 +832,8 @@ HAnimJoint HAnimJoint156 = createNode("HAnimJoint");
 HAnimJoint156.name = "r_knee";
 HAnimJoint156.DEF = "Bvh1_r_knee";
 HAnimJoint156.center = new SFVec3f(new float[-7.62,-44.449999,0]);
+HAnimJoint156.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint156.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint156.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT RightKnee, OFFSET 0.0 -44.449999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 HAnimSegment HAnimSegment157 = createNode("HAnimSegment");
@@ -867,6 +881,8 @@ HAnimJoint HAnimJoint165 = createNode("HAnimJoint");
 HAnimJoint165.name = "r_ankle";
 HAnimJoint165.DEF = "Bvh1_r_ankle";
 HAnimJoint165.center = new SFVec3f(new float[-7.62,-83.819998,0]);
+HAnimJoint165.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint165.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint165.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT RightAnkle, OFFSET 0.0 -39.369999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 HAnimSegment HAnimSegment166 = createNode("HAnimSegment");
@@ -914,6 +930,8 @@ HAnimJoint HAnimJoint174 = createNode("HAnimJoint");
 HAnimJoint174.name = "r_midtarsal";
 HAnimJoint174.DEF = "Bvh1_r_midtarsal";
 HAnimJoint174.center = new SFVec3f(new float[-7.62,-92.709998,-3.81]);
+HAnimJoint174.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint174.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint174.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT RightAnkleEnd, OFFSET 0.0 -8.89 -3.81, CHANNELS 3 Zrotation Xrotation Yrotation
 HAnimSegment HAnimSegment175 = createNode("HAnimSegment");
@@ -986,6 +1004,8 @@ HAnimJoint HAnimJoint186 = createNode("HAnimJoint");
 HAnimJoint186.name = "vl5";
 HAnimJoint186.DEF = "Bvh1_vl5";
 HAnimJoint186.center = new SFVec3f(new float[0,7.62,-2.54]);
+HAnimJoint186.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint186.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint186.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT Chest, OFFSET 0.0 7.62 -2.54, CHANNELS 3 Zrotation Xrotation Yrotation
 HAnimSegment HAnimSegment187 = createNode("HAnimSegment");
@@ -1033,6 +1053,8 @@ HAnimJoint HAnimJoint195 = createNode("HAnimJoint");
 HAnimJoint195.name = "Chest2";
 HAnimJoint195.DEF = "Bvh1_Chest2";
 HAnimJoint195.center = new SFVec3f(new float[0,15.24,-2.54]);
+HAnimJoint195.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint195.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint195.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT Chest2, OFFSET 0.0 7.62 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 HAnimSegment HAnimSegment196 = createNode("HAnimSegment");
@@ -1112,6 +1134,8 @@ HAnimJoint HAnimJoint212 = createNode("HAnimJoint");
 HAnimJoint212.name = "LeftCollar";
 HAnimJoint212.DEF = "Bvh1_LeftCollar";
 HAnimJoint212.center = new SFVec3f(new float[7.62,48.260000000000005,0]);
+HAnimJoint212.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint212.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint212.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT LeftCollar, OFFSET 7.62 33.02 2.54, CHANNELS 3 Zrotation Xrotation Yrotation
 HAnimSegment HAnimSegment213 = createNode("HAnimSegment");
@@ -1159,6 +1183,8 @@ HAnimJoint HAnimJoint221 = createNode("HAnimJoint");
 HAnimJoint221.name = "l_shoulder";
 HAnimJoint221.DEF = "Bvh1_l_shoulder";
 HAnimJoint221.center = new SFVec3f(new float[20.32,48.260000000000005,0]);
+HAnimJoint221.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint221.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint221.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT LeftShoulder, OFFSET 12.7 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 HAnimSegment HAnimSegment222 = createNode("HAnimSegment");
@@ -1206,6 +1232,8 @@ HAnimJoint HAnimJoint230 = createNode("HAnimJoint");
 HAnimJoint230.name = "l_elbow";
 HAnimJoint230.DEF = "Bvh1_l_elbow";
 HAnimJoint230.center = new SFVec3f(new float[20.32,17.780000000000005,0]);
+HAnimJoint230.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint230.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint230.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT LeftElbow, OFFSET 0.0 -30.48 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 HAnimSegment HAnimSegment231 = createNode("HAnimSegment");
@@ -1253,6 +1281,8 @@ HAnimJoint HAnimJoint239 = createNode("HAnimJoint");
 HAnimJoint239.name = "l_wrist";
 HAnimJoint239.DEF = "Bvh1_l_wrist";
 HAnimJoint239.center = new SFVec3f(new float[20.32,-6.349999999999994,0]);
+HAnimJoint239.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint239.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint239.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT LeftWrist, OFFSET 0.0 -24.13 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 HAnimSegment HAnimSegment240 = createNode("HAnimSegment");
@@ -1325,6 +1355,8 @@ HAnimJoint HAnimJoint251 = createNode("HAnimJoint");
 HAnimJoint251.name = "RightCollar";
 HAnimJoint251.DEF = "Bvh1_RightCollar";
 HAnimJoint251.center = new SFVec3f(new float[-7.62,48.260000000000005,0]);
+HAnimJoint251.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint251.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint251.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT RightCollar, OFFSET -7.62 33.02 2.54, CHANNELS 3 Zrotation Xrotation Yrotation
 HAnimSegment HAnimSegment252 = createNode("HAnimSegment");
@@ -1372,6 +1404,8 @@ HAnimJoint HAnimJoint260 = createNode("HAnimJoint");
 HAnimJoint260.name = "r_shoulder";
 HAnimJoint260.DEF = "Bvh1_r_shoulder";
 HAnimJoint260.center = new SFVec3f(new float[-20.32,48.260000000000005,0]);
+HAnimJoint260.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint260.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint260.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT RightShoulder, OFFSET -12.7 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 HAnimSegment HAnimSegment261 = createNode("HAnimSegment");
@@ -1419,6 +1453,8 @@ HAnimJoint HAnimJoint269 = createNode("HAnimJoint");
 HAnimJoint269.name = "r_elbow";
 HAnimJoint269.DEF = "Bvh1_r_elbow";
 HAnimJoint269.center = new SFVec3f(new float[-20.32,17.780000000000005,0]);
+HAnimJoint269.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint269.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint269.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT RightElbow, OFFSET 0.0 -30.48 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 HAnimSegment HAnimSegment270 = createNode("HAnimSegment");
@@ -1466,6 +1502,8 @@ HAnimJoint HAnimJoint278 = createNode("HAnimJoint");
 HAnimJoint278.name = "r_wrist";
 HAnimJoint278.DEF = "Bvh1_r_wrist";
 HAnimJoint278.center = new SFVec3f(new float[-20.32,-6.349999999999994,0]);
+HAnimJoint278.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint278.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint278.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT RightWrist, OFFSET 0.0 -24.13 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 HAnimSegment HAnimSegment279 = createNode("HAnimSegment");
@@ -1538,6 +1576,8 @@ HAnimJoint HAnimJoint290 = createNode("HAnimJoint");
 HAnimJoint290.name = "Neck";
 HAnimJoint290.DEF = "Bvh1_Neck";
 HAnimJoint290.center = new SFVec3f(new float[0,53.339999,0]);
+HAnimJoint290.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint290.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint290.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT Neck, OFFSET 0.0 38.099999 2.54, CHANNELS 3 Zrotation Xrotation Yrotation
 HAnimSegment HAnimSegment291 = createNode("HAnimSegment");
@@ -1585,6 +1625,8 @@ HAnimJoint HAnimJoint299 = createNode("HAnimJoint");
 HAnimJoint299.name = "skullbase";
 HAnimJoint299.DEF = "Bvh1_skullbase";
 HAnimJoint299.center = new SFVec3f(new float[0,69.849999,0]);
+HAnimJoint299.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint299.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint299.stiffness = new SFVec3f(new float[0,0,0]);
 //BVH JOINT Head, OFFSET 0.0 16.51 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 HAnimSegment HAnimSegment300 = createNode("HAnimSegment");
@@ -1653,199 +1695,199 @@ HAnimJoint186.children[1] = HAnimJoint195;
 
 HAnimJoint70.children[3] = HAnimJoint186;
 
-HAnimHumanoid61.joints[1] = HAnimJoint70;
+HAnimHumanoid61.joints[2] = HAnimJoint70;
 
 HAnimJoint HAnimJoint311 = createNode("HAnimJoint");
 HAnimJoint311.USE = "Bvh1_HumanoidRoot";
-HAnimHumanoid61.joints[2] = HAnimJoint311;
+HAnimHumanoid61.joints[3] = HAnimJoint311;
 
 HAnimJoint HAnimJoint312 = createNode("HAnimJoint");
 HAnimJoint312.USE = "Bvh1_vl5";
-HAnimHumanoid61.joints[3] = HAnimJoint312;
+HAnimHumanoid61.joints[4] = HAnimJoint312;
 
 HAnimJoint HAnimJoint313 = createNode("HAnimJoint");
 HAnimJoint313.USE = "Bvh1_Chest2";
-HAnimHumanoid61.joints[4] = HAnimJoint313;
+HAnimHumanoid61.joints[5] = HAnimJoint313;
 
 HAnimJoint HAnimJoint314 = createNode("HAnimJoint");
 HAnimJoint314.USE = "Bvh1_LeftCollar";
-HAnimHumanoid61.joints[5] = HAnimJoint314;
+HAnimHumanoid61.joints[6] = HAnimJoint314;
 
 HAnimJoint HAnimJoint315 = createNode("HAnimJoint");
 HAnimJoint315.USE = "Bvh1_RightCollar";
-HAnimHumanoid61.joints[6] = HAnimJoint315;
+HAnimHumanoid61.joints[7] = HAnimJoint315;
 
 HAnimJoint HAnimJoint316 = createNode("HAnimJoint");
 HAnimJoint316.USE = "Bvh1_Neck";
-HAnimHumanoid61.joints[7] = HAnimJoint316;
+HAnimHumanoid61.joints[8] = HAnimJoint316;
 
 HAnimJoint HAnimJoint317 = createNode("HAnimJoint");
 HAnimJoint317.USE = "Bvh1_skullbase";
-HAnimHumanoid61.joints[8] = HAnimJoint317;
+HAnimHumanoid61.joints[9] = HAnimJoint317;
 
 HAnimJoint HAnimJoint318 = createNode("HAnimJoint");
 HAnimJoint318.USE = "Bvh1_l_ankle";
-HAnimHumanoid61.joints[9] = HAnimJoint318;
+HAnimHumanoid61.joints[10] = HAnimJoint318;
 
 HAnimJoint HAnimJoint319 = createNode("HAnimJoint");
 HAnimJoint319.USE = "Bvh1_r_ankle";
-HAnimHumanoid61.joints[10] = HAnimJoint319;
+HAnimHumanoid61.joints[11] = HAnimJoint319;
 
 HAnimJoint HAnimJoint320 = createNode("HAnimJoint");
 HAnimJoint320.USE = "Bvh1_l_elbow";
-HAnimHumanoid61.joints[11] = HAnimJoint320;
+HAnimHumanoid61.joints[12] = HAnimJoint320;
 
 HAnimJoint HAnimJoint321 = createNode("HAnimJoint");
 HAnimJoint321.USE = "Bvh1_r_elbow";
-HAnimHumanoid61.joints[12] = HAnimJoint321;
+HAnimHumanoid61.joints[13] = HAnimJoint321;
 
 HAnimJoint HAnimJoint322 = createNode("HAnimJoint");
 HAnimJoint322.USE = "Bvh1_l_hip";
-HAnimHumanoid61.joints[13] = HAnimJoint322;
+HAnimHumanoid61.joints[14] = HAnimJoint322;
 
 HAnimJoint HAnimJoint323 = createNode("HAnimJoint");
 HAnimJoint323.USE = "Bvh1_r_hip";
-HAnimHumanoid61.joints[14] = HAnimJoint323;
+HAnimHumanoid61.joints[15] = HAnimJoint323;
 
 HAnimJoint HAnimJoint324 = createNode("HAnimJoint");
 HAnimJoint324.USE = "Bvh1_l_knee";
-HAnimHumanoid61.joints[15] = HAnimJoint324;
+HAnimHumanoid61.joints[16] = HAnimJoint324;
 
 HAnimJoint HAnimJoint325 = createNode("HAnimJoint");
 HAnimJoint325.USE = "Bvh1_r_knee";
-HAnimHumanoid61.joints[16] = HAnimJoint325;
+HAnimHumanoid61.joints[17] = HAnimJoint325;
 
 HAnimJoint HAnimJoint326 = createNode("HAnimJoint");
 HAnimJoint326.USE = "Bvh1_l_midtarsal";
-HAnimHumanoid61.joints[17] = HAnimJoint326;
+HAnimHumanoid61.joints[18] = HAnimJoint326;
 
 HAnimJoint HAnimJoint327 = createNode("HAnimJoint");
 HAnimJoint327.USE = "Bvh1_r_midtarsal";
-HAnimHumanoid61.joints[18] = HAnimJoint327;
+HAnimHumanoid61.joints[19] = HAnimJoint327;
 
 HAnimJoint HAnimJoint328 = createNode("HAnimJoint");
 HAnimJoint328.USE = "Bvh1_l_shoulder";
-HAnimHumanoid61.joints[19] = HAnimJoint328;
+HAnimHumanoid61.joints[20] = HAnimJoint328;
 
 HAnimJoint HAnimJoint329 = createNode("HAnimJoint");
 HAnimJoint329.USE = "Bvh1_r_shoulder";
-HAnimHumanoid61.joints[20] = HAnimJoint329;
+HAnimHumanoid61.joints[21] = HAnimJoint329;
 
 HAnimJoint HAnimJoint330 = createNode("HAnimJoint");
 HAnimJoint330.USE = "Bvh1_l_wrist";
-HAnimHumanoid61.joints[21] = HAnimJoint330;
+HAnimHumanoid61.joints[22] = HAnimJoint330;
 
 HAnimJoint HAnimJoint331 = createNode("HAnimJoint");
 HAnimJoint331.USE = "Bvh1_r_wrist";
-HAnimHumanoid61.joints[22] = HAnimJoint331;
+HAnimHumanoid61.joints[23] = HAnimJoint331;
 
 HAnimSegment HAnimSegment332 = createNode("HAnimSegment");
 HAnimSegment332.USE = "Bvh1_sacrum";
-HAnimHumanoid61.segments[23] = HAnimSegment332;
+HAnimHumanoid61.segments[24] = HAnimSegment332;
 
 HAnimSegment HAnimSegment333 = createNode("HAnimSegment");
 HAnimSegment333.USE = "Bvh1_l5";
-HAnimHumanoid61.segments[24] = HAnimSegment333;
+HAnimHumanoid61.segments[25] = HAnimSegment333;
 
 HAnimSegment HAnimSegment334 = createNode("HAnimSegment");
 HAnimSegment334.USE = "Bvh1_vl5_to_Chest2";
-HAnimHumanoid61.segments[25] = HAnimSegment334;
+HAnimHumanoid61.segments[26] = HAnimSegment334;
 
 HAnimSegment HAnimSegment335 = createNode("HAnimSegment");
 HAnimSegment335.USE = "Bvh1_Chest2_to_LeftCollar";
-HAnimHumanoid61.segments[26] = HAnimSegment335;
+HAnimHumanoid61.segments[27] = HAnimSegment335;
 
 HAnimSegment HAnimSegment336 = createNode("HAnimSegment");
 HAnimSegment336.USE = "Bvh1_Chest2_to_RightCollar";
-HAnimHumanoid61.segments[27] = HAnimSegment336;
+HAnimHumanoid61.segments[28] = HAnimSegment336;
 
 HAnimSegment HAnimSegment337 = createNode("HAnimSegment");
 HAnimSegment337.USE = "Bvh1_Chest2_to_Neck";
-HAnimHumanoid61.segments[28] = HAnimSegment337;
+HAnimHumanoid61.segments[29] = HAnimSegment337;
 
 HAnimSegment HAnimSegment338 = createNode("HAnimSegment");
 HAnimSegment338.USE = "Bvh1_skull";
-HAnimHumanoid61.segments[29] = HAnimSegment338;
+HAnimHumanoid61.segments[30] = HAnimSegment338;
 
 HAnimSegment HAnimSegment339 = createNode("HAnimSegment");
 HAnimSegment339.USE = "Bvh1_l_calf";
-HAnimHumanoid61.segments[30] = HAnimSegment339;
+HAnimHumanoid61.segments[31] = HAnimSegment339;
 
 HAnimSegment HAnimSegment340 = createNode("HAnimSegment");
 HAnimSegment340.USE = "Bvh1_r_calf";
-HAnimHumanoid61.segments[31] = HAnimSegment340;
+HAnimHumanoid61.segments[32] = HAnimSegment340;
 
 HAnimSegment HAnimSegment341 = createNode("HAnimSegment");
 HAnimSegment341.USE = "Bvh1_l_forearm";
-HAnimHumanoid61.segments[32] = HAnimSegment341;
+HAnimHumanoid61.segments[33] = HAnimSegment341;
 
 HAnimSegment HAnimSegment342 = createNode("HAnimSegment");
 HAnimSegment342.USE = "Bvh1_r_forearm";
-HAnimHumanoid61.segments[33] = HAnimSegment342;
+HAnimHumanoid61.segments[34] = HAnimSegment342;
 
 HAnimSegment HAnimSegment343 = createNode("HAnimSegment");
 HAnimSegment343.USE = "Bvh1_l_hand";
-HAnimHumanoid61.segments[34] = HAnimSegment343;
+HAnimHumanoid61.segments[35] = HAnimSegment343;
 
 HAnimSegment HAnimSegment344 = createNode("HAnimSegment");
 HAnimSegment344.USE = "Bvh1_r_hand";
-HAnimHumanoid61.segments[35] = HAnimSegment344;
+HAnimHumanoid61.segments[36] = HAnimSegment344;
 
 HAnimSegment HAnimSegment345 = createNode("HAnimSegment");
 HAnimSegment345.USE = "Bvh1_l_hindfoot";
-HAnimHumanoid61.segments[36] = HAnimSegment345;
+HAnimHumanoid61.segments[37] = HAnimSegment345;
 
 HAnimSegment HAnimSegment346 = createNode("HAnimSegment");
 HAnimSegment346.USE = "Bvh1_r_hindfoot";
-HAnimHumanoid61.segments[37] = HAnimSegment346;
+HAnimHumanoid61.segments[38] = HAnimSegment346;
 
 HAnimSegment HAnimSegment347 = createNode("HAnimSegment");
 HAnimSegment347.USE = "Bvh1_l_middistal";
-HAnimHumanoid61.segments[38] = HAnimSegment347;
+HAnimHumanoid61.segments[39] = HAnimSegment347;
 
 HAnimSegment HAnimSegment348 = createNode("HAnimSegment");
 HAnimSegment348.USE = "Bvh1_r_middistal";
-HAnimHumanoid61.segments[39] = HAnimSegment348;
+HAnimHumanoid61.segments[40] = HAnimSegment348;
 
 HAnimSegment HAnimSegment349 = createNode("HAnimSegment");
 HAnimSegment349.USE = "Bvh1_l_thigh";
-HAnimHumanoid61.segments[40] = HAnimSegment349;
+HAnimHumanoid61.segments[41] = HAnimSegment349;
 
 HAnimSegment HAnimSegment350 = createNode("HAnimSegment");
 HAnimSegment350.USE = "Bvh1_r_thigh";
-HAnimHumanoid61.segments[41] = HAnimSegment350;
+HAnimHumanoid61.segments[42] = HAnimSegment350;
 
 HAnimSegment HAnimSegment351 = createNode("HAnimSegment");
 HAnimSegment351.USE = "Bvh1_l_upperarm";
-HAnimHumanoid61.segments[42] = HAnimSegment351;
+HAnimHumanoid61.segments[43] = HAnimSegment351;
 
 HAnimSegment HAnimSegment352 = createNode("HAnimSegment");
 HAnimSegment352.USE = "Bvh1_r_upperarm";
-HAnimHumanoid61.segments[43] = HAnimSegment352;
+HAnimHumanoid61.segments[44] = HAnimSegment352;
 
 HAnimSite HAnimSite353 = createNode("HAnimSite");
 HAnimSite353.USE = "Bvh1_HumanoidRoot_view";
-HAnimHumanoid61.viewpoints[44] = HAnimSite353;
+HAnimHumanoid61.viewpoints[45] = HAnimSite353;
 
 HAnimSite HAnimSite354 = createNode("HAnimSite");
 HAnimSite354.USE = "Bvh1_skull_tip";
-HAnimHumanoid61.viewpoints[45] = HAnimSite354;
+HAnimHumanoid61.viewpoints[46] = HAnimSite354;
 
 HAnimSite HAnimSite355 = createNode("HAnimSite");
 HAnimSite355.USE = "Bvh1_l_hand_tip";
-HAnimHumanoid61.viewpoints[46] = HAnimSite355;
+HAnimHumanoid61.viewpoints[47] = HAnimSite355;
 
 HAnimSite HAnimSite356 = createNode("HAnimSite");
 HAnimSite356.USE = "Bvh1_r_hand_tip";
-HAnimHumanoid61.viewpoints[47] = HAnimSite356;
+HAnimHumanoid61.viewpoints[48] = HAnimSite356;
 
 HAnimSite HAnimSite357 = createNode("HAnimSite");
 HAnimSite357.USE = "Bvh1_l_middistal_tip";
-HAnimHumanoid61.viewpoints[48] = HAnimSite357;
+HAnimHumanoid61.viewpoints[49] = HAnimSite357;
 
 HAnimSite HAnimSite358 = createNode("HAnimSite");
 HAnimSite358.USE = "Bvh1_r_middistal_tip";
-HAnimHumanoid61.viewpoints[49] = HAnimSite358;
+HAnimHumanoid61.viewpoints[50] = HAnimSite358;
 
 children[4] = HAnimHumanoid61;
 

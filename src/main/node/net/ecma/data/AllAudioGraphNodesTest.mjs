@@ -14,6 +14,7 @@ import { Appearance } from './x3d.mjs';
 import { AcousticProperties } from './x3d.mjs';
 import { Material } from './x3d.mjs';
 import { SpatialSound } from './x3d.mjs';
+import { undefined } from './x3d.mjs';
 import { Analyser } from './x3d.mjs';
 import { AudioDestination } from './x3d.mjs';
 import { BiquadFilter } from './x3d.mjs';
@@ -30,6 +31,7 @@ import { BufferAudioSource } from './x3d.mjs';
 import { ListenerPointSource } from './x3d.mjs';
 import { MicrophoneSource } from './x3d.mjs';
 import { OscillatorSource } from './x3d.mjs';
+import { SFFloat } from './x3d.mjs';
 import { StreamAudioSource } from './x3d.mjs';
 import { Sound } from './x3d.mjs';
 import { SFVec3f } from './x3d.mjs';
@@ -95,41 +97,74 @@ var X3D0 =  new X3D({
                     new Material({}))}))}),
 
             new SpatialSound({
+              distanceModel : new SFString("INVERSE"),
+              dopplerEnabled : new undefined("false"),
               children : new MFNode([
                 new Analyser({
+                  channelCountMode : new SFString("MAX"),
+                  channelInterpretation : new SFString("SPEAKERS"),
                   children : new MFNode([
                     new AudioDestination({
+                      channelCountMode : new SFString("MAX"),
+                      channelInterpretation : new SFString("SPEAKERS"),
                       children : new MFNode([
                         new BiquadFilter({
+                          type : field.TYPE_LOWPASS,
+                          channelCountMode : new SFString("MAX"),
+                          channelInterpretation : new SFString("SPEAKERS"),
                           children : new MFNode([
                             new ChannelMerger({
+                              channelCountMode : new SFString("MAX"),
+                              channelInterpretation : new SFString("SPEAKERS"),
                               children : new MFNode([
                                 new ChannelSelector({
+                                  channelCountMode : new SFString("MAX"),
+                                  channelInterpretation : new SFString("SPEAKERS"),
                                   children : new MFNode([
                                     new ChannelSplitter({
+                                      channelCountMode : new SFString("MAX"),
+                                      channelInterpretation : new SFString("SPEAKERS"),
                                       outputs : new SFNode(
                                         new Convolver({
+                                          channelCountMode : new SFString("MAX"),
+                                          channelInterpretation : new SFString("SPEAKERS"),
                                           children : new MFNode([
                                             new Delay({
+                                              channelCountMode : new SFString("MAX"),
+                                              channelInterpretation : new SFString("SPEAKERS"),
                                               children : new MFNode([
                                                 new DynamicsCompressor({
+                                                  channelCountMode : new SFString("MAX"),
+                                                  channelInterpretation : new SFString("SPEAKERS"),
                                                   children : new MFNode([
                                                     new Gain({
+                                                      channelCountMode : new SFString("MAX"),
+                                                      channelInterpretation : new SFString("SPEAKERS"),
                                                       children : new MFNode([
                                                         new StreamAudioDestination({
+                                                          channelCountMode : new SFString("MAX"),
+                                                          channelInterpretation : new SFString("SPEAKERS"),
                                                           children : new MFNode([
                                                             new WaveShaper({
+                                                              channelCountMode : new SFString("MAX"),
+                                                              channelInterpretation : new SFString("SPEAKERS"),
                                                               /*The following X3DSoundSourceNode nodes have no audio-graph children*/
                                                               children : new MFNode([
-                                                                new BufferAudioSource({}),
+                                                                new BufferAudioSource({
+                                                                  channelCountMode : new SFString("MAX"),
+                                                                  channelInterpretation : new SFString("SPEAKERS")}),
 
-                                                                new ListenerPointSource({}),
+                                                                new ListenerPointSource({
+                                                                  dopplerEnabled : new undefined("false")}),
 
                                                                 new MicrophoneSource({}),
 
-                                                                new OscillatorSource({}),
+                                                                new OscillatorSource({
+                                                                  frequency : new SFFloat(440)}),
 
-                                                                new StreamAudioSource({})])})])})])})])})])})])}))})])})])})])})])})])})])}),
+                                                                new StreamAudioSource({
+                                                                  channelCountMode : new SFString("MAX"),
+                                                                  channelInterpretation : new SFString("SPEAKERS")})])})])})])})])})])})])}))})])})])})])})])})])})])}),
 
             new Sound({
               location : new SFVec3f([0,1.6,0]),

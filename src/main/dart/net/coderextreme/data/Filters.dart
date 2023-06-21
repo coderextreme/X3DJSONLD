@@ -159,23 +159,34 @@ var X3D0 =  X3D(
                       radius_ : 500))]),
 
             AudioDestination(
+              channelCountMode_ : SFString('MAX'),
               children_ : [
                 DynamicsCompressor(
+                  channelCountMode_ : SFString('MAX'),
+                  channelInterpretation_ : SFString('SPEAKERS'),
                   children_ : [
                     Gain(
+                      channelCountMode_ : SFString('MAX'),
+                      channelInterpretation_ : SFString('SPEAKERS'),
                       children_ : [
                         SpatialSound(
                           USE_ : SFString('Audio1'),
                           children_ : [
                             Gain(
+                              channelCountMode_ : SFString('MAX'),
+                              channelInterpretation_ : SFString('SPEAKERS'),
                               children_ : [
                                 Analyser(
+                                  channelCountMode_ : SFString('MAX'),
+                                  channelInterpretation_ : SFString('SPEAKERS'),
                                   children_ : [
                                     BiquadFilter(
                                       type_ : SFString("allpass"),
                                       detune_ : 50,
                                       frequency_ : 600,
                                       qualityFactor_ : 30,
+                                      channelCountMode_ : SFString('MAX'),
+                                      channelInterpretation_ : SFString('SPEAKERS'),
                                       children_ : [
                                         AudioClip(
                                           loop_ : true,
@@ -188,14 +199,20 @@ var X3D0 =  X3D(
                           USE_ : SFString('Audio2'),
                           children_ : [
                             Gain(
+                              channelCountMode_ : SFString('MAX'),
+                              channelInterpretation_ : SFString('SPEAKERS'),
                               children_ : [
                                 Analyser(
+                                  channelCountMode_ : SFString('MAX'),
+                                  channelInterpretation_ : SFString('SPEAKERS'),
                                   children_ : [
                                     BiquadFilter(
                                       type_ : SFString("allpass"),
                                       detune_ : 15,
                                       frequency_ : 600,
                                       qualityFactor_ : 15,
+                                      channelCountMode_ : SFString('MAX'),
+                                      channelInterpretation_ : SFString('SPEAKERS'),
                                       children_ : [
                                         AudioClip(
                                           loop_ : true,
@@ -208,13 +225,19 @@ var X3D0 =  X3D(
                           USE_ : SFString('Audio3'),
                           children_ : [
                             Gain(
+                              channelCountMode_ : SFString('MAX'),
+                              channelInterpretation_ : SFString('SPEAKERS'),
                               children_ : [
                                 Analyser(
+                                  channelCountMode_ : SFString('MAX'),
+                                  channelInterpretation_ : SFString('SPEAKERS'),
                                   children_ : [
                                     BiquadFilter(
                                       type_ : SFString("allpass"),
                                       frequency_ : 1000,
                                       qualityFactor_ : 0,
+                                      channelCountMode_ : SFString('MAX'),
+                                      channelInterpretation_ : SFString('SPEAKERS'),
                                       children_ : [
                                         AudioClip(
                                           loop_ : true,
