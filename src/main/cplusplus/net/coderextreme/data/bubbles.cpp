@@ -117,27 +117,27 @@ Appearance22->setMaterial(*Material23);
 CComposedCubeMapTexture* ComposedCubeMapTexture24 = (CComposedCubeMapTexture *)(m_pScene.createNode("ComposedCubeMapTexture"));
 CImageTexture* ImageTexture25 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture25->setUrl(new CString[2]{"../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_back.png"}, 2);
-ComposedCubeMapTexture24->setBackTexture(*ImageTexture25);
+ComposedCubeMapTexture24->setBack(*ImageTexture25);
 
 CImageTexture* ImageTexture26 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture26->setUrl(new CString[2]{"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_bottom.png"}, 2);
-ComposedCubeMapTexture24->setBottomTexture(*ImageTexture26);
+ComposedCubeMapTexture24->setBottom(*ImageTexture26);
 
 CImageTexture* ImageTexture27 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture27->setUrl(new CString[2]{"../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_front.png"}, 2);
-ComposedCubeMapTexture24->setFrontTexture(*ImageTexture27);
+ComposedCubeMapTexture24->setFront(*ImageTexture27);
 
 CImageTexture* ImageTexture28 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture28->setUrl(new CString[2]{"../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_left.png"}, 2);
-ComposedCubeMapTexture24->setLeftTexture(*ImageTexture28);
+ComposedCubeMapTexture24->setLeft(*ImageTexture28);
 
 CImageTexture* ImageTexture29 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture29->setUrl(new CString[2]{"../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_right.png"}, 2);
-ComposedCubeMapTexture24->setRightTexture(*ImageTexture29);
+ComposedCubeMapTexture24->setRight(*ImageTexture29);
 
 CImageTexture* ImageTexture30 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture30->setUrl(new CString[2]{"../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_top.png"}, 2);
-ComposedCubeMapTexture24->setTopTexture(*ImageTexture30);
+ComposedCubeMapTexture24->setTop(*ImageTexture30);
 
 Appearance22->setTexture(*ComposedCubeMapTexture24);
 

@@ -273,12 +273,19 @@ group->addChildren(*Transform43);
 
 CListenerPointSource* ListenerPointSource55 = (CListenerPointSource *)(m_pScene.createNode("ListenerPointSource"));
 ListenerPointSource55->setTrackCurrentView(True);
+ListenerPointSource55->setDopplerEnabled("false");
 group->addChildren(*ListenerPointSource55);
 
 CStreamAudioDestination* StreamAudioDestination56 = (CStreamAudioDestination *)(m_pScene.createNode("StreamAudioDestination"));
+StreamAudioDestination56->setChannelCountMode("MAX");
+StreamAudioDestination56->setChannelInterpretation("SPEAKERS");
 CSpatialSound* SpatialSound57 = (CSpatialSound *)(m_pScene.createNode("SpatialSound"));
 SpatialSound57->setDEF("Audio1");
+SpatialSound57->setDistanceModel("INVERSE");
+SpatialSound57->setDopplerEnabled("false");
 CGain* Gain58 = (CGain *)(m_pScene.createNode("Gain"));
+Gain58->setChannelCountMode("MAX");
+Gain58->setChannelInterpretation("SPEAKERS");
 CAudioClip* AudioClip59 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
 AudioClip59->setLoop(True);
 AudioClip59->setPauseTime(-1);
@@ -293,7 +300,11 @@ StreamAudioDestination56->addChildren(*SpatialSound57);
 
 CSpatialSound* SpatialSound60 = (CSpatialSound *)(m_pScene.createNode("SpatialSound"));
 SpatialSound60->setDEF("Audio2");
+SpatialSound60->setDistanceModel("INVERSE");
+SpatialSound60->setDopplerEnabled("false");
 CGain* Gain61 = (CGain *)(m_pScene.createNode("Gain"));
+Gain61->setChannelCountMode("MAX");
+Gain61->setChannelInterpretation("SPEAKERS");
 CAudioClip* AudioClip62 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
 AudioClip62->setLoop(True);
 AudioClip62->setPauseTime(-1);
