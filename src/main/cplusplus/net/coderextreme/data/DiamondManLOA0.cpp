@@ -191,17 +191,21 @@ MetadataString37->setName("usageRestrictions");
 MetadataString37->setValue(new CString[1]{"PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."}, 1);
 MetadataSet31->addValue(*MetadataString37);
 
-HAnimHumanoid30->setMetadata(*MetadataSet31);
+HAnimHumanoid30->setValue(*MetadataSet31);
 
 CHAnimJoint* HAnimJoint38 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint38->setName("humanoid_root");
 HAnimJoint38->setDEF("hanim_humanoid_root");
 HAnimJoint38->setCenter(new float[3]{0,0.824,0.0277});
+HAnimJoint38->setUlimit(new float[3]{0,0,0});
+HAnimJoint38->setLlimit(new float[3]{0,0,0});
 HAnimJoint38->setStiffness(new float[3]{0,0,0});
 CHAnimJoint* HAnimJoint39 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint39->setName("sacroiliac");
 HAnimJoint39->setDEF("hanim_sacroiliac");
 HAnimJoint39->setCenter(new float[3]{0,0.9149,0.0016});
+HAnimJoint39->setUlimit(new float[3]{0,0,0});
+HAnimJoint39->setLlimit(new float[3]{0,0,0});
 HAnimJoint39->setStiffness(new float[3]{0,0,0});
 CHAnimSegment* HAnimSegment40 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment40->setName("pelvis");

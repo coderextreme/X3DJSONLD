@@ -106,27 +106,27 @@ CComposedCubeMapTexture* ComposedCubeMapTexture22 = (CComposedCubeMapTexture *)(
 ComposedCubeMapTexture22->setDEF("texture");
 CImageTexture* ImageTexture23 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture23->setUrl(new CString[2]{"../resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"}, 2);
-ComposedCubeMapTexture22->setBackTexture(*ImageTexture23);
+ComposedCubeMapTexture22->setBack(*ImageTexture23);
 
 CImageTexture* ImageTexture24 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture24->setUrl(new CString[2]{"../resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"}, 2);
-ComposedCubeMapTexture22->setBottomTexture(*ImageTexture24);
+ComposedCubeMapTexture22->setBottom(*ImageTexture24);
 
 CImageTexture* ImageTexture25 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture25->setUrl(new CString[2]{"../resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"}, 2);
-ComposedCubeMapTexture22->setFrontTexture(*ImageTexture25);
+ComposedCubeMapTexture22->setFront(*ImageTexture25);
 
 CImageTexture* ImageTexture26 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture26->setUrl(new CString[2]{"../resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"}, 2);
-ComposedCubeMapTexture22->setLeftTexture(*ImageTexture26);
+ComposedCubeMapTexture22->setLeft(*ImageTexture26);
 
 CImageTexture* ImageTexture27 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture27->setUrl(new CString[2]{"../resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"}, 2);
-ComposedCubeMapTexture22->setRightTexture(*ImageTexture27);
+ComposedCubeMapTexture22->setRight(*ImageTexture27);
 
 CImageTexture* ImageTexture28 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture28->setUrl(new CString[2]{"../resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"}, 2);
-ComposedCubeMapTexture22->setTopTexture(*ImageTexture28);
+ComposedCubeMapTexture22->setTop(*ImageTexture28);
 
 Appearance20->setTexture(*ComposedCubeMapTexture22);
 

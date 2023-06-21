@@ -325,7 +325,7 @@ MetadataString65->setName("extraChildTest");
 MetadataString65->setValue(new CString[1]{"checks MetadataSet addValue() method"}, 1);
 MetadataSet63->addValue(*MetadataString65);
 
-Text62->setMetadata(*MetadataSet63);
+Text62->setValue(*MetadataSet63);
 
 CFontStyle* FontStyle66 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
 FontStyle66->setJustify(new CString[2]{"MIDDLE","MIDDLE"}, 2);
@@ -831,7 +831,7 @@ CMetadataString* MetadataString141 = (CMetadataString *)(m_pScene.createNode("Me
 MetadataString141->setName("findThisNameValue");
 MetadataString141->setDEF("FindableMetadataStringTest");
 MetadataString141->setValue(new CString[1]{"test case"}, 1);
-Shape140->setMetadata(*MetadataString141);
+Shape140->setValue(*MetadataString141);
 
 CAppearance* Appearance142 = (CAppearance *)(m_pScene.createNode("Appearance"));
 Appearance142->setDEF("DeclarativeAppearanceExample");
