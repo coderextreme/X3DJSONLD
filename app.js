@@ -7,7 +7,7 @@ var glob = require( 'glob' );
 var config = require("./src/main/node/config");
 var port = process.env.PORT || 3000;
 var path = require('path');
-var DOMParser = require('xmldom').DOMParser;
+const { DOMParser, XMLSerializer } = require('@xmldom/xmldom');
 
 var X3DJSONLD = require('./src/main/node/X3DJSONLD.js');
 
