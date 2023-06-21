@@ -106,7 +106,7 @@
           },
           {
             "@name":"translated",
-            "@content":"18 November 2021"
+            "@content":"21 June 2023"
           },
           {
             "@name":"generator",
@@ -454,6 +454,8 @@
                     "@DEF":"Bvh1_HumanoidRoot",
                     "@scale":[0.0254,0.0254,0.0254],
                     "@translation":[0.000,0.806,0.194],
+                    "@ulimit":[0,0,0],
+                    "@llimit":[0,0,0],
                     "@stiffness":[0,0,0],
                     "-children":[
                       {
@@ -694,6 +696,8 @@
                           "@name":"l_hip",
                           "@DEF":"Bvh1_l_hip",
                           "@center":[7.62,0.0,0.0],
+                          "@ulimit":[0,0,0],
+                          "@llimit":[0,0,0],
                           "@stiffness":[0,0,0],
                           "-children":[
                             {
@@ -760,6 +764,8 @@
                                 "@name":"l_knee",
                                 "@DEF":"Bvh1_l_knee",
                                 "@center":[7.62,-44.449999,0.0],
+                                "@ulimit":[0,0,0],
+                                "@llimit":[0,0,0],
                                 "@stiffness":[0,0,0],
                                 "-children":[
                                   {
@@ -826,6 +832,8 @@
                                       "@name":"l_ankle",
                                       "@DEF":"Bvh1_l_ankle",
                                       "@center":[7.62,-83.819998,0.0],
+                                      "@ulimit":[0,0,0],
+                                      "@llimit":[0,0,0],
                                       "@stiffness":[0,0,0],
                                       "-children":[
                                         {
@@ -892,6 +900,8 @@
                                             "@name":"l_midtarsal",
                                             "@DEF":"Bvh1_l_midtarsal",
                                             "@center":[7.62,-92.709998,-3.81],
+                                            "@ulimit":[0,0,0],
+                                            "@llimit":[0,0,0],
                                             "@stiffness":[0,0,0],
                                             "-children":[
                                               {
@@ -992,6 +1002,8 @@
                           "@name":"r_hip",
                           "@DEF":"Bvh1_r_hip",
                           "@center":[-7.62,0.0,0.0],
+                          "@ulimit":[0,0,0],
+                          "@llimit":[0,0,0],
                           "@stiffness":[0,0,0],
                           "-children":[
                             {
@@ -1058,6 +1070,8 @@
                                 "@name":"r_knee",
                                 "@DEF":"Bvh1_r_knee",
                                 "@center":[-7.62,-44.449999,0.0],
+                                "@ulimit":[0,0,0],
+                                "@llimit":[0,0,0],
                                 "@stiffness":[0,0,0],
                                 "-children":[
                                   {
@@ -1124,6 +1138,8 @@
                                       "@name":"r_ankle",
                                       "@DEF":"Bvh1_r_ankle",
                                       "@center":[-7.62,-83.819998,0.0],
+                                      "@ulimit":[0,0,0],
+                                      "@llimit":[0,0,0],
                                       "@stiffness":[0,0,0],
                                       "-children":[
                                         {
@@ -1190,6 +1206,8 @@
                                             "@name":"r_midtarsal",
                                             "@DEF":"Bvh1_r_midtarsal",
                                             "@center":[-7.62,-92.709998,-3.81],
+                                            "@ulimit":[0,0,0],
+                                            "@llimit":[0,0,0],
                                             "@stiffness":[0,0,0],
                                             "-children":[
                                               {
@@ -1290,6 +1308,8 @@
                           "@name":"vl5",
                           "@DEF":"Bvh1_vl5",
                           "@center":[0.0,7.62,-2.54],
+                          "@ulimit":[0,0,0],
+                          "@llimit":[0,0,0],
                           "@stiffness":[0,0,0],
                           "-children":[
                             {
@@ -1356,6 +1376,8 @@
                                 "@name":"Chest2",
                                 "@DEF":"Bvh1_Chest2",
                                 "@center":[0.0,15.24,-2.54],
+                                "@ulimit":[0,0,0],
+                                "@llimit":[0,0,0],
                                 "@stiffness":[0,0,0],
                                 "-children":[
                                   {
@@ -1472,6 +1494,8 @@
                                       "@name":"LeftCollar",
                                       "@DEF":"Bvh1_LeftCollar",
                                       "@center":[7.62,48.260000000000005,0.0],
+                                      "@ulimit":[0,0,0],
+                                      "@llimit":[0,0,0],
                                       "@stiffness":[0,0,0],
                                       "-children":[
                                         {
@@ -1538,6 +1562,8 @@
                                             "@name":"l_shoulder",
                                             "@DEF":"Bvh1_l_shoulder",
                                             "@center":[20.32,48.260000000000005,0.0],
+                                            "@ulimit":[0,0,0],
+                                            "@llimit":[0,0,0],
                                             "@stiffness":[0,0,0],
                                             "-children":[
                                               {
@@ -1604,6 +1630,8 @@
                                                   "@name":"l_elbow",
                                                   "@DEF":"Bvh1_l_elbow",
                                                   "@center":[20.32,17.780000000000005,0.0],
+                                                  "@ulimit":[0,0,0],
+                                                  "@llimit":[0,0,0],
                                                   "@stiffness":[0,0,0],
                                                   "-children":[
                                                     {
@@ -1670,6 +1698,8 @@
                                                         "@name":"l_wrist",
                                                         "@DEF":"Bvh1_l_wrist",
                                                         "@center":[20.32,-6.349999999999994,0.0],
+                                                        "@ulimit":[0,0,0],
+                                                        "@llimit":[0,0,0],
                                                         "@stiffness":[0,0,0],
                                                         "-children":[
                                                           {
@@ -1770,6 +1800,8 @@
                                       "@name":"RightCollar",
                                       "@DEF":"Bvh1_RightCollar",
                                       "@center":[-7.62,48.260000000000005,0.0],
+                                      "@ulimit":[0,0,0],
+                                      "@llimit":[0,0,0],
                                       "@stiffness":[0,0,0],
                                       "-children":[
                                         {
@@ -1836,6 +1868,8 @@
                                             "@name":"r_shoulder",
                                             "@DEF":"Bvh1_r_shoulder",
                                             "@center":[-20.32,48.260000000000005,0.0],
+                                            "@ulimit":[0,0,0],
+                                            "@llimit":[0,0,0],
                                             "@stiffness":[0,0,0],
                                             "-children":[
                                               {
@@ -1902,6 +1936,8 @@
                                                   "@name":"r_elbow",
                                                   "@DEF":"Bvh1_r_elbow",
                                                   "@center":[-20.32,17.780000000000005,0.0],
+                                                  "@ulimit":[0,0,0],
+                                                  "@llimit":[0,0,0],
                                                   "@stiffness":[0,0,0],
                                                   "-children":[
                                                     {
@@ -1968,6 +2004,8 @@
                                                         "@name":"r_wrist",
                                                         "@DEF":"Bvh1_r_wrist",
                                                         "@center":[-20.32,-6.349999999999994,0.0],
+                                                        "@ulimit":[0,0,0],
+                                                        "@llimit":[0,0,0],
                                                         "@stiffness":[0,0,0],
                                                         "-children":[
                                                           {
@@ -2068,6 +2106,8 @@
                                       "@name":"Neck",
                                       "@DEF":"Bvh1_Neck",
                                       "@center":[0.0,53.339999,0.0],
+                                      "@ulimit":[0,0,0],
+                                      "@llimit":[0,0,0],
                                       "@stiffness":[0,0,0],
                                       "-children":[
                                         {
@@ -2134,6 +2174,8 @@
                                             "@name":"skullbase",
                                             "@DEF":"Bvh1_skullbase",
                                             "@center":[0.0,69.849999,0.0],
+                                            "@ulimit":[0,0,0],
+                                            "@llimit":[0,0,0],
                                             "@stiffness":[0,0,0],
                                             "-children":[
                                               {

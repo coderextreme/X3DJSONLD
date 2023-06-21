@@ -56,7 +56,7 @@
           },
           {
             "@name":"translated",
-            "@content":"18 November 2021"
+            "@content":"21 June 2023"
           },
           {
             "@name":"generator",
@@ -337,18 +337,25 @@
           },
           { "ListenerPointSource":
             {
-              "@trackCurrentView":true
+              "@trackCurrentView":true,
+              "@dopplerEnabled":false
             }
           },
           { "StreamAudioDestination":
             {
+              "@channelCountMode":"MAX",
+              "@channelInterpretation":"SPEAKERS",
               "-children":[
                 { "SpatialSound":
                   {
                     "@DEF":"Audio1",
+                    "@distanceModel":"INVERSE",
+                    "@dopplerEnabled":false,
                     "-children":[
                       { "Gain":
                         {
+                          "@channelCountMode":"MAX",
+                          "@channelInterpretation":"SPEAKERS",
                           "-source":[
                             { "AudioClip":
                               {
@@ -368,9 +375,13 @@
                 { "SpatialSound":
                   {
                     "@DEF":"Audio2",
+                    "@distanceModel":"INVERSE",
+                    "@dopplerEnabled":false,
                     "-children":[
                       { "Gain":
                         {
+                          "@channelCountMode":"MAX",
+                          "@channelInterpretation":"SPEAKERS",
                           "-source":[
                             { "AudioClip":
                               {
