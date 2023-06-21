@@ -45,6 +45,7 @@ public class sphere {
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("3.3")
       .setHead(new head()
+        .addComponent(new component().setName("Scripting").setLevel(1))
         .addMeta(new meta().setName("title").setContent("sphere.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("generator").setContent("manual"))

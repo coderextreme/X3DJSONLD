@@ -14,6 +14,7 @@ ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
       var X3D0 =  (new autoclass.X3D()).setProfile("Interchange").setVersion("3.3")
       .setHead((new autoclass.head())
+        .addComponent((new autoclass.component()).setName("Scripting").setLevel(1))
         .addMeta((new autoclass.meta()).setName("title").setContent("sphere.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))

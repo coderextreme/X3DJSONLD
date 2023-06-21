@@ -189,23 +189,34 @@ var X3D0 =  new X3D({
                       radius : new SFFloat(500)}))})])}),
 
             new AudioDestination({
+              channelCountMode : new SFString("MAX"),
               children : new MFNode([
                 new DynamicsCompressor({
+                  channelCountMode : new SFString("MAX"),
+                  channelInterpretation : new SFString("SPEAKERS"),
                   children : new MFNode([
                     new Gain({
+                      channelCountMode : new SFString("MAX"),
+                      channelInterpretation : new SFString("SPEAKERS"),
                       children : new MFNode([
                         new SpatialSound({
                           USE : new SFString("Audio1"),
                           children : new MFNode([
                             new Gain({
+                              channelCountMode : new SFString("MAX"),
+                              channelInterpretation : new SFString("SPEAKERS"),
                               children : new MFNode([
                                 new Analyser({
+                                  channelCountMode : new SFString("MAX"),
+                                  channelInterpretation : new SFString("SPEAKERS"),
                                   children : new MFNode([
                                     new BiquadFilter({
                                       type : field.TYPE_ALLPASS,
                                       detune : new SFFloat(50),
                                       frequency : new SFFloat(600),
                                       qualityFactor : new SFFloat(30),
+                                      channelCountMode : new SFString("MAX"),
+                                      channelInterpretation : new SFString("SPEAKERS"),
                                       children : new MFNode([
                                         new AudioClip({
                                           loop : new SFBool(true),
@@ -218,14 +229,20 @@ var X3D0 =  new X3D({
                           USE : new SFString("Audio2"),
                           children : new MFNode([
                             new Gain({
+                              channelCountMode : new SFString("MAX"),
+                              channelInterpretation : new SFString("SPEAKERS"),
                               children : new MFNode([
                                 new Analyser({
+                                  channelCountMode : new SFString("MAX"),
+                                  channelInterpretation : new SFString("SPEAKERS"),
                                   children : new MFNode([
                                     new BiquadFilter({
                                       type : field.TYPE_ALLPASS,
                                       detune : new SFFloat(15),
                                       frequency : new SFFloat(600),
                                       qualityFactor : new SFFloat(15),
+                                      channelCountMode : new SFString("MAX"),
+                                      channelInterpretation : new SFString("SPEAKERS"),
                                       children : new MFNode([
                                         new AudioClip({
                                           loop : new SFBool(true),
@@ -238,13 +255,19 @@ var X3D0 =  new X3D({
                           USE : new SFString("Audio3"),
                           children : new MFNode([
                             new Gain({
+                              channelCountMode : new SFString("MAX"),
+                              channelInterpretation : new SFString("SPEAKERS"),
                               children : new MFNode([
                                 new Analyser({
+                                  channelCountMode : new SFString("MAX"),
+                                  channelInterpretation : new SFString("SPEAKERS"),
                                   children : new MFNode([
                                     new BiquadFilter({
                                       type : field.TYPE_ALLPASS,
                                       frequency : new SFFloat(1000),
                                       qualityFactor : new SFFloat(0),
+                                      channelCountMode : new SFString("MAX"),
+                                      channelInterpretation : new SFString("SPEAKERS"),
                                       children : new MFNode([
                                         new AudioClip({
                                           loop : new SFBool(true),

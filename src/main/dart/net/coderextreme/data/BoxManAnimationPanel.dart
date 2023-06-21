@@ -158,6 +158,8 @@ var X3D0 =  X3D(
                   center_ : SFVec3f([SFDouble(0), SFDouble(0.9723), SFDouble(-0.0728)]),
                   skinCoordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(2), SFInt32(3), SFInt32(4), SFInt32(5), SFInt32(6), SFInt32(7), SFInt32(8), SFInt32(9), SFInt32(10), SFInt32(11)]),
                   skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                  ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                  llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                   stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                   children_ : [
                     HAnimSegment(
@@ -184,6 +186,8 @@ var X3D0 =  X3D(
                       center_ : SFVec3f([SFDouble(0.0956), SFDouble(0.9364), SFDouble(0)]),
                       skinCoordIndex_ : MFInt32([SFInt32(12), SFInt32(13), SFInt32(14), SFInt32(15), SFInt32(16), SFInt32(17), SFInt32(18), SFInt32(19), SFInt32(20), SFInt32(21), SFInt32(22), SFInt32(23), SFInt32(24), SFInt32(25), SFInt32(26), SFInt32(27), SFInt32(28), SFInt32(29), SFInt32(30), SFInt32(31), SFInt32(32), SFInt32(33), SFInt32(34), SFInt32(35), SFInt32(36), SFInt32(37), SFInt32(38), SFInt32(39), SFInt32(40), SFInt32(41), SFInt32(42), SFInt32(43)]),
                       skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(0.5)]),
+                      ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                      llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                       stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                       children_ : [
                         HAnimSegment(
@@ -202,6 +206,8 @@ var X3D0 =  X3D(
                           center_ : SFVec3f([SFDouble(0.0956), SFDouble(0.5095), SFDouble(-0.0036)]),
                           skinCoordIndex_ : MFInt32([SFInt32(36), SFInt32(37), SFInt32(38), SFInt32(39), SFInt32(40), SFInt32(41), SFInt32(42), SFInt32(43), SFInt32(44), SFInt32(45), SFInt32(46), SFInt32(47), SFInt32(48), SFInt32(49), SFInt32(50), SFInt32(51), SFInt32(52), SFInt32(53), SFInt32(54), SFInt32(55), SFInt32(56), SFInt32(57), SFInt32(58), SFInt32(59), SFInt32(60), SFInt32(61), SFInt32(62), SFInt32(63)]),
                           skinCoordWeight_ : MFFloat([SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                          ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                          llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                           stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                           children_ : [
                             HAnimSegment(
@@ -220,6 +226,8 @@ var X3D0 =  X3D(
                               center_ : SFVec3f([SFDouble(0.0946), SFDouble(0.0762), SFDouble(-0.0261)]),
                               skinCoordIndex_ : MFInt32([SFInt32(64), SFInt32(65), SFInt32(66), SFInt32(67), SFInt32(68), SFInt32(69), SFInt32(70), SFInt32(71)]),
                               skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                              ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                              llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                               stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                               children_ : [
                                 HAnimSegment(
@@ -238,6 +246,8 @@ var X3D0 =  X3D(
                                   center_ : SFVec3f([SFDouble(0.1079), SFDouble(0.0317), SFDouble(0.067)]),
                                   skinCoordIndex_ : MFInt32([SFInt32(72), SFInt32(73), SFInt32(74), SFInt32(75), SFInt32(76), SFInt32(77), SFInt32(78), SFInt32(79)]),
                                   skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                                  ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                                  llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                                   stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                                   children_ : [
                                     HAnimSegment(
@@ -272,6 +282,8 @@ var X3D0 =  X3D(
                       center_ : SFVec3f([SFDouble(-0.0956), SFDouble(0.9364), SFDouble(0)]),
                       skinCoordIndex_ : MFInt32([SFInt32(80), SFInt32(81), SFInt32(82), SFInt32(83), SFInt32(84), SFInt32(85), SFInt32(86), SFInt32(87), SFInt32(88), SFInt32(89), SFInt32(90), SFInt32(91), SFInt32(92), SFInt32(93), SFInt32(94), SFInt32(95), SFInt32(96), SFInt32(97), SFInt32(98), SFInt32(99), SFInt32(100), SFInt32(101), SFInt32(102), SFInt32(103), SFInt32(104), SFInt32(105), SFInt32(106), SFInt32(107), SFInt32(108), SFInt32(109), SFInt32(110), SFInt32(111)]),
                       skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(0.5)]),
+                      ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                      llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                       stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                       children_ : [
                         HAnimSegment(
@@ -290,6 +302,8 @@ var X3D0 =  X3D(
                           center_ : SFVec3f([SFDouble(-0.0956), SFDouble(0.5095), SFDouble(-0.0036)]),
                           skinCoordIndex_ : MFInt32([SFInt32(104), SFInt32(105), SFInt32(106), SFInt32(107), SFInt32(108), SFInt32(109), SFInt32(110), SFInt32(111), SFInt32(112), SFInt32(113), SFInt32(114), SFInt32(115), SFInt32(116), SFInt32(117), SFInt32(118), SFInt32(119), SFInt32(120), SFInt32(121), SFInt32(122), SFInt32(123), SFInt32(124), SFInt32(125), SFInt32(126), SFInt32(127), SFInt32(128), SFInt32(129), SFInt32(130), SFInt32(131)]),
                           skinCoordWeight_ : MFFloat([SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                          ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                          llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                           stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                           children_ : [
                             HAnimSegment(
@@ -308,6 +322,8 @@ var X3D0 =  X3D(
                               center_ : SFVec3f([SFDouble(-0.0946), SFDouble(0.0762), SFDouble(-0.0261)]),
                               skinCoordIndex_ : MFInt32([SFInt32(132), SFInt32(133), SFInt32(134), SFInt32(135), SFInt32(136), SFInt32(137), SFInt32(138), SFInt32(139)]),
                               skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                              ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                              llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                               stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                               children_ : [
                                 HAnimSegment(
@@ -326,6 +342,8 @@ var X3D0 =  X3D(
                                   center_ : SFVec3f([SFDouble(-0.1079), SFDouble(0.0317), SFDouble(0.067)]),
                                   skinCoordIndex_ : MFInt32([SFInt32(140), SFInt32(141), SFInt32(142), SFInt32(143), SFInt32(144), SFInt32(145), SFInt32(146), SFInt32(147)]),
                                   skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                                  ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                                  llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                                   stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                                   children_ : [
                                     HAnimSegment(
@@ -352,6 +370,8 @@ var X3D0 =  X3D(
                       center_ : SFVec3f([SFDouble(0), SFDouble(1.0817), SFDouble(-0.0728)]),
                       skinCoordIndex_ : MFInt32([SFInt32(148), SFInt32(149), SFInt32(150), SFInt32(151), SFInt32(152), SFInt32(153), SFInt32(154), SFInt32(155), SFInt32(156), SFInt32(157), SFInt32(158), SFInt32(159), SFInt32(160), SFInt32(161), SFInt32(162), SFInt32(163), SFInt32(164), SFInt32(165), SFInt32(166), SFInt32(167)]),
                       skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                      ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                      llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                       stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                       children_ : [
                         HAnimSegment(
@@ -370,6 +390,8 @@ var X3D0 =  X3D(
                           center_ : SFVec3f([SFDouble(0), SFDouble(1.644), SFDouble(0.036)]),
                           skinCoordIndex_ : MFInt32([SFInt32(168), SFInt32(169), SFInt32(170), SFInt32(171), SFInt32(172), SFInt32(173), SFInt32(174), SFInt32(175)]),
                           skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                          ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                          llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                           stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                           children_ : [
                             HAnimSegment(
@@ -396,6 +418,8 @@ var X3D0 =  X3D(
                           center_ : SFVec3f([SFDouble(0.1968), SFDouble(1.4642), SFDouble(-0.0265)]),
                           skinCoordIndex_ : MFInt32([SFInt32(176), SFInt32(177), SFInt32(178), SFInt32(179), SFInt32(180), SFInt32(181), SFInt32(182), SFInt32(183)]),
                           skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                          ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                          llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                           stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                           children_ : [
                             HAnimSegment(
@@ -414,6 +438,8 @@ var X3D0 =  X3D(
                               center_ : SFVec3f([SFDouble(0.1982), SFDouble(1.1622), SFDouble(-0.0557)]),
                               skinCoordIndex_ : MFInt32([SFInt32(184), SFInt32(185), SFInt32(186), SFInt32(187), SFInt32(188), SFInt32(189), SFInt32(190), SFInt32(191)]),
                               skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                              ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                              llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                               stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                               children_ : [
                                 HAnimSegment(
@@ -432,6 +458,8 @@ var X3D0 =  X3D(
                                   center_ : SFVec3f([SFDouble(0.1972), SFDouble(0.8929), SFDouble(-0.069)]),
                                   skinCoordIndex_ : MFInt32([SFInt32(192), SFInt32(193), SFInt32(194), SFInt32(195), SFInt32(196), SFInt32(197), SFInt32(198), SFInt32(199)]),
                                   skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                                  ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                                  llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                                   stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                                   children_ : [
                                     HAnimSegment(
@@ -458,6 +486,8 @@ var X3D0 =  X3D(
                           center_ : SFVec3f([SFDouble(-0.1968), SFDouble(1.4642), SFDouble(-0.0265)]),
                           skinCoordIndex_ : MFInt32([SFInt32(200), SFInt32(201), SFInt32(202), SFInt32(203), SFInt32(204), SFInt32(205), SFInt32(206), SFInt32(207)]),
                           skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                          ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                          llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                           stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                           children_ : [
                             HAnimSegment(
@@ -476,6 +506,8 @@ var X3D0 =  X3D(
                               center_ : SFVec3f([SFDouble(-0.1982), SFDouble(1.1622), SFDouble(-0.0557)]),
                               skinCoordIndex_ : MFInt32([SFInt32(208), SFInt32(209), SFInt32(210), SFInt32(211), SFInt32(212), SFInt32(213), SFInt32(214), SFInt32(215)]),
                               skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                              ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                              llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                               stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                               children_ : [
                                 HAnimSegment(
@@ -494,6 +526,8 @@ var X3D0 =  X3D(
                                   center_ : SFVec3f([SFDouble(-0.1972), SFDouble(0.8929), SFDouble(-0.069)]),
                                   skinCoordIndex_ : MFInt32([SFInt32(216), SFInt32(217), SFInt32(218), SFInt32(219), SFInt32(220), SFInt32(221), SFInt32(222), SFInt32(223)]),
                                   skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                                  ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                                  llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                                   stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
                                   children_ : [
                                     HAnimSegment(

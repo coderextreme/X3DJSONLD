@@ -1,7 +1,7 @@
 "use strict";
 
 if (typeof require === 'function') {
-	var xmldom = require('xmldom');
+	var xmldom = require('@xmldom/xmldom');
 	var XMLSerializer = new xmldom.XMLSerializer();
 }
 
