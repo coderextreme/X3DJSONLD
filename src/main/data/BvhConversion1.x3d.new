@@ -67,7 +67,7 @@
 </MetadataSet>
 <HAnimSite name="HumanoidRoot_view" DEF="Bvh1_HumanoidRoot_view"><Viewpoint DEF="Bvh1_HumanoidRoot_viewpoint" description="Bvh1 front view towards HAnimHumanoid center" position="0 0 314.96062992125985"></Viewpoint>
 </HAnimSite>
-<HAnimJoint name="HumanoidRoot" DEF="Bvh1_HumanoidRoot" scale="0.0254 0.0254 0.0254" translation="0 0.806 0.194" stiffness="0 0 0" containerField="skeleton"><!--BVH ROOT Hips, OFFSET 7.62 0.0 0.0, CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation--><HAnimSegment name="sacrum" DEF="Bvh1_sacrum"><!--HumanoidRoot child HAnimSegment with visualization root shape plus hidden DEF geometry for later use (radius 1 inch)--><Switch whichChoice="0"><Group><TouchSensor description="HAnimHumanoid ROOT Hips, HAnimSegment sacrum"></TouchSensor>
+<HAnimJoint name="HumanoidRoot" DEF="Bvh1_HumanoidRoot" scale="0.0254 0.0254 0.0254" translation="0 0.806 0.194" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0" containerField="skeleton"><!--BVH ROOT Hips, OFFSET 7.62 0.0 0.0, CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation--><HAnimSegment name="sacrum" DEF="Bvh1_sacrum"><!--HumanoidRoot child HAnimSegment with visualization root shape plus hidden DEF geometry for later use (radius 1 inch)--><Switch whichChoice="0"><Group><TouchSensor description="HAnimHumanoid ROOT Hips, HAnimSegment sacrum"></TouchSensor>
 <Shape DEF="HAnimRootShape"><Sphere containerField="geometry" DEF="HAnimJointSphere"></Sphere>
 <Appearance><Material DEF="HAnimRootMaterial" diffuseColor="0.8 0 0" transparency="0.3"></Material>
 </Appearance>
@@ -104,7 +104,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_hip" DEF="Bvh1_l_hip" center="7.62 0 0" stiffness="0 0 0"><!--BVH JOINT LeftHip, OFFSET 7.62 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_thigh" DEF="Bvh1_l_thigh"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="7.62 0 0"><!--Visualization sphere for <HAnimJoint name='l_hip'> is placed within <HAnimSegment name='Bvh1_l_thigh'>--><TouchSensor description="HAnimJoint LeftHip l_hip, HAnimSegment l_thigh"></TouchSensor>
+<HAnimJoint name="l_hip" DEF="Bvh1_l_hip" center="7.62 0 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT LeftHip, OFFSET 7.62 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_thigh" DEF="Bvh1_l_thigh"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="7.62 0 0"><!--Visualization sphere for <HAnimJoint name='l_hip'> is placed within <HAnimSegment name='Bvh1_l_thigh'>--><TouchSensor description="HAnimJoint LeftHip l_hip, HAnimSegment l_thigh"></TouchSensor>
 <Shape USE="HAnimJointShape"></Shape>
 <!--HAnimSegment OFFSET visualization line from current <HAnimJoint name='l_hip'></HAnimJoint> to child <HAnimJoint name='l_knee'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0 0 0 0 -44.449999 0"></Coordinate>
 <ColorRGBA containerField="color" USE="HAnimSegmentLineColorRGBA"></ColorRGBA>
@@ -112,7 +112,7 @@
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_knee" DEF="Bvh1_l_knee" center="7.62 -44.449999 0" stiffness="0 0 0"><!--BVH JOINT LeftKnee, OFFSET 0.0 -44.449999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_calf" DEF="Bvh1_l_calf"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="7.62 -44.449999 0"><!--Visualization sphere for <HAnimJoint name='l_knee'> is placed within <HAnimSegment name='Bvh1_l_calf'>--><TouchSensor description="HAnimJoint LeftKnee l_knee, HAnimSegment l_calf"></TouchSensor>
+<HAnimJoint name="l_knee" DEF="Bvh1_l_knee" center="7.62 -44.449999 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT LeftKnee, OFFSET 0.0 -44.449999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_calf" DEF="Bvh1_l_calf"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="7.62 -44.449999 0"><!--Visualization sphere for <HAnimJoint name='l_knee'> is placed within <HAnimSegment name='Bvh1_l_calf'>--><TouchSensor description="HAnimJoint LeftKnee l_knee, HAnimSegment l_calf"></TouchSensor>
 <Shape USE="HAnimJointShape"></Shape>
 <!--HAnimSegment OFFSET visualization line from current <HAnimJoint name='l_knee'></HAnimJoint> to child <HAnimJoint name='l_ankle'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0 0 0 0 -39.369999 0"></Coordinate>
 <ColorRGBA containerField="color" USE="HAnimSegmentLineColorRGBA"></ColorRGBA>
@@ -120,7 +120,7 @@
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_ankle" DEF="Bvh1_l_ankle" center="7.62 -83.819998 0" stiffness="0 0 0"><!--BVH JOINT LeftAnkle, OFFSET 0.0 -39.369999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_hindfoot" DEF="Bvh1_l_hindfoot"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="7.62 -83.819998 0"><!--Visualization sphere for <HAnimJoint name='l_ankle'> is placed within <HAnimSegment name='Bvh1_l_hindfoot'>--><TouchSensor description="HAnimJoint LeftAnkle l_ankle, HAnimSegment l_hindfoot"></TouchSensor>
+<HAnimJoint name="l_ankle" DEF="Bvh1_l_ankle" center="7.62 -83.819998 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT LeftAnkle, OFFSET 0.0 -39.369999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_hindfoot" DEF="Bvh1_l_hindfoot"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="7.62 -83.819998 0"><!--Visualization sphere for <HAnimJoint name='l_ankle'> is placed within <HAnimSegment name='Bvh1_l_hindfoot'>--><TouchSensor description="HAnimJoint LeftAnkle l_ankle, HAnimSegment l_hindfoot"></TouchSensor>
 <Shape USE="HAnimJointShape"></Shape>
 <!--HAnimSegment OFFSET visualization line from current <HAnimJoint name='l_ankle'></HAnimJoint> to child <HAnimJoint name='l_midtarsal'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0 0 0 0 -8.89 -3.81"></Coordinate>
 <ColorRGBA containerField="color" USE="HAnimSegmentLineColorRGBA"></ColorRGBA>
@@ -128,7 +128,7 @@
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_midtarsal" DEF="Bvh1_l_midtarsal" center="7.62 -92.709998 -3.81" stiffness="0 0 0"><!--BVH JOINT LeftAnkleEnd, OFFSET 0.0 -8.89 -3.81, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_middistal" DEF="Bvh1_l_middistal"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="7.62 -92.709998 -3.81"><HAnimSite name="l_middistal_tip" DEF="Bvh1_l_middistal_tip" translation="0 0 15.24"><!--BVH End Site OFFSET (0.0, 0.0, 15.24)--><TouchSensor description="HAnimSite l_middistal_tip"></TouchSensor>
+<HAnimJoint name="l_midtarsal" DEF="Bvh1_l_midtarsal" center="7.62 -92.709998 -3.81" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT LeftAnkleEnd, OFFSET 0.0 -8.89 -3.81, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_middistal" DEF="Bvh1_l_middistal"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="7.62 -92.709998 -3.81"><HAnimSite name="l_middistal_tip" DEF="Bvh1_l_middistal_tip" translation="0 0 15.24"><!--BVH End Site OFFSET (0.0, 0.0, 15.24)--><TouchSensor description="HAnimSite l_middistal_tip"></TouchSensor>
 <Shape USE="HAnimSiteShape"></Shape>
 <!--HAnimSite visualization line for current OFFSET from grandparent <HAnimJoint name='l_midtarsal'></HAnimJoint> to current <HAnimSite name='l_middistal_tip'></HAnimSite>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0 0 -15.24 0 0 0"></Coordinate>
 <ColorRGBA containerField="color" USE="HAnimSiteLineColorRGBA"></ColorRGBA>
@@ -143,7 +143,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_hip" DEF="Bvh1_r_hip" center="-7.62 0 0" stiffness="0 0 0"><!--BVH JOINT RightHip, OFFSET -7.62 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_thigh" DEF="Bvh1_r_thigh"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="-7.62 0 0"><!--Visualization sphere for <HAnimJoint name='r_hip'> is placed within <HAnimSegment name='Bvh1_r_thigh'>--><TouchSensor description="HAnimJoint RightHip r_hip, HAnimSegment r_thigh"></TouchSensor>
+<HAnimJoint name="r_hip" DEF="Bvh1_r_hip" center="-7.62 0 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT RightHip, OFFSET -7.62 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_thigh" DEF="Bvh1_r_thigh"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="-7.62 0 0"><!--Visualization sphere for <HAnimJoint name='r_hip'> is placed within <HAnimSegment name='Bvh1_r_thigh'>--><TouchSensor description="HAnimJoint RightHip r_hip, HAnimSegment r_thigh"></TouchSensor>
 <Shape USE="HAnimJointShape"></Shape>
 <!--HAnimSegment OFFSET visualization line from current <HAnimJoint name='r_hip'></HAnimJoint> to child <HAnimJoint name='r_knee'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0 0 0 0 -44.449999 0"></Coordinate>
 <ColorRGBA containerField="color" USE="HAnimSegmentLineColorRGBA"></ColorRGBA>
@@ -151,7 +151,7 @@
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="r_knee" DEF="Bvh1_r_knee" center="-7.62 -44.449999 0" stiffness="0 0 0"><!--BVH JOINT RightKnee, OFFSET 0.0 -44.449999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_calf" DEF="Bvh1_r_calf"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="-7.62 -44.449999 0"><!--Visualization sphere for <HAnimJoint name='r_knee'> is placed within <HAnimSegment name='Bvh1_r_calf'>--><TouchSensor description="HAnimJoint RightKnee r_knee, HAnimSegment r_calf"></TouchSensor>
+<HAnimJoint name="r_knee" DEF="Bvh1_r_knee" center="-7.62 -44.449999 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT RightKnee, OFFSET 0.0 -44.449999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_calf" DEF="Bvh1_r_calf"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="-7.62 -44.449999 0"><!--Visualization sphere for <HAnimJoint name='r_knee'> is placed within <HAnimSegment name='Bvh1_r_calf'>--><TouchSensor description="HAnimJoint RightKnee r_knee, HAnimSegment r_calf"></TouchSensor>
 <Shape USE="HAnimJointShape"></Shape>
 <!--HAnimSegment OFFSET visualization line from current <HAnimJoint name='r_knee'></HAnimJoint> to child <HAnimJoint name='r_ankle'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0 0 0 0 -39.369999 0"></Coordinate>
 <ColorRGBA containerField="color" USE="HAnimSegmentLineColorRGBA"></ColorRGBA>
@@ -159,7 +159,7 @@
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="r_ankle" DEF="Bvh1_r_ankle" center="-7.62 -83.819998 0" stiffness="0 0 0"><!--BVH JOINT RightAnkle, OFFSET 0.0 -39.369999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_hindfoot" DEF="Bvh1_r_hindfoot"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="-7.62 -83.819998 0"><!--Visualization sphere for <HAnimJoint name='r_ankle'> is placed within <HAnimSegment name='Bvh1_r_hindfoot'>--><TouchSensor description="HAnimJoint RightAnkle r_ankle, HAnimSegment r_hindfoot"></TouchSensor>
+<HAnimJoint name="r_ankle" DEF="Bvh1_r_ankle" center="-7.62 -83.819998 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT RightAnkle, OFFSET 0.0 -39.369999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_hindfoot" DEF="Bvh1_r_hindfoot"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="-7.62 -83.819998 0"><!--Visualization sphere for <HAnimJoint name='r_ankle'> is placed within <HAnimSegment name='Bvh1_r_hindfoot'>--><TouchSensor description="HAnimJoint RightAnkle r_ankle, HAnimSegment r_hindfoot"></TouchSensor>
 <Shape USE="HAnimJointShape"></Shape>
 <!--HAnimSegment OFFSET visualization line from current <HAnimJoint name='r_ankle'></HAnimJoint> to child <HAnimJoint name='r_midtarsal'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0 0 0 0 -8.89 -3.81"></Coordinate>
 <ColorRGBA containerField="color" USE="HAnimSegmentLineColorRGBA"></ColorRGBA>
@@ -167,7 +167,7 @@
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="r_midtarsal" DEF="Bvh1_r_midtarsal" center="-7.62 -92.709998 -3.81" stiffness="0 0 0"><!--BVH JOINT RightAnkleEnd, OFFSET 0.0 -8.89 -3.81, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_middistal" DEF="Bvh1_r_middistal"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="-7.62 -92.709998 -3.81"><HAnimSite name="r_middistal_tip" DEF="Bvh1_r_middistal_tip" translation="0 0 15.24"><!--BVH End Site OFFSET (0.0, 0.0, 15.24)--><TouchSensor description="HAnimSite r_middistal_tip"></TouchSensor>
+<HAnimJoint name="r_midtarsal" DEF="Bvh1_r_midtarsal" center="-7.62 -92.709998 -3.81" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT RightAnkleEnd, OFFSET 0.0 -8.89 -3.81, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_middistal" DEF="Bvh1_r_middistal"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="-7.62 -92.709998 -3.81"><HAnimSite name="r_middistal_tip" DEF="Bvh1_r_middistal_tip" translation="0 0 15.24"><!--BVH End Site OFFSET (0.0, 0.0, 15.24)--><TouchSensor description="HAnimSite r_middistal_tip"></TouchSensor>
 <Shape USE="HAnimSiteShape"></Shape>
 <!--HAnimSite visualization line for current OFFSET from grandparent <HAnimJoint name='r_midtarsal'></HAnimJoint> to current <HAnimSite name='r_middistal_tip'></HAnimSite>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0 0 -15.24 0 0 0"></Coordinate>
 <ColorRGBA containerField="color" USE="HAnimSiteLineColorRGBA"></ColorRGBA>
@@ -182,7 +182,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="vl5" DEF="Bvh1_vl5" center="0 7.62 -2.54" stiffness="0 0 0"><!--BVH JOINT Chest, OFFSET 0.0 7.62 -2.54, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l5" DEF="Bvh1_l5"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="0 7.62 -2.54"><!--Visualization sphere for <HAnimJoint name='vl5'> is placed within <HAnimSegment name='Bvh1_l5'>--><TouchSensor description="HAnimJoint Chest vl5, HAnimSegment l5"></TouchSensor>
+<HAnimJoint name="vl5" DEF="Bvh1_vl5" center="0 7.62 -2.54" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT Chest, OFFSET 0.0 7.62 -2.54, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l5" DEF="Bvh1_l5"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="0 7.62 -2.54"><!--Visualization sphere for <HAnimJoint name='vl5'> is placed within <HAnimSegment name='Bvh1_l5'>--><TouchSensor description="HAnimJoint Chest vl5, HAnimSegment l5"></TouchSensor>
 <Shape USE="HAnimJointShape"></Shape>
 <!--HAnimSegment OFFSET visualization line from current <HAnimJoint name='vl5'></HAnimJoint> to child <HAnimJoint name='Chest2'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0 0 0 0 7.62 0"></Coordinate>
 <ColorRGBA containerField="color" USE="HAnimSegmentLineColorRGBA"></ColorRGBA>
@@ -190,7 +190,7 @@
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="Chest2" DEF="Bvh1_Chest2" center="0 15.24 -2.54" stiffness="0 0 0"><!--BVH JOINT Chest2, OFFSET 0.0 7.62 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="vl5_to_Chest2" DEF="Bvh1_vl5_to_Chest2"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="0 15.24 -2.54"><!--Visualization sphere for <HAnimJoint name='Chest2'> is placed within <HAnimSegment name='Bvh1_vl5_to_Chest2'>--><TouchSensor description="HAnimJoint Chest2 Chest2, HAnimSegment vl5_to_Chest2"></TouchSensor>
+<HAnimJoint name="Chest2" DEF="Bvh1_Chest2" center="0 15.24 -2.54" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT Chest2, OFFSET 0.0 7.62 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="vl5_to_Chest2" DEF="Bvh1_vl5_to_Chest2"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="0 15.24 -2.54"><!--Visualization sphere for <HAnimJoint name='Chest2'> is placed within <HAnimSegment name='Bvh1_vl5_to_Chest2'>--><TouchSensor description="HAnimJoint Chest2 Chest2, HAnimSegment vl5_to_Chest2"></TouchSensor>
 <Shape USE="HAnimJointShape"></Shape>
 <!--HAnimSegment OFFSET visualization line from current <HAnimJoint name='Chest2'></HAnimJoint> to child <HAnimJoint name='LeftCollar'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0 0 0 7.62 33.02 2.54"></Coordinate>
 <ColorRGBA containerField="color" USE="HAnimSegmentLineColorRGBA"></ColorRGBA>
@@ -206,7 +206,7 @@
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="LeftCollar" DEF="Bvh1_LeftCollar" center="7.62 48.260000000000005 0" stiffness="0 0 0"><!--BVH JOINT LeftCollar, OFFSET 7.62 33.02 2.54, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="Chest2_to_LeftCollar" DEF="Bvh1_Chest2_to_LeftCollar"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="7.62 48.260000000000005 0"><!--Visualization sphere for <HAnimJoint name='LeftCollar'> is placed within <HAnimSegment name='Bvh1_Chest2_to_LeftCollar'>--><TouchSensor description="HAnimJoint LeftCollar LeftCollar, HAnimSegment Chest2_to_LeftCollar"></TouchSensor>
+<HAnimJoint name="LeftCollar" DEF="Bvh1_LeftCollar" center="7.62 48.260000000000005 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT LeftCollar, OFFSET 7.62 33.02 2.54, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="Chest2_to_LeftCollar" DEF="Bvh1_Chest2_to_LeftCollar"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="7.62 48.260000000000005 0"><!--Visualization sphere for <HAnimJoint name='LeftCollar'> is placed within <HAnimSegment name='Bvh1_Chest2_to_LeftCollar'>--><TouchSensor description="HAnimJoint LeftCollar LeftCollar, HAnimSegment Chest2_to_LeftCollar"></TouchSensor>
 <Shape USE="HAnimJointShape"></Shape>
 <!--HAnimSegment OFFSET visualization line from current <HAnimJoint name='LeftCollar'></HAnimJoint> to child <HAnimJoint name='l_shoulder'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0 0 0 12.7 0 0"></Coordinate>
 <ColorRGBA containerField="color" USE="HAnimSegmentLineColorRGBA"></ColorRGBA>
@@ -214,7 +214,7 @@
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_shoulder" DEF="Bvh1_l_shoulder" center="20.32 48.260000000000005 0" stiffness="0 0 0"><!--BVH JOINT LeftShoulder, OFFSET 12.7 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_upperarm" DEF="Bvh1_l_upperarm"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="20.32 48.260000000000005 0"><!--Visualization sphere for <HAnimJoint name='l_shoulder'> is placed within <HAnimSegment name='Bvh1_l_upperarm'>--><TouchSensor description="HAnimJoint LeftShoulder l_shoulder, HAnimSegment l_upperarm"></TouchSensor>
+<HAnimJoint name="l_shoulder" DEF="Bvh1_l_shoulder" center="20.32 48.260000000000005 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT LeftShoulder, OFFSET 12.7 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_upperarm" DEF="Bvh1_l_upperarm"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="20.32 48.260000000000005 0"><!--Visualization sphere for <HAnimJoint name='l_shoulder'> is placed within <HAnimSegment name='Bvh1_l_upperarm'>--><TouchSensor description="HAnimJoint LeftShoulder l_shoulder, HAnimSegment l_upperarm"></TouchSensor>
 <Shape USE="HAnimJointShape"></Shape>
 <!--HAnimSegment OFFSET visualization line from current <HAnimJoint name='l_shoulder'></HAnimJoint> to child <HAnimJoint name='l_elbow'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0 0 0 0 -30.48 0"></Coordinate>
 <ColorRGBA containerField="color" USE="HAnimSegmentLineColorRGBA"></ColorRGBA>
@@ -222,7 +222,7 @@
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_elbow" DEF="Bvh1_l_elbow" center="20.32 17.780000000000005 0" stiffness="0 0 0"><!--BVH JOINT LeftElbow, OFFSET 0.0 -30.48 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_forearm" DEF="Bvh1_l_forearm"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="20.32 17.780000000000005 0"><!--Visualization sphere for <HAnimJoint name='l_elbow'> is placed within <HAnimSegment name='Bvh1_l_forearm'>--><TouchSensor description="HAnimJoint LeftElbow l_elbow, HAnimSegment l_forearm"></TouchSensor>
+<HAnimJoint name="l_elbow" DEF="Bvh1_l_elbow" center="20.32 17.780000000000005 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT LeftElbow, OFFSET 0.0 -30.48 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_forearm" DEF="Bvh1_l_forearm"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="20.32 17.780000000000005 0"><!--Visualization sphere for <HAnimJoint name='l_elbow'> is placed within <HAnimSegment name='Bvh1_l_forearm'>--><TouchSensor description="HAnimJoint LeftElbow l_elbow, HAnimSegment l_forearm"></TouchSensor>
 <Shape USE="HAnimJointShape"></Shape>
 <!--HAnimSegment OFFSET visualization line from current <HAnimJoint name='l_elbow'></HAnimJoint> to child <HAnimJoint name='l_wrist'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0 0 0 0 -24.13 0"></Coordinate>
 <ColorRGBA containerField="color" USE="HAnimSegmentLineColorRGBA"></ColorRGBA>
@@ -230,7 +230,7 @@
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_wrist" DEF="Bvh1_l_wrist" center="20.32 -6.349999999999994 0" stiffness="0 0 0"><!--BVH JOINT LeftWrist, OFFSET 0.0 -24.13 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_hand" DEF="Bvh1_l_hand"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="20.32 -6.349999999999994 0"><HAnimSite name="l_hand_tip" DEF="Bvh1_l_hand_tip" translation="0 -17.78 0"><!--BVH End Site OFFSET (0.0, -17.78, 0.0)--><TouchSensor description="HAnimSite l_hand_tip"></TouchSensor>
+<HAnimJoint name="l_wrist" DEF="Bvh1_l_wrist" center="20.32 -6.349999999999994 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT LeftWrist, OFFSET 0.0 -24.13 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_hand" DEF="Bvh1_l_hand"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="20.32 -6.349999999999994 0"><HAnimSite name="l_hand_tip" DEF="Bvh1_l_hand_tip" translation="0 -17.78 0"><!--BVH End Site OFFSET (0.0, -17.78, 0.0)--><TouchSensor description="HAnimSite l_hand_tip"></TouchSensor>
 <Shape USE="HAnimSiteShape"></Shape>
 <!--HAnimSite visualization line for current OFFSET from grandparent <HAnimJoint name='l_wrist'></HAnimJoint> to current <HAnimSite name='l_hand_tip'></HAnimSite>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0 17.78 0 0 0 0"></Coordinate>
 <ColorRGBA containerField="color" USE="HAnimSiteLineColorRGBA"></ColorRGBA>
@@ -245,7 +245,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="RightCollar" DEF="Bvh1_RightCollar" center="-7.62 48.260000000000005 0" stiffness="0 0 0"><!--BVH JOINT RightCollar, OFFSET -7.62 33.02 2.54, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="Chest2_to_RightCollar" DEF="Bvh1_Chest2_to_RightCollar"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="-7.62 48.260000000000005 0"><!--Visualization sphere for <HAnimJoint name='RightCollar'> is placed within <HAnimSegment name='Bvh1_Chest2_to_RightCollar'>--><TouchSensor description="HAnimJoint RightCollar RightCollar, HAnimSegment Chest2_to_RightCollar"></TouchSensor>
+<HAnimJoint name="RightCollar" DEF="Bvh1_RightCollar" center="-7.62 48.260000000000005 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT RightCollar, OFFSET -7.62 33.02 2.54, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="Chest2_to_RightCollar" DEF="Bvh1_Chest2_to_RightCollar"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="-7.62 48.260000000000005 0"><!--Visualization sphere for <HAnimJoint name='RightCollar'> is placed within <HAnimSegment name='Bvh1_Chest2_to_RightCollar'>--><TouchSensor description="HAnimJoint RightCollar RightCollar, HAnimSegment Chest2_to_RightCollar"></TouchSensor>
 <Shape USE="HAnimJointShape"></Shape>
 <!--HAnimSegment OFFSET visualization line from current <HAnimJoint name='RightCollar'></HAnimJoint> to child <HAnimJoint name='r_shoulder'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0 0 0 -12.7 0 0"></Coordinate>
 <ColorRGBA containerField="color" USE="HAnimSegmentLineColorRGBA"></ColorRGBA>
@@ -253,7 +253,7 @@
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="r_shoulder" DEF="Bvh1_r_shoulder" center="-20.32 48.260000000000005 0" stiffness="0 0 0"><!--BVH JOINT RightShoulder, OFFSET -12.7 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_upperarm" DEF="Bvh1_r_upperarm"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="-20.32 48.260000000000005 0"><!--Visualization sphere for <HAnimJoint name='r_shoulder'> is placed within <HAnimSegment name='Bvh1_r_upperarm'>--><TouchSensor description="HAnimJoint RightShoulder r_shoulder, HAnimSegment r_upperarm"></TouchSensor>
+<HAnimJoint name="r_shoulder" DEF="Bvh1_r_shoulder" center="-20.32 48.260000000000005 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT RightShoulder, OFFSET -12.7 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_upperarm" DEF="Bvh1_r_upperarm"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="-20.32 48.260000000000005 0"><!--Visualization sphere for <HAnimJoint name='r_shoulder'> is placed within <HAnimSegment name='Bvh1_r_upperarm'>--><TouchSensor description="HAnimJoint RightShoulder r_shoulder, HAnimSegment r_upperarm"></TouchSensor>
 <Shape USE="HAnimJointShape"></Shape>
 <!--HAnimSegment OFFSET visualization line from current <HAnimJoint name='r_shoulder'></HAnimJoint> to child <HAnimJoint name='r_elbow'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0 0 0 0 -30.48 0"></Coordinate>
 <ColorRGBA containerField="color" USE="HAnimSegmentLineColorRGBA"></ColorRGBA>
@@ -261,7 +261,7 @@
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="r_elbow" DEF="Bvh1_r_elbow" center="-20.32 17.780000000000005 0" stiffness="0 0 0"><!--BVH JOINT RightElbow, OFFSET 0.0 -30.48 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_forearm" DEF="Bvh1_r_forearm"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="-20.32 17.780000000000005 0"><!--Visualization sphere for <HAnimJoint name='r_elbow'> is placed within <HAnimSegment name='Bvh1_r_forearm'>--><TouchSensor description="HAnimJoint RightElbow r_elbow, HAnimSegment r_forearm"></TouchSensor>
+<HAnimJoint name="r_elbow" DEF="Bvh1_r_elbow" center="-20.32 17.780000000000005 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT RightElbow, OFFSET 0.0 -30.48 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_forearm" DEF="Bvh1_r_forearm"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="-20.32 17.780000000000005 0"><!--Visualization sphere for <HAnimJoint name='r_elbow'> is placed within <HAnimSegment name='Bvh1_r_forearm'>--><TouchSensor description="HAnimJoint RightElbow r_elbow, HAnimSegment r_forearm"></TouchSensor>
 <Shape USE="HAnimJointShape"></Shape>
 <!--HAnimSegment OFFSET visualization line from current <HAnimJoint name='r_elbow'></HAnimJoint> to child <HAnimJoint name='r_wrist'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0 0 0 0 -24.13 0"></Coordinate>
 <ColorRGBA containerField="color" USE="HAnimSegmentLineColorRGBA"></ColorRGBA>
@@ -269,7 +269,7 @@
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="r_wrist" DEF="Bvh1_r_wrist" center="-20.32 -6.349999999999994 0" stiffness="0 0 0"><!--BVH JOINT RightWrist, OFFSET 0.0 -24.13 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_hand" DEF="Bvh1_r_hand"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="-20.32 -6.349999999999994 0"><HAnimSite name="r_hand_tip" DEF="Bvh1_r_hand_tip" translation="0 -17.78 0"><!--BVH End Site OFFSET (0.0, -17.78, 0.0)--><TouchSensor description="HAnimSite r_hand_tip"></TouchSensor>
+<HAnimJoint name="r_wrist" DEF="Bvh1_r_wrist" center="-20.32 -6.349999999999994 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT RightWrist, OFFSET 0.0 -24.13 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_hand" DEF="Bvh1_r_hand"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="-20.32 -6.349999999999994 0"><HAnimSite name="r_hand_tip" DEF="Bvh1_r_hand_tip" translation="0 -17.78 0"><!--BVH End Site OFFSET (0.0, -17.78, 0.0)--><TouchSensor description="HAnimSite r_hand_tip"></TouchSensor>
 <Shape USE="HAnimSiteShape"></Shape>
 <!--HAnimSite visualization line for current OFFSET from grandparent <HAnimJoint name='r_wrist'></HAnimJoint> to current <HAnimSite name='r_hand_tip'></HAnimSite>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0 17.78 0 0 0 0"></Coordinate>
 <ColorRGBA containerField="color" USE="HAnimSiteLineColorRGBA"></ColorRGBA>
@@ -284,7 +284,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="Neck" DEF="Bvh1_Neck" center="0 53.339999 0" stiffness="0 0 0"><!--BVH JOINT Neck, OFFSET 0.0 38.099999 2.54, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="Chest2_to_Neck" DEF="Bvh1_Chest2_to_Neck"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="0 53.339999 0"><!--Visualization sphere for <HAnimJoint name='Neck'> is placed within <HAnimSegment name='Bvh1_Chest2_to_Neck'>--><TouchSensor description="HAnimJoint Neck Neck, HAnimSegment Chest2_to_Neck"></TouchSensor>
+<HAnimJoint name="Neck" DEF="Bvh1_Neck" center="0 53.339999 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT Neck, OFFSET 0.0 38.099999 2.54, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="Chest2_to_Neck" DEF="Bvh1_Chest2_to_Neck"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="0 53.339999 0"><!--Visualization sphere for <HAnimJoint name='Neck'> is placed within <HAnimSegment name='Bvh1_Chest2_to_Neck'>--><TouchSensor description="HAnimJoint Neck Neck, HAnimSegment Chest2_to_Neck"></TouchSensor>
 <Shape USE="HAnimJointShape"></Shape>
 <!--HAnimSegment OFFSET visualization line from current <HAnimJoint name='Neck'></HAnimJoint> to child <HAnimJoint name='skullbase'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0 0 0 0 16.51 0"></Coordinate>
 <ColorRGBA containerField="color" USE="HAnimSegmentLineColorRGBA"></ColorRGBA>
@@ -292,7 +292,7 @@
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="skullbase" DEF="Bvh1_skullbase" center="0 69.849999 0" stiffness="0 0 0"><!--BVH JOINT Head, OFFSET 0.0 16.51 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="skull" DEF="Bvh1_skull"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="0 69.849999 0"><HAnimSite name="skull_tip" DEF="Bvh1_skull_tip" translation="0 10.16 0"><!--BVH End Site OFFSET (0.0, 10.16, 0.0)--><TouchSensor description="HAnimSite skull_tip"></TouchSensor>
+<HAnimJoint name="skullbase" DEF="Bvh1_skullbase" center="0 69.849999 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT Head, OFFSET 0.0 16.51 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="skull" DEF="Bvh1_skull"><!--Transform to establish local-origin reference frame at center of current Joint--><Transform translation="0 69.849999 0"><HAnimSite name="skull_tip" DEF="Bvh1_skull_tip" translation="0 10.16 0"><!--BVH End Site OFFSET (0.0, 10.16, 0.0)--><TouchSensor description="HAnimSite skull_tip"></TouchSensor>
 <Shape USE="HAnimSiteShape"></Shape>
 <!--HAnimSite visualization line for current OFFSET from grandparent <HAnimJoint name='skullbase'></HAnimJoint> to current <HAnimSite name='skull_tip'></HAnimSite>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0 -10.16 0 0 0 0"></Coordinate>
 <ColorRGBA containerField="color" USE="HAnimSiteLineColorRGBA"></ColorRGBA>

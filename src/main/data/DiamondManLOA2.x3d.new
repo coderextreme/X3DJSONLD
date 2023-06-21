@@ -92,14 +92,14 @@
 </Transform>
 </Billboard>
 </Transform>
-<HAnimHumanoid name="humanoid" DEF="hanim_humanoid" loa="2" version="2.0"><!--HAnimHumanoid original info='"humanoidVersion=Nancy V1.2b" "authorName=Cindy Ballreich" "authorEmail=cindy@ballreich.net" "copyright=1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved." "creationDate=Tue Dec 30 08:30:08 PST 1997" "usageRestrictions=Noncommercial usage is ok if 3Name3D name and logo <www.ballreich.net/vrml/HAnim/small_logo.gif> is present and proper credit is given."'--><MetadataSet containerField="metadata" name="HAnimHumanoid.info" reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"><MetadataString name="humanoidVersion" value="&quot;Nancy V1.2b&quot;" containerField="value"></MetadataString>
+<HAnimHumanoid name="humanoid" DEF="hanim_humanoid" loa="2" version="2.0"><!--HAnimHumanoid original info='"humanoidVersion=Nancy V1.2b" "authorName=Cindy Ballreich" "authorEmail=cindy@ballreich.net" "copyright=1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved." "creationDate=Tue Dec 30 08:30:08 PST 1997" "usageRestrictions=Noncommercial usage is ok if 3Name3D name and logo <www.ballreich.net/vrml/HAnim/small_logo.gif> is present and proper credit is given."'--><MetadataSet name="HAnimHumanoid.info" reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid" containerField="value"><MetadataString name="humanoidVersion" value="&quot;Nancy V1.2b&quot;" containerField="value"></MetadataString>
 <MetadataString name="authorEmail" value="&quot;cindy@ballreich.net&quot;"></MetadataString>
 <MetadataString name="authorName" value="&quot;Cindy Ballreich&quot;"></MetadataString>
 <MetadataString name="copyright" value="&quot;1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved.&quot;"></MetadataString>
 <MetadataString name="creationDate" value="&quot;Tue Dec 30 08:30:08 PST 1997&quot;"></MetadataString>
-<MetadataString name="usageRestrictions" value="&quot;Noncommercial usage is ok if 3Name3D name and logo &lt;www.ballreich.net/vrml/HAnim/small_logo.gif> is present and proper credit is given.&quot;"/>
+<MetadataString name="usageRestrictions" value="&quot;Noncommercial usage is ok if 3Name3D name and logo &lt;www.ballreich.net/vrml/HAnim/small_logo.gif&gt; is present and proper credit is given.&quot;"></MetadataString>
 </MetadataSet>
-<HAnimJoint name="humanoid_root" DEF="hanim_humanoid_root" center="0 0.824 0.0277" stiffness="0 0 0" containerField="skeleton"><HAnimSegment name="sacrum" DEF="hanim_sacrum"><Transform translation="0 0.824 0.0277"><Shape DEF="DiamondShape"><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" DEF="points" point="0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0"></Coordinate>
+<HAnimJoint name="humanoid_root" DEF="hanim_humanoid_root" center="0 0.824 0.0277" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0" containerField="skeleton"><HAnimSegment name="sacrum" DEF="hanim_sacrum"><Transform translation="0 0.824 0.0277"><Shape DEF="DiamondShape"><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" DEF="points" point="0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material DEF="ROOT_COLOR" diffuseColor="1 1 1"></Material>
 </Appearance>
@@ -113,7 +113,7 @@
 </Transform>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="sacroiliac" DEF="hanim_sacroiliac" center="0 0.9149 0.0016" stiffness="0 0 0"><HAnimSegment name="pelvis" DEF="hanim_pelvis"><Transform DEF="sacroiliacPos" translation="0 0.9149 0.0016"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="sacroiliac" DEF="hanim_sacroiliac" center="0 0.9149 0.0016" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="pelvis" DEF="hanim_pelvis"><Transform DEF="sacroiliacPos" translation="0 0.9149 0.0016"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="MIN_COLOR"></Material>
 </Appearance>
@@ -174,7 +174,7 @@
 </Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_hip" DEF="hanim_l_hip" center="0.0961 0.9124 -0.0001" stiffness="0 0 0"><HAnimSegment name="l_thigh" DEF="hanim_l_thigh"><Transform translation="0.0961 0.9124 -0.0001"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="l_hip" DEF="hanim_l_hip" center="0.0961 0.9124 -0.0001" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_thigh" DEF="hanim_l_thigh"><Transform translation="0.0961 0.9124 -0.0001"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="MIN_COLOR"></Material>
 </Appearance>
@@ -199,14 +199,14 @@
 </Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_knee" DEF="hanim_l_knee" center="0.104 0.4867 0.0308" stiffness="0 0 0"><HAnimSegment name="l_calf" DEF="hanim_l_calf"><Transform translation="0.104 0.4867 0.0308"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="l_knee" DEF="hanim_l_knee" center="0.104 0.4867 0.0308" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_calf" DEF="hanim_l_calf"><Transform translation="0.104 0.4867 0.0308"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="MIN_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_talocrural" DEF="hanim_l_talocrural" center="0.1101 0.0656 -0.0736" stiffness="0 0 0"><HAnimSegment name="l_talus" DEF="hanim_l_talus"><Transform translation="0.1101 0.0656 -0.0736"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="l_talocrural" DEF="hanim_l_talocrural" center="0.1101 0.0656 -0.0736" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_talus" DEF="hanim_l_talus"><Transform translation="0.1101 0.0656 -0.0736"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="MIN_COLOR"></Material>
 </Appearance>
@@ -237,14 +237,14 @@
 </Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_tarsometatarsal_2" DEF="hanim_l_tarsometatarsal_2" center="0.1086 0.0001 -0.0368" stiffness="0 0 0"><HAnimSegment name="l_metatarsal_2" DEF="hanim_l_metatarsal_2"><Transform translation="0.1086 0.0001 -0.0368"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="l_tarsometatarsal_2" DEF="hanim_l_tarsometatarsal_2" center="0.1086 0.0001 -0.0368" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_metatarsal_2" DEF="hanim_l_metatarsal_2"><Transform translation="0.1086 0.0001 -0.0368"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="MIN_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_metatarsophalangeal_2" DEF="hanim_l_metatarsophalangeal_2" center="0.1086 0.0001 0.0368" stiffness="0 0 0"><HAnimSegment name="l_tarsal_proximal_phalanx_2" DEF="hanim_l_tarsal_proximal_phalanx_2"><Transform translation="0.1086 0.0001 0.0368"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="l_metatarsophalangeal_2" DEF="hanim_l_metatarsophalangeal_2" center="0.1086 0.0001 0.0368" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_proximal_phalanx_2" DEF="hanim_l_tarsal_proximal_phalanx_2"><Transform translation="0.1086 0.0001 0.0368"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="JOINT_COLOR"></Material>
 </Appearance>
@@ -263,7 +263,7 @@
 </Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_tarsal_distal_interphalangeal_2" DEF="hanim_l_tarsal_distal_interphalangeal_2" center="0.1086 0 0.0762" stiffness="0 0 0"><HAnimSegment name="l_tarsal_distal_phalanx_2" DEF="hanim_l_tarsal_distal_phalanx_2"><Transform translation="0.1086 0 0.0762"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="l_tarsal_distal_interphalangeal_2" DEF="hanim_l_tarsal_distal_interphalangeal_2" center="0.1086 0 0.0762" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_distal_phalanx_2" DEF="hanim_l_tarsal_distal_phalanx_2"><Transform translation="0.1086 0 0.0762"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="JOINT_COLOR"></Material>
 </Appearance>
@@ -294,7 +294,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_hip" DEF="hanim_r_hip" center="-0.095 0.9171 0.0029" stiffness="0 0 0"><HAnimSegment name="r_thigh" DEF="hanim_r_thigh"><Transform translation="-0.095 0.9171 0.0029"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="r_hip" DEF="hanim_r_hip" center="-0.095 0.9171 0.0029" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_thigh" DEF="hanim_r_thigh"><Transform translation="-0.095 0.9171 0.0029"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="MIN_COLOR"></Material>
 </Appearance>
@@ -319,14 +319,14 @@
 </Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="r_knee" DEF="hanim_r_knee" center="-0.0867 0.4913 0.0318" stiffness="0 0 0"><HAnimSegment name="r_calf" DEF="hanim_r_calf"><Transform translation="-0.0867 0.4913 0.0318"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="r_knee" DEF="hanim_r_knee" center="-0.0867 0.4913 0.0318" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_calf" DEF="hanim_r_calf"><Transform translation="-0.0867 0.4913 0.0318"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="SITE_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="r_talocrural" DEF="hanim_r_talocrural" center="-0.0801 0.0712 -0.0766" stiffness="0 0 0"><HAnimSegment name="r_talus" DEF="hanim_r_talus"><Transform translation="-0.0801 0.0712 -0.0766"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="r_talocrural" DEF="hanim_r_talocrural" center="-0.0801 0.0712 -0.0766" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_talus" DEF="hanim_r_talus"><Transform translation="-0.0801 0.0712 -0.0766"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="MIN_COLOR"></Material>
 </Appearance>
@@ -357,7 +357,7 @@
 </Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="r_metatarsophalangeal_2" DEF="hanim_r_metatarsophalangeal_2" center="-0.0801 0 0.0368" stiffness="0 0 0"><HAnimSegment name="r_tarsal_proximal_phalanx_2" DEF="hanim_r_tarsal_proximal_phalanx_2"><Transform translation="-0.0801 0 0.0368"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="r_metatarsophalangeal_2" DEF="hanim_r_metatarsophalangeal_2" center="-0.0801 0 0.0368" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_tarsal_proximal_phalanx_2" DEF="hanim_r_tarsal_proximal_phalanx_2"><Transform translation="-0.0801 0 0.0368"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="JOINT_COLOR"></Material>
 </Appearance>
@@ -393,126 +393,126 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="vl5" DEF="hanim_vl5" center="0.0028 1.0568 -0.0776" stiffness="0 0 0"><HAnimSegment name="l5" DEF="hanim_l5"><Transform translation="0.0028 1.0568 -0.0776"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="vl5" DEF="hanim_vl5" center="0.0028 1.0568 -0.0776" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l5" DEF="hanim_l5"><Transform translation="0.0028 1.0568 -0.0776"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="REC_SPINAL_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="vl4" DEF="hanim_vl4" center="0.0035 1.0925 -0.0787" stiffness="0 0 0"><HAnimSegment name="l4" DEF="hanim_l4"><Transform translation="0.0035 1.0925 -0.0787"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="vl4" DEF="hanim_vl4" center="0.0035 1.0925 -0.0787" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l4" DEF="hanim_l4"><Transform translation="0.0035 1.0925 -0.0787"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="SPINAL_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="vl3" DEF="hanim_vl3" center="0.0041 1.1276 -0.0796" stiffness="0 0 0"><HAnimSegment name="l3" DEF="hanim_l3"><Transform translation="0.0041 1.1276 -0.0796"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="vl3" DEF="hanim_vl3" center="0.0041 1.1276 -0.0796" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l3" DEF="hanim_l3"><Transform translation="0.0041 1.1276 -0.0796"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="REC_SPINAL_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="vl2" DEF="hanim_vl2" center="0.0045 1.1546 -0.08" stiffness="0 0 0"><HAnimSegment name="l2" DEF="hanim_l2"><Transform translation="0.0045 1.1546 -0.08"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="vl2" DEF="hanim_vl2" center="0.0045 1.1546 -0.08" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l2" DEF="hanim_l2"><Transform translation="0.0045 1.1546 -0.08"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="SPINAL_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="vl1" DEF="hanim_vl1" center="0.0048 1.1912 -0.0805" stiffness="0 0 0"><HAnimSegment name="l1" DEF="hanim_l1"><Transform translation="0.0048 1.1912 -0.0805"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="vl1" DEF="hanim_vl1" center="0.0048 1.1912 -0.0805" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l1" DEF="hanim_l1"><Transform translation="0.0048 1.1912 -0.0805"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="REC_SPINAL_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="vt12" DEF="hanim_vt12" center="0.0051 1.2278 -0.0808" stiffness="0 0 0"><HAnimSegment name="t12" DEF="hanim_t12"><Transform translation="0.0051 1.2278 -0.0808"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="vt12" DEF="hanim_vt12" center="0.0051 1.2278 -0.0808" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t12" DEF="hanim_t12"><Transform translation="0.0051 1.2278 -0.0808"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="SPINAL_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="vt11" DEF="hanim_vt11" center="0.0053 1.2679 -0.081" stiffness="0 0 0"><HAnimSegment name="t11" DEF="hanim_t11"><Transform translation="0.0053 1.2679 -0.081"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="vt11" DEF="hanim_vt11" center="0.0053 1.2679 -0.081" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t11" DEF="hanim_t11"><Transform translation="0.0053 1.2679 -0.081"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="SPINAL_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="vt10" DEF="hanim_vt10" center="0.0056 1.2848 -0.0822" stiffness="0 0 0"><HAnimSegment name="t10" DEF="hanim_t10"><Transform translation="0.0056 1.2848 -0.0822"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="vt10" DEF="hanim_vt10" center="0.0056 1.2848 -0.0822" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t10" DEF="hanim_t10"><Transform translation="0.0056 1.2848 -0.0822"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="REC_SPINAL_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="vt9" DEF="hanim_vt9" center="0.0057 1.3126 -0.0838" stiffness="0 0 0"><HAnimSegment name="t9" DEF="hanim_t9"><Transform translation="0.0057 1.3126 -0.0838"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="vt9" DEF="hanim_vt9" center="0.0057 1.3126 -0.0838" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t9" DEF="hanim_t9"><Transform translation="0.0057 1.3126 -0.0838"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="SPINAL_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="vt8" DEF="hanim_vt8" center="0.0057 1.3382 -0.0845" stiffness="0 0 0"><HAnimSegment name="t8" DEF="hanim_t8"><Transform translation="0.0057 1.3382 -0.0845"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="vt8" DEF="hanim_vt8" center="0.0057 1.3382 -0.0845" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t8" DEF="hanim_t8"><Transform translation="0.0057 1.3382 -0.0845"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="SPINAL_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="vt7" DEF="hanim_vt7" center="0.0058 1.3625 -0.0833" stiffness="0 0 0"><HAnimSegment name="t7" DEF="hanim_t7"><Transform translation="0.0058 1.3625 -0.0833"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="vt7" DEF="hanim_vt7" center="0.0058 1.3625 -0.0833" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t7" DEF="hanim_t7"><Transform translation="0.0058 1.3625 -0.0833"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="SPINAL_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="vt6" DEF="hanim_vt6" center="0.0059 1.3866 -0.08" stiffness="0 0 0"><HAnimSegment name="t6" DEF="hanim_t6"><Transform translation="0.0059 1.3866 -0.08"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="vt6" DEF="hanim_vt6" center="0.0059 1.3866 -0.08" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t6" DEF="hanim_t6"><Transform translation="0.0059 1.3866 -0.08"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="REC_SPINAL_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="vt5" DEF="hanim_vt5" center="0.006 1.4102 -0.0745" stiffness="0 0 0"><HAnimSegment name="t5" DEF="hanim_t5"><Transform translation="0.006 1.4102 -0.0745"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="vt5" DEF="hanim_vt5" center="0.006 1.4102 -0.0745" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t5" DEF="hanim_t5"><Transform translation="0.006 1.4102 -0.0745"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="SPINAL_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="vt4" DEF="hanim_vt4" center="0.0061 1.432 -0.0675" stiffness="0 0 0"><HAnimSegment name="t4" DEF="hanim_t4"><Transform translation="0.0061 1.432 -0.0675"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="vt4" DEF="hanim_vt4" center="0.0061 1.432 -0.0675" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t4" DEF="hanim_t4"><Transform translation="0.0061 1.432 -0.0675"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="SPINAL_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="vt3" DEF="hanim_vt3" center="0.0062 1.4583 -0.057" stiffness="0 0 0"><HAnimSegment name="t3" DEF="hanim_t3"><Transform translation="0.0062 1.4583 -0.057"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="vt3" DEF="hanim_vt3" center="0.0062 1.4583 -0.057" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t3" DEF="hanim_t3"><Transform translation="0.0062 1.4583 -0.057"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="SPINAL_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="vt2" DEF="hanim_vt2" center="0.0063 1.4761 -0.0484" stiffness="0 0 0"><HAnimSegment name="t2" DEF="hanim_t2"><Transform translation="0.0063 1.4761 -0.0484"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="vt2" DEF="hanim_vt2" center="0.0063 1.4761 -0.0484" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t2" DEF="hanim_t2"><Transform translation="0.0063 1.4761 -0.0484"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="SPINAL_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="vt1" DEF="hanim_vt1" center="0.0065 1.4951 -0.0387" stiffness="0 0 0"><HAnimSegment name="t1" DEF="hanim_t1"><Transform translation="0.0065 1.4951 -0.0387"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="vt1" DEF="hanim_vt1" center="0.0065 1.4951 -0.0387" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t1" DEF="hanim_t1"><Transform translation="0.0065 1.4951 -0.0387"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="REC_SPINAL_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_shoulder" DEF="hanim_l_shoulder" center="0.2029 1.4376 -0.0387" stiffness="0 0 0"><HAnimSegment name="l_upperarm" DEF="hanim_l_upperarm"><Transform translation="0.2029 1.4376 -0.0387"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="l_shoulder" DEF="hanim_l_shoulder" center="0.2029 1.4376 -0.0387" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_upperarm" DEF="hanim_l_upperarm"><Transform translation="0.2029 1.4376 -0.0387"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="MIN_COLOR"></Material>
 </Appearance>
@@ -526,7 +526,7 @@
 </Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_elbow" DEF="hanim_l_elbow" center="0.2014 1.1357 -0.0682" stiffness="0 0 0"><HAnimSegment name="l_forearm" DEF="hanim_l_forearm"><Transform translation="0.2014 1.1357 -0.0682"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="l_elbow" DEF="hanim_l_elbow" center="0.2014 1.1357 -0.0682" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_forearm" DEF="hanim_l_forearm"><Transform translation="0.2014 1.1357 -0.0682"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="MIN_COLOR"></Material>
 </Appearance>
@@ -558,7 +558,7 @@
 </Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_radiocarpal" DEF="hanim_l_radiocarpal" center="0.1984 0.8663 -0.0583" stiffness="0 0 0"><HAnimSegment name="l_carpal" DEF="hanim_l_carpal"><Transform translation="0.1984 0.8663 -0.0583"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="l_radiocarpal" DEF="hanim_l_radiocarpal" center="0.1984 0.8663 -0.0583" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_carpal" DEF="hanim_l_carpal"><Transform translation="0.1984 0.8663 -0.0583"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="MIN_COLOR"></Material>
 </Appearance>
@@ -596,21 +596,21 @@
 </Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_carpometacarpal_1" DEF="hanim_l_carpometacarpal_1" center="0.1924 0.8472 -0.0534" stiffness="0 0 0"><HAnimSegment name="l_metacarpal_1" DEF="hanim_l_metacarpal_1"><Transform translation="0.1924 0.8472 -0.0534"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="l_carpometacarpal_1" DEF="hanim_l_carpometacarpal_1" center="0.1924 0.8472 -0.0534" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_metacarpal_1" DEF="hanim_l_metacarpal_1"><Transform translation="0.1924 0.8472 -0.0534"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="JOINT_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_metacarpophalangeal_1" DEF="hanim_l_metacarpophalangeal_1" center="0.1951 0.8226 0.0246" stiffness="0 0 0"><HAnimSegment name="l_carpal_proximal_phalanx_1" DEF="hanim_l_carpal_proximal_phalanx_1"><Transform translation="0.1951 0.8226 0.0246"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="l_metacarpophalangeal_1" DEF="hanim_l_metacarpophalangeal_1" center="0.1951 0.8226 0.0246" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_carpal_proximal_phalanx_1" DEF="hanim_l_carpal_proximal_phalanx_1"><Transform translation="0.1951 0.8226 0.0246"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="JOINT_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_carpal_interphalangeal_1" DEF="hanim_l_carpal_interphalangeal_1" center="0.1955 0.8159 0.0464" stiffness="0 0 0"><HAnimSegment name="l_carpal_distal_phalanx_1" DEF="hanim_l_carpal_distal_phalanx_1"><Transform translation="0.1955 0.8159 0.0464"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="l_carpal_interphalangeal_1" DEF="hanim_l_carpal_interphalangeal_1" center="0.1955 0.8159 0.0464" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_carpal_distal_phalanx_1" DEF="hanim_l_carpal_distal_phalanx_1"><Transform translation="0.1955 0.8159 0.0464"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="JOINT_COLOR"></Material>
 </Appearance>
@@ -626,28 +626,28 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="l_carpometacarpal_2" DEF="hanim_l_carpometacarpal_2" center="0.1983 0.8024 -0.028" stiffness="0 0 0"><HAnimSegment name="l_metacarpal_2" DEF="hanim_l_metacarpal_2"><Transform translation="0.1983 0.8024 -0.028"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="l_carpometacarpal_2" DEF="hanim_l_carpometacarpal_2" center="0.1983 0.8024 -0.028" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_metacarpal_2" DEF="hanim_l_metacarpal_2"><Transform translation="0.1983 0.8024 -0.028"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="JOINT_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_metacarpophalangeal_2" DEF="hanim_l_metacarpophalangeal_2" center="0.1983 0.7815 -0.028" stiffness="0 0 0"><HAnimSegment name="l_carpal_proximal_phalanx_2" DEF="hanim_l_carpal_proximal_phalanx_2"><Transform translation="0.1983 0.7815 -0.028"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="l_metacarpophalangeal_2" DEF="hanim_l_metacarpophalangeal_2" center="0.1983 0.7815 -0.028" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_carpal_proximal_phalanx_2" DEF="hanim_l_carpal_proximal_phalanx_2"><Transform translation="0.1983 0.7815 -0.028"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="JOINT_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_carpal_proximal_interphalangeal_2" DEF="hanim_l_carpal_proximal_interphalangeal_2" center="0.2017 0.7363 -0.0248" stiffness="0 0 0"><HAnimSegment name="l_carpal_middle_phalanx_2" DEF="hanim_l_carpal_middle_phalanx_2"><Transform translation="0.2017 0.7363 -0.0248"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="l_carpal_proximal_interphalangeal_2" DEF="hanim_l_carpal_proximal_interphalangeal_2" center="0.2017 0.7363 -0.0248" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_carpal_middle_phalanx_2" DEF="hanim_l_carpal_middle_phalanx_2"><Transform translation="0.2017 0.7363 -0.0248"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="JOINT_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_carpal_distal_interphalangeal_2" DEF="hanim_l_carpal_distal_interphalangeal_2" center="0.2028 0.7139 -0.0236" stiffness="0 0 0"><HAnimSegment name="l_carpal_distal_phalanx_2" DEF="hanim_l_carpal_distal_phalanx_2"><Transform translation="0.2028 0.7139 -0.0236"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="l_carpal_distal_interphalangeal_2" DEF="hanim_l_carpal_distal_interphalangeal_2" center="0.2028 0.7139 -0.0236" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_carpal_distal_phalanx_2" DEF="hanim_l_carpal_distal_phalanx_2"><Transform translation="0.2028 0.7139 -0.0236"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="JOINT_COLOR"></Material>
 </Appearance>
@@ -667,7 +667,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_shoulder" DEF="hanim_r_shoulder" center="-0.1907 1.4407 -0.0325" stiffness="0 0 0"><HAnimSegment name="r_upperarm" DEF="hanim_r_upperarm"><Transform translation="-0.1907 1.4407 -0.0325"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="r_shoulder" DEF="hanim_r_shoulder" center="-0.1907 1.4407 -0.0325" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_upperarm" DEF="hanim_r_upperarm"><Transform translation="-0.1907 1.4407 -0.0325"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="MIN_COLOR"></Material>
 </Appearance>
@@ -681,7 +681,7 @@
 </Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="r_elbow" DEF="hanim_r_elbow" center="-0.1949 1.1388 -0.062" stiffness="0 0 0"><HAnimSegment name="r_forearm" DEF="hanim_r_forearm"><Transform translation="-0.1949 1.1388 -0.062"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="r_elbow" DEF="hanim_r_elbow" center="-0.1949 1.1388 -0.062" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_forearm" DEF="hanim_r_forearm"><Transform translation="-0.1949 1.1388 -0.062"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="MIN_COLOR"></Material>
 </Appearance>
@@ -713,7 +713,7 @@
 </Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="r_radiocarpal" DEF="hanim_r_radiocarpal" center="-0.1959 0.8694 -0.0521" stiffness="0 0 0"><HAnimSegment name="r_carpal" DEF="hanim_r_carpal"><Transform translation="-0.1959 0.8694 -0.0521"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="r_radiocarpal" DEF="hanim_r_radiocarpal" center="-0.1959 0.8694 -0.0521" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_carpal" DEF="hanim_r_carpal"><Transform translation="-0.1959 0.8694 -0.0521"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="MIN_COLOR"></Material>
 </Appearance>
@@ -754,56 +754,56 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="vc7" DEF="hanim_vc7" center="0.0066 1.5132 -0.0301" stiffness="0 0 0"><HAnimSegment name="c7" DEF="hanim_c7"><Transform translation="0.0066 1.5132 -0.0301"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="vc7" DEF="hanim_vc7" center="0.0066 1.5132 -0.0301" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="c7" DEF="hanim_c7"><Transform translation="0.0066 1.5132 -0.0301"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="SPINAL_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="vc6" DEF="hanim_vc6" center="0.0066 1.5357 -0.0143" stiffness="0 0 0"><HAnimSegment name="c6" DEF="hanim_c6"><Transform translation="0.0066 1.5357 -0.0143"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="vc6" DEF="hanim_vc6" center="0.0066 1.5357 -0.0143" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="c6" DEF="hanim_c6"><Transform translation="0.0066 1.5357 -0.0143"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="SPINAL_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="vc5" DEF="hanim_vc5" center="0.0066 1.552 -0.0082" stiffness="0 0 0"><HAnimSegment name="c5" DEF="hanim_c5"><Transform translation="0.0066 1.552 -0.0082"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="vc5" DEF="hanim_vc5" center="0.0066 1.552 -0.0082" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="c5" DEF="hanim_c5"><Transform translation="0.0066 1.552 -0.0082"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="SPINAL_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="vc4" DEF="hanim_vc4" center="0.0066 1.5662 -0.0084" stiffness="0 0 0"><HAnimSegment name="c4" DEF="hanim_c4"><Transform translation="0.0066 1.5662 -0.0084"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="vc4" DEF="hanim_vc4" center="0.0066 1.5662 -0.0084" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="c4" DEF="hanim_c4"><Transform translation="0.0066 1.5662 -0.0084"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="SPINAL_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="vc3" DEF="hanim_vc3" center="0.0066 1.58 -0.0103" stiffness="0 0 0"><HAnimSegment name="c3" DEF="hanim_c3"><Transform translation="0.0066 1.58 -0.0103"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="vc3" DEF="hanim_vc3" center="0.0066 1.58 -0.0103" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="c3" DEF="hanim_c3"><Transform translation="0.0066 1.58 -0.0103"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="SPINAL_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="vc2" DEF="hanim_vc2" center="0.0066 1.5928 -0.0103" stiffness="0 0 0"><HAnimSegment name="c2" DEF="hanim_c2"><Transform translation="0.0066 1.5928 -0.0103"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="vc2" DEF="hanim_vc2" center="0.0066 1.5928 -0.0103" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="c2" DEF="hanim_c2"><Transform translation="0.0066 1.5928 -0.0103"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="REC_SPINAL_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="vc1" DEF="hanim_vc1" center="0.0066 1.6144 -0.0034" stiffness="0 0 0"><HAnimSegment name="c1" DEF="hanim_c1"><Transform translation="0.0066 1.6144 -0.0034"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="vc1" DEF="hanim_vc1" center="0.0066 1.6144 -0.0034" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="c1" DEF="hanim_c1"><Transform translation="0.0066 1.6144 -0.0034"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="SPINAL_COLOR"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="skullbase" DEF="hanim_skullbase" center="0.0044 1.6209 0.0236" stiffness="0 0 0"><HAnimSegment name="skull" DEF="hanim_skull"><Transform translation="0.0044 1.6209 0.0236"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
+<HAnimJoint name="skullbase" DEF="hanim_skullbase" center="0.0044 1.6209 0.0236" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="skull" DEF="hanim_skull"><Transform translation="0.0044 1.6209 0.0236"><Shape><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" USE="points"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material USE="MIN_COLOR"></Material>
 </Appearance>

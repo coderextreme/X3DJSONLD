@@ -44,7 +44,7 @@
           },
           {
             "@name":"translated",
-            "@content":"18 November 2021"
+            "@content":"21 June 2023"
           },
           {
             "@name":"generator",
@@ -90,52 +90,82 @@
           },
           { "SpatialSound":
             {
+              "@distanceModel":"INVERSE",
+              "@dopplerEnabled":false,
               "-children":[
                 { "Analyser":
                   {
+                    "@channelCountMode":"MAX",
+                    "@channelInterpretation":"SPEAKERS",
                     "-children":[
                       { "AudioDestination":
                         {
+                          "@channelCountMode":"MAX",
+                          "@channelInterpretation":"SPEAKERS",
                           "-children":[
                             { "BiquadFilter":
                               {
+                                "@channelCountMode":"MAX",
+                                "@channelInterpretation":"SPEAKERS",
+                                "@type":"LOWPASS",
                                 "-children":[
                                   { "ChannelMerger":
                                     {
+                                      "@channelCountMode":"MAX",
+                                      "@channelInterpretation":"SPEAKERS",
                                       "-children":[
                                         { "ChannelSelector":
                                           {
+                                            "@channelCountMode":"MAX",
+                                            "@channelInterpretation":"SPEAKERS",
                                             "-children":[
                                               { "ChannelSplitter":
                                                 {
+                                                  "@channelCountMode":"MAX",
+                                                  "@channelInterpretation":"SPEAKERS",
                                                   "-children":[
                                                     { "Convolver":
                                                       {
+                                                        "@channelCountMode":"MAX",
+                                                        "@channelInterpretation":"SPEAKERS",
                                                         "-children":[
                                                           { "Delay":
                                                             {
+                                                              "@channelCountMode":"MAX",
+                                                              "@channelInterpretation":"SPEAKERS",
                                                               "-children":[
                                                                 { "DynamicsCompressor":
                                                                   {
+                                                                    "@channelCountMode":"MAX",
+                                                                    "@channelInterpretation":"SPEAKERS",
                                                                     "-children":[
                                                                       { "Gain":
                                                                         {
+                                                                          "@channelCountMode":"MAX",
+                                                                          "@channelInterpretation":"SPEAKERS",
                                                                           "-children":[
                                                                             { "StreamAudioDestination":
                                                                               {
+                                                                                "@channelCountMode":"MAX",
+                                                                                "@channelInterpretation":"SPEAKERS",
                                                                                 "-children":[
                                                                                   { "WaveShaper":
                                                                                     {
+                                                                                      "@channelCountMode":"MAX",
+                                                                                      "@channelInterpretation":"SPEAKERS",
                                                                                       "-children":[
                                                                                         {
                                                                                           "#comment":"The following X3DSoundSourceNode nodes have no audio-graph children"
                                                                                         },
                                                                                         { "BufferAudioSource":
                                                                                           {
+                                                                                            "@channelCountMode":"MAX",
+                                                                                            "@channelInterpretation":"SPEAKERS"
                                                                                           }
                                                                                         },
                                                                                         { "ListenerPointSource":
                                                                                           {
+                                                                                            "@dopplerEnabled":false
                                                                                           }
                                                                                         },
                                                                                         { "MicrophoneSource":
@@ -144,10 +174,13 @@
                                                                                         },
                                                                                         { "OscillatorSource":
                                                                                           {
+                                                                                            "@frequency":440.0
                                                                                           }
                                                                                         },
                                                                                         { "StreamAudioSource":
                                                                                           {
+                                                                                            "@channelCountMode":"MAX",
+                                                                                            "@channelInterpretation":"SPEAKERS"
                                                                                           }
                                                                                         }
                                                                                       ]

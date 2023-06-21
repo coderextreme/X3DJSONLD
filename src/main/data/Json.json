@@ -166,7 +166,7 @@
           },
           {
             "@name":"translated",
-            "@content":"18 November 2021"
+            "@content":"21 June 2023"
           },
           {
             "@name":"generator",
@@ -375,7 +375,7 @@
                               "#comment":"Comment example B, XML character entities: He said, &quot;Immel did it!&quot;"
                             }
                           ],
-                          "-metadata":
+                          "-value":[
                             { "MetadataSet":
                               {
                                 "@name":"EscapedQuotationMarksMetadataSet",
@@ -394,7 +394,8 @@
                                   }
                                 ]
                               }
-                            },
+                            }
+                          ],
                           "-fontStyle":
                             { "FontStyle":
                               {
@@ -952,14 +953,15 @@
               "-children":[
                 { "Shape":
                   {
-                    "-metadata":
+                    "-value":[
                       { "MetadataString":
                         {
                           "@name":"findThisNameValue",
                           "@DEF":"FindableMetadataStringTest",
                           "@value":["test case"]
                         }
-                      },
+                      }
+                    ],
                     "-appearance":
                       { "Appearance":
                         {

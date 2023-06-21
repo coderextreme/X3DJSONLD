@@ -106,7 +106,7 @@
           },
           {
             "@name":"translated",
-            "@content":"18 November 2021"
+            "@content":"21 June 2023"
           },
           {
             "@name":"generator",
@@ -149,7 +149,7 @@
                   "#comment":"HAnimHumanoid original info='\"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org\" \"authorName=Matthew T. Beitler\" \"copyright=Copyright 1999 Matthew T. Beitler\" \"creationDate=05/12/99\" \"humanoidVersion=JointCenters 1.1 LOA0\" \"usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.\"'"
                 }
               ],
-              "-metadata":
+              "-value":[
                 { "MetadataSet":
                   {
                     "@name":"HAnimHumanoid.info",
@@ -193,13 +193,16 @@
                       }
                     ]
                   }
-                },
+                }
+              ],
               "-skeleton":[
                 { "HAnimJoint":
                   {
                     "@name":"humanoid_root",
                     "@DEF":"hanim_humanoid_root",
                     "@center":[0.0,0.8240,0.0277],
+                    "@ulimit":[0,0,0],
+                    "@llimit":[0,0,0],
                     "@stiffness":[0,0,0],
                     "-children":[
                       { "HAnimJoint":
@@ -207,6 +210,8 @@
                           "@name":"sacroiliac",
                           "@DEF":"hanim_sacroiliac",
                           "@center":[0.0,0.9149,0.0016],
+                          "@ulimit":[0,0,0],
+                          "@llimit":[0,0,0],
                           "@stiffness":[0,0,0],
                           "-children":[
                             { "HAnimSegment":

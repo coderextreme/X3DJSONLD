@@ -35,22 +35,22 @@
 </head>
 <Scene><WorldInfo info="&quot;(C) 2000 James Smith - james@vapourtech.com&quot; &quot;http://www.vapourtech.com/team/james/boxman.wrl&quot; &quot;Blaxxun compatibility by Tu Lam - TuL@seamless-solutions.com&quot;" title="BoxMan - A Seamless VRML Human"></WorldInfo>
 <Background groundColor="0.6 0.6 0.6" skyColor="0.75 0.75 0.75"></Background>
-<HAnimHumanoid name="Humanoid" DEF="boxman_Humanoid" info="&quot;authorName=James Smith&quot; &quot;authorEmail=james@vapourtech.com&quot; &quot;copyright=(C) 2000 James Smith - james@vapourtech.com&quot; &quot;humanoidVersion=1.0&quot;" version="1.0"><HAnimJoint name="humanoid_root" DEF="boxman_humanoid_root" center="0 0.9723 -0.0728" skinCoordIndex="0 1 2 3 4 5 6 7 8 9 10 11" skinCoordWeight="1 1 1 1 1 1 1 1 1 1 1 1" stiffness="0 0 0" containerField="skeleton"><HAnimSegment name="sacrum" DEF="boxman_sacrum"><Transform translation="0 0.9723 -0.0728"><Shape DEF="SphereYellow"><Appearance><Material diffuseColor="1 1 0"></Material>
+<HAnimHumanoid name="Humanoid" DEF="boxman_Humanoid" info="&quot;authorName=James Smith&quot; &quot;authorEmail=james@vapourtech.com&quot; &quot;copyright=(C) 2000 James Smith - james@vapourtech.com&quot; &quot;humanoidVersion=1.0&quot;" version="1.0"><HAnimJoint name="humanoid_root" DEF="boxman_humanoid_root" center="0 0.9723 -0.0728" skinCoordIndex="0 1 2 3 4 5 6 7 8 9 10 11" skinCoordWeight="1 1 1 1 1 1 1 1 1 1 1 1" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0" containerField="skeleton"><HAnimSegment name="sacrum" DEF="boxman_sacrum"><Transform translation="0 0.9723 -0.0728"><Shape DEF="SphereYellow"><Appearance><Material diffuseColor="1 1 0"></Material>
 </Appearance>
 <Sphere containerField="geometry" radius="0.02"></Sphere>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_hip" DEF="boxman_l_hip" center="0.0956 0.9364 0" skinCoordIndex="12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43" skinCoordWeight="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5" stiffness="0 0 0"><HAnimSegment name="l_thigh" DEF="boxman_l_thigh"><Transform translation="0.0956 0.9364 0"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="l_hip" DEF="boxman_l_hip" center="0.0956 0.9364 0" skinCoordIndex="12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43" skinCoordWeight="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_thigh" DEF="boxman_l_thigh"><Transform translation="0.0956 0.9364 0"><Shape USE="SphereYellow"></Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_knee" DEF="boxman_l_knee" center="0.0956 0.5095 -0.0036" skinCoordIndex="36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63" skinCoordWeight="0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1" stiffness="0 0 0"><HAnimSegment name="l_calf" DEF="boxman_l_calf"><Transform translation="0.0956 0.5095 -0.0036"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="l_knee" DEF="boxman_l_knee" center="0.0956 0.5095 -0.0036" skinCoordIndex="36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63" skinCoordWeight="0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_calf" DEF="boxman_l_calf"><Transform translation="0.0956 0.5095 -0.0036"><Shape USE="SphereYellow"></Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_ankle" DEF="boxman_l_ankle" center="0.0946 0.0762 -0.0261" skinCoordIndex="64 65 66 67 68 69 70 71" skinCoordWeight="1 1 1 1 1 1 1 1" stiffness="0 0 0"><HAnimSegment name="l_hindfoot" DEF="boxman_l_hindfoot"><Transform translation="0.0946 0.0762 -0.0261"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="l_ankle" DEF="boxman_l_ankle" center="0.0946 0.0762 -0.0261" skinCoordIndex="64 65 66 67 68 69 70 71" skinCoordWeight="1 1 1 1 1 1 1 1" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_hindfoot" DEF="boxman_l_hindfoot"><Transform translation="0.0946 0.0762 -0.0261"><Shape USE="SphereYellow"></Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_midtarsal" DEF="boxman_l_midtarsal" center="0.1079 0.0317 0.067" skinCoordIndex="72 73 74 75 76 77 78 79" skinCoordWeight="1 1 1 1 1 1 1 1" stiffness="0 0 0"><HAnimSegment name="l_middistal" DEF="boxman_l_middistal"><Transform translation="0.1079 0.0317 0.067"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="l_midtarsal" DEF="boxman_l_midtarsal" center="0.1079 0.0317 0.067" skinCoordIndex="72 73 74 75 76 77 78 79" skinCoordWeight="1 1 1 1 1 1 1 1" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_middistal" DEF="boxman_l_middistal"><Transform translation="0.1079 0.0317 0.067"><Shape USE="SphereYellow"></Shape>
 </Transform>
 <HAnimSite name="l_middistal_tip" DEF="boxman_l_middistal_tip" translation="0.095 0.0005 0.1924"><Shape DEF="SphereRed"><Appearance><Material diffuseColor="1 0 0"></Material>
 </Appearance>
@@ -62,16 +62,16 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_hip" DEF="boxman_r_hip" center="-0.0956 0.9364 0" skinCoordIndex="80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111" skinCoordWeight="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5" stiffness="0 0 0"><HAnimSegment name="r_thigh" DEF="boxman_r_thigh"><Transform translation="-0.0956 0.9364 0"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="r_hip" DEF="boxman_r_hip" center="-0.0956 0.9364 0" skinCoordIndex="80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111" skinCoordWeight="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_thigh" DEF="boxman_r_thigh"><Transform translation="-0.0956 0.9364 0"><Shape USE="SphereYellow"></Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="r_knee" DEF="boxman_r_knee" center="-0.0956 0.5095 -0.0036" skinCoordIndex="104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131" skinCoordWeight="0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1" stiffness="0 0 0"><HAnimSegment name="r_calf" DEF="boxman_r_calf"><Transform translation="-0.0956 0.5095 -0.0036"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="r_knee" DEF="boxman_r_knee" center="-0.0956 0.5095 -0.0036" skinCoordIndex="104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131" skinCoordWeight="0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_calf" DEF="boxman_r_calf"><Transform translation="-0.0956 0.5095 -0.0036"><Shape USE="SphereYellow"></Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="r_ankle" DEF="boxman_r_ankle" center="-0.0946 0.0762 -0.0261" skinCoordIndex="132 133 134 135 136 137 138 139" skinCoordWeight="1 1 1 1 1 1 1 1" stiffness="0 0 0"><HAnimSegment name="r_hindfoot" DEF="boxman_r_hindfoot"><Transform translation="-0.0946 0.0762 -0.0261"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="r_ankle" DEF="boxman_r_ankle" center="-0.0946 0.0762 -0.0261" skinCoordIndex="132 133 134 135 136 137 138 139" skinCoordWeight="1 1 1 1 1 1 1 1" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_hindfoot" DEF="boxman_r_hindfoot"><Transform translation="-0.0946 0.0762 -0.0261"><Shape USE="SphereYellow"></Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="r_midtarsal" DEF="boxman_r_midtarsal" center="-0.1079 0.0317 0.067" skinCoordIndex="140 141 142 143 144 145 146 147" skinCoordWeight="1 1 1 1 1 1 1 1" stiffness="0 0 0"><HAnimSegment name="r_middistal" DEF="boxman_r_middistal"><Transform translation="-0.1079 0.0317 0.067"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="r_midtarsal" DEF="boxman_r_midtarsal" center="-0.1079 0.0317 0.067" skinCoordIndex="140 141 142 143 144 145 146 147" skinCoordWeight="1 1 1 1 1 1 1 1" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_middistal" DEF="boxman_r_middistal"><Transform translation="-0.1079 0.0317 0.067"><Shape USE="SphereYellow"></Shape>
 </Transform>
 <HAnimSite name="r_middistal_tip" DEF="boxman_r_middistal_tip" translation="-0.095 0.0005 0.1924"><Shape USE="SphereRed"></Shape>
 </HAnimSite>
@@ -80,22 +80,22 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="vl5" DEF="boxman_vl5" center="0 1.0817 -0.0728" skinCoordIndex="148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167" skinCoordWeight="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1" stiffness="0 0 0"><HAnimSegment name="l5" DEF="boxman_l5"><Transform translation="0 1.0817 -0.0728"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="vl5" DEF="boxman_vl5" center="0 1.0817 -0.0728" skinCoordIndex="148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167" skinCoordWeight="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l5" DEF="boxman_l5"><Transform translation="0 1.0817 -0.0728"><Shape USE="SphereYellow"></Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="skullbase" DEF="boxman_skullbase" center="0 1.644 0.036" skinCoordIndex="168 169 170 171 172 173 174 175" skinCoordWeight="1 1 1 1 1 1 1 1" stiffness="0 0 0"><HAnimSegment name="skull" DEF="boxman_skull"><Transform translation="0 1.644 0.036"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="skullbase" DEF="boxman_skullbase" center="0 1.644 0.036" skinCoordIndex="168 169 170 171 172 173 174 175" skinCoordWeight="1 1 1 1 1 1 1 1" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="skull" DEF="boxman_skull"><Transform translation="0 1.644 0.036"><Shape USE="SphereYellow"></Shape>
 </Transform>
 <HAnimSite name="skull_tip" DEF="boxman_skull_tip" translation="-0.0029 1.7771 0.0274"><Shape USE="SphereYellow"></Shape>
 </HAnimSite>
 </HAnimSegment>
 </HAnimJoint>
-<HAnimJoint name="l_shoulder" DEF="boxman_l_shoulder" center="0.1968 1.4642 -0.0265" skinCoordIndex="176 177 178 179 180 181 182 183" skinCoordWeight="1 1 1 1 1 1 1 1" stiffness="0 0 0"><HAnimSegment name="l_upperarm" DEF="boxman_l_upperarm"><Transform translation="0.1968 1.4642 -0.0265"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="l_shoulder" DEF="boxman_l_shoulder" center="0.1968 1.4642 -0.0265" skinCoordIndex="176 177 178 179 180 181 182 183" skinCoordWeight="1 1 1 1 1 1 1 1" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_upperarm" DEF="boxman_l_upperarm"><Transform translation="0.1968 1.4642 -0.0265"><Shape USE="SphereYellow"></Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_elbow" DEF="boxman_l_elbow" center="0.1982 1.1622 -0.0557" skinCoordIndex="184 185 186 187 188 189 190 191" skinCoordWeight="1 1 1 1 1 1 1 1" stiffness="0 0 0"><HAnimSegment name="l_forearm" DEF="boxman_l_forearm"><Transform translation="0.1982 1.1622 -0.0557"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="l_elbow" DEF="boxman_l_elbow" center="0.1982 1.1622 -0.0557" skinCoordIndex="184 185 186 187 188 189 190 191" skinCoordWeight="1 1 1 1 1 1 1 1" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_forearm" DEF="boxman_l_forearm"><Transform translation="0.1982 1.1622 -0.0557"><Shape USE="SphereYellow"></Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_wrist" DEF="boxman_l_wrist" center="0.1972 0.8929 -0.069" skinCoordIndex="192 193 194 195 196 197 198 199" skinCoordWeight="1 1 1 1 1 1 1 1" stiffness="0 0 0"><HAnimSegment name="l_hand" DEF="boxman_l_hand"><Transform translation="0.1972 0.8929 -0.069"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="l_wrist" DEF="boxman_l_wrist" center="0.1972 0.8929 -0.069" skinCoordIndex="192 193 194 195 196 197 198 199" skinCoordWeight="1 1 1 1 1 1 1 1" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_hand" DEF="boxman_l_hand"><Transform translation="0.1972 0.8929 -0.069"><Shape USE="SphereYellow"></Shape>
 </Transform>
 <HAnimSite name="l_hand_tip" DEF="boxman_l_hand_tip" translation="0.1912 0.6976 -0.071"><Shape USE="SphereRed"></Shape>
 </HAnimSite>
@@ -103,13 +103,13 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_shoulder" DEF="boxman_r_shoulder" center="-0.1968 1.4642 -0.0265" skinCoordIndex="200 201 202 203 204 205 206 207" skinCoordWeight="1 1 1 1 1 1 1 1" stiffness="0 0 0"><HAnimSegment name="r_upperarm" DEF="boxman_r_upperarm"><Transform translation="-0.1968 1.4642 -0.0265"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="r_shoulder" DEF="boxman_r_shoulder" center="-0.1968 1.4642 -0.0265" skinCoordIndex="200 201 202 203 204 205 206 207" skinCoordWeight="1 1 1 1 1 1 1 1" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_upperarm" DEF="boxman_r_upperarm"><Transform translation="-0.1968 1.4642 -0.0265"><Shape USE="SphereYellow"></Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="r_elbow" DEF="boxman_r_elbow" center="-0.1982 1.1622 -0.0557" skinCoordIndex="208 209 210 211 212 213 214 215" skinCoordWeight="1 1 1 1 1 1 1 1" stiffness="0 0 0"><HAnimSegment name="r_forearm" DEF="boxman_r_forearm"><Transform translation="-0.1982 1.1622 -0.0557"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="r_elbow" DEF="boxman_r_elbow" center="-0.1982 1.1622 -0.0557" skinCoordIndex="208 209 210 211 212 213 214 215" skinCoordWeight="1 1 1 1 1 1 1 1" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_forearm" DEF="boxman_r_forearm"><Transform translation="-0.1982 1.1622 -0.0557"><Shape USE="SphereYellow"></Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="r_wrist" DEF="boxman_r_wrist" center="-0.1972 0.8929 -0.069" skinCoordIndex="216 217 218 219 220 221 222 223" skinCoordWeight="1 1 1 1 1 1 1 1" stiffness="0 0 0"><HAnimSegment name="r_hand" DEF="boxman_r_hand"><Transform translation="-0.1972 0.8929 -0.069"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="r_wrist" DEF="boxman_r_wrist" center="-0.1972 0.8929 -0.069" skinCoordIndex="216 217 218 219 220 221 222 223" skinCoordWeight="1 1 1 1 1 1 1 1" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_hand" DEF="boxman_r_hand"><Transform translation="-0.1972 0.8929 -0.069"><Shape USE="SphereYellow"></Shape>
 </Transform>
 <HAnimSite name="r_hand_tip" DEF="boxman_r_hand_tip" translation="-0.1912 0.6976 -0.071"><Shape USE="SphereRed"></Shape>
 </HAnimSite>

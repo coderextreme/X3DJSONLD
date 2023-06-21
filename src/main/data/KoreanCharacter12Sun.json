@@ -78,7 +78,7 @@
           },
           {
             "@name":"translated",
-            "@content":"18 November 2021"
+            "@content":"21 June 2023"
           },
           {
             "@name":"generator",
@@ -122,6 +122,8 @@
                     "@name":"humanoid_root",
                     "@DEF":"hanim_humanoid_root",
                     "@center":[0,29.860001,-0.456700],
+                    "@ulimit":[0,0,0],
+                    "@llimit":[0,0,0],
                     "@stiffness":[0,0,0],
                     "-children":[
                       { "HAnimSegment":
@@ -186,6 +188,8 @@
                           "@name":"l_hip",
                           "@DEF":"hanim_l_hip",
                           "@center":[2.955000,28.940001,-0.521800],
+                          "@ulimit":[0,0,0],
+                          "@llimit":[0,0,0],
                           "@stiffness":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
@@ -249,6 +253,8 @@
                                 "@name":"l_knee",
                                 "@DEF":"hanim_l_knee",
                                 "@center":[2.948000,16.459999,-0.527500],
+                                "@ulimit":[0,0,0],
+                                "@llimit":[0,0,0],
                                 "@stiffness":[0,0,0],
                                 "-children":[
                                   { "HAnimSegment":
@@ -312,6 +318,8 @@
                                       "@name":"l_ankle",
                                       "@DEF":"hanim_l_ankle",
                                       "@center":[2.839000,3.899000,-0.411600],
+                                      "@ulimit":[0,0,0],
+                                      "@llimit":[0,0,0],
                                       "@stiffness":[0,0,0],
                                       "-children":[
                                         { "HAnimSegment":
@@ -375,6 +383,8 @@
                                             "@name":"l_midtarsal",
                                             "@DEF":"hanim_l_midtarsal",
                                             "@center":[2.839000,3.312000,1.078000],
+                                            "@ulimit":[0,0,0],
+                                            "@llimit":[0,0,0],
                                             "@stiffness":[0,0,0],
                                             "-children":[
                                               { "HAnimSegment":
@@ -450,6 +460,8 @@
                           "@name":"r_hip",
                           "@DEF":"hanim_r_hip",
                           "@center":[-2.955000,28.940001,-0.521800],
+                          "@ulimit":[0,0,0],
+                          "@llimit":[0,0,0],
                           "@stiffness":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
@@ -513,6 +525,8 @@
                                 "@name":"r_knee",
                                 "@DEF":"hanim_r_knee",
                                 "@center":[-2.948000,16.459999,-0.527500],
+                                "@ulimit":[0,0,0],
+                                "@llimit":[0,0,0],
                                 "@stiffness":[0,0,0],
                                 "-children":[
                                   { "HAnimSegment":
@@ -576,6 +590,8 @@
                                       "@name":"r_ankle",
                                       "@DEF":"hanim_r_ankle",
                                       "@center":[-2.839000,3.899000,-0.411600],
+                                      "@ulimit":[0,0,0],
+                                      "@llimit":[0,0,0],
                                       "@stiffness":[0,0,0],
                                       "-children":[
                                         { "HAnimSegment":
@@ -639,6 +655,8 @@
                                             "@name":"r_midtarsal",
                                             "@DEF":"hanim_r_midtarsal",
                                             "@center":[-2.839000,3.312000,1.078000],
+                                            "@ulimit":[0,0,0],
+                                            "@llimit":[0,0,0],
                                             "@stiffness":[0,0,0],
                                             "-children":[
                                               { "HAnimSegment":
@@ -714,6 +732,8 @@
                           "@name":"sacroiliac",
                           "@DEF":"hanim_sacroiliac",
                           "@center":[0,29.860001,-0.456700],
+                          "@ulimit":[0,0,0],
+                          "@llimit":[0,0,0],
                           "@stiffness":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
@@ -777,6 +797,8 @@
                                 "@name":"l_shoulder",
                                 "@DEF":"hanim_l_shoulder",
                                 "@center":[6.077000,45.880001,-1.319000],
+                                "@ulimit":[0,0,0],
+                                "@llimit":[0,0,0],
                                 "@stiffness":[0,0,0],
                                 "-children":[
                                   { "HAnimSegment":
@@ -840,6 +862,8 @@
                                       "@name":"l_elbow",
                                       "@DEF":"hanim_l_elbow",
                                       "@center":[7.076000,38.529999,-1.385000],
+                                      "@ulimit":[0,0,0],
+                                      "@llimit":[0,0,0],
                                       "@stiffness":[0,0,0],
                                       "-children":[
                                         { "HAnimSegment":
@@ -903,6 +927,8 @@
                                             "@name":"l_wrist",
                                             "@DEF":"hanim_l_wrist",
                                             "@center":[6.946000,30.889999,-1.308000],
+                                            "@ulimit":[0,0,0],
+                                            "@llimit":[0,0,0],
                                             "@stiffness":[0,0,0],
                                             "-children":[
                                               { "HAnimSegment":
@@ -975,6 +1001,8 @@
                                 "@name":"r_shoulder",
                                 "@DEF":"hanim_r_shoulder",
                                 "@center":[-6.077000,45.880001,-1.319000],
+                                "@ulimit":[0,0,0],
+                                "@llimit":[0,0,0],
                                 "@stiffness":[0,0,0],
                                 "-children":[
                                   { "HAnimSegment":
@@ -1038,6 +1066,8 @@
                                       "@name":"r_elbow",
                                       "@DEF":"hanim_r_elbow",
                                       "@center":[-7.076000,38.529999,-1.385000],
+                                      "@ulimit":[0,0,0],
+                                      "@llimit":[0,0,0],
                                       "@stiffness":[0,0,0],
                                       "-children":[
                                         { "HAnimSegment":
@@ -1101,6 +1131,8 @@
                                             "@name":"r_wrist",
                                             "@DEF":"hanim_r_wrist",
                                             "@center":[-6.946000,30.889999,-1.308000],
+                                            "@ulimit":[0,0,0],
+                                            "@llimit":[0,0,0],
                                             "@stiffness":[0,0,0],
                                             "-children":[
                                               { "HAnimSegment":
@@ -1173,6 +1205,8 @@
                                 "@name":"vl5",
                                 "@DEF":"hanim_vl5",
                                 "@center":[0.052490,34.130001,-0.468000],
+                                "@ulimit":[0,0,0],
+                                "@llimit":[0,0,0],
                                 "@stiffness":[0,0,0],
                                 "-children":[
                                   { "HAnimSegment":
@@ -1236,6 +1270,8 @@
                                       "@name":"skullbase",
                                       "@DEF":"hanim_skullbase",
                                       "@center":[0,51.250000,-1.124000],
+                                      "@ulimit":[0,0,0],
+                                      "@llimit":[0,0,0],
                                       "@stiffness":[0,0,0],
                                       "-children":[
                                         { "HAnimSegment":

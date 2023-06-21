@@ -16,11 +16,11 @@
 <Material></Material>
 </Appearance>
 </Shape>
-<SpatialSound><Analyser><AudioDestination><BiquadFilter><ChannelMerger><ChannelSelector><ChannelSplitter><Convolver><Delay><DynamicsCompressor><Gain><StreamAudioDestination><WaveShaper><!--The following X3DSoundSourceNode nodes have no audio-graph children--><BufferAudioSource></BufferAudioSource>
-<ListenerPointSource></ListenerPointSource>
+<SpatialSound distanceModel="INVERSE" dopplerEnabled="false"><Analyser channelCountMode="MAX" channelInterpretation="SPEAKERS"><AudioDestination channelCountMode="MAX" channelInterpretation="SPEAKERS"><BiquadFilter channelCountMode="MAX" channelInterpretation="SPEAKERS" type="LOWPASS"><ChannelMerger channelCountMode="MAX" channelInterpretation="SPEAKERS"><ChannelSelector channelCountMode="MAX" channelInterpretation="SPEAKERS"><ChannelSplitter channelCountMode="MAX" channelInterpretation="SPEAKERS"><Convolver channelCountMode="MAX" channelInterpretation="SPEAKERS"><Delay channelCountMode="MAX" channelInterpretation="SPEAKERS"><DynamicsCompressor channelCountMode="MAX" channelInterpretation="SPEAKERS"><Gain channelCountMode="MAX" channelInterpretation="SPEAKERS"><StreamAudioDestination channelCountMode="MAX" channelInterpretation="SPEAKERS"><WaveShaper channelCountMode="MAX" channelInterpretation="SPEAKERS"><!--The following X3DSoundSourceNode nodes have no audio-graph children--><BufferAudioSource channelCountMode="MAX" channelInterpretation="SPEAKERS"></BufferAudioSource>
+<ListenerPointSource dopplerEnabled="false"></ListenerPointSource>
 <MicrophoneSource></MicrophoneSource>
-<OscillatorSource></OscillatorSource>
-<StreamAudioSource></StreamAudioSource>
+<OscillatorSource frequency="440"></OscillatorSource>
+<StreamAudioSource channelCountMode="MAX" channelInterpretation="SPEAKERS"></StreamAudioSource>
 </WaveShaper>
 </StreamAudioDestination>
 </Gain>

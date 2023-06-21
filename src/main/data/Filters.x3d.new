@@ -42,17 +42,17 @@
 <Cylinder containerField="geometry" radius="500"></Cylinder>
 </Shape>
 </Transform>
-<AudioDestination><DynamicsCompressor><Gain><SpatialSound USE="Audio1"><Gain><Analyser><BiquadFilter detune="50" frequency="600" qualityFactor="30" type="allpass"><AudioClip loop="true" pauseTime="-1" resumeTime="-1" stopTime="-1" url="&quot;sound/techno_beat.mp3&quot;"></AudioClip>
+<AudioDestination channelCountMode="MAX"><DynamicsCompressor channelCountMode="MAX" channelInterpretation="SPEAKERS"><Gain channelCountMode="MAX" channelInterpretation="SPEAKERS"><SpatialSound USE="Audio1"><Gain channelCountMode="MAX" channelInterpretation="SPEAKERS"><Analyser channelCountMode="MAX" channelInterpretation="SPEAKERS"><BiquadFilter detune="50" frequency="600" qualityFactor="30" type="allpass" channelCountMode="MAX" channelInterpretation="SPEAKERS"><AudioClip loop="true" pauseTime="-1" resumeTime="-1" stopTime="-1" url="&quot;sound/techno_beat.mp3&quot;"></AudioClip>
 </BiquadFilter>
 </Analyser>
 </Gain>
 </SpatialSound>
-<SpatialSound USE="Audio2"><Gain><Analyser><BiquadFilter detune="15" frequency="600" qualityFactor="15" type="allpass"><AudioClip loop="true" pauseTime="-1" resumeTime="-1" stopTime="-1" url="&quot;sound/beat.mp3&quot;"></AudioClip>
+<SpatialSound USE="Audio2"><Gain channelCountMode="MAX" channelInterpretation="SPEAKERS"><Analyser channelCountMode="MAX" channelInterpretation="SPEAKERS"><BiquadFilter detune="15" frequency="600" qualityFactor="15" type="allpass" channelCountMode="MAX" channelInterpretation="SPEAKERS"><AudioClip loop="true" pauseTime="-1" resumeTime="-1" stopTime="-1" url="&quot;sound/beat.mp3&quot;"></AudioClip>
 </BiquadFilter>
 </Analyser>
 </Gain>
 </SpatialSound>
-<SpatialSound USE="Audio3"><Gain><Analyser><BiquadFilter frequency="1000" qualityFactor="0" type="allpass"><AudioClip loop="true" pauseTime="-1" resumeTime="-1" stopTime="-1" url="&quot;sound/wobble_loop.mp3&quot;"></AudioClip>
+<SpatialSound USE="Audio3"><Gain channelCountMode="MAX" channelInterpretation="SPEAKERS"><Analyser channelCountMode="MAX" channelInterpretation="SPEAKERS"><BiquadFilter frequency="1000" qualityFactor="0" type="allpass" channelCountMode="MAX" channelInterpretation="SPEAKERS"><AudioClip loop="true" pauseTime="-1" resumeTime="-1" stopTime="-1" url="&quot;sound/wobble_loop.mp3&quot;"></AudioClip>
 </BiquadFilter>
 </Analyser>
 </Gain>

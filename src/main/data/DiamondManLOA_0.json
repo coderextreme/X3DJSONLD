@@ -106,7 +106,7 @@
           },
           {
             "@name":"translated",
-            "@content":"18 November 2021"
+            "@content":"21 June 2023"
           },
           {
             "@name":"generator",
@@ -199,6 +199,8 @@
                     "@name":"HumanoidRoot",
                     "@DEF":"hanim_HumanoidRoot",
                     "@center":[0.0,0.8240,0.0277],
+                    "@ulimit":[0,0,0],
+                    "@llimit":[0,0,0],
                     "@stiffness":[0,0,0],
                     "-children":[
                       { "HAnimJoint":
@@ -206,6 +208,8 @@
                           "@name":"sacroiliac",
                           "@DEF":"hanim_sacroiliac",
                           "@center":[0.0,0.9149,0.0016],
+                          "@ulimit":[0,0,0],
+                          "@llimit":[0,0,0],
                           "@stiffness":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
