@@ -28,36 +28,36 @@
 <Scene><WorldInfo info="&quot;HAnim 2.0 Default Joint Centers, Level Of Articulation (LOA) 1 -------------------------------------------------------- HANIM 1.1 (VRML 2.0) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 1.1 (VRML 2.0) Author email: beitler@graphics.cis.upenn.edu or beitler@acm.org HANIM 1.1 (VRML 2.0) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 1.1 (VRML 2.0) Compliance Date: May 12, 1999 HANIM 1.1 Compliance Information: http://ece.uwaterloo.ca/~HAnim/ Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps, .pdf&quot;" title="HANIM 1.1 Default Joint Centers, LOA1"></WorldInfo>
 <NavigationInfo speed="1.5"></NavigationInfo>
 <Viewpoint centerOfRotation="0 1 0" description="Diamond Man, LOA 1" position="0 1 3"></Viewpoint>
-<HAnimHumanoid name="humanoid" DEF="hanim_humanoid" loa="1" version="2.0"><!--HAnimHumanoid original info='"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org" "authorName=Matthew T. Beitler" "copyright=Copyright 1999 Matthew T. Beitler" "humanoidVersion=JointCenters 1.1 LOA1" "usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."'--><MetadataSet containerField="metadata" name="HAnimHumanoid.info" reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"><MetadataString name="authorEmail" value="&quot;beitler@graphics.cis.upenn.edu beitler@acm.org&quot;" containerField="value"></MetadataString>
+<HAnimHumanoid name="humanoid" DEF="hanim_humanoid" loa="1" version="2.0"><!--HAnimHumanoid original info='"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org" "authorName=Matthew T. Beitler" "copyright=Copyright 1999 Matthew T. Beitler" "humanoidVersion=JointCenters 1.1 LOA1" "usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."'--><MetadataSet name="HAnimHumanoid.info" reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid" containerField="value"><MetadataString name="authorEmail" value="&quot;beitler@graphics.cis.upenn.edu beitler@acm.org&quot;" containerField="value"></MetadataString>
 <MetadataString name="authorName" value="&quot;Matthew T. Beitler&quot;"></MetadataString>
 <MetadataString name="copyright" value="&quot;Copyright 1999 Matthew T. Beitler&quot;"></MetadataString>
 <MetadataString name="humanoidVersion" value="&quot;JointCenters 1.1 LOA1&quot;"></MetadataString>
 <MetadataString name="usageRestrictions" value="&quot;PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.&quot;"></MetadataString>
 </MetadataSet>
-<HAnimJoint name="humanoid_root" DEF="hanim_humanoid_root" center="0 0.824 0.0277" stiffness="0 0 0" containerField="skeleton"><HAnimJoint name="sacroiliac" DEF="hanim_sacroiliac" center="0 0.9149 0.0016" stiffness="0 0 0"><HAnimSegment name="pelvis" DEF="hanim_pelvis"><Transform translation="0 0.9149 0.0016"><Shape DEF="DiamondShape"><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" DEF="points" point="0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0"></Coordinate>
+<HAnimJoint name="humanoid_root" DEF="hanim_humanoid_root" center="0 0.824 0.0277" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0" containerField="skeleton"><HAnimJoint name="sacroiliac" DEF="hanim_sacroiliac" center="0 0.9149 0.0016" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="pelvis" DEF="hanim_pelvis"><Transform translation="0 0.9149 0.0016"><Shape DEF="DiamondShape"><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" DEF="points" point="0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material diffuseColor="1 1 0"></Material>
 </Appearance>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_hip" DEF="hanim_l_hip" center="0.0961 0.9124 -0.0001" stiffness="0 0 0"><HAnimSegment name="l_thigh" DEF="hanim_l_thigh"><Transform translation="0.0961 0.9124 -0.0001"><Shape USE="DiamondShape"></Shape>
+<HAnimJoint name="l_hip" DEF="hanim_l_hip" center="0.0961 0.9124 -0.0001" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_thigh" DEF="hanim_l_thigh"><Transform translation="0.0961 0.9124 -0.0001"><Shape USE="DiamondShape"></Shape>
 </Transform>
 <HAnimSite name="l_knee_crease_pt" DEF="hanim_l_knee_crease_pt" translation="0.0993 0.4881 -0.0309"></HAnimSite>
 <HAnimSite name="l_femoral_lateral_epicondyle_pt" DEF="hanim_l_femoral_lateral_epicondyle_pt" translation="0.1598 0.4967 0.0297"></HAnimSite>
 <HAnimSite name="l_femoral_medial_epicondyle_pt" DEF="hanim_l_femoral_medial_epicondyle_pt" translation="0.0398 0.4946 0.0303"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_knee" DEF="hanim_l_knee" center="0.104 0.4867 0.0308" stiffness="0 0 0"><HAnimSegment name="l_calf" DEF="hanim_l_calf"><Transform translation="0.104 0.4867 0.0308"><Shape USE="DiamondShape"></Shape>
+<HAnimJoint name="l_knee" DEF="hanim_l_knee" center="0.104 0.4867 0.0308" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_calf" DEF="hanim_l_calf"><Transform translation="0.104 0.4867 0.0308"><Shape USE="DiamondShape"></Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_talocrural" DEF="hanim_l_talocrural" center="0.1101 0.0656 -0.0736" stiffness="0 0 0"><HAnimSegment name="l_talus" DEF="hanim_l_talus"><Transform translation="0.1101 0.0656 -0.0736"><Shape USE="DiamondShape"></Shape>
+<HAnimJoint name="l_talocrural" DEF="hanim_l_talocrural" center="0.1101 0.0656 -0.0736" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_talus" DEF="hanim_l_talus"><Transform translation="0.1101 0.0656 -0.0736"><Shape USE="DiamondShape"></Shape>
 </Transform>
 <HAnimSite name="l_lateral_malleolus_pt" DEF="hanim_l_lateral_malleolus_pt" translation="0.1308 0.0597 -0.1032"></HAnimSite>
 <HAnimSite name="l_medial_malleolus_pt" DEF="hanim_l_medial_malleolus_pt" translation="0.089 0.0716 -0.0881"></HAnimSite>
 <HAnimSite name="l_sphyrion_pt" DEF="hanim_l_sphyrion_pt" translation="0.089 0.0575 -0.0943"></HAnimSite>
 <HAnimSite name="l_calcaneus_posterior_pt" DEF="hanim_l_calcaneus_posterior_pt" translation="0.0974 0.0259 -0.1171"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_metatarsophalangeal_2" DEF="hanim_l_metatarsophalangeal_2" center="0.1086 0.0001 0.0368" stiffness="0 0 0"><HAnimSegment name="l_tarsal_proximal_phalanx_2" DEF="hanim_l_tarsal_proximal_phalanx_2"><HAnimSite name="l_middistal_tip" DEF="hanim_l_middistal_tip" translation="0.1354 0.0016 0.1476"></HAnimSite>
+<HAnimJoint name="l_metatarsophalangeal_2" DEF="hanim_l_metatarsophalangeal_2" center="0.1086 0.0001 0.0368" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_proximal_phalanx_2" DEF="hanim_l_tarsal_proximal_phalanx_2"><HAnimSite name="l_middistal_tip" DEF="hanim_l_middistal_tip" translation="0.1354 0.0016 0.1476"></HAnimSite>
 <HAnimSite name="l_metatarsal_phalanx_5_pt" DEF="hanim_l_metatarsal_phalanx_5_pt" translation="0.1825 0.007 0.0928"></HAnimSite>
 <HAnimSite name="l_metatarsal_phalanx_1_pt" DEF="hanim_l_metatarsal_phalanx_1_pt" translation="0.0816 0.0232 0.0106"></HAnimSite>
 <HAnimSite name="l_tarsal_distal_phalanx_2_pt" DEF="hanim_l_tarsal_distal_phalanx_2_pt" translation="0.1195 0.0079 0.1433"></HAnimSite>
@@ -66,23 +66,23 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_hip" DEF="hanim_r_hip" center="-0.095 0.9171 0.0029" stiffness="0 0 0"><HAnimSegment name="r_thigh" DEF="hanim_r_thigh"><Transform translation="-0.095 0.9171 0.0029"><Shape USE="DiamondShape"></Shape>
+<HAnimJoint name="r_hip" DEF="hanim_r_hip" center="-0.095 0.9171 0.0029" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_thigh" DEF="hanim_r_thigh"><Transform translation="-0.095 0.9171 0.0029"><Shape USE="DiamondShape"></Shape>
 </Transform>
 <HAnimSite name="r_knee_crease_pt" DEF="hanim_r_knee_crease_pt" translation="-0.0825 0.4932 -0.0326"></HAnimSite>
 <HAnimSite name="r_femoral_lateral_epicondyle_pt" DEF="hanim_r_femoral_lateral_epicondyle_pt" translation="-0.1421 0.4992 0.031"></HAnimSite>
 <HAnimSite name="r_femoral_medial_epicondyle_pt" DEF="hanim_r_femoral_medial_epicondyle_pt" translation="-0.0221 0.5014 0.0289"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="r_knee" DEF="hanim_r_knee" center="-0.0867 0.4913 0.0318" stiffness="0 0 0"><HAnimSegment name="r_calf" DEF="hanim_r_calf"><Transform translation="-0.0867 0.4913 0.0318"><Shape USE="DiamondShape"></Shape>
+<HAnimJoint name="r_knee" DEF="hanim_r_knee" center="-0.0867 0.4913 0.0318" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_calf" DEF="hanim_r_calf"><Transform translation="-0.0867 0.4913 0.0318"><Shape USE="DiamondShape"></Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="r_talocrural" DEF="hanim_r_talocrural" center="-0.0801 0.0712 -0.0766" stiffness="0 0 0"><HAnimSegment name="r_talus" DEF="hanim_r_talus"><Transform translation="-0.0801 0.0712 -0.0766"><Shape USE="DiamondShape"></Shape>
+<HAnimJoint name="r_talocrural" DEF="hanim_r_talocrural" center="-0.0801 0.0712 -0.0766" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_talus" DEF="hanim_r_talus"><Transform translation="-0.0801 0.0712 -0.0766"><Shape USE="DiamondShape"></Shape>
 </Transform>
 <HAnimSite name="r_lateral_malleolus_pt" DEF="hanim_r_lateral_malleolus_pt" translation="-0.1006 0.0658 -0.1075"></HAnimSite>
 <HAnimSite name="r_medial_malleolus_pt" DEF="hanim_r_medial_malleolus_pt" translation="-0.0591 0.076 -0.0928"></HAnimSite>
 <HAnimSite name="r_sphyrion_pt" DEF="hanim_r_sphyrion_pt" translation="-0.0603 0.061 -0.1002"></HAnimSite>
 <HAnimSite name="r_calcaneus_posterior_pt" DEF="hanim_r_calcaneus_posterior_pt" translation="-0.0692 0.0297 -0.1221"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="r_metatarsophalangeal_2" DEF="hanim_r_metatarsophalangeal_2" center="-0.0801 0 0.0368" stiffness="0 0 0"><HAnimSegment name="r_tarsal_proximal_phalanx_2" DEF="hanim_r_tarsal_proximal_phalanx_2"><HAnimSite name="r_middistal_tip" DEF="hanim_r_middistal_tip" translation="-0.1043 -0.0227 0.145"></HAnimSite>
+<HAnimJoint name="r_metatarsophalangeal_2" DEF="hanim_r_metatarsophalangeal_2" center="-0.0801 0 0.0368" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_tarsal_proximal_phalanx_2" DEF="hanim_r_tarsal_proximal_phalanx_2"><HAnimSite name="r_middistal_tip" DEF="hanim_r_middistal_tip" translation="-0.1043 -0.0227 0.145"></HAnimSite>
 <HAnimSite name="r_metatarsal_phalanx_5_pt" DEF="hanim_r_metatarsal_phalanx_5_pt" translation="-0.1523 0.0166 0.0895"></HAnimSite>
 <HAnimSite name="r_metatarsal_phalanx_1_pt" DEF="hanim_r_metatarsal_phalanx_1_pt" translation="-0.0521 0.026 0.0127"></HAnimSite>
 <HAnimSite name="r_tarsal_distal_phalanx_2_pt" DEF="hanim_r_tarsal_distal_phalanx_2_pt" translation="-0.0883 0.0134 0.1383"></HAnimSite>
@@ -92,13 +92,13 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="vl1" DEF="hanim_vl1" center="-0.00405 1.07 -0.0275" stiffness="0 0 0"><HAnimSegment name="l1" DEF="hanim_l1"></HAnimSegment>
-<HAnimJoint name="l_shoulder" DEF="hanim_l_shoulder" center="0.2029 1.4376 -0.0387" stiffness="0 0 0"><HAnimSegment name="l_upperarm" DEF="hanim_l_upperarm"><Transform translation="0.2029 1.4376 -0.0387"><Shape USE="DiamondShape"></Shape>
+<HAnimJoint name="vl1" DEF="hanim_vl1" center="-0.00405 1.07 -0.0275" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l1" DEF="hanim_l1"></HAnimSegment>
+<HAnimJoint name="l_shoulder" DEF="hanim_l_shoulder" center="0.2029 1.4376 -0.0387" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_upperarm" DEF="hanim_l_upperarm"><Transform translation="0.2029 1.4376 -0.0387"><Shape USE="DiamondShape"></Shape>
 </Transform>
 <Transform DEF="l_upperarm_adjust" center="0.182 1.22 -0.047" rotation="1 0 0 0.119" translation="0.2029 1.4376 -0.0387"></Transform>
 <HAnimSite name="l_humeral_lateral_epicondyle_pt" DEF="hanim_l_humeral_lateral_epicondyle_pt" translation="0.228 1.1482 -0.11"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_elbow" DEF="hanim_l_elbow" center="0.2014 1.1357 -0.0682" stiffness="0 0 0"><HAnimSegment name="l_forearm" DEF="hanim_l_forearm"><Transform translation="0.2014 1.1357 -0.0682"><Shape USE="DiamondShape"></Shape>
+<HAnimJoint name="l_elbow" DEF="hanim_l_elbow" center="0.2014 1.1357 -0.0682" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_forearm" DEF="hanim_l_forearm"><Transform translation="0.2014 1.1357 -0.0682"><Shape USE="DiamondShape"></Shape>
 </Transform>
 <Transform DEF="l_forearm_adjust" center="0.198 0.961 -0.0405" rotation="-1 0 0 0.1" translation="0.2014 1.1357 -0.0682"></Transform>
 <HAnimSite name="l_radial_styloid_pt" DEF="hanim_l_radial_styloid_pt" translation="0.1901 0.8645 -0.0415"></HAnimSite>
@@ -106,7 +106,7 @@
 <HAnimSite name="l_humeral_medial_epicondyle_pt" DEF="hanim_l_humeral_medial_epicondyle_pt" translation="0.1735 1.1272 -0.1113"></HAnimSite>
 <HAnimSite name="l_radiale_pt" DEF="hanim_l_radiale_pt" translation="0.2182 1.1212 -0.1167"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_radiocarpal" DEF="hanim_l_radiocarpal" center="0.1984 0.8663 -0.0583" stiffness="0 0 0"><HAnimSegment name="l_carpal" DEF="hanim_l_carpal"><Transform translation="0.1984 0.8663 -0.0583"><Shape USE="DiamondShape"></Shape>
+<HAnimJoint name="l_radiocarpal" DEF="hanim_l_radiocarpal" center="0.1984 0.8663 -0.0583" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_carpal" DEF="hanim_l_carpal"><Transform translation="0.1984 0.8663 -0.0583"><Shape USE="DiamondShape"></Shape>
 </Transform>
 <Transform DEF="l_hand_adjust" center="0.213 0.811 -0.0338" rotation="-0.06361 -0.9967 0.04988 1.333" translation="0.1984 0.8663 -0.0583"></Transform>
 <HAnimSite name="l_hand_tip" DEF="hanim_l_hand_tip" translation="0.208 0.6731 -0.0491"></HAnimSite>
@@ -118,12 +118,12 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_shoulder" DEF="hanim_r_shoulder" center="-0.1907 1.4407 -0.0325" stiffness="0 0 0"><HAnimSegment name="r_upperarm" DEF="hanim_r_upperarm"><Transform translation="-0.1907 1.4407 -0.0325"><Shape USE="DiamondShape"></Shape>
+<HAnimJoint name="r_shoulder" DEF="hanim_r_shoulder" center="-0.1907 1.4407 -0.0325" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_upperarm" DEF="hanim_r_upperarm"><Transform translation="-0.1907 1.4407 -0.0325"><Shape USE="DiamondShape"></Shape>
 </Transform>
 <Transform DEF="r_upperarm_adjust" center="-0.182 1.22 -0.047" rotation="1 0 0 0.0836" translation="-0.1907 1.4407 -0.0325"></Transform>
 <HAnimSite name="r_humeral_lateral_epicondyle_pt" DEF="hanim_r_humeral_lateral_epicondyle_pt" translation="-0.2224 1.1517 -0.1033"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="r_elbow" DEF="hanim_r_elbow" center="-0.1949 1.1388 -0.062" stiffness="0 0 0"><HAnimSegment name="r_forearm" DEF="hanim_r_forearm"><Transform translation="-0.1949 1.1388 -0.062"><Shape USE="DiamondShape"></Shape>
+<HAnimJoint name="r_elbow" DEF="hanim_r_elbow" center="-0.1949 1.1388 -0.062" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_forearm" DEF="hanim_r_forearm"><Transform translation="-0.1949 1.1388 -0.062"><Shape USE="DiamondShape"></Shape>
 </Transform>
 <Transform DEF="r_forearm_adjust" center="-0.198 0.961 -0.0397" rotation="-1 0 0 0.1254" translation="-0.1949 1.1388 -0.062"></Transform>
 <HAnimSite name="r_radial_styloid_pt" DEF="hanim_r_radial_styloid_pt" translation="-0.1884 0.8676 -0.036"></HAnimSite>
@@ -131,7 +131,7 @@
 <HAnimSite name="r_humeral_medial_epicondyle_pt" DEF="hanim_r_humeral_medial_epicondyle_pt" translation="-0.168 1.1298 -0.1062"></HAnimSite>
 <HAnimSite name="r_radiale_pt" DEF="hanim_r_radiale_pt" translation="-0.213 1.1305 -0.1091"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="r_radiocarpal" DEF="hanim_r_radiocarpal" center="-0.1959 0.8694 -0.0521" stiffness="0 0 0"><HAnimSegment name="r_carpal" DEF="hanim_r_carpal"><Transform translation="-0.1959 0.8694 -0.0521"><Shape USE="DiamondShape"></Shape>
+<HAnimJoint name="r_radiocarpal" DEF="hanim_r_radiocarpal" center="-0.1959 0.8694 -0.0521" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_carpal" DEF="hanim_r_carpal"><Transform translation="-0.1959 0.8694 -0.0521"><Shape USE="DiamondShape"></Shape>
 </Transform>
 <Transform DEF="r_hand_adjust" center="-0.217 0.811 -0.0338" rotation="-0.09024 0.994 -0.0624 1.216"></Transform>
 <HAnimSite name="r_hand_tip" DEF="hanim_r_hand_tip" translation="-0.1969 0.6758 -0.0427"></HAnimSite>
@@ -143,10 +143,10 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="vc4" DEF="hanim_vc4" center="0 1.43 -0.0458" stiffness="0 0 0"><HAnimSegment name="c4" DEF="hanim_c4"></HAnimSegment>
+<HAnimJoint name="vc4" DEF="hanim_vc4" center="0 1.43 -0.0458" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="c4" DEF="hanim_c4"></HAnimSegment>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="vl5" DEF="hanim_vl5" center="0.0028 1.0568 -0.0776" stiffness="0 0 0"><HAnimJoint name="skullbase" DEF="hanim_skullbase" center="0.0044 1.6209 0.0236" stiffness="0 0 0"><HAnimSegment name="skull" DEF="hanim_skull"><Transform translation="0.0044 1.6209 0.0236"><Shape USE="DiamondShape"></Shape>
+<HAnimJoint name="vl5" DEF="hanim_vl5" center="0.0028 1.0568 -0.0776" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimJoint name="skullbase" DEF="hanim_skullbase" center="0.0044 1.6209 0.0236" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="skull" DEF="hanim_skull"><Transform translation="0.0044 1.6209 0.0236"><Shape USE="DiamondShape"></Shape>
 </Transform>
 <HAnimSite name="skull_vertex_tip" DEF="hanim_skull_vertex_tip" translation="0.005 1.7504 0.0055"></HAnimSite>
 <HAnimSite name="sellion_pt" DEF="hanim_sellion_pt" translation="0.0058 1.6316 0.0852"></HAnimSite>

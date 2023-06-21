@@ -64,7 +64,7 @@
 <MetadataString name="humanoidVersion" value="&quot;*TODO*&quot;"></MetadataString>
 <MetadataString name="usageRestrictions" value="&quot;*TODO*&quot;"></MetadataString>
 </MetadataSet>
-<HAnimJoint name="HumanoidRoot" DEF="Bvh1_HumanoidRoot" scale="0.0254 0.0254 0.0254" translation="0 0.806 0.194" stiffness="0 0 0" containerField="skeleton"><!--BVH ROOT Hips, OFFSET 7.62 0.0 0.0, CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation--><HAnimSegment name="sacrum" DEF="Bvh1_sacrum"><!--Visualization root shape and hidden DEF geometry for later use--><Viewpoint description="View from (0 0 4) towards HAnimHumanoid center" position="0 0 4"></Viewpoint>
+<HAnimJoint name="HumanoidRoot" DEF="Bvh1_HumanoidRoot" scale="0.0254 0.0254 0.0254" translation="0 0.806 0.194" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0" containerField="skeleton"><!--BVH ROOT Hips, OFFSET 7.62 0.0 0.0, CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation--><HAnimSegment name="sacrum" DEF="Bvh1_sacrum"><!--Visualization root shape and hidden DEF geometry for later use--><Viewpoint description="View from (0 0 4) towards HAnimHumanoid center" position="0 0 4"></Viewpoint>
 <Switch whichChoice="0"><Group><TouchSensor description="HAnimHumanoid HAnimSegment HumanoidRoot"></TouchSensor>
 <Shape DEF="HAnimRootShape"><Sphere containerField="geometry" DEF="HAnimJointSphere"></Sphere>
 <Appearance><Material DEF="HAnimRootMaterial" diffuseColor="0.8 0 0" transparency="0.3"></Material>
@@ -99,7 +99,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_hip" DEF="Bvh1_l_hip" center="7.62 0 0" stiffness="0 0 0"><!--BVH JOINT LeftHip, OFFSET 7.62 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_thigh" DEF="Bvh1_l_thigh"><!--Visualization sphere for <HAnimJoint name='l_hip'></HAnimJoint> is placed within <HAnimSegment name='l_thigh'></HAnimSegment>--><TouchSensor description="HAnimJoint l_hip, HAnimSegment l_thigh"></TouchSensor>
+<HAnimJoint name="l_hip" DEF="Bvh1_l_hip" center="7.62 0 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT LeftHip, OFFSET 7.62 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_thigh" DEF="Bvh1_l_thigh"><!--Visualization sphere for <HAnimJoint name='l_hip'></HAnimJoint> is placed within <HAnimSegment name='l_thigh'></HAnimSegment>--><TouchSensor description="HAnimJoint l_hip, HAnimSegment l_thigh"></TouchSensor>
 <Transform translation="7.62 0 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line from current <HAnimJoint name='l_hip'></HAnimJoint> to child <HAnimJoint name='l_knee'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="7.62 0 0 7.62 -44.449999 0"></Coordinate>
@@ -108,7 +108,7 @@
 </Shape>
 <Transform translation="7.62 0 0"><!--insert Shape geometry here--></Transform>
 </HAnimSegment>
-<HAnimJoint name="l_knee" DEF="Bvh1_l_knee" center="7.62 -44.449999 0" stiffness="0 0 0"><!--BVH JOINT LeftKnee, OFFSET 0.0 -44.449999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_calf" DEF="Bvh1_l_calf"><!--Visualization sphere for <HAnimJoint name='l_knee'></HAnimJoint> is placed within <HAnimSegment name='l_calf'></HAnimSegment>--><TouchSensor description="HAnimJoint l_knee, HAnimSegment l_calf"></TouchSensor>
+<HAnimJoint name="l_knee" DEF="Bvh1_l_knee" center="7.62 -44.449999 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT LeftKnee, OFFSET 0.0 -44.449999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_calf" DEF="Bvh1_l_calf"><!--Visualization sphere for <HAnimJoint name='l_knee'></HAnimJoint> is placed within <HAnimSegment name='l_calf'></HAnimSegment>--><TouchSensor description="HAnimJoint l_knee, HAnimSegment l_calf"></TouchSensor>
 <Transform translation="7.62 -44.449999 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line from current <HAnimJoint name='l_knee'></HAnimJoint> to child <HAnimJoint name='l_ankle'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="7.62 -44.449999 0 7.62 -83.819998 0"></Coordinate>
@@ -117,7 +117,7 @@
 </Shape>
 <Transform translation="7.62 -44.449999 0"><!--insert Shape geometry here--></Transform>
 </HAnimSegment>
-<HAnimJoint name="l_ankle" DEF="Bvh1_l_ankle" center="7.62 -83.819998 0" stiffness="0 0 0"><!--BVH JOINT LeftAnkle, OFFSET 0.0 -39.369999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_hindfoot" DEF="Bvh1_l_hindfoot"><!--Visualization sphere for <HAnimJoint name='l_ankle'></HAnimJoint> is placed within <HAnimSegment name='l_hindfoot'></HAnimSegment>--><TouchSensor description="HAnimJoint l_ankle, HAnimSegment l_hindfoot"></TouchSensor>
+<HAnimJoint name="l_ankle" DEF="Bvh1_l_ankle" center="7.62 -83.819998 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT LeftAnkle, OFFSET 0.0 -39.369999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_hindfoot" DEF="Bvh1_l_hindfoot"><!--Visualization sphere for <HAnimJoint name='l_ankle'></HAnimJoint> is placed within <HAnimSegment name='l_hindfoot'></HAnimSegment>--><TouchSensor description="HAnimJoint l_ankle, HAnimSegment l_hindfoot"></TouchSensor>
 <Transform translation="7.62 -83.819998 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line from current <HAnimJoint name='l_ankle'></HAnimJoint> to child <HAnimJoint name='l_midtarsal'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="7.62 -83.819998 0 7.62 -92.709998 -3.81"></Coordinate>
@@ -126,7 +126,7 @@
 </Shape>
 <Transform translation="7.62 -83.819998 0"><!--insert Shape geometry here--></Transform>
 </HAnimSegment>
-<HAnimJoint name="l_midtarsal" DEF="Bvh1_l_midtarsal" center="7.62 -92.709998 -3.81" stiffness="0 0 0"><!--BVH JOINT LeftAnkleEnd, OFFSET 0.0 -8.89 -3.81, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_middistal" DEF="Bvh1_l_middistal"><!--Visualization sphere for <HAnimJoint name='l_midtarsal'></HAnimJoint> is placed within <HAnimSegment name='l_middistal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_midtarsal, HAnimSegment l_middistal"></TouchSensor>
+<HAnimJoint name="l_midtarsal" DEF="Bvh1_l_midtarsal" center="7.62 -92.709998 -3.81" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT LeftAnkleEnd, OFFSET 0.0 -8.89 -3.81, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_middistal" DEF="Bvh1_l_middistal"><!--Visualization sphere for <HAnimJoint name='l_midtarsal'></HAnimJoint> is placed within <HAnimSegment name='l_middistal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_midtarsal, HAnimSegment l_middistal"></TouchSensor>
 <Transform translation="7.62 -92.709998 -3.81"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Transform translation="7.62 -92.709998 -3.81"><HAnimSite name="l_middistal_tip" DEF="Bvh1_l_middistal_tip" translation="0 0 15.24"><!--BVH End Site OFFSET (0.0, 0.0, 15.24)--><!--HAnimSite visualization shape--><TouchSensor description="HAnimSite l_middistal_tip"></TouchSensor>
@@ -138,7 +138,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_hip" DEF="Bvh1_r_hip" center="-7.62 0 0" stiffness="0 0 0"><!--BVH JOINT RightHip, OFFSET -7.62 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_thigh" DEF="Bvh1_r_thigh"><!--Visualization sphere for <HAnimJoint name='r_hip'></HAnimJoint> is placed within <HAnimSegment name='r_thigh'></HAnimSegment>--><TouchSensor description="HAnimJoint r_hip, HAnimSegment r_thigh"></TouchSensor>
+<HAnimJoint name="r_hip" DEF="Bvh1_r_hip" center="-7.62 0 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT RightHip, OFFSET -7.62 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_thigh" DEF="Bvh1_r_thigh"><!--Visualization sphere for <HAnimJoint name='r_hip'></HAnimJoint> is placed within <HAnimSegment name='r_thigh'></HAnimSegment>--><TouchSensor description="HAnimJoint r_hip, HAnimSegment r_thigh"></TouchSensor>
 <Transform translation="-7.62 0 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line from current <HAnimJoint name='r_hip'></HAnimJoint> to child <HAnimJoint name='r_knee'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-7.62 0 0 -7.62 -44.449999 0"></Coordinate>
@@ -147,7 +147,7 @@
 </Shape>
 <Transform translation="-7.62 0 0"><!--insert Shape geometry here--></Transform>
 </HAnimSegment>
-<HAnimJoint name="r_knee" DEF="Bvh1_r_knee" center="-7.62 -44.449999 0" stiffness="0 0 0"><!--BVH JOINT RightKnee, OFFSET 0.0 -44.449999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_calf" DEF="Bvh1_r_calf"><!--Visualization sphere for <HAnimJoint name='r_knee'></HAnimJoint> is placed within <HAnimSegment name='r_calf'></HAnimSegment>--><TouchSensor description="HAnimJoint r_knee, HAnimSegment r_calf"></TouchSensor>
+<HAnimJoint name="r_knee" DEF="Bvh1_r_knee" center="-7.62 -44.449999 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT RightKnee, OFFSET 0.0 -44.449999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_calf" DEF="Bvh1_r_calf"><!--Visualization sphere for <HAnimJoint name='r_knee'></HAnimJoint> is placed within <HAnimSegment name='r_calf'></HAnimSegment>--><TouchSensor description="HAnimJoint r_knee, HAnimSegment r_calf"></TouchSensor>
 <Transform translation="-7.62 -44.449999 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line from current <HAnimJoint name='r_knee'></HAnimJoint> to child <HAnimJoint name='r_ankle'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-7.62 -44.449999 0 -7.62 -83.819998 0"></Coordinate>
@@ -156,7 +156,7 @@
 </Shape>
 <Transform translation="-7.62 -44.449999 0"><!--insert Shape geometry here--></Transform>
 </HAnimSegment>
-<HAnimJoint name="r_ankle" DEF="Bvh1_r_ankle" center="-7.62 -83.819998 0" stiffness="0 0 0"><!--BVH JOINT RightAnkle, OFFSET 0.0 -39.369999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_hindfoot" DEF="Bvh1_r_hindfoot"><!--Visualization sphere for <HAnimJoint name='r_ankle'></HAnimJoint> is placed within <HAnimSegment name='r_hindfoot'></HAnimSegment>--><TouchSensor description="HAnimJoint r_ankle, HAnimSegment r_hindfoot"></TouchSensor>
+<HAnimJoint name="r_ankle" DEF="Bvh1_r_ankle" center="-7.62 -83.819998 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT RightAnkle, OFFSET 0.0 -39.369999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_hindfoot" DEF="Bvh1_r_hindfoot"><!--Visualization sphere for <HAnimJoint name='r_ankle'></HAnimJoint> is placed within <HAnimSegment name='r_hindfoot'></HAnimSegment>--><TouchSensor description="HAnimJoint r_ankle, HAnimSegment r_hindfoot"></TouchSensor>
 <Transform translation="-7.62 -83.819998 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line from current <HAnimJoint name='r_ankle'></HAnimJoint> to child <HAnimJoint name='r_midtarsal'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-7.62 -83.819998 0 -7.62 -92.709998 -3.81"></Coordinate>
@@ -165,7 +165,7 @@
 </Shape>
 <Transform translation="-7.62 -83.819998 0"><!--insert Shape geometry here--></Transform>
 </HAnimSegment>
-<HAnimJoint name="r_midtarsal" DEF="Bvh1_r_midtarsal" center="-7.62 -92.709998 -3.81" stiffness="0 0 0"><!--BVH JOINT RightAnkleEnd, OFFSET 0.0 -8.89 -3.81, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_middistal" DEF="Bvh1_r_middistal"><!--Visualization sphere for <HAnimJoint name='r_midtarsal'></HAnimJoint> is placed within <HAnimSegment name='r_middistal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_midtarsal, HAnimSegment r_middistal"></TouchSensor>
+<HAnimJoint name="r_midtarsal" DEF="Bvh1_r_midtarsal" center="-7.62 -92.709998 -3.81" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT RightAnkleEnd, OFFSET 0.0 -8.89 -3.81, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_middistal" DEF="Bvh1_r_middistal"><!--Visualization sphere for <HAnimJoint name='r_midtarsal'></HAnimJoint> is placed within <HAnimSegment name='r_middistal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_midtarsal, HAnimSegment r_middistal"></TouchSensor>
 <Transform translation="-7.62 -92.709998 -3.81"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Transform translation="-7.62 -92.709998 -3.81"><HAnimSite name="r_middistal_tip" DEF="Bvh1_r_middistal_tip" translation="0 0 15.24"><!--BVH End Site OFFSET (0.0, 0.0, 15.24)--><!--HAnimSite visualization shape--><TouchSensor description="HAnimSite r_middistal_tip"></TouchSensor>
@@ -177,7 +177,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="vl5" DEF="Bvh1_vl5" center="0 7.62 -2.54" stiffness="0 0 0"><!--BVH JOINT Chest, OFFSET 0.0 7.62 -2.54, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l5" DEF="Bvh1_l5"><!--Visualization sphere for <HAnimJoint name='vl5'></HAnimJoint> is placed within <HAnimSegment name='l5'></HAnimSegment>--><TouchSensor description="HAnimJoint vl5, HAnimSegment l5"></TouchSensor>
+<HAnimJoint name="vl5" DEF="Bvh1_vl5" center="0 7.62 -2.54" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT Chest, OFFSET 0.0 7.62 -2.54, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l5" DEF="Bvh1_l5"><!--Visualization sphere for <HAnimJoint name='vl5'></HAnimJoint> is placed within <HAnimSegment name='l5'></HAnimSegment>--><TouchSensor description="HAnimJoint vl5, HAnimSegment l5"></TouchSensor>
 <Transform translation="0 7.62 -2.54"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line from current <HAnimJoint name='vl5'></HAnimJoint> to child <HAnimJoint name='Chest2'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0 7.62 -2.54 0 15.24 -2.54"></Coordinate>
@@ -186,7 +186,7 @@
 </Shape>
 <Transform translation="0 7.62 -2.54"><!--insert Shape geometry here--></Transform>
 </HAnimSegment>
-<HAnimJoint name="Chest2" DEF="Bvh1_Chest2" center="0 15.24 -2.54" stiffness="0 0 0"><!--BVH JOINT Chest2, OFFSET 0.0 7.62 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="vl5_to_Chest2" DEF="Bvh1_vl5_to_Chest2"><!--Visualization sphere for <HAnimJoint name='Chest2'></HAnimJoint> is placed within <HAnimSegment name='vl5_to_Chest2'></HAnimSegment>--><TouchSensor description="HAnimJoint Chest2, HAnimSegment vl5_to_Chest2"></TouchSensor>
+<HAnimJoint name="Chest2" DEF="Bvh1_Chest2" center="0 15.24 -2.54" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT Chest2, OFFSET 0.0 7.62 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="vl5_to_Chest2" DEF="Bvh1_vl5_to_Chest2"><!--Visualization sphere for <HAnimJoint name='Chest2'></HAnimJoint> is placed within <HAnimSegment name='vl5_to_Chest2'></HAnimSegment>--><TouchSensor description="HAnimJoint Chest2, HAnimSegment vl5_to_Chest2"></TouchSensor>
 <Transform translation="0 15.24 -2.54"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line from current <HAnimJoint name='Chest2'></HAnimJoint> to child <HAnimJoint name='LeftCollar'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0 15.24 -2.54 7.62 48.260000000000005 0"></Coordinate>
@@ -203,7 +203,7 @@
 </Shape>
 <Transform translation="0 15.24 -2.54"><!--insert Shape geometry here--></Transform>
 </HAnimSegment>
-<HAnimJoint name="LeftCollar" DEF="Bvh1_LeftCollar" center="7.62 48.260000000000005 0" stiffness="0 0 0"><!--BVH JOINT LeftCollar, OFFSET 7.62 33.02 2.54, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="Chest2_to_LeftCollar" DEF="Bvh1_Chest2_to_LeftCollar"><!--Visualization sphere for <HAnimJoint name='LeftCollar'></HAnimJoint> is placed within <HAnimSegment name='Chest2_to_LeftCollar'></HAnimSegment>--><TouchSensor description="HAnimJoint LeftCollar, HAnimSegment Chest2_to_LeftCollar"></TouchSensor>
+<HAnimJoint name="LeftCollar" DEF="Bvh1_LeftCollar" center="7.62 48.260000000000005 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT LeftCollar, OFFSET 7.62 33.02 2.54, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="Chest2_to_LeftCollar" DEF="Bvh1_Chest2_to_LeftCollar"><!--Visualization sphere for <HAnimJoint name='LeftCollar'></HAnimJoint> is placed within <HAnimSegment name='Chest2_to_LeftCollar'></HAnimSegment>--><TouchSensor description="HAnimJoint LeftCollar, HAnimSegment Chest2_to_LeftCollar"></TouchSensor>
 <Transform translation="7.62 48.260000000000005 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line from current <HAnimJoint name='LeftCollar'></HAnimJoint> to child <HAnimJoint name='l_shoulder'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="7.62 48.260000000000005 0 20.32 48.260000000000005 0"></Coordinate>
@@ -212,7 +212,7 @@
 </Shape>
 <Transform translation="7.62 48.260000000000005 0"><!--insert Shape geometry here--></Transform>
 </HAnimSegment>
-<HAnimJoint name="l_shoulder" DEF="Bvh1_l_shoulder" center="20.32 48.260000000000005 0" stiffness="0 0 0"><!--BVH JOINT LeftShoulder, OFFSET 12.7 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_upperarm" DEF="Bvh1_l_upperarm"><!--Visualization sphere for <HAnimJoint name='l_shoulder'></HAnimJoint> is placed within <HAnimSegment name='l_upperarm'></HAnimSegment>--><TouchSensor description="HAnimJoint l_shoulder, HAnimSegment l_upperarm"></TouchSensor>
+<HAnimJoint name="l_shoulder" DEF="Bvh1_l_shoulder" center="20.32 48.260000000000005 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT LeftShoulder, OFFSET 12.7 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_upperarm" DEF="Bvh1_l_upperarm"><!--Visualization sphere for <HAnimJoint name='l_shoulder'></HAnimJoint> is placed within <HAnimSegment name='l_upperarm'></HAnimSegment>--><TouchSensor description="HAnimJoint l_shoulder, HAnimSegment l_upperarm"></TouchSensor>
 <Transform translation="20.32 48.260000000000005 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line from current <HAnimJoint name='l_shoulder'></HAnimJoint> to child <HAnimJoint name='l_elbow'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="20.32 48.260000000000005 0 20.32 17.780000000000005 0"></Coordinate>
@@ -221,7 +221,7 @@
 </Shape>
 <Transform translation="20.32 48.260000000000005 0"><!--insert Shape geometry here--></Transform>
 </HAnimSegment>
-<HAnimJoint name="l_elbow" DEF="Bvh1_l_elbow" center="20.32 17.780000000000005 0" stiffness="0 0 0"><!--BVH JOINT LeftElbow, OFFSET 0.0 -30.48 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_forearm" DEF="Bvh1_l_forearm"><!--Visualization sphere for <HAnimJoint name='l_elbow'></HAnimJoint> is placed within <HAnimSegment name='l_forearm'></HAnimSegment>--><TouchSensor description="HAnimJoint l_elbow, HAnimSegment l_forearm"></TouchSensor>
+<HAnimJoint name="l_elbow" DEF="Bvh1_l_elbow" center="20.32 17.780000000000005 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT LeftElbow, OFFSET 0.0 -30.48 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_forearm" DEF="Bvh1_l_forearm"><!--Visualization sphere for <HAnimJoint name='l_elbow'></HAnimJoint> is placed within <HAnimSegment name='l_forearm'></HAnimSegment>--><TouchSensor description="HAnimJoint l_elbow, HAnimSegment l_forearm"></TouchSensor>
 <Transform translation="20.32 17.780000000000005 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line from current <HAnimJoint name='l_elbow'></HAnimJoint> to child <HAnimJoint name='l_wrist'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="20.32 17.780000000000005 0 20.32 -6.349999999999994 0"></Coordinate>
@@ -230,7 +230,7 @@
 </Shape>
 <Transform translation="20.32 17.780000000000005 0"><!--insert Shape geometry here--></Transform>
 </HAnimSegment>
-<HAnimJoint name="l_wrist" DEF="Bvh1_l_wrist" center="20.32 -6.349999999999994 0" stiffness="0 0 0"><!--BVH JOINT LeftWrist, OFFSET 0.0 -24.13 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_hand" DEF="Bvh1_l_hand"><!--Visualization sphere for <HAnimJoint name='l_wrist'></HAnimJoint> is placed within <HAnimSegment name='l_hand'></HAnimSegment>--><TouchSensor description="HAnimJoint l_wrist, HAnimSegment l_hand"></TouchSensor>
+<HAnimJoint name="l_wrist" DEF="Bvh1_l_wrist" center="20.32 -6.349999999999994 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT LeftWrist, OFFSET 0.0 -24.13 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="l_hand" DEF="Bvh1_l_hand"><!--Visualization sphere for <HAnimJoint name='l_wrist'></HAnimJoint> is placed within <HAnimSegment name='l_hand'></HAnimSegment>--><TouchSensor description="HAnimJoint l_wrist, HAnimSegment l_hand"></TouchSensor>
 <Transform translation="20.32 -6.349999999999994 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Transform translation="20.32 -6.349999999999994 0"><HAnimSite name="l_hand_tip" DEF="Bvh1_l_hand_tip" translation="0 -17.78 0"><!--BVH End Site OFFSET (0.0, -17.78, 0.0)--><!--HAnimSite visualization shape--><TouchSensor description="HAnimSite l_hand_tip"></TouchSensor>
@@ -242,7 +242,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="RightCollar" DEF="Bvh1_RightCollar" center="-7.62 48.260000000000005 0" stiffness="0 0 0"><!--BVH JOINT RightCollar, OFFSET -7.62 33.02 2.54, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="Chest2_to_RightCollar" DEF="Bvh1_Chest2_to_RightCollar"><!--Visualization sphere for <HAnimJoint name='RightCollar'></HAnimJoint> is placed within <HAnimSegment name='Chest2_to_RightCollar'></HAnimSegment>--><TouchSensor description="HAnimJoint RightCollar, HAnimSegment Chest2_to_RightCollar"></TouchSensor>
+<HAnimJoint name="RightCollar" DEF="Bvh1_RightCollar" center="-7.62 48.260000000000005 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT RightCollar, OFFSET -7.62 33.02 2.54, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="Chest2_to_RightCollar" DEF="Bvh1_Chest2_to_RightCollar"><!--Visualization sphere for <HAnimJoint name='RightCollar'></HAnimJoint> is placed within <HAnimSegment name='Chest2_to_RightCollar'></HAnimSegment>--><TouchSensor description="HAnimJoint RightCollar, HAnimSegment Chest2_to_RightCollar"></TouchSensor>
 <Transform translation="-7.62 48.260000000000005 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line from current <HAnimJoint name='RightCollar'></HAnimJoint> to child <HAnimJoint name='r_shoulder'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-7.62 48.260000000000005 0 -20.32 48.260000000000005 0"></Coordinate>
@@ -251,7 +251,7 @@
 </Shape>
 <Transform translation="-7.62 48.260000000000005 0"><!--insert Shape geometry here--></Transform>
 </HAnimSegment>
-<HAnimJoint name="r_shoulder" DEF="Bvh1_r_shoulder" center="-20.32 48.260000000000005 0" stiffness="0 0 0"><!--BVH JOINT RightShoulder, OFFSET -12.7 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_upperarm" DEF="Bvh1_r_upperarm"><!--Visualization sphere for <HAnimJoint name='r_shoulder'></HAnimJoint> is placed within <HAnimSegment name='r_upperarm'></HAnimSegment>--><TouchSensor description="HAnimJoint r_shoulder, HAnimSegment r_upperarm"></TouchSensor>
+<HAnimJoint name="r_shoulder" DEF="Bvh1_r_shoulder" center="-20.32 48.260000000000005 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT RightShoulder, OFFSET -12.7 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_upperarm" DEF="Bvh1_r_upperarm"><!--Visualization sphere for <HAnimJoint name='r_shoulder'></HAnimJoint> is placed within <HAnimSegment name='r_upperarm'></HAnimSegment>--><TouchSensor description="HAnimJoint r_shoulder, HAnimSegment r_upperarm"></TouchSensor>
 <Transform translation="-20.32 48.260000000000005 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line from current <HAnimJoint name='r_shoulder'></HAnimJoint> to child <HAnimJoint name='r_elbow'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-20.32 48.260000000000005 0 -20.32 17.780000000000005 0"></Coordinate>
@@ -260,7 +260,7 @@
 </Shape>
 <Transform translation="-20.32 48.260000000000005 0"><!--insert Shape geometry here--></Transform>
 </HAnimSegment>
-<HAnimJoint name="r_elbow" DEF="Bvh1_r_elbow" center="-20.32 17.780000000000005 0" stiffness="0 0 0"><!--BVH JOINT RightElbow, OFFSET 0.0 -30.48 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_forearm" DEF="Bvh1_r_forearm"><!--Visualization sphere for <HAnimJoint name='r_elbow'></HAnimJoint> is placed within <HAnimSegment name='r_forearm'></HAnimSegment>--><TouchSensor description="HAnimJoint r_elbow, HAnimSegment r_forearm"></TouchSensor>
+<HAnimJoint name="r_elbow" DEF="Bvh1_r_elbow" center="-20.32 17.780000000000005 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT RightElbow, OFFSET 0.0 -30.48 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_forearm" DEF="Bvh1_r_forearm"><!--Visualization sphere for <HAnimJoint name='r_elbow'></HAnimJoint> is placed within <HAnimSegment name='r_forearm'></HAnimSegment>--><TouchSensor description="HAnimJoint r_elbow, HAnimSegment r_forearm"></TouchSensor>
 <Transform translation="-20.32 17.780000000000005 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line from current <HAnimJoint name='r_elbow'></HAnimJoint> to child <HAnimJoint name='r_wrist'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-20.32 17.780000000000005 0 -20.32 -6.349999999999994 0"></Coordinate>
@@ -269,7 +269,7 @@
 </Shape>
 <Transform translation="-20.32 17.780000000000005 0"><!--insert Shape geometry here--></Transform>
 </HAnimSegment>
-<HAnimJoint name="r_wrist" DEF="Bvh1_r_wrist" center="-20.32 -6.349999999999994 0" stiffness="0 0 0"><!--BVH JOINT RightWrist, OFFSET 0.0 -24.13 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_hand" DEF="Bvh1_r_hand"><!--Visualization sphere for <HAnimJoint name='r_wrist'></HAnimJoint> is placed within <HAnimSegment name='r_hand'></HAnimSegment>--><TouchSensor description="HAnimJoint r_wrist, HAnimSegment r_hand"></TouchSensor>
+<HAnimJoint name="r_wrist" DEF="Bvh1_r_wrist" center="-20.32 -6.349999999999994 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT RightWrist, OFFSET 0.0 -24.13 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="r_hand" DEF="Bvh1_r_hand"><!--Visualization sphere for <HAnimJoint name='r_wrist'></HAnimJoint> is placed within <HAnimSegment name='r_hand'></HAnimSegment>--><TouchSensor description="HAnimJoint r_wrist, HAnimSegment r_hand"></TouchSensor>
 <Transform translation="-20.32 -6.349999999999994 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Transform translation="-20.32 -6.349999999999994 0"><HAnimSite name="r_hand_tip" DEF="Bvh1_r_hand_tip" translation="0 -17.78 0"><!--BVH End Site OFFSET (0.0, -17.78, 0.0)--><!--HAnimSite visualization shape--><TouchSensor description="HAnimSite r_hand_tip"></TouchSensor>
@@ -281,7 +281,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="Neck" DEF="Bvh1_Neck" center="0 53.339999 0" stiffness="0 0 0"><!--BVH JOINT Neck, OFFSET 0.0 38.099999 2.54, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="Chest2_to_Neck" DEF="Bvh1_Chest2_to_Neck"><!--Visualization sphere for <HAnimJoint name='Neck'></HAnimJoint> is placed within <HAnimSegment name='Chest2_to_Neck'></HAnimSegment>--><TouchSensor description="HAnimJoint Neck, HAnimSegment Chest2_to_Neck"></TouchSensor>
+<HAnimJoint name="Neck" DEF="Bvh1_Neck" center="0 53.339999 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT Neck, OFFSET 0.0 38.099999 2.54, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="Chest2_to_Neck" DEF="Bvh1_Chest2_to_Neck"><!--Visualization sphere for <HAnimJoint name='Neck'></HAnimJoint> is placed within <HAnimSegment name='Chest2_to_Neck'></HAnimSegment>--><TouchSensor description="HAnimJoint Neck, HAnimSegment Chest2_to_Neck"></TouchSensor>
 <Transform translation="0 53.339999 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line from current <HAnimJoint name='Neck'></HAnimJoint> to child <HAnimJoint name='skullbase'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0 53.339999 0 0 69.849999 0"></Coordinate>
@@ -290,7 +290,7 @@
 </Shape>
 <Transform translation="0 53.339999 0"><!--insert Shape geometry here--></Transform>
 </HAnimSegment>
-<HAnimJoint name="skullbase" DEF="Bvh1_skullbase" center="0 69.849999 0" stiffness="0 0 0"><!--BVH JOINT Head, OFFSET 0.0 16.51 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="skull" DEF="Bvh1_skull"><!--Visualization sphere for <HAnimJoint name='skullbase'></HAnimJoint> is placed within <HAnimSegment name='skull'></HAnimSegment>--><TouchSensor description="HAnimJoint skullbase, HAnimSegment skull"></TouchSensor>
+<HAnimJoint name="skullbase" DEF="Bvh1_skullbase" center="0 69.849999 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--BVH JOINT Head, OFFSET 0.0 16.51 0.0, CHANNELS 3 Zrotation Xrotation Yrotation--><HAnimSegment name="skull" DEF="Bvh1_skull"><!--Visualization sphere for <HAnimJoint name='skullbase'></HAnimJoint> is placed within <HAnimSegment name='skull'></HAnimSegment>--><TouchSensor description="HAnimJoint skullbase, HAnimSegment skull"></TouchSensor>
 <Transform translation="0 69.849999 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Transform translation="0 69.849999 0"><HAnimSite name="skull_tip" DEF="Bvh1_skull_tip" translation="0 10.16 0"><!--BVH End Site OFFSET (0.0, 10.16, 0.0)--><!--HAnimSite visualization shape--><TouchSensor description="HAnimSite skull_tip"></TouchSensor>

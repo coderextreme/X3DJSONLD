@@ -41,7 +41,7 @@
 <Viewpoint centerOfRotation="0 0.9149 0.0016" description="Humanoid LOA 3 Left Side Close" orientation="0 1 0 -1.2" position="-1 0.8 0.5"></Viewpoint>
 <Viewpoint centerOfRotation="0 0.9149 0.0016" description="Humanoid LOA 3 Left Side" orientation="0 1 0 -1.5708" position="-2.6 0.8 0"></Viewpoint>
 <Viewpoint centerOfRotation="0 0.9149 0.0016" description="Humanoid LOA 3 Top" orientation="1 0 0 -1.5708" position="0 3.5 0"></Viewpoint>
-<HAnimHumanoid name="humanoid" DEF="hanim_humanoid" loa="3" version="2.0"><!--HAnimHumanoid original info='"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman" "authorEmail=HAnim@web3D.org" "copyright=none" "creationDate=12 May 1999" "usageRestrictions=none" "humanoidVersion=2.0" "height=1.7504"'--><!--Only one root HAnimJoint is allowed--><!--USE nodes go here for access by inverse kinematics (IK) engines and other tools--><!--Top-level HAnimSite/Viewpoint nodes that move with the human center but are unaffected by body animation--><!--TODO move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations, if so also revert containerField to default--><!--right between the eyes, stationary position not animating except with body itself--><MetadataSet containerField="metadata" name="HAnimHumanoid.info" reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"><MetadataString name="authorName" value="&quot;Matthew T. Beitler Joe D. Williams Don Brutzman&quot;" containerField="value"></MetadataString>
+<HAnimHumanoid name="humanoid" DEF="hanim_humanoid" loa="3" version="2.0"><!--HAnimHumanoid original info='"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman" "authorEmail=HAnim@web3D.org" "copyright=none" "creationDate=12 May 1999" "usageRestrictions=none" "humanoidVersion=2.0" "height=1.7504"'--><!--Only one root HAnimJoint is allowed--><!--USE nodes go here for access by inverse kinematics (IK) engines and other tools--><!--Top-level HAnimSite/Viewpoint nodes that move with the human center but are unaffected by body animation--><!--TODO move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations, if so also revert containerField to default--><!--right between the eyes, stationary position not animating except with body itself--><MetadataSet name="HAnimHumanoid.info" reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid" containerField="value"><MetadataString name="authorName" value="&quot;Matthew T. Beitler Joe D. Williams Don Brutzman&quot;" containerField="value"></MetadataString>
 <MetadataString name="authorEmail" value="&quot;HAnim@web3D.org&quot;"></MetadataString>
 <MetadataString name="copyright" value="&quot;none&quot;"></MetadataString>
 <MetadataString name="creationDate" value="&quot;12 May 1999&quot;"></MetadataString>
@@ -49,8 +49,8 @@
 <MetadataString name="humanoidVersion" value="&quot;2.0&quot;"></MetadataString>
 <MetadataString name="usageRestrictions" value="&quot;none&quot;"></MetadataString>
 </MetadataSet>
-<HAnimJoint name="humanoid_root" DEF="hanim_humanoid_root" center="0 0.824 0.0277" stiffness="0 0 0" containerField="skeleton"><HAnimSegment name="sacrum" DEF="hanim_sacrum"></HAnimSegment>
-<HAnimJoint name="sacroiliac" DEF="hanim_sacroiliac" center="0 0.9149 0.0016" stiffness="0 0 0"><HAnimSegment name="pelvis" DEF="hanim_pelvis"><HAnimSite name="r_iliocristale_pt" DEF="hanim_r_iliocristale_pt" translation="-0.1525 1.0628 0.0035"></HAnimSite>
+<HAnimJoint name="humanoid_root" DEF="hanim_humanoid_root" center="0 0.824 0.0277" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0" containerField="skeleton"><HAnimSegment name="sacrum" DEF="hanim_sacrum"></HAnimSegment>
+<HAnimJoint name="sacroiliac" DEF="hanim_sacroiliac" center="0 0.9149 0.0016" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="pelvis" DEF="hanim_pelvis"><HAnimSite name="r_iliocristale_pt" DEF="hanim_r_iliocristale_pt" translation="-0.1525 1.0628 0.0035"></HAnimSite>
 <HAnimSite name="r_trochanterion_pt" DEF="hanim_r_trochanterion_pt" translation="-0.1689 0.8419 0.0352"></HAnimSite>
 <HAnimSite name="l_iliocristale_pt" DEF="hanim_l_iliocristale_pt" translation="0.1612 1.0537 0.0008"></HAnimSite>
 <HAnimSite name="l_trochanterion_pt" DEF="hanim_l_trochanterion_pt" translation="0.1677 0.8336 0.0303"></HAnimSite>
@@ -60,20 +60,20 @@
 <HAnimSite name="l_psis_pt" DEF="hanim_l_psis_pt" translation="0.0774 1.019 -0.1151"></HAnimSite>
 <HAnimSite name="crotch_pt" DEF="hanim_crotch_pt" translation="0.0034 0.8266 0.0257"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_hip" DEF="hanim_l_hip" center="0.0961 0.9124 -0.0001" stiffness="0 0 0"><HAnimSegment name="l_thigh" DEF="hanim_l_thigh"><HAnimSite name="l_knee_crease_pt" DEF="hanim_l_knee_crease_pt" translation="0.0993 0.4881 -0.0309"></HAnimSite>
+<HAnimJoint name="l_hip" DEF="hanim_l_hip" center="0.0961 0.9124 -0.0001" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_thigh" DEF="hanim_l_thigh"><HAnimSite name="l_knee_crease_pt" DEF="hanim_l_knee_crease_pt" translation="0.0993 0.4881 -0.0309"></HAnimSite>
 <HAnimSite name="l_femoral_lateral_epicondyle_pt" DEF="hanim_l_femoral_lateral_epicondyle_pt" translation="0.1598 0.4967 0.0297"></HAnimSite>
 <HAnimSite name="l_femoral_medial_epicondyle_pt" DEF="hanim_l_femoral_medial_epicondyle_pt" translation="0.0398 0.4946 0.0303"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_knee" DEF="hanim_l_knee" center="0.104 0.4867 0.0308" stiffness="0 0 0"><HAnimSegment name="l_calf" DEF="hanim_l_calf"></HAnimSegment>
-<HAnimJoint name="l_talocrural" DEF="hanim_l_talocrural" center="0.1101 0.0656 -0.0736" stiffness="0 0 0"><HAnimSegment name="l_talus" DEF="hanim_l_talus"><HAnimSite name="l_lateral_malleolus_pt" DEF="hanim_l_lateral_malleolus_pt" translation="0.1308 0.0597 -0.1032"></HAnimSite>
+<HAnimJoint name="l_knee" DEF="hanim_l_knee" center="0.104 0.4867 0.0308" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_calf" DEF="hanim_l_calf"></HAnimSegment>
+<HAnimJoint name="l_talocrural" DEF="hanim_l_talocrural" center="0.1101 0.0656 -0.0736" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_talus" DEF="hanim_l_talus"><HAnimSite name="l_lateral_malleolus_pt" DEF="hanim_l_lateral_malleolus_pt" translation="0.1308 0.0597 -0.1032"></HAnimSite>
 <HAnimSite name="l_medial_malleolus_pt" DEF="hanim_l_medial_malleolus_pt" translation="0.089 0.0716 -0.0881"></HAnimSite>
 <HAnimSite name="l_sphyrion_pt" DEF="hanim_l_sphyrion_pt" translation="0.089 0.0575 -0.0943"></HAnimSite>
 <HAnimSite name="l_calcaneus_posterior_pt" DEF="hanim_l_calcaneus_posterior_pt" translation="0.0974 0.0259 -0.1171"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_tarsometatarsal_2" DEF="hanim_l_tarsometatarsal_2" center="0.1086 0.0001 -0.0368" stiffness="0 0 0"><HAnimSegment name="l_metatarsal_2" DEF="hanim_l_metatarsal_2"></HAnimSegment>
-<HAnimJoint name="l_metatarsophalangeal_2" DEF="hanim_l_metatarsophalangeal_2" center="0.1086 0.0001 0.0368" stiffness="0 0 0"><HAnimSegment name="l_tarsal_proximal_phalanx_2" DEF="hanim_l_tarsal_proximal_phalanx_2"><HAnimSite name="l_metatarsal_phalanx_1_pt" DEF="hanim_l_metatarsal_phalanx_1_pt" translation="0.0816 0.0232 0.0106"></HAnimSite>
+<HAnimJoint name="l_tarsometatarsal_2" DEF="hanim_l_tarsometatarsal_2" center="0.1086 0.0001 -0.0368" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_metatarsal_2" DEF="hanim_l_metatarsal_2"></HAnimSegment>
+<HAnimJoint name="l_metatarsophalangeal_2" DEF="hanim_l_metatarsophalangeal_2" center="0.1086 0.0001 0.0368" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_proximal_phalanx_2" DEF="hanim_l_tarsal_proximal_phalanx_2"><HAnimSite name="l_metatarsal_phalanx_1_pt" DEF="hanim_l_metatarsal_phalanx_1_pt" translation="0.0816 0.0232 0.0106"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_tarsal_distal_interphalangeal_2" DEF="hanim_l_tarsal_distal_interphalangeal_2" center="0.1086 0 0.0762" stiffness="0 0 0"><HAnimSegment name="l_tarsal_distal_phalanx_2" DEF="hanim_l_tarsal_distal_phalanx_2"><HAnimSite name="l_forefoot_tip" DEF="hanim_l_forefoot_tip" translation="0.1354 0.0016 0.1476"></HAnimSite>
+<HAnimJoint name="l_tarsal_distal_interphalangeal_2" DEF="hanim_l_tarsal_distal_interphalangeal_2" center="0.1086 0 0.0762" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_distal_phalanx_2" DEF="hanim_l_tarsal_distal_phalanx_2"><HAnimSite name="l_forefoot_tip" DEF="hanim_l_forefoot_tip" translation="0.1354 0.0016 0.1476"></HAnimSite>
 <HAnimSite name="l_metatarsal_phalanx_5_pt" DEF="hanim_l_metatarsal_phalanx_5_pt" translation="0.1825 0.007 0.0928"></HAnimSite>
 <HAnimSite name="l_tarsal_distal_phalanx_2_pt" DEF="hanim_l_tarsal_distal_phalanx_2_pt" translation="0.1195 0.0079 0.1433"></HAnimSite>
 </HAnimSegment>
@@ -83,20 +83,20 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_hip" DEF="hanim_r_hip" center="-0.0961 0.9124 -0.0001" stiffness="0 0 0"><HAnimSegment name="r_thigh" DEF="hanim_r_thigh"><HAnimSite name="r_knee_crease_pt" DEF="hanim_r_knee_crease_pt" translation="-0.0825 0.4932 -0.0326"></HAnimSite>
+<HAnimJoint name="r_hip" DEF="hanim_r_hip" center="-0.0961 0.9124 -0.0001" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_thigh" DEF="hanim_r_thigh"><HAnimSite name="r_knee_crease_pt" DEF="hanim_r_knee_crease_pt" translation="-0.0825 0.4932 -0.0326"></HAnimSite>
 <HAnimSite name="r_femoral_lateral_epicondyle_pt" DEF="hanim_r_femoral_lateral_epicondyle_pt" translation="-0.1421 0.4992 0.031"></HAnimSite>
 <HAnimSite name="r_femoral_medial_epicondyle_pt" DEF="hanim_r_femoral_medial_epicondyle_pt" translation="-0.0221 0.5014 0.0289"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="r_knee" DEF="hanim_r_knee" center="-0.104 0.4867 0.0308" stiffness="0 0 0"><HAnimSegment name="r_calf" DEF="hanim_r_calf"></HAnimSegment>
-<HAnimJoint name="r_talocrural" DEF="hanim_r_talocrural" center="-0.1101 0.0656 -0.0736" stiffness="0 0 0"><HAnimSegment name="r_talus" DEF="hanim_r_talus"><HAnimSite name="r_lateral_malleolus_pt" DEF="hanim_r_lateral_malleolus_pt" translation="-0.1006 0.0658 -0.1075"></HAnimSite>
+<HAnimJoint name="r_knee" DEF="hanim_r_knee" center="-0.104 0.4867 0.0308" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_calf" DEF="hanim_r_calf"></HAnimSegment>
+<HAnimJoint name="r_talocrural" DEF="hanim_r_talocrural" center="-0.1101 0.0656 -0.0736" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_talus" DEF="hanim_r_talus"><HAnimSite name="r_lateral_malleolus_pt" DEF="hanim_r_lateral_malleolus_pt" translation="-0.1006 0.0658 -0.1075"></HAnimSite>
 <HAnimSite name="r_medial_malleolus_pt" DEF="hanim_r_medial_malleolus_pt" translation="-0.0591 0.076 -0.0928"></HAnimSite>
 <HAnimSite name="r_sphyrion_pt" DEF="hanim_r_sphyrion_pt" translation="-0.0603 0.061 -0.1002"></HAnimSite>
 <HAnimSite name="r_calcaneus_posterior_pt" DEF="hanim_r_calcaneus_posterior_pt" translation="-0.0692 0.0297 -0.1221"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="r_tarsometatarsal_2" DEF="hanim_r_tarsometatarsal_2" center="-0.1086 0.0001 -0.0368" stiffness="0 0 0"><HAnimSegment name="r_metatarsal_2" DEF="hanim_r_metatarsal_2"></HAnimSegment>
-<HAnimJoint name="r_metatarsophalangeal_2" DEF="hanim_r_metatarsophalangeal_2" center="-0.1086 0.0001 0.0368" stiffness="0 0 0"><HAnimSegment name="r_tarsal_proximal_phalanx_2" DEF="hanim_r_tarsal_proximal_phalanx_2"><HAnimSite name="r_metatarsal_phalanx_1_pt" DEF="hanim_r_metatarsal_phalanx_1_pt" translation="-0.0521 0.026 0.0127"></HAnimSite>
+<HAnimJoint name="r_tarsometatarsal_2" DEF="hanim_r_tarsometatarsal_2" center="-0.1086 0.0001 -0.0368" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_metatarsal_2" DEF="hanim_r_metatarsal_2"></HAnimSegment>
+<HAnimJoint name="r_metatarsophalangeal_2" DEF="hanim_r_metatarsophalangeal_2" center="-0.1086 0.0001 0.0368" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_tarsal_proximal_phalanx_2" DEF="hanim_r_tarsal_proximal_phalanx_2"><HAnimSite name="r_metatarsal_phalanx_1_pt" DEF="hanim_r_metatarsal_phalanx_1_pt" translation="-0.0521 0.026 0.0127"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="r_tarsal_distal_interphalangeal_2" DEF="hanim_r_tarsal_distal_interphalangeal_2" center="-0.1086 0 0.0762" stiffness="0 0 0"><HAnimSegment name="r_tarsal_distal_phalanx_2" DEF="hanim_r_tarsal_distal_phalanx_2"><HAnimSite name="r_forefoot_tip" DEF="hanim_r_forefoot_tip" translation="-0.1043 0.0227 0.145"></HAnimSite>
+<HAnimJoint name="r_tarsal_distal_interphalangeal_2" DEF="hanim_r_tarsal_distal_interphalangeal_2" center="-0.1086 0 0.0762" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_tarsal_distal_phalanx_2" DEF="hanim_r_tarsal_distal_phalanx_2"><HAnimSite name="r_forefoot_tip" DEF="hanim_r_forefoot_tip" translation="-0.1043 0.0227 0.145"></HAnimSite>
 <HAnimSite name="r_metatarsal_phalanx_5_pt" DEF="hanim_r_metatarsal_phalanx_5_pt" translation="-0.1523 0.0166 0.0895"></HAnimSite>
 <HAnimSite name="r_tarsal_distal_phalanx_2_pt" DEF="hanim_r_tarsal_distal_phalanx_2_pt" translation="-0.0883 0.0134 0.1383"></HAnimSite>
 </HAnimSegment>
@@ -107,43 +107,43 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="vl5" DEF="hanim_vl5" center="0.0028 1.0568 -0.0776" stiffness="0 0 0"><HAnimSegment name="l5" DEF="hanim_l5"><HAnimSite name="waist_preferred_posterior_pt" DEF="hanim_waist_preferred_posterior_pt" translation="0 1.0915 -0.1091"></HAnimSite>
+<HAnimJoint name="vl5" DEF="hanim_vl5" center="0.0028 1.0568 -0.0776" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l5" DEF="hanim_l5"><HAnimSite name="waist_preferred_posterior_pt" DEF="hanim_waist_preferred_posterior_pt" translation="0 1.0915 -0.1091"></HAnimSite>
 <HAnimSite name="navel_pt" DEF="hanim_navel_pt" translation="0.0069 1.0966 0.1017"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="vl4" DEF="hanim_vl4" center="0.0035 1.0925 -0.0787" stiffness="0 0 0"><HAnimSegment name="l4" DEF="hanim_l4"></HAnimSegment>
-<HAnimJoint name="vl3" DEF="hanim_vl3" center="0.0041 1.1276 -0.0796" stiffness="0 0 0"><HAnimSegment name="l3" DEF="hanim_l3"></HAnimSegment>
-<HAnimJoint name="vl2" DEF="hanim_vl2" center="0.0045 1.1546 -0.08" stiffness="0 0 0"><HAnimSegment name="l2" DEF="hanim_l2"><HAnimSite name="r_rib10_pt" DEF="hanim_r_rib10_pt" translation="-0.0711 1.1941 0.1016"></HAnimSite>
+<HAnimJoint name="vl4" DEF="hanim_vl4" center="0.0035 1.0925 -0.0787" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l4" DEF="hanim_l4"></HAnimSegment>
+<HAnimJoint name="vl3" DEF="hanim_vl3" center="0.0041 1.1276 -0.0796" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l3" DEF="hanim_l3"></HAnimSegment>
+<HAnimJoint name="vl2" DEF="hanim_vl2" center="0.0045 1.1546 -0.08" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l2" DEF="hanim_l2"><HAnimSite name="r_rib10_pt" DEF="hanim_r_rib10_pt" translation="-0.0711 1.1941 0.1016"></HAnimSite>
 <HAnimSite name="l_rib10_pt" DEF="hanim_l_rib10_pt" translation="0.0871 1.1925 0.0992"></HAnimSite>
 <HAnimSite name="rib10_midspine_pt" DEF="hanim_rib10_midspine_pt" translation="0.0049 1.1908 -0.1113"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="vl1" DEF="hanim_vl1" center="0.0048 1.1912 -0.0805" stiffness="0 0 0"><HAnimSegment name="l1" DEF="hanim_l1"></HAnimSegment>
-<HAnimJoint name="vt12" DEF="hanim_vt12" center="0.0051 1.2278 -0.0808" stiffness="0 0 0"><HAnimSegment name="t12" DEF="hanim_t12"></HAnimSegment>
-<HAnimJoint name="vt11" DEF="hanim_vt11" center="0.0053 1.2679 -0.081" stiffness="0 0 0"><HAnimSegment name="t11" DEF="hanim_t11"></HAnimSegment>
-<HAnimJoint name="vt10" DEF="hanim_vt10" center="0.0056 1.2848 -0.0822" stiffness="0 0 0"><HAnimSegment name="t10" DEF="hanim_t10"><HAnimSite name="substernale_pt" DEF="hanim_substernale_pt" translation="0.0085 1.2995 0.1147"></HAnimSite>
+<HAnimJoint name="vl1" DEF="hanim_vl1" center="0.0048 1.1912 -0.0805" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l1" DEF="hanim_l1"></HAnimSegment>
+<HAnimJoint name="vt12" DEF="hanim_vt12" center="0.0051 1.2278 -0.0808" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t12" DEF="hanim_t12"></HAnimSegment>
+<HAnimJoint name="vt11" DEF="hanim_vt11" center="0.0053 1.2679 -0.081" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t11" DEF="hanim_t11"></HAnimSegment>
+<HAnimJoint name="vt10" DEF="hanim_vt10" center="0.0056 1.2848 -0.0822" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t10" DEF="hanim_t10"><HAnimSite name="substernale_pt" DEF="hanim_substernale_pt" translation="0.0085 1.2995 0.1147"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="vt9" DEF="hanim_vt9" center="0.0057 1.3126 -0.0838" stiffness="0 0 0"><HAnimSegment name="t9" DEF="hanim_t9"><HAnimSite name="r_thelion_pt" DEF="hanim_r_thelion_pt" translation="-0.0736 1.3385 0.1217"></HAnimSite>
+<HAnimJoint name="vt9" DEF="hanim_vt9" center="0.0057 1.3126 -0.0838" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t9" DEF="hanim_t9"><HAnimSite name="r_thelion_pt" DEF="hanim_r_thelion_pt" translation="-0.0736 1.3385 0.1217"></HAnimSite>
 <HAnimSite name="l_thelion_pt" DEF="hanim_l_thelion_pt" translation="0.0918 1.3382 0.1192"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="vt8" DEF="hanim_vt8" center="0.0057 1.3382 -0.0845" stiffness="0 0 0"><HAnimSegment name="t8" DEF="hanim_t8"></HAnimSegment>
-<HAnimJoint name="vt7" DEF="hanim_vt7" center="0.0058 1.3625 -0.0833" stiffness="0 0 0"><HAnimSegment name="t7" DEF="hanim_t7"></HAnimSegment>
-<HAnimJoint name="vt6" DEF="hanim_vt6" center="0.0059 1.3866 -0.08" stiffness="0 0 0"><HAnimSegment name="t6" DEF="hanim_t6"></HAnimSegment>
-<HAnimJoint name="vt5" DEF="hanim_vt5" center="0.006 1.4102 -0.0745" stiffness="0 0 0"><HAnimSegment name="t5" DEF="hanim_t5"></HAnimSegment>
-<HAnimJoint name="vt4" DEF="hanim_vt4" center="0.0061 1.432 -0.0675" stiffness="0 0 0"><HAnimSegment name="t4" DEF="hanim_t4"></HAnimSegment>
-<HAnimJoint name="vt3" DEF="hanim_vt3" center="0.0062 1.4583 -0.057" stiffness="0 0 0"><HAnimSegment name="t3" DEF="hanim_t3"></HAnimSegment>
-<HAnimJoint name="vt2" DEF="hanim_vt2" center="0.0063 1.4761 -0.0484" stiffness="0 0 0"><HAnimSegment name="t2" DEF="hanim_t2"></HAnimSegment>
-<HAnimJoint name="vt1" DEF="hanim_vt1" center="0.0065 1.4951 -0.0387" stiffness="0 0 0"><HAnimSegment name="t1" DEF="hanim_t1"><HAnimSite name="suprasternale_pt" DEF="hanim_suprasternale_pt" translation="0.0084 1.4714 0.0551"></HAnimSite>
+<HAnimJoint name="vt8" DEF="hanim_vt8" center="0.0057 1.3382 -0.0845" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t8" DEF="hanim_t8"></HAnimSegment>
+<HAnimJoint name="vt7" DEF="hanim_vt7" center="0.0058 1.3625 -0.0833" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t7" DEF="hanim_t7"></HAnimSegment>
+<HAnimJoint name="vt6" DEF="hanim_vt6" center="0.0059 1.3866 -0.08" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t6" DEF="hanim_t6"></HAnimSegment>
+<HAnimJoint name="vt5" DEF="hanim_vt5" center="0.006 1.4102 -0.0745" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t5" DEF="hanim_t5"></HAnimSegment>
+<HAnimJoint name="vt4" DEF="hanim_vt4" center="0.0061 1.432 -0.0675" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t4" DEF="hanim_t4"></HAnimSegment>
+<HAnimJoint name="vt3" DEF="hanim_vt3" center="0.0062 1.4583 -0.057" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t3" DEF="hanim_t3"></HAnimSegment>
+<HAnimJoint name="vt2" DEF="hanim_vt2" center="0.0063 1.4761 -0.0484" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t2" DEF="hanim_t2"></HAnimSegment>
+<HAnimJoint name="vt1" DEF="hanim_vt1" center="0.0065 1.4951 -0.0387" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t1" DEF="hanim_t1"><HAnimSite name="suprasternale_pt" DEF="hanim_suprasternale_pt" translation="0.0084 1.4714 0.0551"></HAnimSite>
 <HAnimSite name="cervicale_pt" DEF="hanim_cervicale_pt" translation="0.0064 1.52 -0.0815"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="vc7" DEF="hanim_vc7" center="0.0066 1.5132 -0.0301" stiffness="0 0 0"><HAnimSegment name="c7" DEF="hanim_c7"><HAnimSite name="r_neck_base_pt" DEF="hanim_r_neck_base_pt" translation="-0.0419 1.5149 -0.022"></HAnimSite>
+<HAnimJoint name="vc7" DEF="hanim_vc7" center="0.0066 1.5132 -0.0301" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="c7" DEF="hanim_c7"><HAnimSite name="r_neck_base_pt" DEF="hanim_r_neck_base_pt" translation="-0.0419 1.5149 -0.022"></HAnimSite>
 <HAnimSite name="l_neck_base_pt" DEF="hanim_l_neck_base_pt" translation="0.0646 1.5141 -0.038"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="vc6" DEF="hanim_vc6" center="0.0066 1.5357 -0.0143" stiffness="0 0 0"><HAnimSegment name="c6" DEF="hanim_c6"></HAnimSegment>
-<HAnimJoint name="vc5" DEF="hanim_vc5" center="0.0066 1.552 -0.0082" stiffness="0 0 0"><HAnimSegment name="c5" DEF="hanim_c5"></HAnimSegment>
-<HAnimJoint name="vc4" DEF="hanim_vc4" center="0.0066 1.5662 -0.0084" stiffness="0 0 0"><HAnimSegment name="c4" DEF="hanim_c4"></HAnimSegment>
-<HAnimJoint name="vc3" DEF="hanim_vc3" center="0.0066 1.58 -0.0103" stiffness="0 0 0"><HAnimSegment name="c3" DEF="hanim_c3"></HAnimSegment>
-<HAnimJoint name="vc2" DEF="hanim_vc2" center="0.0066 1.5928 -0.0103" stiffness="0 0 0"><HAnimSegment name="c2" DEF="hanim_c2"></HAnimSegment>
-<HAnimJoint name="vc1" DEF="hanim_vc1" center="0.0066 1.6144 -0.0034" stiffness="0 0 0"><HAnimSegment name="c1" DEF="hanim_c1"></HAnimSegment>
-<HAnimJoint name="skullbase" DEF="hanim_skullbase" center="0.0044 1.6209 0.0236" stiffness="0 0 0"><HAnimSegment name="skull" DEF="hanim_skull"><HAnimSite name="skull_vertex_tip" DEF="hanim_skull_vertex_tip" translation="0.005 1.7504 0.0055"><!--TODO move skull_tip x to zero, check others for symmetry--></HAnimSite>
+<HAnimJoint name="vc6" DEF="hanim_vc6" center="0.0066 1.5357 -0.0143" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="c6" DEF="hanim_c6"></HAnimSegment>
+<HAnimJoint name="vc5" DEF="hanim_vc5" center="0.0066 1.552 -0.0082" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="c5" DEF="hanim_c5"></HAnimSegment>
+<HAnimJoint name="vc4" DEF="hanim_vc4" center="0.0066 1.5662 -0.0084" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="c4" DEF="hanim_c4"></HAnimSegment>
+<HAnimJoint name="vc3" DEF="hanim_vc3" center="0.0066 1.58 -0.0103" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="c3" DEF="hanim_c3"></HAnimSegment>
+<HAnimJoint name="vc2" DEF="hanim_vc2" center="0.0066 1.5928 -0.0103" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="c2" DEF="hanim_c2"></HAnimSegment>
+<HAnimJoint name="vc1" DEF="hanim_vc1" center="0.0066 1.6144 -0.0034" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="c1" DEF="hanim_c1"></HAnimSegment>
+<HAnimJoint name="skullbase" DEF="hanim_skullbase" center="0.0044 1.6209 0.0236" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="skull" DEF="hanim_skull"><HAnimSite name="skull_vertex_tip" DEF="hanim_skull_vertex_tip" translation="0.005 1.7504 0.0055"><!--TODO move skull_tip x to zero, check others for symmetry--></HAnimSite>
 <HAnimSite name="sellion_pt" DEF="hanim_sellion_pt" translation="0.0058 1.6316 0.0852"></HAnimSite>
 <HAnimSite name="r_infraorbitale_pt" DEF="hanim_r_infraorbitale_pt" translation="-0.0237 1.6171 0.0752"></HAnimSite>
 <HAnimSite name="l_infraorbitale_pt" DEF="hanim_l_infraorbitale_pt" translation="0.0341 1.6171 0.0752"></HAnimSite>
@@ -154,23 +154,23 @@
 <HAnimSite name="l_gonion_pt" DEF="hanim_l_gonion_pt" translation="0.0631 1.553 0.033"></HAnimSite>
 <HAnimSite name="nuchale_pt" DEF="hanim_nuchale_pt" translation="0.0039 1.5972 -0.0796"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_eyeball_joint" DEF="hanim_l_eyeball_joint" center="0.0336 1.6332 0.0502" stiffness="0 0 0"><HAnimSegment name="l_eyeball" DEF="hanim_l_eyeball"><HAnimSite name="l_eyeball_site_view" DEF="hanim_l_eyeball_site_view" translation="0.034 1.64 0.05"><Viewpoint DEF="hanim_l_eyeball_site_viewpoint" description="l_eyeball_site_viewpoint looking forward" orientation="0 1 0 3.141593" position="0 0 0"></Viewpoint>
+<HAnimJoint name="l_eyeball_joint" DEF="hanim_l_eyeball_joint" center="0.0336 1.6332 0.0502" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_eyeball" DEF="hanim_l_eyeball"><HAnimSite name="l_eyeball_site_view" DEF="hanim_l_eyeball_site_view" translation="0.034 1.64 0.05"><Viewpoint DEF="hanim_l_eyeball_site_viewpoint" description="l_eyeball_site_viewpoint looking forward" orientation="0 1 0 3.141593" position="0 0 0"></Viewpoint>
 </HAnimSite>
 </HAnimSegment>
 </HAnimJoint>
-<HAnimJoint name="l_eyelid_joint" DEF="hanim_l_eyelid_joint" center="0.0336 1.6332 0.0502" stiffness="0 0 0"><HAnimSegment name="l_eyelid" DEF="hanim_l_eyelid"></HAnimSegment>
+<HAnimJoint name="l_eyelid_joint" DEF="hanim_l_eyelid_joint" center="0.0336 1.6332 0.0502" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_eyelid" DEF="hanim_l_eyelid"></HAnimSegment>
 </HAnimJoint>
-<HAnimJoint name="l_eyebrow_joint" DEF="hanim_l_eyebrow_joint" center="0.0336 1.635 0.0506" stiffness="0 0 0"><HAnimSegment name="l_eyebrow" DEF="hanim_l_eyebrow"></HAnimSegment>
+<HAnimJoint name="l_eyebrow_joint" DEF="hanim_l_eyebrow_joint" center="0.0336 1.635 0.0506" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_eyebrow" DEF="hanim_l_eyebrow"></HAnimSegment>
 </HAnimJoint>
-<HAnimJoint name="r_eyeball_joint" DEF="hanim_r_eyeball_joint" center="-0.0336 1.6332 0.0502" stiffness="0 0 0"><HAnimSegment name="r_eyeball" DEF="hanim_r_eyeball"><HAnimSite name="r_eyeball_site_view" DEF="hanim_r_eyeball_site_view" translation="-0.034 1.64 0.05"><Viewpoint DEF="hanim_r_eyeball_site_viewpoint" description="r_eyeball_site_viewpoint looking forward" orientation="0 1 0 3.141593" position="0 0 0"></Viewpoint>
+<HAnimJoint name="r_eyeball_joint" DEF="hanim_r_eyeball_joint" center="-0.0336 1.6332 0.0502" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_eyeball" DEF="hanim_r_eyeball"><HAnimSite name="r_eyeball_site_view" DEF="hanim_r_eyeball_site_view" translation="-0.034 1.64 0.05"><Viewpoint DEF="hanim_r_eyeball_site_viewpoint" description="r_eyeball_site_viewpoint looking forward" orientation="0 1 0 3.141593" position="0 0 0"></Viewpoint>
 </HAnimSite>
 </HAnimSegment>
 </HAnimJoint>
-<HAnimJoint name="r_eyelid_joint" DEF="hanim_r_eyelid_joint" center="-0.0336 1.6332 0.0502" stiffness="0 0 0"><HAnimSegment name="r_eyelid" DEF="hanim_r_eyelid"></HAnimSegment>
+<HAnimJoint name="r_eyelid_joint" DEF="hanim_r_eyelid_joint" center="-0.0336 1.6332 0.0502" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_eyelid" DEF="hanim_r_eyelid"></HAnimSegment>
 </HAnimJoint>
-<HAnimJoint name="r_eyebrow_joint" DEF="hanim_r_eyebrow_joint" center="-0.0336 1.635 0.0506" stiffness="0 0 0"><HAnimSegment name="r_eyebrow" DEF="hanim_r_eyebrow"></HAnimSegment>
+<HAnimJoint name="r_eyebrow_joint" DEF="hanim_r_eyebrow_joint" center="-0.0336 1.635 0.0506" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_eyebrow" DEF="hanim_r_eyebrow"></HAnimSegment>
 </HAnimJoint>
-<HAnimJoint name="temporomandibular" DEF="hanim_temporomandibular" center="0 1.63 0.015" stiffness="0 0 0"><!--Single joint, single segment for jaw, two sites for left/right TMJs https://en.wikipedia.org/wiki/Temporomandibular_joint--><HAnimSegment name="jaw" DEF="hanim_jaw"><HAnimSite name="temporomandibular_l_site_pt" DEF="hanim_temporomandibular_l_site_pt" translation="0.045 1.63 0"></HAnimSite>
+<HAnimJoint name="temporomandibular" DEF="hanim_temporomandibular" center="0 1.63 0.015" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><!--Single joint, single segment for jaw, two sites for left/right TMJs https://en.wikipedia.org/wiki/Temporomandibular_joint--><HAnimSegment name="jaw" DEF="hanim_jaw"><HAnimSite name="temporomandibular_l_site_pt" DEF="hanim_temporomandibular_l_site_pt" translation="0.045 1.63 0"></HAnimSite>
 <HAnimSite name="temporomandibular_r_site_pt" DEF="hanim_temporomandibular_r_site_pt" translation="-0.045 1.63 0"></HAnimSite>
 </HAnimSegment>
 </HAnimJoint>
@@ -182,64 +182,64 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="l_sternoclavicular" DEF="hanim_l_sternoclavicular" center="0.082 1.4488 -0.0353" stiffness="0 0 0"><HAnimSegment name="l_clavicle" DEF="hanim_l_clavicle"><HAnimSite name="l_clavicle_pt" DEF="hanim_l_clavicle_pt" translation="0.0271 1.4943 0.0394"></HAnimSite>
+<HAnimJoint name="l_sternoclavicular" DEF="hanim_l_sternoclavicular" center="0.082 1.4488 -0.0353" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_clavicle" DEF="hanim_l_clavicle"><HAnimSite name="l_clavicle_pt" DEF="hanim_l_clavicle_pt" translation="0.0271 1.4943 0.0394"></HAnimSite>
 <HAnimSite name="l_acromion_pt" DEF="hanim_l_acromion_pt" translation="0.2032 1.476 -0.049"></HAnimSite>
 <HAnimSite name="l_axilla_proximal_pt" DEF="hanim_l_axilla_proximal_pt" translation="0.1777 1.4065 -0.0075"></HAnimSite>
 <HAnimSite name="l_axilla_distal_pt" DEF="hanim_l_axilla_distal_pt" translation="0.1706 1.4072 -0.0875"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_acromioclavicular" DEF="hanim_l_acromioclavicular" center="0.0962 1.4269 -0.0424" stiffness="0 0 0"><HAnimSegment name="l_scapula" DEF="hanim_l_scapula"></HAnimSegment>
-<HAnimJoint name="l_shoulder" DEF="hanim_l_shoulder" center="0.2029 1.4376 -0.0387" stiffness="0 0 0"><HAnimSegment name="l_upperarm" DEF="hanim_l_upperarm"><HAnimSite name="l_humeral_lateral_epicondyle_pt" DEF="hanim_l_humeral_lateral_epicondyle_pt" translation="0.228 1.1482 -0.11"></HAnimSite>
+<HAnimJoint name="l_acromioclavicular" DEF="hanim_l_acromioclavicular" center="0.0962 1.4269 -0.0424" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_scapula" DEF="hanim_l_scapula"></HAnimSegment>
+<HAnimJoint name="l_shoulder" DEF="hanim_l_shoulder" center="0.2029 1.4376 -0.0387" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_upperarm" DEF="hanim_l_upperarm"><HAnimSite name="l_humeral_lateral_epicondyle_pt" DEF="hanim_l_humeral_lateral_epicondyle_pt" translation="0.228 1.1482 -0.11"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_elbow" DEF="hanim_l_elbow" center="0.2014 1.1357 -0.0682" stiffness="0 0 0"><HAnimSegment name="l_forearm" DEF="hanim_l_forearm"><HAnimSite name="l_radial_styloid_pt" DEF="hanim_l_radial_styloid_pt" translation="0.1901 0.8645 -0.0415"></HAnimSite>
+<HAnimJoint name="l_elbow" DEF="hanim_l_elbow" center="0.2014 1.1357 -0.0682" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_forearm" DEF="hanim_l_forearm"><HAnimSite name="l_radial_styloid_pt" DEF="hanim_l_radial_styloid_pt" translation="0.1901 0.8645 -0.0415"></HAnimSite>
 <HAnimSite name="l_olecranon_pt" DEF="hanim_l_olecranon_pt" translation="0.1962 1.1375 -0.1123"></HAnimSite>
 <HAnimSite name="l_humeral_medial_epicondyle_pt" DEF="hanim_l_humeral_medial_epicondyle_pt" translation="0.1735 1.1272 -0.1113"></HAnimSite>
 <HAnimSite name="l_radiale_pt" DEF="hanim_l_radiale_pt" translation="0.2182 1.1212 -0.1167"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_radiocarpal" DEF="hanim_l_radiocarpal" center="0.1984 0.8663 -0.0583" stiffness="0 0 0"><HAnimSegment name="l_carpal" DEF="hanim_l_carpal"><HAnimSite name="l_metacarpal_phalanx_2_pt" DEF="hanim_l_metacarpal_phalanx_2_pt" translation="0.2009 0.8139 -0.0237"></HAnimSite>
+<HAnimJoint name="l_radiocarpal" DEF="hanim_l_radiocarpal" center="0.1984 0.8663 -0.0583" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_carpal" DEF="hanim_l_carpal"><HAnimSite name="l_metacarpal_phalanx_2_pt" DEF="hanim_l_metacarpal_phalanx_2_pt" translation="0.2009 0.8139 -0.0237"></HAnimSite>
 <HAnimSite name="l_ulnar_styloid_pt" DEF="hanim_l_ulnar_styloid_pt" translation="0.2142 0.8529 -0.0648"></HAnimSite>
 <HAnimSite name="l_metacarpal_phalanx_5_pt" DEF="hanim_l_metacarpal_phalanx_5_pt" translation="0.1929 0.786 -0.1122"></HAnimSite>
 <HAnimSite name="l_hand_front_view" DEF="hanim_l_hand_front_view" translation="0.3 0.75 0.45"><Viewpoint DEF="hanim_l_hand_front_viewpoint" centerOfRotation="0 0.7 0" description="left hand front" position="0 0 0"></Viewpoint>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_carpometacarpal_1" DEF="hanim_l_carpometacarpal_1" center="0.1924 0.8472 -0.0534" stiffness="0 0 0"><HAnimSegment name="l_metacarpal_1" DEF="hanim_l_metacarpal_1"></HAnimSegment>
-<HAnimJoint name="l_metacarpophalangeal_1" DEF="hanim_l_metacarpophalangeal_1" center="0.1951 0.8226 0.0246" stiffness="0 0 0"><HAnimSegment name="l_carpal_proximal_phalanx_1" DEF="hanim_l_carpal_proximal_phalanx_1"></HAnimSegment>
-<HAnimJoint name="l_carpal_interphalangeal_1" DEF="hanim_l_carpal_interphalangeal_1" center="0.1955 0.8159 0.0464" stiffness="0 0 0"><HAnimSegment name="l_carpal_distal_phalanx_1" DEF="hanim_l_carpal_distal_phalanx_1"><HAnimSite name="l_carpal_distal_phalanx_1_tip" DEF="hanim_l_carpal_distal_phalanx_1_tip" translation="0.1982 0.8061 0.0759"></HAnimSite>
+<HAnimJoint name="l_carpometacarpal_1" DEF="hanim_l_carpometacarpal_1" center="0.1924 0.8472 -0.0534" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_metacarpal_1" DEF="hanim_l_metacarpal_1"></HAnimSegment>
+<HAnimJoint name="l_metacarpophalangeal_1" DEF="hanim_l_metacarpophalangeal_1" center="0.1951 0.8226 0.0246" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_carpal_proximal_phalanx_1" DEF="hanim_l_carpal_proximal_phalanx_1"></HAnimSegment>
+<HAnimJoint name="l_carpal_interphalangeal_1" DEF="hanim_l_carpal_interphalangeal_1" center="0.1955 0.8159 0.0464" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_carpal_distal_phalanx_1" DEF="hanim_l_carpal_distal_phalanx_1"><HAnimSite name="l_carpal_distal_phalanx_1_tip" DEF="hanim_l_carpal_distal_phalanx_1_tip" translation="0.1982 0.8061 0.0759"></HAnimSite>
 </HAnimSegment>
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="l_carpometacarpal_2" DEF="hanim_l_carpometacarpal_2" center="0.1983 0.8024 -0.028" stiffness="0 0 0"><HAnimSegment name="l_metacarpal_2" DEF="hanim_l_metacarpal_2"></HAnimSegment>
-<HAnimJoint name="l_metacarpophalangeal_2" DEF="hanim_l_metacarpophalangeal_2" center="0.1983 0.7815 -0.028" stiffness="0 0 0"><HAnimSegment name="l_carpal_proximal_phalanx_2" DEF="hanim_l_carpal_proximal_phalanx_2"></HAnimSegment>
-<HAnimJoint name="l_carpal_proximal_interphalangeal_2" DEF="hanim_l_carpal_proximal_interphalangeal_2" center="0.2017 0.7363 -0.0248" stiffness="0 0 0"><HAnimSegment name="l_carpal_middle_phalanx_2" DEF="hanim_l_carpal_middle_phalanx_2"></HAnimSegment>
-<HAnimJoint name="l_carpal_distal_interphalangeal_2" DEF="hanim_l_carpal_distal_interphalangeal_2" center="0.2028 0.7139 -0.0236" stiffness="0 0 0"><HAnimSegment name="l_carpal_distal_phalanx_2" DEF="hanim_l_carpal_distal_phalanx_2"><HAnimSite name="l_carpal_distal_phalanx_2_tip" DEF="hanim_l_carpal_distal_phalanx_2_tip" translation="0.2089 0.6858 -0.0245"></HAnimSite>
+<HAnimJoint name="l_carpometacarpal_2" DEF="hanim_l_carpometacarpal_2" center="0.1983 0.8024 -0.028" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_metacarpal_2" DEF="hanim_l_metacarpal_2"></HAnimSegment>
+<HAnimJoint name="l_metacarpophalangeal_2" DEF="hanim_l_metacarpophalangeal_2" center="0.1983 0.7815 -0.028" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_carpal_proximal_phalanx_2" DEF="hanim_l_carpal_proximal_phalanx_2"></HAnimSegment>
+<HAnimJoint name="l_carpal_proximal_interphalangeal_2" DEF="hanim_l_carpal_proximal_interphalangeal_2" center="0.2017 0.7363 -0.0248" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_carpal_middle_phalanx_2" DEF="hanim_l_carpal_middle_phalanx_2"></HAnimSegment>
+<HAnimJoint name="l_carpal_distal_interphalangeal_2" DEF="hanim_l_carpal_distal_interphalangeal_2" center="0.2028 0.7139 -0.0236" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_carpal_distal_phalanx_2" DEF="hanim_l_carpal_distal_phalanx_2"><HAnimSite name="l_carpal_distal_phalanx_2_tip" DEF="hanim_l_carpal_distal_phalanx_2_tip" translation="0.2089 0.6858 -0.0245"></HAnimSite>
 <HAnimSite name="l_dactylion_pt" DEF="hanim_l_dactylion_pt" translation="0.2056 0.6743 -0.0482"></HAnimSite>
 </HAnimSegment>
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="l_carpometacarpal_3" DEF="hanim_l_carpometacarpal_3" center="0.1987 0.8029 -0.053" stiffness="0 0 0"><HAnimSegment name="l_metacarpal_3" DEF="hanim_l_metacarpal_3"></HAnimSegment>
-<HAnimJoint name="l_metacarpophalangeal_3" DEF="hanim_l_metacarpophalangeal_3" center="0.1987 0.7818 -0.053" stiffness="0 0 0"><HAnimSegment name="l_carpal_proximal_phalanx_3" DEF="hanim_l_carpal_proximal_phalanx_3"></HAnimSegment>
-<HAnimJoint name="l_carpal_proximal_interphalangeal_3" DEF="hanim_l_carpal_proximal_interphalangeal_3" center="0.2013 0.7273 -0.0503" stiffness="0 0 0"><HAnimSegment name="l_carpal_middle_phalanx_3" DEF="hanim_l_carpal_middle_phalanx_3"></HAnimSegment>
-<HAnimJoint name="l_carpal_distal_interphalangeal_3" DEF="hanim_l_carpal_distal_interphalangeal_3" center="0.2026 0.7011 -0.0494" stiffness="0 0 0"><HAnimSegment name="l_carpal_distal_phalanx_3" DEF="hanim_l_carpal_distal_phalanx_3"><HAnimSite name="l_carpal_distal_phalanx_3_tip" DEF="hanim_l_carpal_distal_phalanx_3_tip" translation="0.208 0.6731 -0.0491"></HAnimSite>
+<HAnimJoint name="l_carpometacarpal_3" DEF="hanim_l_carpometacarpal_3" center="0.1987 0.8029 -0.053" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_metacarpal_3" DEF="hanim_l_metacarpal_3"></HAnimSegment>
+<HAnimJoint name="l_metacarpophalangeal_3" DEF="hanim_l_metacarpophalangeal_3" center="0.1987 0.7818 -0.053" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_carpal_proximal_phalanx_3" DEF="hanim_l_carpal_proximal_phalanx_3"></HAnimSegment>
+<HAnimJoint name="l_carpal_proximal_interphalangeal_3" DEF="hanim_l_carpal_proximal_interphalangeal_3" center="0.2013 0.7273 -0.0503" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_carpal_middle_phalanx_3" DEF="hanim_l_carpal_middle_phalanx_3"></HAnimSegment>
+<HAnimJoint name="l_carpal_distal_interphalangeal_3" DEF="hanim_l_carpal_distal_interphalangeal_3" center="0.2026 0.7011 -0.0494" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_carpal_distal_phalanx_3" DEF="hanim_l_carpal_distal_phalanx_3"><HAnimSite name="l_carpal_distal_phalanx_3_tip" DEF="hanim_l_carpal_distal_phalanx_3_tip" translation="0.208 0.6731 -0.0491"></HAnimSite>
 </HAnimSegment>
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="l_carpometacarpal_4" DEF="hanim_l_carpometacarpal_4" center="0.1956 0.8019 -0.0794" stiffness="0 0 0"><HAnimSegment name="l_metacarpal_4" DEF="hanim_l_metacarpal_4"></HAnimSegment>
-<HAnimJoint name="l_metacarpophalangeal_4" DEF="hanim_l_metacarpophalangeal_4" center="0.1956 0.7815 -0.0794" stiffness="0 0 0"><HAnimSegment name="l_carpal_proximal_phalanx_4" DEF="hanim_l_carpal_proximal_phalanx_4"></HAnimSegment>
-<HAnimJoint name="l_carpal_proximal_interphalangeal_4" DEF="hanim_l_carpal_proximal_interphalangeal_4" center="0.1973 0.7287 -0.0777" stiffness="0 0 0"><HAnimSegment name="l_carpal_middle_phalanx_4" DEF="hanim_l_carpal_middle_phalanx_4"></HAnimSegment>
-<HAnimJoint name="l_carpal_distal_interphalangeal_4" DEF="hanim_l_carpal_distal_interphalangeal_4" center="0.1983 0.7045 -0.0767" stiffness="0 0 0"><HAnimSegment name="l_carpal_distal_phalanx_4" DEF="hanim_l_carpal_distal_phalanx_4"><HAnimSite name="l_carpal_distal_phalanx_4_tip" DEF="hanim_l_carpal_distal_phalanx_4_tip" translation="0.2035 0.675 -0.0756"></HAnimSite>
+<HAnimJoint name="l_carpometacarpal_4" DEF="hanim_l_carpometacarpal_4" center="0.1956 0.8019 -0.0794" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_metacarpal_4" DEF="hanim_l_metacarpal_4"></HAnimSegment>
+<HAnimJoint name="l_metacarpophalangeal_4" DEF="hanim_l_metacarpophalangeal_4" center="0.1956 0.7815 -0.0794" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_carpal_proximal_phalanx_4" DEF="hanim_l_carpal_proximal_phalanx_4"></HAnimSegment>
+<HAnimJoint name="l_carpal_proximal_interphalangeal_4" DEF="hanim_l_carpal_proximal_interphalangeal_4" center="0.1973 0.7287 -0.0777" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_carpal_middle_phalanx_4" DEF="hanim_l_carpal_middle_phalanx_4"></HAnimSegment>
+<HAnimJoint name="l_carpal_distal_interphalangeal_4" DEF="hanim_l_carpal_distal_interphalangeal_4" center="0.1983 0.7045 -0.0767" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_carpal_distal_phalanx_4" DEF="hanim_l_carpal_distal_phalanx_4"><HAnimSite name="l_carpal_distal_phalanx_4_tip" DEF="hanim_l_carpal_distal_phalanx_4_tip" translation="0.2035 0.675 -0.0756"></HAnimSite>
 </HAnimSegment>
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="l_carpometacarpal_5" DEF="hanim_l_carpometacarpal_5" center="0.1925 0.8066 -0.1036" stiffness="0 0 0"><HAnimSegment name="l_metacarpal_5" DEF="hanim_l_metacarpal_5"></HAnimSegment>
-<HAnimJoint name="l_metacarpophalangeal_5" DEF="hanim_l_metacarpophalangeal_5" center="0.1925 0.7866 -0.1036" stiffness="0 0 0"><HAnimSegment name="l_carpal_proximal_phalanx_5" DEF="hanim_l_carpal_proximal_phalanx_5"></HAnimSegment>
-<HAnimJoint name="l_carpal_proximal_interphalangeal_5" DEF="hanim_l_carpal_proximal_interphalangeal_5" center="0.1938 0.7452 -0.1024" stiffness="0 0 0"><HAnimSegment name="l_carpal_middle_phalanx_5" DEF="hanim_l_carpal_middle_phalanx_5"></HAnimSegment>
-<HAnimJoint name="l_carpal_distal_interphalangeal_5" DEF="hanim_l_carpal_distal_interphalangeal_5" center="0.1948 0.7277 -0.1017" stiffness="0 0 0"><HAnimSegment name="l_carpal_distal_phalanx_5" DEF="hanim_l_carpal_distal_phalanx_5"><HAnimSite name="l_carpal_distal_phalanx_5_tip" DEF="hanim_l_carpal_distal_phalanx_5_tip" translation="0.2014 0.7009 -0.1012"></HAnimSite>
+<HAnimJoint name="l_carpometacarpal_5" DEF="hanim_l_carpometacarpal_5" center="0.1925 0.8066 -0.1036" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_metacarpal_5" DEF="hanim_l_metacarpal_5"></HAnimSegment>
+<HAnimJoint name="l_metacarpophalangeal_5" DEF="hanim_l_metacarpophalangeal_5" center="0.1925 0.7866 -0.1036" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_carpal_proximal_phalanx_5" DEF="hanim_l_carpal_proximal_phalanx_5"></HAnimSegment>
+<HAnimJoint name="l_carpal_proximal_interphalangeal_5" DEF="hanim_l_carpal_proximal_interphalangeal_5" center="0.1938 0.7452 -0.1024" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_carpal_middle_phalanx_5" DEF="hanim_l_carpal_middle_phalanx_5"></HAnimSegment>
+<HAnimJoint name="l_carpal_distal_interphalangeal_5" DEF="hanim_l_carpal_distal_interphalangeal_5" center="0.1948 0.7277 -0.1017" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_carpal_distal_phalanx_5" DEF="hanim_l_carpal_distal_phalanx_5"><HAnimSite name="l_carpal_distal_phalanx_5_tip" DEF="hanim_l_carpal_distal_phalanx_5_tip" translation="0.2014 0.7009 -0.1012"></HAnimSite>
 </HAnimSegment>
 </HAnimJoint>
 </HAnimJoint>
@@ -250,64 +250,64 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_sternoclavicular" DEF="hanim_r_sternoclavicular" center="-0.082 1.4488 -0.0353" stiffness="0 0 0"><HAnimSegment name="r_clavicle" DEF="hanim_r_clavicle"><HAnimSite name="r_clavicle_pt" DEF="hanim_r_clavicle_pt" translation="-0.0115 1.4943 0.04"></HAnimSite>
+<HAnimJoint name="r_sternoclavicular" DEF="hanim_r_sternoclavicular" center="-0.082 1.4488 -0.0353" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_clavicle" DEF="hanim_r_clavicle"><HAnimSite name="r_clavicle_pt" DEF="hanim_r_clavicle_pt" translation="-0.0115 1.4943 0.04"></HAnimSite>
 <HAnimSite name="r_acromion_pt" DEF="hanim_r_acromion_pt" translation="-0.1905 1.4791 -0.0431"></HAnimSite>
 <HAnimSite name="r_axilla_proximal_pt" DEF="hanim_r_axilla_proximal_pt" translation="-0.1626 1.4072 -0.0031"></HAnimSite>
 <HAnimSite name="r_axilla_distal_pt" DEF="hanim_r_axilla_distal_pt" translation="-0.1603 1.4098 -0.0826"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="r_acromioclavicular" DEF="hanim_r_acromioclavicular" center="-0.0962 1.4269 -0.0424" stiffness="0 0 0"><HAnimSegment name="r_scapula" DEF="hanim_r_scapula"></HAnimSegment>
-<HAnimJoint name="r_shoulder" DEF="hanim_r_shoulder" center="-0.2029 1.4376 -0.0387" stiffness="0 0 0"><HAnimSegment name="r_upperarm" DEF="hanim_r_upperarm"><HAnimSite name="r_humeral_lateral_epicondyle_pt" DEF="hanim_r_humeral_lateral_epicondyle_pt" translation="-0.2224 1.1517 -0.1033"></HAnimSite>
+<HAnimJoint name="r_acromioclavicular" DEF="hanim_r_acromioclavicular" center="-0.0962 1.4269 -0.0424" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_scapula" DEF="hanim_r_scapula"></HAnimSegment>
+<HAnimJoint name="r_shoulder" DEF="hanim_r_shoulder" center="-0.2029 1.4376 -0.0387" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_upperarm" DEF="hanim_r_upperarm"><HAnimSite name="r_humeral_lateral_epicondyle_pt" DEF="hanim_r_humeral_lateral_epicondyle_pt" translation="-0.2224 1.1517 -0.1033"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="r_elbow" DEF="hanim_r_elbow" center="-0.2014 1.1357 -0.0682" stiffness="0 0 0"><HAnimSegment name="r_forearm" DEF="hanim_r_forearm"><HAnimSite name="r_radial_styloid_pt" DEF="hanim_r_radial_styloid_pt" translation="-0.1884 0.8676 -0.036"></HAnimSite>
+<HAnimJoint name="r_elbow" DEF="hanim_r_elbow" center="-0.2014 1.1357 -0.0682" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_forearm" DEF="hanim_r_forearm"><HAnimSite name="r_radial_styloid_pt" DEF="hanim_r_radial_styloid_pt" translation="-0.1884 0.8676 -0.036"></HAnimSite>
 <HAnimSite name="r_olecranon_pt" DEF="hanim_r_olecranon_pt" translation="-0.1907 1.1405 -0.1065"></HAnimSite>
 <HAnimSite name="r_humeral_medial_epicondyle_pt" DEF="hanim_r_humeral_medial_epicondyle_pt" translation="-0.168 1.1298 -0.1062"></HAnimSite>
 <HAnimSite name="r_radiale_pt" DEF="hanim_r_radiale_pt" translation="-0.213 1.1305 -0.1091"></HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="r_radiocarpal" DEF="hanim_r_radiocarpal" center="-0.1984 0.8663 -0.0583" stiffness="0 0 0"><HAnimSegment name="r_carpal" DEF="hanim_r_carpal"><HAnimSite name="r_metacarpal_phalanx_2_pt" DEF="hanim_r_metacarpal_phalanx_2_pt" translation="-0.1977 0.8169 -0.0177"></HAnimSite>
+<HAnimJoint name="r_radiocarpal" DEF="hanim_r_radiocarpal" center="-0.1984 0.8663 -0.0583" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_carpal" DEF="hanim_r_carpal"><HAnimSite name="r_metacarpal_phalanx_2_pt" DEF="hanim_r_metacarpal_phalanx_2_pt" translation="-0.1977 0.8169 -0.0177"></HAnimSite>
 <HAnimSite name="r_ulnar_styloid_pt" DEF="hanim_r_ulnar_styloid_pt" translation="-0.2117 0.8562 -0.0584"></HAnimSite>
 <HAnimSite name="r_metacarpal_phalanx_5_pt" DEF="hanim_r_metacarpal_phalanx_5_pt" translation="-0.1929 0.789 -0.1064"></HAnimSite>
 <HAnimSite name="r_hand_front_view" DEF="hanim_r_hand_front_view" translation="-0.3 0.75 0.45"><Viewpoint DEF="hanim_r_hand_front_viewpoint" centerOfRotation="0 0.7 0" description="right hand front" position="0 0 0"></Viewpoint>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="r_carpometacarpal_1" DEF="hanim_r_carpometacarpal_1" center="-0.1924 0.8472 -0.0534" stiffness="0 0 0"><HAnimSegment name="r_metacarpal_1" DEF="hanim_r_metacarpal_1"></HAnimSegment>
-<HAnimJoint name="r_metacarpophalangeal_1" DEF="hanim_r_metacarpophalangeal_1" center="-0.1951 0.8226 0.0246" stiffness="0 0 0"><HAnimSegment name="r_carpal_proximal_phalanx_1" DEF="hanim_r_carpal_proximal_phalanx_1"></HAnimSegment>
-<HAnimJoint name="r_carpal_interphalangeal_1" DEF="hanim_r_carpal_interphalangeal_1" center="-0.1955 0.8159 0.0464" stiffness="0 0 0"><HAnimSegment name="r_carpal_distal_phalanx_1" DEF="hanim_r_carpal_distal_phalanx_1"><HAnimSite name="r_carpal_distal_phalanx_1_tip" DEF="hanim_r_carpal_distal_phalanx_1_tip" translation="-0.1869 0.809 0.082"></HAnimSite>
+<HAnimJoint name="r_carpometacarpal_1" DEF="hanim_r_carpometacarpal_1" center="-0.1924 0.8472 -0.0534" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_metacarpal_1" DEF="hanim_r_metacarpal_1"></HAnimSegment>
+<HAnimJoint name="r_metacarpophalangeal_1" DEF="hanim_r_metacarpophalangeal_1" center="-0.1951 0.8226 0.0246" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_carpal_proximal_phalanx_1" DEF="hanim_r_carpal_proximal_phalanx_1"></HAnimSegment>
+<HAnimJoint name="r_carpal_interphalangeal_1" DEF="hanim_r_carpal_interphalangeal_1" center="-0.1955 0.8159 0.0464" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_carpal_distal_phalanx_1" DEF="hanim_r_carpal_distal_phalanx_1"><HAnimSite name="r_carpal_distal_phalanx_1_tip" DEF="hanim_r_carpal_distal_phalanx_1_tip" translation="-0.1869 0.809 0.082"></HAnimSite>
 </HAnimSegment>
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_carpometacarpal_2" DEF="hanim_r_carpometacarpal_2" center="-0.1983 0.8024 -0.028" stiffness="0 0 0"><HAnimSegment name="r_metacarpal_2" DEF="hanim_r_metacarpal_2"></HAnimSegment>
-<HAnimJoint name="r_metacarpophalangeal_2" DEF="hanim_r_metacarpophalangeal_2" center="-0.1983 0.7815 -0.028" stiffness="0 0 0"><HAnimSegment name="r_carpal_proximal_phalanx_2" DEF="hanim_r_carpal_proximal_phalanx_2"></HAnimSegment>
-<HAnimJoint name="r_carpal_proximal_interphalangeal_2" DEF="hanim_r_carpal_proximal_interphalangeal_2" center="-0.2017 0.7363 -0.0248" stiffness="0 0 0"><HAnimSegment name="r_carpal_middle_phalanx_2" DEF="hanim_r_carpal_middle_phalanx_2"></HAnimSegment>
-<HAnimJoint name="r_carpal_distal_interphalangeal_2" DEF="hanim_r_carpal_distal_interphalangeal_2" center="-0.2028 0.7139 -0.0236" stiffness="0 0 0"><HAnimSegment name="r_carpal_distal_phalanx_2" DEF="hanim_r_carpal_distal_phalanx_2"><HAnimSite name="r_carpal_distal_phalanx_2_tip" DEF="hanim_r_carpal_distal_phalanx_2_tip" translation="-0.198 0.6883 -0.018"></HAnimSite>
+<HAnimJoint name="r_carpometacarpal_2" DEF="hanim_r_carpometacarpal_2" center="-0.1983 0.8024 -0.028" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_metacarpal_2" DEF="hanim_r_metacarpal_2"></HAnimSegment>
+<HAnimJoint name="r_metacarpophalangeal_2" DEF="hanim_r_metacarpophalangeal_2" center="-0.1983 0.7815 -0.028" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_carpal_proximal_phalanx_2" DEF="hanim_r_carpal_proximal_phalanx_2"></HAnimSegment>
+<HAnimJoint name="r_carpal_proximal_interphalangeal_2" DEF="hanim_r_carpal_proximal_interphalangeal_2" center="-0.2017 0.7363 -0.0248" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_carpal_middle_phalanx_2" DEF="hanim_r_carpal_middle_phalanx_2"></HAnimSegment>
+<HAnimJoint name="r_carpal_distal_interphalangeal_2" DEF="hanim_r_carpal_distal_interphalangeal_2" center="-0.2028 0.7139 -0.0236" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_carpal_distal_phalanx_2" DEF="hanim_r_carpal_distal_phalanx_2"><HAnimSite name="r_carpal_distal_phalanx_2_tip" DEF="hanim_r_carpal_distal_phalanx_2_tip" translation="-0.198 0.6883 -0.018"></HAnimSite>
 <HAnimSite name="r_dactylion_pt" DEF="hanim_r_dactylion_pt" translation="-0.1941 0.6772 -0.0423"></HAnimSite>
 </HAnimSegment>
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_carpometacarpal_3" DEF="hanim_r_carpometacarpal_3" center="-0.1987 0.8029 -0.053" stiffness="0 0 0"><HAnimSegment name="r_metacarpal_3" DEF="hanim_r_metacarpal_3"></HAnimSegment>
-<HAnimJoint name="r_metacarpophalangeal_3" DEF="hanim_r_metacarpophalangeal_3" center="-0.1987 0.7818 -0.053" stiffness="0 0 0"><HAnimSegment name="r_carpal_proximal_phalanx_3" DEF="hanim_r_carpal_proximal_phalanx_3"></HAnimSegment>
-<HAnimJoint name="r_carpal_proximal_interphalangeal_3" DEF="hanim_r_carpal_proximal_interphalangeal_3" center="-0.2013 0.7273 -0.0503" stiffness="0 0 0"><HAnimSegment name="r_carpal_middle_phalanx_3" DEF="hanim_r_carpal_middle_phalanx_3"></HAnimSegment>
-<HAnimJoint name="r_carpal_distal_interphalangeal_3" DEF="hanim_r_carpal_distal_interphalangeal_3" center="-0.2026 0.7011 -0.0494" stiffness="0 0 0"><HAnimSegment name="r_carpal_distal_phalanx_3" DEF="hanim_r_carpal_distal_phalanx_3"><HAnimSite name="r_carpal_distal_phalanx_3_tip" DEF="hanim_r_carpal_distal_phalanx_3_tip" translation="-0.1969 0.6758 -0.0427"></HAnimSite>
+<HAnimJoint name="r_carpometacarpal_3" DEF="hanim_r_carpometacarpal_3" center="-0.1987 0.8029 -0.053" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_metacarpal_3" DEF="hanim_r_metacarpal_3"></HAnimSegment>
+<HAnimJoint name="r_metacarpophalangeal_3" DEF="hanim_r_metacarpophalangeal_3" center="-0.1987 0.7818 -0.053" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_carpal_proximal_phalanx_3" DEF="hanim_r_carpal_proximal_phalanx_3"></HAnimSegment>
+<HAnimJoint name="r_carpal_proximal_interphalangeal_3" DEF="hanim_r_carpal_proximal_interphalangeal_3" center="-0.2013 0.7273 -0.0503" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_carpal_middle_phalanx_3" DEF="hanim_r_carpal_middle_phalanx_3"></HAnimSegment>
+<HAnimJoint name="r_carpal_distal_interphalangeal_3" DEF="hanim_r_carpal_distal_interphalangeal_3" center="-0.2026 0.7011 -0.0494" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_carpal_distal_phalanx_3" DEF="hanim_r_carpal_distal_phalanx_3"><HAnimSite name="r_carpal_distal_phalanx_3_tip" DEF="hanim_r_carpal_distal_phalanx_3_tip" translation="-0.1969 0.6758 -0.0427"></HAnimSite>
 </HAnimSegment>
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_carpometacarpal_4" DEF="hanim_r_carpometacarpal_4" center="-0.1956 0.8019 -0.0794" stiffness="0 0 0"><HAnimSegment name="r_metacarpal_4" DEF="hanim_r_metacarpal_4"></HAnimSegment>
-<HAnimJoint name="r_metacarpophalangeal_4" DEF="hanim_r_metacarpophalangeal_4" center="-0.1956 0.7815 -0.0794" stiffness="0 0 0"><HAnimSegment name="r_carpal_proximal_phalanx_4" DEF="hanim_r_carpal_proximal_phalanx_4"></HAnimSegment>
-<HAnimJoint name="r_carpal_proximal_interphalangeal_4" DEF="hanim_r_carpal_proximal_interphalangeal_4" center="-0.1973 0.7287 -0.0777" stiffness="0 0 0"><HAnimSegment name="r_carpal_middle_phalanx_4" DEF="hanim_r_carpal_middle_phalanx_4"></HAnimSegment>
-<HAnimJoint name="r_carpal_distal_interphalangeal_4" DEF="hanim_r_carpal_distal_interphalangeal_4" center="-0.1983 0.7045 -0.0767" stiffness="0 0 0"><HAnimSegment name="r_carpal_distal_phalanx_4" DEF="hanim_r_carpal_distal_phalanx_4"><HAnimSite name="r_carpal_distal_phalanx_4_tip" DEF="hanim_r_carpal_distal_phalanx_4_tip" translation="-0.1934 0.6778 -0.0693"></HAnimSite>
+<HAnimJoint name="r_carpometacarpal_4" DEF="hanim_r_carpometacarpal_4" center="-0.1956 0.8019 -0.0794" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_metacarpal_4" DEF="hanim_r_metacarpal_4"></HAnimSegment>
+<HAnimJoint name="r_metacarpophalangeal_4" DEF="hanim_r_metacarpophalangeal_4" center="-0.1956 0.7815 -0.0794" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_carpal_proximal_phalanx_4" DEF="hanim_r_carpal_proximal_phalanx_4"></HAnimSegment>
+<HAnimJoint name="r_carpal_proximal_interphalangeal_4" DEF="hanim_r_carpal_proximal_interphalangeal_4" center="-0.1973 0.7287 -0.0777" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_carpal_middle_phalanx_4" DEF="hanim_r_carpal_middle_phalanx_4"></HAnimSegment>
+<HAnimJoint name="r_carpal_distal_interphalangeal_4" DEF="hanim_r_carpal_distal_interphalangeal_4" center="-0.1983 0.7045 -0.0767" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_carpal_distal_phalanx_4" DEF="hanim_r_carpal_distal_phalanx_4"><HAnimSite name="r_carpal_distal_phalanx_4_tip" DEF="hanim_r_carpal_distal_phalanx_4_tip" translation="-0.1934 0.6778 -0.0693"></HAnimSite>
 </HAnimSegment>
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_carpometacarpal_5" DEF="hanim_r_carpometacarpal_5" center="-0.1925 0.8066 -0.1036" stiffness="0 0 0"><HAnimSegment name="r_metacarpal_5" DEF="hanim_r_metacarpal_5"></HAnimSegment>
-<HAnimJoint name="r_metacarpophalangeal_5" DEF="hanim_r_metacarpophalangeal_5" center="-0.1925 0.7866 -0.1036" stiffness="0 0 0"><HAnimSegment name="r_carpal_proximal_phalanx_5" DEF="hanim_r_carpal_proximal_phalanx_5"></HAnimSegment>
-<HAnimJoint name="r_carpal_proximal_interphalangeal_5" DEF="hanim_r_carpal_proximal_interphalangeal_5" center="-0.1938 0.7452 -0.1024" stiffness="0 0 0"><HAnimSegment name="r_carpal_middle_phalanx_5" DEF="hanim_r_carpal_middle_phalanx_5"></HAnimSegment>
-<HAnimJoint name="r_carpal_distal_interphalangeal_5" DEF="hanim_r_carpal_distal_interphalangeal_5" center="-0.1948 0.7277 -0.1017" stiffness="0 0 0"><HAnimSegment name="r_carpal_distal_phalanx_5" DEF="hanim_r_carpal_distal_phalanx_5"><HAnimSite name="r_carpal_distal_phalanx_5_tip" DEF="hanim_r_carpal_distal_phalanx_5_tip" translation="-0.1938 0.7035 -0.0949"></HAnimSite>
+<HAnimJoint name="r_carpometacarpal_5" DEF="hanim_r_carpometacarpal_5" center="-0.1925 0.8066 -0.1036" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_metacarpal_5" DEF="hanim_r_metacarpal_5"></HAnimSegment>
+<HAnimJoint name="r_metacarpophalangeal_5" DEF="hanim_r_metacarpophalangeal_5" center="-0.1925 0.7866 -0.1036" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_carpal_proximal_phalanx_5" DEF="hanim_r_carpal_proximal_phalanx_5"></HAnimSegment>
+<HAnimJoint name="r_carpal_proximal_interphalangeal_5" DEF="hanim_r_carpal_proximal_interphalangeal_5" center="-0.1938 0.7452 -0.1024" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_carpal_middle_phalanx_5" DEF="hanim_r_carpal_middle_phalanx_5"></HAnimSegment>
+<HAnimJoint name="r_carpal_distal_interphalangeal_5" DEF="hanim_r_carpal_distal_interphalangeal_5" center="-0.1948 0.7277 -0.1017" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_carpal_distal_phalanx_5" DEF="hanim_r_carpal_distal_phalanx_5"><HAnimSite name="r_carpal_distal_phalanx_5_tip" DEF="hanim_r_carpal_distal_phalanx_5_tip" translation="-0.1938 0.7035 -0.0949"></HAnimSite>
 </HAnimSegment>
 </HAnimJoint>
 </HAnimJoint>

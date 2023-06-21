@@ -2,7 +2,7 @@
     "encoding":"UTF-8",
     "@version":"3.0",
     "@profile":"Immersive",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-3.0.xsd",
     "JSON schema":"https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
     "head": {
         "meta": [
@@ -12,7 +12,7 @@
           },
           {
             "@name":"translated",
-            "@content":"18 November 2021"
+            "@content":"21 June 2023"
           },
           {
             "@name":"generator",

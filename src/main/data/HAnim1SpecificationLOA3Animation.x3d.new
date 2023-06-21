@@ -42,7 +42,7 @@
 <Viewpoint centerOfRotation="0 0.9149 0.0016" description="Humanoid LOA 3 Left Side Close" orientation="0 1 0 -1.2" position="-1 0.8 0.5"></Viewpoint>
 <Viewpoint centerOfRotation="0 0.9149 0.0016" description="Humanoid LOA 3 Left Side" orientation="0 1 0 -1.5708" position="-2.6 0.8 0"></Viewpoint>
 <Viewpoint centerOfRotation="0 0.9149 0.0016" description="Humanoid LOA 3 Top" orientation="1 0 0 -1.5708" position="0 3.5 0"></Viewpoint>
-<HAnimHumanoid name="humanoid" DEF="hanim_humanoid" info="&quot;authorName=Matthew T. Beitler Joe D. Williams Don Brutzman&quot; &quot;authorEmail=HAnim@web3D.org&quot; &quot;copyright=none&quot; &quot;creationDate=12 May 1999&quot; &quot;usageRestrictions=none&quot; &quot;humanoidVersion=1.0&quot; &quot;height=1.7504&quot;" version="1.0"><HAnimJoint name="humanoid_root" DEF="hanim_humanoid_root" center="0 0.824 0.0277" stiffness="0 0 0" containerField="skeleton"><HAnimSegment name="sacrum" DEF="hanim_sacrum"><!--<HAnimJoint name='humanoid_root'></HAnimJoint> visualization sphere within <HAnimSegment name='sacrum'></HAnimSegment>--><TouchSensor description="HAnimJoint HumanoidRoot, HAnimSegment sacrum"></TouchSensor>
+<HAnimHumanoid name="humanoid" DEF="hanim_humanoid" info="&quot;authorName=Matthew T. Beitler Joe D. Williams Don Brutzman&quot; &quot;authorEmail=HAnim@web3D.org&quot; &quot;copyright=none&quot; &quot;creationDate=12 May 1999&quot; &quot;usageRestrictions=none&quot; &quot;humanoidVersion=1.0&quot; &quot;height=1.7504&quot;" version="1.0"><HAnimJoint name="humanoid_root" DEF="hanim_humanoid_root" center="0 0.824 0.0277" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0" containerField="skeleton"><HAnimSegment name="sacrum" DEF="hanim_sacrum"><!--<HAnimJoint name='humanoid_root'></HAnimJoint> visualization sphere within <HAnimSegment name='sacrum'></HAnimSegment>--><TouchSensor description="HAnimJoint HumanoidRoot, HAnimSegment sacrum"></TouchSensor>
 <Transform translation="0 0.824 0.0277"><Shape DEF="HAnimJointShape"><Sphere containerField="geometry" radius="0.006"></Sphere>
 <Appearance DEF="HAnimJointAppearance"><Material diffuseColor="1 0.5 0" transparency="0.5"></Material>
 </Appearance>
@@ -57,7 +57,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="sacroiliac" DEF="hanim_sacroiliac" center="0 0.9149 0.0016" stiffness="0 0 0"><HAnimSegment name="pelvis" DEF="hanim_pelvis"><!--<HAnimJoint name='sacroiliac'></HAnimJoint> visualization sphere within <HAnimSegment name='pelvis'></HAnimSegment>--><TouchSensor description="HAnimJoint sacroiliac, HAnimSegment pelvis"></TouchSensor>
+<HAnimJoint name="sacroiliac" DEF="hanim_sacroiliac" center="0 0.9149 0.0016" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="pelvis" DEF="hanim_pelvis"><!--<HAnimJoint name='sacroiliac'></HAnimJoint> visualization sphere within <HAnimSegment name='pelvis'></HAnimSegment>--><TouchSensor description="HAnimJoint sacroiliac, HAnimSegment pelvis"></TouchSensor>
 <Transform translation="0 0.9149 0.0016"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='sacroiliac'></HAnimJoint> to <HAnimJoint name='l_hip'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0 0.9149 0.0016 0.0961 0.9124 -0.0001"></Coordinate>
@@ -136,7 +136,7 @@
 <Shape USE="HAnimSiteShape"></Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_hip" DEF="hanim_l_hip" center="0.0961 0.9124 -0.0001" stiffness="0 0 0"><HAnimSegment name="l_thigh" DEF="hanim_l_thigh"><!--<HAnimJoint name='l_hip'></HAnimJoint> visualization sphere within <HAnimSegment name='l_thigh'></HAnimSegment>--><TouchSensor description="HAnimJoint l_hip, HAnimSegment l_thigh"></TouchSensor>
+<HAnimJoint name="l_hip" DEF="hanim_l_hip" center="0.0961 0.9124 -0.0001" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_thigh" DEF="hanim_l_thigh"><!--<HAnimJoint name='l_hip'></HAnimJoint> visualization sphere within <HAnimSegment name='l_thigh'></HAnimSegment>--><TouchSensor description="HAnimJoint l_hip, HAnimSegment l_thigh"></TouchSensor>
 <Transform translation="0.0961 0.9124 -0.0001"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='l_hip'></HAnimJoint> to <HAnimJoint name='l_knee'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0961 0.9124 -0.0001 0.104 0.4867 0.0308"></Coordinate>
@@ -165,7 +165,7 @@
 <Shape USE="HAnimSiteShape"></Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_knee" DEF="hanim_l_knee" center="0.104 0.4867 0.0308" stiffness="0 0 0"><HAnimSegment name="l_calf" DEF="hanim_l_calf"><!--<HAnimJoint name='l_knee'></HAnimJoint> visualization sphere within <HAnimSegment name='l_calf'></HAnimSegment>--><TouchSensor description="HAnimJoint l_knee, HAnimSegment l_calf"></TouchSensor>
+<HAnimJoint name="l_knee" DEF="hanim_l_knee" center="0.104 0.4867 0.0308" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_calf" DEF="hanim_l_calf"><!--<HAnimJoint name='l_knee'></HAnimJoint> visualization sphere within <HAnimSegment name='l_calf'></HAnimSegment>--><TouchSensor description="HAnimJoint l_knee, HAnimSegment l_calf"></TouchSensor>
 <Transform translation="0.104 0.4867 0.0308"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='l_knee'></HAnimJoint> to <HAnimJoint name='l_ankle'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.104 0.4867 0.0308 0.1101 0.0656 -0.0736"></Coordinate>
@@ -173,7 +173,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_ankle" DEF="hanim_l_ankle" center="0.1101 0.0656 -0.0736" stiffness="0 0 0"><HAnimSegment name="l_hindfoot" DEF="hanim_l_hindfoot"><!--<HAnimJoint name='l_ankle'></HAnimJoint> visualization sphere within <HAnimSegment name='l_hindfoot'></HAnimSegment>--><TouchSensor description="HAnimJoint l_ankle, HAnimSegment l_hindfoot"></TouchSensor>
+<HAnimJoint name="l_ankle" DEF="hanim_l_ankle" center="0.1101 0.0656 -0.0736" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_hindfoot" DEF="hanim_l_hindfoot"><!--<HAnimJoint name='l_ankle'></HAnimJoint> visualization sphere within <HAnimSegment name='l_hindfoot'></HAnimSegment>--><TouchSensor description="HAnimJoint l_ankle, HAnimSegment l_hindfoot"></TouchSensor>
 <Transform translation="0.1101 0.0656 -0.0736"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='l_ankle'></HAnimJoint> to <HAnimJoint name='l_subtalar'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.1101 0.0656 -0.0736 0.1086 0.0001 -0.0368"></Coordinate>
@@ -209,7 +209,7 @@
 <Shape USE="HAnimSiteShape"></Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_subtalar" DEF="hanim_l_subtalar" center="0.1086 0.0001 -0.0368" stiffness="0 0 0"><HAnimSegment name="l_midproximal" DEF="hanim_l_midproximal"><!--<HAnimJoint name='l_subtalar'></HAnimJoint> visualization sphere within <HAnimSegment name='l_midproximal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_subtalar, HAnimSegment l_midproximal"></TouchSensor>
+<HAnimJoint name="l_subtalar" DEF="hanim_l_subtalar" center="0.1086 0.0001 -0.0368" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_midproximal" DEF="hanim_l_midproximal"><!--<HAnimJoint name='l_subtalar'></HAnimJoint> visualization sphere within <HAnimSegment name='l_midproximal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_subtalar, HAnimSegment l_midproximal"></TouchSensor>
 <Transform translation="0.1086 0.0001 -0.0368"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='l_subtalar'></HAnimJoint> to <HAnimJoint name='l_midtarsal'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.1086 0.0001 -0.0368 0.1086 0.0001 0.0368"></Coordinate>
@@ -217,7 +217,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_midtarsal" DEF="hanim_l_midtarsal" center="0.1086 0.0001 0.0368" stiffness="0 0 0"><HAnimSegment name="l_middistal" DEF="hanim_l_middistal"><!--<HAnimJoint name='l_midtarsal'></HAnimJoint> visualization sphere within <HAnimSegment name='l_middistal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_midtarsal, HAnimSegment l_middistal"></TouchSensor>
+<HAnimJoint name="l_midtarsal" DEF="hanim_l_midtarsal" center="0.1086 0.0001 0.0368" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_middistal" DEF="hanim_l_middistal"><!--<HAnimJoint name='l_midtarsal'></HAnimJoint> visualization sphere within <HAnimSegment name='l_middistal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_midtarsal, HAnimSegment l_middistal"></TouchSensor>
 <Transform translation="0.1086 0.0001 0.0368"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='l_midtarsal'></HAnimJoint> to <HAnimJoint name='l_metatarsal'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.1086 0.0001 0.0368 0.1086 0 0.0762"></Coordinate>
@@ -232,7 +232,7 @@
 <Shape USE="HAnimSiteShape"></Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_metatarsal" DEF="hanim_l_metatarsal" center="0.1086 0 0.0762" stiffness="0 0 0"><HAnimSegment name="l_forefoot" DEF="hanim_l_forefoot"><!--<HAnimJoint name='l_metatarsal'></HAnimJoint> visualization sphere within <HAnimSegment name='l_forefoot'></HAnimSegment>--><TouchSensor description="HAnimJoint l_metatarsal, HAnimSegment l_forefoot"></TouchSensor>
+<HAnimJoint name="l_metatarsal" DEF="hanim_l_metatarsal" center="0.1086 0 0.0762" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_forefoot" DEF="hanim_l_forefoot"><!--<HAnimJoint name='l_metatarsal'></HAnimJoint> visualization sphere within <HAnimSegment name='l_forefoot'></HAnimSegment>--><TouchSensor description="HAnimJoint l_metatarsal, HAnimSegment l_forefoot"></TouchSensor>
 <Transform translation="0.1086 0 0.0762"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSite visualization line segment from ancestor <HAnimJoint name='l_metatarsal'></HAnimJoint> to <HAnimSite name='l_forefoot_tip'></HAnimSite>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.1086 0 0.0762 0.1354 0.0016 0.1476"></Coordinate>
@@ -263,7 +263,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_hip" DEF="hanim_r_hip" center="-0.0961 0.9124 -0.0001" stiffness="0 0 0"><HAnimSegment name="r_thigh" DEF="hanim_r_thigh"><!--<HAnimJoint name='r_hip'></HAnimJoint> visualization sphere within <HAnimSegment name='r_thigh'></HAnimSegment>--><TouchSensor description="HAnimJoint r_hip, HAnimSegment r_thigh"></TouchSensor>
+<HAnimJoint name="r_hip" DEF="hanim_r_hip" center="-0.0961 0.9124 -0.0001" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_thigh" DEF="hanim_r_thigh"><!--<HAnimJoint name='r_hip'></HAnimJoint> visualization sphere within <HAnimSegment name='r_thigh'></HAnimSegment>--><TouchSensor description="HAnimJoint r_hip, HAnimSegment r_thigh"></TouchSensor>
 <Transform translation="-0.0961 0.9124 -0.0001"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='r_hip'></HAnimJoint> to <HAnimJoint name='r_knee'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.0961 0.9124 -0.0001 -0.104 0.4867 0.0308"></Coordinate>
@@ -292,7 +292,7 @@
 <Shape USE="HAnimSiteShape"></Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="r_knee" DEF="hanim_r_knee" center="-0.104 0.4867 0.0308" stiffness="0 0 0"><HAnimSegment name="r_calf" DEF="hanim_r_calf"><!--<HAnimJoint name='r_knee'></HAnimJoint> visualization sphere within <HAnimSegment name='r_calf'></HAnimSegment>--><TouchSensor description="HAnimJoint r_knee, HAnimSegment r_calf"></TouchSensor>
+<HAnimJoint name="r_knee" DEF="hanim_r_knee" center="-0.104 0.4867 0.0308" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_calf" DEF="hanim_r_calf"><!--<HAnimJoint name='r_knee'></HAnimJoint> visualization sphere within <HAnimSegment name='r_calf'></HAnimSegment>--><TouchSensor description="HAnimJoint r_knee, HAnimSegment r_calf"></TouchSensor>
 <Transform translation="-0.104 0.4867 0.0308"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='r_knee'></HAnimJoint> to <HAnimJoint name='r_ankle'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.104 0.4867 0.0308 -0.1101 0.0656 -0.0736"></Coordinate>
@@ -300,7 +300,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="r_ankle" DEF="hanim_r_ankle" center="-0.1101 0.0656 -0.0736" stiffness="0 0 0"><HAnimSegment name="r_hindfoot" DEF="hanim_r_hindfoot"><!--<HAnimJoint name='r_ankle'></HAnimJoint> visualization sphere within <HAnimSegment name='r_hindfoot'></HAnimSegment>--><TouchSensor description="HAnimJoint r_ankle, HAnimSegment r_hindfoot"></TouchSensor>
+<HAnimJoint name="r_ankle" DEF="hanim_r_ankle" center="-0.1101 0.0656 -0.0736" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_hindfoot" DEF="hanim_r_hindfoot"><!--<HAnimJoint name='r_ankle'></HAnimJoint> visualization sphere within <HAnimSegment name='r_hindfoot'></HAnimSegment>--><TouchSensor description="HAnimJoint r_ankle, HAnimSegment r_hindfoot"></TouchSensor>
 <Transform translation="-0.1101 0.0656 -0.0736"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='r_ankle'></HAnimJoint> to <HAnimJoint name='r_subtalar'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.1101 0.0656 -0.0736 -0.1086 0.0001 -0.0368"></Coordinate>
@@ -336,7 +336,7 @@
 <Shape USE="HAnimSiteShape"></Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="r_subtalar" DEF="hanim_r_subtalar" center="-0.1086 0.0001 -0.0368" stiffness="0 0 0"><HAnimSegment name="r_midproximal" DEF="hanim_r_midproximal"><!--<HAnimJoint name='r_subtalar'></HAnimJoint> visualization sphere within <HAnimSegment name='r_midproximal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_subtalar, HAnimSegment r_midproximal"></TouchSensor>
+<HAnimJoint name="r_subtalar" DEF="hanim_r_subtalar" center="-0.1086 0.0001 -0.0368" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_midproximal" DEF="hanim_r_midproximal"><!--<HAnimJoint name='r_subtalar'></HAnimJoint> visualization sphere within <HAnimSegment name='r_midproximal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_subtalar, HAnimSegment r_midproximal"></TouchSensor>
 <Transform translation="-0.1086 0.0001 -0.0368"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='r_subtalar'></HAnimJoint> to <HAnimJoint name='r_midtarsal'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.1086 0.0001 -0.0368 -0.1086 0.0001 0.0368"></Coordinate>
@@ -344,7 +344,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="r_midtarsal" DEF="hanim_r_midtarsal" center="-0.1086 0.0001 0.0368" stiffness="0 0 0"><HAnimSegment name="r_middistal" DEF="hanim_r_middistal"><!--<HAnimJoint name='r_midtarsal'></HAnimJoint> visualization sphere within <HAnimSegment name='r_middistal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_midtarsal, HAnimSegment r_middistal"></TouchSensor>
+<HAnimJoint name="r_midtarsal" DEF="hanim_r_midtarsal" center="-0.1086 0.0001 0.0368" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_middistal" DEF="hanim_r_middistal"><!--<HAnimJoint name='r_midtarsal'></HAnimJoint> visualization sphere within <HAnimSegment name='r_middistal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_midtarsal, HAnimSegment r_middistal"></TouchSensor>
 <Transform translation="-0.1086 0.0001 0.0368"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='r_midtarsal'></HAnimJoint> to <HAnimJoint name='r_metatarsal'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.1086 0.0001 0.0368 -0.1086 0 0.0762"></Coordinate>
@@ -359,7 +359,7 @@
 <Shape USE="HAnimSiteShape"></Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="r_metatarsal" DEF="hanim_r_metatarsal" center="-0.1086 0 0.0762" stiffness="0 0 0"><HAnimSegment name="r_forefoot" DEF="hanim_r_forefoot"><!--<HAnimJoint name='r_metatarsal'></HAnimJoint> visualization sphere within <HAnimSegment name='r_forefoot'></HAnimSegment>--><TouchSensor description="HAnimJoint r_metatarsal, HAnimSegment r_forefoot"></TouchSensor>
+<HAnimJoint name="r_metatarsal" DEF="hanim_r_metatarsal" center="-0.1086 0 0.0762" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_forefoot" DEF="hanim_r_forefoot"><!--<HAnimJoint name='r_metatarsal'></HAnimJoint> visualization sphere within <HAnimSegment name='r_forefoot'></HAnimSegment>--><TouchSensor description="HAnimJoint r_metatarsal, HAnimSegment r_forefoot"></TouchSensor>
 <Transform translation="-0.1086 0 0.0762"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSite visualization line segment from ancestor <HAnimJoint name='r_metatarsal'></HAnimJoint> to <HAnimSite name='r_forefoot_tip'></HAnimSite>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.1086 0 0.0762 -0.1043 0.0227 0.145"></Coordinate>
@@ -391,7 +391,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="vl5" DEF="hanim_vl5" center="0.0028 1.0568 -0.0776" stiffness="0 0 0"><HAnimSegment name="l5" DEF="hanim_l5"><!--<HAnimJoint name='vl5'></HAnimJoint> visualization sphere within <HAnimSegment name='l5'></HAnimSegment>--><TouchSensor description="HAnimJoint vl5, HAnimSegment l5"></TouchSensor>
+<HAnimJoint name="vl5" DEF="hanim_vl5" center="0.0028 1.0568 -0.0776" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l5" DEF="hanim_l5"><!--<HAnimJoint name='vl5'></HAnimJoint> visualization sphere within <HAnimSegment name='l5'></HAnimSegment>--><TouchSensor description="HAnimJoint vl5, HAnimSegment l5"></TouchSensor>
 <Transform translation="0.0028 1.0568 -0.0776"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='vl5'></HAnimJoint> to <HAnimJoint name='vl4'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0028 1.0568 -0.0776 0.0035 1.0925 -0.0787"></Coordinate>
@@ -413,7 +413,7 @@
 <Shape USE="HAnimSiteShape"></Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="vl4" DEF="hanim_vl4" center="0.0035 1.0925 -0.0787" stiffness="0 0 0"><HAnimSegment name="l4" DEF="hanim_l4"><!--<HAnimJoint name='vl4'></HAnimJoint> visualization sphere within <HAnimSegment name='l4'></HAnimSegment>--><TouchSensor description="HAnimJoint vl4, HAnimSegment l4"></TouchSensor>
+<HAnimJoint name="vl4" DEF="hanim_vl4" center="0.0035 1.0925 -0.0787" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l4" DEF="hanim_l4"><!--<HAnimJoint name='vl4'></HAnimJoint> visualization sphere within <HAnimSegment name='l4'></HAnimSegment>--><TouchSensor description="HAnimJoint vl4, HAnimSegment l4"></TouchSensor>
 <Transform translation="0.0035 1.0925 -0.0787"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='vl4'></HAnimJoint> to <HAnimJoint name='vl3'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0035 1.0925 -0.0787 0.0041 1.1276 -0.0796"></Coordinate>
@@ -421,7 +421,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="vl3" DEF="hanim_vl3" center="0.0041 1.1276 -0.0796" stiffness="0 0 0"><HAnimSegment name="l3" DEF="hanim_l3"><!--<HAnimJoint name='vl3'></HAnimJoint> visualization sphere within <HAnimSegment name='l3'></HAnimSegment>--><TouchSensor description="HAnimJoint vl3, HAnimSegment l3"></TouchSensor>
+<HAnimJoint name="vl3" DEF="hanim_vl3" center="0.0041 1.1276 -0.0796" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l3" DEF="hanim_l3"><!--<HAnimJoint name='vl3'></HAnimJoint> visualization sphere within <HAnimSegment name='l3'></HAnimSegment>--><TouchSensor description="HAnimJoint vl3, HAnimSegment l3"></TouchSensor>
 <Transform translation="0.0041 1.1276 -0.0796"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='vl3'></HAnimJoint> to <HAnimJoint name='vl2'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0041 1.1276 -0.0796 0.0045 1.1546 -0.08"></Coordinate>
@@ -429,7 +429,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="vl2" DEF="hanim_vl2" center="0.0045 1.1546 -0.08" stiffness="0 0 0"><HAnimSegment name="l2" DEF="hanim_l2"><!--<HAnimJoint name='vl2'></HAnimJoint> visualization sphere within <HAnimSegment name='l2'></HAnimSegment>--><TouchSensor description="HAnimJoint vl2, HAnimSegment l2"></TouchSensor>
+<HAnimJoint name="vl2" DEF="hanim_vl2" center="0.0045 1.1546 -0.08" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l2" DEF="hanim_l2"><!--<HAnimJoint name='vl2'></HAnimJoint> visualization sphere within <HAnimSegment name='l2'></HAnimSegment>--><TouchSensor description="HAnimJoint vl2, HAnimSegment l2"></TouchSensor>
 <Transform translation="0.0045 1.1546 -0.08"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='vl2'></HAnimJoint> to <HAnimJoint name='vl1'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0045 1.1546 -0.08 0.0048 1.1912 -0.0805"></Coordinate>
@@ -458,7 +458,7 @@
 <Shape USE="HAnimSiteShape"></Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="vl1" DEF="hanim_vl1" center="0.0048 1.1912 -0.0805" stiffness="0 0 0"><HAnimSegment name="l1" DEF="hanim_l1"><!--<HAnimJoint name='vl1'></HAnimJoint> visualization sphere within <HAnimSegment name='l1'></HAnimSegment>--><TouchSensor description="HAnimJoint vl1, HAnimSegment l1"></TouchSensor>
+<HAnimJoint name="vl1" DEF="hanim_vl1" center="0.0048 1.1912 -0.0805" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l1" DEF="hanim_l1"><!--<HAnimJoint name='vl1'></HAnimJoint> visualization sphere within <HAnimSegment name='l1'></HAnimSegment>--><TouchSensor description="HAnimJoint vl1, HAnimSegment l1"></TouchSensor>
 <Transform translation="0.0048 1.1912 -0.0805"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='vl1'></HAnimJoint> to <HAnimJoint name='vt12'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0048 1.1912 -0.0805 0.0051 1.2278 -0.0808"></Coordinate>
@@ -466,7 +466,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="vt12" DEF="hanim_vt12" center="0.0051 1.2278 -0.0808" stiffness="0 0 0"><HAnimSegment name="t12" DEF="hanim_t12"><!--<HAnimJoint name='vt12'></HAnimJoint> visualization sphere within <HAnimSegment name='t12'></HAnimSegment>--><TouchSensor description="HAnimJoint vt12, HAnimSegment t12"></TouchSensor>
+<HAnimJoint name="vt12" DEF="hanim_vt12" center="0.0051 1.2278 -0.0808" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t12" DEF="hanim_t12"><!--<HAnimJoint name='vt12'></HAnimJoint> visualization sphere within <HAnimSegment name='t12'></HAnimSegment>--><TouchSensor description="HAnimJoint vt12, HAnimSegment t12"></TouchSensor>
 <Transform translation="0.0051 1.2278 -0.0808"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='vt12'></HAnimJoint> to <HAnimJoint name='vt11'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0051 1.2278 -0.0808 0.0053 1.2679 -0.081"></Coordinate>
@@ -474,7 +474,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="vt11" DEF="hanim_vt11" center="0.0053 1.2679 -0.081" stiffness="0 0 0"><HAnimSegment name="t11" DEF="hanim_t11"><!--<HAnimJoint name='vt11'></HAnimJoint> visualization sphere within <HAnimSegment name='t11'></HAnimSegment>--><TouchSensor description="HAnimJoint vt11, HAnimSegment t11"></TouchSensor>
+<HAnimJoint name="vt11" DEF="hanim_vt11" center="0.0053 1.2679 -0.081" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t11" DEF="hanim_t11"><!--<HAnimJoint name='vt11'></HAnimJoint> visualization sphere within <HAnimSegment name='t11'></HAnimSegment>--><TouchSensor description="HAnimJoint vt11, HAnimSegment t11"></TouchSensor>
 <Transform translation="0.0053 1.2679 -0.081"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='vt11'></HAnimJoint> to <HAnimJoint name='vt10'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0053 1.2679 -0.081 0.0056 1.2848 -0.0822"></Coordinate>
@@ -482,7 +482,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="vt10" DEF="hanim_vt10" center="0.0056 1.2848 -0.0822" stiffness="0 0 0"><HAnimSegment name="t10" DEF="hanim_t10"><!--<HAnimJoint name='vt10'></HAnimJoint> visualization sphere within <HAnimSegment name='t10'></HAnimSegment>--><TouchSensor description="HAnimJoint vt10, HAnimSegment t10"></TouchSensor>
+<HAnimJoint name="vt10" DEF="hanim_vt10" center="0.0056 1.2848 -0.0822" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t10" DEF="hanim_t10"><!--<HAnimJoint name='vt10'></HAnimJoint> visualization sphere within <HAnimSegment name='t10'></HAnimSegment>--><TouchSensor description="HAnimJoint vt10, HAnimSegment t10"></TouchSensor>
 <Transform translation="0.0056 1.2848 -0.0822"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='vt10'></HAnimJoint> to <HAnimJoint name='vt9'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0056 1.2848 -0.0822 0.0057 1.3126 -0.0838"></Coordinate>
@@ -497,7 +497,7 @@
 <Shape USE="HAnimSiteShape"></Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="vt9" DEF="hanim_vt9" center="0.0057 1.3126 -0.0838" stiffness="0 0 0"><HAnimSegment name="t9" DEF="hanim_t9"><!--<HAnimJoint name='vt9'></HAnimJoint> visualization sphere within <HAnimSegment name='t9'></HAnimSegment>--><TouchSensor description="HAnimJoint vt9, HAnimSegment t9"></TouchSensor>
+<HAnimJoint name="vt9" DEF="hanim_vt9" center="0.0057 1.3126 -0.0838" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t9" DEF="hanim_t9"><!--<HAnimJoint name='vt9'></HAnimJoint> visualization sphere within <HAnimSegment name='t9'></HAnimSegment>--><TouchSensor description="HAnimJoint vt9, HAnimSegment t9"></TouchSensor>
 <Transform translation="0.0057 1.3126 -0.0838"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='vt9'></HAnimJoint> to <HAnimJoint name='vt8'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0057 1.3126 -0.0838 0.0057 1.3382 -0.0845"></Coordinate>
@@ -519,7 +519,7 @@
 <Shape USE="HAnimSiteShape"></Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="vt8" DEF="hanim_vt8" center="0.0057 1.3382 -0.0845" stiffness="0 0 0"><HAnimSegment name="t8" DEF="hanim_t8"><!--<HAnimJoint name='vt8'></HAnimJoint> visualization sphere within <HAnimSegment name='t8'></HAnimSegment>--><TouchSensor description="HAnimJoint vt8, HAnimSegment t8"></TouchSensor>
+<HAnimJoint name="vt8" DEF="hanim_vt8" center="0.0057 1.3382 -0.0845" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t8" DEF="hanim_t8"><!--<HAnimJoint name='vt8'></HAnimJoint> visualization sphere within <HAnimSegment name='t8'></HAnimSegment>--><TouchSensor description="HAnimJoint vt8, HAnimSegment t8"></TouchSensor>
 <Transform translation="0.0057 1.3382 -0.0845"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='vt8'></HAnimJoint> to <HAnimJoint name='vt7'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0057 1.3382 -0.0845 0.0058 1.3625 -0.0833"></Coordinate>
@@ -527,7 +527,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="vt7" DEF="hanim_vt7" center="0.0058 1.3625 -0.0833" stiffness="0 0 0"><HAnimSegment name="t7" DEF="hanim_t7"><!--<HAnimJoint name='vt7'></HAnimJoint> visualization sphere within <HAnimSegment name='t7'></HAnimSegment>--><TouchSensor description="HAnimJoint vt7, HAnimSegment t7"></TouchSensor>
+<HAnimJoint name="vt7" DEF="hanim_vt7" center="0.0058 1.3625 -0.0833" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t7" DEF="hanim_t7"><!--<HAnimJoint name='vt7'></HAnimJoint> visualization sphere within <HAnimSegment name='t7'></HAnimSegment>--><TouchSensor description="HAnimJoint vt7, HAnimSegment t7"></TouchSensor>
 <Transform translation="0.0058 1.3625 -0.0833"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='vt7'></HAnimJoint> to <HAnimJoint name='vt6'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0058 1.3625 -0.0833 0.0059 1.3866 -0.08"></Coordinate>
@@ -535,7 +535,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="vt6" DEF="hanim_vt6" center="0.0059 1.3866 -0.08" stiffness="0 0 0"><HAnimSegment name="t6" DEF="hanim_t6"><!--<HAnimJoint name='vt6'></HAnimJoint> visualization sphere within <HAnimSegment name='t6'></HAnimSegment>--><TouchSensor description="HAnimJoint vt6, HAnimSegment t6"></TouchSensor>
+<HAnimJoint name="vt6" DEF="hanim_vt6" center="0.0059 1.3866 -0.08" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t6" DEF="hanim_t6"><!--<HAnimJoint name='vt6'></HAnimJoint> visualization sphere within <HAnimSegment name='t6'></HAnimSegment>--><TouchSensor description="HAnimJoint vt6, HAnimSegment t6"></TouchSensor>
 <Transform translation="0.0059 1.3866 -0.08"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='vt6'></HAnimJoint> to <HAnimJoint name='vt5'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0059 1.3866 -0.08 0.006 1.4102 -0.0745"></Coordinate>
@@ -543,7 +543,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="vt5" DEF="hanim_vt5" center="0.006 1.4102 -0.0745" stiffness="0 0 0"><HAnimSegment name="t5" DEF="hanim_t5"><!--<HAnimJoint name='vt5'></HAnimJoint> visualization sphere within <HAnimSegment name='t5'></HAnimSegment>--><TouchSensor description="HAnimJoint vt5, HAnimSegment t5"></TouchSensor>
+<HAnimJoint name="vt5" DEF="hanim_vt5" center="0.006 1.4102 -0.0745" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t5" DEF="hanim_t5"><!--<HAnimJoint name='vt5'></HAnimJoint> visualization sphere within <HAnimSegment name='t5'></HAnimSegment>--><TouchSensor description="HAnimJoint vt5, HAnimSegment t5"></TouchSensor>
 <Transform translation="0.006 1.4102 -0.0745"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='vt5'></HAnimJoint> to <HAnimJoint name='vt4'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.006 1.4102 -0.0745 0.0061 1.432 -0.0675"></Coordinate>
@@ -551,7 +551,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="vt4" DEF="hanim_vt4" center="0.0061 1.432 -0.0675" stiffness="0 0 0"><HAnimSegment name="t4" DEF="hanim_t4"><!--<HAnimJoint name='vt4'></HAnimJoint> visualization sphere within <HAnimSegment name='t4'></HAnimSegment>--><TouchSensor description="HAnimJoint vt4, HAnimSegment t4"></TouchSensor>
+<HAnimJoint name="vt4" DEF="hanim_vt4" center="0.0061 1.432 -0.0675" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t4" DEF="hanim_t4"><!--<HAnimJoint name='vt4'></HAnimJoint> visualization sphere within <HAnimSegment name='t4'></HAnimSegment>--><TouchSensor description="HAnimJoint vt4, HAnimSegment t4"></TouchSensor>
 <Transform translation="0.0061 1.432 -0.0675"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='vt4'></HAnimJoint> to <HAnimJoint name='vt3'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0061 1.432 -0.0675 0.0062 1.4583 -0.057"></Coordinate>
@@ -559,7 +559,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="vt3" DEF="hanim_vt3" center="0.0062 1.4583 -0.057" stiffness="0 0 0"><HAnimSegment name="t3" DEF="hanim_t3"><!--<HAnimJoint name='vt3'></HAnimJoint> visualization sphere within <HAnimSegment name='t3'></HAnimSegment>--><TouchSensor description="HAnimJoint vt3, HAnimSegment t3"></TouchSensor>
+<HAnimJoint name="vt3" DEF="hanim_vt3" center="0.0062 1.4583 -0.057" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t3" DEF="hanim_t3"><!--<HAnimJoint name='vt3'></HAnimJoint> visualization sphere within <HAnimSegment name='t3'></HAnimSegment>--><TouchSensor description="HAnimJoint vt3, HAnimSegment t3"></TouchSensor>
 <Transform translation="0.0062 1.4583 -0.057"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='vt3'></HAnimJoint> to <HAnimJoint name='vt2'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0062 1.4583 -0.057 0.0063 1.4761 -0.0484"></Coordinate>
@@ -567,7 +567,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="vt2" DEF="hanim_vt2" center="0.0063 1.4761 -0.0484" stiffness="0 0 0"><HAnimSegment name="t2" DEF="hanim_t2"><!--<HAnimJoint name='vt2'></HAnimJoint> visualization sphere within <HAnimSegment name='t2'></HAnimSegment>--><TouchSensor description="HAnimJoint vt2, HAnimSegment t2"></TouchSensor>
+<HAnimJoint name="vt2" DEF="hanim_vt2" center="0.0063 1.4761 -0.0484" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t2" DEF="hanim_t2"><!--<HAnimJoint name='vt2'></HAnimJoint> visualization sphere within <HAnimSegment name='t2'></HAnimSegment>--><TouchSensor description="HAnimJoint vt2, HAnimSegment t2"></TouchSensor>
 <Transform translation="0.0063 1.4761 -0.0484"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='vt2'></HAnimJoint> to <HAnimJoint name='vt1'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0063 1.4761 -0.0484 0.0065 1.4951 -0.0387"></Coordinate>
@@ -575,7 +575,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="vt1" DEF="hanim_vt1" center="0.0065 1.4951 -0.0387" stiffness="0 0 0"><HAnimSegment name="t1" DEF="hanim_t1"><!--<HAnimJoint name='vt1'></HAnimJoint> visualization sphere within <HAnimSegment name='t1'></HAnimSegment>--><TouchSensor description="HAnimJoint vt1, HAnimSegment t1"></TouchSensor>
+<HAnimJoint name="vt1" DEF="hanim_vt1" center="0.0065 1.4951 -0.0387" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="t1" DEF="hanim_t1"><!--<HAnimJoint name='vt1'></HAnimJoint> visualization sphere within <HAnimSegment name='t1'></HAnimSegment>--><TouchSensor description="HAnimJoint vt1, HAnimSegment t1"></TouchSensor>
 <Transform translation="0.0065 1.4951 -0.0387"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='vt1'></HAnimJoint> to <HAnimJoint name='vc7'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0065 1.4951 -0.0387 0.0066 1.5132 -0.0301"></Coordinate>
@@ -605,7 +605,7 @@
 <Shape USE="HAnimSiteShape"></Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="vc7" DEF="hanim_vc7" center="0.0066 1.5132 -0.0301" stiffness="0 0 0"><HAnimSegment name="c7" DEF="hanim_c7"><!--<HAnimJoint name='vc7'></HAnimJoint> visualization sphere within <HAnimSegment name='c7'></HAnimSegment>--><TouchSensor description="HAnimJoint vc7, HAnimSegment c7"></TouchSensor>
+<HAnimJoint name="vc7" DEF="hanim_vc7" center="0.0066 1.5132 -0.0301" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="c7" DEF="hanim_c7"><!--<HAnimJoint name='vc7'></HAnimJoint> visualization sphere within <HAnimSegment name='c7'></HAnimSegment>--><TouchSensor description="HAnimJoint vc7, HAnimSegment c7"></TouchSensor>
 <Transform translation="0.0066 1.5132 -0.0301"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='vc7'></HAnimJoint> to <HAnimJoint name='vc6'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0066 1.5132 -0.0301 0.0066 1.5357 -0.0143"></Coordinate>
@@ -627,7 +627,7 @@
 <Shape USE="HAnimSiteShape"></Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="vc6" DEF="hanim_vc6" center="0.0066 1.5357 -0.0143" stiffness="0 0 0"><HAnimSegment name="c6" DEF="hanim_c6"><!--<HAnimJoint name='vc6'></HAnimJoint> visualization sphere within <HAnimSegment name='c6'></HAnimSegment>--><TouchSensor description="HAnimJoint vc6, HAnimSegment c6"></TouchSensor>
+<HAnimJoint name="vc6" DEF="hanim_vc6" center="0.0066 1.5357 -0.0143" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="c6" DEF="hanim_c6"><!--<HAnimJoint name='vc6'></HAnimJoint> visualization sphere within <HAnimSegment name='c6'></HAnimSegment>--><TouchSensor description="HAnimJoint vc6, HAnimSegment c6"></TouchSensor>
 <Transform translation="0.0066 1.5357 -0.0143"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='vc6'></HAnimJoint> to <HAnimJoint name='vc5'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0066 1.5357 -0.0143 0.0066 1.552 -0.0082"></Coordinate>
@@ -635,7 +635,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="vc5" DEF="hanim_vc5" center="0.0066 1.552 -0.0082" stiffness="0 0 0"><HAnimSegment name="c5" DEF="hanim_c5"><!--<HAnimJoint name='vc5'></HAnimJoint> visualization sphere within <HAnimSegment name='c5'></HAnimSegment>--><TouchSensor description="HAnimJoint vc5, HAnimSegment c5"></TouchSensor>
+<HAnimJoint name="vc5" DEF="hanim_vc5" center="0.0066 1.552 -0.0082" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="c5" DEF="hanim_c5"><!--<HAnimJoint name='vc5'></HAnimJoint> visualization sphere within <HAnimSegment name='c5'></HAnimSegment>--><TouchSensor description="HAnimJoint vc5, HAnimSegment c5"></TouchSensor>
 <Transform translation="0.0066 1.552 -0.0082"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='vc5'></HAnimJoint> to <HAnimJoint name='vc4'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0066 1.552 -0.0082 0.0066 1.5662 -0.0084"></Coordinate>
@@ -643,7 +643,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="vc4" DEF="hanim_vc4" center="0.0066 1.5662 -0.0084" stiffness="0 0 0"><HAnimSegment name="c4" DEF="hanim_c4"><!--<HAnimJoint name='vc4'></HAnimJoint> visualization sphere within <HAnimSegment name='c4'></HAnimSegment>--><TouchSensor description="HAnimJoint vc4, HAnimSegment c4"></TouchSensor>
+<HAnimJoint name="vc4" DEF="hanim_vc4" center="0.0066 1.5662 -0.0084" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="c4" DEF="hanim_c4"><!--<HAnimJoint name='vc4'></HAnimJoint> visualization sphere within <HAnimSegment name='c4'></HAnimSegment>--><TouchSensor description="HAnimJoint vc4, HAnimSegment c4"></TouchSensor>
 <Transform translation="0.0066 1.5662 -0.0084"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='vc4'></HAnimJoint> to <HAnimJoint name='vc3'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0066 1.5662 -0.0084 0.0066 1.58 -0.0103"></Coordinate>
@@ -651,7 +651,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="vc3" DEF="hanim_vc3" center="0.0066 1.58 -0.0103" stiffness="0 0 0"><HAnimSegment name="c3" DEF="hanim_c3"><!--<HAnimJoint name='vc3'></HAnimJoint> visualization sphere within <HAnimSegment name='c3'></HAnimSegment>--><TouchSensor description="HAnimJoint vc3, HAnimSegment c3"></TouchSensor>
+<HAnimJoint name="vc3" DEF="hanim_vc3" center="0.0066 1.58 -0.0103" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="c3" DEF="hanim_c3"><!--<HAnimJoint name='vc3'></HAnimJoint> visualization sphere within <HAnimSegment name='c3'></HAnimSegment>--><TouchSensor description="HAnimJoint vc3, HAnimSegment c3"></TouchSensor>
 <Transform translation="0.0066 1.58 -0.0103"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='vc3'></HAnimJoint> to <HAnimJoint name='vc2'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0066 1.58 -0.0103 0.0066 1.5928 -0.0103"></Coordinate>
@@ -659,7 +659,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="vc2" DEF="hanim_vc2" center="0.0066 1.5928 -0.0103" stiffness="0 0 0"><HAnimSegment name="c2" DEF="hanim_c2"><!--<HAnimJoint name='vc2'></HAnimJoint> visualization sphere within <HAnimSegment name='c2'></HAnimSegment>--><TouchSensor description="HAnimJoint vc2, HAnimSegment c2"></TouchSensor>
+<HAnimJoint name="vc2" DEF="hanim_vc2" center="0.0066 1.5928 -0.0103" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="c2" DEF="hanim_c2"><!--<HAnimJoint name='vc2'></HAnimJoint> visualization sphere within <HAnimSegment name='c2'></HAnimSegment>--><TouchSensor description="HAnimJoint vc2, HAnimSegment c2"></TouchSensor>
 <Transform translation="0.0066 1.5928 -0.0103"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='vc2'></HAnimJoint> to <HAnimJoint name='vc1'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0066 1.5928 -0.0103 0.0066 1.6144 -0.0034"></Coordinate>
@@ -667,7 +667,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="vc1" DEF="hanim_vc1" center="0.0066 1.6144 -0.0034" stiffness="0 0 0"><HAnimSegment name="c1" DEF="hanim_c1"><!--<HAnimJoint name='vc1'></HAnimJoint> visualization sphere within <HAnimSegment name='c1'></HAnimSegment>--><TouchSensor description="HAnimJoint vc1, HAnimSegment c1"></TouchSensor>
+<HAnimJoint name="vc1" DEF="hanim_vc1" center="0.0066 1.6144 -0.0034" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="c1" DEF="hanim_c1"><!--<HAnimJoint name='vc1'></HAnimJoint> visualization sphere within <HAnimSegment name='c1'></HAnimSegment>--><TouchSensor description="HAnimJoint vc1, HAnimSegment c1"></TouchSensor>
 <Transform translation="0.0066 1.6144 -0.0034"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='vc1'></HAnimJoint> to <HAnimJoint name='skullbase'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0066 1.6144 -0.0034 0.0044 1.6209 0.0236"></Coordinate>
@@ -675,7 +675,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="skullbase" DEF="hanim_skullbase" center="0.0044 1.6209 0.0236" stiffness="0 0 0"><HAnimSegment name="skull" DEF="hanim_skull"><!--<HAnimJoint name='skullbase'></HAnimJoint> visualization sphere within <HAnimSegment name='skull'></HAnimSegment>--><TouchSensor description="HAnimJoint skullbase, HAnimSegment skull"></TouchSensor>
+<HAnimJoint name="skullbase" DEF="hanim_skullbase" center="0.0044 1.6209 0.0236" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="skull" DEF="hanim_skull"><!--<HAnimJoint name='skullbase'></HAnimJoint> visualization sphere within <HAnimSegment name='skull'></HAnimSegment>--><TouchSensor description="HAnimJoint skullbase, HAnimSegment skull"></TouchSensor>
 <Transform translation="0.0044 1.6209 0.0236"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='skullbase'></HAnimJoint> to <HAnimJoint name='l_eyeball_joint'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0044 1.6209 0.0236 0.0336 1.6332 0.0502"></Coordinate>
@@ -777,7 +777,7 @@
 <Shape USE="HAnimSiteShape"></Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_eyeball_joint" DEF="hanim_l_eyeball_joint" center="0.0336 1.6332 0.0502" stiffness="0 0 0"><HAnimSegment name="l_eyeball" DEF="hanim_l_eyeball"><!--<HAnimJoint name='l_eyeball_joint'></HAnimJoint> visualization sphere within <HAnimSegment name='l_eyeball'></HAnimSegment>--><TouchSensor description="HAnimJoint l_eyeball_joint, HAnimSegment l_eyeball"></TouchSensor>
+<HAnimJoint name="l_eyeball_joint" DEF="hanim_l_eyeball_joint" center="0.0336 1.6332 0.0502" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_eyeball" DEF="hanim_l_eyeball"><!--<HAnimJoint name='l_eyeball_joint'></HAnimJoint> visualization sphere within <HAnimSegment name='l_eyeball'></HAnimSegment>--><TouchSensor description="HAnimJoint l_eyeball_joint, HAnimSegment l_eyeball"></TouchSensor>
 <Transform translation="0.0336 1.6332 0.0502"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSite/Viewpoint visualization line segment from ancestor <HAnimJoint name='l_eyeball_joint'></HAnimJoint> to <HAnimSite name='l_eyeball_site_view'></HAnimSite>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0336 1.6332 0.0502 0.034 1.64 0.05"></Coordinate>
@@ -796,17 +796,17 @@
 </HAnimSite>
 </HAnimSegment>
 </HAnimJoint>
-<HAnimJoint name="l_eyelid_joint" DEF="hanim_l_eyelid_joint" center="0.0336 1.6332 0.0502" stiffness="0 0 0"><HAnimSegment name="l_eyelid" DEF="hanim_l_eyelid"><!--<HAnimJoint name='l_eyelid_joint'></HAnimJoint> visualization sphere within <HAnimSegment name='l_eyelid'></HAnimSegment>--><TouchSensor description="HAnimJoint l_eyelid_joint, HAnimSegment l_eyelid"></TouchSensor>
+<HAnimJoint name="l_eyelid_joint" DEF="hanim_l_eyelid_joint" center="0.0336 1.6332 0.0502" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_eyelid" DEF="hanim_l_eyelid"><!--<HAnimJoint name='l_eyelid_joint'></HAnimJoint> visualization sphere within <HAnimSegment name='l_eyelid'></HAnimSegment>--><TouchSensor description="HAnimJoint l_eyelid_joint, HAnimSegment l_eyelid"></TouchSensor>
 <Transform translation="0.0336 1.6332 0.0502"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 </HAnimSegment>
 </HAnimJoint>
-<HAnimJoint name="l_eyebrow_joint" DEF="hanim_l_eyebrow_joint" center="0.0336 1.635 0.0506" stiffness="0 0 0"><HAnimSegment name="l_eyebrow" DEF="hanim_l_eyebrow"><!--<HAnimJoint name='l_eyebrow_joint'></HAnimJoint> visualization sphere within <HAnimSegment name='l_eyebrow'></HAnimSegment>--><TouchSensor description="HAnimJoint l_eyebrow_joint, HAnimSegment l_eyebrow"></TouchSensor>
+<HAnimJoint name="l_eyebrow_joint" DEF="hanim_l_eyebrow_joint" center="0.0336 1.635 0.0506" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_eyebrow" DEF="hanim_l_eyebrow"><!--<HAnimJoint name='l_eyebrow_joint'></HAnimJoint> visualization sphere within <HAnimSegment name='l_eyebrow'></HAnimSegment>--><TouchSensor description="HAnimJoint l_eyebrow_joint, HAnimSegment l_eyebrow"></TouchSensor>
 <Transform translation="0.0336 1.635 0.0506"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 </HAnimSegment>
 </HAnimJoint>
-<HAnimJoint name="r_eyeball_joint" DEF="hanim_r_eyeball_joint" center="-0.0336 1.6332 0.0502" stiffness="0 0 0"><HAnimSegment name="r_eyeball" DEF="hanim_r_eyeball"><!--<HAnimJoint name='r_eyeball_joint'></HAnimJoint> visualization sphere within <HAnimSegment name='r_eyeball'></HAnimSegment>--><TouchSensor description="HAnimJoint r_eyeball_joint, HAnimSegment r_eyeball"></TouchSensor>
+<HAnimJoint name="r_eyeball_joint" DEF="hanim_r_eyeball_joint" center="-0.0336 1.6332 0.0502" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_eyeball" DEF="hanim_r_eyeball"><!--<HAnimJoint name='r_eyeball_joint'></HAnimJoint> visualization sphere within <HAnimSegment name='r_eyeball'></HAnimSegment>--><TouchSensor description="HAnimJoint r_eyeball_joint, HAnimSegment r_eyeball"></TouchSensor>
 <Transform translation="-0.0336 1.6332 0.0502"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSite/Viewpoint visualization line segment from ancestor <HAnimJoint name='r_eyeball_joint'></HAnimJoint> to <HAnimSite name='r_eyeball_site_view'></HAnimSite>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.0336 1.6332 0.0502 -0.034 1.64 0.05"></Coordinate>
@@ -821,17 +821,17 @@
 </HAnimSite>
 </HAnimSegment>
 </HAnimJoint>
-<HAnimJoint name="r_eyelid_joint" DEF="hanim_r_eyelid_joint" center="-0.0336 1.6332 0.0502" stiffness="0 0 0"><HAnimSegment name="r_eyelid" DEF="hanim_r_eyelid"><!--<HAnimJoint name='r_eyelid_joint'></HAnimJoint> visualization sphere within <HAnimSegment name='r_eyelid'></HAnimSegment>--><TouchSensor description="HAnimJoint r_eyelid_joint, HAnimSegment r_eyelid"></TouchSensor>
+<HAnimJoint name="r_eyelid_joint" DEF="hanim_r_eyelid_joint" center="-0.0336 1.6332 0.0502" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_eyelid" DEF="hanim_r_eyelid"><!--<HAnimJoint name='r_eyelid_joint'></HAnimJoint> visualization sphere within <HAnimSegment name='r_eyelid'></HAnimSegment>--><TouchSensor description="HAnimJoint r_eyelid_joint, HAnimSegment r_eyelid"></TouchSensor>
 <Transform translation="-0.0336 1.6332 0.0502"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 </HAnimSegment>
 </HAnimJoint>
-<HAnimJoint name="r_eyebrow_joint" DEF="hanim_r_eyebrow_joint" center="-0.0336 1.635 0.0506" stiffness="0 0 0"><HAnimSegment name="r_eyebrow" DEF="hanim_r_eyebrow"><!--<HAnimJoint name='r_eyebrow_joint'></HAnimJoint> visualization sphere within <HAnimSegment name='r_eyebrow'></HAnimSegment>--><TouchSensor description="HAnimJoint r_eyebrow_joint, HAnimSegment r_eyebrow"></TouchSensor>
+<HAnimJoint name="r_eyebrow_joint" DEF="hanim_r_eyebrow_joint" center="-0.0336 1.635 0.0506" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_eyebrow" DEF="hanim_r_eyebrow"><!--<HAnimJoint name='r_eyebrow_joint'></HAnimJoint> visualization sphere within <HAnimSegment name='r_eyebrow'></HAnimSegment>--><TouchSensor description="HAnimJoint r_eyebrow_joint, HAnimSegment r_eyebrow"></TouchSensor>
 <Transform translation="-0.0336 1.635 0.0506"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 </HAnimSegment>
 </HAnimJoint>
-<!--Single joint, single segment for jaw, two sites for left/right TMJs https://en.wikipedia.org/wiki/Temporomandibular_joint--><HAnimJoint name="temporomandibular" DEF="hanim_temporomandibular" center="0 1.63 0.015" stiffness="0 0 0"><HAnimSegment name="jaw" DEF="hanim_jaw"><!--<HAnimJoint name='temporomandibular'></HAnimJoint> visualization sphere within <HAnimSegment name='jaw'></HAnimSegment>--><TouchSensor description="HAnimJoint temporomandibular, HAnimSegment jaw"></TouchSensor>
+<!--Single joint, single segment for jaw, two sites for left/right TMJs https://en.wikipedia.org/wiki/Temporomandibular_joint--><HAnimJoint name="temporomandibular" DEF="hanim_temporomandibular" center="0 1.63 0.015" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="jaw" DEF="hanim_jaw"><!--<HAnimJoint name='temporomandibular'></HAnimJoint> visualization sphere within <HAnimSegment name='jaw'></HAnimSegment>--><TouchSensor description="HAnimJoint temporomandibular, HAnimSegment jaw"></TouchSensor>
 <Transform translation="0 1.63 0.015"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSite visualization line segment from ancestor <HAnimJoint name='temporomandibular'></HAnimJoint> to <HAnimSite name='temporomandibular_l_site'></HAnimSite>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0 1.63 0.015 0.045 1.63 0"></Coordinate>
@@ -858,7 +858,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="l_sternoclavicular" DEF="hanim_l_sternoclavicular" center="0.082 1.4488 -0.0353" stiffness="0 0 0"><HAnimSegment name="l_clavicle" DEF="hanim_l_clavicle"><!--<HAnimJoint name='l_sternoclavicular'></HAnimJoint> visualization sphere within <HAnimSegment name='l_clavicle'></HAnimSegment>--><TouchSensor description="HAnimJoint l_sternoclavicular, HAnimSegment l_clavicle"></TouchSensor>
+<HAnimJoint name="l_sternoclavicular" DEF="hanim_l_sternoclavicular" center="0.082 1.4488 -0.0353" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_clavicle" DEF="hanim_l_clavicle"><!--<HAnimJoint name='l_sternoclavicular'></HAnimJoint> visualization sphere within <HAnimSegment name='l_clavicle'></HAnimSegment>--><TouchSensor description="HAnimJoint l_sternoclavicular, HAnimSegment l_clavicle"></TouchSensor>
 <Transform translation="0.082 1.4488 -0.0353"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='l_sternoclavicular'></HAnimJoint> to <HAnimJoint name='l_acromioclavicular'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.082 1.4488 -0.0353 0.0962 1.4269 -0.0424"></Coordinate>
@@ -894,7 +894,7 @@
 <Shape USE="HAnimSiteShape"></Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_acromioclavicular" DEF="hanim_l_acromioclavicular" center="0.0962 1.4269 -0.0424" stiffness="0 0 0"><HAnimSegment name="l_scapula" DEF="hanim_l_scapula"><!--<HAnimJoint name='l_acromioclavicular'></HAnimJoint> visualization sphere within <HAnimSegment name='l_scapula'></HAnimSegment>--><TouchSensor description="HAnimJoint l_acromioclavicular, HAnimSegment l_scapula"></TouchSensor>
+<HAnimJoint name="l_acromioclavicular" DEF="hanim_l_acromioclavicular" center="0.0962 1.4269 -0.0424" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_scapula" DEF="hanim_l_scapula"><!--<HAnimJoint name='l_acromioclavicular'></HAnimJoint> visualization sphere within <HAnimSegment name='l_scapula'></HAnimSegment>--><TouchSensor description="HAnimJoint l_acromioclavicular, HAnimSegment l_scapula"></TouchSensor>
 <Transform translation="0.0962 1.4269 -0.0424"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='l_acromioclavicular'></HAnimJoint> to <HAnimJoint name='l_shoulder'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.0962 1.4269 -0.0424 0.2029 1.4376 -0.0387"></Coordinate>
@@ -902,7 +902,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_shoulder" DEF="hanim_l_shoulder" center="0.2029 1.4376 -0.0387" stiffness="0 0 0"><HAnimSegment name="l_upperarm" DEF="hanim_l_upperarm"><!--<HAnimJoint name='l_shoulder'></HAnimJoint> visualization sphere within <HAnimSegment name='l_upperarm'></HAnimSegment>--><TouchSensor description="HAnimJoint l_shoulder, HAnimSegment l_upperarm"></TouchSensor>
+<HAnimJoint name="l_shoulder" DEF="hanim_l_shoulder" center="0.2029 1.4376 -0.0387" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_upperarm" DEF="hanim_l_upperarm"><!--<HAnimJoint name='l_shoulder'></HAnimJoint> visualization sphere within <HAnimSegment name='l_upperarm'></HAnimSegment>--><TouchSensor description="HAnimJoint l_shoulder, HAnimSegment l_upperarm"></TouchSensor>
 <Transform translation="0.2029 1.4376 -0.0387"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='l_shoulder'></HAnimJoint> to <HAnimJoint name='l_elbow'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.2029 1.4376 -0.0387 0.2014 1.1357 -0.0682"></Coordinate>
@@ -917,7 +917,7 @@
 <Shape USE="HAnimSiteShape"></Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_elbow" DEF="hanim_l_elbow" center="0.2014 1.1357 -0.0682" stiffness="0 0 0"><HAnimSegment name="l_forearm" DEF="hanim_l_forearm"><!--<HAnimJoint name='l_elbow'></HAnimJoint> visualization sphere within <HAnimSegment name='l_forearm'></HAnimSegment>--><TouchSensor description="HAnimJoint l_elbow, HAnimSegment l_forearm"></TouchSensor>
+<HAnimJoint name="l_elbow" DEF="hanim_l_elbow" center="0.2014 1.1357 -0.0682" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_forearm" DEF="hanim_l_forearm"><!--<HAnimJoint name='l_elbow'></HAnimJoint> visualization sphere within <HAnimSegment name='l_forearm'></HAnimSegment>--><TouchSensor description="HAnimJoint l_elbow, HAnimSegment l_forearm"></TouchSensor>
 <Transform translation="0.2014 1.1357 -0.0682"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='l_elbow'></HAnimJoint> to <HAnimJoint name='l_wrist'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.2014 1.1357 -0.0682 0.1984 0.8663 -0.0583"></Coordinate>
@@ -953,7 +953,7 @@
 <Shape USE="HAnimSiteShape"></Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_wrist" DEF="hanim_l_wrist" center="0.1984 0.8663 -0.0583" stiffness="0 0 0"><HAnimSegment name="l_hand" DEF="hanim_l_hand"><!--<HAnimJoint name='l_wrist'></HAnimJoint> visualization sphere within <HAnimSegment name='l_hand'></HAnimSegment>--><TouchSensor description="HAnimJoint l_wrist, HAnimSegment l_hand"></TouchSensor>
+<HAnimJoint name="l_wrist" DEF="hanim_l_wrist" center="0.1984 0.8663 -0.0583" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_hand" DEF="hanim_l_hand"><!--<HAnimJoint name='l_wrist'></HAnimJoint> visualization sphere within <HAnimSegment name='l_hand'></HAnimSegment>--><TouchSensor description="HAnimJoint l_wrist, HAnimSegment l_hand"></TouchSensor>
 <Transform translation="0.1984 0.8663 -0.0583"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='l_wrist'></HAnimJoint> to <HAnimJoint name='l_thumb1'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.1984 0.8663 -0.0583 0.1924 0.8472 -0.0534"></Coordinate>
@@ -1008,7 +1008,7 @@
 </Anchor>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="l_thumb1" DEF="hanim_l_thumb1" center="0.1924 0.8472 -0.0534" stiffness="0 0 0"><HAnimSegment name="l_thumb_metacarpal" DEF="hanim_l_thumb_metacarpal"><!--<HAnimJoint name='l_thumb1'></HAnimJoint> visualization sphere within <HAnimSegment name='l_thumb_metacarpal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_thumb1, HAnimSegment l_thumb_metacarpal"></TouchSensor>
+<HAnimJoint name="l_thumb1" DEF="hanim_l_thumb1" center="0.1924 0.8472 -0.0534" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_thumb_metacarpal" DEF="hanim_l_thumb_metacarpal"><!--<HAnimJoint name='l_thumb1'></HAnimJoint> visualization sphere within <HAnimSegment name='l_thumb_metacarpal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_thumb1, HAnimSegment l_thumb_metacarpal"></TouchSensor>
 <Transform translation="0.1924 0.8472 -0.0534"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='l_thumb1'></HAnimJoint> to <HAnimJoint name='l_thumb2'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.1924 0.8472 -0.0534 0.1951 0.8226 0.0246"></Coordinate>
@@ -1016,7 +1016,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_thumb2" DEF="hanim_l_thumb2" center="0.1951 0.8226 0.0246" stiffness="0 0 0"><HAnimSegment name="l_thumb_proximal" DEF="hanim_l_thumb_proximal"><!--<HAnimJoint name='l_thumb2'></HAnimJoint> visualization sphere within <HAnimSegment name='l_thumb_proximal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_thumb2, HAnimSegment l_thumb_proximal"></TouchSensor>
+<HAnimJoint name="l_thumb2" DEF="hanim_l_thumb2" center="0.1951 0.8226 0.0246" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_thumb_proximal" DEF="hanim_l_thumb_proximal"><!--<HAnimJoint name='l_thumb2'></HAnimJoint> visualization sphere within <HAnimSegment name='l_thumb_proximal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_thumb2, HAnimSegment l_thumb_proximal"></TouchSensor>
 <Transform translation="0.1951 0.8226 0.0246"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='l_thumb2'></HAnimJoint> to <HAnimJoint name='l_thumb3'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.1951 0.8226 0.0246 0.1955 0.8159 0.0464"></Coordinate>
@@ -1024,7 +1024,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_thumb3" DEF="hanim_l_thumb3" center="0.1955 0.8159 0.0464" stiffness="0 0 0"><HAnimSegment name="l_thumb_distal" DEF="hanim_l_thumb_distal"><!--<HAnimJoint name='l_thumb3'></HAnimJoint> visualization sphere within <HAnimSegment name='l_thumb_distal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_thumb3, HAnimSegment l_thumb_distal"></TouchSensor>
+<HAnimJoint name="l_thumb3" DEF="hanim_l_thumb3" center="0.1955 0.8159 0.0464" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_thumb_distal" DEF="hanim_l_thumb_distal"><!--<HAnimJoint name='l_thumb3'></HAnimJoint> visualization sphere within <HAnimSegment name='l_thumb_distal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_thumb3, HAnimSegment l_thumb_distal"></TouchSensor>
 <Transform translation="0.1955 0.8159 0.0464"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSite visualization line segment from ancestor <HAnimJoint name='l_thumb3'></HAnimJoint> to <HAnimSite name='l_thumb_distal_tip'></HAnimSite>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.1955 0.8159 0.0464 0.1982 0.8061 0.0759"></Coordinate>
@@ -1038,7 +1038,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="l_index0" DEF="hanim_l_index0" center="0.1983 0.8024 -0.028" stiffness="0 0 0"><HAnimSegment name="l_index_metacarpal" DEF="hanim_l_index_metacarpal"><!--<HAnimJoint name='l_index0'></HAnimJoint> visualization sphere within <HAnimSegment name='l_index_metacarpal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_index0, HAnimSegment l_index_metacarpal"></TouchSensor>
+<HAnimJoint name="l_index0" DEF="hanim_l_index0" center="0.1983 0.8024 -0.028" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_index_metacarpal" DEF="hanim_l_index_metacarpal"><!--<HAnimJoint name='l_index0'></HAnimJoint> visualization sphere within <HAnimSegment name='l_index_metacarpal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_index0, HAnimSegment l_index_metacarpal"></TouchSensor>
 <Transform translation="0.1983 0.8024 -0.028"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='l_index0'></HAnimJoint> to <HAnimJoint name='l_index1'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.1983 0.8024 -0.028 0.1983 0.7815 -0.028"></Coordinate>
@@ -1046,7 +1046,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_index1" DEF="hanim_l_index1" center="0.1983 0.7815 -0.028" stiffness="0 0 0"><HAnimSegment name="l_index_proximal" DEF="hanim_l_index_proximal"><!--<HAnimJoint name='l_index1'></HAnimJoint> visualization sphere within <HAnimSegment name='l_index_proximal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_index1, HAnimSegment l_index_proximal"></TouchSensor>
+<HAnimJoint name="l_index1" DEF="hanim_l_index1" center="0.1983 0.7815 -0.028" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_index_proximal" DEF="hanim_l_index_proximal"><!--<HAnimJoint name='l_index1'></HAnimJoint> visualization sphere within <HAnimSegment name='l_index_proximal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_index1, HAnimSegment l_index_proximal"></TouchSensor>
 <Transform translation="0.1983 0.7815 -0.028"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='l_index1'></HAnimJoint> to <HAnimJoint name='l_index2'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.1983 0.7815 -0.028 0.2017 0.7363 -0.0248"></Coordinate>
@@ -1054,7 +1054,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_index2" DEF="hanim_l_index2" center="0.2017 0.7363 -0.0248" stiffness="0 0 0"><HAnimSegment name="l_index_middle" DEF="hanim_l_index_middle"><!--<HAnimJoint name='l_index2'></HAnimJoint> visualization sphere within <HAnimSegment name='l_index_middle'></HAnimSegment>--><TouchSensor description="HAnimJoint l_index2, HAnimSegment l_index_middle"></TouchSensor>
+<HAnimJoint name="l_index2" DEF="hanim_l_index2" center="0.2017 0.7363 -0.0248" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_index_middle" DEF="hanim_l_index_middle"><!--<HAnimJoint name='l_index2'></HAnimJoint> visualization sphere within <HAnimSegment name='l_index_middle'></HAnimSegment>--><TouchSensor description="HAnimJoint l_index2, HAnimSegment l_index_middle"></TouchSensor>
 <Transform translation="0.2017 0.7363 -0.0248"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='l_index2'></HAnimJoint> to <HAnimJoint name='l_index3'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.2017 0.7363 -0.0248 0.2028 0.7139 -0.0236"></Coordinate>
@@ -1062,7 +1062,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_index3" DEF="hanim_l_index3" center="0.2028 0.7139 -0.0236" stiffness="0 0 0"><HAnimSegment name="l_index_distal" DEF="hanim_l_index_distal"><!--<HAnimJoint name='l_index3'></HAnimJoint> visualization sphere within <HAnimSegment name='l_index_distal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_index3, HAnimSegment l_index_distal"></TouchSensor>
+<HAnimJoint name="l_index3" DEF="hanim_l_index3" center="0.2028 0.7139 -0.0236" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_index_distal" DEF="hanim_l_index_distal"><!--<HAnimJoint name='l_index3'></HAnimJoint> visualization sphere within <HAnimSegment name='l_index_distal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_index3, HAnimSegment l_index_distal"></TouchSensor>
 <Transform translation="0.2028 0.7139 -0.0236"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSite visualization line segment from ancestor <HAnimJoint name='l_index3'></HAnimJoint> to <HAnimSite name='l_index_distal_tip'></HAnimSite>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.2028 0.7139 -0.0236 0.2089 0.6858 -0.0245"></Coordinate>
@@ -1084,7 +1084,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="l_middle0" DEF="hanim_l_middle0" center="0.1987 0.8029 -0.053" stiffness="0 0 0"><HAnimSegment name="l_middle_metacarpal" DEF="hanim_l_middle_metacarpal"><!--<HAnimJoint name='l_middle0'></HAnimJoint> visualization sphere within <HAnimSegment name='l_middle_metacarpal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_middle0, HAnimSegment l_middle_metacarpal"></TouchSensor>
+<HAnimJoint name="l_middle0" DEF="hanim_l_middle0" center="0.1987 0.8029 -0.053" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_middle_metacarpal" DEF="hanim_l_middle_metacarpal"><!--<HAnimJoint name='l_middle0'></HAnimJoint> visualization sphere within <HAnimSegment name='l_middle_metacarpal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_middle0, HAnimSegment l_middle_metacarpal"></TouchSensor>
 <Transform translation="0.1987 0.8029 -0.053"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='l_middle0'></HAnimJoint> to <HAnimJoint name='l_middle1'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.1987 0.8029 -0.053 0.1987 0.7818 -0.053"></Coordinate>
@@ -1092,7 +1092,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_middle1" DEF="hanim_l_middle1" center="0.1987 0.7818 -0.053" stiffness="0 0 0"><HAnimSegment name="l_middle_proximal" DEF="hanim_l_middle_proximal"><!--<HAnimJoint name='l_middle1'></HAnimJoint> visualization sphere within <HAnimSegment name='l_middle_proximal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_middle1, HAnimSegment l_middle_proximal"></TouchSensor>
+<HAnimJoint name="l_middle1" DEF="hanim_l_middle1" center="0.1987 0.7818 -0.053" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_middle_proximal" DEF="hanim_l_middle_proximal"><!--<HAnimJoint name='l_middle1'></HAnimJoint> visualization sphere within <HAnimSegment name='l_middle_proximal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_middle1, HAnimSegment l_middle_proximal"></TouchSensor>
 <Transform translation="0.1987 0.7818 -0.053"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='l_middle1'></HAnimJoint> to <HAnimJoint name='l_middle2'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.1987 0.7818 -0.053 0.2013 0.7273 -0.0503"></Coordinate>
@@ -1100,7 +1100,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_middle2" DEF="hanim_l_middle2" center="0.2013 0.7273 -0.0503" stiffness="0 0 0"><HAnimSegment name="l_middle_middle" DEF="hanim_l_middle_middle"><!--<HAnimJoint name='l_middle2'></HAnimJoint> visualization sphere within <HAnimSegment name='l_middle_middle'></HAnimSegment>--><TouchSensor description="HAnimJoint l_middle2, HAnimSegment l_middle_middle"></TouchSensor>
+<HAnimJoint name="l_middle2" DEF="hanim_l_middle2" center="0.2013 0.7273 -0.0503" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_middle_middle" DEF="hanim_l_middle_middle"><!--<HAnimJoint name='l_middle2'></HAnimJoint> visualization sphere within <HAnimSegment name='l_middle_middle'></HAnimSegment>--><TouchSensor description="HAnimJoint l_middle2, HAnimSegment l_middle_middle"></TouchSensor>
 <Transform translation="0.2013 0.7273 -0.0503"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='l_middle2'></HAnimJoint> to <HAnimJoint name='l_middle3'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.2013 0.7273 -0.0503 0.2026 0.7011 -0.0494"></Coordinate>
@@ -1108,7 +1108,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_middle3" DEF="hanim_l_middle3" center="0.2026 0.7011 -0.0494" stiffness="0 0 0"><HAnimSegment name="l_middle_distal" DEF="hanim_l_middle_distal"><!--<HAnimJoint name='l_middle3'></HAnimJoint> visualization sphere within <HAnimSegment name='l_middle_distal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_middle3, HAnimSegment l_middle_distal"></TouchSensor>
+<HAnimJoint name="l_middle3" DEF="hanim_l_middle3" center="0.2026 0.7011 -0.0494" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_middle_distal" DEF="hanim_l_middle_distal"><!--<HAnimJoint name='l_middle3'></HAnimJoint> visualization sphere within <HAnimSegment name='l_middle_distal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_middle3, HAnimSegment l_middle_distal"></TouchSensor>
 <Transform translation="0.2026 0.7011 -0.0494"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSite visualization line segment from ancestor <HAnimJoint name='l_middle3'></HAnimJoint> to <HAnimSite name='l_middle_distal_tip'></HAnimSite>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.2026 0.7011 -0.0494 0.208 0.6731 -0.0491"></Coordinate>
@@ -1123,7 +1123,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="l_ring0" DEF="hanim_l_ring0" center="0.1956 0.8019 -0.0794" stiffness="0 0 0"><HAnimSegment name="l_ring_metacarpal" DEF="hanim_l_ring_metacarpal"><!--<HAnimJoint name='l_ring0'></HAnimJoint> visualization sphere within <HAnimSegment name='l_ring_metacarpal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_ring0, HAnimSegment l_ring_metacarpal"></TouchSensor>
+<HAnimJoint name="l_ring0" DEF="hanim_l_ring0" center="0.1956 0.8019 -0.0794" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_ring_metacarpal" DEF="hanim_l_ring_metacarpal"><!--<HAnimJoint name='l_ring0'></HAnimJoint> visualization sphere within <HAnimSegment name='l_ring_metacarpal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_ring0, HAnimSegment l_ring_metacarpal"></TouchSensor>
 <Transform translation="0.1956 0.8019 -0.0794"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='l_ring0'></HAnimJoint> to <HAnimJoint name='l_ring1'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.1956 0.8019 -0.0794 0.1956 0.7815 -0.0794"></Coordinate>
@@ -1131,7 +1131,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_ring1" DEF="hanim_l_ring1" center="0.1956 0.7815 -0.0794" stiffness="0 0 0"><HAnimSegment name="l_ring_proximal" DEF="hanim_l_ring_proximal"><!--<HAnimJoint name='l_ring1'></HAnimJoint> visualization sphere within <HAnimSegment name='l_ring_proximal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_ring1, HAnimSegment l_ring_proximal"></TouchSensor>
+<HAnimJoint name="l_ring1" DEF="hanim_l_ring1" center="0.1956 0.7815 -0.0794" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_ring_proximal" DEF="hanim_l_ring_proximal"><!--<HAnimJoint name='l_ring1'></HAnimJoint> visualization sphere within <HAnimSegment name='l_ring_proximal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_ring1, HAnimSegment l_ring_proximal"></TouchSensor>
 <Transform translation="0.1956 0.7815 -0.0794"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='l_ring1'></HAnimJoint> to <HAnimJoint name='l_ring2'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.1956 0.7815 -0.0794 0.1973 0.7287 -0.0777"></Coordinate>
@@ -1139,7 +1139,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_ring2" DEF="hanim_l_ring2" center="0.1973 0.7287 -0.0777" stiffness="0 0 0"><HAnimSegment name="l_ring_middle" DEF="hanim_l_ring_middle"><!--<HAnimJoint name='l_ring2'></HAnimJoint> visualization sphere within <HAnimSegment name='l_ring_middle'></HAnimSegment>--><TouchSensor description="HAnimJoint l_ring2, HAnimSegment l_ring_middle"></TouchSensor>
+<HAnimJoint name="l_ring2" DEF="hanim_l_ring2" center="0.1973 0.7287 -0.0777" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_ring_middle" DEF="hanim_l_ring_middle"><!--<HAnimJoint name='l_ring2'></HAnimJoint> visualization sphere within <HAnimSegment name='l_ring_middle'></HAnimSegment>--><TouchSensor description="HAnimJoint l_ring2, HAnimSegment l_ring_middle"></TouchSensor>
 <Transform translation="0.1973 0.7287 -0.0777"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='l_ring2'></HAnimJoint> to <HAnimJoint name='l_ring3'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.1973 0.7287 -0.0777 0.1983 0.7045 -0.0767"></Coordinate>
@@ -1147,7 +1147,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_ring3" DEF="hanim_l_ring3" center="0.1983 0.7045 -0.0767" stiffness="0 0 0"><HAnimSegment name="l_ring_distal" DEF="hanim_l_ring_distal"><!--<HAnimJoint name='l_ring3'></HAnimJoint> visualization sphere within <HAnimSegment name='l_ring_distal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_ring3, HAnimSegment l_ring_distal"></TouchSensor>
+<HAnimJoint name="l_ring3" DEF="hanim_l_ring3" center="0.1983 0.7045 -0.0767" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_ring_distal" DEF="hanim_l_ring_distal"><!--<HAnimJoint name='l_ring3'></HAnimJoint> visualization sphere within <HAnimSegment name='l_ring_distal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_ring3, HAnimSegment l_ring_distal"></TouchSensor>
 <Transform translation="0.1983 0.7045 -0.0767"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSite visualization line segment from ancestor <HAnimJoint name='l_ring3'></HAnimJoint> to <HAnimSite name='l_ring_distal_tip'></HAnimSite>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.1983 0.7045 -0.0767 0.2035 0.675 -0.0756"></Coordinate>
@@ -1162,7 +1162,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="l_pinky0" DEF="hanim_l_pinky0" center="0.1925 0.8066 -0.1036" stiffness="0 0 0"><HAnimSegment name="l_pinky_metacarpal" DEF="hanim_l_pinky_metacarpal"><!--<HAnimJoint name='l_pinky0'></HAnimJoint> visualization sphere within <HAnimSegment name='l_pinky_metacarpal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_pinky0, HAnimSegment l_pinky_metacarpal"></TouchSensor>
+<HAnimJoint name="l_pinky0" DEF="hanim_l_pinky0" center="0.1925 0.8066 -0.1036" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_pinky_metacarpal" DEF="hanim_l_pinky_metacarpal"><!--<HAnimJoint name='l_pinky0'></HAnimJoint> visualization sphere within <HAnimSegment name='l_pinky_metacarpal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_pinky0, HAnimSegment l_pinky_metacarpal"></TouchSensor>
 <Transform translation="0.1925 0.8066 -0.1036"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='l_pinky0'></HAnimJoint> to <HAnimJoint name='l_pinky1'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.1925 0.8066 -0.1036 0.1925 0.7866 -0.1036"></Coordinate>
@@ -1170,7 +1170,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_pinky1" DEF="hanim_l_pinky1" center="0.1925 0.7866 -0.1036" stiffness="0 0 0"><HAnimSegment name="l_pinky_proximal" DEF="hanim_l_pinky_proximal"><!--<HAnimJoint name='l_pinky1'></HAnimJoint> visualization sphere within <HAnimSegment name='l_pinky_proximal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_pinky1, HAnimSegment l_pinky_proximal"></TouchSensor>
+<HAnimJoint name="l_pinky1" DEF="hanim_l_pinky1" center="0.1925 0.7866 -0.1036" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_pinky_proximal" DEF="hanim_l_pinky_proximal"><!--<HAnimJoint name='l_pinky1'></HAnimJoint> visualization sphere within <HAnimSegment name='l_pinky_proximal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_pinky1, HAnimSegment l_pinky_proximal"></TouchSensor>
 <Transform translation="0.1925 0.7866 -0.1036"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='l_pinky1'></HAnimJoint> to <HAnimJoint name='l_pinky2'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.1925 0.7866 -0.1036 0.1938 0.7452 -0.1024"></Coordinate>
@@ -1178,7 +1178,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_pinky2" DEF="hanim_l_pinky2" center="0.1938 0.7452 -0.1024" stiffness="0 0 0"><HAnimSegment name="l_pinky_middle" DEF="hanim_l_pinky_middle"><!--<HAnimJoint name='l_pinky2'></HAnimJoint> visualization sphere within <HAnimSegment name='l_pinky_middle'></HAnimSegment>--><TouchSensor description="HAnimJoint l_pinky2, HAnimSegment l_pinky_middle"></TouchSensor>
+<HAnimJoint name="l_pinky2" DEF="hanim_l_pinky2" center="0.1938 0.7452 -0.1024" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_pinky_middle" DEF="hanim_l_pinky_middle"><!--<HAnimJoint name='l_pinky2'></HAnimJoint> visualization sphere within <HAnimSegment name='l_pinky_middle'></HAnimSegment>--><TouchSensor description="HAnimJoint l_pinky2, HAnimSegment l_pinky_middle"></TouchSensor>
 <Transform translation="0.1938 0.7452 -0.1024"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='l_pinky2'></HAnimJoint> to <HAnimJoint name='l_pinky3'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.1938 0.7452 -0.1024 0.1948 0.7277 -0.1017"></Coordinate>
@@ -1186,7 +1186,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_pinky3" DEF="hanim_l_pinky3" center="0.1948 0.7277 -0.1017" stiffness="0 0 0"><HAnimSegment name="l_pinky_distal" DEF="hanim_l_pinky_distal"><!--<HAnimJoint name='l_pinky3'></HAnimJoint> visualization sphere within <HAnimSegment name='l_pinky_distal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_pinky3, HAnimSegment l_pinky_distal"></TouchSensor>
+<HAnimJoint name="l_pinky3" DEF="hanim_l_pinky3" center="0.1948 0.7277 -0.1017" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_pinky_distal" DEF="hanim_l_pinky_distal"><!--<HAnimJoint name='l_pinky3'></HAnimJoint> visualization sphere within <HAnimSegment name='l_pinky_distal'></HAnimSegment>--><TouchSensor description="HAnimJoint l_pinky3, HAnimSegment l_pinky_distal"></TouchSensor>
 <Transform translation="0.1948 0.7277 -0.1017"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSite visualization line segment from ancestor <HAnimJoint name='l_pinky3'></HAnimJoint> to <HAnimSite name='l_pinky_distal_tip'></HAnimSite>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.1948 0.7277 -0.1017 0.2014 0.7009 -0.1012"></Coordinate>
@@ -1206,7 +1206,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_sternoclavicular" DEF="hanim_r_sternoclavicular" center="-0.082 1.4488 -0.0353" stiffness="0 0 0"><HAnimSegment name="r_clavicle" DEF="hanim_r_clavicle"><!--<HAnimJoint name='r_sternoclavicular'></HAnimJoint> visualization sphere within <HAnimSegment name='r_clavicle'></HAnimSegment>--><TouchSensor description="HAnimJoint r_sternoclavicular, HAnimSegment r_clavicle"></TouchSensor>
+<HAnimJoint name="r_sternoclavicular" DEF="hanim_r_sternoclavicular" center="-0.082 1.4488 -0.0353" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_clavicle" DEF="hanim_r_clavicle"><!--<HAnimJoint name='r_sternoclavicular'></HAnimJoint> visualization sphere within <HAnimSegment name='r_clavicle'></HAnimSegment>--><TouchSensor description="HAnimJoint r_sternoclavicular, HAnimSegment r_clavicle"></TouchSensor>
 <Transform translation="-0.082 1.4488 -0.0353"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='r_sternoclavicular'></HAnimJoint> to <HAnimJoint name='r_acromioclavicular'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.082 1.4488 -0.0353 -0.0962 1.4269 -0.0424"></Coordinate>
@@ -1242,7 +1242,7 @@
 <Shape USE="HAnimSiteShape"></Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="r_acromioclavicular" DEF="hanim_r_acromioclavicular" center="-0.0962 1.4269 -0.0424" stiffness="0 0 0"><HAnimSegment name="r_scapula" DEF="hanim_r_scapula"><!--<HAnimJoint name='r_acromioclavicular'></HAnimJoint> visualization sphere within <HAnimSegment name='r_scapula'></HAnimSegment>--><TouchSensor description="HAnimJoint r_acromioclavicular, HAnimSegment r_scapula"></TouchSensor>
+<HAnimJoint name="r_acromioclavicular" DEF="hanim_r_acromioclavicular" center="-0.0962 1.4269 -0.0424" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_scapula" DEF="hanim_r_scapula"><!--<HAnimJoint name='r_acromioclavicular'></HAnimJoint> visualization sphere within <HAnimSegment name='r_scapula'></HAnimSegment>--><TouchSensor description="HAnimJoint r_acromioclavicular, HAnimSegment r_scapula"></TouchSensor>
 <Transform translation="-0.0962 1.4269 -0.0424"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='r_acromioclavicular'></HAnimJoint> to <HAnimJoint name='r_shoulder'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.0962 1.4269 -0.0424 -0.2029 1.4376 -0.0387"></Coordinate>
@@ -1250,7 +1250,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="r_shoulder" DEF="hanim_r_shoulder" center="-0.2029 1.4376 -0.0387" stiffness="0 0 0"><HAnimSegment name="r_upperarm" DEF="hanim_r_upperarm"><!--<HAnimJoint name='r_shoulder'></HAnimJoint> visualization sphere within <HAnimSegment name='r_upperarm'></HAnimSegment>--><TouchSensor description="HAnimJoint r_shoulder, HAnimSegment r_upperarm"></TouchSensor>
+<HAnimJoint name="r_shoulder" DEF="hanim_r_shoulder" center="-0.2029 1.4376 -0.0387" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_upperarm" DEF="hanim_r_upperarm"><!--<HAnimJoint name='r_shoulder'></HAnimJoint> visualization sphere within <HAnimSegment name='r_upperarm'></HAnimSegment>--><TouchSensor description="HAnimJoint r_shoulder, HAnimSegment r_upperarm"></TouchSensor>
 <Transform translation="-0.2029 1.4376 -0.0387"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='r_shoulder'></HAnimJoint> to <HAnimJoint name='r_elbow'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.2029 1.4376 -0.0387 -0.2014 1.1357 -0.0682"></Coordinate>
@@ -1265,7 +1265,7 @@
 <Shape USE="HAnimSiteShape"></Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="r_elbow" DEF="hanim_r_elbow" center="-0.2014 1.1357 -0.0682" stiffness="0 0 0"><HAnimSegment name="r_forearm" DEF="hanim_r_forearm"><!--<HAnimJoint name='r_elbow'></HAnimJoint> visualization sphere within <HAnimSegment name='r_forearm'></HAnimSegment>--><TouchSensor description="HAnimJoint r_elbow, HAnimSegment r_forearm"></TouchSensor>
+<HAnimJoint name="r_elbow" DEF="hanim_r_elbow" center="-0.2014 1.1357 -0.0682" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_forearm" DEF="hanim_r_forearm"><!--<HAnimJoint name='r_elbow'></HAnimJoint> visualization sphere within <HAnimSegment name='r_forearm'></HAnimSegment>--><TouchSensor description="HAnimJoint r_elbow, HAnimSegment r_forearm"></TouchSensor>
 <Transform translation="-0.2014 1.1357 -0.0682"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='r_elbow'></HAnimJoint> to <HAnimJoint name='r_wrist'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.2014 1.1357 -0.0682 -0.1984 0.8663 -0.0583"></Coordinate>
@@ -1301,7 +1301,7 @@
 <Shape USE="HAnimSiteShape"></Shape>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="r_wrist" DEF="hanim_r_wrist" center="-0.1984 0.8663 -0.0583" stiffness="0 0 0"><HAnimSegment name="r_hand" DEF="hanim_r_hand"><!--<HAnimJoint name='r_wrist'></HAnimJoint> visualization sphere within <HAnimSegment name='r_hand'></HAnimSegment>--><TouchSensor description="HAnimJoint r_wrist, HAnimSegment r_hand"></TouchSensor>
+<HAnimJoint name="r_wrist" DEF="hanim_r_wrist" center="-0.1984 0.8663 -0.0583" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_hand" DEF="hanim_r_hand"><!--<HAnimJoint name='r_wrist'></HAnimJoint> visualization sphere within <HAnimSegment name='r_hand'></HAnimSegment>--><TouchSensor description="HAnimJoint r_wrist, HAnimSegment r_hand"></TouchSensor>
 <Transform translation="-0.1984 0.8663 -0.0583"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='r_wrist'></HAnimJoint> to <HAnimJoint name='r_thumb1'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.1984 0.8663 -0.0583 -0.1924 0.8472 -0.0534"></Coordinate>
@@ -1356,7 +1356,7 @@
 </Anchor>
 </HAnimSite>
 </HAnimSegment>
-<HAnimJoint name="r_thumb1" DEF="hanim_r_thumb1" center="-0.1924 0.8472 -0.0534" stiffness="0 0 0"><HAnimSegment name="r_thumb_metacarpal" DEF="hanim_r_thumb_metacarpal"><!--<HAnimJoint name='r_thumb1'></HAnimJoint> visualization sphere within <HAnimSegment name='r_thumb_metacarpal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_thumb1, HAnimSegment r_thumb_metacarpal"></TouchSensor>
+<HAnimJoint name="r_thumb1" DEF="hanim_r_thumb1" center="-0.1924 0.8472 -0.0534" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_thumb_metacarpal" DEF="hanim_r_thumb_metacarpal"><!--<HAnimJoint name='r_thumb1'></HAnimJoint> visualization sphere within <HAnimSegment name='r_thumb_metacarpal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_thumb1, HAnimSegment r_thumb_metacarpal"></TouchSensor>
 <Transform translation="-0.1924 0.8472 -0.0534"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='r_thumb1'></HAnimJoint> to <HAnimJoint name='r_thumb2'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.1924 0.8472 -0.0534 -0.1951 0.8226 0.0246"></Coordinate>
@@ -1364,7 +1364,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="r_thumb2" DEF="hanim_r_thumb2" center="-0.1951 0.8226 0.0246" stiffness="0 0 0"><HAnimSegment name="r_thumb_proximal" DEF="hanim_r_thumb_proximal"><!--<HAnimJoint name='r_thumb2'></HAnimJoint> visualization sphere within <HAnimSegment name='r_thumb_proximal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_thumb2, HAnimSegment r_thumb_proximal"></TouchSensor>
+<HAnimJoint name="r_thumb2" DEF="hanim_r_thumb2" center="-0.1951 0.8226 0.0246" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_thumb_proximal" DEF="hanim_r_thumb_proximal"><!--<HAnimJoint name='r_thumb2'></HAnimJoint> visualization sphere within <HAnimSegment name='r_thumb_proximal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_thumb2, HAnimSegment r_thumb_proximal"></TouchSensor>
 <Transform translation="-0.1951 0.8226 0.0246"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='r_thumb2'></HAnimJoint> to <HAnimJoint name='r_thumb3'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.1951 0.8226 0.0246 -0.1955 0.8159 0.0464"></Coordinate>
@@ -1372,7 +1372,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="r_thumb3" DEF="hanim_r_thumb3" center="-0.1955 0.8159 0.0464" stiffness="0 0 0"><HAnimSegment name="r_thumb_distal" DEF="hanim_r_thumb_distal"><!--<HAnimJoint name='r_thumb3'></HAnimJoint> visualization sphere within <HAnimSegment name='r_thumb_distal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_thumb3, HAnimSegment r_thumb_distal"></TouchSensor>
+<HAnimJoint name="r_thumb3" DEF="hanim_r_thumb3" center="-0.1955 0.8159 0.0464" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_thumb_distal" DEF="hanim_r_thumb_distal"><!--<HAnimJoint name='r_thumb3'></HAnimJoint> visualization sphere within <HAnimSegment name='r_thumb_distal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_thumb3, HAnimSegment r_thumb_distal"></TouchSensor>
 <Transform translation="-0.1955 0.8159 0.0464"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSite visualization line segment from ancestor <HAnimJoint name='r_thumb3'></HAnimJoint> to <HAnimSite name='r_thumb_distal_tip'></HAnimSite>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.1955 0.8159 0.0464 -0.1869 0.809 0.082"></Coordinate>
@@ -1386,7 +1386,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_index0" DEF="hanim_r_index0" center="-0.1983 0.8024 -0.028" stiffness="0 0 0"><HAnimSegment name="r_index_metacarpal" DEF="hanim_r_index_metacarpal"><!--<HAnimJoint name='r_index0'></HAnimJoint> visualization sphere within <HAnimSegment name='r_index_metacarpal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_index0, HAnimSegment r_index_metacarpal"></TouchSensor>
+<HAnimJoint name="r_index0" DEF="hanim_r_index0" center="-0.1983 0.8024 -0.028" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_index_metacarpal" DEF="hanim_r_index_metacarpal"><!--<HAnimJoint name='r_index0'></HAnimJoint> visualization sphere within <HAnimSegment name='r_index_metacarpal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_index0, HAnimSegment r_index_metacarpal"></TouchSensor>
 <Transform translation="-0.1983 0.8024 -0.028"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='r_index0'></HAnimJoint> to <HAnimJoint name='r_index1'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.1983 0.8024 -0.028 -0.1983 0.7815 -0.028"></Coordinate>
@@ -1394,7 +1394,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="r_index1" DEF="hanim_r_index1" center="-0.1983 0.7815 -0.028" stiffness="0 0 0"><HAnimSegment name="r_index_proximal" DEF="hanim_r_index_proximal"><!--<HAnimJoint name='r_index1'></HAnimJoint> visualization sphere within <HAnimSegment name='r_index_proximal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_index1, HAnimSegment r_index_proximal"></TouchSensor>
+<HAnimJoint name="r_index1" DEF="hanim_r_index1" center="-0.1983 0.7815 -0.028" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_index_proximal" DEF="hanim_r_index_proximal"><!--<HAnimJoint name='r_index1'></HAnimJoint> visualization sphere within <HAnimSegment name='r_index_proximal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_index1, HAnimSegment r_index_proximal"></TouchSensor>
 <Transform translation="-0.1983 0.7815 -0.028"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='r_index1'></HAnimJoint> to <HAnimJoint name='r_index2'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.1983 0.7815 -0.028 -0.2017 0.7363 -0.0248"></Coordinate>
@@ -1402,7 +1402,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="r_index2" DEF="hanim_r_index2" center="-0.2017 0.7363 -0.0248" stiffness="0 0 0"><HAnimSegment name="r_index_middle" DEF="hanim_r_index_middle"><!--<HAnimJoint name='r_index2'></HAnimJoint> visualization sphere within <HAnimSegment name='r_index_middle'></HAnimSegment>--><TouchSensor description="HAnimJoint r_index2, HAnimSegment r_index_middle"></TouchSensor>
+<HAnimJoint name="r_index2" DEF="hanim_r_index2" center="-0.2017 0.7363 -0.0248" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_index_middle" DEF="hanim_r_index_middle"><!--<HAnimJoint name='r_index2'></HAnimJoint> visualization sphere within <HAnimSegment name='r_index_middle'></HAnimSegment>--><TouchSensor description="HAnimJoint r_index2, HAnimSegment r_index_middle"></TouchSensor>
 <Transform translation="-0.2017 0.7363 -0.0248"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='r_index2'></HAnimJoint> to <HAnimJoint name='r_index3'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.2017 0.7363 -0.0248 -0.2028 0.7139 -0.0236"></Coordinate>
@@ -1410,7 +1410,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="r_index3" DEF="hanim_r_index3" center="-0.2028 0.7139 -0.0236" stiffness="0 0 0"><HAnimSegment name="r_index_distal" DEF="hanim_r_index_distal"><!--<HAnimJoint name='r_index3'></HAnimJoint> visualization sphere within <HAnimSegment name='r_index_distal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_index3, HAnimSegment r_index_distal"></TouchSensor>
+<HAnimJoint name="r_index3" DEF="hanim_r_index3" center="-0.2028 0.7139 -0.0236" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_index_distal" DEF="hanim_r_index_distal"><!--<HAnimJoint name='r_index3'></HAnimJoint> visualization sphere within <HAnimSegment name='r_index_distal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_index3, HAnimSegment r_index_distal"></TouchSensor>
 <Transform translation="-0.2028 0.7139 -0.0236"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSite visualization line segment from ancestor <HAnimJoint name='r_index3'></HAnimJoint> to <HAnimSite name='r_index_distal_tip'></HAnimSite>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.2028 0.7139 -0.0236 -0.198 0.6883 -0.018"></Coordinate>
@@ -1432,7 +1432,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_middle0" DEF="hanim_r_middle0" center="-0.1987 0.8029 -0.053" stiffness="0 0 0"><HAnimSegment name="r_middle_metacarpal" DEF="hanim_r_middle_metacarpal"><!--<HAnimJoint name='r_middle0'></HAnimJoint> visualization sphere within <HAnimSegment name='r_middle_metacarpal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_middle0, HAnimSegment r_middle_metacarpal"></TouchSensor>
+<HAnimJoint name="r_middle0" DEF="hanim_r_middle0" center="-0.1987 0.8029 -0.053" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_middle_metacarpal" DEF="hanim_r_middle_metacarpal"><!--<HAnimJoint name='r_middle0'></HAnimJoint> visualization sphere within <HAnimSegment name='r_middle_metacarpal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_middle0, HAnimSegment r_middle_metacarpal"></TouchSensor>
 <Transform translation="-0.1987 0.8029 -0.053"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='r_middle0'></HAnimJoint> to <HAnimJoint name='r_middle1'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.1987 0.8029 -0.053 -0.1987 0.7818 -0.053"></Coordinate>
@@ -1440,7 +1440,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="r_middle1" DEF="hanim_r_middle1" center="-0.1987 0.7818 -0.053" stiffness="0 0 0"><HAnimSegment name="r_middle_proximal" DEF="hanim_r_middle_proximal"><!--<HAnimJoint name='r_middle1'></HAnimJoint> visualization sphere within <HAnimSegment name='r_middle_proximal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_middle1, HAnimSegment r_middle_proximal"></TouchSensor>
+<HAnimJoint name="r_middle1" DEF="hanim_r_middle1" center="-0.1987 0.7818 -0.053" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_middle_proximal" DEF="hanim_r_middle_proximal"><!--<HAnimJoint name='r_middle1'></HAnimJoint> visualization sphere within <HAnimSegment name='r_middle_proximal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_middle1, HAnimSegment r_middle_proximal"></TouchSensor>
 <Transform translation="-0.1987 0.7818 -0.053"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='r_middle1'></HAnimJoint> to <HAnimJoint name='r_middle2'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.1987 0.7818 -0.053 -0.2013 0.7273 -0.0503"></Coordinate>
@@ -1448,7 +1448,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="r_middle2" DEF="hanim_r_middle2" center="-0.2013 0.7273 -0.0503" stiffness="0 0 0"><HAnimSegment name="r_middle_middle" DEF="hanim_r_middle_middle"><!--<HAnimJoint name='r_middle2'></HAnimJoint> visualization sphere within <HAnimSegment name='r_middle_middle'></HAnimSegment>--><TouchSensor description="HAnimJoint r_middle2, HAnimSegment r_middle_middle"></TouchSensor>
+<HAnimJoint name="r_middle2" DEF="hanim_r_middle2" center="-0.2013 0.7273 -0.0503" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_middle_middle" DEF="hanim_r_middle_middle"><!--<HAnimJoint name='r_middle2'></HAnimJoint> visualization sphere within <HAnimSegment name='r_middle_middle'></HAnimSegment>--><TouchSensor description="HAnimJoint r_middle2, HAnimSegment r_middle_middle"></TouchSensor>
 <Transform translation="-0.2013 0.7273 -0.0503"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='r_middle2'></HAnimJoint> to <HAnimJoint name='r_middle3'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.2013 0.7273 -0.0503 -0.2026 0.7011 -0.0494"></Coordinate>
@@ -1456,7 +1456,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="r_middle3" DEF="hanim_r_middle3" center="-0.2026 0.7011 -0.0494" stiffness="0 0 0"><HAnimSegment name="r_middle_distal" DEF="hanim_r_middle_distal"><!--<HAnimJoint name='r_middle3'></HAnimJoint> visualization sphere within <HAnimSegment name='r_middle_distal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_middle3, HAnimSegment r_middle_distal"></TouchSensor>
+<HAnimJoint name="r_middle3" DEF="hanim_r_middle3" center="-0.2026 0.7011 -0.0494" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_middle_distal" DEF="hanim_r_middle_distal"><!--<HAnimJoint name='r_middle3'></HAnimJoint> visualization sphere within <HAnimSegment name='r_middle_distal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_middle3, HAnimSegment r_middle_distal"></TouchSensor>
 <Transform translation="-0.2026 0.7011 -0.0494"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSite visualization line segment from ancestor <HAnimJoint name='r_middle3'></HAnimJoint> to <HAnimSite name='r_middle_distal_tip'></HAnimSite>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.2026 0.7011 -0.0494 -0.1969 0.6758 -0.0427"></Coordinate>
@@ -1471,7 +1471,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_ring0" DEF="hanim_r_ring0" center="-0.1956 0.8019 -0.0794" stiffness="0 0 0"><HAnimSegment name="r_ring_metacarpal" DEF="hanim_r_ring_metacarpal"><!--<HAnimJoint name='r_ring0'></HAnimJoint> visualization sphere within <HAnimSegment name='r_ring_metacarpal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_ring0, HAnimSegment r_ring_metacarpal"></TouchSensor>
+<HAnimJoint name="r_ring0" DEF="hanim_r_ring0" center="-0.1956 0.8019 -0.0794" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_ring_metacarpal" DEF="hanim_r_ring_metacarpal"><!--<HAnimJoint name='r_ring0'></HAnimJoint> visualization sphere within <HAnimSegment name='r_ring_metacarpal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_ring0, HAnimSegment r_ring_metacarpal"></TouchSensor>
 <Transform translation="-0.1956 0.8019 -0.0794"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='r_ring0'></HAnimJoint> to <HAnimJoint name='r_ring1'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.1956 0.8019 -0.0794 -0.1956 0.7815 -0.0794"></Coordinate>
@@ -1479,7 +1479,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="r_ring1" DEF="hanim_r_ring1" center="-0.1956 0.7815 -0.0794" stiffness="0 0 0"><HAnimSegment name="r_ring_proximal" DEF="hanim_r_ring_proximal"><!--<HAnimJoint name='r_ring1'></HAnimJoint> visualization sphere within <HAnimSegment name='r_ring_proximal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_ring1, HAnimSegment r_ring_proximal"></TouchSensor>
+<HAnimJoint name="r_ring1" DEF="hanim_r_ring1" center="-0.1956 0.7815 -0.0794" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_ring_proximal" DEF="hanim_r_ring_proximal"><!--<HAnimJoint name='r_ring1'></HAnimJoint> visualization sphere within <HAnimSegment name='r_ring_proximal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_ring1, HAnimSegment r_ring_proximal"></TouchSensor>
 <Transform translation="-0.1956 0.7815 -0.0794"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='r_ring1'></HAnimJoint> to <HAnimJoint name='r_ring2'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.1956 0.7815 -0.0794 -0.1973 0.7287 -0.0777"></Coordinate>
@@ -1487,7 +1487,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="r_ring2" DEF="hanim_r_ring2" center="-0.1973 0.7287 -0.0777" stiffness="0 0 0"><HAnimSegment name="r_ring_middle" DEF="hanim_r_ring_middle"><!--<HAnimJoint name='r_ring2'></HAnimJoint> visualization sphere within <HAnimSegment name='r_ring_middle'></HAnimSegment>--><TouchSensor description="HAnimJoint r_ring2, HAnimSegment r_ring_middle"></TouchSensor>
+<HAnimJoint name="r_ring2" DEF="hanim_r_ring2" center="-0.1973 0.7287 -0.0777" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_ring_middle" DEF="hanim_r_ring_middle"><!--<HAnimJoint name='r_ring2'></HAnimJoint> visualization sphere within <HAnimSegment name='r_ring_middle'></HAnimSegment>--><TouchSensor description="HAnimJoint r_ring2, HAnimSegment r_ring_middle"></TouchSensor>
 <Transform translation="-0.1973 0.7287 -0.0777"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='r_ring2'></HAnimJoint> to <HAnimJoint name='r_ring3'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.1973 0.7287 -0.0777 -0.1983 0.7045 -0.0767"></Coordinate>
@@ -1495,7 +1495,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="r_ring3" DEF="hanim_r_ring3" center="-0.1983 0.7045 -0.0767" stiffness="0 0 0"><HAnimSegment name="r_ring_distal" DEF="hanim_r_ring_distal"><!--<HAnimJoint name='r_ring3'></HAnimJoint> visualization sphere within <HAnimSegment name='r_ring_distal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_ring3, HAnimSegment r_ring_distal"></TouchSensor>
+<HAnimJoint name="r_ring3" DEF="hanim_r_ring3" center="-0.1983 0.7045 -0.0767" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_ring_distal" DEF="hanim_r_ring_distal"><!--<HAnimJoint name='r_ring3'></HAnimJoint> visualization sphere within <HAnimSegment name='r_ring_distal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_ring3, HAnimSegment r_ring_distal"></TouchSensor>
 <Transform translation="-0.1983 0.7045 -0.0767"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSite visualization line segment from ancestor <HAnimJoint name='r_ring3'></HAnimJoint> to <HAnimSite name='r_ring_distal_tip'></HAnimSite>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.1983 0.7045 -0.0767 -0.1934 0.6778 -0.0693"></Coordinate>
@@ -1510,7 +1510,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_pinky0" DEF="hanim_r_pinky0" center="-0.1925 0.8066 -0.1036" stiffness="0 0 0"><HAnimSegment name="r_pinky_metacarpal" DEF="hanim_r_pinky_metacarpal"><!--<HAnimJoint name='r_pinky0'></HAnimJoint> visualization sphere within <HAnimSegment name='r_pinky_metacarpal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_pinky0, HAnimSegment r_pinky_metacarpal"></TouchSensor>
+<HAnimJoint name="r_pinky0" DEF="hanim_r_pinky0" center="-0.1925 0.8066 -0.1036" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_pinky_metacarpal" DEF="hanim_r_pinky_metacarpal"><!--<HAnimJoint name='r_pinky0'></HAnimJoint> visualization sphere within <HAnimSegment name='r_pinky_metacarpal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_pinky0, HAnimSegment r_pinky_metacarpal"></TouchSensor>
 <Transform translation="-0.1925 0.8066 -0.1036"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='r_pinky0'></HAnimJoint> to <HAnimJoint name='r_pinky1'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.1925 0.8066 -0.1036 -0.1925 0.7866 -0.1036"></Coordinate>
@@ -1518,7 +1518,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="r_pinky1" DEF="hanim_r_pinky1" center="-0.1925 0.7866 -0.1036" stiffness="0 0 0"><HAnimSegment name="r_pinky_proximal" DEF="hanim_r_pinky_proximal"><!--<HAnimJoint name='r_pinky1'></HAnimJoint> visualization sphere within <HAnimSegment name='r_pinky_proximal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_pinky1, HAnimSegment r_pinky_proximal"></TouchSensor>
+<HAnimJoint name="r_pinky1" DEF="hanim_r_pinky1" center="-0.1925 0.7866 -0.1036" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_pinky_proximal" DEF="hanim_r_pinky_proximal"><!--<HAnimJoint name='r_pinky1'></HAnimJoint> visualization sphere within <HAnimSegment name='r_pinky_proximal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_pinky1, HAnimSegment r_pinky_proximal"></TouchSensor>
 <Transform translation="-0.1925 0.7866 -0.1036"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='r_pinky1'></HAnimJoint> to <HAnimJoint name='r_pinky2'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.1925 0.7866 -0.1036 -0.1938 0.7452 -0.1024"></Coordinate>
@@ -1526,7 +1526,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="r_pinky2" DEF="hanim_r_pinky2" center="-0.1938 0.7452 -0.1024" stiffness="0 0 0"><HAnimSegment name="r_pinky_middle" DEF="hanim_r_pinky_middle"><!--<HAnimJoint name='r_pinky2'></HAnimJoint> visualization sphere within <HAnimSegment name='r_pinky_middle'></HAnimSegment>--><TouchSensor description="HAnimJoint r_pinky2, HAnimSegment r_pinky_middle"></TouchSensor>
+<HAnimJoint name="r_pinky2" DEF="hanim_r_pinky2" center="-0.1938 0.7452 -0.1024" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_pinky_middle" DEF="hanim_r_pinky_middle"><!--<HAnimJoint name='r_pinky2'></HAnimJoint> visualization sphere within <HAnimSegment name='r_pinky_middle'></HAnimSegment>--><TouchSensor description="HAnimJoint r_pinky2, HAnimSegment r_pinky_middle"></TouchSensor>
 <Transform translation="-0.1938 0.7452 -0.1024"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSegment visualization line segment from parent <HAnimJoint name='r_pinky2'></HAnimJoint> to <HAnimJoint name='r_pinky3'></HAnimJoint>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.1938 0.7452 -0.1024 -0.1948 0.7277 -0.1017"></Coordinate>
@@ -1534,7 +1534,7 @@
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="r_pinky3" DEF="hanim_r_pinky3" center="-0.1948 0.7277 -0.1017" stiffness="0 0 0"><HAnimSegment name="r_pinky_distal" DEF="hanim_r_pinky_distal"><!--<HAnimJoint name='r_pinky3'></HAnimJoint> visualization sphere within <HAnimSegment name='r_pinky_distal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_pinky3, HAnimSegment r_pinky_distal"></TouchSensor>
+<HAnimJoint name="r_pinky3" DEF="hanim_r_pinky3" center="-0.1948 0.7277 -0.1017" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="r_pinky_distal" DEF="hanim_r_pinky_distal"><!--<HAnimJoint name='r_pinky3'></HAnimJoint> visualization sphere within <HAnimSegment name='r_pinky_distal'></HAnimSegment>--><TouchSensor description="HAnimJoint r_pinky3, HAnimSegment r_pinky_distal"></TouchSensor>
 <Transform translation="-0.1948 0.7277 -0.1017"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <!--HAnimSite visualization line segment from ancestor <HAnimJoint name='r_pinky3'></HAnimJoint> to <HAnimSite name='r_pinky_distal_tip'></HAnimSite>--><Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.1948 0.7277 -0.1017 -0.1938 0.7035 -0.0949"></Coordinate>

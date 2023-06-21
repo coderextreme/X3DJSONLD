@@ -22,9 +22,9 @@
 <meta name="license" content="../license.html"></meta>
 </head>
 <Scene><WorldInfo title="HAnimModelFootLeft.x3d"></WorldInfo>
-<HAnimHumanoid name="Foot_Left" DEF="hanim_Foot_Left" loa="4" version="2.0"><!--HAnimHumanoid original info='"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams"'--><MetadataSet containerField="metadata" name="HAnimHumanoid.info" reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"><MetadataString name="authorName" value="&quot;Kwan-Hee YOO, Don Brutzman and Joe Williams&quot;" containerField="value"></MetadataString>
+<HAnimHumanoid name="Foot_Left" DEF="hanim_Foot_Left" loa="4" version="2.0"><!--HAnimHumanoid original info='"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams"'--><MetadataSet name="HAnimHumanoid.info" reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid" containerField="value"><MetadataString name="authorName" value="&quot;Kwan-Hee YOO, Don Brutzman and Joe Williams&quot;" containerField="value"></MetadataString>
 </MetadataSet>
-<HAnimJoint name="humanoid_root" DEF="hanim_humanoid_root" stiffness="0 0 0" containerField="skeleton"><!--Might consider putting a HAnimSegment here, but that doesn't help with re-use of this foot model--><HAnimJoint name="l_talocrural" DEF="hanim_l_talocrural" description="connection joint of foot to leg above" stiffness="0 0 0"><HAnimSegment name="l_talus" DEF="hanim_l_talus"><Transform><Shape DEF="HAnimJointShape"><Sphere containerField="geometry" radius="0.025"></Sphere>
+<HAnimJoint name="humanoid_root" DEF="hanim_humanoid_root" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0" containerField="skeleton"><!--Might consider putting a HAnimSegment here, but that doesn't help with re-use of this foot model--><HAnimJoint name="l_talocrural" DEF="hanim_l_talocrural" description="connection joint of foot to leg above" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_talus" DEF="hanim_l_talus"><Transform><Shape DEF="HAnimJointShape"><Sphere containerField="geometry" radius="0.025"></Sphere>
 <Appearance DEF="HAnimJointAppearance"><Material diffuseColor="0 0 1"></Material>
 </Appearance>
 </Shape>
@@ -40,7 +40,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<!--TCN--><HAnimJoint name="l_talocalcaneonavicular" DEF="hanim_l_talocalcaneonavicular" center="0 -0.3 0" stiffness="0 0 0"><HAnimSegment name="l_navicular" DEF="hanim_l_navicular"><Transform translation="0 -0.3 0"><Shape USE="HAnimJointShape"></Shape>
+<!--TCN--><HAnimJoint name="l_talocalcaneonavicular" DEF="hanim_l_talocalcaneonavicular" center="0 -0.3 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_navicular" DEF="hanim_l_navicular"><Transform translation="0 -0.3 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -58,7 +58,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<!--CN1--><HAnimJoint name="l_cuneonavicular_1" DEF="hanim_l_cuneonavicular_1" center="-0.1 -0.45 0" stiffness="0 0 0"><HAnimSegment name="l_cuneiform_1" DEF="hanim_l_cuneiform_1"><Transform translation="-0.1 -0.45 0"><Shape USE="HAnimJointShape"></Shape>
+<!--CN1--><HAnimJoint name="l_cuneonavicular_1" DEF="hanim_l_cuneonavicular_1" center="-0.1 -0.45 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_cuneiform_1" DEF="hanim_l_cuneiform_1"><Transform translation="-0.1 -0.45 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -66,7 +66,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_tarsometatarsal_1" DEF="hanim_l_tarsometatarsal_1" center="-0.1 -0.6 0" stiffness="0 0 0"><HAnimSegment name="l_metatarsal_1" DEF="hanim_l_metatarsal_1"><Transform translation="-0.1 -0.6 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_tarsometatarsal_1" DEF="hanim_l_tarsometatarsal_1" center="-0.1 -0.6 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_metatarsal_1" DEF="hanim_l_metatarsal_1"><Transform translation="-0.1 -0.6 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -74,7 +74,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_metatarsophalangeal_1" DEF="hanim_l_metatarsophalangeal_1" center="-0.1 -0.9 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_proximal_phalanx_1" DEF="hanim_l_tarsal_proximal_phalanx_1"><Transform translation="-0.1 -0.9 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_metatarsophalangeal_1" DEF="hanim_l_metatarsophalangeal_1" center="-0.1 -0.9 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_proximal_phalanx_1" DEF="hanim_l_tarsal_proximal_phalanx_1"><Transform translation="-0.1 -0.9 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -82,7 +82,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_tarsal_interphalangeal_1" DEF="hanim_l_tarsal_interphalangeal_1" center="-0.1 -1.05 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_distal_phalanx_1" DEF="hanim_l_tarsal_distal_phalanx_1"><Transform translation="-0.1 -1.05 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_tarsal_interphalangeal_1" DEF="hanim_l_tarsal_interphalangeal_1" center="-0.1 -1.05 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_distal_phalanx_1" DEF="hanim_l_tarsal_distal_phalanx_1"><Transform translation="-0.1 -1.05 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -94,7 +94,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<!--CN2--><HAnimJoint name="l_cuneonavicular_2" DEF="hanim_l_cuneonavicular_2" center="0 -0.45 0" stiffness="0 0 0"><HAnimSegment name="l_cuneiform_2" DEF="hanim_l_cuneiform_2"><Transform translation="0 -0.45 0"><Shape USE="HAnimJointShape"></Shape>
+<!--CN2--><HAnimJoint name="l_cuneonavicular_2" DEF="hanim_l_cuneonavicular_2" center="0 -0.45 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_cuneiform_2" DEF="hanim_l_cuneiform_2"><Transform translation="0 -0.45 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -102,7 +102,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_tarsometatarsal_2" DEF="hanim_l_tarsometatarsal_2" center="0.05 -0.6 0" stiffness="0 0 0"><HAnimSegment name="l_metatarsal_2" DEF="hanim_l_metatarsal_2"><Transform translation="0.05 -0.6 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_tarsometatarsal_2" DEF="hanim_l_tarsometatarsal_2" center="0.05 -0.6 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_metatarsal_2" DEF="hanim_l_metatarsal_2"><Transform translation="0.05 -0.6 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -110,7 +110,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_metatarsophalangeal_2" DEF="hanim_l_metatarsophalangeal_2" center="0.05 -0.9 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_proximal_phalanx_2" DEF="hanim_l_tarsal_proximal_phalanx_2"><Transform translation="0.05 -0.9 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_metatarsophalangeal_2" DEF="hanim_l_metatarsophalangeal_2" center="0.05 -0.9 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_proximal_phalanx_2" DEF="hanim_l_tarsal_proximal_phalanx_2"><Transform translation="0.05 -0.9 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -118,7 +118,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_tarsal_proximal_interphalangeal_2" DEF="hanim_l_tarsal_proximal_interphalangeal_2" center="0.05 -1.05 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_middle_phalanx_2" DEF="hanim_l_tarsal_middle_phalanx_2"><Transform translation="0.05 -1.05 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_tarsal_proximal_interphalangeal_2" DEF="hanim_l_tarsal_proximal_interphalangeal_2" center="0.05 -1.05 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_middle_phalanx_2" DEF="hanim_l_tarsal_middle_phalanx_2"><Transform translation="0.05 -1.05 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -126,7 +126,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_tarsal_distal_interphalangeal_2" DEF="hanim_l_tarsal_distal_interphalangeal_2" center="0.05 -1.12 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_distal_phalanx_2" DEF="hanim_l_tarsal_distal_phalanx_2"><Transform translation="0.05 -1.12 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_tarsal_distal_interphalangeal_2" DEF="hanim_l_tarsal_distal_interphalangeal_2" center="0.05 -1.12 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_distal_phalanx_2" DEF="hanim_l_tarsal_distal_phalanx_2"><Transform translation="0.05 -1.12 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -139,7 +139,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<!--CN3--><HAnimJoint name="l_cuneonavicular_3" DEF="hanim_l_cuneonavicular_3" center="0.1 -0.4 0" stiffness="0 0 0"><HAnimSegment name="l_cuneiform_3" DEF="hanim_l_cuneiform_3"><Transform translation="0.1 -0.4 0"><Shape USE="HAnimJointShape"></Shape>
+<!--CN3--><HAnimJoint name="l_cuneonavicular_3" DEF="hanim_l_cuneonavicular_3" center="0.1 -0.4 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_cuneiform_3" DEF="hanim_l_cuneiform_3"><Transform translation="0.1 -0.4 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -147,7 +147,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_tarsometatarsal_3" DEF="hanim_l_tarsometatarsal_3" center="0.15 -0.6 0" stiffness="0 0 0"><HAnimSegment name="l_metatarsal_3" DEF="hanim_l_metatarsal_3"><Transform translation="0.15 -0.6 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_tarsometatarsal_3" DEF="hanim_l_tarsometatarsal_3" center="0.15 -0.6 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_metatarsal_3" DEF="hanim_l_metatarsal_3"><Transform translation="0.15 -0.6 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -155,7 +155,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_metatarsophalangeal_3" DEF="hanim_l_metatarsophalangeal_3" center="0.15 -0.9 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_proximal_phalanx_3" DEF="hanim_l_tarsal_proximal_phalanx_3"><Transform translation="0.15 -0.9 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_metatarsophalangeal_3" DEF="hanim_l_metatarsophalangeal_3" center="0.15 -0.9 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_proximal_phalanx_3" DEF="hanim_l_tarsal_proximal_phalanx_3"><Transform translation="0.15 -0.9 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -163,7 +163,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_tarsal_proximal_interphalangeal_3" DEF="hanim_l_tarsal_proximal_interphalangeal_3" center="0.15 -1.05 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_middle_phalanx_3" DEF="hanim_l_tarsal_middle_phalanx_3"><Transform translation="0.15 -1.05 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_tarsal_proximal_interphalangeal_3" DEF="hanim_l_tarsal_proximal_interphalangeal_3" center="0.15 -1.05 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_middle_phalanx_3" DEF="hanim_l_tarsal_middle_phalanx_3"><Transform translation="0.15 -1.05 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -171,7 +171,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_tarsal_distal_interphalangeal_3" DEF="hanim_l_tarsal_distal_interphalangeal_3" center="0.15 -1.13 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_distal_phalanx_3" DEF="hanim_l_tarsal_distal_phalanx_3"><Transform translation="0.15 -1.13 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_tarsal_distal_interphalangeal_3" DEF="hanim_l_tarsal_distal_interphalangeal_3" center="0.15 -1.13 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_distal_phalanx_3" DEF="hanim_l_tarsal_distal_phalanx_3"><Transform translation="0.15 -1.13 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -185,7 +185,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<!--CC--><HAnimJoint name="l_calcaneocuboid" DEF="hanim_l_calcaneocuboid" center="0.2 0.3 0" stiffness="0 0 0"><HAnimSegment name="l_calcaneus" DEF="hanim_l_calcaneus"><Transform translation="0.2 0.3 0"><Shape USE="HAnimJointShape"></Shape>
+<!--CC--><HAnimJoint name="l_calcaneocuboid" DEF="hanim_l_calcaneocuboid" center="0.2 0.3 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_calcaneus" DEF="hanim_l_calcaneus"><Transform translation="0.2 0.3 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -193,7 +193,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<!--TT--><HAnimJoint name="l_transversetarsal" DEF="hanim_l_transversetarsal" center="0.21 -0.3 0" stiffness="0 0 0"><HAnimSegment name="l_cuboid" DEF="hanim_l_cuboid"><Transform translation="0.21 -0.3 0"><Shape USE="HAnimJointShape"></Shape>
+<!--TT--><HAnimJoint name="l_transversetarsal" DEF="hanim_l_transversetarsal" center="0.21 -0.3 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_cuboid" DEF="hanim_l_cuboid"><Transform translation="0.21 -0.3 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -206,7 +206,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<!--TMT4--><HAnimJoint name="l_tarsometatarsal_4" DEF="hanim_l_tarsometatarsal_4" center="0.25 -0.58 0" stiffness="0 0 0"><HAnimSegment name="l_metatarsal_4" DEF="hanim_l_metatarsal_4"><Transform translation="0.25 -0.58 0"><Shape USE="HAnimJointShape"></Shape>
+<!--TMT4--><HAnimJoint name="l_tarsometatarsal_4" DEF="hanim_l_tarsometatarsal_4" center="0.25 -0.58 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_metatarsal_4" DEF="hanim_l_metatarsal_4"><Transform translation="0.25 -0.58 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -214,7 +214,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_metatarsophalangeal_4" DEF="hanim_l_metatarsophalangeal_4" center="0.25 -0.87 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_proximal_phalanx_4" DEF="hanim_l_tarsal_proximal_phalanx_4"><Transform translation="0.25 -0.87 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_metatarsophalangeal_4" DEF="hanim_l_metatarsophalangeal_4" center="0.25 -0.87 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_proximal_phalanx_4" DEF="hanim_l_tarsal_proximal_phalanx_4"><Transform translation="0.25 -0.87 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -222,7 +222,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_tarsal_proximal_interphalangeal_4" DEF="hanim_l_tarsal_proximal_interphalangeal_4" center="0.25 -1 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_middle_phalanx_4" DEF="hanim_l_tarsal_middle_phalanx_4"><Transform translation="0.25 -1 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_tarsal_proximal_interphalangeal_4" DEF="hanim_l_tarsal_proximal_interphalangeal_4" center="0.25 -1 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_middle_phalanx_4" DEF="hanim_l_tarsal_middle_phalanx_4"><Transform translation="0.25 -1 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -230,7 +230,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_tarsal_distal_interphalangeal_4" DEF="hanim_l_tarsal_distal_interphalangeal_4" center="0.25 -1.1 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_distal_phalanx_4" DEF="hanim_l_tarsal_distal_phalanx_4"><Transform translation="0.25 -1.1 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_tarsal_distal_interphalangeal_4" DEF="hanim_l_tarsal_distal_interphalangeal_4" center="0.25 -1.1 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_distal_phalanx_4" DEF="hanim_l_tarsal_distal_phalanx_4"><Transform translation="0.25 -1.1 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -242,7 +242,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<!--TMT5--><HAnimJoint name="l_tarsometatarsal_5" DEF="hanim_l_tarsometatarsal_5" center="0.33 -0.52 0" stiffness="0 0 0"><HAnimSegment name="l_metatarsal_5" DEF="hanim_l_metatarsal_5"><Transform translation="0.33 -0.52 0"><Shape USE="HAnimJointShape"></Shape>
+<!--TMT5--><HAnimJoint name="l_tarsometatarsal_5" DEF="hanim_l_tarsometatarsal_5" center="0.33 -0.52 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_metatarsal_5" DEF="hanim_l_metatarsal_5"><Transform translation="0.33 -0.52 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -250,7 +250,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_metatarsophalangeal_5" DEF="hanim_l_metatarsophalangeal_5" center="0.34 -0.8 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_proximal_phalanx_5" DEF="hanim_l_tarsal_proximal_phalanx_5"><Transform translation="0.34 -0.8 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_metatarsophalangeal_5" DEF="hanim_l_metatarsophalangeal_5" center="0.34 -0.8 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_proximal_phalanx_5" DEF="hanim_l_tarsal_proximal_phalanx_5"><Transform translation="0.34 -0.8 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -258,7 +258,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_tarsal_proximal_interphalangeal_5" DEF="hanim_l_tarsal_proximal_interphalangeal_5" center="0.34 -0.95 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_middle_phalanx_5" DEF="hanim_l_tarsal_middle_phalanx_5"><Transform translation="0.34 -0.95 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_tarsal_proximal_interphalangeal_5" DEF="hanim_l_tarsal_proximal_interphalangeal_5" center="0.34 -0.95 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_middle_phalanx_5" DEF="hanim_l_tarsal_middle_phalanx_5"><Transform translation="0.34 -0.95 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
@@ -266,7 +266,7 @@
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_tarsal_distal_interphalangeal_5" DEF="hanim_l_tarsal_distal_interphalangeal_5" center="0.34 -1.05 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_distal_phalanx_5" DEF="hanim_l_tarsal_distal_phalanx_5"><Transform translation="0.34 -1.05 0"><Shape USE="HAnimJointShape"></Shape>
+<HAnimJoint name="l_tarsal_distal_interphalangeal_5" DEF="hanim_l_tarsal_distal_interphalangeal_5" center="0.34 -1.05 0" ulimit="0 0 0" llimit="0 0 0" stiffness="0 0 0"><HAnimSegment name="l_tarsal_distal_phalanx_5" DEF="hanim_l_tarsal_distal_phalanx_5"><Transform translation="0.34 -1.05 0"><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
