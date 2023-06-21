@@ -82,32 +82,65 @@ Shape13->setAppearance(*Appearance15);
 group->addChildren(*Shape13);
 
 CSpatialSound* SpatialSound18 = (CSpatialSound *)(m_pScene.createNode("SpatialSound"));
+SpatialSound18->setDistanceModel("INVERSE");
+SpatialSound18->setDopplerEnabled("false");
 CAnalyser* Analyser19 = (CAnalyser *)(m_pScene.createNode("Analyser"));
+Analyser19->setChannelCountMode("MAX");
+Analyser19->setChannelInterpretation("SPEAKERS");
 CAudioDestination* AudioDestination20 = (CAudioDestination *)(m_pScene.createNode("AudioDestination"));
+AudioDestination20->setChannelCountMode("MAX");
+AudioDestination20->setChannelInterpretation("SPEAKERS");
 CBiquadFilter* BiquadFilter21 = (CBiquadFilter *)(m_pScene.createNode("BiquadFilter"));
+BiquadFilter21->setChannelCountMode("MAX");
+BiquadFilter21->setChannelInterpretation("SPEAKERS");
+BiquadFilter21->setType("LOWPASS");
 CChannelMerger* ChannelMerger22 = (CChannelMerger *)(m_pScene.createNode("ChannelMerger"));
+ChannelMerger22->setChannelCountMode("MAX");
+ChannelMerger22->setChannelInterpretation("SPEAKERS");
 CChannelSelector* ChannelSelector23 = (CChannelSelector *)(m_pScene.createNode("ChannelSelector"));
+ChannelSelector23->setChannelCountMode("MAX");
+ChannelSelector23->setChannelInterpretation("SPEAKERS");
 CChannelSplitter* ChannelSplitter24 = (CChannelSplitter *)(m_pScene.createNode("ChannelSplitter"));
+ChannelSplitter24->setChannelCountMode("MAX");
+ChannelSplitter24->setChannelInterpretation("SPEAKERS");
 CConvolver* Convolver25 = (CConvolver *)(m_pScene.createNode("Convolver"));
+Convolver25->setChannelCountMode("MAX");
+Convolver25->setChannelInterpretation("SPEAKERS");
 CDelay* Delay26 = (CDelay *)(m_pScene.createNode("Delay"));
+Delay26->setChannelCountMode("MAX");
+Delay26->setChannelInterpretation("SPEAKERS");
 CDynamicsCompressor* DynamicsCompressor27 = (CDynamicsCompressor *)(m_pScene.createNode("DynamicsCompressor"));
+DynamicsCompressor27->setChannelCountMode("MAX");
+DynamicsCompressor27->setChannelInterpretation("SPEAKERS");
 CGain* Gain28 = (CGain *)(m_pScene.createNode("Gain"));
+Gain28->setChannelCountMode("MAX");
+Gain28->setChannelInterpretation("SPEAKERS");
 CStreamAudioDestination* StreamAudioDestination29 = (CStreamAudioDestination *)(m_pScene.createNode("StreamAudioDestination"));
+StreamAudioDestination29->setChannelCountMode("MAX");
+StreamAudioDestination29->setChannelInterpretation("SPEAKERS");
 CWaveShaper* WaveShaper30 = (CWaveShaper *)(m_pScene.createNode("WaveShaper"));
+WaveShaper30->setChannelCountMode("MAX");
+WaveShaper30->setChannelInterpretation("SPEAKERS");
 //The following X3DSoundSourceNode nodes have no audio-graph children
 CBufferAudioSource* BufferAudioSource31 = (CBufferAudioSource *)(m_pScene.createNode("BufferAudioSource"));
+BufferAudioSource31->setChannelCountMode("MAX");
+BufferAudioSource31->setChannelInterpretation("SPEAKERS");
 WaveShaper30->addChildren(*BufferAudioSource31);
 
 CListenerPointSource* ListenerPointSource32 = (CListenerPointSource *)(m_pScene.createNode("ListenerPointSource"));
+ListenerPointSource32->setDopplerEnabled("false");
 WaveShaper30->addChildren(*ListenerPointSource32);
 
 CMicrophoneSource* MicrophoneSource33 = (CMicrophoneSource *)(m_pScene.createNode("MicrophoneSource"));
 WaveShaper30->addChildren(*MicrophoneSource33);
 
 COscillatorSource* OscillatorSource34 = (COscillatorSource *)(m_pScene.createNode("OscillatorSource"));
+OscillatorSource34->setFrequency(440);
 WaveShaper30->addChildren(*OscillatorSource34);
 
 CStreamAudioSource* StreamAudioSource35 = (CStreamAudioSource *)(m_pScene.createNode("StreamAudioSource"));
+StreamAudioSource35->setChannelCountMode("MAX");
+StreamAudioSource35->setChannelInterpretation("SPEAKERS");
 WaveShaper30->addChildren(*StreamAudioSource35);
 
 StreamAudioDestination29->addChildren(*WaveShaper30);
