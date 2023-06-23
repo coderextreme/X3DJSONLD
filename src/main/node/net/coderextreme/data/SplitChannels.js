@@ -1,9 +1,10 @@
 var java = require('java');
+var util = require('util');
 java.asyncOptions = {
   asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
   syncSuffix: "",              // Sync methods use the base name(!!)
   promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
-  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  promisify: util.promisify, // Needs Node.js version 8 or greater, see comment below
   ifReadOnlySuffix: "_alt"
 };
 var autoclass = require('../../../X3Dautoclass');
@@ -73,14 +74,14 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0.1), java.newFloat(0.1), java.newFloat(0.1)])).setShininess(java.newFloat(0.8)).setSpecularColor(java.newArray("float", [java.newFloat(0.5), java.newFloat(0.6), java.newFloat(0.7)]))))
             .setGeometry((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(1500), java.newFloat(10), java.newFloat(500)])))))
         .addChild((new autoclass.ListenerPointSource()).setTrackCurrentView(true))
-        .addChild((new autoclass.StreamAudioDestination())
-          .addChild((new autoclass.Gain())
-            .addChild((new autoclass.ChannelMerger())
-              .addChild((new autoclass.ChannelSelector())
+        .addChild((new autoclass.StreamAudioDestination()).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
+          .addChild((new autoclass.Gain()).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
+            .addChild((new autoclass.ChannelMerger()).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
+              .addChild((new autoclass.ChannelSelector()).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
                 .addChild((new autoclass.Gain()).setUSE("ChannelSplitter")))
-              .addChild((new autoclass.ChannelSelector()).setChannelSelection(1)
+              .addChild((new autoclass.ChannelSelector()).setChannelSelection(1).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
                 .addChild((new autoclass.Gain()).setUSE("ChannelSplitter"))))))
-        .addChild((new autoclass.ChannelSplitter()).setDEF("ChannelSplitter").setChannelCountMode("explicit")
+        .addChild((new autoclass.ChannelSplitter()).setDEF("ChannelSplitter").setChannelCountMode("explicit").setChannelInterpretation("SPEAKERS")
           .addOutputs((new autoclass.AudioClip()).setDescription("Violin").setUrl(java.newArray("java.lang.String", ["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"]))))
         .addChild((new autoclass.Transform()).setDEF("Audio3").setRotation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(-0.5)])).setTranslation(java.newArray("float", [java.newFloat(0), java.newFloat(100), java.newFloat(0)]))
           .addChild((new autoclass.Shape())

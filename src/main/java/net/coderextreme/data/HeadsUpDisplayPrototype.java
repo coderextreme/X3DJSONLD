@@ -148,17 +148,17 @@ public class HeadsUpDisplayPrototype {
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(new float[] {0f,1f,1f}).setEmissiveColor(new float[] {0f,1f,1f})))
             .setGeometry(new Text().setString(new MFString4().getArray())
-              .setFontStyle(new FontStyle().setJustify(new MFString5().getArray()).setSize(0.8000f))))))      ;
+              .setFontStyle(new FontStyle().setJustify(new MFString5().getArray()).setSize(0.8f))))))      ;
     return X3D0;
     }
 protected class MFColor0 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.1000f,0.1000f,0.3000f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.1f,0.1f,0.3f});
   }
 }
 protected class MFColor1 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.5000f,0.5000f,0.1000f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.5f,0.5f,0.1f});
   }
 }
 protected class MFString2 {

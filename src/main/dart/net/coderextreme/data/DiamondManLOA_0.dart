@@ -156,15 +156,27 @@ var X3D0 =  X3D(
                   name_ : SFString('HumanoidRoot'),
                   DEF_ : SFString('hanim_HumanoidRoot'),
                   center_ : SFVec3f([SFDouble(0), SFDouble(0.824), SFDouble(0.0277)]),
+<<<<<<< HEAD
                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+=======
+                  ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                  llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                  stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+>>>>>>> postes6branch
                   children_ : [
                     HAnimJoint(
                       name_ : SFString('sacroiliac'),
                       DEF_ : SFString('hanim_sacroiliac'),
                       center_ : SFVec3f([SFDouble(0), SFDouble(0.9149), SFDouble(0.0016)]),
+<<<<<<< HEAD
                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+=======
+                      ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                      llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                      stiffness_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+>>>>>>> postes6branch
                       children_ : [
                         HAnimSegment(
                           name_ : SFString('pelvis'),

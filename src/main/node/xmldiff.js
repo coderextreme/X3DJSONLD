@@ -2,6 +2,7 @@
 
 var parseString = require('xml2js').parseString;
 var fs = require('fs');
+var glob = require('glob');
 
 var program = process.argv[1];
 
@@ -54,15 +55,15 @@ function compare(obj1, p1, obj2, p2) {
 				}
 			} else {
 				str += "@1 "+p1+" "+p2+"\n";
-				str += "< "+JSON.stringify(obj1)+"\n";
-				str += "> "+JSON.stringify(obj2)+"\n";
+				str += "<"+JSON.stringify(obj1)+"\n";
+				str += ">"+JSON.stringify(obj2)+"\n";
 				finalret = false;
 			}
 		} else if (parseFloat(obj1) == parseFloat(obj2)) {
 		} else {
 			str += "@2 "+p1+" "+p2+"\n";
-			str += "< "+JSON.stringify(obj1)+"\n";
-			str += "> "+JSON.stringify(obj2)+"\n";
+			str += "<"+JSON.stringify(obj1)+"\n";
+			str += ">"+JSON.stringify(obj2)+"\n";
 			finalret = false;
 		}
 		// this is a last gasp, and might be removed
@@ -70,8 +71,8 @@ function compare(obj1, p1, obj2, p2) {
 		if (finalret === true) {
 			if (obj1 !== obj2) {
 				str += "@3 "+p1+" "+p2+"\n";
-				str += "< "+JSON.stringify(obj1)+"\n";
-				str += "> "+JSON.stringify(obj2)+"\n";
+				str += "<"+JSON.stringify(obj1)+"\n";
+				str += ">"+JSON.stringify(obj2)+"\n";
 				finalret = false;
 			}
 		}
@@ -97,10 +98,10 @@ function compare(obj1, p1, obj2, p2) {
 				// obj1 has key
 				if (key === 'containerField') {
 					str += "@4 "+p1key+"\n";
-					str += "< "+JSON.stringify(obj1[key])+"\n";
+					str += "<"+JSON.stringify(obj1[key])+"\n";
 				} else {
 					str += "@5 "+p1key+"\n";
-					str += "< "+JSON.stringify(obj1[key])+"\n";
+					str += "<"+JSON.stringify(obj1[key])+"\n";
 					finalret = false;
 				}
 			}
@@ -110,10 +111,10 @@ function compare(obj1, p1, obj2, p2) {
 			var p2key = p2+'/'+key;
 			if (typeof obj1[key] === 'undefined') {
 				if (key === 'containerField') {
-					str += "@6"+p2key+"\n";
+					str += "@6 "+p2key+"\n";
 					str += ">"+JSON.stringify(obj2[key])+"\n";
 				} else {
-					str += "@7"+p2key+"\n";
+					str += "@7 "+p2key+"\n";
 					str += ">"+JSON.stringify(obj2[key])+"\n";
 					finalret = false;
 				}
@@ -123,8 +124,8 @@ function compare(obj1, p1, obj2, p2) {
 		if (parseFloat(obj1) == parseFloat(obj2)) {
 		} else {
 			str += "@8 "+p1+" "+p2+"\n";
-			str += "< "+JSON.stringify(obj1)+"\n";
-			str += "> "+JSON.stringify(obj2)+"\n";
+			str += "<"+JSON.stringify(obj1)+"\n";
+			str += ">"+JSON.stringify(obj2)+"\n";
 			finalret = false;
 		}
 	} else {
@@ -134,11 +135,10 @@ function compare(obj1, p1, obj2, p2) {
 		
 }
 
-var glob = require('glob');
 try {
 	var right = fs.readFileSync(files[1]);
 	parseString(right, function(err, resultright) {
-		if (err) throw "RIGHT FILE "+err;
+		if (err) throw "RIGHT FILE "+files[1]+" "+err;
 		glob(files[0], function(err, filesglobs) {
 			if (err) {
 				console.error(err);
@@ -146,7 +146,7 @@ try {
 			filesglobs.forEach(function(file) {
 				var left = fs.readFileSync(file);
 				parseString(left, function(err, resultleft) {
-					if (err) throw "LEFT FILE "+err;
+					if (err) throw "LEFT FILE "+file+" "+err;
 					var ret;
 					var str;
 					[ ret, str ] = compare(resultleft, '', resultright, '');
@@ -159,8 +159,10 @@ try {
 						} catch (e) {
 							console.error("Quit pipe");
 						}
+						/*
 					} else {
 						console.log("Same");
+						*/
 					}
 					process.exit();
 				});

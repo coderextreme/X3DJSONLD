@@ -70,7 +70,7 @@
           },
           {
             "@name":"translated",
-            "@content":"09 June 2023"
+            "@content":"22 June 2023"
           },
           {
             "@name":"generator",
@@ -385,7 +385,7 @@
             {
               "@DEF":"Spinner",
               "@key":[0,0.5,1],
-              "@keyValue":[0,1,0,0,0,1,0,3.1416,0,1,0,6.2832]
+              "@keyValue":[0,1,0,0,0,1,0,3.14159,0,1,0,6.28318]
             }
           },
           { "ROUTE":

@@ -52,7 +52,7 @@ function schemaProcess(object) {
 	}
 }
 
-import fs from 'node:fs';
+var fs = require('fs');
 var file = "x3d-4.0-JSONSchema.json";
 var object = JSON.parse(fs.readFileSync(file).toString());
 schemaProcess(object);

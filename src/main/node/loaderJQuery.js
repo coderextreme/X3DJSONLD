@@ -1,10 +1,11 @@
-import { loadSchema, doValidate, loadX3DJS } from "./loadValidate.mjs"
-import { convertJsonToStl } from "./convertJsonToStl.mjs";
-import { SaxonJS2N } from "../../../node_modules/saxon-js/SaxonJS2N.js";
-
-import { PROTOS } from './PrototypeExpander.mjs';
+if (typeof PROTOS === 'undefined') {
+	var PROTOS = require('./PrototypeExpander.js')();
+}
 
 var Browser = X3DJSONLD.Browser;
+
+// var loadValidator = new loadValidate();
+loadValidator = window.loadValidator;
 //  X3DJSONLD.setProcessURLs(function() {}); // do modify URLs in GUI
 
 // https://stackoverflow.com/questions/1043339/javascript-for-detecting-browser-language-preference
@@ -58,12 +59,10 @@ function loadScript(url, callback)
 
 var lang = getFirstBrowserLanguage();
 
-export var localize = "en";
+var localize = "en";
 function loadLocalize(lang) {
 	lang = lang.replace(/-.*/, "");
 	return;
-	var module = {};
-	module.exports = null;
 	loadScript("../../../node_modules/ajv-i18n/localize/"+lang+"/index.js", function() {
 		localize = module.exports;
 	});
@@ -164,9 +163,9 @@ if (typeof mapToMethod !== 'undefined') {
 	}
 }
 
-window.loadX3DJS_X3DOM = function loadX3DJS_X3DOM(selector, DOMImplementation, jsobj, path, NS, loadSchema, doValidate, X3DJSONLD, callback) {
+window.loadX3DJS_X3DOM = function (selector, DOMImplementation, jsobj, path, NS, loadValidator, X3DJSONLD, callback) {
 	X3DJSONLD.x3djsonNS = NS;
-	loadSchema(jsobj, path, doValidate, X3DJSONLD, function() {
+	loadValidator.loadSchema(jsobj, path, X3DJSONLD, function() {
 		var doc = document.querySelector(selector);
 		if (doc.hasRuntime && doc.runtime.ready) {
 			var child = doc.runtime.createX3DFromJS(jsobj, path);
@@ -179,9 +178,9 @@ window.loadX3DJS_X3DOM = function loadX3DJS_X3DOM(selector, DOMImplementation, j
 	});
 }
 
-window.loadX3DJS_X_ITE = function loadX3DJS_X_ITE(selector, DOMImplementation, jsobj, path, NS, loadSchema, doValidate, X3DJSONLD, callback) {
+window.loadX3DJS_X_ITE = function loadX3DJS_X_ITE(selector, DOMImplementation, jsobj, path, NS, X3DJSONLD, callback) {
 	X3DJSONLD.x3djsonNS = NS;
-	loadSchema(jsobj, path, doValidate, X3DJSONLD, function() {
+	loadValidator.loadSchema(jsobj, path, X3DJSONLD, function() {
 		X3D(function() {
 			if (typeof X3D.getBrowser !== 'undefined') {
 				var browser = X3D.getBrowser(selector);
@@ -201,18 +200,18 @@ window.loadX3DJS_X_ITE = function loadX3DJS_X_ITE(selector, DOMImplementation, j
 	});
 }
 
-function convertJsonToXml(json, next, path) {
+function convertJsonToXml(json, next, path, loadValidator) {
 	var NS = $('#namespace option:selected').text();
-	loadX3DJS(document.implementation, json, path, NS, loadSchema, doValidate, X3DJSONLD, function(element, xml) {
+	loadValidator.loadX3DJS(document.implementation, json, path, NS, X3DJSONLD, function(element, xml) {
 		next(xml);
 	}); // does not load path
 }
 
-function loadProtoX3D(scripts, selector, json, url) {
+function loadProtoX3D(scripts, selector, json, url, loadValidator) {
     if ($('#prototype').is(':checked')) {
 	// Expand Protos
 	try {
-		json = PROTOS.prototypeExpander(url, json, "");
+		json = new PROTOS().prototypeExpander(url, json, "");
 	} catch (e) {
 		alert("Problems with Proto Expander "+ e);
 		console.error(e);
@@ -260,16 +259,16 @@ function loadProtoX3D(scripts, selector, json, url) {
 		alert("Problems updating Stl");
 		console.error(e);
 	    }
-    });
+    }, loadValidator);
     return json;
 }
 
-window.loadX3D = function loadX3D(selector, json, url) {
+window.loadX3D = function loadX3D(selector, json, url, loadValidator) {
 	let scripts;
         if ($('#scripting').is(':checked')) {
 		scripts = new Scripts();
 	}
-	json = loadProtoX3D(scripts, selector, json, url);
+	json = loadProtoX3D(scripts, selector, json, url, loadValidator);
 }
 
 /**
@@ -277,22 +276,22 @@ window.loadX3D = function loadX3D(selector, json, url) {
  * elemnent -- element to add to
  * url -- JSON url to add
  */
-function appendInline(element, url, xmlDoc, next) {
+function appendInline(element, url, xmlDoc, next, loadValidator) {
 	$.getJSON(url, function(json) {
 		if (typeof PROTOS !== 'undefined' && typeof PROTOS.prototypeExpander === 'function') {
 			try {
 			    if ($('#prototype').is(':checked')) {
-				json = PROTOS.prototypeExpander(url, json, "");
+				json = new PROTOS().prototypeExpander(url, json, "");
 			    }
 			} catch (e) {
 				alert("Problems with ProtoExpander in appendInline "+ e);
 				console.error(e);
 			}
 		} else {
-			console.error("Perhaps you need to include the PrototypeExpander.mjs?");
+			console.error("Perhaps you need to include the PrototypeExpander.js?");
 		}
 		// must validate here because we call an inner method.
-		loadSchema(json, url, doValidate, X3DJSONLD, function() {
+		loadValidator.loadSchema(json, url, X3DJSONLD, function() {
 			X3DJSONLD.ConvertToX3DOM(xmlDoc, json["X3D"]["Scene"], "Scene", element, url);
 			next(element);
 		}, function(e) {
@@ -323,8 +322,8 @@ function loadInline(selector, url, xmlDoc) {
  * next -- to return the element or null
  * returns element loaded
  */
-function appendX3DJSON2Selector(x3dele, selector, json, url, NS, next) {
-	loadX3DJS_X3DOM(x3dele, document.implementation, json, url, NS, loadSchema, doValidate, X3DJSONLD, function(element, xml) {
+function appendX3DJSON2Selector(x3dele, selector, json, url, NS, next, loadValidator) {
+	loadX3DJS_X3DOM(x3dele, document.implementation, json, url, NS, loadValidator, X3DJSONLD, function(element, xml) {
 		if (element != null) {
 			X3DJSONLD.elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
 			$(selector).append(element);
@@ -347,9 +346,9 @@ function appendX3DJSON2Selector(x3dele, selector, json, url, NS, next) {
  * next -- to return the element and xmlDoc or null, null
  * returns element loaded and xml
  */
-window.replaceX3DJSON = function replaceX3DJSON(selector, json, url, NS, next) {
+window.replaceX3DJSON = function replaceX3DJSON(selector, json, url, NS, next, loadValidator) {
 
-	loadX3DJS_X3DOM(selector, document.implementation, json, url, NS, loadSchema, doValidate, X3DJSONLD, function(element, xml) {
+	loadX3DJS_X3DOM(selector, document.implementation, json, url, NS, loadValidator, X3DJSONLD, function(element, xml) {
 		if (element != null) {
 			X3DJSONLD.elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
 			// We have to do this stuff before the DOM hits X3DOM, or we get a mess.
@@ -391,7 +390,7 @@ window.replaceX3DJSON = function replaceX3DJSON(selector, json, url, NS, next) {
 	});
 }
 
-window.updateFromJson = function updateFromJson(json, path) {
+window.updateFromJson = function updateFromJson(json, path, loadValidator) {
 	try {
 		if (typeof json === 'undefined') {
 				json = JSON.parse($("#json").val());
@@ -402,26 +401,26 @@ window.updateFromJson = function updateFromJson(json, path) {
 		console.error(e);
 	}
 	try {
-		loadX3D("#x3domjson", json, path);
+		loadX3D("#x3domjson", json, path, loadValidator);
 	} catch (e) {
 		alert("Problems converting and loading JSON "+ e);
 		console.error(e);
 	}
 }
 
-window.updateFromStl = function updateFromStl(path) {
-	var json = convertStlToJson($('#stl').val());
-	updateFromJson(json, path);
+window.updateFromStl = function updateFromStl(path, loadValidator) {
+	var json = convertStlToJson($('#stl').val(), loadValidator);
+	updateFromJson(json, path, loadValidator);
 }
 
-function updateFromPly(path) {
-	var json = convertPlyToJson($('#ply').val());
-	updateFromJson(json, path);
+function updateFromPly(path, loadValidator) {
+	var json = convertPlyToJson($('#ply').val(), loadValidator);
+	updateFromJson(json, path, loadValidator);
 }
 
-window.updateFromXml = function updateFromXml(path) {
-	var json = convertXmlToJson($('#xml').val(), path);
-	updateFromJson(json, path);
+window.updateFromXml = function updateFromXml(path, loadValidator) {
+	var json = convertXmlToJson($('#xml').val(), path, loadValidator);
+	updateFromJson(json, path, loadValidator);
 }
 
 function loadXml(url) {
@@ -484,19 +483,19 @@ function loadImage(url) {
 */
 	}
 }
-window.loadJson = function loadJson(url) {
+window.loadJson = function loadJson(url, loadValidator) {
 	$.getJSON(url, function(json) {
-		updateFromJson(json, url);
-		updateXml(json, url);
+		updateFromJson(json, url, loadValidator);
+		updateXml(json, url, loadValidator);
 	})
 	.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
 }
 
-function updateXml(json, path) {
+function updateXml(json, path, loadValidator) {
 	//  This step is an important validation step.
 	convertJsonToXml(json, function(xml) {
 		$('#xml').val(xml);
-	}, path);
+	}, path, loadValidator);
 }
 
 function updateStl(json) {
@@ -646,7 +645,7 @@ window.validator = function validator() {
 		var data = $("#json").val();
 		if (data.startsWith("http")) {
 			$.getJSON(data, function(json) {
-				loadSchema(json, "<unknown>", doValidate, X3DJSONLD, function() {
+				loadValidator.loadSchema(json, "<unknown>", X3DJSONLD, function() {
 					alert("Valid or user clicked OK");
 				}, function(e) {
 					alert(e);
@@ -654,7 +653,7 @@ window.validator = function validator() {
 			});
 		} else {
 			var json = JSON.parse(data);
-			loadSchema(json, "<unknown>", doValidate, X3DJSONLD, function() {
+			loadValidator.loadSchema(json, "<unknown>", X3DJSONLD, function() {
 				alert("Valid or user clicked OK");
 			}, function(e) {
 				alert(e);
@@ -664,3 +663,4 @@ window.validator = function validator() {
 		alert(je);
 	}
 }
+module.exports = localize;

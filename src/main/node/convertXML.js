@@ -1,10 +1,10 @@
 "use strict";
 
-import fs from 'fs';
+var fs = require('fs');
 var mkdirp = require('node-mkdirp');
-var mapToMethod = require('./mapToMethod.mjs');
+var mapToMethod = require('./mapToMethod.js');
 var mapToMethod2 = require('./mapToMethod2.js');
-var fieldTypes = require('./fieldTypes.mjs');
+var fieldTypes = require('./fieldTypes.js');
 var DOMParser = require('@xmldom/xmldom').DOMParser;
 
 if (typeof mapToMethod2 !== 'undefined') {
@@ -34,7 +34,7 @@ function serializeXML(str, serializer, co, mapToMethod, fieldTypes) {
 	return str;
 }
 
-export function convertXML(options) {
+function convertXML(options) {
 
 	var files = process.argv;
 	for (var f in files) {
@@ -73,3 +73,4 @@ export function convertXML(options) {
 		}
 	}
 }
+module.exports = convertXML(options) 

@@ -33077,6 +33077,5 @@ var mapToMethod = {"X3DNode" : {
 	"X3DChildNode" : "setScene",
 	"X3DNode" : "setScene",
 },
-};if (typeof module === 'object')  {
-    module.exports = mapToMethod;
 }
+module.exports = mapToMethod;

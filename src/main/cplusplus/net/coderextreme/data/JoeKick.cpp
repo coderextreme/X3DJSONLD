@@ -31,7 +31,7 @@ head1->addMeta(*meta4);
 
 Cmeta* meta5 = new Cmeta();
 meta5->setName("creator");
-meta5->setContent("Joe Williams");
+meta5->setContent("Joe D. Williams");
 head1->addMeta(*meta5);
 
 Cmeta* meta6 = new Cmeta();
@@ -46,7 +46,7 @@ head1->addMeta(*meta7);
 
 Cmeta* meta8 = new Cmeta();
 meta8->setName("modified");
-meta8->setContent("23 December 2021");
+meta8->setContent("29 January 2023");
 head1->addMeta(*meta8);
 
 Cmeta* meta9 = new Cmeta();
@@ -163,8 +163,8 @@ group->addChildren(*Viewpoint26);
 CGroup* Group27 = (CGroup *)(m_pScene.createNode("Group"));
 Group27->setDEF("Joe_Humanoid");
 CHAnimHumanoid* HAnimHumanoid28 = (CHAnimHumanoid *)(m_pScene.createNode("HAnimHumanoid"));
-HAnimHumanoid28->setName("Human");
-HAnimHumanoid28->setDEF("Joe_Human");
+HAnimHumanoid28->setName("Kick");
+HAnimHumanoid28->setDEF("Joe_Kick");
 HAnimHumanoid28->setLoa(3);
 HAnimHumanoid28->setVersion("2.0");
 CMetadataSet* MetadataSet29 = (CMetadataSet *)(m_pScene.createNode("MetadataSet"));
@@ -596,9 +596,10 @@ HAnimJoint71->addChildren(*HAnimJoint72);
 
 HAnimJoint70->addChildren(*HAnimJoint71);
 
+HAnimJoint69->addChildren(*HAnimJoint70);
+
 CHAnimJoint* HAnimJoint86 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint86->setName("l_sternoclavicular");
-HAnimJoint86->setDEF("Joe_l_sternoclavicular");
+HAnimJoint86->setDEF("Joe_l_acromioclavicular");
 HAnimJoint86->setCenter(new float[3]{0.082,1.4488,-0.0353});
 HAnimJoint86->setSkinCoordIndex(new int[1]{12});
 HAnimJoint86->setSkinCoordWeight(new float[1]{1}, 1);
@@ -606,7 +607,7 @@ HAnimJoint86->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint86->setLlimit(new float[3]{0,0,0}, 3);
 CHAnimJoint* HAnimJoint87 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint87->setName("l_acromioclavicular");
-HAnimJoint87->setDEF("Joe_l_acromioclavicular");
+HAnimJoint87->setDEF("Joe_l_sternoclavicular");
 HAnimJoint87->setCenter(new float[3]{0.0962,1.4269,-0.0424});
 HAnimJoint87->setSkinCoordIndex(new int[1]{79});
 HAnimJoint87->setSkinCoordWeight(new float[1]{1}, 1);
@@ -834,7 +835,7 @@ HAnimJoint87->addChildren(*HAnimJoint88);
 
 HAnimJoint86->addChildren(*HAnimJoint87);
 
-HAnimJoint70->addChildren(*HAnimJoint86);
+HAnimJoint69->addChildren(*HAnimJoint86);
 
 CHAnimJoint* HAnimJoint110 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint110->setName("r_sternoclavicular");
@@ -1074,9 +1075,7 @@ HAnimJoint111->addChildren(*HAnimJoint112);
 
 HAnimJoint110->addChildren(*HAnimJoint111);
 
-HAnimJoint70->addChildren(*HAnimJoint110);
-
-HAnimJoint69->addChildren(*HAnimJoint70);
+HAnimJoint69->addChildren(*HAnimJoint110);
 
 HAnimJoint68->addChildren(*HAnimJoint69);
 

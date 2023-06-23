@@ -337,7 +337,7 @@ MetadataSet66->setValue(*MetadataString67);
 CMetadataString* MetadataString68 = (CMetadataString *)(m_pScene.createNode("MetadataString"));
 MetadataString68->setName("extraChildTest");
 MetadataString68->setValue(new CString[1]{"checks MetadataSetObject addValue() method"}, 1);
-MetadataSet66->addValue(*MetadataString68);
+MetadataSet66->setValue(*MetadataString68);
 
 Text65->setMetadata(*MetadataSet66);
 

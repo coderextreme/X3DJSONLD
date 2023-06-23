@@ -67,13 +67,13 @@ ProtoInstance ProtoInstance2 = null;
                 .addChild(new Shape().setDEF("ShapeLeftDown")
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDiffuseColor(new float[] {0.7f,1f,0f})))
-                  .setGeometry(new Extrusion().setSpine(new MFVec3f0().getArray()).setCreaseAngle(0.7850f).setCrossSection(new MFVec2f1().getArray()))))
+                  .setGeometry(new Extrusion().setSpine(new MFVec3f0().getArray()).setCreaseAngle(0.785f).setCrossSection(new MFVec2f1().getArray()))))
               .addComments("right")
               .addChild(new Transform().setScale(new float[] {0.5f,0.5f,0.5f})
                 .addChild(new Shape().setDEF("ShapeUpRight")
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDiffuseColor(new float[] {0f,0.7f,1f})))
-                  .setGeometry(new Extrusion().setSpine(new MFVec3f2().getArray()).setCreaseAngle(0.7850f).setCrossSection(new MFVec2f3().getArray()))))
+                  .setGeometry(new Extrusion().setSpine(new MFVec3f2().getArray()).setCreaseAngle(0.785f).setCrossSection(new MFVec2f3().getArray()))))
               .addComments("up")
               .addChild(new Transform().setScale(new float[] {0.5f,0.5f,0.5f})
                 .addChild(new Shape().setUSE("ShapeUpRight")))
@@ -91,22 +91,22 @@ ProtoInstance ProtoInstance2 = null;
     }
 protected class MFVec3f0 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-2.5000f,0.0000f,0.0000f,-1.5000f,0.0000f,0.0000f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-2.5f,0f,0f,-1.5f,0f,0f});
   }
 }
 protected class MFVec2f1 {
   protected org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1.0000f,0.0000f,0.9200f,-0.3800f,0.7100f,-0.7100f,0.3800f,-0.9200f,0.0000f,-1.0000f,-0.3800f,-0.9200f,-0.7100f,-0.7100f,-0.9200f,-0.3800f,-1.0000f,0.0000f,-0.9200f,0.3800f,-0.7100f,0.7100f,-0.3800f,0.9200f,0.0000f,1.0000f,0.3800f,0.9200f,0.7100f,0.7100f,0.9200f,0.3800f,1.0000f,0.0000f});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f});
   }
 }
 protected class MFVec3f2 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1.5000f,0.0000f,0.0000f,2.5000f,0.0000f,0.0000f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1.5f,0f,0f,2.5f,0f,0f});
   }
 }
 protected class MFVec2f3 {
   protected org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1.0000f,0.0000f,0.9200f,-0.3800f,0.7100f,-0.7100f,0.3800f,-0.9200f,0.0000f,-1.0000f,-0.3800f,-0.9200f,-0.7100f,-0.7100f,-0.9200f,-0.3800f,-1.0000f,0.0000f,-0.9200f,0.3800f,-0.7100f,0.7100f,-0.3800f,0.9200f,0.0000f,1.0000f,0.3800f,0.9200f,0.7100f,0.7100f,0.9200f,0.3800f,1.0000f,0.0000f});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f});
   }
 }
 }

@@ -1,7 +1,9 @@
 "use strict";
 
-import xmldom from '@xmldom/xmldom';
-let XMLSerializer = new xmldom.XMLSerializer;
+if (typeof require === 'function') {
+	var xmldom = require('@xmldom/xmldom');
+	var XMLSerializer = new xmldom.XMLSerializer();
+}
 
 export default function DOMSerializer() {};
 DOMSerializer.prototype = {

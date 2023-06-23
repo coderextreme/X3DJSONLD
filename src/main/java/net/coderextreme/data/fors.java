@@ -71,7 +71,7 @@ ProtoInstance ProtoInstance2 = null;
               .addChild(new Transform().setTranslation(new float[] {1f,0f,0f})
                 .addChild(new Shape()
                   .setGeometry(new Text().setString(new MFString0().getArray())
-                    .setFontStyle(new FontStyle().setJustify(new MFString1().getArray()).setSize(5.0000f)))
+                    .setFontStyle(new FontStyle().setJustify(new MFString1().getArray()).setSize(5f)))
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDiffuseColor(new float[] {0f,0f,1f}))))))
             .addChild(new PositionInterpolator().setDEF("NodePosition").setKey(new MFFloat2().getArray()).setKeyValue(new MFVec3f3().getArray()))
@@ -98,7 +98,7 @@ ProtoInstance ProtoInstance2 = null;
             .addField(new field().setType("SFVec3f").setName("set_positionB").setAccessType(field.ACCESSTYPE_INPUTONLY)))
           .setProtoBody(new ProtoBody()
             .addChild(new Shape()
-              .setGeometry(new Extrusion().setDEF("extrusion").setCreaseAngle(0.7850f).setCrossSection(new MFVec2f4().getArray()).setSpine(new MFVec3f5().getArray()))
+              .setGeometry(new Extrusion().setDEF("extrusion").setCreaseAngle(0.785f).setCrossSection(new MFVec2f4().getArray()).setSpine(new MFVec3f5().getArray()))
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f,1f,0f}))))
             .addChild(new Script().setDEF("MoveCylinder")
@@ -159,22 +159,22 @@ protected class MFString1 {
 }
 protected class MFFloat2 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
   }
 }
 protected class MFVec3f3 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,0.0000f,0.0000f,0.0000f,5.0000f,0.0000f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,0f,0f,5f,0f});
   }
 }
 protected class MFVec2f4 {
   protected org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1.0000f,0.0000f,0.9200f,-0.3800f,0.7100f,-0.7100f,0.3800f,-0.9200f,0.0000f,-1.0000f,-0.3800f,-0.9200f,-0.7100f,-0.7100f,-0.9200f,-0.3800f,-1.0000f,0.0000f,-0.9200f,0.3800f,-0.7100f,0.7100f,-0.3800f,0.9200f,0.0000f,1.0000f,0.3800f,0.9200f,0.7100f,0.7100f,0.9200f,0.3800f,1.0000f,0.0000f});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f});
   }
 }
 protected class MFVec3f5 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,-50.0000f,0.0000f,0.0000f,50.0000f,0.0000f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,-50f,0f,0f,50f,0f});
   }
 }
 }

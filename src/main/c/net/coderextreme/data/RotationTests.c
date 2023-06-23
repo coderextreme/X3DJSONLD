@@ -34,7 +34,7 @@ head1.meta[4] = meta6;
 
 meta meta7 = createNode("meta");
 meta7.name = "modified";
-meta7.content = "20 October 2019";
+meta7.content = "16 January 2022";
 head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");
@@ -74,7 +74,7 @@ head1.meta[12] = meta14;
 
 meta meta15 = createNode("meta");
 meta15.name = "identifier";
-meta15.content = "https://x3dgraphics.com/examples/X3dForAdvancedModeling/MotionAnimation/RotationTests.x3d";
+meta15.content = "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/MotionAnimation/RotationTests.x3d";
 head1.meta[13] = meta15;
 
 meta meta16 = createNode("meta");

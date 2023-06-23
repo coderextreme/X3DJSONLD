@@ -5,10 +5,10 @@
     <component level='1' name='HAnim'/>
     <meta content='JoeKick.x3d' name='title'/>
     <meta content='This Joe model is a HAnim version 2 LOA-3 Humanoid with textured skin based on the original HAnim Specification and data from CAESAR models.' name='description'/>
-    <meta content='Joe Williams' name='creator'/>
+    <meta content='Joe D. Williams' name='creator'/>
     <meta content='9 January 2004' name='created'/>
     <meta content='12 January 2017' name='translated'/>
-    <meta content='23 December 2021' name='modified'/>
+    <meta content='29 January 2023' name='modified'/>
     <meta content='Record information about skin coordinates (found in comment at end of scene) as a structured MetadataSet containing MetadataString nodes' name='TODO'/>
     <meta content='Roy Walmsley, Don Brutzman, John Carlson' name='translators'/>
     <meta content='../Characters/JoeSkinTexcoordDisplacerKick.x3d' name='reference'/>
@@ -30,7 +30,7 @@
     <Viewpoint DEF='Scene_BackView' centerOfRotation='0 1.5 0' description='Scene_Back View' orientation='0 1 0 3.14' position='0 1.5 -3'/>
     <Viewpoint DEF='Scene_TopView' centerOfRotation='0 1.5 0' description='Scene_Top View' orientation='1 0 0 -1.5708' position='0 3.5 0'/>
     <Group DEF='Joe_Humanoid'>
-      <HAnimHumanoid DEF='Joe_Human' loa='3' name='Human' version='2.0'>
+      <HAnimHumanoid DEF='Joe_Kick' loa='3' name='Kick' version='2.0'>
         <MetadataSet containerField='metadata' name='warnings' reference='HAnim'>
           <MetadataString name='SymmetricalLeftRight' reference='correction options: ignore, warn, average, left, right, largest, smallest' value='"ignore"'/>
         </MetadataSet>
@@ -113,42 +113,42 @@
                                                   </HAnimJoint>
                                                 </HAnimJoint>
                                               </HAnimJoint>
-                                              <HAnimJoint DEF='Joe_l_sternoclavicular' center='0.082 1.4488 -0.0353' name='l_sternoclavicular' skinCoordIndex='12' skinCoordWeight='1'>
-                                                <HAnimJoint DEF='Joe_l_acromioclavicular' center='0.0962 1.4269 -0.0424' name='l_acromioclavicular' skinCoordIndex='79' skinCoordWeight='1'>
-                                                  <HAnimJoint DEF='Joe_l_shoulder' center='0.2 1.44 -0.04' name='l_shoulder' skinCoordIndex='41 42 44 80 102 103 104 105' skinCoordWeight='1 1 1 1 1 1 1 1'>
-                                                    <HAnimJoint DEF='Joe_l_elbow' center='0.2 1.1388 -0.04' name='l_elbow' skinCoordIndex='45 46 47 109 110 111 112 113 115 116 117 118' skinCoordWeight='1 1 1 1 1 1 1 1 1 1 1 1 1 1 1'>
-                                                      <HAnimJoint DEF='Joe_l_radiocarpal' center='0.2 0.87 -0.04' name='l_radiocarpal' skinCoordIndex='119 120 121 122 123 124 125 126' skinCoordWeight='1 1 1 1 1 1 1 1'>
-                                                        <HAnimJoint DEF='Joe_l_carpometacarpal_1' center='0.1924 0.8472 -0.0534' name='l_carpometacarpal_1' skinCoordIndex='127 128' skinCoordWeight='1 1'>
-                                                          <HAnimJoint DEF='Joe_l_metacarpophalangeal_1' center='0.1951 0.8226 0.0246' name='l_metacarpophalangeal_1' skinCoordIndex='138 139 140 141 142 143' skinCoordWeight='0.5 0.5 0.5 1 1 1'>
-                                                            <HAnimJoint DEF='Joe_l_carpal_interphalangeal_1' center='0.1955 0.8159 0.0464' name='l_carpal_interphalangeal_1' skinCoordIndex='144 145 146 147 148 149 150 151 152' skinCoordWeight='1 1 1 1 1 1 1 1 1'/>
+                                            </HAnimJoint>
+                                            <HAnimJoint DEF='Joe_l_acromioclavicular' center='0.082 1.4488 -0.0353' skinCoordIndex='12' skinCoordWeight='1'>
+                                              <HAnimJoint DEF='Joe_l_sternoclavicular' center='0.0962 1.4269 -0.0424' name='l_acromioclavicular' skinCoordIndex='79' skinCoordWeight='1'>
+                                                <HAnimJoint DEF='Joe_l_shoulder' center='0.2 1.44 -0.04' name='l_shoulder' skinCoordIndex='41 42 44 80 102 103 104 105' skinCoordWeight='1 1 1 1 1 1 1 1'>
+                                                  <HAnimJoint DEF='Joe_l_elbow' center='0.2 1.1388 -0.04' name='l_elbow' skinCoordIndex='45 46 47 109 110 111 112 113 115 116 117 118' skinCoordWeight='1 1 1 1 1 1 1 1 1 1 1 1 1 1 1'>
+                                                    <HAnimJoint DEF='Joe_l_radiocarpal' center='0.2 0.87 -0.04' name='l_radiocarpal' skinCoordIndex='119 120 121 122 123 124 125 126' skinCoordWeight='1 1 1 1 1 1 1 1'>
+                                                      <HAnimJoint DEF='Joe_l_carpometacarpal_1' center='0.1924 0.8472 -0.0534' name='l_carpometacarpal_1' skinCoordIndex='127 128' skinCoordWeight='1 1'>
+                                                        <HAnimJoint DEF='Joe_l_metacarpophalangeal_1' center='0.1951 0.8226 0.0246' name='l_metacarpophalangeal_1' skinCoordIndex='138 139 140 141 142 143' skinCoordWeight='0.5 0.5 0.5 1 1 1'>
+                                                          <HAnimJoint DEF='Joe_l_carpal_interphalangeal_1' center='0.1955 0.8159 0.0464' name='l_carpal_interphalangeal_1' skinCoordIndex='144 145 146 147 148 149 150 151 152' skinCoordWeight='1 1 1 1 1 1 1 1 1'/>
+                                                        </HAnimJoint>
+                                                      </HAnimJoint>
+                                                      <HAnimJoint DEF='Joe_l_carpometacarpal_2' center='0.1983 0.8024 -0.028' name='l_carpometacarpal_2' skinCoordIndex='129 130' skinCoordWeight='1 1'>
+                                                        <HAnimJoint DEF='Joe_l_metacarpophalangeal_2' center='0.1983 0.7815 -0.028' name='l_metacarpophalangeal_2' skinCoordIndex='138 139 140 153 154 155 163' skinCoordWeight='0.5 0.5 0.5 1 1 1 0.5'>
+                                                          <HAnimJoint DEF='Joe_l_carpal_proximal_interphalangeal_2' center='0.2017 0.7363 -0.0248' name='l_carpal_proximal_interphalangeal_2' skinCoordIndex='166 167 168 169' skinCoordWeight='1 1 1 1'>
+                                                            <HAnimJoint DEF='Joe_l_carpal_distal_interphalangeal_2' center='0.2028 0.7139 -0.0236' name='l_carpal_distal_interphalangeal_2' skinCoordIndex='170 171 172 173 174 175 176 177 178' skinCoordWeight='1 1 1 1 1 1 1 1 1'/>
                                                           </HAnimJoint>
                                                         </HAnimJoint>
-                                                        <HAnimJoint DEF='Joe_l_carpometacarpal_2' center='0.1983 0.8024 -0.028' name='l_carpometacarpal_2' skinCoordIndex='129 130' skinCoordWeight='1 1'>
-                                                          <HAnimJoint DEF='Joe_l_metacarpophalangeal_2' center='0.1983 0.7815 -0.028' name='l_metacarpophalangeal_2' skinCoordIndex='138 139 140 153 154 155 163' skinCoordWeight='0.5 0.5 0.5 1 1 1 0.5'>
-                                                            <HAnimJoint DEF='Joe_l_carpal_proximal_interphalangeal_2' center='0.2017 0.7363 -0.0248' name='l_carpal_proximal_interphalangeal_2' skinCoordIndex='166 167 168 169' skinCoordWeight='1 1 1 1'>
-                                                              <HAnimJoint DEF='Joe_l_carpal_distal_interphalangeal_2' center='0.2028 0.7139 -0.0236' name='l_carpal_distal_interphalangeal_2' skinCoordIndex='170 171 172 173 174 175 176 177 178' skinCoordWeight='1 1 1 1 1 1 1 1 1'/>
-                                                            </HAnimJoint>
+                                                      </HAnimJoint>
+                                                      <HAnimJoint DEF='Joe_l_carpometacarpal_3' center='0.1987 0.8029 -0.053' name='l_carpometacarpal_3' skinCoordIndex='131 132' skinCoordWeight='1 1'>
+                                                        <HAnimJoint DEF='Joe_l_metacarpophalangeal_3' center='0.1987 0.7818 -0.053' name='l_metacarpophalangeal_3' skinCoordIndex='156 157 163 164' skinCoordWeight='1 1 0.5 0.5'>
+                                                          <HAnimJoint DEF='Joe_l_carpal_proximal_interphalangeal_3' center='0.2013 0.7273 -0.0503' name='l_carpal_proximal_interphalangeal_3' skinCoordIndex='179 180 181 182' skinCoordWeight='1 1 1 1'>
+                                                            <HAnimJoint DEF='Joe_l_carpal_distal_interphalangeal_3' center='0.2026 0.7011 -0.0494' name='l_carpal_distal_interphalangeal_3' skinCoordIndex='183 184 185 186 187 188 189 190 191' skinCoordWeight='1 1 1 1 1 1 1 1 1'/>
                                                           </HAnimJoint>
                                                         </HAnimJoint>
-                                                        <HAnimJoint DEF='Joe_l_carpometacarpal_3' center='0.1987 0.8029 -0.053' name='l_carpometacarpal_3' skinCoordIndex='131 132' skinCoordWeight='1 1'>
-                                                          <HAnimJoint DEF='Joe_l_metacarpophalangeal_3' center='0.1987 0.7818 -0.053' name='l_metacarpophalangeal_3' skinCoordIndex='156 157 163 164' skinCoordWeight='1 1 0.5 0.5'>
-                                                            <HAnimJoint DEF='Joe_l_carpal_proximal_interphalangeal_3' center='0.2013 0.7273 -0.0503' name='l_carpal_proximal_interphalangeal_3' skinCoordIndex='179 180 181 182' skinCoordWeight='1 1 1 1'>
-                                                              <HAnimJoint DEF='Joe_l_carpal_distal_interphalangeal_3' center='0.2026 0.7011 -0.0494' name='l_carpal_distal_interphalangeal_3' skinCoordIndex='183 184 185 186 187 188 189 190 191' skinCoordWeight='1 1 1 1 1 1 1 1 1'/>
-                                                            </HAnimJoint>
+                                                      </HAnimJoint>
+                                                      <HAnimJoint DEF='Joe_l_carpometacarpal_4' center='0.1956 0.8019 -0.0794' name='l_carpometacarpal_4' skinCoordIndex='133 134' skinCoordWeight='1 1'>
+                                                        <HAnimJoint DEF='Joe_l_metacarpophalangeal_4' center='0.1956 0.7815 -0.0794' name='l_metacarpophalangeal_4' skinCoordIndex='158 159 164 165' skinCoordWeight='1 1 0.5 0.5'>
+                                                          <HAnimJoint DEF='Joe_l_carpal_proximal_interphalangeal_4' center='0.1973 0.7287 -0.0777' name='l_carpal_proximal_interphalangeal_4' skinCoordIndex='192 193 194 195' skinCoordWeight='1 1 1 1'>
+                                                            <HAnimJoint DEF='Joe_l_carpal_distal_interphalangeal_4' center='0.1983 0.7045 -0.0767' name='l_carpal_distal_interphalangeal_4' skinCoordIndex='196 197 198 199 200 201 202 203 204' skinCoordWeight='1 1 1 1 1 1 1 1 1'/>
                                                           </HAnimJoint>
                                                         </HAnimJoint>
-                                                        <HAnimJoint DEF='Joe_l_carpometacarpal_4' center='0.1956 0.8019 -0.0794' name='l_carpometacarpal_4' skinCoordIndex='133 134' skinCoordWeight='1 1'>
-                                                          <HAnimJoint DEF='Joe_l_metacarpophalangeal_4' center='0.1956 0.7815 -0.0794' name='l_metacarpophalangeal_4' skinCoordIndex='158 159 164 165' skinCoordWeight='1 1 0.5 0.5'>
-                                                            <HAnimJoint DEF='Joe_l_carpal_proximal_interphalangeal_4' center='0.1973 0.7287 -0.0777' name='l_carpal_proximal_interphalangeal_4' skinCoordIndex='192 193 194 195' skinCoordWeight='1 1 1 1'>
-                                                              <HAnimJoint DEF='Joe_l_carpal_distal_interphalangeal_4' center='0.1983 0.7045 -0.0767' name='l_carpal_distal_interphalangeal_4' skinCoordIndex='196 197 198 199 200 201 202 203 204' skinCoordWeight='1 1 1 1 1 1 1 1 1'/>
-                                                            </HAnimJoint>
-                                                          </HAnimJoint>
-                                                        </HAnimJoint>
-                                                        <HAnimJoint DEF='Joe_l_carpometacarpal_5' center='0.1925 0.8066 -0.1036' name='l_carpometacarpal_5' skinCoordIndex='135 136 137 165' skinCoordWeight='1 1 1 0.5'>
-                                                          <HAnimJoint DEF='Joe_l_metacarpophalangeal_5' center='0.1925 0.7866 -0.1036' name='l_metacarpophalangeal_5' skinCoordIndex='160 161 162' skinCoordWeight='1 1 1'>
-                                                            <HAnimJoint DEF='Joe_l_carpal_proximal_interphalangeal_5' center='0.1938 0.7452 -0.1024' name='l_carpal_proximal_interphalangeal_5' skinCoordIndex='205 206 207 208' skinCoordWeight='1 1 1 1'>
-                                                              <HAnimJoint DEF='Joe_l_carpal_distal_interphalangeal_5' center='0.1948 0.7277 -0.1017' name='l_carpal_distal_interphalangeal_5' skinCoordIndex='209 210 211 212 213 214 215 216 217' skinCoordWeight='1 1 1 1 1 1 1 1 1'/>
-                                                            </HAnimJoint>
+                                                      </HAnimJoint>
+                                                      <HAnimJoint DEF='Joe_l_carpometacarpal_5' center='0.1925 0.8066 -0.1036' name='l_carpometacarpal_5' skinCoordIndex='135 136 137 165' skinCoordWeight='1 1 1 0.5'>
+                                                        <HAnimJoint DEF='Joe_l_metacarpophalangeal_5' center='0.1925 0.7866 -0.1036' name='l_metacarpophalangeal_5' skinCoordIndex='160 161 162' skinCoordWeight='1 1 1'>
+                                                          <HAnimJoint DEF='Joe_l_carpal_proximal_interphalangeal_5' center='0.1938 0.7452 -0.1024' name='l_carpal_proximal_interphalangeal_5' skinCoordIndex='205 206 207 208' skinCoordWeight='1 1 1 1'>
+                                                            <HAnimJoint DEF='Joe_l_carpal_distal_interphalangeal_5' center='0.1948 0.7277 -0.1017' name='l_carpal_distal_interphalangeal_5' skinCoordIndex='209 210 211 212 213 214 215 216 217' skinCoordWeight='1 1 1 1 1 1 1 1 1'/>
                                                           </HAnimJoint>
                                                         </HAnimJoint>
                                                       </HAnimJoint>
@@ -156,42 +156,42 @@
                                                   </HAnimJoint>
                                                 </HAnimJoint>
                                               </HAnimJoint>
-                                              <HAnimJoint DEF='Joe_r_sternoclavicular' center='-0.03 1.46 0' name='r_sternoclavicular' skinCoordIndex='10' skinCoordWeight='1'>
-                                                <HAnimJoint DEF='Joe_r_acromioclavicular' center='-0.09 1.41 -0.11' name='r_acromioclavicular' skinCoordIndex='77 29' skinCoordWeight='1 0.9'>
-                                                  <HAnimJoint DEF='Joe_r_shoulder' center='-0.2 1.44 -0.04' name='r_shoulder' skinCoordIndex='29 30 32 78 218 219 220 221 86 88' skinCoordWeight='0.1 1 1 1 1 1 1 1 0.3 0.2'>
-                                                    <HAnimJoint DEF='Joe_r_elbow' center='-0.2 1.1388 -0.04' name='r_elbow' skinCoordIndex='33 34 35 225 226 227 228 229 231 232 233 234' skinCoordWeight='1 1 1 1 1 1 1 1 1 1 1 1'>
-                                                      <HAnimJoint DEF='Joe_r_radiocarpal' center='-0.2 0.89 -0.04' name='r_radiocarpal' skinCoordIndex='235 236 237 238 239 240 241 242' skinCoordWeight='1 1 1 1 1 1 1 1'>
-                                                        <HAnimJoint DEF='Joe_r_carpometacarpal_1' center='-0.2 0.85 0' name='r_carpometacarpal_1' skinCoordIndex='243 244' skinCoordWeight='1 1'>
-                                                          <HAnimJoint DEF='Joe_r_metacarpophalangeal_1' center='-0.2 0.82 0.03' name='r_metacarpophalangeal_1' skinCoordIndex='254 255 256 257 258 259' skinCoordWeight='0.5 0.5 0.5 1 1 1'>
-                                                            <HAnimJoint DEF='Joe_r_carpal_interphalangeal_1' center='-0.2 0.8 0.05' name='r_carpal_interphalangeal_1' skinCoordIndex='260 261 262 263 264 265 266 267 268' skinCoordWeight='1 1 1 1 1 1 1 1 1'/>
+                                            </HAnimJoint>
+                                            <HAnimJoint DEF='Joe_r_sternoclavicular' center='-0.03 1.46 0' name='r_sternoclavicular' skinCoordIndex='10' skinCoordWeight='1'>
+                                              <HAnimJoint DEF='Joe_r_acromioclavicular' center='-0.09 1.41 -0.11' name='r_acromioclavicular' skinCoordIndex='77 29' skinCoordWeight='1 0.9'>
+                                                <HAnimJoint DEF='Joe_r_shoulder' center='-0.2 1.44 -0.04' name='r_shoulder' skinCoordIndex='29 30 32 78 218 219 220 221 86 88' skinCoordWeight='0.1 1 1 1 1 1 1 1 0.3 0.2'>
+                                                  <HAnimJoint DEF='Joe_r_elbow' center='-0.2 1.1388 -0.04' name='r_elbow' skinCoordIndex='33 34 35 225 226 227 228 229 231 232 233 234' skinCoordWeight='1 1 1 1 1 1 1 1 1 1 1 1'>
+                                                    <HAnimJoint DEF='Joe_r_radiocarpal' center='-0.2 0.89 -0.04' name='r_radiocarpal' skinCoordIndex='235 236 237 238 239 240 241 242' skinCoordWeight='1 1 1 1 1 1 1 1'>
+                                                      <HAnimJoint DEF='Joe_r_carpometacarpal_1' center='-0.2 0.85 0' name='r_carpometacarpal_1' skinCoordIndex='243 244' skinCoordWeight='1 1'>
+                                                        <HAnimJoint DEF='Joe_r_metacarpophalangeal_1' center='-0.2 0.82 0.03' name='r_metacarpophalangeal_1' skinCoordIndex='254 255 256 257 258 259' skinCoordWeight='0.5 0.5 0.5 1 1 1'>
+                                                          <HAnimJoint DEF='Joe_r_carpal_interphalangeal_1' center='-0.2 0.8 0.05' name='r_carpal_interphalangeal_1' skinCoordIndex='260 261 262 263 264 265 266 267 268' skinCoordWeight='1 1 1 1 1 1 1 1 1'/>
+                                                        </HAnimJoint>
+                                                      </HAnimJoint>
+                                                      <HAnimJoint DEF='Joe_r_carpometacarpal_2' center='-0.2 0.84 -0.015' name='r_carpometacarpal_2' skinCoordIndex='245 246' skinCoordWeight='1 1'>
+                                                        <HAnimJoint DEF='Joe_r_metacarpophalangeal_2' center='-0.2 0.793 -0.015' name='r_metacarpophalangeal_2' skinCoordIndex='254 255 256 269 270 271 279' skinCoordWeight='0.5 0.5 0.5 1 1 1 0.5'>
+                                                          <HAnimJoint DEF='Joe_r_carpal_proximal_interphalangeal_2' center='-0.2 0.745 -0.015' name='r_carpal_proximal_interphalangeal_2' skinCoordIndex='282 283 284 285' skinCoordWeight='1 1 1 1'>
+                                                            <HAnimJoint DEF='Joe_r_carpal_distal_interphalangeal_2' center='-0.2 0.72 -0.015' name='r_carpal_distal_interphalangeal_2' skinCoordIndex='286 287 288 289 290 291 292 293 294' skinCoordWeight='1 1 1 1 1 1 1 1 1'/>
                                                           </HAnimJoint>
                                                         </HAnimJoint>
-                                                        <HAnimJoint DEF='Joe_r_carpometacarpal_2' center='-0.2 0.84 -0.015' name='r_carpometacarpal_2' skinCoordIndex='245 246' skinCoordWeight='1 1'>
-                                                          <HAnimJoint DEF='Joe_r_metacarpophalangeal_2' center='-0.2 0.793 -0.015' name='r_metacarpophalangeal_2' skinCoordIndex='254 255 256 269 270 271 279' skinCoordWeight='0.5 0.5 0.5 1 1 1 0.5'>
-                                                            <HAnimJoint DEF='Joe_r_carpal_proximal_interphalangeal_2' center='-0.2 0.745 -0.015' name='r_carpal_proximal_interphalangeal_2' skinCoordIndex='282 283 284 285' skinCoordWeight='1 1 1 1'>
-                                                              <HAnimJoint DEF='Joe_r_carpal_distal_interphalangeal_2' center='-0.2 0.72 -0.015' name='r_carpal_distal_interphalangeal_2' skinCoordIndex='286 287 288 289 290 291 292 293 294' skinCoordWeight='1 1 1 1 1 1 1 1 1'/>
-                                                            </HAnimJoint>
+                                                      </HAnimJoint>
+                                                      <HAnimJoint DEF='Joe_r_carpometacarpal_3' center='-0.2 0.835 -0.04' name='r_carpometacarpal_3' skinCoordIndex='247 248' skinCoordWeight='1 1'>
+                                                        <HAnimJoint DEF='Joe_r_metacarpophalangeal_3' center='-0.2 0.788 -0.04' name='r_metacarpophalangeal_3' skinCoordIndex='272 273 279 280' skinCoordWeight='1 1 0.5 0.5'>
+                                                          <HAnimJoint DEF='Joe_r_carpal_proximal_interphalangeal_3' center='-0.2 0.74 -0.04' name='r_carpal_proximal_interphalangeal_3' skinCoordIndex='295 296 297 298' skinCoordWeight='1 1 1 1'>
+                                                            <HAnimJoint DEF='Joe_r_carpal_distal_interphalangeal_3' center='-0.2 0.7142 -0.04' name='r_carpal_distal_interphalangeal_3' skinCoordIndex='299 300 301 302 303 304 305 306 307' skinCoordWeight='1 1 1 1 1 1 1 1 1'/>
                                                           </HAnimJoint>
                                                         </HAnimJoint>
-                                                        <HAnimJoint DEF='Joe_r_carpometacarpal_3' center='-0.2 0.835 -0.04' name='r_carpometacarpal_3' skinCoordIndex='247 248' skinCoordWeight='1 1'>
-                                                          <HAnimJoint DEF='Joe_r_metacarpophalangeal_3' center='-0.2 0.788 -0.04' name='r_metacarpophalangeal_3' skinCoordIndex='272 273 279 280' skinCoordWeight='1 1 0.5 0.5'>
-                                                            <HAnimJoint DEF='Joe_r_carpal_proximal_interphalangeal_3' center='-0.2 0.74 -0.04' name='r_carpal_proximal_interphalangeal_3' skinCoordIndex='295 296 297 298' skinCoordWeight='1 1 1 1'>
-                                                              <HAnimJoint DEF='Joe_r_carpal_distal_interphalangeal_3' center='-0.2 0.7142 -0.04' name='r_carpal_distal_interphalangeal_3' skinCoordIndex='299 300 301 302 303 304 305 306 307' skinCoordWeight='1 1 1 1 1 1 1 1 1'/>
-                                                            </HAnimJoint>
+                                                      </HAnimJoint>
+                                                      <HAnimJoint DEF='Joe_r_carpometacarpal_4' center='-0.2 0.835 -0.065' name='r_carpometacarpal_4' skinCoordIndex='249 250' skinCoordWeight='1 1'>
+                                                        <HAnimJoint DEF='Joe_r_metacarpophalangeal_4' center='-0.2 0.793 -0.065' name='r_metacarpophalangeal_4' skinCoordIndex='274 275 280 281' skinCoordWeight='1 1 0.5 0.5'>
+                                                          <HAnimJoint DEF='Joe_r_carpal_proximal_interphalangeal_4' center='-0.2 0.74 -0.065' name='r_carpal_proximal_interphalangeal_4' skinCoordIndex='308 309 310 311' skinCoordWeight='1 1 1 1'>
+                                                            <HAnimJoint DEF='Joe_r_carpal_distal_interphalangeal_4' center='-0.2 0.7177 -0.065' name='r_carpal_distal_interphalangeal_4' skinCoordIndex='312 313 314 315 316 317 318 319 320' skinCoordWeight='1 1 1 1 1 1 1 1 1'/>
                                                           </HAnimJoint>
                                                         </HAnimJoint>
-                                                        <HAnimJoint DEF='Joe_r_carpometacarpal_4' center='-0.2 0.835 -0.065' name='r_carpometacarpal_4' skinCoordIndex='249 250' skinCoordWeight='1 1'>
-                                                          <HAnimJoint DEF='Joe_r_metacarpophalangeal_4' center='-0.2 0.793 -0.065' name='r_metacarpophalangeal_4' skinCoordIndex='274 275 280 281' skinCoordWeight='1 1 0.5 0.5'>
-                                                            <HAnimJoint DEF='Joe_r_carpal_proximal_interphalangeal_4' center='-0.2 0.74 -0.065' name='r_carpal_proximal_interphalangeal_4' skinCoordIndex='308 309 310 311' skinCoordWeight='1 1 1 1'>
-                                                              <HAnimJoint DEF='Joe_r_carpal_distal_interphalangeal_4' center='-0.2 0.7177 -0.065' name='r_carpal_distal_interphalangeal_4' skinCoordIndex='312 313 314 315 316 317 318 319 320' skinCoordWeight='1 1 1 1 1 1 1 1 1'/>
-                                                            </HAnimJoint>
-                                                          </HAnimJoint>
-                                                        </HAnimJoint>
-                                                        <HAnimJoint DEF='Joe_r_carpometacarpal_5' center='-0.2 0.84 -0.085' name='r_carpometacarpal_5' skinCoordIndex='251 252 253 281' skinCoordWeight='1 1 1 0.5'>
-                                                          <HAnimJoint DEF='Joe_r_metacarpophalangeal_5' center='-0.2 0.79 -0.085' name='r_metacarpophalangeal_5' skinCoordIndex='276 277 278' skinCoordWeight='1 1 1'>
-                                                            <HAnimJoint DEF='Joe_r_carpal_proximal_interphalangeal_5' center='-0.2 0.755 -0.085' name='r_carpal_proximal_interphalangeal_5' skinCoordIndex='321 322 323 324' skinCoordWeight='1 1 1 1'>
-                                                              <HAnimJoint DEF='Joe_r_carpal_distal_interphalangeal_5' center='-0.2 0.735 -0.09' name='r_carpal_distal_interphalangeal_5' skinCoordIndex='325 326 327 328 329 330 331 332 333' skinCoordWeight='1 1 1 1 1 1 1 1 1'/>
-                                                            </HAnimJoint>
+                                                      </HAnimJoint>
+                                                      <HAnimJoint DEF='Joe_r_carpometacarpal_5' center='-0.2 0.84 -0.085' name='r_carpometacarpal_5' skinCoordIndex='251 252 253 281' skinCoordWeight='1 1 1 0.5'>
+                                                        <HAnimJoint DEF='Joe_r_metacarpophalangeal_5' center='-0.2 0.79 -0.085' name='r_metacarpophalangeal_5' skinCoordIndex='276 277 278' skinCoordWeight='1 1 1'>
+                                                          <HAnimJoint DEF='Joe_r_carpal_proximal_interphalangeal_5' center='-0.2 0.755 -0.085' name='r_carpal_proximal_interphalangeal_5' skinCoordIndex='321 322 323 324' skinCoordWeight='1 1 1 1'>
+                                                            <HAnimJoint DEF='Joe_r_carpal_distal_interphalangeal_5' center='-0.2 0.735 -0.09' name='r_carpal_distal_interphalangeal_5' skinCoordIndex='325 326 327 328 329 330 331 332 333' skinCoordWeight='1 1 1 1 1 1 1 1 1'/>
                                                           </HAnimJoint>
                                                         </HAnimJoint>
                                                       </HAnimJoint>

@@ -1,9 +1,10 @@
 var java = require('java');
+var util = require('util');
 java.asyncOptions = {
   asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
   syncSuffix: "",              // Sync methods use the base name(!!)
   promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
-  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  promisify: util.promisify, // Needs Node.js version 8 or greater, see comment below
   ifReadOnlySuffix: "_alt"
 };
 var autoclass = require('../../../X3Dautoclass');
@@ -42,7 +43,7 @@ var ProtoInstance6 = null;
         .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org/specifications/java/X3DJSAIL.html"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("HelloWorldProgramOutput.java"))
         .addMeta((new autoclass.meta()).setName("created").setContent("6 September 2016"))
-        .addMeta((new autoclass.meta()).setName("modified").setContent("4 July 2022"))
+        .addMeta((new autoclass.meta()).setName("modified").setContent("29 January 2023"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("X3D Java Scene Access Interface Library (X3DJSAIL)"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("Netbeans https://www.netbeans.org"))

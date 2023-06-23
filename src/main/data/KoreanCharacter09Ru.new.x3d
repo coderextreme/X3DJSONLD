@@ -22,7 +22,7 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
     <meta content='Gnu Image Manipulation Program, http://www.gimp.org' name='generator'/>
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='../license.html' name='license'/>
-    <meta content='09 June 2023' name='translated'/>
+    <meta content='22 June 2023' name='translated'/>
     <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
     <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
   </head>
@@ -106,6 +106,7 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
             </Transform>
           </HAnimSegment>
           <HAnimJoint DEF='hanim_l_knee' center='3.931 18.23 -1.935' name='l_knee'>
+            <!--  weight values go here in HAnimJoint, or within animating HAnimDisplacer  -->
             <HAnimSegment DEF='hanim_l_calf' name='l_calf'>
               <Transform translation='3.931 18.23 -1.935'>
                 <Shape>

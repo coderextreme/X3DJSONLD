@@ -61,7 +61,7 @@ public class AllAudioGraphNodesTest {
         .addChild(new Shape()
           .setGeometry(new Box())
           .setAppearance(new Appearance()
-            .setAcousticProperties(new AcousticProperties().setDescription("Testing of X3D4 nodes demonstrating W3C Audio API in progress").setDiffuse(0.2500f).setRefraction(0.5000f).setSpecular(1.0000f))
+            .setAcousticProperties(new AcousticProperties().setDescription("Testing of X3D4 nodes demonstrating W3C Audio API in progress").setDiffuse(0.25f).setRefraction(0.5f).setSpecular(1f))
             .setMaterial(new Material())))
         .addChild(new Sound().setLocation(new float[] {0f,1.6f,0f})
           .setSource(new AudioClip().setDescription("testing").setUrl(new MFString0().getArray())))
@@ -84,7 +84,7 @@ public class AllAudioGraphNodesTest {
                                   .addChild(new BufferAudioSource().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS"))
                                   .addChild(new ListenerPointSource())
                                   .addChild(new MicrophoneSource())
-                                  .addChild(new OscillatorSource().setFrequency(440.0000f))
+                                  .addChild(new OscillatorSource().setFrequency(440f))
                                   .addChild(new StreamAudioSource().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS"))))))))))))))))      ;
     return X3D0;
     }

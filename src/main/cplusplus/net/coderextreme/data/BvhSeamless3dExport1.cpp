@@ -4,7 +4,7 @@
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
 int main(int argc, char ** argv) {
 CX3DScene m_pScene;
 CBrowser browser = X3D.getBrowser();
@@ -46,7 +46,7 @@ head1->addMeta(*meta7);
 
 Cmeta* meta8 = new Cmeta();
 meta8->setName("modified");
-meta8->setContent("20 October 2019");
+meta8->setContent("16 January 2022");
 head1->addMeta(*meta8);
 
 Cmeta* meta9 = new Cmeta();
@@ -81,7 +81,7 @@ head1->addMeta(*meta14);
 
 Cmeta* meta15 = new Cmeta();
 meta15->setName("identifier");
-meta15->setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/MotionAnimation/BvhSeamless3dExport1.x3d");
+meta15->setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/MotionAnimation/BvhSeamless3dExport1.x3d");
 head1->addMeta(*meta15);
 
 Cmeta* meta16 = new Cmeta();
@@ -106,8 +106,8 @@ Viewpoint20->setDescription("View animation");
 Viewpoint20->setPosition(new float[3]{0,2,16});
 group->addChildren(*Viewpoint20);
 
-CProtoDeclare ProtoDeclare21 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
+CProtoDeclare ProtoDeclare21 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <ProtoDeclare name="PAnim" ><ProtoInterface><field name="play" accessType="inputOutput" type="SFBool" value="true"></field>
 <field name="pause" accessType="inputOutput" type="SFBool" value="true"></field>
 <field name="period" accessType="inputOutput" type="SFTime" value="1"></field>

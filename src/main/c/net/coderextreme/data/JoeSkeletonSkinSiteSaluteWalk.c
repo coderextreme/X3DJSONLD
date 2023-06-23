@@ -457,8 +457,8 @@ Coordinate89.USE = "TheSkinCoord";
 HAnimHumanoid81.skinCoord = Coordinate89;
 
 HAnimJoint HAnimJoint90 = createNode("HAnimJoint");
-HAnimJoint90.name = "humanoid_root";
-HAnimJoint90.DEF = "Joe_humanoid_root";
+HAnimJoint90.name = "HumanoidRoot";
+HAnimJoint90.DEF = "Joe_HumanoidRoot";
 HAnimJoint90.center = new SFVec3f(new float[0,0.875,0]);
 HAnimJoint90.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint90.llimit = new MFFloat(new float[0,0,0]);

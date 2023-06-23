@@ -1,6 +1,4 @@
-// import { Matrix } from "../node/matrix";
-
-export function convertJsonToStl(json) {
+function convertJsonToStl(json) {
 	var LDNodeList = [];
 	var LDNode = initializeLDNode(json, "X3D");
 	LDNodeList.push(LDNode);
@@ -268,7 +266,7 @@ function triangle_normal(a, b, c) {
 	}
 	var ba = [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
 	var bc = [c[0] - b[0], c[1] - b[1], c[2] - b[2]];
-	baxbc = vector_product(ba, bc);
+	var baxbc = vector_product(ba, bc);
 	return normalize(baxbc);
 }
 
@@ -524,3 +522,4 @@ function transformLDNodesToTriangles(LDNode, output, parentTransform) {
 		transformLDNodesToTriangles(CNode, output, transform);
 	}
 }
+module.exports = convertJsonToStl;

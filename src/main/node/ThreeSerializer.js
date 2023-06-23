@@ -1,6 +1,6 @@
 "use strict";
 
-export function ThreeSerializer () {
+function ThreeSerializer () {
 };
 
 
@@ -200,3 +200,4 @@ function printObject(element, fieldTypes) {
 	obj["children"] = array;
 	return obj;
 }
+module.exports ThreeSerializer;

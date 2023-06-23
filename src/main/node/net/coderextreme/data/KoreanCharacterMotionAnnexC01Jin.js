@@ -1,9 +1,10 @@
 var java = require('java');
+var util = require('util');
 java.asyncOptions = {
   asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
   syncSuffix: "",              // Sync methods use the base name(!!)
   promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
-  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  promisify: util.promisify, // Needs Node.js version 8 or greater, see comment below
   ifReadOnlySuffix: "_alt"
 };
 var autoclass = require('../../../X3Dautoclass');
@@ -20,11 +21,13 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("translator").setContent("Chul Hee Jung and Myeong Won Lee"))
         .addMeta((new autoclass.meta()).setName("created").setContent("31 March 2011"))
         .addMeta((new autoclass.meta()).setName("translated").setContent("1 November 2014"))
-        .addMeta((new autoclass.meta()).setName("modified").setContent("23 December 2021"))
+        .addMeta((new autoclass.meta()).setName("modified").setContent("7 January 2023"))
         .addMeta((new autoclass.meta()).setName("description").setContent("Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model."))
         .addMeta((new autoclass.meta()).setName("reference").setContent("KoreanCharacter00ReadMe.txt"))
         .addMeta((new autoclass.meta()).setName("reference").setContent("KoreanCharacterHumanMotion_Infotech2014_140706.pdf"))
         .addMeta((new autoclass.meta()).setName("reference").setContent("KoreanCharactersIllustrated.pdf"))
+        .addMeta((new autoclass.meta()).setName("specificationSection").setContent("HAnim 2.0 Part 2: Humanoid animation (HAnim) motion data animation, Annex C (informative) An example of HAnim motion data animation using interpolators"))
+        .addMeta((new autoclass.meta()).setName("specificationUrl").setContent("https://www.web3d.org/documents/specifications/19774/V2.0/MotionDataAnimation/ExampleMocapAnimationInterpolators.html"))
         .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/KoreanCharacterMotionAnnexC01Jin.x3d"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("Suwon HAnim Converter"))

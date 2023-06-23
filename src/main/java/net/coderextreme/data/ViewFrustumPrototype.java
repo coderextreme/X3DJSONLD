@@ -93,7 +93,7 @@ public class ViewFrustumPrototype {
                           .addConnect(new connect().setNodeField("diffuseColor").setProtoField("frustumColor"))
                           .addConnect(new connect().setNodeField("transparency").setProtoField("transparency"))))))
                   .addChild(new Shape()
-                    .setGeometry(new Sphere().setRadius(0.0800f))
+                    .setGeometry(new Sphere().setRadius(0.08f))
                     .setAppearance(new Appearance().setUSE("FrustumAppearance"))))))
             .addChild(new Script().setDEF("GeometryComputationScript").setDirectOutput(true).setUrl(new MFString2().getArray())
               .addField(new field().setType("SFBool").setName("visible").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Whether or not frustum geometry is rendered"))
@@ -132,7 +132,7 @@ public class ViewFrustumPrototype {
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(new float[] {0.8f,0.4f,0f})))
             .setGeometry(new Text().setString(new MFString4().getArray())
-              .setFontStyle(new FontStyle().setJustify(new MFString5().getArray()).setSize(0.8000f))))))      ;
+              .setFontStyle(new FontStyle().setJustify(new MFString5().getArray()).setSize(0.8f))))))      ;
     return X3D0;
     }
 protected class MFInt320 {
@@ -142,7 +142,7 @@ protected class MFInt320 {
 }
 protected class MFVec3f1 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f});
   }
 }
 protected class MFString2 {

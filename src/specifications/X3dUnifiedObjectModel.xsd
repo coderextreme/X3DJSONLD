@@ -228,7 +228,11 @@ Design summary:
 			<xs:attribute name="appinfo" type="xs:string" default=""/>
 			<xs:attribute name="documentation" type="xs:string" default=""/>
 			<xs:attribute name="index" type="xs:string" default=""/>
-			<xs:attribute name="alias" type="xs:string" default=""/>
+			<xs:attribute name="alias" type="xs:string" default="">
+                            <xs:annotation>
+                                <xs:appinfo>alias provides equivalent enumeration name(s) that supports equivalence between different metadata vocabularies.  Multiple names are separated by commas.</xs:appinfo>
+                            </xs:annotation>
+                        </xs:attribute>
 			<xs:attribute name="loa" type="xs:string" default=""/>
 			<xs:attribute name="parent" type="xs:string" default=""/>
 			<xs:attribute name="description" type="xs:string" default=""/>
@@ -261,7 +265,11 @@ Design summary:
 			<xs:attribute name="minInclusive" type="xs:token" default=""/>
 			<xs:attribute name="name" type="xs:token" default=""/>
 			<xs:attribute name="simpleType" type="xs:token" default=""/>
-			<xs:attribute name="synonym" type="xs:token" default=""/>
+                        <xs:attribute name="synonym" type="xs:token" default="">
+                            <xs:annotation>
+                                <xs:appinfo>synonym is an equivalent field name that handles evolution of X3D versions</xs:appinfo>
+                            </xs:annotation>
+                        </xs:attribute>
 			<xs:attribute name="type" type="fieldTypeValues" default="SFBool"/>
 			<xs:attribute name="use" default="optional">
 				<xs:simpleType>

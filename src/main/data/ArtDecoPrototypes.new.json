@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"09 June 2023"
+            "@content":"22 June 2023"
           },
           {
             "@name":"generator",
@@ -82,7 +82,7 @@
                       {
                         "@ambientIntensity":0.25,
                         "@diffuseColor":[0.282435,0.085159,0.134462],
-                        "@shininess":0.1273,
+                        "@shininess":0.127273,
                         "@specularColor":[0.276305,0.11431,0.139857]
                       }
                     }
@@ -99,9 +99,9 @@
                   "-children":[
                     { "Material":
                       {
-                        "@ambientIntensity":0.2548,
+                        "@ambientIntensity":0.254777,
                         "@diffuseColor":[0.685208,0.134679,0.332385],
-                        "@shininess":0.0714,
+                        "@shininess":0.071429,
                         "@specularColor":[0.122449,0.050035,0.050035]
                       }
                     }
@@ -125,7 +125,7 @@
                       {
                         "@ambientIntensity":1.0,
                         "@diffuseColor":[0.536861,0.0529,0.245479],
-                        "@shininess":0.8324,
+                        "@shininess":0.832432,
                         "@specularColor":[0.805292,0.765198,0.747416]
                       }
                     }
@@ -142,9 +142,9 @@
                   "-children":[
                     { "Material":
                       {
-                        "@ambientIntensity":0.2486,
+                        "@ambientIntensity":0.248649,
                         "@diffuseColor":[1,0.452381,0.40339],
-                        "@shininess":0.9027,
+                        "@shininess":0.902703,
                         "@specularColor":[0.686486,0.396903,0.419275]
                       }
                     }
@@ -163,7 +163,7 @@
                       {
                         "@ambientIntensity":0.25,
                         "@diffuseColor":[0.748016,0.298362,0.342624],
-                        "@shininess":0.697,
+                        "@shininess":0.69697,
                         "@specularColor":[0.345455,0.345455,0.345455]
                       }
                     }
@@ -180,9 +180,9 @@
                   "-children":[
                     { "Material":
                       {
-                        "@ambientIntensity":0.2436,
+                        "@ambientIntensity":0.24359,
                         "@diffuseColor":[0.945455,0.318988,0.321717],
-                        "@shininess":0.0182,
+                        "@shininess":0.018182,
                         "@specularColor":[0.072727,0.021705,0.010732]
                       }
                     }
@@ -199,9 +199,9 @@
                   "-children":[
                     { "Material":
                       {
-                        "@ambientIntensity":0.2595,
+                        "@ambientIntensity":0.25946,
                         "@diffuseColor":[0.228655,0.195513,0.425484],
-                        "@shininess":0.5426,
+                        "@shininess":0.542553,
                         "@specularColor":[0.324504,0.404255,0.404255]
                       }
                     }
@@ -218,9 +218,9 @@
                   "-children":[
                     { "Material":
                       {
-                        "@ambientIntensity":0.3333,
+                        "@ambientIntensity":0.333333,
                         "@diffuseColor":[0.200348,0.100857,0.320833],
-                        "@shininess":0.1333,
+                        "@shininess":0.133333,
                         "@specularColor":[0.311358,0.387879,0.387879]
                       }
                     }
@@ -237,9 +237,9 @@
                   "-children":[
                     { "Material":
                       {
-                        "@ambientIntensity":0.2424,
+                        "@ambientIntensity":0.242424,
                         "@diffuseColor":[0.330519,0.3389,0.6],
-                        "@shininess":0.7879,
+                        "@shininess":0.787879,
                         "@specularColor":[0.290909,0.290909,0.290909]
                       }
                     }
@@ -256,9 +256,9 @@
                   "-children":[
                     { "Material":
                       {
-                        "@ambientIntensity":0.3333,
+                        "@ambientIntensity":0.333333,
                         "@diffuseColor":[0.237059,0.096273,0.215625],
-                        "@shininess":0.1333,
+                        "@shininess":0.133333,
                         "@specularColor":[0.311358,0.387879,0.387879]
                       }
                     }
@@ -275,9 +275,9 @@
                   "-children":[
                     { "Material":
                       {
-                        "@ambientIntensity":0.2424,
+                        "@ambientIntensity":0.242425,
                         "@diffuseColor":[0.304,0.09025,0.207364],
-                        "@shininess":0.0727,
+                        "@shininess":0.072727,
                         "@specularColor":[0.6665,0.579046,0.830303]
                       }
                     }
@@ -294,10 +294,10 @@
                   "-children":[
                     { "Material":
                       {
-                        "@ambientIntensity":0.2589,
+                        "@ambientIntensity":0.258928,
                         "@diffuseColor":[0.335631,0.207672,0.238304],
                         "@emissiveColor":[0.010638,0.010638,0.010638],
-                        "@shininess":0.0213,
+                        "@shininess":0.021277,
                         "@specularColor":[0.198631,0.075403,0.138803]
                       }
                     }
@@ -314,9 +314,9 @@
                   "-children":[
                     { "Material":
                       {
-                        "@ambientIntensity":0.2408,
+                        "@ambientIntensity":0.240838,
                         "@diffuseColor":[0.876873,0.14715,0.00856],
-                        "@shininess":0.0765,
+                        "@shininess":0.076531,
                         "@specularColor":[0.193878,0.029416,0.029416]
                       }
                     }
@@ -335,7 +335,7 @@
                       {
                         "@ambientIntensity":0.25,
                         "@diffuseColor":[0.794445,0.249425,0],
-                        "@shininess":0.5515,
+                        "@shininess":0.551515,
                         "@specularColor":[0.62904,0.194211,0.033663]
                       }
                     }
@@ -354,7 +354,7 @@
                       {
                         "@ambientIntensity":0.25,
                         "@diffuseColor":[0.510609,0.17264,0.059872],
-                        "@shininess":0.9333,
+                        "@shininess":0.933333,
                         "@specularColor":[0.533333,0.533333,0.533333]
                       }
                     }
@@ -371,9 +371,9 @@
                   "-children":[
                     { "Material":
                       {
-                        "@ambientIntensity":0.2558,
+                        "@ambientIntensity":0.255814,
                         "@diffuseColor":[0.914894,0.444404,0.348914],
-                        "@shininess":0.1277,
+                        "@shininess":0.12766,
                         "@specularColor":[0.345745,0.143066,0]
                       }
                     }
@@ -390,9 +390,9 @@
                   "-children":[
                     { "Material":
                       {
-                        "@ambientIntensity":0.2408,
+                        "@ambientIntensity":0.240838,
                         "@diffuseColor":[0.876873,0.323147,0.199564],
-                        "@shininess":0.801,
+                        "@shininess":0.80102,
                         "@specularColor":[0.816327,0.278677,0.278677]
                       }
                     }
@@ -409,9 +409,9 @@
                   "-children":[
                     { "Material":
                       {
-                        "@ambientIntensity":0.2424,
+                        "@ambientIntensity":0.242424,
                         "@diffuseColor":[0.515625,0.315496,0.252441],
-                        "@shininess":0.9333,
+                        "@shininess":0.933333,
                         "@specularColor":[0.533333,0.533333,0.533333]
                       }
                     }
@@ -428,9 +428,9 @@
                   "-children":[
                     { "Material":
                       {
-                        "@ambientIntensity":0.2647,
+                        "@ambientIntensity":0.264706,
                         "@diffuseColor":[0,0.346939,0.253624],
-                        "@shininess":0.3163,
+                        "@shininess":0.316327,
                         "@specularColor":[0,0.311074,0.357143]
                       }
                     }
@@ -447,9 +447,9 @@
                   "-children":[
                     { "Material":
                       {
-                        "@ambientIntensity":0.2593,
+                        "@ambientIntensity":0.259259,
                         "@diffuseColor":[0,0.251004,0.239248],
-                        "@shininess":0.0606,
+                        "@shininess":0.060606,
                         "@specularColor":[0.177935,0.249369,0.229278]
                       }
                     }
@@ -468,7 +468,7 @@
                       {
                         "@ambientIntensity":0.24,
                         "@diffuseColor":[0.228298,0.385771,0.186794],
-                        "@shininess":0.3939,
+                        "@shininess":0.393939,
                         "@specularColor":[0.200464,0.300145,0.293518]
                       }
                     }
@@ -487,7 +487,7 @@
                       {
                         "@ambientIntensity":0.25,
                         "@diffuseColor":[0.315389,0.544,0.258052],
-                        "@shininess":0.5094,
+                        "@shininess":0.509389,
                         "@specularColor":[0.456,0.456,0.456]
                       }
                     }
@@ -504,9 +504,9 @@
                   "-children":[
                     { "Material":
                       {
-                        "@ambientIntensity":0.246,
+                        "@ambientIntensity":0.246032,
                         "@diffuseColor":[0.251104,0.312562,0.201724],
-                        "@shininess":0.0867,
+                        "@shininess":0.086735,
                         "@specularColor":[0.209184,0.113842,0.111328]
                       }
                     }
@@ -523,9 +523,9 @@
                   "-children":[
                     { "Material":
                       {
-                        "@ambientIntensity":0.2424,
+                        "@ambientIntensity":0.242424,
                         "@diffuseColor":[0.392348,0.456,0.417708],
-                        "@shininess":0.9333,
+                        "@shininess":0.933333,
                         "@specularColor":[0.533333,0.533333,0.533333]
                       }
                     }
@@ -542,7 +542,7 @@
                   "-children":[
                     { "Material":
                       {
-                        "@ambientIntensity":0.254,
+                        "@ambientIntensity":0.253968,
                         "@diffuseColor":[1,0.854922,0],
                         "@shininess":1.0,
                         "@specularColor":[0.872449,0.247119,0.254214]
@@ -561,9 +561,9 @@
                   "-children":[
                     { "Material":
                       {
-                        "@ambientIntensity":0.2564,
+                        "@ambientIntensity":0.25641,
                         "@diffuseColor":[0.795918,0.505869,0.093315],
-                        "@shininess":0.398,
+                        "@shininess":0.397959,
                         "@specularColor":[0.923469,0.428866,0.006369]
                       }
                     }
@@ -587,7 +587,7 @@
                       {
                         "@ambientIntensity":1.0,
                         "@diffuseColor":[0.331633,0.296582,0.279057],
-                        "@shininess":0.0969,
+                        "@shininess":0.096939,
                         "@specularColor":[0.311224,0.25183,0.133042]
                       }
                     }
@@ -604,9 +604,9 @@
                   "-children":[
                     { "Material":
                       {
-                        "@ambientIntensity":0.2632,
+                        "@ambientIntensity":0.263158,
                         "@diffuseColor":[0.345455,0.163262,0.122622],
-                        "@shininess":0.0486,
+                        "@shininess":0.048649,
                         "@specularColor":[0.212121,0.107475,0]
                       }
                     }
@@ -623,9 +623,9 @@
                   "-children":[
                     { "Material":
                       {
-                        "@ambientIntensity":0.2405,
+                        "@ambientIntensity":0.240506,
                         "@diffuseColor":[0.277281,0.104336,0.0799],
-                        "@shininess":0.097,
+                        "@shininess":0.09697,
                         "@specularColor":[0.305587,0.141916,0.270572]
                       }
                     }
@@ -642,9 +642,9 @@
                   "-children":[
                     { "Material":
                       {
-                        "@ambientIntensity":0.2157,
+                        "@ambientIntensity":0.215686,
                         "@diffuseColor":[0.087034,0.025888,0],
-                        "@shininess":0.0459,
+                        "@shininess":0.045918,
                         "@specularColor":[0.224138,0.104091,0.104091]
                       }
                     }
@@ -663,7 +663,7 @@
                       {
                         "@ambientIntensity":0.0,
                         "@diffuseColor":[0,0,0],
-                        "@shininess":0.0816,
+                        "@shininess":0.081633,
                         "@specularColor":[0.293243,0.297387,0.290421]
                       }
                     }
@@ -680,9 +680,9 @@
                   "-children":[
                     { "Material":
                       {
-                        "@ambientIntensity":0.2564,
+                        "@ambientIntensity":0.25641,
                         "@diffuseColor":[0.236364,0.236364,0.236364],
-                        "@shininess":0.0545,
+                        "@shininess":0.054546,
                         "@specularColor":[0.29697,0.245839,0.295962]
                       }
                     }
@@ -699,9 +699,9 @@
                   "-children":[
                     { "Material":
                       {
-                        "@ambientIntensity":0.2424,
+                        "@ambientIntensity":0.242424,
                         "@diffuseColor":[0.38087,0.382957,0.417708],
-                        "@shininess":0.9333,
+                        "@shininess":0.933333,
                         "@specularColor":[0.533333,0.533333,0.533333]
                       }
                     }
@@ -718,9 +718,9 @@
                   "-children":[
                     { "Material":
                       {
-                        "@ambientIntensity":0.2301,
+                        "@ambientIntensity":0.230089,
                         "@diffuseColor":[0.610811,0.610811,0.610811],
-                        "@shininess":0.8973,
+                        "@shininess":0.897297,
                         "@specularColor":[0.767568,0.756757,0.764964]
                       }
                     }

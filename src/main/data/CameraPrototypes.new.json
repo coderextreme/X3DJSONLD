@@ -64,7 +64,7 @@
           },
           {
             "@name":"translated",
-            "@content":"09 June 2023"
+            "@content":"22 June 2023"
           },
           {
             "@name":"generator",
@@ -2107,7 +2107,7 @@
           },
           { "Background":
             {
-              "@skyColor":[0.2824,0.3804,0.4706]
+              "@skyColor":[0.282353,0.380392,0.470588]
             }
           },
           { "Anchor":

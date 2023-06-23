@@ -1,9 +1,10 @@
 var java = require('java');
+var util = require('util');
 java.asyncOptions = {
   asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
   syncSuffix: "",              // Sync methods use the base name(!!)
   promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
-  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  promisify: util.promisify, // Needs Node.js version 8 or greater, see comment below
   ifReadOnlySuffix: "_alt"
 };
 var autoclass = require('../../../X3Dautoclass');
@@ -21,14 +22,14 @@ var ProtoInstance0 = null;
         .addMeta((new autoclass.meta()).setName("translator").setContent("Don Brutzman"))
         .addMeta((new autoclass.meta()).setName("created").setContent("1 January 2017"))
         .addMeta((new autoclass.meta()).setName("translated").setContent("1 January 2017"))
-        .addMeta((new autoclass.meta()).setName("modified").setContent("20 October 2019"))
+        .addMeta((new autoclass.meta()).setName("modified").setContent("16 January 2022"))
         .addMeta((new autoclass.meta()).setName("reference").setContent("1.bvh"))
         .addMeta((new autoclass.meta()).setName("Image").setContent("BvhSeamless3dExport1.png"))
         .addMeta((new autoclass.meta()).setName("subject").setContent("BVH X3D Seamless3d"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("Seamless3d 3.002, http://www.seamless3d.com"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("Seamless3d developed by Graham John Perrett thyme@seamless3d.com"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/MotionAnimation/BvhSeamless3dExport1.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/MotionAnimation/BvhSeamless3dExport1.x3d"))
         .addMeta((new autoclass.meta()).setName("reference").setContent("https://sourceforge.net/p/x3d/code/24079"))
         .addMeta((new autoclass.meta()).setName("license").setContent("license.html")))
       .setScene((new autoclass.Scene())
