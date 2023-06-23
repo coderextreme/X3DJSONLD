@@ -1,9 +1,10 @@
 var java = require('java');
+var util = require('util');
 java.asyncOptions = {
   asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
   syncSuffix: "",              // Sync methods use the base name(!!)
   promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
-  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  promisify: util.promisify, // Needs Node.js version 8 or greater, see comment below
   ifReadOnlySuffix: "_alt"
 };
 var autoclass = require('../../../X3Dautoclass');
@@ -19,7 +20,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("description").setContent("BVH file conversion support: test and visualize various rotations in order to properly configure converter from Euler angles to SFRotation values."))
         .addMeta((new autoclass.meta()).setName("creator").setContent("Don Brutzman"))
         .addMeta((new autoclass.meta()).setName("created").setContent("17 December 2016"))
-        .addMeta((new autoclass.meta()).setName("modified").setContent("20 October 2019"))
+        .addMeta((new autoclass.meta()).setName("modified").setContent("16 January 2022"))
         .addMeta((new autoclass.meta()).setName("Image").setContent("RotationTests.png"))
         .addMeta((new autoclass.meta()).setName("reference").setContent("BvhConversion1.x3d"))
         .addMeta((new autoclass.meta()).setName("warning").setContent("under development: euler-angle conversions still problematic, single-step animation reveals that animations are not smooth."))
@@ -27,7 +28,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("drawing").setContent("https://savage.nps.edu/X3D-Edit/images/RotationCalculator.png"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("Java BVH to X3D Converter, org.web3d.x3d.hanim.bvh package"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/MotionAnimation/RotationTests.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/MotionAnimation/RotationTests.x3d"))
         .addMeta((new autoclass.meta()).setName("license").setContent("license.html")))
       .setScene((new autoclass.Scene())
         .addComments((new autoclass.CommentsBlock("initial 3 rotations from 1.bvh, Zrotation Xrotation Yrotation: -1.829527 -4.400301 -0.381611, 2.832229 5.801149 2.553770, -3.939975 -3.766201 -3.474078")))

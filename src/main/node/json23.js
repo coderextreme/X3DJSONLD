@@ -5,7 +5,7 @@
 process.argv.shift();
 process.argv.shift();
 
-var convertJSON = require('./convertJSON.mjs').convertJSON;
+var convertJSON = require('./convertJSON.js').convertJSON;
 
 convertJSON([{ 
 	serializer : './Three2Serializer.js',

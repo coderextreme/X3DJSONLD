@@ -3,14 +3,14 @@
 var fs = require('fs');
 var config = require('./config.js');
 var mkdirp = require('node-mkdirp');
-var mapToMethod = require('./mapToMethod.mjs');
+var mapToMethod = require('./mapToMethod.js');
 var mapToMethod2 = require('./mapToMethod2.js');
-var fieldTypes = require('./fieldTypes.mjs');
-var X3DJSONLD = require('./X3DJSONLD.mjs');
-var Script = require('./Script');
-import { replaceX3DJSON,loadSchema,loadX3DJS,doValidate } from "./loadValidate.js";
+var fieldTypes = require('./fieldTypes.js');
+var X3DJSONLD = require('./X3DJSONLD.js');
+var Script = require('./Script.js');
+var loadValidate = require('./loadValidate.js');
+var loadValidator = new loadValidate();
 var xmldom = require('@xmldom/xmldom');
-
 
 var DOMImplementation = new xmldom.DOMImplementation();
 
@@ -31,7 +31,7 @@ for (var par in mapToMethod2) {
 }
 */
 
-export function convertJSON(options) {
+function convertJSON(options) {
 
 	var files = process.argv;
 	for (var f in files) {
@@ -55,7 +55,7 @@ export function convertJSON(options) {
 			continue;
 		}
 		var NS = "https://www.web3d.org/specifications/x3d";
-		loadX3DJS(DOMImplementation, json, file, NS, loadSchema, doValidate, X3DJSONLD, function(element, xml) {
+		loadValidator.loadX3DJS(DOMImplementation, json, file, NS, X3DJSONLD, function(element, xml) {
 			if (typeof element === undefined) {
 				throw ("Undefined element returned from loadX3DJS()")
 			}
@@ -93,3 +93,5 @@ export function convertJSON(options) {
 		});
 	}
 }
+
+module.exports = convertJSON;

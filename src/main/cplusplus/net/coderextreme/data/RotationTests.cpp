@@ -41,7 +41,7 @@ head1->addMeta(*meta6);
 
 Cmeta* meta7 = new Cmeta();
 meta7->setName("modified");
-meta7->setContent("20 October 2019");
+meta7->setContent("16 January 2022");
 head1->addMeta(*meta7);
 
 Cmeta* meta8 = new Cmeta();
@@ -81,7 +81,7 @@ head1->addMeta(*meta14);
 
 Cmeta* meta15 = new Cmeta();
 meta15->setName("identifier");
-meta15->setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/MotionAnimation/RotationTests.x3d");
+meta15->setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/MotionAnimation/RotationTests.x3d");
 head1->addMeta(*meta15);
 
 Cmeta* meta16 = new Cmeta();

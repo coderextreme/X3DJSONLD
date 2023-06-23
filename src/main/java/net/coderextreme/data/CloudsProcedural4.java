@@ -62,7 +62,7 @@ public class CloudsProcedural4 {
         .addChild(new Viewpoint().setDescription("Light House Tower").setJump(false).setOrientation(new float[] {0f,1f,0f,1.3f}).setPosition(new float[] {45000f,1290f,44000f}))
         .addChild(new Viewpoint().setDescription("centerWest").setJump(false).setOrientation(new float[] {0f,1f,0f,2.5f}).setPosition(new float[] {48000f,1000f,20000f}))
         .addChild(new Background().setGroundColor(new MFColor0().getArray()).setSkyColor(new MFColor1().getArray()))
-        .addChild(new DirectionalLight().setAmbientIntensity(1.0000f).setDirection(new float[] {-1f,0f,0f}).setGlobal(true))
+        .addChild(new DirectionalLight().setAmbientIntensity(1f).setDirection(new float[] {-1f,0f,0f}).setGlobal(true))
         .addChild(new Group().setDEF("Terrain")
           .addChild(new Transform().setScale(new float[] {50f,50f,50f}).setTranslation(new float[] {25000f,0f,25000f})
             .addChild(new Inline().setUrl(new MFString2().getArray())))
@@ -465,17 +465,17 @@ public class CloudsProcedural4 {
 "\n"+
 "cirrus();\n"+
 "}"))
-          .addChild(new DirectionalLight().setAmbientIntensity(1.0000f).setColor(new float[] {1f,0f,0f}).setDirection(new float[] {-1f,-1f,0f}).setGlobal(true))))      ;
+          .addChild(new DirectionalLight().setAmbientIntensity(1f).setColor(new float[] {1f,0f,0f}).setDirection(new float[] {-1f,-1f,0f}).setGlobal(true))))      ;
     return X3D0;
     }
 protected class MFColor0 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.0000f,0.0000f,1.0000f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f,0f,1f});
   }
 }
 protected class MFColor1 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.0000f,0.0000f,1.0000f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f,0f,1f});
   }
 }
 protected class MFString2 {

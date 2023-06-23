@@ -7,7 +7,7 @@ import mapToMethod2 from './mapToMethod2.mjs';
 import fieldTypes from './fieldTypes.mjs';
 import X3DJSONLD from './X3DJSONLD.mjs';
 import Script from './Script.mjs';
-import { replaceX3DJSON,loadSchema,loadX3DJS,doValidate } from "./loadValidate.mjs";
+import doLoadValidate from "./loadValidate.mjs";
 import xmldom from '@xmldom/xmldom';
 import DOMSerializer from './DOMSerializer.mjs';
 import CSerializer from './CSerializer.mjs';
@@ -17,8 +17,12 @@ import DartSerializer from './DartSerializer.mjs';
 import NodeSerializer from './NodeSerializer.mjs';
 import ECMAScriptSerializer from './ECMAScriptSerializer.mjs';
 import VRMLScriptSerializer from './VRMLScriptSerializer.mjs';
+
+var loadValidator = new doLoadValidate();
+window.loadValidator = loadValidator;
+
 try {
-	import fs from 'node:fs';
+	import fs from 'fs';
 } catch (e) {
 	console.log("Problems loading fs. On browser? "+e);
 }
@@ -67,7 +71,7 @@ export default function convertJSON(options) {
 			continue;
 		}
 		var NS = "https://www.web3d.org/specifications/x3d";
-		loadX3DJS(DOMImplementation, json, file, NS, loadSchema, doValidate, JSONParser, function(element, xml) {
+		loadValidator.loadX3DJS(DOMImplementation, json, file, NS, JSONParser, function(element, xml) {
 			if (typeof element === undefined) {
 				throw ("Undefined element returned from loadX3DJS()")
 			}

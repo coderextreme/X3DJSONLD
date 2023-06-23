@@ -39,7 +39,7 @@ head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");
 meta8.name = "modified";
-meta8.content = "20 October 2019";
+meta8.content = "16 January 2022";
 head1.meta[6] = meta8;
 
 meta meta9 = createNode("meta");
@@ -74,7 +74,7 @@ head1.meta[12] = meta14;
 
 meta meta15 = createNode("meta");
 meta15.name = "identifier";
-meta15.content = "https://x3dgraphics.com/examples/X3dForAdvancedModeling/MotionAnimation/BvhSeamless3dExport1.x3d";
+meta15.content = "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/MotionAnimation/BvhSeamless3dExport1.x3d";
 head1.meta[13] = meta15;
 
 meta meta16 = createNode("meta");
@@ -100,8 +100,8 @@ Viewpoint20.description = "View animation";
 Viewpoint20.position = new SFVec3f(new float[0,2,16]);
 children[1] = Viewpoint20;
 
-ProtoDeclare ProtoDeclare21 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
+ProtoDeclare ProtoDeclare21 = browser.createX3DFromString(`<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <ProtoDeclare name="PAnim" ><ProtoInterface><field name="play" accessType="inputOutput" type="SFBool" value="true"></field>
 <field name="pause" accessType="inputOutput" type="SFBool" value="true"></field>
 <field name="period" accessType="inputOutput" type="SFTime" value="1"></field>

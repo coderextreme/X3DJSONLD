@@ -1,4 +1,4 @@
-var java = require('java');
+import java from 'java';
 java.options.push("-Djava.awt.headless=true");
 java.options.push("-Xmx1000m");
 //java.options.push("-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005");
@@ -17,7 +17,9 @@ java.classpath.push("../../classes");
 java.classpath.push("jars/X3DJSAIL.4.0.full.jar");
 java.classpath.push("../jars/X3DJSAIL.4.0.full.jar");
 java.classpath.push("../../jars/X3DJSAIL.4.0.full.jar");
-module.exports = {
+let autoclass;
+try {
+autoclass = {
 AcousticProperties : java.import('org.web3d.x3d.jsail.Shape.AcousticProperties'),
 Analyser : java.import('org.web3d.x3d.jsail.Sound.Analyser'),
 Anchor : java.import('org.web3d.x3d.jsail.Networking.Anchor'),
@@ -337,6 +339,11 @@ SFVec4d : java.import('org.web3d.x3d.jsail.fields.SFVec4d'),
 MFVec4d : java.import('org.web3d.x3d.jsail.fields.MFVec4d'),
 SFVec4f : java.import('org.web3d.x3d.jsail.fields.SFVec4f'),
 MFVec4f : java.import('org.web3d.x3d.jsail.fields.MFVec4f'),
-ConfigurationProperties : java.import("org.web3d.x3d.jsail.ConfigurationProperties"),
-CommentsBlock : java.import("org.web3d.x3d.jsail.Core.CommentsBlock")
-}
+   ConfigurationProperties : java.import("org.web3d.x3d.jsail.ConfigurationProperties"),
+   CommentsBlock : java.import("org.web3d.x3d.jsail.Core.CommentsBlock")
+   };
+} catch (e) {
+   console.log(e);
+   throw e;
+};
+export default autoclass;

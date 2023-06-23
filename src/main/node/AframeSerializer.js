@@ -4,7 +4,7 @@ var xmldom = require('@xmldom/xmldom');
 var DOMImplementation = new xmldom.DOMImplementation();
 var XMLSerializer = new xmldom.XMLSerializer();
 
-export function AframeSerializer () {
+function AframeSerializer () {
 };
 
 AframeSerializer.prototype = {
@@ -429,3 +429,5 @@ AframeSerializer.prototype = {
 		return element;
 	}
 }
+
+module.exports = AframeSerializer;

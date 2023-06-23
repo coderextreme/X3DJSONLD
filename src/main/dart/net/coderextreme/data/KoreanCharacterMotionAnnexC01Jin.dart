@@ -34,7 +34,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('modified'),
-              content_ : SFString('23 December 2021')),
+              content_ : SFString('7 January 2023')),
 
             meta(
               name_ : SFString('description'),
@@ -51,6 +51,14 @@ var X3D0 =  X3D(
             meta(
               name_ : SFString('reference'),
               content_ : SFString('KoreanCharactersIllustrated.pdf')),
+
+            meta(
+              name_ : SFString('specificationSection'),
+              content_ : SFString('HAnim 2.0 Part 2: Humanoid animation (HAnim) motion data animation, Annex C (informative) An example of HAnim motion data animation using interpolators')),
+
+            meta(
+              name_ : SFString('specificationUrl'),
+              content_ : SFString('https://www.web3d.org/documents/specifications/19774/V2.0/MotionDataAnimation/ExampleMocapAnimationInterpolators.html')),
 
             meta(
               name_ : SFString('identifier'),

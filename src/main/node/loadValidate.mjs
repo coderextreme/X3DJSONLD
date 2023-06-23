@@ -1,21 +1,31 @@
 // JSON Schema imports
-import Ajv2020 from "../../../node_modules/ajv/dist/2020.js";
-import addFormats from "../../../node_modules/ajv-formats/dist/index.js";
-import localize from '../../../node_modules/ajv-i18n/localize/index.js';
+import { Ajv } from "./ajv/dist/ajv.js";
+import { formatsPlugin } from "./ajv-formats/dist/index.js";
+import { localize } from "./ajv-i18n/messages/index.js";
 
-const ajv = new Ajv2020();
-addFormats(ajv);
-import x3d4 from "../schema/x3d-4.0-JSONSchema.json" assert { type: "json" };
+const ajv = new Ajv({ allErrors: true, verbose: true}); // options can be passed, e.g. {allErrors: true}
+addFormats(ajv, [ "uri", "uri-reference"]);
 
-// Convert JSON to DOM
-import X3DJSONLD from './X3DJSONLD.mjs';
-import fs from 'node:fs';
+// import JSONSchema from "../schema/x3d-4.0-JSONSchema.json" assert { type: "json" };
+// const JSONSchema = require("../schema/x3d-4.0-JSONSchema.json")
+const JSONSchema = "http://localhost:3000/src/main/schema/x3d-4.0-JSONSchema.json";
 
-let JSONParser = Object.assign(X3DJSONLD, { processURLs : function(urls) { return urls; }});
-var selectObjectFromJSObj = JSONParser.selectObjectFromJSObj;
-var validate = { };
+var fs = require('fs');
+//
 
-export function doValidate(json, validated_version, file, JSONParser, success, failure, e) {
+X3DJSONLD = Object.assign(X3DJSONLD, { processURLs : function(urls) { return urls; }});
+var selectObjectFromJSObj = X3DJSONLD.selectObjectFromJSObj;
+
+if (typeof CACHE === 'undefined') {
+	CACHE = {};
+}
+CACHE.validate = { };
+
+export default function doLoadValidate() {
+}
+
+doLoadValidate.prototype = {
+doValidate : function(json, validated_version, file, X3DJSONLD, success, failure, e) {
 	var retval = false;
 	if (e) {
 		if (typeof alert === 'function') {
@@ -37,16 +47,16 @@ export function doValidate(json, validated_version, file, JSONParser, success, f
 				var instancePath = errs[e].instancePath.replace(/^\./, "").replace(/[\.\[\]']+/g, " > ").replace(/ >[ \t]*$/, "");
 	
 				error += " instancePath: " + instancePath+ "\n";
-				var selectedObject = JSONParser.selectObjectFromJSObj(json, instancePath);
+				var selectedObject = X3DJSONLD.selectObjectFromJSObj(json, instancePath);
 				error += " value: " + JSON.stringify(selectedObject,
 					function(k, v) {
 					    var v2 = JSON.parse(JSON.stringify(v));
 					    if (typeof v2 === 'object') {
 						    for (var o in v2) {
-					    		if (typeof v2[o] === 'object') {
+							if (typeof v2[o] === 'object') {
 								    v2[o] = "|omitted|";
 							}
-					            }
+						    }
 					    }
 					    return v2;
 					}) + "\n";
@@ -56,7 +66,7 @@ export function doValidate(json, validated_version, file, JSONParser, success, f
 			}
 		}
 		if (typeof confirm !== 'function') {
-			let confirm = function(error) {
+			confirm = function(error) {
 				return true;
 			};
 		}
@@ -70,85 +80,89 @@ export function doValidate(json, validated_version, file, JSONParser, success, f
 	} else {
 		console.error("User selected failure");
 	}
-}
+},
 
-function addSchema(ajv, schemajson, version) {
-      var validated_version = validate[version];
+validateSchema : function(ajv, schemajson, version) {
+      var validated_version = CACHE.validate[version];
       if (typeof validated_version === 'undefined') {
-          console.log("Adding schema: ", version);
-          ajv.addSchema(schemajson);
+	  console.log("Adding schema: ", version);
+	  ajv.addSchema(schemajson);
 	  validated_version = ajv.compile(schemajson);
       }
-      validate[version] = validated_version;
+      CACHE.validate[version] = validated_version;
       if (typeof validated_version === 'undefined') {
 	      console.error("Schema not compiled");
       }
       return validated_version;
-}
+},
 
-export function loadSchema(json, file, doValidate, JSONParser, success, failure) {
+loadSchema : function(json, file, X3DJSONLD, success, failure) {
 	var versions = { "4.0":true }
 	var version = json.X3D["@version"];
 	if (!versions[version]) {
 		console.info("Can only validate version 4.0 presently. Switching version to 4.0.");
 		version = "4.0";
 	}
-	var validated_version = validate[version];
-        if (typeof validated_version === 'undefined') {
+	var validated_version = CACHE.validate[version];
+	if (typeof validated_version === 'undefined') {
+		      if (typeof this.validateSchema === 'undefined') {
+			      console.error("Can't find function this.validateSchema");
+		      } else {
+			      var vs = this.validateSchema;
+		      }
 		      if (typeof $ === 'function' && typeof $.getJSON === 'function') {
-			      $.getJSON(x3d4, function(schemajson) {
-				      validated_version = addSchema(ajv, schemajson, version);
-				      doValidate(json, validated_version, file, JSONParser, success, undefined);
+			      $.getJSON(JSONSchema, function(schemajson) {
+				      validated_version = vs(ajv, schemajson, version);
+				      this.doValidate(json, validated_version, file, X3DJSONLD, success, undefined);
 				}).fail(function(e) {
-				   doValidate(json, validated_version, file, JSONParser, undefined, failure, e);
+				   this.doValidate(json, validated_version, file, X3DJSONLD, undefined, failure, e);
 				});
 		      } else if (typeof fs === 'object') {
-				var schemajson = x3d4;
-				validated_version = addSchema(ajv, schemajson, version);
-				doValidate(json, validated_version, file, JSONParser, success, undefined);
+				var schema = fs.readFileSync("../schema/x3d-"+version+"-JSONSchema.json");
+				var schemajson = JSON.parse(schema.toString());
+				validated_version = vs(ajv, schemajson, version);
+				this.doValidate(json, validated_version, file, X3DJSONLD, success, undefined);
 		      }
 	} else {
-	      doValidate(json, validated_version, file, JSONParser, success, undefined);
+	      this.doValidate(json, validated_version, file, X3DJSONLD, success, undefined);
 	}
-}
-/**
- * Load X3D JSON into an element.
- * DOMImplementation - normally document.implementation
- * jsobj - the JavaScript object to convert to XML and DOM.
- * path - the path of the JSON file.
- * NS - a namespace for X_ITE (optional) -- stripped out.
- * loadSchema -- the loadSchema function
- * doValidate -- the doValidate function
- * JSONParser -- JSONParser
- * callback -- returns the element whose scene children to append or insert into the DOM.
- */
-export function loadX3DJS(DOMImplementation, jsobj, path, NS, loadSchema, doValidate, JSONParser, callback) {
-	JSONParser.x3djsonNS = NS;
-	loadSchema(jsobj, path, doValidate, JSONParser, function() {
+},
+
+	/**
+	 * Load X3D JSON into an element.
+	 * DOMImplementation - normally document.implementation
+	 * jsobj - the JavaScript object to convert to XML and DOM.
+	 * path - the path of the JSON file.
+	 * NS - a namespace for X_ITE (optional) -- stripped out.
+	 * X3DJSONLD -- X3DJSONLD
+	 * callback -- returns the element whose scene children to append or insert into the DOM.
+	 */
+loadX3DJS : function(DOMImplementation, jsobj, path, NS, X3DJSONLD, callback) {
+	X3DJSONLD.x3djsonNS = NS;
+	this.loadSchema(jsobj, path, X3DJSONLD, function() {
 		var child, xml;
-		[ child, xml ] = JSONParser.loadJsonIntoXml(DOMImplementation, jsobj, path);
+		[ child, xml ] = X3DJSONLD.loadJsonIntoXml(DOMImplementation, jsobj, path);
 		callback(child, xml);
 	}, function(e) {
 		console.error(e);
 		callback(null, null);
 	});
-}
+},
 
-/*
- * replaceX3DJSON
- * replace children of an element with DOM created from X3D JSON.
- *	also, generate xml for inclusion elsewhere
- *
- * parent -- parent DOM element
- * json (json object) -- json to convert to DOM
- * url -- name of path/filename json loaded from
- * NS -- XML namespace (optional)
- * next -- to return the element or null
- * returns element loaded, followed by xml
- */
-export function replaceX3DJSON(parent, json, url, NS, next) {
-
-	loadX3DJS(DOMImplementation, json, url, NS, loadSchema, doValidate, JSONParser, function(child, xml) {
+	/*
+	 * replaceX3DJSON
+	 * replace children of an element with DOM created from X3D JSON.
+	 *	also, generate xml for inclusion elsewhere
+	 *
+	 * parent -- parent DOM element
+	 * json (json object) -- json to convert to DOM
+	 * url -- name of path/filename json loaded from
+	 * NS -- XML namespace (optional)
+	 * next -- to return the element or null
+	 * returns element loaded, followed by xml
+	 */
+replaceX3DJSON : function(parent, json, url, NS, next) {
+	this.loadX3DJS(DOMImplementation, json, url, NS, X3DJSONLD, function(child, xml) {
 		if (child != null) {
 			while (parent.firstChild) {
 			    parent.removeChild(parent.firstChild);
@@ -158,3 +172,8 @@ export function replaceX3DJSON(parent, json, url, NS, next) {
 		next(child, xml);
 	});
 }
+}
+
+var loadValidator = new doLoadValidate();
+
+module.exports = doLoadValidate;

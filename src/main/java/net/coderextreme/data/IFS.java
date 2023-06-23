@@ -61,12 +61,12 @@ public class IFS {
           .addComments("DEFS for markers of skeleton joints, segments, and sites")
           .addChild(new Transform().setTranslation(new float[] {0f,2.1f,0f})
             .addChild(new Shape().setDEF("HAnimSiteShape")
-              .setGeometry(new IndexedFaceSet().setDEF("DiamondIFS").setCreaseAngle(0.5000f).setSolid(false).setCoordIndex(new MFInt320().getArray())
+              .setGeometry(new IndexedFaceSet().setDEF("DiamondIFS").setCreaseAngle(0.5f).setSolid(false).setCoordIndex(new MFInt320().getArray())
                 .setColor(new ColorRGBA().setDEF("HAnimSiteColorRGBA").setColor(new MFColorRGBA1().getArray()))
                 .setCoord(new Coordinate().setPoint(new MFVec3f2().getArray())))
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,0f}).setTransparency(0.3000f))))))
-        .addChild(new NavigationInfo().setSpeed(1.5000f))
+                .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,0f}).setTransparency(0.3f))))))
+        .addChild(new NavigationInfo().setSpeed(1.5f))
         .addChild(new Viewpoint().setDescription("default")))      ;
     return X3D0;
     }
@@ -77,12 +77,12 @@ protected class MFInt320 {
 }
 protected class MFColorRGBA1 {
   protected org.web3d.x3d.jsail.fields.MFColorRGBA getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColorRGBA(new float[] {1.0000f,1.0000f,0.0000f,1.0000f,1.0000f,1.0000f,0.0000f,0.1000f});
+    return new org.web3d.x3d.jsail.fields.MFColorRGBA(new float[] {1f,1f,0f,1f,1f,1f,0f,0.1f});
   }
 }
 protected class MFVec3f2 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,0.0100f,0.0000f,-0.0100f,0.0000f,0.0000f,0.0000f,0.0000f,0.0100f,0.0100f,0.0000f,0.0000f,0.0000f,0.0000f,-0.0100f,0.0000f,-0.0100f,0.0000f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0.01f,0f,-0.01f,0f,0f,0f,0f,0.01f,0.01f,0f,0f,0f,0f,-0.01f,0f,-0.01f,0f});
   }
 }
 }

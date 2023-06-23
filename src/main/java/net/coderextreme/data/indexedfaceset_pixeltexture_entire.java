@@ -84,7 +84,7 @@ protected class MFInt320 {
 }
 protected class MFVec3f1 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-2.0000f,1.5000f,1.0000f,-2.0000f,-1.5000f,1.0000f,2.0000f,1.5000f,1.0000f,2.0000f,-1.5000f,1.0000f,2.0000f,1.5000f,-1.0000f,2.0000f,-1.5000f,-1.0000f,-2.0000f,1.5000f,-1.0000f,-2.0000f,-1.5000f,-1.0000f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-2f,1.5f,1f,-2f,-1.5f,1f,2f,1.5f,1f,2f,-1.5f,1f,2f,1.5f,-1f,2f,-1.5f,-1f,-2f,1.5f,-1f,-2f,-1.5f,-1f});
   }
 }
 }

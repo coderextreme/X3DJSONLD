@@ -906,7 +906,7 @@ function alwaysPrint (outputValue)
       </ProtoBody>
     </ProtoDeclare>
     <!-- =============== Launch Prototype Example ============== -->
-    <Background skyColor='0.2824 0.3804 0.4706'/>
+    <Background skyColor='0.282353 0.380392 0.470588'/>
     <Anchor description='launch CameraExample scene' url='"CameraExamples.x3d" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d" "CameraExamples.wrl" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl"'>
       <Transform>
         <Shape>

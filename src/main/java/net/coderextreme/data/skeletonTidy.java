@@ -57,7 +57,7 @@ public class skeletonTidy {
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("JohnBoy.x3d"))
-        .addChild(new NavigationInfo().setSpeed(1.5000f))
+        .addChild(new NavigationInfo().setSpeed(1.5f))
         .addChild(new Viewpoint().setCenterOfRotation(new float[] {0f,1f,0f}).setDescription("JohnBoy").setPosition(new float[] {0f,1f,3f})))      ;
     return X3D0;
     }

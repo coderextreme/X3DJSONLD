@@ -204,7 +204,7 @@ window.loadX3DJS_X_ITE = function loadX3DJS_X_ITE(selector, DOMImplementation, j
 
 function convertJsonToXml(json, next, path) {
 	var NS = $('#namespace option:selected').text();
-	loadX3DJS(document.implementation, json, path, NS, loadSchema, doValidate, X3DJSONLD, function(element, xml) {
+	loadX3DJS(document.implementation, json, path, NS, X3DJSONLD, function(element, xml) {
 		next(xml);
 	}); // does not load path
 }

@@ -138,8 +138,8 @@ for k,v in classes.items():
 
 code += "}\n"
 
-code += "export default mapToMethod;\n"
+code += "module.exports = mapToMethod;\n"
 
-f = open("../node/mapToMethod.mjs", "w")
+f = open("../node/mapToMethod.js", "w")
 f.write(code)
 f.close()

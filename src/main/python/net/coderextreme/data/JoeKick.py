@@ -7,10 +7,10 @@ X3D(profile="Immersive", version="4.0",
 head=head(children=[component(name="HAnim", level=1),
 meta(name="title", content="JoeKick.x3d"),
 meta(name="description", content="This Joe model is a HAnim version 2 LOA-3 Humanoid with textured skin based on the original HAnim Specification and data from CAESAR models."),
-meta(name="creator", content="Joe Williams"),
+meta(name="creator", content="Joe D. Williams"),
 meta(name="created", content="9 January 2004"),
 meta(name="translated", content="12 January 2017"),
-meta(name="modified", content="23 December 2021"),
+meta(name="modified", content="29 January 2023"),
 meta(name="TODO", content="Record information about skin coordinates (found in comment at end of scene) as a structured MetadataSet containing MetadataString nodes"),
 meta(name="translators", content="Roy Walmsley, Don Brutzman, John Carlson"),
 meta(name="reference", content="../Characters/JoeSkinTexcoordDisplacerKick.x3d"),
@@ -18,7 +18,7 @@ meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Huma
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="generator", content="BS studio translation from .x3dv by Joe using BS Contact"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="09 June 2023"),
+meta(name="translated", content="21 June 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -36,7 +36,7 @@ Viewpoint(DEF="Scene_ISideView", centerOfRotation=((0,0.8,0)), description="Scen
 Viewpoint(DEF="Scene_BackView", centerOfRotation=((0,1.5,0)), description="Scene_Back View", orientation=((0,1,0,3.14)), position=((0,1.5,-3))),
 Viewpoint(DEF="Scene_TopView", centerOfRotation=((0,1.5,0)), description="Scene_Top View", orientation=((1,0,0,-1.5708)), position=((0,3.5,0))),
 Group(DEF="Joe_Humanoid", children=[
-HAnimHumanoid(name="Human", DEF="Joe_Human", loa=3, version="2.0", 
+HAnimHumanoid(name="Kick", DEF="Joe_Kick", loa=3, version="2.0", 
 metadata=(
 MetadataSet(name="warnings", reference="HAnim", value=[
 MetadataString(name="SymmetricalLeftRight", reference="correction options: ignore, warn, average, left, right, largest, smallest", value=["ignore"])])), skeleton=[
@@ -97,9 +97,9 @@ HAnimJoint(name="l_eyebrow_joint", DEF="Joe_l_eyebrow_joint", center=((0.034,1.6
 HAnimJoint(name="r_eyelid_joint", DEF="Joe_r_eyelid_joint", center=((-0.034,1.659,0.06)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)]),
 HAnimJoint(name="r_eyeball_joint", DEF="Joe_r_eyeball_joint", center=((-0.034,1.659,0.06)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)]),
 HAnimJoint(name="r_eyebrow_joint", DEF="Joe_r_eyebrow_joint", center=((-0.034,1.659,0.06)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)]),
-HAnimJoint(name="temporomandibular", DEF="Joe_temporomandibular", center=((0.034,1.659,0.06)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])])])])])]),
-HAnimJoint(name="l_sternoclavicular", DEF="Joe_l_sternoclavicular", center=((0.082,1.4488,-0.0353)), skinCoordIndex=[12], skinCoordWeight=[float(1)], ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
-HAnimJoint(name="l_acromioclavicular", DEF="Joe_l_acromioclavicular", center=((0.0962,1.4269,-0.0424)), skinCoordIndex=[79], skinCoordWeight=[float(1)], ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="temporomandibular", DEF="Joe_temporomandibular", center=((0.034,1.659,0.06)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])])])])])])]),
+HAnimJoint(DEF="Joe_l_acromioclavicular", center=((0.082,1.4488,-0.0353)), skinCoordIndex=[12], skinCoordWeight=[float(1)], ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="l_acromioclavicular", DEF="Joe_l_sternoclavicular", center=((0.0962,1.4269,-0.0424)), skinCoordIndex=[79], skinCoordWeight=[float(1)], ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimJoint(name="l_shoulder", DEF="Joe_l_shoulder", center=((0.2,1.44,-0.04)), skinCoordIndex=[41,42,44,80,102,103,104,105], skinCoordWeight=[float(1),float(1),float(1),float(1),float(1),float(1),float(1),float(1)], ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimJoint(name="l_elbow", DEF="Joe_l_elbow", center=((0.2,1.1388,-0.04)), skinCoordIndex=[45,46,47,109,110,111,112,113,115,116,117,118], skinCoordWeight=[float(1),float(1),float(1),float(1),float(1),float(1),float(1),float(1),float(1),float(1),float(1),float(1),float(1),float(1),float(1)], ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimJoint(name="l_radiocarpal", DEF="Joe_l_radiocarpal", center=((0.2,0.87,-0.04)), skinCoordIndex=[119,120,121,122,123,124,125,126], skinCoordWeight=[float(1),float(1),float(1),float(1),float(1),float(1),float(1),float(1)], ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -145,7 +145,7 @@ HAnimJoint(name="r_carpal_distal_interphalangeal_4", DEF="Joe_r_carpal_distal_in
 HAnimJoint(name="r_carpometacarpal_5", DEF="Joe_r_carpometacarpal_5", center=((-0.2,0.84,-0.085)), skinCoordIndex=[251,252,253,281], skinCoordWeight=[float(1),float(1),float(1),float(0.5)], ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimJoint(name="r_metacarpophalangeal_5", DEF="Joe_r_metacarpophalangeal_5", center=((-0.2,0.79,-0.085)), skinCoordIndex=[276,277,278], skinCoordWeight=[float(1),float(1),float(1)], ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimJoint(name="r_carpal_proximal_interphalangeal_5", DEF="Joe_r_carpal_proximal_interphalangeal_5", center=((-0.2,0.755,-0.085)), skinCoordIndex=[321,322,323,324], skinCoordWeight=[float(1),float(1),float(1),float(1)], ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
-HAnimJoint(name="r_carpal_distal_interphalangeal_5", DEF="Joe_r_carpal_distal_interphalangeal_5", center=((-0.2,0.735,-0.09)), skinCoordIndex=[325,326,327,328,329,330,331,332,333], skinCoordWeight=[float(1),float(1),float(1),float(1),float(1),float(1),float(1),float(1),float(1)], ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])])])])])])])])])])])])])])])])])])])])])])])])])])], skin=[
+HAnimJoint(name="r_carpal_distal_interphalangeal_5", DEF="Joe_r_carpal_distal_interphalangeal_5", center=((-0.2,0.735,-0.09)), skinCoordIndex=[325,326,327,328,329,330,331,332,333], skinCoordWeight=[float(1),float(1),float(1),float(1),float(1),float(1),float(1),float(1),float(1)], ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])])])])])])])])])])])])])])])])])])])])])])])])])], skin=[
 Shape(DEF="Joe_Shape", 
 appearance=
 Appearance(DEF="Joe_skin_Appearance", 

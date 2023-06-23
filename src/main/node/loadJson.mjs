@@ -1,13 +1,18 @@
-import { updateFromJson, updateXml } from "./loaderJQuery.mjs";
+import doLoadValidate from './loadValidate.mjs';
 
-export default function loadJson(url) {
+var loadValidator = new doLoadValidate();
+window.loadValidator = loadValidator;
+
+export default function loadJson(url, loadValidator) {
 	$.getJSON(url, function(json) {
-		updateFromJson(json, url);
-		updateXml(json, url);
+		window.updateFromJson(json, url, loadValidator);
+		window.updateXml(json, url, loadValidator);
 	})
 	.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
 }
 
 $(document).ready(function() {
-	loadJson('../data/JoeKick.json'); // does load ball.json
+	loadJson('../data/ball.json', loadValidator); // does load ball.json
 });
+
+module.exports = loadJson;

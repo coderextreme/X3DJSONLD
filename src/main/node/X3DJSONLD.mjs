@@ -12,6 +12,22 @@ if (typeof document === 'undefined') {
        var document = {};
 }
 
+if (typeof require === 'function' && typeof load !== 'function') {
+	fs = require("fs");
+	http = require("http");
+	https = require("https");
+	// TODO this causes node-java 0.12.2 to hang
+	// var runAndSend = require("./runAndSend");
+	var xmldom = require('@xmldom/xmldom');
+	var domserializer = new xmldom.XMLSerializer();
+	var DOMParser = xmldom.DOMParser;
+	var domParser = new DOMParser();
+} else {
+	var domserializer = new XMLSerializer();
+        var domParser = new window.DOMParser();
+}
+	
+
 if (typeof console !== 'undefined') {
 	if (typeof console.warning === 'undefined') {
 		console.warning = console.warn;

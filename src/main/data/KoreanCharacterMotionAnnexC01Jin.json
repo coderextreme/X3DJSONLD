@@ -34,7 +34,7 @@
           },
           {
             "@name":"modified",
-            "@content":"23 December 2021"
+            "@content":"7 January 2023"
           },
           {
             "@name":"description",
@@ -51,6 +51,14 @@
           {
             "@name":"reference",
             "@content":"KoreanCharactersIllustrated.pdf"
+          },
+          {
+            "@name":"specificationSection",
+            "@content":"HAnim 2.0 Part 2: Humanoid animation (HAnim) motion data animation, Annex C (informative) An example of HAnim motion data animation using interpolators"
+          },
+          {
+            "@name":"specificationUrl",
+            "@content":"https://www.web3d.org/documents/specifications/19774/V2.0/MotionDataAnimation/ExampleMocapAnimationInterpolators.html"
           },
           {
             "@name":"identifier",
@@ -78,7 +86,7 @@
           },
           {
             "@name":"translated",
-            "@content":"09 June 2023"
+            "@content":"22 June 2023"
           },
           {
             "@name":"generator",

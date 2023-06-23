@@ -81,17 +81,17 @@ protected class MFInt322 {
 }
 protected class MFVec3f3 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,1.0000f,1.0000f,1.0000f,1.0000f,1.0000f,1.0000f,0.0000f,1.0000f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,1f,0f,1f,1f,1f,1f,1f,1f,0f,1f});
   }
 }
 protected class MFVec3f4 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1.0000f,0.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,-1.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,0.0000f,1.0000f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1f,0f,0f,-1f,0f,0f,0f,1f,0f,0f,0f,-1f,0f,-1f,0f,0f,0f,1f});
   }
 }
 protected class MFColor5 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.0000f,1.0000f,0.0000f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f,1f,0f});
   }
 }
 }

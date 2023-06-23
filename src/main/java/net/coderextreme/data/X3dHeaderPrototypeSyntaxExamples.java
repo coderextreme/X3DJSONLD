@@ -119,7 +119,7 @@ ProtoInstance ProtoInstance3 = null;
             .setAppearance(new Appearance()
               .setMaterial(ProtoInstance2 = new ProtoInstance().setName("EmissiveMaterial")))
             .setGeometry(new Text().setString(new MFString1().getArray())
-              .setFontStyle(new FontStyle().setJustify(new MFString2().getArray()).setSize(0.6000f)))))
+              .setFontStyle(new FontStyle().setJustify(new MFString2().getArray()).setSize(0.6f)))))
         .addChild(ProtoInstance3 = new ProtoInstance().setName("ViewPositionOrientation"))
         .addChild(new TimeSensor().setDEF("Clock").setCycleInterval(4d).setLoop(true))
         .addChild(new OrientationInterpolator().setDEF("Spinner").setKey(new MFFloat3().getArray()).setKeyValue(new MFRotation4().getArray()))
@@ -153,12 +153,12 @@ protected class MFString2 {
 }
 protected class MFFloat3 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.5000f,1.0000f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.5f,1f});
   }
 }
 protected class MFRotation4 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f,3.1416f,0.0000f,1.0000f,0.0000f,6.2832f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,1f,0f,0f,0f,1f,0f,3.14159f,0f,1f,0f,6.28318f});
   }
 }
 protected class MFString5 {
@@ -168,12 +168,12 @@ protected class MFString5 {
 }
 protected class MFFloat6 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
   }
 }
 protected class MFVec3f7 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,0f,0f,0f,0f});
   }
 }
 }

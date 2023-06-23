@@ -10,7 +10,7 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
     <meta content='BVH file conversion support: test and visualize various rotations in order to properly configure converter from Euler angles to SFRotation values.' name='description'/>
     <meta content='Don Brutzman' name='creator'/>
     <meta content='17 December 2016' name='created'/>
-    <meta content='20 October 2019' name='modified'/>
+    <meta content='16 January 2022' name='modified'/>
     <meta content='RotationTests.png' name='Image'/>
     <meta content='BvhConversion1.x3d' name='reference'/>
     <meta content='under development: euler-angle conversions still problematic, single-step animation reveals that animations are not smooth.' name='warning'/>
@@ -18,9 +18,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
     <meta content='https://savage.nps.edu/X3D-Edit/images/RotationCalculator.png' name='drawing'/>
     <meta content='Java BVH to X3D Converter, org.web3d.x3d.hanim.bvh package' name='generator'/>
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
-    <meta content='https://x3dgraphics.com/examples/X3dForAdvancedModeling/MotionAnimation/RotationTests.x3d' name='identifier'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/MotionAnimation/RotationTests.x3d' name='identifier'/>
     <meta content='license.html' name='license'/>
-    <meta content='09 June 2023' name='translated'/>
+    <meta content='22 June 2023' name='translated'/>
     <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
     <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
   </head>

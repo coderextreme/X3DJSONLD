@@ -374,8 +374,14 @@ HAnimJoint67->setName("HumanoidRoot");
 HAnimJoint67->setDEF("Bvh1_HumanoidRoot");
 HAnimJoint67->setScale(new float[3]{0.0254,0.0254,0.0254});
 HAnimJoint67->setTranslation(new float[3]{0,0.806,0.194});
+<<<<<<< HEAD
 HAnimJoint67->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint67->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint67->setUlimit(new float[3]{0,0,0});
+HAnimJoint67->setLlimit(new float[3]{0,0,0});
+HAnimJoint67->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 //BVH ROOT Hips, OFFSET 7.62 0.0 0.0, CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
 CHAnimSegment* HAnimSegment68 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment68->setName("sacrum");
@@ -531,8 +537,14 @@ CHAnimJoint* HAnimJoint103 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint103->setName("l_hip");
 HAnimJoint103->setDEF("Bvh1_l_hip");
 HAnimJoint103->setCenter(new float[3]{7.62,0,0});
+<<<<<<< HEAD
 HAnimJoint103->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint103->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint103->setUlimit(new float[3]{0,0,0});
+HAnimJoint103->setLlimit(new float[3]{0,0,0});
+HAnimJoint103->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 //BVH JOINT LeftHip, OFFSET 7.62 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 CHAnimSegment* HAnimSegment104 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment104->setName("l_thigh");
@@ -577,8 +589,14 @@ CHAnimJoint* HAnimJoint113 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint113->setName("l_knee");
 HAnimJoint113->setDEF("Bvh1_l_knee");
 HAnimJoint113->setCenter(new float[3]{7.62,-44.449999,0});
+<<<<<<< HEAD
 HAnimJoint113->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint113->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint113->setUlimit(new float[3]{0,0,0});
+HAnimJoint113->setLlimit(new float[3]{0,0,0});
+HAnimJoint113->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 //BVH JOINT LeftKnee, OFFSET 0.0 -44.449999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 CHAnimSegment* HAnimSegment114 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment114->setName("l_calf");
@@ -623,8 +641,14 @@ CHAnimJoint* HAnimJoint123 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint123->setName("l_ankle");
 HAnimJoint123->setDEF("Bvh1_l_ankle");
 HAnimJoint123->setCenter(new float[3]{7.62,-83.819998,0});
+<<<<<<< HEAD
 HAnimJoint123->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint123->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint123->setUlimit(new float[3]{0,0,0});
+HAnimJoint123->setLlimit(new float[3]{0,0,0});
+HAnimJoint123->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 //BVH JOINT LeftAnkle, OFFSET 0.0 -39.369999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 CHAnimSegment* HAnimSegment124 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment124->setName("l_hindfoot");
@@ -669,8 +693,14 @@ CHAnimJoint* HAnimJoint133 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint133->setName("l_midtarsal");
 HAnimJoint133->setDEF("Bvh1_l_midtarsal");
 HAnimJoint133->setCenter(new float[3]{7.62,-92.709998,-3.81});
+<<<<<<< HEAD
 HAnimJoint133->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint133->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint133->setUlimit(new float[3]{0,0,0});
+HAnimJoint133->setLlimit(new float[3]{0,0,0});
+HAnimJoint133->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 //BVH JOINT LeftAnkleEnd, OFFSET 0.0 -8.89 -3.81, CHANNELS 3 Zrotation Xrotation Yrotation
 CHAnimSegment* HAnimSegment134 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment134->setName("l_middistal");
@@ -722,8 +752,14 @@ CHAnimJoint* HAnimJoint142 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint142->setName("r_hip");
 HAnimJoint142->setDEF("Bvh1_r_hip");
 HAnimJoint142->setCenter(new float[3]{-7.62,0,0});
+<<<<<<< HEAD
 HAnimJoint142->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint142->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint142->setUlimit(new float[3]{0,0,0});
+HAnimJoint142->setLlimit(new float[3]{0,0,0});
+HAnimJoint142->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 //BVH JOINT RightHip, OFFSET -7.62 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 CHAnimSegment* HAnimSegment143 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment143->setName("r_thigh");
@@ -768,8 +804,14 @@ CHAnimJoint* HAnimJoint152 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint152->setName("r_knee");
 HAnimJoint152->setDEF("Bvh1_r_knee");
 HAnimJoint152->setCenter(new float[3]{-7.62,-44.449999,0});
+<<<<<<< HEAD
 HAnimJoint152->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint152->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint152->setUlimit(new float[3]{0,0,0});
+HAnimJoint152->setLlimit(new float[3]{0,0,0});
+HAnimJoint152->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 //BVH JOINT RightKnee, OFFSET 0.0 -44.449999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 CHAnimSegment* HAnimSegment153 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment153->setName("r_calf");
@@ -814,8 +856,14 @@ CHAnimJoint* HAnimJoint162 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint162->setName("r_ankle");
 HAnimJoint162->setDEF("Bvh1_r_ankle");
 HAnimJoint162->setCenter(new float[3]{-7.62,-83.819998,0});
+<<<<<<< HEAD
 HAnimJoint162->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint162->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint162->setUlimit(new float[3]{0,0,0});
+HAnimJoint162->setLlimit(new float[3]{0,0,0});
+HAnimJoint162->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 //BVH JOINT RightAnkle, OFFSET 0.0 -39.369999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 CHAnimSegment* HAnimSegment163 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment163->setName("r_hindfoot");
@@ -860,8 +908,14 @@ CHAnimJoint* HAnimJoint172 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint172->setName("r_midtarsal");
 HAnimJoint172->setDEF("Bvh1_r_midtarsal");
 HAnimJoint172->setCenter(new float[3]{-7.62,-92.709998,-3.81});
+<<<<<<< HEAD
 HAnimJoint172->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint172->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint172->setUlimit(new float[3]{0,0,0});
+HAnimJoint172->setLlimit(new float[3]{0,0,0});
+HAnimJoint172->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 //BVH JOINT RightAnkleEnd, OFFSET 0.0 -8.89 -3.81, CHANNELS 3 Zrotation Xrotation Yrotation
 CHAnimSegment* HAnimSegment173 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment173->setName("r_middistal");
@@ -913,8 +967,14 @@ CHAnimJoint* HAnimJoint181 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint181->setName("vl5");
 HAnimJoint181->setDEF("Bvh1_vl5");
 HAnimJoint181->setCenter(new float[3]{0,7.62,-2.54});
+<<<<<<< HEAD
 HAnimJoint181->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint181->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint181->setUlimit(new float[3]{0,0,0});
+HAnimJoint181->setLlimit(new float[3]{0,0,0});
+HAnimJoint181->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 //BVH JOINT Chest, OFFSET 0.0 7.62 -2.54, CHANNELS 3 Zrotation Xrotation Yrotation
 CHAnimSegment* HAnimSegment182 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment182->setName("l5");
@@ -959,8 +1019,14 @@ CHAnimJoint* HAnimJoint191 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint191->setName("Chest2");
 HAnimJoint191->setDEF("Bvh1_Chest2");
 HAnimJoint191->setCenter(new float[3]{0,15.24,-2.54});
+<<<<<<< HEAD
 HAnimJoint191->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint191->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint191->setUlimit(new float[3]{0,0,0});
+HAnimJoint191->setLlimit(new float[3]{0,0,0});
+HAnimJoint191->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 //BVH JOINT Chest2, OFFSET 0.0 7.62 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 CHAnimSegment* HAnimSegment192 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment192->setName("vl5_to_Chest2");
@@ -1037,8 +1103,14 @@ CHAnimJoint* HAnimJoint209 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint209->setName("LeftCollar");
 HAnimJoint209->setDEF("Bvh1_LeftCollar");
 HAnimJoint209->setCenter(new float[3]{7.62,48.260000000000005,0});
+<<<<<<< HEAD
 HAnimJoint209->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint209->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint209->setUlimit(new float[3]{0,0,0});
+HAnimJoint209->setLlimit(new float[3]{0,0,0});
+HAnimJoint209->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 //BVH JOINT LeftCollar, OFFSET 7.62 33.02 2.54, CHANNELS 3 Zrotation Xrotation Yrotation
 CHAnimSegment* HAnimSegment210 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment210->setName("Chest2_to_LeftCollar");
@@ -1083,8 +1155,14 @@ CHAnimJoint* HAnimJoint219 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint219->setName("l_shoulder");
 HAnimJoint219->setDEF("Bvh1_l_shoulder");
 HAnimJoint219->setCenter(new float[3]{20.32,48.260000000000005,0});
+<<<<<<< HEAD
 HAnimJoint219->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint219->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint219->setUlimit(new float[3]{0,0,0});
+HAnimJoint219->setLlimit(new float[3]{0,0,0});
+HAnimJoint219->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 //BVH JOINT LeftShoulder, OFFSET 12.7 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 CHAnimSegment* HAnimSegment220 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment220->setName("l_upperarm");
@@ -1129,8 +1207,14 @@ CHAnimJoint* HAnimJoint229 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint229->setName("l_elbow");
 HAnimJoint229->setDEF("Bvh1_l_elbow");
 HAnimJoint229->setCenter(new float[3]{20.32,17.780000000000005,0});
+<<<<<<< HEAD
 HAnimJoint229->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint229->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint229->setUlimit(new float[3]{0,0,0});
+HAnimJoint229->setLlimit(new float[3]{0,0,0});
+HAnimJoint229->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 //BVH JOINT LeftElbow, OFFSET 0.0 -30.48 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 CHAnimSegment* HAnimSegment230 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment230->setName("l_forearm");
@@ -1175,8 +1259,14 @@ CHAnimJoint* HAnimJoint239 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint239->setName("l_wrist");
 HAnimJoint239->setDEF("Bvh1_l_wrist");
 HAnimJoint239->setCenter(new float[3]{20.32,-6.349999999999994,0});
+<<<<<<< HEAD
 HAnimJoint239->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint239->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint239->setUlimit(new float[3]{0,0,0});
+HAnimJoint239->setLlimit(new float[3]{0,0,0});
+HAnimJoint239->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 //BVH JOINT LeftWrist, OFFSET 0.0 -24.13 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 CHAnimSegment* HAnimSegment240 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment240->setName("l_hand");
@@ -1228,8 +1318,14 @@ CHAnimJoint* HAnimJoint248 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint248->setName("RightCollar");
 HAnimJoint248->setDEF("Bvh1_RightCollar");
 HAnimJoint248->setCenter(new float[3]{-7.62,48.260000000000005,0});
+<<<<<<< HEAD
 HAnimJoint248->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint248->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint248->setUlimit(new float[3]{0,0,0});
+HAnimJoint248->setLlimit(new float[3]{0,0,0});
+HAnimJoint248->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 //BVH JOINT RightCollar, OFFSET -7.62 33.02 2.54, CHANNELS 3 Zrotation Xrotation Yrotation
 CHAnimSegment* HAnimSegment249 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment249->setName("Chest2_to_RightCollar");
@@ -1274,8 +1370,14 @@ CHAnimJoint* HAnimJoint258 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint258->setName("r_shoulder");
 HAnimJoint258->setDEF("Bvh1_r_shoulder");
 HAnimJoint258->setCenter(new float[3]{-20.32,48.260000000000005,0});
+<<<<<<< HEAD
 HAnimJoint258->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint258->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint258->setUlimit(new float[3]{0,0,0});
+HAnimJoint258->setLlimit(new float[3]{0,0,0});
+HAnimJoint258->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 //BVH JOINT RightShoulder, OFFSET -12.7 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 CHAnimSegment* HAnimSegment259 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment259->setName("r_upperarm");
@@ -1320,8 +1422,14 @@ CHAnimJoint* HAnimJoint268 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint268->setName("r_elbow");
 HAnimJoint268->setDEF("Bvh1_r_elbow");
 HAnimJoint268->setCenter(new float[3]{-20.32,17.780000000000005,0});
+<<<<<<< HEAD
 HAnimJoint268->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint268->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint268->setUlimit(new float[3]{0,0,0});
+HAnimJoint268->setLlimit(new float[3]{0,0,0});
+HAnimJoint268->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 //BVH JOINT RightElbow, OFFSET 0.0 -30.48 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 CHAnimSegment* HAnimSegment269 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment269->setName("r_forearm");
@@ -1366,8 +1474,14 @@ CHAnimJoint* HAnimJoint278 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint278->setName("r_wrist");
 HAnimJoint278->setDEF("Bvh1_r_wrist");
 HAnimJoint278->setCenter(new float[3]{-20.32,-6.349999999999994,0});
+<<<<<<< HEAD
 HAnimJoint278->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint278->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint278->setUlimit(new float[3]{0,0,0});
+HAnimJoint278->setLlimit(new float[3]{0,0,0});
+HAnimJoint278->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 //BVH JOINT RightWrist, OFFSET 0.0 -24.13 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 CHAnimSegment* HAnimSegment279 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment279->setName("r_hand");
@@ -1419,8 +1533,14 @@ CHAnimJoint* HAnimJoint287 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint287->setName("Neck");
 HAnimJoint287->setDEF("Bvh1_Neck");
 HAnimJoint287->setCenter(new float[3]{0,53.339999,0});
+<<<<<<< HEAD
 HAnimJoint287->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint287->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint287->setUlimit(new float[3]{0,0,0});
+HAnimJoint287->setLlimit(new float[3]{0,0,0});
+HAnimJoint287->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 //BVH JOINT Neck, OFFSET 0.0 38.099999 2.54, CHANNELS 3 Zrotation Xrotation Yrotation
 CHAnimSegment* HAnimSegment288 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment288->setName("Chest2_to_Neck");
@@ -1465,8 +1585,14 @@ CHAnimJoint* HAnimJoint297 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint297->setName("skullbase");
 HAnimJoint297->setDEF("Bvh1_skullbase");
 HAnimJoint297->setCenter(new float[3]{0,69.849999,0});
+<<<<<<< HEAD
 HAnimJoint297->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint297->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint297->setUlimit(new float[3]{0,0,0});
+HAnimJoint297->setLlimit(new float[3]{0,0,0});
+HAnimJoint297->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 //BVH JOINT Head, OFFSET 0.0 16.51 0.0, CHANNELS 3 Zrotation Xrotation Yrotation
 CHAnimSegment* HAnimSegment298 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment298->setName("skull");

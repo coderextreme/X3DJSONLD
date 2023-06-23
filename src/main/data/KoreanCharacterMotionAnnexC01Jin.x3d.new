@@ -6,11 +6,13 @@
 <meta name="translator" content="Chul Hee Jung and Myeong Won Lee"></meta>
 <meta name="created" content="31 March 2011"></meta>
 <meta name="translated" content="1 November 2014"></meta>
-<meta name="modified" content="23 December 2021"></meta>
+<meta name="modified" content="7 January 2023"></meta>
 <meta name="description" content="Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model."></meta>
 <meta name="reference" content="KoreanCharacter00ReadMe.txt"></meta>
 <meta name="reference" content="KoreanCharacterHumanMotion_Infotech2014_140706.pdf"></meta>
 <meta name="reference" content="KoreanCharactersIllustrated.pdf"></meta>
+<meta name="specificationSection" content="HAnim 2.0 Part 2: Humanoid animation (HAnim) motion data animation, Annex C (informative) An example of HAnim motion data animation using interpolators"></meta>
+<meta name="specificationUrl" content="https://www.web3d.org/documents/specifications/19774/V2.0/MotionDataAnimation/ExampleMocapAnimationInterpolators.html"></meta>
 <meta name="identifier" content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/KoreanCharacterMotionAnnexC01Jin.x3d"></meta>
 <meta name="generator" content="3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview"></meta>
 <meta name="generator" content="Suwon HAnim Converter"></meta>

@@ -201,6 +201,7 @@ var X3D0 =  X3D(
                           center_ : SFVec3f([SFDouble(3.931), SFDouble(18.23), SFDouble(-1.935)]),
                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                          /*weight values go here in HAnimJoint, or within animating HAnimDisplacer*/
                           children_ : [
                             HAnimSegment(
                               name_ : SFString('l_calf'),

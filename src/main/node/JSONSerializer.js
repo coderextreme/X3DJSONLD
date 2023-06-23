@@ -1,8 +1,8 @@
 "use strict";
 
-import fs from 'node:fs';
+var fs = require('fs');
 
-export function JSONSerializer () {
+function JSONSerializer () {
 };
 
 JSONSerializer.prototype = {
@@ -270,3 +270,4 @@ function printParChilluns(par, chilluns, n) {
 	}
 	return str;
 }
+module.exports = JSONSerializer;

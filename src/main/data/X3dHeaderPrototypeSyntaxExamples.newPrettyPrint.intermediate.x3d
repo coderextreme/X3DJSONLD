@@ -105,7 +105,7 @@
       <fieldValue name='enabled' value='true'/>
     </ProtoInstance>
     <TimeSensor DEF='Clock' cycleInterval='4.0' loop='true'/>
-    <OrientationInterpolator DEF='Spinner' key='0 0.5 1' keyValue='0 1 0 0 0 1 0 3.1416 0 1 0 6.2832'/>
+    <OrientationInterpolator DEF='Spinner' key='0 0.5 1' keyValue='0 1 0 0 0 1 0 3.14159 0 1 0 6.28318'/>
     <ROUTE fromField='fraction_changed' fromNode='Clock' toField='set_fraction' toNode='Spinner'/>
     <ROUTE fromField='value_changed' fromNode='Spinner' toField='rotation' toNode='TransformExampleUSE'/>
     <Inline DEF='someInline' url='"someUrl.x3d" "https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d"'/>

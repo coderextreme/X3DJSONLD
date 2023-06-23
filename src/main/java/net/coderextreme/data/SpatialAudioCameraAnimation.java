@@ -80,24 +80,24 @@ public class SpatialAudioCameraAnimation {
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("WireColor_1")
               .setMaterial(new Material().setDiffuseColor(new float[] {0.690196f,0.101961f,0.101961f})))
-            .setGeometry(new Sphere().setRadius(100.0000f)))
+            .setGeometry(new Sphere().setRadius(100f)))
           .addChild(new Billboard()
             .addChild(new Transform().setDEF("violin").setRotation(new float[] {1f,0f,0f,-0.5f}).setScale(new float[] {100f,100f,100f}).setTranslation(new float[] {0f,100f,0f})
               .addChild(new Shape()
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setAmbientIntensity(0.0933f).setDiffuseColor(new float[] {1f,1f,1f}).setShininess(0.5100f).setSpecularColor(new float[] {0.46f,0.46f,0.46f})))
+                  .setMaterial(new Material().setAmbientIntensity(0.0933f).setDiffuseColor(new float[] {1f,1f,1f}).setShininess(0.51f).setSpecularColor(new float[] {0.46f,0.46f,0.46f})))
                 .setGeometry(new Text().setString(new MFString10().getArray())
                   .setFontStyle(new FontStyle().setDEF("ModelFontStyle").setFamily(new MFString11().getArray()).setStyle("BOLD")))))))
         .addChild(new Transform().setDEF("TransformAudio2").setTranslation(new float[] {933.475586f,0f,924.423218f})
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("WireColor_2")
               .setMaterial(new Material().setDiffuseColor(new float[] {0.105882f,0.694118f,0.580392f})))
-            .setGeometry(new Sphere().setRadius(100.0000f)))
+            .setGeometry(new Sphere().setRadius(100f)))
           .addChild(new Billboard()
             .addChild(new Transform().setDEF("saxophone").setRotation(new float[] {1f,0f,0f,-0.5f}).setScale(new float[] {100f,100f,100f}).setTranslation(new float[] {0f,100f,0f})
               .addChild(new Shape()
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setAmbientIntensity(0.0933f).setDiffuseColor(new float[] {1f,1f,1f}).setShininess(0.5100f).setSpecularColor(new float[] {0.46f,0.46f,0.46f})))
+                  .setMaterial(new Material().setAmbientIntensity(0.0933f).setDiffuseColor(new float[] {1f,1f,1f}).setShininess(0.51f).setSpecularColor(new float[] {0.46f,0.46f,0.46f})))
                 .setGeometry(new Text().setString(new MFString12().getArray())
                   .setFontStyle(new FontStyle().setUSE("ModelFontStyle")))))))
         .addChild(new ListenerPointSource().setTrackCurrentView(true))
@@ -142,22 +142,22 @@ protected class MFString5 {
 }
 protected class MFFloat6 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2500f,0.5000f,0.7500f,1.0000f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.25f,0.5f,0.75f,1f});
   }
 }
 protected class MFVec3f7 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,2000.0000f,3500.0000f,0.0000f,2000.0000f,0.0000f,0.0000f,2000.0000f,-3500.0000f,0.0000f,2000.0000f,0.0000f,0.0000f,2000.0000f,3500.0000f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,2000f,3500f,0f,2000f,0f,0f,2000f,-3500f,0f,2000f,0f,0f,2000f,3500f});
   }
 }
 protected class MFFloat8 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2500f,0.5000f,0.7500f,1.0000f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.25f,0.5f,0.75f,1f});
   }
 }
 protected class MFRotation9 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1.0000f,0.0000f,0.0000f,-0.5236f,1.0000f,0.0036f,0.0027f,-1.3090f,0.0000f,-0.9659f,-0.2588f,-3.1416f,0.0023f,-0.7934f,-0.6088f,-3.1356f,1.0000f,-0.0000f,0.0000f,-0.5236f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f,0f,0f,-0.523599f,0.99999f,0.003554f,0.002727f,-1.309007f,0f,-0.965926f,-0.258819f,-3.141593f,0.002282f,-0.793351f,-0.60876f,-3.135645f,1f,-0.000001f,0f,-0.523599f});
   }
 }
 protected class MFString10 {

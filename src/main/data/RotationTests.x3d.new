@@ -5,7 +5,7 @@
 <meta name="description" content="BVH file conversion support: test and visualize various rotations in order to properly configure converter from Euler angles to SFRotation values."></meta>
 <meta name="creator" content="Don Brutzman"></meta>
 <meta name="created" content="17 December 2016"></meta>
-<meta name="modified" content="20 October 2019"></meta>
+<meta name="modified" content="16 January 2022"></meta>
 <meta name="Image" content="RotationTests.png"></meta>
 <meta name="reference" content="BvhConversion1.x3d"></meta>
 <meta name="warning" content="under development: euler-angle conversions still problematic, single-step animation reveals that animations are not smooth."></meta>
@@ -13,7 +13,7 @@
 <meta name="drawing" content="https://savage.nps.edu/X3D-Edit/images/RotationCalculator.png"></meta>
 <meta name="generator" content="Java BVH to X3D Converter, org.web3d.x3d.hanim.bvh package"></meta>
 <meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
-<meta name="identifier" content="https://x3dgraphics.com/examples/X3dForAdvancedModeling/MotionAnimation/RotationTests.x3d"></meta>
+<meta name="identifier" content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/MotionAnimation/RotationTests.x3d"></meta>
 <meta name="license" content="license.html"></meta>
 </head>
 <Scene><!--initial 3 rotations from 1.bvh, Zrotation Xrotation Yrotation: -1.829527 -4.400301 -0.381611, 2.832229 5.801149 2.553770, -3.939975 -3.766201 -3.474078--><!--*Expected rotation values for initial rotations* in Interpolator1--><WorldInfo title="RotationTests.x3d"></WorldInfo>

@@ -34,7 +34,7 @@ meta(name="reference", content="HelloWorldProgramOutput.html"),
 meta(name="reference", content="https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"),
 meta(name="identifier", content="https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="09 June 2023"),
+meta(name="translated", content="21 June 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
