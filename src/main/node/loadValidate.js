@@ -1,4 +1,9 @@
 // JSON Schema imports
+if (typeof CACHE === 'undefined') {
+	var CACHE = {};
+}
+CACHE.validate = { };
+
 var Ajv2020 = require("./ajv/dist/2020.js");
 var addFormats = require("./ajv-formats/dist/index.js");
 var localize = require("./ajv-i18n/messages/index.js");
@@ -17,16 +22,9 @@ var fs = require('fs');
 X3DJSONLD = Object.assign(X3DJSONLD, { processURLs : function(urls) { return urls; }});
 var selectObjectFromJSObj = X3DJSONLD.selectObjectFromJSObj;
 
-if (typeof CACHE === 'undefined') {
-	CACHE = {};
-}
-CACHE.validate = { };
-
 function loadValidate() {
-}
 
-loadValidate.prototype = {
-doValidate : function(json, validated_version, file, X3DJSONLD, success, failure, e) {
+loadValidate.prototype.doValidate = function(json, validated_version, file, X3DJSONLD, success, failure, e) {
 	var retval = false;
 	if (e) {
 		if (typeof alert === 'function') {
@@ -83,7 +81,7 @@ doValidate : function(json, validated_version, file, X3DJSONLD, success, failure
 	}
 },
 
-validateSchema : function(ajv, schemajson, version) {
+loadValidate.prototype.validateSchema = function(ajv, schemajson, version) {
       var validated_version = CACHE.validate[version];
       if (typeof validated_version === 'undefined') {
 	  console.log("Adding schema: ", version);
@@ -97,7 +95,7 @@ validateSchema : function(ajv, schemajson, version) {
       return validated_version;
 },
 
-loadSchema : function(json, file, X3DJSONLD, success, failure) {
+loadValidate.prototype.loadSchema = function(json, file, X3DJSONLD, success, failure) {
 	var versions = { "4.0":true }
 	var version = json.X3D["@version"];
 	if (!versions[version]) {
@@ -106,7 +104,6 @@ loadSchema : function(json, file, X3DJSONLD, success, failure) {
 	}
 	var validated_version = CACHE.validate[version];
 	if (typeof validated_version === 'undefined') {
-		      console.log("THIS", this);
 		      if (typeof this.validateSchema === 'undefined') {
 			      console.error("Can't find function this.validateSchema");
 		      } else {
@@ -115,21 +112,17 @@ loadSchema : function(json, file, X3DJSONLD, success, failure) {
 		      if (typeof $ === 'function' && typeof $.getJSON === 'function') {
 			      $.getJSON(JSONSchema, function(schemajson) {
 				      validated_version = vs(ajv, schemajson, version);
-		      console.log("THIS", this);
 				      this.doValidate(json, validated_version, file, X3DJSONLD, success, undefined);
 				}).fail(function(e) {
-		      console.log("THIS", this);
 				   this.doValidate(json, validated_version, file, X3DJSONLD, undefined, failure, e);
 				});
 		      } else if (typeof fs === 'object') {
 				var schema = fs.readFileSync("../schema/x3d-"+version+"-JSONSchema.json");
 				var schemajson = JSON.parse(schema.toString());
 				validated_version = vs(ajv, schemajson, version);
-		      console.log("THIS", this);
 				this.doValidate(json, validated_version, file, X3DJSONLD, success, undefined);
 		      }
 	} else {
-		      console.log("THIS", this);
 	      this.doValidate(json, validated_version, file, X3DJSONLD, success, undefined);
 	}
 },
@@ -143,9 +136,8 @@ loadSchema : function(json, file, X3DJSONLD, success, failure) {
 	 * X3DJSONLD -- X3DJSONLD
 	 * callback -- returns the element whose scene children to append or insert into the DOM.
 	 */
-loadX3DJS : function(DOMImplementation, jsobj, path, NS, X3DJSONLD, callback) {
+loadValidate.prototype.loadX3DJS = function(DOMImplementation, jsobj, path, NS, X3DJSONLD, callback) {
 	X3DJSONLD.x3djsonNS = NS;
-	console.log("THIS", this);
 	this.loadSchema(jsobj, path, X3DJSONLD, function() {
 		var child, xml;
 		[ child, xml ] = X3DJSONLD.loadJsonIntoXml(DOMImplementation, jsobj, path);
@@ -168,8 +160,7 @@ loadX3DJS : function(DOMImplementation, jsobj, path, NS, X3DJSONLD, callback) {
 	 * next -- to return the element or null
 	 * returns element loaded, followed by xml
 	 */
-replaceX3DJSON : function(parent, json, url, NS, next) {
-	console.log("THIS", this);
+loadValidate.prototype.replaceX3DJSON = function(parent, json, url, NS, next) {
 	this.loadX3DJS(DOMImplementation, json, url, NS, X3DJSONLD, function(child, xml) {
 		if (child != null) {
 			while (parent.firstChild) {
@@ -181,8 +172,5 @@ replaceX3DJSON : function(parent, json, url, NS, next) {
 	});
 }
 }
-
-
-var loadValidator = new loadValidate();
 
 module.exports = loadValidate;
