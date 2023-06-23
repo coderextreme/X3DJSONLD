@@ -1,19 +1,48 @@
-'''
-x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
-'''
+# x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
+print("<!--")
 from x3d import *
-from x3d import SFBool
+print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(), 
+head=head(children=[component(name="H-Anim", level=1),
+meta(name="title", content="HAnim1SpecificationLOA3Invisible.x3d"),
+meta(name="description", content="HAnim Specification reference example providing full coverage (and no illustrated visibility) of all specified HAnim constructs, also suitable for re-use as an authoring template."),
+meta(name="reference", content="https://www.web3d.org/files/specifications/19774/V1.0/HAnim/BodyDimensionsAndLOAs.html#LOA3ExampleSourceWithDiamonds"),
+meta(name="created", content="24 April 2013"),
+meta(name="modified", content="19 February 2021"),
+meta(name="creator", content="Matthew T. Beitler, Joe D. Williams, Don Brutzman"),
+meta(name="reference", content="HAnim1SpecificationLOA3Illustrated.x3d"),
+meta(name="reference", content="HAnim1SpecificationLOA3Animation.x3d"),
+meta(name="reference", content="HAnimSpecificationExampleChangeLog.txt"),
+meta(name="Image", content="images/BonesAllSkeletonFrontViewLOA1.png"),
+meta(name="Image", content="images/BonesAllSkeletonFrontViewLOA2.png"),
+meta(name="Image", content="images/BonesAllSkeletonFrontViewLOA3.png"),
+meta(name="TODO", content="move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations"),
+meta(name="TODO", content="insert MetadataInteger nodes indicating LOA for each Joint and Segment"),
+meta(name="reference", content="Norman Badler et al., ANTHROPOMETRY FOR COMPUTER GRAPHICS HUMAN FIGURES, University of Pennsylvania, 1989."),
+meta(name="reference", content="http://www.cis.upenn.edu/~badler/anthro/89-71.ps"),
+meta(name="reference", content="tables/AnthropometryForComputerGraphicsHumanFigures89-71.pdf"),
+meta(name="translator", content="Don Brutzman and Joe Williams"),
+meta(name="generator", content="BS Contact Geo 8.001, http://www.bitmanagement.de/en/products/interactive-3d-clients/bs-contact-geo"),
+meta(name="reference", content="originals/LOA3ExampleSourceWithDiamondsOriginal.wrl"),
+meta(name="reference", content="originals/LOA3ExampleSourceWithDiamondsOriginal.x3d"),
+meta(name="reference", content="originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d"),
+meta(name="reference", content="HAnim Specification Table 4.4 - Face Joint object names, https://www.web3d.org/files/specifications/19774/V1.0/HAnim/concepts.html#FaceJointObjectNames"),
+meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/HAnim1SpecificationLOA3Invisible.x3d"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="21 June 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
 Background(skyColor=[(0.3,0.3,0.3)]),
 NavigationInfo(),
 Group(DEF="Original_WorldInfo", children=[
 WorldInfo(info=[" HANIM 200x Default Joint Centers, Level-Of-Articulation 3 HANIM 200x (VRML97) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 200x (VRML97) Author email: beitler@cis.upenn.edu or beitler@acm.org HANIM 200x (VRML97) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 200x (VRML97) Compliance Date: August 12, 2003 HANIM 200x Compliance Information: http://HAnim.org/Specifications/HAnim200x Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps "], title="HANIM 200x Default Joint Centers, LOA3")]),
-#TODO move viewpoints to be internal to HAnimHumanoid
+Comment(value=''' TODO move viewpoints to be internal to HAnimHumanoid '''),
 
-#Viewpoint centerOfRotation="0 0.9149 0.0016" matches initial at-rest locaton of the sacroliac. Note that these viewpoints are external to the HAnimHumanoid and do not move with the human.
+Comment(value=''' Viewpoint centerOfRotation="0 0.9149 0.0016" matches initial at-rest locaton of the sacroliac. Note that these viewpoints are external to the HAnimHumanoid and do not move with the human. '''),
 
 Viewpoint(centerOfRotation=((0,0.9149,0.0016)), description="Humanoid LOA 3 Front", position=((0,0.4,4))),
 Viewpoint(centerOfRotation=((0,0.9149,0.0016)), description="Humanoid LOA 3 Front Close", position=((0,0.8,2))),
@@ -147,7 +176,7 @@ HAnimSegment(name="c1", DEF="hanim_c1"),
 HAnimJoint(name="skullbase", DEF="hanim_skullbase", center=((0.0044,1.6209,0.0236)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="skull", DEF="hanim_skull", children=[
 HAnimSite(name="skull_tip", DEF="hanim_skull_tip", translation=((0.005,1.7504,0.0055)), children=[
-#TODO move skull_tip x to zero, check others for symmetry
+Comment(value=''' TODO move skull_tip x to zero, check others for symmetry '''),
 ]),
 HAnimSite(name="sellion_pt", DEF="hanim_sellion_pt", translation=((0.0058,1.6316,0.0852))),
 HAnimSite(name="r_infraorbitale_pt", DEF="hanim_r_infraorbitale_pt", translation=((-0.0237,1.6171,0.0752))),
@@ -175,7 +204,7 @@ HAnimSegment(name="r_eyelid", DEF="hanim_r_eyelid")]),
 HAnimJoint(name="r_eyebrow_joint", DEF="hanim_r_eyebrow_joint", center=((-0.0336,1.635,0.0506)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_eyebrow", DEF="hanim_r_eyebrow")]),
 HAnimJoint(name="temporomandibular", DEF="hanim_temporomandibular", center=((0.0,1.63,0.015)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
-#Single joint, single segment for jaw, two sites for left/right TMJs https://en.wikipedia.org/wiki/Temporomandibular_joint
+Comment(value=''' Single joint, single segment for jaw, two sites for left/right TMJs https://en.wikipedia.org/wiki/Temporomandibular_joint '''),
 
 HAnimSegment(name="jaw", DEF="hanim_jaw", children=[
 HAnimSite(name="temporomandibular_l_site_pt", DEF="hanim_temporomandibular_l_site_pt", translation=((0.045,1.63,0.0))),

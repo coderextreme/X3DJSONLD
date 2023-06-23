@@ -136,7 +136,7 @@
           },
           {
             "@name":"translated",
-            "@content":"09 June 2023"
+            "@content":"22 June 2023"
           },
           {
             "@name":"generator",
@@ -424,7 +424,7 @@
             {
               "@DEF":"SpinInterpolator",
               "@key":[0,0.5,1],
-              "@keyValue":[0,1,0,4.7124,0,1,0,0,0,1,0,1.5708]
+              "@keyValue":[0,1,0,4.712389,0,1,0,0,0,1,0,1.5707964]
             }
           },
           { "TimeSensor":
@@ -493,7 +493,7 @@
                   {
                     "@DEF":"ColorAnimator",
                     "@key":[0,0.5,1],
-                    "@keyValue":[0.9412,1,1,0.2941,0,0.5098,0.9412,1,1],
+                    "@keyValue":[0.9411765,1,1,0.29411766,0,0.50980395,0.9411765,1,1],
                     "-children":[
                       {
                         "#comment":"AZURE to INDIGO and back again"
@@ -565,7 +565,7 @@
                       {
                         "@ambientIntensity":0.25,
                         "@diffuseColor":[0.282435,0.085159,0.134462],
-                        "@shininess":0.1273,
+                        "@shininess":0.127273,
                         "@specularColor":[0.276305,0.11431,0.139857]
                       }
                     },

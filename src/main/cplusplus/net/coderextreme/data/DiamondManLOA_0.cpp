@@ -196,14 +196,26 @@ CHAnimJoint* HAnimJoint38 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint38->setName("HumanoidRoot");
 HAnimJoint38->setDEF("hanim_HumanoidRoot");
 HAnimJoint38->setCenter(new float[3]{0,0.824,0.0277});
+<<<<<<< HEAD
 HAnimJoint38->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint38->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint38->setUlimit(new float[3]{0,0,0});
+HAnimJoint38->setLlimit(new float[3]{0,0,0});
+HAnimJoint38->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimJoint* HAnimJoint39 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint39->setName("sacroiliac");
 HAnimJoint39->setDEF("hanim_sacroiliac");
 HAnimJoint39->setCenter(new float[3]{0,0.9149,0.0016});
+<<<<<<< HEAD
 HAnimJoint39->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint39->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint39->setUlimit(new float[3]{0,0,0});
+HAnimJoint39->setLlimit(new float[3]{0,0,0});
+HAnimJoint39->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment40 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment40->setName("pelvis");
 HAnimSegment40->setDEF("hanim_pelvis");

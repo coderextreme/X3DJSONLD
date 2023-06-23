@@ -76,7 +76,7 @@ public class StringArrayEncodingExamples {
     }
 protected class MFColor0 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.6000f,1.0000f,0.8000f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.6f,1f,0.8f});
   }
 }
 protected class MFString1 {

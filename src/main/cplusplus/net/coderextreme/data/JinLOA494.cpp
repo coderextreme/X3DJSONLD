@@ -133,27 +133,27 @@ MetadataSet24->setValue(*MetadataString25);
 CMetadataString* MetadataString26 = (CMetadataString *)(m_pScene.createNode("MetadataString"));
 MetadataString26->setName("authorEmail");
 MetadataString26->setValue(new CString[1]{"myeongwonlee@gmail.com"}, 1);
-MetadataSet24->addValue(*MetadataString26);
+MetadataSet24->setValue(*MetadataString26);
 
 CMetadataString* MetadataString27 = (CMetadataString *)(m_pScene.createNode("MetadataString"));
 MetadataString27->setName("creationDate");
 MetadataString27->setValue(new CString[1]{"31 March 2011"}, 1);
-MetadataSet24->addValue(*MetadataString27);
+MetadataSet24->setValue(*MetadataString27);
 
 CMetadataString* MetadataString28 = (CMetadataString *)(m_pScene.createNode("MetadataString"));
 MetadataString28->setName("gender");
 MetadataString28->setValue(new CString[1]{"female"}, 1);
-MetadataSet24->addValue(*MetadataString28);
+MetadataSet24->setValue(*MetadataString28);
 
 CMetadataFloat* MetadataFloat29 = (CMetadataFloat *)(m_pScene.createNode("MetadataFloat"));
 MetadataFloat29->setName("height");
 MetadataFloat29->setValue(new float[1]{1.5}, 1);
-MetadataSet24->addValue(*MetadataFloat29);
+MetadataSet24->setValue(*MetadataFloat29);
 
 CMetadataString* MetadataString30 = (CMetadataString *)(m_pScene.createNode("MetadataString"));
 MetadataString30->setName("humanoidVersion");
 MetadataString30->setValue(new CString[1]{"2.0"}, 1);
-MetadataSet24->addValue(*MetadataString30);
+MetadataSet24->setValue(*MetadataString30);
 
 HAnimHumanoid23->setValue(*MetadataSet24);
 

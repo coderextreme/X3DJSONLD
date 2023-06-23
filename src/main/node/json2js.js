@@ -8,7 +8,7 @@ process.argv.shift();
 var convertJSON = require('./convertJSON.js').convertJSON;
 
 convertJSON([{ 
-	serializer : './JavaScriptSerializer.mjs',
+	serializer : './JavaScriptSerializer.js',
 	folder : "../nashorn/net/coderextreme/",
 	extension : ".js",
 	codeOutput : "../",

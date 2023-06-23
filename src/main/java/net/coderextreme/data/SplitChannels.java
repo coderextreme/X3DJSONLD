@@ -79,7 +79,7 @@ public class SplitChannels {
           .addChild(new Transform().setDEF("volumeRight").setRotation(new float[] {1f,0f,0f,-0.5f}).setScale(new float[] {10f,10f,10f}).setTranslation(new float[] {0f,-10f,0f})
             .addChild(new Shape()
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setAmbientIntensity(0.0933f).setDiffuseColor(new float[] {0.345f,0.345f,0.882f}).setShininess(0.5100f).setSpecularColor(new float[] {0.46f,0.46f,0.46f})))
+                .setMaterial(new Material().setAmbientIntensity(0.0933f).setDiffuseColor(new float[] {0.345f,0.345f,0.882f}).setShininess(0.51f).setSpecularColor(new float[] {0.46f,0.46f,0.46f})))
               .setGeometry(new Text().setString(new MFString2().getArray())
                 .setFontStyle(new FontStyle().setFamily(new MFString3().getArray()).setStyle("BOLD"))))))
         .addChild(new Transform().setDEF("PowerL").setTranslation(new float[] {-100f,400f,400f})
@@ -97,13 +97,13 @@ public class SplitChannels {
           .addChild(new Transform().setDEF("volumeLeft").setRotation(new float[] {1f,0f,0f,-0.5f}).setScale(new float[] {10f,10f,10f}).setTranslation(new float[] {0f,-10f,0f})
             .addChild(new Shape()
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setAmbientIntensity(0.0933f).setDiffuseColor(new float[] {0.345f,0.345f,0.882f}).setShininess(0.5100f).setSpecularColor(new float[] {0.46f,0.46f,0.46f})))
+                .setMaterial(new Material().setAmbientIntensity(0.0933f).setDiffuseColor(new float[] {0.345f,0.345f,0.882f}).setShininess(0.51f).setSpecularColor(new float[] {0.46f,0.46f,0.46f})))
               .setGeometry(new Text().setString(new MFString5().getArray())
                 .setFontStyle(new FontStyle().setFamily(new MFString6().getArray()).setStyle("BOLD"))))))
         .addChild(new Transform()
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("floor")
-              .setMaterial(new Material().setDiffuseColor(new float[] {0.1f,0.1f,0.1f}).setShininess(0.8000f).setSpecularColor(new float[] {0.5f,0.6f,0.7f})))
+              .setMaterial(new Material().setDiffuseColor(new float[] {0.1f,0.1f,0.1f}).setShininess(0.8f).setSpecularColor(new float[] {0.5f,0.6f,0.7f})))
             .setGeometry(new Box().setSize(new float[] {1500f,10f,500f}))))
         .addChild(new ListenerPointSource().setTrackCurrentView(true))
         .addChild(new StreamAudioDestination().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
@@ -125,7 +125,7 @@ public class SplitChannels {
     }
 protected class MFColor0 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.2000f,0.2000f,0.2100f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.2f,0.2f,0.21f});
   }
 }
 protected class MFString1 {

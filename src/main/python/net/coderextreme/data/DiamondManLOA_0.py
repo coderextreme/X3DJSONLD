@@ -1,11 +1,37 @@
-'''
-x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
-'''
+# x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
+print("<!--")
 from x3d import *
-from x3d import SFBool
+print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(), 
+head=head(children=[component(name="H-Anim", level=1),
+meta(name="title", content="DiamondManLOA_0.x3d"),
+meta(name="description", content="HAnim skeletal structure for Level of Action (LOA) zero, with one diamond at the base node for the structure. HumanoidRoot only, so this is the minimum legal HAnim humanoid."),
+meta(name="creator", content="Matthew T. Beitler"),
+meta(name="translator", content="Joel S. Pawloski"),
+meta(name="created", content="12 November 2001"),
+meta(name="modified", content="23 December 2021"),
+meta(name="motto", content="(a) \"Diamonds are a girl's best friend.\" (b) \"Gosh, it sure is chilly in here.\""),
+meta(name="reference", content="HAnim 2.0 specification, Appendix A: Nominal human body dimensions and levels of articulation (LOAs)"),
+meta(name="reference", content="https://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/BodyDimensionsAndLOAs.html"),
+meta(name="reference", content="https://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/BodyDimensionsAndLOAs.html#LevelOfArticulationZero"),
+meta(name="reference", content="HAnim 1.1 specification, Appendix A: Suggested Body Dimensions and Levels of Articulation, Level of Articulation Zero"),
+meta(name="reference", content="http://HAnim.org/Specifications/HAnim1.1/appendices.html#appendixa"),
+meta(name="reference", content="http://HAnim.org/Specifications/HAnim1.1/JointCenters1_1_LOA0.wrl"),
+meta(name="reference", content="http://HAnim.org/Specifications/HAnim1.1/JointCenters1_1_LOA0-diamond.wrl"),
+meta(name="reference", content="http://ece.uwaterloo.ca/~HAnim"),
+meta(name="reference", content="http://www.cis.upenn.edu/~badler/anthro/89-71.pdf"),
+meta(name="reference", content="http://www.cis.upenn.edu/~badler/anthro/89-71.ps"),
+meta(name="reference", content="http://www.cis.upenn.edu/~beitler"),
+meta(name="Image", content="humanoid_landmark_locations.gif"),
+meta(name="Image", content="http://HAnim.org/Specifications/HAnim1.1/humanoid_landmark_locations.gif"),
+meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Templates/DiamondManLOA_0.x3d"),
+meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="21 June 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
 WorldInfo(info=["HAnim 2.0 Default Joint Centers, Level Of Articulation (LOA) 0 -------------------------------------------------------- HANIM 1.1 (VRML 2.0) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 1.1 (VRML 2.0) Author email: beitler@graphics.cis.upenn.edu or beitler@acm.org HANIM 1.1 (VRML 2.0) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 1.1 (VRML 2.0) Compliance Date: May 12, 1999 HANIM 1.1 Compliance Information: http://ece.uwaterloo.ca/~HAnim/ Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps, .pdf"], title="HANIM 2.0 Default Joint Centers, LOA0"),
 NavigationInfo(speed=1.5),
@@ -25,7 +51,7 @@ HAnimSegment(name="pelvis", DEF="hanim_pelvis", children=[
 Transform(translation=((0.0,0.9149,0.0016)), children=[
 Shape(DEF="DiamondShape", 
 geometry=
-IndexedFaceSet(coordIndex=[int(0),int(1),int(2),int(-1),int(0),int(2),int(3),int(-1),int(0),int(3),int(4),int(-1),int(0),int(4),int(1),int(-1),int(5),int(2),int(1),int(-1),int(5),int(3),int(2),int(-1),int(5),int(4),int(3),int(-1),int(5),int(1),int(4),int(-1)], creaseAngle=0.5, 
+IndexedFaceSet(coordIndex=[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1], creaseAngle=0.5, 
 coord=
 Coordinate(point=[(0,0.01,0),(-0.01,0,0),(0,0,0.01),(0.01,0,0),(0,0,-0.01),(0,-0.01,0)])), 
 appearance=

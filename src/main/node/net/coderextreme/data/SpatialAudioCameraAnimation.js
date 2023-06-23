@@ -1,9 +1,10 @@
 var java = require('java');
+var util = require('util');
 java.asyncOptions = {
   asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
   syncSuffix: "",              // Sync methods use the base name(!!)
   promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
-  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  promisify: util.promisify, // Needs Node.js version 8 or greater, see comment below
   ifReadOnlySuffix: "_alt"
 };
 var autoclass = require('../../../X3Dautoclass');
@@ -68,12 +69,12 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .setGeometry((new autoclass.Text()).setString(java.newArray("java.lang.String", ["Saxophone"]))
                   .setFontStyle((new autoclass.FontStyle()).setUSE("ModelFontStyle")))))))
         .addChild((new autoclass.ListenerPointSource()).setTrackCurrentView(true))
-        .addChild((new autoclass.StreamAudioDestination())
-          .addChild((new autoclass.SpatialSound()).setDEF("Audio1")
-            .addChild((new autoclass.Gain())
+        .addChild((new autoclass.StreamAudioDestination()).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
+          .addChild((new autoclass.SpatialSound()).setDEF("Audio1").setDistanceModel("INVERSE")
+            .addChild((new autoclass.Gain()).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
               .addChild((new autoclass.AudioClip()).setDescription("Violin").setLoop(true).setUrl(java.newArray("java.lang.String", ["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"])))))
-          .addChild((new autoclass.SpatialSound()).setDEF("Audio2")
-            .addChild((new autoclass.Gain())
+          .addChild((new autoclass.SpatialSound()).setDEF("Audio2").setDistanceModel("INVERSE")
+            .addChild((new autoclass.Gain()).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
               .addChild((new autoclass.AudioClip()).setDescription("Saxophone").setLoop(true).setUrl(java.newArray("java.lang.String", ["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"])))))))      ;
     X3D0.toFileX3D("../data/SpatialAudioCameraAnimation.new.x3d");
     process.exit(0);

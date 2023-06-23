@@ -66,8 +66,8 @@ ProtoInstance ProtoInstance6 = null;
         .addComponent(new component().setName("H-Anim").setLevel(1))
         .addComponent(new component().setName("Grouping").setLevel(1))
         .addComponent(new component().setName("Layering").setLevel(1))
-        .addUnit(new unit().setName("AngleUnitConversion").setCategory("angle").setConversionFactor(1.0000d))
-        .addUnit(new unit().setName("LengthUnitConversion").setCategory("length").setConversionFactor(1.0000d))
+        .addUnit(new unit().setName("AngleUnitConversion").setCategory("angle").setConversionFactor(1d))
+        .addUnit(new unit().setName("LengthUnitConversion").setCategory("length").setConversionFactor(1d))
         .addUnit(new unit().setName("ForceFromPoundsToNewtons").setCategory("force").setConversionFactor(4.4482d))
         .addMeta(new meta().setName("title").setContent("HelloWorldProgramOutput.x3d"))
         .addMeta(new meta().setName("info").setContent("continued development and testing in progress"))
@@ -103,7 +103,7 @@ ProtoInstance ProtoInstance6 = null;
           .addChild(new Anchor().setDEF("siteAnchor").setDescription("select for X3D Java SAI Library (X3DJSAIL) description").setUrl(new MFString1().getArray())
             .addChild(new Shape().setDEF("BoxShape")
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDEF("GreenMaterial").setDiffuseColor(new float[] {0f,1f,1f}).setEmissiveColor(new float[] {0.8f,0f,0f}).setTransparency(0.1000f))
+                .setMaterial(new Material().setDEF("GreenMaterial").setDiffuseColor(new float[] {0f,1f,1f}).setEmissiveColor(new float[] {0.8f,0f,0f}).setTransparency(0.1f))
                 .setTexture(new ImageTexture().setUrl(new MFString2().getArray())))
               .setGeometry(new Box().setDEF("test-NMTOKEN_regex.0123456789").setCssClass("untextured")))))
         .addChild(new Shape().setDEF("LineShape")
@@ -167,7 +167,7 @@ ProtoInstance ProtoInstance6 = null;
             .addField(new field().setType("SFBool").setName("enabled").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("true")))
           .setProtoBody(new ProtoBody()
             .addComments("Initial node of ProtoBody determines prototype node type")
-            .addChild(new Material().setAmbientIntensity(0.2500f).setDiffuseColor(new float[] {0.282435f,0.085159f,0.134462f}).setShininess(0.1273f).setSpecularColor(new float[] {0.276305f,0.11431f,0.139857f}))
+            .addChild(new Material().setAmbientIntensity(0.25f).setDiffuseColor(new float[] {0.282435f,0.085159f,0.134462f}).setShininess(0.127273f).setSpecularColor(new float[] {0.276305f,0.11431f,0.139857f}))
             .addComments("[HelloWorldProgram diagnostic] should be connected to scene graph: artDeco01ProtoDeclare.getNodeType()=\"Material\"")
             .addComments("presence of follow-on TouchSensor shows that additional nodes are allowed in ProtoBody after initial node, regardless of node types")
             .addChild(new TouchSensor().setDescription("within ProtoBody")
@@ -183,18 +183,18 @@ ProtoInstance ProtoInstance6 = null;
             .addComments("ArtDeco01Material prototype goes here... TODO ensure setContainerField is handled in exported Java")
             .setMaterial(ProtoInstance0 = new ProtoInstance().setName("ArtDeco01Material")
               .addComments("[HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()=\"Material\"")))
-          .setGeometry(new Sphere().setRadius(0.0010f)))
+          .setGeometry(new Sphere().setRadius(0.001f)))
         .addChild(new Shape().setDEF("TestShape2")
           .setAppearance(new Appearance().setDEF("TestAppearance2")
             .addComments("ArtDeco02Material prototype goes here... TODO ensure setContainerField is handled in exported Java")
             .setMaterial(ProtoInstance1 = new ProtoInstance().setName("ArtDeco02Material").setDEF("ArtDeco02MaterialDEF")
               .addComments("[HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\"")))
-          .setGeometry(new Cone().setBottomRadius(0.0010f).setHeight(0.0010f)))
+          .setGeometry(new Cone().setBottomRadius(0.001f).setHeight(0.001f)))
         .addChild(new Shape().setDEF("TestShape3")
           .setAppearance(new Appearance().setDEF("TestAppearance3")
             .addComments("ArtDeco02Material ProtoInstance USE goes here. Note that name field is NOT defined as part of ProtoInstance USE.")
             .setMaterial(ProtoInstance2 = new ProtoInstance().setUSE("ArtDeco02MaterialDEF")))
-          .setGeometry(new Cylinder().setHeight(0.0010f).setRadius(0.0010f)))
+          .setGeometry(new Cylinder().setHeight(0.001f).setRadius(0.001f)))
         .addChild(new Inline().setDEF("inlineScene").setUrl(new MFString17().getArray()))
         .addChild(new IMPORT().setAS("WorldInfoDEF2").setImportedDEF("WorldInfoDEF").setInlineDEF("inlineScene"))
         .addChild(new EXPORT().setAS("WorldInfoDEF3").setLocalDEF("WorldInfoDEF"))
@@ -251,11 +251,11 @@ ProtoInstance ProtoInstance6 = null;
         .addComments("Test success: declarative statement createDeclarativeShapeTests()")
         .addChild(new Group().setDEF("DeclarativeGroupExample")
           .addChild(new Shape()
-            .setMetadata(new MetadataString().setName("findThisNameValue").setDEF("FindableMetadataStringTest").setValue(new MFString18().getArray()))
+            .addValue(new MetadataString().setName("findThisNameValue").setDEF("FindableMetadataStringTest").setValue(new MFString18().getArray()))
             .setAppearance(new Appearance().setDEF("DeclarativeAppearanceExample")
               .addComments("DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance")
               .setMaterial(ProtoInstance3 = new ProtoInstance().setName("MaterialModulator").setDEF("MyMaterialModulator")))
-            .setGeometry(new Cone().setBottom(false).setBottomRadius(0.0500f).setHeight(0.1000f)))
+            .setGeometry(new Cone().setBottom(false).setBottomRadius(0.05f).setHeight(0.1f)))
           .addComments("Test success: declarativeGroup.addChild() singleton pipeline method"))
         .addComments("Test success: declarative statement addChild()")
         .addComments("Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/> </Appearance>")
@@ -291,7 +291,7 @@ ProtoInstance ProtoInstance6 = null;
           .addComments("ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]'")
           .addComments("ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]'")
           .setAppearance(new Appearance().setDEF("TransparentAppearance")
-            .setMaterial(new Material().setTransparency(1.0000f)))
+            .setMaterial(new Material().setTransparency(1f)))
           .setGeometry(new Extrusion().setDEF("ExampleExtrusion")))
         .addChild(new Group()
           .addComments("Test MFNode children array as an ordered list consisting of comments, statements, ProtoInstance and nodes")
@@ -383,17 +383,17 @@ protected class MFInt323 {
 }
 protected class MFVec3f4 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,1.5000f,0.0000f,2.0000f,1.5000f,0.0000f,2.0000f,1.5000f,-2.0000f,-2.0000f,1.5000f,-2.0000f,-2.0000f,1.5000f,0.0000f,0.0000f,1.5000f,0.0000f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,1.5f,0f,2f,1.5f,0f,2f,1.5f,-2f,-2f,1.5f,-2f,-2f,1.5f,0f,0f,1.5f,0f});
   }
 }
 protected class MFFloat5 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.1250f,0.3750f,0.6250f,0.8750f,1.0000f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.125f,0.375f,0.625f,0.875f,1f});
   }
 }
 protected class MFVec3f6 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,1.5000f,0.0000f,2.0000f,1.5000f,0.0000f,2.0000f,1.5000f,-2.0000f,-2.0000f,1.5000f,-2.0000f,-2.0000f,1.5000f,0.0000f,0.0000f,1.5000f,0.0000f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,1.5f,0f,2f,1.5f,0f,2f,1.5f,-2f,-2f,1.5f,-2f,-2f,1.5f,0f,0f,1.5f,0f});
   }
 }
 protected class MFString7 {
@@ -423,22 +423,22 @@ protected class MFString11 {
 }
 protected class MFFloat12 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.5000f,1.0000f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.5f,1f});
   }
 }
 protected class MFRotation13 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,1.0000f,0.0000f,4.7124f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f,1.5708f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,1f,0f,4.712389f,0f,1f,0f,0f,0f,1f,0f,1.5707964f});
   }
 }
 protected class MFFloat14 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.5000f,1.0000f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.5f,1f});
   }
 }
 protected class MFColor15 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.9412f,1.0000f,1.0000f,0.2941f,0.0000f,0.5098f,0.9412f,1.0000f,1.0000f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.9411765f,1f,1f,0.29411766f,0f,0.50980395f,0.9411765f,1f,1f});
   }
 }
 protected class MFString16 {

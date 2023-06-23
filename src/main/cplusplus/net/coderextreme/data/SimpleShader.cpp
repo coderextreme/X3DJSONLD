@@ -250,7 +250,7 @@ MetadataString47->setReference("http://titania.create3000.de");
 MetadataString47->setValue(new CString[1]{"EXAMINE"}, 1);
 MetadataSet46->setValue(*MetadataString47);
 
-MetadataSet43->addValue(*MetadataSet46);
+MetadataSet43->setValue(*MetadataSet46);
 
 CMetadataSet* MetadataSet48 = (CMetadataSet *)(m_pScene.createNode("MetadataSet"));
 MetadataSet48->setName("Viewpoint");
@@ -268,16 +268,16 @@ MetadataDouble50->setName("orientation");
 MetadataDouble50->setDEF("orientation");
 MetadataDouble50->setReference("http://titania.create3000.de");
 MetadataDouble50->setValue(new double[4]{-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191});
-MetadataSet48->addValue(*MetadataDouble50);
+MetadataSet48->setValue(*MetadataDouble50);
 
 CMetadataDouble* MetadataDouble51 = (CMetadataDouble *)(m_pScene.createNode("MetadataDouble"));
 MetadataDouble51->setName("centerOfRotation");
 MetadataDouble51->setDEF("centerOfRotation");
 MetadataDouble51->setReference("http://titania.create3000.de");
 MetadataDouble51->setValue(new double[3]{-0.808320198626341,-0.358072370409949,0.22817191560906});
-MetadataSet48->addValue(*MetadataDouble51);
+MetadataSet48->setValue(*MetadataDouble51);
 
-MetadataSet43->addValue(*MetadataSet48);
+MetadataSet43->setValue(*MetadataSet48);
 
 WorldInfo42->setMetadata(*MetadataSet43);
 

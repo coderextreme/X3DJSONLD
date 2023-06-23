@@ -258,8 +258,14 @@ CHAnimJoint* HAnimJoint47 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint47->setName("humanoid_root");
 HAnimJoint47->setDEF("hanim_humanoid_root");
 HAnimJoint47->setCenter(new float[3]{0,0.824,0.0277});
+<<<<<<< HEAD
 HAnimJoint47->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint47->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint47->setUlimit(new float[3]{0,0,0});
+HAnimJoint47->setLlimit(new float[3]{0,0,0});
+HAnimJoint47->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment48 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment48->setName("sacrum");
 HAnimSegment48->setDEF("hanim_sacrum");
@@ -328,8 +334,14 @@ CHAnimJoint* HAnimJoint63 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint63->setName("sacroiliac");
 HAnimJoint63->setDEF("hanim_sacroiliac");
 HAnimJoint63->setCenter(new float[3]{0,0.9149,0.0016});
+<<<<<<< HEAD
 HAnimJoint63->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint63->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint63->setUlimit(new float[3]{0,0,0});
+HAnimJoint63->setLlimit(new float[3]{0,0,0});
+HAnimJoint63->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment64 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment64->setName("pelvis");
 HAnimSegment64->setDEF("hanim_pelvis");
@@ -682,8 +694,14 @@ CHAnimJoint* HAnimJoint143 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint143->setName("l_hip");
 HAnimJoint143->setDEF("hanim_l_hip");
 HAnimJoint143->setCenter(new float[3]{0.0961,0.9124,-0.0001});
+<<<<<<< HEAD
 HAnimJoint143->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint143->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint143->setUlimit(new float[3]{0,0,0});
+HAnimJoint143->setLlimit(new float[3]{0,0,0});
+HAnimJoint143->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment144 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment144->setName("l_thigh");
 HAnimSegment144->setDEF("hanim_l_thigh");
@@ -815,8 +833,14 @@ CHAnimJoint* HAnimJoint173 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint173->setName("l_knee");
 HAnimJoint173->setDEF("hanim_l_knee");
 HAnimJoint173->setCenter(new float[3]{0.104,0.4867,0.0308});
+<<<<<<< HEAD
 HAnimJoint173->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint173->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint173->setUlimit(new float[3]{0,0,0});
+HAnimJoint173->setLlimit(new float[3]{0,0,0});
+HAnimJoint173->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment174 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment174->setName("l_calf");
 HAnimSegment174->setDEF("hanim_l_calf");
@@ -855,8 +879,14 @@ CHAnimJoint* HAnimJoint182 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint182->setName("l_ankle");
 HAnimJoint182->setDEF("hanim_l_ankle");
 HAnimJoint182->setCenter(new float[3]{0.1101,0.0656,-0.0736});
+<<<<<<< HEAD
 HAnimJoint182->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint182->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint182->setUlimit(new float[3]{0,0,0});
+HAnimJoint182->setLlimit(new float[3]{0,0,0});
+HAnimJoint182->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment183 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment183->setName("l_hindfoot");
 HAnimSegment183->setDEF("hanim_l_hindfoot");
@@ -1019,8 +1049,14 @@ CHAnimJoint* HAnimJoint219 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint219->setName("l_subtalar");
 HAnimJoint219->setDEF("hanim_l_subtalar");
 HAnimJoint219->setCenter(new float[3]{0.1086,0.0001,-0.0368});
+<<<<<<< HEAD
 HAnimJoint219->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint219->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint219->setUlimit(new float[3]{0,0,0});
+HAnimJoint219->setLlimit(new float[3]{0,0,0});
+HAnimJoint219->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment220 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment220->setName("l_midproximal");
 HAnimSegment220->setDEF("hanim_l_midproximal");
@@ -1059,8 +1095,14 @@ CHAnimJoint* HAnimJoint228 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint228->setName("l_midtarsal");
 HAnimJoint228->setDEF("hanim_l_midtarsal");
 HAnimJoint228->setCenter(new float[3]{0.1086,0.0001,0.0368});
+<<<<<<< HEAD
 HAnimJoint228->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint228->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint228->setUlimit(new float[3]{0,0,0});
+HAnimJoint228->setLlimit(new float[3]{0,0,0});
+HAnimJoint228->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment229 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment229->setName("l_middistal");
 HAnimSegment229->setDEF("hanim_l_middistal");
@@ -1130,8 +1172,14 @@ CHAnimJoint* HAnimJoint244 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint244->setName("l_metatarsal");
 HAnimJoint244->setDEF("hanim_l_metatarsal");
 HAnimJoint244->setCenter(new float[3]{0.1086,0,0.0762});
+<<<<<<< HEAD
 HAnimJoint244->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint244->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint244->setUlimit(new float[3]{0,0,0});
+HAnimJoint244->setLlimit(new float[3]{0,0,0});
+HAnimJoint244->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment245 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment245->setName("l_forefoot");
 HAnimSegment245->setDEF("hanim_l_forefoot");
@@ -1259,8 +1307,14 @@ CHAnimJoint* HAnimJoint270 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint270->setName("r_hip");
 HAnimJoint270->setDEF("hanim_r_hip");
 HAnimJoint270->setCenter(new float[3]{-0.0961,0.9124,-0.0001});
+<<<<<<< HEAD
 HAnimJoint270->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint270->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint270->setUlimit(new float[3]{0,0,0});
+HAnimJoint270->setLlimit(new float[3]{0,0,0});
+HAnimJoint270->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment271 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment271->setName("r_thigh");
 HAnimSegment271->setDEF("hanim_r_thigh");
@@ -1392,8 +1446,14 @@ CHAnimJoint* HAnimJoint300 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint300->setName("r_knee");
 HAnimJoint300->setDEF("hanim_r_knee");
 HAnimJoint300->setCenter(new float[3]{-0.104,0.4867,0.0308});
+<<<<<<< HEAD
 HAnimJoint300->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint300->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint300->setUlimit(new float[3]{0,0,0});
+HAnimJoint300->setLlimit(new float[3]{0,0,0});
+HAnimJoint300->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment301 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment301->setName("r_calf");
 HAnimSegment301->setDEF("hanim_r_calf");
@@ -1432,8 +1492,14 @@ CHAnimJoint* HAnimJoint309 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint309->setName("r_ankle");
 HAnimJoint309->setDEF("hanim_r_ankle");
 HAnimJoint309->setCenter(new float[3]{-0.1101,0.0656,-0.0736});
+<<<<<<< HEAD
 HAnimJoint309->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint309->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint309->setUlimit(new float[3]{0,0,0});
+HAnimJoint309->setLlimit(new float[3]{0,0,0});
+HAnimJoint309->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment310 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment310->setName("r_hindfoot");
 HAnimSegment310->setDEF("hanim_r_hindfoot");
@@ -1596,8 +1662,14 @@ CHAnimJoint* HAnimJoint346 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint346->setName("r_subtalar");
 HAnimJoint346->setDEF("hanim_r_subtalar");
 HAnimJoint346->setCenter(new float[3]{-0.1086,0.0001,-0.0368});
+<<<<<<< HEAD
 HAnimJoint346->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint346->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint346->setUlimit(new float[3]{0,0,0});
+HAnimJoint346->setLlimit(new float[3]{0,0,0});
+HAnimJoint346->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment347 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment347->setName("r_midproximal");
 HAnimSegment347->setDEF("hanim_r_midproximal");
@@ -1636,8 +1708,14 @@ CHAnimJoint* HAnimJoint355 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint355->setName("r_midtarsal");
 HAnimJoint355->setDEF("hanim_r_midtarsal");
 HAnimJoint355->setCenter(new float[3]{-0.1086,0.0001,0.0368});
+<<<<<<< HEAD
 HAnimJoint355->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint355->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint355->setUlimit(new float[3]{0,0,0});
+HAnimJoint355->setLlimit(new float[3]{0,0,0});
+HAnimJoint355->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment356 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment356->setName("r_middistal");
 HAnimSegment356->setDEF("hanim_r_middistal");
@@ -1707,8 +1785,14 @@ CHAnimJoint* HAnimJoint371 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint371->setName("r_metatarsal");
 HAnimJoint371->setDEF("hanim_r_metatarsal");
 HAnimJoint371->setCenter(new float[3]{-0.1086,0,0.0762});
+<<<<<<< HEAD
 HAnimJoint371->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint371->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint371->setUlimit(new float[3]{0,0,0});
+HAnimJoint371->setLlimit(new float[3]{0,0,0});
+HAnimJoint371->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment372 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment372->setName("r_forefoot");
 HAnimSegment372->setDEF("hanim_r_forefoot");
@@ -1838,8 +1922,14 @@ CHAnimJoint* HAnimJoint397 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint397->setName("vl5");
 HAnimJoint397->setDEF("hanim_vl5");
 HAnimJoint397->setCenter(new float[3]{0.0028,1.0568,-0.0776});
+<<<<<<< HEAD
 HAnimJoint397->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint397->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint397->setUlimit(new float[3]{0,0,0});
+HAnimJoint397->setLlimit(new float[3]{0,0,0});
+HAnimJoint397->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment398 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment398->setName("l5");
 HAnimSegment398->setDEF("hanim_l5");
@@ -1940,8 +2030,14 @@ CHAnimJoint* HAnimJoint420 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint420->setName("vl4");
 HAnimJoint420->setDEF("hanim_vl4");
 HAnimJoint420->setCenter(new float[3]{0.0035,1.0925,-0.0787});
+<<<<<<< HEAD
 HAnimJoint420->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint420->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint420->setUlimit(new float[3]{0,0,0});
+HAnimJoint420->setLlimit(new float[3]{0,0,0});
+HAnimJoint420->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment421 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment421->setName("l4");
 HAnimSegment421->setDEF("hanim_l4");
@@ -1980,8 +2076,14 @@ CHAnimJoint* HAnimJoint429 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint429->setName("vl3");
 HAnimJoint429->setDEF("hanim_vl3");
 HAnimJoint429->setCenter(new float[3]{0.0041,1.1276,-0.0796});
+<<<<<<< HEAD
 HAnimJoint429->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint429->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint429->setUlimit(new float[3]{0,0,0});
+HAnimJoint429->setLlimit(new float[3]{0,0,0});
+HAnimJoint429->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment430 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment430->setName("l3");
 HAnimSegment430->setDEF("hanim_l3");
@@ -2020,8 +2122,14 @@ CHAnimJoint* HAnimJoint438 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint438->setName("vl2");
 HAnimJoint438->setDEF("hanim_vl2");
 HAnimJoint438->setCenter(new float[3]{0.0045,1.1546,-0.08});
+<<<<<<< HEAD
 HAnimJoint438->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint438->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint438->setUlimit(new float[3]{0,0,0});
+HAnimJoint438->setLlimit(new float[3]{0,0,0});
+HAnimJoint438->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment439 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment439->setName("l2");
 HAnimSegment439->setDEF("hanim_l2");
@@ -2153,8 +2261,14 @@ CHAnimJoint* HAnimJoint468 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint468->setName("vl1");
 HAnimJoint468->setDEF("hanim_vl1");
 HAnimJoint468->setCenter(new float[3]{0.0048,1.1912,-0.0805});
+<<<<<<< HEAD
 HAnimJoint468->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint468->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint468->setUlimit(new float[3]{0,0,0});
+HAnimJoint468->setLlimit(new float[3]{0,0,0});
+HAnimJoint468->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment469 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment469->setName("l1");
 HAnimSegment469->setDEF("hanim_l1");
@@ -2193,8 +2307,14 @@ CHAnimJoint* HAnimJoint477 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint477->setName("vt12");
 HAnimJoint477->setDEF("hanim_vt12");
 HAnimJoint477->setCenter(new float[3]{0.0051,1.2278,-0.0808});
+<<<<<<< HEAD
 HAnimJoint477->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint477->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint477->setUlimit(new float[3]{0,0,0});
+HAnimJoint477->setLlimit(new float[3]{0,0,0});
+HAnimJoint477->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment478 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment478->setName("t12");
 HAnimSegment478->setDEF("hanim_t12");
@@ -2233,8 +2353,14 @@ CHAnimJoint* HAnimJoint486 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint486->setName("vt11");
 HAnimJoint486->setDEF("hanim_vt11");
 HAnimJoint486->setCenter(new float[3]{0.0053,1.2679,-0.081});
+<<<<<<< HEAD
 HAnimJoint486->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint486->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint486->setUlimit(new float[3]{0,0,0});
+HAnimJoint486->setLlimit(new float[3]{0,0,0});
+HAnimJoint486->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment487 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment487->setName("t11");
 HAnimSegment487->setDEF("hanim_t11");
@@ -2273,8 +2399,14 @@ CHAnimJoint* HAnimJoint495 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint495->setName("vt10");
 HAnimJoint495->setDEF("hanim_vt10");
 HAnimJoint495->setCenter(new float[3]{0.0056,1.2848,-0.0822});
+<<<<<<< HEAD
 HAnimJoint495->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint495->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint495->setUlimit(new float[3]{0,0,0});
+HAnimJoint495->setLlimit(new float[3]{0,0,0});
+HAnimJoint495->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment496 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment496->setName("t10");
 HAnimSegment496->setDEF("hanim_t10");
@@ -2344,8 +2476,14 @@ CHAnimJoint* HAnimJoint511 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint511->setName("vt9");
 HAnimJoint511->setDEF("hanim_vt9");
 HAnimJoint511->setCenter(new float[3]{0.0057,1.3126,-0.0838});
+<<<<<<< HEAD
 HAnimJoint511->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint511->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint511->setUlimit(new float[3]{0,0,0});
+HAnimJoint511->setLlimit(new float[3]{0,0,0});
+HAnimJoint511->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment512 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment512->setName("t9");
 HAnimSegment512->setDEF("hanim_t9");
@@ -2446,8 +2584,14 @@ CHAnimJoint* HAnimJoint534 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint534->setName("vt8");
 HAnimJoint534->setDEF("hanim_vt8");
 HAnimJoint534->setCenter(new float[3]{0.0057,1.3382,-0.0845});
+<<<<<<< HEAD
 HAnimJoint534->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint534->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint534->setUlimit(new float[3]{0,0,0});
+HAnimJoint534->setLlimit(new float[3]{0,0,0});
+HAnimJoint534->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment535 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment535->setName("t8");
 HAnimSegment535->setDEF("hanim_t8");
@@ -2486,8 +2630,14 @@ CHAnimJoint* HAnimJoint543 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint543->setName("vt7");
 HAnimJoint543->setDEF("hanim_vt7");
 HAnimJoint543->setCenter(new float[3]{0.0058,1.3625,-0.0833});
+<<<<<<< HEAD
 HAnimJoint543->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint543->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint543->setUlimit(new float[3]{0,0,0});
+HAnimJoint543->setLlimit(new float[3]{0,0,0});
+HAnimJoint543->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment544 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment544->setName("t7");
 HAnimSegment544->setDEF("hanim_t7");
@@ -2526,8 +2676,14 @@ CHAnimJoint* HAnimJoint552 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint552->setName("vt6");
 HAnimJoint552->setDEF("hanim_vt6");
 HAnimJoint552->setCenter(new float[3]{0.0059,1.3866,-0.08});
+<<<<<<< HEAD
 HAnimJoint552->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint552->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint552->setUlimit(new float[3]{0,0,0});
+HAnimJoint552->setLlimit(new float[3]{0,0,0});
+HAnimJoint552->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment553 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment553->setName("t6");
 HAnimSegment553->setDEF("hanim_t6");
@@ -2566,8 +2722,14 @@ CHAnimJoint* HAnimJoint561 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint561->setName("vt5");
 HAnimJoint561->setDEF("hanim_vt5");
 HAnimJoint561->setCenter(new float[3]{0.006,1.4102,-0.0745});
+<<<<<<< HEAD
 HAnimJoint561->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint561->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint561->setUlimit(new float[3]{0,0,0});
+HAnimJoint561->setLlimit(new float[3]{0,0,0});
+HAnimJoint561->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment562 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment562->setName("t5");
 HAnimSegment562->setDEF("hanim_t5");
@@ -2606,8 +2768,14 @@ CHAnimJoint* HAnimJoint570 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint570->setName("vt4");
 HAnimJoint570->setDEF("hanim_vt4");
 HAnimJoint570->setCenter(new float[3]{0.0061,1.432,-0.0675});
+<<<<<<< HEAD
 HAnimJoint570->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint570->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint570->setUlimit(new float[3]{0,0,0});
+HAnimJoint570->setLlimit(new float[3]{0,0,0});
+HAnimJoint570->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment571 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment571->setName("t4");
 HAnimSegment571->setDEF("hanim_t4");
@@ -2646,8 +2814,14 @@ CHAnimJoint* HAnimJoint579 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint579->setName("vt3");
 HAnimJoint579->setDEF("hanim_vt3");
 HAnimJoint579->setCenter(new float[3]{0.0062,1.4583,-0.057});
+<<<<<<< HEAD
 HAnimJoint579->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint579->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint579->setUlimit(new float[3]{0,0,0});
+HAnimJoint579->setLlimit(new float[3]{0,0,0});
+HAnimJoint579->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment580 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment580->setName("t3");
 HAnimSegment580->setDEF("hanim_t3");
@@ -2686,8 +2860,14 @@ CHAnimJoint* HAnimJoint588 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint588->setName("vt2");
 HAnimJoint588->setDEF("hanim_vt2");
 HAnimJoint588->setCenter(new float[3]{0.0063,1.4761,-0.0484});
+<<<<<<< HEAD
 HAnimJoint588->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint588->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint588->setUlimit(new float[3]{0,0,0});
+HAnimJoint588->setLlimit(new float[3]{0,0,0});
+HAnimJoint588->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment589 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment589->setName("t2");
 HAnimSegment589->setDEF("hanim_t2");
@@ -2726,8 +2906,14 @@ CHAnimJoint* HAnimJoint597 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint597->setName("vt1");
 HAnimJoint597->setDEF("hanim_vt1");
 HAnimJoint597->setCenter(new float[3]{0.0065,1.4951,-0.0387});
+<<<<<<< HEAD
 HAnimJoint597->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint597->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint597->setUlimit(new float[3]{0,0,0});
+HAnimJoint597->setLlimit(new float[3]{0,0,0});
+HAnimJoint597->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment598 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment598->setName("t1");
 HAnimSegment598->setDEF("hanim_t1");
@@ -2860,8 +3046,14 @@ CHAnimJoint* HAnimJoint628 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint628->setName("vc7");
 HAnimJoint628->setDEF("hanim_vc7");
 HAnimJoint628->setCenter(new float[3]{0.0066,1.5132,-0.0301});
+<<<<<<< HEAD
 HAnimJoint628->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint628->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint628->setUlimit(new float[3]{0,0,0});
+HAnimJoint628->setLlimit(new float[3]{0,0,0});
+HAnimJoint628->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment629 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment629->setName("c7");
 HAnimSegment629->setDEF("hanim_c7");
@@ -2962,8 +3154,14 @@ CHAnimJoint* HAnimJoint651 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint651->setName("vc6");
 HAnimJoint651->setDEF("hanim_vc6");
 HAnimJoint651->setCenter(new float[3]{0.0066,1.5357,-0.0143});
+<<<<<<< HEAD
 HAnimJoint651->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint651->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint651->setUlimit(new float[3]{0,0,0});
+HAnimJoint651->setLlimit(new float[3]{0,0,0});
+HAnimJoint651->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment652 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment652->setName("c6");
 HAnimSegment652->setDEF("hanim_c6");
@@ -3002,8 +3200,14 @@ CHAnimJoint* HAnimJoint660 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint660->setName("vc5");
 HAnimJoint660->setDEF("hanim_vc5");
 HAnimJoint660->setCenter(new float[3]{0.0066,1.552,-0.0082});
+<<<<<<< HEAD
 HAnimJoint660->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint660->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint660->setUlimit(new float[3]{0,0,0});
+HAnimJoint660->setLlimit(new float[3]{0,0,0});
+HAnimJoint660->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment661 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment661->setName("c5");
 HAnimSegment661->setDEF("hanim_c5");
@@ -3042,8 +3246,14 @@ CHAnimJoint* HAnimJoint669 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint669->setName("vc4");
 HAnimJoint669->setDEF("hanim_vc4");
 HAnimJoint669->setCenter(new float[3]{0.0066,1.5662,-0.0084});
+<<<<<<< HEAD
 HAnimJoint669->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint669->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint669->setUlimit(new float[3]{0,0,0});
+HAnimJoint669->setLlimit(new float[3]{0,0,0});
+HAnimJoint669->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment670 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment670->setName("c4");
 HAnimSegment670->setDEF("hanim_c4");
@@ -3082,8 +3292,14 @@ CHAnimJoint* HAnimJoint678 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint678->setName("vc3");
 HAnimJoint678->setDEF("hanim_vc3");
 HAnimJoint678->setCenter(new float[3]{0.0066,1.58,-0.0103});
+<<<<<<< HEAD
 HAnimJoint678->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint678->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint678->setUlimit(new float[3]{0,0,0});
+HAnimJoint678->setLlimit(new float[3]{0,0,0});
+HAnimJoint678->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment679 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment679->setName("c3");
 HAnimSegment679->setDEF("hanim_c3");
@@ -3122,8 +3338,14 @@ CHAnimJoint* HAnimJoint687 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint687->setName("vc2");
 HAnimJoint687->setDEF("hanim_vc2");
 HAnimJoint687->setCenter(new float[3]{0.0066,1.5928,-0.0103});
+<<<<<<< HEAD
 HAnimJoint687->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint687->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint687->setUlimit(new float[3]{0,0,0});
+HAnimJoint687->setLlimit(new float[3]{0,0,0});
+HAnimJoint687->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment688 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment688->setName("c2");
 HAnimSegment688->setDEF("hanim_c2");
@@ -3162,8 +3384,14 @@ CHAnimJoint* HAnimJoint696 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint696->setName("vc1");
 HAnimJoint696->setDEF("hanim_vc1");
 HAnimJoint696->setCenter(new float[3]{0.0066,1.6144,-0.0034});
+<<<<<<< HEAD
 HAnimJoint696->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint696->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint696->setUlimit(new float[3]{0,0,0});
+HAnimJoint696->setLlimit(new float[3]{0,0,0});
+HAnimJoint696->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment697 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment697->setName("c1");
 HAnimSegment697->setDEF("hanim_c1");
@@ -3202,8 +3430,14 @@ CHAnimJoint* HAnimJoint705 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint705->setName("skullbase");
 HAnimJoint705->setDEF("hanim_skullbase");
 HAnimJoint705->setCenter(new float[3]{0.0044,1.6209,0.0236});
+<<<<<<< HEAD
 HAnimJoint705->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint705->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint705->setUlimit(new float[3]{0,0,0});
+HAnimJoint705->setLlimit(new float[3]{0,0,0});
+HAnimJoint705->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment706 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment706->setName("skull");
 HAnimSegment706->setDEF("hanim_skull");
@@ -3649,8 +3883,14 @@ CHAnimJoint* HAnimJoint808 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint808->setName("l_eyeball_joint");
 HAnimJoint808->setDEF("hanim_l_eyeball_joint");
 HAnimJoint808->setCenter(new float[3]{0.0336,1.6332,0.0502});
+<<<<<<< HEAD
 HAnimJoint808->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint808->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint808->setUlimit(new float[3]{0,0,0});
+HAnimJoint808->setLlimit(new float[3]{0,0,0});
+HAnimJoint808->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment809 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment809->setName("l_eyeball");
 HAnimSegment809->setDEF("hanim_l_eyeball");
@@ -3751,8 +3991,14 @@ CHAnimJoint* HAnimJoint829 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint829->setName("l_eyelid_joint");
 HAnimJoint829->setDEF("hanim_l_eyelid_joint");
 HAnimJoint829->setCenter(new float[3]{0.0336,1.6332,0.0502});
+<<<<<<< HEAD
 HAnimJoint829->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint829->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint829->setUlimit(new float[3]{0,0,0});
+HAnimJoint829->setLlimit(new float[3]{0,0,0});
+HAnimJoint829->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment830 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment830->setName("l_eyelid");
 HAnimSegment830->setDEF("hanim_l_eyelid");
@@ -3777,8 +4023,14 @@ CHAnimJoint* HAnimJoint834 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint834->setName("l_eyebrow_joint");
 HAnimJoint834->setDEF("hanim_l_eyebrow_joint");
 HAnimJoint834->setCenter(new float[3]{0.0336,1.635,0.0506});
+<<<<<<< HEAD
 HAnimJoint834->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint834->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint834->setUlimit(new float[3]{0,0,0});
+HAnimJoint834->setLlimit(new float[3]{0,0,0});
+HAnimJoint834->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment835 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment835->setName("l_eyebrow");
 HAnimSegment835->setDEF("hanim_l_eyebrow");
@@ -3803,8 +4055,14 @@ CHAnimJoint* HAnimJoint839 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint839->setName("r_eyeball_joint");
 HAnimJoint839->setDEF("hanim_r_eyeball_joint");
 HAnimJoint839->setCenter(new float[3]{-0.0336,1.6332,0.0502});
+<<<<<<< HEAD
 HAnimJoint839->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint839->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint839->setUlimit(new float[3]{0,0,0});
+HAnimJoint839->setLlimit(new float[3]{0,0,0});
+HAnimJoint839->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment840 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment840->setName("r_eyeball");
 HAnimSegment840->setDEF("hanim_r_eyeball");
@@ -3886,8 +4144,14 @@ CHAnimJoint* HAnimJoint856 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint856->setName("r_eyelid_joint");
 HAnimJoint856->setDEF("hanim_r_eyelid_joint");
 HAnimJoint856->setCenter(new float[3]{-0.0336,1.6332,0.0502});
+<<<<<<< HEAD
 HAnimJoint856->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint856->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint856->setUlimit(new float[3]{0,0,0});
+HAnimJoint856->setLlimit(new float[3]{0,0,0});
+HAnimJoint856->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment857 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment857->setName("r_eyelid");
 HAnimSegment857->setDEF("hanim_r_eyelid");
@@ -3912,8 +4176,14 @@ CHAnimJoint* HAnimJoint861 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint861->setName("r_eyebrow_joint");
 HAnimJoint861->setDEF("hanim_r_eyebrow_joint");
 HAnimJoint861->setCenter(new float[3]{-0.0336,1.635,0.0506});
+<<<<<<< HEAD
 HAnimJoint861->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint861->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint861->setUlimit(new float[3]{0,0,0});
+HAnimJoint861->setLlimit(new float[3]{0,0,0});
+HAnimJoint861->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment862 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment862->setName("r_eyebrow");
 HAnimSegment862->setDEF("hanim_r_eyebrow");
@@ -3938,8 +4208,14 @@ CHAnimJoint* HAnimJoint866 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint866->setName("temporomandibular");
 HAnimJoint866->setDEF("hanim_temporomandibular");
 HAnimJoint866->setCenter(new float[3]{0,1.63,0.015});
+<<<<<<< HEAD
 HAnimJoint866->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint866->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint866->setUlimit(new float[3]{0,0,0});
+HAnimJoint866->setLlimit(new float[3]{0,0,0});
+HAnimJoint866->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 //Single joint, single segment for jaw, two sites for left/right TMJs https://en.wikipedia.org/wiki/Temporomandibular_joint
 CHAnimSegment* HAnimSegment867 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment867->setName("jaw");
@@ -4043,8 +4319,14 @@ CHAnimJoint* HAnimJoint885 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint885->setName("l_sternoclavicular");
 HAnimJoint885->setDEF("hanim_l_sternoclavicular");
 HAnimJoint885->setCenter(new float[3]{0.082,1.4488,-0.0353});
+<<<<<<< HEAD
 HAnimJoint885->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint885->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint885->setUlimit(new float[3]{0,0,0});
+HAnimJoint885->setLlimit(new float[3]{0,0,0});
+HAnimJoint885->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment886 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment886->setName("l_clavicle");
 HAnimSegment886->setDEF("hanim_l_clavicle");
@@ -4207,8 +4489,14 @@ CHAnimJoint* HAnimJoint922 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint922->setName("l_acromioclavicular");
 HAnimJoint922->setDEF("hanim_l_acromioclavicular");
 HAnimJoint922->setCenter(new float[3]{0.0962,1.4269,-0.0424});
+<<<<<<< HEAD
 HAnimJoint922->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint922->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint922->setUlimit(new float[3]{0,0,0});
+HAnimJoint922->setLlimit(new float[3]{0,0,0});
+HAnimJoint922->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment923 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment923->setName("l_scapula");
 HAnimSegment923->setDEF("hanim_l_scapula");
@@ -4247,8 +4535,14 @@ CHAnimJoint* HAnimJoint931 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint931->setName("l_shoulder");
 HAnimJoint931->setDEF("hanim_l_shoulder");
 HAnimJoint931->setCenter(new float[3]{0.2029,1.4376,-0.0387});
+<<<<<<< HEAD
 HAnimJoint931->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint931->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint931->setUlimit(new float[3]{0,0,0});
+HAnimJoint931->setLlimit(new float[3]{0,0,0});
+HAnimJoint931->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment932 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment932->setName("l_upperarm");
 HAnimSegment932->setDEF("hanim_l_upperarm");
@@ -4318,8 +4612,14 @@ CHAnimJoint* HAnimJoint947 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint947->setName("l_elbow");
 HAnimJoint947->setDEF("hanim_l_elbow");
 HAnimJoint947->setCenter(new float[3]{0.2014,1.1357,-0.0682});
+<<<<<<< HEAD
 HAnimJoint947->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint947->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint947->setUlimit(new float[3]{0,0,0});
+HAnimJoint947->setLlimit(new float[3]{0,0,0});
+HAnimJoint947->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment948 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment948->setName("l_forearm");
 HAnimSegment948->setDEF("hanim_l_forearm");
@@ -4482,8 +4782,14 @@ CHAnimJoint* HAnimJoint984 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint984->setName("l_wrist");
 HAnimJoint984->setDEF("hanim_l_wrist");
 HAnimJoint984->setCenter(new float[3]{0.1984,0.8663,-0.0583});
+<<<<<<< HEAD
 HAnimJoint984->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint984->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint984->setUlimit(new float[3]{0,0,0});
+HAnimJoint984->setLlimit(new float[3]{0,0,0});
+HAnimJoint984->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment985 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment985->setName("l_hand");
 HAnimSegment985->setDEF("hanim_l_hand");
@@ -4736,8 +5042,14 @@ CHAnimJoint* HAnimJoint1042 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1042->setName("l_thumb1");
 HAnimJoint1042->setDEF("hanim_l_thumb1");
 HAnimJoint1042->setCenter(new float[3]{0.1924,0.8472,-0.0534});
+<<<<<<< HEAD
 HAnimJoint1042->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1042->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1042->setUlimit(new float[3]{0,0,0});
+HAnimJoint1042->setLlimit(new float[3]{0,0,0});
+HAnimJoint1042->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1043 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1043->setName("l_thumb_metacarpal");
 HAnimSegment1043->setDEF("hanim_l_thumb_metacarpal");
@@ -4776,8 +5088,14 @@ CHAnimJoint* HAnimJoint1051 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1051->setName("l_thumb2");
 HAnimJoint1051->setDEF("hanim_l_thumb2");
 HAnimJoint1051->setCenter(new float[3]{0.1951,0.8226,0.0246});
+<<<<<<< HEAD
 HAnimJoint1051->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1051->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1051->setUlimit(new float[3]{0,0,0});
+HAnimJoint1051->setLlimit(new float[3]{0,0,0});
+HAnimJoint1051->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1052 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1052->setName("l_thumb_proximal");
 HAnimSegment1052->setDEF("hanim_l_thumb_proximal");
@@ -4816,8 +5134,14 @@ CHAnimJoint* HAnimJoint1060 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1060->setName("l_thumb3");
 HAnimJoint1060->setDEF("hanim_l_thumb3");
 HAnimJoint1060->setCenter(new float[3]{0.1955,0.8159,0.0464});
+<<<<<<< HEAD
 HAnimJoint1060->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1060->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1060->setUlimit(new float[3]{0,0,0});
+HAnimJoint1060->setLlimit(new float[3]{0,0,0});
+HAnimJoint1060->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1061 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1061->setName("l_thumb_distal");
 HAnimSegment1061->setDEF("hanim_l_thumb_distal");
@@ -4877,8 +5201,14 @@ CHAnimJoint* HAnimJoint1072 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1072->setName("l_index0");
 HAnimJoint1072->setDEF("hanim_l_index0");
 HAnimJoint1072->setCenter(new float[3]{0.1983,0.8024,-0.028});
+<<<<<<< HEAD
 HAnimJoint1072->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1072->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1072->setUlimit(new float[3]{0,0,0});
+HAnimJoint1072->setLlimit(new float[3]{0,0,0});
+HAnimJoint1072->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1073 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1073->setName("l_index_metacarpal");
 HAnimSegment1073->setDEF("hanim_l_index_metacarpal");
@@ -4917,8 +5247,14 @@ CHAnimJoint* HAnimJoint1081 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1081->setName("l_index1");
 HAnimJoint1081->setDEF("hanim_l_index1");
 HAnimJoint1081->setCenter(new float[3]{0.1983,0.7815,-0.028});
+<<<<<<< HEAD
 HAnimJoint1081->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1081->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1081->setUlimit(new float[3]{0,0,0});
+HAnimJoint1081->setLlimit(new float[3]{0,0,0});
+HAnimJoint1081->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1082 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1082->setName("l_index_proximal");
 HAnimSegment1082->setDEF("hanim_l_index_proximal");
@@ -4957,8 +5293,14 @@ CHAnimJoint* HAnimJoint1090 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1090->setName("l_index2");
 HAnimJoint1090->setDEF("hanim_l_index2");
 HAnimJoint1090->setCenter(new float[3]{0.2017,0.7363,-0.0248});
+<<<<<<< HEAD
 HAnimJoint1090->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1090->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1090->setUlimit(new float[3]{0,0,0});
+HAnimJoint1090->setLlimit(new float[3]{0,0,0});
+HAnimJoint1090->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1091 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1091->setName("l_index_middle");
 HAnimSegment1091->setDEF("hanim_l_index_middle");
@@ -4997,8 +5339,14 @@ CHAnimJoint* HAnimJoint1099 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1099->setName("l_index3");
 HAnimJoint1099->setDEF("hanim_l_index3");
 HAnimJoint1099->setCenter(new float[3]{0.2028,0.7139,-0.0236});
+<<<<<<< HEAD
 HAnimJoint1099->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1099->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1099->setUlimit(new float[3]{0,0,0});
+HAnimJoint1099->setLlimit(new float[3]{0,0,0});
+HAnimJoint1099->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1100 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1100->setName("l_index_distal");
 HAnimSegment1100->setDEF("hanim_l_index_distal");
@@ -5091,8 +5439,14 @@ CHAnimJoint* HAnimJoint1118 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1118->setName("l_middle0");
 HAnimJoint1118->setDEF("hanim_l_middle0");
 HAnimJoint1118->setCenter(new float[3]{0.1987,0.8029,-0.053});
+<<<<<<< HEAD
 HAnimJoint1118->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1118->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1118->setUlimit(new float[3]{0,0,0});
+HAnimJoint1118->setLlimit(new float[3]{0,0,0});
+HAnimJoint1118->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1119 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1119->setName("l_middle_metacarpal");
 HAnimSegment1119->setDEF("hanim_l_middle_metacarpal");
@@ -5131,8 +5485,14 @@ CHAnimJoint* HAnimJoint1127 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1127->setName("l_middle1");
 HAnimJoint1127->setDEF("hanim_l_middle1");
 HAnimJoint1127->setCenter(new float[3]{0.1987,0.7818,-0.053});
+<<<<<<< HEAD
 HAnimJoint1127->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1127->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1127->setUlimit(new float[3]{0,0,0});
+HAnimJoint1127->setLlimit(new float[3]{0,0,0});
+HAnimJoint1127->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1128 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1128->setName("l_middle_proximal");
 HAnimSegment1128->setDEF("hanim_l_middle_proximal");
@@ -5171,8 +5531,14 @@ CHAnimJoint* HAnimJoint1136 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1136->setName("l_middle2");
 HAnimJoint1136->setDEF("hanim_l_middle2");
 HAnimJoint1136->setCenter(new float[3]{0.2013,0.7273,-0.0503});
+<<<<<<< HEAD
 HAnimJoint1136->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1136->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1136->setUlimit(new float[3]{0,0,0});
+HAnimJoint1136->setLlimit(new float[3]{0,0,0});
+HAnimJoint1136->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1137 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1137->setName("l_middle_middle");
 HAnimSegment1137->setDEF("hanim_l_middle_middle");
@@ -5211,8 +5577,14 @@ CHAnimJoint* HAnimJoint1145 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1145->setName("l_middle3");
 HAnimJoint1145->setDEF("hanim_l_middle3");
 HAnimJoint1145->setCenter(new float[3]{0.2026,0.7011,-0.0494});
+<<<<<<< HEAD
 HAnimJoint1145->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1145->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1145->setUlimit(new float[3]{0,0,0});
+HAnimJoint1145->setLlimit(new float[3]{0,0,0});
+HAnimJoint1145->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1146 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1146->setName("l_middle_distal");
 HAnimSegment1146->setDEF("hanim_l_middle_distal");
@@ -5274,8 +5646,14 @@ CHAnimJoint* HAnimJoint1157 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1157->setName("l_ring0");
 HAnimJoint1157->setDEF("hanim_l_ring0");
 HAnimJoint1157->setCenter(new float[3]{0.1956,0.8019,-0.0794});
+<<<<<<< HEAD
 HAnimJoint1157->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1157->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1157->setUlimit(new float[3]{0,0,0});
+HAnimJoint1157->setLlimit(new float[3]{0,0,0});
+HAnimJoint1157->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1158 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1158->setName("l_ring_metacarpal");
 HAnimSegment1158->setDEF("hanim_l_ring_metacarpal");
@@ -5314,8 +5692,14 @@ CHAnimJoint* HAnimJoint1166 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1166->setName("l_ring1");
 HAnimJoint1166->setDEF("hanim_l_ring1");
 HAnimJoint1166->setCenter(new float[3]{0.1956,0.7815,-0.0794});
+<<<<<<< HEAD
 HAnimJoint1166->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1166->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1166->setUlimit(new float[3]{0,0,0});
+HAnimJoint1166->setLlimit(new float[3]{0,0,0});
+HAnimJoint1166->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1167 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1167->setName("l_ring_proximal");
 HAnimSegment1167->setDEF("hanim_l_ring_proximal");
@@ -5354,8 +5738,14 @@ CHAnimJoint* HAnimJoint1175 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1175->setName("l_ring2");
 HAnimJoint1175->setDEF("hanim_l_ring2");
 HAnimJoint1175->setCenter(new float[3]{0.1973,0.7287,-0.0777});
+<<<<<<< HEAD
 HAnimJoint1175->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1175->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1175->setUlimit(new float[3]{0,0,0});
+HAnimJoint1175->setLlimit(new float[3]{0,0,0});
+HAnimJoint1175->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1176 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1176->setName("l_ring_middle");
 HAnimSegment1176->setDEF("hanim_l_ring_middle");
@@ -5394,8 +5784,14 @@ CHAnimJoint* HAnimJoint1184 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1184->setName("l_ring3");
 HAnimJoint1184->setDEF("hanim_l_ring3");
 HAnimJoint1184->setCenter(new float[3]{0.1983,0.7045,-0.0767});
+<<<<<<< HEAD
 HAnimJoint1184->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1184->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1184->setUlimit(new float[3]{0,0,0});
+HAnimJoint1184->setLlimit(new float[3]{0,0,0});
+HAnimJoint1184->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1185 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1185->setName("l_ring_distal");
 HAnimSegment1185->setDEF("hanim_l_ring_distal");
@@ -5457,8 +5853,14 @@ CHAnimJoint* HAnimJoint1196 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1196->setName("l_pinky0");
 HAnimJoint1196->setDEF("hanim_l_pinky0");
 HAnimJoint1196->setCenter(new float[3]{0.1925,0.8066,-0.1036});
+<<<<<<< HEAD
 HAnimJoint1196->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1196->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1196->setUlimit(new float[3]{0,0,0});
+HAnimJoint1196->setLlimit(new float[3]{0,0,0});
+HAnimJoint1196->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1197 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1197->setName("l_pinky_metacarpal");
 HAnimSegment1197->setDEF("hanim_l_pinky_metacarpal");
@@ -5497,8 +5899,14 @@ CHAnimJoint* HAnimJoint1205 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1205->setName("l_pinky1");
 HAnimJoint1205->setDEF("hanim_l_pinky1");
 HAnimJoint1205->setCenter(new float[3]{0.1925,0.7866,-0.1036});
+<<<<<<< HEAD
 HAnimJoint1205->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1205->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1205->setUlimit(new float[3]{0,0,0});
+HAnimJoint1205->setLlimit(new float[3]{0,0,0});
+HAnimJoint1205->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1206 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1206->setName("l_pinky_proximal");
 HAnimSegment1206->setDEF("hanim_l_pinky_proximal");
@@ -5537,8 +5945,14 @@ CHAnimJoint* HAnimJoint1214 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1214->setName("l_pinky2");
 HAnimJoint1214->setDEF("hanim_l_pinky2");
 HAnimJoint1214->setCenter(new float[3]{0.1938,0.7452,-0.1024});
+<<<<<<< HEAD
 HAnimJoint1214->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1214->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1214->setUlimit(new float[3]{0,0,0});
+HAnimJoint1214->setLlimit(new float[3]{0,0,0});
+HAnimJoint1214->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1215 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1215->setName("l_pinky_middle");
 HAnimSegment1215->setDEF("hanim_l_pinky_middle");
@@ -5577,8 +5991,14 @@ CHAnimJoint* HAnimJoint1223 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1223->setName("l_pinky3");
 HAnimJoint1223->setDEF("hanim_l_pinky3");
 HAnimJoint1223->setCenter(new float[3]{0.1948,0.7277,-0.1017});
+<<<<<<< HEAD
 HAnimJoint1223->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1223->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1223->setUlimit(new float[3]{0,0,0});
+HAnimJoint1223->setLlimit(new float[3]{0,0,0});
+HAnimJoint1223->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1224 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1224->setName("l_pinky_distal");
 HAnimSegment1224->setDEF("hanim_l_pinky_distal");
@@ -5650,8 +6070,14 @@ CHAnimJoint* HAnimJoint1235 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1235->setName("r_sternoclavicular");
 HAnimJoint1235->setDEF("hanim_r_sternoclavicular");
 HAnimJoint1235->setCenter(new float[3]{-0.082,1.4488,-0.0353});
+<<<<<<< HEAD
 HAnimJoint1235->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1235->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1235->setUlimit(new float[3]{0,0,0});
+HAnimJoint1235->setLlimit(new float[3]{0,0,0});
+HAnimJoint1235->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1236 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1236->setName("r_clavicle");
 HAnimSegment1236->setDEF("hanim_r_clavicle");
@@ -5814,8 +6240,14 @@ CHAnimJoint* HAnimJoint1272 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1272->setName("r_acromioclavicular");
 HAnimJoint1272->setDEF("hanim_r_acromioclavicular");
 HAnimJoint1272->setCenter(new float[3]{-0.0962,1.4269,-0.0424});
+<<<<<<< HEAD
 HAnimJoint1272->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1272->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1272->setUlimit(new float[3]{0,0,0});
+HAnimJoint1272->setLlimit(new float[3]{0,0,0});
+HAnimJoint1272->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1273 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1273->setName("r_scapula");
 HAnimSegment1273->setDEF("hanim_r_scapula");
@@ -5854,8 +6286,14 @@ CHAnimJoint* HAnimJoint1281 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1281->setName("r_shoulder");
 HAnimJoint1281->setDEF("hanim_r_shoulder");
 HAnimJoint1281->setCenter(new float[3]{-0.2029,1.4376,-0.0387});
+<<<<<<< HEAD
 HAnimJoint1281->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1281->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1281->setUlimit(new float[3]{0,0,0});
+HAnimJoint1281->setLlimit(new float[3]{0,0,0});
+HAnimJoint1281->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1282 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1282->setName("r_upperarm");
 HAnimSegment1282->setDEF("hanim_r_upperarm");
@@ -5925,8 +6363,14 @@ CHAnimJoint* HAnimJoint1297 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1297->setName("r_elbow");
 HAnimJoint1297->setDEF("hanim_r_elbow");
 HAnimJoint1297->setCenter(new float[3]{-0.2014,1.1357,-0.0682});
+<<<<<<< HEAD
 HAnimJoint1297->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1297->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1297->setUlimit(new float[3]{0,0,0});
+HAnimJoint1297->setLlimit(new float[3]{0,0,0});
+HAnimJoint1297->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1298 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1298->setName("r_forearm");
 HAnimSegment1298->setDEF("hanim_r_forearm");
@@ -6089,8 +6533,14 @@ CHAnimJoint* HAnimJoint1334 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1334->setName("r_wrist");
 HAnimJoint1334->setDEF("hanim_r_wrist");
 HAnimJoint1334->setCenter(new float[3]{-0.1984,0.8663,-0.0583});
+<<<<<<< HEAD
 HAnimJoint1334->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1334->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1334->setUlimit(new float[3]{0,0,0});
+HAnimJoint1334->setLlimit(new float[3]{0,0,0});
+HAnimJoint1334->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1335 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1335->setName("r_hand");
 HAnimSegment1335->setDEF("hanim_r_hand");
@@ -6343,8 +6793,14 @@ CHAnimJoint* HAnimJoint1392 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1392->setName("r_thumb1");
 HAnimJoint1392->setDEF("hanim_r_thumb1");
 HAnimJoint1392->setCenter(new float[3]{-0.1924,0.8472,-0.0534});
+<<<<<<< HEAD
 HAnimJoint1392->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1392->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1392->setUlimit(new float[3]{0,0,0});
+HAnimJoint1392->setLlimit(new float[3]{0,0,0});
+HAnimJoint1392->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1393 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1393->setName("r_thumb_metacarpal");
 HAnimSegment1393->setDEF("hanim_r_thumb_metacarpal");
@@ -6383,8 +6839,14 @@ CHAnimJoint* HAnimJoint1401 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1401->setName("r_thumb2");
 HAnimJoint1401->setDEF("hanim_r_thumb2");
 HAnimJoint1401->setCenter(new float[3]{-0.1951,0.8226,0.0246});
+<<<<<<< HEAD
 HAnimJoint1401->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1401->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1401->setUlimit(new float[3]{0,0,0});
+HAnimJoint1401->setLlimit(new float[3]{0,0,0});
+HAnimJoint1401->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1402 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1402->setName("r_thumb_proximal");
 HAnimSegment1402->setDEF("hanim_r_thumb_proximal");
@@ -6423,8 +6885,14 @@ CHAnimJoint* HAnimJoint1410 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1410->setName("r_thumb3");
 HAnimJoint1410->setDEF("hanim_r_thumb3");
 HAnimJoint1410->setCenter(new float[3]{-0.1955,0.8159,0.0464});
+<<<<<<< HEAD
 HAnimJoint1410->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1410->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1410->setUlimit(new float[3]{0,0,0});
+HAnimJoint1410->setLlimit(new float[3]{0,0,0});
+HAnimJoint1410->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1411 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1411->setName("r_thumb_distal");
 HAnimSegment1411->setDEF("hanim_r_thumb_distal");
@@ -6484,8 +6952,14 @@ CHAnimJoint* HAnimJoint1422 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1422->setName("r_index0");
 HAnimJoint1422->setDEF("hanim_r_index0");
 HAnimJoint1422->setCenter(new float[3]{-0.1983,0.8024,-0.028});
+<<<<<<< HEAD
 HAnimJoint1422->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1422->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1422->setUlimit(new float[3]{0,0,0});
+HAnimJoint1422->setLlimit(new float[3]{0,0,0});
+HAnimJoint1422->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1423 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1423->setName("r_index_metacarpal");
 HAnimSegment1423->setDEF("hanim_r_index_metacarpal");
@@ -6524,8 +6998,14 @@ CHAnimJoint* HAnimJoint1431 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1431->setName("r_index1");
 HAnimJoint1431->setDEF("hanim_r_index1");
 HAnimJoint1431->setCenter(new float[3]{-0.1983,0.7815,-0.028});
+<<<<<<< HEAD
 HAnimJoint1431->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1431->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1431->setUlimit(new float[3]{0,0,0});
+HAnimJoint1431->setLlimit(new float[3]{0,0,0});
+HAnimJoint1431->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1432 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1432->setName("r_index_proximal");
 HAnimSegment1432->setDEF("hanim_r_index_proximal");
@@ -6564,8 +7044,14 @@ CHAnimJoint* HAnimJoint1440 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1440->setName("r_index2");
 HAnimJoint1440->setDEF("hanim_r_index2");
 HAnimJoint1440->setCenter(new float[3]{-0.2017,0.7363,-0.0248});
+<<<<<<< HEAD
 HAnimJoint1440->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1440->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1440->setUlimit(new float[3]{0,0,0});
+HAnimJoint1440->setLlimit(new float[3]{0,0,0});
+HAnimJoint1440->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1441 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1441->setName("r_index_middle");
 HAnimSegment1441->setDEF("hanim_r_index_middle");
@@ -6604,8 +7090,14 @@ CHAnimJoint* HAnimJoint1449 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1449->setName("r_index3");
 HAnimJoint1449->setDEF("hanim_r_index3");
 HAnimJoint1449->setCenter(new float[3]{-0.2028,0.7139,-0.0236});
+<<<<<<< HEAD
 HAnimJoint1449->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1449->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1449->setUlimit(new float[3]{0,0,0});
+HAnimJoint1449->setLlimit(new float[3]{0,0,0});
+HAnimJoint1449->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1450 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1450->setName("r_index_distal");
 HAnimSegment1450->setDEF("hanim_r_index_distal");
@@ -6698,8 +7190,14 @@ CHAnimJoint* HAnimJoint1468 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1468->setName("r_middle0");
 HAnimJoint1468->setDEF("hanim_r_middle0");
 HAnimJoint1468->setCenter(new float[3]{-0.1987,0.8029,-0.053});
+<<<<<<< HEAD
 HAnimJoint1468->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1468->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1468->setUlimit(new float[3]{0,0,0});
+HAnimJoint1468->setLlimit(new float[3]{0,0,0});
+HAnimJoint1468->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1469 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1469->setName("r_middle_metacarpal");
 HAnimSegment1469->setDEF("hanim_r_middle_metacarpal");
@@ -6738,8 +7236,14 @@ CHAnimJoint* HAnimJoint1477 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1477->setName("r_middle1");
 HAnimJoint1477->setDEF("hanim_r_middle1");
 HAnimJoint1477->setCenter(new float[3]{-0.1987,0.7818,-0.053});
+<<<<<<< HEAD
 HAnimJoint1477->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1477->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1477->setUlimit(new float[3]{0,0,0});
+HAnimJoint1477->setLlimit(new float[3]{0,0,0});
+HAnimJoint1477->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1478 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1478->setName("r_middle_proximal");
 HAnimSegment1478->setDEF("hanim_r_middle_proximal");
@@ -6778,8 +7282,14 @@ CHAnimJoint* HAnimJoint1486 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1486->setName("r_middle2");
 HAnimJoint1486->setDEF("hanim_r_middle2");
 HAnimJoint1486->setCenter(new float[3]{-0.2013,0.7273,-0.0503});
+<<<<<<< HEAD
 HAnimJoint1486->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1486->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1486->setUlimit(new float[3]{0,0,0});
+HAnimJoint1486->setLlimit(new float[3]{0,0,0});
+HAnimJoint1486->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1487 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1487->setName("r_middle_middle");
 HAnimSegment1487->setDEF("hanim_r_middle_middle");
@@ -6818,8 +7328,14 @@ CHAnimJoint* HAnimJoint1495 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1495->setName("r_middle3");
 HAnimJoint1495->setDEF("hanim_r_middle3");
 HAnimJoint1495->setCenter(new float[3]{-0.2026,0.7011,-0.0494});
+<<<<<<< HEAD
 HAnimJoint1495->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1495->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1495->setUlimit(new float[3]{0,0,0});
+HAnimJoint1495->setLlimit(new float[3]{0,0,0});
+HAnimJoint1495->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1496 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1496->setName("r_middle_distal");
 HAnimSegment1496->setDEF("hanim_r_middle_distal");
@@ -6881,8 +7397,14 @@ CHAnimJoint* HAnimJoint1507 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1507->setName("r_ring0");
 HAnimJoint1507->setDEF("hanim_r_ring0");
 HAnimJoint1507->setCenter(new float[3]{-0.1956,0.8019,-0.0794});
+<<<<<<< HEAD
 HAnimJoint1507->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1507->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1507->setUlimit(new float[3]{0,0,0});
+HAnimJoint1507->setLlimit(new float[3]{0,0,0});
+HAnimJoint1507->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1508 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1508->setName("r_ring_metacarpal");
 HAnimSegment1508->setDEF("hanim_r_ring_metacarpal");
@@ -6921,8 +7443,14 @@ CHAnimJoint* HAnimJoint1516 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1516->setName("r_ring1");
 HAnimJoint1516->setDEF("hanim_r_ring1");
 HAnimJoint1516->setCenter(new float[3]{-0.1956,0.7815,-0.0794});
+<<<<<<< HEAD
 HAnimJoint1516->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1516->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1516->setUlimit(new float[3]{0,0,0});
+HAnimJoint1516->setLlimit(new float[3]{0,0,0});
+HAnimJoint1516->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1517 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1517->setName("r_ring_proximal");
 HAnimSegment1517->setDEF("hanim_r_ring_proximal");
@@ -6961,8 +7489,14 @@ CHAnimJoint* HAnimJoint1525 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1525->setName("r_ring2");
 HAnimJoint1525->setDEF("hanim_r_ring2");
 HAnimJoint1525->setCenter(new float[3]{-0.1973,0.7287,-0.0777});
+<<<<<<< HEAD
 HAnimJoint1525->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1525->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1525->setUlimit(new float[3]{0,0,0});
+HAnimJoint1525->setLlimit(new float[3]{0,0,0});
+HAnimJoint1525->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1526 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1526->setName("r_ring_middle");
 HAnimSegment1526->setDEF("hanim_r_ring_middle");
@@ -7001,8 +7535,14 @@ CHAnimJoint* HAnimJoint1534 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1534->setName("r_ring3");
 HAnimJoint1534->setDEF("hanim_r_ring3");
 HAnimJoint1534->setCenter(new float[3]{-0.1983,0.7045,-0.0767});
+<<<<<<< HEAD
 HAnimJoint1534->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1534->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1534->setUlimit(new float[3]{0,0,0});
+HAnimJoint1534->setLlimit(new float[3]{0,0,0});
+HAnimJoint1534->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1535 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1535->setName("r_ring_distal");
 HAnimSegment1535->setDEF("hanim_r_ring_distal");
@@ -7064,8 +7604,14 @@ CHAnimJoint* HAnimJoint1546 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1546->setName("r_pinky0");
 HAnimJoint1546->setDEF("hanim_r_pinky0");
 HAnimJoint1546->setCenter(new float[3]{-0.1925,0.8066,-0.1036});
+<<<<<<< HEAD
 HAnimJoint1546->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1546->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1546->setUlimit(new float[3]{0,0,0});
+HAnimJoint1546->setLlimit(new float[3]{0,0,0});
+HAnimJoint1546->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1547 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1547->setName("r_pinky_metacarpal");
 HAnimSegment1547->setDEF("hanim_r_pinky_metacarpal");
@@ -7104,8 +7650,14 @@ CHAnimJoint* HAnimJoint1555 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1555->setName("r_pinky1");
 HAnimJoint1555->setDEF("hanim_r_pinky1");
 HAnimJoint1555->setCenter(new float[3]{-0.1925,0.7866,-0.1036});
+<<<<<<< HEAD
 HAnimJoint1555->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1555->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1555->setUlimit(new float[3]{0,0,0});
+HAnimJoint1555->setLlimit(new float[3]{0,0,0});
+HAnimJoint1555->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1556 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1556->setName("r_pinky_proximal");
 HAnimSegment1556->setDEF("hanim_r_pinky_proximal");
@@ -7144,8 +7696,14 @@ CHAnimJoint* HAnimJoint1564 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1564->setName("r_pinky2");
 HAnimJoint1564->setDEF("hanim_r_pinky2");
 HAnimJoint1564->setCenter(new float[3]{-0.1938,0.7452,-0.1024});
+<<<<<<< HEAD
 HAnimJoint1564->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1564->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1564->setUlimit(new float[3]{0,0,0});
+HAnimJoint1564->setLlimit(new float[3]{0,0,0});
+HAnimJoint1564->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1565 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1565->setName("r_pinky_middle");
 HAnimSegment1565->setDEF("hanim_r_pinky_middle");
@@ -7184,8 +7742,14 @@ CHAnimJoint* HAnimJoint1573 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"))
 HAnimJoint1573->setName("r_pinky3");
 HAnimJoint1573->setDEF("hanim_r_pinky3");
 HAnimJoint1573->setCenter(new float[3]{-0.1948,0.7277,-0.1017});
+<<<<<<< HEAD
 HAnimJoint1573->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint1573->setLlimit(new float[3]{0,0,0}, 3);
+=======
+HAnimJoint1573->setUlimit(new float[3]{0,0,0});
+HAnimJoint1573->setLlimit(new float[3]{0,0,0});
+HAnimJoint1573->setStiffness(new float[3]{0,0,0});
+>>>>>>> postes6branch
 CHAnimSegment* HAnimSegment1574 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment1574->setName("r_pinky_distal");
 HAnimSegment1574->setDEF("hanim_r_pinky_distal");

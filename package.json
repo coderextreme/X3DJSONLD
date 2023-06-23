@@ -1,28 +1,24 @@
 {
   "name": "X3DJSONLD",
-  "version": "10.0.0",
+  "version": "11.0.0",
   "private": true,
   "main": "app.mjs",
   "browser": {
     "[module-name]": false
   },
   "devDependencies": {
-    "@babel/plugin-syntax-import-assertions": "^7.20.0",
-    "ajv-json-loader": "^0.2.0",
-    "babel-cli": "^6.26.0",
-    "babel-loader": "^9.1.2",
-    "babel-preset-es2015": "^6.24.1",
-    "json-loader": "^0.5.7",
-    "node-loader": "^2.0.0",
-    "raw-loader": "^4.0.2",
-    "webpack": "^5.76.2",
-    "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.13.1"
+    "@esm-bundle/chai": "^4.3.4-fix.0",
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@web/dev-server-rollup": "^0.3.9",
+    "@web/test-runner": "^0.10.2",
+    "make-dir": "^3.1.0",
+    "semver": "^7.5.3",
+    "typescript": "^4.4.2"
   },
   "dependencies": {
-    "@xmldom/xmldom": ">=0.8.6",
-    "ajv": ">=8.12.0",
-    "ajv-formats": "^2.1.1",
+    "@xmldom/xmldom": "^0.8.8",
+    "ajv": "*",
+    "ajv-formats": "*",
     "ajv-i18n": "*",
     "buffer": "^6.0.3",
     "esm": "^3.2.25",
@@ -30,22 +26,22 @@
     "glob": "*",
     "https-browserify": "*",
     "jsonlint": "https://github.com/prantlf/jsonlint.git",
+    "make-dir": "^3.1.0",
     "mutation-observer": "*",
     "node-mkdirp": "*",
     "saxon-js": "*",
+    "semver": "^7.5.3",
     "stream-http": "*",
     "three": "*",
     "url": "^0.11.0",
-    "x_ite": "*",
-    "x3dom": "*",
     "xml2js": "^0.6.0",
     "xmlhttprequest": "*",
     "xslt3": "*"
   },
   "scripts": {
-    "start": "node app.mjs",
+    "start": "node app.js",
     "postinstall": "rem bash build.sh",
     "buildthreex3dloader": "browserify src/main/node/threeLoadFile.js > src/main/node/bundle.js",
-    "buildloader": "webpack"
+    "test": "web-test-runner ./dist/**/*.spec.js"
   }
 }

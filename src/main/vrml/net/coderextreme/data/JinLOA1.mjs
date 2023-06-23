@@ -159,7 +159,9 @@ MetadataString32.name = "humanoidVersion";
 MetadataString32.value = new MFString(new java.lang.String["validation testing"]);
 MetadataSet25.value[6] = MetadataString32;
 
-HAnimHumanoid24.metadata = MetadataSet25;
+HAnimHumanoid24.metadata = new SFNode();
+
+HAnimHumanoid24.metadata[0] = MetadataSet25;
 
 let HAnimJoint33 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint33.name = "humanoid_root";
@@ -1080,153 +1082,151 @@ HAnimJoint133.children[1] = HAnimJoint143;
 
 HAnimJoint33.children[2] = HAnimJoint133;
 
-HAnimHumanoid24.joints = new MFNode();
-
-HAnimHumanoid24.joints[0] = HAnimJoint33;
+HAnimHumanoid24.joints[1] = HAnimJoint33;
 
 let HAnimJoint213 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint213.USE = "hanim_humanoid_root";
-HAnimHumanoid24.joints[1] = HAnimJoint213;
+HAnimHumanoid24.joints[2] = HAnimJoint213;
 
 let HAnimJoint214 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint214.USE = "hanim_sacroiliac";
-HAnimHumanoid24.joints[2] = HAnimJoint214;
+HAnimHumanoid24.joints[3] = HAnimJoint214;
 
 let HAnimJoint215 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint215.USE = "hanim_vl5";
-HAnimHumanoid24.joints[3] = HAnimJoint215;
+HAnimHumanoid24.joints[4] = HAnimJoint215;
 
 let HAnimJoint216 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint216.USE = "hanim_skullbase";
-HAnimHumanoid24.joints[4] = HAnimJoint216;
+HAnimHumanoid24.joints[5] = HAnimJoint216;
 
 let HAnimJoint217 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint217.USE = "hanim_l_elbow";
-HAnimHumanoid24.joints[5] = HAnimJoint217;
+HAnimHumanoid24.joints[6] = HAnimJoint217;
 
 let HAnimJoint218 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint218.USE = "hanim_r_elbow";
-HAnimHumanoid24.joints[6] = HAnimJoint218;
+HAnimHumanoid24.joints[7] = HAnimJoint218;
 
 let HAnimJoint219 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint219.USE = "hanim_l_hip";
-HAnimHumanoid24.joints[7] = HAnimJoint219;
+HAnimHumanoid24.joints[8] = HAnimJoint219;
 
 let HAnimJoint220 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint220.USE = "hanim_r_hip";
-HAnimHumanoid24.joints[8] = HAnimJoint220;
+HAnimHumanoid24.joints[9] = HAnimJoint220;
 
 let HAnimJoint221 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint221.USE = "hanim_l_knee";
-HAnimHumanoid24.joints[9] = HAnimJoint221;
+HAnimHumanoid24.joints[10] = HAnimJoint221;
 
 let HAnimJoint222 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint222.USE = "hanim_r_knee";
-HAnimHumanoid24.joints[10] = HAnimJoint222;
+HAnimHumanoid24.joints[11] = HAnimJoint222;
 
 let HAnimJoint223 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint223.USE = "hanim_l_metatarsophalangeal_2";
-HAnimHumanoid24.joints[11] = HAnimJoint223;
+HAnimHumanoid24.joints[12] = HAnimJoint223;
 
 let HAnimJoint224 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint224.USE = "hanim_r_metatarsophalangeal_2";
-HAnimHumanoid24.joints[12] = HAnimJoint224;
+HAnimHumanoid24.joints[13] = HAnimJoint224;
 
 let HAnimJoint225 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint225.USE = "hanim_l_radiocarpal";
-HAnimHumanoid24.joints[13] = HAnimJoint225;
+HAnimHumanoid24.joints[14] = HAnimJoint225;
 
 let HAnimJoint226 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint226.USE = "hanim_r_radiocarpal";
-HAnimHumanoid24.joints[14] = HAnimJoint226;
+HAnimHumanoid24.joints[15] = HAnimJoint226;
 
 let HAnimJoint227 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint227.USE = "hanim_l_shoulder";
-HAnimHumanoid24.joints[15] = HAnimJoint227;
+HAnimHumanoid24.joints[16] = HAnimJoint227;
 
 let HAnimJoint228 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint228.USE = "hanim_r_shoulder";
-HAnimHumanoid24.joints[16] = HAnimJoint228;
+HAnimHumanoid24.joints[17] = HAnimJoint228;
 
 let HAnimJoint229 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint229.USE = "hanim_l_talocrural";
-HAnimHumanoid24.joints[17] = HAnimJoint229;
+HAnimHumanoid24.joints[18] = HAnimJoint229;
 
 let HAnimJoint230 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint230.USE = "hanim_r_talocrural";
-HAnimHumanoid24.joints[18] = HAnimJoint230;
+HAnimHumanoid24.joints[19] = HAnimJoint230;
 
 let HAnimSegment231 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment231.USE = "hanim_sacrum";
-HAnimHumanoid24.segments[19] = HAnimSegment231;
+HAnimHumanoid24.segments[20] = HAnimSegment231;
 
 let HAnimSegment232 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment232.USE = "hanim_pelvis";
-HAnimHumanoid24.segments[20] = HAnimSegment232;
+HAnimHumanoid24.segments[21] = HAnimSegment232;
 
 let HAnimSegment233 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment233.USE = "hanim_l5";
-HAnimHumanoid24.segments[21] = HAnimSegment233;
+HAnimHumanoid24.segments[22] = HAnimSegment233;
 
 let HAnimSegment234 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment234.USE = "hanim_skull";
-HAnimHumanoid24.segments[22] = HAnimSegment234;
+HAnimHumanoid24.segments[23] = HAnimSegment234;
 
 let HAnimSegment235 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment235.USE = "hanim_l_calf";
-HAnimHumanoid24.segments[23] = HAnimSegment235;
+HAnimHumanoid24.segments[24] = HAnimSegment235;
 
 let HAnimSegment236 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment236.USE = "hanim_r_calf";
-HAnimHumanoid24.segments[24] = HAnimSegment236;
+HAnimHumanoid24.segments[25] = HAnimSegment236;
 
 let HAnimSegment237 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment237.USE = "hanim_l_carpal";
-HAnimHumanoid24.segments[25] = HAnimSegment237;
+HAnimHumanoid24.segments[26] = HAnimSegment237;
 
 let HAnimSegment238 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment238.USE = "hanim_r_carpal";
-HAnimHumanoid24.segments[26] = HAnimSegment238;
+HAnimHumanoid24.segments[27] = HAnimSegment238;
 
 let HAnimSegment239 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment239.USE = "hanim_l_forearm";
-HAnimHumanoid24.segments[27] = HAnimSegment239;
+HAnimHumanoid24.segments[28] = HAnimSegment239;
 
 let HAnimSegment240 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment240.USE = "hanim_r_forearm";
-HAnimHumanoid24.segments[28] = HAnimSegment240;
+HAnimHumanoid24.segments[29] = HAnimSegment240;
 
 let HAnimSegment241 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment241.USE = "hanim_l_talus";
-HAnimHumanoid24.segments[29] = HAnimSegment241;
+HAnimHumanoid24.segments[30] = HAnimSegment241;
 
 let HAnimSegment242 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment242.USE = "hanim_r_talus";
-HAnimHumanoid24.segments[30] = HAnimSegment242;
+HAnimHumanoid24.segments[31] = HAnimSegment242;
 
 let HAnimSegment243 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment243.USE = "hanim_l_tarsal_proximal_phalanx_2";
-HAnimHumanoid24.segments[31] = HAnimSegment243;
+HAnimHumanoid24.segments[32] = HAnimSegment243;
 
 let HAnimSegment244 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment244.USE = "hanim_r_tarsal_proximal_phalanx_2";
-HAnimHumanoid24.segments[32] = HAnimSegment244;
+HAnimHumanoid24.segments[33] = HAnimSegment244;
 
 let HAnimSegment245 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment245.USE = "hanim_l_thigh";
-HAnimHumanoid24.segments[33] = HAnimSegment245;
+HAnimHumanoid24.segments[34] = HAnimSegment245;
 
 let HAnimSegment246 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment246.USE = "hanim_r_thigh";
-HAnimHumanoid24.segments[34] = HAnimSegment246;
+HAnimHumanoid24.segments[35] = HAnimSegment246;
 
 let HAnimSegment247 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment247.USE = "hanim_l_upperarm";
-HAnimHumanoid24.segments[35] = HAnimSegment247;
+HAnimHumanoid24.segments[36] = HAnimSegment247;
 
 let HAnimSegment248 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment248.USE = "hanim_r_upperarm";
-HAnimHumanoid24.segments[36] = HAnimSegment248;
+HAnimHumanoid24.segments[37] = HAnimSegment248;
 
 browser.currentScene.children[3] = HAnimHumanoid24;
 

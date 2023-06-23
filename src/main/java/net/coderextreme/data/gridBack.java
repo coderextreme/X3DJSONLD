@@ -61,7 +61,7 @@ public class gridBack {
       .setScene(new Scene()
         .addChild(new Shape()
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setAmbientIntensity(0.0100f).setDiffuseColor(new float[] {1f,1f,1f}).setShininess(0.0500f)))
+            .setMaterial(new Material().setAmbientIntensity(0.01f).setDiffuseColor(new float[] {1f,1f,1f}).setShininess(0.05f)))
           .setGeometry(new IndexedFaceSet().setColorIndex(new MFInt320().getArray()).setColorPerVertex(false).setCoordIndex(new MFInt321().getArray()).setNormalPerVertex(false)
             .setCoord(new Coordinate().setPoint(new MFVec3f2().getArray()))
             .setColor(new Color().setColor(new MFColor3().getArray())))))      ;
@@ -79,12 +79,12 @@ protected class MFInt321 {
 }
 protected class MFVec3f2 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-5.2500f,5.2500f,0.0000f,-3.7500f,5.2500f,0.0000f,-2.2500f,5.2500f,0.0000f,-0.7500f,5.2500f,0.0000f,0.7500f,5.2500f,0.0000f,2.2500f,5.2500f,0.0000f,3.7500f,5.2500f,0.0000f,5.2500f,5.2500f,0.0000f,-5.2500f,3.7500f,0.0000f,-3.7500f,3.7500f,0.0000f,-2.2500f,3.7500f,0.0000f,-0.7500f,3.7500f,0.0000f,0.7500f,3.7500f,0.0000f,2.2500f,3.7500f,0.0000f,3.7500f,3.7500f,0.0000f,5.2500f,3.7500f,0.0000f,-5.2500f,2.2500f,0.0000f,-3.7500f,2.2500f,0.0000f,-2.2500f,2.2500f,0.0000f,-0.7500f,2.2500f,0.0000f,0.7500f,2.2500f,0.0000f,2.2500f,2.2500f,0.0000f,3.7500f,2.2500f,0.0000f,5.2500f,2.2500f,0.0000f,-5.2500f,0.7500f,0.0000f,-3.7500f,0.7500f,0.0000f,-2.2500f,0.7500f,0.0000f,-0.7500f,0.7500f,0.0000f,0.7500f,0.7500f,0.0000f,2.2500f,0.7500f,0.0000f,3.7500f,0.7500f,0.0000f,5.2500f,0.7500f,0.0000f,-5.2500f,-0.7500f,0.0000f,-3.7500f,-0.7500f,0.0000f,-2.2500f,-0.7500f,0.0000f,-0.7500f,-0.7500f,0.0000f,0.7500f,-0.7500f,0.0000f,2.2500f,-0.7500f,0.0000f,3.7500f,-0.7500f,0.0000f,5.2500f,-0.7500f,0.0000f,-5.2500f,-2.2500f,0.0000f,-3.7500f,-2.2500f,0.0000f,-2.2500f,-2.2500f,0.0000f,-0.7500f,-2.2500f,0.0000f,0.7500f,-2.2500f,0.0000f,2.2500f,-2.2500f,0.0000f,3.7500f,-2.2500f,0.0000f,5.2500f,-2.2500f,0.0000f,-5.2500f,-3.7500f,0.0000f,-3.7500f,-3.7500f,0.0000f,-2.2500f,-3.7500f,0.0000f,-0.7500f,-3.7500f,0.0000f,0.7500f,-3.7500f,0.0000f,2.2500f,-3.7500f,0.0000f,3.7500f,-3.7500f,0.0000f,5.2500f,-3.7500f,0.0000f,-5.2500f,-5.2500f,0.0000f,-3.7500f,-5.2500f,0.0000f,-2.2500f,-5.2500f,0.0000f,-0.7500f,-5.2500f,0.0000f,0.7500f,-5.2500f,0.0000f,2.2500f,-5.2500f,0.0000f,3.7500f,-5.2500f,0.0000f,5.2500f,-5.2500f,0.0000f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-5.25f,5.25f,0f,-3.75f,5.25f,0f,-2.25f,5.25f,0f,-0.75f,5.25f,0f,0.75f,5.25f,0f,2.25f,5.25f,0f,3.75f,5.25f,0f,5.25f,5.25f,0f,-5.25f,3.75f,0f,-3.75f,3.75f,0f,-2.25f,3.75f,0f,-0.75f,3.75f,0f,0.75f,3.75f,0f,2.25f,3.75f,0f,3.75f,3.75f,0f,5.25f,3.75f,0f,-5.25f,2.25f,0f,-3.75f,2.25f,0f,-2.25f,2.25f,0f,-0.75f,2.25f,0f,0.75f,2.25f,0f,2.25f,2.25f,0f,3.75f,2.25f,0f,5.25f,2.25f,0f,-5.25f,0.75f,0f,-3.75f,0.75f,0f,-2.25f,0.75f,0f,-0.75f,0.75f,0f,0.75f,0.75f,0f,2.25f,0.75f,0f,3.75f,0.75f,0f,5.25f,0.75f,0f,-5.25f,-0.75f,0f,-3.75f,-0.75f,0f,-2.25f,-0.75f,0f,-0.75f,-0.75f,0f,0.75f,-0.75f,0f,2.25f,-0.75f,0f,3.75f,-0.75f,0f,5.25f,-0.75f,0f,-5.25f,-2.25f,0f,-3.75f,-2.25f,0f,-2.25f,-2.25f,0f,-0.75f,-2.25f,0f,0.75f,-2.25f,0f,2.25f,-2.25f,0f,3.75f,-2.25f,0f,5.25f,-2.25f,0f,-5.25f,-3.75f,0f,-3.75f,-3.75f,0f,-2.25f,-3.75f,0f,-0.75f,-3.75f,0f,0.75f,-3.75f,0f,2.25f,-3.75f,0f,3.75f,-3.75f,0f,5.25f,-3.75f,0f,-5.25f,-5.25f,0f,-3.75f,-5.25f,0f,-2.25f,-5.25f,0f,-0.75f,-5.25f,0f,0.75f,-5.25f,0f,2.25f,-5.25f,0f,3.75f,-5.25f,0f,5.25f,-5.25f,0f});
   }
 }
 protected class MFColor3 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.5000f,0.5000f,0.5000f,0.7500f,0.7500f,0.7500f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.5f,0.5f,0.5f,0.75f,0.75f,0.75f});
   }
 }
 }

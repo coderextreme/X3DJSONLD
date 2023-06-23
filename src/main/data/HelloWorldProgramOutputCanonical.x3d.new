@@ -53,7 +53,7 @@
 <Transform DEF="TextTransform" translation="0 -1.5 0"><Shape><Appearance><Material USE="GreenMaterial"></Material>
 </Appearance>
 <Text containerField="geometry" string="&quot;X3D Java&quot; &quot;SAI Library&quot; &quot;X3DJSAIL&quot;"><!--Comment example A, plain quotation marks: He said, "Immel did it!"--><!--Comment example B, XML character entities: He said, &quot;Immel did it!&quot;--><MetadataSet containerField="metadata" name="EscapedQuotationMarksMetadataSet"><MetadataString name="quotesTestC" value="&quot;MFString example C, backslash-escaped quotes: He said, \&quot;Immel did it!\&quot;&quot;" containerField="value"></MetadataString>
-<MetadataString name="extraChildTest" value="&quot;checks MetadataSetObject addValue() method&quot;"></MetadataString>
+<MetadataString name="extraChildTest" value="&quot;checks MetadataSetObject addValue() method&quot;" containerField="value"></MetadataString>
 </MetadataSet>
 <FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
 </Text>

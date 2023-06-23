@@ -1,1 +1,2 @@
-export var threeLoadFile = require("./threex3dloader.mjs");
+var threeLoadFile = require("./threex3dloader.js");
+module.exports = threeLoadFile;

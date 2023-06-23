@@ -71,7 +71,7 @@ public class GridXZ_20x20Fixed {
               .addChild(new Billboard()
                 .addChild(new Shape()
                   .setGeometry(new Text().setDEF("CenterTextNode").setString(new MFString4().getArray())
-                    .setFontStyle(new FontStyle().setDEF("FS4").setJustify(new MFString5().getArray()).setSize(0.4000f)))
+                    .setFontStyle(new FontStyle().setDEF("FS4").setJustify(new MFString5().getArray()).setSize(0.4f)))
                   .setAppearance(new Appearance().setDEF("DefaultAppearance")
                     .setMaterial(new Material())))))
             .addChild(new Transform().setTranslation(new float[] {10f,-0.5f,10f})
@@ -112,12 +112,12 @@ protected class MFInt321 {
 }
 protected class MFVec3f2 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,0.0000f,0.0000f,-10.0000f,0.0000f,10.0000f,-9.0000f,0.0000f,10.0000f,-8.0000f,0.0000f,10.0000f,-7.0000f,0.0000f,10.0000f,-6.0000f,0.0000f,10.0000f,-5.0000f,0.0000f,10.0000f,-4.0000f,0.0000f,10.0000f,-3.0000f,0.0000f,10.0000f,-2.0000f,0.0000f,10.0000f,-1.0000f,0.0000f,10.0000f,0.0000f,0.0000f,10.0000f,1.0000f,0.0000f,10.0000f,2.0000f,0.0000f,10.0000f,3.0000f,0.0000f,10.0000f,4.0000f,0.0000f,10.0000f,5.0000f,0.0000f,10.0000f,6.0000f,0.0000f,10.0000f,7.0000f,0.0000f,10.0000f,8.0000f,0.0000f,10.0000f,9.0000f,0.0000f,10.0000f,10.0000f,0.0000f,10.0000f,-10.0000f,0.0000f,-10.0000f,-9.0000f,0.0000f,-10.0000f,-8.0000f,0.0000f,-10.0000f,-7.0000f,0.0000f,-10.0000f,-6.0000f,0.0000f,-10.0000f,-5.0000f,0.0000f,-10.0000f,-4.0000f,0.0000f,-10.0000f,-3.0000f,0.0000f,-10.0000f,-2.0000f,0.0000f,-10.0000f,-1.0000f,0.0000f,-10.0000f,0.0000f,0.0000f,-10.0000f,1.0000f,0.0000f,-10.0000f,2.0000f,0.0000f,-10.0000f,3.0000f,0.0000f,-10.0000f,4.0000f,0.0000f,-10.0000f,5.0000f,0.0000f,-10.0000f,6.0000f,0.0000f,-10.0000f,7.0000f,0.0000f,-10.0000f,8.0000f,0.0000f,-10.0000f,9.0000f,0.0000f,-10.0000f,10.0000f,0.0000f,-10.0000f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,0f,-10f,0f,10f,-9f,0f,10f,-8f,0f,10f,-7f,0f,10f,-6f,0f,10f,-5f,0f,10f,-4f,0f,10f,-3f,0f,10f,-2f,0f,10f,-1f,0f,10f,0f,0f,10f,1f,0f,10f,2f,0f,10f,3f,0f,10f,4f,0f,10f,5f,0f,10f,6f,0f,10f,7f,0f,10f,8f,0f,10f,9f,0f,10f,10f,0f,10f,-10f,0f,-10f,-9f,0f,-10f,-8f,0f,-10f,-7f,0f,-10f,-6f,0f,-10f,-5f,0f,-10f,-4f,0f,-10f,-3f,0f,-10f,-2f,0f,-10f,-1f,0f,-10f,0f,0f,-10f,1f,0f,-10f,2f,0f,-10f,3f,0f,-10f,4f,0f,-10f,5f,0f,-10f,6f,0f,-10f,7f,0f,-10f,8f,0f,-10f,9f,0f,-10f,10f,0f,-10f});
   }
 }
 protected class MFColor3 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.4000f,0.4000f,0.4000f,0.8000f,0.2000f,0.0000f,0.4000f,0.1000f,0.0500f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.4f,0.4f,0.4f,0.8f,0.2f,0f,0.4f,0.1f,0.05f});
   }
 }
 protected class MFString4 {

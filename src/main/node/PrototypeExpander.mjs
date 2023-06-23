@@ -1,13 +1,22 @@
-import DOM2JSONSerializer from './DOM2JSONSerializer.mjs';
-import fieldTypes from './fieldTypes.mjs';
-import mapToMethod from './mapToMethod.mjs';
-import xmldom from '@xmldom/xmldom';
-import xmlhttprequest from 'xmlhttprequest';
-import fs from 'node:fs';
-import http from "http";
-import https from "https";
-var DOMParser = xmldom.DOMParser ;
+var fs;
+var http;
+var https;
+var DOM2JSONSerializer;
+var fieldTypes;
+var mapToMethod;
+var DOMParser;
 var XMLHttpRequest = xmlhttprequest.XMLHttpRequest;
+if (typeof require !== 'undefined') {
+	fs = require("fs");
+	http = require("http");
+	https = require("https");
+	DOM2JSONSerializer = require('./DOM2JSONSerializer');
+	fieldTypes = require('./fieldTypes');
+	mapToMethod = require('./mapToMethod');
+	const { DOMParser, XMLSerializer } = require('@xmldom/xmldom');
+} else {
+	DOMParser = window.DOMParser;
+}
 
 export default function PROTOS() {
 	this.protos = {};

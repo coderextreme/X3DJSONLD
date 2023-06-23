@@ -58,7 +58,7 @@
           },
           {
             "@name":"translated",
-            "@content":"09 June 2023"
+            "@content":"22 June 2023"
           },
           {
             "@name":"generator",
@@ -87,6 +87,7 @@
           { "Viewpoint":
             {
               "@description":"looking North",
+              "@fieldOfView":0.7853981,
               "@orientation":[1,0,0,-0.7],
               "@position":[0,60,110]
             }

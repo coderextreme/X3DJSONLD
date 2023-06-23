@@ -37,7 +37,7 @@ meta(name="translator", content="Joe D. Williams"),
 meta(name="generator", content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"),
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSkinSaluteSiteWalk.x3d"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="09 June 2023"),
+meta(name="translated", content="21 June 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -121,7 +121,7 @@ material=
 Material(DEF="SkinMaterial", ambientIntensity=0.6, diffuseColor=((1,1,1)), shininess=0.6, transparency=0.2)))], 
 skinCoord=(
 Coordinate(USE="TheSkinCoord")), skeleton=[
-HAnimJoint(name="humanoid_root", DEF="Joe_humanoid_root", center=((0,0.875,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="HumanoidRoot", DEF="Joe_HumanoidRoot", center=((0,0.875,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="sacrum", DEF="Joe_sacrum", children=[
 Transform(translation=((0,0.875,0)), children=[
 Shape(USE="jointbox")]),

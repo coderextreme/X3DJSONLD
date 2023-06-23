@@ -147,10 +147,10 @@ var X3D0 =  X3D(
                 HAnimHumanoid(
                   name_ : SFString('Human'),
                   DEF_ : SFString('Joe_Human'),
-                  version_ : SFString('2.0'),
+                  version_ : SFString('1.0'),
                   joints_ : [
                     HAnimJoint(
-                      name_ : SFString('humanoid_root'),
+                      name_ : SFString('HumanoidRoot'),
                       DEF_ : SFString('Joe_HumanoidRoot'),
                       center_ : SFVec3f([SFDouble(0), SFDouble(0.875), SFDouble(0)]),
                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),

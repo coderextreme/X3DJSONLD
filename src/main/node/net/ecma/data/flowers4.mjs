@@ -1,34 +1,38 @@
 'use strict';
-import { X3D } from './x3d.mjs';
-import fs from 'fs';
-import { SFString } from './x3d.mjs';
-import { SFNode } from './x3d.mjs';
-import { head } from './x3d.mjs';
-import { component } from './x3d.mjs';
-import { SFInt32 } from './x3d.mjs';
-import { MFNode } from './x3d.mjs';
-import { meta } from './x3d.mjs';
-import { Scene } from './x3d.mjs';
-import { NavigationInfo } from './x3d.mjs';
-import { Background } from './x3d.mjs';
-import { MFString } from './x3d.mjs';
-import { Transform } from './x3d.mjs';
-import { Shape } from './x3d.mjs';
-import { Appearance } from './x3d.mjs';
-import { Material } from './x3d.mjs';
-import { SFColor } from './x3d.mjs';
-import { ComposedCubeMapTexture } from './x3d.mjs';
-import { ImageTexture } from './x3d.mjs';
-import { ComposedShader } from './x3d.mjs';
-import { field } from './x3d.mjs';
-import { ShaderPart } from './x3d.mjs';
-import { IndexedFaceSet } from './x3d.mjs';
-import { SFBool } from './x3d.mjs';
-import { Coordinate } from './x3d.mjs';
-import { Script } from './x3d.mjs';
-import { TimeSensor } from './x3d.mjs';
-import { SFTime } from './x3d.mjs';
-import { ROUTE } from './x3d.mjs';
+var X3D = require('./x3d.js');
+try {
+	var fs = require('fs');
+} catch (e) {
+console.log("Problems loading fs. On browser?",e);
+}
+var SFString = require('./x3d.js');
+var SFNode = require('./x3d.js');
+var head = require('./x3d.js');
+var component = require('./x3d.js');
+var SFInt32 = require('./x3d.js');
+var MFNode = require('./x3d.js');
+var meta = require('./x3d.js');
+var Scene = require('./x3d.js');
+var NavigationInfo = require('./x3d.js');
+var Background = require('./x3d.js');
+var MFString = require('./x3d.js');
+var Transform = require('./x3d.js');
+var Shape = require('./x3d.js');
+var Appearance = require('./x3d.js');
+var Material = require('./x3d.js');
+var SFColor = require('./x3d.js');
+var ComposedCubeMapTexture = require('./x3d.js');
+var ImageTexture = require('./x3d.js');
+var ComposedShader = require('./x3d.js');
+var field = require('./x3d.js');
+var ShaderPart = require('./x3d.js');
+var IndexedFaceSet = require('./x3d.js');
+var SFBool = require('./x3d.js');
+var Coordinate = require('./x3d.js');
+var Script = require('./x3d.js');
+var TimeSensor = require('./x3d.js');
+var SFTime = require('./x3d.js');
+var ROUTE = require('./x3d.js');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),

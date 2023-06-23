@@ -37,7 +37,7 @@
   <Scene>
     <WorldInfo title='ObliqueStrategies.x3d'/>
     <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"NONE"'/>
-    <Background skyColor='0.4196 0.4275 1'/>
+    <Background skyColor='0.419608 0.427451 1'/>
     <Transform scale='0.4 0.4 0.4' translation='0 1 0'>
       <TouchSensor DEF='RandomTextClickedSensor' description='Select to see a new strategy'/>
       <Shape>
@@ -51,7 +51,7 @@
       <Transform scale='10 3 1'>
         <Shape DEF='HeadlineClickSurface'>
           <Appearance>
-            <Material ambientIntensity='0.2458' diffuseColor='0.34773 0.090909 0.005289' shininess='0.07' specularColor='0.336735 0.051091 0.051091' transparency='0.8'/>
+            <Material ambientIntensity='0.245763' diffuseColor='0.34773 0.090909 0.005289' shininess='0.07' specularColor='0.336735 0.051091 0.051091' transparency='0.8'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1' solid='false'>
             <Coordinate point='1 1 0 1 -1 0 -1 -1 0 -1 1 0'/>

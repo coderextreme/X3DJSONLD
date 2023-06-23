@@ -9,7 +9,7 @@ var convertXML = require('./convertXML.js');
 
 convertXML([
 	{ 
-	serializer : './DOM2JSONSerializer.mjs',
+	serializer : './DOM2JSONSerializer.js',
 	folder : "../",
 	extension : ".json",
 	}

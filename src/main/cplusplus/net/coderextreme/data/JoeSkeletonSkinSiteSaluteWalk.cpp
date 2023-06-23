@@ -447,8 +447,8 @@ Coordinate89->setUSE("TheSkinCoord");
 HAnimHumanoid81->setSkinCoord(*Coordinate89);
 
 CHAnimJoint* HAnimJoint90 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint90->setName("humanoid_root");
-HAnimJoint90->setDEF("Joe_humanoid_root");
+HAnimJoint90->setName("HumanoidRoot");
+HAnimJoint90->setDEF("Joe_HumanoidRoot");
 HAnimJoint90->setCenter(new float[3]{0,0.875,0});
 HAnimJoint90->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint90->setLlimit(new float[3]{0,0,0}, 3);

@@ -125,12 +125,12 @@ protected class MFString5 {
 }
 protected class MFFloat6 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
   }
 }
 protected class MFVec3d7 {
   protected org.web3d.x3d.jsail.fields.MFVec3d getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3d(new double[] {0.0016d,0.0000d,4.0000d,0.0000d,0.0016d,4.0000d});
+    return new org.web3d.x3d.jsail.fields.MFVec3d(new double[] {0.0015708d,0d,4d,0d,0.0015708d,4d});
   }
 }
 }

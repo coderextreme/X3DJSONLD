@@ -9,9 +9,9 @@
   <Scene>
     <NavigationInfo avatarSize='200 200 120' speed='3.0' transitionType='"LINEAR"' type='"EXAMINE" "FLY" "WALK"'/>
     <WorldInfo title='Arts Mapper'/>
-    <Viewpoint description='looking North' orientation='1 0 0 -0.7' position='0 60 110'/>
-    <Viewpoint description='looking East' orientation='0 0.4 0 -1.4' position='-140 30 0'/>
-    <Viewpoint description='Overhead' orientation='1 0 0 -1.57' position='0 150 0'/>
+    <Viewpoint description='looking North' fieldOfView='0.7853981' orientation='1 0 0 -0.7' position='0 60 110'/>
+    <Viewpoint description='looking East' fieldOfView='0.7853981' orientation='0 0.4 0 -1.4' position='-140 30 0'/>
+    <Viewpoint description='Overhead' fieldOfView='0.7853981' orientation='1 0 0 -1.57' position='0 150 0'/>
     <ProtoDeclare name='org'>
       <ProtoInterface>
         <field name='posi' accessType='initializeOnly' type='SFVec3f' value='0 0 0'/>

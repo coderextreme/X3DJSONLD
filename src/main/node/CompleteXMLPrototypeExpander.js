@@ -1,8 +1,8 @@
 // Complete X3D XML to X3D XML Prototype Expander
 
-import fs from 'node:fs';
+var fs = require('fs');
 
-var X3DJSONLD = require('./X3DJSONLD.mjs');
+var X3DJSONLD = require('./X3DJSONLD.js');
 var Browser = X3DJSONLD.Browser;
 
 var PROTOS = require('./PrototypeExpander')
@@ -11,18 +11,16 @@ var xmldom = require('@xmldom/xmldom');
 var DOMImplementation = new xmldom.DOMImplementation();
 
 var convertJSON = require('./convertJSON.js');
-var loadSchema = convertJSON.loadSchema;
-var doValidate = convertJSON.doValidate;
 var loadX3DJS = convertJSON.loadX3DJS;
-var DOM2JSONSerializer = require('./DOM2JSONSerializer.mjs');
+var DOM2JSONSerializer = require('./DOM2JSONSerializer.js');
 var serializer = new DOM2JSONSerializer();
 
 var Script = require('./Script');
 var LOG = Script.LOG;
 
-var mapToMethod = require('./mapToMethod.mjs');
+var mapToMethod = require('./mapToMethod.js');
 var mapToMethod2 = require('./mapToMethod2.js');
-var fieldTypes = require('./fieldTypes.mjs');
+var fieldTypes = require('./fieldTypes.js');
 
 if (typeof mapToMethod2 !== 'undefined') {
 	for (var map in mapToMethod2) {
@@ -39,7 +37,7 @@ function ProcessJSON(json, file) {
 	json = PROTOS.prototypeExpander(file, json, "");
 
 	var NS = "https://www.web3d.org/specifications/x3d";
-	loadX3DJS(DOMImplementation, json, file, NS, loadSchema, doValidate, X3DJSONLD, function(element, xml) {
+	loadX3DJS(DOMImplementation, json, file, NS, X3DJSONLD, function(element, xml) {
 		var str = serializer.serializeToString(json, element, 0, mapToMethod, fieldTypes);
 		var outfile = "ppp/"+file.substr(0, file.lastIndexOf("."))+".x3d";
 		try {

@@ -11,16 +11,16 @@ var autoclass = require('./X3Dautoclass');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Seamless3d tool import of bvh file and export of x3d scene. Note use of single skin mesh, animated by unadorned skeleton. </p>
- <p> Related links: <a href="../../../MotionAnimation/BvhSeamless3dExport1.java">BvhSeamless3dExport1.java</a> source, <a href="../../../MotionAnimation/BvhSeamless3dExport1Index.html" target="_top">BvhSeamless3dExport1 catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: BvhSeamless3dExport1.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.BvhSeamless3dExport1&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="../../../MotionAnimation/BvhSeamless3dExport1.x3d">BvhSeamless3dExport1.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/MotionAnimation/BvhSeamless3dExport1.x3d">BvhSeamless3dExport1.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -40,7 +40,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 20 October 2019 </td>
+			<td> 16 January 2022 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -48,7 +48,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="../../../MotionAnimation/BvhSeamless3dExport1.png">BvhSeamless3dExport1.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/MotionAnimation/BvhSeamless3dExport1.png">BvhSeamless3dExport1.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> subject </i> </td>
@@ -68,7 +68,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://x3dgraphics.com/examples/X3dForAdvancedModeling/MotionAnimation/BvhSeamless3dExport1.x3d" target="_blank">https://x3dgraphics.com/examples/X3dForAdvancedModeling/MotionAnimation/BvhSeamless3dExport1.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/MotionAnimation/BvhSeamless3dExport1.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/HumanoidAnimation/MotionAnimation/BvhSeamless3dExport1.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -76,7 +76,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="../../../MotionAnimation/license.html">license.html</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/MotionAnimation/license.html">license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -2305,14 +2305,14 @@ BvhSeamless3dExport1.prototype = {
     .addMeta((new autoclass.meta()).setName("translator").setContent("Don Brutzman"))
     .addMeta((new autoclass.meta()).setName("created").setContent("1 January 2017"))
     .addMeta((new autoclass.meta()).setName("translated").setContent("1 January 2017"))
-    .addMeta((new autoclass.meta()).setName("modified").setContent("20 October 2019"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("16 January 2022"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("1.bvh"))
     .addMeta((new autoclass.meta()).setName("Image").setContent("BvhSeamless3dExport1.png"))
     .addMeta((new autoclass.meta()).setName("subject").setContent("BVH X3D Seamless3d"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("Seamless3d 3.002, http://www.seamless3d.com"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("Seamless3d developed by Graham John Perrett thyme@seamless3d.com"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/MotionAnimation/BvhSeamless3dExport1.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/MotionAnimation/BvhSeamless3dExport1.x3d"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("https://sourceforge.net/p/x3d/code/24079"))
     .addMeta((new autoclass.meta()).setName("license").setContent("license.html")))
   .setScene((new autoclass.Scene())
