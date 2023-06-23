@@ -1,31 +1,21 @@
 "use strict";
 
-import xmldom from '@xmldom/xmldom';
+if (typeof window === 'undefined') {
+	var window = {};
+	if (typeof window.document === 'undefined') {
+	       window.document = {};
+
+	}
+}
+if (typeof require !== 'function') {
+	window.require = function() {
+		console.log("Redefinining require on browser");
+		return undefined;
+	};
+}
+var fs = require('fs');
+
 import DOMSerializer from './DOMSerializer.mjs';
-import http from "http";
-import https from "https";
-// TODO this causes node-java 0.12.2 to hang
-// import runAndSend from "./runAndSend";
-import fs from 'node:fs';
-
-if (typeof document === 'undefined') {
-       var document = {};
-}
-
-if (typeof require === 'function' && typeof load !== 'function') {
-	fs = require("fs");
-	http = require("http");
-	https = require("https");
-	// TODO this causes node-java 0.12.2 to hang
-	// var runAndSend = require("./runAndSend");
-	var xmldom = require('@xmldom/xmldom');
-	var domserializer = new xmldom.XMLSerializer();
-	var DOMParser = xmldom.DOMParser;
-	var domParser = new DOMParser();
-} else {
-	var domserializer = new XMLSerializer();
-        var domParser = new window.DOMParser();
-}
 	
 
 if (typeof console !== 'undefined') {
@@ -34,7 +24,7 @@ if (typeof console !== 'undefined') {
 	}
 }
 
-export var X3DJSONLD = {
+export default X3DJSONLD = {
 x3djsonNS : "",
 Browser : {
 	print : function(string) { if (typeof console !== 'undefined' && typeof string !== 'undefined') console.error(string); },
@@ -142,6 +132,11 @@ processURLs: function(localArray, path) {
  * the loadedCallback returns the data and the URL it was loaded from.
  */
 loadURLs : function(loadpath, urls, loadedCallback, protoexp, done, externProtoDeclare, obj) {
+	async function getTheJSON(url) {
+	  const response = await fetch(url);
+	  const jsonData = await response.json();
+	  return(jsonData);
+	};
 	if (typeof urls !== 'undefined') {
 		// console.error("Preprocessed", urls)
 		urls = this.processURLs(urls, loadpath);
@@ -161,42 +156,10 @@ loadURLs : function(loadpath, urls, loadedCallback, protoexp, done, externProtoD
 						path = url.substring(pa);
 					}
 
-					if (protocol === "http") {
-						// console.error("Loading HTTP URL", url);
-						if (typeof $ !== 'undefined' && typeof $.get === 'function') {
-							$.get(url, function(data) {
-								loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
-							});
-						} else if (typeof http !== 'undefined') {
-							http.get({ host: host, path: path}, function(res) {
-								var data = '';
-								res.on('data', function (d) {
-									data += d;
-								});
-								res.on('end', function() {
-									loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
-								});
-							});
-					
-						}
-					} else if (protocol === "https") {
-						// console.error("Loading HTTPS URL", url);
-						if (typeof $ !== 'undefined' && typeof $.get === 'function') {
-							$.get(url, function(data) {
-								loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
-							});
-						} else if (typeof https !== 'undefined') {
-							https.get({ host: host, path: path}, function(res) {
-								var data = '';
-								res.on('data', function (d) {
-									data += d;
-								});
-								res.on('end', function() {
-									loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
-								});
-							});
-					
-						}
+					if (protocol.startsWith("http")) {
+						// console.error("Loading HTTP/S URL", url);
+						var data = getTheJSON(url);
+						loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
 					} else if (typeof fs !== 'undefined' && protocol.indexOf("http") !== 0) {
 						// should be async, but out of memory
 						// console.error("Loading FILE URL", url);
@@ -290,7 +253,7 @@ CreateElement : function(xmlDoc, key, x3djsonNS, containerField) {
 			child = xmlDoc.createElement(key);
 		}
 	}
-	if (typeof containerField !== 'undefined' && key.toLowerCase() != containerField.toLowerCase()) {
+	if (typeof containerField !== 'undefined' && key.toLowerCase() !== containerField.toLowerCase()) {
 		this.elementSetAttribute(child, 'containerField', containerField);
 	}
 	return child;
@@ -497,10 +460,21 @@ ConvertToX3DOM : function(xmlDoc, object, parentkey, element, path, containerFie
 			} else {
 				if (key === "-skin" || key === "-skeleton" || key === "-value") {
 					let firstNode = object[key][0];
-					for (var skv in firstNode) {
-						firstNode[skv]['@containerField'] = key.substr(1);
-						// console.log(firstNode[skv]);
-						this.ConvertObject(xmlDoc, key, object, element, path, firstNode[skv]['@containerField']);
+					if (key === "-value") {
+						firstNode = object[key];
+						// console.log(firstNode);
+						for (var skv in firstNode) {
+							for (var prop in firstNode[skv]) {
+								firstNode[skv][prop]['@containerField'] = key.substr(1);
+								console.log(firstNode[skv]);
+							}
+						}
+						this.ConvertObject(xmlDoc, key, object, element, path, key.substr(1));
+					} else {
+						for (var skv in firstNode) {
+							firstNode[skv]['@containerField'] = key.substr(1);
+							this.ConvertObject(xmlDoc, key, object, element, path, firstNode[skv]['@containerField']);
+						}
 					}
 				} else if (key.indexOf("HAnim") === 0 && key !== "HAnimHumanoid" && typeof object[key]['@USE'] != 'undefined') {
 					object[key]['@containerField'] = key.substr(5).toLowerCase()+"s";
@@ -683,4 +657,7 @@ setDocument : function(doc) {
 	document = doc;
 }
 }
-export default X3DJSONLD;
+
+exports.default = X3DJSONLD;
+
+module.exports = X3DJSONLD;
