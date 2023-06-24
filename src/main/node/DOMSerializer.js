@@ -1,9 +1,6 @@
 "use strict";
 
-if (typeof require === 'function') {
-	var xmldom = require('@xmldom/xmldom');
-	var XMLSerializer = new xmldom.XMLSerializer();
-}
+const { DOMParser, XMLSerializer } = require('@xmldom/xmldom');
 
 function DOMSerializer() {};
 DOMSerializer.prototype = {
@@ -49,7 +46,7 @@ DOMSerializer.prototype = {
 			xml += '<?xml version="1.0" encoding="'+encoding+'"?>\n';
 			xml += '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D '+version+'//EN" "https://www.web3d.org/specifications/x3d-'+version+'.dtd">\n';
 		}
-		xml += XMLSerializer.serializeToString(element);
+		xml += new XMLSerializer().serializeToString(element);
 		xml = this.fixXML(xml);
 		return xml;
 	}
