@@ -31,14 +31,15 @@ let z = center[2];
 function centering(json) {
 	for (let j in json) {
 		if (j === "@center") {
-			if (json["@name"] === "l_talocrural") {
+			if (json["@name"] === "l_tarsal_distal_interphalangeal_5") {
 				l_x = json["@center"][0];
 				l_z = json["@center"][2];
-				y = json["@center"][1];
-			} else if (json["@name"] === "r_talocrural") {
+			} else if (json["@name"] === "r_tarsal_distal_interphalangeal_5") {
 				r_x = json["@center"][0];
-				y = json["@center"][1];
 				r_z = json["@center"][2];
+			}
+			if (y >= json["@center"][1]) {
+				y = json["@center"][1];
 			}
 		} else if (typeof json[j] === 'object') {
 			centering(json[j]);
