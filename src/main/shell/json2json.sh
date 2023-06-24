@@ -17,5 +17,5 @@ ls -d "$@" | grep -v intermediate | grep -v "\.new" | xargs -P $PROCESSORS ${NOD
 for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.json$/.json.new/' -e 's/-/_/g' -e $ROOTTOLOCAL -e 's/^\/c/../'`
 do
 	JSON=`dirname $i | sed -e 's/_/-/g' -e $LOCALTOROOT `/`basename $i .json.new`.json 
-	${NODE} ${NODEDIR}/jsondiff.mjs $JSON $i
+	${NODE} ${NODEDIR}/jsondiff.js $JSON $i
 done
