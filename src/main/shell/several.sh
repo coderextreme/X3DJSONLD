@@ -29,15 +29,15 @@ ROOTTOLOCAL='s/www.web3d.org/www_web3d_org/'
 # convert to first JSON,
 # then overwrite with xml2all.js
 # then create other files from second JSON
-# ls -d "$@" | grep -v intermediate | grep -v "\.new" | xargs ${NODE} ${NODEDIR}/xml2all.js | xargs -P $PROCESSORS ${NODE} ${NODEDIR}/json2all.mjs
-# ls -d "$@" | grep -v intermediate | grep -v "\.new" | xargs -P $PROCESSORS java net.coderextreme.RunSaxon --- ${OVERWRITE} --${STYLESHEETDIR}/X3dToJson.xslt -json | xargs ${NODE} ${NODEDIR}/xml2all.js | xargs -P $PROCESSORS ${NODE} ${NODEDIR}/json2all.mjs
-ls -d "$@" | grep -v intermediate | grep -v "\.new" | xargs -P $PROCESSORS java net.coderextreme.RunSaxon --- ${OVERWRITE} --${STYLESHEETDIR}/X3dToJson.xslt -json | xargs -P $PROCESSORS ${NODE} ${NODEDIR}/json2all.mjs
+# ls -d "$@" | grep -v intermediate | grep -v "\.new" | xargs ${NODE} ${NODEDIR}/xml2all.js | xargs -P $PROCESSORS ${NODE} ${NODEDIR}/json2all.js
+# ls -d "$@" | grep -v intermediate | grep -v "\.new" | xargs -P $PROCESSORS java net.coderextreme.RunSaxon --- ${OVERWRITE} --${STYLESHEETDIR}/X3dToJson.xslt -json | xargs ${NODE} ${NODEDIR}/xml2all.js | xargs -P $PROCESSORS ${NODE} ${NODEDIR}/json2all.js
+ls -d "$@" | grep -v intermediate | grep -v "\.new" | xargs -P $PROCESSORS java net.coderextreme.RunSaxon --- ${OVERWRITE} --${STYLESHEETDIR}/X3dToJson.xslt -json | xargs -P $PROCESSORS ${NODE} ${NODEDIR}/json2all.js
 # Add exit here to just do conversions
 # exit
 for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.x3d.new/' -e 's/-/_/g' -e $ROOTTOLOCAL -e 's/^\/c/../'`
 do
 	X3D=`dirname $i | sed -e 's/_/-/g' -e $LOCALTOROOT `/`basename $i .x3d.new`.x3d 
-	${NODE} --trace-warnings ${NODEDIR}/xmldiff.mjs $X3D $i
+	${NODE} --trace-warnings ${NODEDIR}/xmldiff.js $X3D $i
 done
 
 for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.java/' -e 's/-/_/g' -e 's/^\/c/../' -e $EXTOJAVA -e $DATATOJAVA -e $ROOTTOJAVA | xargs ls -d`
@@ -59,13 +59,13 @@ done
 for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.new.json/' -e 's/-/_/g' -e $ROOTTOLOCAL -e 's/^\/c/../'`
 do
 	JSON=`dirname $i | sed -e 's/_/-/g' -e $LOCALTOROOT `/`basename $i .new.json`.json
-	${NODE} --trace-warnings ${NODEDIR}/jsondiff.mjs $JSON $i
+	${NODE} --trace-warnings ${NODEDIR}/jsondiff.js $JSON $i
 done
 
 for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" |  sed -e 's/\.x3d$/.newPrettyPrint.intermediate.x3d/' -e 's/-/_/g' -e $ROOTTOLOCAL -e 's/^\/c/../'`
 do
 	X3D=`dirname $i | sed -e 's/_/-/g' -e $LOCALTOROOT `/`basename $i .newPrettyPrint.intermediate.x3d`.x3d 
-	${NODE} --trace-warnings ${NODEDIR}/xmldiff.mjs $X3D $i
+	${NODE} --trace-warnings ${NODEDIR}/xmldiff.js $X3D $i
 done
 
 #for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.mjs/' -e 's/-/_/g' -e 's/^\/c/../' -e $EXTONASH -e $DATATONASH -e $ROOTTONASH | xargs ls -d`
@@ -87,8 +87,8 @@ done
 #do
 #echo ../../../node_modules/.bin/xslt3 -xsl:/c/x3d-code/www.web3d.org/x3d/stylesheets/X3dToJson.xslt -s:$i -o:`dirname $i`/`basename $i .x3d`.json2
 #../../../node_modules/.bin/xslt3 -xsl:/c/x3d-code/www.web3d.org/x3d/stylesheets/X3dToJson.xslt -s:$i -o:`dirname $i`/`basename $i .x3d`.new.json2
-#echo ${NODE} ${NODEDIR}/jsondiff.mjs `dirname $i`/`basename $i x3d`json `dirname $i`/`basename $i x3d`new.json2
-#${NODE} ${NODEDIR}/jsondiff.mjs `dirname $i`/`basename $i x3d`json `dirname $i`/`basename $i x3d`new.json2
+#echo ${NODE} ${NODEDIR}/jsondiff.js `dirname $i`/`basename $i x3d`json `dirname $i`/`basename $i x3d`new.json2
+#${NODE} ${NODEDIR}/jsondiff.js `dirname $i`/`basename $i x3d`json `dirname $i`/`basename $i x3d`new.json2
 #done
 
 for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.json/' -e 's/-/_/g' -e 's/^\/c/../'`
@@ -102,6 +102,6 @@ done
 for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.new.x3d/' -e 's/-/_/g' -e $ROOTTOLOCAL -e 's/^\/c/../'`
 do
 	X3D=`dirname $i | sed -e 's/_/-/g' -e $LOCALTOROOT `/`basename $i .new.x3d`.x3d
-	echo ${NODE} --trace-warnings ${NODEDIR}/xmldiff.mjs $X3D $i
-	${NODE} --trace-warnings ${NODEDIR}/xmldiff.mjs $X3D $i
+	echo ${NODE} --trace-warnings ${NODEDIR}/xmldiff.js $X3D $i
+	${NODE} --trace-warnings ${NODEDIR}/xmldiff.js $X3D $i
 done
