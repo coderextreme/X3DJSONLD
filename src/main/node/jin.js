@@ -14,17 +14,18 @@ divisor[0] = scale[0];
 divisor[1] = scale[1];
 divisor[2] = scale[2];
 */
-let HUMANCHILD = 2;
+let HUMANCHILD = 4;
 
-json.X3D.Scene["-children"][HUMANCHILD] = json.X3D.Scene["-children"][HUMANCHILD+1];
+// json.X3D.Scene["-children"][HUMANCHILD] = json.X3D.Scene["-children"][HUMANCHILD+1];
 
 let scale = json.X3D.Scene["-children"][HUMANCHILD]["HAnimHumanoid"]["@scale"];
 let center = json.X3D.Scene["-children"][HUMANCHILD]["HAnimHumanoid"]["-skeleton"][0]["HAnimJoint"]["@center"];
 
-delete json.X3D.Scene["-children"][HUMANCHILD+1];
+// delete json.X3D.Scene["-children"][HUMANCHILD+1];
 
 let x = center[0];
 let y = center[1];
+let maxy = center[1];
 let z = center[2];
 
 
@@ -38,9 +39,12 @@ function centering(json) {
 				r_x = json["@center"][0];
 				r_z = json["@center"][2];
 			}
-			if (y >= json["@center"][1]) {
-				y = json["@center"][1];
-			}
+			if (json["@center"][1] >= maxy) {
+                                maxy = json["@center"][1];
+                        }
+			if (json["@center"][1] <= y) {
+                                y = json["@center"][1];
+                        }
 		} else if (typeof json[j] === 'object') {
 			centering(json[j]);
 		}
@@ -53,10 +57,13 @@ function transform(json, indent, parent, max, parentTranslation) {
 		if (j === "@translation") {
 			json[j][0] = json[j][0] - x;
 			json[j][1] = json[j][1] - y;
+			/*
+                        json[j][1] = json[j][1] * height / yscale;
+			*/
 			json[j][2] = json[j][2] - z;
-			json[j][0] = json[j][0] / scale[0];
-			json[j][1] = json[j][1] / scale[1];
-			json[j][2] = json[j][2] / scale[2];
+			json[j][0] = json[j][0] * scale[0];
+			json[j][1] = json[j][1] * scale[1];
+			json[j][2] = json[j][2] * scale[2];
 			translation[0] = json[j][0] + parentTranslation[0];
 			translation[1] = json[j][1] + parentTranslation[1];
 			translation[2] = json[j][2] + parentTranslation[2];
@@ -67,25 +74,31 @@ function transform(json, indent, parent, max, parentTranslation) {
 		} else if (j === "@center") {
 			json[j][0] = json[j][0] - x;
 			json[j][1] = json[j][1] - y;
+			/*
+                        json[j][1] = json[j][1] * height / yscale;
+			*/
 			json[j][2] = json[j][2] - z;
-			json[j][0] = json[j][0] / scale[0];
-			json[j][1] = json[j][1] / scale[1];
-			json[j][2] = json[j][2] / scale[2];
+			json[j][0] = json[j][0] * scale[0];
+			json[j][1] = json[j][1] * scale[1];
+			json[j][2] = json[j][2] * scale[2];
 			json[j][0] = json[j][0] + parentTranslation[0];
 			json[j][1] = json[j][1] + parentTranslation[1];
 			json[j][2] = json[j][2] + parentTranslation[2];
 			json[j][0] = parseFloat(json[j][0].toFixed(4));
 			json[j][1] = parseFloat(json[j][1].toFixed(4));
 			json[j][2] = parseFloat(json[j][2].toFixed(4));
-			// console.log(json["@name"]);
-			// console.log(json["@center"][0].toFixed(4), json["@center"][1].toFixed(4), json["@center"][2].toFixed(4));
+			console.log(json["@name"]);
+			console.log(json["@center"][0].toFixed(4), json["@center"][1].toFixed(4), json["@center"][2].toFixed(4));
 		} else if (j === "@centerOfRotation") {
 			json[j][0] = json[j][0] - x;
 			json[j][1] = json[j][1] - y;
+			/*
+                        json[j][1] = json[j][1] * height / yscale;
+			*/
 			json[j][2] = json[j][2] - z;
-			json[j][0] = json[j][0] / scale[0];
-			json[j][1] = json[j][1] / scale[1];
-			json[j][2] = json[j][2] / scale[2];
+			json[j][0] = json[j][0] * scale[0];
+			json[j][1] = json[j][1] * scale[1];
+			json[j][2] = json[j][2] * scale[2];
 			json[j][0] = json[j][0] + parentTranslation[0];
 			json[j][1] = json[j][1] + parentTranslation[1];
 			json[j][2] = json[j][2] + parentTranslation[2];
@@ -95,10 +108,13 @@ function transform(json, indent, parent, max, parentTranslation) {
 		} else if (j === "@position") {
 			json[j][0] = json[j][0] - x;
 			json[j][1] = json[j][1] - y;
+			/*
+                        json[j][1] = json[j][1] * height / yscale;
+			*/
 			json[j][2] = json[j][2] - z;
-			json[j][0] = json[j][0] / scale[0];
-			json[j][1] = json[j][1] / scale[1];
-			json[j][2] = json[j][2] / scale[2];
+			json[j][0] = json[j][0] * scale[0];
+			json[j][1] = json[j][1] * scale[1];
+			json[j][2] = json[j][2] * scale[2];
 			json[j][0] = json[j][0] + parentTranslation[0];
 			json[j][1] = json[j][1] + parentTranslation[1];
 			json[j][2] = json[j][2] + parentTranslation[2];
@@ -121,10 +137,13 @@ function transform(json, indent, parent, max, parentTranslation) {
 				if (!parent["TextureCoordinate"]) {
 					json[j][i+0] = json[j][i+0] - x;
 					json[j][i+1] = json[j][i+1] - y;
+					/*
+					json[j][i+1] = json[j][i+1] * height / yscale;
+					*/
 					json[j][i+2] = json[j][i+2] - z;
-					json[j][i+0] = json[j][i+0] / scale[0];
-					json[j][i+1] = json[j][i+1] / scale[1];
-					json[j][i+2] = json[j][i+2] / scale[2];
+					json[j][i+0] = json[j][i+0] * scale[0];
+					json[j][i+1] = json[j][i+1] * scale[1];
+					json[j][i+2] = json[j][i+2] * scale[2];
 					json[j][i+0] = json[j][i+0] + parentTranslation[0];
 					json[j][i+1] = json[j][i+1] + parentTranslation[1];
 					json[j][i+2] = json[j][i+2] + parentTranslation[2];
@@ -145,20 +164,21 @@ function transform(json, indent, parent, max, parentTranslation) {
 	}
 }
 
+let height = 1.87;
+
 centering(json);
 
 x = (l_x + r_x) / 2;
 z = (l_z + r_z) / 2;
-
-console.log(x, y, z);
+// let yscale = maxy - y;
 
 transform(json, 0, null, Math.INFINITY, [0,0,0]);
 
-console.log(scale);
+// console.log(scale);
 scale[0] = scale[0] / scale [0];
 scale[1] = scale[1] / scale [1];
 scale[2] = scale[2] / scale [2];
-console.log(scale);
+// console.log(scale);
 
 let out = JSON.stringify(json, null, 2);
 let outfile = "JinLOA4Canonical101.json";

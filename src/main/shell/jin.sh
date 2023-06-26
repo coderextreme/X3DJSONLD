@@ -1,7 +1,7 @@
 #!/bin/bash
 bash several.sh ../data/JinLOA4Canonical.x3d
 cd ../data
-node ../node/jin.js
+node ../node/jin.js > centers.txt
 node ../node/json2all.js ../data/JinLOA4Canonical101.json
 mv ../data/JinLOA4Canonical101.x3d.new ../data/JinLOA4Canonical101.x3d
 ~/Downloads/view3dscene-4.3.0-win64-x86_64/view3dscene/view3dscene.exe ../data/JinLOA4Canonical101.x3d
