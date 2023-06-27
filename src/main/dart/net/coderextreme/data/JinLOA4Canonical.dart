@@ -10,71 +10,7 @@ var X3D0 =  X3D(
           component_ : 
             component(
               name_ : SFString('HAnim'),
-              level_ : 1),
-          meta_ : [
-            meta(
-              name_ : SFString('title'),
-              content_ : SFString('JinLOA4.x3d')),
-
-            meta(
-              name_ : SFString('creator'),
-              content_ : SFString('Jin Hoon Lee and Min Joo Lee')),
-
-            meta(
-              name_ : SFString('translator'),
-              content_ : SFString('Chul Hee Jung and Myeong Won Lee')),
-
-            meta(
-              name_ : SFString('created'),
-              content_ : SFString('31 March 2011')),
-
-            meta(
-              name_ : SFString('translated'),
-              content_ : SFString('1 November 2014')),
-
-            meta(
-              name_ : SFString('modified'),
-              content_ : SFString('13 March 2021')),
-
-            meta(
-              name_ : SFString('description'),
-              content_ : SFString('Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model.')),
-
-            meta(
-              name_ : SFString('reference'),
-              content_ : SFString('KoreanCharacter00ReadMe.txt')),
-
-            meta(
-              name_ : SFString('reference'),
-              content_ : SFString('KoreanCharacterHumanMotion_Infotech2014_140706.pdf')),
-
-            meta(
-              name_ : SFString('reference'),
-              content_ : SFString('KoreanCharactersIllustrated.pdf')),
-
-            meta(
-              name_ : SFString('identifier'),
-              content_ : SFString('https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JinLOA4.x3d')),
-
-            meta(
-              name_ : SFString('generator'),
-              content_ : SFString('3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview')),
-
-            meta(
-              name_ : SFString('generator'),
-              content_ : SFString('Suwon HAnim Converter')),
-
-            meta(
-              name_ : SFString('generator'),
-              content_ : SFString('Gnu Image Manipulation Program, http://www.gimp.org')),
-
-            meta(
-              name_ : SFString('generator'),
-              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit')),
-
-            meta(
-              name_ : SFString('license'),
-              content_ : SFString('../license.html'))]),
+              level_ : 1)),
       Scene_ : 
         Scene(
           children_ : [
@@ -89,40 +25,18 @@ var X3D0 =  X3D(
               description_ : SFString('JinLOA4'),
               position_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(3)])),
 
+            Transform(
+              DEF_ : SFString('cordsysfloor'),
+              scale_ : SFVec3f([SFDouble(0.175), SFDouble(0.175), SFDouble(0.175)]),
+              children_ : [
+                Inline(
+                  url_ : MFString([SFString("JointCoordinateAxes.x3dv")]))]),
+
             HAnimHumanoid(
               name_ : SFString('JinLOA4'),
               DEF_ : SFString('hanim_JinLOA4'),
-              loa_ : 4,
               scale_ : SFVec3f([SFDouble(0.0225), SFDouble(0.0225), SFDouble(0.0225)]),
               version_ : SFString('2.0'),
-              metadata_ : [
-                MetadataSet(
-                  name_ : SFString('HAnimHumanoid.info'),
-                  reference_ : SFString('https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'),
-                  value_ : 
-                    MetadataString(
-                      name_ : SFString('authorName'),
-                      value_ : MFString([SFString("Jin Hoon Lee and Min Joo Lee, Chul Hee Jung and Myeong Won Lee")])),
-                  value_ : 
-                    MetadataString(
-                      name_ : SFString('authorEmail'),
-                      value_ : MFString([SFString("myeongwonlee@gmail.com")])),
-                  value_ : 
-                    MetadataString(
-                      name_ : SFString('creationDate'),
-                      value_ : MFString([SFString("31 March 2011")])),
-                  value_ : 
-                    MetadataString(
-                      name_ : SFString('gender'),
-                      value_ : MFString([SFString("female")])),
-                  value_ : 
-                    MetadataFloat(
-                      name_ : SFString('height'),
-                      value_ : MFFloat([SFFloat(1.5)])),
-                  value_ : 
-                    MetadataString(
-                      name_ : SFString('humanoidVersion'),
-                      value_ : MFString([SFString("2.0")]))),
               joints_ : [
                 HAnimJoint(
                   name_ : SFString('humanoid_root'),
@@ -147,7 +61,7 @@ var X3D0 =  X3D(
                                   texture_ : 
                                     ImageTexture(
                                       DEF_ : SFString('JinLOA4TextureAtlas'),
-                                      url_ : MFString([SFString("images/Jin.png"), SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/images/Jin.png")]))),
+                                      url_ : MFString([SFString("Jin.png"), SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/images/Jin.png")]))),
                               geometry_ : 
                                 IndexedFaceSet(
                                   coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(2), SFInt32(-1), SFInt32(0), SFInt32(2), SFInt32(3), SFInt32(-1), SFInt32(0), SFInt32(3), SFInt32(4), SFInt32(-1), SFInt32(0), SFInt32(4), SFInt32(5), SFInt32(-1), SFInt32(0), SFInt32(5), SFInt32(6), SFInt32(-1), SFInt32(0), SFInt32(6), SFInt32(7), SFInt32(-1), SFInt32(0), SFInt32(7), SFInt32(8), SFInt32(-1), SFInt32(0), SFInt32(8), SFInt32(9), SFInt32(-1), SFInt32(0), SFInt32(9), SFInt32(10), SFInt32(-1), SFInt32(0), SFInt32(10), SFInt32(11), SFInt32(-1), SFInt32(0), SFInt32(11), SFInt32(12), SFInt32(-1), SFInt32(0), SFInt32(12), SFInt32(1), SFInt32(-1), SFInt32(14), SFInt32(2), SFInt32(1), SFInt32(-1), SFInt32(1), SFInt32(13), SFInt32(14), SFInt32(-1), SFInt32(15), SFInt32(3), SFInt32(2), SFInt32(-1), SFInt32(2), SFInt32(14), SFInt32(15), SFInt32(-1), SFInt32(16), SFInt32(4), SFInt32(3), SFInt32(-1), SFInt32(3), SFInt32(15), SFInt32(16), SFInt32(-1), SFInt32(17), SFInt32(5), SFInt32(4), SFInt32(-1), SFInt32(4), SFInt32(16), SFInt32(17), SFInt32(-1), SFInt32(18), SFInt32(6), SFInt32(5), SFInt32(-1), SFInt32(5), SFInt32(17), SFInt32(18), SFInt32(-1), SFInt32(19), SFInt32(7), SFInt32(6), SFInt32(-1), SFInt32(6), SFInt32(18), SFInt32(19), SFInt32(-1), SFInt32(20), SFInt32(8), SFInt32(7), SFInt32(-1), SFInt32(7), SFInt32(19), SFInt32(20), SFInt32(-1), SFInt32(21), SFInt32(9), SFInt32(8), SFInt32(-1), SFInt32(8), SFInt32(20), SFInt32(21), SFInt32(-1), SFInt32(22), SFInt32(10), SFInt32(9), SFInt32(-1), SFInt32(9), SFInt32(21), SFInt32(22), SFInt32(-1), SFInt32(23), SFInt32(11), SFInt32(10), SFInt32(-1), SFInt32(10), SFInt32(22), SFInt32(23), SFInt32(-1), SFInt32(24), SFInt32(12), SFInt32(11), SFInt32(-1), SFInt32(11), SFInt32(23), SFInt32(24), SFInt32(-1), SFInt32(13), SFInt32(1), SFInt32(12), SFInt32(-1), SFInt32(12), SFInt32(24), SFInt32(13), SFInt32(-1), SFInt32(26), SFInt32(14), SFInt32(13), SFInt32(-1), SFInt32(13), SFInt32(25), SFInt32(26), SFInt32(-1), SFInt32(27), SFInt32(15), SFInt32(14), SFInt32(-1), SFInt32(14), SFInt32(26), SFInt32(27), SFInt32(-1), SFInt32(28), SFInt32(16), SFInt32(15), SFInt32(-1), SFInt32(15), SFInt32(27), SFInt32(28), SFInt32(-1), SFInt32(29), SFInt32(17), SFInt32(16), SFInt32(-1), SFInt32(16), SFInt32(28), SFInt32(29), SFInt32(-1), SFInt32(30), SFInt32(18), SFInt32(17), SFInt32(-1), SFInt32(17), SFInt32(29), SFInt32(30), SFInt32(-1), SFInt32(31), SFInt32(19), SFInt32(18), SFInt32(-1), SFInt32(18), SFInt32(30), SFInt32(31), SFInt32(-1), SFInt32(32), SFInt32(20), SFInt32(19), SFInt32(-1), SFInt32(19), SFInt32(31), SFInt32(32), SFInt32(-1), SFInt32(33), SFInt32(21), SFInt32(20), SFInt32(-1), SFInt32(20), SFInt32(32), SFInt32(33), SFInt32(-1), SFInt32(34), SFInt32(22), SFInt32(21), SFInt32(-1), SFInt32(21), SFInt32(33), SFInt32(34), SFInt32(-1), SFInt32(35), SFInt32(23), SFInt32(22), SFInt32(-1), SFInt32(22), SFInt32(34), SFInt32(35), SFInt32(-1), SFInt32(36), SFInt32(24), SFInt32(23), SFInt32(-1), SFInt32(23), SFInt32(35), SFInt32(36), SFInt32(-1), SFInt32(25), SFInt32(13), SFInt32(24), SFInt32(-1), SFInt32(24), SFInt32(36), SFInt32(25), SFInt32(-1), SFInt32(38), SFInt32(26), SFInt32(25), SFInt32(-1), SFInt32(25), SFInt32(37), SFInt32(38), SFInt32(-1), SFInt32(39), SFInt32(27), SFInt32(26), SFInt32(-1), SFInt32(26), SFInt32(38), SFInt32(39), SFInt32(-1), SFInt32(40), SFInt32(28), SFInt32(27), SFInt32(-1), SFInt32(27), SFInt32(39), SFInt32(40), SFInt32(-1), SFInt32(41), SFInt32(29), SFInt32(28), SFInt32(-1), SFInt32(28), SFInt32(40), SFInt32(41), SFInt32(-1), SFInt32(42), SFInt32(30), SFInt32(29), SFInt32(-1), SFInt32(29), SFInt32(41), SFInt32(42), SFInt32(-1), SFInt32(43), SFInt32(31), SFInt32(30), SFInt32(-1), SFInt32(30), SFInt32(42), SFInt32(43), SFInt32(-1), SFInt32(44), SFInt32(32), SFInt32(31), SFInt32(-1), SFInt32(31), SFInt32(43), SFInt32(44), SFInt32(-1), SFInt32(45), SFInt32(33), SFInt32(32), SFInt32(-1), SFInt32(32), SFInt32(44), SFInt32(45), SFInt32(-1), SFInt32(46), SFInt32(34), SFInt32(33), SFInt32(-1), SFInt32(33), SFInt32(45), SFInt32(46), SFInt32(-1), SFInt32(47), SFInt32(35), SFInt32(34), SFInt32(-1), SFInt32(34), SFInt32(46), SFInt32(47), SFInt32(-1), SFInt32(48), SFInt32(36), SFInt32(35), SFInt32(-1), SFInt32(35), SFInt32(47), SFInt32(48), SFInt32(-1), SFInt32(37), SFInt32(25), SFInt32(36), SFInt32(-1), SFInt32(36), SFInt32(48), SFInt32(37), SFInt32(-1), SFInt32(50), SFInt32(38), SFInt32(37), SFInt32(-1), SFInt32(37), SFInt32(49), SFInt32(50), SFInt32(-1), SFInt32(51), SFInt32(39), SFInt32(38), SFInt32(-1), SFInt32(38), SFInt32(50), SFInt32(51), SFInt32(-1), SFInt32(52), SFInt32(40), SFInt32(39), SFInt32(-1), SFInt32(39), SFInt32(51), SFInt32(52), SFInt32(-1), SFInt32(53), SFInt32(41), SFInt32(40), SFInt32(-1), SFInt32(40), SFInt32(52), SFInt32(53), SFInt32(-1), SFInt32(54), SFInt32(42), SFInt32(41), SFInt32(-1), SFInt32(41), SFInt32(53), SFInt32(54), SFInt32(-1), SFInt32(55), SFInt32(43), SFInt32(42), SFInt32(-1), SFInt32(42), SFInt32(54), SFInt32(55), SFInt32(-1), SFInt32(56), SFInt32(44), SFInt32(43), SFInt32(-1), SFInt32(43), SFInt32(55), SFInt32(56), SFInt32(-1), SFInt32(57), SFInt32(45), SFInt32(44), SFInt32(-1), SFInt32(44), SFInt32(56), SFInt32(57), SFInt32(-1), SFInt32(58), SFInt32(46), SFInt32(45), SFInt32(-1), SFInt32(45), SFInt32(57), SFInt32(58), SFInt32(-1), SFInt32(59), SFInt32(47), SFInt32(46), SFInt32(-1), SFInt32(46), SFInt32(58), SFInt32(59), SFInt32(-1), SFInt32(60), SFInt32(48), SFInt32(47), SFInt32(-1), SFInt32(47), SFInt32(59), SFInt32(60), SFInt32(-1), SFInt32(49), SFInt32(37), SFInt32(48), SFInt32(-1), SFInt32(48), SFInt32(60), SFInt32(49), SFInt32(-1), SFInt32(61), SFInt32(50), SFInt32(49), SFInt32(-1), SFInt32(61), SFInt32(51), SFInt32(50), SFInt32(-1), SFInt32(61), SFInt32(52), SFInt32(51), SFInt32(-1), SFInt32(61), SFInt32(53), SFInt32(52), SFInt32(-1), SFInt32(61), SFInt32(54), SFInt32(53), SFInt32(-1), SFInt32(61), SFInt32(55), SFInt32(54), SFInt32(-1), SFInt32(61), SFInt32(56), SFInt32(55), SFInt32(-1), SFInt32(61), SFInt32(57), SFInt32(56), SFInt32(-1), SFInt32(61), SFInt32(58), SFInt32(57), SFInt32(-1), SFInt32(61), SFInt32(59), SFInt32(58), SFInt32(-1), SFInt32(61), SFInt32(60), SFInt32(59), SFInt32(-1), SFInt32(61), SFInt32(49), SFInt32(60), SFInt32(-1)]),

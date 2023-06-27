@@ -10,23 +10,20 @@ var SFNode = require('./x3d.mjs');
 var head = require('./x3d.mjs');
 var component = require('./x3d.mjs');
 var SFInt32 = require('./x3d.mjs');
-var MFNode = require('./x3d.mjs');
-var meta = require('./x3d.mjs');
 var Scene = require('./x3d.mjs');
+var MFNode = require('./x3d.mjs');
 var WorldInfo = require('./x3d.mjs');
 var NavigationInfo = require('./x3d.mjs');
 var SFFloat = require('./x3d.mjs');
 var Viewpoint = require('./x3d.mjs');
 var SFVec3f = require('./x3d.mjs');
-var HAnimHumanoid = require('./x3d.mjs');
-var MetadataSet = require('./x3d.mjs');
-var MetadataString = require('./x3d.mjs');
-var MFString = require('./x3d.mjs');
-var MetadataFloat = require('./x3d.mjs');
-var MFFloat = require('./x3d.mjs');
-var HAnimJoint = require('./x3d.mjs');
-var HAnimSegment = require('./x3d.mjs');
 var Transform = require('./x3d.mjs');
+var Inline = require('./x3d.mjs');
+var MFString = require('./x3d.mjs');
+var HAnimHumanoid = require('./x3d.mjs');
+var HAnimJoint = require('./x3d.mjs');
+var MFFloat = require('./x3d.mjs');
+var HAnimSegment = require('./x3d.mjs');
 var Shape = require('./x3d.mjs');
 var Appearance = require('./x3d.mjs');
 var Material = require('./x3d.mjs');
@@ -47,71 +44,7 @@ var X3D0 =  new X3D({
           component : new SFNode(
             new component({
               name : new SFString("HAnim"),
-              level : new SFInt32(1)})),
-          meta : new MFNode([
-            new meta({
-              name : new SFString("title"),
-              content : new SFString("JinLOA4.x3d")}),
-
-            new meta({
-              name : new SFString("creator"),
-              content : new SFString("Jin Hoon Lee and Min Joo Lee")}),
-
-            new meta({
-              name : new SFString("translator"),
-              content : new SFString("Chul Hee Jung and Myeong Won Lee")}),
-
-            new meta({
-              name : new SFString("created"),
-              content : new SFString("31 March 2011")}),
-
-            new meta({
-              name : new SFString("translated"),
-              content : new SFString("1 November 2014")}),
-
-            new meta({
-              name : new SFString("modified"),
-              content : new SFString("13 March 2021")}),
-
-            new meta({
-              name : new SFString("description"),
-              content : new SFString("Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model.")}),
-
-            new meta({
-              name : new SFString("reference"),
-              content : new SFString("KoreanCharacter00ReadMe.txt")}),
-
-            new meta({
-              name : new SFString("reference"),
-              content : new SFString("KoreanCharacterHumanMotion_Infotech2014_140706.pdf")}),
-
-            new meta({
-              name : new SFString("reference"),
-              content : new SFString("KoreanCharactersIllustrated.pdf")}),
-
-            new meta({
-              name : new SFString("identifier"),
-              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JinLOA4.x3d")}),
-
-            new meta({
-              name : new SFString("generator"),
-              content : new SFString("3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview")}),
-
-            new meta({
-              name : new SFString("generator"),
-              content : new SFString("Suwon HAnim Converter")}),
-
-            new meta({
-              name : new SFString("generator"),
-              content : new SFString("Gnu Image Manipulation Program, http://www.gimp.org")}),
-
-            new meta({
-              name : new SFString("generator"),
-              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
-
-            new meta({
-              name : new SFString("license"),
-              content : new SFString("../license.html")})])})),
+              level : new SFInt32(1)}))})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
@@ -126,40 +59,18 @@ var X3D0 =  new X3D({
               description : new SFString("JinLOA4"),
               position : new SFVec3f([0,1,3])}),
 
+            new Transform({
+              DEF : new SFString("cordsysfloor"),
+              scale : new SFVec3f([0.175,0.175,0.175]),
+              children : new MFNode([
+                new Inline({
+                  url : new MFString(["JointCoordinateAxes.x3dv"])})])}),
+
             new HAnimHumanoid({
               name : new SFString("JinLOA4"),
               DEF : new SFString("hanim_JinLOA4"),
-              loa : new SFInt32(4),
               scale : new SFVec3f([0.0225,0.0225,0.0225]),
               version : new SFString("2.0"),
-              metadata : new MFNode([
-                new MetadataSet({
-                  name : new SFString("HAnimHumanoid.info"),
-                  reference : new SFString("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"),
-                  value : new SFNode(
-                    new MetadataString({
-                      name : new SFString("authorName"),
-                      value : new MFString(["Jin Hoon Lee and Min Joo Lee, Chul Hee Jung and Myeong Won Lee"])})),
-                  value : new SFNode(
-                    new MetadataString({
-                      name : new SFString("authorEmail"),
-                      value : new MFString(["myeongwonlee@gmail.com"])})),
-                  value : new SFNode(
-                    new MetadataString({
-                      name : new SFString("creationDate"),
-                      value : new MFString(["31 March 2011"])})),
-                  value : new SFNode(
-                    new MetadataString({
-                      name : new SFString("gender"),
-                      value : new MFString(["female"])})),
-                  value : new SFNode(
-                    new MetadataFloat({
-                      name : new SFString("height"),
-                      value : new MFFloat([1.5])})),
-                  value : new SFNode(
-                    new MetadataString({
-                      name : new SFString("humanoidVersion"),
-                      value : new MFString(["2.0"])}))}),
               joints : new MFNode([
                 new HAnimJoint({
                   name : new SFString("humanoid_root"),
@@ -184,7 +95,7 @@ var X3D0 =  new X3D({
                                   texture : new SFNode(
                                     new ImageTexture({
                                       DEF : new SFString("JinLOA4TextureAtlas"),
-                                      url : new MFString(["images/Jin.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/images/Jin.png"])}))})),
+                                      url : new MFString(["Jin.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/images/Jin.png"])}))})),
                               geometry : new SFNode(
                                 new IndexedFaceSet({
                                   coordIndex : new MFInt32([0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,14,2,1,-1,1,13,14,-1,15,3,2,-1,2,14,15,-1,16,4,3,-1,3,15,16,-1,17,5,4,-1,4,16,17,-1,18,6,5,-1,5,17,18,-1,19,7,6,-1,6,18,19,-1,20,8,7,-1,7,19,20,-1,21,9,8,-1,8,20,21,-1,22,10,9,-1,9,21,22,-1,23,11,10,-1,10,22,23,-1,24,12,11,-1,11,23,24,-1,13,1,12,-1,12,24,13,-1,26,14,13,-1,13,25,26,-1,27,15,14,-1,14,26,27,-1,28,16,15,-1,15,27,28,-1,29,17,16,-1,16,28,29,-1,30,18,17,-1,17,29,30,-1,31,19,18,-1,18,30,31,-1,32,20,19,-1,19,31,32,-1,33,21,20,-1,20,32,33,-1,34,22,21,-1,21,33,34,-1,35,23,22,-1,22,34,35,-1,36,24,23,-1,23,35,36,-1,25,13,24,-1,24,36,25,-1,38,26,25,-1,25,37,38,-1,39,27,26,-1,26,38,39,-1,40,28,27,-1,27,39,40,-1,41,29,28,-1,28,40,41,-1,42,30,29,-1,29,41,42,-1,43,31,30,-1,30,42,43,-1,44,32,31,-1,31,43,44,-1,45,33,32,-1,32,44,45,-1,46,34,33,-1,33,45,46,-1,47,35,34,-1,34,46,47,-1,48,36,35,-1,35,47,48,-1,37,25,36,-1,36,48,37,-1,50,38,37,-1,37,49,50,-1,51,39,38,-1,38,50,51,-1,52,40,39,-1,39,51,52,-1,53,41,40,-1,40,52,53,-1,54,42,41,-1,41,53,54,-1,55,43,42,-1,42,54,55,-1,56,44,43,-1,43,55,56,-1,57,45,44,-1,44,56,57,-1,58,46,45,-1,45,57,58,-1,59,47,46,-1,46,58,59,-1,60,48,47,-1,47,59,60,-1,49,37,48,-1,48,60,49,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1]),
