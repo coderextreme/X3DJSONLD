@@ -14,10 +14,8 @@ pushd ../java
 javac -cp "${CLASSPATH}" net/coderextreme/RunSaxon.java
 popd
 
-for FILE in $@
-do
-	X3D=`basename $FILE .x3d`
-
+	#if false
+	#then
 echo translating to json
 (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToJson.xslt ---
 # echo translating to nashorn
@@ -28,18 +26,24 @@ echo translating to java
 (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToJava.xslt -java ---../java/net/x3djsonld/data/
 echo translating to python
 (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToPython.xslt -py ---../python/net/x3djsonld/data/
+	#fi
+for FILE in $@
+do
+	X3D=`basename $FILE .x3d`
+
 echo compiling
 pushd ../java
-find ./net/x3djsonld/data -name "${X3D}.java" | xargs -L 1 -P $PROCESSORS javac -J-Xss1g -J-Xmx4g
+find ./net/x3djsonld/data -name "${X3D}.java" | xargs -L 1 -P $PROCESSORS javac -cp ".;C:/Users/john/pythonSAI/saxon-he-10.6.jar;C:/Users/john/pythonSAI/X3DJSAIL.4.0.full.jar"
+# -J-Xss1g -J-Xmx4g
 echo running java
-echo export CLASSPATH='"'${CLASSPATH}'"'
-for i in `ls "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.\./net\/x3djsonld/' -e 's/\.x3d$//'`
-do
-	# java -Xss1g -Xmx4g $i x3d ../data/$i.don.x3d # sh runToError.sh
-	mkdir -p ../data/`dirname $i` 
-	echo '$' java $i -validate ../data/`basename $i`.x3d
-	java -cp "${CLASSPATH}" $i -validate ../data/`basename $i`.x3d
-done
+echo export CLASSPATH=".;C:/Users/john/pythonSAI/saxon-he-10.6.jar;C:/Users/john/pythonSAI/X3DJSAIL.4.0.full.jar"
+export CLASSPATH=".;C:/Users/john/pythonSAI/saxon-he-10.6.jar;C:/Users/john/pythonSAI/X3DJSAIL.4.0.full.jar"
+#for i in `ls "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.\./net\/x3djsonld/' -e 's/\.x3d$//'`
+#do
+	mkdir -p net/x3djsonld/data
+	echo '$' java -cp ".;C:/Users/john/pythonSAI/saxon-he-10.6.jar;C:/Users/john/pythonSAI/X3DJSAIL.4.0.full.jar" net/x3djsonld/data/${X3D}
+	java -cp ".;C:/Users/john/pythonSAI/saxon-he-10.6.jar;C:/Users/john/pythonSAI/X3DJSAIL.4.0.full.jar" net/x3djsonld/data/${X3D}
+#done
 popd
 # echo running jjs
 # pushd ../nashorn
