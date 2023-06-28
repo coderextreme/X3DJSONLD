@@ -1,34 +1,34 @@
 'use strict';
-var X3D = require('./x3d.js');
+var X3D = require('./x3d.mjs');
 try {
 	var fs = require('fs');
 } catch (e) {
 console.log("Problems loading fs. On browser?",e);
 }
-var SFString = require('./x3d.js');
-var SFNode = require('./x3d.js');
-var head = require('./x3d.js');
-var component = require('./x3d.js');
-var SFInt32 = require('./x3d.js');
-var MFNode = require('./x3d.js');
-var meta = require('./x3d.js');
-var Scene = require('./x3d.js');
-var WorldInfo = require('./x3d.js');
-var NavigationInfo = require('./x3d.js');
-var Viewpoint = require('./x3d.js');
-var Background = require('./x3d.js');
-var MFString = require('./x3d.js');
-var Transform = require('./x3d.js');
-var Shape = require('./x3d.js');
-var Sphere = require('./x3d.js');
-var Appearance = require('./x3d.js');
-var Material = require('./x3d.js');
-var SFColor = require('./x3d.js');
-var ComposedCubeMapTexture = require('./x3d.js');
-var ImageTexture = require('./x3d.js');
-var ComposedShader = require('./x3d.js');
-var field = require('./x3d.js');
-var ShaderPart = require('./x3d.js');
+var SFString = require('./x3d.mjs');
+var SFNode = require('./x3d.mjs');
+var head = require('./x3d.mjs');
+var component = require('./x3d.mjs');
+var SFInt32 = require('./x3d.mjs');
+var MFNode = require('./x3d.mjs');
+var meta = require('./x3d.mjs');
+var Scene = require('./x3d.mjs');
+var WorldInfo = require('./x3d.mjs');
+var NavigationInfo = require('./x3d.mjs');
+var Viewpoint = require('./x3d.mjs');
+var Background = require('./x3d.mjs');
+var MFString = require('./x3d.mjs');
+var Transform = require('./x3d.mjs');
+var Shape = require('./x3d.mjs');
+var Sphere = require('./x3d.mjs');
+var Appearance = require('./x3d.mjs');
+var Material = require('./x3d.mjs');
+var SFColor = require('./x3d.mjs');
+var ComposedCubeMapTexture = require('./x3d.mjs');
+var ImageTexture = require('./x3d.mjs');
+var ComposedShader = require('./x3d.mjs');
+var field = require('./x3d.mjs');
+var ShaderPart = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),

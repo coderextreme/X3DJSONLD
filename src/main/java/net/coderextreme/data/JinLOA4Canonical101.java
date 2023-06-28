@@ -54,7 +54,7 @@ public class JinLOA4Canonical101 {
         .addChild(new Viewpoint().setCenterOfRotation(new float[] {-0.0002f,0.0139f,-0.1019f}).setDescription("JinLOA4").setPosition(new float[] {-0.0002f,0.0139f,-0.0344f}))
         .addChild(new Transform().setDEF("cordsysfloor").setScale(new float[] {0.175f,0.175f,0.175f})
           .addChild(new Inline().setUrl(new MFString0().getArray())))
-        .addChild(new HAnimHumanoid().setName("JinLOA4").setDEF("hanim_JinLOA4").setScale(new float[] {1f,1f,1f}).setVersion("2.0")
+        .addChild(new HAnimHumanoid().setName("JinLOA4").setDEF("hanim_JinLOA4").setVersion("2.0")
           .addSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(new float[] {-0.0002f,0.8174f,-0.1178f}).setUlimit(new MFFloat1().getArray()).setLlimit(new MFFloat2().getArray())
             .addChild(new HAnimSegment().setName("sacrum").setDEF("hanim_sacrum")
               .addChild(new Transform().setTranslation(new float[] {-0.0002f,0.8174f,-0.1178f})

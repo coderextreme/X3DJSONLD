@@ -1,30 +1,30 @@
 'use strict';
-var X3D = require('./x3d.js');
+var X3D = require('./x3d.mjs');
 try {
 	var fs = require('fs');
 } catch (e) {
 console.log("Problems loading fs. On browser?",e);
 }
-var SFString = require('./x3d.js');
-var SFNode = require('./x3d.js');
-var head = require('./x3d.js');
-var MFNode = require('./x3d.js');
-var meta = require('./x3d.js');
-var Scene = require('./x3d.js');
-var Script = require('./x3d.js');
-var field = require('./x3d.js');
-var Shape = require('./x3d.js');
-var Appearance = require('./x3d.js');
-var Material = require('./x3d.js');
-var SFColor = require('./x3d.js');
-var Sphere = require('./x3d.js');
-var Sound = require('./x3d.js');
-var SFFloat = require('./x3d.js');
-var AudioClip = require('./x3d.js');
-var SFTime = require('./x3d.js');
-var MFString = require('./x3d.js');
-var TouchSensor = require('./x3d.js');
-var ROUTE = require('./x3d.js');
+var SFString = require('./x3d.mjs');
+var SFNode = require('./x3d.mjs');
+var head = require('./x3d.mjs');
+var MFNode = require('./x3d.mjs');
+var meta = require('./x3d.mjs');
+var Scene = require('./x3d.mjs');
+var Script = require('./x3d.mjs');
+var field = require('./x3d.mjs');
+var Shape = require('./x3d.mjs');
+var Appearance = require('./x3d.mjs');
+var Material = require('./x3d.mjs');
+var SFColor = require('./x3d.mjs');
+var Sphere = require('./x3d.mjs');
+var Sound = require('./x3d.mjs');
+var SFFloat = require('./x3d.mjs');
+var AudioClip = require('./x3d.mjs');
+var SFTime = require('./x3d.mjs');
+var MFString = require('./x3d.mjs');
+var TouchSensor = require('./x3d.mjs');
+var ROUTE = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       version : new SFString("3.0"),

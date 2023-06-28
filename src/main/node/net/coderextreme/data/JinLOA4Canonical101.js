@@ -22,7 +22,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.Viewpoint()).setCenterOfRotation(java.newArray("float", [java.newFloat(-0.0002), java.newFloat(0.0139), java.newFloat(-0.1019)])).setDescription("JinLOA4").setPosition(java.newArray("float", [java.newFloat(-0.0002), java.newFloat(0.0139), java.newFloat(-0.0344)])))
         .addChild((new autoclass.Transform()).setDEF("cordsysfloor").setScale(java.newArray("float", [java.newFloat(0.175), java.newFloat(0.175), java.newFloat(0.175)]))
           .addChild((new autoclass.Inline()).setUrl(java.newArray("java.lang.String", ["JointCoordinateAxes.x3dv"]))))
-        .addChild((new autoclass.HAnimHumanoid()).setName("JinLOA4").setDEF("hanim_JinLOA4").setScale(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)])).setVersion("2.0")
+        .addChild((new autoclass.HAnimHumanoid()).setName("JinLOA4").setDEF("hanim_JinLOA4").setVersion("2.0")
           .addSkeleton((new autoclass.HAnimJoint()).setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(java.newArray("float", [java.newFloat(-0.0002), java.newFloat(0.8174), java.newFloat(-0.1178)])).setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)]))
             .addChild((new autoclass.HAnimSegment()).setName("sacrum").setDEF("hanim_sacrum")
               .addChild((new autoclass.Transform()).setTranslation(java.newArray("float", [java.newFloat(-0.0002), java.newFloat(0.8174), java.newFloat(-0.1178)]))

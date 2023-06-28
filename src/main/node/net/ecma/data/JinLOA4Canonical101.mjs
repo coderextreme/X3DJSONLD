@@ -69,7 +69,6 @@ var X3D0 =  new X3D({
             new HAnimHumanoid({
               name : new SFString("JinLOA4"),
               DEF : new SFString("hanim_JinLOA4"),
-              scale : new SFVec3f([1,1,1]),
               version : new SFString("2.0"),
               joints : new MFNode([
                 new HAnimJoint({

@@ -8,7 +8,7 @@ import org.web3d.x3d.jsail.Interpolation.*;
 import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Time.*;
 
-// Javadoc annotations follow, see below for source.
+// Javadoc annotations follow, see below for Java source code.
 /**
  * <p> Prototypes for HAnimBehavior node, which collects OrientationInterpolators for aggregate animation of an HAnim humanoid model, and HAnimBodyBehaviorChooser, which selects one body and enables/disables multiple aggregated behaviors. </p>
  <p> Related links: HAnimBehaviorPrototypes.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>

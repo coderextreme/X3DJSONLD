@@ -859,3 +859,85 @@ KoreanCharacterMotionAnnexD01Jin.prototype = {
       .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
       .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
       .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
+      .addSegments((new autoclass.HAnimSegment()))
+      .addSegments((new autoclass.HAnimSegment()))
+      .addSegments((new autoclass.HAnimSegment()))
+      .addSegments((new autoclass.HAnimSegment()))
+      .addSegments((new autoclass.HAnimSegment()))
+      .addSegments((new autoclass.HAnimSegment()))
+      .addSegments((new autoclass.HAnimSegment()))
+      .addSegments((new autoclass.HAnimSegment()))
+      .addSegments((new autoclass.HAnimSegment()))
+      .addSegments((new autoclass.HAnimSegment()))
+      .addSegments((new autoclass.HAnimSegment()))
+      .addSegments((new autoclass.HAnimSegment()))
+      .addSegments((new autoclass.HAnimSegment()))
+      .addSegments((new autoclass.HAnimSegment()))
+      .addSegments((new autoclass.HAnimSegment()))
+      .addSegments((new autoclass.HAnimSegment()))
+      .addSegments((new autoclass.HAnimSegment()))
+      .addSegments((new autoclass.HAnimSegment()))
+      .addChild((new autoclass.HAnimMotion("hanim_motion_animation")).setName("motion_animation").setChannels(this.hanim_motion_animation_4_242_channels).setEnabled(false).setJoints(this.hanim_motion_animation_4_242_joints).setSkeletalConfiguration(BASIC).setTotalFrameCount(392).setValues(this.hanim_motion_animation_4_242_values))));
+  },
+  // end of initialize() method
+
+
+  /** Provide a shallow copy of the X3D model.
+   * @return KoreanCharacterMotionAnnexD01Jin model
+   */
+  getX3dModel : function()
+  {	  
+	  return this.x3dModel;
+  },
+  
+  /** Indicate X3DJSAIL validation results for this X3D model.
+   * @return validation results plus exception information, if any
+   */
+  validateSelf : function()
+  {
+	var validationResult = "";
+	var  exceptionResult = "";
+	try
+	{
+		this.initialize();
+		
+		if ((this.getX3dModel() == null) || (this.getX3dModel().getHead() == null))
+		{
+			validationResult = "empty scene, nothing to validate. " + this.x3dModel.validate();
+			return validationResult;
+		}
+		validationResult += this.x3dModel.validate(); // walk entire tree to validate correctness
+	}
+	catch (e)
+	{
+		exceptionResult = e; // report exception failures, if any
+	}
+	if  (exceptionResult === "" && validationResult === "")
+	     return "success";
+	else
+	{
+		var returnMessage = "";
+		if  (exceptionResult !== "" && validationResult !== "")
+			returnMessage += "\n*** ";
+		returnMessage += exceptionResult;
+		if  (exceptionResult === "" && validationResult !== "")
+			returnMessage = "\n" + returnMessage; // skip line before meta tags, etc.
+		returnMessage += validationResult;
+		return returnMessage;
+	}
+  },
+    /** Default main() method provided for test purposes.
+     * @param argv input parameters
+     */
+    main : function (argv)
+    {
+		var testObject = new KoreanCharacterMotionAnnexD01Jin();
+		console.log ("KoreanCharacterMotionAnnexD01Jin execution self-validation test results: " + testObject.validateSelf());
+	}
+}
+new KoreanCharacterMotionAnnexD01Jin().main();

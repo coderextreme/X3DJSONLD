@@ -14,12 +14,12 @@ import org.web3d.x3d.jsail.Shape.*;
 // Javadoc annotations follow, see below for Java source code.
 /**
  * <p> An attempt at a standard LOA-4 skeleton. </p>
- <p> Related links: JohnBoy.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: skeletonJoe.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.JohnBoy&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.skeletonJoe&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -66,10 +66,10 @@ import org.web3d.x3d.jsail.Shape.*;
 	* @author John Carlson
  */
 
-public class JohnBoy
+public class skeletonJoe
 {
 	/** Default constructor to create this object. */
-	public JohnBoy ()
+	public skeletonJoe ()
 	{
 	  initialize();
 	}
@@ -1191,7 +1191,7 @@ public class JohnBoy
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return JohnBoy model
+	 * @return skeletonJoe model
 	 */
 	public X3D getX3dModel()
 	{	  
@@ -1209,7 +1209,7 @@ public class JohnBoy
      */
     public static void main(String args[])
     {
-        X3D thisExampleX3dModel = new JohnBoy().getX3dModel();
+        X3D thisExampleX3dModel = new skeletonJoe().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -1240,13 +1240,13 @@ public class JohnBoy
 			}
 		}
 		if      (argumentsLoadNewModel)
-			System.out.println("WARNING: \"net.x3djsonld.data.JohnBoy\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+			System.out.println("WARNING: \"net.x3djsonld.data.skeletonJoe\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
 			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
-			System.out.print("Java program \"net.x3djsonld.data.JohnBoy\" self-validation test results: ");
+			System.out.print("Java program \"net.x3djsonld.data.skeletonJoe\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
             if (validationResults.startsWith("\n"))
                 System.out.println();
