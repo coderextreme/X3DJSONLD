@@ -18,7 +18,7 @@
   "dependencies": {
     "@xmldom/xmldom": "^0.8.8",
     "ajv": "*",
-    "ajv-formats": "*",
+    "ajv-formats": "^2.1.1",
     "ajv-i18n": "*",
     "buffer": "^6.0.3",
     "esm": "^3.2.25",
@@ -40,7 +40,7 @@
   },
   "scripts": {
     "start": "node app.js",
-    "postinstall": "rem bash build.sh",
+    "postinstall": "bash build.sh",
     "buildthreex3dloader": "browserify src/main/node/threeLoadFile.js > src/main/node/bundle.js",
     "test": "web-test-runner ./dist/**/*.spec.js"
   }
