@@ -1,30 +1,30 @@
 'use strict';
-var X3D = require('./x3d.js');
+var X3D = require('./x3d.mjs');
 try {
 	var fs = require('fs');
 } catch (e) {
 console.log("Problems loading fs. On browser?",e);
 }
-var SFString = require('./x3d.js');
-var SFNode = require('./x3d.js');
-var head = require('./x3d.js');
-var MFNode = require('./x3d.js');
-var meta = require('./x3d.js');
-var Scene = require('./x3d.js');
-var WorldInfo = require('./x3d.js');
-var Transform = require('./x3d.js');
-var Shape = require('./x3d.js');
-var Appearance = require('./x3d.js');
-var Material = require('./x3d.js');
-var SFFloat = require('./x3d.js');
-var SFColor = require('./x3d.js');
-var Cylinder = require('./x3d.js');
-var SFVec3f = require('./x3d.js');
-var Sphere = require('./x3d.js');
-var Group = require('./x3d.js');
-var SFRotation = require('./x3d.js');
-var Background = require('./x3d.js');
-var MFColor = require('./x3d.js');
+var SFString = require('./x3d.mjs');
+var SFNode = require('./x3d.mjs');
+var head = require('./x3d.mjs');
+var MFNode = require('./x3d.mjs');
+var meta = require('./x3d.mjs');
+var Scene = require('./x3d.mjs');
+var WorldInfo = require('./x3d.mjs');
+var Transform = require('./x3d.mjs');
+var Shape = require('./x3d.mjs');
+var Appearance = require('./x3d.mjs');
+var Material = require('./x3d.mjs');
+var SFFloat = require('./x3d.mjs');
+var SFColor = require('./x3d.mjs');
+var Cylinder = require('./x3d.mjs');
+var SFVec3f = require('./x3d.mjs');
+var Sphere = require('./x3d.mjs');
+var Group = require('./x3d.mjs');
+var SFRotation = require('./x3d.mjs');
+var Background = require('./x3d.mjs');
+var MFColor = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Interchange"),

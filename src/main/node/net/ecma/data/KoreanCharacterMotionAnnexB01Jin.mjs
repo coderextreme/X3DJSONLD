@@ -1,32 +1,32 @@
 'use strict';
-var X3D = require('./x3d.js');
+var X3D = require('./x3d.mjs');
 try {
 	var fs = require('fs');
 } catch (e) {
 console.log("Problems loading fs. On browser?",e);
 }
-var SFString = require('./x3d.js');
-var SFNode = require('./x3d.js');
-var head = require('./x3d.js');
-var component = require('./x3d.js');
-var SFInt32 = require('./x3d.js');
-var MFNode = require('./x3d.js');
-var meta = require('./x3d.js');
-var Scene = require('./x3d.js');
-var NavigationInfo = require('./x3d.js');
-var SFFloat = require('./x3d.js');
-var Viewpoint = require('./x3d.js');
-var SFVec3f = require('./x3d.js');
-var Group = require('./x3d.js');
-var TimeSensor = require('./x3d.js');
-var SFTime = require('./x3d.js');
-var SFBool = require('./x3d.js');
-var PositionInterpolator = require('./x3d.js');
-var MFFloat = require('./x3d.js');
-var MFVec3f = require('./x3d.js');
-var OrientationInterpolator = require('./x3d.js');
-var MFRotation = require('./x3d.js');
-var ROUTE = require('./x3d.js');
+var SFString = require('./x3d.mjs');
+var SFNode = require('./x3d.mjs');
+var head = require('./x3d.mjs');
+var component = require('./x3d.mjs');
+var SFInt32 = require('./x3d.mjs');
+var MFNode = require('./x3d.mjs');
+var meta = require('./x3d.mjs');
+var Scene = require('./x3d.mjs');
+var NavigationInfo = require('./x3d.mjs');
+var SFFloat = require('./x3d.mjs');
+var Viewpoint = require('./x3d.mjs');
+var SFVec3f = require('./x3d.mjs');
+var Group = require('./x3d.mjs');
+var TimeSensor = require('./x3d.mjs');
+var SFTime = require('./x3d.mjs');
+var SFBool = require('./x3d.mjs');
+var PositionInterpolator = require('./x3d.mjs');
+var MFFloat = require('./x3d.mjs');
+var MFVec3f = require('./x3d.mjs');
+var OrientationInterpolator = require('./x3d.mjs');
+var MFRotation = require('./x3d.mjs');
+var ROUTE = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),

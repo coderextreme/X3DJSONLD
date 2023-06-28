@@ -11,16 +11,16 @@ var autoclass = require('./X3Dautoclass');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> BVH file conversion support: test and visualize various rotations in order to properly configure converter from Euler angles to SFRotation values. </p>
- <p> Related links: <a href="../../../MotionAnimation/RotationTests.java">RotationTests.java</a> source, <a href="../../../MotionAnimation/RotationTestsIndex.html" target="_top">RotationTests catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: RotationTests.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.RotationTests&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="../../../MotionAnimation/RotationTests.x3d">RotationTests.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/MotionAnimation/RotationTests.x3d">RotationTests.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -36,15 +36,15 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 20 October 2019 </td>
+			<td> 16 January 2022 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="../../../MotionAnimation/RotationTests.png">RotationTests.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/MotionAnimation/RotationTests.png">RotationTests.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="../../../MotionAnimation/BvhConversion1.x3d">BvhConversion1.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/MotionAnimation/BvhConversion1.x3d">BvhConversion1.x3d</a> </td>
 		</tr>
 		<tr style="color:burntorange">
 			<td style="text-align:right; vertical-align: text-top;"> <i> warning </i> </td>
@@ -52,7 +52,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="../../../MotionAnimation/../Animation/RotationCalculatorExample.x3d">../Animation/RotationCalculatorExample.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/MotionAnimation/../Animation/RotationCalculatorExample.x3d">../Animation/RotationCalculatorExample.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> drawing </i> </td>
@@ -68,11 +68,11 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://x3dgraphics.com/examples/X3dForAdvancedModeling/MotionAnimation/RotationTests.x3d" target="_blank">https://x3dgraphics.com/examples/X3dForAdvancedModeling/MotionAnimation/RotationTests.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/MotionAnimation/RotationTests.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/HumanoidAnimation/MotionAnimation/RotationTests.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="../../../MotionAnimation/license.html">license.html</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/MotionAnimation/license.html">license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -221,7 +221,7 @@ RotationTests.prototype = {
     .addMeta((new autoclass.meta()).setName("description").setContent("BVH file conversion support: test and visualize various rotations in order to properly configure converter from Euler angles to SFRotation values."))
     .addMeta((new autoclass.meta()).setName("creator").setContent("Don Brutzman"))
     .addMeta((new autoclass.meta()).setName("created").setContent("17 December 2016"))
-    .addMeta((new autoclass.meta()).setName("modified").setContent("20 October 2019"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("16 January 2022"))
     .addMeta((new autoclass.meta()).setName("Image").setContent("RotationTests.png"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("BvhConversion1.x3d"))
     .addMeta((new autoclass.meta()).setName("warning").setContent("under development: euler-angle conversions still problematic, single-step animation reveals that animations are not smooth."))
@@ -229,7 +229,7 @@ RotationTests.prototype = {
     .addMeta((new autoclass.meta()).setName("drawing").setContent("https://savage.nps.edu/X3D-Edit/images/RotationCalculator.png"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("Java BVH to X3D Converter, org.web3d.x3d.hanim.bvh package"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/MotionAnimation/RotationTests.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/MotionAnimation/RotationTests.x3d"))
     .addMeta((new autoclass.meta()).setName("license").setContent("license.html")))
   .setScene((new autoclass.Scene())
     .addComments(" initial 3 rotations from 1.bvh, Zrotation Xrotation Yrotation: -1.829527 -4.400301 -0.381611, 2.832229 5.801149 2.553770, -3.939975 -3.766201 -3.474078 ")

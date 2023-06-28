@@ -12,7 +12,7 @@ meta(name="modified", content="05 May 2017"),
 meta(name="description", content="12 extrusions to test prototype expander"),
 meta(name="identifier", content="https://coderextreme.net/x3d/qq3.x3d"),
 meta(name="generator", content="manual"),
-meta(name="translated", content="21 June 2023"),
+meta(name="translated", content="28 June 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
