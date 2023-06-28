@@ -35,7 +35,6 @@ var X3D0 =  X3D(
             HAnimHumanoid(
               name_ : SFString('JinLOA4'),
               DEF_ : SFString('hanim_JinLOA4'),
-              scale_ : SFVec3f([SFDouble(1), SFDouble(1), SFDouble(1)]),
               version_ : SFString('2.0'),
               joints_ : [
                 HAnimJoint(

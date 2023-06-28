@@ -11,11 +11,11 @@ var autoclass = require('./X3Dautoclass');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> An attempt at a standard LOA-4 skeleton. </p>
- <p> Related links: Humanoid4.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: Humanoid4_1.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.Humanoid4&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.Humanoid4_1&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -66,7 +66,7 @@ var autoclass = require('./X3Dautoclass');
 	* @author John Carlson
  */
 
-function Humanoid4
+function Humanoid4_1
   /** Default constructor to create this object. */
   ()
   {
@@ -75,7 +75,7 @@ function Humanoid4
     this.initialize();
     return this;
   }
-Humanoid4.prototype = {
+Humanoid4_1.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -2338,7 +2338,7 @@ Humanoid4.prototype = {
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return Humanoid4 model
+   * @return Humanoid4_1 model
    */
   getX3dModel : function()
   {	  
@@ -2386,8 +2386,8 @@ Humanoid4.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new Humanoid4();
-		console.log ("Humanoid4 execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new Humanoid4_1();
+		console.log ("Humanoid4_1 execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new Humanoid4().main();
+new Humanoid4_1().main();

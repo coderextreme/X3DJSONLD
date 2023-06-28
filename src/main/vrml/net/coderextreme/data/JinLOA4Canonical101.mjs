@@ -42,7 +42,6 @@ browser.currentScene.children[3] = Transform7;
 let HAnimHumanoid9 = browser.currentScene.createNode("HAnimHumanoid");
 HAnimHumanoid9.name = "JinLOA4";
 HAnimHumanoid9.DEF = "hanim_JinLOA4";
-HAnimHumanoid9.scale = new SFVec3f(new float[1,1,1]);
 HAnimHumanoid9.version = "2.0";
 let HAnimJoint10 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint10.name = "humanoid_root";

@@ -6,7 +6,7 @@ print(
 X3D(profile="Interchange", version="3.0", 
 head=head(children=[meta(name="generator", content="tovrmlx3d, http://castle-engine.sourceforge.net/view3dscene.php#section_converting"),
 meta(name="source", content="t1.wrl"),
-meta(name="translated", content="21 June 2023"),
+meta(name="translated", content="28 June 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 

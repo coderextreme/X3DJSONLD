@@ -157,12 +157,12 @@ SpatialAudioCameraAnimation.prototype = {
             .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"Saxophone\""))
               .setFontStyle((new autoclass.FontStyle())))))))
     .addChild((new autoclass.ListenerPointSource()).setId("ListenerPointSource").setTrackCurrentView(true))
-    .addChild((new autoclass.StreamAudioDestination()).setId("AudioDestination")
-      .addChild((new autoclass.SpatialSound("Audio1")).setId("SpatialSound1")
-        .addChild((new autoclass.Gain()).setId("Gain1")
+    .addChild((new autoclass.StreamAudioDestination()).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS").setId("AudioDestination")
+      .addChild((new autoclass.SpatialSound("Audio1")).setDistanceModel("INVERSE").setId("SpatialSound1")
+        .addChild((new autoclass.Gain()).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS").setId("Gain1")
           .addChild((new autoclass.AudioClip()).setDescription("Violin").setId("AudioClip1").setLoop(true).setUrl(new autoclass.MFString("\"sound/violin.mp3\" \"https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3\"")))))
-      .addChild((new autoclass.SpatialSound("Audio2")).setId("SpatialSound2")
-        .addChild((new autoclass.Gain()).setId("Gain2")
+      .addChild((new autoclass.SpatialSound("Audio2")).setDistanceModel("INVERSE").setId("SpatialSound2")
+        .addChild((new autoclass.Gain()).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS").setId("Gain2")
           .addChild((new autoclass.AudioClip()).setDescription("Saxophone").setId("AudioClip2").setLoop(true).setUrl(new autoclass.MFString("\"sound/saxophone.mp3\" \"https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3\"")))))));
   },
   // end of initialize() method

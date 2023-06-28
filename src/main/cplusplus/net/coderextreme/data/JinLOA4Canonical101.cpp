@@ -48,7 +48,6 @@ group->addChildren(*Transform7);
 CHAnimHumanoid* HAnimHumanoid9 = (CHAnimHumanoid *)(m_pScene.createNode("HAnimHumanoid"));
 HAnimHumanoid9->setName("JinLOA4");
 HAnimHumanoid9->setDEF("hanim_JinLOA4");
-HAnimHumanoid9->setScale(new float[3]{1,1,1});
 HAnimHumanoid9->setVersion("2.0");
 CHAnimJoint* HAnimJoint10 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint10->setName("humanoid_root");
