@@ -20,7 +20,7 @@ meta(name="description", content="Example HelloWorldProgram creates an X3D model
 meta(name="reference", content="https://www.web3d.org/specifications/java/X3DJSAIL.html"),
 meta(name="generator", content="HelloWorldProgramOutput.java"),
 meta(name="created", content="6 September 2016"),
-meta(name="modified", content="29 January 2023"),
+meta(name="modified", content="29 April 2023"),
 meta(name="generator", content="X3D Java Scene Access Interface Library (X3DJSAIL)"),
 meta(name="generator", content="https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"),
 meta(name="generator", content="Netbeans https://www.netbeans.org"),
