@@ -1,14 +1,8 @@
-// var loadValidate = require('./loadValidate.js');
-
-var loadValidator = new loadValidate();
-window.loadValidator = loadValidator;
-
-function loadJson(url) {
-	$.getJSON(url, function(json) {
-		updateFromJson(json, url);
-		updateXml(json, url);
-	})
-	.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
+async function loadJson(url) {
+	var response = await fetch(url);
+	var json = await response.json();
+	updateFromJson(json, url);
+	updateXml(json, url);
 }
 
 $(document).ready(function() {
