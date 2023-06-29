@@ -544,6 +544,7 @@ function getXmlString(xml) {
 }
 
 function convertXmlToJson(xmlString, path) {
+	/*
 	output = SaxonJS2N.transform({
 		stylesheetLocation: "../lib/stylesheets/X3dToJson.sef.json",
 		sourceText: xmlString,
@@ -554,6 +555,7 @@ function convertXmlToJson(xmlString, path) {
 	jsobj = JSON.parse(jsobj);
 	console.log(jsobj);
 	return jsobj;
+	*/
 
     if (typeof DOM2JSONSerializer !== 'undefined') {
 	try {
