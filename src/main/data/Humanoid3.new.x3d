@@ -14,7 +14,7 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
     <meta content='John Carlson' name='creator'/>
     <meta content='9 November 2020' name='created'/>
     <meta content='../license.html' name='license'/>
-    <meta content='28 June 2023' name='translated'/>
+    <meta content='29 June 2023' name='translated'/>
     <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
     <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
   </head>
@@ -535,13 +535,13 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                   <Shape>
                     <LineSet vertexCount='2'>
                       <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
-                      <Coordinate point='0.1101 0.0656 -0.0736 0.1101 0.0656 -0.0736'/>
+                      <Coordinate point='0.1101 0.0656 -0.0736 0.08 0.0175 -0.0608'/>
                     </LineSet>
                   </Shape>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_l_tarsometatarsal_2' name='l_tarsometatarsal_2'>
+                <HAnimJoint DEF='hanim_l_tarsometatarsal_2' center='0.08 0.0175 -0.0608' name='l_tarsometatarsal_2'>
                   <HAnimSegment DEF='hanim_l_metatarsal_2' name='l_metatarsal_2'>
-                    <Transform translation='0.1101 0.0656 -0.0736'>
+                    <Transform translation='0.08 0.0175 -0.0608'>
                       <Transform>
                         <!--  Empty Transform  -->
                         <Shape USE='HAnimJointShape'/>
@@ -550,13 +550,13 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                     <Shape>
                       <LineSet vertexCount='2'>
                         <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
-                        <Coordinate point='0.1101 0.0656 -0.0736'/>
+                        <Coordinate point='0.08 0.0175 -0.0608 0.0824 0.0064 -0.004'/>
                       </LineSet>
                     </Shape>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_l_metatarsophalangeal_2' name='l_metatarsophalangeal_2'>
+                  <HAnimJoint DEF='hanim_l_metatarsophalangeal_2' center='0.0824 0.0064 -0.004' name='l_metatarsophalangeal_2'>
                     <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_2' name='l_tarsal_proximal_phalanx_2'>
-                      <Transform translation='0.1101 0.0656 -0.0736'>
+                      <Transform translation='0.0824 0.0064 -0.004'>
                         <Transform>
                           <!--  Empty Transform  -->
                           <Shape USE='HAnimJointShape'/>
@@ -565,7 +565,7 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                       <Shape>
                         <LineSet vertexCount='2'>
                           <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
-                          <Coordinate point='0.1101 0.0656 -0.0736'/>
+                          <Coordinate point='0.0824 0.0064 -0.004 0.0841 0.0013 0.0216'/>
                         </LineSet>
                       </Shape>
                       <HAnimSite DEF='hanim_l_tarsal_distal_phalanx_2_tip' name='l_tarsal_distal_phalanx_2_tip' translation='0.1195 0.0079 0.1433'>
@@ -573,7 +573,7 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                         <Shape USE='HAnimSiteShape'/>
                       </HAnimSite>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_2' name='l_tarsal_distal_interphalangeal_2'/>
+                    <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_2' center='0.0841 0.0013 0.0216' name='l_tarsal_distal_interphalangeal_2'/>
                   </HAnimJoint>
                 </HAnimJoint>
               </HAnimJoint>
@@ -641,13 +641,13 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                   <Shape>
                     <LineSet vertexCount='2'>
                       <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
-                      <Coordinate point='-0.0801 0.0712 -0.0766 -0.0801 0.0712 -0.0766'/>
+                      <Coordinate point='-0.0801 0.0712 -0.0766 -0.08 0.0175 -0.0608'/>
                     </LineSet>
                   </Shape>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_tarsometatarsal_2' name='r_tarsometatarsal_2'>
+                <HAnimJoint DEF='hanim_r_tarsometatarsal_2' center='-0.08 0.0175 -0.0608' name='r_tarsometatarsal_2'>
                   <HAnimSegment DEF='hanim_r_metatarsal_2' name='r_metatarsal_2'>
-                    <Transform translation='-0.0801 0.0712 -0.0766'>
+                    <Transform translation='-0.08 0.0175 -0.0608'>
                       <Transform>
                         <!--  Empty Transform  -->
                         <Shape USE='HAnimJointShape'/>
@@ -656,13 +656,13 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                     <Shape>
                       <LineSet vertexCount='2'>
                         <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
-                        <Coordinate point='-0.0801 0.0712 -0.0766'/>
+                        <Coordinate point='-0.08 0.0175 -0.0608 -0.0823 0.0064 -0.004'/>
                       </LineSet>
                     </Shape>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_r_metatarsophalangeal_2' name='r_metatarsophalangeal_2'>
+                  <HAnimJoint DEF='hanim_r_metatarsophalangeal_2' center='-0.0823 0.0064 -0.004' name='r_metatarsophalangeal_2'>
                     <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_2' name='r_tarsal_proximal_phalanx_2'>
-                      <Transform translation='-0.0801 0.0712 -0.0766'>
+                      <Transform translation='-0.0823 0.0064 -0.004'>
                         <Transform>
                           <!--  Empty Transform  -->
                           <Shape USE='HAnimJointShape'/>
@@ -671,7 +671,7 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                       <Shape>
                         <LineSet vertexCount='2'>
                           <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
-                          <Coordinate point='-0.0801 0.0712 -0.0766'/>
+                          <Coordinate point='-0.0823 0.0064 -0.004 -0.0841 0.0013 0.0216'/>
                         </LineSet>
                       </Shape>
                       <HAnimSite DEF='hanim_r_tarsal_distal_phalanx_2_tip' name='r_tarsal_distal_phalanx_2_tip' translation='-0.0883 0.0134 0.1383'>
@@ -679,7 +679,7 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                         <Shape USE='HAnimSiteShape'/>
                       </HAnimSite>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_2' name='r_tarsal_distal_interphalangeal_2'/>
+                    <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_2' center='-0.0841 0.0013 0.0216' name='r_tarsal_distal_interphalangeal_2'/>
                   </HAnimJoint>
                 </HAnimJoint>
               </HAnimJoint>
@@ -1217,43 +1217,43 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                             <Shape>
                                                               <LineSet vertexCount='2'>
                                                                 <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
-                                                                <Coordinate point='0.0044 1.6209 0.0236 0.0044 1.6209 0.0236'/>
+                                                                <Coordinate point='0.0044 1.6209 0.0236 0.0503 1.4157 -0.0689'/>
                                                               </LineSet>
                                                             </Shape>
                                                             <Shape>
                                                               <LineSet vertexCount='2'>
                                                                 <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
-                                                                <Coordinate point='0.0044 1.6209 0.0236 0.0044 1.6209 0.0236'/>
+                                                                <Coordinate point='0.0044 1.6209 0.0236 -0.0507 1.4157 -0.0689'/>
                                                               </LineSet>
                                                             </Shape>
                                                             <Shape>
                                                               <LineSet vertexCount='2'>
                                                                 <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
-                                                                <Coordinate point='0.0044 1.6209 0.0236 0.0044 1.6209 0.0236'/>
+                                                                <Coordinate point='0.0044 1.6209 0.0236 0.0479 1.3963 -0.0188'/>
                                                               </LineSet>
                                                             </Shape>
                                                             <Shape>
                                                               <LineSet vertexCount='2'>
                                                                 <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
-                                                                <Coordinate point='0.0044 1.6209 0.0236 0.0044 1.6209 0.0236'/>
+                                                                <Coordinate point='0.0044 1.6209 0.0236 -0.0483 1.3963 -0.0188'/>
                                                               </LineSet>
                                                             </Shape>
                                                             <Shape>
                                                               <LineSet vertexCount='2'>
                                                                 <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
-                                                                <Coordinate point='0.0044 1.6209 0.0236 0.0044 1.6209 0.0236'/>
+                                                                <Coordinate point='0.0044 1.6209 0.0236 0.0216 1.4053 0.0051'/>
                                                               </LineSet>
                                                             </Shape>
                                                             <Shape>
                                                               <LineSet vertexCount='2'>
                                                                 <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
-                                                                <Coordinate point='0.0044 1.6209 0.0236 0.0044 1.6209 0.0236'/>
+                                                                <Coordinate point='0.0044 1.6209 0.0236 -0.0219 1.4053 0.0051'/>
                                                               </LineSet>
                                                             </Shape>
                                                             <Shape>
                                                               <LineSet vertexCount='2'>
                                                                 <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
-                                                                <Coordinate point='0.0044 1.6209 0.0236 0.0044 1.6209 0.0236'/>
+                                                                <Coordinate point='0.0044 1.6209 0.0236 -0.0002 1.3043 -0.0865'/>
                                                               </LineSet>
                                                             </Shape>
                                                             <HAnimSite DEF='hanim_l_gonion_pt' name='l_gonion_pt' translation='0.0631 1.553 0.033'>
@@ -1273,13 +1273,13 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                               <Shape USE='HAnimSiteShape'/>
                                                             </HAnimSite>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_l_eyelid_joint' name='l_eyelid_joint'/>
-                                                          <HAnimJoint DEF='hanim_r_eyelid_joint' name='r_eyelid_joint'/>
-                                                          <HAnimJoint DEF='hanim_l_eyeball_joint' name='l_eyeball_joint'/>
-                                                          <HAnimJoint DEF='hanim_r_eyeball_joint' name='r_eyeball_joint'/>
-                                                          <HAnimJoint DEF='hanim_l_eyebrow_joint' name='l_eyebrow_joint'/>
-                                                          <HAnimJoint DEF='hanim_r_eyebrow_joint' name='r_eyebrow_joint'/>
-                                                          <HAnimJoint DEF='hanim_temporomandibular' name='temporomandibular'/>
+                                                          <HAnimJoint DEF='hanim_l_eyelid_joint' center='0.0503 1.4157 -0.0689' name='l_eyelid_joint'/>
+                                                          <HAnimJoint DEF='hanim_r_eyelid_joint' center='-0.0507 1.4157 -0.0689' name='r_eyelid_joint'/>
+                                                          <HAnimJoint DEF='hanim_l_eyeball_joint' center='0.0479 1.3963 -0.0188' name='l_eyeball_joint'/>
+                                                          <HAnimJoint DEF='hanim_r_eyeball_joint' center='-0.0483 1.3963 -0.0188' name='r_eyeball_joint'/>
+                                                          <HAnimJoint DEF='hanim_l_eyebrow_joint' center='0.0216 1.4053 0.0051' name='l_eyebrow_joint'/>
+                                                          <HAnimJoint DEF='hanim_r_eyebrow_joint' center='-0.0219 1.4053 0.0051' name='r_eyebrow_joint'/>
+                                                          <HAnimJoint DEF='hanim_temporomandibular' center='-0.0002 1.3043 -0.0865' name='temporomandibular'/>
                                                         </HAnimJoint>
                                                       </HAnimJoint>
                                                     </HAnimJoint>

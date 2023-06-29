@@ -17,7 +17,7 @@ meta(name="generator", content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"),
 meta(name="generator", content="Cinema-4D https://www.maxon.net/en/cinema-4d"),
 meta(name="generator", content="Rhino https://www.rhino3d.com"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="28 June 2023"),
+meta(name="translated", content="29 June 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 

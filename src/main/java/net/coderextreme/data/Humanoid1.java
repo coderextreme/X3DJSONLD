@@ -246,7 +246,7 @@ public class Humanoid1 {
                           .setCoord(new Coordinate().setPoint(new MFVec3f44().getArray()))
                           .addComments("from l_talocrural to l_metatarsophalangeal_2 vertices 2")
                           .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                    .addChild(new HAnimJoint().setName("l_metatarsophalangeal_2").setDEF("hanim_l_metatarsophalangeal_2").setUlimit(new MFFloat45().getArray()).setLlimit(new MFFloat46().getArray())))))
+                    .addChild(new HAnimJoint().setName("l_metatarsophalangeal_2").setDEF("hanim_l_metatarsophalangeal_2").setCenter(new float[] {0.0824f,0.0064f,-0.004f}).setUlimit(new MFFloat45().getArray()).setLlimit(new MFFloat46().getArray())))))
               .addChild(new HAnimJoint().setName("r_hip").setDEF("hanim_r_hip").setCenter(new float[] {-0.095f,0.9171f,0.0029f}).setUlimit(new MFFloat47().getArray()).setLlimit(new MFFloat48().getArray())
                 .addChild(new HAnimSegment().setName("r_thigh").setDEF("hanim_r_thigh")
                   .addChild(new Transform().setTranslation(new float[] {-0.095f,0.9171f,0.0029f})
@@ -296,7 +296,7 @@ public class Humanoid1 {
                           .setCoord(new Coordinate().setPoint(new MFVec3f58().getArray()))
                           .addComments("from r_talocrural to r_metatarsophalangeal_2 vertices 2")
                           .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                    .addChild(new HAnimJoint().setName("r_metatarsophalangeal_2").setDEF("hanim_r_metatarsophalangeal_2").setUlimit(new MFFloat59().getArray()).setLlimit(new MFFloat60().getArray()))))))
+                    .addChild(new HAnimJoint().setName("r_metatarsophalangeal_2").setDEF("hanim_r_metatarsophalangeal_2").setCenter(new float[] {-0.0823f,0.0064f,-0.004f}).setUlimit(new MFFloat59().getArray()).setLlimit(new MFFloat60().getArray()))))))
             .addChild(new HAnimJoint().setName("vl5").setDEF("hanim_vl5").setCenter(new float[] {0.0028f,1.0568f,-0.0776f}).setUlimit(new MFFloat61().getArray()).setLlimit(new MFFloat62().getArray())
               .addChild(new HAnimSegment().setName("l5").setDEF("hanim_l5")
                 .addChild(new Transform().setTranslation(new float[] {0.0028f,1.0568f,-0.0776f})
@@ -751,7 +751,7 @@ protected class MFInt3243 {
 }
 protected class MFVec3f44 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1101f,0.0656f,-0.0736f,0.1101f,0.0656f,-0.0736f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1101f,0.0656f,-0.0736f,0.0824f,0.0064f,-0.004f});
   }
 }
 protected class MFFloat45 {
@@ -821,7 +821,7 @@ protected class MFInt3257 {
 }
 protected class MFVec3f58 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.0801f,0.0712f,-0.0766f,-0.0801f,0.0712f,-0.0766f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.0801f,0.0712f,-0.0766f,-0.0823f,0.0064f,-0.004f});
   }
 }
 protected class MFFloat59 {

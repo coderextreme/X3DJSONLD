@@ -693,7 +693,7 @@ var X3D0 =  new X3D({
                                               vertexCount : new MFInt32([2]),
                                               coord : new SFNode(
                                                 new Coordinate({
-                                                  point : new MFVec3f([0.1101,0.0656,-0.0736,0.1101,0.0656,-0.0736])})),
+                                                  point : new MFVec3f([0.1101,0.0656,-0.0736,0.0781,0.0283,-0.097])})),
                                               /*from l_talocrural to l_talocalcaneonavicular vertices 2*/
                                               color : new SFNode(
                                                 new ColorRGBA({
@@ -705,7 +705,7 @@ var X3D0 =  new X3D({
                                               vertexCount : new MFInt32([2]),
                                               coord : new SFNode(
                                                 new Coordinate({
-                                                  point : new MFVec3f([0.1101,0.0656,-0.0736,0.1101,0.0656,-0.0736])})),
+                                                  point : new MFVec3f([0.1101,0.0656,-0.0736,0.0889,0.0494,-0.1278])})),
                                               /*from l_talocrural to l_calcaneocuboid vertices 2*/
                                               color : new SFNode(
                                                 new ColorRGBA({
@@ -714,6 +714,7 @@ var X3D0 =  new X3D({
                                     new HAnimJoint({
                                       name : new SFString("l_talocalcaneonavicular"),
                                       DEF : new SFString("hanim_l_talocalcaneonavicular"),
+                                      center : new SFVec3f([0.0781,0.0283,-0.097]),
                                       ulimit : new MFFloat([0,0,0]),
                                       llimit : new MFFloat([0,0,0]),
                                       children : new MFNode([
@@ -722,7 +723,7 @@ var X3D0 =  new X3D({
                                           DEF : new SFString("hanim_l_navicular"),
                                           children : new MFNode([
                                             new Transform({
-                                              translation : new SFVec3f([0.1101,0.0656,-0.0736]),
+                                              translation : new SFVec3f([0.0781,0.0283,-0.097]),
                                               children : new MFNode([
                                                 new Transform({
                                                   /*Empty Transform*/
@@ -736,8 +737,8 @@ var X3D0 =  new X3D({
                                                   vertexCount : new MFInt32([2]),
                                                   coord : new SFNode(
                                                     new Coordinate({
-                                                      point : new MFVec3f([0.1101,0.0656,-0.0736])})),
-                                                  /*from l_talocalcaneonavicular to l_cuneonavicular_1 vertices 1*/
+                                                      point : new MFVec3f([0.0781,0.0283,-0.097,0.0672,0.0235,-0.0835])})),
+                                                  /*from l_talocalcaneonavicular to l_cuneonavicular_1 vertices 2*/
                                                   color : new SFNode(
                                                     new ColorRGBA({
                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -748,8 +749,8 @@ var X3D0 =  new X3D({
                                                   vertexCount : new MFInt32([2]),
                                                   coord : new SFNode(
                                                     new Coordinate({
-                                                      point : new MFVec3f([0.1101,0.0656,-0.0736])})),
-                                                  /*from l_talocalcaneonavicular to l_cuneonavicular_2 vertices 1*/
+                                                      point : new MFVec3f([0.0781,0.0283,-0.097,0.0812,0.025,-0.0805])})),
+                                                  /*from l_talocalcaneonavicular to l_cuneonavicular_2 vertices 2*/
                                                   color : new SFNode(
                                                     new ColorRGBA({
                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -760,8 +761,8 @@ var X3D0 =  new X3D({
                                                   vertexCount : new MFInt32([2]),
                                                   coord : new SFNode(
                                                     new Coordinate({
-                                                      point : new MFVec3f([0.1101,0.0656,-0.0736])})),
-                                                  /*from l_talocalcaneonavicular to l_cuneonavicular_3 vertices 1*/
+                                                      point : new MFVec3f([0.0781,0.0283,-0.097,0.0928,0.0248,-0.0821])})),
+                                                  /*from l_talocalcaneonavicular to l_cuneonavicular_3 vertices 2*/
                                                   color : new SFNode(
                                                     new ColorRGBA({
                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
@@ -769,6 +770,7 @@ var X3D0 =  new X3D({
                                         new HAnimJoint({
                                           name : new SFString("l_cuneonavicular_1"),
                                           DEF : new SFString("hanim_l_cuneonavicular_1"),
+                                          center : new SFVec3f([0.0672,0.0235,-0.0835]),
                                           ulimit : new MFFloat([0,0,0]),
                                           llimit : new MFFloat([0,0,0]),
                                           children : new MFNode([
@@ -777,7 +779,7 @@ var X3D0 =  new X3D({
                                               DEF : new SFString("hanim_l_cuneiform_1"),
                                               children : new MFNode([
                                                 new Transform({
-                                                  translation : new SFVec3f([0.1101,0.0656,-0.0736]),
+                                                  translation : new SFVec3f([0.0672,0.0235,-0.0835]),
                                                   children : new MFNode([
                                                     new Transform({
                                                       /*Empty Transform*/
@@ -791,8 +793,8 @@ var X3D0 =  new X3D({
                                                       vertexCount : new MFInt32([2]),
                                                       coord : new SFNode(
                                                         new Coordinate({
-                                                          point : new MFVec3f([0.1101,0.0656,-0.0736])})),
-                                                      /*from l_cuneonavicular_1 to l_tarsometatarsal_1 vertices 1*/
+                                                          point : new MFVec3f([0.0672,0.0235,-0.0835,0.0644,0.0147,-0.0577])})),
+                                                      /*from l_cuneonavicular_1 to l_tarsometatarsal_1 vertices 2*/
                                                       color : new SFNode(
                                                         new ColorRGBA({
                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
@@ -800,6 +802,7 @@ var X3D0 =  new X3D({
                                             new HAnimJoint({
                                               name : new SFString("l_tarsometatarsal_1"),
                                               DEF : new SFString("hanim_l_tarsometatarsal_1"),
+                                              center : new SFVec3f([0.0644,0.0147,-0.0577]),
                                               ulimit : new MFFloat([0,0,0]),
                                               llimit : new MFFloat([0,0,0]),
                                               children : new MFNode([
@@ -808,7 +811,7 @@ var X3D0 =  new X3D({
                                                   DEF : new SFString("hanim_l_metatarsal_1"),
                                                   children : new MFNode([
                                                     new Transform({
-                                                      translation : new SFVec3f([0.1101,0.0656,-0.0736]),
+                                                      translation : new SFVec3f([0.0644,0.0147,-0.0577]),
                                                       children : new MFNode([
                                                         new Transform({
                                                           /*Empty Transform*/
@@ -822,8 +825,8 @@ var X3D0 =  new X3D({
                                                           vertexCount : new MFInt32([2]),
                                                           coord : new SFNode(
                                                             new Coordinate({
-                                                              point : new MFVec3f([0.1101,0.0656,-0.0736])})),
-                                                          /*from l_tarsometatarsal_1 to l_metatarsophalangeal_1 vertices 1*/
+                                                              point : new MFVec3f([0.0644,0.0147,-0.0577,0.0619,0.0059,-0.0083])})),
+                                                          /*from l_tarsometatarsal_1 to l_metatarsophalangeal_1 vertices 2*/
                                                           color : new SFNode(
                                                             new ColorRGBA({
                                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -841,6 +844,7 @@ var X3D0 =  new X3D({
                                                 new HAnimJoint({
                                                   name : new SFString("l_metatarsophalangeal_1"),
                                                   DEF : new SFString("hanim_l_metatarsophalangeal_1"),
+                                                  center : new SFVec3f([0.0619,0.0059,-0.0083]),
                                                   ulimit : new MFFloat([0,0,0]),
                                                   llimit : new MFFloat([0,0,0]),
                                                   children : new MFNode([
@@ -849,7 +853,7 @@ var X3D0 =  new X3D({
                                                       DEF : new SFString("hanim_l_tarsal_proximal_phalanx_1"),
                                                       children : new MFNode([
                                                         new Transform({
-                                                          translation : new SFVec3f([0.1101,0.0656,-0.0736]),
+                                                          translation : new SFVec3f([0.0619,0.0059,-0.0083]),
                                                           children : new MFNode([
                                                             new Transform({
                                                               /*Empty Transform*/
@@ -863,8 +867,8 @@ var X3D0 =  new X3D({
                                                               vertexCount : new MFInt32([2]),
                                                               coord : new SFNode(
                                                                 new Coordinate({
-                                                                  point : new MFVec3f([0.1101,0.0656,-0.0736])})),
-                                                              /*from l_metatarsophalangeal_1 to l_tarsal_interphalangeal_1 vertices 1*/
+                                                                  point : new MFVec3f([0.0619,0.0059,-0.0083,0.0619,0.0059,-0.0083])})),
+                                                              /*from l_metatarsophalangeal_1 to l_tarsal_interphalangeal_1 vertices 2*/
                                                               color : new SFNode(
                                                                 new ColorRGBA({
                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -888,6 +892,7 @@ var X3D0 =  new X3D({
                                         new HAnimJoint({
                                           name : new SFString("l_cuneonavicular_2"),
                                           DEF : new SFString("hanim_l_cuneonavicular_2"),
+                                          center : new SFVec3f([0.0812,0.025,-0.0805]),
                                           ulimit : new MFFloat([0,0,0]),
                                           llimit : new MFFloat([0,0,0]),
                                           children : new MFNode([
@@ -896,7 +901,7 @@ var X3D0 =  new X3D({
                                               DEF : new SFString("hanim_l_cuneiform_2"),
                                               children : new MFNode([
                                                 new Transform({
-                                                  translation : new SFVec3f([0.1101,0.0656,-0.0736]),
+                                                  translation : new SFVec3f([0.0812,0.025,-0.0805]),
                                                   children : new MFNode([
                                                     new Transform({
                                                       /*Empty Transform*/
@@ -910,8 +915,8 @@ var X3D0 =  new X3D({
                                                       vertexCount : new MFInt32([2]),
                                                       coord : new SFNode(
                                                         new Coordinate({
-                                                          point : new MFVec3f([0.1101,0.0656,-0.0736])})),
-                                                      /*from l_cuneonavicular_2 to l_tarsometatarsal_2 vertices 1*/
+                                                          point : new MFVec3f([0.0812,0.025,-0.0805,0.08,0.0175,-0.0608])})),
+                                                      /*from l_cuneonavicular_2 to l_tarsometatarsal_2 vertices 2*/
                                                       color : new SFNode(
                                                         new ColorRGBA({
                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
@@ -919,6 +924,7 @@ var X3D0 =  new X3D({
                                             new HAnimJoint({
                                               name : new SFString("l_tarsometatarsal_2"),
                                               DEF : new SFString("hanim_l_tarsometatarsal_2"),
+                                              center : new SFVec3f([0.08,0.0175,-0.0608]),
                                               ulimit : new MFFloat([0,0,0]),
                                               llimit : new MFFloat([0,0,0]),
                                               children : new MFNode([
@@ -927,7 +933,7 @@ var X3D0 =  new X3D({
                                                   DEF : new SFString("hanim_l_metatarsal_2"),
                                                   children : new MFNode([
                                                     new Transform({
-                                                      translation : new SFVec3f([0.1101,0.0656,-0.0736]),
+                                                      translation : new SFVec3f([0.08,0.0175,-0.0608]),
                                                       children : new MFNode([
                                                         new Transform({
                                                           /*Empty Transform*/
@@ -941,8 +947,8 @@ var X3D0 =  new X3D({
                                                           vertexCount : new MFInt32([2]),
                                                           coord : new SFNode(
                                                             new Coordinate({
-                                                              point : new MFVec3f([0.1101,0.0656,-0.0736])})),
-                                                          /*from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 1*/
+                                                              point : new MFVec3f([0.08,0.0175,-0.0608,0.0824,0.0064,-0.004])})),
+                                                          /*from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 2*/
                                                           color : new SFNode(
                                                             new ColorRGBA({
                                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
@@ -950,6 +956,7 @@ var X3D0 =  new X3D({
                                                 new HAnimJoint({
                                                   name : new SFString("l_metatarsophalangeal_2"),
                                                   DEF : new SFString("hanim_l_metatarsophalangeal_2"),
+                                                  center : new SFVec3f([0.0824,0.0064,-0.004]),
                                                   ulimit : new MFFloat([0,0,0]),
                                                   llimit : new MFFloat([0,0,0]),
                                                   children : new MFNode([
@@ -958,7 +965,7 @@ var X3D0 =  new X3D({
                                                       DEF : new SFString("hanim_l_tarsal_proximal_phalanx_2"),
                                                       children : new MFNode([
                                                         new Transform({
-                                                          translation : new SFVec3f([0.1101,0.0656,-0.0736]),
+                                                          translation : new SFVec3f([0.0824,0.0064,-0.004]),
                                                           children : new MFNode([
                                                             new Transform({
                                                               /*Empty Transform*/
@@ -972,8 +979,8 @@ var X3D0 =  new X3D({
                                                               vertexCount : new MFInt32([2]),
                                                               coord : new SFNode(
                                                                 new Coordinate({
-                                                                  point : new MFVec3f([0.1101,0.0656,-0.0736])})),
-                                                              /*from l_metatarsophalangeal_2 to l_tarsal_proximal_interphalangeal_2 vertices 1*/
+                                                                  point : new MFVec3f([0.0824,0.0064,-0.004,0.0841,0.0041,0.0121])})),
+                                                              /*from l_metatarsophalangeal_2 to l_tarsal_proximal_interphalangeal_2 vertices 2*/
                                                               color : new SFNode(
                                                                 new ColorRGBA({
                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
@@ -981,6 +988,7 @@ var X3D0 =  new X3D({
                                                     new HAnimJoint({
                                                       name : new SFString("l_tarsal_proximal_interphalangeal_2"),
                                                       DEF : new SFString("hanim_l_tarsal_proximal_interphalangeal_2"),
+                                                      center : new SFVec3f([0.0841,0.0041,0.0121]),
                                                       ulimit : new MFFloat([0,0,0]),
                                                       llimit : new MFFloat([0,0,0]),
                                                       children : new MFNode([
@@ -989,7 +997,7 @@ var X3D0 =  new X3D({
                                                           DEF : new SFString("hanim_l_tarsal_middle_phalanx_2"),
                                                           children : new MFNode([
                                                             new Transform({
-                                                              translation : new SFVec3f([0.1101,0.0656,-0.0736]),
+                                                              translation : new SFVec3f([0.0841,0.0041,0.0121]),
                                                               children : new MFNode([
                                                                 new Transform({
                                                                   /*Empty Transform*/
@@ -1003,8 +1011,8 @@ var X3D0 =  new X3D({
                                                                   vertexCount : new MFInt32([2]),
                                                                   coord : new SFNode(
                                                                     new Coordinate({
-                                                                      point : new MFVec3f([0.1101,0.0656,-0.0736])})),
-                                                                  /*from l_tarsal_proximal_interphalangeal_2 to l_tarsal_distal_interphalangeal_2 vertices 1*/
+                                                                      point : new MFVec3f([0.0841,0.0041,0.0121,0.0841,0.0013,0.0216])})),
+                                                                  /*from l_tarsal_proximal_interphalangeal_2 to l_tarsal_distal_interphalangeal_2 vertices 2*/
                                                                   color : new SFNode(
                                                                     new ColorRGBA({
                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -1023,12 +1031,14 @@ var X3D0 =  new X3D({
                                                         new HAnimJoint({
                                                           name : new SFString("l_tarsal_distal_interphalangeal_2"),
                                                           DEF : new SFString("hanim_l_tarsal_distal_interphalangeal_2"),
+                                                          center : new SFVec3f([0.0841,0.0013,0.0216]),
                                                           ulimit : new MFFloat([0,0,0]),
                                                           llimit : new MFFloat([0,0,0])})])})])})])})])}),
 
                                         new HAnimJoint({
                                           name : new SFString("l_cuneonavicular_3"),
                                           DEF : new SFString("hanim_l_cuneonavicular_3"),
+                                          center : new SFVec3f([0.0928,0.0248,-0.0821]),
                                           ulimit : new MFFloat([0,0,0]),
                                           llimit : new MFFloat([0,0,0]),
                                           children : new MFNode([
@@ -1037,7 +1047,7 @@ var X3D0 =  new X3D({
                                               DEF : new SFString("hanim_l_cuneiform_3"),
                                               children : new MFNode([
                                                 new Transform({
-                                                  translation : new SFVec3f([0.1101,0.0656,-0.0736]),
+                                                  translation : new SFVec3f([0.0928,0.0248,-0.0821]),
                                                   children : new MFNode([
                                                     new Transform({
                                                       /*Empty Transform*/
@@ -1051,8 +1061,8 @@ var X3D0 =  new X3D({
                                                       vertexCount : new MFInt32([2]),
                                                       coord : new SFNode(
                                                         new Coordinate({
-                                                          point : new MFVec3f([0.1101,0.0656,-0.0736])})),
-                                                      /*from l_cuneonavicular_3 to l_tarsometatarsal_3 vertices 1*/
+                                                          point : new MFVec3f([0.0928,0.0248,-0.0821,0.0841,0.0013,0.0216])})),
+                                                      /*from l_cuneonavicular_3 to l_tarsometatarsal_3 vertices 2*/
                                                       color : new SFNode(
                                                         new ColorRGBA({
                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
@@ -1068,7 +1078,7 @@ var X3D0 =  new X3D({
                                                   DEF : new SFString("hanim_l_metatarsal_3"),
                                                   children : new MFNode([
                                                     new Transform({
-                                                      translation : new SFVec3f([0.1101,0.0656,-0.0736]),
+                                                      translation : new SFVec3f([0.0928,0.0248,-0.0821]),
                                                       children : new MFNode([
                                                         new Transform({
                                                           /*Empty Transform*/
@@ -1082,7 +1092,7 @@ var X3D0 =  new X3D({
                                                           vertexCount : new MFInt32([2]),
                                                           coord : new SFNode(
                                                             new Coordinate({
-                                                              point : new MFVec3f([0.1101,0.0656,-0.0736])})),
+                                                              point : new MFVec3f([0.0963,0.0065,-0.0065])})),
                                                           /*from l_tarsometatarsal_3 to l_metatarsophalangeal_3 vertices 1*/
                                                           color : new SFNode(
                                                             new ColorRGBA({
@@ -1091,6 +1101,7 @@ var X3D0 =  new X3D({
                                                 new HAnimJoint({
                                                   name : new SFString("l_metatarsophalangeal_3"),
                                                   DEF : new SFString("hanim_l_metatarsophalangeal_3"),
+                                                  center : new SFVec3f([0.0963,0.0065,-0.0065]),
                                                   ulimit : new MFFloat([0,0,0]),
                                                   llimit : new MFFloat([0,0,0]),
                                                   children : new MFNode([
@@ -1099,7 +1110,7 @@ var X3D0 =  new X3D({
                                                       DEF : new SFString("hanim_l_tarsal_proximal_phalanx_3"),
                                                       children : new MFNode([
                                                         new Transform({
-                                                          translation : new SFVec3f([0.1101,0.0656,-0.0736]),
+                                                          translation : new SFVec3f([0.0963,0.0065,-0.0065]),
                                                           children : new MFNode([
                                                             new Transform({
                                                               /*Empty Transform*/
@@ -1113,8 +1124,8 @@ var X3D0 =  new X3D({
                                                               vertexCount : new MFInt32([2]),
                                                               coord : new SFNode(
                                                                 new Coordinate({
-                                                                  point : new MFVec3f([0.1101,0.0656,-0.0736])})),
-                                                              /*from l_metatarsophalangeal_3 to l_tarsal_proximal_interphalangeal_3 vertices 1*/
+                                                                  point : new MFVec3f([0.0963,0.0065,-0.0065,0.0987,0.0034,0.0086])})),
+                                                              /*from l_metatarsophalangeal_3 to l_tarsal_proximal_interphalangeal_3 vertices 2*/
                                                               color : new SFNode(
                                                                 new ColorRGBA({
                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
@@ -1122,6 +1133,7 @@ var X3D0 =  new X3D({
                                                     new HAnimJoint({
                                                       name : new SFString("l_tarsal_proximal_interphalangeal_3"),
                                                       DEF : new SFString("hanim_l_tarsal_proximal_interphalangeal_3"),
+                                                      center : new SFVec3f([0.0987,0.0034,0.0086]),
                                                       ulimit : new MFFloat([0,0,0]),
                                                       llimit : new MFFloat([0,0,0]),
                                                       children : new MFNode([
@@ -1130,7 +1142,7 @@ var X3D0 =  new X3D({
                                                           DEF : new SFString("hanim_l_tarsal_middle_phalanx_3"),
                                                           children : new MFNode([
                                                             new Transform({
-                                                              translation : new SFVec3f([0.1101,0.0656,-0.0736]),
+                                                              translation : new SFVec3f([0.0987,0.0034,0.0086]),
                                                               children : new MFNode([
                                                                 new Transform({
                                                                   /*Empty Transform*/
@@ -1144,8 +1156,8 @@ var X3D0 =  new X3D({
                                                                   vertexCount : new MFInt32([2]),
                                                                   coord : new SFNode(
                                                                     new Coordinate({
-                                                                      point : new MFVec3f([0.1101,0.0656,-0.0736])})),
-                                                                  /*from l_tarsal_proximal_interphalangeal_3 to l_tarsal_distal_interphalangeal_3 vertices 1*/
+                                                                      point : new MFVec3f([0.0987,0.0034,0.0086,0.1002,0.0013,0.0178])})),
+                                                                  /*from l_tarsal_proximal_interphalangeal_3 to l_tarsal_distal_interphalangeal_3 vertices 2*/
                                                                   color : new SFNode(
                                                                     new ColorRGBA({
                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -1163,12 +1175,14 @@ var X3D0 =  new X3D({
                                                         new HAnimJoint({
                                                           name : new SFString("l_tarsal_distal_interphalangeal_3"),
                                                           DEF : new SFString("hanim_l_tarsal_distal_interphalangeal_3"),
+                                                          center : new SFVec3f([0.1002,0.0013,0.0178]),
                                                           ulimit : new MFFloat([0,0,0]),
                                                           llimit : new MFFloat([0,0,0])})])})])})])})])})])}),
 
                                     new HAnimJoint({
                                       name : new SFString("l_calcaneocuboid"),
                                       DEF : new SFString("hanim_l_calcaneocuboid"),
+                                      center : new SFVec3f([0.0889,0.0494,-0.1278]),
                                       ulimit : new MFFloat([0,0,0]),
                                       llimit : new MFFloat([0,0,0]),
                                       children : new MFNode([
@@ -1177,7 +1191,7 @@ var X3D0 =  new X3D({
                                           DEF : new SFString("hanim_l_calcaneus"),
                                           children : new MFNode([
                                             new Transform({
-                                              translation : new SFVec3f([0.1101,0.0656,-0.0736]),
+                                              translation : new SFVec3f([0.0889,0.0494,-0.1278]),
                                               children : new MFNode([
                                                 new Transform({
                                                   /*Empty Transform*/
@@ -1191,8 +1205,8 @@ var X3D0 =  new X3D({
                                                   vertexCount : new MFInt32([2]),
                                                   coord : new SFNode(
                                                     new Coordinate({
-                                                      point : new MFVec3f([0.1101,0.0656,-0.0736])})),
-                                                  /*from l_calcaneocuboid to l_transversetarsal vertices 1*/
+                                                      point : new MFVec3f([0.0889,0.0494,-0.1278,0.1105,0.0267,-0.0998])})),
+                                                  /*from l_calcaneocuboid to l_transversetarsal vertices 2*/
                                                   color : new SFNode(
                                                     new ColorRGBA({
                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
@@ -1200,6 +1214,7 @@ var X3D0 =  new X3D({
                                         new HAnimJoint({
                                           name : new SFString("l_transversetarsal"),
                                           DEF : new SFString("hanim_l_transversetarsal"),
+                                          center : new SFVec3f([0.1105,0.0267,-0.0998]),
                                           ulimit : new MFFloat([0,0,0]),
                                           llimit : new MFFloat([0,0,0]),
                                           children : new MFNode([
@@ -1208,7 +1223,7 @@ var X3D0 =  new X3D({
                                               DEF : new SFString("hanim_l_cuboid"),
                                               children : new MFNode([
                                                 new Transform({
-                                                  translation : new SFVec3f([0.1101,0.0656,-0.0736]),
+                                                  translation : new SFVec3f([0.1105,0.0267,-0.0998]),
                                                   children : new MFNode([
                                                     new Transform({
                                                       /*Empty Transform*/
@@ -1222,8 +1237,8 @@ var X3D0 =  new X3D({
                                                       vertexCount : new MFInt32([2]),
                                                       coord : new SFNode(
                                                         new Coordinate({
-                                                          point : new MFVec3f([0.1101,0.0656,-0.0736])})),
-                                                      /*from l_transversetarsal to l_tarsometatarsal_4 vertices 1*/
+                                                          point : new MFVec3f([0.1105,0.0267,-0.0998,0.1063,0.016,-0.0634])})),
+                                                      /*from l_transversetarsal to l_tarsometatarsal_4 vertices 2*/
                                                       color : new SFNode(
                                                         new ColorRGBA({
                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -1234,8 +1249,8 @@ var X3D0 =  new X3D({
                                                       vertexCount : new MFInt32([2]),
                                                       coord : new SFNode(
                                                         new Coordinate({
-                                                          point : new MFVec3f([0.1101,0.0656,-0.0736])})),
-                                                      /*from l_transversetarsal to l_tarsometatarsal_5 vertices 1*/
+                                                          point : new MFVec3f([0.1105,0.0267,-0.0998,0.1206,0.0124,-0.0671])})),
+                                                      /*from l_transversetarsal to l_tarsometatarsal_5 vertices 2*/
                                                       color : new SFNode(
                                                         new ColorRGBA({
                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
@@ -1243,6 +1258,7 @@ var X3D0 =  new X3D({
                                             new HAnimJoint({
                                               name : new SFString("l_tarsometatarsal_4"),
                                               DEF : new SFString("hanim_l_tarsometatarsal_4"),
+                                              center : new SFVec3f([0.1063,0.016,-0.0634]),
                                               ulimit : new MFFloat([0,0,0]),
                                               llimit : new MFFloat([0,0,0]),
                                               children : new MFNode([
@@ -1251,7 +1267,7 @@ var X3D0 =  new X3D({
                                                   DEF : new SFString("hanim_l_metatarsal_4"),
                                                   children : new MFNode([
                                                     new Transform({
-                                                      translation : new SFVec3f([0.1101,0.0656,-0.0736]),
+                                                      translation : new SFVec3f([0.1063,0.016,-0.0634]),
                                                       children : new MFNode([
                                                         new Transform({
                                                           /*Empty Transform*/
@@ -1265,8 +1281,8 @@ var X3D0 =  new X3D({
                                                           vertexCount : new MFInt32([2]),
                                                           coord : new SFNode(
                                                             new Coordinate({
-                                                              point : new MFVec3f([0.1101,0.0656,-0.0736])})),
-                                                          /*from l_tarsometatarsal_4 to l_metatarsophalangeal_4 vertices 1*/
+                                                              point : new MFVec3f([0.1063,0.016,-0.0634,0.1097,0.0058,-0.0107])})),
+                                                          /*from l_tarsometatarsal_4 to l_metatarsophalangeal_4 vertices 2*/
                                                           color : new SFNode(
                                                             new ColorRGBA({
                                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
@@ -1274,6 +1290,7 @@ var X3D0 =  new X3D({
                                                 new HAnimJoint({
                                                   name : new SFString("l_metatarsophalangeal_4"),
                                                   DEF : new SFString("hanim_l_metatarsophalangeal_4"),
+                                                  center : new SFVec3f([0.1097,0.0058,-0.0107]),
                                                   ulimit : new MFFloat([0,0,0]),
                                                   llimit : new MFFloat([0,0,0]),
                                                   children : new MFNode([
@@ -1282,7 +1299,7 @@ var X3D0 =  new X3D({
                                                       DEF : new SFString("hanim_l_tarsal_proximal_phalanx_4"),
                                                       children : new MFNode([
                                                         new Transform({
-                                                          translation : new SFVec3f([0.1101,0.0656,-0.0736]),
+                                                          translation : new SFVec3f([0.1097,0.0058,-0.0107]),
                                                           children : new MFNode([
                                                             new Transform({
                                                               /*Empty Transform*/
@@ -1296,8 +1313,8 @@ var X3D0 =  new X3D({
                                                               vertexCount : new MFInt32([2]),
                                                               coord : new SFNode(
                                                                 new Coordinate({
-                                                                  point : new MFVec3f([0.1101,0.0656,-0.0736])})),
-                                                              /*from l_metatarsophalangeal_4 to l_tarsal_proximal_interphalangeal_4 vertices 1*/
+                                                                  point : new MFVec3f([0.1097,0.0058,-0.0107,0.114,0.0037,0.0044])})),
+                                                              /*from l_metatarsophalangeal_4 to l_tarsal_proximal_interphalangeal_4 vertices 2*/
                                                               color : new SFNode(
                                                                 new ColorRGBA({
                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
@@ -1305,6 +1322,7 @@ var X3D0 =  new X3D({
                                                     new HAnimJoint({
                                                       name : new SFString("l_tarsal_proximal_interphalangeal_4"),
                                                       DEF : new SFString("hanim_l_tarsal_proximal_interphalangeal_4"),
+                                                      center : new SFVec3f([0.114,0.0037,0.0044]),
                                                       ulimit : new MFFloat([0,0,0]),
                                                       llimit : new MFFloat([0,0,0]),
                                                       children : new MFNode([
@@ -1313,7 +1331,7 @@ var X3D0 =  new X3D({
                                                           DEF : new SFString("hanim_l_tarsal_middle_phalanx_4"),
                                                           children : new MFNode([
                                                             new Transform({
-                                                              translation : new SFVec3f([0.1101,0.0656,-0.0736]),
+                                                              translation : new SFVec3f([0.114,0.0037,0.0044]),
                                                               children : new MFNode([
                                                                 new Transform({
                                                                   /*Empty Transform*/
@@ -1327,8 +1345,8 @@ var X3D0 =  new X3D({
                                                                   vertexCount : new MFInt32([2]),
                                                                   coord : new SFNode(
                                                                     new Coordinate({
-                                                                      point : new MFVec3f([0.1101,0.0656,-0.0736])})),
-                                                                  /*from l_tarsal_proximal_interphalangeal_4 to l_tarsal_distal_interphalangeal_4 vertices 1*/
+                                                                      point : new MFVec3f([0.114,0.0037,0.0044,0.1155,0.0008,0.0118])})),
+                                                                  /*from l_tarsal_proximal_interphalangeal_4 to l_tarsal_distal_interphalangeal_4 vertices 2*/
                                                                   color : new SFNode(
                                                                     new ColorRGBA({
                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -1346,12 +1364,14 @@ var X3D0 =  new X3D({
                                                         new HAnimJoint({
                                                           name : new SFString("l_tarsal_distal_interphalangeal_4"),
                                                           DEF : new SFString("hanim_l_tarsal_distal_interphalangeal_4"),
+                                                          center : new SFVec3f([0.1155,0.0008,0.0118]),
                                                           ulimit : new MFFloat([0,0,0]),
                                                           llimit : new MFFloat([0,0,0])})])})])})])}),
 
                                             new HAnimJoint({
                                               name : new SFString("l_tarsometatarsal_5"),
                                               DEF : new SFString("hanim_l_tarsometatarsal_5"),
+                                              center : new SFVec3f([0.1206,0.0124,-0.0671]),
                                               ulimit : new MFFloat([0,0,0]),
                                               llimit : new MFFloat([0,0,0]),
                                               children : new MFNode([
@@ -1360,7 +1380,7 @@ var X3D0 =  new X3D({
                                                   DEF : new SFString("hanim_l_metatarsal_5"),
                                                   children : new MFNode([
                                                     new Transform({
-                                                      translation : new SFVec3f([0.1101,0.0656,-0.0736]),
+                                                      translation : new SFVec3f([0.1206,0.0124,-0.0671]),
                                                       children : new MFNode([
                                                         new Transform({
                                                           /*Empty Transform*/
@@ -1374,8 +1394,8 @@ var X3D0 =  new X3D({
                                                           vertexCount : new MFInt32([2]),
                                                           coord : new SFNode(
                                                             new Coordinate({
-                                                              point : new MFVec3f([0.1101,0.0656,-0.0736])})),
-                                                          /*from l_tarsometatarsal_5 to l_metatarsophalangeal_5 vertices 1*/
+                                                              point : new MFVec3f([0.1206,0.0124,-0.0671,0.1239,0.0051,-0.0153])})),
+                                                          /*from l_tarsometatarsal_5 to l_metatarsophalangeal_5 vertices 2*/
                                                           color : new SFNode(
                                                             new ColorRGBA({
                                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -1393,6 +1413,7 @@ var X3D0 =  new X3D({
                                                 new HAnimJoint({
                                                   name : new SFString("l_metatarsophalangeal_5"),
                                                   DEF : new SFString("hanim_l_metatarsophalangeal_5"),
+                                                  center : new SFVec3f([0.1239,0.0051,-0.0153]),
                                                   ulimit : new MFFloat([0,0,0]),
                                                   llimit : new MFFloat([0,0,0]),
                                                   children : new MFNode([
@@ -1401,7 +1422,7 @@ var X3D0 =  new X3D({
                                                       DEF : new SFString("hanim_l_tarsal_proximal_phalanx_5"),
                                                       children : new MFNode([
                                                         new Transform({
-                                                          translation : new SFVec3f([0.1101,0.0656,-0.0736]),
+                                                          translation : new SFVec3f([0.1239,0.0051,-0.0153]),
                                                           children : new MFNode([
                                                             new Transform({
                                                               /*Empty Transform*/
@@ -1415,8 +1436,8 @@ var X3D0 =  new X3D({
                                                               vertexCount : new MFInt32([2]),
                                                               coord : new SFNode(
                                                                 new Coordinate({
-                                                                  point : new MFVec3f([0.1101,0.0656,-0.0736])})),
-                                                              /*from l_metatarsophalangeal_5 to l_tarsal_proximal_interphalangeal_5 vertices 1*/
+                                                                  point : new MFVec3f([0.1239,0.0051,-0.0153,0.1262,0.0023,-0.0077])})),
+                                                              /*from l_metatarsophalangeal_5 to l_tarsal_proximal_interphalangeal_5 vertices 2*/
                                                               color : new SFNode(
                                                                 new ColorRGBA({
                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
@@ -1424,6 +1445,7 @@ var X3D0 =  new X3D({
                                                     new HAnimJoint({
                                                       name : new SFString("l_tarsal_proximal_interphalangeal_5"),
                                                       DEF : new SFString("hanim_l_tarsal_proximal_interphalangeal_5"),
+                                                      center : new SFVec3f([0.1262,0.0023,-0.0077]),
                                                       ulimit : new MFFloat([0,0,0]),
                                                       llimit : new MFFloat([0,0,0]),
                                                       children : new MFNode([
@@ -1432,7 +1454,7 @@ var X3D0 =  new X3D({
                                                           DEF : new SFString("hanim_l_tarsal_middle_phalanx_5"),
                                                           children : new MFNode([
                                                             new Transform({
-                                                              translation : new SFVec3f([0.1101,0.0656,-0.0736]),
+                                                              translation : new SFVec3f([0.1262,0.0023,-0.0077]),
                                                               children : new MFNode([
                                                                 new Transform({
                                                                   /*Empty Transform*/
@@ -1446,8 +1468,8 @@ var X3D0 =  new X3D({
                                                                   vertexCount : new MFInt32([2]),
                                                                   coord : new SFNode(
                                                                     new Coordinate({
-                                                                      point : new MFVec3f([0.1101,0.0656,-0.0736])})),
-                                                                  /*from l_tarsal_proximal_interphalangeal_5 to l_tarsal_distal_interphalangeal_5 vertices 1*/
+                                                                      point : new MFVec3f([0.1262,0.0023,-0.0077,0.1271,0,0])})),
+                                                                  /*from l_tarsal_proximal_interphalangeal_5 to l_tarsal_distal_interphalangeal_5 vertices 2*/
                                                                   color : new SFNode(
                                                                     new ColorRGBA({
                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -1465,6 +1487,7 @@ var X3D0 =  new X3D({
                                                         new HAnimJoint({
                                                           name : new SFString("l_tarsal_distal_interphalangeal_5"),
                                                           DEF : new SFString("hanim_l_tarsal_distal_interphalangeal_5"),
+                                                          center : new SFVec3f([0.1271,0,0]),
                                                           ulimit : new MFFloat([0,0,0]),
                                                           llimit : new MFFloat([0,0,0])})])})])})])})])})])})])})])})])}),
 
@@ -1615,7 +1638,7 @@ var X3D0 =  new X3D({
                                               vertexCount : new MFInt32([2]),
                                               coord : new SFNode(
                                                 new Coordinate({
-                                                  point : new MFVec3f([-0.0801,0.0712,-0.0766,-0.0801,0.0712,-0.0766])})),
+                                                  point : new MFVec3f([-0.0801,0.0712,-0.0766,-0.0781,0.0283,-0.097])})),
                                               /*from r_talocrural to r_talocalcaneonavicular vertices 2*/
                                               color : new SFNode(
                                                 new ColorRGBA({
@@ -1627,7 +1650,7 @@ var X3D0 =  new X3D({
                                               vertexCount : new MFInt32([2]),
                                               coord : new SFNode(
                                                 new Coordinate({
-                                                  point : new MFVec3f([-0.0801,0.0712,-0.0766,-0.0801,0.0712,-0.0766])})),
+                                                  point : new MFVec3f([-0.0801,0.0712,-0.0766,-0.0889,0.0494,-0.1278])})),
                                               /*from r_talocrural to r_calcaneocuboid vertices 2*/
                                               color : new SFNode(
                                                 new ColorRGBA({
@@ -1636,6 +1659,7 @@ var X3D0 =  new X3D({
                                     new HAnimJoint({
                                       name : new SFString("r_talocalcaneonavicular"),
                                       DEF : new SFString("hanim_r_talocalcaneonavicular"),
+                                      center : new SFVec3f([-0.0781,0.0283,-0.097]),
                                       ulimit : new MFFloat([0,0,0]),
                                       llimit : new MFFloat([0,0,0]),
                                       children : new MFNode([
@@ -1644,7 +1668,7 @@ var X3D0 =  new X3D({
                                           DEF : new SFString("hanim_r_navicular"),
                                           children : new MFNode([
                                             new Transform({
-                                              translation : new SFVec3f([-0.0801,0.0712,-0.0766]),
+                                              translation : new SFVec3f([-0.0781,0.0283,-0.097]),
                                               children : new MFNode([
                                                 new Transform({
                                                   /*Empty Transform*/
@@ -1658,8 +1682,8 @@ var X3D0 =  new X3D({
                                                   vertexCount : new MFInt32([2]),
                                                   coord : new SFNode(
                                                     new Coordinate({
-                                                      point : new MFVec3f([-0.0801,0.0712,-0.0766])})),
-                                                  /*from r_talocalcaneonavicular to r_cuneonavicular_1 vertices 1*/
+                                                      point : new MFVec3f([-0.0781,0.0283,-0.097,-0.0672,0.0235,-0.0835])})),
+                                                  /*from r_talocalcaneonavicular to r_cuneonavicular_1 vertices 2*/
                                                   color : new SFNode(
                                                     new ColorRGBA({
                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -1670,8 +1694,8 @@ var X3D0 =  new X3D({
                                                   vertexCount : new MFInt32([2]),
                                                   coord : new SFNode(
                                                     new Coordinate({
-                                                      point : new MFVec3f([-0.0801,0.0712,-0.0766])})),
-                                                  /*from r_talocalcaneonavicular to r_cuneonavicular_2 vertices 1*/
+                                                      point : new MFVec3f([-0.0781,0.0283,-0.097,-0.0812,0.025,-0.0805])})),
+                                                  /*from r_talocalcaneonavicular to r_cuneonavicular_2 vertices 2*/
                                                   color : new SFNode(
                                                     new ColorRGBA({
                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -1682,8 +1706,8 @@ var X3D0 =  new X3D({
                                                   vertexCount : new MFInt32([2]),
                                                   coord : new SFNode(
                                                     new Coordinate({
-                                                      point : new MFVec3f([-0.0801,0.0712,-0.0766])})),
-                                                  /*from r_talocalcaneonavicular to r_cuneonavicular_3 vertices 1*/
+                                                      point : new MFVec3f([-0.0781,0.0283,-0.097,-0.0928,0.0248,-0.0821])})),
+                                                  /*from r_talocalcaneonavicular to r_cuneonavicular_3 vertices 2*/
                                                   color : new SFNode(
                                                     new ColorRGBA({
                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
@@ -1691,6 +1715,7 @@ var X3D0 =  new X3D({
                                         new HAnimJoint({
                                           name : new SFString("r_cuneonavicular_1"),
                                           DEF : new SFString("hanim_r_cuneonavicular_1"),
+                                          center : new SFVec3f([-0.0672,0.0235,-0.0835]),
                                           ulimit : new MFFloat([0,0,0]),
                                           llimit : new MFFloat([0,0,0]),
                                           children : new MFNode([
@@ -1699,7 +1724,7 @@ var X3D0 =  new X3D({
                                               DEF : new SFString("hanim_r_cuneiform_1"),
                                               children : new MFNode([
                                                 new Transform({
-                                                  translation : new SFVec3f([-0.0801,0.0712,-0.0766]),
+                                                  translation : new SFVec3f([-0.0672,0.0235,-0.0835]),
                                                   children : new MFNode([
                                                     new Transform({
                                                       /*Empty Transform*/
@@ -1713,8 +1738,8 @@ var X3D0 =  new X3D({
                                                       vertexCount : new MFInt32([2]),
                                                       coord : new SFNode(
                                                         new Coordinate({
-                                                          point : new MFVec3f([-0.0801,0.0712,-0.0766])})),
-                                                      /*from r_cuneonavicular_1 to r_tarsometatarsal_1 vertices 1*/
+                                                          point : new MFVec3f([-0.0672,0.0235,-0.0835,-0.0644,0.0147,-0.0577])})),
+                                                      /*from r_cuneonavicular_1 to r_tarsometatarsal_1 vertices 2*/
                                                       color : new SFNode(
                                                         new ColorRGBA({
                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
@@ -1722,6 +1747,7 @@ var X3D0 =  new X3D({
                                             new HAnimJoint({
                                               name : new SFString("r_tarsometatarsal_1"),
                                               DEF : new SFString("hanim_r_tarsometatarsal_1"),
+                                              center : new SFVec3f([-0.0644,0.0147,-0.0577]),
                                               ulimit : new MFFloat([0,0,0]),
                                               llimit : new MFFloat([0,0,0]),
                                               children : new MFNode([
@@ -1730,7 +1756,7 @@ var X3D0 =  new X3D({
                                                   DEF : new SFString("hanim_r_metatarsal_1"),
                                                   children : new MFNode([
                                                     new Transform({
-                                                      translation : new SFVec3f([-0.0801,0.0712,-0.0766]),
+                                                      translation : new SFVec3f([-0.0644,0.0147,-0.0577]),
                                                       children : new MFNode([
                                                         new Transform({
                                                           /*Empty Transform*/
@@ -1744,8 +1770,8 @@ var X3D0 =  new X3D({
                                                           vertexCount : new MFInt32([2]),
                                                           coord : new SFNode(
                                                             new Coordinate({
-                                                              point : new MFVec3f([-0.0801,0.0712,-0.0766])})),
-                                                          /*from r_tarsometatarsal_1 to r_metatarsophalangeal_1 vertices 1*/
+                                                              point : new MFVec3f([-0.0644,0.0147,-0.0577,-0.0619,0.0059,-0.0083])})),
+                                                          /*from r_tarsometatarsal_1 to r_metatarsophalangeal_1 vertices 2*/
                                                           color : new SFNode(
                                                             new ColorRGBA({
                                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -1763,6 +1789,7 @@ var X3D0 =  new X3D({
                                                 new HAnimJoint({
                                                   name : new SFString("r_metatarsophalangeal_1"),
                                                   DEF : new SFString("hanim_r_metatarsophalangeal_1"),
+                                                  center : new SFVec3f([-0.0619,0.0059,-0.0083]),
                                                   ulimit : new MFFloat([0,0,0]),
                                                   llimit : new MFFloat([0,0,0]),
                                                   children : new MFNode([
@@ -1771,7 +1798,7 @@ var X3D0 =  new X3D({
                                                       DEF : new SFString("hanim_r_tarsal_proximal_phalanx_1"),
                                                       children : new MFNode([
                                                         new Transform({
-                                                          translation : new SFVec3f([-0.0801,0.0712,-0.0766]),
+                                                          translation : new SFVec3f([-0.0619,0.0059,-0.0083]),
                                                           children : new MFNode([
                                                             new Transform({
                                                               /*Empty Transform*/
@@ -1785,8 +1812,8 @@ var X3D0 =  new X3D({
                                                               vertexCount : new MFInt32([2]),
                                                               coord : new SFNode(
                                                                 new Coordinate({
-                                                                  point : new MFVec3f([-0.0801,0.0712,-0.0766])})),
-                                                              /*from r_metatarsophalangeal_1 to r_tarsal_interphalangeal_1 vertices 1*/
+                                                                  point : new MFVec3f([-0.0619,0.0059,-0.0083,-0.0619,0.0059,-0.0083])})),
+                                                              /*from r_metatarsophalangeal_1 to r_tarsal_interphalangeal_1 vertices 2*/
                                                               color : new SFNode(
                                                                 new ColorRGBA({
                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -1810,6 +1837,7 @@ var X3D0 =  new X3D({
                                         new HAnimJoint({
                                           name : new SFString("r_cuneonavicular_2"),
                                           DEF : new SFString("hanim_r_cuneonavicular_2"),
+                                          center : new SFVec3f([-0.0812,0.025,-0.0805]),
                                           ulimit : new MFFloat([0,0,0]),
                                           llimit : new MFFloat([0,0,0]),
                                           children : new MFNode([
@@ -1818,7 +1846,7 @@ var X3D0 =  new X3D({
                                               DEF : new SFString("hanim_r_cuneiform_2"),
                                               children : new MFNode([
                                                 new Transform({
-                                                  translation : new SFVec3f([-0.0801,0.0712,-0.0766]),
+                                                  translation : new SFVec3f([-0.0812,0.025,-0.0805]),
                                                   children : new MFNode([
                                                     new Transform({
                                                       /*Empty Transform*/
@@ -1832,8 +1860,8 @@ var X3D0 =  new X3D({
                                                       vertexCount : new MFInt32([2]),
                                                       coord : new SFNode(
                                                         new Coordinate({
-                                                          point : new MFVec3f([-0.0801,0.0712,-0.0766])})),
-                                                      /*from r_cuneonavicular_2 to r_tarsometatarsal_2 vertices 1*/
+                                                          point : new MFVec3f([-0.0812,0.025,-0.0805,-0.08,0.0175,-0.0608])})),
+                                                      /*from r_cuneonavicular_2 to r_tarsometatarsal_2 vertices 2*/
                                                       color : new SFNode(
                                                         new ColorRGBA({
                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
@@ -1841,6 +1869,7 @@ var X3D0 =  new X3D({
                                             new HAnimJoint({
                                               name : new SFString("r_tarsometatarsal_2"),
                                               DEF : new SFString("hanim_r_tarsometatarsal_2"),
+                                              center : new SFVec3f([-0.08,0.0175,-0.0608]),
                                               ulimit : new MFFloat([0,0,0]),
                                               llimit : new MFFloat([0,0,0]),
                                               children : new MFNode([
@@ -1849,7 +1878,7 @@ var X3D0 =  new X3D({
                                                   DEF : new SFString("hanim_r_metatarsal_2"),
                                                   children : new MFNode([
                                                     new Transform({
-                                                      translation : new SFVec3f([-0.0801,0.0712,-0.0766]),
+                                                      translation : new SFVec3f([-0.08,0.0175,-0.0608]),
                                                       children : new MFNode([
                                                         new Transform({
                                                           /*Empty Transform*/
@@ -1863,8 +1892,8 @@ var X3D0 =  new X3D({
                                                           vertexCount : new MFInt32([2]),
                                                           coord : new SFNode(
                                                             new Coordinate({
-                                                              point : new MFVec3f([-0.0801,0.0712,-0.0766])})),
-                                                          /*from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 1*/
+                                                              point : new MFVec3f([-0.08,0.0175,-0.0608,-0.0823,0.0064,-0.004])})),
+                                                          /*from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 2*/
                                                           color : new SFNode(
                                                             new ColorRGBA({
                                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
@@ -1872,6 +1901,7 @@ var X3D0 =  new X3D({
                                                 new HAnimJoint({
                                                   name : new SFString("r_metatarsophalangeal_2"),
                                                   DEF : new SFString("hanim_r_metatarsophalangeal_2"),
+                                                  center : new SFVec3f([-0.0823,0.0064,-0.004]),
                                                   ulimit : new MFFloat([0,0,0]),
                                                   llimit : new MFFloat([0,0,0]),
                                                   children : new MFNode([
@@ -1880,7 +1910,7 @@ var X3D0 =  new X3D({
                                                       DEF : new SFString("hanim_r_tarsal_proximal_phalanx_2"),
                                                       children : new MFNode([
                                                         new Transform({
-                                                          translation : new SFVec3f([-0.0801,0.0712,-0.0766]),
+                                                          translation : new SFVec3f([-0.0823,0.0064,-0.004]),
                                                           children : new MFNode([
                                                             new Transform({
                                                               /*Empty Transform*/
@@ -1894,8 +1924,8 @@ var X3D0 =  new X3D({
                                                               vertexCount : new MFInt32([2]),
                                                               coord : new SFNode(
                                                                 new Coordinate({
-                                                                  point : new MFVec3f([-0.0801,0.0712,-0.0766])})),
-                                                              /*from r_metatarsophalangeal_2 to r_tarsal_proximal_interphalangeal_2 vertices 1*/
+                                                                  point : new MFVec3f([-0.0823,0.0064,-0.004,-0.0841,0.0041,0.0121])})),
+                                                              /*from r_metatarsophalangeal_2 to r_tarsal_proximal_interphalangeal_2 vertices 2*/
                                                               color : new SFNode(
                                                                 new ColorRGBA({
                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
@@ -1903,6 +1933,7 @@ var X3D0 =  new X3D({
                                                     new HAnimJoint({
                                                       name : new SFString("r_tarsal_proximal_interphalangeal_2"),
                                                       DEF : new SFString("hanim_r_tarsal_proximal_interphalangeal_2"),
+                                                      center : new SFVec3f([-0.0841,0.0041,0.0121]),
                                                       ulimit : new MFFloat([0,0,0]),
                                                       llimit : new MFFloat([0,0,0]),
                                                       children : new MFNode([
@@ -1911,7 +1942,7 @@ var X3D0 =  new X3D({
                                                           DEF : new SFString("hanim_r_tarsal_middle_phalanx_2"),
                                                           children : new MFNode([
                                                             new Transform({
-                                                              translation : new SFVec3f([-0.0801,0.0712,-0.0766]),
+                                                              translation : new SFVec3f([-0.0841,0.0041,0.0121]),
                                                               children : new MFNode([
                                                                 new Transform({
                                                                   /*Empty Transform*/
@@ -1925,8 +1956,8 @@ var X3D0 =  new X3D({
                                                                   vertexCount : new MFInt32([2]),
                                                                   coord : new SFNode(
                                                                     new Coordinate({
-                                                                      point : new MFVec3f([-0.0801,0.0712,-0.0766])})),
-                                                                  /*from r_tarsal_proximal_interphalangeal_2 to r_tarsal_distal_interphalangeal_2 vertices 1*/
+                                                                      point : new MFVec3f([-0.0841,0.0041,0.0121,-0.0841,0.0013,0.0216])})),
+                                                                  /*from r_tarsal_proximal_interphalangeal_2 to r_tarsal_distal_interphalangeal_2 vertices 2*/
                                                                   color : new SFNode(
                                                                     new ColorRGBA({
                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -1945,12 +1976,14 @@ var X3D0 =  new X3D({
                                                         new HAnimJoint({
                                                           name : new SFString("r_tarsal_distal_interphalangeal_2"),
                                                           DEF : new SFString("hanim_r_tarsal_distal_interphalangeal_2"),
+                                                          center : new SFVec3f([-0.0841,0.0013,0.0216]),
                                                           ulimit : new MFFloat([0,0,0]),
                                                           llimit : new MFFloat([0,0,0])})])})])})])})])}),
 
                                         new HAnimJoint({
                                           name : new SFString("r_cuneonavicular_3"),
                                           DEF : new SFString("hanim_r_cuneonavicular_3"),
+                                          center : new SFVec3f([-0.0928,0.0248,-0.0821]),
                                           ulimit : new MFFloat([0,0,0]),
                                           llimit : new MFFloat([0,0,0]),
                                           children : new MFNode([
@@ -1959,7 +1992,7 @@ var X3D0 =  new X3D({
                                               DEF : new SFString("hanim_r_cuneiform_3"),
                                               children : new MFNode([
                                                 new Transform({
-                                                  translation : new SFVec3f([-0.0801,0.0712,-0.0766]),
+                                                  translation : new SFVec3f([-0.0928,0.0248,-0.0821]),
                                                   children : new MFNode([
                                                     new Transform({
                                                       /*Empty Transform*/
@@ -1973,8 +2006,8 @@ var X3D0 =  new X3D({
                                                       vertexCount : new MFInt32([2]),
                                                       coord : new SFNode(
                                                         new Coordinate({
-                                                          point : new MFVec3f([-0.0801,0.0712,-0.0766])})),
-                                                      /*from r_cuneonavicular_3 to r_tarsometatarsal_3 vertices 1*/
+                                                          point : new MFVec3f([-0.0928,0.0248,-0.0821,-0.0841,0.0013,0.0216])})),
+                                                      /*from r_cuneonavicular_3 to r_tarsometatarsal_3 vertices 2*/
                                                       color : new SFNode(
                                                         new ColorRGBA({
                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
@@ -1990,7 +2023,7 @@ var X3D0 =  new X3D({
                                                   DEF : new SFString("hanim_r_metatarsal_3"),
                                                   children : new MFNode([
                                                     new Transform({
-                                                      translation : new SFVec3f([-0.0801,0.0712,-0.0766]),
+                                                      translation : new SFVec3f([-0.0928,0.0248,-0.0821]),
                                                       children : new MFNode([
                                                         new Transform({
                                                           /*Empty Transform*/
@@ -2004,7 +2037,7 @@ var X3D0 =  new X3D({
                                                           vertexCount : new MFInt32([2]),
                                                           coord : new SFNode(
                                                             new Coordinate({
-                                                              point : new MFVec3f([-0.0801,0.0712,-0.0766])})),
+                                                              point : new MFVec3f([-0.0963,0.0065,-0.0065])})),
                                                           /*from r_tarsometatarsal_3 to r_metatarsophalangeal_3 vertices 1*/
                                                           color : new SFNode(
                                                             new ColorRGBA({
@@ -2013,6 +2046,7 @@ var X3D0 =  new X3D({
                                                 new HAnimJoint({
                                                   name : new SFString("r_metatarsophalangeal_3"),
                                                   DEF : new SFString("hanim_r_metatarsophalangeal_3"),
+                                                  center : new SFVec3f([-0.0963,0.0065,-0.0065]),
                                                   ulimit : new MFFloat([0,0,0]),
                                                   llimit : new MFFloat([0,0,0]),
                                                   children : new MFNode([
@@ -2021,7 +2055,7 @@ var X3D0 =  new X3D({
                                                       DEF : new SFString("hanim_r_tarsal_proximal_phalanx_3"),
                                                       children : new MFNode([
                                                         new Transform({
-                                                          translation : new SFVec3f([-0.0801,0.0712,-0.0766]),
+                                                          translation : new SFVec3f([-0.0963,0.0065,-0.0065]),
                                                           children : new MFNode([
                                                             new Transform({
                                                               /*Empty Transform*/
@@ -2035,8 +2069,8 @@ var X3D0 =  new X3D({
                                                               vertexCount : new MFInt32([2]),
                                                               coord : new SFNode(
                                                                 new Coordinate({
-                                                                  point : new MFVec3f([-0.0801,0.0712,-0.0766])})),
-                                                              /*from r_metatarsophalangeal_3 to r_tarsal_proximal_interphalangeal_3 vertices 1*/
+                                                                  point : new MFVec3f([-0.0963,0.0065,-0.0065,-0.0987,0.0034,0.0086])})),
+                                                              /*from r_metatarsophalangeal_3 to r_tarsal_proximal_interphalangeal_3 vertices 2*/
                                                               color : new SFNode(
                                                                 new ColorRGBA({
                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
@@ -2044,6 +2078,7 @@ var X3D0 =  new X3D({
                                                     new HAnimJoint({
                                                       name : new SFString("r_tarsal_proximal_interphalangeal_3"),
                                                       DEF : new SFString("hanim_r_tarsal_proximal_interphalangeal_3"),
+                                                      center : new SFVec3f([-0.0987,0.0034,0.0086]),
                                                       ulimit : new MFFloat([0,0,0]),
                                                       llimit : new MFFloat([0,0,0]),
                                                       children : new MFNode([
@@ -2052,7 +2087,7 @@ var X3D0 =  new X3D({
                                                           DEF : new SFString("hanim_r_tarsal_middle_phalanx_3"),
                                                           children : new MFNode([
                                                             new Transform({
-                                                              translation : new SFVec3f([-0.0801,0.0712,-0.0766]),
+                                                              translation : new SFVec3f([-0.0987,0.0034,0.0086]),
                                                               children : new MFNode([
                                                                 new Transform({
                                                                   /*Empty Transform*/
@@ -2066,8 +2101,8 @@ var X3D0 =  new X3D({
                                                                   vertexCount : new MFInt32([2]),
                                                                   coord : new SFNode(
                                                                     new Coordinate({
-                                                                      point : new MFVec3f([-0.0801,0.0712,-0.0766])})),
-                                                                  /*from r_tarsal_proximal_interphalangeal_3 to r_tarsal_distal_interphalangeal_3 vertices 1*/
+                                                                      point : new MFVec3f([-0.0987,0.0034,0.0086,-0.1002,0.0013,0.0178])})),
+                                                                  /*from r_tarsal_proximal_interphalangeal_3 to r_tarsal_distal_interphalangeal_3 vertices 2*/
                                                                   color : new SFNode(
                                                                     new ColorRGBA({
                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -2085,12 +2120,14 @@ var X3D0 =  new X3D({
                                                         new HAnimJoint({
                                                           name : new SFString("r_tarsal_distal_interphalangeal_3"),
                                                           DEF : new SFString("hanim_r_tarsal_distal_interphalangeal_3"),
+                                                          center : new SFVec3f([-0.1002,0.0013,0.0178]),
                                                           ulimit : new MFFloat([0,0,0]),
                                                           llimit : new MFFloat([0,0,0])})])})])})])})])})])}),
 
                                     new HAnimJoint({
                                       name : new SFString("r_calcaneocuboid"),
                                       DEF : new SFString("hanim_r_calcaneocuboid"),
+                                      center : new SFVec3f([-0.0889,0.0494,-0.1278]),
                                       ulimit : new MFFloat([0,0,0]),
                                       llimit : new MFFloat([0,0,0]),
                                       children : new MFNode([
@@ -2099,7 +2136,7 @@ var X3D0 =  new X3D({
                                           DEF : new SFString("hanim_r_calcaneus"),
                                           children : new MFNode([
                                             new Transform({
-                                              translation : new SFVec3f([-0.0801,0.0712,-0.0766]),
+                                              translation : new SFVec3f([-0.0889,0.0494,-0.1278]),
                                               children : new MFNode([
                                                 new Transform({
                                                   /*Empty Transform*/
@@ -2113,8 +2150,8 @@ var X3D0 =  new X3D({
                                                   vertexCount : new MFInt32([2]),
                                                   coord : new SFNode(
                                                     new Coordinate({
-                                                      point : new MFVec3f([-0.0801,0.0712,-0.0766])})),
-                                                  /*from r_calcaneocuboid to r_transversetarsal vertices 1*/
+                                                      point : new MFVec3f([-0.0889,0.0494,-0.1278,-0.1105,0.0267,-0.0998])})),
+                                                  /*from r_calcaneocuboid to r_transversetarsal vertices 2*/
                                                   color : new SFNode(
                                                     new ColorRGBA({
                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
@@ -2122,6 +2159,7 @@ var X3D0 =  new X3D({
                                         new HAnimJoint({
                                           name : new SFString("r_transversetarsal"),
                                           DEF : new SFString("hanim_r_transversetarsal"),
+                                          center : new SFVec3f([-0.1105,0.0267,-0.0998]),
                                           ulimit : new MFFloat([0,0,0]),
                                           llimit : new MFFloat([0,0,0]),
                                           children : new MFNode([
@@ -2130,7 +2168,7 @@ var X3D0 =  new X3D({
                                               DEF : new SFString("hanim_r_cuboid"),
                                               children : new MFNode([
                                                 new Transform({
-                                                  translation : new SFVec3f([-0.0801,0.0712,-0.0766]),
+                                                  translation : new SFVec3f([-0.1105,0.0267,-0.0998]),
                                                   children : new MFNode([
                                                     new Transform({
                                                       /*Empty Transform*/
@@ -2144,8 +2182,8 @@ var X3D0 =  new X3D({
                                                       vertexCount : new MFInt32([2]),
                                                       coord : new SFNode(
                                                         new Coordinate({
-                                                          point : new MFVec3f([-0.0801,0.0712,-0.0766])})),
-                                                      /*from r_transversetarsal to r_tarsometatarsal_4 vertices 1*/
+                                                          point : new MFVec3f([-0.1105,0.0267,-0.0998,-0.1063,0.016,-0.0634])})),
+                                                      /*from r_transversetarsal to r_tarsometatarsal_4 vertices 2*/
                                                       color : new SFNode(
                                                         new ColorRGBA({
                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -2156,8 +2194,8 @@ var X3D0 =  new X3D({
                                                       vertexCount : new MFInt32([2]),
                                                       coord : new SFNode(
                                                         new Coordinate({
-                                                          point : new MFVec3f([-0.0801,0.0712,-0.0766])})),
-                                                      /*from r_transversetarsal to r_tarsometatarsal_5 vertices 1*/
+                                                          point : new MFVec3f([-0.1105,0.0267,-0.0998,-0.1206,0.0124,-0.0671])})),
+                                                      /*from r_transversetarsal to r_tarsometatarsal_5 vertices 2*/
                                                       color : new SFNode(
                                                         new ColorRGBA({
                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
@@ -2165,6 +2203,7 @@ var X3D0 =  new X3D({
                                             new HAnimJoint({
                                               name : new SFString("r_tarsometatarsal_4"),
                                               DEF : new SFString("hanim_r_tarsometatarsal_4"),
+                                              center : new SFVec3f([-0.1063,0.016,-0.0634]),
                                               ulimit : new MFFloat([0,0,0]),
                                               llimit : new MFFloat([0,0,0]),
                                               children : new MFNode([
@@ -2173,7 +2212,7 @@ var X3D0 =  new X3D({
                                                   DEF : new SFString("hanim_r_metatarsal_4"),
                                                   children : new MFNode([
                                                     new Transform({
-                                                      translation : new SFVec3f([-0.0801,0.0712,-0.0766]),
+                                                      translation : new SFVec3f([-0.1063,0.016,-0.0634]),
                                                       children : new MFNode([
                                                         new Transform({
                                                           /*Empty Transform*/
@@ -2187,8 +2226,8 @@ var X3D0 =  new X3D({
                                                           vertexCount : new MFInt32([2]),
                                                           coord : new SFNode(
                                                             new Coordinate({
-                                                              point : new MFVec3f([-0.0801,0.0712,-0.0766])})),
-                                                          /*from r_tarsometatarsal_4 to r_metatarsophalangeal_4 vertices 1*/
+                                                              point : new MFVec3f([-0.1063,0.016,-0.0634,-0.1097,0.0058,-0.0107])})),
+                                                          /*from r_tarsometatarsal_4 to r_metatarsophalangeal_4 vertices 2*/
                                                           color : new SFNode(
                                                             new ColorRGBA({
                                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
@@ -2196,6 +2235,7 @@ var X3D0 =  new X3D({
                                                 new HAnimJoint({
                                                   name : new SFString("r_metatarsophalangeal_4"),
                                                   DEF : new SFString("hanim_r_metatarsophalangeal_4"),
+                                                  center : new SFVec3f([-0.1097,0.0058,-0.0107]),
                                                   ulimit : new MFFloat([0,0,0]),
                                                   llimit : new MFFloat([0,0,0]),
                                                   children : new MFNode([
@@ -2204,7 +2244,7 @@ var X3D0 =  new X3D({
                                                       DEF : new SFString("hanim_r_tarsal_proximal_phalanx_4"),
                                                       children : new MFNode([
                                                         new Transform({
-                                                          translation : new SFVec3f([-0.0801,0.0712,-0.0766]),
+                                                          translation : new SFVec3f([-0.1097,0.0058,-0.0107]),
                                                           children : new MFNode([
                                                             new Transform({
                                                               /*Empty Transform*/
@@ -2218,8 +2258,8 @@ var X3D0 =  new X3D({
                                                               vertexCount : new MFInt32([2]),
                                                               coord : new SFNode(
                                                                 new Coordinate({
-                                                                  point : new MFVec3f([-0.0801,0.0712,-0.0766])})),
-                                                              /*from r_metatarsophalangeal_4 to r_tarsal_proximal_interphalangeal_4 vertices 1*/
+                                                                  point : new MFVec3f([-0.1097,0.0058,-0.0107,-0.114,0.0037,0.0044])})),
+                                                              /*from r_metatarsophalangeal_4 to r_tarsal_proximal_interphalangeal_4 vertices 2*/
                                                               color : new SFNode(
                                                                 new ColorRGBA({
                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
@@ -2227,6 +2267,7 @@ var X3D0 =  new X3D({
                                                     new HAnimJoint({
                                                       name : new SFString("r_tarsal_proximal_interphalangeal_4"),
                                                       DEF : new SFString("hanim_r_tarsal_proximal_interphalangeal_4"),
+                                                      center : new SFVec3f([-0.114,0.0037,0.0044]),
                                                       ulimit : new MFFloat([0,0,0]),
                                                       llimit : new MFFloat([0,0,0]),
                                                       children : new MFNode([
@@ -2235,7 +2276,7 @@ var X3D0 =  new X3D({
                                                           DEF : new SFString("hanim_r_tarsal_middle_phalanx_4"),
                                                           children : new MFNode([
                                                             new Transform({
-                                                              translation : new SFVec3f([-0.0801,0.0712,-0.0766]),
+                                                              translation : new SFVec3f([-0.114,0.0037,0.0044]),
                                                               children : new MFNode([
                                                                 new Transform({
                                                                   /*Empty Transform*/
@@ -2249,8 +2290,8 @@ var X3D0 =  new X3D({
                                                                   vertexCount : new MFInt32([2]),
                                                                   coord : new SFNode(
                                                                     new Coordinate({
-                                                                      point : new MFVec3f([-0.0801,0.0712,-0.0766])})),
-                                                                  /*from r_tarsal_proximal_interphalangeal_4 to r_tarsal_distal_interphalangeal_4 vertices 1*/
+                                                                      point : new MFVec3f([-0.114,0.0037,0.0044,-0.1155,0.0008,0.0118])})),
+                                                                  /*from r_tarsal_proximal_interphalangeal_4 to r_tarsal_distal_interphalangeal_4 vertices 2*/
                                                                   color : new SFNode(
                                                                     new ColorRGBA({
                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -2268,12 +2309,14 @@ var X3D0 =  new X3D({
                                                         new HAnimJoint({
                                                           name : new SFString("r_tarsal_distal_interphalangeal_4"),
                                                           DEF : new SFString("hanim_r_tarsal_distal_interphalangeal_4"),
+                                                          center : new SFVec3f([-0.1155,0.0008,0.0118]),
                                                           ulimit : new MFFloat([0,0,0]),
                                                           llimit : new MFFloat([0,0,0])})])})])})])}),
 
                                             new HAnimJoint({
                                               name : new SFString("r_tarsometatarsal_5"),
                                               DEF : new SFString("hanim_r_tarsometatarsal_5"),
+                                              center : new SFVec3f([-0.1206,0.0124,-0.0671]),
                                               ulimit : new MFFloat([0,0,0]),
                                               llimit : new MFFloat([0,0,0]),
                                               children : new MFNode([
@@ -2282,7 +2325,7 @@ var X3D0 =  new X3D({
                                                   DEF : new SFString("hanim_r_metatarsal_5"),
                                                   children : new MFNode([
                                                     new Transform({
-                                                      translation : new SFVec3f([-0.0801,0.0712,-0.0766]),
+                                                      translation : new SFVec3f([-0.1206,0.0124,-0.0671]),
                                                       children : new MFNode([
                                                         new Transform({
                                                           /*Empty Transform*/
@@ -2296,8 +2339,8 @@ var X3D0 =  new X3D({
                                                           vertexCount : new MFInt32([2]),
                                                           coord : new SFNode(
                                                             new Coordinate({
-                                                              point : new MFVec3f([-0.0801,0.0712,-0.0766])})),
-                                                          /*from r_tarsometatarsal_5 to r_metatarsophalangeal_5 vertices 1*/
+                                                              point : new MFVec3f([-0.1206,0.0124,-0.0671,-0.1239,0.0051,-0.0153])})),
+                                                          /*from r_tarsometatarsal_5 to r_metatarsophalangeal_5 vertices 2*/
                                                           color : new SFNode(
                                                             new ColorRGBA({
                                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -2315,6 +2358,7 @@ var X3D0 =  new X3D({
                                                 new HAnimJoint({
                                                   name : new SFString("r_metatarsophalangeal_5"),
                                                   DEF : new SFString("hanim_r_metatarsophalangeal_5"),
+                                                  center : new SFVec3f([-0.1239,0.0051,-0.0153]),
                                                   ulimit : new MFFloat([0,0,0]),
                                                   llimit : new MFFloat([0,0,0]),
                                                   children : new MFNode([
@@ -2323,7 +2367,7 @@ var X3D0 =  new X3D({
                                                       DEF : new SFString("hanim_r_tarsal_proximal_phalanx_5"),
                                                       children : new MFNode([
                                                         new Transform({
-                                                          translation : new SFVec3f([-0.0801,0.0712,-0.0766]),
+                                                          translation : new SFVec3f([-0.1239,0.0051,-0.0153]),
                                                           children : new MFNode([
                                                             new Transform({
                                                               /*Empty Transform*/
@@ -2337,8 +2381,8 @@ var X3D0 =  new X3D({
                                                               vertexCount : new MFInt32([2]),
                                                               coord : new SFNode(
                                                                 new Coordinate({
-                                                                  point : new MFVec3f([-0.0801,0.0712,-0.0766])})),
-                                                              /*from r_metatarsophalangeal_5 to r_tarsal_proximal_interphalangeal_5 vertices 1*/
+                                                                  point : new MFVec3f([-0.1239,0.0051,-0.0153,-0.1262,0.0023,-0.0077])})),
+                                                              /*from r_metatarsophalangeal_5 to r_tarsal_proximal_interphalangeal_5 vertices 2*/
                                                               color : new SFNode(
                                                                 new ColorRGBA({
                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
@@ -2346,6 +2390,7 @@ var X3D0 =  new X3D({
                                                     new HAnimJoint({
                                                       name : new SFString("r_tarsal_proximal_interphalangeal_5"),
                                                       DEF : new SFString("hanim_r_tarsal_proximal_interphalangeal_5"),
+                                                      center : new SFVec3f([-0.1262,0.0023,-0.0077]),
                                                       ulimit : new MFFloat([0,0,0]),
                                                       llimit : new MFFloat([0,0,0]),
                                                       children : new MFNode([
@@ -2354,7 +2399,7 @@ var X3D0 =  new X3D({
                                                           DEF : new SFString("hanim_r_tarsal_middle_phalanx_5"),
                                                           children : new MFNode([
                                                             new Transform({
-                                                              translation : new SFVec3f([-0.0801,0.0712,-0.0766]),
+                                                              translation : new SFVec3f([-0.1262,0.0023,-0.0077]),
                                                               children : new MFNode([
                                                                 new Transform({
                                                                   /*Empty Transform*/
@@ -2368,8 +2413,8 @@ var X3D0 =  new X3D({
                                                                   vertexCount : new MFInt32([2]),
                                                                   coord : new SFNode(
                                                                     new Coordinate({
-                                                                      point : new MFVec3f([-0.0801,0.0712,-0.0766])})),
-                                                                  /*from r_tarsal_proximal_interphalangeal_5 to r_tarsal_distal_interphalangeal_5 vertices 1*/
+                                                                      point : new MFVec3f([-0.1262,0.0023,-0.0077,-0.1271,0,0])})),
+                                                                  /*from r_tarsal_proximal_interphalangeal_5 to r_tarsal_distal_interphalangeal_5 vertices 2*/
                                                                   color : new SFNode(
                                                                     new ColorRGBA({
                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -2387,6 +2432,7 @@ var X3D0 =  new X3D({
                                                         new HAnimJoint({
                                                           name : new SFString("r_tarsal_distal_interphalangeal_5"),
                                                           DEF : new SFString("hanim_r_tarsal_distal_interphalangeal_5"),
+                                                          center : new SFVec3f([-0.1271,0,0]),
                                                           ulimit : new MFFloat([0,0,0]),
                                                           llimit : new MFFloat([0,0,0])})])})])})])})])})])})])})])})])})])}),
 
@@ -3602,7 +3648,7 @@ var X3D0 =  new X3D({
                                                                                                                                   vertexCount : new MFInt32([2]),
                                                                                                                                   coord : new SFNode(
                                                                                                                                     new Coordinate({
-                                                                                                                                      point : new MFVec3f([0.0044,1.6209,0.0236,0.0044,1.6209,0.0236])})),
+                                                                                                                                      point : new MFVec3f([0.0044,1.6209,0.0236,0.0503,1.4157,-0.0689])})),
                                                                                                                                   /*from skullbase to l_eyelid_joint vertices 2*/
                                                                                                                                   color : new SFNode(
                                                                                                                                     new ColorRGBA({
@@ -3614,7 +3660,7 @@ var X3D0 =  new X3D({
                                                                                                                                   vertexCount : new MFInt32([2]),
                                                                                                                                   coord : new SFNode(
                                                                                                                                     new Coordinate({
-                                                                                                                                      point : new MFVec3f([0.0044,1.6209,0.0236,0.0044,1.6209,0.0236])})),
+                                                                                                                                      point : new MFVec3f([0.0044,1.6209,0.0236,-0.0507,1.4157,-0.0689])})),
                                                                                                                                   /*from skullbase to r_eyelid_joint vertices 2*/
                                                                                                                                   color : new SFNode(
                                                                                                                                     new ColorRGBA({
@@ -3626,7 +3672,7 @@ var X3D0 =  new X3D({
                                                                                                                                   vertexCount : new MFInt32([2]),
                                                                                                                                   coord : new SFNode(
                                                                                                                                     new Coordinate({
-                                                                                                                                      point : new MFVec3f([0.0044,1.6209,0.0236,0.0044,1.6209,0.0236])})),
+                                                                                                                                      point : new MFVec3f([0.0044,1.6209,0.0236,0.0479,1.3963,-0.0188])})),
                                                                                                                                   /*from skullbase to l_eyeball_joint vertices 2*/
                                                                                                                                   color : new SFNode(
                                                                                                                                     new ColorRGBA({
@@ -3638,7 +3684,7 @@ var X3D0 =  new X3D({
                                                                                                                                   vertexCount : new MFInt32([2]),
                                                                                                                                   coord : new SFNode(
                                                                                                                                     new Coordinate({
-                                                                                                                                      point : new MFVec3f([0.0044,1.6209,0.0236,0.0044,1.6209,0.0236])})),
+                                                                                                                                      point : new MFVec3f([0.0044,1.6209,0.0236,-0.0483,1.3963,-0.0188])})),
                                                                                                                                   /*from skullbase to r_eyeball_joint vertices 2*/
                                                                                                                                   color : new SFNode(
                                                                                                                                     new ColorRGBA({
@@ -3650,7 +3696,7 @@ var X3D0 =  new X3D({
                                                                                                                                   vertexCount : new MFInt32([2]),
                                                                                                                                   coord : new SFNode(
                                                                                                                                     new Coordinate({
-                                                                                                                                      point : new MFVec3f([0.0044,1.6209,0.0236,0.0044,1.6209,0.0236])})),
+                                                                                                                                      point : new MFVec3f([0.0044,1.6209,0.0236,0.0216,1.4053,0.0051])})),
                                                                                                                                   /*from skullbase to l_eyebrow_joint vertices 2*/
                                                                                                                                   color : new SFNode(
                                                                                                                                     new ColorRGBA({
@@ -3662,7 +3708,7 @@ var X3D0 =  new X3D({
                                                                                                                                   vertexCount : new MFInt32([2]),
                                                                                                                                   coord : new SFNode(
                                                                                                                                     new Coordinate({
-                                                                                                                                      point : new MFVec3f([0.0044,1.6209,0.0236,0.0044,1.6209,0.0236])})),
+                                                                                                                                      point : new MFVec3f([0.0044,1.6209,0.0236,-0.0219,1.4053,0.0051])})),
                                                                                                                                   /*from skullbase to r_eyebrow_joint vertices 2*/
                                                                                                                                   color : new SFNode(
                                                                                                                                     new ColorRGBA({
@@ -3674,7 +3720,7 @@ var X3D0 =  new X3D({
                                                                                                                                   vertexCount : new MFInt32([2]),
                                                                                                                                   coord : new SFNode(
                                                                                                                                     new Coordinate({
-                                                                                                                                      point : new MFVec3f([0.0044,1.6209,0.0236,0.0044,1.6209,0.0236])})),
+                                                                                                                                      point : new MFVec3f([0.0044,1.6209,0.0236,-0.0002,1.3043,-0.0865])})),
                                                                                                                                   /*from skullbase to temporomandibular vertices 2*/
                                                                                                                                   color : new SFNode(
                                                                                                                                     new ColorRGBA({
@@ -3726,42 +3772,49 @@ var X3D0 =  new X3D({
                                                                                                                         new HAnimJoint({
                                                                                                                           name : new SFString("l_eyelid_joint"),
                                                                                                                           DEF : new SFString("hanim_l_eyelid_joint"),
+                                                                                                                          center : new SFVec3f([0.0503,1.4157,-0.0689]),
                                                                                                                           ulimit : new MFFloat([0,0,0]),
                                                                                                                           llimit : new MFFloat([0,0,0])}),
 
                                                                                                                         new HAnimJoint({
                                                                                                                           name : new SFString("r_eyelid_joint"),
                                                                                                                           DEF : new SFString("hanim_r_eyelid_joint"),
+                                                                                                                          center : new SFVec3f([-0.0507,1.4157,-0.0689]),
                                                                                                                           ulimit : new MFFloat([0,0,0]),
                                                                                                                           llimit : new MFFloat([0,0,0])}),
 
                                                                                                                         new HAnimJoint({
                                                                                                                           name : new SFString("l_eyeball_joint"),
                                                                                                                           DEF : new SFString("hanim_l_eyeball_joint"),
+                                                                                                                          center : new SFVec3f([0.0479,1.3963,-0.0188]),
                                                                                                                           ulimit : new MFFloat([0,0,0]),
                                                                                                                           llimit : new MFFloat([0,0,0])}),
 
                                                                                                                         new HAnimJoint({
                                                                                                                           name : new SFString("r_eyeball_joint"),
                                                                                                                           DEF : new SFString("hanim_r_eyeball_joint"),
+                                                                                                                          center : new SFVec3f([-0.0483,1.3963,-0.0188]),
                                                                                                                           ulimit : new MFFloat([0,0,0]),
                                                                                                                           llimit : new MFFloat([0,0,0])}),
 
                                                                                                                         new HAnimJoint({
                                                                                                                           name : new SFString("l_eyebrow_joint"),
                                                                                                                           DEF : new SFString("hanim_l_eyebrow_joint"),
+                                                                                                                          center : new SFVec3f([0.0216,1.4053,0.0051]),
                                                                                                                           ulimit : new MFFloat([0,0,0]),
                                                                                                                           llimit : new MFFloat([0,0,0])}),
 
                                                                                                                         new HAnimJoint({
                                                                                                                           name : new SFString("r_eyebrow_joint"),
                                                                                                                           DEF : new SFString("hanim_r_eyebrow_joint"),
+                                                                                                                          center : new SFVec3f([-0.0219,1.4053,0.0051]),
                                                                                                                           ulimit : new MFFloat([0,0,0]),
                                                                                                                           llimit : new MFFloat([0,0,0])}),
 
                                                                                                                         new HAnimJoint({
                                                                                                                           name : new SFString("temporomandibular"),
                                                                                                                           DEF : new SFString("hanim_temporomandibular"),
+                                                                                                                          center : new SFVec3f([-0.0002,1.3043,-0.0865]),
                                                                                                                           ulimit : new MFFloat([0,0,0]),
                                                                                                                           llimit : new MFFloat([0,0,0])})])})])})])})])})])})])})])})])}),
 
@@ -3999,7 +4052,7 @@ var X3D0 =  new X3D({
                                                                                                                       vertexCount : new MFInt32([2]),
                                                                                                                       coord : new SFNode(
                                                                                                                         new Coordinate({
-                                                                                                                          point : new MFVec3f([0.1984,0.8663,-0.0583,0.1984,0.8663,-0.0583])})),
+                                                                                                                          point : new MFVec3f([0.1984,0.8663,-0.0583,0.1811,0.6975,-0.0826])})),
                                                                                                                       /*from l_radiocarpal to l_midcarpal_1 vertices 2*/
                                                                                                                       color : new SFNode(
                                                                                                                         new ColorRGBA({
@@ -4011,7 +4064,7 @@ var X3D0 =  new X3D({
                                                                                                                       vertexCount : new MFInt32([2]),
                                                                                                                       coord : new SFNode(
                                                                                                                         new Coordinate({
-                                                                                                                          point : new MFVec3f([0.1984,0.8663,-0.0583,0.1984,0.8663,-0.0583])})),
+                                                                                                                          point : new MFVec3f([0.1984,0.8663,-0.0583,0.1811,0.6984,-0.0935])})),
                                                                                                                       /*from l_radiocarpal to l_midcarpal_2 vertices 2*/
                                                                                                                       color : new SFNode(
                                                                                                                         new ColorRGBA({
@@ -4023,7 +4076,7 @@ var X3D0 =  new X3D({
                                                                                                                       vertexCount : new MFInt32([2]),
                                                                                                                       coord : new SFNode(
                                                                                                                         new Coordinate({
-                                                                                                                          point : new MFVec3f([0.1984,0.8663,-0.0583,0.1984,0.8663,-0.0583])})),
+                                                                                                                          point : new MFVec3f([0.1984,0.8663,-0.0583,0.1809,0.7,-0.1067])})),
                                                                                                                       /*from l_radiocarpal to l_midcarpal_3 vertices 2*/
                                                                                                                       color : new SFNode(
                                                                                                                         new ColorRGBA({
@@ -4035,7 +4088,7 @@ var X3D0 =  new X3D({
                                                                                                                       vertexCount : new MFInt32([2]),
                                                                                                                       coord : new SFNode(
                                                                                                                         new Coordinate({
-                                                                                                                          point : new MFVec3f([0.1984,0.8663,-0.0583,0.1984,0.8663,-0.0583])})),
+                                                                                                                          point : new MFVec3f([0.1984,0.8663,-0.0583,0.1809,0.6973,-0.1276])})),
                                                                                                                       /*from l_radiocarpal to l_midcarpal_4_5 vertices 2*/
                                                                                                                       color : new SFNode(
                                                                                                                         new ColorRGBA({
@@ -4044,6 +4097,7 @@ var X3D0 =  new X3D({
                                                                                                             new HAnimJoint({
                                                                                                               name : new SFString("l_midcarpal_1"),
                                                                                                               DEF : new SFString("hanim_l_midcarpal_1"),
+                                                                                                              center : new SFVec3f([0.1811,0.6975,-0.0826]),
                                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                                               llimit : new MFFloat([0,0,0]),
                                                                                                               children : new MFNode([
@@ -4052,7 +4106,7 @@ var X3D0 =  new X3D({
                                                                                                                   DEF : new SFString("hanim_l_trapezium"),
                                                                                                                   children : new MFNode([
                                                                                                                     new Transform({
-                                                                                                                      translation : new SFVec3f([0.1984,0.8663,-0.0583]),
+                                                                                                                      translation : new SFVec3f([0.1811,0.6975,-0.0826]),
                                                                                                                       children : new MFNode([
                                                                                                                         new Transform({
                                                                                                                           /*Empty Transform*/
@@ -4066,8 +4120,8 @@ var X3D0 =  new X3D({
                                                                                                                           vertexCount : new MFInt32([2]),
                                                                                                                           coord : new SFNode(
                                                                                                                             new Coordinate({
-                                                                                                                              point : new MFVec3f([0.1924,0.8472,-0.0534])})),
-                                                                                                                          /*from l_midcarpal_1 to l_carpometacarpal_1 vertices 1*/
+                                                                                                                              point : new MFVec3f([0.1811,0.6975,-0.0826,0.1924,0.8472,-0.0534])})),
+                                                                                                                          /*from l_midcarpal_1 to l_carpometacarpal_1 vertices 2*/
                                                                                                                           color : new SFNode(
                                                                                                                             new ColorRGBA({
                                                                                                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
@@ -4156,6 +4210,7 @@ var X3D0 =  new X3D({
                                                                                                             new HAnimJoint({
                                                                                                               name : new SFString("l_midcarpal_2"),
                                                                                                               DEF : new SFString("hanim_l_midcarpal_2"),
+                                                                                                              center : new SFVec3f([0.1811,0.6984,-0.0935]),
                                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                                               llimit : new MFFloat([0,0,0]),
                                                                                                               children : new MFNode([
@@ -4164,7 +4219,7 @@ var X3D0 =  new X3D({
                                                                                                                   DEF : new SFString("hanim_l_trapezoid"),
                                                                                                                   children : new MFNode([
                                                                                                                     new Transform({
-                                                                                                                      translation : new SFVec3f([0.1955,0.8159,0.0464]),
+                                                                                                                      translation : new SFVec3f([0.1811,0.6984,-0.0935]),
                                                                                                                       children : new MFNode([
                                                                                                                         new Transform({
                                                                                                                           /*Empty Transform*/
@@ -4178,8 +4233,8 @@ var X3D0 =  new X3D({
                                                                                                                           vertexCount : new MFInt32([2]),
                                                                                                                           coord : new SFNode(
                                                                                                                             new Coordinate({
-                                                                                                                              point : new MFVec3f([0.1983,0.8024,-0.028])})),
-                                                                                                                          /*from l_midcarpal_2 to l_carpometacarpal_2 vertices 1*/
+                                                                                                                              point : new MFVec3f([0.1811,0.6984,-0.0935,0.1983,0.8024,-0.028])})),
+                                                                                                                          /*from l_midcarpal_2 to l_carpometacarpal_2 vertices 2*/
                                                                                                                           color : new SFNode(
                                                                                                                             new ColorRGBA({
                                                                                                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -4322,6 +4377,7 @@ var X3D0 =  new X3D({
                                                                                                             new HAnimJoint({
                                                                                                               name : new SFString("l_midcarpal_3"),
                                                                                                               DEF : new SFString("hanim_l_midcarpal_3"),
+                                                                                                              center : new SFVec3f([0.1809,0.7,-0.1067]),
                                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                                               llimit : new MFFloat([0,0,0]),
                                                                                                               children : new MFNode([
@@ -4330,7 +4386,7 @@ var X3D0 =  new X3D({
                                                                                                                   DEF : new SFString("hanim_l_capitate"),
                                                                                                                   children : new MFNode([
                                                                                                                     new Transform({
-                                                                                                                      translation : new SFVec3f([0.2028,0.7139,-0.0236]),
+                                                                                                                      translation : new SFVec3f([0.1809,0.7,-0.1067]),
                                                                                                                       children : new MFNode([
                                                                                                                         new Transform({
                                                                                                                           /*Empty Transform*/
@@ -4344,8 +4400,8 @@ var X3D0 =  new X3D({
                                                                                                                           vertexCount : new MFInt32([2]),
                                                                                                                           coord : new SFNode(
                                                                                                                             new Coordinate({
-                                                                                                                              point : new MFVec3f([0.1987,0.8029,-0.053])})),
-                                                                                                                          /*from l_midcarpal_3 to l_carpometacarpal_3 vertices 1*/
+                                                                                                                              point : new MFVec3f([0.1809,0.7,-0.1067,0.1987,0.8029,-0.053])})),
+                                                                                                                          /*from l_midcarpal_3 to l_carpometacarpal_3 vertices 2*/
                                                                                                                           color : new SFNode(
                                                                                                                             new ColorRGBA({
                                                                                                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -4476,6 +4532,7 @@ var X3D0 =  new X3D({
                                                                                                             new HAnimJoint({
                                                                                                               name : new SFString("l_midcarpal_4_5"),
                                                                                                               DEF : new SFString("hanim_l_midcarpal_4_5"),
+                                                                                                              center : new SFVec3f([0.1809,0.6973,-0.1276]),
                                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                                               llimit : new MFFloat([0,0,0]),
                                                                                                               children : new MFNode([
@@ -4484,7 +4541,7 @@ var X3D0 =  new X3D({
                                                                                                                   DEF : new SFString("hanim_l_hamate"),
                                                                                                                   children : new MFNode([
                                                                                                                     new Transform({
-                                                                                                                      translation : new SFVec3f([0.2026,0.7011,-0.0494]),
+                                                                                                                      translation : new SFVec3f([0.1809,0.6973,-0.1276]),
                                                                                                                       children : new MFNode([
                                                                                                                         new Transform({
                                                                                                                           /*Empty Transform*/
@@ -4498,8 +4555,8 @@ var X3D0 =  new X3D({
                                                                                                                           vertexCount : new MFInt32([2]),
                                                                                                                           coord : new SFNode(
                                                                                                                             new Coordinate({
-                                                                                                                              point : new MFVec3f([0.1956,0.8019,-0.0794])})),
-                                                                                                                          /*from l_midcarpal_4_5 to l_carpometacarpal_4 vertices 1*/
+                                                                                                                              point : new MFVec3f([0.1809,0.6973,-0.1276,0.1956,0.8019,-0.0794])})),
+                                                                                                                          /*from l_midcarpal_4_5 to l_carpometacarpal_4 vertices 2*/
                                                                                                                           color : new SFNode(
                                                                                                                             new ColorRGBA({
                                                                                                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -4510,8 +4567,8 @@ var X3D0 =  new X3D({
                                                                                                                           vertexCount : new MFInt32([2]),
                                                                                                                           coord : new SFNode(
                                                                                                                             new Coordinate({
-                                                                                                                              point : new MFVec3f([0.1925,0.8066,-0.1036])})),
-                                                                                                                          /*from l_midcarpal_4_5 to l_carpometacarpal_5 vertices 1*/
+                                                                                                                              point : new MFVec3f([0.1809,0.6973,-0.1276,0.1925,0.8066,-0.1036])})),
+                                                                                                                          /*from l_midcarpal_4_5 to l_carpometacarpal_5 vertices 2*/
                                                                                                                           color : new SFNode(
                                                                                                                             new ColorRGBA({
                                                                                                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -4987,7 +5044,7 @@ var X3D0 =  new X3D({
                                                                                                                       vertexCount : new MFInt32([2]),
                                                                                                                       coord : new SFNode(
                                                                                                                         new Coordinate({
-                                                                                                                          point : new MFVec3f([-0.1959,0.8694,-0.0521,-0.1959,0.8694,-0.0521])})),
+                                                                                                                          point : new MFVec3f([-0.1959,0.8694,-0.0521,-0.1811,0.6975,-0.0826])})),
                                                                                                                       /*from r_radiocarpal to r_midcarpal_1 vertices 2*/
                                                                                                                       color : new SFNode(
                                                                                                                         new ColorRGBA({
@@ -4999,7 +5056,7 @@ var X3D0 =  new X3D({
                                                                                                                       vertexCount : new MFInt32([2]),
                                                                                                                       coord : new SFNode(
                                                                                                                         new Coordinate({
-                                                                                                                          point : new MFVec3f([-0.1959,0.8694,-0.0521,-0.1959,0.8694,-0.0521])})),
+                                                                                                                          point : new MFVec3f([-0.1959,0.8694,-0.0521,-0.1811,0.6984,-0.0935])})),
                                                                                                                       /*from r_radiocarpal to r_midcarpal_2 vertices 2*/
                                                                                                                       color : new SFNode(
                                                                                                                         new ColorRGBA({
@@ -5011,7 +5068,7 @@ var X3D0 =  new X3D({
                                                                                                                       vertexCount : new MFInt32([2]),
                                                                                                                       coord : new SFNode(
                                                                                                                         new Coordinate({
-                                                                                                                          point : new MFVec3f([-0.1959,0.8694,-0.0521,-0.1959,0.8694,-0.0521])})),
+                                                                                                                          point : new MFVec3f([-0.1959,0.8694,-0.0521,-0.1809,0.7,-0.1067])})),
                                                                                                                       /*from r_radiocarpal to r_midcarpal_3 vertices 2*/
                                                                                                                       color : new SFNode(
                                                                                                                         new ColorRGBA({
@@ -5023,7 +5080,7 @@ var X3D0 =  new X3D({
                                                                                                                       vertexCount : new MFInt32([2]),
                                                                                                                       coord : new SFNode(
                                                                                                                         new Coordinate({
-                                                                                                                          point : new MFVec3f([-0.1959,0.8694,-0.0521,-0.1959,0.8694,-0.0521])})),
+                                                                                                                          point : new MFVec3f([-0.1959,0.8694,-0.0521,-0.1809,0.6973,-0.1276])})),
                                                                                                                       /*from r_radiocarpal to r_midcarpal_4_5 vertices 2*/
                                                                                                                       color : new SFNode(
                                                                                                                         new ColorRGBA({
@@ -5032,6 +5089,7 @@ var X3D0 =  new X3D({
                                                                                                             new HAnimJoint({
                                                                                                               name : new SFString("r_midcarpal_1"),
                                                                                                               DEF : new SFString("hanim_r_midcarpal_1"),
+                                                                                                              center : new SFVec3f([-0.1811,0.6975,-0.0826]),
                                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                                               llimit : new MFFloat([0,0,0]),
                                                                                                               children : new MFNode([
@@ -5040,7 +5098,7 @@ var X3D0 =  new X3D({
                                                                                                                   DEF : new SFString("hanim_r_trapezium"),
                                                                                                                   children : new MFNode([
                                                                                                                     new Transform({
-                                                                                                                      translation : new SFVec3f([-0.1959,0.8694,-0.0521]),
+                                                                                                                      translation : new SFVec3f([-0.1811,0.6975,-0.0826]),
                                                                                                                       children : new MFNode([
                                                                                                                         new Transform({
                                                                                                                           /*Empty Transform*/
@@ -5054,8 +5112,8 @@ var X3D0 =  new X3D({
                                                                                                                           vertexCount : new MFInt32([2]),
                                                                                                                           coord : new SFNode(
                                                                                                                             new Coordinate({
-                                                                                                                              point : new MFVec3f([-0.1899,0.8502,-0.0473])})),
-                                                                                                                          /*from r_midcarpal_1 to r_carpometacarpal_1 vertices 1*/
+                                                                                                                              point : new MFVec3f([-0.1811,0.6975,-0.0826,-0.1899,0.8502,-0.0473])})),
+                                                                                                                          /*from r_midcarpal_1 to r_carpometacarpal_1 vertices 2*/
                                                                                                                           color : new SFNode(
                                                                                                                             new ColorRGBA({
                                                                                                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})])}),
@@ -5144,6 +5202,7 @@ var X3D0 =  new X3D({
                                                                                                             new HAnimJoint({
                                                                                                               name : new SFString("r_midcarpal_2"),
                                                                                                               DEF : new SFString("hanim_r_midcarpal_2"),
+                                                                                                              center : new SFVec3f([-0.1811,0.6984,-0.0935]),
                                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                                               llimit : new MFFloat([0,0,0]),
                                                                                                               children : new MFNode([
@@ -5152,7 +5211,7 @@ var X3D0 =  new X3D({
                                                                                                                   DEF : new SFString("hanim_r_trapezoid"),
                                                                                                                   children : new MFNode([
                                                                                                                     new Transform({
-                                                                                                                      translation : new SFVec3f([-0.1864,0.819,0.0506]),
+                                                                                                                      translation : new SFVec3f([-0.1811,0.6984,-0.0935]),
                                                                                                                       children : new MFNode([
                                                                                                                         new Transform({
                                                                                                                           /*Empty Transform*/
@@ -5166,8 +5225,8 @@ var X3D0 =  new X3D({
                                                                                                                           vertexCount : new MFInt32([2]),
                                                                                                                           coord : new SFNode(
                                                                                                                             new Coordinate({
-                                                                                                                              point : new MFVec3f([-0.1961,0.8055,-0.0218])})),
-                                                                                                                          /*from r_midcarpal_2 to r_carpometacarpal_2 vertices 1*/
+                                                                                                                              point : new MFVec3f([-0.1811,0.6984,-0.0935,-0.1961,0.8055,-0.0218])})),
+                                                                                                                          /*from r_midcarpal_2 to r_carpometacarpal_2 vertices 2*/
                                                                                                                           color : new SFNode(
                                                                                                                             new ColorRGBA({
                                                                                                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -5310,6 +5369,7 @@ var X3D0 =  new X3D({
                                                                                                             new HAnimJoint({
                                                                                                               name : new SFString("r_midcarpal_3"),
                                                                                                               DEF : new SFString("hanim_r_midcarpal_3"),
+                                                                                                              center : new SFVec3f([-0.1809,0.7,-0.1067]),
                                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                                               llimit : new MFFloat([0,0,0]),
                                                                                                               children : new MFNode([
@@ -5318,7 +5378,7 @@ var X3D0 =  new X3D({
                                                                                                                   DEF : new SFString("hanim_r_capitate"),
                                                                                                                   children : new MFNode([
                                                                                                                     new Transform({
-                                                                                                                      translation : new SFVec3f([-0.1945,0.7169,-0.0173]),
+                                                                                                                      translation : new SFVec3f([-0.1809,0.7,-0.1067]),
                                                                                                                       children : new MFNode([
                                                                                                                         new Transform({
                                                                                                                           /*Empty Transform*/
@@ -5332,8 +5392,8 @@ var X3D0 =  new X3D({
                                                                                                                           vertexCount : new MFInt32([2]),
                                                                                                                           coord : new SFNode(
                                                                                                                             new Coordinate({
-                                                                                                                              point : new MFVec3f([-0.1972,0.806,-0.0468])})),
-                                                                                                                          /*from r_midcarpal_3 to r_carpometacarpal_3 vertices 1*/
+                                                                                                                              point : new MFVec3f([-0.1809,0.7,-0.1067,-0.1972,0.806,-0.0468])})),
+                                                                                                                          /*from r_midcarpal_3 to r_carpometacarpal_3 vertices 2*/
                                                                                                                           color : new SFNode(
                                                                                                                             new ColorRGBA({
                                                                                                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -5464,6 +5524,7 @@ var X3D0 =  new X3D({
                                                                                                             new HAnimJoint({
                                                                                                               name : new SFString("r_midcarpal_4_5"),
                                                                                                               DEF : new SFString("hanim_r_midcarpal_4_5"),
+                                                                                                              center : new SFVec3f([-0.1809,0.6973,-0.1276]),
                                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                                               llimit : new MFFloat([0,0,0]),
                                                                                                               children : new MFNode([
@@ -5472,7 +5533,7 @@ var X3D0 =  new X3D({
                                                                                                                   DEF : new SFString("hanim_r_hamate"),
                                                                                                                   children : new MFNode([
                                                                                                                     new Transform({
-                                                                                                                      translation : new SFVec3f([-0.1939,0.7042,-0.0432]),
+                                                                                                                      translation : new SFVec3f([-0.1809,0.6973,-0.1276]),
                                                                                                                       children : new MFNode([
                                                                                                                         new Transform({
                                                                                                                           /*Empty Transform*/
@@ -5486,8 +5547,8 @@ var X3D0 =  new X3D({
                                                                                                                           vertexCount : new MFInt32([2]),
                                                                                                                           coord : new SFNode(
                                                                                                                             new Coordinate({
-                                                                                                                              point : new MFVec3f([-0.1951,0.8049,-0.0732])})),
-                                                                                                                          /*from r_midcarpal_4_5 to r_carpometacarpal_4 vertices 1*/
+                                                                                                                              point : new MFVec3f([-0.1809,0.6973,-0.1276,-0.1951,0.8049,-0.0732])})),
+                                                                                                                          /*from r_midcarpal_4_5 to r_carpometacarpal_4 vertices 2*/
                                                                                                                           color : new SFNode(
                                                                                                                             new ColorRGBA({
                                                                                                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
@@ -5498,8 +5559,8 @@ var X3D0 =  new X3D({
                                                                                                                           vertexCount : new MFInt32([2]),
                                                                                                                           coord : new SFNode(
                                                                                                                             new Coordinate({
-                                                                                                                              point : new MFVec3f([-0.1926,0.8096,-0.0975])})),
-                                                                                                                          /*from r_midcarpal_4_5 to r_carpometacarpal_5 vertices 1*/
+                                                                                                                              point : new MFVec3f([-0.1809,0.6973,-0.1276,-0.1926,0.8096,-0.0975])})),
+                                                                                                                          /*from r_midcarpal_4_5 to r_carpometacarpal_5 vertices 2*/
                                                                                                                           color : new SFNode(
                                                                                                                             new ColorRGBA({
                                                                                                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),

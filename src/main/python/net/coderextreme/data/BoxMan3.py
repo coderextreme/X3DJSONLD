@@ -36,7 +36,7 @@ meta(name="subject", content="BoxMan HAnim 2.0"),
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxMan3.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="28 June 2023"),
+meta(name="translated", content="29 June 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -45,7 +45,7 @@ WorldInfo(info=["(C) 2000 James Smith - james@vapourtech.com","http://www.vapour
 Background(groundColor=[(0.6,0.6,0.6)], skyColor=[(0.75,0.75,0.75)]),
 Comment(value=''' When converting to VRML97 (which didn't include HAnim), HAnim node prototypes are provided automatically by the X3dToVrml97.xslt translation stylesheet '''),
 
-HAnimHumanoid(name="Humanoid", DEF="boxman_Humanoid", info=["authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=1.0"], version="1.0", skeleton=[
+HAnimHumanoid(name="Humanoid", DEF="boxman_Humanoid", info=["authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=2.0"], version="1.0", skeleton=[
 HAnimJoint(name="humanoid_root", DEF="boxman_humanoid_root", center=((0,0.9723,-0.0728)), skinCoordIndex=[0,1,2,3,4,5,6,7,8,9,10,11], skinCoordWeight=[float(1),float(1),float(1),float(1),float(1),float(1),float(1),float(1),float(1),float(1),float(1),float(1)], ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="sacrum", DEF="boxman_sacrum", children=[
 Transform(translation=((0,0.9723,-0.0728)), children=[

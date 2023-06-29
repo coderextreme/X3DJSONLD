@@ -13,7 +13,7 @@ meta(name="modified", content="14 Jan 2023"),
 meta(name="creator", content="John Carlson"),
 meta(name="created", content="9 November 2020"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="28 June 2023"),
+meta(name="translated", content="29 June 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -70,7 +70,9 @@ material=
 Material(diffuseColor=((1,1,0)), transparency=0.3)))])]),]),
 NavigationInfo(speed=1.5),
 Viewpoint(description="default"),
-HAnimHumanoid(name="HAnim", DEF="hanim_HAnim", info=["humanoidVersion=2.0"], version="2.0", skeleton=[
+HAnimHumanoid(name="HAnim", DEF="hanim_HAnim", info=["humanoidVersion=2.0"], version="2.0", 
+skinCoord=(
+Coordinate(USE="TheSkinCoord")), skeleton=[
 HAnimJoint(name="humanoid_root", DEF="hanim_humanoid_root", center=((0.0,0.824,0.0277)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="sacrum", DEF="hanim_sacrum", children=[
 Transform(translation=((0.0,0.824,0.0277)), children=[
@@ -232,19 +234,19 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1101,0.0656,-0.0736),(0.1101,0.0656,-0.0736)]), 
+Coordinate(point=[(0.1101,0.0656,-0.0736),(3.4715,0.0374,0.6807)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1101,0.0656,-0.0736),(0.1101,0.0656,-0.0736)]), 
+Coordinate(point=[(0.1101,0.0656,-0.0736),(3.9515,0.0653,-0.6895)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="l_talocalcaneonavicular", DEF="hanim_l_talocalcaneonavicular", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="l_talocalcaneonavicular", DEF="hanim_l_talocalcaneonavicular", center=((3.4715,0.0374,0.6807)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_navicular", DEF="hanim_l_navicular", children=[
-Transform(translation=((0.1101,0.0656,-0.0736)), children=[
+Transform(translation=((3.4715,0.0374,0.6807)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -253,26 +255,26 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1101,0.0656,-0.0736)]), 
+Coordinate(point=[(3.4715,0.0374,0.6807),(2.9855,0.0311,1.2819)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1101,0.0656,-0.0736)]), 
+Coordinate(point=[(3.4715,0.0374,0.6807),(3.6105,0.033,1.4168)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1101,0.0656,-0.0736)]), 
+Coordinate(point=[(3.4715,0.0374,0.6807),(4.1235,0.0328,1.3453)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="l_cuneonavicular_1", DEF="hanim_l_cuneonavicular_1", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="l_cuneonavicular_1", DEF="hanim_l_cuneonavicular_1", center=((2.9855,0.0311,1.2819)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_cuneiform_1", DEF="hanim_l_cuneiform_1", children=[
-Transform(translation=((0.1101,0.0656,-0.0736)), children=[
+Transform(translation=((2.9855,0.0311,1.2819)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -281,12 +283,12 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1101,0.0656,-0.0736)]), 
+Coordinate(point=[(2.9855,0.0311,1.2819),(2.8635,0.0194,2.4285)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="l_tarsometatarsal_1", DEF="hanim_l_tarsometatarsal_1", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="l_tarsometatarsal_1", DEF="hanim_l_tarsometatarsal_1", center=((2.8635,0.0194,2.4285)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_metatarsal_1", DEF="hanim_l_metatarsal_1", children=[
-Transform(translation=((0.1101,0.0656,-0.0736)), children=[
+Transform(translation=((2.8635,0.0194,2.4285)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -295,15 +297,15 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1101,0.0656,-0.0736)]), 
+Coordinate(point=[(2.8635,0.0194,2.4285),(2.7525,0.0077,4.6255)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 HAnimSite(name="l_metatarsal_phalanx_1_pt", DEF="hanim_l_metatarsal_phalanx_1_pt", children=[
 TouchSensor(description="HAnimSite l_metatarsal_phalanx_1_pt"),
 Shape(USE="HAnimSiteShape")])]),
-HAnimJoint(name="l_metatarsophalangeal_1", DEF="hanim_l_metatarsophalangeal_1", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="l_metatarsophalangeal_1", DEF="hanim_l_metatarsophalangeal_1", center=((2.7525,0.0077,4.6255)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_tarsal_proximal_phalanx_1", DEF="hanim_l_tarsal_proximal_phalanx_1", children=[
-Transform(translation=((0.1101,0.0656,-0.0736)), children=[
+Transform(translation=((2.7525,0.0077,4.6255)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -312,16 +314,16 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1101,0.0656,-0.0736)]), 
+Coordinate(point=[(2.7525,0.0077,4.6255),(2.7525,0.0077,4.6255)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 HAnimSite(name="l_tarsal_distal_phalanx_1_tip", DEF="hanim_l_tarsal_distal_phalanx_1_tip", children=[
 TouchSensor(description="HAnimSite l_tarsal_distal_phalanx_1_tip"),
 Shape(USE="HAnimSiteShape")])]),
 HAnimJoint(name="l_tarsal_interphalangeal_1", DEF="hanim_l_tarsal_interphalangeal_1", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])]),
-HAnimJoint(name="l_cuneonavicular_2", DEF="hanim_l_cuneonavicular_2", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="l_cuneonavicular_2", DEF="hanim_l_cuneonavicular_2", center=((3.6105,0.033,1.4168)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_cuneiform_2", DEF="hanim_l_cuneiform_2", children=[
-Transform(translation=((0.1101,0.0656,-0.0736)), children=[
+Transform(translation=((3.6105,0.033,1.4168)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -330,12 +332,12 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1101,0.0656,-0.0736)]), 
+Coordinate(point=[(3.6105,0.033,1.4168),(3.5555,0.0232,2.2895)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="l_tarsometatarsal_2", DEF="hanim_l_tarsometatarsal_2", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="l_tarsometatarsal_2", DEF="hanim_l_tarsometatarsal_2", center=((3.5555,0.0232,2.2895)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_metatarsal_2", DEF="hanim_l_metatarsal_2", children=[
-Transform(translation=((0.1101,0.0656,-0.0736)), children=[
+Transform(translation=((3.5555,0.0232,2.2895)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -344,12 +346,12 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1101,0.0656,-0.0736)]), 
+Coordinate(point=[(3.5555,0.0232,2.2895),(3.6595,0.0085,4.8125)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="l_metatarsophalangeal_2", DEF="hanim_l_metatarsophalangeal_2", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="l_metatarsophalangeal_2", DEF="hanim_l_metatarsophalangeal_2", center=((3.6595,0.0085,4.8125)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_tarsal_proximal_phalanx_2", DEF="hanim_l_tarsal_proximal_phalanx_2", children=[
-Transform(translation=((0.1101,0.0656,-0.0736)), children=[
+Transform(translation=((3.6595,0.0085,4.8125)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -358,12 +360,12 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1101,0.0656,-0.0736)]), 
+Coordinate(point=[(3.6595,0.0085,4.8125),(3.7385,0.0054,5.5315)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="l_tarsal_proximal_interphalangeal_2", DEF="hanim_l_tarsal_proximal_interphalangeal_2", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="l_tarsal_proximal_interphalangeal_2", DEF="hanim_l_tarsal_proximal_interphalangeal_2", center=((3.7385,0.0054,5.5315)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_tarsal_middle_phalanx_2", DEF="hanim_l_tarsal_middle_phalanx_2", children=[
-Transform(translation=((0.1101,0.0656,-0.0736)), children=[
+Transform(translation=((3.7385,0.0054,5.5315)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -372,16 +374,16 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1101,0.0656,-0.0736)]), 
+Coordinate(point=[(3.7385,0.0054,5.5315),(3.7385,0.0017,5.9505)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 HAnimSite(name="l_tarsal_distal_phalanx_2_tip", DEF="hanim_l_tarsal_distal_phalanx_2_tip", translation=((0.1195,0.0079,0.1433)), children=[
 TouchSensor(description="HAnimSite l_tarsal_distal_phalanx_2_tip"),
 Shape(USE="HAnimSiteShape")])]),
-HAnimJoint(name="l_tarsal_distal_interphalangeal_2", DEF="hanim_l_tarsal_distal_interphalangeal_2", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])])]),
-HAnimJoint(name="l_cuneonavicular_3", DEF="hanim_l_cuneonavicular_3", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="l_tarsal_distal_interphalangeal_2", DEF="hanim_l_tarsal_distal_interphalangeal_2", center=((3.7385,0.0017,5.9505)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])])]),
+HAnimJoint(name="l_cuneonavicular_3", DEF="hanim_l_cuneonavicular_3", center=((4.1235,0.0328,1.3453)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_cuneiform_3", DEF="hanim_l_cuneiform_3", children=[
-Transform(translation=((0.1101,0.0656,-0.0736)), children=[
+Transform(translation=((4.1235,0.0328,1.3453)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -390,12 +392,12 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1101,0.0656,-0.0736)]), 
+Coordinate(point=[(4.1235,0.0328,1.3453),(3.7385,0.0017,5.9505)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
 HAnimJoint(name="l_tarsometatarsal_3", DEF="hanim_l_tarsometatarsal_3", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_metatarsal_3", DEF="hanim_l_metatarsal_3", children=[
-Transform(translation=((0.1101,0.0656,-0.0736)), children=[
+Transform(translation=((4.1235,0.0328,1.3453)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -404,12 +406,12 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1101,0.0656,-0.0736)]), 
+Coordinate(point=[(4.2795,0.0086,4.7055)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="l_metatarsophalangeal_3", DEF="hanim_l_metatarsophalangeal_3", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="l_metatarsophalangeal_3", DEF="hanim_l_metatarsophalangeal_3", center=((4.2795,0.0086,4.7055)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_tarsal_proximal_phalanx_3", DEF="hanim_l_tarsal_proximal_phalanx_3", children=[
-Transform(translation=((0.1101,0.0656,-0.0736)), children=[
+Transform(translation=((4.2795,0.0086,4.7055)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -418,12 +420,12 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1101,0.0656,-0.0736)]), 
+Coordinate(point=[(4.2795,0.0086,4.7055),(4.3855,0.0044,5.3745)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="l_tarsal_proximal_interphalangeal_3", DEF="hanim_l_tarsal_proximal_interphalangeal_3", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="l_tarsal_proximal_interphalangeal_3", DEF="hanim_l_tarsal_proximal_interphalangeal_3", center=((4.3855,0.0044,5.3745)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_tarsal_middle_phalanx_3", DEF="hanim_l_tarsal_middle_phalanx_3", children=[
-Transform(translation=((0.1101,0.0656,-0.0736)), children=[
+Transform(translation=((4.3855,0.0044,5.3745)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -432,16 +434,16 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1101,0.0656,-0.0736)]), 
+Coordinate(point=[(4.3855,0.0044,5.3745),(4.4545,0.0017,5.7845)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 HAnimSite(name="l_tarsal_distal_phalanx_3_tip", DEF="hanim_l_tarsal_distal_phalanx_3_tip", children=[
 TouchSensor(description="HAnimSite l_tarsal_distal_phalanx_3_tip"),
 Shape(USE="HAnimSiteShape")])]),
-HAnimJoint(name="l_tarsal_distal_interphalangeal_3", DEF="hanim_l_tarsal_distal_interphalangeal_3", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])])])]),
-HAnimJoint(name="l_calcaneocuboid", DEF="hanim_l_calcaneocuboid", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="l_tarsal_distal_interphalangeal_3", DEF="hanim_l_tarsal_distal_interphalangeal_3", center=((4.4545,0.0017,5.7845)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])])])]),
+HAnimJoint(name="l_calcaneocuboid", DEF="hanim_l_calcaneocuboid", center=((3.9515,0.0653,-0.6895)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_calcaneus", DEF="hanim_l_calcaneus", children=[
-Transform(translation=((0.1101,0.0656,-0.0736)), children=[
+Transform(translation=((3.9515,0.0653,-0.6895)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -450,12 +452,12 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1101,0.0656,-0.0736)]), 
+Coordinate(point=[(3.9515,0.0653,-0.6895),(4.9085,0.0353,0.5574)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="l_transversetarsal", DEF="hanim_l_transversetarsal", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="l_transversetarsal", DEF="hanim_l_transversetarsal", center=((4.9085,0.0353,0.5574)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_cuboid", DEF="hanim_l_cuboid", children=[
-Transform(translation=((0.1101,0.0656,-0.0736)), children=[
+Transform(translation=((4.9085,0.0353,0.5574)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -464,19 +466,19 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1101,0.0656,-0.0736)]), 
+Coordinate(point=[(4.9085,0.0353,0.5574),(4.7245,0.0211,2.1725)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1101,0.0656,-0.0736)]), 
+Coordinate(point=[(4.9085,0.0353,0.5574),(5.3615,0.0164,2.0085)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="l_tarsometatarsal_4", DEF="hanim_l_tarsometatarsal_4", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="l_tarsometatarsal_4", DEF="hanim_l_tarsometatarsal_4", center=((4.7245,0.0211,2.1725)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_metatarsal_4", DEF="hanim_l_metatarsal_4", children=[
-Transform(translation=((0.1101,0.0656,-0.0736)), children=[
+Transform(translation=((4.7245,0.0211,2.1725)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -485,12 +487,12 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1101,0.0656,-0.0736)]), 
+Coordinate(point=[(4.7245,0.0211,2.1725),(4.8745,0.0076,4.5165)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="l_metatarsophalangeal_4", DEF="hanim_l_metatarsophalangeal_4", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="l_metatarsophalangeal_4", DEF="hanim_l_metatarsophalangeal_4", center=((4.8745,0.0076,4.5165)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_tarsal_proximal_phalanx_4", DEF="hanim_l_tarsal_proximal_phalanx_4", children=[
-Transform(translation=((0.1101,0.0656,-0.0736)), children=[
+Transform(translation=((4.8745,0.0076,4.5165)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -499,12 +501,12 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1101,0.0656,-0.0736)]), 
+Coordinate(point=[(4.8745,0.0076,4.5165),(5.0655,0.0049,5.1895)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="l_tarsal_proximal_interphalangeal_4", DEF="hanim_l_tarsal_proximal_interphalangeal_4", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="l_tarsal_proximal_interphalangeal_4", DEF="hanim_l_tarsal_proximal_interphalangeal_4", center=((5.0655,0.0049,5.1895)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_tarsal_middle_phalanx_4", DEF="hanim_l_tarsal_middle_phalanx_4", children=[
-Transform(translation=((0.1101,0.0656,-0.0736)), children=[
+Transform(translation=((5.0655,0.0049,5.1895)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -513,16 +515,16 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1101,0.0656,-0.0736)]), 
+Coordinate(point=[(5.0655,0.0049,5.1895),(5.1325,0.0011,5.5175)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 HAnimSite(name="l_tarsal_distal_phalanx_4_tip", DEF="hanim_l_tarsal_distal_phalanx_4_tip", children=[
 TouchSensor(description="HAnimSite l_tarsal_distal_phalanx_4_tip"),
 Shape(USE="HAnimSiteShape")])]),
-HAnimJoint(name="l_tarsal_distal_interphalangeal_4", DEF="hanim_l_tarsal_distal_interphalangeal_4", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])]),
-HAnimJoint(name="l_tarsometatarsal_5", DEF="hanim_l_tarsometatarsal_5", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="l_tarsal_distal_interphalangeal_4", DEF="hanim_l_tarsal_distal_interphalangeal_4", center=((5.1325,0.0011,5.5175)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])]),
+HAnimJoint(name="l_tarsometatarsal_5", DEF="hanim_l_tarsometatarsal_5", center=((5.3615,0.0164,2.0085)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_metatarsal_5", DEF="hanim_l_metatarsal_5", children=[
-Transform(translation=((0.1101,0.0656,-0.0736)), children=[
+Transform(translation=((5.3615,0.0164,2.0085)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -531,15 +533,15 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1101,0.0656,-0.0736)]), 
+Coordinate(point=[(5.3615,0.0164,2.0085),(5.5055,0.0067,4.3115)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 HAnimSite(name="l_metatarsal_phalanx_5_pt", DEF="hanim_l_metatarsal_phalanx_5_pt", children=[
 TouchSensor(description="HAnimSite l_metatarsal_phalanx_5_pt"),
 Shape(USE="HAnimSiteShape")])]),
-HAnimJoint(name="l_metatarsophalangeal_5", DEF="hanim_l_metatarsophalangeal_5", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="l_metatarsophalangeal_5", DEF="hanim_l_metatarsophalangeal_5", center=((5.5055,0.0067,4.3115)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_tarsal_proximal_phalanx_5", DEF="hanim_l_tarsal_proximal_phalanx_5", children=[
-Transform(translation=((0.1101,0.0656,-0.0736)), children=[
+Transform(translation=((5.5055,0.0067,4.3115)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -548,12 +550,12 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1101,0.0656,-0.0736)]), 
+Coordinate(point=[(5.5055,0.0067,4.3115),(5.6085,0.003,4.6485)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="l_tarsal_proximal_interphalangeal_5", DEF="hanim_l_tarsal_proximal_interphalangeal_5", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="l_tarsal_proximal_interphalangeal_5", DEF="hanim_l_tarsal_proximal_interphalangeal_5", center=((5.6085,0.003,4.6485)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_tarsal_middle_phalanx_5", DEF="hanim_l_tarsal_middle_phalanx_5", children=[
-Transform(translation=((0.1101,0.0656,-0.0736)), children=[
+Transform(translation=((5.6085,0.003,4.6485)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -562,13 +564,13 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1101,0.0656,-0.0736)]), 
+Coordinate(point=[(5.6085,0.003,4.6485),(5.6485,0.0,4.9925)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 HAnimSite(name="l_tarsal_distal_phalanx_5_tip", DEF="hanim_l_tarsal_distal_phalanx_5_tip", children=[
 TouchSensor(description="HAnimSite l_tarsal_distal_phalanx_5_tip"),
 Shape(USE="HAnimSiteShape")])]),
-HAnimJoint(name="l_tarsal_distal_interphalangeal_5", DEF="hanim_l_tarsal_distal_interphalangeal_5", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])])])])])])]),
+HAnimJoint(name="l_tarsal_distal_interphalangeal_5", DEF="hanim_l_tarsal_distal_interphalangeal_5", center=((5.6485,0.0,4.9925)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])])])])])])]),
 HAnimJoint(name="r_hip", DEF="hanim_r_hip", center=((-0.095,0.9171,0.0029)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_thigh", DEF="hanim_r_thigh", children=[
 Transform(translation=((-0.095,0.9171,0.0029)), children=[
@@ -625,19 +627,19 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.0801,0.0712,-0.0766),(-0.0801,0.0712,-0.0766)]), 
+Coordinate(point=[(-0.0801,0.0712,-0.0766),(-3.4725,0.0374,0.6807)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.0801,0.0712,-0.0766),(-0.0801,0.0712,-0.0766)]), 
+Coordinate(point=[(-0.0801,0.0712,-0.0766),(-3.9515,0.0653,-0.6895)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="r_talocalcaneonavicular", DEF="hanim_r_talocalcaneonavicular", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="r_talocalcaneonavicular", DEF="hanim_r_talocalcaneonavicular", center=((-3.4725,0.0374,0.6807)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_navicular", DEF="hanim_r_navicular", children=[
-Transform(translation=((-0.0801,0.0712,-0.0766)), children=[
+Transform(translation=((-3.4725,0.0374,0.6807)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -646,26 +648,26 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.0801,0.0712,-0.0766)]), 
+Coordinate(point=[(-3.4725,0.0374,0.6807),(-2.9855,0.0311,1.2819)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.0801,0.0712,-0.0766)]), 
+Coordinate(point=[(-3.4725,0.0374,0.6807),(-3.6105,0.033,1.4168)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.0801,0.0712,-0.0766)]), 
+Coordinate(point=[(-3.4725,0.0374,0.6807),(-4.1245,0.0328,1.3453)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="r_cuneonavicular_1", DEF="hanim_r_cuneonavicular_1", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="r_cuneonavicular_1", DEF="hanim_r_cuneonavicular_1", center=((-2.9855,0.0311,1.2819)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_cuneiform_1", DEF="hanim_r_cuneiform_1", children=[
-Transform(translation=((-0.0801,0.0712,-0.0766)), children=[
+Transform(translation=((-2.9855,0.0311,1.2819)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -674,12 +676,12 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.0801,0.0712,-0.0766)]), 
+Coordinate(point=[(-2.9855,0.0311,1.2819),(-2.8645,0.0194,2.4285)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="r_tarsometatarsal_1", DEF="hanim_r_tarsometatarsal_1", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="r_tarsometatarsal_1", DEF="hanim_r_tarsometatarsal_1", center=((-2.8645,0.0194,2.4285)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_metatarsal_1", DEF="hanim_r_metatarsal_1", children=[
-Transform(translation=((-0.0801,0.0712,-0.0766)), children=[
+Transform(translation=((-2.8645,0.0194,2.4285)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -688,15 +690,15 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.0801,0.0712,-0.0766)]), 
+Coordinate(point=[(-2.8645,0.0194,2.4285),(-2.7535,0.0077,4.6255)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 HAnimSite(name="r_metatarsal_phalanx_1_pt", DEF="hanim_r_metatarsal_phalanx_1_pt", children=[
 TouchSensor(description="HAnimSite r_metatarsal_phalanx_1_pt"),
 Shape(USE="HAnimSiteShape")])]),
-HAnimJoint(name="r_metatarsophalangeal_1", DEF="hanim_r_metatarsophalangeal_1", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="r_metatarsophalangeal_1", DEF="hanim_r_metatarsophalangeal_1", center=((-2.7535,0.0077,4.6255)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_tarsal_proximal_phalanx_1", DEF="hanim_r_tarsal_proximal_phalanx_1", children=[
-Transform(translation=((-0.0801,0.0712,-0.0766)), children=[
+Transform(translation=((-2.7535,0.0077,4.6255)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -705,16 +707,16 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.0801,0.0712,-0.0766)]), 
+Coordinate(point=[(-2.7535,0.0077,4.6255),(-2.7535,0.0077,4.6255)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 HAnimSite(name="r_tarsal_distal_phalanx_1_tip", DEF="hanim_r_tarsal_distal_phalanx_1_tip", children=[
 TouchSensor(description="HAnimSite r_tarsal_distal_phalanx_1_tip"),
 Shape(USE="HAnimSiteShape")])]),
 HAnimJoint(name="r_tarsal_interphalangeal_1", DEF="hanim_r_tarsal_interphalangeal_1", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])]),
-HAnimJoint(name="r_cuneonavicular_2", DEF="hanim_r_cuneonavicular_2", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="r_cuneonavicular_2", DEF="hanim_r_cuneonavicular_2", center=((-3.6105,0.033,1.4168)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_cuneiform_2", DEF="hanim_r_cuneiform_2", children=[
-Transform(translation=((-0.0801,0.0712,-0.0766)), children=[
+Transform(translation=((-3.6105,0.033,1.4168)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -723,12 +725,12 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.0801,0.0712,-0.0766)]), 
+Coordinate(point=[(-3.6105,0.033,1.4168),(-3.5565,0.0232,2.2895)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="r_tarsometatarsal_2", DEF="hanim_r_tarsometatarsal_2", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="r_tarsometatarsal_2", DEF="hanim_r_tarsometatarsal_2", center=((-3.5565,0.0232,2.2895)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_metatarsal_2", DEF="hanim_r_metatarsal_2", children=[
-Transform(translation=((-0.0801,0.0712,-0.0766)), children=[
+Transform(translation=((-3.5565,0.0232,2.2895)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -737,12 +739,12 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.0801,0.0712,-0.0766)]), 
+Coordinate(point=[(-3.5565,0.0232,2.2895),(-3.6595,0.0085,4.8125)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="r_metatarsophalangeal_2", DEF="hanim_r_metatarsophalangeal_2", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="r_metatarsophalangeal_2", DEF="hanim_r_metatarsophalangeal_2", center=((-3.6595,0.0085,4.8125)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_tarsal_proximal_phalanx_2", DEF="hanim_r_tarsal_proximal_phalanx_2", children=[
-Transform(translation=((-0.0801,0.0712,-0.0766)), children=[
+Transform(translation=((-3.6595,0.0085,4.8125)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -751,12 +753,12 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.0801,0.0712,-0.0766)]), 
+Coordinate(point=[(-3.6595,0.0085,4.8125),(-3.7385,0.0054,5.5315)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="r_tarsal_proximal_interphalangeal_2", DEF="hanim_r_tarsal_proximal_interphalangeal_2", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="r_tarsal_proximal_interphalangeal_2", DEF="hanim_r_tarsal_proximal_interphalangeal_2", center=((-3.7385,0.0054,5.5315)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_tarsal_middle_phalanx_2", DEF="hanim_r_tarsal_middle_phalanx_2", children=[
-Transform(translation=((-0.0801,0.0712,-0.0766)), children=[
+Transform(translation=((-3.7385,0.0054,5.5315)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -765,16 +767,16 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.0801,0.0712,-0.0766)]), 
+Coordinate(point=[(-3.7385,0.0054,5.5315),(-3.7385,0.0017,5.9505)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 HAnimSite(name="r_tarsal_distal_phalanx_2_tip", DEF="hanim_r_tarsal_distal_phalanx_2_tip", translation=((-0.0883,0.0134,0.1383)), children=[
 TouchSensor(description="HAnimSite r_tarsal_distal_phalanx_2_tip"),
 Shape(USE="HAnimSiteShape")])]),
-HAnimJoint(name="r_tarsal_distal_interphalangeal_2", DEF="hanim_r_tarsal_distal_interphalangeal_2", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])])]),
-HAnimJoint(name="r_cuneonavicular_3", DEF="hanim_r_cuneonavicular_3", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="r_tarsal_distal_interphalangeal_2", DEF="hanim_r_tarsal_distal_interphalangeal_2", center=((-3.7385,0.0017,5.9505)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])])]),
+HAnimJoint(name="r_cuneonavicular_3", DEF="hanim_r_cuneonavicular_3", center=((-4.1245,0.0328,1.3453)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_cuneiform_3", DEF="hanim_r_cuneiform_3", children=[
-Transform(translation=((-0.0801,0.0712,-0.0766)), children=[
+Transform(translation=((-4.1245,0.0328,1.3453)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -783,12 +785,12 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.0801,0.0712,-0.0766)]), 
+Coordinate(point=[(-4.1245,0.0328,1.3453),(-3.7385,0.0017,5.9505)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
 HAnimJoint(name="r_tarsometatarsal_3", DEF="hanim_r_tarsometatarsal_3", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_metatarsal_3", DEF="hanim_r_metatarsal_3", children=[
-Transform(translation=((-0.0801,0.0712,-0.0766)), children=[
+Transform(translation=((-4.1245,0.0328,1.3453)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -797,12 +799,12 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.0801,0.0712,-0.0766)]), 
+Coordinate(point=[(-4.2795,0.0086,4.7055)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="r_metatarsophalangeal_3", DEF="hanim_r_metatarsophalangeal_3", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="r_metatarsophalangeal_3", DEF="hanim_r_metatarsophalangeal_3", center=((-4.2795,0.0086,4.7055)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_tarsal_proximal_phalanx_3", DEF="hanim_r_tarsal_proximal_phalanx_3", children=[
-Transform(translation=((-0.0801,0.0712,-0.0766)), children=[
+Transform(translation=((-4.2795,0.0086,4.7055)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -811,12 +813,12 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.0801,0.0712,-0.0766)]), 
+Coordinate(point=[(-4.2795,0.0086,4.7055),(-4.3865,0.0044,5.3745)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="r_tarsal_proximal_interphalangeal_3", DEF="hanim_r_tarsal_proximal_interphalangeal_3", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="r_tarsal_proximal_interphalangeal_3", DEF="hanim_r_tarsal_proximal_interphalangeal_3", center=((-4.3865,0.0044,5.3745)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_tarsal_middle_phalanx_3", DEF="hanim_r_tarsal_middle_phalanx_3", children=[
-Transform(translation=((-0.0801,0.0712,-0.0766)), children=[
+Transform(translation=((-4.3865,0.0044,5.3745)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -825,16 +827,16 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.0801,0.0712,-0.0766)]), 
+Coordinate(point=[(-4.3865,0.0044,5.3745),(-4.4545,0.0017,5.7845)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 HAnimSite(name="r_tarsal_distal_phalanx_3_tip", DEF="hanim_r_tarsal_distal_phalanx_3_tip", children=[
 TouchSensor(description="HAnimSite r_tarsal_distal_phalanx_3_tip"),
 Shape(USE="HAnimSiteShape")])]),
-HAnimJoint(name="r_tarsal_distal_interphalangeal_3", DEF="hanim_r_tarsal_distal_interphalangeal_3", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])])])]),
-HAnimJoint(name="r_calcaneocuboid", DEF="hanim_r_calcaneocuboid", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="r_tarsal_distal_interphalangeal_3", DEF="hanim_r_tarsal_distal_interphalangeal_3", center=((-4.4545,0.0017,5.7845)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])])])]),
+HAnimJoint(name="r_calcaneocuboid", DEF="hanim_r_calcaneocuboid", center=((-3.9515,0.0653,-0.6895)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_calcaneus", DEF="hanim_r_calcaneus", children=[
-Transform(translation=((-0.0801,0.0712,-0.0766)), children=[
+Transform(translation=((-3.9515,0.0653,-0.6895)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -843,12 +845,12 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.0801,0.0712,-0.0766)]), 
+Coordinate(point=[(-3.9515,0.0653,-0.6895),(-4.9095,0.0353,0.5574)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="r_transversetarsal", DEF="hanim_r_transversetarsal", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="r_transversetarsal", DEF="hanim_r_transversetarsal", center=((-4.9095,0.0353,0.5574)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_cuboid", DEF="hanim_r_cuboid", children=[
-Transform(translation=((-0.0801,0.0712,-0.0766)), children=[
+Transform(translation=((-4.9095,0.0353,0.5574)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -857,19 +859,19 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.0801,0.0712,-0.0766)]), 
+Coordinate(point=[(-4.9095,0.0353,0.5574),(-4.7255,0.0211,2.1725)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.0801,0.0712,-0.0766)]), 
+Coordinate(point=[(-4.9095,0.0353,0.5574),(-5.3615,0.0164,2.0085)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="r_tarsometatarsal_4", DEF="hanim_r_tarsometatarsal_4", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="r_tarsometatarsal_4", DEF="hanim_r_tarsometatarsal_4", center=((-4.7255,0.0211,2.1725)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_metatarsal_4", DEF="hanim_r_metatarsal_4", children=[
-Transform(translation=((-0.0801,0.0712,-0.0766)), children=[
+Transform(translation=((-4.7255,0.0211,2.1725)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -878,12 +880,12 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.0801,0.0712,-0.0766)]), 
+Coordinate(point=[(-4.7255,0.0211,2.1725),(-4.8755,0.0076,4.5165)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="r_metatarsophalangeal_4", DEF="hanim_r_metatarsophalangeal_4", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="r_metatarsophalangeal_4", DEF="hanim_r_metatarsophalangeal_4", center=((-4.8755,0.0076,4.5165)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_tarsal_proximal_phalanx_4", DEF="hanim_r_tarsal_proximal_phalanx_4", children=[
-Transform(translation=((-0.0801,0.0712,-0.0766)), children=[
+Transform(translation=((-4.8755,0.0076,4.5165)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -892,12 +894,12 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.0801,0.0712,-0.0766)]), 
+Coordinate(point=[(-4.8755,0.0076,4.5165),(-5.0655,0.0049,5.1895)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="r_tarsal_proximal_interphalangeal_4", DEF="hanim_r_tarsal_proximal_interphalangeal_4", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="r_tarsal_proximal_interphalangeal_4", DEF="hanim_r_tarsal_proximal_interphalangeal_4", center=((-5.0655,0.0049,5.1895)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_tarsal_middle_phalanx_4", DEF="hanim_r_tarsal_middle_phalanx_4", children=[
-Transform(translation=((-0.0801,0.0712,-0.0766)), children=[
+Transform(translation=((-5.0655,0.0049,5.1895)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -906,16 +908,16 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.0801,0.0712,-0.0766)]), 
+Coordinate(point=[(-5.0655,0.0049,5.1895),(-5.1335,0.0011,5.5175)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 HAnimSite(name="r_tarsal_distal_phalanx_4_tip", DEF="hanim_r_tarsal_distal_phalanx_4_tip", children=[
 TouchSensor(description="HAnimSite r_tarsal_distal_phalanx_4_tip"),
 Shape(USE="HAnimSiteShape")])]),
-HAnimJoint(name="r_tarsal_distal_interphalangeal_4", DEF="hanim_r_tarsal_distal_interphalangeal_4", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])]),
-HAnimJoint(name="r_tarsometatarsal_5", DEF="hanim_r_tarsometatarsal_5", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="r_tarsal_distal_interphalangeal_4", DEF="hanim_r_tarsal_distal_interphalangeal_4", center=((-5.1335,0.0011,5.5175)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])]),
+HAnimJoint(name="r_tarsometatarsal_5", DEF="hanim_r_tarsometatarsal_5", center=((-5.3615,0.0164,2.0085)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_metatarsal_5", DEF="hanim_r_metatarsal_5", children=[
-Transform(translation=((-0.0801,0.0712,-0.0766)), children=[
+Transform(translation=((-5.3615,0.0164,2.0085)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -924,15 +926,15 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.0801,0.0712,-0.0766)]), 
+Coordinate(point=[(-5.3615,0.0164,2.0085),(-5.5055,0.0067,4.3115)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 HAnimSite(name="r_metatarsal_phalanx_5_pt", DEF="hanim_r_metatarsal_phalanx_5_pt", children=[
 TouchSensor(description="HAnimSite r_metatarsal_phalanx_5_pt"),
 Shape(USE="HAnimSiteShape")])]),
-HAnimJoint(name="r_metatarsophalangeal_5", DEF="hanim_r_metatarsophalangeal_5", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="r_metatarsophalangeal_5", DEF="hanim_r_metatarsophalangeal_5", center=((-5.5055,0.0067,4.3115)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_tarsal_proximal_phalanx_5", DEF="hanim_r_tarsal_proximal_phalanx_5", children=[
-Transform(translation=((-0.0801,0.0712,-0.0766)), children=[
+Transform(translation=((-5.5055,0.0067,4.3115)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -941,12 +943,12 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.0801,0.0712,-0.0766)]), 
+Coordinate(point=[(-5.5055,0.0067,4.3115),(-5.6085,0.003,4.6485)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="r_tarsal_proximal_interphalangeal_5", DEF="hanim_r_tarsal_proximal_interphalangeal_5", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="r_tarsal_proximal_interphalangeal_5", DEF="hanim_r_tarsal_proximal_interphalangeal_5", center=((-5.6085,0.003,4.6485)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_tarsal_middle_phalanx_5", DEF="hanim_r_tarsal_middle_phalanx_5", children=[
-Transform(translation=((-0.0801,0.0712,-0.0766)), children=[
+Transform(translation=((-5.6085,0.003,4.6485)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -955,13 +957,13 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.0801,0.0712,-0.0766)]), 
+Coordinate(point=[(-5.6085,0.003,4.6485),(-5.6495,0.0,4.9925)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 HAnimSite(name="r_tarsal_distal_phalanx_5_tip", DEF="hanim_r_tarsal_distal_phalanx_5_tip", children=[
 TouchSensor(description="HAnimSite r_tarsal_distal_phalanx_5_tip"),
 Shape(USE="HAnimSiteShape")])]),
-HAnimJoint(name="r_tarsal_distal_interphalangeal_5", DEF="hanim_r_tarsal_distal_interphalangeal_5", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])])])])])])])]),
+HAnimJoint(name="r_tarsal_distal_interphalangeal_5", DEF="hanim_r_tarsal_distal_interphalangeal_5", center=((-5.6495,0.0,4.9925)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])])])])])])])]),
 HAnimJoint(name="vl5", DEF="hanim_vl5", center=((0.0028,1.0568,-0.0776)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l5", DEF="hanim_l5", children=[
 Transform(translation=((0.0028,1.0568,-0.0776)), children=[
@@ -1434,49 +1436,49 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.0044,1.6209,0.0236),(0.0044,1.6209,0.0236)]), 
+Coordinate(point=[(0.0044,1.6209,0.0236),(2.2365,1.87,1.9285)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.0044,1.6209,0.0236),(0.0044,1.6209,0.0236)]), 
+Coordinate(point=[(0.0044,1.6209,0.0236),(-2.2535,1.87,1.9285)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.0044,1.6209,0.0236),(0.0044,1.6209,0.0236)]), 
+Coordinate(point=[(0.0044,1.6209,0.0236),(2.1305,1.8444,4.1555)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.0044,1.6209,0.0236),(0.0044,1.6209,0.0236)]), 
+Coordinate(point=[(0.0044,1.6209,0.0236),(-2.1475,1.8444,4.1555)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.0044,1.6209,0.0236),(0.0044,1.6209,0.0236)]), 
+Coordinate(point=[(0.0044,1.6209,0.0236),(0.9581,1.8563,5.2175)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.0044,1.6209,0.0236),(0.0044,1.6209,0.0236)]), 
+Coordinate(point=[(0.0044,1.6209,0.0236),(-0.9751,1.8563,5.2175)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.0044,1.6209,0.0236),(0.0044,1.6209,0.0236)]), 
+Coordinate(point=[(0.0044,1.6209,0.0236),(-0.0085,1.7229,1.148)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 HAnimSite(name="l_gonion_pt", DEF="hanim_l_gonion_pt", translation=((0.0631,1.553,0.033)), children=[
@@ -1491,13 +1493,13 @@ Shape(USE="HAnimSiteShape")]),
 HAnimSite(name="supramenton_pt", DEF="hanim_supramenton_pt", translation=((0.0061,1.541,0.0805)), children=[
 TouchSensor(description="HAnimSite supramenton_pt"),
 Shape(USE="HAnimSiteShape")])]),
-HAnimJoint(name="l_eyelid_joint", DEF="hanim_l_eyelid_joint", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)]),
-HAnimJoint(name="r_eyelid_joint", DEF="hanim_r_eyelid_joint", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)]),
-HAnimJoint(name="l_eyeball_joint", DEF="hanim_l_eyeball_joint", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)]),
-HAnimJoint(name="r_eyeball_joint", DEF="hanim_r_eyeball_joint", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)]),
-HAnimJoint(name="l_eyebrow_joint", DEF="hanim_l_eyebrow_joint", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)]),
-HAnimJoint(name="r_eyebrow_joint", DEF="hanim_r_eyebrow_joint", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)]),
-HAnimJoint(name="temporomandibular", DEF="hanim_temporomandibular", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])])])])])])]),
+HAnimJoint(name="l_eyelid_joint", DEF="hanim_l_eyelid_joint", center=((2.2365,1.87,1.9285)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)]),
+HAnimJoint(name="r_eyelid_joint", DEF="hanim_r_eyelid_joint", center=((-2.2535,1.87,1.9285)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)]),
+HAnimJoint(name="l_eyeball_joint", DEF="hanim_l_eyeball_joint", center=((2.1305,1.8444,4.1555)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)]),
+HAnimJoint(name="r_eyeball_joint", DEF="hanim_r_eyeball_joint", center=((-2.1475,1.8444,4.1555)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)]),
+HAnimJoint(name="l_eyebrow_joint", DEF="hanim_l_eyebrow_joint", center=((0.9581,1.8563,5.2175)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)]),
+HAnimJoint(name="r_eyebrow_joint", DEF="hanim_r_eyebrow_joint", center=((-0.9751,1.8563,5.2175)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)]),
+HAnimJoint(name="temporomandibular", DEF="hanim_temporomandibular", center=((-0.0085,1.7229,1.148)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])])])])])])]),
 HAnimJoint(name="l_sternoclavicular", DEF="hanim_l_sternoclavicular", center=((0.082,1.4488,-0.0353)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_clavicle", DEF="hanim_l_clavicle", children=[
 Transform(translation=((0.082,1.4488,-0.0353)), children=[
@@ -1588,33 +1590,33 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1984,0.8663,-0.0583),(0.1984,0.8663,-0.0583)]), 
+Coordinate(point=[(0.1984,0.8663,-0.0583),(8.0485,0.9213,1.3235)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1984,0.8663,-0.0583),(0.1984,0.8663,-0.0583)]), 
+Coordinate(point=[(0.1984,0.8663,-0.0583),(8.0485,0.9225,0.8386)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1984,0.8663,-0.0583),(0.1984,0.8663,-0.0583)]), 
+Coordinate(point=[(0.1984,0.8663,-0.0583),(8.0395,0.9246,0.2513)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1984,0.8663,-0.0583),(0.1984,0.8663,-0.0583)]), 
+Coordinate(point=[(0.1984,0.8663,-0.0583),(8.0395,0.921,-0.6795)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="l_midcarpal_1", DEF="hanim_l_midcarpal_1", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="l_midcarpal_1", DEF="hanim_l_midcarpal_1", center=((8.0485,0.9213,1.3235)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_trapezium", DEF="hanim_l_trapezium", children=[
-Transform(translation=((0.1984,0.8663,-0.0583)), children=[
+Transform(translation=((8.0485,0.9213,1.3235)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -1623,7 +1625,7 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1924,0.8472,-0.0534)]), 
+Coordinate(point=[(8.0485,0.9213,1.3235),(0.1924,0.8472,-0.0534)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
 HAnimJoint(name="l_carpometacarpal_1", DEF="hanim_l_carpometacarpal_1", center=((0.1924,0.8472,-0.0534)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -1658,9 +1660,9 @@ HAnimSite(name="l_carpal_distal_phalanx_1_tip", DEF="hanim_l_carpal_distal_phala
 TouchSensor(description="HAnimSite l_carpal_distal_phalanx_1_tip"),
 Shape(USE="HAnimSiteShape")])]),
 HAnimJoint(name="l_carpal_interphalangeal_1", DEF="hanim_l_carpal_interphalangeal_1", center=((0.1955,0.8159,0.0464)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])]),
-HAnimJoint(name="l_midcarpal_2", DEF="hanim_l_midcarpal_2", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="l_midcarpal_2", DEF="hanim_l_midcarpal_2", center=((8.0485,0.9225,0.8386)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_trapezoid", DEF="hanim_l_trapezoid", children=[
-Transform(translation=((0.1955,0.8159,0.0464)), children=[
+Transform(translation=((8.0485,0.9225,0.8386)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -1669,7 +1671,7 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1983,0.8024,-0.028)]), 
+Coordinate(point=[(8.0485,0.9225,0.8386),(0.1983,0.8024,-0.028)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 HAnimSite(name="l_metacarpal_phalanx_2_pt", DEF="hanim_l_metacarpal_phalanx_2_pt", translation=((0.2009,0.8139,-0.0237)), children=[
@@ -1724,9 +1726,9 @@ HAnimSite(name="l_dactylion_pt", DEF="hanim_l_dactylion_pt", translation=((0.205
 TouchSensor(description="HAnimSite l_dactylion_pt"),
 Shape(USE="HAnimSiteShape")])]),
 HAnimJoint(name="l_carpal_distal_interphalangeal_2", DEF="hanim_l_carpal_distal_interphalangeal_2", center=((0.2028,0.7139,-0.0236)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])])]),
-HAnimJoint(name="l_midcarpal_3", DEF="hanim_l_midcarpal_3", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="l_midcarpal_3", DEF="hanim_l_midcarpal_3", center=((8.0395,0.9246,0.2513)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_capitate", DEF="hanim_l_capitate", children=[
-Transform(translation=((0.2028,0.7139,-0.0236)), children=[
+Transform(translation=((8.0395,0.9246,0.2513)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -1735,7 +1737,7 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1987,0.8029,-0.053)]), 
+Coordinate(point=[(8.0395,0.9246,0.2513),(0.1987,0.8029,-0.053)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 HAnimSite(name="l_metacarpal_phalanx_3_pt", DEF="hanim_l_metacarpal_phalanx_3_pt", children=[
@@ -1787,9 +1789,9 @@ HAnimSite(name="l_carpal_distal_phalanx_3_tip", DEF="hanim_l_carpal_distal_phala
 TouchSensor(description="HAnimSite l_carpal_distal_phalanx_3_tip"),
 Shape(USE="HAnimSiteShape")])]),
 HAnimJoint(name="l_carpal_distal_interphalangeal_3", DEF="hanim_l_carpal_distal_interphalangeal_3", center=((0.2026,0.7011,-0.0494)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])])]),
-HAnimJoint(name="l_midcarpal_4_5", DEF="hanim_l_midcarpal_4_5", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="l_midcarpal_4_5", DEF="hanim_l_midcarpal_4_5", center=((8.0395,0.921,-0.6795)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_hamate", DEF="hanim_l_hamate", children=[
-Transform(translation=((0.2026,0.7011,-0.0494)), children=[
+Transform(translation=((8.0395,0.921,-0.6795)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -1798,14 +1800,14 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1956,0.8019,-0.0794)]), 
+Coordinate(point=[(8.0395,0.921,-0.6795),(0.1956,0.8019,-0.0794)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1925,0.8066,-0.1036)]), 
+Coordinate(point=[(8.0395,0.921,-0.6795),(0.1925,0.8066,-0.1036)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 HAnimSite(name="l_metacarpal_phalanx_5_pt", DEF="hanim_l_metacarpal_phalanx_5_pt", translation=((0.1929,0.786,-0.1122)), children=[
@@ -1993,33 +1995,33 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.1959,0.8694,-0.0521),(-0.1959,0.8694,-0.0521)]), 
+Coordinate(point=[(-0.1959,0.8694,-0.0521),(-8.0515,0.9213,1.3235)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.1959,0.8694,-0.0521),(-0.1959,0.8694,-0.0521)]), 
+Coordinate(point=[(-0.1959,0.8694,-0.0521),(-8.0515,0.9225,0.8386)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.1959,0.8694,-0.0521),(-0.1959,0.8694,-0.0521)]), 
+Coordinate(point=[(-0.1959,0.8694,-0.0521),(-8.0405,0.9246,0.2513)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.1959,0.8694,-0.0521),(-0.1959,0.8694,-0.0521)]), 
+Coordinate(point=[(-0.1959,0.8694,-0.0521),(-8.0405,0.921,-0.6795)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="r_midcarpal_1", DEF="hanim_r_midcarpal_1", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="r_midcarpal_1", DEF="hanim_r_midcarpal_1", center=((-8.0515,0.9213,1.3235)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_trapezium", DEF="hanim_r_trapezium", children=[
-Transform(translation=((-0.1959,0.8694,-0.0521)), children=[
+Transform(translation=((-8.0515,0.9213,1.3235)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -2028,7 +2030,7 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.1899,0.8502,-0.0473)]), 
+Coordinate(point=[(-8.0515,0.9213,1.3235),(-0.1899,0.8502,-0.0473)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
 HAnimJoint(name="r_carpometacarpal_1", DEF="hanim_r_carpometacarpal_1", center=((-0.1899,0.8502,-0.0473)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -2063,9 +2065,9 @@ HAnimSite(name="r_carpal_distal_phalanx_1_tip", DEF="hanim_r_carpal_distal_phala
 TouchSensor(description="HAnimSite r_carpal_distal_phalanx_1_tip"),
 Shape(USE="HAnimSiteShape")])]),
 HAnimJoint(name="r_carpal_interphalangeal_1", DEF="hanim_r_carpal_interphalangeal_1", center=((-0.1864,0.819,0.0506)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])]),
-HAnimJoint(name="r_midcarpal_2", DEF="hanim_r_midcarpal_2", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="r_midcarpal_2", DEF="hanim_r_midcarpal_2", center=((-8.0515,0.9225,0.8386)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_trapezoid", DEF="hanim_r_trapezoid", children=[
-Transform(translation=((-0.1864,0.819,0.0506)), children=[
+Transform(translation=((-8.0515,0.9225,0.8386)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -2074,7 +2076,7 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.1961,0.8055,-0.0218)]), 
+Coordinate(point=[(-8.0515,0.9225,0.8386),(-0.1961,0.8055,-0.0218)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 HAnimSite(name="r_metacarpal_phalanx_2_pt", DEF="hanim_r_metacarpal_phalanx_2_pt", translation=((-0.1977,0.8169,-0.0177)), children=[
@@ -2129,9 +2131,9 @@ HAnimSite(name="r_dactylion_pt", DEF="hanim_r_dactylion_pt", translation=((-0.19
 TouchSensor(description="HAnimSite r_dactylion_pt"),
 Shape(USE="HAnimSiteShape")])]),
 HAnimJoint(name="r_carpal_distal_interphalangeal_2", DEF="hanim_r_carpal_distal_interphalangeal_2", center=((-0.1945,0.7169,-0.0173)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])])]),
-HAnimJoint(name="r_midcarpal_3", DEF="hanim_r_midcarpal_3", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="r_midcarpal_3", DEF="hanim_r_midcarpal_3", center=((-8.0405,0.9246,0.2513)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_capitate", DEF="hanim_r_capitate", children=[
-Transform(translation=((-0.1945,0.7169,-0.0173)), children=[
+Transform(translation=((-8.0405,0.9246,0.2513)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -2140,7 +2142,7 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.1972,0.806,-0.0468)]), 
+Coordinate(point=[(-8.0405,0.9246,0.2513),(-0.1972,0.806,-0.0468)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 HAnimSite(name="r_metacarpal_phalanx_3_pt", DEF="hanim_r_metacarpal_phalanx_3_pt", children=[
@@ -2192,9 +2194,9 @@ HAnimSite(name="r_carpal_distal_phalanx_3_tip", DEF="hanim_r_carpal_distal_phala
 TouchSensor(description="HAnimSite r_carpal_distal_phalanx_3_tip"),
 Shape(USE="HAnimSiteShape")])]),
 HAnimJoint(name="r_carpal_distal_interphalangeal_3", DEF="hanim_r_carpal_distal_interphalangeal_3", center=((-0.1939,0.7042,-0.0432)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])])]),
-HAnimJoint(name="r_midcarpal_4_5", DEF="hanim_r_midcarpal_4_5", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="r_midcarpal_4_5", DEF="hanim_r_midcarpal_4_5", center=((-8.0405,0.921,-0.6795)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_hamate", DEF="hanim_r_hamate", children=[
-Transform(translation=((-0.1939,0.7042,-0.0432)), children=[
+Transform(translation=((-8.0405,0.921,-0.6795)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
 
@@ -2203,14 +2205,14 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.1951,0.8049,-0.0732)]), 
+Coordinate(point=[(-8.0405,0.921,-0.6795),(-0.1951,0.8049,-0.0732)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.1926,0.8096,-0.0975)]), 
+Coordinate(point=[(-8.0405,0.921,-0.6795),(-0.1926,0.8096,-0.0975)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA")))),
 HAnimSite(name="r_metacarpal_phalanx_5_pt", DEF="hanim_r_metacarpal_phalanx_5_pt", translation=((-0.1929,0.789,-0.1064)), children=[

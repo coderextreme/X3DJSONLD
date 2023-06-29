@@ -5,7 +5,7 @@ print("-->")
 print(
 X3D(version="3.0", profile="Immersive", 
 head=head(children=[meta(name="filename", content="Scripting.x3d"),
-meta(name="translated", content="28 June 2023"),
+meta(name="translated", content="29 June 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
