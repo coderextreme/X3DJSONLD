@@ -170,12 +170,12 @@
 <HAnimJoint name="l_talocrural" DEF="hanim_l_talocrural" center="0.1101 0.0656 -0.0736" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_talus" DEF="hanim_l_talus"><Transform scale="0.15 0.15 0.15" translation="0.08 0.06 -0.025" rotation="1 0 0 -1.57"><!--Transform left foot--><Transform><!--Empty Transform left foot--><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 </Transform>
-<Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.1101 0.0656 -0.0736 0.1101 0.0656 -0.0736"></Coordinate>
+<Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="0.1101 0.0656 -0.0736 0.0824 0.0064 -0.004"></Coordinate>
 <!--from l_talocrural to l_metatarsophalangeal_2 vertices 2--><ColorRGBA containerField="color" USE="HAnimSegmentLineColorRGBA"></ColorRGBA>
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="l_metatarsophalangeal_2" DEF="hanim_l_metatarsophalangeal_2" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+<HAnimJoint name="l_metatarsophalangeal_2" DEF="hanim_l_metatarsophalangeal_2" center="0.0824 0.0064 -0.004" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
@@ -213,12 +213,12 @@
 <HAnimJoint name="r_talocrural" DEF="hanim_r_talocrural" center="-0.0801 0.0712 -0.0766" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_talus" DEF="hanim_r_talus"><Transform scale="0.15 0.15 0.15" translation="-0.05 0.06 -0.025" rotation="1 0 0 -1.57"><!--Transform right foot--><Transform><!--Empty Transform right foot--><Shape USE="HAnimJointShape"></Shape>
 </Transform>
 </Transform>
-<Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.0801 0.0712 -0.0766 -0.0801 0.0712 -0.0766"></Coordinate>
+<Shape><LineSet containerField="geometry" vertexCount="2"><Coordinate containerField="coord" point="-0.0801 0.0712 -0.0766 -0.0823 0.0064 -0.004"></Coordinate>
 <!--from r_talocrural to r_metatarsophalangeal_2 vertices 2--><ColorRGBA containerField="color" USE="HAnimSegmentLineColorRGBA"></ColorRGBA>
 </LineSet>
 </Shape>
 </HAnimSegment>
-<HAnimJoint name="r_metatarsophalangeal_2" DEF="hanim_r_metatarsophalangeal_2" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+<HAnimJoint name="r_metatarsophalangeal_2" DEF="hanim_r_metatarsophalangeal_2" center="-0.0823 0.0064 -0.004" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>

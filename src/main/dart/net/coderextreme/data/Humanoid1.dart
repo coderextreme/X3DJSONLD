@@ -650,7 +650,7 @@ var X3D0 =  X3D(
                                               vertexCount_ : MFInt32([SFInt32(2)]),
                                               coord_ : 
                                                 Coordinate(
-                                                  point_ : MFVec3f([SFVec3f([0.1101,0.0656,-0.0736]),SFVec3f([0.1101,0.0656,-0.0736])])),
+                                                  point_ : MFVec3f([SFVec3f([0.1101,0.0656,-0.0736]),SFVec3f([0.0824,0.0064,-0.004])])),
                                               /*from l_talocrural to l_metatarsophalangeal_2 vertices 2*/
                                               color_ : 
                                                 ColorRGBA(
@@ -659,6 +659,7 @@ var X3D0 =  X3D(
                                     HAnimJoint(
                                       name_ : SFString('l_metatarsophalangeal_2'),
                                       DEF_ : SFString('hanim_l_metatarsophalangeal_2'),
+                                      center_ : SFVec3f([SFDouble(0.0824), SFDouble(0.0064), SFDouble(-0.004)]),
                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]))])])]),
 
@@ -809,7 +810,7 @@ var X3D0 =  X3D(
                                               vertexCount_ : MFInt32([SFInt32(2)]),
                                               coord_ : 
                                                 Coordinate(
-                                                  point_ : MFVec3f([SFVec3f([-0.0801,0.0712,-0.0766]),SFVec3f([-0.0801,0.0712,-0.0766])])),
+                                                  point_ : MFVec3f([SFVec3f([-0.0801,0.0712,-0.0766]),SFVec3f([-0.0823,0.0064,-0.004])])),
                                               /*from r_talocrural to r_metatarsophalangeal_2 vertices 2*/
                                               color_ : 
                                                 ColorRGBA(
@@ -818,6 +819,7 @@ var X3D0 =  X3D(
                                     HAnimJoint(
                                       name_ : SFString('r_metatarsophalangeal_2'),
                                       DEF_ : SFString('hanim_r_metatarsophalangeal_2'),
+                                      center_ : SFVec3f([SFDouble(-0.0823), SFDouble(0.0064), SFDouble(-0.004)]),
                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]))])])])]),
 

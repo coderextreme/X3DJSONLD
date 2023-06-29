@@ -650,7 +650,7 @@ var X3D0 =  X3D(
                                               vertexCount_ : MFInt32([SFInt32(2)]),
                                               coord_ : 
                                                 Coordinate(
-                                                  point_ : MFVec3f([SFVec3f([0.1101,0.0656,-0.0736]),SFVec3f([0.1101,0.0656,-0.0736])])),
+                                                  point_ : MFVec3f([SFVec3f([0.1101,0.0656,-0.0736]),SFVec3f([0.08,0.0175,-0.0608])])),
                                               /*from l_talocrural to l_tarsometatarsal_2 vertices 2*/
                                               color_ : 
                                                 ColorRGBA(
@@ -659,6 +659,7 @@ var X3D0 =  X3D(
                                     HAnimJoint(
                                       name_ : SFString('l_tarsometatarsal_2'),
                                       DEF_ : SFString('hanim_l_tarsometatarsal_2'),
+                                      center_ : SFVec3f([SFDouble(0.08), SFDouble(0.0175), SFDouble(-0.0608)]),
                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                       children_ : [
@@ -667,7 +668,7 @@ var X3D0 =  X3D(
                                           DEF_ : SFString('hanim_l_metatarsal_2'),
                                           children_ : [
                                             Transform(
-                                              translation_ : SFVec3f([SFDouble(0.1101), SFDouble(0.0656), SFDouble(-0.0736)]),
+                                              translation_ : SFVec3f([SFDouble(0.08), SFDouble(0.0175), SFDouble(-0.0608)]),
                                               children_ : [
                                                 Transform(
                                                   /*Empty Transform*/
@@ -681,8 +682,8 @@ var X3D0 =  X3D(
                                                   vertexCount_ : MFInt32([SFInt32(2)]),
                                                   coord_ : 
                                                     Coordinate(
-                                                      point_ : MFVec3f([SFVec3f([0.1101,0.0656,-0.0736])])),
-                                                  /*from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 1*/
+                                                      point_ : MFVec3f([SFVec3f([0.08,0.0175,-0.0608]),SFVec3f([0.0824,0.0064,-0.004])])),
+                                                  /*from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 2*/
                                                   color_ : 
                                                     ColorRGBA(
                                                       USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
@@ -690,6 +691,7 @@ var X3D0 =  X3D(
                                         HAnimJoint(
                                           name_ : SFString('l_metatarsophalangeal_2'),
                                           DEF_ : SFString('hanim_l_metatarsophalangeal_2'),
+                                          center_ : SFVec3f([SFDouble(0.0824), SFDouble(0.0064), SFDouble(-0.004)]),
                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                           children_ : [
@@ -698,7 +700,7 @@ var X3D0 =  X3D(
                                               DEF_ : SFString('hanim_l_tarsal_proximal_phalanx_2'),
                                               children_ : [
                                                 Transform(
-                                                  translation_ : SFVec3f([SFDouble(0.1101), SFDouble(0.0656), SFDouble(-0.0736)]),
+                                                  translation_ : SFVec3f([SFDouble(0.0824), SFDouble(0.0064), SFDouble(-0.004)]),
                                                   children_ : [
                                                     Transform(
                                                       /*Empty Transform*/
@@ -712,8 +714,8 @@ var X3D0 =  X3D(
                                                       vertexCount_ : MFInt32([SFInt32(2)]),
                                                       coord_ : 
                                                         Coordinate(
-                                                          point_ : MFVec3f([SFVec3f([0.1101,0.0656,-0.0736])])),
-                                                      /*from l_metatarsophalangeal_2 to l_tarsal_distal_interphalangeal_2 vertices 1*/
+                                                          point_ : MFVec3f([SFVec3f([0.0824,0.0064,-0.004]),SFVec3f([0.0841,0.0013,0.0216])])),
+                                                      /*from l_metatarsophalangeal_2 to l_tarsal_distal_interphalangeal_2 vertices 2*/
                                                       color_ : 
                                                         ColorRGBA(
                                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
@@ -732,6 +734,7 @@ var X3D0 =  X3D(
                                             HAnimJoint(
                                               name_ : SFString('l_tarsal_distal_interphalangeal_2'),
                                               DEF_ : SFString('hanim_l_tarsal_distal_interphalangeal_2'),
+                                              center_ : SFVec3f([SFDouble(0.0841), SFDouble(0.0013), SFDouble(0.0216)]),
                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]))])])])])]),
 
@@ -882,7 +885,7 @@ var X3D0 =  X3D(
                                               vertexCount_ : MFInt32([SFInt32(2)]),
                                               coord_ : 
                                                 Coordinate(
-                                                  point_ : MFVec3f([SFVec3f([-0.0801,0.0712,-0.0766]),SFVec3f([-0.0801,0.0712,-0.0766])])),
+                                                  point_ : MFVec3f([SFVec3f([-0.0801,0.0712,-0.0766]),SFVec3f([-0.08,0.0175,-0.0608])])),
                                               /*from r_talocrural to r_tarsometatarsal_2 vertices 2*/
                                               color_ : 
                                                 ColorRGBA(
@@ -891,6 +894,7 @@ var X3D0 =  X3D(
                                     HAnimJoint(
                                       name_ : SFString('r_tarsometatarsal_2'),
                                       DEF_ : SFString('hanim_r_tarsometatarsal_2'),
+                                      center_ : SFVec3f([SFDouble(-0.08), SFDouble(0.0175), SFDouble(-0.0608)]),
                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                       children_ : [
@@ -899,7 +903,7 @@ var X3D0 =  X3D(
                                           DEF_ : SFString('hanim_r_metatarsal_2'),
                                           children_ : [
                                             Transform(
-                                              translation_ : SFVec3f([SFDouble(-0.0801), SFDouble(0.0712), SFDouble(-0.0766)]),
+                                              translation_ : SFVec3f([SFDouble(-0.08), SFDouble(0.0175), SFDouble(-0.0608)]),
                                               children_ : [
                                                 Transform(
                                                   /*Empty Transform*/
@@ -913,8 +917,8 @@ var X3D0 =  X3D(
                                                   vertexCount_ : MFInt32([SFInt32(2)]),
                                                   coord_ : 
                                                     Coordinate(
-                                                      point_ : MFVec3f([SFVec3f([-0.0801,0.0712,-0.0766])])),
-                                                  /*from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 1*/
+                                                      point_ : MFVec3f([SFVec3f([-0.08,0.0175,-0.0608]),SFVec3f([-0.0823,0.0064,-0.004])])),
+                                                  /*from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 2*/
                                                   color_ : 
                                                     ColorRGBA(
                                                       USE_ : SFString('HAnimSegmentLineColorRGBA'))))]),
@@ -922,6 +926,7 @@ var X3D0 =  X3D(
                                         HAnimJoint(
                                           name_ : SFString('r_metatarsophalangeal_2'),
                                           DEF_ : SFString('hanim_r_metatarsophalangeal_2'),
+                                          center_ : SFVec3f([SFDouble(-0.0823), SFDouble(0.0064), SFDouble(-0.004)]),
                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                           children_ : [
@@ -930,7 +935,7 @@ var X3D0 =  X3D(
                                               DEF_ : SFString('hanim_r_tarsal_proximal_phalanx_2'),
                                               children_ : [
                                                 Transform(
-                                                  translation_ : SFVec3f([SFDouble(-0.0801), SFDouble(0.0712), SFDouble(-0.0766)]),
+                                                  translation_ : SFVec3f([SFDouble(-0.0823), SFDouble(0.0064), SFDouble(-0.004)]),
                                                   children_ : [
                                                     Transform(
                                                       /*Empty Transform*/
@@ -944,8 +949,8 @@ var X3D0 =  X3D(
                                                       vertexCount_ : MFInt32([SFInt32(2)]),
                                                       coord_ : 
                                                         Coordinate(
-                                                          point_ : MFVec3f([SFVec3f([-0.0801,0.0712,-0.0766])])),
-                                                      /*from r_metatarsophalangeal_2 to r_tarsal_distal_interphalangeal_2 vertices 1*/
+                                                          point_ : MFVec3f([SFVec3f([-0.0823,0.0064,-0.004]),SFVec3f([-0.0841,0.0013,0.0216])])),
+                                                      /*from r_metatarsophalangeal_2 to r_tarsal_distal_interphalangeal_2 vertices 2*/
                                                       color_ : 
                                                         ColorRGBA(
                                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
@@ -964,6 +969,7 @@ var X3D0 =  X3D(
                                             HAnimJoint(
                                               name_ : SFString('r_tarsal_distal_interphalangeal_2'),
                                               DEF_ : SFString('hanim_r_tarsal_distal_interphalangeal_2'),
+                                              center_ : SFVec3f([SFDouble(-0.0841), SFDouble(0.0013), SFDouble(0.0216)]),
                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]))])])])])])]),
 
@@ -2179,7 +2185,7 @@ var X3D0 =  X3D(
                                                                                                                                   vertexCount_ : MFInt32([SFInt32(2)]),
                                                                                                                                   coord_ : 
                                                                                                                                     Coordinate(
-                                                                                                                                      point_ : MFVec3f([SFVec3f([0.0044,1.6209,0.0236]),SFVec3f([0.0044,1.6209,0.0236])])),
+                                                                                                                                      point_ : MFVec3f([SFVec3f([0.0044,1.6209,0.0236]),SFVec3f([0.0503,1.4157,-0.0689])])),
                                                                                                                                   /*from skullbase to l_eyelid_joint vertices 2*/
                                                                                                                                   color_ : 
                                                                                                                                     ColorRGBA(
@@ -2191,7 +2197,7 @@ var X3D0 =  X3D(
                                                                                                                                   vertexCount_ : MFInt32([SFInt32(2)]),
                                                                                                                                   coord_ : 
                                                                                                                                     Coordinate(
-                                                                                                                                      point_ : MFVec3f([SFVec3f([0.0044,1.6209,0.0236]),SFVec3f([0.0044,1.6209,0.0236])])),
+                                                                                                                                      point_ : MFVec3f([SFVec3f([0.0044,1.6209,0.0236]),SFVec3f([-0.0507,1.4157,-0.0689])])),
                                                                                                                                   /*from skullbase to r_eyelid_joint vertices 2*/
                                                                                                                                   color_ : 
                                                                                                                                     ColorRGBA(
@@ -2203,7 +2209,7 @@ var X3D0 =  X3D(
                                                                                                                                   vertexCount_ : MFInt32([SFInt32(2)]),
                                                                                                                                   coord_ : 
                                                                                                                                     Coordinate(
-                                                                                                                                      point_ : MFVec3f([SFVec3f([0.0044,1.6209,0.0236]),SFVec3f([0.0044,1.6209,0.0236])])),
+                                                                                                                                      point_ : MFVec3f([SFVec3f([0.0044,1.6209,0.0236]),SFVec3f([0.0479,1.3963,-0.0188])])),
                                                                                                                                   /*from skullbase to l_eyeball_joint vertices 2*/
                                                                                                                                   color_ : 
                                                                                                                                     ColorRGBA(
@@ -2215,7 +2221,7 @@ var X3D0 =  X3D(
                                                                                                                                   vertexCount_ : MFInt32([SFInt32(2)]),
                                                                                                                                   coord_ : 
                                                                                                                                     Coordinate(
-                                                                                                                                      point_ : MFVec3f([SFVec3f([0.0044,1.6209,0.0236]),SFVec3f([0.0044,1.6209,0.0236])])),
+                                                                                                                                      point_ : MFVec3f([SFVec3f([0.0044,1.6209,0.0236]),SFVec3f([-0.0483,1.3963,-0.0188])])),
                                                                                                                                   /*from skullbase to r_eyeball_joint vertices 2*/
                                                                                                                                   color_ : 
                                                                                                                                     ColorRGBA(
@@ -2227,7 +2233,7 @@ var X3D0 =  X3D(
                                                                                                                                   vertexCount_ : MFInt32([SFInt32(2)]),
                                                                                                                                   coord_ : 
                                                                                                                                     Coordinate(
-                                                                                                                                      point_ : MFVec3f([SFVec3f([0.0044,1.6209,0.0236]),SFVec3f([0.0044,1.6209,0.0236])])),
+                                                                                                                                      point_ : MFVec3f([SFVec3f([0.0044,1.6209,0.0236]),SFVec3f([0.0216,1.4053,0.0051])])),
                                                                                                                                   /*from skullbase to l_eyebrow_joint vertices 2*/
                                                                                                                                   color_ : 
                                                                                                                                     ColorRGBA(
@@ -2239,7 +2245,7 @@ var X3D0 =  X3D(
                                                                                                                                   vertexCount_ : MFInt32([SFInt32(2)]),
                                                                                                                                   coord_ : 
                                                                                                                                     Coordinate(
-                                                                                                                                      point_ : MFVec3f([SFVec3f([0.0044,1.6209,0.0236]),SFVec3f([0.0044,1.6209,0.0236])])),
+                                                                                                                                      point_ : MFVec3f([SFVec3f([0.0044,1.6209,0.0236]),SFVec3f([-0.0219,1.4053,0.0051])])),
                                                                                                                                   /*from skullbase to r_eyebrow_joint vertices 2*/
                                                                                                                                   color_ : 
                                                                                                                                     ColorRGBA(
@@ -2251,7 +2257,7 @@ var X3D0 =  X3D(
                                                                                                                                   vertexCount_ : MFInt32([SFInt32(2)]),
                                                                                                                                   coord_ : 
                                                                                                                                     Coordinate(
-                                                                                                                                      point_ : MFVec3f([SFVec3f([0.0044,1.6209,0.0236]),SFVec3f([0.0044,1.6209,0.0236])])),
+                                                                                                                                      point_ : MFVec3f([SFVec3f([0.0044,1.6209,0.0236]),SFVec3f([-0.0002,1.3043,-0.0865])])),
                                                                                                                                   /*from skullbase to temporomandibular vertices 2*/
                                                                                                                                   color_ : 
                                                                                                                                     ColorRGBA(
@@ -2303,42 +2309,49 @@ var X3D0 =  X3D(
                                                                                                                         HAnimJoint(
                                                                                                                           name_ : SFString('l_eyelid_joint'),
                                                                                                                           DEF_ : SFString('hanim_l_eyelid_joint'),
+                                                                                                                          center_ : SFVec3f([SFDouble(0.0503), SFDouble(1.4157), SFDouble(-0.0689)]),
                                                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)])),
 
                                                                                                                         HAnimJoint(
                                                                                                                           name_ : SFString('r_eyelid_joint'),
                                                                                                                           DEF_ : SFString('hanim_r_eyelid_joint'),
+                                                                                                                          center_ : SFVec3f([SFDouble(-0.0507), SFDouble(1.4157), SFDouble(-0.0689)]),
                                                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)])),
 
                                                                                                                         HAnimJoint(
                                                                                                                           name_ : SFString('l_eyeball_joint'),
                                                                                                                           DEF_ : SFString('hanim_l_eyeball_joint'),
+                                                                                                                          center_ : SFVec3f([SFDouble(0.0479), SFDouble(1.3963), SFDouble(-0.0188)]),
                                                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)])),
 
                                                                                                                         HAnimJoint(
                                                                                                                           name_ : SFString('r_eyeball_joint'),
                                                                                                                           DEF_ : SFString('hanim_r_eyeball_joint'),
+                                                                                                                          center_ : SFVec3f([SFDouble(-0.0483), SFDouble(1.3963), SFDouble(-0.0188)]),
                                                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)])),
 
                                                                                                                         HAnimJoint(
                                                                                                                           name_ : SFString('l_eyebrow_joint'),
                                                                                                                           DEF_ : SFString('hanim_l_eyebrow_joint'),
+                                                                                                                          center_ : SFVec3f([SFDouble(0.0216), SFDouble(1.4053), SFDouble(0.0051)]),
                                                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)])),
 
                                                                                                                         HAnimJoint(
                                                                                                                           name_ : SFString('r_eyebrow_joint'),
                                                                                                                           DEF_ : SFString('hanim_r_eyebrow_joint'),
+                                                                                                                          center_ : SFVec3f([SFDouble(-0.0219), SFDouble(1.4053), SFDouble(0.0051)]),
                                                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)])),
 
                                                                                                                         HAnimJoint(
                                                                                                                           name_ : SFString('temporomandibular'),
                                                                                                                           DEF_ : SFString('hanim_temporomandibular'),
+                                                                                                                          center_ : SFVec3f([SFDouble(-0.0002), SFDouble(1.3043), SFDouble(-0.0865)]),
                                                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]))])])])])])])])]),
 

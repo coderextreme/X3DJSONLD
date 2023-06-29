@@ -915,7 +915,7 @@ let Shape179 = browser.currentScene.createNode("Shape");
 let LineSet180 = browser.currentScene.createNode("LineSet");
 LineSet180.vertexCount = new MFInt32(new int[2]);
 let Coordinate181 = browser.currentScene.createNode("Coordinate");
-Coordinate181.point = new MFVec3f(new float[0.1101,0.0656,-0.0736,0.1101,0.0656,-0.0736]);
+Coordinate181.point = new MFVec3f(new float[0.1101,0.0656,-0.0736,0.08,0.0175,-0.0608]);
 LineSet180.coord = Coordinate181;
 
 //from l_talocrural to l_tarsometatarsal_2 vertices 2
@@ -934,13 +934,14 @@ HAnimJoint174.children[0] = HAnimSegment175;
 let HAnimJoint183 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint183.name = "l_tarsometatarsal_2";
 HAnimJoint183.DEF = "hanim_l_tarsometatarsal_2";
+HAnimJoint183.center = new SFVec3f(new float[0.08,0.0175,-0.0608]);
 HAnimJoint183.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint183.llimit = new MFFloat(new float[0,0,0]);
 let HAnimSegment184 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment184.name = "l_metatarsal_2";
 HAnimSegment184.DEF = "hanim_l_metatarsal_2";
 let Transform185 = browser.currentScene.createNode("Transform");
-Transform185.translation = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
+Transform185.translation = new SFVec3f(new float[0.08,0.0175,-0.0608]);
 let Transform186 = browser.currentScene.createNode("Transform");
 //Empty Transform
 let Shape187 = browser.currentScene.createNode("Shape");
@@ -961,10 +962,10 @@ let Shape188 = browser.currentScene.createNode("Shape");
 let LineSet189 = browser.currentScene.createNode("LineSet");
 LineSet189.vertexCount = new MFInt32(new int[2]);
 let Coordinate190 = browser.currentScene.createNode("Coordinate");
-Coordinate190.point = new MFVec3f(new float[0.1101,0.0656,-0.0736]);
+Coordinate190.point = new MFVec3f(new float[0.08,0.0175,-0.0608,0.0824,0.0064,-0.004]);
 LineSet189.coord = Coordinate190;
 
-//from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 1
+//from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 2
 let ColorRGBA191 = browser.currentScene.createNode("ColorRGBA");
 ColorRGBA191.USE = "HAnimSegmentLineColorRGBA";
 LineSet189.color = ColorRGBA191;
@@ -980,13 +981,14 @@ HAnimJoint183.children[0] = HAnimSegment184;
 let HAnimJoint192 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint192.name = "l_metatarsophalangeal_2";
 HAnimJoint192.DEF = "hanim_l_metatarsophalangeal_2";
+HAnimJoint192.center = new SFVec3f(new float[0.0824,0.0064,-0.004]);
 HAnimJoint192.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint192.llimit = new MFFloat(new float[0,0,0]);
 let HAnimSegment193 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment193.name = "l_tarsal_proximal_phalanx_2";
 HAnimSegment193.DEF = "hanim_l_tarsal_proximal_phalanx_2";
 let Transform194 = browser.currentScene.createNode("Transform");
-Transform194.translation = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
+Transform194.translation = new SFVec3f(new float[0.0824,0.0064,-0.004]);
 let Transform195 = browser.currentScene.createNode("Transform");
 //Empty Transform
 let Shape196 = browser.currentScene.createNode("Shape");
@@ -1007,10 +1009,10 @@ let Shape197 = browser.currentScene.createNode("Shape");
 let LineSet198 = browser.currentScene.createNode("LineSet");
 LineSet198.vertexCount = new MFInt32(new int[2]);
 let Coordinate199 = browser.currentScene.createNode("Coordinate");
-Coordinate199.point = new MFVec3f(new float[0.1101,0.0656,-0.0736]);
+Coordinate199.point = new MFVec3f(new float[0.0824,0.0064,-0.004,0.0841,0.0013,0.0216]);
 LineSet198.coord = Coordinate199;
 
-//from l_metatarsophalangeal_2 to l_tarsal_distal_interphalangeal_2 vertices 1
+//from l_metatarsophalangeal_2 to l_tarsal_distal_interphalangeal_2 vertices 2
 let ColorRGBA200 = browser.currentScene.createNode("ColorRGBA");
 ColorRGBA200.USE = "HAnimSegmentLineColorRGBA";
 LineSet198.color = ColorRGBA200;
@@ -1042,6 +1044,7 @@ HAnimJoint192.children[0] = HAnimSegment193;
 let HAnimJoint204 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint204.name = "l_tarsal_distal_interphalangeal_2";
 HAnimJoint204.DEF = "hanim_l_tarsal_distal_interphalangeal_2";
+HAnimJoint204.center = new SFVec3f(new float[0.0841,0.0013,0.0216]);
 HAnimJoint204.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint204.llimit = new MFFloat(new float[0,0,0]);
 HAnimJoint192.children[1] = HAnimJoint204;
@@ -1263,7 +1266,7 @@ let Shape243 = browser.currentScene.createNode("Shape");
 let LineSet244 = browser.currentScene.createNode("LineSet");
 LineSet244.vertexCount = new MFInt32(new int[2]);
 let Coordinate245 = browser.currentScene.createNode("Coordinate");
-Coordinate245.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766,-0.0801,0.0712,-0.0766]);
+Coordinate245.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766,-0.08,0.0175,-0.0608]);
 LineSet244.coord = Coordinate245;
 
 //from r_talocrural to r_tarsometatarsal_2 vertices 2
@@ -1282,13 +1285,14 @@ HAnimJoint238.children[0] = HAnimSegment239;
 let HAnimJoint247 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint247.name = "r_tarsometatarsal_2";
 HAnimJoint247.DEF = "hanim_r_tarsometatarsal_2";
+HAnimJoint247.center = new SFVec3f(new float[-0.08,0.0175,-0.0608]);
 HAnimJoint247.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint247.llimit = new MFFloat(new float[0,0,0]);
 let HAnimSegment248 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment248.name = "r_metatarsal_2";
 HAnimSegment248.DEF = "hanim_r_metatarsal_2";
 let Transform249 = browser.currentScene.createNode("Transform");
-Transform249.translation = new SFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Transform249.translation = new SFVec3f(new float[-0.08,0.0175,-0.0608]);
 let Transform250 = browser.currentScene.createNode("Transform");
 //Empty Transform
 let Shape251 = browser.currentScene.createNode("Shape");
@@ -1309,10 +1313,10 @@ let Shape252 = browser.currentScene.createNode("Shape");
 let LineSet253 = browser.currentScene.createNode("LineSet");
 LineSet253.vertexCount = new MFInt32(new int[2]);
 let Coordinate254 = browser.currentScene.createNode("Coordinate");
-Coordinate254.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Coordinate254.point = new MFVec3f(new float[-0.08,0.0175,-0.0608,-0.0823,0.0064,-0.004]);
 LineSet253.coord = Coordinate254;
 
-//from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 1
+//from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 2
 let ColorRGBA255 = browser.currentScene.createNode("ColorRGBA");
 ColorRGBA255.USE = "HAnimSegmentLineColorRGBA";
 LineSet253.color = ColorRGBA255;
@@ -1328,13 +1332,14 @@ HAnimJoint247.children[0] = HAnimSegment248;
 let HAnimJoint256 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint256.name = "r_metatarsophalangeal_2";
 HAnimJoint256.DEF = "hanim_r_metatarsophalangeal_2";
+HAnimJoint256.center = new SFVec3f(new float[-0.0823,0.0064,-0.004]);
 HAnimJoint256.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint256.llimit = new MFFloat(new float[0,0,0]);
 let HAnimSegment257 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment257.name = "r_tarsal_proximal_phalanx_2";
 HAnimSegment257.DEF = "hanim_r_tarsal_proximal_phalanx_2";
 let Transform258 = browser.currentScene.createNode("Transform");
-Transform258.translation = new SFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Transform258.translation = new SFVec3f(new float[-0.0823,0.0064,-0.004]);
 let Transform259 = browser.currentScene.createNode("Transform");
 //Empty Transform
 let Shape260 = browser.currentScene.createNode("Shape");
@@ -1355,10 +1360,10 @@ let Shape261 = browser.currentScene.createNode("Shape");
 let LineSet262 = browser.currentScene.createNode("LineSet");
 LineSet262.vertexCount = new MFInt32(new int[2]);
 let Coordinate263 = browser.currentScene.createNode("Coordinate");
-Coordinate263.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Coordinate263.point = new MFVec3f(new float[-0.0823,0.0064,-0.004,-0.0841,0.0013,0.0216]);
 LineSet262.coord = Coordinate263;
 
-//from r_metatarsophalangeal_2 to r_tarsal_distal_interphalangeal_2 vertices 1
+//from r_metatarsophalangeal_2 to r_tarsal_distal_interphalangeal_2 vertices 2
 let ColorRGBA264 = browser.currentScene.createNode("ColorRGBA");
 ColorRGBA264.USE = "HAnimSegmentLineColorRGBA";
 LineSet262.color = ColorRGBA264;
@@ -1390,6 +1395,7 @@ HAnimJoint256.children[0] = HAnimSegment257;
 let HAnimJoint268 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint268.name = "r_tarsal_distal_interphalangeal_2";
 HAnimJoint268.DEF = "hanim_r_tarsal_distal_interphalangeal_2";
+HAnimJoint268.center = new SFVec3f(new float[-0.0841,0.0013,0.0216]);
 HAnimJoint268.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint268.llimit = new MFFloat(new float[0,0,0]);
 HAnimJoint256.children[1] = HAnimJoint268;

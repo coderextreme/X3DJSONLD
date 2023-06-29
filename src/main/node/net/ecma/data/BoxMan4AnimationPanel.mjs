@@ -198,7 +198,7 @@ var X3D0 =  new X3D({
             new HAnimHumanoid({
               name : new SFString("Humanoid"),
               DEF : new SFString("boxman_Humanoid"),
-              info : new MFString(["authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=1.0"]),
+              info : new MFString(["authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=2.0"]),
               version : new SFString("1.0"),
               joints : new MFNode([
                 new HAnimJoint({

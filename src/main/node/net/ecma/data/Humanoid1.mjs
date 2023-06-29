@@ -693,7 +693,7 @@ var X3D0 =  new X3D({
                                               vertexCount : new MFInt32([2]),
                                               coord : new SFNode(
                                                 new Coordinate({
-                                                  point : new MFVec3f([0.1101,0.0656,-0.0736,0.1101,0.0656,-0.0736])})),
+                                                  point : new MFVec3f([0.1101,0.0656,-0.0736,0.0824,0.0064,-0.004])})),
                                               /*from l_talocrural to l_metatarsophalangeal_2 vertices 2*/
                                               color : new SFNode(
                                                 new ColorRGBA({
@@ -702,6 +702,7 @@ var X3D0 =  new X3D({
                                     new HAnimJoint({
                                       name : new SFString("l_metatarsophalangeal_2"),
                                       DEF : new SFString("hanim_l_metatarsophalangeal_2"),
+                                      center : new SFVec3f([0.0824,0.0064,-0.004]),
                                       ulimit : new MFFloat([0,0,0]),
                                       llimit : new MFFloat([0,0,0])})])})])})])}),
 
@@ -852,7 +853,7 @@ var X3D0 =  new X3D({
                                               vertexCount : new MFInt32([2]),
                                               coord : new SFNode(
                                                 new Coordinate({
-                                                  point : new MFVec3f([-0.0801,0.0712,-0.0766,-0.0801,0.0712,-0.0766])})),
+                                                  point : new MFVec3f([-0.0801,0.0712,-0.0766,-0.0823,0.0064,-0.004])})),
                                               /*from r_talocrural to r_metatarsophalangeal_2 vertices 2*/
                                               color : new SFNode(
                                                 new ColorRGBA({
@@ -861,6 +862,7 @@ var X3D0 =  new X3D({
                                     new HAnimJoint({
                                       name : new SFString("r_metatarsophalangeal_2"),
                                       DEF : new SFString("hanim_r_metatarsophalangeal_2"),
+                                      center : new SFVec3f([-0.0823,0.0064,-0.004]),
                                       ulimit : new MFFloat([0,0,0]),
                                       llimit : new MFFloat([0,0,0])})])})])})])})])}),
 
