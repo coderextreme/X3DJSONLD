@@ -15,7 +15,7 @@ addFormats(ajv, ["uri", "uri-reference"], window.fastFormats);
 
 // import JSONSchema from "../schema/x3d-4.0-JSONSchema.json" assert { type: "json" };
 // const JSONSchema = require("../schema/x3d-4.0-JSONSchema.json")
-var JSONSchema = "http://localhost:3000/src/main/schema/x3d-4.0-JSONSchema.json";
+var JSONSchema = "http://coderextreme.net/X3DJSONLD/src/main/schema/x3d-4.0-JSONSchema.json";
 
 var fs = require('fs');
 //
@@ -116,7 +116,7 @@ this.loadSchema = async function(json, file, success, failure) {
 				validated_version = vs(ajv, schemajson, version);
 				this.doValidate(json, validated_version, file, success, undefined);
 		      } else {
-			  var JSONSchema = "http://localhost:3000/src/main/schema/x3d-4.0-JSONSchema.json";
+			  var JSONSchema = "https://coderextreme.net/X3DJSONLD/src/main/schema/x3d-4.0-JSONSchema.json";
 			  const response = await fetch(JSONSchema);
 			  const schemajson = await response.json();
 			  validated_version = vs(ajv, schemajson, version);
