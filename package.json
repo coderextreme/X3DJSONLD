@@ -41,6 +41,7 @@
   "scripts": {
     "start": "node app.js",
     "postinstall": "bash build.sh",
+    "ajv": "bash ajv.sh",
     "buildthreex3dloader": "browserify src/main/node/threeLoadFile.js > src/main/node/bundle.js",
     "test": "web-test-runner ./dist/**/*.spec.js"
   }

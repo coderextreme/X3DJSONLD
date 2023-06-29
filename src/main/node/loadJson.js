@@ -1,6 +1,6 @@
-import doLoadValidate from './loadValidate.mjs';
+// var loadValidate = require('./loadValidate.js');
 
-var loadValidator = new doLoadValidate();
+var loadValidator = new loadValidate();
 window.loadValidator = loadValidator;
 
 function loadJson(url, loadValidator) {
