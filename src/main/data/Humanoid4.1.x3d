@@ -68,6 +68,8 @@
 <Viewpoint centerOfRotation='0 0 0' description='default'/> 
 
 <HAnimHumanoid DEF='hanim_HAnim'  info='"humanoidVersion=2.0"' name='HAnim' scale='1 1 1' translation='0 0 0' version='2.0'>
+          <!-- </LOD> -->
+          <Coordinate USE='TheSkinCoord' containerField='skinCoord'/>
 <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='0.0000 0.8240 0.0277'>
   <HAnimSegment DEF='hanim_sacrum' name='sacrum'>
    <Transform translation='0.0000 0.8240 0.0277'>
@@ -250,67 +252,67 @@
            </Transform>
            <Shape>
             <LineSet vertexCount='2'>
-             <Coordinate point='0.1101 0.0656 -0.0736 0.1101 0.0656 -0.0736'/> <!-- from l_talocrural to l_talocalcaneonavicular vertices 2-->
+             <Coordinate point='0.1101 0.0656 -0.0736 3.4715 0.0374 0.6807'/> <!-- from l_talocrural to l_talocalcaneonavicular vertices 2-->
              <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
             </LineSet>
            </Shape>
            <Shape>
             <LineSet vertexCount='2'>
-             <Coordinate point='0.1101 0.0656 -0.0736 0.1101 0.0656 -0.0736'/> <!-- from l_talocrural to l_calcaneocuboid vertices 2-->
+             <Coordinate point='0.1101 0.0656 -0.0736 3.9515 0.0653 -0.6895'/> <!-- from l_talocrural to l_calcaneocuboid vertices 2-->
              <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
             </LineSet>
            </Shape>
           </HAnimSegment>
-          <HAnimJoint DEF='hanim_l_talocalcaneonavicular' name='l_talocalcaneonavicular'>
+          <HAnimJoint DEF='hanim_l_talocalcaneonavicular' name='l_talocalcaneonavicular' center='3.4715 0.0374 0.6807'>
             <HAnimSegment DEF='hanim_l_navicular' name='l_navicular'>
-             <Transform translation='0.1101 0.0656 -0.0736'>
+             <Transform translation='3.4715 0.0374 0.6807'>
              <Transform> <!-- Empty Transform -->
               <Shape USE='HAnimJointShape'/>
              </Transform>
              </Transform>
              <Shape>
               <LineSet vertexCount='2'>
-               <Coordinate point=' 0.1101 0.0656 -0.0736'/> <!-- from l_talocalcaneonavicular to l_cuneonavicular_1 vertices 1-->
+               <Coordinate point='3.4715 0.0374 0.6807 2.9855 0.0311 1.2819'/> <!-- from l_talocalcaneonavicular to l_cuneonavicular_1 vertices 2-->
                <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
               </LineSet>
              </Shape>
              <Shape>
               <LineSet vertexCount='2'>
-               <Coordinate point=' 0.1101 0.0656 -0.0736'/> <!-- from l_talocalcaneonavicular to l_cuneonavicular_2 vertices 1-->
+               <Coordinate point='3.4715 0.0374 0.6807 3.6105 0.0330 1.4168'/> <!-- from l_talocalcaneonavicular to l_cuneonavicular_2 vertices 2-->
                <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
               </LineSet>
              </Shape>
              <Shape>
               <LineSet vertexCount='2'>
-               <Coordinate point=' 0.1101 0.0656 -0.0736'/> <!-- from l_talocalcaneonavicular to l_cuneonavicular_3 vertices 1-->
+               <Coordinate point='3.4715 0.0374 0.6807 4.1235 0.0328 1.3453'/> <!-- from l_talocalcaneonavicular to l_cuneonavicular_3 vertices 2-->
                <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
               </LineSet>
              </Shape>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_l_cuneonavicular_1' name='l_cuneonavicular_1'>
+            <HAnimJoint DEF='hanim_l_cuneonavicular_1' name='l_cuneonavicular_1' center='2.9855 0.0311 1.2819'>
               <HAnimSegment DEF='hanim_l_cuneiform_1' name='l_cuneiform_1'>
-               <Transform translation='0.1101 0.0656 -0.0736'>
+               <Transform translation='2.9855 0.0311 1.2819'>
                <Transform> <!-- Empty Transform -->
                 <Shape USE='HAnimJointShape'/>
                </Transform>
                </Transform>
                <Shape>
                 <LineSet vertexCount='2'>
-                 <Coordinate point=' 0.1101 0.0656 -0.0736'/> <!-- from l_cuneonavicular_1 to l_tarsometatarsal_1 vertices 1-->
+                 <Coordinate point='2.9855 0.0311 1.2819 2.8635 0.0194 2.4285'/> <!-- from l_cuneonavicular_1 to l_tarsometatarsal_1 vertices 2-->
                  <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                 </LineSet>
                </Shape>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_l_tarsometatarsal_1' name='l_tarsometatarsal_1'>
+              <HAnimJoint DEF='hanim_l_tarsometatarsal_1' name='l_tarsometatarsal_1' center='2.8635 0.0194 2.4285'>
                 <HAnimSegment DEF='hanim_l_metatarsal_1' name='l_metatarsal_1'>
-                 <Transform translation='0.1101 0.0656 -0.0736'>
+                 <Transform translation='2.8635 0.0194 2.4285'>
                  <Transform> <!-- Empty Transform -->
                   <Shape USE='HAnimJointShape'/>
                  </Transform>
                  </Transform>
                  <Shape>
                   <LineSet vertexCount='2'>
-                   <Coordinate point=' 0.1101 0.0656 -0.0736'/> <!-- from l_tarsometatarsal_1 to l_metatarsophalangeal_1 vertices 1-->
+                   <Coordinate point='2.8635 0.0194 2.4285 2.7525 0.0077 4.6255'/> <!-- from l_tarsometatarsal_1 to l_metatarsophalangeal_1 vertices 2-->
                    <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                   </LineSet>
                  </Shape>
@@ -319,16 +321,16 @@
     <Shape USE='HAnimSiteShape'/>
    </HAnimSite>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_l_metatarsophalangeal_1' name='l_metatarsophalangeal_1'>
+                <HAnimJoint DEF='hanim_l_metatarsophalangeal_1' name='l_metatarsophalangeal_1' center='2.7525 0.0077 4.6255'>
                   <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_1' name='l_tarsal_proximal_phalanx_1'>
-                   <Transform translation='0.1101 0.0656 -0.0736'>
+                   <Transform translation='2.7525 0.0077 4.6255'>
                    <Transform> <!-- Empty Transform -->
                     <Shape USE='HAnimJointShape'/>
                    </Transform>
                    </Transform>
                    <Shape>
                     <LineSet vertexCount='2'>
-                     <Coordinate point=' 0.1101 0.0656 -0.0736'/> <!-- from l_metatarsophalangeal_1 to l_tarsal_interphalangeal_1 vertices 1-->
+                     <Coordinate point='2.7525 0.0077 4.6255 2.7525 0.0077 4.6255'/> <!-- from l_metatarsophalangeal_1 to l_tarsal_interphalangeal_1 vertices 2-->
                      <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                     </LineSet>
                    </Shape>
@@ -342,58 +344,58 @@
                 </HAnimJoint>
               </HAnimJoint>
             </HAnimJoint>
-            <HAnimJoint DEF='hanim_l_cuneonavicular_2' name='l_cuneonavicular_2'>
+            <HAnimJoint DEF='hanim_l_cuneonavicular_2' name='l_cuneonavicular_2' center='3.6105 0.0330 1.4168'>
               <HAnimSegment DEF='hanim_l_cuneiform_2' name='l_cuneiform_2'>
-               <Transform translation='0.1101 0.0656 -0.0736'>
+               <Transform translation='3.6105 0.0330 1.4168'>
                <Transform> <!-- Empty Transform -->
                 <Shape USE='HAnimJointShape'/>
                </Transform>
                </Transform>
                <Shape>
                 <LineSet vertexCount='2'>
-                 <Coordinate point=' 0.1101 0.0656 -0.0736'/> <!-- from l_cuneonavicular_2 to l_tarsometatarsal_2 vertices 1-->
+                 <Coordinate point='3.6105 0.0330 1.4168 3.5555 0.0232 2.2895'/> <!-- from l_cuneonavicular_2 to l_tarsometatarsal_2 vertices 2-->
                  <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                 </LineSet>
                </Shape>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_l_tarsometatarsal_2' name='l_tarsometatarsal_2'>
+              <HAnimJoint DEF='hanim_l_tarsometatarsal_2' name='l_tarsometatarsal_2' center='3.5555 0.0232 2.2895'>
                 <HAnimSegment DEF='hanim_l_metatarsal_2' name='l_metatarsal_2'>
-                 <Transform translation='0.1101 0.0656 -0.0736'>
+                 <Transform translation='3.5555 0.0232 2.2895'>
                  <Transform> <!-- Empty Transform -->
                   <Shape USE='HAnimJointShape'/>
                  </Transform>
                  </Transform>
                  <Shape>
                   <LineSet vertexCount='2'>
-                   <Coordinate point=' 0.1101 0.0656 -0.0736'/> <!-- from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 1-->
+                   <Coordinate point='3.5555 0.0232 2.2895 3.6595 0.0085 4.8125'/> <!-- from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 2-->
                    <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                   </LineSet>
                  </Shape>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_l_metatarsophalangeal_2' name='l_metatarsophalangeal_2'>
+                <HAnimJoint DEF='hanim_l_metatarsophalangeal_2' name='l_metatarsophalangeal_2' center='3.6595 0.0085 4.8125'>
                   <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_2' name='l_tarsal_proximal_phalanx_2'>
-                   <Transform translation='0.1101 0.0656 -0.0736'>
+                   <Transform translation='3.6595 0.0085 4.8125'>
                    <Transform> <!-- Empty Transform -->
                     <Shape USE='HAnimJointShape'/>
                    </Transform>
                    </Transform>
                    <Shape>
                     <LineSet vertexCount='2'>
-                     <Coordinate point=' 0.1101 0.0656 -0.0736'/> <!-- from l_metatarsophalangeal_2 to l_tarsal_proximal_interphalangeal_2 vertices 1-->
+                     <Coordinate point='3.6595 0.0085 4.8125 3.7385 0.0054 5.5315'/> <!-- from l_metatarsophalangeal_2 to l_tarsal_proximal_interphalangeal_2 vertices 2-->
                      <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                     </LineSet>
                    </Shape>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_2' name='l_tarsal_proximal_interphalangeal_2'>
+                  <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_2' name='l_tarsal_proximal_interphalangeal_2' center='3.7385 0.0054 5.5315'>
                     <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_2' name='l_tarsal_middle_phalanx_2'>
-                     <Transform translation='0.1101 0.0656 -0.0736'>
+                     <Transform translation='3.7385 0.0054 5.5315'>
                      <Transform> <!-- Empty Transform -->
                       <Shape USE='HAnimJointShape'/>
                      </Transform>
                      </Transform>
                      <Shape>
                       <LineSet vertexCount='2'>
-                       <Coordinate point=' 0.1101 0.0656 -0.0736'/> <!-- from l_tarsal_proximal_interphalangeal_2 to l_tarsal_distal_interphalangeal_2 vertices 1-->
+                       <Coordinate point='3.7385 0.0054 5.5315 3.7385 0.0017 5.9505'/> <!-- from l_tarsal_proximal_interphalangeal_2 to l_tarsal_distal_interphalangeal_2 vertices 2-->
                        <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                       </LineSet>
                      </Shape>
@@ -402,64 +404,64 @@
     <Shape USE='HAnimSiteShape'/>
    </HAnimSite>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_2' name='l_tarsal_distal_interphalangeal_2'>
+                    <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_2' name='l_tarsal_distal_interphalangeal_2' center='3.7385 0.0017 5.9505'>
                     </HAnimJoint>
                   </HAnimJoint>
                 </HAnimJoint>
               </HAnimJoint>
             </HAnimJoint>
-            <HAnimJoint DEF='hanim_l_cuneonavicular_3' name='l_cuneonavicular_3'>
+            <HAnimJoint DEF='hanim_l_cuneonavicular_3' name='l_cuneonavicular_3' center='4.1235 0.0328 1.3453'>
               <HAnimSegment DEF='hanim_l_cuneiform_3' name='l_cuneiform_3'>
-               <Transform translation='0.1101 0.0656 -0.0736'>
+               <Transform translation='4.1235 0.0328 1.3453'>
                <Transform> <!-- Empty Transform -->
                 <Shape USE='HAnimJointShape'/>
                </Transform>
                </Transform>
                <Shape>
                 <LineSet vertexCount='2'>
-                 <Coordinate point=' 0.1101 0.0656 -0.0736'/> <!-- from l_cuneonavicular_3 to l_tarsometatarsal_3  vertices 1-->
+                 <Coordinate point='4.1235 0.0328 1.3453 3.7385 0.0017 5.9505'/> <!-- from l_cuneonavicular_3 to l_tarsometatarsal_3  vertices 2-->
                  <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                 </LineSet>
                </Shape>
               </HAnimSegment>
               <HAnimJoint DEF='hanim_l_tarsometatarsal_3 ' name='l_tarsometatarsal_3 '>
                 <HAnimSegment DEF='hanim_l_metatarsal_3' name='l_metatarsal_3'>
-                 <Transform translation='0.1101 0.0656 -0.0736'>
+                 <Transform translation='4.1235 0.0328 1.3453'>
                  <Transform> <!-- Empty Transform -->
                   <Shape USE='HAnimJointShape'/>
                  </Transform>
                  </Transform>
                  <Shape>
                   <LineSet vertexCount='2'>
-                   <Coordinate point=' 0.1101 0.0656 -0.0736'/> <!-- from l_tarsometatarsal_3  to l_metatarsophalangeal_3 vertices 1-->
+                   <Coordinate point=' 4.2795 0.0086 4.7055'/> <!-- from l_tarsometatarsal_3  to l_metatarsophalangeal_3 vertices 1-->
                    <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                   </LineSet>
                  </Shape>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_l_metatarsophalangeal_3' name='l_metatarsophalangeal_3'>
+                <HAnimJoint DEF='hanim_l_metatarsophalangeal_3' name='l_metatarsophalangeal_3' center='4.2795 0.0086 4.7055'>
                   <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_3' name='l_tarsal_proximal_phalanx_3'>
-                   <Transform translation='0.1101 0.0656 -0.0736'>
+                   <Transform translation='4.2795 0.0086 4.7055'>
                    <Transform> <!-- Empty Transform -->
                     <Shape USE='HAnimJointShape'/>
                    </Transform>
                    </Transform>
                    <Shape>
                     <LineSet vertexCount='2'>
-                     <Coordinate point=' 0.1101 0.0656 -0.0736'/> <!-- from l_metatarsophalangeal_3 to l_tarsal_proximal_interphalangeal_3 vertices 1-->
+                     <Coordinate point='4.2795 0.0086 4.7055 4.3855 0.0044 5.3745'/> <!-- from l_metatarsophalangeal_3 to l_tarsal_proximal_interphalangeal_3 vertices 2-->
                      <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                     </LineSet>
                    </Shape>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_3' name='l_tarsal_proximal_interphalangeal_3'>
+                  <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_3' name='l_tarsal_proximal_interphalangeal_3' center='4.3855 0.0044 5.3745'>
                     <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_3' name='l_tarsal_middle_phalanx_3'>
-                     <Transform translation='0.1101 0.0656 -0.0736'>
+                     <Transform translation='4.3855 0.0044 5.3745'>
                      <Transform> <!-- Empty Transform -->
                       <Shape USE='HAnimJointShape'/>
                      </Transform>
                      </Transform>
                      <Shape>
                       <LineSet vertexCount='2'>
-                       <Coordinate point=' 0.1101 0.0656 -0.0736'/> <!-- from l_tarsal_proximal_interphalangeal_3 to l_tarsal_distal_interphalangeal_3 vertices 1-->
+                       <Coordinate point='4.3855 0.0044 5.3745 4.4545 0.0017 5.7845'/> <!-- from l_tarsal_proximal_interphalangeal_3 to l_tarsal_distal_interphalangeal_3 vertices 2-->
                        <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                       </LineSet>
                      </Shape>
@@ -468,85 +470,85 @@
     <Shape USE='HAnimSiteShape'/>
    </HAnimSite>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_3' name='l_tarsal_distal_interphalangeal_3'>
+                    <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_3' name='l_tarsal_distal_interphalangeal_3' center='4.4545 0.0017 5.7845'>
                     </HAnimJoint>
                   </HAnimJoint>
                 </HAnimJoint>
               </HAnimJoint>
             </HAnimJoint>
           </HAnimJoint>
-          <HAnimJoint DEF='hanim_l_calcaneocuboid' name='l_calcaneocuboid'>
+          <HAnimJoint DEF='hanim_l_calcaneocuboid' name='l_calcaneocuboid' center='3.9515 0.0653 -0.6895'>
             <HAnimSegment DEF='hanim_l_calcaneus' name='l_calcaneus'>
-             <Transform translation='0.1101 0.0656 -0.0736'>
+             <Transform translation='3.9515 0.0653 -0.6895'>
              <Transform> <!-- Empty Transform -->
               <Shape USE='HAnimJointShape'/>
              </Transform>
              </Transform>
              <Shape>
               <LineSet vertexCount='2'>
-               <Coordinate point=' 0.1101 0.0656 -0.0736'/> <!-- from l_calcaneocuboid to l_transversetarsal vertices 1-->
+               <Coordinate point='3.9515 0.0653 -0.6895 4.9085 0.0353 0.5574'/> <!-- from l_calcaneocuboid to l_transversetarsal vertices 2-->
                <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
               </LineSet>
              </Shape>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_l_transversetarsal' name='l_transversetarsal'>
+            <HAnimJoint DEF='hanim_l_transversetarsal' name='l_transversetarsal' center='4.9085 0.0353 0.5574'>
               <HAnimSegment DEF='hanim_l_cuboid' name='l_cuboid'>
-               <Transform translation='0.1101 0.0656 -0.0736'>
+               <Transform translation='4.9085 0.0353 0.5574'>
                <Transform> <!-- Empty Transform -->
                 <Shape USE='HAnimJointShape'/>
                </Transform>
                </Transform>
                <Shape>
                 <LineSet vertexCount='2'>
-                 <Coordinate point=' 0.1101 0.0656 -0.0736'/> <!-- from l_transversetarsal to l_tarsometatarsal_4 vertices 1-->
+                 <Coordinate point='4.9085 0.0353 0.5574 4.7245 0.0211 2.1725'/> <!-- from l_transversetarsal to l_tarsometatarsal_4 vertices 2-->
                  <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                 </LineSet>
                </Shape>
                <Shape>
                 <LineSet vertexCount='2'>
-                 <Coordinate point=' 0.1101 0.0656 -0.0736'/> <!-- from l_transversetarsal to l_tarsometatarsal_5 vertices 1-->
+                 <Coordinate point='4.9085 0.0353 0.5574 5.3615 0.0164 2.0085'/> <!-- from l_transversetarsal to l_tarsometatarsal_5 vertices 2-->
                  <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                 </LineSet>
                </Shape>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_l_tarsometatarsal_4' name='l_tarsometatarsal_4'>
+              <HAnimJoint DEF='hanim_l_tarsometatarsal_4' name='l_tarsometatarsal_4' center='4.7245 0.0211 2.1725'>
                 <HAnimSegment DEF='hanim_l_metatarsal_4' name='l_metatarsal_4'>
-                 <Transform translation='0.1101 0.0656 -0.0736'>
+                 <Transform translation='4.7245 0.0211 2.1725'>
                  <Transform> <!-- Empty Transform -->
                   <Shape USE='HAnimJointShape'/>
                  </Transform>
                  </Transform>
                  <Shape>
                   <LineSet vertexCount='2'>
-                   <Coordinate point=' 0.1101 0.0656 -0.0736'/> <!-- from l_tarsometatarsal_4 to l_metatarsophalangeal_4 vertices 1-->
+                   <Coordinate point='4.7245 0.0211 2.1725 4.8745 0.0076 4.5165'/> <!-- from l_tarsometatarsal_4 to l_metatarsophalangeal_4 vertices 2-->
                    <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                   </LineSet>
                  </Shape>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_l_metatarsophalangeal_4' name='l_metatarsophalangeal_4'>
+                <HAnimJoint DEF='hanim_l_metatarsophalangeal_4' name='l_metatarsophalangeal_4' center='4.8745 0.0076 4.5165'>
                   <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_4' name='l_tarsal_proximal_phalanx_4'>
-                   <Transform translation='0.1101 0.0656 -0.0736'>
+                   <Transform translation='4.8745 0.0076 4.5165'>
                    <Transform> <!-- Empty Transform -->
                     <Shape USE='HAnimJointShape'/>
                    </Transform>
                    </Transform>
                    <Shape>
                     <LineSet vertexCount='2'>
-                     <Coordinate point=' 0.1101 0.0656 -0.0736'/> <!-- from l_metatarsophalangeal_4 to l_tarsal_proximal_interphalangeal_4 vertices 1-->
+                     <Coordinate point='4.8745 0.0076 4.5165 5.0655 0.0049 5.1895'/> <!-- from l_metatarsophalangeal_4 to l_tarsal_proximal_interphalangeal_4 vertices 2-->
                      <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                     </LineSet>
                    </Shape>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_4' name='l_tarsal_proximal_interphalangeal_4'>
+                  <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_4' name='l_tarsal_proximal_interphalangeal_4' center='5.0655 0.0049 5.1895'>
                     <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_4' name='l_tarsal_middle_phalanx_4'>
-                     <Transform translation='0.1101 0.0656 -0.0736'>
+                     <Transform translation='5.0655 0.0049 5.1895'>
                      <Transform> <!-- Empty Transform -->
                       <Shape USE='HAnimJointShape'/>
                      </Transform>
                      </Transform>
                      <Shape>
                       <LineSet vertexCount='2'>
-                       <Coordinate point=' 0.1101 0.0656 -0.0736'/> <!-- from l_tarsal_proximal_interphalangeal_4 to l_tarsal_distal_interphalangeal_4 vertices 1-->
+                       <Coordinate point='5.0655 0.0049 5.1895 5.1325 0.0011 5.5175'/> <!-- from l_tarsal_proximal_interphalangeal_4 to l_tarsal_distal_interphalangeal_4 vertices 2-->
                        <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                       </LineSet>
                      </Shape>
@@ -555,21 +557,21 @@
     <Shape USE='HAnimSiteShape'/>
    </HAnimSite>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_4' name='l_tarsal_distal_interphalangeal_4'>
+                    <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_4' name='l_tarsal_distal_interphalangeal_4' center='5.1325 0.0011 5.5175'>
                     </HAnimJoint>
                   </HAnimJoint>
                 </HAnimJoint>
               </HAnimJoint>
-              <HAnimJoint DEF='hanim_l_tarsometatarsal_5' name='l_tarsometatarsal_5'>
+              <HAnimJoint DEF='hanim_l_tarsometatarsal_5' name='l_tarsometatarsal_5' center='5.3615 0.0164 2.0085'>
                 <HAnimSegment DEF='hanim_l_metatarsal_5' name='l_metatarsal_5'>
-                 <Transform translation='0.1101 0.0656 -0.0736'>
+                 <Transform translation='5.3615 0.0164 2.0085'>
                  <Transform> <!-- Empty Transform -->
                   <Shape USE='HAnimJointShape'/>
                  </Transform>
                  </Transform>
                  <Shape>
                   <LineSet vertexCount='2'>
-                   <Coordinate point=' 0.1101 0.0656 -0.0736'/> <!-- from l_tarsometatarsal_5 to l_metatarsophalangeal_5 vertices 1-->
+                   <Coordinate point='5.3615 0.0164 2.0085 5.5055 0.0067 4.3115'/> <!-- from l_tarsometatarsal_5 to l_metatarsophalangeal_5 vertices 2-->
                    <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                   </LineSet>
                  </Shape>
@@ -578,30 +580,30 @@
     <Shape USE='HAnimSiteShape'/>
    </HAnimSite>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_l_metatarsophalangeal_5' name='l_metatarsophalangeal_5'>
+                <HAnimJoint DEF='hanim_l_metatarsophalangeal_5' name='l_metatarsophalangeal_5' center='5.5055 0.0067 4.3115'>
                   <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_5' name='l_tarsal_proximal_phalanx_5'>
-                   <Transform translation='0.1101 0.0656 -0.0736'>
+                   <Transform translation='5.5055 0.0067 4.3115'>
                    <Transform> <!-- Empty Transform -->
                     <Shape USE='HAnimJointShape'/>
                    </Transform>
                    </Transform>
                    <Shape>
                     <LineSet vertexCount='2'>
-                     <Coordinate point=' 0.1101 0.0656 -0.0736'/> <!-- from l_metatarsophalangeal_5 to l_tarsal_proximal_interphalangeal_5 vertices 1-->
+                     <Coordinate point='5.5055 0.0067 4.3115 5.6085 0.0030 4.6485'/> <!-- from l_metatarsophalangeal_5 to l_tarsal_proximal_interphalangeal_5 vertices 2-->
                      <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                     </LineSet>
                    </Shape>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_5' name='l_tarsal_proximal_interphalangeal_5'>
+                  <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_5' name='l_tarsal_proximal_interphalangeal_5' center='5.6085 0.0030 4.6485'>
                     <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_5' name='l_tarsal_middle_phalanx_5'>
-                     <Transform translation='0.1101 0.0656 -0.0736'>
+                     <Transform translation='5.6085 0.0030 4.6485'>
                      <Transform> <!-- Empty Transform -->
                       <Shape USE='HAnimJointShape'/>
                      </Transform>
                      </Transform>
                      <Shape>
                       <LineSet vertexCount='2'>
-                       <Coordinate point=' 0.1101 0.0656 -0.0736'/> <!-- from l_tarsal_proximal_interphalangeal_5 to l_tarsal_distal_interphalangeal_5 vertices 1-->
+                       <Coordinate point='5.6085 0.0030 4.6485 5.6485 0.0000 4.9925'/> <!-- from l_tarsal_proximal_interphalangeal_5 to l_tarsal_distal_interphalangeal_5 vertices 2-->
                        <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                       </LineSet>
                      </Shape>
@@ -610,7 +612,7 @@
     <Shape USE='HAnimSiteShape'/>
    </HAnimSite>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_5' name='l_tarsal_distal_interphalangeal_5'>
+                    <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_5' name='l_tarsal_distal_interphalangeal_5' center='5.6485 0.0000 4.9925'>
                     </HAnimJoint>
                   </HAnimJoint>
                 </HAnimJoint>
@@ -678,67 +680,67 @@
            </Transform>
            <Shape>
             <LineSet vertexCount='2'>
-             <Coordinate point='-0.0801 0.0712 -0.0766 -0.0801 0.0712 -0.0766'/> <!-- from r_talocrural to r_talocalcaneonavicular vertices 2-->
+             <Coordinate point='-0.0801 0.0712 -0.0766 -3.4725 0.0374 0.6807'/> <!-- from r_talocrural to r_talocalcaneonavicular vertices 2-->
              <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
             </LineSet>
            </Shape>
            <Shape>
             <LineSet vertexCount='2'>
-             <Coordinate point='-0.0801 0.0712 -0.0766 -0.0801 0.0712 -0.0766'/> <!-- from r_talocrural to r_calcaneocuboid vertices 2-->
+             <Coordinate point='-0.0801 0.0712 -0.0766 -3.9515 0.0653 -0.6895'/> <!-- from r_talocrural to r_calcaneocuboid vertices 2-->
              <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
             </LineSet>
            </Shape>
           </HAnimSegment>
-          <HAnimJoint DEF='hanim_r_talocalcaneonavicular' name='r_talocalcaneonavicular'>
+          <HAnimJoint DEF='hanim_r_talocalcaneonavicular' name='r_talocalcaneonavicular' center='-3.4725 0.0374 0.6807'>
             <HAnimSegment DEF='hanim_r_navicular' name='r_navicular'>
-             <Transform translation='-0.0801 0.0712 -0.0766'>
+             <Transform translation='-3.4725 0.0374 0.6807'>
              <Transform> <!-- Empty Transform -->
               <Shape USE='HAnimJointShape'/>
              </Transform>
              </Transform>
              <Shape>
               <LineSet vertexCount='2'>
-               <Coordinate point=' -0.0801 0.0712 -0.0766'/> <!-- from r_talocalcaneonavicular to r_cuneonavicular_1 vertices 1-->
+               <Coordinate point='-3.4725 0.0374 0.6807 -2.9855 0.0311 1.2819'/> <!-- from r_talocalcaneonavicular to r_cuneonavicular_1 vertices 2-->
                <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
               </LineSet>
              </Shape>
              <Shape>
               <LineSet vertexCount='2'>
-               <Coordinate point=' -0.0801 0.0712 -0.0766'/> <!-- from r_talocalcaneonavicular to r_cuneonavicular_2 vertices 1-->
+               <Coordinate point='-3.4725 0.0374 0.6807 -3.6105 0.0330 1.4168'/> <!-- from r_talocalcaneonavicular to r_cuneonavicular_2 vertices 2-->
                <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
               </LineSet>
              </Shape>
              <Shape>
               <LineSet vertexCount='2'>
-               <Coordinate point=' -0.0801 0.0712 -0.0766'/> <!-- from r_talocalcaneonavicular to r_cuneonavicular_3 vertices 1-->
+               <Coordinate point='-3.4725 0.0374 0.6807 -4.1245 0.0328 1.3453'/> <!-- from r_talocalcaneonavicular to r_cuneonavicular_3 vertices 2-->
                <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
               </LineSet>
              </Shape>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_r_cuneonavicular_1' name='r_cuneonavicular_1'>
+            <HAnimJoint DEF='hanim_r_cuneonavicular_1' name='r_cuneonavicular_1' center='-2.9855 0.0311 1.2819'>
               <HAnimSegment DEF='hanim_r_cuneiform_1' name='r_cuneiform_1'>
-               <Transform translation='-0.0801 0.0712 -0.0766'>
+               <Transform translation='-2.9855 0.0311 1.2819'>
                <Transform> <!-- Empty Transform -->
                 <Shape USE='HAnimJointShape'/>
                </Transform>
                </Transform>
                <Shape>
                 <LineSet vertexCount='2'>
-                 <Coordinate point=' -0.0801 0.0712 -0.0766'/> <!-- from r_cuneonavicular_1 to r_tarsometatarsal_1 vertices 1-->
+                 <Coordinate point='-2.9855 0.0311 1.2819 -2.8645 0.0194 2.4285'/> <!-- from r_cuneonavicular_1 to r_tarsometatarsal_1 vertices 2-->
                  <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                 </LineSet>
                </Shape>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_tarsometatarsal_1' name='r_tarsometatarsal_1'>
+              <HAnimJoint DEF='hanim_r_tarsometatarsal_1' name='r_tarsometatarsal_1' center='-2.8645 0.0194 2.4285'>
                 <HAnimSegment DEF='hanim_r_metatarsal_1' name='r_metatarsal_1'>
-                 <Transform translation='-0.0801 0.0712 -0.0766'>
+                 <Transform translation='-2.8645 0.0194 2.4285'>
                  <Transform> <!-- Empty Transform -->
                   <Shape USE='HAnimJointShape'/>
                  </Transform>
                  </Transform>
                  <Shape>
                   <LineSet vertexCount='2'>
-                   <Coordinate point=' -0.0801 0.0712 -0.0766'/> <!-- from r_tarsometatarsal_1 to r_metatarsophalangeal_1 vertices 1-->
+                   <Coordinate point='-2.8645 0.0194 2.4285 -2.7535 0.0077 4.6255'/> <!-- from r_tarsometatarsal_1 to r_metatarsophalangeal_1 vertices 2-->
                    <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                   </LineSet>
                  </Shape>
@@ -747,16 +749,16 @@
     <Shape USE='HAnimSiteShape'/>
    </HAnimSite>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_metatarsophalangeal_1' name='r_metatarsophalangeal_1'>
+                <HAnimJoint DEF='hanim_r_metatarsophalangeal_1' name='r_metatarsophalangeal_1' center='-2.7535 0.0077 4.6255'>
                   <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_1' name='r_tarsal_proximal_phalanx_1'>
-                   <Transform translation='-0.0801 0.0712 -0.0766'>
+                   <Transform translation='-2.7535 0.0077 4.6255'>
                    <Transform> <!-- Empty Transform -->
                     <Shape USE='HAnimJointShape'/>
                    </Transform>
                    </Transform>
                    <Shape>
                     <LineSet vertexCount='2'>
-                     <Coordinate point=' -0.0801 0.0712 -0.0766'/> <!-- from r_metatarsophalangeal_1 to r_tarsal_interphalangeal_1 vertices 1-->
+                     <Coordinate point='-2.7535 0.0077 4.6255 -2.7535 0.0077 4.6255'/> <!-- from r_metatarsophalangeal_1 to r_tarsal_interphalangeal_1 vertices 2-->
                      <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                     </LineSet>
                    </Shape>
@@ -770,58 +772,58 @@
                 </HAnimJoint>
               </HAnimJoint>
             </HAnimJoint>
-            <HAnimJoint DEF='hanim_r_cuneonavicular_2' name='r_cuneonavicular_2'>
+            <HAnimJoint DEF='hanim_r_cuneonavicular_2' name='r_cuneonavicular_2' center='-3.6105 0.0330 1.4168'>
               <HAnimSegment DEF='hanim_r_cuneiform_2' name='r_cuneiform_2'>
-               <Transform translation='-0.0801 0.0712 -0.0766'>
+               <Transform translation='-3.6105 0.0330 1.4168'>
                <Transform> <!-- Empty Transform -->
                 <Shape USE='HAnimJointShape'/>
                </Transform>
                </Transform>
                <Shape>
                 <LineSet vertexCount='2'>
-                 <Coordinate point=' -0.0801 0.0712 -0.0766'/> <!-- from r_cuneonavicular_2 to r_tarsometatarsal_2 vertices 1-->
+                 <Coordinate point='-3.6105 0.0330 1.4168 -3.5565 0.0232 2.2895'/> <!-- from r_cuneonavicular_2 to r_tarsometatarsal_2 vertices 2-->
                  <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                 </LineSet>
                </Shape>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_tarsometatarsal_2' name='r_tarsometatarsal_2'>
+              <HAnimJoint DEF='hanim_r_tarsometatarsal_2' name='r_tarsometatarsal_2' center='-3.5565 0.0232 2.2895'>
                 <HAnimSegment DEF='hanim_r_metatarsal_2' name='r_metatarsal_2'>
-                 <Transform translation='-0.0801 0.0712 -0.0766'>
+                 <Transform translation='-3.5565 0.0232 2.2895'>
                  <Transform> <!-- Empty Transform -->
                   <Shape USE='HAnimJointShape'/>
                  </Transform>
                  </Transform>
                  <Shape>
                   <LineSet vertexCount='2'>
-                   <Coordinate point=' -0.0801 0.0712 -0.0766'/> <!-- from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 1-->
+                   <Coordinate point='-3.5565 0.0232 2.2895 -3.6595 0.0085 4.8125'/> <!-- from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 2-->
                    <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                   </LineSet>
                  </Shape>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_metatarsophalangeal_2' name='r_metatarsophalangeal_2'>
+                <HAnimJoint DEF='hanim_r_metatarsophalangeal_2' name='r_metatarsophalangeal_2' center='-3.6595 0.0085 4.8125'>
                   <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_2' name='r_tarsal_proximal_phalanx_2'>
-                   <Transform translation='-0.0801 0.0712 -0.0766'>
+                   <Transform translation='-3.6595 0.0085 4.8125'>
                    <Transform> <!-- Empty Transform -->
                     <Shape USE='HAnimJointShape'/>
                    </Transform>
                    </Transform>
                    <Shape>
                     <LineSet vertexCount='2'>
-                     <Coordinate point=' -0.0801 0.0712 -0.0766'/> <!-- from r_metatarsophalangeal_2 to r_tarsal_proximal_interphalangeal_2 vertices 1-->
+                     <Coordinate point='-3.6595 0.0085 4.8125 -3.7385 0.0054 5.5315'/> <!-- from r_metatarsophalangeal_2 to r_tarsal_proximal_interphalangeal_2 vertices 2-->
                      <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                     </LineSet>
                    </Shape>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_2' name='r_tarsal_proximal_interphalangeal_2'>
+                  <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_2' name='r_tarsal_proximal_interphalangeal_2' center='-3.7385 0.0054 5.5315'>
                     <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_2' name='r_tarsal_middle_phalanx_2'>
-                     <Transform translation='-0.0801 0.0712 -0.0766'>
+                     <Transform translation='-3.7385 0.0054 5.5315'>
                      <Transform> <!-- Empty Transform -->
                       <Shape USE='HAnimJointShape'/>
                      </Transform>
                      </Transform>
                      <Shape>
                       <LineSet vertexCount='2'>
-                       <Coordinate point=' -0.0801 0.0712 -0.0766'/> <!-- from r_tarsal_proximal_interphalangeal_2 to r_tarsal_distal_interphalangeal_2 vertices 1-->
+                       <Coordinate point='-3.7385 0.0054 5.5315 -3.7385 0.0017 5.9505'/> <!-- from r_tarsal_proximal_interphalangeal_2 to r_tarsal_distal_interphalangeal_2 vertices 2-->
                        <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                       </LineSet>
                      </Shape>
@@ -830,64 +832,64 @@
     <Shape USE='HAnimSiteShape'/>
    </HAnimSite>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_2' name='r_tarsal_distal_interphalangeal_2'>
+                    <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_2' name='r_tarsal_distal_interphalangeal_2' center='-3.7385 0.0017 5.9505'>
                     </HAnimJoint>
                   </HAnimJoint>
                 </HAnimJoint>
               </HAnimJoint>
             </HAnimJoint>
-            <HAnimJoint DEF='hanim_r_cuneonavicular_3' name='r_cuneonavicular_3'>
+            <HAnimJoint DEF='hanim_r_cuneonavicular_3' name='r_cuneonavicular_3' center='-4.1245 0.0328 1.3453'>
               <HAnimSegment DEF='hanim_r_cuneiform_3' name='r_cuneiform_3'>
-               <Transform translation='-0.0801 0.0712 -0.0766'>
+               <Transform translation='-4.1245 0.0328 1.3453'>
                <Transform> <!-- Empty Transform -->
                 <Shape USE='HAnimJointShape'/>
                </Transform>
                </Transform>
                <Shape>
                 <LineSet vertexCount='2'>
-                 <Coordinate point=' -0.0801 0.0712 -0.0766'/> <!-- from r_cuneonavicular_3 to r_tarsometatarsal_3  vertices 1-->
+                 <Coordinate point='-4.1245 0.0328 1.3453 -3.7385 0.0017 5.9505'/> <!-- from r_cuneonavicular_3 to r_tarsometatarsal_3  vertices 2-->
                  <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                 </LineSet>
                </Shape>
               </HAnimSegment>
               <HAnimJoint DEF='hanim_r_tarsometatarsal_3 ' name='r_tarsometatarsal_3 '>
                 <HAnimSegment DEF='hanim_r_metatarsal_3' name='r_metatarsal_3'>
-                 <Transform translation='-0.0801 0.0712 -0.0766'>
+                 <Transform translation='-4.1245 0.0328 1.3453'>
                  <Transform> <!-- Empty Transform -->
                   <Shape USE='HAnimJointShape'/>
                  </Transform>
                  </Transform>
                  <Shape>
                   <LineSet vertexCount='2'>
-                   <Coordinate point=' -0.0801 0.0712 -0.0766'/> <!-- from r_tarsometatarsal_3  to r_metatarsophalangeal_3 vertices 1-->
+                   <Coordinate point=' -4.2795 0.0086 4.7055'/> <!-- from r_tarsometatarsal_3  to r_metatarsophalangeal_3 vertices 1-->
                    <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                   </LineSet>
                  </Shape>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_metatarsophalangeal_3' name='r_metatarsophalangeal_3'>
+                <HAnimJoint DEF='hanim_r_metatarsophalangeal_3' name='r_metatarsophalangeal_3' center='-4.2795 0.0086 4.7055'>
                   <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_3' name='r_tarsal_proximal_phalanx_3'>
-                   <Transform translation='-0.0801 0.0712 -0.0766'>
+                   <Transform translation='-4.2795 0.0086 4.7055'>
                    <Transform> <!-- Empty Transform -->
                     <Shape USE='HAnimJointShape'/>
                    </Transform>
                    </Transform>
                    <Shape>
                     <LineSet vertexCount='2'>
-                     <Coordinate point=' -0.0801 0.0712 -0.0766'/> <!-- from r_metatarsophalangeal_3 to r_tarsal_proximal_interphalangeal_3 vertices 1-->
+                     <Coordinate point='-4.2795 0.0086 4.7055 -4.3865 0.0044 5.3745'/> <!-- from r_metatarsophalangeal_3 to r_tarsal_proximal_interphalangeal_3 vertices 2-->
                      <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                     </LineSet>
                    </Shape>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_3' name='r_tarsal_proximal_interphalangeal_3'>
+                  <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_3' name='r_tarsal_proximal_interphalangeal_3' center='-4.3865 0.0044 5.3745'>
                     <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_3' name='r_tarsal_middle_phalanx_3'>
-                     <Transform translation='-0.0801 0.0712 -0.0766'>
+                     <Transform translation='-4.3865 0.0044 5.3745'>
                      <Transform> <!-- Empty Transform -->
                       <Shape USE='HAnimJointShape'/>
                      </Transform>
                      </Transform>
                      <Shape>
                       <LineSet vertexCount='2'>
-                       <Coordinate point=' -0.0801 0.0712 -0.0766'/> <!-- from r_tarsal_proximal_interphalangeal_3 to r_tarsal_distal_interphalangeal_3 vertices 1-->
+                       <Coordinate point='-4.3865 0.0044 5.3745 -4.4545 0.0017 5.7845'/> <!-- from r_tarsal_proximal_interphalangeal_3 to r_tarsal_distal_interphalangeal_3 vertices 2-->
                        <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                       </LineSet>
                      </Shape>
@@ -896,85 +898,85 @@
     <Shape USE='HAnimSiteShape'/>
    </HAnimSite>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_3' name='r_tarsal_distal_interphalangeal_3'>
+                    <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_3' name='r_tarsal_distal_interphalangeal_3' center='-4.4545 0.0017 5.7845'>
                     </HAnimJoint>
                   </HAnimJoint>
                 </HAnimJoint>
               </HAnimJoint>
             </HAnimJoint>
           </HAnimJoint>
-          <HAnimJoint DEF='hanim_r_calcaneocuboid' name='r_calcaneocuboid'>
+          <HAnimJoint DEF='hanim_r_calcaneocuboid' name='r_calcaneocuboid' center='-3.9515 0.0653 -0.6895'>
             <HAnimSegment DEF='hanim_r_calcaneus' name='r_calcaneus'>
-             <Transform translation='-0.0801 0.0712 -0.0766'>
+             <Transform translation='-3.9515 0.0653 -0.6895'>
              <Transform> <!-- Empty Transform -->
               <Shape USE='HAnimJointShape'/>
              </Transform>
              </Transform>
              <Shape>
               <LineSet vertexCount='2'>
-               <Coordinate point=' -0.0801 0.0712 -0.0766'/> <!-- from r_calcaneocuboid to r_transversetarsal vertices 1-->
+               <Coordinate point='-3.9515 0.0653 -0.6895 -4.9095 0.0353 0.5574'/> <!-- from r_calcaneocuboid to r_transversetarsal vertices 2-->
                <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
               </LineSet>
              </Shape>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_r_transversetarsal' name='r_transversetarsal'>
+            <HAnimJoint DEF='hanim_r_transversetarsal' name='r_transversetarsal' center='-4.9095 0.0353 0.5574'>
               <HAnimSegment DEF='hanim_r_cuboid' name='r_cuboid'>
-               <Transform translation='-0.0801 0.0712 -0.0766'>
+               <Transform translation='-4.9095 0.0353 0.5574'>
                <Transform> <!-- Empty Transform -->
                 <Shape USE='HAnimJointShape'/>
                </Transform>
                </Transform>
                <Shape>
                 <LineSet vertexCount='2'>
-                 <Coordinate point=' -0.0801 0.0712 -0.0766'/> <!-- from r_transversetarsal to r_tarsometatarsal_4 vertices 1-->
+                 <Coordinate point='-4.9095 0.0353 0.5574 -4.7255 0.0211 2.1725'/> <!-- from r_transversetarsal to r_tarsometatarsal_4 vertices 2-->
                  <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                 </LineSet>
                </Shape>
                <Shape>
                 <LineSet vertexCount='2'>
-                 <Coordinate point=' -0.0801 0.0712 -0.0766'/> <!-- from r_transversetarsal to r_tarsometatarsal_5 vertices 1-->
+                 <Coordinate point='-4.9095 0.0353 0.5574 -5.3615 0.0164 2.0085'/> <!-- from r_transversetarsal to r_tarsometatarsal_5 vertices 2-->
                  <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                 </LineSet>
                </Shape>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_tarsometatarsal_4' name='r_tarsometatarsal_4'>
+              <HAnimJoint DEF='hanim_r_tarsometatarsal_4' name='r_tarsometatarsal_4' center='-4.7255 0.0211 2.1725'>
                 <HAnimSegment DEF='hanim_r_metatarsal_4' name='r_metatarsal_4'>
-                 <Transform translation='-0.0801 0.0712 -0.0766'>
+                 <Transform translation='-4.7255 0.0211 2.1725'>
                  <Transform> <!-- Empty Transform -->
                   <Shape USE='HAnimJointShape'/>
                  </Transform>
                  </Transform>
                  <Shape>
                   <LineSet vertexCount='2'>
-                   <Coordinate point=' -0.0801 0.0712 -0.0766'/> <!-- from r_tarsometatarsal_4 to r_metatarsophalangeal_4 vertices 1-->
+                   <Coordinate point='-4.7255 0.0211 2.1725 -4.8755 0.0076 4.5165'/> <!-- from r_tarsometatarsal_4 to r_metatarsophalangeal_4 vertices 2-->
                    <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                   </LineSet>
                  </Shape>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_metatarsophalangeal_4' name='r_metatarsophalangeal_4'>
+                <HAnimJoint DEF='hanim_r_metatarsophalangeal_4' name='r_metatarsophalangeal_4' center='-4.8755 0.0076 4.5165'>
                   <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_4' name='r_tarsal_proximal_phalanx_4'>
-                   <Transform translation='-0.0801 0.0712 -0.0766'>
+                   <Transform translation='-4.8755 0.0076 4.5165'>
                    <Transform> <!-- Empty Transform -->
                     <Shape USE='HAnimJointShape'/>
                    </Transform>
                    </Transform>
                    <Shape>
                     <LineSet vertexCount='2'>
-                     <Coordinate point=' -0.0801 0.0712 -0.0766'/> <!-- from r_metatarsophalangeal_4 to r_tarsal_proximal_interphalangeal_4 vertices 1-->
+                     <Coordinate point='-4.8755 0.0076 4.5165 -5.0655 0.0049 5.1895'/> <!-- from r_metatarsophalangeal_4 to r_tarsal_proximal_interphalangeal_4 vertices 2-->
                      <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                     </LineSet>
                    </Shape>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_4' name='r_tarsal_proximal_interphalangeal_4'>
+                  <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_4' name='r_tarsal_proximal_interphalangeal_4' center='-5.0655 0.0049 5.1895'>
                     <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_4' name='r_tarsal_middle_phalanx_4'>
-                     <Transform translation='-0.0801 0.0712 -0.0766'>
+                     <Transform translation='-5.0655 0.0049 5.1895'>
                      <Transform> <!-- Empty Transform -->
                       <Shape USE='HAnimJointShape'/>
                      </Transform>
                      </Transform>
                      <Shape>
                       <LineSet vertexCount='2'>
-                       <Coordinate point=' -0.0801 0.0712 -0.0766'/> <!-- from r_tarsal_proximal_interphalangeal_4 to r_tarsal_distal_interphalangeal_4 vertices 1-->
+                       <Coordinate point='-5.0655 0.0049 5.1895 -5.1335 0.0011 5.5175'/> <!-- from r_tarsal_proximal_interphalangeal_4 to r_tarsal_distal_interphalangeal_4 vertices 2-->
                        <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                       </LineSet>
                      </Shape>
@@ -983,21 +985,21 @@
     <Shape USE='HAnimSiteShape'/>
    </HAnimSite>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_4' name='r_tarsal_distal_interphalangeal_4'>
+                    <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_4' name='r_tarsal_distal_interphalangeal_4' center='-5.1335 0.0011 5.5175'>
                     </HAnimJoint>
                   </HAnimJoint>
                 </HAnimJoint>
               </HAnimJoint>
-              <HAnimJoint DEF='hanim_r_tarsometatarsal_5' name='r_tarsometatarsal_5'>
+              <HAnimJoint DEF='hanim_r_tarsometatarsal_5' name='r_tarsometatarsal_5' center='-5.3615 0.0164 2.0085'>
                 <HAnimSegment DEF='hanim_r_metatarsal_5' name='r_metatarsal_5'>
-                 <Transform translation='-0.0801 0.0712 -0.0766'>
+                 <Transform translation='-5.3615 0.0164 2.0085'>
                  <Transform> <!-- Empty Transform -->
                   <Shape USE='HAnimJointShape'/>
                  </Transform>
                  </Transform>
                  <Shape>
                   <LineSet vertexCount='2'>
-                   <Coordinate point=' -0.0801 0.0712 -0.0766'/> <!-- from r_tarsometatarsal_5 to r_metatarsophalangeal_5 vertices 1-->
+                   <Coordinate point='-5.3615 0.0164 2.0085 -5.5055 0.0067 4.3115'/> <!-- from r_tarsometatarsal_5 to r_metatarsophalangeal_5 vertices 2-->
                    <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                   </LineSet>
                  </Shape>
@@ -1006,30 +1008,30 @@
     <Shape USE='HAnimSiteShape'/>
    </HAnimSite>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_metatarsophalangeal_5' name='r_metatarsophalangeal_5'>
+                <HAnimJoint DEF='hanim_r_metatarsophalangeal_5' name='r_metatarsophalangeal_5' center='-5.5055 0.0067 4.3115'>
                   <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_5' name='r_tarsal_proximal_phalanx_5'>
-                   <Transform translation='-0.0801 0.0712 -0.0766'>
+                   <Transform translation='-5.5055 0.0067 4.3115'>
                    <Transform> <!-- Empty Transform -->
                     <Shape USE='HAnimJointShape'/>
                    </Transform>
                    </Transform>
                    <Shape>
                     <LineSet vertexCount='2'>
-                     <Coordinate point=' -0.0801 0.0712 -0.0766'/> <!-- from r_metatarsophalangeal_5 to r_tarsal_proximal_interphalangeal_5 vertices 1-->
+                     <Coordinate point='-5.5055 0.0067 4.3115 -5.6085 0.0030 4.6485'/> <!-- from r_metatarsophalangeal_5 to r_tarsal_proximal_interphalangeal_5 vertices 2-->
                      <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                     </LineSet>
                    </Shape>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_5' name='r_tarsal_proximal_interphalangeal_5'>
+                  <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_5' name='r_tarsal_proximal_interphalangeal_5' center='-5.6085 0.0030 4.6485'>
                     <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_5' name='r_tarsal_middle_phalanx_5'>
-                     <Transform translation='-0.0801 0.0712 -0.0766'>
+                     <Transform translation='-5.6085 0.0030 4.6485'>
                      <Transform> <!-- Empty Transform -->
                       <Shape USE='HAnimJointShape'/>
                      </Transform>
                      </Transform>
                      <Shape>
                       <LineSet vertexCount='2'>
-                       <Coordinate point=' -0.0801 0.0712 -0.0766'/> <!-- from r_tarsal_proximal_interphalangeal_5 to r_tarsal_distal_interphalangeal_5 vertices 1-->
+                       <Coordinate point='-5.6085 0.0030 4.6485 -5.6495 0.0000 4.9925'/> <!-- from r_tarsal_proximal_interphalangeal_5 to r_tarsal_distal_interphalangeal_5 vertices 2-->
                        <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                       </LineSet>
                      </Shape>
@@ -1038,7 +1040,7 @@
     <Shape USE='HAnimSiteShape'/>
    </HAnimSite>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_5' name='r_tarsal_distal_interphalangeal_5'>
+                    <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_5' name='r_tarsal_distal_interphalangeal_5' center='-5.6495 0.0000 4.9925'>
                     </HAnimJoint>
                   </HAnimJoint>
                 </HAnimJoint>
@@ -1554,43 +1556,43 @@
                                                     </Transform>
                                                     <Shape>
                                                      <LineSet vertexCount='2'>
-                                                      <Coordinate point='0.0044 1.6209 0.0236 0.0044 1.6209 0.0236'/> <!-- from skullbase to l_eyelid_joint vertices 2-->
+                                                      <Coordinate point='0.0044 1.6209 0.0236 2.2365 1.8700 1.9285'/> <!-- from skullbase to l_eyelid_joint vertices 2-->
                                                       <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                      </LineSet>
                                                     </Shape>
                                                     <Shape>
                                                      <LineSet vertexCount='2'>
-                                                      <Coordinate point='0.0044 1.6209 0.0236 0.0044 1.6209 0.0236'/> <!-- from skullbase to r_eyelid_joint vertices 2-->
+                                                      <Coordinate point='0.0044 1.6209 0.0236 -2.2535 1.8700 1.9285'/> <!-- from skullbase to r_eyelid_joint vertices 2-->
                                                       <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                      </LineSet>
                                                     </Shape>
                                                     <Shape>
                                                      <LineSet vertexCount='2'>
-                                                      <Coordinate point='0.0044 1.6209 0.0236 0.0044 1.6209 0.0236'/> <!-- from skullbase to l_eyeball_joint vertices 2-->
+                                                      <Coordinate point='0.0044 1.6209 0.0236 2.1305 1.8444 4.1555'/> <!-- from skullbase to l_eyeball_joint vertices 2-->
                                                       <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                      </LineSet>
                                                     </Shape>
                                                     <Shape>
                                                      <LineSet vertexCount='2'>
-                                                      <Coordinate point='0.0044 1.6209 0.0236 0.0044 1.6209 0.0236'/> <!-- from skullbase to r_eyeball_joint vertices 2-->
+                                                      <Coordinate point='0.0044 1.6209 0.0236 -2.1475 1.8444 4.1555'/> <!-- from skullbase to r_eyeball_joint vertices 2-->
                                                       <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                      </LineSet>
                                                     </Shape>
                                                     <Shape>
                                                      <LineSet vertexCount='2'>
-                                                      <Coordinate point='0.0044 1.6209 0.0236 0.0044 1.6209 0.0236'/> <!-- from skullbase to l_eyebrow_joint vertices 2-->
+                                                      <Coordinate point='0.0044 1.6209 0.0236 0.9581 1.8563 5.2175'/> <!-- from skullbase to l_eyebrow_joint vertices 2-->
                                                       <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                      </LineSet>
                                                     </Shape>
                                                     <Shape>
                                                      <LineSet vertexCount='2'>
-                                                      <Coordinate point='0.0044 1.6209 0.0236 0.0044 1.6209 0.0236'/> <!-- from skullbase to r_eyebrow_joint vertices 2-->
+                                                      <Coordinate point='0.0044 1.6209 0.0236 -0.9751 1.8563 5.2175'/> <!-- from skullbase to r_eyebrow_joint vertices 2-->
                                                       <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                      </LineSet>
                                                     </Shape>
                                                     <Shape>
                                                      <LineSet vertexCount='2'>
-                                                      <Coordinate point='0.0044 1.6209 0.0236 0.0044 1.6209 0.0236'/> <!-- from skullbase to temporomandibular vertices 2-->
+                                                      <Coordinate point='0.0044 1.6209 0.0236 -0.0085 1.7229 1.1480'/> <!-- from skullbase to temporomandibular vertices 2-->
                                                       <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                      </LineSet>
                                                     </Shape>
@@ -1611,19 +1613,19 @@
     <Shape USE='HAnimSiteShape'/>
    </HAnimSite>
                                                    </HAnimSegment>
-                                                   <HAnimJoint DEF='hanim_l_eyelid_joint' name='l_eyelid_joint'>
+                                                   <HAnimJoint DEF='hanim_l_eyelid_joint' name='l_eyelid_joint' center='2.2365 1.8700 1.9285'>
                                                    </HAnimJoint>
-                                                   <HAnimJoint DEF='hanim_r_eyelid_joint' name='r_eyelid_joint'>
+                                                   <HAnimJoint DEF='hanim_r_eyelid_joint' name='r_eyelid_joint' center='-2.2535 1.8700 1.9285'>
                                                    </HAnimJoint>
-                                                   <HAnimJoint DEF='hanim_l_eyeball_joint' name='l_eyeball_joint'>
+                                                   <HAnimJoint DEF='hanim_l_eyeball_joint' name='l_eyeball_joint' center='2.1305 1.8444 4.1555'>
                                                    </HAnimJoint>
-                                                   <HAnimJoint DEF='hanim_r_eyeball_joint' name='r_eyeball_joint'>
+                                                   <HAnimJoint DEF='hanim_r_eyeball_joint' name='r_eyeball_joint' center='-2.1475 1.8444 4.1555'>
                                                    </HAnimJoint>
-                                                   <HAnimJoint DEF='hanim_l_eyebrow_joint' name='l_eyebrow_joint'>
+                                                   <HAnimJoint DEF='hanim_l_eyebrow_joint' name='l_eyebrow_joint' center='0.9581 1.8563 5.2175'>
                                                    </HAnimJoint>
-                                                   <HAnimJoint DEF='hanim_r_eyebrow_joint' name='r_eyebrow_joint'>
+                                                   <HAnimJoint DEF='hanim_r_eyebrow_joint' name='r_eyebrow_joint' center='-0.9751 1.8563 5.2175'>
                                                    </HAnimJoint>
-                                                   <HAnimJoint DEF='hanim_temporomandibular' name='temporomandibular'>
+                                                   <HAnimJoint DEF='hanim_temporomandibular' name='temporomandibular' center='-0.0085 1.7229 1.1480'>
                                                    </HAnimJoint>
                                                  </HAnimJoint>
                                                </HAnimJoint>
@@ -1727,39 +1729,39 @@
                                               </Transform>
                                               <Shape>
                                                <LineSet vertexCount='2'>
-                                                <Coordinate point='0.1984 0.8663 -0.0583 0.1984 0.8663 -0.0583'/> <!-- from l_radiocarpal to l_midcarpal_1 vertices 2-->
+                                                <Coordinate point='0.1984 0.8663 -0.0583 8.0485 0.9213 1.3235'/> <!-- from l_radiocarpal to l_midcarpal_1 vertices 2-->
                                                 <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                </LineSet>
                                               </Shape>
                                               <Shape>
                                                <LineSet vertexCount='2'>
-                                                <Coordinate point='0.1984 0.8663 -0.0583 0.1984 0.8663 -0.0583'/> <!-- from l_radiocarpal to l_midcarpal_2 vertices 2-->
+                                                <Coordinate point='0.1984 0.8663 -0.0583 8.0485 0.9225 0.8386'/> <!-- from l_radiocarpal to l_midcarpal_2 vertices 2-->
                                                 <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                </LineSet>
                                               </Shape>
                                               <Shape>
                                                <LineSet vertexCount='2'>
-                                                <Coordinate point='0.1984 0.8663 -0.0583 0.1984 0.8663 -0.0583'/> <!-- from l_radiocarpal to l_midcarpal_3 vertices 2-->
+                                                <Coordinate point='0.1984 0.8663 -0.0583 8.0395 0.9246 0.2513'/> <!-- from l_radiocarpal to l_midcarpal_3 vertices 2-->
                                                 <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                </LineSet>
                                               </Shape>
                                               <Shape>
                                                <LineSet vertexCount='2'>
-                                                <Coordinate point='0.1984 0.8663 -0.0583 0.1984 0.8663 -0.0583'/> <!-- from l_radiocarpal to l_midcarpal_4_5 vertices 2-->
+                                                <Coordinate point='0.1984 0.8663 -0.0583 8.0395 0.9210 -0.6795'/> <!-- from l_radiocarpal to l_midcarpal_4_5 vertices 2-->
                                                 <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                </LineSet>
                                               </Shape>
                                              </HAnimSegment>
-                                             <HAnimJoint DEF='hanim_l_midcarpal_1' name='l_midcarpal_1'>
+                                             <HAnimJoint DEF='hanim_l_midcarpal_1' name='l_midcarpal_1' center='8.0485 0.9213 1.3235'>
                                                <HAnimSegment DEF='hanim_l_trapezium' name='l_trapezium'>
-                                                <Transform translation='0.1984 0.8663 -0.0583'>
+                                                <Transform translation='8.0485 0.9213 1.3235'>
                                                 <Transform> <!-- Empty Transform -->
                                                  <Shape USE='HAnimJointShape'/>
                                                 </Transform>
                                                 </Transform>
                                                 <Shape>
                                                  <LineSet vertexCount='2'>
-                                                  <Coordinate point=' 0.1924 0.8472 -0.0534'/> <!-- from l_midcarpal_1 to l_carpometacarpal_1 vertices 1-->
+                                                  <Coordinate point='8.0485 0.9213 1.3235 0.1924 0.8472 -0.0534'/> <!-- from l_midcarpal_1 to l_carpometacarpal_1 vertices 2-->
                                                   <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                  </LineSet>
                                                 </Shape>
@@ -1801,16 +1803,16 @@
                                                  </HAnimJoint>
                                                </HAnimJoint>
                                              </HAnimJoint>
-                                             <HAnimJoint DEF='hanim_l_midcarpal_2' name='l_midcarpal_2'>
+                                             <HAnimJoint DEF='hanim_l_midcarpal_2' name='l_midcarpal_2' center='8.0485 0.9225 0.8386'>
                                                <HAnimSegment DEF='hanim_l_trapezoid' name='l_trapezoid'>
-                                                <Transform translation='0.1955 0.8159 0.0464'>
+                                                <Transform translation='8.0485 0.9225 0.8386'>
                                                 <Transform> <!-- Empty Transform -->
                                                  <Shape USE='HAnimJointShape'/>
                                                 </Transform>
                                                 </Transform>
                                                 <Shape>
                                                  <LineSet vertexCount='2'>
-                                                  <Coordinate point=' 0.1983 0.8024 -0.0280'/> <!-- from l_midcarpal_2 to l_carpometacarpal_2 vertices 1-->
+                                                  <Coordinate point='8.0485 0.9225 0.8386 0.1983 0.8024 -0.0280'/> <!-- from l_midcarpal_2 to l_carpometacarpal_2 vertices 2-->
                                                   <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                  </LineSet>
                                                 </Shape>
@@ -1875,16 +1877,16 @@
                                                  </HAnimJoint>
                                                </HAnimJoint>
                                              </HAnimJoint>
-                                             <HAnimJoint DEF='hanim_l_midcarpal_3' name='l_midcarpal_3'>
+                                             <HAnimJoint DEF='hanim_l_midcarpal_3' name='l_midcarpal_3' center='8.0395 0.9246 0.2513'>
                                                <HAnimSegment DEF='hanim_l_capitate' name='l_capitate'>
-                                                <Transform translation='0.2028 0.7139 -0.0236'>
+                                                <Transform translation='8.0395 0.9246 0.2513'>
                                                 <Transform> <!-- Empty Transform -->
                                                  <Shape USE='HAnimJointShape'/>
                                                 </Transform>
                                                 </Transform>
                                                 <Shape>
                                                  <LineSet vertexCount='2'>
-                                                  <Coordinate point=' 0.1987 0.8029 -0.0530'/> <!-- from l_midcarpal_3 to l_carpometacarpal_3 vertices 1-->
+                                                  <Coordinate point='8.0395 0.9246 0.2513 0.1987 0.8029 -0.0530'/> <!-- from l_midcarpal_3 to l_carpometacarpal_3 vertices 2-->
                                                   <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                  </LineSet>
                                                 </Shape>
@@ -1945,22 +1947,22 @@
                                                  </HAnimJoint>
                                                </HAnimJoint>
                                              </HAnimJoint>
-                                             <HAnimJoint DEF='hanim_l_midcarpal_4_5' name='l_midcarpal_4_5'>
+                                             <HAnimJoint DEF='hanim_l_midcarpal_4_5' name='l_midcarpal_4_5' center='8.0395 0.9210 -0.6795'>
                                                <HAnimSegment DEF='hanim_l_hamate' name='l_hamate'>
-                                                <Transform translation='0.2026 0.7011 -0.0494'>
+                                                <Transform translation='8.0395 0.9210 -0.6795'>
                                                 <Transform> <!-- Empty Transform -->
                                                  <Shape USE='HAnimJointShape'/>
                                                 </Transform>
                                                 </Transform>
                                                 <Shape>
                                                  <LineSet vertexCount='2'>
-                                                  <Coordinate point=' 0.1956 0.8019 -0.0794'/> <!-- from l_midcarpal_4_5 to l_carpometacarpal_4 vertices 1-->
+                                                  <Coordinate point='8.0395 0.9210 -0.6795 0.1956 0.8019 -0.0794'/> <!-- from l_midcarpal_4_5 to l_carpometacarpal_4 vertices 2-->
                                                   <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                  </LineSet>
                                                 </Shape>
                                                 <Shape>
                                                  <LineSet vertexCount='2'>
-                                                  <Coordinate point=' 0.1925 0.8066 -0.1036'/> <!-- from l_midcarpal_4_5 to l_carpometacarpal_5 vertices 1-->
+                                                  <Coordinate point='8.0395 0.9210 -0.6795 0.1925 0.8066 -0.1036'/> <!-- from l_midcarpal_4_5 to l_carpometacarpal_5 vertices 2-->
                                                   <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                  </LineSet>
                                                 </Shape>
@@ -2171,39 +2173,39 @@
                                               </Transform>
                                               <Shape>
                                                <LineSet vertexCount='2'>
-                                                <Coordinate point='-0.1959 0.8694 -0.0521 -0.1959 0.8694 -0.0521'/> <!-- from r_radiocarpal to r_midcarpal_1 vertices 2-->
+                                                <Coordinate point='-0.1959 0.8694 -0.0521 -8.0515 0.9213 1.3235'/> <!-- from r_radiocarpal to r_midcarpal_1 vertices 2-->
                                                 <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                </LineSet>
                                               </Shape>
                                               <Shape>
                                                <LineSet vertexCount='2'>
-                                                <Coordinate point='-0.1959 0.8694 -0.0521 -0.1959 0.8694 -0.0521'/> <!-- from r_radiocarpal to r_midcarpal_2 vertices 2-->
+                                                <Coordinate point='-0.1959 0.8694 -0.0521 -8.0515 0.9225 0.8386'/> <!-- from r_radiocarpal to r_midcarpal_2 vertices 2-->
                                                 <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                </LineSet>
                                               </Shape>
                                               <Shape>
                                                <LineSet vertexCount='2'>
-                                                <Coordinate point='-0.1959 0.8694 -0.0521 -0.1959 0.8694 -0.0521'/> <!-- from r_radiocarpal to r_midcarpal_3 vertices 2-->
+                                                <Coordinate point='-0.1959 0.8694 -0.0521 -8.0405 0.9246 0.2513'/> <!-- from r_radiocarpal to r_midcarpal_3 vertices 2-->
                                                 <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                </LineSet>
                                               </Shape>
                                               <Shape>
                                                <LineSet vertexCount='2'>
-                                                <Coordinate point='-0.1959 0.8694 -0.0521 -0.1959 0.8694 -0.0521'/> <!-- from r_radiocarpal to r_midcarpal_4_5 vertices 2-->
+                                                <Coordinate point='-0.1959 0.8694 -0.0521 -8.0405 0.9210 -0.6795'/> <!-- from r_radiocarpal to r_midcarpal_4_5 vertices 2-->
                                                 <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                </LineSet>
                                               </Shape>
                                              </HAnimSegment>
-                                             <HAnimJoint DEF='hanim_r_midcarpal_1' name='r_midcarpal_1'>
+                                             <HAnimJoint DEF='hanim_r_midcarpal_1' name='r_midcarpal_1' center='-8.0515 0.9213 1.3235'>
                                                <HAnimSegment DEF='hanim_r_trapezium' name='r_trapezium'>
-                                                <Transform translation='-0.1959 0.8694 -0.0521'>
+                                                <Transform translation='-8.0515 0.9213 1.3235'>
                                                 <Transform> <!-- Empty Transform -->
                                                  <Shape USE='HAnimJointShape'/>
                                                 </Transform>
                                                 </Transform>
                                                 <Shape>
                                                  <LineSet vertexCount='2'>
-                                                  <Coordinate point=' -0.1899 0.8502 -0.0473'/> <!-- from r_midcarpal_1 to r_carpometacarpal_1 vertices 1-->
+                                                  <Coordinate point='-8.0515 0.9213 1.3235 -0.1899 0.8502 -0.0473'/> <!-- from r_midcarpal_1 to r_carpometacarpal_1 vertices 2-->
                                                   <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                  </LineSet>
                                                 </Shape>
@@ -2245,16 +2247,16 @@
                                                  </HAnimJoint>
                                                </HAnimJoint>
                                              </HAnimJoint>
-                                             <HAnimJoint DEF='hanim_r_midcarpal_2' name='r_midcarpal_2'>
+                                             <HAnimJoint DEF='hanim_r_midcarpal_2' name='r_midcarpal_2' center='-8.0515 0.9225 0.8386'>
                                                <HAnimSegment DEF='hanim_r_trapezoid' name='r_trapezoid'>
-                                                <Transform translation='-0.1864 0.8190 0.0506'>
+                                                <Transform translation='-8.0515 0.9225 0.8386'>
                                                 <Transform> <!-- Empty Transform -->
                                                  <Shape USE='HAnimJointShape'/>
                                                 </Transform>
                                                 </Transform>
                                                 <Shape>
                                                  <LineSet vertexCount='2'>
-                                                  <Coordinate point=' -0.1961 0.8055 -0.0218'/> <!-- from r_midcarpal_2 to r_carpometacarpal_2 vertices 1-->
+                                                  <Coordinate point='-8.0515 0.9225 0.8386 -0.1961 0.8055 -0.0218'/> <!-- from r_midcarpal_2 to r_carpometacarpal_2 vertices 2-->
                                                   <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                  </LineSet>
                                                 </Shape>
@@ -2319,16 +2321,16 @@
                                                  </HAnimJoint>
                                                </HAnimJoint>
                                              </HAnimJoint>
-                                             <HAnimJoint DEF='hanim_r_midcarpal_3' name='r_midcarpal_3'>
+                                             <HAnimJoint DEF='hanim_r_midcarpal_3' name='r_midcarpal_3' center='-8.0405 0.9246 0.2513'>
                                                <HAnimSegment DEF='hanim_r_capitate' name='r_capitate'>
-                                                <Transform translation='-0.1945 0.7169 -0.0173'>
+                                                <Transform translation='-8.0405 0.9246 0.2513'>
                                                 <Transform> <!-- Empty Transform -->
                                                  <Shape USE='HAnimJointShape'/>
                                                 </Transform>
                                                 </Transform>
                                                 <Shape>
                                                  <LineSet vertexCount='2'>
-                                                  <Coordinate point=' -0.1972 0.8060 -0.0468'/> <!-- from r_midcarpal_3 to r_carpometacarpal_3 vertices 1-->
+                                                  <Coordinate point='-8.0405 0.9246 0.2513 -0.1972 0.8060 -0.0468'/> <!-- from r_midcarpal_3 to r_carpometacarpal_3 vertices 2-->
                                                   <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                  </LineSet>
                                                 </Shape>
@@ -2389,22 +2391,22 @@
                                                  </HAnimJoint>
                                                </HAnimJoint>
                                              </HAnimJoint>
-                                             <HAnimJoint DEF='hanim_r_midcarpal_4_5' name='r_midcarpal_4_5'>
+                                             <HAnimJoint DEF='hanim_r_midcarpal_4_5' name='r_midcarpal_4_5' center='-8.0405 0.9210 -0.6795'>
                                                <HAnimSegment DEF='hanim_r_hamate' name='r_hamate'>
-                                                <Transform translation='-0.1939 0.7042 -0.0432'>
+                                                <Transform translation='-8.0405 0.9210 -0.6795'>
                                                 <Transform> <!-- Empty Transform -->
                                                  <Shape USE='HAnimJointShape'/>
                                                 </Transform>
                                                 </Transform>
                                                 <Shape>
                                                  <LineSet vertexCount='2'>
-                                                  <Coordinate point=' -0.1951 0.8049 -0.0732'/> <!-- from r_midcarpal_4_5 to r_carpometacarpal_4 vertices 1-->
+                                                  <Coordinate point='-8.0405 0.9210 -0.6795 -0.1951 0.8049 -0.0732'/> <!-- from r_midcarpal_4_5 to r_carpometacarpal_4 vertices 2-->
                                                   <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                  </LineSet>
                                                 </Shape>
                                                 <Shape>
                                                  <LineSet vertexCount='2'>
-                                                  <Coordinate point=' -0.1926 0.8096 -0.0975'/> <!-- from r_midcarpal_4_5 to r_carpometacarpal_5 vertices 1-->
+                                                  <Coordinate point='-8.0405 0.9210 -0.6795 -0.1926 0.8096 -0.0975'/> <!-- from r_midcarpal_4_5 to r_carpometacarpal_5 vertices 2-->
                                                   <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
                                                  </LineSet>
                                                 </Shape>

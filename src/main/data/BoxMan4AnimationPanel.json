@@ -138,7 +138,7 @@
           },
           {
             "@name":"translated",
-            "@content":"28 June 2023"
+            "@content":"29 June 2023"
           },
           {
             "@name":"generator",
@@ -168,7 +168,7 @@
             {
               "@name":"Humanoid",
               "@DEF":"boxman_Humanoid",
-              "@info":["authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=1.0"],
+              "@info":["authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=2.0"],
               "@version":"1.0",
               "-skeleton":[
                 { "HAnimJoint":
