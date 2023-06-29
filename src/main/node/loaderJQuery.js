@@ -2,10 +2,10 @@ if (typeof PROTOS === 'undefined') {
 	var PROTOS = require('./PrototypeExpander.js')();
 }
 
-var Browser = X3DJSONLD.Browser;
+X3DJSONLD = window.X3DJSONLD;
 
-// var loadValidator = new loadValidate();
-loadValidator = window.loadValidator;
+var loadValidator = new loadValidate();
+window.loadValidator = loadValidator;
 //  X3DJSONLD.setProcessURLs(function() {}); // do modify URLs in GUI
 
 // https://stackoverflow.com/questions/1043339/javascript-for-detecting-browser-language-preference
@@ -163,11 +163,11 @@ if (typeof mapToMethod !== 'undefined') {
 	}
 }
 
-window.loadX3DJS_X3DOM = function (selector, DOMImplementation, jsobj, path, NS, loadValidator, X3DJSONLD, callback) {
+window.loadX3DJS_X3DOM = function (selector, DOMImplementation, jsobj, path, NS, callback) {
 	X3DJSONLD.x3djsonNS = NS;
-	loadValidator.loadSchema(jsobj, path, X3DJSONLD, function() {
+	loadValidator.loadSchema(jsobj, path, function() {
 		var doc = document.querySelector(selector);
-		if (doc.hasRuntime && doc.runtime.ready) {
+		if (doc && doc.hasRuntime && doc.runtime.ready) {
 			var child = doc.runtime.createX3DFromJS(jsobj, path);
 			var xml = X3DJSONLD.serializeDOM(jsobj, child, true);
 			callback(child, xml);
@@ -178,9 +178,9 @@ window.loadX3DJS_X3DOM = function (selector, DOMImplementation, jsobj, path, NS,
 	});
 }
 
-window.loadX3DJS_X_ITE = function loadX3DJS_X_ITE(selector, DOMImplementation, jsobj, path, NS, X3DJSONLD, callback) {
+window.loadX3DJS_X_ITE = function loadX3DJS_X_ITE(selector, DOMImplementation, jsobj, path, NS, callback) {
 	X3DJSONLD.x3djsonNS = NS;
-	loadValidator.loadSchema(jsobj, path, X3DJSONLD, function() {
+	loadValidator.loadSchema(jsobj, path, function() {
 		X3D(function() {
 			if (typeof X3D.getBrowser !== 'undefined') {
 				var browser = X3D.getBrowser(selector);
@@ -200,14 +200,14 @@ window.loadX3DJS_X_ITE = function loadX3DJS_X_ITE(selector, DOMImplementation, j
 	});
 }
 
-function convertJsonToXml(json, next, path, loadValidator) {
+function convertJsonToXml(json, next, path) {
 	var NS = $('#namespace option:selected').text();
-	loadValidator.loadX3DJS(document.implementation, json, path, NS, X3DJSONLD, function(element, xml) {
+	loadValidator.loadX3DJS(document.implementation, json, path, NS, function(element, xml) {
 		next(xml);
 	}); // does not load path
 }
 
-function loadProtoX3D(scripts, selector, json, url, loadValidator) {
+function loadProtoX3D(scripts, selector, json, url) {
     if ($('#prototype').is(':checked')) {
 	// Expand Protos
 	try {
@@ -259,16 +259,16 @@ function loadProtoX3D(scripts, selector, json, url, loadValidator) {
 		alert("Problems updating Stl");
 		console.error(e);
 	    }
-    }, loadValidator);
+    });
     return json;
 }
 
-window.loadX3D = function loadX3D(selector, json, url, loadValidator) {
+window.loadX3D = function loadX3D(selector, json, url) {
 	let scripts;
         if ($('#scripting').is(':checked')) {
 		scripts = new Scripts();
 	}
-	json = loadProtoX3D(scripts, selector, json, url, loadValidator);
+	json = loadProtoX3D(scripts, selector, json, url);
 }
 
 /**
@@ -276,7 +276,7 @@ window.loadX3D = function loadX3D(selector, json, url, loadValidator) {
  * elemnent -- element to add to
  * url -- JSON url to add
  */
-function appendInline(element, url, xmlDoc, next, loadValidator) {
+function appendInline(element, url, xmlDoc, next) {
 	$.getJSON(url, function(json) {
 		if (typeof PROTOS !== 'undefined' && typeof PROTOS.prototypeExpander === 'function') {
 			try {
@@ -291,7 +291,7 @@ function appendInline(element, url, xmlDoc, next, loadValidator) {
 			console.error("Perhaps you need to include the PrototypeExpander.js?");
 		}
 		// must validate here because we call an inner method.
-		loadValidator.loadSchema(json, url, X3DJSONLD, function() {
+		loadValidator.loadSchema(json, url, function() {
 			X3DJSONLD.ConvertToX3DOM(xmlDoc, json["X3D"]["Scene"], "Scene", element, url);
 			next(element);
 		}, function(e) {
@@ -322,8 +322,8 @@ function loadInline(selector, url, xmlDoc) {
  * next -- to return the element or null
  * returns element loaded
  */
-function appendX3DJSON2Selector(x3dele, selector, json, url, NS, next, loadValidator) {
-	loadX3DJS_X3DOM(x3dele, document.implementation, json, url, NS, loadValidator, X3DJSONLD, function(element, xml) {
+function appendX3DJSON2Selector(x3dele, selector, json, url, NS, next) {
+	loadX3DJS_X3DOM(x3dele, document.implementation, json, url, NS, function(element, xml) {
 		if (element != null) {
 			X3DJSONLD.elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
 			$(selector).append(element);
@@ -346,9 +346,9 @@ function appendX3DJSON2Selector(x3dele, selector, json, url, NS, next, loadValid
  * next -- to return the element and xmlDoc or null, null
  * returns element loaded and xml
  */
-window.replaceX3DJSON = function replaceX3DJSON(selector, json, url, NS, next, loadValidator) {
+window.replaceX3DJSON = function replaceX3DJSON(selector, json, url, NS, next) {
 
-	loadX3DJS_X3DOM(selector, document.implementation, json, url, NS, loadValidator, X3DJSONLD, function(element, xml) {
+	loadX3DJS_X3DOM(selector, document.implementation, json, url, NS, function(element, xml) {
 		if (element != null) {
 			X3DJSONLD.elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
 			// We have to do this stuff before the DOM hits X3DOM, or we get a mess.
@@ -373,7 +373,7 @@ window.replaceX3DJSON = function replaceX3DJSON(selector, json, url, NS, next, l
 				}
 			}
 			var doc = document.querySelector(selector);
-			if (doc.hasRuntime && doc.runtime.ready) {
+			if (doc && doc.hasRuntime && doc.runtime.ready) {
 				try {
 					doc.runtime.replaceWorld(element);
 				} catch (e) {
@@ -390,7 +390,7 @@ window.replaceX3DJSON = function replaceX3DJSON(selector, json, url, NS, next, l
 	});
 }
 
-window.updateFromJson = function updateFromJson(json, path, loadValidator) {
+window.updateFromJson = function updateFromJson(json, path) {
 	try {
 		if (typeof json === 'undefined') {
 				json = JSON.parse($("#json").val());
@@ -401,26 +401,26 @@ window.updateFromJson = function updateFromJson(json, path, loadValidator) {
 		console.error(e);
 	}
 	try {
-		loadX3D("#x3domjson", json, path, loadValidator);
+		loadX3D("#x3domjson", json, path);
 	} catch (e) {
 		alert("Problems converting and loading JSON "+ e);
 		console.error(e);
 	}
 }
 
-window.updateFromStl = function updateFromStl(path, loadValidator) {
-	var json = convertStlToJson($('#stl').val(), loadValidator);
-	updateFromJson(json, path, loadValidator);
+window.updateFromStl = function updateFromStl(path) {
+	var json = convertStlToJson($('#stl').val());
+	updateFromJson(json, path);
 }
 
-function updateFromPly(path, loadValidator) {
-	var json = convertPlyToJson($('#ply').val(), loadValidator);
-	updateFromJson(json, path, loadValidator);
+function updateFromPly(path) {
+	var json = convertPlyToJson($('#ply').val());
+	updateFromJson(json, path);
 }
 
-window.updateFromXml = function updateFromXml(path, loadValidator) {
-	var json = convertXmlToJson($('#xml').val(), path, loadValidator);
-	updateFromJson(json, path, loadValidator);
+window.updateFromXml = function updateFromXml(path) {
+	var json = convertXmlToJson($('#xml').val(), path);
+	updateFromJson(json, path);
 }
 
 function loadXml(url) {
@@ -483,19 +483,19 @@ function loadImage(url) {
 */
 	}
 }
-window.loadJson = function loadJson(url, loadValidator) {
+window.loadJson = function loadJson(url) {
 	$.getJSON(url, function(json) {
-		updateFromJson(json, url, loadValidator);
-		updateXml(json, url, loadValidator);
+		updateFromJson(json, url);
+		updateXml(json, url);
 	})
 	.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
 }
 
-function updateXml(json, path, loadValidator) {
+function updateXml(json, path) {
 	//  This step is an important validation step.
 	convertJsonToXml(json, function(xml) {
 		$('#xml').val(xml);
-	}, path, loadValidator);
+	}, path);
 }
 
 function updateStl(json) {
@@ -645,7 +645,7 @@ window.validator = function validator() {
 		var data = $("#json").val();
 		if (data.startsWith("http")) {
 			$.getJSON(data, function(json) {
-				loadValidator.loadSchema(json, "<unknown>", X3DJSONLD, function() {
+				loadValidator.loadSchema(json, "<unknown>", function() {
 					alert("Valid or user clicked OK");
 				}, function(e) {
 					alert(e);
@@ -653,7 +653,7 @@ window.validator = function validator() {
 			});
 		} else {
 			var json = JSON.parse(data);
-			loadValidator.loadSchema(json, "<unknown>", X3DJSONLD, function() {
+			loadValidator.loadSchema(json, "<unknown>", function() {
 				alert("Valid or user clicked OK");
 			}, function(e) {
 				alert(e);

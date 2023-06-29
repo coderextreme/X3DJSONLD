@@ -1,6 +1,13 @@
 "use strict";
 
-const { DOMParser, XMLSerializer } = require('@xmldom/xmldom');
+if (typeof require !== 'function') {
+	window.require = function() {
+		console.log("Redefinining require DOMSerializer");
+		return undefined;
+	};
+} else {
+	const { DOMParser, XMLSerializer } = require('@xmldom/xmldom');
+}
 
 function DOMSerializer() {};
 DOMSerializer.prototype = {

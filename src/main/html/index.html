@@ -4,10 +4,8 @@
     <title>X3D JSON Loader</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <meta name="viewport"/>
-    <!--
     <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css">
     <script type='text/javascript' src='https://www.x3dom.org/download/dev/x3dom-full.debug.js'> </script>
-    -->
 <script type="text/javascript" src="https://create3000.github.io/code/x_ite/latest/x_ite.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <!--
@@ -373,12 +371,10 @@ Use Namespace: <select id="namespace">
 <tr>
 <td>
 	<textarea id="json" rows="15" cols="80"></textarea><br>
-	<!--
     <X3D id="x3domjson" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showProgress="false" showStat='false' showLog='true' width='150px' height='75px' backend='webgl'>
 		<Scene>
 		</Scene>
     </X3D>
-	-->
     <x3d-canvas id='x_itejson' cache='false'>
            <p>Your browser may not support all features required by X_ITE!</p>
 	   <X3D>
@@ -389,12 +385,10 @@ Use Namespace: <select id="namespace">
 </td>
 <td>
 	<textarea id="xml" rows="15" cols="80"></textarea><br>
-	<!--
     <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showProgress="false" showStat='false' showLog='true' width='150px' height='75px' backend='webgl'>
 		<Scene id="x3domxml">
 		</Scene>
     </X3D>
-	-->
     <x3d-canvas id='x_itexml' cache='false'>
            <p>Your browser may not support all features required by X_ITE!</p>
 	   <X3D>
@@ -429,10 +423,28 @@ Click <a onclick='window.updateFromPly($("#file option:selected").text()); retur
 </tr>
 </table>
 </body>
-	<script type="module" src="../../../dist/loader-bundle.mjs"></script>
-	<script type="module">
-		import * as loadJson from "../node/loadJson.mjs"
-
+	<script src="../node/ajvAll.js"></script>
+	<script src="../node/config.js"></script>
+	<script src="../node/fieldTypes.js"></script>
+	<script src="../node/PrototypeExpander.js"></script>
+	<script src="../node/DOMSerializer.js"></script>
+	<script src="../node/X3DJSONLD.js"></script>
+	<script src="../node/matrix.js"></script>
+	<script src="../node/convertJsonToStl.js"></script>
+	<script src="../node/convertPlyToJson.js"></script>
+	<script src="../node/convertStlToJson.js"></script>
+	<script src="../node/exi.js"></script>
+	<script src="../node/JavaScriptSerializer.js"></script>
+	<script src="../node/mapToMethod.js"></script>
+	<script src="../node/mapToMethod2.js"></script>
+	<script src="../node/PythonSerializer.js"></script>
+	<script src="../node/Script.js"></script>
+	<script src="../node/Three2Serializer.js"></script>
+	<script src="../node/DOM2JSONSerializer.js"></script>
+	<script src="../node/loadValidate.js"></script>
+	<script src="../node/loaderJQuery.js"></script>
+	<script src="../node/loadJson.js"></script>
+	<script>
 		$(document).ready(function() {
 		console.log("Loading JoeKick");
 			loadJson('../data/JoeKick.json'); // does load ball.json
