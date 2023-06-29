@@ -662,10 +662,12 @@ serializeDOM : function(json, element, appendDocType) {
 		encoding = json.X3D["encoding"];
 	}
 	var xml = '';
+	/*
 	if (appendDocType) {
 		xml += '<?xml version="1.0" encoding="'+encoding+'"?>\n';
 		xml += '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D '+version+'//EN" "https://www.web3d.org/specifications/x3d-'+version+'.dtd">\n';
 	}
+	*/
 	if (typeof element === 'string') {
 		xml += element;
 	} else if (typeof element !== 'undefined') {
