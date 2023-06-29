@@ -13,7 +13,7 @@ meta(name="modified", content="14 Jan 2023"),
 meta(name="creator", content="John Carlson"),
 meta(name="created", content="9 November 2020"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="28 June 2023"),
+meta(name="translated", content="29 June 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -247,10 +247,10 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(0.1101,0.0656,-0.0736),(0.1101,0.0656,-0.0736)]), 
+Coordinate(point=[(0.1101,0.0656,-0.0736),(0.0824,0.0064,-0.004)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="l_metatarsophalangeal_2", DEF="hanim_l_metatarsophalangeal_2", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])]),
+HAnimJoint(name="l_metatarsophalangeal_2", DEF="hanim_l_metatarsophalangeal_2", center=((0.0824,0.0064,-0.004)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])]),
 HAnimJoint(name="r_hip", DEF="hanim_r_hip", center=((-0.095,0.9171,0.0029)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_thigh", DEF="hanim_r_thigh", children=[
 Transform(translation=((-0.095,0.9171,0.0029)), children=[
@@ -307,10 +307,10 @@ Shape(
 geometry=
 LineSet(vertexCount=[2], 
 coord=
-Coordinate(point=[(-0.0801,0.0712,-0.0766),(-0.0801,0.0712,-0.0766)]), 
+Coordinate(point=[(-0.0801,0.0712,-0.0766),(-0.0823,0.0064,-0.004)]), 
 color=(
 ColorRGBA(USE="HAnimSegmentLineColorRGBA"))))]),
-HAnimJoint(name="r_metatarsophalangeal_2", DEF="hanim_r_metatarsophalangeal_2", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])])]),
+HAnimJoint(name="r_metatarsophalangeal_2", DEF="hanim_r_metatarsophalangeal_2", center=((-0.0823,0.0064,-0.004)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)])])])])]),
 HAnimJoint(name="vl5", DEF="hanim_vl5", center=((0.0028,1.0568,-0.0776)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l5", DEF="hanim_l5", children=[
 Transform(translation=((0.0028,1.0568,-0.0776)), children=[

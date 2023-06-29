@@ -1182,7 +1182,7 @@
                                                               "-coord":
                                                                 { "Coordinate":
                                                                   {
-                                                                    "@point":[0.1101,0.0656,-0.0736,0.1101,0.0656,-0.0736]
+                                                                    "@point":[0.1101,0.0656,-0.0736,0.0824,0.0064,-0.0040]
                                                                   }
                                                                 },
                                                               "-children":[
@@ -1207,6 +1207,7 @@
                                                 {
                                                   "@name":"l_metatarsophalangeal_2",
                                                   "@DEF":"hanim_l_metatarsophalangeal_2",
+                                                  "@center":[0.0824,0.0064,-0.0040],
                                                   "@ulimit":[0,0,0],
                                                   "@llimit":[0,0,0]
                                                 }
@@ -1490,7 +1491,7 @@
                                                               "-coord":
                                                                 { "Coordinate":
                                                                   {
-                                                                    "@point":[-0.0801,0.0712,-0.0766,-0.0801,0.0712,-0.0766]
+                                                                    "@point":[-0.0801,0.0712,-0.0766,-0.0823,0.0064,-0.0040]
                                                                   }
                                                                 },
                                                               "-children":[
@@ -1515,6 +1516,7 @@
                                                 {
                                                   "@name":"r_metatarsophalangeal_2",
                                                   "@DEF":"hanim_r_metatarsophalangeal_2",
+                                                  "@center":[-0.0823,0.0064,-0.0040],
                                                   "@ulimit":[0,0,0],
                                                   "@llimit":[0,0,0]
                                                 }

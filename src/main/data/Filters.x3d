@@ -65,7 +65,7 @@
           <SpatialSound DEF='Audio1'>
             <Gain id='Gain1'>
               <Analyser id='Analyser1'>
-                <BiquadFilter detune='50.0' frequency='600' id='BiquadFilter1' qualityFactor='30.0' type='allpass'>
+                <BiquadFilter detune='50.0' frequency='600' id='BiquadFilter1' qualityFactor='30.0' type='ALLPASS'>
                   <AudioClip containerField='children' description='Techno beat' id='AudioClip1' loop='true' url='"sound/techno_beat.mp3" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3"'/>
                 </BiquadFilter>
               </Analyser>
@@ -74,7 +74,7 @@
           <SpatialSound DEF='Audio2'>
             <Gain id='Gain2'>
               <Analyser id='Analyser2'>
-                <BiquadFilter detune='15.0' frequency='600' id='BiquadFilter2' qualityFactor='15.0' type='allpass'>
+                <BiquadFilter detune='15.0' frequency='600' id='BiquadFilter2' qualityFactor='15.0' type='ALLPASS'>
                   <AudioClip containerField='children' description='Simple beat' id='AudioClip2' loop='true' url='"sound/beat.mp3" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3"'/>
                 </BiquadFilter>
               </Analyser>
@@ -83,7 +83,7 @@
           <SpatialSound DEF='Audio3'>
             <Gain id='Gain3'>
               <Analyser id='Analyser3'>
-                <BiquadFilter frequency='1000' id='BiquadFilter3' qualityFactor='0' type='allpass'>
+                <BiquadFilter frequency='1000' id='BiquadFilter3' qualityFactor='0' type='ALLPASS'>
                   <AudioClip containerField='children' description='Wobble loop' id='AudioClip3' loop='true' url='"sound/wobble_loop.mp3" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3"'/>
                 </BiquadFilter>
               </Analyser>

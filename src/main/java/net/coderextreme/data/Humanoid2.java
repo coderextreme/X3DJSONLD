@@ -246,32 +246,32 @@ public class Humanoid2 {
                           .setCoord(new Coordinate().setPoint(new MFVec3f44().getArray()))
                           .addComments("from l_talocrural to l_tarsometatarsal_2 vertices 2")
                           .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                    .addChild(new HAnimJoint().setName("l_tarsometatarsal_2").setDEF("hanim_l_tarsometatarsal_2").setUlimit(new MFFloat45().getArray()).setLlimit(new MFFloat46().getArray())
+                    .addChild(new HAnimJoint().setName("l_tarsometatarsal_2").setDEF("hanim_l_tarsometatarsal_2").setCenter(new float[] {0.08f,0.0175f,-0.0608f}).setUlimit(new MFFloat45().getArray()).setLlimit(new MFFloat46().getArray())
                       .addChild(new HAnimSegment().setName("l_metatarsal_2").setDEF("hanim_l_metatarsal_2")
-                        .addChild(new Transform().setTranslation(new float[] {0.1101f,0.0656f,-0.0736f})
+                        .addChild(new Transform().setTranslation(new float[] {0.08f,0.0175f,-0.0608f})
                           .addChild(new Transform()
                             .addComments("Empty Transform")
                             .addChild(new Shape().setUSE("HAnimJointShape"))))
                         .addChild(new Shape()
                           .setGeometry(new LineSet().setVertexCount(new MFInt3247().getArray())
                             .setCoord(new Coordinate().setPoint(new MFVec3f48().getArray()))
-                            .addComments("from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 1")
+                            .addComments("from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 2")
                             .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                      .addChild(new HAnimJoint().setName("l_metatarsophalangeal_2").setDEF("hanim_l_metatarsophalangeal_2").setUlimit(new MFFloat49().getArray()).setLlimit(new MFFloat50().getArray())
+                      .addChild(new HAnimJoint().setName("l_metatarsophalangeal_2").setDEF("hanim_l_metatarsophalangeal_2").setCenter(new float[] {0.0824f,0.0064f,-0.004f}).setUlimit(new MFFloat49().getArray()).setLlimit(new MFFloat50().getArray())
                         .addChild(new HAnimSegment().setName("l_tarsal_proximal_phalanx_2").setDEF("hanim_l_tarsal_proximal_phalanx_2")
-                          .addChild(new Transform().setTranslation(new float[] {0.1101f,0.0656f,-0.0736f})
+                          .addChild(new Transform().setTranslation(new float[] {0.0824f,0.0064f,-0.004f})
                             .addChild(new Transform()
                               .addComments("Empty Transform")
                               .addChild(new Shape().setUSE("HAnimJointShape"))))
                           .addChild(new Shape()
                             .setGeometry(new LineSet().setVertexCount(new MFInt3251().getArray())
                               .setCoord(new Coordinate().setPoint(new MFVec3f52().getArray()))
-                              .addComments("from l_metatarsophalangeal_2 to l_tarsal_distal_interphalangeal_2 vertices 1")
+                              .addComments("from l_metatarsophalangeal_2 to l_tarsal_distal_interphalangeal_2 vertices 2")
                               .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA"))))
                           .addChild(new HAnimSite().setName("l_tarsal_distal_phalanx_2_tip").setDEF("hanim_l_tarsal_distal_phalanx_2_tip").setTranslation(new float[] {0.1195f,0.0079f,0.1433f})
                             .addChild(new TouchSensor().setDescription("HAnimSite l_tarsal_distal_phalanx_2_tip"))
                             .addChild(new Shape().setUSE("HAnimSiteShape"))))
-                        .addChild(new HAnimJoint().setName("l_tarsal_distal_interphalangeal_2").setDEF("hanim_l_tarsal_distal_interphalangeal_2").setUlimit(new MFFloat53().getArray()).setLlimit(new MFFloat54().getArray())))))))
+                        .addChild(new HAnimJoint().setName("l_tarsal_distal_interphalangeal_2").setDEF("hanim_l_tarsal_distal_interphalangeal_2").setCenter(new float[] {0.0841f,0.0013f,0.0216f}).setUlimit(new MFFloat53().getArray()).setLlimit(new MFFloat54().getArray())))))))
               .addChild(new HAnimJoint().setName("r_hip").setDEF("hanim_r_hip").setCenter(new float[] {-0.095f,0.9171f,0.0029f}).setUlimit(new MFFloat55().getArray()).setLlimit(new MFFloat56().getArray())
                 .addChild(new HAnimSegment().setName("r_thigh").setDEF("hanim_r_thigh")
                   .addChild(new Transform().setTranslation(new float[] {-0.095f,0.9171f,0.0029f})
@@ -321,32 +321,32 @@ public class Humanoid2 {
                           .setCoord(new Coordinate().setPoint(new MFVec3f66().getArray()))
                           .addComments("from r_talocrural to r_tarsometatarsal_2 vertices 2")
                           .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                    .addChild(new HAnimJoint().setName("r_tarsometatarsal_2").setDEF("hanim_r_tarsometatarsal_2").setUlimit(new MFFloat67().getArray()).setLlimit(new MFFloat68().getArray())
+                    .addChild(new HAnimJoint().setName("r_tarsometatarsal_2").setDEF("hanim_r_tarsometatarsal_2").setCenter(new float[] {-0.08f,0.0175f,-0.0608f}).setUlimit(new MFFloat67().getArray()).setLlimit(new MFFloat68().getArray())
                       .addChild(new HAnimSegment().setName("r_metatarsal_2").setDEF("hanim_r_metatarsal_2")
-                        .addChild(new Transform().setTranslation(new float[] {-0.0801f,0.0712f,-0.0766f})
+                        .addChild(new Transform().setTranslation(new float[] {-0.08f,0.0175f,-0.0608f})
                           .addChild(new Transform()
                             .addComments("Empty Transform")
                             .addChild(new Shape().setUSE("HAnimJointShape"))))
                         .addChild(new Shape()
                           .setGeometry(new LineSet().setVertexCount(new MFInt3269().getArray())
                             .setCoord(new Coordinate().setPoint(new MFVec3f70().getArray()))
-                            .addComments("from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 1")
+                            .addComments("from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 2")
                             .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                      .addChild(new HAnimJoint().setName("r_metatarsophalangeal_2").setDEF("hanim_r_metatarsophalangeal_2").setUlimit(new MFFloat71().getArray()).setLlimit(new MFFloat72().getArray())
+                      .addChild(new HAnimJoint().setName("r_metatarsophalangeal_2").setDEF("hanim_r_metatarsophalangeal_2").setCenter(new float[] {-0.0823f,0.0064f,-0.004f}).setUlimit(new MFFloat71().getArray()).setLlimit(new MFFloat72().getArray())
                         .addChild(new HAnimSegment().setName("r_tarsal_proximal_phalanx_2").setDEF("hanim_r_tarsal_proximal_phalanx_2")
-                          .addChild(new Transform().setTranslation(new float[] {-0.0801f,0.0712f,-0.0766f})
+                          .addChild(new Transform().setTranslation(new float[] {-0.0823f,0.0064f,-0.004f})
                             .addChild(new Transform()
                               .addComments("Empty Transform")
                               .addChild(new Shape().setUSE("HAnimJointShape"))))
                           .addChild(new Shape()
                             .setGeometry(new LineSet().setVertexCount(new MFInt3273().getArray())
                               .setCoord(new Coordinate().setPoint(new MFVec3f74().getArray()))
-                              .addComments("from r_metatarsophalangeal_2 to r_tarsal_distal_interphalangeal_2 vertices 1")
+                              .addComments("from r_metatarsophalangeal_2 to r_tarsal_distal_interphalangeal_2 vertices 2")
                               .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA"))))
                           .addChild(new HAnimSite().setName("r_tarsal_distal_phalanx_2_tip").setDEF("hanim_r_tarsal_distal_phalanx_2_tip").setTranslation(new float[] {-0.0883f,0.0134f,0.1383f})
                             .addChild(new TouchSensor().setDescription("HAnimSite r_tarsal_distal_phalanx_2_tip"))
                             .addChild(new Shape().setUSE("HAnimSiteShape"))))
-                        .addChild(new HAnimJoint().setName("r_tarsal_distal_interphalangeal_2").setDEF("hanim_r_tarsal_distal_interphalangeal_2").setUlimit(new MFFloat75().getArray()).setLlimit(new MFFloat76().getArray()))))))))
+                        .addChild(new HAnimJoint().setName("r_tarsal_distal_interphalangeal_2").setDEF("hanim_r_tarsal_distal_interphalangeal_2").setCenter(new float[] {-0.0841f,0.0013f,0.0216f}).setUlimit(new MFFloat75().getArray()).setLlimit(new MFFloat76().getArray()))))))))
             .addChild(new HAnimJoint().setName("vl5").setDEF("hanim_vl5").setCenter(new float[] {0.0028f,1.0568f,-0.0776f}).setUlimit(new MFFloat77().getArray()).setLlimit(new MFFloat78().getArray())
               .addChild(new HAnimSegment().setName("l5").setDEF("hanim_l5")
                 .addChild(new Transform().setTranslation(new float[] {0.0028f,1.0568f,-0.0776f})
@@ -1546,7 +1546,7 @@ protected class MFInt3243 {
 }
 protected class MFVec3f44 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1101f,0.0656f,-0.0736f,0.1101f,0.0656f,-0.0736f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1101f,0.0656f,-0.0736f,0.08f,0.0175f,-0.0608f});
   }
 }
 protected class MFFloat45 {
@@ -1566,7 +1566,7 @@ protected class MFInt3247 {
 }
 protected class MFVec3f48 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1101f,0.0656f,-0.0736f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.08f,0.0175f,-0.0608f,0.0824f,0.0064f,-0.004f});
   }
 }
 protected class MFFloat49 {
@@ -1586,7 +1586,7 @@ protected class MFInt3251 {
 }
 protected class MFVec3f52 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1101f,0.0656f,-0.0736f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0824f,0.0064f,-0.004f,0.0841f,0.0013f,0.0216f});
   }
 }
 protected class MFFloat53 {
@@ -1656,7 +1656,7 @@ protected class MFInt3265 {
 }
 protected class MFVec3f66 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.0801f,0.0712f,-0.0766f,-0.0801f,0.0712f,-0.0766f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.0801f,0.0712f,-0.0766f,-0.08f,0.0175f,-0.0608f});
   }
 }
 protected class MFFloat67 {
@@ -1676,7 +1676,7 @@ protected class MFInt3269 {
 }
 protected class MFVec3f70 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.0801f,0.0712f,-0.0766f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.08f,0.0175f,-0.0608f,-0.0823f,0.0064f,-0.004f});
   }
 }
 protected class MFFloat71 {
@@ -1696,7 +1696,7 @@ protected class MFInt3273 {
 }
 protected class MFVec3f74 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.0801f,0.0712f,-0.0766f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.0823f,0.0064f,-0.004f,-0.0841f,0.0013f,0.0216f});
   }
 }
 protected class MFFloat75 {

@@ -14,7 +14,7 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
     <meta content='John Carlson' name='creator'/>
     <meta content='9 November 2020' name='created'/>
     <meta content='../license.html' name='license'/>
-    <meta content='28 June 2023' name='translated'/>
+    <meta content='29 June 2023' name='translated'/>
     <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
     <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
   </head>
@@ -347,11 +347,11 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                   <Shape>
                     <LineSet vertexCount='2'>
                       <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
-                      <Coordinate point='0.1101 0.0656 -0.0736 0.1101 0.0656 -0.0736'/>
+                      <Coordinate point='0.1101 0.0656 -0.0736 0.0824 0.0064 -0.004'/>
                     </LineSet>
                   </Shape>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_l_metatarsophalangeal_2' name='l_metatarsophalangeal_2'/>
+                <HAnimJoint DEF='hanim_l_metatarsophalangeal_2' center='0.0824 0.0064 -0.004' name='l_metatarsophalangeal_2'/>
               </HAnimJoint>
             </HAnimJoint>
           </HAnimJoint>
@@ -417,11 +417,11 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                   <Shape>
                     <LineSet vertexCount='2'>
                       <ColorRGBA USE='HAnimSegmentLineColorRGBA'/>
-                      <Coordinate point='-0.0801 0.0712 -0.0766 -0.0801 0.0712 -0.0766'/>
+                      <Coordinate point='-0.0801 0.0712 -0.0766 -0.0823 0.0064 -0.004'/>
                     </LineSet>
                   </Shape>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_metatarsophalangeal_2' name='r_metatarsophalangeal_2'/>
+                <HAnimJoint DEF='hanim_r_metatarsophalangeal_2' center='-0.0823 0.0064 -0.004' name='r_metatarsophalangeal_2'/>
               </HAnimJoint>
             </HAnimJoint>
           </HAnimJoint>

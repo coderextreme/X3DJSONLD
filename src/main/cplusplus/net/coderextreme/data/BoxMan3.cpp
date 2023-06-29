@@ -191,7 +191,7 @@ group->addChildren(*Background36);
 CHAnimHumanoid* HAnimHumanoid37 = (CHAnimHumanoid *)(m_pScene.createNode("HAnimHumanoid"));
 HAnimHumanoid37->setName("Humanoid");
 HAnimHumanoid37->setDEF("boxman_Humanoid");
-HAnimHumanoid37->setInfo(new CString[4]{"authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=1.0"}, 4);
+HAnimHumanoid37->setInfo(new CString[4]{"authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=2.0"}, 4);
 HAnimHumanoid37->setVersion("1.0");
 CHAnimJoint* HAnimJoint38 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint38->setName("humanoid_root");

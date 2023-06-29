@@ -1182,7 +1182,7 @@
                                                               "-coord":
                                                                 { "Coordinate":
                                                                   {
-                                                                    "@point":[0.1101,0.0656,-0.0736,0.1101,0.0656,-0.0736]
+                                                                    "@point":[0.1101,0.0656,-0.0736,0.0800,0.0175,-0.0608]
                                                                   }
                                                                 },
                                                               "-children":[
@@ -1207,6 +1207,7 @@
                                                 {
                                                   "@name":"l_tarsometatarsal_2",
                                                   "@DEF":"hanim_l_tarsometatarsal_2",
+                                                  "@center":[0.0800,0.0175,-0.0608],
                                                   "@ulimit":[0,0,0],
                                                   "@llimit":[0,0,0],
                                                   "-children":[
@@ -1217,7 +1218,7 @@
                                                         "-children":[
                                                           { "Transform":
                                                             {
-                                                              "@translation":[0.1101,0.0656,-0.0736],
+                                                              "@translation":[0.0800,0.0175,-0.0608],
                                                               "-children":[
                                                                 { "Transform":
                                                                   {
@@ -1245,12 +1246,12 @@
                                                                     "-coord":
                                                                       { "Coordinate":
                                                                         {
-                                                                          "@point":[0.1101,0.0656,-0.0736]
+                                                                          "@point":[0.0800,0.0175,-0.0608,0.0824,0.0064,-0.0040]
                                                                         }
                                                                       },
                                                                     "-children":[
                                                                       {
-                                                                        "#comment":"from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 1"
+                                                                        "#comment":"from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 2"
                                                                       }
                                                                     ],
                                                                     "-color":
@@ -1270,6 +1271,7 @@
                                                       {
                                                         "@name":"l_metatarsophalangeal_2",
                                                         "@DEF":"hanim_l_metatarsophalangeal_2",
+                                                        "@center":[0.0824,0.0064,-0.0040],
                                                         "@ulimit":[0,0,0],
                                                         "@llimit":[0,0,0],
                                                         "-children":[
@@ -1280,7 +1282,7 @@
                                                               "-children":[
                                                                 { "Transform":
                                                                   {
-                                                                    "@translation":[0.1101,0.0656,-0.0736],
+                                                                    "@translation":[0.0824,0.0064,-0.0040],
                                                                     "-children":[
                                                                       { "Transform":
                                                                         {
@@ -1308,12 +1310,12 @@
                                                                           "-coord":
                                                                             { "Coordinate":
                                                                               {
-                                                                                "@point":[0.1101,0.0656,-0.0736]
+                                                                                "@point":[0.0824,0.0064,-0.0040,0.0841,0.0013,0.0216]
                                                                               }
                                                                             },
                                                                           "-children":[
                                                                             {
-                                                                              "#comment":"from l_metatarsophalangeal_2 to l_tarsal_distal_interphalangeal_2 vertices 1"
+                                                                              "#comment":"from l_metatarsophalangeal_2 to l_tarsal_distal_interphalangeal_2 vertices 2"
                                                                             }
                                                                           ],
                                                                           "-color":
@@ -1352,6 +1354,7 @@
                                                             {
                                                               "@name":"l_tarsal_distal_interphalangeal_2",
                                                               "@DEF":"hanim_l_tarsal_distal_interphalangeal_2",
+                                                              "@center":[0.0841,0.0013,0.0216],
                                                               "@ulimit":[0,0,0],
                                                               "@llimit":[0,0,0]
                                                             }
@@ -1641,7 +1644,7 @@
                                                               "-coord":
                                                                 { "Coordinate":
                                                                   {
-                                                                    "@point":[-0.0801,0.0712,-0.0766,-0.0801,0.0712,-0.0766]
+                                                                    "@point":[-0.0801,0.0712,-0.0766,-0.0800,0.0175,-0.0608]
                                                                   }
                                                                 },
                                                               "-children":[
@@ -1666,6 +1669,7 @@
                                                 {
                                                   "@name":"r_tarsometatarsal_2",
                                                   "@DEF":"hanim_r_tarsometatarsal_2",
+                                                  "@center":[-0.0800,0.0175,-0.0608],
                                                   "@ulimit":[0,0,0],
                                                   "@llimit":[0,0,0],
                                                   "-children":[
@@ -1676,7 +1680,7 @@
                                                         "-children":[
                                                           { "Transform":
                                                             {
-                                                              "@translation":[-0.0801,0.0712,-0.0766],
+                                                              "@translation":[-0.0800,0.0175,-0.0608],
                                                               "-children":[
                                                                 { "Transform":
                                                                   {
@@ -1704,12 +1708,12 @@
                                                                     "-coord":
                                                                       { "Coordinate":
                                                                         {
-                                                                          "@point":[-0.0801,0.0712,-0.0766]
+                                                                          "@point":[-0.0800,0.0175,-0.0608,-0.0823,0.0064,-0.0040]
                                                                         }
                                                                       },
                                                                     "-children":[
                                                                       {
-                                                                        "#comment":"from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 1"
+                                                                        "#comment":"from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 2"
                                                                       }
                                                                     ],
                                                                     "-color":
@@ -1729,6 +1733,7 @@
                                                       {
                                                         "@name":"r_metatarsophalangeal_2",
                                                         "@DEF":"hanim_r_metatarsophalangeal_2",
+                                                        "@center":[-0.0823,0.0064,-0.0040],
                                                         "@ulimit":[0,0,0],
                                                         "@llimit":[0,0,0],
                                                         "-children":[
@@ -1739,7 +1744,7 @@
                                                               "-children":[
                                                                 { "Transform":
                                                                   {
-                                                                    "@translation":[-0.0801,0.0712,-0.0766],
+                                                                    "@translation":[-0.0823,0.0064,-0.0040],
                                                                     "-children":[
                                                                       { "Transform":
                                                                         {
@@ -1767,12 +1772,12 @@
                                                                           "-coord":
                                                                             { "Coordinate":
                                                                               {
-                                                                                "@point":[-0.0801,0.0712,-0.0766]
+                                                                                "@point":[-0.0823,0.0064,-0.0040,-0.0841,0.0013,0.0216]
                                                                               }
                                                                             },
                                                                           "-children":[
                                                                             {
-                                                                              "#comment":"from r_metatarsophalangeal_2 to r_tarsal_distal_interphalangeal_2 vertices 1"
+                                                                              "#comment":"from r_metatarsophalangeal_2 to r_tarsal_distal_interphalangeal_2 vertices 2"
                                                                             }
                                                                           ],
                                                                           "-color":
@@ -1811,6 +1816,7 @@
                                                             {
                                                               "@name":"r_tarsal_distal_interphalangeal_2",
                                                               "@DEF":"hanim_r_tarsal_distal_interphalangeal_2",
+                                                              "@center":[-0.0841,0.0013,0.0216],
                                                               "@ulimit":[0,0,0],
                                                               "@llimit":[0,0,0]
                                                             }

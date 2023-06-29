@@ -817,7 +817,7 @@ CShape* Shape179 = (CShape *)(m_pScene.createNode("Shape"));
 CLineSet* LineSet180 = (CLineSet *)(m_pScene.createNode("LineSet"));
 LineSet180->setVertexCount(new int[1]{2});
 CCoordinate* Coordinate181 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate181->setPoint(new float[6]{0.1101,0.0656,-0.0736,0.1101,0.0656,-0.0736});
+Coordinate181->setPoint(new float[6]{0.1101,0.0656,-0.0736,0.08,0.0175,-0.0608});
 LineSet180->setCoord(*Coordinate181);
 
 //from l_talocrural to l_tarsometatarsal_2 vertices 2
@@ -834,13 +834,14 @@ HAnimJoint174->addChildren(*HAnimSegment175);
 CHAnimJoint* HAnimJoint183 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint183->setName("l_tarsometatarsal_2");
 HAnimJoint183->setDEF("hanim_l_tarsometatarsal_2");
+HAnimJoint183->setCenter(new float[3]{0.08,0.0175,-0.0608});
 HAnimJoint183->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint183->setLlimit(new float[3]{0,0,0}, 3);
 CHAnimSegment* HAnimSegment184 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment184->setName("l_metatarsal_2");
 HAnimSegment184->setDEF("hanim_l_metatarsal_2");
 CTransform* Transform185 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform185->setTranslation(new float[3]{0.1101,0.0656,-0.0736});
+Transform185->setTranslation(new float[3]{0.08,0.0175,-0.0608});
 CTransform* Transform186 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape187 = (CShape *)(m_pScene.createNode("Shape"));
@@ -855,10 +856,10 @@ CShape* Shape188 = (CShape *)(m_pScene.createNode("Shape"));
 CLineSet* LineSet189 = (CLineSet *)(m_pScene.createNode("LineSet"));
 LineSet189->setVertexCount(new int[1]{2});
 CCoordinate* Coordinate190 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate190->setPoint(new float[3]{0.1101,0.0656,-0.0736});
+Coordinate190->setPoint(new float[6]{0.08,0.0175,-0.0608,0.0824,0.0064,-0.004});
 LineSet189->setCoord(*Coordinate190);
 
-//from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 1
+//from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 2
 CColorRGBA* ColorRGBA191 = (CColorRGBA *)(m_pScene.createNode("ColorRGBA"));
 ColorRGBA191->setUSE("HAnimSegmentLineColorRGBA");
 LineSet189->setColor(*ColorRGBA191);
@@ -872,13 +873,14 @@ HAnimJoint183->addChildren(*HAnimSegment184);
 CHAnimJoint* HAnimJoint192 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint192->setName("l_metatarsophalangeal_2");
 HAnimJoint192->setDEF("hanim_l_metatarsophalangeal_2");
+HAnimJoint192->setCenter(new float[3]{0.0824,0.0064,-0.004});
 HAnimJoint192->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint192->setLlimit(new float[3]{0,0,0}, 3);
 CHAnimSegment* HAnimSegment193 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment193->setName("l_tarsal_proximal_phalanx_2");
 HAnimSegment193->setDEF("hanim_l_tarsal_proximal_phalanx_2");
 CTransform* Transform194 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform194->setTranslation(new float[3]{0.1101,0.0656,-0.0736});
+Transform194->setTranslation(new float[3]{0.0824,0.0064,-0.004});
 CTransform* Transform195 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape196 = (CShape *)(m_pScene.createNode("Shape"));
@@ -893,10 +895,10 @@ CShape* Shape197 = (CShape *)(m_pScene.createNode("Shape"));
 CLineSet* LineSet198 = (CLineSet *)(m_pScene.createNode("LineSet"));
 LineSet198->setVertexCount(new int[1]{2});
 CCoordinate* Coordinate199 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate199->setPoint(new float[3]{0.1101,0.0656,-0.0736});
+Coordinate199->setPoint(new float[6]{0.0824,0.0064,-0.004,0.0841,0.0013,0.0216});
 LineSet198->setCoord(*Coordinate199);
 
-//from l_metatarsophalangeal_2 to l_tarsal_distal_interphalangeal_2 vertices 1
+//from l_metatarsophalangeal_2 to l_tarsal_distal_interphalangeal_2 vertices 2
 CColorRGBA* ColorRGBA200 = (CColorRGBA *)(m_pScene.createNode("ColorRGBA"));
 ColorRGBA200->setUSE("HAnimSegmentLineColorRGBA");
 LineSet198->setColor(*ColorRGBA200);
@@ -924,6 +926,7 @@ HAnimJoint192->addChildren(*HAnimSegment193);
 CHAnimJoint* HAnimJoint204 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint204->setName("l_tarsal_distal_interphalangeal_2");
 HAnimJoint204->setDEF("hanim_l_tarsal_distal_interphalangeal_2");
+HAnimJoint204->setCenter(new float[3]{0.0841,0.0013,0.0216});
 HAnimJoint204->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint204->setLlimit(new float[3]{0,0,0}, 3);
 HAnimJoint192->addChildren(*HAnimJoint204);
@@ -1113,7 +1116,7 @@ CShape* Shape243 = (CShape *)(m_pScene.createNode("Shape"));
 CLineSet* LineSet244 = (CLineSet *)(m_pScene.createNode("LineSet"));
 LineSet244->setVertexCount(new int[1]{2});
 CCoordinate* Coordinate245 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate245->setPoint(new float[6]{-0.0801,0.0712,-0.0766,-0.0801,0.0712,-0.0766});
+Coordinate245->setPoint(new float[6]{-0.0801,0.0712,-0.0766,-0.08,0.0175,-0.0608});
 LineSet244->setCoord(*Coordinate245);
 
 //from r_talocrural to r_tarsometatarsal_2 vertices 2
@@ -1130,13 +1133,14 @@ HAnimJoint238->addChildren(*HAnimSegment239);
 CHAnimJoint* HAnimJoint247 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint247->setName("r_tarsometatarsal_2");
 HAnimJoint247->setDEF("hanim_r_tarsometatarsal_2");
+HAnimJoint247->setCenter(new float[3]{-0.08,0.0175,-0.0608});
 HAnimJoint247->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint247->setLlimit(new float[3]{0,0,0}, 3);
 CHAnimSegment* HAnimSegment248 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment248->setName("r_metatarsal_2");
 HAnimSegment248->setDEF("hanim_r_metatarsal_2");
 CTransform* Transform249 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform249->setTranslation(new float[3]{-0.0801,0.0712,-0.0766});
+Transform249->setTranslation(new float[3]{-0.08,0.0175,-0.0608});
 CTransform* Transform250 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape251 = (CShape *)(m_pScene.createNode("Shape"));
@@ -1151,10 +1155,10 @@ CShape* Shape252 = (CShape *)(m_pScene.createNode("Shape"));
 CLineSet* LineSet253 = (CLineSet *)(m_pScene.createNode("LineSet"));
 LineSet253->setVertexCount(new int[1]{2});
 CCoordinate* Coordinate254 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate254->setPoint(new float[3]{-0.0801,0.0712,-0.0766});
+Coordinate254->setPoint(new float[6]{-0.08,0.0175,-0.0608,-0.0823,0.0064,-0.004});
 LineSet253->setCoord(*Coordinate254);
 
-//from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 1
+//from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 2
 CColorRGBA* ColorRGBA255 = (CColorRGBA *)(m_pScene.createNode("ColorRGBA"));
 ColorRGBA255->setUSE("HAnimSegmentLineColorRGBA");
 LineSet253->setColor(*ColorRGBA255);
@@ -1168,13 +1172,14 @@ HAnimJoint247->addChildren(*HAnimSegment248);
 CHAnimJoint* HAnimJoint256 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint256->setName("r_metatarsophalangeal_2");
 HAnimJoint256->setDEF("hanim_r_metatarsophalangeal_2");
+HAnimJoint256->setCenter(new float[3]{-0.0823,0.0064,-0.004});
 HAnimJoint256->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint256->setLlimit(new float[3]{0,0,0}, 3);
 CHAnimSegment* HAnimSegment257 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment257->setName("r_tarsal_proximal_phalanx_2");
 HAnimSegment257->setDEF("hanim_r_tarsal_proximal_phalanx_2");
 CTransform* Transform258 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform258->setTranslation(new float[3]{-0.0801,0.0712,-0.0766});
+Transform258->setTranslation(new float[3]{-0.0823,0.0064,-0.004});
 CTransform* Transform259 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape260 = (CShape *)(m_pScene.createNode("Shape"));
@@ -1189,10 +1194,10 @@ CShape* Shape261 = (CShape *)(m_pScene.createNode("Shape"));
 CLineSet* LineSet262 = (CLineSet *)(m_pScene.createNode("LineSet"));
 LineSet262->setVertexCount(new int[1]{2});
 CCoordinate* Coordinate263 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate263->setPoint(new float[3]{-0.0801,0.0712,-0.0766});
+Coordinate263->setPoint(new float[6]{-0.0823,0.0064,-0.004,-0.0841,0.0013,0.0216});
 LineSet262->setCoord(*Coordinate263);
 
-//from r_metatarsophalangeal_2 to r_tarsal_distal_interphalangeal_2 vertices 1
+//from r_metatarsophalangeal_2 to r_tarsal_distal_interphalangeal_2 vertices 2
 CColorRGBA* ColorRGBA264 = (CColorRGBA *)(m_pScene.createNode("ColorRGBA"));
 ColorRGBA264->setUSE("HAnimSegmentLineColorRGBA");
 LineSet262->setColor(*ColorRGBA264);
@@ -1220,6 +1225,7 @@ HAnimJoint256->addChildren(*HAnimSegment257);
 CHAnimJoint* HAnimJoint268 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint268->setName("r_tarsal_distal_interphalangeal_2");
 HAnimJoint268->setDEF("hanim_r_tarsal_distal_interphalangeal_2");
+HAnimJoint268->setCenter(new float[3]{-0.0841,0.0013,0.0216});
 HAnimJoint268->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint268->setLlimit(new float[3]{0,0,0}, 3);
 HAnimJoint256->addChildren(*HAnimJoint268);
@@ -2734,7 +2740,7 @@ CShape* Shape609 = (CShape *)(m_pScene.createNode("Shape"));
 CLineSet* LineSet610 = (CLineSet *)(m_pScene.createNode("LineSet"));
 LineSet610->setVertexCount(new int[1]{2});
 CCoordinate* Coordinate611 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate611->setPoint(new float[6]{0.0044,1.6209,0.0236,0.0044,1.6209,0.0236});
+Coordinate611->setPoint(new float[6]{0.0044,1.6209,0.0236,0.0503,1.4157,-0.0689});
 LineSet610->setCoord(*Coordinate611);
 
 //from skullbase to l_eyelid_joint vertices 2
@@ -2750,7 +2756,7 @@ CShape* Shape613 = (CShape *)(m_pScene.createNode("Shape"));
 CLineSet* LineSet614 = (CLineSet *)(m_pScene.createNode("LineSet"));
 LineSet614->setVertexCount(new int[1]{2});
 CCoordinate* Coordinate615 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate615->setPoint(new float[6]{0.0044,1.6209,0.0236,0.0044,1.6209,0.0236});
+Coordinate615->setPoint(new float[6]{0.0044,1.6209,0.0236,-0.0507,1.4157,-0.0689});
 LineSet614->setCoord(*Coordinate615);
 
 //from skullbase to r_eyelid_joint vertices 2
@@ -2766,7 +2772,7 @@ CShape* Shape617 = (CShape *)(m_pScene.createNode("Shape"));
 CLineSet* LineSet618 = (CLineSet *)(m_pScene.createNode("LineSet"));
 LineSet618->setVertexCount(new int[1]{2});
 CCoordinate* Coordinate619 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate619->setPoint(new float[6]{0.0044,1.6209,0.0236,0.0044,1.6209,0.0236});
+Coordinate619->setPoint(new float[6]{0.0044,1.6209,0.0236,0.0479,1.3963,-0.0188});
 LineSet618->setCoord(*Coordinate619);
 
 //from skullbase to l_eyeball_joint vertices 2
@@ -2782,7 +2788,7 @@ CShape* Shape621 = (CShape *)(m_pScene.createNode("Shape"));
 CLineSet* LineSet622 = (CLineSet *)(m_pScene.createNode("LineSet"));
 LineSet622->setVertexCount(new int[1]{2});
 CCoordinate* Coordinate623 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate623->setPoint(new float[6]{0.0044,1.6209,0.0236,0.0044,1.6209,0.0236});
+Coordinate623->setPoint(new float[6]{0.0044,1.6209,0.0236,-0.0483,1.3963,-0.0188});
 LineSet622->setCoord(*Coordinate623);
 
 //from skullbase to r_eyeball_joint vertices 2
@@ -2798,7 +2804,7 @@ CShape* Shape625 = (CShape *)(m_pScene.createNode("Shape"));
 CLineSet* LineSet626 = (CLineSet *)(m_pScene.createNode("LineSet"));
 LineSet626->setVertexCount(new int[1]{2});
 CCoordinate* Coordinate627 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate627->setPoint(new float[6]{0.0044,1.6209,0.0236,0.0044,1.6209,0.0236});
+Coordinate627->setPoint(new float[6]{0.0044,1.6209,0.0236,0.0216,1.4053,0.0051});
 LineSet626->setCoord(*Coordinate627);
 
 //from skullbase to l_eyebrow_joint vertices 2
@@ -2814,7 +2820,7 @@ CShape* Shape629 = (CShape *)(m_pScene.createNode("Shape"));
 CLineSet* LineSet630 = (CLineSet *)(m_pScene.createNode("LineSet"));
 LineSet630->setVertexCount(new int[1]{2});
 CCoordinate* Coordinate631 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate631->setPoint(new float[6]{0.0044,1.6209,0.0236,0.0044,1.6209,0.0236});
+Coordinate631->setPoint(new float[6]{0.0044,1.6209,0.0236,-0.0219,1.4053,0.0051});
 LineSet630->setCoord(*Coordinate631);
 
 //from skullbase to r_eyebrow_joint vertices 2
@@ -2830,7 +2836,7 @@ CShape* Shape633 = (CShape *)(m_pScene.createNode("Shape"));
 CLineSet* LineSet634 = (CLineSet *)(m_pScene.createNode("LineSet"));
 LineSet634->setVertexCount(new int[1]{2});
 CCoordinate* Coordinate635 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate635->setPoint(new float[6]{0.0044,1.6209,0.0236,0.0044,1.6209,0.0236});
+Coordinate635->setPoint(new float[6]{0.0044,1.6209,0.0236,-0.0002,1.3043,-0.0865});
 LineSet634->setCoord(*Coordinate635);
 
 //from skullbase to temporomandibular vertices 2
@@ -2902,6 +2908,7 @@ HAnimJoint604->addChildren(*HAnimSegment605);
 CHAnimJoint* HAnimJoint649 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint649->setName("l_eyelid_joint");
 HAnimJoint649->setDEF("hanim_l_eyelid_joint");
+HAnimJoint649->setCenter(new float[3]{0.0503,1.4157,-0.0689});
 HAnimJoint649->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint649->setLlimit(new float[3]{0,0,0}, 3);
 HAnimJoint604->addChildren(*HAnimJoint649);
@@ -2909,6 +2916,7 @@ HAnimJoint604->addChildren(*HAnimJoint649);
 CHAnimJoint* HAnimJoint650 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint650->setName("r_eyelid_joint");
 HAnimJoint650->setDEF("hanim_r_eyelid_joint");
+HAnimJoint650->setCenter(new float[3]{-0.0507,1.4157,-0.0689});
 HAnimJoint650->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint650->setLlimit(new float[3]{0,0,0}, 3);
 HAnimJoint604->addChildren(*HAnimJoint650);
@@ -2916,6 +2924,7 @@ HAnimJoint604->addChildren(*HAnimJoint650);
 CHAnimJoint* HAnimJoint651 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint651->setName("l_eyeball_joint");
 HAnimJoint651->setDEF("hanim_l_eyeball_joint");
+HAnimJoint651->setCenter(new float[3]{0.0479,1.3963,-0.0188});
 HAnimJoint651->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint651->setLlimit(new float[3]{0,0,0}, 3);
 HAnimJoint604->addChildren(*HAnimJoint651);
@@ -2923,6 +2932,7 @@ HAnimJoint604->addChildren(*HAnimJoint651);
 CHAnimJoint* HAnimJoint652 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint652->setName("r_eyeball_joint");
 HAnimJoint652->setDEF("hanim_r_eyeball_joint");
+HAnimJoint652->setCenter(new float[3]{-0.0483,1.3963,-0.0188});
 HAnimJoint652->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint652->setLlimit(new float[3]{0,0,0}, 3);
 HAnimJoint604->addChildren(*HAnimJoint652);
@@ -2930,6 +2940,7 @@ HAnimJoint604->addChildren(*HAnimJoint652);
 CHAnimJoint* HAnimJoint653 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint653->setName("l_eyebrow_joint");
 HAnimJoint653->setDEF("hanim_l_eyebrow_joint");
+HAnimJoint653->setCenter(new float[3]{0.0216,1.4053,0.0051});
 HAnimJoint653->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint653->setLlimit(new float[3]{0,0,0}, 3);
 HAnimJoint604->addChildren(*HAnimJoint653);
@@ -2937,6 +2948,7 @@ HAnimJoint604->addChildren(*HAnimJoint653);
 CHAnimJoint* HAnimJoint654 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint654->setName("r_eyebrow_joint");
 HAnimJoint654->setDEF("hanim_r_eyebrow_joint");
+HAnimJoint654->setCenter(new float[3]{-0.0219,1.4053,0.0051});
 HAnimJoint654->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint654->setLlimit(new float[3]{0,0,0}, 3);
 HAnimJoint604->addChildren(*HAnimJoint654);
@@ -2944,6 +2956,7 @@ HAnimJoint604->addChildren(*HAnimJoint654);
 CHAnimJoint* HAnimJoint655 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint655->setName("temporomandibular");
 HAnimJoint655->setDEF("hanim_temporomandibular");
+HAnimJoint655->setCenter(new float[3]{-0.0002,1.3043,-0.0865});
 HAnimJoint655->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint655->setLlimit(new float[3]{0,0,0}, 3);
 HAnimJoint604->addChildren(*HAnimJoint655);

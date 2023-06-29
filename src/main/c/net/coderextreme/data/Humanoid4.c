@@ -917,7 +917,7 @@ Shape Shape179 = createNode("Shape");
 LineSet LineSet180 = createNode("LineSet");
 LineSet180.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate181 = createNode("Coordinate");
-Coordinate181.point = new MFVec3f(new float[0.1101,0.0656,-0.0736,0.1101,0.0656,-0.0736]);
+Coordinate181.point = new MFVec3f(new float[0.1101,0.0656,-0.0736,0.0781,0.0283,-0.097]);
 LineSet180.coord = Coordinate181;
 
 //from l_talocrural to l_talocalcaneonavicular vertices 2
@@ -933,7 +933,7 @@ Shape Shape183 = createNode("Shape");
 LineSet LineSet184 = createNode("LineSet");
 LineSet184.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate185 = createNode("Coordinate");
-Coordinate185.point = new MFVec3f(new float[0.1101,0.0656,-0.0736,0.1101,0.0656,-0.0736]);
+Coordinate185.point = new MFVec3f(new float[0.1101,0.0656,-0.0736,0.0889,0.0494,-0.1278]);
 LineSet184.coord = Coordinate185;
 
 //from l_talocrural to l_calcaneocuboid vertices 2
@@ -952,13 +952,14 @@ HAnimJoint174.children[0] = HAnimSegment175;
 HAnimJoint HAnimJoint187 = createNode("HAnimJoint");
 HAnimJoint187.name = "l_talocalcaneonavicular";
 HAnimJoint187.DEF = "hanim_l_talocalcaneonavicular";
+HAnimJoint187.center = new SFVec3f(new float[0.0781,0.0283,-0.097]);
 HAnimJoint187.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint187.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment188 = createNode("HAnimSegment");
 HAnimSegment188.name = "l_navicular";
 HAnimSegment188.DEF = "hanim_l_navicular";
 Transform Transform189 = createNode("Transform");
-Transform189.translation = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
+Transform189.translation = new SFVec3f(new float[0.0781,0.0283,-0.097]);
 Transform Transform190 = createNode("Transform");
 //Empty Transform
 Shape Shape191 = createNode("Shape");
@@ -979,10 +980,10 @@ Shape Shape192 = createNode("Shape");
 LineSet LineSet193 = createNode("LineSet");
 LineSet193.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate194 = createNode("Coordinate");
-Coordinate194.point = new MFVec3f(new float[0.1101,0.0656,-0.0736]);
+Coordinate194.point = new MFVec3f(new float[0.0781,0.0283,-0.097,0.0672,0.0235,-0.0835]);
 LineSet193.coord = Coordinate194;
 
-//from l_talocalcaneonavicular to l_cuneonavicular_1 vertices 1
+//from l_talocalcaneonavicular to l_cuneonavicular_1 vertices 2
 ColorRGBA ColorRGBA195 = createNode("ColorRGBA");
 ColorRGBA195.USE = "HAnimSegmentLineColorRGBA";
 LineSet193.color = ColorRGBA195;
@@ -995,10 +996,10 @@ Shape Shape196 = createNode("Shape");
 LineSet LineSet197 = createNode("LineSet");
 LineSet197.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate198 = createNode("Coordinate");
-Coordinate198.point = new MFVec3f(new float[0.1101,0.0656,-0.0736]);
+Coordinate198.point = new MFVec3f(new float[0.0781,0.0283,-0.097,0.0812,0.025,-0.0805]);
 LineSet197.coord = Coordinate198;
 
-//from l_talocalcaneonavicular to l_cuneonavicular_2 vertices 1
+//from l_talocalcaneonavicular to l_cuneonavicular_2 vertices 2
 ColorRGBA ColorRGBA199 = createNode("ColorRGBA");
 ColorRGBA199.USE = "HAnimSegmentLineColorRGBA";
 LineSet197.color = ColorRGBA199;
@@ -1011,10 +1012,10 @@ Shape Shape200 = createNode("Shape");
 LineSet LineSet201 = createNode("LineSet");
 LineSet201.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate202 = createNode("Coordinate");
-Coordinate202.point = new MFVec3f(new float[0.1101,0.0656,-0.0736]);
+Coordinate202.point = new MFVec3f(new float[0.0781,0.0283,-0.097,0.0928,0.0248,-0.0821]);
 LineSet201.coord = Coordinate202;
 
-//from l_talocalcaneonavicular to l_cuneonavicular_3 vertices 1
+//from l_talocalcaneonavicular to l_cuneonavicular_3 vertices 2
 ColorRGBA ColorRGBA203 = createNode("ColorRGBA");
 ColorRGBA203.USE = "HAnimSegmentLineColorRGBA";
 LineSet201.color = ColorRGBA203;
@@ -1030,13 +1031,14 @@ HAnimJoint187.children[0] = HAnimSegment188;
 HAnimJoint HAnimJoint204 = createNode("HAnimJoint");
 HAnimJoint204.name = "l_cuneonavicular_1";
 HAnimJoint204.DEF = "hanim_l_cuneonavicular_1";
+HAnimJoint204.center = new SFVec3f(new float[0.0672,0.0235,-0.0835]);
 HAnimJoint204.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint204.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment205 = createNode("HAnimSegment");
 HAnimSegment205.name = "l_cuneiform_1";
 HAnimSegment205.DEF = "hanim_l_cuneiform_1";
 Transform Transform206 = createNode("Transform");
-Transform206.translation = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
+Transform206.translation = new SFVec3f(new float[0.0672,0.0235,-0.0835]);
 Transform Transform207 = createNode("Transform");
 //Empty Transform
 Shape Shape208 = createNode("Shape");
@@ -1057,10 +1059,10 @@ Shape Shape209 = createNode("Shape");
 LineSet LineSet210 = createNode("LineSet");
 LineSet210.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate211 = createNode("Coordinate");
-Coordinate211.point = new MFVec3f(new float[0.1101,0.0656,-0.0736]);
+Coordinate211.point = new MFVec3f(new float[0.0672,0.0235,-0.0835,0.0644,0.0147,-0.0577]);
 LineSet210.coord = Coordinate211;
 
-//from l_cuneonavicular_1 to l_tarsometatarsal_1 vertices 1
+//from l_cuneonavicular_1 to l_tarsometatarsal_1 vertices 2
 ColorRGBA ColorRGBA212 = createNode("ColorRGBA");
 ColorRGBA212.USE = "HAnimSegmentLineColorRGBA";
 LineSet210.color = ColorRGBA212;
@@ -1076,13 +1078,14 @@ HAnimJoint204.children[0] = HAnimSegment205;
 HAnimJoint HAnimJoint213 = createNode("HAnimJoint");
 HAnimJoint213.name = "l_tarsometatarsal_1";
 HAnimJoint213.DEF = "hanim_l_tarsometatarsal_1";
+HAnimJoint213.center = new SFVec3f(new float[0.0644,0.0147,-0.0577]);
 HAnimJoint213.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint213.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment214 = createNode("HAnimSegment");
 HAnimSegment214.name = "l_metatarsal_1";
 HAnimSegment214.DEF = "hanim_l_metatarsal_1";
 Transform Transform215 = createNode("Transform");
-Transform215.translation = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
+Transform215.translation = new SFVec3f(new float[0.0644,0.0147,-0.0577]);
 Transform Transform216 = createNode("Transform");
 //Empty Transform
 Shape Shape217 = createNode("Shape");
@@ -1103,10 +1106,10 @@ Shape Shape218 = createNode("Shape");
 LineSet LineSet219 = createNode("LineSet");
 LineSet219.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate220 = createNode("Coordinate");
-Coordinate220.point = new MFVec3f(new float[0.1101,0.0656,-0.0736]);
+Coordinate220.point = new MFVec3f(new float[0.0644,0.0147,-0.0577,0.0619,0.0059,-0.0083]);
 LineSet219.coord = Coordinate220;
 
-//from l_tarsometatarsal_1 to l_metatarsophalangeal_1 vertices 1
+//from l_tarsometatarsal_1 to l_metatarsophalangeal_1 vertices 2
 ColorRGBA ColorRGBA221 = createNode("ColorRGBA");
 ColorRGBA221.USE = "HAnimSegmentLineColorRGBA";
 LineSet219.color = ColorRGBA221;
@@ -1137,13 +1140,14 @@ HAnimJoint213.children[0] = HAnimSegment214;
 HAnimJoint HAnimJoint225 = createNode("HAnimJoint");
 HAnimJoint225.name = "l_metatarsophalangeal_1";
 HAnimJoint225.DEF = "hanim_l_metatarsophalangeal_1";
+HAnimJoint225.center = new SFVec3f(new float[0.0619,0.0059,-0.0083]);
 HAnimJoint225.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint225.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment226 = createNode("HAnimSegment");
 HAnimSegment226.name = "l_tarsal_proximal_phalanx_1";
 HAnimSegment226.DEF = "hanim_l_tarsal_proximal_phalanx_1";
 Transform Transform227 = createNode("Transform");
-Transform227.translation = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
+Transform227.translation = new SFVec3f(new float[0.0619,0.0059,-0.0083]);
 Transform Transform228 = createNode("Transform");
 //Empty Transform
 Shape Shape229 = createNode("Shape");
@@ -1164,10 +1168,10 @@ Shape Shape230 = createNode("Shape");
 LineSet LineSet231 = createNode("LineSet");
 LineSet231.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate232 = createNode("Coordinate");
-Coordinate232.point = new MFVec3f(new float[0.1101,0.0656,-0.0736]);
+Coordinate232.point = new MFVec3f(new float[0.0619,0.0059,-0.0083,0.0619,0.0059,-0.0083]);
 LineSet231.coord = Coordinate232;
 
-//from l_metatarsophalangeal_1 to l_tarsal_interphalangeal_1 vertices 1
+//from l_metatarsophalangeal_1 to l_tarsal_interphalangeal_1 vertices 2
 ColorRGBA ColorRGBA233 = createNode("ColorRGBA");
 ColorRGBA233.USE = "HAnimSegmentLineColorRGBA";
 LineSet231.color = ColorRGBA233;
@@ -1211,13 +1215,14 @@ HAnimJoint187.children[1] = HAnimJoint204;
 HAnimJoint HAnimJoint238 = createNode("HAnimJoint");
 HAnimJoint238.name = "l_cuneonavicular_2";
 HAnimJoint238.DEF = "hanim_l_cuneonavicular_2";
+HAnimJoint238.center = new SFVec3f(new float[0.0812,0.025,-0.0805]);
 HAnimJoint238.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint238.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment239 = createNode("HAnimSegment");
 HAnimSegment239.name = "l_cuneiform_2";
 HAnimSegment239.DEF = "hanim_l_cuneiform_2";
 Transform Transform240 = createNode("Transform");
-Transform240.translation = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
+Transform240.translation = new SFVec3f(new float[0.0812,0.025,-0.0805]);
 Transform Transform241 = createNode("Transform");
 //Empty Transform
 Shape Shape242 = createNode("Shape");
@@ -1238,10 +1243,10 @@ Shape Shape243 = createNode("Shape");
 LineSet LineSet244 = createNode("LineSet");
 LineSet244.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate245 = createNode("Coordinate");
-Coordinate245.point = new MFVec3f(new float[0.1101,0.0656,-0.0736]);
+Coordinate245.point = new MFVec3f(new float[0.0812,0.025,-0.0805,0.08,0.0175,-0.0608]);
 LineSet244.coord = Coordinate245;
 
-//from l_cuneonavicular_2 to l_tarsometatarsal_2 vertices 1
+//from l_cuneonavicular_2 to l_tarsometatarsal_2 vertices 2
 ColorRGBA ColorRGBA246 = createNode("ColorRGBA");
 ColorRGBA246.USE = "HAnimSegmentLineColorRGBA";
 LineSet244.color = ColorRGBA246;
@@ -1257,13 +1262,14 @@ HAnimJoint238.children[0] = HAnimSegment239;
 HAnimJoint HAnimJoint247 = createNode("HAnimJoint");
 HAnimJoint247.name = "l_tarsometatarsal_2";
 HAnimJoint247.DEF = "hanim_l_tarsometatarsal_2";
+HAnimJoint247.center = new SFVec3f(new float[0.08,0.0175,-0.0608]);
 HAnimJoint247.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint247.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment248 = createNode("HAnimSegment");
 HAnimSegment248.name = "l_metatarsal_2";
 HAnimSegment248.DEF = "hanim_l_metatarsal_2";
 Transform Transform249 = createNode("Transform");
-Transform249.translation = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
+Transform249.translation = new SFVec3f(new float[0.08,0.0175,-0.0608]);
 Transform Transform250 = createNode("Transform");
 //Empty Transform
 Shape Shape251 = createNode("Shape");
@@ -1284,10 +1290,10 @@ Shape Shape252 = createNode("Shape");
 LineSet LineSet253 = createNode("LineSet");
 LineSet253.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate254 = createNode("Coordinate");
-Coordinate254.point = new MFVec3f(new float[0.1101,0.0656,-0.0736]);
+Coordinate254.point = new MFVec3f(new float[0.08,0.0175,-0.0608,0.0824,0.0064,-0.004]);
 LineSet253.coord = Coordinate254;
 
-//from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 1
+//from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 2
 ColorRGBA ColorRGBA255 = createNode("ColorRGBA");
 ColorRGBA255.USE = "HAnimSegmentLineColorRGBA";
 LineSet253.color = ColorRGBA255;
@@ -1303,13 +1309,14 @@ HAnimJoint247.children[0] = HAnimSegment248;
 HAnimJoint HAnimJoint256 = createNode("HAnimJoint");
 HAnimJoint256.name = "l_metatarsophalangeal_2";
 HAnimJoint256.DEF = "hanim_l_metatarsophalangeal_2";
+HAnimJoint256.center = new SFVec3f(new float[0.0824,0.0064,-0.004]);
 HAnimJoint256.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint256.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment257 = createNode("HAnimSegment");
 HAnimSegment257.name = "l_tarsal_proximal_phalanx_2";
 HAnimSegment257.DEF = "hanim_l_tarsal_proximal_phalanx_2";
 Transform Transform258 = createNode("Transform");
-Transform258.translation = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
+Transform258.translation = new SFVec3f(new float[0.0824,0.0064,-0.004]);
 Transform Transform259 = createNode("Transform");
 //Empty Transform
 Shape Shape260 = createNode("Shape");
@@ -1330,10 +1337,10 @@ Shape Shape261 = createNode("Shape");
 LineSet LineSet262 = createNode("LineSet");
 LineSet262.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate263 = createNode("Coordinate");
-Coordinate263.point = new MFVec3f(new float[0.1101,0.0656,-0.0736]);
+Coordinate263.point = new MFVec3f(new float[0.0824,0.0064,-0.004,0.0841,0.0041,0.0121]);
 LineSet262.coord = Coordinate263;
 
-//from l_metatarsophalangeal_2 to l_tarsal_proximal_interphalangeal_2 vertices 1
+//from l_metatarsophalangeal_2 to l_tarsal_proximal_interphalangeal_2 vertices 2
 ColorRGBA ColorRGBA264 = createNode("ColorRGBA");
 ColorRGBA264.USE = "HAnimSegmentLineColorRGBA";
 LineSet262.color = ColorRGBA264;
@@ -1349,13 +1356,14 @@ HAnimJoint256.children[0] = HAnimSegment257;
 HAnimJoint HAnimJoint265 = createNode("HAnimJoint");
 HAnimJoint265.name = "l_tarsal_proximal_interphalangeal_2";
 HAnimJoint265.DEF = "hanim_l_tarsal_proximal_interphalangeal_2";
+HAnimJoint265.center = new SFVec3f(new float[0.0841,0.0041,0.0121]);
 HAnimJoint265.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint265.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment266 = createNode("HAnimSegment");
 HAnimSegment266.name = "l_tarsal_middle_phalanx_2";
 HAnimSegment266.DEF = "hanim_l_tarsal_middle_phalanx_2";
 Transform Transform267 = createNode("Transform");
-Transform267.translation = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
+Transform267.translation = new SFVec3f(new float[0.0841,0.0041,0.0121]);
 Transform Transform268 = createNode("Transform");
 //Empty Transform
 Shape Shape269 = createNode("Shape");
@@ -1376,10 +1384,10 @@ Shape Shape270 = createNode("Shape");
 LineSet LineSet271 = createNode("LineSet");
 LineSet271.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate272 = createNode("Coordinate");
-Coordinate272.point = new MFVec3f(new float[0.1101,0.0656,-0.0736]);
+Coordinate272.point = new MFVec3f(new float[0.0841,0.0041,0.0121,0.0841,0.0013,0.0216]);
 LineSet271.coord = Coordinate272;
 
-//from l_tarsal_proximal_interphalangeal_2 to l_tarsal_distal_interphalangeal_2 vertices 1
+//from l_tarsal_proximal_interphalangeal_2 to l_tarsal_distal_interphalangeal_2 vertices 2
 ColorRGBA ColorRGBA273 = createNode("ColorRGBA");
 ColorRGBA273.USE = "HAnimSegmentLineColorRGBA";
 LineSet271.color = ColorRGBA273;
@@ -1411,6 +1419,7 @@ HAnimJoint265.children[0] = HAnimSegment266;
 HAnimJoint HAnimJoint277 = createNode("HAnimJoint");
 HAnimJoint277.name = "l_tarsal_distal_interphalangeal_2";
 HAnimJoint277.DEF = "hanim_l_tarsal_distal_interphalangeal_2";
+HAnimJoint277.center = new SFVec3f(new float[0.0841,0.0013,0.0216]);
 HAnimJoint277.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint277.llimit = new MFFloat(new float[0,0,0]);
 HAnimJoint265.children[1] = HAnimJoint277;
@@ -1426,13 +1435,14 @@ HAnimJoint187.children[2] = HAnimJoint238;
 HAnimJoint HAnimJoint278 = createNode("HAnimJoint");
 HAnimJoint278.name = "l_cuneonavicular_3";
 HAnimJoint278.DEF = "hanim_l_cuneonavicular_3";
+HAnimJoint278.center = new SFVec3f(new float[0.0928,0.0248,-0.0821]);
 HAnimJoint278.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint278.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment279 = createNode("HAnimSegment");
 HAnimSegment279.name = "l_cuneiform_3";
 HAnimSegment279.DEF = "hanim_l_cuneiform_3";
 Transform Transform280 = createNode("Transform");
-Transform280.translation = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
+Transform280.translation = new SFVec3f(new float[0.0928,0.0248,-0.0821]);
 Transform Transform281 = createNode("Transform");
 //Empty Transform
 Shape Shape282 = createNode("Shape");
@@ -1453,10 +1463,10 @@ Shape Shape283 = createNode("Shape");
 LineSet LineSet284 = createNode("LineSet");
 LineSet284.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate285 = createNode("Coordinate");
-Coordinate285.point = new MFVec3f(new float[0.1101,0.0656,-0.0736]);
+Coordinate285.point = new MFVec3f(new float[0.0928,0.0248,-0.0821,0.0841,0.0013,0.0216]);
 LineSet284.coord = Coordinate285;
 
-//from l_cuneonavicular_3 to l_tarsometatarsal_3 vertices 1
+//from l_cuneonavicular_3 to l_tarsometatarsal_3 vertices 2
 ColorRGBA ColorRGBA286 = createNode("ColorRGBA");
 ColorRGBA286.USE = "HAnimSegmentLineColorRGBA";
 LineSet284.color = ColorRGBA286;
@@ -1478,7 +1488,7 @@ HAnimSegment HAnimSegment288 = createNode("HAnimSegment");
 HAnimSegment288.name = "l_metatarsal_3";
 HAnimSegment288.DEF = "hanim_l_metatarsal_3";
 Transform Transform289 = createNode("Transform");
-Transform289.translation = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
+Transform289.translation = new SFVec3f(new float[0.0928,0.0248,-0.0821]);
 Transform Transform290 = createNode("Transform");
 //Empty Transform
 Shape Shape291 = createNode("Shape");
@@ -1499,7 +1509,7 @@ Shape Shape292 = createNode("Shape");
 LineSet LineSet293 = createNode("LineSet");
 LineSet293.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate294 = createNode("Coordinate");
-Coordinate294.point = new MFVec3f(new float[0.1101,0.0656,-0.0736]);
+Coordinate294.point = new MFVec3f(new float[0.0963,0.0065,-0.0065]);
 LineSet293.coord = Coordinate294;
 
 //from l_tarsometatarsal_3 to l_metatarsophalangeal_3 vertices 1
@@ -1518,13 +1528,14 @@ HAnimJoint287.children[0] = HAnimSegment288;
 HAnimJoint HAnimJoint296 = createNode("HAnimJoint");
 HAnimJoint296.name = "l_metatarsophalangeal_3";
 HAnimJoint296.DEF = "hanim_l_metatarsophalangeal_3";
+HAnimJoint296.center = new SFVec3f(new float[0.0963,0.0065,-0.0065]);
 HAnimJoint296.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint296.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment297 = createNode("HAnimSegment");
 HAnimSegment297.name = "l_tarsal_proximal_phalanx_3";
 HAnimSegment297.DEF = "hanim_l_tarsal_proximal_phalanx_3";
 Transform Transform298 = createNode("Transform");
-Transform298.translation = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
+Transform298.translation = new SFVec3f(new float[0.0963,0.0065,-0.0065]);
 Transform Transform299 = createNode("Transform");
 //Empty Transform
 Shape Shape300 = createNode("Shape");
@@ -1545,10 +1556,10 @@ Shape Shape301 = createNode("Shape");
 LineSet LineSet302 = createNode("LineSet");
 LineSet302.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate303 = createNode("Coordinate");
-Coordinate303.point = new MFVec3f(new float[0.1101,0.0656,-0.0736]);
+Coordinate303.point = new MFVec3f(new float[0.0963,0.0065,-0.0065,0.0987,0.0034,0.0086]);
 LineSet302.coord = Coordinate303;
 
-//from l_metatarsophalangeal_3 to l_tarsal_proximal_interphalangeal_3 vertices 1
+//from l_metatarsophalangeal_3 to l_tarsal_proximal_interphalangeal_3 vertices 2
 ColorRGBA ColorRGBA304 = createNode("ColorRGBA");
 ColorRGBA304.USE = "HAnimSegmentLineColorRGBA";
 LineSet302.color = ColorRGBA304;
@@ -1564,13 +1575,14 @@ HAnimJoint296.children[0] = HAnimSegment297;
 HAnimJoint HAnimJoint305 = createNode("HAnimJoint");
 HAnimJoint305.name = "l_tarsal_proximal_interphalangeal_3";
 HAnimJoint305.DEF = "hanim_l_tarsal_proximal_interphalangeal_3";
+HAnimJoint305.center = new SFVec3f(new float[0.0987,0.0034,0.0086]);
 HAnimJoint305.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint305.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment306 = createNode("HAnimSegment");
 HAnimSegment306.name = "l_tarsal_middle_phalanx_3";
 HAnimSegment306.DEF = "hanim_l_tarsal_middle_phalanx_3";
 Transform Transform307 = createNode("Transform");
-Transform307.translation = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
+Transform307.translation = new SFVec3f(new float[0.0987,0.0034,0.0086]);
 Transform Transform308 = createNode("Transform");
 //Empty Transform
 Shape Shape309 = createNode("Shape");
@@ -1591,10 +1603,10 @@ Shape Shape310 = createNode("Shape");
 LineSet LineSet311 = createNode("LineSet");
 LineSet311.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate312 = createNode("Coordinate");
-Coordinate312.point = new MFVec3f(new float[0.1101,0.0656,-0.0736]);
+Coordinate312.point = new MFVec3f(new float[0.0987,0.0034,0.0086,0.1002,0.0013,0.0178]);
 LineSet311.coord = Coordinate312;
 
-//from l_tarsal_proximal_interphalangeal_3 to l_tarsal_distal_interphalangeal_3 vertices 1
+//from l_tarsal_proximal_interphalangeal_3 to l_tarsal_distal_interphalangeal_3 vertices 2
 ColorRGBA ColorRGBA313 = createNode("ColorRGBA");
 ColorRGBA313.USE = "HAnimSegmentLineColorRGBA";
 LineSet311.color = ColorRGBA313;
@@ -1625,6 +1637,7 @@ HAnimJoint305.children[0] = HAnimSegment306;
 HAnimJoint HAnimJoint317 = createNode("HAnimJoint");
 HAnimJoint317.name = "l_tarsal_distal_interphalangeal_3";
 HAnimJoint317.DEF = "hanim_l_tarsal_distal_interphalangeal_3";
+HAnimJoint317.center = new SFVec3f(new float[0.1002,0.0013,0.0178]);
 HAnimJoint317.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint317.llimit = new MFFloat(new float[0,0,0]);
 HAnimJoint305.children[1] = HAnimJoint317;
@@ -1642,13 +1655,14 @@ HAnimJoint174.children[1] = HAnimJoint187;
 HAnimJoint HAnimJoint318 = createNode("HAnimJoint");
 HAnimJoint318.name = "l_calcaneocuboid";
 HAnimJoint318.DEF = "hanim_l_calcaneocuboid";
+HAnimJoint318.center = new SFVec3f(new float[0.0889,0.0494,-0.1278]);
 HAnimJoint318.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint318.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment319 = createNode("HAnimSegment");
 HAnimSegment319.name = "l_calcaneus";
 HAnimSegment319.DEF = "hanim_l_calcaneus";
 Transform Transform320 = createNode("Transform");
-Transform320.translation = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
+Transform320.translation = new SFVec3f(new float[0.0889,0.0494,-0.1278]);
 Transform Transform321 = createNode("Transform");
 //Empty Transform
 Shape Shape322 = createNode("Shape");
@@ -1669,10 +1683,10 @@ Shape Shape323 = createNode("Shape");
 LineSet LineSet324 = createNode("LineSet");
 LineSet324.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate325 = createNode("Coordinate");
-Coordinate325.point = new MFVec3f(new float[0.1101,0.0656,-0.0736]);
+Coordinate325.point = new MFVec3f(new float[0.0889,0.0494,-0.1278,0.1105,0.0267,-0.0998]);
 LineSet324.coord = Coordinate325;
 
-//from l_calcaneocuboid to l_transversetarsal vertices 1
+//from l_calcaneocuboid to l_transversetarsal vertices 2
 ColorRGBA ColorRGBA326 = createNode("ColorRGBA");
 ColorRGBA326.USE = "HAnimSegmentLineColorRGBA";
 LineSet324.color = ColorRGBA326;
@@ -1688,13 +1702,14 @@ HAnimJoint318.children[0] = HAnimSegment319;
 HAnimJoint HAnimJoint327 = createNode("HAnimJoint");
 HAnimJoint327.name = "l_transversetarsal";
 HAnimJoint327.DEF = "hanim_l_transversetarsal";
+HAnimJoint327.center = new SFVec3f(new float[0.1105,0.0267,-0.0998]);
 HAnimJoint327.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint327.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment328 = createNode("HAnimSegment");
 HAnimSegment328.name = "l_cuboid";
 HAnimSegment328.DEF = "hanim_l_cuboid";
 Transform Transform329 = createNode("Transform");
-Transform329.translation = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
+Transform329.translation = new SFVec3f(new float[0.1105,0.0267,-0.0998]);
 Transform Transform330 = createNode("Transform");
 //Empty Transform
 Shape Shape331 = createNode("Shape");
@@ -1715,10 +1730,10 @@ Shape Shape332 = createNode("Shape");
 LineSet LineSet333 = createNode("LineSet");
 LineSet333.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate334 = createNode("Coordinate");
-Coordinate334.point = new MFVec3f(new float[0.1101,0.0656,-0.0736]);
+Coordinate334.point = new MFVec3f(new float[0.1105,0.0267,-0.0998,0.1063,0.016,-0.0634]);
 LineSet333.coord = Coordinate334;
 
-//from l_transversetarsal to l_tarsometatarsal_4 vertices 1
+//from l_transversetarsal to l_tarsometatarsal_4 vertices 2
 ColorRGBA ColorRGBA335 = createNode("ColorRGBA");
 ColorRGBA335.USE = "HAnimSegmentLineColorRGBA";
 LineSet333.color = ColorRGBA335;
@@ -1731,10 +1746,10 @@ Shape Shape336 = createNode("Shape");
 LineSet LineSet337 = createNode("LineSet");
 LineSet337.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate338 = createNode("Coordinate");
-Coordinate338.point = new MFVec3f(new float[0.1101,0.0656,-0.0736]);
+Coordinate338.point = new MFVec3f(new float[0.1105,0.0267,-0.0998,0.1206,0.0124,-0.0671]);
 LineSet337.coord = Coordinate338;
 
-//from l_transversetarsal to l_tarsometatarsal_5 vertices 1
+//from l_transversetarsal to l_tarsometatarsal_5 vertices 2
 ColorRGBA ColorRGBA339 = createNode("ColorRGBA");
 ColorRGBA339.USE = "HAnimSegmentLineColorRGBA";
 LineSet337.color = ColorRGBA339;
@@ -1750,13 +1765,14 @@ HAnimJoint327.children[0] = HAnimSegment328;
 HAnimJoint HAnimJoint340 = createNode("HAnimJoint");
 HAnimJoint340.name = "l_tarsometatarsal_4";
 HAnimJoint340.DEF = "hanim_l_tarsometatarsal_4";
+HAnimJoint340.center = new SFVec3f(new float[0.1063,0.016,-0.0634]);
 HAnimJoint340.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint340.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment341 = createNode("HAnimSegment");
 HAnimSegment341.name = "l_metatarsal_4";
 HAnimSegment341.DEF = "hanim_l_metatarsal_4";
 Transform Transform342 = createNode("Transform");
-Transform342.translation = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
+Transform342.translation = new SFVec3f(new float[0.1063,0.016,-0.0634]);
 Transform Transform343 = createNode("Transform");
 //Empty Transform
 Shape Shape344 = createNode("Shape");
@@ -1777,10 +1793,10 @@ Shape Shape345 = createNode("Shape");
 LineSet LineSet346 = createNode("LineSet");
 LineSet346.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate347 = createNode("Coordinate");
-Coordinate347.point = new MFVec3f(new float[0.1101,0.0656,-0.0736]);
+Coordinate347.point = new MFVec3f(new float[0.1063,0.016,-0.0634,0.1097,0.0058,-0.0107]);
 LineSet346.coord = Coordinate347;
 
-//from l_tarsometatarsal_4 to l_metatarsophalangeal_4 vertices 1
+//from l_tarsometatarsal_4 to l_metatarsophalangeal_4 vertices 2
 ColorRGBA ColorRGBA348 = createNode("ColorRGBA");
 ColorRGBA348.USE = "HAnimSegmentLineColorRGBA";
 LineSet346.color = ColorRGBA348;
@@ -1796,13 +1812,14 @@ HAnimJoint340.children[0] = HAnimSegment341;
 HAnimJoint HAnimJoint349 = createNode("HAnimJoint");
 HAnimJoint349.name = "l_metatarsophalangeal_4";
 HAnimJoint349.DEF = "hanim_l_metatarsophalangeal_4";
+HAnimJoint349.center = new SFVec3f(new float[0.1097,0.0058,-0.0107]);
 HAnimJoint349.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint349.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment350 = createNode("HAnimSegment");
 HAnimSegment350.name = "l_tarsal_proximal_phalanx_4";
 HAnimSegment350.DEF = "hanim_l_tarsal_proximal_phalanx_4";
 Transform Transform351 = createNode("Transform");
-Transform351.translation = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
+Transform351.translation = new SFVec3f(new float[0.1097,0.0058,-0.0107]);
 Transform Transform352 = createNode("Transform");
 //Empty Transform
 Shape Shape353 = createNode("Shape");
@@ -1823,10 +1840,10 @@ Shape Shape354 = createNode("Shape");
 LineSet LineSet355 = createNode("LineSet");
 LineSet355.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate356 = createNode("Coordinate");
-Coordinate356.point = new MFVec3f(new float[0.1101,0.0656,-0.0736]);
+Coordinate356.point = new MFVec3f(new float[0.1097,0.0058,-0.0107,0.114,0.0037,0.0044]);
 LineSet355.coord = Coordinate356;
 
-//from l_metatarsophalangeal_4 to l_tarsal_proximal_interphalangeal_4 vertices 1
+//from l_metatarsophalangeal_4 to l_tarsal_proximal_interphalangeal_4 vertices 2
 ColorRGBA ColorRGBA357 = createNode("ColorRGBA");
 ColorRGBA357.USE = "HAnimSegmentLineColorRGBA";
 LineSet355.color = ColorRGBA357;
@@ -1842,13 +1859,14 @@ HAnimJoint349.children[0] = HAnimSegment350;
 HAnimJoint HAnimJoint358 = createNode("HAnimJoint");
 HAnimJoint358.name = "l_tarsal_proximal_interphalangeal_4";
 HAnimJoint358.DEF = "hanim_l_tarsal_proximal_interphalangeal_4";
+HAnimJoint358.center = new SFVec3f(new float[0.114,0.0037,0.0044]);
 HAnimJoint358.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint358.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment359 = createNode("HAnimSegment");
 HAnimSegment359.name = "l_tarsal_middle_phalanx_4";
 HAnimSegment359.DEF = "hanim_l_tarsal_middle_phalanx_4";
 Transform Transform360 = createNode("Transform");
-Transform360.translation = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
+Transform360.translation = new SFVec3f(new float[0.114,0.0037,0.0044]);
 Transform Transform361 = createNode("Transform");
 //Empty Transform
 Shape Shape362 = createNode("Shape");
@@ -1869,10 +1887,10 @@ Shape Shape363 = createNode("Shape");
 LineSet LineSet364 = createNode("LineSet");
 LineSet364.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate365 = createNode("Coordinate");
-Coordinate365.point = new MFVec3f(new float[0.1101,0.0656,-0.0736]);
+Coordinate365.point = new MFVec3f(new float[0.114,0.0037,0.0044,0.1155,0.0008,0.0118]);
 LineSet364.coord = Coordinate365;
 
-//from l_tarsal_proximal_interphalangeal_4 to l_tarsal_distal_interphalangeal_4 vertices 1
+//from l_tarsal_proximal_interphalangeal_4 to l_tarsal_distal_interphalangeal_4 vertices 2
 ColorRGBA ColorRGBA366 = createNode("ColorRGBA");
 ColorRGBA366.USE = "HAnimSegmentLineColorRGBA";
 LineSet364.color = ColorRGBA366;
@@ -1903,6 +1921,7 @@ HAnimJoint358.children[0] = HAnimSegment359;
 HAnimJoint HAnimJoint370 = createNode("HAnimJoint");
 HAnimJoint370.name = "l_tarsal_distal_interphalangeal_4";
 HAnimJoint370.DEF = "hanim_l_tarsal_distal_interphalangeal_4";
+HAnimJoint370.center = new SFVec3f(new float[0.1155,0.0008,0.0118]);
 HAnimJoint370.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint370.llimit = new MFFloat(new float[0,0,0]);
 HAnimJoint358.children[1] = HAnimJoint370;
@@ -1916,13 +1935,14 @@ HAnimJoint327.children[1] = HAnimJoint340;
 HAnimJoint HAnimJoint371 = createNode("HAnimJoint");
 HAnimJoint371.name = "l_tarsometatarsal_5";
 HAnimJoint371.DEF = "hanim_l_tarsometatarsal_5";
+HAnimJoint371.center = new SFVec3f(new float[0.1206,0.0124,-0.0671]);
 HAnimJoint371.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint371.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment372 = createNode("HAnimSegment");
 HAnimSegment372.name = "l_metatarsal_5";
 HAnimSegment372.DEF = "hanim_l_metatarsal_5";
 Transform Transform373 = createNode("Transform");
-Transform373.translation = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
+Transform373.translation = new SFVec3f(new float[0.1206,0.0124,-0.0671]);
 Transform Transform374 = createNode("Transform");
 //Empty Transform
 Shape Shape375 = createNode("Shape");
@@ -1943,10 +1963,10 @@ Shape Shape376 = createNode("Shape");
 LineSet LineSet377 = createNode("LineSet");
 LineSet377.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate378 = createNode("Coordinate");
-Coordinate378.point = new MFVec3f(new float[0.1101,0.0656,-0.0736]);
+Coordinate378.point = new MFVec3f(new float[0.1206,0.0124,-0.0671,0.1239,0.0051,-0.0153]);
 LineSet377.coord = Coordinate378;
 
-//from l_tarsometatarsal_5 to l_metatarsophalangeal_5 vertices 1
+//from l_tarsometatarsal_5 to l_metatarsophalangeal_5 vertices 2
 ColorRGBA ColorRGBA379 = createNode("ColorRGBA");
 ColorRGBA379.USE = "HAnimSegmentLineColorRGBA";
 LineSet377.color = ColorRGBA379;
@@ -1977,13 +1997,14 @@ HAnimJoint371.children[0] = HAnimSegment372;
 HAnimJoint HAnimJoint383 = createNode("HAnimJoint");
 HAnimJoint383.name = "l_metatarsophalangeal_5";
 HAnimJoint383.DEF = "hanim_l_metatarsophalangeal_5";
+HAnimJoint383.center = new SFVec3f(new float[0.1239,0.0051,-0.0153]);
 HAnimJoint383.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint383.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment384 = createNode("HAnimSegment");
 HAnimSegment384.name = "l_tarsal_proximal_phalanx_5";
 HAnimSegment384.DEF = "hanim_l_tarsal_proximal_phalanx_5";
 Transform Transform385 = createNode("Transform");
-Transform385.translation = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
+Transform385.translation = new SFVec3f(new float[0.1239,0.0051,-0.0153]);
 Transform Transform386 = createNode("Transform");
 //Empty Transform
 Shape Shape387 = createNode("Shape");
@@ -2004,10 +2025,10 @@ Shape Shape388 = createNode("Shape");
 LineSet LineSet389 = createNode("LineSet");
 LineSet389.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate390 = createNode("Coordinate");
-Coordinate390.point = new MFVec3f(new float[0.1101,0.0656,-0.0736]);
+Coordinate390.point = new MFVec3f(new float[0.1239,0.0051,-0.0153,0.1262,0.0023,-0.0077]);
 LineSet389.coord = Coordinate390;
 
-//from l_metatarsophalangeal_5 to l_tarsal_proximal_interphalangeal_5 vertices 1
+//from l_metatarsophalangeal_5 to l_tarsal_proximal_interphalangeal_5 vertices 2
 ColorRGBA ColorRGBA391 = createNode("ColorRGBA");
 ColorRGBA391.USE = "HAnimSegmentLineColorRGBA";
 LineSet389.color = ColorRGBA391;
@@ -2023,13 +2044,14 @@ HAnimJoint383.children[0] = HAnimSegment384;
 HAnimJoint HAnimJoint392 = createNode("HAnimJoint");
 HAnimJoint392.name = "l_tarsal_proximal_interphalangeal_5";
 HAnimJoint392.DEF = "hanim_l_tarsal_proximal_interphalangeal_5";
+HAnimJoint392.center = new SFVec3f(new float[0.1262,0.0023,-0.0077]);
 HAnimJoint392.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint392.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment393 = createNode("HAnimSegment");
 HAnimSegment393.name = "l_tarsal_middle_phalanx_5";
 HAnimSegment393.DEF = "hanim_l_tarsal_middle_phalanx_5";
 Transform Transform394 = createNode("Transform");
-Transform394.translation = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
+Transform394.translation = new SFVec3f(new float[0.1262,0.0023,-0.0077]);
 Transform Transform395 = createNode("Transform");
 //Empty Transform
 Shape Shape396 = createNode("Shape");
@@ -2050,10 +2072,10 @@ Shape Shape397 = createNode("Shape");
 LineSet LineSet398 = createNode("LineSet");
 LineSet398.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate399 = createNode("Coordinate");
-Coordinate399.point = new MFVec3f(new float[0.1101,0.0656,-0.0736]);
+Coordinate399.point = new MFVec3f(new float[0.1262,0.0023,-0.0077,0.1271,0,0]);
 LineSet398.coord = Coordinate399;
 
-//from l_tarsal_proximal_interphalangeal_5 to l_tarsal_distal_interphalangeal_5 vertices 1
+//from l_tarsal_proximal_interphalangeal_5 to l_tarsal_distal_interphalangeal_5 vertices 2
 ColorRGBA ColorRGBA400 = createNode("ColorRGBA");
 ColorRGBA400.USE = "HAnimSegmentLineColorRGBA";
 LineSet398.color = ColorRGBA400;
@@ -2084,6 +2106,7 @@ HAnimJoint392.children[0] = HAnimSegment393;
 HAnimJoint HAnimJoint404 = createNode("HAnimJoint");
 HAnimJoint404.name = "l_tarsal_distal_interphalangeal_5";
 HAnimJoint404.DEF = "hanim_l_tarsal_distal_interphalangeal_5";
+HAnimJoint404.center = new SFVec3f(new float[0.1271,0,0]);
 HAnimJoint404.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint404.llimit = new MFFloat(new float[0,0,0]);
 HAnimJoint392.children[1] = HAnimJoint404;
@@ -2311,7 +2334,7 @@ Shape Shape443 = createNode("Shape");
 LineSet LineSet444 = createNode("LineSet");
 LineSet444.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate445 = createNode("Coordinate");
-Coordinate445.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766,-0.0801,0.0712,-0.0766]);
+Coordinate445.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766,-0.0781,0.0283,-0.097]);
 LineSet444.coord = Coordinate445;
 
 //from r_talocrural to r_talocalcaneonavicular vertices 2
@@ -2327,7 +2350,7 @@ Shape Shape447 = createNode("Shape");
 LineSet LineSet448 = createNode("LineSet");
 LineSet448.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate449 = createNode("Coordinate");
-Coordinate449.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766,-0.0801,0.0712,-0.0766]);
+Coordinate449.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766,-0.0889,0.0494,-0.1278]);
 LineSet448.coord = Coordinate449;
 
 //from r_talocrural to r_calcaneocuboid vertices 2
@@ -2346,13 +2369,14 @@ HAnimJoint438.children[0] = HAnimSegment439;
 HAnimJoint HAnimJoint451 = createNode("HAnimJoint");
 HAnimJoint451.name = "r_talocalcaneonavicular";
 HAnimJoint451.DEF = "hanim_r_talocalcaneonavicular";
+HAnimJoint451.center = new SFVec3f(new float[-0.0781,0.0283,-0.097]);
 HAnimJoint451.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint451.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment452 = createNode("HAnimSegment");
 HAnimSegment452.name = "r_navicular";
 HAnimSegment452.DEF = "hanim_r_navicular";
 Transform Transform453 = createNode("Transform");
-Transform453.translation = new SFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Transform453.translation = new SFVec3f(new float[-0.0781,0.0283,-0.097]);
 Transform Transform454 = createNode("Transform");
 //Empty Transform
 Shape Shape455 = createNode("Shape");
@@ -2373,10 +2397,10 @@ Shape Shape456 = createNode("Shape");
 LineSet LineSet457 = createNode("LineSet");
 LineSet457.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate458 = createNode("Coordinate");
-Coordinate458.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Coordinate458.point = new MFVec3f(new float[-0.0781,0.0283,-0.097,-0.0672,0.0235,-0.0835]);
 LineSet457.coord = Coordinate458;
 
-//from r_talocalcaneonavicular to r_cuneonavicular_1 vertices 1
+//from r_talocalcaneonavicular to r_cuneonavicular_1 vertices 2
 ColorRGBA ColorRGBA459 = createNode("ColorRGBA");
 ColorRGBA459.USE = "HAnimSegmentLineColorRGBA";
 LineSet457.color = ColorRGBA459;
@@ -2389,10 +2413,10 @@ Shape Shape460 = createNode("Shape");
 LineSet LineSet461 = createNode("LineSet");
 LineSet461.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate462 = createNode("Coordinate");
-Coordinate462.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Coordinate462.point = new MFVec3f(new float[-0.0781,0.0283,-0.097,-0.0812,0.025,-0.0805]);
 LineSet461.coord = Coordinate462;
 
-//from r_talocalcaneonavicular to r_cuneonavicular_2 vertices 1
+//from r_talocalcaneonavicular to r_cuneonavicular_2 vertices 2
 ColorRGBA ColorRGBA463 = createNode("ColorRGBA");
 ColorRGBA463.USE = "HAnimSegmentLineColorRGBA";
 LineSet461.color = ColorRGBA463;
@@ -2405,10 +2429,10 @@ Shape Shape464 = createNode("Shape");
 LineSet LineSet465 = createNode("LineSet");
 LineSet465.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate466 = createNode("Coordinate");
-Coordinate466.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Coordinate466.point = new MFVec3f(new float[-0.0781,0.0283,-0.097,-0.0928,0.0248,-0.0821]);
 LineSet465.coord = Coordinate466;
 
-//from r_talocalcaneonavicular to r_cuneonavicular_3 vertices 1
+//from r_talocalcaneonavicular to r_cuneonavicular_3 vertices 2
 ColorRGBA ColorRGBA467 = createNode("ColorRGBA");
 ColorRGBA467.USE = "HAnimSegmentLineColorRGBA";
 LineSet465.color = ColorRGBA467;
@@ -2424,13 +2448,14 @@ HAnimJoint451.children[0] = HAnimSegment452;
 HAnimJoint HAnimJoint468 = createNode("HAnimJoint");
 HAnimJoint468.name = "r_cuneonavicular_1";
 HAnimJoint468.DEF = "hanim_r_cuneonavicular_1";
+HAnimJoint468.center = new SFVec3f(new float[-0.0672,0.0235,-0.0835]);
 HAnimJoint468.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint468.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment469 = createNode("HAnimSegment");
 HAnimSegment469.name = "r_cuneiform_1";
 HAnimSegment469.DEF = "hanim_r_cuneiform_1";
 Transform Transform470 = createNode("Transform");
-Transform470.translation = new SFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Transform470.translation = new SFVec3f(new float[-0.0672,0.0235,-0.0835]);
 Transform Transform471 = createNode("Transform");
 //Empty Transform
 Shape Shape472 = createNode("Shape");
@@ -2451,10 +2476,10 @@ Shape Shape473 = createNode("Shape");
 LineSet LineSet474 = createNode("LineSet");
 LineSet474.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate475 = createNode("Coordinate");
-Coordinate475.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Coordinate475.point = new MFVec3f(new float[-0.0672,0.0235,-0.0835,-0.0644,0.0147,-0.0577]);
 LineSet474.coord = Coordinate475;
 
-//from r_cuneonavicular_1 to r_tarsometatarsal_1 vertices 1
+//from r_cuneonavicular_1 to r_tarsometatarsal_1 vertices 2
 ColorRGBA ColorRGBA476 = createNode("ColorRGBA");
 ColorRGBA476.USE = "HAnimSegmentLineColorRGBA";
 LineSet474.color = ColorRGBA476;
@@ -2470,13 +2495,14 @@ HAnimJoint468.children[0] = HAnimSegment469;
 HAnimJoint HAnimJoint477 = createNode("HAnimJoint");
 HAnimJoint477.name = "r_tarsometatarsal_1";
 HAnimJoint477.DEF = "hanim_r_tarsometatarsal_1";
+HAnimJoint477.center = new SFVec3f(new float[-0.0644,0.0147,-0.0577]);
 HAnimJoint477.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint477.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment478 = createNode("HAnimSegment");
 HAnimSegment478.name = "r_metatarsal_1";
 HAnimSegment478.DEF = "hanim_r_metatarsal_1";
 Transform Transform479 = createNode("Transform");
-Transform479.translation = new SFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Transform479.translation = new SFVec3f(new float[-0.0644,0.0147,-0.0577]);
 Transform Transform480 = createNode("Transform");
 //Empty Transform
 Shape Shape481 = createNode("Shape");
@@ -2497,10 +2523,10 @@ Shape Shape482 = createNode("Shape");
 LineSet LineSet483 = createNode("LineSet");
 LineSet483.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate484 = createNode("Coordinate");
-Coordinate484.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Coordinate484.point = new MFVec3f(new float[-0.0644,0.0147,-0.0577,-0.0619,0.0059,-0.0083]);
 LineSet483.coord = Coordinate484;
 
-//from r_tarsometatarsal_1 to r_metatarsophalangeal_1 vertices 1
+//from r_tarsometatarsal_1 to r_metatarsophalangeal_1 vertices 2
 ColorRGBA ColorRGBA485 = createNode("ColorRGBA");
 ColorRGBA485.USE = "HAnimSegmentLineColorRGBA";
 LineSet483.color = ColorRGBA485;
@@ -2531,13 +2557,14 @@ HAnimJoint477.children[0] = HAnimSegment478;
 HAnimJoint HAnimJoint489 = createNode("HAnimJoint");
 HAnimJoint489.name = "r_metatarsophalangeal_1";
 HAnimJoint489.DEF = "hanim_r_metatarsophalangeal_1";
+HAnimJoint489.center = new SFVec3f(new float[-0.0619,0.0059,-0.0083]);
 HAnimJoint489.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint489.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment490 = createNode("HAnimSegment");
 HAnimSegment490.name = "r_tarsal_proximal_phalanx_1";
 HAnimSegment490.DEF = "hanim_r_tarsal_proximal_phalanx_1";
 Transform Transform491 = createNode("Transform");
-Transform491.translation = new SFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Transform491.translation = new SFVec3f(new float[-0.0619,0.0059,-0.0083]);
 Transform Transform492 = createNode("Transform");
 //Empty Transform
 Shape Shape493 = createNode("Shape");
@@ -2558,10 +2585,10 @@ Shape Shape494 = createNode("Shape");
 LineSet LineSet495 = createNode("LineSet");
 LineSet495.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate496 = createNode("Coordinate");
-Coordinate496.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Coordinate496.point = new MFVec3f(new float[-0.0619,0.0059,-0.0083,-0.0619,0.0059,-0.0083]);
 LineSet495.coord = Coordinate496;
 
-//from r_metatarsophalangeal_1 to r_tarsal_interphalangeal_1 vertices 1
+//from r_metatarsophalangeal_1 to r_tarsal_interphalangeal_1 vertices 2
 ColorRGBA ColorRGBA497 = createNode("ColorRGBA");
 ColorRGBA497.USE = "HAnimSegmentLineColorRGBA";
 LineSet495.color = ColorRGBA497;
@@ -2605,13 +2632,14 @@ HAnimJoint451.children[1] = HAnimJoint468;
 HAnimJoint HAnimJoint502 = createNode("HAnimJoint");
 HAnimJoint502.name = "r_cuneonavicular_2";
 HAnimJoint502.DEF = "hanim_r_cuneonavicular_2";
+HAnimJoint502.center = new SFVec3f(new float[-0.0812,0.025,-0.0805]);
 HAnimJoint502.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint502.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment503 = createNode("HAnimSegment");
 HAnimSegment503.name = "r_cuneiform_2";
 HAnimSegment503.DEF = "hanim_r_cuneiform_2";
 Transform Transform504 = createNode("Transform");
-Transform504.translation = new SFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Transform504.translation = new SFVec3f(new float[-0.0812,0.025,-0.0805]);
 Transform Transform505 = createNode("Transform");
 //Empty Transform
 Shape Shape506 = createNode("Shape");
@@ -2632,10 +2660,10 @@ Shape Shape507 = createNode("Shape");
 LineSet LineSet508 = createNode("LineSet");
 LineSet508.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate509 = createNode("Coordinate");
-Coordinate509.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Coordinate509.point = new MFVec3f(new float[-0.0812,0.025,-0.0805,-0.08,0.0175,-0.0608]);
 LineSet508.coord = Coordinate509;
 
-//from r_cuneonavicular_2 to r_tarsometatarsal_2 vertices 1
+//from r_cuneonavicular_2 to r_tarsometatarsal_2 vertices 2
 ColorRGBA ColorRGBA510 = createNode("ColorRGBA");
 ColorRGBA510.USE = "HAnimSegmentLineColorRGBA";
 LineSet508.color = ColorRGBA510;
@@ -2651,13 +2679,14 @@ HAnimJoint502.children[0] = HAnimSegment503;
 HAnimJoint HAnimJoint511 = createNode("HAnimJoint");
 HAnimJoint511.name = "r_tarsometatarsal_2";
 HAnimJoint511.DEF = "hanim_r_tarsometatarsal_2";
+HAnimJoint511.center = new SFVec3f(new float[-0.08,0.0175,-0.0608]);
 HAnimJoint511.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint511.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment512 = createNode("HAnimSegment");
 HAnimSegment512.name = "r_metatarsal_2";
 HAnimSegment512.DEF = "hanim_r_metatarsal_2";
 Transform Transform513 = createNode("Transform");
-Transform513.translation = new SFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Transform513.translation = new SFVec3f(new float[-0.08,0.0175,-0.0608]);
 Transform Transform514 = createNode("Transform");
 //Empty Transform
 Shape Shape515 = createNode("Shape");
@@ -2678,10 +2707,10 @@ Shape Shape516 = createNode("Shape");
 LineSet LineSet517 = createNode("LineSet");
 LineSet517.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate518 = createNode("Coordinate");
-Coordinate518.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Coordinate518.point = new MFVec3f(new float[-0.08,0.0175,-0.0608,-0.0823,0.0064,-0.004]);
 LineSet517.coord = Coordinate518;
 
-//from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 1
+//from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 2
 ColorRGBA ColorRGBA519 = createNode("ColorRGBA");
 ColorRGBA519.USE = "HAnimSegmentLineColorRGBA";
 LineSet517.color = ColorRGBA519;
@@ -2697,13 +2726,14 @@ HAnimJoint511.children[0] = HAnimSegment512;
 HAnimJoint HAnimJoint520 = createNode("HAnimJoint");
 HAnimJoint520.name = "r_metatarsophalangeal_2";
 HAnimJoint520.DEF = "hanim_r_metatarsophalangeal_2";
+HAnimJoint520.center = new SFVec3f(new float[-0.0823,0.0064,-0.004]);
 HAnimJoint520.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint520.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment521 = createNode("HAnimSegment");
 HAnimSegment521.name = "r_tarsal_proximal_phalanx_2";
 HAnimSegment521.DEF = "hanim_r_tarsal_proximal_phalanx_2";
 Transform Transform522 = createNode("Transform");
-Transform522.translation = new SFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Transform522.translation = new SFVec3f(new float[-0.0823,0.0064,-0.004]);
 Transform Transform523 = createNode("Transform");
 //Empty Transform
 Shape Shape524 = createNode("Shape");
@@ -2724,10 +2754,10 @@ Shape Shape525 = createNode("Shape");
 LineSet LineSet526 = createNode("LineSet");
 LineSet526.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate527 = createNode("Coordinate");
-Coordinate527.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Coordinate527.point = new MFVec3f(new float[-0.0823,0.0064,-0.004,-0.0841,0.0041,0.0121]);
 LineSet526.coord = Coordinate527;
 
-//from r_metatarsophalangeal_2 to r_tarsal_proximal_interphalangeal_2 vertices 1
+//from r_metatarsophalangeal_2 to r_tarsal_proximal_interphalangeal_2 vertices 2
 ColorRGBA ColorRGBA528 = createNode("ColorRGBA");
 ColorRGBA528.USE = "HAnimSegmentLineColorRGBA";
 LineSet526.color = ColorRGBA528;
@@ -2743,13 +2773,14 @@ HAnimJoint520.children[0] = HAnimSegment521;
 HAnimJoint HAnimJoint529 = createNode("HAnimJoint");
 HAnimJoint529.name = "r_tarsal_proximal_interphalangeal_2";
 HAnimJoint529.DEF = "hanim_r_tarsal_proximal_interphalangeal_2";
+HAnimJoint529.center = new SFVec3f(new float[-0.0841,0.0041,0.0121]);
 HAnimJoint529.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint529.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment530 = createNode("HAnimSegment");
 HAnimSegment530.name = "r_tarsal_middle_phalanx_2";
 HAnimSegment530.DEF = "hanim_r_tarsal_middle_phalanx_2";
 Transform Transform531 = createNode("Transform");
-Transform531.translation = new SFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Transform531.translation = new SFVec3f(new float[-0.0841,0.0041,0.0121]);
 Transform Transform532 = createNode("Transform");
 //Empty Transform
 Shape Shape533 = createNode("Shape");
@@ -2770,10 +2801,10 @@ Shape Shape534 = createNode("Shape");
 LineSet LineSet535 = createNode("LineSet");
 LineSet535.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate536 = createNode("Coordinate");
-Coordinate536.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Coordinate536.point = new MFVec3f(new float[-0.0841,0.0041,0.0121,-0.0841,0.0013,0.0216]);
 LineSet535.coord = Coordinate536;
 
-//from r_tarsal_proximal_interphalangeal_2 to r_tarsal_distal_interphalangeal_2 vertices 1
+//from r_tarsal_proximal_interphalangeal_2 to r_tarsal_distal_interphalangeal_2 vertices 2
 ColorRGBA ColorRGBA537 = createNode("ColorRGBA");
 ColorRGBA537.USE = "HAnimSegmentLineColorRGBA";
 LineSet535.color = ColorRGBA537;
@@ -2805,6 +2836,7 @@ HAnimJoint529.children[0] = HAnimSegment530;
 HAnimJoint HAnimJoint541 = createNode("HAnimJoint");
 HAnimJoint541.name = "r_tarsal_distal_interphalangeal_2";
 HAnimJoint541.DEF = "hanim_r_tarsal_distal_interphalangeal_2";
+HAnimJoint541.center = new SFVec3f(new float[-0.0841,0.0013,0.0216]);
 HAnimJoint541.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint541.llimit = new MFFloat(new float[0,0,0]);
 HAnimJoint529.children[1] = HAnimJoint541;
@@ -2820,13 +2852,14 @@ HAnimJoint451.children[2] = HAnimJoint502;
 HAnimJoint HAnimJoint542 = createNode("HAnimJoint");
 HAnimJoint542.name = "r_cuneonavicular_3";
 HAnimJoint542.DEF = "hanim_r_cuneonavicular_3";
+HAnimJoint542.center = new SFVec3f(new float[-0.0928,0.0248,-0.0821]);
 HAnimJoint542.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint542.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment543 = createNode("HAnimSegment");
 HAnimSegment543.name = "r_cuneiform_3";
 HAnimSegment543.DEF = "hanim_r_cuneiform_3";
 Transform Transform544 = createNode("Transform");
-Transform544.translation = new SFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Transform544.translation = new SFVec3f(new float[-0.0928,0.0248,-0.0821]);
 Transform Transform545 = createNode("Transform");
 //Empty Transform
 Shape Shape546 = createNode("Shape");
@@ -2847,10 +2880,10 @@ Shape Shape547 = createNode("Shape");
 LineSet LineSet548 = createNode("LineSet");
 LineSet548.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate549 = createNode("Coordinate");
-Coordinate549.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Coordinate549.point = new MFVec3f(new float[-0.0928,0.0248,-0.0821,-0.0841,0.0013,0.0216]);
 LineSet548.coord = Coordinate549;
 
-//from r_cuneonavicular_3 to r_tarsometatarsal_3 vertices 1
+//from r_cuneonavicular_3 to r_tarsometatarsal_3 vertices 2
 ColorRGBA ColorRGBA550 = createNode("ColorRGBA");
 ColorRGBA550.USE = "HAnimSegmentLineColorRGBA";
 LineSet548.color = ColorRGBA550;
@@ -2872,7 +2905,7 @@ HAnimSegment HAnimSegment552 = createNode("HAnimSegment");
 HAnimSegment552.name = "r_metatarsal_3";
 HAnimSegment552.DEF = "hanim_r_metatarsal_3";
 Transform Transform553 = createNode("Transform");
-Transform553.translation = new SFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Transform553.translation = new SFVec3f(new float[-0.0928,0.0248,-0.0821]);
 Transform Transform554 = createNode("Transform");
 //Empty Transform
 Shape Shape555 = createNode("Shape");
@@ -2893,7 +2926,7 @@ Shape Shape556 = createNode("Shape");
 LineSet LineSet557 = createNode("LineSet");
 LineSet557.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate558 = createNode("Coordinate");
-Coordinate558.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Coordinate558.point = new MFVec3f(new float[-0.0963,0.0065,-0.0065]);
 LineSet557.coord = Coordinate558;
 
 //from r_tarsometatarsal_3 to r_metatarsophalangeal_3 vertices 1
@@ -2912,13 +2945,14 @@ HAnimJoint551.children[0] = HAnimSegment552;
 HAnimJoint HAnimJoint560 = createNode("HAnimJoint");
 HAnimJoint560.name = "r_metatarsophalangeal_3";
 HAnimJoint560.DEF = "hanim_r_metatarsophalangeal_3";
+HAnimJoint560.center = new SFVec3f(new float[-0.0963,0.0065,-0.0065]);
 HAnimJoint560.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint560.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment561 = createNode("HAnimSegment");
 HAnimSegment561.name = "r_tarsal_proximal_phalanx_3";
 HAnimSegment561.DEF = "hanim_r_tarsal_proximal_phalanx_3";
 Transform Transform562 = createNode("Transform");
-Transform562.translation = new SFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Transform562.translation = new SFVec3f(new float[-0.0963,0.0065,-0.0065]);
 Transform Transform563 = createNode("Transform");
 //Empty Transform
 Shape Shape564 = createNode("Shape");
@@ -2939,10 +2973,10 @@ Shape Shape565 = createNode("Shape");
 LineSet LineSet566 = createNode("LineSet");
 LineSet566.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate567 = createNode("Coordinate");
-Coordinate567.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Coordinate567.point = new MFVec3f(new float[-0.0963,0.0065,-0.0065,-0.0987,0.0034,0.0086]);
 LineSet566.coord = Coordinate567;
 
-//from r_metatarsophalangeal_3 to r_tarsal_proximal_interphalangeal_3 vertices 1
+//from r_metatarsophalangeal_3 to r_tarsal_proximal_interphalangeal_3 vertices 2
 ColorRGBA ColorRGBA568 = createNode("ColorRGBA");
 ColorRGBA568.USE = "HAnimSegmentLineColorRGBA";
 LineSet566.color = ColorRGBA568;
@@ -2958,13 +2992,14 @@ HAnimJoint560.children[0] = HAnimSegment561;
 HAnimJoint HAnimJoint569 = createNode("HAnimJoint");
 HAnimJoint569.name = "r_tarsal_proximal_interphalangeal_3";
 HAnimJoint569.DEF = "hanim_r_tarsal_proximal_interphalangeal_3";
+HAnimJoint569.center = new SFVec3f(new float[-0.0987,0.0034,0.0086]);
 HAnimJoint569.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint569.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment570 = createNode("HAnimSegment");
 HAnimSegment570.name = "r_tarsal_middle_phalanx_3";
 HAnimSegment570.DEF = "hanim_r_tarsal_middle_phalanx_3";
 Transform Transform571 = createNode("Transform");
-Transform571.translation = new SFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Transform571.translation = new SFVec3f(new float[-0.0987,0.0034,0.0086]);
 Transform Transform572 = createNode("Transform");
 //Empty Transform
 Shape Shape573 = createNode("Shape");
@@ -2985,10 +3020,10 @@ Shape Shape574 = createNode("Shape");
 LineSet LineSet575 = createNode("LineSet");
 LineSet575.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate576 = createNode("Coordinate");
-Coordinate576.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Coordinate576.point = new MFVec3f(new float[-0.0987,0.0034,0.0086,-0.1002,0.0013,0.0178]);
 LineSet575.coord = Coordinate576;
 
-//from r_tarsal_proximal_interphalangeal_3 to r_tarsal_distal_interphalangeal_3 vertices 1
+//from r_tarsal_proximal_interphalangeal_3 to r_tarsal_distal_interphalangeal_3 vertices 2
 ColorRGBA ColorRGBA577 = createNode("ColorRGBA");
 ColorRGBA577.USE = "HAnimSegmentLineColorRGBA";
 LineSet575.color = ColorRGBA577;
@@ -3019,6 +3054,7 @@ HAnimJoint569.children[0] = HAnimSegment570;
 HAnimJoint HAnimJoint581 = createNode("HAnimJoint");
 HAnimJoint581.name = "r_tarsal_distal_interphalangeal_3";
 HAnimJoint581.DEF = "hanim_r_tarsal_distal_interphalangeal_3";
+HAnimJoint581.center = new SFVec3f(new float[-0.1002,0.0013,0.0178]);
 HAnimJoint581.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint581.llimit = new MFFloat(new float[0,0,0]);
 HAnimJoint569.children[1] = HAnimJoint581;
@@ -3036,13 +3072,14 @@ HAnimJoint438.children[1] = HAnimJoint451;
 HAnimJoint HAnimJoint582 = createNode("HAnimJoint");
 HAnimJoint582.name = "r_calcaneocuboid";
 HAnimJoint582.DEF = "hanim_r_calcaneocuboid";
+HAnimJoint582.center = new SFVec3f(new float[-0.0889,0.0494,-0.1278]);
 HAnimJoint582.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint582.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment583 = createNode("HAnimSegment");
 HAnimSegment583.name = "r_calcaneus";
 HAnimSegment583.DEF = "hanim_r_calcaneus";
 Transform Transform584 = createNode("Transform");
-Transform584.translation = new SFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Transform584.translation = new SFVec3f(new float[-0.0889,0.0494,-0.1278]);
 Transform Transform585 = createNode("Transform");
 //Empty Transform
 Shape Shape586 = createNode("Shape");
@@ -3063,10 +3100,10 @@ Shape Shape587 = createNode("Shape");
 LineSet LineSet588 = createNode("LineSet");
 LineSet588.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate589 = createNode("Coordinate");
-Coordinate589.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Coordinate589.point = new MFVec3f(new float[-0.0889,0.0494,-0.1278,-0.1105,0.0267,-0.0998]);
 LineSet588.coord = Coordinate589;
 
-//from r_calcaneocuboid to r_transversetarsal vertices 1
+//from r_calcaneocuboid to r_transversetarsal vertices 2
 ColorRGBA ColorRGBA590 = createNode("ColorRGBA");
 ColorRGBA590.USE = "HAnimSegmentLineColorRGBA";
 LineSet588.color = ColorRGBA590;
@@ -3082,13 +3119,14 @@ HAnimJoint582.children[0] = HAnimSegment583;
 HAnimJoint HAnimJoint591 = createNode("HAnimJoint");
 HAnimJoint591.name = "r_transversetarsal";
 HAnimJoint591.DEF = "hanim_r_transversetarsal";
+HAnimJoint591.center = new SFVec3f(new float[-0.1105,0.0267,-0.0998]);
 HAnimJoint591.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint591.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment592 = createNode("HAnimSegment");
 HAnimSegment592.name = "r_cuboid";
 HAnimSegment592.DEF = "hanim_r_cuboid";
 Transform Transform593 = createNode("Transform");
-Transform593.translation = new SFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Transform593.translation = new SFVec3f(new float[-0.1105,0.0267,-0.0998]);
 Transform Transform594 = createNode("Transform");
 //Empty Transform
 Shape Shape595 = createNode("Shape");
@@ -3109,10 +3147,10 @@ Shape Shape596 = createNode("Shape");
 LineSet LineSet597 = createNode("LineSet");
 LineSet597.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate598 = createNode("Coordinate");
-Coordinate598.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Coordinate598.point = new MFVec3f(new float[-0.1105,0.0267,-0.0998,-0.1063,0.016,-0.0634]);
 LineSet597.coord = Coordinate598;
 
-//from r_transversetarsal to r_tarsometatarsal_4 vertices 1
+//from r_transversetarsal to r_tarsometatarsal_4 vertices 2
 ColorRGBA ColorRGBA599 = createNode("ColorRGBA");
 ColorRGBA599.USE = "HAnimSegmentLineColorRGBA";
 LineSet597.color = ColorRGBA599;
@@ -3125,10 +3163,10 @@ Shape Shape600 = createNode("Shape");
 LineSet LineSet601 = createNode("LineSet");
 LineSet601.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate602 = createNode("Coordinate");
-Coordinate602.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Coordinate602.point = new MFVec3f(new float[-0.1105,0.0267,-0.0998,-0.1206,0.0124,-0.0671]);
 LineSet601.coord = Coordinate602;
 
-//from r_transversetarsal to r_tarsometatarsal_5 vertices 1
+//from r_transversetarsal to r_tarsometatarsal_5 vertices 2
 ColorRGBA ColorRGBA603 = createNode("ColorRGBA");
 ColorRGBA603.USE = "HAnimSegmentLineColorRGBA";
 LineSet601.color = ColorRGBA603;
@@ -3144,13 +3182,14 @@ HAnimJoint591.children[0] = HAnimSegment592;
 HAnimJoint HAnimJoint604 = createNode("HAnimJoint");
 HAnimJoint604.name = "r_tarsometatarsal_4";
 HAnimJoint604.DEF = "hanim_r_tarsometatarsal_4";
+HAnimJoint604.center = new SFVec3f(new float[-0.1063,0.016,-0.0634]);
 HAnimJoint604.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint604.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment605 = createNode("HAnimSegment");
 HAnimSegment605.name = "r_metatarsal_4";
 HAnimSegment605.DEF = "hanim_r_metatarsal_4";
 Transform Transform606 = createNode("Transform");
-Transform606.translation = new SFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Transform606.translation = new SFVec3f(new float[-0.1063,0.016,-0.0634]);
 Transform Transform607 = createNode("Transform");
 //Empty Transform
 Shape Shape608 = createNode("Shape");
@@ -3171,10 +3210,10 @@ Shape Shape609 = createNode("Shape");
 LineSet LineSet610 = createNode("LineSet");
 LineSet610.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate611 = createNode("Coordinate");
-Coordinate611.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Coordinate611.point = new MFVec3f(new float[-0.1063,0.016,-0.0634,-0.1097,0.0058,-0.0107]);
 LineSet610.coord = Coordinate611;
 
-//from r_tarsometatarsal_4 to r_metatarsophalangeal_4 vertices 1
+//from r_tarsometatarsal_4 to r_metatarsophalangeal_4 vertices 2
 ColorRGBA ColorRGBA612 = createNode("ColorRGBA");
 ColorRGBA612.USE = "HAnimSegmentLineColorRGBA";
 LineSet610.color = ColorRGBA612;
@@ -3190,13 +3229,14 @@ HAnimJoint604.children[0] = HAnimSegment605;
 HAnimJoint HAnimJoint613 = createNode("HAnimJoint");
 HAnimJoint613.name = "r_metatarsophalangeal_4";
 HAnimJoint613.DEF = "hanim_r_metatarsophalangeal_4";
+HAnimJoint613.center = new SFVec3f(new float[-0.1097,0.0058,-0.0107]);
 HAnimJoint613.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint613.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment614 = createNode("HAnimSegment");
 HAnimSegment614.name = "r_tarsal_proximal_phalanx_4";
 HAnimSegment614.DEF = "hanim_r_tarsal_proximal_phalanx_4";
 Transform Transform615 = createNode("Transform");
-Transform615.translation = new SFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Transform615.translation = new SFVec3f(new float[-0.1097,0.0058,-0.0107]);
 Transform Transform616 = createNode("Transform");
 //Empty Transform
 Shape Shape617 = createNode("Shape");
@@ -3217,10 +3257,10 @@ Shape Shape618 = createNode("Shape");
 LineSet LineSet619 = createNode("LineSet");
 LineSet619.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate620 = createNode("Coordinate");
-Coordinate620.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Coordinate620.point = new MFVec3f(new float[-0.1097,0.0058,-0.0107,-0.114,0.0037,0.0044]);
 LineSet619.coord = Coordinate620;
 
-//from r_metatarsophalangeal_4 to r_tarsal_proximal_interphalangeal_4 vertices 1
+//from r_metatarsophalangeal_4 to r_tarsal_proximal_interphalangeal_4 vertices 2
 ColorRGBA ColorRGBA621 = createNode("ColorRGBA");
 ColorRGBA621.USE = "HAnimSegmentLineColorRGBA";
 LineSet619.color = ColorRGBA621;
@@ -3236,13 +3276,14 @@ HAnimJoint613.children[0] = HAnimSegment614;
 HAnimJoint HAnimJoint622 = createNode("HAnimJoint");
 HAnimJoint622.name = "r_tarsal_proximal_interphalangeal_4";
 HAnimJoint622.DEF = "hanim_r_tarsal_proximal_interphalangeal_4";
+HAnimJoint622.center = new SFVec3f(new float[-0.114,0.0037,0.0044]);
 HAnimJoint622.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint622.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment623 = createNode("HAnimSegment");
 HAnimSegment623.name = "r_tarsal_middle_phalanx_4";
 HAnimSegment623.DEF = "hanim_r_tarsal_middle_phalanx_4";
 Transform Transform624 = createNode("Transform");
-Transform624.translation = new SFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Transform624.translation = new SFVec3f(new float[-0.114,0.0037,0.0044]);
 Transform Transform625 = createNode("Transform");
 //Empty Transform
 Shape Shape626 = createNode("Shape");
@@ -3263,10 +3304,10 @@ Shape Shape627 = createNode("Shape");
 LineSet LineSet628 = createNode("LineSet");
 LineSet628.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate629 = createNode("Coordinate");
-Coordinate629.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Coordinate629.point = new MFVec3f(new float[-0.114,0.0037,0.0044,-0.1155,0.0008,0.0118]);
 LineSet628.coord = Coordinate629;
 
-//from r_tarsal_proximal_interphalangeal_4 to r_tarsal_distal_interphalangeal_4 vertices 1
+//from r_tarsal_proximal_interphalangeal_4 to r_tarsal_distal_interphalangeal_4 vertices 2
 ColorRGBA ColorRGBA630 = createNode("ColorRGBA");
 ColorRGBA630.USE = "HAnimSegmentLineColorRGBA";
 LineSet628.color = ColorRGBA630;
@@ -3297,6 +3338,7 @@ HAnimJoint622.children[0] = HAnimSegment623;
 HAnimJoint HAnimJoint634 = createNode("HAnimJoint");
 HAnimJoint634.name = "r_tarsal_distal_interphalangeal_4";
 HAnimJoint634.DEF = "hanim_r_tarsal_distal_interphalangeal_4";
+HAnimJoint634.center = new SFVec3f(new float[-0.1155,0.0008,0.0118]);
 HAnimJoint634.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint634.llimit = new MFFloat(new float[0,0,0]);
 HAnimJoint622.children[1] = HAnimJoint634;
@@ -3310,13 +3352,14 @@ HAnimJoint591.children[1] = HAnimJoint604;
 HAnimJoint HAnimJoint635 = createNode("HAnimJoint");
 HAnimJoint635.name = "r_tarsometatarsal_5";
 HAnimJoint635.DEF = "hanim_r_tarsometatarsal_5";
+HAnimJoint635.center = new SFVec3f(new float[-0.1206,0.0124,-0.0671]);
 HAnimJoint635.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint635.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment636 = createNode("HAnimSegment");
 HAnimSegment636.name = "r_metatarsal_5";
 HAnimSegment636.DEF = "hanim_r_metatarsal_5";
 Transform Transform637 = createNode("Transform");
-Transform637.translation = new SFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Transform637.translation = new SFVec3f(new float[-0.1206,0.0124,-0.0671]);
 Transform Transform638 = createNode("Transform");
 //Empty Transform
 Shape Shape639 = createNode("Shape");
@@ -3337,10 +3380,10 @@ Shape Shape640 = createNode("Shape");
 LineSet LineSet641 = createNode("LineSet");
 LineSet641.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate642 = createNode("Coordinate");
-Coordinate642.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Coordinate642.point = new MFVec3f(new float[-0.1206,0.0124,-0.0671,-0.1239,0.0051,-0.0153]);
 LineSet641.coord = Coordinate642;
 
-//from r_tarsometatarsal_5 to r_metatarsophalangeal_5 vertices 1
+//from r_tarsometatarsal_5 to r_metatarsophalangeal_5 vertices 2
 ColorRGBA ColorRGBA643 = createNode("ColorRGBA");
 ColorRGBA643.USE = "HAnimSegmentLineColorRGBA";
 LineSet641.color = ColorRGBA643;
@@ -3371,13 +3414,14 @@ HAnimJoint635.children[0] = HAnimSegment636;
 HAnimJoint HAnimJoint647 = createNode("HAnimJoint");
 HAnimJoint647.name = "r_metatarsophalangeal_5";
 HAnimJoint647.DEF = "hanim_r_metatarsophalangeal_5";
+HAnimJoint647.center = new SFVec3f(new float[-0.1239,0.0051,-0.0153]);
 HAnimJoint647.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint647.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment648 = createNode("HAnimSegment");
 HAnimSegment648.name = "r_tarsal_proximal_phalanx_5";
 HAnimSegment648.DEF = "hanim_r_tarsal_proximal_phalanx_5";
 Transform Transform649 = createNode("Transform");
-Transform649.translation = new SFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Transform649.translation = new SFVec3f(new float[-0.1239,0.0051,-0.0153]);
 Transform Transform650 = createNode("Transform");
 //Empty Transform
 Shape Shape651 = createNode("Shape");
@@ -3398,10 +3442,10 @@ Shape Shape652 = createNode("Shape");
 LineSet LineSet653 = createNode("LineSet");
 LineSet653.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate654 = createNode("Coordinate");
-Coordinate654.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Coordinate654.point = new MFVec3f(new float[-0.1239,0.0051,-0.0153,-0.1262,0.0023,-0.0077]);
 LineSet653.coord = Coordinate654;
 
-//from r_metatarsophalangeal_5 to r_tarsal_proximal_interphalangeal_5 vertices 1
+//from r_metatarsophalangeal_5 to r_tarsal_proximal_interphalangeal_5 vertices 2
 ColorRGBA ColorRGBA655 = createNode("ColorRGBA");
 ColorRGBA655.USE = "HAnimSegmentLineColorRGBA";
 LineSet653.color = ColorRGBA655;
@@ -3417,13 +3461,14 @@ HAnimJoint647.children[0] = HAnimSegment648;
 HAnimJoint HAnimJoint656 = createNode("HAnimJoint");
 HAnimJoint656.name = "r_tarsal_proximal_interphalangeal_5";
 HAnimJoint656.DEF = "hanim_r_tarsal_proximal_interphalangeal_5";
+HAnimJoint656.center = new SFVec3f(new float[-0.1262,0.0023,-0.0077]);
 HAnimJoint656.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint656.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment657 = createNode("HAnimSegment");
 HAnimSegment657.name = "r_tarsal_middle_phalanx_5";
 HAnimSegment657.DEF = "hanim_r_tarsal_middle_phalanx_5";
 Transform Transform658 = createNode("Transform");
-Transform658.translation = new SFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Transform658.translation = new SFVec3f(new float[-0.1262,0.0023,-0.0077]);
 Transform Transform659 = createNode("Transform");
 //Empty Transform
 Shape Shape660 = createNode("Shape");
@@ -3444,10 +3489,10 @@ Shape Shape661 = createNode("Shape");
 LineSet LineSet662 = createNode("LineSet");
 LineSet662.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate663 = createNode("Coordinate");
-Coordinate663.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766]);
+Coordinate663.point = new MFVec3f(new float[-0.1262,0.0023,-0.0077,-0.1271,0,0]);
 LineSet662.coord = Coordinate663;
 
-//from r_tarsal_proximal_interphalangeal_5 to r_tarsal_distal_interphalangeal_5 vertices 1
+//from r_tarsal_proximal_interphalangeal_5 to r_tarsal_distal_interphalangeal_5 vertices 2
 ColorRGBA ColorRGBA664 = createNode("ColorRGBA");
 ColorRGBA664.USE = "HAnimSegmentLineColorRGBA";
 LineSet662.color = ColorRGBA664;
@@ -3478,6 +3523,7 @@ HAnimJoint656.children[0] = HAnimSegment657;
 HAnimJoint HAnimJoint668 = createNode("HAnimJoint");
 HAnimJoint668.name = "r_tarsal_distal_interphalangeal_5";
 HAnimJoint668.DEF = "hanim_r_tarsal_distal_interphalangeal_5";
+HAnimJoint668.center = new SFVec3f(new float[-0.1271,0,0]);
 HAnimJoint668.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint668.llimit = new MFFloat(new float[0,0,0]);
 HAnimJoint656.children[1] = HAnimJoint668;
@@ -5270,7 +5316,7 @@ Shape Shape1009 = createNode("Shape");
 LineSet LineSet1010 = createNode("LineSet");
 LineSet1010.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate1011 = createNode("Coordinate");
-Coordinate1011.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0044,1.6209,0.0236]);
+Coordinate1011.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0503,1.4157,-0.0689]);
 LineSet1010.coord = Coordinate1011;
 
 //from skullbase to l_eyelid_joint vertices 2
@@ -5286,7 +5332,7 @@ Shape Shape1013 = createNode("Shape");
 LineSet LineSet1014 = createNode("LineSet");
 LineSet1014.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate1015 = createNode("Coordinate");
-Coordinate1015.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0044,1.6209,0.0236]);
+Coordinate1015.point = new MFVec3f(new float[0.0044,1.6209,0.0236,-0.0507,1.4157,-0.0689]);
 LineSet1014.coord = Coordinate1015;
 
 //from skullbase to r_eyelid_joint vertices 2
@@ -5302,7 +5348,7 @@ Shape Shape1017 = createNode("Shape");
 LineSet LineSet1018 = createNode("LineSet");
 LineSet1018.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate1019 = createNode("Coordinate");
-Coordinate1019.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0044,1.6209,0.0236]);
+Coordinate1019.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0479,1.3963,-0.0188]);
 LineSet1018.coord = Coordinate1019;
 
 //from skullbase to l_eyeball_joint vertices 2
@@ -5318,7 +5364,7 @@ Shape Shape1021 = createNode("Shape");
 LineSet LineSet1022 = createNode("LineSet");
 LineSet1022.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate1023 = createNode("Coordinate");
-Coordinate1023.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0044,1.6209,0.0236]);
+Coordinate1023.point = new MFVec3f(new float[0.0044,1.6209,0.0236,-0.0483,1.3963,-0.0188]);
 LineSet1022.coord = Coordinate1023;
 
 //from skullbase to r_eyeball_joint vertices 2
@@ -5334,7 +5380,7 @@ Shape Shape1025 = createNode("Shape");
 LineSet LineSet1026 = createNode("LineSet");
 LineSet1026.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate1027 = createNode("Coordinate");
-Coordinate1027.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0044,1.6209,0.0236]);
+Coordinate1027.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0216,1.4053,0.0051]);
 LineSet1026.coord = Coordinate1027;
 
 //from skullbase to l_eyebrow_joint vertices 2
@@ -5350,7 +5396,7 @@ Shape Shape1029 = createNode("Shape");
 LineSet LineSet1030 = createNode("LineSet");
 LineSet1030.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate1031 = createNode("Coordinate");
-Coordinate1031.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0044,1.6209,0.0236]);
+Coordinate1031.point = new MFVec3f(new float[0.0044,1.6209,0.0236,-0.0219,1.4053,0.0051]);
 LineSet1030.coord = Coordinate1031;
 
 //from skullbase to r_eyebrow_joint vertices 2
@@ -5366,7 +5412,7 @@ Shape Shape1033 = createNode("Shape");
 LineSet LineSet1034 = createNode("LineSet");
 LineSet1034.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate1035 = createNode("Coordinate");
-Coordinate1035.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.0044,1.6209,0.0236]);
+Coordinate1035.point = new MFVec3f(new float[0.0044,1.6209,0.0236,-0.0002,1.3043,-0.0865]);
 LineSet1034.coord = Coordinate1035;
 
 //from skullbase to temporomandibular vertices 2
@@ -5448,6 +5494,7 @@ HAnimJoint1004.children[0] = HAnimSegment1005;
 HAnimJoint HAnimJoint1049 = createNode("HAnimJoint");
 HAnimJoint1049.name = "l_eyelid_joint";
 HAnimJoint1049.DEF = "hanim_l_eyelid_joint";
+HAnimJoint1049.center = new SFVec3f(new float[0.0503,1.4157,-0.0689]);
 HAnimJoint1049.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint1049.llimit = new MFFloat(new float[0,0,0]);
 HAnimJoint1004.children[1] = HAnimJoint1049;
@@ -5455,6 +5502,7 @@ HAnimJoint1004.children[1] = HAnimJoint1049;
 HAnimJoint HAnimJoint1050 = createNode("HAnimJoint");
 HAnimJoint1050.name = "r_eyelid_joint";
 HAnimJoint1050.DEF = "hanim_r_eyelid_joint";
+HAnimJoint1050.center = new SFVec3f(new float[-0.0507,1.4157,-0.0689]);
 HAnimJoint1050.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint1050.llimit = new MFFloat(new float[0,0,0]);
 HAnimJoint1004.children[2] = HAnimJoint1050;
@@ -5462,6 +5510,7 @@ HAnimJoint1004.children[2] = HAnimJoint1050;
 HAnimJoint HAnimJoint1051 = createNode("HAnimJoint");
 HAnimJoint1051.name = "l_eyeball_joint";
 HAnimJoint1051.DEF = "hanim_l_eyeball_joint";
+HAnimJoint1051.center = new SFVec3f(new float[0.0479,1.3963,-0.0188]);
 HAnimJoint1051.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint1051.llimit = new MFFloat(new float[0,0,0]);
 HAnimJoint1004.children[3] = HAnimJoint1051;
@@ -5469,6 +5518,7 @@ HAnimJoint1004.children[3] = HAnimJoint1051;
 HAnimJoint HAnimJoint1052 = createNode("HAnimJoint");
 HAnimJoint1052.name = "r_eyeball_joint";
 HAnimJoint1052.DEF = "hanim_r_eyeball_joint";
+HAnimJoint1052.center = new SFVec3f(new float[-0.0483,1.3963,-0.0188]);
 HAnimJoint1052.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint1052.llimit = new MFFloat(new float[0,0,0]);
 HAnimJoint1004.children[4] = HAnimJoint1052;
@@ -5476,6 +5526,7 @@ HAnimJoint1004.children[4] = HAnimJoint1052;
 HAnimJoint HAnimJoint1053 = createNode("HAnimJoint");
 HAnimJoint1053.name = "l_eyebrow_joint";
 HAnimJoint1053.DEF = "hanim_l_eyebrow_joint";
+HAnimJoint1053.center = new SFVec3f(new float[0.0216,1.4053,0.0051]);
 HAnimJoint1053.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint1053.llimit = new MFFloat(new float[0,0,0]);
 HAnimJoint1004.children[5] = HAnimJoint1053;
@@ -5483,6 +5534,7 @@ HAnimJoint1004.children[5] = HAnimJoint1053;
 HAnimJoint HAnimJoint1054 = createNode("HAnimJoint");
 HAnimJoint1054.name = "r_eyebrow_joint";
 HAnimJoint1054.DEF = "hanim_r_eyebrow_joint";
+HAnimJoint1054.center = new SFVec3f(new float[-0.0219,1.4053,0.0051]);
 HAnimJoint1054.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint1054.llimit = new MFFloat(new float[0,0,0]);
 HAnimJoint1004.children[6] = HAnimJoint1054;
@@ -5490,6 +5542,7 @@ HAnimJoint1004.children[6] = HAnimJoint1054;
 HAnimJoint HAnimJoint1055 = createNode("HAnimJoint");
 HAnimJoint1055.name = "temporomandibular";
 HAnimJoint1055.DEF = "hanim_temporomandibular";
+HAnimJoint1055.center = new SFVec3f(new float[-0.0002,1.3043,-0.0865]);
 HAnimJoint1055.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint1055.llimit = new MFFloat(new float[0,0,0]);
 HAnimJoint1004.children[7] = HAnimJoint1055;
@@ -5844,7 +5897,7 @@ Shape Shape1118 = createNode("Shape");
 LineSet LineSet1119 = createNode("LineSet");
 LineSet1119.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate1120 = createNode("Coordinate");
-Coordinate1120.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,0.1984,0.8663,-0.0583]);
+Coordinate1120.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,0.1811,0.6975,-0.0826]);
 LineSet1119.coord = Coordinate1120;
 
 //from l_radiocarpal to l_midcarpal_1 vertices 2
@@ -5860,7 +5913,7 @@ Shape Shape1122 = createNode("Shape");
 LineSet LineSet1123 = createNode("LineSet");
 LineSet1123.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate1124 = createNode("Coordinate");
-Coordinate1124.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,0.1984,0.8663,-0.0583]);
+Coordinate1124.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,0.1811,0.6984,-0.0935]);
 LineSet1123.coord = Coordinate1124;
 
 //from l_radiocarpal to l_midcarpal_2 vertices 2
@@ -5876,7 +5929,7 @@ Shape Shape1126 = createNode("Shape");
 LineSet LineSet1127 = createNode("LineSet");
 LineSet1127.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate1128 = createNode("Coordinate");
-Coordinate1128.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,0.1984,0.8663,-0.0583]);
+Coordinate1128.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,0.1809,0.7,-0.1067]);
 LineSet1127.coord = Coordinate1128;
 
 //from l_radiocarpal to l_midcarpal_3 vertices 2
@@ -5892,7 +5945,7 @@ Shape Shape1130 = createNode("Shape");
 LineSet LineSet1131 = createNode("LineSet");
 LineSet1131.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate1132 = createNode("Coordinate");
-Coordinate1132.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,0.1984,0.8663,-0.0583]);
+Coordinate1132.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,0.1809,0.6973,-0.1276]);
 LineSet1131.coord = Coordinate1132;
 
 //from l_radiocarpal to l_midcarpal_4_5 vertices 2
@@ -5911,13 +5964,14 @@ HAnimJoint1113.children[0] = HAnimSegment1114;
 HAnimJoint HAnimJoint1134 = createNode("HAnimJoint");
 HAnimJoint1134.name = "l_midcarpal_1";
 HAnimJoint1134.DEF = "hanim_l_midcarpal_1";
+HAnimJoint1134.center = new SFVec3f(new float[0.1811,0.6975,-0.0826]);
 HAnimJoint1134.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint1134.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment1135 = createNode("HAnimSegment");
 HAnimSegment1135.name = "l_trapezium";
 HAnimSegment1135.DEF = "hanim_l_trapezium";
 Transform Transform1136 = createNode("Transform");
-Transform1136.translation = new SFVec3f(new float[0.1984,0.8663,-0.0583]);
+Transform1136.translation = new SFVec3f(new float[0.1811,0.6975,-0.0826]);
 Transform Transform1137 = createNode("Transform");
 //Empty Transform
 Shape Shape1138 = createNode("Shape");
@@ -5938,10 +5992,10 @@ Shape Shape1139 = createNode("Shape");
 LineSet LineSet1140 = createNode("LineSet");
 LineSet1140.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate1141 = createNode("Coordinate");
-Coordinate1141.point = new MFVec3f(new float[0.1924,0.8472,-0.0534]);
+Coordinate1141.point = new MFVec3f(new float[0.1811,0.6975,-0.0826,0.1924,0.8472,-0.0534]);
 LineSet1140.coord = Coordinate1141;
 
-//from l_midcarpal_1 to l_carpometacarpal_1 vertices 1
+//from l_midcarpal_1 to l_carpometacarpal_1 vertices 2
 ColorRGBA ColorRGBA1142 = createNode("ColorRGBA");
 ColorRGBA1142.USE = "HAnimSegmentLineColorRGBA";
 LineSet1140.color = ColorRGBA1142;
@@ -6080,13 +6134,14 @@ HAnimJoint1113.children[1] = HAnimJoint1134;
 HAnimJoint HAnimJoint1165 = createNode("HAnimJoint");
 HAnimJoint1165.name = "l_midcarpal_2";
 HAnimJoint1165.DEF = "hanim_l_midcarpal_2";
+HAnimJoint1165.center = new SFVec3f(new float[0.1811,0.6984,-0.0935]);
 HAnimJoint1165.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint1165.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment1166 = createNode("HAnimSegment");
 HAnimSegment1166.name = "l_trapezoid";
 HAnimSegment1166.DEF = "hanim_l_trapezoid";
 Transform Transform1167 = createNode("Transform");
-Transform1167.translation = new SFVec3f(new float[0.1955,0.8159,0.0464]);
+Transform1167.translation = new SFVec3f(new float[0.1811,0.6984,-0.0935]);
 Transform Transform1168 = createNode("Transform");
 //Empty Transform
 Shape Shape1169 = createNode("Shape");
@@ -6107,10 +6162,10 @@ Shape Shape1170 = createNode("Shape");
 LineSet LineSet1171 = createNode("LineSet");
 LineSet1171.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate1172 = createNode("Coordinate");
-Coordinate1172.point = new MFVec3f(new float[0.1983,0.8024,-0.028]);
+Coordinate1172.point = new MFVec3f(new float[0.1811,0.6984,-0.0935,0.1983,0.8024,-0.028]);
 LineSet1171.coord = Coordinate1172;
 
-//from l_midcarpal_2 to l_carpometacarpal_2 vertices 1
+//from l_midcarpal_2 to l_carpometacarpal_2 vertices 2
 ColorRGBA ColorRGBA1173 = createNode("ColorRGBA");
 ColorRGBA1173.USE = "HAnimSegmentLineColorRGBA";
 LineSet1171.color = ColorRGBA1173;
@@ -6330,13 +6385,14 @@ HAnimJoint1113.children[2] = HAnimJoint1165;
 HAnimJoint HAnimJoint1211 = createNode("HAnimJoint");
 HAnimJoint1211.name = "l_midcarpal_3";
 HAnimJoint1211.DEF = "hanim_l_midcarpal_3";
+HAnimJoint1211.center = new SFVec3f(new float[0.1809,0.7,-0.1067]);
 HAnimJoint1211.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint1211.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment1212 = createNode("HAnimSegment");
 HAnimSegment1212.name = "l_capitate";
 HAnimSegment1212.DEF = "hanim_l_capitate";
 Transform Transform1213 = createNode("Transform");
-Transform1213.translation = new SFVec3f(new float[0.2028,0.7139,-0.0236]);
+Transform1213.translation = new SFVec3f(new float[0.1809,0.7,-0.1067]);
 Transform Transform1214 = createNode("Transform");
 //Empty Transform
 Shape Shape1215 = createNode("Shape");
@@ -6357,10 +6413,10 @@ Shape Shape1216 = createNode("Shape");
 LineSet LineSet1217 = createNode("LineSet");
 LineSet1217.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate1218 = createNode("Coordinate");
-Coordinate1218.point = new MFVec3f(new float[0.1987,0.8029,-0.053]);
+Coordinate1218.point = new MFVec3f(new float[0.1809,0.7,-0.1067,0.1987,0.8029,-0.053]);
 LineSet1217.coord = Coordinate1218;
 
-//from l_midcarpal_3 to l_carpometacarpal_3 vertices 1
+//from l_midcarpal_3 to l_carpometacarpal_3 vertices 2
 ColorRGBA ColorRGBA1219 = createNode("ColorRGBA");
 ColorRGBA1219.USE = "HAnimSegmentLineColorRGBA";
 LineSet1217.color = ColorRGBA1219;
@@ -6563,13 +6619,14 @@ HAnimJoint1113.children[3] = HAnimJoint1211;
 HAnimJoint HAnimJoint1254 = createNode("HAnimJoint");
 HAnimJoint1254.name = "l_midcarpal_4_5";
 HAnimJoint1254.DEF = "hanim_l_midcarpal_4_5";
+HAnimJoint1254.center = new SFVec3f(new float[0.1809,0.6973,-0.1276]);
 HAnimJoint1254.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint1254.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment1255 = createNode("HAnimSegment");
 HAnimSegment1255.name = "l_hamate";
 HAnimSegment1255.DEF = "hanim_l_hamate";
 Transform Transform1256 = createNode("Transform");
-Transform1256.translation = new SFVec3f(new float[0.2026,0.7011,-0.0494]);
+Transform1256.translation = new SFVec3f(new float[0.1809,0.6973,-0.1276]);
 Transform Transform1257 = createNode("Transform");
 //Empty Transform
 Shape Shape1258 = createNode("Shape");
@@ -6590,10 +6647,10 @@ Shape Shape1259 = createNode("Shape");
 LineSet LineSet1260 = createNode("LineSet");
 LineSet1260.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate1261 = createNode("Coordinate");
-Coordinate1261.point = new MFVec3f(new float[0.1956,0.8019,-0.0794]);
+Coordinate1261.point = new MFVec3f(new float[0.1809,0.6973,-0.1276,0.1956,0.8019,-0.0794]);
 LineSet1260.coord = Coordinate1261;
 
-//from l_midcarpal_4_5 to l_carpometacarpal_4 vertices 1
+//from l_midcarpal_4_5 to l_carpometacarpal_4 vertices 2
 ColorRGBA ColorRGBA1262 = createNode("ColorRGBA");
 ColorRGBA1262.USE = "HAnimSegmentLineColorRGBA";
 LineSet1260.color = ColorRGBA1262;
@@ -6606,10 +6663,10 @@ Shape Shape1263 = createNode("Shape");
 LineSet LineSet1264 = createNode("LineSet");
 LineSet1264.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate1265 = createNode("Coordinate");
-Coordinate1265.point = new MFVec3f(new float[0.1925,0.8066,-0.1036]);
+Coordinate1265.point = new MFVec3f(new float[0.1809,0.6973,-0.1276,0.1925,0.8066,-0.1036]);
 LineSet1264.coord = Coordinate1265;
 
-//from l_midcarpal_4_5 to l_carpometacarpal_5 vertices 1
+//from l_midcarpal_4_5 to l_carpometacarpal_5 vertices 2
 ColorRGBA ColorRGBA1266 = createNode("ColorRGBA");
 ColorRGBA1266.USE = "HAnimSegmentLineColorRGBA";
 LineSet1264.color = ColorRGBA1266;
@@ -7324,7 +7381,7 @@ Shape Shape1394 = createNode("Shape");
 LineSet LineSet1395 = createNode("LineSet");
 LineSet1395.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate1396 = createNode("Coordinate");
-Coordinate1396.point = new MFVec3f(new float[-0.1959,0.8694,-0.0521,-0.1959,0.8694,-0.0521]);
+Coordinate1396.point = new MFVec3f(new float[-0.1959,0.8694,-0.0521,-0.1811,0.6975,-0.0826]);
 LineSet1395.coord = Coordinate1396;
 
 //from r_radiocarpal to r_midcarpal_1 vertices 2
@@ -7340,7 +7397,7 @@ Shape Shape1398 = createNode("Shape");
 LineSet LineSet1399 = createNode("LineSet");
 LineSet1399.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate1400 = createNode("Coordinate");
-Coordinate1400.point = new MFVec3f(new float[-0.1959,0.8694,-0.0521,-0.1959,0.8694,-0.0521]);
+Coordinate1400.point = new MFVec3f(new float[-0.1959,0.8694,-0.0521,-0.1811,0.6984,-0.0935]);
 LineSet1399.coord = Coordinate1400;
 
 //from r_radiocarpal to r_midcarpal_2 vertices 2
@@ -7356,7 +7413,7 @@ Shape Shape1402 = createNode("Shape");
 LineSet LineSet1403 = createNode("LineSet");
 LineSet1403.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate1404 = createNode("Coordinate");
-Coordinate1404.point = new MFVec3f(new float[-0.1959,0.8694,-0.0521,-0.1959,0.8694,-0.0521]);
+Coordinate1404.point = new MFVec3f(new float[-0.1959,0.8694,-0.0521,-0.1809,0.7,-0.1067]);
 LineSet1403.coord = Coordinate1404;
 
 //from r_radiocarpal to r_midcarpal_3 vertices 2
@@ -7372,7 +7429,7 @@ Shape Shape1406 = createNode("Shape");
 LineSet LineSet1407 = createNode("LineSet");
 LineSet1407.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate1408 = createNode("Coordinate");
-Coordinate1408.point = new MFVec3f(new float[-0.1959,0.8694,-0.0521,-0.1959,0.8694,-0.0521]);
+Coordinate1408.point = new MFVec3f(new float[-0.1959,0.8694,-0.0521,-0.1809,0.6973,-0.1276]);
 LineSet1407.coord = Coordinate1408;
 
 //from r_radiocarpal to r_midcarpal_4_5 vertices 2
@@ -7391,13 +7448,14 @@ HAnimJoint1389.children[0] = HAnimSegment1390;
 HAnimJoint HAnimJoint1410 = createNode("HAnimJoint");
 HAnimJoint1410.name = "r_midcarpal_1";
 HAnimJoint1410.DEF = "hanim_r_midcarpal_1";
+HAnimJoint1410.center = new SFVec3f(new float[-0.1811,0.6975,-0.0826]);
 HAnimJoint1410.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint1410.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment1411 = createNode("HAnimSegment");
 HAnimSegment1411.name = "r_trapezium";
 HAnimSegment1411.DEF = "hanim_r_trapezium";
 Transform Transform1412 = createNode("Transform");
-Transform1412.translation = new SFVec3f(new float[-0.1959,0.8694,-0.0521]);
+Transform1412.translation = new SFVec3f(new float[-0.1811,0.6975,-0.0826]);
 Transform Transform1413 = createNode("Transform");
 //Empty Transform
 Shape Shape1414 = createNode("Shape");
@@ -7418,10 +7476,10 @@ Shape Shape1415 = createNode("Shape");
 LineSet LineSet1416 = createNode("LineSet");
 LineSet1416.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate1417 = createNode("Coordinate");
-Coordinate1417.point = new MFVec3f(new float[-0.1899,0.8502,-0.0473]);
+Coordinate1417.point = new MFVec3f(new float[-0.1811,0.6975,-0.0826,-0.1899,0.8502,-0.0473]);
 LineSet1416.coord = Coordinate1417;
 
-//from r_midcarpal_1 to r_carpometacarpal_1 vertices 1
+//from r_midcarpal_1 to r_carpometacarpal_1 vertices 2
 ColorRGBA ColorRGBA1418 = createNode("ColorRGBA");
 ColorRGBA1418.USE = "HAnimSegmentLineColorRGBA";
 LineSet1416.color = ColorRGBA1418;
@@ -7560,13 +7618,14 @@ HAnimJoint1389.children[1] = HAnimJoint1410;
 HAnimJoint HAnimJoint1441 = createNode("HAnimJoint");
 HAnimJoint1441.name = "r_midcarpal_2";
 HAnimJoint1441.DEF = "hanim_r_midcarpal_2";
+HAnimJoint1441.center = new SFVec3f(new float[-0.1811,0.6984,-0.0935]);
 HAnimJoint1441.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint1441.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment1442 = createNode("HAnimSegment");
 HAnimSegment1442.name = "r_trapezoid";
 HAnimSegment1442.DEF = "hanim_r_trapezoid";
 Transform Transform1443 = createNode("Transform");
-Transform1443.translation = new SFVec3f(new float[-0.1864,0.819,0.0506]);
+Transform1443.translation = new SFVec3f(new float[-0.1811,0.6984,-0.0935]);
 Transform Transform1444 = createNode("Transform");
 //Empty Transform
 Shape Shape1445 = createNode("Shape");
@@ -7587,10 +7646,10 @@ Shape Shape1446 = createNode("Shape");
 LineSet LineSet1447 = createNode("LineSet");
 LineSet1447.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate1448 = createNode("Coordinate");
-Coordinate1448.point = new MFVec3f(new float[-0.1961,0.8055,-0.0218]);
+Coordinate1448.point = new MFVec3f(new float[-0.1811,0.6984,-0.0935,-0.1961,0.8055,-0.0218]);
 LineSet1447.coord = Coordinate1448;
 
-//from r_midcarpal_2 to r_carpometacarpal_2 vertices 1
+//from r_midcarpal_2 to r_carpometacarpal_2 vertices 2
 ColorRGBA ColorRGBA1449 = createNode("ColorRGBA");
 ColorRGBA1449.USE = "HAnimSegmentLineColorRGBA";
 LineSet1447.color = ColorRGBA1449;
@@ -7810,13 +7869,14 @@ HAnimJoint1389.children[2] = HAnimJoint1441;
 HAnimJoint HAnimJoint1487 = createNode("HAnimJoint");
 HAnimJoint1487.name = "r_midcarpal_3";
 HAnimJoint1487.DEF = "hanim_r_midcarpal_3";
+HAnimJoint1487.center = new SFVec3f(new float[-0.1809,0.7,-0.1067]);
 HAnimJoint1487.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint1487.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment1488 = createNode("HAnimSegment");
 HAnimSegment1488.name = "r_capitate";
 HAnimSegment1488.DEF = "hanim_r_capitate";
 Transform Transform1489 = createNode("Transform");
-Transform1489.translation = new SFVec3f(new float[-0.1945,0.7169,-0.0173]);
+Transform1489.translation = new SFVec3f(new float[-0.1809,0.7,-0.1067]);
 Transform Transform1490 = createNode("Transform");
 //Empty Transform
 Shape Shape1491 = createNode("Shape");
@@ -7837,10 +7897,10 @@ Shape Shape1492 = createNode("Shape");
 LineSet LineSet1493 = createNode("LineSet");
 LineSet1493.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate1494 = createNode("Coordinate");
-Coordinate1494.point = new MFVec3f(new float[-0.1972,0.806,-0.0468]);
+Coordinate1494.point = new MFVec3f(new float[-0.1809,0.7,-0.1067,-0.1972,0.806,-0.0468]);
 LineSet1493.coord = Coordinate1494;
 
-//from r_midcarpal_3 to r_carpometacarpal_3 vertices 1
+//from r_midcarpal_3 to r_carpometacarpal_3 vertices 2
 ColorRGBA ColorRGBA1495 = createNode("ColorRGBA");
 ColorRGBA1495.USE = "HAnimSegmentLineColorRGBA";
 LineSet1493.color = ColorRGBA1495;
@@ -8043,13 +8103,14 @@ HAnimJoint1389.children[3] = HAnimJoint1487;
 HAnimJoint HAnimJoint1530 = createNode("HAnimJoint");
 HAnimJoint1530.name = "r_midcarpal_4_5";
 HAnimJoint1530.DEF = "hanim_r_midcarpal_4_5";
+HAnimJoint1530.center = new SFVec3f(new float[-0.1809,0.6973,-0.1276]);
 HAnimJoint1530.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint1530.llimit = new MFFloat(new float[0,0,0]);
 HAnimSegment HAnimSegment1531 = createNode("HAnimSegment");
 HAnimSegment1531.name = "r_hamate";
 HAnimSegment1531.DEF = "hanim_r_hamate";
 Transform Transform1532 = createNode("Transform");
-Transform1532.translation = new SFVec3f(new float[-0.1939,0.7042,-0.0432]);
+Transform1532.translation = new SFVec3f(new float[-0.1809,0.6973,-0.1276]);
 Transform Transform1533 = createNode("Transform");
 //Empty Transform
 Shape Shape1534 = createNode("Shape");
@@ -8070,10 +8131,10 @@ Shape Shape1535 = createNode("Shape");
 LineSet LineSet1536 = createNode("LineSet");
 LineSet1536.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate1537 = createNode("Coordinate");
-Coordinate1537.point = new MFVec3f(new float[-0.1951,0.8049,-0.0732]);
+Coordinate1537.point = new MFVec3f(new float[-0.1809,0.6973,-0.1276,-0.1951,0.8049,-0.0732]);
 LineSet1536.coord = Coordinate1537;
 
-//from r_midcarpal_4_5 to r_carpometacarpal_4 vertices 1
+//from r_midcarpal_4_5 to r_carpometacarpal_4 vertices 2
 ColorRGBA ColorRGBA1538 = createNode("ColorRGBA");
 ColorRGBA1538.USE = "HAnimSegmentLineColorRGBA";
 LineSet1536.color = ColorRGBA1538;
@@ -8086,10 +8147,10 @@ Shape Shape1539 = createNode("Shape");
 LineSet LineSet1540 = createNode("LineSet");
 LineSet1540.vertexCount = new MFInt32(new int[2]);
 Coordinate Coordinate1541 = createNode("Coordinate");
-Coordinate1541.point = new MFVec3f(new float[-0.1926,0.8096,-0.0975]);
+Coordinate1541.point = new MFVec3f(new float[-0.1809,0.6973,-0.1276,-0.1926,0.8096,-0.0975]);
 LineSet1540.coord = Coordinate1541;
 
-//from r_midcarpal_4_5 to r_carpometacarpal_5 vertices 1
+//from r_midcarpal_4_5 to r_carpometacarpal_5 vertices 2
 ColorRGBA ColorRGBA1542 = createNode("ColorRGBA");
 ColorRGBA1542.USE = "HAnimSegmentLineColorRGBA";
 LineSet1540.color = ColorRGBA1542;

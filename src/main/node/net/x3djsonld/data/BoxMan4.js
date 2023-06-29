@@ -176,7 +176,7 @@ BoxMan4.prototype = {
 	this.WorldInfo_3_34_info = new autoclass.MFString(new autoclass.MFString("\"(C) 2000 James Smith - james@vapourtech.com\" \"http://www.vapourtech.com/team/james/boxman.wrl\" \"Blaxxun compatibility by Tu Lam - TuL@seamless-solutions.com\""));
 
 	/** Large attribute array: HAnimHumanoid DEF='boxman_Humanoid' info field, scene-graph level=3, element #36, 10 total values */
-	this.boxman_Humanoid_3_36_info = new autoclass.MFString(new autoclass.MFString("\"authorName=James Smith\" \"authorEmail=james@vapourtech.com\" \"copyright=(C) 2000 James Smith - james@vapourtech.com\" \"humanoidVersion=1.0\""));
+	this.boxman_Humanoid_3_36_info = new autoclass.MFString(new autoclass.MFString("\"authorName=James Smith\" \"authorEmail=james@vapourtech.com\" \"copyright=(C) 2000 James Smith - james@vapourtech.com\" \"humanoidVersion=2.0\""));
 
 	/** Large attribute array: HAnimJoint DEF='boxman_r_hip' skinCoordIndex field, scene-graph level=5, element #63, 32 total numbers */
 	this.boxman_r_hip_5_63_skinCoordIndex = new autoclass.MFInt32(java.newArray("int", [80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111]));
