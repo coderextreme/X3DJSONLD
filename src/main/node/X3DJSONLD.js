@@ -15,12 +15,15 @@ if (typeof require !== 'function') {
 }
 
 var xmldom = require('@xmldom/xmldom');
-var DOMSerializer = require('./DOMSerializer.js');
+if (typeof DOMSerializer === 'undefined') {
+	var DOMSerializer = require('./DOMSerializer.js');
+}
 var http = require("http");
 var https = require("https");
 // TODO this causes node-java 0.12.2 to hang
 // var runAndSend = require("./runAndSend");
 var fs = require('fs');
+
 
 if (typeof load !== 'function') {
 	fs = require("fs");
@@ -666,7 +669,7 @@ serializeDOM : function(json, element, appendDocType) {
 	if (typeof element === 'string') {
 		xml += element;
 	} else if (typeof element !== 'undefined') {
-		xml += new DOMSerializer().serializeToString(element);
+		xml += new DOMSerializer().serializeToString(json, element);
 	}
 
 	xml = this.fixXML(xml);
@@ -705,4 +708,8 @@ setDocument : function(doc) {
 	document = doc;
 }
 }
+
+var Browser = X3DJSONLD.Browser;
+window.X3DJSONLD = X3DJSONLD;
+
 module.exports = X3DJSONLD;
