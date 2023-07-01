@@ -5,9 +5,12 @@ if (typeof Ajv2000 === 'undefined') {
 		Ajv2020 = window.Ajv2020;
 	}
 }
+var fullFormats;
 if (typeof addFromats === 'undefined') {
 	if (typeof window === 'undefined') {
 		var addFormats = require("ajv-formats")
+	} else {
+		addFormats = window.addFormats;
 		fullFormats = window.fullFormats;
 	}
 		
