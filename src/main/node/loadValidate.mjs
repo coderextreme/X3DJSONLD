@@ -1,17 +1,19 @@
 // JSON Schema imports
-import { Ajv } from "./ajv/dist/ajv.js";
-import { formatsPlugin } from "./ajv-formats/dist/index.js";
-import { localize } from "./ajv-i18n/messages/index.js";
+import Ajv from "../node/ajv/dist/ajv.js";
+import { formatsPlugin } from "../node/ajv-formats/dist/index.js";
+import { localize } from "../node/ajv-i18n/messages/index.js";
 
 const ajv = new Ajv({ allErrors: true, verbose: true}); // options can be passed, e.g. {allErrors: true}
 addFormats(ajv, [ "uri", "uri-reference"]);
 
 // import JSONSchema from "../schema/x3d-4.0-JSONSchema.json" assert { type: "json" };
 // const JSONSchema = require("../schema/x3d-4.0-JSONSchema.json")
-const JSONSchema = "http://localhost:3000/src/main/schema/x3d-4.0-JSONSchema.json";
+const JSONSchema = "https://coderextreme.net/X3DJSONLD/src/main/schema/x3d-4.0-JSONSchema.json";
 
 var fs = require('fs');
 //
+
+import X3DJSONLD from "./X3DJSONLD.mjs";
 
 X3DJSONLD = Object.assign(X3DJSONLD, { processURLs : function(urls) { return urls; }});
 var selectObjectFromJSObj = X3DJSONLD.selectObjectFromJSObj;
@@ -25,7 +27,7 @@ export default function doLoadValidate() {
 }
 
 doLoadValidate.prototype = {
-doValidate : function(json, validated_version, file, X3DJSONLD, success, failure, e) {
+doValidate : function(json, validated_version, file, success, failure, e) {
 	var retval = false;
 	if (e) {
 		if (typeof alert === 'function') {
@@ -96,7 +98,7 @@ validateSchema : function(ajv, schemajson, version) {
       return validated_version;
 },
 
-loadSchema : function(json, file, X3DJSONLD, success, failure) {
+loadSchema : function(json, file, success, failure) {
 	var versions = { "4.0":true }
 	var version = json.X3D["@version"];
 	if (!versions[version]) {
@@ -113,18 +115,18 @@ loadSchema : function(json, file, X3DJSONLD, success, failure) {
 		      if (typeof $ === 'function' && typeof $.getJSON === 'function') {
 			      $.getJSON(JSONSchema, function(schemajson) {
 				      validated_version = vs(ajv, schemajson, version);
-				      this.doValidate(json, validated_version, file, X3DJSONLD, success, undefined);
+				      this.doValidate(json, validated_version, file, success, undefined);
 				}).fail(function(e) {
-				   this.doValidate(json, validated_version, file, X3DJSONLD, undefined, failure, e);
+				   this.doValidate(json, validated_version, file, undefined, failure, e);
 				});
 		      } else if (typeof fs === 'object') {
 				var schema = fs.readFileSync("../schema/x3d-"+version+"-JSONSchema.json");
 				var schemajson = JSON.parse(schema.toString());
 				validated_version = vs(ajv, schemajson, version);
-				this.doValidate(json, validated_version, file, X3DJSONLD, success, undefined);
+				this.doValidate(json, validated_version, file, success, undefined);
 		      }
 	} else {
-	      this.doValidate(json, validated_version, file, X3DJSONLD, success, undefined);
+	      this.doValidate(json, validated_version, file, success, undefined);
 	}
 },
 
@@ -134,12 +136,11 @@ loadSchema : function(json, file, X3DJSONLD, success, failure) {
 	 * jsobj - the JavaScript object to convert to XML and DOM.
 	 * path - the path of the JSON file.
 	 * NS - a namespace for X_ITE (optional) -- stripped out.
-	 * X3DJSONLD -- X3DJSONLD
 	 * callback -- returns the element whose scene children to append or insert into the DOM.
 	 */
-loadX3DJS : function(DOMImplementation, jsobj, path, NS, X3DJSONLD, callback) {
+loadX3DJS : function(DOMImplementation, jsobj, path, NS, callback) {
 	X3DJSONLD.x3djsonNS = NS;
-	this.loadSchema(jsobj, path, X3DJSONLD, function() {
+	this.loadSchema(jsobj, path, function() {
 		var child, xml;
 		[ child, xml ] = X3DJSONLD.loadJsonIntoXml(DOMImplementation, jsobj, path);
 		callback(child, xml);
@@ -162,7 +163,7 @@ loadX3DJS : function(DOMImplementation, jsobj, path, NS, X3DJSONLD, callback) {
 	 * returns element loaded, followed by xml
 	 */
 replaceX3DJSON : function(parent, json, url, NS, next) {
-	this.loadX3DJS(DOMImplementation, json, url, NS, X3DJSONLD, function(child, xml) {
+	this.loadX3DJS(DOMImplementation, json, url, NS, function(child, xml) {
 		if (child != null) {
 			while (parent.firstChild) {
 			    parent.removeChild(parent.firstChild);
