@@ -6,8 +6,9 @@ process.argv.shift();
 process.argv.shift();
 
 var convertJSON = require("./convertJSON.js");
+console.log(convertJSON.convertJSON);
 
-convertJSON([
+convertJSON.convertJSON([
 	{ 
 	serializer : "./JavaSerializer.js",
 	folder : "../java/net/coderextreme/",

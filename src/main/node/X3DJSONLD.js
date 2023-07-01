@@ -18,6 +18,9 @@ var xmldom = require('@xmldom/xmldom');
 if (typeof DOMSerializer === 'undefined') {
 	var DOMSerializer = require('./DOMSerializer.js');
 }
+if (typeof DOMSerializer === 'undefined') {
+	DOMSerializer = window.DOMSerializer;
+}
 var http = require("http");
 var https = require("https");
 // TODO this causes node-java 0.12.2 to hang
@@ -671,7 +674,11 @@ serializeDOM : function(json, element, appendDocType) {
 	if (typeof element === 'string') {
 		xml += element;
 	} else if (typeof element !== 'undefined') {
-		xml += new DOMSerializer().serializeToString(json, element);
+		if (typeof DOMSerializer === 'undefined') {
+			DOMSerializer = window.DOMSerializer;
+		}
+		var domserial = new DOMSerializer();
+		xml += domserial.serializeToString(json, element);
 	}
 
 	xml = this.fixXML(xml);

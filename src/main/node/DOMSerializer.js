@@ -1,21 +1,16 @@
 "use strict";
 
-if (typeof require !== 'function') {
-	window.require = function() {
-		console.log("Redefinining require DOMSerializer");
-		return undefined;
-	};
-} else {
-	const { DOMParser, XMLSerializer } = require('@xmldom/xmldom');
+if (typeof xmldom === 'undefined') {
+	var xmldom = require('@xmldom/xmldom');
+	var XMLSerializer = new xmldom.XMLSerializer();
 }
 
-function DOMSerializer() {};
-DOMSerializer.prototype = {
-	serializeToString : function (json, element) {
+function DOMSerializer() {
+	this.serializeToString = function (json, element) {
 		var str = this.serializeDOM(json, element, true);
 		return str;
 	},
-	fixXML : function(xmlstr) {
+	this.fixXML = function(xmlstr) {
 		var original = xmlstr;
 		// get rid of self-closing tags
 		xmlstr = xmlstr.replace(/(<)([A-Za-z0-9]+)([^>]*)\/>/g, "$1$2$3></$2>");
@@ -35,19 +30,13 @@ DOMSerializer.prototype = {
 		// xmlstr = xmlstr.replace(/\\"/g, '\\\\\\"');
 		return xmlstr;
 	},
-	serializeDOM : function(json, element, appendDocType) {
+	this.serializeDOM = function(json, element, appendDocType) {
 		var version = "4.0";
 		var encoding = "UTF-8";
-		/*
 		if (typeof json !== 'undefined') {
-			console.log(json.length);
-			for (let attr in json.attributes) {
-				console.log(json.attributes[attr]);
-			}
-			version = json["X3D"]["version"];
-			encoding = json["X3D"]["encoding"];
+			version = json.X3D["@version"];
+			encoding = json.X3D["encoding"];
 		}
-		*/
 		var xml = '';
 		if (appendDocType) {
 			xml += '<?xml version="1.0" encoding="'+encoding+'"?>\n';
@@ -59,4 +48,10 @@ DOMSerializer.prototype = {
 	}
 }
 
-module.exports = DOMSerializer;
+if (typeof window !== 'undefined') {
+	window.DOMSerializer = DOMSerializer;
+}
+
+if (typeof module === 'object')  {
+	module.exports = DOMSerializer;
+}

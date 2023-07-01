@@ -4,8 +4,11 @@ if (typeof PROTOS === 'undefined') {
 
 X3DJSONLD = window.X3DJSONLD;
 
-var loadValidator = new loadValidate();
-window.loadValidator = loadValidator;
+
+var xmldom = require('@xmldom/xmldom');
+if (typeof xmldom !== 'undefined') {
+	var DOMImplementation = new xmldom.DOMImplementation();
+}
 //  X3DJSONLD.setProcessURLs(function() {}); // do modify URLs in GUI
 
 // https://stackoverflow.com/questions/1043339/javascript-for-detecting-browser-language-preference
@@ -165,7 +168,7 @@ if (typeof mapToMethod !== 'undefined') {
 
 window.loadX3DJS_X3DOM = function (selector, DOMImplementation, jsobj, path, NS, callback) {
 	X3DJSONLD.x3djsonNS = NS;
-	loadValidator.loadSchema(jsobj, path, function() {
+	loadSchema(jsobj, path, function() {
 		var doc = document.querySelector(selector);
 		if (doc && doc.hasRuntime && doc.runtime.ready) {
 			var child = doc.runtime.createX3DFromJS(jsobj, path);
@@ -180,7 +183,7 @@ window.loadX3DJS_X3DOM = function (selector, DOMImplementation, jsobj, path, NS,
 
 window.loadX3DJS_X_ITE = function loadX3DJS_X_ITE(selector, DOMImplementation, jsobj, path, NS, callback) {
 	X3DJSONLD.x3djsonNS = NS;
-	loadValidator.loadSchema(jsobj, path, function() {
+	loadSchema(jsobj, path, function() {
 		X3D(function() {
 			if (typeof X3D.getBrowser !== 'undefined') {
 				var browser = X3D.getBrowser(selector);
@@ -202,7 +205,7 @@ window.loadX3DJS_X_ITE = function loadX3DJS_X_ITE(selector, DOMImplementation, j
 
 function convertJsonToXml(json, next, path) {
 	var NS = $('#namespace option:selected').text();
-	loadValidator.loadX3DJS(document.implementation, json, path, NS, function(element, xml) {
+	loadX3DJS(document.implementation, json, path, NS, function(element, xml) {
 		next(xml);
 	}); // does not load path
 }
@@ -225,7 +228,7 @@ function loadProtoX3D(scripts, selector, json, url) {
 	alert("JSON isn't valid "+ e);
    }
     var NS = $('#namespace option:selected').text();
-    replaceX3DJSON(selector, json, url, NS, function(child, xml) {
+    window.replaceX3DJSON(selector, json, url, NS, function(child, xml) {
 	    if (child != null) {
 			try {
 			    load_X_ITE_JS(json, "#x_itejson");
@@ -291,7 +294,7 @@ function appendInline(element, url, xmlDoc, next) {
 			console.error("Perhaps you need to include the PrototypeExpander.js?");
 		}
 		// must validate here because we call an inner method.
-		loadValidator.loadSchema(json, url, function() {
+		loadSchema(json, url, function() {
 			X3DJSONLD.ConvertToX3DOM(xmlDoc, json["X3D"]["Scene"], "Scene", element, url);
 			next(element);
 		}, function(e) {
@@ -647,7 +650,7 @@ window.validator = function validator() {
 		var data = $("#json").val();
 		if (data.startsWith("http")) {
 			$.getJSON(data, function(json) {
-				loadValidator.loadSchema(json, "<unknown>", function() {
+				loadSchema(json, "<unknown>", function() {
 					alert("Valid or user clicked OK");
 				}, function(e) {
 					alert(e);
@@ -655,7 +658,7 @@ window.validator = function validator() {
 			});
 		} else {
 			var json = JSON.parse(data);
-			loadValidator.loadSchema(json, "<unknown>", function() {
+			loadSchema(json, "<unknown>", function() {
 				alert("Valid or user clicked OK");
 			}, function(e) {
 				alert(e);
