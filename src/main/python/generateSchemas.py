@@ -28,7 +28,7 @@ import os
 #
 #Usage to validate an X3D JSON file (python script found online next to generateSchemas.py):
 #
-#python3 validate.py < X3D_JSON_file_name.json
+#python validate.py < X3D_JSON_file_name.json
 #
 #So you can drop the JSON schema entirely with python, if you wish, AFAICT right now.  This possibly would be advantageous to an x3d.py JSON "typeless" loader.
 #
@@ -47,11 +47,11 @@ import os
 #be sure to make backups, fork my repository, if you run the generateSchemas.py script.   The products are already checked in, so there's no real reason to run it!
 
 # create python script for validing draft-07 JSON schemas
-# os.system(f'cat  ../schema/draft-07-JSONSchema.json | python3 -m fastjsonschema > draft07.py')
+# os.system(f'cat  ../schema/draft-07-JSONSchema.json | python -m fastjsonschema > draft07.py')
 # validate draft-07 schema against draft-07.py
 # os.system(f'echo "import sys\nimport json\nimport draft07\n\ndraft07.validate_http___json_schema_org_draft_07_schema(json.loads(sys.stdin.read()))\n" > validate07.py')
 # validate draft-07 against draft-07
-# os.system(f'python3 validate07.py < ../schema/draft-07-JSONSchema.json')
+# os.system(f'python validate07.py < ../schema/draft-07-JSONSchema.json')
 
 # generates X3D JSON schema from 5 different versions of X3DUOM.
 versions = ['3.0', '3.1', '3.2', '3.3', '4.0']
@@ -59,14 +59,14 @@ for version in versions:
     print(f"{version}")
     schemacodeversion = version.replace(".", "")
     # generate the version-based X3D JSON schema
-    os.system(f'python3 ../python/etgenerateJSONschema2020-12.py {version} < ../../specifications/X3dUnifiedObjectModel-{version}.xml | jsonlint > ../schema/x3d-{version}-JSONSchema.json')
+    os.system(f'python ../python/etgenerateJSONschema2020-12.py {version} < ../../specifications/X3dUnifiedObjectModel-{version}.xml | jsonlint > ../schema/x3d-{version}-JSONSchema.json')
     # generate the python code for version-based validation of X3D JSON
-    #os.system(f'python3 -m fastjsonschema > schemaparser{schemacodeversion}.py < ../schema/x3d-{version}-JSONSchema.json')
+    #os.system(f'python -m fastjsonschema > schemaparser{schemacodeversion}.py < ../schema/x3d-{version}-JSONSchema.json')
     # validate an X3D JSON schema version against draft07.py
-    #os.system(f'python3 validate07.py < ../schema/x3d-{version}-JSONSchema.json')
+    #os.system(f'python validate07.py < ../schema/x3d-{version}-JSONSchema.json')
     # create a python script for validating this version
     #os.system(f'echo "import sys\nimport json\nimport schemaparser{schemacodeversion}\n\ntry:\n\tschemaparser{schemacodeversion}.validate(json.loads(sys.stdin.read()))\nexcept:\n\tprint(\'Invalid\')" > validate{schemacodeversion}.py')
 
 # run testjschon.py
 # print("testjschon.py")
-# os.system(f'python3 testjschon.py')
+# os.system(f'python testjschon.py')
