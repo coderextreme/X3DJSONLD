@@ -64,26 +64,26 @@ public class CloudsProcedural4 {
         .addChild(new Background().setGroundColor(new MFColor0().getArray()).setSkyColor(new MFColor1().getArray()))
         .addChild(new DirectionalLight().setAmbientIntensity(1f).setDirection(new float[] {-1f,0f,0f}).setGlobal(true))
         .addChild(new Group().setDEF("Terrain")
-          .addChild(new Transform().setScale(new float[] {50f,50f,50f}).setTranslation(new float[] {25000f,0f,25000f})
+          .addChild(new Transform("Terrain").setScale(new float[] {50f,50f,50f}).setTranslation(new float[] {25000f,0f,25000f})
             .addChild(new Inline().setUrl(new MFString2().getArray())))
-          .addChild(new Transform().setRotation(new float[] {1f,0f,0f,1.57f}).setTranslation(new float[] {25000f,0f,25000f})
+          .addChild(new Transform("Terrain").setRotation(new float[] {1f,0f,0f,1.57f}).setTranslation(new float[] {25000f,0f,25000f})
             .addChild(new Shape()
               .setGeometry(new Rectangle2D().setSize(new float[] {77000f,55000f}))
               .setAppearance(new Appearance()
                 .setTexture(new ImageTexture().setUrl(new MFString3().getArray()))))))
         .addChild(new Group().setDEF("Placemarks")
-          .addChild(new Transform().setScale(new float[] {50f,50f,50f}).setTranslation(new float[] {45000f,30f,44000f})
+          .addChild(new Transform("Placemarks").setScale(new float[] {50f,50f,50f}).setTranslation(new float[] {45000f,30f,44000f})
             .addChild(new Inline().setUrl(new MFString4().getArray()))))
         .addChild(new Group().setDEF("Clouds")
-          .addChild(new Transform().setDEF("Cumulus"))
-          .addChild(new Transform().setDEF("Cirrus"))
-          .addChild(new Transform().setDEF("Fog"))
-          .addChild(new Script().setDEF("PixelScript").setDirectOutput(true)
-            .addField(new field().setType("SFNode").setName("Cumulus").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
+          .addChild(new Transform("Clouds").setDEF("Cumulus"))
+          .addChild(new Transform("Clouds").setDEF("Cirrus"))
+          .addChild(new Transform("Clouds").setDEF("Fog"))
+          .addChild(new Script("Clouds").setDEF("PixelScript").setDirectOutput(true)
+            .addField(new field("PixelScript").setType("SFNode").setName("Cumulus").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
               .addChild(new Transform().setUSE("Cumulus")))
-            .addField(new field().setType("SFNode").setName("Cirrus").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
+            .addField(new field("PixelScript").setType("SFNode").setName("Cirrus").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
               .addChild(new Transform().setUSE("Cirrus")))
-            .addField(new field().setType("SFNode").setName("Fog").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
+            .addField(new field("PixelScript").setType("SFNode").setName("Fog").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
             .setSourceCode("ecmascript:\n"+
 "\n"+
 "\n"+
@@ -465,7 +465,7 @@ public class CloudsProcedural4 {
 "\n"+
 "cirrus();\n"+
 "}"))
-          .addChild(new DirectionalLight().setAmbientIntensity(1f).setColor(new float[] {1f,0f,0f}).setDirection(new float[] {-1f,-1f,0f}).setGlobal(true))))      ;
+          .addChild(new DirectionalLight("Clouds").setAmbientIntensity(1f).setColor(new float[] {1f,0f,0f}).setDirection(new float[] {-1f,-1f,0f}).setGlobal(true))))      ;
     return X3D0;
     }
 protected class MFColor0 {

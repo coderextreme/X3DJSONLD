@@ -331,7 +331,7 @@ HelloWorldProgramOutput.prototype = {
     .addComments(" Test success: declarative statement createDeclarativeShapeTests() ")
     .addChild((new autoclass.Group("DeclarativeGroupExample"))
       .addChild((new autoclass.Shape())
-        .setValue((new autoclass.MetadataString("FindableMetadataStringTest")).setName("findThisNameValue").setValue(new autoclass.MFString("\"test case\"")))
+        .setMetadata((new autoclass.MetadataString("FindableMetadataStringTest")).setName("findThisNameValue").setValue(new autoclass.MFString("\"test case\"")))
         .setAppearance((new autoclass.Appearance("DeclarativeAppearanceExample"))
           .addComments(" DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance ")
           .setMaterial((new autoclass.ProtoInstance("MyMaterialModulator", "MaterialModulator"))))

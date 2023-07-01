@@ -38,6 +38,7 @@ var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); }
 var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4f = x3dom.fields.SFMatrix4f;
 var SFNode = x3dom.fields.SFNode;
+var SFRotation = x3dom.fields.SFRotation;
 var Quaternion = x3dom.fields.Quaternion;
 var SFString = String;
 var SFTime = Number;
@@ -66,9 +67,9 @@ if (typeof $ !== 'function') {
 }
 X3DJSON.nodeUtil = function(selector, node, field, value) {
 		if (typeof selector === 'undefined') {
-			selector = '';
+			selector = "";
 		} else {
-			selector = selector+' ';
+			selector = selector+" ";
 		}
 		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
@@ -216,7 +217,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json'][''] = function()
 		return value;
 	};
 	try {
-		this.timeSensor = X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_timeSensor');
+		this.timeSensor = X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_timeSensor");
 	} catch (e) {
 		console.log('Problems setting timeSensor '+e);
 		console.error('Problems setting timeSensor',e);
@@ -244,7 +245,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json'][''] = function()
 ecmascript:
 	this.initialize = function (){
 if(this.proxy.play==false){
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_timeSensor', 'stopTime', 1);
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_timeSensor", "stopTime", 1);
 }
 this.pause=!this.proxy.play;
 };
@@ -255,10 +256,10 @@ return;
 }
 block=true;
 if(v){
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_timeSensor', 'startTime', t);
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_timeSensor", "startTime", t);
 }
 else{
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_timeSensor', 'stopTime', t);
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_timeSensor", "stopTime", t);
 }
 if(v==false){
 this.pause=true;
@@ -275,12 +276,12 @@ return;
 }
 block=true;
 if(!v){
-t2=t-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_timeSensor', 'fraction_changed')*this.proxy.period;
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_timeSensor', 'stopTime', t2-1);
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_timeSensor', 'startTime', t2);
+t2=t-X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_timeSensor", "fraction_changed")*this.proxy.period;
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_timeSensor", "stopTime", t2-1);
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_timeSensor", "startTime", t2);
 }
 else{
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_timeSensor', 'stopTime', t);
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_timeSensor", "stopTime", t);
 }
 if(v==false){
 this.play=true;
@@ -365,7 +366,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.pi_Hips = X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_pi_Hips');
+		this.pi_Hips = X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_pi_Hips");
 	} catch (e) {
 		console.log('Problems setting pi_Hips '+e);
 		console.error('Problems setting pi_Hips',e);
@@ -383,7 +384,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.Hips = X3DJSON.nodeUtil('Scene','_Hips');
+		this.Hips = X3DJSON.nodeUtil("Scene","_Hips");
 	} catch (e) {
 		console.log('Problems setting Hips '+e);
 		console.error('Problems setting Hips',e);
@@ -401,7 +402,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.oi_Hips = X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_Hips');
+		this.oi_Hips = X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_Hips");
 	} catch (e) {
 		console.log('Problems setting oi_Hips '+e);
 		console.error('Problems setting oi_Hips',e);
@@ -419,7 +420,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.oi_LeftHip = X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_LeftHip');
+		this.oi_LeftHip = X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_LeftHip");
 	} catch (e) {
 		console.log('Problems setting oi_LeftHip '+e);
 		console.error('Problems setting oi_LeftHip',e);
@@ -437,7 +438,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.LeftHip = X3DJSON.nodeUtil('Scene','_LeftHip');
+		this.LeftHip = X3DJSON.nodeUtil("Scene","_LeftHip");
 	} catch (e) {
 		console.log('Problems setting LeftHip '+e);
 		console.error('Problems setting LeftHip',e);
@@ -455,7 +456,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.oi_LeftKnee = X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_LeftKnee');
+		this.oi_LeftKnee = X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_LeftKnee");
 	} catch (e) {
 		console.log('Problems setting oi_LeftKnee '+e);
 		console.error('Problems setting oi_LeftKnee',e);
@@ -473,7 +474,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.LeftKnee = X3DJSON.nodeUtil('Scene','_LeftKnee');
+		this.LeftKnee = X3DJSON.nodeUtil("Scene","_LeftKnee");
 	} catch (e) {
 		console.log('Problems setting LeftKnee '+e);
 		console.error('Problems setting LeftKnee',e);
@@ -491,7 +492,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.oi_LeftAnkle = X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_LeftAnkle');
+		this.oi_LeftAnkle = X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_LeftAnkle");
 	} catch (e) {
 		console.log('Problems setting oi_LeftAnkle '+e);
 		console.error('Problems setting oi_LeftAnkle',e);
@@ -509,7 +510,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.LeftAnkle = X3DJSON.nodeUtil('Scene','_LeftAnkle');
+		this.LeftAnkle = X3DJSON.nodeUtil("Scene","_LeftAnkle");
 	} catch (e) {
 		console.log('Problems setting LeftAnkle '+e);
 		console.error('Problems setting LeftAnkle',e);
@@ -527,7 +528,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.oi_LeftAnkleEnd = X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_LeftAnkleEnd');
+		this.oi_LeftAnkleEnd = X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_LeftAnkleEnd");
 	} catch (e) {
 		console.log('Problems setting oi_LeftAnkleEnd '+e);
 		console.error('Problems setting oi_LeftAnkleEnd',e);
@@ -545,7 +546,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.LeftAnkleEnd = X3DJSON.nodeUtil('Scene','_LeftAnkleEnd');
+		this.LeftAnkleEnd = X3DJSON.nodeUtil("Scene","_LeftAnkleEnd");
 	} catch (e) {
 		console.log('Problems setting LeftAnkleEnd '+e);
 		console.error('Problems setting LeftAnkleEnd',e);
@@ -563,7 +564,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.oi_RightHip = X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_RightHip');
+		this.oi_RightHip = X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_RightHip");
 	} catch (e) {
 		console.log('Problems setting oi_RightHip '+e);
 		console.error('Problems setting oi_RightHip',e);
@@ -581,7 +582,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.RightHip = X3DJSON.nodeUtil('Scene','_RightHip');
+		this.RightHip = X3DJSON.nodeUtil("Scene","_RightHip");
 	} catch (e) {
 		console.log('Problems setting RightHip '+e);
 		console.error('Problems setting RightHip',e);
@@ -599,7 +600,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.oi_RightKnee = X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_RightKnee');
+		this.oi_RightKnee = X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_RightKnee");
 	} catch (e) {
 		console.log('Problems setting oi_RightKnee '+e);
 		console.error('Problems setting oi_RightKnee',e);
@@ -617,7 +618,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.RightKnee = X3DJSON.nodeUtil('Scene','_RightKnee');
+		this.RightKnee = X3DJSON.nodeUtil("Scene","_RightKnee");
 	} catch (e) {
 		console.log('Problems setting RightKnee '+e);
 		console.error('Problems setting RightKnee',e);
@@ -635,7 +636,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.oi_RightAnkle = X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_RightAnkle');
+		this.oi_RightAnkle = X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_RightAnkle");
 	} catch (e) {
 		console.log('Problems setting oi_RightAnkle '+e);
 		console.error('Problems setting oi_RightAnkle',e);
@@ -653,7 +654,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.RightAnkle = X3DJSON.nodeUtil('Scene','_RightAnkle');
+		this.RightAnkle = X3DJSON.nodeUtil("Scene","_RightAnkle");
 	} catch (e) {
 		console.log('Problems setting RightAnkle '+e);
 		console.error('Problems setting RightAnkle',e);
@@ -671,7 +672,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.oi_RightAnkleEnd = X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_RightAnkleEnd');
+		this.oi_RightAnkleEnd = X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_RightAnkleEnd");
 	} catch (e) {
 		console.log('Problems setting oi_RightAnkleEnd '+e);
 		console.error('Problems setting oi_RightAnkleEnd',e);
@@ -689,7 +690,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.RightAnkleEnd = X3DJSON.nodeUtil('Scene','_RightAnkleEnd');
+		this.RightAnkleEnd = X3DJSON.nodeUtil("Scene","_RightAnkleEnd");
 	} catch (e) {
 		console.log('Problems setting RightAnkleEnd '+e);
 		console.error('Problems setting RightAnkleEnd',e);
@@ -707,7 +708,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.oi_Chest = X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_Chest');
+		this.oi_Chest = X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_Chest");
 	} catch (e) {
 		console.log('Problems setting oi_Chest '+e);
 		console.error('Problems setting oi_Chest',e);
@@ -725,7 +726,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.Chest = X3DJSON.nodeUtil('Scene','_Chest');
+		this.Chest = X3DJSON.nodeUtil("Scene","_Chest");
 	} catch (e) {
 		console.log('Problems setting Chest '+e);
 		console.error('Problems setting Chest',e);
@@ -743,7 +744,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.oi_Chest2 = X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_Chest2');
+		this.oi_Chest2 = X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_Chest2");
 	} catch (e) {
 		console.log('Problems setting oi_Chest2 '+e);
 		console.error('Problems setting oi_Chest2',e);
@@ -761,7 +762,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.Chest2 = X3DJSON.nodeUtil('Scene','_Chest2');
+		this.Chest2 = X3DJSON.nodeUtil("Scene","_Chest2");
 	} catch (e) {
 		console.log('Problems setting Chest2 '+e);
 		console.error('Problems setting Chest2',e);
@@ -779,7 +780,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.oi_LeftCollar = X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_LeftCollar');
+		this.oi_LeftCollar = X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_LeftCollar");
 	} catch (e) {
 		console.log('Problems setting oi_LeftCollar '+e);
 		console.error('Problems setting oi_LeftCollar',e);
@@ -797,7 +798,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.LeftCollar = X3DJSON.nodeUtil('Scene','_LeftCollar');
+		this.LeftCollar = X3DJSON.nodeUtil("Scene","_LeftCollar");
 	} catch (e) {
 		console.log('Problems setting LeftCollar '+e);
 		console.error('Problems setting LeftCollar',e);
@@ -815,7 +816,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.oi_LeftShoulder = X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_LeftShoulder');
+		this.oi_LeftShoulder = X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_LeftShoulder");
 	} catch (e) {
 		console.log('Problems setting oi_LeftShoulder '+e);
 		console.error('Problems setting oi_LeftShoulder',e);
@@ -833,7 +834,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.LeftShoulder = X3DJSON.nodeUtil('Scene','_LeftShoulder');
+		this.LeftShoulder = X3DJSON.nodeUtil("Scene","_LeftShoulder");
 	} catch (e) {
 		console.log('Problems setting LeftShoulder '+e);
 		console.error('Problems setting LeftShoulder',e);
@@ -851,7 +852,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.oi_LeftElbow = X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_LeftElbow');
+		this.oi_LeftElbow = X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_LeftElbow");
 	} catch (e) {
 		console.log('Problems setting oi_LeftElbow '+e);
 		console.error('Problems setting oi_LeftElbow',e);
@@ -869,7 +870,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.LeftElbow = X3DJSON.nodeUtil('Scene','_LeftElbow');
+		this.LeftElbow = X3DJSON.nodeUtil("Scene","_LeftElbow");
 	} catch (e) {
 		console.log('Problems setting LeftElbow '+e);
 		console.error('Problems setting LeftElbow',e);
@@ -887,7 +888,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.oi_LeftWrist = X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_LeftWrist');
+		this.oi_LeftWrist = X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_LeftWrist");
 	} catch (e) {
 		console.log('Problems setting oi_LeftWrist '+e);
 		console.error('Problems setting oi_LeftWrist',e);
@@ -905,7 +906,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.LeftWrist = X3DJSON.nodeUtil('Scene','_LeftWrist');
+		this.LeftWrist = X3DJSON.nodeUtil("Scene","_LeftWrist");
 	} catch (e) {
 		console.log('Problems setting LeftWrist '+e);
 		console.error('Problems setting LeftWrist',e);
@@ -923,7 +924,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.oi_RightCollar = X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_RightCollar');
+		this.oi_RightCollar = X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_RightCollar");
 	} catch (e) {
 		console.log('Problems setting oi_RightCollar '+e);
 		console.error('Problems setting oi_RightCollar',e);
@@ -941,7 +942,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.RightCollar = X3DJSON.nodeUtil('Scene','_RightCollar');
+		this.RightCollar = X3DJSON.nodeUtil("Scene","_RightCollar");
 	} catch (e) {
 		console.log('Problems setting RightCollar '+e);
 		console.error('Problems setting RightCollar',e);
@@ -959,7 +960,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.oi_RightShoulder = X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_RightShoulder');
+		this.oi_RightShoulder = X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_RightShoulder");
 	} catch (e) {
 		console.log('Problems setting oi_RightShoulder '+e);
 		console.error('Problems setting oi_RightShoulder',e);
@@ -977,7 +978,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.RightShoulder = X3DJSON.nodeUtil('Scene','_RightShoulder');
+		this.RightShoulder = X3DJSON.nodeUtil("Scene","_RightShoulder");
 	} catch (e) {
 		console.log('Problems setting RightShoulder '+e);
 		console.error('Problems setting RightShoulder',e);
@@ -995,7 +996,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.oi_RightElbow = X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_RightElbow');
+		this.oi_RightElbow = X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_RightElbow");
 	} catch (e) {
 		console.log('Problems setting oi_RightElbow '+e);
 		console.error('Problems setting oi_RightElbow',e);
@@ -1013,7 +1014,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.RightElbow = X3DJSON.nodeUtil('Scene','_RightElbow');
+		this.RightElbow = X3DJSON.nodeUtil("Scene","_RightElbow");
 	} catch (e) {
 		console.log('Problems setting RightElbow '+e);
 		console.error('Problems setting RightElbow',e);
@@ -1031,7 +1032,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.oi_RightWrist = X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_RightWrist');
+		this.oi_RightWrist = X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_RightWrist");
 	} catch (e) {
 		console.log('Problems setting oi_RightWrist '+e);
 		console.error('Problems setting oi_RightWrist',e);
@@ -1049,7 +1050,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.RightWrist = X3DJSON.nodeUtil('Scene','_RightWrist');
+		this.RightWrist = X3DJSON.nodeUtil("Scene","_RightWrist");
 	} catch (e) {
 		console.log('Problems setting RightWrist '+e);
 		console.error('Problems setting RightWrist',e);
@@ -1067,7 +1068,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.oi_Neck = X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_Neck');
+		this.oi_Neck = X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_Neck");
 	} catch (e) {
 		console.log('Problems setting oi_Neck '+e);
 		console.error('Problems setting oi_Neck',e);
@@ -1085,7 +1086,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.Neck = X3DJSON.nodeUtil('Scene','_Neck');
+		this.Neck = X3DJSON.nodeUtil("Scene","_Neck");
 	} catch (e) {
 		console.log('Problems setting Neck '+e);
 		console.error('Problems setting Neck',e);
@@ -1103,7 +1104,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.oi_Head = X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_Head');
+		this.oi_Head = X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_Head");
 	} catch (e) {
 		console.log('Problems setting oi_Head '+e);
 		console.error('Problems setting oi_Head',e);
@@ -1121,7 +1122,7 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 		return value;
 	};
 	try {
-		this.Head = X3DJSON.nodeUtil('Scene','_Head');
+		this.Head = X3DJSON.nodeUtil("Scene","_Head");
 	} catch (e) {
 		console.log('Problems setting Head '+e);
 		console.error('Problems setting Head',e);
@@ -1130,50 +1131,50 @@ X3DJSON['Script']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'] = f
 
 ecmascript:
 	this.f03e07a38 = function (v){
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_pi_Hips', 'set_fraction',  v);
-X3DJSON.nodeUtil('Scene','_Hips', 'translation',  X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_pi_Hips', 'value_changed'));
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_Hips', 'set_fraction',  v);
-X3DJSON.nodeUtil('Scene','_Hips', 'rotation',  X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_Hips', 'value_changed'));
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_LeftHip', 'set_fraction',  v);
-X3DJSON.nodeUtil('Scene','_LeftHip', 'rotation',  X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_LeftHip', 'value_changed'));
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_LeftKnee', 'set_fraction',  v);
-X3DJSON.nodeUtil('Scene','_LeftKnee', 'rotation',  X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_LeftKnee', 'value_changed'));
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_LeftAnkle', 'set_fraction',  v);
-X3DJSON.nodeUtil('Scene','_LeftAnkle', 'rotation',  X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_LeftAnkle', 'value_changed'));
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_LeftAnkle', 'nd').set_fraction = v;
-X3DJSON.nodeUtil('Scene','_LeftAnkle', 'nd').rotation = X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_LeftAnkle', 'nd').value_changed;
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_RightHip', 'set_fraction',  v);
-X3DJSON.nodeUtil('Scene','_RightHip', 'rotation',  X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_RightHip', 'value_changed'));
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_RightKnee', 'set_fraction',  v);
-X3DJSON.nodeUtil('Scene','_RightKnee', 'rotation',  X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_RightKnee', 'value_changed'));
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_RightAnkle', 'set_fraction',  v);
-X3DJSON.nodeUtil('Scene','_RightAnkle', 'rotation',  X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_RightAnkle', 'value_changed'));
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_RightAnkle', 'nd').set_fraction = v;
-X3DJSON.nodeUtil('Scene','_RightAnkle', 'nd').rotation = X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_RightAnkle', 'nd').value_changed;
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_Chest', 'set_fraction',  v);
-X3DJSON.nodeUtil('Scene','_Chest', 'rotation',  X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_Chest', 'value_changed'));
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_Chest', '').set_fraction = v;
-X3DJSON.nodeUtil('Scene','_Chest', '').rotation = X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_Chest', '').value_changed;
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_LeftCollar', 'set_fraction',  v);
-X3DJSON.nodeUtil('Scene','_LeftCollar', 'rotation',  X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_LeftCollar', 'value_changed'));
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_LeftShoulder', 'set_fraction',  v);
-X3DJSON.nodeUtil('Scene','_LeftShoulder', 'rotation',  X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_LeftShoulder', 'value_changed'));
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_LeftElbow', 'set_fraction',  v);
-X3DJSON.nodeUtil('Scene','_LeftElbow', 'rotation',  X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_LeftElbow', 'value_changed'));
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_LeftWrist', 'set_fraction',  v);
-X3DJSON.nodeUtil('Scene','_LeftWrist', 'rotation',  X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_LeftWrist', 'value_changed'));
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_RightCollar', 'set_fraction',  v);
-X3DJSON.nodeUtil('Scene','_RightCollar', 'rotation',  X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_RightCollar', 'value_changed'));
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_RightShoulder', 'set_fraction',  v);
-X3DJSON.nodeUtil('Scene','_RightShoulder', 'rotation',  X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_RightShoulder', 'value_changed'));
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_RightElbow', 'set_fraction',  v);
-X3DJSON.nodeUtil('Scene','_RightElbow', 'rotation',  X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_RightElbow', 'value_changed'));
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_RightWrist', 'set_fraction',  v);
-X3DJSON.nodeUtil('Scene','_RightWrist', 'rotation',  X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_RightWrist', 'value_changed'));
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_Neck', 'set_fraction',  v);
-X3DJSON.nodeUtil('Scene','_Neck', 'rotation',  X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_Neck', 'value_changed'));
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_Head', 'set_fraction',  v);
-X3DJSON.nodeUtil('Scene','_Head', 'rotation',  X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_FIELDchildren_oi_Head', 'value_changed'));
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_pi_Hips", "set_fraction",  v);
+X3DJSON.nodeUtil("Scene","_Hips", "translation",  X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_pi_Hips", "value_changed"));
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_Hips", "set_fraction",  v);
+X3DJSON.nodeUtil("Scene","_Hips", "rotation",  X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_Hips", "value_changed"));
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_LeftHip", "set_fraction",  v);
+X3DJSON.nodeUtil("Scene","_LeftHip", "rotation",  X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_LeftHip", "value_changed"));
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_LeftKnee", "set_fraction",  v);
+X3DJSON.nodeUtil("Scene","_LeftKnee", "rotation",  X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_LeftKnee", "value_changed"));
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_LeftAnkle", "set_fraction",  v);
+X3DJSON.nodeUtil("Scene","_LeftAnkle", "rotation",  X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_LeftAnkle", "value_changed"));
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_LeftAnkle", "nd").set_fraction = v;
+X3DJSON.nodeUtil("Scene","_LeftAnkle", "nd").rotation = X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_LeftAnkle", "nd").value_changed;
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_RightHip", "set_fraction",  v);
+X3DJSON.nodeUtil("Scene","_RightHip", "rotation",  X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_RightHip", "value_changed"));
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_RightKnee", "set_fraction",  v);
+X3DJSON.nodeUtil("Scene","_RightKnee", "rotation",  X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_RightKnee", "value_changed"));
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_RightAnkle", "set_fraction",  v);
+X3DJSON.nodeUtil("Scene","_RightAnkle", "rotation",  X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_RightAnkle", "value_changed"));
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_RightAnkle", "nd").set_fraction = v;
+X3DJSON.nodeUtil("Scene","_RightAnkle", "nd").rotation = X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_RightAnkle", "nd").value_changed;
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_Chest", "set_fraction",  v);
+X3DJSON.nodeUtil("Scene","_Chest", "rotation",  X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_Chest", "value_changed"));
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_Chest", "").set_fraction = v;
+X3DJSON.nodeUtil("Scene","_Chest", "").rotation = X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_Chest", "").value_changed;
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_LeftCollar", "set_fraction",  v);
+X3DJSON.nodeUtil("Scene","_LeftCollar", "rotation",  X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_LeftCollar", "value_changed"));
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_LeftShoulder", "set_fraction",  v);
+X3DJSON.nodeUtil("Scene","_LeftShoulder", "rotation",  X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_LeftShoulder", "value_changed"));
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_LeftElbow", "set_fraction",  v);
+X3DJSON.nodeUtil("Scene","_LeftElbow", "rotation",  X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_LeftElbow", "value_changed"));
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_LeftWrist", "set_fraction",  v);
+X3DJSON.nodeUtil("Scene","_LeftWrist", "rotation",  X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_LeftWrist", "value_changed"));
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_RightCollar", "set_fraction",  v);
+X3DJSON.nodeUtil("Scene","_RightCollar", "rotation",  X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_RightCollar", "value_changed"));
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_RightShoulder", "set_fraction",  v);
+X3DJSON.nodeUtil("Scene","_RightShoulder", "rotation",  X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_RightShoulder", "value_changed"));
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_RightElbow", "set_fraction",  v);
+X3DJSON.nodeUtil("Scene","_RightElbow", "rotation",  X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_RightElbow", "value_changed"));
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_RightWrist", "set_fraction",  v);
+X3DJSON.nodeUtil("Scene","_RightWrist", "rotation",  X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_RightWrist", "value_changed"));
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_Neck", "set_fraction",  v);
+X3DJSON.nodeUtil("Scene","_Neck", "rotation",  X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_Neck", "value_changed"));
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_Head", "set_fraction",  v);
+X3DJSON.nodeUtil("Scene","_Head", "rotation",  X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_FIELDchildren_oi_Head", "value_changed"));
 }
 
 ;
@@ -1208,10 +1209,10 @@ X3DJSON['Obj']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80']['ACTIO
 X3DJSON['Obj']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80']['ACTION'],X3DJSON['Obj']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80']);
 }
 if (typeof X3DJSON['Obj']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'].initialize === "function") X3DJSON['Obj']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'].initialize();
-    if (X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_timeSensor')) {
-X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_timeSensor').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'].f03e07a38(X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_timeSensor','fraction'), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_timeSensor")) {
+X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_timeSensor").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'].f03e07a38(X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_timeSensor","fraction"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'].f03e07a38(X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_timeSensor','fraction'), __eventTime);
-			X3DJSON['Obj']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'].f03e07a38(X3DJSON.nodeUtil('Scene','DECLPAnim_t02de8af0_timeSensor','fraction'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'].f03e07a38(X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_timeSensor","fraction"), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/BvhSeamless3dExport1.json']['s03e13e80'].f03e07a38(X3DJSON.nodeUtil("Scene","DECLPAnim_t02de8af0_timeSensor","fraction"), __eventTime);

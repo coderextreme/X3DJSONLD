@@ -291,7 +291,7 @@ block=false;
 })})])}))}),
 
             new HAnimHumanoid({
-              version : new SFString("1.0"),
+              version : new SFString("2.0"),
               skin : new SFNode(
                 new Shape({
                   appearance : new SFNode(

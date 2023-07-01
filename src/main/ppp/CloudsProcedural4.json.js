@@ -38,6 +38,7 @@ var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); }
 var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4f = x3dom.fields.SFMatrix4f;
 var SFNode = x3dom.fields.SFNode;
+var SFRotation = x3dom.fields.SFRotation;
 var Quaternion = x3dom.fields.Quaternion;
 var SFString = String;
 var SFTime = Number;
@@ -66,9 +67,9 @@ if (typeof $ !== 'function') {
 }
 X3DJSON.nodeUtil = function(selector, node, field, value) {
 		if (typeof selector === 'undefined') {
-			selector = '';
+			selector = "";
 		} else {
-			selector = selector+' ';
+			selector = selector+" ";
 		}
 		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
@@ -162,7 +163,7 @@ X3DJSON['Script']['Scene']['../data/CloudsProcedural4.json']['PixelScript'] = fu
 		return value;
 	};
 	try {
-		this.Cumulus = X3DJSON.nodeUtil('Scene','Cumulus');
+		this.Cumulus = X3DJSON.nodeUtil("Scene","Cumulus");
 	} catch (e) {
 		console.log('Problems setting Cumulus '+e);
 		console.error('Problems setting Cumulus',e);
@@ -180,7 +181,7 @@ X3DJSON['Script']['Scene']['../data/CloudsProcedural4.json']['PixelScript'] = fu
 		return value;
 	};
 	try {
-		this.Cirrus = X3DJSON.nodeUtil('Scene','Cirrus');
+		this.Cirrus = X3DJSON.nodeUtil("Scene","Cirrus");
 	} catch (e) {
 		console.log('Problems setting Cirrus '+e);
 		console.error('Problems setting Cirrus',e);
@@ -206,6 +207,7 @@ X3DJSON['Script']['Scene']['../data/CloudsProcedural4.json']['PixelScript'] = fu
 
 
 ecmascript:
+Cirrus.children = [];
 
 
 	this.cumulustranslation = function () // These values designate the boundary location of the cloud
@@ -456,7 +458,7 @@ CloudString = CloudStringA + CloudStringG + CloudStringH;
 
 
 newNode = new MFNode();
-X3DJSON.nodeUtil('Scene','Cumulus', 'children')[i] = newNode[0];
+X3DJSON.nodeUtil("Scene","Cumulus", "children")[i] = newNode[0];
 
 
    }
@@ -579,7 +581,7 @@ CloudString = CloudStringA + CloudStringG + CloudStringH;
 
 
 newNode = new MFNode();
-X3DJSON.nodeUtil('Scene','Cirrus', 'children')[i] = newNode[0];
+X3DJSON.nodeUtil("Scene","Cirrus", "children")[i] = newNode[0];
 
   }
 

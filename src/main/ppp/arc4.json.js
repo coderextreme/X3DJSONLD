@@ -38,6 +38,7 @@ var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); }
 var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4f = x3dom.fields.SFMatrix4f;
 var SFNode = x3dom.fields.SFNode;
+var SFRotation = x3dom.fields.SFRotation;
 var Quaternion = x3dom.fields.Quaternion;
 var SFString = String;
 var SFTime = Number;
@@ -66,9 +67,9 @@ if (typeof $ !== 'function') {
 }
 X3DJSON.nodeUtil = function(selector, node, field, value) {
 		if (typeof selector === 'undefined') {
-			selector = '';
+			selector = "";
 		} else {
-			selector = selector+' ';
+			selector = selector+" ";
 		}
 		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
@@ -450,7 +451,7 @@ X3DJSON['Script']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'
 		return value;
 	};
 	try {
-		this.position = X3DJSON.nodeUtil('Scene','DECLx3dconnector_connector1_trans');
+		this.position = X3DJSON.nodeUtil("Scene","DECLx3dconnector_connector1_trans");
 	} catch (e) {
 		console.log('Problems setting position '+e);
 		console.error('Problems setting position',e);
@@ -468,7 +469,7 @@ X3DJSON['Script']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'
 		return value;
 	};
 	try {
-		this.rotscale = X3DJSON.nodeUtil('Scene','DECLx3dconnector_connector1_rotscale');
+		this.rotscale = X3DJSON.nodeUtil("Scene","DECLx3dconnector_connector1_rotscale");
 	} catch (e) {
 		console.log('Problems setting rotscale '+e);
 		console.error('Problems setting rotscale',e);
@@ -561,9 +562,9 @@ ecmascript:
 
 	this.recompute_and_route = function (startpoint, endpoint) {
 	      var trafo = this.recompute(startpoint, endpoint);
-	      X3DJSON.nodeUtil('Scene','DECLx3dconnector_connector1_trans', 'translation',  trafo.translation);
-	      X3DJSON.nodeUtil('Scene','DECLx3dconnector_connector1_rotscale', 'rotation',  trafo.rotation);
-	      X3DJSON.nodeUtil('Scene','DECLx3dconnector_connector1_rotscale', 'scale',  trafo.scale);
+	      X3DJSON.nodeUtil("Scene","DECLx3dconnector_connector1_trans", "translation",  trafo.translation);
+	      X3DJSON.nodeUtil("Scene","DECLx3dconnector_connector1_rotscale", "rotation",  trafo.rotation);
+	      X3DJSON.nodeUtil("Scene","DECLx3dconnector_connector1_rotscale", "scale",  trafo.scale);
 	}
        ;
 
@@ -612,14 +613,14 @@ X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1']['
 X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1']['ACTION'],X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1']);
 }
 if (typeof X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'].initialize === "function") X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'].initialize();
-    if (X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1')) {
-X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].set_location(X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1','cycleTime'), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","DECLpoint_G1_CL1")) {
+X3DJSON.nodeUtil("Scene","DECLpoint_G1_CL1").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].set_location(X3DJSON.nodeUtil("Scene","DECLpoint_G1_CL1","cycleTime"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].set_location(X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1','cycleTime'), __eventTime);
-    if (X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1')) {
-X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].set_location(X3DJSON.nodeUtil("Scene","DECLpoint_G1_CL1","cycleTime"), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","DECLpoint_G1_CL1")) {
+X3DJSON.nodeUtil("Scene","DECLpoint_G1_CL1").addEventListener('outputchange', function(event) {
 }, false);
 }
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -640,22 +641,22 @@ X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1']['ACTION']['keyV
 }
 X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1']['ACTION']['keyValue'].push(function(property, value) {
 		if (property === 'keyValue') {
-			X3DJSON.nodeUtil('Scene','DECLpoint_G1_PI1','keyValue',typeof X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].keyValue, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLpoint_G1_PI1","keyValue",typeof X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].keyValue, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','DECLpoint_G1_PI1','keyValue',typeof X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].keyValue, __eventTime);
-    if (X3DJSON.nodeUtil('Scene','DECLpoint_G1_PI1')) {
-X3DJSON.nodeUtil('Scene','DECLpoint_G1_PI1').addEventListener('outputchange', function(event) {
+			X3DJSON.nodeUtil("Scene","DECLpoint_G1_PI1","keyValue",typeof X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].keyValue, __eventTime);
+    if (X3DJSON.nodeUtil("Scene","DECLpoint_G1_PI1")) {
+X3DJSON.nodeUtil("Scene","DECLpoint_G1_PI1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','DECLpoint_G2_CL1')) {
-X3DJSON.nodeUtil('Scene','DECLpoint_G2_CL1').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].set_location(X3DJSON.nodeUtil('Scene','DECLpoint_G2_CL1','cycleTime'), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","DECLpoint_G2_CL1")) {
+X3DJSON.nodeUtil("Scene","DECLpoint_G2_CL1").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].set_location(X3DJSON.nodeUtil("Scene","DECLpoint_G2_CL1","cycleTime"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].set_location(X3DJSON.nodeUtil('Scene','DECLpoint_G2_CL1','cycleTime'), __eventTime);
-    if (X3DJSON.nodeUtil('Scene','DECLpoint_G2_CL1')) {
-X3DJSON.nodeUtil('Scene','DECLpoint_G2_CL1').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].set_location(X3DJSON.nodeUtil("Scene","DECLpoint_G2_CL1","cycleTime"), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","DECLpoint_G2_CL1")) {
+X3DJSON.nodeUtil("Scene","DECLpoint_G2_CL1").addEventListener('outputchange', function(event) {
 }, false);
 }
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -676,29 +677,29 @@ X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1']['ACTION']['keyV
 }
 X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1']['ACTION']['keyValue'].push(function(property, value) {
 		if (property === 'keyValue') {
-			X3DJSON.nodeUtil('Scene','DECLpoint_G2_PI1','keyValue',typeof X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].keyValue, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLpoint_G2_PI1","keyValue",typeof X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].keyValue, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','DECLpoint_G2_PI1','keyValue',typeof X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].keyValue, __eventTime);
-    if (X3DJSON.nodeUtil('Scene','DECLpoint_G2_PI1')) {
-X3DJSON.nodeUtil('Scene','DECLpoint_G2_PI1').addEventListener('outputchange', function(event) {
+			X3DJSON.nodeUtil("Scene","DECLpoint_G2_PI1","keyValue",typeof X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].keyValue, __eventTime);
+    if (X3DJSON.nodeUtil("Scene","DECLpoint_G2_PI1")) {
+X3DJSON.nodeUtil("Scene","DECLpoint_G2_PI1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','DECLpoint_G1_node')) {
-X3DJSON.nodeUtil('Scene','DECLpoint_G1_node').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G1_node','translation'), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","DECLpoint_G1_node")) {
+X3DJSON.nodeUtil("Scene","DECLpoint_G1_node").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON.nodeUtil("Scene","DECLpoint_G1_node","translation"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G1_node','translation'), __eventTime);
-    if (X3DJSON.nodeUtil('Scene','DECLpoint_G2_node')) {
-X3DJSON.nodeUtil('Scene','DECLpoint_G2_node').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G2_node','translation'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON.nodeUtil("Scene","DECLpoint_G1_node","translation"), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","DECLpoint_G2_node")) {
+X3DJSON.nodeUtil("Scene","DECLpoint_G2_node").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON.nodeUtil("Scene","DECLpoint_G2_node","translation"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G2_node','translation'), __eventTime);
-			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].set_location(X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1','cycleTime'), __eventTime);
-			X3DJSON.nodeUtil('Scene','DECLpoint_G1_PI1','keyValue',typeof X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].keyValue, __eventTime);
-			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].set_location(X3DJSON.nodeUtil('Scene','DECLpoint_G2_CL1','cycleTime'), __eventTime);
-			X3DJSON.nodeUtil('Scene','DECLpoint_G2_PI1','keyValue',typeof X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].keyValue, __eventTime);
-			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G1_node','translation'), __eventTime);
-			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G2_node','translation'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON.nodeUtil("Scene","DECLpoint_G2_node","translation"), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].set_location(X3DJSON.nodeUtil("Scene","DECLpoint_G1_CL1","cycleTime"), __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLpoint_G1_PI1","keyValue",typeof X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].keyValue, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].set_location(X3DJSON.nodeUtil("Scene","DECLpoint_G2_CL1","cycleTime"), __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLpoint_G2_PI1","keyValue",typeof X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].keyValue, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON.nodeUtil("Scene","DECLpoint_G1_node","translation"), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON.nodeUtil("Scene","DECLpoint_G2_node","translation"), __eventTime);

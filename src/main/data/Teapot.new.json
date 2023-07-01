@@ -72,7 +72,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 June 2023"
+            "@content":"01 July 2023"
           },
           {
             "@name":"generator",
@@ -147,6 +147,7 @@
               "-geometry":
                 { "IndexedLineSet":
                   {
+                    "@DEF":"AxisLinesShape",
                     "@colorIndex":[0,1,2],
                     "@colorPerVertex":false,
                     "@coordIndex":[0,1,-1,0,2,-1,0,3,-1],

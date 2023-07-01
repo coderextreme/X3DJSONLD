@@ -42,7 +42,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 June 2023"
+            "@content":"01 July 2023"
           },
           {
             "@name":"generator",
@@ -73,6 +73,7 @@
                     "-geometry":
                       { "IndexedLineSet":
                         {
+                          "@DEF":"AxisLinesShape",
                           "@colorIndex":[0,1,2],
                           "@colorPerVertex":false,
                           "@coordIndex":[0,1,-1,0,2,-1,0,3,-1],
@@ -117,6 +118,7 @@
                                 "-appearance":
                                   { "Appearance":
                                     {
+                                      "@DEF":"HAnimJointShape",
                                       "-material":
                                         { "Material":
                                           {
@@ -130,6 +132,7 @@
                                 "-geometry":
                                   { "Sphere":
                                     {
+                                      "@DEF":"HAnimJointShape",
                                       "@radius":0.02
                                     }
                                   }
@@ -148,6 +151,7 @@
                                 "-geometry":
                                   { "LineSet":
                                     {
+                                      "@DEF":"HAnimSegmentLine",
                                       "@vertexCount":[2],
                                       "-color":
                                         { "ColorRGBA":

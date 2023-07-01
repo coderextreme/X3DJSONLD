@@ -71,7 +71,7 @@ var ProtoInstance1 = null;
             .addChild((new autoclass.Viewpoint()).setDescription("Allen Above Viewpoint").setOrientation(java.newArray("float", [java.newFloat(0.999), java.newFloat(0.031), java.newFloat(-0.039), java.newFloat(4.615)])).setPosition(java.newArray("float", [java.newFloat(0.1), java.newFloat(2.4), java.newFloat(0)])))
             .addChild((new autoclass.Group()).setDEF("HighResolution")
               .addChild((new autoclass.Transform())
-                .addChild((new autoclass.HAnimHumanoid()).setName("Allen").setDEF("hanim_Allen").setVersion("1.0")
+                .addChild((new autoclass.HAnimHumanoid()).setName("Allen").setDEF("hanim_Allen").setVersion("2.0")
                   .addSkeleton((new autoclass.HAnimJoint()).setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(java.newArray("float", [java.newFloat(-0.00405), java.newFloat(0.855), java.newFloat(-0.000113)])).setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)]))
                     .addChild((new autoclass.HAnimJoint()).setName("sacroiliac").setDEF("hanim_sacroiliac").setCenter(java.newArray("float", [java.newFloat(0), java.newFloat(1.01), java.newFloat(-0.0204)])).setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)]))
                       .addChild((new autoclass.HAnimSegment()).setName("pelvis").setDEF("hanim_pelvis")

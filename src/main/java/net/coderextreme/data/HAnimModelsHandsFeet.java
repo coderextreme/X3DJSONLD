@@ -73,7 +73,7 @@ public class HAnimModelsHandsFeet {
           .addChild(new Inline().setUrl(new MFString0().getArray()))
           .addComments("Grid overlay authoring hint: first adjust grid scale to convenient large size, then adjust overall scale for your scene model")
           .addChild(new Transform().setDEF("GridXY_20x20Fixed_AdjustScale").setScale(new float[] {0.1f,0.1f,0.1f})
-            .addChild(new Inline().setDEF("GridXY_20x20Fixed").setUrl(new MFString1().getArray()))))
+            .addChild(new Inline("GridXY_20x20Fixed_AdjustScale").setDEF("GridXY_20x20Fixed").setUrl(new MFString1().getArray()))))
         .addChild(new Transform().setTranslation(new float[] {1f,1f,0f})
           .addChild(new Inline().setUrl(new MFString2().getArray()))
           .addChild(new Transform().setUSE("GridXY_20x20Fixed_AdjustScale")))

@@ -2,9 +2,14 @@ if (typeof require !== 'undefined') {
 	var fs = require("fs");
 	var http = require("http");
 	var https = require("https");
+	if (typeof fieldTypes === 'undefined') {
+		fieldTypes = require("./fieldTypes.js");
+	}
 	var DOM2JSONSerializer = require('./DOM2JSONSerializer.js');
 	var mapToMethod = require('./mapToMethod.js');
-	const { DOMParser, XMLSerializer } = require('@xmldom/xmldom');
+	var DOMParser = require('@xmldom/xmldom').DOMParser;
+	var XMLSerializer = require('@xmldom/xmldom').XMLSerializer;
+console.log("TOP", DOMParser);
 	var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 } else {
 	DOMParser = window.DOMParser;
@@ -629,7 +634,10 @@ PROTOS.prototype = {
 		// console.error("DEF is", newobject[p]["@DEF"]);
 		this.setScriptFields(newobject[p]["field"], newobject[p]["@DEF"]);
 		var url = newobject[p]["@url"];
-		this.loadURLs(file, url, this.readCode, null, function(){}, p, newobject);
+		if (typeof url !== 'undefined') {
+			console.log("@url-2", url);
+			this.loadURLs(file, url, this.readCode, null, function(){}, p, newobject);
+		}
 	},
 
 	handleProtoDeclare: function (file, object, p) {
@@ -692,7 +700,7 @@ PROTOS.prototype = {
 		}
 		var bodydef;
 		if (typeof this.protos[name] === 'undefined' || typeof this.protos[name]['ProtoBody'] === 'undefined') {
-			console.error("ProtoBody undefined for", name);
+			console.error("ProtoBody undefined for", name, this.protos, this.protos[name]);
 		} else {
 			// console.error("Copying ProtoBody", name);
 			var children = this.protos[name]['ProtoBody']['-children'];
@@ -934,12 +942,16 @@ PROTOS.prototype = {
 						try {
 							var doc = null;
 							try {  
-								var domParser = new DOMParser();
-								doc = domParser.parseFromString (data, 'application/xml');
+								// var domParser = new DOMParser();
+								// console.log("dom parser", domParser);
+								console.log("MID", DOMParser);
+								doc = new DOMParser().parseFromString (data, 'application/xml');
+								// console.log("doc", doc);
 						
 							} catch (e) {
 								throw e;
 							}
+												// console.log("doc", doc);
 							var element = doc.documentElement;
 							var serializer = new DOM2JSONSerializer();
 							json = serializer.serializeToString(null, element, filename, mapToMethod, fieldTypes);
@@ -1089,6 +1101,7 @@ PROTOS.prototype = {
 			for (var u in urls) {
 				try {
 					var url = urls[u];
+					console.log("TOP url", url);
 					(function(url) {
 						var p = url.indexOf("://");
 						var protocol = "file";
@@ -1157,7 +1170,12 @@ PROTOS.prototype = {
 								url = url.substring(0, hash);
 							}
 							try {
+								console.log("url=", url);
+								if (!fs) {
+									console.log("No fs object");
+								}
 								var data = fs.readFileSync(url);
+								console.log("data=", data);
 								loadedCallback(data.toString(), url, protoexp, done, externProtoDeclare, obj);
 							} catch (e) {
 								var filename = url;
@@ -1167,12 +1185,19 @@ PROTOS.prototype = {
 										try {
 											var doc = null;
 											try {  
-												var domParser = new DOMParser();
-												doc = domParser.parseFromString (data, 'application/xml');
+												// var domParser = new DOMParser();
+												console.log("LOW", DOMParser);
+												console.log("data2=", data);
+												if (typeof data === 'undefined') {
+													console.log("Couldn't read data from", url);
+													throw "Missing "+url;
+												}
+												doc = new DOMParser().parseFromString (data, 'application/xml');
 										
 											} catch (e) {
 												throw e;
 											}
+												// console.log("doc", doc);
 											var element = doc.documentElement;
 											var serializer = new DOM2JSONSerializer();
 											json = serializer.serializeToString(null, element, filename, mapToMethod, fieldTypes);
@@ -1213,6 +1238,7 @@ PROTOS.prototype = {
 		var url = obj["@url"];
 		// this is a single task
 		// console.error("loading External Prototype", file, url);
+		console.log("@url", url);
 		this.loadURLs(file, url, protoexp.doLoad, protoexp, done, p, obj);
 	},
 	externalPrototypeExpander: function (file, object) {
@@ -1252,4 +1278,7 @@ PROTOS.prototype = {
 	}
 };
 
+if (typeof window !== 'undefined') {
+	window.PROTOS = PROTOS;
+}
 module.exports = PROTOS;

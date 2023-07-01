@@ -75,6 +75,7 @@ newModel=X3D(profile='Immersive',version='3.2',
 
       sourceCode="""
 ecmascript:
+Cirrus.children = [];
 
 
 function cumulustranslation() // These values designate the boundary location of the cloud

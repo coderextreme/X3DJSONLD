@@ -104,8 +104,8 @@ ExternProtoDeclare15->addField(*field18);
 
 group->addChildren(*ExternProtoDeclare15);
 
-CProtoDeclare ProtoDeclare19 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+CProtoDeclare ProtoDeclare19 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="LOA1_ShootAnimation" ><ProtoInterface><field name="cycleInterval" accessType="inputOutput" type="SFTime" value="0.009999999776482582"></field>
 <field name="enabled" accessType="inputOutput" type="SFBool" value="true"></field>
 <field name="loop" accessType="inputOutput" type="SFBool" value="true"></field>
@@ -343,7 +343,7 @@ CTransform* Transform56 = (CTransform *)(m_pScene.createNode("Transform"));
 CHAnimHumanoid* HAnimHumanoid57 = (CHAnimHumanoid *)(m_pScene.createNode("HAnimHumanoid"));
 HAnimHumanoid57->setName("Nancy");
 HAnimHumanoid57->setDEF("hanim_Nancy");
-HAnimHumanoid57->setVersion("1.0");
+HAnimHumanoid57->setVersion("2.0");
 CHAnimJoint* HAnimJoint58 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint58->setName("humanoid_root");
 HAnimJoint58->setDEF("hanim_humanoid_root");

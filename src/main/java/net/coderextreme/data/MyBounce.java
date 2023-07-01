@@ -55,16 +55,16 @@ public class MyBounce {
       .setScene(new Scene()
         .addChild(new NavigationInfo())
         .addChild(new Transform().setDEF("transform")
-          .addChild(new Shape()
+          .addChild(new Shape("transform")
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(new float[] {0.7f,0.7f,0.7f}).setSpecularColor(new float[] {0.5f,0.5f,0.5f})))
             .setGeometry(new Sphere())))
         .addChild(new Script().setDEF("Bounce2")
-          .addField(new field().setType("SFVec3f").setName("set_translation").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("0 0 0"))
-          .addField(new field().setType("SFVec3f").setName("translation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setValue("0 0 0"))
-          .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-          .addField(new field().setType("SFVec3f").setName("velocity").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-          .addField(new field().setType("SFTime").setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
+          .addField(new field("Bounce2").setType("SFVec3f").setName("set_translation").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("0 0 0"))
+          .addField(new field("Bounce2").setType("SFVec3f").setName("translation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setValue("0 0 0"))
+          .addField(new field("Bounce2").setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+          .addField(new field("Bounce2").setType("SFVec3f").setName("velocity").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+          .addField(new field("Bounce2").setType("SFTime").setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
           .setSourceCode("ecmascript:\n"+
 "			function newBubble() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+

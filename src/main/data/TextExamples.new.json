@@ -48,7 +48,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 June 2023"
+            "@content":"01 July 2023"
           },
           {
             "@name":"generator",
@@ -75,6 +75,7 @@
                           "-material":
                             { "Material":
                               {
+                                "@DEF":"LightBlueAppearance",
                                 "@diffuseColor":[0.1,0.7,0.7]
                               }
                             }

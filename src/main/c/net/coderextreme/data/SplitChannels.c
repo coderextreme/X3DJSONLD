@@ -341,7 +341,7 @@ children[8] = StreamAudioDestination61;
 
 ChannelSplitter ChannelSplitter68 = createNode("ChannelSplitter");
 ChannelSplitter68.DEF = "ChannelSplitter";
-ChannelSplitter68.channelCountMode = "explicit";
+ChannelSplitter68.channelCountMode = "EXPLICIT";
 ChannelSplitter68.channelInterpretation = "SPEAKERS";
 AudioClip AudioClip69 = createNode("AudioClip");
 AudioClip69.description = "Violin";

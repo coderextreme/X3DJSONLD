@@ -75,7 +75,7 @@
         },
         {
           "@name": "translated",
-          "@content": "22 June 2023"
+          "@content": "01 July 2023"
         },
         {
           "@name": "generator",
@@ -4525,7 +4525,7 @@
                 "HAnimHumanoid": {
                   "@name": "DiamondManLOA-1",
                   "@DEF": "DECLHAnimBodyBehaviorChooser_ChooserTest_FIELDHumanoidArray_hanim_DiamondManLOA-1",
-                  "@version": "1.0"
+                  "@version": "2.0"
                 }
               }
             ]
@@ -4578,7 +4578,7 @@
                     "HAnimHumanoid": {
                       "@name": "DiamondManLOA-1",
                       "@DEF": "DECLHAnimBodyBehaviorChooser_ChooserTest_FIELDHumanoidArray_hanim_DiamondManLOA-1",
-                      "@version": "1.0"
+                      "@version": "2.0"
                     }
                   }
                 ]

@@ -20,7 +20,7 @@ meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/MotionAnimation/BvhSeamless3dExport1.x3d"),
 meta(name="reference", content="https://sourceforge.net/p/x3d/code/24079"),
 meta(name="license", content="license.html"),
-meta(name="translated", content="29 June 2023"),
+meta(name="translated", content="01 July 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -54,7 +54,7 @@ IS=IS(connect=[connect(nodeField="play", protoField="play"),
 connect(nodeField="pause", protoField="pause"),
 connect(nodeField="period", protoField="period")
 ]), sourceCode="""['', '', 'ecmascript:', 'function initialize(){', 'if(play==false){', 'timeSensor.stopTime=1;', '}', 'pause=!play;', '}', 'function play(v, t){', 'if(block){', 'return;', '}', 'block=true;', 'if(v){', 'timeSensor.startTime=t;', '}', 'else{', 'timeSensor.stopTime=t;', '}', 'if(v==false){', 'pause=true;', '}', 'else{', 'pause=false;', '}', 'block=false;', '}', 'function pause(v, t){', 'if(block){', 'return;', '}', 'block=true;', 'if(!v){', 't2=t-timeSensor.fraction_changed*period;', 'timeSensor.stopTime=t2-1;', 'timeSensor.startTime=t2;', '}', 'else{', 'timeSensor.stopTime=t;', '}', 'if(v==false){', 'play=true;', '}', 'else{', 'play=false;', '}', 'block=false;', '}', '', '']""",)])),
-HAnimHumanoid(version="1.0", skin=[
+HAnimHumanoid(version="2.0", skin=[
 Shape(
 appearance=
 Appearance(

@@ -86,7 +86,7 @@ newModel=X3D(profile='Full',version='4.0',
               children=[
               Analyser(id_='Analyser1',channelCountMode='MAX',channelInterpretation='SPEAKERS',
                 children=[
-                BiquadFilter(detune=50.0,frequency=600,id_='BiquadFilter1',qualityFactor=30.0,type='allpass',channelCountMode='MAX',channelInterpretation='SPEAKERS',
+                BiquadFilter(detune=50.0,frequency=600,id_='BiquadFilter1',qualityFactor=30.0,type='ALLPASS',channelCountMode='MAX',channelInterpretation='SPEAKERS',
                   children=[
                   AudioClip(description='Techno beat',id_='AudioClip1',loop=True,url=["sound/techno_beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3"])])])])]),
           SpatialSound(DEF='Audio2',distanceModel='INVERSE',
@@ -95,7 +95,7 @@ newModel=X3D(profile='Full',version='4.0',
               children=[
               Analyser(id_='Analyser2',channelCountMode='MAX',channelInterpretation='SPEAKERS',
                 children=[
-                BiquadFilter(detune=15.0,frequency=600,id_='BiquadFilter2',qualityFactor=15.0,type='allpass',channelCountMode='MAX',channelInterpretation='SPEAKERS',
+                BiquadFilter(detune=15.0,frequency=600,id_='BiquadFilter2',qualityFactor=15.0,type='ALLPASS',channelCountMode='MAX',channelInterpretation='SPEAKERS',
                   children=[
                   AudioClip(description='Simple beat',id_='AudioClip2',loop=True,url=["sound/beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3"])])])])]),
           SpatialSound(DEF='Audio3',distanceModel='INVERSE',
@@ -104,7 +104,7 @@ newModel=X3D(profile='Full',version='4.0',
               children=[
               Analyser(id_='Analyser3',channelCountMode='MAX',channelInterpretation='SPEAKERS',
                 children=[
-                BiquadFilter(frequency=1000,id_='BiquadFilter3',qualityFactor=0,type='allpass',channelCountMode='MAX',channelInterpretation='SPEAKERS',
+                BiquadFilter(frequency=1000,id_='BiquadFilter3',qualityFactor=0,type='ALLPASS',channelCountMode='MAX',channelInterpretation='SPEAKERS',
                   children=[
                   AudioClip(description='Wobble loop',id_='AudioClip3',loop=True,url=["sound/wobble_loop.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3"])])])])])])])])])
 ) # X3D model complete

@@ -98,8 +98,8 @@ browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = ExternProtoDeclare15;
 
-let ProtoDeclare19 = browser.createX3DFromString(`<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+let ProtoDeclare19 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="LOA1_ShootAnimation" ><ProtoInterface><field name="cycleInterval" accessType="inputOutput" type="SFTime" value="0.009999999776482582"></field>
 <field name="enabled" accessType="inputOutput" type="SFBool" value="true"></field>
 <field name="loop" accessType="inputOutput" type="SFBool" value="true"></field>
@@ -341,7 +341,7 @@ let Transform56 = browser.currentScene.createNode("Transform");
 let HAnimHumanoid57 = browser.currentScene.createNode("HAnimHumanoid");
 HAnimHumanoid57.name = "Nancy";
 HAnimHumanoid57.DEF = "hanim_Nancy";
-HAnimHumanoid57.version = "1.0";
+HAnimHumanoid57.version = "2.0";
 let HAnimJoint58 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint58.name = "humanoid_root";
 HAnimJoint58.DEF = "hanim_humanoid_root";

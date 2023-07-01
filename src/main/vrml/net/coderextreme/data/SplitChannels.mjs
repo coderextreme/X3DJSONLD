@@ -339,7 +339,7 @@ browser.currentScene.children[8] = StreamAudioDestination61;
 
 let ChannelSplitter68 = browser.currentScene.createNode("ChannelSplitter");
 ChannelSplitter68.DEF = "ChannelSplitter";
-ChannelSplitter68.channelCountMode = "explicit";
+ChannelSplitter68.channelCountMode = "EXPLICIT";
 ChannelSplitter68.channelInterpretation = "SPEAKERS";
 let AudioClip69 = browser.currentScene.createNode("AudioClip");
 AudioClip69.description = "Violin";

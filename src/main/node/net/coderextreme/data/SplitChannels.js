@@ -81,7 +81,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addChild((new autoclass.Gain()).setUSE("ChannelSplitter")))
               .addChild((new autoclass.ChannelSelector()).setChannelSelection(1).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
                 .addChild((new autoclass.Gain()).setUSE("ChannelSplitter"))))))
-        .addChild((new autoclass.ChannelSplitter()).setDEF("ChannelSplitter").setChannelCountMode("explicit").setChannelInterpretation("SPEAKERS")
+        .addChild((new autoclass.ChannelSplitter()).setDEF("ChannelSplitter").setChannelCountMode("EXPLICIT").setChannelInterpretation("SPEAKERS")
           .addOutputs((new autoclass.AudioClip()).setDescription("Violin").setUrl(java.newArray("java.lang.String", ["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"]))))
         .addChild((new autoclass.Transform()).setDEF("Audio3").setRotation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(-0.5)])).setTranslation(java.newArray("float", [java.newFloat(0), java.newFloat(100), java.newFloat(0)]))
           .addChild((new autoclass.Shape())

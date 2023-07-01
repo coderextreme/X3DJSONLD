@@ -56,7 +56,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 June 2023"
+            "@content":"01 July 2023"
           },
           {
             "@name":"generator",
@@ -294,7 +294,7 @@
                                                   "@detune":50.0,
                                                   "@frequency":600,
                                                   "@qualityFactor":30.0,
-                                                  "@type":"allpass",
+                                                  "@type":"ALLPASS",
                                                   "@channelCountMode":"MAX",
                                                   "@channelInterpretation":"SPEAKERS",
                                                   "-children":[
@@ -337,7 +337,7 @@
                                                   "@detune":15.0,
                                                   "@frequency":600,
                                                   "@qualityFactor":15.0,
-                                                  "@type":"allpass",
+                                                  "@type":"ALLPASS",
                                                   "@channelCountMode":"MAX",
                                                   "@channelInterpretation":"SPEAKERS",
                                                   "-children":[
@@ -379,7 +379,7 @@
                                                 {
                                                   "@frequency":1000,
                                                   "@qualityFactor":0,
-                                                  "@type":"allpass",
+                                                  "@type":"ALLPASS",
                                                   "@channelCountMode":"MAX",
                                                   "@channelInterpretation":"SPEAKERS",
                                                   "-children":[

@@ -62,13 +62,13 @@ ProtoInstance ProtoInstance2 = null;
             .addField(new field().setType("SFVec3f").setName("position").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")))
           .setProtoBody(new ProtoBody()
             .addChild(new Transform().setDEF("transform")
-              .setIS(new IS()
+              .setIS(new IS("transform")
                 .addConnect(new connect().setNodeField("translation").setProtoField("position")))
-              .addChild(new Shape()
+              .addChild(new Shape("transform")
                 .setGeometry(new Sphere())
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f}))))
-              .addChild(new Transform().setTranslation(new float[] {1f,0f,0f})
+              .addChild(new Transform("transform").setTranslation(new float[] {1f,0f,0f})
                 .addChild(new Shape()
                   .setGeometry(new Text().setString(new MFString0().getArray())
                     .setFontStyle(new FontStyle().setJustify(new MFString1().getArray()).setSize(5f)))
@@ -76,10 +76,10 @@ ProtoInstance ProtoInstance2 = null;
                     .setMaterial(new Material().setDiffuseColor(new float[] {0f,0f,1f}))))))
             .addChild(new PositionInterpolator().setDEF("NodePosition").setKey(new MFFloat2().getArray()).setKeyValue(new MFVec3f3().getArray()))
             .addChild(new Script().setDEF("MoveBall")
-              .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("50 50 0"))
-              .addField(new field().setType("SFVec3f").setName("old").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-              .addField(new field().setType("SFTime").setName("set_cycle").setAccessType(field.ACCESSTYPE_INPUTONLY))
-              .addField(new field().setType("MFVec3f").setName("keyValue").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addField(new field("MoveBall").setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("50 50 0"))
+              .addField(new field("MoveBall").setType("SFVec3f").setName("old").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+              .addField(new field("MoveBall").setType("SFTime").setName("set_cycle").setAccessType(field.ACCESSTYPE_INPUTONLY))
+              .addField(new field("MoveBall").setType("MFVec3f").setName("keyValue").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
               .setSourceCode("ecmascript:\n"+
 "					function set_cycle(value) {\n"+
 "                                                old = translation;\n"+
@@ -102,10 +102,10 @@ ProtoInstance ProtoInstance2 = null;
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f,1f,0f}))))
             .addChild(new Script().setDEF("MoveCylinder")
-              .addField(new field().setType("MFVec3f").setName("spine").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 -50 0 0 50 0"))
-              .addField(new field().setType("SFVec3f").setName("set_endA").setAccessType(field.ACCESSTYPE_INPUTONLY))
-              .addField(new field().setType("SFVec3f").setName("set_endB").setAccessType(field.ACCESSTYPE_INPUTONLY))
-              .setIS(new IS()
+              .addField(new field("MoveCylinder").setType("MFVec3f").setName("spine").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 -50 0 0 50 0"))
+              .addField(new field("MoveCylinder").setType("SFVec3f").setName("set_endA").setAccessType(field.ACCESSTYPE_INPUTONLY))
+              .addField(new field("MoveCylinder").setType("SFVec3f").setName("set_endB").setAccessType(field.ACCESSTYPE_INPUTONLY))
+              .setIS(new IS("MoveCylinder")
                 .addConnect(new connect().setNodeField("set_endA").setProtoField("set_positionA"))
                 .addConnect(new connect().setNodeField("set_endB").setProtoField("set_positionB")))
               .setSourceCode("ecmascript:\n"+
@@ -131,20 +131,20 @@ ProtoInstance ProtoInstance2 = null;
 "                }"))
             .addChild(new ROUTE().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine"))))
         .addChild(new Transform().setDEF("HoldsContent").setScale(new float[] {0.1f,0.1f,0.1f})
-          .addChild(new PlaneSensor().setDEF("clickGenerator").setMinPosition(new float[] {-50f,-50f}).setMaxPosition(new float[] {50f,50f}).setDescription("click on background to add nodes, click on nodes to add links"))
-          .addChild(ProtoInstance0 = new ProtoInstance().setName("node").setDEF("nodeA"))
-          .addChild(ProtoInstance1 = new ProtoInstance().setName("node").setDEF("nodeB"))
-          .addChild(ProtoInstance2 = new ProtoInstance().setName("cylinder").setDEF("linkA")))
+          .addChild(new PlaneSensor("HoldsContent").setDEF("clickGenerator").setMinPosition(new float[] {-50f,-50f}).setMaxPosition(new float[] {50f,50f}).setDescription("click on background to add nodes, click on nodes to add links"))
+          .addChild(ProtoInstance0 = new ProtoInstance("HoldsContent").setName("node").setDEF("nodeA"))
+          .addChild(ProtoInstance1 = new ProtoInstance("HoldsContent").setName("node").setDEF("nodeB"))
+          .addChild(ProtoInstance2 = new ProtoInstance("HoldsContent").setName("cylinder").setDEF("linkA")))
         .addChild(new ROUTE().setFromNode("nodeA").setFromField("position").setToNode("linkA").setToField("set_positionA"))
         .addChild(new ROUTE().setFromNode("nodeB").setFromField("position").setToNode("linkA").setToField("set_positionB")))      ;
 ProtoInstance0
-            .addFieldValue(new fieldValue().setName("position").setValue("0 0 0"));
+            .addFieldValue(new fieldValue("nodeA").setName("position").setValue("0 0 0"));
 ProtoInstance1
-            .addFieldValue(new fieldValue().setName("position").setValue("50 50 50"));
+            .addFieldValue(new fieldValue("nodeB").setName("position").setValue("50 50 50"));
 ProtoInstance2
-            .addFieldValue(new fieldValue().setName("set_positionA").setValue("0 0 0"));
+            .addFieldValue(new fieldValue("linkA").setName("set_positionA").setValue("0 0 0"));
 ProtoInstance2
-            .addFieldValue(new fieldValue().setName("set_positionB").setValue("50 50 50"));
+            .addFieldValue(new fieldValue("linkA").setName("set_positionB").setValue("50 50 50"));
     return X3D0;
     }
 protected class MFString0 {

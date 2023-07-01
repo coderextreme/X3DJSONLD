@@ -38,6 +38,7 @@ var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); }
 var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4f = x3dom.fields.SFMatrix4f;
 var SFNode = x3dom.fields.SFNode;
+var SFRotation = x3dom.fields.SFRotation;
 var Quaternion = x3dom.fields.Quaternion;
 var SFString = String;
 var SFTime = Number;
@@ -66,9 +67,9 @@ if (typeof $ !== 'function') {
 }
 X3DJSON.nodeUtil = function(selector, node, field, value) {
 		if (typeof selector === 'undefined') {
-			selector = '';
+			selector = "";
 		} else {
-			selector = selector+' ';
+			selector = selector+" ";
 		}
 		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
@@ -233,10 +234,10 @@ X3DJSON['Obj']['Scene']['../data/jumpcut_loadurl.json']['MYSCRIPT']['ACTION'] = 
 X3DJSON['Obj']['Scene']['../data/jumpcut_loadurl.json']['MYSCRIPT'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/jumpcut_loadurl.json']['MYSCRIPT']['ACTION'],X3DJSON['Obj']['Scene']['../data/jumpcut_loadurl.json']['MYSCRIPT']);
 }
 if (typeof X3DJSON['Obj']['Scene']['../data/jumpcut_loadurl.json']['MYSCRIPT'].initialize === "function") X3DJSON['Obj']['Scene']['../data/jumpcut_loadurl.json']['MYSCRIPT'].initialize();
-    if (X3DJSON.nodeUtil('Scene','STARTER')) {
-X3DJSON.nodeUtil('Scene','STARTER').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/jumpcut_loadurl.json']['MYSCRIPT'].trigger_event(X3DJSON.nodeUtil('Scene','STARTER','isActive'), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","STARTER")) {
+X3DJSON.nodeUtil("Scene","STARTER").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/jumpcut_loadurl.json']['MYSCRIPT'].trigger_event(X3DJSON.nodeUtil("Scene","STARTER","isActive"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/jumpcut_loadurl.json']['MYSCRIPT'].trigger_event(X3DJSON.nodeUtil('Scene','STARTER','isActive'), __eventTime);
-			X3DJSON['Obj']['Scene']['../data/jumpcut_loadurl.json']['MYSCRIPT'].trigger_event(X3DJSON.nodeUtil('Scene','STARTER','isActive'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/jumpcut_loadurl.json']['MYSCRIPT'].trigger_event(X3DJSON.nodeUtil("Scene","STARTER","isActive"), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/jumpcut_loadurl.json']['MYSCRIPT'].trigger_event(X3DJSON.nodeUtil("Scene","STARTER","isActive"), __eventTime);

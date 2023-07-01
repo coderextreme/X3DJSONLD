@@ -319,7 +319,7 @@ group->addChildren(*StreamAudioDestination61);
 
 CChannelSplitter* ChannelSplitter68 = (CChannelSplitter *)(m_pScene.createNode("ChannelSplitter"));
 ChannelSplitter68->setDEF("ChannelSplitter");
-ChannelSplitter68->setChannelCountMode("explicit");
+ChannelSplitter68->setChannelCountMode("EXPLICIT");
 ChannelSplitter68->setChannelInterpretation("SPEAKERS");
 CAudioClip* AudioClip69 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
 AudioClip69->setDescription("Violin");

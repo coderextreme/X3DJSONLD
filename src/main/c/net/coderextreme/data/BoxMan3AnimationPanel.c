@@ -185,7 +185,7 @@ HAnimHumanoid HAnimHumanoid37 = createNode("HAnimHumanoid");
 HAnimHumanoid37.name = "Humanoid";
 HAnimHumanoid37.DEF = "boxman_Humanoid";
 HAnimHumanoid37.info = new MFString(new java.lang.String["authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=2.0"]);
-HAnimHumanoid37.version = "1.0";
+HAnimHumanoid37.version = "2.0";
 HAnimJoint HAnimJoint38 = createNode("HAnimJoint");
 HAnimJoint38.name = "humanoid_root";
 HAnimJoint38.DEF = "boxman_humanoid_root";

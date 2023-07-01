@@ -146,7 +146,7 @@ ProtoInstance ProtoInstance66 = null;
             .addField(new field().setType("MFFloat").setName("ulimit").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)))
           .setProtoBody(new ProtoBody()
             .addChild(new Transform().setDEF("JointTransform")
-              .setIS(new IS()
+              .setIS(new IS("JointTransform")
                 .addConnect(new connect().setNodeField("center").setProtoField("center"))
                 .addConnect(new connect().setNodeField("children").setProtoField("children"))
                 .addConnect(new connect().setNodeField("rotation").setProtoField("rotation"))
@@ -169,7 +169,7 @@ ProtoInstance ProtoInstance66 = null;
             .addField(new field().setType("MFNode").setName("removeChildren").setAccessType(field.ACCESSTYPE_INPUTONLY)))
           .setProtoBody(new ProtoBody()
             .addChild(new Group().setDEF("SegmentGroup")
-              .setIS(new IS()
+              .setIS(new IS("SegmentGroup")
                 .addConnect(new connect().setNodeField("bboxCenter").setProtoField("bboxCenter"))
                 .addConnect(new connect().setNodeField("bboxSize").setProtoField("bboxSize"))
                 .addConnect(new connect().setNodeField("children").setProtoField("children"))
@@ -195,7 +195,7 @@ ProtoInstance ProtoInstance66 = null;
             .addField(new field().setType("MFNode").setName("viewpoints").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Viewpoint nodes")))
           .setProtoBody(new ProtoBody()
             .addChild(new Transform().setDEF("HumanoidTransform")
-              .setIS(new IS()
+              .setIS(new IS("HumanoidTransform")
                 .addConnect(new connect().setNodeField("bboxCenter").setProtoField("bboxCenter"))
                 .addConnect(new connect().setNodeField("bboxSize").setProtoField("bboxSize"))
                 .addConnect(new connect().setNodeField("center").setProtoField("center"))
@@ -203,160 +203,160 @@ ProtoInstance ProtoInstance66 = null;
                 .addConnect(new connect().setNodeField("scale").setProtoField("scale"))
                 .addConnect(new connect().setNodeField("scaleOrientation").setProtoField("scaleOrientation"))
                 .addConnect(new connect().setNodeField("translation").setProtoField("translation")))
-              .addChild(new Group().setDEF("HumanoidGroup1")
-                .setIS(new IS()
+              .addChild(new Group("HumanoidTransform").setDEF("HumanoidGroup1")
+                .setIS(new IS("HumanoidGroup1")
                   .addConnect(new connect().setNodeField("children").setProtoField("humanoidBody"))))
               .addComments("<Group DEF=\"HumanoidGroup2\"> <IS> <connect nodeField=\"children\" protoField=\"segments\"/> </IS> </Group> <Group DEF=\"HumanoidGroup3\"> <IS> <connect nodeField=\"children\" protoField=\"sites\"/> </IS> </Group>")
-              .addChild(new Group().setDEF("HumanoidGroup4")
-                .setIS(new IS()
+              .addChild(new Group("HumanoidTransform").setDEF("HumanoidGroup4")
+                .setIS(new IS("HumanoidGroup4")
                   .addConnect(new connect().setNodeField("children").setProtoField("viewpoints")))))))
         .addComments("Start scene graph.")
         .addChild(ProtoInstance0 = new ProtoInstance().setName("Humanoid").setDEF("Humanoid"))
         .addChild(new NavigationInfo().setType(new java.lang.String[] {"EXAMINE"}).setAvatarSize(new MFFloat196().getArray()).setSpeed(0.5f))
         .addChild(new Group().setDEF("Interface")
-          .addChild(new Transform()
+          .addChild(new Transform("Interface")
             .addChild(new ProximitySensor().setDEF("HudProx").setCenter(new float[] {0f,20f,0f}).setSize(new float[] {500f,100f,500f})))
-          .addChild(new Collision().setDEF("HUD").setEnabled(false)
-            .addChild(new Transform().setDEF("HudXform")
-              .addChild(new Transform().setScale(new float[] {0.012f,0.012f,0.012f}).setTranslation(new float[] {0.01107f,-0.025f,-0.08f})
+          .addChild(new Collision("Interface").setDEF("HUD").setEnabled(false)
+            .addChild(new Transform("HUD").setDEF("HudXform")
+              .addChild(new Transform("HudXform").setScale(new float[] {0.012f,0.012f,0.012f}).setTranslation(new float[] {0.01107f,-0.025f,-0.08f})
                 .addChild(new Transform().setDEF("Stand_Text")
-                  .addChild(new TouchSensor().setDEF("Stand_Touch").setDescription("click for behavior"))
-                  .addChild(new Shape().setDEF("Stand")
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32197().getArray())
+                  .addChild(new TouchSensor("Stand_Text").setDEF("Stand_Touch").setDescription("click for behavior"))
+                  .addChild(new Shape("Stand_Text").setDEF("Stand")
+                    .setGeometry(new IndexedFaceSet("Stand").setCoordIndex(new MFInt32197().getArray())
                       .setCoord(new Coordinate().setPoint(new MFVec3f198().getArray())))
-                    .setAppearance(new Appearance()
+                    .setAppearance(new Appearance("Stand")
                       .setMaterial(new Material().setDEF("text_color").setAmbientIntensity(0f).setDiffuseColor(new float[] {0f,0f,0f}).setEmissiveColor(new float[] {0.819f,0.521f,0.169f}))))
-                  .addChild(new Transform().setScale(new float[] {84.89f,77.52f,77.52f}).setTranslation(new float[] {0.04092f,1.843f,3.826f})
+                  .addChild(new Transform("Stand_Text").setScale(new float[] {84.89f,77.52f,77.52f}).setTranslation(new float[] {0.04092f,1.843f,3.826f})
                     .addChild(new Shape().setDEF("Stand_Back")
-                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32199().getArray())
+                      .setGeometry(new IndexedFaceSet("Stand_Back").setCoordIndex(new MFInt32199().getArray())
                         .setCoord(new Coordinate().setPoint(new MFVec3f200().getArray())))
-                      .setAppearance(new Appearance()
+                      .setAppearance(new Appearance("Stand_Back")
                         .setMaterial(new Material().setDEF("Clear").setAmbientIntensity(0f).setDiffuseColor(new float[] {0f,0f,0f}).setTransparency(1f))))))
                 .addChild(new Transform().setDEF("Walk_Text")
-                  .addChild(new TouchSensor().setDEF("Walk_Touch").setDescription("click for behavior"))
-                  .addChild(new Shape().setDEF("WALK")
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32201().getArray())
+                  .addChild(new TouchSensor("Walk_Text").setDEF("Walk_Touch").setDescription("click for behavior"))
+                  .addChild(new Shape("Walk_Text").setDEF("WALK")
+                    .setGeometry(new IndexedFaceSet("WALK").setCoordIndex(new MFInt32201().getArray())
                       .setCoord(new Coordinate().setPoint(new MFVec3f202().getArray())))
-                    .setAppearance(new Appearance()
+                    .setAppearance(new Appearance("WALK")
                       .setMaterial(new Material().setUSE("text_color"))))
-                  .addChild(new Transform().setScale(new float[] {81.3f,81.3f,81.31f}).setTranslation(new float[] {-0.0414f,1.941f,4.015f})
+                  .addChild(new Transform("Walk_Text").setScale(new float[] {81.3f,81.3f,81.31f}).setTranslation(new float[] {-0.0414f,1.941f,4.015f})
                     .addChild(new Shape().setDEF("Walk_Back")
-                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32203().getArray())
+                      .setGeometry(new IndexedFaceSet("Walk_Back").setCoordIndex(new MFInt32203().getArray())
                         .setCoord(new Coordinate().setPoint(new MFVec3f204().getArray())))
-                      .setAppearance(new Appearance()
+                      .setAppearance(new Appearance("Walk_Back")
                         .setMaterial(new Material().setUSE("Clear"))))))
                 .addChild(new Transform().setDEF("Run_Text")
-                  .addChild(new TouchSensor().setDEF("Run_Touch").setDescription("click for behavior"))
-                  .addChild(new Shape().setDEF("Run")
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32205().getArray())
+                  .addChild(new TouchSensor("Run_Text").setDEF("Run_Touch").setDescription("click for behavior"))
+                  .addChild(new Shape("Run_Text").setDEF("Run")
+                    .setGeometry(new IndexedFaceSet("Run").setCoordIndex(new MFInt32205().getArray())
                       .setCoord(new Coordinate().setPoint(new MFVec3f206().getArray())))
-                    .setAppearance(new Appearance()
+                    .setAppearance(new Appearance("Run")
                       .setMaterial(new Material().setUSE("text_color"))))
-                  .addChild(new Transform().setScale(new float[] {82.47f,82.47f,82.48f}).setTranslation(new float[] {-0.01579f,1.968f,4.074f})
+                  .addChild(new Transform("Run_Text").setScale(new float[] {82.47f,82.47f,82.48f}).setTranslation(new float[] {-0.01579f,1.968f,4.074f})
                     .addChild(new Shape().setDEF("Run_Back")
-                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32207().getArray())
+                      .setGeometry(new IndexedFaceSet("Run_Back").setCoordIndex(new MFInt32207().getArray())
                         .setCoord(new Coordinate().setPoint(new MFVec3f208().getArray())))
-                      .setAppearance(new Appearance()
+                      .setAppearance(new Appearance("Run_Back")
                         .setMaterial(new Material().setUSE("Clear"))))))
                 .addChild(new Transform().setDEF("Jump_Text")
-                  .addChild(new TouchSensor().setDEF("Jump_Touch").setDescription("click for behavior"))
-                  .addChild(new Shape().setDEF("Jump")
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32209().getArray())
+                  .addChild(new TouchSensor("Jump_Text").setDEF("Jump_Touch").setDescription("click for behavior"))
+                  .addChild(new Shape("Jump_Text").setDEF("Jump")
+                    .setGeometry(new IndexedFaceSet("Jump").setCoordIndex(new MFInt32209().getArray())
                       .setCoord(new Coordinate().setPoint(new MFVec3f210().getArray())))
-                    .setAppearance(new Appearance()
+                    .setAppearance(new Appearance("Jump")
                       .setMaterial(new Material().setUSE("text_color"))))
-                  .addChild(new Transform().setScale(new float[] {83.79f,83.79f,83.79f}).setTranslation(new float[] {-0.008979f,1.99f,4.14f})
+                  .addChild(new Transform("Jump_Text").setScale(new float[] {83.79f,83.79f,83.79f}).setTranslation(new float[] {-0.008979f,1.99f,4.14f})
                     .addChild(new Shape().setDEF("Jump_Back")
-                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32211().getArray())
+                      .setGeometry(new IndexedFaceSet("Jump_Back").setCoordIndex(new MFInt32211().getArray())
                         .setCoord(new Coordinate().setPoint(new MFVec3f212().getArray())))
-                      .setAppearance(new Appearance()
+                      .setAppearance(new Appearance("Jump_Back")
                         .setMaterial(new Material().setUSE("Clear")))))))))
-          .addChild(new Transform().setDEF("Floor").setScale(new float[] {1f,0.0125f,1f}).setTranslation(new float[] {0f,-0.0125f,0f})
-            .addChild(new Shape()
+          .addChild(new Transform("Interface").setDEF("Floor").setScale(new float[] {1f,0.0125f,1f}).setTranslation(new float[] {0f,-0.0125f,0f})
+            .addChild(new Shape("Floor")
               .setGeometry(new Box())
               .setAppearance(new Appearance()
                 .setMaterial(new Material())))))
         .addChild(new Group().setDEF("Animations")
-          .addChild(new Group().setDEF("Stand_Animation")
-            .addChild(new OrientationInterpolator().setDEF("r_ankle_RotationInterpolator_Stand").setKey(new MFFloat213().getArray()).setKeyValue(new MFRotation214().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("r_knee_RotationInterpolator_Stand").setKey(new MFFloat215().getArray()).setKeyValue(new MFRotation216().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("r_hip_RotationInterpolator_Stand").setKey(new MFFloat217().getArray()).setKeyValue(new MFRotation218().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("l_ankle_RotationInterpolator_Stand").setKey(new MFFloat219().getArray()).setKeyValue(new MFRotation220().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("l_knee_RotationInterpolator_Stand").setKey(new MFFloat221().getArray()).setKeyValue(new MFRotation222().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("l_hip_RotationInterpolator_Stand").setKey(new MFFloat223().getArray()).setKeyValue(new MFRotation224().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("lower_body_RotationInterpolator_Stand").setKey(new MFFloat225().getArray()).setKeyValue(new MFRotation226().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("r_wrist_RotationInterpolator_Stand").setKey(new MFFloat227().getArray()).setKeyValue(new MFRotation228().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("r_elbow_RotationInterpolator_Stand").setKey(new MFFloat229().getArray()).setKeyValue(new MFRotation230().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("r_shoulder_RotationInterpolator_Stand").setKey(new MFFloat231().getArray()).setKeyValue(new MFRotation232().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("l_wrist_RotationInterpolator_Stand").setKey(new MFFloat233().getArray()).setKeyValue(new MFRotation234().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("l_elbow_RotationInterpolator_Stand").setKey(new MFFloat235().getArray()).setKeyValue(new MFRotation236().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("l_shoulder_RotationInterpolator_Stand").setKey(new MFFloat237().getArray()).setKeyValue(new MFRotation238().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("head_RotationInterpolator_Stand").setKey(new MFFloat239().getArray()).setKeyValue(new MFRotation240().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("neck_RotationInterpolator_Stand").setKey(new MFFloat241().getArray()).setKeyValue(new MFRotation242().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("upper_body_RotationInterpolator_Stand").setKey(new MFFloat243().getArray()).setKeyValue(new MFRotation244().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("whole_body_RotationInterpolator_Stand").setKey(new MFFloat245().getArray()).setKeyValue(new MFRotation246().getArray()))
-            .addChild(new PositionInterpolator().setDEF("whole_body_TranslationInterpolator_Stand").setKey(new MFFloat247().getArray()).setKeyValue(new MFVec3f248().getArray()))
-            .addChild(new TimeSensor().setDEF("Stand_Time").setCycleInterval(0.009999999776482582d)))
-          .addChild(new Group().setDEF("Walk_Animation")
-            .addChild(new OrientationInterpolator().setDEF("r_ankle_RotationInterpolator_BasicWalk").setKey(new MFFloat249().getArray()).setKeyValue(new MFRotation250().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("r_knee_RotationInterpolator_BasicWalk").setKey(new MFFloat251().getArray()).setKeyValue(new MFRotation252().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("r_hip_RotationInterpolator_BasicWalk").setKey(new MFFloat253().getArray()).setKeyValue(new MFRotation254().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("l_ankle_RotationInterpolator_BasicWalk").setKey(new MFFloat255().getArray()).setKeyValue(new MFRotation256().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("l_knee_RotationInterpolator_BasicWalk").setKey(new MFFloat257().getArray()).setKeyValue(new MFRotation258().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("l_hip_RotationInterpolator_BasicWalk").setKey(new MFFloat259().getArray()).setKeyValue(new MFRotation260().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("lower_body_RotationInterpolator_BasicWalk").setKey(new MFFloat261().getArray()).setKeyValue(new MFRotation262().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("r_wrist_RotationInterpolator_BasicWalk").setKey(new MFFloat263().getArray()).setKeyValue(new MFRotation264().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("r_elbow_RotationInterpolator_BasicWalk").setKey(new MFFloat265().getArray()).setKeyValue(new MFRotation266().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("r_shoulder_RotationInterpolator_BasicWalk").setKey(new MFFloat267().getArray()).setKeyValue(new MFRotation268().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("l_wrist_RotationInterpolator_BasicWalk").setKey(new MFFloat269().getArray()).setKeyValue(new MFRotation270().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("l_elbow_RotationInterpolator_BasicWalk").setKey(new MFFloat271().getArray()).setKeyValue(new MFRotation272().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("l_shoulder_RotationInterpolator_BasicWalk").setKey(new MFFloat273().getArray()).setKeyValue(new MFRotation274().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("head_RotationInterpolator_BasicWalk").setKey(new MFFloat275().getArray()).setKeyValue(new MFRotation276().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("neck_RotationInterpolator_BasicWalk").setKey(new MFFloat277().getArray()).setKeyValue(new MFRotation278().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("upper_body_RotationInterpolator_BasicWalk").setKey(new MFFloat279().getArray()).setKeyValue(new MFRotation280().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("whole_body_RotationInterpolator_BasicWalk").setKey(new MFFloat281().getArray()).setKeyValue(new MFRotation282().getArray()))
-            .addChild(new PositionInterpolator().setDEF("whole_body_TranslationInterpolator_BasicWalk").setKey(new MFFloat283().getArray()).setKeyValue(new MFVec3f284().getArray()))
-            .addChild(new TimeSensor().setDEF("Walk_Time").setCycleInterval(2d).setLoop(true).setStartTime(-1d)))
-          .addChild(new Group().setDEF("Run_Animation")
-            .addChild(new OrientationInterpolator().setDEF("r_ankle_RotationInterpolator_Run").setKey(new MFFloat285().getArray()).setKeyValue(new MFRotation286().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("r_knee_RotationInterpolator_Run").setKey(new MFFloat287().getArray()).setKeyValue(new MFRotation288().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("r_hip_RotationInterpolator_Run").setKey(new MFFloat289().getArray()).setKeyValue(new MFRotation290().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("l_ankle_RotationInterpolator_Run").setKey(new MFFloat291().getArray()).setKeyValue(new MFRotation292().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("l_knee_RotationInterpolator_Run").setKey(new MFFloat293().getArray()).setKeyValue(new MFRotation294().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("l_hip_RotationInterpolator_Run").setKey(new MFFloat295().getArray()).setKeyValue(new MFRotation296().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("lower_body_RotationInterpolator_Run").setKey(new MFFloat297().getArray()).setKeyValue(new MFRotation298().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("r_wrist_RotationInterpolator_Run").setKey(new MFFloat299().getArray()).setKeyValue(new MFRotation300().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("r_elbow_RotationInterpolator_Run").setKey(new MFFloat301().getArray()).setKeyValue(new MFRotation302().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("r_shoulder_RotationInterpolator_Run").setKey(new MFFloat303().getArray()).setKeyValue(new MFRotation304().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("l_wrist_RotationInterpolator_Run").setKey(new MFFloat305().getArray()).setKeyValue(new MFRotation306().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("l_elbow_RotationInterpolator_Run").setKey(new MFFloat307().getArray()).setKeyValue(new MFRotation308().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("l_shoulder_RotationInterpolator_Run").setKey(new MFFloat309().getArray()).setKeyValue(new MFRotation310().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("head_RotationInterpolator_Run").setKey(new MFFloat311().getArray()).setKeyValue(new MFRotation312().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("neck_RotationInterpolator_Run").setKey(new MFFloat313().getArray()).setKeyValue(new MFRotation314().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("upper_body_RotationInterpolator_Run").setKey(new MFFloat315().getArray()).setKeyValue(new MFRotation316().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("whole_body_RotationInterpolator_Run").setKey(new MFFloat317().getArray()).setKeyValue(new MFRotation318().getArray()))
-            .addChild(new PositionInterpolator().setDEF("whole_body_TranslationInterpolator_Run").setKey(new MFFloat319().getArray()).setKeyValue(new MFVec3f320().getArray()))
-            .addChild(new TimeSensor().setDEF("Run_Time").setLoop(true).setStartTime(-1d)))
-          .addChild(new Group().setDEF("Jump_Animation")
-            .addChild(new OrientationInterpolator().setDEF("r_ankle_RotationInterpolator_Jump").setKey(new MFFloat321().getArray()).setKeyValue(new MFRotation322().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("r_knee_RotationInterpolator_Jump").setKey(new MFFloat323().getArray()).setKeyValue(new MFRotation324().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("r_hip_RotationInterpolator_Jump").setKey(new MFFloat325().getArray()).setKeyValue(new MFRotation326().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("l_ankle_RotationInterpolator_Jump").setKey(new MFFloat327().getArray()).setKeyValue(new MFRotation328().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("l_knee_RotationInterpolator_Jump").setKey(new MFFloat329().getArray()).setKeyValue(new MFRotation330().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("l_hip_RotationInterpolator_Jump").setKey(new MFFloat331().getArray()).setKeyValue(new MFRotation332().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("lower_body_RotationInterpolator_Jump").setKey(new MFFloat333().getArray()).setKeyValue(new MFRotation334().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("r_wrist_RotationInterpolator_Jump").setKey(new MFFloat335().getArray()).setKeyValue(new MFRotation336().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("r_elbow_RotationInterpolator_Jump").setKey(new MFFloat337().getArray()).setKeyValue(new MFRotation338().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("r_shoulder_RotationInterpolator_Jump").setKey(new MFFloat339().getArray()).setKeyValue(new MFRotation340().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("l_wrist_RotationInterpolator_Jump").setKey(new MFFloat341().getArray()).setKeyValue(new MFRotation342().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("l_elbow_RotationInterpolator_Jump").setKey(new MFFloat343().getArray()).setKeyValue(new MFRotation344().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("l_shoulder_RotationInterpolator_Jump").setKey(new MFFloat345().getArray()).setKeyValue(new MFRotation346().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("head_RotationInterpolator_Jump").setKey(new MFFloat347().getArray()).setKeyValue(new MFRotation348().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("neck_RotationInterpolator_Jump").setKey(new MFFloat349().getArray()).setKeyValue(new MFRotation350().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("upper_body_RotationInterpolator_Jump").setKey(new MFFloat351().getArray()).setKeyValue(new MFRotation352().getArray()))
-            .addChild(new OrientationInterpolator().setDEF("whole_body_RotationInterpolator_Jump").setKey(new MFFloat353().getArray()).setKeyValue(new MFRotation354().getArray()))
-            .addChild(new PositionInterpolator().setDEF("whole_body_TranslationInterpolator_Jump").setKey(new MFFloat355().getArray()).setKeyValue(new MFVec3f356().getArray()))
-            .addChild(new TimeSensor().setDEF("Jump_Time").setCycleInterval(2d).setStartTime(-1d))))
+          .addChild(new Group("Animations").setDEF("Stand_Animation")
+            .addChild(new OrientationInterpolator("Stand_Animation").setDEF("r_ankle_RotationInterpolator_Stand").setKey(new MFFloat213().getArray()).setKeyValue(new MFRotation214().getArray()))
+            .addChild(new OrientationInterpolator("Stand_Animation").setDEF("r_knee_RotationInterpolator_Stand").setKey(new MFFloat215().getArray()).setKeyValue(new MFRotation216().getArray()))
+            .addChild(new OrientationInterpolator("Stand_Animation").setDEF("r_hip_RotationInterpolator_Stand").setKey(new MFFloat217().getArray()).setKeyValue(new MFRotation218().getArray()))
+            .addChild(new OrientationInterpolator("Stand_Animation").setDEF("l_ankle_RotationInterpolator_Stand").setKey(new MFFloat219().getArray()).setKeyValue(new MFRotation220().getArray()))
+            .addChild(new OrientationInterpolator("Stand_Animation").setDEF("l_knee_RotationInterpolator_Stand").setKey(new MFFloat221().getArray()).setKeyValue(new MFRotation222().getArray()))
+            .addChild(new OrientationInterpolator("Stand_Animation").setDEF("l_hip_RotationInterpolator_Stand").setKey(new MFFloat223().getArray()).setKeyValue(new MFRotation224().getArray()))
+            .addChild(new OrientationInterpolator("Stand_Animation").setDEF("lower_body_RotationInterpolator_Stand").setKey(new MFFloat225().getArray()).setKeyValue(new MFRotation226().getArray()))
+            .addChild(new OrientationInterpolator("Stand_Animation").setDEF("r_wrist_RotationInterpolator_Stand").setKey(new MFFloat227().getArray()).setKeyValue(new MFRotation228().getArray()))
+            .addChild(new OrientationInterpolator("Stand_Animation").setDEF("r_elbow_RotationInterpolator_Stand").setKey(new MFFloat229().getArray()).setKeyValue(new MFRotation230().getArray()))
+            .addChild(new OrientationInterpolator("Stand_Animation").setDEF("r_shoulder_RotationInterpolator_Stand").setKey(new MFFloat231().getArray()).setKeyValue(new MFRotation232().getArray()))
+            .addChild(new OrientationInterpolator("Stand_Animation").setDEF("l_wrist_RotationInterpolator_Stand").setKey(new MFFloat233().getArray()).setKeyValue(new MFRotation234().getArray()))
+            .addChild(new OrientationInterpolator("Stand_Animation").setDEF("l_elbow_RotationInterpolator_Stand").setKey(new MFFloat235().getArray()).setKeyValue(new MFRotation236().getArray()))
+            .addChild(new OrientationInterpolator("Stand_Animation").setDEF("l_shoulder_RotationInterpolator_Stand").setKey(new MFFloat237().getArray()).setKeyValue(new MFRotation238().getArray()))
+            .addChild(new OrientationInterpolator("Stand_Animation").setDEF("head_RotationInterpolator_Stand").setKey(new MFFloat239().getArray()).setKeyValue(new MFRotation240().getArray()))
+            .addChild(new OrientationInterpolator("Stand_Animation").setDEF("neck_RotationInterpolator_Stand").setKey(new MFFloat241().getArray()).setKeyValue(new MFRotation242().getArray()))
+            .addChild(new OrientationInterpolator("Stand_Animation").setDEF("upper_body_RotationInterpolator_Stand").setKey(new MFFloat243().getArray()).setKeyValue(new MFRotation244().getArray()))
+            .addChild(new OrientationInterpolator("Stand_Animation").setDEF("whole_body_RotationInterpolator_Stand").setKey(new MFFloat245().getArray()).setKeyValue(new MFRotation246().getArray()))
+            .addChild(new PositionInterpolator("Stand_Animation").setDEF("whole_body_TranslationInterpolator_Stand").setKey(new MFFloat247().getArray()).setKeyValue(new MFVec3f248().getArray()))
+            .addChild(new TimeSensor("Stand_Animation").setDEF("Stand_Time").setCycleInterval(0.009999999776482582d)))
+          .addChild(new Group("Animations").setDEF("Walk_Animation")
+            .addChild(new OrientationInterpolator("Walk_Animation").setDEF("r_ankle_RotationInterpolator_BasicWalk").setKey(new MFFloat249().getArray()).setKeyValue(new MFRotation250().getArray()))
+            .addChild(new OrientationInterpolator("Walk_Animation").setDEF("r_knee_RotationInterpolator_BasicWalk").setKey(new MFFloat251().getArray()).setKeyValue(new MFRotation252().getArray()))
+            .addChild(new OrientationInterpolator("Walk_Animation").setDEF("r_hip_RotationInterpolator_BasicWalk").setKey(new MFFloat253().getArray()).setKeyValue(new MFRotation254().getArray()))
+            .addChild(new OrientationInterpolator("Walk_Animation").setDEF("l_ankle_RotationInterpolator_BasicWalk").setKey(new MFFloat255().getArray()).setKeyValue(new MFRotation256().getArray()))
+            .addChild(new OrientationInterpolator("Walk_Animation").setDEF("l_knee_RotationInterpolator_BasicWalk").setKey(new MFFloat257().getArray()).setKeyValue(new MFRotation258().getArray()))
+            .addChild(new OrientationInterpolator("Walk_Animation").setDEF("l_hip_RotationInterpolator_BasicWalk").setKey(new MFFloat259().getArray()).setKeyValue(new MFRotation260().getArray()))
+            .addChild(new OrientationInterpolator("Walk_Animation").setDEF("lower_body_RotationInterpolator_BasicWalk").setKey(new MFFloat261().getArray()).setKeyValue(new MFRotation262().getArray()))
+            .addChild(new OrientationInterpolator("Walk_Animation").setDEF("r_wrist_RotationInterpolator_BasicWalk").setKey(new MFFloat263().getArray()).setKeyValue(new MFRotation264().getArray()))
+            .addChild(new OrientationInterpolator("Walk_Animation").setDEF("r_elbow_RotationInterpolator_BasicWalk").setKey(new MFFloat265().getArray()).setKeyValue(new MFRotation266().getArray()))
+            .addChild(new OrientationInterpolator("Walk_Animation").setDEF("r_shoulder_RotationInterpolator_BasicWalk").setKey(new MFFloat267().getArray()).setKeyValue(new MFRotation268().getArray()))
+            .addChild(new OrientationInterpolator("Walk_Animation").setDEF("l_wrist_RotationInterpolator_BasicWalk").setKey(new MFFloat269().getArray()).setKeyValue(new MFRotation270().getArray()))
+            .addChild(new OrientationInterpolator("Walk_Animation").setDEF("l_elbow_RotationInterpolator_BasicWalk").setKey(new MFFloat271().getArray()).setKeyValue(new MFRotation272().getArray()))
+            .addChild(new OrientationInterpolator("Walk_Animation").setDEF("l_shoulder_RotationInterpolator_BasicWalk").setKey(new MFFloat273().getArray()).setKeyValue(new MFRotation274().getArray()))
+            .addChild(new OrientationInterpolator("Walk_Animation").setDEF("head_RotationInterpolator_BasicWalk").setKey(new MFFloat275().getArray()).setKeyValue(new MFRotation276().getArray()))
+            .addChild(new OrientationInterpolator("Walk_Animation").setDEF("neck_RotationInterpolator_BasicWalk").setKey(new MFFloat277().getArray()).setKeyValue(new MFRotation278().getArray()))
+            .addChild(new OrientationInterpolator("Walk_Animation").setDEF("upper_body_RotationInterpolator_BasicWalk").setKey(new MFFloat279().getArray()).setKeyValue(new MFRotation280().getArray()))
+            .addChild(new OrientationInterpolator("Walk_Animation").setDEF("whole_body_RotationInterpolator_BasicWalk").setKey(new MFFloat281().getArray()).setKeyValue(new MFRotation282().getArray()))
+            .addChild(new PositionInterpolator("Walk_Animation").setDEF("whole_body_TranslationInterpolator_BasicWalk").setKey(new MFFloat283().getArray()).setKeyValue(new MFVec3f284().getArray()))
+            .addChild(new TimeSensor("Walk_Animation").setDEF("Walk_Time").setCycleInterval(2d).setLoop(true).setStartTime(-1d)))
+          .addChild(new Group("Animations").setDEF("Run_Animation")
+            .addChild(new OrientationInterpolator("Run_Animation").setDEF("r_ankle_RotationInterpolator_Run").setKey(new MFFloat285().getArray()).setKeyValue(new MFRotation286().getArray()))
+            .addChild(new OrientationInterpolator("Run_Animation").setDEF("r_knee_RotationInterpolator_Run").setKey(new MFFloat287().getArray()).setKeyValue(new MFRotation288().getArray()))
+            .addChild(new OrientationInterpolator("Run_Animation").setDEF("r_hip_RotationInterpolator_Run").setKey(new MFFloat289().getArray()).setKeyValue(new MFRotation290().getArray()))
+            .addChild(new OrientationInterpolator("Run_Animation").setDEF("l_ankle_RotationInterpolator_Run").setKey(new MFFloat291().getArray()).setKeyValue(new MFRotation292().getArray()))
+            .addChild(new OrientationInterpolator("Run_Animation").setDEF("l_knee_RotationInterpolator_Run").setKey(new MFFloat293().getArray()).setKeyValue(new MFRotation294().getArray()))
+            .addChild(new OrientationInterpolator("Run_Animation").setDEF("l_hip_RotationInterpolator_Run").setKey(new MFFloat295().getArray()).setKeyValue(new MFRotation296().getArray()))
+            .addChild(new OrientationInterpolator("Run_Animation").setDEF("lower_body_RotationInterpolator_Run").setKey(new MFFloat297().getArray()).setKeyValue(new MFRotation298().getArray()))
+            .addChild(new OrientationInterpolator("Run_Animation").setDEF("r_wrist_RotationInterpolator_Run").setKey(new MFFloat299().getArray()).setKeyValue(new MFRotation300().getArray()))
+            .addChild(new OrientationInterpolator("Run_Animation").setDEF("r_elbow_RotationInterpolator_Run").setKey(new MFFloat301().getArray()).setKeyValue(new MFRotation302().getArray()))
+            .addChild(new OrientationInterpolator("Run_Animation").setDEF("r_shoulder_RotationInterpolator_Run").setKey(new MFFloat303().getArray()).setKeyValue(new MFRotation304().getArray()))
+            .addChild(new OrientationInterpolator("Run_Animation").setDEF("l_wrist_RotationInterpolator_Run").setKey(new MFFloat305().getArray()).setKeyValue(new MFRotation306().getArray()))
+            .addChild(new OrientationInterpolator("Run_Animation").setDEF("l_elbow_RotationInterpolator_Run").setKey(new MFFloat307().getArray()).setKeyValue(new MFRotation308().getArray()))
+            .addChild(new OrientationInterpolator("Run_Animation").setDEF("l_shoulder_RotationInterpolator_Run").setKey(new MFFloat309().getArray()).setKeyValue(new MFRotation310().getArray()))
+            .addChild(new OrientationInterpolator("Run_Animation").setDEF("head_RotationInterpolator_Run").setKey(new MFFloat311().getArray()).setKeyValue(new MFRotation312().getArray()))
+            .addChild(new OrientationInterpolator("Run_Animation").setDEF("neck_RotationInterpolator_Run").setKey(new MFFloat313().getArray()).setKeyValue(new MFRotation314().getArray()))
+            .addChild(new OrientationInterpolator("Run_Animation").setDEF("upper_body_RotationInterpolator_Run").setKey(new MFFloat315().getArray()).setKeyValue(new MFRotation316().getArray()))
+            .addChild(new OrientationInterpolator("Run_Animation").setDEF("whole_body_RotationInterpolator_Run").setKey(new MFFloat317().getArray()).setKeyValue(new MFRotation318().getArray()))
+            .addChild(new PositionInterpolator("Run_Animation").setDEF("whole_body_TranslationInterpolator_Run").setKey(new MFFloat319().getArray()).setKeyValue(new MFVec3f320().getArray()))
+            .addChild(new TimeSensor("Run_Animation").setDEF("Run_Time").setLoop(true).setStartTime(-1d)))
+          .addChild(new Group("Animations").setDEF("Jump_Animation")
+            .addChild(new OrientationInterpolator("Jump_Animation").setDEF("r_ankle_RotationInterpolator_Jump").setKey(new MFFloat321().getArray()).setKeyValue(new MFRotation322().getArray()))
+            .addChild(new OrientationInterpolator("Jump_Animation").setDEF("r_knee_RotationInterpolator_Jump").setKey(new MFFloat323().getArray()).setKeyValue(new MFRotation324().getArray()))
+            .addChild(new OrientationInterpolator("Jump_Animation").setDEF("r_hip_RotationInterpolator_Jump").setKey(new MFFloat325().getArray()).setKeyValue(new MFRotation326().getArray()))
+            .addChild(new OrientationInterpolator("Jump_Animation").setDEF("l_ankle_RotationInterpolator_Jump").setKey(new MFFloat327().getArray()).setKeyValue(new MFRotation328().getArray()))
+            .addChild(new OrientationInterpolator("Jump_Animation").setDEF("l_knee_RotationInterpolator_Jump").setKey(new MFFloat329().getArray()).setKeyValue(new MFRotation330().getArray()))
+            .addChild(new OrientationInterpolator("Jump_Animation").setDEF("l_hip_RotationInterpolator_Jump").setKey(new MFFloat331().getArray()).setKeyValue(new MFRotation332().getArray()))
+            .addChild(new OrientationInterpolator("Jump_Animation").setDEF("lower_body_RotationInterpolator_Jump").setKey(new MFFloat333().getArray()).setKeyValue(new MFRotation334().getArray()))
+            .addChild(new OrientationInterpolator("Jump_Animation").setDEF("r_wrist_RotationInterpolator_Jump").setKey(new MFFloat335().getArray()).setKeyValue(new MFRotation336().getArray()))
+            .addChild(new OrientationInterpolator("Jump_Animation").setDEF("r_elbow_RotationInterpolator_Jump").setKey(new MFFloat337().getArray()).setKeyValue(new MFRotation338().getArray()))
+            .addChild(new OrientationInterpolator("Jump_Animation").setDEF("r_shoulder_RotationInterpolator_Jump").setKey(new MFFloat339().getArray()).setKeyValue(new MFRotation340().getArray()))
+            .addChild(new OrientationInterpolator("Jump_Animation").setDEF("l_wrist_RotationInterpolator_Jump").setKey(new MFFloat341().getArray()).setKeyValue(new MFRotation342().getArray()))
+            .addChild(new OrientationInterpolator("Jump_Animation").setDEF("l_elbow_RotationInterpolator_Jump").setKey(new MFFloat343().getArray()).setKeyValue(new MFRotation344().getArray()))
+            .addChild(new OrientationInterpolator("Jump_Animation").setDEF("l_shoulder_RotationInterpolator_Jump").setKey(new MFFloat345().getArray()).setKeyValue(new MFRotation346().getArray()))
+            .addChild(new OrientationInterpolator("Jump_Animation").setDEF("head_RotationInterpolator_Jump").setKey(new MFFloat347().getArray()).setKeyValue(new MFRotation348().getArray()))
+            .addChild(new OrientationInterpolator("Jump_Animation").setDEF("neck_RotationInterpolator_Jump").setKey(new MFFloat349().getArray()).setKeyValue(new MFRotation350().getArray()))
+            .addChild(new OrientationInterpolator("Jump_Animation").setDEF("upper_body_RotationInterpolator_Jump").setKey(new MFFloat351().getArray()).setKeyValue(new MFRotation352().getArray()))
+            .addChild(new OrientationInterpolator("Jump_Animation").setDEF("whole_body_RotationInterpolator_Jump").setKey(new MFFloat353().getArray()).setKeyValue(new MFRotation354().getArray()))
+            .addChild(new PositionInterpolator("Jump_Animation").setDEF("whole_body_TranslationInterpolator_Jump").setKey(new MFFloat355().getArray()).setKeyValue(new MFVec3f356().getArray()))
+            .addChild(new TimeSensor("Jump_Animation").setDEF("Jump_Time").setCycleInterval(2d).setStartTime(-1d))))
         .addChild(new ROUTE().setFromField("position_changed").setFromNode("HudProx").setToField("set_translation").setToNode("HudXform"))
         .addChild(new ROUTE().setFromField("orientation_changed").setFromNode("HudProx").setToField("set_rotation").setToNode("HudXform"))
         .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stand_Touch").setToField("stopTime").setToNode("Walk_Time"))
@@ -520,11 +520,11 @@ ProtoInstance ProtoInstance66 = null;
         .addChild(new ROUTE().setFromField("value_changed").setFromNode("whole_body_RotationInterpolator_Jump").setToField("set_rotation").setToNode("hanim_humanoid_root"))
         .addChild(new ROUTE().setFromField("value_changed").setFromNode("whole_body_TranslationInterpolator_Jump").setToField("set_translation").setToNode("hanim_humanoid_root")))      ;
 ProtoInstance0
-          .addFieldValue(new fieldValue().setName("humanoidBody")
+          .addFieldValue(new fieldValue("Humanoid").setName("humanoidBody")
             .addChild(ProtoInstance1 = new ProtoInstance().setName("Joint").setDEF("hanim_humanoid_root"))
             .addChild(new Group()));
 ProtoInstance0
-          .addFieldValue(new fieldValue().setName("joints")
+          .addFieldValue(new fieldValue("Humanoid").setName("joints")
             .addChild(ProtoInstance34 = new ProtoInstance().setUSE("hanim_humanoid_root"))
             .addChild(ProtoInstance35 = new ProtoInstance().setUSE("hanim_sacroiliac"))
             .addChild(ProtoInstance36 = new ProtoInstance().setUSE("hanim_l_hip"))
@@ -543,7 +543,7 @@ ProtoInstance0
             .addChild(ProtoInstance49 = new ProtoInstance().setUSE("hanim_vc4"))
             .addChild(ProtoInstance50 = new ProtoInstance().setUSE("hanim_skullbase")));
 ProtoInstance0
-          .addFieldValue(new fieldValue().setName("segments")
+          .addFieldValue(new fieldValue("Humanoid").setName("segments")
             .addChild(ProtoInstance51 = new ProtoInstance().setUSE("hanim_pelvis"))
             .addChild(ProtoInstance52 = new ProtoInstance().setUSE("hanim_l_thigh"))
             .addChild(ProtoInstance53 = new ProtoInstance().setUSE("hanim_l_calf"))
@@ -561,32 +561,32 @@ ProtoInstance0
             .addChild(ProtoInstance65 = new ProtoInstance().setUSE("hanim_c4"))
             .addChild(ProtoInstance66 = new ProtoInstance().setUSE("hanim_skull")));
 ProtoInstance0
-          .addFieldValue(new fieldValue().setName("viewpoints")
+          .addFieldValue(new fieldValue("Humanoid").setName("viewpoints")
             .addChild(new Viewpoint().setDEF("InclinedView").setDescription("Inclined View").setOrientation(new float[] {-0.113f,0.993f,0.0347f,0.671f}).setPosition(new float[] {1.62f,1.05f,2.06f}))
             .addChild(new Viewpoint().setDEF("FrontView").setDescription("Front View").setPosition(new float[] {0f,0.854f,2.57665f}))
             .addChild(new Viewpoint().setDEF("SideView").setDescription("Side View").setOrientation(new float[] {0f,1f,0f,1.57079f}).setPosition(new float[] {2.5929f,0.854f,0f}))
             .addChild(new Viewpoint().setDEF("TopView").setDescription("Top View").setOrientation(new float[] {1f,0f,0f,-1.57079f}).setPosition(new float[] {0f,3.4495f,0f})));
 ProtoInstance1
-              .addFieldValue(new fieldValue().setName("name").setValue("humanoid_root"));
+              .addFieldValue(new fieldValue("hanim_humanoid_root").setName("name").setValue("humanoid_root"));
 ProtoInstance1
-              .addFieldValue(new fieldValue().setName("center").setValue("-0.00405 0.855 -0.000113"));
+              .addFieldValue(new fieldValue("hanim_humanoid_root").setName("center").setValue("-0.00405 0.855 -0.000113"));
 ProtoInstance1
-              .addFieldValue(new fieldValue().setName("children")
+              .addFieldValue(new fieldValue("hanim_humanoid_root").setName("children")
                 .addChild(ProtoInstance2 = new ProtoInstance().setName("Joint").setDEF("hanim_sacroiliac"))
                 .addChild(ProtoInstance16 = new ProtoInstance().setName("Joint").setDEF("hanim_vl1")));
 ProtoInstance2
-                  .addFieldValue(new fieldValue().setName("name").setValue("sacroiliac"));
+                  .addFieldValue(new fieldValue("hanim_sacroiliac").setName("name").setValue("sacroiliac"));
 ProtoInstance2
-                  .addFieldValue(new fieldValue().setName("center").setValue("0 1.01 -0.0204"));
+                  .addFieldValue(new fieldValue("hanim_sacroiliac").setName("center").setValue("0 1.01 -0.0204"));
 ProtoInstance2
-                  .addFieldValue(new fieldValue().setName("children")
+                  .addFieldValue(new fieldValue("hanim_sacroiliac").setName("children")
                     .addChild(ProtoInstance3 = new ProtoInstance().setName("Segment").setDEF("hanim_pelvis"))
                     .addChild(ProtoInstance4 = new ProtoInstance().setName("Joint").setDEF("hanim_l_hip"))
                     .addChild(ProtoInstance10 = new ProtoInstance().setName("Joint").setDEF("hanim_r_hip")));
 ProtoInstance3
-                      .addFieldValue(new fieldValue().setName("name").setValue("pelvis"));
+                      .addFieldValue(new fieldValue("hanim_pelvis").setName("name").setValue("pelvis"));
 ProtoInstance3
-                      .addFieldValue(new fieldValue().setName("children")
+                      .addFieldValue(new fieldValue("hanim_pelvis").setName("children")
                         .addChild(new Transform().setCenter(new float[] {-0.7455f,1f,0.058f}).setRotation(new float[] {0f,1f,0f,1.570796f}).setScale(new float[] {0.1f,0.1f,0.1f})
                           .addChild(new Shape()
                             .setAppearance(new Appearance()
@@ -595,280 +595,280 @@ ProtoInstance3
                             .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt321().getArray().append(new MFInt322().getArray()).append(new MFInt323().getArray()).append(new MFInt324().getArray()).append(new MFInt325().getArray())).setCreaseAngle(1.14f)
                               .setCoord(new Coordinate().setPoint(new MFVec3f6().getArray().append(new MFVec3f7().getArray()).append(new MFVec3f8().getArray()).append(new MFVec3f9().getArray()).append(new MFVec3f10().getArray()).append(new MFVec3f11().getArray()).append(new MFVec3f12().getArray()).append(new MFVec3f13().getArray()).append(new MFVec3f14().getArray()).append(new MFVec3f15().getArray()).append(new MFVec3f16().getArray())))))));
 ProtoInstance4
-                      .addFieldValue(new fieldValue().setName("name").setValue("l_hip"));
+                      .addFieldValue(new fieldValue("hanim_l_hip").setName("name").setValue("l_hip"));
 ProtoInstance4
-                      .addFieldValue(new fieldValue().setName("center").setValue("0.122 0.888271 -0.0693267"));
+                      .addFieldValue(new fieldValue("hanim_l_hip").setName("center").setValue("0.122 0.888271 -0.0693267"));
 ProtoInstance4
-                      .addFieldValue(new fieldValue().setName("children")
+                      .addFieldValue(new fieldValue("hanim_l_hip").setName("children")
                         .addChild(ProtoInstance5 = new ProtoInstance().setName("Segment").setDEF("hanim_l_thigh"))
                         .addChild(ProtoInstance6 = new ProtoInstance().setName("Joint").setDEF("hanim_l_knee")));
 ProtoInstance5
-                          .addFieldValue(new fieldValue().setName("name").setValue("l_thigh"));
+                          .addFieldValue(new fieldValue("hanim_l_thigh").setName("name").setValue("l_thigh"));
 ProtoInstance5
-                          .addFieldValue(new fieldValue().setName("children")
+                          .addFieldValue(new fieldValue("hanim_l_thigh").setName("children")
                             .addChild(new Transform().setDEF("l_thigh_adjust").setCenter(new float[] {-0.7f,1.1f,0.04f}).setRotation(new float[] {0f,1f,0f,1.570796f}).setScale(new float[] {0.1f,0.1f,0.1f})
-                              .addChild(new Shape()
+                              .addChild(new Shape("l_thigh_adjust")
                                 .setAppearance(new Appearance()
                                   .setMaterial(new Material().setUSE("Pants_Color"))
                                   .setTexture(new ImageTexture().setUSE("camo")))
                                 .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3217().getArray().append(new MFInt3218().getArray()).append(new MFInt3219().getArray())).setCreaseAngle(1.32f)
                                   .setCoord(new Coordinate().setPoint(new MFVec3f20().getArray().append(new MFVec3f21().getArray()).append(new MFVec3f22().getArray()).append(new MFVec3f23().getArray()).append(new MFVec3f24().getArray()).append(new MFVec3f25().getArray())))))));
 ProtoInstance6
-                          .addFieldValue(new fieldValue().setName("name").setValue("l_knee"));
+                          .addFieldValue(new fieldValue("hanim_l_knee").setName("name").setValue("l_knee"));
 ProtoInstance6
-                          .addFieldValue(new fieldValue().setName("center").setValue("0.0738 0.517 -0.0284"));
+                          .addFieldValue(new fieldValue("hanim_l_knee").setName("center").setValue("0.0738 0.517 -0.0284"));
 ProtoInstance6
-                          .addFieldValue(new fieldValue().setName("children")
+                          .addFieldValue(new fieldValue("hanim_l_knee").setName("children")
                             .addChild(ProtoInstance7 = new ProtoInstance().setName("Segment").setDEF("hanim_l_calf"))
                             .addChild(ProtoInstance8 = new ProtoInstance().setName("Joint").setDEF("hanim_l_ankle")));
 ProtoInstance7
-                              .addFieldValue(new fieldValue().setName("name").setValue("l_calf"));
+                              .addFieldValue(new fieldValue("hanim_l_calf").setName("name").setValue("l_calf"));
 ProtoInstance7
-                              .addFieldValue(new fieldValue().setName("children")
+                              .addFieldValue(new fieldValue("hanim_l_calf").setName("children")
                                 .addChild(new Transform().setDEF("l_calf_adjust").setCenter(new float[] {-0.012f,1.1f,-0.01f}).setRotation(new float[] {0f,1f,0f,1.570796f}).setScale(new float[] {0.1f,0.1f,0.1f})
-                                  .addChild(new Shape()
+                                  .addChild(new Shape("l_calf_adjust")
                                     .setAppearance(new Appearance()
                                       .setMaterial(new Material().setUSE("Pants_Color"))
                                       .setTexture(new ImageTexture().setUSE("camo")))
                                     .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3226().getArray().append(new MFInt3227().getArray()).append(new MFInt3228().getArray())).setCreaseAngle(1.57f)
                                       .setCoord(new Coordinate().setPoint(new MFVec3f29().getArray().append(new MFVec3f30().getArray())))))));
 ProtoInstance8
-                              .addFieldValue(new fieldValue().setName("name").setValue("l_ankle"));
+                              .addFieldValue(new fieldValue("hanim_l_ankle").setName("name").setValue("l_ankle"));
 ProtoInstance8
-                              .addFieldValue(new fieldValue().setName("center").setValue("0.0645 0.0719 -0.048"));
+                              .addFieldValue(new fieldValue("hanim_l_ankle").setName("center").setValue("0.0645 0.0719 -0.048"));
 ProtoInstance8
-                              .addFieldValue(new fieldValue().setName("children")
+                              .addFieldValue(new fieldValue("hanim_l_ankle").setName("children")
                                 .addChild(ProtoInstance9 = new ProtoInstance().setName("Segment").setDEF("hanim_l_hindfoot")));
 ProtoInstance9
-                                  .addFieldValue(new fieldValue().setName("name").setValue("l_hindfoot"));
+                                  .addFieldValue(new fieldValue("hanim_l_hindfoot").setName("name").setValue("l_hindfoot"));
 ProtoInstance9
-                                  .addFieldValue(new fieldValue().setName("children")
+                                  .addFieldValue(new fieldValue("hanim_l_hindfoot").setName("children")
                                     .addChild(new Transform().setDEF("l_foot_adjust").setCenter(new float[] {-0.32f,1.1f,0.021f}).setRotation(new float[] {0f,1f,0f,1.570796f}).setScale(new float[] {0.1f,0.1f,0.1f})
-                                      .addChild(new Shape()
+                                      .addChild(new Shape("l_foot_adjust")
                                         .setAppearance(new Appearance()
                                           .setMaterial(new Material().setDEF("Shoe_Color").setAmbientIntensity(0.25f)))
                                         .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3231().getArray().append(new MFInt3232().getArray()).append(new MFInt3233().getArray()).append(new MFInt3234().getArray())).setCreaseAngle(1.57f)
                                           .setCoord(new Coordinate().setPoint(new MFVec3f35().getArray().append(new MFVec3f36().getArray()).append(new MFVec3f37().getArray()).append(new MFVec3f38().getArray()).append(new MFVec3f39().getArray()).append(new MFVec3f40().getArray()).append(new MFVec3f41().getArray())))))));
 ProtoInstance10
-                      .addFieldValue(new fieldValue().setName("name").setValue("r_hip"));
+                      .addFieldValue(new fieldValue("hanim_r_hip").setName("name").setValue("r_hip"));
 ProtoInstance10
-                      .addFieldValue(new fieldValue().setName("center").setValue("-0.11 0.892362 -0.0732533"));
+                      .addFieldValue(new fieldValue("hanim_r_hip").setName("center").setValue("-0.11 0.892362 -0.0732533"));
 ProtoInstance10
-                      .addFieldValue(new fieldValue().setName("children")
+                      .addFieldValue(new fieldValue("hanim_r_hip").setName("children")
                         .addChild(ProtoInstance11 = new ProtoInstance().setName("Segment").setDEF("hanim_r_thigh"))
                         .addChild(ProtoInstance12 = new ProtoInstance().setName("Joint").setDEF("hanim_r_knee")));
 ProtoInstance11
-                          .addFieldValue(new fieldValue().setName("name").setValue("r_thigh"));
+                          .addFieldValue(new fieldValue("hanim_r_thigh").setName("name").setValue("r_thigh"));
 ProtoInstance11
-                          .addFieldValue(new fieldValue().setName("children")
+                          .addFieldValue(new fieldValue("hanim_r_thigh").setName("children")
                             .addChild(new Transform().setDEF("r_thigh_adjust").setCenter(new float[] {0.43f,1.1f,-0.05f}).setRotation(new float[] {0f,1f,0f,1.570796f}).setScale(new float[] {0.1f,0.1f,0.1f})
-                              .addChild(new Shape()
+                              .addChild(new Shape("r_thigh_adjust")
                                 .setAppearance(new Appearance()
                                   .setMaterial(new Material().setUSE("Pants_Color"))
                                   .setTexture(new ImageTexture().setUSE("camo")))
                                 .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3242().getArray().append(new MFInt3243().getArray()).append(new MFInt3244().getArray()).append(new MFInt3245().getArray()).append(new MFInt3246().getArray())).setCreaseAngle(1.61f)
                                   .setCoord(new Coordinate().setPoint(new MFVec3f47().getArray().append(new MFVec3f48().getArray()).append(new MFVec3f49().getArray()).append(new MFVec3f50().getArray()).append(new MFVec3f51().getArray()).append(new MFVec3f52().getArray()).append(new MFVec3f53().getArray()).append(new MFVec3f54().getArray()).append(new MFVec3f55().getArray())))))));
 ProtoInstance12
-                          .addFieldValue(new fieldValue().setName("name").setValue("r_knee"));
+                          .addFieldValue(new fieldValue("hanim_r_knee").setName("name").setValue("r_knee"));
 ProtoInstance12
-                          .addFieldValue(new fieldValue().setName("center").setValue("-0.0699 0.51 -0.0166"));
+                          .addFieldValue(new fieldValue("hanim_r_knee").setName("center").setValue("-0.0699 0.51 -0.0166"));
 ProtoInstance12
-                          .addFieldValue(new fieldValue().setName("children")
+                          .addFieldValue(new fieldValue("hanim_r_knee").setName("children")
                             .addChild(ProtoInstance13 = new ProtoInstance().setName("Segment").setDEF("hanim_r_calf"))
                             .addChild(ProtoInstance14 = new ProtoInstance().setName("Joint").setDEF("hanim_r_ankle")));
 ProtoInstance13
-                              .addFieldValue(new fieldValue().setName("name").setValue("r_calf"));
+                              .addFieldValue(new fieldValue("hanim_r_calf").setName("name").setValue("r_calf"));
 ProtoInstance13
-                              .addFieldValue(new fieldValue().setName("children")
+                              .addFieldValue(new fieldValue("hanim_r_calf").setName("children")
                                 .addChild(new Transform().setDEF("r_calf_adjust").setCenter(new float[] {0.43f,1.1f,-0.05f}).setRotation(new float[] {0f,1f,0f,1.570796f}).setScale(new float[] {0.1f,0.1f,0.1f})
-                                  .addChild(new Shape()
+                                  .addChild(new Shape("r_calf_adjust")
                                     .setAppearance(new Appearance()
                                       .setMaterial(new Material().setUSE("Pants_Color"))
                                       .setTexture(new ImageTexture().setUSE("camo")))
                                     .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3256().getArray().append(new MFInt3257().getArray()).append(new MFInt3258().getArray())).setCreaseAngle(1.57f)
                                       .setCoord(new Coordinate().setPoint(new MFVec3f59().getArray().append(new MFVec3f60().getArray()).append(new MFVec3f61().getArray()).append(new MFVec3f62().getArray()).append(new MFVec3f63().getArray()).append(new MFVec3f64().getArray()).append(new MFVec3f65().getArray())))))));
 ProtoInstance14
-                              .addFieldValue(new fieldValue().setName("name").setValue("r_ankle"));
+                              .addFieldValue(new fieldValue("hanim_r_ankle").setName("name").setValue("r_ankle"));
 ProtoInstance14
-                              .addFieldValue(new fieldValue().setName("center").setValue("-0.064 0.0753 -0.0412"));
+                              .addFieldValue(new fieldValue("hanim_r_ankle").setName("center").setValue("-0.064 0.0753 -0.0412"));
 ProtoInstance14
-                              .addFieldValue(new fieldValue().setName("children")
+                              .addFieldValue(new fieldValue("hanim_r_ankle").setName("children")
                                 .addChild(ProtoInstance15 = new ProtoInstance().setName("Segment").setDEF("hanim_r_hindfoot")));
 ProtoInstance15
-                                  .addFieldValue(new fieldValue().setName("name").setValue("r_hindfoot"));
+                                  .addFieldValue(new fieldValue("hanim_r_hindfoot").setName("name").setValue("r_hindfoot"));
 ProtoInstance15
-                                  .addFieldValue(new fieldValue().setName("children")
+                                  .addFieldValue(new fieldValue("hanim_r_hindfoot").setName("children")
                                     .addChild(new Transform().setDEF("r_foot_adjust").setCenter(new float[] {0.3319f,1.1f,-0.04f}).setRotation(new float[] {0f,1f,0f,1.570796f}).setScale(new float[] {0.1f,0.1f,0.1f})
-                                      .addChild(new Shape()
+                                      .addChild(new Shape("r_foot_adjust")
                                         .setAppearance(new Appearance()
                                           .setMaterial(new Material().setUSE("Shoe_Color")))
                                         .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3266().getArray().append(new MFInt3267().getArray()).append(new MFInt3268().getArray())).setCreaseAngle(1.57f)
                                           .setCoord(new Coordinate().setPoint(new MFVec3f69().getArray().append(new MFVec3f70().getArray()).append(new MFVec3f71().getArray()).append(new MFVec3f72().getArray()).append(new MFVec3f73().getArray()).append(new MFVec3f74().getArray()).append(new MFVec3f75().getArray())))))));
 ProtoInstance16
-                  .addFieldValue(new fieldValue().setName("name").setValue("vl1"));
+                  .addFieldValue(new fieldValue("hanim_vl1").setName("name").setValue("vl1"));
 ProtoInstance16
-                  .addFieldValue(new fieldValue().setName("center").setValue("-0.00405 1.07 -0.0275"));
+                  .addFieldValue(new fieldValue("hanim_vl1").setName("center").setValue("-0.00405 1.07 -0.0275"));
 ProtoInstance16
-                  .addFieldValue(new fieldValue().setName("children")
+                  .addFieldValue(new fieldValue("hanim_vl1").setName("children")
                     .addChild(ProtoInstance17 = new ProtoInstance().setName("Segment").setDEF("hanim_c7"))
                     .addChild(ProtoInstance18 = new ProtoInstance().setName("Joint").setDEF("hanim_l_shoulder"))
                     .addChild(ProtoInstance24 = new ProtoInstance().setName("Joint").setDEF("hanim_r_shoulder"))
                     .addChild(ProtoInstance30 = new ProtoInstance().setName("Joint").setDEF("hanim_vc4")));
 ProtoInstance17
-                      .addFieldValue(new fieldValue().setName("name").setValue("l1"));
+                      .addFieldValue(new fieldValue("hanim_c7").setName("name").setValue("l1"));
 ProtoInstance17
-                      .addFieldValue(new fieldValue().setName("children")
+                      .addFieldValue(new fieldValue("hanim_c7").setName("children")
                         .addChild(new Transform().setDEF("torso_adjust").setCenter(new float[] {0f,1f,0f}).setRotation(new float[] {0f,1f,0f,1.570796f}).setScale(new float[] {0.1f,0.1f,0.1f})
-                          .addChild(new Shape()
+                          .addChild(new Shape("torso_adjust")
                             .setAppearance(new Appearance()
                               .setMaterial(new Material().setDEF("Shirt_Color").setAmbientIntensity(0.25f).setDiffuseColor(new float[] {0.6f,0.0745f,0.1137f}))
                               .setTexture(new ImageTexture().setUSE("camo")))
                             .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3276().getArray().append(new MFInt3277().getArray()).append(new MFInt3278().getArray()).append(new MFInt3279().getArray()).append(new MFInt3280().getArray()).append(new MFInt3281().getArray()).append(new MFInt3282().getArray()).append(new MFInt3283().getArray()).append(new MFInt3284().getArray()).append(new MFInt3285().getArray()).append(new MFInt3286().getArray()).append(new MFInt3287().getArray()).append(new MFInt3288().getArray())).setCreaseAngle(1.59f)
                               .setCoord(new Coordinate().setPoint(new MFVec3f89().getArray().append(new MFVec3f90().getArray()).append(new MFVec3f91().getArray()).append(new MFVec3f92().getArray()).append(new MFVec3f93().getArray()).append(new MFVec3f94().getArray()).append(new MFVec3f95().getArray()).append(new MFVec3f96().getArray()).append(new MFVec3f97().getArray()).append(new MFVec3f98().getArray()).append(new MFVec3f99().getArray()).append(new MFVec3f100().getArray()).append(new MFVec3f101().getArray()).append(new MFVec3f102().getArray()).append(new MFVec3f103().getArray()).append(new MFVec3f104().getArray()).append(new MFVec3f105().getArray()).append(new MFVec3f106().getArray())))))));
 ProtoInstance18
-                      .addFieldValue(new fieldValue().setName("name").setValue("l_shoulder"));
+                      .addFieldValue(new fieldValue("hanim_l_shoulder").setName("name").setValue("l_shoulder"));
 ProtoInstance18
-                      .addFieldValue(new fieldValue().setName("center").setValue("0.167 1.36 -0.0518"));
+                      .addFieldValue(new fieldValue("hanim_l_shoulder").setName("center").setValue("0.167 1.36 -0.0518"));
 ProtoInstance18
-                      .addFieldValue(new fieldValue().setName("children")
+                      .addFieldValue(new fieldValue("hanim_l_shoulder").setName("children")
                         .addChild(ProtoInstance19 = new ProtoInstance().setName("Segment").setDEF("hanim_l_upperarm"))
                         .addChild(ProtoInstance20 = new ProtoInstance().setName("Joint").setDEF("hanim_l_elbow")));
 ProtoInstance19
-                          .addFieldValue(new fieldValue().setName("name").setValue("l_upperarm"));
+                          .addFieldValue(new fieldValue("hanim_l_upperarm").setName("name").setValue("l_upperarm"));
 ProtoInstance19
-                          .addFieldValue(new fieldValue().setName("children")
+                          .addFieldValue(new fieldValue("hanim_l_upperarm").setName("children")
                             .addChild(new Transform().setDEF("l_upperarm_adjust").setCenter(new float[] {-0.435f,1f,0.06f}).setRotation(new float[] {0f,1f,0f,1.570796f}).setScale(new float[] {0.1f,0.1f,0.1f})
-                              .addChild(new Shape()
+                              .addChild(new Shape("l_upperarm_adjust")
                                 .setAppearance(new Appearance()
                                   .setMaterial(new Material().setDEF("Skin_Color").setAmbientIntensity(0.25f).setDiffuseColor(new float[] {0.749f,0.601f,0.462f}))
                                   .setTexture(new ImageTexture().setUSE("camo")))
                                 .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32107().getArray().append(new MFInt32108().getArray()).append(new MFInt32109().getArray())).setCreaseAngle(1.65f)
                                   .setCoord(new Coordinate().setPoint(new MFVec3f110().getArray().append(new MFVec3f111().getArray()).append(new MFVec3f112().getArray()).append(new MFVec3f113().getArray()).append(new MFVec3f114().getArray()).append(new MFVec3f115().getArray())))))));
 ProtoInstance20
-                          .addFieldValue(new fieldValue().setName("name").setValue("l_elbow"));
+                          .addFieldValue(new fieldValue("hanim_l_elbow").setName("name").setValue("l_elbow"));
 ProtoInstance20
-                          .addFieldValue(new fieldValue().setName("center").setValue("0.196 1.07 -0.0518"));
+                          .addFieldValue(new fieldValue("hanim_l_elbow").setName("center").setValue("0.196 1.07 -0.0518"));
 ProtoInstance20
-                          .addFieldValue(new fieldValue().setName("children")
+                          .addFieldValue(new fieldValue("hanim_l_elbow").setName("children")
                             .addChild(ProtoInstance21 = new ProtoInstance().setName("Segment").setDEF("hanim_l_forearm"))
                             .addChild(ProtoInstance22 = new ProtoInstance().setName("Joint").setDEF("hanim_l_wrist")));
 ProtoInstance21
-                              .addFieldValue(new fieldValue().setName("name").setValue("l_forearm"));
+                              .addFieldValue(new fieldValue("hanim_l_forearm").setName("name").setValue("l_forearm"));
 ProtoInstance21
-                              .addFieldValue(new fieldValue().setName("children")
+                              .addFieldValue(new fieldValue("hanim_l_forearm").setName("children")
                                 .addChild(new Transform().setDEF("l_forearm_adjust").setCenter(new float[] {-0.634f,1.01f,0.0799f}).setRotation(new float[] {0f,1f,0f,1.570796f}).setScale(new float[] {0.1f,0.1f,0.1f})
-                                  .addChild(new Shape()
+                                  .addChild(new Shape("l_forearm_adjust")
                                     .setAppearance(new Appearance()
                                       .setMaterial(new Material().setUSE("Skin_Color"))
                                       .setTexture(new ImageTexture().setUSE("camo")))
                                     .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32116().getArray().append(new MFInt32117().getArray()).append(new MFInt32118().getArray())).setCreaseAngle(1.75f)
                                       .setCoord(new Coordinate().setPoint(new MFVec3f119().getArray().append(new MFVec3f120().getArray()).append(new MFVec3f121().getArray()).append(new MFVec3f122().getArray()).append(new MFVec3f123().getArray()).append(new MFVec3f124().getArray())))))));
 ProtoInstance22
-                              .addFieldValue(new fieldValue().setName("name").setValue("l_wrist"));
+                              .addFieldValue(new fieldValue("hanim_l_wrist").setName("name").setValue("l_wrist"));
 ProtoInstance22
-                              .addFieldValue(new fieldValue().setName("center").setValue("0.213 0.811 -0.0338"));
+                              .addFieldValue(new fieldValue("hanim_l_wrist").setName("center").setValue("0.213 0.811 -0.0338"));
 ProtoInstance22
-                              .addFieldValue(new fieldValue().setName("children")
+                              .addFieldValue(new fieldValue("hanim_l_wrist").setName("children")
                                 .addChild(ProtoInstance23 = new ProtoInstance().setName("Segment").setDEF("hanim_l_hand")));
 ProtoInstance23
-                                  .addFieldValue(new fieldValue().setName("name").setValue("l_hand"));
+                                  .addFieldValue(new fieldValue("hanim_l_hand").setName("name").setValue("l_hand"));
 ProtoInstance23
-                                  .addFieldValue(new fieldValue().setName("children")
+                                  .addFieldValue(new fieldValue("hanim_l_hand").setName("children")
                                     .addChild(new Transform().setDEF("l_hand_adjust").setCenter(new float[] {-0.8355f,1.015f,0.1f}).setRotation(new float[] {0f,1f,0f,1.570796f}).setScale(new float[] {0.1f,0.1f,0.1f})
-                                      .addChild(new Shape()
+                                      .addChild(new Shape("l_hand_adjust")
                                         .setAppearance(new Appearance()
                                           .setMaterial(new Material().setUSE("Skin_Color")))
                                         .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32125().getArray().append(new MFInt32126().getArray())).setCreaseAngle(1.48f)
                                           .setCoord(new Coordinate().setPoint(new MFVec3f127().getArray().append(new MFVec3f128().getArray()).append(new MFVec3f129().getArray())))))));
 ProtoInstance24
-                      .addFieldValue(new fieldValue().setName("name").setValue("r_shoulder"));
+                      .addFieldValue(new fieldValue("hanim_r_shoulder").setName("name").setValue("r_shoulder"));
 ProtoInstance24
-                      .addFieldValue(new fieldValue().setName("center").setValue("-0.167 1.36 -0.0458"));
+                      .addFieldValue(new fieldValue("hanim_r_shoulder").setName("center").setValue("-0.167 1.36 -0.0458"));
 ProtoInstance24
-                      .addFieldValue(new fieldValue().setName("children")
+                      .addFieldValue(new fieldValue("hanim_r_shoulder").setName("children")
                         .addChild(ProtoInstance25 = new ProtoInstance().setName("Segment").setDEF("hanim_r_upperarm"))
                         .addChild(ProtoInstance26 = new ProtoInstance().setName("Joint").setDEF("hanim_r_elbow")));
 ProtoInstance25
-                          .addFieldValue(new fieldValue().setName("name").setValue("r_upperarm"));
+                          .addFieldValue(new fieldValue("hanim_r_upperarm").setName("name").setValue("r_upperarm"));
 ProtoInstance25
-                          .addFieldValue(new fieldValue().setName("children")
+                          .addFieldValue(new fieldValue("hanim_r_upperarm").setName("children")
                             .addChild(new Transform().setDEF("r_upperarm_adjust").setCenter(new float[] {0.27f,1f,-0.025f}).setRotation(new float[] {0f,1f,0f,1.570796f}).setScale(new float[] {0.1f,0.1f,0.1f})
-                              .addChild(new Shape()
+                              .addChild(new Shape("r_upperarm_adjust")
                                 .setAppearance(new Appearance()
                                   .setMaterial(new Material().setUSE("Skin_Color"))
                                   .setTexture(new ImageTexture().setUSE("camo")))
                                 .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32130().getArray().append(new MFInt32131().getArray()).append(new MFInt32132().getArray())).setCreaseAngle(1.53f)
                                   .setCoord(new Coordinate().setPoint(new MFVec3f133().getArray().append(new MFVec3f134().getArray()).append(new MFVec3f135().getArray()).append(new MFVec3f136().getArray()).append(new MFVec3f137().getArray()).append(new MFVec3f138().getArray()).append(new MFVec3f139().getArray())))))));
 ProtoInstance26
-                          .addFieldValue(new fieldValue().setName("name").setValue("r_elbow"));
+                          .addFieldValue(new fieldValue("hanim_r_elbow").setName("name").setValue("r_elbow"));
 ProtoInstance26
-                          .addFieldValue(new fieldValue().setName("center").setValue("-0.192 1.07 -0.0498"));
+                          .addFieldValue(new fieldValue("hanim_r_elbow").setName("center").setValue("-0.192 1.07 -0.0498"));
 ProtoInstance26
-                          .addFieldValue(new fieldValue().setName("children")
+                          .addFieldValue(new fieldValue("hanim_r_elbow").setName("children")
                             .addChild(ProtoInstance27 = new ProtoInstance().setName("Segment").setDEF("hanim_r_forearm"))
                             .addChild(ProtoInstance28 = new ProtoInstance().setName("Joint").setDEF("hanim_r_wrist")));
 ProtoInstance27
-                              .addFieldValue(new fieldValue().setName("name").setValue("r_forearm"));
+                              .addFieldValue(new fieldValue("hanim_r_forearm").setName("name").setValue("r_forearm"));
 ProtoInstance27
-                              .addFieldValue(new fieldValue().setName("children")
+                              .addFieldValue(new fieldValue("hanim_r_forearm").setName("children")
                                 .addChild(new Transform().setDEF("r_forearm_adjust").setCenter(new float[] {0.7641f,1.01f,-0.07438f}).setRotation(new float[] {0f,1f,0f,1.570796f}).setScale(new float[] {0.1f,0.1f,0.1f})
-                                  .addChild(new Shape()
+                                  .addChild(new Shape("r_forearm_adjust")
                                     .setAppearance(new Appearance()
                                       .setMaterial(new Material().setUSE("Skin_Color"))
                                       .setTexture(new ImageTexture().setUSE("camo")))
                                     .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32140().getArray().append(new MFInt32141().getArray()).append(new MFInt32142().getArray())).setCreaseAngle(1.73f)
                                       .setCoord(new Coordinate().setPoint(new MFVec3f143().getArray().append(new MFVec3f144().getArray()).append(new MFVec3f145().getArray()).append(new MFVec3f146().getArray()).append(new MFVec3f147().getArray()).append(new MFVec3f148().getArray()).append(new MFVec3f149().getArray())))))));
 ProtoInstance28
-                              .addFieldValue(new fieldValue().setName("name").setValue("r_wrist"));
+                              .addFieldValue(new fieldValue("hanim_r_wrist").setName("name").setValue("r_wrist"));
 ProtoInstance28
-                              .addFieldValue(new fieldValue().setName("center").setValue("-0.217 0.811 -0.0338"));
+                              .addFieldValue(new fieldValue("hanim_r_wrist").setName("center").setValue("-0.217 0.811 -0.0338"));
 ProtoInstance28
-                              .addFieldValue(new fieldValue().setName("children")
+                              .addFieldValue(new fieldValue("hanim_r_wrist").setName("children")
                                 .addChild(ProtoInstance29 = new ProtoInstance().setName("Segment").setDEF("hanim_r_hand")));
 ProtoInstance29
-                                  .addFieldValue(new fieldValue().setName("name").setValue("r_hand"));
+                                  .addFieldValue(new fieldValue("hanim_r_hand").setName("name").setValue("r_hand"));
 ProtoInstance29
-                                  .addFieldValue(new fieldValue().setName("children")
+                                  .addFieldValue(new fieldValue("hanim_r_hand").setName("children")
                                     .addChild(new Transform().setDEF("r_hand_adjust").setCenter(new float[] {0.2693f,1.011f,-0.0248f}).setRotation(new float[] {0f,1f,0f,1.570796f}).setScale(new float[] {0.1f,0.1f,0.1f})
-                                      .addChild(new Shape()
+                                      .addChild(new Shape("r_hand_adjust")
                                         .setAppearance(new Appearance()
                                           .setMaterial(new Material().setUSE("Skin_Color")))
                                         .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32150().getArray().append(new MFInt32151().getArray())).setCreaseAngle(1.57f)
                                           .setCoord(new Coordinate().setPoint(new MFVec3f152().getArray().append(new MFVec3f153().getArray()).append(new MFVec3f154().getArray())))))));
 ProtoInstance30
-                      .addFieldValue(new fieldValue().setName("name").setValue("vc4"));
+                      .addFieldValue(new fieldValue("hanim_vc4").setName("name").setValue("vc4"));
 ProtoInstance30
-                      .addFieldValue(new fieldValue().setName("center").setValue("0 1.43 -0.0458"));
+                      .addFieldValue(new fieldValue("hanim_vc4").setName("center").setValue("0 1.43 -0.0458"));
 ProtoInstance30
-                      .addFieldValue(new fieldValue().setName("children")
+                      .addFieldValue(new fieldValue("hanim_vc4").setName("children")
                         .addChild(ProtoInstance31 = new ProtoInstance().setName("Segment").setDEF("hanim_c4"))
                         .addChild(ProtoInstance32 = new ProtoInstance().setName("Joint").setDEF("hanim_skullbase")));
 ProtoInstance31
-                          .addFieldValue(new fieldValue().setName("name").setValue("c4"));
+                          .addFieldValue(new fieldValue("hanim_c4").setName("name").setValue("c4"));
 ProtoInstance31
-                          .addFieldValue(new fieldValue().setName("children")
+                          .addFieldValue(new fieldValue("hanim_c4").setName("children")
                             .addChild(new Transform().setDEF("neck_adjust").setCenter(new float[] {-0.36f,1.03f,0.04f}).setRotation(new float[] {0f,1f,0f,1.570796f}).setScale(new float[] {0.1f,0.1f,0.1f})
-                              .addChild(new Shape()
+                              .addChild(new Shape("neck_adjust")
                                 .setAppearance(new Appearance()
                                   .setMaterial(new Material().setUSE("Skin_Color"))
                                   .setTexture(new ImageTexture().setUSE("camo")))
                                 .setGeometry(new IndexedFaceSet().setDEF("neck").setCoordIndex(new MFInt32155().getArray()).setCreaseAngle(1.91f)
-                                  .setCoord(new Coordinate().setPoint(new MFVec3f156().getArray().append(new MFVec3f157().getArray()).append(new MFVec3f158().getArray())))))));
+                                  .setCoord(new Coordinate("neck").setPoint(new MFVec3f156().getArray().append(new MFVec3f157().getArray()).append(new MFVec3f158().getArray())))))));
 ProtoInstance32
-                          .addFieldValue(new fieldValue().setName("name").setValue("skullbase"));
+                          .addFieldValue(new fieldValue("hanim_skullbase").setName("name").setValue("skullbase"));
 ProtoInstance32
-                          .addFieldValue(new fieldValue().setName("rotation").setValue("0 1 0 0"));
+                          .addFieldValue(new fieldValue("hanim_skullbase").setName("rotation").setValue("0 1 0 0"));
 ProtoInstance32
-                          .addFieldValue(new fieldValue().setName("center").setValue("0 1.4 0"));
+                          .addFieldValue(new fieldValue("hanim_skullbase").setName("center").setValue("0 1.4 0"));
 ProtoInstance32
-                          .addFieldValue(new fieldValue().setName("children")
+                          .addFieldValue(new fieldValue("hanim_skullbase").setName("children")
                             .addChild(ProtoInstance33 = new ProtoInstance().setName("Segment").setDEF("hanim_skull")));
 ProtoInstance33
-                              .addFieldValue(new fieldValue().setName("name").setValue("skull"));
+                              .addFieldValue(new fieldValue("hanim_skull").setName("name").setValue("skull"));
 ProtoInstance33
-                              .addFieldValue(new fieldValue().setName("children")
+                              .addFieldValue(new fieldValue("hanim_skull").setName("children")
                                 .addChild(new Transform().setDEF("skull_adjust").setCenter(new float[] {-0.07f,1.33f,-0.035f}).setScale(new float[] {0.001f,0.001f,0.001f})
-                                  .addChild(new Shape()
+                                  .addChild(new Shape("skull_adjust")
                                     .setAppearance(new Appearance()
                                       .setMaterial(new Material().setUSE("Skin_Color"))
                                       .setTexture(new ImageTexture().setUrl(new MFString159().getArray())))

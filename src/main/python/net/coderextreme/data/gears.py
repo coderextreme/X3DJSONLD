@@ -14,7 +14,7 @@ meta(name="license", content="../license.html"),
 meta(name="modified", content="30 April 2017"),
 meta(name="translated", content="30 April 2017"),
 meta(name="generator", content="X3DJSONLD: https://github.com/coderextreme/X3DJSONLD"),
-meta(name="translated", content="29 June 2023"),
+meta(name="translated", content="01 July 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 

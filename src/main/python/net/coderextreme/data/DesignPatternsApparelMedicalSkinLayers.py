@@ -19,15 +19,16 @@ meta(name="warning", content="Under development. This template example does not 
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayers.x3d"),
 meta(name="generator", content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="29 June 2023"),
+meta(name="translated", content="01 July 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
 Scene=Scene(children=[
 WorldInfo(title="HAnimHumanoid skin design patterns for apparel, medical"),
 Background(skyColor=[(0,0.6,0.6)]),
-Group(DEF="MultipleHumanoids", value=[
-MetadataString(name="HAnimArchitecture", reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile", value=["E.4 Multiple humanoids per file"])], children=[
+Group(DEF="MultipleHumanoids", 
+metadata=(
+MetadataString(name="HAnimArchitecture", reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile", value=["E.4 Multiple humanoids per file"])), children=[
 Comment(value=''' ============================== '''),
 
 HAnimHumanoid(name="SimpleSkeleton", DEF="a_SimpleSkeleton", version="2.0", skeleton=[

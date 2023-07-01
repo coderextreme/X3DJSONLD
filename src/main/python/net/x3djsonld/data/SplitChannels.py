@@ -106,7 +106,7 @@ newModel=X3D(profile='Full',version='4.0',
           ChannelSelector(channelSelection=1,id_='ChannelSelector1',channelCountMode='MAX',channelInterpretation='SPEAKERS',
             children=[
             Gain(USE='ChannelSplitter',channelCountMode='MAX',channelInterpretation='SPEAKERS')])])])]),
-    ChannelSplitter(DEF='ChannelSplitter',channelCountMode='explicit',channelInterpretation='SPEAKERS',
+    ChannelSplitter(DEF='ChannelSplitter',channelCountMode='EXPLICIT',channelInterpretation='SPEAKERS',
       children=[
       AudioClip(description='Violin',url=["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"])]),
     Transform(DEF='Audio3',rotation=(1,0,0,-0.5),translation=(0,100,0),

@@ -62,7 +62,7 @@ newModel=X3D(profile='Immersive',version='3.3',
     WorldInfo(info=["(C) 2000 James Smith - james@vapourtech.com","http://www.vapourtech.com/team/james/boxman.wrl","Blaxxun compatibility by Tu Lam - TuL@seamless-solutions.com"],title='BoxMan3 - A Seamless VRML Human'),
     Background(groundColor=[(0.6,0.6,0.6)],skyColor=[(0.75,0.75,0.75)]),
     #  When converting to VRML97 (which didn't include HAnim), HAnim node prototypes are provided automatically by the X3dToVrml97.xslt translation stylesheet 
-    HAnimHumanoid(DEF='boxman_Humanoid',info=["authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=2.0"],name='Humanoid',version='1.0',
+    HAnimHumanoid(DEF='boxman_Humanoid',info=["authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=2.0"],name='Humanoid',version='2.0',
       skeleton=[
       HAnimJoint(DEF='boxman_humanoid_root',center=(0,0.9723,-0.0728),name='humanoid_root',skinCoordIndex=[0,1,2,3,4,5,6,7,8,9,10,11],skinCoordWeight=[1,1,1,1,1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
         children=[

@@ -180,7 +180,7 @@ Group30->setDEF("Joe_Humanoid");
 CHAnimHumanoid* HAnimHumanoid31 = (CHAnimHumanoid *)(m_pScene.createNode("HAnimHumanoid"));
 HAnimHumanoid31->setName("Human");
 HAnimHumanoid31->setDEF("Joe_Human");
-HAnimHumanoid31->setVersion("1.0");
+HAnimHumanoid31->setVersion("2.0");
 CHAnimJoint* HAnimJoint32 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint32->setName("HumanoidRoot");
 HAnimJoint32->setDEF("Joe_HumanoidRoot");

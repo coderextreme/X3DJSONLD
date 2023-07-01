@@ -74,7 +74,7 @@ var ProtoInstance1 = null;
             .addComments((new autoclass.CommentsBlock("High Resolution")))
             .addChild((new autoclass.Group()).setDEF("HighResolution")
               .addChild((new autoclass.Transform())
-                .addChild((new autoclass.HAnimHumanoid()).setName("Nancy").setDEF("hanim_Nancy").setVersion("1.0")
+                .addChild((new autoclass.HAnimHumanoid()).setName("Nancy").setDEF("hanim_Nancy").setVersion("2.0")
                   .addSkeleton((new autoclass.HAnimJoint()).setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(java.newArray("float", [java.newFloat(-0.00405), java.newFloat(0.855), java.newFloat(-0.000113)])).setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)]))
                     .addChild((new autoclass.HAnimJoint()).setName("sacroiliac").setDEF("hanim_sacroiliac").setCenter(java.newArray("float", [java.newFloat(0), java.newFloat(1.01), java.newFloat(-0.0204)])).setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)]))
                       .addChild((new autoclass.HAnimSegment()).setName("pelvis").setDEF("hanim_pelvis")

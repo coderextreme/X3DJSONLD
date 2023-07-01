@@ -245,7 +245,7 @@ var X3D0 =  X3D(
                             HAnimHumanoid(
                               name_ : SFString('Allen'),
                               DEF_ : SFString('hanim_Allen'),
-                              version_ : SFString('1.0'),
+                              version_ : SFString('2.0'),
                               joints_ : [
                                 HAnimJoint(
                                   name_ : SFString('humanoid_root'),

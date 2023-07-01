@@ -221,11 +221,11 @@ var X3D0 =  X3D(
                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
 
                         HAnimSite(
-                          name_ : SFString('buttocks_standing_wall_contact_point_pt'),
-                          DEF_ : SFString('hanim_buttocks_standing_wall_contact_point_pt'),
+                          name_ : SFString('buttocks_standing_wall_contact_point'),
+                          DEF_ : SFString('hanim_buttocks_standing_wall_contact_point'),
                           children_ : [
                             TouchSensor(
-                              description_ : SFString('HAnimSite buttocks_standing_wall_contact_point_pt')),
+                              description_ : SFString('HAnimSite buttocks_standing_wall_contact_point')),
 
                             Shape(
                               USE_ : SFString('HAnimSiteShape'))]),
@@ -3684,7 +3684,7 @@ var X3D0 =  X3D(
                   USE_ : SFString('hanim_r_carpal_middle_phalanx_5')),
               viewpoints_ : 
                 HAnimSite(
-                  USE_ : SFString('hanim_buttocks_standing_wall_contact_point_pt'))],
+                  USE_ : SFString('hanim_buttocks_standing_wall_contact_point'))],
               viewpoints_ : 
                 HAnimSite(
                   USE_ : SFString('hanim_crotch_pt')),

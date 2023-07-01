@@ -38,6 +38,7 @@ var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); }
 var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4f = x3dom.fields.SFMatrix4f;
 var SFNode = x3dom.fields.SFNode;
+var SFRotation = x3dom.fields.SFRotation;
 var Quaternion = x3dom.fields.Quaternion;
 var SFString = String;
 var SFTime = Number;
@@ -66,9 +67,9 @@ if (typeof $ !== 'function') {
 }
 X3DJSON.nodeUtil = function(selector, node, field, value) {
 		if (typeof selector === 'undefined') {
-			selector = '';
+			selector = "";
 		} else {
-			selector = selector+' ';
+			selector = selector+" ";
 		}
 		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
@@ -511,14 +512,14 @@ X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder']
 X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder']['ACTION'],X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder']);
 }
 if (typeof X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].initialize === "function") X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].initialize();
-    if (X3DJSON.nodeUtil('Scene','DECLnode_nodeA_nodeClock')) {
-X3DJSON.nodeUtil('Scene','DECLnode_nodeA_nodeClock').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall'].set_cycle(X3DJSON.nodeUtil('Scene','DECLnode_nodeA_nodeClock','cycleTime'), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","DECLnode_nodeA_nodeClock")) {
+X3DJSON.nodeUtil("Scene","DECLnode_nodeA_nodeClock").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall'].set_cycle(X3DJSON.nodeUtil("Scene","DECLnode_nodeA_nodeClock","cycleTime"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall'].set_cycle(X3DJSON.nodeUtil('Scene','DECLnode_nodeA_nodeClock','cycleTime'), __eventTime);
-    if (X3DJSON.nodeUtil('Scene','DECLnode_nodeA_nodeClock')) {
-X3DJSON.nodeUtil('Scene','DECLnode_nodeA_nodeClock').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall'].set_cycle(X3DJSON.nodeUtil("Scene","DECLnode_nodeA_nodeClock","cycleTime"), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","DECLnode_nodeA_nodeClock")) {
+X3DJSON.nodeUtil("Scene","DECLnode_nodeA_nodeClock").addEventListener('outputchange', function(event) {
 }, false);
 }
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -539,22 +540,22 @@ X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall']['ACTION
 }
 X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall']['ACTION']['keyValue'].push(function(property, value) {
 		if (property === 'keyValue') {
-			X3DJSON.nodeUtil('Scene','DECLnode_nodeA_NodePosition','keyValue',typeof X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall'].keyValue() : X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall'].keyValue, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLnode_nodeA_NodePosition","keyValue",typeof X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall'].keyValue() : X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall'].keyValue, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','DECLnode_nodeA_NodePosition','keyValue',typeof X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall'].keyValue() : X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall'].keyValue, __eventTime);
-    if (X3DJSON.nodeUtil('Scene','DECLnode_nodeA_NodePosition')) {
-X3DJSON.nodeUtil('Scene','DECLnode_nodeA_NodePosition').addEventListener('outputchange', function(event) {
+			X3DJSON.nodeUtil("Scene","DECLnode_nodeA_NodePosition","keyValue",typeof X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall'].keyValue() : X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall'].keyValue, __eventTime);
+    if (X3DJSON.nodeUtil("Scene","DECLnode_nodeA_NodePosition")) {
+X3DJSON.nodeUtil("Scene","DECLnode_nodeA_NodePosition").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','DECLnode_nodeB_nodeClock')) {
-X3DJSON.nodeUtil('Scene','DECLnode_nodeB_nodeClock').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall'].set_cycle(X3DJSON.nodeUtil('Scene','DECLnode_nodeB_nodeClock','cycleTime'), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","DECLnode_nodeB_nodeClock")) {
+X3DJSON.nodeUtil("Scene","DECLnode_nodeB_nodeClock").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall'].set_cycle(X3DJSON.nodeUtil("Scene","DECLnode_nodeB_nodeClock","cycleTime"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall'].set_cycle(X3DJSON.nodeUtil('Scene','DECLnode_nodeB_nodeClock','cycleTime'), __eventTime);
-    if (X3DJSON.nodeUtil('Scene','DECLnode_nodeB_nodeClock')) {
-X3DJSON.nodeUtil('Scene','DECLnode_nodeB_nodeClock').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall'].set_cycle(X3DJSON.nodeUtil("Scene","DECLnode_nodeB_nodeClock","cycleTime"), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","DECLnode_nodeB_nodeClock")) {
+X3DJSON.nodeUtil("Scene","DECLnode_nodeB_nodeClock").addEventListener('outputchange', function(event) {
 }, false);
 }
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -575,12 +576,12 @@ X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall']['ACTION
 }
 X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall']['ACTION']['keyValue'].push(function(property, value) {
 		if (property === 'keyValue') {
-			X3DJSON.nodeUtil('Scene','DECLnode_nodeB_NodePosition','keyValue',typeof X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall'].keyValue() : X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall'].keyValue, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLnode_nodeB_NodePosition","keyValue",typeof X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall'].keyValue() : X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall'].keyValue, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','DECLnode_nodeB_NodePosition','keyValue',typeof X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall'].keyValue() : X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall'].keyValue, __eventTime);
-    if (X3DJSON.nodeUtil('Scene','DECLnode_nodeB_NodePosition')) {
-X3DJSON.nodeUtil('Scene','DECLnode_nodeB_NodePosition').addEventListener('outputchange', function(event) {
+			X3DJSON.nodeUtil("Scene","DECLnode_nodeB_NodePosition","keyValue",typeof X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall'].keyValue() : X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall'].keyValue, __eventTime);
+    if (X3DJSON.nodeUtil("Scene","DECLnode_nodeB_NodePosition")) {
+X3DJSON.nodeUtil("Scene","DECLnode_nodeB_NodePosition").addEventListener('outputchange', function(event) {
 }, false);
 }
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -601,26 +602,26 @@ X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder']
 }
 X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder']['ACTION']['spine'].push(function(property, value) {
 		if (property === 'spine') {
-			X3DJSON.nodeUtil('Scene','DECLcylinder_linkA_extrusion','spine',typeof X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].spine === "function" ? X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].spine() : X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].spine, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLcylinder_linkA_extrusion","spine",typeof X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].spine === "function" ? X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].spine() : X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].spine, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','DECLcylinder_linkA_extrusion','spine',typeof X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].spine === "function" ? X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].spine() : X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].spine, __eventTime);
-    if (X3DJSON.nodeUtil('Scene','DECLnode_nodeA_transform')) {
-X3DJSON.nodeUtil('Scene','DECLnode_nodeA_transform').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].set_endA(X3DJSON.nodeUtil('Scene','DECLnode_nodeA_transform','translation'), __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLcylinder_linkA_extrusion","spine",typeof X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].spine === "function" ? X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].spine() : X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].spine, __eventTime);
+    if (X3DJSON.nodeUtil("Scene","DECLnode_nodeA_transform")) {
+X3DJSON.nodeUtil("Scene","DECLnode_nodeA_transform").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].set_endA(X3DJSON.nodeUtil("Scene","DECLnode_nodeA_transform","translation"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].set_endA(X3DJSON.nodeUtil('Scene','DECLnode_nodeA_transform','translation'), __eventTime);
-    if (X3DJSON.nodeUtil('Scene','DECLnode_nodeB_transform')) {
-X3DJSON.nodeUtil('Scene','DECLnode_nodeB_transform').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].set_endB(X3DJSON.nodeUtil('Scene','DECLnode_nodeB_transform','translation'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].set_endA(X3DJSON.nodeUtil("Scene","DECLnode_nodeA_transform","translation"), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","DECLnode_nodeB_transform")) {
+X3DJSON.nodeUtil("Scene","DECLnode_nodeB_transform").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].set_endB(X3DJSON.nodeUtil("Scene","DECLnode_nodeB_transform","translation"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].set_endB(X3DJSON.nodeUtil('Scene','DECLnode_nodeB_transform','translation'), __eventTime);
-			X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall'].set_cycle(X3DJSON.nodeUtil('Scene','DECLnode_nodeA_nodeClock','cycleTime'), __eventTime);
-			X3DJSON.nodeUtil('Scene','DECLnode_nodeA_NodePosition','keyValue',typeof X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall'].keyValue() : X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall'].keyValue, __eventTime);
-			X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall'].set_cycle(X3DJSON.nodeUtil('Scene','DECLnode_nodeB_nodeClock','cycleTime'), __eventTime);
-			X3DJSON.nodeUtil('Scene','DECLnode_nodeB_NodePosition','keyValue',typeof X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall'].keyValue() : X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall'].keyValue, __eventTime);
-			X3DJSON.nodeUtil('Scene','DECLcylinder_linkA_extrusion','spine',typeof X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].spine === "function" ? X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].spine() : X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].spine, __eventTime);
-			X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].set_endA(X3DJSON.nodeUtil('Scene','DECLnode_nodeA_transform','translation'), __eventTime);
-			X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].set_endB(X3DJSON.nodeUtil('Scene','DECLnode_nodeB_transform','translation'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].set_endB(X3DJSON.nodeUtil("Scene","DECLnode_nodeB_transform","translation"), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall'].set_cycle(X3DJSON.nodeUtil("Scene","DECLnode_nodeA_nodeClock","cycleTime"), __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLnode_nodeA_NodePosition","keyValue",typeof X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall'].keyValue() : X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall'].keyValue, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall'].set_cycle(X3DJSON.nodeUtil("Scene","DECLnode_nodeB_nodeClock","cycleTime"), __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLnode_nodeB_NodePosition","keyValue",typeof X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall'].keyValue() : X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall'].keyValue, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLcylinder_linkA_extrusion","spine",typeof X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].spine === "function" ? X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].spine() : X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].spine, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].set_endA(X3DJSON.nodeUtil("Scene","DECLnode_nodeA_transform","translation"), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinder'].set_endB(X3DJSON.nodeUtil("Scene","DECLnode_nodeB_transform","translation"), __eventTime);

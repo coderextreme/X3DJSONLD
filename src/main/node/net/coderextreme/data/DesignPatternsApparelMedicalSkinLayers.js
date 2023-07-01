@@ -34,7 +34,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.WorldInfo()).setTitle("HAnimHumanoid skin design patterns for apparel, medical"))
         .addChild((new autoclass.Background()).setSkyColor(java.newArray("float", [java.newFloat(0), java.newFloat(0.6), java.newFloat(0.6)])))
         .addChild((new autoclass.Group()).setDEF("MultipleHumanoids")
-          .setValue((new autoclass.MetadataString()).setName("HAnimArchitecture").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile").setValue(java.newArray("java.lang.String", ["E.4 Multiple humanoids per file"])))
+          .setMetadata((new autoclass.MetadataString()).setName("HAnimArchitecture").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile").setValue(java.newArray("java.lang.String", ["E.4 Multiple humanoids per file"])))
           .addComments((new autoclass.CommentsBlock("==============================")))
           .addChild((new autoclass.HAnimHumanoid()).setName("SimpleSkeleton").setDEF("a_SimpleSkeleton").setVersion("2.0")
             .addSkeleton((new autoclass.HAnimJoint()).setName("humanoid_root").setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)]))

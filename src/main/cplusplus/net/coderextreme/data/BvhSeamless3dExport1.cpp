@@ -106,8 +106,8 @@ Viewpoint20->setDescription("View animation");
 Viewpoint20->setPosition(new float[3]{0,2,16});
 group->addChildren(*Viewpoint20);
 
-CProtoDeclare ProtoDeclare21 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+CProtoDeclare ProtoDeclare21 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="PAnim" ><ProtoInterface><field name="play" accessType="inputOutput" type="SFBool" value="true"></field>
 <field name="pause" accessType="inputOutput" type="SFBool" value="true"></field>
 <field name="period" accessType="inputOutput" type="SFTime" value="1"></field>
@@ -374,7 +374,7 @@ ProtoDeclare21->setProtoBody(*ProtoBody30);
 group->addChildren(*ProtoDeclare21);
 
 CHAnimHumanoid* HAnimHumanoid48 = (CHAnimHumanoid *)(m_pScene.createNode("HAnimHumanoid"));
-HAnimHumanoid48->setVersion("1.0");
+HAnimHumanoid48->setVersion("2.0");
 CShape* Shape49 = (CShape *)(m_pScene.createNode("Shape"));
 CAppearance* Appearance50 = (CAppearance *)(m_pScene.createNode("Appearance"));
 CMaterial* Material51 = (CMaterial *)(m_pScene.createNode("Material"));

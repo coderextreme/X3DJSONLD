@@ -38,6 +38,7 @@ var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); }
 var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4f = x3dom.fields.SFMatrix4f;
 var SFNode = x3dom.fields.SFNode;
+var SFRotation = x3dom.fields.SFRotation;
 var Quaternion = x3dom.fields.Quaternion;
 var SFString = String;
 var SFTime = Number;
@@ -66,9 +67,9 @@ if (typeof $ !== 'function') {
 }
 X3DJSON.nodeUtil = function(selector, node, field, value) {
 		if (typeof selector === 'undefined') {
-			selector = '';
+			selector = "";
 		} else {
-			selector = selector+' ';
+			selector = selector+" ";
 		}
 		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
@@ -138,15 +139,15 @@ if (typeof X3DJSON['Scene../data/flipp.json'] === 'undefined') {
 	X3DJSON['Scene../data/flipp.json'] = {};
 }
 
-    if (X3DJSON.nodeUtil('Scene','ci')) {
-X3DJSON.nodeUtil('Scene','ci').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","ci")) {
+X3DJSON.nodeUtil("Scene","ci").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','si')) {
-X3DJSON.nodeUtil('Scene','si').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","si")) {
+X3DJSON.nodeUtil("Scene","si").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','ts')) {
-X3DJSON.nodeUtil('Scene','ts').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","ts")) {
+X3DJSON.nodeUtil("Scene","ts").addEventListener('outputchange', function(event) {
 }, false);
 }

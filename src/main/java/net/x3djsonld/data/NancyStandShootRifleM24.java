@@ -158,7 +158,7 @@ public class NancyStandShootRifleM24
         .addComments(" High Resolution ")
         .addChild(new Group("HighResolution")
           .addChild(new Transform()
-            .addChild(new HAnimHumanoid("hanim_Nancy").setName("Nancy").setVersion("1.0")
+            .addChild(new HAnimHumanoid("hanim_Nancy").setName("Nancy").setVersion("2.0")
               .addSkeleton(new HAnimJoint("hanim_humanoid_root").setName("humanoid_root").setCenter(-0.00405,0.855,-0.000113).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                 .addChild(new HAnimJoint("hanim_sacroiliac").setName("sacroiliac").setCenter(0.0,1.01,-0.0204).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                   .addChild(new HAnimSegment("hanim_pelvis").setName("pelvis")

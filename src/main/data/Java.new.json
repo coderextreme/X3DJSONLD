@@ -136,7 +136,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 June 2023"
+            "@content":"01 July 2023"
           },
           {
             "@name":"generator",
@@ -328,13 +328,7 @@
                             { "MetadataSet":
                               {
                                 "@name":"EscapedQuotationMarksMetadataSet",
-                                "-value":[
-                                  { "MetadataString":
-                                    {
-                                      "@name":"quotesTestC",
-                                      "@value":["MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""]
-                                    }
-                                  },
+                                "-IllegalChildNodeFieldNameNotFound":[
                                   { "MetadataString":
                                     {
                                       "@name":"extraChildTest",

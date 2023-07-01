@@ -14,7 +14,7 @@
   <Scene>
     <WorldInfo title='ScubaTank.x3d'/>
     <Transform DEF='ScubaTank'>
-      <Transform>
+      <Transform DEF='ScubaTank'>
         <Shape>
           <Appearance>
             <Material DEF='tank' ambientIntensity='0.3' diffuseColor='0.3 0.3 0.5' shininess='0.1' specularColor='0.7 0.7 0.8'/>
@@ -22,7 +22,7 @@
           <Cylinder height='0.7' radius='0.1'/>
         </Shape>
       </Transform>
-      <Transform translation='0 0.35 0'>
+      <Transform DEF='ScubaTank' translation='0 0.35 0'>
         <Shape>
           <Appearance>
             <Material USE='tank'/>
@@ -30,58 +30,58 @@
           <Sphere radius='0.098'/>
         </Shape>
       </Transform>
-      <Transform translation='0 -0.35 0'>
+      <Transform DEF='ScubaTank' translation='0 -0.35 0'>
         <Shape DEF='tankBottom'>
-          <Appearance>
+          <Appearance DEF='tankBottom'>
             <Material DEF='black' ambientIntensity='0.3' diffuseColor='0 0 0'/>
           </Appearance>
-          <Cylinder height='0.06' radius='0.115'/>
+          <Cylinder DEF='tankBottom' height='0.06' radius='0.115'/>
         </Shape>
       </Transform>
       <Group DEF='tankNozzle'>
-        <Transform>
+        <Transform DEF='tankNozzle'>
           <Transform translation='0 0.45 0'>
             <Shape DEF='pressure'>
-              <Appearance>
+              <Appearance DEF='pressure'>
                 <Material DEF='pressureColor' ambientIntensity='0.4' diffuseColor='0.91 0.91 0.91' shininess='0.16' specularColor='0.91 0.9 0.91'/>
               </Appearance>
-              <Cylinder height='0.1' radius='0.015'/>
+              <Cylinder DEF='pressure' height='0.1' radius='0.015'/>
             </Shape>
           </Transform>
           <Transform translation='0 0.5 0'>
             <Shape DEF='pressureTop'>
-              <Appearance>
+              <Appearance DEF='pressureTop'>
                 <Material USE='black'/>
               </Appearance>
-              <Cylinder height='0.02' radius='0.025'/>
+              <Cylinder DEF='pressureTop' height='0.02' radius='0.025'/>
             </Shape>
           </Transform>
           <Transform rotation='0 0 1 1.57' translation='-0.028 0.462 0'>
             <Transform>
               <Shape DEF='connectorToRegulator'>
-                <Appearance>
+                <Appearance DEF='connectorToRegulator'>
                   <Material USE='pressureColor'/>
                 </Appearance>
-                <Cylinder height='0.03' radius='0.01'/>
+                <Cylinder DEF='connectorToRegulator' height='0.03' radius='0.01'/>
               </Shape>
             </Transform>
             <Transform translation='0 0.02 0'>
               <Shape DEF='connectorToRegulatorTop'>
-                <Appearance>
+                <Appearance DEF='connectorToRegulatorTop'>
                   <Material USE='black'/>
                 </Appearance>
-                <Cylinder height='0.02' radius='0.02'/>
+                <Cylinder DEF='connectorToRegulatorTop' height='0.02' radius='0.02'/>
               </Shape>
             </Transform>
           </Transform>
         </Transform>
       </Group>
-      <Transform translation='0 0.2 0'>
+      <Transform DEF='ScubaTank' translation='0 0.2 0'>
         <Shape DEF='tankHoldBelt'>
-          <Appearance>
+          <Appearance DEF='tankHoldBelt'>
             <Material USE='black'/>
           </Appearance>
-          <Cylinder height='0.1' radius='0.115'/>
+          <Cylinder DEF='tankHoldBelt' height='0.1' radius='0.115'/>
         </Shape>
       </Transform>
     </Transform>

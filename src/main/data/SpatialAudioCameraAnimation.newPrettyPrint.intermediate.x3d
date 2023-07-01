@@ -28,23 +28,23 @@
     <ROUTE fromField='fraction_changed' fromNode='TIMER' toField='set_fraction' toNode='Camera001-ROT-INTERP'/>
     <ROUTE fromField='value_changed' fromNode='Camera001-ROT-INTERP' toField='set_orientation' toNode='Camera001'/>
     <Transform DEF='Floor' translation='1.241 0 0.358'>
-      <Shape>
+      <Shape DEF='Floor'>
         <Appearance DEF='WireColor'>
-          <Material diffuseColor='0.122 0.114 0.125'/>
+          <Material DEF='WireColor' diffuseColor='0.122 0.114 0.125'/>
         </Appearance>
         <Box size='2000 1 2000'/>
       </Shape>
     </Transform>
     <Transform DEF='TransformAudio1' translation='-933.1235 0 -926.25323'>
-      <Shape>
+      <Shape DEF='TransformAudio1'>
         <Appearance DEF='WireColor_1'>
-          <Material diffuseColor='0.690196 0.101961 0.101961'/>
+          <Material DEF='WireColor_1' diffuseColor='0.690196 0.101961 0.101961'/>
         </Appearance>
         <Sphere radius='100.0'/>
       </Shape>
-      <Billboard>
+      <Billboard DEF='TransformAudio1'>
         <Transform DEF='violin' rotation='1 0 0 -0.5' scale='100 100 100' translation='0 100 0'>
-          <Shape>
+          <Shape DEF='violin'>
             <Appearance>
               <Material ambientIntensity='0.0933' diffuseColor='1 1 1' shininess='0.51' specularColor='0.46 0.46 0.46'/>
             </Appearance>
@@ -56,15 +56,15 @@
       </Billboard>
     </Transform>
     <Transform DEF='TransformAudio2' translation='933.4756 0 924.4232'>
-      <Shape>
+      <Shape DEF='TransformAudio2'>
         <Appearance DEF='WireColor_2'>
-          <Material diffuseColor='0.105882 0.694118 0.580392'/>
+          <Material DEF='WireColor_2' diffuseColor='0.105882 0.694118 0.580392'/>
         </Appearance>
         <Sphere radius='100.0'/>
       </Shape>
-      <Billboard>
+      <Billboard DEF='TransformAudio2'>
         <Transform DEF='saxophone' rotation='1 0 0 -0.5' scale='100 100 100' translation='0 100 0'>
-          <Shape>
+          <Shape DEF='saxophone'>
             <Appearance>
               <Material ambientIntensity='0.0933' diffuseColor='1 1 1' shininess='0.51' specularColor='0.46 0.46 0.46'/>
             </Appearance>
@@ -78,12 +78,12 @@
     <ListenerPointSource trackCurrentView='true'/>
     <StreamAudioDestination>
       <SpatialSound DEF='Audio1'>
-        <Gain>
+        <Gain DEF='Audio1'>
           <AudioClip description='Violin' loop='true' url='"sound/violin.mp3" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"'/>
         </Gain>
       </SpatialSound>
       <SpatialSound DEF='Audio2'>
-        <Gain>
+        <Gain DEF='Audio2'>
           <AudioClip description='Saxophone' loop='true' url='"sound/saxophone.mp3" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"'/>
         </Gain>
       </SpatialSound>

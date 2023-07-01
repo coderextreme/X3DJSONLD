@@ -3324,7 +3324,7 @@ AllenStandShootRifleM24.prototype = {
         .addChild((new autoclass.Viewpoint()).setDescription("Allen Above Viewpoint").setOrientation(.999,0.031,-0.039,4.615).setPosition(.1,2.4,0.0))
         .addChild((new autoclass.Group("HighResolution"))
           .addChild((new autoclass.Transform())
-            .addChild((new autoclass.HAnimHumanoid("hanim_Allen")).setName("Allen").setVersion("1.0")
+            .addChild((new autoclass.HAnimHumanoid("hanim_Allen")).setName("Allen").setVersion("2.0")
               .addSkeleton((new autoclass.HAnimJoint("hanim_humanoid_root")).setName("humanoid_root").setCenter(-0.00405,0.855,-0.000113).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
                 .addChild((new autoclass.HAnimJoint("hanim_sacroiliac")).setName("sacroiliac").setCenter(0.0,1.01,-0.0204).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
                   .addChild((new autoclass.HAnimSegment("hanim_pelvis")).setName("pelvis")

@@ -56,7 +56,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 June 2023"
+            "@content":"01 July 2023"
           },
           {
             "@name":"generator",
@@ -93,6 +93,7 @@
                 },
                 { "Group":
                   {
+                    "@DEF":"DoNotCollideWithVisualizationWidget",
                     "-children":[
                       {
                         "#comment":"Vertical Y arrow and label"
@@ -103,6 +104,7 @@
                           "-children":[
                             { "Shape":
                               {
+                                "@DEF":"ArrowGreen",
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -110,6 +112,7 @@
                                       "-material":
                                         { "Material":
                                           {
+                                            "@DEF":"Green",
                                             "@diffuseColor":[0.1,0.6,0.1],
                                             "@emissiveColor":[0.05,0.2,0.05]
                                           }
@@ -128,6 +131,7 @@
                             },
                             { "Transform":
                               {
+                                "@DEF":"ArrowGreen",
                                 "@translation":[0,1,0],
                                 "-children":[
                                   { "Shape":
@@ -170,6 +174,7 @@
                                             "-material":
                                               { "Material":
                                                 {
+                                                  "@DEF":"LABEL_APPEARANCE",
                                                   "@diffuseColor":[1,1,0.3],
                                                   "@emissiveColor":[0.33,0.33,0.1]
                                                 }
@@ -204,6 +209,7 @@
                 },
                 { "Transform":
                   {
+                    "@DEF":"DoNotCollideWithVisualizationWidget",
                     "@rotation":[0,0,1,-1.57079],
                     "-children":[
                       {
@@ -218,6 +224,7 @@
                                 "-children":[
                                   { "Shape":
                                     {
+                                      "@DEF":"ArrowRed",
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -225,6 +232,7 @@
                                             "-material":
                                               { "Material":
                                                 {
+                                                  "@DEF":"Red",
                                                   "@diffuseColor":[0.7,0.1,0.1],
                                                   "@emissiveColor":[0.33,0,0]
                                                 }
@@ -241,6 +249,7 @@
                                   },
                                   { "Transform":
                                     {
+                                      "@DEF":"ArrowRed",
                                       "@translation":[0,1,0],
                                       "-children":[
                                         { "Shape":
@@ -312,6 +321,7 @@
                 },
                 { "Transform":
                   {
+                    "@DEF":"DoNotCollideWithVisualizationWidget",
                     "@rotation":[1,0,0,1.57079],
                     "-children":[
                       {
@@ -326,6 +336,7 @@
                                 "-children":[
                                   { "Shape":
                                     {
+                                      "@DEF":"ArrowBlue",
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -333,6 +344,7 @@
                                             "-material":
                                               { "Material":
                                                 {
+                                                  "@DEF":"Blue",
                                                   "@diffuseColor":[0.3,0.3,1],
                                                   "@emissiveColor":[0.1,0.1,0.33]
                                                 }
@@ -349,6 +361,7 @@
                                   },
                                   { "Transform":
                                     {
+                                      "@DEF":"ArrowBlue",
                                       "@translation":[0,1,0],
                                       "-children":[
                                         { "Shape":

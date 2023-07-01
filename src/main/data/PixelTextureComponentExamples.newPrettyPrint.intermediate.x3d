@@ -29,7 +29,7 @@
       <Transform translation='0 -2 0'>
         <Shape>
           <Appearance DEF='TextMaterial'>
-            <Material diffuseColor='1 1 1'/>
+            <Material DEF='TextMaterial' diffuseColor='1 1 1'/>
           </Appearance>
           <Text string='"0"'>
             <FontStyle DEF='CenterJustify' family='"SERIF"' justify='"MIDDLE" "MIDDLE"'/>
