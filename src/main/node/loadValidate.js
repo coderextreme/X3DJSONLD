@@ -106,7 +106,13 @@ function addSchema(ajv, schemajson, version) {
       return validated_version;
 }
 
-loadSchema = function loadSchema(json, file, success, failure) {
+async function loadSchemaJson(version) {
+  const response = await fetch("../schema/x3d-"+version+"-JSONSchema.json");
+  const jsonData = await response.json();
+  return jsonData;
+}
+
+loadSchema = async function loadSchema(json, file, success, failure) {
 	var versions = { "4.0":true };
 	var version = "4.0";
 	try {
@@ -120,19 +126,16 @@ loadSchema = function loadSchema(json, file, success, failure) {
 	}
 	var validated_version = CACHE.validate[version];
         if (typeof validated_version === 'undefined') {
-		      if (typeof $ === 'function' && typeof $.getJSON === 'function') {
-			      $.getJSON("../schema/x3d-"+version+"-JSONSchema.json", function(schemajson) {
-				      validated_version = addSchema(ajv, schemajson, version);
-				      doValidate(json, validated_version, file, success, undefined);
-				}).fail(function(e) {
-				   doValidate(json, validated_version, file, undefined, failure, e);
-				});
-		      } else if (typeof fs === 'object') {
-				var schema = fs.readFileSync("../schema/x3d-"+version+"-JSONSchema.json");
-				var schemajson = JSON.parse(schema.toString());
-				validated_version = addSchema(ajv, schemajson, version);
-				doValidate(json, validated_version, file, success, undefined);
-		      }
+		if (typeof fs === 'object') {
+			var schema = fs.readFileSync("../schema/x3d-"+version+"-JSONSchema.json");
+			var schemajson = JSON.parse(schema.toString());
+			validated_version = addSchema(ajv, schemajson, version);
+			doValidate(json, validated_version, file, success, undefined);
+		} else {
+			var schemajson = await loadSchemaJson(version);
+			validated_version = addSchema(ajv, schemajson, version);
+			doValidate(json, validated_version, file, success, undefined);
+		}
 	} else {
 	      doValidate(json, validated_version, file, success, undefined);
 	}
