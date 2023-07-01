@@ -193,8 +193,8 @@ Recommended tool:
                     <xsl:if test="(string-length($simpleTypeAppinfo) > 0)">
                         <xsl:attribute name="appinfo" select="normalize-space($simpleTypeAppinfo)"/>
                     </xsl:if>
-                    <xsl:if test="(string-length(normalize-space(xs:annotation/xs:appinfo/xs:documentation/@source)) > 0)">
-                        <xsl:attribute name="documentation" select="xs:annotation/xs:appinfo/xs:documentation/@source"/>
+                    <xsl:if test="(string-length(normalize-space(xs:annotation/xs:documentation/@source)) > 0)">
+                        <xsl:attribute name="documentation" select="xs:annotation/xs:documentation/@source"/>
                     </xsl:if>
                     <!-- xsl:comment>*** enumeration loop 1</xsl:comment-->
                     <xsl:for-each select="*/xs:enumeration">
@@ -280,7 +280,7 @@ Recommended tool:
                                         </xsl:if>
                                     </xsl:attribute>
                                 </xsl:if>
-                                <xsl:variable  name="documentationUrl"     select="normalize-space(xs:annotation/xs:appinfo/xs:documentation/@source)"/>
+                                <xsl:variable  name="documentationUrl"     select="normalize-space(xs:annotation/xs:documentation/@source)"/>
                                 <xsl:if test="string-length($documentationUrl) > 0">
                                     <xsl:attribute name="documentation">
                                         <xsl:value-of select="$documentationUrl"/>
@@ -516,27 +516,27 @@ Recommended tool:
                             <xsl:if test="(string-length(normalize-space(xs:annotation/xs:appinfo)) > 0)">
                                 <xsl:attribute name="appinfo" select="normalize-space(xs:annotation/xs:appinfo)"/>
                             </xsl:if>
-                            <xsl:if test="(string-length(normalize-space(xs:annotation/xs:appinfo/xs:documentation/@source)) > 0)">
-                                    <xsl:attribute name="documentation" select="normalize-space(xs:annotation/xs:appinfo/xs:documentation/@source)"/>
-                                    <!-- debug diagnostic -->
+                            <xsl:if test="(string-length(normalize-space(xs:annotation/xs:documentation/@source)) > 0)">
+                                    <xsl:attribute name="documentation" select="normalize-space(xs:annotation/xs:documentation/@source)"/>
+                                    <!-- debug diagnostic
                                     <xsl:message>
                                         <xsl:text>*** xs:documentation/@source=</xsl:text>
-                                        <xsl:value-of select="normalize-space(xs:annotation/xs:appinfo/xs:documentation/@source)"/>
-                                    </xsl:message>
+                                        <xsl:value-of select="normalize-space(xs:annotation/xs:documentation/@source)"/>
+                                    </xsl:message> -->
                             </xsl:if>
                             <xsl:variable name="enumerationAppinfo" select="xs:annotation/xs:appinfo"/>
                             <xsl:if test="(string-length(normalize-space($enumerationAppinfo)) > 0)">
                                     <xsl:attribute name="appinfo" select="normalize-space($enumerationAppinfo)"/>
                             </xsl:if>
-                            <xsl:variable name="enumerationDocumentation" select="xs:annotation/xs:appinfo/xs:documentation/@source"/>
+                            <xsl:variable name="enumerationDocumentation" select="xs:annotation/xs:documentation/@source"/>
                             <xsl:choose>
                                     <xsl:when test="(string-length(normalize-space($enumerationDocumentation)) > 0)">
                                             <xsl:attribute name="documentation" select="normalize-space($enumerationDocumentation)"/>
-                                            <!-- debug diagnostic -->
+                                            <!-- debug diagnostic
                                             <xsl:message>
                                                 <xsl:text>*** $enumerationDocumentation=</xsl:text>
                                                 <xsl:value-of select="normalize-space($enumerationDocumentation)"/>
-                                            </xsl:message>
+                                            </xsl:message> -->
                                     </xsl:when>
                                     <xsl:when test="starts-with($schemaFullVersionNumber,'4') and 
                                                     (($simpleTypeName = 'featurePointNameValues') or ($simpleTypeName = 'jointNameValues') or ($simpleTypeName = 'segmentNameValues'))">
@@ -712,7 +712,7 @@ Recommended tool:
                         <xsl:if test="string-length(normalize-space(xs:annotation/xs:documentation/text())) > 0">
                             <xsl:attribute name="specificationSection" select="normalize-space(xs:annotation/xs:documentation/text())"/>
                         </xsl:if>
-                        <xsl:attribute name="specificationUrl" select="xs:annotation/xs:appinfo/xs:documentation/@source"/>
+                        <xsl:attribute name="specificationUrl" select="xs:annotation/xs:documentation/@source"/>
                         <xsl:variable name="appinfo" select="normalize-space(xs:annotation/xs:appinfo/text())"/>
                         <xsl:if test="string-length($appinfo) > 0">
                                     <xsl:attribute name="appinfo">
@@ -751,7 +751,7 @@ Recommended tool:
                         <xsl:if test="string-length(normalize-space(xs:annotation/xs:documentation/text())) > 0">
                             <xsl:attribute name="specificationSection" select="normalize-space(xs:annotation/xs:documentation/text())"/>
                         </xsl:if>
-                        <xsl:attribute name="specificationUrl" select="xs:annotation/xs:appinfo/xs:documentation/@source"/>
+                        <xsl:attribute name="specificationUrl" select="xs:annotation/xs:documentation/@source"/>
                         <xsl:variable name="appinfo" select="normalize-space(xs:annotation/xs:appinfo/text())"/>
                         <xsl:if test="string-length($appinfo) > 0">
                                     <xsl:attribute name="appinfo">
@@ -810,7 +810,7 @@ Recommended tool:
                         <xsl:if test="string-length(normalize-space(xs:annotation/xs:documentation/text())) > 0">
                             <xsl:attribute name="specificationSection" select="normalize-space(xs:annotation/xs:documentation/text())"/>
                         </xsl:if>
-                        <xsl:attribute name="specificationUrl" select="xs:annotation/xs:appinfo/xs:documentation/@source"/>
+                        <xsl:attribute name="specificationUrl" select="xs:annotation/xs:documentation/@source"/>
                         <xsl:choose>
                             <xsl:when test="string-length(normalize-space(xs:annotation/xs:appinfo/text())) > 0">
                                 <xsl:variable name="appinfo" select="normalize-space(xs:annotation/xs:appinfo/text())"/>
@@ -1032,7 +1032,7 @@ Recommended tool:
                         </xsl:attribute>
                     </xsl:if>
                     <xsl:element name="InterfaceDefinition">
-                        <xsl:attribute name="specificationUrl" select="xs:annotation/xs:appinfo/xs:documentation/@source"/>
+                        <xsl:attribute name="specificationUrl" select="xs:annotation/xs:documentation/@source"/>
                         <xsl:variable name="appinfo">
                             <xsl:choose>
                                 <xsl:when test="(string-length(normalize-space(xs:annotation/xs:appinfo/text())) > 0)">
@@ -1313,8 +1313,8 @@ Recommended tool:
                                                         </xsl:if>
                                                     </xsl:attribute>
                                                 </xsl:if>
-                                            	<xsl:if test="(string-length(normalize-space(xs:annotation/xs:appinfo/xs:documentation/@source)) > 0)">
-                                                    <xsl:attribute name="documentation" select="normalize-space(xs:annotation/xs:appinfo/xs:documentation/@source)"/>
+                                            	<xsl:if test="(string-length(normalize-space(xs:annotation/xs:documentation/@source)) > 0)">
+                                                    <xsl:attribute name="documentation" select="normalize-space(xs:annotation/xs:documentation/@source)"/>
                                                 </xsl:if>
                                             </xsl:element>
                                         </xsl:for-each>
@@ -1342,8 +1342,8 @@ Recommended tool:
                                                     </xsl:if>
                                                 </xsl:attribute>
                                             </xsl:if>
-                                            <xsl:if test="(string-length(normalize-space(xs:annotation/xs:appinfo/xs:documentation/@source)) > 0)">
-                                                <xsl:attribute name="documentation" select="normalize-space(xs:annotation/xs:appinfo/xs:documentation/@source)"/>
+                                            <xsl:if test="(string-length(normalize-space(xs:annotation/xs:documentation/@source)) > 0)">
+                                                <xsl:attribute name="documentation" select="normalize-space(xs:annotation/xs:documentation/@source)"/>
                                             </xsl:if>
                                         </xsl:element>
                                     </xsl:when>
@@ -1446,7 +1446,7 @@ Recommended tool:
                 <xsl:element name="Statement">
                     <xsl:attribute name="name" select="$statementName"/>
                     <xsl:element name="InterfaceDefinition">
-                        <xsl:attribute name="specificationUrl" select="xs:annotation/xs:appinfo/xs:documentation/@source"/>
+                        <xsl:attribute name="specificationUrl" select="xs:annotation/xs:documentation/@source"/>
                         <xsl:variable name="appinfo" select="normalize-space(xs:annotation/xs:appinfo/text())"/>
                         <xsl:if test="string-length($appinfo) > 0">
                                     <xsl:attribute name="appinfo">
@@ -2239,8 +2239,8 @@ Recommended tool:
                                             </xsl:if>
                                         </xsl:attribute>
                                     </xsl:if>
-                                    <xsl:if test="(string-length(normalize-space(xs:annotation/xs:appinfo/xs:documentation/@source)) > 0)">
-                                        <xsl:attribute name="documentation" select="normalize-space(xs:annotation/xs:appinfo/xs:documentation/@source)"/>
+                                    <xsl:if test="(string-length(normalize-space(xs:annotation/xs:documentation/@source)) > 0)">
+                                        <xsl:attribute name="documentation" select="normalize-space(xs:annotation/xs:documentation/@source)"/>
                                     </xsl:if>
                                 </xsl:element>
                             </xsl:for-each>
@@ -2304,8 +2304,8 @@ Recommended tool:
                                             </xsl:if>
                                         </xsl:attribute>
                                     </xsl:if>
-                                    <xsl:if test="(string-length(normalize-space(xs:annotation/xs:appinfo/xs:documentation/@source)) > 0)">
-                                        <xsl:attribute name="documentation" select="normalize-space(xs:annotation/xs:appinfo/xs:documentation/@source)"/>
+                                    <xsl:if test="(string-length(normalize-space(xs:annotation/xs:documentation/@source)) > 0)">
+                                        <xsl:attribute name="documentation" select="normalize-space(xs:annotation/xs:documentation/@source)"/>
                                     </xsl:if>
                                 </xsl:element>
                             </xsl:for-each>
@@ -2332,8 +2332,8 @@ Recommended tool:
                                             </xsl:if>
                                         </xsl:attribute>
                                     </xsl:if>
-                                    <xsl:if test="(string-length(normalize-space(xs:annotation/xs:appinfo/xs:documentation/@source)) > 0)">
-                                        <xsl:attribute name="documentation" select="normalize-space(xs:annotation/xs:appinfo/xs:documentation/@source)"/>
+                                    <xsl:if test="(string-length(normalize-space(xs:annotation/xs:documentation/@source)) > 0)">
+                                        <xsl:attribute name="documentation" select="normalize-space(xs:annotation/xs:documentation/@source)"/>
                                     </xsl:if>
                             </xsl:element>
                         </xsl:if>
@@ -2362,8 +2362,8 @@ Recommended tool:
                                             </xsl:if>
                                         </xsl:attribute>
                                     </xsl:if>
-                                    <xsl:if test="(string-length(normalize-space(xs:annotation/xs:appinfo/xs:documentation/@source)) > 0)">
-                                        <xsl:attribute name="documentation" select="normalize-space(xs:annotation/xs:appinfo/xs:documentation/@source)"/>
+                                    <xsl:if test="(string-length(normalize-space(xs:annotation/xs:documentation/@source)) > 0)">
+                                        <xsl:attribute name="documentation" select="normalize-space(xs:annotation/xs:documentation/@source)"/>
                                     </xsl:if>
                                 </xsl:element>
                             </xsl:for-each>

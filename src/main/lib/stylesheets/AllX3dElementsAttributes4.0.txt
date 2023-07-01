@@ -1,16 +1,16 @@
 <!-- All X3D elements and attributes, with default values, as defined in X3D Schema version 4.0 -->
 <AcousticProperties absorption='0' description='' diffuse='0' enabled='true' refraction='0' specular='0' containerField='acousticProperties' class='' id='' style=''/>
-<Analyser channelCountMode='max' channelInterpretation='speakers' description='' enabled='true' fftSize='2048' frequencyBinCount='1024' gain='1' maxDecibels='-30' minDecibels='-100' pauseTime='0' resumeTime='0' smoothingTimeConstant='0.8' startTime='0' stopTime='0' tailTime='0' containerField='children' class='' id='' style=''/>
+<Analyser channelCountMode='MAX' channelInterpretation='SPEAKERS' description='' enabled='true' fftSize='2048' frequencyBinCount='1024' gain='1' maxDecibels='-30' minDecibels='-100' pauseTime='0' resumeTime='0' smoothingTimeConstant='0.8' startTime='0' stopTime='0' tailTime='0' containerField='children' class='' id='' style=''/>
 <Anchor autoRefresh='0' autoRefreshTimeLimit='3600' bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' description='' load='true' parameter='' url='' visible='true' containerField='children' class='' id='' style=''/>
 <Appearance alphaCutoff='0.5' alphaMode='AUTO' containerField='appearance' class='' id='' style=''/>
 <Arc2D endAngle='1.570796' radius='1' startAngle='0' containerField='geometry' class='' id='' style=''/>
 <ArcClose2D closureType='PIE' endAngle='1.570796' radius='1' solid='false' startAngle='0' containerField='geometry' class='' id='' style=''/>
 <AudioClip autoRefresh='0' autoRefreshTimeLimit='3600' description='' enabled='true' gain='1' load='true' loop='false' pauseTime='0' pitch='1.0' resumeTime='0' startTime='0' stopTime='0' url='' containerField='source' class='' id='' style=''/>
-<AudioDestination channelCountMode='max' channelInterpretation='speakers' description='' enabled='true' gain='1' maxChannelCount='2' mediaDeviceID='' containerField='children' class='' id='' style=''/>
+<AudioDestination channelCountMode='MAX' channelInterpretation='SPEAKERS' description='' enabled='true' gain='1' maxChannelCount='2' mediaDeviceID='' containerField='children' class='' id='' style=''/>
 <Background backUrl='' bottomUrl='' frontUrl='' groundAngle='' groundColor='' leftUrl='' rightUrl='' skyAngle='' skyColor='0 0 0' topUrl='' transparency='0' containerField='children' class='' id='' style=''/>
 <BallJoint anchorPoint='0 0 0' forceOutput='"NONE"' containerField='joints' class='' id='' style=''/>
 <Billboard axisOfRotation='0 1 0' bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' visible='true' containerField='children' class='' id='' style=''/>
-<BiquadFilter channelCountMode='max' channelInterpretation='speakers' description='' detune='0' enabled='true' frequency='350' gain='1' pauseTime='0' qualityFactor='1' resumeTime='0' startTime='0' stopTime='0' tailTime='0' type='lowpass' containerField='children' class='' id='' style=''/>
+<BiquadFilter channelCountMode='MAX' channelInterpretation='SPEAKERS' description='' detune='0' enabled='true' frequency='350' gain='1' pauseTime='0' qualityFactor='1' resumeTime='0' startTime='0' stopTime='0' tailTime='0' type='LOWPASS' containerField='children' class='' id='' style=''/>
 <BlendedVolumeStyle enabled='true' weightConstant1='0.5' weightConstant2='0.5' weightFunction1='CONSTANT' weightFunction2='CONSTANT' containerField='renderStyle' class='' id='' style=''/>
 <BooleanFilter containerField='children' class='' id='' style=''/>
 <BooleanSequencer key='' keyValue='' containerField='children' class='' id='' style=''/>
@@ -19,15 +19,15 @@
 <BoundaryEnhancementVolumeStyle boundaryOpacity='0.9' enabled='true' opacityFactor='2' retainedOpacity='0.2' containerField='renderStyle' class='' id='' style=''/>
 <BoundedPhysicsModel enabled='true' containerField='physics' class='' id='' style=''/>
 <Box size='2 2 2' solid='true' containerField='geometry' class='' id='' style=''/>
-<BufferAudioSource autoRefresh='0' autoRefreshTimeLimit='3600' buffer='' bufferDuration='0' channelCountMode='max' channelInterpretation='speakers' description='' detune='0' enabled='true' gain='1' load='true' loop='false' loopEnd='0' loopStart='0' numberOfChannels='0' pauseTime='0' playbackRate='1' resumeTime='0' sampleRate='0' startTime='0' stopTime='0' url='' containerField='children' class='' id='' style=''/>
+<BufferAudioSource autoRefresh='0' autoRefreshTimeLimit='3600' buffer='' bufferDuration='0' channelCountMode='MAX' channelInterpretation='SPEAKERS' description='' detune='0' enabled='true' gain='1' load='true' loop='false' loopEnd='0' loopStart='0' numberOfChannels='0' pauseTime='0' playbackRate='1' resumeTime='0' sampleRate='0' startTime='0' stopTime='0' url='' containerField='children' class='' id='' style=''/>
 <CADAssembly bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' name='' visible='true' containerField='children' class='' id='' style=''/>
 <CADFace bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' name='' visible='true' containerField='children' class='' id='' style=''/>
 <CADLayer bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' name='' visible='true' containerField='children' class='' id='' style=''/>
 <CADPart bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' center='0 0 0' name='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' visible='true' containerField='children' class='' id='' style=''/>
 <CartoonVolumeStyle colorSteps='4' enabled='true' orthogonalColor='1 1 1 1' parallelColor='0 0 0 1' containerField='renderStyle' class='' id='' style=''/>
-<ChannelMerger channelCountMode='max' channelInterpretation='speakers' description='' enabled='true' gain='1' containerField='children' class='' id='' style=''/>
-<ChannelSelector channelCountMode='max' channelInterpretation='speakers' channelSelection='0' description='' enabled='true' gain='1' containerField='children' class='' id='' style=''/>
-<ChannelSplitter channelCountMode='max' channelInterpretation='speakers' description='' enabled='true' gain='1' containerField='children' class='' id='' style=''/>
+<ChannelMerger channelCountMode='MAX' channelInterpretation='SPEAKERS' description='' enabled='true' gain='1' containerField='children' class='' id='' style=''/>
+<ChannelSelector channelCountMode='MAX' channelInterpretation='SPEAKERS' channelSelection='0' description='' enabled='true' gain='1' containerField='children' class='' id='' style=''/>
+<ChannelSplitter channelCountMode='MAX' channelInterpretation='SPEAKERS' description='' enabled='true' gain='1' containerField='children' class='' id='' style=''/>
 <Circle2D radius='1' containerField='geometry' class='' id='' style=''/>
 <ClipPlane enabled='true' plane='0 1 0 0' containerField='children' class='' id='' style=''/>
 <CollidableOffset bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' enabled='true' rotation='0 0 1 0' translation='0 0 0' visible='true' containerField='children' class='' id='' style=''/>
@@ -52,7 +52,7 @@
 <Contact appliedParameters='"BOUNCE"' bounce='0' contactNormal='0 1 0' depth='0' frictionCoefficients='0 0' frictionDirection='0 1 0' minBounceSpeed='0' position='0 0 0' slipCoefficients='0 0' softnessConstantForceMix='0.0001' softnessErrorCorrection='0.8' surfaceSpeed='0 0' containerField='contacts' class='' id='' style=''/>
 <Contour2D containerField='trimmingContour' class='' id='' style=''/>
 <ContourPolyline2D controlPoint='' containerField='children' class='' id='' style=''/>
-<Convolver buffer='' channelCountMode='max' channelInterpretation='speakers' description='' enabled='true' gain='1' normalize='false' pauseTime='0' resumeTime='0' startTime='0' stopTime='0' tailTime='0' containerField='children' class='' id='' style=''/>
+<Convolver buffer='' channelCountMode='MAX' channelInterpretation='SPEAKERS' description='' enabled='true' gain='1' normalize='false' pauseTime='0' resumeTime='0' startTime='0' stopTime='0' tailTime='0' containerField='children' class='' id='' style=''/>
 <Coordinate point='' containerField='coord' class='' id='' style=''/>
 <CoordinateChaser duration='1' initialDestination='0 0 0' initialValue='0 0 0' containerField='children' class='' id='' style=''/>
 <CoordinateDamper initialDestination='0 0 0' initialValue='0 0 0' order='3' tau='0.3' tolerance='-1' containerField='children' class='' id='' style=''/>
@@ -61,13 +61,13 @@
 <CoordinateInterpolator2D key='' keyValue='' containerField='children' class='' id='' style=''/>
 <Cylinder bottom='true' height='2' radius='1' side='true' solid='true' top='true' containerField='geometry' class='' id='' style=''/>
 <CylinderSensor autoOffset='true' axisRotation='0 1 0 0' description='' diskAngle='0.26179167' enabled='true' maxAngle='-1' minAngle='0' offset='0' containerField='children' class='' id='' style=''/>
-<Delay channelCountMode='max' channelInterpretation='speakers' delayTime='0' description='' enabled='true' gain='1' maxDelayTime='1' pauseTime='0' resumeTime='0' startTime='0' stopTime='0' tailTime='0' containerField='children' class='' id='' style=''/>
+<Delay channelCountMode='MAX' channelInterpretation='SPEAKERS' delayTime='0' description='' enabled='true' gain='1' maxDelayTime='1' pauseTime='0' resumeTime='0' startTime='0' stopTime='0' tailTime='0' containerField='children' class='' id='' style=''/>
 <DirectionalLight ambientIntensity='0' color='1 1 1' direction='0 0 -1' global='false' intensity='1' on='true' shadowIntensity='1' shadows='false' containerField='children' class='' id='' style=''/>
 <DISEntityManager address='localhost' applicationID='0' port='0' siteID='0' containerField='children' class='' id='' style=''/>
 <DISEntityTypeMapping autoRefresh='0' autoRefreshTimeLimit='3600' category='0' country='0' description='' domain='0' extra='0' kind='0' load='true' specific='0' subcategory='0' url='' containerField='children' class='' id='' style=''/>
 <Disk2D innerRadius='0' outerRadius='1' solid='false' containerField='geometry' class='' id='' style=''/>
 <DoubleAxisHingeJoint anchorPoint='0 0 0' axis1='1 0 0' axis2='0 1 0' desiredAngularVelocity1='0' desiredAngularVelocity2='0' forceOutput='"NONE"' maxAngle1='3.141592653' maxTorque1='0' maxTorque2='0' minAngle1='-3.141592653' stop1Bounce='0' stop1ConstantForceMix='0.001' stop1ErrorCorrection='0.8' suspensionErrorCorrection='0.8' suspensionForce='0' containerField='joints' class='' id='' style=''/>
-<DynamicsCompressor attack='0.003' channelCountMode='max' channelInterpretation='speakers' description='' enabled='true' gain='1' knee='30' pauseTime='0' ratio='12' release='0.25' resumeTime='0' startTime='0' stopTime='0' tailTime='0' threshold='-24' containerField='children' class='' id='' style=''/>
+<DynamicsCompressor attack='0.003' channelCountMode='MAX' channelInterpretation='SPEAKERS' description='' enabled='true' gain='1' knee='30' pauseTime='0' ratio='12' release='0.25' resumeTime='0' startTime='0' stopTime='0' tailTime='0' threshold='-24' containerField='children' class='' id='' style=''/>
 <EaseInEaseOut easeInEaseOut='' key='' containerField='children' class='' id='' style=''/>
 <EdgeEnhancementVolumeStyle edgeColor='0 0 0 1' enabled='true' gradientThreshold='0.4' containerField='renderStyle' class='' id='' style=''/>
 <ElevationGrid ccw='true' colorPerVertex='true' creaseAngle='0' height='0 0 0 0' normalPerVertex='true' solid='true' xDimension='2' xSpacing='1.0' zDimension='2' zSpacing='1.0' containerField='geometry' class='' id='' style=''/>
@@ -84,7 +84,7 @@
 <FogCoordinate depth='' containerField='fogCoord' class='' id='' style=''/>
 <FontStyle family='"SERIF"' horizontal='true' justify='"BEGIN"' language='' leftToRight='true' size='1.0' spacing='1.0' topToBottom='true' containerField='fontStyle' class='' id='' style='PLAIN'/>
 <ForcePhysicsModel enabled='true' force='0 -9.8 0' containerField='physics' class='' id='' style=''/>
-<Gain channelCountMode='max' channelInterpretation='speakers' description='' enabled='true' gain='1' pauseTime='0' resumeTime='0' startTime='0' stopTime='0' tailTime='0' containerField='children' class='' id='' style=''/>
+<Gain channelCountMode='MAX' channelInterpretation='SPEAKERS' description='' enabled='true' gain='1' pauseTime='0' resumeTime='0' startTime='0' stopTime='0' tailTime='0' containerField='children' class='' id='' style=''/>
 <GeneratedCubeMapTexture description='' size='128' update='NONE' containerField='texture' class='' id='' style=''/>
 <GeoCoordinate geoSystem='"GD" "WE"' point='' containerField='coord' class='' id='' style=''/>
 <GeoElevationGrid ccw='true' colorPerVertex='true' creaseAngle='0' geoGridOrigin='0 0 0' geoSystem='"GD" "WE"' height='0 0 0 0' normalPerVertex='true' solid='true' xDimension='2' xSpacing='1.0' yScale='1' zDimension='2' zSpacing='1.0' containerField='geometry' class='' id='' style=''/>
@@ -101,7 +101,7 @@
 <HAnimDisplacer coordIndex='' description='' displacements='' name='' weight='0.0' containerField='displacers' class='' id='' style=''/>
 <HAnimHumanoid bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' center='0 0 0' description='' info='' jointBindingPositions='0 0 0' jointBindingRotations='0 0 1 0' jointBindingScales='0 0 0' loa='-1' name='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' skeletalConfiguration='BASIC' translation='0 0 0' version='2.0' visible='true' containerField='children' class='' id='' style=''/>
 <HAnimJoint bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' center='0 0 0' description='' limitOrientation='0 0 1 0' llimit='0 0 0' name='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' skinCoordIndex='' skinCoordWeight='' stiffness='0 0 0' translation='0 0 0' ulimit='0 0 0' visible='true' containerField='children' class='' id='' style=''/>
-<HAnimMotion channels='' channelsEnabled='' description='' enabled='false' endFrame='0' frameCount='0' frameDuration='0.1' frameIncrement='1' frameIndex='0' joints='' loa='-1' loop='false' name='' startFrame='0' values='' containerField='children' class='' id='' style=''/>
+<HAnimMotion channels='' channelsEnabled='' description='' enabled='false' endFrame='0' frameDuration='0.1' frameIncrement='1' frameIndex='0' joints='' loa='-1' loop='false' name='' skeletalConfiguration='BASIC' startFrame='0' totalFrameCount='0' values='' containerField='children' class='' id='' style=''/>
 <HAnimSegment bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' centerOfMass='0 0 0' description='' mass='0' momentsOfInertia='0 0 0 0 0 0 0 0 0' name='' visible='true' containerField='children' class='' id='' style=''/>
 <HAnimSite bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' center='0 0 0' description='' name='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' visible='true' containerField='children' class='' id='' style=''/>
 <head class='' id='' style=''/>
@@ -171,7 +171,7 @@
 <OscillatorSource description='' detune='0' enabled='true' frequency='440' gain='1' pauseTime='0' resumeTime='0' startTime='0' stopTime='0' containerField='children' class='' id='' style=''/>
 <PackagedShader autoRefresh='0' autoRefreshTimeLimit='3600' description='' language='' load='true' url='' containerField='shaders' class='' id='' style=''/>
 <ParticleSystem bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' castShadow='true' colorKey='' createParticles='true' enabled='true' geometryType='QUAD' lifetimeVariation='0.25' maxParticles='200' particleLifetime='5' particleSize='0.02 0.02' texCoordKey='' visible='true' containerField='children' class='' id='' style=''/>
-<PeriodicWave description='' enabled='true' optionsImag='' optionsReal='' type='square' containerField='periodicWave' class='' id='' style=''/>
+<PeriodicWave description='' enabled='true' optionsImag='' optionsReal='' type='SQUARE' containerField='periodicWave' class='' id='' style=''/>
 <PhysicalMaterial baseColor='1 1 1' baseTextureMapping='' emissiveColor='0 0 0' emissiveTextureMapping='' metallic='1' metallicRoughnessTextureMapping='' normalScale='1' normalTextureMapping='' occlusionStrength='1' occlusionTextureMapping='' roughness='1' transparency='0' containerField='material' class='' id='' style=''/>
 <PickableGroup bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' description='' objectType='"ALL"' pickable='true' visible='true' containerField='children' class='' id='' style=''/>
 <PixelTexture description='' image='0 0 0' repeatS='true' repeatT='true' containerField='texture' class='' id='' style=''/>
@@ -222,7 +222,7 @@
 <SingleAxisHingeJoint anchorPoint='0 0 0' axis='0 1 0' forceOutput='"NONE"' maxAngle='3.141592653' minAngle='-3.141592653' stopBounce='0' stopErrorCorrection='0.8' containerField='joints' class='' id='' style=''/>
 <SliderJoint axis='0 1 0' forceOutput='"NONE"' maxSeparation='1' minSeparation='0' sliderForce='0' stopBounce='0' stopErrorCorrection='1' containerField='joints' class='' id='' style=''/>
 <Sound description='' direction='0 0 1' enabled='true' intensity='1' location='0 0 0' maxBack='10' maxFront='10' minBack='1' minFront='1' priority='0' spatialize='true' containerField='children' class='' id='' style=''/>
-<SpatialSound coneInnerAngle='6.2832' coneOuterAngle='6.2832' coneOuterGain='0' description='' direction='0 0 1' distanceModel='inverse' dopplerEnabled='false' enableHRTF='false' enabled='true' gain='1' intensity='1' location='0 0 0' maxDistance='10000' priority='0' referenceDistance='1' rolloffFactor='1' spatialize='true' containerField='children' class='' id='' style=''/>
+<SpatialSound coneInnerAngle='6.2832' coneOuterAngle='6.2832' coneOuterGain='0' description='' direction='0 0 1' distanceModel='INVERSE' dopplerEnabled='false' enableHRTF='false' enabled='true' gain='1' intensity='1' location='0 0 0' maxDistance='10000' priority='0' referenceDistance='1' rolloffFactor='1' spatialize='true' containerField='children' class='' id='' style=''/>
 <Sphere radius='1' solid='true' containerField='geometry' class='' id='' style=''/>
 <SphereSensor autoOffset='true' description='' enabled='true' offset='0 1 0 0' containerField='children' class='' id='' style=''/>
 <SplinePositionInterpolator closed='false' key='' keyValue='' keyVelocity='' normalizeVelocity='false' containerField='children' class='' id='' style=''/>
@@ -231,8 +231,8 @@
 <SpotLight ambientIntensity='0' attenuation='1 0 0' beamWidth='0.589049' color='1 1 1' cutOffAngle='1.570796' direction='0 0 -1' global='true' intensity='1' location='0 0 0' on='true' radius='100' shadowIntensity='1' shadows='false' containerField='children' class='' id='' style=''/>
 <SquadOrientationInterpolator key='' keyValue='' normalizeVelocity='false' containerField='children' class='' id='' style=''/>
 <StaticGroup bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' visible='true' containerField='children' class='' id='' style=''/>
-<StreamAudioDestination channelCountMode='max' channelInterpretation='speakers' description='' enabled='true' gain='1' mediaDeviceID='' streamIdentifier='' containerField='children' class='' id='' style=''/>
-<StreamAudioSource channelCountMode='max' channelInterpretation='speakers' description='' enabled='true' gain='1' pauseTime='0' resumeTime='0' startTime='0' stopTime='0' streamIdentifier='' containerField='children' class='' id='' style=''/>
+<StreamAudioDestination channelCountMode='MAX' channelInterpretation='SPEAKERS' description='' enabled='true' gain='1' mediaDeviceID='' streamIdentifier='' containerField='children' class='' id='' style=''/>
+<StreamAudioSource channelCountMode='MAX' channelInterpretation='SPEAKERS' description='' enabled='true' gain='1' pauseTime='0' resumeTime='0' startTime='0' stopTime='0' streamIdentifier='' containerField='children' class='' id='' style=''/>
 <StringSensor deletionAllowed='true' description='' enabled='true' containerField='children' class='' id='' style=''/>
 <SurfaceEmitter coordIndex='-1' mass='0' on='true' speed='0' surfaceArea='0' variation='0.25' containerField='emitter' class='' id='' style=''/>
 <Switch bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' visible='true' whichChoice='-1' containerField='children' class='' id='' style=''/>
@@ -272,7 +272,7 @@
 <VolumeData bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' dimensions='1 1 1' visible='true' containerField='children' class='' id='' style=''/>
 <VolumeEmitter coordIndex='-1' direction='0 1 0' internal='true' mass='0' on='true' speed='0' surfaceArea='0' variation='0.25' containerField='emitter' class='' id='' style=''/>
 <VolumePickSensor description='' enabled='true' intersectionType='BOUNDS' matchCriterion='MATCH_ANY' objectType='"ALL"' sortOrder='CLOSEST' containerField='children' class='' id='' style=''/>
-<WaveShaper channelCountMode='max' channelInterpretation='speakers' description='' enabled='true' gain='1' oversample='none' pauseTime='0' resumeTime='0' startTime='0' stopTime='0' tailTime='0' containerField='children' class='' id='' style=''/>
+<WaveShaper channelCountMode='MAX' channelInterpretation='SPEAKERS' description='' enabled='true' gain='1' oversample='NONE' pauseTime='0' resumeTime='0' startTime='0' stopTime='0' tailTime='0' containerField='children' class='' id='' style=''/>
 <WindPhysicsModel direction='1 0 0' enabled='true' gustiness='0.1' speed='0.1' turbulence='0' containerField='physics' class='' id='' style=''/>
 <WorldInfo info='' title='' containerField='children' class='' id='' style=''/>
 <X3D profile='' version='4.0' class='' id='' style=''/>

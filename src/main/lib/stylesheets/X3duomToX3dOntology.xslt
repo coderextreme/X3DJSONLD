@@ -178,7 +178,7 @@ POSSIBILITY OF SUCH DAMAGE.
 :X3DField a rdfs:Datatype ;
   rdfs:label "X3DField is the abstract field type from which all single-valued field types are derived." ;
   dcterms:reference   "https://www.web3d.org/x3d/tooltips/X3dTooltips.html#FieldTypesTable" ;
-  dcterms:reference   "https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#X3DField" .
+  dcterms:reference   "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/fieldsDef.html#X3DField" .
 
 ]]></xsl:text>
         <!-- TODO mappings for X3D types to xsd types; further decorate XML Schema and X3DUOM to account for them -->

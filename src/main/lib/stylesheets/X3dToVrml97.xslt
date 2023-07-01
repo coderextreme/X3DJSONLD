@@ -2290,7 +2290,7 @@ EXTERNPROTO TransmitterPdu [
   -->
 </xsl:template>
 
-<!-- ****** unit: https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/core.html#UNITStatement ****** -->
+<!-- ****** unit: https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/core.html#UNITStatement ****** -->
 <xsl:template match="unit">
   <xsl:if test="$fileEncoding!='ClassicVRML'"><xsl:text># </xsl:text></xsl:if>
   <xsl:text>UNIT </xsl:text>
