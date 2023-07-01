@@ -1,6 +1,6 @@
 "use strict";
 
-if (typeof xmldom === 'undefined') {
+if (typeof require !== 'undefined' && typeof xmldom === 'undefined') {
 	var xmldom = require('@xmldom/xmldom');
 	var XMLSerializer = xmldom.XMLSerializer;
 }

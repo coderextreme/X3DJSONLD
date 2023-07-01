@@ -8,11 +8,12 @@ if (typeof Ajv2000 === 'undefined') {
 if (typeof addFromats === 'undefined') {
 	if (typeof window === 'undefined') {
 		var addFormats = require("ajv-formats")
+		fullFormats = window.fullFormats;
 	}
 		
 }
 const ajv = new Ajv2020();
-addFormats(ajv, {mode: "full"})
+addFormats(ajv, ["uri-reference", "uri"], fullFormats);
 var fs = require('fs');
 var localize = require('ajv-i18n');
 if (typeof X3DJSONLD === 'undefined') {
