@@ -38,6 +38,7 @@ pip3 install jsonschema
 pip3 install jschon
 pip3 install xmlschema
 pip3 install x3d
+pip3 install xmlschema
 
 # generate schemas
 # pushd src/main/shell

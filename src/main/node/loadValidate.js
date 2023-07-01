@@ -1,13 +1,18 @@
 if (typeof Ajv2000 === 'undefined') {
-	// var Ajv2020 = require("../../../node_modules/ajv/dist/2020.js");
-	Ajv2020 = window.Ajv2020;
+	if (typeof window === 'undefined') {
+		var Ajv2020 = require("../../../node_modules/ajv/dist/2020.js");
+	} else {
+		Ajv2020 = window.Ajv2020;
+	}
 }
 if (typeof addFromats === 'undefined') {
-	// var addFormats = require("../../../node_modules/ajv-formats/dist/index.js");
-	addFormats = window.addFormats;
+	if (typeof window === 'undefined') {
+		var addFormats = require("ajv-formats")
+	}
+		
 }
 const ajv = new Ajv2020();
-addFormats(ajv, ["uri", "uri-reference"], window.fullFormats);
+addFormats(ajv, {mode: "full"})
 var fs = require('fs');
 var localize = require('ajv-i18n');
 if (typeof X3DJSONLD === 'undefined') {
