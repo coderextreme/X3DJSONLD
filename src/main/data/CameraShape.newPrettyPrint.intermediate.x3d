@@ -57,25 +57,25 @@
       </Switch>
       <Group>
         <Transform DEF='pCylinder1' rotation='-1 0 0 0.373518' translation='-0.038462 3.596312 3.297562'>
-          <Shape>
+          <Shape DEF='pCylinder1'>
             <Appearance USE='CameraAppearance'/>
             <IndexedFaceSet USE='pCylinder1_0Geo'/>
           </Shape>
         </Transform>
         <Transform DEF='pCube1' scale='1 0.727134 0.801457' translation='-0.030769 1.738461 1.4436'>
-          <Shape>
+          <Shape DEF='pCube1'>
             <Appearance USE='CameraAppearance'/>
             <IndexedFaceSet USE='pCube1_0Geo'/>
           </Shape>
         </Transform>
         <Transform DEF='pPipe1' scale='1 1 0.569444' translation='0.015385 1.630769 -1.973274'>
-          <Shape>
+          <Shape DEF='pPipe1'>
             <Appearance USE='CameraAppearance'/>
             <IndexedFaceSet USE='pPipe1_0Geo'/>
           </Shape>
         </Transform>
         <Transform DEF='pSphere1' scale='1.1 1.1 0.1' translation='-0.015385 1.628515 -2.569231'>
-          <Shape>
+          <Shape DEF='pSphere1'>
             <Appearance USE='CameraAppearance'/>
             <IndexedFaceSet USE='pSphere1_0Geo'/>
           </Shape>

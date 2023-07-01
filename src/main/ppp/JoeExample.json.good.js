@@ -38,6 +38,7 @@ var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); }
 var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4f = x3dom.fields.SFMatrix4f;
 var SFNode = x3dom.fields.SFNode;
+var SFRotation = x3dom.fields.SFRotation;
 var Quaternion = x3dom.fields.Quaternion;
 var SFString = String;
 var SFTime = Number;
@@ -66,9 +67,9 @@ if (typeof $ !== 'function') {
 }
 X3DJSON.nodeUtil = function(selector, node, field, value) {
 		if (typeof selector === 'undefined') {
-			selector = '';
+			selector = "";
 		} else {
-			selector = selector+' ';
+			selector = selector+" ";
 		}
 		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
@@ -276,18 +277,18 @@ X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault']['ACTION'] = {};
 X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault']['ACTION'],X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault']);
 }
 if (typeof X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].initialize === "function") X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].initialize();
-    if (X3DJSON.nodeUtil('Scene','TS')) {
-X3DJSON.nodeUtil('Scene','TS').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].combinationEntered(X3DJSON.nodeUtil('Scene','TS','isOver'), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","TS")) {
+X3DJSON.nodeUtil("Scene","TS").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].combinationEntered(X3DJSON.nodeUtil("Scene","TS","isOver"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].combinationEntered(X3DJSON.nodeUtil('Scene','TS','isOver'), __eventTime);
-    if (X3DJSON.nodeUtil('Scene','TS')) {
-X3DJSON.nodeUtil('Scene','TS').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].openVault(X3DJSON.nodeUtil('Scene','TS','touchTime'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].combinationEntered(X3DJSON.nodeUtil("Scene","TS","isOver"), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","TS")) {
+X3DJSON.nodeUtil("Scene","TS").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].openVault(X3DJSON.nodeUtil("Scene","TS","touchTime"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].openVault(X3DJSON.nodeUtil('Scene','TS','touchTime'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].openVault(X3DJSON.nodeUtil("Scene","TS","touchTime"), __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -306,10 +307,10 @@ X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault']['ACTION']['vault
 }
 X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault']['ACTION']['vaultUnlocked'].push(function(property, value) {
 		if (property === 'vaultUnlocked') {
-			X3DJSON.nodeUtil('Scene','Click','startTime',typeof X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].vaultUnlocked === "function" ? X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].vaultUnlocked() : X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].vaultUnlocked, __eventTime);
+			X3DJSON.nodeUtil("Scene","Click","startTime",typeof X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].vaultUnlocked === "function" ? X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].vaultUnlocked() : X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].vaultUnlocked, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','Click','startTime',typeof X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].vaultUnlocked === "function" ? X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].vaultUnlocked() : X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].vaultUnlocked, __eventTime);
-			X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].combinationEntered(X3DJSON.nodeUtil('Scene','TS','isOver'), __eventTime);
-			X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].openVault(X3DJSON.nodeUtil('Scene','TS','touchTime'), __eventTime);
-			X3DJSON.nodeUtil('Scene','Click','startTime',typeof X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].vaultUnlocked === "function" ? X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].vaultUnlocked() : X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].vaultUnlocked, __eventTime);
+			X3DJSON.nodeUtil("Scene","Click","startTime",typeof X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].vaultUnlocked === "function" ? X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].vaultUnlocked() : X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].vaultUnlocked, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].combinationEntered(X3DJSON.nodeUtil("Scene","TS","isOver"), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].openVault(X3DJSON.nodeUtil("Scene","TS","touchTime"), __eventTime);
+			X3DJSON.nodeUtil("Scene","Click","startTime",typeof X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].vaultUnlocked === "function" ? X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].vaultUnlocked() : X3DJSON['Obj']['Scene']['../data/JoeExample.json']['OpenVault'].vaultUnlocked, __eventTime);

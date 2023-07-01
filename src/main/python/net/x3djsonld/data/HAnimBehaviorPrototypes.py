@@ -2830,7 +2830,7 @@ ecmascript:
       fieldValue=[
       fieldValue(name='HumanoidArray',
         children=[
-        HAnimHumanoid(DEF='hanim_DiamondManLOA-1',name='DiamondManLOA-1',version='1.0')]),
+        HAnimHumanoid(DEF='hanim_DiamondManLOA-1',name='DiamondManLOA-1',version='2.0')]),
       fieldValue(name='whichBody',value=0),
       fieldValue(name='hAnimBehaviorNodes',
         children=[

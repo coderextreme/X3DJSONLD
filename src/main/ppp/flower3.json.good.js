@@ -38,6 +38,7 @@ var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); }
 var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4f = x3dom.fields.SFMatrix4f;
 var SFNode = x3dom.fields.SFNode;
+var SFRotation = x3dom.fields.SFRotation;
 var Quaternion = x3dom.fields.Quaternion;
 var SFString = String;
 var SFTime = Number;
@@ -66,9 +67,9 @@ if (typeof $ !== 'function') {
 }
 X3DJSON.nodeUtil = function(selector, node, field, value) {
 		if (typeof selector === 'undefined') {
-			selector = '';
+			selector = "";
 		} else {
-			selector = selector+' ';
+			selector = selector+" ";
 		}
 		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
@@ -330,10 +331,10 @@ X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript']['ACTION']['coordI
 }
 X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript']['ACTION']['coordIndexes'].push(function(property, value) {
 		if (property === 'coordIndexes') {
-			X3DJSON.nodeUtil('Scene','Orbit','coordIndex',typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes, __eventTime);
+			X3DJSON.nodeUtil("Scene","Orbit","coordIndex",typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','Orbit','coordIndex',typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes, __eventTime);
+			X3DJSON.nodeUtil("Scene","Orbit","coordIndex",typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -352,16 +353,16 @@ X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript']['ACTION']['coordi
 }
 X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript']['ACTION']['coordinates'].push(function(property, value) {
 		if (property === 'coordinates') {
-			X3DJSON.nodeUtil('Scene','OrbitCoordinates','point',typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates, __eventTime);
+			X3DJSON.nodeUtil("Scene","OrbitCoordinates","point",typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','OrbitCoordinates','point',typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates, __eventTime);
-    if (X3DJSON.nodeUtil('Scene','Clock')) {
-X3DJSON.nodeUtil('Scene','Clock').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].set_fraction(X3DJSON.nodeUtil('Scene','Clock','fraction'), __eventTime);
+			X3DJSON.nodeUtil("Scene","OrbitCoordinates","point",typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates, __eventTime);
+    if (X3DJSON.nodeUtil("Scene","Clock")) {
+X3DJSON.nodeUtil("Scene","Clock").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].set_fraction(X3DJSON.nodeUtil("Scene","Clock","fraction"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].set_fraction(X3DJSON.nodeUtil('Scene','Clock','fraction'), __eventTime);
-			X3DJSON.nodeUtil('Scene','Orbit','coordIndex',typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes, __eventTime);
-			X3DJSON.nodeUtil('Scene','OrbitCoordinates','point',typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates, __eventTime);
-			X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].set_fraction(X3DJSON.nodeUtil('Scene','Clock','fraction'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].set_fraction(X3DJSON.nodeUtil("Scene","Clock","fraction"), __eventTime);
+			X3DJSON.nodeUtil("Scene","Orbit","coordIndex",typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordIndexes, __eventTime);
+			X3DJSON.nodeUtil("Scene","OrbitCoordinates","point",typeof X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates() : X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].coordinates, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/flower3.json']['OrbitScript'].set_fraction(X3DJSON.nodeUtil("Scene","Clock","fraction"), __eventTime);

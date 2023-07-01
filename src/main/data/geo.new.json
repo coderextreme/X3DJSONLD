@@ -54,7 +54,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 June 2023"
+            "@content":"01 July 2023"
           },
           {
             "@name":"generator",
@@ -231,36 +231,42 @@
                                 "-backTexture":
                                   { "ImageTexture":
                                     {
+                                      "@DEF":"texture",
                                       "@url":["../resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"]
                                     }
                                   },
                                 "-bottomTexture":
                                   { "ImageTexture":
                                     {
+                                      "@DEF":"texture",
                                       "@url":["../resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"]
                                     }
                                   },
                                 "-frontTexture":
                                   { "ImageTexture":
                                     {
+                                      "@DEF":"texture",
                                       "@url":["../resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"]
                                     }
                                   },
                                 "-leftTexture":
                                   { "ImageTexture":
                                     {
+                                      "@DEF":"texture",
                                       "@url":["../resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"]
                                     }
                                   },
                                 "-rightTexture":
                                   { "ImageTexture":
                                     {
+                                      "@DEF":"texture",
                                       "@url":["../resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"]
                                     }
                                   },
                                 "-topTexture":
                                   { "ImageTexture":
                                     {
+                                      "@DEF":"texture",
                                       "@url":["../resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"]
                                     }
                                   }

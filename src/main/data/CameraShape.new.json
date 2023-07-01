@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 June 2023"
+            "@content":"01 July 2023"
           },
           {
             "@name":"generator",
@@ -258,6 +258,7 @@
                           "-children":[
                             { "Shape":
                               {
+                                "@DEF":"pCylinder1",
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -283,6 +284,7 @@
                           "-children":[
                             { "Shape":
                               {
+                                "@DEF":"pCube1",
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -308,6 +310,7 @@
                           "-children":[
                             { "Shape":
                               {
+                                "@DEF":"pPipe1",
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -333,6 +336,7 @@
                           "-children":[
                             { "Shape":
                               {
+                                "@DEF":"pSphere1",
                                 "-appearance":
                                   { "Appearance":
                                     {

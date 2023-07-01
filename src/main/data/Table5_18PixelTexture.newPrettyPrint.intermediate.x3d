@@ -18,7 +18,7 @@
   <Scene>
     <Background skyColor='0 0 1'/>
     <Transform DEF='Checkerboard' translation='0 0 -10'>
-      <Shape>
+      <Shape DEF='Checkerboard'>
         <Appearance>
           <PixelTexture image='3 2 4 -16776961 16711935 65535 -16777089 16711807 65407'/>
           <TextureTransform scale='500 500'/>
@@ -29,7 +29,7 @@
     <Viewpoint description='View All' position='0 0 20'/>
     <Viewpoint description='Empty Image' position='0 5 5'/>
     <Transform DEF='EmptyImage' rotation='1 1 0 1' translation='0 5 0'>
-      <Shape>
+      <Shape DEF='EmptyImage'>
         <Appearance>
           <PixelTexture image='3 2 4 -16776961 16711935 65535 -16777089 16711807 65407'/>
         </Appearance>
@@ -38,7 +38,7 @@
     </Transform>
     <Viewpoint description='Black and white PixelTexture' position='-5 0 5'/>
     <Transform DEF='BW' rotation='1 1 0 1' translation='-5 0 0'>
-      <Shape>
+      <Shape DEF='BW'>
         <Appearance>
           <PixelTexture image='3 2 4 -16776961 16711935 65535 -16777089 16711807 65407'/>
         </Appearance>
@@ -47,7 +47,7 @@
     </Transform>
     <Viewpoint description='Black and white with Alpha PixelTexture' position='5 0 5'/>
     <Transform DEF='AlphaBW' rotation='1 1 0 1' translation='5 0 0'>
-      <Shape>
+      <Shape DEF='AlphaBW'>
         <Appearance>
           <PixelTexture image='3 2 4 -16776961 16711935 65535 -16777089 16711807 65407'/>
         </Appearance>
@@ -56,7 +56,7 @@
     </Transform>
     <Viewpoint description='RGB PixelTexture' position='-5 -5 5'/>
     <Transform DEF='RGB' rotation='1 1 0 1' translation='-5 -5 0'>
-      <Shape>
+      <Shape DEF='RGB'>
         <Appearance>
           <PixelTexture image='3 2 4 -16776961 16711935 65535 -16777089 16711807 65407'/>
         </Appearance>
@@ -65,7 +65,7 @@
     </Transform>
     <Viewpoint description='RGB with Alpha PixelTexture' position='5 -5 5'/>
     <Transform DEF='AlphaRGB' rotation='1 1 0 1' translation='5 -5 0'>
-      <Shape>
+      <Shape DEF='AlphaRGB'>
         <Appearance>
           <PixelTexture image='3 2 4 -16776961 16711935 65535 -16777089 16711807 65407'/>
         </Appearance>

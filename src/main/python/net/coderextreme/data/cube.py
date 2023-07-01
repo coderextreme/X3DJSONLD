@@ -11,7 +11,7 @@ meta(name="created", content="4 April 2017"),
 meta(name="generator", content="manual"),
 meta(name="license", content="../license.html"),
 meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/cube.x3d"),
-meta(name="translated", content="29 June 2023"),
+meta(name="translated", content="01 July 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 

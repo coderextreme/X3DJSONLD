@@ -237,7 +237,7 @@ CBiquadFilter* BiquadFilter52 = (CBiquadFilter *)(m_pScene.createNode("BiquadFil
 BiquadFilter52->setDetune(50);
 BiquadFilter52->setFrequency(600);
 BiquadFilter52->setQualityFactor(30);
-BiquadFilter52->setType("allpass");
+BiquadFilter52->setType("ALLPASS");
 BiquadFilter52->setChannelCountMode("MAX");
 BiquadFilter52->setChannelInterpretation("SPEAKERS");
 CAudioClip* AudioClip53 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
@@ -267,7 +267,7 @@ CBiquadFilter* BiquadFilter57 = (CBiquadFilter *)(m_pScene.createNode("BiquadFil
 BiquadFilter57->setDetune(15);
 BiquadFilter57->setFrequency(600);
 BiquadFilter57->setQualityFactor(15);
-BiquadFilter57->setType("allpass");
+BiquadFilter57->setType("ALLPASS");
 BiquadFilter57->setChannelCountMode("MAX");
 BiquadFilter57->setChannelInterpretation("SPEAKERS");
 CAudioClip* AudioClip58 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
@@ -296,7 +296,7 @@ Analyser61->setChannelInterpretation("SPEAKERS");
 CBiquadFilter* BiquadFilter62 = (CBiquadFilter *)(m_pScene.createNode("BiquadFilter"));
 BiquadFilter62->setFrequency(1000);
 BiquadFilter62->setQualityFactor(0);
-BiquadFilter62->setType("allpass");
+BiquadFilter62->setType("ALLPASS");
 BiquadFilter62->setChannelCountMode("MAX");
 BiquadFilter62->setChannelInterpretation("SPEAKERS");
 CAudioClip* AudioClip63 = (CAudioClip *)(m_pScene.createNode("AudioClip"));

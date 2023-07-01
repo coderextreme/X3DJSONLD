@@ -16,7 +16,7 @@
       <!-- DEF for markerfor XYZ axes -->
       <Shape DEF='AxisLinesShape'>
         <!-- RGB lines showing XYZ axes -->
-        <IndexedLineSet colorIndex='0 1 2' colorPerVertex='false' coordIndex='0 1 -1 0 2 -1 0 3 -1'>
+        <IndexedLineSet DEF='AxisLinesShape' colorIndex='0 1 2' colorPerVertex='false' coordIndex='0 1 -1 0 2 -1 0 3 -1'>
           <Color color='1 0 0 0 0.6 0 0 0 1'/>
           <Coordinate point='0 0 0 0.1 0 0 0 0.1 0 0 0 0.1'/>
         </IndexedLineSet>
@@ -27,23 +27,23 @@
       <Transform>
         <Transform translation='0 2 0'>
           <Shape DEF='HAnimRootShape'>
-            <Appearance>
+            <Appearance DEF='HAnimRootShape'>
               <Material DEF='HAnimRootMaterial' diffuseColor='0.8 0 0' transparency='0.3'/>
             </Appearance>
-            <Sphere radius='0.02'/>
+            <Sphere DEF='HAnimRootShape' radius='0.02'/>
           </Shape>
         </Transform>
         <Transform translation='0 2.1 0'>
           <Shape DEF='HAnimJointShape'>
-            <Appearance>
+            <Appearance DEF='HAnimJointShape'>
               <Material DEF='HAnimJointMaterial' diffuseColor='0 0 0.8' transparency='0.3'/>
             </Appearance>
-            <Sphere radius='0.02'/>
+            <Sphere DEF='HAnimJointShape' radius='0.02'/>
           </Shape>
         </Transform>
         <Transform translation='0 2.05 0'>
           <Shape DEF='HAnimSegmentLine'>
-            <LineSet vertexCount='2'>
+            <LineSet DEF='HAnimSegmentLine' vertexCount='2'>
               <ColorRGBA DEF='HAnimSegmentLineColorRGBA' color='1 1 0 1 1 1 0 0.1'/>
               <Coordinate point='-0.05 0 0 0.05 0 0'/>
             </LineSet>
@@ -51,12 +51,12 @@
         </Transform>
         <Transform translation='0 2.1 0'>
           <Shape DEF='HAnimSiteShape'>
-            <Appearance>
+            <Appearance DEF='HAnimSiteShape'>
               <Material diffuseColor='1 1 0' transparency='0.3'/>
             </Appearance>
             <IndexedFaceSet DEF='DiamondIFS' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
               <ColorRGBA DEF='HAnimSiteColorRGBA' color='1 1 0 1 1 1 0 0.1'/>
-              <Coordinate point='0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0'/>
+              <Coordinate DEF='DiamondIFS' point='0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0'/>
             </IndexedFaceSet>
           </Shape>
         </Transform>

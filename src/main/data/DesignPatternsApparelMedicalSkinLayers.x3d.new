@@ -18,7 +18,7 @@
 </head>
 <Scene><WorldInfo title="HAnimHumanoid skin design patterns for apparel, medical"></WorldInfo>
 <Background skyColor="0 0.6 0.6"></Background>
-<Group DEF="MultipleHumanoids"><MetadataString name="HAnimArchitecture" reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile" value="&quot;E.4 Multiple humanoids per file&quot;" containerField="value"></MetadataString>
+<Group DEF="MultipleHumanoids"><MetadataString containerField="metadata" name="HAnimArchitecture" reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile" value="&quot;E.4 Multiple humanoids per file&quot;"></MetadataString>
 <!--==============================--><HAnimHumanoid name="SimpleSkeleton" DEF="a_SimpleSkeleton" version="2.0"><HAnimJoint name="humanoid_root" ulimit="0 0 0" llimit="0 0 0" containerField="skeleton"><HAnimSegment name="sacrum"><Shape DEF="JointVisualization"></Shape>
 <Shape DEF="SegmentVisualization"></Shape>
 <HAnimSite name="feature01_tip" DEF="a_feature01_tip"><Shape DEF="SiteVisualization"></Shape>

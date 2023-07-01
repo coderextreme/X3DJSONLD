@@ -2338,7 +2338,7 @@ HAnimBehaviorPrototypes.prototype = {
       .addFieldValue((new autoclass.fieldValue()).setName("r_ankle_keyValue").setValue("0 1 0 0 0 1 0 0.2 0 1 0 0.4")))
     .addChild((new autoclass.ProtoInstance("ChooserTest", "HAnimBodyBehaviorChooser"))
       .addFieldValue((new autoclass.fieldValue()).setName("HumanoidArray")
-        .addChild((new autoclass.HAnimHumanoid("hanim_DiamondManLOA-1")).setName("DiamondManLOA-1").setVersion("1.0")))
+        .addChild((new autoclass.HAnimHumanoid("hanim_DiamondManLOA-1")).setName("DiamondManLOA-1").setVersion("2.0")))
       .addFieldValue((new autoclass.fieldValue()).setName("whichBody").setValue("0"))
       .addFieldValue((new autoclass.fieldValue()).setName("hAnimBehaviorNodes")
         .addChild((new autoclass.ProtoInstance())))

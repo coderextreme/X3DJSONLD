@@ -247,7 +247,7 @@ var X3D0 =  X3D(
 
             ChannelSplitter(
               DEF_ : SFString('ChannelSplitter'),
-              channelCountMode_ : SFString('explicit'),
+              channelCountMode_ : SFString('EXPLICIT'),
               channelInterpretation_ : SFString('SPEAKERS'),
               outputs_ : 
                 AudioClip(

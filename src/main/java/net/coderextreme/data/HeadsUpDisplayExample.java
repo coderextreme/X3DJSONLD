@@ -75,9 +75,9 @@ ProtoInstance ProtoInstance0 = null;
           .addComments("example: upper left-hand corner of screen (x=-2, y=1) and set back z=-5 from user view"))
         .addChild(new Inline().setUrl(new MFString7().getArray())))      ;
 ProtoInstance0
-          .addFieldValue(new fieldValue().setName("screenOffset").setValue("-0.75 1 -5"));
+          .addFieldValue(new fieldValue("HeadsUpDisplayInstance").setName("screenOffset").setValue("-0.75 1 -5"));
 ProtoInstance0
-          .addFieldValue(new fieldValue().setName("children")
+          .addFieldValue(new fieldValue("HeadsUpDisplayInstance").setName("children")
             .addChild(new Shape()
               .setGeometry(new Text().setString(new MFString5().getArray())
                 .setFontStyle(new FontStyle().setJustify(new MFString6().getArray()).setSize(0.3f)))

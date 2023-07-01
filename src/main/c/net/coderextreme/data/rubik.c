@@ -45,8 +45,8 @@ Viewpoint9.description = "Rubiks Cube";
 Viewpoint9.position = new SFVec3f(new float[0,0,12]);
 children[1] = Viewpoint9;
 
-ProtoDeclare ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+ProtoDeclare ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="sphereproto" ><ProtoInterface><field name="xtranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><Transform><IS><connect nodeField="translation" protoField="xtranslation"></connect>
@@ -106,8 +106,8 @@ ProtoDeclare10.protoBody = ProtoBody13;
 
 children[2] = ProtoDeclare10;
 
-ProtoDeclare ProtoDeclare21 = browser.createX3DFromString(`<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+ProtoDeclare ProtoDeclare21 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="three" ><ProtoInterface><field name="ytranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><Transform><IS><connect nodeField="translation" protoField="ytranslation"></connect>
@@ -189,8 +189,8 @@ ProtoDeclare21.protoBody = ProtoBody24;
 
 children[3] = ProtoDeclare21;
 
-ProtoDeclare ProtoDeclare34 = browser.createX3DFromString(`<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+ProtoDeclare ProtoDeclare34 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="nine" ><ProtoInterface><field name="ztranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><Transform><IS><connect nodeField="translation" protoField="ztranslation"></connect>
@@ -272,8 +272,8 @@ ProtoDeclare34.protoBody = ProtoBody37;
 
 children[4] = ProtoDeclare34;
 
-ProtoDeclare ProtoDeclare47 = browser.createX3DFromString(`<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+ProtoDeclare ProtoDeclare47 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="twentyseven" ><ProtoInterface><field name="ttranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><Transform><IS><connect nodeField="translation" protoField="ttranslation"></connect>

@@ -190,7 +190,7 @@ var X3D0 =  X3D(
                                   channelInterpretation_ : SFString('SPEAKERS'),
                                   children_ : [
                                     BiquadFilter(
-                                      type_ : SFString("allpass"),
+                                      type_ : SFString("ALLPASS"),
                                       detune_ : 50,
                                       frequency_ : 600,
                                       qualityFactor_ : 30,
@@ -215,7 +215,7 @@ var X3D0 =  X3D(
                                   channelInterpretation_ : SFString('SPEAKERS'),
                                   children_ : [
                                     BiquadFilter(
-                                      type_ : SFString("allpass"),
+                                      type_ : SFString("ALLPASS"),
                                       detune_ : 15,
                                       frequency_ : 600,
                                       qualityFactor_ : 15,
@@ -240,7 +240,7 @@ var X3D0 =  X3D(
                                   channelInterpretation_ : SFString('SPEAKERS'),
                                   children_ : [
                                     BiquadFilter(
-                                      type_ : SFString("allpass"),
+                                      type_ : SFString("ALLPASS"),
                                       frequency_ : 1000,
                                       qualityFactor_ : 0,
                                       channelCountMode_ : SFString('MAX'),

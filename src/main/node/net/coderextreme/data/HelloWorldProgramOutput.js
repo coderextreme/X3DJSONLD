@@ -219,7 +219,7 @@ var ProtoInstance6 = null;
         .addComments((new autoclass.CommentsBlock("Test success: declarative statement createDeclarativeShapeTests()")))
         .addChild((new autoclass.Group()).setDEF("DeclarativeGroupExample")
           .addChild((new autoclass.Shape())
-            .setValue((new autoclass.MetadataString()).setName("findThisNameValue").setDEF("FindableMetadataStringTest").setValue(java.newArray("java.lang.String", ["test case"])))
+            .setMetadata((new autoclass.MetadataString()).setName("findThisNameValue").setDEF("FindableMetadataStringTest").setValue(java.newArray("java.lang.String", ["test case"])))
             .setAppearance((new autoclass.Appearance()).setDEF("DeclarativeAppearanceExample")
               .addComments((new autoclass.CommentsBlock("DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance")))
               .setMaterial(ProtoInstance3 = (new autoclass.ProtoInstance()).setName("MaterialModulator").setDEF("MyMaterialModulator")))

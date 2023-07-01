@@ -38,6 +38,7 @@ var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); }
 var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4f = x3dom.fields.SFMatrix4f;
 var SFNode = x3dom.fields.SFNode;
+var SFRotation = x3dom.fields.SFRotation;
 var Quaternion = x3dom.fields.Quaternion;
 var SFString = String;
 var SFTime = Number;
@@ -66,9 +67,9 @@ if (typeof $ !== 'function') {
 }
 X3DJSON.nodeUtil = function(selector, node, field, value) {
 		if (typeof selector === 'undefined') {
-			selector = '';
+			selector = "";
 		} else {
-			selector = selector+' ';
+			selector = selector+" ";
 		}
 		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
@@ -138,91 +139,91 @@ if (typeof X3DJSON['Scene../data/F16.json'] === 'undefined') {
 	X3DJSON['Scene../data/F16.json'] = {};
 }
 
-    if (X3DJSON.nodeUtil('Scene','TouchSensorUp')) {
-X3DJSON.nodeUtil('Scene','TouchSensorUp').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","TouchSensorUp")) {
+X3DJSON.nodeUtil("Scene","TouchSensorUp").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','WheelUp')) {
-X3DJSON.nodeUtil('Scene','WheelUp').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","WheelUp")) {
+X3DJSON.nodeUtil("Scene","WheelUp").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','GearUpInterpolator')) {
-X3DJSON.nodeUtil('Scene','GearUpInterpolator').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","GearUpInterpolator")) {
+X3DJSON.nodeUtil("Scene","GearUpInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','TouchSensorDown')) {
-X3DJSON.nodeUtil('Scene','TouchSensorDown').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","TouchSensorDown")) {
+X3DJSON.nodeUtil("Scene","TouchSensorDown").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','WheelDown')) {
-X3DJSON.nodeUtil('Scene','WheelDown').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","WheelDown")) {
+X3DJSON.nodeUtil("Scene","WheelDown").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','GearDownInterpolator')) {
-X3DJSON.nodeUtil('Scene','GearDownInterpolator').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","GearDownInterpolator")) {
+X3DJSON.nodeUtil("Scene","GearDownInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','TouchSensorDown')) {
-X3DJSON.nodeUtil('Scene','TouchSensorDown').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","TouchSensorDown")) {
+X3DJSON.nodeUtil("Scene","TouchSensorDown").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','TouchSensorUp')) {
-X3DJSON.nodeUtil('Scene','TouchSensorUp').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","TouchSensorUp")) {
+X3DJSON.nodeUtil("Scene","TouchSensorUp").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','RRearDown1')) {
-X3DJSON.nodeUtil('Scene','RRearDown1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","RRearDown1")) {
+X3DJSON.nodeUtil("Scene","RRearDown1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','RRearUp1')) {
-X3DJSON.nodeUtil('Scene','RRearUp1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","RRearUp1")) {
+X3DJSON.nodeUtil("Scene","RRearUp1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','RRearInterDown1')) {
-X3DJSON.nodeUtil('Scene','RRearInterDown1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","RRearInterDown1")) {
+X3DJSON.nodeUtil("Scene","RRearInterDown1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','RRearInterUp1')) {
-X3DJSON.nodeUtil('Scene','RRearInterUp1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","RRearInterUp1")) {
+X3DJSON.nodeUtil("Scene","RRearInterUp1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','TouchSensorDown')) {
-X3DJSON.nodeUtil('Scene','TouchSensorDown').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","TouchSensorDown")) {
+X3DJSON.nodeUtil("Scene","TouchSensorDown").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','TouchSensorUp')) {
-X3DJSON.nodeUtil('Scene','TouchSensorUp').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","TouchSensorUp")) {
+X3DJSON.nodeUtil("Scene","TouchSensorUp").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','LRearDown1')) {
-X3DJSON.nodeUtil('Scene','LRearDown1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","LRearDown1")) {
+X3DJSON.nodeUtil("Scene","LRearDown1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','LRearUp1')) {
-X3DJSON.nodeUtil('Scene','LRearUp1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","LRearUp1")) {
+X3DJSON.nodeUtil("Scene","LRearUp1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','LRearInterDown1')) {
-X3DJSON.nodeUtil('Scene','LRearInterDown1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","LRearInterDown1")) {
+X3DJSON.nodeUtil("Scene","LRearInterDown1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','LRearInterUp1')) {
-X3DJSON.nodeUtil('Scene','LRearInterUp1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","LRearInterUp1")) {
+X3DJSON.nodeUtil("Scene","LRearInterUp1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','FireSensor')) {
-X3DJSON.nodeUtil('Scene','FireSensor').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","FireSensor")) {
+X3DJSON.nodeUtil("Scene","FireSensor").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','FireClock')) {
-X3DJSON.nodeUtil('Scene','FireClock').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","FireClock")) {
+X3DJSON.nodeUtil("Scene","FireClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','MissilePath')) {
-X3DJSON.nodeUtil('Scene','MissilePath').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","MissilePath")) {
+X3DJSON.nodeUtil("Scene","MissilePath").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','FireSensor')) {
-X3DJSON.nodeUtil('Scene','FireSensor').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","FireSensor")) {
+X3DJSON.nodeUtil("Scene","FireSensor").addEventListener('outputchange', function(event) {
 }, false);
 }

@@ -121,6 +121,7 @@ public class CloudsProcedural4
       .addChild(new Transform("Fog"))
       .addChild(new Script("PixelScript").setDirectOutput(true).setSourceCode("""
 ecmascript:
+Cirrus.children = [];
 
 
 function cumulustranslation() // These values designate the boundary location of the cloud

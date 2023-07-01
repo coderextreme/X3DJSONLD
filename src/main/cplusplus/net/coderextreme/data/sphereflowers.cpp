@@ -57,7 +57,7 @@ group->addChildren(*Background9);
 CGroup* Group10 = (CGroup *)(m_pScene.createNode("Group"));
 CExternProtoDeclare* ExternProtoDeclare11 = new CExternProtoDeclare();
 ExternProtoDeclare11->setName("FlowerProto");
-ExternProtoDeclare11->setUrl(new CString[3]{"../personal/flowerproto.json#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto","https://localhost:3000/src/main/personal/flowerproto.json#FlowerProto"}, 3);
+ExternProtoDeclare11->setUrl(new CString[2]{"../personal/flowerproto.json#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto"}, 2);
 Cfield* field12 = new Cfield();
 field12->setName("vertex");
 field12->setAccessType("inputOutput");
@@ -72,8 +72,8 @@ ExternProtoDeclare11->addField(*field13);
 
 Group10->addChildren(*ExternProtoDeclare11);
 
-CProtoDeclare ProtoDeclare14 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+CProtoDeclare ProtoDeclare14 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="flower" ><ProtoBody><Group><ProtoInstance name="FlowerProto"><fieldValue name="vertex" value="&quot;../shaders/x_ite_flowers_chromatic.vs&quot;"></fieldValue>
 <fieldValue name="fragment" value="&quot;../shaders/x_ite.fs&quot;"></fieldValue>
 </ProtoInstance>

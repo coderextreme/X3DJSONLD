@@ -133,7 +133,7 @@ var X3D0 =  new X3D({
             new HAnimHumanoid({
               name : new SFString("Humanoid"),
               DEF : new SFString("hanim_Humanoid"),
-              version : new SFString("1.0"),
+              version : new SFString("2.0"),
               joints : new MFNode([
                 new HAnimJoint({
                   name : new SFString("humanoid_root"),

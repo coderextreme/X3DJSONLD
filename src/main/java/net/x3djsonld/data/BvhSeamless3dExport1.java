@@ -205,7 +205,7 @@ block=false;
             .addConnect(new connect().setNodeField("play").setProtoField("play"))
             .addConnect(new connect().setNodeField("pause").setProtoField("pause"))
             .addConnect(new connect().setNodeField("period").setProtoField("period"))))))
-    .addChild(new HAnimHumanoid().setVersion("1.0")
+    .addChild(new HAnimHumanoid().setVersion("2.0")
       .addSkin(new Shape()
         .setAppearance(new Appearance()
           .setMaterial(new Material()))

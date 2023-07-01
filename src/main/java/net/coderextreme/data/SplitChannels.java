@@ -113,7 +113,7 @@ public class SplitChannels {
                 .addChild(new Gain().setUSE("ChannelSplitter")))
               .addChild(new ChannelSelector().setChannelSelection(1).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
                 .addChild(new Gain().setUSE("ChannelSplitter"))))))
-        .addChild(new ChannelSplitter().setDEF("ChannelSplitter").setChannelCountMode("explicit").setChannelInterpretation("SPEAKERS")
+        .addChild(new ChannelSplitter().setDEF("ChannelSplitter").setChannelCountMode("EXPLICIT").setChannelInterpretation("SPEAKERS")
           .addOutputs(new AudioClip().setDescription("Violin").setUrl(new MFString7().getArray())))
         .addChild(new Transform().setDEF("Audio3").setRotation(new float[] {1f,0f,0f,-0.5f}).setTranslation(new float[] {0f,100f,0f})
           .addChild(new Shape()

@@ -117,8 +117,8 @@ Transform22->addChildren(*Transform23);
 
 group->addChildren(*Transform22);
 
-CProtoDeclare ProtoDeclare28 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+CProtoDeclare ProtoDeclare28 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="point" ><ProtoInterface><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><Transform DEF="node"><IS><connect nodeField="translation" protoField="translation"></connect>
@@ -268,8 +268,8 @@ ProtoDeclare28->setProtoBody(*ProtoBody31);
 group->addChildren(*ProtoDeclare28);
 
 //from doug sanden
-CProtoDeclare ProtoDeclare50 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+CProtoDeclare ProtoDeclare50 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="x3dconnector" ><ProtoInterface><field name="startnode" accessType="inputOutput" type="SFNode"></field>
 <field name="endnode" accessType="inputOutput" type="SFNode"></field>
 <field name="transnode" accessType="inputOutput" type="SFNode"></field>

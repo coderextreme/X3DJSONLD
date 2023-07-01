@@ -21,7 +21,7 @@ meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Huma
 meta(name="generator", content="BS studio translation from .x3dv by Joe using BS Contact"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="29 June 2023"),
+meta(name="translated", content="01 July 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -39,7 +39,7 @@ Viewpoint(DEF="Scene_SideView", centerOfRotation=((0,0.8,0)), description="Scene
 Viewpoint(DEF="Scene_BackView", centerOfRotation=((0,1.5,0)), description="Scene Back View", orientation=((0,1,0,3.14)), position=((0,2.5,-3))),
 Viewpoint(DEF="Scene_TopView", centerOfRotation=((0,1.5,0)), description="Scene Top View", orientation=((1,0,0,-1.5708)), position=((0,3.5,0))),
 Group(DEF="Joe_Humanoid", children=[
-HAnimHumanoid(name="Human", DEF="Joe_Human", version="1.0", skeleton=[
+HAnimHumanoid(name="Human", DEF="Joe_Human", version="2.0", skeleton=[
 HAnimJoint(name="HumanoidRoot", DEF="Joe_HumanoidRoot", center=((0,0.875,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], 
 metadata=(
 MetadataSet(name="warnings", reference="HAnim", value=[

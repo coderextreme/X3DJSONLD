@@ -38,6 +38,7 @@ var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); }
 var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4f = x3dom.fields.SFMatrix4f;
 var SFNode = x3dom.fields.SFNode;
+var SFRotation = x3dom.fields.SFRotation;
 var Quaternion = x3dom.fields.Quaternion;
 var SFString = String;
 var SFTime = Number;
@@ -66,9 +67,9 @@ if (typeof $ !== 'function') {
 }
 X3DJSON.nodeUtil = function(selector, node, field, value) {
 		if (typeof selector === 'undefined') {
-			selector = '';
+			selector = "";
 		} else {
-			selector = selector+' ';
+			selector = selector+" ";
 		}
 		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
@@ -370,20 +371,20 @@ X3DJSON['Obj']['Scene']['../data/Java.json']['DECLMaterialModulator_MyMaterialMo
 X3DJSON['Obj']['Scene']['../data/Java.json']['DECLMaterialModulator_MyMaterialModulator_MaterialModulatorScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/Java.json']['DECLMaterialModulator_MyMaterialModulator_MaterialModulatorScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/Java.json']['DECLMaterialModulator_MyMaterialModulator_MaterialModulatorScript']);
 }
 if (typeof X3DJSON['Obj']['Scene']['../data/Java.json']['DECLMaterialModulator_MyMaterialModulator_MaterialModulatorScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/Java.json']['DECLMaterialModulator_MyMaterialModulator_MaterialModulatorScript'].initialize();
-    if (X3DJSON.nodeUtil('Scene','OrbitClock')) {
-X3DJSON.nodeUtil('Scene','OrbitClock').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","OrbitClock")) {
+X3DJSON.nodeUtil("Scene","OrbitClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','BoxPathAnimator')) {
-X3DJSON.nodeUtil('Scene','BoxPathAnimator').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BoxPathAnimator")) {
+X3DJSON.nodeUtil("Scene","BoxPathAnimator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','SpinClock')) {
-X3DJSON.nodeUtil('Scene','SpinClock').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","SpinClock")) {
+X3DJSON.nodeUtil("Scene","SpinClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','SpinInterpolator')) {
-X3DJSON.nodeUtil('Scene','SpinInterpolator').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","SpinInterpolator")) {
+X3DJSON.nodeUtil("Scene","SpinInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -404,19 +405,19 @@ X3DJSON['Obj']['Scene']['../data/Java.json']['colorTypeConversionScript']['ACTIO
 }
 X3DJSON['Obj']['Scene']['../data/Java.json']['colorTypeConversionScript']['ACTION']['colorsOutput'].push(function(property, value) {
 		if (property === 'colorsOutput') {
-			X3DJSON.nodeUtil('Scene','GradualBackground','skyColor',typeof X3DJSON['Obj']['Scene']['../data/Java.json']['colorTypeConversionScript'].colorsOutput === "function" ? X3DJSON['Obj']['Scene']['../data/Java.json']['colorTypeConversionScript'].colorsOutput() : X3DJSON['Obj']['Scene']['../data/Java.json']['colorTypeConversionScript'].colorsOutput, __eventTime);
+			X3DJSON.nodeUtil("Scene","GradualBackground","skyColor",typeof X3DJSON['Obj']['Scene']['../data/Java.json']['colorTypeConversionScript'].colorsOutput === "function" ? X3DJSON['Obj']['Scene']['../data/Java.json']['colorTypeConversionScript'].colorsOutput() : X3DJSON['Obj']['Scene']['../data/Java.json']['colorTypeConversionScript'].colorsOutput, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','GradualBackground','skyColor',typeof X3DJSON['Obj']['Scene']['../data/Java.json']['colorTypeConversionScript'].colorsOutput === "function" ? X3DJSON['Obj']['Scene']['../data/Java.json']['colorTypeConversionScript'].colorsOutput() : X3DJSON['Obj']['Scene']['../data/Java.json']['colorTypeConversionScript'].colorsOutput, __eventTime);
-    if (X3DJSON.nodeUtil('Scene','ColorAnimator')) {
-X3DJSON.nodeUtil('Scene','ColorAnimator').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/Java.json']['colorTypeConversionScript'].colorInput(X3DJSON.nodeUtil('Scene','ColorAnimator','value'), __eventTime);
+			X3DJSON.nodeUtil("Scene","GradualBackground","skyColor",typeof X3DJSON['Obj']['Scene']['../data/Java.json']['colorTypeConversionScript'].colorsOutput === "function" ? X3DJSON['Obj']['Scene']['../data/Java.json']['colorTypeConversionScript'].colorsOutput() : X3DJSON['Obj']['Scene']['../data/Java.json']['colorTypeConversionScript'].colorsOutput, __eventTime);
+    if (X3DJSON.nodeUtil("Scene","ColorAnimator")) {
+X3DJSON.nodeUtil("Scene","ColorAnimator").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/Java.json']['colorTypeConversionScript'].colorInput(X3DJSON.nodeUtil("Scene","ColorAnimator","value"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/Java.json']['colorTypeConversionScript'].colorInput(X3DJSON.nodeUtil('Scene','ColorAnimator','value'), __eventTime);
-    if (X3DJSON.nodeUtil('Scene','ColorClock')) {
-X3DJSON.nodeUtil('Scene','ColorClock').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/Java.json']['colorTypeConversionScript'].colorInput(X3DJSON.nodeUtil("Scene","ColorAnimator","value"), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","ColorClock")) {
+X3DJSON.nodeUtil("Scene","ColorClock").addEventListener('outputchange', function(event) {
 }, false);
 }
-			X3DJSON.nodeUtil('Scene','GradualBackground','skyColor',typeof X3DJSON['Obj']['Scene']['../data/Java.json']['colorTypeConversionScript'].colorsOutput === "function" ? X3DJSON['Obj']['Scene']['../data/Java.json']['colorTypeConversionScript'].colorsOutput() : X3DJSON['Obj']['Scene']['../data/Java.json']['colorTypeConversionScript'].colorsOutput, __eventTime);
-			X3DJSON['Obj']['Scene']['../data/Java.json']['colorTypeConversionScript'].colorInput(X3DJSON.nodeUtil('Scene','ColorAnimator','value'), __eventTime);
+			X3DJSON.nodeUtil("Scene","GradualBackground","skyColor",typeof X3DJSON['Obj']['Scene']['../data/Java.json']['colorTypeConversionScript'].colorsOutput === "function" ? X3DJSON['Obj']['Scene']['../data/Java.json']['colorTypeConversionScript'].colorsOutput() : X3DJSON['Obj']['Scene']['../data/Java.json']['colorTypeConversionScript'].colorsOutput, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/Java.json']['colorTypeConversionScript'].colorInput(X3DJSON.nodeUtil("Scene","ColorAnimator","value"), __eventTime);

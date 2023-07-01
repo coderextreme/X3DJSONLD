@@ -215,7 +215,7 @@ public class BoxMan4AnimationPanel
   .setScene(new Scene()
     .addChild(new WorldInfo().setInfo(new String[] {"(C) 2000 James Smith - james@vapourtech.com","http://www.vapourtech.com/team/james/boxman.wrl","Blaxxun compatibility by Tu Lam - TuL@seamless-solutions.com"}).setTitle("BoxMan - A Seamless VRML Human"))
     .addChild(new Background().setGroundColor(new MFColor(new double[] {0.6,0.6,0.6})).setSkyColor(new MFColor(new double[] {0.75,0.75,0.75})))
-    .addChild(new HAnimHumanoid("boxman_Humanoid").setName("Humanoid").setInfo(new String[] {"authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=2.0"}).setVersion("1.0")
+    .addChild(new HAnimHumanoid("boxman_Humanoid").setName("Humanoid").setInfo(new String[] {"authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=2.0"}).setVersion("2.0")
       .addSkeleton(new HAnimJoint("boxman_humanoid_root").setName("humanoid_root").setCenter(0.0,0.9723,-0.0728).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0,1,2,3,4,5,6,7,8,9,10,11}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0}).setUlimit(new double[] {0.0,0.0,0.0})
         .addChild(new HAnimSegment("boxman_sacrum").setName("sacrum")
           .addChild(new Transform().setTranslation(0.0,0.9723,-0.0728)

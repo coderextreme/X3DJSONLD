@@ -116,8 +116,8 @@ ProtoInstance ProtoInstance2 = null;
                 .addChild(new StringSensor().setDEF("CenterSensor").setEnabled(false))
                 .addChild(new TouchSensor().setDescription("touch to activate").setDEF("CenterTouch"))))
             .addChild(new Script().setDEF("RightSingleToMultiString")
-              .addField(new field().setType("SFString").setName("set_rightstring").setAccessType(field.ACCESSTYPE_INPUTONLY))
-              .addField(new field().setType("MFString").setName("rightlines").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addField(new field("RightSingleToMultiString").setType("SFString").setName("set_rightstring").setAccessType(field.ACCESSTYPE_INPUTONLY))
+              .addField(new field("RightSingleToMultiString").setType("MFString").setName("rightlines").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
               .setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
@@ -128,8 +128,8 @@ ProtoInstance ProtoInstance2 = null;
 "	rightlines = new MFString(rightstr);\n"+
 "}"))
             .addChild(new Script().setDEF("UpSingleToMultiString")
-              .addField(new field().setType("SFString").setName("set_upstring").setAccessType(field.ACCESSTYPE_INPUTONLY))
-              .addField(new field().setType("MFString").setName("uplines").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addField(new field("UpSingleToMultiString").setType("SFString").setName("set_upstring").setAccessType(field.ACCESSTYPE_INPUTONLY))
+              .addField(new field("UpSingleToMultiString").setType("MFString").setName("uplines").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
               .setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
@@ -140,8 +140,8 @@ ProtoInstance ProtoInstance2 = null;
 "	uplines = new MFString(upstr);\n"+
 "}"))
             .addChild(new Script().setDEF("CenterSingleToMultiString")
-              .addField(new field().setType("SFString").setName("set_centerstring").setAccessType(field.ACCESSTYPE_INPUTONLY))
-              .addField(new field().setType("MFString").setName("centerlines").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addField(new field("CenterSingleToMultiString").setType("SFString").setName("set_centerstring").setAccessType(field.ACCESSTYPE_INPUTONLY))
+              .addField(new field("CenterSingleToMultiString").setType("MFString").setName("centerlines").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
               .setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+

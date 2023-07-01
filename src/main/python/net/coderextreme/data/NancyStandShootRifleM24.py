@@ -16,7 +16,7 @@ meta(name="warning", content="LOA1_ShootAnimation ought to be moved out as a sep
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/NancyStandShootRifleM24.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="29 June 2023"),
+meta(name="translated", content="01 July 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -67,7 +67,7 @@ Comment(value=''' High Resolution '''),
 
 Group(DEF="HighResolution", children=[
 Transform(children=[
-HAnimHumanoid(name="Nancy", DEF="hanim_Nancy", version="1.0", skeleton=[
+HAnimHumanoid(name="Nancy", DEF="hanim_Nancy", version="2.0", skeleton=[
 HAnimJoint(name="humanoid_root", DEF="hanim_humanoid_root", center=((-0.00405,0.855,-0.000113)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimJoint(name="sacroiliac", DEF="hanim_sacroiliac", center=((0,1.01,-0.0204)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="pelvis", DEF="hanim_pelvis", children=[

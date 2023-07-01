@@ -65,14 +65,14 @@ public class InlineSoundSource {
         .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
         .addChild(new Viewpoint().setDEF("Camera001").setDescription("Camera001").setFarDistance(0f).setNearDistance(1f).setOrientation(new float[] {1f,0f,0f,-0.523599f}).setPosition(new float[] {0f,2000f,3500f}))
         .addChild(new Transform().setDEF("Floor").setTranslation(new float[] {1.241f,0f,0.358f})
-          .addChild(new Shape()
+          .addChild(new Shape("Floor")
             .setAppearance(new Appearance().setDEF("WireColor")
-              .setMaterial(new Material().setDiffuseColor(new float[] {0.122f,0.114f,0.125f})))
+              .setMaterial(new Material("WireColor").setDiffuseColor(new float[] {0.122f,0.114f,0.125f})))
             .setGeometry(new IndexedFaceSet().setDEF("Box001-GEOMETRY").setCoordIndex(new MFInt326().getArray()).setSolid(false)
-              .setCoord(new Coordinate().setPoint(new MFVec3f7().getArray()))
-              .setNormal(new Normal().setVector(new MFVec3f8().getArray())))))
+              .setCoord(new Coordinate("Box001-GEOMETRY").setPoint(new MFVec3f7().getArray()))
+              .setNormal(new Normal("Box001-GEOMETRY").setVector(new MFVec3f8().getArray())))))
         .addChild(new Transform().setDEF("InlineScene")
-          .addChild(new Inline().setDEF("inline").setUrl(new MFString9().getArray()))))      ;
+          .addChild(new Inline("InlineScene").setDEF("inline").setUrl(new MFString9().getArray()))))      ;
     return X3D0;
     }
 protected class MFString0 {

@@ -38,6 +38,7 @@ var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); }
 var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4f = x3dom.fields.SFMatrix4f;
 var SFNode = x3dom.fields.SFNode;
+var SFRotation = x3dom.fields.SFRotation;
 var Quaternion = x3dom.fields.Quaternion;
 var SFString = String;
 var SFTime = Number;
@@ -66,9 +67,9 @@ if (typeof $ !== 'function') {
 }
 X3DJSON.nodeUtil = function(selector, node, field, value) {
 		if (typeof selector === 'undefined') {
-			selector = '';
+			selector = "";
 		} else {
-			selector = selector+' ';
+			selector = selector+" ";
 		}
 		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
@@ -685,12 +686,12 @@ X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover']['ACTION'] = {};
 X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover']['ACTION'],X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover']);
 }
 if (typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].initialize === "function") X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].initialize();
-    if (X3DJSON.nodeUtil('Scene','clock')) {
-X3DJSON.nodeUtil('Scene','clock').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","clock")) {
+X3DJSON.nodeUtil("Scene","clock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','invisiable')) {
-X3DJSON.nodeUtil('Scene','invisiable').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","invisiable")) {
+X3DJSON.nodeUtil("Scene","invisiable").addEventListener('outputchange', function(event) {
 }, false);
 }
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -745,12 +746,12 @@ X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript']['ACTION']['P
 		if (X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'] && typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].ProjectileWeight === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].ProjectileWeight() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].ProjectileWeight) {
 			X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].set_MassProjectileWeight(typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].ProjectileWeight === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].ProjectileWeight() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].ProjectileWeight, __eventTime);
 		}
-    if (X3DJSON.nodeUtil('Scene','clock')) {
-X3DJSON.nodeUtil('Scene','clock').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].set_fraction(X3DJSON.nodeUtil('Scene','clock','fraction'), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","clock")) {
+X3DJSON.nodeUtil("Scene","clock").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].set_fraction(X3DJSON.nodeUtil("Scene","clock","fraction"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].set_fraction(X3DJSON.nodeUtil('Scene','clock','fraction'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].set_fraction(X3DJSON.nodeUtil("Scene","clock","fraction"), __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -769,10 +770,10 @@ X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover']['ACTION']['value'] = 
 }
 X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover']['ACTION']['value'].push(function(property, value) {
 		if (property === 'value') {
-			X3DJSON.nodeUtil('Scene','ProjectileTransform','translation',typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].value_changed === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].value_changed() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].value, __eventTime);
+			X3DJSON.nodeUtil("Scene","ProjectileTransform","translation",typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].value_changed === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].value_changed() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].value, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','ProjectileTransform','translation',typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].value_changed === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].value_changed() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].value, __eventTime);
+			X3DJSON.nodeUtil("Scene","ProjectileTransform","translation",typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].value_changed === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].value_changed() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].value, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -791,26 +792,26 @@ X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover']['ACTION']['transparen
 }
 X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover']['ACTION']['transparent'].push(function(property, value) {
 		if (property === 'transparent') {
-			X3DJSON.nodeUtil('Scene','ProjectileTransform','scale',typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].transparent === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].transparent() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].transparent, __eventTime);
+			X3DJSON.nodeUtil("Scene","ProjectileTransform","scale",typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].transparent === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].transparent() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].transparent, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','ProjectileTransform','scale',typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].transparent === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].transparent() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].transparent, __eventTime);
-    if (X3DJSON.nodeUtil('Scene','Launch')) {
-X3DJSON.nodeUtil('Scene','Launch').addEventListener('outputchange', function(event) {
+			X3DJSON.nodeUtil("Scene","ProjectileTransform","scale",typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].transparent === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].transparent() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].transparent, __eventTime);
+    if (X3DJSON.nodeUtil("Scene","Launch")) {
+X3DJSON.nodeUtil("Scene","Launch").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Launch')) {
-X3DJSON.nodeUtil('Scene','Launch').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['PigdogMonkScript'].set_boolean(X3DJSON.nodeUtil('Scene','Launch','isActive'), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","Launch")) {
+X3DJSON.nodeUtil("Scene","Launch").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['PigdogMonkScript'].set_boolean(X3DJSON.nodeUtil("Scene","Launch","isActive"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['PigdogMonkScript'].set_boolean(X3DJSON.nodeUtil('Scene','Launch','isActive'), __eventTime);
-    if (X3DJSON.nodeUtil('Scene','Launch')) {
-X3DJSON.nodeUtil('Scene','Launch').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['PigdogMonkScript'].set_boolean(X3DJSON.nodeUtil("Scene","Launch","isActive"), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","Launch")) {
+X3DJSON.nodeUtil("Scene","Launch").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Launch')) {
-X3DJSON.nodeUtil('Scene','Launch').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Launch")) {
+X3DJSON.nodeUtil("Scene","Launch").addEventListener('outputchange', function(event) {
 }, false);
 }
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -831,28 +832,28 @@ X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['PigdogMonkScript']['ACTION'][
 }
 X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['PigdogMonkScript']['ACTION']['whichchoice'].push(function(property, value) {
 		if (property === 'whichchoice') {
-			X3DJSON.nodeUtil('Scene','PigdogMonk','whichChoice',typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['PigdogMonkScript'].whichchoice === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['PigdogMonkScript'].whichchoice() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['PigdogMonkScript'].whichchoice, __eventTime);
+			X3DJSON.nodeUtil("Scene","PigdogMonk","whichChoice",typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['PigdogMonkScript'].whichchoice === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['PigdogMonkScript'].whichchoice() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['PigdogMonkScript'].whichchoice, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','PigdogMonk','whichChoice',typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['PigdogMonkScript'].whichchoice === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['PigdogMonkScript'].whichchoice() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['PigdogMonkScript'].whichchoice, __eventTime);
-    if (X3DJSON.nodeUtil('Scene','LauncheeChoice')) {
-X3DJSON.nodeUtil('Scene','LauncheeChoice').addEventListener('outputchange', function(event) {
+			X3DJSON.nodeUtil("Scene","PigdogMonk","whichChoice",typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['PigdogMonkScript'].whichchoice === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['PigdogMonkScript'].whichchoice() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['PigdogMonkScript'].whichchoice, __eventTime);
+    if (X3DJSON.nodeUtil("Scene","LauncheeChoice")) {
+X3DJSON.nodeUtil("Scene","LauncheeChoice").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','LauncheeChoice')) {
-X3DJSON.nodeUtil('Scene','LauncheeChoice').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","LauncheeChoice")) {
+X3DJSON.nodeUtil("Scene","LauncheeChoice").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','LauncheeChoice')) {
-X3DJSON.nodeUtil('Scene','LauncheeChoice').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","LauncheeChoice")) {
+X3DJSON.nodeUtil("Scene","LauncheeChoice").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','LauncheeChoice')) {
-X3DJSON.nodeUtil('Scene','LauncheeChoice').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].set_boolean(X3DJSON.nodeUtil('Scene','LauncheeChoice','isActive'), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","LauncheeChoice")) {
+X3DJSON.nodeUtil("Scene","LauncheeChoice").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].set_boolean(X3DJSON.nodeUtil("Scene","LauncheeChoice","isActive"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].set_boolean(X3DJSON.nodeUtil('Scene','LauncheeChoice','isActive'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].set_boolean(X3DJSON.nodeUtil("Scene","LauncheeChoice","isActive"), __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -871,10 +872,10 @@ X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript']['ACTION']['w
 }
 X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript']['ACTION']['whichchoice'].push(function(property, value) {
 		if (property === 'whichchoice') {
-			X3DJSON.nodeUtil('Scene','projectile','whichChoice',typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice, __eventTime);
+			X3DJSON.nodeUtil("Scene","projectile","whichChoice",typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','projectile','whichChoice',typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice, __eventTime);
+			X3DJSON.nodeUtil("Scene","projectile","whichChoice",typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -893,16 +894,16 @@ X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript']['ACTION']['w
 }
 X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript']['ACTION']['whichchoice'].push(function(property, value) {
 		if (property === 'whichchoice') {
-			X3DJSON.nodeUtil('Scene','projectilename','whichChoice',typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice, __eventTime);
+			X3DJSON.nodeUtil("Scene","projectilename","whichChoice",typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','projectilename','whichChoice',typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice, __eventTime);
-    if (X3DJSON.nodeUtil('Scene','weightselector')) {
-X3DJSON.nodeUtil('Scene','weightselector').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].set_boolean(X3DJSON.nodeUtil('Scene','weightselector','isActive'), __eventTime);
+			X3DJSON.nodeUtil("Scene","projectilename","whichChoice",typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice, __eventTime);
+    if (X3DJSON.nodeUtil("Scene","weightselector")) {
+X3DJSON.nodeUtil("Scene","weightselector").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].set_boolean(X3DJSON.nodeUtil("Scene","weightselector","isActive"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].set_boolean(X3DJSON.nodeUtil('Scene','weightselector','isActive'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].set_boolean(X3DJSON.nodeUtil("Scene","weightselector","isActive"), __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -921,32 +922,32 @@ X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript']['ACTION']['whi
 }
 X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript']['ACTION']['whichchoice'].push(function(property, value) {
 		if (property === 'whichchoice') {
-			X3DJSON.nodeUtil('Scene','Weight','whichChoice',typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].whichchoice === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].whichchoice() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].whichchoice, __eventTime);
+			X3DJSON.nodeUtil("Scene","Weight","whichChoice",typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].whichchoice === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].whichchoice() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].whichchoice, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','Weight','whichChoice',typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].whichchoice === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].whichchoice() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].whichchoice, __eventTime);
-    if (X3DJSON.nodeUtil('Scene','clock')) {
-X3DJSON.nodeUtil('Scene','clock').addEventListener('outputchange', function(event) {
+			X3DJSON.nodeUtil("Scene","Weight","whichChoice",typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].whichchoice === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].whichchoice() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].whichchoice, __eventTime);
+    if (X3DJSON.nodeUtil("Scene","clock")) {
+X3DJSON.nodeUtil("Scene","clock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','flingerangles')) {
-X3DJSON.nodeUtil('Scene','flingerangles').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","flingerangles")) {
+X3DJSON.nodeUtil("Scene","flingerangles").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','clock')) {
-X3DJSON.nodeUtil('Scene','clock').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","clock")) {
+X3DJSON.nodeUtil("Scene","clock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','verticalweightpath')) {
-X3DJSON.nodeUtil('Scene','verticalweightpath').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","verticalweightpath")) {
+X3DJSON.nodeUtil("Scene","verticalweightpath").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','clock')) {
-X3DJSON.nodeUtil('Scene','clock').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","clock")) {
+X3DJSON.nodeUtil("Scene","clock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','pinpath')) {
-X3DJSON.nodeUtil('Scene','pinpath').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","pinpath")) {
+X3DJSON.nodeUtil("Scene","pinpath").addEventListener('outputchange', function(event) {
 }, false);
 }
 		if (X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'] && typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].CounterWeight === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].CounterWeight() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].CounterWeight) {
@@ -955,13 +956,13 @@ X3DJSON.nodeUtil('Scene','pinpath').addEventListener('outputchange', function(ev
 		if (X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'] && typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].ProjectileWeight === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].ProjectileWeight() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].ProjectileWeight) {
 			X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].set_MassProjectileWeight(typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].ProjectileWeight === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].ProjectileWeight() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].ProjectileWeight, __eventTime);
 		}
-			X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].set_fraction(X3DJSON.nodeUtil('Scene','clock','fraction'), __eventTime);
-			X3DJSON.nodeUtil('Scene','ProjectileTransform','translation',typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].value_changed === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].value_changed() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].value, __eventTime);
-			X3DJSON.nodeUtil('Scene','ProjectileTransform','scale',typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].transparent === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].transparent() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].transparent, __eventTime);
-			X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['PigdogMonkScript'].set_boolean(X3DJSON.nodeUtil('Scene','Launch','isActive'), __eventTime);
-			X3DJSON.nodeUtil('Scene','PigdogMonk','whichChoice',typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['PigdogMonkScript'].whichchoice === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['PigdogMonkScript'].whichchoice() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['PigdogMonkScript'].whichchoice, __eventTime);
-			X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].set_boolean(X3DJSON.nodeUtil('Scene','LauncheeChoice','isActive'), __eventTime);
-			X3DJSON.nodeUtil('Scene','projectile','whichChoice',typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice, __eventTime);
-			X3DJSON.nodeUtil('Scene','projectilename','whichChoice',typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice, __eventTime);
-			X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].set_boolean(X3DJSON.nodeUtil('Scene','weightselector','isActive'), __eventTime);
-			X3DJSON.nodeUtil('Scene','Weight','whichChoice',typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].whichchoice === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].whichchoice() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].whichchoice, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].set_fraction(X3DJSON.nodeUtil("Scene","clock","fraction"), __eventTime);
+			X3DJSON.nodeUtil("Scene","ProjectileTransform","translation",typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].value_changed === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].value_changed() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].value, __eventTime);
+			X3DJSON.nodeUtil("Scene","ProjectileTransform","scale",typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].transparent === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].transparent() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['Mover'].transparent, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['PigdogMonkScript'].set_boolean(X3DJSON.nodeUtil("Scene","Launch","isActive"), __eventTime);
+			X3DJSON.nodeUtil("Scene","PigdogMonk","whichChoice",typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['PigdogMonkScript'].whichchoice === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['PigdogMonkScript'].whichchoice() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['PigdogMonkScript'].whichchoice, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].set_boolean(X3DJSON.nodeUtil("Scene","LauncheeChoice","isActive"), __eventTime);
+			X3DJSON.nodeUtil("Scene","projectile","whichChoice",typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice, __eventTime);
+			X3DJSON.nodeUtil("Scene","projectilename","whichChoice",typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['LauncheeScript'].whichchoice, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].set_boolean(X3DJSON.nodeUtil("Scene","weightselector","isActive"), __eventTime);
+			X3DJSON.nodeUtil("Scene","Weight","whichChoice",typeof X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].whichchoice === "function" ? X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].whichchoice() : X3DJSON['Obj']['Scene']['../data/Trebuchet.json']['WeightScript'].whichchoice, __eventTime);

@@ -110,7 +110,7 @@ group->addChildren(*WorldInfo20);
 CHAnimHumanoid* HAnimHumanoid21 = (CHAnimHumanoid *)(m_pScene.createNode("HAnimHumanoid"));
 HAnimHumanoid21->setName("Humanoid");
 HAnimHumanoid21->setDEF("hanim_Humanoid");
-HAnimHumanoid21->setVersion("1.0");
+HAnimHumanoid21->setVersion("2.0");
 CHAnimJoint* HAnimJoint22 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint22->setName("humanoid_root");
 HAnimJoint22->setDEF("hanim_humanoid_root");

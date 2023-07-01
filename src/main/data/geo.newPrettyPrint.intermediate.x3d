@@ -46,12 +46,12 @@
             <ShaderPart type='FRAGMENT' url='"../shaders/x_ite.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"'/>
           </ComposedShader>
           <ComposedCubeMapTexture DEF='texture'>
-            <ImageTexture containerField='backTexture' url='"../resources/images/bBK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"'/>
-            <ImageTexture containerField='bottomTexture' url='"../resources/images/bBT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"'/>
-            <ImageTexture containerField='frontTexture' url='"../resources/images/bFR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"'/>
-            <ImageTexture containerField='leftTexture' url='"../resources/images/bLF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"'/>
-            <ImageTexture containerField='rightTexture' url='"../resources/images/bRT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"'/>
-            <ImageTexture containerField='topTexture' url='"../resources/images/bTP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"'/>
+            <ImageTexture DEF='texture' containerField='backTexture' url='"../resources/images/bBK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"'/>
+            <ImageTexture DEF='texture' containerField='bottomTexture' url='"../resources/images/bBT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"'/>
+            <ImageTexture DEF='texture' containerField='frontTexture' url='"../resources/images/bFR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"'/>
+            <ImageTexture DEF='texture' containerField='leftTexture' url='"../resources/images/bLF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"'/>
+            <ImageTexture DEF='texture' containerField='rightTexture' url='"../resources/images/bRT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"'/>
+            <ImageTexture DEF='texture' containerField='topTexture' url='"../resources/images/bTP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"'/>
           </ComposedCubeMapTexture>
         </Appearance>
         <Sphere/>

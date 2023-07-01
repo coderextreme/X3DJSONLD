@@ -88,8 +88,8 @@ browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = WorldInfo18;
 
-let ProtoDeclare19 = browser.createX3DFromString(`<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+let ProtoDeclare19 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="Joint" appinfo="The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid." documentation="http://HAnim.org/Specifications/HAnim2001/part1/Joint.html" ><ProtoInterface><field name="center" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="children" accessType="inputOutput" type="MFNode"></field>
 <field name="llimit" accessType="inputOutput" type="MFFloat"></field>
@@ -239,8 +239,8 @@ ProtoDeclare19.protoBody = ProtoBody32;
 
 browser.currentScene.children[1] = ProtoDeclare19;
 
-let ProtoDeclare41 = browser.createX3DFromString(`<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+let ProtoDeclare41 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="Segment" appinfo="The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node." documentation="http://HAnim.org/Specifications/HAnim2001/part1/Segment.html" ><ProtoInterface><field name="bboxCenter" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 <field name="bboxSize" accessType="initializeOnly" type="SFVec3f" value="-1 -1 -1"></field>
 <field name="centerOfMass" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
@@ -385,8 +385,8 @@ ProtoDeclare41.protoBody = ProtoBody54;
 
 browser.currentScene.children[2] = ProtoDeclare41;
 
-let ProtoDeclare62 = browser.createX3DFromString(`<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+let ProtoDeclare62 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="Humanoid" appinfo="The Humanoid node serves as overall container for the Joint Segment Site and Viewpoint nodes which define the skeleton geometry and landmarks of the humanoid figure. Additionally the node provides a means for defining information about the author copyright and usage restrictions of the model." documentation="http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html" ><ProtoInterface><!--HAnim v1.1 field definitions--><field name="bboxCenter" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 <field name="bboxSize" accessType="initializeOnly" type="SFVec3f" value="-1 -1 -1"></field>
 <field name="center" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>

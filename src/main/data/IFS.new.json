@@ -46,7 +46,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 June 2023"
+            "@content":"01 July 2023"
           },
           {
             "@name":"generator",
@@ -76,6 +76,7 @@
                           "-appearance":
                             { "Appearance":
                               {
+                                "@DEF":"HAnimSiteShape",
                                 "-material":
                                   { "Material":
                                     {
@@ -102,6 +103,7 @@
                                 "-coord":
                                   { "Coordinate":
                                     {
+                                      "@DEF":"DiamondIFS",
                                       "@point":[0,0.01,0,-0.01,0,0,0,0,0.01,0.01,0,0,0,0,-0.01,0,-0.01,0]
                                     }
                                   }

@@ -354,7 +354,7 @@ BoxMan4AnimationPanel.prototype = {
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.WorldInfo()).setInfo(this.WorldInfo_3_34_info).setTitle("BoxMan - A Seamless VRML Human"))
     .addChild((new autoclass.Background()).setGroundColor(new autoclass.MFColor(java.newArray("float", [0.6,0.6,0.6]))).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.75,0.75,0.75]))))
-    .addChild((new autoclass.HAnimHumanoid("boxman_Humanoid")).setName("Humanoid").setInfo(this.boxman_Humanoid_3_36_info).setVersion("1.0")
+    .addChild((new autoclass.HAnimHumanoid("boxman_Humanoid")).setName("Humanoid").setInfo(this.boxman_Humanoid_3_36_info).setVersion("2.0")
       .addSkeleton((new autoclass.HAnimJoint("boxman_humanoid_root")).setName("humanoid_root").setCenter(0.0,0.9723,-0.0728).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [0,1,2,3,4,5,6,7,8,9,10,11])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
         .addChild((new autoclass.HAnimSegment("boxman_sacrum")).setName("sacrum")
           .addChild((new autoclass.Transform()).setTranslation(0.0,0.9723,-0.0728)

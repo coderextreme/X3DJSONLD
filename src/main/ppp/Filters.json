@@ -57,7 +57,7 @@
         },
         {
           "@name": "translated",
-          "@content": "22 June 2023"
+          "@content": "01 July 2023"
         },
         {
           "@name": "generator",
@@ -375,7 +375,7 @@
                                                 "@detune": 50,
                                                 "@frequency": 600,
                                                 "@qualityFactor": 30,
-                                                "@type": "allpass",
+                                                "@type": "ALLPASS",
                                                 "@channelCountMode": "MAX",
                                                 "@channelInterpretation": "SPEAKERS",
                                                 "-children": [
@@ -421,7 +421,7 @@
                                                 "@detune": 15,
                                                 "@frequency": 600,
                                                 "@qualityFactor": 15,
-                                                "@type": "allpass",
+                                                "@type": "ALLPASS",
                                                 "@channelCountMode": "MAX",
                                                 "@channelInterpretation": "SPEAKERS",
                                                 "-children": [
@@ -466,7 +466,7 @@
                                               "BiquadFilter": {
                                                 "@frequency": 1000,
                                                 "@qualityFactor": 0,
-                                                "@type": "allpass",
+                                                "@type": "ALLPASS",
                                                 "@channelCountMode": "MAX",
                                                 "@channelInterpretation": "SPEAKERS",
                                                 "-children": [

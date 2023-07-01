@@ -448,7 +448,7 @@ NancyDiving.prototype = {
             .addChild((new autoclass.Transform()).setRotation(1.0,0.0,0.0,1.57).setTranslation(0.0,0.45,-0.04)
               .addChild((new autoclass.Viewpoint()).setDescription("Nancy diving, view through her goggles").setOrientation(0.0,0.0,1.0,3.14).setPosition(0.0,0.0,0.0))))
           .addChild((new autoclass.Transform()).setTranslation(0.0,-1.0,0.0)
-            .addChild((new autoclass.HAnimHumanoid("hanim_Nancy")).setName("Nancy").setVersion("1.0")
+            .addChild((new autoclass.HAnimHumanoid("hanim_Nancy")).setName("Nancy").setVersion("2.0")
               .addSkeleton((new autoclass.HAnimJoint("hanim_humanoid_root")).setName("humanoid_root").setCenter(-0.00405,0.855,-0.000113).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
                 .addChild((new autoclass.HAnimJoint("hanim_sacroiliac")).setName("sacroiliac").setCenter(0.0,1.01,-0.0204).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
                   .addChild((new autoclass.HAnimSegment("hanim_pelvis")).setName("pelvis")

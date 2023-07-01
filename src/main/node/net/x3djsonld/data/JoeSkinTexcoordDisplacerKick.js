@@ -262,7 +262,7 @@ JoeSkinTexcoordDisplacerKick.prototype = {
     .addChild((new autoclass.Viewpoint("Scene_BackView")).setDescription("Scene Back View").setCenterOfRotation(0.0,1.5,0.0).setOrientation(0.0,1.0,0.0,3.14).setPosition(0.0,2.5,-3.0))
     .addChild((new autoclass.Viewpoint("Scene_TopView")).setDescription("Scene Top View").setCenterOfRotation(0.0,1.5,0.0).setOrientation(1.0,0.0,0.0,-1.5708).setPosition(0.0,3.5,0.0))
     .addChild((new autoclass.Group("Joe_Humanoid"))
-      .addChild((new autoclass.HAnimHumanoid("Joe_Human")).setName("Human").setVersion("1.0")
+      .addChild((new autoclass.HAnimHumanoid("Joe_Human")).setName("Human").setVersion("2.0")
         .addSkeleton((new autoclass.HAnimJoint("Joe_HumanoidRoot")).setName("HumanoidRoot").setCenter(0.0,0.875,0.0).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
           .setMetadata((new autoclass.MetadataSet()).setName("warnings").setReference("HAnim")
             .addComments(" TODO experimental ")

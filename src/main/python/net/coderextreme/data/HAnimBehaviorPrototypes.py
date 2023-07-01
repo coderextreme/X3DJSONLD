@@ -20,7 +20,7 @@ meta(name="warning", content="under development. should joint translations be ex
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypes.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="29 June 2023"),
+meta(name="translated", content="01 July 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -2590,7 +2590,7 @@ fieldValue(name="r_ankle_key", value=[0,0.5,1]),
 fieldValue(name="r_ankle_keyValue", value=[0,1,0,0,0,1,0,0.2,0,1,0,0.4])
 ]),
 ProtoInstance(name="HAnimBodyBehaviorChooser", DEF="ChooserTest", fieldValue=[fieldValue(name="HumanoidArray", children=[
-HAnimHumanoid(name="DiamondManLOA-1", DEF="hanim_DiamondManLOA-1", version="1.0")]),
+HAnimHumanoid(name="DiamondManLOA-1", DEF="hanim_DiamondManLOA-1", version="2.0")]),
 fieldValue(name="whichBody", value=0),
 fieldValue(name="hAnimBehaviorNodes", children=[
 ProtoInstance(USE="BehaviorTest1")]),

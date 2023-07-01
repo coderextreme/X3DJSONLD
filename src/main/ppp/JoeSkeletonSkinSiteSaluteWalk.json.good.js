@@ -38,6 +38,7 @@ var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); }
 var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4f = x3dom.fields.SFMatrix4f;
 var SFNode = x3dom.fields.SFNode;
+var SFRotation = x3dom.fields.SFRotation;
 var Quaternion = x3dom.fields.Quaternion;
 var SFString = String;
 var SFTime = Number;
@@ -66,9 +67,9 @@ if (typeof $ !== 'function') {
 }
 X3DJSON.nodeUtil = function(selector, node, field, value) {
 		if (typeof selector === 'undefined') {
-			selector = '';
+			selector = "";
 		} else {
-			selector = selector+' ';
+			selector = selector+" ";
 		}
 		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
@@ -138,415 +139,415 @@ if (typeof X3DJSON['Scene../data/JoeSkeletonSkinSiteSaluteWalk.json'] === 'undef
 	X3DJSON['Scene../data/JoeSkeletonSkinSiteSaluteWalk.json'] = {};
 }
 
-    if (X3DJSON.nodeUtil('Scene','Time2')) {
-X3DJSON.nodeUtil('Scene','Time2').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time2")) {
+X3DJSON.nodeUtil("Scene","Time2").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','vc6Yaw')) {
-X3DJSON.nodeUtil('Scene','vc6Yaw').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","vc6Yaw")) {
+X3DJSON.nodeUtil("Scene","vc6Yaw").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time3')) {
-X3DJSON.nodeUtil('Scene','Time3').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time3")) {
+X3DJSON.nodeUtil("Scene","Time3").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','EyeballsRotation')) {
-X3DJSON.nodeUtil('Scene','EyeballsRotation').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","EyeballsRotation")) {
+X3DJSON.nodeUtil("Scene","EyeballsRotation").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','EyeballsRotation')) {
-X3DJSON.nodeUtil('Scene','EyeballsRotation').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","EyeballsRotation")) {
+X3DJSON.nodeUtil("Scene","EyeballsRotation").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_sternoclavicularRelax')) {
-X3DJSON.nodeUtil('Scene','r_sternoclavicularRelax').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_sternoclavicularRelax")) {
+X3DJSON.nodeUtil("Scene","r_sternoclavicularRelax").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_acromioclavicularRelax')) {
-X3DJSON.nodeUtil('Scene','r_acromioclavicularRelax').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_acromioclavicularRelax")) {
+X3DJSON.nodeUtil("Scene","r_acromioclavicularRelax").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_shoulderRelax')) {
-X3DJSON.nodeUtil('Scene','r_shoulderRelax').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_shoulderRelax")) {
+X3DJSON.nodeUtil("Scene","r_shoulderRelax").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_elbowRelax')) {
-X3DJSON.nodeUtil('Scene','r_elbowRelax').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_elbowRelax")) {
+X3DJSON.nodeUtil("Scene","r_elbowRelax").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_wristRelax')) {
-X3DJSON.nodeUtil('Scene','r_wristRelax').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_wristRelax")) {
+X3DJSON.nodeUtil("Scene","r_wristRelax").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_thumb1Relax')) {
-X3DJSON.nodeUtil('Scene','r_thumb1Relax').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_thumb1Relax")) {
+X3DJSON.nodeUtil("Scene","r_thumb1Relax").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_thumb2Relax')) {
-X3DJSON.nodeUtil('Scene','r_thumb2Relax').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_thumb2Relax")) {
+X3DJSON.nodeUtil("Scene","r_thumb2Relax").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_thumb3Relax')) {
-X3DJSON.nodeUtil('Scene','r_thumb3Relax').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_thumb3Relax")) {
+X3DJSON.nodeUtil("Scene","r_thumb3Relax").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_index0Relax')) {
-X3DJSON.nodeUtil('Scene','r_index0Relax').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_index0Relax")) {
+X3DJSON.nodeUtil("Scene","r_index0Relax").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_index1Relax')) {
-X3DJSON.nodeUtil('Scene','r_index1Relax').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_index1Relax")) {
+X3DJSON.nodeUtil("Scene","r_index1Relax").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_fingers2Relax')) {
-X3DJSON.nodeUtil('Scene','r_fingers2Relax').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_fingers2Relax")) {
+X3DJSON.nodeUtil("Scene","r_fingers2Relax").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_fingers3Relax')) {
-X3DJSON.nodeUtil('Scene','r_fingers3Relax').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_fingers3Relax")) {
+X3DJSON.nodeUtil("Scene","r_fingers3Relax").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_middle0Relax')) {
-X3DJSON.nodeUtil('Scene','r_middle0Relax').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_middle0Relax")) {
+X3DJSON.nodeUtil("Scene","r_middle0Relax").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_middle1Relax')) {
-X3DJSON.nodeUtil('Scene','r_middle1Relax').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_middle1Relax")) {
+X3DJSON.nodeUtil("Scene","r_middle1Relax").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_fingers2Relax')) {
-X3DJSON.nodeUtil('Scene','r_fingers2Relax').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_fingers2Relax")) {
+X3DJSON.nodeUtil("Scene","r_fingers2Relax").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_fingers3Relax')) {
-X3DJSON.nodeUtil('Scene','r_fingers3Relax').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_fingers3Relax")) {
+X3DJSON.nodeUtil("Scene","r_fingers3Relax").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_ring0Relax')) {
-X3DJSON.nodeUtil('Scene','r_ring0Relax').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_ring0Relax")) {
+X3DJSON.nodeUtil("Scene","r_ring0Relax").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_ring1Relax')) {
-X3DJSON.nodeUtil('Scene','r_ring1Relax').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_ring1Relax")) {
+X3DJSON.nodeUtil("Scene","r_ring1Relax").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_fingers2Relax')) {
-X3DJSON.nodeUtil('Scene','r_fingers2Relax').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_fingers2Relax")) {
+X3DJSON.nodeUtil("Scene","r_fingers2Relax").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_fingers3Relax')) {
-X3DJSON.nodeUtil('Scene','r_fingers3Relax').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_fingers3Relax")) {
+X3DJSON.nodeUtil("Scene","r_fingers3Relax").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_pinky0Relax')) {
-X3DJSON.nodeUtil('Scene','r_pinky0Relax').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_pinky0Relax")) {
+X3DJSON.nodeUtil("Scene","r_pinky0Relax").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_pinky1Relax')) {
-X3DJSON.nodeUtil('Scene','r_pinky1Relax').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_pinky1Relax")) {
+X3DJSON.nodeUtil("Scene","r_pinky1Relax").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_fingers2Relax')) {
-X3DJSON.nodeUtil('Scene','r_fingers2Relax').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_fingers2Relax")) {
+X3DJSON.nodeUtil("Scene","r_fingers2Relax").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_fingers3Relax')) {
-X3DJSON.nodeUtil('Scene','r_fingers3Relax').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_fingers3Relax")) {
+X3DJSON.nodeUtil("Scene","r_fingers3Relax").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time2')) {
-X3DJSON.nodeUtil('Scene','Time2').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time2")) {
+X3DJSON.nodeUtil("Scene","Time2").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time2')) {
-X3DJSON.nodeUtil('Scene','Time2').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time2")) {
+X3DJSON.nodeUtil("Scene","Time2").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time2')) {
-X3DJSON.nodeUtil('Scene','Time2').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time2")) {
+X3DJSON.nodeUtil("Scene","Time2").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time2')) {
-X3DJSON.nodeUtil('Scene','Time2').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time2")) {
+X3DJSON.nodeUtil("Scene","Time2").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time2')) {
-X3DJSON.nodeUtil('Scene','Time2').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time2")) {
+X3DJSON.nodeUtil("Scene","Time2").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time2')) {
-X3DJSON.nodeUtil('Scene','Time2').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time2")) {
+X3DJSON.nodeUtil("Scene","Time2").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time2')) {
-X3DJSON.nodeUtil('Scene','Time2').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time2")) {
+X3DJSON.nodeUtil("Scene","Time2").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time2')) {
-X3DJSON.nodeUtil('Scene','Time2').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time2")) {
+X3DJSON.nodeUtil("Scene","Time2").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_sternoclavicularRoll')) {
-X3DJSON.nodeUtil('Scene','r_sternoclavicularRoll').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_sternoclavicularRoll")) {
+X3DJSON.nodeUtil("Scene","r_sternoclavicularRoll").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_acromioclavicularRoll')) {
-X3DJSON.nodeUtil('Scene','r_acromioclavicularRoll').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_acromioclavicularRoll")) {
+X3DJSON.nodeUtil("Scene","r_acromioclavicularRoll").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_shoulderRoll')) {
-X3DJSON.nodeUtil('Scene','r_shoulderRoll').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_shoulderRoll")) {
+X3DJSON.nodeUtil("Scene","r_shoulderRoll").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_ForeArmPitch')) {
-X3DJSON.nodeUtil('Scene','r_ForeArmPitch').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_ForeArmPitch")) {
+X3DJSON.nodeUtil("Scene","r_ForeArmPitch").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_wristRoll')) {
-X3DJSON.nodeUtil('Scene','r_wristRoll').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_wristRoll")) {
+X3DJSON.nodeUtil("Scene","r_wristRoll").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_handPitch')) {
-X3DJSON.nodeUtil('Scene','r_handPitch').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_handPitch")) {
+X3DJSON.nodeUtil("Scene","r_handPitch").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_handPitch')) {
-X3DJSON.nodeUtil('Scene','r_handPitch').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_handPitch")) {
+X3DJSON.nodeUtil("Scene","r_handPitch").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_handPitch')) {
-X3DJSON.nodeUtil('Scene','r_handPitch').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_handPitch")) {
+X3DJSON.nodeUtil("Scene","r_handPitch").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_handPitch')) {
-X3DJSON.nodeUtil('Scene','r_handPitch').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_handPitch")) {
+X3DJSON.nodeUtil("Scene","r_handPitch").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_handPitch')) {
-X3DJSON.nodeUtil('Scene','r_handPitch').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_handPitch")) {
+X3DJSON.nodeUtil("Scene","r_handPitch").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_handPitch')) {
-X3DJSON.nodeUtil('Scene','r_handPitch').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_handPitch")) {
+X3DJSON.nodeUtil("Scene","r_handPitch").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_handPitch')) {
-X3DJSON.nodeUtil('Scene','r_handPitch').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_handPitch")) {
+X3DJSON.nodeUtil("Scene","r_handPitch").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_handPitch')) {
-X3DJSON.nodeUtil('Scene','r_handPitch').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_handPitch")) {
+X3DJSON.nodeUtil("Scene","r_handPitch").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_handPitch')) {
-X3DJSON.nodeUtil('Scene','r_handPitch').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_handPitch")) {
+X3DJSON.nodeUtil("Scene","r_handPitch").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_handPitch')) {
-X3DJSON.nodeUtil('Scene','r_handPitch').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_handPitch")) {
+X3DJSON.nodeUtil("Scene","r_handPitch").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_handPitch')) {
-X3DJSON.nodeUtil('Scene','r_handPitch').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_handPitch")) {
+X3DJSON.nodeUtil("Scene","r_handPitch").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_handPitch')) {
-X3DJSON.nodeUtil('Scene','r_handPitch').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_handPitch")) {
+X3DJSON.nodeUtil("Scene","r_handPitch").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_handPitch')) {
-X3DJSON.nodeUtil('Scene','r_handPitch').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_handPitch")) {
+X3DJSON.nodeUtil("Scene","r_handPitch").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_handPitch')) {
-X3DJSON.nodeUtil('Scene','r_handPitch').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_handPitch")) {
+X3DJSON.nodeUtil("Scene","r_handPitch").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_handPitch')) {
-X3DJSON.nodeUtil('Scene','r_handPitch').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_handPitch")) {
+X3DJSON.nodeUtil("Scene","r_handPitch").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_handPitch')) {
-X3DJSON.nodeUtil('Scene','r_handPitch').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_handPitch")) {
+X3DJSON.nodeUtil("Scene","r_handPitch").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_thumb1Pitch')) {
-X3DJSON.nodeUtil('Scene','r_thumb1Pitch').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_thumb1Pitch")) {
+X3DJSON.nodeUtil("Scene","r_thumb1Pitch").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_thumb2Pitch')) {
-X3DJSON.nodeUtil('Scene','r_thumb2Pitch').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_thumb2Pitch")) {
+X3DJSON.nodeUtil("Scene","r_thumb2Pitch").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','r_thumb2Pitch')) {
-X3DJSON.nodeUtil('Scene','r_thumb2Pitch').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","r_thumb2Pitch")) {
+X3DJSON.nodeUtil("Scene","r_thumb2Pitch").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','l_shoulderRoll')) {
-X3DJSON.nodeUtil('Scene','l_shoulderRoll').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","l_shoulderRoll")) {
+X3DJSON.nodeUtil("Scene","l_shoulderRoll").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time1')) {
-X3DJSON.nodeUtil('Scene','Time1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time1")) {
+X3DJSON.nodeUtil("Scene","Time1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time1')) {
-X3DJSON.nodeUtil('Scene','Time1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time1")) {
+X3DJSON.nodeUtil("Scene","Time1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time1')) {
-X3DJSON.nodeUtil('Scene','Time1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time1")) {
+X3DJSON.nodeUtil("Scene","Time1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time1')) {
-X3DJSON.nodeUtil('Scene','Time1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time1")) {
+X3DJSON.nodeUtil("Scene","Time1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time1')) {
-X3DJSON.nodeUtil('Scene','Time1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time1")) {
+X3DJSON.nodeUtil("Scene","Time1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time1')) {
-X3DJSON.nodeUtil('Scene','Time1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time1")) {
+X3DJSON.nodeUtil("Scene","Time1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time1')) {
-X3DJSON.nodeUtil('Scene','Time1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time1")) {
+X3DJSON.nodeUtil("Scene","Time1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time1')) {
-X3DJSON.nodeUtil('Scene','Time1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time1")) {
+X3DJSON.nodeUtil("Scene","Time1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time1')) {
-X3DJSON.nodeUtil('Scene','Time1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time1")) {
+X3DJSON.nodeUtil("Scene","Time1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time1')) {
-X3DJSON.nodeUtil('Scene','Time1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time1")) {
+X3DJSON.nodeUtil("Scene","Time1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time1')) {
-X3DJSON.nodeUtil('Scene','Time1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time1")) {
+X3DJSON.nodeUtil("Scene","Time1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time1')) {
-X3DJSON.nodeUtil('Scene','Time1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time1")) {
+X3DJSON.nodeUtil("Scene","Time1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time1')) {
-X3DJSON.nodeUtil('Scene','Time1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time1")) {
+X3DJSON.nodeUtil("Scene","Time1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time1')) {
-X3DJSON.nodeUtil('Scene','Time1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time1")) {
+X3DJSON.nodeUtil("Scene","Time1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time1')) {
-X3DJSON.nodeUtil('Scene','Time1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time1")) {
+X3DJSON.nodeUtil("Scene","Time1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time1')) {
-X3DJSON.nodeUtil('Scene','Time1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time1")) {
+X3DJSON.nodeUtil("Scene","Time1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time1')) {
-X3DJSON.nodeUtil('Scene','Time1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time1")) {
+X3DJSON.nodeUtil("Scene","Time1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time1')) {
-X3DJSON.nodeUtil('Scene','Time1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time1")) {
+X3DJSON.nodeUtil("Scene","Time1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Time1')) {
-X3DJSON.nodeUtil('Scene','Time1').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Time1")) {
+X3DJSON.nodeUtil("Scene","Time1").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','HUMANOIDROOT_POSITION_ANIMATOR')) {
-X3DJSON.nodeUtil('Scene','HUMANOIDROOT_POSITION_ANIMATOR').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","HUMANOIDROOT_POSITION_ANIMATOR")) {
+X3DJSON.nodeUtil("Scene","HUMANOIDROOT_POSITION_ANIMATOR").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','HUMANOIDROOT_ANIMATOR')) {
-X3DJSON.nodeUtil('Scene','HUMANOIDROOT_ANIMATOR').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","HUMANOIDROOT_ANIMATOR")) {
+X3DJSON.nodeUtil("Scene","HUMANOIDROOT_ANIMATOR").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','L_HIP_ANIMATOR')) {
-X3DJSON.nodeUtil('Scene','L_HIP_ANIMATOR').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","L_HIP_ANIMATOR")) {
+X3DJSON.nodeUtil("Scene","L_HIP_ANIMATOR").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','L_KNEE_ANIMATOR')) {
-X3DJSON.nodeUtil('Scene','L_KNEE_ANIMATOR').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","L_KNEE_ANIMATOR")) {
+X3DJSON.nodeUtil("Scene","L_KNEE_ANIMATOR").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','L_ANKLE_ANIMATOR')) {
-X3DJSON.nodeUtil('Scene','L_ANKLE_ANIMATOR').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","L_ANKLE_ANIMATOR")) {
+X3DJSON.nodeUtil("Scene","L_ANKLE_ANIMATOR").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','L_MIDTARSAL_ANIMATOR')) {
-X3DJSON.nodeUtil('Scene','L_MIDTARSAL_ANIMATOR').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","L_MIDTARSAL_ANIMATOR")) {
+X3DJSON.nodeUtil("Scene","L_MIDTARSAL_ANIMATOR").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','L_subtalar_ANIMATOR')) {
-X3DJSON.nodeUtil('Scene','L_subtalar_ANIMATOR').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","L_subtalar_ANIMATOR")) {
+X3DJSON.nodeUtil("Scene","L_subtalar_ANIMATOR").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','L_metatarsal_ANIMATOR')) {
-X3DJSON.nodeUtil('Scene','L_metatarsal_ANIMATOR').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","L_metatarsal_ANIMATOR")) {
+X3DJSON.nodeUtil("Scene","L_metatarsal_ANIMATOR").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','R_HIP_ANIMATOR')) {
-X3DJSON.nodeUtil('Scene','R_HIP_ANIMATOR').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","R_HIP_ANIMATOR")) {
+X3DJSON.nodeUtil("Scene","R_HIP_ANIMATOR").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','R_KNEE_ANIMATOR')) {
-X3DJSON.nodeUtil('Scene','R_KNEE_ANIMATOR').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","R_KNEE_ANIMATOR")) {
+X3DJSON.nodeUtil("Scene","R_KNEE_ANIMATOR").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','R_ANKLE_ANIMATOR')) {
-X3DJSON.nodeUtil('Scene','R_ANKLE_ANIMATOR').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","R_ANKLE_ANIMATOR")) {
+X3DJSON.nodeUtil("Scene","R_ANKLE_ANIMATOR").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','R_subtalar_ANIMATOR')) {
-X3DJSON.nodeUtil('Scene','R_subtalar_ANIMATOR').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","R_subtalar_ANIMATOR")) {
+X3DJSON.nodeUtil("Scene","R_subtalar_ANIMATOR").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','R_MIDTARSAL_ANIMATOR')) {
-X3DJSON.nodeUtil('Scene','R_MIDTARSAL_ANIMATOR').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","R_MIDTARSAL_ANIMATOR")) {
+X3DJSON.nodeUtil("Scene","R_MIDTARSAL_ANIMATOR").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','R_metatarsal_ANIMATOR')) {
-X3DJSON.nodeUtil('Scene','R_metatarsal_ANIMATOR').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","R_metatarsal_ANIMATOR")) {
+X3DJSON.nodeUtil("Scene","R_metatarsal_ANIMATOR").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','VL5_ANIMATOR')) {
-X3DJSON.nodeUtil('Scene','VL5_ANIMATOR').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","VL5_ANIMATOR")) {
+X3DJSON.nodeUtil("Scene","VL5_ANIMATOR").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','SKULLBASE_ANIMATOR')) {
-X3DJSON.nodeUtil('Scene','SKULLBASE_ANIMATOR').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","SKULLBASE_ANIMATOR")) {
+X3DJSON.nodeUtil("Scene","SKULLBASE_ANIMATOR").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','L_SHOULDER_ANIMATOR')) {
-X3DJSON.nodeUtil('Scene','L_SHOULDER_ANIMATOR').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","L_SHOULDER_ANIMATOR")) {
+X3DJSON.nodeUtil("Scene","L_SHOULDER_ANIMATOR").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','L_ELBOW_ANIMATOR')) {
-X3DJSON.nodeUtil('Scene','L_ELBOW_ANIMATOR').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","L_ELBOW_ANIMATOR")) {
+X3DJSON.nodeUtil("Scene","L_ELBOW_ANIMATOR").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','L_WRIST_ANIMATOR')) {
-X3DJSON.nodeUtil('Scene','L_WRIST_ANIMATOR').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","L_WRIST_ANIMATOR")) {
+X3DJSON.nodeUtil("Scene","L_WRIST_ANIMATOR").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','R_SHOULDER_ANIMATOR')) {
-X3DJSON.nodeUtil('Scene','R_SHOULDER_ANIMATOR').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","R_SHOULDER_ANIMATOR")) {
+X3DJSON.nodeUtil("Scene","R_SHOULDER_ANIMATOR").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','R_ELBOW_ANIMATOR')) {
-X3DJSON.nodeUtil('Scene','R_ELBOW_ANIMATOR').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","R_ELBOW_ANIMATOR")) {
+X3DJSON.nodeUtil("Scene","R_ELBOW_ANIMATOR").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','R_WRIST_ANIMATOR')) {
-X3DJSON.nodeUtil('Scene','R_WRIST_ANIMATOR').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","R_WRIST_ANIMATOR")) {
+X3DJSON.nodeUtil("Scene","R_WRIST_ANIMATOR").addEventListener('outputchange', function(event) {
 }, false);
 }

@@ -38,6 +38,7 @@ var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); }
 var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4f = x3dom.fields.SFMatrix4f;
 var SFNode = x3dom.fields.SFNode;
+var SFRotation = x3dom.fields.SFRotation;
 var Quaternion = x3dom.fields.Quaternion;
 var SFString = String;
 var SFTime = Number;
@@ -66,9 +67,9 @@ if (typeof $ !== 'function') {
 }
 X3DJSON.nodeUtil = function(selector, node, field, value) {
 		if (typeof selector === 'undefined') {
-			selector = '';
+			selector = "";
 		} else {
-			selector = selector+' ';
+			selector = selector+" ";
 		}
 		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
@@ -270,12 +271,12 @@ X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime']['ACTION'] =
 X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime']['ACTION'],X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime']);
 }
 if (typeof X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].initialize === "function") X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].initialize();
-    if (X3DJSON.nodeUtil('Scene','TourTime')) {
-X3DJSON.nodeUtil('Scene','TourTime').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].set_cycle(X3DJSON.nodeUtil('Scene','TourTime','cycleTime'), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","TourTime")) {
+X3DJSON.nodeUtil("Scene","TourTime").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].set_cycle(X3DJSON.nodeUtil("Scene","TourTime","cycleTime"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].set_cycle(X3DJSON.nodeUtil('Scene','TourTime','cycleTime'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].set_cycle(X3DJSON.nodeUtil("Scene","TourTime","cycleTime"), __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -294,17 +295,17 @@ X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime']['ACTION']['
 }
 X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime']['ACTION']['position'].push(function(property, value) {
 		if (property === 'position') {
-			X3DJSON.nodeUtil('Scene','TourPosition','keyValue',typeof X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].position === "function" ? X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].position() : X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].position, __eventTime);
+			X3DJSON.nodeUtil("Scene","TourPosition","keyValue",typeof X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].position === "function" ? X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].position() : X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].position, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','TourPosition','keyValue',typeof X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].position === "function" ? X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].position() : X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].position, __eventTime);
-    if (X3DJSON.nodeUtil('Scene','TourTime')) {
-X3DJSON.nodeUtil('Scene','TourTime').addEventListener('outputchange', function(event) {
+			X3DJSON.nodeUtil("Scene","TourPosition","keyValue",typeof X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].position === "function" ? X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].position() : X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].position, __eventTime);
+    if (X3DJSON.nodeUtil("Scene","TourTime")) {
+X3DJSON.nodeUtil("Scene","TourTime").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','TourPosition')) {
-X3DJSON.nodeUtil('Scene','TourPosition').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","TourPosition")) {
+X3DJSON.nodeUtil("Scene","TourPosition").addEventListener('outputchange', function(event) {
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].set_cycle(X3DJSON.nodeUtil('Scene','TourTime','cycleTime'), __eventTime);
-			X3DJSON.nodeUtil('Scene','TourPosition','keyValue',typeof X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].position === "function" ? X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].position() : X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].position, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].set_cycle(X3DJSON.nodeUtil("Scene","TourTime","cycleTime"), __eventTime);
+			X3DJSON.nodeUtil("Scene","TourPosition","keyValue",typeof X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].position === "function" ? X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].position() : X3DJSON['Obj']['Scene']['../data/geobubbles.json']['RandomTourTime'].position, __eventTime);

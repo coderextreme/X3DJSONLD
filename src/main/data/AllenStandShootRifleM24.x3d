@@ -61,7 +61,7 @@
         <Viewpoint description='Allen Above Viewpoint' orientation='.999 0.031 -0.039 4.615' position='.1 2.4 0'/>
         <Group DEF='HighResolution'>
           <Transform>
-            <HAnimHumanoid DEF='hanim_Allen' name='Allen' version='1.0'>
+            <HAnimHumanoid DEF='hanim_Allen' name='Allen' version='2.0'>
               <HAnimJoint DEF='hanim_humanoid_root' center='-0.00405 0.855 -0.000113' containerField='skeleton' name='humanoid_root'>
                 <HAnimJoint DEF='hanim_sacroiliac' center='0 1.01 -0.0204' name='sacroiliac'>
                   <HAnimSegment DEF='hanim_pelvis' name='pelvis'>

@@ -88,8 +88,8 @@ browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = WorldInfo18;
 
-let ProtoDeclare19 = browser.createX3DFromString(`<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+let ProtoDeclare19 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="LOA1_KneelAnimation" ><ProtoInterface><field name="cycleInterval" accessType="inputOutput" type="SFTime" value="2"></field>
 <field name="enabled" accessType="inputOutput" type="SFBool" value="true"></field>
 <field name="loop" accessType="inputOutput" type="SFBool" value="false"></field>

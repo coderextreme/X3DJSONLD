@@ -165,7 +165,7 @@ function clockTrigger (timeValue)
 }]]></Script>
 </ProtoBody>
 </ProtoDeclare>
-<!--Test success: declarative statement createDeclarativeShapeTests()--><Group DEF="DeclarativeGroupExample"><Shape><MetadataString name="findThisNameValue" DEF="FindableMetadataStringTest" value="&quot;test case&quot;" containerField="value"></MetadataString>
+<!--Test success: declarative statement createDeclarativeShapeTests()--><Group DEF="DeclarativeGroupExample"><Shape><MetadataString containerField="metadata" name="findThisNameValue" DEF="FindableMetadataStringTest" value="&quot;test case&quot;"></MetadataString>
 <Appearance DEF="DeclarativeAppearanceExample"><!--DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance--><ProtoInstance containerField="material" name="MaterialModulator" DEF="MyMaterialModulator"></ProtoInstance>
 </Appearance>
 <Cone containerField="geometry" bottom="false" bottomRadius="0.05" height="0.1"></Cone>

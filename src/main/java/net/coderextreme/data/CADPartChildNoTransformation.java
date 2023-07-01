@@ -72,7 +72,7 @@ public class CADPartChildNoTransformation {
                 .addComments("note solid='true' and so one-sided external rendering only")
                 .setGeometry(new Cylinder().setBottom(false).setHeight(3f).setRadius(2f).setTop(false))
                 .setAppearance(new Appearance().setDEF("AppearanceGrey")
-                  .setMaterial(new Material()))))
+                  .setMaterial(new Material("AppearanceGrey")))))
             .addChild(new CADFace().setName("innerSurface")
               .setShape(new Shape()
                 .addComments("note solid='false' and so two-sided internal + external rendering")

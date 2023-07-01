@@ -2319,7 +2319,7 @@ public class HAnimBehaviorPrototypes
       .addFieldValue(new fieldValue().setName("r_ankle_keyValue").setValue(new MFRotation(new MFRotation(new double[] {0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.2,0.0,1.0,0.0,0.4})))))
     .addChild(new ProtoInstance("HAnimBodyBehaviorChooser", "ChooserTest").setContainerField("children")
       .addFieldValue(new fieldValue().setName("HumanoidArray")
-        .addChild(new HAnimHumanoid("hanim_DiamondManLOA-1").setName("DiamondManLOA-1").setVersion("1.0")))
+        .addChild(new HAnimHumanoid("hanim_DiamondManLOA-1").setName("DiamondManLOA-1").setVersion("2.0")))
       .addFieldValue(new fieldValue().setName("whichBody").setValue(0))
       .addFieldValue(new fieldValue().setName("hAnimBehaviorNodes")
         .addChild(new ProtoInstance().setUSE("BehaviorTest1").setContainerField("children")))

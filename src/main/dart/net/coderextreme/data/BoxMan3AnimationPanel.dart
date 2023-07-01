@@ -150,7 +150,7 @@ var X3D0 =  X3D(
               name_ : SFString('Humanoid'),
               DEF_ : SFString('boxman_Humanoid'),
               info_ : MFString([SFString("authorName=James Smith"), SFString("authorEmail=james@vapourtech.com"), SFString("copyright=(C) 2000 James Smith - james@vapourtech.com"), SFString("humanoidVersion=2.0")]),
-              version_ : SFString('1.0'),
+              version_ : SFString('2.0'),
               joints_ : [
                 HAnimJoint(
                   name_ : SFString('humanoid_root'),

@@ -139,7 +139,7 @@
         },
         {
           "@name": "translated",
-          "@content": "22 June 2023"
+          "@content": "01 July 2023"
         },
         {
           "@name": "generator",
@@ -185,9 +185,9 @@
               "authorName=James Smith",
               "authorEmail=james@vapourtech.com",
               "copyright=(C) 2000 James Smith - james@vapourtech.com",
-              "humanoidVersion=1.0"
+              "humanoidVersion=2.0"
             ],
-            "@version": "1.0",
+            "@version": "2.0",
             "-skeleton": [
               {
                 "HAnimJoint": {

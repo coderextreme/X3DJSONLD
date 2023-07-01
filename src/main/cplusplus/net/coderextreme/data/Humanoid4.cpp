@@ -280,10 +280,10 @@ Shape57->setGeometry(LineSet58);
 HAnimSegment53->addChildren(*Shape57);
 
 CHAnimSite* HAnimSite61 = (CHAnimSite *)(m_pScene.createNode("HAnimSite"));
-HAnimSite61->setName("buttocks_standing_wall_contact_point_pt");
-HAnimSite61->setDEF("hanim_buttocks_standing_wall_contact_point_pt");
+HAnimSite61->setName("buttocks_standing_wall_contact_point");
+HAnimSite61->setDEF("hanim_buttocks_standing_wall_contact_point");
 CTouchSensor* TouchSensor62 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
-TouchSensor62->setDescription("HAnimSite buttocks_standing_wall_contact_point_pt");
+TouchSensor62->setDescription("HAnimSite buttocks_standing_wall_contact_point");
 HAnimSite61->addChildren(*TouchSensor62);
 
 CShape* Shape63 = (CShape *)(m_pScene.createNode("Shape"));
@@ -8430,7 +8430,7 @@ HAnimSegment1872->setUSE("hanim_r_carpal_middle_phalanx_5");
 HAnimHumanoid43->setSegments(*HAnimSegment1872);
 
 CHAnimSite* HAnimSite1873 = (CHAnimSite *)(m_pScene.createNode("HAnimSite"));
-HAnimSite1873->setUSE("hanim_buttocks_standing_wall_contact_point_pt");
+HAnimSite1873->setUSE("hanim_buttocks_standing_wall_contact_point");
 HAnimHumanoid43->setSites(*HAnimSite1873);
 
 CHAnimSite* HAnimSite1874 = (CHAnimSite *)(m_pScene.createNode("HAnimSite"));

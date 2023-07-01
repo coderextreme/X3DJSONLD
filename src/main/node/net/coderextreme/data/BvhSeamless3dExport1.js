@@ -110,7 +110,7 @@ var ProtoInstance0 = null;
 "}\n"+
 "block=false;\n"+
 "}"))))
-        .addChild((new autoclass.HAnimHumanoid()).setVersion("1.0")
+        .addChild((new autoclass.HAnimHumanoid()).setVersion("2.0")
           .addSkin((new autoclass.Shape())
             .setAppearance((new autoclass.Appearance())
               .setMaterial((new autoclass.Material())))

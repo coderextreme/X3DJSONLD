@@ -35,7 +35,7 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
     <meta content='https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d' name='reference'/>
     <meta content='https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d' name='identifier'/>
     <meta content='../license.html' name='license'/>
-    <meta content='29 June 2023' name='translated'/>
+    <meta content='01 July 2023' name='translated'/>
     <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
     <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
   </head>
@@ -205,6 +205,7 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
           <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator'/>
         </Appearance>
         <Cone bottom='false' bottomRadius='0.05' height='0.1'/>
+        <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='"test case"'/>
       </Shape>
       <!--  Test success: declarativeGroup.addChild() singleton pipeline method  -->
     </Group>

@@ -36,7 +36,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 June 2023"
+            "@content":"01 July 2023"
           },
           {
             "@name":"generator",
@@ -96,6 +96,7 @@
               "-children":[
                 { "Shape":
                   {
+                    "@DEF":"trans",
                     "-appearance":
                       { "Appearance":
                         {

@@ -44,7 +44,7 @@ var X3D0 =  X3D(
               children_ : [
                 ExternProtoDeclare(
                   name_ : SFString('FlowerProto'),
-                  url_ : MFString([SFString("../personal/flowerproto.json#FlowerProto"), SFString("https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto"), SFString("https://localhost:3000/src/main/personal/flowerproto.json#FlowerProto")]),
+                  url_ : MFString([SFString("../personal/flowerproto.json#FlowerProto"), SFString("https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto")]),
                   field_ : [
                     field(
                       type_ : SFString("MFString"),

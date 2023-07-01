@@ -16,7 +16,7 @@ meta(name="reference", content="https://www.medialab.hmu.gr/minipages/x3domAudio
 meta(name="identifier", content="https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/Filters.x3d"),
 meta(name="generator", content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="29 June 2023"),
+meta(name="translated", content="01 July 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -70,16 +70,16 @@ Gain(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
 SpatialSound(DEF="Audio1", distanceModel="INVERSE", children=[
 Gain(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
 Analyser(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
-BiquadFilter(detune=50.0, frequency=600, qualityFactor=30.0, type="allpass", channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
+BiquadFilter(detune=50.0, frequency=600, qualityFactor=30.0, type="ALLPASS", channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
 AudioClip(description="Techno beat", loop=True, url=["sound/techno_beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3"])])])])]),
 SpatialSound(DEF="Audio2", distanceModel="INVERSE", children=[
 Gain(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
 Analyser(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
-BiquadFilter(detune=15.0, frequency=600, qualityFactor=15.0, type="allpass", channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
+BiquadFilter(detune=15.0, frequency=600, qualityFactor=15.0, type="ALLPASS", channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
 AudioClip(description="Simple beat", loop=True, url=["sound/beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3"])])])])]),
 SpatialSound(DEF="Audio3", distanceModel="INVERSE", children=[
 Gain(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
 Analyser(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
-BiquadFilter(frequency=1000, qualityFactor=0, type="allpass", channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
+BiquadFilter(frequency=1000, qualityFactor=0, type="ALLPASS", channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
 AudioClip(description="Wobble loop", loop=True, url=["sound/wobble_loop.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3"])])])])])])])])]))
 .XML())

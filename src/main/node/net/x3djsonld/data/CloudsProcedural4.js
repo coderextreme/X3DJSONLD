@@ -119,6 +119,7 @@ CloudsProcedural4.prototype = {
       .addChild((new autoclass.Script("PixelScript")).setDirectOutput(true).setSourceCode("\n" + 
 "        " + "\n" + 
 "ecmascript:" + "\n" + 
+"Cirrus.children = [];" + "\n" + 
 "\n" + 
 "\n" + 
 "function cumulustranslation() // These values designate the boundary location of the cloud" + "\n" + 

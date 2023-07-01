@@ -22,7 +22,7 @@
     <WorldInfo title='HAnimHumanoid skin design patterns for apparel, medical'/>
     <Background skyColor='0 0.6 0.6'/>
     <Group DEF='MultipleHumanoids'>
-      <MetadataString name='HAnimArchitecture' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile' value='"E.4 Multiple humanoids per file"'/>
+      <MetadataString name='HAnimArchitecture' containerField="metadata" reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile' value='"E.4 Multiple humanoids per file"'/>
       <!-- ============================== -->
       <HAnimHumanoid DEF='a_SimpleSkeleton' name='SimpleSkeleton' version='2.0'>
         <HAnimJoint containerField='skeleton' name='humanoid_root'>

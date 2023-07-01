@@ -64,16 +64,16 @@ ProtoInstance ProtoInstance3 = null;
         .addChild(new ProtoDeclare().setName("Bubble")
           .setProtoBody(new ProtoBody()
             .addChild(new Transform().setDEF("body_trans")
-              .addChild(new Shape()
+              .addChild(new Shape("body_trans")
                 .setGeometry(new Sphere().setRadius(0.25f))
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f}).setTransparency(0.2f))))
-              .addChild(new Script().setDEF("bounce1")
-                .addField(new field().setType("SFVec3f").setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
-                .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-                .addField(new field().setType("SFVec3f").setName("velocity").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-                .addField(new field().setType("SFVec3f").setName("scalvel").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-                .addField(new field().setType("SFFloat").setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
+              .addChild(new Script("body_trans").setDEF("bounce1")
+                .addField(new field("bounce1").setType("SFVec3f").setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
+                .addField(new field("bounce1").setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+                .addField(new field("bounce1").setType("SFVec3f").setName("velocity").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+                .addField(new field("bounce1").setType("SFVec3f").setName("scalvel").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+                .addField(new field("bounce1").setType("SFFloat").setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "function initialize() {\n"+
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
@@ -113,10 +113,10 @@ ProtoInstance ProtoInstance3 = null;
 "	initialize();\n"+
 "    }\n"+
 "}"))
-              .addChild(new TimeSensor().setDEF("bubbleClock").setCycleInterval(10d).setLoop(true))
-              .addChild(new ROUTE().setFromNode("bounce1").setFromField("translation_changed").setToNode("body_trans").setToField("set_translation"))
-              .addChild(new ROUTE().setFromNode("bounce1").setFromField("scale_changed").setToNode("body_trans").setToField("set_scale"))
-              .addChild(new ROUTE().setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce1").setToField("set_fraction")))))
+              .addChild(new TimeSensor("body_trans").setDEF("bubbleClock").setCycleInterval(10d).setLoop(true))
+              .addChild(new ROUTE("body_trans").setFromNode("bounce1").setFromField("translation_changed").setToNode("body_trans").setToField("set_translation"))
+              .addChild(new ROUTE("body_trans").setFromNode("bounce1").setFromField("scale_changed").setToNode("body_trans").setToField("set_scale"))
+              .addChild(new ROUTE("body_trans").setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce1").setToField("set_fraction")))))
         .addChild(ProtoInstance0 = new ProtoInstance().setName("Bubble").setDEF("bubbleA"))
         .addChild(ProtoInstance1 = new ProtoInstance().setName("Bubble").setDEF("bubbleB"))
         .addChild(ProtoInstance2 = new ProtoInstance().setName("Bubble").setDEF("bubbleC"))

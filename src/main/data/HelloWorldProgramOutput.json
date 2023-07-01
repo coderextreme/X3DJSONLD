@@ -156,7 +156,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 June 2023"
+            "@content":"01 July 2023"
           },
           {
             "@name":"generator",
@@ -950,15 +950,14 @@
               "-children":[
                 { "Shape":
                   {
-                    "-value":[
+                    "-metadata":
                       { "MetadataString":
                         {
                           "@name":"findThisNameValue",
                           "@DEF":"FindableMetadataStringTest",
                           "@value":["test case"]
                         }
-                      }
-                    ],
+                      },
                     "-appearance":
                       { "Appearance":
                         {
@@ -2206,15 +2205,14 @@
               "-children":[
                 { "Shape":
                   {
-                    "-value":[
+                    "-metadata":
                       { "MetadataString":
                         {
                           "@name":"findThisNameValue",
                           "@DEF":"FindableMetadataStringTest",
                           "@value":["test case"]
                         }
-                      }
-                    ],
+                      },
                     "-appearance":
                       { "Appearance":
                         {

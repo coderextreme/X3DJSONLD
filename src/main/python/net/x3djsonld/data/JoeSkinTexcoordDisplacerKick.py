@@ -57,7 +57,7 @@ newModel=X3D(profile='Immersive',version='3.3',
     Viewpoint(DEF='Scene_TopView',centerOfRotation=(0,1.5,0),description='Scene Top View',orientation=(1,0,0,-1.5708),position=(0,3.5,0)),
     Group(DEF='Joe_Humanoid',
       children=[
-      HAnimHumanoid(DEF='Joe_Human',name='Human',version='1.0',
+      HAnimHumanoid(DEF='Joe_Human',name='Human',version='2.0',
         skeleton=[
         HAnimJoint(DEF='Joe_HumanoidRoot',center=(0,0.875,0),name='HumanoidRoot',ulimit=[0,0,0],llimit=[0,0,0],
           metadata=MetadataSet(name='warnings',reference='HAnim',

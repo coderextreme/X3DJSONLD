@@ -11,7 +11,7 @@ meta(name="generator", content="X3D-Edit, https://savage.nps.edu/X3D-Edit"),
 meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/geo.x3d"),
 meta(name="translated", content="13 March 2016"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
-meta(name="translated", content="29 June 2023"),
+meta(name="translated", content="01 July 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 component(name="Scripting", level=1),
