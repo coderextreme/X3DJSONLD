@@ -88,13 +88,13 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <!-- https://stackoverflow.com/questions/919692/how-to-execute-xslt-2-0-with-ant -->
     <!-- https://sourceforge.net/projects/saxon/files/Saxon-HE jar download handled in X3DJSAIL build -->
-    <!-- https://sourceforge.net/projects/saxon/files/Saxon-HE/11/Java/ -->
+    <!-- https://github.com/Saxonica/Saxon-HE/tree/main/12/Java -->
     <!-- https://www.saxonica.com/documentation10/#!about/gettingstarted/gettingstartedjava -->
     <!-- SaxonHE 11 (java.lang.NoClassDefFoundError: org/xmlresolver/Resolver) https://saxonica.plan.io/boards/3/topics/8478?r=8480 -->
     
     <property name="saxon.dir"        location="java/lib" description="relative path from stylesheets directory"/>
-    <property name="saxon.jar"           value="saxon-he-11.4.jar"/><!-- previously saxon-he-10.6.jar saxon9he.jar -->
-    <property name="xmlresolver.jar"     value="xmlresolver-4.4.3.jar"/><!-- required with saxon-he-11+.jar -->
+    <property name="saxon.jar"           value="saxon-he-12.1.jar "/><!-- previously saxon-he-11.4.jar saxon-he-10.6.jar saxon9he.jar -->
+    <property name="xmlresolver.jar"     value="xmlresolver-5.1.1.jar"/><!-- required with saxon-he-11+.jar -->
     
     <property name=   "node.exe" value="node.exe"/>
 
@@ -129,8 +129,10 @@ POSSIBILITY OF SUCH DAMAGE.
     </target>
     <target name="get.saxon.check">
         <condition property="saxon.found" else="false">
-            <available file="${saxon.dir}/${saxon.jar}"/>
-            <available file="${saxon.dir}/${xmlresolver.jar}"/>
+            <and>
+                <available file="${saxon.dir}/${saxon.jar}"/>
+                <available file="${saxon.dir}/${xmlresolver.jar}"/>
+            </and>
         </condition>
         <echo message="found ${saxon.dir}/${saxon.jar} and ${saxon.dir}/${xmlresolver.jar}: ${saxon.found}"/>
     </target>
@@ -220,17 +222,20 @@ POSSIBILITY OF SUCH DAMAGE.
     <property name="X3dSchemaSource3.0" value="x3d-3.0.xsd"/>
     <!-- Current official X3D Unified Object Model (X3DUOM) source file is version 3.3, development testing underway for 4.0 -->
     <property name="X3dUnifiedObjectModel"    value="X3dUnifiedObjectModel-4.0.xml"/><!-- default for X3DJSAIL -->
-    <property name="X3dUnifiedObjectModel4.0" value="X3dUnifiedObjectModel-4.0.xml"/><!-- draft, experimental  -->
+    <property name="X3dUnifiedObjectModel4.0" value="X3dUnifiedObjectModel-4.0.xml"/><!-- matches X3D 4.0 spec -->
     <property name="X3dUnifiedObjectModel3.3" value="X3dUnifiedObjectModel-3.3.xml"/>
     <property name="X3dUnifiedObjectModel3.2" value="X3dUnifiedObjectModel-3.2.xml"/>
     <property name="X3dUnifiedObjectModel3.1" value="X3dUnifiedObjectModel-3.1.xml"/>
     <property name="X3dUnifiedObjectModel3.0" value="X3dUnifiedObjectModel-3.0.xml"/>
+    <property name="X3duomGlossary4.0" value="glossary"/><!-- add .xml .xsd .html; matches X3D 4.0 spec -->
 
     <!-- target tasks ===================================================================== -->
 
     <target name="all" depends="versions,build,upload,upload.SpecificationInterfaces" description="build, upload XSLT stylesheets and X3dSpecificationInterfaces page">
     </target>
 
+    <target name="all.X3DJSAIL" depends="clean.X3DJSAIL,create.X3DJSAIL" description="clean, build, test X3DJSAIL"/>
+    
     <target name="build" 
             depends="validate,BuildX3dUnifiedObjectModel.saxon.all,BuildSpecificationXmlEncodingFromSchema.saxon,BuildSpecificationVrmlEncodingFromSchema.saxon,BuildSpecificationLanguageBindingJava.saxon,test,BuildAllX3dElementsAttributes.txt,zip.X3dToXhtmlStylesheetExamples"
             description="compile and test XSLT stylesheets">
@@ -848,6 +853,11 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="First create intermediate jar..."/>
         <!-- https://stackoverflow.com/questions/19150811/what-is-a-fat-jar -->
         <jar destfile="${jsail.full.archive.jar.name}.withSignatures" duplicate="preserve" strict="warn">
+            <manifest id="IntermediateJarManifest">
+                <attribute name="Implementation-Vendor" value="Web3D Consortium https://www.web3D.org"/>
+                <attribute name="Implementation-Title" value="X3DJSAIL intermediate jar"/>
+                <attribute name="Implementation-Version" value="4.0"/>
+            </manifest>
             <!-- no need for manifest here, this is an intermediate jar. proper manifest added later. -->
             <!-- add mostly everything -->
             <fileset dir="${X3DJSAIL.relative.dir}">
@@ -1287,6 +1297,43 @@ POSSIBILITY OF SUCH DAMAGE.
         <copy file="${X3dUnifiedObjectModel3.3}" todir="java/lib/specifications/" verbose="true" failonerror="false"/>
     </target>
 
+    <target name="BuildX3duomToHAnimLOA4HierarchyTable" depends="" description="Build Humanoid Animation (HAnim) LOA4 Hierarchy Table">
+        <!-- ========================================= -->
+        <echo message="stylesheet X3duomToHAnimLOA4HierarchyTable.xslt conversion"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
+            <arg value="-warnings:recover" description="recover after writing a warning message"/>
+            <arg value="-o:HAnimLOA4HierarchyTable.txt" description="output-doc"/>
+            <arg value="-s:${X3dUnifiedObjectModel4.0}" description="source-doc"/>
+            <arg value="-xsl:X3duomToHAnimLOA4HierarchyTable.xslt" description="style-doc"/>
+        </java>
+        <echo />
+        <loadfile property="HAnimLOA4HierarchyTable.txt.contents" srcFile="HAnimLOA4HierarchyTable.txt"/>
+        <echo message="${HAnimLOA4HierarchyTable.txt.contents}"/>
+        <echo />
+        <echo message="stylesheet X3duomToHAnimLOA4HierarchyTable.xslt conversion complete"/>
+    </target>
+
+    <target name="BuildX3duomGlossaryToHtml" depends="" description="Build Humanoid Animation (HAnim) LOA4 Hierarchy Table">
+        <!-- ========================================= -->
+        <echo message="stylesheet X3duomGlossaryToHtml.xslt conversion"/>
+        
+        <loadfile property="glossary.xml.contents" srcFile="${specifications.dir}/${X3duomGlossary4.0}.xml"/>
+        <echo message="input ${specifications.dir}/${X3duomGlossary4.0}.xml"/>
+        <echo message="${glossary.xml.contents}"/>
+        <echo />
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
+            <arg value="-warnings:recover" description="recover after writing a warning message"/>
+            <arg value="-o:${specifications.dir}/glossary.html"  description="output-doc"/>
+            <arg value="-s:${specifications.dir}/${X3duomGlossary4.0}.xml" description="source-doc"/>
+            <arg value="-xsl:X3duomGlossaryToHtml.xslt" description="style-doc"/>
+        </java>
+        <echo />
+        <nbbrowse url="file:///${specifications.dir}/${X3duomGlossary4.0}.html" /><!-- only works within NetBeans -->
+        <echo message="stylesheet BuildX3duomGlossaryToHtml.xslt conversion complete"/>
+    </target>
+
     <target name="BuildX3dUnifiedObjectModel.saxon.v4.0" depends="" description="Build  X3D v4.0 object model files in XML format, used in API autogeneration">
         <echo message="Build X3D Unified Object Model (X3DUOM) version 4.0"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
@@ -1395,7 +1442,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <target name="BuildAllX3dElementsAttributes.txt" depends="" description="Exemplar template that builds text version of AllX3dElementsAttributes.xml">
         <!-- TODO add other X3D versions -->
         <!-- ========================================= -->
-        <echo message="stylesheet AllX3dElementsAttributesTextTemplate.xslt"/>
+        <echo message="stylesheet AllX3dElementsAttributesTextTemplate.xslt conversion"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
@@ -1416,6 +1463,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <copy file="AllX3dElementsAttributes3.3.txt"         todir="../../specifications/"  verbose="true" failonerror="false"/>
         <copy file="AllX3dElementsAttributes3.3.xml"         todir="../../specifications/"  verbose="true" failonerror="false"/>
         <!-- ========================================= -->
+        <echo message="stylesheet AllX3dElementsAttributesTextTemplate.xslt conversion complete"/>
     </target>
 
     <target name="BuildSpecificationVrmlEncodingFromSchema.saxon" depends="" description="Build X3D specification Classic VRML encoding clause 6 Encoding of Nodes" >

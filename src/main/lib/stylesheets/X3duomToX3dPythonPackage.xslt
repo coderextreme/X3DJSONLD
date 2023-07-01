@@ -261,7 +261,8 @@ _DEBUG = False       # options True False
                     <xsl:text>,</xsl:text>
                 </xsl:if>
                 <xsl:if test="(string-length(@appinfo) > 0)">
-                    <xsl:text> # </xsl:text>
+                    <!-- https://peps.python.org/pep-0008/#inline-comments -->
+                    <xsl:text>  # </xsl:text>
                     <xsl:value-of select="@appinfo"/>
                 </xsl:if>
             </xsl:for-each>
@@ -339,7 +340,7 @@ class _X3DField:
     @classmethod
     def SPECIFICATION_URL(cls):
         """ Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. """
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/fieldTypes.html#X3DField'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/fieldTypes.html#X3DField'
     @classmethod
     def TOOLTIP_URL(cls):
         """ X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. """
@@ -383,7 +384,7 @@ class _X3DArrayField(_X3DField):
     @classmethod
     def SPECIFICATION_URL(cls):
         """ Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. """
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/fieldTypes.html#X3DArrayField'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/fieldTypes.html#X3DArrayField'
 
 def isX3DField(value):
     """
@@ -400,7 +401,7 @@ class AccessType(_X3DField):
     @classmethod
     def SPECIFICATION_URL(cls):
         """ Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. """
-        return 'https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#FieldSemantics'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/concepts.html#FieldSemantics'
     @classmethod
     def TOOLTIP_URL(cls):
         """ X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. """
@@ -435,7 +436,7 @@ class FieldType(_X3DField):
     @classmethod
     def SPECIFICATION_URL(cls):
         """ Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. """
-        return 'https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/fieldsDef.html'
     @classmethod
     def TOOLTIP_URL(cls):
         """ X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. """
@@ -527,7 +528,7 @@ class _X3DStatement:
     @classmethod
     def SPECIFICATION_URL(cls):
         """ Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. """
-        return 'https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/core.html#AbstractX3DStructure'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/core.html#AbstractX3DStructure'
     @classmethod
     def TOOLTIP_URL(cls):
         """ X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. """
@@ -618,7 +619,7 @@ class Comment(_X3DStatement):
     @classmethod
     def SPECIFICATION_URL(cls):
         """ Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. """
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/components/core.html#Organization'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/core.html#Organization'
     @classmethod
     def TOOLTIP_URL(cls):
         """ X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. """
@@ -2053,7 +2054,8 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <xsl:value-of select="substring-after (@regex,'true|false')"/>
                 <xsl:value-of select="$regexSuffix"/>
                 <xsl:text>'</xsl:text>
-                <xsl:text> # (less than fully strict Python: allows lower-case strings true, false)</xsl:text>
+                <!-- https://peps.python.org/pep-0008/#inline-comments -->
+                <xsl:text>  # (less than fully strict Python: allows lower-case strings true, false)</xsl:text>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:value-of select="$regexModified"/>
@@ -2863,12 +2865,14 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             <xsl:when test="starts-with($elementName, 'Metadata') or contains($elementName, 'Layout') or contains($elementName, 'Shader') or contains($elementName, 'RigidBody')">
                 <xsl:text>)</xsl:text>
                 <xsl:text>:</xsl:text>
-                <xsl:text> # </xsl:text>
+                <!-- https://peps.python.org/pep-0008/#inline-comments -->
+                <xsl:text>  # </xsl:text>
                 <xsl:for-each select=".//AdditionalInheritance">
                     <xsl:text>, _</xsl:text>
                     <xsl:value-of select="@baseType"/>
                 </xsl:for-each>
-                <xsl:text> # TODO fix additional inheritance method resolution order (MRO)</xsl:text>
+                <!-- https://peps.python.org/pep-0008/#inline-comments -->
+                <xsl:text>  # TODO fix additional inheritance method resolution order (MRO)</xsl:text>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:for-each select=".//AdditionalInheritance">
@@ -3563,7 +3567,8 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <xsl:choose>
                     <xsl:when test="(string-length(@default) > 0)">
                         <xsl:value-of select="$defaultValue"/>
-                        <xsl:text> # default</xsl:text>
+                        <!-- https://peps.python.org/pep-0008/#inline-comments -->
+                        <xsl:text>  # default</xsl:text>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="@type"/>
@@ -3923,7 +3928,8 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                                 <xsl:text>self.</xsl:text>
                                 <xsl:value-of select="$fieldName"/>
                                 <xsl:text>:</xsl:text>
-                                <xsl:text> # default=</xsl:text>
+                                <!-- https://peps.python.org/pep-0008/#inline-comments -->
+                                <xsl:text>  # default=</xsl:text>
                                 <xsl:value-of select="@default"/>
                             </xsl:when>
                             <xsl:when test="not(@type = 'SFString') or (string-length(@default) > 0)">
@@ -4269,7 +4275,8 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                                 <xsl:text>self.</xsl:text>
                                 <xsl:value-of select="$fieldName"/>
                                 <xsl:text>:</xsl:text>
-                                <xsl:text> # default=</xsl:text>
+                                <!-- https://peps.python.org/pep-0008/#inline-comments -->
+                                <xsl:text>  # default=</xsl:text>
                                 <xsl:value-of select="@default"/>
                             </xsl:when>
                             <xsl:when test="not(@type = 'SFString') or (string-length(@default) > 0)">
@@ -4335,7 +4342,8 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <xsl:value-of select="$indent"/>
                 <xsl:text>  </xsl:text>
                 <xsl:text>" + '}</xsl:text>
-            <!--<xsl:text> # after adding attributeResult </xsl:text> debug -->
+                <!-- https://peps.python.org/pep-0008/#inline-comments -->
+            <!--<xsl:text>  # after adding attributeResult </xsl:text> debug -->
                 <xsl:text>\n'</xsl:text>
                 
                 <!-- close element -->
@@ -4349,7 +4357,8 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <xsl:if test="(count(following-sibling::*) > 0)">
                     <xsl:text>,</xsl:text>
                 </xsl:if>
-            <!--<xsl:text> # </xsl:text><xsl:value-of select="$elementName"/><xsl:text> element singleton complete</xsl:text> debug -->
+                <!-- https://peps.python.org/pep-0008/#inline-comments -->
+            <!--<xsl:text>  # </xsl:text><xsl:value-of select="$elementName"/><xsl:text> element singleton complete</xsl:text> debug -->
                 <xsl:text>' + '\n'
             else:
                 raise X3DValueError('.toJSON(syntax=' + syntax + ') is incorrect, allowed value is "JSON"')
@@ -4590,6 +4599,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                                 <xsl:text>self.</xsl:text>
                                 <xsl:value-of select="$fieldName"/>
                                 <xsl:text>:</xsl:text>
+                                <!-- https://peps.python.org/pep-0008/#inline-comments -->
                                 <xsl:text> # default=</xsl:text>
                                 <xsl:value-of select="@default"/>
                             </xsl:when>
