@@ -216,6 +216,9 @@ JavaSerializer.prototype = {
 							) {
 								method = "add"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
 							} else if (method === "addValue") {
+								if (attrs[a].nodeValue == "metadata") {
+									method = "addMetadata";
+								}
 							} else {
 								method = "set"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
 							}
@@ -279,7 +282,6 @@ JavaSerializer.prototype = {
 			method = "Metadata"
 			addpre = "add";
 		}
-		/*
 		if (node.nodeName === 'MetadataSet' && addpre+method === "addValue") {
 			method = "Metadata"
 			addpre = "set";
@@ -288,7 +290,6 @@ JavaSerializer.prototype = {
 			method = "Metadata"
 			addpre = "set";
 		}
-		*/
 		if (element.nodeName === 'HAnimHumanoid' && addpre+method === "addValue") {
 			method = "Metadata"
 			addpre = "set";

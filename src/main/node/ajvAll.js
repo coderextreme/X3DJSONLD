@@ -50,6 +50,7 @@ exports.fullFormats = {
     // unchecked string payload
     binary: true,
 };
+window.fullFormats = exports.fullFormats;
 exports.fastFormats = {
     ...exports.fullFormats,
     date: fmtDef(/^\d\d\d\d-[0-1]\d-[0-3]\d$/, compareDate),
