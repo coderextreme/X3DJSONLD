@@ -55,7 +55,7 @@ TODO:
 <xsl:variable name="X3dTooltipsFile"><xsl:text>x3d-3.3.profile.xml</xsl:text></xsl:variable>
 
 <xsl:variable name="specificationIndexUrl">
-    <xsl:text>https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/</xsl:text>
+    <xsl:text>https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/</xsl:text>
 </xsl:variable>
 
 <xsl:variable name="includeAbstractSpecLinks" select="false()"/>
