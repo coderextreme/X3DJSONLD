@@ -2,7 +2,7 @@
 
 if (typeof xmldom === 'undefined') {
 	var xmldom = require('@xmldom/xmldom');
-	var XMLSerializer = new xmldom.XMLSerializer();
+	var XMLSerializer = xmldom.XMLSerializer;
 }
 
 function DOMSerializer() {

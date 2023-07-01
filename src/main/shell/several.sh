@@ -44,7 +44,8 @@ for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$
 do
 	pushd `dirname $i`
 	echo $i
- 	javac -J-Xss1g -J-Xmx4g `basename $i`
+	echo javac -J-Xss1g -J-Xmx4g `basename $i`
+	javac -J-Xss1g -J-Xmx4g `basename $i`
 	popd
 done
 
