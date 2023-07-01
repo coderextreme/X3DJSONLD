@@ -118,41 +118,31 @@ function filter(event) {
 	});
 }
 
-function load_X_ITE_XML(content, selector) {
-	X3D(function() {
-		var browser = X3D.getBrowser(selector);
-		browser.replaceWorld(browser.createX3DFromString(content));
-	}, function() {
-		alert("Failed to render XML to X_ITE");
-	});
+async function load_X_ITE_XML(content, selector) {
+	await X3D();
+	var browser = X3D.getBrowser(selector);
+	if (typeof browser !== 'undefined' && typeof browser.createX3DFromString !== 'undefined') {
+		var importedScene = await browser.createX3DFromString(content);
+		await browser.replaceWorld(importedScene);
+	}
 }
 
-window.load_X_ITE_DOM = function load_X_ITE_DOM(element, selector) {
-	X3D(function() {
-		if (typeof X3D.getBrowser !== 'undefined') {
-			var browser = X3D.getBrowser(selector);
-			if (typeof browser !== 'undefined' && typeof browser.importDocument !== 'undefined') {
-				var importedScene = browser.importDocument(element);
-				browser.replaceWorld(importedScene);
-			}
-		}
-	}, function() {
-		alert("Failed to render DOM to X_ITE");
-	});
+window.load_X_ITE_DOM = async function load_X_ITE_DOM(element, selector) {
+	await X3D();
+	var browser = X3D.getBrowser(selector);
+	if (typeof browser !== 'undefined' && typeof browser.importDocument !== 'undefined') {
+		var importedScene = await browser.importDocument(element);
+		await browser.replaceWorld(importedScene);
+	}
 }
 
-window.load_X_ITE_JS = function load_X_ITE_JS(jsobj, selector) {
-	X3D(function() {
-		if (typeof X3D.getBrowser !== 'undefined') {
-			var browser = X3D.getBrowser(selector);
-			if (typeof browser !== 'undefined' && typeof browser.importJS !== 'undefined') {
-				var importedScene = browser.importJS(jsobj);
-				browser.replaceWorld(importedScene);
-			}
-		}
-	}, function() {
-		alert("Failed to render JSON to X_ITE");
-	});
+window.load_X_ITE_JS = async function load_X_ITE_JS(jsobj, selector) {
+	await X3D();
+	var browser = X3D.getBrowser(selector);
+	if (typeof browser !== 'undefined' && typeof browser.importJS !== 'undefined') {
+		var importedScene = await browser.importJS(jsobj);
+		await browser.replaceWorld(importedScene);
+	}
 }
 
 if (typeof mapToMethod !== 'undefined') {
