@@ -1,8 +1,8 @@
 async function loadJson(url) {
 	var response = await fetch(url);
 	var json = await response.json();
-	updateFromJson(json, url);
-	updateXml(json, url);
+	await updateFromJson(json, url);
+	await updateXml(json, url);
 }
 
 $(document).ready(function() {

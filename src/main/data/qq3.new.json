@@ -40,7 +40,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 June 2023"
+            "@content":"01 July 2023"
           },
           {
             "@name":"generator",
@@ -75,6 +75,7 @@
                                     "-appearance":
                                       { "Appearance":
                                         {
+                                          "@DEF":"ShapeLeftDown",
                                           "-material":
                                             { "Material":
                                               {
@@ -86,6 +87,7 @@
                                     "-geometry":
                                       { "Extrusion":
                                         {
+                                          "@DEF":"ShapeLeftDown",
                                           "@creaseAngle":0.785,
                                           "@crossSection":[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0],
                                           "@spine":[-2.5,0,0,-1.5,0,0]
@@ -109,6 +111,7 @@
                                     "-appearance":
                                       { "Appearance":
                                         {
+                                          "@DEF":"ShapeUpRight",
                                           "-material":
                                             { "Material":
                                               {
@@ -120,6 +123,7 @@
                                     "-geometry":
                                       { "Extrusion":
                                         {
+                                          "@DEF":"ShapeUpRight",
                                           "@creaseAngle":0.785,
                                           "@crossSection":[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0],
                                           "@spine":[1.5,0,0,2.5,0,0]

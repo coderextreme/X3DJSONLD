@@ -147,17 +147,17 @@ public class Filters
           .addChild(new SpatialSound("Audio1").setDistanceModel("INVERSE")
             .addChild(new Gain().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS").setHtmlID("Gain1")
               .addChild(new Analyser().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS").setHtmlID("Analyser1")
-                .addChild(new BiquadFilter().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS").setDetune(50.0).setFrequency(600).setHtmlID("BiquadFilter1").setQualityFactor(30.0).setType("allpass")
+                .addChild(new BiquadFilter().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS").setDetune(50.0).setFrequency(600).setHtmlID("BiquadFilter1").setQualityFactor(30.0).setType("ALLPASS")
                   .addChild(new AudioClip().setDescription("Techno beat").setHtmlID("AudioClip1").setLoop(true).setUrl(new String[] {"sound/techno_beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3"}))))))
           .addChild(new SpatialSound("Audio2").setDistanceModel("INVERSE")
             .addChild(new Gain().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS").setHtmlID("Gain2")
               .addChild(new Analyser().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS").setHtmlID("Analyser2")
-                .addChild(new BiquadFilter().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS").setDetune(15.0).setFrequency(600).setHtmlID("BiquadFilter2").setQualityFactor(15.0).setType("allpass")
+                .addChild(new BiquadFilter().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS").setDetune(15.0).setFrequency(600).setHtmlID("BiquadFilter2").setQualityFactor(15.0).setType("ALLPASS")
                   .addChild(new AudioClip().setDescription("Simple beat").setHtmlID("AudioClip2").setLoop(true).setUrl(new String[] {"sound/beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3"}))))))
           .addChild(new SpatialSound("Audio3").setDistanceModel("INVERSE")
             .addChild(new Gain().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS").setHtmlID("Gain3")
               .addChild(new Analyser().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS").setHtmlID("Analyser3")
-                .addChild(new BiquadFilter().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS").setFrequency(1000).setHtmlID("BiquadFilter3").setQualityFactor(0).setType("allpass")
+                .addChild(new BiquadFilter().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS").setFrequency(1000).setHtmlID("BiquadFilter3").setQualityFactor(0).setType("ALLPASS")
                   .addChild(new AudioClip().setDescription("Wobble loop").setHtmlID("AudioClip3").setLoop(true).setUrl(new String[] {"sound/wobble_loop.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3"}))))))))));
     }
 	// end of initialize() method

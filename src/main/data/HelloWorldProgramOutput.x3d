@@ -246,7 +246,7 @@ function clockTrigger (timeValue)
     <!-- Test success: declarative statement createDeclarativeShapeTests() -->
     <Group DEF='DeclarativeGroupExample'>
       <Shape>
-        <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='"test case"'/>
+        <MetadataString DEF='FindableMetadataStringTest' containerField='metadata' name='findThisNameValue' value='"test case"'/>
         <Appearance DEF='DeclarativeAppearanceExample'>
           <!-- DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance -->
           <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/>

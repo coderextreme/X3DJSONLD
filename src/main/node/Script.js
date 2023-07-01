@@ -222,6 +222,7 @@ class Scripts {
 		classes.log("var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };");
 		classes.log("var SFMatrix4f = x3dom.fields.SFMatrix4f;");
 		classes.log("var SFNode = x3dom.fields.SFNode;");
+		classes.log("var SFRotation = x3dom.fields.SFRotation;");
 		classes.log("var Quaternion = x3dom.fields.Quaternion;");
 
 		classes.log("var SFString = String;");
@@ -253,9 +254,9 @@ class Scripts {
 		classes.log("}");
 		classes.log(this.nodeUtil(selector, true)+" = function(selector, node, field, value) {");
 		classes.log("		if (typeof selector === 'undefined') {");
-		classes.log("			selector = '';");
+		classes.log("			selector = \"\";");
 		classes.log("		} else {");
-		classes.log("			selector = selector+' ';");
+		classes.log("			selector = selector+\" \";");
 		classes.log("		}");
 		classes.log("		selector = selector+\"[DEF='\"+node+\"']\";");
 		/*
@@ -340,7 +341,7 @@ class Scripts {
 	}
 
 	nodeUtil(selector, noTrail) {
-		return "X3DJSON.nodeUtil"+(noTrail ? "" : "('"+selector+"','");
+		return "X3DJSON.nodeUtil"+(noTrail ? "" : "(\""+selector+"\",\"");
 	}
 
 	doRoute(mypackage, fromNode, fromField, toNode, toField, log, set, changed, selector, url) {
@@ -348,11 +349,11 @@ class Scripts {
 		var toScript = mypackage.find(toNode);
 		// only add routes with scripts involved
 		if (typeof fromScript !== 'undefined' || typeof toScript !== 'undefined') {
-			var from =			 this.nodeUtil(selector)+fromNode+"','"+fromField+"')";
+			var from =			 this.nodeUtil(selector)+fromNode+"\",\""+fromField+"\")";
 			if (typeof fromScript !== 'undefined') {
 				from = 'typeof '+this.useX3DJSON('Obj', selector, url, fromScript.name)+'.'+fromField+changed+' === "function" ? '+this.useX3DJSON('Obj', selector, url, fromScript.name) + '.'+fromField+changed+'() : '+this.useX3DJSON('Obj', selector, url, fromScript.name) + '.'+fromField;
 			}
-			var to = 			this.nodeUtil(selector)+toNode+"','"+toField+"',";
+			var to = 			this.nodeUtil(selector)+toNode+"\",\""+toField+"\",";
 			if (typeof toScript !== 'undefined') {
 				to = this.useX3DJSON('Obj', selector, url, toScript.name) + '.'+set+toField+'(';
 			}
@@ -387,8 +388,8 @@ class Scripts {
 		var fromScript = mypackage.find(fromNode);
 		// var fromRoute = fromNode+":"+fromField+":"+toNode+":"+toField+":FROM";
 		if (typeof fromScript === 'undefined') {
-			routecode.log("    if ("+this.nodeUtil(selector)+fromNode+"')) {")
-				routecode.log(this.nodeUtil(selector)+fromNode+"').addEventListener('outputchange', function(event) {");
+			routecode.log("    if ("+this.nodeUtil(selector)+fromNode+"\")) {")
+				routecode.log(this.nodeUtil(selector)+fromNode+"\").addEventListener('outputchange', function(event) {");
 				this.doRoute(mypackage, fromNode, fromField, toNode, toField, routecode, set, changed, selector, url);
 				routecode.log("}, false);");	
 			routecode.log("}");	
@@ -403,7 +404,7 @@ class Scripts {
 			routecode.log("var config = { attributes: true, childList: true, attributeFilter:['"+fromField+"'] };");	
 			// it's a real node
 			try {
-				routecode.log(this.useX3DJSON('ROUTE', selector, url, fromRoute)+".observe("+this.nodeUtil(selector)+fromNode+"'), config);");
+				routecode.log(this.useX3DJSON('ROUTE', selector, url, fromRoute)+".observe("+this.nodeUtil(selector)+fromNode+"\"), config);");
 			} catch (e) {
 				console.error("Error creating observe", e);
 			}
@@ -479,12 +480,12 @@ class Scripts {
 					var USE = firstNode[key]["@USE"];
 				}
 				if (typeof USE === 'string') {
-					return this.nodeUtil(selector)+USE+"')";
+					return this.nodeUtil(selector)+USE+"\")";
 				} else {
 					for (var key in firstNode) {
 						var DEF = firstNode[key]["@DEF"];
 					}
-					return this.nodeUtil(selector)+DEF+"')";
+					return this.nodeUtil(selector)+DEF+"\")";
 				}
 			}
 		}
@@ -713,9 +714,9 @@ class Scripts {
 							}
 						}
 						var pattern = '(\\b)'+n+'[ \t\r\n]*\.?[ \t\r\n]*([A-Za-z0-9_$]+)?[ \t\r\n]*=([^;]*);';
-						body = body.replace(new RegExp(pattern, 'g'), "$1"+this.nodeUtil(selector)+USE+"', '$2', $3);");
+						body = body.replace(new RegExp(pattern, 'g'), "$1"+this.nodeUtil(selector)+USE+"\", \"$2\", $3);");
 						pattern = '(\\b)'+n+'[ \t\r\n]*\.?[ \t\r\n]*([A-Za-z0-9_$]+)?(\\b)';
-						body = body.replace(new RegExp(pattern, 'g'), "$1"+this.nodeUtil(selector)+USE+"', '$2')$3");
+						body = body.replace(new RegExp(pattern, 'g'), "$1"+this.nodeUtil(selector)+USE+"\", \"$2\")$3");
 					} else {
 						var pattern = '((?!var).)(\\b)+('+n+')(\\b)';
 						body = body.replace(new RegExp(pattern, 'g'), "$1$2this.proxy.$3$4");

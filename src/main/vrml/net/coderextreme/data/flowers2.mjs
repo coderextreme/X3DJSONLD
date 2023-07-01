@@ -74,8 +74,8 @@ Group15.children = new MFNode();
 
 Group15.children[0] = DirectionalLight16;
 
-let ProtoDeclare17 = browser.createX3DFromString(`<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+let ProtoDeclare17 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="orbit" ><ProtoInterface><field name="translation" accessType="inputOutput" type="SFVec3f" value="-8 0 0"></field>
 <field name="diffuseColor" accessType="inputOutput" type="SFColor" value="1 0.5 0"></field>
 <field name="specularColor" accessType="inputOutput" type="SFColor" value="1 0.5 0"></field>

@@ -38,6 +38,7 @@ var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); }
 var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4f = x3dom.fields.SFMatrix4f;
 var SFNode = x3dom.fields.SFNode;
+var SFRotation = x3dom.fields.SFRotation;
 var Quaternion = x3dom.fields.Quaternion;
 var SFString = String;
 var SFTime = Number;
@@ -66,9 +67,9 @@ if (typeof $ !== 'function') {
 }
 X3DJSON.nodeUtil = function(selector, node, field, value) {
 		if (typeof selector === 'undefined') {
-			selector = '';
+			selector = "";
 		} else {
-			selector = selector+' ';
+			selector = selector+" ";
 		}
 		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
@@ -366,26 +367,26 @@ X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDispla
 X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript']);
 }
 if (typeof X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].initialize();
-    if (X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor')) {
-X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].setPlaneSensorIsActive(X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor','isActive'), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor")) {
+X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].setPlaneSensorIsActive(X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor","isActive"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].setPlaneSensorIsActive(X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor','isActive'), __eventTime);
-    if (X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor')) {
-X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].setPlaneSensorTranslation(X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor','translation'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].setPlaneSensorIsActive(X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor","isActive"), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor")) {
+X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].setPlaneSensorTranslation(X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor","translation"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].setPlaneSensorTranslation(X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor','translation'), __eventTime);
-    if (X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_MovementVisibilitySensor')) {
-X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_MovementVisibilitySensor').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].setIsVisible(X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_MovementVisibilitySensor','isActive'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].setPlaneSensorTranslation(X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor","translation"), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_MovementVisibilitySensor")) {
+X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_MovementVisibilitySensor").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].setIsVisible(X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_MovementVisibilitySensor","isActive"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].setIsVisible(X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_MovementVisibilitySensor','isActive'), __eventTime);
-    if (X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor')) {
-X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].setIsVisible(X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_MovementVisibilitySensor","isActive"), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor")) {
+X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor").addEventListener('outputchange', function(event) {
 }, false);
 }
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -406,10 +407,10 @@ X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDispla
 }
 X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript']['ACTION']['translationChanged'].push(function(property, value) {
 		if (property === 'translationChanged') {
-			X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_MovableLocation','translation',typeof X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationChanged === "function" ? X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationChanged() : X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationChanged, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_MovableLocation","translation",typeof X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationChanged === "function" ? X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationChanged() : X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationChanged, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_MovableLocation','translation',typeof X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationChanged === "function" ? X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationChanged() : X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationChanged, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_MovableLocation","translation",typeof X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationChanged === "function" ? X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationChanged() : X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationChanged, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -428,20 +429,20 @@ X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDispla
 }
 X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript']['ACTION']['translationOffsetChanged'].push(function(property, value) {
 		if (property === 'translationOffsetChanged') {
-			X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor','offset',typeof X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationOffsetChanged === "function" ? X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationOffsetChanged() : X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationOffsetChanged, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor","offset",typeof X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationOffsetChanged === "function" ? X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationOffsetChanged() : X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationOffsetChanged, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor','offset',typeof X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationOffsetChanged === "function" ? X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationOffsetChanged() : X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationOffsetChanged, __eventTime);
-    if (X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_WhereSensor')) {
-X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_WhereSensor').addEventListener('outputchange', function(event) {
+			X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor","offset",typeof X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationOffsetChanged === "function" ? X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationOffsetChanged() : X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationOffsetChanged, __eventTime);
+    if (X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_WhereSensor")) {
+X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_WhereSensor").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_WhereSensor')) {
-X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_WhereSensor').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_WhereSensor")) {
+X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_WhereSensor").addEventListener('outputchange', function(event) {
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].setPlaneSensorIsActive(X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor','isActive'), __eventTime);
-			X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].setPlaneSensorTranslation(X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor','translation'), __eventTime);
-			X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].setIsVisible(X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_MovementVisibilitySensor','isActive'), __eventTime);
-			X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_MovableLocation','translation',typeof X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationChanged === "function" ? X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationChanged() : X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationChanged, __eventTime);
-			X3DJSON.nodeUtil('Scene','DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor','offset',typeof X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationOffsetChanged === "function" ? X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationOffsetChanged() : X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationOffsetChanged, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].setPlaneSensorIsActive(X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor","isActive"), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].setPlaneSensorTranslation(X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor","translation"), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].setIsVisible(X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_MovementVisibilitySensor","isActive"), __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_MovableLocation","translation",typeof X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationChanged === "function" ? X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationChanged() : X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationChanged, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLHeadsUpDisplay_HeadsUpDisplayInstance_PlaneMovementSensor","offset",typeof X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationOffsetChanged === "function" ? X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationOffsetChanged() : X3DJSON['Obj']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript'].translationOffsetChanged, __eventTime);

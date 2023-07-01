@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd" ><head><component name="H-Anim" level="1"></component>
 <meta name="title" content="JoeSkinTexcoordDisplacerKick.x3d"></meta>
 <meta name="info" content="Joe No Reservations 20200709 spec root and vc7 hier 20161206 ... 20121221 ... 20040109 x3d/hanim"></meta>
@@ -28,7 +28,7 @@
 <Viewpoint DEF="Scene_SideView" centerOfRotation="0 0.8 0" description="Scene Side View" orientation="0 1 0 1.5708" position="2.6 0.5 0"></Viewpoint>
 <Viewpoint DEF="Scene_BackView" centerOfRotation="0 1.5 0" description="Scene Back View" orientation="0 1 0 3.14" position="0 2.5 -3"></Viewpoint>
 <Viewpoint DEF="Scene_TopView" centerOfRotation="0 1.5 0" description="Scene Top View" orientation="1 0 0 -1.5708" position="0 3.5 0"></Viewpoint>
-<Group DEF="Joe_Humanoid"><HAnimHumanoid name="Human" DEF="Joe_Human" version="1.0"><HAnimJoint name="HumanoidRoot" DEF="Joe_HumanoidRoot" center="0 0.875 0" ulimit="0 0 0" llimit="0 0 0" containerField="skeleton"><MetadataSet containerField="metadata" name="warnings" reference="HAnim"><!--TODO experimental--><MetadataString name="SymmetricalLeftRight" reference="correction options: ignore, warn, average, left, right, largest, smallest" value="&quot;ignore&quot;" containerField="value"></MetadataString>
+<Group DEF="Joe_Humanoid"><HAnimHumanoid name="Human" DEF="Joe_Human" version="2.0"><HAnimJoint name="HumanoidRoot" DEF="Joe_HumanoidRoot" center="0 0.875 0" ulimit="0 0 0" llimit="0 0 0" containerField="skeleton"><MetadataSet containerField="metadata" name="warnings" reference="HAnim"><!--TODO experimental--><MetadataString name="SymmetricalLeftRight" reference="correction options: ignore, warn, average, left, right, largest, smallest" value="&quot;ignore&quot;" containerField="value"></MetadataString>
 </MetadataSet>
 <HAnimSegment name="sacrum" DEF="Joe_sacrum"><HAnimSite name="RootFront_view" DEF="Joe_RootFront_view"><Transform DEF="hanimcordsys" scale="0.175 0.175 0.175"><Viewpoint DEF="ViewBodyRootAxes" description="Joe_HAnim Root HAnimSite Coordinate Axes View"></Viewpoint>
 <Shape DEF="AxisLinesShape"><!--RGB lines showing XYZ axes--><IndexedLineSet containerField="geometry" colorIndex="0 1 2" colorPerVertex="false" coordIndex="0 1 -1 0 2 -1 0 3 -1"><Coordinate containerField="coord" point="0 0 0 1 0 0 0 1 0 0 0 1"></Coordinate>

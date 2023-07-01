@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 June 2023"
+            "@content":"01 July 2023"
           },
           {
             "@name":"generator",
@@ -62,7 +62,7 @@
                 { "ExternProtoDeclare":
                   {
                     "@name":"FlowerProto",
-                    "@url":["../personal/flowerproto.json#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto","https://localhost:3000/src/main/personal/flowerproto.json#FlowerProto"],
+                    "@url":["../personal/flowerproto.json#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto"],
                     "field": [
                       {
                         "@name":"vertex",

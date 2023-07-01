@@ -62,7 +62,7 @@ newModel=X3D(profile='Immersive',version='3.3',
               Viewpoint(description='Nancy diving, view through her goggles',orientation=(0,0,1,3.14),position=(0,0,0))])]),
           Transform(translation=(0,-1,0),
             children=[
-            HAnimHumanoid(DEF='hanim_Nancy',name='Nancy',version='1.0',
+            HAnimHumanoid(DEF='hanim_Nancy',name='Nancy',version='2.0',
               skeleton=[
               HAnimJoint(DEF='hanim_humanoid_root',center=(-0.00405,0.855,-0.000113),name='humanoid_root',ulimit=[0,0,0],llimit=[0,0,0],
                 children=[

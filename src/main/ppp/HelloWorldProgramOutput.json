@@ -101,7 +101,7 @@
         },
         {
           "@name": "modified",
-          "@content": "29 January 2023"
+          "@content": "29 April 2023"
         },
         {
           "@name": "generator",
@@ -157,7 +157,7 @@
         },
         {
           "@name": "translated",
-          "@content": "22 June 2023"
+          "@content": "01 July 2023"
         },
         {
           "@name": "generator",
@@ -792,17 +792,15 @@
             "-children": [
               {
                 "Shape": {
-                  "-value": [
-                    {
-                      "MetadataString": {
-                        "@name": "findThisNameValue",
-                        "@DEF": "FindableMetadataStringTest",
-                        "@value": [
-                          "test case"
-                        ]
-                      }
+                  "-metadata": {
+                    "MetadataString": {
+                      "@name": "findThisNameValue",
+                      "@DEF": "FindableMetadataStringTest",
+                      "@value": [
+                        "test case"
+                      ]
                     }
-                  ],
+                  },
                   "-appearance": {
                     "Appearance": {
                       "@DEF": "DeclarativeAppearanceExample",

@@ -153,7 +153,7 @@ Transform30->setTranslation(new float[3]{0,-1,0});
 CHAnimHumanoid* HAnimHumanoid31 = (CHAnimHumanoid *)(m_pScene.createNode("HAnimHumanoid"));
 HAnimHumanoid31->setName("Nancy");
 HAnimHumanoid31->setDEF("hanim_Nancy");
-HAnimHumanoid31->setVersion("1.0");
+HAnimHumanoid31->setVersion("2.0");
 CHAnimJoint* HAnimJoint32 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint32->setName("humanoid_root");
 HAnimJoint32->setDEF("hanim_humanoid_root");

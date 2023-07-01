@@ -133,7 +133,7 @@ DesignPatternsApparelMedicalSkinLayers.prototype = {
     .addChild((new autoclass.WorldInfo()).setTitle("HAnimHumanoid skin design patterns for apparel, medical"))
     .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.0,0.6,0.6]))))
     .addChild((new autoclass.Group("MultipleHumanoids"))
-      .setValue((new autoclass.MetadataString()).setName("HAnimArchitecture").setReference(this.MetadataString_HAnimArchitecture_4_19_reference).setValue(new autoclass.MFString("\"E.4 Multiple humanoids per file\"")))
+      .setMetadata((new autoclass.MetadataString()).setName("HAnimArchitecture").setReference(this.MetadataString_HAnimArchitecture_4_19_reference).setValue(new autoclass.MFString("\"E.4 Multiple humanoids per file\"")))
       .addComments(" ============================== ")
       .addChild((new autoclass.HAnimHumanoid("a_SimpleSkeleton")).setName("SimpleSkeleton").setVersion("2.0")
         .addSkeleton((new autoclass.HAnimJoint()).setName("humanoid_root").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))

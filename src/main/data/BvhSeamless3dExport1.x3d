@@ -107,7 +107,7 @@ block=false;
         </Script>
       </ProtoBody>
     </ProtoDeclare>
-    <HAnimHumanoid version='1.0'>
+    <HAnimHumanoid version='2.0'>
       <Shape containerField='skin'>
         <Appearance>
           <Material/>

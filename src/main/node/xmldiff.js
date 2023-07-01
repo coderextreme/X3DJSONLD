@@ -110,6 +110,7 @@ function compare(obj1, p1, obj2, p2) {
 			// obj2 has key
 			var p2key = p2+'/'+key;
 			if (typeof obj1[key] === 'undefined') {
+				/*
 				if (key === 'containerField') {
 					str += "@6 "+p2key+"\n";
 					str += ">"+JSON.stringify(obj2[key])+"\n";
@@ -118,6 +119,7 @@ function compare(obj1, p1, obj2, p2) {
 					str += ">"+JSON.stringify(obj2[key])+"\n";
 					finalret = false;
 				}
+				*/
 			}
 		}
 	} else if (!(typeof obj1 === 'undefined' && typeof obj2 === 'undefined')) {

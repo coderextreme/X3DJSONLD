@@ -415,8 +415,8 @@ Group68->addChildren(*ROUTE77);
 
 group->addChildren(*Group68);
 
-CProtoDeclare ProtoDeclare78 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+CProtoDeclare ProtoDeclare78 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="ArtDeco01Material" appinfo="tooltip: ArtDeco01Material prototype is a Material node" ><ProtoInterface><field name="description" accessType="inputOutput" appinfo="tooltip for descriptionField" type="SFString" value="ArtDeco01Material prototype is a Material node"></field>
 <field name="enabled" accessType="inputOutput" type="SFBool" value="true"></field>
 </ProtoInterface>
@@ -576,8 +576,8 @@ EXPORT106->setAS("WorldInfoDEF3");
 EXPORT106->setLocalDEF("WorldInfoDEF");
 group->addChildren(*EXPORT106);
 
-CProtoDeclare ProtoDeclare107 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+CProtoDeclare ProtoDeclare107 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="MaterialModulator" appinfo="mimic a Material node and modulate fields as an animation effect" documentation="http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html" ><ProtoInterface><field name="enabled" accessType="inputOutput" type="SFBool" value="true"></field>
 <field name="diffuseColor" accessType="inputOutput" type="SFColor" value="0 0 0"></field>
 <field name="emissiveColor" accessType="inputOutput" type="SFColor" value="0.05 0.05 0.5"></field>

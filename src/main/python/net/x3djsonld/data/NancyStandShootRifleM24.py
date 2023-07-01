@@ -90,7 +90,7 @@ newModel=X3D(profile='Immersive',version='3.3',
           children=[
           Transform(
             children=[
-            HAnimHumanoid(DEF='hanim_Nancy',name='Nancy',version='1.0',
+            HAnimHumanoid(DEF='hanim_Nancy',name='Nancy',version='2.0',
               skeleton=[
               HAnimJoint(DEF='hanim_humanoid_root',center=(-0.00405,0.855,-0.000113),name='humanoid_root',ulimit=[0,0,0],llimit=[0,0,0],
                 children=[

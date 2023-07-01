@@ -17,12 +17,12 @@
       <!-- DEFS for markers of skeleton joints, segments, and sites -->
       <Transform translation='0 2.1 0'>
         <Shape DEF='HAnimSiteShape'>
-          <Appearance>
+          <Appearance DEF='HAnimSiteShape'>
             <Material diffuseColor='1 1 0' transparency='0.3'/>
           </Appearance>
           <IndexedFaceSet DEF='DiamondIFS' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'>
             <ColorRGBA DEF='HAnimSiteColorRGBA' color='1 1 0 1 1 1 0 0.1'/>
-            <Coordinate point='0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0'/>
+            <Coordinate DEF='DiamondIFS' point='0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>

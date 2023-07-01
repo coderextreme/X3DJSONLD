@@ -56,7 +56,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 June 2023"
+            "@content":"01 July 2023"
           },
           {
             "@name":"generator",
@@ -222,6 +222,7 @@
                                 "-fontStyle":
                                   { "FontStyle":
                                     {
+                                      "@DEF":"TextMessage",
                                       "@justify":["MIDDLE","MIDDLE"]
                                     }
                                   }

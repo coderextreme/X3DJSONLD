@@ -38,6 +38,7 @@ var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); }
 var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4f = x3dom.fields.SFMatrix4f;
 var SFNode = x3dom.fields.SFNode;
+var SFRotation = x3dom.fields.SFRotation;
 var Quaternion = x3dom.fields.Quaternion;
 var SFString = String;
 var SFTime = Number;
@@ -66,9 +67,9 @@ if (typeof $ !== 'function') {
 }
 X3DJSON.nodeUtil = function(selector, node, field, value) {
 		if (typeof selector === 'undefined') {
-			selector = '';
+			selector = "";
 		} else {
-			selector = selector+' ';
+			selector = selector+" ";
 		}
 		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
@@ -475,20 +476,20 @@ X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngin
 X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine']['ACTION'],X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine']);
 }
 if (typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].initialize === "function") X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].initialize();
-    if (X3DJSON.nodeUtil('Scene','TextTouchSensor')) {
-X3DJSON.nodeUtil('Scene','TextTouchSensor').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","TextTouchSensor")) {
+X3DJSON.nodeUtil("Scene","TextTouchSensor").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','Clock')) {
-X3DJSON.nodeUtil('Scene','Clock').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","Clock")) {
+X3DJSON.nodeUtil("Scene","Clock").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','TimingSequencer')) {
-X3DJSON.nodeUtil('Scene','TimingSequencer').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].set_timeEvent(X3DJSON.nodeUtil('Scene','TimingSequencer','value'), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","TimingSequencer")) {
+X3DJSON.nodeUtil("Scene","TimingSequencer").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].set_timeEvent(X3DJSON.nodeUtil("Scene","TimingSequencer","value"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].set_timeEvent(X3DJSON.nodeUtil('Scene','TimingSequencer','value'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].set_timeEvent(X3DJSON.nodeUtil("Scene","TimingSequencer","value"), __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -507,10 +508,10 @@ X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngin
 }
 X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine']['ACTION']['bindView1'].push(function(property, value) {
 		if (property === 'bindView1') {
-			X3DJSON.nodeUtil('Scene','View1','bind',typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView1 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView1() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView1, __eventTime);
+			X3DJSON.nodeUtil("Scene","View1","bind",typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView1 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView1() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView1, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','View1','bind',typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView1 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView1() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView1, __eventTime);
+			X3DJSON.nodeUtil("Scene","View1","bind",typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView1 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView1() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView1, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -529,10 +530,10 @@ X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngin
 }
 X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine']['ACTION']['bindView2'].push(function(property, value) {
 		if (property === 'bindView2') {
-			X3DJSON.nodeUtil('Scene','View2','bind',typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView2 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView2() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView2, __eventTime);
+			X3DJSON.nodeUtil("Scene","View2","bind",typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView2 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView2() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView2, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','View2','bind',typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView2 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView2() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView2, __eventTime);
+			X3DJSON.nodeUtil("Scene","View2","bind",typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView2 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView2() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView2, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -551,10 +552,10 @@ X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngin
 }
 X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine']['ACTION']['bindView3'].push(function(property, value) {
 		if (property === 'bindView3') {
-			X3DJSON.nodeUtil('Scene','View3','bind',typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView3 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView3() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView3, __eventTime);
+			X3DJSON.nodeUtil("Scene","View3","bind",typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView3 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView3() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView3, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','View3','bind',typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView3 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView3() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView3, __eventTime);
+			X3DJSON.nodeUtil("Scene","View3","bind",typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView3 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView3() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView3, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -573,10 +574,10 @@ X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngin
 }
 X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine']['ACTION']['bindView4'].push(function(property, value) {
 		if (property === 'bindView4') {
-			X3DJSON.nodeUtil('Scene','View4','bind',typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView4 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView4() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView4, __eventTime);
+			X3DJSON.nodeUtil("Scene","View4","bind",typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView4 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView4() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView4, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','View4','bind',typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView4 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView4() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView4, __eventTime);
+			X3DJSON.nodeUtil("Scene","View4","bind",typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView4 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView4() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView4, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -595,41 +596,41 @@ X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngin
 }
 X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine']['ACTION']['bindView5'].push(function(property, value) {
 		if (property === 'bindView5') {
-			X3DJSON.nodeUtil('Scene','ClickToAnimateView','bind',typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView5 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView5() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView5, __eventTime);
+			X3DJSON.nodeUtil("Scene","ClickToAnimateView","bind",typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView5 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView5() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView5, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','ClickToAnimateView','bind',typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView5 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView5() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView5, __eventTime);
-    if (X3DJSON.nodeUtil('Scene','View1')) {
-X3DJSON.nodeUtil('Scene','View1').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].view1Bound(X3DJSON.nodeUtil('Scene','View1','isBound'), __eventTime);
+			X3DJSON.nodeUtil("Scene","ClickToAnimateView","bind",typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView5 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView5() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView5, __eventTime);
+    if (X3DJSON.nodeUtil("Scene","View1")) {
+X3DJSON.nodeUtil("Scene","View1").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].view1Bound(X3DJSON.nodeUtil("Scene","View1","isBound"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].view1Bound(X3DJSON.nodeUtil('Scene','View1','isBound'), __eventTime);
-    if (X3DJSON.nodeUtil('Scene','View2')) {
-X3DJSON.nodeUtil('Scene','View2').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].view2Bound(X3DJSON.nodeUtil('Scene','View2','isBound'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].view1Bound(X3DJSON.nodeUtil("Scene","View1","isBound"), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","View2")) {
+X3DJSON.nodeUtil("Scene","View2").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].view2Bound(X3DJSON.nodeUtil("Scene","View2","isBound"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].view2Bound(X3DJSON.nodeUtil('Scene','View2','isBound'), __eventTime);
-    if (X3DJSON.nodeUtil('Scene','View3')) {
-X3DJSON.nodeUtil('Scene','View3').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].view3Bound(X3DJSON.nodeUtil('Scene','View3','isBound'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].view2Bound(X3DJSON.nodeUtil("Scene","View2","isBound"), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","View3")) {
+X3DJSON.nodeUtil("Scene","View3").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].view3Bound(X3DJSON.nodeUtil("Scene","View3","isBound"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].view3Bound(X3DJSON.nodeUtil('Scene','View3','isBound'), __eventTime);
-    if (X3DJSON.nodeUtil('Scene','View4')) {
-X3DJSON.nodeUtil('Scene','View4').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].view4Bound(X3DJSON.nodeUtil('Scene','View4','isBound'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].view3Bound(X3DJSON.nodeUtil("Scene","View3","isBound"), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","View4")) {
+X3DJSON.nodeUtil("Scene","View4").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].view4Bound(X3DJSON.nodeUtil("Scene","View4","isBound"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].view4Bound(X3DJSON.nodeUtil('Scene','View4','isBound'), __eventTime);
-			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].set_timeEvent(X3DJSON.nodeUtil('Scene','TimingSequencer','value'), __eventTime);
-			X3DJSON.nodeUtil('Scene','View1','bind',typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView1 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView1() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView1, __eventTime);
-			X3DJSON.nodeUtil('Scene','View2','bind',typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView2 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView2() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView2, __eventTime);
-			X3DJSON.nodeUtil('Scene','View3','bind',typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView3 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView3() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView3, __eventTime);
-			X3DJSON.nodeUtil('Scene','View4','bind',typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView4 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView4() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView4, __eventTime);
-			X3DJSON.nodeUtil('Scene','ClickToAnimateView','bind',typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView5 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView5() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView5, __eventTime);
-			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].view1Bound(X3DJSON.nodeUtil('Scene','View1','isBound'), __eventTime);
-			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].view2Bound(X3DJSON.nodeUtil('Scene','View2','isBound'), __eventTime);
-			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].view3Bound(X3DJSON.nodeUtil('Scene','View3','isBound'), __eventTime);
-			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].view4Bound(X3DJSON.nodeUtil('Scene','View4','isBound'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].view4Bound(X3DJSON.nodeUtil("Scene","View4","isBound"), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].set_timeEvent(X3DJSON.nodeUtil("Scene","TimingSequencer","value"), __eventTime);
+			X3DJSON.nodeUtil("Scene","View1","bind",typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView1 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView1() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView1, __eventTime);
+			X3DJSON.nodeUtil("Scene","View2","bind",typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView2 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView2() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView2, __eventTime);
+			X3DJSON.nodeUtil("Scene","View3","bind",typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView3 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView3() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView3, __eventTime);
+			X3DJSON.nodeUtil("Scene","View4","bind",typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView4 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView4() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView4, __eventTime);
+			X3DJSON.nodeUtil("Scene","ClickToAnimateView","bind",typeof X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView5 === "function" ? X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView5() : X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].bindView5, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].view1Bound(X3DJSON.nodeUtil("Scene","View1","isBound"), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].view2Bound(X3DJSON.nodeUtil("Scene","View2","isBound"), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].view3Bound(X3DJSON.nodeUtil("Scene","View3","isBound"), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/BindingOperations.json']['BindingSequencerEngine'].view4Bound(X3DJSON.nodeUtil("Scene","View4","isBound"), __eventTime);

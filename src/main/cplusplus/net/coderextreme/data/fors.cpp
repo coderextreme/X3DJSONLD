@@ -47,8 +47,8 @@ head1->addMeta(*meta7);
 X3D0->setHead(*head1);
 
 CScene* Scene8 = new CScene();
-CProtoDeclare ProtoDeclare9 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+CProtoDeclare ProtoDeclare9 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="node" ><ProtoInterface><field name="position" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><Transform DEF="transform"><IS><connect nodeField="translation" protoField="position"></connect>
@@ -225,8 +225,8 @@ ProtoDeclare9->setProtoBody(*ProtoBody12);
 
 group->addChildren(*ProtoDeclare9);
 
-CProtoDeclare ProtoDeclare37 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+CProtoDeclare ProtoDeclare37 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="cylinder" ><ProtoInterface><field name="set_positionA" accessType="inputOnly" type="SFVec3f"></field>
 <field name="set_positionB" accessType="inputOnly" type="SFVec3f"></field>
 </ProtoInterface>

@@ -71,7 +71,7 @@ public class TextSpecialCharacters {
           .addComments("backslash \\ is used as escape character for \" (and itself) in X3D")
           .addComments("character entities are listed in HTML specification and are good for any XML")
           .setGeometry(new Text().setDEF("DefaultText").setString(new MFString1().getArray())
-            .setFontStyle(new FontStyle().setDEF("CenteredFontStyle").setJustify(new MFString2().getArray())))
+            .setFontStyle(new FontStyle("DefaultText").setDEF("CenteredFontStyle").setJustify(new MFString2().getArray())))
           .setAppearance(new Appearance()
             .setMaterial(new Material().setDEF("DefaultMaterial").setDiffuseColor(new float[] {0.2f,0.2f,0.2f})))))      ;
     return X3D0;

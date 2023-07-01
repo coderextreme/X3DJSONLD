@@ -43,8 +43,8 @@ Viewpoint9.description = "Cubes on Fire";
 Viewpoint9.position = new SFVec3f(new float[0,0,12]);
 browser.currentScene.children[1] = Viewpoint9;
 
-let ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+let ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="anyShape" ><ProtoInterface><field name="xtranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere containerField="geometry"></Sphere>
 <Appearance><Material diffuseColor="1 1 1"></Material>
@@ -117,8 +117,8 @@ ProtoDeclare10.protoBody = ProtoBody18;
 
 browser.currentScene.children[2] = ProtoDeclare10;
 
-let ProtoDeclare23 = browser.createX3DFromString(`<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+let ProtoDeclare23 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="three" ><ProtoInterface><field name="ytranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Cylinder containerField="geometry"></Cylinder>
 <Appearance><Material diffuseColor="1 1 1"></Material>

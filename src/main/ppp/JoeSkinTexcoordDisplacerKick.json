@@ -79,7 +79,7 @@
         },
         {
           "@name": "translated",
-          "@content": "22 June 2023"
+          "@content": "01 July 2023"
         },
         {
           "@name": "generator",
@@ -270,7 +270,7 @@
                 "HAnimHumanoid": {
                   "@name": "Human",
                   "@DEF": "Joe_Human",
-                  "@version": "1.0",
+                  "@version": "2.0",
                   "-skeleton": [
                     {
                       "HAnimJoint": {

@@ -66,7 +66,7 @@
 </ChannelMerger>
 </Gain>
 </StreamAudioDestination>
-<ChannelSplitter DEF="ChannelSplitter" channelCountMode="explicit" channelInterpretation="SPEAKERS"><AudioClip description="Violin" url="&quot;sound/violin.mp3&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3&quot;"></AudioClip>
+<ChannelSplitter DEF="ChannelSplitter" channelCountMode="EXPLICIT" channelInterpretation="SPEAKERS"><AudioClip description="Violin" url="&quot;sound/violin.mp3&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3&quot;"></AudioClip>
 </ChannelSplitter>
 <Transform DEF="Audio3" rotation="1 0 0 -0.5" translation="0 100 0"><Shape><Appearance DEF="audio_emit5"><Material diffuseColor="0.3 1 0.3" emissiveColor="0.8 0.8 0.8" specularColor="0.01 0.01 0.01"></Material>
 <ImageTexture containerField="texture" url="&quot;images/loudspeaker.png&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png&quot;"></ImageTexture>

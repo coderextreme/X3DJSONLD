@@ -71,8 +71,8 @@ CWorldInfo* WorldInfo13 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
 WorldInfo13->setTitle("Figure31_9SpinGroupPrototype.x3d");
 group->addChildren(*WorldInfo13);
 
-CProtoDeclare ProtoDeclare14 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+CProtoDeclare ProtoDeclare14 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="SpinGroup" ><ProtoInterface><field name="children" accessType="inputOutput" type="MFNode"><!--NULL node initialization--></field>
 <field name="cycleInterval" accessType="inputOutput" type="SFTime" value="1"></field>
 <field name="loop" accessType="inputOutput" type="SFBool" value="false"></field>

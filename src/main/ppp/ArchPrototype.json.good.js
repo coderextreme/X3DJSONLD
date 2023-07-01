@@ -38,6 +38,7 @@ var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); }
 var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4f = x3dom.fields.SFMatrix4f;
 var SFNode = x3dom.fields.SFNode;
+var SFRotation = x3dom.fields.SFRotation;
 var Quaternion = x3dom.fields.Quaternion;
 var SFString = String;
 var SFTime = Number;
@@ -66,9 +67,9 @@ if (typeof $ !== 'function') {
 }
 X3DJSON.nodeUtil = function(selector, node, field, value) {
 		if (typeof selector === 'undefined') {
-			selector = '';
+			selector = "";
 		} else {
-			selector = selector+' ';
+			selector = selector+" ";
 		}
 		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
@@ -768,10 +769,10 @@ X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchIns
 }
 X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['computedScale'].push(function(property, value) {
 		if (property === 'computedScale') {
-			X3DJSON.nodeUtil('Scene','DECLArchPrototype_ArchInstance_ArchTransform','scale',typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLArchPrototype_ArchInstance_ArchTransform","scale",typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','DECLArchPrototype_ArchInstance_ArchTransform','scale',typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLArchPrototype_ArchInstance_ArchTransform","scale",typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -790,10 +791,10 @@ X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchIns
 }
 X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['pointOut'].push(function(property, value) {
 		if (property === 'pointOut') {
-			X3DJSON.nodeUtil('Scene','DECLArchPrototype_ArchInstance_ArchChord','point',typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLArchPrototype_ArchInstance_ArchChord","point",typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','DECLArchPrototype_ArchInstance_ArchChord','point',typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLArchPrototype_ArchInstance_ArchChord","point",typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -812,10 +813,10 @@ X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchIns
 }
 X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript']['ACTION']['indexOut'].push(function(property, value) {
 		if (property === 'indexOut') {
-			X3DJSON.nodeUtil('Scene','DECLArchPrototype_ArchInstance_ArchIndex','coordIndex',typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLArchPrototype_ArchInstance_ArchIndex","coordIndex",typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','DECLArchPrototype_ArchInstance_ArchIndex','coordIndex',typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut, __eventTime);
-			X3DJSON.nodeUtil('Scene','DECLArchPrototype_ArchInstance_ArchTransform','scale',typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale, __eventTime);
-			X3DJSON.nodeUtil('Scene','DECLArchPrototype_ArchInstance_ArchChord','point',typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut, __eventTime);
-			X3DJSON.nodeUtil('Scene','DECLArchPrototype_ArchInstance_ArchIndex','coordIndex',typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLArchPrototype_ArchInstance_ArchIndex","coordIndex",typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLArchPrototype_ArchInstance_ArchTransform","scale",typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].computedScale, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLArchPrototype_ArchInstance_ArchChord","point",typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].pointOut, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLArchPrototype_ArchInstance_ArchIndex","coordIndex",typeof X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut === "function" ? X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut() : X3DJSON['Obj']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_ArchInstance_ArchPrototypeScript'].indexOut, __eventTime);

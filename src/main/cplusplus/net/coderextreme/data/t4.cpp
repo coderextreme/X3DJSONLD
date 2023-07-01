@@ -79,8 +79,8 @@ Viewpoint14->setOrientation(new float[4]{1,0,0,-0.699999988079071});
 Viewpoint14->setFieldOfView(0.785398125648499);
 group->addChildren(*Viewpoint14);
 
-CProtoDeclare ProtoDeclare15 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+CProtoDeclare ProtoDeclare15 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="org" ><ProtoInterface><field name="posi" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 <field name="col" accessType="initializeOnly" type="SFColor" value="0 0 0"></field>
 </ProtoInterface>
@@ -151,8 +151,8 @@ ProtoDeclare15->setProtoBody(*ProtoBody19);
 
 group->addChildren(*ProtoDeclare15);
 
-CProtoDeclare ProtoDeclare29 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+CProtoDeclare ProtoDeclare29 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="r" ><ProtoInterface><field name="pos" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="0 0.300000011920929 1"></fieldValue>
@@ -194,8 +194,8 @@ ProtoDeclare29->setProtoBody(*ProtoBody32);
 
 group->addChildren(*ProtoDeclare29);
 
-CProtoDeclare ProtoDeclare37 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+CProtoDeclare ProtoDeclare37 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="n" ><ProtoInterface><field name="pos" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="1 0 0.200000002980232"></fieldValue>
@@ -237,8 +237,8 @@ ProtoDeclare37->setProtoBody(*ProtoBody40);
 
 group->addChildren(*ProtoDeclare37);
 
-CProtoDeclare ProtoDeclare45 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+CProtoDeclare ProtoDeclare45 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="i" ><ProtoInterface><field name="pos" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="0.600000023841858 0 0.600000023841858"></fieldValue>

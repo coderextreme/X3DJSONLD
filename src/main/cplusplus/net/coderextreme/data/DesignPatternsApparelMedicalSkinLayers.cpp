@@ -106,7 +106,7 @@ CMetadataString* MetadataString21 = (CMetadataString *)(m_pScene.createNode("Met
 MetadataString21->setName("HAnimArchitecture");
 MetadataString21->setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile");
 MetadataString21->setValue(new CString[1]{"E.4 Multiple humanoids per file"}, 1);
-Group20->setValue(*MetadataString21);
+Group20->setMetadata(*MetadataString21);
 
 //==============================
 CHAnimHumanoid* HAnimHumanoid22 = (CHAnimHumanoid *)(m_pScene.createNode("HAnimHumanoid"));

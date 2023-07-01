@@ -69,14 +69,14 @@ public class jumpcut_loadurl {
         .addChild(new Viewpoint().setDEF("Top_View").setDescription("Top View").setOrientation(new float[] {1f,0f,0f,-1.57f}).setPosition(new float[] {0f,10f,0f}))
         .addChild(new TouchSensor().setDEF("STARTER").setDescription("touch to activate"))
         .addChild(new Transform().setDEF("ROOT")
-          .addChild(new Shape()
+          .addChild(new Shape("ROOT")
             .setAppearance(new Appearance()
               .setMaterial(new Material()))
             .setGeometry(new Box())))
         .addChild(new Script().setDEF("MYSCRIPT").setUrl(new MFString3().getArray())
-          .addField(new field().setType("MFString").setName("myParameter").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("\"Top_View\""))
-          .addField(new field().setType("MFString").setName("myUrl").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("\"jumpcut_loadurl.x3d#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View\" \"jumpcut_loadurl.wrl#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View\""))
-          .addField(new field().setType("SFBool").setName("trigger_event").setAccessType(field.ACCESSTYPE_INPUTONLY)))
+          .addField(new field("MYSCRIPT").setType("MFString").setName("myParameter").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("\"Top_View\""))
+          .addField(new field("MYSCRIPT").setType("MFString").setName("myUrl").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("\"jumpcut_loadurl.x3d#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View\" \"jumpcut_loadurl.wrl#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View\""))
+          .addField(new field("MYSCRIPT").setType("SFBool").setName("trigger_event").setAccessType(field.ACCESSTYPE_INPUTONLY)))
         .addChild(new ROUTE().setFromField("isActive").setFromNode("STARTER").setToField("trigger_event").setToNode("MYSCRIPT")))      ;
     return X3D0;
     }

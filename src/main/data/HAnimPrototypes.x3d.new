@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd" ><head><!--Originally these fundamental prototypes were defined in InterchangableActorsViaDynamicRoutingPrototypes.x3d--><meta name="title" content="HAnimPrototypes.x3d"></meta>
 <meta name="description" content="Example implementation of X3D Humanoid Animation (HAnim) nodes using X3D prototypes."></meta>
 <meta name="warning" content="These are developmental examples that can assist X3D player implementations and support interoperability. They are not intended for author use in regular X3D scenes."></meta>

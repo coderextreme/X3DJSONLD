@@ -264,11 +264,11 @@ var X3D0 =  new X3D({
                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))}),
 
                         new HAnimSite({
-                          name : new SFString("buttocks_standing_wall_contact_point_pt"),
-                          DEF : new SFString("hanim_buttocks_standing_wall_contact_point_pt"),
+                          name : new SFString("buttocks_standing_wall_contact_point"),
+                          DEF : new SFString("hanim_buttocks_standing_wall_contact_point"),
                           children : new MFNode([
                             new TouchSensor({
-                              description : new SFString("HAnimSite buttocks_standing_wall_contact_point_pt")}),
+                              description : new SFString("HAnimSite buttocks_standing_wall_contact_point")}),
 
                             new Shape({
                               USE : new SFString("HAnimSiteShape")})])}),
@@ -1434,7 +1434,7 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_r_forearm")}),
               viewpoints : new SFNode(
                 new HAnimSite({
-                  USE : new SFString("hanim_buttocks_standing_wall_contact_point_pt")})]),
+                  USE : new SFString("hanim_buttocks_standing_wall_contact_point")})]),
               viewpoints : new SFNode(
                 new HAnimSite({
                   USE : new SFString("hanim_crotch_pt")})),

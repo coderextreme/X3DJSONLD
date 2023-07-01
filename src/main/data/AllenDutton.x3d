@@ -23,7 +23,7 @@
   <Scene>
     <!-- Start scene graph. -->
     <WorldInfo title='AllenDutton.x3d'/>
-    <HAnimHumanoid DEF='hanim_Humanoid' name='Humanoid' version='1.0'>
+    <HAnimHumanoid DEF='hanim_Humanoid' name='Humanoid' version='2.0'>
       <HAnimJoint DEF='hanim_humanoid_root' center='-0.00405 0.855 -0.000113' containerField='skeleton' name='humanoid_root'>
         <HAnimJoint DEF='hanim_sacroiliac' center='0 1.01 -0.0204' name='sacroiliac'>
           <HAnimSegment DEF='hanim_pelvis' name='pelvis'>

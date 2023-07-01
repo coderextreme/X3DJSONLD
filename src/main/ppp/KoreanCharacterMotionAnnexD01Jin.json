@@ -87,7 +87,7 @@
         },
         {
           "@name": "translated",
-          "@content": "22 June 2023"
+          "@content": "01 July 2023"
         },
         {
           "@name": "generator",
@@ -26318,7 +26318,7 @@
                   "@DEF": "hanim_motion_animation",
                   "@channels": "6 Xposition Yposition Zposition Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation",
                   "@enabled": false,
-                  "@frameCount": 392,
+                  "@totalFrameCount": 392,
                   "@joints": "HumanoidRoot l_hip l_knee l_talocrural r_hip r_knee r_talocrural vl5 IGNORED l_shoulder l_elbow l_radiocarpal IGNORED r_shoulder r_elbow r_radiocarpal IGNORED skullbase",
                   "@values": [
                     102.2373,
@@ -48666,8 +48666,7 @@
                     13.49,
                     -10.77
                   ],
-                  "@skeletalConfiguration": "BASIC",
-                  "@totalFrameCount": 0
+                  "@skeletalConfiguration": "BASIC"
                 }
               }
             ]

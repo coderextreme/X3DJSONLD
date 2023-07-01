@@ -45,7 +45,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.Viewpoint()).setDEF("Scene_BackView").setCenterOfRotation(java.newArray("float", [java.newFloat(0), java.newFloat(1.5), java.newFloat(0)])).setDescription("Scene Back View").setOrientation(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(3.14)])).setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(2.5), java.newFloat(-3)])))
         .addChild((new autoclass.Viewpoint()).setDEF("Scene_TopView").setCenterOfRotation(java.newArray("float", [java.newFloat(0), java.newFloat(1.5), java.newFloat(0)])).setDescription("Scene Top View").setOrientation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(-1.5708)])).setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(3.5), java.newFloat(0)])))
         .addChild((new autoclass.Group()).setDEF("Joe_Humanoid")
-          .addChild((new autoclass.HAnimHumanoid()).setName("Human").setDEF("Joe_Human").setVersion("1.0")
+          .addChild((new autoclass.HAnimHumanoid()).setName("Human").setDEF("Joe_Human").setVersion("2.0")
             .addSkeleton((new autoclass.HAnimJoint()).setName("HumanoidRoot").setDEF("Joe_HumanoidRoot").setCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0.875), java.newFloat(0)])).setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)]))
               .setMetadata((new autoclass.MetadataSet()).setName("warnings").setReference("HAnim")
                 .addComments((new autoclass.CommentsBlock("TODO experimental")))

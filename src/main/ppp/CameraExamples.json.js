@@ -38,6 +38,7 @@ var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); }
 var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4f = x3dom.fields.SFMatrix4f;
 var SFNode = x3dom.fields.SFNode;
+var SFRotation = x3dom.fields.SFRotation;
 var Quaternion = x3dom.fields.Quaternion;
 var SFString = String;
 var SFTime = Number;
@@ -66,9 +67,9 @@ if (typeof $ !== 'function') {
 }
 X3DJSON.nodeUtil = function(selector, node, field, value) {
 		if (typeof selector === 'undefined') {
-			selector = '';
+			selector = "";
 		} else {
-			selector = selector+' ';
+			selector = selector+" ";
 		}
 		selector = selector+"[DEF='"+node+"']";
 		var element = document.querySelector(selector);
@@ -450,7 +451,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		return value;
 	};
 	try {
-		this.offlineRender = X3DJSON.nodeUtil('Scene','undefined');
+		this.offlineRender = X3DJSON.nodeUtil("Scene","undefined");
 	} catch (e) {
 		console.log('Problems setting offlineRender '+e);
 		console.error('Problems setting offlineRender',e);
@@ -468,7 +469,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		return value;
 	};
 	try {
-		this.ViewpointNode = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint');
+		this.ViewpointNode = X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraViewpoint");
 	} catch (e) {
 		console.log('Problems setting ViewpointNode '+e);
 		console.error('Problems setting ViewpointNode',e);
@@ -486,7 +487,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		return value;
 	};
 	try {
-		this.NavInfoNode = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraNavInfo');
+		this.NavInfoNode = X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraNavInfo");
 	} catch (e) {
 		console.log('Problems setting NavInfoNode '+e);
 		console.error('Problems setting NavInfoNode',e);
@@ -504,7 +505,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		return value;
 	};
 	try {
-		this.CameraPI = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator');
+		this.CameraPI = X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator");
 	} catch (e) {
 		console.log('Problems setting CameraPI '+e);
 		console.error('Problems setting CameraPI',e);
@@ -522,7 +523,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		return value;
 	};
 	try {
-		this.CameraOI = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator');
+		this.CameraOI = X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator");
 	} catch (e) {
 		console.log('Problems setting CameraOI '+e);
 		console.error('Problems setting CameraOI',e);
@@ -732,7 +733,7 @@ ecmascript:
 {
 //  this.tracePrint ('this.initialize start...');
 
-    X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraNavInfo', 'avatarSize')[0]   = this.proxy.nearClipPlane;
+    X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraNavInfo", "avatarSize")[0]   = this.proxy.nearClipPlane;
 
     // remaining setups deferred to invocation of this.checkShots() method
     // thanks to Yvonne Jung Fraunhofer for diagnosing better approach to functino initialization
@@ -815,7 +816,7 @@ ecmascript:
                 // see X3D ECMAScript binding Table 7.18 — SFRotation instance creation functinos
 
                 // test if difference vector is zero, if so maintain previous rotation
-                var shotVector = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.position.subtract(this.proxy.shots[i].moves[j].goalAimPoint).normalize();
+                var shotVector = X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraViewpoint", "this").proxy.position.subtract(this.proxy.shots[i].moves[j].goalAimPoint).normalize();
                 if (shotVector.length() >= 0)
                 {
                     // default view direction is along -Z axis
@@ -828,9 +829,9 @@ ecmascript:
                 }
 
                 this.tracePrint ('this.proxy.shots[' + i + '].moves[' + j + '].goalAimPoint=' + this.proxy.shots[i].moves[j].goalAimPoint.toString());
-                this.tracePrint ('        X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.position=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.position.toString());
-                this.tracePrint ('          shotVector     delta=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.position.subtract(this.proxy.shots[i].moves[j].goalAimPoint).toString());
-                this.tracePrint ('          shotVector normalize=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.position.subtract(this.proxy.shots[i].moves[j].goalAimPoint).normalize().toString());
+                this.tracePrint ('        X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraViewpoint", "this").proxy.position=' + X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraViewpoint", "this").proxy.position.toString());
+                this.tracePrint ('          shotVector     delta=' + X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraViewpoint", "this").proxy.position.subtract(this.proxy.shots[i].moves[j].goalAimPoint).toString());
+                this.tracePrint ('          shotVector normalize=' + X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraViewpoint", "this").proxy.position.subtract(this.proxy.shots[i].moves[j].goalAimPoint).normalize().toString());
                 this.tracePrint ('               goalOrientation=' + this.proxy.shots[i].moves[j].goalOrientation.toString());
                 this.tracePrint ('      this.proxy.keyValueOrientation[k+1]=' + this.proxy.keyValueOrientation[k+1].toString() + '');
             }
@@ -870,15 +871,15 @@ ecmascript:
     }
     this.tracePrint ('           this.proxy.animated=' + this.proxy.animated);
     // set node values
-    X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator', 'this.proxy.key',  this.proxy.key);
-    X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator', 'this.proxy.key',  this.proxy.key);
-    X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator', 'keyValue',  this.proxy.keyValuePosition);
-    X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator', 'keyValue',  this.proxy.keyValueOrientation);
+    X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator", "this.proxy.key",  this.proxy.key);
+    X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator", "this.proxy.key",  this.proxy.key);
+    X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator", "keyValue",  this.proxy.keyValuePosition);
+    X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator", "keyValue",  this.proxy.keyValueOrientation);
 
     if (!this.proxy.animated) // output results
     {
-        this.tracePrint ('<PositionInterpolator    DEF=\'CameraPositionInterpolator\'    this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator', 'keyValue')) + '\'/>');
-        this.tracePrint ('<OrientationInterpolator DEF=\'CameraOrientationInterpolator\' this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator', 'keyValue')) + '\'/>');
+        this.tracePrint ('<PositionInterpolator    DEF=\'CameraPositionInterpolator\'    this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator", "this.proxy.key")) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator", "keyValue")) + '\'/>');
+        this.tracePrint ('<OrientationInterpolator DEF=\'CameraOrientationInterpolator\' this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator", "this.proxy.key")) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator", "keyValue")) + '\'/>');
     }
     this.tracePrint ('this.checkShots() complete');
 }
@@ -910,25 +911,25 @@ ecmascript:
       this.alwaysPrint ('Animation loop commencing, timestamp=' + timestamp);
       this.proxy.startTime      = timestamp;
       this.proxy.priorTraceTime = timestamp;
-      this.alwaysPrint ('shotClock=' + (timestamp - this.proxy.startTime) + ' seconds, this.proxy.frameCount=' + this.proxy.frameCount + ', fraction=' + eventValue + ', this.proxy.position=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.position.toString() + ', this.proxy.orientation=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.orientation.toString());
+      this.alwaysPrint ('shotClock=' + (timestamp - this.proxy.startTime) + ' seconds, this.proxy.frameCount=' + this.proxy.frameCount + ', fraction=' + eventValue + ', this.proxy.position=' + X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraViewpoint", "this").proxy.position.toString() + ', this.proxy.orientation=' + X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraViewpoint", "this").proxy.orientation.toString());
 
       if (this.proxy.animated) // output results
       {
         // TODO how to report or speed up response?  this.alwaysPrint ('  aimPoint=' + aimPoint.toString());
-        this.tracePrint ('  <PositionInterpolator    DEF=\'CameraPositionInterpolator\'    this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator', 'keyValue')) + '\'/>');
-        this.tracePrint ('  <OrientationInterpolator DEF=\'CameraOrientationInterpolator\' this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator', 'keyValue')) + '\'/>');
+        this.tracePrint ('  <PositionInterpolator    DEF=\'CameraPositionInterpolator\'    this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator", "this.proxy.key")) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator", "keyValue")) + '\'/>');
+        this.tracePrint ('  <OrientationInterpolator DEF=\'CameraOrientationInterpolator\' this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator", "this.proxy.key")) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator", "keyValue")) + '\'/>');
       }
    }
    else if ((timestamp - this.proxy.priorTraceTime) >= 1.0) // 1 second trace interval
    {
-      this.alwaysPrint ('shotClock=' + (timestamp - this.proxy.startTime) + ' seconds, this.proxy.frameCount=' + this.proxy.frameCount + ', fraction=' + eventValue + ', this.proxy.position=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.position.toString() + ', this.proxy.orientation=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.orientation.toString());
+      this.alwaysPrint ('shotClock=' + (timestamp - this.proxy.startTime) + ' seconds, this.proxy.frameCount=' + this.proxy.frameCount + ', fraction=' + eventValue + ', this.proxy.position=' + X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraViewpoint", "this").proxy.position.toString() + ', this.proxy.orientation=' + X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraViewpoint", "this").proxy.orientation.toString());
       this.proxy.priorTraceTime = timestamp;
 
       if (this.proxy.animated) // output results
       {
         // TODO how to report or speed up response?  this.alwaysPrint ('  aimPoint=' + aimPoint.toString());
-        this.tracePrint ('  <PositionInterpolator    DEF=\'CameraPositionInterpolator\'    this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator', 'keyValue')) + '\'/>');
-        this.alwaysPrint ('  <OrientationInterpolator DEF=\'CameraOrientationInterpolator\' this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator', 'keyValue')) + '\'/>');
+        this.tracePrint ('  <PositionInterpolator    DEF=\'CameraPositionInterpolator\'    this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator", "this.proxy.key")) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator", "keyValue")) + '\'/>');
+        this.alwaysPrint ('  <OrientationInterpolator DEF=\'CameraOrientationInterpolator\' this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator", "this.proxy.key")) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator", "keyValue")) + '\'/>');
       }
    }
    if (eventValue == 0)
@@ -938,7 +939,7 @@ ecmascript:
    }
    else if (eventValue == 1)
    {
-      this.alwaysPrint ('shotClock=' + (timestamp - this.proxy.startTime) + ', this.proxy.frameCount=' + this.proxy.frameCount + ', fraction=' + eventValue + ', this.proxy.position=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.position.toString() + ', this.proxy.orientation=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint', 'this').proxy.orientation.toString());
+      this.alwaysPrint ('shotClock=' + (timestamp - this.proxy.startTime) + ', this.proxy.frameCount=' + this.proxy.frameCount + ', fraction=' + eventValue + ', this.proxy.position=' + X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraViewpoint", "this").proxy.position.toString() + ', this.proxy.orientation=' + X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraViewpoint", "this").proxy.orientation.toString());
       if (this.proxy.animated) // output results
       {
         // TODO how to report or speed up response?  this.alwaysPrint ('  aimPoint=' + aimPoint.toString());
@@ -1046,7 +1047,7 @@ ecmascript:
 
 	this.set_offlineRender = function (eventValue) // input event received for inputOutput field
 {
-    X3DJSON.nodeUtil('Scene','undefined', '',  eventValue);
+    X3DJSON.nodeUtil("Scene","undefined", "",  eventValue);
 }
 ;
 
@@ -10805,7 +10806,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 		return value;
 	};
 	try {
-		this.offlineRender = X3DJSON.nodeUtil('Scene','undefined');
+		this.offlineRender = X3DJSON.nodeUtil("Scene","undefined");
 	} catch (e) {
 		console.log('Problems setting offlineRender '+e);
 		console.error('Problems setting offlineRender',e);
@@ -10823,7 +10824,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 		return value;
 	};
 	try {
-		this.ViewpointNode = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint');
+		this.ViewpointNode = X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraViewpoint");
 	} catch (e) {
 		console.log('Problems setting ViewpointNode '+e);
 		console.error('Problems setting ViewpointNode',e);
@@ -10841,7 +10842,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 		return value;
 	};
 	try {
-		this.NavInfoNode = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraNavInfo');
+		this.NavInfoNode = X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraNavInfo");
 	} catch (e) {
 		console.log('Problems setting NavInfoNode '+e);
 		console.error('Problems setting NavInfoNode',e);
@@ -10859,7 +10860,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 		return value;
 	};
 	try {
-		this.CameraPI = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraPositionInterpolator');
+		this.CameraPI = X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraPositionInterpolator");
 	} catch (e) {
 		console.log('Problems setting CameraPI '+e);
 		console.error('Problems setting CameraPI',e);
@@ -10877,7 +10878,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 		return value;
 	};
 	try {
-		this.CameraOI = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator');
+		this.CameraOI = X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator");
 	} catch (e) {
 		console.log('Problems setting CameraOI '+e);
 		console.error('Problems setting CameraOI',e);
@@ -11087,7 +11088,7 @@ ecmascript:
 {
 //  this.tracePrint ('this.initialize start...');
 
-    X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraNavInfo', 'avatarSize')[0]   = this.proxy.nearClipPlane;
+    X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraNavInfo", "avatarSize")[0]   = this.proxy.nearClipPlane;
 
     // remaining setups deferred to invocation of this.checkShots() method
     // thanks to Yvonne Jung Fraunhofer for diagnosing better approach to functino initialization
@@ -11170,7 +11171,7 @@ ecmascript:
                 // see X3D ECMAScript binding Table 7.18 — SFRotation instance creation functinos
 
                 // test if difference vector is zero, if so maintain previous rotation
-                var shotVector = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.position.subtract(this.proxy.shots[i].moves[j].goalAimPoint).normalize();
+                var shotVector = X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraViewpoint", "this").proxy.position.subtract(this.proxy.shots[i].moves[j].goalAimPoint).normalize();
                 if (shotVector.length() >= 0)
                 {
                     // default view direction is along -Z axis
@@ -11183,9 +11184,9 @@ ecmascript:
                 }
 
                 this.tracePrint ('this.proxy.shots[' + i + '].moves[' + j + '].goalAimPoint=' + this.proxy.shots[i].moves[j].goalAimPoint.toString());
-                this.tracePrint ('        X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.position=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.position.toString());
-                this.tracePrint ('          shotVector     delta=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.position.subtract(this.proxy.shots[i].moves[j].goalAimPoint).toString());
-                this.tracePrint ('          shotVector normalize=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.position.subtract(this.proxy.shots[i].moves[j].goalAimPoint).normalize().toString());
+                this.tracePrint ('        X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraViewpoint", "this").proxy.position=' + X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraViewpoint", "this").proxy.position.toString());
+                this.tracePrint ('          shotVector     delta=' + X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraViewpoint", "this").proxy.position.subtract(this.proxy.shots[i].moves[j].goalAimPoint).toString());
+                this.tracePrint ('          shotVector normalize=' + X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraViewpoint", "this").proxy.position.subtract(this.proxy.shots[i].moves[j].goalAimPoint).normalize().toString());
                 this.tracePrint ('               goalOrientation=' + this.proxy.shots[i].moves[j].goalOrientation.toString());
                 this.tracePrint ('      this.proxy.keyValueOrientation[k+1]=' + this.proxy.keyValueOrientation[k+1].toString() + '');
             }
@@ -11225,15 +11226,15 @@ ecmascript:
     }
     this.tracePrint ('           this.proxy.animated=' + this.proxy.animated);
     // set node values
-    X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraPositionInterpolator', 'this.proxy.key',  this.proxy.key);
-    X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator', 'this.proxy.key',  this.proxy.key);
-    X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraPositionInterpolator', 'keyValue',  this.proxy.keyValuePosition);
-    X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator', 'keyValue',  this.proxy.keyValueOrientation);
+    X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraPositionInterpolator", "this.proxy.key",  this.proxy.key);
+    X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator", "this.proxy.key",  this.proxy.key);
+    X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraPositionInterpolator", "keyValue",  this.proxy.keyValuePosition);
+    X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator", "keyValue",  this.proxy.keyValueOrientation);
 
     if (!this.proxy.animated) // output results
     {
-        this.tracePrint ('<PositionInterpolator    DEF=\'CameraPositionInterpolator\'    this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraPositionInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraPositionInterpolator', 'keyValue')) + '\'/>');
-        this.tracePrint ('<OrientationInterpolator DEF=\'CameraOrientationInterpolator\' this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator', 'keyValue')) + '\'/>');
+        this.tracePrint ('<PositionInterpolator    DEF=\'CameraPositionInterpolator\'    this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraPositionInterpolator", "this.proxy.key")) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraPositionInterpolator", "keyValue")) + '\'/>');
+        this.tracePrint ('<OrientationInterpolator DEF=\'CameraOrientationInterpolator\' this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator", "this.proxy.key")) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator", "keyValue")) + '\'/>');
     }
     this.tracePrint ('this.checkShots() complete');
 }
@@ -11265,25 +11266,25 @@ ecmascript:
       this.alwaysPrint ('Animation loop commencing, timestamp=' + timestamp);
       this.proxy.startTime      = timestamp;
       this.proxy.priorTraceTime = timestamp;
-      this.alwaysPrint ('shotClock=' + (timestamp - this.proxy.startTime) + ' seconds, this.proxy.frameCount=' + this.proxy.frameCount + ', fraction=' + eventValue + ', this.proxy.position=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.position.toString() + ', this.proxy.orientation=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.orientation.toString());
+      this.alwaysPrint ('shotClock=' + (timestamp - this.proxy.startTime) + ' seconds, this.proxy.frameCount=' + this.proxy.frameCount + ', fraction=' + eventValue + ', this.proxy.position=' + X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraViewpoint", "this").proxy.position.toString() + ', this.proxy.orientation=' + X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraViewpoint", "this").proxy.orientation.toString());
 
       if (this.proxy.animated) // output results
       {
         // TODO how to report or speed up response?  this.alwaysPrint ('  aimPoint=' + aimPoint.toString());
-        this.tracePrint ('  <PositionInterpolator    DEF=\'CameraPositionInterpolator\'    this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraPositionInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraPositionInterpolator', 'keyValue')) + '\'/>');
-        this.tracePrint ('  <OrientationInterpolator DEF=\'CameraOrientationInterpolator\' this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator', 'keyValue')) + '\'/>');
+        this.tracePrint ('  <PositionInterpolator    DEF=\'CameraPositionInterpolator\'    this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraPositionInterpolator", "this.proxy.key")) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraPositionInterpolator", "keyValue")) + '\'/>');
+        this.tracePrint ('  <OrientationInterpolator DEF=\'CameraOrientationInterpolator\' this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator", "this.proxy.key")) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator", "keyValue")) + '\'/>');
       }
    }
    else if ((timestamp - this.proxy.priorTraceTime) >= 1.0) // 1 second trace interval
    {
-      this.alwaysPrint ('shotClock=' + (timestamp - this.proxy.startTime) + ' seconds, this.proxy.frameCount=' + this.proxy.frameCount + ', fraction=' + eventValue + ', this.proxy.position=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.position.toString() + ', this.proxy.orientation=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.orientation.toString());
+      this.alwaysPrint ('shotClock=' + (timestamp - this.proxy.startTime) + ' seconds, this.proxy.frameCount=' + this.proxy.frameCount + ', fraction=' + eventValue + ', this.proxy.position=' + X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraViewpoint", "this").proxy.position.toString() + ', this.proxy.orientation=' + X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraViewpoint", "this").proxy.orientation.toString());
       this.proxy.priorTraceTime = timestamp;
 
       if (this.proxy.animated) // output results
       {
         // TODO how to report or speed up response?  this.alwaysPrint ('  aimPoint=' + aimPoint.toString());
-        this.tracePrint ('  <PositionInterpolator    DEF=\'CameraPositionInterpolator\'    this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraPositionInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraPositionInterpolator', 'keyValue')) + '\'/>');
-        this.alwaysPrint ('  <OrientationInterpolator DEF=\'CameraOrientationInterpolator\' this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator', 'this.proxy.key')) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator', 'keyValue')) + '\'/>');
+        this.tracePrint ('  <PositionInterpolator    DEF=\'CameraPositionInterpolator\'    this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraPositionInterpolator", "this.proxy.key")) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraPositionInterpolator", "keyValue")) + '\'/>');
+        this.alwaysPrint ('  <OrientationInterpolator DEF=\'CameraOrientationInterpolator\' this.proxy.key=\'' + this.stripBrackets(X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator", "this.proxy.key")) + '\' keyValue=\'' + this.stripBrackets(X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator", "keyValue")) + '\'/>');
       }
    }
    if (eventValue == 0)
@@ -11293,7 +11294,7 @@ ecmascript:
    }
    else if (eventValue == 1)
    {
-      this.alwaysPrint ('shotClock=' + (timestamp - this.proxy.startTime) + ', this.proxy.frameCount=' + this.proxy.frameCount + ', fraction=' + eventValue + ', this.proxy.position=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.position.toString() + ', this.proxy.orientation=' + X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint', 'this').proxy.orientation.toString());
+      this.alwaysPrint ('shotClock=' + (timestamp - this.proxy.startTime) + ', this.proxy.frameCount=' + this.proxy.frameCount + ', fraction=' + eventValue + ', this.proxy.position=' + X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraViewpoint", "this").proxy.position.toString() + ', this.proxy.orientation=' + X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraViewpoint", "this").proxy.orientation.toString());
       if (this.proxy.animated) // output results
       {
         // TODO how to report or speed up response?  this.alwaysPrint ('  aimPoint=' + aimPoint.toString());
@@ -11401,7 +11402,7 @@ ecmascript:
 
 	this.set_offlineRender = function (eventValue) // input event received for inputOutput field
 {
-    X3DJSON.nodeUtil('Scene','undefined', '',  eventValue);
+    X3DJSON.nodeUtil("Scene","undefined", "",  eventValue);
 }
 ;
 
@@ -13694,12 +13695,12 @@ X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INSTAN
 X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript']);
 }
 if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript'].initialize();
-    if (X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator')) {
-X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator")) {
+X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator')) {
-X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator")) {
+X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -13720,10 +13721,10 @@ X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Simple
 }
 X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['position'].push(function(property, value) {
 		if (property === 'position') {
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','position',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraViewpoint","position",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','position',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraViewpoint","position",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -13742,10 +13743,10 @@ X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Simple
 }
 X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['orientation'].push(function(property, value) {
 		if (property === 'orientation') {
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','orientation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraViewpoint","orientation",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','orientation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraViewpoint","orientation",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -13764,10 +13765,10 @@ X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Simple
 }
 X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['isActive'].push(function(property, value) {
 		if (property === 'isActive') {
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','bind',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraViewpoint","bind",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','bind',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraViewpoint","bind",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -13786,10 +13787,10 @@ X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Simple
 }
 X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['isActive'].push(function(property, value) {
 		if (property === 'isActive') {
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraNavInfo','bind',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraNavInfo","bind",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraNavInfo','bind',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraNavInfo","bind",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -13808,10 +13809,10 @@ X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Simple
 }
 X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['isActive'].push(function(property, value) {
 		if (property === 'isActive') {
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraDirectionalLight','on',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraDirectionalLight","on",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraDirectionalLight','on',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraDirectionalLight","on",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -13830,36 +13831,36 @@ X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Simple
 }
 X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['totalDuration'].push(function(property, value) {
 		if (property === 'totalDuration') {
-			X3DJSON.nodeUtil('Scene','CameraTimer.SimpleShots','cycleInterval',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration, __eventTime);
+			X3DJSON.nodeUtil("Scene","CameraTimer.SimpleShots","cycleInterval",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','CameraTimer.SimpleShots','cycleInterval',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration, __eventTime);
-    if (X3DJSON.nodeUtil('Scene','CameraTimer.SimpleShots')) {
-X3DJSON.nodeUtil('Scene','CameraTimer.SimpleShots').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_fraction(X3DJSON.nodeUtil('Scene','CameraTimer.SimpleShots','fraction'), __eventTime);
+			X3DJSON.nodeUtil("Scene","CameraTimer.SimpleShots","cycleInterval",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration, __eventTime);
+    if (X3DJSON.nodeUtil("Scene","CameraTimer.SimpleShots")) {
+X3DJSON.nodeUtil("Scene","CameraTimer.SimpleShots").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_fraction(X3DJSON.nodeUtil("Scene","CameraTimer.SimpleShots","fraction"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_fraction(X3DJSON.nodeUtil('Scene','CameraTimer.SimpleShots','fraction'), __eventTime);
-    if (X3DJSON.nodeUtil('Scene','TextTouchActive.SimpleShotsFilter')) {
-X3DJSON.nodeUtil('Scene','TextTouchActive.SimpleShotsFilter').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_bind(X3DJSON.nodeUtil('Scene','TextTouchActive.SimpleShotsFilter','inputTrue'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_fraction(X3DJSON.nodeUtil("Scene","CameraTimer.SimpleShots","fraction"), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","TextTouchActive.SimpleShotsFilter")) {
+X3DJSON.nodeUtil("Scene","TextTouchActive.SimpleShotsFilter").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_bind(X3DJSON.nodeUtil("Scene","TextTouchActive.SimpleShotsFilter","inputTrue"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_bind(X3DJSON.nodeUtil('Scene','TextTouchActive.SimpleShotsFilter','inputTrue'), __eventTime);
-    if (X3DJSON.nodeUtil('Scene','TextTouch.SimpleShots')) {
-X3DJSON.nodeUtil('Scene','TextTouch.SimpleShots').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_bind(X3DJSON.nodeUtil("Scene","TextTouchActive.SimpleShotsFilter","inputTrue"), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","TextTouch.SimpleShots")) {
+X3DJSON.nodeUtil("Scene","TextTouch.SimpleShots").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','TextTouch.SimpleShots')) {
-X3DJSON.nodeUtil('Scene','TextTouch.SimpleShots').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","TextTouch.SimpleShots")) {
+X3DJSON.nodeUtil("Scene","TextTouch.SimpleShots").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraPositionInterpolator')) {
-X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraPositionInterpolator').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraPositionInterpolator")) {
+X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraPositionInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator')) {
-X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator")) {
+X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator").addEventListener('outputchange', function(event) {
 }, false);
 }
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -13880,10 +13881,10 @@ X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPoi
 }
 X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['position'].push(function(property, value) {
 		if (property === 'position') {
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint','position',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraViewpoint","position",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint','position',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraViewpoint","position",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -13902,10 +13903,10 @@ X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPoi
 }
 X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['orientation'].push(function(property, value) {
 		if (property === 'orientation') {
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint','orientation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraViewpoint","orientation",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint','orientation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraViewpoint","orientation",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -13924,10 +13925,10 @@ X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPoi
 }
 X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['isActive'].push(function(property, value) {
 		if (property === 'isActive') {
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint','bind',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraViewpoint","bind",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint','bind',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraViewpoint","bind",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -13946,10 +13947,10 @@ X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPoi
 }
 X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['isActive'].push(function(property, value) {
 		if (property === 'isActive') {
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraNavInfo','bind',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraNavInfo","bind",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraNavInfo','bind',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraNavInfo","bind",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -13968,10 +13969,10 @@ X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPoi
 }
 X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['isActive'].push(function(property, value) {
 		if (property === 'isActive') {
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraDirectionalLight','on',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraDirectionalLight","on",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraDirectionalLight','on',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraDirectionalLight","on",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -13990,28 +13991,28 @@ X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPoi
 }
 X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['totalDuration'].push(function(property, value) {
 		if (property === 'totalDuration') {
-			X3DJSON.nodeUtil('Scene','CameraTimer.AimPointTest','cycleInterval',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration, __eventTime);
+			X3DJSON.nodeUtil("Scene","CameraTimer.AimPointTest","cycleInterval",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','CameraTimer.AimPointTest','cycleInterval',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration, __eventTime);
-    if (X3DJSON.nodeUtil('Scene','CameraTimer.AimPointTest')) {
-X3DJSON.nodeUtil('Scene','CameraTimer.AimPointTest').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].set_fraction(X3DJSON.nodeUtil('Scene','CameraTimer.AimPointTest','fraction'), __eventTime);
+			X3DJSON.nodeUtil("Scene","CameraTimer.AimPointTest","cycleInterval",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration, __eventTime);
+    if (X3DJSON.nodeUtil("Scene","CameraTimer.AimPointTest")) {
+X3DJSON.nodeUtil("Scene","CameraTimer.AimPointTest").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].set_fraction(X3DJSON.nodeUtil("Scene","CameraTimer.AimPointTest","fraction"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].set_fraction(X3DJSON.nodeUtil('Scene','CameraTimer.AimPointTest','fraction'), __eventTime);
-    if (X3DJSON.nodeUtil('Scene','TextTouchActive.AimPointFilter')) {
-X3DJSON.nodeUtil('Scene','TextTouchActive.AimPointFilter').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].set_bind(X3DJSON.nodeUtil('Scene','TextTouchActive.AimPointFilter','inputTrue'), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].set_fraction(X3DJSON.nodeUtil("Scene","CameraTimer.AimPointTest","fraction"), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","TextTouchActive.AimPointFilter")) {
+X3DJSON.nodeUtil("Scene","TextTouchActive.AimPointFilter").addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].set_bind(X3DJSON.nodeUtil("Scene","TextTouchActive.AimPointFilter","inputTrue"), __eventTime);
 }, false);
 }
-			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].set_bind(X3DJSON.nodeUtil('Scene','TextTouchActive.AimPointFilter','inputTrue'), __eventTime);
-    if (X3DJSON.nodeUtil('Scene','TextTouch.AimPointTest')) {
-X3DJSON.nodeUtil('Scene','TextTouch.AimPointTest').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].set_bind(X3DJSON.nodeUtil("Scene","TextTouchActive.AimPointFilter","inputTrue"), __eventTime);
+    if (X3DJSON.nodeUtil("Scene","TextTouch.AimPointTest")) {
+X3DJSON.nodeUtil("Scene","TextTouch.AimPointTest").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','TextTouch.AimPointTest')) {
-X3DJSON.nodeUtil('Scene','TextTouch.AimPointTest').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","TextTouch.AimPointTest")) {
+X3DJSON.nodeUtil("Scene","TextTouch.AimPointTest").addEventListener('outputchange', function(event) {
 }, false);
 }
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -14032,10 +14033,10 @@ X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Simple
 }
 X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['position'].push(function(property, value) {
 		if (property === 'position') {
-			X3DJSON.nodeUtil('Scene','CameraShapeTransform','translation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position, __eventTime);
+			X3DJSON.nodeUtil("Scene","CameraShapeTransform","translation",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','CameraShapeTransform','translation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position, __eventTime);
+			X3DJSON.nodeUtil("Scene","CameraShapeTransform","translation",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -14054,10 +14055,10 @@ X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Simple
 }
 X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript']['ACTION']['orientation'].push(function(property, value) {
 		if (property === 'orientation') {
-			X3DJSON.nodeUtil('Scene','CameraShapeTransform','rotation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation, __eventTime);
+			X3DJSON.nodeUtil("Scene","CameraShapeTransform","rotation",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','CameraShapeTransform','rotation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation, __eventTime);
+			X3DJSON.nodeUtil("Scene","CameraShapeTransform","rotation",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -14076,10 +14077,10 @@ X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPoi
 }
 X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['position'].push(function(property, value) {
 		if (property === 'position') {
-			X3DJSON.nodeUtil('Scene','CameraShapeTransform','translation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position, __eventTime);
+			X3DJSON.nodeUtil("Scene","CameraShapeTransform","translation",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','CameraShapeTransform','translation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position, __eventTime);
+			X3DJSON.nodeUtil("Scene","CameraShapeTransform","translation",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -14098,63 +14099,63 @@ X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPoi
 }
 X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript']['ACTION']['orientation'].push(function(property, value) {
 		if (property === 'orientation') {
-			X3DJSON.nodeUtil('Scene','CameraShapeTransform','rotation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation, __eventTime);
+			X3DJSON.nodeUtil("Scene","CameraShapeTransform","rotation",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','CameraShapeTransform','rotation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation, __eventTime);
-    if (X3DJSON.nodeUtil('Scene','CameraShapeTouched')) {
-X3DJSON.nodeUtil('Scene','CameraShapeTouched').addEventListener('outputchange', function(event) {
+			X3DJSON.nodeUtil("Scene","CameraShapeTransform","rotation",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation, __eventTime);
+    if (X3DJSON.nodeUtil("Scene","CameraShapeTouched")) {
+X3DJSON.nodeUtil("Scene","CameraShapeTouched").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','ViewFrustumToggle')) {
-X3DJSON.nodeUtil('Scene','ViewFrustumToggle').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","ViewFrustumToggle")) {
+X3DJSON.nodeUtil("Scene","ViewFrustumToggle").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','BoxPath')) {
-X3DJSON.nodeUtil('Scene','BoxPath').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BoxPath")) {
+X3DJSON.nodeUtil("Scene","BoxPath").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','BoxPath')) {
-X3DJSON.nodeUtil('Scene','BoxPath').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BoxPath")) {
+X3DJSON.nodeUtil("Scene","BoxPath").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','BoxPath')) {
-X3DJSON.nodeUtil('Scene','BoxPath').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BoxPath")) {
+X3DJSON.nodeUtil("Scene","BoxPath").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','BoxPath')) {
-X3DJSON.nodeUtil('Scene','BoxPath').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BoxPath")) {
+X3DJSON.nodeUtil("Scene","BoxPath").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','BoxTimer')) {
-X3DJSON.nodeUtil('Scene','BoxTimer').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","BoxTimer")) {
+X3DJSON.nodeUtil("Scene","BoxTimer").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint')) {
-X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraViewpoint")) {
+X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraViewpoint").addEventListener('outputchange', function(event) {
 }, false);
 }
-    if (X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint')) {
-X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint').addEventListener('outputchange', function(event) {
+    if (X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraViewpoint")) {
+X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraViewpoint").addEventListener('outputchange', function(event) {
 }, false);
 }
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','position',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position, __eventTime);
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','orientation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation, __eventTime);
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','bind',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraNavInfo','bind',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraDirectionalLight','on',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
-			X3DJSON.nodeUtil('Scene','CameraTimer.SimpleShots','cycleInterval',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration, __eventTime);
-			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_fraction(X3DJSON.nodeUtil('Scene','CameraTimer.SimpleShots','fraction'), __eventTime);
-			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_bind(X3DJSON.nodeUtil('Scene','TextTouchActive.SimpleShotsFilter','inputTrue'), __eventTime);
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint','position',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position, __eventTime);
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint','orientation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation, __eventTime);
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint','bind',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraNavInfo','bind',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
-			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraDirectionalLight','on',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
-			X3DJSON.nodeUtil('Scene','CameraTimer.AimPointTest','cycleInterval',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration, __eventTime);
-			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].set_fraction(X3DJSON.nodeUtil('Scene','CameraTimer.AimPointTest','fraction'), __eventTime);
-			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].set_bind(X3DJSON.nodeUtil('Scene','TextTouchActive.AimPointFilter','inputTrue'), __eventTime);
-			X3DJSON.nodeUtil('Scene','CameraShapeTransform','translation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position, __eventTime);
-			X3DJSON.nodeUtil('Scene','CameraShapeTransform','rotation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation, __eventTime);
-			X3DJSON.nodeUtil('Scene','CameraShapeTransform','translation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position, __eventTime);
-			X3DJSON.nodeUtil('Scene','CameraShapeTransform','rotation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraViewpoint","position",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraViewpoint","orientation",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraViewpoint","bind",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraNavInfo","bind",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.SimpleShotsTest_CameraDirectionalLight","on",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil("Scene","CameraTimer.SimpleShots","cycleInterval",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_fraction(X3DJSON.nodeUtil("Scene","CameraTimer.SimpleShots","fraction"), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_bind(X3DJSON.nodeUtil("Scene","TextTouchActive.SimpleShotsFilter","inputTrue"), __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraViewpoint","position",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraViewpoint","orientation",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraViewpoint","bind",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraNavInfo","bind",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil("Scene","DECLCamera_Camera.AimPointTest_CameraDirectionalLight","on",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].isActive, __eventTime);
+			X3DJSON.nodeUtil("Scene","CameraTimer.AimPointTest","cycleInterval",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration, __eventTime);
+			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].set_fraction(X3DJSON.nodeUtil("Scene","CameraTimer.AimPointTest","fraction"), __eventTime);
+			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].set_bind(X3DJSON.nodeUtil("Scene","TextTouchActive.AimPointFilter","inputTrue"), __eventTime);
+			X3DJSON.nodeUtil("Scene","CameraShapeTransform","translation",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position, __eventTime);
+			X3DJSON.nodeUtil("Scene","CameraShapeTransform","rotation",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation, __eventTime);
+			X3DJSON.nodeUtil("Scene","CameraShapeTransform","translation",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].position, __eventTime);
+			X3DJSON.nodeUtil("Scene","CameraShapeTransform","rotation",typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation, __eventTime);

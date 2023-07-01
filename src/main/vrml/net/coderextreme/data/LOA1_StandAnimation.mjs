@@ -93,8 +93,8 @@ browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = WorldInfo19;
 
-let ProtoDeclare20 = browser.createX3DFromString(`<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+let ProtoDeclare20 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="LOA1_StandAnimation" ><ProtoInterface><field name="cycleInterval" accessType="inputOutput" type="SFTime" value="0.009999999776482582"></field>
 <field name="enabled" accessType="inputOutput" type="SFBool" value="true"></field>
 <field name="loop" accessType="inputOutput" type="SFBool" value="true"></field>

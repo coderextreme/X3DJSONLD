@@ -165,7 +165,7 @@ public class SplitChannels
             .addChild(new Gain().setUSE("ChannelSplitter").setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")))
           .addChild(new ChannelSelector().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS").setChannelSelection(1).setHtmlID("ChannelSelector1")
             .addChild(new Gain().setUSE("ChannelSplitter").setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS"))))))
-    .addChild(new ChannelSplitter("ChannelSplitter").setChannelCountMode("explicit").setChannelInterpretation("SPEAKERS")
+    .addChild(new ChannelSplitter("ChannelSplitter").setChannelCountMode("EXPLICIT").setChannelInterpretation("SPEAKERS")
       .addChild(new AudioClip().setDescription("Violin").setUrl(new String[] {"sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"})))
     .addChild(new Transform("Audio3").setRotation(1.0,0.0,0.0,-0.5).setTranslation(0.0,100.0,0.0)
       .addChild(new Shape()

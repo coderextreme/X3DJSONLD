@@ -21,25 +21,25 @@
     <Background skyColor='0.2 0.2 0.2'/>
     <Viewpoint description='View entire audio model' orientation='1 0 0 -0.5' position='0 500 600' retainUserOffsets='true'/>
     <Transform DEF='TransformAudio1' translation='-200 50 0'>
-      <Shape>
+      <Shape DEF='TransformAudio1'>
         <Appearance DEF='audio_emit'>
-          <Material diffuseColor='0.1 0.1 0.1' emissiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
+          <Material DEF='audio_emit' diffuseColor='0.1 0.1 0.1' emissiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
         </Appearance>
         <Sphere radius='30.0'/>
       </Shape>
     </Transform>
     <Transform DEF='TransformAudio2' translation='0 50 0'>
-      <Shape>
+      <Shape DEF='TransformAudio2'>
         <Appearance DEF='audio_emit2'>
-          <Material diffuseColor='0.1 0.1 0.1' emissiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
+          <Material DEF='audio_emit2' diffuseColor='0.1 0.1 0.1' emissiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
         </Appearance>
         <Sphere radius='30.0'/>
       </Shape>
     </Transform>
     <Transform DEF='TransformAudio3' translation='200 50 0'>
-      <Shape>
+      <Shape DEF='TransformAudio3'>
         <Appearance DEF='audio_emit3'>
-          <Material diffuseColor='0.1 0.1 0.1' emissiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
+          <Material DEF='audio_emit3' diffuseColor='0.1 0.1 0.1' emissiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
         </Appearance>
         <Sphere radius='30.0'/>
       </Shape>
@@ -53,7 +53,7 @@
     <Transform>
       <Shape>
         <Appearance DEF='floor'>
-          <Material diffuseColor='0.1 0.1 0.1' shininess='0.8' specularColor='0.5 0.6 0.7'/>
+          <Material DEF='floor' diffuseColor='0.1 0.1 0.1' shininess='0.8' specularColor='0.5 0.6 0.7'/>
         </Appearance>
         <Cylinder radius='500.0'/>
       </Shape>
@@ -63,27 +63,27 @@
       <DynamicsCompressor>
         <Gain>
           <SpatialSound DEF='Audio1'>
-            <Gain>
+            <Gain DEF='Audio1'>
               <Analyser>
-                <BiquadFilter detune='50.0' frequency='600.0' qualityFactor='30.0' type='allpass'>
+                <BiquadFilter detune='50.0' frequency='600.0' qualityFactor='30.0' type='ALLPASS'>
                   <AudioClip description='Techno beat' loop='true' url='"sound/techno_beat.mp3" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3"'/>
                 </BiquadFilter>
               </Analyser>
             </Gain>
           </SpatialSound>
           <SpatialSound DEF='Audio2'>
-            <Gain>
+            <Gain DEF='Audio2'>
               <Analyser>
-                <BiquadFilter detune='15.0' frequency='600.0' qualityFactor='15.0' type='allpass'>
+                <BiquadFilter detune='15.0' frequency='600.0' qualityFactor='15.0' type='ALLPASS'>
                   <AudioClip description='Simple beat' loop='true' url='"sound/beat.mp3" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3"'/>
                 </BiquadFilter>
               </Analyser>
             </Gain>
           </SpatialSound>
           <SpatialSound DEF='Audio3'>
-            <Gain>
+            <Gain DEF='Audio3'>
               <Analyser>
-                <BiquadFilter frequency='1000.0' qualityFactor='0.0' type='allpass'>
+                <BiquadFilter frequency='1000.0' qualityFactor='0.0' type='ALLPASS'>
                   <AudioClip description='Wobble loop' loop='true' url='"sound/wobble_loop.mp3" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3"'/>
                 </BiquadFilter>
               </Analyser>

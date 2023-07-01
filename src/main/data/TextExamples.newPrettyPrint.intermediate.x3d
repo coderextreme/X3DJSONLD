@@ -17,7 +17,7 @@
     <Transform translation='0 2 0'>
       <Shape>
         <Appearance DEF='LightBlueAppearance'>
-          <Material diffuseColor='0.1 0.7 0.7'/>
+          <Material DEF='LightBlueAppearance' diffuseColor='0.1 0.7 0.7'/>
         </Appearance>
         <Text string='"Compare special character escaping"'>
           <FontStyle DEF='testFontStyle' family='"SERIF"' justify='"MIDDLE" "MIDDLE"' size='0.8'/>

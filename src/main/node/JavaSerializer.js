@@ -352,6 +352,8 @@ JavaSerializer.prototype = {
 			attrType = "";
 		}
 		attrType = "";
+		var DEF = undefined;
+		var USE = undefined;
 		for (var a in element.attributes) {
 			var attrs = element.attributes;
 			try {
@@ -360,6 +362,12 @@ JavaSerializer.prototype = {
 					var attr = attrs[a].nodeName;
 					if (attr === "xmlns:xsd" || attr === "xsd:noNamespaceSchemaLocation" || attr === 'containerField' || attr === 'type') {
 						continue;
+					}
+					if (attr === "DEF") {
+						DEF = attrs[a].nodeValue;
+					}
+					if (attr === "USE") {
+						USE = attrs[a].nodeValue;
 					}
 					var method = attr;
 					// look at object model
@@ -522,7 +530,12 @@ JavaSerializer.prototype = {
 					ch += node.nodeName+stack[0] + " = ";
 				}
 
-				ch += "new "+node.nodeName+"()";
+				var DEFpar = "";
+				// only use a DEF constructor parameter when USE is not present and DEF is present
+				if (node.nodeName.startsWith("HAnim") && typeof USE === 'undefined' && typeof DEF !== 'undefined') {
+					DEFpar = '"'+DEF+'"';
+				}
+				ch += "new "+node.nodeName+'('+DEFpar+')';
 				ch += this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
 				if (element.nodeName === "Appearance" && node.NodeName === "ComposedShader") {
 					ch += "}";

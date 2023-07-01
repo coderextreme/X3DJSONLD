@@ -249,7 +249,7 @@ block=false;
 }))])),
 
             HAnimHumanoid(
-              version_ : SFString('1.0'),
+              version_ : SFString('2.0'),
               skin_ : 
                 Shape(
                   appearance_ : 

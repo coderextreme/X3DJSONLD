@@ -70,7 +70,7 @@ var X3D0 =  new X3D({
               children : new MFNode([
                 new ExternProtoDeclare({
                   name : new SFString("FlowerProto"),
-                  url : new MFString(["../personal/flowerproto.json#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto","https://localhost:3000/src/main/personal/flowerproto.json#FlowerProto"]),
+                  url : new MFString(["../personal/flowerproto.json#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto"]),
                   field : new MFNode([
                     new field({
                       type : field.TYPE_MFSTRING,

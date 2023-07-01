@@ -8087,7 +8087,7 @@ var X3D0 =  X3D(
                     HAnimHumanoid(
                       name_ : SFString('DiamondManLOA-1'),
                       DEF_ : SFString('hanim_DiamondManLOA-1'),
-                      version_ : SFString('1.0'))]),
+                      version_ : SFString('2.0'))]),
 
                 fieldValue(
                   name_ : SFString('whichBody'),

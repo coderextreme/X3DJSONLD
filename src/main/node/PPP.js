@@ -7,7 +7,7 @@ var X3DJSONLD = require('./X3DJSONLD.js');
 var Browser = X3DJSONLD.Browser;
 
 // Bring in prototype expander and script expander
-var PROTOS = require('./PrototypeExpander.js')
+var PROTOS = require('./PrototypeExpander.js');
 
 var Scripts = require('./Script.js');
 var LOG = Scripts.LOG;
@@ -23,7 +23,7 @@ var loadX3DJS = convertJSON.loadX3DJS;
 var x3dom = require('./fields.js');
 
 function ProcessJSON(json, file) {
-	json = PROTOS.prototypeExpander(file, json, "");
+	json = new PROTOS().prototypeExpander(file, json, "");
 	// console.log(JSON.stringify(json));
 	var outfile = file.replace(/data/, "ppp");
 	try {
@@ -34,7 +34,7 @@ function ProcessJSON(json, file) {
 	fs.writeFileSync(outfile, JSON.stringify(json, null, 2));
 
 	var NS = "https://www.web3d.org/specifications/x3d";
-	loadX3DJS(DOMImplementation, json, file, NS, X3DJSONLD, function(element, xml) {
+	loadX3DJS(DOMImplementation, json, file, NS, function(element, xml) {
 		var classes = new LOG();
 		var routecode = new LOG();
 		var loopItems = new LOG();

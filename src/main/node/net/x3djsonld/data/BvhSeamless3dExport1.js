@@ -2394,7 +2394,7 @@ BvhSeamless3dExport1.prototype = {
             .addConnect((new autoclass.connect()).setNodeField("play").setProtoField("play"))
             .addConnect((new autoclass.connect()).setNodeField("pause").setProtoField("pause"))
             .addConnect((new autoclass.connect()).setNodeField("period").setProtoField("period"))))))
-    .addChild((new autoclass.HAnimHumanoid()).setVersion("1.0")
+    .addChild((new autoclass.HAnimHumanoid()).setVersion("2.0")
       .addSkin((new autoclass.Shape())
         .setAppearance((new autoclass.Appearance())
           .setMaterial((new autoclass.Material())))

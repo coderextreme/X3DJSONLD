@@ -98,8 +98,8 @@ Viewpoint20.description = "View animation";
 Viewpoint20.position = new SFVec3f(new float[0,2,16]);
 browser.currentScene.children[1] = Viewpoint20;
 
-let ProtoDeclare21 = browser.createX3DFromString(`<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+let ProtoDeclare21 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="PAnim" ><ProtoInterface><field name="play" accessType="inputOutput" type="SFBool" value="true"></field>
 <field name="pause" accessType="inputOutput" type="SFBool" value="true"></field>
 <field name="period" accessType="inputOutput" type="SFTime" value="1"></field>
@@ -378,7 +378,7 @@ ProtoDeclare21.protoBody = ProtoBody30;
 browser.currentScene.children[2] = ProtoDeclare21;
 
 let HAnimHumanoid48 = browser.currentScene.createNode("HAnimHumanoid");
-HAnimHumanoid48.version = "1.0";
+HAnimHumanoid48.version = "2.0";
 let Shape49 = browser.currentScene.createNode("Shape");
 let Appearance50 = browser.currentScene.createNode("Appearance");
 let Material51 = browser.currentScene.createNode("Material");

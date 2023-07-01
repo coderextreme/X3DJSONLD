@@ -47,7 +47,7 @@
         },
         {
           "@name": "translated",
-          "@content": "22 June 2023"
+          "@content": "01 July 2023"
         },
         {
           "@name": "generator",
@@ -7573,9 +7573,9 @@
                                                                 0.1101,
                                                                 0.0656,
                                                                 -0.0736,
-                                                                0.1101,
-                                                                0.0656,
-                                                                -0.0736
+                                                                0.08,
+                                                                0.0175,
+                                                                -0.0608
                                                               ]
                                                             }
                                                           },
@@ -7600,6 +7600,11 @@
                                               "HAnimJoint": {
                                                 "@name": "l_tarsometatarsal_2",
                                                 "@DEF": "hanim_l_tarsometatarsal_2",
+                                                "@center": [
+                                                  0.08,
+                                                  0.0175,
+                                                  -0.0608
+                                                ],
                                                 "@ulimit": [
                                                   0,
                                                   0,
@@ -7619,9 +7624,9 @@
                                                         {
                                                           "Transform": {
                                                             "@translation": [
-                                                              0.1101,
-                                                              0.0656,
-                                                              -0.0736
+                                                              0.08,
+                                                              0.0175,
+                                                              -0.0608
                                                             ],
                                                             "-children": [
                                                               {
@@ -7651,15 +7656,18 @@
                                                                 "-coord": {
                                                                   "Coordinate": {
                                                                     "@point": [
-                                                                      0.1101,
-                                                                      0.0656,
-                                                                      -0.0736
+                                                                      0.08,
+                                                                      0.0175,
+                                                                      -0.0608,
+                                                                      0.0824,
+                                                                      0.0064,
+                                                                      -0.004
                                                                     ]
                                                                   }
                                                                 },
                                                                 "-children": [
                                                                   {
-                                                                    "#comment": "from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 1"
+                                                                    "#comment": "from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 2"
                                                                   }
                                                                 ],
                                                                 "-color": {
@@ -7678,6 +7686,11 @@
                                                     "HAnimJoint": {
                                                       "@name": "l_metatarsophalangeal_2",
                                                       "@DEF": "hanim_l_metatarsophalangeal_2",
+                                                      "@center": [
+                                                        0.0824,
+                                                        0.0064,
+                                                        -0.004
+                                                      ],
                                                       "@ulimit": [
                                                         0,
                                                         0,
@@ -7697,9 +7710,9 @@
                                                               {
                                                                 "Transform": {
                                                                   "@translation": [
-                                                                    0.1101,
-                                                                    0.0656,
-                                                                    -0.0736
+                                                                    0.0824,
+                                                                    0.0064,
+                                                                    -0.004
                                                                   ],
                                                                   "-children": [
                                                                     {
@@ -7729,15 +7742,18 @@
                                                                       "-coord": {
                                                                         "Coordinate": {
                                                                           "@point": [
-                                                                            0.1101,
-                                                                            0.0656,
-                                                                            -0.0736
+                                                                            0.0824,
+                                                                            0.0064,
+                                                                            -0.004,
+                                                                            0.0841,
+                                                                            0.0013,
+                                                                            0.0216
                                                                           ]
                                                                         }
                                                                       },
                                                                       "-children": [
                                                                         {
-                                                                          "#comment": "from l_metatarsophalangeal_2 to l_tarsal_distal_interphalangeal_2 vertices 1"
+                                                                          "#comment": "from l_metatarsophalangeal_2 to l_tarsal_distal_interphalangeal_2 vertices 2"
                                                                         }
                                                                       ],
                                                                       "-color": {
@@ -7779,6 +7795,11 @@
                                                           "HAnimJoint": {
                                                             "@name": "l_tarsal_distal_interphalangeal_2",
                                                             "@DEF": "hanim_l_tarsal_distal_interphalangeal_2",
+                                                            "@center": [
+                                                              0.0841,
+                                                              0.0013,
+                                                              0.0216
+                                                            ],
                                                             "@ulimit": [
                                                               0,
                                                               0,
@@ -8165,9 +8186,9 @@
                                                                 -0.0801,
                                                                 0.0712,
                                                                 -0.0766,
-                                                                -0.0801,
-                                                                0.0712,
-                                                                -0.0766
+                                                                -0.08,
+                                                                0.0175,
+                                                                -0.0608
                                                               ]
                                                             }
                                                           },
@@ -8192,6 +8213,11 @@
                                               "HAnimJoint": {
                                                 "@name": "r_tarsometatarsal_2",
                                                 "@DEF": "hanim_r_tarsometatarsal_2",
+                                                "@center": [
+                                                  -0.08,
+                                                  0.0175,
+                                                  -0.0608
+                                                ],
                                                 "@ulimit": [
                                                   0,
                                                   0,
@@ -8211,9 +8237,9 @@
                                                         {
                                                           "Transform": {
                                                             "@translation": [
-                                                              -0.0801,
-                                                              0.0712,
-                                                              -0.0766
+                                                              -0.08,
+                                                              0.0175,
+                                                              -0.0608
                                                             ],
                                                             "-children": [
                                                               {
@@ -8243,15 +8269,18 @@
                                                                 "-coord": {
                                                                   "Coordinate": {
                                                                     "@point": [
-                                                                      -0.0801,
-                                                                      0.0712,
-                                                                      -0.0766
+                                                                      -0.08,
+                                                                      0.0175,
+                                                                      -0.0608,
+                                                                      -0.0823,
+                                                                      0.0064,
+                                                                      -0.004
                                                                     ]
                                                                   }
                                                                 },
                                                                 "-children": [
                                                                   {
-                                                                    "#comment": "from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 1"
+                                                                    "#comment": "from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 2"
                                                                   }
                                                                 ],
                                                                 "-color": {
@@ -8270,6 +8299,11 @@
                                                     "HAnimJoint": {
                                                       "@name": "r_metatarsophalangeal_2",
                                                       "@DEF": "hanim_r_metatarsophalangeal_2",
+                                                      "@center": [
+                                                        -0.0823,
+                                                        0.0064,
+                                                        -0.004
+                                                      ],
                                                       "@ulimit": [
                                                         0,
                                                         0,
@@ -8289,9 +8323,9 @@
                                                               {
                                                                 "Transform": {
                                                                   "@translation": [
-                                                                    -0.0801,
-                                                                    0.0712,
-                                                                    -0.0766
+                                                                    -0.0823,
+                                                                    0.0064,
+                                                                    -0.004
                                                                   ],
                                                                   "-children": [
                                                                     {
@@ -8321,15 +8355,18 @@
                                                                       "-coord": {
                                                                         "Coordinate": {
                                                                           "@point": [
-                                                                            -0.0801,
-                                                                            0.0712,
-                                                                            -0.0766
+                                                                            -0.0823,
+                                                                            0.0064,
+                                                                            -0.004,
+                                                                            -0.0841,
+                                                                            0.0013,
+                                                                            0.0216
                                                                           ]
                                                                         }
                                                                       },
                                                                       "-children": [
                                                                         {
-                                                                          "#comment": "from r_metatarsophalangeal_2 to r_tarsal_distal_interphalangeal_2 vertices 1"
+                                                                          "#comment": "from r_metatarsophalangeal_2 to r_tarsal_distal_interphalangeal_2 vertices 2"
                                                                         }
                                                                       ],
                                                                       "-color": {
@@ -8371,6 +8408,11 @@
                                                           "HAnimJoint": {
                                                             "@name": "r_tarsal_distal_interphalangeal_2",
                                                             "@DEF": "hanim_r_tarsal_distal_interphalangeal_2",
+                                                            "@center": [
+                                                              -0.0841,
+                                                              0.0013,
+                                                              0.0216
+                                                            ],
                                                             "@ulimit": [
                                                               0,
                                                               0,
@@ -11380,9 +11422,9 @@
                                                                                                                                                                                               0.0044,
                                                                                                                                                                                               1.6209,
                                                                                                                                                                                               0.0236,
-                                                                                                                                                                                              0.0044,
-                                                                                                                                                                                              1.6209,
-                                                                                                                                                                                              0.0236
+                                                                                                                                                                                              0.0503,
+                                                                                                                                                                                              1.4157,
+                                                                                                                                                                                              -0.0689
                                                                                                                                                                                             ]
                                                                                                                                                                                           }
                                                                                                                                                                                         },
@@ -11413,9 +11455,9 @@
                                                                                                                                                                                               0.0044,
                                                                                                                                                                                               1.6209,
                                                                                                                                                                                               0.0236,
-                                                                                                                                                                                              0.0044,
-                                                                                                                                                                                              1.6209,
-                                                                                                                                                                                              0.0236
+                                                                                                                                                                                              -0.0507,
+                                                                                                                                                                                              1.4157,
+                                                                                                                                                                                              -0.0689
                                                                                                                                                                                             ]
                                                                                                                                                                                           }
                                                                                                                                                                                         },
@@ -11446,9 +11488,9 @@
                                                                                                                                                                                               0.0044,
                                                                                                                                                                                               1.6209,
                                                                                                                                                                                               0.0236,
-                                                                                                                                                                                              0.0044,
-                                                                                                                                                                                              1.6209,
-                                                                                                                                                                                              0.0236
+                                                                                                                                                                                              0.0479,
+                                                                                                                                                                                              1.3963,
+                                                                                                                                                                                              -0.0188
                                                                                                                                                                                             ]
                                                                                                                                                                                           }
                                                                                                                                                                                         },
@@ -11479,9 +11521,9 @@
                                                                                                                                                                                               0.0044,
                                                                                                                                                                                               1.6209,
                                                                                                                                                                                               0.0236,
-                                                                                                                                                                                              0.0044,
-                                                                                                                                                                                              1.6209,
-                                                                                                                                                                                              0.0236
+                                                                                                                                                                                              -0.0483,
+                                                                                                                                                                                              1.3963,
+                                                                                                                                                                                              -0.0188
                                                                                                                                                                                             ]
                                                                                                                                                                                           }
                                                                                                                                                                                         },
@@ -11512,9 +11554,9 @@
                                                                                                                                                                                               0.0044,
                                                                                                                                                                                               1.6209,
                                                                                                                                                                                               0.0236,
-                                                                                                                                                                                              0.0044,
-                                                                                                                                                                                              1.6209,
-                                                                                                                                                                                              0.0236
+                                                                                                                                                                                              0.0216,
+                                                                                                                                                                                              1.4053,
+                                                                                                                                                                                              0.0051
                                                                                                                                                                                             ]
                                                                                                                                                                                           }
                                                                                                                                                                                         },
@@ -11545,9 +11587,9 @@
                                                                                                                                                                                               0.0044,
                                                                                                                                                                                               1.6209,
                                                                                                                                                                                               0.0236,
-                                                                                                                                                                                              0.0044,
-                                                                                                                                                                                              1.6209,
-                                                                                                                                                                                              0.0236
+                                                                                                                                                                                              -0.0219,
+                                                                                                                                                                                              1.4053,
+                                                                                                                                                                                              0.0051
                                                                                                                                                                                             ]
                                                                                                                                                                                           }
                                                                                                                                                                                         },
@@ -11578,9 +11620,9 @@
                                                                                                                                                                                               0.0044,
                                                                                                                                                                                               1.6209,
                                                                                                                                                                                               0.0236,
-                                                                                                                                                                                              0.0044,
-                                                                                                                                                                                              1.6209,
-                                                                                                                                                                                              0.0236
+                                                                                                                                                                                              -0.0002,
+                                                                                                                                                                                              1.3043,
+                                                                                                                                                                                              -0.0865
                                                                                                                                                                                             ]
                                                                                                                                                                                           }
                                                                                                                                                                                         },
@@ -11692,6 +11734,11 @@
                                                                                                                                                                             "HAnimJoint": {
                                                                                                                                                                               "@name": "l_eyelid_joint",
                                                                                                                                                                               "@DEF": "hanim_l_eyelid_joint",
+                                                                                                                                                                              "@center": [
+                                                                                                                                                                                0.0503,
+                                                                                                                                                                                1.4157,
+                                                                                                                                                                                -0.0689
+                                                                                                                                                                              ],
                                                                                                                                                                               "@ulimit": [
                                                                                                                                                                                 0,
                                                                                                                                                                                 0,
@@ -11708,6 +11755,11 @@
                                                                                                                                                                             "HAnimJoint": {
                                                                                                                                                                               "@name": "r_eyelid_joint",
                                                                                                                                                                               "@DEF": "hanim_r_eyelid_joint",
+                                                                                                                                                                              "@center": [
+                                                                                                                                                                                -0.0507,
+                                                                                                                                                                                1.4157,
+                                                                                                                                                                                -0.0689
+                                                                                                                                                                              ],
                                                                                                                                                                               "@ulimit": [
                                                                                                                                                                                 0,
                                                                                                                                                                                 0,
@@ -11724,6 +11776,11 @@
                                                                                                                                                                             "HAnimJoint": {
                                                                                                                                                                               "@name": "l_eyeball_joint",
                                                                                                                                                                               "@DEF": "hanim_l_eyeball_joint",
+                                                                                                                                                                              "@center": [
+                                                                                                                                                                                0.0479,
+                                                                                                                                                                                1.3963,
+                                                                                                                                                                                -0.0188
+                                                                                                                                                                              ],
                                                                                                                                                                               "@ulimit": [
                                                                                                                                                                                 0,
                                                                                                                                                                                 0,
@@ -11740,6 +11797,11 @@
                                                                                                                                                                             "HAnimJoint": {
                                                                                                                                                                               "@name": "r_eyeball_joint",
                                                                                                                                                                               "@DEF": "hanim_r_eyeball_joint",
+                                                                                                                                                                              "@center": [
+                                                                                                                                                                                -0.0483,
+                                                                                                                                                                                1.3963,
+                                                                                                                                                                                -0.0188
+                                                                                                                                                                              ],
                                                                                                                                                                               "@ulimit": [
                                                                                                                                                                                 0,
                                                                                                                                                                                 0,
@@ -11756,6 +11818,11 @@
                                                                                                                                                                             "HAnimJoint": {
                                                                                                                                                                               "@name": "l_eyebrow_joint",
                                                                                                                                                                               "@DEF": "hanim_l_eyebrow_joint",
+                                                                                                                                                                              "@center": [
+                                                                                                                                                                                0.0216,
+                                                                                                                                                                                1.4053,
+                                                                                                                                                                                0.0051
+                                                                                                                                                                              ],
                                                                                                                                                                               "@ulimit": [
                                                                                                                                                                                 0,
                                                                                                                                                                                 0,
@@ -11772,6 +11839,11 @@
                                                                                                                                                                             "HAnimJoint": {
                                                                                                                                                                               "@name": "r_eyebrow_joint",
                                                                                                                                                                               "@DEF": "hanim_r_eyebrow_joint",
+                                                                                                                                                                              "@center": [
+                                                                                                                                                                                -0.0219,
+                                                                                                                                                                                1.4053,
+                                                                                                                                                                                0.0051
+                                                                                                                                                                              ],
                                                                                                                                                                               "@ulimit": [
                                                                                                                                                                                 0,
                                                                                                                                                                                 0,
@@ -11788,6 +11860,11 @@
                                                                                                                                                                             "HAnimJoint": {
                                                                                                                                                                               "@name": "temporomandibular",
                                                                                                                                                                               "@DEF": "hanim_temporomandibular",
+                                                                                                                                                                              "@center": [
+                                                                                                                                                                                -0.0002,
+                                                                                                                                                                                1.3043,
+                                                                                                                                                                                -0.0865
+                                                                                                                                                                              ],
                                                                                                                                                                               "@ulimit": [
                                                                                                                                                                                 0,
                                                                                                                                                                                 0,

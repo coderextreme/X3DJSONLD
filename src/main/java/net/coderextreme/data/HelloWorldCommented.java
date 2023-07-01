@@ -92,7 +92,7 @@ public class HelloWorldCommented {
               .setGeometry(new Text().setDEF("TextMessage").setString(new MFString1().getArray())
                 .addComments("FontStyle begin")
                 .addComments("FontStyle complete")
-                .setFontStyle(new FontStyle().setJustify(new MFString2().getArray())))
+                .setFontStyle(new FontStyle("TextMessage").setJustify(new MFString2().getArray())))
               .setAppearance(new Appearance()
                 .addComments("Material begin")
                 .addComments("Material complete")

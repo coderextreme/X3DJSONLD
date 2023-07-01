@@ -73,18 +73,18 @@ ProtoInstance ProtoInstance12 = null;
             .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")))
           .setProtoBody(new ProtoBody()
             .addChild(new Transform().setDEF("node")
-              .setIS(new IS()
+              .setIS(new IS("node")
                 .addConnect(new connect().setNodeField("translation").setProtoField("translation")))
-              .addChild(new Shape()
+              .addChild(new Shape("node")
                 .setGeometry(new Sphere().setRadius(0.1f))
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f}))))
-              .addChild(new PositionInterpolator().setDEF("PI1").setKey(new MFFloat1().getArray()).setKeyValue(new MFVec3f2().getArray()))
-              .addChild(new Script().setDEF("MB1")
-                .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("50 50 0"))
-                .addField(new field().setType("SFVec3f").setName("old").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-                .addField(new field().setType("SFTime").setName("set_location").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("MFVec3f").setName("keyValue").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0 0 5 0"))
+              .addChild(new PositionInterpolator("node").setDEF("PI1").setKey(new MFFloat1().getArray()).setKeyValue(new MFVec3f2().getArray()))
+              .addChild(new Script("node").setDEF("MB1")
+                .addField(new field("MB1").setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("50 50 0"))
+                .addField(new field("MB1").setType("SFVec3f").setName("old").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+                .addField(new field("MB1").setType("SFTime").setName("set_location").setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field("MB1").setType("MFVec3f").setName("keyValue").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0 0 5 0"))
                 .setSourceCode("ecmascript:\n"+
 "		function set_location(value) {\n"+
 "                    old = translation;\n"+
@@ -92,11 +92,11 @@ ProtoInstance ProtoInstance12 = null;
 "                    keyValue = new MFVec3f([old, translation]);\n"+
 "		    // Browser.println(keyValue);\n"+
 "		}"))
-              .addChild(new TimeSensor().setDEF("CL1").setCycleInterval(3d).setLoop(true))
-              .addChild(new ROUTE().setFromNode("CL1").setFromField("cycleTime").setToNode("MB1").setToField("set_location"))
-              .addChild(new ROUTE().setFromNode("CL1").setFromField("fraction_changed").setToNode("PI1").setToField("set_fraction"))
-              .addChild(new ROUTE().setFromNode("MB1").setFromField("keyValue").setToNode("PI1").setToField("keyValue"))
-              .addChild(new ROUTE().setFromNode("PI1").setFromField("value_changed").setToNode("node").setToField("set_translation")))))
+              .addChild(new TimeSensor("node").setDEF("CL1").setCycleInterval(3d).setLoop(true))
+              .addChild(new ROUTE("node").setFromNode("CL1").setFromField("cycleTime").setToNode("MB1").setToField("set_location"))
+              .addChild(new ROUTE("node").setFromNode("CL1").setFromField("fraction_changed").setToNode("PI1").setToField("set_fraction"))
+              .addChild(new ROUTE("node").setFromNode("MB1").setFromField("keyValue").setToNode("PI1").setToField("keyValue"))
+              .addChild(new ROUTE("node").setFromNode("PI1").setFromField("value_changed").setToNode("node").setToField("set_translation")))))
         .addChild(new ProtoDeclare().setName("x3dconnector")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFNode").setName("startnode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
@@ -106,21 +106,21 @@ ProtoInstance ProtoInstance12 = null;
           .setProtoBody(new ProtoBody()
             .addChild(new Group()
               .addChild(new Transform().setDEF("trans")
-                .addChild(new Transform().setDEF("rotscale")
-                  .addChild(new Shape()
+                .addChild(new Transform("trans").setDEF("rotscale")
+                  .addChild(new Shape("rotscale")
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setDiffuseColor(new float[] {0.2f,0.7f,0.7f}).setTransparency(0.5f)))
                     .setGeometry(new Cylinder().setRadius(0.05f)))))
               .addChild(new Script().setDEF("S1")
-                .addField(new field().setType("SFNode").setName("startnode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
-                .addField(new field().setType("SFNode").setName("endnode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
-                .addField(new field().setType("SFNode").setName("position").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
+                .addField(new field("S1").setType("SFNode").setName("startnode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
+                .addField(new field("S1").setType("SFNode").setName("endnode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
+                .addField(new field("S1").setType("SFNode").setName("position").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
                   .addChild(new Transform().setUSE("trans")))
-                .addField(new field().setType("SFNode").setName("rotscale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
+                .addField(new field("S1").setType("SFNode").setName("rotscale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
                   .addChild(new Transform().setUSE("rotscale")))
-                .addField(new field().setType("SFVec3f").setName("set_startpoint").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFVec3f").setName("set_endpoint").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .setIS(new IS()
+                .addField(new field("S1").setType("SFVec3f").setName("set_startpoint").setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field("S1").setType("SFVec3f").setName("set_endpoint").setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .setIS(new IS("S1")
                   .addConnect(new connect().setNodeField("startnode").setProtoField("startnode"))
                   .addConnect(new connect().setNodeField("endnode").setProtoField("endnode"))
                   .addConnect(new connect().setNodeField("set_startpoint").setProtoField("set_startpoint"))
@@ -185,35 +185,35 @@ ProtoInstance ProtoInstance12 = null;
         .addChild(new ROUTE().setFromNode("G1").setFromField("translation").setToNode("connector3").setToField("set_startpoint"))
         .addChild(new ROUTE().setFromNode("G4").setFromField("translation").setToNode("connector3").setToField("set_endpoint")))      ;
 ProtoInstance4
-          .addFieldValue(new fieldValue().setName("startnode")
+          .addFieldValue(new fieldValue("connector1").setName("startnode")
             .addChild(ProtoInstance5 = new ProtoInstance().setUSE("G1")));
 ProtoInstance4
-          .addFieldValue(new fieldValue().setName("endnode")
+          .addFieldValue(new fieldValue("connector1").setName("endnode")
             .addChild(ProtoInstance6 = new ProtoInstance().setUSE("G2")));
 ProtoInstance4
-          .addFieldValue(new fieldValue().setName("set_startpoint"));
+          .addFieldValue(new fieldValue("connector1").setName("set_startpoint"));
 ProtoInstance4
-          .addFieldValue(new fieldValue().setName("set_endpoint"));
+          .addFieldValue(new fieldValue("connector1").setName("set_endpoint"));
 ProtoInstance7
-          .addFieldValue(new fieldValue().setName("startnode")
+          .addFieldValue(new fieldValue("connector2").setName("startnode")
             .addChild(ProtoInstance8 = new ProtoInstance().setUSE("G1")));
 ProtoInstance7
-          .addFieldValue(new fieldValue().setName("endnode")
+          .addFieldValue(new fieldValue("connector2").setName("endnode")
             .addChild(ProtoInstance9 = new ProtoInstance().setUSE("G3")));
 ProtoInstance7
-          .addFieldValue(new fieldValue().setName("set_startpoint"));
+          .addFieldValue(new fieldValue("connector2").setName("set_startpoint"));
 ProtoInstance7
-          .addFieldValue(new fieldValue().setName("set_endpoint"));
+          .addFieldValue(new fieldValue("connector2").setName("set_endpoint"));
 ProtoInstance10
-          .addFieldValue(new fieldValue().setName("startnode")
+          .addFieldValue(new fieldValue("connector3").setName("startnode")
             .addChild(ProtoInstance11 = new ProtoInstance().setUSE("G1")));
 ProtoInstance10
-          .addFieldValue(new fieldValue().setName("endnode")
+          .addFieldValue(new fieldValue("connector3").setName("endnode")
             .addChild(ProtoInstance12 = new ProtoInstance().setUSE("G4")));
 ProtoInstance10
-          .addFieldValue(new fieldValue().setName("set_startpoint"));
+          .addFieldValue(new fieldValue("connector3").setName("set_startpoint"));
 ProtoInstance10
-          .addFieldValue(new fieldValue().setName("set_endpoint"));
+          .addFieldValue(new fieldValue("connector3").setName("set_endpoint"));
     return X3D0;
     }
 protected class MFColor0 {

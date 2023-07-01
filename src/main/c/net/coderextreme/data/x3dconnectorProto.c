@@ -269,8 +269,8 @@ Transform52.children[0] = Transform53;
 
 children[9] = Transform52;
 
-ProtoDeclare ProtoDeclare58 = browser.createX3DFromString(`<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+ProtoDeclare ProtoDeclare58 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="x3dconnector" ><ProtoInterface><field name="startnode" accessType="initializeOnly" type="SFNode"></field>
 <field name="endnode" accessType="initializeOnly" type="SFNode"></field>
 <field name="transnode" accessType="initializeOnly" type="SFNode"></field>

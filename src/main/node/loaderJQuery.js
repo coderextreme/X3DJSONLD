@@ -1,5 +1,6 @@
-if (typeof PROTOS === 'undefined') {
-	var PROTOS = require('./PrototypeExpander.js')();
+if (typeof window.PROTOS === 'undefined') {
+	var PROTOS = require('./PrototypeExpander.js');
+	window.PROTOS = PROTOS;
 }
 
 X3DJSONLD = window.X3DJSONLD;
@@ -271,10 +272,11 @@ window.loadX3D = function loadX3D(selector, json, url) {
  */
 function appendInline(element, url, xmlDoc, next) {
 	$.getJSON(url, function(json) {
-		if (typeof PROTOS !== 'undefined' && typeof PROTOS.prototypeExpander === 'function') {
+		var pros = new window.PROTOS();
+		if (typeof pros !== 'undefined' && typeof pros.prototypeExpander === 'function') {
 			try {
 			    if ($('#prototype').is(':checked')) {
-				json = new PROTOS().prototypeExpander(url, json, "");
+				json = new pros.prototypeExpander(url, json, "");
 			    }
 			} catch (e) {
 				alert("Problems with ProtoExpander in appendInline "+ e);

@@ -95,7 +95,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 June 2023"
+            "@content":"01 July 2023"
           },
           {
             "@name":"generator",
@@ -226,45 +226,7 @@
                     "@name":"Titania",
                     "@DEF":"Titania",
                     "@reference":"http://titania.create3000.de",
-                    "-value":[
-                      { "MetadataSet":
-                        {
-                          "@name":"Selection",
-                          "@DEF":"Selection",
-                          "@reference":"http://titania.create3000.de",
-                          "-value":[
-                            { "MetadataSet":
-                              {
-                                "@name":"nodes",
-                                "@DEF":"nodes",
-                                "@reference":"http://titania.create3000.de",
-                                "-children":[
-                                  {
-                                    "#comment":"NULL"
-                                  }
-                                ]
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      { "MetadataSet":
-                        {
-                          "@name":"NavigationInfo",
-                          "@DEF":"NavigationInfo",
-                          "@reference":"http://titania.create3000.de",
-                          "-value":[
-                            { "MetadataString":
-                              {
-                                "@name":"type",
-                                "@DEF":"type",
-                                "@reference":"http://titania.create3000.de",
-                                "@value":["EXAMINE"]
-                              }
-                            }
-                          ]
-                        }
-                      },
+                    "-IllegalChildNodeFieldNameNotFound":[
                       { "MetadataSet":
                         {
                           "@name":"Viewpoint",

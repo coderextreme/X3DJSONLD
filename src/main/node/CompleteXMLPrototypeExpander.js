@@ -5,7 +5,7 @@ var fs = require('fs');
 var X3DJSONLD = require('./X3DJSONLD.js');
 var Browser = X3DJSONLD.Browser;
 
-var PROTOS = require('./PrototypeExpander')
+var PROTOS = require('./PrototypeExpander.js');
 
 var xmldom = require('@xmldom/xmldom');
 var DOMImplementation = new xmldom.DOMImplementation();
@@ -34,10 +34,10 @@ process.argv.shift();
 
 function ProcessJSON(json, file) {
 	// Run it through the prototype expander
-	json = PROTOS.prototypeExpander(file, json, "");
+	json = new PROTOS().prototypeExpander(file, json, "");
 
 	var NS = "https://www.web3d.org/specifications/x3d";
-	loadX3DJS(DOMImplementation, json, file, NS, X3DJSONLD, function(element, xml) {
+	loadX3DJS(DOMImplementation, json, file, NS, function(element, xml) {
 		var str = serializer.serializeToString(json, element, 0, mapToMethod, fieldTypes);
 		var outfile = "ppp/"+file.substr(0, file.lastIndexOf("."))+".x3d";
 		try {

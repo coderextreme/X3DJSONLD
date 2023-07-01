@@ -9,13 +9,15 @@ var fieldTypes = require('./fieldTypes.js');
 var X3DJSONLD = require('./X3DJSONLD.js');
 var Script = require('./Script');
 var loadValidate = require("./loadValidate.js");
-var xmldom = require('@xmldom/xmldom');
+const { DOMParser, XMLSerializer, DOMImplementation } = require('@xmldom/xmldom')
 
 var replaceX3DJSON = loadValidate.replaceX3DJSON;
 var loadSchema = loadValidate.loadSchema;
 var loadX3DJS = loadValidate.loadX3DJS;
 var doValidate = loadValidate.doValidate;
-var DOMImplementation = new xmldom.DOMImplementation();
+console.log("DOM", DOMImplementation);
+var domImpl = new DOMImplementation();
+console.log("DOM Impl", domImpl);
 
 var LOG = Script.LOG;
 X3DJSONLD = Object.assign(X3DJSONLD, { processURLs : function(urls) { return urls; }});
@@ -44,6 +46,7 @@ function convertJSON(options) {
 		}
 		var basefile = file.substr(0, file.lastIndexOf("."));
 		var file = basefile+".json";
+		console.log("Reading", file, domImpl);
 		var str = fs.readFileSync(file).toString();
 		if (typeof str === 'undefined') {
 			throw("Read nothing, or possbile error");
@@ -58,7 +61,7 @@ function convertJSON(options) {
 			continue;
 		}
 		var NS = "https://www.web3d.org/specifications/x3d";
-		loadX3DJS(DOMImplementation, json, file, NS, loadSchema, doValidate, X3DJSONLD, function(element, xml) {
+		loadX3DJS(domImpl, json, file, NS, function(element, xml) {
 			if (typeof element === undefined) {
 				throw ("Undefined element returned from loadX3DJS()")
 			}

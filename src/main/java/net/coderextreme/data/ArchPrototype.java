@@ -84,13 +84,13 @@ ProtoInstance ProtoInstance0 = null;
             .addComments("First node determines node type of this prototype")
             .addComments("IndexedFaceset creates arch")
             .addChild(new Transform().setDEF("ArchTransform")
-              .addChild(new Shape().setDEF("Arch")
+              .addChild(new Shape("ArchTransform").setDEF("Arch")
                 .addComments("note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly")
-                .setGeometry(new IndexedFaceSet().setDEF("ArchIndex").setConvex(false).setSolid(false)
-                  .setCoord(new Coordinate().setDEF("ArchChord")))
-                .setAppearance(new Appearance()
+                .setGeometry(new IndexedFaceSet("Arch").setDEF("ArchIndex").setConvex(false).setSolid(false)
+                  .setCoord(new Coordinate("ArchIndex").setDEF("ArchChord")))
+                .setAppearance(new Appearance("Arch")
                   .setMaterial(new Material().setDEF("MaterialNode")
-                    .setIS(new IS()
+                    .setIS(new IS("MaterialNode")
                       .addConnect(new connect().setNodeField("emissiveColor").setProtoField("emissiveColor"))
                       .addConnect(new connect().setNodeField("diffuseColor").setProtoField("diffuseColor")))))))
             .addComments("Subsequent nodes do not render, but still must be a valid X3D subgraph")
@@ -100,22 +100,22 @@ ProtoInstance ProtoInstance0 = null;
               .addComments("General parameters")
               .addComments("Parameters to create to create shapes related to arch: put true to apply")
               .addComments("OUTPUT PARAMETERS")
-              .addField(new field().setType("SFFloat").setName("clearSpanWidth").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for clearSpanWidth parameter"))
-              .addField(new field().setType("SFFloat").setName("riseHeight").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for riseHeight parameter"))
-              .addField(new field().setType("SFFloat").setName("depth").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for depth parameter"))
-              .addField(new field().setType("SFFloat").setName("topAbutmentHeight").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for topAbutmentHeight parameter"))
-              .addField(new field().setType("SFFloat").setName("pierWidth").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for pierWidth parameter"))
-              .addField(new field().setType("SFFloat").setName("pierHeight").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for pierHeight parameter"))
-              .addField(new field().setType("SFBool").setName("archHalf").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for archHalf parameter"))
-              .addField(new field().setType("SFFloat").setName("archHalfExtensionWidth").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for archHalfExtensionWidth parameter"))
-              .addField(new field().setType("SFBool").setName("onlyIntrados").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for onlyIntrados parameter"))
-              .addField(new field().setType("SFBool").setName("archFilled").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for archFilled parameter"))
-              .addField(new field().setType("SFBool").setName("archHalfFilled").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for archHalfFilled parameter"))
-              .addField(new field().setType("SFBool").setName("lintel").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for lintel parameter"))
-              .addField(new field().setType("SFVec3f").setName("computedScale").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setAppinfo("computedScale: modify scale field - NOTE it is not used to modify the whole arch, but to modify clearSpanWidth, riseHeight, depth. It does not affect topAbutmentHeight, pierWidth, pierHeight, archHalfExtensionWidth"))
-              .addField(new field().setType("MFVec3f").setName("pointOut").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setAppinfo("send computed points to the Coordinate node"))
-              .addField(new field().setType("MFInt32").setName("indexOut").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setAppinfo("send computed indices to the IndexedFaceSet node"))
-              .setIS(new IS()
+              .addField(new field("ArchPrototypeScript").setType("SFFloat").setName("clearSpanWidth").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for clearSpanWidth parameter"))
+              .addField(new field("ArchPrototypeScript").setType("SFFloat").setName("riseHeight").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for riseHeight parameter"))
+              .addField(new field("ArchPrototypeScript").setType("SFFloat").setName("depth").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for depth parameter"))
+              .addField(new field("ArchPrototypeScript").setType("SFFloat").setName("topAbutmentHeight").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for topAbutmentHeight parameter"))
+              .addField(new field("ArchPrototypeScript").setType("SFFloat").setName("pierWidth").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for pierWidth parameter"))
+              .addField(new field("ArchPrototypeScript").setType("SFFloat").setName("pierHeight").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for pierHeight parameter"))
+              .addField(new field("ArchPrototypeScript").setType("SFBool").setName("archHalf").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for archHalf parameter"))
+              .addField(new field("ArchPrototypeScript").setType("SFFloat").setName("archHalfExtensionWidth").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for archHalfExtensionWidth parameter"))
+              .addField(new field("ArchPrototypeScript").setType("SFBool").setName("onlyIntrados").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for onlyIntrados parameter"))
+              .addField(new field("ArchPrototypeScript").setType("SFBool").setName("archFilled").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for archFilled parameter"))
+              .addField(new field("ArchPrototypeScript").setType("SFBool").setName("archHalfFilled").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for archHalfFilled parameter"))
+              .addField(new field("ArchPrototypeScript").setType("SFBool").setName("lintel").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("user or default input for lintel parameter"))
+              .addField(new field("ArchPrototypeScript").setType("SFVec3f").setName("computedScale").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setAppinfo("computedScale: modify scale field - NOTE it is not used to modify the whole arch, but to modify clearSpanWidth, riseHeight, depth. It does not affect topAbutmentHeight, pierWidth, pierHeight, archHalfExtensionWidth"))
+              .addField(new field("ArchPrototypeScript").setType("MFVec3f").setName("pointOut").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setAppinfo("send computed points to the Coordinate node"))
+              .addField(new field("ArchPrototypeScript").setType("MFInt32").setName("indexOut").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setAppinfo("send computed indices to the IndexedFaceSet node"))
+              .setIS(new IS("ArchPrototypeScript")
                 .addConnect(new connect().setNodeField("clearSpanWidth").setProtoField("clearSpanWidth"))
                 .addConnect(new connect().setNodeField("riseHeight").setProtoField("riseHeight"))
                 .addConnect(new connect().setNodeField("depth").setProtoField("depth"))
@@ -135,21 +135,21 @@ ProtoInstance ProtoInstance0 = null;
         .addComments("Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)")
         .addChild(new Inline().setDEF("CoordinateAxes").setUrl(new MFString1().getArray())))      ;
 ProtoInstance0
-          .addFieldValue(new fieldValue().setName("diffuseColor").setValue("0.5 0.3 0.6"));
+          .addFieldValue(new fieldValue("ArchInstance").setName("diffuseColor").setValue("0.5 0.3 0.6"));
 ProtoInstance0
-          .addFieldValue(new fieldValue().setName("emissiveColor").setValue("0.5 0.3 0.6"));
+          .addFieldValue(new fieldValue("ArchInstance").setName("emissiveColor").setValue("0.5 0.3 0.6"));
 ProtoInstance0
-          .addFieldValue(new fieldValue().setName("clearSpanWidth").setValue("5"));
+          .addFieldValue(new fieldValue("ArchInstance").setName("clearSpanWidth").setValue("5"));
 ProtoInstance0
-          .addFieldValue(new fieldValue().setName("riseHeight").setValue("2.5"));
+          .addFieldValue(new fieldValue("ArchInstance").setName("riseHeight").setValue("2.5"));
 ProtoInstance0
-          .addFieldValue(new fieldValue().setName("depth").setValue("2"));
+          .addFieldValue(new fieldValue("ArchInstance").setName("depth").setValue("2"));
 ProtoInstance0
-          .addFieldValue(new fieldValue().setName("topAbutmentHeight").setValue("0.6"));
+          .addFieldValue(new fieldValue("ArchInstance").setName("topAbutmentHeight").setValue("0.6"));
 ProtoInstance0
-          .addFieldValue(new fieldValue().setName("pierWidth").setValue("1"));
+          .addFieldValue(new fieldValue("ArchInstance").setName("pierWidth").setValue("1"));
 ProtoInstance0
-          .addFieldValue(new fieldValue().setName("pierHeight").setValue("2"));
+          .addFieldValue(new fieldValue("ArchInstance").setName("pierHeight").setValue("2"));
     return X3D0;
     }
 protected class MFString0 {
