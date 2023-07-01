@@ -144,6 +144,7 @@ def parseObject(parent, data,indent):
             continue
         if parent in ("Text", "Shape") and key in ("value"):  # don't have value yet, sorry
             # do value later
+            raise "-value not a supported field of Text or Shape, try -metadata?"
             continue
         if els > 0 and parent != "head":
             out += ", "
