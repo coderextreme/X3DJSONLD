@@ -584,7 +584,7 @@
         {
           "ChannelSplitter": {
             "@DEF": "ChannelSplitter",
-            "@channelCountMode": "explicit",
+            "@channelCountMode": "EXPLICIT",
             "@channelInterpretation": "SPEAKERS",
             "-children": [
               {

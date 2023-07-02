@@ -12,6 +12,10 @@
           "@level": 1
         },
         {
+          "@name": "EnvironmentalEffects",
+          "@level": 3
+        },
+        {
           "@name": "Shaders",
           "@level": 1
         },
@@ -34,6 +38,10 @@
         {
           "@name": "Grouping",
           "@level": 3
+        },
+        {
+          "@name": "Core",
+          "@level": 1
         }
       ],
       "meta": [

@@ -18,7 +18,9 @@ if (typeof addFromats === 'undefined') {
 const ajv = new Ajv2020();
 addFormats(ajv, ["uri-reference", "uri"], fullFormats);
 var fs = require('fs');
+/*
 var localize = require('ajv-i18n');
+*/
 if (typeof X3DJSONLD === 'undefined') {
 	var X3DJSONLD = require('./X3DJSONLD.js');
 }
@@ -43,14 +45,15 @@ doValidate = function doValidate(json, validated_version, file, success, failure
 		}
 		console.error(e);
 	}
-	var version = json.X3D["@version"];
 	if (typeof validated_version !== 'undefined') {
 		var valid = validated_version(json);
 		if (!valid) {
 			var errs = validated_version.errors;
+			/*
 			if (typeof localize === 'function') {
 				localize(validated_version.errors);
 			}
+			*/
 			var error = "";
 			for (var e in errs) {
 				error += "\n keyword: " + errs[e].keyword + "\n";
