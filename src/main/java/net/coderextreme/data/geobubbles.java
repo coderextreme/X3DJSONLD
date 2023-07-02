@@ -66,10 +66,10 @@ public class geobubbles {
         .addChild(new TimeSensor().setDEF("TourTime").setCycleInterval(5d).setLoop(true))
         .addChild(new GeoPositionInterpolator().setDEF("TourPosition").setKey(new MFFloat6().getArray()).setKeyValue(new MFVec3d7().getArray()))
         .addChild(new Script().setDEF("RandomTourTime")
-          .addField(new field("RandomTourTime").setType("SFTime").setName("set_cycle").setAccessType(field.ACCESSTYPE_INPUTONLY))
-          .addField(new field("RandomTourTime").setType("SFFloat").setName("val").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-          .addField(new field("RandomTourTime").setType("MFVec3d").setName("positions").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.0015708 0 4 0 0.0015708 4"))
-          .addField(new field("RandomTourTime").setType("MFVec3d").setName("position").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.0015708 0 4 0 0.0015708 4"))
+          .addField(new field().setType("SFTime").setName("set_cycle").setAccessType(field.ACCESSTYPE_INPUTONLY))
+          .addField(new field().setType("SFFloat").setName("val").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
+          .addField(new field().setType("MFVec3d").setName("positions").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.0015708 0 4 0 0.0015708 4"))
+          .addField(new field().setType("MFVec3d").setName("position").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.0015708 0 4 0 0.0015708 4"))
           .setSourceCode("ecmascript:\n"+
 "\n"+
 "               function set_cycle(value) {\n"+

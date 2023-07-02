@@ -85,7 +85,7 @@ public class HelloWorld {
           .addChild(new Transform().setTranslation(new float[] {0f,-2f,0f})
             .addChild(new Shape()
               .setGeometry(new Text().setDEF("TextMessage").setString(new MFString2().getArray())
-                .setFontStyle(new FontStyle("TextMessage").setJustify(new MFString3().getArray())))
+                .setFontStyle(new FontStyle().setJustify(new MFString3().getArray())))
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setUSE("MaterialLightBlue")))))))      ;
     return X3D0;

@@ -59,9 +59,9 @@ public class ifscubeworks {
         .addChild(new Group()
           .addChild(new Shape()
             .setGeometry(new IndexedFaceSet().setDEF("IndexedFaceSet").setCoordIndex(new MFInt320().getArray()).setNormalIndex(new MFInt321().getArray()).setNormalPerVertex(false).setColorIndex(new MFInt322().getArray())
-              .setCoord(new Coordinate("IndexedFaceSet").setPoint(new MFVec3f3().getArray()))
-              .setNormal(new Normal("IndexedFaceSet").setVector(new MFVec3f4().getArray()))
-              .setColor(new Color("IndexedFaceSet").setColor(new MFColor5().getArray()))))))      ;
+              .setCoord(new Coordinate().setPoint(new MFVec3f3().getArray()))
+              .setNormal(new Normal().setVector(new MFVec3f4().getArray()))
+              .setColor(new Color().setColor(new MFColor5().getArray()))))))      ;
     return X3D0;
     }
 protected class MFInt320 {

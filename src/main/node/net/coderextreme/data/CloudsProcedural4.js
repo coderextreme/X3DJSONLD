@@ -53,6 +53,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .addChild((new autoclass.Transform()).setUSE("Cirrus")))
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFNODE).setName("Fog").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY))
             .setSourceCode("ecmascript:\n"+
+"Cirrus.children = [];\n"+
 "\n"+
 "\n"+
 "function cumulustranslation() // These values designate the boundary location of the cloud\n"+

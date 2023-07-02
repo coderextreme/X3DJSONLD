@@ -294,10 +294,10 @@ Shape57.geometry = LineSet58;
 HAnimSegment53.children[1] = Shape57;
 
 let HAnimSite61 = browser.currentScene.createNode("HAnimSite");
-HAnimSite61.name = "buttocks_standing_wall_contact_point";
-HAnimSite61.DEF = "hanim_buttocks_standing_wall_contact_point";
+HAnimSite61.name = "buttocks_standing_wall_contact_point_pt";
+HAnimSite61.DEF = "hanim_buttocks_standing_wall_contact_point_pt";
 let TouchSensor62 = browser.currentScene.createNode("TouchSensor");
-TouchSensor62.description = "HAnimSite buttocks_standing_wall_contact_point";
+TouchSensor62.description = "HAnimSite buttocks_standing_wall_contact_point_pt";
 HAnimSite61.children = new MFNode();
 
 HAnimSite61.children[0] = TouchSensor62;
@@ -9626,7 +9626,7 @@ HAnimSegment1872.USE = "hanim_r_carpal_middle_phalanx_5";
 HAnimHumanoid43.segments[266] = HAnimSegment1872;
 
 let HAnimSite1873 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1873.USE = "hanim_buttocks_standing_wall_contact_point";
+HAnimSite1873.USE = "hanim_buttocks_standing_wall_contact_point_pt";
 HAnimHumanoid43.viewpoints[267] = HAnimSite1873;
 
 let HAnimSite1874 = browser.currentScene.createNode("HAnimSite");

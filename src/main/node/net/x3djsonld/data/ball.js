@@ -70,7 +70,6 @@ ball.prototype = {
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("Scripting").setLevel(1))
-    .addComments("component name='EnvironmentalEffects' level='1'></component")
     .addComponent((new autoclass.component()).setName("EnvironmentalEffects").setLevel(3))
     .addComponent((new autoclass.component()).setName("Shaders").setLevel(1))
     .addComponent((new autoclass.component()).setName("CubeMapTexturing").setLevel(1))
