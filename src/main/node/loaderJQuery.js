@@ -160,7 +160,7 @@ if (typeof mapToMethod !== 'undefined') {
 window.loadX3DJS_X3DOM = function (selector, DOMImplementation, jsobj, path, NS, callback) {
 	X3DJSONLD.x3djsonNS = NS;
 	loadSchema(jsobj, path, function() {
-		var doc = document.querySelector(selector);
+		var doc = $(selector)[0];
 		if (doc && doc.hasRuntime && doc.runtime.ready) {
 			var child = doc.runtime.createX3DFromJS(jsobj, path);
 			var xml = X3DJSONLD.serializeDOM(jsobj, child, true);
@@ -297,7 +297,7 @@ function appendInline(element, url, xmlDoc, next) {
 
 
 function loadSubscene(selector, url, xmlDoc, next) {
-	appendInline(document.querySelector(selector), url, xmlDoc, next);
+	appendInline($(selector), url, xmlDoc, next);
 }
 
 function loadInline(selector, url, xmlDoc) {
@@ -333,7 +333,7 @@ function appendX3DJSON2Selector(x3dele, selector, json, url, NS, next) {
  * replaceX3DJSON
  * replace children of selector with DOM created from X3D JSON.
  *	also, generate xml for inclusion elsewhere
- *
+ 	*
  * selector (string) -- css selector
  * json (json object) -- json to convert to DOM
  * url -- name of path/filename json loaded from
@@ -367,7 +367,7 @@ window.replaceX3DJSON = function replaceX3DJSON(selector, json, url, NS, next) {
 					return false;
 				}
 			}
-			var doc = document.querySelector(selector);
+			var doc = $(selector)[0];
 			if (doc && doc.hasRuntime && doc.runtime.ready) {
 				try {
 					doc.runtime.replaceWorld(element);
@@ -380,8 +380,8 @@ window.replaceX3DJSON = function replaceX3DJSON(selector, json, url, NS, next) {
 			$(selector+" Script").contents().filter(function () {
 			     return this.nodeType === 3 || this.nodeType === 4;
 			}).remove();
+			next(element, xml);
 		}
-		next(element, xml);
 	});
 }
 
