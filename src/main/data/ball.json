@@ -43,11 +43,6 @@
             "@level":1
           }
         ],
-        "-children":[
-          {
-            "#comment":"component name='EnvironmentalEffects' level='1'></component"
-          }
-        ],
         "meta": [
           {
             "@name":"title",
