@@ -56,7 +56,7 @@
           },
           {
             "@name":"translated",
-            "@content":"01 July 2023"
+            "@content":"02 July 2023"
           },
           {
             "@name":"generator",
@@ -157,7 +157,6 @@
               "-children":[
                 { "Shape":
                   {
-                    "@DEF":"Floor",
                     "-appearance":
                       { "Appearance":
                         {
@@ -165,7 +164,6 @@
                           "-material":
                             { "Material":
                               {
-                                "@DEF":"WireColor",
                                 "@diffuseColor":[0.122,0.114,0.125]
                               }
                             }
@@ -189,7 +187,6 @@
               "-children":[
                 { "Shape":
                   {
-                    "@DEF":"TransformAudio1",
                     "-appearance":
                       { "Appearance":
                         {
@@ -197,7 +194,6 @@
                           "-material":
                             { "Material":
                               {
-                                "@DEF":"WireColor_1",
                                 "@diffuseColor":[0.690196,0.101961,0.101961]
                               }
                             }
@@ -213,7 +209,6 @@
                 },
                 { "Billboard":
                   {
-                    "@DEF":"TransformAudio1",
                     "-children":[
                       { "Transform":
                         {
@@ -224,7 +219,6 @@
                           "-children":[
                             { "Shape":
                               {
-                                "@DEF":"violin",
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -271,7 +265,6 @@
               "-children":[
                 { "Shape":
                   {
-                    "@DEF":"TransformAudio2",
                     "-appearance":
                       { "Appearance":
                         {
@@ -279,7 +272,6 @@
                           "-material":
                             { "Material":
                               {
-                                "@DEF":"WireColor_2",
                                 "@diffuseColor":[0.105882,0.694118,0.580392]
                               }
                             }
@@ -295,7 +287,6 @@
                 },
                 { "Billboard":
                   {
-                    "@DEF":"TransformAudio2",
                     "-children":[
                       { "Transform":
                         {
@@ -306,7 +297,6 @@
                           "-children":[
                             { "Shape":
                               {
-                                "@DEF":"saxophone",
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -361,7 +351,6 @@
                     "-children":[
                       { "Gain":
                         {
-                          "@DEF":"Audio1",
                           "@channelCountMode":"MAX",
                           "@channelInterpretation":"SPEAKERS",
                           "-source":[
@@ -385,7 +374,6 @@
                     "-children":[
                       { "Gain":
                         {
-                          "@DEF":"Audio2",
                           "@channelCountMode":"MAX",
                           "@channelInterpretation":"SPEAKERS",
                           "-source":[

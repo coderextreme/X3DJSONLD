@@ -22,16 +22,16 @@
       <!-- This NavigationInfo allows examine mode and will be overridden by any parent scene. -->
       <!-- Each arrow goes from +1m to -1m to allow linear scaling to fit a scene -->
       <!-- Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user -->
-      <Group DEF='DoNotCollideWithVisualizationWidget'>
+      <Group>
         <!-- Vertical Y arrow and label -->
         <Group DEF='ArrowGreen'>
-          <Shape DEF='ArrowGreen'>
+          <Shape>
             <Appearance DEF='Green'>
-              <Material DEF='Green' diffuseColor='0.1 0.6 0.1' emissiveColor='0.05 0.2 0.05'/>
+              <Material diffuseColor='0.1 0.6 0.1' emissiveColor='0.05 0.2 0.05'/>
             </Appearance>
             <Cylinder DEF='ArrowCylinder' radius='0.025' top='false'/>
           </Shape>
-          <Transform DEF='ArrowGreen' translation='0 1 0'>
+          <Transform translation='0 1 0'>
             <Shape>
               <Appearance USE='Green'/>
               <Cone DEF='ArrowCone' bottomRadius='0.05' height='0.1'/>
@@ -42,7 +42,7 @@
           <Billboard>
             <Shape>
               <Appearance DEF='LABEL_APPEARANCE'>
-                <Material DEF='LABEL_APPEARANCE' diffuseColor='1 1 0.3' emissiveColor='0.33 0.33 0.1'/>
+                <Material diffuseColor='1 1 0.3' emissiveColor='0.33 0.33 0.1'/>
               </Appearance>
               <Text string='"Y"'>
                 <FontStyle DEF='LABEL_FONT' family='"SANS"' justify='"MIDDLE" "MIDDLE"' size='0.2'/>
@@ -51,17 +51,17 @@
           </Billboard>
         </Transform>
       </Group>
-      <Transform DEF='DoNotCollideWithVisualizationWidget' rotation='0 0 1 -1.57079'>
+      <Transform rotation='0 0 1 -1.57079'>
         <!-- Horizontal X arrow and label -->
         <Group>
           <Group DEF='ArrowRed'>
-            <Shape DEF='ArrowRed'>
+            <Shape>
               <Appearance DEF='Red'>
-                <Material DEF='Red' diffuseColor='0.7 0.1 0.1' emissiveColor='0.33 0 0'/>
+                <Material diffuseColor='0.7 0.1 0.1' emissiveColor='0.33 0 0'/>
               </Appearance>
               <Cylinder USE='ArrowCylinder'/>
             </Shape>
-            <Transform DEF='ArrowRed' translation='0 1 0'>
+            <Transform translation='0 1 0'>
               <Shape>
                 <Appearance USE='Red'/>
                 <Cone USE='ArrowCone'/>
@@ -81,17 +81,17 @@
           </Transform>
         </Group>
       </Transform>
-      <Transform DEF='DoNotCollideWithVisualizationWidget' rotation='1 0 0 1.57079'>
+      <Transform rotation='1 0 0 1.57079'>
         <!-- Perpendicular Z arrow and label, note right-hand rule -->
         <Group>
           <Group DEF='ArrowBlue'>
-            <Shape DEF='ArrowBlue'>
+            <Shape>
               <Appearance DEF='Blue'>
-                <Material DEF='Blue' diffuseColor='0.3 0.3 1' emissiveColor='0.1 0.1 0.33'/>
+                <Material diffuseColor='0.3 0.3 1' emissiveColor='0.1 0.1 0.33'/>
               </Appearance>
               <Cylinder USE='ArrowCylinder'/>
             </Shape>
-            <Transform DEF='ArrowBlue' translation='0 1 0'>
+            <Transform translation='0 1 0'>
               <Shape>
                 <Appearance USE='Blue'/>
                 <Cone USE='ArrowCone'/>

@@ -18,19 +18,19 @@
           <!-- left -->
           <Transform scale='0.5 0.5 0.5'>
             <Shape DEF='ShapeLeftDown'>
-              <Appearance DEF='ShapeLeftDown'>
+              <Appearance>
                 <Material diffuseColor='0.7 1 0'/>
               </Appearance>
-              <Extrusion DEF='ShapeLeftDown' creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' spine='-2.5 0 0 -1.5 0 0'/>
+              <Extrusion creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' spine='-2.5 0 0 -1.5 0 0'/>
             </Shape>
           </Transform>
           <!-- right -->
           <Transform scale='0.5 0.5 0.5'>
             <Shape DEF='ShapeUpRight'>
-              <Appearance DEF='ShapeUpRight'>
+              <Appearance>
                 <Material diffuseColor='0 0.7 1'/>
               </Appearance>
-              <Extrusion DEF='ShapeUpRight' creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' spine='1.5 0 0 2.5 0 0'/>
+              <Extrusion creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' spine='1.5 0 0 2.5 0 0'/>
             </Shape>
           </Transform>
           <!-- up -->
