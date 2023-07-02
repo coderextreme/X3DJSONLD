@@ -4,65 +4,80 @@ X3D0.profile = "Immersive";
 X3D0.version = "4.0";
 let head1 = browser.currentScene.createNode("head");
 let component2 = browser.currentScene.createNode("component");
-component2.name = "Shaders";
+component2.name = "Scripting";
 component2.level = 1;
 head1.component = new MFNode();
 
 head1.component[0] = component2;
 
 let component3 = browser.currentScene.createNode("component");
-component3.name = "CubeMapTexturing";
-component3.level = 1;
+component3.name = "EnvironmentalEffects";
+component3.level = 3;
 head1.component[1] = component3;
 
 let component4 = browser.currentScene.createNode("component");
-component4.name = "Texturing";
+component4.name = "Shaders";
 component4.level = 1;
 head1.component[2] = component4;
 
 let component5 = browser.currentScene.createNode("component");
-component5.name = "Rendering";
+component5.name = "CubeMapTexturing";
 component5.level = 1;
 head1.component[3] = component5;
 
 let component6 = browser.currentScene.createNode("component");
-component6.name = "Shape";
-component6.level = 4;
+component6.name = "Texturing";
+component6.level = 1;
 head1.component[4] = component6;
 
 let component7 = browser.currentScene.createNode("component");
-component7.name = "Grouping";
-component7.level = 3;
+component7.name = "Rendering";
+component7.level = 1;
 head1.component[5] = component7;
 
-let meta8 = browser.currentScene.createNode("meta");
-meta8.name = "title";
-meta8.content = "flowerproto.x3d";
-head1.meta[6] = meta8;
+let component8 = browser.currentScene.createNode("component");
+component8.name = "Shape";
+component8.level = 4;
+head1.component[6] = component8;
 
-let meta9 = browser.currentScene.createNode("meta");
-meta9.name = "creator";
-meta9.content = "John Carlson";
-head1.meta[7] = meta9;
+let component9 = browser.currentScene.createNode("component");
+component9.name = "Grouping";
+component9.level = 3;
+head1.component[7] = component9;
 
-let meta10 = browser.currentScene.createNode("meta");
-meta10.name = "description";
-meta10.content = "A flower proto with configurable shaders";
-head1.meta[8] = meta10;
+let component10 = browser.currentScene.createNode("component");
+component10.name = "Core";
+component10.level = 1;
+head1.component[8] = component10;
 
 let meta11 = browser.currentScene.createNode("meta");
-meta11.name = "generator";
-meta11.content = "X3D-Edit, https://savage.nps.edu/X3D-Edit";
+meta11.name = "title";
+meta11.content = "flowerproto.x3d";
 head1.meta[9] = meta11;
 
 let meta12 = browser.currentScene.createNode("meta");
-meta12.name = "identifier";
-meta12.content = "https://coderextreme.net/X3DJSONLD/flowerproto.x3d";
+meta12.name = "creator";
+meta12.content = "John Carlson";
 head1.meta[10] = meta12;
+
+let meta13 = browser.currentScene.createNode("meta");
+meta13.name = "description";
+meta13.content = "A flower proto with configurable shaders";
+head1.meta[11] = meta13;
+
+let meta14 = browser.currentScene.createNode("meta");
+meta14.name = "generator";
+meta14.content = "X3D-Edit, https://savage.nps.edu/X3D-Edit";
+head1.meta[12] = meta14;
+
+let meta15 = browser.currentScene.createNode("meta");
+meta15.name = "identifier";
+meta15.content = "https://coderextreme.net/X3DJSONLD/flowerproto.x3d";
+head1.meta[13] = meta15;
 
 head = head1;
 
-let ProtoDeclare14 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+let ProtoDeclare17 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="FlowerProto" ><ProtoInterface><field name="vertex" accessType="inputOutput" type="MFString" value="&quot;../shaders/gl_flowers_chromatic.vs&quot;"></field>
 <field name="fragment" accessType="inputOutput" type="MFString" value="&quot;../shaders/pc_flowers.fs&quot;"></field>
@@ -183,256 +198,256 @@ let ProtoDeclare14 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 </Transform>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare14.name = "FlowerProto";
-let ProtoInterface15 = browser.currentScene.createNode("ProtoInterface");
-let field16 = browser.currentScene.createNode("field");
-field16.name = "vertex";
-field16.accessType = "inputOutput";
-field16.type = "MFString";
-field16.value = "\"../shaders/gl_flowers_chromatic.vs\"";
-ProtoInterface15.field = new MFNode();
+ProtoDeclare17.name = "FlowerProto";
+let ProtoInterface18 = browser.currentScene.createNode("ProtoInterface");
+let field19 = browser.currentScene.createNode("field");
+field19.name = "vertex";
+field19.accessType = "inputOutput";
+field19.type = "MFString";
+field19.value = "\"../shaders/gl_flowers_chromatic.vs\"";
+ProtoInterface18.field = new MFNode();
 
-ProtoInterface15.field[0] = field16;
+ProtoInterface18.field[0] = field19;
 
-let field17 = browser.currentScene.createNode("field");
-field17.name = "fragment";
-field17.accessType = "inputOutput";
-field17.type = "MFString";
-field17.value = "\"../shaders/pc_flowers.fs\"";
-ProtoInterface15.field[1] = field17;
+let field20 = browser.currentScene.createNode("field");
+field20.name = "fragment";
+field20.accessType = "inputOutput";
+field20.type = "MFString";
+field20.value = "\"../shaders/pc_flowers.fs\"";
+ProtoInterface18.field[1] = field20;
 
-ProtoDeclare14.protoInterface = ProtoInterface15;
+ProtoDeclare17.protoInterface = ProtoInterface18;
 
-let ProtoBody18 = browser.currentScene.createNode("ProtoBody");
-let Transform19 = browser.currentScene.createNode("Transform");
-Transform19.DEF = "transform";
-let Shape20 = browser.currentScene.createNode("Shape");
-let Appearance21 = browser.currentScene.createNode("Appearance");
-let Material22 = browser.currentScene.createNode("Material");
-Material22.diffuseColor = new SFColor(new float[0.7,0.7,0.7]);
-Material22.specularColor = new SFColor(new float[0.5,0.5,0.5]);
-Appearance21.material = Material22;
+let ProtoBody21 = browser.currentScene.createNode("ProtoBody");
+let Transform22 = browser.currentScene.createNode("Transform");
+Transform22.DEF = "transform";
+let Shape23 = browser.currentScene.createNode("Shape");
+let Appearance24 = browser.currentScene.createNode("Appearance");
+let Material25 = browser.currentScene.createNode("Material");
+Material25.diffuseColor = new SFColor(new float[0.7,0.7,0.7]);
+Material25.specularColor = new SFColor(new float[0.5,0.5,0.5]);
+Appearance24.material = Material25;
 
-let ComposedCubeMapTexture23 = browser.currentScene.createNode("ComposedCubeMapTexture");
-ComposedCubeMapTexture23.DEF = "texture";
-let ImageTexture24 = browser.currentScene.createNode("ImageTexture");
-ImageTexture24.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"]);
-ComposedCubeMapTexture23.topTexture = ImageTexture24;
-
-let ImageTexture25 = browser.currentScene.createNode("ImageTexture");
-ImageTexture25.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"]);
-ComposedCubeMapTexture23.topTexture = ImageTexture25;
-
-let ImageTexture26 = browser.currentScene.createNode("ImageTexture");
-ImageTexture26.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"]);
-ComposedCubeMapTexture23.topTexture = ImageTexture26;
-
+let ComposedCubeMapTexture26 = browser.currentScene.createNode("ComposedCubeMapTexture");
+ComposedCubeMapTexture26.DEF = "texture";
 let ImageTexture27 = browser.currentScene.createNode("ImageTexture");
-ImageTexture27.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"]);
-ComposedCubeMapTexture23.topTexture = ImageTexture27;
+ImageTexture27.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"]);
+ComposedCubeMapTexture26.topTexture = ImageTexture27;
 
 let ImageTexture28 = browser.currentScene.createNode("ImageTexture");
-ImageTexture28.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"]);
-ComposedCubeMapTexture23.topTexture = ImageTexture28;
+ImageTexture28.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"]);
+ComposedCubeMapTexture26.topTexture = ImageTexture28;
 
 let ImageTexture29 = browser.currentScene.createNode("ImageTexture");
-ImageTexture29.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]);
-ComposedCubeMapTexture23.topTexture = ImageTexture29;
+ImageTexture29.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"]);
+ComposedCubeMapTexture26.topTexture = ImageTexture29;
 
-Appearance21.texture = ComposedCubeMapTexture23;
+let ImageTexture30 = browser.currentScene.createNode("ImageTexture");
+ImageTexture30.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"]);
+ComposedCubeMapTexture26.topTexture = ImageTexture30;
 
-let ComposedShader30 = browser.currentScene.createNode("ComposedShader");
-ComposedShader30.DEF = "shader";
-ComposedShader30.language = "GLSL";
-let field31 = browser.currentScene.createNode("field");
-field31.name = "cube";
-field31.type = "SFInt32";
-field31.accessType = "inputOutput";
-field31.value = "0";
-ComposedShader30.field = new MFNode();
+let ImageTexture31 = browser.currentScene.createNode("ImageTexture");
+ImageTexture31.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"]);
+ComposedCubeMapTexture26.topTexture = ImageTexture31;
 
-ComposedShader30.field[0] = field31;
+let ImageTexture32 = browser.currentScene.createNode("ImageTexture");
+ImageTexture32.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]);
+ComposedCubeMapTexture26.topTexture = ImageTexture32;
 
-let field32 = browser.currentScene.createNode("field");
-field32.name = "chromaticDispertion";
-field32.accessType = "initializeOnly";
-field32.type = "SFVec3f";
-field32.value = "0.98 1 1.033";
-ComposedShader30.field[1] = field32;
+Appearance24.texture = ComposedCubeMapTexture26;
 
-let field33 = browser.currentScene.createNode("field");
-field33.name = "bias";
-field33.type = "SFFloat";
-field33.accessType = "inputOutput";
-field33.value = "0.5";
-ComposedShader30.field[2] = field33;
-
+let ComposedShader33 = browser.currentScene.createNode("ComposedShader");
+ComposedShader33.DEF = "shader";
+ComposedShader33.language = "GLSL";
 let field34 = browser.currentScene.createNode("field");
-field34.name = "scale";
-field34.type = "SFFloat";
+field34.name = "cube";
+field34.type = "SFInt32";
 field34.accessType = "inputOutput";
-field34.value = "0.5";
-ComposedShader30.field[3] = field34;
+field34.value = "0";
+ComposedShader33.field = new MFNode();
+
+ComposedShader33.field[0] = field34;
 
 let field35 = browser.currentScene.createNode("field");
-field35.name = "power";
-field35.type = "SFFloat";
-field35.accessType = "inputOutput";
-field35.value = "2";
-ComposedShader30.field[4] = field35;
+field35.name = "chromaticDispertion";
+field35.accessType = "initializeOnly";
+field35.type = "SFVec3f";
+field35.value = "0.98 1 1.033";
+ComposedShader33.field[1] = field35;
 
 let field36 = browser.currentScene.createNode("field");
-field36.name = "a";
+field36.name = "bias";
 field36.type = "SFFloat";
 field36.accessType = "inputOutput";
-field36.value = "10";
-ComposedShader30.field[5] = field36;
+field36.value = "0.5";
+ComposedShader33.field[2] = field36;
 
 let field37 = browser.currentScene.createNode("field");
-field37.name = "b";
+field37.name = "scale";
 field37.type = "SFFloat";
 field37.accessType = "inputOutput";
-field37.value = "1";
-ComposedShader30.field[6] = field37;
+field37.value = "0.5";
+ComposedShader33.field[3] = field37;
 
 let field38 = browser.currentScene.createNode("field");
-field38.name = "c";
+field38.name = "power";
 field38.type = "SFFloat";
 field38.accessType = "inputOutput";
-field38.value = "20";
-ComposedShader30.field[7] = field38;
+field38.value = "2";
+ComposedShader33.field[4] = field38;
 
 let field39 = browser.currentScene.createNode("field");
-field39.name = "d";
+field39.name = "a";
 field39.type = "SFFloat";
 field39.accessType = "inputOutput";
-field39.value = "20";
-ComposedShader30.field[8] = field39;
+field39.value = "10";
+ComposedShader33.field[5] = field39;
 
 let field40 = browser.currentScene.createNode("field");
-field40.name = "tdelta";
+field40.name = "b";
 field40.type = "SFFloat";
 field40.accessType = "inputOutput";
-field40.value = "0";
-ComposedShader30.field[9] = field40;
+field40.value = "1";
+ComposedShader33.field[6] = field40;
 
 let field41 = browser.currentScene.createNode("field");
-field41.name = "pdelta";
+field41.name = "c";
 field41.type = "SFFloat";
 field41.accessType = "inputOutput";
-field41.value = "0";
-ComposedShader30.field[10] = field41;
+field41.value = "20";
+ComposedShader33.field[7] = field41;
+
+let field42 = browser.currentScene.createNode("field");
+field42.name = "d";
+field42.type = "SFFloat";
+field42.accessType = "inputOutput";
+field42.value = "20";
+ComposedShader33.field[8] = field42;
+
+let field43 = browser.currentScene.createNode("field");
+field43.name = "tdelta";
+field43.type = "SFFloat";
+field43.accessType = "inputOutput";
+field43.value = "0";
+ComposedShader33.field[9] = field43;
+
+let field44 = browser.currentScene.createNode("field");
+field44.name = "pdelta";
+field44.type = "SFFloat";
+field44.accessType = "inputOutput";
+field44.value = "0";
+ComposedShader33.field[10] = field44;
 
 //<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>
-let ShaderPart42 = browser.currentScene.createNode("ShaderPart");
-ShaderPart42.type = "VERTEX";
-let IS43 = browser.currentScene.createNode("IS");
-let connect44 = browser.currentScene.createNode("connect");
-connect44.nodeField = "url";
-connect44.protoField = "vertex";
-IS43.connect = new MFNode();
-
-IS43.connect[0] = connect44;
-
-ShaderPart42.iS = IS43;
-
-ComposedShader30.parts[11] = ShaderPart42;
-
 let ShaderPart45 = browser.currentScene.createNode("ShaderPart");
-ShaderPart45.type = "FRAGMENT";
+ShaderPart45.type = "VERTEX";
 let IS46 = browser.currentScene.createNode("IS");
 let connect47 = browser.currentScene.createNode("connect");
 connect47.nodeField = "url";
-connect47.protoField = "fragment";
+connect47.protoField = "vertex";
 IS46.connect = new MFNode();
 
 IS46.connect[0] = connect47;
 
 ShaderPart45.iS = IS46;
 
-ComposedShader30.parts[12] = ShaderPart45;
+ComposedShader33.parts[11] = ShaderPart45;
 
-Appearance21.shaders = new MFNode();
+let ShaderPart48 = browser.currentScene.createNode("ShaderPart");
+ShaderPart48.type = "FRAGMENT";
+let IS49 = browser.currentScene.createNode("IS");
+let connect50 = browser.currentScene.createNode("connect");
+connect50.nodeField = "url";
+connect50.protoField = "fragment";
+IS49.connect = new MFNode();
 
-Appearance21.shaders[0] = ComposedShader30;
+IS49.connect[0] = connect50;
 
-Shape20.appearance = Appearance21;
+ShaderPart48.iS = IS49;
 
-let Sphere48 = browser.currentScene.createNode("Sphere");
-Shape20.geometry = Sphere48;
+ComposedShader33.parts[12] = ShaderPart48;
 
-Transform19.children = new MFNode();
+Appearance24.shaders = new MFNode();
 
-Transform19.children[0] = Shape20;
+Appearance24.shaders[0] = ComposedShader33;
 
-let Script49 = browser.currentScene.createNode("Script");
-Script49.DEF = "Animate";
-let field50 = browser.currentScene.createNode("field");
-field50.name = "translation";
-field50.accessType = "inputOutput";
-field50.type = "SFVec3f";
-field50.value = "0 0 0";
-Script49.field = new MFNode();
+Shape23.appearance = Appearance24;
 
-Script49.field[0] = field50;
+let Sphere51 = browser.currentScene.createNode("Sphere");
+Shape23.geometry = Sphere51;
 
-let field51 = browser.currentScene.createNode("field");
-field51.name = "velocity";
-field51.accessType = "inputOutput";
-field51.type = "SFVec3f";
-field51.value = "0 0 0";
-Script49.field[1] = field51;
+Transform22.children = new MFNode();
 
-let field52 = browser.currentScene.createNode("field");
-field52.name = "set_fraction";
-field52.accessType = "inputOnly";
-field52.type = "SFFloat";
-Script49.field[2] = field52;
+Transform22.children[0] = Shape23;
 
+let Script52 = browser.currentScene.createNode("Script");
+Script52.DEF = "Animate";
 let field53 = browser.currentScene.createNode("field");
-field53.name = "a";
-field53.type = "SFFloat";
+field53.name = "translation";
 field53.accessType = "inputOutput";
-field53.value = "0.5";
-Script49.field[3] = field53;
+field53.type = "SFVec3f";
+field53.value = "0 0 0";
+Script52.field = new MFNode();
+
+Script52.field[0] = field53;
 
 let field54 = browser.currentScene.createNode("field");
-field54.name = "b";
-field54.type = "SFFloat";
+field54.name = "velocity";
 field54.accessType = "inputOutput";
-field54.value = "0.5";
-Script49.field[4] = field54;
+field54.type = "SFVec3f";
+field54.value = "0 0 0";
+Script52.field[1] = field54;
 
 let field55 = browser.currentScene.createNode("field");
-field55.name = "c";
+field55.name = "set_fraction";
+field55.accessType = "inputOnly";
 field55.type = "SFFloat";
-field55.accessType = "inputOutput";
-field55.value = "3";
-Script49.field[5] = field55;
+Script52.field[2] = field55;
 
 let field56 = browser.currentScene.createNode("field");
-field56.name = "d";
+field56.name = "a";
 field56.type = "SFFloat";
 field56.accessType = "inputOutput";
-field56.value = "3";
-Script49.field[6] = field56;
+field56.value = "0.5";
+Script52.field[3] = field56;
 
 let field57 = browser.currentScene.createNode("field");
-field57.name = "tdelta";
+field57.name = "b";
 field57.type = "SFFloat";
 field57.accessType = "inputOutput";
 field57.value = "0.5";
-Script49.field[7] = field57;
+Script52.field[4] = field57;
 
 let field58 = browser.currentScene.createNode("field");
-field58.name = "pdelta";
+field58.name = "c";
 field58.type = "SFFloat";
 field58.accessType = "inputOutput";
-field58.value = "0.5";
-Script49.field[8] = field58;
+field58.value = "3";
+Script52.field[5] = field58;
+
+let field59 = browser.currentScene.createNode("field");
+field59.name = "d";
+field59.type = "SFFloat";
+field59.accessType = "inputOutput";
+field59.value = "3";
+Script52.field[6] = field59;
+
+let field60 = browser.currentScene.createNode("field");
+field60.name = "tdelta";
+field60.type = "SFFloat";
+field60.accessType = "inputOutput";
+field60.value = "0.5";
+Script52.field[7] = field60;
+
+let field61 = browser.currentScene.createNode("field");
+field61.name = "pdelta";
+field61.type = "SFFloat";
+field61.accessType = "inputOutput";
+field61.value = "0.5";
+Script52.field[8] = field61;
 
 
-Script49.setSourceCode(`ecmascript:\n"+
+Script52.setSourceCode(`ecmascript:\n"+
 "			function initialize() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+
@@ -498,77 +513,77 @@ Script49.setSourceCode(`ecmascript:\n"+
 "					d = 4;\n"+
 "				}\n"+
 "			}`)
-Transform19.children[1] = Script49;
+Transform22.children[1] = Script52;
 
-let TimeSensor59 = browser.currentScene.createNode("TimeSensor");
-TimeSensor59.DEF = "TourTime";
-TimeSensor59.cycleInterval = 5;
-TimeSensor59.loop = True;
-Transform19.children[2] = TimeSensor59;
-
-let ROUTE60 = browser.currentScene.createNode("ROUTE");
-ROUTE60.fromNode = "TourTime";
-ROUTE60.fromField = "fraction_changed";
-ROUTE60.toNode = "Animate";
-ROUTE60.toField = "set_fraction";
-Transform19.children[3] = ROUTE60;
-
-let ROUTE61 = browser.currentScene.createNode("ROUTE");
-ROUTE61.fromNode = "Animate";
-ROUTE61.fromField = "translation_changed";
-ROUTE61.toNode = "transform";
-ROUTE61.toField = "set_translation";
-Transform19.children[4] = ROUTE61;
-
-let ROUTE62 = browser.currentScene.createNode("ROUTE");
-ROUTE62.fromNode = "Animate";
-ROUTE62.fromField = "a";
-ROUTE62.toNode = "shader";
-ROUTE62.toField = "a";
-Transform19.children[5] = ROUTE62;
+let TimeSensor62 = browser.currentScene.createNode("TimeSensor");
+TimeSensor62.DEF = "TourTime";
+TimeSensor62.cycleInterval = 5;
+TimeSensor62.loop = True;
+Transform22.children[2] = TimeSensor62;
 
 let ROUTE63 = browser.currentScene.createNode("ROUTE");
-ROUTE63.fromNode = "Animate";
-ROUTE63.fromField = "b";
-ROUTE63.toNode = "shader";
-ROUTE63.toField = "b";
-Transform19.children[6] = ROUTE63;
+ROUTE63.fromNode = "TourTime";
+ROUTE63.fromField = "fraction_changed";
+ROUTE63.toNode = "Animate";
+ROUTE63.toField = "set_fraction";
+Transform22.children[3] = ROUTE63;
 
 let ROUTE64 = browser.currentScene.createNode("ROUTE");
 ROUTE64.fromNode = "Animate";
-ROUTE64.fromField = "c";
-ROUTE64.toNode = "shader";
-ROUTE64.toField = "c";
-Transform19.children[7] = ROUTE64;
+ROUTE64.fromField = "translation_changed";
+ROUTE64.toNode = "transform";
+ROUTE64.toField = "set_translation";
+Transform22.children[4] = ROUTE64;
 
 let ROUTE65 = browser.currentScene.createNode("ROUTE");
 ROUTE65.fromNode = "Animate";
-ROUTE65.fromField = "d";
+ROUTE65.fromField = "a";
 ROUTE65.toNode = "shader";
-ROUTE65.toField = "d";
-Transform19.children[8] = ROUTE65;
+ROUTE65.toField = "a";
+Transform22.children[5] = ROUTE65;
 
 let ROUTE66 = browser.currentScene.createNode("ROUTE");
 ROUTE66.fromNode = "Animate";
-ROUTE66.fromField = "tdelta";
+ROUTE66.fromField = "b";
 ROUTE66.toNode = "shader";
-ROUTE66.toField = "tdelta";
-Transform19.children[9] = ROUTE66;
+ROUTE66.toField = "b";
+Transform22.children[6] = ROUTE66;
 
 let ROUTE67 = browser.currentScene.createNode("ROUTE");
 ROUTE67.fromNode = "Animate";
-ROUTE67.fromField = "pdelta";
+ROUTE67.fromField = "c";
 ROUTE67.toNode = "shader";
-ROUTE67.toField = "pdelta";
-Transform19.children[10] = ROUTE67;
+ROUTE67.toField = "c";
+Transform22.children[7] = ROUTE67;
 
-ProtoBody18.children = new MFNode();
+let ROUTE68 = browser.currentScene.createNode("ROUTE");
+ROUTE68.fromNode = "Animate";
+ROUTE68.fromField = "d";
+ROUTE68.toNode = "shader";
+ROUTE68.toField = "d";
+Transform22.children[8] = ROUTE68;
 
-ProtoBody18.children[0] = Transform19;
+let ROUTE69 = browser.currentScene.createNode("ROUTE");
+ROUTE69.fromNode = "Animate";
+ROUTE69.fromField = "tdelta";
+ROUTE69.toNode = "shader";
+ROUTE69.toField = "tdelta";
+Transform22.children[9] = ROUTE69;
 
-ProtoDeclare14.protoBody = ProtoBody18;
+let ROUTE70 = browser.currentScene.createNode("ROUTE");
+ROUTE70.fromNode = "Animate";
+ROUTE70.fromField = "pdelta";
+ROUTE70.toNode = "shader";
+ROUTE70.toField = "pdelta";
+Transform22.children[10] = ROUTE70;
+
+ProtoBody21.children = new MFNode();
+
+ProtoBody21.children[0] = Transform22;
+
+ProtoDeclare17.protoBody = ProtoBody21;
 
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = ProtoDeclare14;
+browser.currentScene.children[0] = ProtoDeclare17;
 

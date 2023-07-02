@@ -42,6 +42,10 @@ var X3D0 =  new X3D({
         new head({
           component : new SFNode(
             new component({
+              name : new SFString("Scripting"),
+              level : new SFInt32(1)})),
+          component : new SFNode(
+            new component({
               name : new SFString("EnvironmentalEffects"),
               level : new SFInt32(3)})),
           component : new SFNode(
@@ -63,10 +67,14 @@ var X3D0 =  new X3D({
           component : new SFNode(
             new component({
               name : new SFString("Shape"),
-              level : new SFInt32(1)})),
+              level : new SFInt32(4)})),
           component : new SFNode(
             new component({
               name : new SFString("Grouping"),
+              level : new SFInt32(3)})),
+          component : new SFNode(
+            new component({
+              name : new SFString("Core"),
               level : new SFInt32(1)})),
           meta : new MFNode([
             new meta({

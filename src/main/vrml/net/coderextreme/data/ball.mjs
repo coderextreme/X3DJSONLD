@@ -50,7 +50,6 @@ component10.name = "Core";
 component10.level = 1;
 head1.component[8] = component10;
 
-//component name='EnvironmentalEffects' level='1'></component
 let meta11 = browser.currentScene.createNode("meta");
 meta11.name = "title";
 meta11.content = "ball.x3d";
