@@ -36,7 +36,7 @@
           },
           {
             "@name":"translated",
-            "@content":"01 July 2023"
+            "@content":"02 July 2023"
           },
           {
             "@name":"generator",
@@ -71,21 +71,18 @@
                           "-color":
                             { "Color":
                               {
-                                "@DEF":"IndexedFaceSet",
                                 "@color":[0,1,0]
                               }
                             },
                           "-coord":
                             { "Coordinate":
                               {
-                                "@DEF":"IndexedFaceSet",
                                 "@point":[0,0,1,0,1,1,1,1,1,1,0,1]
                               }
                             },
                           "-normal":
                             { "Normal":
                               {
-                                "@DEF":"IndexedFaceSet",
                                 "@vector":[1,0,0,-1,0,0,0,1,0,0,0,-1,0,-1,0,0,0,1]
                               }
                             }

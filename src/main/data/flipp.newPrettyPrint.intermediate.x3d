@@ -18,7 +18,7 @@
     <NavigationInfo DEF='user01' avatarSize='0.25 1.6 0.75' speed='50.0' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
     <Fog/>
     <Transform DEF='trans' rotation='1 0 0 0.78'>
-      <Shape DEF='trans'>
+      <Shape>
         <Appearance>
           <Material DEF='mat' ambientIntensity='0.508497' diffuseColor='0.337255 0.4 0.788235' specularColor='1 1 1'/>
         </Appearance>

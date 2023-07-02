@@ -35,6 +35,7 @@
 </field>
 <field name="Fog" accessType="initializeOnly" type="SFNode"></field>
 <![CDATA[ecmascript:
+Cirrus.children = [];
 
 
 function cumulustranslation() // These values designate the boundary location of the cloud

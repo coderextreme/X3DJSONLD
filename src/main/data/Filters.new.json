@@ -56,7 +56,7 @@
           },
           {
             "@name":"translated",
-            "@content":"01 July 2023"
+            "@content":"02 July 2023"
           },
           {
             "@name":"generator",
@@ -99,7 +99,6 @@
               "-children":[
                 { "Shape":
                   {
-                    "@DEF":"TransformAudio1",
                     "-appearance":
                       { "Appearance":
                         {
@@ -107,7 +106,6 @@
                           "-material":
                             { "Material":
                               {
-                                "@DEF":"audio_emit",
                                 "@diffuseColor":[0.1,0.1,0.1],
                                 "@emissiveColor":[0.8,0.8,0.8],
                                 "@specularColor":[0.01,0.01,0.01]
@@ -133,7 +131,6 @@
               "-children":[
                 { "Shape":
                   {
-                    "@DEF":"TransformAudio2",
                     "-appearance":
                       { "Appearance":
                         {
@@ -141,7 +138,6 @@
                           "-material":
                             { "Material":
                               {
-                                "@DEF":"audio_emit2",
                                 "@diffuseColor":[0.1,0.1,0.1],
                                 "@emissiveColor":[0.8,0.8,0.8],
                                 "@specularColor":[0.01,0.01,0.01]
@@ -167,7 +163,6 @@
               "-children":[
                 { "Shape":
                   {
-                    "@DEF":"TransformAudio3",
                     "-appearance":
                       { "Appearance":
                         {
@@ -175,7 +170,6 @@
                           "-material":
                             { "Material":
                               {
-                                "@DEF":"audio_emit3",
                                 "@diffuseColor":[0.1,0.1,0.1],
                                 "@emissiveColor":[0.8,0.8,0.8],
                                 "@specularColor":[0.01,0.01,0.01]
@@ -242,7 +236,6 @@
                           "-material":
                             { "Material":
                               {
-                                "@DEF":"floor",
                                 "@diffuseColor":[0.1,0.1,0.1],
                                 "@shininess":0.8,
                                 "@specularColor":[0.5,0.6,0.7]
@@ -288,7 +281,6 @@
                                 "-children":[
                                   { "Gain":
                                     {
-                                      "@DEF":"Audio1",
                                       "@channelCountMode":"MAX",
                                       "@channelInterpretation":"SPEAKERS",
                                       "-children":[
@@ -332,7 +324,6 @@
                                 "-children":[
                                   { "Gain":
                                     {
-                                      "@DEF":"Audio2",
                                       "@channelCountMode":"MAX",
                                       "@channelInterpretation":"SPEAKERS",
                                       "-children":[
@@ -376,7 +367,6 @@
                                 "-children":[
                                   { "Gain":
                                     {
-                                      "@DEF":"Audio3",
                                       "@channelCountMode":"MAX",
                                       "@channelInterpretation":"SPEAKERS",
                                       "-children":[

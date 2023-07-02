@@ -26,7 +26,7 @@
           <Shape containerField='shape'>
             <!-- note solid='true' and so one-sided external rendering only -->
             <Appearance DEF='AppearanceGrey'>
-              <Material DEF='AppearanceGrey'/>
+              <Material/>
             </Appearance>
             <Cylinder bottom='false' height='3.0' radius='2.0' top='false'/>
           </Shape>

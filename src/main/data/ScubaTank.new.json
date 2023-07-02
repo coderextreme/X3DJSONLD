@@ -40,7 +40,7 @@
           },
           {
             "@name":"translated",
-            "@content":"01 July 2023"
+            "@content":"02 July 2023"
           },
           {
             "@name":"generator",
@@ -65,7 +65,6 @@
               "-children":[
                 { "Transform":
                   {
-                    "@DEF":"ScubaTank",
                     "-children":[
                       { "Shape":
                         {
@@ -98,7 +97,6 @@
                 },
                 { "Transform":
                   {
-                    "@DEF":"ScubaTank",
                     "@translation":[0,0.35,0],
                     "-children":[
                       { "Shape":
@@ -127,7 +125,6 @@
                 },
                 { "Transform":
                   {
-                    "@DEF":"ScubaTank",
                     "@translation":[0,-0.35,0],
                     "-children":[
                       { "Shape":
@@ -136,7 +133,6 @@
                           "-appearance":
                             { "Appearance":
                               {
-                                "@DEF":"tankBottom",
                                 "-material":
                                   { "Material":
                                     {
@@ -150,7 +146,6 @@
                           "-geometry":
                             { "Cylinder":
                               {
-                                "@DEF":"tankBottom",
                                 "@height":0.06,
                                 "@radius":0.115
                               }
@@ -166,7 +161,6 @@
                     "-children":[
                       { "Transform":
                         {
-                          "@DEF":"tankNozzle",
                           "-children":[
                             { "Transform":
                               {
@@ -178,7 +172,6 @@
                                       "-appearance":
                                         { "Appearance":
                                           {
-                                            "@DEF":"pressure",
                                             "-material":
                                               { "Material":
                                                 {
@@ -194,7 +187,6 @@
                                       "-geometry":
                                         { "Cylinder":
                                           {
-                                            "@DEF":"pressure",
                                             "@height":0.1,
                                             "@radius":0.015
                                           }
@@ -214,7 +206,6 @@
                                       "-appearance":
                                         { "Appearance":
                                           {
-                                            "@DEF":"pressureTop",
                                             "-material":
                                               { "Material":
                                                 {
@@ -226,7 +217,6 @@
                                       "-geometry":
                                         { "Cylinder":
                                           {
-                                            "@DEF":"pressureTop",
                                             "@height":0.02,
                                             "@radius":0.025
                                           }
@@ -250,7 +240,6 @@
                                             "-appearance":
                                               { "Appearance":
                                                 {
-                                                  "@DEF":"connectorToRegulator",
                                                   "-material":
                                                     { "Material":
                                                       {
@@ -262,7 +251,6 @@
                                             "-geometry":
                                               { "Cylinder":
                                                 {
-                                                  "@DEF":"connectorToRegulator",
                                                   "@height":0.03,
                                                   "@radius":0.01
                                                 }
@@ -282,7 +270,6 @@
                                             "-appearance":
                                               { "Appearance":
                                                 {
-                                                  "@DEF":"connectorToRegulatorTop",
                                                   "-material":
                                                     { "Material":
                                                       {
@@ -294,7 +281,6 @@
                                             "-geometry":
                                               { "Cylinder":
                                                 {
-                                                  "@DEF":"connectorToRegulatorTop",
                                                   "@height":0.02,
                                                   "@radius":0.02
                                                 }
@@ -315,7 +301,6 @@
                 },
                 { "Transform":
                   {
-                    "@DEF":"ScubaTank",
                     "@translation":[0,0.2,0],
                     "-children":[
                       { "Shape":
@@ -324,7 +309,6 @@
                           "-appearance":
                             { "Appearance":
                               {
-                                "@DEF":"tankHoldBelt",
                                 "-material":
                                   { "Material":
                                     {
@@ -336,7 +320,6 @@
                           "-geometry":
                             { "Cylinder":
                               {
-                                "@DEF":"tankHoldBelt",
                                 "@height":0.1,
                                 "@radius":0.115
                               }

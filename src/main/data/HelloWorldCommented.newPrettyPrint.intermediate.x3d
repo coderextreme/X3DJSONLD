@@ -56,7 +56,7 @@
           <Text DEF='TextMessage' string='"Hello" "world!"'>
             <!-- FontStyle begin -->
             <!-- FontStyle complete -->
-            <FontStyle DEF='TextMessage' family='"SERIF"' justify='"MIDDLE" "MIDDLE"'/>
+            <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"'/>
           </Text>
         </Shape>
         <!-- Shape complete -->

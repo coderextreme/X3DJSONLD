@@ -74,10 +74,10 @@
       <fieldValue name='ytranslation' value='0 0 0'/>
       <fieldValue name='myShape'>
         <Shape DEF='box'>
-          <Appearance DEF='box'>
+          <Appearance>
             <Material diffuseColor='0 1 0'/>
           </Appearance>
-          <Box DEF='box' size='1 1 1'/>
+          <Box size='1 1 1'/>
         </Shape>
       </fieldValue>
     </ProtoInstance>

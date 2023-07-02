@@ -73,7 +73,6 @@
               "-appearance":
                 { "Appearance":
                   {
-                    "@DEF":"Arch",
                     "-material":
                       { "Material":
                         {

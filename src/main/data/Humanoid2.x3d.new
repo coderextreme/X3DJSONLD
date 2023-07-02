@@ -56,7 +56,7 @@
 <!--from humanoid_root to sacroiliac vertices 2--><ColorRGBA containerField="color" USE="HAnimSegmentLineColorRGBA"></ColorRGBA>
 </LineSet>
 </Shape>
-<HAnimSite name="buttocks_standing_wall_contact_point" DEF="hanim_buttocks_standing_wall_contact_point"><TouchSensor description="HAnimSite buttocks_standing_wall_contact_point"></TouchSensor>
+<HAnimSite name="buttocks_standing_wall_contact_point_pt" DEF="hanim_buttocks_standing_wall_contact_point_pt"><TouchSensor description="HAnimSite buttocks_standing_wall_contact_point_pt"></TouchSensor>
 <Shape USE="HAnimSiteShape"></Shape>
 </HAnimSite>
 <HAnimSite name="crotch_pt" DEF="hanim_crotch_pt" translation="0.0034 0.8266 0.0257"><TouchSensor description="HAnimSite crotch_pt"></TouchSensor>
@@ -1043,7 +1043,7 @@
 <HAnimSegment containerField="segments" USE="hanim_r_metacarpal_5"></HAnimSegment>
 <HAnimSegment containerField="segments" USE="hanim_r_carpal_proximal_phalanx_5"></HAnimSegment>
 <HAnimSegment containerField="segments" USE="hanim_r_carpal_middle_phalanx_5"></HAnimSegment>
-<HAnimSite containerField="sites" USE="hanim_buttocks_standing_wall_contact_point"></HAnimSite>
+<HAnimSite containerField="sites" USE="hanim_buttocks_standing_wall_contact_point_pt"></HAnimSite>
 <HAnimSite containerField="sites" USE="hanim_crotch_pt"></HAnimSite>
 <HAnimSite containerField="sites" USE="hanim_l_asis_pt"></HAnimSite>
 <HAnimSite containerField="sites" USE="hanim_l_iliocristale_pt"></HAnimSite>
