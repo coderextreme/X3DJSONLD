@@ -9,7 +9,7 @@ meta(name="creator", content="Lost, Doug Sanden I think"),
 meta(name="generator", content="manual"),
 meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d"),
 meta(name="description", content="a generic proto to connect two objects"),
-meta(name="translated", content="01 July 2023"),
+meta(name="translated", content="02 July 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
