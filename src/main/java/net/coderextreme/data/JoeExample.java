@@ -50,10 +50,10 @@ public class JoeExample {
         .addMeta(new meta().setName("filename").setContent("Scripting.x3d")))
       .setScene(new Scene()
         .addChild(new Script().setDEF("OpenVault")
-          .addField(new field("OpenVault").setType("SFTime").setName("openVault").setAccessType(field.ACCESSTYPE_INPUTONLY))
-          .addField(new field("OpenVault").setType("SFBool").setName("combinationEntered").setAccessType(field.ACCESSTYPE_INPUTONLY))
-          .addField(new field("OpenVault").setType("SFTime").setName("vaultUnlocked").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-          .addField(new field("OpenVault").setType("SFBool").setName("unlocked").setValue("false").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
+          .addField(new field().setType("SFTime").setName("openVault").setAccessType(field.ACCESSTYPE_INPUTONLY))
+          .addField(new field().setType("SFBool").setName("combinationEntered").setAccessType(field.ACCESSTYPE_INPUTONLY))
+          .addField(new field().setType("SFTime").setName("vaultUnlocked").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+          .addField(new field().setType("SFBool").setName("unlocked").setValue("false").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
           .setSourceCode("ecmascript:\n"+
 "\n"+
 "      function combinationEntered (value) {\n"+

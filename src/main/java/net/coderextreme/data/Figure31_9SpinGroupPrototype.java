@@ -71,11 +71,11 @@ ProtoInstance ProtoInstance1 = null;
             .addField(new field().setType("SFTime").setName("stopTime").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0")))
           .setProtoBody(new ProtoBody()
             .addChild(new Transform().setDEF("SpinGroupTransform")
-              .setIS(new IS("SpinGroupTransform")
+              .setIS(new IS()
                 .addConnect(new connect().setNodeField("children").setProtoField("children"))))
             .addComments("following nodes will not be rendered, only the first node of a ProtoBody is drawn")
             .addChild(new TimeSensor().setDEF("SpinGroupClock")
-              .setIS(new IS("SpinGroupClock")
+              .setIS(new IS()
                 .addConnect(new connect().setNodeField("cycleInterval").setProtoField("cycleInterval"))
                 .addConnect(new connect().setNodeField("loop").setProtoField("loop"))
                 .addConnect(new connect().setNodeField("startTime").setProtoField("startTime"))
@@ -97,20 +97,20 @@ ProtoInstance0
             .addChild(new Shape()
               .setGeometry(new Box().setSize(new float[] {25f,2f,2f}))
               .setAppearance(new Appearance().setDEF("Green")
-                .setMaterial(new Material("Green").setDiffuseColor(new float[] {0f,1f,0.3f}))))
+                .setMaterial(new Material().setDiffuseColor(new float[] {0f,1f,0.3f}))))
             .addChild(new Shape()
               .setGeometry(new Box().setSize(new float[] {2f,25f,2f}))
               .setAppearance(new Appearance().setUSE("Green")))
             .addChild(ProtoInstance1 = new ProtoInstance().setName("SpinGroup").setDEF("SecondSpinGroup")
               .addComments("stopTime > startTime ensures that initial state is stopped")));
 ProtoInstance1
-              .addFieldValue(new fieldValue("SecondSpinGroup").setName("cycleInterval").setValue("4"));
+              .addFieldValue(new fieldValue().setName("cycleInterval").setValue("4"));
 ProtoInstance1
-              .addFieldValue(new fieldValue("SecondSpinGroup").setName("loop").setValue("true"));
+              .addFieldValue(new fieldValue().setName("loop").setValue("true"));
 ProtoInstance1
-              .addFieldValue(new fieldValue("SecondSpinGroup").setName("stopTime").setValue("1"));
+              .addFieldValue(new fieldValue().setName("stopTime").setValue("1"));
 ProtoInstance1
-              .addFieldValue(new fieldValue("SecondSpinGroup").setName("children")
+              .addFieldValue(new fieldValue().setName("children")
                 .addChild(new TouchSensor().setDEF("ActivateSecondSpinGroup").setDescription("Activate second SpinGroup by clicking blue bar"))
                 .addChild(new Shape()
                   .setGeometry(new Box().setSize(new float[] {2f,2.05f,25f}))

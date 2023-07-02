@@ -182,84 +182,84 @@ ProtoInstance ProtoInstance34 = null;
         .addComments("=============== Camera.SimpleShotsTest ==============")
         .addChild(ProtoInstance0 = new ProtoInstance().setName("Camera").setDEF("Camera.SimpleShotsTest"))
         .addChild(new Group().setDEF("AnimationGroup.SimpleShots")
-          .addChild(new TimeSensor("AnimationGroup.SimpleShots").setDEF("CameraTimer.SimpleShots"))
+          .addChild(new TimeSensor().setDEF("CameraTimer.SimpleShots"))
           .addComments("initialize clock to match totalDuration of combined Shot Moves")
-          .addChild(new ROUTE("AnimationGroup.SimpleShots").setFromField("totalDuration").setFromNode("Camera.SimpleShotsTest").setToField("cycleInterval").setToNode("CameraTimer.SimpleShots"))
+          .addChild(new ROUTE().setFromField("totalDuration").setFromNode("Camera.SimpleShotsTest").setToField("cycleInterval").setToNode("CameraTimer.SimpleShots"))
           .addComments("TimeSensor animates the CameraClock since that maintains the computed PositionInterpolator and OrientationInterpolator")
-          .addChild(new ROUTE("AnimationGroup.SimpleShots").setFromField("fraction_changed").setFromNode("CameraTimer.SimpleShots").setToField("set_fraction").setToNode("Camera.SimpleShotsTest"))
-          .addChild(new Transform("AnimationGroup.SimpleShots").setDEF("Trigger.SimpleShots").setTranslation(new float[] {-4f,4f,0f})
-            .addChild(new BooleanFilter("Trigger.SimpleShots").setDEF("TextTouchActive.SimpleShotsFilter"))
-            .addChild(new TouchSensor("Trigger.SimpleShots").setDEF("TextTouch.SimpleShots").setDescription("touch to animate Camera SimpleShotsTest"))
-            .addChild(new ROUTE("Trigger.SimpleShots").setFromField("inputTrue").setFromNode("TextTouchActive.SimpleShotsFilter").setToField("set_bind").setToNode("Camera.SimpleShotsTest"))
-            .addChild(new ROUTE("Trigger.SimpleShots").setFromField("isActive").setFromNode("TextTouch.SimpleShots").setToField("set_boolean").setToNode("TextTouchActive.SimpleShotsFilter"))
-            .addChild(new ROUTE("Trigger.SimpleShots").setFromField("touchTime").setFromNode("TextTouch.SimpleShots").setToField("startTime").setToNode("CameraTimer.SimpleShots"))
-            .addChild(new Shape("Trigger.SimpleShots")
+          .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("CameraTimer.SimpleShots").setToField("set_fraction").setToNode("Camera.SimpleShotsTest"))
+          .addChild(new Transform().setDEF("Trigger.SimpleShots").setTranslation(new float[] {-4f,4f,0f})
+            .addChild(new BooleanFilter().setDEF("TextTouchActive.SimpleShotsFilter"))
+            .addChild(new TouchSensor().setDEF("TextTouch.SimpleShots").setDescription("touch to animate Camera SimpleShotsTest"))
+            .addChild(new ROUTE().setFromField("inputTrue").setFromNode("TextTouchActive.SimpleShotsFilter").setToField("set_bind").setToNode("Camera.SimpleShotsTest"))
+            .addChild(new ROUTE().setFromField("isActive").setFromNode("TextTouch.SimpleShots").setToField("set_boolean").setToNode("TextTouchActive.SimpleShotsFilter"))
+            .addChild(new ROUTE().setFromField("touchTime").setFromNode("TextTouch.SimpleShots").setToField("startTime").setToNode("CameraTimer.SimpleShots"))
+            .addChild(new Shape()
               .setGeometry(new Text().setString(new MFString4().getArray())
                 .setFontStyle(new FontStyle().setJustify(new MFString5().getArray())))
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDEF("ArtDeco5").setAmbientIntensity(0.24f).setDiffuseColor(new float[] {0.945455f,0.318988f,0.321717f}).setShininess(0.01f).setSpecularColor(new float[] {0.072727f,0.021705f,0.010732f})
                   .addComments("Universal Media Library: ArtDeco 5"))))
             .addComments("Simplify intersection test for user selecting text")
-            .addChild(new Shape("Trigger.SimpleShots").setDEF("TransparentBox")
-              .setAppearance(new Appearance("TransparentBox")
+            .addChild(new Shape().setDEF("TransparentBox")
+              .setAppearance(new Appearance()
                 .setMaterial(new Material().setTransparency(1f)))
-              .setGeometry(new Box("TransparentBox").setSize(new float[] {6f,2f,0.0001f})))))
+              .setGeometry(new Box().setSize(new float[] {6f,2f,0.0001f})))))
         .addChild(new Group().setDEF("SimpleShotsTargets")
-          .addChild(new Transform("SimpleShotsTargets").setDEF("TargetBoxZoom").setTranslation(new float[] {-50f,1f,-20f})
-            .addChild(new Shape("TargetBoxZoom")
+          .addChild(new Transform().setDEF("TargetBoxZoom").setTranslation(new float[] {-50f,1f,-20f})
+            .addChild(new Shape()
               .setGeometry(new Box())
               .setAppearance(new Appearance()
                 .setMaterial(new Material())
                 .setTexture(new ImageTexture().setUrl(new MFString6().getArray()))))
-            .addChild(new Transform("TargetBoxZoom").setTranslation(new float[] {0f,2f,0f})
+            .addChild(new Transform().setTranslation(new float[] {0f,2f,0f})
               .addChild(new Shape()
                 .setGeometry(new Text().setString(new MFString7().getArray())
                   .setFontStyle(new FontStyle().setJustify(new MFString8().getArray())))
                 .setAppearance(new Appearance()
                   .setMaterial(new Material())))))
-          .addChild(new Transform("SimpleShotsTargets").setDEF("TargetBoxDolly").setTranslation(new float[] {-40f,1f,-20f})
-            .addChild(new Shape("TargetBoxDolly")
+          .addChild(new Transform().setDEF("TargetBoxDolly").setTranslation(new float[] {-40f,1f,-20f})
+            .addChild(new Shape()
               .setGeometry(new Box())
               .setAppearance(new Appearance()
                 .setMaterial(new Material())
                 .setTexture(new ImageTexture().setUrl(new MFString9().getArray()))))
-            .addChild(new Transform("TargetBoxDolly").setTranslation(new float[] {0f,2f,0f})
+            .addChild(new Transform().setTranslation(new float[] {0f,2f,0f})
               .addChild(new Shape()
                 .setGeometry(new Text().setString(new MFString10().getArray())
                   .setFontStyle(new FontStyle().setJustify(new MFString11().getArray())))
                 .setAppearance(new Appearance()
                   .setMaterial(new Material())))))
-          .addChild(new Transform("SimpleShotsTargets").setDEF("TargetBoxPan").setTranslation(new float[] {-30f,1f,-20f})
-            .addChild(new Shape("TargetBoxPan")
+          .addChild(new Transform().setDEF("TargetBoxPan").setTranslation(new float[] {-30f,1f,-20f})
+            .addChild(new Shape()
               .setGeometry(new Box())
               .setAppearance(new Appearance()
                 .setMaterial(new Material())
                 .setTexture(new ImageTexture().setUrl(new MFString12().getArray()))))
-            .addChild(new Transform("TargetBoxPan").setTranslation(new float[] {0f,2f,0f})
+            .addChild(new Transform().setTranslation(new float[] {0f,2f,0f})
               .addChild(new Shape()
                 .setGeometry(new Text().setString(new MFString13().getArray())
                   .setFontStyle(new FontStyle().setJustify(new MFString14().getArray())))
                 .setAppearance(new Appearance()
                   .setMaterial(new Material())))))
-          .addChild(new Transform("SimpleShotsTargets").setDEF("TargetBoxBoom").setTranslation(new float[] {-20f,1f,-20f})
-            .addChild(new Shape("TargetBoxBoom")
+          .addChild(new Transform().setDEF("TargetBoxBoom").setTranslation(new float[] {-20f,1f,-20f})
+            .addChild(new Shape()
               .setGeometry(new Box())
               .setAppearance(new Appearance()
                 .setMaterial(new Material())
                 .setTexture(new ImageTexture().setUrl(new MFString15().getArray()))))
-            .addChild(new Transform("TargetBoxBoom").setTranslation(new float[] {0f,2f,0f})
+            .addChild(new Transform().setTranslation(new float[] {0f,2f,0f})
               .addChild(new Shape()
                 .setGeometry(new Text().setString(new MFString16().getArray())
                   .setFontStyle(new FontStyle().setJustify(new MFString17().getArray())))
                 .setAppearance(new Appearance()
                   .setMaterial(new Material())))))
-          .addChild(new Transform("SimpleShotsTargets").setDEF("TargetBoxTilt").setTranslation(new float[] {-10f,1f,-20f})
-            .addChild(new Shape("TargetBoxTilt")
+          .addChild(new Transform().setDEF("TargetBoxTilt").setTranslation(new float[] {-10f,1f,-20f})
+            .addChild(new Shape()
               .setGeometry(new Box())
               .setAppearance(new Appearance()
                 .setMaterial(new Material())
                 .setTexture(new ImageTexture().setUrl(new MFString18().getArray()))))
-            .addChild(new Transform("TargetBoxTilt").setTranslation(new float[] {0f,2f,0f})
+            .addChild(new Transform().setTranslation(new float[] {0f,2f,0f})
               .addChild(new Shape()
                 .setGeometry(new Text().setString(new MFString19().getArray())
                   .setFontStyle(new FontStyle().setJustify(new MFString20().getArray())))
@@ -268,42 +268,42 @@ ProtoInstance ProtoInstance34 = null;
         .addComments("=============== Camera.AimPointTest ==============")
         .addChild(ProtoInstance26 = new ProtoInstance().setName("Camera").setDEF("Camera.AimPointTest"))
         .addChild(new Group().setDEF("AnimationGroup.AimPointTest")
-          .addChild(new TimeSensor("AnimationGroup.AimPointTest").setDEF("CameraTimer.AimPointTest"))
+          .addChild(new TimeSensor().setDEF("CameraTimer.AimPointTest"))
           .addComments("initialize clock to match totalDuration of combined Shot Moves")
-          .addChild(new ROUTE("AnimationGroup.AimPointTest").setFromField("totalDuration").setFromNode("Camera.AimPointTest").setToField("cycleInterval").setToNode("CameraTimer.AimPointTest"))
+          .addChild(new ROUTE().setFromField("totalDuration").setFromNode("Camera.AimPointTest").setToField("cycleInterval").setToNode("CameraTimer.AimPointTest"))
           .addComments("TimeSensor animates the CameraClock since that maintains the computed PositionInterpolator and OrientationInterpolator")
-          .addChild(new ROUTE("AnimationGroup.AimPointTest").setFromField("fraction_changed").setFromNode("CameraTimer.AimPointTest").setToField("set_fraction").setToNode("Camera.AimPointTest"))
-          .addChild(new Transform("AnimationGroup.AimPointTest").setDEF("Trigger.AimPointTest").setTranslation(new float[] {4f,4f,0f})
-            .addChild(new BooleanFilter("Trigger.AimPointTest").setDEF("TextTouchActive.AimPointFilter"))
-            .addChild(new TouchSensor("Trigger.AimPointTest").setDEF("TextTouch.AimPointTest").setDescription("touch to animate Camera AimPointTest"))
-            .addChild(new ROUTE("Trigger.AimPointTest").setFromField("inputTrue").setFromNode("TextTouchActive.AimPointFilter").setToField("set_bind").setToNode("Camera.AimPointTest"))
-            .addChild(new ROUTE("Trigger.AimPointTest").setFromField("isActive").setFromNode("TextTouch.AimPointTest").setToField("set_boolean").setToNode("TextTouchActive.AimPointFilter"))
-            .addChild(new ROUTE("Trigger.AimPointTest").setFromField("touchTime").setFromNode("TextTouch.AimPointTest").setToField("startTime").setToNode("CameraTimer.AimPointTest"))
-            .addChild(new Shape("Trigger.AimPointTest")
+          .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("CameraTimer.AimPointTest").setToField("set_fraction").setToNode("Camera.AimPointTest"))
+          .addChild(new Transform().setDEF("Trigger.AimPointTest").setTranslation(new float[] {4f,4f,0f})
+            .addChild(new BooleanFilter().setDEF("TextTouchActive.AimPointFilter"))
+            .addChild(new TouchSensor().setDEF("TextTouch.AimPointTest").setDescription("touch to animate Camera AimPointTest"))
+            .addChild(new ROUTE().setFromField("inputTrue").setFromNode("TextTouchActive.AimPointFilter").setToField("set_bind").setToNode("Camera.AimPointTest"))
+            .addChild(new ROUTE().setFromField("isActive").setFromNode("TextTouch.AimPointTest").setToField("set_boolean").setToNode("TextTouchActive.AimPointFilter"))
+            .addChild(new ROUTE().setFromField("touchTime").setFromNode("TextTouch.AimPointTest").setToField("startTime").setToNode("CameraTimer.AimPointTest"))
+            .addChild(new Shape()
               .setGeometry(new Text().setString(new MFString21().getArray())
                 .setFontStyle(new FontStyle().setJustify(new MFString22().getArray())))
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setUSE("ArtDeco5"))))
-            .addChild(new Shape("Trigger.AimPointTest").setUSE("TransparentBox"))))
+            .addChild(new Shape().setUSE("TransparentBox"))))
         .addComments("TODO build a test once implemented")
         .addChild(ProtoInstance32 = new ProtoInstance().setName("OfflineRender"))
         .addComments("=============== animate a camera shape to visualize view changes ==============")
         .addChild(new Transform().setDEF("CameraShapeTransform").setTranslation(new float[] {0f,0.5f,0f})
           .addComments("move CameraShape using active Camera")
-          .addChild(new ROUTE("CameraShapeTransform").setFromField("position_changed").setFromNode("Camera.SimpleShotsTest").setToField("translation").setToNode("CameraShapeTransform"))
-          .addChild(new ROUTE("CameraShapeTransform").setFromField("orientation_changed").setFromNode("Camera.SimpleShotsTest").setToField("rotation").setToNode("CameraShapeTransform"))
-          .addChild(new ROUTE("CameraShapeTransform").setFromField("position").setFromNode("Camera.AimPointTest").setToField("translation").setToNode("CameraShapeTransform"))
-          .addChild(new ROUTE("CameraShapeTransform").setFromField("orientation_changed").setFromNode("Camera.AimPointTest").setToField("rotation").setToNode("CameraShapeTransform"))
-          .addChild(new Transform("CameraShapeTransform").setDEF("CameraOffsetTransform").setTranslation(new float[] {0f,0f,0.25f})
-            .addChild(new TouchSensor("CameraOffsetTransform").setDEF("CameraShapeTouched"))
-            .addChild(new Inline("CameraOffsetTransform").setDEF("CameraShape").setUrl(new MFString23().getArray()))
-            .addChild(new Shape("CameraOffsetTransform").setDEF("SightLine")
-              .setGeometry(new IndexedLineSet("SightLine").setCoordIndex(new MFInt3224().getArray())
+          .addChild(new ROUTE().setFromField("position_changed").setFromNode("Camera.SimpleShotsTest").setToField("translation").setToNode("CameraShapeTransform"))
+          .addChild(new ROUTE().setFromField("orientation_changed").setFromNode("Camera.SimpleShotsTest").setToField("rotation").setToNode("CameraShapeTransform"))
+          .addChild(new ROUTE().setFromField("position").setFromNode("Camera.AimPointTest").setToField("translation").setToNode("CameraShapeTransform"))
+          .addChild(new ROUTE().setFromField("orientation_changed").setFromNode("Camera.AimPointTest").setToField("rotation").setToNode("CameraShapeTransform"))
+          .addChild(new Transform().setDEF("CameraOffsetTransform").setTranslation(new float[] {0f,0f,0.25f})
+            .addChild(new TouchSensor().setDEF("CameraShapeTouched"))
+            .addChild(new Inline().setDEF("CameraShape").setUrl(new MFString23().getArray()))
+            .addChild(new Shape().setDEF("SightLine")
+              .setGeometry(new IndexedLineSet().setCoordIndex(new MFInt3224().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f25().getArray())))
-              .setAppearance(new Appearance("SightLine")
+              .setAppearance(new Appearance()
                 .setMaterial(new Material().setEmissiveColor(new float[] {0.8f,0.8f,0.4f})))))
           .addComments("Display frustum to show camera view within the scene, toggled by user selecting CameraShape")
-          .addChild(new ExternProtoDeclare("CameraShapeTransform").setName("ViewFrustum").setAppinfo("Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes").setUrl(new MFString26().getArray())
+          .addChild(new ExternProtoDeclare().setName("ViewFrustum").setAppinfo("Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes").setUrl(new MFString26().getArray())
             .addField(new field().setType("SFNode").setName("ViewpointNode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("required: insert Viewpoint DEF or USE node for view of interest"))
             .addField(new field().setType("SFNode").setName("NavigationInfoNode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("required: insert NavigationInfo DEF or USE node of interest"))
             .addField(new field().setType("SFBool").setName("visible").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("whether or not frustum geometry is rendered"))
@@ -312,10 +312,10 @@ ProtoInstance ProtoInstance34 = null;
             .addField(new field().setType("SFFloat").setName("transparency").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("transparency of ViewFrustum hull geometry, default value 0.5"))
             .addField(new field().setType("SFFloat").setName("aspectRatio").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("assumed ratio height/width, default value 0.75"))
             .addField(new field().setType("SFBool").setName("trace").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("debug support, default false")))
-          .addChild(ProtoInstance33 = new ProtoInstance("CameraShapeTransform").setName("ViewFrustum").setDEF("ViewFrustumNode"))
-          .addChild(new BooleanToggle("CameraShapeTransform").setDEF("ViewFrustumToggle"))
-          .addChild(new ROUTE("CameraShapeTransform").setFromField("isActive").setFromNode("CameraShapeTouched").setToField("set_boolean").setToNode("ViewFrustumToggle"))
-          .addChild(new ROUTE("CameraShapeTransform").setFromField("toggle").setFromNode("ViewFrustumToggle").setToField("set_visible").setToNode("ViewFrustumNode")))
+          .addChild(ProtoInstance33 = new ProtoInstance().setName("ViewFrustum").setDEF("ViewFrustumNode"))
+          .addChild(new BooleanToggle().setDEF("ViewFrustumToggle"))
+          .addChild(new ROUTE().setFromField("isActive").setFromNode("CameraShapeTouched").setToField("set_boolean").setToNode("ViewFrustumToggle"))
+          .addChild(new ROUTE().setFromField("toggle").setFromNode("ViewFrustumToggle").setToField("set_visible").setToNode("ViewFrustumNode")))
         .addComments("=============== add checkerboard, axes and other things to look at while animating ==============")
         .addChild(new Background().setSkyColor(new MFColor28().getArray()))
         .addChild(new Transform().setRotation(new float[] {1f,0f,0f,-1.57079f}).setScale(new float[] {10f,10f,10f})
@@ -328,14 +328,14 @@ ProtoInstance ProtoInstance34 = null;
         .addChild(new Transform().setScale(new float[] {3f,3f,3f}).setTranslation(new float[] {0f,0.25f,0f})
           .addChild(new Inline().setDEF("CoordinateAxes").setUrl(new MFString33().getArray())))
         .addChild(new Transform().setDEF("MovingBoxTransform")
-          .addChild(new PositionInterpolator("MovingBoxTransform").setDEF("BoxPath").setKey(new MFFloat34().getArray()).setKeyValue(new MFVec3f35().getArray()))
-          .addChild(new TimeSensor("MovingBoxTransform").setDEF("BoxTimer").setCycleInterval(10d).setLoop(true))
-          .addChild(new ROUTE("MovingBoxTransform").setFromField("value_changed").setFromNode("BoxPath").setToField("translation").setToNode("MovingBoxTransform"))
-          .addChild(new ROUTE("MovingBoxTransform").setFromField("value_changed").setFromNode("BoxPath").setToField("goalAimPoint").setToNode("MoveAimPoint3.1"))
-          .addChild(new ROUTE("MovingBoxTransform").setFromField("value_changed").setFromNode("BoxPath").setToField("goalAimPoint").setToNode("MoveAimPoint3.2"))
-          .addChild(new ROUTE("MovingBoxTransform").setFromField("value_changed").setFromNode("BoxPath").setToField("goalAimPoint").setToNode("MoveAimPoint3.3"))
-          .addChild(new ROUTE("MovingBoxTransform").setFromField("fraction_changed").setFromNode("BoxTimer").setToField("set_fraction").setToNode("BoxPath"))
-          .addChild(new Shape("MovingBoxTransform")
+          .addChild(new PositionInterpolator().setDEF("BoxPath").setKey(new MFFloat34().getArray()).setKeyValue(new MFVec3f35().getArray()))
+          .addChild(new TimeSensor().setDEF("BoxTimer").setCycleInterval(10d).setLoop(true))
+          .addChild(new ROUTE().setFromField("value_changed").setFromNode("BoxPath").setToField("translation").setToNode("MovingBoxTransform"))
+          .addChild(new ROUTE().setFromField("value_changed").setFromNode("BoxPath").setToField("goalAimPoint").setToNode("MoveAimPoint3.1"))
+          .addChild(new ROUTE().setFromField("value_changed").setFromNode("BoxPath").setToField("goalAimPoint").setToNode("MoveAimPoint3.2"))
+          .addChild(new ROUTE().setFromField("value_changed").setFromNode("BoxPath").setToField("goalAimPoint").setToNode("MoveAimPoint3.3"))
+          .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("BoxTimer").setToField("set_fraction").setToNode("BoxPath"))
+          .addChild(new Shape()
             .setGeometry(new Box())
             .setAppearance(new Appearance()
               .setMaterial(new Material())
@@ -361,26 +361,26 @@ ProtoInstance ProtoInstance34 = null;
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,0.2f})))))))      ;
 ProtoInstance0
-          .addFieldValue(new fieldValue("Camera.SimpleShotsTest").setName("description").setValue("SimpleShotsTest for camera Zoom Dolly Pan Boom and Tilt"));
+          .addFieldValue(new fieldValue().setName("description").setValue("SimpleShotsTest for camera Zoom Dolly Pan Boom and Tilt"));
 ProtoInstance0
-          .addFieldValue(new fieldValue("Camera.SimpleShotsTest").setName("headlight").setValue("true"));
+          .addFieldValue(new fieldValue().setName("headlight").setValue("true"));
 ProtoInstance0
-          .addFieldValue(new fieldValue("Camera.SimpleShotsTest").setName("position").setValue("-4 4 10"));
+          .addFieldValue(new fieldValue().setName("position").setValue("-4 4 10"));
 ProtoInstance0
-          .addFieldValue(new fieldValue("Camera.SimpleShotsTest").setName("shots")
+          .addFieldValue(new fieldValue().setName("shots")
             .addChild(ProtoInstance1 = new ProtoInstance().setName("CameraShot").setDEF("Zoom"))
             .addChild(ProtoInstance5 = new ProtoInstance().setName("CameraShot").setDEF("Dolly"))
             .addChild(ProtoInstance9 = new ProtoInstance().setName("CameraShot").setDEF("Pan"))
             .addChild(ProtoInstance14 = new ProtoInstance().setName("CameraShot").setDEF("CameraBoom"))
             .addChild(ProtoInstance18 = new ProtoInstance().setName("CameraShot").setDEF("CameraTilt")));
 ProtoInstance1
-              .addFieldValue(new fieldValue("Zoom").setName("description").setValue("Simple shot of Camera Zoom"));
+              .addFieldValue(new fieldValue().setName("description").setValue("Simple shot of Camera Zoom"));
 ProtoInstance1
-              .addFieldValue(new fieldValue("Zoom").setName("initialPosition").setValue("-50 1 -10"));
+              .addFieldValue(new fieldValue().setName("initialPosition").setValue("-50 1 -10"));
 ProtoInstance1
-              .addFieldValue(new fieldValue("Zoom").setName("initialOrientation").setValue("0 1 0 0"));
+              .addFieldValue(new fieldValue().setName("initialOrientation").setValue("0 1 0 0"));
 ProtoInstance1
-              .addFieldValue(new fieldValue("Zoom").setName("moves")
+              .addFieldValue(new fieldValue().setName("moves")
                 .addChild(ProtoInstance2 = new ProtoInstance().setName("CameraMovement"))
                 .addChild(ProtoInstance3 = new ProtoInstance().setName("CameraMovement"))
                 .addChild(ProtoInstance4 = new ProtoInstance().setName("CameraMovement")));
@@ -409,24 +409,24 @@ ProtoInstance4
 ProtoInstance4
                   .addFieldValue(new fieldValue().setName("goalOrientation").setValue("0 1 0 0"));
 ProtoInstance5
-              .addFieldValue(new fieldValue("Dolly").setName("description").setValue("Simple shot of Camera Dolly"));
+              .addFieldValue(new fieldValue().setName("description").setValue("Simple shot of Camera Dolly"));
 ProtoInstance5
-              .addFieldValue(new fieldValue("Dolly").setName("initialPosition").setValue("-40 1 -10"));
+              .addFieldValue(new fieldValue().setName("initialPosition").setValue("-40 1 -10"));
 ProtoInstance5
-              .addFieldValue(new fieldValue("Dolly").setName("initialOrientation").setValue("0 1 0 0"));
+              .addFieldValue(new fieldValue().setName("initialOrientation").setValue("0 1 0 0"));
 ProtoInstance5
-              .addFieldValue(new fieldValue("Dolly").setName("moves")
+              .addFieldValue(new fieldValue().setName("moves")
                 .addChild(ProtoInstance6 = new ProtoInstance().setName("CameraMovement").setDEF("DollyMove1"))
                 .addChild(ProtoInstance7 = new ProtoInstance().setName("CameraMovement"))
                 .addChild(ProtoInstance8 = new ProtoInstance().setName("CameraMovement")));
 ProtoInstance6
-                  .addFieldValue(new fieldValue("DollyMove1").setName("description").setValue("Camera Dolly from Right to Left"));
+                  .addFieldValue(new fieldValue().setName("description").setValue("Camera Dolly from Right to Left"));
 ProtoInstance6
-                  .addFieldValue(new fieldValue("DollyMove1").setName("duration").setValue("3"));
+                  .addFieldValue(new fieldValue().setName("duration").setValue("3"));
 ProtoInstance6
-                  .addFieldValue(new fieldValue("DollyMove1").setName("goalPosition").setValue("-45 1 -10"));
+                  .addFieldValue(new fieldValue().setName("goalPosition").setValue("-45 1 -10"));
 ProtoInstance6
-                  .addFieldValue(new fieldValue("DollyMove1").setName("goalOrientation").setValue("0 1 0 0"));
+                  .addFieldValue(new fieldValue().setName("goalOrientation").setValue("0 1 0 0"));
 ProtoInstance7
                   .addFieldValue(new fieldValue().setName("description").setValue("Camera Dolly from Left to Right"));
 ProtoInstance7
@@ -444,33 +444,33 @@ ProtoInstance8
 ProtoInstance8
                   .addFieldValue(new fieldValue().setName("goalOrientation").setValue("0 1 0 0"));
 ProtoInstance9
-              .addFieldValue(new fieldValue("Pan").setName("description").setValue("Simple shot of Camera Pan left right and back to center"));
+              .addFieldValue(new fieldValue().setName("description").setValue("Simple shot of Camera Pan left right and back to center"));
 ProtoInstance9
-              .addFieldValue(new fieldValue("Pan").setName("initialPosition").setValue("-30 1 -10"));
+              .addFieldValue(new fieldValue().setName("initialPosition").setValue("-30 1 -10"));
 ProtoInstance9
-              .addFieldValue(new fieldValue("Pan").setName("initialOrientation").setValue("0 1 0 0"));
+              .addFieldValue(new fieldValue().setName("initialOrientation").setValue("0 1 0 0"));
 ProtoInstance9
-              .addFieldValue(new fieldValue("Pan").setName("moves")
+              .addFieldValue(new fieldValue().setName("moves")
                 .addChild(ProtoInstance10 = new ProtoInstance().setName("CameraMovement").setDEF("PanLeft"))
                 .addChild(ProtoInstance11 = new ProtoInstance().setName("CameraMovement").setDEF("PanRight"))
                 .addChild(ProtoInstance12 = new ProtoInstance().setName("CameraMovement"))
                 .addChild(ProtoInstance13 = new ProtoInstance().setName("CameraMovement")));
 ProtoInstance10
-                  .addFieldValue(new fieldValue("PanLeft").setName("description").setValue("Pan Left"));
+                  .addFieldValue(new fieldValue().setName("description").setValue("Pan Left"));
 ProtoInstance10
-                  .addFieldValue(new fieldValue("PanLeft").setName("duration").setValue("2"));
+                  .addFieldValue(new fieldValue().setName("duration").setValue("2"));
 ProtoInstance10
-                  .addFieldValue(new fieldValue("PanLeft").setName("goalPosition").setValue("-30 1 -10"));
+                  .addFieldValue(new fieldValue().setName("goalPosition").setValue("-30 1 -10"));
 ProtoInstance10
-                  .addFieldValue(new fieldValue("PanLeft").setName("goalOrientation").setValue("0 1 0 0.4"));
+                  .addFieldValue(new fieldValue().setName("goalOrientation").setValue("0 1 0 0.4"));
 ProtoInstance11
-                  .addFieldValue(new fieldValue("PanRight").setName("description").setValue("Pan Right"));
+                  .addFieldValue(new fieldValue().setName("description").setValue("Pan Right"));
 ProtoInstance11
-                  .addFieldValue(new fieldValue("PanRight").setName("duration").setValue("3"));
+                  .addFieldValue(new fieldValue().setName("duration").setValue("3"));
 ProtoInstance11
-                  .addFieldValue(new fieldValue("PanRight").setName("goalPosition").setValue("-30 1 -10"));
+                  .addFieldValue(new fieldValue().setName("goalPosition").setValue("-30 1 -10"));
 ProtoInstance11
-                  .addFieldValue(new fieldValue("PanRight").setName("goalOrientation").setValue("0 1 0 -0.4"));
+                  .addFieldValue(new fieldValue().setName("goalOrientation").setValue("0 1 0 -0.4"));
 ProtoInstance12
                   .addFieldValue(new fieldValue().setName("description").setValue("Camera Pan back to Center"));
 ProtoInstance12
@@ -488,50 +488,50 @@ ProtoInstance13
 ProtoInstance13
                   .addFieldValue(new fieldValue().setName("goalOrientation").setValue("0 1 0 0"));
 ProtoInstance14
-              .addFieldValue(new fieldValue("CameraBoom").setName("description").setValue("Camera Boom"));
+              .addFieldValue(new fieldValue().setName("description").setValue("Camera Boom"));
 ProtoInstance14
-              .addFieldValue(new fieldValue("CameraBoom").setName("initialPosition").setValue("-20 1 -10"));
+              .addFieldValue(new fieldValue().setName("initialPosition").setValue("-20 1 -10"));
 ProtoInstance14
-              .addFieldValue(new fieldValue("CameraBoom").setName("initialOrientation").setValue("0 1 0 0"));
+              .addFieldValue(new fieldValue().setName("initialOrientation").setValue("0 1 0 0"));
 ProtoInstance14
-              .addFieldValue(new fieldValue("CameraBoom").setName("moves")
+              .addFieldValue(new fieldValue().setName("moves")
                 .addChild(ProtoInstance15 = new ProtoInstance().setName("CameraMovement").setDEF("CameraBoomUp"))
                 .addChild(ProtoInstance16 = new ProtoInstance().setName("CameraMovement").setDEF("BoomDown"))
                 .addChild(ProtoInstance17 = new ProtoInstance().setName("CameraMovement").setDEF("BoomPause")));
 ProtoInstance15
-                  .addFieldValue(new fieldValue("CameraBoomUp").setName("description").setValue("Camera Boom Up"));
+                  .addFieldValue(new fieldValue().setName("description").setValue("Camera Boom Up"));
 ProtoInstance15
-                  .addFieldValue(new fieldValue("CameraBoomUp").setName("duration").setValue("3"));
+                  .addFieldValue(new fieldValue().setName("duration").setValue("3"));
 ProtoInstance15
-                  .addFieldValue(new fieldValue("CameraBoomUp").setName("goalPosition").setValue("-20 5 -10"));
+                  .addFieldValue(new fieldValue().setName("goalPosition").setValue("-20 5 -10"));
 ProtoInstance15
-                  .addFieldValue(new fieldValue("CameraBoomUp").setName("goalOrientation").setValue("0 1 0 0"));
+                  .addFieldValue(new fieldValue().setName("goalOrientation").setValue("0 1 0 0"));
 ProtoInstance16
-                  .addFieldValue(new fieldValue("BoomDown").setName("description").setValue("Camera Boom Down"));
+                  .addFieldValue(new fieldValue().setName("description").setValue("Camera Boom Down"));
 ProtoInstance16
-                  .addFieldValue(new fieldValue("BoomDown").setName("duration").setValue("3"));
+                  .addFieldValue(new fieldValue().setName("duration").setValue("3"));
 ProtoInstance16
-                  .addFieldValue(new fieldValue("BoomDown").setName("goalPosition").setValue("-20 1 -10"));
+                  .addFieldValue(new fieldValue().setName("goalPosition").setValue("-20 1 -10"));
 ProtoInstance16
-                  .addFieldValue(new fieldValue("BoomDown").setName("goalOrientation").setValue("0 1 0 0"));
+                  .addFieldValue(new fieldValue().setName("goalOrientation").setValue("0 1 0 0"));
 ProtoInstance17
-                  .addFieldValue(new fieldValue("BoomPause").setName("description").setValue("Camera Pause"));
+                  .addFieldValue(new fieldValue().setName("description").setValue("Camera Pause"));
 ProtoInstance17
-                  .addFieldValue(new fieldValue("BoomPause").setName("duration").setValue("2"));
+                  .addFieldValue(new fieldValue().setName("duration").setValue("2"));
 ProtoInstance17
-                  .addFieldValue(new fieldValue("BoomPause").setName("goalPosition").setValue("-20 1 -10"));
+                  .addFieldValue(new fieldValue().setName("goalPosition").setValue("-20 1 -10"));
 ProtoInstance17
-                  .addFieldValue(new fieldValue("BoomPause").setName("goalOrientation").setValue("0 1 0 0"));
+                  .addFieldValue(new fieldValue().setName("goalOrientation").setValue("0 1 0 0"));
 ProtoInstance18
-              .addFieldValue(new fieldValue("CameraTilt").setName("description").setValue("Camera Tilt"));
+              .addFieldValue(new fieldValue().setName("description").setValue("Camera Tilt"));
 ProtoInstance18
-              .addFieldValue(new fieldValue("CameraTilt").setName("initialPosition").setValue("-10 1 -10"));
+              .addFieldValue(new fieldValue().setName("initialPosition").setValue("-10 1 -10"));
 ProtoInstance18
-              .addFieldValue(new fieldValue("CameraTilt").setName("initialOrientation").setValue("0 0 1 0"));
+              .addFieldValue(new fieldValue().setName("initialOrientation").setValue("0 0 1 0"));
 ProtoInstance18
-              .addFieldValue(new fieldValue("CameraTilt").setName("traceEnabled").setValue("true"));
+              .addFieldValue(new fieldValue().setName("traceEnabled").setValue("true"));
 ProtoInstance18
-              .addFieldValue(new fieldValue("CameraTilt").setName("moves")
+              .addFieldValue(new fieldValue().setName("moves")
                 .addChild(ProtoInstance19 = new ProtoInstance().setName("CameraMovement"))
                 .addChild(ProtoInstance20 = new ProtoInstance().setName("CameraMovement").setDEF("TiltDown"))
                 .addChild(ProtoInstance21 = new ProtoInstance().setName("CameraMovement").setDEF("TiltPause"))
@@ -548,21 +548,21 @@ ProtoInstance19
 ProtoInstance19
                   .addFieldValue(new fieldValue().setName("goalOrientation").setValue("0 0 1 0"));
 ProtoInstance20
-                  .addFieldValue(new fieldValue("TiltDown").setName("description").setValue("Camera Tilt Left"));
+                  .addFieldValue(new fieldValue().setName("description").setValue("Camera Tilt Left"));
 ProtoInstance20
-                  .addFieldValue(new fieldValue("TiltDown").setName("duration").setValue("3"));
+                  .addFieldValue(new fieldValue().setName("duration").setValue("3"));
 ProtoInstance20
-                  .addFieldValue(new fieldValue("TiltDown").setName("goalPosition").setValue("-10 1 -10"));
+                  .addFieldValue(new fieldValue().setName("goalPosition").setValue("-10 1 -10"));
 ProtoInstance20
-                  .addFieldValue(new fieldValue("TiltDown").setName("goalOrientation").setValue("0 0 1 0.785"));
+                  .addFieldValue(new fieldValue().setName("goalOrientation").setValue("0 0 1 0.785"));
 ProtoInstance21
-                  .addFieldValue(new fieldValue("TiltPause").setName("description").setValue("Camera Tilt Pause"));
+                  .addFieldValue(new fieldValue().setName("description").setValue("Camera Tilt Pause"));
 ProtoInstance21
-                  .addFieldValue(new fieldValue("TiltPause").setName("duration").setValue("1"));
+                  .addFieldValue(new fieldValue().setName("duration").setValue("1"));
 ProtoInstance21
-                  .addFieldValue(new fieldValue("TiltPause").setName("goalPosition").setValue("-10 1 -10"));
+                  .addFieldValue(new fieldValue().setName("goalPosition").setValue("-10 1 -10"));
 ProtoInstance21
-                  .addFieldValue(new fieldValue("TiltPause").setName("goalOrientation").setValue("0 0 1 0.785"));
+                  .addFieldValue(new fieldValue().setName("goalOrientation").setValue("0 0 1 0.785"));
 ProtoInstance22
                   .addFieldValue(new fieldValue().setName("description").setValue("Camera Tilt Right"));
 ProtoInstance22
@@ -580,36 +580,36 @@ ProtoInstance23
 ProtoInstance23
                   .addFieldValue(new fieldValue().setName("goalOrientation").setValue("0 0 1 -0.785"));
 ProtoInstance24
-                  .addFieldValue(new fieldValue("TiltReset").setName("description").setValue("Camera Tilt Reset"));
+                  .addFieldValue(new fieldValue().setName("description").setValue("Camera Tilt Reset"));
 ProtoInstance24
-                  .addFieldValue(new fieldValue("TiltReset").setName("duration").setValue("1"));
+                  .addFieldValue(new fieldValue().setName("duration").setValue("1"));
 ProtoInstance24
-                  .addFieldValue(new fieldValue("TiltReset").setName("goalPosition").setValue("-10 1 -10"));
+                  .addFieldValue(new fieldValue().setName("goalPosition").setValue("-10 1 -10"));
 ProtoInstance24
-                  .addFieldValue(new fieldValue("TiltReset").setName("goalOrientation").setValue("0 0 1 0"));
+                  .addFieldValue(new fieldValue().setName("goalOrientation").setValue("0 0 1 0"));
 ProtoInstance25
-                  .addFieldValue(new fieldValue("TiltUp").setName("description").setValue("Return to home"));
+                  .addFieldValue(new fieldValue().setName("description").setValue("Return to home"));
 ProtoInstance25
-                  .addFieldValue(new fieldValue("TiltUp").setName("duration").setValue("2"));
+                  .addFieldValue(new fieldValue().setName("duration").setValue("2"));
 ProtoInstance25
-                  .addFieldValue(new fieldValue("TiltUp").setName("goalPosition").setValue("0 2 12"));
+                  .addFieldValue(new fieldValue().setName("goalPosition").setValue("0 2 12"));
 ProtoInstance25
-                  .addFieldValue(new fieldValue("TiltUp").setName("goalOrientation").setValue("0 0 1 0"));
+                  .addFieldValue(new fieldValue().setName("goalOrientation").setValue("0 0 1 0"));
 ProtoInstance26
-          .addFieldValue(new fieldValue("Camera.AimPointTest").setName("description").setValue("AimPointTest for moving camera tracking moving target"));
+          .addFieldValue(new fieldValue().setName("description").setValue("AimPointTest for moving camera tracking moving target"));
 ProtoInstance26
-          .addFieldValue(new fieldValue("Camera.AimPointTest").setName("position").setValue("4 4 10"));
+          .addFieldValue(new fieldValue().setName("position").setValue("4 4 10"));
 ProtoInstance26
-          .addFieldValue(new fieldValue("Camera.AimPointTest").setName("shots")
+          .addFieldValue(new fieldValue().setName("shots")
             .addChild(ProtoInstance27 = new ProtoInstance().setName("CameraShot").setDEF("Shot5")));
 ProtoInstance27
-              .addFieldValue(new fieldValue("Shot5").setName("description").setValue("#3 Tracking shot"));
+              .addFieldValue(new fieldValue().setName("description").setValue("#3 Tracking shot"));
 ProtoInstance27
-              .addFieldValue(new fieldValue("Shot5").setName("initialPosition").setValue("6 6 10"));
+              .addFieldValue(new fieldValue().setName("initialPosition").setValue("6 6 10"));
 ProtoInstance27
-              .addFieldValue(new fieldValue("Shot5").setName("initialOrientation").setValue("0 1 0 0"));
+              .addFieldValue(new fieldValue().setName("initialOrientation").setValue("0 1 0 0"));
 ProtoInstance27
-              .addFieldValue(new fieldValue("Shot5").setName("moves")
+              .addFieldValue(new fieldValue().setName("moves")
                 .addChild(ProtoInstance28 = new ProtoInstance().setName("CameraMovement").setDEF("MoveAimPoint3.1")
                   .addComments("goalAimPoint modified by ROUTE to match moving Box"))
                 .addChild(ProtoInstance29 = new ProtoInstance().setName("CameraMovement").setDEF("MoveAimPoint3.2")
@@ -619,63 +619,63 @@ ProtoInstance27
                 .addChild(ProtoInstance31 = new ProtoInstance().setName("CameraMovement").setDEF("MoveAimPoint3.4")
                   .addComments("can test tracking or not using these values")));
 ProtoInstance28
-                  .addFieldValue(new fieldValue("MoveAimPoint3.1").setName("description").setValue("AimPoint 3.1 moving BoxPath"));
+                  .addFieldValue(new fieldValue().setName("description").setValue("AimPoint 3.1 moving BoxPath"));
 ProtoInstance28
-                  .addFieldValue(new fieldValue("MoveAimPoint3.1").setName("tracking").setValue("true"));
+                  .addFieldValue(new fieldValue().setName("tracking").setValue("true"));
 ProtoInstance28
-                  .addFieldValue(new fieldValue("MoveAimPoint3.1").setName("duration").setValue("8"));
+                  .addFieldValue(new fieldValue().setName("duration").setValue("8"));
 ProtoInstance28
-                  .addFieldValue(new fieldValue("MoveAimPoint3.1").setName("goalPosition").setValue("6 6 10"));
+                  .addFieldValue(new fieldValue().setName("goalPosition").setValue("6 6 10"));
 ProtoInstance29
-                  .addFieldValue(new fieldValue("MoveAimPoint3.2").setName("description").setValue("AimPoint 3.2 pan right while tracking"));
+                  .addFieldValue(new fieldValue().setName("description").setValue("AimPoint 3.2 pan right while tracking"));
 ProtoInstance29
-                  .addFieldValue(new fieldValue("MoveAimPoint3.2").setName("tracking").setValue("true"));
+                  .addFieldValue(new fieldValue().setName("tracking").setValue("true"));
 ProtoInstance29
-                  .addFieldValue(new fieldValue("MoveAimPoint3.2").setName("duration").setValue("8"));
+                  .addFieldValue(new fieldValue().setName("duration").setValue("8"));
 ProtoInstance29
-                  .addFieldValue(new fieldValue("MoveAimPoint3.2").setName("goalPosition").setValue("40 6 12"));
+                  .addFieldValue(new fieldValue().setName("goalPosition").setValue("40 6 12"));
 ProtoInstance30
-                  .addFieldValue(new fieldValue("MoveAimPoint3.3").setName("description").setValue("AimPoint 3.3 boom up while tracking"));
+                  .addFieldValue(new fieldValue().setName("description").setValue("AimPoint 3.3 boom up while tracking"));
 ProtoInstance30
-                  .addFieldValue(new fieldValue("MoveAimPoint3.3").setName("tracking").setValue("true"));
+                  .addFieldValue(new fieldValue().setName("tracking").setValue("true"));
 ProtoInstance30
-                  .addFieldValue(new fieldValue("MoveAimPoint3.3").setName("duration").setValue("3"));
+                  .addFieldValue(new fieldValue().setName("duration").setValue("3"));
 ProtoInstance30
-                  .addFieldValue(new fieldValue("MoveAimPoint3.3").setName("goalPosition").setValue("40 20 13"));
+                  .addFieldValue(new fieldValue().setName("goalPosition").setValue("40 20 13"));
 ProtoInstance31
-                  .addFieldValue(new fieldValue("MoveAimPoint3.4").setName("description").setValue("AimPoint 3.4 restore camera back to home"));
+                  .addFieldValue(new fieldValue().setName("description").setValue("AimPoint 3.4 restore camera back to home"));
 ProtoInstance31
-                  .addFieldValue(new fieldValue("MoveAimPoint3.4").setName("tracking").setValue("true"));
+                  .addFieldValue(new fieldValue().setName("tracking").setValue("true"));
 ProtoInstance31
-                  .addFieldValue(new fieldValue("MoveAimPoint3.4").setName("duration").setValue("5"));
+                  .addFieldValue(new fieldValue().setName("duration").setValue("5"));
 ProtoInstance31
-                  .addFieldValue(new fieldValue("MoveAimPoint3.4").setName("goalPosition").setValue("4 4 10"));
+                  .addFieldValue(new fieldValue().setName("goalPosition").setValue("4 4 10"));
 ProtoInstance31
-                  .addFieldValue(new fieldValue("MoveAimPoint3.4").setName("goalAimPoint").setValue("4 4 0"));
+                  .addFieldValue(new fieldValue().setName("goalAimPoint").setValue("4 4 0"));
 ProtoInstance31
-                  .addFieldValue(new fieldValue("MoveAimPoint3.4").setName("goalOrientation").setValue("0 1 0 0"));
+                  .addFieldValue(new fieldValue().setName("goalOrientation").setValue("0 1 0 0"));
 ProtoInstance33
-            .addFieldValue(new fieldValue("ViewFrustumNode").setName("ViewpointNode")
+            .addFieldValue(new fieldValue().setName("ViewpointNode")
               .addChild(new Viewpoint().setDEF("FrustumViewpoint").setDescription("viewpoint for ViewFrustum").setPosition(new float[] {0f,0f,0f})));
 ProtoInstance33
-            .addFieldValue(new fieldValue("ViewFrustumNode").setName("NavigationInfoNode")
+            .addFieldValue(new fieldValue().setName("NavigationInfoNode")
               .addChild(new NavigationInfo().setDEF("TestNavigationInfo").setTransitionType(new MFString27().getArray()).setVisibilityLimit(100f)));
 ProtoInstance33
-            .addFieldValue(new fieldValue("ViewFrustumNode").setName("visible").setValue("false"));
+            .addFieldValue(new fieldValue().setName("visible").setValue("false"));
 ProtoInstance33
-            .addFieldValue(new fieldValue("ViewFrustumNode").setName("lineColor").setValue("0.9 0.9 0.9"));
+            .addFieldValue(new fieldValue().setName("lineColor").setValue("0.9 0.9 0.9"));
 ProtoInstance33
-            .addFieldValue(new fieldValue("ViewFrustumNode").setName("frustumColor").setValue("0.8 0.8 0.8"));
+            .addFieldValue(new fieldValue().setName("frustumColor").setValue("0.8 0.8 0.8"));
 ProtoInstance33
-            .addFieldValue(new fieldValue("ViewFrustumNode").setName("transparency").setValue("0.95"));
+            .addFieldValue(new fieldValue().setName("transparency").setValue("0.95"));
 ProtoInstance34
-          .addFieldValue(new fieldValue("CrossHairInstance").setName("enabled").setValue("true"));
+          .addFieldValue(new fieldValue().setName("enabled").setValue("true"));
 ProtoInstance34
-          .addFieldValue(new fieldValue("CrossHairInstance").setName("markerColor").setValue("1 0.5 0"));
+          .addFieldValue(new fieldValue().setName("markerColor").setValue("1 0.5 0"));
 ProtoInstance34
-          .addFieldValue(new fieldValue("CrossHairInstance").setName("scale").setValue("1 1 1"));
+          .addFieldValue(new fieldValue().setName("scale").setValue("1 1 1"));
 ProtoInstance34
-          .addFieldValue(new fieldValue("CrossHairInstance").setName("positionOffsetFromCamera").setValue("0 0 -6"));
+          .addFieldValue(new fieldValue().setName("positionOffsetFromCamera").setValue("0 0 -6"));
     return X3D0;
     }
 protected class MFString0 {

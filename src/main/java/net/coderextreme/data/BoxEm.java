@@ -103,12 +103,12 @@ ProtoInstance1
 ProtoInstance2
                 .addFieldValue(new fieldValue().setName("xtranslation").setValue("-2 0 0"));
 ProtoInstance3
-          .addFieldValue(new fieldValue("threepi").setName("ytranslation").setValue("0 0 0"));
+          .addFieldValue(new fieldValue().setName("ytranslation").setValue("0 0 0"));
 ProtoInstance3
-          .addFieldValue(new fieldValue("threepi").setName("myShape")
+          .addFieldValue(new fieldValue().setName("myShape")
             .addChild(new Shape().setDEF("box")
-              .setGeometry(new Box("box").setSize(new float[] {1f,1f,1f}))
-              .setAppearance(new Appearance("box")
+              .setGeometry(new Box().setSize(new float[] {1f,1f,1f}))
+              .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f,1f,0f})))));
     return X3D0;
     }

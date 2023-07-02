@@ -60,9 +60,9 @@ public class ArchHalf {
       .setScene(new Scene()
         .addChild(new Shape().setDEF("Arch")
           .addComments("note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly")
-          .setGeometry(new IndexedFaceSet("Arch").setDEF("ArchIndex").setConvex(false).setCoordIndex(new MFInt320().getArray()).setSolid(false)
-            .setCoord(new Coordinate("ArchIndex").setDEF("ArchChord").setPoint(new MFVec3f1().getArray())))
-          .setAppearance(new Appearance("Arch")
+          .setGeometry(new IndexedFaceSet().setDEF("ArchIndex").setConvex(false).setCoordIndex(new MFInt320().getArray()).setSolid(false)
+            .setCoord(new Coordinate().setDEF("ArchChord").setPoint(new MFVec3f1().getArray())))
+          .setAppearance(new Appearance()
             .setMaterial(new Material().setDEF("MaterialNode").setDiffuseColor(new float[] {1f,0.75f,0.25f})))))      ;
     return X3D0;
     }
