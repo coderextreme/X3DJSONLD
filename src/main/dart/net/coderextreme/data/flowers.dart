@@ -13,6 +13,10 @@ var X3D0 =  X3D(
               level_ : 1),
           component_ : 
             component(
+              name_ : SFString('EnvironmentalEffects'),
+              level_ : 3),
+          component_ : 
+            component(
               name_ : SFString('Shaders'),
               level_ : 1),
           component_ : 
@@ -35,6 +39,10 @@ var X3D0 =  X3D(
             component(
               name_ : SFString('Grouping'),
               level_ : 3),
+          component_ : 
+            component(
+              name_ : SFString('Core'),
+              level_ : 1),
           meta_ : [
             meta(
               name_ : SFString('title'),

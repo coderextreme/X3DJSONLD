@@ -24,7 +24,6 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addComponent((new autoclass.component()).setName("Shape").setLevel(4))
         .addComponent((new autoclass.component()).setName("Grouping").setLevel(3))
         .addComponent((new autoclass.component()).setName("Core").setLevel(1))
-        .addComments((new autoclass.CommentsBlock("component name='EnvironmentalEffects' level='1'></component")))
         .addMeta((new autoclass.meta()).setName("title").setContent("ball.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))

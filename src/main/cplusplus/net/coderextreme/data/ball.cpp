@@ -59,7 +59,6 @@ component10->setName("Core");
 component10->setLevel(1);
 head1->addComponent(*component10);
 
-//component name='EnvironmentalEffects' level='1'></component
 Cmeta* meta11 = new Cmeta();
 meta11->setName("title");
 meta11->setContent("ball.x3d");

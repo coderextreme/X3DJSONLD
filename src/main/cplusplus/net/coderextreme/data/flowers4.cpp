@@ -15,199 +15,214 @@ X3D0->setProfile("Immersive");
 X3D0->setVersion("4.0");
 Chead* head1 = new Chead();
 Ccomponent* component2 = new Ccomponent();
-component2->setName("Shaders");
+component2->setName("Scripting");
 component2->setLevel(1);
 head1->addComponent(*component2);
 
 Ccomponent* component3 = new Ccomponent();
-component3->setName("CubeMapTexturing");
-component3->setLevel(1);
+component3->setName("EnvironmentalEffects");
+component3->setLevel(3);
 head1->addComponent(*component3);
 
 Ccomponent* component4 = new Ccomponent();
-component4->setName("Texturing");
+component4->setName("Shaders");
 component4->setLevel(1);
 head1->addComponent(*component4);
 
 Ccomponent* component5 = new Ccomponent();
-component5->setName("Rendering");
+component5->setName("CubeMapTexturing");
 component5->setLevel(1);
 head1->addComponent(*component5);
 
 Ccomponent* component6 = new Ccomponent();
-component6->setName("Shape");
-component6->setLevel(4);
+component6->setName("Texturing");
+component6->setLevel(1);
 head1->addComponent(*component6);
 
 Ccomponent* component7 = new Ccomponent();
-component7->setName("Grouping");
-component7->setLevel(3);
+component7->setName("Rendering");
+component7->setLevel(1);
 head1->addComponent(*component7);
 
-Cmeta* meta8 = new Cmeta();
-meta8->setName("title");
-meta8->setContent("flowers4.x3d");
-head1->addMeta(*meta8);
+Ccomponent* component8 = new Ccomponent();
+component8->setName("Shape");
+component8->setLevel(4);
+head1->addComponent(*component8);
 
-Cmeta* meta9 = new Cmeta();
-meta9->setName("creator");
-meta9->setContent("John Carlson");
-head1->addMeta(*meta9);
+Ccomponent* component9 = new Ccomponent();
+component9->setName("Grouping");
+component9->setLevel(3);
+head1->addComponent(*component9);
 
-Cmeta* meta10 = new Cmeta();
-meta10->setName("generator");
-meta10->setContent("manual");
-head1->addMeta(*meta10);
+Ccomponent* component10 = new Ccomponent();
+component10->setName("Core");
+component10->setLevel(1);
+head1->addComponent(*component10);
 
 Cmeta* meta11 = new Cmeta();
-meta11->setName("identifier");
-meta11->setContent("https://coderextreme.net/X3DJSONLD/flowers4.x3d");
+meta11->setName("title");
+meta11->setContent("flowers4.x3d");
 head1->addMeta(*meta11);
 
 Cmeta* meta12 = new Cmeta();
-meta12->setName("description");
-meta12->setContent("an animated flower");
+meta12->setName("creator");
+meta12->setContent("John Carlson");
 head1->addMeta(*meta12);
+
+Cmeta* meta13 = new Cmeta();
+meta13->setName("generator");
+meta13->setContent("manual");
+head1->addMeta(*meta13);
+
+Cmeta* meta14 = new Cmeta();
+meta14->setName("identifier");
+meta14->setContent("https://coderextreme.net/X3DJSONLD/flowers4.x3d");
+head1->addMeta(*meta14);
+
+Cmeta* meta15 = new Cmeta();
+meta15->setName("description");
+meta15->setContent("an animated flower");
+head1->addMeta(*meta15);
 
 X3D0->setHead(*head1);
 
-CScene* Scene13 = new CScene();
-CNavigationInfo* NavigationInfo14 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-group->addChildren(*NavigationInfo14);
+CScene* Scene16 = new CScene();
+CNavigationInfo* NavigationInfo17 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
+group->addChildren(*NavigationInfo17);
 
-CBackground* Background15 = (CBackground *)(m_pScene.createNode("Background"));
-Background15->setBackUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"}, 2);
-Background15->setBottomUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"}, 2);
-Background15->setFrontUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"}, 2);
-Background15->setLeftUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"}, 2);
-Background15->setRightUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"}, 2);
-Background15->setTopUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"}, 2);
-group->addChildren(*Background15);
+CBackground* Background18 = (CBackground *)(m_pScene.createNode("Background"));
+Background18->setBackUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"}, 2);
+Background18->setBottomUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"}, 2);
+Background18->setFrontUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"}, 2);
+Background18->setLeftUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"}, 2);
+Background18->setRightUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"}, 2);
+Background18->setTopUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"}, 2);
+group->addChildren(*Background18);
 
-CTransform* Transform16 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform16->setDEF("transform");
-CShape* Shape17 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance18 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material19 = (CMaterial *)(m_pScene.createNode("Material"));
-Material19->setDiffuseColor(new float[3]{0.7,0.7,0.7});
-Material19->setSpecularColor(new float[3]{0.5,0.5,0.5});
-Appearance18->setMaterial(*Material19);
+CTransform* Transform19 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform19->setDEF("transform");
+CShape* Shape20 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance21 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material22 = (CMaterial *)(m_pScene.createNode("Material"));
+Material22->setDiffuseColor(new float[3]{0.7,0.7,0.7});
+Material22->setSpecularColor(new float[3]{0.5,0.5,0.5});
+Appearance21->setMaterial(*Material22);
 
-CComposedCubeMapTexture* ComposedCubeMapTexture20 = (CComposedCubeMapTexture *)(m_pScene.createNode("ComposedCubeMapTexture"));
-CImageTexture* ImageTexture21 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture21->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"}, 2);
-ComposedCubeMapTexture20->setBack(*ImageTexture21);
-
-CImageTexture* ImageTexture22 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture22->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"}, 2);
-ComposedCubeMapTexture20->setBottom(*ImageTexture22);
-
-CImageTexture* ImageTexture23 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture23->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"}, 2);
-ComposedCubeMapTexture20->setFront(*ImageTexture23);
-
+CComposedCubeMapTexture* ComposedCubeMapTexture23 = (CComposedCubeMapTexture *)(m_pScene.createNode("ComposedCubeMapTexture"));
 CImageTexture* ImageTexture24 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture24->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"}, 2);
-ComposedCubeMapTexture20->setLeft(*ImageTexture24);
+ImageTexture24->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"}, 2);
+ComposedCubeMapTexture23->setBack(*ImageTexture24);
 
 CImageTexture* ImageTexture25 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture25->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"}, 2);
-ComposedCubeMapTexture20->setRight(*ImageTexture25);
+ImageTexture25->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"}, 2);
+ComposedCubeMapTexture23->setBottom(*ImageTexture25);
 
 CImageTexture* ImageTexture26 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture26->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"}, 2);
-ComposedCubeMapTexture20->setTop(*ImageTexture26);
+ImageTexture26->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"}, 2);
+ComposedCubeMapTexture23->setFront(*ImageTexture26);
 
-Appearance18->setTexture(*ComposedCubeMapTexture20);
+CImageTexture* ImageTexture27 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture27->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"}, 2);
+ComposedCubeMapTexture23->setLeft(*ImageTexture27);
 
-CComposedShader* ComposedShader27 = (CComposedShader *)(m_pScene.createNode("ComposedShader"));
-ComposedShader27->setDEF("shader");
-ComposedShader27->setLanguage("GLSL");
-Cfield* field28 = new Cfield();
-field28->setName("cube");
-field28->setType("SFInt32");
-field28->setAccessType("inputOutput");
-field28->setValue("0");
-ComposedShader27->addField(*field28);
+CImageTexture* ImageTexture28 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture28->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"}, 2);
+ComposedCubeMapTexture23->setRight(*ImageTexture28);
 
-Cfield* field29 = new Cfield();
-field29->setName("chromaticDispertion");
-field29->setAccessType("inputOutput");
-field29->setType("SFVec3f");
-field29->setValue("0.98 1 1.033");
-ComposedShader27->addField(*field29);
+CImageTexture* ImageTexture29 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture29->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"}, 2);
+ComposedCubeMapTexture23->setTop(*ImageTexture29);
 
-Cfield* field30 = new Cfield();
-field30->setName("bias");
-field30->setType("SFFloat");
-field30->setAccessType("inputOutput");
-field30->setValue("0.5");
-ComposedShader27->addField(*field30);
+Appearance21->setTexture(*ComposedCubeMapTexture23);
 
+CComposedShader* ComposedShader30 = (CComposedShader *)(m_pScene.createNode("ComposedShader"));
+ComposedShader30->setDEF("shader");
+ComposedShader30->setLanguage("GLSL");
 Cfield* field31 = new Cfield();
-field31->setName("scale");
-field31->setType("SFFloat");
+field31->setName("cube");
+field31->setType("SFInt32");
 field31->setAccessType("inputOutput");
-field31->setValue("0.5");
-ComposedShader27->addField(*field31);
+field31->setValue("0");
+ComposedShader30->addField(*field31);
 
 Cfield* field32 = new Cfield();
-field32->setName("power");
-field32->setType("SFFloat");
+field32->setName("chromaticDispertion");
 field32->setAccessType("inputOutput");
-field32->setValue("2");
-ComposedShader27->addField(*field32);
+field32->setType("SFVec3f");
+field32->setValue("0.98 1 1.033");
+ComposedShader30->addField(*field32);
 
-CShaderPart* ShaderPart33 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
-ShaderPart33->setUrl(new CString[2]{"../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"}, 2);
-ShaderPart33->setType("VERTEX");
-ComposedShader27->addParts(*ShaderPart33);
+Cfield* field33 = new Cfield();
+field33->setName("bias");
+field33->setType("SFFloat");
+field33->setAccessType("inputOutput");
+field33->setValue("0.5");
+ComposedShader30->addField(*field33);
 
-CShaderPart* ShaderPart34 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
-ShaderPart34->setUrl(new CString[2]{"../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"}, 2);
-ShaderPart34->setType("FRAGMENT");
-ComposedShader27->addParts(*ShaderPart34);
+Cfield* field34 = new Cfield();
+field34->setName("scale");
+field34->setType("SFFloat");
+field34->setAccessType("inputOutput");
+field34->setValue("0.5");
+ComposedShader30->addField(*field34);
 
-Appearance18->addShaders(*ComposedShader27);
+Cfield* field35 = new Cfield();
+field35->setName("power");
+field35->setType("SFFloat");
+field35->setAccessType("inputOutput");
+field35->setValue("2");
+ComposedShader30->addField(*field35);
 
-Shape17->setAppearance(*Appearance18);
+CShaderPart* ShaderPart36 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
+ShaderPart36->setUrl(new CString[2]{"../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"}, 2);
+ShaderPart36->setType("VERTEX");
+ComposedShader30->addParts(*ShaderPart36);
+
+CShaderPart* ShaderPart37 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
+ShaderPart37->setUrl(new CString[2]{"../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"}, 2);
+ShaderPart37->setType("FRAGMENT");
+ComposedShader30->addParts(*ShaderPart37);
+
+Appearance21->addShaders(*ComposedShader30);
+
+Shape20->setAppearance(*Appearance21);
 
 //<Sphere>
-CIndexedFaceSet* IndexedFaceSet35 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
-IndexedFaceSet35->setConvex(False);
-IndexedFaceSet35->setDEF("Orbit");
-CCoordinate* Coordinate36 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate36->setDEF("OrbitCoordinates");
-IndexedFaceSet35->setCoord(*Coordinate36);
+CIndexedFaceSet* IndexedFaceSet38 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet38->setConvex(False);
+IndexedFaceSet38->setDEF("Orbit");
+CCoordinate* Coordinate39 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate39->setDEF("OrbitCoordinates");
+IndexedFaceSet38->setCoord(*Coordinate39);
 
-Shape17->setGeometry(IndexedFaceSet35);
+Shape20->setGeometry(IndexedFaceSet38);
 
-Transform16->addChildren(*Shape17);
+Transform19->addChildren(*Shape20);
 
-group->addChildren(*Transform16);
+group->addChildren(*Transform19);
 
-CScript* Script37 = (CScript *)(m_pScene.createNode("Script"));
-Script37->setDEF("OrbitScript");
-Cfield* field38 = new Cfield();
-field38->setName("set_fraction");
-field38->setAccessType("inputOnly");
-field38->setType("SFFloat");
-Script37->addField(*field38);
+CScript* Script40 = (CScript *)(m_pScene.createNode("Script"));
+Script40->setDEF("OrbitScript");
+Cfield* field41 = new Cfield();
+field41->setName("set_fraction");
+field41->setAccessType("inputOnly");
+field41->setType("SFFloat");
+Script40->addField(*field41);
 
-Cfield* field39 = new Cfield();
-field39->setName("coordinates");
-field39->setAccessType("inputOutput");
-field39->setType("MFVec3f");
-Script37->addField(*field39);
+Cfield* field42 = new Cfield();
+field42->setName("coordinates");
+field42->setAccessType("inputOutput");
+field42->setType("MFVec3f");
+Script40->addField(*field42);
 
-Cfield* field40 = new Cfield();
-field40->setName("coordIndexes");
-field40->setAccessType("outputOnly");
-field40->setType("MFInt32");
-Script37->addField(*field40);
+Cfield* field43 = new Cfield();
+field43->setName("coordIndexes");
+field43->setAccessType("outputOnly");
+field43->setType("MFInt32");
+Script40->addField(*field43);
 
 
-Script37.setSourceCode(`ecmascript:\n"+
+Script40.setSourceCode(`ecmascript:\n"+
 "\n"+
 "var e = 5;\n"+
 "var f = 5;\n"+
@@ -278,36 +293,36 @@ Script37.setSourceCode(`ecmascript:\n"+
 "	var resolution = 100;\n"+
 "	updateCoordinates(resolution);\n"+
 "}`)
-group->addChildren(*Script37);
+group->addChildren(*Script40);
 
-CTimeSensor* TimeSensor41 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
-TimeSensor41->setDEF("Clock");
-TimeSensor41->setCycleInterval(16);
-TimeSensor41->setLoop(True);
-group->addChildren(*TimeSensor41);
+CTimeSensor* TimeSensor44 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
+TimeSensor44->setDEF("Clock");
+TimeSensor44->setCycleInterval(16);
+TimeSensor44->setLoop(True);
+group->addChildren(*TimeSensor44);
 
-CROUTE* ROUTE42 = new CROUTE();
-ROUTE42->setFromField("coordIndexes");
-ROUTE42->setFromNode("OrbitScript");
-ROUTE42->setToField("set_coordIndex");
-ROUTE42->setToNode("Orbit");
-group->addChildren(*ROUTE42);
+CROUTE* ROUTE45 = new CROUTE();
+ROUTE45->setFromField("coordIndexes");
+ROUTE45->setFromNode("OrbitScript");
+ROUTE45->setToField("set_coordIndex");
+ROUTE45->setToNode("Orbit");
+group->addChildren(*ROUTE45);
 
-CROUTE* ROUTE43 = new CROUTE();
-ROUTE43->setFromField("coordinates");
-ROUTE43->setFromNode("OrbitScript");
-ROUTE43->setToField("set_point");
-ROUTE43->setToNode("OrbitCoordinates");
-group->addChildren(*ROUTE43);
+CROUTE* ROUTE46 = new CROUTE();
+ROUTE46->setFromField("coordinates");
+ROUTE46->setFromNode("OrbitScript");
+ROUTE46->setToField("set_point");
+ROUTE46->setToNode("OrbitCoordinates");
+group->addChildren(*ROUTE46);
 
-CROUTE* ROUTE44 = new CROUTE();
-ROUTE44->setFromField("fraction_changed");
-ROUTE44->setFromNode("Clock");
-ROUTE44->setToField("set_fraction");
-ROUTE44->setToNode("OrbitScript");
-group->addChildren(*ROUTE44);
+CROUTE* ROUTE47 = new CROUTE();
+ROUTE47->setFromField("fraction_changed");
+ROUTE47->setFromNode("Clock");
+ROUTE47->setToField("set_fraction");
+ROUTE47->setToNode("OrbitScript");
+group->addChildren(*ROUTE47);
 
-X3D0->setScene(*Scene13);
+X3D0->setScene(*Scene16);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

@@ -52,7 +52,6 @@ component10.name = "Core";
 component10.level = 1;
 head1.component[8] = component10;
 
-//component name='EnvironmentalEffects' level='1'></component
 meta meta11 = createNode("meta");
 meta11.name = "title";
 meta11.content = "ball.x3d";
