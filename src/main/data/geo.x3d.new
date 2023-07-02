@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><component name="Shaders" level="1"></component>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><component name="Scripting" level="1"></component>
+<component name="EnvironmentalEffects" level="3"></component>
+<component name="Shaders" level="1"></component>
 <component name="CubeMapTexturing" level="1"></component>
 <component name="Texturing" level="1"></component>
 <component name="Rendering" level="1"></component>
 <component name="Shape" level="4"></component>
 <component name="Grouping" level="3"></component>
+<component name="Core" level="1"></component>
 <meta name="title" content="geo.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="generator" content="manual"></meta>

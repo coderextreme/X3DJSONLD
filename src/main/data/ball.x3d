@@ -2,8 +2,7 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <X3D profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance">
       <head>
-    	      <component level='1' name='Scripting'/>
-	      <!--component name='EnvironmentalEffects' level='1'></component-->
+    	      <component level='1' name='Scripting'></component>
 	      <component name='EnvironmentalEffects' level='3'></component>
 	      <component name='Shaders' level='1'></component>
 	      <component name='CubeMapTexturing' level='1'></component>
