@@ -14,7 +14,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 
 // Javadoc annotations follow, see below for Java source code.
 /**
- * <p> Example scene JinLOA4Canonical. </p>
+ * <p> Example scene . </p>
  <p> Related links: JinLOA4Canonical.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<p>
 		This program uses the

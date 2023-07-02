@@ -185,6 +185,7 @@ Script32->addField(*field37);
 
 
 Script32.setSourceCode(`ecmascript:\n"+
+"Cirrus.children = [];\n"+
 "\n"+
 "\n"+
 "function cumulustranslation() // These values designate the boundary location of the cloud\n"+

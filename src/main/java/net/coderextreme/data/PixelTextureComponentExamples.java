@@ -73,7 +73,7 @@ public class PixelTextureComponentExamples {
               .setGeometry(new Text().setString(new MFString1().getArray())
                 .setFontStyle(new FontStyle().setDEF("CenterJustify").setJustify(new MFString2().getArray())))
               .setAppearance(new Appearance().setDEF("TextMaterial")
-                .setMaterial(new Material("TextMaterial").setDiffuseColor(new float[] {1f,1f,1f}))))))
+                .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,1f}))))))
         .addChild(new Transform().setTranslation(new float[] {-3f,0f,0f})
           .addChild(new Shape()
             .setAppearance(new Appearance()

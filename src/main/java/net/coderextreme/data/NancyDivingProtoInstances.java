@@ -166,21 +166,21 @@ ProtoInstance ProtoInstance35 = null;
         .addChild(new LOD()
           .addChild(new Group().setDEF("Viewpoint")
             .addComments("High Resolution")
-            .addChild(new Viewpoint("Viewpoint").setDescription("Nancy front viewpoint").setOrientation(new float[] {-0.354f,0.878f,-0.321f,4.5485f}).setPosition(new float[] {-2.2f,-0.7f,0f}))
-            .addChild(new Viewpoint("Viewpoint").setDescription("Nancy above viewpoint").setOrientation(new float[] {-0.126f,-0.978f,-0.168f,1.5385f}).setPosition(new float[] {-3f,0.5f,0f}))
-            .addChild(new Viewpoint("Viewpoint").setDescription("Nancy back viewpoint").setOrientation(new float[] {0.037f,0.999f,-0.011f,1.572f}).setPosition(new float[] {0.7f,0.1f,0f}))
-            .addChild(new Viewpoint("Viewpoint").setDescription("Nancy side viewpoint").setOrientation(new float[] {0.121f,0.987f,-0.105f,3.2682f}).setPosition(new float[] {-1.2f,-0.2f,-1.5f}))
-            .addChild(new Viewpoint("Viewpoint").setDescription("Nancy viewpoint through her goggles").setOrientation(new float[] {-0.357f,0.872f,0.335f,1.5225f}).setPosition(new float[] {-1.5f,0.1f,0f}))
-            .addChild(new Group("Viewpoint").setDEF("HighResolution")
-              .addChild(new Transform("HighResolution").setRotation(new float[] {1f,0f,0f,1.57f})
+            .addChild(new Viewpoint().setDescription("Nancy front viewpoint").setOrientation(new float[] {-0.354f,0.878f,-0.321f,4.5485f}).setPosition(new float[] {-2.2f,-0.7f,0f}))
+            .addChild(new Viewpoint().setDescription("Nancy above viewpoint").setOrientation(new float[] {-0.126f,-0.978f,-0.168f,1.5385f}).setPosition(new float[] {-3f,0.5f,0f}))
+            .addChild(new Viewpoint().setDescription("Nancy back viewpoint").setOrientation(new float[] {0.037f,0.999f,-0.011f,1.572f}).setPosition(new float[] {0.7f,0.1f,0f}))
+            .addChild(new Viewpoint().setDescription("Nancy side viewpoint").setOrientation(new float[] {0.121f,0.987f,-0.105f,3.2682f}).setPosition(new float[] {-1.2f,-0.2f,-1.5f}))
+            .addChild(new Viewpoint().setDescription("Nancy viewpoint through her goggles").setOrientation(new float[] {-0.357f,0.872f,0.335f,1.5225f}).setPosition(new float[] {-1.5f,0.1f,0f}))
+            .addChild(new Group().setDEF("HighResolution")
+              .addChild(new Transform().setRotation(new float[] {1f,0f,0f,1.57f})
                 .addChild(new Transform().setRotation(new float[] {0f,0f,1f,1.57f})
                   .addChild(new WorldInfo().setInfo(new MFString6().getArray()).setTitle("Nancy - an HAnim compliant avatar by 3Name3D"))
                   .addChild(ProtoInstance2 = new ProtoInstance().setName("Humanoid").setDEF("Humanoid")))))))
         .addChild(new Script().setDEF("finWarpScript")
-          .addField(new field("finWarpScript").setType("SFRotation").setName("set_rotationL").setAccessType(field.ACCESSTYPE_INPUTONLY))
-          .addField(new field("finWarpScript").setType("SFRotation").setName("set_rotationR").setAccessType(field.ACCESSTYPE_INPUTONLY))
-          .addField(new field("finWarpScript").setType("SFBool").setName("fin_warpL").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-          .addField(new field("finWarpScript").setType("SFBool").setName("fin_warpR").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+          .addField(new field().setType("SFRotation").setName("set_rotationL").setAccessType(field.ACCESSTYPE_INPUTONLY))
+          .addField(new field().setType("SFRotation").setName("set_rotationR").setAccessType(field.ACCESSTYPE_INPUTONLY))
+          .addField(new field().setType("SFBool").setName("fin_warpL").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+          .addField(new field().setType("SFBool").setName("fin_warpR").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
           .setSourceCode("ecmascript:\n"+
 "\n"+
 "\n"+
@@ -229,29 +229,29 @@ ProtoInstance ProtoInstance35 = null;
 "	\n"+
 "}"))
         .addChild(new Group().setDEF("Animations")
-          .addChild(new Group("Animations").setDEF("Dive_Animation")
-            .addChild(new OrientationInterpolator("Dive_Animation").setDEF("r_ankle_RotationInterpolator_BasicDive").setKey(new MFFloat100().getArray()).setKeyValue(new MFRotation101().getArray()))
-            .addChild(new OrientationInterpolator("Dive_Animation").setDEF("r_knee_RotationInterpolator_BasicDive").setKey(new MFFloat102().getArray()).setKeyValue(new MFRotation103().getArray()))
-            .addChild(new OrientationInterpolator("Dive_Animation").setDEF("r_hip_RotationInterpolator_BasicDive").setKey(new MFFloat104().getArray()).setKeyValue(new MFRotation105().getArray()))
-            .addChild(new OrientationInterpolator("Dive_Animation").setDEF("l_ankle_RotationInterpolator_BasicDive").setKey(new MFFloat106().getArray()).setKeyValue(new MFRotation107().getArray()))
-            .addChild(new OrientationInterpolator("Dive_Animation").setDEF("l_knee_RotationInterpolator_BasicDive").setKey(new MFFloat108().getArray()).setKeyValue(new MFRotation109().getArray()))
-            .addChild(new OrientationInterpolator("Dive_Animation").setDEF("l_hip_RotationInterpolator_BasicDive").setKey(new MFFloat110().getArray()).setKeyValue(new MFRotation111().getArray()))
-            .addChild(new OrientationInterpolator("Dive_Animation").setDEF("lower_body_RotationInterpolator_BasicDive").setKey(new MFFloat112().getArray()).setKeyValue(new MFRotation113().getArray()))
+          .addChild(new Group().setDEF("Dive_Animation")
+            .addChild(new OrientationInterpolator().setDEF("r_ankle_RotationInterpolator_BasicDive").setKey(new MFFloat100().getArray()).setKeyValue(new MFRotation101().getArray()))
+            .addChild(new OrientationInterpolator().setDEF("r_knee_RotationInterpolator_BasicDive").setKey(new MFFloat102().getArray()).setKeyValue(new MFRotation103().getArray()))
+            .addChild(new OrientationInterpolator().setDEF("r_hip_RotationInterpolator_BasicDive").setKey(new MFFloat104().getArray()).setKeyValue(new MFRotation105().getArray()))
+            .addChild(new OrientationInterpolator().setDEF("l_ankle_RotationInterpolator_BasicDive").setKey(new MFFloat106().getArray()).setKeyValue(new MFRotation107().getArray()))
+            .addChild(new OrientationInterpolator().setDEF("l_knee_RotationInterpolator_BasicDive").setKey(new MFFloat108().getArray()).setKeyValue(new MFRotation109().getArray()))
+            .addChild(new OrientationInterpolator().setDEF("l_hip_RotationInterpolator_BasicDive").setKey(new MFFloat110().getArray()).setKeyValue(new MFRotation111().getArray()))
+            .addChild(new OrientationInterpolator().setDEF("lower_body_RotationInterpolator_BasicDive").setKey(new MFFloat112().getArray()).setKeyValue(new MFRotation113().getArray()))
             .addComments("")
-            .addChild(new OrientationInterpolator("Dive_Animation").setDEF("r_wrist_RotationInterpolator_BasicDive").setKey(new MFFloat114().getArray()).setKeyValue(new MFRotation115().getArray()))
-            .addChild(new OrientationInterpolator("Dive_Animation").setDEF("r_elbow_RotationInterpolator_BasicDive").setKey(new MFFloat116().getArray()).setKeyValue(new MFRotation117().getArray()))
-            .addChild(new OrientationInterpolator("Dive_Animation").setDEF("r_shoulder_RotationInterpolator_BasicDive").setKey(new MFFloat118().getArray()).setKeyValue(new MFRotation119().getArray()))
-            .addChild(new OrientationInterpolator("Dive_Animation").setDEF("l_wrist_RotationInterpolator_BasicDive").setKey(new MFFloat120().getArray()).setKeyValue(new MFRotation121().getArray()))
-            .addChild(new OrientationInterpolator("Dive_Animation").setDEF("l_elbow_RotationInterpolator_BasicDive").setKey(new MFFloat122().getArray()).setKeyValue(new MFRotation123().getArray()))
-            .addChild(new OrientationInterpolator("Dive_Animation").setDEF("l_shoulder_RotationInterpolator_BasicDive").setKey(new MFFloat124().getArray()).setKeyValue(new MFRotation125().getArray()))
+            .addChild(new OrientationInterpolator().setDEF("r_wrist_RotationInterpolator_BasicDive").setKey(new MFFloat114().getArray()).setKeyValue(new MFRotation115().getArray()))
+            .addChild(new OrientationInterpolator().setDEF("r_elbow_RotationInterpolator_BasicDive").setKey(new MFFloat116().getArray()).setKeyValue(new MFRotation117().getArray()))
+            .addChild(new OrientationInterpolator().setDEF("r_shoulder_RotationInterpolator_BasicDive").setKey(new MFFloat118().getArray()).setKeyValue(new MFRotation119().getArray()))
+            .addChild(new OrientationInterpolator().setDEF("l_wrist_RotationInterpolator_BasicDive").setKey(new MFFloat120().getArray()).setKeyValue(new MFRotation121().getArray()))
+            .addChild(new OrientationInterpolator().setDEF("l_elbow_RotationInterpolator_BasicDive").setKey(new MFFloat122().getArray()).setKeyValue(new MFRotation123().getArray()))
+            .addChild(new OrientationInterpolator().setDEF("l_shoulder_RotationInterpolator_BasicDive").setKey(new MFFloat124().getArray()).setKeyValue(new MFRotation125().getArray()))
             .addComments("")
-            .addChild(new OrientationInterpolator("Dive_Animation").setDEF("head_RotationInterpolator_BasicDive").setKey(new MFFloat126().getArray()).setKeyValue(new MFRotation127().getArray()))
-            .addChild(new OrientationInterpolator("Dive_Animation").setDEF("neck_RotationInterpolator_BasicDive").setKey(new MFFloat128().getArray()).setKeyValue(new MFRotation129().getArray()))
-            .addChild(new OrientationInterpolator("Dive_Animation").setDEF("upper_body_RotationInterpolator_BasicDive").setKey(new MFFloat130().getArray()).setKeyValue(new MFRotation131().getArray()))
-            .addChild(new OrientationInterpolator("Dive_Animation").setDEF("whole_body_RotationInterpolator_BasicDive").setKey(new MFFloat132().getArray()).setKeyValue(new MFRotation133().getArray()))
-            .addChild(new PositionInterpolator("Dive_Animation").setDEF("whole_body_TranslationInterpolator_BasicDive").setKey(new MFFloat134().getArray()).setKeyValue(new MFVec3f135().getArray()))
-            .addChild(new TimeSensor("Dive_Animation").setDEF("Dive_Time").setCycleInterval(7d).setLoop(true).setStartTime(-1d))
-            .addChild(new ProximitySensor("Dive_Animation").setDEF("TriggerProximitySensor").setSize(new float[] {50f,50f,50f}))))
+            .addChild(new OrientationInterpolator().setDEF("head_RotationInterpolator_BasicDive").setKey(new MFFloat126().getArray()).setKeyValue(new MFRotation127().getArray()))
+            .addChild(new OrientationInterpolator().setDEF("neck_RotationInterpolator_BasicDive").setKey(new MFFloat128().getArray()).setKeyValue(new MFRotation129().getArray()))
+            .addChild(new OrientationInterpolator().setDEF("upper_body_RotationInterpolator_BasicDive").setKey(new MFFloat130().getArray()).setKeyValue(new MFRotation131().getArray()))
+            .addChild(new OrientationInterpolator().setDEF("whole_body_RotationInterpolator_BasicDive").setKey(new MFFloat132().getArray()).setKeyValue(new MFRotation133().getArray()))
+            .addChild(new PositionInterpolator().setDEF("whole_body_TranslationInterpolator_BasicDive").setKey(new MFFloat134().getArray()).setKeyValue(new MFVec3f135().getArray()))
+            .addChild(new TimeSensor().setDEF("Dive_Time").setCycleInterval(7d).setLoop(true).setStartTime(-1d))
+            .addChild(new ProximitySensor().setDEF("TriggerProximitySensor").setSize(new float[] {50f,50f,50f}))))
         .addChild(new ROUTE().setFromField("enterTime").setFromNode("TriggerProximitySensor").setToField("startTime").setToNode("Dive_Time"))
         .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("Dive_Time").setToField("set_fraction").setToNode("r_ankle_RotationInterpolator_BasicDive"))
         .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("Dive_Time").setToField("set_fraction").setToNode("r_knee_RotationInterpolator_BasicDive"))
@@ -294,30 +294,30 @@ ProtoInstance ProtoInstance35 = null;
         .addChild(new ROUTE().setFromField("value_changed").setFromNode("l_elbow_RotationInterpolator_BasicDive").setToField("set_rotation").setToNode("hanim_l_elbow"))
         .addChild(new ROUTE().setFromField("value_changed").setFromNode("l_shoulder_RotationInterpolator_BasicDive").setToField("set_rotation").setToNode("hanim_l_shoulder")))      ;
 ProtoInstance0
-          .addFieldValue(new fieldValue("ExampleViewPositionOrientation").setName("enabled").setValue("true"));
+          .addFieldValue(new fieldValue().setName("enabled").setValue("true"));
 ProtoInstance1
           .addFieldValue(new fieldValue().setName("enabled").setValue("true"));
 ProtoInstance2
-                    .addFieldValue(new fieldValue("Humanoid").setName("humanoidBody")
+                    .addFieldValue(new fieldValue().setName("humanoidBody")
                       .addChild(ProtoInstance3 = new ProtoInstance().setName("Joint").setDEF("hanim_humanoid_root")));
 ProtoInstance3
-                        .addFieldValue(new fieldValue("hanim_humanoid_root").setName("name").setValue("humanoid_root"));
+                        .addFieldValue(new fieldValue().setName("name").setValue("humanoid_root"));
 ProtoInstance3
-                        .addFieldValue(new fieldValue("hanim_humanoid_root").setName("center").setValue("-0.00405 0.855 -0.000113"));
+                        .addFieldValue(new fieldValue().setName("center").setValue("-0.00405 0.855 -0.000113"));
 ProtoInstance3
-                        .addFieldValue(new fieldValue("hanim_humanoid_root").setName("children")
+                        .addFieldValue(new fieldValue().setName("children")
                           .addChild(ProtoInstance4 = new ProtoInstance().setName("Joint").setDEF("hanim_sacroiliac"))
                           .addComments("Fins animation")
                           .addChild(new ProximitySensor().setDEF("FinTriggerProximitySensor").setSize(new float[] {5f,5f,5f}))
                           .addChild(new TimeSensor().setDEF("FinClock").setCycleInterval(7d).setLoop(true))
                           .addChild(new Group()
                             .addChild(new Script().setDEF("FinScript")
-                              .addField(new field("FinScript").setType("MFVec3f").setName("keyValueR").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-                              .addField(new field("FinScript").setType("MFVec3f").setName("keyValueL").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-                              .addField(new field("FinScript").setType("SFFloat").setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                              .addField(new field("FinScript").setType("SFBool").setName("finL").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                              .addField(new field("FinScript").setType("SFBool").setName("finR").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                              .addField(new field("FinScript").setType("SFBool").setName("traceEnabled").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("true"))
+                              .addField(new field().setType("MFVec3f").setName("keyValueR").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+                              .addField(new field().setType("MFVec3f").setName("keyValueL").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+                              .addField(new field().setType("SFFloat").setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
+                              .addField(new field().setType("SFBool").setName("finL").setAccessType(field.ACCESSTYPE_INPUTONLY))
+                              .addField(new field().setType("SFBool").setName("finR").setAccessType(field.ACCESSTYPE_INPUTONLY))
+                              .addField(new field().setType("SFBool").setName("traceEnabled").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("true"))
                               .setSourceCode("ecmascript:\n"+
 "\n"+
 "var finWarpL;\n"+
@@ -427,68 +427,68 @@ ProtoInstance3
                             .addChild(new ROUTE().setFromField("keyValueL").setFromNode("FinScript").setToField("set_spine").setToNode("Finl")))
                           .addChild(ProtoInstance18 = new ProtoInstance().setName("Joint").setDEF("hanim_vl1")));
 ProtoInstance4
-                            .addFieldValue(new fieldValue("hanim_sacroiliac").setName("name").setValue("sacroiliac"));
+                            .addFieldValue(new fieldValue().setName("name").setValue("sacroiliac"));
 ProtoInstance4
-                            .addFieldValue(new fieldValue("hanim_sacroiliac").setName("center").setValue("0 1.01 -0.0204"));
+                            .addFieldValue(new fieldValue().setName("center").setValue("0 1.01 -0.0204"));
 ProtoInstance4
-                            .addFieldValue(new fieldValue("hanim_sacroiliac").setName("children")
+                            .addFieldValue(new fieldValue().setName("children")
                               .addChild(ProtoInstance5 = new ProtoInstance().setName("Segment").setDEF("hanim_pelvis"))
                               .addChild(ProtoInstance6 = new ProtoInstance().setName("Joint").setDEF("hanim_l_hip"))
                               .addChild(ProtoInstance12 = new ProtoInstance().setName("Joint").setDEF("hanim_r_hip")));
 ProtoInstance5
-                                .addFieldValue(new fieldValue("hanim_pelvis").setName("name").setValue("pelvis"));
+                                .addFieldValue(new fieldValue().setName("name").setValue("pelvis"));
 ProtoInstance5
-                                .addFieldValue(new fieldValue("hanim_pelvis").setName("children")
+                                .addFieldValue(new fieldValue().setName("children")
                                   .addChild(new Shape()
                                     .setAppearance(new Appearance()
                                       .setMaterial(new Material().setDEF("Pants_Color").setDiffuseColor(new float[] {0f,0f,0.502f})))
                                     .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt327().getArray()).setCreaseAngle(1.14f)
                                       .setCoord(new Coordinate().setPoint(new MFVec3f8().getArray())))));
 ProtoInstance6
-                                .addFieldValue(new fieldValue("hanim_l_hip").setName("name").setValue("l_hip"));
+                                .addFieldValue(new fieldValue().setName("name").setValue("l_hip"));
 ProtoInstance6
-                                .addFieldValue(new fieldValue("hanim_l_hip").setName("center").setValue("0.122 0.888271 -0.0693267"));
+                                .addFieldValue(new fieldValue().setName("center").setValue("0.122 0.888271 -0.0693267"));
 ProtoInstance6
-                                .addFieldValue(new fieldValue("hanim_l_hip").setName("children")
+                                .addFieldValue(new fieldValue().setName("children")
                                   .addChild(ProtoInstance7 = new ProtoInstance().setName("Segment").setDEF("hanim_l_thigh"))
                                   .addChild(ProtoInstance8 = new ProtoInstance().setName("Joint").setDEF("hanim_l_knee")));
 ProtoInstance7
-                                    .addFieldValue(new fieldValue("hanim_l_thigh").setName("name").setValue("l_thigh"));
+                                    .addFieldValue(new fieldValue().setName("name").setValue("l_thigh"));
 ProtoInstance7
-                                    .addFieldValue(new fieldValue("hanim_l_thigh").setName("children")
+                                    .addFieldValue(new fieldValue().setName("children")
                                       .addChild(new Shape()
                                         .setAppearance(new Appearance()
                                           .setMaterial(new Material().setUSE("Pants_Color")))
                                         .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt329().getArray()).setCreaseAngle(1.32f)
                                           .setCoord(new Coordinate().setPoint(new MFVec3f10().getArray())))));
 ProtoInstance8
-                                    .addFieldValue(new fieldValue("hanim_l_knee").setName("name").setValue("l_knee"));
+                                    .addFieldValue(new fieldValue().setName("name").setValue("l_knee"));
 ProtoInstance8
-                                    .addFieldValue(new fieldValue("hanim_l_knee").setName("center").setValue("0.0738 0.517 -0.0284"));
+                                    .addFieldValue(new fieldValue().setName("center").setValue("0.0738 0.517 -0.0284"));
 ProtoInstance8
-                                    .addFieldValue(new fieldValue("hanim_l_knee").setName("children")
+                                    .addFieldValue(new fieldValue().setName("children")
                                       .addChild(ProtoInstance9 = new ProtoInstance().setName("Segment").setDEF("hanim_l_calf"))
                                       .addChild(ProtoInstance10 = new ProtoInstance().setName("Joint").setDEF("hanim_l_ankle")));
 ProtoInstance9
-                                        .addFieldValue(new fieldValue("hanim_l_calf").setName("name").setValue("l_calf"));
+                                        .addFieldValue(new fieldValue().setName("name").setValue("l_calf"));
 ProtoInstance9
-                                        .addFieldValue(new fieldValue("hanim_l_calf").setName("children")
+                                        .addFieldValue(new fieldValue().setName("children")
                                           .addChild(new Shape()
                                             .setAppearance(new Appearance()
                                               .setMaterial(new Material().setUSE("Pants_Color")))
                                             .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3211().getArray()).setCreaseAngle(1.57f)
                                               .setCoord(new Coordinate().setPoint(new MFVec3f12().getArray())))));
 ProtoInstance10
-                                        .addFieldValue(new fieldValue("hanim_l_ankle").setName("name").setValue("l_ankle"));
+                                        .addFieldValue(new fieldValue().setName("name").setValue("l_ankle"));
 ProtoInstance10
-                                        .addFieldValue(new fieldValue("hanim_l_ankle").setName("center").setValue("0.0645 0.0719 -0.048"));
+                                        .addFieldValue(new fieldValue().setName("center").setValue("0.0645 0.0719 -0.048"));
 ProtoInstance10
-                                        .addFieldValue(new fieldValue("hanim_l_ankle").setName("children")
+                                        .addFieldValue(new fieldValue().setName("children")
                                           .addChild(ProtoInstance11 = new ProtoInstance().setName("Segment").setDEF("hanim_l_hindfoot")));
 ProtoInstance11
-                                            .addFieldValue(new fieldValue("hanim_l_hindfoot").setName("name").setValue("l_hindfoot"));
+                                            .addFieldValue(new fieldValue().setName("name").setValue("l_hindfoot"));
 ProtoInstance11
-                                            .addFieldValue(new fieldValue("hanim_l_hindfoot").setName("children")
+                                            .addFieldValue(new fieldValue().setName("children")
                                               .addChild(new Shape()
                                                 .setAppearance(new Appearance()
                                                   .setMaterial(new Material().setDEF("Shoe_Color").setAmbientIntensity(0.25f).setDiffuseColor(new float[] {0.753f,1f,0.243f})))
@@ -501,50 +501,50 @@ ProtoInstance11
                                                       .setMaterial(new Material().setDiffuseColor(new float[] {0.753f,1f,0.243f})))
                                                     .setGeometry(new Extrusion().setDEF("Finl").setCcw(false).setCreaseAngle(3.14f).setCrossSection(new MFVec2f15().getArray()).setScale(new MFVec2f16().getArray()).setSpine(new MFVec3f17().getArray()))))));
 ProtoInstance12
-                                .addFieldValue(new fieldValue("hanim_r_hip").setName("name").setValue("r_hip"));
+                                .addFieldValue(new fieldValue().setName("name").setValue("r_hip"));
 ProtoInstance12
-                                .addFieldValue(new fieldValue("hanim_r_hip").setName("center").setValue("-0.11 0.892362 -0.0732533"));
+                                .addFieldValue(new fieldValue().setName("center").setValue("-0.11 0.892362 -0.0732533"));
 ProtoInstance12
-                                .addFieldValue(new fieldValue("hanim_r_hip").setName("children")
+                                .addFieldValue(new fieldValue().setName("children")
                                   .addChild(ProtoInstance13 = new ProtoInstance().setName("Segment").setDEF("hanim_r_thigh"))
                                   .addChild(ProtoInstance14 = new ProtoInstance().setName("Joint").setDEF("hanim_r_knee")));
 ProtoInstance13
-                                    .addFieldValue(new fieldValue("hanim_r_thigh").setName("name").setValue("r_thigh"));
+                                    .addFieldValue(new fieldValue().setName("name").setValue("r_thigh"));
 ProtoInstance13
-                                    .addFieldValue(new fieldValue("hanim_r_thigh").setName("children")
+                                    .addFieldValue(new fieldValue().setName("children")
                                       .addChild(new Shape()
                                         .setAppearance(new Appearance()
                                           .setMaterial(new Material().setUSE("Pants_Color")))
                                         .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3218().getArray()).setCreaseAngle(1.61f)
                                           .setCoord(new Coordinate().setPoint(new MFVec3f19().getArray())))));
 ProtoInstance14
-                                    .addFieldValue(new fieldValue("hanim_r_knee").setName("name").setValue("r_knee"));
+                                    .addFieldValue(new fieldValue().setName("name").setValue("r_knee"));
 ProtoInstance14
-                                    .addFieldValue(new fieldValue("hanim_r_knee").setName("center").setValue("-0.0699 0.51 -0.0166"));
+                                    .addFieldValue(new fieldValue().setName("center").setValue("-0.0699 0.51 -0.0166"));
 ProtoInstance14
-                                    .addFieldValue(new fieldValue("hanim_r_knee").setName("children")
+                                    .addFieldValue(new fieldValue().setName("children")
                                       .addChild(ProtoInstance15 = new ProtoInstance().setName("Segment").setDEF("hanim_r_calf"))
                                       .addChild(ProtoInstance16 = new ProtoInstance().setName("Joint").setDEF("hanim_r_ankle")));
 ProtoInstance15
-                                        .addFieldValue(new fieldValue("hanim_r_calf").setName("name").setValue("r_calf"));
+                                        .addFieldValue(new fieldValue().setName("name").setValue("r_calf"));
 ProtoInstance15
-                                        .addFieldValue(new fieldValue("hanim_r_calf").setName("children")
+                                        .addFieldValue(new fieldValue().setName("children")
                                           .addChild(new Shape()
                                             .setAppearance(new Appearance()
                                               .setMaterial(new Material().setUSE("Pants_Color")))
                                             .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3220().getArray()).setCreaseAngle(1.57f)
                                               .setCoord(new Coordinate().setPoint(new MFVec3f21().getArray())))));
 ProtoInstance16
-                                        .addFieldValue(new fieldValue("hanim_r_ankle").setName("name").setValue("r_ankle"));
+                                        .addFieldValue(new fieldValue().setName("name").setValue("r_ankle"));
 ProtoInstance16
-                                        .addFieldValue(new fieldValue("hanim_r_ankle").setName("center").setValue("-0.064 0.0753 -0.0412"));
+                                        .addFieldValue(new fieldValue().setName("center").setValue("-0.064 0.0753 -0.0412"));
 ProtoInstance16
-                                        .addFieldValue(new fieldValue("hanim_r_ankle").setName("children")
+                                        .addFieldValue(new fieldValue().setName("children")
                                           .addChild(ProtoInstance17 = new ProtoInstance().setName("Segment").setDEF("hanim_r_hindfoot")));
 ProtoInstance17
-                                            .addFieldValue(new fieldValue("hanim_r_hindfoot").setName("name").setValue("r_hindfoot"));
+                                            .addFieldValue(new fieldValue().setName("name").setValue("r_hindfoot"));
 ProtoInstance17
-                                            .addFieldValue(new fieldValue("hanim_r_hindfoot").setName("children")
+                                            .addFieldValue(new fieldValue().setName("children")
                                               .addChild(new Shape()
                                                 .setAppearance(new Appearance()
                                                   .setMaterial(new Material().setUSE("Shoe_Color")))
@@ -557,19 +557,19 @@ ProtoInstance17
                                                       .setMaterial(new Material().setDiffuseColor(new float[] {0.753f,1f,0.243f})))
                                                     .setGeometry(new Extrusion().setDEF("Finr").setCcw(false).setCreaseAngle(3.14f).setCrossSection(new MFVec2f24().getArray()).setScale(new MFVec2f25().getArray()).setSpine(new MFVec3f26().getArray()))))));
 ProtoInstance18
-                            .addFieldValue(new fieldValue("hanim_vl1").setName("name").setValue("vl1"));
+                            .addFieldValue(new fieldValue().setName("name").setValue("vl1"));
 ProtoInstance18
-                            .addFieldValue(new fieldValue("hanim_vl1").setName("center").setValue("-0.00405 1.07 -0.0275"));
+                            .addFieldValue(new fieldValue().setName("center").setValue("-0.00405 1.07 -0.0275"));
 ProtoInstance18
-                            .addFieldValue(new fieldValue("hanim_vl1").setName("children")
+                            .addFieldValue(new fieldValue().setName("children")
                               .addChild(ProtoInstance19 = new ProtoInstance().setName("Segment").setDEF("hanim_c7"))
                               .addChild(ProtoInstance20 = new ProtoInstance().setName("Joint").setDEF("hanim_l_shoulder"))
                               .addChild(ProtoInstance26 = new ProtoInstance().setName("Joint").setDEF("hanim_r_shoulder"))
                               .addChild(ProtoInstance32 = new ProtoInstance().setName("Joint").setDEF("hanim_vc4")));
 ProtoInstance19
-                                .addFieldValue(new fieldValue("hanim_c7").setName("name").setValue("l1"));
+                                .addFieldValue(new fieldValue().setName("name").setValue("l1"));
 ProtoInstance19
-                                .addFieldValue(new fieldValue("hanim_c7").setName("children")
+                                .addFieldValue(new fieldValue().setName("children")
                                   .addChild(new Transform().setScale(new float[] {1.05f,1.05f,1.05f}).setTranslation(new float[] {0f,-0.09f,0f})
                                     .addChild(new Shape()
                                       .setAppearance(new Appearance()
@@ -591,252 +591,252 @@ ProtoInstance19
                                       .addChild(new Transform().setRotation(new float[] {0f,0f,1f,1.57f}).setScale(new float[] {2f,1.5f,1.5f}).setTranslation(new float[] {0.13f,0.22f,-0.1f})
                                         .addChild(new Transform().setRotation(new float[] {1f,0f,0f,1.4f})
                                           .addChild(new Shape().setDEF("BCLSnorkelPad")
-                                            .setAppearance(new Appearance("BCLSnorkelPad")
+                                            .setAppearance(new Appearance()
                                               .setMaterial(new Material().setUSE("BCLColor")))
-                                            .setGeometry(new Extrusion("BCLSnorkelPad").setCrossSection(new MFVec2f35().getArray()).setSpine(new MFVec3f36().getArray())))))
+                                            .setGeometry(new Extrusion().setCrossSection(new MFVec2f35().getArray()).setSpine(new MFVec3f36().getArray())))))
                                       .addChild(new Transform().setRotation(new float[] {-1f,0f,0f,0.8f}).setTranslation(new float[] {0.07f,0.08f,0.125f})
                                         .addChild(new Shape()
                                           .setAppearance(new Appearance()
                                             .setMaterial(new Material().setDEF("BCLSnorkel").setDiffuseColor(new float[] {0.25f,0.25f,0.25f}).setShininess(0.5f).setTransparency(0.1f)))
                                           .setGeometry(new Extrusion().setCrossSection(new MFVec2f37().getArray()).setScale(new MFVec2f38().getArray()).setSpine(new MFVec3f39().getArray()))))
                                       .addChild(new Group().setDEF("buckle")
-                                        .addChild(new Transform("buckle").setRotation(new float[] {-1f,0f,0f,0.68f}).setTranslation(new float[] {-0.08f,0.1f,0.029f})
+                                        .addChild(new Transform().setRotation(new float[] {-1f,0f,0f,0.68f}).setTranslation(new float[] {-0.08f,0.1f,0.029f})
                                           .addChild(new Shape()
                                             .setAppearance(new Appearance().setDEF("buckleHolder")
-                                              .setMaterial(new Material("buckleHolder").setDiffuseColor(new float[] {0.25f,0.25f,0.25f})))
+                                              .setMaterial(new Material().setDiffuseColor(new float[] {0.25f,0.25f,0.25f})))
                                             .setGeometry(new Box().setSize(new float[] {0.03f,0.03f,0.005f}))))
-                                        .addChild(new Transform("buckle").setRotation(new float[] {-1f,0f,0f,0.68f}).setTranslation(new float[] {0.03f,0.1f,0.027f})
+                                        .addChild(new Transform().setRotation(new float[] {-1f,0f,0f,0.68f}).setTranslation(new float[] {0.03f,0.1f,0.027f})
                                           .addChild(new Shape()
                                             .setAppearance(new Appearance().setUSE("buckleHolder"))
                                             .setGeometry(new Box().setSize(new float[] {0.15f,0.03f,0.001f}))))
-                                        .addChild(new Transform("buckle").setRotation(new float[] {-1f,0f,0f,0.68f}).setTranslation(new float[] {-0.045f,0.1f,0.028f})
+                                        .addChild(new Transform().setRotation(new float[] {-1f,0f,0f,0.68f}).setTranslation(new float[] {-0.045f,0.1f,0.028f})
                                           .addChild(new Shape()
                                             .setAppearance(new Appearance().setDEF("pin")
-                                              .setMaterial(new Material("pin")))
+                                              .setMaterial(new Material()))
                                             .setGeometry(new Box().setSize(new float[] {0.02f,0.028f,0.005f}))))
-                                        .addChild(new Transform("buckle").setRotation(new float[] {0f,0f,1f,1.57f}).setTranslation(new float[] {-0.06f,0.1f,0.029f})
+                                        .addChild(new Transform().setRotation(new float[] {0f,0f,1f,1.57f}).setTranslation(new float[] {-0.06f,0.1f,0.029f})
                                           .addChild(new Shape()
                                             .setAppearance(new Appearance().setUSE("pin"))
                                             .setGeometry(new Cylinder().setHeight(0.02f).setRadius(0.0024f))))
-                                        .addChild(new Transform("buckle").setRotation(new float[] {0f,0f,1f,1.57f}).setTranslation(new float[] {-0.06f,0.109f,0.0217f})
+                                        .addChild(new Transform().setRotation(new float[] {0f,0f,1f,1.57f}).setTranslation(new float[] {-0.06f,0.109f,0.0217f})
                                           .addChild(new Shape()
                                             .setAppearance(new Appearance().setUSE("pin"))
                                             .setGeometry(new Cylinder().setHeight(0.02f).setRadius(0.0024f))))
-                                        .addChild(new Transform("buckle").setRotation(new float[] {0f,0f,1f,1.57f}).setTranslation(new float[] {-0.06f,0.091f,0.036f})
+                                        .addChild(new Transform().setRotation(new float[] {0f,0f,1f,1.57f}).setTranslation(new float[] {-0.06f,0.091f,0.036f})
                                           .addChild(new Shape()
                                             .setAppearance(new Appearance().setUSE("pin"))
                                             .setGeometry(new Cylinder().setHeight(0.02f).setRadius(0.0024f)))))
                                       .addChild(new Group().setDEF("buckleBelt")
-                                        .addChild(new Transform("buckleBelt").setRotation(new float[] {0f,1f,0f,-0.68f}).setTranslation(new float[] {-0.07f,-0.12f,0.038f})
+                                        .addChild(new Transform().setRotation(new float[] {0f,1f,0f,-0.68f}).setTranslation(new float[] {-0.07f,-0.12f,0.038f})
                                           .addChild(new Shape()
                                             .setAppearance(new Appearance().setUSE("buckleHolder"))
                                             .setGeometry(new Box().setSize(new float[] {0.04f,0.1f,0.005f}))))
-                                        .addChild(new Transform("buckleBelt").setTranslation(new float[] {0.005f,-0.12f,0.053f})
+                                        .addChild(new Transform().setTranslation(new float[] {0.005f,-0.12f,0.053f})
                                           .addChild(new Shape()
                                             .setAppearance(new Appearance().setUSE("buckleHolder"))
                                             .setGeometry(new Box().setSize(new float[] {0.12f,0.11f,0.001f}))))
-                                        .addChild(new Transform("buckleBelt").setRotation(new float[] {0f,1f,0f,0.68f}).setTranslation(new float[] {0.075f,-0.12f,0.038f})
+                                        .addChild(new Transform().setRotation(new float[] {0f,1f,0f,0.68f}).setTranslation(new float[] {0.075f,-0.12f,0.038f})
                                           .addChild(new Shape()
                                             .setAppearance(new Appearance().setUSE("buckleHolder"))
                                             .setGeometry(new Box().setSize(new float[] {0.04f,0.1f,0.005f})))))))
                                   .addChild(new Transform().setDEF("ScubaTank").setRotation(new float[] {0f,1f,0f,3.14f}).setScale(new float[] {0.8f,0.8f,0.8f}).setTranslation(new float[] {0f,1.1f,-0.23f})
-                                    .addChild(new Transform("ScubaTank")
+                                    .addChild(new Transform()
                                       .addChild(new Shape()
                                         .setAppearance(new Appearance()
                                           .setMaterial(new Material().setDEF("tank").setAmbientIntensity(0.3f).setDiffuseColor(new float[] {0.3f,0.3f,0.5f}).setShininess(0.1f).setSpecularColor(new float[] {0.7f,0.7f,0.8f})))
                                         .setGeometry(new Cylinder().setHeight(0.7f).setRadius(0.1f))))
-                                    .addChild(new Transform("ScubaTank").setTranslation(new float[] {0f,0.35f,0f})
+                                    .addChild(new Transform().setTranslation(new float[] {0f,0.35f,0f})
                                       .addChild(new Shape()
                                         .setAppearance(new Appearance()
                                           .setMaterial(new Material().setUSE("tank")))
                                         .setGeometry(new Sphere().setRadius(0.098f))))
-                                    .addChild(new Transform("ScubaTank").setTranslation(new float[] {0f,-0.35f,0f})
+                                    .addChild(new Transform().setTranslation(new float[] {0f,-0.35f,0f})
                                       .addChild(new Shape().setDEF("tankBottom")
-                                        .setAppearance(new Appearance("tankBottom")
+                                        .setAppearance(new Appearance()
                                           .setMaterial(new Material().setAmbientIntensity(0.3f).setDiffuseColor(new float[] {0f,0f,0f})))
-                                        .setGeometry(new Cylinder("tankBottom").setHeight(0.06f).setRadius(0.101f))))
-                                    .addChild(new Group("ScubaTank").setDEF("tankNozzle")
-                                      .addChild(new Transform("tankNozzle")
+                                        .setGeometry(new Cylinder().setHeight(0.06f).setRadius(0.101f))))
+                                    .addChild(new Group().setDEF("tankNozzle")
+                                      .addChild(new Transform()
                                         .addChild(new Transform().setTranslation(new float[] {0f,0.45f,0f})
                                           .addChild(new Shape().setDEF("pressure")
-                                            .setAppearance(new Appearance("pressure")
+                                            .setAppearance(new Appearance()
                                               .setMaterial(new Material().setDEF("pressureColor").setAmbientIntensity(0.4f).setDiffuseColor(new float[] {0.91f,0.91f,0.91f}).setShininess(0.16f).setSpecularColor(new float[] {0.91f,0.9f,0.91f})))
-                                            .setGeometry(new Cylinder("pressure").setHeight(0.1f).setRadius(0.015f))))
+                                            .setGeometry(new Cylinder().setHeight(0.1f).setRadius(0.015f))))
                                         .addChild(new Transform().setTranslation(new float[] {0f,0.5f,0f})
                                           .addChild(new Shape().setDEF("pressureTop")
-                                            .setAppearance(new Appearance("pressureTop")
+                                            .setAppearance(new Appearance()
                                               .setMaterial(new Material().setDEF("top").setDiffuseColor(new float[] {0f,0f,0f})))
-                                            .setGeometry(new Cylinder("pressureTop").setHeight(0.02f).setRadius(0.025f))))
+                                            .setGeometry(new Cylinder().setHeight(0.02f).setRadius(0.025f))))
                                         .addChild(new Transform().setRotation(new float[] {0f,0f,1f,1.57f}).setTranslation(new float[] {-0.028f,0.462f,0f})
                                           .addChild(new Transform()
                                             .addChild(new Shape().setDEF("connectorToRegulator")
-                                              .setAppearance(new Appearance("connectorToRegulator")
+                                              .setAppearance(new Appearance()
                                                 .setMaterial(new Material().setUSE("pressureColor")))
-                                              .setGeometry(new Cylinder("connectorToRegulator").setHeight(0.03f).setRadius(0.01f))))
+                                              .setGeometry(new Cylinder().setHeight(0.03f).setRadius(0.01f))))
                                           .addChild(new Transform().setTranslation(new float[] {0f,0.02f,0f})
                                             .addChild(new Shape().setDEF("connectorToRegulatorTop")
-                                              .setAppearance(new Appearance("connectorToRegulatorTop")
+                                              .setAppearance(new Appearance()
                                                 .setMaterial(new Material().setUSE("top")))
-                                              .setGeometry(new Cylinder("connectorToRegulatorTop").setHeight(0.02f).setRadius(0.02f)))))))
-                                    .addChild(new Transform("ScubaTank").setTranslation(new float[] {0f,0.2f,0f})
+                                              .setGeometry(new Cylinder().setHeight(0.02f).setRadius(0.02f)))))))
+                                    .addChild(new Transform().setTranslation(new float[] {0f,0.2f,0f})
                                       .addChild(new Shape().setDEF("tankHoldBelt")
-                                        .setAppearance(new Appearance("tankHoldBelt")
+                                        .setAppearance(new Appearance()
                                           .setMaterial(new Material().setAmbientIntensity(0.3f).setDiffuseColor(new float[] {0f,0f,0f})))
-                                        .setGeometry(new Cylinder("tankHoldBelt").setHeight(0.1f).setRadius(0.115f))))));
+                                        .setGeometry(new Cylinder().setHeight(0.1f).setRadius(0.115f))))));
 ProtoInstance20
-                                .addFieldValue(new fieldValue("hanim_l_shoulder").setName("name").setValue("l_shoulder"));
+                                .addFieldValue(new fieldValue().setName("name").setValue("l_shoulder"));
 ProtoInstance20
-                                .addFieldValue(new fieldValue("hanim_l_shoulder").setName("center").setValue("0.167 1.36 -0.0518"));
+                                .addFieldValue(new fieldValue().setName("center").setValue("0.167 1.36 -0.0518"));
 ProtoInstance20
-                                .addFieldValue(new fieldValue("hanim_l_shoulder").setName("children")
+                                .addFieldValue(new fieldValue().setName("children")
                                   .addChild(ProtoInstance21 = new ProtoInstance().setName("Segment").setDEF("hanim_l_upperarm"))
                                   .addChild(ProtoInstance22 = new ProtoInstance().setName("Joint").setDEF("hanim_l_elbow")));
 ProtoInstance21
-                                    .addFieldValue(new fieldValue("hanim_l_upperarm").setName("name").setValue("l_upperarm"));
+                                    .addFieldValue(new fieldValue().setName("name").setValue("l_upperarm"));
 ProtoInstance21
-                                    .addFieldValue(new fieldValue("hanim_l_upperarm").setName("children")
+                                    .addFieldValue(new fieldValue().setName("children")
                                       .addChild(new Transform().setDEF("l_upperarm_adjust").setCenter(new float[] {0.182f,1.22f,-0.047f}).setRotation(new float[] {1f,0f,0f,0.119f}).setTranslation(new float[] {0f,0.0004203f,-0.01665f})
-                                        .addChild(new Shape("l_upperarm_adjust")
+                                        .addChild(new Shape()
                                           .setAppearance(new Appearance()
                                             .setMaterial(new Material().setUSE("WetShirtColor")))
                                           .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3240().getArray()).setCreaseAngle(1.65f)
                                             .setCoord(new Coordinate().setPoint(new MFVec3f41().getArray()))))));
 ProtoInstance22
-                                    .addFieldValue(new fieldValue("hanim_l_elbow").setName("name").setValue("l_elbow"));
+                                    .addFieldValue(new fieldValue().setName("name").setValue("l_elbow"));
 ProtoInstance22
-                                    .addFieldValue(new fieldValue("hanim_l_elbow").setName("center").setValue("0.196 1.07 -0.0518"));
+                                    .addFieldValue(new fieldValue().setName("center").setValue("0.196 1.07 -0.0518"));
 ProtoInstance22
-                                    .addFieldValue(new fieldValue("hanim_l_elbow").setName("children")
+                                    .addFieldValue(new fieldValue().setName("children")
                                       .addChild(ProtoInstance23 = new ProtoInstance().setName("Segment").setDEF("hanim_l_forearm"))
                                       .addChild(ProtoInstance24 = new ProtoInstance().setName("Joint").setDEF("hanim_l_wrist")));
 ProtoInstance23
-                                        .addFieldValue(new fieldValue("hanim_l_forearm").setName("name").setValue("l_forearm"));
+                                        .addFieldValue(new fieldValue().setName("name").setValue("l_forearm"));
 ProtoInstance23
-                                        .addFieldValue(new fieldValue("hanim_l_forearm").setName("children")
+                                        .addFieldValue(new fieldValue().setName("children")
                                           .addChild(new Transform().setDEF("l_forearm_adjust").setCenter(new float[] {0.198f,0.961f,-0.0405f}).setRotation(new float[] {-1f,0f,0f,0.1f}).setTranslation(new float[] {0f,0.003724f,-0.0236f})
-                                            .addChild(new Shape("l_forearm_adjust")
+                                            .addChild(new Shape()
                                               .setAppearance(new Appearance()
                                                 .setMaterial(new Material().setUSE("WetShirtColor")))
                                               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3242().getArray()).setCreaseAngle(1.75f)
                                                 .setCoord(new Coordinate().setPoint(new MFVec3f43().getArray()))))));
 ProtoInstance24
-                                        .addFieldValue(new fieldValue("hanim_l_wrist").setName("name").setValue("l_wrist"));
+                                        .addFieldValue(new fieldValue().setName("name").setValue("l_wrist"));
 ProtoInstance24
-                                        .addFieldValue(new fieldValue("hanim_l_wrist").setName("center").setValue("0.213 0.811 -0.0338"));
+                                        .addFieldValue(new fieldValue().setName("center").setValue("0.213 0.811 -0.0338"));
 ProtoInstance24
-                                        .addFieldValue(new fieldValue("hanim_l_wrist").setName("children")
+                                        .addFieldValue(new fieldValue().setName("children")
                                           .addChild(ProtoInstance25 = new ProtoInstance().setName("Segment").setDEF("hanim_l_hand")));
 ProtoInstance25
-                                            .addFieldValue(new fieldValue("hanim_l_hand").setName("name").setValue("l_hand"));
+                                            .addFieldValue(new fieldValue().setName("name").setValue("l_hand"));
 ProtoInstance25
-                                            .addFieldValue(new fieldValue("hanim_l_hand").setName("children")
+                                            .addFieldValue(new fieldValue().setName("children")
                                               .addChild(new Transform().setDEF("l_hand_adjust").setCenter(new float[] {0.213f,0.811f,-0.0338f}).setRotation(new float[] {-0.06361f,-0.9967f,0.04988f,1.333f}).setTranslation(new float[] {0f,0.005142f,-0.008662f})
-                                                .addChild(new Shape("l_hand_adjust")
+                                                .addChild(new Shape()
                                                   .setAppearance(new Appearance()
                                                     .setMaterial(new Material().setDEF("Skin_Color").setAmbientIntensity(0.25f).setDiffuseColor(new float[] {0.749f,0.601f,0.462f})))
                                                   .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3244().getArray()).setCreaseAngle(1.48f)
                                                     .setCoord(new Coordinate().setPoint(new MFVec3f45().getArray()))))));
 ProtoInstance26
-                                .addFieldValue(new fieldValue("hanim_r_shoulder").setName("name").setValue("r_shoulder"));
+                                .addFieldValue(new fieldValue().setName("name").setValue("r_shoulder"));
 ProtoInstance26
-                                .addFieldValue(new fieldValue("hanim_r_shoulder").setName("center").setValue("-0.167 1.36 -0.0458"));
+                                .addFieldValue(new fieldValue().setName("center").setValue("-0.167 1.36 -0.0458"));
 ProtoInstance26
-                                .addFieldValue(new fieldValue("hanim_r_shoulder").setName("children")
+                                .addFieldValue(new fieldValue().setName("children")
                                   .addChild(ProtoInstance27 = new ProtoInstance().setName("Segment").setDEF("hanim_r_upperarm"))
                                   .addChild(ProtoInstance28 = new ProtoInstance().setName("Joint").setDEF("hanim_r_elbow")));
 ProtoInstance27
-                                    .addFieldValue(new fieldValue("hanim_r_upperarm").setName("name").setValue("r_upperarm"));
+                                    .addFieldValue(new fieldValue().setName("name").setValue("r_upperarm"));
 ProtoInstance27
-                                    .addFieldValue(new fieldValue("hanim_r_upperarm").setName("children")
+                                    .addFieldValue(new fieldValue().setName("children")
                                       .addChild(new Transform().setDEF("r_upperarm_adjust").setCenter(new float[] {-0.182f,1.22f,-0.047f}).setRotation(new float[] {1f,0f,0f,0.0836f}).setTranslation(new float[] {0f,0.000589f,-0.01169f})
-                                        .addChild(new Shape("r_upperarm_adjust")
+                                        .addChild(new Shape()
                                           .setAppearance(new Appearance()
                                             .setMaterial(new Material().setUSE("WetShirtColor")))
                                           .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3246().getArray()).setCreaseAngle(1.53f)
                                             .setCoord(new Coordinate().setPoint(new MFVec3f47().getArray()))))));
 ProtoInstance28
-                                    .addFieldValue(new fieldValue("hanim_r_elbow").setName("name").setValue("r_elbow"));
+                                    .addFieldValue(new fieldValue().setName("name").setValue("r_elbow"));
 ProtoInstance28
-                                    .addFieldValue(new fieldValue("hanim_r_elbow").setName("center").setValue("-0.192 1.07 -0.0498"));
+                                    .addFieldValue(new fieldValue().setName("center").setValue("-0.192 1.07 -0.0498"));
 ProtoInstance28
-                                    .addFieldValue(new fieldValue("hanim_r_elbow").setName("children")
+                                    .addFieldValue(new fieldValue().setName("children")
                                       .addChild(ProtoInstance29 = new ProtoInstance().setName("Segment").setDEF("hanim_r_forearm"))
                                       .addChild(ProtoInstance30 = new ProtoInstance().setName("Joint").setDEF("hanim_r_wrist")));
 ProtoInstance29
-                                        .addFieldValue(new fieldValue("hanim_r_forearm").setName("name").setValue("r_forearm"));
+                                        .addFieldValue(new fieldValue().setName("name").setValue("r_forearm"));
 ProtoInstance29
-                                        .addFieldValue(new fieldValue("hanim_r_forearm").setName("children")
+                                        .addFieldValue(new fieldValue().setName("children")
                                           .addChild(new Transform().setDEF("r_forearm_adjust").setCenter(new float[] {-0.198f,0.961f,-0.0397f}).setRotation(new float[] {-1f,0f,0f,0.1254f}).setTranslation(new float[] {0f,0.003466f,-0.01065f})
-                                            .addChild(new Shape("r_forearm_adjust")
+                                            .addChild(new Shape()
                                               .setAppearance(new Appearance()
                                                 .setMaterial(new Material().setUSE("WetShirtColor")))
                                               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3248().getArray()).setCreaseAngle(1.73f)
                                                 .setCoord(new Coordinate().setPoint(new MFVec3f49().getArray()))))));
 ProtoInstance30
-                                        .addFieldValue(new fieldValue("hanim_r_wrist").setName("name").setValue("r_wrist"));
+                                        .addFieldValue(new fieldValue().setName("name").setValue("r_wrist"));
 ProtoInstance30
-                                        .addFieldValue(new fieldValue("hanim_r_wrist").setName("center").setValue("-0.217 0.811 -0.0338"));
+                                        .addFieldValue(new fieldValue().setName("center").setValue("-0.217 0.811 -0.0338"));
 ProtoInstance30
-                                        .addFieldValue(new fieldValue("hanim_r_wrist").setName("children")
+                                        .addFieldValue(new fieldValue().setName("children")
                                           .addChild(ProtoInstance31 = new ProtoInstance().setName("Segment").setDEF("hanim_r_hand")));
 ProtoInstance31
-                                            .addFieldValue(new fieldValue("hanim_r_hand").setName("name").setValue("r_hand"));
+                                            .addFieldValue(new fieldValue().setName("name").setValue("r_hand"));
 ProtoInstance31
-                                            .addFieldValue(new fieldValue("hanim_r_hand").setName("children")
+                                            .addFieldValue(new fieldValue().setName("children")
                                               .addChild(new Transform().setDEF("r_hand_adjust").setCenter(new float[] {-0.217f,0.811f,-0.0338f}).setRotation(new float[] {-0.09024f,0.994f,-0.0624f,1.216f})
-                                                .addChild(new Shape("r_hand_adjust")
+                                                .addChild(new Shape()
                                                   .setAppearance(new Appearance()
                                                     .setMaterial(new Material().setUSE("Skin_Color")))
                                                   .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3250().getArray()).setCreaseAngle(1.57f)
                                                     .setCoord(new Coordinate().setPoint(new MFVec3f51().getArray()))))));
 ProtoInstance32
-                                .addFieldValue(new fieldValue("hanim_vc4").setName("name").setValue("vc4"));
+                                .addFieldValue(new fieldValue().setName("name").setValue("vc4"));
 ProtoInstance32
-                                .addFieldValue(new fieldValue("hanim_vc4").setName("center").setValue("0 1.43 -0.0458"));
+                                .addFieldValue(new fieldValue().setName("center").setValue("0 1.43 -0.0458"));
 ProtoInstance32
-                                .addFieldValue(new fieldValue("hanim_vc4").setName("children")
+                                .addFieldValue(new fieldValue().setName("children")
                                   .addChild(ProtoInstance33 = new ProtoInstance().setName("Segment").setDEF("hanim_c4"))
                                   .addChild(ProtoInstance34 = new ProtoInstance().setName("Joint").setDEF("hanim_skullbase")));
 ProtoInstance33
-                                    .addFieldValue(new fieldValue("hanim_c4").setName("name").setValue("c4"));
+                                    .addFieldValue(new fieldValue().setName("name").setValue("c4"));
 ProtoInstance33
-                                    .addFieldValue(new fieldValue("hanim_c4").setName("children")
+                                    .addFieldValue(new fieldValue().setName("children")
                                       .addChild(new Shape()
                                         .setAppearance(new Appearance()
                                           .setMaterial(new Material().setUSE("WetShirtColor")))
                                         .setGeometry(new IndexedFaceSet().setDEF("neck").setCoordIndex(new MFInt3252().getArray()).setCreaseAngle(1.91f)
-                                          .setCoord(new Coordinate("neck").setPoint(new MFVec3f53().getArray())))));
+                                          .setCoord(new Coordinate().setPoint(new MFVec3f53().getArray())))));
 ProtoInstance34
-                                    .addFieldValue(new fieldValue("hanim_skullbase").setName("name").setValue("skullbase"));
+                                    .addFieldValue(new fieldValue().setName("name").setValue("skullbase"));
 ProtoInstance34
-                                    .addFieldValue(new fieldValue("hanim_skullbase").setName("center").setValue("0 1.54 -0.0409"));
+                                    .addFieldValue(new fieldValue().setName("center").setValue("0 1.54 -0.0409"));
 ProtoInstance34
-                                    .addFieldValue(new fieldValue("hanim_skullbase").setName("children")
+                                    .addFieldValue(new fieldValue().setName("children")
                                       .addChild(ProtoInstance35 = new ProtoInstance().setName("Segment").setDEF("hanim_skull")));
 ProtoInstance35
-                                        .addFieldValue(new fieldValue("hanim_skull").setName("name").setValue("skull"));
+                                        .addFieldValue(new fieldValue().setName("name").setValue("skull"));
 ProtoInstance35
-                                        .addFieldValue(new fieldValue("hanim_skull").setName("children")
+                                        .addFieldValue(new fieldValue().setName("children")
                                           .addChild(new Shape()
                                             .setAppearance(new Appearance()
                                               .setMaterial(new Material().setUSE("Skin_Color")))
                                             .setGeometry(new IndexedFaceSet().setDEF("headIFS").setColorIndex(new MFInt3254().getArray().append(new MFInt3255().getArray())).setCoordIndex(new MFInt3256().getArray().append(new MFInt3257().getArray())).setCreaseAngle(0.7854f)
-                                              .setCoord(new Coordinate("headIFS").setDEF("Face").setPoint(new MFVec3f58().getArray()))
-                                              .setColor(new Color("headIFS").setColor(new MFColor59().getArray()))))
+                                              .setCoord(new Coordinate().setDEF("Face").setPoint(new MFVec3f58().getArray()))
+                                              .setColor(new Color().setColor(new MFColor59().getArray()))))
                                           .addChild(new Transform().setDEF("maskAndSnorkel").setTranslation(new float[] {0f,1.505f,0.05f})
-                                            .addChild(new Transform("maskAndSnorkel")
+                                            .addChild(new Transform()
                                               .addChild(new Shape().setDEF("maskFrame")
-                                                .setAppearance(new Appearance("maskFrame")
+                                                .setAppearance(new Appearance()
                                                   .setMaterial(new Material().setDEF("frameColor").setDiffuseColor(new float[] {0f,0f,0f})))
-                                                .setGeometry(new IndexedFaceSet("maskFrame").setCoordIndex(new MFInt3260().getArray()).setCreaseAngle(1.45f).setSolid(false)
+                                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3260().getArray()).setCreaseAngle(1.45f).setSolid(false)
                                                   .setCoord(new Coordinate().setPoint(new MFVec3f61().getArray())))))
-                                            .addChild(new Transform("maskAndSnorkel").setDEF("snorkelHoldRing").setTranslation(new float[] {0.075f,0.075f,-0.02f})
-                                              .addChild(new Shape("snorkelHoldRing")
+                                            .addChild(new Transform().setDEF("snorkelHoldRing").setTranslation(new float[] {0.075f,0.075f,-0.02f})
+                                              .addChild(new Shape()
                                                 .setAppearance(new Appearance()
                                                   .setMaterial(new Material().setUSE("frameColor")))
                                                 .setGeometry(new Cylinder().setHeight(0.003f).setRadius(0.015f))))
-                                            .addChild(new Group("maskAndSnorkel").setDEF("snorkel")
-                                              .addChild(new Transform("snorkel").setTranslation(new float[] {0f,-0.02f,0f})
+                                            .addChild(new Group().setDEF("snorkel")
+                                              .addChild(new Transform().setTranslation(new float[] {0f,-0.02f,0f})
                                                 .addChild(new Transform().setScale(new float[] {0.9f,0.9f,0.9f}).setTranslation(new float[] {0.035f,-0.07f,-0.02f})
                                                   .addChild(new Shape()
                                                     .setAppearance(new Appearance()
@@ -852,129 +852,129 @@ ProtoInstance35
                                                     .setAppearance(new Appearance()
                                                       .setMaterial(new Material().setUSE("Mouthpiece")))
                                                     .setGeometry(new Extrusion().setCrossSection(new MFVec2f66().getArray()).setSpine(new MFVec3f67().getArray()))))))
-                                            .addChild(new Transform("maskAndSnorkel")
+                                            .addChild(new Transform()
                                               .addChild(new Shape().setDEF("maskLensR")
-                                                .setAppearance(new Appearance("maskLensR")
+                                                .setAppearance(new Appearance()
                                                   .setMaterial(new Material().setDEF("plastic").setDiffuseColor(new float[] {0.941f,0.973f,1f}).setTransparency(0.8f)))
-                                                .setGeometry(new IndexedFaceSet("maskLensR").setCoordIndex(new MFInt3268().getArray()).setCreaseAngle(1.45f).setSolid(false)
+                                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3268().getArray()).setCreaseAngle(1.45f).setSolid(false)
                                                   .setCoord(new Coordinate().setPoint(new MFVec3f69().getArray())))))
-                                            .addChild(new Transform("maskAndSnorkel")
+                                            .addChild(new Transform()
                                               .addChild(new Shape().setDEF("maskLensL")
-                                                .setAppearance(new Appearance("maskLensL")
+                                                .setAppearance(new Appearance()
                                                   .setMaterial(new Material().setUSE("plastic")))
-                                                .setGeometry(new IndexedFaceSet("maskLensL").setCoordIndex(new MFInt3270().getArray()).setCreaseAngle(1.45f).setSolid(false)
+                                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3270().getArray()).setCreaseAngle(1.45f).setSolid(false)
                                                   .setCoord(new Coordinate().setPoint(new MFVec3f71().getArray())))))
-                                            .addChild(new Transform("maskAndSnorkel")
+                                            .addChild(new Transform()
                                               .addChild(new Shape().setDEF("nose")
-                                                .setAppearance(new Appearance("nose")
+                                                .setAppearance(new Appearance()
                                                   .setMaterial(new Material().setDEF("plasticFit").setDiffuseColor(new float[] {0.678f,1f,0.184f}).setTransparency(0.7f)))
-                                                .setGeometry(new IndexedFaceSet("nose").setCoordIndex(new MFInt3272().getArray()).setCreaseAngle(1.45f).setSolid(false)
+                                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3272().getArray()).setCreaseAngle(1.45f).setSolid(false)
                                                   .setCoord(new Coordinate().setPoint(new MFVec3f73().getArray())))))
-                                            .addChild(new Transform("maskAndSnorkel")
+                                            .addChild(new Transform()
                                               .addChild(new Shape().setDEF("faceFit")
-                                                .setAppearance(new Appearance("faceFit")
+                                                .setAppearance(new Appearance()
                                                   .setMaterial(new Material().setUSE("plasticFit")))
-                                                .setGeometry(new IndexedFaceSet("faceFit").setCoordIndex(new MFInt3274().getArray()).setCreaseAngle(1.45f).setSolid(false)
+                                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3274().getArray()).setCreaseAngle(1.45f).setSolid(false)
                                                   .setCoord(new Coordinate().setPoint(new MFVec3f75().getArray())))))
-                                            .addChild(new Transform("maskAndSnorkel")
+                                            .addChild(new Transform()
                                               .addChild(new Shape().setDEF("belt")
-                                                .setAppearance(new Appearance("belt")
+                                                .setAppearance(new Appearance()
                                                   .setMaterial(new Material().setUSE("plastic")))
-                                                .setGeometry(new IndexedFaceSet("belt").setCoordIndex(new MFInt3276().getArray()).setCreaseAngle(1.45f).setSolid(false)
+                                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3276().getArray()).setCreaseAngle(1.45f).setSolid(false)
                                                   .setCoord(new Coordinate().setPoint(new MFVec3f77().getArray()))))))
                                           .addChild(new Transform().setDEF("mouthpiece").setRotation(new float[] {0.86f,-0.58f,-0.58f,2.09f}).setTranslation(new float[] {0f,1.508f,0.05f})
-                                            .addChild(new Transform("mouthpiece").setTranslation(new float[] {0f,0.0018f,0f})
+                                            .addChild(new Transform().setTranslation(new float[] {0f,0.0018f,0f})
                                               .addChild(new Shape()
                                                 .setAppearance(new Appearance()
                                                   .setMaterial(new Material().setDEF("gray").setAmbientIntensity(0.3f).setDiffuseColor(new float[] {0.9f,0.9f,0.89f}).setShininess(0.1f).setSpecularColor(new float[] {0.5f,0.5f,0.5f})))
                                                 .setGeometry(new Cylinder().setHeight(0.006f).setRadius(0.015f))))
-                                            .addChild(new Transform("mouthpiece")
+                                            .addChild(new Transform()
                                               .addChild(new Shape()
                                                 .setAppearance(new Appearance()
                                                   .setMaterial(new Material().setDEF("black").setDiffuseColor(new float[] {0f,0f,0f})))
                                                 .setGeometry(new Cone().setBottomRadius(0.03f).setHeight(0.01f))))
-                                            .addChild(new Transform("mouthpiece").setTranslation(new float[] {0f,-0.015f,0f})
+                                            .addChild(new Transform().setTranslation(new float[] {0f,-0.015f,0f})
                                               .addChild(new Shape()
                                                 .setAppearance(new Appearance()
                                                   .setMaterial(new Material().setUSE("black")))
                                                 .setGeometry(new Cylinder().setHeight(0.02f).setRadius(0.03f))))
-                                            .addChild(new Transform("mouthpiece").setTranslation(new float[] {0f,-0.025f,0f})
+                                            .addChild(new Transform().setTranslation(new float[] {0f,-0.025f,0f})
                                               .addChild(new Shape()
                                                 .setAppearance(new Appearance()
                                                   .setMaterial(new Material().setUSE("black")))
                                                 .setGeometry(new Cylinder().setHeight(0.02f).setRadius(0.015f))))
-                                            .addChild(new Transform("mouthpiece").setRotation(new float[] {0f,0f,1f,0.9f}).setTranslation(new float[] {0f,-0.04f,0f})
+                                            .addChild(new Transform().setRotation(new float[] {0f,0f,1f,0.9f}).setTranslation(new float[] {0f,-0.04f,0f})
                                               .addChild(new Shape().setDEF("mouthpiecePlastic")
-                                                .setAppearance(new Appearance("mouthpiecePlastic")
+                                                .setAppearance(new Appearance()
                                                   .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,1f}).setEmissiveColor(new float[] {1f,1f,1f})))
-                                                .setGeometry(new Box("mouthpiecePlastic").setSize(new float[] {0.002f,0.03f,0.018f}))))
-                                            .addChild(new Transform("mouthpiece").setRotation(new float[] {0f,0f,1f,-0.9f}).setTranslation(new float[] {0f,-0.04f,0f})
+                                                .setGeometry(new Box().setSize(new float[] {0.002f,0.03f,0.018f}))))
+                                            .addChild(new Transform().setRotation(new float[] {0f,0f,1f,-0.9f}).setTranslation(new float[] {0f,-0.04f,0f})
                                               .addChild(new Shape().setUSE("mouthpiecePlastic")))
-                                            .addChild(new Transform("mouthpiece").setRotation(new float[] {1f,0f,0f,1.57f}).setTranslation(new float[] {0f,-0.015f,0.03f})
+                                            .addChild(new Transform().setRotation(new float[] {1f,0f,0f,1.57f}).setTranslation(new float[] {0f,-0.015f,0.03f})
                                               .addChild(new Shape()
                                                 .setAppearance(new Appearance()
                                                   .setMaterial(new Material().setUSE("gray")))
                                                 .setGeometry(new Cylinder().setHeight(0.02f).setRadius(0.0075f))))
                                             .addComments("x = 0, y = 50, z = -270")
-                                            .addChild(new Transform("mouthpiece").setDEF("airTube").setRotation(new float[] {0f,1f,0f,1.57f}).setScale(new float[] {0.7f,0.7f,0.7f}).setTranslation(new float[] {0f,-0.02f,0.055f})
-                                              .addChild(new Transform("airTube").setRotation(new float[] {-0.21f,0.21f,-0.95f,4.67f})
+                                            .addChild(new Transform().setDEF("airTube").setRotation(new float[] {0f,1f,0f,1.57f}).setScale(new float[] {0.7f,0.7f,0.7f}).setTranslation(new float[] {0f,-0.02f,0.055f})
+                                              .addChild(new Transform().setRotation(new float[] {-0.21f,0.21f,-0.95f,4.67f})
                                                 .addChild(new Shape()
                                                   .setAppearance(new Appearance()
                                                     .setMaterial(new Material().setDiffuseColor(new float[] {0f,0f,0f})))
                                                   .setGeometry(new Extrusion().setCrossSection(new MFVec2f78().getArray()).setSpine(new MFVec3f79().getArray()))))))
                                           .addChild(new Transform().setDEF("Bubbles").setScale(new float[] {0.35f,0.35f,0.35f}).setTranslation(new float[] {0f,1.508f,0.05f})
-                                            .addChild(new Group("Bubbles").setDEF("Bubble")
-                                              .addChild(new TimeSensor("Bubble").setDEF("BubbleClock").setCycleInterval(6d).setLoop(true))
-                                              .addChild(new PositionInterpolator("Bubble").setDEF("BubblePath1").setKey(new MFFloat80().getArray()).setKeyValue(new MFVec3f81().getArray()))
-                                              .addChild(new PositionInterpolator("Bubble").setDEF("BubblePath2").setKey(new MFFloat82().getArray()).setKeyValue(new MFVec3f83().getArray()))
-                                              .addChild(new PositionInterpolator("Bubble").setDEF("BubblePath3").setKey(new MFFloat84().getArray()).setKeyValue(new MFVec3f85().getArray()))
-                                              .addChild(new PositionInterpolator("Bubble").setDEF("BubblePath4").setKey(new MFFloat86().getArray()).setKeyValue(new MFVec3f87().getArray()))
-                                              .addChild(new PositionInterpolator("Bubble").setDEF("BubblePath5").setKey(new MFFloat88().getArray()).setKeyValue(new MFVec3f89().getArray()))
-                                              .addChild(new PositionInterpolator("Bubble").setDEF("BubblePath6").setKey(new MFFloat90().getArray()).setKeyValue(new MFVec3f91().getArray()))
-                                              .addChild(new PositionInterpolator("Bubble").setDEF("BubblePath7").setKey(new MFFloat92().getArray()).setKeyValue(new MFVec3f93().getArray()))
-                                              .addChild(new PositionInterpolator("Bubble").setDEF("BubblePath8").setKey(new MFFloat94().getArray()).setKeyValue(new MFVec3f95().getArray()))
-                                              .addChild(new PositionInterpolator("Bubble").setDEF("BubblePath9").setKey(new MFFloat96().getArray()).setKeyValue(new MFVec3f97().getArray()))
-                                              .addChild(new PositionInterpolator("Bubble").setDEF("BubblePath10").setKey(new MFFloat98().getArray()).setKeyValue(new MFVec3f99().getArray()))
-                                              .addChild(new Transform("Bubble")
+                                            .addChild(new Group().setDEF("Bubble")
+                                              .addChild(new TimeSensor().setDEF("BubbleClock").setCycleInterval(6d).setLoop(true))
+                                              .addChild(new PositionInterpolator().setDEF("BubblePath1").setKey(new MFFloat80().getArray()).setKeyValue(new MFVec3f81().getArray()))
+                                              .addChild(new PositionInterpolator().setDEF("BubblePath2").setKey(new MFFloat82().getArray()).setKeyValue(new MFVec3f83().getArray()))
+                                              .addChild(new PositionInterpolator().setDEF("BubblePath3").setKey(new MFFloat84().getArray()).setKeyValue(new MFVec3f85().getArray()))
+                                              .addChild(new PositionInterpolator().setDEF("BubblePath4").setKey(new MFFloat86().getArray()).setKeyValue(new MFVec3f87().getArray()))
+                                              .addChild(new PositionInterpolator().setDEF("BubblePath5").setKey(new MFFloat88().getArray()).setKeyValue(new MFVec3f89().getArray()))
+                                              .addChild(new PositionInterpolator().setDEF("BubblePath6").setKey(new MFFloat90().getArray()).setKeyValue(new MFVec3f91().getArray()))
+                                              .addChild(new PositionInterpolator().setDEF("BubblePath7").setKey(new MFFloat92().getArray()).setKeyValue(new MFVec3f93().getArray()))
+                                              .addChild(new PositionInterpolator().setDEF("BubblePath8").setKey(new MFFloat94().getArray()).setKeyValue(new MFVec3f95().getArray()))
+                                              .addChild(new PositionInterpolator().setDEF("BubblePath9").setKey(new MFFloat96().getArray()).setKeyValue(new MFVec3f97().getArray()))
+                                              .addChild(new PositionInterpolator().setDEF("BubblePath10").setKey(new MFFloat98().getArray()).setKeyValue(new MFVec3f99().getArray()))
+                                              .addChild(new Transform()
                                                 .addChild(new Transform().setDEF("bubble1")
-                                                  .addChild(new Shape("bubble1")
+                                                  .addChild(new Shape()
                                                     .setAppearance(new Appearance().setDEF("BubbleAppearance")
-                                                      .setMaterial(new Material("BubbleAppearance").setDiffuseColor(new float[] {1f,1f,1f}).setTransparency(0.8f)))
+                                                      .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,1f}).setTransparency(0.8f)))
                                                     .setGeometry(new Sphere().setRadius(0.025f))))
                                                 .addChild(new Transform().setDEF("bubble2")
-                                                  .addChild(new Shape("bubble2")
+                                                  .addChild(new Shape()
                                                     .setAppearance(new Appearance().setUSE("BubbleAppearance"))
                                                     .setGeometry(new Sphere().setRadius(0.055f))))
                                                 .addChild(new Transform().setDEF("bubble3")
-                                                  .addChild(new Shape("bubble3")
+                                                  .addChild(new Shape()
                                                     .setAppearance(new Appearance().setUSE("BubbleAppearance"))
                                                     .setGeometry(new Sphere().setRadius(0.065f))))
                                                 .addChild(new Transform().setDEF("bubble4")
-                                                  .addChild(new Shape("bubble4")
+                                                  .addChild(new Shape()
                                                     .setAppearance(new Appearance().setUSE("BubbleAppearance"))
                                                     .setGeometry(new Sphere().setRadius(0.015f))))
                                                 .addChild(new Transform().setDEF("bubble5")
-                                                  .addChild(new Shape("bubble5")
+                                                  .addChild(new Shape()
                                                     .setAppearance(new Appearance().setUSE("BubbleAppearance"))
                                                     .setGeometry(new Sphere().setRadius(0.075f))))
                                                 .addChild(new Transform().setDEF("bubble6")
-                                                  .addChild(new Shape("bubble6")
+                                                  .addChild(new Shape()
                                                     .setAppearance(new Appearance().setUSE("BubbleAppearance"))
                                                     .setGeometry(new Sphere().setRadius(0.005f))))
                                                 .addChild(new Transform().setDEF("bubble7")
-                                                  .addChild(new Shape("bubble7")
+                                                  .addChild(new Shape()
                                                     .setAppearance(new Appearance().setUSE("BubbleAppearance"))
                                                     .setGeometry(new Sphere().setRadius(0.035f))))
                                                 .addChild(new Transform().setDEF("bubble8")
-                                                  .addChild(new Shape("bubble8")
+                                                  .addChild(new Shape()
                                                     .setAppearance(new Appearance().setUSE("BubbleAppearance"))
                                                     .setGeometry(new Sphere().setRadius(0.05f))))
                                                 .addChild(new Transform().setDEF("bubble9")
-                                                  .addChild(new Shape("bubble9")
+                                                  .addChild(new Shape()
                                                     .setAppearance(new Appearance().setUSE("BubbleAppearance"))
                                                     .setGeometry(new Sphere().setRadius(0.045f))))
                                                 .addChild(new Transform().setDEF("bubble10")
-                                                  .addChild(new Shape("bubble10")
+                                                  .addChild(new Shape()
                                                     .setAppearance(new Appearance().setUSE("BubbleAppearance"))
                                                     .setGeometry(new Sphere().setRadius(0.035f))))
                                                 .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("BubbleClock").setToField("set_fraction").setToNode("BubblePath1"))

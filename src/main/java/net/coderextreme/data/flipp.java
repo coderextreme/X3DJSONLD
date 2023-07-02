@@ -62,7 +62,7 @@ public class flipp {
         .addChild(new NavigationInfo().setDEF("user01").setSpeed(50f))
         .addChild(new Fog())
         .addChild(new Transform().setDEF("trans").setRotation(new float[] {1f,0f,0f,0.78f})
-          .addChild(new Shape("trans")
+          .addChild(new Shape()
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDEF("mat").setAmbientIntensity(0.508497f).setDiffuseColor(new float[] {0.337255f,0.4f,0.788235f}).setSpecularColor(new float[] {1f,1f,1f})))
             .setGeometry(new IndexedFaceSet().setCreaseAngle(2f).setCoordIndex(new MFInt324().getArray().append(new MFInt325().getArray()).append(new MFInt326().getArray()))

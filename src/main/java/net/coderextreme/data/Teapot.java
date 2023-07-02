@@ -74,7 +74,7 @@ public class Teapot {
             .setMaterial(new Material().setTransparency(0.5f))))
         .addChild(new Shape().setDEF("AxisLinesShape")
           .addComments("RGB lines showing XYZ axes")
-          .setGeometry(new IndexedLineSet("AxisLinesShape").setColorIndex(new MFInt3218().getArray()).setColorPerVertex(false).setCoordIndex(new MFInt3219().getArray())
+          .setGeometry(new IndexedLineSet().setColorIndex(new MFInt3218().getArray()).setColorPerVertex(false).setCoordIndex(new MFInt3219().getArray())
             .setCoord(new Coordinate().setPoint(new MFVec3f20().getArray()))
             .setColor(new Color().setColor(new MFColor21().getArray())))))      ;
     return X3D0;

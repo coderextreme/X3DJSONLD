@@ -146,6 +146,7 @@ var X3D0 =  X3D(
                       accessType_ : SFString("initializeOnly")),
                   ],
 ecmascript:eval (0
+Cirrus.children = [];
 
 
 , function cumulustranslation() // These values designate the boundary location of the cloud

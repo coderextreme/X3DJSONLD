@@ -25,12 +25,15 @@ from x3d import *
 newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
+    component(level=1,name='Scripting'),
+    component(name='EnvironmentalEffects',level=3),
     component(name='Shaders',level=1),
     component(name='CubeMapTexturing',level=1),
     component(name='Texturing',level=1),
     component(name='Rendering',level=1),
     component(name='Shape',level=4),
     component(name='Grouping',level=3),
+    component(name='Core',level=1),
     meta(name='title',content='flowerproto.x3d'),
     meta(name='creator',content='John Carlson'),
     meta(name='description',content='A flower proto with configurable shaders'),
