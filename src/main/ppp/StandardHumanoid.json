@@ -6598,12 +6598,12 @@
                           },
                           {
                             "HAnimSite": {
-                              "@name": "buttocks_standing_wall_contact_point",
-                              "@DEF": "hanim_buttocks_standing_wall_contact_point",
+                              "@name": "buttocks_standing_wall_contact_point_pt",
+                              "@DEF": "hanim_buttocks_standing_wall_contact_point_pt",
                               "-children": [
                                 {
                                   "TouchSensor": {
-                                    "@description": "HAnimSite buttocks_standing_wall_contact_point"
+                                    "@description": "HAnimSite buttocks_standing_wall_contact_point_pt"
                                   }
                                 },
                                 {
@@ -22404,7 +22404,7 @@
             "-sites": [
               {
                 "HAnimSite": {
-                  "@USE": "hanim_buttocks_standing_wall_contact_point"
+                  "@USE": "hanim_buttocks_standing_wall_contact_point_pt"
                 }
               },
               {
