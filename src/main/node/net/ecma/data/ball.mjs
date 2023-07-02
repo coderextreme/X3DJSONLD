@@ -71,7 +71,6 @@ var X3D0 =  new X3D({
             new component({
               name : new SFString("Core"),
               level : new SFInt32(1)})),
-          /*component name='EnvironmentalEffects' level='1'></component*/
           meta : new MFNode([
             new meta({
               name : new SFString("title"),

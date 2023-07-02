@@ -9,6 +9,10 @@ var X3D0 =  X3D(
         head(
           component_ : 
             component(
+              name_ : SFString('Scripting'),
+              level_ : 1),
+          component_ : 
+            component(
               name_ : SFString('EnvironmentalEffects'),
               level_ : 3),
           component_ : 
@@ -30,10 +34,14 @@ var X3D0 =  X3D(
           component_ : 
             component(
               name_ : SFString('Shape'),
-              level_ : 1),
+              level_ : 4),
           component_ : 
             component(
               name_ : SFString('Grouping'),
+              level_ : 3),
+          component_ : 
+            component(
+              name_ : SFString('Core'),
               level_ : 1),
           meta_ : [
             meta(
