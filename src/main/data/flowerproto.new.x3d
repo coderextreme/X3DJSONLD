@@ -5,12 +5,15 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
+    <component name='Scripting'/>
+    <component level='3' name='EnvironmentalEffects'/>
     <component name='Shaders'/>
     <component name='CubeMapTexturing'/>
     <component name='Texturing'/>
     <component name='Rendering'/>
     <component level='4' name='Shape'/>
     <component level='3' name='Grouping'/>
+    <component name='Core'/>
     <meta content='flowerproto.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='A flower proto with configurable shaders' name='description'/>
