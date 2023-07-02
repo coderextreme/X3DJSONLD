@@ -23,7 +23,7 @@ Additional references of interest:
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
                 xmlns:xs ="http://www.w3.org/2001/XMLSchema"
 	            xmlns:fn ="http://www.w3.org/2005/xpath-functions"
-				xmlns:saxon="http://saxon.sf.net/"><!-- http://www.saxonica.com/documentation9.5/extensions/attributes -->
+				xmlns:saxon="http://saxon.sf.net/"><!-- https://www.saxonica.com/documentation12/#!extensions/attributes -->
 	<!-- extension-element-prefixes="xs" -->
 	<xsl:param name="targetDirectory"><xsl:text></xsl:text></xsl:param>
 	
@@ -57,7 +57,7 @@ Additional references of interest:
 
 	<xsl:variable name="saiJavaSpecificationRootUrl"><xsl:text>https://www.web3d.org/documents/specifications/19777-2/V3.3/Part2</xsl:text></xsl:variable>
 	<xsl:variable name="saiAbstractSpecificationRootUrl"><xsl:text>https://www.web3d.org/documents/specifications/19775-2/V3.3/Part02</xsl:text></xsl:variable>
-	<xsl:variable name="x3dAbstractSpecificationRootUrl"><xsl:text>https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part0</xsl:text></xsl:variable><!-- TODO X3D4 -->
+	<xsl:variable name="x3dAbstractSpecificationRootUrl"><xsl:text>https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01</xsl:text></xsl:variable><!-- TODO X3D4 -->
 	
 	<xsl:variable name="newValue"><xsl:text>newValue</xsl:text></xsl:variable><!-- default parameter name -->
 	<xsl:variable name="x3d.tooltips.path">
@@ -1327,7 +1327,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			<!-- start class/interface description, javadoc -->
 			<xsl:text>&#10;</xsl:text>
 			<xsl:text>/**</xsl:text><xsl:text>&#10;</xsl:text>
-			<xsl:choose>
+                        <xsl:choose>
 				<xsl:when test="string-length(normalize-space($description)) > 0">
 					<xsl:text> * </xsl:text><xsl:value-of select="normalize-space($description)"/>
 					<xsl:text>&#10;</xsl:text>
@@ -1361,6 +1361,10 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 				</xsl:otherwise>
 			</xsl:choose>
 			
+                        <xsl:text disable-output-escaping="yes"><![CDATA[ *
+ * <i>Warning:</i> this is an abstract interface that cannot be instantiated as a concrete object.
+ * Java programmers typically only need to use concrete objects provided by the <code>org.web3d.x3d.jsail</code> classes.
+]]></xsl:text>
 			<xsl:variable name="isX3dStatement">
 				<xsl:call-template name="isX3dStatement">
 					<xsl:with-param name="name" select="@name"/>
@@ -1659,7 +1663,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 				</xsl:if>
 				<!-- javadoc -->
 				<xsl:text disable-output-escaping="yes"><![CDATA[ * @see <a href="]]></xsl:text>
-				<xsl:if test="not(contains($x3dAbstractSpecificationRelativeUrl,'http://'))">
+				<xsl:if test="not(contains($x3dAbstractSpecificationRelativeUrl,'https://'))">
 					<!-- full url might have been retrieved from X3D Object Model, otherwise create it -->
 					<xsl:value-of select="$x3dAbstractSpecificationRootUrl"/>
 					<xsl:text>/</xsl:text>
@@ -31451,7 +31455,7 @@ browser instance or there is some other problem.]]></xsl:text>
  * in accordance witht the X3D SAI Specification.
  * </p>
  * <p> <i>Warning:</i> these interfaces are primarily for internal use to ensure consistency.
- * Java programmers need only use concrete objects provided by the <code>org.web3d.x3d.jsail</code> classes.
+ * Java programmers typically only need to use concrete objects provided by the <code>org.web3d.x3d.jsail</code> classes.
  *</p>
  * <p> Online:
  *     <a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
@@ -31497,6 +31501,10 @@ package org.web3d.x3d.sai.]]></xsl:text>
  * <p> This package contains specification-defined X3D SAI interfaces
  *  and utility classes, used for compiling Java source code to be
  *  used by an X3D Script node.</p>
+ *
+ * <p> <i>Warning:</i> do not use this package for creating standalone Java programs, instead use the 
+ * <code>org.web3d.x3d.x3djsail</code> 
+ * package for concrete node implementations.</p>
  *
  * <p> Online:
  *     <a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
