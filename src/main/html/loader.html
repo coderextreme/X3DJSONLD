@@ -3,8 +3,27 @@
     <title>X3D JSON Loader</title>
     <meta charset="utf-8"/>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="../node/X3DJSONLD.mjs"></script>
-    <script type="module" src="../../../dist/loader-bundle.mjs"></script>
+	<script src="../node/ajvAll.js"></script>
+	<script src="../node/config.js"></script>
+	<script src="../node/fieldTypes.js"></script>
+	<script src="../node/PrototypeExpander.js"></script>
+	<script src="../node/DOMSerializer.js"></script>
+	<script src="../node/X3DJSONLD.js"></script>
+	<script src="../node/matrix.js"></script>
+	<script src="../node/convertJsonToStl.js"></script>
+	<script src="../node/convertPlyToJson.js"></script>
+	<script src="../node/convertStlToJson.js"></script>
+	<script src="../node/exi.js"></script>
+	<script src="../node/JavaScriptSerializer.js"></script>
+	<script src="../node/mapToMethod.js"></script>
+	<script src="../node/mapToMethod2.js"></script>
+	<script src="../node/PythonSerializer.js"></script>
+	<script src="../node/Script.js"></script>
+	<script src="../node/Three2Serializer.js"></script>
+	<script src="../node/DOM2JSONSerializer.js"></script>
+	<script src="../node/loadValidate.js"></script>
+	<script src="../node/loaderJQuery.js"></script>
+	<script src="../node/loadJson.js"></script>
     <script type="text/javascript">
 var Browser = X3DJSONLD.Browser;
 //  X3DJSONLD.setProcessURLs(function() {}); // do modify URLs in GUI
@@ -180,9 +199,9 @@ function loadX3DJS_X3DOM(selector, DOMImplementation, jsobj, path, NS, loadSchem
 	});
 }
 
-function loadX3DJS_X_ITE(selector, DOMImplementation, jsobj, path, NS, loadSchema, doValidate, X3DJSONLD, callback) {
+function loadX3DJS_X_ITE(selector, DOMImplementation, jsobj, path, NS, X3DJSONLD, callback) {
 	X3DJSONLD.x3djsonNS = NS;
-	loadSchema(jsobj, path, doValidate, X3DJSONLD, function() {
+	window.loadSchema(jsobj, path, X3DJSONLD, function() {
 		X3D(function() {
 			if (typeof X3D.getBrowser !== 'undefined') {
 				var browser = X3D.getBrowser(selector);
