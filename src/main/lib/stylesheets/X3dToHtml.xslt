@@ -6,7 +6,7 @@
     <xsl:variable name="isX3D3" select="starts-with($x3dVersion,'3')"/>
     <xsl:variable name="isX3D4" select="starts-with($x3dVersion,'4')"/>
 <!--
-Copyright (c) 2004-2022 held by the author(s).  All rights reserved.
+Copyright (c) 2004-2023 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
