@@ -15278,7 +15278,12 @@ setAttribute method invocations).
 											<xsl:text>) // required attribute
 		{
 			String errorNotice = ConfigurationProperties.ERROR_VALUE_NOT_FOUND + 
-									", " + NAME + " </xsl:text><xsl:value-of select="$fieldName"/><xsl:text> field is required but no value found. ";</xsl:text>
+									", " + NAME + " </xsl:text>
+                                                                        <xsl:if test="not($isX3dStatement = 'true') and not(@name = 'IS')">
+                                                                            <xsl:text>DEF='" + getDEF() + "' </xsl:text>
+                                                                        </xsl:if>
+                                                                        <xsl:value-of select="$fieldName"/>
+                                                                        <xsl:text> field is required but no value found. ";</xsl:text>
 											<xsl:if test="($fieldName = 'content')"><!-- meta tag -->
 												<xsl:text>
             errorNotice += "(meta name='" + getName() + "')";
@@ -15650,7 +15655,7 @@ setAttribute method invocations).
 		}
 		if (getFromField().isEmpty())
 		{
-			errorNotice = " ROUTE has no DEF value for source node since fromNode value is empty. ";
+			errorNotice = "ROUTE has no DEF value for source node since fromNode value is empty. ";
 			validationResult.append(errorNotice).append("\n");
 		}
 		else if (findAncestorProtoBody() != null) // look only within ProtoBody, if appropriate
@@ -15658,7 +15663,7 @@ setAttribute method invocations).
 			fromNodeObject = findAncestorProtoBody().findNodeByDEF(getFromNode());
 			if (fromNodeObject == null)
 			{
-				errorNotice = " ROUTE fromNode='" + getFromNode() + "' was not found within connected ProtoBody. ";
+				errorNotice = "ROUTE fromNode='" + getFromNode() + "' was not found within connected ProtoBody. ";
 				validationResult.append(errorNotice).append("\n");
 			}
 		}
@@ -15667,13 +15672,13 @@ setAttribute method invocations).
 			fromNodeObject = findAncestorScene().findNodeByDEF(getFromNode());
 			if (fromNodeObject == null)
 			{
-				errorNotice = " ROUTE fromNode='" + getFromNode() + "' was not found in connected scene graph. ";
+				errorNotice = "ROUTE fromNode='" + getFromNode() + "' was not found in connected scene graph. ";
 				validationResult.append(errorNotice).append("\n");
 			}
 		}
 		if (getToField().isEmpty())
 		{
-			errorNotice = " ROUTE has no DEF value for target node since toNode value is empty. ";
+			errorNotice = "ROUTE has no DEF value for target node since toNode value is empty. ";
 			validationResult.append(errorNotice).append("\n");
 		}
 		else if (findAncestorProtoBody() != null) // look only within ProtoBody, if appropriate
@@ -15681,7 +15686,7 @@ setAttribute method invocations).
 			toNodeObject = findAncestorProtoBody().findNodeByDEF(getToNode());
 			if (toNodeObject == null)
 			{
-				errorNotice = " ROUTE toNode='" + getToNode() + "' was not found within connected ProtoBody. ";
+				errorNotice = "ROUTE toNode='" + getToNode() + "' was not found within connected ProtoBody. ";
 				validationResult.append(errorNotice).append("\n");
 			}
 		}
@@ -15690,13 +15695,13 @@ setAttribute method invocations).
 			toNodeObject = findAncestorScene().findNodeByDEF(getToNode());
 			if (toNodeObject == null)
 			{
-				errorNotice = " ROUTE toNode='" + getToNode() + "' was not found in connected scene graph. ";
+				errorNotice = "ROUTE toNode='" + getToNode() + "' was not found in connected scene graph. ";
 				validationResult.append(errorNotice).append("\n");
 			}
 		}
 		if (fromNode.equals(toNode) && fromField.equals(toField)) // self-ROUTE check
 		{
-			errorNotice = " ROUTE source and destination are identical. ";
+			errorNotice = "ROUTE source and destination are identical. ";
 			validationResult.append(errorNotice).append("\n");
 		}
 		if (!errorNotice.isEmpty() || (fromNodeObject == null) || (toNodeObject == null))
@@ -15721,18 +15726,18 @@ setAttribute method invocations).
 
 			if (!fromFieldType.equals(toFieldType))
 			{
-				errorNotice = " ROUTE has source-destination type mismatch, " + 
+				errorNotice = "ROUTE has source-destination type mismatch, " + 
 							   "fromField='" + fromField + "' source and toField='" + toField + "' destination have different types. ";
 			}
 			if (!fromFieldAccessType.equals(field.ACCESSTYPE_INPUTOUTPUT) &&
 				!fromFieldAccessType.equals(field.ACCESSTYPE_OUTPUTONLY))
 			{
-				errorNotice = " ROUTE fromField (source) event can only have accessType='inputOutput' or accessType='outputOnly'. ";
+				errorNotice = "ROUTE fromField (source) event can only have accessType='inputOutput' or accessType='outputOnly'. ";
 			}
 			if (  !toFieldAccessType.equals(field.ACCESSTYPE_INPUTOUTPUT) &&
 				  !toFieldAccessType.equals(field.ACCESSTYPE_INPUTONLY))
 			{
-				errorNotice = " ROUTE toField (destination) event can only have accessType='inputOutput' or accessType='inputOnly'. ";
+				errorNotice = "ROUTE toField (destination) event can only have accessType='inputOutput' or accessType='inputOnly'. ";
 			}
 			if (!errorNotice.isEmpty())
 			{
@@ -15913,19 +15918,100 @@ setAttribute method invocations).
 									<xsl:text disable-output-escaping="yes"><![CDATA[
 ]]></xsl:text>	
 								</xsl:when>
-								<xsl:when test="($name = 'HAnimJoint') or ($name = 'HAnimSegment') or ($name = 'HAnimSite') or ($name = 'HAnimDisplacer')">
-									<xsl:text>
+								<xsl:when test="($name = 'HAnimDisplacer')">
+									<xsl:text disable-output-escaping="yes"><![CDATA[
          // test for correct parent
          X3DConcreteElement parent = getParent();
          if (hasParent())
          {
-             if      (parent.getElementName().equals(</xsl:text><xsl:value-of select="$name"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text>.NAME))
+            if (!parent.getElementName().equals(HAnimJoint.NAME) && !parent.getElementName().equals(HAnimSegment.NAME) &&
+                !parent.getElementName().equals(ProtoBody.NAME)  && !parent.getElementName().equals(field.NAME) && !parent.getElementName().equals(fieldValue.NAME))
+            {
+                String errorNotice = ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE +
+                    ": illegal parent name for ]]></xsl:text>
+                         <xsl:value-of select="$name"/>
+                         <xsl:text> DEF='" + getDEF() + "'</xsl:text>
+                         <xsl:text disable-output-escaping="yes"><![CDATA[, found '" + parent.getElementName() + "' instead of HAnimJoint or HAnimSegment" ;
+                validationResult.append(errorNotice).append("\n");
+                throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice); // report error
+            }
+        }
+]]></xsl:text>
+								</xsl:when>
+								<xsl:when test="($name = 'HAnimJoint')">
+									<xsl:text disable-output-escaping="yes"><![CDATA[
+         // test for correct parent
+         X3DConcreteElement parent = getParent();
+         if (hasParent())
+         {
+            if (!parent.getElementName().equals(HAnimHumanoid.NAME) && !parent.getElementName().equals(HAnimJoint.NAME) &&
+                !parent.getElementName().equals(ProtoBody.NAME) && !parent.getElementName().equals(field.NAME) &&!parent.getElementName().equals(fieldValue.NAME))
+            {
+                String errorNotice = ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE +
+                    ": illegal parent name for ]]></xsl:text>
+                         <xsl:value-of select="$name"/>
+                         <xsl:text> DEF='" + getDEF() + "'</xsl:text>
+                         <xsl:text disable-output-escaping="yes"><![CDATA[, found '" + parent.getElementName() + "' instead of HAnimJoint or HAnimHumanoid" ;
+                validationResult.append(errorNotice).append("\n");
+                throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice); // report error
+            }
+        }
+]]></xsl:text>
+								</xsl:when>
+								<xsl:when test="($name = 'HAnimSite')">
+									<xsl:text disable-output-escaping="yes"><![CDATA[
+         // test for correct parent
+         X3DConcreteElement parent = getParent();
+         if (hasParent())
+         {
+            if (!parent.getElementName().equals(HAnimHumanoid.NAME) &&
+                !parent.getElementName().equals(ProtoBody.NAME) && !parent.getElementName().equals(field.NAME) &&!parent.getElementName().equals(fieldValue.NAME))
+            {
+                String errorNotice = ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE +
+                    ": illegal parent name for ]]></xsl:text>
+                         <xsl:value-of select="$name"/>
+                         <xsl:text> DEF='" + getDEF() + "'</xsl:text>
+                         <xsl:text disable-output-escaping="yes"><![CDATA[, found '" + parent.getElementName() + "' instead of HAnimHumanoid" ;
+                validationResult.append(errorNotice).append("\n");
+                throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice); // report error
+            }
+        }
+]]></xsl:text>
+								</xsl:when>
+								<xsl:when test="($name = 'HAnimSegment')">
+									<xsl:text disable-output-escaping="yes"><![CDATA[
+         // test for correct parent
+         X3DConcreteElement parent = getParent();
+         if (hasParent())
+         {
+            if (!parent.getElementName().equals(HAnimHumanoid.NAME) && !parent.getElementName().equals(HAnimJoint.NAME) &&
+                !parent.getElementName().equals(ProtoBody.NAME) && !parent.getElementName().equals(field.NAME) &&!parent.getElementName().equals(fieldValue.NAME))
+            {
+                String errorNotice = ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE +
+                    ": illegal parent name for ]]></xsl:text>
+                         <xsl:value-of select="$name"/>
+                         <xsl:text> DEF='" + getDEF() + "'</xsl:text>
+                         <xsl:text disable-output-escaping="yes"><![CDATA[, found '" + parent.getElementName() + "' instead of HAnimJoint or HAnimHumanoid" ;
+                validationResult.append(errorNotice).append("\n");
+                throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice); // report error
+            }
+        }
+]]></xsl:text>
+         <!-- leftover fragment
+         <xsl:value-of select="$name"/>
+         <xsl:value-of select="$jsaiClassSuffix"/>
+         <xsl:text>.NAME))</xsl:text> -->
+         <xsl:text>
+             /* if (false) // TODO
              {
                  // now test for correct parent-child LOA4 relationship pair
                  if (!hasParentMatchingName(((HAnimJoint)parent).getName()))
                  {
-                     String errorNotice = ConfigurationProperties.ERROR_ILLEGAL_VALUE +
-                         ": illegal parent name found: '" + ((</xsl:text>
+                     String errorNotice = ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE +
+                         ": illegal parent name for </xsl:text>
+                         <xsl:value-of select="$name"/>
+                         <xsl:text> DEF='" + getDEF() + "'</xsl:text>
+                         <xsl:text disable-output-escaping="yes"><![CDATA[, found '" + ((</xsl:text>
                          <xsl:value-of select="$name"/>
                          <xsl:text disable-output-escaping="yes"><![CDATA[)parent).getName() + "' instead of TODO" ;
                      validationResult.append(errorNotice).append("\n");
@@ -15938,7 +16024,7 @@ setAttribute method invocations).
                  String naming = new String();
                  if (!getName().isEmpty())
                      naming = " name='" + getName() + "'";
-                 String errorNotice = ConfigurationProperties.ERROR_ILLEGAL_VALUE +
+                 String errorNotice = ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE +
                      ": " + NAME + " DEF='" + getDEF() + "'" + naming + 
                      " illegal parent found: " + parent.getElementName() +" name='" + ((X3DConcreteNode)parent).getDEF() + "'";
                  if      (parent instanceof org.web3d.x3d.jsail.HAnim.HAnimHumanoid)
@@ -15955,6 +16041,7 @@ setAttribute method invocations).
          }
 // TODO: if LOA less than 4, need to modify this test to properly compare whether immediate parent is a legal ancestor.
 // Warning: this is not a 100% test until the LOA 0..3 alias-matching algorithms are also added.
+         */
 
 ]]></xsl:text>
 								</xsl:when>
@@ -20398,7 +20485,9 @@ shall not include the underlying field's values at that point in time.
                 if (value.startsWith(".") || value.startsWith("-"))       // NameStartChar restrictions
                     result = false;
 */
-		return result;
+                if (value.equals(meta.NAME_CML_VERSION))
+                     return true; // special case
+		else return result;
 	}
 	/**
 	 * Append an additional String to this field.
@@ -39723,7 +39812,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 
 		if (!</xsl:text>
 				<xsl:value-of select="$newValue"/>
-				<xsl:text>.equals(</xsl:text>
+				<xsl:text>.toString().replace("\"","").equals(</xsl:text>
 				<xsl:value-of select="$newValue"/>
 				<xsl:text>.toLowerCase()))
 		{
@@ -39865,6 +39954,11 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 						<xsl:value-of select="$newValue"/>
 					</xsl:otherwise>
 				</xsl:choose>
+				<xsl:choose>
+                                    <xsl:when test="($x3dType='SFString') or ($x3dType='MFString')">
+                                        <xsl:text>.toString().replace("\"","")</xsl:text>
+                                    </xsl:when>
+				</xsl:choose>
 				<xsl:text>.equals(</xsl:text>
 				<xsl:value-of select="upper-case(../@name)"/>
 				<xsl:text>_</xsl:text>
@@ -39925,7 +40019,25 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
                     <xsl:text>optional</xsl:text>
                 </xsl:otherwise>
             </xsl:choose>
-            <xsl:text> string tokens.";</xsl:text>
+            <xsl:text> string tokens."</xsl:text>
+            <xsl:text> + "\n" +</xsl:text>
+            <xsl:text>&#10;</xsl:text>
+            <xsl:text>			"Supported values are </xsl:text>
+            <!-- TODO list allowed values -->
+            <xsl:for-each select="enumeration">
+                <xsl:call-template name="backslash-quote-characters"> <!-- tail recursion -->
+                        <xsl:with-param name="inputValue" select="@value"/>
+                </xsl:call-template>
+                <xsl:if test="not(position() = last())">
+                    <xsl:text>, </xsl:text>
+                </xsl:if>
+            </xsl:for-each> 
+            <xsl:text>."</xsl:text>
+            <xsl:if test="($elementName = 'HAnimHumanoid') and (@name = 'version')">
+                <xsl:text>&#10;</xsl:text>
+                <xsl:text>			 + "\n" + "HAnimHumanoid version='1.0' models might not run correctly in X3D 4.0 and upgrading model to HAnim version='2.0' is advised."</xsl:text>
+            </xsl:if>
+            <xsl:text>;</xsl:text>
             <xsl:if test="($isArrayListType = 'true') and ($comparisonType = 'simple')">
 				<xsl:text>
 			if (newValue[i].contains(" "))
@@ -40789,6 +40901,26 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
                 <xsl:text disable-output-escaping="no">&amp;</xsl:text>
                 <xsl:text disable-output-escaping="no">#34;</xsl:text>
                 <xsl:call-template name="escape-quote-characters"> <!-- tail recursion -->
+                    <xsl:with-param name="inputValue" select="substring-after($inputString,'&#34;')"/>
+                </xsl:call-template>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="$inputString" disable-output-escaping="yes"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
+    <xsl:template name="backslash-quote-characters">
+        <xsl:param name="inputValue"><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
+        <xsl:variable name="inputString" select="string($inputValue)"/>
+        <!-- debug:  <xsl:text>//######&#10;</xsl:text> -->
+        <!-- debug:  <xsl:message><xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/></xsl:message> -->
+        <xsl:choose>
+            <!-- &#62; is &gt; -->
+            <xsl:when test="contains($inputString,'&#34;')">
+                <xsl:value-of select="substring-before($inputString,'&#34;')" disable-output-escaping="yes"/>
+                <xsl:text disable-output-escaping="no">\"</xsl:text>
+                <xsl:call-template name="backslash-quote-characters"> <!-- tail recursion -->
                     <xsl:with-param name="inputValue" select="substring-after($inputString,'&#34;')"/>
                 </xsl:call-template>
             </xsl:when>
