@@ -24,7 +24,7 @@ Recommended tools:
 <!--	xmlns:saxon="http://icl.com/saxon" saxon:trace="true"	-->
 
 <!--
-Copyright (c) 1995-2022 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2023 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -90,7 +90,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                           
     <xsl:variable name="licenseText">
 		<xsl:text>
-Copyright (c) 1995-2022 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2023 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -326,51 +326,55 @@ POSSIBILITY OF SUCH DAMAGE.
      */
     public static void main(String args[])
     {
-        X3D thisExampleX3dModel = new ]]></xsl:text><xsl:value-of select="$newClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[().getX3dModel();
+        X3D thisExampleX3dModel = new ]]></xsl:text>
+         <xsl:value-of select="$newClassName"/>
+         <xsl:text disable-output-escaping="yes"><![CDATA[().getX3dModel();
+//      System.out.println("X3D model construction complete.");
+	
+        // next handle command line arguments
+        boolean hasArguments = (args != null) && (args.length > 0);
+        boolean validate = true; // default
+        boolean argumentsLoadNewModel = false;
+        String  fileName = new String();
 
-		boolean hasArguments = (args != null) && (args.length > 0);
-		boolean validate = true; // default
-		boolean argumentsLoadNewModel = false;
-		String  fileName = new String();
-
-		if (args != null)
-		{
-			for (String arg : args)
-			{
-				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
-				{
-					validate = true; // making sure
-				}
-				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
-				{
-					argumentsLoadNewModel = true;
-					fileName = arg;
-				}
-			}
-		}
-		if      (argumentsLoadNewModel)
-			System.out.println("WARNING: \"]]></xsl:text><xsl:value-of select="$newFullyQualifiedClassName"/>
-			<xsl:text disable-output-escaping="yes"><![CDATA[\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
-		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dModel.handleArguments(args);
-
-		if (validate)
-		{
-			System.out.print("Java program \"]]></xsl:text><xsl:value-of select="$newFullyQualifiedClassName"/>
-			<xsl:text disable-output-escaping="yes"><![CDATA[\" self-validation test results: ");
-			String validationResults = thisExampleX3dModel.validationReport();
-            if (validationResults.startsWith("\n"))
-                System.out.println();
-			System.out.println(validationResults.trim());
-		}
+        if (args != null)
+        {
+                for (String arg : args)
+                {
+                        if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+                        {
+                                validate = true; // making sure
+                        }
+                        if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
+                        {
+                                argumentsLoadNewModel = true;
+                                fileName = arg;
+                        }
+                }
+        }
+        if      (argumentsLoadNewModel)
+                System.out.println("WARNING: \"]]></xsl:text><xsl:value-of select="$newFullyQualifiedClassName"/>
+                <xsl:text disable-output-escaping="yes"><![CDATA[\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+        else if (hasArguments) // if no arguments provided, this method produces usage warning
+                thisExampleX3dModel.handleArguments(args);
+	
+        if (validate)
+        {
+                System.out.print("Java program \"]]></xsl:text><xsl:value-of select="$newFullyQualifiedClassName"/>
+                <xsl:text disable-output-escaping="yes"><![CDATA[\" self-validation test results: ");
+                String validationResults = thisExampleX3dModel.validationReport();
+                if (validationResults.startsWith("\n") || (validationResults.length() > 10))
+                    System.out.println();
+                System.out.println(validationResults.trim());
+        }
     }
 }
 ]]></xsl:text><!-- class complete -->
@@ -1151,6 +1155,15 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:when test="(local-name(..) = 'HAnimHumanoid') and (local-name() = 'HAnimSegment')">
                         <xsl:text>segments</xsl:text>
                     </xsl:when>
+                    <xsl:when test="(local-name(..) = 'HAnimHumanoid') and 
+                        ((local-name() = 'Group') or (local-name() = 'LOD') or (local-name() = 'Shape') or (local-name() = 'Switch') or 
+                         (local-name() = 'Transform') or (local-name() = 'IndexedFaceSet') or (local-name() = 'IndexedFanSet') or (local-name() = 'IndexedLineSet') or
+                         (local-name() = 'IndexedQuadSet') or (local-name() = 'IndexedTriangleSet') or (local-name() = 'IndexedTriangleStripSet'))">
+                        <xsl:text>skin</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="(local-name(..) = 'HAnimHumanoid') and (local-name() = 'HAnimMotion')">
+                        <xsl:text>motions</xsl:text>
+                    </xsl:when>
                     <!-- HAnimHumanoid can contain Metadata*  with containerField = metadata -->
                     <!-- HAnimHumanoid can contain HAnimJoint with containerField = joints or skeleton -->
                     <!-- HAnimHumanoid can contain HAnimSite  with containerField = sites, skeleton or viewpoints -->
@@ -1364,6 +1377,12 @@ POSSIBILITY OF SUCH DAMAGE.
 				</xsl:when>
 				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and ($containerField = 'viewpoints')">
 					<xsl:text>.addViewpoints(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+                                <!-- HAnimMotion -->
+				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and ($containerField = 'motions')">
+					<xsl:text>.addMotions(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
@@ -4265,16 +4284,16 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <!-- SFTime -->
 		  <xsl:when test="
                     ($localFieldType='SFTime')          or 
-				  contains($attributeName,'Time')     or
-				  contains($attributeName,'Duration') or
+                    contains($attributeName,'Time')     or
+                    contains($attributeName,'Duration') or
                     ($parentElementName='TimeSensor') or
-					($attributeName='cycleTime')      or
+                    ($attributeName='cycleTime')      or
                     ($attributeName='pauseTime')      or
                     ($attributeName='resumeTime')     or
                     ($attributeName='startTime')      or
                     ($attributeName='stopTime')       or
                     ($attributeName='duration')       or
-					($attributeName='elapsedTime')    or
+                    ($attributeName='elapsedTime')    or
                     ($attributeName='autoRefresh')    or
                     ($attributeName='autoRefreshTimeLimit') or
                     ($attributeName='tau')            or
@@ -4284,7 +4303,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($parentElementName='LoadSensor'     and $attributeName='timeOut')  or
                     ($parentElementName='AudioClip'      and ends-with($attributeName,'Time'))  or
                     ($parentElementName='EspduTransform' and ends-with($attributeName,'Time'))  or
-					($parentElementName='HAnimMotion'    and $attributeName='frameDuration') or
+                    ($parentElementName='HAnimMotion'    and $attributeName='frameDuration') or
                     ($parentElementName='MovieTexture'   and ends-with($attributeName,'Time')) or
                     ($parentElementName='TimeSensor')"> 
 			  <!-- TimeSensor loop & enabled are caught by SFBool tests, all other TimeSensor fields are SFTime -->
@@ -4528,7 +4547,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					($parentElementName='FloatVertexAttribute' and $attributeName='numComponents') or
 					($parentElementName='GeneratedCubeMapTexture' and $attributeName='size') or
 					(starts-with($parentElementName,'HAnim') and $attributeName='loa') or
-                    ($parentElementName='HAnimMotion' and (($attributeName='totalFrameCount') or ($attributeName='frameIncrement') or ($attributeName='frameIndex') or ($attributeName='startFrame') or ($attributeName='endFrame'))) or
+                    ($parentElementName='HAnimMotion' and (($attributeName='frameIncrement') or ($attributeName='frameIndex') or ($attributeName='startFrame') or ($attributeName='endFrame'))) or
                     ($parentElementName='IntegerTrigger' and $attributeName='integerKey') or
 					($parentElementName='LayerSet' and ($attributeName='activeLayer')) or
 					($parentElementName='LineProperties' and ($attributeName='linetype')) or
