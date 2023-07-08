@@ -46,7 +46,7 @@ newModel=X3D(class_='x3dModel.class',id_='x3dModel.id',profile='Full',style_='x3
     meta(content='https://www.web3d.org/specifications/java/X3DJSAIL.html',name='reference'),
     meta(content='HelloWorldProgramOutput.java',name='generator'),
     meta(content='6 September 2016',name='created'),
-    meta(content='29 April 2023',name='modified'),
+    meta(content='1 July 2023',name='modified'),
     meta(content='X3D Java Scene Access Interface Library (X3DJSAIL)',name='generator'),
     meta(content='https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java',name='generator'),
     meta(content='Netbeans https://www.netbeans.org',name='generator'),

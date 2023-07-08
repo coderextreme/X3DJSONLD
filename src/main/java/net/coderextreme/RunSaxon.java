@@ -39,6 +39,7 @@ protected static class ExitException extends SecurityException
         }
     }
 
+/*
     private static class NoExitSecurityManager extends SecurityManager 
     {
         @Override
@@ -58,6 +59,7 @@ protected static class ExitException extends SecurityException
             throw new ExitException(status);
         }
     }
+   */
 
 	public static void main(String args[]) {
 		try {

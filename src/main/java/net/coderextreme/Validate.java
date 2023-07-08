@@ -1,3 +1,5 @@
+package net.coderextreme;
+
 import org.w3c.dom.Document;
 import javax.json.JsonObject;
 import java.io.File;

@@ -318,6 +318,8 @@ JavaSerializer.prototype = {
 						fieldAttrType = attrs[a].nodeValue;
 						var method = attr;
 						if (element.nodeName === 'NavigationInfo' ) {
+							strval = "\""+attrs[a].nodeValue.replace(/\"/g, '\\\"')+"\""
+							/* **** RESTORE if X3DJSAIL can take an array
 							strval = this.printSubArray(attrType, "java.lang.String",
 								attrs[a].nodeValue.substr(1, attrs[a].nodeValue.length-2).split(/"[ ,]+"/).
 								map(function(x) {
@@ -330,10 +332,13 @@ JavaSerializer.prototype = {
 									       replace(/&/g, "&amp;").
 									       replace(/\\n/g, '\\n');
 									if (y !== x) {
-										// console.error("Python Replacing "+x+" with "+y);
+										console.error("Python Replacing "+x+" with "+y);
 									}
+									console.error("value chopped", y);
 									return y;
 								}), this.codeno, '","', '"', '"');
+							*/
+							console.error("chopped rejoined", strval);
 						} else if (attrs[a].nodeValue !== "VERTEX" && attrs[a].nodeValue !== "FRAGMENT") {
 							strval = '"'+attrs[a].nodeValue+'"';
 						} else {
