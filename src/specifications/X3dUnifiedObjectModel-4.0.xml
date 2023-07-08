@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2023-06-25-07:00 21:39:12.9006879-07:00 -->
+<!-- Generated 2023-07-02-07:00 12:06:21.6806626-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                         version="4.0"
                         xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -334,10 +334,10 @@
       </SimpleType>
       <SimpleType name="containerFieldChoicesHAnimMotion"
                    baseType="xs:NMTOKEN"
-                   appinfo="containerFieldChoicesHAnimMotion lists the allowed containerField enumeration values for HAnimMotion node: default &#34;children&#34; if parent node is another HAnimJoint, otherwise &#34;motions&#34; if parent node is HAnimHumanoid."
+                   appinfo="containerFieldChoicesHAnimMotion lists the allowed containerField enumeration values for HAnimMotion node: default &#34;children&#34; if parent node is a grouping node, otherwise &#34;motions&#34; if parent node is HAnimHumanoid."
                    documentation="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">
          <enumeration value="children" appinfo="parent node is a grouping node"/>
-         <enumeration value="segments" appinfo="parent node is HAnimHumanoid"/>
+         <enumeration value="motions" appinfo="parent node is HAnimHumanoid"/>
       </SimpleType>
       <SimpleType name="containerFieldChoicesHAnimSegment"
                    baseType="xs:NMTOKEN"
@@ -4000,7 +4000,6 @@
          <enumeration value="topToBottom"/>
          <enumeration value="topUrl"/>
          <enumeration value="torques"/>
-         <enumeration value="totalFrameCount"/>
          <enumeration value="trackCurrentView"/>
          <enumeration value="transitionTime"/>
          <enumeration value="transitionType"/>
@@ -4179,6 +4178,9 @@
          <enumeration value="author"
                        appinfo="name of individual author"
                        documentation="https://www.w3.org/TR/html5/document-metadata.html#author"/>
+         <enumeration value="CML-version"
+                       appinfo="Chemistry Markup Language (CML) version used"
+                       documentation="https://www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage"/>
          <enumeration value="contributor"
                        appinfo="name of individual contributing to this resource"
                        documentation="https://www.dublincore.org/documents/dcmi-terms/#terms-contributor"/>
@@ -4395,6 +4397,7 @@
          <enumeration value="finalText"/>
          <enumeration value="firedTime"/>
          <enumeration value="fraction_changed"/>
+         <enumeration value="frameCount"/>
          <enumeration value="geovalue_changed"/>
          <enumeration value="hinge1Angle"/>
          <enumeration value="hinge1AngleRate"/>
@@ -22509,6 +22512,10 @@
                     default="0"
                     minInclusive="0"
                     description="endFrame indicates final index of animated frame."/>
+            <field name="frameCount"
+                    type="SFInt32"
+                    accessType="outputOnly"
+                    minInclusive="0"/>
             <field name="frameDuration"
                     type="SFTime"
                     accessType="inputOutput"
@@ -22561,23 +22568,12 @@
                     accessType="inputOutput"
                     baseType="xs:NMTOKEN"
                     description="Unique name attribute must be defined so that HAnimMotion node can be identified at run time for animation purposes."/>
-            <field name="skeletalConfiguration"
-                    type="SFString"
-                    accessType="inputOutput"
-                    default="BASIC"
-                    description="Models sharing a common skeletal configuration can share animations and binding poses."/>
             <field name="startFrame"
                     type="SFInt32"
                     accessType="inputOutput"
                     default="0"
                     minInclusive="0"
                     description="startFrame indicates initial index of animated frame."/>
-            <field name="totalFrameCount"
-                    type="SFInt32"
-                    accessType="inputOutput"
-                    default="0"
-                    minInclusive="0"
-                    description="totalFrameCount indicates the total number of frames present in the animation, equaling the number of sets of channel data rows present in the values array."/>
             <field name="values"
                     type="MFFloat"
                     accessType="inputOutput"
@@ -22611,7 +22607,7 @@
                     accessType="inputOutput"
                     inheritedFrom="X3DNode"
                     description="The style attribute on each X3D node and statement provides an inline block of CSS source for element styling, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
-            <containerField default="children" type="containerFieldChoicesHAnimMotion"/>
+            <containerField default="motions" type="containerFieldChoicesHAnimMotion"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -42600,6 +42596,9 @@
                <enumeration value="author"
                              appinfo="name of individual author."
                              documentation="https://www.w3.org/TR/html5/document-metadata.html#author"/>
+               <enumeration value="CML-version"
+                             appinfo="Chemistry Markup Language (CML) version used."
+                             documentation="https://www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage"/>
                <enumeration value="contributor"
                              appinfo="name of individual contributing to this resource."
                              documentation="https://www.dublincore.org/documents/dcmi-terms/#terms-contributor"/>
