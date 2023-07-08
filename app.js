@@ -8,7 +8,7 @@ var { DOMParser, XMLSerializer } = require('@xmldom/xmldom');
 var path = require('path');
 var express = require('express');
 var fs = require('fs');
-var http = require('http');
+var https = require('https');
 const { glob, globSync } = require('glob');
 var path = require('path');
 var fileURLToPath = require('url');
@@ -115,7 +115,7 @@ app.get("/X3dGraphics.com/*.x3d", function(req, res, next) {
 	if (hash > 0) {
 	       infile = url.substring(0, hash);
 	}
-	infile = "http:/" + infile;
+	infile = "https:/" + infile;
 	console.error("Proxy", infile);
 	console.error("=========== converting == ", infile);
 	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
@@ -337,6 +337,7 @@ magic("*.css", "text/css");
 magic("*.swf", "application/x-shockwave-flash");
 magic("/**/schema/*.json", "text/json");
 magic("*.x3d", "model/x3d+xml");
+magic("*.x3dv", "model/x3d+vrml");
 magic("*.wrl", "model/vrml");
 magic("*.gltf", "text/json");
 magic("*.glb", "application/octet-stream");
@@ -385,12 +386,12 @@ app.get("*.json", function(req, res, next) {
 });
 
 
-http.createServer({
+https.createServer({
   key: fs.readFileSync('key.pem'),
   cert: fs.readFileSync('cert.pem'),
   requestCert: false,
   rejectUnauthorized: false
 }, app)
 .listen(3000, 'localhost', function () {
-  console.log('Example app listening on port 3000! Go to http://localhost:3000/')
+  console.log('Example app listening on port 3000! Go to https://localhost:3000/')
 })
