@@ -33,16 +33,16 @@ do
 
 echo compiling
 pushd ../java
-find ./net/x3djsonld/data -name "${X3D}.java" | xargs -L 1 -P $PROCESSORS javac -cp ".;C:/Users/john/pythonSAI/saxon-he-10.6.jar;C:/Users/john/pythonSAI/X3DJSAIL.4.0.full.jar"
+find ./net/x3djsonld/data -name "${X3D}.java" | xargs -L 1 -P $PROCESSORS javac -cp ".;C:/Users/john/pythonSAI/saxon-he-12.1.jar;C:/Users/john/pythonSAI/X3DJSAIL.4.0.full.jar"
 # -J-Xss1g -J-Xmx4g
 echo running java
-echo export CLASSPATH=".;C:/Users/john/pythonSAI/saxon-he-10.6.jar;C:/Users/john/pythonSAI/X3DJSAIL.4.0.full.jar"
-export CLASSPATH=".;C:/Users/john/pythonSAI/saxon-he-10.6.jar;C:/Users/john/pythonSAI/X3DJSAIL.4.0.full.jar"
+echo export CLASSPATH=".;C:/Users/john/pythonSAI/saxon-he-12.1.jar;C:/Users/john/pythonSAI/X3DJSAIL.4.0.full.jar"
+export CLASSPATH=".;C:/Users/john/pythonSAI/saxon-he-12.1.jar;C:/Users/john/pythonSAI/X3DJSAIL.4.0.full.jar"
 #for i in `ls "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.\./net\/x3djsonld/' -e 's/\.x3d$//'`
 #do
 	mkdir -p net/x3djsonld/data
-	echo '$' java -cp ".;C:/Users/john/pythonSAI/saxon-he-10.6.jar;C:/Users/john/pythonSAI/X3DJSAIL.4.0.full.jar" net/x3djsonld/data/${X3D}
-	java -cp ".;C:/Users/john/pythonSAI/saxon-he-10.6.jar;C:/Users/john/pythonSAI/X3DJSAIL.4.0.full.jar" net/x3djsonld/data/${X3D}
+	echo '$' java -cp ".;C:/Users/john/pythonSAI/saxon-he-12.1.jar;C:/Users/john/pythonSAI/X3DJSAIL.4.0.full.jar" net/x3djsonld/data/${X3D}
+	java -cp ".;C:/Users/john/pythonSAI/saxon-he-12.1.jar;C:/Users/john/pythonSAI/X3DJSAIL.4.0.full.jar" net/x3djsonld/data/${X3D}
 #done
 popd
 # echo running jjs

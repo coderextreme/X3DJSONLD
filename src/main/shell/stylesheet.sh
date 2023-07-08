@@ -8,7 +8,7 @@ export USERNAME=coderextreme
 export X3DJSONLD=/home/$USERNAME/X3DJSONLD
 # for RunSaxon
 export CLASS=net.coderextreme.RunSaxon
-export CLASSPATH=".;${X3DJSONLD}/../pythonSAI/X3DJSAIL.4.0.full.jar;${X3DJSONLD}/saxon-he-10.6.jar;${X3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${X3DJSONLD}/target/classes;${X3DJSONLD}/src/main/java"
+export CLASSPATH=".;${X3DJSONLD}/../pythonSAI/X3DJSAIL.4.0.full.jar;${X3DJSONLD}/saxon-he-12.1.jar;${X3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${X3DJSONLD}/target/classes;${X3DJSONLD}/src/main/java"
 export OVERWRITE=---overwrite
 
 echo 'ls -d "$@" | grep -v intermediate | grep -v "\.new" | xargs -P $PROCESSORS java ${CLASS} ${OVERWRITE} --${STYLESHEET} -json'
