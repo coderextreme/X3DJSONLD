@@ -1,0 +1,141 @@
+#X3D V4.0 utf8
+
+PROFILE Interchange
+
+META "generator" "tovrmlx3d, https://castle-engine.io/view3dscene.php#section_converting"
+META "source" "samurai.gltf"
+
+DEF Armature Transform {
+	children DEF pelvis Transform {
+		children [
+			DEF spine Transform {
+				children DEF chest Transform {
+					children [
+						DEF neck Transform {
+							children DEF head Transform {
+								translation 0 -1 0
+							}
+							translation 0 -1 0
+						}
+						DEF CastleEncoded_shoulder$46$L Transform {
+							children DEF CastleEncoded_upper_arm$46$L Transform {
+								children DEF CastleEncoded_forearm$46$L Transform {
+									children DEF CastleEncoded_hand$46$L Transform {
+										rotation 0.463882684707642 0.706218183040619 -0.53486180305481 0.200587585568428
+										scale 0.999999940395355 0.999999940395355 0.99999988079071
+										translation -0.640000760555267 -0.599999189376831 -0.480000108480453
+									}
+									rotation 0.372499793767929 0.705673813819885 -0.602717578411102 0.25417959690094
+									scale 1 1.00000011920929 0.999999940395355
+									translation -0.79999977350235 -0.447213649749756 -0.39999982714653
+								}
+								rotation 0.246061861515045 0.704987049102783 -0.665168583393097 0.308935552835464
+								scale 0.999999940395355 1.00000011920929 0.999999940395355
+								translation -0.941176533699036 -0.242535442113876 -0.235294133424759
+							}
+							rotation 0.0867208689451218 0.70444267988205 -0.70444267988205 0.346017926931381
+							scale 1 1 0.999999940395355
+							translation -1 -1 0
+						}
+						DEF CastleEncoded_shoulder$46$R Transform {
+							children DEF CastleEncoded_upper_arm$46$R Transform {
+								children DEF CastleEncoded_forearm$46$R Transform {
+									children DEF CastleEncoded_hand$46$R Transform {
+										rotation 0.463882684707642 -0.706218183040619 0.53486180305481 0.200587585568428
+										scale 0.999999940395355 0.999999940395355 0.99999988079071
+										translation 0.640000760555267 -0.599999189376831 -0.480000108480453
+									}
+									rotation 0.372499793767929 -0.705673813819885 0.602717578411102 0.25417959690094
+									scale 1 1.00000011920929 0.999999940395355
+									translation 0.79999977350235 -0.447213649749756 -0.39999982714653
+								}
+								rotation 0.246061861515045 -0.704987049102783 0.665168583393097 0.308935552835464
+								scale 0.999999940395355 1.00000011920929 0.999999940395355
+								translation 0.941176533699036 -0.242535442113876 -0.235294133424759
+							}
+							rotation 0.0867208689451218 -0.70444267988205 0.70444267988205 0.346017926931381
+							scale 1 1 0.999999940395355
+							translation 1 -1 0
+						}
+					]
+					translation 0 -1 0
+				}
+				translation 0 -1 0
+			}
+			DEF CastleEncoded_hip$46$L Transform {
+				children DEF CastleEncoded_thigh$46$L Transform {
+					children DEF CastleEncoded_shin$46$L Transform {
+						children DEF CastleEncoded_foot$46$L Transform {
+							children DEF CastleEncoded_toe$46$L Transform {
+								rotation 0.270938247442245 0.706214487552643 0.654103219509125 0.200588777661324
+								scale 1 1.00000011920929 0.99999988079071
+								translation 0.400000363588333 -0.894427359104156 -0.200000032782555
+							}
+							rotation 0.416130542755127 0.702497065067291 0.577350199222565 0.454038321971893
+							scale 0.99999988079071 0.99999988079071 0.999999940395355
+							translation 0.500000059604645 -0.70710688829422 -0.500000298023224
+						}
+						rotation 0.678598403930664 0.678598344326019 0.281084597110748 1.09605669975281
+						scale 0.999999940395355 0.99999988079071 0.99999988079071
+						translation -8.94069813739407E-8 8.94069742685133E-8 -1.00000011920929
+					}
+					rotation 0.678598403930664 0.678598403930664 -0.281084656715393 1.09605669975281
+					translation -0.50000011920929 0.707106649875641 -0.50000011920929
+				}
+				rotation 0.281084656715393 0.678598403930664 -0.678598403930664 1.09605669975281
+				scale 0.999999940395355 0.99999988079071 0.999999940395355
+				translation -1 0 0
+			}
+			DEF CastleEncoded_hip$46$R Transform {
+				children DEF CastleEncoded_thigh$46$R Transform {
+					children DEF CastleEncoded_shin$46$R Transform {
+						children DEF CastleEncoded_foot$46$R Transform {
+							children DEF CastleEncoded_toe$46$R Transform {
+								rotation 0.270938247442245 -0.706214487552643 -0.654103219509125 0.200588777661324
+								scale 1 1.00000011920929 0.99999988079071
+								translation -0.400000363588333 -0.894427359104156 -0.200000032782555
+							}
+							rotation 0.416130542755127 -0.702497065067291 -0.577350199222565 0.454038321971893
+							scale 0.99999988079071 0.99999988079071 0.999999940395355
+							translation -0.500000059604645 -0.70710688829422 -0.500000298023224
+						}
+						rotation 0.678598403930664 -0.678598344326019 -0.281084597110748 1.09605669975281
+						scale 0.999999940395355 0.99999988079071 0.99999988079071
+						translation 8.94069813739407E-8 8.94069742685133E-8 -1.00000011920929
+					}
+					rotation 0.678598403930664 -0.678598403930664 0.281084656715393 1.09605669975281
+					translation 0.50000011920929 0.707106649875641 -0.50000011920929
+				}
+				rotation 0.281084656715393 -0.678598403930664 0.678598403930664 1.09605669975281
+				scale 0.999999940395355 0.99999988079071 0.999999940395355
+				translation 1 0 0
+			}
+		]
+		rotation 1 0 0 3.14159274101257
+		translation 0 1 0
+	}
+}
+EXPORT head
+EXPORT neck
+EXPORT CastleEncoded_hand$46$L
+EXPORT CastleEncoded_forearm$46$L
+EXPORT CastleEncoded_upper_arm$46$L
+EXPORT CastleEncoded_shoulder$46$L
+EXPORT CastleEncoded_hand$46$R
+EXPORT CastleEncoded_forearm$46$R
+EXPORT CastleEncoded_upper_arm$46$R
+EXPORT CastleEncoded_shoulder$46$R
+EXPORT chest
+EXPORT spine
+EXPORT CastleEncoded_toe$46$L
+EXPORT CastleEncoded_foot$46$L
+EXPORT CastleEncoded_shin$46$L
+EXPORT CastleEncoded_thigh$46$L
+EXPORT CastleEncoded_hip$46$L
+EXPORT CastleEncoded_toe$46$R
+EXPORT CastleEncoded_foot$46$R
+EXPORT CastleEncoded_shin$46$R
+EXPORT CastleEncoded_thigh$46$R
+EXPORT CastleEncoded_hip$46$R
+EXPORT pelvis
+EXPORT Armature
