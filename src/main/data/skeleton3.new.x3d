@@ -5,7 +5,7 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
-    <component name='H-Anim'/>
+    <component name='HAnim'/>
     <meta content='JohnBoy.x3d' name='title'/>
     <meta content='http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d' name='identifier'/>
     <meta content='An attempt at a standard LOA-4 skeleton' name='description'/>
@@ -13,7 +13,7 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
     <meta content='John Carlson' name='creator'/>
     <meta content='12 June 2020' name='created'/>
     <meta content='../license.html' name='license'/>
-    <meta content='02 July 2023' name='translated'/>
+    <meta content='16 July 2023' name='translated'/>
     <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
     <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
   </head>

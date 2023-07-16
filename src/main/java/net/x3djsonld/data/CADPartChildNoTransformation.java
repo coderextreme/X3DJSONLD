@@ -9,7 +9,7 @@ import org.web3d.x3d.jsail.Navigation.*;
 import org.web3d.x3d.jsail.Rendering.*;
 import org.web3d.x3d.jsail.Shape.*;
 
-// Javadoc annotations follow, see below for Java source code.
+// Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
  * <p> Developer scene to explore Mantis Issue 528, providing a baseline example with no transformation of CADPart children. </p>
  <p> Related links: <a href="../../../CAD/CADPartChildNoTransformation.java">CADPartChildNoTransformation.java</a> source, <a href="../../../CAD/CADPartChildNoTransformationIndex.html" target="_top">CADPartChildNoTransformation catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
@@ -91,6 +91,7 @@ public class CADPartChildNoTransformation
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
+            try { // catch-all
   x3dModel = new X3D().setProfile(X3D.PROFILE_CADINTERCHANGE).setVersion(X3D.VERSION_3_1)
   .setHead(new head()
     .addComponent(new component().setName("CADGeometry").setLevel(2))
@@ -134,7 +135,14 @@ public class CADPartChildNoTransformation
             .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,2,1,3,2,3,4,4,3,5,4,5,6,6,5,7,6,7,8,8,7,9,8,9,10,10,9,11,10,11,12,12,11,13,12,13,14,14,13,15,14,15,16,16,15,17,16,17,18,18,17,19,18,19,20,20,19,21,20,21,22,22,21,23,22,23,24,24,23,25,24,25,26,26,25,27,26,27,28,28,27,29,28,29,30,30,29,31,30,31,32,32,31,33,32,33,34,34,33,35,34,35,36,36,35,37,36,37,38,38,37,39,38,39,40,40,39,41,40,41,42,42,41,43,42,43,44,44,43,45,44,45,46,46,45,47,46,47,48,48,47,49,48,49,50,50,49,51,50,51,52,52,51,53,52,53,54,54,53,55,54,55,56,56,55,57,56,57,58,58,57,59,58,59,60,60,59,61,60,61,62,62,61,63,62,63,64,64,63,65}).setNormalPerVertex(true).setSolid(true)
               .setCoord(new Coordinate().setPoint(getCoordinate_8_32_point())))
             .setAppearance(new Appearance().setUSE("AppearanceGrey")))))));
-    }
+            }
+            catch (Exception ex)
+            {       
+                System.err.println ("*** Further hints on X3DJSAIL errors and exceptions at");
+                System.err.println ("*** https://www.web3d.org/specifications/java/X3DJSAIL.html");
+                throw (ex);
+            }
+	}
 	// end of initialize() method
 
 
@@ -190,47 +198,49 @@ public class CADPartChildNoTransformation
     public static void main(String args[])
     {
         X3D thisExampleX3dModel = new CADPartChildNoTransformation().getX3dModel();
+//      System.out.println("X3D model construction complete.");
+	
+        // next handle command line arguments
+        boolean hasArguments = (args != null) && (args.length > 0);
+        boolean validate = true; // default
+        boolean argumentsLoadNewModel = false;
+        String  fileName = new String();
 
-		boolean hasArguments = (args != null) && (args.length > 0);
-		boolean validate = true; // default
-		boolean argumentsLoadNewModel = false;
-		String  fileName = new String();
-
-		if (args != null)
-		{
-			for (String arg : args)
-			{
-				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
-				{
-					validate = true; // making sure
-				}
-				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
-				{
-					argumentsLoadNewModel = true;
-					fileName = arg;
-				}
-			}
-		}
-		if      (argumentsLoadNewModel)
-			System.out.println("WARNING: \"net.x3djsonld.data.CADPartChildNoTransformation\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
-		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dModel.handleArguments(args);
-
-		if (validate)
-		{
-			System.out.print("Java program \"net.x3djsonld.data.CADPartChildNoTransformation\" self-validation test results: ");
-			String validationResults = thisExampleX3dModel.validationReport();
-            if (validationResults.startsWith("\n"))
-                System.out.println();
-			System.out.println(validationResults.trim());
-		}
+        if (args != null)
+        {
+                for (String arg : args)
+                {
+                        if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+                        {
+                                validate = true; // making sure
+                        }
+                        if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
+                        {
+                                argumentsLoadNewModel = true;
+                                fileName = arg;
+                        }
+                }
+        }
+        if      (argumentsLoadNewModel)
+                System.out.println("WARNING: \"net.x3djsonld.data.CADPartChildNoTransformation\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+        else if (hasArguments) // if no arguments provided, this method produces usage warning
+                thisExampleX3dModel.handleArguments(args);
+	
+        if (validate)
+        {
+                System.out.print("Java program \"net.x3djsonld.data.CADPartChildNoTransformation\" self-validation test results: ");
+                String validationResults = thisExampleX3dModel.validationReport();
+                if (validationResults.startsWith("\n") || (validationResults.length() > 10))
+                    System.out.println();
+                System.out.println(validationResults.trim());
+        }
     }
 }

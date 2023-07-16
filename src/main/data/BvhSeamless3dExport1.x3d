@@ -2,7 +2,7 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.1//EN" "https://www.web3d.org/specifications/x3d-3.1.dtd">
 <X3D profile='Immersive' version='3.1' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.1.xsd'>
   <head>
-    <component level='1' name='H-Anim'/>
+    <component level='1' name='HAnim'/>
     <meta content='BvhSeamless3dExport1.x3d' name='title'/>
     <meta content='Seamless3d tool import of bvh file and export of x3d scene. Note use of single skin mesh, animated by unadorned skeleton.' name='description'/>
     <meta content='Don Brutzman' name='translator'/>

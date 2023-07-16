@@ -388,7 +388,7 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform scale="3 3 3" translation="0 0.25 0"><Inline DEF="CoordinateAxes" url="&quot;../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d&quot; &quot;../../Savage/Tools/Authoring/CoordinateAxes.x3d&quot; &quot;http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d&quot; &quot;https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d&quot; &quot;../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl&quot; &quot;../../Savage/Tools/Authoring/CoordinateAxes.wrl&quot; &quot;http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl&quot; &quot;https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl&quot;"></Inline>
+<Transform scale="3 3 3" translation="0 0.25 0"><Inline DEF="CoordinateAxes" url="&quot;../data/CoordinateAxes.x3d&quot; &quot;../../Savage/Tools/Authoring/CoordinateAxes.x3d&quot; &quot;http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d&quot; &quot;https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d&quot; &quot;../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl&quot; &quot;../../Savage/Tools/Authoring/CoordinateAxes.wrl&quot; &quot;http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl&quot; &quot;https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl&quot;"></Inline>
 </Transform>
 <Transform DEF="MovingBoxTransform"><PositionInterpolator DEF="BoxPath" key="0 0.25 0.5 0.75 1" keyValue="-5 1 5 45 1 5 45 1 -45 -5 1 -45 -5 1 5"></PositionInterpolator>
 <TimeSensor DEF="BoxTimer" cycleInterval="10" loop="true"></TimeSensor>

@@ -17,7 +17,7 @@ import org.web3d.x3d.jsail.Text.*;
 import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 
-// Javadoc annotations follow, see below for Java source code.
+// Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
  * <p> Camera, CameraShot and CameraMove examples that demonstrate storyboard capabilities and precise camera operation. This is a developmental effort for potential X3D Specification improvement. </p>
  <p> Related links: <a href="../../../development/CameraExamples.java">CameraExamples.java</a> source, <a href="../../../development/CameraExamplesIndex.html" target="_top">CameraExamples catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
@@ -131,6 +131,7 @@ public class CameraExamples
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
+            try { // catch-all
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
   .setHead(new head()
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("CameraExamples.x3d"))
@@ -549,7 +550,7 @@ public class CameraExamples
           .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-5.25,5.25,0.0,-3.75,5.25,0.0,-2.25,5.25,0.0,-0.75,5.25,0.0,0.75,5.25,0.0,2.25,5.25,0.0,3.75,5.25,0.0,5.25,5.25,0.0,-5.25,3.75,0.0,-3.75,3.75,0.0,-2.25,3.75,0.0,-0.75,3.75,0.0,0.75,3.75,0.0,2.25,3.75,0.0,3.75,3.75,0.0,5.25,3.75,0.0,-5.25,2.25,0.0,-3.75,2.25,0.0,-2.25,2.25,0.0,-0.75,2.25,0.0,0.75,2.25,0.0,2.25,2.25,0.0,3.75,2.25,0.0,5.25,2.25,0.0,-5.25,0.75,0.0,-3.75,0.75,0.0,-2.25,0.75,0.0,-0.75,0.75,0.0,0.75,0.75,0.0,2.25,0.75,0.0,3.75,0.75,0.0,5.25,0.75,0.0,-5.25,-0.75,0.0,-3.75,-0.75,0.0,-2.25,-0.75,0.0,-0.75,-0.75,0.0,0.75,-0.75,0.0,2.25,-0.75,0.0,3.75,-0.75,0.0,5.25,-0.75,0.0,-5.25,-2.25,0.0,-3.75,-2.25,0.0,-2.25,-2.25,0.0,-0.75,-2.25,0.0,0.75,-2.25,0.0,2.25,-2.25,0.0,3.75,-2.25,0.0,5.25,-2.25,0.0,-5.25,-3.75,0.0,-3.75,-3.75,0.0,-2.25,-3.75,0.0,-0.75,-3.75,0.0,0.75,-3.75,0.0,2.25,-3.75,0.0,3.75,-3.75,0.0,5.25,-3.75,0.0,-5.25,-5.25,0.0,-3.75,-5.25,0.0,-2.25,-5.25,0.0,-0.75,-5.25,0.0,0.75,-5.25,0.0,2.25,-5.25,0.0,3.75,-5.25,0.0,5.25,-5.25,0.0})))
           .setColor(new Color().setColor(new MFColor(new double[] {0.435294,0.741176,0.0,0.0,0.560784,0.580392}))))))
     .addChild(new Transform().setScale(3.0,3.0,3.0).setTranslation(0.0,0.25,0.0)
-      .addChild(new Inline("CoordinateAxes").setUrl(new String[] {"../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../Savage/Tools/Authoring/CoordinateAxes.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../Savage/Tools/Authoring/CoordinateAxes.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"})))
+      .addChild(new Inline("CoordinateAxes").setUrl(new String[] {"../data/CoordinateAxes.x3d","../../Savage/Tools/Authoring/CoordinateAxes.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../Savage/Tools/Authoring/CoordinateAxes.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"})))
     .addChild(new Transform("MovingBoxTransform")
       .addChild(new PositionInterpolator("BoxPath").setKey(new double[] {0.0,0.25,0.5,0.75,1.0}).setKeyValue(new MFVec3f(new double[] {-5.0,1.0,5.0,45.0,1.0,5.0,45.0,1.0,-45.0,-5.0,1.0,-45.0,-5.0,1.0,5.0})))
       .addChild(new TimeSensor("BoxTimer").setCycleInterval(10).setLoop(true))
@@ -587,7 +588,14 @@ public class CameraExamples
             .setFontStyle(new FontStyle().setJustify(FontStyle.JUSTIFY_MIDDLE_MIDDLE).setSize(0.5)))
           .setAppearance(new Appearance()
             .setMaterial(new Material().setDiffuseColor(1.0,1.0,0.2)))))));
-    }
+            }
+            catch (Exception ex)
+            {       
+                System.err.println ("*** Further hints on X3DJSAIL errors and exceptions at");
+                System.err.println ("*** https://www.web3d.org/specifications/java/X3DJSAIL.html");
+                throw (ex);
+            }
+	}
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
@@ -617,47 +625,49 @@ public class CameraExamples
     public static void main(String args[])
     {
         X3D thisExampleX3dModel = new CameraExamples().getX3dModel();
+//      System.out.println("X3D model construction complete.");
+	
+        // next handle command line arguments
+        boolean hasArguments = (args != null) && (args.length > 0);
+        boolean validate = true; // default
+        boolean argumentsLoadNewModel = false;
+        String  fileName = new String();
 
-		boolean hasArguments = (args != null) && (args.length > 0);
-		boolean validate = true; // default
-		boolean argumentsLoadNewModel = false;
-		String  fileName = new String();
-
-		if (args != null)
-		{
-			for (String arg : args)
-			{
-				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
-				{
-					validate = true; // making sure
-				}
-				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
-				{
-					argumentsLoadNewModel = true;
-					fileName = arg;
-				}
-			}
-		}
-		if      (argumentsLoadNewModel)
-			System.out.println("WARNING: \"net.x3djsonld.data.CameraExamples\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
-		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dModel.handleArguments(args);
-
-		if (validate)
-		{
-			System.out.print("Java program \"net.x3djsonld.data.CameraExamples\" self-validation test results: ");
-			String validationResults = thisExampleX3dModel.validationReport();
-            if (validationResults.startsWith("\n"))
-                System.out.println();
-			System.out.println(validationResults.trim());
-		}
+        if (args != null)
+        {
+                for (String arg : args)
+                {
+                        if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+                        {
+                                validate = true; // making sure
+                        }
+                        if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
+                        {
+                                argumentsLoadNewModel = true;
+                                fileName = arg;
+                        }
+                }
+        }
+        if      (argumentsLoadNewModel)
+                System.out.println("WARNING: \"net.x3djsonld.data.CameraExamples\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+        else if (hasArguments) // if no arguments provided, this method produces usage warning
+                thisExampleX3dModel.handleArguments(args);
+	
+        if (validate)
+        {
+                System.out.print("Java program \"net.x3djsonld.data.CameraExamples\" self-validation test results: ");
+                String validationResults = thisExampleX3dModel.validationReport();
+                if (validationResults.startsWith("\n") || (validationResults.length() > 10))
+                    System.out.println();
+                System.out.println(validationResults.trim());
+        }
     }
 }

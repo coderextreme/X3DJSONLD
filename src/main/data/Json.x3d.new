@@ -4,7 +4,7 @@
 <component name="Shaders" level="1"></component>
 <component name="CADGeometry" level="2"></component>
 <component name="DIS" level="2"></component>
-<component name="H-Anim" level="1"></component>
+<component name="HAnim" level="1"></component>
 <component name="Grouping" level="1"></component>
 <component name="Layering" level="1"></component>
 <unit name="AngleUnitConversion" category="angle" conversionFactor="1"></unit>

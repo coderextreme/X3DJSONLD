@@ -9,7 +9,7 @@ import org.web3d.x3d.jsail.Networking.*;
 import org.web3d.x3d.jsail.Rendering.*;
 import org.web3d.x3d.jsail.Shape.*;
 
-// Javadoc annotations follow, see below for Java source code.
+// Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
  * <p> Example scene . </p>
  <p> Related links: t1.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
@@ -54,6 +54,7 @@ public class t1
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
+            try { // catch-all
   x3dModel = new X3D().setProfile(X3D.PROFILE_INTERCHANGE).setVersion(X3D.VERSION_3_0)
   .setHead(new head()
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("tovrmlx3d, http://castle-engine.sourceforge.net/view3dscene.php#section_converting"))
@@ -317,7 +318,14 @@ public class t1
           .setMaterial(new Material().setEmissiveColor(1.0,0.0,1.0).setTransparency(0.20000000298023224)))
         .setGeometry(new IndexedLineSet().setCoordIndex(new int[] {0,1,-1,2,3,-1,4,5,-1,6,7,-1,8,9,-1})
           .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {430.0,0.019999999552965164,-335.0,429.89999389648438,0.10000000149011612,-360.29998779296875,442.39999389648438,0.019999999552965164,-314.5,429.89999389648438,0.10000000149011612,-319.60000610351563,457.39999389648438,0.019999999552965164,-262.70001220703125,467.0,0.10000000149011612,-243.89999389648438,458.70001220703125,0.019999999552965164,-262.70001220703125,457.39999389648438,0.10000000149011612,-262.70001220703125,458.70001220703125,0.019999999552965164,-262.70001220703125,467.0,0.10000000149011612,-243.89999389648438})))))));
-    }
+            }
+            catch (Exception ex)
+            {       
+                System.err.println ("*** Further hints on X3DJSAIL errors and exceptions at");
+                System.err.println ("*** https://www.web3d.org/specifications/java/X3DJSAIL.html");
+                throw (ex);
+            }
+	}
 	// end of initialize() method
 
 
@@ -373,47 +381,49 @@ public class t1
     public static void main(String args[])
     {
         X3D thisExampleX3dModel = new t1().getX3dModel();
+//      System.out.println("X3D model construction complete.");
+	
+        // next handle command line arguments
+        boolean hasArguments = (args != null) && (args.length > 0);
+        boolean validate = true; // default
+        boolean argumentsLoadNewModel = false;
+        String  fileName = new String();
 
-		boolean hasArguments = (args != null) && (args.length > 0);
-		boolean validate = true; // default
-		boolean argumentsLoadNewModel = false;
-		String  fileName = new String();
-
-		if (args != null)
-		{
-			for (String arg : args)
-			{
-				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
-				{
-					validate = true; // making sure
-				}
-				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
-				{
-					argumentsLoadNewModel = true;
-					fileName = arg;
-				}
-			}
-		}
-		if      (argumentsLoadNewModel)
-			System.out.println("WARNING: \"net.x3djsonld.data.t1\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
-		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dModel.handleArguments(args);
-
-		if (validate)
-		{
-			System.out.print("Java program \"net.x3djsonld.data.t1\" self-validation test results: ");
-			String validationResults = thisExampleX3dModel.validationReport();
-            if (validationResults.startsWith("\n"))
-                System.out.println();
-			System.out.println(validationResults.trim());
-		}
+        if (args != null)
+        {
+                for (String arg : args)
+                {
+                        if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+                        {
+                                validate = true; // making sure
+                        }
+                        if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
+                        {
+                                argumentsLoadNewModel = true;
+                                fileName = arg;
+                        }
+                }
+        }
+        if      (argumentsLoadNewModel)
+                System.out.println("WARNING: \"net.x3djsonld.data.t1\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+        else if (hasArguments) // if no arguments provided, this method produces usage warning
+                thisExampleX3dModel.handleArguments(args);
+	
+        if (validate)
+        {
+                System.out.print("Java program \"net.x3djsonld.data.t1\" self-validation test results: ");
+                String validationResults = thisExampleX3dModel.validationReport();
+                if (validationResults.startsWith("\n") || (validationResults.length() > 10))
+                    System.out.println();
+                System.out.println(validationResults.trim());
+        }
     }
 }
