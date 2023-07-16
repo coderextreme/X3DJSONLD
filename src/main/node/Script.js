@@ -213,6 +213,8 @@ class Scripts {
 		classes.log("    var SFVec2f = x3dom.fields.SFVec2f;");
 		classes.log("    var SFVec3f = x3dom.fields.SFVec3f;");
 		classes.log("    var SFVec4f = x3dom.fields.SFVec4f;");
+		classes.log("} else {");
+		classes.log("    var SFVec3f = function() { return Array.prototype.slice.call(arguments, 0); };");
 		classes.log("}");
 
 		// ECMA script native

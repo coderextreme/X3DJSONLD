@@ -176,9 +176,13 @@ window.loadX3DJS_X3DOM = function (selector, DOMImplementation, jsobj, path, NS,
 			var xml = X3DJSONLD.serializeDOM(jsobj, child, true);
 			callback(child, xml);
 		} else {
+			// if no X3DOM, try our techniques.
 			var child;
 			var xml;
 			[ child, xml ] = X3DJSONLD.loadJsonIntoDom(DOMImplementation, jsobj, path);
+			if (xml === null) {
+				xml = X3DJSONLD.serializeDOM(jsobj, child, true);
+			}
 			callback(child, xml);
 		}
 	}, function(e) {
@@ -255,8 +259,10 @@ function loadProtoX3D(scripts, selector, json, url) {
 			}
 		    if ($('#scripting').is(':checked')) {
 			try {
-				scripts.loadScripts(json, "#x3domjson", url);
-				scripts.loadScripts(json, "#x3domxml", url);
+				if (typeof x3dom !== 'undefined') {
+					scripts.loadScripts(json, "#x3domjson", url);
+					scripts.loadScripts(json, "#x3domxml", url);
+				}
 			} catch (e) {
 				alert("Problems with loading scripts "+ e);
 				console.error(e);
@@ -266,12 +272,7 @@ function loadProtoX3D(scripts, selector, json, url) {
 		    alert("Unknown error returning no child element!");
 	    }
 	    // do this afterwards to take advantage of prototype expander
-	    try {
-		updateStl(json);
-	    } catch (e) {
-		alert("Problems updating Stl");
-		console.error(e);
-	    }
+	    updateStl(json);
     });
     return json;
 }
@@ -517,17 +518,17 @@ function updateXml(json, path) {
 }
 
 function updateStl(json) {
-	try {
 		if (typeof convertJsonToStl === 'function') {
-			var stl = convertJsonToStl(json);
-			$('#stl').val(stl);
+			try {
+				var stl = convertJsonToStl(json);
+				$('#stl').val(stl);
+			} catch (e) {
+				alert("Problems updating STL from JSON");
+				console.error(e);
+			}
 		} else {
 			console.log("Perhaps you need to include convertJsonToStl.js if you want STL output?");
 		}
-	} catch (e) {
-		console.error(e);
-		alert("Problems converting Json to Stl. See console.")
-	}
 }
 
 
