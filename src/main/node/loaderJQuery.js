@@ -165,7 +165,8 @@ window.loadX3DJS_X3DOM = function (selector, DOMImplementation, jsobj, path, NS,
 			var child = doc.runtime.createX3DFromJS(jsobj, path);
 			var xml = X3DJSONLD.serializeDOM(jsobj, child, true);
 			callback(child, xml);
-		}
+		} else {
+			alert("Cannot find X3DOM document in loadX3DJS_X3DOM()");
 	}, function(e) {
 		console.error(e);
 		callback(null, null);
