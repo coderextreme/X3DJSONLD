@@ -386,7 +386,7 @@ window.replaceX3DJSON = function replaceX3DJSON(selector, json, url, NS, next) {
 	});
 }
 
-window.updateFromJson = function updateFromJson(json, path) {
+window.updateFromJson = async function updateFromJson(json, path) {
 	try {
 		if (typeof json === 'undefined') {
 				json = JSON.parse($("#json").val());
