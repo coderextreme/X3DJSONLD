@@ -53,7 +53,7 @@ public class KoreanCharacterMotionAnnexD01Jin {
         .addMeta(new meta().setName("translator").setContent("Chul Hee Jung and Myeong Won Lee"))
         .addMeta(new meta().setName("created").setContent("31 March 2011"))
         .addMeta(new meta().setName("translated").setContent("1 November 2014"))
-        .addMeta(new meta().setName("modified").setContent("7 January 2023"))
+        .addMeta(new meta().setName("modified").setContent("2 July 2023"))
         .addMeta(new meta().setName("description").setContent("Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model."))
         .addMeta(new meta().setName("reference").setContent("KoreanCharacter00ReadMe.txt"))
         .addMeta(new meta().setName("reference").setContent("KoreanCharacterHumanMotion_Infotech2014_140706.pdf"))
@@ -72,6 +72,7 @@ public class KoreanCharacterMotionAnnexD01Jin {
         .addChild(new Viewpoint().setCenterOfRotation(new float[] {0f,1f,0f}).setDescription("AnnexD01Jin").setPosition(new float[] {0f,1f,3f}))
         .addChild(new HAnimHumanoid().setName("AnnexD01Jin").setDEF("hanim_AnnexD01Jin").setScale(new float[] {0.0225f,0.0225f,0.0225f}).setVersion("2.0")
           .addComments("original HAnimHumanoid info='\"humanoidVersion=2.0\"'")
+          .addComments("expected outputOnly event frameCount='392'")
           .setMetadata(new MetadataSet().setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
             .setMetadata(new MetadataString().setName("humanoidVersion").setValue(new MFString0().getArray())))
           .addSkeleton(new HAnimJoint("hanim_AnnexD01Jin").setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(new float[] {0f,30.53f,-0.7076f}).setUlimit(new MFFloat1().getArray()).setLlimit(new MFFloat2().getArray())
@@ -290,7 +291,7 @@ public class KoreanCharacterMotionAnnexD01Jin {
           .addSegments(new HAnimSegment("hanim_AnnexD01Jin").setUSE("hanim_r_thigh"))
           .addSegments(new HAnimSegment("hanim_AnnexD01Jin").setUSE("hanim_l_upperarm"))
           .addSegments(new HAnimSegment("hanim_AnnexD01Jin").setUSE("hanim_r_upperarm"))
-          .addMotions(new HAnimMotion("hanim_AnnexD01Jin").setName("motion_animation").setDEF("hanim_motion_animation").setChannels(new MFString117().getArray()).setEnabled(false).setTotalFrameCount("392").setJoints(new MFString118().getArray()).setValues(new MFFloat119().getArray().append(new MFFloat120().getArray()).append(new MFFloat121().getArray()).append(new MFFloat122().getArray()).append(new MFFloat123().getArray()).append(new MFFloat124().getArray()).append(new MFFloat125().getArray()).append(new MFFloat126().getArray()).append(new MFFloat127().getArray()).append(new MFFloat128().getArray()).append(new MFFloat129().getArray()).append(new MFFloat130().getArray()).append(new MFFloat131().getArray()).append(new MFFloat132().getArray()).append(new MFFloat133().getArray()).append(new MFFloat134().getArray()).append(new MFFloat135().getArray()).append(new MFFloat136().getArray()).append(new MFFloat137().getArray()).append(new MFFloat138().getArray()).append(new MFFloat139().getArray()).append(new MFFloat140().getArray()).append(new MFFloat141().getArray()).append(new MFFloat142().getArray()).append(new MFFloat143().getArray()).append(new MFFloat144().getArray()).append(new MFFloat145().getArray())))))      ;
+          .addMotions(new HAnimMotion("hanim_AnnexD01Jin").setName("motion_animation").setDEF("hanim_motion_animation").setChannels(new MFString117().getArray()).setEnabled(false).setJoints(new MFString118().getArray()).setValues(new MFFloat119().getArray().append(new MFFloat120().getArray()).append(new MFFloat121().getArray()).append(new MFFloat122().getArray()).append(new MFFloat123().getArray()).append(new MFFloat124().getArray()).append(new MFFloat125().getArray()).append(new MFFloat126().getArray()).append(new MFFloat127().getArray()).append(new MFFloat128().getArray()).append(new MFFloat129().getArray()).append(new MFFloat130().getArray()).append(new MFFloat131().getArray()).append(new MFFloat132().getArray()).append(new MFFloat133().getArray()).append(new MFFloat134().getArray()).append(new MFFloat135().getArray()).append(new MFFloat136().getArray()).append(new MFFloat137().getArray()).append(new MFFloat138().getArray()).append(new MFFloat139().getArray()).append(new MFFloat140().getArray()).append(new MFFloat141().getArray()).append(new MFFloat142().getArray()).append(new MFFloat143().getArray()).append(new MFFloat144().getArray()).append(new MFFloat145().getArray())))))      ;
     return X3D0;
     }
 protected class MFString0 {
