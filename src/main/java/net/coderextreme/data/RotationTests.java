@@ -47,7 +47,7 @@ public class RotationTests {
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
-        .addComponent(new component().setName("H-Anim").setLevel(1))
+        .addComponent(new component().setName("HAnim").setLevel(1))
         .addMeta(new meta().setName("title").setContent("RotationTests.x3d"))
         .addMeta(new meta().setName("description").setContent("BVH file conversion support: test and visualize various rotations in order to properly configure converter from Euler angles to SFRotation values."))
         .addMeta(new meta().setName("creator").setContent("Don Brutzman"))

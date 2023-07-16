@@ -47,13 +47,13 @@ public class JoeSkeletonSkinSiteSaluteWalk {
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
-        .addComponent(new component().setName("H-Anim").setLevel(2))
+        .addComponent(new component().setName("HAnim").setLevel(2))
         .addMeta(new meta().setName("title").setContent("JoeSkeletonSkinSaluteSiteWalk.x3d"))
         .addMeta(new meta().setName("description").setContent("Comprehensive example showing skeleton, skin, sites and interpolator animation together."))
         .addMeta(new meta().setName("creator").setContent("Joe D. Williams"))
         .addMeta(new meta().setName("created").setContent("9 January 2004"))
         .addMeta(new meta().setName("translated").setContent("4 December 2022"))
-        .addMeta(new meta().setName("modified").setContent("27 January 2023"))
+        .addMeta(new meta().setName("modified").setContent("2 July 2023"))
         .addMeta(new meta().setName("warning").setContent("Under development, numerous errors and warnings"))
         .addMeta(new meta().setName("TODO").setContent("This is an HAnimV1 loa model, might need to convert to X3D4 to note loa value"))
         .addMeta(new meta().setName("TODO").setContent("Provide feedback to tovrmlx3d converter"))
@@ -138,7 +138,7 @@ public class JoeSkeletonSkinSiteSaluteWalk {
                   .setTexture(new ImageTexture().setDEF("zBlueSpiralBkg2").setDescription("Blue Spiral Pattern").setUrl(new MFString22().getArray()))
                   .setMaterial(new Material().setDEF("SkinMaterial").setAmbientIntensity(0.6f).setDiffuseColor(new float[] {1f,1f,1f}).setShininess(0.6f).setTransparency(0.2f))))
               .setSkinCoord(new Coordinate().setUSE("TheSkinCoord"))
-              .addSkeleton(new HAnimJoint("Joe_Human").setName("HumanoidRoot").setDEF("Joe_HumanoidRoot").setCenter(new float[] {0f,0.875f,0f}).setUlimit(new MFFloat23().getArray()).setLlimit(new MFFloat24().getArray())
+              .addSkeleton(new HAnimJoint("Joe_Human").setName("humanoid_root").setDEF("Joe_HumanoidRoot").setCenter(new float[] {0f,0.875f,0f}).setUlimit(new MFFloat23().getArray()).setLlimit(new MFFloat24().getArray())
                 .addChild(new HAnimSegment("Joe_HumanoidRoot").setName("sacrum").setDEF("Joe_sacrum")
                   .addChild(new Transform().setTranslation(new float[] {0f,0.875f,0f})
                     .addChild(new Shape().setUSE("jointbox")))
@@ -1516,7 +1516,7 @@ protected class MFColor4 {
 }
 protected class MFString5 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"});
   }
 }
 protected class MFInt326 {
@@ -1601,7 +1601,7 @@ protected class MFColor21 {
 }
 protected class MFString22 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"});
   }
 }
 protected class MFFloat23 {

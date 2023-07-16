@@ -25,7 +25,7 @@ from x3d import *
 newModel=X3D(profile='Immersive',version='3.3',
   head=head(
     children=[
-    component(level=1,name='H-Anim'),
+    component(level=1,name='HAnim'),
     meta(content='RotationTests.x3d',name='title'),
     meta(content='BVH file conversion support: test and visualize various rotations in order to properly configure converter from Euler angles to SFRotation values.',name='description'),
     meta(content='Don Brutzman',name='creator'),

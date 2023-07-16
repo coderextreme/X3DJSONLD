@@ -102,7 +102,7 @@ public class CameraPrototypes {
                 .addConnect(new connect().setNodeField("bindTime").setProtoField("bindTime"))
                 .addConnect(new connect().setNodeField("isBound").setProtoField("isBound"))))
             .addComments("NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation")
-            .addChild(new NavigationInfo().setType(new java.lang.String[] {"EXAMINE","FLY","ANY"}).setDEF("CameraNavInfo")
+            .addChild(new NavigationInfo().setType("\"EXAMINE\" \"FLY\" \"ANY\"").setDEF("CameraNavInfo")
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("set_bind").setProtoField("set_bind"))
                 .addConnect(new connect().setNodeField("headlight").setProtoField("headlight"))

@@ -25,7 +25,7 @@ from x3d import *
 newModel=X3D(profile='Immersive',version='3.3',
   head=head(
     children=[
-    component(level=1,name='H-Anim'),
+    component(level=1,name='HAnim'),
     meta(content='JoeSkinTexcoordDisplacerKick.x3d',name='title'),
     meta(content='Joe No Reservations 20200709 spec root and vc7 hier 20161206 ... 20121221 ... 20040109 x3d/hanim',name='info'),
     meta(content='This Joe model is a V1 LOA3 Humanoid with textured skin composed mainly of V1 Site locations.',name='description'),

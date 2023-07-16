@@ -66,7 +66,7 @@ public class rgb_alpha {
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../../license.html")))
       .setScene(new Scene()
-        .addChild(new NavigationInfo().setType(new java.lang.String[] {"EXAMINE","WALK","FLY","ANY"}))
+        .addChild(new NavigationInfo().setType("\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\""))
         .addChild(new Group()
           .addChild(new Transform().setTranslation(new float[] {6.14221f,0.0694613f,-0.000999451f})
             .addChild(new Shape()

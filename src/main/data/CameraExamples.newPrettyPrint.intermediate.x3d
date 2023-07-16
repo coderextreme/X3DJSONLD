@@ -526,7 +526,7 @@
       </Shape>
     </Transform>
     <Transform scale='3 3 3' translation='0 0.25 0'>
-      <Inline DEF='CoordinateAxes' url='"../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d" "../../Savage/Tools/Authoring/CoordinateAxes.x3d" "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d" "https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d" "../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl" "../../Savage/Tools/Authoring/CoordinateAxes.wrl" "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl" "https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"'/>
+      <Inline DEF='CoordinateAxes' url='"../data/CoordinateAxes.x3d" "../../Savage/Tools/Authoring/CoordinateAxes.x3d" "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d" "https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d" "../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl" "../../Savage/Tools/Authoring/CoordinateAxes.wrl" "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl" "https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"'/>
     </Transform>
     <Transform DEF='MovingBoxTransform'>
       <PositionInterpolator DEF='BoxPath' key='0 0.25 0.5 0.75 1' keyValue='-5 1 5 45 1 5 45 1 -45 -5 1 -45 -5 1 5'/>

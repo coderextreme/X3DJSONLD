@@ -124,7 +124,7 @@ var X3D0 =  new X3D({
               level : new SFInt32(2)})),
           component : new SFNode(
             new component({
-              name : new SFString("H-Anim"),
+              name : new SFString("HAnim"),
               level : new SFInt32(1)})),
           component : new SFNode(
             new component({
@@ -176,7 +176,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("29 April 2023")}),
+              content : new SFString("3 July 2023")}),
 
             new meta({
               name : new SFString("generator"),

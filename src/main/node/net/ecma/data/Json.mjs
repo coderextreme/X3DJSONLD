@@ -117,7 +117,7 @@ var X3D0 =  new X3D({
               level : new SFInt32(2)})),
           component : new SFNode(
             new component({
-              name : new SFString("H-Anim"),
+              name : new SFString("HAnim"),
               level : new SFInt32(1)})),
           component : new SFNode(
             new component({

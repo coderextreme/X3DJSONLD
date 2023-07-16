@@ -57,7 +57,7 @@ var X3D0 =  new X3D({
         new head({
           component : new SFNode(
             new component({
-              name : new SFString("H-Anim"),
+              name : new SFString("HAnim"),
               level : new SFInt32(2)})),
           meta : new MFNode([
             new meta({
@@ -82,7 +82,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("27 January 2023")}),
+              content : new SFString("2 July 2023")}),
 
             new meta({
               name : new SFString("warning"),
@@ -212,7 +212,7 @@ var X3D0 =  new X3D({
               children : new MFNode([
                 new Inline({
                   DEF : new SFString("CoordinateAxes"),
-                  url : new MFString(["../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"])})])}),
+                  url : new MFString(["../data/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"])})])}),
           /*Authoring hint: these axes are aligned within local coordinate system*/
 
             new Group({
@@ -394,7 +394,7 @@ var X3D0 =  new X3D({
                                 new ImageTexture({
                                   DEF : new SFString("zBlueSpiralBkg2"),
                                   description : new SFString("Blue Spiral Pattern"),
-                                  url : new MFString(["zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"])})),
+                                  url : new MFString(["../data/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"])})),
                               material : new SFNode(
                                 new Material({
                                   DEF : new SFString("SkinMaterial"),
@@ -407,7 +407,7 @@ var X3D0 =  new X3D({
                           USE : new SFString("TheSkinCoord")})),
                       joints : new MFNode([
                         new HAnimJoint({
-                          name : new SFString("HumanoidRoot"),
+                          name : new SFString("humanoid_root"),
                           DEF : new SFString("Joe_HumanoidRoot"),
                           center : new SFVec3f([0,0.875,0]),
                           ulimit : new MFFloat([0,0,0]),

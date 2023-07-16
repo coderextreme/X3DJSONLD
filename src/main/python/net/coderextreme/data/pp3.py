@@ -12,7 +12,7 @@ meta(name="modified", content="23 Dec 2022"),
 meta(name="description", content="A process pipeline between three spheres (try typing on spheres and blue"),
 meta(name="identifier", content="https://coderextreme.net/x3d/pp3.x3d"),
 meta(name="generator", content="manual"),
-meta(name="translated", content="02 July 2023"),
+meta(name="translated", content="16 July 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 

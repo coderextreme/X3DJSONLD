@@ -48,7 +48,7 @@ public class BvhSeamless3dExport1 {
 ProtoInstance ProtoInstance0 = null;
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.1")
       .setHead(new head()
-        .addComponent(new component().setName("H-Anim").setLevel(1))
+        .addComponent(new component().setName("HAnim").setLevel(1))
         .addMeta(new meta().setName("title").setContent("BvhSeamless3dExport1.x3d"))
         .addMeta(new meta().setName("description").setContent("Seamless3d tool import of bvh file and export of x3d scene. Note use of single skin mesh, animated by unadorned skeleton."))
         .addMeta(new meta().setName("translator").setContent("Don Brutzman"))
