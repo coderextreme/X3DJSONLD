@@ -152,20 +152,22 @@ class Scripts {
 		}
 		/* event loop */
 		X3DJSON.runRoutes[X3DJSON.runRoutes.length] = function() {
-			try {
-				/* TODO eval is evil */
-				if (typeof loop.text !== 'undefined') {
-					/* console.log(loop.text); */
-					eval(loop.text);
+		    if ($('#scripting').is(':checked')) {
+				try {
+					/* TODO eval is evil */
+					if (typeof loop.text !== 'undefined') {
+						/* console.log(loop.text); */
+						eval(loop.text);
+					}
+					if (typeof x3dom !== 'undefined') {
+						x3dom.reload();  /* This may be necessary */
+					} else {
+						// console.log("Couldn't reload x3dom while running routes.");
+					}
+				} catch (e) {
+					console.log(e);
+					console.error(e);
 				}
-				if (typeof x3dom !== 'undefined') {
-					x3dom.reload();  /* This may be necessary */
-				} else {
-					// console.log("Couldn't reload x3dom while running routes.");
-				}
-			} catch (e) {
-				console.log(e);
-				console.error(e);
 			}
 			__eventTime += 1000 / 60;
 		};
