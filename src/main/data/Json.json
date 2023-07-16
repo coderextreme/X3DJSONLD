@@ -42,7 +42,7 @@
             "@level":2
           },
           {
-            "@name":"H-Anim",
+            "@name":"HAnim",
             "@level":1
           },
           {
@@ -166,7 +166,7 @@
           },
           {
             "@name":"translated",
-            "@content":"02 July 2023"
+            "@content":"16 July 2023"
           },
           {
             "@name":"generator",

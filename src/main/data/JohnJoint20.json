@@ -46,7 +46,7 @@
           },
           {
             "@name":"translated",
-            "@content":"02 July 2023"
+            "@content":"16 July 2023"
           },
           {
             "@name":"generator",
@@ -309,7 +309,7 @@
                             { "ImageTexture":
                               {
                                 "@DEF":"zBlueSpiralBkg2",
-                                "@url":["../resources/images/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"]
+                                "@url":["../resources/images/zBlueSpiralBkg2.gif","../data/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"]
                               }
                             },
                           "-material":

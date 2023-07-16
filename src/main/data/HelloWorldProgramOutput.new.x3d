@@ -9,7 +9,7 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
     <component name='Shaders'/>
     <component level='2' name='CADGeometry'/>
     <component level='2' name='DIS'/>
-    <component name='H-Anim'/>
+    <component name='HAnim'/>
     <component name='Grouping'/>
     <component name='Layering'/>
     <unit category='angle' name='AngleUnitConversion'/>
@@ -21,7 +21,7 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
     <meta content='https://www.web3d.org/specifications/java/X3DJSAIL.html' name='reference'/>
     <meta content='HelloWorldProgramOutput.java' name='generator'/>
     <meta content='6 September 2016' name='created'/>
-    <meta content='29 April 2023' name='modified'/>
+    <meta content='3 July 2023' name='modified'/>
     <meta content='X3D Java Scene Access Interface Library (X3DJSAIL)' name='generator'/>
     <meta content='https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java' name='generator'/>
     <meta content='Netbeans https://www.netbeans.org' name='generator'/>
@@ -35,7 +35,7 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
     <meta content='https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d' name='reference'/>
     <meta content='https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d' name='identifier'/>
     <meta content='../license.html' name='license'/>
-    <meta content='02 July 2023' name='translated'/>
+    <meta content='16 July 2023' name='translated'/>
     <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
     <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
   </head>
