@@ -75,7 +75,7 @@ function loadLocalize(lang) {
 loadLocalize(lang);
 
 function loadXmlBrowsers(xml) {
-	if (typeof xml !== 'undefined') {
+	if (typeof xml !== 'undefined' && xml !== null) {
 		$('#xml').val(xml);
 	}
 	// DISPLAY XML in X3DOM
@@ -182,7 +182,6 @@ window.loadX3DJS_X3DOM = function (selector, DOMImplementation, jsobj, path, NS,
 			callback(child, xml);
 		}
 	}, function(e) {
-		alert("Cannot find X3DOM document in loadX3DJS_X3DOM()");
 		console.error(e);
 		callback(null, null);
 	});
@@ -396,7 +395,7 @@ window.replaceX3DJSON = function replaceX3DJSON(selector, json, url, NS, next) {
 					console.error(e);
 				}
 			} else {
-				alert("Cannot find X3DOM document in replaceX3DJSON()");
+				console.error("Cannot find X3DOM document in replaceX3DJSON()");
 			}
 			// remove all text nodes and CDATA in scripts (keep fields)
 			$(selector+" Script").contents().filter(function () {
