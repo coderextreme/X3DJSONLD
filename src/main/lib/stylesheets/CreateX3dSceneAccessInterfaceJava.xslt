@@ -1360,11 +1360,12 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 					</xsl:message>
 				</xsl:otherwise>
 			</xsl:choose>
-			
-                        <xsl:text disable-output-escaping="yes"><![CDATA[ *
+			<xsl:if test="not($inConcretePackage = 'true') and not(starts-with($name, 'X3DUnifiedObjectModel'))">
+                            <xsl:text disable-output-escaping="yes"><![CDATA[ *
  * <i>Warning:</i> this is an abstract interface that cannot be instantiated as a concrete object.
  * Java programmers typically only need to use concrete objects provided by the <code>org.web3d.x3d.jsail</code> classes.
 ]]></xsl:text>
+                        </xsl:if>
 			<xsl:variable name="isX3dStatement">
 				<xsl:call-template name="isX3dStatement">
 					<xsl:with-param name="name" select="@name"/>
@@ -2141,12 +2142,19 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                     </xsl:choose>
                                     <xsl:text> </xsl:text>
                                     <xsl:value-of select="$normalizedMemberObjectName"/>
-									<xsl:if test="contains($javaType,'ArrayList')">
-										<xsl:text disable-output-escaping="yes"><![CDATA[ = new ArrayList<>()]]></xsl:text>
-									</xsl:if>
-									<xsl:text>;</xsl:text>
-                                    <xsl:text> // </xsl:text>
-                                    <xsl:value-of select="@type"/><!-- X3D field type -->
+                                    <!-- problem prevention: avoid null by including default when needed for this type -->
+                                    <xsl:choose>
+                                        <xsl:when test="contains($javaType,'ArrayList')">
+                                                <xsl:text disable-output-escaping="yes"><![CDATA[ = new ArrayList<>()]]></xsl:text>
+                                        </xsl:when>
+                                        <xsl:when test="(@type = 'SFString')">
+                                                <xsl:text> = new String()</xsl:text>
+                                        </xsl:when>
+                                    </xsl:choose>
+                                    <xsl:text>;</xsl:text>
+                                    <xsl:text> //  X3D field type: </xsl:text>
+                                    <xsl:value-of select="@type"/>
+                                    
                                     <xsl:if test="(string-length(@acceptableNodeTypes) > 1)">
                                         <xsl:text> acceptable node types: </xsl:text>
                                         <xsl:value-of select="@acceptableNodeTypes"/>
@@ -3639,7 +3647,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 										<xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
 										<xsl:text>. </xsl:text>
 										<xsl:text>*/</xsl:text><!-- end javadoc -->
-											<xsl:text>&#10;</xsl:text>
+										<xsl:text>&#10;</xsl:text>
 										<xsl:text>	public static final String fromField_</xsl:text>
 										<xsl:value-of select="upper-case($fieldName)"/>
 										<xsl:text> = "</xsl:text>
@@ -3659,7 +3667,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 										<xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
 										<xsl:text>. </xsl:text>
 										<xsl:text>*/</xsl:text><!-- end javadoc -->
-											<xsl:text>&#10;</xsl:text>
+										<xsl:text>&#10;</xsl:text>
 										<xsl:text>	public static final String toField_</xsl:text>
 										<xsl:value-of select="upper-case($fieldName)"/>
 										<xsl:text> = "</xsl:text>
@@ -6531,10 +6539,15 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	catch (Exception e)
 	{
 		exceptionResult = e.getMessage(); // report exception failures, if any
-	    if (exceptionResult == null)
+	    if (exceptionResult.isBlank())
 	    {
-			exceptionResult = "Exception caught but null message!";
-			e.printStackTrace();
+                exceptionResult = "Exception caught but blank message! \n";
+                // https://stackoverflow.com/questions/1149703/how-can-i-convert-a-stack-trace-to-a-string
+                StringWriter sw = new StringWriter();
+                e.printStackTrace(new PrintWriter(sw));
+                String exceptionAsString = sw.toString();
+                exceptionResult+= exceptionAsString;
+                e.printStackTrace();
 	    }
 	}
 	if  (metaResult.isEmpty() && exceptionResult.isEmpty() && validationResult.isEmpty())
@@ -6546,7 +6559,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		String returnMessage = metaResult;
 		if  (!exceptionResult.isEmpty() && !validationResult.isEmpty())
 			returnMessage += "\n*** ";
-		returnMessage += exceptionResult;
+		returnMessage += "Exception: " + exceptionResult;
 		if  (exceptionResult.isEmpty() && !validationResult.isEmpty())
 			returnMessage = "\n" + returnMessage; // skip line before meta tags, etc.
 		returnMessage += "\n" + validationResult;
@@ -7374,8 +7387,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												 (($thisClassName = 'ProtoInstance') and 
 												  (($CamelCaseName = 'Metadata') or ($CamelCaseName = 'Name') or ($CamelCaseName = 'DEF') or ($CamelCaseName = 'USE') or ($CamelCaseName = 'CssClass')) or
 												 (not($thisClassName = 'X3DNode') and ($CamelCaseName = 'Metadata')))">
-									<!--<xsl:text>	/* @Override */</xsl:text>--><!-- // here1?
-									<xsl:text>&#10;</xsl:text> -->
+									<!--<xsl:text>	/* @Override */</xsl:text>--><!-- // here1? -->
+									<xsl:text>&#10;</xsl:text>
 								</xsl:if>
 								<xsl:text>	public </xsl:text>
 								<xsl:choose>
@@ -8145,6 +8158,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 
 								<xsl:text>&#10;</xsl:text>
 								<xsl:text>	 */</xsl:text><!-- end javadoc -->
+                                                                <xsl:text>&#10;</xsl:text>
 								<xsl:variable name="isSingleValueType">
 									<xsl:value-of select="starts-with(@type,'SF') and not(contains(@type, 'Vec')) and not(contains(@type, 'Rotation')) and not(contains(@type, 'Color')) and not(contains(@type, 'Matrix'))"/>
 								</xsl:variable>
@@ -8186,7 +8200,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                                     <xsl:text>(); // reset newValueNullClearsFieldReturnThis</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 									<xsl:text>			return</xsl:text>
-									<xsl:if test="not(@name = 'children')">
+									<xsl:if test="not(@name = 'children') or ($name = 'ProtoBody')">
 										<xsl:text> this</xsl:text>
 									</xsl:if>
 									<xsl:text>;</xsl:text>
@@ -10910,7 +10924,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:text>	public </xsl:text>
 									<!-- allow method pipelining, if appropropriate -->
 									<xsl:choose>
-										<xsl:when test="($isX3dStatement = 'true')">
+										<xsl:when test="($isX3dStatement = 'true') or ($thisClassName = 'ProtoBody')">
 											<xsl:value-of select="ancestor::*[@name]/@name"/>
 											<xsl:value-of select="$jsaiClassSuffix"/>
 											<!-- singleton, no [] -->
@@ -11000,7 +11014,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												<xsl:text>&#10;</xsl:text>
 											</xsl:if>
 											<xsl:choose>
-												<xsl:when test="($isX3dStatement = 'true')">
+												<xsl:when test="($isX3dStatement = 'true') or ($name = 'ProtoBody')">
 													<xsl:value-of select="$newValueNullClearsFieldReturnThis"/>
 												</xsl:when>
 												<xsl:otherwise>
@@ -11170,7 +11184,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 											<xsl:text>&#10;</xsl:text>
 											<!-- allow method pipelining, if appropropriate -->
 											<xsl:choose>
-												<xsl:when test="($isX3dStatement = 'true')">
+												<xsl:when test="($isX3dStatement = 'true') or ($name = 'ProtoBody')">
 													<xsl:text>		return this;</xsl:text>
 													<xsl:text>&#10;</xsl:text>
 												</xsl:when>
@@ -15343,8 +15357,17 @@ setAttribute method invocations).
 						</xsl:if>
 						<xsl:text>) // MFNode
 		{
-			((X3DConcreteElement) element).validate(); // exercise field checks, MFNode element
-			validationResult.append(((X3DConcreteElement) element).getValidationResult());
+			try {
+                            ((X3DConcreteElement) element).validate(); // exercise field checks, MFNode element
+                            validationResult.append(((X3DConcreteElement) element).getValidationResult());
+                        }
+                        catch (Exception e)
+                        {
+                            String exceptionMessage = "*** exception occurred during validation: " + e.getMessage();
+                            validationResult.append(exceptionMessage);
+                        //  System.err.println(exceptionMessage);
+                            e.printStackTrace();
+                        }
 		}
 		set</xsl:text><xsl:value-of select="$CamelCaseName"/>
 						<xsl:if test="($isFieldX3dStatement = 'true') and (@type='MFNode')">
@@ -15430,83 +15453,83 @@ setAttribute method invocations).
 </xsl:if><!-- no need to test string regex when values are already loaded -->
 									</xsl:otherwise>
 								</xsl:choose>
-								<xsl:choose>
+				<xsl:choose>
                                     <xsl:when test="($name = 'X3D')">
-										<xsl:text>
+					<xsl:text>
         if (!hasHead()) // special warning
-		{
+	{
             validationResult.append(ConfigurationProperties.ERROR_NODE_NOT_FOUND + ": X3D has no head element, and thus has no meta elements and is undescribed" + "\n");
-		}
+	}
         if (!hasScene()) // special warning
-		{
+	{
             validationResult.append(ConfigurationProperties.ERROR_NODE_NOT_FOUND + ": X3D has no Scene element and thus has no model defined" + "\n");
-		}</xsl:text>
+	}</xsl:text>
                                     </xsl:when>
                                     <xsl:when test="($name = 'head')">
-										<xsl:text>
+					<xsl:text>
         if (!hasMeta()) // special warning
-		{
+	{
             validationResult.append(ConfigurationProperties.ERROR_NODE_NOT_FOUND + ": X3D head has no meta elements and thus is undescribed" + "\n");
-		}</xsl:text>
+	}</xsl:text>
                                     </xsl:when>
                                     <xsl:when test="($name = 'Scene')">
-										<xsl:text>
+					<xsl:text>
         if (!hasChildren()) // special warning
-		{
+	{
             validationResult.append(ConfigurationProperties.ERROR_NODE_NOT_FOUND + ": X3D Scene element is empty and thus has no model defined" + "\n");
-		}</xsl:text>
+	}</xsl:text>
                                     </xsl:when>
-								</xsl:choose>
-								<!-- ProtoInstance name checks -->
-								<xsl:if test="($name = 'ProtoInstance') and (@name = 'name')">
-									<xsl:text disable-output-escaping="yes"><![CDATA[
+                                </xsl:choose>
+                                <!-- ProtoInstance name checks -->
+                                <xsl:if test="($name = 'ProtoInstance') and (@name = 'name')">
+                                        <xsl:text disable-output-escaping="yes"><![CDATA[
         if (getName().isEmpty() && !hasUSE())
         {
-			String errorNotice = "ProtoInstance missing name field, which is usually required (since this ProtoInstance is not a USE node).";
-			validationResult.append(errorNotice);
-			throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
+            String errorNotice = "ProtoInstance missing name field, which is usually required (since this ProtoInstance is not a USE node).";
+            validationResult.append(errorNotice);
+            throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
         }
-		if (!getName().isEmpty() && hasUSE())
+	if (!getName().isEmpty() && hasUSE())
         {
-			String errorNotice = "ProtoInstance has name field, which is not included in a ProtoInstance USE node.";
-			validationResult.append(errorNotice);
-			throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
+            String errorNotice = "ProtoInstance has name field, which is not included in a ProtoInstance USE node.";
+            validationResult.append(errorNotice);
+            throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
         }
-		String originalName = getOriginalName(); // call once here, for efficiency and also to allow separate changes
+        String originalName = getOriginalName(); // call once here, for efficiency and also to allow separate changes
 
-		// check for presence of corresponding ProtoDeclare/ExternProtoDeclare having same name, report if missing
-		if (ConfigurationProperties.isDebugModeActive() && hasProtoDeclare())
-		{
-			if  (hasUSE())
-			     validationResult.append("ProtoInstance ").append(originalName).append(" USE='").append(getUSE()).append("' has corresponding ProtoDeclare").append("\n");
-			else validationResult.append("ProtoInstance ").append(getName())   .append(" DEF='").append(getDEF()).append("' has corresponding ProtoDeclare").append("\n");
-		}
-		else if (ConfigurationProperties.isDebugModeActive() && hasExternProtoDeclare())
-		{
-			if  (hasUSE())
-			     validationResult.append("ProtoInstance ").append(originalName).append(" USE='").append(getUSE()).append("' has corresponding ExternProtoDeclare (but node type is unconfirmed)").append("\n");
-			else validationResult.append("ProtoInstance ").append(getName())   .append(" DEF='").append(getDEF()).append("' has corresponding ExternProtoDeclare (but node type is unconfirmed)").append("\n");
-		}
-		else if (hasProtoDeclare() && hasExternProtoDeclare())
-		{
-			String errorNotice = ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE +
-					"ProtoInstance " + getName() + " has both corresponding ProtoDeclare and ExternProtoDeclare";
-			validationResult.append(errorNotice);
-			throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
-        }
-		if (getNodeType().startsWith(ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE))
+        // check for presence of corresponding ProtoDeclare/ExternProtoDeclare having same name, report if missing
+        if (ConfigurationProperties.isDebugModeActive() && hasProtoDeclare())
         {
-			String errorNotice = getNodeType();
-			validationResult.append(errorNotice);
-			throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
+                if  (hasUSE())
+                     validationResult.append("ProtoInstance ").append(originalName).append(" USE='").append(getUSE()).append("' has corresponding ProtoDeclare").append("\n");
+                else validationResult.append("ProtoInstance ").append(getName())   .append(" DEF='").append(getDEF()).append("' has corresponding ProtoDeclare").append("\n");
         }
-		if (getNodeType().startsWith(ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE))
+        else if (ConfigurationProperties.isDebugModeActive() && hasExternProtoDeclare())
         {
-			String errorNotice = getNodeType();
-			validationResult.append(errorNotice);
-			throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
+                if  (hasUSE())
+                     validationResult.append("ProtoInstance ").append(originalName).append(" USE='").append(getUSE()).append("' has corresponding ExternProtoDeclare (but node type is unconfirmed)").append("\n");
+                else validationResult.append("ProtoInstance ").append(getName())   .append(" DEF='").append(getDEF()).append("' has corresponding ExternProtoDeclare (but node type is unconfirmed)").append("\n");
         }
-		// TODO check for legal containerField among allowed getContainerFieldAlternateValues() for given nodeType
+        else if (hasProtoDeclare() && hasExternProtoDeclare())
+        {
+                String errorNotice = ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE +
+                                "ProtoInstance " + getName() + " has both corresponding ProtoDeclare and ExternProtoDeclare";
+                validationResult.append(errorNotice);
+                throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
+        }
+        if (getNodeType().startsWith(ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE))
+        {
+            String errorNotice = getNodeType();
+            validationResult.append(errorNotice);
+            throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
+        }
+        if (getNodeType().startsWith(ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE))
+        {
+            String errorNotice = getNodeType();
+            validationResult.append(errorNotice);
+            throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
+        }
+            // TODO check for legal containerField among allowed getContainerFieldAlternateValues() for given nodeType
 ]]></xsl:text>
                                                                 </xsl:if>
 								<!-- USE child checks -->
@@ -15613,21 +15636,38 @@ setAttribute method invocations).
 									<xsl:text disable-output-escaping="yes"><![CDATA[
         String warningMessage = new String();
         if (getName().contains("\""))
-			warningMessage += "WARNING, avoid quotes in name: <meta name='" + getName() + "' content='" + getContent() + "'/>";
+			warningMessage += "WARNING:avoid quotes in name, <meta name='" + getName() + "' content='" + getContent() + "'/>";
         if (getContent().startsWith("\"") && getContent().endsWith("\""))
-			warningMessage += "WARNING, avoid quoting content value: <meta name='" + getName() + "' content='" + getContent() + "'/>";
+			warningMessage += "WARNING:avoid quoting content value, <meta name='" + getName() + "' content='" + getContent() + "'/>";
 
+        // additional meta validation
+        if (!getName().isBlank() && !getContent().isBlank())
+        {
+            if ((getName().equalsIgnoreCase(meta.NAME_TITLE) || getName().equalsIgnoreCase("filename") || getName().equalsIgnoreCase("name")) &&
+                (SFString.isX3dNodeName(getContent()) || SFString.isX3dNodeName(getContent().substring(0,getContent().lastIndexOf(".")))))
+                            warningMessage += "WARNING:avoid duplicating a built-in X3D node name as model title, <meta name='" + getName() + "' content='" + getContent() + "'/>";
+            if ((getName().equalsIgnoreCase(meta.NAME_TITLE) || getName().equalsIgnoreCase("filename") || getName().equalsIgnoreCase("name")) &&
+                (SFString.isX3dStatementName(getContent()) || SFString.isX3dStatementName(getContent().substring(0,getContent().lastIndexOf(".")))))
+                            warningMessage += "WARNING:avoid duplicating a built-in X3D statement name as model title, <meta name='" + getName() + "' content='" + getContent() + "'/>";
+        }
+                                                                            
 		// TODO consider if ConfigurationProperties for verbose output is appropriate
-		if (getName().equals(NAME_ERROR) ||
-			getName().equals(NAME_HINT) ||
-			getName().equals(NAME_INFO) ||
-			getName().equals(NAME_INFORMATION) ||
-			getName().equals(NAME_WARNING))
+		if      (getName().equals(NAME_ERROR) ||
+                         getName().equals(NAME_HINT) ||
+                         getName().equals(NAME_INFO) ||
+                         getName().equals(NAME_INFORMATION) ||
+                         getName().equals(NAME_WARNING))
 		{
-            // diagnostics handled elsewhere; TODO consider verbose switch
-			// warningMessage += "Model diagnostic: <meta name='" + getName() + "' content='" + getContent() + "'/>";
-			// System.out.println(warningMessage);
+                      // these diagnostics are handled in X3D.java metaResult, TODO consider verbose switch
+                      // warningMessage += "Model diagnostic: <meta name='" + getName() + "' content='" + getContent() + "'/>";
+                      // System.out.println(warningMessage);
 		}
+                else if (!warningMessage.isBlank())
+		{
+                         System.out.println();
+                         System.out.print  (warningMessage);
+		}
+                                                                            
 ]]></xsl:text>
                                 </xsl:when>
 								<xsl:when test="(@name = 'ROUTE')">
@@ -17886,7 +17926,7 @@ method invocations on the same node object).
 /* @Override */
 public org.web3d.x3d.sai.Core.X3DMetadataObject getMetadata()
 {
-return null;
+    return null;
 }
 
 /** DO NOT USE: operation ignored since no such field exists for this element. This method has no effect, a stub method is necessary to implement X3DChildNode interface.
@@ -20485,10 +20525,77 @@ shall not include the underlying field's values at that point in time.
                 if (value.startsWith(".") || value.startsWith("-"))       // NameStartChar restrictions
                     result = false;
 */
-                if (value.equals(meta.NAME_CML_VERSION))
-                     return true; // special case
-		else return result;
+                String prefix = new String(); // "[SFString.meetsX3dInteroperabilityNamingConventions()] "
+                if      (isX3dNodeName(value))
+                {
+                        System.out.println("*** " + prefix + "warning: name='" + value + "' matches an X3D node name, literal name collisions can have unexpected consequences");
+                        return false; // special case
+                }
+                else if (isX3dStatementName(value))
+                {
+                        System.out.println("*** " + prefix + "warning: name='" + value + "' matches an X3D statement name, literal name collisions can have unexpected consequences");
+                        return false; // special case
+                }
+                else if (value.equals(meta.NAME_CML_VERSION))
+                        return true; // special case
+		else    return result;
 	}
+
+        /**
+         * Case-insensitive test whether or not string is a reserved X3D node name.
+         * @param value to check
+         * @return whether value is a reserved X3D node name
+         */
+        public static boolean isX3dNodeName(String value)
+        {
+            boolean isReservedName =]]></xsl:text>
+                <xsl:for-each select="//ConcreteNodes/ConcreteNode">
+                    <xsl:text>
+                        value.equalsIgnoreCase(org.web3d.x3d.jsail.</xsl:text>
+                    <xsl:value-of select="InterfaceDefinition/componentInfo/@name"/>
+                    <xsl:text>.</xsl:text>
+                    <xsl:value-of select="@name"/>
+                    <xsl:text>.NAME)</xsl:text>
+                    <xsl:choose>
+                        <xsl:when test="not(position() = last())">
+                            <xsl:text> ||</xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text>;</xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:for-each>
+		<xsl:text>
+            return isReservedName;
+        }
+        /**
+         * Case-insensitive test whether or not string is a reserved X3D statement name.
+         * @param value to check
+         * @return whether value is a reserved X3D node name
+         */
+        public static boolean isX3dStatementName(String value)
+        {
+            boolean isReservedName =</xsl:text>
+                <xsl:for-each select="//Statements/Statement">
+                    <xsl:text>
+                        value.equalsIgnoreCase(org.web3d.x3d.jsail.</xsl:text>
+                    <xsl:value-of select="InterfaceDefinition/componentInfo/@name"/>
+                    <xsl:text>.</xsl:text>
+                    <xsl:value-of select="@name"/>
+                    <xsl:text>.NAME)</xsl:text>
+                    <xsl:choose>
+                        <xsl:when test="not(position() = last())">
+                            <xsl:text> ||</xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text>;</xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:for-each>
+		<xsl:text>
+            return isReservedName;
+        }
+
 	/**
 	 * Append an additional String to this field.
      * @see String#concat(String)
@@ -20506,7 +20613,7 @@ shall not include the underlying field's values at that point in time.
 	public void prependValue(String newValue)
 	{
 		SFString = newValue + SFString;
-	}]]></xsl:text>
+	}</xsl:text>
 			</xsl:when>
 			<xsl:when test="($fieldName = 'MFString')">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
@@ -35548,7 +35655,7 @@ import org.web3d.x3d.sai.X3DException;
 			X3DConcreteElement concreteElement =  toX3dModelInstance(document);
             if (!concreteElement.getElementName().equals(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.NAME))
             {
-                System.out.println ("*** Warning, loadModelFromFileX3D(\"" + x3dFile.getPath() + "\") has root element=" + concreteElement.getElementName());
+                System.out.println ("*** WARNING:loadModelFromFileX3D(\"" + x3dFile.getPath() + "\") has root element=" + concreteElement.getElementName());
             }
 		}
 		catch (ParserConfigurationException parserConfigurationException)
@@ -40035,7 +40142,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
             <xsl:text>."</xsl:text>
             <xsl:if test="($elementName = 'HAnimHumanoid') and (@name = 'version')">
                 <xsl:text>&#10;</xsl:text>
-                <xsl:text>			 + "\n" + "HAnimHumanoid version='1.0' models might not run correctly in X3D 4.0 and upgrading model to HAnim version='2.0' is advised."</xsl:text>
+                <xsl:text>			 + "\n" + "*** HAnimHumanoid version='1.0' models might not run correctly in X3D 4.0 and upgrading model to HAnim version='2.0' is advised."</xsl:text>
             </xsl:if>
             <xsl:text>;</xsl:text>
             <xsl:if test="($isArrayListType = 'true') and ($comparisonType = 'simple')">
@@ -40120,6 +40227,10 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 				<xsl:text>
             if (!</xsl:text>
                     <xsl:value-of select="$isNewValueEmptyExpression"/>
+                    <xsl:if test="(($elementName = 'HAnimHumanoid') and (@name = 'version'))">
+                        
+                        <xsl:text disable-output-escaping="yes"><![CDATA[ && !newValue.equals("1.0") /* HAnim 1.0 leniency */ ]]></xsl:text>
+                    </xsl:if>
                     <xsl:text>) // @additionalEnumerationValuesAllowed='</xsl:text><xsl:value-of select="@additionalEnumerationValuesAllowed"/><xsl:text>'
             {
                 throw new org.web3d.x3d.sai.InvalidFieldValueException(warningMessage);
@@ -40206,16 +40317,26 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
                     <!-- attribute is not #REQUIRED and so can be empty -->
                     <xsl:text disable-output-escaping="yes"><![CDATA[!newValue.isEmpty() && ]]></xsl:text>
                 </xsl:if>
-                <xsl:if test="($elementName = 'component') and  (@name = 'name')">
-                    <!-- HAnim enumeration is poorly named, deserves specification change -->
-                    <xsl:text disable-output-escaping="yes"><![CDATA[!newValue.equals(NAME_H_ANIM) && ]]></xsl:text>
-                </xsl:if>
+                <xsl:choose>
+                    <xsl:when test="($elementName = 'component') and  (@name = 'name')">
+                        <!-- HAnim enumeration is poorly named, deserves specification change -->
+                        <xsl:text disable-output-escaping="yes"><![CDATA[!newValue.equals(NAME_H_ANIM) && ]]></xsl:text>
+                    </xsl:when>
+                    <xsl:when test="($elementName = 'meta') and  (@name = 'name')">
+                        <!-- DCMI metadata terms include "Sound" https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dcmitype/Sound/ -->
+                        <xsl:text disable-output-escaping="yes"><![CDATA[!newValue.equals(NAME_SOUND) && ]]></xsl:text>
+                    </xsl:when>
+                </xsl:choose>
+                    <xsl:if test="($elementName = 'component') and  (@name = 'name')">
+                        <!-- HAnim enumeration is poorly named, deserves specification change -->
+                        <xsl:text disable-output-escaping="yes"><![CDATA[!newValue.equals(NAME_H_ANIM) && ]]></xsl:text>
+                    </xsl:if>
                 <xsl:text>!org.web3d.x3d.jsail.fields.SFString.meetsX3dInteroperabilityNamingConventions(newValue))</xsl:text>
                 <xsl:text>&#10;</xsl:text>
                 <xsl:text>		{</xsl:text>
                 <xsl:text>&#10;</xsl:text>
                 <xsl:text>			System.out.println</xsl:text>
-                <xsl:text>("</xsl:text>
+                <xsl:text>("*** </xsl:text>
                 <xsl:value-of select="ancestor::*[string-length(@name) > 0]/@name"/>
                 <xsl:text> </xsl:text>
                 <xsl:value-of select="@name"/>

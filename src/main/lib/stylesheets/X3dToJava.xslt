@@ -264,12 +264,20 @@ POSSIBILITY OF SUCH DAMAGE.
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
+            try { // catch-all
 ]]></xsl:text>
 
         <!-- xsl:call-template name="X3dDocument"/ -->
 		<xsl:apply-templates select="*"/>
 		
-		<xsl:text><![CDATA[    }
+		<xsl:text><![CDATA[            }
+            catch (Exception ex)
+            {       
+                System.err.println ("*** Further hints on X3DJSAIL errors and exceptions at");
+                System.err.println ("*** https://www.web3d.org/specifications/java/X3DJSAIL.html");
+                throw (ex);
+            }
+	}
 	// end of initialize() method
 ]]></xsl:text>
 			<!-- debug
@@ -479,7 +487,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		-->
 		
 		<xsl:text><![CDATA[
-// Javadoc annotations follow, see below for Java source code.
+// Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
  * ]]></xsl:text>
 		<xsl:if test="(count(//meta[@name='description']) > 1)">
@@ -1281,6 +1289,12 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:when test="(local-name(..) = 'ParticleSet') and (starts-with($containerField, 'color'))">
 					<!-- ignoring ($containerField = 'watchList') or whatever -->
 					<xsl:text>.addColor(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="((local-name(..) = 'ProtoBody') and starts-with(local-name(), 'Metadata'))">
+                                    <!-- special case, prototype declaration adapting a Metadata* node -->
+					<xsl:text>.setChildren(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
@@ -3433,11 +3447,13 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:variable name="warningMessage">
                               <xsl:text>*** Warning: extra large comment found (</xsl:text>
                               <xsl:value-of select="string-length($inputString)"/>
-                              <xsl:text> characters) starting with '</xsl:text>
+                              <xsl:text> characters)</xsl:text>
+                              <!--
+                              <xsl:text> starting with '</xsl:text>
                                 <xsl:call-template name="escape-quote-characters">
                                     <xsl:with-param name="inputValue">
-                                        <!-- must escape backslashes before quote characters to avoid side effects -->
-                                        <xsl:call-template name="escape-backslash-characters"> <!-- tail recursion -->
+                                        < ! - - must escape backslashes before quote characters to avoid side effects - - >
+                                        <xsl:call-template name="escape-backslash-characters"> < ! - - tail recursion - - >
                                             <xsl:with-param name="inputValue">
                                                 <xsl:value-of select="substring(normalize-space($inputString),0,30)"/>
                                             </xsl:with-param>
@@ -3445,6 +3461,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                     </xsl:with-param>
                                 </xsl:call-template>
                               <xsl:text>'</xsl:text>
+                              -->
                               <!--
                               <xsl:text>' split into blocks of </xsl:text>
                               <xsl:value-of select="$maxCommentLength"/>
@@ -4395,6 +4412,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					($parentElementName='PlaneSensor' and $attributeName='offset') or
 					($parentElementName='PlaneSensor' and $attributeName='offset') or
 					($parentElementName='PointProperties' and ($attributeName='attenuation')) or
+					($parentElementName='PositionChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
 					($parentElementName='PositionDamper' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
 					($parentElementName='ProximitySensor' and ($attributeName='center' or $attributeName='size')) or
 					($parentElementName='PointLight' and ($attributeName='attenuation' or $attributeName='location')) or
