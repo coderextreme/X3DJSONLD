@@ -15,7 +15,7 @@ meta(name="subject", content="Universal Media Material Library"),
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoExamples.x3d"),
 meta(name="generator", content="Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="02 July 2023"),
+meta(name="translated", content="16 July 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 

@@ -4,7 +4,7 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[component(name="H-Anim", level=1),
+head=head(children=[component(name="HAnim", level=1),
 meta(name="title", content="RotationTests.x3d"),
 meta(name="description", content="BVH file conversion support: test and visualize various rotations in order to properly configure converter from Euler angles to SFRotation values."),
 meta(name="creator", content="Don Brutzman"),
@@ -19,7 +19,7 @@ meta(name="generator", content="Java BVH to X3D Converter, org.web3d.x3d.hanim.b
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/MotionAnimation/RotationTests.x3d"),
 meta(name="license", content="license.html"),
-meta(name="translated", content="02 July 2023"),
+meta(name="translated", content="16 July 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 

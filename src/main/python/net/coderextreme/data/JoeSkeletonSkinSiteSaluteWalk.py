@@ -4,13 +4,13 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="4.0", 
-head=head(children=[component(name="H-Anim", level=2),
+head=head(children=[component(name="HAnim", level=2),
 meta(name="title", content="JoeSkeletonSkinSaluteSiteWalk.x3d"),
 meta(name="description", content="Comprehensive example showing skeleton, skin, sites and interpolator animation together."),
 meta(name="creator", content="Joe D. Williams"),
 meta(name="created", content="9 January 2004"),
 meta(name="translated", content="4 December 2022"),
-meta(name="modified", content="27 January 2023"),
+meta(name="modified", content="2 July 2023"),
 meta(name="warning", content="Under development, numerous errors and warnings"),
 meta(name="TODO", content="This is an HAnimV1 loa model, might need to convert to X3D4 to note loa value"),
 meta(name="TODO", content="Provide feedback to tovrmlx3d converter"),
@@ -37,7 +37,7 @@ meta(name="translator", content="Joe D. Williams"),
 meta(name="generator", content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"),
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSkinSaluteSiteWalk.x3d"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="02 July 2023"),
+meta(name="translated", content="16 July 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -47,7 +47,7 @@ WorldInfo(info=["By Joe for Joe"], title="HAnim V1 LOA3 Skeleton Joint centers A
 NavigationInfo(DEF="HeadlightOnRevealsSkinTextureAndColors"),
 Background(groundAngle=[float(1.57)], groundColor=[(0,0.1,0),(0,0.1,0)], skyColor=[(0,0,0.1)]),
 Transform(DEF="cordsysfloor", scale=((0.175,0.175,0.175)), children=[
-Inline(DEF="CoordinateAxes", url=["../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"])]),
+Inline(DEF="CoordinateAxes", url=["../data/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"])]),
 Comment(value=''' Authoring hint: these axes are aligned within local coordinate system '''),
 
 Group(DEF="ViewpointGroup", children=[
@@ -116,12 +116,12 @@ Color(color=[(1,0,0),(0,1,1),(0,1,0),(1,1,0),(1,1,0),(1,0,0),(0,1,0),(0,0,1),(0,
 appearance=
 Appearance(DEF="SkinAppearance", 
 texture=
-ImageTexture(DEF="zBlueSpiralBkg2", description="Blue Spiral Pattern", url=["zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"]), 
+ImageTexture(DEF="zBlueSpiralBkg2", description="Blue Spiral Pattern", url=["../data/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"]), 
 material=
 Material(DEF="SkinMaterial", ambientIntensity=0.6, diffuseColor=((1,1,1)), shininess=0.6, transparency=0.2)))], 
 skinCoord=(
 Coordinate(USE="TheSkinCoord")), skeleton=[
-HAnimJoint(name="HumanoidRoot", DEF="Joe_HumanoidRoot", center=((0,0.875,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimJoint(name="humanoid_root", DEF="Joe_HumanoidRoot", center=((0,0.875,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="sacrum", DEF="Joe_sacrum", children=[
 Transform(translation=((0,0.875,0)), children=[
 Shape(USE="jointbox")]),

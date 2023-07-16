@@ -63,7 +63,7 @@ public class ball {
         .addMeta(new meta().setName("description").setContent("a prismatic sphere")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("ball.x3d"))
-        .addChild(new NavigationInfo().setType(new java.lang.String[] {"ANY","EXAMINE","FLY","LOOKAT"}))
+        .addChild(new NavigationInfo().setType("\"ANY\" \"EXAMINE\" \"FLY\" \"LOOKAT\""))
         .addChild(new Viewpoint().setDescription("Tour Views"))
         .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
         .addChild(new Transform()

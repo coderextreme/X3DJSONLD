@@ -25,7 +25,7 @@ from x3d import *
 newModel=X3D(profile='Immersive',version='3.3',
   head=head(
     children=[
-    component(level=1,name='H-Anim'),
+    component(level=1,name='HAnim'),
     meta(content='HAnimBehaviorPrototypes.x3d',name='title'),
     meta(content='Prototypes for HAnimBehavior node, which collects OrientationInterpolators for aggregate animation of an HAnim humanoid model, and HAnimBodyBehaviorChooser, which selects one body and enables/disables multiple aggregated behaviors.',name='description'),
     meta(content='Don Brutzman, Jeff Weekley, MV4205 Advanced X3D Authoring class, and Keith Victor',name='creator'),

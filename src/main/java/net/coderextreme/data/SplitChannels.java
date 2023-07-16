@@ -61,7 +61,7 @@ public class SplitChannels {
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("SplitChannels.x3d"))
-        .addChild(new NavigationInfo().setType(new java.lang.String[] {"ON"}))
+        .addChild(new NavigationInfo().setType("NONE"))
         .addChild(new Background().setSkyColor(new MFColor0().getArray()))
         .addChild(new Viewpoint().setOrientation(new float[] {1f,0f,0f,-0.5f}).setPosition(new float[] {0f,500f,600f}).setRetainUserOffsets(true))
         .addChild(new Transform().setDEF("PowerR").setTranslation(new float[] {100f,400f,400f})

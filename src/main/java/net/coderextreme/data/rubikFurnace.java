@@ -63,7 +63,7 @@ ProtoInstance ProtoInstance9 = null;
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/rubikFurnace.x3d"))
         .addMeta(new meta().setName("description").setContent("a green rubik cube")))
       .setScene(new Scene()
-        .addChild(new NavigationInfo().setType(new java.lang.String[] {"EXAMINE"}))
+        .addChild(new NavigationInfo().setType("\"EXAMINE\""))
         .addChild(new Viewpoint().setDescription("Rubiks Cube on Fire").setPosition(new float[] {0f,0f,12f}))
         .addChild(new ProtoDeclare().setName("anyShape")
           .setProtoInterface(new ProtoInterface()

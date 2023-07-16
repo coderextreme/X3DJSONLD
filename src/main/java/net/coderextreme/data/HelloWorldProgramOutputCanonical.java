@@ -87,7 +87,7 @@ ProtoInstance ProtoInstance6 = null;
         .addChild(new ViewpointGroup().setDescription("Available viewpoints")
           .addChild(new Viewpoint().setDEF("DefaultView").setDescription("Hello X3DJSAIL"))
           .addChild(new Viewpoint().setDEF("TopDownView").setDescription("top-down view from above").setOrientation(new float[] {1f,0f,0f,-1.570796f}).setPosition(new float[] {0f,100f,0f})))
-        .addChild(new NavigationInfo().setType(new java.lang.String[] {"EXAMINE","FLY","ANY"}))
+        .addChild(new NavigationInfo().setType("\"EXAMINE\" \"FLY\" \"ANY\""))
         .addChild(new WorldInfo().setDEF("WorldInfoDEF").setTitle("HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)"))
         .addChild(new WorldInfo().setUSE("WorldInfoDEF"))
         .addChild(new WorldInfo().setUSE("WorldInfoDEF"))

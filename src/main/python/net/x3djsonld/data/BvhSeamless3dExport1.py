@@ -25,7 +25,7 @@ from x3d import *
 newModel=X3D(profile='Immersive',version='3.1',
   head=head(
     children=[
-    component(level=1,name='H-Anim'),
+    component(level=1,name='HAnim'),
     meta(content='BvhSeamless3dExport1.x3d',name='title'),
     meta(content='Seamless3d tool import of bvh file and export of x3d scene. Note use of single skin mesh, animated by unadorned skeleton.',name='description'),
     meta(content='Don Brutzman',name='translator'),

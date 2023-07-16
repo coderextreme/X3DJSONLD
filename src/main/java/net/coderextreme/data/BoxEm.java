@@ -57,7 +57,7 @@ ProtoInstance ProtoInstance3 = null;
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/box.x3d"))
         .addMeta(new meta().setName("description").setContent("3 boxes")))
       .setScene(new Scene()
-        .addChild(new NavigationInfo().setType(new java.lang.String[] {"EXAMINE"}))
+        .addChild(new NavigationInfo().setType("\"EXAMINE\""))
         .addChild(new Viewpoint().setDescription("Cubes on Fire").setPosition(new float[] {0f,0f,12f}))
         .addChild(new ProtoDeclare().setName("anyShape")
           .setProtoInterface(new ProtoInterface()

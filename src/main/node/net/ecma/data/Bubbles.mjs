@@ -1,30 +1,34 @@
 'use strict';
-import { X3D } from './x3d.mjs';
-import fs from 'fs';
-import { SFString } from './x3d.mjs';
-import { SFNode } from './x3d.mjs';
-import { head } from './x3d.mjs';
-import { MFNode } from './x3d.mjs';
-import { meta } from './x3d.mjs';
-import { Scene } from './x3d.mjs';
-import { WorldInfo } from './x3d.mjs';
-import { Transform } from './x3d.mjs';
-import { Group } from './x3d.mjs';
-import { TimeSensor } from './x3d.mjs';
-import { SFTime } from './x3d.mjs';
-import { SFBool } from './x3d.mjs';
-import { PositionInterpolator } from './x3d.mjs';
-import { MFFloat } from './x3d.mjs';
-import { MFVec3f } from './x3d.mjs';
-import { Shape } from './x3d.mjs';
-import { Appearance } from './x3d.mjs';
-import { Material } from './x3d.mjs';
-import { SFColor } from './x3d.mjs';
-import { SFFloat } from './x3d.mjs';
-import { Sphere } from './x3d.mjs';
-import { ROUTE } from './x3d.mjs';
-import { Background } from './x3d.mjs';
-import { MFColor } from './x3d.mjs';
+var X3D = require('./x3d.mjs');
+try {
+	var fs = require('fs');
+} catch (e) {
+console.log("Problems loading fs. On browser?",e);
+}
+var SFString = require('./x3d.mjs');
+var SFNode = require('./x3d.mjs');
+var head = require('./x3d.mjs');
+var MFNode = require('./x3d.mjs');
+var meta = require('./x3d.mjs');
+var Scene = require('./x3d.mjs');
+var WorldInfo = require('./x3d.mjs');
+var Transform = require('./x3d.mjs');
+var Group = require('./x3d.mjs');
+var TimeSensor = require('./x3d.mjs');
+var SFTime = require('./x3d.mjs');
+var SFBool = require('./x3d.mjs');
+var PositionInterpolator = require('./x3d.mjs');
+var MFFloat = require('./x3d.mjs');
+var MFVec3f = require('./x3d.mjs');
+var Shape = require('./x3d.mjs');
+var Appearance = require('./x3d.mjs');
+var Material = require('./x3d.mjs');
+var SFColor = require('./x3d.mjs');
+var SFFloat = require('./x3d.mjs');
+var Sphere = require('./x3d.mjs');
+var ROUTE = require('./x3d.mjs');
+var Background = require('./x3d.mjs');
+var MFColor = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Interchange"),
