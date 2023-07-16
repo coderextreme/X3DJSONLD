@@ -167,6 +167,7 @@ window.loadX3DJS_X3DOM = function (selector, DOMImplementation, jsobj, path, NS,
 			callback(child, xml);
 		} else {
 			alert("Cannot find X3DOM document in loadX3DJS_X3DOM()");
+		}
 	}, function(e) {
 		console.error(e);
 		callback(null, null);
