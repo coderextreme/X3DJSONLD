@@ -52,7 +52,7 @@ doValidate : function(json, validated_version, file, success, failure, e) {
 				var selectedObject = X3DJSONLD.selectObjectFromJSObj(json, instancePath);
 				error += " value: " + JSON.stringify(selectedObject,
 					function(k, v) {
-					    var v2 = JSON.parse(JSON.stringify(v));
+					    var v2 = structuredClone(v);
 					    if (typeof v2 === 'object') {
 						    for (var o in v2) {
 							if (typeof v2[o] === 'object') {
