@@ -478,6 +478,7 @@ function loadImage(url) {
 */
 	}
 }
+/*
 window.loadJson = function loadJson(url) {
 	$.getJSON(url, function(json) {
 		updateFromJson(json, url);
@@ -485,6 +486,7 @@ window.loadJson = function loadJson(url) {
 	})
 	.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
 }
+*/
 
 function updateXml(json, path) {
 	//  This step is an important validation step.
