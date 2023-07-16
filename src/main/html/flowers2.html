@@ -100,7 +100,7 @@ function getJSON(url) {
 
 	function load_X3DOM(selector, url) {
 		getJSON(url).then(function(json) {
-			json = protoExpander.prototypeExpander(url, json, "");
+			json = new PROTOS().prototypeExpander(url, json, "");
 		        window.replaceX3DJSON(selector, json, url, "", function(element) {
 				if ($('#scripting').is(':checked')) {
 					scripts.loadScripts(json, selector, url);

@@ -171,7 +171,7 @@ Use Namespace: <select id="namespace">
 		var selector = "#x_itedom";
 		var NS;
 		if ($('#prototype').is(':checked')) {
-			test_json = protoExpander.prototypeExpander(url, test_json, "");
+			test_json = new PROTOS().prototypeExpander(url, test_json, "");
 			$('textarea#json').val(JSON.stringify(test_json, null, 2));
 		}
 		window.loadX3DJS_X_ITE(selector, document.implementation, test_json, url, "", X3DJSONLD, function(json_element) {
