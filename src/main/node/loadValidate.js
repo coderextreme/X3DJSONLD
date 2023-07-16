@@ -110,9 +110,13 @@ function addSchema(ajv, schemajson, version) {
 }
 
 async function loadSchemaJson(version) {
-  const response = await fetch("../schema/x3d-"+version+"-JSONSchema.json");
-  const jsonData = await response.json();
-  return jsonData;
+  try {
+	  const response = await fetch("../schema/x3d-"+version+"-JSONSchema.json");
+	  const jsonData = await response.json();
+	  return jsonData;
+  } catch (e) {
+	  alert("Failed to load schema"+e);
+  }
 }
 
 loadSchema = async function loadSchema(json, file, success, failure) {
