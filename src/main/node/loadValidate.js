@@ -87,6 +87,7 @@ doValidate = function doValidate(json, validated_version, file, success, failure
 		retval = (valid || confirm(error));
 	}
 	if (retval && typeof success == 'function') {
+		console.log("Success validating", file);
 		success();
 	} else if (typeof failure === 'function') {
 		failure(e);
