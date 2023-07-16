@@ -588,8 +588,12 @@ ConvertToX3DOM : function(xmlDoc, object, parentkey, element, path, containerFie
  * returns child element, xml document, xml string.
  */
 loadJsonIntoXml: function(DOMImplementation, jsobj, path) {
-	var child  = X3DJSONLD.loadJsonIntoDom(DOMImplementation, jsobj, path);
-	var xml = X3DJSONLD.serializeDOM(jsobj, child, true);
+	var child;
+	var xml;
+	[ child, xml ]  = X3DJSONLD.loadJsonIntoDom(DOMImplementation, jsobj, path);
+	if (!xml) {
+		xml = X3DJSONLD.serializeDOM(jsobj, child, true);
+	}
 	return [ child, xml ];
 },
 
@@ -606,7 +610,7 @@ loadJsonIntoDom: function(DOMImplementation, jsobj, path) {
 	var child = X3DJSONLD.CreateElement(xmlDoc, 'X3D', X3DJSONLD.x3djsonNS);
 	child.setAttribute("xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
 	X3DJSONLD.ConvertToX3DOM(xmlDoc, jsobj, "", child, path);
-	return child;
+	return [ child, null ]; // TODO null until we can refactor
 },
 
 prepareDocument: function(DOMImplementation, jsobj) {

@@ -93,7 +93,11 @@ function loadXmlBrowsers(xml) {
 		// put everthing inside Scene into the browser's Scene's innerHTML
 		// Do this inner HTML so we can sneak script tag past JQuery (BAD BAD TODO)
 		$('#x3domxml').get()[0].innerHTML = xml.replace(/((?!<X3D).)*<X3D(.|\n)*<Scene[^>]*>((.|\n)*)<\/Scene>(.|\n)*/, '$3');
-		x3dom.reload();
+		if (typeof x3dom !== 'undefined') {
+			x3dom.reload();
+		} else {
+			console.error("Couldn't reload x3dom");
+		}
 	}
 }
 
@@ -125,6 +129,8 @@ async function load_X_ITE_XML(content, selector) {
 	if (typeof browser !== 'undefined' && typeof browser.createX3DFromString !== 'undefined') {
 		var importedScene = await browser.createX3DFromString(content);
 		await browser.replaceWorld(importedScene);
+	} else {
+		alert("X_ITE could not replaceWorld in load_X_ITE_XML()");
 	}
 }
 
@@ -134,6 +140,8 @@ window.load_X_ITE_DOM = async function load_X_ITE_DOM(element, selector) {
 	if (typeof browser !== 'undefined' && typeof browser.importDocument !== 'undefined') {
 		var importedScene = await browser.importDocument(element);
 		await browser.replaceWorld(importedScene);
+	} else {
+		alert("X_ITE could not replaceWorld in load_X_ITE_DOM()");
 	}
 }
 
@@ -143,6 +151,8 @@ window.load_X_ITE_JS = async function load_X_ITE_JS(jsobj, selector) {
 	if (typeof browser !== 'undefined' && typeof browser.importJS !== 'undefined') {
 		var importedScene = await browser.importJS(jsobj);
 		await browser.replaceWorld(importedScene);
+	} else {
+		alert("X_ITE could not replaceWorld in load_X_ITE_JS()");
 	}
 }
 
@@ -166,9 +176,13 @@ window.loadX3DJS_X3DOM = function (selector, DOMImplementation, jsobj, path, NS,
 			var xml = X3DJSONLD.serializeDOM(jsobj, child, true);
 			callback(child, xml);
 		} else {
-			alert("Cannot find X3DOM document in loadX3DJS_X3DOM()");
+			var child;
+			var xml;
+			[ child, xml ] = X3DJSONLD.loadJsonIntoDom(DOMImplementation, jsobj, path);
+			callback(child, xml);
 		}
 	}, function(e) {
+		alert("Cannot find X3DOM document in loadX3DJS_X3DOM()");
 		console.error(e);
 		callback(null, null);
 	});
@@ -185,7 +199,11 @@ window.loadX3DJS_X_ITE = function loadX3DJS_X_ITE(selector, DOMImplementation, j
 						var xml = X3DJSONLD.serializeDOM(jsobj, child.dom, true);
 						callback(child.dom, xml);
 					});
+				} else {
+					alert("X_ITE could not importJS loadX3DJS_X_ITE()");
 				}
+			} else {
+				alert("X_ITE could not replaceWorld in loadX3DJS_X_ITE()");
 			}
 		}, function() {
 			alert("Failed to render JSON to X_ITE");
@@ -377,13 +395,15 @@ window.replaceX3DJSON = function replaceX3DJSON(selector, json, url, NS, next) {
 					alert(e);
 					console.error(e);
 				}
+			} else {
+				alert("Cannot find X3DOM document in replaceX3DJSON()");
 			}
 			// remove all text nodes and CDATA in scripts (keep fields)
 			$(selector+" Script").contents().filter(function () {
 			     return this.nodeType === 3 || this.nodeType === 4;
 			}).remove();
-			next(element, xml);
 		}
+		next(element, xml);
 	});
 }
 
