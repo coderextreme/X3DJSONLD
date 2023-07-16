@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
-<html>
   <head>
    <meta charset="utf-8"/>
-   <!--
     <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
     <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.debug.js"></script>
-    -->
-<script type="text/javascript" src="https://create3000.github.io/code/x_ite/latest/dist/x_ite.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://create3000.github.io/code/x_ite/latest/dist/x_ite.css"/>
+    <script type="text/javascript" src="https://create3000.github.io/code/x_ite/latest/dist/x_ite.min.js"></script>
    <style>
 X3D {
-   width: 300px;
-   height:150px;
+   width: 200px;
+   height:100px;
+}
+
+x3d-canvas {
+   width: 200px;
+   height:100px;
 }
 
 body {
@@ -21,25 +24,59 @@ body {
    </style>
    </head>
   <body>
-	<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showStat='false' showLog='false' width='300px' height='150px' backend='webgl'>
+	  <span>
+		  <!--
+	<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showStat='false' showLog='false' width='200px' height='100px' backend='webgl'>
 		<Scene>
-			<Inline url='"../data/JoeKick.json"'></Inline>
+			<Inline url='"../data/JoeLevel2LOA3SSPYRWRJKHud.x3dv"'></Inline>
 		</Scene>
     	</X3D>
-	<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showStat='false' showLog='false' width='300px' height='150px' backend='webgl'>
+		-->
+	<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showStat='false' showLog='false' width='200px' height='100px' backend='webgl'>
 		<Scene>
-			<Inline url='"../data/JoeSkeletonSkinSiteSaluteWalk.json"'></Inline>
+			<Inline url='"../data/JoeLevel2LOA3SSPYRWRJKHud.Holger.x3d"'></Inline>
 		</Scene>
     	</X3D>
-    <x3d-canvas cache='false' url='"../data/JoeKick.json"'>
-           <p>Your browser may not support all features required by X_ITE!</p>
+		  <!--
+	<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showStat='false' showLog='false' width='200px' height='100px' backend='webgl'>
+		<Scene>
+			<Inline url='"../data/JoeKick.x3d"'></Inline>
+		</Scene>
+    	</X3D>
+	<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showStat='false' showLog='false' width='200px' height='100px' backend='webgl'>
+		<Scene>
+			<Inline url='"../data/JoeSkeletonSkinSiteSaluteWalk.x3d"'></Inline>
+		</Scene>
+    	</X3D>
+		-->
+	  </span>
+<hr></hr>
+    <x3d-canvas cache='false' url='"../data/JoeLevel2LOA3SSPYRWRJKHud.Michalis.x3dv"'>
 	   <Scene>
 	   </Scene>
     </x3d-canvas>
-    <x3d-canvas cache='false' url='"../data/JoeSkeletonSkinSiteSaluteWalk.json"'>
-           <p>Your browser may not support all features required by X_ITE!</p>
+    <x3d-canvas cache='false' url='"../data/JoeLevel2LOA3SSPYRWRJKHud.Holger.x3d"'>
 	   <Scene>
 	   </Scene>
     </x3d-canvas>
+    <x3d-canvas cache='false' url='"../data/JoeLevel2LOA3SSPYRWRJKHud.x3dv"'>
+	   <Scene>
+	   </Scene>
+    </x3d-canvas>
+		  <!--
+    <x3d-canvas cache='false' url='"../data/JoeKick.x3d"'>
+	   <Scene>
+	   </Scene>
+    </x3d-canvas>
+    <x3d-canvas cache='false' url='"../data/JoeSkeletonSkinSiteSaluteWalk.x3d"'>
+	   <Scene>
+	   </Scene>
+    </x3d-canvas>
+    <x3d-canvas cache='false' src='../data/JoeSkeletonSkinSiteSaluteWalk.x3dv'>
+	   <Scene>
+			<Inline url='"../data/JoeSkeletonSkinSiteSaluteWalk.x3dv"'></Inline>
+	   </Scene>
+    </x3d-canvas>
+		-->
   </body>
 </html>
