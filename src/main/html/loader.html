@@ -232,7 +232,7 @@ function loadProtoX3D(scripts, selector, json, url) {
     if ($('#prototype').is(':checked')) {
 	// Expand Protos
 	try {
-		json = protoExpander.prototypeExpander(url, json, "");
+		json = new PROTOS().prototypeExpander(url, json, "");
 	} catch (e) {
 		alert("Problems with Proto Expander "+ e);
 		console.error(e);

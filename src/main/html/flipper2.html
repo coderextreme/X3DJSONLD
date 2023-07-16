@@ -128,7 +128,7 @@ function getJSON(url) {
 			window.loadX3D('#x3domjson', json, url);
 			var suburl = '../data/abox.json';
 			getJSON(suburl).then(function(subjson) {
-                                subjson = protoExpander.prototypeExpander(suburl, subjson, "");
+                                subjson = new PROTOS().prototypeExpander(suburl, subjson, "");
 
 				for (var c in subjson["X3D"]["Scene"]["-children"]) {
 					json["X3D"]["Scene"]["-children"].push(subjson["X3D"]["Scene"]["-children"][c])
