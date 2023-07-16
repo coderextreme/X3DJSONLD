@@ -374,6 +374,7 @@ JavaSerializer.prototype = {
 					if (attr === "USE") {
 						USE = attrs[a].nodeValue;
 					}
+					console.log("DEF/USE", DEF, USE);
 					var method = attr;
 					// look at object model
 					var attrType = "SFString";
@@ -537,8 +538,10 @@ JavaSerializer.prototype = {
 
 				var DEFpar = "";
 				// only use a DEF constructor parameter when USE is not present and DEF is present
-				if (node.nodeName.startsWith("HAnim") && typeof USE === 'undefined' && typeof DEF !== 'undefined') {
-					DEFpar = '"'+DEF+'"';
+				if (node.nodeName.startsWith("HAnim")) {
+					if (typeof USE === 'undefined' && typeof DEF !== 'undefined') {
+						DEFpar = '"'+DEF+'"';
+					}
 				}
 				ch += "new "+node.nodeName+'('+DEFpar+')';
 				ch += this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
