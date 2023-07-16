@@ -8,7 +8,7 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
     <component level='2' name='Networking'/>
     <meta content='view3dscene, https://castle-engine.io/view3dscene.php' name='generator'/>
     <meta content='t1.wrl' name='source'/>
-    <meta content='02 July 2023' name='translated'/>
+    <meta content='16 July 2023' name='translated'/>
     <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
     <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
   </head>

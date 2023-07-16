@@ -7,7 +7,7 @@
     "head": {
         "component": [
           {
-            "@name":"H-Anim",
+            "@name":"HAnim",
             "@level":2
           }
         ],
@@ -34,7 +34,7 @@
           },
           {
             "@name":"modified",
-            "@content":"27 January 2023"
+            "@content":"2 July 2023"
           },
           {
             "@name":"warning",
@@ -142,7 +142,7 @@
           },
           {
             "@name":"translated",
-            "@content":"02 July 2023"
+            "@content":"16 July 2023"
           },
           {
             "@name":"generator",
@@ -188,7 +188,7 @@
                 { "Inline":
                   {
                     "@DEF":"CoordinateAxes",
-                    "@url":["../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"]
+                    "@url":["../data/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"]
                   }
                 }
               ]
@@ -499,7 +499,7 @@
                                           {
                                             "@DEF":"zBlueSpiralBkg2",
                                             "@description":"Blue Spiral Pattern",
-                                            "@url":["zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"]
+                                            "@url":["../data/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"]
                                           }
                                         },
                                       "-material":
@@ -526,7 +526,7 @@
                           "-skeleton":[
                             { "HAnimJoint":
                               {
-                                "@name":"HumanoidRoot",
+                                "@name":"humanoid_root",
                                 "@DEF":"Joe_HumanoidRoot",
                                 "@center":[0,0.875,0],
                                 "@ulimit":[0,0,0],

@@ -5,7 +5,7 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
-    <component name='H-Anim'/>
+    <component name='HAnim'/>
     <meta content='AllenDutton.x3d' name='title'/>
     <meta content='Articulated human model developed from laser-scan data using X3D native tags, rather than prototypes.' name='description'/>
     <meta content='Allen Dutton' name='creator'/>
@@ -22,7 +22,7 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
     <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/AllenDutton.x3d' name='identifier'/>
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='../license.html' name='license'/>
-    <meta content='02 July 2023' name='translated'/>
+    <meta content='16 July 2023' name='translated'/>
     <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
     <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
   </head>

@@ -15,7 +15,7 @@ import org.web3d.x3d.jsail.Shape.*;
 import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 
-// Javadoc annotations follow, see below for Java source code.
+// Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
  * <p> Comprehensive example showing skeleton, skin, sites and interpolator animation together. </p>
  <p> Related links: JoeSkeletonSkinSaluteSiteWalk.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
@@ -48,7 +48,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 27 January 2023 </td>
+			<td> 2 July 2023 </td>
 		</tr>
 		<tr style="color:burntorange">
 			<td style="text-align:right; vertical-align: text-top;"> <i> warning </i> </td>
@@ -181,15 +181,16 @@ public class JoeSkeletonSkinSaluteSiteWalk
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
+            try { // catch-all
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
-    .addComponent(new component().setName("H-Anim").setLevel(2))
+    .addComponent(new component().setName("HAnim").setLevel(2))
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("JoeSkeletonSkinSaluteSiteWalk.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Comprehensive example showing skeleton, skin, sites and interpolator animation together."))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Joe D. Williams"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("9 January 2004"))
     .addMeta(new meta().setName(meta.NAME_TRANSLATED ).setContent("4 December 2022"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("27 January 2023"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("2 July 2023"))
     .addMeta(new meta().setName(meta.NAME_WARNING    ).setContent("Under development, numerous errors and warnings"))
     .addMeta(new meta().setName(meta.NAME_TODO       ).setContent("This is an HAnimV1 loa model, might need to convert to X3D4 to note loa value"))
     .addMeta(new meta().setName(meta.NAME_TODO       ).setContent("Provide feedback to tovrmlx3d converter"))
@@ -222,7 +223,7 @@ public class JoeSkeletonSkinSaluteSiteWalk
     .addChild(new NavigationInfo("HeadlightOnRevealsSkinTextureAndColors"))
     .addChild(new Background().setGroundAngle(new double[] {1.57}).setGroundColor(new MFColor(new double[] {0.0,0.1,0.0,0.0,0.1,0.0})).setSkyColor(new MFColor(new double[] {0.0,0.0,0.1})))
     .addChild(new Transform("cordsysfloor").setScale(0.175,0.175,0.175)
-      .addChild(new Inline("CoordinateAxes").setUrl(new String[] {"../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"})))
+      .addChild(new Inline("CoordinateAxes").setUrl(new String[] {"../data/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"})))
     .addComments(" Authoring hint: these axes are aligned within local coordinate system ")
     .addChild(new Group("ViewpointGroup")
       .addChild(new Viewpoint().setDescription("Front Up View").setOrientation(-1.0,-1.0,0.0,0.55).setPosition(-1.0,2.0,2.5))
@@ -270,11 +271,11 @@ public class JoeSkeletonSkinSaluteSiteWalk
               .setCoord(new Coordinate("TheSkinCoord").setPoint(getTheSkinCoord_8_78_point()))
               .setColor(new Color().setColor(getColor_8_79_color())))
             .setAppearance(new Appearance("SkinAppearance")
-              .setTexture(new ImageTexture("zBlueSpiralBkg2").setDescription("Blue Spiral Pattern").setUrl(new String[] {"zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"}))
+              .setTexture(new ImageTexture("zBlueSpiralBkg2").setDescription("Blue Spiral Pattern").setUrl(new String[] {"../data/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"}))
               .setMaterial(new Material("SkinMaterial").setAmbientIntensity(0.6).setDiffuseColor(1.0,1.0,1.0).setShininess(0.6).setTransparency(0.2))))
           .addComments(" </LOD> ")
           .setSkinCoord(new Coordinate().setUSE("TheSkinCoord"))
-          .addSkeleton(new HAnimJoint("Joe_HumanoidRoot").setName("HumanoidRoot").setCenter(0.0,0.875,0.0).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+          .addSkeleton(new HAnimJoint("Joe_HumanoidRoot").setName("humanoid_root").setCenter(0.0,0.875,0.0).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
             .addChild(new HAnimSegment("Joe_sacrum").setName("sacrum")
               .addChild(new Transform().setTranslation(0.0,0.875,0.0)
                 .addChild(new Shape().setUSE("jointbox")))
@@ -1623,7 +1624,14 @@ public class JoeSkeletonSkinSaluteSiteWalk
     .addChild(new ROUTE().setFromNode("R_SHOULDER_ANIMATOR").setFromField("value_changed").setToNode("Joe_r_shoulder").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("R_ELBOW_ANIMATOR").setFromField("value_changed").setToNode("Joe_r_elbow").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("R_WRIST_ANIMATOR").setFromField("value_changed").setToNode("Joe_r_wrist").setToField("set_rotation")));
-    }
+            }
+            catch (Exception ex)
+            {       
+                System.err.println ("*** Further hints on X3DJSAIL errors and exceptions at");
+                System.err.println ("*** https://www.web3d.org/specifications/java/X3DJSAIL.html");
+                throw (ex);
+            }
+	}
 	// end of initialize() method
 
 		/** Define subarrays using type int[] */
@@ -1782,47 +1790,49 @@ public class JoeSkeletonSkinSaluteSiteWalk
     public static void main(String args[])
     {
         X3D thisExampleX3dModel = new JoeSkeletonSkinSaluteSiteWalk().getX3dModel();
+//      System.out.println("X3D model construction complete.");
+	
+        // next handle command line arguments
+        boolean hasArguments = (args != null) && (args.length > 0);
+        boolean validate = true; // default
+        boolean argumentsLoadNewModel = false;
+        String  fileName = new String();
 
-		boolean hasArguments = (args != null) && (args.length > 0);
-		boolean validate = true; // default
-		boolean argumentsLoadNewModel = false;
-		String  fileName = new String();
-
-		if (args != null)
-		{
-			for (String arg : args)
-			{
-				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
-				{
-					validate = true; // making sure
-				}
-				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
-				{
-					argumentsLoadNewModel = true;
-					fileName = arg;
-				}
-			}
-		}
-		if      (argumentsLoadNewModel)
-			System.out.println("WARNING: \"net.x3djsonld.data.JoeSkeletonSkinSaluteSiteWalk\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
-		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dModel.handleArguments(args);
-
-		if (validate)
-		{
-			System.out.print("Java program \"net.x3djsonld.data.JoeSkeletonSkinSaluteSiteWalk\" self-validation test results: ");
-			String validationResults = thisExampleX3dModel.validationReport();
-            if (validationResults.startsWith("\n"))
-                System.out.println();
-			System.out.println(validationResults.trim());
-		}
+        if (args != null)
+        {
+                for (String arg : args)
+                {
+                        if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+                        {
+                                validate = true; // making sure
+                        }
+                        if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
+                        {
+                                argumentsLoadNewModel = true;
+                                fileName = arg;
+                        }
+                }
+        }
+        if      (argumentsLoadNewModel)
+                System.out.println("WARNING: \"net.x3djsonld.data.JoeSkeletonSkinSaluteSiteWalk\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+        else if (hasArguments) // if no arguments provided, this method produces usage warning
+                thisExampleX3dModel.handleArguments(args);
+	
+        if (validate)
+        {
+                System.out.print("Java program \"net.x3djsonld.data.JoeSkeletonSkinSaluteSiteWalk\" self-validation test results: ");
+                String validationResults = thisExampleX3dModel.validationReport();
+                if (validationResults.startsWith("\n") || (validationResults.length() > 10))
+                    System.out.println();
+                System.out.println(validationResults.trim());
+        }
     }
 }

@@ -11,7 +11,7 @@
     <component name='Shaders' level='1'/>
     <component name='CADGeometry' level='2'/>
     <component name='DIS' level='2'/>
-    <component name='H-Anim' level='1'/>
+    <component name='HAnim' level='1'/>
     <component name='Grouping' level='1'/>
     <component name='Layering' level='1'/>
     <unit name='AngleUnitConversion' category='angle' conversionFactor='1.0'/>
@@ -23,7 +23,7 @@
     <meta content='https://www.web3d.org/specifications/java/X3DJSAIL.html' name='reference'/>
     <meta content='HelloWorldProgramOutput.java' name='generator'/>
     <meta content='6 September 2016' name='created'/>
-    <meta content='29 April 2023' name='modified'/>
+    <meta content='3 July 2023' name='modified'/>
     <meta content='X3D Java Scene Access Interface Library (X3DJSAIL)' name='generator'/>
     <meta content='https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java' name='generator'/>
     <meta content='Netbeans https://www.netbeans.org' name='generator'/>
@@ -39,7 +39,7 @@
     <meta content='../license.html' name='license'/>
   </head>
   <Scene>
-    <MetadataSet name='topLevelSceneMetadata'/>
+    <MetadataSet containerField="metadata" name='topLevelSceneMetadata'/>
     <ViewpointGroup description='Available viewpoints'>
       <Viewpoint DEF='DefaultView' description='Hello X3DJSAIL'/>
       <Viewpoint DEF='TopDownView' description='top-down view from above' orientation='1 0 0 -1.570796' position='0 100 0'/>
@@ -48,7 +48,7 @@
     <WorldInfo DEF='WorldInfoDEF' class='worldInfoNode.class' id='worldInfoNode.id' style='worldInfoNode.style' title='HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)'/>
     <WorldInfo USE='WorldInfoDEF'/>
     <WorldInfo USE='WorldInfoDEF'/>
-    <MetadataString DEF='scene.addChildMetadata' name='test' value='"Top-level root Metadata node beneath Scene needs to be one of &apos;-children&apos; in JSON encoding"'/>
+    <MetadataString containerField="metadata" DEF='scene.addChildMetadata' name='test' value='"Top-level root Metadata node beneath Scene needs to be one of &apos;-children&apos; in JSON encoding"'/>
     <LayerSet DEF='scene.addChildLayerSetTest' order='0'/>
     <Transform DEF='LogoGeometryTransform' translation='0 1.5 0'>
       <Anchor DEF='siteAnchor' description='select for X3D Java SAI Library (X3DJSAIL) description' url='"../X3DJSAIL.html" "https://www.web3d.org/specifications/java/X3DJSAIL.html"'>
@@ -231,7 +231,7 @@ function clockTrigger (timeValue)
     red   = newColor.r;
     green = newColor.g;
     blue  = newColor.b;
-    
+
     // note different modulation rates for each color component, % is modulus operator
     newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);
 	if (enabled)
@@ -246,7 +246,7 @@ function clockTrigger (timeValue)
     <!-- Test success: declarative statement createDeclarativeShapeTests() -->
     <Group DEF='DeclarativeGroupExample'>
       <Shape>
-        <MetadataString DEF='FindableMetadataStringTest' containerField='metadata' name='findThisNameValue' value='"test case"'/>
+        <MetadataString containerField="metadata" DEF='FindableMetadataStringTest' name='findThisNameValue' value='"test case"'/>
         <Appearance DEF='DeclarativeAppearanceExample'>
           <!-- DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance -->
           <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/>

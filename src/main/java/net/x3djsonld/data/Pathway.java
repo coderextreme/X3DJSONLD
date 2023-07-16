@@ -6,7 +6,7 @@ import org.web3d.x3d.jsail.Geometry3D.*;
 import org.web3d.x3d.jsail.Rendering.*;
 import org.web3d.x3d.jsail.Shape.*;
 
-// Javadoc annotations follow, see below for Java source code.
+// Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
  * <p> Pathway for HAnim scene Winter and Spring. </p>
  <p> Related links: Pathway.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
@@ -96,6 +96,7 @@ public class Pathway
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
+            try { // catch-all
   x3dModel = new X3D().setProfile(X3D.PROFILE_INTERCHANGE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("Pathway.x3d"))
@@ -2323,7 +2324,14 @@ public class Pathway
         .setMaterial(new Material().setAmbientIntensity(0.0).setDiffuseColor(.784313738,0.0,0.0).setShininess(1.0)))
       .setGeometry(new IndexedFaceSet().setSolid(false).setCoordIndex(new int[] {1,0,2,-1,1,2,3,-1,5,4,6,-1,5,6,7,-1,9,8,10,-1,9,10,11,-1,13,12,14,-1,13,14,15,-1}).setTexCoordIndex(new int[] {1,0,2,-1,1,2,3,-1,5,4,6,-1,5,6,7,-1,9,8,10,-1,9,10,11,-1,13,12,14,-1,13,14,15,-1})
         .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {.88447243,0.0,-.156810224,.07690154,0.0,.007801231,.88447243,.075000003,-.156810224,.07690154,.075000003,.007801231,.07690154,0.0,.007801231,.211020976,0.0,.665780663,.07690154,.075000003,.007801231,.211020976,.075000003,.665780663,.211020976,0.0,.665780663,1.018591881,0.0,.501169205,.211020976,.075000003,.665780663,1.018591881,.075000003,.501169205,1.018591881,0.0,.501169205,.88447243,0.0,-.156810224,1.018591881,.075000003,.501169205,.88447243,.075000003,-.156810224}))))));
-    }
+            }
+            catch (Exception ex)
+            {       
+                System.err.println ("*** Further hints on X3DJSAIL errors and exceptions at");
+                System.err.println ("*** https://www.web3d.org/specifications/java/X3DJSAIL.html");
+                throw (ex);
+            }
+	}
 	// end of initialize() method
 
 
@@ -3965,47 +3973,49 @@ public class Pathway
     public static void main(String args[])
     {
         X3D thisExampleX3dModel = new Pathway().getX3dModel();
+//      System.out.println("X3D model construction complete.");
+	
+        // next handle command line arguments
+        boolean hasArguments = (args != null) && (args.length > 0);
+        boolean validate = true; // default
+        boolean argumentsLoadNewModel = false;
+        String  fileName = new String();
 
-		boolean hasArguments = (args != null) && (args.length > 0);
-		boolean validate = true; // default
-		boolean argumentsLoadNewModel = false;
-		String  fileName = new String();
-
-		if (args != null)
-		{
-			for (String arg : args)
-			{
-				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
-				{
-					validate = true; // making sure
-				}
-				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
-				{
-					argumentsLoadNewModel = true;
-					fileName = arg;
-				}
-			}
-		}
-		if      (argumentsLoadNewModel)
-			System.out.println("WARNING: \"net.x3djsonld.data.Pathway\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
-		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dModel.handleArguments(args);
-
-		if (validate)
-		{
-			System.out.print("Java program \"net.x3djsonld.data.Pathway\" self-validation test results: ");
-			String validationResults = thisExampleX3dModel.validationReport();
-            if (validationResults.startsWith("\n"))
-                System.out.println();
-			System.out.println(validationResults.trim());
-		}
+        if (args != null)
+        {
+                for (String arg : args)
+                {
+                        if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+                        {
+                                validate = true; // making sure
+                        }
+                        if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+                                arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
+                        {
+                                argumentsLoadNewModel = true;
+                                fileName = arg;
+                        }
+                }
+        }
+        if      (argumentsLoadNewModel)
+                System.out.println("WARNING: \"net.x3djsonld.data.Pathway\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+        else if (hasArguments) // if no arguments provided, this method produces usage warning
+                thisExampleX3dModel.handleArguments(args);
+	
+        if (validate)
+        {
+                System.out.print("Java program \"net.x3djsonld.data.Pathway\" self-validation test results: ");
+                String validationResults = thisExampleX3dModel.validationReport();
+                if (validationResults.startsWith("\n") || (validationResults.length() > 10))
+                    System.out.println();
+                System.out.println(validationResults.trim());
+        }
     }
 }

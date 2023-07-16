@@ -11,7 +11,7 @@
     <component name='Shaders' level='1'/>
     <component name='CADGeometry' level='2'/>
     <component name='DIS' level='2'/>
-    <component name='H-Anim' level='1'/>
+    <component name='HAnim' level='1'/>
     <component name='Grouping' level='1'/>
     <component name='Layering' level='1'/>
     <unit name='AngleUnitConversion' category='angle' conversionFactor='1.0'/>
