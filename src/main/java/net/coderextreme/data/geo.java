@@ -62,7 +62,7 @@ public class geo {
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/geo.x3d"))
         .addMeta(new meta().setName("description").setContent("a sphere")))
       .setScene(new Scene()
-        .addChild(new NavigationInfo().setType(new java.lang.String[] {"ANY","EXAMINE","FLY","LOOKAT"}))
+        .addChild(new NavigationInfo().setType("\"ANY\" \"EXAMINE\" \"FLY\" \"LOOKAT\""))
         .addChild(new Viewpoint().setDEF("Tour").setDescription("Tour Views"))
         .addComments("Viewpoint position='0 0 4' description='sphere in road'/")
         .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))

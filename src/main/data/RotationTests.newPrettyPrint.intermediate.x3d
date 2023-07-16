@@ -2,7 +2,7 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
-    <component name='H-Anim' level='1'/>
+    <component name='HAnim' level='1'/>
     <meta content='RotationTests.x3d' name='title'/>
     <meta content='BVH file conversion support: test and visualize various rotations in order to properly configure converter from Euler angles to SFRotation values.' name='description'/>
     <meta content='Don Brutzman' name='creator'/>

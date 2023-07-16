@@ -23,7 +23,7 @@ meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Basi
 meta(name="reference", content="http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="03 July 2023"),
+meta(name="translated", content="16 July 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -497,7 +497,7 @@ Coordinate(point=[(-5.25,5.25,0.0),(-3.75,5.25,0.0),(-2.25,5.25,0.0),(-0.75,5.25
 color=(
 Color(color=[(0.435294,0.741176,0),(0,0.560784,0.580392)]))))]),
 Transform(scale=((3,3,3)), translation=((0,0.25,0)), children=[
-Inline(DEF="CoordinateAxes", url=["../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../Savage/Tools/Authoring/CoordinateAxes.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../Savage/Tools/Authoring/CoordinateAxes.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"])]),
+Inline(DEF="CoordinateAxes", url=["../data/CoordinateAxes.x3d","../../Savage/Tools/Authoring/CoordinateAxes.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../Savage/Tools/Authoring/CoordinateAxes.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"])]),
 Transform(DEF="MovingBoxTransform", children=[
 PositionInterpolator(DEF="BoxPath", key=[float(0),float(0.25),float(0.5),float(0.75),float(1)], keyValue=[(-5,1,5),(45,1,5),(45,1,-45),(-5,1,-45),(-5,1,5)]),
 TimeSensor(DEF="BoxTimer", cycleInterval=10, loop=True),

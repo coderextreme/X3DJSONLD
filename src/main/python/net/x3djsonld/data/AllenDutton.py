@@ -25,7 +25,7 @@ from x3d import *
 newModel=X3D(profile='Immersive',version='3.3',
   head=head(
     children=[
-    component(level=1,name='H-Anim'),
+    component(level=1,name='HAnim'),
     meta(content='AllenDutton.x3d',name='title'),
     meta(content='Articulated human model developed from laser-scan data using X3D native tags, rather than prototypes.',name='description'),
     meta(content='Allen Dutton',name='creator'),

@@ -80,7 +80,7 @@ public class ObliqueStrategies {
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("ObliqueStrategies.x3d"))
-        .addChild(new NavigationInfo().setType(new java.lang.String[] {"NONE"}))
+        .addChild(new NavigationInfo().setType("\"NONE\""))
         .addChild(new Background().setSkyColor(new MFColor0().getArray()))
         .addChild(new Transform().setScale(new float[] {0.4f,0.4f,0.4f}).setTranslation(new float[] {0f,1f,0f})
           .addChild(new TouchSensor().setDEF("RandomTextClickedSensor").setDescription("Select to see a new strategy"))

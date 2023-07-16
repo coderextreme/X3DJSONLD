@@ -13,7 +13,7 @@ meta(name="modified", content="14 Jan 2023"),
 meta(name="creator", content="John Carlson"),
 meta(name="created", content="9 November 2020"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="03 July 2023"),
+meta(name="translated", content="16 July 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -81,7 +81,7 @@ Color(color=[(1,0,0),(0,1,1),(0,1,0),(1,1,0),(1,1,0),(1,0,0),(0,1,0),(0,0,1),(0,
 appearance=
 Appearance(DEF="SkinAppearance", 
 texture=
-ImageTexture(DEF="zBlueSpiralBkg2", description="Blue Spiral Pattern", url=["zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"]), 
+ImageTexture(DEF="zBlueSpiralBkg2", description="Blue Spiral Pattern", url=["./data/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"]), 
 material=
 Material(DEF="SkinMaterial", ambientIntensity=0.6, diffuseColor=((1,1,1)), shininess=0.6, transparency=0.2)))], 
 skinCoord=(

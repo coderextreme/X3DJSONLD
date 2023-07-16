@@ -60,7 +60,7 @@ public class t3 {
         .addMeta(new meta().setName("generator").setContent("DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"))
         .addMeta(new meta().setName("reference").setContent("X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")))
       .setScene(new Scene()
-        .addChild(new NavigationInfo().setType(new java.lang.String[] {"EXAMINE","FLY","WALK"}).setSpeed(3f).setAvatarSize(new MFFloat0().getArray()))
+        .addChild(new NavigationInfo().setType("\"EXAMINE\" \"FLY\" \"WALK\"").setSpeed(3f).setAvatarSize(new MFFloat0().getArray()))
         .addChild(new WorldInfo().setTitle("Arts Mapper"))
         .addChild(new Viewpoint().setDescription("looking North").setPosition(new float[] {0f,60f,110f}).setOrientation(new float[] {1f,0f,0f,-0.699999988079071f}).setFieldOfView(0.785398125648499f))
         .addChild(new Transform().setTranslation(new float[] {-468f,0f,315f})

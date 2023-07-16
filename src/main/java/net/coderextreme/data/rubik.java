@@ -63,7 +63,7 @@ ProtoInstance ProtoInstance9 = null;
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/rubik.x3d"))
         .addMeta(new meta().setName("description").setContent("a kind of rubik cube with spheres")))
       .setScene(new Scene()
-        .addChild(new NavigationInfo().setType(new java.lang.String[] {"EXAMINE"}))
+        .addChild(new NavigationInfo().setType("\"EXAMINE\""))
         .addChild(new Viewpoint().setDescription("Rubiks Cube").setPosition(new float[] {0f,0f,12f}))
         .addChild(new ProtoDeclare().setName("sphereproto")
           .setProtoInterface(new ProtoInterface()

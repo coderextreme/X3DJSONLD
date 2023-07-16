@@ -34,7 +34,7 @@ newModel=X3D(class_='x3dModel.class',id_='x3dModel.id',profile='Full',style_='x3
     component(name='Shaders',level=1),
     component(name='CADGeometry',level=2),
     component(name='DIS',level=2),
-    component(name='H-Anim',level=1),
+    component(name='HAnim',level=1),
     component(name='Grouping',level=1),
     component(name='Layering',level=1),
     unit(name='AngleUnitConversion',category='angle',conversionFactor=1.0),
@@ -46,7 +46,7 @@ newModel=X3D(class_='x3dModel.class',id_='x3dModel.id',profile='Full',style_='x3
     meta(content='https://www.web3d.org/specifications/java/X3DJSAIL.html',name='reference'),
     meta(content='HelloWorldProgramOutput.java',name='generator'),
     meta(content='6 September 2016',name='created'),
-    meta(content='1 July 2023',name='modified'),
+    meta(content='3 July 2023',name='modified'),
     meta(content='X3D Java Scene Access Interface Library (X3DJSAIL)',name='generator'),
     meta(content='https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java',name='generator'),
     meta(content='Netbeans https://www.netbeans.org',name='generator'),
@@ -240,7 +240,7 @@ function clockTrigger (timeValue)
     red   = newColor.r;
     green = newColor.g;
     blue  = newColor.b;
-    
+
     // note different modulation rates for each color component, % is modulus operator
     newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);
 	if (enabled)

@@ -4,7 +4,7 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[component(name="H-Anim", level=1),
+head=head(children=[component(name="HAnim", level=1),
 meta(name="title", content="HAnimBehaviorPrototypes.x3d"),
 meta(name="description", content="Prototypes for HAnimBehavior node, which collects OrientationInterpolators for aggregate animation of an HAnim humanoid model, and HAnimBodyBehaviorChooser, which selects one body and enables/disables multiple aggregated behaviors."),
 meta(name="creator", content="Don Brutzman, Jeff Weekley, MV4205 Advanced X3D Authoring class, and Keith Victor"),
@@ -20,7 +20,7 @@ meta(name="warning", content="under development. should joint translations be ex
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypes.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="02 July 2023"),
+meta(name="translated", content="16 July 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 

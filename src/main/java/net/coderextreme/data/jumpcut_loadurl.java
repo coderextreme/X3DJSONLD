@@ -64,7 +64,7 @@ public class jumpcut_loadurl {
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("jumpcut_loadurl.x3d"))
         .addChild(new Background().setGroundAngle(new MFFloat0().getArray()).setGroundColor(new MFColor1().getArray()).setSkyColor(new MFColor2().getArray()))
-        .addChild(new NavigationInfo().setType(new java.lang.String[] {"EXAMINE","WALK","FLY","ANY"}))
+        .addChild(new NavigationInfo().setType("\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\""))
         .addChild(new Viewpoint().setDEF("Front_View").setDescription("Front View"))
         .addChild(new Viewpoint().setDEF("Top_View").setDescription("Top View").setOrientation(new float[] {1f,0f,0f,-1.57f}).setPosition(new float[] {0f,10f,0f}))
         .addChild(new TouchSensor().setDEF("STARTER").setDescription("touch to activate"))

@@ -47,7 +47,7 @@ public class AllenDutton {
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
-        .addComponent(new component().setName("H-Anim").setLevel(1))
+        .addComponent(new component().setName("HAnim").setLevel(1))
         .addMeta(new meta().setName("title").setContent("AllenDutton.x3d"))
         .addMeta(new meta().setName("description").setContent("Articulated human model developed from laser-scan data using X3D native tags, rather than prototypes."))
         .addMeta(new meta().setName("creator").setContent("Allen Dutton"))
@@ -248,7 +248,7 @@ public class AllenDutton {
           .addSegments(new HAnimSegment("hanim_Humanoid").setUSE("hanim_r_thigh"))
           .addSegments(new HAnimSegment("hanim_Humanoid").setUSE("hanim_l_upperarm"))
           .addSegments(new HAnimSegment("hanim_Humanoid").setUSE("hanim_r_upperarm")))
-        .addChild(new NavigationInfo().setType(new java.lang.String[] {"EXAMINE"}).setAvatarSize(new MFFloat230().getArray()).setSpeed(0.5f))
+        .addChild(new NavigationInfo().setType("\"EXAMINE\"").setAvatarSize(new MFFloat230().getArray()).setSpeed(0.5f))
         .addChild(new Group().setDEF("Interface")
           .addChild(new Transform()
             .addChild(new ProximitySensor().setDEF("HudProx").setCenter(new float[] {0f,20f,0f}).setSize(new float[] {500f,100f,500f})))

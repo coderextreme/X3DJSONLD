@@ -74,7 +74,7 @@ public class indexedfaceset_pixeltexture_part {
         .addChild(new Viewpoint().setDescription("Bottom View").setOrientation(new float[] {1f,0f,0f,1.57f}).setPosition(new float[] {0f,-10f,0f}))
         .addChild(new Viewpoint().setDescription("Right View").setOrientation(new float[] {0f,1f,0f,1.57f}).setPosition(new float[] {10f,0f,0f}))
         .addChild(new Viewpoint().setDescription("Left View").setOrientation(new float[] {0f,1f,0f,-1.57f}).setPosition(new float[] {-10f,0f,0f}))
-        .addChild(new NavigationInfo().setType(new java.lang.String[] {"EXAMINE","WALK","FLY","ANY"}))
+        .addChild(new NavigationInfo().setType("\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\""))
         .addChild(new Shape()
           .setAppearance(new Appearance()
             .setMaterial(new Material())

@@ -106,7 +106,7 @@ ProtoInstance ProtoInstance55 = null;
         .addMeta(new meta().setName("generator").setContent("tovrmlx3d, http://castle-engine.sourceforge.net/view3dscene.php#section_converting"))
         .addMeta(new meta().setName("source").setContent("t1.wrl")))
       .setScene(new Scene()
-        .addChild(new NavigationInfo().setType(new java.lang.String[] {"EXAMINE","FLY","WALK"}).setSpeed(3f).setAvatarSize(new MFFloat0().getArray()))
+        .addChild(new NavigationInfo().setType("\"EXAMINE\" \"FLY\" \"WALK\"").setSpeed(3f).setAvatarSize(new MFFloat0().getArray()))
         .addChild(new WorldInfo().setTitle("Arts Mapper"))
         .addChild(new Viewpoint().setDescription("looking North").setPosition(new float[] {0f,60f,110f}).setOrientation(new float[] {1f,0f,0f,-0.699999988079071f}).setFieldOfView(0.7853981256484985f))
         .addChild(new Viewpoint().setDescription("looking East").setPosition(new float[] {-140f,30f,0f}).setOrientation(new float[] {0f,0.4000000059604645f,0f,-1.399999976158142f}).setFieldOfView(0.7853981256484985f))

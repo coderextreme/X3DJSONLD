@@ -69,7 +69,7 @@ ProtoInstance ProtoInstance0 = null;
         .addChild(new Viewpoint().setDescription("ViewFrustum from point of view"))
         .addChild(new Viewpoint().setDescription("ViewFrustum behind point of view").setPosition(new float[] {0f,0f,15f}))
         .addChild(new Viewpoint().setDescription("ViewFrustum oblique side view").setOrientation(new float[] {0.8005f,0.5926f,0.0898f,-0.3743f}).setPosition(new float[] {-5f,5f,20f}))
-        .addChild(new NavigationInfo().setType(new java.lang.String[] {"EXAMINE","FLY","ANY"}))
+        .addChild(new NavigationInfo().setType("\"EXAMINE\" \"FLY\" \"ANY\""))
         .addChild(new ExternProtoDeclare().setName("ViewFrustum").setAppinfo("Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes").setUrl(new MFString0().getArray())
           .addField(new field().setType("SFNode").setName("ViewpointNode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("required: insert Viewpoint DEF or USE node for view of interest"))
           .addField(new field().setType("SFNode").setName("NavigationInfoNode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("required: insert NavigationInfo DEF or USE node of interest"))

@@ -4,7 +4,7 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.1", 
-head=head(children=[component(name="H-Anim", level=1),
+head=head(children=[component(name="HAnim", level=1),
 meta(name="title", content="BvhSeamless3dExport1.x3d"),
 meta(name="description", content="Seamless3d tool import of bvh file and export of x3d scene. Note use of single skin mesh, animated by unadorned skeleton."),
 meta(name="translator", content="Don Brutzman"),
@@ -20,7 +20,7 @@ meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/MotionAnimation/BvhSeamless3dExport1.x3d"),
 meta(name="reference", content="https://sourceforge.net/p/x3d/code/24079"),
 meta(name="license", content="license.html"),
-meta(name="translated", content="02 July 2023"),
+meta(name="translated", content="16 July 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 

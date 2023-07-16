@@ -13,7 +13,7 @@ meta(name="creator", content="Andreas Plesch and John Carlson"),
 meta(name="source", content="t1.wrl"),
 meta(name="description", content="Test Case for Proto Expander"),
 meta(name="license", content="https://www.web3d.org/x3d/content/examples/license.html"),
-meta(name="translated", content="03 July 2023"),
+meta(name="translated", content="16 July 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 

@@ -219,7 +219,7 @@ var X3D0 =  new X3D({
                         new ImageTexture({
                           DEF : new SFString("zBlueSpiralBkg2"),
                           description : new SFString("Blue Spiral Pattern"),
-                          url : new MFString(["zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"])})),
+                          url : new MFString(["./data/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"])})),
                       material : new SFNode(
                         new Material({
                           DEF : new SFString("SkinMaterial"),

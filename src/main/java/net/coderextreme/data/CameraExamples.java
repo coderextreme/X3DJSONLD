@@ -174,7 +174,7 @@ ProtoInstance ProtoInstance34 = null;
           .addComments("TODO non-photorealistic rendering (NPR) parameters"))
         .addComments("=============== Lights, camera, action! ==============")
         .addChild(new DirectionalLight().setDirection(new float[] {0f,-1f,0f}).setGlobal(true).setIntensity(0.8f))
-        .addChild(new NavigationInfo().setType(new java.lang.String[] {"EXAMINE","FLY","ANY"}))
+        .addChild(new NavigationInfo().setType("\"EXAMINE\" \"FLY\" \"ANY\""))
         .addChild(new Viewpoint().setDescription("Camera test scene entry view").setPosition(new float[] {0f,2f,12f}))
         .addChild(new Viewpoint().setDescription("Camera test scene from above").setOrientation(new float[] {1f,0f,0f,-1.57079f}).setPosition(new float[] {0f,150f,0f}))
         .addComments("Keep prototype instances in same file while developing, then move later")
@@ -845,7 +845,7 @@ protected class MFColor32 {
 }
 protected class MFString33 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../Savage/Tools/Authoring/CoordinateAxes.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../Savage/Tools/Authoring/CoordinateAxes.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/CoordinateAxes.x3d","../../Savage/Tools/Authoring/CoordinateAxes.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../Savage/Tools/Authoring/CoordinateAxes.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"});
   }
 }
 protected class MFFloat34 {
