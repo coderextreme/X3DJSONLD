@@ -560,7 +560,7 @@ PROTOS.prototype = {
 		// console.error("SOVobj3I", JSON.stringify(obj[3]));
 		// console.error("SOVlsI", JSON.stringify(obj[0][prefix+obj[1]]));
 		// console.error("SOVrsI", JSON.stringify(value));
-		obj[0][prefix + obj[1]] = value;// JSON.parse(JSON.stringify(value));
+		obj[0][prefix + obj[1]] = value;// structuredClone(value);
 		// console.error("SOVvalueO", JSON.stringify(value));
 		// console.error("SOVobj3O", JSON.stringify(obj[3]));
 		// console.error("SOVobj2O", JSON.stringify(obj[2]));
@@ -717,7 +717,7 @@ PROTOS.prototype = {
 					}
 				}
 			}
-			instance = JSON.parse(JSON.stringify(children));
+			instance = structuredClone(children);
 		}
 
 		// instance is an array.  Get the first object, no matter how
