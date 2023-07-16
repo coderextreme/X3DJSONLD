@@ -158,7 +158,11 @@ class Scripts {
 					/* console.log(loop.text); */
 					eval(loop.text);
 				}
-				x3dom.reload();  /* This may be necessary */
+				if (typeof x3dom !== 'undefined') {
+					x3dom.reload();  /* This may be necessary */
+				} else {
+					// console.log("Couldn't reload x3dom while running routes.");
+				}
 			} catch (e) {
 				console.log(e);
 				console.error(e);
@@ -185,55 +189,55 @@ class Scripts {
 	}
 
 	processScripts(object, classes, mypackage, routecode, loopItems, selector, url) {
-		classes.log("var MFBool = x3dom.fields.MFBoolean;");
-		classes.log("var MFColor = x3dom.fields.MFColor;");
-		classes.log("var MFColorRGBA = x3dom.fields.MFColorRGBA;");
+		// x3dom native
+		classes.log("if (typeof x3dom !== 'undefined') {");
+		classes.log("    var MFBool = x3dom.fields.MFBoolean;");
+		classes.log("    var MFColor = x3dom.fields.MFColor;");
+		classes.log("    var MFColorRGBA = x3dom.fields.MFColorRGBA;");
+		classes.log("    var MFFloat = x3dom.fields.MFFloat;");
+		classes.log("    var MFInt32 = x3dom.fields.MFInt32;");
+		classes.log("    var MFNode = x3dom.fields.MFNode;");
+		classes.log("    var MFRotation = x3dom.fields.MFRotation;");
+		classes.log("    var MFString = x3dom.fields.MFString;");
+		classes.log("    var MFVec2f = x3dom.fields.MFVec2f;");
+		classes.log("    var MFVec3f = x3dom.fields.MFVec3f;");
+		classes.log("    var Quaternion = x3dom.fields.Quaternion;");
+		classes.log("    var SFColor = x3dom.fields.SFColor;");
+		classes.log("    var SFColorRGBA = x3dom.fields.SFColorRGBA;");
+		classes.log("    var SFImage = x3dom.fields.SFImage;");
+		classes.log("    var SFMatrix4f = x3dom.fields.SFMatrix4f;");
+		classes.log("    var SFNode = x3dom.fields.SFNode;");
+		classes.log("    var SFRotation = x3dom.fields.SFRotation;");
+		classes.log("    var SFVec2f = x3dom.fields.SFVec2f;");
+		classes.log("    var SFVec3f = x3dom.fields.SFVec3f;");
+		classes.log("    var SFVec4f = x3dom.fields.SFVec4f;");
+		classes.log("}");
+
+		// ECMA script native
+		classes.log("var SFString = String;");
+		classes.log("var SFTime = Number;");
+		classes.log("var SFDouble = Number;");
+		classes.log("var SFFloat = Number;");
+		classes.log("var SFInt32 = Number;");
+		classes.log("var SFBool = Boolean;");
+
 		classes.log("var MFDouble = function() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("var MFFloat = x3dom.fields.MFFloat;");
 		classes.log("var MFImage = function() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("var MFInt32 = x3dom.fields.MFInt32;");
 		classes.log("var MFMatrix3d = function() { return Array.prototype.slice.call(arguments, 0); };");
 		classes.log("var MFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); };");
 		classes.log("var MFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };");
 		classes.log("var MFMatrix4f = function() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("var MFNode = x3dom.fields.MFNode;");
-		classes.log("var MFRotation = x3dom.fields.MFRotation;");
-		classes.log("var MFString = x3dom.fields.MFString;");
 		classes.log("var MFTime = function() { return Array.prototype.slice.call(arguments, 0); };");
 		classes.log("var MFVec2d = function() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("var MFVec2f = x3dom.fields.MFVec2f;");
 		classes.log("var MFVec3d = function() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("var MFVec3f = x3dom.fields.MFVec3f;");
 		classes.log("var MFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };");
 		classes.log("var MFVec4f = function() { return Array.prototype.slice.call(arguments, 0); };");
-
-		classes.log("var SFBool = Boolean;");
-
-		classes.log("var SFColor = x3dom.fields.SFColor;");
-		classes.log("var SFColorRGBA = x3dom.fields.SFColorRGBA;");
-
-		classes.log("var SFDouble = Number;");
-		classes.log("var SFFloat = Number;");
-		classes.log("var SFInt32 = Number;");
-
-		classes.log("var SFImage = x3dom.fields.SFImage;");
 		classes.log("var SFMatrix3d = function() { return Array.prototype.slice.call(arguments, 0); };");
 		classes.log("var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); };");
 		classes.log("var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("var SFMatrix4f = x3dom.fields.SFMatrix4f;");
-		classes.log("var SFNode = x3dom.fields.SFNode;");
-		classes.log("var SFRotation = x3dom.fields.SFRotation;");
-		classes.log("var Quaternion = x3dom.fields.Quaternion;");
-
-		classes.log("var SFString = String;");
-		classes.log("var SFTime = Number;");
-
 		classes.log("var SFVec2d = function() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("var SFVec2f = x3dom.fields.SFVec2f;");
 		classes.log("var SFVec3d = function() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("var SFVec3f = x3dom.fields.SFVec3f;");
 		classes.log("var SFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("var SFVec4f = x3dom.fields.SFVec4f;");
 
 		classes.log("if (typeof document === 'undefined') {");
 		classes.log("	document = { querySelector : function() {;");
