@@ -13,71 +13,10 @@
     </style>
   </head>
   <body>
-	  <!--
-    <x3d-canvas cache='false' url='"../data/ball.x3d"'>
+    <x3d-canvas cache='false' url='"../data/ballx_ite.x3d"'>
            <p>Your browser may not support all features required by X_ITE!</p>
            <Scene>
            </Scene>
-    </x3d-canvas>
-    	-->
-    <x3d-canvas cache='false'>
-      <head>
-    	      <component level='1' name='Scripting'></component>
-	      <component name='EnvironmentalEffects' level='3'></component>
-	      <component name='Shaders' level='1'></component>
-	      <component name='CubeMapTexturing' level='1'></component>
-	      <component name='Texturing' level='1'></component>
-	      <component name='Rendering' level='1'></component>
-	      <component name='Shape' level='4'></component>
-	      <component name='Grouping' level='3'></component>
-	      <component name='Core' level='1'></component>
-      <meta name='title' content='ball.x3d'></meta>
-      <meta name='creator' content='John Carlson'></meta>
-      <meta name='generator' content='manual'></meta>
-      <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/ball.x3d'></meta>
-      <meta name='description' content='a prismatic sphere'></meta>
-     </head>
-     <Scene>
-    	<WorldInfo title='ball.x3d'/>
-        <NavigationInfo type='"ANY" "EXAMINE" "FLY" "LOOKAT"'/>
-        <Viewpoint description='Tour Views'/>
-	<Background
-		backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"'
-		bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"'
-		frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"'
-		leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"'
-		rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"'
-		topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"'
-	  >
-	</Background>
-	<Transform>
-          <Shape>
-            <Sphere/>
-            <Appearance>
-                <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
-                <ComposedCubeMapTexture DEF="texture">
-			<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"' containerField="backTexture"/>
-			<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"' containerField="bottomTexture"/>
-			<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"' containerField="frontTexture"/>
-			<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"' containerField="leftTexture"/>
-			<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"' containerField="rightTexture"/>
-			<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"' containerField="topTexture"/>
-                </ComposedCubeMapTexture>
-                <ComposedShader language='GLSL'>
-		  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field>
-		  <field name='cube' type='SFNode' accessType="initializeOnly">
-			<ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
-		  </field>
-		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
-		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
-		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>
-		  <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"' type="VERTEX" containerField='parts'></ShaderPart>
-		  <ShaderPart url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
-                </ComposedShader>
-            </Appearance>
-          </Shape>
-	</Transform>
-      </Scene>
     </x3d-canvas>
   </bodY>
 </html>
