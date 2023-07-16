@@ -15,7 +15,7 @@ X3D0->setProfile("Immersive");
 X3D0->setVersion("4.0");
 Chead* head1 = new Chead();
 Ccomponent* component2 = new Ccomponent();
-component2->setName("H-Anim");
+component2->setName("HAnim");
 component2->setLevel(2);
 head1->addComponent(*component2);
 
@@ -46,7 +46,7 @@ head1->addMeta(*meta7);
 
 Cmeta* meta8 = new Cmeta();
 meta8->setName("modified");
-meta8->setContent("27 January 2023");
+meta8->setContent("2 July 2023");
 head1->addMeta(*meta8);
 
 Cmeta* meta9 = new Cmeta();
@@ -207,7 +207,7 @@ Transform40->setDEF("cordsysfloor");
 Transform40->setScale(new float[3]{0.175,0.175,0.175});
 CInline* Inline41 = (CInline *)(m_pScene.createNode("Inline"));
 Inline41->setDEF("CoordinateAxes");
-Inline41->setUrl(new CString[8]{"../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"}, 8);
+Inline41->setUrl(new CString[9]{"../data/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"}, 9);
 Transform40->addChildren(*Inline41);
 
 group->addChildren(*Transform40);
@@ -427,7 +427,7 @@ Appearance86->setDEF("SkinAppearance");
 CImageTexture* ImageTexture87 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture87->setDEF("zBlueSpiralBkg2");
 ImageTexture87->setDescription("Blue Spiral Pattern");
-ImageTexture87->setUrl(new CString[2]{"zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"}, 2);
+ImageTexture87->setUrl(new CString[3]{"../data/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"}, 3);
 Appearance86->setTexture(*ImageTexture87);
 
 CMaterial* Material88 = (CMaterial *)(m_pScene.createNode("Material"));
@@ -447,7 +447,7 @@ Coordinate89->setUSE("TheSkinCoord");
 HAnimHumanoid81->setSkinCoord(*Coordinate89);
 
 CHAnimJoint* HAnimJoint90 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint90->setName("HumanoidRoot");
+HAnimJoint90->setName("humanoid_root");
 HAnimJoint90->setDEF("Joe_HumanoidRoot");
 HAnimJoint90->setCenter(new float[3]{0,0.875,0});
 HAnimJoint90->setUlimit(new float[3]{0,0,0}, 3);

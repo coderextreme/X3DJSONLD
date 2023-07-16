@@ -15,7 +15,7 @@ ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
       var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
       .setHead((new autoclass.head())
-        .addComponent((new autoclass.component()).setName("H-Anim").setLevel(1))
+        .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
         .addMeta((new autoclass.meta()).setName("title").setContent("RotationTests.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("BVH file conversion support: test and visualize various rotations in order to properly configure converter from Euler angles to SFRotation values."))
         .addMeta((new autoclass.meta()).setName("creator").setContent("Don Brutzman"))

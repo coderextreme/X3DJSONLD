@@ -228,7 +228,7 @@ let Appearance48 = browser.currentScene.createNode("Appearance");
 Appearance48.DEF = "SkinAppearance";
 let ImageTexture49 = browser.currentScene.createNode("ImageTexture");
 ImageTexture49.DEF = "zBlueSpiralBkg2";
-ImageTexture49.url = new MFString(new java.lang.String["../resources/images/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"]);
+ImageTexture49.url = new MFString(new java.lang.String["../resources/images/zBlueSpiralBkg2.gif","../data/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"]);
 Appearance48.texture = ImageTexture49;
 
 let Material50 = browser.currentScene.createNode("Material");

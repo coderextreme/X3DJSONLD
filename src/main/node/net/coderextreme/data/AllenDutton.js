@@ -15,7 +15,7 @@ ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
       var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
       .setHead((new autoclass.head())
-        .addComponent((new autoclass.component()).setName("H-Anim").setLevel(1))
+        .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
         .addMeta((new autoclass.meta()).setName("title").setContent("AllenDutton.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("Articulated human model developed from laser-scan data using X3D native tags, rather than prototypes."))
         .addMeta((new autoclass.meta()).setName("creator").setContent("Allen Dutton"))

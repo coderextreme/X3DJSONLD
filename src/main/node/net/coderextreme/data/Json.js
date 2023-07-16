@@ -29,7 +29,7 @@ var ProtoInstance4 = null;
         .addComponent((new autoclass.component()).setName("Shaders").setLevel(1))
         .addComponent((new autoclass.component()).setName("CADGeometry").setLevel(2))
         .addComponent((new autoclass.component()).setName("DIS").setLevel(2))
-        .addComponent((new autoclass.component()).setName("H-Anim").setLevel(1))
+        .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
         .addComponent((new autoclass.component()).setName("Grouping").setLevel(1))
         .addComponent((new autoclass.component()).setName("Layering").setLevel(1))
         .addUnit((new autoclass.unit()).setName("AngleUnitConversion").setCategory("angle").setConversionFactor(1))

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-  "title": "X3D V4.0 JSON Schema, generated 2023/07/01 23:39:49",
+  "title": "X3D V4.0 JSON Schema, generated 2023/07/16 07:33:18",
   "description": "Experimental JSON Schema for X3D V4.0",
   "type": "object",
   "properties": {
@@ -12484,17 +12484,7 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
-            "@skeletalConfiguration": {
-              "default": "BASIC",
-              "$comment": "SFString inputOutput",
-              "type": "string"
-            },
             "@startFrame": {
-              "default": 0,
-              "$comment": "SFInt32 inputOutput",
-              "type": "integer"
-            },
-            "@totalFrameCount": {
               "default": 0,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
@@ -31918,6 +31908,7 @@
                 "enum": [
                   "accessRights",
                   "author",
+                  "CML-version",
                   "contributor",
                   "created",
                   "creator",
