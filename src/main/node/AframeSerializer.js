@@ -83,7 +83,7 @@ AframeSerializer.prototype = {
 	},
 		*/
 	jsonCopy : function(from) {
-		return JSON.parse(JSON.stringify(from));
+		return structuredClonefrom);
 	},
 	componentsToAttributes : function(element, components) {
 		var componentCollector = {};

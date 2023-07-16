@@ -74,7 +74,7 @@ function addContainerObject(path, node, key, parentkey, gparentkey) {
 	var arr = path[path.length-2];
 	obj = {};
 	obj[gparentkey] = arr[0];
-	newparent['-'+node[key]].push(JSON.parse(JSON.stringify(obj)));
+	newparent['-'+node[key]].push(structuredClone(obj));
 }
 
 function handleContainerField(path, node, parentkey, gparentkey) {
@@ -137,7 +137,7 @@ function proto(node, parent) {
 				if (typeof parent.push === 'function') {
 					var i = node[key][instance];
 					var pi = {};
-					pi[key] = JSON.parse(JSON.stringify(i));
+					pi[key] = structuredClone(i);
 					console.error('pushing', pi);
 					parent.push(pi);
 					delete i;

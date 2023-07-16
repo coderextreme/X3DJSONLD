@@ -40,7 +40,11 @@ ECMAScriptSerializer.prototype = {
 		var body = "var "+element.nodeName+0+" =  new "+element.nodeName+"({\n";
 		body += this.subSerializeToString(element, mapToMethod, fieldTypes, 3);
 		for (var key in this.precode) {
-			str += "var "+key+" = require('./x3d.mjs');\n"
+			if (typeof key === 'undefined') {
+				console.error("Warning, undefined key in this.precode");
+			} else {
+				str += "var "+key+" = require('./x3d.mjs');\n"
+			}
 			
 		}
 		str += body;
