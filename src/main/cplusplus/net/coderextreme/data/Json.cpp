@@ -40,7 +40,7 @@ component5->setLevel(2);
 head1->addComponent(*component5);
 
 Ccomponent* component6 = new Ccomponent();
-component6->setName("H-Anim");
+component6->setName("HAnim");
 component6->setLevel(1);
 head1->addComponent(*component6);
 

@@ -231,7 +231,7 @@ Appearance48.DEF = "SkinAppearance";
 ImageTexture ImageTexture49 = createNode("ImageTexture");
 ImageTexture49.DEF = "zBlueSpiralBkg2";
 ImageTexture49.description = "Blue Spiral Pattern";
-ImageTexture49.url = new MFString(new java.lang.String["zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"]);
+ImageTexture49.url = new MFString(new java.lang.String["./data/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"]);
 Appearance48.texture = ImageTexture49;
 
 Material Material50 = createNode("Material");

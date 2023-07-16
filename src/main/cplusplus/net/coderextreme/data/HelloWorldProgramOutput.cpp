@@ -42,7 +42,7 @@ component5->setLevel(2);
 head1->addComponent(*component5);
 
 Ccomponent* component6 = new Ccomponent();
-component6->setName("H-Anim");
+component6->setName("HAnim");
 component6->setLevel(1);
 head1->addComponent(*component6);
 
@@ -106,7 +106,7 @@ head1->addMeta(*meta17);
 
 Cmeta* meta18 = new Cmeta();
 meta18->setName("modified");
-meta18->setContent("29 April 2023");
+meta18->setContent("3 July 2023");
 head1->addMeta(*meta18);
 
 Cmeta* meta19 = new Cmeta();

@@ -6,7 +6,7 @@ X3D0.profile = "Immersive";
 X3D0.version = "4.0";
 head head1 = createNode("head");
 component component2 = createNode("component");
-component2.name = "H-Anim";
+component2.name = "HAnim";
 component2.level = 1;
 head1.component = new MFNode();
 

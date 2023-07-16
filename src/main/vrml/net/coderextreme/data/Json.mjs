@@ -31,7 +31,7 @@ component5.level = 2;
 head1.component[3] = component5;
 
 let component6 = browser.currentScene.createNode("component");
-component6.name = "H-Anim";
+component6.name = "HAnim";
 component6.level = 1;
 head1.component[4] = component6;
 
