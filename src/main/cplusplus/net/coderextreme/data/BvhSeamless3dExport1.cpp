@@ -15,7 +15,7 @@ X3D0->setProfile("Immersive");
 X3D0->setVersion("3.1");
 Chead* head1 = new Chead();
 Ccomponent* component2 = new Ccomponent();
-component2->setName("H-Anim");
+component2->setName("HAnim");
 component2->setLevel(1);
 head1->addComponent(*component2);
 

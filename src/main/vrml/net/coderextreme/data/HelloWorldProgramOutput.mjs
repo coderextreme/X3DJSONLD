@@ -33,7 +33,7 @@ component5.level = 2;
 head1.component[3] = component5;
 
 let component6 = browser.currentScene.createNode("component");
-component6.name = "H-Anim";
+component6.name = "HAnim";
 component6.level = 1;
 head1.component[4] = component6;
 
@@ -97,7 +97,7 @@ head1.meta[15] = meta17;
 
 let meta18 = browser.currentScene.createNode("meta");
 meta18.name = "modified";
-meta18.content = "29 April 2023";
+meta18.content = "3 July 2023";
 head1.meta[16] = meta18;
 
 let meta19 = browser.currentScene.createNode("meta");

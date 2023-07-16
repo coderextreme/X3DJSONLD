@@ -222,7 +222,7 @@ CAppearance* Appearance48 = (CAppearance *)(m_pScene.createNode("Appearance"));
 Appearance48->setDEF("SkinAppearance");
 CImageTexture* ImageTexture49 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture49->setDEF("zBlueSpiralBkg2");
-ImageTexture49->setUrl(new CString[3]{"../resources/images/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"}, 3);
+ImageTexture49->setUrl(new CString[4]{"../resources/images/zBlueSpiralBkg2.gif","../data/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"}, 4);
 Appearance48->setTexture(*ImageTexture49);
 
 CMaterial* Material50 = (CMaterial *)(m_pScene.createNode("Material"));

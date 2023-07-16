@@ -18,7 +18,7 @@ var ProtoInstance1 = null;
 var ProtoInstance2 = null;
       var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
       .setHead((new autoclass.head())
-        .addComponent((new autoclass.component()).setName("H-Anim").setLevel(1))
+        .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
         .addMeta((new autoclass.meta()).setName("title").setContent("HAnimBehaviorPrototypes.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("Prototypes for HAnimBehavior node, which collects OrientationInterpolators for aggregate animation of an HAnim humanoid model, and HAnimBodyBehaviorChooser, which selects one body and enables/disables multiple aggregated behaviors."))
         .addMeta((new autoclass.meta()).setName("creator").setContent("Don Brutzman, Jeff Weekley, MV4205 Advanced X3D Authoring class, and Keith Victor"))

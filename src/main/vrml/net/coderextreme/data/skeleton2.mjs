@@ -4,7 +4,7 @@ X3D0.profile = "Immersive";
 X3D0.version = "4.0";
 let head1 = browser.currentScene.createNode("head");
 let component2 = browser.currentScene.createNode("component");
-component2.name = "H-Anim";
+component2.name = "HAnim";
 component2.level = 1;
 head1.component = new MFNode();
 
