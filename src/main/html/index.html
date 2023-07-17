@@ -11,9 +11,6 @@
 <link rel="stylesheet" type="text/css" href="https://create3000.github.io/code/x_ite/latest/dist/x_ite.css"/>
 <script type="text/javascript" src="https://create3000.github.io/code/x_ite/latest/x_ite.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<!--
-    <script type="text/javascript" src="../../../node_modules/saxon-js/SaxonJS2N.js"></script>
- -->
     <script type="text/javascript">var exports = {};</script>
     <script type="text/javascript" src="https://unpkg.com/exificient.js@0.0.5/dist/exificient.js"></script>
     <style type="text/css">
@@ -470,7 +467,7 @@ a:active {
 <option>../data/x3domflowers.json</option>
 <option>../data/x3domflowers.new.json</option>
 <option></select></option>
-<input type="text" id="filter" onchange="filter(event)">
+<input type="text" id="filter" onchange="window.filterFiles(event)">
 </td>
 <td>
 Proto Expander? <input id="prototype" type="checkbox" checked="true">
@@ -569,8 +566,7 @@ Click <a onclick='window.updateFromPly($("#file option:selected").text()); retur
 	<script src="../node/Three2Serializer.js"></script>
 	<script src="../node/DOM2JSONSerializer.js"></script>
 	<script src="../node/loadValidate.js"></script>
-	<script src="../node/loaderJQuery.js"></script>
-	<script src="../node/loadJson.js"></script>
+	<script src="../node/loaderJQuery.saxon.js"></script>
 	<script>
 		$(document).ready(function() {
 		console.log("Loading ball");

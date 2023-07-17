@@ -1,5 +1,7 @@
+let SaxonJS = require("saxon-js");
+
 if (typeof window.PROTOS === 'undefined') {
-	var PROTOS = require('./PrototypeExpander.js');
+	var PROTOS = require('./PrototypeExpander');
 	window.PROTOS = PROTOS;
 }
 
@@ -114,7 +116,7 @@ function filterExisting(event) {
 	});
 }
 
-function filter(event) {
+window.filterFiles = function filterFiles(event) {
 	$('#file').children().remove().end();
 	$.getJSON("/files?"+event.target.value, function (data) {
 		$.each(data, function(i, opt) {
@@ -228,7 +230,7 @@ function loadProtoX3D(scripts, selector, json, url) {
     if ($('#prototype').is(':checked')) {
 	// Expand Protos
 	try {
-		json = new PROTOS().prototypeExpander(url, json, "");
+		json = new window.PROTOS().prototypeExpander(url, json, "");
 	} catch (e) {
 		alert("Problems with Proto Expander "+ e);
 		console.error(e);
@@ -473,7 +475,7 @@ function loadImage(url) {
 		var dot = url.lastIndexOf(".");
 
 		var base = url.substr(0, slash);
-		var ext = url.substr(dot);
+		var ext = url.substring(dot);
 		var file = url.substr(slash, url.length - slash - ext.length);
 		var png = base+"/_viewpoints"+file+".x3d._VP_Default_viewpoint.png";
 		// console.error("setting image src to", png)
@@ -500,7 +502,6 @@ function loadImage(url) {
 */
 	}
 }
-/*
 window.loadJson = function loadJson(url) {
 	$.getJSON(url, function(json) {
 		updateFromJson(json, url);
@@ -508,7 +509,6 @@ window.loadJson = function loadJson(url) {
 	})
 	.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
 }
-*/
 
 function updateXml(json, path) {
 	//  This step is an important validation step.
@@ -563,9 +563,17 @@ function getXmlString(xml) {
 }
 
 function convertXmlToJson(xmlString, path) {
-	/*
-	output = SaxonJS2N.transform({
-		stylesheetLocation: "../lib/stylesheets/X3dToJson.sef.json",
+	let jsobj =  SaxonJS.transform({
+		stylesheetInternal: "https://coderextreme.net/X3DJSONLD/src/main/lib/stylesheets/X3dToJson.sef.json",
+		sourceText: xmlString,
+                destination: "serialized",
+		outputProperties: { method: "json" }
+            }, "sync");
+	jsobj = JSON.parse(jsobj);
+	console.log(jsobj);
+	return jsobj;
+/*
+	output = SaxonJS.transform({
 		sourceText: xmlString,
 		destination: "serialized",
 		outputProperties: { method: "json" }
