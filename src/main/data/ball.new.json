@@ -31,10 +31,6 @@
             "@level":1
           },
           {
-            "@name":"Shape",
-            "@level":4
-          },
-          {
             "@name":"Grouping",
             "@level":3
           },
