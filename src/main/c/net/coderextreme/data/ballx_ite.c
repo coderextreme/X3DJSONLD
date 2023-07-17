@@ -49,7 +49,7 @@ head1.component[7] = component9;
 
 meta meta10 = createNode("meta");
 meta10.name = "title";
-meta10.content = "ball.x3d";
+meta10.content = "ballx_ite.x3d";
 head1.meta[8] = meta10;
 
 meta meta11 = createNode("meta");

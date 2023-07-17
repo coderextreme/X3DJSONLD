@@ -55,7 +55,7 @@ public class ballx_ite {
         .addComponent(new component().setName("Rendering").setLevel(1))
         .addComponent(new component().setName("Grouping").setLevel(3))
         .addComponent(new component().setName("Core").setLevel(1))
-        .addMeta(new meta().setName("title").setContent("ball.x3d"))
+        .addMeta(new meta().setName("title").setContent("ballx_ite.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("generator").setContent("manual"))
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/ball.x3d"))

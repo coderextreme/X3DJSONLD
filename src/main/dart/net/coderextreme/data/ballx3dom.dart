@@ -42,7 +42,7 @@ var X3D0 =  X3D(
           meta_ : [
             meta(
               name_ : SFString('title'),
-              content_ : SFString('ball.x3d')),
+              content_ : SFString('ballx3dom.x3d')),
 
             meta(
               name_ : SFString('creator'),
