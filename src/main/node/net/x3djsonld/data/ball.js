@@ -11,11 +11,11 @@ var autoclass = require('./X3Dautoclass');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> a prismatic sphere. </p>
- <p> Related links: ball.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: NeedClassName.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.ball&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.NeedClassName&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -54,7 +54,7 @@ var autoclass = require('./X3Dautoclass');
 	* @author John Carlson
  */
 
-function ball
+function NeedClassName
   /** Default constructor to create this object. */
   ()
   {
@@ -63,7 +63,7 @@ function ball
     this.initialize();
     return this;
   }
-ball.prototype = {
+NeedClassName.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -75,7 +75,6 @@ ball.prototype = {
     .addComponent((new autoclass.component()).setName("CubeMapTexturing").setLevel(1))
     .addComponent((new autoclass.component()).setName("Texturing").setLevel(1))
     .addComponent((new autoclass.component()).setName("Rendering").setLevel(1))
-    .addComponent((new autoclass.component()).setName("Shape").setLevel(4))
     .addComponent((new autoclass.component()).setName("Grouping").setLevel(3))
     .addComponent((new autoclass.component()).setName("Core").setLevel(1))
     .addMeta((new autoclass.meta()).setName("title").setContent("ball.x3d"))
@@ -94,12 +93,12 @@ ball.prototype = {
         .setAppearance((new autoclass.Appearance())
           .setMaterial((new autoclass.Material()).setDiffuseColor(0.7,0.7,0.7).setSpecularColor(0.5,0.5,0.5))
           .setTexture((new autoclass.ComposedCubeMapTexture("texture"))
-            .setBack((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")))
-            .setBottom((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")))
-            .setFront((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png\"")))
-            .setLeft((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")))
-            .setRight((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")))
-            .setTop((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\""))))
+            .setBackTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")))
+            .setBottomTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")))
+            .setFrontTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png\"")))
+            .setLeftTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")))
+            .setRightTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")))
+            .setTopTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\""))))
           .addComments(java.newArray("java.lang.String",["",
 "                    <ProgramShader DEF='ProgramShader' containerField='shaders' language='GLSL'>",
 "			<ShaderProgram url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' containerField='programs' type='VERTEX'>",
@@ -168,7 +167,7 @@ ball.prototype = {
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return ball model
+   * @return NeedClassName model
    */
   getX3dModel : function()
   {	  
@@ -216,8 +215,8 @@ ball.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new ball();
-		console.log ("ball execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new NeedClassName();
+		console.log ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new ball().main();
+new NeedClassName().main();

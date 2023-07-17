@@ -44,7 +44,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 7 January 2023 </td>
+			<td> 2 July 2023 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -130,7 +130,7 @@ public class KoreanCharacterMotionAnnexD01Jin
     .addMeta(new meta().setName(meta.NAME_TRANSLATOR ).setContent("Chul Hee Jung and Myeong Won Lee"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("31 March 2011"))
     .addMeta(new meta().setName(meta.NAME_TRANSLATED ).setContent("1 November 2014"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("7 January 2023"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("2 July 2023"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model."))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("KoreanCharacter00ReadMe.txt"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("KoreanCharacterHumanMotion_Infotech2014_140706.pdf"))
@@ -367,9 +367,8 @@ public class KoreanCharacterMotionAnnexD01Jin
       .addSegments(new HAnimSegment().setUSE("hanim_r_thigh"))
       .addSegments(new HAnimSegment().setUSE("hanim_l_upperarm"))
       .addSegments(new HAnimSegment().setUSE("hanim_r_upperarm"))
-      .addMotions(new HAnimMotion("hanim_motion_animation").setName("motion_animation").setChannels("6 Xposition Yposition Zposition Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation").setEnabled(false).setJoints("HumanoidRoot l_hip l_knee l_talocrural r_hip r_knee r_talocrural vl5 IGNORED l_shoulder l_elbow l_radiocarpal IGNORED r_shoulder r_elbow r_radiocarpal IGNORED skullbase").setTotalFrameCount("392"
-// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), HAnimMotion totalFrameCount: $isNumeric=true, $attributeType=, value='392']
-).setValues(gethanim_motion_animation_4_242_values()))));
+      .addComments(" expected outputOnly event frameCount='392' ")
+      .addMotions(new HAnimMotion("hanim_motion_animation").setName("motion_animation").setChannels("6 Xposition Yposition Zposition Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation").setEnabled(false).setJoints("HumanoidRoot l_hip l_knee l_talocrural r_hip r_knee r_talocrural vl5 IGNORED l_shoulder l_elbow l_radiocarpal IGNORED r_shoulder r_elbow r_radiocarpal IGNORED skullbase").setValues(gethanim_motion_animation_4_242_values()))));
             }
             catch (Exception ex)
             {       

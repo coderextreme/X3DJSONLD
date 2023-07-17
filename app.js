@@ -164,97 +164,59 @@ app.get("/data/*.x3d*", function(req, res, next) {
 
 app.get("/files", function(req, res, next) {
 	var test = req._parsedUrl.query;
+	// var test = req._parsedUrl.pathname;
+	while (test.startsWith("/")) {
+		test = test.substr(1);
+	}
+	console.log("here's the file search query", test);
 	var json = [];
 
-	glob(www+'/**/*.wrl', function( err, files ) {
-		if (err) return;
+//	globSync(www+'/**/*.wrl', function( err, files ) {
+//		if (err) return;
+//		files.forEach(function(file) {
+//			if (new RegExp(test).test(file)) {
+//				json.push(file.substr(www.length, file.length-www.length));
+//				console.error(file);
+//			}
+//		});
+//      });
+//	globSync(www+'/**/*.x3d', function( err, files ) {
+//		if (err) return;
+//		files.forEach(function(file) {
+//			if (new RegExp(test).test(file)) {
+//				json.push(file.substr(www.length, file.length-www.length));
+//				console.error(file);
+//			}
+//		});
+//      });
+//	globSync(www+'/**/*.json', function( err, files ) {
+//		if (err) return;
+//		files.forEach(function(file) {
+//			if (new RegExp(test).test(file)) {
+//				json.push(file.substr(www.length, file.length-www.length));
+//				console.error(file);
+//			}
+//		});
+//      });
+	let dirs = ['src/main/Library/**', 'src/main/data/**','src/main/personal/**', 'src/main/wrl/**', 'src/main/ply/**', 'src/main/stl/**'];
+	for (let dir in dirs) {
+		let files = globSync(dirs[dir]);
+		console.log("searching", dirs[dir]);
 		files.forEach(function(file) {
+			// console.log(file, "matching", test);
 			if (new RegExp(test).test(file)) {
-				json.push(file.substr(www.length, file.length-www.length));
-				console.error(file);
-			}
-		});
-	glob(www+'/**/*.x3d', function( err, files ) {
-		if (err) return;
-		files.forEach(function(file) {
-			if (new RegExp(test).test(file)) {
-				json.push(file.substr(www.length, file.length-www.length));
-				console.error(file);
-			}
-		});
-	glob(www+'/**/*.json', function( err, files ) {
-		if (err) return;
-		files.forEach(function(file) {
-			if (new RegExp(test).test(file)) {
-				json.push(file.substr(www.length, file.length-www.length));
-				console.error(file);
-			}
-		});
-	glob('src/main/data/**', function( err, files ) {
-		if (err) return;
-		files.forEach(function(file) {
-			if (new RegExp(test).test(file)) {
-				file = file.replace(/src\/main/, '..');
+				console.log(file, "matches", test);
+				file = file.replace(/src[\/\\]main/, '..');
+				// file = file.replace(/\\/, '/');
 				json.push(file);
-				console.error(file);
+				console.log("returning", file);
+			} else {
+				// console.log(file, "does not match", test);
 			}
 		});
-	glob('src/main/personal/**', function( err, files ) {
-		if (err) return;
-		files.forEach(function(file) {
-			if (new RegExp(test).test(file)) {
-				file = file.replace(/src\/main/, '..');
-				json.push(file);
-				console.error(file);
-			}
-		});
-	glob('src/main/wrl/**', function( err, files ) {
-		if (err) return;
-		files.forEach(function(file) {
-			if (new RegExp(test).test(file)) {
-				file = file.replace(/src\/main/, '..');
-				json.push(file);
-				console.error(file);
-			}
-		});
-	glob('src/main/ply/**', function( err, files ) {
-		if (err) return;
-		files.forEach(function(file) {
-			if (new RegExp(test).test(file)) {
-				file = file.replace(/src\/main/, '..');
-				json.push(file);
-				console.error(file);
-			}
-		});
-	glob('src/main/stl/**', function( err, files ) {
-		if (err) return;
-		files.forEach(function(file) {
-			if (new RegExp(test).test(file)) {
-				file = file.replace(/src\/main/, '..');
-				json.push(file);
-				console.error(file);
-			}
-		});
-	glob('src/main/Library/**', function( err, files ) {
-		if (err) return;
-		files.forEach(function(file) {
-			if (new RegExp(test).test(file)) {
-				file = file.replace(/src\/main/, '..');
-				json.push(file);
-				console.error(file);
-			}
-		});
+	}
 	console.log("Sending ", json.length, "files");
 	send(res, json, "text/json", next);
-	});
-	});
-	});
-	});
-	});
-	});
-	});
-	});
-	});
 });
 
 function magic(path, type) {

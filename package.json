@@ -43,6 +43,7 @@
     "postinstall": "bash build.sh",
     "ajv": "bash ajv.sh",
     "buildthreex3dloader": "browserify src/main/node/threeLoadFile.js > src/main/node/bundle.js",
+    "buildloaderJQuery": "browserify src/main/node/loaderJQuery.js > src/main/node/loaderJQuery.saxon.js",
     "test": "web-test-runner ./dist/**/*.spec.js"
   }
 }

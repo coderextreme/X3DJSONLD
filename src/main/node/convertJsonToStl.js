@@ -349,7 +349,7 @@ function transformLDNodesToTriangles(LDNode, output, parentTransform) {
 							output,
 							transform);
 					} else {
-						var fn = LDNode.normalIndex[face];
+						var fn = LDNode.normalIndex[parseInt(face)];
 						printNormal("  facet normal",
 							LDNode.Normal.vector[fn[0]][0], 
 							LDNode.Normal.vector[fn[0]][1],
