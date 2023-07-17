@@ -564,7 +564,7 @@ function getXmlString(xml) {
 
 function convertXmlToJson(xmlString, path) {
 	let jsobj =  SaxonJS.transform({
-		stylesheetInternal: "https://coderextreme.net/X3DJSONLD/src/main/lib/stylesheets/X3dToJson.sef.json",
+		stylesheetLocation: "https://coderextreme.net/X3DJSONLD/src/main/lib/stylesheets/X3dToJson.sef.json",
 		sourceText: xmlString,
                 destination: "serialized",
 		outputProperties: { method: "json" }
