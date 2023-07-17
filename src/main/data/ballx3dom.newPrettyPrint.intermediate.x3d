@@ -10,7 +10,7 @@
     <component name='Rendering' level='1'/>
     <component name='Grouping' level='3'/>
     <component name='Core' level='1'/>
-    <meta content='ball.x3d' name='title'/>
+    <meta content='ballx3dom.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='manual' name='generator'/>
     <meta content='https://coderextreme.net/X3DJSONLD/ball.x3d' name='identifier'/>

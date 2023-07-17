@@ -56,7 +56,7 @@ head1->addComponent(*component9);
 
 Cmeta* meta10 = new Cmeta();
 meta10->setName("title");
-meta10->setContent("ball.x3d");
+meta10->setContent("ballx_ite.x3d");
 head1->addMeta(*meta10);
 
 Cmeta* meta11 = new Cmeta();

@@ -23,7 +23,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addComponent((new autoclass.component()).setName("Rendering").setLevel(1))
         .addComponent((new autoclass.component()).setName("Grouping").setLevel(3))
         .addComponent((new autoclass.component()).setName("Core").setLevel(1))
-        .addMeta((new autoclass.meta()).setName("title").setContent("ball.x3d"))
+        .addMeta((new autoclass.meta()).setName("title").setContent("ballx3dom.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
         .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/ball.x3d"))
