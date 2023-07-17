@@ -44,7 +44,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 29 April 2023 </td>
+			<td> 3 July 2023 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -138,7 +138,7 @@ HelloWorldProgramOutput.prototype = {
     .addComponent((new autoclass.component()).setName("Shaders").setLevel(1))
     .addComponent((new autoclass.component()).setName("CADGeometry").setLevel(2))
     .addComponent((new autoclass.component()).setName("DIS").setLevel(2))
-    .addComponent((new autoclass.component()).setName("H-Anim").setLevel(1))
+    .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
     .addComponent((new autoclass.component()).setName("Grouping").setLevel(1))
     .addComponent((new autoclass.component()).setName("Layering").setLevel(1))
     .addUnit((new autoclass.unit()).setName("AngleUnitConversion").setCategory("angle").setConversionFactor(1.0))
@@ -150,7 +150,7 @@ HelloWorldProgramOutput.prototype = {
     .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org/specifications/java/X3DJSAIL.html"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("HelloWorldProgramOutput.java"))
     .addMeta((new autoclass.meta()).setName("created").setContent("6 September 2016"))
-    .addMeta((new autoclass.meta()).setName("modified").setContent("29 April 2023"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("3 July 2023"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("X3D Java Scene Access Interface Library (X3DJSAIL)"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("Netbeans https://www.netbeans.org"))
@@ -313,7 +313,7 @@ HelloWorldProgramOutput.prototype = {
 "    red   = newColor.r;" + "\n" + 
 "    green = newColor.g;" + "\n" + 
 "    blue  = newColor.b;" + "\n" + 
-"    " + "\n" + 
+"\n" + 
 "    // note different modulation rates for each color component, % is modulus operator" + "\n" + 
 "    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);" + "\n" + 
 "	if (enabled)" + "\n" + 
