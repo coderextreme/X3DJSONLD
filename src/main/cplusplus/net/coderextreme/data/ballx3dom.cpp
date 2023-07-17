@@ -56,7 +56,7 @@ head1->addComponent(*component9);
 
 Cmeta* meta10 = new Cmeta();
 meta10->setName("title");
-meta10->setContent("ball.x3d");
+meta10->setContent("ballx3dom.x3d");
 head1->addMeta(*meta10);
 
 Cmeta* meta11 = new Cmeta();
@@ -118,27 +118,27 @@ CComposedCubeMapTexture* ComposedCubeMapTexture25 = (CComposedCubeMapTexture *)(
 ComposedCubeMapTexture25->setDEF("texture");
 CImageTexture* ImageTexture26 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture26->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"}, 2);
-ComposedCubeMapTexture25->setBackTexture(*ImageTexture26);
+ComposedCubeMapTexture25->setBack(*ImageTexture26);
 
 CImageTexture* ImageTexture27 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture27->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"}, 2);
-ComposedCubeMapTexture25->setBottomTexture(*ImageTexture27);
+ComposedCubeMapTexture25->setBottom(*ImageTexture27);
 
 CImageTexture* ImageTexture28 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture28->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"}, 2);
-ComposedCubeMapTexture25->setFrontTexture(*ImageTexture28);
+ComposedCubeMapTexture25->setFront(*ImageTexture28);
 
 CImageTexture* ImageTexture29 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture29->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"}, 2);
-ComposedCubeMapTexture25->setLeftTexture(*ImageTexture29);
+ComposedCubeMapTexture25->setLeft(*ImageTexture29);
 
 CImageTexture* ImageTexture30 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture30->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"}, 2);
-ComposedCubeMapTexture25->setRightTexture(*ImageTexture30);
+ComposedCubeMapTexture25->setRight(*ImageTexture30);
 
 CImageTexture* ImageTexture31 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture31->setUrl(new CString[2]{"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"}, 2);
-ComposedCubeMapTexture25->setTopTexture(*ImageTexture31);
+ComposedCubeMapTexture25->setTop(*ImageTexture31);
 
 Appearance23->setTexture(*ComposedCubeMapTexture25);
 

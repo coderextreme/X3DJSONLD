@@ -47,7 +47,7 @@ head1.component[7] = component9;
 
 let meta10 = browser.currentScene.createNode("meta");
 meta10.name = "title";
-meta10.content = "ball.x3d";
+meta10.content = "ballx3dom.x3d";
 head1.meta[8] = meta10;
 
 let meta11 = browser.currentScene.createNode("meta");
