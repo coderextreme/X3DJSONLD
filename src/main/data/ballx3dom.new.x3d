@@ -50,17 +50,6 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
             <ShaderPart url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"'/>
             <ShaderPart DEF='common' type='FRAGMENT' url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"'/>
           </ComposedShader>
-          <ComposedShader language='GLSL'>
-            <field accessType='initializeOnly' name='chromaticDispertion' type='SFVec3f' value='0.98 1 1.033'/>
-            <field accessType='initializeOnly' name='cube' type='SFNode'>
-              <ComposedCubeMapTexture USE='texture'/>
-            </field>
-            <field accessType='initializeOnly' name='bias' type='SFFloat' value='0.5'/>
-            <field accessType='initializeOnly' name='scale' type='SFFloat' value='0.5'/>
-            <field accessType='initializeOnly' name='power' type='SFFloat' value='2'/>
-            <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"'/>
-            <ShaderPart type='FRAGMENT' url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"'/>
-          </ComposedShader>
         </Appearance>
         <Sphere/>
       </Shape>

@@ -146,7 +146,7 @@ CComposedShader* ComposedShader32 = (CComposedShader *)(m_pScene.createNode("Com
 ComposedShader32->setLanguage("GLSL");
 Cfield* field33 = new Cfield();
 field33->setName("chromaticDispertion");
-field33->setAccessType("initializeOnly");
+field33->setAccessType("inputOutput");
 field33->setType("SFVec3f");
 field33->setValue("0.98 1 1.033");
 ComposedShader32->addField(*field33);
@@ -154,7 +154,7 @@ ComposedShader32->addField(*field33);
 Cfield* field34 = new Cfield();
 field34->setName("cube");
 field34->setType("SFNode");
-field34->setAccessType("initializeOnly");
+field34->setAccessType("inputOutput");
 CComposedCubeMapTexture* ComposedCubeMapTexture35 = (CComposedCubeMapTexture *)(m_pScene.createNode("ComposedCubeMapTexture"));
 ComposedCubeMapTexture35->setUSE("texture");
 field34->addChildren(*ComposedCubeMapTexture35);
@@ -163,32 +163,33 @@ ComposedShader32->addField(*field34);
 
 Cfield* field36 = new Cfield();
 field36->setName("bias");
-field36->setAccessType("initializeOnly");
+field36->setAccessType("inputOutput");
 field36->setType("SFFloat");
 field36->setValue("0.5");
 ComposedShader32->addField(*field36);
 
 Cfield* field37 = new Cfield();
 field37->setName("scale");
-field37->setAccessType("initializeOnly");
+field37->setAccessType("inputOutput");
 field37->setType("SFFloat");
 field37->setValue("0.5");
 ComposedShader32->addField(*field37);
 
 Cfield* field38 = new Cfield();
 field38->setName("power");
-field38->setAccessType("initializeOnly");
+field38->setAccessType("inputOutput");
 field38->setType("SFFloat");
 field38->setValue("2");
 ComposedShader32->addField(*field38);
 
 CShaderPart* ShaderPart39 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
-ShaderPart39->setUrl(new CString[2]{"../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"}, 2);
+ShaderPart39->setUrl(new CString[2]{"../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"}, 2);
 ShaderPart39->setType("VERTEX");
 ComposedShader32->addParts(*ShaderPart39);
 
 CShaderPart* ShaderPart40 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
-ShaderPart40->setUrl(new CString[2]{"../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"}, 2);
+ShaderPart40->setDEF("common");
+ShaderPart40->setUrl(new CString[2]{"../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"}, 2);
 ShaderPart40->setType("FRAGMENT");
 ComposedShader32->addParts(*ShaderPart40);
 

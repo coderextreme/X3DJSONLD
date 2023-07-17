@@ -61,10 +61,6 @@ var X3D0 =  new X3D({
               level : new SFInt32(1)})),
           component : new SFNode(
             new component({
-              name : new SFString("Shape"),
-              level : new SFInt32(4)})),
-          component : new SFNode(
-            new component({
               name : new SFString("Grouping"),
               level : new SFInt32(3)})),
           component : new SFNode(
