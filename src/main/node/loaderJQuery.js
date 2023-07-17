@@ -1,4 +1,4 @@
-let SaxonJS = require("saxon-js");
+// let SaxonJS = require("saxon-js");
 
 if (typeof window.PROTOS === 'undefined') {
 	var PROTOS = require('./PrototypeExpander');
@@ -563,8 +563,11 @@ function getXmlString(xml) {
 }
 
 function convertXmlToJson(xmlString, path) {
+/*
 	let jsobj =  SaxonJS.transform({
 		stylesheetLocation: "https://coderextreme.net/X3DJSONLD/src/main/lib/stylesheets/X3dToJson.sef.json",
+		stylesheetBaseURI: "https://coderextreme.net/",
+		sourceBaseURI: "file://",
 		sourceText: xmlString,
                 destination: "serialized",
 		outputProperties: { method: "json" }
@@ -572,7 +575,6 @@ function convertXmlToJson(xmlString, path) {
 	jsobj = JSON.parse(jsobj);
 	console.log(jsobj);
 	return jsobj;
-/*
 	output = SaxonJS.transform({
 		sourceText: xmlString,
 		destination: "serialized",
