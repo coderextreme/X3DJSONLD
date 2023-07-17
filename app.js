@@ -207,7 +207,7 @@ app.get("/files", function(req, res, next) {
 			if (new RegExp(test).test(file)) {
 				console.log(file, "matches", test);
 				file = file.replace(/src[\/\\]main/, '..');
-				// file = file.replace(/\\/, '/');
+				file = file.replace(/\\/g, '/');
 				json.push(file);
 				console.log("returning", file);
 			} else {
