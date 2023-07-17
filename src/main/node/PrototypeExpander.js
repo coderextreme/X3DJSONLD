@@ -239,7 +239,7 @@ PROTOS.prototype = {
 		for (var a in f) {
 			if (a === '@value' || a === '-children') {
 				// console.error("===========attribute", a);
-				objectfield = a.substr(1);
+				objectfield = a.substring(1);
 			}
 		}
 		return objectfield;
@@ -1047,7 +1047,7 @@ PROTOS.prototype = {
 				}
 				*/
 				while (localArray[url].startsWith("../")) {
-					localArray[url] = localArray[url].substr(3);
+					localArray[url] = localArray[url].substring(3);
 					var pe = pc.lastIndexOf('/');
 					if (pe >= 0) {
 						pc = pc.substring(0, pe);
