@@ -11,7 +11,6 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
     <component name='CubeMapTexturing'/>
     <component name='Texturing'/>
     <component name='Rendering'/>
-    <component level='4' name='Shape'/>
     <component level='3' name='Grouping'/>
     <component name='Core'/>
     <meta content='ball.x3d' name='title'/>

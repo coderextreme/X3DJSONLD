@@ -36,13 +36,13 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-public class ball {
+public class ballx3dom {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    X3D model = new ball().initialize();
+    X3D model = new ballx3dom().initialize();
     System.out.print(model.validationReport().trim());
-    model.toFileJSON("../data/ball.new.json");
+    model.toFileJSON("../data/ballx3dom.new.json");
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
@@ -77,11 +77,6 @@ public class ball {
                 .setLeftTexture(new ImageTexture().setUrl(new MFString9().getArray()))
                 .setRightTexture(new ImageTexture().setUrl(new MFString10().getArray()))
                 .setTopTexture(new ImageTexture().setUrl(new MFString11().getArray())))
-              .addComments("<ProgramShader DEF='ProgramShader' containerField='shaders' language='GLSL'> <ShaderProgram url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' containerField='programs' type='VERTEX'> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/> <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'/> <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'/> <field name='power' accessType='initializeOnly' type='SFFloat' value='2'/> </ShaderProgram> <ShaderProgram url='\"../shaders/freewrl.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' containerField='programs' type='FRAGMENT'/> </ProgramShader>")
-              .addComments("<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field> <field name='fw_Texture_unit0' type='SFNode' accessType=\"initializeOnly\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field> <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field> <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field> <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field> <ShaderPart url='\"../shaders/contact.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/contact.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>")
-              .addComments("<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field> <field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field> <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field> <ShaderPart url='\"../shaders/octaga.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/octaga.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>")
-              .addComments("<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field> <field name='cube' accessType='initializeOnly' type='SFInt32' value='0'></field> <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field> <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field> <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field> <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>")
-              .addComments("")
               .addShaders(new ComposedShader().setLanguage("GLSL")
                 .addField(new field().setType("SFVec3f").setName("chromaticDispertion").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
                 .addField(new field().setType("SFNode").setName("cube").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
@@ -90,16 +85,7 @@ public class ball {
                 .addField(new field().setType("SFFloat").setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
                 .addField(new field().setType("SFFloat").setName("power").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
                 .addParts(new ShaderPart().setType("VERTEX").setUrl(new MFString12().getArray()))
-                .addParts(new ShaderPart().setType("FRAGMENT").setDEF("common").setUrl(new MFString13().getArray())))
-              .addShaders(new ComposedShader().setLanguage("GLSL")
-                .addField(new field().setType("SFVec3f").setName("chromaticDispertion").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0.98 1 1.033"))
-                .addField(new field().setType("SFNode").setName("cube").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
-                  .addChild(new ComposedCubeMapTexture().setUSE("texture")))
-                .addField(new field().setType("SFFloat").setName("bias").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0.5"))
-                .addField(new field().setType("SFFloat").setName("scale").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0.5"))
-                .addField(new field().setType("SFFloat").setName("power").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("2"))
-                .addParts(new ShaderPart().setType("VERTEX").setUrl(new MFString14().getArray()))
-                .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new MFString15().getArray())))))))      ;
+                .addParts(new ShaderPart().setType("FRAGMENT").setDEF("common").setUrl(new MFString13().getArray())))))))      ;
     return X3D0;
     }
 protected class MFString0 {
@@ -170,16 +156,6 @@ protected class MFString12 {
 protected class MFString13 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"});
-  }
-}
-protected class MFString14 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"});
-  }
-}
-protected class MFString15 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"});
   }
 }
 }
