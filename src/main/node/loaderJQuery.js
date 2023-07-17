@@ -510,6 +510,8 @@ window.loadJson = function loadJson(url) {
 	.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
 }
 
+loadJson("../data/ballx_ite.json");
+
 function updateXml(json, path) {
 	//  This step is an important validation step.
 	convertJsonToXml(json, function(xml) {
@@ -523,7 +525,7 @@ function updateStl(json) {
 				var stl = convertJsonToStl(json);
 				$('#stl').val(stl);
 			} catch (e) {
-				alert("Problems updating STL from JSON");
+				alert("Problems updating STL from JSON "+e);
 				console.error(e);
 			}
 		} else {
