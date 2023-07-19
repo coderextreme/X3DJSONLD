@@ -374,7 +374,7 @@ JavaSerializer.prototype = {
 					if (attr === "USE") {
 						USE = attrs[a].nodeValue;
 					}
-					console.log("DEF/USE", DEF, USE);
+					// console.log("DEF/USE", DEF, USE);
 					var method = attr;
 					// look at object model
 					var attrType = "SFString";

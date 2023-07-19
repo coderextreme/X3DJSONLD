@@ -50,7 +50,8 @@ def parseArray(lead, trail, grandparent, parent, data, indent, fieldType=None):
     #    print("'''"+str(fieldType)+" "+grandparent+"."+parent+"["+str(tupleSize)+"]'''", file=sys.stderr)
     for d in data:
         if isinstance(d, dict) and d.get("#comment"):
-            out += "\n"+"Comment(value=''' " + d.get("#comment") + " '''),\n"
+            # print("COMMENT "+d.get("#comment"), file=sys.stderr)
+            out += "\n"+"Comment(value=''' " + d.get("#comment") + " '''),"
             continue
         if (tupleSize > 1) and (tuplecount % tupleSize == 0):
             out += "("
@@ -139,8 +140,7 @@ def parseObject(parent, data,indent):
             #print("fieldType "+fieldType, file=sys.stderr)
         if key in ("encoding", "xsd:noNamespaceSchemaLocation", "JSON schema"):
             continue
-        if parent in ("AudioClip", "MovieTexture", "Sound", "Text", "Script", "IndexedLineSet", "ExternProtoDeclare", "ProtoInterface", "ProtoDeclare", "ComposedShader", "Shape", "Appearance", "Material", "head", "HAnimHumanoid", "X3D", "ProtoInstance", "ColorInterpolator", "MetadataSet", "LineSet") and key in ("children"):  # these don't have children yet, sorry
-            # do #comment later
+        if parent in ("AudioClip", "MovieTexture", "Sound", "Text", "Script", "IndexedLineSet", "ExternProtoDeclare", "ProtoInterface", "ProtoDeclare", "ComposedShader", "Shape", "Appearance", "Material", "HAnimHumanoid", "X3D", "ProtoInstance", "ColorInterpolator", "MetadataSet", "LineSet") and key in ("children"):  # these don't have children yet, sorry
             continue
         if parent in ("Text", "Shape") and key in ("value"):  # don't have value yet, sorry
             # do value later
@@ -150,6 +150,8 @@ def parseObject(parent, data,indent):
             out += ", "
         els += 1
         if k.startswith("#comment"):
+            # probably not used, illegal?
+            print("COMMENT WARNING "+str(v), file=sys.stderr)
             out += "\nComment(value=''' " + str(v).replace(r"\n", " '''),\nComment(value=''' ))") + " '''),\n"
             # els = 0
         elif k.startswith("#sourceCode") or k.startswith("#sourceText"):
@@ -163,12 +165,16 @@ def parseObject(parent, data,indent):
             elif key not in ("X3D", "GeoElevationGrid", "ForcePhysicsModel", "WindPhysicsModel", "BoundedPhysicsModel", "AudioClip", "LOD", "PositionInterpolator", "Extrusion", "TextureCoordinate", "MultiTextureCoordinate", "Normal", "FontStyle", "ComposedShader", "ImageTexture", "ShaderProgram", "ShaderPart", "ComposedCubeMapTexture", "WorldInfo", "NavigationInfo", "Viewpoint", "Background", "Transform", "Shape", "Sphere", "Appearance", "Material", "Box", "Group", "Script", "Text", "PixelTexture", "IndexedTriangleSet", "IndexedFaceSet", "HAnimDisplacer", "HAnimSite", "HAnimJoint", "HAnimSegment", "HAnimHumanoid", "ParticleSystem", "ExplosionEmitter", "PointEmitter", "PolylineEmitter", "SurfaceEmitter", "ConeEmitter", "VolumeEmitter", "GeoLOD", "GeoOrigin", "ClipPlane", "MetadataBoolean", "MetadataInteger", "MetadataDouble", "MetadataFloat", "MetadataString", "MetadataSet", "ViewpointGroup", "ProtoInstance", "ProtoDeclare", "ExternProtoDeclare", "TouchSensor", "ProgramShader", "VisibilitySensor", "TimeSensor", "PlaneSensor", "Switch", "Layer", "LineProperties", "AcousticProperties", "Sound", "Cylinder", "ROUTE", "PhysicalMaterial", "ColorRGBA", "Color", "CoordinateInterpolator", "Coordinate", "TextureBackground", "Collision", "LineSet", "IndexedLineSet", "Inline", "Anchor", "TextureTransform", "OrientationInterpolator", "ListenerPointSource", "Cone", "LayerSet", "ProximitySensor", "StringSensor", "IMPORT", "EXPORT", "PointLight", "DirectionalLight", "ChannelSplitter", "ChannelMerger", "BooleanFilter", "BooleanToggle", "BiquadFilter", "Fog", "SpotLight", "MovieTexture", "BooleanSequencer", "IntegerSequencer", "Billboard", "LayoutLayer", "Disk2D", "OrthoViewpoint", "GeoViewpoint", "GeoPositionInterpolator", "TextureProperties", "ColorInterpolator", "StreamAudioDestination", "SpatialSound", "Analyser", "Gain", "ChannelSelector", "Convolver", "Delay", "DynamicsCompressor", "WaveShaper", "BufferAudioSource", "StreamAudioSource", "MicrophoneSource", "OscillatorSource", "Rectangle2D", "ScalarInterpolator", "CADLayer", "CADAssembly", "CADPart", "CADFace", "EspduTransform", "ReceiverPdu", "SignalPdu", "TransmitterPdu", "DISEntityManager", "DISEntityTypeMapping", "LoadSensor", "GeoMetadata", "ImageCubeMapTexture", "ImageTexture3D", "PackagedShader"):
 
                 out += "="
+            # elif parent in ("head") and key in ("children"):
+            elif key in ("children"):
+                out += parseArray("WWW", "WWW", parent, key, v,indent+1, fieldType)
+                
             if key in ("head"):
-                out += key+"("
-                out += "children=["
+                out += key+"(\n"
+                #out += "children=[\n"
                 out += parseObject(k, v,indent+2)
-                out += "]"
-                out += ")"
+                #out += "]"
+                out += "])"
             elif key in ("ProtoBody", "Scene", "IS", "ProtoInterface"):
                 out += key+"("
                 out += parseObject(k, v,indent+1)
@@ -193,11 +199,16 @@ def parseObject(parent, data,indent):
                 # don't put out enclosing object around the array
                 if fieldType.startswith("SF"):
                     out += parseArray("(", ")", parent, key, v,indent+1, fieldType)
-                if fieldType.startswith("MF"):
+                elif fieldType.startswith("MF"):
                     out += parseArray("", "", parent, key, v,indent+1, fieldType)
+                else:
+                    print("UNKNOWN FIELD TYPE "+fieldType+" for "+key, file=sys.stderr)
             else:
                 out += key+"="
-            if key in ("meta", "unit", "component"):
+            #  This is a good #comment
+            if parent in ("head") and key in ("children"):
+                out += parseArray("[", "\n", parent, key, v,indent+1, fieldType)
+            elif key in ("meta", "unit", "component"):
                 out += ""
                 pass
             elif key in ("vertexCount", "range", "children", "url", "frontUrl", "backUrl", "bottomUrl", "topUrl", "leftUrl", "rightUrl", "key", "url", "justify", "string", "field", "fieldValue", "connect", "image", "avatarSize", "skyAngle", "groundAngle", "skinCoordWeight", "skinCoordIndex", "colorIndex", "texCoordIndex", "normalIndex", "coordIndex", "family", "stiffness", "llimit", "ulimit", "info", "physics", "skeleton", "viewpoints", "skin", "displacers", "sites", "segments", "parts", "shaders", "programs"):
@@ -263,11 +274,11 @@ def parseObject(parent, data,indent):
 
 with open('HelloWorldProgramOutput.json' if len(sys.argv) == 1 else sys.argv[1], encoding="cp1252") as json_file:
     data = json.load(json_file)
-    print("print(\"<!--\")")   # comment out output created by importing x3d (see below)
+    #print("print(\"<!--\")")   # comment out output created by importing x3d (see below)
     print("from x3d import *")
     # print("from x3d import SFBool")
     # print("from x3d import _X3DBoundedObject")
-    print("print(\"-->\")")   # comment out output created by importing x3d (see above)
+    #print("print(\"-->\")")   # comment out output created by importing x3d (see above)
     print("print(", end="")
     print(parseObject("X3D", data, 0))
-    print(".XML())")
+    print(".JSON())")
