@@ -34,7 +34,6 @@
 		<option>de</option>
 	</select><br></br>
 	<textarea id="json" name="json" rows="45" cols="80"></textarea><br></br>
-</body>
 <script>
 	if (location.href.indexOf("?") >= 0) {
 		document.getElementById("json").value = location.href.replace(/[^?]*\?/, "");
@@ -43,4 +42,5 @@
 			.then(data => document.getElementById("json").value = JSON.stringify(data, null, 1));
 	}
 </script>
+</body>
 </html>
