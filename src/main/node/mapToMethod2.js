@@ -5,7 +5,7 @@ var mapToMethod2 = {
 	},
 	"HAnimJoint" : {
 		"Transform" : "addChildren",
-		"setShape" : "addChild"
+		"Shape" : "addChild"
 	},
 	"Appearance" : {
 		"ProtoInstance" : "addShaders",
