@@ -20,7 +20,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"https://coderextreme.net/X3DJSONLD/arc.x3d"
+            "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d"
           },
           {
             "@name":"description",
@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 July 2023"
+            "@content":"30 July 2023"
           },
           {
             "@name":"generator",
