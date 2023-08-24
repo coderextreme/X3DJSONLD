@@ -147,7 +147,6 @@ ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.json/' -e
 do
 	PY=`echo "$i" | sed -e "$DATATOPYTHON" -e "$ROOTTOPYTHON" -e 's/.json/.py/'`
 	X3D=`echo "$i" | sed -e 's/.json/.new.x3d/'`
-	# produces XML for now
 	echo py ../python/x3djsonld.py "'$i'" ">" "'$PY'" and py "'$PY'" ">" "'$X3D'"
 	py ../python/x3djsonld.py "$i" > "$PY" && py "$PY" > "$X3D" && echo "$PY" "$X3D" || echo "Error: "$PY" failed to parse"
 done
