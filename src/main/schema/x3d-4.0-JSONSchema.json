@@ -17636,6 +17636,126 @@
             }
           },
           "additionalProperties": false
+        },
+	{
+          "type": "object",
+          "properties": {
+            "-children": {
+              "$ref": "#/$defs/-childStatements"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
+            },
+            "@avatarSize": {
+              "$comment": "MFFloat inputOutput",
+              "type": "array",
+              "prefixItems": [
+                {
+                  "default": 0.25,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 1.6,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 0.75,
+                  "minimum": 0,
+                  "type": "number"
+                }
+              ],
+              "items": {
+                "minimum": 0,
+                "type": "number"
+              }
+            },
+            "@headlight": {
+              "default": true,
+              "$comment": "SFBool inputOutput",
+              "type": "boolean"
+            },
+            "-metadata": {
+              "$ref": "#/$defs/-X3DMetadataObjectSFNode"
+            },
+            "@speed": {
+              "default": 1,
+              "$comment": "SFFloat inputOutput",
+              "type": "number"
+            },
+            "@transitionTime": {
+              "default": 1,
+              "$comment": "SFTime inputOutput",
+              "type": "number"
+            },
+            "@transitionType": {
+              "$comment": "MFString inputOutput",
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "TELEPORT",
+                      "LINEAR",
+                      "ANIMATE"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
+                "default": "LINEAR",
+                "type": "string"
+              }
+            },
+            "@type": {
+              "$comment": "MFString inputOutput",
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "enum": [
+		      "ANY",
+		      "WALK",
+		      "EXAMINE",
+		      "FLY",
+                      "LOOKAT",
+		      "NONE",
+		      "EXPLORE"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
+                "default": [ "EXAMINE", "ANY" ],
+                "type": "string"
+              }
+            },
+            "@visibilityLimit": {
+              "default": 0,
+              "$comment": "SFFloat inputOutput",
+              "type": "number"
+            },
+            "@DEF": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@class": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@style": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
         }
       ]
     },
