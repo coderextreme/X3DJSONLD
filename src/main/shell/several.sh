@@ -3,7 +3,7 @@
 # Run the Test Suite
 
 # accepts files with .x3d extension
-export PROCESSORS=${PROCESSORS-8}
+export PROCESSORS="${PROCESSORS-8}"
 
 . ./classpath
 
@@ -26,83 +26,136 @@ OVERWRITE=---overwrite
 LOCALTOROOT='s/^\.\.\/x3d-code/\/c\/x3d-code/'
 ROOTTOLOCAL='s/www.web3d.org/www_web3d_org/' 
 
+function mydirname {
+	#echo DIR OF "$1"
+	dir=`echo "$1" | sed 's/^"*\(.*\)\/[^\/]*"*$/\1/'`
+	#echo IS "$dir"
+	echo "$dir"
+}
+function mybasename {
+	# echo BASE OF "$1"
+	file=`echo "$1" | sed 's/.*\///'`
+	# echo IS "$file"
+	if [ ! -z "$2" ]
+	then
+		file=`echo "$file" | sed s/$2//`
+	fi
+	echo "$file"
+}
+
 # convert to first JSON,
 # then overwrite with xml2all.js
 # then create other files from second JSON
-# ls -d "$@" | grep -v intermediate | grep -v "\.new" | xargs ${NODE} ${NODEDIR}/xml2all.js | xargs -P $PROCESSORS ${NODE} ${NODEDIR}/json2all.js
-# ls -d "$@" | grep -v intermediate | grep -v "\.new" | xargs -P $PROCESSORS java net.coderextreme.RunSaxon --- ${OVERWRITE} --${STYLESHEETDIR}/X3dToJson.xslt -json | xargs ${NODE} ${NODEDIR}/xml2all.js | xargs -P $PROCESSORS ${NODE} ${NODEDIR}/json2all.js
-ls -d "$@" | grep -v intermediate | grep -v "\.new" | xargs -P $PROCESSORS java net.coderextreme.RunSaxon --- ${OVERWRITE} --${STYLESHEETDIR}/X3dToJson.xslt -json | xargs -P $PROCESSORS ${NODE} ${NODEDIR}/json2all.js
+# ls -d "$@" | sed 's/\(.*\)/"\1"/' | grep -v intermediate | grep -v "\.new" | xargs "${NODE}" "${NODEDIR}/xml2all.js" | xargs -P "$PROCESSORS" "${NODE}" "${NODEDIR}"/json2all.js
+# ls -d "$@" | sed 's/\(.*\)/"\1"/' | grep -v intermediate | grep -v "\.new" | xargs -P "$PROCESSORS" java net.coderextreme.RunSaxon --- "${OVERWRITE}" --"${STYLESHEETDIR}/X3dToJson.xslt" -json | xargs "${NODE}" "${NODEDIR}/xml2all.js" | xargs -P "$PROCESSORS" "${NODE}" "${NODEDIR}/json2all.js"
+ls -d "$@" | grep -v intermediate | grep -v "\.new" | tr '\n' '\0'| xargs -0 -P "$PROCESSORS" java net.coderextreme.RunSaxon --- "${OVERWRITE}" --"${STYLESHEETDIR}/X3dToJson.xslt" -json | sed 's/^\(.*\)$/"\1"/' | xargs -P "$PROCESSORS" "${NODE}" "${NODEDIR}/json2all.js"
+# ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.x3d.new/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed 's/\(.*\)/"\1"/'
 # Add exit here to just do conversions
-# exit
-for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.x3d.new/' -e 's/-/_/g' -e $ROOTTOLOCAL -e 's/^\/c/../'`
+#
+
+
+echo test JSON to XML convertion .json to .x3d.new
+# ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.x3d.new/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed 's/^\(.*\)$/"\1"/'
+ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.x3d.new/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed 's/^\(.*\)$/"\1"/' | tr '\n' '\0' | while read -d $'\0' -r file
 do
-	X3D=`dirname $i | sed -e 's/_/-/g' -e $LOCALTOROOT `/`basename $i .x3d.new`.x3d 
-	${NODE} --trace-warnings ${NODEDIR}/xmldiff.js $X3D $i
+	#echo FILE "$file"
+	#echo DIR `mydirname "$file" | sed -e "$LOCALTOROOT"`
+	#echo BASE `mybasename "$file" .new`
+	X3D=`mydirname "$file" | sed -e "$LOCALTOROOT"`/`mybasename "$file" .new`
+	# echo X3D "$X3D"
+	echo "${NODE}" --trace-warnings "${NODEDIR}/xmldiff.js" "$X3D" "$file"
+	"${NODE}" --trace-warnings "${NODEDIR}/xmldiff.js" "$X3D" "$file"
 done
 
-for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.java/' -e 's/-/_/g' -e 's/^\/c/../' -e $EXTOJAVA -e $DATATOJAVA -e $ROOTTOJAVA | xargs ls -d`
+echo compile java programs
+# ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.java/' -e 's/^\/c/../' -e "$EXTOJAVA" -e "$DATATOJAVA" -e "$ROOTTOJAVA" | sed -e 's/\(.*\)/'"\1"'/' -e 's/ /$/g'| tr '\n' '\0' | while read -d $'\0' -r i
+ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.java/' -e 's/^\/c/../' -e "$EXTOJAVA" -e "$DATATOJAVA" -e "$ROOTTOJAVA" | sed -e 's/\(.*\)/'"\1"'/' -e 's/ /$/g'| tr '\n' '\0' | while read -d $'\0' -r i
 do
-	pushd `dirname $i`
-	echo $i
-	echo javac -J-Xss1g -J-Xmx4g `basename $i`
-	javac -J-Xss1g -J-Xmx4g `basename $i`
+	# echo JAVAC "$i"
+	pushd `mydirname "$i"`
+	echo javac -J-Xss1g -J-Xmx4g `mybasename "$i"`
+	javac -J-Xss1g -J-Xmx4g `mybasename "$i"`
 	popd
 done
 
-for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.class/' -e 's/-/_/g' -e 's/^\/c/../' -e $EXTOJAVA -e $DATATOJAVA -e $ROOTTOJAVA | xargs ls -d | sed -e 's/\.class$//' -e 's/^\.\.\/java\///'`
+
+echo run java programs
+# ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.class/' -e 's/^\/c/../' -e "$EXTOJAVA" -e "$DATATOJAVA" -e "$ROOTTOJAVA" | sed -e 's/\.class$//' -e 's/^\.\.\/java\///'
+
+ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.class/' -e 's/^\/c/../' -e "$EXTOJAVA" -e "$DATATOJAVA" -e "$ROOTTOJAVA" | sed -e 's/\.class$//' -e 's/^\.\.\/java\///' | sed -e 's/\(.*\)/'"\1"'/' -e 's/ /$/g' | tr '\n' '\0' | while read -d $'\0' -r i
 do
 	pushd ../java
-	echo $i
-	java -Xss1g -Xmx4g $i # sh runToError.sh || echo "Failed"
+	echo java -Xss1g -Xmx4g "$i" # sh runToError.sh || echo "Failed"
+	java -Xss1g -Xmx4g "$i" # sh runToError.sh || echo "Failed"
 	popd
 done
 
-for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.new.json/' -e 's/-/_/g' -e $ROOTTOLOCAL -e 's/^\/c/../'`
+echo Comparing JSON
+# ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.new.json/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed -e 's/ /$/g' # | tr '\n' '\0' | while read -d $'\0' -r i
+ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.new.json/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed -e 's/ /$/g' | tr '\n' '\0' | while read -d $'\0' -r i
 do
-	JSON=`dirname $i | sed -e 's/_/-/g' -e $LOCALTOROOT `/`basename $i .new.json`.json
-	${NODE} --trace-warnings ${NODEDIR}/jsondiff.js $JSON $i
+	OLDJSON=`mydirname "$i" | sed -e "$LOCALTOROOT" `/`mybasename "$i" .new.json`.json
+	# echo OLDJSON $OLDJSON
+	# echo NEWJSON $i
+	echo "${NODE}" --trace-warnings "${NODEDIR}/jsondiff.js" "$OLDJSON" "$i"
+	"${NODE}" --trace-warnings "${NODEDIR}/jsondiff.js" "$OLDJSON" "$i"
 done
 
-for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" |  sed -e 's/\.x3d$/.newPrettyPrint.intermediate.x3d/' -e 's/-/_/g' -e $ROOTTOLOCAL -e 's/^\/c/../'`
+echo Comparing old xml and pretty printed intermediate xml
+ls -d "$@" | grep -v intermediate | grep -v "\.new" |  sed -e 's/\.x3d/.newPrettyPrint.intermediate.x3d/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed -e 's/ /$/g' | tr '\n' '\0' | while read -d $'\0' -r i
 do
-	X3D=`dirname $i | sed -e 's/_/-/g' -e $LOCALTOROOT `/`basename $i .newPrettyPrint.intermediate.x3d`.x3d 
-	${NODE} --trace-warnings ${NODEDIR}/xmldiff.js $X3D $i
+	X3D=`mydirname "$i" | sed -e "$LOCALTOROOT" `/`mybasename "$i" .newPrettyPrint.intermediate.x3d | sed 's/\\$/ /g'`.x3d 
+	# echo "$X3D" "$i"
+	echo "${NODE}" --trace-warnings "${NODEDIR}/xmldiff.js" "$X3D" "$i"
+	"${NODE}" --trace-warnings "${NODEDIR}/xmldiff.js" "$X3D" "$i"
 done
 
-#for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.js/' -e 's/-/_/g' -e 's/^\/c/../' -e $EXTONASH -e $DATATONASH -e $ROOTTONASH | xargs ls -d`
+#for i in `ls -d "$@" | sed 's/\(.*\)/"\1"/' | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.js/' -e 's/^\/c/../' -e "$EXTONASH" -e "$DATATONASH" -e "$ROOTTONASH" | xargs ls -d`
 #do
 #	pushd ../nashorn
-#	echo 	jjs -J-Xss1g -J-Xmx4g -J-Djava.class.path="${NASHORN_CLASSPATH}" $i
-#	jjs -J-Xss1g -J-Xmx4g -J-Djava.class.path="${NASHORN_CLASSPATH}" $i
+#	echo 	jjs -J-Xss1g -J-Xmx4g -J-Djava.class.path="${NASHORN_CLASSPATH}" "$i"
+#	jjs -J-Xss1g -J-Xmx4g -J-Djava.class.path="${NASHORN_CLASSPATH}" "$i"
 #	popd
 #done
 
-for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.js/' -e 's/-/_/g' -e 's/^\/c/../' -e $EXTONODE -e $DATATONODE -e $ROOTTONODE| xargs ls -d`
+echo Running JavaScript
+ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.js/' -e 's/^\/c/../' -e "$EXTONODE" -e "$DATATONODE" -e "$ROOTTONODE" | tr '\n' '\0' | while read -d $'\0' -r i
 do
 	pushd ../node
-	echo $i
-	${NODE} --trace-warnings $i
+	# We don't have a node.js java module
+	echo Not done: "${NODE}" --trace-warnings "$i"
+	# "${NODE}" --trace-warnings "$i"
 	popd
 done
-#for i in `ls -d "$@"| grep -v "\.new"`
+
+#echo comparing SAXON and XSLT outputs
+#ls -d "$@" | grep -v intermediate | grep -v "\.new"| tr '\n' '\0' | while read -d $'\0' -r i
 #do
-#echo ../../../node_modules/.bin/xslt3 -xsl:/c/x3d-code/www.web3d.org/x3d/stylesheets/X3dToJson.xslt -s:$i -o:`dirname $i`/`basename $i .x3d`.json2
-#../../../node_modules/.bin/xslt3 -xsl:/c/x3d-code/www.web3d.org/x3d/stylesheets/X3dToJson.xslt -s:$i -o:`dirname $i`/`basename $i .x3d`.new.json2
-#echo ${NODE} ${NODEDIR}/jsondiff.js `dirname $i`/`basename $i x3d`json `dirname $i`/`basename $i x3d`new.json2
-#${NODE} ${NODEDIR}/jsondiff.js `dirname $i`/`basename $i x3d`json `dirname $i`/`basename $i x3d`new.json2
+#	DIRBASE=`mydirname "$i"`/`mybasename "$i" x3d`
+#	SAXGEND="$DIRBASE"json
+#	XSLTGEND="$DIRBASE"new2.json
+#	XSLT3=../../../node_modules/.bin/xslt3 
+#	X3DTOJSON=/c/x3d-code/www.web3d.org/x3d/stylesheets/X3dToJson.xslt 
+#	echo "$XSLT3" -xsl:"$X3DTOJSON" -s:"$i" -o:"$XSLTGEND"
+#	     "$XSLT3" -xsl:"$X3DTOJSON" -s:"$i" -o:"$XSLTGEND"
+#	echo "${NODE}" "${NODEDIR}/jsondiff.js" "$SAXGEND" "$XSLTGEND"
+#	     "${NODE}" "${NODEDIR}/jsondiff.js" "$SAXGEND" "$XSLTGEND"
 #done
 
-for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.json/' -e 's/-/_/g' -e 's/^\/c/../'`
+echo Running python code
+ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.json/' -e 's/^\/c/../' | tr '\n' '\0' | while read -d $'\0' -r i
 do
-	PY=`echo $i | sed -e $DATATOPYTHON -e $ROOTTOPYTHON -e 's/.json$/.py/'`
-	X3D=`echo $i | sed -e 's/.json$/.new.x3d/'`
-	echo py ../python/x3djsonld.py $i $PY
-	py ../python/x3djsonld.py $i > $PY && py $PY > $X3D && echo "$PY" "$X3D" || echo "Error: $PY failed to parse"
+	PY=`echo "$i" | sed -e "$DATATOPYTHON" -e "$ROOTTOPYTHON" -e 's/.json/.py/'`
+	X3D=`echo "$i" | sed -e 's/.json/.new.x3d/'`
+	# produces XML for now
+	echo py ../python/x3djsonld.py "'$i'" ">" "'$PY'" and py "'$PY'" ">" "'$X3D'"
+	py ../python/x3djsonld.py "$i" > "$PY" && py "$PY" > "$X3D" && echo "$PY" "$X3D" || echo "Error: "$PY" failed to parse"
 done
 
-for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.new.x3d/' -e 's/-/_/g' -e $ROOTTOLOCAL -e 's/^\/c/../'`
+echo Diffing .new.x3d from x3djsonld and x3d.py with original x3d
+ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.new.x3d/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | tr '\n' '\0' | while read -d $'\0' -r i
 do
-	X3D=`dirname $i | sed -e 's/_/-/g' -e $LOCALTOROOT `/`basename $i .new.x3d`.x3d
-	echo ${NODE} --trace-warnings ${NODEDIR}/xmldiff.js $X3D $i
-	${NODE} --trace-warnings ${NODEDIR}/xmldiff.js $X3D $i
+	X3D=`mydirname "$i" | sed -e "$LOCALTOROOT" `/`mybasename "$i" .new.x3d`.x3d
+	echo "${NODE}" --trace-warnings "${NODEDIR}/xmldiff.js" "'$X3D'" "'$i'"
+	"${NODE}" --trace-warnings "${NODEDIR}/xmldiff.js" "$X3D" "$i"
 done
