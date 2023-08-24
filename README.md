@@ -40,6 +40,11 @@ LD_LIBRARY_PATH=/usr/lib/jvm/java-18-openjdk-amd64/lib/server
 ```
 npm install
 node run start
+
+# interactive
+openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 3650 -nodes
+# non-interactive and 10 years expiration
+# openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 3650 -nodes -subj '/CN=localhost'
 ```
 Then go to http://localhost:3000/index.html in your web browser and select a JSON file in
 the pulldown.  You can try: http://localhost:3000/X3DExamplesViewer.html
