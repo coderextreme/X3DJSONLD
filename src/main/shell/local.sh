@@ -3,5 +3,5 @@
 # run local files through testing process
 
 export PROCESSORS=1
-ls ../data/*.x3d | grep -v new | grep -v intermediate | xargs -P $PROCESSORS bash several.sh
+find ../data -type f -name "*.x3d" | grep -v new | grep -v intermediate | tr '\n' '\0' | xargs -0 -P $PROCESSORS bash several.sh
 
