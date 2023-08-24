@@ -165,7 +165,8 @@ def parseObject(parent, data,indent):
             elif key not in ("X3D", "GeoElevationGrid", "ForcePhysicsModel", "WindPhysicsModel", "BoundedPhysicsModel", "AudioClip", "LOD", "PositionInterpolator", "Extrusion", "TextureCoordinate", "MultiTextureCoordinate", "Normal", "FontStyle", "ComposedShader", "ImageTexture", "ShaderProgram", "ShaderPart", "ComposedCubeMapTexture", "WorldInfo", "NavigationInfo", "Viewpoint", "Background", "Transform", "Shape", "Sphere", "Appearance", "Material", "Box", "Group", "Script", "Text", "PixelTexture", "IndexedTriangleSet", "IndexedFaceSet", "HAnimDisplacer", "HAnimSite", "HAnimJoint", "HAnimSegment", "HAnimHumanoid", "ParticleSystem", "ExplosionEmitter", "PointEmitter", "PolylineEmitter", "SurfaceEmitter", "ConeEmitter", "VolumeEmitter", "GeoLOD", "GeoOrigin", "ClipPlane", "MetadataBoolean", "MetadataInteger", "MetadataDouble", "MetadataFloat", "MetadataString", "MetadataSet", "ViewpointGroup", "ProtoInstance", "ProtoDeclare", "ExternProtoDeclare", "TouchSensor", "ProgramShader", "VisibilitySensor", "TimeSensor", "PlaneSensor", "Switch", "Layer", "LineProperties", "AcousticProperties", "Sound", "Cylinder", "ROUTE", "PhysicalMaterial", "ColorRGBA", "Color", "CoordinateInterpolator", "Coordinate", "TextureBackground", "Collision", "LineSet", "IndexedLineSet", "Inline", "Anchor", "TextureTransform", "OrientationInterpolator", "ListenerPointSource", "Cone", "LayerSet", "ProximitySensor", "StringSensor", "IMPORT", "EXPORT", "PointLight", "DirectionalLight", "ChannelSplitter", "ChannelMerger", "BooleanFilter", "BooleanToggle", "BiquadFilter", "Fog", "SpotLight", "MovieTexture", "BooleanSequencer", "IntegerSequencer", "Billboard", "LayoutLayer", "Disk2D", "OrthoViewpoint", "GeoViewpoint", "GeoPositionInterpolator", "TextureProperties", "ColorInterpolator", "StreamAudioDestination", "SpatialSound", "Analyser", "Gain", "ChannelSelector", "Convolver", "Delay", "DynamicsCompressor", "WaveShaper", "BufferAudioSource", "StreamAudioSource", "MicrophoneSource", "OscillatorSource", "Rectangle2D", "ScalarInterpolator", "CADLayer", "CADAssembly", "CADPart", "CADFace", "EspduTransform", "ReceiverPdu", "SignalPdu", "TransmitterPdu", "DISEntityManager", "DISEntityTypeMapping", "LoadSensor", "GeoMetadata", "ImageCubeMapTexture", "ImageTexture3D", "PackagedShader"):
 
                 out += "="
-            # elif parent in ("head") and key in ("children"):
+            elif parent in ("head") and key in ("children"):
+                pass
             elif key in ("children"):
                 out += parseArray("WWW", "WWW", parent, key, v,indent+1, fieldType)
                 
@@ -274,11 +275,12 @@ def parseObject(parent, data,indent):
 
 with open('HelloWorldProgramOutput.json' if len(sys.argv) == 1 else sys.argv[1], encoding="cp1252") as json_file:
     data = json.load(json_file)
-    #print("print(\"<!--\")")   # comment out output created by importing x3d (see below)
+    print("print(\"<!--\")")   # comment out output created by importing x3d (see below)
     print("from x3d import *")
     # print("from x3d import SFBool")
     # print("from x3d import _X3DBoundedObject")
-    #print("print(\"-->\")")   # comment out output created by importing x3d (see above)
-    print("print(", end="")
-    print(parseObject("X3D", data, 0))
-    print(".JSON())")
+    print("print(\"-->\")")   # comment out output created by importing x3d (see above)
+    print("import json")
+    print("model = ("+parseObject("X3D", data, 0)+")")
+    print("output = model.JSON()")
+    print("json.loads(output)")
