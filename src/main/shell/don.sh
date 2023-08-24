@@ -30,6 +30,9 @@ echo translating to python
 for FILE in $@
 do
 	X3D=`basename $FILE .x3d`
+echo swapping class names
+perl -p -i -e "s/NeedClassName/$X3D/g" "$FILE"
+perl -p -i -e "s/JohnBoy/$X3D/g" "$FILE"
 
 echo compiling
 pushd ../java
