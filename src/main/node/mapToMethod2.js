@@ -3,9 +3,13 @@ var mapToMethod2 = {
 		"MetadataString" : "addMetadata",
 		"ProtoInstance" : "setGeometry"
 	},
+	"Transform" : {
+		"Shape" : "addChild"
+	},
 	"HAnimJoint" : {
 		"Transform" : "addChildren",
-		"Shape" : "addChild"
+		"Shape" : "addChild",
+		"HAnimSite" : "addChild"
 	},
 	"Appearance" : {
 		"ProtoInstance" : "addShaders",

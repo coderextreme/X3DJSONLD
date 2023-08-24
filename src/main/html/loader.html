@@ -503,7 +503,7 @@ function loadImage(url) {
 */
 	}
 }
-function loadJson(url) {
+function myLoadJson(url) {
 	$.getJSON(url, function(json) {
 		updateFromJson(json, url);
 		updateXml(json, url);
@@ -536,7 +536,7 @@ function updateStl(json) {
 $("#file").change(function() {
 	var url = $('#file option:selected').text();
 	if (url.endsWith(".json")) {
-		loadJson(url);
+		myLoadJson(url);
 		if (typeof threeLoadFile === 'function') threeLoadFile(url);
 	} else if (url.endsWith(".x3d")) {
 		loadXml(url);

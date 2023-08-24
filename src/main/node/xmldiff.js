@@ -2,7 +2,7 @@
 
 var parseString = require('xml2js').parseString;
 var fs = require('fs');
-const { glob, globSync } = require('glob');
+//const { glob, globSync } = require('glob');
 
 var program = process.argv[1];
 
@@ -19,7 +19,7 @@ var arrayKeys = {
 };
 
 function myTrim(x) {
-    return /-?[0-9.]*/.test(x) ? parseFloat(x) : x;
+    return /-?[0-9.e]*/.test(x) ? parseFloat(x).toFixed(6) : x;
 }
 
 function compare(obj1, p1, obj2, p2) {
@@ -59,7 +59,8 @@ function compare(obj1, p1, obj2, p2) {
 				str += ">"+JSON.stringify(obj2)+"\n";
 				finalret = false;
 			}
-		} else if (parseFloat(obj1) == parseFloat(obj2)) {
+		} else if (parseFloat(obj1).toFixed(6) == parseFloat(obj2).toFixed(6)) {
+		} else if (JSON.stringify(parseFloat(obj1).toFixed(6)) != JSON.stringify(parseFloat(obj2).toFixed(6))) {
 		} else {
 			str += "@2 "+p1+" "+p2+"\n";
 			str += "<"+JSON.stringify(obj1)+"\n";
@@ -121,7 +122,7 @@ function compare(obj1, p1, obj2, p2) {
 			}
 		}
 	} else if (!(typeof obj1 === 'undefined' && typeof obj2 === 'undefined')) {
-		if (parseFloat(obj1) == parseFloat(obj2)) {
+		if (parseFloat(obj1).toFixed(6) == parseFloat(obj2).toFixed(6)) {
 		} else {
 			str += "@8 "+p1+" "+p2+"\n";
 			str += "<"+JSON.stringify(obj1)+"\n";
@@ -136,14 +137,18 @@ function compare(obj1, p1, obj2, p2) {
 }
 
 try {
-	var right = fs.readFileSync(files[1]);
+	var rightFile = files[1].replace(/"/g, "");
+	var right = fs.readFileSync(rightFile);
 	parseString(right, function(err, resultright) {
-		if (err) throw "RIGHT FILE "+files[1]+" "+err;
+		if (err) throw "RIGHT FILE "+rightFile+" "+err;
+		/*
 		const filesglobs = globSync(files[0]);
 		filesglobs.forEach(function(file) {
-			var left = fs.readFileSync(file);
+		*/
+			var leftFile = files[0].replace(/"/g, "");
+			var left = fs.readFileSync(leftFile);
 			parseString(left, function(err, resultleft) {
-				if (err) throw "LEFT FILE "+file+" "+err;
+				if (err) throw "LEFT FILE "+leftFile+" "+err;
 				var ret;
 				var str;
 				[ ret, str ] = compare(resultleft, '', resultright, '');
@@ -163,7 +168,9 @@ try {
 				}
 				process.exit();
 			});
+		/*
 		});
+		*/
 	});
 } catch (e) {
 	console.error(e, files[0], files[1]);

@@ -159,9 +159,6 @@ window.load_X_ITE_JS = async function load_X_ITE_JS(jsobj, selector) {
 }
 
 if (typeof mapToMethod !== 'undefined') {
-	Object.assign(mapToMethod, {
-	});
-
 	if (typeof mapToMethod2 !== 'undefined') {
 		for (var map in mapToMethod2) {
 			Object.assign(mapToMethod[map], mapToMethod2[map]);
@@ -437,9 +434,22 @@ function updateFromPly(path) {
 	updateFromJson(json, path);
 }
 
-window.updateFromXml = function updateFromXml(path) {
-	var json = convertXmlToJson($('#xml').val(), path);
-	updateFromJson(json, path);
+window.updateFromXml = async function updateFromXml(path) {
+	// var json = convertXmlToJson($('#xml').val(), path);
+	// updateFromJson(json, path);
+	await X3D();
+	var browser = X3D.getBrowser("#x_itexml");
+	if (typeof browser !== 'undefined' && typeof browser.createX3DFromString !== 'undefined') {
+		let content = $('#xml').val();
+		alert(content);
+		var importedScene = await browser.createX3DFromString(content);
+		let json = browser.toJSONString();
+		alert(json);
+		updateFromJson(JSON.parse(json), path);
+		await browser.replaceWorld(importedScene);
+	} else {
+		alert("X_ITE could not replaceWorld in load_X_ITE_XML()");
+	}
 }
 
 function loadXml(url) {
@@ -502,7 +512,7 @@ function loadImage(url) {
 */
 	}
 }
-window.loadJson = function loadJson(url) {
+window.myLoadJson = function myLoadJson(url) {
 	$.getJSON(url, function(json) {
 		updateFromJson(json, url);
 		updateXml(json, url);
@@ -510,7 +520,7 @@ window.loadJson = function loadJson(url) {
 	.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
 }
 
-loadJson("../data/ballx_ite.json");
+myLoadJson("../data/ballx_ite.json");
 
 function updateXml(json, path) {
 	//  This step is an important validation step.
@@ -537,7 +547,7 @@ function updateStl(json) {
 $("#file").change(function() {
 	var url = $('#file option:selected').text();
 	if (url.endsWith(".json")) {
-		window.loadJson(url);
+		window.myLoadJson(url);
 		if (typeof threeLoadFile === 'function') threeLoadFile(url);
 	} else if (url.endsWith(".x3d")) {
 		loadXml(url);
