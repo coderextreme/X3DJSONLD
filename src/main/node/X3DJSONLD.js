@@ -308,7 +308,9 @@ CreateElement : function(xmlDoc, key, x3djsonNS, containerField) {
 		}
 	}
 	if (typeof containerField !== 'undefined' && key.toLowerCase() !== containerField.toLowerCase()) {
-		X3DJSONLD.elementSetAttribute(child, 'containerField', containerField);
+		if (containerField !== 'geometry') {
+			X3DJSONLD.elementSetAttribute(child, 'containerField', containerField);
+		}
 	}
 	return child;
 },
@@ -512,7 +514,7 @@ ConvertToX3DOM : function(xmlDoc, object, parentkey, element, path, containerFie
 			if (key === 'X3D') {
 				X3DJSONLD.ConvertToX3DOM(xmlDoc, object[key], key, element, path);
 			} else {
-				if (key === "-skin" || key === "-skeleton" || key === "-value") {
+				if (key === "-skin" || key === "-skeleton" || key === "-value" || key === "-segments") {
 					let firstNode = object[key][0];
 					if (key === "-value") {
 						firstNode = object[key];

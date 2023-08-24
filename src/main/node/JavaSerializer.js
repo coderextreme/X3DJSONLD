@@ -250,6 +250,10 @@ JavaSerializer.prototype = {
 			method = "Skin"
 			addpre = "add";
 		}
+		if (element.nodeName === 'Transform' && addpre+method === "addSkin") {
+			method = "Child"
+			addpre = "add";
+		}
 		if (addpre+method === "setValue") {
 			method = "Value"
 			addpre = "add";

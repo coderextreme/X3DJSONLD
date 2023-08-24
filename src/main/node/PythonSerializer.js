@@ -327,12 +327,11 @@ PythonSerializer.prototype = {
 				str += ".setSourceCode('''"+node.nodeValue.split(/\r?\n/).map(function(x) {
 					return x.
 					        replace(/\\/g, '\\\\').
-						replace(/"/g, '\\"')
-						replace(/$/g, '\\')
+						replace(/"/g, '\\"').
+						replace(/$/g, '\\');
 						/*
 						.replace(/\\n/g, "\\\\n")
 						*/
-					;
 					}).join('\\n\"+\n\"')+"''')\n";
 			}
 	        		

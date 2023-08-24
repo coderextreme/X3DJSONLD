@@ -567,10 +567,11 @@ Click <a onclick='window.updateFromPly($("#file option:selected").text()); retur
 	<script src="../node/DOM2JSONSerializer.js"></script>
 	<script src="../node/loadValidate.js"></script>
 	<script src="../node/loaderJQuery.js"></script>
-	<script>
+    	<script type="module">
+		import * as myLoadJson from "../node/loadJson.mjs";
 		$(document).ready(function() {
 		console.log("Loading ball");
-			window.loadJson('../data/ballx_ite.json'); // does load ball.json
+			window.myLoadJson('../data/ballx_ite.json'); // does load ball.json
 		});
 	</script>
 </html>
