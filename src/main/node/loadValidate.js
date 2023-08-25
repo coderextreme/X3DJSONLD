@@ -1,23 +1,22 @@
-if (typeof Ajv2000 === 'undefined') {
-	if (typeof window === 'undefined') {
-		var Ajv2020 = require("../../../node_modules/ajv/dist/2020.js");
-	} else {
-		Ajv2020 = window.Ajv2020;
-	}
+// var myAjv2020 = require("./ajvAll.js");
+if (typeof myAjv2020 === 'undefined') {
+	var Ajv2020 = window.Ajv2020;
+	var addFormats = window.addFormats;
+} else {
+	var Ajv2020 = myAjv2020["Ajv2020"];
+	var addFormats = myAjv2020["addFormats"];
 }
-var fullFormats;
-if (typeof addFromats === 'undefined') {
-	if (typeof window === 'undefined') {
-		var addFormats = require("ajv-formats")
-	} else {
-		addFormats = window.addFormats;
-		fullFormats = window.fullFormats;
-	}
-		
+if (typeof Ajv2020 === 'undefined' || typeof addFormats === 'undefined') {
+	Ajv2020 = window.Ajv2020;
+	addFormats = window.addFormats;
 }
-const ajv = new Ajv2020();
-addFormats(ajv, ["uri-reference", "uri"], fullFormats);
-var fs = require('fs');
+var ajv = new Ajv2020({ strict: false });
+addFormats(ajv, {mode: "full", formats: ["uri-reference", "uri"], keywords: true});  // fast mode is "fast"
+
+var fs = require('fs');
+var http = require('http');
+
+
 /*
 var localize = require('ajv-i18n');
 */
@@ -37,7 +36,7 @@ CACHE.validate = { };
 X3DJSONLD = Object.assign(X3DJSONLD, { processURLs : function(urls) { return urls; }});
 var selectObjectFromJSObj = X3DJSONLD.selectObjectFromJSObj;
 
-doValidate = function doValidate(json, validated_version, file, success, failure, e) {
+var doValidate = function doValidate(json, validated_version, file, success, failure, e) {
 	var retval = false;
 	if (e) {
 		if (typeof alert === 'function') {
@@ -198,12 +197,20 @@ if (typeof window !== 'undefined') {
 	window.loadSchema = loadSchema;
 	window.loadX3DJS = loadX3DJS;
 	window.doValidate = doValidate;
+	if (typeof myAjv2020 !== 'undefined') {
+		window.myAjv2020 = myAjv2020;
+	}
+	window.Ajv2020 = Ajv2020;
+	window.addFormats = addFormats;
 }
 if (typeof module === 'object')  {
 	module.exports = {
 		replaceX3DJSON: replaceX3DJSON,
 		loadSchema: loadSchema,
 		loadX3DJS: loadX3DJS,
-		doValidate: doValidate
+		doValidate: doValidate,
+		myAjv2020 : myAjv2020,
+		Ajv2020 : Ajv2020,
+		addFormats : addFormats
 	};
 }
