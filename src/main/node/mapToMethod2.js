@@ -9,7 +9,8 @@ var mapToMethod2 = {
 	"HAnimJoint" : {
 		"Transform" : "addChildren",
 		"Shape" : "addChild",
-		"HAnimSite" : "addChild"
+		"HAnimSite" : "addChild",
+		"Viewpoint" : "addChild"
 	},
 	"Appearance" : {
 		"ProtoInstance" : "addShaders",
