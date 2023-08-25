@@ -50,7 +50,6 @@ exports.fullFormats = {
     // unchecked string payload
     binary: true,
 };
-window.fullFormats = exports.fullFormats;
 exports.fastFormats = {
     ...exports.fullFormats,
     date: fmtDef(/^\d\d\d\d-[0-1]\d-[0-3]\d$/, compareDate),
@@ -64,7 +63,6 @@ exports.fastFormats = {
     // http://www.w3.org/TR/html5/forms.html#valid-e-mail-address (search for 'wilful violation')
     email: /^[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)*$/i,
 };
-window.fastFormats = exports.fastFormats;
 exports.formatNames = Object.keys(exports.fullFormats);
 function isLeapYear(year) {
     // https://tools.ietf.org/html/rfc3339#appendix-C
@@ -208,12 +206,11 @@ function addFormats(ajv, list, fs, exportName) {
     for (const f of list)
         ajv.addFormat(f, fs[f]);
 }
-window.addFormats = addFormats;
 module.exports = exports = formatsPlugin;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = formatsPlugin;
 
-},{"./formats":1,"./limit":3,"ajv/dist/compile/codegen":32}],3:[function(require,module,exports){
+},{"./formats":1,"./limit":3,"ajv/dist/compile/codegen":7}],3:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.formatLimitDefinition = void 0;
@@ -283,4465 +280,7 @@ const formatLimitPlugin = (ajv) => {
 };
 exports.default = formatLimitPlugin;
 
-},{"ajv":30,"ajv/dist/compile/codegen":32}],4:[function(require,module,exports){
-"use strict"
-module.exports = function localize_ar(errors) {
-  if (!(errors && errors.length)) return
-  for (const e of errors) {
-    let out
-    switch (e.keyword) {
-      case "additionalItems":
-      case "items":
-        out = ""
-        var n = e.params.limit
-        out += " يجب أن لا يحوي أكثر من " + n + " عنصر"
-        break
-      case "additionalProperties":
-        out = "يجب أن لا يحوي خصائص إضافية"
-        break
-      case "anyOf":
-        out = 'يجب أن يوافق أحد المخططات الموجودة في "anyOf"'
-        break
-      case "const":
-        out = "يجب أن يكون ثابتاً"
-        break
-      case "contains":
-        out = "يجب أن يحوي عنصرا صحيح"
-        break
-      case "dependencies":
-      case "dependentRequired":
-        out = ""
-        var n = e.params.depsCount
-        out +=
-          " يجب أن يحوي الخصائص " +
-          e.params.deps +
-          " عندما تكون الخاصية " +
-          e.params.property +
-          " موجودة"
-        break
-      case "discriminator":
-        switch (e.params.error) {
-          case "tag":
-            out = 'tag "' + e.params.tag + '" must be string'
-            break
-          case "mapping":
-            out = 'value of tag "' + e.params.tag + '" must be in oneOf'
-            break
-          default:
-            out = 'يجب أن تمرر كلمة التحقق المفتاحية "' + e.keyword + '"'
-        }
-        break
-      case "enum":
-        out = "قيمة هذا الحقل يجب أن تكون مساوية لأحد القيم المعرفة مسبقاً"
-        break
-      case "false schema":
-        out = "المخطط المنطقي غير صحيح"
-        break
-      case "format":
-        out = 'يجب أن يوافق الصيغة "' + e.params.format + '"'
-        break
-      case "formatMaximum":
-      case "formatExclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += " يجب أن يكون " + cond
-        break
-      case "formatMinimum":
-      case "formatExclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += " يجب أن يكون " + cond
-        break
-      case "if":
-        out = 'يجب أن توافق المخطط "' + e.params.failingKeyword + '"'
-        break
-      case "maximum":
-      case "exclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += " يجب أن يكون " + cond
-        break
-      case "maxItems":
-        out = ""
-        var n = e.params.limit
-        out += " يجب أن لا يحوي أكثر من " + n + " عنصر"
-        break
-      case "maxLength":
-        out = ""
-        var n = e.params.limit
-        out += " يجب أن لا يحوي أكثر من " + n + " محرف"
-        break
-      case "maxProperties":
-        out = ""
-        var n = e.params.limit
-        out += " يجب أن لا يحوي أكثر من " + n + " خصائص"
-        break
-      case "minimum":
-      case "exclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += " يجب أن يكون " + cond
-        break
-      case "minItems":
-        out = ""
-        var n = e.params.limit
-        out += " يجب أن لا يحوي أقل من " + n + " عنصر"
-        break
-      case "minLength":
-        out = ""
-        var n = e.params.limit
-        out += " يجب أن لا يحوي أقل من " + n + " محرف"
-        break
-      case "minProperties":
-        out = ""
-        var n = e.params.limit
-        out += " يجب أن لا يحوي أقل من " + n + " خصائص"
-        break
-      case "multipleOf":
-        out = " يجب أن يحوي أكثر من " + e.params.multipleOf
-        break
-      case "not":
-        out = 'يجب أن يكون غير صحيح وفقاً للمخطط "not"'
-        break
-      case "oneOf":
-        out = 'يجب أن يوافق مخطط واحد فقط موجود في "oneOf"'
-        break
-      case "pattern":
-        out = 'يجب أن يوافق النمط "' + e.params.pattern + '"'
-        break
-      case "patternRequired":
-        out = 'يجب أن يحوي خاصية توافق النمط "' + e.params.missingPattern + '"'
-        break
-      case "propertyNames":
-        out = "اسم الخاصية غير صالح"
-        break
-      case "required":
-        out = "هذا الحقل إلزامي"
-        break
-      case "type":
-        out = "قيمة هذا الحقل غير صالحة"
-        break
-      case "unevaluatedItems":
-        out = ""
-        var n = e.params.len
-        out += "must NOT have more than " + n + " item"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "unevaluatedProperties":
-        out = "must NOT have unevaluated properties"
-        break
-      case "uniqueItems":
-        out =
-          "يجب أن لا يحوي عناصر مكررة (العنصر ## " +
-          e.params.j +
-          " و " +
-          e.params.i +
-          " متطابقة)"
-        break
-      default:
-        out = 'يجب أن تمرر كلمة التحقق المفتاحية "' + e.keyword + '"'
-    }
-    e.message = out
-  }
-}
-
-},{}],5:[function(require,module,exports){
-"use strict"
-module.exports = function localize_ca(errors) {
-  if (!(errors && errors.length)) return
-  for (const e of errors) {
-    let out
-    switch (e.keyword) {
-      case "additionalItems":
-      case "items":
-        out = ""
-        var n = e.params.limit
-        out += "no ha de tenir més de " + n + " element"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "additionalProperties":
-        out = "no ha de tenir propietats addicionals"
-        break
-      case "anyOf":
-        out = 'ha de coincidir amb algun esquema definit a "anyOf"'
-        break
-      case "const":
-        out = "ha de ser igual a la constant"
-        break
-      case "contains":
-        out = "ha de contenir un ítem vàlid"
-        break
-      case "dependencies":
-      case "dependentRequired":
-        out = ""
-        var n = e.params.depsCount
-        out += "ha de contenir la propietat"
-        if (n != 1) {
-          out += "s"
-        }
-        out +=
-          " " +
-          e.params.deps +
-          " quan la propietat " +
-          e.params.property +
-          " és present"
-        break
-      case "discriminator":
-        switch (e.params.error) {
-          case "tag":
-            out = 'tag "' + e.params.tag + '" must be string'
-            break
-          case "mapping":
-            out = 'value of tag "' + e.params.tag + '" must be in oneOf'
-            break
-          default:
-            out = 'ha de passar la validació de la clau "' + e.keyword + '"'
-        }
-        break
-      case "enum":
-        out = "ha de ser igual a un dels valors predefinits"
-        break
-      case "false schema":
-        out = "l’esquema és fals"
-        break
-      case "format":
-        out = 'ha de coincidir amb el format "' + e.params.format + '"'
-        break
-      case "formatMaximum":
-      case "formatExclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "ha de ser " + cond
-        break
-      case "formatMinimum":
-      case "formatExclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "ha de ser " + cond
-        break
-      case "if":
-        out =
-          'ha de correspondre’s amb l’esquema "' + e.params.failingKeyword + '"'
-        break
-      case "maximum":
-      case "exclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "ha de ser " + cond
-        break
-      case "maxItems":
-        out = ""
-        var n = e.params.limit
-        out += "no ha de tenir més de " + n + " ítem"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "maxLength":
-        out = ""
-        var n = e.params.limit
-        out += "no pot contenir més de " + n + " caràcter"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "maxProperties":
-        out = ""
-        var n = e.params.limit
-        out += "no pot contenir més de " + n + " propietat"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "minimum":
-      case "exclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "ha de ser " + cond
-        break
-      case "minItems":
-        out = ""
-        var n = e.params.limit
-        out += "no ha de tenir menys de " + n + " ítem"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "minLength":
-        out = ""
-        var n = e.params.limit
-        out += "no pot contenir menys de " + n + " caràcter"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "minProperties":
-        out = ""
-        var n = e.params.limit
-        out += "no pot contenir menys de " + n + " propietat"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "multipleOf":
-        out = "ha de ser múltiple de " + e.params.multipleOf
-        break
-      case "not":
-        out = 'no ha de ser vàlid d’acord amb l’esquema definit a "not"'
-        break
-      case "oneOf":
-        out = 'ha de coincidir només amb un esquema definit a "oneOf"'
-        break
-      case "pattern":
-        out = 'ha de coincidir amb el patró "' + e.params.pattern + '"'
-        break
-      case "patternRequired":
-        out =
-          'la propietat ha de coincidir amb el patró "' +
-          e.params.missingPattern +
-          '"'
-        break
-      case "propertyNames":
-        out = "la propietat no és vàlida"
-        break
-      case "required":
-        out = "ha de tenir la propietat requerida " + e.params.missingProperty
-        break
-      case "type":
-        out = "ha de ser del tipus " + e.params.type
-        break
-      case "unevaluatedItems":
-        out = ""
-        var n = e.params.len
-        out += "must NOT have more than " + n + " item"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "unevaluatedProperties":
-        out = "must NOT have unevaluated properties"
-        break
-      case "uniqueItems":
-        out =
-          "no ha de tenir ítems duplicats (els ítems ## " +
-          e.params.j +
-          " i " +
-          e.params.i +
-          " són idèntics)"
-        break
-      default:
-        out = 'ha de passar la validació de la clau "' + e.keyword + '"'
-    }
-    e.message = out
-  }
-}
-
-},{}],6:[function(require,module,exports){
-"use strict"
-module.exports = function localize_cs(errors) {
-  if (!(errors && errors.length)) return
-  for (const e of errors) {
-    let out
-    switch (e.keyword) {
-      case "additionalItems":
-      case "items":
-        out = ""
-        var n = e.params.limit
-        out += "nemůže mít víc, než " + n + " prv"
-        if (n >= 2 && n <= 4) {
-          out += "ky"
-        } else if (n != 1) {
-          out += "ek"
-        } else {
-          out += "ků"
-        }
-        break
-      case "additionalProperties":
-        out = "nemůže mít další položky"
-        break
-      case "anyOf":
-        out = 'musí vyhovět alespoň jednomu schématu v "anyOf"'
-        break
-      case "const":
-        out = "musí být roven konstantě"
-        break
-      case "contains":
-        out = "musí obsahovat prvek odpovídající schématu"
-        break
-      case "dependencies":
-      case "dependentRequired":
-        out = ""
-        var n = e.params.depsCount
-        out += "musí mít polož"
-        if (n >= 2 && n <= 4) {
-          out += "ky"
-        } else if (n != 1) {
-          out += "ek"
-        } else {
-          out += "ka"
-        }
-        out += ": " + e.params.deps + ", pokud obsahuje " + e.params.property
-        break
-      case "discriminator":
-        switch (e.params.error) {
-          case "tag":
-            out = 'tag "' + e.params.tag + '" must be string'
-            break
-          case "mapping":
-            out = 'value of tag "' + e.params.tag + '" must be in oneOf'
-            break
-          default:
-            out = 'musí vyhovět "' + e.keyword + '" validaci'
-        }
-        break
-      case "enum":
-        out = "musí být rovno jedné hodnotě z výčtu"
-        break
-      case "false schema":
-        out = "schéma je false"
-        break
-      case "format":
-        out = 'musí být ve formátu "' + e.params.format + '"'
-        break
-      case "formatMaximum":
-      case "formatExclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "musí být " + cond
-        break
-      case "formatMinimum":
-      case "formatExclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "musí být " + cond
-        break
-      case "if":
-        out = 'musí vyhovět "' + e.params.failingKeyword + '" schématu'
-        break
-      case "maximum":
-      case "exclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "musí být " + cond
-        break
-      case "maxItems":
-        out = ""
-        var n = e.params.limit
-        out += "nesmí obsahovat víc než " + n + " prv"
-        if (n >= 2 && n <= 4) {
-          out += "ky"
-        } else if (n != 1) {
-          out += "ek"
-        } else {
-          out += "ků"
-        }
-        break
-      case "maxLength":
-        out = ""
-        var n = e.params.limit
-        out += "nesmí být delší než " + n + " zna"
-        if (n >= 2 && n <= 4) {
-          out += "ky"
-        } else if (n != 1) {
-          out += "k"
-        } else {
-          out += "ků"
-        }
-        break
-      case "maxProperties":
-        out = ""
-        var n = e.params.limit
-        out += "nesmí mít víc než " + n + " polož"
-        if (n >= 2 && n <= 4) {
-          out += "ky"
-        } else if (n != 1) {
-          out += "ek"
-        } else {
-          out += "ka"
-        }
-        break
-      case "minimum":
-      case "exclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "musí být " + cond
-        break
-      case "minItems":
-        out = ""
-        var n = e.params.limit
-        out += "nesmí obsahovat méně než " + n + " prv"
-        if (n >= 2 && n <= 4) {
-          out += "ky"
-        } else if (n != 1) {
-          out += "ek"
-        } else {
-          out += "ků"
-        }
-        break
-      case "minLength":
-        out = ""
-        var n = e.params.limit
-        out += "nesmí být kratší než " + n + " zna"
-        if (n >= 2 && n <= 4) {
-          out += "ky"
-        } else if (n != 1) {
-          out += "k"
-        } else {
-          out += "ků"
-        }
-        break
-      case "minProperties":
-        out = ""
-        var n = e.params.limit
-        out += "nesmí mít méně než " + n + " polož"
-        if (n >= 2 && n <= 4) {
-          out += "ky"
-        } else if (n != 1) {
-          out += "ek"
-        } else {
-          out += "ka"
-        }
-        break
-      case "multipleOf":
-        out = "musí být násobkem " + e.params.multipleOf
-        break
-      case "not":
-        out = 'nesmí vyhovět schématu v "not"'
-        break
-      case "oneOf":
-        out = 'musí vyhovět právě jednomu schématu v "oneOf"'
-        break
-      case "pattern":
-        out = 'musí vyhovět regulárnímu výrazu "' + e.params.pattern + '"'
-        break
-      case "patternRequired":
-        out =
-          'musí obsahovat položku vyhovující regulárnímu výrazu "' +
-          e.params.missingPattern +
-          '"'
-        break
-      case "propertyNames":
-        out = "název položky není platný"
-        break
-      case "required":
-        out = "musí obsahovat požadovanou položku " + e.params.missingProperty
-        break
-      case "type":
-        out = "musí být " + e.params.type
-        break
-      case "unevaluatedItems":
-        out = ""
-        var n = e.params.len
-        out += "must NOT have more than " + n + " item"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "unevaluatedProperties":
-        out = "must NOT have unevaluated properties"
-        break
-      case "uniqueItems":
-        out =
-          "nesmí obsahovat duplicitní prvky (prvky ## " +
-          e.params.j +
-          " a " +
-          e.params.i +
-          " jsou identické)"
-        break
-      default:
-        out = 'musí vyhovět "' + e.keyword + '" validaci'
-    }
-    e.message = out
-  }
-}
-
-},{}],7:[function(require,module,exports){
-"use strict"
-module.exports = function localize_de(errors) {
-  if (!(errors && errors.length)) return
-  for (const e of errors) {
-    let out
-    switch (e.keyword) {
-      case "additionalItems":
-      case "items":
-        out = ""
-        var n = e.params.limit
-        out += "darf nicht mehr als " + n + " Element"
-        if (n != 1) {
-          out += "e"
-        }
-        out += " enthalten"
-        break
-      case "additionalProperties":
-        out = "darf keine zusätzlichen Attribute haben"
-        break
-      case "anyOf":
-        out = 'muss einem der Schemata in "anyOf" entsprechen'
-        break
-      case "const":
-        out = "muss gleich der Konstanten sein"
-        break
-      case "contains":
-        out = "muss ein valides Element enthalten"
-        break
-      case "dependencies":
-      case "dependentRequired":
-        out = ""
-        var n = e.params.depsCount
-        out += "muss Attribut"
-        if (n != 1) {
-          out += "e"
-        }
-        out +=
-          " " +
-          e.params.deps +
-          " aufweisen, wenn Attribut " +
-          e.params.property +
-          " gesetzt ist"
-        break
-      case "discriminator":
-        switch (e.params.error) {
-          case "tag":
-            out = 'der Tag "' + e.params.tag + '" muss eine Zeichenkette sein'
-            break
-          case "mapping":
-            out =
-              'der Wert vom Tag "' +
-              e.params.tag +
-              '" muss im oneOf enthalten sein'
-            break
-          default:
-            out = 'muss die Validierung "' + e.keyword + '" bestehen'
-        }
-        break
-      case "enum":
-        out = "muss einem der vorgegebenen Werte entsprechen"
-        break
-      case "false schema":
-        out = "boolesches Schema ist falsch"
-        break
-      case "format":
-        out = 'muss diesem Format entsprechen: "' + e.params.format + '"'
-        break
-      case "formatMaximum":
-      case "formatExclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "muss " + cond + " sein"
-        break
-      case "formatMinimum":
-      case "formatExclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "muss " + cond + " sein"
-        break
-      case "if":
-        out = 'muss dem Schema "' + e.params.failingKeyword + '" entsprechen'
-        break
-      case "maximum":
-      case "exclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "muss " + cond + " sein"
-        break
-      case "maxItems":
-        out = ""
-        var n = e.params.limit
-        out += "darf nicht mehr als " + n + " Element"
-        if (n != 1) {
-          out += "e"
-        }
-        out += " haben"
-        break
-      case "maxLength":
-        out = ""
-        var n = e.params.limit
-        out += "darf nicht länger als " + n + " Zeichen sein"
-        break
-      case "maxProperties":
-        out = ""
-        var n = e.params.limit
-        out += "darf nicht mehr als " + n + " Attribut"
-        if (n != 1) {
-          out += "e"
-        }
-        out += " haben"
-        break
-      case "minimum":
-      case "exclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "muss " + cond + " sein"
-        break
-      case "minItems":
-        out = ""
-        var n = e.params.limit
-        out += "darf nicht weniger als " + n + " Element"
-        if (n != 1) {
-          out += "e"
-        }
-        out += " haben"
-        break
-      case "minLength":
-        out = ""
-        var n = e.params.limit
-        out += "darf nicht kürzer als " + n + " Zeichen sein"
-        break
-      case "minProperties":
-        out = ""
-        var n = e.params.limit
-        out += "darf nicht weniger als " + n + " Attribut"
-        if (n != 1) {
-          out += "e"
-        }
-        out += " haben"
-        break
-      case "multipleOf":
-        out = "muss ein Vielfaches von " + e.params.multipleOf + " sein"
-        break
-      case "not":
-        out = 'muss dem in "not" angegebenen Schema widersprechen'
-        break
-      case "oneOf":
-        out = 'muss genau einem der Schemata in "oneOf" entsprechen'
-        break
-      case "pattern":
-        out = 'muss diesem Muster entsprechen: "' + e.params.pattern + '"'
-        break
-      case "patternRequired":
-        out =
-          'muss ein Attribut nach folgendem Muster haben "' +
-          e.params.missingPattern +
-          '"'
-        break
-      case "propertyNames":
-        out = "Attributname ist ungültig"
-        break
-      case "required":
-        out =
-          "muss das erforderliche Attribut " +
-          e.params.missingProperty +
-          " enthalten"
-        break
-      case "type":
-        out = "muss sein: " + e.params.type
-        break
-      case "unevaluatedItems":
-        out = ""
-        var n = e.params.len
-        out += "darf nicht mehr als " + n + " Element"
-        if (n != 1) {
-          out += "e"
-        }
-        out += " haben"
-        break
-      case "unevaluatedProperties":
-        out = "darf keine unausgewerteten Attribute haben"
-        break
-      case "uniqueItems":
-        out =
-          "darf keine Duplikate enthalten (Elemente #" +
-          e.params.j +
-          " und #" +
-          e.params.i +
-          " sind gleich)"
-        break
-      default:
-        out = 'muss die Validierung "' + e.keyword + '" bestehen'
-    }
-    e.message = out
-  }
-}
-
-},{}],8:[function(require,module,exports){
-"use strict"
-module.exports = function localize_en(errors) {
-  if (!(errors && errors.length)) return
-  for (const e of errors) {
-    let out
-    switch (e.keyword) {
-      case "additionalItems":
-      case "items":
-        out = ""
-        var n = e.params.limit
-        out += "must NOT have more than " + n + " item"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "additionalProperties":
-        out = "must NOT have additional properties"
-        break
-      case "anyOf":
-        out = 'must match a schema in "anyOf"'
-        break
-      case "const":
-        out = "must be equal to constant"
-        break
-      case "contains":
-        out = "must contain a valid item"
-        break
-      case "dependencies":
-      case "dependentRequired":
-        out = ""
-        var n = e.params.depsCount
-        out += "must have propert"
-        if (n == 1) {
-          out += "y"
-        } else {
-          out += "ies"
-        }
-        out +=
-          " " +
-          e.params.deps +
-          " when property " +
-          e.params.property +
-          " is present"
-        break
-      case "discriminator":
-        switch (e.params.error) {
-          case "tag":
-            out = 'tag "' + e.params.tag + '" must be string'
-            break
-          case "mapping":
-            out = 'value of tag "' + e.params.tag + '" must be in oneOf'
-            break
-          default:
-            out = 'must pass "' + e.keyword + '" keyword validation'
-        }
-        break
-      case "enum":
-        out = "must be equal to one of the allowed values"
-        break
-      case "false schema":
-        out = "boolean schema is false"
-        break
-      case "format":
-        out = 'must match format "' + e.params.format + '"'
-        break
-      case "formatMaximum":
-      case "formatExclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "must be " + cond
-        break
-      case "formatMinimum":
-      case "formatExclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "must be " + cond
-        break
-      case "if":
-        out = 'must match "' + e.params.failingKeyword + '" schema'
-        break
-      case "maximum":
-      case "exclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "must be " + cond
-        break
-      case "maxItems":
-        out = ""
-        var n = e.params.limit
-        out += "must NOT have more than " + n + " item"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "maxLength":
-        out = ""
-        var n = e.params.limit
-        out += "must NOT be longer than " + n + " character"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "maxProperties":
-        out = ""
-        var n = e.params.limit
-        out += "must NOT have more than " + n + " propert"
-        if (n == 1) {
-          out += "y"
-        } else {
-          out += "ies"
-        }
-        break
-      case "minimum":
-      case "exclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "must be " + cond
-        break
-      case "minItems":
-        out = ""
-        var n = e.params.limit
-        out += "must NOT have less than " + n + " item"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "minLength":
-        out = ""
-        var n = e.params.limit
-        out += "must NOT be shorter than " + n + " character"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "minProperties":
-        out = ""
-        var n = e.params.limit
-        out += "must NOT have less than " + n + " propert"
-        if (n == 1) {
-          out += "y"
-        } else {
-          out += "ies"
-        }
-        break
-      case "multipleOf":
-        out = "must be a multiple of " + e.params.multipleOf
-        break
-      case "not":
-        out = 'must NOT be valid according to schema in "not"'
-        break
-      case "oneOf":
-        out = 'must match exactly one schema in "oneOf"'
-        break
-      case "pattern":
-        out = 'must match pattern "' + e.params.pattern + '"'
-        break
-      case "patternRequired":
-        out =
-          'must have property matching pattern "' +
-          e.params.missingPattern +
-          '"'
-        break
-      case "propertyNames":
-        out = "property name is invalid"
-        break
-      case "required":
-        out = "must have required property " + e.params.missingProperty
-        break
-      case "type":
-        out = "must be " + e.params.type
-        break
-      case "unevaluatedItems":
-        out = ""
-        var n = e.params.len
-        out += "must NOT have more than " + n + " item"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "unevaluatedProperties":
-        out = "must NOT have unevaluated properties"
-        break
-      case "uniqueItems":
-        out =
-          "must NOT have duplicate items (items ## " +
-          e.params.j +
-          " and " +
-          e.params.i +
-          " are identical)"
-        break
-      default:
-        out = 'must pass "' + e.keyword + '" keyword validation'
-    }
-    e.message = out
-  }
-}
-window.localize = module.exports;
-
-},{}],9:[function(require,module,exports){
-"use strict"
-module.exports = function localize_es(errors) {
-  if (!(errors && errors.length)) return
-  for (const e of errors) {
-    let out
-    switch (e.keyword) {
-      case "additionalItems":
-      case "items":
-        out = ""
-        var n = e.params.limit
-        out += "no debe tener más de " + n + " elemento"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "additionalProperties":
-        out = "no debe tener propiedades adicionales"
-        break
-      case "anyOf":
-        out = 'debe coincidir con algún esquema en "anyOf"'
-        break
-      case "const":
-        out = "debe ser igual a la constante"
-        break
-      case "contains":
-        out = "debe contener un elemento válido"
-        break
-      case "dependencies":
-      case "dependentRequired":
-        out = ""
-        var n = e.params.depsCount
-        out += "debe contener la"
-        if (n != 1) {
-          out += "s"
-        }
-        out += " propiedad"
-        if (n != 1) {
-          out += "es"
-        }
-        out +=
-          " " +
-          e.params.deps +
-          " cuando la propiedad " +
-          e.params.property +
-          " se encuentra presente"
-        break
-      case "discriminator":
-        switch (e.params.error) {
-          case "tag":
-            out = 'tag "' + e.params.tag + '" must be string'
-            break
-          case "mapping":
-            out = 'value of tag "' + e.params.tag + '" must be in oneOf'
-            break
-          default:
-            out =
-              'debe pasar la validación de palabra clave "' + e.keyword + '"'
-        }
-        break
-      case "enum":
-        out = "deber ser igual a uno de los valores predefinidos"
-        break
-      case "false schema":
-        out = "el esquema és falso"
-        break
-      case "format":
-        out = 'debe coincidir con el formato "' + e.params.format + '"'
-        break
-      case "formatMaximum":
-      case "formatExclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "debe ser " + cond
-        break
-      case "formatMinimum":
-      case "formatExclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "debe ser " + cond
-        break
-      case "if":
-        out =
-          'debe corresponderse con el esquema "' + e.params.failingKeyword + '"'
-        break
-      case "maximum":
-      case "exclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "debe ser " + cond
-        break
-      case "maxItems":
-        out = ""
-        var n = e.params.limit
-        out += "no debe contener más de " + n + " elemento"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "maxLength":
-        out = ""
-        var n = e.params.limit
-        out += "no debe contener más de " + n + " caracter"
-        if (n != 1) {
-          out += "es"
-        }
-        break
-      case "maxProperties":
-        out = ""
-        var n = e.params.limit
-        out += "no debe contener más de " + n + " propiedad"
-        if (n != 1) {
-          out += "es"
-        }
-        break
-      case "minimum":
-      case "exclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "debe ser " + cond
-        break
-      case "minItems":
-        out = ""
-        var n = e.params.limit
-        out += "no debe contener menos de " + n + " elemento"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "minLength":
-        out = ""
-        var n = e.params.limit
-        out += "no debe contener menos de " + n + " caracter"
-        if (n != 1) {
-          out += "es"
-        }
-        break
-      case "minProperties":
-        out = ""
-        var n = e.params.limit
-        out += "no debe contener menos de " + n + " propiedad"
-        if (n != 1) {
-          out += "es"
-        }
-        break
-      case "multipleOf":
-        out = "debe ser múltiplo de " + e.params.multipleOf
-        break
-      case "not":
-        out = 'no debe ser válido según el esquema en "not"'
-        break
-      case "oneOf":
-        out = 'debe coincidir con un solo esquema en "oneOf"'
-        break
-      case "pattern":
-        out = 'debe coincidir con el patron "' + e.params.pattern + '"'
-        break
-      case "patternRequired":
-        out =
-          'la propiedad debe coincidir con el patrón "' +
-          e.params.missingPattern +
-          '"'
-        break
-      case "propertyNames":
-        out = "la propiedad no és válida"
-        break
-      case "required":
-        out = "debe tener la propiedad requerida " + e.params.missingProperty
-        break
-      case "type":
-        out = "debe ser " + e.params.type
-        break
-      case "unevaluatedItems":
-        out = ""
-        var n = e.params.len
-        out += "must NOT have more than " + n + " item"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "unevaluatedProperties":
-        out = "must NOT have unevaluated properties"
-        break
-      case "uniqueItems":
-        out =
-          "no debe contener elementos duplicados, (los elementos ## " +
-          e.params.j +
-          " y " +
-          e.params.i +
-          " son idénticos)"
-        break
-      default:
-        out = 'debe pasar la validación de palabra clave "' + e.keyword + '"'
-    }
-    e.message = out
-  }
-}
-
-},{}],10:[function(require,module,exports){
-"use strict"
-module.exports = function localize_fi(errors) {
-  if (!(errors && errors.length)) return
-  for (const e of errors) {
-    let out
-    switch (e.keyword) {
-      case "additionalItems":
-      case "items":
-        out = ""
-        var n = e.params.limit
-        out += "saa sisältää enintään " + n
-        if (n == 1) {
-          out += ":n elementin"
-        } else {
-          out += " elementtiä"
-        }
-        break
-      case "additionalProperties":
-        out = "ei saa sisältää ylimääräisiä ominaisuuksia"
-        break
-      case "anyOf":
-        out = 'täytyy vastata "anyOf" skeemaa'
-        break
-      case "const":
-        out = "täytyy olla yhtä kuin vakio"
-        break
-      case "contains":
-        out = "täytyy sisältää kelvollinen elementti"
-        break
-      case "dependencies":
-      case "dependentRequired":
-        out = ""
-        var n = e.params.depsCount
-        out += "täytyy sisältää " + e.params.deps + " ominaisuu"
-        if (n == 1) {
-          out += "s"
-        } else {
-          out += "det"
-        }
-        out += " kun " + e.params.property + "-ominaisuus on läsnä"
-        break
-      case "discriminator":
-        switch (e.params.error) {
-          case "tag":
-            out = 'tunniste "' + e.params.tag + '" täytyy olla merkkijono'
-            break
-          case "mapping":
-            out =
-              'tunnisteen "' + e.params.tag + '" arvon muoto pitää olla oneOf'
-            break
-          default:
-            out = 'täytyy läpäistä "' + e.keyword + '" avainsanatarkistus'
-        }
-        break
-      case "enum":
-        out = "täytyy olla yhtä kuin jokin sallituista arvoista"
-        break
-      case "false schema":
-        out = "boolean skeema on väärä"
-        break
-      case "format":
-        out = 'täytyy vastata muotoa "' + e.params.format + '"'
-        break
-      case "formatMaximum":
-      case "formatExclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "täytyy olla " + cond
-        break
-      case "formatMinimum":
-      case "formatExclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "täytyy olla " + cond
-        break
-      case "if":
-        out = 'täytyy vastata "' + e.params.failingKeyword + '" skeemaa'
-        break
-      case "maximum":
-      case "exclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "täytyy olla " + cond
-        break
-      case "maxItems":
-        out = ""
-        var n = e.params.limit
-        out += "tulee sisältää enintään " + n + " "
-        if (n == 1) {
-          out += "elementti"
-        } else {
-          out += "elementtiä"
-        }
-        break
-      case "maxLength":
-        out = ""
-        var n = e.params.limit
-        out += "ei saa olla pidempi kuin " + n + " merkki"
-        if (n != 1) {
-          out += "ä"
-        }
-        break
-      case "maxProperties":
-        out = ""
-        var n = e.params.limit
-        out += "tulee sisältää enintään " + n + " "
-        if (n == 1) {
-          out += "ominaisuus"
-        } else {
-          out += "ominaisuutta"
-        }
-        break
-      case "minimum":
-      case "exclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "täytyy olla " + cond
-        break
-      case "minItems":
-        out = ""
-        var n = e.params.limit
-        out += "tulee sisältää vähintään " + n + " "
-        if (n == 1) {
-          out += "elementti"
-        } else {
-          out += "elementtiä"
-        }
-        break
-      case "minLength":
-        out = ""
-        var n = e.params.limit
-        out += "ei saa olla lyhyempi kuin " + n + " merkki"
-        if (n != 1) {
-          out += "ä"
-        }
-        break
-      case "minProperties":
-        out = ""
-        var n = e.params.limit
-        out += "tulee sisältää vähintään " + n + " "
-        if (n == 1) {
-          out += "ominaisuus"
-        } else {
-          out += "ominaisuutta"
-        }
-        break
-      case "multipleOf":
-        out = "täytyy olla moninkertainen: " + e.params.multipleOf
-        break
-      case "not":
-        out = 'ei saa olla hyväksytty skeeman "not" mukaan'
-        break
-      case "oneOf":
-        out =
-          'täytyy vastata täsmälleen yhtä "oneOf" -kohdassa määriteltyä skeemaa'
-        break
-      case "pattern":
-        out = 'täytyy vastata muotoa "' + e.params.pattern + '"'
-        break
-      case "patternRequired":
-        out =
-          'täytyy sisältää ominaisuus joka vastaa kaavaa "' +
-          e.params.missingPattern +
-          '"'
-        break
-      case "propertyNames":
-        out = "ominaisuuden nimi on virheellinen"
-        break
-      case "required":
-        out = "täytyy sisältää vaadittu ominaisuus " + e.params.missingProperty
-        break
-      case "type":
-        out = ""
-        var t = e.params.type
-        out += "täytyy olla "
-        if (t == "number") {
-          out += "numero"
-        } else if (t == "integer") {
-          out += "kokonaisluku"
-        } else if (t == "string") {
-          out += "merkkijono"
-        } else if (t == "boolean") {
-          out += "boolean"
-        } else {
-          out += t
-        }
-        break
-      case "unevaluatedItems":
-        out = ""
-        var n = e.params.len
-        out += "ei saa olla enemmän kuin " + n + " elementti"
-        if (n != 1) {
-          out += "ä"
-        }
-        break
-      case "unevaluatedProperties":
-        out = "ei saa sisältää arvioimattomia ominaisuuksia"
-        break
-      case "uniqueItems":
-        out =
-          "ei saa sisältää duplikaatteja (elementit ## " +
-          e.params.j +
-          " ja " +
-          e.params.i +
-          " ovat identtiset)"
-        break
-      default:
-        out = 'täytyy läpäistä "' + e.keyword + '" avainsanatarkistus'
-    }
-    e.message = out
-  }
-}
-
-},{}],11:[function(require,module,exports){
-"use strict"
-module.exports = function localize_fr(errors) {
-  if (!(errors && errors.length)) return
-  for (const e of errors) {
-    let out
-    switch (e.keyword) {
-      case "additionalItems":
-      case "items":
-        out = ""
-        var n = e.params.limit
-        out += "ne doit pas contenir plus de " + n + " élémént"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "additionalProperties":
-        out = "ne doit pas contenir de propriétés additionnelles"
-        break
-      case "anyOf":
-        out = 'doit correspondre à un schéma de "anyOf"'
-        break
-      case "const":
-        out = "doit être égal à la constante"
-        break
-      case "contains":
-        out = "doit contenir un élément valide"
-        break
-      case "dependencies":
-      case "dependentRequired":
-        out = ""
-        var n = e.params.depsCount
-        out +=
-          "doit avoir la propriété " +
-          e.params.deps +
-          " quand la propriété " +
-          e.params.property +
-          " est présente"
-        break
-      case "discriminator":
-        switch (e.params.error) {
-          case "tag":
-            out = 'tag "' + e.params.tag + '" must be string'
-            break
-          case "mapping":
-            out = 'value of tag "' + e.params.tag + '" must be in oneOf'
-            break
-          default:
-            out = 'doit être valide selon le critère "' + e.keyword + '"'
-        }
-        break
-      case "enum":
-        out = "doit être égal à une des valeurs prédéfinies"
-        break
-      case "false schema":
-        out = 'le schema est "false"'
-        break
-      case "format":
-        out = 'doit correspondre au format "' + e.params.format + '"'
-        break
-      case "formatMaximum":
-      case "formatExclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "doit être " + cond
-        break
-      case "formatMinimum":
-      case "formatExclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "doit être " + cond
-        break
-      case "if":
-        out = 'doit correspondre au schéma "' + e.params.failingKeyword + '"'
-        break
-      case "maximum":
-      case "exclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "doit être " + cond
-        break
-      case "maxItems":
-        out = ""
-        var n = e.params.limit
-        out += "ne doit pas contenir plus de " + n + " élément"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "maxLength":
-        out = ""
-        var n = e.params.limit
-        out += "ne doit pas dépasser " + n + " caractère"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "maxProperties":
-        out = ""
-        var n = e.params.limit
-        out += "ne doit pas contenir plus de " + n + " propriété"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "minimum":
-      case "exclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "doit être " + cond
-        break
-      case "minItems":
-        out = ""
-        var n = e.params.limit
-        out += "ne doit pas contenir moins de " + n + " élément"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "minLength":
-        out = ""
-        var n = e.params.limit
-        out += "ne doit pas faire moins de " + n + " caractère"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "minProperties":
-        out = ""
-        var n = e.params.limit
-        out += "ne doit pas contenir moins de " + n + " propriété"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "multipleOf":
-        out = "doit être un multiple de " + e.params.multipleOf
-        break
-      case "not":
-        out = 'est invalide selon le schéma "not"'
-        break
-      case "oneOf":
-        out = 'doit correspondre à exactement un schéma de "oneOf"'
-        break
-      case "pattern":
-        out = 'doit correspondre au format "' + e.params.pattern + '"'
-        break
-      case "patternRequired":
-        out =
-          'la propriété doit correspondre au format "' +
-          e.params.missingPattern +
-          '"'
-        break
-      case "propertyNames":
-        out = "le nom de propriété est invalide"
-        break
-      case "required":
-        out = "requiert la propriété " + e.params.missingProperty
-        break
-      case "type":
-        out = "doit être de type " + e.params.type
-        break
-      case "unevaluatedItems":
-        out = ""
-        var n = e.params.len
-        out += "must NOT have more than " + n + " item"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "unevaluatedProperties":
-        out = "must NOT have unevaluated properties"
-        break
-      case "uniqueItems":
-        out =
-          "ne doit pas contenir de doublons (les éléments ## " +
-          e.params.j +
-          " et " +
-          e.params.i +
-          " sont identiques)"
-        break
-      default:
-        out = 'doit être valide selon le critère "' + e.keyword + '"'
-    }
-    e.message = out
-  }
-}
-
-},{}],12:[function(require,module,exports){
-"use strict"
-module.exports = function localize_hu(errors) {
-  if (!(errors && errors.length)) return
-  for (const e of errors) {
-    let out
-    switch (e.keyword) {
-      case "additionalItems":
-      case "items":
-        out = ""
-        var n = e.params.limit
-        out += "nem lehet több, mint " + n + " eleme"
-        break
-      case "additionalProperties":
-        out = "nem lehetnek további elemei"
-        break
-      case "anyOf":
-        out = 'meg kell feleljen legalább egy "anyOf" alaknak'
-        break
-      case "const":
-        out = "must be equal to constant"
-        break
-      case "contains":
-        out = "must contain a valid item"
-        break
-      case "dependencies":
-      case "dependentRequired":
-        out = ""
-        var n = e.params.depsCount
-        out += "-nak kell legyen"
-        if (n > 1) {
-          out += "ek"
-        }
-        out += " a következő tulajdonsága"
-        if (n != 1) {
-          out += "i"
-        }
-        out +=
-          ": " +
-          e.params.deps +
-          ", ha van " +
-          e.params.property +
-          " tulajdonsága"
-        break
-      case "discriminator":
-        switch (e.params.error) {
-          case "tag":
-            out = 'tag "' + e.params.tag + '" must be string'
-            break
-          case "mapping":
-            out = 'value of tag "' + e.params.tag + '" must be in oneOf'
-            break
-          default:
-            out = 'must pass "' + e.keyword + '" keyword validation'
-        }
-        break
-      case "enum":
-        out = "egyenlő kell legyen valamely előre meghatározott értékkel"
-        break
-      case "false schema":
-        out = "boolean schema is false"
-        break
-      case "format":
-        out =
-          'meg kell feleljen a következő formátumnak: "' + e.params.format + '"'
-        break
-      case "formatMaximum":
-      case "formatExclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "must be " + cond
-        break
-      case "formatMinimum":
-      case "formatExclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "must be " + cond
-        break
-      case "if":
-        out = 'must match "' + e.params.failingKeyword + '" schema'
-        break
-      case "maximum":
-      case "exclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "kell legyen " + cond
-        break
-      case "maxItems":
-        out = ""
-        var n = e.params.limit
-        out += "nem lehet több, mint " + n + " eleme"
-        break
-      case "maxLength":
-        out = ""
-        var n = e.params.limit
-        out += "nem lehet hosszabb, mint " + n + " szimbólum"
-        break
-      case "maxProperties":
-        out = ""
-        var n = e.params.limit
-        out += "nem lehet több, mint " + n + " tulajdonsága"
-        break
-      case "minimum":
-      case "exclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "kell legyen " + cond
-        break
-      case "minItems":
-        out = ""
-        var n = e.params.limit
-        out += "nem lehet kevesebb, mint " + n + " eleme"
-        break
-      case "minLength":
-        out = ""
-        var n = e.params.limit
-        out += "nem lehet rövidebb, mint " + n + " szimbólum"
-        break
-      case "minProperties":
-        out = ""
-        var n = e.params.limit
-        out += "nem lehet kevesebb, mint " + n + " tulajdonsága"
-        break
-      case "multipleOf":
-        out =
-          "a többszöröse kell legyen a következő számnak: " +
-          e.params.multipleOf
-        break
-      case "not":
-        out = 'nem lehet érvényes a "not" alaknak megfelelően'
-        break
-      case "oneOf":
-        out = 'meg kell feleljen pontosan egy "oneOf" alaknak'
-        break
-      case "pattern":
-        out =
-          'meg kell feleljen a következő mintának: "' + e.params.pattern + '"'
-        break
-      case "patternRequired":
-        out =
-          'must have property matching pattern "' +
-          e.params.missingPattern +
-          '"'
-        break
-      case "propertyNames":
-        out = "property name is invalid"
-        break
-      case "required":
-        out = "kell legyen " + e.params.missingProperty + " tulajdonsága"
-        break
-      case "type":
-        out = "" + e.params.type + " kell legyen"
-        break
-      case "unevaluatedItems":
-        out = ""
-        var n = e.params.len
-        out += "must NOT have more than " + n + " item"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "unevaluatedProperties":
-        out = "must NOT have unevaluated properties"
-        break
-      case "uniqueItems":
-        out =
-          "nem lehetnek azonos elemei (" +
-          e.params.j +
-          " és " +
-          e.params.i +
-          " elemek azonosak)"
-        break
-      default:
-        out = 'must pass "' + e.keyword + '" keyword validation'
-    }
-    e.message = out
-  }
-}
-
-},{}],13:[function(require,module,exports){
-"use strict"
-module.exports = function localize_id(errors) {
-  if (!(errors && errors.length)) return
-  for (const e of errors) {
-    let out
-    switch (e.keyword) {
-      case "additionalItems":
-      case "items":
-        out = ""
-        var n = e.params.limit
-        out += " tidak boleh memiliki lebih dari " + n + " item"
-        break
-      case "additionalProperties":
-        out = "tidak boleh memiliki properti tambahan"
-        break
-      case "anyOf":
-        out = 'harus cocok dengan beberapa skema pada "anyOf"'
-        break
-      case "const":
-        out = "harus sama dengan konstan"
-        break
-      case "contains":
-        out = "harus berisi item yang valid"
-        break
-      case "dependencies":
-      case "dependentRequired":
-        out = ""
-        var n = e.params.depsCount
-        out +=
-          " harus memiliki properti " +
-          e.params.deps +
-          " ketika properti " +
-          e.params.property +
-          " hadir"
-        break
-      case "discriminator":
-        switch (e.params.error) {
-          case "tag":
-            out = 'tag "' + e.params.tag + '" must be string'
-            break
-          case "mapping":
-            out = 'value of tag "' + e.params.tag + '" must be in oneOf'
-            break
-          default:
-            out = 'harus lulus validasi kata kunci "' + e.keyword + '"'
-        }
-        break
-      case "enum":
-        out = "harus sama dengan salah satu dari nilai yang telah ditentukan"
-        break
-      case "false schema":
-        out = "skema boolean salah"
-        break
-      case "format":
-        out = 'harus cocok dengan format "' + e.params.format + '"'
-        break
-      case "formatMaximum":
-      case "formatExclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "harus " + cond
-        break
-      case "formatMinimum":
-      case "formatExclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "harus " + cond
-        break
-      case "if":
-        out = 'harus cocok dengan skema "' + e.params.failingKeyword + '"'
-        break
-      case "maximum":
-      case "exclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "harus " + cond
-        break
-      case "maxItems":
-        out = ""
-        var n = e.params.limit
-        out += " tidak boleh memiliki lebih dari " + n + " item"
-        break
-      case "maxLength":
-        out = ""
-        var n = e.params.limit
-        out += " tidak boleh lebih dari " + n + " karakter"
-        break
-      case "maxProperties":
-        out = ""
-        var n = e.params.limit
-        out += " tidak boleh memiliki lebih dari " + n + " properti"
-        break
-      case "minimum":
-      case "exclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "harus " + cond
-        break
-      case "minItems":
-        out = ""
-        var n = e.params.limit
-        out += " tidak boleh kurang dari " + n + " item"
-        break
-      case "minLength":
-        out = ""
-        var n = e.params.limit
-        out += " tidak boleh lebih pendek dari " + n + " karakter"
-        break
-      case "minProperties":
-        out = ""
-        var n = e.params.limit
-        out += " tidak boleh kurang dari " + n + " properti"
-        break
-      case "multipleOf":
-        out = "harus merupakan kelipatan dari " + e.params.multipleOf
-        break
-      case "not":
-        out = 'tidak boleh valid sesuai dengan skema pada "not"'
-        break
-      case "oneOf":
-        out = 'harus sama persis dengan satu skema pada "oneOf"'
-        break
-      case "pattern":
-        out = 'harus cocok dengan pola "' + e.params.pattern + '"'
-        break
-      case "patternRequired":
-        out =
-          'harus memiliki pola pencocokan properti "' +
-          e.params.missingPattern +
-          '"'
-        break
-      case "propertyNames":
-        out = "nama properti tidak valid"
-        break
-      case "required":
-        out = "harus memiliki properti " + e.params.missingProperty
-        break
-      case "type":
-        out = "harus berupa " + e.params.type
-        break
-      case "unevaluatedItems":
-        out = ""
-        var n = e.params.len
-        out += "must NOT have more than " + n + " item"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "unevaluatedProperties":
-        out = "must NOT have unevaluated properties"
-        break
-      case "uniqueItems":
-        out =
-          "tidak boleh memiliki item duplikat (item ## " +
-          e.params.j +
-          " dan " +
-          e.params.i +
-          " identik)"
-        break
-      default:
-        out = 'harus lulus validasi kata kunci "' + e.keyword + '"'
-    }
-    e.message = out
-  }
-}
-
-},{}],14:[function(require,module,exports){
-"use strict"
-module.exports = {
-  en: require("./en"),
-  ar: require("./ar"),
-  ca: require("./ca"),
-  cs: require("./cs"),
-  de: require("./de"),
-  es: require("./es"),
-  fi: require("./fi"),
-  fr: require("./fr"),
-  hu: require("./hu"),
-  id: require("./id"),
-  it: require("./it"),
-  ja: require("./ja"),
-  ko: require("./ko"),
-  nb: require("./nb"),
-  nl: require("./nl"),
-  pl: require("./pl"),
-  "pt-BR": require("./pt-BR"),
-  ru: require("./ru"),
-  sk: require("./sk"),
-  sv: require("./sv"),
-  th: require("./th"),
-  zh: require("./zh"),
-  "zh-TW": require("./zh-TW"),
-}
-
-},{"./ar":4,"./ca":5,"./cs":6,"./de":7,"./en":8,"./es":9,"./fi":10,"./fr":11,"./hu":12,"./id":13,"./it":15,"./ja":16,"./ko":17,"./nb":18,"./nl":19,"./pl":20,"./pt-BR":21,"./ru":22,"./sk":23,"./sv":24,"./th":25,"./zh":27,"./zh-TW":26}],15:[function(require,module,exports){
-"use strict"
-module.exports = function localize_it(errors) {
-  if (!(errors && errors.length)) return
-  for (const e of errors) {
-    let out
-    switch (e.keyword) {
-      case "additionalItems":
-      case "items":
-        out = ""
-        var n = e.params.limit
-        out += "non dovrebbe avere più di " + n + " element"
-        if (n == 1) {
-          out += "o"
-        } else {
-          out += "i"
-        }
-        break
-      case "additionalProperties":
-        out = "non deve avere attributi aggiuntivi"
-        break
-      case "anyOf":
-        out = 'deve corrispondere ad uno degli schema in "anyOf"'
-        break
-      case "const":
-        out = "deve essere uguale alla costante"
-        break
-      case "contains":
-        out = "deve contentere un elemento valido"
-        break
-      case "dependencies":
-      case "dependentRequired":
-        out = ""
-        var n = e.params.depsCount
-        out += "dovrebbe avere "
-        if (n == 1) {
-          out += "l'"
-        } else {
-          out += "gli "
-        }
-        out += "attribut"
-        if (n == 1) {
-          out += "o"
-        } else {
-          out += "i"
-        }
-        out +=
-          " " +
-          e.params.deps +
-          " quando l'attributo " +
-          e.params.property +
-          " è presente"
-        break
-      case "discriminator":
-        switch (e.params.error) {
-          case "tag":
-            out = 'il tag "' + e.params.tag + '" deve essere di tipo stringa'
-            break
-          case "mapping":
-            out =
-              'il valore del tag "' + e.params.tag + '" deve essere nei oneOf'
-            break
-          default:
-            out = 'deve essere valido secondo il criterio "' + e.keyword + '"'
-        }
-        break
-      case "enum":
-        out = "deve essere uguale ad uno dei valori consentiti"
-        break
-      case "false schema":
-        out = "lo schema booleano è falso"
-        break
-      case "format":
-        out = 'deve corrispondere al formato "' + e.params.format + '"'
-        break
-      case "formatMaximum":
-      case "formatExclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "deve essere " + cond
-        break
-      case "formatMinimum":
-      case "formatExclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "deve essere " + cond
-        break
-      case "if":
-        out = 'deve corrispondere allo schema "' + e.params.failingKeyword + '"'
-        break
-      case "maximum":
-      case "exclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "deve essere " + cond
-        break
-      case "maxItems":
-        out = ""
-        var n = e.params.limit
-        out += "non deve avere più di " + n + " element"
-        if (n == 1) {
-          out += "o"
-        } else {
-          out += "i"
-        }
-        break
-      case "maxLength":
-        out = ""
-        var n = e.params.limit
-        out += "non deve essere più lungo di " + n + " caratter"
-        if (n == 1) {
-          out += "e"
-        } else {
-          out += "i"
-        }
-        break
-      case "maxProperties":
-        out = ""
-        var n = e.params.limit
-        out += "non deve avere più di " + n + " attribut"
-        if (n == 1) {
-          out += "o"
-        } else {
-          out += "i"
-        }
-        break
-      case "minimum":
-      case "exclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "deve essere " + cond
-        break
-      case "minItems":
-        out = ""
-        var n = e.params.limit
-        out += "non deve avere meno di " + n + " element"
-        if (n == 1) {
-          out += "o"
-        } else {
-          out += "i"
-        }
-        break
-      case "minLength":
-        out = ""
-        var n = e.params.limit
-        out += "non deve essere meno lungo di " + n + " caratter"
-        if (n == 1) {
-          out += "e"
-        } else {
-          out += "i"
-        }
-        break
-      case "minProperties":
-        out = ""
-        var n = e.params.limit
-        out += "non deve avere meno di " + n + " attribut"
-        if (n == 1) {
-          out += "o"
-        } else {
-          out += "i"
-        }
-        break
-      case "multipleOf":
-        out = "deve essere un multiplo di " + e.params.multipleOf
-        break
-      case "not":
-        out = 'non deve essere valido in base allo schema di "non"'
-        break
-      case "oneOf":
-        out = 'deve corrispondere esattamente ad uno degli schema in "oneOf"'
-        break
-      case "pattern":
-        out = 'deve corrispondere al formato "' + e.params.pattern + '"'
-        break
-      case "patternRequired":
-        out =
-          'deve avere un attributo che corrisponda al formato "' +
-          e.params.missingPattern +
-          '"'
-        break
-      case "propertyNames":
-        out = "il nome dell'attritbuto non è valido"
-        break
-      case "required":
-        out = "deve avere l'attributo obbligatorio " + e.params.missingProperty
-        break
-      case "type":
-        out = "deve essere di tipo " + e.params.type
-        break
-      case "unevaluatedItems":
-        out = ""
-        var n = e.params.len
-        out += "non deve avere più di " + n + " elementi"
-        if (n == 1) {
-          out += "o"
-        } else {
-          out += "i"
-        }
-        break
-      case "unevaluatedProperties":
-        out = "non deve avere attributi non valutati"
-        break
-      case "uniqueItems":
-        out =
-          "non deve avere duplicati (gli elementi ## " +
-          e.params.j +
-          " e " +
-          e.params.i +
-          " sono uguali)"
-        break
-      default:
-        out = 'deve essere valido secondo il criterio "' + e.keyword + '"'
-    }
-    e.message = out
-  }
-}
-
-},{}],16:[function(require,module,exports){
-"use strict"
-module.exports = function localize_ja(errors) {
-  if (!(errors && errors.length)) return
-  for (const e of errors) {
-    let out
-    switch (e.keyword) {
-      case "additionalItems":
-      case "items":
-        out = ""
-        var n = e.params.limit
-        out += "は" + n + "以上あってはいけない"
-        break
-      case "additionalProperties":
-        out = "追加してはいけない"
-        break
-      case "anyOf":
-        out = '"anyOf"のスキーマとマッチしなくてはいけない'
-        break
-      case "const":
-        out = "must be equal to constant"
-        break
-      case "contains":
-        out = "must contain a valid item"
-        break
-      case "dependencies":
-      case "dependentRequired":
-        out = "" + e.params.property + "がある場合、"
-        var n = e.params.depsCount
-        out += "は" + e.params.deps + "をつけなければいけない"
-        break
-      case "discriminator":
-        switch (e.params.error) {
-          case "tag":
-            out = 'tag "' + e.params.tag + '" must be string'
-            break
-          case "mapping":
-            out = 'value of tag "' + e.params.tag + '" must be in oneOf'
-            break
-          default:
-            out = 'must pass "' + e.keyword + '" keyword validation'
-        }
-        break
-      case "enum":
-        out = "事前に定義された値のいずれかに等しくなければいけない"
-        break
-      case "false schema":
-        out = "boolean schema is false"
-        break
-      case "format":
-        out = '"' + e.params.format + '"形式に揃えなければいけない'
-        break
-      case "formatMaximum":
-      case "formatExclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "must be " + cond
-        break
-      case "formatMinimum":
-      case "formatExclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "must be " + cond
-        break
-      case "if":
-        out = 'must match "' + e.params.failingKeyword + '" schema'
-        break
-      case "maximum":
-      case "exclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += cond + "でなければいけない"
-        break
-      case "maxItems":
-        out = ""
-        var n = e.params.limit
-        out += "は" + n + "個以上であってはいけない"
-        break
-      case "maxLength":
-        out = ""
-        var n = e.params.limit
-        out += "は" + n + "文字以上であってはいけない"
-        break
-      case "maxProperties":
-        out = ""
-        var n = e.params.limit
-        out += "は" + n + "個以上のプロパティを有してはいけない"
-        break
-      case "minimum":
-      case "exclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += cond + "でなければいけない"
-        break
-      case "minItems":
-        out = ""
-        var n = e.params.limit
-        out += "は" + n + "個以下であってはいけない"
-        break
-      case "minLength":
-        out = ""
-        var n = e.params.limit
-        out += "は" + n + "文字以下であってはいけない"
-        break
-      case "minProperties":
-        out = ""
-        var n = e.params.limit
-        out += "は" + n + "個以下のプロパティを有してはいけない"
-        break
-      case "multipleOf":
-        out = "" + e.params.multipleOf + "の倍数でなければいけない"
-        break
-      case "not":
-        out = '"not"のスキーマに従って有効としてはいけない'
-        break
-      case "oneOf":
-        out = '"oneOf"のスキーマと完全に一致しなくてはいけない'
-        break
-      case "pattern":
-        out = '"' + e.params.pattern + '"のパターンと一致しなければいけない'
-        break
-      case "patternRequired":
-        out =
-          'must have property matching pattern "' +
-          e.params.missingPattern +
-          '"'
-        break
-      case "propertyNames":
-        out = "property name is invalid"
-        break
-      case "required":
-        out =
-          "必要なプロパティ" + e.params.missingProperty + "がなければいけない"
-        break
-      case "type":
-        out = "" + e.params.type + "でなければいけない"
-        break
-      case "unevaluatedItems":
-        out = ""
-        var n = e.params.len
-        out += "must NOT have more than " + n + " item"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "unevaluatedProperties":
-        out = "must NOT have unevaluated properties"
-        break
-      case "uniqueItems":
-        out =
-          "重複するアイテムがあってはいけない（" +
-          e.params.j +
-          "と" +
-          e.params.i +
-          "は同じである）"
-        break
-      default:
-        out = 'must pass "' + e.keyword + '" keyword validation'
-    }
-    e.message = out
-  }
-}
-
-},{}],17:[function(require,module,exports){
-"use strict"
-module.exports = function localize_ko(errors) {
-  if (!(errors && errors.length)) return
-  for (const e of errors) {
-    let out
-    switch (e.keyword) {
-      case "additionalItems":
-      case "items":
-        out = ""
-        var n = e.params.limit
-        out += " 항목은 아이템을 " + n + "개 이상 가질 수 없습니다"
-        break
-      case "additionalProperties":
-        out = "추가적인 속성은 허용되지 않습니다"
-        break
-      case "anyOf":
-        out = '"anyOf"의 스키마와 일치해야 합니다'
-        break
-      case "const":
-        out = "상수와 같아야합니다"
-        break
-      case "contains":
-        out = "올바른 아이템을 포함해야 합니다"
-        break
-      case "dependencies":
-      case "dependentRequired":
-        out = ""
-        var n = e.params.depsCount
-        out +=
-          e.params.property +
-          "속성이 있는 경우, " +
-          e.params.deps +
-          " 속성이 있어야합니다"
-        break
-      case "discriminator":
-        switch (e.params.error) {
-          case "tag":
-            out = '"' + e.params.tag + '"태그는 반드시 문자열이여야 합니다'
-            break
-          case "mapping":
-            out =
-              '"' + e.params.tag + '"태그의 값은 반드시 oneOf에 있어야 합니다'
-            break
-          default:
-            out = '"' + e.keyword + '"키워드 검사를 통과해야 합니다'
-        }
-        break
-      case "enum":
-        out = "미리 정의된 값중 하나여야 합니다"
-        break
-      case "false schema":
-        out = "boolean 스키마는 올바르지 않습니다"
-        break
-      case "format":
-        out = '"' + e.params.format + '" 포맷과 일치해야 합니다'
-        break
-      case "formatMaximum":
-      case "formatExclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += " " + cond + " 이여야 합니다"
-        break
-      case "formatMinimum":
-      case "formatExclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += " " + cond + " 이여야 합니다"
-        break
-      case "if":
-        out = '"' + e.params.failingKeyword + '" 스키마와 일치해야 합니다'
-        break
-      case "maximum":
-      case "exclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += " " + cond + " 이여야 합니다"
-        break
-      case "maxItems":
-        out = ""
-        var n = e.params.limit
-        out += "아이템이 최대 " + n + "개이여야 합니다"
-        break
-      case "maxLength":
-        out = ""
-        var n = e.params.limit
-        out += "최대 " + n + "글자여야 합니다"
-        break
-      case "maxProperties":
-        out = ""
-        var n = e.params.limit
-        out += "속성은 최대 " + n + "개 이내여야 합니다"
-        break
-      case "minimum":
-      case "exclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += " " + cond + " 이여야 합니다"
-        break
-      case "minItems":
-        out = ""
-        var n = e.params.limit
-        out += "아이템이 최소 " + n + "개이여야 합니다"
-        break
-      case "minLength":
-        out = ""
-        var n = e.params.limit
-        out += "최소 " + n + "글자여야 합니다"
-        break
-      case "minProperties":
-        out = ""
-        var n = e.params.limit
-        out += "속성은 최소 " + n + "개 이상이여야 합니다"
-        break
-      case "multipleOf":
-        out = "" + e.params.multipleOf + "의 배수여야 합니다"
-        break
-      case "not":
-        out = '"not"스키마에 따라 유효하지 않아야 합니다'
-        break
-      case "oneOf":
-        out = '"oneOf" 스키마중 하나와 정확하게 일치해야 합니다'
-        break
-      case "pattern":
-        out = '"' + e.params.pattern + '"패턴과 일치해야 합니다'
-        break
-      case "patternRequired":
-        out =
-          '"' +
-          e.params.missingPattern +
-          '"패턴과 일치하는 속성을 가져야 합니다'
-        break
-      case "propertyNames":
-        out = "속성명이 올바르지 않습니다"
-        break
-      case "required":
-        out = "" + e.params.missingProperty + " 속성은 필수입니다"
-        break
-      case "type":
-        out = "" + e.params.type + "이여야 합니다"
-        break
-      case "unevaluatedItems":
-        out = ""
-        var n = e.params.len
-        out += "항목이 " + n + "개 아이템을 초과하면 안됩니다"
-        break
-      case "unevaluatedProperties":
-        out = "평가되지 않은 속성이 없어야합니다."
-        break
-      case "uniqueItems":
-        out =
-          "중복 아이템이 없어야 합니다 (아이템" +
-          e.params.j +
-          "과 아이템" +
-          e.params.i +
-          "가 동일합니다)"
-        break
-      default:
-        out = '"' + e.keyword + '"키워드 검사를 통과해야 합니다'
-    }
-    e.message = out
-  }
-}
-
-},{}],18:[function(require,module,exports){
-"use strict"
-module.exports = function localize_nb(errors) {
-  if (!(errors && errors.length)) return
-  for (const e of errors) {
-    let out
-    switch (e.keyword) {
-      case "additionalItems":
-      case "items":
-        out = ""
-        var n = e.params.limit
-        out += "kan ikke ha mer enn " + n + " element"
-        if (n != 1) {
-          out += "er"
-        }
-        break
-      case "additionalProperties":
-        out = "kan ikke ha flere egenskaper"
-        break
-      case "anyOf":
-        out = 'må samsvare med et schema i "anyOf"'
-        break
-      case "const":
-        out = "må være lik konstanten"
-        break
-      case "contains":
-        out = "må inneholde et gyldig element"
-        break
-      case "dependencies":
-      case "dependentRequired":
-        out = ""
-        var n = e.params.depsCount
-        out += "må ha egenskapen"
-        if (n != 1) {
-          out += "e"
-        }
-        out +=
-          " " +
-          e.params.deps +
-          " når egenskapen " +
-          e.params.property +
-          " er angitt"
-        break
-      case "discriminator":
-        switch (e.params.error) {
-          case "tag":
-            out = 'tag "' + e.params.tag + '" must be string'
-            break
-          case "mapping":
-            out = 'value of tag "' + e.params.tag + '" must be in oneOf'
-            break
-          default:
-            out = "må samsvare med valideringen for " + e.keyword
-        }
-        break
-      case "enum":
-        out = "må være lik en av de forhåndsdefinerte verdiene"
-        break
-      case "false schema":
-        out = "boolsk schema er usannt"
-        break
-      case "format":
-        out = 'må stemme overens med formatet "' + e.params.format + '"'
-        break
-      case "formatMaximum":
-      case "formatExclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "må være " + cond
-        break
-      case "formatMinimum":
-      case "formatExclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "må være " + cond
-        break
-      case "if":
-        out = 'must match "' + e.params.failingKeyword + '" schema'
-        break
-      case "maximum":
-      case "exclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "må være " + cond
-        break
-      case "maxItems":
-        out = ""
-        var n = e.params.limit
-        out += "kan ikke ha fler enn " + n + " element"
-        if (n != 1) {
-          out += "er"
-        }
-        break
-      case "maxLength":
-        out = ""
-        var n = e.params.limit
-        out += "kan ikke være lengre enn " + n + " tegn"
-        break
-      case "maxProperties":
-        out = ""
-        var n = e.params.limit
-        out += "kan ikke ha mer enn " + n + " egenskap"
-        if (n != 1) {
-          out += "er"
-        }
-        break
-      case "minimum":
-      case "exclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "må være " + cond
-        break
-      case "minItems":
-        out = ""
-        var n = e.params.limit
-        out += "kan ikke ha færre enn " + n + " element"
-        if (n != 1) {
-          out += "er"
-        }
-        break
-      case "minLength":
-        out = ""
-        var n = e.params.limit
-        out += "kan ikke være kortere enn " + n + " tegn"
-        break
-      case "minProperties":
-        out = ""
-        var n = e.params.limit
-        out += "kan ikke ha mindre enn " + n + " egenskap"
-        if (n != 1) {
-          out += "er"
-        }
-        break
-      case "multipleOf":
-        out = "må være et multiplum av " + e.params.multipleOf
-        break
-      case "not":
-        out = 'kan ikke samsvare med schema i "not"'
-        break
-      case "oneOf":
-        out = 'må samsvare med nøyaktig ett schema i "oneOf"'
-        break
-      case "pattern":
-        out = 'må samsvare med mønsteret "' + e.params.pattern + '"'
-        break
-      case "patternRequired":
-        out =
-          'må ha en egenskap som samsvarer med mønsteret "' +
-          e.params.missingPattern
-        break
-      case "propertyNames":
-        out = "egenskapen med navnet '"
-        e.params.propertyNameout += "' er ugyldig"
-        break
-      case "required":
-        out = "må ha den påkrevde egenskapen " + e.params.missingProperty
-        break
-      case "type":
-        out = ""
-        var t = e.params.type
-        out += "må være "
-        if (t == "number") {
-          out += "et tall"
-        } else if (t == "integer") {
-          out += "et heltall"
-        } else if (t == "string") {
-          out += "en streng"
-        } else if (t == "boolean") {
-          out += "ja eller nei"
-        } else {
-          out += t
-        }
-        break
-      case "unevaluatedItems":
-        out = ""
-        var n = e.params.len
-        out += "must NOT have more than " + n + " item"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "unevaluatedProperties":
-        out = "must NOT have unevaluated properties"
-        break
-      case "uniqueItems":
-        out =
-          "kan ikke ha duplikate elemeneter (elementene ## " +
-          e.params.j +
-          " og " +
-          e.params.i +
-          " er identiske)"
-        break
-      default:
-        out = "må samsvare med valideringen for " + e.keyword
-    }
-    e.message = out
-  }
-}
-
-},{}],19:[function(require,module,exports){
-"use strict"
-module.exports = function localize_nl(errors) {
-  if (!(errors && errors.length)) return
-  for (const e of errors) {
-    let out
-    switch (e.keyword) {
-      case "additionalItems":
-      case "items":
-        out = ""
-        var n = e.params.limit
-        out += "mag niet meer dan " + n + " item"
-        if (n != 1) {
-          out += "s"
-        }
-        out += " bevatten"
-        break
-      case "additionalProperties":
-        out = "mag geen extra eigenschappen bevatten"
-        break
-      case "anyOf":
-        out = 'moet overeenkomen met een schema in "anyOf"'
-        break
-      case "const":
-        out = "moet gelijk zijn aan constante"
-        break
-      case "contains":
-        out = "moet een geldig item bevatten"
-        break
-      case "dependencies":
-      case "dependentRequired":
-        out = ""
-        var n = e.params.depsCount
-        out += "moet de eigenschap"
-        if (n != 1) {
-          out += "pen"
-        }
-        out +=
-          " " +
-          e.params.deps +
-          " bevatten als " +
-          e.params.property +
-          " is gedefinieerd"
-        break
-      case "discriminator":
-        switch (e.params.error) {
-          case "tag":
-            out = 'tag "' + e.params.tag + '" moet een tekenreeks zijn'
-            break
-          case "mapping":
-            out =
-              'de waarde van het veld "' +
-              e.params.tag +
-              '" moet voorkomen in de oneOf'
-            break
-          default:
-            out = 'moet sleutelwoord validatie "' + e.keyword + '" doorstaan'
-        }
-        break
-      case "enum":
-        out = "moet overeenkomen met één van de voorgedefinieerde waarden"
-        break
-      case "false schema":
-        out = "boolean schema is fout"
-        break
-      case "format":
-        out =
-          'moet overeenkomen met het volgende formaat: "' +
-          e.params.format +
-          '"'
-        break
-      case "formatMaximum":
-      case "formatExclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "moet " + cond + " zijn"
-        break
-      case "formatMinimum":
-      case "formatExclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "moet " + cond + " zijn"
-        break
-      case "if":
-        out = 'moet overeenkomen met "' + e.params.failingKeyword + '" schema'
-        break
-      case "maximum":
-      case "exclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "moet " + cond + " zijn"
-        break
-      case "maxItems":
-        out = ""
-        var n = e.params.limit
-        out += "mag niet meer dan " + n + " item"
-        if (n != 1) {
-          out += "s"
-        }
-        out += " bevatten"
-        break
-      case "maxLength":
-        out = ""
-        var n = e.params.limit
-        out += "mag niet langer dan " + n + " karakter"
-        if (n != 1) {
-          out += "s"
-        }
-        out += " zijn"
-        break
-      case "maxProperties":
-        out = ""
-        var n = e.params.limit
-        out += "mag niet meer dan " + n + " eigenschap"
-        if (n != 1) {
-          out += "pen"
-        }
-        out += " bevatten"
-        break
-      case "minimum":
-      case "exclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "moet " + cond + " zijn"
-        break
-      case "minItems":
-        out = ""
-        var n = e.params.limit
-        out += "mag niet minder dan " + n + " item"
-        if (n != 1) {
-          out += "s"
-        }
-        out += " bevatten"
-        break
-      case "minLength":
-        out = ""
-        var n = e.params.limit
-        out += "mag niet korter dan " + n + " karakter"
-        if (n != 1) {
-          out += "s"
-        }
-        out += " zijn"
-        break
-      case "minProperties":
-        out = ""
-        var n = e.params.limit
-        out += "mag niet minder dan " + n + " eigenschap"
-        if (n != 1) {
-          out += "pen"
-        }
-        out += " bevatten"
-        break
-      case "multipleOf":
-        out = "moet een veelvoud van " + e.params.multipleOf + " zijn"
-        break
-      case "not":
-        out = 'mag niet overeenkomen met een schema in "not"'
-        break
-      case "oneOf":
-        out = 'moet overeenkomen met één schema in "oneOf"'
-        break
-      case "pattern":
-        out =
-          'moet overeenkomen met het volgende patroon: "' +
-          e.params.pattern +
-          '"'
-        break
-      case "patternRequired":
-        out =
-          'moet een eigenschap bevatten die overeenkomt met het pattroon: "' +
-          e.params.missingPattern +
-          '"'
-        break
-      case "propertyNames":
-        out = "eigenschapnaam is ongeldig"
-        break
-      case "required":
-        out = "moet de eigenschap " + e.params.missingProperty + " bevatten"
-        break
-      case "type":
-        out = ""
-        var t = e.params.type
-        out += "moet een "
-        if (t == "number") {
-          out += "nummer"
-        } else if (t == "integer") {
-          out += "geheel getal"
-        } else if (t == "string") {
-          out += "tekenreeks"
-        } else if (t == "boolean") {
-          out += "ja of nee waarde"
-        }
-        out += " (" + t + ") bevatten"
-        break
-      case "unevaluatedItems":
-        out = ""
-        var n = e.params.len
-        out += "mag niet meer dan " + n + " item"
-        if (n != 1) {
-          out += "s"
-        }
-        out += " bevatten"
-        break
-      case "unevaluatedProperties":
-        out = "mag geen ongecontroleerde eigenschappen bevatten"
-        break
-      case "uniqueItems":
-        out =
-          "mag geen gedupliceerde items bevatten (items ## " +
-          e.params.j +
-          " en " +
-          e.params.i +
-          " zijn identiek)"
-        break
-      default:
-        out = 'moet sleutelwoord validatie "' + e.keyword + '" doorstaan'
-    }
-    e.message = out
-  }
-}
-
-},{}],20:[function(require,module,exports){
-"use strict"
-module.exports = function localize_pl(errors) {
-  if (!(errors && errors.length)) return
-  for (const e of errors) {
-    let out
-    switch (e.keyword) {
-      case "additionalItems":
-      case "items":
-        out = ""
-        var n = e.params.limit
-        out += "nie powinien mieć więcej niż " + n + " element"
-        if (n == 1) {
-          out += "u"
-        } else {
-          out += "ów"
-        }
-        break
-      case "additionalProperties":
-        out = "nie powinien zawierać dodatkowych pól"
-        break
-      case "anyOf":
-        out = 'powinien pasować do wzoru z sekcji "anyOf"'
-        break
-      case "const":
-        out = "powinien być równy stałej"
-        break
-      case "contains":
-        out = "must contain a valid item"
-        break
-      case "dependencies":
-      case "dependentRequired":
-        out = ""
-        var n = e.params.depsCount
-        out += "powinien zawierać pol"
-        if (n == 1) {
-          out += "e"
-        } else {
-          out += "a"
-        }
-        out +=
-          " " +
-          e.params.deps +
-          " kiedy pole " +
-          e.params.property +
-          " jest obecne"
-        break
-      case "discriminator":
-        switch (e.params.error) {
-          case "tag":
-            out = 'tag "' + e.params.tag + '" must be string'
-            break
-          case "mapping":
-            out = 'value of tag "' + e.params.tag + '" must be in oneOf'
-            break
-          default:
-            out = 'powinien przejść walidację "' + e.keyword + '"'
-        }
-        break
-      case "enum":
-        out = "powinien być równy jednej z predefiniowanych wartości"
-        break
-      case "false schema":
-        out = "boolean schema is false"
-        break
-      case "format":
-        out = 'powinien zgadzać się z formatem "' + e.params.format + '"'
-        break
-      case "formatMaximum":
-      case "formatExclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "powinien być " + cond
-        break
-      case "formatMinimum":
-      case "formatExclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "powinien być " + cond
-        break
-      case "if":
-        out = 'must match "' + e.params.failingKeyword + '" schema'
-        break
-      case "maximum":
-      case "exclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "powinien być " + cond
-        break
-      case "maxItems":
-        out = ""
-        var n = e.params.limit
-        out += "nie powinien mieć więcej niż " + n + " element"
-        if (n == 1) {
-          out += "u"
-        } else {
-          out += "ów"
-        }
-        break
-      case "maxLength":
-        out = ""
-        var n = e.params.limit
-        out += "nie powinien być dłuższy niż " + n + " znak"
-        if (n != 1) {
-          out += "ów"
-        }
-        break
-      case "maxProperties":
-        out = ""
-        var n = e.params.limit
-        out += "nie powinien zawierać więcej niż " + n + " "
-        if (n == 1) {
-          out += "pole"
-        } else {
-          out += "pól"
-        }
-        break
-      case "minimum":
-      case "exclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "powinien być " + cond
-        break
-      case "minItems":
-        out = ""
-        var n = e.params.limit
-        out += "nie powinien mieć mniej niż " + n + " element"
-        if (n == 1) {
-          out += "u"
-        } else {
-          out += "ów"
-        }
-        break
-      case "minLength":
-        out = ""
-        var n = e.params.limit
-        out += "nie powinien być krótszy niż " + n + " znak"
-        if (n != 1) {
-          out += "ów"
-        }
-        break
-      case "minProperties":
-        out = ""
-        var n = e.params.limit
-        out += "nie powinien zawierać mniej niż " + n + " "
-        if (n == 1) {
-          out += "pole"
-        } else {
-          out += "pól"
-        }
-        break
-      case "multipleOf":
-        out = "powinien być wielokrotnością " + e.params.multipleOf
-        break
-      case "not":
-        out = 'nie powinien pasować do wzoru z sekcji "not"'
-        break
-      case "oneOf":
-        out = 'powinien pasować do jednego wzoru z sekcji "oneOf"'
-        break
-      case "pattern":
-        out = 'powinien zgadzać się ze wzorem "' + e.params.pattern + '"'
-        break
-      case "patternRequired":
-        out =
-          'powinien mieć pole pasujące do wzorca "' +
-          e.params.missingPattern +
-          '"'
-        break
-      case "propertyNames":
-        out = "property name is invalid"
-        break
-      case "required":
-        out = "powinien zawierać wymagane pole " + e.params.missingProperty
-        break
-      case "type":
-        out = "powinien być " + e.params.type
-        break
-      case "unevaluatedItems":
-        out = ""
-        var n = e.params.len
-        out += "must NOT have more than " + n + " item"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "unevaluatedProperties":
-        out = "must NOT have unevaluated properties"
-        break
-      case "uniqueItems":
-        out =
-          "nie powinien zawierać elementów które się powtarzają (elementy " +
-          e.params.j +
-          " i " +
-          e.params.i +
-          " są identyczne)"
-        break
-      default:
-        out = 'powinien przejść walidację "' + e.keyword + '"'
-    }
-    e.message = out
-  }
-}
-
-},{}],21:[function(require,module,exports){
-"use strict"
-module.exports = function localize_pt_BR(errors) {
-  if (!(errors && errors.length)) return
-  for (const e of errors) {
-    let out
-    switch (e.keyword) {
-      case "additionalItems":
-      case "items":
-        out = "não são permitidos itens adicionais (mais do que " + n + ")"
-        break
-      case "additionalProperties":
-        out = "não são permitidas propriedades adicionais"
-        break
-      case "anyOf":
-        out = 'os dados não correspondem a nenhum schema de "anyOf"'
-        break
-      case "const":
-        out = "deve ser igual à constante"
-        break
-      case "contains":
-        out = "deve conter um item válido"
-        break
-      case "dependencies":
-      case "dependentRequired":
-        out = ""
-        var n = e.params.depsCount
-        out += " deve ter propriedade"
-        if (n != 1) {
-          out += "s"
-        }
-        out +=
-          " " +
-          e.params.deps +
-          " quando a propriedade " +
-          e.params.property +
-          " estiver presente"
-        break
-      case "discriminator":
-        switch (e.params.error) {
-          case "tag":
-            out = 'a tag "' + e.params.tag + '" deve ser uma string'
-            break
-          case "mapping":
-            out = 'o valor da tag "' + e.params.tag + '" deve estar no oneOf'
-            break
-          default:
-            out = 'deve passar a validação da keyword "' + e.keyword + '"'
-        }
-        break
-      case "enum":
-        out = "deve ser igual a um dos valores permitidos"
-        break
-      case "false schema":
-        out = 'o schema booleano é "false"'
-        break
-      case "format":
-        out = 'deve corresponder ao formato "' + e.params.format + '"'
-        break
-      case "formatMaximum":
-      case "formatExclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "deve ser " + cond
-        break
-      case "formatMinimum":
-      case "formatExclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "deve ser " + cond
-        break
-      case "if":
-        out = 'deve corresponder ao schema "' + e.params.failingKeyword + '"'
-        break
-      case "maximum":
-      case "exclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "deve ser " + cond
-        break
-      case "maxItems":
-        out = ""
-        var n = e.params.limit
-        out += "não deve ter mais que " + n + " elemento"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "maxLength":
-        out = ""
-        var n = e.params.limit
-        out += "não deve ser maior que " + n + " caracter"
-        if (n != 1) {
-          out += "es"
-        }
-        break
-      case "maxProperties":
-        out = ""
-        var n = e.params.limit
-        out += "não deve ter mais que " + n + " propriedade"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "minimum":
-      case "exclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "deve ser " + cond
-        break
-      case "minItems":
-        out = ""
-        var n = e.params.limit
-        out += "não deve ter menos que " + n + " elemento"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "minLength":
-        out = ""
-        var n = e.params.limit
-        out += "não deve ser mais curta que " + n + " caracter"
-        if (n != 1) {
-          out += "es"
-        }
-        break
-      case "minProperties":
-        out = ""
-        var n = e.params.limit
-        out += "não deve ter menos que " + n + " propriedade"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "multipleOf":
-        out = "deve ser múltiplo de " + e.params.multipleOf
-        break
-      case "not":
-        out = 'não deve ser valido segundo o schema em "not"'
-        break
-      case "oneOf":
-        out = 'deve corresponder exatamente com um schema em "oneOf"'
-        break
-      case "pattern":
-        out = 'deve corresponder ao padrão "' + e.params.pattern + '"'
-        break
-      case "patternRequired":
-        out =
-          'deve ter a propriedade correspondente ao padrão "' +
-          e.params.missingPattern +
-          '"'
-        break
-      case "propertyNames":
-        out = "o nome da propriedade é inválido"
-        break
-      case "required":
-        out = "deve ter a propriedade obrigatória " + e.params.missingProperty
-        break
-      case "type":
-        out = ""
-        var t = e.params.type
-        out += "deve ser "
-        if (t == "number") {
-          out += "um número"
-        } else if (t == "integer") {
-          out += "um número inteiro"
-        } else if (t == "string") {
-          out += "um texto"
-        } else if (t == "boolean") {
-          out += "um booleano"
-        } else {
-          out += t
-        }
-        break
-      case "unevaluatedItems":
-        out = ""
-        var n = e.params.len
-        out += "não pode possuir mais que " + n + " "
-        if (n == 1) {
-          out += "item"
-        } else {
-          out += "itens"
-        }
-        break
-      case "unevaluatedProperties":
-        out = "não pode possuir propridades não avaliadas"
-        break
-      case "uniqueItems":
-        out =
-          "não deve ter itens duplicados (os itens ## " +
-          e.params.j +
-          " e " +
-          e.params.i +
-          " são idênticos)"
-        break
-      default:
-        out = 'deve passar a validação da keyword "' + e.keyword + '"'
-    }
-    e.message = out
-  }
-}
-
-},{}],22:[function(require,module,exports){
-"use strict"
-module.exports = function localize_ru(errors) {
-  if (!(errors && errors.length)) return
-  for (const e of errors) {
-    let out
-    switch (e.keyword) {
-      case "additionalItems":
-      case "items":
-        out = ""
-        var n = e.params.limit
-        out += "должно иметь не более, чем " + n + " элемент"
-        if (n >= 2 && n <= 4) {
-          out += "а"
-        } else if (n != 1) {
-          out += "ов"
-        }
-        break
-      case "additionalProperties":
-        out = "не должно иметь дополнительных полей"
-        break
-      case "anyOf":
-        out = 'должно соответствовать одной их схем в "anyOf"'
-        break
-      case "const":
-        out = "должно быть равно заданному значению"
-        break
-      case "contains":
-        out = "должно содержать значение соответствующее схеме"
-        break
-      case "dependencies":
-      case "dependentRequired":
-        out = ""
-        var n = e.params.depsCount
-        out += "должно иметь пол"
-        if (n == 1) {
-          out += "е"
-        } else {
-          out += "я"
-        }
-        out +=
-          " " + e.params.deps + ", когда присутствует поле " + e.params.property
-        break
-      case "discriminator":
-        switch (e.params.error) {
-          case "tag":
-            out = 'поле "' + e.params.tag + '" должно быть строкой'
-            break
-          case "mapping":
-            out =
-              'значение поля "' +
-              e.params.tag +
-              '" должно быть в одной из oneOf схем '
-            break
-          default:
-            out = 'должно соответствовать правилу "' + e.keyword + '"'
-        }
-        break
-      case "enum":
-        out = "должно быть равно одному из разрешенных значений"
-        break
-      case "false schema":
-        out = "схема равна false"
-        break
-      case "format":
-        out = 'должно соответствовать формату "' + e.params.format + '"'
-        break
-      case "formatMaximum":
-      case "formatExclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "должно быть " + cond
-        break
-      case "formatMinimum":
-      case "formatExclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "должно быть " + cond
-        break
-      case "if":
-        out = 'должно соответствовать схемe "' + e.params.failingKeyword + '"'
-        break
-      case "maximum":
-      case "exclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "должно быть " + cond
-        break
-      case "maxItems":
-        out = ""
-        var n = e.params.limit
-        out += "должно иметь не более, чем " + n + " элемент"
-        if (n >= 2 && n <= 4) {
-          out += "а"
-        } else if (n != 1) {
-          out += "ов"
-        }
-        break
-      case "maxLength":
-        out = ""
-        var n = e.params.limit
-        out += "должно быть не длиннее, чем " + n + " символ"
-        if (n >= 2 && n <= 4) {
-          out += "а"
-        } else if (n != 1) {
-          out += "ов"
-        }
-        break
-      case "maxProperties":
-        out = ""
-        var n = e.params.limit
-        out += "должно иметь не более, чем " + n + " пол"
-        if (n == 1) {
-          out += "е"
-        } else if (n >= 2 && n <= 4) {
-          out += "я"
-        } else {
-          out += "ей"
-        }
-        break
-      case "minimum":
-      case "exclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "должно быть " + cond
-        break
-      case "minItems":
-        out = ""
-        var n = e.params.limit
-        out += "должно иметь не менее, чем " + n + " элемент"
-        if (n >= 2 && n <= 4) {
-          out += "а"
-        } else if (n != 1) {
-          out += "ов"
-        }
-        break
-      case "minLength":
-        out = ""
-        var n = e.params.limit
-        out += "должно быть не короче, чем " + n + " символ"
-        if (n >= 2 && n <= 4) {
-          out += "а"
-        } else if (n != 1) {
-          out += "ов"
-        }
-        break
-      case "minProperties":
-        out = ""
-        var n = e.params.limit
-        out += "должно иметь не менее, чем " + n + " пол"
-        if (n == 1) {
-          out += "е"
-        } else if (n >= 2 && n <= 4) {
-          out += "я"
-        } else {
-          out += "ей"
-        }
-        break
-      case "multipleOf":
-        out = "должно быть кратным " + e.params.multipleOf
-        break
-      case "not":
-        out = 'должно не соответствовать схеме в "not"'
-        break
-      case "oneOf":
-        out = 'должно соответствовать в точности одной схемe в "oneOf"'
-        break
-      case "pattern":
-        out = 'должно соответствовать образцу "' + e.params.pattern + '"'
-        break
-      case "patternRequired":
-        out =
-          'должно иметь поле, соответствующее образцу "' +
-          e.params.missingPattern +
-          '"'
-        break
-      case "propertyNames":
-        out = "имя поля не соответствует схеме"
-        break
-      case "required":
-        out = "должно иметь обязательное поле " + e.params.missingProperty
-        break
-      case "type":
-        out = "должно быть " + e.params.type
-        break
-      case "unevaluatedItems":
-        out = ""
-        var n = e.params.len
-        out += "должно иметь не более, чем " + n + " элемент"
-        if (n >= 2 && n <= 4) {
-          out += "а"
-        } else if (n != 1) {
-          out += "ов"
-        }
-        break
-      case "unevaluatedProperties":
-        out = "не должно иметь непроверенных полей"
-        break
-      case "uniqueItems":
-        out =
-          "не должно иметь повторяющихся элементов (элементы " +
-          e.params.j +
-          " и " +
-          e.params.i +
-          " идентичны)"
-        break
-      default:
-        out = 'должно соответствовать правилу "' + e.keyword + '"'
-    }
-    e.message = out
-  }
-}
-
-},{}],23:[function(require,module,exports){
-"use strict"
-module.exports = function localize_sk(errors) {
-  if (!(errors && errors.length)) return
-  for (const e of errors) {
-    let out
-    switch (e.keyword) {
-      case "additionalItems":
-      case "items":
-        out = ""
-        var n = e.params.limit
-        out += "nemôže obsahovať viac, než " + n + " prv"
-        if (n == 1) {
-          out += "ok"
-        } else {
-          out += "kov"
-        }
-        break
-      case "additionalProperties":
-        out = "nemôže obsahovať ďalšie položky"
-        break
-      case "anyOf":
-        out = 'musí splňovať aspoň jednu zo schém v "anyOf"'
-        break
-      case "const":
-        out = "musí byť konštanta"
-        break
-      case "contains":
-        out = "musí obsahovať prvok zodpovedajúci schéme"
-        break
-      case "dependencies":
-      case "dependentRequired":
-        out = ""
-        var n = e.params.depsCount
-        out += " musí obsahovať polož"
-        if (n >= 2 && n <= 4) {
-          out += "ky"
-        } else if (n != 1) {
-          out += "iek"
-        } else {
-          out += "ka"
-        }
-        out += ": " + e.params.deps + ", ak obsahuje " + e.params.property
-        break
-      case "discriminator":
-        switch (e.params.error) {
-          case "tag":
-            out = 'tag "' + e.params.tag + '" must be string'
-            break
-          case "mapping":
-            out = 'value of tag "' + e.params.tag + '" must be in oneOf'
-            break
-          default:
-            out = 'musí splniť "' + e.keyword + '" validáciu'
-        }
-        break
-      case "enum":
-        out = "musí byť jedna z definovaných hodnôt"
-        break
-      case "false schema":
-        out = "schéma je false"
-        break
-      case "format":
-        out = 'musí obsahovať formát "' + e.params.format + '"'
-        break
-      case "formatMaximum":
-      case "formatExclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "musí byť " + cond
-        break
-      case "formatMinimum":
-      case "formatExclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "musí byť " + cond
-        break
-      case "if":
-        out = 'must match "' + e.params.failingKeyword + '" schema'
-        break
-      case "maximum":
-      case "exclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "musí byť " + cond
-        break
-      case "maxItems":
-        out = ""
-        var n = e.params.limit
-        out += "nesmie obsahovať viac než " + n + " prv"
-        if (n == 1) {
-          out += "ok"
-        } else {
-          out += "kov"
-        }
-        break
-      case "maxLength":
-        out = ""
-        var n = e.params.limit
-        out += "nesmie byť dlhší než " + n + " znak"
-        if (n != 1) {
-          out += "ov"
-        }
-        break
-      case "maxProperties":
-        out = ""
-        var n = e.params.limit
-        out += "nesmie obsahovať viac než " + n + " polož"
-        if (n >= 2 && n <= 4) {
-          out += "ky"
-        } else if (n != 1) {
-          out += "iek"
-        } else {
-          out += "ka"
-        }
-        break
-      case "minimum":
-      case "exclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "musí byť " + cond
-        break
-      case "minItems":
-        out = ""
-        var n = e.params.limit
-        out += "nesmie obsahovať menej než " + n + " prv"
-        if (n == 1) {
-          out += "ok"
-        } else {
-          out += "kov"
-        }
-        break
-      case "minLength":
-        out = ""
-        var n = e.params.limit
-        out += "nesmie byť kratší než " + n + " znak"
-        if (n != 1) {
-          out += "ov"
-        }
-        break
-      case "minProperties":
-        out = ""
-        var n = e.params.limit
-        out += "nesmie obsahovať menej než " + n + " polož"
-        if (n >= 2 && n <= 4) {
-          out += "ky"
-        } else if (n != 1) {
-          out += "iek"
-        } else {
-          out += "ka"
-        }
-        break
-      case "multipleOf":
-        out = "musí byť násobkom " + e.params.multipleOf
-        break
-      case "not":
-        out = 'nesmie splňovať schému v "not"'
-        break
-      case "oneOf":
-        out = 'musí splňovať práve jednu schému v "oneOf"'
-        break
-      case "pattern":
-        out = 'musí splňovať regulárny výraz "' + e.params.pattern + '"'
-        break
-      case "patternRequired":
-        out =
-          'musí obsahovať položku splňjúcu regulárny výraz "' +
-          e.params.missingPattern +
-          '"'
-        break
-      case "propertyNames":
-        out = "názov položky nezodpovedá schéme"
-        break
-      case "required":
-        out = "musí obsahovať požadovanú položku " + e.params.missingProperty
-        break
-      case "type":
-        out = "musí byť " + e.params.type
-        break
-      case "unevaluatedItems":
-        out = ""
-        var n = e.params.len
-        out += "must NOT have more than " + n + " item"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "unevaluatedProperties":
-        out = "must NOT have unevaluated properties"
-        break
-      case "uniqueItems":
-        out =
-          "nesmie obsahovať duplicitné prvky (prvky ## " +
-          e.params.j +
-          " a " +
-          e.params.i +
-          " sú rovnaké)"
-        break
-      default:
-        out = 'musí splniť "' + e.keyword + '" validáciu'
-    }
-    e.message = out
-  }
-}
-
-},{}],24:[function(require,module,exports){
-"use strict"
-module.exports = function localize_sv(errors) {
-  if (!(errors && errors.length)) return
-  for (const e of errors) {
-    let out
-    switch (e.keyword) {
-      case "additionalItems":
-      case "items":
-        out = ""
-        var n = e.params.limit
-        out += "borde ha fler än " + n + " sak"
-        if (n != 1) {
-          out += "er"
-        }
-        break
-      case "additionalProperties":
-        out = "borde inte ha fler egenskaper"
-        break
-      case "anyOf":
-        out = 'borde matcha något schema i "anyOf"'
-        break
-      case "const":
-        out = "bör vara en konstant"
-        break
-      case "contains":
-        out = "bör innehålla ett giltigt objekt"
-        break
-      case "dependencies":
-      case "dependentRequired":
-        out = ""
-        var n = e.params.depsCount
-        out += "borde ha egenskap"
-        if (n != 1) {
-          out += "er"
-        }
-        out +=
-          " " +
-          e.params.deps +
-          " när egenskap " +
-          e.params.property +
-          " finns tillgängligt"
-        break
-      case "discriminator":
-        switch (e.params.error) {
-          case "tag":
-            out = 'tag "' + e.params.tag + '" must be string'
-            break
-          case "mapping":
-            out = 'value of tag "' + e.params.tag + '" must be in oneOf'
-            break
-          default:
-            out = 'bör passera "' + e.keyword + '" nyckelord validering'
-        }
-        break
-      case "enum":
-        out = "borde vara ekvivalent med en av dess fördefinierade värden"
-        break
-      case "false schema":
-        out = "boolean schema är falskt"
-        break
-      case "format":
-        out = 'borde matcha formatet "' + e.params.format + '"'
-        break
-      case "formatMaximum":
-      case "formatExclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "bör vara " + cond
-        break
-      case "formatMinimum":
-      case "formatExclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "bör vara " + cond
-        break
-      case "if":
-        out = 'must match "' + e.params.failingKeyword + '" schema'
-        break
-      case "maximum":
-      case "exclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "borde vara " + cond
-        break
-      case "maxItems":
-        out = ""
-        var n = e.params.limit
-        out += "borde inte ha fler än " + n + " sak"
-        if (n != 1) {
-          out += "er"
-        }
-        break
-      case "maxLength":
-        out = ""
-        var n = e.params.limit
-        out += "borde inte vara längre än " + n + " tecken"
-        break
-      case "maxProperties":
-        out = ""
-        var n = e.params.limit
-        out += "borde inte ha fler än " + n + " egenskap"
-        if (n != 1) {
-          out += "er"
-        }
-        break
-      case "minimum":
-      case "exclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "borde vara " + cond
-        break
-      case "minItems":
-        out = ""
-        var n = e.params.limit
-        out += "borde inte ha färre än " + n + " sak"
-        if (n != 1) {
-          out += "er"
-        }
-        break
-      case "minLength":
-        out = ""
-        var n = e.params.limit
-        out += "borde inte vara kortare än " + n + " tecken"
-        break
-      case "minProperties":
-        out = ""
-        var n = e.params.limit
-        out += "borde inte ha färre än " + n + " egenskap"
-        if (n != 1) {
-          out += "er"
-        }
-        break
-      case "multipleOf":
-        out = "borde vara en multipel av " + e.params.multipleOf
-        break
-      case "not":
-        out = 'borde inte vara giltigt enligt schema i "not"'
-        break
-      case "oneOf":
-        out = 'borde matcha exakt ett schema i "oneOf"'
-        break
-      case "pattern":
-        out = 'borde matcha mönstret "' + e.params.pattern + '"'
-        break
-      case "patternRequired":
-        out =
-          'bör ha en egenskap som matchar mönstret "' +
-          e.params.missingPattern +
-          '"'
-        break
-      case "propertyNames":
-        out = "egenskap med namnet är inte giltig"
-        break
-      case "required":
-        out = "borde ha den nödvändiga egenskapen " + e.params.missingProperty
-        break
-      case "type":
-        out = "borde vara " + e.params.type
-        break
-      case "unevaluatedItems":
-        out = ""
-        var n = e.params.len
-        out += "must NOT have more than " + n + " item"
-        if (n != 1) {
-          out += "s"
-        }
-        break
-      case "unevaluatedProperties":
-        out = "must NOT have unevaluated properties"
-        break
-      case "uniqueItems":
-        out =
-          "borde inte ha duplicerade saker (sakerna ## " +
-          e.params.j +
-          " och " +
-          e.params.i +
-          " är identiska)"
-        break
-      default:
-        out = 'bör passera "' + e.keyword + '" nyckelord validering'
-    }
-    e.message = out
-  }
-}
-
-},{}],25:[function(require,module,exports){
-"use strict"
-module.exports = function localize_th(errors) {
-  if (!(errors && errors.length)) return
-  for (const e of errors) {
-    let out
-    switch (e.keyword) {
-      case "additionalItems":
-      case "items":
-        out = ""
-        var n = e.params.limit
-        out += "ต้องมีสมาชิกไม่เกิน " + n + " ตัว"
-        break
-      case "additionalProperties":
-        out = "ต้องไม่มี property อื่นๆ นอกเหนีอจากที่กำหนดไว้"
-        break
-      case "anyOf":
-        out = 'ต้องตรงกับหนึ่งใน schema ที่กำหนดไว้ใน "anyOf"'
-        break
-      case "const":
-        out = "ต้องเท่ากับค่าคงที่"
-        break
-      case "contains":
-        out = "ต้องมีสมาชิกที่ผ่านเงื่อนไขอยู่"
-        break
-      case "dependencies":
-      case "dependentRequired":
-        out = ""
-        var n = e.params.depsCount
-        out +=
-          "เมื่อมี property " +
-          e.params.property +
-          " แล้วจะต้องมี property " +
-          e.params.deps +
-          " ด้วย"
-        break
-      case "discriminator":
-        switch (e.params.error) {
-          case "tag":
-            out = 'tag "' + e.params.tag + '" ต้องเป็น string'
-            break
-          case "mapping":
-            out = 'ต้องมีค่าของ tag "' + e.params.tag + '" ใน oneOf'
-            break
-          default:
-            out = 'ต้องผ่านคีย์เวิร์ด "' + e.keyword + '"'
-        }
-        break
-      case "enum":
-        out = "ต้องตรงกับหนึ่งในค่าที่กำหนดไว้"
-        break
-      case "false schema":
-        out = "schema เป็น false"
-        break
-      case "format":
-        out = 'ต้องเป็นรูปแบบ "' + e.params.format + '"'
-        break
-      case "formatMaximum":
-      case "formatExclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "ต้อง " + cond
-        break
-      case "formatMinimum":
-      case "formatExclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "ต้อง " + cond
-        break
-      case "if":
-        out = 'ต้องตรงกับ schema "' + e.params.failingKeyword + '"'
-        break
-      case "maximum":
-      case "exclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "ต้อง " + cond
-        break
-      case "maxItems":
-        out = ""
-        var n = e.params.limit
-        out += "ต้องมีสมาชิกไม่เกิน " + n
-        break
-      case "maxLength":
-        out = ""
-        var n = e.params.limit
-        out += "ต้องยาวไม่เกิน " + n + " ตัวอักษร"
-        break
-      case "maxProperties":
-        out = ""
-        var n = e.params.limit
-        out += "ต้องมี property ไม่เกิน " + n + " ตัว"
-        break
-      case "minimum":
-      case "exclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "ต้อง " + cond
-        break
-      case "minItems":
-        out = ""
-        var n = e.params.limit
-        out += "ควรมีสมาชิกไม่น้อยกว่า " + n
-        break
-      case "minLength":
-        out = ""
-        var n = e.params.limit
-        out += "ต้องมีอย่างน้อย " + n + " ตัวอักษร"
-        break
-      case "minProperties":
-        out = ""
-        var n = e.params.limit
-        out += "ต้องมี property อย่างน้อย " + n + " ตัว"
-        break
-      case "multipleOf":
-        out = "ต้องเป็นเลขที่หาร " + e.params.multipleOf + " ลงตัว"
-        break
-      case "not":
-        out = 'ต้องไม่ผ่าน schema ที่กำหนดไว้ใน "not"'
-        break
-      case "oneOf":
-        out = 'ต้องตรงกับ schema ตัวเดียวใน "oneOf" เท่านั้น'
-        break
-      case "pattern":
-        out = 'ต้องตรงตาม pattern "' + e.params.pattern + '"'
-        break
-      case "patternRequired":
-        out =
-          'ต้องมี property ที่มีชื่อตรงตาม pattern "' +
-          e.params.missingPattern +
-          '"'
-        break
-      case "propertyNames":
-        out = "ชื่อ property ไม่ถูกต้อง"
-        break
-      case "required":
-        out = "ต้องมี property " + e.params.missingProperty + " ด้วย"
-        break
-      case "type":
-        out = "ต้องเป็น " + e.params.type
-        break
-      case "unevaluatedItems":
-        out = ""
-        var n = e.params.len
-        out += "ต้องมีไม่เกิน " + n + " ตัว"
-        break
-      case "unevaluatedProperties":
-        out = "ต้องไม่มี property ที่ยังไม่ได้ผ่านการตรวจสอบเงื่อนไขใดๆ"
-        break
-      case "uniqueItems":
-        out =
-          "ต้องมีสมาชิกไม่ซ้ำักัน (ลำดับที่ " +
-          e.params.j +
-          " กับ " +
-          e.params.i +
-          " ซ้ำกัน)"
-        break
-      default:
-        out = 'ต้องผ่านคีย์เวิร์ด "' + e.keyword + '"'
-    }
-    e.message = out
-  }
-}
-
-},{}],26:[function(require,module,exports){
-"use strict"
-module.exports = function localize_zh_TW(errors) {
-  if (!(errors && errors.length)) return
-  for (const e of errors) {
-    let out
-    switch (e.keyword) {
-      case "additionalItems":
-      case "items":
-        out = ""
-        var n = e.params.limit
-        out += "不可以超過" + n + "個元素"
-        break
-      case "additionalProperties":
-        out = "不可以有額外的屬性"
-        break
-      case "anyOf":
-        out = "不符合 anyOf 指定的模式"
-        break
-      case "const":
-        out = "應該等於常數"
-        break
-      case "contains":
-        out = "應該包含一個有效元素"
-        break
-      case "dependencies":
-      case "dependentRequired":
-        out = ""
-        var n = e.params.depsCount
-        out += "應該要有屬性" + e.params.property + "的依賴屬性" + e.params.deps
-        break
-      case "discriminator":
-        switch (e.params.error) {
-          case "tag":
-            out = '標籤 "' + e.params.tag + '" 的類型必須是字串'
-            break
-          case "mapping":
-            out = '標籤 "' + e.params.tag + '" 必須在 oneOf 其中之一'
-            break
-          default:
-            out = '應該通過 "' + e.keyword + ' 關鍵詞檢驗"'
-        }
-        break
-      case "enum":
-        out = "應該要在預設的值之中"
-        break
-      case "false schema":
-        out = "布林模式不正確"
-        break
-      case "format":
-        out = "應該要符合" + e.params.format + "格式"
-        break
-      case "formatMaximum":
-      case "formatExclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "應該是 " + cond
-        break
-      case "formatMinimum":
-      case "formatExclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "應該是 " + cond
-        break
-      case "if":
-        out = '應該符合 "' + e.params.failingKeyword + '" schema'
-        break
-      case "maximum":
-      case "exclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "應該要 " + cond
-        break
-      case "maxItems":
-        out = ""
-        var n = e.params.limit
-        out += "不應該多於 " + n + " 個"
-        break
-      case "maxLength":
-        out = ""
-        var n = e.params.limit
-        out += "不應該多於 " + n + " 個字元"
-        break
-      case "maxProperties":
-        out = ""
-        var n = e.params.limit
-        out += "不應該多於 " + n + " 個屬性"
-        break
-      case "minimum":
-      case "exclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "應該要 " + cond
-        break
-      case "minItems":
-        out = ""
-        var n = e.params.limit
-        out += "不應該少於 " + n + " 個"
-        break
-      case "minLength":
-        out = ""
-        var n = e.params.limit
-        out += "不應該少於 " + n + " 個字元"
-        break
-      case "minProperties":
-        out = ""
-        var n = e.params.limit
-        out += "不應該少於 " + n + " 個屬性"
-        break
-      case "multipleOf":
-        out = "應該是 " + e.params.multipleOf + " 的整數倍"
-        break
-      case "not":
-        out = '不應該符合 "not" schema'
-        break
-      case "oneOf":
-        out = '只能符合一個 "oneOf" 中的 schema'
-        break
-      case "pattern":
-        out = '應該符合模式 "' + e.params.pattern + '"'
-        break
-      case "patternRequired":
-        out = "應該有屬性對應模式 " + e.params.missingPattern
-        break
-      case "propertyNames":
-        out = "属性名 無效"
-        break
-      case "required":
-        out = "應該有必須屬性 " + e.params.missingProperty
-        break
-      case "type":
-        out = "應該是 " + e.params.type + " 類型"
-        break
-      case "unevaluatedItems":
-        out = ""
-        var n = e.params.len
-        out += " 的元素不可以超過 " + n + " 個"
-        break
-      case "unevaluatedProperties":
-        out = "不應該有未驗證的屬性"
-        break
-      case "uniqueItems":
-        out =
-          "不應該有重複項目 (第 " +
-          e.params.j +
-          " 項和第 " +
-          e.params.i +
-          " 項是重複的)"
-        break
-      default:
-        out = '應該通過 "' + e.keyword + ' 關鍵詞檢驗"'
-    }
-    e.message = out
-  }
-}
-
-},{}],27:[function(require,module,exports){
-"use strict"
-module.exports = function localize_zh(errors) {
-  if (!(errors && errors.length)) return
-  for (const e of errors) {
-    let out
-    switch (e.keyword) {
-      case "additionalItems":
-      case "items":
-        out = ""
-        var n = e.params.limit
-        out += "不允许超过" + n + "个元素"
-        break
-      case "additionalProperties":
-        out = "不允许有额外的属性"
-        break
-      case "anyOf":
-        out = "数据应为 anyOf 所指定的其中一个"
-        break
-      case "const":
-        out = "应当等于常量"
-        break
-      case "contains":
-        out = "应当包含一个有效项"
-        break
-      case "dependencies":
-      case "dependentRequired":
-        out = ""
-        var n = e.params.depsCount
-        out += "应当拥有属性" + e.params.property + "的依赖属性" + e.params.deps
-        break
-      case "discriminator":
-        switch (e.params.error) {
-          case "tag":
-            out = '标签 "' + e.params.tag + '" 的类型必须为字符串'
-            break
-          case "mapping":
-            out = '标签 "' + e.params.tag + '" 的值必须在 oneOf 之中'
-            break
-          default:
-            out = '应当通过 "' + e.keyword + ' 关键词校验"'
-        }
-        break
-      case "enum":
-        out = "应当是预设定的枚举值之一"
-        break
-      case "false schema":
-        out = "布尔模式出错"
-        break
-      case "format":
-        out = '应当匹配格式 "' + e.params.format + '"'
-        break
-      case "formatMaximum":
-      case "formatExclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "应当是 " + cond
-        break
-      case "formatMinimum":
-      case "formatExclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "应当是 " + cond
-        break
-      case "if":
-        out = '应当匹配模式 "' + e.params.failingKeyword + '" '
-        break
-      case "maximum":
-      case "exclusiveMaximum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "应当为 " + cond
-        break
-      case "maxItems":
-        out = ""
-        var n = e.params.limit
-        out += "不应多于 " + n + " 个项"
-        break
-      case "maxLength":
-        out = ""
-        var n = e.params.limit
-        out += "不应多于 " + n + " 个字符"
-        break
-      case "maxProperties":
-        out = ""
-        var n = e.params.limit
-        out += "不应有多于 " + n + " 个属性"
-        break
-      case "minimum":
-      case "exclusiveMinimum":
-        out = ""
-        var cond = e.params.comparison + " " + e.params.limit
-        out += "应当为 " + cond
-        break
-      case "minItems":
-        out = ""
-        var n = e.params.limit
-        out += "不应少于 " + n + " 个项"
-        break
-      case "minLength":
-        out = ""
-        var n = e.params.limit
-        out += "不应少于 " + n + " 个字符"
-        break
-      case "minProperties":
-        out = ""
-        var n = e.params.limit
-        out += "不应有少于 " + n + " 个属性"
-        break
-      case "multipleOf":
-        out = "应当是 " + e.params.multipleOf + " 的整数倍"
-        break
-      case "not":
-        out = '不应当匹配 "not" schema'
-        break
-      case "oneOf":
-        out = '只能匹配一个 "oneOf" 中的 schema'
-        break
-      case "pattern":
-        out = '应当匹配模式 "' + e.params.pattern + '"'
-        break
-      case "patternRequired":
-        out = "应当有属性匹配模式 " + e.params.missingPattern
-        break
-      case "propertyNames":
-        out = "属性名 无效"
-        break
-      case "required":
-        out = "应当有必需属性 " + e.params.missingProperty
-        break
-      case "type":
-        out = "应当是 " + e.params.type + " 类型"
-        break
-      case "unevaluatedItems":
-        out = ""
-        var n = e.params.len
-        out += " 不允许有超过 " + n + " 个元素"
-        break
-      case "unevaluatedProperties":
-        out = "不允许存在未求值的属性"
-        break
-      case "uniqueItems":
-        out =
-          "不应当含有重复项 (第 " +
-          e.params.j +
-          " 项与第 " +
-          e.params.i +
-          " 项是重复的)"
-        break
-      default:
-        out = '应当通过 "' + e.keyword + ' 关键词校验"'
-    }
-    e.message = out
-  }
-}
-
-},{}],28:[function(require,module,exports){
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.MissingRefError = exports.ValidationError = exports.CodeGen = exports.Name = exports.nil = exports.stringify = exports.str = exports._ = exports.KeywordCxt = void 0;
-const core_1 = require("./core");
-const draft7_1 = require("./vocabularies/draft7");
-const dynamic_1 = require("./vocabularies/dynamic");
-const next_1 = require("./vocabularies/next");
-const unevaluated_1 = require("./vocabularies/unevaluated");
-const discriminator_1 = require("./vocabularies/discriminator");
-const json_schema_2019_09_1 = require("./refs/json-schema-2019-09");
-const META_SCHEMA_ID = "https://json-schema.org/draft/2019-09/schema";
-class Ajv2019 extends core_1.default {
-    constructor(opts = {}) {
-        super({
-            ...opts,
-            dynamicRef: true,
-            next: true,
-            unevaluated: true,
-        });
-    }
-    _addVocabularies() {
-        super._addVocabularies();
-        this.addVocabulary(dynamic_1.default);
-        draft7_1.default.forEach((v) => this.addVocabulary(v));
-        this.addVocabulary(next_1.default);
-        this.addVocabulary(unevaluated_1.default);
-        if (this.opts.discriminator)
-            this.addKeyword(discriminator_1.default);
-    }
-    _addDefaultMetaSchema() {
-        super._addDefaultMetaSchema();
-        const { $data, meta } = this.opts;
-        if (!meta)
-            return;
-        json_schema_2019_09_1.default.call(this, $data);
-        this.refs["http://json-schema.org/schema"] = META_SCHEMA_ID;
-    }
-    defaultMeta() {
-        return (this.opts.defaultMeta =
-            super.defaultMeta() || (this.getSchema(META_SCHEMA_ID) ? META_SCHEMA_ID : undefined));
-    }
-}
-module.exports = exports = Ajv2019;
-window.Ajv2019 = Ajv2019;
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = Ajv2019;
-var validate_1 = require("./compile/validate");
-Object.defineProperty(exports, "KeywordCxt", { enumerable: true, get: function () { return validate_1.KeywordCxt; } });
-var codegen_1 = require("./compile/codegen");
-Object.defineProperty(exports, "_", { enumerable: true, get: function () { return codegen_1._; } });
-Object.defineProperty(exports, "str", { enumerable: true, get: function () { return codegen_1.str; } });
-Object.defineProperty(exports, "stringify", { enumerable: true, get: function () { return codegen_1.stringify; } });
-Object.defineProperty(exports, "nil", { enumerable: true, get: function () { return codegen_1.nil; } });
-Object.defineProperty(exports, "Name", { enumerable: true, get: function () { return codegen_1.Name; } });
-Object.defineProperty(exports, "CodeGen", { enumerable: true, get: function () { return codegen_1.CodeGen; } });
-var validation_error_1 = require("./runtime/validation_error");
-Object.defineProperty(exports, "ValidationError", { enumerable: true, get: function () { return validation_error_1.default; } });
-var ref_error_1 = require("./compile/ref_error");
-Object.defineProperty(exports, "MissingRefError", { enumerable: true, get: function () { return ref_error_1.default; } });
-
-},{"./compile/codegen":32,"./compile/ref_error":37,"./compile/validate":45,"./core":48,"./refs/json-schema-2019-09":50,"./runtime/validation_error":72,"./vocabularies/discriminator":97,"./vocabularies/draft7":100,"./vocabularies/dynamic":103,"./vocabularies/next":122,"./vocabularies/unevaluated":123}],29:[function(require,module,exports){
+},{"ajv":5,"ajv/dist/compile/codegen":7}],4:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MissingRefError = exports.ValidationError = exports.CodeGen = exports.Name = exports.nil = exports.stringify = exports.str = exports._ = exports.KeywordCxt = void 0;
@@ -4779,7 +318,6 @@ class Ajv2020 extends core_1.default {
     }
 }
 module.exports = exports = Ajv2020;
-window.Ajv2020 = Ajv2020;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = Ajv2020;
 var validate_1 = require("./compile/validate");
@@ -4796,7 +334,7 @@ Object.defineProperty(exports, "ValidationError", { enumerable: true, get: funct
 var ref_error_1 = require("./compile/ref_error");
 Object.defineProperty(exports, "MissingRefError", { enumerable: true, get: function () { return ref_error_1.default; } });
 
-},{"./compile/codegen":32,"./compile/ref_error":37,"./compile/validate":45,"./core":48,"./refs/json-schema-2020-12":58,"./runtime/validation_error":72,"./vocabularies/discriminator":97,"./vocabularies/draft2020":99}],30:[function(require,module,exports){
+},{"./compile/codegen":7,"./compile/ref_error":12,"./compile/validate":20,"./core":23,"./refs/json-schema-2020-12":25,"./runtime/validation_error":38,"./vocabularies/discriminator":61,"./vocabularies/draft2020":63}],5:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MissingRefError = exports.ValidationError = exports.CodeGen = exports.Name = exports.nil = exports.stringify = exports.str = exports._ = exports.KeywordCxt = void 0;
@@ -4829,7 +367,6 @@ class Ajv extends core_1.default {
     }
 }
 module.exports = exports = Ajv;
-window.Ajv = Ajv;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = Ajv;
 var validate_1 = require("./compile/validate");
@@ -4846,7 +383,7 @@ Object.defineProperty(exports, "ValidationError", { enumerable: true, get: funct
 var ref_error_1 = require("./compile/ref_error");
 Object.defineProperty(exports, "MissingRefError", { enumerable: true, get: function () { return ref_error_1.default; } });
 
-},{"./compile/codegen":32,"./compile/ref_error":37,"./compile/validate":45,"./core":48,"./refs/json-schema-draft-07.json":67,"./runtime/validation_error":72,"./vocabularies/discriminator":97,"./vocabularies/draft7":100}],31:[function(require,module,exports){
+},{"./compile/codegen":7,"./compile/ref_error":12,"./compile/validate":20,"./core":23,"./refs/json-schema-draft-07.json":34,"./runtime/validation_error":38,"./vocabularies/discriminator":61,"./vocabularies/draft7":64}],6:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.regexpCode = exports.getEsmExportName = exports.getProperty = exports.safeStringify = exports.stringify = exports.strConcat = exports.addCodeArg = exports.str = exports._ = exports.nil = exports._Code = exports.Name = exports.IDENTIFIER = exports._CodeOrName = void 0;
@@ -4980,9 +517,6 @@ function stringify(x) {
 }
 exports.stringify = stringify;
 function safeStringify(x) {
-	if (typeof x === 'undefined') {
-		return x;
-	}
     return JSON.stringify(x)
         .replace(/\u2028/g, "\\u2028")
         .replace(/\u2029/g, "\\u2029");
@@ -5005,7 +539,7 @@ function regexpCode(rx) {
 }
 exports.regexpCode = regexpCode;
 
-},{}],32:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.or = exports.and = exports.not = exports.CodeGen = exports.operators = exports.varKinds = exports.ValueScopeName = exports.ValueScope = exports.Scope = exports.Name = exports.regexpCode = exports.stringify = exports.getProperty = exports.nil = exports.strConcat = exports.str = exports._ = void 0;
@@ -5703,7 +1237,7 @@ function par(x) {
     return x instanceof code_1.Name ? x : (0, code_1._) `(${x})`;
 }
 
-},{"./code":31,"./scope":33}],33:[function(require,module,exports){
+},{"./code":6,"./scope":8}],8:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ValueScope = exports.ValueScopeName = exports.Scope = exports.varKinds = exports.UsedValueState = void 0;
@@ -5847,7 +1381,7 @@ class ValueScope extends Scope {
 }
 exports.ValueScope = ValueScope;
 
-},{"./code":31}],34:[function(require,module,exports){
+},{"./code":6}],9:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.extendErrors = exports.resetErrorsCount = exports.reportExtraError = exports.reportError = exports.keyword$DataError = exports.keywordError = void 0;
@@ -5971,7 +1505,7 @@ function extraErrorProps(cxt, { params, message }, keyValues) {
         keyValues.push([E.propertyName, propertyName]);
 }
 
-},{"./codegen":32,"./names":36,"./util":40}],35:[function(require,module,exports){
+},{"./codegen":7,"./names":11,"./util":15}],10:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.resolveSchema = exports.getCompilingSchema = exports.resolveRef = exports.compileSchema = exports.SchemaEnv = void 0;
@@ -6214,7 +1748,7 @@ function getJsonPointer(parsedRef, { baseId, schema, root }) {
     return undefined;
 }
 
-},{"../runtime/validation_error":72,"./codegen":32,"./names":36,"./resolve":38,"./util":40,"./validate":45}],36:[function(require,module,exports){
+},{"../runtime/validation_error":38,"./codegen":7,"./names":11,"./resolve":13,"./util":15,"./validate":20}],11:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("./codegen");
@@ -6243,7 +1777,7 @@ const names = {
 };
 exports.default = names;
 
-},{"./codegen":32}],37:[function(require,module,exports){
+},{"./codegen":7}],12:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const resolve_1 = require("./resolve");
@@ -6256,7 +1790,7 @@ class MissingRefError extends Error {
 }
 exports.default = MissingRefError;
 
-},{"./resolve":38}],38:[function(require,module,exports){
+},{"./resolve":13}],13:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getSchemaRefs = exports.resolveUrl = exports.normalizeId = exports._getFullPath = exports.getFullPath = exports.inlineRef = void 0;
@@ -6412,7 +1946,7 @@ function getSchemaRefs(schema, baseId) {
 }
 exports.getSchemaRefs = getSchemaRefs;
 
-},{"./util":40,"fast-deep-equal":139,"json-schema-traverse":140}],39:[function(require,module,exports){
+},{"./util":15,"fast-deep-equal":90,"json-schema-traverse":91}],14:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getRules = exports.isJSONType = void 0;
@@ -6439,7 +1973,7 @@ function getRules() {
 }
 exports.getRules = getRules;
 
-},{}],40:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.checkStrictMode = exports.getErrorPath = exports.Type = exports.useFunc = exports.setEvaluated = exports.evaluatedPropsToName = exports.mergeEvaluated = exports.eachItem = exports.unescapeJsonPointer = exports.escapeJsonPointer = exports.escapeFragment = exports.unescapeFragment = exports.schemaRefOrVal = exports.schemaHasRulesButRef = exports.schemaHasRules = exports.checkUnknownRules = exports.alwaysValidSchema = exports.toHash = void 0;
@@ -6618,7 +2152,7 @@ function checkStrictMode(it, msg, mode = it.opts.strictSchema) {
 }
 exports.checkStrictMode = checkStrictMode;
 
-},{"./codegen":32,"./codegen/code":31}],41:[function(require,module,exports){
+},{"./codegen":7,"./codegen/code":6}],16:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.shouldUseRule = exports.shouldUseGroup = exports.schemaHasRulesForType = void 0;
@@ -6638,7 +2172,7 @@ function shouldUseRule(schema, rule) {
 }
 exports.shouldUseRule = shouldUseRule;
 
-},{}],42:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.boolOrEmptySchema = exports.topBoolOrEmptySchema = void 0;
@@ -6689,7 +2223,7 @@ function falseSchemaError(it, overrideAllErrors) {
     (0, errors_1.reportError)(cxt, boolError, undefined, overrideAllErrors);
 }
 
-},{"../codegen":32,"../errors":34,"../names":36}],43:[function(require,module,exports){
+},{"../codegen":7,"../errors":9,"../names":11}],18:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reportTypeError = exports.checkDataTypes = exports.checkDataType = exports.coerceAndCheckDataType = exports.getJSONTypes = exports.getSchemaTypes = exports.DataType = void 0;
@@ -6892,7 +2426,7 @@ function getTypeErrorContext(it) {
     };
 }
 
-},{"../codegen":32,"../errors":34,"../rules":39,"../util":40,"./applicability":41}],44:[function(require,module,exports){
+},{"../codegen":7,"../errors":9,"../rules":14,"../util":15,"./applicability":16}],19:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.assignDefaults = void 0;
@@ -6928,7 +2462,7 @@ function assignDefault(it, prop, defaultValue) {
     gen.if(condition, (0, codegen_1._) `${childData} = ${(0, codegen_1.stringify)(defaultValue)}`);
 }
 
-},{"../codegen":32,"../util":40}],45:[function(require,module,exports){
+},{"../codegen":7,"../util":15}],20:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getData = exports.KeywordCxt = exports.validateFunctionCode = void 0;
@@ -7449,7 +2983,7 @@ function getData($data, { dataLevel, dataNames, dataPathArr }) {
 }
 exports.getData = getData;
 
-},{"../codegen":32,"../errors":34,"../names":36,"../resolve":38,"../util":40,"./applicability":41,"./boolSchema":42,"./dataType":43,"./defaults":44,"./keyword":46,"./subschema":47}],46:[function(require,module,exports){
+},{"../codegen":7,"../errors":9,"../names":11,"../resolve":13,"../util":15,"./applicability":16,"./boolSchema":17,"./dataType":18,"./defaults":19,"./keyword":21,"./subschema":22}],21:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.validateKeywordUsage = exports.validSchemaType = exports.funcKeywordCode = exports.macroKeywordCode = void 0;
@@ -7574,7 +3108,7 @@ function validateKeywordUsage({ schema, opts, self, errSchemaPath }, def, keywor
 }
 exports.validateKeywordUsage = validateKeywordUsage;
 
-},{"../../vocabularies/code":93,"../codegen":32,"../errors":34,"../names":36}],47:[function(require,module,exports){
+},{"../../vocabularies/code":57,"../codegen":7,"../errors":9,"../names":11}],22:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.extendSubschemaMode = exports.extendSubschemaData = exports.getSubschema = void 0;
@@ -7656,7 +3190,7 @@ function extendSubschemaMode(subschema, { jtdDiscriminator, jtdMetadata, composi
 }
 exports.extendSubschemaMode = extendSubschemaMode;
 
-},{"../codegen":32,"../util":40}],48:[function(require,module,exports){
+},{"../codegen":7,"../util":15}],23:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CodeGen = exports.Name = exports.nil = exports.stringify = exports.str = exports._ = exports.KeywordCxt = void 0;
@@ -8274,7 +3808,7 @@ function schemaOrData(schema) {
     return { anyOf: [schema, $dataRef] };
 }
 
-},{"./compile":35,"./compile/codegen":32,"./compile/ref_error":37,"./compile/resolve":38,"./compile/rules":39,"./compile/util":40,"./compile/validate":45,"./compile/validate/dataType":43,"./refs/data.json":49,"./runtime/uri":71,"./runtime/validation_error":72}],49:[function(require,module,exports){
+},{"./compile":10,"./compile/codegen":7,"./compile/ref_error":12,"./compile/resolve":13,"./compile/rules":14,"./compile/util":15,"./compile/validate":20,"./compile/validate/dataType":18,"./refs/data.json":24,"./runtime/uri":37,"./runtime/validation_error":38}],24:[function(require,module,exports){
 module.exports={
   "$id": "https://raw.githubusercontent.com/ajv-validator/ajv/master/lib/refs/data.json#",
   "description": "Meta-schema for $data reference (JSON AnySchema extension proposal)",
@@ -8289,357 +3823,7 @@ module.exports={
   "additionalProperties": false
 }
 
-},{}],50:[function(require,module,exports){
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const metaSchema = require("./schema.json");
-const applicator = require("./meta/applicator.json");
-const content = require("./meta/content.json");
-const core = require("./meta/core.json");
-const format = require("./meta/format.json");
-const metadata = require("./meta/meta-data.json");
-const validation = require("./meta/validation.json");
-const META_SUPPORT_DATA = ["/properties"];
-function addMetaSchema2019($data) {
-    ;
-    [
-        metaSchema,
-        applicator,
-        content,
-        core,
-        with$data(this, format),
-        metadata,
-        with$data(this, validation),
-    ].forEach((sch) => this.addMetaSchema(sch, undefined, false));
-    return this;
-    function with$data(ajv, sch) {
-        return $data ? ajv.$dataMetaSchema(sch, META_SUPPORT_DATA) : sch;
-    }
-}
-exports.default = addMetaSchema2019;
-
-},{"./meta/applicator.json":51,"./meta/content.json":52,"./meta/core.json":53,"./meta/format.json":54,"./meta/meta-data.json":55,"./meta/validation.json":56,"./schema.json":57}],51:[function(require,module,exports){
-module.exports={
-  "$schema": "https://json-schema.org/draft/2019-09/schema",
-  "$id": "https://json-schema.org/draft/2019-09/meta/applicator",
-  "$vocabulary": {
-    "https://json-schema.org/draft/2019-09/vocab/applicator": true
-  },
-  "$recursiveAnchor": true,
-
-  "title": "Applicator vocabulary meta-schema",
-  "type": ["object", "boolean"],
-  "properties": {
-    "additionalItems": {"$recursiveRef": "#"},
-    "unevaluatedItems": {"$recursiveRef": "#"},
-    "items": {
-      "anyOf": [{"$recursiveRef": "#"}, {"$ref": "#/$defs/schemaArray"}]
-    },
-    "contains": {"$recursiveRef": "#"},
-    "additionalProperties": {"$recursiveRef": "#"},
-    "unevaluatedProperties": {"$recursiveRef": "#"},
-    "properties": {
-      "type": "object",
-      "additionalProperties": {"$recursiveRef": "#"},
-      "default": {}
-    },
-    "patternProperties": {
-      "type": "object",
-      "additionalProperties": {"$recursiveRef": "#"},
-      "propertyNames": {"format": "regex"},
-      "default": {}
-    },
-    "dependentSchemas": {
-      "type": "object",
-      "additionalProperties": {
-        "$recursiveRef": "#"
-      }
-    },
-    "propertyNames": {"$recursiveRef": "#"},
-    "if": {"$recursiveRef": "#"},
-    "then": {"$recursiveRef": "#"},
-    "else": {"$recursiveRef": "#"},
-    "allOf": {"$ref": "#/$defs/schemaArray"},
-    "anyOf": {"$ref": "#/$defs/schemaArray"},
-    "oneOf": {"$ref": "#/$defs/schemaArray"},
-    "not": {"$recursiveRef": "#"}
-  },
-  "$defs": {
-    "schemaArray": {
-      "type": "array",
-      "minItems": 1,
-      "items": {"$recursiveRef": "#"}
-    }
-  }
-}
-
-},{}],52:[function(require,module,exports){
-module.exports={
-  "$schema": "https://json-schema.org/draft/2019-09/schema",
-  "$id": "https://json-schema.org/draft/2019-09/meta/content",
-  "$vocabulary": {
-    "https://json-schema.org/draft/2019-09/vocab/content": true
-  },
-  "$recursiveAnchor": true,
-
-  "title": "Content vocabulary meta-schema",
-
-  "type": ["object", "boolean"],
-  "properties": {
-    "contentMediaType": {"type": "string"},
-    "contentEncoding": {"type": "string"},
-    "contentSchema": {"$recursiveRef": "#"}
-  }
-}
-
-},{}],53:[function(require,module,exports){
-module.exports={
-  "$schema": "https://json-schema.org/draft/2019-09/schema",
-  "$id": "https://json-schema.org/draft/2019-09/meta/core",
-  "$vocabulary": {
-    "https://json-schema.org/draft/2019-09/vocab/core": true
-  },
-  "$recursiveAnchor": true,
-
-  "title": "Core vocabulary meta-schema",
-  "type": ["object", "boolean"],
-  "properties": {
-    "$id": {
-      "type": "string",
-      "format": "uri-reference",
-      "$comment": "Non-empty fragments not allowed.",
-      "pattern": "^[^#]*#?$"
-    },
-    "$schema": {
-      "type": "string",
-      "format": "uri"
-    },
-    "$anchor": {
-      "type": "string",
-      "pattern": "^[A-Za-z][-A-Za-z0-9.:_]*$"
-    },
-    "$ref": {
-      "type": "string",
-      "format": "uri-reference"
-    },
-    "$recursiveRef": {
-      "type": "string",
-      "format": "uri-reference"
-    },
-    "$recursiveAnchor": {
-      "type": "boolean",
-      "default": false
-    },
-    "$vocabulary": {
-      "type": "object",
-      "propertyNames": {
-        "type": "string",
-        "format": "uri"
-      },
-      "additionalProperties": {
-        "type": "boolean"
-      }
-    },
-    "$comment": {
-      "type": "string"
-    },
-    "$defs": {
-      "type": "object",
-      "additionalProperties": {"$recursiveRef": "#"},
-      "default": {}
-    }
-  }
-}
-
-},{}],54:[function(require,module,exports){
-module.exports={
-  "$schema": "https://json-schema.org/draft/2019-09/schema",
-  "$id": "https://json-schema.org/draft/2019-09/meta/format",
-  "$vocabulary": {
-    "https://json-schema.org/draft/2019-09/vocab/format": true
-  },
-  "$recursiveAnchor": true,
-
-  "title": "Format vocabulary meta-schema",
-  "type": ["object", "boolean"],
-  "properties": {
-    "format": {"type": "string"}
-  }
-}
-
-},{}],55:[function(require,module,exports){
-module.exports={
-  "$schema": "https://json-schema.org/draft/2019-09/schema",
-  "$id": "https://json-schema.org/draft/2019-09/meta/meta-data",
-  "$vocabulary": {
-    "https://json-schema.org/draft/2019-09/vocab/meta-data": true
-  },
-  "$recursiveAnchor": true,
-
-  "title": "Meta-data vocabulary meta-schema",
-
-  "type": ["object", "boolean"],
-  "properties": {
-    "title": {
-      "type": "string"
-    },
-    "description": {
-      "type": "string"
-    },
-    "default": true,
-    "deprecated": {
-      "type": "boolean",
-      "default": false
-    },
-    "readOnly": {
-      "type": "boolean",
-      "default": false
-    },
-    "writeOnly": {
-      "type": "boolean",
-      "default": false
-    },
-    "examples": {
-      "type": "array",
-      "items": true
-    }
-  }
-}
-
-},{}],56:[function(require,module,exports){
-module.exports={
-  "$schema": "https://json-schema.org/draft/2019-09/schema",
-  "$id": "https://json-schema.org/draft/2019-09/meta/validation",
-  "$vocabulary": {
-    "https://json-schema.org/draft/2019-09/vocab/validation": true
-  },
-  "$recursiveAnchor": true,
-
-  "title": "Validation vocabulary meta-schema",
-  "type": ["object", "boolean"],
-  "properties": {
-    "multipleOf": {
-      "type": "number",
-      "exclusiveMinimum": 0
-    },
-    "maximum": {
-      "type": "number"
-    },
-    "exclusiveMaximum": {
-      "type": "number"
-    },
-    "minimum": {
-      "type": "number"
-    },
-    "exclusiveMinimum": {
-      "type": "number"
-    },
-    "maxLength": {"$ref": "#/$defs/nonNegativeInteger"},
-    "minLength": {"$ref": "#/$defs/nonNegativeIntegerDefault0"},
-    "pattern": {
-      "type": "string",
-      "format": "regex"
-    },
-    "maxItems": {"$ref": "#/$defs/nonNegativeInteger"},
-    "minItems": {"$ref": "#/$defs/nonNegativeIntegerDefault0"},
-    "uniqueItems": {
-      "type": "boolean",
-      "default": false
-    },
-    "maxContains": {"$ref": "#/$defs/nonNegativeInteger"},
-    "minContains": {
-      "$ref": "#/$defs/nonNegativeInteger",
-      "default": 1
-    },
-    "maxProperties": {"$ref": "#/$defs/nonNegativeInteger"},
-    "minProperties": {"$ref": "#/$defs/nonNegativeIntegerDefault0"},
-    "required": {"$ref": "#/$defs/stringArray"},
-    "dependentRequired": {
-      "type": "object",
-      "additionalProperties": {
-        "$ref": "#/$defs/stringArray"
-      }
-    },
-    "const": true,
-    "enum": {
-      "type": "array",
-      "items": true
-    },
-    "type": {
-      "anyOf": [
-        {"$ref": "#/$defs/simpleTypes"},
-        {
-          "type": "array",
-          "items": {"$ref": "#/$defs/simpleTypes"},
-          "minItems": 1,
-          "uniqueItems": true
-        }
-      ]
-    }
-  },
-  "$defs": {
-    "nonNegativeInteger": {
-      "type": "integer",
-      "minimum": 0
-    },
-    "nonNegativeIntegerDefault0": {
-      "$ref": "#/$defs/nonNegativeInteger",
-      "default": 0
-    },
-    "simpleTypes": {
-      "enum": ["array", "boolean", "integer", "null", "number", "object", "string"]
-    },
-    "stringArray": {
-      "type": "array",
-      "items": {"type": "string"},
-      "uniqueItems": true,
-      "default": []
-    }
-  }
-}
-
-},{}],57:[function(require,module,exports){
-module.exports={
-  "$schema": "https://json-schema.org/draft/2019-09/schema",
-  "$id": "https://json-schema.org/draft/2019-09/schema",
-  "$vocabulary": {
-    "https://json-schema.org/draft/2019-09/vocab/core": true,
-    "https://json-schema.org/draft/2019-09/vocab/applicator": true,
-    "https://json-schema.org/draft/2019-09/vocab/validation": true,
-    "https://json-schema.org/draft/2019-09/vocab/meta-data": true,
-    "https://json-schema.org/draft/2019-09/vocab/format": false,
-    "https://json-schema.org/draft/2019-09/vocab/content": true
-  },
-  "$recursiveAnchor": true,
-
-  "title": "Core and Validation specifications meta-schema",
-  "allOf": [
-    {"$ref": "meta/core"},
-    {"$ref": "meta/applicator"},
-    {"$ref": "meta/validation"},
-    {"$ref": "meta/meta-data"},
-    {"$ref": "meta/format"},
-    {"$ref": "meta/content"}
-  ],
-  "type": ["object", "boolean"],
-  "properties": {
-    "definitions": {
-      "$comment": "While no longer an official keyword as it is replaced by $defs, this keyword is retained in the meta-schema to prevent incompatible extensions as it remains in common use.",
-      "type": "object",
-      "additionalProperties": {"$recursiveRef": "#"},
-      "default": {}
-    },
-    "dependencies": {
-      "$comment": "\"dependencies\" is no longer a keyword, but schema authors should avoid redefining it to facilitate a smooth transition to \"dependentSchemas\" and \"dependentRequired\"",
-      "type": "object",
-      "additionalProperties": {
-        "anyOf": [{"$recursiveRef": "#"}, {"$ref": "meta/validation#/$defs/stringArray"}]
-      }
-    }
-  }
-}
-
-},{}],58:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const metaSchema = require("./schema.json");
@@ -8670,7 +3854,7 @@ function addMetaSchema2020($data) {
 }
 exports.default = addMetaSchema2020;
 
-},{"./meta/applicator.json":59,"./meta/content.json":60,"./meta/core.json":61,"./meta/format-annotation.json":62,"./meta/meta-data.json":63,"./meta/unevaluated.json":64,"./meta/validation.json":65,"./schema.json":66}],59:[function(require,module,exports){
+},{"./meta/applicator.json":26,"./meta/content.json":27,"./meta/core.json":28,"./meta/format-annotation.json":29,"./meta/meta-data.json":30,"./meta/unevaluated.json":31,"./meta/validation.json":32,"./schema.json":33}],26:[function(require,module,exports){
 module.exports={
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://json-schema.org/draft/2020-12/meta/applicator",
@@ -8720,7 +3904,7 @@ module.exports={
   }
 }
 
-},{}],60:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 module.exports={
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://json-schema.org/draft/2020-12/meta/content",
@@ -8739,7 +3923,7 @@ module.exports={
   }
 }
 
-},{}],61:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 module.exports={
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://json-schema.org/draft/2020-12/meta/core",
@@ -8792,7 +3976,7 @@ module.exports={
   }
 }
 
-},{}],62:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 module.exports={
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://json-schema.org/draft/2020-12/meta/format-annotation",
@@ -8808,7 +3992,7 @@ module.exports={
   }
 }
 
-},{}],63:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 module.exports={
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://json-schema.org/draft/2020-12/meta/meta-data",
@@ -8847,7 +4031,7 @@ module.exports={
   }
 }
 
-},{}],64:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 module.exports={
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://json-schema.org/draft/2020-12/meta/unevaluated",
@@ -8864,7 +4048,7 @@ module.exports={
   }
 }
 
-},{}],65:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 module.exports={
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://json-schema.org/draft/2020-12/meta/validation",
@@ -8956,7 +4140,7 @@ module.exports={
   }
 }
 
-},{}],66:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 module.exports={
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://json-schema.org/draft/2020-12/schema",
@@ -9013,7 +4197,7 @@ module.exports={
   }
 }
 
-},{}],67:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
 module.exports={
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://json-schema.org/draft-07/schema#",
@@ -9166,7 +4350,7 @@ module.exports={
   "default": true
 }
 
-},{}],68:[function(require,module,exports){
+},{}],35:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 // https://github.com/ajv-validator/ajv/issues/889
@@ -9174,50 +4358,7 @@ const equal = require("fast-deep-equal");
 equal.code = 'require("ajv/dist/runtime/equal").default';
 exports.default = equal;
 
-},{"fast-deep-equal":139}],69:[function(require,module,exports){
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const DT_SEPARATOR = /t|\s/i;
-const DATE = /^(\d\d\d\d)-(\d\d)-(\d\d)$/;
-const TIME = /^(\d\d):(\d\d):(\d\d)(?:\.\d+)?(?:z|([+-]\d\d)(?::?(\d\d))?)$/i;
-const DAYS = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-function validTimestamp(str, allowDate) {
-    // http://tools.ietf.org/html/rfc3339#section-5.6
-    const dt = str.split(DT_SEPARATOR);
-    return ((dt.length === 2 && validDate(dt[0]) && validTime(dt[1])) ||
-        (allowDate && dt.length === 1 && validDate(dt[0])));
-}
-exports.default = validTimestamp;
-function validDate(str) {
-    const matches = DATE.exec(str);
-    if (!matches)
-        return false;
-    const y = +matches[1];
-    const m = +matches[2];
-    const d = +matches[3];
-    return (m >= 1 &&
-        m <= 12 &&
-        d >= 1 &&
-        (d <= DAYS[m] ||
-            // leap year: https://tools.ietf.org/html/rfc3339#appendix-C
-            (m === 2 && d === 29 && (y % 100 === 0 ? y % 400 === 0 : y % 4 === 0))));
-}
-function validTime(str) {
-    const matches = TIME.exec(str);
-    if (!matches)
-        return false;
-    const hr = +matches[1];
-    const min = +matches[2];
-    const sec = +matches[3];
-    const tzH = +(matches[4] || 0);
-    const tzM = +(matches[5] || 0);
-    return ((hr <= 23 && min <= 59 && sec <= 59) ||
-        // leap second
-        (hr - tzH === 23 && min - tzM === 59 && sec === 60));
-}
-validTimestamp.code = 'require("ajv/dist/runtime/timestamp").default';
-
-},{}],70:[function(require,module,exports){
+},{"fast-deep-equal":90}],36:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 // https://mathiasbynens.be/notes/javascript-encoding
@@ -9242,14 +4383,14 @@ function ucs2length(str) {
 exports.default = ucs2length;
 ucs2length.code = 'require("ajv/dist/runtime/ucs2length").default';
 
-},{}],71:[function(require,module,exports){
+},{}],37:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const uri = require("uri-js");
 uri.code = 'require("ajv/dist/runtime/uri").default';
 exports.default = uri;
 
-},{"uri-js":141}],72:[function(require,module,exports){
+},{"uri-js":92}],38:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class ValidationError extends Error {
@@ -9261,102 +4402,7 @@ class ValidationError extends Error {
 }
 exports.default = ValidationError;
 
-},{}],73:[function(require,module,exports){
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const scope_1 = require("../compile/codegen/scope");
-const code_1 = require("../compile/codegen/code");
-function standaloneCode(ajv, refsOrFunc) {
-    if (!ajv.opts.code.source) {
-        throw new Error("moduleCode: ajv instance must have code.source option");
-    }
-    const { _n } = ajv.scope.opts;
-    return typeof refsOrFunc == "function"
-        ? funcExportCode(refsOrFunc.source)
-        : refsOrFunc !== undefined
-            ? multiExportsCode(refsOrFunc, getValidate)
-            : multiExportsCode(ajv.schemas, (sch) => sch.meta ? undefined : ajv.compile(sch.schema));
-    function getValidate(id) {
-        const v = ajv.getSchema(id);
-        if (!v)
-            throw new Error(`moduleCode: no schema with id ${id}`);
-        return v;
-    }
-    function funcExportCode(source) {
-        const usedValues = {};
-        const n = source === null || source === void 0 ? void 0 : source.validateName;
-        const vCode = validateCode(usedValues, source);
-        if (ajv.opts.code.esm) {
-            // Always do named export as `validate` rather than the variable `n` which is `validateXX` for known export value
-            return `"use strict";${_n}export const validate = ${n};${_n}export default ${n};${_n}${vCode}`;
-        }
-        return `"use strict";${_n}module.exports = ${n};${_n}module.exports.default = ${n};${_n}${vCode}`;
-    }
-    function multiExportsCode(schemas, getValidateFunc) {
-        var _a;
-        const usedValues = {};
-        let code = (0, code_1._) `"use strict";`;
-        for (const name in schemas) {
-            const v = getValidateFunc(schemas[name]);
-            if (v) {
-                const vCode = validateCode(usedValues, v.source);
-                const exportSyntax = ajv.opts.code.esm
-                    ? (0, code_1._) `export const ${(0, code_1.getEsmExportName)(name)}`
-                    : (0, code_1._) `exports${(0, code_1.getProperty)(name)}`;
-                code = (0, code_1._) `${code}${_n}${exportSyntax} = ${(_a = v.source) === null || _a === void 0 ? void 0 : _a.validateName};${_n}${vCode}`;
-            }
-        }
-        return `${code}`;
-    }
-    function validateCode(usedValues, s) {
-        if (!s)
-            throw new Error('moduleCode: function does not have "source" property');
-        if (usedState(s.validateName) === scope_1.UsedValueState.Completed)
-            return code_1.nil;
-        setUsedState(s.validateName, scope_1.UsedValueState.Started);
-        const scopeCode = ajv.scope.scopeCode(s.scopeValues, usedValues, refValidateCode);
-        const code = new code_1._Code(`${scopeCode}${_n}${s.validateCode}`);
-        return s.evaluated ? (0, code_1._) `${code}${s.validateName}.evaluated = ${s.evaluated};${_n}` : code;
-        function refValidateCode(n) {
-            var _a;
-            const vRef = (_a = n.value) === null || _a === void 0 ? void 0 : _a.ref;
-            if (n.prefix === "validate" && typeof vRef == "function") {
-                const v = vRef;
-                return validateCode(usedValues, v.source);
-            }
-            else if ((n.prefix === "root" || n.prefix === "wrapper") && typeof vRef == "object") {
-                const { validate, validateName } = vRef;
-                if (!validateName)
-                    throw new Error("ajv internal error");
-                const def = ajv.opts.code.es5 ? scope_1.varKinds.var : scope_1.varKinds.const;
-                const wrapper = (0, code_1._) `${def} ${n} = {validate: ${validateName}};`;
-                if (usedState(validateName) === scope_1.UsedValueState.Started)
-                    return wrapper;
-                const vCode = validateCode(usedValues, validate === null || validate === void 0 ? void 0 : validate.source);
-                return (0, code_1._) `${wrapper}${_n}${vCode}`;
-            }
-            return undefined;
-        }
-        function usedState(name) {
-            var _a;
-            return (_a = usedValues[name.prefix]) === null || _a === void 0 ? void 0 : _a.get(name);
-        }
-        function setUsedState(name, state) {
-            const { prefix } = name;
-            const names = (usedValues[prefix] = usedValues[prefix] || new Map());
-            names.set(name, state);
-        }
-    }
-}
-module.exports = exports = standaloneCode;
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = standaloneCode;
-
-},{"../compile/codegen/code":31,"../compile/codegen/scope":33}],74:[function(require,module,exports){
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-
-},{}],75:[function(require,module,exports){
+},{}],39:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.validateAdditionalItems = void 0;
@@ -9406,7 +4452,7 @@ function validateAdditionalItems(cxt, items) {
 exports.validateAdditionalItems = validateAdditionalItems;
 exports.default = def;
 
-},{"../../compile/codegen":32,"../../compile/util":40}],76:[function(require,module,exports){
+},{"../../compile/codegen":7,"../../compile/util":15}],40:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const code_1 = require("../code");
@@ -9513,7 +4559,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":32,"../../compile/names":36,"../../compile/util":40,"../code":93}],77:[function(require,module,exports){
+},{"../../compile/codegen":7,"../../compile/names":11,"../../compile/util":15,"../code":57}],41:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const util_1 = require("../../compile/util");
@@ -9537,7 +4583,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/util":40}],78:[function(require,module,exports){
+},{"../../compile/util":15}],42:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const code_1 = require("../code");
@@ -9550,7 +4596,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../code":93}],79:[function(require,module,exports){
+},{"../code":57}],43:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -9646,7 +4692,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":32,"../../compile/util":40}],80:[function(require,module,exports){
+},{"../../compile/codegen":7,"../../compile/util":15}],44:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.validateSchemaDeps = exports.validatePropertyDeps = exports.error = void 0;
@@ -9732,7 +4778,7 @@ function validateSchemaDeps(cxt, schemaDeps = cxt.schema) {
 exports.validateSchemaDeps = validateSchemaDeps;
 exports.default = def;
 
-},{"../../compile/codegen":32,"../../compile/util":40,"../code":93}],81:[function(require,module,exports){
+},{"../../compile/codegen":7,"../../compile/util":15,"../code":57}],45:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const dependencies_1 = require("./dependencies");
@@ -9744,7 +4790,7 @@ const def = {
 };
 exports.default = def;
 
-},{"./dependencies":80}],82:[function(require,module,exports){
+},{"./dependencies":44}],46:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -9811,7 +4857,7 @@ function hasSchema(it, keyword) {
 }
 exports.default = def;
 
-},{"../../compile/codegen":32,"../../compile/util":40}],83:[function(require,module,exports){
+},{"../../compile/codegen":7,"../../compile/util":15}],47:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const additionalItems_1 = require("./additionalItems");
@@ -9856,7 +4902,7 @@ function getApplicator(draft2020 = false) {
 }
 exports.default = getApplicator;
 
-},{"./additionalItems":75,"./additionalProperties":76,"./allOf":77,"./anyOf":78,"./contains":79,"./dependencies":80,"./if":82,"./items":84,"./items2020":85,"./not":86,"./oneOf":87,"./patternProperties":88,"./prefixItems":89,"./properties":90,"./propertyNames":91,"./thenElse":92}],84:[function(require,module,exports){
+},{"./additionalItems":39,"./additionalProperties":40,"./allOf":41,"./anyOf":42,"./contains":43,"./dependencies":44,"./if":46,"./items":48,"./items2020":49,"./not":50,"./oneOf":51,"./patternProperties":52,"./prefixItems":53,"./properties":54,"./propertyNames":55,"./thenElse":56}],48:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.validateTuple = void 0;
@@ -9909,7 +4955,7 @@ function validateTuple(cxt, extraItems, schArr = cxt.schema) {
 exports.validateTuple = validateTuple;
 exports.default = def;
 
-},{"../../compile/codegen":32,"../../compile/util":40,"../code":93}],85:[function(require,module,exports){
+},{"../../compile/codegen":7,"../../compile/util":15,"../code":57}],49:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -9940,7 +4986,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":32,"../../compile/util":40,"../code":93,"./additionalItems":75}],86:[function(require,module,exports){
+},{"../../compile/codegen":7,"../../compile/util":15,"../code":57,"./additionalItems":39}],50:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const util_1 = require("../../compile/util");
@@ -9967,7 +5013,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/util":40}],87:[function(require,module,exports){
+},{"../../compile/util":15}],51:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -10028,7 +5074,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":32,"../../compile/util":40}],88:[function(require,module,exports){
+},{"../../compile/codegen":7,"../../compile/util":15}],52:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const code_1 = require("../code");
@@ -10104,7 +5150,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":32,"../../compile/util":40,"../code":93}],89:[function(require,module,exports){
+},{"../../compile/codegen":7,"../../compile/util":15,"../code":57}],53:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const items_1 = require("./items");
@@ -10117,7 +5163,7 @@ const def = {
 };
 exports.default = def;
 
-},{"./items":84}],90:[function(require,module,exports){
+},{"./items":48}],54:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const validate_1 = require("../../compile/validate");
@@ -10172,7 +5218,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/util":40,"../../compile/validate":45,"../code":93,"./additionalProperties":76}],91:[function(require,module,exports){
+},{"../../compile/util":15,"../../compile/validate":20,"../code":57,"./additionalProperties":40}],55:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -10211,7 +5257,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":32,"../../compile/util":40}],92:[function(require,module,exports){
+},{"../../compile/codegen":7,"../../compile/util":15}],56:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const util_1 = require("../../compile/util");
@@ -10225,7 +5271,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/util":40}],93:[function(require,module,exports){
+},{"../../compile/util":15}],57:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.validateUnion = exports.validateArray = exports.usePattern = exports.callValidateCode = exports.schemaProperties = exports.allSchemaProperties = exports.noPropertyInData = exports.propertyInData = exports.isOwnProperty = exports.hasPropFunc = exports.reportMissingProp = exports.checkMissingProp = exports.checkReportMissingProp = void 0;
@@ -10357,7 +5403,7 @@ function validateUnion(cxt) {
 }
 exports.validateUnion = validateUnion;
 
-},{"../compile/codegen":32,"../compile/names":36,"../compile/util":40}],94:[function(require,module,exports){
+},{"../compile/codegen":7,"../compile/names":11,"../compile/util":15}],58:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const def = {
@@ -10368,7 +5414,7 @@ const def = {
 };
 exports.default = def;
 
-},{}],95:[function(require,module,exports){
+},{}],59:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const id_1 = require("./id");
@@ -10385,7 +5431,7 @@ const core = [
 ];
 exports.default = core;
 
-},{"./id":94,"./ref":96}],96:[function(require,module,exports){
+},{"./id":58,"./ref":60}],60:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.callRef = exports.getValidate = void 0;
@@ -10508,7 +5554,7 @@ function callRef(cxt, v, sch, $async) {
 exports.callRef = callRef;
 exports.default = def;
 
-},{"../../compile":35,"../../compile/codegen":32,"../../compile/names":36,"../../compile/ref_error":37,"../../compile/util":40,"../code":93}],97:[function(require,module,exports){
+},{"../../compile":10,"../../compile/codegen":7,"../../compile/names":11,"../../compile/ref_error":12,"../../compile/util":15,"../code":57}],61:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -10609,7 +5655,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile":35,"../../compile/codegen":32,"../../compile/util":40,"../discriminator/types":98}],98:[function(require,module,exports){
+},{"../../compile":10,"../../compile/codegen":7,"../../compile/util":15,"../discriminator/types":62}],62:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DiscrError = void 0;
@@ -10619,7 +5665,7 @@ var DiscrError;
     DiscrError["Mapping"] = "mapping";
 })(DiscrError = exports.DiscrError || (exports.DiscrError = {}));
 
-},{}],99:[function(require,module,exports){
+},{}],63:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("./core");
@@ -10643,7 +5689,7 @@ const draft2020Vocabularies = [
 ];
 exports.default = draft2020Vocabularies;
 
-},{"./applicator":83,"./core":95,"./dynamic":103,"./format":107,"./metadata":121,"./next":122,"./unevaluated":123,"./validation":129}],100:[function(require,module,exports){
+},{"./applicator":47,"./core":59,"./dynamic":67,"./format":71,"./metadata":72,"./next":73,"./unevaluated":74,"./validation":80}],64:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("./core");
@@ -10661,7 +5707,7 @@ const draft7Vocabularies = [
 ];
 exports.default = draft7Vocabularies;
 
-},{"./applicator":83,"./core":95,"./format":107,"./metadata":121,"./validation":129}],101:[function(require,module,exports){
+},{"./applicator":47,"./core":59,"./format":71,"./metadata":72,"./validation":80}],65:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.dynamicAnchor = void 0;
@@ -10692,7 +5738,7 @@ function _getValidate(cxt) {
 }
 exports.default = def;
 
-},{"../../compile":35,"../../compile/codegen":32,"../../compile/names":36,"../core/ref":96}],102:[function(require,module,exports){
+},{"../../compile":10,"../../compile/codegen":7,"../../compile/names":11,"../core/ref":60}],66:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.dynamicRef = void 0;
@@ -10744,7 +5790,7 @@ function dynamicRef(cxt, ref) {
 exports.dynamicRef = dynamicRef;
 exports.default = def;
 
-},{"../../compile/codegen":32,"../../compile/names":36,"../core/ref":96}],103:[function(require,module,exports){
+},{"../../compile/codegen":7,"../../compile/names":11,"../core/ref":60}],67:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const dynamicAnchor_1 = require("./dynamicAnchor");
@@ -10754,7 +5800,7 @@ const recursiveRef_1 = require("./recursiveRef");
 const dynamic = [dynamicAnchor_1.default, dynamicRef_1.default, recursiveAnchor_1.default, recursiveRef_1.default];
 exports.default = dynamic;
 
-},{"./dynamicAnchor":101,"./dynamicRef":102,"./recursiveAnchor":104,"./recursiveRef":105}],104:[function(require,module,exports){
+},{"./dynamicAnchor":65,"./dynamicRef":66,"./recursiveAnchor":68,"./recursiveRef":69}],68:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const dynamicAnchor_1 = require("./dynamicAnchor");
@@ -10771,7 +5817,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/util":40,"./dynamicAnchor":101}],105:[function(require,module,exports){
+},{"../../compile/util":15,"./dynamicAnchor":65}],69:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const dynamicRef_1 = require("./dynamicRef");
@@ -10782,7 +5828,7 @@ const def = {
 };
 exports.default = def;
 
-},{"./dynamicRef":102}],106:[function(require,module,exports){
+},{"./dynamicRef":66}],70:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -10875,624 +5921,14 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":32}],107:[function(require,module,exports){
+},{"../../compile/codegen":7}],71:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const format_1 = require("./format");
 const format = [format_1.default];
 exports.default = format;
 
-},{"./format":106}],108:[function(require,module,exports){
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const codegen_1 = require("../../compile/codegen");
-const metadata_1 = require("./metadata");
-const nullable_1 = require("./nullable");
-const error_1 = require("./error");
-const types_1 = require("../discriminator/types");
-const error = {
-    message: (cxt) => {
-        const { schema, params } = cxt;
-        return params.discrError
-            ? params.discrError === types_1.DiscrError.Tag
-                ? `tag "${schema}" must be string`
-                : `value of tag "${schema}" must be in mapping`
-            : (0, error_1.typeErrorMessage)(cxt, "object");
-    },
-    params: (cxt) => {
-        const { schema, params } = cxt;
-        return params.discrError
-            ? (0, codegen_1._) `{error: ${params.discrError}, tag: ${schema}, tagValue: ${params.tag}}`
-            : (0, error_1.typeErrorParams)(cxt, "object");
-    },
-};
-const def = {
-    keyword: "discriminator",
-    schemaType: "string",
-    implements: ["mapping"],
-    error,
-    code(cxt) {
-        (0, metadata_1.checkMetadata)(cxt);
-        const { gen, data, schema, parentSchema } = cxt;
-        const [valid, cond] = (0, nullable_1.checkNullableObject)(cxt, data);
-        gen.if(cond);
-        validateDiscriminator();
-        gen.elseIf((0, codegen_1.not)(valid));
-        cxt.error();
-        gen.endIf();
-        cxt.ok(valid);
-        function validateDiscriminator() {
-            const tag = gen.const("tag", (0, codegen_1._) `${data}${(0, codegen_1.getProperty)(schema)}`);
-            gen.if((0, codegen_1._) `${tag} === undefined`);
-            cxt.error(false, { discrError: types_1.DiscrError.Tag, tag });
-            gen.elseIf((0, codegen_1._) `typeof ${tag} == "string"`);
-            validateMapping(tag);
-            gen.else();
-            cxt.error(false, { discrError: types_1.DiscrError.Tag, tag }, { instancePath: schema });
-            gen.endIf();
-        }
-        function validateMapping(tag) {
-            gen.if(false);
-            for (const tagValue in parentSchema.mapping) {
-                gen.elseIf((0, codegen_1._) `${tag} === ${tagValue}`);
-                gen.assign(valid, applyTagSchema(tagValue));
-            }
-            gen.else();
-            cxt.error(false, { discrError: types_1.DiscrError.Mapping, tag }, { instancePath: schema, schemaPath: "mapping", parentSchema: true });
-            gen.endIf();
-        }
-        function applyTagSchema(schemaProp) {
-            const _valid = gen.name("valid");
-            cxt.subschema({
-                keyword: "mapping",
-                schemaProp,
-                jtdDiscriminator: schema,
-            }, _valid);
-            return _valid;
-        }
-    },
-};
-exports.default = def;
-
-},{"../../compile/codegen":32,"../discriminator/types":98,"./error":111,"./metadata":113,"./nullable":114}],109:[function(require,module,exports){
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const util_1 = require("../../compile/util");
-const code_1 = require("../code");
-const codegen_1 = require("../../compile/codegen");
-const metadata_1 = require("./metadata");
-const nullable_1 = require("./nullable");
-const error_1 = require("./error");
-const def = {
-    keyword: "elements",
-    schemaType: "object",
-    error: (0, error_1.typeError)("array"),
-    code(cxt) {
-        (0, metadata_1.checkMetadata)(cxt);
-        const { gen, data, schema, it } = cxt;
-        if ((0, util_1.alwaysValidSchema)(it, schema))
-            return;
-        const [valid] = (0, nullable_1.checkNullable)(cxt);
-        gen.if((0, codegen_1.not)(valid), () => gen.if((0, codegen_1._) `Array.isArray(${data})`, () => gen.assign(valid, (0, code_1.validateArray)(cxt)), () => cxt.error()));
-        cxt.ok(valid);
-    },
-};
-exports.default = def;
-
-},{"../../compile/codegen":32,"../../compile/util":40,"../code":93,"./error":111,"./metadata":113,"./nullable":114}],110:[function(require,module,exports){
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const codegen_1 = require("../../compile/codegen");
-const metadata_1 = require("./metadata");
-const nullable_1 = require("./nullable");
-const error = {
-    message: "must be equal to one of the allowed values",
-    params: ({ schemaCode }) => (0, codegen_1._) `{allowedValues: ${schemaCode}}`,
-};
-const def = {
-    keyword: "enum",
-    schemaType: "array",
-    error,
-    code(cxt) {
-        (0, metadata_1.checkMetadata)(cxt);
-        const { gen, data, schema, schemaValue, parentSchema, it } = cxt;
-        if (schema.length === 0)
-            throw new Error("enum must have non-empty array");
-        if (schema.length !== new Set(schema).size)
-            throw new Error("enum items must be unique");
-        let valid;
-        const isString = (0, codegen_1._) `typeof ${data} == "string"`;
-        if (schema.length >= it.opts.loopEnum) {
-            let cond;
-            [valid, cond] = (0, nullable_1.checkNullable)(cxt, isString);
-            gen.if(cond, loopEnum);
-        }
-        else {
-            /* istanbul ignore if */
-            if (!Array.isArray(schema))
-                throw new Error("ajv implementation error");
-            valid = (0, codegen_1.and)(isString, (0, codegen_1.or)(...schema.map((value) => (0, codegen_1._) `${data} === ${value}`)));
-            if (parentSchema.nullable)
-                valid = (0, codegen_1.or)((0, codegen_1._) `${data} === null`, valid);
-        }
-        cxt.pass(valid);
-        function loopEnum() {
-            gen.forOf("v", schemaValue, (v) => gen.if((0, codegen_1._) `${valid} = ${data} === ${v}`, () => gen.break()));
-        }
-    },
-};
-exports.default = def;
-
-},{"../../compile/codegen":32,"./metadata":113,"./nullable":114}],111:[function(require,module,exports){
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.typeErrorParams = exports.typeErrorMessage = exports.typeError = void 0;
-const codegen_1 = require("../../compile/codegen");
-function typeError(t) {
-    return {
-        message: (cxt) => typeErrorMessage(cxt, t),
-        params: (cxt) => typeErrorParams(cxt, t),
-    };
-}
-exports.typeError = typeError;
-function typeErrorMessage({ parentSchema }, t) {
-    return (parentSchema === null || parentSchema === void 0 ? void 0 : parentSchema.nullable) ? `must be ${t} or null` : `must be ${t}`;
-}
-exports.typeErrorMessage = typeErrorMessage;
-function typeErrorParams({ parentSchema }, t) {
-    return (0, codegen_1._) `{type: ${t}, nullable: ${!!(parentSchema === null || parentSchema === void 0 ? void 0 : parentSchema.nullable)}}`;
-}
-exports.typeErrorParams = typeErrorParams;
-
-},{"../../compile/codegen":32}],112:[function(require,module,exports){
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const ref_1 = require("./ref");
-const type_1 = require("./type");
-const enum_1 = require("./enum");
-const elements_1 = require("./elements");
-const properties_1 = require("./properties");
-const optionalProperties_1 = require("./optionalProperties");
-const discriminator_1 = require("./discriminator");
-const values_1 = require("./values");
-const union_1 = require("./union");
-const metadata_1 = require("./metadata");
-const jtdVocabulary = [
-    "definitions",
-    ref_1.default,
-    type_1.default,
-    enum_1.default,
-    elements_1.default,
-    properties_1.default,
-    optionalProperties_1.default,
-    discriminator_1.default,
-    values_1.default,
-    union_1.default,
-    metadata_1.default,
-    { keyword: "additionalProperties", schemaType: "boolean" },
-    { keyword: "nullable", schemaType: "boolean" },
-];
-exports.default = jtdVocabulary;
-
-},{"./discriminator":108,"./elements":109,"./enum":110,"./metadata":113,"./optionalProperties":115,"./properties":116,"./ref":117,"./type":118,"./union":119,"./values":120}],113:[function(require,module,exports){
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.checkMetadata = void 0;
-const util_1 = require("../../compile/util");
-const def = {
-    keyword: "metadata",
-    schemaType: "object",
-    code(cxt) {
-        checkMetadata(cxt);
-        const { gen, schema, it } = cxt;
-        if ((0, util_1.alwaysValidSchema)(it, schema))
-            return;
-        const valid = gen.name("valid");
-        cxt.subschema({ keyword: "metadata", jtdMetadata: true }, valid);
-        cxt.ok(valid);
-    },
-};
-function checkMetadata({ it, keyword }, metadata) {
-    if (it.jtdMetadata !== metadata) {
-        throw new Error(`JTD: "${keyword}" cannot be used in this schema location`);
-    }
-}
-exports.checkMetadata = checkMetadata;
-exports.default = def;
-
-},{"../../compile/util":40}],114:[function(require,module,exports){
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.checkNullableObject = exports.checkNullable = void 0;
-const codegen_1 = require("../../compile/codegen");
-function checkNullable({ gen, data, parentSchema }, cond = codegen_1.nil) {
-    const valid = gen.name("valid");
-    if (parentSchema.nullable) {
-        gen.let(valid, (0, codegen_1._) `${data} === null`);
-        cond = (0, codegen_1.not)(valid);
-    }
-    else {
-        gen.let(valid, false);
-    }
-    return [valid, cond];
-}
-exports.checkNullable = checkNullable;
-function checkNullableObject(cxt, cond) {
-    const [valid, cond_] = checkNullable(cxt, cond);
-    return [valid, (0, codegen_1._) `${cond_} && typeof ${cxt.data} == "object" && !Array.isArray(${cxt.data})`];
-}
-exports.checkNullableObject = checkNullableObject;
-
-},{"../../compile/codegen":32}],115:[function(require,module,exports){
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const properties_1 = require("./properties");
-const def = {
-    keyword: "optionalProperties",
-    schemaType: "object",
-    error: properties_1.error,
-    code(cxt) {
-        if (cxt.parentSchema.properties)
-            return;
-        (0, properties_1.validateProperties)(cxt);
-    },
-};
-exports.default = def;
-
-},{"./properties":116}],116:[function(require,module,exports){
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.validateProperties = exports.error = void 0;
-const code_1 = require("../code");
-const util_1 = require("../../compile/util");
-const codegen_1 = require("../../compile/codegen");
-const metadata_1 = require("./metadata");
-const nullable_1 = require("./nullable");
-const error_1 = require("./error");
-var PropError;
-(function (PropError) {
-    PropError["Additional"] = "additional";
-    PropError["Missing"] = "missing";
-})(PropError || (PropError = {}));
-exports.error = {
-    message: (cxt) => {
-        const { params } = cxt;
-        return params.propError
-            ? params.propError === PropError.Additional
-                ? "must NOT have additional properties"
-                : `must have property '${params.missingProperty}'`
-            : (0, error_1.typeErrorMessage)(cxt, "object");
-    },
-    params: (cxt) => {
-        const { params } = cxt;
-        return params.propError
-            ? params.propError === PropError.Additional
-                ? (0, codegen_1._) `{error: ${params.propError}, additionalProperty: ${params.additionalProperty}}`
-                : (0, codegen_1._) `{error: ${params.propError}, missingProperty: ${params.missingProperty}}`
-            : (0, error_1.typeErrorParams)(cxt, "object");
-    },
-};
-const def = {
-    keyword: "properties",
-    schemaType: "object",
-    error: exports.error,
-    code: validateProperties,
-};
-// const error: KeywordErrorDefinition = {
-//   message: "should NOT have additional properties",
-//   params: ({params}) => _`{additionalProperty: ${params.additionalProperty}}`,
-// }
-function validateProperties(cxt) {
-    (0, metadata_1.checkMetadata)(cxt);
-    const { gen, data, parentSchema, it } = cxt;
-    const { additionalProperties, nullable } = parentSchema;
-    if (it.jtdDiscriminator && nullable)
-        throw new Error("JTD: nullable inside discriminator mapping");
-    if (commonProperties()) {
-        throw new Error("JTD: properties and optionalProperties have common members");
-    }
-    const [allProps, properties] = schemaProperties("properties");
-    const [allOptProps, optProperties] = schemaProperties("optionalProperties");
-    if (properties.length === 0 && optProperties.length === 0 && additionalProperties) {
-        return;
-    }
-    const [valid, cond] = it.jtdDiscriminator === undefined
-        ? (0, nullable_1.checkNullableObject)(cxt, data)
-        : [gen.let("valid", false), true];
-    gen.if(cond, () => gen.assign(valid, true).block(() => {
-        validateProps(properties, "properties", true);
-        validateProps(optProperties, "optionalProperties");
-        if (!additionalProperties)
-            validateAdditional();
-    }));
-    cxt.pass(valid);
-    function commonProperties() {
-        const props = parentSchema.properties;
-        const optProps = parentSchema.optionalProperties;
-        if (!(props && optProps))
-            return false;
-        for (const p in props) {
-            if (Object.prototype.hasOwnProperty.call(optProps, p))
-                return true;
-        }
-        return false;
-    }
-    function schemaProperties(keyword) {
-        const schema = parentSchema[keyword];
-        const allPs = schema ? (0, code_1.allSchemaProperties)(schema) : [];
-        if (it.jtdDiscriminator && allPs.some((p) => p === it.jtdDiscriminator)) {
-            throw new Error(`JTD: discriminator tag used in ${keyword}`);
-        }
-        const ps = allPs.filter((p) => !(0, util_1.alwaysValidSchema)(it, schema[p]));
-        return [allPs, ps];
-    }
-    function validateProps(props, keyword, required) {
-        const _valid = gen.var("valid");
-        for (const prop of props) {
-            gen.if((0, code_1.propertyInData)(gen, data, prop, it.opts.ownProperties), () => applyPropertySchema(prop, keyword, _valid), () => missingProperty(prop));
-            cxt.ok(_valid);
-        }
-        function missingProperty(prop) {
-            if (required) {
-                gen.assign(_valid, false);
-                cxt.error(false, { propError: PropError.Missing, missingProperty: prop }, { schemaPath: prop });
-            }
-            else {
-                gen.assign(_valid, true);
-            }
-        }
-    }
-    function applyPropertySchema(prop, keyword, _valid) {
-        cxt.subschema({
-            keyword,
-            schemaProp: prop,
-            dataProp: prop,
-        }, _valid);
-    }
-    function validateAdditional() {
-        gen.forIn("key", data, (key) => {
-            const addProp = isAdditional(key, allProps, "properties", it.jtdDiscriminator);
-            const addOptProp = isAdditional(key, allOptProps, "optionalProperties");
-            const extra = addProp === true ? addOptProp : addOptProp === true ? addProp : (0, codegen_1.and)(addProp, addOptProp);
-            gen.if(extra, () => {
-                if (it.opts.removeAdditional) {
-                    gen.code((0, codegen_1._) `delete ${data}[${key}]`);
-                }
-                else {
-                    cxt.error(false, { propError: PropError.Additional, additionalProperty: key }, { instancePath: key, parentSchema: true });
-                    if (!it.opts.allErrors)
-                        gen.break();
-                }
-            });
-        });
-    }
-    function isAdditional(key, props, keyword, jtdDiscriminator) {
-        let additional;
-        if (props.length > 8) {
-            // TODO maybe an option instead of hard-coded 8?
-            const propsSchema = (0, util_1.schemaRefOrVal)(it, parentSchema[keyword], keyword);
-            additional = (0, codegen_1.not)((0, code_1.isOwnProperty)(gen, propsSchema, key));
-            if (jtdDiscriminator !== undefined) {
-                additional = (0, codegen_1.and)(additional, (0, codegen_1._) `${key} !== ${jtdDiscriminator}`);
-            }
-        }
-        else if (props.length || jtdDiscriminator !== undefined) {
-            const ps = jtdDiscriminator === undefined ? props : [jtdDiscriminator].concat(props);
-            additional = (0, codegen_1.and)(...ps.map((p) => (0, codegen_1._) `${key} !== ${p}`));
-        }
-        else {
-            additional = true;
-        }
-        return additional;
-    }
-}
-exports.validateProperties = validateProperties;
-exports.default = def;
-
-},{"../../compile/codegen":32,"../../compile/util":40,"../code":93,"./error":111,"./metadata":113,"./nullable":114}],117:[function(require,module,exports){
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.hasRef = void 0;
-const compile_1 = require("../../compile");
-const codegen_1 = require("../../compile/codegen");
-const ref_error_1 = require("../../compile/ref_error");
-const names_1 = require("../../compile/names");
-const ref_1 = require("../core/ref");
-const metadata_1 = require("./metadata");
-const def = {
-    keyword: "ref",
-    schemaType: "string",
-    code(cxt) {
-        (0, metadata_1.checkMetadata)(cxt);
-        const { gen, data, schema: ref, parentSchema, it } = cxt;
-        const { schemaEnv: { root }, } = it;
-        const valid = gen.name("valid");
-        if (parentSchema.nullable) {
-            gen.var(valid, (0, codegen_1._) `${data} === null`);
-            gen.if((0, codegen_1.not)(valid), validateJtdRef);
-        }
-        else {
-            gen.var(valid, false);
-            validateJtdRef();
-        }
-        cxt.ok(valid);
-        function validateJtdRef() {
-            var _a;
-            const refSchema = (_a = root.schema.definitions) === null || _a === void 0 ? void 0 : _a[ref];
-            if (!refSchema) {
-                throw new ref_error_1.default(it.opts.uriResolver, "", ref, `No definition ${ref}`);
-            }
-            if (hasRef(refSchema) || !it.opts.inlineRefs)
-                callValidate(refSchema);
-            else
-                inlineRefSchema(refSchema);
-        }
-        function callValidate(schema) {
-            const sch = compile_1.compileSchema.call(it.self, new compile_1.SchemaEnv({ schema, root, schemaPath: `/definitions/${ref}` }));
-            const v = (0, ref_1.getValidate)(cxt, sch);
-            const errsCount = gen.const("_errs", names_1.default.errors);
-            (0, ref_1.callRef)(cxt, v, sch, sch.$async);
-            gen.assign(valid, (0, codegen_1._) `${errsCount} === ${names_1.default.errors}`);
-        }
-        function inlineRefSchema(schema) {
-            const schName = gen.scopeValue("schema", it.opts.code.source === true ? { ref: schema, code: (0, codegen_1.stringify)(schema) } : { ref: schema });
-            cxt.subschema({
-                schema,
-                dataTypes: [],
-                schemaPath: codegen_1.nil,
-                topSchemaRef: schName,
-                errSchemaPath: `/definitions/${ref}`,
-            }, valid);
-        }
-    },
-};
-function hasRef(schema) {
-    for (const key in schema) {
-        let sch;
-        if (key === "ref" || (typeof (sch = schema[key]) == "object" && hasRef(sch)))
-            return true;
-    }
-    return false;
-}
-exports.hasRef = hasRef;
-exports.default = def;
-
-},{"../../compile":35,"../../compile/codegen":32,"../../compile/names":36,"../../compile/ref_error":37,"../core/ref":96,"./metadata":113}],118:[function(require,module,exports){
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.intRange = void 0;
-const codegen_1 = require("../../compile/codegen");
-const timestamp_1 = require("../../runtime/timestamp");
-const util_1 = require("../../compile/util");
-const metadata_1 = require("./metadata");
-const error_1 = require("./error");
-exports.intRange = {
-    int8: [-128, 127, 3],
-    uint8: [0, 255, 3],
-    int16: [-32768, 32767, 5],
-    uint16: [0, 65535, 5],
-    int32: [-2147483648, 2147483647, 10],
-    uint32: [0, 4294967295, 10],
-};
-const error = {
-    message: (cxt) => (0, error_1.typeErrorMessage)(cxt, cxt.schema),
-    params: (cxt) => (0, error_1.typeErrorParams)(cxt, cxt.schema),
-};
-function timestampCode(cxt) {
-    const { gen, data, it } = cxt;
-    const { timestamp, allowDate } = it.opts;
-    if (timestamp === "date")
-        return (0, codegen_1._) `${data} instanceof Date `;
-    const vts = (0, util_1.useFunc)(gen, timestamp_1.default);
-    const allowDateArg = allowDate ? (0, codegen_1._) `, true` : codegen_1.nil;
-    const validString = (0, codegen_1._) `typeof ${data} == "string" && ${vts}(${data}${allowDateArg})`;
-    return timestamp === "string" ? validString : (0, codegen_1.or)((0, codegen_1._) `${data} instanceof Date`, validString);
-}
-const def = {
-    keyword: "type",
-    schemaType: "string",
-    error,
-    code(cxt) {
-        (0, metadata_1.checkMetadata)(cxt);
-        const { data, schema, parentSchema, it } = cxt;
-        let cond;
-        switch (schema) {
-            case "boolean":
-            case "string":
-                cond = (0, codegen_1._) `typeof ${data} == ${schema}`;
-                break;
-            case "timestamp": {
-                cond = timestampCode(cxt);
-                break;
-            }
-            case "float32":
-            case "float64":
-                cond = (0, codegen_1._) `typeof ${data} == "number"`;
-                break;
-            default: {
-                const sch = schema;
-                cond = (0, codegen_1._) `typeof ${data} == "number" && isFinite(${data}) && !(${data} % 1)`;
-                if (!it.opts.int32range && (sch === "int32" || sch === "uint32")) {
-                    if (sch === "uint32")
-                        cond = (0, codegen_1._) `${cond} && ${data} >= 0`;
-                }
-                else {
-                    const [min, max] = exports.intRange[sch];
-                    cond = (0, codegen_1._) `${cond} && ${data} >= ${min} && ${data} <= ${max}`;
-                }
-            }
-        }
-        cxt.pass(parentSchema.nullable ? (0, codegen_1.or)((0, codegen_1._) `${data} === null`, cond) : cond);
-    },
-};
-exports.default = def;
-
-},{"../../compile/codegen":32,"../../compile/util":40,"../../runtime/timestamp":69,"./error":111,"./metadata":113}],119:[function(require,module,exports){
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const code_1 = require("../code");
-const def = {
-    keyword: "union",
-    schemaType: "array",
-    trackErrors: true,
-    code: code_1.validateUnion,
-    error: { message: "must match a schema in union" },
-};
-exports.default = def;
-
-},{"../code":93}],120:[function(require,module,exports){
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const util_1 = require("../../compile/util");
-const codegen_1 = require("../../compile/codegen");
-const metadata_1 = require("./metadata");
-const nullable_1 = require("./nullable");
-const error_1 = require("./error");
-const def = {
-    keyword: "values",
-    schemaType: "object",
-    error: (0, error_1.typeError)("object"),
-    code(cxt) {
-        (0, metadata_1.checkMetadata)(cxt);
-        const { gen, data, schema, it } = cxt;
-        const [valid, cond] = (0, nullable_1.checkNullableObject)(cxt, data);
-        if ((0, util_1.alwaysValidSchema)(it, schema)) {
-            gen.if((0, codegen_1.not)((0, codegen_1.or)(cond, valid)), () => cxt.error());
-        }
-        else {
-            gen.if(cond);
-            gen.assign(valid, validateMap());
-            gen.elseIf((0, codegen_1.not)(valid));
-            cxt.error();
-            gen.endIf();
-        }
-        cxt.ok(valid);
-        function validateMap() {
-            const _valid = gen.name("valid");
-            if (it.allErrors) {
-                const validMap = gen.let("valid", true);
-                validateValues(() => gen.assign(validMap, false));
-                return validMap;
-            }
-            gen.var(_valid, true);
-            validateValues(() => gen.break());
-            return _valid;
-            function validateValues(notValid) {
-                gen.forIn("key", data, (key) => {
-                    cxt.subschema({
-                        keyword: "values",
-                        dataProp: key,
-                        dataPropType: util_1.Type.Str,
-                    }, _valid);
-                    gen.if((0, codegen_1.not)(_valid), notValid);
-                });
-            }
-        }
-    },
-};
-exports.default = def;
-
-},{"../../compile/codegen":32,"../../compile/util":40,"./error":111,"./metadata":113,"./nullable":114}],121:[function(require,module,exports){
+},{"./format":70}],72:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.contentVocabulary = exports.metadataVocabulary = void 0;
@@ -11511,7 +5947,7 @@ exports.contentVocabulary = [
     "contentSchema",
 ];
 
-},{}],122:[function(require,module,exports){
+},{}],73:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const dependentRequired_1 = require("./validation/dependentRequired");
@@ -11520,7 +5956,7 @@ const limitContains_1 = require("./validation/limitContains");
 const next = [dependentRequired_1.default, dependentSchemas_1.default, limitContains_1.default];
 exports.default = next;
 
-},{"./applicator/dependentSchemas":81,"./validation/dependentRequired":127,"./validation/limitContains":130}],123:[function(require,module,exports){
+},{"./applicator/dependentSchemas":45,"./validation/dependentRequired":78,"./validation/limitContains":81}],74:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const unevaluatedProperties_1 = require("./unevaluatedProperties");
@@ -11528,7 +5964,7 @@ const unevaluatedItems_1 = require("./unevaluatedItems");
 const unevaluated = [unevaluatedProperties_1.default, unevaluatedItems_1.default];
 exports.default = unevaluated;
 
-},{"./unevaluatedItems":124,"./unevaluatedProperties":125}],124:[function(require,module,exports){
+},{"./unevaluatedItems":75,"./unevaluatedProperties":76}],75:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -11569,7 +6005,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":32,"../../compile/util":40}],125:[function(require,module,exports){
+},{"../../compile/codegen":7,"../../compile/util":15}],76:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -11635,7 +6071,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":32,"../../compile/names":36,"../../compile/util":40}],126:[function(require,module,exports){
+},{"../../compile/codegen":7,"../../compile/names":11,"../../compile/util":15}],77:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -11661,7 +6097,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":32,"../../compile/util":40,"../../runtime/equal":68}],127:[function(require,module,exports){
+},{"../../compile/codegen":7,"../../compile/util":15,"../../runtime/equal":35}],78:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const dependencies_1 = require("../applicator/dependencies");
@@ -11674,7 +6110,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../applicator/dependencies":80}],128:[function(require,module,exports){
+},{"../applicator/dependencies":44}],79:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -11723,7 +6159,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":32,"../../compile/util":40,"../../runtime/equal":68}],129:[function(require,module,exports){
+},{"../../compile/codegen":7,"../../compile/util":15,"../../runtime/equal":35}],80:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const limitNumber_1 = require("./limitNumber");
@@ -11757,7 +6193,7 @@ const validation = [
 ];
 exports.default = validation;
 
-},{"./const":126,"./enum":128,"./limitItems":131,"./limitLength":132,"./limitNumber":133,"./limitProperties":134,"./multipleOf":135,"./pattern":136,"./required":137,"./uniqueItems":138}],130:[function(require,module,exports){
+},{"./const":77,"./enum":79,"./limitItems":82,"./limitLength":83,"./limitNumber":84,"./limitProperties":85,"./multipleOf":86,"./pattern":87,"./required":88,"./uniqueItems":89}],81:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const util_1 = require("../../compile/util");
@@ -11773,7 +6209,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/util":40}],131:[function(require,module,exports){
+},{"../../compile/util":15}],82:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -11798,7 +6234,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":32}],132:[function(require,module,exports){
+},{"../../compile/codegen":7}],83:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -11826,7 +6262,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":32,"../../compile/util":40,"../../runtime/ucs2length":70}],133:[function(require,module,exports){
+},{"../../compile/codegen":7,"../../compile/util":15,"../../runtime/ucs2length":36}],84:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -11854,7 +6290,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":32}],134:[function(require,module,exports){
+},{"../../compile/codegen":7}],85:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -11879,7 +6315,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":32}],135:[function(require,module,exports){
+},{"../../compile/codegen":7}],86:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const codegen_1 = require("../../compile/codegen");
@@ -11906,7 +6342,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":32}],136:[function(require,module,exports){
+},{"../../compile/codegen":7}],87:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const code_1 = require("../code");
@@ -11931,7 +6367,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":32,"../code":93}],137:[function(require,module,exports){
+},{"../../compile/codegen":7,"../code":57}],88:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const code_1 = require("../code");
@@ -12011,7 +6447,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":32,"../../compile/util":40,"../code":93}],138:[function(require,module,exports){
+},{"../../compile/codegen":7,"../../compile/util":15,"../code":57}],89:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const dataType_1 = require("../../compile/validate/dataType");
@@ -12076,7 +6512,7 @@ const def = {
 };
 exports.default = def;
 
-},{"../../compile/codegen":32,"../../compile/util":40,"../../compile/validate/dataType":43,"../../runtime/equal":68}],139:[function(require,module,exports){
+},{"../../compile/codegen":7,"../../compile/util":15,"../../compile/validate/dataType":18,"../../runtime/equal":35}],90:[function(require,module,exports){
 'use strict';
 
 // do not edit .js files directly - edit src/index.jst
@@ -12124,7 +6560,7 @@ module.exports = function equal(a, b) {
   return a!==a && b!==b;
 };
 
-},{}],140:[function(require,module,exports){
+},{}],91:[function(require,module,exports){
 'use strict';
 
 var traverse = module.exports = function (schema, opts, cb) {
@@ -12219,7 +6655,7 @@ function escapeJsonPtr(str) {
   return str.replace(/~/g, '~0').replace(/\//g, '~1');
 }
 
-},{}],141:[function(require,module,exports){
+},{}],92:[function(require,module,exports){
 /** @license URI.js v4.4.1 (c) 2011 Gary Court. License: http://github.com/garycourt/uri-js */
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
@@ -13664,4 +8100,18 @@ Object.defineProperty(exports, '__esModule', { value: true });
 })));
 
 
-},{}]},{},[28,29,30,32,35,45,50,58,73,74,83,85,95,97,99,103,107,112,123,129,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,27,26]);
+},{}],93:[function(require,module,exports){
+const Ajv2020 = require("ajv/dist/2020");
+const addFormats = require("ajv-formats");
+
+window.Ajv2020 = Ajv2020;
+window.addFormats = addFormats;
+
+module.exports = {
+	Ajv2020: Ajv2020,
+	addFormats: addFormats
+};
+
+myAjv2020 = module.exports;
+
+},{"ajv-formats":2,"ajv/dist/2020":4}]},{},[93]);

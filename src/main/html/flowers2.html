@@ -1,128 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>JSON Loader</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<!--
     <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.debug.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
+-->
+<link rel="stylesheet" type="text/css" href="https://create3000.github.io/code/x_ite/latest/dist/x_ite.css"/>
 <script type="text/javascript" src="https://create3000.github.io/code/x_ite/latest/dist/x_ite.min.js"></script>
-    <style type="text/css">
-    x3d-canvas {
-        background:#000;
-	width: 900px;
-	height:450px;
-    }
-    X3D {
-        background:#000;
-	width: 900px;
-	height:450px;
-    }
-    </style>
 </head>
 <body>
-	<span style="display:none"> Use JSONScript in X3DOM? <input id="scripting" type="checkbox" checked="true"></input></span>
-    <X3D id="x3domjson" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showProgress="false" showStat='false' showLog='false' width='900px' height='450px' backend='webgl'>
-		<Scene>
-		</Scene>
-    </X3D>
-    <x3d-canvas id="x_itedom" cache='false'>
-           <p>Your browser may not support all features required by X_ITE!</p>
-	   <X3D>
+    <x3d-canvas cache='false' url='"../data/flowers2.x3dj"'>
 	   <Scene>
 	   </Scene>
-	   </X3D>
     </x3d-canvas>
-</body>
-	<script src="../node/ajvAll.js"></script>
-	<script src="../node/config.js"></script>
-	<script src="../node/fieldTypes.js"></script>
-	<script src="../node/PrototypeExpander.js"></script>
-	<script src="../node/DOMSerializer.js"></script>
-	<script src="../node/X3DJSONLD.js"></script>
-	<script src="../node/matrix.js"></script>
-	<script src="../node/convertJsonToStl.js"></script>
-	<script src="../node/convertPlyToJson.js"></script>
-	<script src="../node/convertStlToJson.js"></script>
-	<script src="../node/exi.js"></script>
-	<script src="../node/JavaScriptSerializer.js"></script>
-	<script src="../node/mapToMethod.js"></script>
-	<script src="../node/mapToMethod2.js"></script>
-	<script src="../node/PythonSerializer.js"></script>
-	<script src="../node/Script.js"></script>
-	<script src="../node/Three2Serializer.js"></script>
-	<script src="../node/DOM2JSONSerializer.js"></script>
-	<script src="../node/loadValidate.js"></script>
-	<script src="../node/loaderJQuery.js"></script>
-    <script>
-// From: https://developers.google.com/web/fundamentals/getting-started/primers/promises
-function get(url) {
-  // Return a new promise.
-  return new Promise(function(resolve, reject) {
-    // Do the usual XHR stuff
-    var req = new XMLHttpRequest();
-    req.open('GET', url);
-
-    req.onload = function() {
-      // This is called even on 404 etc
-      // so check the status
-      if (req.status == 200) {
-        // Resolve the promise with the response text
-        resolve(req.response);
-      }
-      else {
-        // Otherwise reject with the status text
-        // which will hopefully be a meaningful error
-        reject(Error(req.statusText));
-      }
-    };
-
-    // Handle network errors
-    req.onerror = function() {
-      reject(Error("Network Error"));
-    };
-
-    // Make the request
-    req.send();
-  });
-}
-
-var x3dtag = "X3D";
-var scenetag = "Scene";
-
-var scripts = new Scripts();
-
-function getJSON(url) {
-  return get(url).then(JSON.parse);
-}
-// Done with include
-
-	function load_X3DOM(selector, url) {
-		getJSON(url).then(function(json) {
-			json = new PROTOS().prototypeExpander(url, json, "");
-		        window.replaceX3DJSON(selector, json, url, "", function(element) {
-				if ($('#scripting').is(':checked')) {
-					scripts.loadScripts(json, selector, url);
-				}
-			});
-		}).catch(function(err) {
-			alert("Scene Load failed: "+err);
-			console.log(err);
-		});
-	}
-	function load_X_ITE(selector, url) {
-		getJSON(url).then(function(json) {
-			window.loadX3DJS_X_ITE(selector, document.implementation, json, url, "", X3DJSONLD, function(element) {
-				window.load_X_ITE_DOM(element, selector); // reloads X_ITE element on page.
-			});
-		}).catch(function(err) {
-			alert("Scene Load failed: "+err);
-			console.log(err);
-		});
-	}
-	$(document).ready(function() {
-		load_X3DOM('#x3domjson', '../data/flowers2.json');
-		load_X_ITE("#x_itedom", '../data/flowers2.json');
-	});
-    </script>
+    <x3d-canvas cache='false' url='"../data/flowers2.x3d"'>
+	   <Scene>
+	   </Scene>
+    </x3d-canvas>
+    <x3d-canvas cache='false' url='"../data/flowers2.x3dv"'>
+	   <Scene>
+	   </Scene>
+    </x3d-canvas>
+  </body>
 </html>

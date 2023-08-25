@@ -1,5 +1,9 @@
 // let SaxonJS = require("saxon-js");
 
+if (typeof loadSchema === 'undefined') {
+	loadSchema = window.loadSchema;
+}
+
 if (typeof window.PROTOS === 'undefined') {
 	var PROTOS = require('./PrototypeExpander');
 	window.PROTOS = PROTOS;
