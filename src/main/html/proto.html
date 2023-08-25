@@ -797,10 +797,10 @@ Click <a onclick='updateFromPly($("#file option:selected").text());'>here</a> to
 	<script src="../node/DOM2JSONSerializer.js"></script>
 	<script src="../node/loadValidate.js"></script>
 	<script src="../node/loaderJQuery.js"></script>
-    <script type="module">
-	import myLoadJson as "../node/loadJson.mjs";
-	$(document).ready(function() {
-		myLoadJson('../data/ball.json'); // does load ball.json
-	});
-    </script>
+	<script src="../node/loadJson.js"></script>
+    	<script type="text/javascript">
+		$(document).ready(function() {
+			window.myLoadJson('../data/ball.json'); // does load ball.json
+		});
+	</script>
 </html>
