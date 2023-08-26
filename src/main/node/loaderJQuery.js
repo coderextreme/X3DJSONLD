@@ -1,6 +1,6 @@
 // let SaxonJS = require("saxon-js");
 
-if (typeof loadSchema === 'undefined' && typeof window !== 'undefined') {
+if (typeof loadSchema === 'undefined' && typeof window !== 'undefined') {) {
 	loadSchema = window.loadSchema;
 }
 
@@ -98,9 +98,7 @@ function loadXmlBrowsers(xml) {
 		}
 		// put everthing inside Scene into the browser's Scene's innerHTML
 		// Do this inner HTML so we can sneak script tag past JQuery (BAD BAD TODO)
-		if ($('#x3domxml') && $('#x3domxml').get() && $('#x3domxml').get().length > 0) {
-			$('#x3domxml').get()[0].innerHTML = xml.replace(/((?!<X3D).)*<X3D(.|\n)*<Scene[^>]*>((.|\n)*)<\/Scene>(.|\n)*/, '$3');
-		}
+		$('#x3domxml').get()[0].innerHTML = xml.replace(/((?!<X3D).)*<X3D(.|\n)*<Scene[^>]*>((.|\n)*)<\/Scene>(.|\n)*/, '$3');
 		if (typeof x3dom !== 'undefined') {
 			x3dom.reload();
 		} else {
@@ -131,37 +129,37 @@ window.filterFiles = function filterFiles(event) {
 	});
 }
 
-function load_X_ITE_XML(content, selector) {
-	X3D (function ()
-	{
-		const browser = X3D.getBrowser(selector);
-		var importedScene = browser.createX3DFromString(content);
-		browser.replaceWorld(importedScene);
-	}, function (e) {
-		console.error("X_ITE could not replaceWorld in load_X_ITE_XML()"+e);
-	});
+async function load_X_ITE_XML(content, selector) {
+	await X3D();
+	var browser = X3D.getBrowser(selector);
+	if (typeof browser !== 'undefined' && typeof browser.createX3DFromString !== 'undefined') {
+		var importedScene = await browser.createX3DFromString(content);
+		await browser.replaceWorld(importedScene);
+	} else {
+		alert("X_ITE could not replaceWorld in load_X_ITE_XML()");
+	}
 }
 
-window.load_X_ITE_DOM = function load_X_ITE_DOM(element, selector) {
-	X3D (function ()
-	{
-		const browser = X3D.getBrowser(selector);
-		var importedScene = browser.importDocument(element);
-		browser.replaceWorld(importedScene);
-	}, function (e) {
-		console.error("X_ITE could not replaceWorld in load_X_ITE_DOM()"+e);
-	});
+window.load_X_ITE_DOM = async function load_X_ITE_DOM(element, selector) {
+	await X3D();
+	var browser = X3D.getBrowser(selector);
+	if (typeof browser !== 'undefined' && typeof browser.importDocument !== 'undefined') {
+		var importedScene = await browser.importDocument(element);
+		await browser.replaceWorld(importedScene);
+	} else {
+		alert("X_ITE could not replaceWorld in load_X_ITE_DOM()");
+	}
 }
 
-window.load_X_ITE_JS = function load_X_ITE_JS(jsobj, selector) {
-	X3D (function ()
-	{
-		const browser = X3D.getBrowser(selector);
-		var importedScene = browser.importJS(jsobj);
-		browser.replaceWorld(importedScene);
-	}, function (e) {
-		console.error("X_ITE could not replaceWorld in load_X_ITE_JS()"+e);
-	});
+window.load_X_ITE_JS = async function load_X_ITE_JS(jsobj, selector) {
+	await X3D();
+	var browser = X3D.getBrowser(selector);
+	if (typeof browser !== 'undefined' && typeof browser.importJS !== 'undefined') {
+		var importedScene = await browser.importJS(jsobj);
+		await browser.replaceWorld(importedScene);
+	} else {
+		alert("X_ITE could not replaceWorld in load_X_ITE_JS()");
+	}
 }
 
 if (typeof mapToMethod !== 'undefined') {
@@ -175,13 +173,11 @@ if (typeof mapToMethod !== 'undefined') {
 window.loadX3DJS_X3DOM = function (selector, DOMImplementation, jsobj, path, NS, callback) {
 	X3DJSONLD.x3djsonNS = NS;
 	loadSchema(jsobj, path, function() {
-		if ($(selector) && $(selector).length > 0) {
-			var doc = $(selector)[0];
-			if (doc && doc.hasRuntime && doc.runtime.ready) {
-				var child = doc.runtime.createX3DFromJS(jsobj, path);
-				var xml = X3DJSONLD.serializeDOM(jsobj, child, true);
-				callback(child, xml);
-			}
+		var doc = $(selector)[0];
+		if (doc && doc.hasRuntime && doc.runtime.ready) {
+			var child = doc.runtime.createX3DFromJS(jsobj, path);
+			var xml = X3DJSONLD.serializeDOM(jsobj, child, true);
+			callback(child, xml);
 		} else {
 			// if no X3DOM, try our techniques.
 			var child;
@@ -213,7 +209,7 @@ window.loadX3DJS_X_ITE = function loadX3DJS_X_ITE(selector, DOMImplementation, j
 					alert("X_ITE could not importJS loadX3DJS_X_ITE()");
 				}
 			} else {
-				alert("X_ITE could not replaceWorld in loadX3DJS_X_ITE()"+e);
+				alert("X_ITE could not replaceWorld in loadX3DJS_X_ITE()");
 			}
 		}, function() {
 			alert("Failed to render JSON to X_ITE");
@@ -394,15 +390,13 @@ window.replaceX3DJSON = function replaceX3DJSON(selector, json, url, NS, next) {
 					return false;
 				}
 			}
-			if ($(selector) && $(selector).length > 0) {
-				var doc = $(selector)[0];
-				if (doc && doc.hasRuntime && doc.runtime.ready) {
-					try {
-						doc.runtime.replaceWorld(element);
-					} catch (e) {
-						alert(e);
-						console.error(e);
-					}
+			var doc = $(selector)[0];
+			if (doc && doc.hasRuntime && doc.runtime.ready) {
+				try {
+					doc.runtime.replaceWorld(element);
+				} catch (e) {
+					alert(e);
+					console.error(e);
 				}
 			} else {
 				console.error("Cannot find X3DOM document in replaceX3DJSON()");
@@ -416,7 +410,7 @@ window.replaceX3DJSON = function replaceX3DJSON(selector, json, url, NS, next) {
 	});
 }
 
-window.updateFromJson = function updateFromJson(json, path) {
+window.updateFromJson = async function updateFromJson(json, path) {
 	try {
 		if (typeof json === 'undefined') {
 				json = JSON.parse($("#json").val());
@@ -444,20 +438,22 @@ function updateFromPly(path) {
 	updateFromJson(json, path);
 }
 
-window.updateFromXml = function updateFromXml(path) {
+window.updateFromXml = async function updateFromXml(path) {
 	// var json = convertXmlToJson($('#xml').val(), path);
 	// updateFromJson(json, path);
-	X3D (function ()
-	{
-		const browser = X3D.getBrowser("#x_itexml");
+	await X3D();
+	var browser = X3D.getBrowser("#x_itexml");
+	if (typeof browser !== 'undefined' && typeof browser.createX3DFromString !== 'undefined') {
 		let content = $('#xml').val();
-		var importedScene = browser.createX3DFromString(content);
+		alert(content);
+		var importedScene = await browser.createX3DFromString(content);
 		let json = browser.toJSONString();
+		alert(json);
 		updateFromJson(JSON.parse(json), path);
-		browser.replaceWorld(importedScene);
-	}, function (e) {
-		alert("X_ITE could not replaceWorld in load_X_ITE_XML()"+e);
-	});
+		await browser.replaceWorld(importedScene);
+	} else {
+		alert("X_ITE could not replaceWorld in load_X_ITE_XML()");
+	}
 }
 
 function loadXml(url) {
