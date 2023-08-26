@@ -63,6 +63,9 @@ var X3DJSONLD = {
             if (element != null) {
                 return X3DJSONLD.ConvertToX3DOM(document, jsobj, "", element, 'foo.json', undefined);
             }
+            else {
+                return element;
+            }
         },
         getDocument: function () {
             return document;
@@ -329,7 +332,7 @@ var X3DJSONLD = {
             } else if (key === 'Inline') {
                 var localArray = object[key]["@url"];
                 // console.error("Loading", localArray, "at", path, "into", key);
-                X3DJSONLD.loadURLs(path, localArray, function(jsobj, path) {
+                X3DJSONLD.loadURLs(path, localArray, function(jsobj, path) : void {
                     // console.error("Read", jsobj);
                     try {
                         // console.error("Loading", jsobj, "into inline");
