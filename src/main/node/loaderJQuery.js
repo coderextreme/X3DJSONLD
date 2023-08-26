@@ -136,7 +136,7 @@ window.filterFiles = function filterFiles(event) {
 
 async function load_X_ITE_XML(content, selector) {
 	await X3D();
-	var browser = X3D.getBrowser(selector);
+	const browser = X3D.getBrowser(selector);
 	if (typeof browser !== 'undefined' && typeof browser.createX3DFromString !== 'undefined') {
 		var importedScene = await browser.createX3DFromString(content);
 		await browser.replaceWorld(importedScene);
@@ -147,7 +147,7 @@ async function load_X_ITE_XML(content, selector) {
 
 window.load_X_ITE_DOM = async function load_X_ITE_DOM(element, selector) {
 	await X3D();
-	var browser = X3D.getBrowser(selector);
+	const browser = X3D.getBrowser(selector);
 	if (typeof browser !== 'undefined' && typeof browser.importDocument !== 'undefined') {
 		var importedScene = await browser.importDocument(element);
 		await browser.replaceWorld(importedScene);
@@ -158,7 +158,7 @@ window.load_X_ITE_DOM = async function load_X_ITE_DOM(element, selector) {
 
 window.load_X_ITE_JS = async function load_X_ITE_JS(jsobj, selector) {
 	await X3D();
-	var browser = X3D.getBrowser(selector);
+	const browser = X3D.getBrowser(selector);
 	if (typeof browser !== 'undefined' && typeof browser.importJS !== 'undefined') {
 		var importedScene = await browser.importJS(jsobj);
 		await browser.replaceWorld(importedScene);
@@ -209,7 +209,7 @@ window.loadX3DJS_X_ITE = function loadX3DJS_X_ITE(selector, DOMImplementation, j
 	loadSchema(jsobj, path, function() {
 		X3D(function() {
 			if (typeof X3D.getBrowser !== 'undefined') {
-				var browser = X3D.getBrowser(selector);
+				const browser = X3D.getBrowser(selector);
 				if (typeof browser !== 'undefined' && typeof browser.importJS !== 'undefined') {
 					browser.importJS(jsobj, function(child) {
 						var xml = X3DJSONLD.serializeDOM(jsobj, child.dom, true);
@@ -456,7 +456,7 @@ window.updateFromXml = async function updateFromXml(path) {
 	// var json = convertXmlToJson($('#xml').val(), path);
 	// updateFromJson(json, path);
 	await X3D();
-	var browser = X3D.getBrowser("#x_itexml");
+	const browser = X3D.getBrowser("#x_itexml");
 	if (typeof browser !== 'undefined' && typeof browser.createX3DFromString !== 'undefined') {
 		let content = $('#xml').val();
 		alert(content);
