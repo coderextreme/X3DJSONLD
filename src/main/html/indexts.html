@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>X3D JSON Loader</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta name="viewport"/>
+    <!--
+    <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css">
+    <script type='text/javascript' src='https://www.x3dom.org/download/dev/x3dom-full.debug.js'> </script>
+    -->
+<link rel="stylesheet" type="text/css" href="https://create3000.github.io/code/x_ite/latest/dist/x_ite.css"/>
+<script type="text/javascript" src="https://create3000.github.io/code/x_ite/latest/x_ite.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript">var exports = {};</script>
+    <script type="text/javascript" src="https://unpkg.com/exificient.js@0.0.5/dist/exificient.js"></script>
+    <style type="text/css">
+    x3d-canvas {
+        background:#000;
+	width: 150px;
+	height:75px;
+    }
+    X3D {
+        background:#000;
+	width: 150px;
+	height:75px;
+    }
+    #image {
+        background:#000;
+	width: 150px;
+	height:75px;
+    }
+    table td, table td * {
+        vertical-align: top;
+    }
+/* unvisited link */
+a:link {
+    color: red;
+}
+
+/* visited link */
+a:visited {
+    color: green;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+    </style>
+</head>
+<body>
+<table>
+<tr>
+<td>
+<select id="file">
+<option>../personal/abox.json</option>
+<option>../personal/abox.new.json</option>
+<option>../personal/app.json</option>
+<option>../personal/app.new.json</option>
+<option>../personal/arcold.json</option>
+<option>../personal/arcold.new.json</option>
+<option>../personal/asmallbox.json</option>
+<option>../personal/asmallbox.new.json</option>
+<option>../personal/asteroids.json</option>
+<option>../personal/asteroids.new.json</option>
+<option>../personal/ball.json</option>
+<option>../personal/ball.new.json</option>
+<option>../personal/BoxEm.json</option>
+<option>../personal/BoxEm.new.json</option>
+<option>../personal/browser.json</option>
+<option>../personal/browser.new.json</option>
+<option>../personal/bub.json</option>
+<option>../personal/bub.new.json</option>
+<option>../personal/bubble.json</option>
+<option>../personal/bubble.new.json</option>
+<option>../personal/bubbles.json</option>
+<option>../personal/bubbles.new.json</option>
+<option>../personal/bubs.json</option>
+<option>../personal/bubs.new.json</option>
+<option>../personal/bubs2.json</option>
+<option>../personal/bubs2.new.json</option>
+<option>../personal/bubs3.json</option>
+<option>../personal/bubs3.new.json</option>
+<option>../personal/cube.json</option>
+<option>../personal/cube.new.json</option>
+<option>../personal/extrusion.json</option>
+<option>../personal/extrusion.new.json</option>
+<option>../personal/flower.json</option>
+<option>../personal/flower.new.json</option>
+<option>../personal/flower3.json</option>
+<option>../personal/flower3.new.json</option>
+<option>../personal/flowerproto.json</option>
+<option>../personal/flowerproto.new.json</option>
+<option>../personal/flowers.json</option>
+<option>../personal/flowers.new.json</option>
+<option>../personal/flowers2.json</option>
+<option>../personal/flowers2.new.json</option>
+<option>../personal/flowers4.json</option>
+<option>../personal/flowers4.new.json</option>
+<option>../personal/flowers7.json</option>
+<option>../personal/flowers7.new.json</option>
+<option>../personal/force.json</option>
+<option>../personal/force.new.json</option>
+<option>../personal/forcenode.json</option>
+<option>../personal/forcenode.new.json</option>
+<option>../personal/fors.json</option>
+<option>../personal/fors.new.json</option>
+<option>../personal/fors2.json</option>
+<option>../personal/fors2.new.json</option>
+<option>../personal/freewrlflowers.json</option>
+<option>../personal/freewrlflowers.new.json</option>
+<option>../personal/gears.json</option>
+<option>../personal/gears.new.json</option>
+<option>../personal/geo.json</option>
+<option>../personal/geo.new.json</option>
+<option>../personal/geobubbles.json</option>
+<option>../personal/geobubbles.new.json</option>
+<option>../personal/glflowers.json</option>
+<option>../personal/glflowers.new.json</option>
+<option>../personal/ifscube.json</option>
+<option>../personal/ifscube.new.json</option>
+<option>../personal/ifscubeworks.json</option>
+<option>../personal/ifscubeworks.new.json</option>
+<option>../personal/john.json</option>
+<option>../personal/john.new.json</option>
+<option>../personal/john2.json</option>
+<option>../personal/john2.new.json</option>
+<option>../personal/john3.json</option>
+<option>../personal/john3.new.json</option>
+<option>../personal/mirror.json</option>
+<option>../personal/mirror.new.json</option>
+<option>../personal/mirror2.json</option>
+<option>../personal/mirror2.new.json</option>
+<option>../personal/MyBounce.json</option>
+<option>../personal/MyBounce.new.json</option>
+<option>../personal/plainflowers.json</option>
+<option>../personal/plainflowers.new.json</option>
+<option>../personal/pp3.json</option>
+<option>../personal/pp3.new.json</option>
+<option>../personal/qq3.json</option>
+<option>../personal/qq3.new.json</option>
+<option>../personal/rubik.json</option>
+<option>../personal/rubik.new.json</option>
+<option>../personal/rubikFurnace.json</option>
+<option>../personal/rubikFurnace.new.json</option>
+<option>../personal/rubikOnFire.json</option>
+<option>../personal/rubikOnFire.new.json</option>
+<option>../personal/sphere.json</option>
+<option>../personal/sphere.new.json</option>
+<option>../personal/sphereflowers.json</option>
+<option>../personal/sphereflowers.new.json</option>
+<option>../personal/text.json</option>
+<option>../personal/text.new.json</option>
+<option>../personal/x3domflowers.json</option>
+<option>../personal/x3domflowers.new.json</option>
+<option></select></option>
+<input type="text" id="filter" onchange="window.filterFiles(event)">
+</td>
+<td>
+Proto Expander? <input id="prototype" type="checkbox" checked="true">
+JSON Scripts? <input id="scripting" type="checkbox" checked="true">
+Use Namespace: <select id="namespace">
+<option>http://www.web3d.org/specifications/x3d</option>
+<option>http://www.w3.org/1999/xhtml</option> <!-- X3DOM XML -->
+<option>https://www.x3dom.org/x3dom</option>
+<option>http://www.web3d.org/specifications/x3d-namespace</option>  <!-- X_ITE -->
+<option>none</option> <!-- X3DOM HTML -->
+</select>
+</td>
+</tr>
+<tr>
+	<td>
+		Click <a onclick='window.updateFromJson(undefined, $("#file option:selected").text());encodeJSON(); return false;'>here</a> to load X3D JSON text into JSON X3DOM viewer, convert to STL,  convert to EXI, and convert to XML (and display).<br>
+	</td>
+	<td>
+		Click <a onclick='window.updateFromXml($("#file option:selected").text()); return false;'>here</a> to load X3D XML into X_ITE and XML X3DOM viewer. Converts to JSON.<br>
+	</td>
+	<td>
+		Click <a onclick='window.decodeEXI4JSON();window.updateFromJson(undefined, $("#file option:selected").text()); return false;'>here</a> to convert EXI to JSON, load X3D JSON and Display.
+	</td>
+</tr>
+<tr>
+<td>
+	<textarea id="json" rows="15" cols="80"></textarea><br>
+    <X3D id="x3domjson" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showProgress="false" showStat='false' showLog='true' width='150px' height='75px' backend='webgl'>
+		<Scene>
+		</Scene>
+    </X3D>
+    <x3d-canvas id='x_itejson' cache='false'>
+           <p>Your browser may not support all features required by X_ITE!</p>
+	   <X3D>
+	   <Scene>
+	   </Scene>
+	   </X3D>
+    </x3d-canvas>
+</td>
+<td>
+	<textarea id="xml" rows="15" cols="80"></textarea><br>
+    <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showProgress="false" showStat='false' showLog='true' width='150px' height='75px' backend='webgl'>
+		<Scene id="x3domxml">
+		</Scene>
+    </X3D>
+    <x3d-canvas id='x_itexml' cache='false'>
+           <p>Your browser may not support all features required by X_ITE!</p>
+	   <X3D>
+	   <Scene>
+	   </Scene>
+	   </X3D>
+    </x3d-canvas>
+    	<div id="threejs"></div>
+</td>
+<td>
+		<textarea id="exi" rows="15" cols="80"></textarea>
+		Standard Image<br></br>
+		<image height="150px" width="300px" id="image" src="">
+</td>
+</tr>
+<tr>
+<td>
+	<a href="../node/X3Dautoclass.js">X3Dautoclass.js</a>
+	Save the link and copy the text below to a the file &quot;your_file_name.js&quot; and run with, copy X3DJSAIL.4.0.full.jar and saxon-he-12.1.jar to the same folder and run:  $ jjs -cp X3DJSAIL.4.0.full.jar your_file_name.js .
+<textarea id="java" rows="15" cols="80"></textarea><br>
+</td>
+<td>
+	Click <a onclick='window.updateFromStl($("#file option:selected").text()); return false;'>here</a> to load STL text into JSON X3DOM viewer and convert to XML and JSON (and display).<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click <a id="dom">here</a> to capture a snapshot.
+<textarea id="stl" rows="15" cols="80"></textarea><br>
+</td>
+<td>
+Click <a onclick='window.updateFromPly($("#file option:selected").text()); return false;'>here</a> to load PLY text into JSON X3DOM viewer and convert to XML and JSON (and display).<br>
+<textarea id="ply" rows="15" cols="80"></textarea><br>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</body>
+	<script src="../node/ajvAll.js"></script>
+	<script src="../node/config.js"></script>
+	<script src="../node/fieldTypes.js"></script>
+	<script src="../node/PrototypeExpander.js"></script>
+	<script src="../node/DOMSerializer.js"></script>
+	<script src="../ts/X3DJSONLD.js"></script>
+	<script src="../node/matrix.js"></script>
+	<script src="../node/convertJsonToStl.js"></script>
+	<script src="../node/convertPlyToJson.js"></script>
+	<script src="../node/convertStlToJson.js"></script>
+	<script src="../node/exi.js"></script>
+	<script src="../node/JavaScriptSerializer.js"></script>
+	<script src="../node/mapToMethod.js"></script>
+	<script src="../node/mapToMethod2.js"></script>
+	<script src="../node/PythonSerializer.js"></script>
+	<script src="../node/Script.js"></script>
+	<script src="../node/Three2Serializer.js"></script>
+	<script src="../node/DOM2JSONSerializer.js"></script>
+	<script src="../node/loadValidate.js"></script>
+	<script src="../node/loaderJQuery.js"></script>
+	<script src="../node/loadJson.js"></script>
+    	<script type="text/javascript">
+		$(document).ready(function() {
+		console.log("Loading ball");
+			window.myLoadJson('../data/ballx_ite.json'); // does load ball.json
+		});
+	</script>
+</html>
+<!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
