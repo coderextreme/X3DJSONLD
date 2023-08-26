@@ -36,8 +36,64 @@ CACHE.validate = { };
 X3DJSONLD = Object.assign(X3DJSONLD, { processURLs : function(urls) { return urls; }});
 var selectObjectFromJSObj = X3DJSONLD.selectObjectFromJSObj;
 
+function doOneErr(err, file, version) {
+	let error = "\r\n keyword: " + err.keyword + "\r\n";
+	var instancePath = err.instancePath.replace(/^\./, "").replace(/[\.\[\]']+/g, " > ").replace(/ >[ \t]*$/, "");
+	error += " instancePath: " + instancePath+ "\n";
+	var selectedObject = X3DJSONLD.selectObjectFromJSObj(json, instancePath);
+	error += " value: " + JSON.stringify(selectedObject,
+		function(k, v) {
+		    var v2 = structuredClone(v);
+		    if (typeof v2 === 'object') {
+			    for (var o in v2) {
+				if (typeof v2[o] === 'object') {
+					    v2[o] = "|omitted|";
+				}
+			    }
+		    }
+		    return v2;
+		}) + "\n";
+	error += " location in document: " + err.instancePath + "\r\n";
+	error += " message: " + err.message + "\r\n";
+	error += " params: " + JSON.stringify(err.params) + "\r\n";
+	error += " file: " + file + "\r\n";
+	error += " version: " + version + "\r\n";
+	return error
+}
+
+function doSuppressCheck(err, file, version) {
+	let error = "";
+	if ('params' in err && 'missingProperty' in err.params && err.params.missingProperty === '@USE') {
+		if (suppress) {
+			console.log("Suppressing @USE missing property.  Use $ node x3dvalidate.js --fullreport file ... to reveal possibly confusing errors");
+		} else {
+			error += doOneErr(err, file, version);
+
+		}
+	} else if ('params' in err && 'passingSchemas' in err.params && err.params.passingSchemas === null) {
+		if (suppress) {
+			console.log("Suppressing null passingSchemas.  Use $ node x3dvalidate.js --fullreport file ... to reveal possibly confusing errors");
+		} else {
+			error += doOneErr(err, file, version);
+		}
+	} else {
+		error += doOneErr(err, file, version);
+	}
+	return error;
+
+}
+
 var doValidate = function doValidate(json, validated_version, file, success, failure, e) {
 	var retval = false;
+	try {
+		var version = json.X3D["@version"];
+	} catch (bv) {
+		bv = "Can't get X3D or perhaps @version: " + bv;
+		if (typeof alert === 'function') {
+			alert(bv);
+		}
+		console.error(bv);
+	}
 	if (e) {
 		if (typeof alert === 'function') {
 			alert(e);
@@ -55,26 +111,7 @@ var doValidate = function doValidate(json, validated_version, file, success, fai
 			*/
 			var error = "";
 			for (var e in errs) {
-				error += "\n keyword: " + errs[e].keyword + "\n";
-				var instancePath = errs[e].instancePath.replace(/^\./, "").replace(/[\.\[\]']+/g, " > ").replace(/ >[ \t]*$/, "");
-	
-				error += " instancePath: " + instancePath+ "\n";
-				var selectedObject = X3DJSONLD.selectObjectFromJSObj(json, instancePath);
-				error += " value: " + JSON.stringify(selectedObject,
-					function(k, v) {
-					    var v2 = structuredClone(v);
-					    if (typeof v2 === 'object') {
-						    for (var o in v2) {
-					    		if (typeof v2[o] === 'object') {
-								    v2[o] = "|omitted|";
-							}
-					            }
-					    }
-					    return v2;
-					}) + "\n";
-				error += " message: " + errs[e].message + "\n";
-				error += " params: " + JSON.stringify(errs[e].params) + "\n";
-				error += " file: " + file + "\n";
+				error += doSuppressCheck(errs[e], file, version);
 			}
 		}
 		if (typeof confirm !== 'function') {
