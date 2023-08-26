@@ -271,7 +271,7 @@ ConvertChildren : function(xmlDoc : Document, parentkey: string, object: object,
  * containerField is set, then the containerField is set in the elemetn.
  */
 CreateElement : function(xmlDoc : Document, key : string , x3djsonNS :string, containerField? : string) : Element {
-	var child : Element = new Element();
+	var child : Element|any = undefined;
 	if (typeof x3djsonNS === 'undefined') {
 		child = xmlDoc.createElement(key);
 	} else {
@@ -565,7 +565,7 @@ ConvertToX3DOM : function(xmlDoc : Document, object : object, parentkey : string
  * returns child element, xml document, xml string.
  */
 loadJsonIntoXml: function(domImplementation : DOMImplementation, jsobj : object, path : string) : any[] {
-	var child : Element = new Element();
+	var child : Element|any = undefined;
 	var xml : string = "";
 	[ child, xml ]  = X3DJSONLD.loadJsonIntoDom(domImplementation, jsobj, path);
 	if (!xml) {

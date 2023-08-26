@@ -270,7 +270,7 @@ var X3DJSONLD = {
      * containerField is set, then the containerField is set in the elemetn.
      */
     CreateElement: function (xmlDoc, key, x3djsonNS, containerField) {
-        var child = new Element();
+        var child = undefined;
         if (typeof x3djsonNS === 'undefined') {
             child = xmlDoc.createElement(key);
         }
@@ -581,7 +581,7 @@ var X3DJSONLD = {
      */
     loadJsonIntoXml: function (domImplementation, jsobj, path) {
         var _a;
-        var child = new Element();
+        var child = undefined;
         var xml = "";
         _a = X3DJSONLD.loadJsonIntoDom(domImplementation, jsobj, path), child = _a[0], xml = _a[1];
         if (!xml) {
