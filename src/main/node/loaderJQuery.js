@@ -132,13 +132,13 @@ window.filterFiles = function filterFiles(event) {
 }
 
 async function load_X_ITE_XML(content, selector) {
-	await X3D();
-	var browser = X3D.getBrowser(selector);
-	if (typeof browser !== 'undefined' && typeof browser.createX3DFromString !== 'undefined') {
+	try {
+		await X3D();
+		var browser = X3D.getBrowser(selector);
 		var importedScene = await browser.createX3DFromString(content);
 		await browser.replaceWorld(importedScene);
-	} else {
-		alert("X_ITE could not replaceWorld in load_X_ITE_XML()");
+	} catch (e) {
+		console.error("X_ITE could not replaceWorld in load_X_ITE_JS()");
 	}
 }
 
@@ -154,13 +154,13 @@ window.load_X_ITE_DOM = async function load_X_ITE_DOM(element, selector) {
 }
 
 window.load_X_ITE_JS = async function load_X_ITE_JS(jsobj, selector) {
-	await X3D();
-	var browser = X3D.getBrowser(selector);
-	if (typeof browser !== 'undefined' && typeof browser.importJS !== 'undefined') {
+	try {
+		await X3D();
+		var browser = X3D.getBrowser(selector);
 		var importedScene = await browser.importJS(jsobj);
 		await browser.replaceWorld(importedScene);
-	} else {
-		alert("X_ITE could not replaceWorld in load_X_ITE_JS()");
+	} catch (e) {
+		console.error("X_ITE could not replaceWorld in load_X_ITE_JS()");
 	}
 }
 
