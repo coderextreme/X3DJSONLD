@@ -1,6 +1,6 @@
 // let SaxonJS = require("saxon-js");
 
-if (typeof loadSchema === 'undefined') {
+if (typeof loadSchema === 'undefined' && typeof window !== 'undefined') {
 	loadSchema = window.loadSchema;
 }
 
@@ -131,37 +131,37 @@ window.filterFiles = function filterFiles(event) {
 	});
 }
 
-async function load_X_ITE_XML(content, selector) {
-	try {
-		await X3D();
-		var browser = X3D.getBrowser(selector);
-		var importedScene = await browser.createX3DFromString(content);
-		await browser.replaceWorld(importedScene);
-	} catch (e) {
-		console.error("X_ITE could not replaceWorld in load_X_ITE_JS()");
-	}
+function load_X_ITE_XML(content, selector) {
+	X3D (function ()
+	{
+		const browser = X3D.getBrowser(selector);
+		var importedScene = browser.createX3DFromString(content);
+		browser.replaceWorld(importedScene);
+	}, function (e) {
+		console.error("X_ITE could not replaceWorld in load_X_ITE_XML()"+e);
+	});
 }
 
-window.load_X_ITE_DOM = async function load_X_ITE_DOM(element, selector) {
-	await X3D();
-	var browser = X3D.getBrowser(selector);
-	if (typeof browser !== 'undefined' && typeof browser.importDocument !== 'undefined') {
-		var importedScene = await browser.importDocument(element);
-		await browser.replaceWorld(importedScene);
-	} else {
-		alert("X_ITE could not replaceWorld in load_X_ITE_DOM()");
-	}
+window.load_X_ITE_DOM = function load_X_ITE_DOM(element, selector) {
+	X3D (function ()
+	{
+		const browser = X3D.getBrowser(selector);
+		var importedScene = browser.importDocument(element);
+		browser.replaceWorld(importedScene);
+	}, function (e) {
+		console.error("X_ITE could not replaceWorld in load_X_ITE_DOM()"+e);
+	});
 }
 
-window.load_X_ITE_JS = async function load_X_ITE_JS(jsobj, selector) {
-	try {
-		await X3D();
-		var browser = X3D.getBrowser(selector);
-		var importedScene = await browser.importJS(jsobj);
-		await browser.replaceWorld(importedScene);
-	} catch (e) {
-		console.error("X_ITE could not replaceWorld in load_X_ITE_JS()");
-	}
+window.load_X_ITE_JS = function load_X_ITE_JS(jsobj, selector) {
+	X3D (function ()
+	{
+		const browser = X3D.getBrowser(selector);
+		var importedScene = browser.importJS(jsobj);
+		browser.replaceWorld(importedScene);
+	}, function (e) {
+		console.error("X_ITE could not replaceWorld in load_X_ITE_JS()"+e);
+	});
 }
 
 if (typeof mapToMethod !== 'undefined') {
@@ -213,7 +213,7 @@ window.loadX3DJS_X_ITE = function loadX3DJS_X_ITE(selector, DOMImplementation, j
 					alert("X_ITE could not importJS loadX3DJS_X_ITE()");
 				}
 			} else {
-				alert("X_ITE could not replaceWorld in loadX3DJS_X_ITE()");
+				alert("X_ITE could not replaceWorld in loadX3DJS_X_ITE()"+e);
 			}
 		}, function() {
 			alert("Failed to render JSON to X_ITE");
@@ -416,7 +416,7 @@ window.replaceX3DJSON = function replaceX3DJSON(selector, json, url, NS, next) {
 	});
 }
 
-window.updateFromJson = async function updateFromJson(json, path) {
+window.updateFromJson = function updateFromJson(json, path) {
 	try {
 		if (typeof json === 'undefined') {
 				json = JSON.parse($("#json").val());
@@ -444,22 +444,20 @@ function updateFromPly(path) {
 	updateFromJson(json, path);
 }
 
-window.updateFromXml = async function updateFromXml(path) {
+window.updateFromXml = function updateFromXml(path) {
 	// var json = convertXmlToJson($('#xml').val(), path);
 	// updateFromJson(json, path);
-	await X3D();
-	var browser = X3D.getBrowser("#x_itexml");
-	if (typeof browser !== 'undefined' && typeof browser.createX3DFromString !== 'undefined') {
+	X3D (function ()
+	{
+		const browser = X3D.getBrowser("#x_itexml");
 		let content = $('#xml').val();
-		alert(content);
-		var importedScene = await browser.createX3DFromString(content);
+		var importedScene = browser.createX3DFromString(content);
 		let json = browser.toJSONString();
-		alert(json);
 		updateFromJson(JSON.parse(json), path);
-		await browser.replaceWorld(importedScene);
-	} else {
-		alert("X_ITE could not replaceWorld in load_X_ITE_XML()");
-	}
+		browser.replaceWorld(importedScene);
+	}, function (e) {
+		alert("X_ITE could not replaceWorld in load_X_ITE_XML()"+e);
+	});
 }
 
 function loadXml(url) {
