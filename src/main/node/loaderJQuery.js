@@ -98,7 +98,9 @@ function loadXmlBrowsers(xml) {
 		}
 		// put everthing inside Scene into the browser's Scene's innerHTML
 		// Do this inner HTML so we can sneak script tag past JQuery (BAD BAD TODO)
-		$('#x3domxml').get()[0].innerHTML = xml.replace(/((?!<X3D).)*<X3D(.|\n)*<Scene[^>]*>((.|\n)*)<\/Scene>(.|\n)*/, '$3');
+		if ($('#x3domxml') && $('#x3domxml').get() && $('#x3domxml').get().length > 0) {
+			$('#x3domxml').get()[0].innerHTML = xml.replace(/((?!<X3D).)*<X3D(.|\n)*<Scene[^>]*>((.|\n)*)<\/Scene>(.|\n)*/, '$3');
+		}
 		if (typeof x3dom !== 'undefined') {
 			x3dom.reload();
 		} else {
@@ -173,11 +175,13 @@ if (typeof mapToMethod !== 'undefined') {
 window.loadX3DJS_X3DOM = function (selector, DOMImplementation, jsobj, path, NS, callback) {
 	X3DJSONLD.x3djsonNS = NS;
 	loadSchema(jsobj, path, function() {
-		var doc = $(selector)[0];
-		if (doc && doc.hasRuntime && doc.runtime.ready) {
-			var child = doc.runtime.createX3DFromJS(jsobj, path);
-			var xml = X3DJSONLD.serializeDOM(jsobj, child, true);
-			callback(child, xml);
+		if ($(selector) && $(selector).length > 0) {
+			var doc = $(selector)[0];
+			if (doc && doc.hasRuntime && doc.runtime.ready) {
+				var child = doc.runtime.createX3DFromJS(jsobj, path);
+				var xml = X3DJSONLD.serializeDOM(jsobj, child, true);
+				callback(child, xml);
+			}
 		} else {
 			// if no X3DOM, try our techniques.
 			var child;
@@ -390,13 +394,15 @@ window.replaceX3DJSON = function replaceX3DJSON(selector, json, url, NS, next) {
 					return false;
 				}
 			}
-			var doc = $(selector)[0];
-			if (doc && doc.hasRuntime && doc.runtime.ready) {
-				try {
-					doc.runtime.replaceWorld(element);
-				} catch (e) {
-					alert(e);
-					console.error(e);
+			if ($(selector) && $(selector).length > 0) {
+				var doc = $(selector)[0];
+				if (doc && doc.hasRuntime && doc.runtime.ready) {
+					try {
+						doc.runtime.replaceWorld(element);
+					} catch (e) {
+						alert(e);
+						console.error(e);
+					}
 				}
 			} else {
 				console.error("Cannot find X3DOM document in replaceX3DJSON()");
