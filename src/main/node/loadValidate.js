@@ -67,6 +67,7 @@ function doSuppressCheck(err, file, version) {
 	if ('params' in err && 'missingProperty' in err.params && err.params.missingProperty === '@USE') {
 		if (suppress) {
 			console.log("Suppressing @USE missing property.  Use $ node x3dvalidate.js --fullreport file ... to reveal possibly confusing errors");
+			error += "Suppressed.  See console log";
 		} else {
 			error += doOneErr(err, file, version);
 
@@ -74,6 +75,7 @@ function doSuppressCheck(err, file, version) {
 	} else if ('params' in err && 'passingSchemas' in err.params && err.params.passingSchemas === null) {
 		if (suppress) {
 			console.log("Suppressing null passingSchemas.  Use $ node x3dvalidate.js --fullreport file ... to reveal possibly confusing errors");
+			error += "Suppressed.  See console log";
 		} else {
 			error += doOneErr(err, file, version);
 		}
