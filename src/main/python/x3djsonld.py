@@ -172,7 +172,7 @@ def parseObject(parent, data,indent):
                 
             if key in ("head"):
                 out += key+"(\n"
-                #out += "children=[\n"
+                out += "children=[\n"
                 out += parseObject(k, v,indent+2)
                 #out += "]"
                 out += "])"

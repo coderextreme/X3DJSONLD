@@ -1,7 +1,14 @@
-// var myAjv2020 = require("./ajvAll.js");
 if (typeof myAjv2020 === 'undefined') {
-	var Ajv2020 = window.Ajv2020;
-	var addFormats = window.addFormats;
+	var myAjv2020 = require("./ajvAll.js");
+	var Ajv2020 = myAjv2020["Ajv2020"];
+	var addFormats = myAjv2020["addFormats"];
+	if (typeof window === 'undefined') {
+		var Ajv2020 = require("ajv/dist/2020");
+		var addFormats = require("ajv-formats");
+	} else {
+		var Ajv2020 = window.Ajv2020;
+		var addFormats = window.addFormats;
+	}
 } else {
 	var Ajv2020 = myAjv2020["Ajv2020"];
 	var addFormats = myAjv2020["addFormats"];
