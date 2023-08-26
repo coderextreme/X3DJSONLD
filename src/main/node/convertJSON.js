@@ -15,9 +15,9 @@ var replaceX3DJSON = loadValidate.replaceX3DJSON;
 var loadSchema = loadValidate.loadSchema;
 var loadX3DJS = loadValidate.loadX3DJS;
 var doValidate = loadValidate.doValidate;
-console.log("DOM", DOMImplementation);
+//console.log("DOM", DOMImplementation);
 var domImpl = new DOMImplementation();
-console.log("DOM Impl", domImpl);
+//console.log("DOM Impl", domImpl);
 
 var LOG = Script.LOG;
 X3DJSONLD = Object.assign(X3DJSONLD, { processURLs : function(urls) { return urls; }});

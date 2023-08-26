@@ -8104,8 +8104,10 @@ Object.defineProperty(exports, '__esModule', { value: true });
 const Ajv2020 = require("ajv/dist/2020");
 const addFormats = require("ajv-formats");
 
-window.Ajv2020 = Ajv2020;
-window.addFormats = addFormats;
+if (typeof window !== 'undefined') {
+	window.Ajv2020 = Ajv2020;
+	window.addFormats = addFormats;
+}
 
 module.exports = {
 	Ajv2020: Ajv2020,
