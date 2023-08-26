@@ -54,21 +54,23 @@ if (typeof console !== 'undefined') {
 var X3DJSONLD = {
 x3djsonNS : "",
 Browser : {
-	print : function(str : string) { if (typeof console !== 'undefined' && typeof str !== 'undefined') console.error(str); },
-	println : function(str :string) { if (typeof console !== 'undefined' && typeof str !== 'undefined') console.error(str); },
-	stringToArray : function(clazz, obj : object) {
+	print : function(str : string) : void { if (typeof console !== 'undefined' && typeof str !== 'undefined') console.error(str); },
+	println : function(str :string) : void { if (typeof console !== 'undefined' && typeof str !== 'undefined') console.error(str); },
+	stringToArray : function(clazz, obj : object) : object {
 		if (typeof obj === 'object') {
 			return obj;
 		} else {
 			return JSON.parse('['+obj+']');
 		}
 	},
-	appendTo : function(element : Element, jsobj : object) {
+	appendTo : function(element : Element, jsobj : object) : Element {
 		 if (element != null) {
 			 return X3DJSONLD.ConvertToX3DOM(document, jsobj, "", element, 'foo.json', undefined);
+		 } else {
+			return element;
 		 }
 	},
-	getDocument : function() {
+	getDocument : function() : Document {
 		return document;
 	}
 },
@@ -158,7 +160,7 @@ processURLs: function(localArray : string[], path : string) : string[] {
  * original URL the main JSON got laoded from, Urls is the se of urls, and
  * the loadedCallback returns the data and the URL it was loaded from.
  */
-loadURLs : function(loadpath : string, urls : string[], loadedCallback : Function, protoexp, done, externProtoDeclare, obj : object) {
+loadURLs : function(loadpath : string, urls : string[], loadedCallback : Function, protoexp, done, externProtoDeclare, obj : object) : void {
 	if (typeof urls !== 'undefined') {
 		// console.error("Preprocessed", urls)
 		urls = X3DJSONLD.processURLs(urls, loadpath);
@@ -235,7 +237,7 @@ loadURLs : function(loadpath : string, urls : string[], loadedCallback : Functio
  * Yet another way to set an attribute on an element.  does not allow you to
  * set JSON schema or encoding.
  */
-elementSetAttribute : function(element, key, value) {
+elementSetAttribute : function(element : Element, key : string, value : string) : void {
 	if (key === 'SON schema') {
 		// JSON Schema
 	} else if (key === 'ncoding') {
@@ -250,8 +252,8 @@ elementSetAttribute : function(element, key, value) {
 /**
  * converts children of object to DOM.
  */
-ConvertChildren : function(xmlDoc, parentkey, object, element, path) {
-	var key;
+ConvertChildren : function(xmlDoc : Document, parentkey: string, object: object, element: Element, path: string) : void {
+	var key : string;
 
 	for (key in object) {
 		if (typeof object[key] === 'object') {
@@ -268,7 +270,7 @@ ConvertChildren : function(xmlDoc, parentkey, object, element, path) {
  * a method to create and element with tagnam key to DOM in a namespace.  If
  * containerField is set, then the containerField is set in the elemetn.
  */
-CreateElement : function(xmlDoc : Document, key : string , x3djsonNS, containerField? : string) : Element {
+CreateElement : function(xmlDoc : Document, key : string , x3djsonNS :string, containerField? : string) : Element {
 	var child : Element = new Element();
 	if (typeof x3djsonNS === 'undefined') {
 		child = xmlDoc.createElement(key);
@@ -290,7 +292,7 @@ CreateElement : function(xmlDoc : Document, key : string , x3djsonNS, containerF
 /**
  * a way to create a CDATA function or script in HTML, by using a DOM parser.
  */
-CDATACreateFunction : function(xmlDoc : Document, element : Element, str : string) {
+CDATACreateFunction : function(xmlDoc : Document, element : Element, str : string) : void {
 	var y = str.trim().replace(/\\"/g, "\\\"")
 		.replace(/&lt;/g, "<")
 		.replace(/&gt;/g, ">")
@@ -309,14 +311,14 @@ CDATACreateFunction : function(xmlDoc : Document, element : Element, str : strin
 /**
  * set the CDATA create function.
  */
-setCDATACreateFunction : function(fnc) {
+setCDATACreateFunction : function(fnc : (xmlDoc: Document, element: Element, str: string) => void) : void {
 	X3DJSONLD.CDATACreateFunction = fnc;
 },
 
 /**
  * convert the object at object[key] to DOM.
  */
-ConvertObject : function(xmlDoc : Document, key : string, object : object, element : Element, path :string, containerField? : string) {
+ConvertObject : function(xmlDoc : Document, key : string, object : object, element : Element, path :string, containerField? : string) : void {
 	if (object !== null && typeof object[key] === 'object') {
 		if (key.startsWith('@')) {
 			X3DJSONLD.ConvertToX3DOM(xmlDoc, object[key], key, element, path, undefined);
@@ -331,7 +333,7 @@ ConvertObject : function(xmlDoc : Document, key : string, object : object, eleme
 		} else if (key === 'Inline') {
 			var localArray = object[key]["@url"];
 			// console.error("Loading", localArray, "at", path, "into", key);
-			X3DJSONLD.loadURLs(path, localArray, function(jsobj, path) {
+			X3DJSONLD.loadURLs(path, localArray, function(jsobj, path) : void {
 				// console.error("Read", jsobj);
 				try {
 					// console.error("Loading", jsobj, "into inline");
@@ -408,7 +410,7 @@ ConvertObject : function(xmlDoc : Document, key : string, object : object, eleme
 /**
  * convert a comment string in JavaScript to XML.  Pass the string
  */
-CommentStringToXML : function(str : string) {
+CommentStringToXML : function(str : string) : string {
 	str = str.replace(/\\\\/g, '\\');
 	return str;
 },
@@ -416,7 +418,7 @@ CommentStringToXML : function(str : string) {
 /**
  * convert an SFString to XML.
  */
-SFStringToXML : function(str : string) {
+SFStringToXML : function(str : string) : string {
 	var y = str;
 	/*
 	str = (""+str).replace(/\\\\/g, '\\\\');
@@ -434,7 +436,7 @@ SFStringToXML : function(str : string) {
 /**
  * convert a JSON String to XML.
  */
-JSONStringToXML : function(str : string) {
+JSONStringToXML : function(str : string) : string {
 	var y = str;
 	str = str.replace(/\\/g, '\\\\');
 	str = str.replace(/\n/g, '\\n');
@@ -452,7 +454,7 @@ JSONStringToXML : function(str : string) {
  * path is the path the JSON was loaded from.
  * containerField is a possible containerField.
  */
-ConvertToX3DOM : function(xmlDoc : Document, object : object, parentkey : string, element : Element, path : string, containerField? : string) {
+ConvertToX3DOM : function(xmlDoc : Document, object : object, parentkey : string, element : Element, path : string, containerField? : string) : Element {
 	var key : any;
 	var localArray : string[] = [];
 	var isArray = false;
@@ -562,7 +564,7 @@ ConvertToX3DOM : function(xmlDoc : Document, object : object, parentkey : string
  *
  * returns child element, xml document, xml string.
  */
-loadJsonIntoXml: function(domImplementation : DOMImplementation, jsobj : object, path : string) {
+loadJsonIntoXml: function(domImplementation : DOMImplementation, jsobj : object, path : string) : any[] {
 	var child : Element = new Element();
 	var xml : string = "";
 	[ child, xml ]  = X3DJSONLD.loadJsonIntoDom(domImplementation, jsobj, path);
@@ -588,7 +590,7 @@ loadJsonIntoDom: function(domImplementation : DOMImplementation, jsobj : object,
 	return [ child, null ]; // TODO null until we can refactor
 },
 
-prepareDocument: function(domImplementation: DOMImplementation, jsobj) {
+prepareDocument: function(domImplementation: DOMImplementation, jsobj) : Document {
 	var version = jsobj["X3D"]["@version"];
     var docType : DocumentType = domImplementation.createDocumentType("X3D", 'ISO//Web3D//DTD X3D '+version+'//EN" "https://www.web3d.org/specifications/x3d-'+version+'.dtd', null);
 	var xmlDoc : Document = domImplementation.createDocument(null, "X3D", docType);
@@ -601,7 +603,7 @@ prepareDocument: function(domImplementation: DOMImplementation, jsobj) {
  * fixXML
  * Fix XML after it has been serialized.
  */
-fixXML : function(xmlstr: string) {
+fixXML : function(xmlstr: string) : string {
 	// get rid of self-closing tags
 	xmlstr = xmlstr.replace(/(<[ \t]*)([A-Za-z0-9]+)([^>]*)\/>/g, "$1$2$3></$2>\n");
 	// strip out namespace
@@ -636,7 +638,7 @@ fixXML : function(xmlstr: string) {
 /**
  * Serialize an element to XML and add an XML header.
  */
-serializeDOM : function(json : object, element : Element, appendDocType) {
+serializeDOM : function(json : object, element : Element, appendDocType) : string {
 	var version = "4.0";
 	var encoding = "UTF-8";
 	if (typeof json !== 'undefined') {
@@ -671,14 +673,14 @@ serializeDOM : function(json : object, element : Element, appendDocType) {
  * selectorField is a " > " separated list of properties in node.
  *
  */
-selectObjectFromJSObj : function(node : object, selectorField : string) {
+selectObjectFromJSObj : function(node : object, selectorField : string) : object | boolean {
 	selectorField = selectorField.substring(1);
-	var skipDescendants = 0; // number of descendents to skip
-	var selectedValue = node;
-	var higherValue = selectedValue;
-	var selector  = selectorField.split(/\//);
-	var depth = (selector.length - skipDescendants);
-	for (var index = 0; index < depth - 0; index++) {
+	var skipDescendants : number = 0; // number of descendents to skip
+	var selectedValue : object = node;
+	var higherValue : object = selectedValue;
+	var selector : string[] = selectorField.split(/\//);
+	var depth : number = (selector.length - skipDescendants);
+	for (var index : number = 0; index < depth - 0; index++) {
 		higherValue = selectedValue;
 		selectedValue = selectedValue[selector[index]];
 		if (typeof selectedValue === 'undefined') {
@@ -690,10 +692,10 @@ selectObjectFromJSObj : function(node : object, selectorField : string) {
 	return selectedValue;
 },
 
-setProcessURLs : function(func : (localArray: string[], path: string) => string[]) {
+setProcessURLs : function(func : (localArray: string[], path: string) => string[]) : void {
 	X3DJSONLD.processURLs = func;
 },
-setDocument : function(doc : Document) {
+setDocument : function(doc : Document) : void {
 	document = doc;
 }
 }
