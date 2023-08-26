@@ -63,6 +63,7 @@ function doOneErr(err, file, version) {
 
 function doSuppressCheck(err, file, version) {
 	let error = "";
+	let suppress = true;
 	if ('params' in err && 'missingProperty' in err.params && err.params.missingProperty === '@USE') {
 		if (suppress) {
 			console.log("Suppressing @USE missing property.  Use $ node x3dvalidate.js --fullreport file ... to reveal possibly confusing errors");
