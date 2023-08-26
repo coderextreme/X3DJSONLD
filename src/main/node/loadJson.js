@@ -8,7 +8,7 @@ async function loadJson(url) {
 window.loadJson = loadJson;
 
 $(document).ready(function() {
-	loadJson('../data/sphereflowers.json'); // does load ball.json
+	loadJson('../data/ball.json'); // does load ball.json
 });
 
 module.exports = loadJson;
