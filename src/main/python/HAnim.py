@@ -22,6 +22,7 @@ for elem in joints:
         print(enum.get('value'))
         print("Type:", "joint")
         print("Parent:", enum.get('parent'))
+        print("Index:", enum.get('index'))
         xyz = enum.get('default')
         # print(xyz)
         if xyz is not None:
@@ -46,6 +47,7 @@ for elem in sites:
         print(enum.get('value'))
         print("Type:", "site")
         print("Parent:", enum.get('parent'))
+        print("Index:", enum.get('index'))
         xyz = enum.get('default')
         if xyz is not None:
             default = xyz.split(" ")
@@ -70,3 +72,4 @@ for elem in segments:
         print(enum.get('value'))
         print("Parent:", enum.get('parent'))
         print("Type:", "segment")
+        print("Index:", enum.get('index'))
