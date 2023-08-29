@@ -41,6 +41,54 @@ Y: 0.0656 m
 Z: -0.0736 m
 
 --------------------------------
+l_talocalcaneonavicular
+Type: joint
+Parent: l_talocrural
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_cuneonavicular_1
+Type: joint
+Parent: l_talocalcaneonavicular
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_tarsometatarsal_1
+Type: joint
+Parent: l_cuneonavicular_1
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_metatarsophalangeal_1
+Type: joint
+Parent: l_tarsometatarsal_1
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_tarsal_interphalangeal_1
+Type: joint
+Parent: l_metatarsophalangeal_1
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_cuneonavicular_2
+Type: joint
+Parent: l_talocalcaneonavicular
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
 l_tarsometatarsal_2
 Type: joint
 Parent: l_cuneonavicular_2
@@ -57,12 +105,140 @@ Y: 0.0001 m
 Z: 0.0368 m
 
 --------------------------------
+l_tarsal_proximal_interphalangeal_2
+Type: joint
+Parent: l_metatarsophalangeal_2
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
 l_tarsal_distal_interphalangeal_2
 Type: joint
 Parent: l_tarsal_proximal_interphalangeal_2
 X: 0.1086 m
 Y: 0.0000 m
 Z: 0.0762 m
+
+--------------------------------
+l_cuneonavicular_3
+Type: joint
+Parent: l_talocalcaneonavicular
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_tarsometatarsal_3
+Type: joint
+Parent: l_cuneonavicular_3
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_metatarsophalangeal_3
+Type: joint
+Parent: l_tarsometatarsal_3
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_tarsal_proximal_interphalangeal_3
+Type: joint
+Parent: l_metatarsophalangeal_3
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_tarsal_distal_interphalangeal_3
+Type: joint
+Parent: l_tarsal_proximal_interphalangeal_3
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_calcaneocuboid
+Type: joint
+Parent: l_talocrural
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_transversetarsal
+Type: joint
+Parent: l_calcaneocuboid
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_tarsometatarsal_4
+Type: joint
+Parent: l_transversetarsal
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_metatarsophalangeal_4
+Type: joint
+Parent: l_tarsometatarsal_4
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_tarsal_proximal_interphalangeal_4
+Type: joint
+Parent: l_metatarsophalangeal_4
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_tarsal_distal_interphalangeal_4
+Type: joint
+Parent: l_tarsal_proximal_interphalangeal_4
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_tarsometatarsal_5
+Type: joint
+Parent: l_transversetarsal
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_metatarsophalangeal_5
+Type: joint
+Parent: l_tarsometatarsal_5
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_tarsal_proximal_interphalangeal_5
+Type: joint
+Parent: l_metatarsophalangeal_5
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_tarsal_distal_interphalangeal_5
+Type: joint
+Parent: l_tarsal_proximal_interphalangeal_5
+X: x m
+Y: y m
+Z: z m
 
 --------------------------------
 r_hip
@@ -89,6 +265,54 @@ Y: 0.0712 m
 Z: -0.0766 m
 
 --------------------------------
+r_talocalcaneonavicular
+Type: joint
+Parent: r_talocrural
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_cuneonavicular_1
+Type: joint
+Parent: r_talocalcaneonavicular
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_tarsometatarsal_1
+Type: joint
+Parent: r_cuneonavicular_1
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_metatarsophalangeal_1
+Type: joint
+Parent: r_tarsometatarsal_1
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_tarsal_interphalangeal_1
+Type: joint
+Parent: r_metatarsophalangeal_1
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_cuneonavicular_2
+Type: joint
+Parent: r_talocalcaneonavicular
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
 r_tarsometatarsal_2
 Type: joint
 Parent: r_cuneonavicular_2
@@ -105,12 +329,140 @@ Y: 0.0000 m
 Z: 0.0368 m
 
 --------------------------------
+r_tarsal_proximal_interphalangeal_2
+Type: joint
+Parent: r_metatarsophalangeal_2
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
 r_tarsal_distal_interphalangeal_2
 Type: joint
 Parent: r_tarsal_proximal_interphalangeal_2
 X: -0.0801 m
 Y: 0.0039 m
 Z: 0.0732 m
+
+--------------------------------
+r_cuneonavicular_3
+Type: joint
+Parent: r_talocalcaneonavicular
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_tarsometatarsal_3
+Type: joint
+Parent: r_cuneonavicular_3
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_metatarsophalangeal_3
+Type: joint
+Parent: r_tarsometatarsal_3
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_tarsal_proximal_interphalangeal_3
+Type: joint
+Parent: r_metatarsophalangeal_3
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_tarsal_distal_interphalangeal_3
+Type: joint
+Parent: r_tarsal_proximal_interphalangeal_3
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_calcaneocuboid
+Type: joint
+Parent: r_talocrural
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_transversetarsal
+Type: joint
+Parent: r_calcaneocuboid
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_tarsometatarsal_4
+Type: joint
+Parent: r_transversetarsal
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_metatarsophalangeal_4
+Type: joint
+Parent: r_tarsometatarsal_4
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_tarsal_proximal_interphalangeal_4
+Type: joint
+Parent: r_metatarsophalangeal_4
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_tarsal_distal_interphalangeal_4
+Type: joint
+Parent: r_tarsal_proximal_interphalangeal_4
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_tarsometatarsal_5
+Type: joint
+Parent: r_transversetarsal
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_metatarsophalangeal_5
+Type: joint
+Parent: r_tarsometatarsal_5
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_tarsal_proximal_interphalangeal_5
+Type: joint
+Parent: r_metatarsophalangeal_5
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_tarsal_distal_interphalangeal_5
+Type: joint
+Parent: r_tarsal_proximal_interphalangeal_5
+X: x m
+Y: y m
+Z: z m
 
 --------------------------------
 vl5
@@ -313,6 +665,22 @@ Y: 1.6209 m
 Z: 0.0236 m
 
 --------------------------------
+l_eyelid_joint
+Type: joint
+Parent: skullbase
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_eyelid_joint
+Type: joint
+Parent: skullbase
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
 l_eyeball_joint
 Type: joint
 Parent: skullbase
@@ -327,6 +695,30 @@ Parent: skullbase
 X: -0.0236 m
 Y: 1.6331 m
 Z: 0.0510 m
+
+--------------------------------
+l_eyebrow_joint
+Type: joint
+Parent: skullbase
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_eyebrow_joint
+Type: joint
+Parent: skullbase
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+temporomandibular
+Type: joint
+Parent: skullbase
+X: x m
+Y: y m
+Z: z m
 
 --------------------------------
 l_sternoclavicular
@@ -369,6 +761,14 @@ Y: 0.8663 m
 Z: -0.0583 m
 
 --------------------------------
+l_midcarpal_1
+Type: joint
+Parent: l_radiocarpal
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
 l_carpometacarpal_1
 Type: joint
 Parent: l_midcarpal_1
@@ -391,6 +791,14 @@ Parent: l_metacarpophalangeal_1
 X: 0.1955 m
 Y: 0.8159 m
 Z: 0.0464 m
+
+--------------------------------
+l_midcarpal_2
+Type: joint
+Parent: l_radiocarpal
+X: x m
+Y: y m
+Z: z m
 
 --------------------------------
 l_carpometacarpal_2
@@ -425,6 +833,14 @@ Y: 0.7139 m
 Z: -0.0236 m
 
 --------------------------------
+l_midcarpal_3
+Type: joint
+Parent: l_radiocarpal
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
 l_carpometacarpal_3
 Type: joint
 Parent: l_midcarpal_3
@@ -457,6 +873,14 @@ Y: 0.7011 m
 Z: -0.0494 m
 
 --------------------------------
+l_midcarpal_4_5
+Type: joint
+Parent: l_radiocarpal
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
 l_carpometacarpal_4
 Type: joint
 Parent: l_midcarpal_4_5
@@ -479,6 +903,14 @@ Parent: l_metacarpophalangeal_4
 X: 0.1973 m
 Y: 0.7287 m
 Z: -0.0777 m
+
+--------------------------------
+l_carpal_distal_interphalangeal_4
+Type: joint
+Parent: l_carpal_proximal_interphalangeal_4
+X: x m
+Y: y m
+Z: z m
 
 --------------------------------
 l_carpometacarpal_5
@@ -553,6 +985,14 @@ Y: 0.8694 m
 Z: -0.0521 m
 
 --------------------------------
+r_midcarpal_1
+Type: joint
+Parent: r_radiocarpal
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
 r_carpometacarpal_1
 Type: joint
 Parent: r_midcarpal_1
@@ -577,6 +1017,22 @@ Y: 0.8190 m
 Z: 0.0506 m
 
 --------------------------------
+r_midcarpal_2
+Type: joint
+Parent: r_radiocarpal
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_carpometacarpal_2
+Type: joint
+Parent: r_midcarpal_2
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
 r_metacarpophalangeal_2
 Type: joint
 Parent: r_carpometacarpal_2
@@ -599,6 +1055,14 @@ Parent: r_carpal_proximal_interphalangeal_2
 X: -0.1945 m
 Y: 0.7169 m
 Z: -0.0173 m
+
+--------------------------------
+r_midcarpal_3
+Type: joint
+Parent: r_radiocarpal
+X: x m
+Y: y m
+Z: z m
 
 --------------------------------
 r_carpometacarpal_3
@@ -631,6 +1095,14 @@ Parent: r_carpal_proximal_interphalangeal_3
 X: -0.1939 m
 Y: 0.7042 m
 Z: -0.0432 m
+
+--------------------------------
+r_midcarpal_4_5
+Type: joint
+Parent: r_radiocarpal
+X: x m
+Y: y m
+Z: z m
 
 --------------------------------
 r_carpometacarpal_4
@@ -705,6 +1177,13 @@ Parent: skull
 X: 0.0050 m
 Y: 1.7504 m
 Z: 0.0055 m
+--------------------------------
+glabella
+Type: site
+Parent: skull
+X: x m
+Y: y m
+Z: z m
 
 --------------------------------
 sellion
@@ -713,7 +1192,6 @@ Parent: skull
 X: 0.0058 m
 Y: 1.6316 m
 Z: 0.0852 m
-
 --------------------------------
 l_infraorbitale
 Type: site
@@ -721,7 +1199,6 @@ Parent: skull
 X: 0.0341 m
 Y: 1.6171 m
 Z: 0.0752 m
-
 --------------------------------
 l_tragion
 Type: site
@@ -729,7 +1206,6 @@ Parent: skull
 X: 0.0739 m
 Y: 1.6348 m
 Z: 0.0282 m
-
 --------------------------------
 l_gonion
 Type: site
@@ -737,7 +1213,6 @@ Parent: skull
 X: 0.0631 m
 Y: 1.5530 m
 Z: 0.0330 m
-
 --------------------------------
 r_infraorbitale
 Type: site
@@ -745,7 +1220,6 @@ Parent: skull
 X: -0.0237 m
 Y: 1.6171 m
 Z: 0.0752 m
-
 --------------------------------
 r_tragion
 Type: site
@@ -753,7 +1227,6 @@ Parent: skull
 X: -0.0646 m
 Y: 1.6347 m
 Z: 0.0302 m
-
 --------------------------------
 r_gonion
 Type: site
@@ -761,7 +1234,6 @@ Parent: skull
 X: -0.0520 m
 Y: 1.5529 m
 Z: 0.0347 m
-
 --------------------------------
 supramenton
 Type: site
@@ -769,7 +1241,6 @@ Parent: jaw
 X: 0.0061 m
 Y: 1.5410 m
 Z: 0.0805 m
-
 --------------------------------
 cervicale
 Type: site
@@ -777,6 +1248,13 @@ Parent: t1
 X: 0.0064 m
 Y: 1.520 m
 Z: -0.0815 m
+--------------------------------
+adams_apple
+Type: site
+Parent: c2
+X: x m
+Y: y m
+Z: z m
 
 --------------------------------
 suprasternale
@@ -785,7 +1263,6 @@ Parent: t1
 X: 0.0084 m
 Y: 1.4714 m
 Z: 0.0551 m
-
 --------------------------------
 substernale
 Type: site
@@ -793,7 +1270,6 @@ Parent: t10
 X: 0.0085 m
 Y: 1.2995 m
 Z: 0.1147 m
-
 --------------------------------
 l_clavicle
 Type: site
@@ -801,7 +1277,6 @@ Parent: l_clavicle
 X: 0.0271 m
 Y: 1.4943 m
 Z: 0.0394 m
-
 --------------------------------
 l_acromion
 Type: site
@@ -809,7 +1284,6 @@ Parent: l_clavicle
 X: 0.2032 m
 Y: 1.4760 m
 Z: -0.0490 m
-
 --------------------------------
 l_axilla_proximal
 Type: site
@@ -817,7 +1291,6 @@ Parent: l_clavicle
 X: 0.1777 m
 Y: 1.4065 m
 Z: -0.0075 m
-
 --------------------------------
 l_axilla_distal
 Type: site
@@ -825,6 +1298,13 @@ Parent: l_clavicle
 X: 0.1706 m
 Y: 1.4072 m
 Z: -0.0875 m
+--------------------------------
+l_axilla_posterior_folds
+Type: site
+Parent: l_clavicle
+X: x m
+Y: y m
+Z: z m
 
 --------------------------------
 r_clavicle
@@ -833,7 +1313,6 @@ Parent: r_clavicle
 X: -0.0115 m
 Y: 1.4943 m
 Z: 0.0400 m
-
 --------------------------------
 r_acromion
 Type: site
@@ -841,7 +1320,6 @@ Parent: r_clavicle
 X: -0.1905 m
 Y: 1.4791 m
 Z: -0.0431 m
-
 --------------------------------
 r_axilla_proximal
 Type: site
@@ -849,7 +1327,6 @@ Parent: r_clavicle
 X: -0.1626 m
 Y: 1.4072 m
 Z: -0.0031 m
-
 --------------------------------
 r_axilla_distal
 Type: site
@@ -857,6 +1334,21 @@ Parent: r_clavicle
 X: -0.1603 m
 Y: 1.4098 m
 Z: -0.0826 m
+--------------------------------
+r_axilla_posterior_folds
+Type: site
+Parent: r_clavicle
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+spine_1_middle_back
+Type: site
+Parent: t5
+X: x m
+Y: y m
+Z: z m
 
 --------------------------------
 spine_2_lower_back
@@ -865,6 +1357,13 @@ Parent: l2
 X: 0.0049 m
 Y: 1.1908 m
 Z: -0.1113 m
+--------------------------------
+waist_preferred_anterior
+Type: site
+Parent: l2
+X: x m
+Y: y m
+Z: z m
 
 --------------------------------
 waist_preferred_posterior
@@ -873,7 +1372,6 @@ Parent: l2
 X: 0.2900 m
 Y: 1.0915 m
 Z: -0.1091 m
-
 --------------------------------
 l_rib10
 Type: site
@@ -881,7 +1379,6 @@ Parent: l2
 X: 0.0871 m
 Y: 1.1925 m
 Z: 0.0992 m
-
 --------------------------------
 l_thelion
 Type: site
@@ -889,7 +1386,6 @@ Parent: t9
 X: 0.0918 m
 Y: 1.3382 m
 Z: 0.1192 m
-
 --------------------------------
 r_rib10
 Type: site
@@ -897,7 +1393,6 @@ Parent: l2
 X: -0.0711 m
 Y: 1.1941 m
 Z: 0.1016 m
-
 --------------------------------
 r_thelion
 Type: site
@@ -905,7 +1400,6 @@ Parent: t9
 X: -0.0736 m
 Y: 1.3385 m
 Z: 0.1217 m
-
 --------------------------------
 l_asis
 Type: site
@@ -913,7 +1407,6 @@ Parent: pelvis
 X: 0.0925 m
 Y: 0.9983 m
 Z: 0.1052 m
-
 --------------------------------
 l_iliocristale
 Type: site
@@ -921,7 +1414,6 @@ Parent: pelvis
 X: 0.1612 m
 Y: 1.0537 m
 Z: 0.0008 m
-
 --------------------------------
 l_psis
 Type: site
@@ -929,7 +1421,6 @@ Parent: pelvis
 X: 0.0774 m
 Y: 1.0190 m
 Z: -0.1151 m
-
 --------------------------------
 r_asis
 Type: site
@@ -937,7 +1428,6 @@ Parent: pelvis
 X: -0.0887 m
 Y: 1.0021 m
 Z: 0.1112 m
-
 --------------------------------
 r_iliocristale
 Type: site
@@ -945,7 +1435,6 @@ Parent: pelvis
 X: -0.1525 m
 Y: 1.0628 m
 Z: 0.0035 m
-
 --------------------------------
 r_psis
 Type: site
@@ -953,7 +1442,6 @@ Parent: pelvis
 X: -0.0716 m
 Y: 1.0190 m
 Z: -0.1138 m
-
 --------------------------------
 crotch
 Type: site
@@ -961,7 +1449,6 @@ Parent: pelvis
 X: 0.0034 m
 Y: 0.8266 m
 Z: 0.0257 m
-
 --------------------------------
 l_femoral_lateral_epicondyle
 Type: site
@@ -969,7 +1456,6 @@ Parent: l_thigh
 X: 0.1598 m
 Y: 0.4967 m
 Z: 0.0297 m
-
 --------------------------------
 l_femoral_medial_epicondyle
 Type: site
@@ -977,6 +1463,21 @@ Parent: l_thigh
 X: 0.1598 m
 Y: 0.4967 m
 Z: 0.0297 m
+--------------------------------
+l_suprapatella
+Type: site
+Parent: l_thigh
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_trochanterion
+Type: site
+Parent: pelvis
+X: x m
+Y: y m
+Z: z m
 
 --------------------------------
 r_femoral_lateral_epicondyle
@@ -985,7 +1486,6 @@ Parent: r_thigh
 X: -0.1421 m
 Y: 0.4992 m
 Z: 0.0310 m
-
 --------------------------------
 r_femoral_medial_epicondyle
 Type: site
@@ -993,6 +1493,101 @@ Parent: r_thigh
 X: -0.0221 m
 Y: 0.5014 m
 Z: 0.0289 m
+--------------------------------
+r_suprapatella
+Type: site
+Parent: r_thigh
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_trochanterion
+Type: site
+Parent: pelvis
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_tibiale
+Type: site
+Parent: l_calf
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_medial_malleolus
+Type: site
+Parent: l_calf
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_lateral_malleolus
+Type: site
+Parent: l_calf
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_sphyrion
+Type: site
+Parent: l_talus
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_tibiale
+Type: site
+Parent: r_calf
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_medial_malleolus
+Type: site
+Parent: r_calf
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_lateral_malleolus
+Type: site
+Parent: r_calf
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_sphyrion
+Type: site
+Parent: r_talus
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_metatarsal_phalanx_1
+Type: site
+Parent: l_tarsal_proximal_phalanx_1
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_metatarsal_phalanx_5
+Type: site
+Parent: l_tarsal_proximal_phalanx_5
+X: x m
+Y: y m
+Z: z m
 
 --------------------------------
 l_dactylion
@@ -1001,6 +1596,29 @@ Parent: l_carpal_distal_phalanx_2
 X: 0.2056 m
 Y: 0.6743 m
 Z: -0.0482 m
+--------------------------------
+l_calcaneus_posterior
+Type: site
+Parent: l_talus
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_metatarsal_phalanx_1
+Type: site
+Parent: r_tarsal_proximal_phalanx_1
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_metatarsal_phalanx_5
+Type: site
+Parent: r_tarsal_proximal_phalanx_5
+X: x m
+Y: y m
+Z: z m
 
 --------------------------------
 r_dactylion
@@ -1009,6 +1627,13 @@ Parent: r_carpal_distal_phalanx_2
 X: -0.1941 m
 Y: 0.6772 m
 Z: -0.0423 m
+--------------------------------
+r_calcaneus_posterior
+Type: site
+Parent: r_talus
+X: x m
+Y: y m
+Z: z m
 
 --------------------------------
 l_humeral_lateral_epicondyle
@@ -1017,7 +1642,6 @@ Parent: l_upperarm
 X: 0.2280 m
 Y: 1.1482 m
 Z: -0.1100 m
-
 --------------------------------
 l_humeral_medial_epicondyle
 Type: site
@@ -1025,7 +1649,6 @@ Parent: l_forearm
 X: 0.1735 m
 Y: 1.1272 m
 Z: -0.1113 m
-
 --------------------------------
 l_olecranon
 Type: site
@@ -1033,7 +1656,6 @@ Parent: l_forearm
 X: 0.1962 m
 Y: 1.1375 m
 Z: -0.1123 m
-
 --------------------------------
 r_humeral_lateral_epicondyle
 Type: site
@@ -1041,7 +1663,6 @@ Parent: r_upperarm
 X: -0.2224 m
 Y: 1.1517 m
 Z: -0.1033 m
-
 --------------------------------
 r_humeral_medial_epicondyle
 Type: site
@@ -1049,7 +1670,6 @@ Parent: r_forearm
 X: -0.1680 m
 Y: 1.1298 m
 Z: -0.1062 m
-
 --------------------------------
 r_olecranon
 Type: site
@@ -1057,7 +1677,6 @@ Parent: r_forearm
 X: -0.1907 m
 Y: 1.1405 m
 Z: -0.1065 m
-
 --------------------------------
 l_radiale
 Type: site
@@ -1065,7 +1684,6 @@ Parent: l_forearm
 X: 0.2182 m
 Y: 1.1212 m
 Z: -0.1167 m
-
 --------------------------------
 l_ulnar_styloid
 Type: site
@@ -1073,7 +1691,6 @@ Parent: l_carpal
 X: 0.2142 m
 Y: 0.8529 m
 Z: -0.0648 m
-
 --------------------------------
 l_radial_styloid
 Type: site
@@ -1081,7 +1698,6 @@ Parent: l_forearm
 X: 0.1901 m
 Y: 0.8645 m
 Z: -0.0415 m
-
 --------------------------------
 r_radiale
 Type: site
@@ -1089,7 +1705,6 @@ Parent: r_forearm
 X: -0.2130 m
 Y: 1.1305 m
 Z: -0.1091 m
-
 --------------------------------
 r_ulnar_styloid
 Type: site
@@ -1097,7 +1712,6 @@ Parent: r_carpal
 X: -0.2117 m
 Y: 0.8562 m
 Z: -0.0584 m
-
 --------------------------------
 r_radial_styloid
 Type: site
@@ -1105,6 +1719,53 @@ Parent: r_forearm
 X: -0.1884 m
 Y: 0.8676 m
 Z: -0.0360 m
+--------------------------------
+l_metacarpal_phalanx_2
+Type: site
+Parent: l_metacarpal_2
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_metacarpal_phalanx_3
+Type: site
+Parent: l_metacarpal_3
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_metacarpal_phalanx_5
+Type: site
+Parent: l_metacarpal_5
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_metacarpal_phalanx_2
+Type: site
+Parent: r_metacarpal_2
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_metacarpal_phalanx_3
+Type: site
+Parent: r_metacarpal_3
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_metacarpal_phalanx_5
+Type: site
+Parent: r_metacarpal_5
+X: x m
+Y: y m
+Z: z m
 
 --------------------------------
 nuchale
@@ -1113,7 +1774,6 @@ Parent: skull
 X: 0.0039 m
 Y: 1.5972 m
 Z: -0.0796 m
-
 --------------------------------
 l_neck_base
 Type: site
@@ -1121,7 +1781,6 @@ Parent: c7
 X: 0.0646 m
 Y: 1.5141 m
 Z: -0.0380 m
-
 --------------------------------
 r_neck_base
 Type: site
@@ -1129,7 +1788,6 @@ Parent: c7
 X: -0.0419 m
 Y: 1.5149 m
 Z: -0.0220 m
-
 --------------------------------
 navel
 Type: site
@@ -1137,6 +1795,45 @@ Parent: l5
 X: 0.0069 m
 Y: 1.0966 m
 Z: 0.1017 m
+--------------------------------
+l_ectocanthus
+Type: site
+Parent: skull
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_ectocanthus
+Type: site
+Parent: skull
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+menton
+Type: site
+Parent: jaw
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+mesosternale
+Type: site
+Parent: t6
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+opisthocranion
+Type: site
+Parent: skull
+X: x m
+Y: y m
+Z: z m
 
 --------------------------------
 l_knee_crease
@@ -1145,7 +1842,6 @@ Parent: l_thigh
 X: 0.0993 m
 Y: 0.4881 m
 Z: -0.0309 m
-
 --------------------------------
 r_knee_crease
 Type: site
@@ -1153,6 +1849,53 @@ Parent: r_thigh
 X: -0.0825 m
 Y: 0.4932 m
 Z: -0.0326 m
+--------------------------------
+rear_center_midsagittal_plane
+Type: site
+Parent: t6
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+buttocks_standing_wall_contact_point
+Type: site
+Parent: pelvis
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_chest_midsagittal_plane
+Type: site
+Parent: t6
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_chest_midsagittal_plane
+Type: site
+Parent: t6
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+l_bideltoid
+Type: site
+Parent: l_upperarm
+X: x m
+Y: y m
+Z: z m
+
+--------------------------------
+r_bideltoid
+Type: site
+Parent: r_upperarm
+X: x m
+Y: y m
+Z: z m
 
 --------------------------------
 l_carpal_distal_phalanx_1
@@ -1161,7 +1904,6 @@ Parent: l_carpal_distal_phalanx_1
 X: 0.1982 m
 Y: 0.8061 m
 Z: 0.0759 m
-
 --------------------------------
 l_carpal_distal_phalanx_2
 Type: site
@@ -1169,7 +1911,6 @@ Parent: l_carpal_distal_phalanx_2
 X: 0.2089 m
 Y: 0.6858 m
 Z: -0.0245 m
-
 --------------------------------
 l_carpal_distal_phalanx_3
 Type: site
@@ -1177,7 +1918,6 @@ Parent: l_carpal_distal_phalanx_3
 X: 0.2080 m
 Y: 0.6731 m
 Z: -0.0491 m
-
 --------------------------------
 l_carpal_distal_phalanx_4
 Type: site
@@ -1185,7 +1925,6 @@ Parent: l_carpal_distal_phalanx_4
 X: 0.2035 m
 Y: 0.6750 m
 Z: -0.0756 m
-
 --------------------------------
 l_carpal_distal_phalanx_5
 Type: site
@@ -1193,7 +1932,6 @@ Parent: l_carpal_distal_phalanx_5
 X: 0.2014 m
 Y: 0.7009 m
 Z: -0.1012 m
-
 --------------------------------
 r_carpal_distal_phalanx_1
 Type: site
@@ -1201,7 +1939,6 @@ Parent: r_carpal_distal_phalanx_1
 X: -0.1869 m
 Y: 0.8090 m
 Z: 0.0820 m
-
 --------------------------------
 r_carpal_distal_phalanx_2
 Type: site
@@ -1209,7 +1946,6 @@ Parent: r_carpal_distal_phalanx_2
 X: -0.1980 m
 Y: 0.6883 m
 Z: -0.0180 m
-
 --------------------------------
 r_carpal_distal_phalanx_3
 Type: site
@@ -1217,7 +1953,6 @@ Parent: r_carpal_distal_phalanx_3
 X: -0.1969 m
 Y: 0.6758 m
 Z: -0.0427 m
-
 --------------------------------
 r_carpal_distal_phalanx_4
 Type: site
@@ -1225,7 +1960,6 @@ Parent: r_carpal_distal_phalanx_4
 X: -0.1934 m
 Y: 0.6778 m
 Z: -0.0693 m
-
 --------------------------------
 r_carpal_distal_phalanx_5
 Type: site
@@ -1233,7 +1967,6 @@ Parent: r_carpal_distal_phalanx_5
 X: -0.1938 m
 Y: 0.7035 m
 Z: -0.0949 m
-
 --------------------------------
 l_tarsal_distal_phalanx_1
 Type: site
@@ -1241,7 +1974,6 @@ Parent: l_tarsal_distal_phalanx_1
 X: 0.090 m
 Y: 0.012 m
 Z: 0.188 m
-
 --------------------------------
 l_tarsal_distal_phalanx_2
 Type: site
@@ -1249,7 +1981,6 @@ Parent: l_tarsal_distal_phalanx_2
 X: 0.110 m
 Y: 0.011 m
 Z: 0.19 m
-
 --------------------------------
 l_tarsal_distal_phalanx_3
 Type: site
@@ -1257,7 +1988,6 @@ Parent: l_tarsal_distal_phalanx_3
 X: 0.128 m
 Y: 0.011 m
 Z: 0.185 m
-
 --------------------------------
 l_tarsal_distal_phalanx_4
 Type: site
@@ -1265,7 +1995,6 @@ Parent: l_tarsal_distal_phalanx_4
 X: 0.142 m
 Y: 0.011 m
 Z: 0.178 m
-
 --------------------------------
 l_tarsal_distal_phalanx_5
 Type: site
@@ -1273,7 +2002,6 @@ Parent: l_tarsal_distal_phalanx_5
 X: 0.154 m
 Y: 0.010 m
 Z: 0.168 m
-
 --------------------------------
 r_tarsal_distal_phalanx_1
 Type: site
@@ -1281,7 +2009,6 @@ Parent: r_tarsal_distal_phalanx_1
 X: -0.090 m
 Y: 0.012 m
 Z: 0.188 m
-
 --------------------------------
 r_tarsal_distal_phalanx_2
 Type: site
@@ -1289,7 +2016,6 @@ Parent: r_tarsal_distal_phalanx_2
 X: -0.110 m
 Y: 0.011 m
 Z: 0.19 m
-
 --------------------------------
 r_tarsal_distal_phalanx_3
 Type: site
@@ -1297,7 +2023,6 @@ Parent: r_tarsal_distal_phalanx_3
 X: -0.128 m
 Y: 0.011 m
 Z: 0.185 m
-
 --------------------------------
 r_tarsal_distal_phalanx_4
 Type: site
@@ -1305,7 +2030,6 @@ Parent: r_tarsal_distal_phalanx_4
 X: -0.142 m
 Y: 0.011 m
 Z: 0.178 m
-
 --------------------------------
 r_tarsal_distal_phalanx_5
 Type: site
@@ -1313,7 +2037,6 @@ Parent: r_tarsal_distal_phalanx_5
 X: -0.154 m
 Y: 0.010 m
 Z: 0.168 m
-
 --------------------------------
 Segments
 --------------------------------
