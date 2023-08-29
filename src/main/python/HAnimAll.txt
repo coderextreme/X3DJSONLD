@@ -2,7 +2,7 @@
 Joints
 --------------------------------
 humanoid_root
-Type:  joint
+Type: joint
 Parent: None
 X: 0 m
 Y: 0.8240 m
@@ -10,7 +10,7 @@ Z: 0.0277 m
 
 --------------------------------
 sacroiliac
-Type:  joint
+Type: joint
 Parent: humanoid_root
 X: 0 m
 Y: 0.9149 m
@@ -18,7 +18,7 @@ Z: 0.0016 m
 
 --------------------------------
 l_hip
-Type:  joint
+Type: joint
 Parent: sacroiliac
 X: 0.0961 m
 Y: 0.9124 m
@@ -26,7 +26,7 @@ Z: -0.0001 m
 
 --------------------------------
 l_knee
-Type:  joint
+Type: joint
 Parent: l_hip
 X: 0.1040 m
 Y: 0.4867 m
@@ -34,7 +34,7 @@ Z: 0.0308 m
 
 --------------------------------
 l_talocrural
-Type:  joint
+Type: joint
 Parent: l_knee
 X: 0.1101 m
 Y: 0.0656 m
@@ -42,7 +42,7 @@ Z: -0.0736 m
 
 --------------------------------
 l_tarsometatarsal_2
-Type:  joint
+Type: joint
 Parent: l_cuneonavicular_2
 X: 0.1086 m
 Y: 0.0001 m
@@ -50,7 +50,7 @@ Z: -0.0368 m
 
 --------------------------------
 l_metatarsophalangeal_2
-Type:  joint
+Type: joint
 Parent: l_tarsometatarsal_2
 X: 0.1086 m
 Y: 0.0001 m
@@ -58,7 +58,7 @@ Z: 0.0368 m
 
 --------------------------------
 l_tarsal_distal_interphalangeal_2
-Type:  joint
+Type: joint
 Parent: l_tarsal_proximal_interphalangeal_2
 X: 0.1086 m
 Y: 0.0000 m
@@ -66,7 +66,7 @@ Z: 0.0762 m
 
 --------------------------------
 r_hip
-Type:  joint
+Type: joint
 Parent: sacroiliac
 X: -0.0950 m
 Y: 0.9171 m
@@ -74,7 +74,7 @@ Z: 0.0029 m
 
 --------------------------------
 r_knee
-Type:  joint
+Type: joint
 Parent: r_hip
 X: -0.0867 m
 Y: 0.4913 m
@@ -82,7 +82,7 @@ Z: 0.0318 m
 
 --------------------------------
 r_talocrural
-Type:  joint
+Type: joint
 Parent: r_knee
 X: -0.0801 m
 Y: 0.0712 m
@@ -90,7 +90,7 @@ Z: -0.0766 m
 
 --------------------------------
 r_tarsometatarsal_2
-Type:  joint
+Type: joint
 Parent: r_cuneonavicular_2
 X: -0.0801 m
 Y: 0.0000 m
@@ -98,7 +98,7 @@ Z: -0.0368 m
 
 --------------------------------
 r_metatarsophalangeal_2
-Type:  joint
+Type: joint
 Parent: r_tarsometatarsal_2
 X: -0.0801 m
 Y: 0.0000 m
@@ -106,7 +106,7 @@ Z: 0.0368 m
 
 --------------------------------
 r_tarsal_distal_interphalangeal_2
-Type:  joint
+Type: joint
 Parent: r_tarsal_proximal_interphalangeal_2
 X: -0.0801 m
 Y: 0.0039 m
@@ -114,7 +114,7 @@ Z: 0.0732 m
 
 --------------------------------
 vl5
-Type:  joint
+Type: joint
 Parent: humanoid_root
 X: 0.0028 m
 Y: 1.0568 m
@@ -122,7 +122,7 @@ Z: -0.0776 m
 
 --------------------------------
 vl4
-Type:  joint
+Type: joint
 Parent: vl5
 X: 0.0035 m
 Y: 1.0925 m
@@ -130,7 +130,7 @@ Z: -0.0787 m
 
 --------------------------------
 vl3
-Type:  joint
+Type: joint
 Parent: vl4
 X: 0.0041 m
 Y: 1.1276 m
@@ -138,7 +138,7 @@ Z: -0.0796 m
 
 --------------------------------
 vl2
-Type:  joint
+Type: joint
 Parent: vl3
 X: 0.0045 m
 Y: 1.1546 m
@@ -146,7 +146,7 @@ Z: -0.0800 m
 
 --------------------------------
 vl1
-Type:  joint
+Type: joint
 Parent: vl2
 X: 0.0048 m
 Y: 1.1912 m
@@ -154,7 +154,7 @@ Z: -0.0805 m
 
 --------------------------------
 vt12
-Type:  joint
+Type: joint
 Parent: vl1
 X: 0.0051 m
 Y: 1.2278 m
@@ -162,7 +162,7 @@ Z: -0.0808 m
 
 --------------------------------
 vt11
-Type:  joint
+Type: joint
 Parent: vt12
 X: 0.0053 m
 Y: 1.2679 m
@@ -170,7 +170,7 @@ Z: -0.0810 m
 
 --------------------------------
 vt10
-Type:  joint
+Type: joint
 Parent: vt11
 X: 0.0056 m
 Y: 1.2848 m
@@ -178,7 +178,7 @@ Z: -0.0822 m
 
 --------------------------------
 vt9
-Type:  joint
+Type: joint
 Parent: vt10
 X: 0.0057 m
 Y: 1.3126 m
@@ -186,7 +186,7 @@ Z: -0.0838 m
 
 --------------------------------
 vt8
-Type:  joint
+Type: joint
 Parent: vt9
 X: 0.0057 m
 Y: 1.3382 m
@@ -194,7 +194,7 @@ Z: -0.0845 m
 
 --------------------------------
 vt7
-Type:  joint
+Type: joint
 Parent: vt8
 X: 0.0058 m
 Y: 1.3625 m
@@ -202,7 +202,7 @@ Z: -0.0833 m
 
 --------------------------------
 vt6
-Type:  joint
+Type: joint
 Parent: vt7
 X: 0.0059 m
 Y: 1.3866 m
@@ -210,7 +210,7 @@ Z: -0.0800 m
 
 --------------------------------
 vt5
-Type:  joint
+Type: joint
 Parent: vt6
 X: 0.0060 m
 Y: 1.4102 m
@@ -218,7 +218,7 @@ Z: -0.0745 m
 
 --------------------------------
 vt4
-Type:  joint
+Type: joint
 Parent: vt5
 X: 0.0061 m
 Y: 1.4320 m
@@ -226,7 +226,7 @@ Z: -0.0675 m
 
 --------------------------------
 vt3
-Type:  joint
+Type: joint
 Parent: vt4
 X: 0.0062 m
 Y: 1.4583 m
@@ -234,7 +234,7 @@ Z: -0.0570 m
 
 --------------------------------
 vt2
-Type:  joint
+Type: joint
 Parent: vt3
 X: 0.0063 m
 Y: 1.4761 m
@@ -242,7 +242,7 @@ Z: -0.0484 m
 
 --------------------------------
 vt1
-Type:  joint
+Type: joint
 Parent: vt2
 X: 0.0065 m
 Y: 1.4951 m
@@ -250,7 +250,7 @@ Z: -0.0387 m
 
 --------------------------------
 vc7
-Type:  joint
+Type: joint
 Parent: vt1
 X: 0.0066 m
 Y: 1.5132 m
@@ -258,7 +258,7 @@ Z: -0.0301 m
 
 --------------------------------
 vc6
-Type:  joint
+Type: joint
 Parent: vc7
 X: 0.0066 m
 Y: 1.5357 m
@@ -266,7 +266,7 @@ Z: -0.0143 m
 
 --------------------------------
 vc5
-Type:  joint
+Type: joint
 Parent: vc6
 X: 0.0066 m
 Y: 1.5520 m
@@ -274,7 +274,7 @@ Z: -0.0082 m
 
 --------------------------------
 vc4
-Type:  joint
+Type: joint
 Parent: vc5
 X: 0.0066 m
 Y: 1.5662 m
@@ -282,7 +282,7 @@ Z: -0.0084 m
 
 --------------------------------
 vc3
-Type:  joint
+Type: joint
 Parent: vc4
 X: 0.0066 m
 Y: 1.5800 m
@@ -290,7 +290,7 @@ Z: -0.0103 m
 
 --------------------------------
 vc2
-Type:  joint
+Type: joint
 Parent: vc3
 X: 0.0066 m
 Y: 1.5928 m
@@ -298,7 +298,7 @@ Z: -0.0103 m
 
 --------------------------------
 vc1
-Type:  joint
+Type: joint
 Parent: vc2
 X: 0.0066 m
 Y: 1.6144 m
@@ -306,7 +306,7 @@ Z: -0.0034 m
 
 --------------------------------
 skullbase
-Type:  joint
+Type: joint
 Parent: vc1
 X: 0.0044 m
 Y: 1.6209 m
@@ -314,7 +314,7 @@ Z: 0.0236 m
 
 --------------------------------
 l_eyeball_joint
-Type:  joint
+Type: joint
 Parent: skullbase
 X: 0.0336 m
 Y: 1.6332 m
@@ -322,7 +322,7 @@ Z: 0.0502 m
 
 --------------------------------
 r_eyeball_joint
-Type:  joint
+Type: joint
 Parent: skullbase
 X: -0.0236 m
 Y: 1.6331 m
@@ -330,7 +330,7 @@ Z: 0.0510 m
 
 --------------------------------
 l_sternoclavicular
-Type:  joint
+Type: joint
 Parent: vt1
 X: 0.0820 m
 Y: 1.4488 m
@@ -338,7 +338,7 @@ Z: -0.0353 m
 
 --------------------------------
 l_acromioclavicular
-Type:  joint
+Type: joint
 Parent: l_sternoclavicular
 X: 0.0962 m
 Y: 1.4269 m
@@ -346,7 +346,7 @@ Z: -0.0424 m
 
 --------------------------------
 l_shoulder
-Type:  joint
+Type: joint
 Parent: l_acromioclavicular
 X: 0.2029 m
 Y: 1.4376 m
@@ -354,7 +354,7 @@ Z: -0.0387 m
 
 --------------------------------
 l_elbow
-Type:  joint
+Type: joint
 Parent: l_shoulder
 X: 0.2014 m
 Y: 1.1357 m
@@ -362,7 +362,7 @@ Z: -0.0682 m
 
 --------------------------------
 l_radiocarpal
-Type:  joint
+Type: joint
 Parent: l_elbow
 X: 0.1984 m
 Y: 0.8663 m
@@ -370,7 +370,7 @@ Z: -0.0583 m
 
 --------------------------------
 l_carpometacarpal_1
-Type:  joint
+Type: joint
 Parent: l_midcarpal_1
 X: 0.1924 m
 Y: 0.8472 m
@@ -378,7 +378,7 @@ Z: -0.0534 m
 
 --------------------------------
 l_metacarpophalangeal_1
-Type:  joint
+Type: joint
 Parent: l_carpometacarpal_1
 X: 0.1951 m
 Y: 0.8226 m
@@ -386,7 +386,7 @@ Z: 0.0246 m
 
 --------------------------------
 l_carpal_interphalangeal_1
-Type:  joint
+Type: joint
 Parent: l_metacarpophalangeal_1
 X: 0.1955 m
 Y: 0.8159 m
@@ -394,7 +394,7 @@ Z: 0.0464 m
 
 --------------------------------
 l_carpometacarpal_2
-Type:  joint
+Type: joint
 Parent: l_midcarpal_2
 X: 0.1983 m
 Y: 0.8024 m
@@ -402,7 +402,7 @@ Z: -0.0280 m
 
 --------------------------------
 l_metacarpophalangeal_2
-Type:  joint
+Type: joint
 Parent: l_carpometacarpal_2
 X: 0.1983 m
 Y: 0.7815 m
@@ -410,7 +410,7 @@ Z: -0.0280 m
 
 --------------------------------
 l_carpal_proximal_interphalangeal_2
-Type:  joint
+Type: joint
 Parent: l_metacarpophalangeal_2
 X: 0.2017 m
 Y: 0.7363 m
@@ -418,7 +418,7 @@ Z: -0.0248 m
 
 --------------------------------
 l_carpal_distal_interphalangeal_2
-Type:  joint
+Type: joint
 Parent: l_carpal_proximal_interphalangeal_2
 X: 0.2028 m
 Y: 0.7139 m
@@ -426,7 +426,7 @@ Z: -0.0236 m
 
 --------------------------------
 l_carpometacarpal_3
-Type:  joint
+Type: joint
 Parent: l_midcarpal_3
 X: 0.1987 m
 Y: 0.8029 m
@@ -434,7 +434,7 @@ Z: -0.0530 m
 
 --------------------------------
 l_metacarpophalangeal_3
-Type:  joint
+Type: joint
 Parent: l_carpometacarpal_3
 X: 0.1987 m
 Y: 0.7818 m
@@ -442,7 +442,7 @@ Z: -0.0530 m
 
 --------------------------------
 l_carpal_proximal_interphalangeal_3
-Type:  joint
+Type: joint
 Parent: l_metacarpophalangeal_3
 X: 0.2013 m
 Y: 0.7273 m
@@ -450,7 +450,7 @@ Z: -0.0503 m
 
 --------------------------------
 l_carpal_distal_interphalangeal_3
-Type:  joint
+Type: joint
 Parent: l_carpal_proximal_interphalangeal_3
 X: 0.2026 m
 Y: 0.7011 m
@@ -458,7 +458,7 @@ Z: -0.0494 m
 
 --------------------------------
 l_carpometacarpal_4
-Type:  joint
+Type: joint
 Parent: l_midcarpal_4_5
 X: 0.1956 m
 Y: 0.8019 m
@@ -466,7 +466,7 @@ Z: -0.0794 m
 
 --------------------------------
 l_metacarpophalangeal_4
-Type:  joint
+Type: joint
 Parent: l_carpometacarpal_4
 X: 0.1956 m
 Y: 0.7815 m
@@ -474,7 +474,7 @@ Z: -0.0794 m
 
 --------------------------------
 l_carpal_proximal_interphalangeal_4
-Type:  joint
+Type: joint
 Parent: l_metacarpophalangeal_4
 X: 0.1973 m
 Y: 0.7287 m
@@ -482,7 +482,7 @@ Z: -0.0777 m
 
 --------------------------------
 l_carpometacarpal_5
-Type:  joint
+Type: joint
 Parent: l_midcarpal_4_5
 X: 0.1925 m
 Y: 0.8066 m
@@ -490,7 +490,7 @@ Z: -0.1036 m
 
 --------------------------------
 l_metacarpophalangeal_5
-Type:  joint
+Type: joint
 Parent: l_carpometacarpal_5
 X: 0.1925 m
 Y: 0.7866 m
@@ -498,7 +498,7 @@ Z: -0.1036 m
 
 --------------------------------
 l_carpal_proximal_interphalangeal_5
-Type:  joint
+Type: joint
 Parent: l_metacarpophalangeal_5
 X: 0.1938 m
 Y: 0.7452 m
@@ -506,7 +506,7 @@ Z: -0.1024 m
 
 --------------------------------
 l_carpal_distal_interphalangeal_5
-Type:  joint
+Type: joint
 Parent: l_carpal_proximal_interphalangeal_5
 X: 0.1948 m
 Y: 0.7277 m
@@ -514,7 +514,7 @@ Z: -0.1017 m
 
 --------------------------------
 r_sternoclavicular
-Type:  joint
+Type: joint
 Parent: vt1
 X: -0.0694 m
 Y: 1.4600 m
@@ -522,7 +522,7 @@ Z: -0.0330 m
 
 --------------------------------
 r_acromioclavicular
-Type:  joint
+Type: joint
 Parent: r_sternoclavicular
 X: -0.0836 m
 Y: 1.4281 m
@@ -530,7 +530,7 @@ Z: -0.0401 m
 
 --------------------------------
 r_shoulder
-Type:  joint
+Type: joint
 Parent: r_acromioclavicular
 X: -0.1907 m
 Y: 1.4407 m
@@ -538,7 +538,7 @@ Z: -0.0325 m
 
 --------------------------------
 r_elbow
-Type:  joint
+Type: joint
 Parent: r_shoulder
 X: -0.1949 m
 Y: 1.1388 m
@@ -546,7 +546,7 @@ Z: -0.0620 m
 
 --------------------------------
 r_radiocarpal
-Type:  joint
+Type: joint
 Parent: r_elbow
 X: -0.1959 m
 Y: 0.8694 m
@@ -554,7 +554,7 @@ Z: -0.0521 m
 
 --------------------------------
 r_carpometacarpal_1
-Type:  joint
+Type: joint
 Parent: r_midcarpal_1
 X: -0.1899 m
 Y: 0.8502 m
@@ -562,7 +562,7 @@ Z: -0.0473 m
 
 --------------------------------
 r_metacarpophalangeal_1
-Type:  joint
+Type: joint
 Parent: r_carpometacarpal_1
 X: -0.1874 m
 Y: 0.8256 m
@@ -570,7 +570,7 @@ Z: 0.0306 m
 
 --------------------------------
 r_carpal_interphalangeal_1
-Type:  joint
+Type: joint
 Parent: r_metacarpophalangeal_1
 X: -0.1864 m
 Y: 0.8190 m
@@ -578,7 +578,7 @@ Z: 0.0506 m
 
 --------------------------------
 r_metacarpophalangeal_2
-Type:  joint
+Type: joint
 Parent: r_carpometacarpal_2
 X: -0.1961 m
 Y: 0.8055 m
@@ -586,7 +586,7 @@ Z: -0.0218 m
 
 --------------------------------
 r_carpal_proximal_interphalangeal_2
-Type:  joint
+Type: joint
 Parent: r_metacarpophalangeal_2
 X: -0.1954 m
 Y: 0.7393 m
@@ -594,7 +594,7 @@ Z: -0.0185 m
 
 --------------------------------
 r_carpal_distal_interphalangeal_2
-Type:  joint
+Type: joint
 Parent: r_carpal_proximal_interphalangeal_2
 X: -0.1945 m
 Y: 0.7169 m
@@ -602,7 +602,7 @@ Z: -0.0173 m
 
 --------------------------------
 r_carpometacarpal_3
-Type:  joint
+Type: joint
 Parent: r_midcarpal_3
 X: -0.1972 m
 Y: 0.8060 m
@@ -610,7 +610,7 @@ Z: -0.0468 m
 
 --------------------------------
 r_metacarpophalangeal_3
-Type:  joint
+Type: joint
 Parent: r_carpometacarpal_3
 X: -0.1972 m
 Y: 0.7849 m
@@ -618,7 +618,7 @@ Z: -0.0468 m
 
 --------------------------------
 r_carpal_proximal_interphalangeal_3
-Type:  joint
+Type: joint
 Parent: r_metacarpophalangeal_3
 X: -0.1950 m
 Y: 0.7304 m
@@ -626,7 +626,7 @@ Z: -0.0441 m
 
 --------------------------------
 r_carpal_distal_interphalangeal_3
-Type:  joint
+Type: joint
 Parent: r_carpal_proximal_interphalangeal_3
 X: -0.1939 m
 Y: 0.7042 m
@@ -634,7 +634,7 @@ Z: -0.0432 m
 
 --------------------------------
 r_carpometacarpal_4
-Type:  joint
+Type: joint
 Parent: r_midcarpal_4_5
 X: -0.1951 m
 Y: 0.8049 m
@@ -642,7 +642,7 @@ Z: -0.0732 m
 
 --------------------------------
 r_metacarpophalangeal_4
-Type:  joint
+Type: joint
 Parent: r_carpometacarpal_4
 X: -0.1951 m
 Y: 0.7845 m
@@ -650,7 +650,7 @@ Z: -0.0732 m
 
 --------------------------------
 r_carpal_proximal_interphalangeal_4
-Type:  joint
+Type: joint
 Parent: r_metacarpophalangeal_4
 X: -0.1920 m
 Y: 0.7318 m
@@ -658,7 +658,7 @@ Z: -0.0716 m
 
 --------------------------------
 r_carpal_distal_interphalangeal_4
-Type:  joint
+Type: joint
 Parent: r_carpal_proximal_interphalangeal_4
 X: -0.1908 m
 Y: 0.7077 m
@@ -666,7 +666,7 @@ Z: -0.0706 m
 
 --------------------------------
 r_carpometacarpal_5
-Type:  joint
+Type: joint
 Parent: r_midcarpal_4_5
 X: -0.1926 m
 Y: 0.8096 m
@@ -674,7 +674,7 @@ Z: -0.0975 m
 
 --------------------------------
 r_metacarpophalangeal_5
-Type:  joint
+Type: joint
 Parent: r_carpometacarpal_5
 X: -0.1926 m
 Y: 0.7896 m
@@ -682,7 +682,7 @@ Z: -0.0975 m
 
 --------------------------------
 r_carpal_proximal_interphalangeal_5
-Type:  joint
+Type: joint
 Parent: r_metacarpophalangeal_5
 X: -0.1902 m
 Y: 0.7483 m
@@ -690,7 +690,7 @@ Z: -0.0963 m
 
 --------------------------------
 r_carpal_distal_interphalangeal_5
-Type:  joint
+Type: joint
 Parent: r_carpal_proximal_interphalangeal_5
 X: -0.1908 m
 Y: 0.7540 m

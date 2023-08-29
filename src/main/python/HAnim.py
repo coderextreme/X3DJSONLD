@@ -23,7 +23,7 @@ for elem in joints:
         # print(default)
         print("--------------------------------")
         print(enum.get('value'))
-        print("Type: ", "joint")
+        print("Type:", "joint")
         print("Parent:", enum.get('parent'))
         print("X:", default[0], "m")
         print("Y:", default[1], "m")
