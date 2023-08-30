@@ -22,8 +22,6 @@ for elem in joints:
         print(enum.get('value'))
         print("Type:", "joint")
         print("Parent:", enum.get('parent'))
-        if enum.get('alias') is not None:
-            print("Aliases:", enum.get('alias'))
         print("Index:", enum.get('index'))
         xyz = enum.get('default')
         # print(xyz)
@@ -36,6 +34,8 @@ for elem in joints:
             print("X:", "x", "m")
             print("Y:", "y", "m")
             print("Z:", "z", "m")
+        if enum.get('alias') is not None:
+            print("Aliases:", enum.get('alias'))
         print("")
 
 print("--------------------------------")
@@ -49,8 +49,6 @@ for elem in sites:
         print(enum.get('value'))
         print("Type:", "site")
         print("Parent:", enum.get('parent'))
-        if enum.get('alias') is not None:
-            print("Aliases:", enum.get('alias'))
         print("Index:", enum.get('index'))
         xyz = enum.get('default')
         if xyz is not None:
@@ -64,6 +62,9 @@ for elem in sites:
             print("Y:", "y", "m")
             print("Z:", "z", "m")
             print("")
+        if enum.get('alias') is not None:
+            print("Aliases:", enum.get('alias'))
+        print("")
 
 print("--------------------------------")
 print("Segments")
@@ -75,7 +76,8 @@ for elem in segments:
         print("--------------------------------")
         print(enum.get('value'))
         print("Parent:", enum.get('parent'))
-        if enum.get('alias') is not None:
-            print("Aliases:", enum.get('alias'))
         print("Type:", "segment")
         print("Index:", enum.get('index'))
+        if enum.get('alias') is not None:
+            print("Aliases:", enum.get('alias'))
+        print("")
