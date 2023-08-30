@@ -13,6 +13,7 @@ Z: 0.0277 m
 sacroiliac
 Type: joint
 Parent: humanoid_root
+Aliases: SIJ,SI joint
 Index: 2
 X: 0 m
 Y: 0.9149 m
@@ -40,6 +41,7 @@ Z: 0.0308 m
 l_talocrural
 Type: joint
 Parent: l_knee
+Aliases: l_ankle
 Index: 5
 X: 0.1101 m
 Y: 0.0656 m
@@ -49,6 +51,7 @@ Z: -0.0736 m
 l_talocalcaneonavicular
 Type: joint
 Parent: l_talocrural
+Aliases: l_talocalcaneal
 Index: 6
 X: x m
 Y: y m
@@ -94,6 +97,7 @@ Z: z m
 l_cuneonavicular_2
 Type: joint
 Parent: l_talocalcaneonavicular
+Aliases: l_cuneonavicular
 Index: 11
 X: x m
 Y: y m
@@ -103,6 +107,7 @@ Z: z m
 l_tarsometatarsal_2
 Type: joint
 Parent: l_cuneonavicular_2
+Aliases: l_subtalar,l_tarsometatarsal
 Index: 12
 X: 0.1086 m
 Y: 0.0001 m
@@ -112,6 +117,7 @@ Z: -0.0368 m
 l_metatarsophalangeal_2
 Type: joint
 Parent: l_tarsometatarsal_2
+Aliases: l_midtarsal,l_metatarsophalangeal
 Index: 13
 X: 0.1086 m
 Y: 0.0001 m
@@ -121,6 +127,7 @@ Z: 0.0368 m
 l_tarsal_proximal_interphalangeal_2
 Type: joint
 Parent: l_metatarsophalangeal_2
+Aliases: l_tarsal_proximal_interphalangeal
 Index: 14
 X: x m
 Y: y m
@@ -130,6 +137,7 @@ Z: z m
 l_tarsal_distal_interphalangeal_2
 Type: joint
 Parent: l_tarsal_proximal_interphalangeal_2
+Aliases: l_tarsal_distal_interphalangeal
 Index: 15
 X: 0.1086 m
 Y: 0.0000 m
@@ -184,6 +192,7 @@ Z: z m
 l_calcaneocuboid
 Type: joint
 Parent: l_talocrural
+Aliases: l_calcaneuscuboid
 Index: 21
 X: x m
 Y: y m
@@ -292,6 +301,7 @@ Z: 0.0318 m
 r_talocrural
 Type: joint
 Parent: r_knee
+Aliases: r_ankle
 Index: 33
 X: -0.0801 m
 Y: 0.0712 m
@@ -301,6 +311,7 @@ Z: -0.0766 m
 r_talocalcaneonavicular
 Type: joint
 Parent: r_talocrural
+Aliases: r_talocalcaneal
 Index: 34
 X: x m
 Y: y m
@@ -346,6 +357,7 @@ Z: z m
 r_cuneonavicular_2
 Type: joint
 Parent: r_talocalcaneonavicular
+Aliases: r_cuneonavicular
 Index: 39
 X: x m
 Y: y m
@@ -355,6 +367,7 @@ Z: z m
 r_tarsometatarsal_2
 Type: joint
 Parent: r_cuneonavicular_2
+Aliases: r_subtalar,r_tarsometatarsal
 Index: 40
 X: -0.0801 m
 Y: 0.0000 m
@@ -364,6 +377,7 @@ Z: -0.0368 m
 r_metatarsophalangeal_2
 Type: joint
 Parent: r_tarsometatarsal_2
+Aliases: r_midtarsal,r_metatarsophalangeal
 Index: 41
 X: -0.0801 m
 Y: 0.0000 m
@@ -373,6 +387,7 @@ Z: 0.0368 m
 r_tarsal_proximal_interphalangeal_2
 Type: joint
 Parent: r_metatarsophalangeal_2
+Aliases: r_tarsal_proximal_interphalangeal
 Index: 42
 X: x m
 Y: y m
@@ -382,6 +397,7 @@ Z: z m
 r_tarsal_distal_interphalangeal_2
 Type: joint
 Parent: r_tarsal_proximal_interphalangeal_2
+Aliases: r_metatarsal,r_tarsal_distal_interphalangeal
 Index: 43
 X: -0.0801 m
 Y: 0.0039 m
@@ -436,6 +452,7 @@ Z: z m
 r_calcaneocuboid
 Type: joint
 Parent: r_talocrural
+Aliases: r_calcaneuscuboid
 Index: 49
 X: x m
 Y: y m
@@ -850,6 +867,7 @@ Z: -0.0682 m
 l_radiocarpal
 Type: joint
 Parent: l_elbow
+Aliases: l_wrist
 Index: 95
 X: 0.1984 m
 Y: 0.8663 m
@@ -868,6 +886,7 @@ Z: z m
 l_carpometacarpal_1
 Type: joint
 Parent: l_midcarpal_1
+Aliases: l_thumb1
 Index: 97
 X: 0.1924 m
 Y: 0.8472 m
@@ -877,6 +896,7 @@ Z: -0.0534 m
 l_metacarpophalangeal_1
 Type: joint
 Parent: l_carpometacarpal_1
+Aliases: l_thumb2
 Index: 98
 X: 0.1951 m
 Y: 0.8226 m
@@ -886,6 +906,7 @@ Z: 0.0246 m
 l_carpal_interphalangeal_1
 Type: joint
 Parent: l_metacarpophalangeal_1
+Aliases: l_thumb3
 Index: 99
 X: 0.1955 m
 Y: 0.8159 m
@@ -904,6 +925,7 @@ Z: z m
 l_carpometacarpal_2
 Type: joint
 Parent: l_midcarpal_2
+Aliases: l_index0,l_carpometacarpal
 Index: 101
 X: 0.1983 m
 Y: 0.8024 m
@@ -913,6 +935,7 @@ Z: -0.0280 m
 l_metacarpophalangeal_2
 Type: joint
 Parent: l_carpometacarpal_2
+Aliases: l_index1,l_metacarpophalangeal
 Index: 102
 X: 0.1983 m
 Y: 0.7815 m
@@ -922,6 +945,7 @@ Z: -0.0280 m
 l_carpal_proximal_interphalangeal_2
 Type: joint
 Parent: l_metacarpophalangeal_2
+Aliases: l_index2,l_carpal_proximal_interphalangeal
 Index: 103
 X: 0.2017 m
 Y: 0.7363 m
@@ -931,6 +955,7 @@ Z: -0.0248 m
 l_carpal_distal_interphalangeal_2
 Type: joint
 Parent: l_carpal_proximal_interphalangeal_2
+Aliases: l_index3,l_carpal_distal_interphalangeal
 Index: 104
 X: 0.2028 m
 Y: 0.7139 m
@@ -949,6 +974,7 @@ Z: z m
 l_carpometacarpal_3
 Type: joint
 Parent: l_midcarpal_3
+Aliases: l_middle0
 Index: 106
 X: 0.1987 m
 Y: 0.8029 m
@@ -958,6 +984,7 @@ Z: -0.0530 m
 l_metacarpophalangeal_3
 Type: joint
 Parent: l_carpometacarpal_3
+Aliases: l_middle1
 Index: 107
 X: 0.1987 m
 Y: 0.7818 m
@@ -967,6 +994,7 @@ Z: -0.0530 m
 l_carpal_proximal_interphalangeal_3
 Type: joint
 Parent: l_metacarpophalangeal_3
+Aliases: l_middle2
 Index: 108
 X: 0.2013 m
 Y: 0.7273 m
@@ -976,6 +1004,7 @@ Z: -0.0503 m
 l_carpal_distal_interphalangeal_3
 Type: joint
 Parent: l_carpal_proximal_interphalangeal_3
+Aliases: l_middle3
 Index: 109
 X: 0.2026 m
 Y: 0.7011 m
@@ -994,6 +1023,7 @@ Z: z m
 l_carpometacarpal_4
 Type: joint
 Parent: l_midcarpal_4_5
+Aliases: l_ring0
 Index: 111
 X: 0.1956 m
 Y: 0.8019 m
@@ -1003,6 +1033,7 @@ Z: -0.0794 m
 l_metacarpophalangeal_4
 Type: joint
 Parent: l_carpometacarpal_4
+Aliases: l_ring1
 Index: 112
 X: 0.1956 m
 Y: 0.7815 m
@@ -1012,6 +1043,7 @@ Z: -0.0794 m
 l_carpal_proximal_interphalangeal_4
 Type: joint
 Parent: l_metacarpophalangeal_4
+Aliases: l_ring2
 Index: 113
 X: 0.1973 m
 Y: 0.7287 m
@@ -1021,6 +1053,7 @@ Z: -0.0777 m
 l_carpal_distal_interphalangeal_4
 Type: joint
 Parent: l_carpal_proximal_interphalangeal_4
+Aliases: l_ring3
 Index: 114
 X: x m
 Y: y m
@@ -1030,6 +1063,7 @@ Z: z m
 l_carpometacarpal_5
 Type: joint
 Parent: l_midcarpal_4_5
+Aliases: l_pinky0
 Index: 115
 X: 0.1925 m
 Y: 0.8066 m
@@ -1039,6 +1073,7 @@ Z: -0.1036 m
 l_metacarpophalangeal_5
 Type: joint
 Parent: l_carpometacarpal_5
+Aliases: l_pinky1
 Index: 116
 X: 0.1925 m
 Y: 0.7866 m
@@ -1048,6 +1083,7 @@ Z: -0.1036 m
 l_carpal_proximal_interphalangeal_5
 Type: joint
 Parent: l_metacarpophalangeal_5
+Aliases: l_pinky2
 Index: 117
 X: 0.1938 m
 Y: 0.7452 m
@@ -1057,6 +1093,7 @@ Z: -0.1024 m
 l_carpal_distal_interphalangeal_5
 Type: joint
 Parent: l_carpal_proximal_interphalangeal_5
+Aliases: l_pinky3
 Index: 118
 X: 0.1948 m
 Y: 0.7277 m
@@ -1102,6 +1139,7 @@ Z: -0.0620 m
 r_radiocarpal
 Type: joint
 Parent: r_elbow
+Aliases: r_wrist
 Index: 123
 X: -0.1959 m
 Y: 0.8694 m
@@ -1120,6 +1158,7 @@ Z: z m
 r_carpometacarpal_1
 Type: joint
 Parent: r_midcarpal_1
+Aliases: r_thumb1
 Index: 125
 X: -0.1899 m
 Y: 0.8502 m
@@ -1129,6 +1168,7 @@ Z: -0.0473 m
 r_metacarpophalangeal_1
 Type: joint
 Parent: r_carpometacarpal_1
+Aliases: r_thumb2
 Index: 126
 X: -0.1874 m
 Y: 0.8256 m
@@ -1138,6 +1178,7 @@ Z: 0.0306 m
 r_carpal_interphalangeal_1
 Type: joint
 Parent: r_metacarpophalangeal_1
+Aliases: r_thumb3
 Index: 127
 X: -0.1864 m
 Y: 0.8190 m
@@ -1156,6 +1197,7 @@ Z: z m
 r_carpometacarpal_2
 Type: joint
 Parent: r_midcarpal_2
+Aliases: r_index0,r_carpometacarpal
 Index: 129
 X: x m
 Y: y m
@@ -1165,6 +1207,7 @@ Z: z m
 r_metacarpophalangeal_2
 Type: joint
 Parent: r_carpometacarpal_2
+Aliases: r_index1,r_metacarpophalangeal
 Index: 130
 X: -0.1961 m
 Y: 0.8055 m
@@ -1174,6 +1217,7 @@ Z: -0.0218 m
 r_carpal_proximal_interphalangeal_2
 Type: joint
 Parent: r_metacarpophalangeal_2
+Aliases: r_index2,r_carpal_proximal_interphalangeal
 Index: 131
 X: -0.1954 m
 Y: 0.7393 m
@@ -1183,6 +1227,7 @@ Z: -0.0185 m
 r_carpal_distal_interphalangeal_2
 Type: joint
 Parent: r_carpal_proximal_interphalangeal_2
+Aliases: r_index3,r_carpal_distal_interphalangeal
 Index: 132
 X: -0.1945 m
 Y: 0.7169 m
@@ -1201,6 +1246,7 @@ Z: z m
 r_carpometacarpal_3
 Type: joint
 Parent: r_midcarpal_3
+Aliases: r_middle0
 Index: 134
 X: -0.1972 m
 Y: 0.8060 m
@@ -1210,6 +1256,7 @@ Z: -0.0468 m
 r_metacarpophalangeal_3
 Type: joint
 Parent: r_carpometacarpal_3
+Aliases: r_middle1
 Index: 135
 X: -0.1972 m
 Y: 0.7849 m
@@ -1219,6 +1266,7 @@ Z: -0.0468 m
 r_carpal_proximal_interphalangeal_3
 Type: joint
 Parent: r_metacarpophalangeal_3
+Aliases: r_middle2
 Index: 136
 X: -0.1950 m
 Y: 0.7304 m
@@ -1228,6 +1276,7 @@ Z: -0.0441 m
 r_carpal_distal_interphalangeal_3
 Type: joint
 Parent: r_carpal_proximal_interphalangeal_3
+Aliases: r_middle3
 Index: 137
 X: -0.1939 m
 Y: 0.7042 m
@@ -1246,6 +1295,7 @@ Z: z m
 r_carpometacarpal_4
 Type: joint
 Parent: r_midcarpal_4_5
+Aliases: r_ring0
 Index: 139
 X: -0.1951 m
 Y: 0.8049 m
@@ -1255,6 +1305,7 @@ Z: -0.0732 m
 r_metacarpophalangeal_4
 Type: joint
 Parent: r_carpometacarpal_4
+Aliases: r_ring1
 Index: 140
 X: -0.1951 m
 Y: 0.7845 m
@@ -1264,6 +1315,7 @@ Z: -0.0732 m
 r_carpal_proximal_interphalangeal_4
 Type: joint
 Parent: r_metacarpophalangeal_4
+Aliases: r_ring2
 Index: 141
 X: -0.1920 m
 Y: 0.7318 m
@@ -1273,6 +1325,7 @@ Z: -0.0716 m
 r_carpal_distal_interphalangeal_4
 Type: joint
 Parent: r_carpal_proximal_interphalangeal_4
+Aliases: r_ring3
 Index: 142
 X: -0.1908 m
 Y: 0.7077 m
@@ -1282,6 +1335,7 @@ Z: -0.0706 m
 r_carpometacarpal_5
 Type: joint
 Parent: r_midcarpal_4_5
+Aliases: r_pinky0
 Index: 143
 X: -0.1926 m
 Y: 0.8096 m
@@ -1291,6 +1345,7 @@ Z: -0.0975 m
 r_metacarpophalangeal_5
 Type: joint
 Parent: r_carpometacarpal_5
+Aliases: r_pinky1
 Index: 144
 X: -0.1926 m
 Y: 0.7896 m
@@ -1300,6 +1355,7 @@ Z: -0.0975 m
 r_carpal_proximal_interphalangeal_5
 Type: joint
 Parent: r_metacarpophalangeal_5
+Aliases: r_pinky2
 Index: 145
 X: -0.1902 m
 Y: 0.7483 m
@@ -1309,6 +1365,7 @@ Z: -0.0963 m
 r_carpal_distal_interphalangeal_5
 Type: joint
 Parent: r_carpal_proximal_interphalangeal_5
+Aliases: r_pinky3
 Index: 146
 X: -0.1908 m
 Y: 0.7540 m
@@ -1320,6 +1377,7 @@ Sites
 skull_vertex
 Type: site
 Parent: skull
+Aliases: skull_tip,vertex
 Index: 0
 X: 0.0050 m
 Y: 1.7504 m
@@ -1434,6 +1492,7 @@ Z: 0.1147 m
 l_clavicle
 Type: site
 Parent: l_clavicle
+Aliases: l_clavicale
 Index: 14
 X: 0.0271 m
 Y: 1.4943 m
@@ -1450,6 +1509,7 @@ Z: -0.0490 m
 l_axilla_proximal
 Type: site
 Parent: l_clavicle
+Aliases: l_axilla_ant
 Index: 16
 X: 0.1777 m
 Y: 1.4065 m
@@ -1458,6 +1518,7 @@ Z: -0.0075 m
 l_axilla_distal
 Type: site
 Parent: l_clavicle
+Aliases: l_axilla_post
 Index: 17
 X: 0.1706 m
 Y: 1.4072 m
@@ -1475,6 +1536,7 @@ Z: z m
 r_clavicle
 Type: site
 Parent: r_clavicle
+Aliases: r_clavicale
 Index: 19
 X: -0.0115 m
 Y: 1.4943 m
@@ -1491,6 +1553,7 @@ Z: -0.0431 m
 r_axilla_proximal
 Type: site
 Parent: r_clavicle
+Aliases: r_axilla_ant
 Index: 21
 X: -0.1626 m
 Y: 1.4072 m
@@ -1499,6 +1562,7 @@ Z: -0.0031 m
 r_axilla_distal
 Type: site
 Parent: r_clavicle
+Aliases: r_axilla_post
 Index: 22
 X: -0.1603 m
 Y: 1.4098 m
@@ -1516,6 +1580,7 @@ Z: z m
 spine_1_middle_back
 Type: site
 Parent: t5
+Aliases: middle back
 Index: 24
 X: x m
 Y: y m
@@ -1525,6 +1590,7 @@ Z: z m
 spine_2_lower_back
 Type: site
 Parent: l2
+Aliases: lower back
 Index: 25
 X: 0.0049 m
 Y: 1.1908 m
@@ -1533,6 +1599,7 @@ Z: -0.1113 m
 waist_preferred_anterior
 Type: site
 Parent: l2
+Aliases: waist_preferred_ant
 Index: 26
 X: x m
 Y: y m
@@ -1542,6 +1609,7 @@ Z: z m
 waist_preferred_posterior
 Type: site
 Parent: l2
+Aliases: waist_preferred_post
 Index: 27
 X: 0.2900 m
 Y: 1.0915 m
@@ -1550,6 +1618,7 @@ Z: -0.1091 m
 l_rib10
 Type: site
 Parent: l2
+Aliases: l_rib10_midspine
 Index: 28
 X: 0.0871 m
 Y: 1.1925 m
@@ -1558,6 +1627,7 @@ Z: 0.0992 m
 l_thelion
 Type: site
 Parent: t9
+Aliases: Left Bustpoint
 Index: 29
 X: 0.0918 m
 Y: 1.3382 m
@@ -1566,6 +1636,7 @@ Z: 0.1192 m
 r_rib10
 Type: site
 Parent: l2
+Aliases: r_rib10_midspine
 Index: 30
 X: -0.0711 m
 Y: 1.1941 m
@@ -1574,6 +1645,7 @@ Z: 0.1016 m
 r_thelion
 Type: site
 Parent: t9
+Aliases: Right Bustpoint
 Index: 31
 X: -0.0736 m
 Y: 1.3385 m
@@ -1582,6 +1654,7 @@ Z: 0.1217 m
 l_asis
 Type: site
 Parent: pelvis
+Aliases: Left Anterior Superior Iliac Spine
 Index: 32
 X: 0.0925 m
 Y: 0.9983 m
@@ -1598,6 +1671,7 @@ Z: 0.0008 m
 l_psis
 Type: site
 Parent: pelvis
+Aliases: Left Posterior Superior Iliac Spine
 Index: 34
 X: 0.0774 m
 Y: 1.0190 m
@@ -1606,6 +1680,7 @@ Z: -0.1151 m
 r_asis
 Type: site
 Parent: pelvis
+Aliases: Right Anterior Superior Iliac Spine
 Index: 35
 X: -0.0887 m
 Y: 1.0021 m
@@ -1622,6 +1697,7 @@ Z: 0.0035 m
 r_psis
 Type: site
 Parent: pelvis
+Aliases: Right Posterior Superior Iliac Spine
 Index: 37
 X: -0.0716 m
 Y: 1.0190 m
@@ -1638,6 +1714,7 @@ Z: 0.0257 m
 l_femoral_lateral_epicondyle
 Type: site
 Parent: l_thigh
+Aliases: l_femoral_lateral_epicn,l_femoral_lateral_epicondyles
 Index: 39
 X: 0.1598 m
 Y: 0.4967 m
@@ -1646,6 +1723,7 @@ Z: 0.0297 m
 l_femoral_medial_epicondyle
 Type: site
 Parent: l_thigh
+Aliases: l_femoral_medial_epicn,l_femoral_medial_epicondyles
 Index: 40
 X: 0.1598 m
 Y: 0.4967 m
@@ -1654,6 +1732,7 @@ Z: 0.0297 m
 l_suprapatella
 Type: site
 Parent: l_thigh
+Aliases: l_kneecap
 Index: 41
 X: x m
 Y: y m
@@ -1663,6 +1742,7 @@ Z: z m
 l_trochanterion
 Type: site
 Parent: pelvis
+Aliases: l_trochanter
 Index: 42
 X: x m
 Y: y m
@@ -1672,6 +1752,7 @@ Z: z m
 r_femoral_lateral_epicondyle
 Type: site
 Parent: r_thigh
+Aliases: r_femoral_lateral_epicn,r_femoral_lateral_epicondyles
 Index: 43
 X: -0.1421 m
 Y: 0.4992 m
@@ -1680,6 +1761,7 @@ Z: 0.0310 m
 r_femoral_medial_epicondyle
 Type: site
 Parent: r_thigh
+Aliases: r_femoral_medial_epicn,r_femoral_medial_epicondyles
 Index: 44
 X: -0.0221 m
 Y: 0.5014 m
@@ -1688,6 +1770,7 @@ Z: 0.0289 m
 r_suprapatella
 Type: site
 Parent: r_thigh
+Aliases: r_kneecap
 Index: 45
 X: x m
 Y: y m
@@ -1697,6 +1780,7 @@ Z: z m
 r_trochanterion
 Type: site
 Parent: pelvis
+Aliases: r_trochanter
 Index: 46
 X: x m
 Y: y m
@@ -1778,6 +1862,7 @@ Z: z m
 l_metatarsal_phalanx_1
 Type: site
 Parent: l_tarsal_proximal_phalanx_1
+Aliases: l_metatarsal_pha1
 Index: 55
 X: x m
 Y: y m
@@ -1787,6 +1872,7 @@ Z: z m
 l_metatarsal_phalanx_5
 Type: site
 Parent: l_tarsal_proximal_phalanx_5
+Aliases: l_metatarsal_pha5
 Index: 56
 X: x m
 Y: y m
@@ -1804,6 +1890,7 @@ Z: -0.0482 m
 l_calcaneus_posterior
 Type: site
 Parent: l_talus
+Aliases: l_calcaneous_post
 Index: 58
 X: x m
 Y: y m
@@ -1813,6 +1900,7 @@ Z: z m
 r_metatarsal_phalanx_1
 Type: site
 Parent: r_tarsal_proximal_phalanx_1
+Aliases: r_metatarsal_pha1
 Index: 59
 X: x m
 Y: y m
@@ -1822,6 +1910,7 @@ Z: z m
 r_metatarsal_phalanx_5
 Type: site
 Parent: r_tarsal_proximal_phalanx_5
+Aliases: r_metatarsal_pha5
 Index: 60
 X: x m
 Y: y m
@@ -1839,6 +1928,7 @@ Z: -0.0423 m
 r_calcaneus_posterior
 Type: site
 Parent: r_talus
+Aliases: r_calcaneous_post
 Index: 62
 X: x m
 Y: y m
@@ -1848,6 +1938,7 @@ Z: z m
 l_humeral_lateral_epicondyle
 Type: site
 Parent: l_upperarm
+Aliases: l_humeral_lateral_epicn,l_humeral_lateral_epicondyles
 Index: 63
 X: 0.2280 m
 Y: 1.1482 m
@@ -1856,6 +1947,7 @@ Z: -0.1100 m
 l_humeral_medial_epicondyle
 Type: site
 Parent: l_forearm
+Aliases: l_humeral_medial_epicn,l_humeral_medial_epicondyles
 Index: 64
 X: 0.1735 m
 Y: 1.1272 m
@@ -1872,6 +1964,7 @@ Z: -0.1123 m
 r_humeral_lateral_epicondyle
 Type: site
 Parent: r_upperarm
+Aliases: r_humeral_lateral_epicn,r_humeral_lateral_epicondyles
 Index: 66
 X: -0.2224 m
 Y: 1.1517 m
@@ -1880,6 +1973,7 @@ Z: -0.1033 m
 r_humeral_medial_epicondyle
 Type: site
 Parent: r_forearm
+Aliases: r_humeral_medial_epicn,r_humeral_medial_epicondyles
 Index: 67
 X: -0.1680 m
 Y: 1.1298 m
@@ -1944,6 +2038,7 @@ Z: -0.0360 m
 l_metacarpal_phalanx_2
 Type: site
 Parent: l_metacarpal_2
+Aliases: l_metacarpal_pha2,l_metacarpal_phalanx
 Index: 75
 X: x m
 Y: y m
@@ -1962,6 +2057,7 @@ Z: z m
 l_metacarpal_phalanx_5
 Type: site
 Parent: l_metacarpal_5
+Aliases: l_metacarpal_pha5
 Index: 77
 X: x m
 Y: y m
@@ -1971,6 +2067,7 @@ Z: z m
 r_metacarpal_phalanx_2
 Type: site
 Parent: r_metacarpal_2
+Aliases: r_metacarpal_pha2,r_metacarpal_phalanx
 Index: 78
 X: x m
 Y: y m
@@ -1989,6 +2086,7 @@ Z: z m
 r_metacarpal_phalanx_5
 Type: site
 Parent: r_metacarpal_5
+Aliases: r_metacarpal_pha5
 Index: 80
 X: x m
 Y: y m
@@ -1998,6 +2096,7 @@ Z: z m
 nuchale
 Type: site
 Parent: skull
+Aliases: nuchal
 Index: 81
 X: 0.0039 m
 Y: 1.5972 m
@@ -2022,6 +2121,7 @@ Z: -0.0220 m
 navel
 Type: site
 Parent: l5
+Aliases: belly button
 Index: 84
 X: 0.0069 m
 Y: 1.0966 m
@@ -2030,6 +2130,7 @@ Z: 0.1017 m
 l_ectocanthus
 Type: site
 Parent: skull
+Aliases: l_canthus
 Index: 85
 X: x m
 Y: y m
@@ -2039,6 +2140,7 @@ Z: z m
 r_ectocanthus
 Type: site
 Parent: skull
+Aliases: r_canthus
 Index: 86
 X: x m
 Y: y m
@@ -2048,6 +2150,7 @@ Z: z m
 menton
 Type: site
 Parent: jaw
+Aliases: chin
 Index: 87
 X: x m
 Y: y m
@@ -2057,6 +2160,7 @@ Z: z m
 mesosternale
 Type: site
 Parent: t6
+Aliases: mesosternum
 Index: 88
 X: x m
 Y: y m
@@ -2091,6 +2195,7 @@ Z: -0.0326 m
 rear_center_midsagittal_plane
 Type: site
 Parent: t6
+Aliases: median plane
 Index: 92
 X: x m
 Y: y m
@@ -2145,6 +2250,7 @@ Z: z m
 l_carpal_distal_phalanx_1
 Type: site
 Parent: l_carpal_distal_phalanx_1
+Aliases: l_thumb_distal
 Index: 101
 X: 0.1982 m
 Y: 0.8061 m
@@ -2153,6 +2259,7 @@ Z: 0.0759 m
 l_carpal_distal_phalanx_2
 Type: site
 Parent: l_carpal_distal_phalanx_2
+Aliases: l_index_distal
 Index: 102
 X: 0.2089 m
 Y: 0.6858 m
@@ -2161,6 +2268,7 @@ Z: -0.0245 m
 l_carpal_distal_phalanx_3
 Type: site
 Parent: l_carpal_distal_phalanx_3
+Aliases: l_middle_distal
 Index: 103
 X: 0.2080 m
 Y: 0.6731 m
@@ -2169,6 +2277,7 @@ Z: -0.0491 m
 l_carpal_distal_phalanx_4
 Type: site
 Parent: l_carpal_distal_phalanx_4
+Aliases: l_ring_distal
 Index: 104
 X: 0.2035 m
 Y: 0.6750 m
@@ -2177,6 +2286,7 @@ Z: -0.0756 m
 l_carpal_distal_phalanx_5
 Type: site
 Parent: l_carpal_distal_phalanx_5
+Aliases: l_pinky_distal
 Index: 105
 X: 0.2014 m
 Y: 0.7009 m
@@ -2185,6 +2295,7 @@ Z: -0.1012 m
 r_carpal_distal_phalanx_1
 Type: site
 Parent: r_carpal_distal_phalanx_1
+Aliases: r_thumb_distal
 Index: 106
 X: -0.1869 m
 Y: 0.8090 m
@@ -2193,6 +2304,7 @@ Z: 0.0820 m
 r_carpal_distal_phalanx_2
 Type: site
 Parent: r_carpal_distal_phalanx_2
+Aliases: r_index_distal
 Index: 107
 X: -0.1980 m
 Y: 0.6883 m
@@ -2201,6 +2313,7 @@ Z: -0.0180 m
 r_carpal_distal_phalanx_3
 Type: site
 Parent: r_carpal_distal_phalanx_3
+Aliases: r_middle_distal
 Index: 108
 X: -0.1969 m
 Y: 0.6758 m
@@ -2209,6 +2322,7 @@ Z: -0.0427 m
 r_carpal_distal_phalanx_4
 Type: site
 Parent: r_carpal_distal_phalanx_4
+Aliases: r_ring_distal
 Index: 109
 X: -0.1934 m
 Y: 0.6778 m
@@ -2217,6 +2331,7 @@ Z: -0.0693 m
 r_carpal_distal_phalanx_5
 Type: site
 Parent: r_carpal_distal_phalanx_5
+Aliases: r_pinky_distal
 Index: 110
 X: -0.1938 m
 Y: 0.7035 m
@@ -2233,6 +2348,7 @@ Z: 0.188 m
 l_tarsal_distal_phalanx_2
 Type: site
 Parent: l_tarsal_distal_phalanx_2
+Aliases: l_digit2
 Index: 112
 X: 0.110 m
 Y: 0.011 m
@@ -2257,6 +2373,7 @@ Z: 0.178 m
 l_tarsal_distal_phalanx_5
 Type: site
 Parent: l_tarsal_distal_phalanx_5
+Aliases: l_tarsal_distal_pha5
 Index: 115
 X: 0.154 m
 Y: 0.010 m
@@ -2273,6 +2390,7 @@ Z: 0.188 m
 r_tarsal_distal_phalanx_2
 Type: site
 Parent: r_tarsal_distal_phalanx_2
+Aliases: r_digit2
 Index: 117
 X: -0.110 m
 Y: 0.011 m
@@ -2297,6 +2415,7 @@ Z: 0.178 m
 r_tarsal_distal_phalanx_5
 Type: site
 Parent: r_tarsal_distal_phalanx_5
+Aliases: r_tarsal_distal_pha5
 Index: 120
 X: -0.154 m
 Y: 0.010 m
@@ -2326,6 +2445,7 @@ Index: 4
 --------------------------------
 l_talus
 Parent: l_talocrural
+Aliases: l_hindfoot
 Type: segment
 Index: 5
 --------------------------------
@@ -2356,26 +2476,31 @@ Index: 10
 --------------------------------
 l_cuneiform_2
 Parent: l_cuneonavicular_2
+Aliases: l_cuneiform
 Type: segment
 Index: 11
 --------------------------------
 l_metatarsal_2
 Parent: l_tarsometatarsal_2
+Aliases: l_midproximal,l_metatarsal
 Type: segment
 Index: 12
 --------------------------------
 l_tarsal_proximal_phalanx_2
 Parent: l_metatarsophalangeal_2
+Aliases: l_middistal,l_tarsal_proximal_phalanx
 Type: segment
 Index: 13
 --------------------------------
 l_tarsal_middle_phalanx_2
 Parent: l_tarsal_proximal_interphalangeal_2
+Aliases: l_tarsal_middle_phalanx
 Type: segment
 Index: 14
 --------------------------------
 l_tarsal_distal_phalanx_2
 Parent: l_tarsal_distal_interphalangeal_2
+Aliases: l_forefoot,l_tarsal_distal_phalanx
 Type: segment
 Index: 15
 --------------------------------
@@ -2406,6 +2531,7 @@ Index: 20
 --------------------------------
 l_calcaneus
 Parent: l_calcaneocuboid
+Aliases: l_calcaneum
 Type: segment
 Index: 21
 --------------------------------
@@ -2466,6 +2592,7 @@ Index: 32
 --------------------------------
 r_talus
 Parent: r_talocrural
+Aliases: r_hindfoot
 Type: segment
 Index: 33
 --------------------------------
@@ -2496,26 +2623,31 @@ Index: 38
 --------------------------------
 r_cuneiform_2
 Parent: r_cuneonavicular_2
+Aliases: r_cuneiform
 Type: segment
 Index: 39
 --------------------------------
 r_metatarsal_2
 Parent: r_tarsometatarsal_2
+Aliases: r_midproximal
 Type: segment
 Index: 40
 --------------------------------
 r_tarsal_proximal_phalanx_2
 Parent: r_metatarsophalangeal_2
+Aliases: r_middistal,r_tarsal_proximal_phalanx
 Type: segment
 Index: 41
 --------------------------------
 r_tarsal_middle_phalanx_2
 Parent: r_tarsal_proximal_interphalangeal_2
+Aliases: r_tarsal_middle_phalanx
 Type: segment
 Index: 42
 --------------------------------
 r_tarsal_distal_phalanx_2
 Parent: r_tarsal_distal_interphalangeal_2
+Aliases: r_forefoot,r_tarsal_distal_phalanx
 Type: segment
 Index: 43
 --------------------------------
@@ -2546,6 +2678,7 @@ Index: 48
 --------------------------------
 r_calcaneus
 Parent: r_calcaneocuboid
+Aliases: r_calcaneum
 Type: segment
 Index: 49
 --------------------------------
@@ -2716,6 +2849,7 @@ Index: 82
 --------------------------------
 skull
 Parent: skullbase
+Aliases: head
 Type: segment
 Index: 83
 --------------------------------
@@ -2776,6 +2910,7 @@ Index: 94
 --------------------------------
 l_carpal
 Parent: l_radiocarpal
+Aliases: l_hand
 Type: segment
 Index: 95
 --------------------------------
@@ -2786,16 +2921,19 @@ Index: 96
 --------------------------------
 l_metacarpal_1
 Parent: l_carpometacarpal_1
+Aliases: l_thumb_metacarpal
 Type: segment
 Index: 97
 --------------------------------
 l_carpal_proximal_phalanx_1
 Parent: l_metacarpophalangeal_1
+Aliases: l_thumb_proximal
 Type: segment
 Index: 98
 --------------------------------
 l_carpal_distal_phalanx_1
 Parent: l_carpal_interphalangeal_1
+Aliases: l_thumb_distal
 Type: segment
 Index: 99
 --------------------------------
@@ -2806,21 +2944,25 @@ Index: 100
 --------------------------------
 l_metacarpal_2
 Parent: l_carpometacarpal_2
+Aliases: l_index_metacarpal
 Type: segment
 Index: 101
 --------------------------------
 l_carpal_proximal_phalanx_2
 Parent: l_metacarpophalangeal_2
+Aliases: l_index_proximal,l_carpal_proximal_phalanx
 Type: segment
 Index: 102
 --------------------------------
 l_carpal_middle_phalanx_2
 Parent: l_carpal_proximal_interphalangeal_2
+Aliases: l_index_middle,l_carpal_middle_phalanx
 Type: segment
 Index: 103
 --------------------------------
 l_carpal_distal_phalanx_2
 Parent: l_carpal_distal_interphalangeal_2
+Aliases: l_index_distal,l_carpal_distal_phalanx
 Type: segment
 Index: 104
 --------------------------------
@@ -2831,21 +2973,25 @@ Index: 105
 --------------------------------
 l_metacarpal_3
 Parent: l_carpometacarpal_3
+Aliases: l_middle_metacarpal
 Type: segment
 Index: 106
 --------------------------------
 l_carpal_proximal_phalanx_3
 Parent: l_metacarpophalangeal_3
+Aliases: l_middle_proximal
 Type: segment
 Index: 107
 --------------------------------
 l_carpal_middle_phalanx_3
 Parent: l_carpal_proximal_interphalangeal_3
+Aliases: l_middle_middle
 Type: segment
 Index: 108
 --------------------------------
 l_carpal_distal_phalanx_3
 Parent: l_carpal_distal_interphalangeal_3
+Aliases: l_middle_distal
 Type: segment
 Index: 109
 --------------------------------
@@ -2856,41 +3002,49 @@ Index: 110
 --------------------------------
 l_metacarpal_4
 Parent: l_carpometacarpal_4
+Aliases: l_ring_metacarpal
 Type: segment
 Index: 111
 --------------------------------
 l_carpal_proximal_phalanx_4
 Parent: l_metacarpophalangeal_4
+Aliases: l_ring_proximal
 Type: segment
 Index: 112
 --------------------------------
 l_carpal_middle_phalanx_4
 Parent: l_carpal_proximal_interphalangeal_4
+Aliases: l_ring_middle
 Type: segment
 Index: 113
 --------------------------------
 l_carpal_distal_phalanx_4
 Parent: l_carpal_distal_interphalangeal_4
+Aliases: l_ring_distal
 Type: segment
 Index: 114
 --------------------------------
 l_metacarpal_5
 Parent: l_carpometacarpal_5
+Aliases: l_pinky_metacarpal
 Type: segment
 Index: 115
 --------------------------------
 l_carpal_proximal_phalanx_5
 Parent: l_metacarpophalangeal_5
+Aliases: l_pinky_proximal
 Type: segment
 Index: 116
 --------------------------------
 l_carpal_middle_phalanx_5
 Parent: l_carpal_proximal_interphalangeal_5
+Aliases: l_pinky_middle
 Type: segment
 Index: 117
 --------------------------------
 l_carpal_distal_phalanx_5
 Parent: l_carpal_distal_interphalangeal_5
+Aliases: l_pinky_distal
 Type: segment
 Index: 118
 --------------------------------
@@ -2916,6 +3070,7 @@ Index: 122
 --------------------------------
 r_carpal
 Parent: r_radiocarpal
+Aliases: r_hand
 Type: segment
 Index: 123
 --------------------------------
@@ -2926,16 +3081,19 @@ Index: 124
 --------------------------------
 r_metacarpal_1
 Parent: r_carpometacarpal_1
+Aliases: r_thumb_metacarpal
 Type: segment
 Index: 125
 --------------------------------
 r_carpal_proximal_phalanx_1
 Parent: r_metacarpophalangeal_1
+Aliases: r_thumb_proximal
 Type: segment
 Index: 126
 --------------------------------
 r_carpal_distal_phalanx_1
 Parent: r_carpal_interphalangeal_1
+Aliases: r_thumb_distal
 Type: segment
 Index: 127
 --------------------------------
@@ -2946,21 +3104,25 @@ Index: 128
 --------------------------------
 r_metacarpal_2
 Parent: r_carpometacarpal_2
+Aliases: r_index_metacarpal
 Type: segment
 Index: 129
 --------------------------------
 r_carpal_proximal_phalanx_2
 Parent: r_metacarpophalangeal_2
+Aliases: r_index_proximal,r_carpal_proximal_phalanx
 Type: segment
 Index: 130
 --------------------------------
 r_carpal_middle_phalanx_2
 Parent: r_carpal_proximal_interphalangeal_2
+Aliases: r_index_middle,r_carpal_middle_phalanx
 Type: segment
 Index: 131
 --------------------------------
 r_carpal_distal_phalanx_2
 Parent: r_carpal_distal_interphalangeal_2
+Aliases: r_index_distal,r_carpal_distal_phalanx
 Type: segment
 Index: 132
 --------------------------------
@@ -2971,21 +3133,25 @@ Index: 133
 --------------------------------
 r_metacarpal_3
 Parent: r_carpometacarpal_3
+Aliases: r_middle_metacarpal
 Type: segment
 Index: 134
 --------------------------------
 r_carpal_proximal_phalanx_3
 Parent: r_metacarpophalangeal_3
+Aliases: r_middle_proximal
 Type: segment
 Index: 135
 --------------------------------
 r_carpal_middle_phalanx_3
 Parent: r_carpal_proximal_interphalangeal_3
+Aliases: r_middle_middle
 Type: segment
 Index: 136
 --------------------------------
 r_carpal_distal_phalanx_3
 Parent: r_carpal_distal_interphalangeal_3
+Aliases: r_middle_distal
 Type: segment
 Index: 137
 --------------------------------
@@ -2996,40 +3162,48 @@ Index: 138
 --------------------------------
 r_metacarpal_4
 Parent: r_carpometacarpal_4
+Aliases: r_ring_metacarpal
 Type: segment
 Index: 139
 --------------------------------
 r_carpal_proximal_phalanx_4
 Parent: r_metacarpophalangeal_4
+Aliases: r_ring_proximal
 Type: segment
 Index: 140
 --------------------------------
 r_carpal_middle_phalanx_4
 Parent: r_carpal_proximal_interphalangeal_4
+Aliases: r_ring_middle
 Type: segment
 Index: 141
 --------------------------------
 r_carpal_distal_phalanx_4
 Parent: r_carpal_distal_interphalangeal_4
+Aliases: r_ring_distal
 Type: segment
 Index: 142
 --------------------------------
 r_metacarpal_5
 Parent: r_carpometacarpal_5
+Aliases: r_pinky_metacarpal
 Type: segment
 Index: 143
 --------------------------------
 r_carpal_proximal_phalanx_5
 Parent: r_metacarpophalangeal_5
+Aliases: r_pinky_proximal
 Type: segment
 Index: 144
 --------------------------------
 r_carpal_middle_phalanx_5
 Parent: r_carpal_proximal_interphalangeal_5
+Aliases: r_pinky_middle
 Type: segment
 Index: 145
 --------------------------------
 r_carpal_distal_phalanx_5
 Parent: r_carpal_distal_interphalangeal_5
+Aliases: r_pinky_distal
 Type: segment
 Index: 146
