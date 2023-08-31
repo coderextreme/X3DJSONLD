@@ -196,19 +196,17 @@ window.loadX3DJS_X3DOM = function (selector, DOMImplementation, jsobj, path, NS,
 				var child = doc.runtime.createX3DFromJS(jsobj, path);
 				var xml = X3DJSONLD.serializeDOM(jsobj, child, true);
 				callback(child, xml);
-			} else {
-				// if no X3DOM, try our techniques.
-				var child;
-				var xml;
-				[ child, xml ] = X3DJSONLD.loadJsonIntoDom(DOMImplementation, jsobj, path);
-				if (xml === null) {
-					xml = X3DJSONLD.serializeDOM(jsobj, child, true);
-				}
-				callback(child, xml);
-				console.error("Cannot find X3DOM document in loadX3DJS_X3DOM()");
 			}
 		} else {
-			console.error("Cannot find X3DOM document in loadX3DJS_X3DOM()");
+			console.error("Cannot find X3DOM document in loadX3DJS_X3DOM(), no selector", selector);
+			// if no X3DOM, try our techniques.
+			var child;
+			var xml;
+			[ child, xml ] = X3DJSONLD.loadJsonIntoDom(DOMImplementation, jsobj, path);
+			if (xml === null) {
+				xml = X3DJSONLD.serializeDOM(jsobj, child, true);
+			}
+			callback(child, xml);
 		}
 	}, function(e) {
 		console.error(e);
