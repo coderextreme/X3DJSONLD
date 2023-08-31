@@ -1,5 +1,4 @@
 #version 300 es
-precision highp float;
 
 /*
 The MIT License (MIT)
