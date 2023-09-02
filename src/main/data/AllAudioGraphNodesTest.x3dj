@@ -1,0 +1,215 @@
+{ "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Full",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "AllAudioGraphNodesTest.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "List of all X3D4 audio graph nodes to test infrastructure and validation support. Absence of attributes means that checking and removal of default values is working."
+        },
+        {
+          "@name": "creator",
+          "@content": "Don Brutzman"
+        },
+        {
+          "@name": "created",
+          "@content": "25 October 2020"
+        },
+        {
+          "@name": "modified",
+          "@content": "26 November 2021"
+        },
+        {
+          "@name": "warning",
+          "@content": "Developmental test, no actual 3D model expected"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/AllAudioGraphNodesTest.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        },
+        {
+          "@name": "converter",
+          "@content": "x3d-tidy V1.0.56, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "converted",
+          "@content": "Sat, 02 Sep 2023 10:23:25 GMT"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        { "WorldInfo":
+          {
+            "@title": "AllAudioGraphNodes.x3d"
+          }
+        },
+        { "Shape":
+          {
+            "-appearance": { "Appearance":
+              {
+                "-acousticProperties": { "AcousticProperties":
+                  {
+                    "@description": "Testing of X3D4 nodes demonstrating W3C Audio API in progress",
+                    "@refraction": 0.5,
+                    "@diffuse": 0.25,
+                    "@specular": 1
+                  }
+                },
+                "-material": { "Material":
+                  {
+                  }
+                }
+              }
+            },
+            "-geometry": { "Box":
+              {
+              }
+            }
+          }
+        },
+        { "Sound":
+          {
+            "@location": [ 0, 1.6, 0 ],
+            "-source": { "AudioClip":
+              {
+                "@description": "testing",
+                "@url": [
+                  "sound/saxophone.mp3",
+                  "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"
+                ]
+              }
+            }
+          }
+        },
+        { "Sound":
+          {
+            "@location": [ 0, 1.6, 0 ],
+            "-source": { "MovieTexture":
+              {
+                "@description": "testing",
+                "@url": [
+                  "bogus.mpg",
+                  "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"
+                ]
+              }
+            }
+          }
+        },
+        { "SpatialSound":
+          {
+            "-children": [
+              { "Analyser":
+                {
+                  "-children": [
+                    { "StreamAudioDestination":
+                      {
+                        "-children": [
+                          { "BiquadFilter":
+                            {
+                              "-children": [
+                                { "ChannelMerger":
+                                  {
+                                    "-children": [
+                                      { "ChannelSelector":
+                                        {
+                                          "-children": [
+                                            { "ChannelSplitter":
+                                              {
+                                                "-children": [
+                                                  { "Convolver":
+                                                    {
+                                                      "-children": [
+                                                        { "Delay":
+                                                          {
+                                                            "-children": [
+                                                              { "DynamicsCompressor":
+                                                                {
+                                                                  "-children": [
+                                                                    { "Gain":
+                                                                      {
+                                                                        "-children": [
+                                                                          { "StreamAudioDestination":
+                                                                            {
+                                                                              "-children": [
+                                                                                { "WaveShaper":
+                                                                                  {
+                                                                                    "-children": [
+                                                                                      { "BufferAudioSource":
+                                                                                        {
+                                                                                        }
+                                                                                      },
+                                                                                      { "ListenerPointSource":
+                                                                                        {
+                                                                                        }
+                                                                                      },
+                                                                                      { "MicrophoneSource":
+                                                                                        {
+                                                                                        }
+                                                                                      },
+                                                                                      { "OscillatorSource":
+                                                                                        {
+                                                                                        }
+                                                                                      },
+                                                                                      { "StreamAudioSource":
+                                                                                        {
+                                                                                        }
+                                                                                      }
+                                                                                    ]
+                                                                                  }
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

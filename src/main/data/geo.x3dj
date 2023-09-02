@@ -1,0 +1,282 @@
+{ "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "geo.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "generator",
+          "@content": "manual"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "a sphere"
+        },
+        {
+          "@name": "converter",
+          "@content": "x3d-tidy V1.0.56, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "converted",
+          "@content": "Sat, 02 Sep 2023 10:27:13 GMT"
+        }
+      ],
+      "component": [
+        {
+          "@name": "Scripting",
+          "@level": 1
+        },
+        {
+          "@name": "EnvironmentalEffects",
+          "@level": 3
+        },
+        {
+          "@name": "Shaders",
+          "@level": 1
+        },
+        {
+          "@name": "CubeMapTexturing",
+          "@level": 1
+        },
+        {
+          "@name": "Texturing",
+          "@level": 1
+        },
+        {
+          "@name": "Rendering",
+          "@level": 1
+        },
+        {
+          "@name": "Shape",
+          "@level": 4
+        },
+        {
+          "@name": "Grouping",
+          "@level": 3
+        },
+        {
+          "@name": "Core",
+          "@level": 1
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        { "NavigationInfo":
+          {
+            "@type": [
+              "ANY",
+              "EXAMINE",
+              "FLY",
+              "LOOKAT"
+            ]
+          }
+        },
+        { "Viewpoint":
+          {
+            "@DEF": "Tour",
+            "@description": "Tour Views"
+          }
+        },
+        { "Background":
+          {
+            "@frontUrl": [
+              "../resources/images/bFR.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"
+            ],
+            "@backUrl": [
+              "../resources/images/bBK.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"
+            ],
+            "@leftUrl": [
+              "../resources/images/bLF.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"
+            ],
+            "@rightUrl": [
+              "../resources/images/bRT.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"
+            ],
+            "@topUrl": [
+              "../resources/images/bTP.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"
+            ],
+            "@bottomUrl": [
+              "../resources/images/bBT.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"
+            ]
+          }
+        },
+        { "Transform":
+          {
+            "-children": [
+              { "Shape":
+                {
+                  "-appearance": { "Appearance":
+                    {
+                      "-material": { "Material":
+                        {
+                          "@diffuseColor": [ 0.7, 0.7, 0.7 ],
+                          "@specularColor": [ 0.5, 0.5, 0.5 ]
+                        }
+                      },
+                      "-texture": { "ComposedCubeMapTexture":
+                        {
+                          "@DEF": "texture"
+                        }
+                      },
+                      "-shaders": [
+                        { "ComposedShader":
+                          {
+                            "@language": "GLSL",
+                            "-parts": [
+                              { "ShaderPart":
+                                {
+                                  "@url": [
+                                    "../shaders/x3dom.vs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"
+                                  ]
+                                }
+                              },
+                              { "ShaderPart":
+                                {
+                                  "@DEF": "common",
+                                  "@type": "FRAGMENT",
+                                  "@url": [
+                                    "../shaders/common.fs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"
+                                  ]
+                                }
+                              }
+                            ],
+                            "field": [
+                              {
+                                "@accessType": "inputOutput",
+                                "@type": "SFVec3f",
+                                "@name": "chromaticDispertion",
+                                "@value": [ 0.98, 1, 1.033 ]
+                              },
+                              {
+                                "@accessType": "inputOutput",
+                                "@type": "SFNode",
+                                "@name": "cube",
+                                "-children": [
+                                  { "ComposedCubeMapTexture":
+                                    {
+                                      "@USE": "texture"
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@name": "bias",
+                                "@value": 0.5
+                              },
+                              {
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@name": "scale",
+                                "@value": 0.5
+                              },
+                              {
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@name": "power",
+                                "@value": 2
+                              }
+                            ]
+                          }
+                        },
+                        { "ComposedShader":
+                          {
+                            "@language": "GLSL",
+                            "-parts": [
+                              { "ShaderPart":
+                                {
+                                  "@url": [
+                                    "../shaders/x_ite.vs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"
+                                  ]
+                                }
+                              },
+                              { "ShaderPart":
+                                {
+                                  "@type": "FRAGMENT",
+                                  "@url": [
+                                    "../shaders/x_ite.fs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"
+                                  ]
+                                }
+                              }
+                            ],
+                            "field": [
+                              {
+                                "@accessType": "initializeOnly",
+                                "@type": "SFVec3f",
+                                "@name": "chromaticDispertion",
+                                "@value": [ 0.98, 1, 1.033 ]
+                              },
+                              {
+                                "@accessType": "initializeOnly",
+                                "@type": "SFNode",
+                                "@name": "cube",
+                                "-children": [
+                                  { "ComposedCubeMapTexture":
+                                    {
+                                      "@USE": "texture"
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "@accessType": "initializeOnly",
+                                "@type": "SFFloat",
+                                "@name": "bias",
+                                "@value": 0.5
+                              },
+                              {
+                                "@accessType": "initializeOnly",
+                                "@type": "SFFloat",
+                                "@name": "scale",
+                                "@value": 0.5
+                              },
+                              {
+                                "@accessType": "initializeOnly",
+                                "@type": "SFFloat",
+                                "@name": "power",
+                                "@value": 2
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "-geometry": { "Sphere":
+                    {
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

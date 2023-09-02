@@ -1,0 +1,448 @@
+{ "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "flowerproto.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "description",
+          "@content": "A flower proto with configurable shaders"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d"
+        },
+        {
+          "@name": "converter",
+          "@content": "x3d-tidy V1.0.56, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "converted",
+          "@content": "Sat, 02 Sep 2023 10:26:25 GMT"
+        }
+      ],
+      "component": [
+        {
+          "@name": "Scripting",
+          "@level": 1
+        },
+        {
+          "@name": "EnvironmentalEffects",
+          "@level": 3
+        },
+        {
+          "@name": "Shaders",
+          "@level": 1
+        },
+        {
+          "@name": "CubeMapTexturing",
+          "@level": 1
+        },
+        {
+          "@name": "Texturing",
+          "@level": 1
+        },
+        {
+          "@name": "Rendering",
+          "@level": 1
+        },
+        {
+          "@name": "Shape",
+          "@level": 4
+        },
+        {
+          "@name": "Grouping",
+          "@level": 3
+        },
+        {
+          "@name": "Core",
+          "@level": 1
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        { "ProtoDeclare":
+          {
+            "@name":"FlowerProto",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "MFString",
+                  "@name": "vertex",
+                  "@value": [
+                    "../shaders/gl_flowers_chromatic.vs"
+                  ]
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "MFString",
+                  "@name": "fragment",
+                  "@value": [
+                    "../shaders/pc_flowers.fs"
+                  ]
+                }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                { "Transform":
+                  {
+                    "@DEF": "transform",
+                    "-children": [
+                      { "Shape":
+                        {
+                          "-appearance": { "Appearance":
+                            {
+                              "-material": { "Material":
+                                {
+                                  "@diffuseColor": [ 0.7, 0.7, 0.7 ],
+                                  "@specularColor": [ 0.5, 0.5, 0.5 ]
+                                }
+                              },
+                              "-texture": { "ComposedCubeMapTexture":
+                                {
+                                  "@DEF": "texture"
+                                }
+                              },
+                              "-shaders": [
+                                { "ComposedShader":
+                                  {
+                                    "@DEF": "shader",
+                                    "@language": "GLSL",
+                                    "-parts": [
+                                      { "ShaderPart":
+                                        {
+                                          "#sourceText": [
+                                            "../shaders/gl_flowers_chromatic.vs"
+                                          ],
+                                          "IS": {
+                                            "connect": [
+                                              {
+                                                "@nodeField": "url",
+                                                "@protoField": "vertex"
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      },
+                                      { "ShaderPart":
+                                        {
+                                          "@type": "FRAGMENT",
+                                          "#sourceText": [
+                                            "../shaders/pc_flowers.fs"
+                                          ],
+                                          "IS": {
+                                            "connect": [
+                                              {
+                                                "@nodeField": "url",
+                                                "@protoField": "fragment"
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ],
+                                    "field": [
+                                      {
+                                        "@accessType": "inputOutput",
+                                        "@type": "SFInt32",
+                                        "@name": "cube"
+                                      },
+                                      {
+                                        "@accessType": "initializeOnly",
+                                        "@type": "SFVec3f",
+                                        "@name": "chromaticDispertion",
+                                        "@value": [ 0.98, 1, 1.033 ]
+                                      },
+                                      {
+                                        "@accessType": "inputOutput",
+                                        "@type": "SFFloat",
+                                        "@name": "bias",
+                                        "@value": 0.5
+                                      },
+                                      {
+                                        "@accessType": "inputOutput",
+                                        "@type": "SFFloat",
+                                        "@name": "scale",
+                                        "@value": 0.5
+                                      },
+                                      {
+                                        "@accessType": "inputOutput",
+                                        "@type": "SFFloat",
+                                        "@name": "power",
+                                        "@value": 2
+                                      },
+                                      {
+                                        "@accessType": "inputOutput",
+                                        "@type": "SFFloat",
+                                        "@name": "a",
+                                        "@value": 10
+                                      },
+                                      {
+                                        "@accessType": "inputOutput",
+                                        "@type": "SFFloat",
+                                        "@name": "b",
+                                        "@value": 1
+                                      },
+                                      {
+                                        "@accessType": "inputOutput",
+                                        "@type": "SFFloat",
+                                        "@name": "c",
+                                        "@value": 20
+                                      },
+                                      {
+                                        "@accessType": "inputOutput",
+                                        "@type": "SFFloat",
+                                        "@name": "d",
+                                        "@value": 20
+                                      },
+                                      {
+                                        "@accessType": "inputOutput",
+                                        "@type": "SFFloat",
+                                        "@name": "tdelta"
+                                      },
+                                      {
+                                        "@accessType": "inputOutput",
+                                        "@type": "SFFloat",
+                                        "@name": "pdelta"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "-geometry": { "Sphere":
+                            {
+                            }
+                          }
+                        }
+                      },
+                      { "Script":
+                        {
+                          "@DEF": "Animate",
+                          "field": [
+                            {
+                              "@accessType": "inputOutput",
+                              "@type": "SFVec3f",
+                              "@name": "translation"
+                            },
+                            {
+                              "@accessType": "inputOutput",
+                              "@type": "SFVec3f",
+                              "@name": "velocity"
+                            },
+                            {
+                              "@accessType": "inputOnly",
+                              "@type": "SFFloat",
+                              "@name": "set_fraction"
+                            },
+                            {
+                              "@accessType": "inputOutput",
+                              "@type": "SFFloat",
+                              "@name": "a",
+                              "@value": 0.5
+                            },
+                            {
+                              "@accessType": "inputOutput",
+                              "@type": "SFFloat",
+                              "@name": "b",
+                              "@value": 0.5
+                            },
+                            {
+                              "@accessType": "inputOutput",
+                              "@type": "SFFloat",
+                              "@name": "c",
+                              "@value": 3
+                            },
+                            {
+                              "@accessType": "inputOutput",
+                              "@type": "SFFloat",
+                              "@name": "d",
+                              "@value": 3
+                            },
+                            {
+                              "@accessType": "inputOutput",
+                              "@type": "SFFloat",
+                              "@name": "tdelta",
+                              "@value": 0.5
+                            },
+                            {
+                              "@accessType": "inputOutput",
+                              "@type": "SFFloat",
+                              "@name": "pdelta",
+                              "@value": 0.5
+                            }
+                          ],
+                          "#sourceText": [
+                            "\r",
+                            "  \r",
+                            "ecmascript:\r",
+                            "\t\t\tfunction initialize() {\r",
+                            "\t\t\t    translation = new SFVec3f(0, 0, 0);\r",
+                            "\t\t\t    velocity = new SFVec3f(\r",
+                            "\t\t\t    \tMath.random() - 0.5,\r",
+                            "\t\t\t\tMath.random() - 0.5,\r",
+                            "\t\t\t\tMath.random() - 0.5);\r",
+                            "\t\t\t}\r",
+                            "\t\t\tfunction set_fraction() {\r",
+                            "\t\t\t    translation = new SFVec3f(\r",
+                            "\t\t\t    \ttranslation.x + velocity.x,\r",
+                            "\t\t\t\ttranslation.y + velocity.y,\r",
+                            "\t\t\t\ttranslation.z + velocity.z);\r",
+                            "\t\t\t    for (var j = 0; j <= 2; j++) {\r",
+                            "\t\t\t\t    if (Math.abs(translation.x) > 10) {\r",
+                            "\t\t\t\t\tinitialize();\r",
+                            "\t\t\t\t    } else if (Math.abs(translation.y) > 10) {\r",
+                            "\t\t\t\t\tinitialize();\r",
+                            "\t\t\t\t    } else if (Math.abs(translation.z) > 10) {\r",
+                            "\t\t\t\t\tinitialize();\r",
+                            "\t\t\t\t    } else {\r",
+                            "\t\t\t\t\tvelocity.x += Math.random() * 0.2 - 0.1;\r",
+                            "\t\t\t\t\tvelocity.y += Math.random() * 0.2 - 0.1;\r",
+                            "\t\t\t\t\tvelocity.z += Math.random() * 0.2 - 0.1;\r",
+                            "\t\t\t\t    }\r",
+                            "\t\t\t    }\r",
+                            "\t\t\t    animate_flowers();\r",
+                            "\t\t\t}\r",
+                            "\r",
+                            "\t\t\tfunction animate_flowers(fraction, eventTime) {\r",
+                            "\t\t\t\tvar choice = Math.floor(Math.random() * 4);\r",
+                            "\t\t\t\tswitch (choice) {\r",
+                            "\t\t\t\tcase 0:\r",
+                            "\t\t\t\t\ta += Math.random() * 0.2 - 0.1;\r",
+                            "\t\t\t\t\tbreak;\r",
+                            "\t\t\t\tcase 1:\r",
+                            "\t\t\t\t\tb += Math.random() * 0.2 - 0.1;\r",
+                            "\t\t\t\t\tbreak;\r",
+                            "\t\t\t\tcase 2:\r",
+                            "\t\t\t\t\tc += Math.random() * 2 - 1;\r",
+                            "\t\t\t\t\tbreak;\r",
+                            "\t\t\t\tcase 3:\r",
+                            "\t\t\t\t\td += Math.random() * 2 - 1;\r",
+                            "\t\t\t\t\tbreak;\r",
+                            "\t\t\t\t}\r",
+                            "\t\t\t\ttdelta += 0.5;\r",
+                            "\t\t\t\tpdelta += 0.5;\r",
+                            "\t\t\t\tif (a > 1) {\r",
+                            "\t\t\t\t\ta =  0.5;\r",
+                            "\t\t\t\t}\r",
+                            "\t\t\t\tif (b > 1) {\r",
+                            "\t\t\t\t\tb =  0.5;\r",
+                            "\t\t\t\t}\r",
+                            "\t\t\t\tif (c < 1) {\r",
+                            "\t\t\t\t\tc =  4;\r",
+                            "\t\t\t\t}\r",
+                            "\t\t\t\tif (d < 1) {\r",
+                            "\t\t\t\t\td =  4;\r",
+                            "\t\t\t\t}\r",
+                            "\t\t\t\tif (c > 10) {\r",
+                            "\t\t\t\t\tc = 4;\r",
+                            "\t\t\t\t}\r",
+                            "\t\t\t\tif (d > 10) {\r",
+                            "\t\t\t\t\td = 4;\r",
+                            "\t\t\t\t}\r",
+                            "\t\t\t}\r",
+                            "\r",
+                            ""
+                          ]
+                        }
+                      },
+                      { "TimeSensor":
+                        {
+                          "@DEF": "TourTime",
+                          "@cycleInterval": 5,
+                          "@loop": true
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "TourTime",
+                    "@fromField": "fraction_changed",
+                    "@toNode": "Animate",
+                    "@toField": "set_fraction"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "Animate",
+                    "@fromField": "translation",
+                    "@toNode": "transform",
+                    "@toField": "translation"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "Animate",
+                    "@fromField": "a",
+                    "@toNode": "shader",
+                    "@toField": "a"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "Animate",
+                    "@fromField": "b",
+                    "@toNode": "shader",
+                    "@toField": "b"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "Animate",
+                    "@fromField": "c",
+                    "@toNode": "shader",
+                    "@toField": "c"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "Animate",
+                    "@fromField": "d",
+                    "@toNode": "shader",
+                    "@toField": "d"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "Animate",
+                    "@fromField": "tdelta",
+                    "@toNode": "shader",
+                    "@toField": "tdelta"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "Animate",
+                    "@fromField": "pdelta",
+                    "@toNode": "shader",
+                    "@toField": "pdelta"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}
