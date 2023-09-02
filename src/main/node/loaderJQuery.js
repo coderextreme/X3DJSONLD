@@ -339,7 +339,7 @@ function appendInline(element, url, xmlDoc, next) {
 		}, function(e) {
 			console.error(e);
 		});
-	}).fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
+	}).fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed for '+url+'! ' + textStatus + ' ' + errorThrown); });
 }
 
 
@@ -494,7 +494,7 @@ function loadXml(url) {
 		$('#xml').val(getXmlString(xml));
 		window.updateFromXml(url);
 	})
-	.fail(function(jqXHR, textStatus, errorThrown) { alert('loadXml request failed! ' + textStatus + ' ' + errorThrown); });
+	.fail(function(jqXHR, textStatus, errorThrown) { alert('loadXml request failed for '+url+'! ' + textStatus + ' ' + errorThrown); });
 }
 
 function loadStl(url) {
@@ -502,7 +502,7 @@ function loadStl(url) {
 		$('#stl').val(stl);
 		window.updateFromStl(url);
 	})
-	.fail(function(jqXHR, textStatus, errorThrown) { alert('loadStl request failed! ' + textStatus + ' ' + errorThrown); });
+	.fail(function(jqXHR, textStatus, errorThrown) { alert('loadStl request failed for '+url+'! ' + textStatus + ' ' + errorThrown); });
 }
 
 function loadPly(url) {
@@ -510,7 +510,7 @@ function loadPly(url) {
 		$('#ply').val(ply);
 		updateFromPly(url);
 	})
-	.fail(function(jqXHR, textStatus, errorThrown) { alert('loadPly request failed! ' + textStatus + ' ' + errorThrown); });
+	.fail(function(jqXHR, textStatus, errorThrown) { alert('loadPly request failed for '+url+'! ' + textStatus + ' ' + errorThrown); });
 }
 
 function loadImage(url) {
@@ -553,7 +553,7 @@ window.myLoadJson = function myLoadJson(url) {
 		updateFromJson(json, url);
 		updateXml(json, url);
 	})
-	.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
+	.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed for '+url+'! ' + textStatus + ' ' + errorThrown); });
 }
 
 myLoadJson("../data/sphereflowers.x3dj");
@@ -669,7 +669,7 @@ function convertXmlToJson(xmlString, path) {
 	    return json;
     }, "json")
     .fail(function(jqXHR, textStatus, errorThrown) {
-	    alert('convertXmlToJson request failed! ' + textStatus + ' ' + errorThrown);
+	    alert('convertXmlToJson request failed for '+path+'! ' + textStatus + ' ' + errorThrown);
 	    /*
 	    $.get("stylesheets/X3dToJson.xslt", function(xslt) {
 		// console.error("VAL", xmlString);
