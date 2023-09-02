@@ -347,6 +347,44 @@ app.get("*.json", function(req, res, next) {
 	}
 });
 
+app.get("*.x3dj", function(req, res, next) {
+	var url = req._parsedUrl.pathname.substr(1);
+	console.error(req.ip+":  Requested JSON File", url);
+	var file = url;
+	var hash = url.indexOf("#");
+	if (hash > 0) {
+		file = url.substring(0, hash);
+	}
+	var json = {};
+	var outfile = __dirname+"/"+ file;
+	if (outfile.indexOf("www.web3d.org") >= 0) {
+		outfile = www +"/"+file.substr(file.indexOf("www.web3d.org"));
+	}
+	try {
+	/*
+	if (fs.existsSync(outfile)) {
+	*/
+		var data = fs.readFileSync(outfile);
+		// console.error("Data", data.toString());
+		var json = JSON.parse(data.toString());
+		// console.error(JSON.stringify(json));
+		// console.error("Calling extern proto expander");
+		// json = PROTOS.externalPrototypeExpander(outfile, json);
+		// console.error(JSON.stringify(json));
+                send(res, json, "text/json", next);
+	/*
+	} else {
+		var infile = file.substr(0, file.lastIndexOf("."))+".x3d";
+		infile = www + "/" + infile;
+		convertX3dToJson(res, infile, outfile, next);
+	}
+	*/
+	} catch (e) {
+		console.error("Couldn't read JSON.  Consider creating a JSON file", url);
+		next();
+	}
+});
+
 
 https.createServer({
   key: fs.readFileSync('key.pem'),
