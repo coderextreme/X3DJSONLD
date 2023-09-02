@@ -78,7 +78,7 @@ function compare(obj1, p1, obj2, p2) {
 			}
 		}
 		*/
-	} else if (typeof obj1 === 'object' && typeof obj2 === 'object') {
+	} else if (obj1 !== null && typeof obj2 !== null && typeof obj1 === 'object' && typeof obj2 === 'object') {
 		for (var key in obj1) {
 			var p1key = p1+'/'+key;
 			var p2key = p2+'/'+key;
