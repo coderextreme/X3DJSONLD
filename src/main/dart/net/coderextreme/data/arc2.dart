@@ -42,7 +42,7 @@ var X3D0 =  X3D(
               children_ : [
                 Transform(
                   DEF_ : SFString('DECLpoint_INSTANCE_node'),
-                  children_ : [
+                  child_ : 
                     Shape(
                       geometry_ : 
                         Sphere(
@@ -52,7 +52,7 @@ var X3D0 =  X3D(
                           material_ : 
                             Material(
                               diffuseColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0)])))),
-
+                  children_ : [
                     PositionInterpolator(
                       DEF_ : SFString('DECLpoint_INSTANCE_PI1'),
                       key_ : MFFloat([SFFloat(0), SFFloat(1)]),
@@ -131,7 +131,7 @@ ecmascript:eval (0
               children_ : [
                 Transform(
                   DEF_ : SFString('DECLpoint_INSTANCE1000_node'),
-                  children_ : [
+                  child_ : 
                     Shape(
                       geometry_ : 
                         Sphere(
@@ -141,7 +141,7 @@ ecmascript:eval (0
                           material_ : 
                             Material(
                               diffuseColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0)])))),
-
+                  children_ : [
                     PositionInterpolator(
                       DEF_ : SFString('DECLpoint_INSTANCE1000_PI1'),
                       key_ : MFFloat([SFFloat(0), SFFloat(1)]),
@@ -220,7 +220,7 @@ ecmascript:eval (0
               children_ : [
                 Transform(
                   DEF_ : SFString('rotscaleC1'),
-                  children_ : [
+                  child_ : 
                     Shape(
                       appearance_ : 
                         Appearance(
@@ -230,7 +230,7 @@ ecmascript:eval (0
                               transparency_ : 0.5)),
                       geometry_ : 
                         Cylinder(
-                          radius_ : 0.05))])]),
+                          radius_ : 0.05)))]),
 
             Script(
               DEF_ : SFString('DECLx3dconnector_connector1_S1'),

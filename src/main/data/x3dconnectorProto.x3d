@@ -4,8 +4,10 @@
 <head>        
         <meta name='title' content='x3dconnectorProto'/>
         <meta name='creator' content='Lost, Doug Sanden I think'/>
+        <meta name='created' content='Unknown'/>
+        <meta name='modified' content='July 30 2023'/>
         <meta name='generator' content='manual'/>
-        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d'/>
+	<meta name='identifier' content='https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d'/>
         <meta name='description' content='a generic proto to connect two objects'/>
 	<meta content='https://www.web3d.org/x3d/content/examples/license.html' name='license'/>
 </head>
@@ -74,19 +76,19 @@
     
     <ProtoDeclare name='x3dconnector'>
     <ProtoInterface>
-        <field accessType='initializeOnly' name='startnode' type='SFNode'/>
-        <field accessType='initializeOnly' name='endnode' type='SFNode'/>
-        <field accessType='initializeOnly' name='transnode' type='SFNode'/>
-        <field accessType='initializeOnly' name='rotscalenode' type='SFNode'/>
+    <field accessType='initializeOnly' name='startnode' type='SFNode'></field>
+    <field accessType='initializeOnly' name='endnode' type='SFNode'></field>
+    <field accessType='initializeOnly' name='transnode' type='SFNode'></field>
+    <field accessType='initializeOnly' name='rotscalenode' type='SFNode'></field>
         <field accessType='inputOnly' name='set_startpoint' type='SFVec3f'/>
         <field accessType='inputOnly' name='set_endpoint' type='SFVec3f'/>
     </ProtoInterface>
     <ProtoBody>
-        <Script DEF='S1'>
-            <field accessType='initializeOnly' name='startnode' type='SFNode'/>
-            <field accessType='initializeOnly' name='endnode' type='SFNode'/>
-            <field accessType='initializeOnly' name='transnode' type='SFNode'/>
-            <field accessType='initializeOnly' name='rotscalenode' type='SFNode'/>
+        <Script DEF='S1' directOutput='true'>
+	<field accessType='initializeOnly' name='startnode' type='SFNode'></field>
+	<field accessType='initializeOnly' name='endnode' type='SFNode'></field>
+	<field accessType='initializeOnly' name='transnode' type='SFNode'></field>
+	<field accessType='initializeOnly' name='rotscalenode' type='SFNode'></field>
             <field accessType='inputOnly' name='set_startpoint' type='SFVec3f'/>
             <field accessType='inputOnly' name='set_endpoint' type='SFVec3f'/>
             <IS>
@@ -102,11 +104,11 @@
 	    if (typeof endpoint === 'undefined') {
 		return;
 	    }
-            var dif = endpoint.subtract(startpoint);
-            var dist = dif.length()*0.5;
-            var dif2 = dif.multiply(0.5);
-            var norm = dif.normalize();
-            var transl = startpoint.add(dif2);
+            let dif = endpoint.subtract(startpoint);
+            let dist = dif.length()*0.5;
+            let dif2 = dif.multiply(0.5);
+            let norm = dif.normalize();
+            let transl = startpoint.add(dif2);
 	    if (typeof Quaternion !== 'undefined') {
 		    return {
 			    scale : new SFVec3f(1.0,dist,1.0),
@@ -122,7 +124,7 @@
 	    }
 	}
 	function recompute_and_route(startpoint, endpoint) {
-	      var trafo = recompute(startpoint, endpoint);
+	      let trafo = recompute(startpoint, endpoint);
 	      if (trafo) {
 		      transnode.translation = trafo.translation;
 		      rotscalenode.rotation = trafo.rotation;

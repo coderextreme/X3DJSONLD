@@ -287,5 +287,5 @@ ProtoInstance1
               .addFieldValue((new autoclass.fieldValue()).setName("description").setValue("ArtDeco02Material can substitute for another Material node"));
 ProtoInstance4
             .addFieldValue((new autoclass.fieldValue()).setName("description").setValue("testing 1 2 3"));
-    X3D0.toFileX3D("../data/HelloWorldProgramOutputCanonical.new.x3d");
+    X3D0.toFileX3D("../data/HelloWorldProgramOutputCanonical.new.node.x3d");
     process.exit(0);

@@ -121,7 +121,7 @@ Appearance23->setTexture(*ImageTexture24);
 
 Shape21->setAppearance(*Appearance23);
 
-Transform20->addChildren(*Shape21);
+Transform20->addChild(*Shape21);
 
 Group17->addChildren(*Transform20);
 

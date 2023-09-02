@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="4.0", 
-head=head(children=[component(name="HAnim", level=1),
+head=head(
+children=[
+component(name="HAnim", level=1),
 meta(name="title", content="HAnimModelFootLeft.x3d"),
 meta(name="description", content="Left foot, using high-fidelity definitions for HAnim version 2.0"),
 meta(name="creator", content="Kwan-Hee YOO, Don Brutzman and Joe Williams"),
@@ -24,7 +27,7 @@ meta(name="TODO", content="Integrate and confirm Segment/Joint names, Viewpoints
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -36,7 +39,6 @@ MetadataSet(name="HAnimHumanoid.info", reference="https://www.web3d.org/document
 MetadataString(name="authorName", value=["Kwan-Hee YOO, Don Brutzman and Joe Williams"])])), skeleton=[
 HAnimJoint(name="humanoid_root", DEF="hanim_humanoid_root", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 Comment(value=''' Might consider putting a HAnimSegment here, but that doesn't help with re-use of this foot model '''),
-
 HAnimJoint(name="l_talocrural", DEF="hanim_l_talocrural", description="connection joint of foot to leg above", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_talus", DEF="hanim_l_talus", children=[
 Transform(children=[
@@ -66,7 +68,6 @@ IndexedLineSet(DEF="TCtoCC", coordIndex=[0,1],
 coord=
 Coordinate(point=[(0,0,0),(0.2,0.3,0)])))]),
 Comment(value=''' TCN '''),
-
 HAnimJoint(name="l_talocalcaneonavicular", DEF="hanim_l_talocalcaneonavicular", center=((0.0,-0.3,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_navicular", DEF="hanim_l_navicular", children=[
 Transform(translation=((0.0,-0.3,0)), children=[
@@ -99,7 +100,6 @@ IndexedLineSet(DEF="TCNtoCN3", coordIndex=[0,1],
 coord=
 Coordinate(point=[(0.0,-0.3,0),(0.1,-0.4,0)])))]),
 Comment(value=''' CN1 '''),
-
 HAnimJoint(name="l_cuneonavicular_1", DEF="hanim_l_cuneonavicular_1", center=((-0.1,-0.45,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_cuneiform_1", DEF="hanim_l_cuneiform_1", children=[
 Transform(translation=((-0.1,-0.45,0)), children=[
@@ -153,7 +153,6 @@ IndexedLineSet(DEF="tiptoe_l_tarsal_distal_interphalangeal_1", coordIndex=[0,1],
 coord=
 Coordinate(point=[(-0.1,-1.05,0),(-0.1,-1.1,0)])))])])])])]),
 Comment(value=''' CN2 '''),
-
 HAnimJoint(name="l_cuneonavicular_2", DEF="hanim_l_cuneonavicular_2", center=((0.0,-0.45,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_cuneiform_2", DEF="hanim_l_cuneiform_2", children=[
 Transform(translation=((0.0,-0.45,0)), children=[
@@ -220,7 +219,6 @@ IndexedLineSet(DEF="tiptoe_l_tarsal_distal_phalanx_2", coordIndex=[0,1],
 coord=
 Coordinate(point=[(0.05,-1.12,0),(0.05,-1.16,0)])))])])])])])]),
 Comment(value=''' CN3 '''),
-
 HAnimJoint(name="l_cuneonavicular_3", DEF="hanim_l_cuneonavicular_3", center=((0.1,-0.4,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_cuneiform_3", DEF="hanim_l_cuneiform_3", children=[
 Transform(translation=((0.1,-0.4,0)), children=[
@@ -287,7 +285,6 @@ IndexedLineSet(DEF="tiptoe_l_tarsal_distal_interphalangeal_3", coordIndex=[0,1],
 coord=
 Coordinate(point=[(0.15,-1.13,0),(0.15,-1.16,0)])))])])])])])]),]),
 Comment(value=''' CC '''),
-
 HAnimJoint(name="l_calcaneocuboid", DEF="hanim_l_calcaneocuboid", center=((0.2,0.3,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_calcaneus", DEF="hanim_l_calcaneus", children=[
 Transform(translation=((0.2,0.3,0)), children=[
@@ -302,7 +299,6 @@ IndexedLineSet(DEF="CCtoTT", coordIndex=[0,1],
 coord=
 Coordinate(point=[(0.2,0.3,0),(0.21,-0.3,0)])))]),
 Comment(value=''' TT '''),
-
 HAnimJoint(name="l_transversetarsal", DEF="hanim_l_transversetarsal", center=((0.21,-0.3,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_cuboid", DEF="hanim_l_cuboid", children=[
 Transform(translation=((0.21,-0.3,0)), children=[
@@ -326,7 +322,6 @@ IndexedLineSet(DEF="TTtoTMT5", coordIndex=[0,1],
 coord=
 Coordinate(point=[(0.21,-0.3,0),(0.33,-0.52,0)])))]),
 Comment(value=''' TMT4 '''),
-
 HAnimJoint(name="l_tarsometatarsal_4", DEF="hanim_l_tarsometatarsal_4", center=((0.25,-0.58,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_metatarsal_4", DEF="hanim_l_metatarsal_4", children=[
 Transform(translation=((0.25,-0.58,0)), children=[
@@ -380,7 +375,6 @@ IndexedLineSet(DEF="tiptoe_l_tarsal_distal_interphalangeal_4", coordIndex=[0,1],
 coord=
 Coordinate(point=[(0.25,-1.1,0),(0.25,-1.15,0)])))])])])])]),
 Comment(value=''' TMT5 '''),
-
 HAnimJoint(name="l_tarsometatarsal_5", DEF="hanim_l_tarsometatarsal_5", center=((0.33,-0.52,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_metatarsal_5", DEF="hanim_l_metatarsal_5", children=[
 Transform(translation=((0.33,-0.52,0)), children=[
@@ -485,5 +479,6 @@ HAnimSegment(USE="hanim_l_tarsal_proximal_phalanx_1"),
 HAnimSegment(USE="hanim_l_tarsal_proximal_phalanx_2"),
 HAnimSegment(USE="hanim_l_tarsal_proximal_phalanx_3"),
 HAnimSegment(USE="hanim_l_tarsal_proximal_phalanx_4"),
-HAnimSegment(USE="hanim_l_tarsal_proximal_phalanx_5")])]))
-.XML())
+HAnimSegment(USE="hanim_l_tarsal_proximal_phalanx_5")])])))
+output = model.JSON()
+json.loads(output)

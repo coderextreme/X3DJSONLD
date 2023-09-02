@@ -4,8 +4,10 @@
   <head>
     <meta content='x3dconnectorProto' name='title'/>
     <meta content='Lost, Doug Sanden I think' name='creator'/>
+    <meta content='Unknown' name='created'/>
+    <meta content='July 30 2023' name='modified'/>
     <meta content='manual' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d' name='identifier'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d' name='identifier'/>
     <meta content='a generic proto to connect two objects' name='description'/>
     <meta content='https://www.web3d.org/x3d/content/examples/license.html' name='license'/>
   </head>
@@ -93,7 +95,7 @@
         <field name='set_endpoint' accessType='inputOnly' type='SFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
-        <Script DEF='S1'>
+        <Script DEF='S1' directOutput='true'>
           <field name='startnode' accessType='initializeOnly' type='SFNode'/>
           <field name='endnode' accessType='initializeOnly' type='SFNode'/>
           <field name='transnode' accessType='initializeOnly' type='SFNode'/>
@@ -114,11 +116,11 @@ ecmascript:
 	    if (typeof endpoint === 'undefined') {
 		return;
 	    }
-            var dif = endpoint.subtract(startpoint);
-            var dist = dif.length()*0.5;
-            var dif2 = dif.multiply(0.5);
-            var norm = dif.normalize();
-            var transl = startpoint.add(dif2);
+            let dif = endpoint.subtract(startpoint);
+            let dist = dif.length()*0.5;
+            let dif2 = dif.multiply(0.5);
+            let norm = dif.normalize();
+            let transl = startpoint.add(dif2);
 	    if (typeof Quaternion !== 'undefined') {
 		    return {
 			    scale : new SFVec3f(1.0,dist,1.0),
@@ -134,7 +136,7 @@ ecmascript:
 	    }
 	}
 	function recompute_and_route(startpoint, endpoint) {
-	      var trafo = recompute(startpoint, endpoint);
+	      let trafo = recompute(startpoint, endpoint);
 	      if (trafo) {
 		      transnode.translation = trafo.translation;
 		      rotscalenode.rotation = trafo.rotation;

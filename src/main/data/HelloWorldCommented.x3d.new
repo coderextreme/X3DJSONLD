@@ -15,13 +15,13 @@
 </head>
 <Scene><!--Example scene to illustrate comments interspersed among X3D nodes and fields (XML elements and attributes)--><!--WorldInfo begin--><WorldInfo title="Hello world!"></WorldInfo>
 <!--WorldInfo complete, Group begin--><Group><!--Viewpoint begin--><Viewpoint DEF="ViewUpClose" centerOfRotation="0 -1 0" description="Hello world!" position="0 -1 7"></Viewpoint>
-<!--Viewpoint complete, Transform begin--><Transform rotation="0 1 0 3"><!--Shape begin--><Shape><!--Sphere begin--><!--Sphere complete, Appearance begin--><!--Appearance complete--><Sphere containerField="geometry"></Sphere>
+<!--Viewpoint complete, Transform begin--><Transform rotation="0 1 0 3"><!--Shape begin--><Shape><!--Sphere begin--><!--Sphere complete, Appearance begin--><!--Appearance complete--><Sphere></Sphere>
 <Appearance><!--Material begin--><!--Material complete, ImageTexture begin--><!--ImageTexture complete--><Material DEF="MaterialLightBlue" diffuseColor="0.1 0.5 1"></Material>
 <ImageTexture containerField="texture" DEF="ImageCloudlessEarth" url="&quot;earth-topo.png&quot; &quot;earth-topo.jpg&quot; &quot;earth-topo-small.gif&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif&quot;"></ImageTexture>
 </Appearance>
 </Shape>
 <!--Shape complete--></Transform>
-<!--Transform complete, Transform begin--><Transform translation="0 -2 0"><!--Shape begin--><Shape><!--Text begin--><!--Text complete, Appearance begin--><!--Appearance complete--><Text containerField="geometry" DEF="TextMessage" string="&quot;Hello&quot; &quot;world!&quot;"><!--FontStyle begin--><!--FontStyle complete--><FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
+<!--Transform complete, Transform begin--><Transform translation="0 -2 0"><!--Shape begin--><Shape><!--Text begin--><!--Text complete, Appearance begin--><!--Appearance complete--><Text DEF="TextMessage" string="&quot;Hello&quot; &quot;world!&quot;"><!--FontStyle begin--><!--FontStyle complete--><FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
 </Text>
 <Appearance><!--Material begin--><!--Material complete--><Material USE="MaterialLightBlue"></Material>
 </Appearance>

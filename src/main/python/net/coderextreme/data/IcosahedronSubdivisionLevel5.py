@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Interchange", version="3.1", 
-head=head(children=[meta(name="title", content="IcosahedronSubdivisionLevel5.x3d"),
+head=head(
+children=[
+meta(name="title", content="IcosahedronSubdivisionLevel5.x3d"),
 meta(name="reference", content="IcosahedronSubdivisionLevel5.ply"),
 meta(name="description", content="Icosahedron is a polyhedron with twenty faces, subdivided to level 5, where all 10242 vertices and 20480 faces produce regular (equilateral) triangles."),
 meta(name="created", content="13 September 2014"),
@@ -19,7 +22,7 @@ meta(name="identifier", content="http://x3dGraphics.com/examples/X3dForAdvancedM
 meta(name="generator", content="Meshlab X3D Exported, http://meshlab.sourceforge.net"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -34,5 +37,6 @@ Coordinate(point=[(0.367868,0.929648,-0.0206686),(0.334425,0.942422,0),(0.367868
 appearance=
 Appearance(
 material=
-Material(diffuseColor=((0.2,0.5,0.8)))))]))
-.XML())
+Material(diffuseColor=((0.2,0.5,0.8)))))])))
+output = model.JSON()
+json.loads(output)

@@ -70,7 +70,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/force.x3d")}),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d")}),
 
             new meta({
               name : new SFString("description"),
@@ -105,7 +105,7 @@ var X3D0 =  new X3D({
                                 new connect({
                                   nodeField : new SFString("translation"),
                                   protoField : new SFString("position")})])})),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               geometry : new SFNode(
                                 new Sphere({})),
@@ -113,11 +113,11 @@ var X3D0 =  new X3D({
                                 new Appearance({
                                   material : new SFNode(
                                     new Material({
-                                      diffuseColor : new SFColor([1,0,0])}))}))}),
-
+                                      diffuseColor : new SFColor([1,0,0])}))}))})),
+                          children : new MFNode([
                             new Transform({
                               translation : new SFVec3f([1,0,0]),
-                              children : new MFNode([
+                              child : new SFNode(
                                 new Shape({
                                   geometry : new SFNode(
                                     new Text({
@@ -130,7 +130,7 @@ var X3D0 =  new X3D({
                                     new Appearance({
                                       material : new SFNode(
                                         new Material({
-                                          diffuseColor : new SFColor([0,0,1])}))}))})])})])}),
+                                          diffuseColor : new SFColor([0,0,1])}))}))}))})])}),
 
                         new PositionInterpolator({
                           DEF : new SFString("NodePosition"),

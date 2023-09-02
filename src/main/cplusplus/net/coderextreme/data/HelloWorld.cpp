@@ -166,7 +166,7 @@ Appearance32->setTexture(*ImageTexture34);
 
 Shape30->setAppearance(*Appearance32);
 
-Transform29->addChildren(*Shape30);
+Transform29->addChild(*Shape30);
 
 Group27->addChildren(*Transform29);
 
@@ -189,7 +189,7 @@ Appearance39->setMaterial(*Material40);
 
 Shape36->setAppearance(*Appearance39);
 
-Transform35->addChildren(*Shape36);
+Transform35->addChild(*Shape36);
 
 Group27->addChildren(*Transform35);
 

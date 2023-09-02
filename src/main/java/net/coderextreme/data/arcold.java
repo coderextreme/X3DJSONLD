@@ -63,7 +63,7 @@ ProtoInstance ProtoInstance12 = null;
         .addMeta(new meta().setName("title").setContent("arcold.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/arc.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d"))
         .addMeta(new meta().setName("description").setContent("an attempt to implement an arc in a graph")))
       .setScene(new Scene()
         .addChild(new Viewpoint().setPosition(new float[] {0f,0f,5f}).setDescription("a moving graph"))

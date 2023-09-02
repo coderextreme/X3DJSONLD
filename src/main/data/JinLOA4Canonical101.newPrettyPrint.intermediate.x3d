@@ -5,7 +5,7 @@
     <component name='HAnim' level='1'/>
   </head>
   <Scene>
-    <WorldInfo title='JinLOA4.x3d'/>
+    <WorldInfo title='JinLOA4Canonical101.x3d'/>
     <NavigationInfo avatarSize='0.25 1.6 0.75' speed='1.5' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
     <Viewpoint centerOfRotation='-2.0E-4 0.0139 -0.1019' description='JinLOA4' position='-2.0E-4 0.0139 -0.0344'/>
     <Transform DEF='cordsysfloor' scale='0.175 0.175 0.175'>

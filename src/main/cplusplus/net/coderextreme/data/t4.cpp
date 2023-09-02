@@ -90,7 +90,7 @@ CProtoDeclare ProtoDeclare15 = browser.createX3DFromString(R"foo(<?xml version="
 </IS>
 </Material>
 </Appearance>
-<Sphere containerField="geometry" radius="5.10000002384186"></Sphere>
+<Sphere radius="5.10000002384186"></Sphere>
 </Shape>
 </Transform>
 </ProtoBody>
@@ -143,7 +143,7 @@ CSphere* Sphere28 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere28->setRadius(5.10000002384186);
 Shape23->setGeometry(Sphere28);
 
-Transform20->addChildren(*Shape23);
+Transform20->addChild(*Shape23);
 
 ProtoBody19->addChildren(*Transform20);
 

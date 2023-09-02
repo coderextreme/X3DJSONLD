@@ -31,7 +31,7 @@ head1->addMeta(*meta4);
 
 Cmeta* meta5 = new Cmeta();
 meta5->setName("identifier");
-meta5->setContent("https://coderextreme.net/X3DJSONLD/rubikOnFire.x3d");
+meta5->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/rubikOnFire.x3d");
 head1->addMeta(*meta5);
 
 Cmeta* meta6 = new Cmeta();
@@ -113,7 +113,7 @@ Appearance22->setMaterial(*Material23);
 
 Shape19->setAppearance(*Appearance22);
 
-Transform16->addChildren(*Shape19);
+Transform16->addChild(*Shape19);
 
 ProtoBody15->addChildren(*Transform16);
 

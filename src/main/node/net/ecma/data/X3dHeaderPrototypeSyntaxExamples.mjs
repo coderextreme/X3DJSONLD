@@ -260,7 +260,7 @@ var X3D0 =  new X3D({
 
             new Transform({
               translation : new SFVec3f([0,-2.5,0]),
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
@@ -277,7 +277,7 @@ var X3D0 =  new X3D({
                       fontStyle : new SFNode(
                         new FontStyle({
                           justify : new MFString(["MIDDLE","MIDDLE"]),
-                          size : new SFFloat(0.6)}))}))})])}),
+                          size : new SFFloat(0.6)}))}))}))}),
 
             new ProtoInstance({
               name : new SFString("ViewPositionOrientation"),

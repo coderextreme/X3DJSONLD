@@ -36,7 +36,7 @@ head1->addMeta(*meta5);
 
 Cmeta* meta6 = new Cmeta();
 meta6->setName("identifier");
-meta6->setContent("https://coderextreme.net/X3DJSONLD/sphere.x3d");
+meta6->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/sphere.x3d");
 head1->addMeta(*meta6);
 
 Cmeta* meta7 = new Cmeta();

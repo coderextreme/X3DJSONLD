@@ -265,7 +265,7 @@ IndexedLineSet44.color = Color46;
 
 Shape43.geometry = IndexedLineSet44;
 
-Transform41.children[1] = Shape43;
+Transform41.child[1] = Shape43;
 
 Shape Shape47 = createNode("Shape");
 Shape47.DEF = "OldMan_Shape";
@@ -292,7 +292,7 @@ IndexedFaceSet IndexedFaceSet52 = createNode("IndexedFaceSet");
 IndexedFaceSet52.DEF = "OldMan_skin_IndexedFaceSet";
 Shape47.geometry = IndexedFaceSet52;
 
-Transform41.children[2] = Shape47;
+Transform41.child[2] = Shape47;
 
 HAnimSite40.children = new MFNode();
 

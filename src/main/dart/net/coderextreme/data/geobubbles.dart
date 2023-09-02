@@ -26,7 +26,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/geobubbles.x3d')),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/geobubbles.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -43,15 +43,15 @@ var X3D0 =  X3D(
               description_ : SFString('Tour Views')),
 
             Background(
-              backUrl_ : MFString([SFString("../resources/images/BK.png"), SFString("https://coderextreme.net/X3DJSONLD/images/BK.png")]),
-              bottomUrl_ : MFString([SFString("../resources/images/BT.png"), SFString("https://coderextreme.net/X3DJSONLD/images/BT.png")]),
-              frontUrl_ : MFString([SFString("../resources/images/FR.png"), SFString("https://coderextreme.net/X3DJSONLD/images/FR.png")]),
-              leftUrl_ : MFString([SFString("../resources/images/LF.png"), SFString("https://coderextreme.net/X3DJSONLD/images/LF.png")]),
-              rightUrl_ : MFString([SFString("../resources/images/RT.png"), SFString("https://coderextreme.net/X3DJSONLD/images/RT.png")]),
-              topUrl_ : MFString([SFString("../resources/images/TP.png"), SFString("https://coderextreme.net/X3DJSONLD/images/TP.png")])),
+              backUrl_ : MFString([SFString("../resources/images/BK.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png")]),
+              bottomUrl_ : MFString([SFString("../resources/images/BT.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png")]),
+              frontUrl_ : MFString([SFString("../resources/images/FR.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png")]),
+              leftUrl_ : MFString([SFString("../resources/images/LF.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png")]),
+              rightUrl_ : MFString([SFString("../resources/images/RT.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png")]),
+              topUrl_ : MFString([SFString("../resources/images/TP.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png")])),
 
             Transform(
-              children_ : [
+              child_ : 
                 Shape(
                   geometry_ : 
                     Sphere(),
@@ -60,7 +60,7 @@ var X3D0 =  X3D(
                       material_ : 
                         Material(
                           diffuseColor_ : SFColor([SFDouble(0.7), SFDouble(0.7), SFDouble(0.7)]),
-                          specularColor_ : SFColor([SFDouble(0.5), SFDouble(0.5), SFDouble(0.5)]))))]),
+                          specularColor_ : SFColor([SFDouble(0.5), SFDouble(0.5), SFDouble(0.5)]))))),
 
             TimeSensor(
               DEF_ : SFString('TourTime'),

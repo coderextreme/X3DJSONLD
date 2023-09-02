@@ -96,7 +96,7 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("translation"),
                               protoField : new SFString("translation")})])})),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           geometry : new SFNode(
                             new Sphere({
@@ -105,8 +105,8 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,0,0])}))}))}),
-
+                                  diffuseColor : new SFColor([1,0,0])}))}))})),
+                      children : new MFNode([
                         new PositionInterpolator({
                           DEF : new SFString("PI1"),
                           key : new MFFloat([0,1]),
@@ -197,7 +197,7 @@ ecmascript:eval (0
               children : new MFNode([
                 new Transform({
                   DEF : new SFString("rotscaleC1"),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       appearance : new SFNode(
                         new Appearance({
@@ -207,7 +207,7 @@ ecmascript:eval (0
                               transparency : new SFFloat(0.5)}))})),
                       geometry : new SFNode(
                         new Cylinder({
-                          radius : new SFFloat(0.05)}))})])})])}),
+                          radius : new SFFloat(0.05)}))}))})])}),
 
             new ProtoDeclare({
               name : new SFString("x3dconnector"),

@@ -22,7 +22,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/rubikOnFire.x3d')),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/rubikOnFire.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -64,7 +64,7 @@ var X3D0 =  X3D(
                             connect(
                               nodeField_ : SFString('translation'),
                               protoField_ : SFString('xtranslation'))]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           IS_ : 
                             IS(
@@ -76,7 +76,7 @@ var X3D0 =  X3D(
                             Appearance(
                               material_ : 
                                 Material(
-                                  diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]))))])])),
+                                  diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)])))))])),
 
             ProtoDeclare(
               name_ : SFString('three'),

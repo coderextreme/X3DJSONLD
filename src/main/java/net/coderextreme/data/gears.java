@@ -52,7 +52,7 @@ public class gears {
         .addMeta(new meta().setName("description").setContent("Template for an Indexed Face Set"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("created").setContent("4 April 2017"))
-        .addMeta(new meta().setName("generator").setContent("convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/convertStlToJson.js"))
+        .addMeta(new meta().setName("generator").setContent("convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/src/main/node/convertStlToJson.js"))
         .addMeta(new meta().setName("license").setContent("../license.html"))
         .addMeta(new meta().setName("modified").setContent("30 April 2017"))
         .addMeta(new meta().setName("translated").setContent("30 April 2017"))

@@ -14,11 +14,11 @@ var X3D0 =  X3D(
           meta_ : [
             meta(
               name_ : SFString('title'),
-              content_ : SFString('JohnBoy.x3d')),
+              content_ : SFString('JohnJoint3.x3d')),
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d')),
+              content_ : SFString('http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint3.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -48,7 +48,7 @@ var X3D0 =  X3D(
           children_ : [
             Transform(
               /*DEF for markerfor XYZ axes*/
-              children_ : [
+              child_ : 
                 Shape(
                   DEF_ : SFString('AxisLinesShape'),
                   /*RGB lines showing XYZ axes*/
@@ -62,7 +62,7 @@ var X3D0 =  X3D(
                           point_ : MFVec3f([SFVec3f([0,0,0]),SFVec3f([0.1,0,0]),SFVec3f([0,0.1,0]),SFVec3f([0,0,0.1])])),
                       color_ : 
                         Color(
-                          color_ : MFColor([SFColor(1), SFColor(0), SFColor(0), SFColor(0), SFColor(0.6), SFColor(0), SFColor(0), SFColor(0), SFColor(1)]))))]),
+                          color_ : MFColor([SFColor(1), SFColor(0), SFColor(0), SFColor(0), SFColor(0.6), SFColor(0), SFColor(0), SFColor(0), SFColor(1)]))))),
 
             Group(
               /*DEFS for markers of skeleton joints, segments, and sites*/
@@ -72,7 +72,7 @@ var X3D0 =  X3D(
                   children_ : [
                     Transform(
                       translation_ : SFVec3f([SFDouble(0), SFDouble(2.1), SFDouble(0)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           DEF_ : SFString('HAnimJointShape'),
                           geometry_ : 
@@ -84,11 +84,11 @@ var X3D0 =  X3D(
                                 Material(
                                   DEF_ : SFString('HAnimJointMaterial'),
                                   diffuseColor_ : SFColor([SFDouble(0), SFDouble(0), SFDouble(0.8)]),
-                                  transparency_ : 0.3)))]),
+                                  transparency_ : 0.3)))),
 
                     Transform(
                       translation_ : SFVec3f([SFDouble(0), SFDouble(2.05), SFDouble(0)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           DEF_ : SFString('HAnimSegmentLine'),
                           geometry_ : 
@@ -100,8 +100,32 @@ var X3D0 =  X3D(
                                   color_ : MFColorRGBA([SFColorRGBA(1), SFColorRGBA(1), SFColorRGBA(0), SFColorRGBA(1), SFColorRGBA(1), SFColorRGBA(1), SFColorRGBA(0), SFColorRGBA(0.1)])),
                               coord_ : 
                                 Coordinate(
-                                  point_ : MFVec3f([SFVec3f([-0.05,0,0]),SFVec3f([0.05,0,0])]))))]),
-                  /*<Transform translation='0 2.1 0' scale='1 1 1'> <Shape DEF='HAnimSiteShape'> <IndexedFaceSet DEF='DiamondIFS' creaseAngle='0.5' solid='false' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1'> <ColorRGBA DEF='HAnimSiteColorRGBA' color='1 1 0 1 1 1 0 0.1'/> <Coordinate point='0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0'/> </IndexedFaceSet> <Appearance> <Material diffuseColor='1 1 0' transparency='0.3'/> </Appearance> </Shape> </Transform>*/])]),
+                                  point_ : MFVec3f([SFVec3f([-0.05,0,0]),SFVec3f([0.05,0,0])]))))),
+
+                    Transform(
+                      translation_ : SFVec3f([SFDouble(0), SFDouble(2.1), SFDouble(0)]),
+                      child_ : 
+                        Shape(
+                          DEF_ : SFString('HAnimSiteShape'),
+                          geometry_ : 
+                            IndexedFaceSet(
+                              DEF_ : SFString('DiamondIFS'),
+                              creaseAngle_ : 0.5,
+                              solid_ : false,
+                              coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(2), SFInt32(-1), SFInt32(0), SFInt32(2), SFInt32(3), SFInt32(-1), SFInt32(0), SFInt32(3), SFInt32(4), SFInt32(-1), SFInt32(0), SFInt32(4), SFInt32(1), SFInt32(-1), SFInt32(5), SFInt32(2), SFInt32(1), SFInt32(-1), SFInt32(5), SFInt32(3), SFInt32(2), SFInt32(-1), SFInt32(5), SFInt32(4), SFInt32(3), SFInt32(-1), SFInt32(5), SFInt32(1), SFInt32(4), SFInt32(-1)]),
+                              color_ : 
+                                ColorRGBA(
+                                  DEF_ : SFString('HAnimSiteColorRGBA'),
+                                  color_ : MFColorRGBA([SFColorRGBA(1), SFColorRGBA(1), SFColorRGBA(0), SFColorRGBA(1), SFColorRGBA(1), SFColorRGBA(1), SFColorRGBA(0), SFColorRGBA(0.1)])),
+                              coord_ : 
+                                Coordinate(
+                                  point_ : MFVec3f([SFVec3f([0,0.01,0]),SFVec3f([-0.01,0,0]),SFVec3f([0,0,0.01]),SFVec3f([0.01,0,0]),SFVec3f([0,0,-0.01]),SFVec3f([0,-0.01,0])]))),
+                          appearance_ : 
+                            Appearance(
+                              material_ : 
+                                Material(
+                                  diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(0)]),
+                                  transparency_ : 0.3))))])]),
 
             NavigationInfo(
               speed_ : 1.5),
@@ -121,7 +145,7 @@ var X3D0 =  X3D(
                   center_ : SFVec3f([SFDouble(0), SFDouble(0.824), SFDouble(0.0277)]),
                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                  shape_ : 
+                  child_ : 
                     Shape(
                       geometry_ : 
                         LineSet(
@@ -133,7 +157,7 @@ var X3D0 =  X3D(
                           color_ : 
                             ColorRGBA(
                               USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                  hAnimSite_ : 
+                  child_ : 
                     HAnimSite(
                       name_ : SFString('buttocks_standing_wall_contact_point_pt'),
                       DEF_ : SFString('hanim_buttocks_standing_wall_contact_point_pt'),
@@ -144,7 +168,7 @@ var X3D0 =  X3D(
 
                         Shape(
                           USE_ : SFString('HAnimSiteShape'))]),
-                  hAnimSite_ : 
+                  child_ : 
                     HAnimSite(
                       name_ : SFString('crotch_pt'),
                       DEF_ : SFString('hanim_crotch_pt'),
@@ -155,7 +179,7 @@ var X3D0 =  X3D(
 
                         Shape(
                           USE_ : SFString('HAnimSiteShape'))]),
-                  hAnimSite_ : 
+                  child_ : 
                     HAnimSite(
                       name_ : SFString('l_asis_pt'),
                       DEF_ : SFString('hanim_l_asis_pt'),
@@ -166,7 +190,7 @@ var X3D0 =  X3D(
 
                         Shape(
                           USE_ : SFString('HAnimSiteShape'))]),
-                  hAnimSite_ : 
+                  child_ : 
                     HAnimSite(
                       name_ : SFString('l_iliocristale_pt'),
                       DEF_ : SFString('hanim_l_iliocristale_pt'),
@@ -177,7 +201,7 @@ var X3D0 =  X3D(
 
                         Shape(
                           USE_ : SFString('HAnimSiteShape'))]),
-                  hAnimSite_ : 
+                  child_ : 
                     HAnimSite(
                       name_ : SFString('l_psis_pt'),
                       DEF_ : SFString('hanim_l_psis_pt'),
@@ -188,7 +212,7 @@ var X3D0 =  X3D(
 
                         Shape(
                           USE_ : SFString('HAnimSiteShape'))]),
-                  hAnimSite_ : 
+                  child_ : 
                     HAnimSite(
                       name_ : SFString('l_trochanterion_pt'),
                       DEF_ : SFString('hanim_l_trochanterion_pt'),
@@ -199,7 +223,7 @@ var X3D0 =  X3D(
 
                         Shape(
                           USE_ : SFString('HAnimSiteShape'))]),
-                  hAnimSite_ : 
+                  child_ : 
                     HAnimSite(
                       name_ : SFString('r_asis_pt'),
                       DEF_ : SFString('hanim_r_asis_pt'),
@@ -210,7 +234,7 @@ var X3D0 =  X3D(
 
                         Shape(
                           USE_ : SFString('HAnimSiteShape'))]),
-                  hAnimSite_ : 
+                  child_ : 
                     HAnimSite(
                       name_ : SFString('r_iliocristale_pt'),
                       DEF_ : SFString('hanim_r_iliocristale_pt'),
@@ -221,7 +245,7 @@ var X3D0 =  X3D(
 
                         Shape(
                           USE_ : SFString('HAnimSiteShape'))]),
-                  hAnimSite_ : 
+                  child_ : 
                     HAnimSite(
                       name_ : SFString('r_psis_pt'),
                       DEF_ : SFString('hanim_r_psis_pt'),
@@ -232,7 +256,7 @@ var X3D0 =  X3D(
 
                         Shape(
                           USE_ : SFString('HAnimSiteShape'))]),
-                  hAnimSite_ : 
+                  child_ : 
                     HAnimSite(
                       name_ : SFString('r_trochanterion_pt'),
                       DEF_ : SFString('hanim_r_trochanterion_pt'),
@@ -243,7 +267,7 @@ var X3D0 =  X3D(
 
                         Shape(
                           USE_ : SFString('HAnimSiteShape'))]),
-                  shape_ : 
+                  child_ : 
                     Shape(
                       geometry_ : 
                         LineSet(
@@ -255,7 +279,7 @@ var X3D0 =  X3D(
                           color_ : 
                             ColorRGBA(
                               USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                  hAnimSite_ : 
+                  child_ : 
                     HAnimSite(
                       name_ : SFString('navel_pt'),
                       DEF_ : SFString('hanim_navel_pt'),
@@ -266,7 +290,7 @@ var X3D0 =  X3D(
 
                         Shape(
                           USE_ : SFString('HAnimSiteShape'))]),
-                  hAnimSite_ : 
+                  child_ : 
                     HAnimSite(
                       name_ : SFString('waist_preferred_anterior_pt'),
                       DEF_ : SFString('hanim_waist_preferred_anterior_pt'),
@@ -277,7 +301,7 @@ var X3D0 =  X3D(
 
                         Shape(
                           USE_ : SFString('HAnimSiteShape'))]),
-                  hAnimSite_ : 
+                  child_ : 
                     HAnimSite(
                       name_ : SFString('waist_preferred_posterior_pt'),
                       DEF_ : SFString('hanim_waist_preferred_posterior_pt'),
@@ -295,7 +319,7 @@ var X3D0 =  X3D(
                       center_ : SFVec3f([SFDouble(0), SFDouble(0.9149), SFDouble(0.0016)]),
                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      shape_ : 
+                      child_ : 
                         Shape(
                           geometry_ : 
                             LineSet(
@@ -307,7 +331,7 @@ var X3D0 =  X3D(
                               color_ : 
                                 ColorRGBA(
                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                      hAnimSite_ : 
+                      child_ : 
                         HAnimSite(
                           name_ : SFString('l_femoral_lateral_epicondyles_pt'),
                           DEF_ : SFString('hanim_l_femoral_lateral_epicondyles_pt'),
@@ -318,7 +342,7 @@ var X3D0 =  X3D(
 
                             Shape(
                               USE_ : SFString('HAnimSiteShape'))]),
-                      hAnimSite_ : 
+                      child_ : 
                         HAnimSite(
                           name_ : SFString('l_femoral_medial_epicondyles_pt'),
                           DEF_ : SFString('hanim_l_femoral_medial_epicondyles_pt'),
@@ -329,7 +353,7 @@ var X3D0 =  X3D(
 
                             Shape(
                               USE_ : SFString('HAnimSiteShape'))]),
-                      hAnimSite_ : 
+                      child_ : 
                         HAnimSite(
                           name_ : SFString('l_knee_crease_pt'),
                           DEF_ : SFString('hanim_l_knee_crease_pt'),
@@ -340,7 +364,7 @@ var X3D0 =  X3D(
 
                             Shape(
                               USE_ : SFString('HAnimSiteShape'))]),
-                      hAnimSite_ : 
+                      child_ : 
                         HAnimSite(
                           name_ : SFString('l_suprapatella_pt'),
                           DEF_ : SFString('hanim_l_suprapatella_pt'),
@@ -351,7 +375,7 @@ var X3D0 =  X3D(
 
                             Shape(
                               USE_ : SFString('HAnimSiteShape'))]),
-                      shape_ : 
+                      child_ : 
                         Shape(
                           geometry_ : 
                             LineSet(
@@ -363,7 +387,7 @@ var X3D0 =  X3D(
                               color_ : 
                                 ColorRGBA(
                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                      hAnimSite_ : 
+                      child_ : 
                         HAnimSite(
                           name_ : SFString('r_femoral_lateral_epicondyles_pt'),
                           DEF_ : SFString('hanim_r_femoral_lateral_epicondyles_pt'),
@@ -374,7 +398,7 @@ var X3D0 =  X3D(
 
                             Shape(
                               USE_ : SFString('HAnimSiteShape'))]),
-                      hAnimSite_ : 
+                      child_ : 
                         HAnimSite(
                           name_ : SFString('r_femoral_medial_epicondyles_pt'),
                           DEF_ : SFString('hanim_r_femoral_medial_epicondyles_pt'),
@@ -385,7 +409,7 @@ var X3D0 =  X3D(
 
                             Shape(
                               USE_ : SFString('HAnimSiteShape'))]),
-                      hAnimSite_ : 
+                      child_ : 
                         HAnimSite(
                           name_ : SFString('r_knee_crease_pt'),
                           DEF_ : SFString('hanim_r_knee_crease_pt'),
@@ -396,7 +420,7 @@ var X3D0 =  X3D(
 
                             Shape(
                               USE_ : SFString('HAnimSiteShape'))]),
-                      hAnimSite_ : 
+                      child_ : 
                         HAnimSite(
                           name_ : SFString('r_suprapatella_pt'),
                           DEF_ : SFString('hanim_r_suprapatella_pt'),
@@ -414,7 +438,7 @@ var X3D0 =  X3D(
                           center_ : SFVec3f([SFDouble(0.0961), SFDouble(0.9124), SFDouble(-0.0001)]),
                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                          shape_ : 
+                          child_ : 
                             Shape(
                               geometry_ : 
                                 LineSet(
@@ -426,7 +450,7 @@ var X3D0 =  X3D(
                                   color_ : 
                                     ColorRGBA(
                                       USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                          hAnimSite_ : 
+                          child_ : 
                             HAnimSite(
                               name_ : SFString('l_lateral_malleolus_pt'),
                               DEF_ : SFString('hanim_l_lateral_malleolus_pt'),
@@ -437,7 +461,7 @@ var X3D0 =  X3D(
 
                                 Shape(
                                   USE_ : SFString('HAnimSiteShape'))]),
-                          hAnimSite_ : 
+                          child_ : 
                             HAnimSite(
                               name_ : SFString('l_medial_malleolus_pt'),
                               DEF_ : SFString('hanim_l_medial_malleolus_pt'),
@@ -448,7 +472,7 @@ var X3D0 =  X3D(
 
                                 Shape(
                                   USE_ : SFString('HAnimSiteShape'))]),
-                          hAnimSite_ : 
+                          child_ : 
                             HAnimSite(
                               name_ : SFString('l_tibiale_pt'),
                               DEF_ : SFString('hanim_l_tibiale_pt'),
@@ -466,7 +490,7 @@ var X3D0 =  X3D(
                               center_ : SFVec3f([SFDouble(0.104), SFDouble(0.4867), SFDouble(0.0308)]),
                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                              shape_ : 
+                              child_ : 
                                 Shape(
                                   geometry_ : 
                                     LineSet(
@@ -478,7 +502,7 @@ var X3D0 =  X3D(
                                       color_ : 
                                         ColorRGBA(
                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                              hAnimSite_ : 
+                              child_ : 
                                 HAnimSite(
                                   name_ : SFString('l_calcaneus_posterior_pt'),
                                   DEF_ : SFString('hanim_l_calcaneus_posterior_pt'),
@@ -489,7 +513,7 @@ var X3D0 =  X3D(
 
                                     Shape(
                                       USE_ : SFString('HAnimSiteShape'))]),
-                              hAnimSite_ : 
+                              child_ : 
                                 HAnimSite(
                                   name_ : SFString('l_sphyrion_pt'),
                                   DEF_ : SFString('hanim_l_sphyrion_pt'),
@@ -507,7 +531,7 @@ var X3D0 =  X3D(
                                   center_ : SFVec3f([SFDouble(0.1101), SFDouble(0.0656), SFDouble(-0.0736)]),
                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                  shape_ : 
+                                  child_ : 
                                     Shape(
                                       geometry_ : 
                                         LineSet(
@@ -519,7 +543,7 @@ var X3D0 =  X3D(
                                           color_ : 
                                             ColorRGBA(
                                               USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                  shape_ : 
+                                  child_ : 
                                     Shape(
                                       geometry_ : 
                                         LineSet(
@@ -538,7 +562,7 @@ var X3D0 =  X3D(
                                       center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                      shape_ : 
+                                      child_ : 
                                         Shape(
                                           geometry_ : 
                                             LineSet(
@@ -550,7 +574,7 @@ var X3D0 =  X3D(
                                               color_ : 
                                                 ColorRGBA(
                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                      shape_ : 
+                                      child_ : 
                                         Shape(
                                           geometry_ : 
                                             LineSet(
@@ -562,7 +586,7 @@ var X3D0 =  X3D(
                                               color_ : 
                                                 ColorRGBA(
                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                      shape_ : 
+                                      child_ : 
                                         Shape(
                                           geometry_ : 
                                             LineSet(
@@ -581,7 +605,7 @@ var X3D0 =  X3D(
                                           center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                          shape_ : 
+                                          child_ : 
                                             Shape(
                                               geometry_ : 
                                                 LineSet(
@@ -600,7 +624,7 @@ var X3D0 =  X3D(
                                               center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                              shape_ : 
+                                              child_ : 
                                                 Shape(
                                                   geometry_ : 
                                                     LineSet(
@@ -612,7 +636,7 @@ var X3D0 =  X3D(
                                                       color_ : 
                                                         ColorRGBA(
                                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                              hAnimSite_ : 
+                                              child_ : 
                                                 HAnimSite(
                                                   name_ : SFString('l_metatarsal_phalanx_1_pt'),
                                                   DEF_ : SFString('hanim_l_metatarsal_phalanx_1_pt'),
@@ -630,7 +654,7 @@ var X3D0 =  X3D(
                                                   center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                  shape_ : 
+                                                  child_ : 
                                                     Shape(
                                                       geometry_ : 
                                                         LineSet(
@@ -642,7 +666,7 @@ var X3D0 =  X3D(
                                                           color_ : 
                                                             ColorRGBA(
                                                               USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                  hAnimSite_ : 
+                                                  child_ : 
                                                     HAnimSite(
                                                       name_ : SFString('l_tarsal_distal_phalanx_1_tip'),
                                                       DEF_ : SFString('hanim_l_tarsal_distal_phalanx_1_tip'),
@@ -667,7 +691,7 @@ var X3D0 =  X3D(
                                           center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                          shape_ : 
+                                          child_ : 
                                             Shape(
                                               geometry_ : 
                                                 LineSet(
@@ -686,7 +710,7 @@ var X3D0 =  X3D(
                                               center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                              shape_ : 
+                                              child_ : 
                                                 Shape(
                                                   geometry_ : 
                                                     LineSet(
@@ -705,7 +729,7 @@ var X3D0 =  X3D(
                                                   center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                  shape_ : 
+                                                  child_ : 
                                                     Shape(
                                                       geometry_ : 
                                                         LineSet(
@@ -724,7 +748,7 @@ var X3D0 =  X3D(
                                                       center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                      shape_ : 
+                                                      child_ : 
                                                         Shape(
                                                           geometry_ : 
                                                             LineSet(
@@ -736,7 +760,7 @@ var X3D0 =  X3D(
                                                               color_ : 
                                                                 ColorRGBA(
                                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                      hAnimSite_ : 
+                                                      child_ : 
                                                         HAnimSite(
                                                           name_ : SFString('l_tarsal_distal_phalanx_2_tip'),
                                                           DEF_ : SFString('hanim_l_tarsal_distal_phalanx_2_tip'),
@@ -761,7 +785,7 @@ var X3D0 =  X3D(
                                           center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                          shape_ : 
+                                          child_ : 
                                             Shape(
                                               geometry_ : 
                                                 LineSet(
@@ -780,7 +804,7 @@ var X3D0 =  X3D(
                                               center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                              shape_ : 
+                                              child_ : 
                                                 Shape(
                                                   geometry_ : 
                                                     LineSet(
@@ -799,7 +823,7 @@ var X3D0 =  X3D(
                                                   center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                  shape_ : 
+                                                  child_ : 
                                                     Shape(
                                                       geometry_ : 
                                                         LineSet(
@@ -818,7 +842,7 @@ var X3D0 =  X3D(
                                                       center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                      shape_ : 
+                                                      child_ : 
                                                         Shape(
                                                           geometry_ : 
                                                             LineSet(
@@ -830,7 +854,7 @@ var X3D0 =  X3D(
                                                               color_ : 
                                                                 ColorRGBA(
                                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                      hAnimSite_ : 
+                                                      child_ : 
                                                         HAnimSite(
                                                           name_ : SFString('l_tarsal_distal_phalanx_3_tip'),
                                                           DEF_ : SFString('hanim_l_tarsal_distal_phalanx_3_tip'),
@@ -855,7 +879,7 @@ var X3D0 =  X3D(
                                       center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                      shape_ : 
+                                      child_ : 
                                         Shape(
                                           geometry_ : 
                                             LineSet(
@@ -874,7 +898,7 @@ var X3D0 =  X3D(
                                           center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                          shape_ : 
+                                          child_ : 
                                             Shape(
                                               geometry_ : 
                                                 LineSet(
@@ -886,7 +910,7 @@ var X3D0 =  X3D(
                                                   color_ : 
                                                     ColorRGBA(
                                                       USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                          shape_ : 
+                                          child_ : 
                                             Shape(
                                               geometry_ : 
                                                 LineSet(
@@ -905,7 +929,7 @@ var X3D0 =  X3D(
                                               center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                              shape_ : 
+                                              child_ : 
                                                 Shape(
                                                   geometry_ : 
                                                     LineSet(
@@ -924,7 +948,7 @@ var X3D0 =  X3D(
                                                   center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                  shape_ : 
+                                                  child_ : 
                                                     Shape(
                                                       geometry_ : 
                                                         LineSet(
@@ -943,7 +967,7 @@ var X3D0 =  X3D(
                                                       center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                      shape_ : 
+                                                      child_ : 
                                                         Shape(
                                                           geometry_ : 
                                                             LineSet(
@@ -955,7 +979,7 @@ var X3D0 =  X3D(
                                                               color_ : 
                                                                 ColorRGBA(
                                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                      hAnimSite_ : 
+                                                      child_ : 
                                                         HAnimSite(
                                                           name_ : SFString('l_tarsal_distal_phalanx_4_tip'),
                                                           DEF_ : SFString('hanim_l_tarsal_distal_phalanx_4_tip'),
@@ -980,7 +1004,7 @@ var X3D0 =  X3D(
                                               center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                              shape_ : 
+                                              child_ : 
                                                 Shape(
                                                   geometry_ : 
                                                     LineSet(
@@ -992,7 +1016,7 @@ var X3D0 =  X3D(
                                                       color_ : 
                                                         ColorRGBA(
                                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                              hAnimSite_ : 
+                                              child_ : 
                                                 HAnimSite(
                                                   name_ : SFString('l_metatarsal_phalanx_5_pt'),
                                                   DEF_ : SFString('hanim_l_metatarsal_phalanx_5_pt'),
@@ -1010,7 +1034,7 @@ var X3D0 =  X3D(
                                                   center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                  shape_ : 
+                                                  child_ : 
                                                     Shape(
                                                       geometry_ : 
                                                         LineSet(
@@ -1029,7 +1053,7 @@ var X3D0 =  X3D(
                                                       center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                      shape_ : 
+                                                      child_ : 
                                                         Shape(
                                                           geometry_ : 
                                                             LineSet(
@@ -1041,7 +1065,7 @@ var X3D0 =  X3D(
                                                               color_ : 
                                                                 ColorRGBA(
                                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                      hAnimSite_ : 
+                                                      child_ : 
                                                         HAnimSite(
                                                           name_ : SFString('l_tarsal_distal_phalanx_5_tip'),
                                                           DEF_ : SFString('hanim_l_tarsal_distal_phalanx_5_tip'),
@@ -1066,7 +1090,7 @@ var X3D0 =  X3D(
                           center_ : SFVec3f([SFDouble(-0.095), SFDouble(0.9171), SFDouble(0.0029)]),
                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                          shape_ : 
+                          child_ : 
                             Shape(
                               geometry_ : 
                                 LineSet(
@@ -1078,7 +1102,7 @@ var X3D0 =  X3D(
                                   color_ : 
                                     ColorRGBA(
                                       USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                          hAnimSite_ : 
+                          child_ : 
                             HAnimSite(
                               name_ : SFString('r_lateral_malleolus_pt'),
                               DEF_ : SFString('hanim_r_lateral_malleolus_pt'),
@@ -1089,7 +1113,7 @@ var X3D0 =  X3D(
 
                                 Shape(
                                   USE_ : SFString('HAnimSiteShape'))]),
-                          hAnimSite_ : 
+                          child_ : 
                             HAnimSite(
                               name_ : SFString('r_medial_malleolus_pt'),
                               DEF_ : SFString('hanim_r_medial_malleolus_pt'),
@@ -1100,7 +1124,7 @@ var X3D0 =  X3D(
 
                                 Shape(
                                   USE_ : SFString('HAnimSiteShape'))]),
-                          hAnimSite_ : 
+                          child_ : 
                             HAnimSite(
                               name_ : SFString('r_tibiale_pt'),
                               DEF_ : SFString('hanim_r_tibiale_pt'),
@@ -1118,7 +1142,7 @@ var X3D0 =  X3D(
                               center_ : SFVec3f([SFDouble(-0.0867), SFDouble(0.4913), SFDouble(0.0318)]),
                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                              shape_ : 
+                              child_ : 
                                 Shape(
                                   geometry_ : 
                                     LineSet(
@@ -1130,7 +1154,7 @@ var X3D0 =  X3D(
                                       color_ : 
                                         ColorRGBA(
                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                              hAnimSite_ : 
+                              child_ : 
                                 HAnimSite(
                                   name_ : SFString('r_calcaneus_posterior_pt'),
                                   DEF_ : SFString('hanim_r_calcaneus_posterior_pt'),
@@ -1141,7 +1165,7 @@ var X3D0 =  X3D(
 
                                     Shape(
                                       USE_ : SFString('HAnimSiteShape'))]),
-                              hAnimSite_ : 
+                              child_ : 
                                 HAnimSite(
                                   name_ : SFString('r_sphyrion_pt'),
                                   DEF_ : SFString('hanim_r_sphyrion_pt'),
@@ -1159,7 +1183,7 @@ var X3D0 =  X3D(
                                   center_ : SFVec3f([SFDouble(-0.0801), SFDouble(0.0712), SFDouble(-0.0766)]),
                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                  shape_ : 
+                                  child_ : 
                                     Shape(
                                       geometry_ : 
                                         LineSet(
@@ -1171,7 +1195,7 @@ var X3D0 =  X3D(
                                           color_ : 
                                             ColorRGBA(
                                               USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                  shape_ : 
+                                  child_ : 
                                     Shape(
                                       geometry_ : 
                                         LineSet(
@@ -1190,7 +1214,7 @@ var X3D0 =  X3D(
                                       center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                      shape_ : 
+                                      child_ : 
                                         Shape(
                                           geometry_ : 
                                             LineSet(
@@ -1202,7 +1226,7 @@ var X3D0 =  X3D(
                                               color_ : 
                                                 ColorRGBA(
                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                      shape_ : 
+                                      child_ : 
                                         Shape(
                                           geometry_ : 
                                             LineSet(
@@ -1214,7 +1238,7 @@ var X3D0 =  X3D(
                                               color_ : 
                                                 ColorRGBA(
                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                      shape_ : 
+                                      child_ : 
                                         Shape(
                                           geometry_ : 
                                             LineSet(
@@ -1233,7 +1257,7 @@ var X3D0 =  X3D(
                                           center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                          shape_ : 
+                                          child_ : 
                                             Shape(
                                               geometry_ : 
                                                 LineSet(
@@ -1252,7 +1276,7 @@ var X3D0 =  X3D(
                                               center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                              shape_ : 
+                                              child_ : 
                                                 Shape(
                                                   geometry_ : 
                                                     LineSet(
@@ -1264,7 +1288,7 @@ var X3D0 =  X3D(
                                                       color_ : 
                                                         ColorRGBA(
                                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                              hAnimSite_ : 
+                                              child_ : 
                                                 HAnimSite(
                                                   name_ : SFString('r_metatarsal_phalanx_1_pt'),
                                                   DEF_ : SFString('hanim_r_metatarsal_phalanx_1_pt'),
@@ -1282,7 +1306,7 @@ var X3D0 =  X3D(
                                                   center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                  shape_ : 
+                                                  child_ : 
                                                     Shape(
                                                       geometry_ : 
                                                         LineSet(
@@ -1294,7 +1318,7 @@ var X3D0 =  X3D(
                                                           color_ : 
                                                             ColorRGBA(
                                                               USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                  hAnimSite_ : 
+                                                  child_ : 
                                                     HAnimSite(
                                                       name_ : SFString('r_tarsal_distal_phalanx_1_tip'),
                                                       DEF_ : SFString('hanim_r_tarsal_distal_phalanx_1_tip'),
@@ -1319,7 +1343,7 @@ var X3D0 =  X3D(
                                           center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                          shape_ : 
+                                          child_ : 
                                             Shape(
                                               geometry_ : 
                                                 LineSet(
@@ -1338,7 +1362,7 @@ var X3D0 =  X3D(
                                               center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                              shape_ : 
+                                              child_ : 
                                                 Shape(
                                                   geometry_ : 
                                                     LineSet(
@@ -1357,7 +1381,7 @@ var X3D0 =  X3D(
                                                   center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                  shape_ : 
+                                                  child_ : 
                                                     Shape(
                                                       geometry_ : 
                                                         LineSet(
@@ -1376,7 +1400,7 @@ var X3D0 =  X3D(
                                                       center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                      shape_ : 
+                                                      child_ : 
                                                         Shape(
                                                           geometry_ : 
                                                             LineSet(
@@ -1388,7 +1412,7 @@ var X3D0 =  X3D(
                                                               color_ : 
                                                                 ColorRGBA(
                                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                      hAnimSite_ : 
+                                                      child_ : 
                                                         HAnimSite(
                                                           name_ : SFString('r_tarsal_distal_phalanx_2_tip'),
                                                           DEF_ : SFString('hanim_r_tarsal_distal_phalanx_2_tip'),
@@ -1413,7 +1437,7 @@ var X3D0 =  X3D(
                                           center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                          shape_ : 
+                                          child_ : 
                                             Shape(
                                               geometry_ : 
                                                 LineSet(
@@ -1432,7 +1456,7 @@ var X3D0 =  X3D(
                                               center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                              shape_ : 
+                                              child_ : 
                                                 Shape(
                                                   geometry_ : 
                                                     LineSet(
@@ -1451,7 +1475,7 @@ var X3D0 =  X3D(
                                                   center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                  shape_ : 
+                                                  child_ : 
                                                     Shape(
                                                       geometry_ : 
                                                         LineSet(
@@ -1470,7 +1494,7 @@ var X3D0 =  X3D(
                                                       center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                      shape_ : 
+                                                      child_ : 
                                                         Shape(
                                                           geometry_ : 
                                                             LineSet(
@@ -1482,7 +1506,7 @@ var X3D0 =  X3D(
                                                               color_ : 
                                                                 ColorRGBA(
                                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                      hAnimSite_ : 
+                                                      child_ : 
                                                         HAnimSite(
                                                           name_ : SFString('r_tarsal_distal_phalanx_3_tip'),
                                                           DEF_ : SFString('hanim_r_tarsal_distal_phalanx_3_tip'),
@@ -1507,7 +1531,7 @@ var X3D0 =  X3D(
                                       center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                      shape_ : 
+                                      child_ : 
                                         Shape(
                                           geometry_ : 
                                             LineSet(
@@ -1526,7 +1550,7 @@ var X3D0 =  X3D(
                                           center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                          shape_ : 
+                                          child_ : 
                                             Shape(
                                               geometry_ : 
                                                 LineSet(
@@ -1538,7 +1562,7 @@ var X3D0 =  X3D(
                                                   color_ : 
                                                     ColorRGBA(
                                                       USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                          shape_ : 
+                                          child_ : 
                                             Shape(
                                               geometry_ : 
                                                 LineSet(
@@ -1557,7 +1581,7 @@ var X3D0 =  X3D(
                                               center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                              shape_ : 
+                                              child_ : 
                                                 Shape(
                                                   geometry_ : 
                                                     LineSet(
@@ -1576,7 +1600,7 @@ var X3D0 =  X3D(
                                                   center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                  shape_ : 
+                                                  child_ : 
                                                     Shape(
                                                       geometry_ : 
                                                         LineSet(
@@ -1595,7 +1619,7 @@ var X3D0 =  X3D(
                                                       center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                      shape_ : 
+                                                      child_ : 
                                                         Shape(
                                                           geometry_ : 
                                                             LineSet(
@@ -1607,7 +1631,7 @@ var X3D0 =  X3D(
                                                               color_ : 
                                                                 ColorRGBA(
                                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                      hAnimSite_ : 
+                                                      child_ : 
                                                         HAnimSite(
                                                           name_ : SFString('r_tarsal_distal_phalanx_4_tip'),
                                                           DEF_ : SFString('hanim_r_tarsal_distal_phalanx_4_tip'),
@@ -1632,7 +1656,7 @@ var X3D0 =  X3D(
                                               center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                              shape_ : 
+                                              child_ : 
                                                 Shape(
                                                   geometry_ : 
                                                     LineSet(
@@ -1644,7 +1668,7 @@ var X3D0 =  X3D(
                                                       color_ : 
                                                         ColorRGBA(
                                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                              hAnimSite_ : 
+                                              child_ : 
                                                 HAnimSite(
                                                   name_ : SFString('r_metatarsal_phalanx_5_pt'),
                                                   DEF_ : SFString('hanim_r_metatarsal_phalanx_5_pt'),
@@ -1662,7 +1686,7 @@ var X3D0 =  X3D(
                                                   center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                  shape_ : 
+                                                  child_ : 
                                                     Shape(
                                                       geometry_ : 
                                                         LineSet(
@@ -1681,7 +1705,7 @@ var X3D0 =  X3D(
                                                       center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                      shape_ : 
+                                                      child_ : 
                                                         Shape(
                                                           geometry_ : 
                                                             LineSet(
@@ -1693,7 +1717,7 @@ var X3D0 =  X3D(
                                                               color_ : 
                                                                 ColorRGBA(
                                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                      hAnimSite_ : 
+                                                      child_ : 
                                                         HAnimSite(
                                                           name_ : SFString('r_tarsal_distal_phalanx_5_tip'),
                                                           DEF_ : SFString('hanim_r_tarsal_distal_phalanx_5_tip'),
@@ -1718,7 +1742,7 @@ var X3D0 =  X3D(
                       center_ : SFVec3f([SFDouble(0.0028), SFDouble(1.0568), SFDouble(-0.0776)]),
                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      shape_ : 
+                      child_ : 
                         Shape(
                           geometry_ : 
                             LineSet(
@@ -1737,7 +1761,7 @@ var X3D0 =  X3D(
                           center_ : SFVec3f([SFDouble(0.0035), SFDouble(1.0925), SFDouble(-0.0787)]),
                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                          shape_ : 
+                          child_ : 
                             Shape(
                               geometry_ : 
                                 LineSet(
@@ -1756,7 +1780,7 @@ var X3D0 =  X3D(
                               center_ : SFVec3f([SFDouble(0.0041), SFDouble(1.1276), SFDouble(-0.0796)]),
                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                              shape_ : 
+                              child_ : 
                                 Shape(
                                   geometry_ : 
                                     LineSet(
@@ -1768,7 +1792,7 @@ var X3D0 =  X3D(
                                       color_ : 
                                         ColorRGBA(
                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                              hAnimSite_ : 
+                              child_ : 
                                 HAnimSite(
                                   name_ : SFString('l_rib10_pt'),
                                   DEF_ : SFString('hanim_l_rib10_pt'),
@@ -1779,7 +1803,7 @@ var X3D0 =  X3D(
 
                                     Shape(
                                       USE_ : SFString('HAnimSiteShape'))]),
-                              hAnimSite_ : 
+                              child_ : 
                                 HAnimSite(
                                   name_ : SFString('r_rib10_pt'),
                                   DEF_ : SFString('hanim_r_rib10_pt'),
@@ -1790,7 +1814,7 @@ var X3D0 =  X3D(
 
                                     Shape(
                                       USE_ : SFString('HAnimSiteShape'))]),
-                              hAnimSite_ : 
+                              child_ : 
                                 HAnimSite(
                                   name_ : SFString('spine_2_middle_back_pt'),
                                   DEF_ : SFString('hanim_spine_2_middle_back_pt'),
@@ -1808,7 +1832,7 @@ var X3D0 =  X3D(
                                   center_ : SFVec3f([SFDouble(0.0045), SFDouble(1.1546), SFDouble(-0.08)]),
                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                  shape_ : 
+                                  child_ : 
                                     Shape(
                                       geometry_ : 
                                         LineSet(
@@ -1827,7 +1851,7 @@ var X3D0 =  X3D(
                                       center_ : SFVec3f([SFDouble(0.0048), SFDouble(1.1912), SFDouble(-0.0805)]),
                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                      shape_ : 
+                                      child_ : 
                                         Shape(
                                           geometry_ : 
                                             LineSet(
@@ -1846,7 +1870,7 @@ var X3D0 =  X3D(
                                           center_ : SFVec3f([SFDouble(0.0051), SFDouble(1.2278), SFDouble(-0.0808)]),
                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                          shape_ : 
+                                          child_ : 
                                             Shape(
                                               geometry_ : 
                                                 LineSet(
@@ -1865,7 +1889,7 @@ var X3D0 =  X3D(
                                               center_ : SFVec3f([SFDouble(0.0053), SFDouble(1.2679), SFDouble(-0.081)]),
                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                              shape_ : 
+                                              child_ : 
                                                 Shape(
                                                   geometry_ : 
                                                     LineSet(
@@ -1877,7 +1901,7 @@ var X3D0 =  X3D(
                                                       color_ : 
                                                         ColorRGBA(
                                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                              hAnimSite_ : 
+                                              child_ : 
                                                 HAnimSite(
                                                   name_ : SFString('substernale_pt'),
                                                   DEF_ : SFString('hanim_substernale_pt'),
@@ -1895,7 +1919,7 @@ var X3D0 =  X3D(
                                                   center_ : SFVec3f([SFDouble(0.0056), SFDouble(1.2848), SFDouble(-0.0822)]),
                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                  shape_ : 
+                                                  child_ : 
                                                     Shape(
                                                       geometry_ : 
                                                         LineSet(
@@ -1907,7 +1931,7 @@ var X3D0 =  X3D(
                                                           color_ : 
                                                             ColorRGBA(
                                                               USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                  hAnimSite_ : 
+                                                  child_ : 
                                                     HAnimSite(
                                                       name_ : SFString('l_thelion_pt'),
                                                       DEF_ : SFString('hanim_l_thelion_pt'),
@@ -1918,7 +1942,7 @@ var X3D0 =  X3D(
 
                                                         Shape(
                                                           USE_ : SFString('HAnimSiteShape'))]),
-                                                  hAnimSite_ : 
+                                                  child_ : 
                                                     HAnimSite(
                                                       name_ : SFString('r_thelion_pt'),
                                                       DEF_ : SFString('hanim_r_thelion_pt'),
@@ -1936,7 +1960,7 @@ var X3D0 =  X3D(
                                                       center_ : SFVec3f([SFDouble(0.0057), SFDouble(1.3126), SFDouble(-0.0838)]),
                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                      shape_ : 
+                                                      child_ : 
                                                         Shape(
                                                           geometry_ : 
                                                             LineSet(
@@ -1955,7 +1979,7 @@ var X3D0 =  X3D(
                                                           center_ : SFVec3f([SFDouble(0.0057), SFDouble(1.3382), SFDouble(-0.0845)]),
                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                          shape_ : 
+                                                          child_ : 
                                                             Shape(
                                                               geometry_ : 
                                                                 LineSet(
@@ -1974,7 +1998,7 @@ var X3D0 =  X3D(
                                                               center_ : SFVec3f([SFDouble(0.0058), SFDouble(1.3625), SFDouble(-0.0833)]),
                                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                              shape_ : 
+                                                              child_ : 
                                                                 Shape(
                                                                   geometry_ : 
                                                                     LineSet(
@@ -1986,7 +2010,7 @@ var X3D0 =  X3D(
                                                                       color_ : 
                                                                         ColorRGBA(
                                                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                              hAnimSite_ : 
+                                                              child_ : 
                                                                 HAnimSite(
                                                                   name_ : SFString('l_chest_midsagittal_plane_pt'),
                                                                   DEF_ : SFString('hanim_l_chest_midsagittal_plane_pt'),
@@ -1997,7 +2021,7 @@ var X3D0 =  X3D(
 
                                                                     Shape(
                                                                       USE_ : SFString('HAnimSiteShape'))]),
-                                                              hAnimSite_ : 
+                                                              child_ : 
                                                                 HAnimSite(
                                                                   name_ : SFString('mesosternale_pt'),
                                                                   DEF_ : SFString('hanim_mesosternale_pt'),
@@ -2008,7 +2032,7 @@ var X3D0 =  X3D(
 
                                                                     Shape(
                                                                       USE_ : SFString('HAnimSiteShape'))]),
-                                                              hAnimSite_ : 
+                                                              child_ : 
                                                                 HAnimSite(
                                                                   name_ : SFString('r_chest_midsagittal_plane_pt'),
                                                                   DEF_ : SFString('hanim_r_chest_midsagittal_plane_pt'),
@@ -2019,7 +2043,7 @@ var X3D0 =  X3D(
 
                                                                     Shape(
                                                                       USE_ : SFString('HAnimSiteShape'))]),
-                                                              hAnimSite_ : 
+                                                              child_ : 
                                                                 HAnimSite(
                                                                   name_ : SFString('rear_center_midsagittal_plane_pt'),
                                                                   DEF_ : SFString('hanim_rear_center_midsagittal_plane_pt'),
@@ -2037,7 +2061,7 @@ var X3D0 =  X3D(
                                                                   center_ : SFVec3f([SFDouble(0.0059), SFDouble(1.3866), SFDouble(-0.08)]),
                                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                  shape_ : 
+                                                                  child_ : 
                                                                     Shape(
                                                                       geometry_ : 
                                                                         LineSet(
@@ -2049,7 +2073,7 @@ var X3D0 =  X3D(
                                                                           color_ : 
                                                                             ColorRGBA(
                                                                               USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                  hAnimSite_ : 
+                                                                  child_ : 
                                                                     HAnimSite(
                                                                       name_ : SFString('spine_1_middle_back_pt'),
                                                                       DEF_ : SFString('hanim_spine_1_middle_back_pt'),
@@ -2067,7 +2091,7 @@ var X3D0 =  X3D(
                                                                       center_ : SFVec3f([SFDouble(0.006), SFDouble(1.4102), SFDouble(-0.0745)]),
                                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                      shape_ : 
+                                                                      child_ : 
                                                                         Shape(
                                                                           geometry_ : 
                                                                             LineSet(
@@ -2086,7 +2110,7 @@ var X3D0 =  X3D(
                                                                           center_ : SFVec3f([SFDouble(0.0061), SFDouble(1.432), SFDouble(-0.0675)]),
                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                          shape_ : 
+                                                                          child_ : 
                                                                             Shape(
                                                                               geometry_ : 
                                                                                 LineSet(
@@ -2105,7 +2129,7 @@ var X3D0 =  X3D(
                                                                               center_ : SFVec3f([SFDouble(0.0062), SFDouble(1.4583), SFDouble(-0.057)]),
                                                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                              shape_ : 
+                                                                              child_ : 
                                                                                 Shape(
                                                                                   geometry_ : 
                                                                                     LineSet(
@@ -2124,7 +2148,7 @@ var X3D0 =  X3D(
                                                                                   center_ : SFVec3f([SFDouble(0.0063), SFDouble(1.4761), SFDouble(-0.0484)]),
                                                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                  shape_ : 
+                                                                                  child_ : 
                                                                                     Shape(
                                                                                       geometry_ : 
                                                                                         LineSet(
@@ -2136,7 +2160,7 @@ var X3D0 =  X3D(
                                                                                           color_ : 
                                                                                             ColorRGBA(
                                                                                               USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                  hAnimSite_ : 
+                                                                                  child_ : 
                                                                                     HAnimSite(
                                                                                       name_ : SFString('cervicale_pt'),
                                                                                       DEF_ : SFString('hanim_cervicale_pt'),
@@ -2147,7 +2171,7 @@ var X3D0 =  X3D(
 
                                                                                         Shape(
                                                                                           USE_ : SFString('HAnimSiteShape'))]),
-                                                                                  hAnimSite_ : 
+                                                                                  child_ : 
                                                                                     HAnimSite(
                                                                                       name_ : SFString('suprasternale_pt'),
                                                                                       DEF_ : SFString('hanim_suprasternale_pt'),
@@ -2165,7 +2189,7 @@ var X3D0 =  X3D(
                                                                                       center_ : SFVec3f([SFDouble(0.0065), SFDouble(1.4951), SFDouble(-0.0387)]),
                                                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                      shape_ : 
+                                                                                      child_ : 
                                                                                         Shape(
                                                                                           geometry_ : 
                                                                                             LineSet(
@@ -2177,7 +2201,7 @@ var X3D0 =  X3D(
                                                                                               color_ : 
                                                                                                 ColorRGBA(
                                                                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                      hAnimSite_ : 
+                                                                                      child_ : 
                                                                                         HAnimSite(
                                                                                           name_ : SFString('l_neck_base_pt'),
                                                                                           DEF_ : SFString('hanim_l_neck_base_pt'),
@@ -2188,7 +2212,7 @@ var X3D0 =  X3D(
 
                                                                                             Shape(
                                                                                               USE_ : SFString('HAnimSiteShape'))]),
-                                                                                      hAnimSite_ : 
+                                                                                      child_ : 
                                                                                         HAnimSite(
                                                                                           name_ : SFString('r_neck_base_pt'),
                                                                                           DEF_ : SFString('hanim_r_neck_base_pt'),
@@ -2199,7 +2223,7 @@ var X3D0 =  X3D(
 
                                                                                             Shape(
                                                                                               USE_ : SFString('HAnimSiteShape'))]),
-                                                                                      shape_ : 
+                                                                                      child_ : 
                                                                                         Shape(
                                                                                           geometry_ : 
                                                                                             LineSet(
@@ -2211,7 +2235,7 @@ var X3D0 =  X3D(
                                                                                               color_ : 
                                                                                                 ColorRGBA(
                                                                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                      hAnimSite_ : 
+                                                                                      child_ : 
                                                                                         HAnimSite(
                                                                                           name_ : SFString('l_acromion_pt'),
                                                                                           DEF_ : SFString('hanim_l_acromion_pt'),
@@ -2222,7 +2246,7 @@ var X3D0 =  X3D(
 
                                                                                             Shape(
                                                                                               USE_ : SFString('HAnimSiteShape'))]),
-                                                                                      hAnimSite_ : 
+                                                                                      child_ : 
                                                                                         HAnimSite(
                                                                                           name_ : SFString('l_axilla_distal_pt'),
                                                                                           DEF_ : SFString('hanim_l_axilla_distal_pt'),
@@ -2233,7 +2257,7 @@ var X3D0 =  X3D(
 
                                                                                             Shape(
                                                                                               USE_ : SFString('HAnimSiteShape'))]),
-                                                                                      hAnimSite_ : 
+                                                                                      child_ : 
                                                                                         HAnimSite(
                                                                                           name_ : SFString('l_axilla_posterior_folds_pt'),
                                                                                           DEF_ : SFString('hanim_l_axilla_posterior_folds_pt'),
@@ -2244,7 +2268,7 @@ var X3D0 =  X3D(
 
                                                                                             Shape(
                                                                                               USE_ : SFString('HAnimSiteShape'))]),
-                                                                                      hAnimSite_ : 
+                                                                                      child_ : 
                                                                                         HAnimSite(
                                                                                           name_ : SFString('l_axilla_proximal_pt'),
                                                                                           DEF_ : SFString('hanim_l_axilla_proximal_pt'),
@@ -2255,7 +2279,7 @@ var X3D0 =  X3D(
 
                                                                                             Shape(
                                                                                               USE_ : SFString('HAnimSiteShape'))]),
-                                                                                      hAnimSite_ : 
+                                                                                      child_ : 
                                                                                         HAnimSite(
                                                                                           name_ : SFString('l_clavicale_pt'),
                                                                                           DEF_ : SFString('hanim_l_clavicale_pt'),
@@ -2266,7 +2290,7 @@ var X3D0 =  X3D(
 
                                                                                             Shape(
                                                                                               USE_ : SFString('HAnimSiteShape'))]),
-                                                                                      shape_ : 
+                                                                                      child_ : 
                                                                                         Shape(
                                                                                           geometry_ : 
                                                                                             LineSet(
@@ -2278,7 +2302,7 @@ var X3D0 =  X3D(
                                                                                               color_ : 
                                                                                                 ColorRGBA(
                                                                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                      hAnimSite_ : 
+                                                                                      child_ : 
                                                                                         HAnimSite(
                                                                                           name_ : SFString('r_acromion_pt'),
                                                                                           DEF_ : SFString('hanim_r_acromion_pt'),
@@ -2289,7 +2313,7 @@ var X3D0 =  X3D(
 
                                                                                             Shape(
                                                                                               USE_ : SFString('HAnimSiteShape'))]),
-                                                                                      hAnimSite_ : 
+                                                                                      child_ : 
                                                                                         HAnimSite(
                                                                                           name_ : SFString('r_axilla_distal_pt'),
                                                                                           DEF_ : SFString('hanim_r_axilla_distal_pt'),
@@ -2300,7 +2324,7 @@ var X3D0 =  X3D(
 
                                                                                             Shape(
                                                                                               USE_ : SFString('HAnimSiteShape'))]),
-                                                                                      hAnimSite_ : 
+                                                                                      child_ : 
                                                                                         HAnimSite(
                                                                                           name_ : SFString('r_axilla_posterior_folds_pt'),
                                                                                           DEF_ : SFString('hanim_r_axilla_posterior_folds_pt'),
@@ -2311,7 +2335,7 @@ var X3D0 =  X3D(
 
                                                                                             Shape(
                                                                                               USE_ : SFString('HAnimSiteShape'))]),
-                                                                                      hAnimSite_ : 
+                                                                                      child_ : 
                                                                                         HAnimSite(
                                                                                           name_ : SFString('r_axilla_proximal_pt'),
                                                                                           DEF_ : SFString('hanim_r_axilla_proximal_pt'),
@@ -2322,7 +2346,7 @@ var X3D0 =  X3D(
 
                                                                                             Shape(
                                                                                               USE_ : SFString('HAnimSiteShape'))]),
-                                                                                      hAnimSite_ : 
+                                                                                      child_ : 
                                                                                         HAnimSite(
                                                                                           name_ : SFString('r_clavicale_pt'),
                                                                                           DEF_ : SFString('hanim_r_clavicale_pt'),
@@ -2340,7 +2364,7 @@ var X3D0 =  X3D(
                                                                                           center_ : SFVec3f([SFDouble(0.0066), SFDouble(1.5132), SFDouble(-0.0301)]),
                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                          shape_ : 
+                                                                                          child_ : 
                                                                                             Shape(
                                                                                               geometry_ : 
                                                                                                 LineSet(
@@ -2359,7 +2383,7 @@ var X3D0 =  X3D(
                                                                                               center_ : SFVec3f([SFDouble(0.0066), SFDouble(1.5357), SFDouble(-0.0143)]),
                                                                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                              shape_ : 
+                                                                                              child_ : 
                                                                                                 Shape(
                                                                                                   geometry_ : 
                                                                                                     LineSet(
@@ -2378,7 +2402,7 @@ var X3D0 =  X3D(
                                                                                                   center_ : SFVec3f([SFDouble(0.0066), SFDouble(1.552), SFDouble(-0.0082)]),
                                                                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                  shape_ : 
+                                                                                                  child_ : 
                                                                                                     Shape(
                                                                                                       geometry_ : 
                                                                                                         LineSet(
@@ -2397,7 +2421,7 @@ var X3D0 =  X3D(
                                                                                                       center_ : SFVec3f([SFDouble(0.0066), SFDouble(1.5662), SFDouble(-0.0084)]),
                                                                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                      shape_ : 
+                                                                                                      child_ : 
                                                                                                         Shape(
                                                                                                           geometry_ : 
                                                                                                             LineSet(
@@ -2416,7 +2440,7 @@ var X3D0 =  X3D(
                                                                                                           center_ : SFVec3f([SFDouble(0.0066), SFDouble(1.58), SFDouble(-0.0103)]),
                                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                          shape_ : 
+                                                                                                          child_ : 
                                                                                                             Shape(
                                                                                                               geometry_ : 
                                                                                                                 LineSet(
@@ -2428,7 +2452,7 @@ var X3D0 =  X3D(
                                                                                                                   color_ : 
                                                                                                                     ColorRGBA(
                                                                                                                       USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                          hAnimSite_ : 
+                                                                                                          child_ : 
                                                                                                             HAnimSite(
                                                                                                               name_ : SFString('adams_apple_pt'),
                                                                                                               DEF_ : SFString('hanim_adams_apple_pt'),
@@ -2446,7 +2470,7 @@ var X3D0 =  X3D(
                                                                                                               center_ : SFVec3f([SFDouble(0.0066), SFDouble(1.5928), SFDouble(-0.0103)]),
                                                                                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                              shape_ : 
+                                                                                                              child_ : 
                                                                                                                 Shape(
                                                                                                                   geometry_ : 
                                                                                                                     LineSet(
@@ -2465,7 +2489,7 @@ var X3D0 =  X3D(
                                                                                                                   center_ : SFVec3f([SFDouble(0.0066), SFDouble(1.6144), SFDouble(-0.0034)]),
                                                                                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  shape_ : 
+                                                                                                                  child_ : 
                                                                                                                     Shape(
                                                                                                                       geometry_ : 
                                                                                                                         LineSet(
@@ -2477,7 +2501,7 @@ var X3D0 =  X3D(
                                                                                                                           color_ : 
                                                                                                                             ColorRGBA(
                                                                                                                               USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                                  hAnimSite_ : 
+                                                                                                                  child_ : 
                                                                                                                     HAnimSite(
                                                                                                                       name_ : SFString('glabella_pt'),
                                                                                                                       DEF_ : SFString('hanim_glabella_pt'),
@@ -2488,7 +2512,7 @@ var X3D0 =  X3D(
 
                                                                                                                         Shape(
                                                                                                                           USE_ : SFString('HAnimSiteShape'))]),
-                                                                                                                  hAnimSite_ : 
+                                                                                                                  child_ : 
                                                                                                                     HAnimSite(
                                                                                                                       name_ : SFString('l_ectocanthus_pt'),
                                                                                                                       DEF_ : SFString('hanim_l_ectocanthus_pt'),
@@ -2499,7 +2523,7 @@ var X3D0 =  X3D(
 
                                                                                                                         Shape(
                                                                                                                           USE_ : SFString('HAnimSiteShape'))]),
-                                                                                                                  hAnimSite_ : 
+                                                                                                                  child_ : 
                                                                                                                     HAnimSite(
                                                                                                                       name_ : SFString('l_infraorbitale_pt'),
                                                                                                                       DEF_ : SFString('hanim_l_infraorbitale_pt'),
@@ -2510,7 +2534,7 @@ var X3D0 =  X3D(
 
                                                                                                                         Shape(
                                                                                                                           USE_ : SFString('HAnimSiteShape'))]),
-                                                                                                                  hAnimSite_ : 
+                                                                                                                  child_ : 
                                                                                                                     HAnimSite(
                                                                                                                       name_ : SFString('l_tragion_pt'),
                                                                                                                       DEF_ : SFString('hanim_l_tragion_pt'),
@@ -2521,7 +2545,7 @@ var X3D0 =  X3D(
 
                                                                                                                         Shape(
                                                                                                                           USE_ : SFString('HAnimSiteShape'))]),
-                                                                                                                  hAnimSite_ : 
+                                                                                                                  child_ : 
                                                                                                                     HAnimSite(
                                                                                                                       name_ : SFString('nuchale_pt'),
                                                                                                                       DEF_ : SFString('hanim_nuchale_pt'),
@@ -2532,7 +2556,7 @@ var X3D0 =  X3D(
 
                                                                                                                         Shape(
                                                                                                                           USE_ : SFString('HAnimSiteShape'))]),
-                                                                                                                  hAnimSite_ : 
+                                                                                                                  child_ : 
                                                                                                                     HAnimSite(
                                                                                                                       name_ : SFString('opisthocranion_pt'),
                                                                                                                       DEF_ : SFString('hanim_opisthocranion_pt'),
@@ -2543,7 +2567,7 @@ var X3D0 =  X3D(
 
                                                                                                                         Shape(
                                                                                                                           USE_ : SFString('HAnimSiteShape'))]),
-                                                                                                                  hAnimSite_ : 
+                                                                                                                  child_ : 
                                                                                                                     HAnimSite(
                                                                                                                       name_ : SFString('r_ectocanthus_pt'),
                                                                                                                       DEF_ : SFString('hanim_r_ectocanthus_pt'),
@@ -2554,7 +2578,7 @@ var X3D0 =  X3D(
 
                                                                                                                         Shape(
                                                                                                                           USE_ : SFString('HAnimSiteShape'))]),
-                                                                                                                  hAnimSite_ : 
+                                                                                                                  child_ : 
                                                                                                                     HAnimSite(
                                                                                                                       name_ : SFString('r_infraorbitale_pt'),
                                                                                                                       DEF_ : SFString('hanim_r_infraorbitale_pt'),
@@ -2565,7 +2589,7 @@ var X3D0 =  X3D(
 
                                                                                                                         Shape(
                                                                                                                           USE_ : SFString('HAnimSiteShape'))]),
-                                                                                                                  hAnimSite_ : 
+                                                                                                                  child_ : 
                                                                                                                     HAnimSite(
                                                                                                                       name_ : SFString('r_tragion_pt'),
                                                                                                                       DEF_ : SFString('hanim_r_tragion_pt'),
@@ -2576,7 +2600,7 @@ var X3D0 =  X3D(
 
                                                                                                                         Shape(
                                                                                                                           USE_ : SFString('HAnimSiteShape'))]),
-                                                                                                                  hAnimSite_ : 
+                                                                                                                  child_ : 
                                                                                                                     HAnimSite(
                                                                                                                       name_ : SFString('sellion_pt'),
                                                                                                                       DEF_ : SFString('hanim_sellion_pt'),
@@ -2587,7 +2611,7 @@ var X3D0 =  X3D(
 
                                                                                                                         Shape(
                                                                                                                           USE_ : SFString('HAnimSiteShape'))]),
-                                                                                                                  hAnimSite_ : 
+                                                                                                                  child_ : 
                                                                                                                     HAnimSite(
                                                                                                                       name_ : SFString('skull_vertex_pt'),
                                                                                                                       DEF_ : SFString('hanim_skull_vertex_pt'),
@@ -2605,7 +2629,7 @@ var X3D0 =  X3D(
                                                                                                                       center_ : SFVec3f([SFDouble(0.0044), SFDouble(1.6209), SFDouble(0.0236)]),
                                                                                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                      shape_ : 
+                                                                                                                      child_ : 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
                                                                                                                             LineSet(
@@ -2617,7 +2641,7 @@ var X3D0 =  X3D(
                                                                                                                               color_ : 
                                                                                                                                 ColorRGBA(
                                                                                                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                                      shape_ : 
+                                                                                                                      child_ : 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
                                                                                                                             LineSet(
@@ -2629,7 +2653,7 @@ var X3D0 =  X3D(
                                                                                                                               color_ : 
                                                                                                                                 ColorRGBA(
                                                                                                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                                      shape_ : 
+                                                                                                                      child_ : 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
                                                                                                                             LineSet(
@@ -2641,7 +2665,7 @@ var X3D0 =  X3D(
                                                                                                                               color_ : 
                                                                                                                                 ColorRGBA(
                                                                                                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                                      shape_ : 
+                                                                                                                      child_ : 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
                                                                                                                             LineSet(
@@ -2653,7 +2677,7 @@ var X3D0 =  X3D(
                                                                                                                               color_ : 
                                                                                                                                 ColorRGBA(
                                                                                                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                                      shape_ : 
+                                                                                                                      child_ : 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
                                                                                                                             LineSet(
@@ -2665,7 +2689,7 @@ var X3D0 =  X3D(
                                                                                                                               color_ : 
                                                                                                                                 ColorRGBA(
                                                                                                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                                      shape_ : 
+                                                                                                                      child_ : 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
                                                                                                                             LineSet(
@@ -2677,7 +2701,7 @@ var X3D0 =  X3D(
                                                                                                                               color_ : 
                                                                                                                                 ColorRGBA(
                                                                                                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                                      shape_ : 
+                                                                                                                      child_ : 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
                                                                                                                             LineSet(
@@ -2689,7 +2713,7 @@ var X3D0 =  X3D(
                                                                                                                               color_ : 
                                                                                                                                 ColorRGBA(
                                                                                                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                                      hAnimSite_ : 
+                                                                                                                      child_ : 
                                                                                                                         HAnimSite(
                                                                                                                           name_ : SFString('l_gonion_pt'),
                                                                                                                           DEF_ : SFString('hanim_l_gonion_pt'),
@@ -2700,7 +2724,7 @@ var X3D0 =  X3D(
 
                                                                                                                             Shape(
                                                                                                                               USE_ : SFString('HAnimSiteShape'))]),
-                                                                                                                      hAnimSite_ : 
+                                                                                                                      child_ : 
                                                                                                                         HAnimSite(
                                                                                                                           name_ : SFString('menton_pt'),
                                                                                                                           DEF_ : SFString('hanim_menton_pt'),
@@ -2711,7 +2735,7 @@ var X3D0 =  X3D(
 
                                                                                                                             Shape(
                                                                                                                               USE_ : SFString('HAnimSiteShape'))]),
-                                                                                                                      hAnimSite_ : 
+                                                                                                                      child_ : 
                                                                                                                         HAnimSite(
                                                                                                                           name_ : SFString('r_gonion_pt'),
                                                                                                                           DEF_ : SFString('hanim_r_gonion_pt'),
@@ -2722,7 +2746,7 @@ var X3D0 =  X3D(
 
                                                                                                                             Shape(
                                                                                                                               USE_ : SFString('HAnimSiteShape'))]),
-                                                                                                                      hAnimSite_ : 
+                                                                                                                      child_ : 
                                                                                                                         HAnimSite(
                                                                                                                           name_ : SFString('supramenton_pt'),
                                                                                                                           DEF_ : SFString('hanim_supramenton_pt'),
@@ -2789,7 +2813,7 @@ var X3D0 =  X3D(
                                                                                           center_ : SFVec3f([SFDouble(0.082), SFDouble(1.4488), SFDouble(-0.0353)]),
                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                          shape_ : 
+                                                                                          child_ : 
                                                                                             Shape(
                                                                                               geometry_ : 
                                                                                                 LineSet(
@@ -2808,7 +2832,7 @@ var X3D0 =  X3D(
                                                                                               center_ : SFVec3f([SFDouble(0.0962), SFDouble(1.4269), SFDouble(-0.0424)]),
                                                                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                              shape_ : 
+                                                                                              child_ : 
                                                                                                 Shape(
                                                                                                   geometry_ : 
                                                                                                     LineSet(
@@ -2820,7 +2844,7 @@ var X3D0 =  X3D(
                                                                                                       color_ : 
                                                                                                         ColorRGBA(
                                                                                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                              hAnimSite_ : 
+                                                                                              child_ : 
                                                                                                 HAnimSite(
                                                                                                   name_ : SFString('l_bideltoid_pt'),
                                                                                                   DEF_ : SFString('hanim_l_bideltoid_pt'),
@@ -2831,7 +2855,7 @@ var X3D0 =  X3D(
 
                                                                                                     Shape(
                                                                                                       USE_ : SFString('HAnimSiteShape'))]),
-                                                                                              hAnimSite_ : 
+                                                                                              child_ : 
                                                                                                 HAnimSite(
                                                                                                   name_ : SFString('l_humeral_lateral_epicondyles_pt'),
                                                                                                   DEF_ : SFString('hanim_l_humeral_lateral_epicondyles_pt'),
@@ -2849,7 +2873,7 @@ var X3D0 =  X3D(
                                                                                                   center_ : SFVec3f([SFDouble(0.2029), SFDouble(1.4376), SFDouble(-0.0387)]),
                                                                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                  shape_ : 
+                                                                                                  child_ : 
                                                                                                     Shape(
                                                                                                       geometry_ : 
                                                                                                         LineSet(
@@ -2861,7 +2885,7 @@ var X3D0 =  X3D(
                                                                                                           color_ : 
                                                                                                             ColorRGBA(
                                                                                                               USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                  hAnimSite_ : 
+                                                                                                  child_ : 
                                                                                                     HAnimSite(
                                                                                                       name_ : SFString('l_humeral_medial_epicondyles_pt'),
                                                                                                       DEF_ : SFString('hanim_l_humeral_medial_epicondyles_pt'),
@@ -2872,7 +2896,7 @@ var X3D0 =  X3D(
 
                                                                                                         Shape(
                                                                                                           USE_ : SFString('HAnimSiteShape'))]),
-                                                                                                  hAnimSite_ : 
+                                                                                                  child_ : 
                                                                                                     HAnimSite(
                                                                                                       name_ : SFString('l_olecranon_pt'),
                                                                                                       DEF_ : SFString('hanim_l_olecranon_pt'),
@@ -2883,7 +2907,7 @@ var X3D0 =  X3D(
 
                                                                                                         Shape(
                                                                                                           USE_ : SFString('HAnimSiteShape'))]),
-                                                                                                  hAnimSite_ : 
+                                                                                                  child_ : 
                                                                                                     HAnimSite(
                                                                                                       name_ : SFString('l_radial_styloid_pt'),
                                                                                                       DEF_ : SFString('hanim_l_radial_styloid_pt'),
@@ -2894,7 +2918,7 @@ var X3D0 =  X3D(
 
                                                                                                         Shape(
                                                                                                           USE_ : SFString('HAnimSiteShape'))]),
-                                                                                                  hAnimSite_ : 
+                                                                                                  child_ : 
                                                                                                     HAnimSite(
                                                                                                       name_ : SFString('l_radiale_pt'),
                                                                                                       DEF_ : SFString('hanim_l_radiale_pt'),
@@ -2912,7 +2936,7 @@ var X3D0 =  X3D(
                                                                                                       center_ : SFVec3f([SFDouble(0.2014), SFDouble(1.1357), SFDouble(-0.0682)]),
                                                                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                      shape_ : 
+                                                                                                      child_ : 
                                                                                                         Shape(
                                                                                                           geometry_ : 
                                                                                                             LineSet(
@@ -2924,7 +2948,7 @@ var X3D0 =  X3D(
                                                                                                               color_ : 
                                                                                                                 ColorRGBA(
                                                                                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                      hAnimSite_ : 
+                                                                                                      child_ : 
                                                                                                         HAnimSite(
                                                                                                           name_ : SFString('l_ulnar_styloid_pt'),
                                                                                                           DEF_ : SFString('hanim_l_ulnar_styloid_pt'),
@@ -2942,7 +2966,7 @@ var X3D0 =  X3D(
                                                                                                           center_ : SFVec3f([SFDouble(0.1984), SFDouble(0.8663), SFDouble(-0.0583)]),
                                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                          shape_ : 
+                                                                                                          child_ : 
                                                                                                             Shape(
                                                                                                               geometry_ : 
                                                                                                                 LineSet(
@@ -2954,7 +2978,7 @@ var X3D0 =  X3D(
                                                                                                                   color_ : 
                                                                                                                     ColorRGBA(
                                                                                                                       USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                          shape_ : 
+                                                                                                          child_ : 
                                                                                                             Shape(
                                                                                                               geometry_ : 
                                                                                                                 LineSet(
@@ -2966,7 +2990,7 @@ var X3D0 =  X3D(
                                                                                                                   color_ : 
                                                                                                                     ColorRGBA(
                                                                                                                       USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                          shape_ : 
+                                                                                                          child_ : 
                                                                                                             Shape(
                                                                                                               geometry_ : 
                                                                                                                 LineSet(
@@ -2978,7 +3002,7 @@ var X3D0 =  X3D(
                                                                                                                   color_ : 
                                                                                                                     ColorRGBA(
                                                                                                                       USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                          shape_ : 
+                                                                                                          child_ : 
                                                                                                             Shape(
                                                                                                               geometry_ : 
                                                                                                                 LineSet(
@@ -2997,7 +3021,7 @@ var X3D0 =  X3D(
                                                                                                               center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                                                                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                              shape_ : 
+                                                                                                              child_ : 
                                                                                                                 Shape(
                                                                                                                   geometry_ : 
                                                                                                                     LineSet(
@@ -3016,7 +3040,7 @@ var X3D0 =  X3D(
                                                                                                                   center_ : SFVec3f([SFDouble(0.1924), SFDouble(0.8472), SFDouble(-0.0534)]),
                                                                                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  shape_ : 
+                                                                                                                  child_ : 
                                                                                                                     Shape(
                                                                                                                       geometry_ : 
                                                                                                                         LineSet(
@@ -3035,7 +3059,7 @@ var X3D0 =  X3D(
                                                                                                                       center_ : SFVec3f([SFDouble(0.1951), SFDouble(0.8226), SFDouble(0.0246)]),
                                                                                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                      shape_ : 
+                                                                                                                      child_ : 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
                                                                                                                             LineSet(
@@ -3047,7 +3071,7 @@ var X3D0 =  X3D(
                                                                                                                               color_ : 
                                                                                                                                 ColorRGBA(
                                                                                                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                                      hAnimSite_ : 
+                                                                                                                      child_ : 
                                                                                                                         HAnimSite(
                                                                                                                           name_ : SFString('l_carpal_distal_phalanx_1_tip'),
                                                                                                                           DEF_ : SFString('hanim_l_carpal_distal_phalanx_1_tip'),
@@ -3072,7 +3096,7 @@ var X3D0 =  X3D(
                                                                                                               center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                                                                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                              shape_ : 
+                                                                                                              child_ : 
                                                                                                                 Shape(
                                                                                                                   geometry_ : 
                                                                                                                     LineSet(
@@ -3084,7 +3108,7 @@ var X3D0 =  X3D(
                                                                                                                       color_ : 
                                                                                                                         ColorRGBA(
                                                                                                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                              hAnimSite_ : 
+                                                                                                              child_ : 
                                                                                                                 HAnimSite(
                                                                                                                   name_ : SFString('l_metacarpal_phalanx_2_pt'),
                                                                                                                   DEF_ : SFString('hanim_l_metacarpal_phalanx_2_pt'),
@@ -3102,7 +3126,7 @@ var X3D0 =  X3D(
                                                                                                                   center_ : SFVec3f([SFDouble(0.1983), SFDouble(0.8024), SFDouble(-0.028)]),
                                                                                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  shape_ : 
+                                                                                                                  child_ : 
                                                                                                                     Shape(
                                                                                                                       geometry_ : 
                                                                                                                         LineSet(
@@ -3121,7 +3145,7 @@ var X3D0 =  X3D(
                                                                                                                       center_ : SFVec3f([SFDouble(0.1983), SFDouble(0.7815), SFDouble(-0.028)]),
                                                                                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                      shape_ : 
+                                                                                                                      child_ : 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
                                                                                                                             LineSet(
@@ -3140,7 +3164,7 @@ var X3D0 =  X3D(
                                                                                                                           center_ : SFVec3f([SFDouble(0.2017), SFDouble(0.7363), SFDouble(-0.0248)]),
                                                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                          shape_ : 
+                                                                                                                          child_ : 
                                                                                                                             Shape(
                                                                                                                               geometry_ : 
                                                                                                                                 LineSet(
@@ -3152,7 +3176,7 @@ var X3D0 =  X3D(
                                                                                                                                   color_ : 
                                                                                                                                     ColorRGBA(
                                                                                                                                       USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                                          hAnimSite_ : 
+                                                                                                                          child_ : 
                                                                                                                             HAnimSite(
                                                                                                                               name_ : SFString('l_carpal_distal_phalanx_2_tip'),
                                                                                                                               DEF_ : SFString('hanim_l_carpal_distal_phalanx_2_tip'),
@@ -3163,7 +3187,7 @@ var X3D0 =  X3D(
 
                                                                                                                                 Shape(
                                                                                                                                   USE_ : SFString('HAnimSiteShape'))]),
-                                                                                                                          hAnimSite_ : 
+                                                                                                                          child_ : 
                                                                                                                             HAnimSite(
                                                                                                                               name_ : SFString('l_dactylion_pt'),
                                                                                                                               DEF_ : SFString('hanim_l_dactylion_pt'),
@@ -3188,7 +3212,7 @@ var X3D0 =  X3D(
                                                                                                               center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                                                                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                              shape_ : 
+                                                                                                              child_ : 
                                                                                                                 Shape(
                                                                                                                   geometry_ : 
                                                                                                                     LineSet(
@@ -3200,7 +3224,7 @@ var X3D0 =  X3D(
                                                                                                                       color_ : 
                                                                                                                         ColorRGBA(
                                                                                                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                              hAnimSite_ : 
+                                                                                                              child_ : 
                                                                                                                 HAnimSite(
                                                                                                                   name_ : SFString('l_metacarpal_phalanx_3_pt'),
                                                                                                                   DEF_ : SFString('hanim_l_metacarpal_phalanx_3_pt'),
@@ -3218,7 +3242,7 @@ var X3D0 =  X3D(
                                                                                                                   center_ : SFVec3f([SFDouble(0.1987), SFDouble(0.8029), SFDouble(-0.053)]),
                                                                                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  shape_ : 
+                                                                                                                  child_ : 
                                                                                                                     Shape(
                                                                                                                       geometry_ : 
                                                                                                                         LineSet(
@@ -3237,7 +3261,7 @@ var X3D0 =  X3D(
                                                                                                                       center_ : SFVec3f([SFDouble(0.1987), SFDouble(0.7818), SFDouble(-0.053)]),
                                                                                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                      shape_ : 
+                                                                                                                      child_ : 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
                                                                                                                             LineSet(
@@ -3256,7 +3280,7 @@ var X3D0 =  X3D(
                                                                                                                           center_ : SFVec3f([SFDouble(0.2013), SFDouble(0.7273), SFDouble(-0.0503)]),
                                                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                          shape_ : 
+                                                                                                                          child_ : 
                                                                                                                             Shape(
                                                                                                                               geometry_ : 
                                                                                                                                 LineSet(
@@ -3268,7 +3292,7 @@ var X3D0 =  X3D(
                                                                                                                                   color_ : 
                                                                                                                                     ColorRGBA(
                                                                                                                                       USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                                          hAnimSite_ : 
+                                                                                                                          child_ : 
                                                                                                                             HAnimSite(
                                                                                                                               name_ : SFString('l_carpal_distal_phalanx_3_tip'),
                                                                                                                               DEF_ : SFString('hanim_l_carpal_distal_phalanx_3_tip'),
@@ -3293,7 +3317,7 @@ var X3D0 =  X3D(
                                                                                                               center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                                                                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                              shape_ : 
+                                                                                                              child_ : 
                                                                                                                 Shape(
                                                                                                                   geometry_ : 
                                                                                                                     LineSet(
@@ -3305,7 +3329,7 @@ var X3D0 =  X3D(
                                                                                                                       color_ : 
                                                                                                                         ColorRGBA(
                                                                                                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                              shape_ : 
+                                                                                                              child_ : 
                                                                                                                 Shape(
                                                                                                                   geometry_ : 
                                                                                                                     LineSet(
@@ -3317,7 +3341,7 @@ var X3D0 =  X3D(
                                                                                                                       color_ : 
                                                                                                                         ColorRGBA(
                                                                                                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                              hAnimSite_ : 
+                                                                                                              child_ : 
                                                                                                                 HAnimSite(
                                                                                                                   name_ : SFString('l_metacarpal_phalanx_5_pt'),
                                                                                                                   DEF_ : SFString('hanim_l_metacarpal_phalanx_5_pt'),
@@ -3335,7 +3359,7 @@ var X3D0 =  X3D(
                                                                                                                   center_ : SFVec3f([SFDouble(0.1956), SFDouble(0.8019), SFDouble(-0.0794)]),
                                                                                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  shape_ : 
+                                                                                                                  child_ : 
                                                                                                                     Shape(
                                                                                                                       geometry_ : 
                                                                                                                         LineSet(
@@ -3354,7 +3378,7 @@ var X3D0 =  X3D(
                                                                                                                       center_ : SFVec3f([SFDouble(0.1956), SFDouble(0.7815), SFDouble(-0.0794)]),
                                                                                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                      shape_ : 
+                                                                                                                      child_ : 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
                                                                                                                             LineSet(
@@ -3373,7 +3397,7 @@ var X3D0 =  X3D(
                                                                                                                           center_ : SFVec3f([SFDouble(0.1973), SFDouble(0.7287), SFDouble(-0.0777)]),
                                                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                          shape_ : 
+                                                                                                                          child_ : 
                                                                                                                             Shape(
                                                                                                                               geometry_ : 
                                                                                                                                 LineSet(
@@ -3385,7 +3409,7 @@ var X3D0 =  X3D(
                                                                                                                                   color_ : 
                                                                                                                                     ColorRGBA(
                                                                                                                                       USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                                          hAnimSite_ : 
+                                                                                                                          child_ : 
                                                                                                                             HAnimSite(
                                                                                                                               name_ : SFString('l_carpal_distal_phalanx_4_tip'),
                                                                                                                               DEF_ : SFString('hanim_l_carpal_distal_phalanx_4_tip'),
@@ -3410,7 +3434,7 @@ var X3D0 =  X3D(
                                                                                                                   center_ : SFVec3f([SFDouble(0.1925), SFDouble(0.8066), SFDouble(-0.1036)]),
                                                                                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  shape_ : 
+                                                                                                                  child_ : 
                                                                                                                     Shape(
                                                                                                                       geometry_ : 
                                                                                                                         LineSet(
@@ -3429,7 +3453,7 @@ var X3D0 =  X3D(
                                                                                                                       center_ : SFVec3f([SFDouble(0.1925), SFDouble(0.7866), SFDouble(-0.1036)]),
                                                                                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                      shape_ : 
+                                                                                                                      child_ : 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
                                                                                                                             LineSet(
@@ -3448,7 +3472,7 @@ var X3D0 =  X3D(
                                                                                                                           center_ : SFVec3f([SFDouble(0.1938), SFDouble(0.7452), SFDouble(-0.1024)]),
                                                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                          shape_ : 
+                                                                                                                          child_ : 
                                                                                                                             Shape(
                                                                                                                               geometry_ : 
                                                                                                                                 LineSet(
@@ -3460,7 +3484,7 @@ var X3D0 =  X3D(
                                                                                                                                   color_ : 
                                                                                                                                     ColorRGBA(
                                                                                                                                       USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                                          hAnimSite_ : 
+                                                                                                                          child_ : 
                                                                                                                             HAnimSite(
                                                                                                                               name_ : SFString('l_carpal_distal_phalanx_5_tip'),
                                                                                                                               DEF_ : SFString('hanim_l_carpal_distal_phalanx_5_tip'),
@@ -3485,7 +3509,7 @@ var X3D0 =  X3D(
                                                                                           center_ : SFVec3f([SFDouble(-0.0694), SFDouble(1.46), SFDouble(-0.033)]),
                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                          shape_ : 
+                                                                                          child_ : 
                                                                                             Shape(
                                                                                               geometry_ : 
                                                                                                 LineSet(
@@ -3504,7 +3528,7 @@ var X3D0 =  X3D(
                                                                                               center_ : SFVec3f([SFDouble(-0.0836), SFDouble(1.4281), SFDouble(-0.0401)]),
                                                                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                              shape_ : 
+                                                                                              child_ : 
                                                                                                 Shape(
                                                                                                   geometry_ : 
                                                                                                     LineSet(
@@ -3516,7 +3540,7 @@ var X3D0 =  X3D(
                                                                                                       color_ : 
                                                                                                         ColorRGBA(
                                                                                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                              hAnimSite_ : 
+                                                                                              child_ : 
                                                                                                 HAnimSite(
                                                                                                   name_ : SFString('r_bideltoid_pt'),
                                                                                                   DEF_ : SFString('hanim_r_bideltoid_pt'),
@@ -3527,7 +3551,7 @@ var X3D0 =  X3D(
 
                                                                                                     Shape(
                                                                                                       USE_ : SFString('HAnimSiteShape'))]),
-                                                                                              hAnimSite_ : 
+                                                                                              child_ : 
                                                                                                 HAnimSite(
                                                                                                   name_ : SFString('r_humeral_lateral_epicondyles_pt'),
                                                                                                   DEF_ : SFString('hanim_r_humeral_lateral_epicondyles_pt'),
@@ -3545,7 +3569,7 @@ var X3D0 =  X3D(
                                                                                                   center_ : SFVec3f([SFDouble(-0.1907), SFDouble(1.4407), SFDouble(-0.0325)]),
                                                                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                  shape_ : 
+                                                                                                  child_ : 
                                                                                                     Shape(
                                                                                                       geometry_ : 
                                                                                                         LineSet(
@@ -3557,7 +3581,7 @@ var X3D0 =  X3D(
                                                                                                           color_ : 
                                                                                                             ColorRGBA(
                                                                                                               USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                  hAnimSite_ : 
+                                                                                                  child_ : 
                                                                                                     HAnimSite(
                                                                                                       name_ : SFString('r_humeral_medial_epicondyles_pt'),
                                                                                                       DEF_ : SFString('hanim_r_humeral_medial_epicondyles_pt'),
@@ -3568,7 +3592,7 @@ var X3D0 =  X3D(
 
                                                                                                         Shape(
                                                                                                           USE_ : SFString('HAnimSiteShape'))]),
-                                                                                                  hAnimSite_ : 
+                                                                                                  child_ : 
                                                                                                     HAnimSite(
                                                                                                       name_ : SFString('r_olecranon_pt'),
                                                                                                       DEF_ : SFString('hanim_r_olecranon_pt'),
@@ -3579,7 +3603,7 @@ var X3D0 =  X3D(
 
                                                                                                         Shape(
                                                                                                           USE_ : SFString('HAnimSiteShape'))]),
-                                                                                                  hAnimSite_ : 
+                                                                                                  child_ : 
                                                                                                     HAnimSite(
                                                                                                       name_ : SFString('r_radial_styloid_pt'),
                                                                                                       DEF_ : SFString('hanim_r_radial_styloid_pt'),
@@ -3590,7 +3614,7 @@ var X3D0 =  X3D(
 
                                                                                                         Shape(
                                                                                                           USE_ : SFString('HAnimSiteShape'))]),
-                                                                                                  hAnimSite_ : 
+                                                                                                  child_ : 
                                                                                                     HAnimSite(
                                                                                                       name_ : SFString('r_radiale_pt'),
                                                                                                       DEF_ : SFString('hanim_r_radiale_pt'),
@@ -3608,7 +3632,7 @@ var X3D0 =  X3D(
                                                                                                       center_ : SFVec3f([SFDouble(-0.1949), SFDouble(1.1388), SFDouble(-0.062)]),
                                                                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                      shape_ : 
+                                                                                                      child_ : 
                                                                                                         Shape(
                                                                                                           geometry_ : 
                                                                                                             LineSet(
@@ -3620,7 +3644,7 @@ var X3D0 =  X3D(
                                                                                                               color_ : 
                                                                                                                 ColorRGBA(
                                                                                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                      hAnimSite_ : 
+                                                                                                      child_ : 
                                                                                                         HAnimSite(
                                                                                                           name_ : SFString('r_ulnar_styloid_pt'),
                                                                                                           DEF_ : SFString('hanim_r_ulnar_styloid_pt'),
@@ -3638,7 +3662,7 @@ var X3D0 =  X3D(
                                                                                                           center_ : SFVec3f([SFDouble(-0.1959), SFDouble(0.8694), SFDouble(-0.0521)]),
                                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                          shape_ : 
+                                                                                                          child_ : 
                                                                                                             Shape(
                                                                                                               geometry_ : 
                                                                                                                 LineSet(
@@ -3650,7 +3674,7 @@ var X3D0 =  X3D(
                                                                                                                   color_ : 
                                                                                                                     ColorRGBA(
                                                                                                                       USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                          shape_ : 
+                                                                                                          child_ : 
                                                                                                             Shape(
                                                                                                               geometry_ : 
                                                                                                                 LineSet(
@@ -3662,7 +3686,7 @@ var X3D0 =  X3D(
                                                                                                                   color_ : 
                                                                                                                     ColorRGBA(
                                                                                                                       USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                          shape_ : 
+                                                                                                          child_ : 
                                                                                                             Shape(
                                                                                                               geometry_ : 
                                                                                                                 LineSet(
@@ -3674,7 +3698,7 @@ var X3D0 =  X3D(
                                                                                                                   color_ : 
                                                                                                                     ColorRGBA(
                                                                                                                       USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                          shape_ : 
+                                                                                                          child_ : 
                                                                                                             Shape(
                                                                                                               geometry_ : 
                                                                                                                 LineSet(
@@ -3693,7 +3717,7 @@ var X3D0 =  X3D(
                                                                                                               center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                                                                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                              shape_ : 
+                                                                                                              child_ : 
                                                                                                                 Shape(
                                                                                                                   geometry_ : 
                                                                                                                     LineSet(
@@ -3712,7 +3736,7 @@ var X3D0 =  X3D(
                                                                                                                   center_ : SFVec3f([SFDouble(-0.1899), SFDouble(0.8502), SFDouble(-0.0473)]),
                                                                                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  shape_ : 
+                                                                                                                  child_ : 
                                                                                                                     Shape(
                                                                                                                       geometry_ : 
                                                                                                                         LineSet(
@@ -3731,7 +3755,7 @@ var X3D0 =  X3D(
                                                                                                                       center_ : SFVec3f([SFDouble(-0.1874), SFDouble(0.8256), SFDouble(0.0306)]),
                                                                                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                      shape_ : 
+                                                                                                                      child_ : 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
                                                                                                                             LineSet(
@@ -3743,7 +3767,7 @@ var X3D0 =  X3D(
                                                                                                                               color_ : 
                                                                                                                                 ColorRGBA(
                                                                                                                                   USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                                      hAnimSite_ : 
+                                                                                                                      child_ : 
                                                                                                                         HAnimSite(
                                                                                                                           name_ : SFString('r_carpal_distal_phalanx_1_tip'),
                                                                                                                           DEF_ : SFString('hanim_r_carpal_distal_phalanx_1_tip'),
@@ -3768,7 +3792,7 @@ var X3D0 =  X3D(
                                                                                                               center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                                                                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                              shape_ : 
+                                                                                                              child_ : 
                                                                                                                 Shape(
                                                                                                                   geometry_ : 
                                                                                                                     LineSet(
@@ -3780,7 +3804,7 @@ var X3D0 =  X3D(
                                                                                                                       color_ : 
                                                                                                                         ColorRGBA(
                                                                                                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                              hAnimSite_ : 
+                                                                                                              child_ : 
                                                                                                                 HAnimSite(
                                                                                                                   name_ : SFString('r_metacarpal_phalanx_2_pt'),
                                                                                                                   DEF_ : SFString('hanim_r_metacarpal_phalanx_2_pt'),
@@ -3798,7 +3822,7 @@ var X3D0 =  X3D(
                                                                                                                   center_ : SFVec3f([SFDouble(-0.1961), SFDouble(0.8055), SFDouble(-0.0218)]),
                                                                                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  shape_ : 
+                                                                                                                  child_ : 
                                                                                                                     Shape(
                                                                                                                       geometry_ : 
                                                                                                                         LineSet(
@@ -3817,7 +3841,7 @@ var X3D0 =  X3D(
                                                                                                                       center_ : SFVec3f([SFDouble(-0.1961), SFDouble(0.7846), SFDouble(-0.0218)]),
                                                                                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                      shape_ : 
+                                                                                                                      child_ : 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
                                                                                                                             LineSet(
@@ -3836,7 +3860,7 @@ var X3D0 =  X3D(
                                                                                                                           center_ : SFVec3f([SFDouble(-0.1954), SFDouble(0.7393), SFDouble(-0.0185)]),
                                                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                          shape_ : 
+                                                                                                                          child_ : 
                                                                                                                             Shape(
                                                                                                                               geometry_ : 
                                                                                                                                 LineSet(
@@ -3848,7 +3872,7 @@ var X3D0 =  X3D(
                                                                                                                                   color_ : 
                                                                                                                                     ColorRGBA(
                                                                                                                                       USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                                          hAnimSite_ : 
+                                                                                                                          child_ : 
                                                                                                                             HAnimSite(
                                                                                                                               name_ : SFString('r_carpal_distal_phalanx_2_tip'),
                                                                                                                               DEF_ : SFString('hanim_r_carpal_distal_phalanx_2_tip'),
@@ -3859,7 +3883,7 @@ var X3D0 =  X3D(
 
                                                                                                                                 Shape(
                                                                                                                                   USE_ : SFString('HAnimSiteShape'))]),
-                                                                                                                          hAnimSite_ : 
+                                                                                                                          child_ : 
                                                                                                                             HAnimSite(
                                                                                                                               name_ : SFString('r_dactylion_pt'),
                                                                                                                               DEF_ : SFString('hanim_r_dactylion_pt'),
@@ -3884,7 +3908,7 @@ var X3D0 =  X3D(
                                                                                                               center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                                                                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                              shape_ : 
+                                                                                                              child_ : 
                                                                                                                 Shape(
                                                                                                                   geometry_ : 
                                                                                                                     LineSet(
@@ -3896,7 +3920,7 @@ var X3D0 =  X3D(
                                                                                                                       color_ : 
                                                                                                                         ColorRGBA(
                                                                                                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                              hAnimSite_ : 
+                                                                                                              child_ : 
                                                                                                                 HAnimSite(
                                                                                                                   name_ : SFString('r_metacarpal_phalanx_3_pt'),
                                                                                                                   DEF_ : SFString('hanim_r_metacarpal_phalanx_3_pt'),
@@ -3914,7 +3938,7 @@ var X3D0 =  X3D(
                                                                                                                   center_ : SFVec3f([SFDouble(-0.1972), SFDouble(0.806), SFDouble(-0.0468)]),
                                                                                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  shape_ : 
+                                                                                                                  child_ : 
                                                                                                                     Shape(
                                                                                                                       geometry_ : 
                                                                                                                         LineSet(
@@ -3933,7 +3957,7 @@ var X3D0 =  X3D(
                                                                                                                       center_ : SFVec3f([SFDouble(-0.1972), SFDouble(0.7849), SFDouble(-0.0468)]),
                                                                                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                      shape_ : 
+                                                                                                                      child_ : 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
                                                                                                                             LineSet(
@@ -3952,7 +3976,7 @@ var X3D0 =  X3D(
                                                                                                                           center_ : SFVec3f([SFDouble(-0.195), SFDouble(0.7304), SFDouble(-0.0441)]),
                                                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                          shape_ : 
+                                                                                                                          child_ : 
                                                                                                                             Shape(
                                                                                                                               geometry_ : 
                                                                                                                                 LineSet(
@@ -3964,7 +3988,7 @@ var X3D0 =  X3D(
                                                                                                                                   color_ : 
                                                                                                                                     ColorRGBA(
                                                                                                                                       USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                                          hAnimSite_ : 
+                                                                                                                          child_ : 
                                                                                                                             HAnimSite(
                                                                                                                               name_ : SFString('r_carpal_distal_phalanx_3_tip'),
                                                                                                                               DEF_ : SFString('hanim_r_carpal_distal_phalanx_3_tip'),
@@ -3989,7 +4013,7 @@ var X3D0 =  X3D(
                                                                                                               center_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                                                                                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                              shape_ : 
+                                                                                                              child_ : 
                                                                                                                 Shape(
                                                                                                                   geometry_ : 
                                                                                                                     LineSet(
@@ -4001,7 +4025,7 @@ var X3D0 =  X3D(
                                                                                                                       color_ : 
                                                                                                                         ColorRGBA(
                                                                                                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                              shape_ : 
+                                                                                                              child_ : 
                                                                                                                 Shape(
                                                                                                                   geometry_ : 
                                                                                                                     LineSet(
@@ -4013,7 +4037,7 @@ var X3D0 =  X3D(
                                                                                                                       color_ : 
                                                                                                                         ColorRGBA(
                                                                                                                           USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                              hAnimSite_ : 
+                                                                                                              child_ : 
                                                                                                                 HAnimSite(
                                                                                                                   name_ : SFString('r_metacarpal_phalanx_5_pt'),
                                                                                                                   DEF_ : SFString('hanim_r_metacarpal_phalanx_5_pt'),
@@ -4031,7 +4055,7 @@ var X3D0 =  X3D(
                                                                                                                   center_ : SFVec3f([SFDouble(-0.1951), SFDouble(0.8049), SFDouble(-0.0732)]),
                                                                                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  shape_ : 
+                                                                                                                  child_ : 
                                                                                                                     Shape(
                                                                                                                       geometry_ : 
                                                                                                                         LineSet(
@@ -4050,7 +4074,7 @@ var X3D0 =  X3D(
                                                                                                                       center_ : SFVec3f([SFDouble(-0.1951), SFDouble(0.7845), SFDouble(-0.0732)]),
                                                                                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                      shape_ : 
+                                                                                                                      child_ : 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
                                                                                                                             LineSet(
@@ -4069,7 +4093,7 @@ var X3D0 =  X3D(
                                                                                                                           center_ : SFVec3f([SFDouble(-0.192), SFDouble(0.7318), SFDouble(-0.0716)]),
                                                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                          shape_ : 
+                                                                                                                          child_ : 
                                                                                                                             Shape(
                                                                                                                               geometry_ : 
                                                                                                                                 LineSet(
@@ -4081,7 +4105,7 @@ var X3D0 =  X3D(
                                                                                                                                   color_ : 
                                                                                                                                     ColorRGBA(
                                                                                                                                       USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                                          hAnimSite_ : 
+                                                                                                                          child_ : 
                                                                                                                             HAnimSite(
                                                                                                                               name_ : SFString('r_carpal_distal_phalanx_4_tip'),
                                                                                                                               DEF_ : SFString('hanim_r_carpal_distal_phalanx_4_tip'),
@@ -4106,7 +4130,7 @@ var X3D0 =  X3D(
                                                                                                                   center_ : SFVec3f([SFDouble(-0.1926), SFDouble(0.8096), SFDouble(-0.0975)]),
                                                                                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  shape_ : 
+                                                                                                                  child_ : 
                                                                                                                     Shape(
                                                                                                                       geometry_ : 
                                                                                                                         LineSet(
@@ -4125,7 +4149,7 @@ var X3D0 =  X3D(
                                                                                                                       center_ : SFVec3f([SFDouble(-0.1926), SFDouble(0.7896), SFDouble(-0.0975)]),
                                                                                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                      shape_ : 
+                                                                                                                      child_ : 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
                                                                                                                             LineSet(
@@ -4144,7 +4168,7 @@ var X3D0 =  X3D(
                                                                                                                           center_ : SFVec3f([SFDouble(-0.1902), SFDouble(0.7483), SFDouble(-0.0963)]),
                                                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                          shape_ : 
+                                                                                                                          child_ : 
                                                                                                                             Shape(
                                                                                                                               geometry_ : 
                                                                                                                                 LineSet(
@@ -4156,7 +4180,7 @@ var X3D0 =  X3D(
                                                                                                                                   color_ : 
                                                                                                                                     ColorRGBA(
                                                                                                                                       USE_ : SFString('HAnimSegmentLineColorRGBA')))),
-                                                                                                                          hAnimSite_ : 
+                                                                                                                          child_ : 
                                                                                                                             HAnimSite(
                                                                                                                               name_ : SFString('r_carpal_distal_phalanx_5_tip'),
                                                                                                                               DEF_ : SFString('hanim_r_carpal_distal_phalanx_5_tip'),

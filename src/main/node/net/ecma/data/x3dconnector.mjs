@@ -55,7 +55,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d")}),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d")}),
 
             new meta({
               name : new SFString("description"),
@@ -72,7 +72,7 @@ var X3D0 =  new X3D({
 
             new Transform({
               DEF : new SFString("G1"),
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
@@ -81,8 +81,8 @@ var X3D0 =  new X3D({
                           diffuseColor : new SFColor([0.7,0.2,0.2])}))})),
                   geometry : new SFNode(
                     new Sphere({
-                      radius : new SFFloat(0.1)}))}),
-
+                      radius : new SFFloat(0.1)}))})),
+              children : new MFNode([
                 new PlaneSensor({
                   description : new SFString("Grab to move"),
                   DEF : new SFString("PS1")}),
@@ -96,7 +96,7 @@ var X3D0 =  new X3D({
             new Transform({
               DEF : new SFString("G2"),
               translation : new SFVec3f([1,-1,0.01]),
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
@@ -105,8 +105,8 @@ var X3D0 =  new X3D({
                           diffuseColor : new SFColor([0.2,0.7,0.2])}))})),
                   geometry : new SFNode(
                     new Sphere({
-                      radius : new SFFloat(0.1)}))}),
-
+                      radius : new SFFloat(0.1)}))})),
+              children : new MFNode([
                 new PlaneSensor({
                   description : new SFString("Grab to move"),
                   offset : new SFVec3f([1,-1,0.01]),
@@ -123,7 +123,7 @@ var X3D0 =  new X3D({
               children : new MFNode([
                 new Transform({
                   DEF : new SFString("rotscaleC1"),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       appearance : new SFNode(
                         new Appearance({
@@ -133,7 +133,7 @@ var X3D0 =  new X3D({
                               transparency : new SFFloat(0.5)}))})),
                       geometry : new SFNode(
                         new Cylinder({
-                          radius : new SFFloat(0.05)}))})])})])}),
+                          radius : new SFFloat(0.05)}))}))})])}),
 
             new ProtoDeclare({
               name : new SFString("x3dconnector"),

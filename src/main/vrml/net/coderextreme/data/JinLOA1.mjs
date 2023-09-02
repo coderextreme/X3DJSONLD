@@ -201,9 +201,9 @@ IndexedFaceSet40.texCoord = TextureCoordinate42;
 
 Shape36.geometry = IndexedFaceSet40;
 
-Transform35.children = new MFNode();
+Transform35.child = new undefined();
 
-Transform35.children[0] = Shape36;
+Transform35.child[0] = Shape36;
 
 HAnimSegment34.children = new MFNode();
 
@@ -250,9 +250,9 @@ IndexedFaceSet50.texCoord = TextureCoordinate52;
 
 Shape46.geometry = IndexedFaceSet50;
 
-Transform45.children = new MFNode();
+Transform45.child = new undefined();
 
-Transform45.children[0] = Shape46;
+Transform45.child[0] = Shape46;
 
 HAnimSegment44.children = new MFNode();
 
@@ -299,9 +299,9 @@ IndexedFaceSet60.texCoord = TextureCoordinate62;
 
 Shape56.geometry = IndexedFaceSet60;
 
-Transform55.children = new MFNode();
+Transform55.child = new undefined();
 
-Transform55.children[0] = Shape56;
+Transform55.child[0] = Shape56;
 
 HAnimSegment54.children = new MFNode();
 
@@ -348,9 +348,9 @@ IndexedFaceSet70.texCoord = TextureCoordinate72;
 
 Shape66.geometry = IndexedFaceSet70;
 
-Transform65.children = new MFNode();
+Transform65.child = new undefined();
 
-Transform65.children[0] = Shape66;
+Transform65.child[0] = Shape66;
 
 HAnimSegment64.children = new MFNode();
 
@@ -397,9 +397,9 @@ IndexedFaceSet80.texCoord = TextureCoordinate82;
 
 Shape76.geometry = IndexedFaceSet80;
 
-Transform75.children = new MFNode();
+Transform75.child = new undefined();
 
-Transform75.children[0] = Shape76;
+Transform75.child[0] = Shape76;
 
 HAnimSegment74.children = new MFNode();
 
@@ -447,9 +447,9 @@ IndexedFaceSet90.texCoord = TextureCoordinate92;
 
 Shape86.geometry = IndexedFaceSet90;
 
-Transform85.children = new MFNode();
+Transform85.child = new undefined();
 
-Transform85.children[0] = Shape86;
+Transform85.child[0] = Shape86;
 
 HAnimSegment84.children = new MFNode();
 
@@ -504,9 +504,9 @@ IndexedFaceSet100.texCoord = TextureCoordinate102;
 
 Shape96.geometry = IndexedFaceSet100;
 
-Transform95.children = new MFNode();
+Transform95.child = new undefined();
 
-Transform95.children[0] = Shape96;
+Transform95.child[0] = Shape96;
 
 HAnimSegment94.children = new MFNode();
 
@@ -553,9 +553,9 @@ IndexedFaceSet110.texCoord = TextureCoordinate112;
 
 Shape106.geometry = IndexedFaceSet110;
 
-Transform105.children = new MFNode();
+Transform105.child = new undefined();
 
-Transform105.children[0] = Shape106;
+Transform105.child[0] = Shape106;
 
 HAnimSegment104.children = new MFNode();
 
@@ -602,9 +602,9 @@ IndexedFaceSet120.texCoord = TextureCoordinate122;
 
 Shape116.geometry = IndexedFaceSet120;
 
-Transform115.children = new MFNode();
+Transform115.child = new undefined();
 
-Transform115.children[0] = Shape116;
+Transform115.child[0] = Shape116;
 
 HAnimSegment114.children = new MFNode();
 
@@ -652,9 +652,9 @@ IndexedFaceSet130.texCoord = TextureCoordinate132;
 
 Shape126.geometry = IndexedFaceSet130;
 
-Transform125.children = new MFNode();
+Transform125.child = new undefined();
 
-Transform125.children[0] = Shape126;
+Transform125.child[0] = Shape126;
 
 HAnimSegment124.children = new MFNode();
 
@@ -711,9 +711,9 @@ IndexedFaceSet140.texCoord = TextureCoordinate142;
 
 Shape136.geometry = IndexedFaceSet140;
 
-Transform135.children = new MFNode();
+Transform135.child = new undefined();
 
-Transform135.children[0] = Shape136;
+Transform135.child[0] = Shape136;
 
 HAnimSegment134.children = new MFNode();
 
@@ -760,9 +760,9 @@ IndexedFaceSet150.texCoord = TextureCoordinate152;
 
 Shape146.geometry = IndexedFaceSet150;
 
-Transform145.children = new MFNode();
+Transform145.child = new undefined();
 
-Transform145.children[0] = Shape146;
+Transform145.child[0] = Shape146;
 
 HAnimSegment144.children = new MFNode();
 
@@ -809,9 +809,9 @@ IndexedFaceSet160.texCoord = TextureCoordinate162;
 
 Shape156.geometry = IndexedFaceSet160;
 
-Transform155.children = new MFNode();
+Transform155.child = new undefined();
 
-Transform155.children[0] = Shape156;
+Transform155.child[0] = Shape156;
 
 HAnimSegment154.children = new MFNode();
 
@@ -858,9 +858,9 @@ IndexedFaceSet170.texCoord = TextureCoordinate172;
 
 Shape166.geometry = IndexedFaceSet170;
 
-Transform165.children = new MFNode();
+Transform165.child = new undefined();
 
-Transform165.children[0] = Shape166;
+Transform165.child[0] = Shape166;
 
 HAnimSegment164.children = new MFNode();
 
@@ -907,9 +907,9 @@ IndexedFaceSet180.texCoord = TextureCoordinate182;
 
 Shape176.geometry = IndexedFaceSet180;
 
-Transform175.children = new MFNode();
+Transform175.child = new undefined();
 
-Transform175.children[0] = Shape176;
+Transform175.child[0] = Shape176;
 
 HAnimSegment174.children = new MFNode();
 
@@ -962,9 +962,9 @@ IndexedFaceSet190.texCoord = TextureCoordinate192;
 
 Shape186.geometry = IndexedFaceSet190;
 
-Transform185.children = new MFNode();
+Transform185.child = new undefined();
 
-Transform185.children[0] = Shape186;
+Transform185.child[0] = Shape186;
 
 HAnimSegment184.children = new MFNode();
 
@@ -1011,9 +1011,9 @@ IndexedFaceSet200.texCoord = TextureCoordinate202;
 
 Shape196.geometry = IndexedFaceSet200;
 
-Transform195.children = new MFNode();
+Transform195.child = new undefined();
 
-Transform195.children[0] = Shape196;
+Transform195.child[0] = Shape196;
 
 HAnimSegment194.children = new MFNode();
 
@@ -1060,9 +1060,9 @@ IndexedFaceSet210.texCoord = TextureCoordinate212;
 
 Shape206.geometry = IndexedFaceSet210;
 
-Transform205.children = new MFNode();
+Transform205.child = new undefined();
 
-Transform205.children[0] = Shape206;
+Transform205.child[0] = Shape206;
 
 HAnimSegment204.children = new MFNode();
 

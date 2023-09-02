@@ -28,6 +28,10 @@ var X3D0 =  new X3D({
         new head({
           meta : new MFNode([
             new meta({
+              name : new SFString("title"),
+              content : new SFString("app.x3d")}),
+
+            new meta({
               name : new SFString("creator"),
               content : new SFString("Carlson, I")}),
 

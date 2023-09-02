@@ -100,7 +100,7 @@ Transform20->setDEF("LinesAlignedAlongX");
 Transform20->setRotation(new float[4]{0,1,0,1.57079});
 CShape* Shape21 = (CShape *)(m_pScene.createNode("Shape"));
 Shape21->setUSE("LinesAlignedAlongZ");
-Transform20->addChildren(*Shape21);
+Transform20->addChild(*Shape21);
 
 Group15->addChildren(*Transform20);
 

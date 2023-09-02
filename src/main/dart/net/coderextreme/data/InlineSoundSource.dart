@@ -83,7 +83,7 @@ var X3D0 =  X3D(
             Transform(
               DEF_ : SFString('Floor'),
               translation_ : SFVec3f([SFDouble(1.241), SFDouble(0), SFDouble(0.358)]),
-              children_ : [
+              child_ : 
                 Shape(
                   appearance_ : 
                     Appearance(
@@ -101,7 +101,7 @@ var X3D0 =  X3D(
                           point_ : MFVec3f([SFVec3f([-1000,0,1000]),SFVec3f([-1000,0,-1000]),SFVec3f([1000,0,-1000]),SFVec3f([1000,0,-1000]),SFVec3f([1000,0,1000]),SFVec3f([-1000,0,1000]),SFVec3f([-1000,8.031588,1000]),SFVec3f([1000,8.031588,1000]),SFVec3f([1000,8.031588,-1000]),SFVec3f([1000,8.031588,-1000]),SFVec3f([-1000,8.031588,-1000]),SFVec3f([-1000,8.031588,1000]),SFVec3f([-1000,0,1000]),SFVec3f([1000,0,1000]),SFVec3f([1000,8.031588,1000]),SFVec3f([1000,8.031588,1000]),SFVec3f([-1000,8.031588,1000]),SFVec3f([-1000,0,1000]),SFVec3f([1000,0,1000]),SFVec3f([1000,0,-1000]),SFVec3f([1000,8.031588,-1000]),SFVec3f([1000,8.031588,-1000]),SFVec3f([1000,8.031588,1000]),SFVec3f([1000,0,1000]),SFVec3f([1000,0,-1000]),SFVec3f([-1000,0,-1000]),SFVec3f([-1000,8.031588,-1000]),SFVec3f([-1000,8.031588,-1000]),SFVec3f([1000,8.031588,-1000]),SFVec3f([1000,0,-1000]),SFVec3f([-1000,0,-1000]),SFVec3f([-1000,0,1000]),SFVec3f([-1000,8.031588,1000]),SFVec3f([-1000,8.031588,1000]),SFVec3f([-1000,8.031588,-1000]),SFVec3f([-1000,0,-1000])])),
                       normal_ : 
                         Normal(
-                          vector_ : MFVec3f([SFVec3f([0,-1,0]),SFVec3f([0,-1,0]),SFVec3f([0,-1,0]),SFVec3f([0,-1,0]),SFVec3f([0,-1,0]),SFVec3f([0,-1,0]),SFVec3f([0,1,0]),SFVec3f([0,1,0]),SFVec3f([0,1,0]),SFVec3f([0,1,0]),SFVec3f([0,1,0]),SFVec3f([0,1,0]),SFVec3f([0,0,1]),SFVec3f([0,0,1]),SFVec3f([0,0,1]),SFVec3f([0,0,1]),SFVec3f([0,0,1]),SFVec3f([0,0,1]),SFVec3f([1,0,0]),SFVec3f([1,0,0]),SFVec3f([1,0,0]),SFVec3f([1,0,0]),SFVec3f([1,0,0]),SFVec3f([1,0,0]),SFVec3f([0,0,-1]),SFVec3f([0,0,-1]),SFVec3f([0,0,-1]),SFVec3f([0,0,-1]),SFVec3f([0,0,-1]),SFVec3f([0,0,-1]),SFVec3f([-1,0,0]),SFVec3f([-1,0,0]),SFVec3f([-1,0,0]),SFVec3f([-1,0,0]),SFVec3f([-1,0,0]),SFVec3f([-1,0,0])]))))]),
+                          vector_ : MFVec3f([SFVec3f([0,-1,0]),SFVec3f([0,-1,0]),SFVec3f([0,-1,0]),SFVec3f([0,-1,0]),SFVec3f([0,-1,0]),SFVec3f([0,-1,0]),SFVec3f([0,1,0]),SFVec3f([0,1,0]),SFVec3f([0,1,0]),SFVec3f([0,1,0]),SFVec3f([0,1,0]),SFVec3f([0,1,0]),SFVec3f([0,0,1]),SFVec3f([0,0,1]),SFVec3f([0,0,1]),SFVec3f([0,0,1]),SFVec3f([0,0,1]),SFVec3f([0,0,1]),SFVec3f([1,0,0]),SFVec3f([1,0,0]),SFVec3f([1,0,0]),SFVec3f([1,0,0]),SFVec3f([1,0,0]),SFVec3f([1,0,0]),SFVec3f([0,0,-1]),SFVec3f([0,0,-1]),SFVec3f([0,0,-1]),SFVec3f([0,0,-1]),SFVec3f([0,0,-1]),SFVec3f([0,0,-1]),SFVec3f([-1,0,0]),SFVec3f([-1,0,0]),SFVec3f([-1,0,0]),SFVec3f([-1,0,0]),SFVec3f([-1,0,0]),SFVec3f([-1,0,0])]))))),
 
             Transform(
               DEF_ : SFString('InlineScene'),

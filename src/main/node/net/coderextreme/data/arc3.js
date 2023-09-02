@@ -18,7 +18,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("title").setContent("arc3.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("Lost, Doug Sanden I think"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("a generic proto to connect two objects")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.Viewpoint()).setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(5)])).setDescription("Only Viewpoint"))
@@ -135,5 +135,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "        }")))
         .addChild((new autoclass.ROUTE()).setFromNode("DECLpoint_G1_node").setFromField("translation").setToNode("DECLx3dconnector_connector1_S1").setToField("set_startpoint"))
         .addChild((new autoclass.ROUTE()).setFromNode("DECLpoint_G2_node").setFromField("translation").setToNode("DECLx3dconnector_connector1_S1").setToField("set_endpoint")))      ;
-    X3D0.toFileX3D("../data/arc3.new.x3d");
+    X3D0.toFileX3D("../data/arc3.new.node.x3d");
     process.exit(0);

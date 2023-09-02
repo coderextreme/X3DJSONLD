@@ -4,7 +4,9 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="4.0", 
-head=head(children=[component(name="HAnim", level=1),
+head=head(
+children=[
+component(name="HAnim", level=1),
 component(name="Text", level=1),
 component(name="Core", level=1),
 component(name="Grouping", level=1),
@@ -13,7 +15,7 @@ component(name="Rendering", level=1),
 meta(name="Joe", content="20090328 20130628 http://www.hypermultimedia.com/acontents.htm#X3DHANIM"),
 meta(name="converter", content="x3d-tidy V1.0.56, https://www.npmjs.com/package/x3d-tidy"),
 meta(name="converted", content="Wed, 12 Jul 2023 08:05:49 GMT"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="30 July 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 

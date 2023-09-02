@@ -135,7 +135,7 @@ var X3D0 =  X3D(
                           DEF_ : SFString('hanim_r_carpal'),
                           children_ : [
                             Transform(
-                              children_ : [
+                              child_ : 
                                 Shape(
                                   DEF_ : SFString('HAnimJointShape'),
                                   geometry_ : 
@@ -146,7 +146,7 @@ var X3D0 =  X3D(
                                       DEF_ : SFString('HAnimJointAppearanceBlue'),
                                       material_ : 
                                         Material(
-                                          diffuseColor_ : SFColor([SFDouble(0), SFDouble(0), SFDouble(1)]))))]),
+                                          diffuseColor_ : SFColor([SFDouble(0), SFDouble(0), SFDouble(1)]))))),
 
                             Shape(
                               appearance_ : 
@@ -204,7 +204,7 @@ var X3D0 =  X3D(
                               children_ : [
                                 Transform(
                                   translation_ : SFVec3f([SFDouble(-0.14), SFDouble(0.09), SFDouble(0)]),
-                                  children_ : [
+                                  child_ : 
                                     Shape(
                                       DEF_ : SFString('HAnimNewJointShape'),
                                       geometry_ : 
@@ -215,7 +215,7 @@ var X3D0 =  X3D(
                                           DEF_ : SFString('HAnimJointAppearanceRed'),
                                           material_ : 
                                             Material(
-                                              diffuseColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0)]))))]),
+                                              diffuseColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0)]))))),
 
                                 Shape(
                                   appearance_ : 
@@ -245,9 +245,9 @@ var X3D0 =  X3D(
                                   children_ : [
                                     Transform(
                                       translation_ : SFVec3f([SFDouble(-0.2), SFDouble(0.15), SFDouble(0)]),
-                                      children_ : [
+                                      child_ : 
                                         Shape(
-                                          USE_ : SFString('HAnimJointShape'))]),
+                                          USE_ : SFString('HAnimJointShape'))),
 
                                     Shape(
                                       appearance_ : 
@@ -276,9 +276,9 @@ var X3D0 =  X3D(
                                       children_ : [
                                         Transform(
                                           translation_ : SFVec3f([SFDouble(-0.3), SFDouble(0.3), SFDouble(0)]),
-                                          children_ : [
+                                          child_ : 
                                             Shape(
-                                              USE_ : SFString('HAnimJointShape'))]),
+                                              USE_ : SFString('HAnimJointShape'))),
 
                                         Shape(
                                           appearance_ : 
@@ -307,9 +307,9 @@ var X3D0 =  X3D(
                                           children_ : [
                                             Transform(
                                               translation_ : SFVec3f([SFDouble(-0.35), SFDouble(0.4), SFDouble(0)]),
-                                              children_ : [
+                                              child_ : 
                                                 Shape(
-                                                  USE_ : SFString('HAnimJointShape'))]),
+                                                  USE_ : SFString('HAnimJointShape'))),
 
                                             Shape(
                                               appearance_ : 
@@ -339,9 +339,9 @@ var X3D0 =  X3D(
                               children_ : [
                                 Transform(
                                   translation_ : SFVec3f([SFDouble(-0.07), SFDouble(0.07), SFDouble(0)]),
-                                  children_ : [
+                                  child_ : 
                                     Shape(
-                                      USE_ : SFString('HAnimNewJointShape'))]),
+                                      USE_ : SFString('HAnimNewJointShape'))),
 
                                 Shape(
                                   appearance_ : 
@@ -371,9 +371,9 @@ var X3D0 =  X3D(
                                   children_ : [
                                     Transform(
                                       translation_ : SFVec3f([SFDouble(-0.1), SFDouble(0.2), SFDouble(0)]),
-                                      children_ : [
+                                      child_ : 
                                         Shape(
-                                          USE_ : SFString('HAnimJointShape'))]),
+                                          USE_ : SFString('HAnimJointShape'))),
 
                                     Shape(
                                       appearance_ : 
@@ -402,9 +402,9 @@ var X3D0 =  X3D(
                                       children_ : [
                                         Transform(
                                           translation_ : SFVec3f([SFDouble(-0.15), SFDouble(0.5), SFDouble(0)]),
-                                          children_ : [
+                                          child_ : 
                                             Shape(
-                                              USE_ : SFString('HAnimJointShape'))]),
+                                              USE_ : SFString('HAnimJointShape'))),
 
                                         Shape(
                                           appearance_ : 
@@ -433,9 +433,9 @@ var X3D0 =  X3D(
                                           children_ : [
                                             Transform(
                                               translation_ : SFVec3f([SFDouble(-0.2), SFDouble(0.7), SFDouble(0)]),
-                                              children_ : [
+                                              child_ : 
                                                 Shape(
-                                                  USE_ : SFString('HAnimJointShape'))]),
+                                                  USE_ : SFString('HAnimJointShape'))),
 
                                             Shape(
                                               appearance_ : 
@@ -464,9 +464,9 @@ var X3D0 =  X3D(
                                               children_ : [
                                                 Transform(
                                                   translation_ : SFVec3f([SFDouble(-0.24), SFDouble(0.87), SFDouble(0)]),
-                                                  children_ : [
+                                                  child_ : 
                                                     Shape(
-                                                      USE_ : SFString('HAnimJointShape'))]),
+                                                      USE_ : SFString('HAnimJointShape'))),
 
                                                 Shape(
                                                   appearance_ : 
@@ -496,9 +496,9 @@ var X3D0 =  X3D(
                               children_ : [
                                 Transform(
                                   translation_ : SFVec3f([SFDouble(0), SFDouble(0.07), SFDouble(0)]),
-                                  children_ : [
+                                  child_ : 
                                     Shape(
-                                      USE_ : SFString('HAnimNewJointShape'))]),
+                                      USE_ : SFString('HAnimNewJointShape'))),
 
                                 Shape(
                                   appearance_ : 
@@ -528,9 +528,9 @@ var X3D0 =  X3D(
                                   children_ : [
                                     Transform(
                                       translation_ : SFVec3f([SFDouble(0), SFDouble(0.2), SFDouble(0)]),
-                                      children_ : [
+                                      child_ : 
                                         Shape(
-                                          USE_ : SFString('HAnimJointShape'))]),
+                                          USE_ : SFString('HAnimJointShape'))),
 
                                     Shape(
                                       appearance_ : 
@@ -559,9 +559,9 @@ var X3D0 =  X3D(
                                       children_ : [
                                         Transform(
                                           translation_ : SFVec3f([SFDouble(-0.03), SFDouble(0.5), SFDouble(0)]),
-                                          children_ : [
+                                          child_ : 
                                             Shape(
-                                              USE_ : SFString('HAnimJointShape'))]),
+                                              USE_ : SFString('HAnimJointShape'))),
 
                                         Shape(
                                           appearance_ : 
@@ -590,9 +590,9 @@ var X3D0 =  X3D(
                                           children_ : [
                                             Transform(
                                               translation_ : SFVec3f([SFDouble(-0.05), SFDouble(0.75), SFDouble(0)]),
-                                              children_ : [
+                                              child_ : 
                                                 Shape(
-                                                  USE_ : SFString('HAnimJointShape'))]),
+                                                  USE_ : SFString('HAnimJointShape'))),
 
                                             Shape(
                                               appearance_ : 
@@ -621,9 +621,9 @@ var X3D0 =  X3D(
                                               children_ : [
                                                 Transform(
                                                   translation_ : SFVec3f([SFDouble(-0.08), SFDouble(0.96), SFDouble(0)]),
-                                                  children_ : [
+                                                  child_ : 
                                                     Shape(
-                                                      USE_ : SFString('HAnimJointShape'))]),
+                                                      USE_ : SFString('HAnimJointShape'))),
 
                                                 Shape(
                                                   appearance_ : 
@@ -653,9 +653,9 @@ var X3D0 =  X3D(
                               children_ : [
                                 Transform(
                                   translation_ : SFVec3f([SFDouble(0.1), SFDouble(0.1), SFDouble(0)]),
-                                  children_ : [
+                                  child_ : 
                                     Shape(
-                                      USE_ : SFString('HAnimNewJointShape'))]),
+                                      USE_ : SFString('HAnimNewJointShape'))),
 
                                 Shape(
                                   appearance_ : 
@@ -699,9 +699,9 @@ var X3D0 =  X3D(
                                   children_ : [
                                     Transform(
                                       translation_ : SFVec3f([SFDouble(0.1), SFDouble(0.2), SFDouble(0)]),
-                                      children_ : [
+                                      child_ : 
                                         Shape(
-                                          USE_ : SFString('HAnimJointShape'))]),
+                                          USE_ : SFString('HAnimJointShape'))),
 
                                     Shape(
                                       appearance_ : 
@@ -730,9 +730,9 @@ var X3D0 =  X3D(
                                       children_ : [
                                         Transform(
                                           translation_ : SFVec3f([SFDouble(0.1), SFDouble(0.47), SFDouble(0)]),
-                                          children_ : [
+                                          child_ : 
                                             Shape(
-                                              USE_ : SFString('HAnimJointShape'))]),
+                                              USE_ : SFString('HAnimJointShape'))),
 
                                         Shape(
                                           appearance_ : 
@@ -761,9 +761,9 @@ var X3D0 =  X3D(
                                           children_ : [
                                             Transform(
                                               translation_ : SFVec3f([SFDouble(0.1), SFDouble(0.7), SFDouble(0)]),
-                                              children_ : [
+                                              child_ : 
                                                 Shape(
-                                                  USE_ : SFString('HAnimJointShape'))]),
+                                                  USE_ : SFString('HAnimJointShape'))),
 
                                             Shape(
                                               appearance_ : 
@@ -792,9 +792,9 @@ var X3D0 =  X3D(
                                               children_ : [
                                                 Transform(
                                                   translation_ : SFVec3f([SFDouble(0.1), SFDouble(0.93), SFDouble(0)]),
-                                                  children_ : [
+                                                  child_ : 
                                                     Shape(
-                                                      USE_ : SFString('HAnimJointShape'))]),
+                                                      USE_ : SFString('HAnimJointShape'))),
 
                                                 Shape(
                                                   appearance_ : 
@@ -824,9 +824,9 @@ var X3D0 =  X3D(
                                   children_ : [
                                     Transform(
                                       translation_ : SFVec3f([SFDouble(0.15), SFDouble(0.17), SFDouble(0)]),
-                                      children_ : [
+                                      child_ : 
                                         Shape(
-                                          USE_ : SFString('HAnimJointShape'))]),
+                                          USE_ : SFString('HAnimJointShape'))),
 
                                     Shape(
                                       appearance_ : 
@@ -855,9 +855,9 @@ var X3D0 =  X3D(
                                       children_ : [
                                         Transform(
                                           translation_ : SFVec3f([SFDouble(0.2), SFDouble(0.4), SFDouble(0)]),
-                                          children_ : [
+                                          child_ : 
                                             Shape(
-                                              USE_ : SFString('HAnimJointShape'))]),
+                                              USE_ : SFString('HAnimJointShape'))),
 
                                         Shape(
                                           appearance_ : 
@@ -886,9 +886,9 @@ var X3D0 =  X3D(
                                           children_ : [
                                             Transform(
                                               translation_ : SFVec3f([SFDouble(0.23), SFDouble(0.63), SFDouble(0)]),
-                                              children_ : [
+                                              child_ : 
                                                 Shape(
-                                                  USE_ : SFString('HAnimJointShape'))]),
+                                                  USE_ : SFString('HAnimJointShape'))),
 
                                             Shape(
                                               appearance_ : 
@@ -917,9 +917,9 @@ var X3D0 =  X3D(
                                               children_ : [
                                                 Transform(
                                                   translation_ : SFVec3f([SFDouble(0.25), SFDouble(0.79), SFDouble(0)]),
-                                                  children_ : [
+                                                  child_ : 
                                                     Shape(
-                                                      USE_ : SFString('HAnimJointShape'))]),
+                                                      USE_ : SFString('HAnimJointShape'))),
 
                                                 Shape(
                                                   appearance_ : 

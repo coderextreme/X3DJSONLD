@@ -121,9 +121,9 @@ Shape24.appearance = Appearance25;
 let Box28 = browser.currentScene.createNode("Box");
 Shape24.geometry = Box28;
 
-Transform23.children = new MFNode();
+Transform23.child = new undefined();
 
-Transform23.children[0] = Shape24;
+Transform23.child[0] = Shape24;
 
 Group22.children = new MFNode();
 
@@ -145,9 +145,9 @@ Shape30.appearance = Appearance31;
 let Sphere34 = browser.currentScene.createNode("Sphere");
 Shape30.geometry = Sphere34;
 
-Transform29.children = new MFNode();
+Transform29.child = new undefined();
 
-Transform29.children[0] = Shape30;
+Transform29.child[0] = Shape30;
 
 Group22.children[1] = Transform29;
 
@@ -167,9 +167,9 @@ Shape36.appearance = Appearance37;
 let Cone40 = browser.currentScene.createNode("Cone");
 Shape36.geometry = Cone40;
 
-Transform35.children = new MFNode();
+Transform35.child = new undefined();
 
-Transform35.children[0] = Shape36;
+Transform35.child[0] = Shape36;
 
 Group22.children[2] = Transform35;
 
@@ -189,9 +189,9 @@ Shape42.appearance = Appearance43;
 let Cylinder46 = browser.currentScene.createNode("Cylinder");
 Shape42.geometry = Cylinder46;
 
-Transform41.children = new MFNode();
+Transform41.child = new undefined();
 
-Transform41.children[0] = Shape42;
+Transform41.child[0] = Shape42;
 
 Group22.children[3] = Transform41;
 

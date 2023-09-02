@@ -51,7 +51,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/box.x3d")}),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/box.x3d")}),
 
             new meta({
               name : new SFString("description"),
@@ -203,7 +203,7 @@ var X3D0 =  new X3D({
 
             new Transform({
               translation : new SFVec3f([0,2,0]),
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
-                  USE : new SFString("box")})])})])}))});
+                  USE : new SFString("box")}))})])}))});
 console.log(X3D0.toXMLNode());

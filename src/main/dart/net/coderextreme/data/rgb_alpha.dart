@@ -89,7 +89,7 @@ var X3D0 =  X3D(
               children_ : [
                 Transform(
                   translation_ : SFVec3f([SFDouble(6.14221), SFDouble(0.0694613), SFDouble(-0.000999451)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       appearance_ : 
                         Appearance(
@@ -100,11 +100,11 @@ var X3D0 =  X3D(
                               DEF_ : SFString('RgbOpacityCheckerboard'),
                               image_ : SFImage([SFInt32(2), SFInt32(2), SFInt32(4), SFInt32(4278190335), SFInt32(4294901760), SFInt32(4294901760), SFInt32(4278190335)]))),
                       geometry_ : 
-                        Box())]),
+                        Box())),
 
                 Transform(
                   translation_ : SFVec3f([SFDouble(-4.85443), SFDouble(0.0694381), SFDouble(-0.00149918)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       appearance_ : 
                         Appearance(
@@ -114,11 +114,11 @@ var X3D0 =  X3D(
                             PixelTexture(
                               USE_ : SFString('RgbOpacityCheckerboard'))),
                       geometry_ : 
-                        Sphere())]),
+                        Sphere())),
 
                 Transform(
                   translation_ : SFVec3f([SFDouble(-1.47341), SFDouble(0.036672), SFDouble(-0.00175095)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       appearance_ : 
                         Appearance(
@@ -128,11 +128,11 @@ var X3D0 =  X3D(
                             PixelTexture(
                               USE_ : SFString('RgbOpacityCheckerboard'))),
                       geometry_ : 
-                        Cone())]),
+                        Cone())),
 
                 Transform(
                   translation_ : SFVec3f([SFDouble(2.31094), SFDouble(0.0694206), SFDouble(-0.00187683)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       appearance_ : 
                         Appearance(
@@ -142,5 +142,5 @@ var X3D0 =  X3D(
                             PixelTexture(
                               USE_ : SFString('RgbOpacityCheckerboard'))),
                       geometry_ : 
-                        Cylinder())])])]));
+                        Cylinder()))])]));
 void main() { exit(0); }

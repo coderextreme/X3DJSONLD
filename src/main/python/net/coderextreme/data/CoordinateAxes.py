@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[meta(name="title", content="CoordinateAxes.x3d"),
+head=head(
+children=[
+meta(name="title", content="CoordinateAxes.x3d"),
 meta(name="creator", content="Don Brutzman, Byounghyun Yoo"),
 meta(name="created", content="14 July 2000"),
 meta(name="modified", content="20 October 2019"),
@@ -16,7 +19,7 @@ meta(name="reference", content="https://savage.nps.edu/Savage/Tools/Authoring/Co
 meta(name="identifier", content="https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -24,16 +27,11 @@ Scene=Scene(children=[
 WorldInfo(title="CoordinateAxes.x3d"),
 Collision(DEF="DoNotCollideWithVisualizationWidget", children=[
 Comment(value=''' Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph. '''),
-
 Comment(value=''' This NavigationInfo allows examine mode and will be overridden by any parent scene. '''),
-
 Comment(value=''' Each arrow goes from +1m to -1m to allow linear scaling to fit a scene '''),
-
 Comment(value=''' Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user '''),
-
 Group(children=[
 Comment(value=''' Vertical Y arrow and label '''),
-
 Group(DEF="ArrowGreen", children=[
 Shape(
 geometry=
@@ -61,7 +59,6 @@ fontStyle=
 FontStyle(DEF="LABEL_FONT", family=["SANS"], justify=["MIDDLE","MIDDLE"], size=0.2)))])]),]),
 Transform(rotation=((0,0,1,-1.57079)), children=[
 Comment(value=''' Horizontal X arrow and label '''),
-
 Group(children=[
 Group(DEF="ArrowRed", children=[
 Shape(
@@ -79,7 +76,6 @@ appearance=
 Appearance(USE="Red"))])]),
 Transform(rotation=((0,0,1,1.57079)), translation=((0.072,1.1,0)), children=[
 Comment(value=''' note label rotated back to original coordinate frame '''),
-
 Billboard(children=[
 Shape(
 appearance=
@@ -90,7 +86,6 @@ fontStyle=
 FontStyle(USE="LABEL_FONT")))]),])]),]),
 Transform(rotation=((1,0,0,1.57079)), children=[
 Comment(value=''' Perpendicular Z arrow and label, note right-hand rule '''),
-
 Group(children=[
 Group(DEF="ArrowBlue", children=[
 Shape(
@@ -108,7 +103,6 @@ appearance=
 Appearance(USE="Blue"))])]),
 Transform(rotation=((1,0,0,-1.57079)), translation=((0,1.1,0.072)), children=[
 Comment(value=''' note label rotated back to original coordinate frame '''),
-
 Billboard(children=[
 Shape(
 appearance=
@@ -116,5 +110,6 @@ Appearance(USE="LABEL_APPEARANCE"),
 geometry=
 Text(string=["Z"], 
 fontStyle=
-FontStyle(USE="LABEL_FONT")))]),])]),]),])]))
-.XML())
+FontStyle(USE="LABEL_FONT")))]),])]),]),])])))
+output = model.JSON()
+json.loads(output)

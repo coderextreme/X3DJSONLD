@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Interchange", version="4.0", 
-head=head(children=[component(name="HAnim", level=1),
+head=head(
+children=[
+component(name="HAnim", level=1),
 meta(name="title", content="MainStage.x3d"),
 meta(name="description", content="Main stage for HAnim scene Winter and Spring."),
 meta(name="creator", content="Joe Williams"),
@@ -15,7 +18,7 @@ meta(name="reference", content="originals/0MainStageScene0525.x3dv"),
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/WinterAndSpring/MainStage.x3d"),
 meta(name="generator", content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -75,5 +78,6 @@ Shape(
 appearance=
 Appearance(USE="LineColor"), 
 geometry=
-IndexedLineSet(USE="Orbit1"))])])])]))
-.XML())
+IndexedLineSet(USE="Orbit1"))])])])])))
+output = model.JSON()
+json.loads(output)

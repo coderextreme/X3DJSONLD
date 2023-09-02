@@ -121,14 +121,14 @@ var X3D0 =  new X3D({
 
             new Transform({
               DEF : new SFString("ROOT"),
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
                         new Material({}))})),
                   geometry : new SFNode(
-                    new Box({}))})])}),
+                    new Box({}))}))}),
 
             new Script({
               DEF : new SFString("MYSCRIPT"),

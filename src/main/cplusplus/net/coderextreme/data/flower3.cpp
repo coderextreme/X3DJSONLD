@@ -80,7 +80,7 @@ IndexedFaceSet16->setCoord(*Coordinate17);
 
 Shape13->setGeometry(IndexedFaceSet16);
 
-Transform12->addChildren(*Shape13);
+Transform12->addChild(*Shape13);
 
 group->addChildren(*Transform12);
 

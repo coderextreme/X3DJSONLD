@@ -76,7 +76,7 @@ var X3D0 =  X3D(
                 Transform(
                   DEF_ : SFString('MainFrameTransform'),
                   scale_ : SFVec3f([SFDouble(3), SFDouble(3), SFDouble(3)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       DEF_ : SFString('Nose'),
                       appearance_ : 
@@ -98,7 +98,7 @@ var X3D0 =  X3D(
                             Normal(
                               DEF_ : SFString('normalVector'),
                               vector_ : MFVec3f([SFVec3f([-0.68,0.714,-0.166]),SFVec3f([-0.689,0.721,-0.072]),SFVec3f([0,0.965,-0.26]),SFVec3f([0,0.985,-0.175]),SFVec3f([-0.99,-0.016,-0.138]),SFVec3f([-0.999,-0.022,-0.037]),SFVec3f([0.567,-0.819,-0.093]),SFVec3f([0.561,-0.828,0]),SFVec3f([0,-1,0]),SFVec3f([0,-0.997,-0.071]),SFVec3f([-0.567,-0.819,-0.093]),SFVec3f([-0.561,-0.828,0]),SFVec3f([0.99,-0.016,-0.138]),SFVec3f([0.999,-0.022,-0.037]),SFVec3f([0.68,0.714,-0.166]),SFVec3f([0.689,0.721,-0.072]),SFVec3f([-0.351,0.889,-0.294]),SFVec3f([-0.868,-0.459,-0.19]),SFVec3f([-0.13,-0.982,-0.14]),SFVec3f([0.13,-0.982,-0.14]),SFVec3f([0.868,-0.459,-0.19]),SFVec3f([0.872,0.431,-0.231]),SFVec3f([-0.834,0.445,-0.327]),SFVec3f([0,0.929,-0.369]),SFVec3f([-0.88,0.401,-0.256]),SFVec3f([-0.799,0.577,0.169]),SFVec3f([-0.58,0.798,0.164]),SFVec3f([0,0.998,0.065]),SFVec3f([-0.862,0.486,0.146]),SFVec3f([0.886,0.219,0.408]),SFVec3f([0.799,0.577,0.169]),SFVec3f([0.834,0.445,-0.327]),SFVec3f([0.88,0.401,-0.256]),SFVec3f([0,0.995,-0.096]),SFVec3f([0.842,0.534,-0.08]),SFVec3f([0.862,0.486,0.146]),SFVec3f([0.833,0.549,-0.073]),SFVec3f([-0.833,0.549,-0.073]),SFVec3f([-0.842,0.534,-0.08]),SFVec3f([-0.485,0.87,-0.089]),SFVec3f([-0.37,0.929,0]),SFVec3f([0,1,0]),SFVec3f([0,1,-0.01]),SFVec3f([-0.592,0.796,-0.125]),SFVec3f([-0.573,0.818,0.05]),SFVec3f([-0.37,0.929,-0.01]),SFVec3f([0,1,-0.025]),SFVec3f([-0.487,0.873,0.036]),SFVec3f([-0.923,0.381,0.05]),SFVec3f([-0.683,0.704,0.195]),SFVec3f([0,0.99,0.14]),SFVec3f([-0.707,0.707,0]),SFVec3f([-0.385,0.912,0.141]),SFVec3f([0,0.966,0.259]),SFVec3f([-0.563,0.826,-0.037]),SFVec3f([-0.661,0.738,-0.138]),SFVec3f([-0.521,0.846,-0.115]),SFVec3f([0,-0.996,0.09]),SFVec3f([-0.773,-0.436,-0.461]),SFVec3f([-0.42,-0.781,-0.463]),SFVec3f([-0.474,-0.881,0]),SFVec3f([-0.871,-0.492,0]),SFVec3f([0,-0.891,-0.455]),SFVec3f([-0.917,0.399,0]),SFVec3f([-0.881,0.074,-0.467]),SFVec3f([-0.902,-0.429,-0.039]),SFVec3f([-0.09,-0.995,0.05]),SFVec3f([-0.451,-0.892,0]),SFVec3f([-0.28,-0.959,0.04]),SFVec3f([-0.468,-0.878,0.097]),SFVec3f([-0.877,-0.474,0.085]),SFVec3f([0,-0.997,0.072]),SFVec3f([-0.693,-0.72,0.045]),SFVec3f([-0.79,-0.562,0.244]),SFVec3f([-0.968,0.003,0.25]),SFVec3f([0,-0.966,0.257]),SFVec3f([0,0,1]),SFVec3f([-1,0,0]),SFVec3f([0.987,0,-0.16]),SFVec3f([1,0,0]),SFVec3f([-0.831,-0.551,-0.08]),SFVec3f([0.563,0.826,-0.037]),SFVec3f([0.661,0.738,-0.138]),SFVec3f([0.998,-0.037,-0.049]),SFVec3f([-0.987,0,-0.16]),SFVec3f([-0.998,-0.037,-0.049]),SFVec3f([0.831,-0.551,-0.08]),SFVec3f([0,-0.999,0.04]),SFVec3f([0,0.993,0.12]),SFVec3f([0.468,-0.878,0.097]),SFVec3f([0.877,-0.474,0.085]),SFVec3f([0.79,-0.562,0.244]),SFVec3f([-0.419,-0.897,-0.14]),SFVec3f([0.693,-0.72,0.045]),SFVec3f([0.968,0.003,0.25]),SFVec3f([0.521,0.846,-0.115]),SFVec3f([0.419,-0.897,-0.14]),SFVec3f([0.871,-0.492,0]),SFVec3f([0.902,-0.429,-0.039]),SFVec3f([0.474,-0.881,0]),SFVec3f([0.37,0.929,0]),SFVec3f([0.485,0.87,-0.089]),SFVec3f([0.573,0.818,0.05]),SFVec3f([0.592,0.796,-0.125]),SFVec3f([0.37,0.929,-0.01]),SFVec3f([0.487,0.873,0.036]),SFVec3f([0.923,0.381,0.05]),SFVec3f([0.683,0.704,0.195]),SFVec3f([0.385,0.912,0.141]),SFVec3f([0.707,0.707,0]),SFVec3f([0.42,-0.781,-0.463]),SFVec3f([0.773,-0.436,-0.461]),SFVec3f([0.917,0.399,0]),SFVec3f([0.881,0.074,-0.467]),SFVec3f([0.09,-0.995,0.05]),SFVec3f([0.451,-0.892,0]),SFVec3f([0.28,-0.959,0.04]),SFVec3f([0.42,0.901,-0.11]),SFVec3f([0,0.666,0.746]),SFVec3f([-0.481,0.468,0.741]),SFVec3f([-0.674,0,0.738]),SFVec3f([-0.475,-0.475,0.741]),SFVec3f([0,-0.674,0.738]),SFVec3f([0.475,-0.475,0.741]),SFVec3f([0.674,0,0.738]),SFVec3f([0.481,0.468,0.741]),SFVec3f([0,0,-1]),SFVec3f([0,-0.893,-0.45]),SFVec3f([-0.901,-0.224,-0.372]),SFVec3f([0.901,-0.224,-0.372]),SFVec3f([0.841,0.34,0.421]),SFVec3f([-0.841,0.34,0.421])])))),
-
+                  child_ : 
                     Shape(
                       DEF_ : SFString('Canopy'),
                       appearance_ : 
@@ -119,7 +119,7 @@ var X3D0 =  X3D(
                           normal_ : 
                             Normal(
                               USE_ : SFString('normalVector')))),
-
+                  child_ : 
                     Shape(
                       DEF_ : SFString('MainBodyAndWingEdges'),
                       appearance_ : 
@@ -139,7 +139,7 @@ var X3D0 =  X3D(
                           normal_ : 
                             Normal(
                               USE_ : SFString('normalVector')))),
-
+                  child_ : 
                     Shape(
                       DEF_ : SFString('ExhaustExitFlatPanel'),
                       appearance_ : 
@@ -159,7 +159,7 @@ var X3D0 =  X3D(
                           normal_ : 
                             Normal(
                               USE_ : SFString('normalVector')))),
-
+                  child_ : 
                     Shape(
                       DEF_ : SFString('ExhaustEntranceFrontBottomPart'),
                       appearance_ : 
@@ -179,7 +179,7 @@ var X3D0 =  X3D(
                           normal_ : 
                             Normal(
                               USE_ : SFString('normalVector')))),
-
+                  child_ : 
                     Shape(
                       DEF_ : SFString('ThirdPartFromNoseUnderCanopy'),
                       appearance_ : 
@@ -199,7 +199,7 @@ var X3D0 =  X3D(
                           normal_ : 
                             Normal(
                               USE_ : SFString('normalVector')))),
-
+                  child_ : 
                     Shape(
                       DEF_ : SFString('RearExhaustExitPartLastPartOfMainBody'),
                       appearance_ : 
@@ -220,7 +220,7 @@ var X3D0 =  X3D(
                           normal_ : 
                             Normal(
                               USE_ : SFString('normalVector')))),
-
+                  child_ : 
                     Shape(
                       DEF_ : SFString('WingsAndTail'),
                       appearance_ : 
@@ -241,7 +241,7 @@ var X3D0 =  X3D(
                           normal_ : 
                             Normal(
                               USE_ : SFString('normalVector')))),
-
+                  child_ : 
                     Shape(
                       DEF_ : SFString('SecondPartAfterNose'),
                       appearance_ : 
@@ -260,7 +260,7 @@ var X3D0 =  X3D(
                               USE_ : SFString('coordinates')),
                           normal_ : 
                             Normal(
-                              USE_ : SFString('normalVector'))))]),
+                              USE_ : SFString('normalVector'))))),
 
                 Transform(
                   DEF_ : SFString('CockpitTransform'),
@@ -318,7 +318,7 @@ var X3D0 =  X3D(
                       rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(1.57)]),
                       scale_ : SFVec3f([SFDouble(0.008), SFDouble(0.008), SFDouble(0.008)]),
                       translation_ : SFVec3f([SFDouble(-0.95), SFDouble(1.05), SFDouble(-10)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           geometry_ : 
                             Cylinder(
@@ -330,7 +330,7 @@ var X3D0 =  X3D(
                                 Material(
                                   diffuseColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0)]),
                                   shininess_ : 0.8))),
-
+                      children_ : [
                         TouchSensor(
                           DEF_ : SFString('TouchSensorUp'),
                           description_ : SFString('click for gears up'))]),
@@ -340,7 +340,7 @@ var X3D0 =  X3D(
                       rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(1.57)]),
                       scale_ : SFVec3f([SFDouble(0.008), SFDouble(0.008), SFDouble(0.008)]),
                       translation_ : SFVec3f([SFDouble(-0.83), SFDouble(1.05), SFDouble(-10)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           geometry_ : 
                             Cylinder(
@@ -352,7 +352,7 @@ var X3D0 =  X3D(
                                 Material(
                                   diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(0)]),
                                   shininess_ : 0.8))),
-
+                      children_ : [
                         TouchSensor(
                           DEF_ : SFString('TouchSensorDown'),
                           description_ : SFString('click for gears down'))]),
@@ -361,7 +361,7 @@ var X3D0 =  X3D(
                       DEF_ : SFString('GearUpTextTransform'),
                       scale_ : SFVec3f([SFDouble(0.06), SFDouble(0.06), SFDouble(0.06)]),
                       translation_ : SFVec3f([SFDouble(-0.65), SFDouble(1.55), SFDouble(-10)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           geometry_ : 
                             Text(
@@ -370,13 +370,13 @@ var X3D0 =  X3D(
                             Appearance(
                               material_ : 
                                 Material(
-                                  diffuseColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0)]))))]),
+                                  diffuseColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0)]))))),
 
                     Transform(
                       DEF_ : SFString('GearDownTextTransform'),
                       scale_ : SFVec3f([SFDouble(0.06), SFDouble(0.06), SFDouble(0.06)]),
                       translation_ : SFVec3f([SFDouble(-0.65), SFDouble(1.35), SFDouble(-10)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           geometry_ : 
                             Text(
@@ -386,14 +386,14 @@ var X3D0 =  X3D(
                             Appearance(
                               material_ : 
                                 Material(
-                                  diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(0)]))))]),
+                                  diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(0)]))))),
 
                     Transform(
                       DEF_ : SFString('FireButtonTransform'),
                       rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(1.57)]),
                       scale_ : SFVec3f([SFDouble(0.008), SFDouble(0.008), SFDouble(0.008)]),
                       translation_ : SFVec3f([SFDouble(0.52), SFDouble(1.6), SFDouble(-10)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           geometry_ : 
                             Cylinder(
@@ -405,7 +405,7 @@ var X3D0 =  X3D(
                                 Material(
                                   diffuseColor_ : SFColor([SFDouble(0), SFDouble(0.75), SFDouble(0.18)]),
                                   shininess_ : 0.8))),
-
+                      children_ : [
                         TouchSensor(
                           DEF_ : SFString('FireSensor'),
                           description_ : SFString('click to fire'))]),
@@ -414,7 +414,7 @@ var X3D0 =  X3D(
                       DEF_ : SFString('FireTextTransform'),
                       scale_ : SFVec3f([SFDouble(0.06), SFDouble(0.06), SFDouble(0.06)]),
                       translation_ : SFVec3f([SFDouble(0.36), SFDouble(1.5), SFDouble(-10)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           geometry_ : 
                             Text(
@@ -423,7 +423,7 @@ var X3D0 =  X3D(
                             Appearance(
                               material_ : 
                                 Material(
-                                  diffuseColor_ : SFColor([SFDouble(0), SFDouble(0.75), SFDouble(0.18)]))))])]),
+                                  diffuseColor_ : SFColor([SFDouble(0), SFDouble(0.75), SFDouble(0.18)])))))]),
 
                 Viewpoint(
                   description_ : SFString('F16 Close Look-up'),
@@ -460,7 +460,7 @@ var X3D0 =  X3D(
                   DEF_ : SFString('NoseAntennaTransform'),
                   rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(1.57)]),
                   translation_ : SFVec3f([SFDouble(0), SFDouble(-0.275), SFDouble(-21)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       geometry_ : 
                         Cylinder(
@@ -470,7 +470,7 @@ var X3D0 =  X3D(
                           material_ : 
                             Material(
                               diffuseColor_ : SFColor([SFDouble(0.5), SFDouble(0.5), SFDouble(0.5)]),
-                              shininess_ : 0.5)))])]),
+                              shininess_ : 0.5))))]),
 
             TimeSensor(
               DEF_ : SFString('WheelUp'),
@@ -790,7 +790,7 @@ var X3D0 =  X3D(
 
             Transform(
               DEF_ : SFString('InlineCoverOfPlaneTansform'),
-              children_ : [
+              child_ : 
                 Shape(
                   geometry_ : 
                     Box(
@@ -799,7 +799,7 @@ var X3D0 =  X3D(
                     Appearance(
                       material_ : 
                         Material(
-                          diffuseColor_ : SFColor([SFDouble(0.25), SFDouble(0.25), SFDouble(0.25)]))))]),
+                          diffuseColor_ : SFColor([SFDouble(0.25), SFDouble(0.25), SFDouble(0.25)]))))),
 
             Transform(
               DEF_ : SFString('TargetHelicopterTransform'),

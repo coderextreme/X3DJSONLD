@@ -8,7 +8,7 @@
 </head>
 <Scene><Viewpoint position="0 0 5" description="Only Viewpoint"></Viewpoint>
 <Background skyColor="0.4 0.4 0.4"></Background>
-<Transform DEF="G1"><Transform DEF="DECLpoint_INSTANCE_node"><Shape><Sphere containerField="geometry" radius="0.1"></Sphere>
+<Transform DEF="G1"><Transform DEF="DECLpoint_INSTANCE_node"><Shape><Sphere radius="0.1"></Sphere>
 <Appearance><Material diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
@@ -31,7 +31,7 @@
 <ROUTE fromNode="DECLpoint_INSTANCE_MB1" fromField="translation_changed" toNode="DECLpoint_INSTANCE_node" toField="set_translation"></ROUTE>
 </Transform>
 </Transform>
-<Transform DEF="G2"><Transform DEF="DECLpoint_INSTANCE1000_node"><Shape><Sphere containerField="geometry" radius="0.1"></Sphere>
+<Transform DEF="G2"><Transform DEF="DECLpoint_INSTANCE1000_node"><Shape><Sphere radius="0.1"></Sphere>
 <Appearance><Material diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
@@ -56,7 +56,7 @@
 </Transform>
 <Transform DEF="transC1"><Transform DEF="rotscaleC1"><Shape><Appearance><Material diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
 </Appearance>
-<Cylinder containerField="geometry" radius="0.05"></Cylinder>
+<Cylinder radius="0.05"></Cylinder>
 </Shape>
 </Transform>
 </Transform>

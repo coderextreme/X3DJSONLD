@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Full", version="4.0", 
-head=head(children=[meta(name="title", content="InlineSoundSource.x3d"),
+head=head(
+children=[
+meta(name="title", content="InlineSoundSource.x3d"),
 meta(name="description", content="This demo is the same with the Single Audio Demo, with the difference that it uses the Inline grouping node. Namely, the scene is an X3D file and all nodes are loaded by Inline node via the \"url\" of X3D file."),
 meta(name="info", content="This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API."),
 meta(name="creator", content="Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman"),
@@ -16,7 +19,7 @@ meta(name="reference", content="https://medialab.hmu.gr/minipages/x3domAudio"),
 meta(name="identifier", content="https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/InlineSoundSource.x3d"),
 meta(name="generator", content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -38,5 +41,6 @@ Coordinate(point=[(-1000.0,0.0,1000.0),(-1000.0,0.0,-1000.0),(1000.0,0.0,-1000.0
 normal=
 Normal(vector=[(0.0,-1.0,0.0),(0.0,-1.0,0.0),(0.0,-1.0,0.0),(0.0,-1.0,0.0),(0.0,-1.0,0.0),(0.0,-1.0,0.0),(0.0,1.0,0.0),(0.0,1.0,0.0),(0.0,1.0,0.0),(0.0,1.0,0.0),(0.0,1.0,0.0),(0.0,1.0,0.0),(0.0,0.0,1.0),(0.0,0.0,1.0),(0.0,0.0,1.0),(0.0,0.0,1.0),(0.0,0.0,1.0),(0.0,0.0,1.0),(1.0,0.0,0.0),(1.0,0.0,0.0),(1.0,0.0,0.0),(1.0,0.0,0.0),(1.0,0.0,0.0),(1.0,0.0,0.0),(0.0,0.0,-1.0),(0.0,0.0,-1.0),(0.0,0.0,-1.0),(0.0,0.0,-1.0),(0.0,0.0,-1.0),(0.0,0.0,-1.0),(-1.0,0.0,0.0),(-1.0,0.0,0.0),(-1.0,0.0,0.0),(-1.0,0.0,0.0),(-1.0,0.0,0.0),(-1.0,0.0,0.0)])))]),
 Transform(DEF="InlineScene", children=[
-Inline(DEF="inline", url=["x3d/example1.x3d","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.x3d","x3d/example1.wrl","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.wrl"])])]))
-.XML())
+Inline(DEF="inline", url=["x3d/example1.x3d","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.x3d","x3d/example1.wrl","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.wrl"])])])))
+output = model.JSON()
+json.loads(output)

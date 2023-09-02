@@ -66,5 +66,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                   .setGeometry((new autoclass.Text()).setString(java.newArray("java.lang.String", ["-10 0 -10"]))
                     .setFontStyle((new autoclass.FontStyle()).setUSE("FS4")))
                   .setAppearance((new autoclass.Appearance()).setUSE("DefaultAppearance"))))))))      ;
-    X3D0.toFileX3D("../data/GridXZ_20x20Fixed.new.x3d");
+    X3D0.toFileX3D("../data/GridXZ_20x20Fixed.new.node.x3d");
     process.exit(0);

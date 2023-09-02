@@ -162,7 +162,7 @@ CBox* Box30 = (CBox *)(m_pScene.createNode("Box"));
 Box30->setSize(new float[3]{2000,1,2000});
 Shape27->setGeometry(Box30);
 
-Transform26->addChildren(*Shape27);
+Transform26->addChild(*Shape27);
 
 group->addChildren(*Transform26);
 
@@ -182,7 +182,7 @@ CSphere* Sphere35 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere35->setRadius(100);
 Shape32->setGeometry(Sphere35);
 
-Transform31->addChildren(*Shape32);
+Transform31->addChild(*Shape32);
 
 CBillboard* Billboard36 = (CBillboard *)(m_pScene.createNode("Billboard"));
 CTransform* Transform37 = (CTransform *)(m_pScene.createNode("Transform"));
@@ -211,7 +211,7 @@ Text41->setFontStyle(*FontStyle42);
 
 Shape38->setGeometry(Text41);
 
-Transform37->addChildren(*Shape38);
+Transform37->addChild(*Shape38);
 
 Billboard36->addChildren(*Transform37);
 
@@ -235,7 +235,7 @@ CSphere* Sphere47 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere47->setRadius(100);
 Shape44->setGeometry(Sphere47);
 
-Transform43->addChildren(*Shape44);
+Transform43->addChild(*Shape44);
 
 CBillboard* Billboard48 = (CBillboard *)(m_pScene.createNode("Billboard"));
 CTransform* Transform49 = (CTransform *)(m_pScene.createNode("Transform"));
@@ -262,7 +262,7 @@ Text53->setFontStyle(*FontStyle54);
 
 Shape50->setGeometry(Text53);
 
-Transform49->addChildren(*Shape50);
+Transform49->addChild(*Shape50);
 
 Billboard48->addChildren(*Transform49);
 

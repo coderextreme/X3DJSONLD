@@ -167,7 +167,7 @@ var X3D0 =  new X3D({
                           DEF : new SFString("hanim_l_carpal"),
                           children : new MFNode([
                             new Transform({
-                              children : new MFNode([
+                              child : new SFNode(
                                 new Shape({
                                   DEF : new SFString("HAnimJointShape"),
                                   geometry : new SFNode(
@@ -178,7 +178,7 @@ var X3D0 =  new X3D({
                                       DEF : new SFString("HAnimJointAppearanceBlue"),
                                       material : new SFNode(
                                         new Material({
-                                          diffuseColor : new SFColor([0,0,1])}))}))})])}),
+                                          diffuseColor : new SFColor([0,0,1])}))}))}))}),
 
                             new Shape({
                               appearance : new SFNode(
@@ -236,7 +236,7 @@ var X3D0 =  new X3D({
                               children : new MFNode([
                                 new Transform({
                                   translation : new SFVec3f([0.14,0.09,0]),
-                                  children : new MFNode([
+                                  child : new SFNode(
                                     new Shape({
                                       DEF : new SFString("HAnimNewJointShape"),
                                       geometry : new SFNode(
@@ -247,7 +247,7 @@ var X3D0 =  new X3D({
                                           DEF : new SFString("HAnimJointAppearanceRed"),
                                           material : new SFNode(
                                             new Material({
-                                              diffuseColor : new SFColor([1,0,0])}))}))})])}),
+                                              diffuseColor : new SFColor([1,0,0])}))}))}))}),
 
                                 new Shape({
                                   appearance : new SFNode(
@@ -291,9 +291,9 @@ var X3D0 =  new X3D({
                                   children : new MFNode([
                                     new Transform({
                                       translation : new SFVec3f([0.2,0.15,0]),
-                                      children : new MFNode([
+                                      child : new SFNode(
                                         new Shape({
-                                          USE : new SFString("HAnimJointShape")})])}),
+                                          USE : new SFString("HAnimJointShape")}))}),
 
                                     new Shape({
                                       appearance : new SFNode(
@@ -322,9 +322,9 @@ var X3D0 =  new X3D({
                                       children : new MFNode([
                                         new Transform({
                                           translation : new SFVec3f([0.3,0.3,0]),
-                                          children : new MFNode([
+                                          child : new SFNode(
                                             new Shape({
-                                              USE : new SFString("HAnimJointShape")})])}),
+                                              USE : new SFString("HAnimJointShape")}))}),
 
                                         new Shape({
                                           appearance : new SFNode(
@@ -353,9 +353,9 @@ var X3D0 =  new X3D({
                                           children : new MFNode([
                                             new Transform({
                                               translation : new SFVec3f([0.35,0.4,0]),
-                                              children : new MFNode([
+                                              child : new SFNode(
                                                 new Shape({
-                                                  USE : new SFString("HAnimJointShape")})])}),
+                                                  USE : new SFString("HAnimJointShape")}))}),
 
                                             new Shape({
                                               appearance : new SFNode(
@@ -385,9 +385,9 @@ var X3D0 =  new X3D({
                               children : new MFNode([
                                 new Transform({
                                   translation : new SFVec3f([0.07,0.07,0]),
-                                  children : new MFNode([
+                                  child : new SFNode(
                                     new Shape({
-                                      USE : new SFString("HAnimNewJointShape")})])}),
+                                      USE : new SFString("HAnimNewJointShape")}))}),
 
                                 new Shape({
                                   appearance : new SFNode(
@@ -417,9 +417,9 @@ var X3D0 =  new X3D({
                                   children : new MFNode([
                                     new Transform({
                                       translation : new SFVec3f([0.1,0.2,0]),
-                                      children : new MFNode([
+                                      child : new SFNode(
                                         new Shape({
-                                          USE : new SFString("HAnimJointShape")})])}),
+                                          USE : new SFString("HAnimJointShape")}))}),
 
                                     new Shape({
                                       appearance : new SFNode(
@@ -448,9 +448,9 @@ var X3D0 =  new X3D({
                                       children : new MFNode([
                                         new Transform({
                                           translation : new SFVec3f([0.15,0.5,0]),
-                                          children : new MFNode([
+                                          child : new SFNode(
                                             new Shape({
-                                              USE : new SFString("HAnimJointShape")})])}),
+                                              USE : new SFString("HAnimJointShape")}))}),
 
                                         new Shape({
                                           appearance : new SFNode(
@@ -479,9 +479,9 @@ var X3D0 =  new X3D({
                                           children : new MFNode([
                                             new Transform({
                                               translation : new SFVec3f([0.2,0.7,0]),
-                                              children : new MFNode([
+                                              child : new SFNode(
                                                 new Shape({
-                                                  USE : new SFString("HAnimJointShape")})])}),
+                                                  USE : new SFString("HAnimJointShape")}))}),
 
                                             new Shape({
                                               appearance : new SFNode(
@@ -510,9 +510,9 @@ var X3D0 =  new X3D({
                                               children : new MFNode([
                                                 new Transform({
                                                   translation : new SFVec3f([0.24,0.87,0]),
-                                                  children : new MFNode([
+                                                  child : new SFNode(
                                                     new Shape({
-                                                      USE : new SFString("HAnimJointShape")})])}),
+                                                      USE : new SFString("HAnimJointShape")}))}),
 
                                                 new Shape({
                                                   appearance : new SFNode(
@@ -542,9 +542,9 @@ var X3D0 =  new X3D({
                               children : new MFNode([
                                 new Transform({
                                   translation : new SFVec3f([0,0.07,0]),
-                                  children : new MFNode([
+                                  child : new SFNode(
                                     new Shape({
-                                      USE : new SFString("HAnimNewJointShape")})])}),
+                                      USE : new SFString("HAnimNewJointShape")}))}),
 
                                 new Shape({
                                   appearance : new SFNode(
@@ -574,9 +574,9 @@ var X3D0 =  new X3D({
                                   children : new MFNode([
                                     new Transform({
                                       translation : new SFVec3f([0,0.2,0]),
-                                      children : new MFNode([
+                                      child : new SFNode(
                                         new Shape({
-                                          USE : new SFString("HAnimJointShape")})])}),
+                                          USE : new SFString("HAnimJointShape")}))}),
 
                                     new Shape({
                                       appearance : new SFNode(
@@ -605,9 +605,9 @@ var X3D0 =  new X3D({
                                       children : new MFNode([
                                         new Transform({
                                           translation : new SFVec3f([0.03,0.5,0]),
-                                          children : new MFNode([
+                                          child : new SFNode(
                                             new Shape({
-                                              USE : new SFString("HAnimJointShape")})])}),
+                                              USE : new SFString("HAnimJointShape")}))}),
 
                                         new Shape({
                                           appearance : new SFNode(
@@ -636,9 +636,9 @@ var X3D0 =  new X3D({
                                           children : new MFNode([
                                             new Transform({
                                               translation : new SFVec3f([0.05,0.75,0]),
-                                              children : new MFNode([
+                                              child : new SFNode(
                                                 new Shape({
-                                                  USE : new SFString("HAnimJointShape")})])}),
+                                                  USE : new SFString("HAnimJointShape")}))}),
 
                                             new Shape({
                                               appearance : new SFNode(
@@ -667,9 +667,9 @@ var X3D0 =  new X3D({
                                               children : new MFNode([
                                                 new Transform({
                                                   translation : new SFVec3f([0.08,0.96,0]),
-                                                  children : new MFNode([
+                                                  child : new SFNode(
                                                     new Shape({
-                                                      USE : new SFString("HAnimJointShape")})])}),
+                                                      USE : new SFString("HAnimJointShape")}))}),
 
                                                 new Shape({
                                                   appearance : new SFNode(
@@ -699,9 +699,9 @@ var X3D0 =  new X3D({
                               children : new MFNode([
                                 new Transform({
                                   translation : new SFVec3f([-0.1,0.1,0]),
-                                  children : new MFNode([
+                                  child : new SFNode(
                                     new Shape({
-                                      USE : new SFString("HAnimNewJointShape")})])}),
+                                      USE : new SFString("HAnimNewJointShape")}))}),
 
                                 new Shape({
                                   appearance : new SFNode(
@@ -745,9 +745,9 @@ var X3D0 =  new X3D({
                                   children : new MFNode([
                                     new Transform({
                                       translation : new SFVec3f([-0.1,0.2,0]),
-                                      children : new MFNode([
+                                      child : new SFNode(
                                         new Shape({
-                                          USE : new SFString("HAnimJointShape")})])}),
+                                          USE : new SFString("HAnimJointShape")}))}),
 
                                     new Shape({
                                       appearance : new SFNode(
@@ -776,9 +776,9 @@ var X3D0 =  new X3D({
                                       children : new MFNode([
                                         new Transform({
                                           translation : new SFVec3f([-0.1,0.47,0]),
-                                          children : new MFNode([
+                                          child : new SFNode(
                                             new Shape({
-                                              USE : new SFString("HAnimJointShape")})])}),
+                                              USE : new SFString("HAnimJointShape")}))}),
 
                                         new Shape({
                                           appearance : new SFNode(
@@ -807,9 +807,9 @@ var X3D0 =  new X3D({
                                           children : new MFNode([
                                             new Transform({
                                               translation : new SFVec3f([-0.1,0.7,0]),
-                                              children : new MFNode([
+                                              child : new SFNode(
                                                 new Shape({
-                                                  USE : new SFString("HAnimJointShape")})])}),
+                                                  USE : new SFString("HAnimJointShape")}))}),
 
                                             new Shape({
                                               appearance : new SFNode(
@@ -838,9 +838,9 @@ var X3D0 =  new X3D({
                                               children : new MFNode([
                                                 new Transform({
                                                   translation : new SFVec3f([-0.1,0.93,0]),
-                                                  children : new MFNode([
+                                                  child : new SFNode(
                                                     new Shape({
-                                                      USE : new SFString("HAnimJointShape")})])}),
+                                                      USE : new SFString("HAnimJointShape")}))}),
 
                                                 new Shape({
                                                   appearance : new SFNode(
@@ -870,9 +870,9 @@ var X3D0 =  new X3D({
                                   children : new MFNode([
                                     new Transform({
                                       translation : new SFVec3f([-0.15,0.17,0]),
-                                      children : new MFNode([
+                                      child : new SFNode(
                                         new Shape({
-                                          USE : new SFString("HAnimJointShape")})])}),
+                                          USE : new SFString("HAnimJointShape")}))}),
 
                                     new Shape({
                                       appearance : new SFNode(
@@ -901,9 +901,9 @@ var X3D0 =  new X3D({
                                       children : new MFNode([
                                         new Transform({
                                           translation : new SFVec3f([-0.2,0.4,0]),
-                                          children : new MFNode([
+                                          child : new SFNode(
                                             new Shape({
-                                              USE : new SFString("HAnimJointShape")})])}),
+                                              USE : new SFString("HAnimJointShape")}))}),
 
                                         new Shape({
                                           appearance : new SFNode(
@@ -932,9 +932,9 @@ var X3D0 =  new X3D({
                                           children : new MFNode([
                                             new Transform({
                                               translation : new SFVec3f([-0.23,0.63,0]),
-                                              children : new MFNode([
+                                              child : new SFNode(
                                                 new Shape({
-                                                  USE : new SFString("HAnimJointShape")})])}),
+                                                  USE : new SFString("HAnimJointShape")}))}),
 
                                             new Shape({
                                               appearance : new SFNode(
@@ -963,9 +963,9 @@ var X3D0 =  new X3D({
                                               children : new MFNode([
                                                 new Transform({
                                                   translation : new SFVec3f([-0.25,0.79,0]),
-                                                  children : new MFNode([
+                                                  child : new SFNode(
                                                     new Shape({
-                                                      USE : new SFString("HAnimJointShape")})])}),
+                                                      USE : new SFString("HAnimJointShape")}))}),
 
                                                 new Shape({
                                                   appearance : new SFNode(

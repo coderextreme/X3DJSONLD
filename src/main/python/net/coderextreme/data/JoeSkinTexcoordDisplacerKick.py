@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[component(name="HAnim", level=1),
+head=head(
+children=[
+component(name="HAnim", level=1),
 meta(name="title", content="JoeSkinTexcoordDisplacerKick.x3d"),
 meta(name="info", content="Joe No Reservations 20200709 spec root and vc7 hier 20161206 ... 20121221 ... 20040109 x3d/hanim"),
 meta(name="description", content="This Joe model is a V1 LOA3 Humanoid with textured skin composed mainly of V1 Site locations."),
@@ -21,7 +24,7 @@ meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Huma
 meta(name="generator", content="BS studio translation from .x3dv by Joe using BS Contact"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -32,7 +35,6 @@ Background(DEF="blue_Background"),
 SpotLight(DEF="light1", ambientIntensity=0.7, beamWidth=1.5, color=[(0.8,0.8,1)], cutOffAngle=0.6, direction=((0,0,0)), location=((0,3,3)), radius=10),
 PointLight(DEF="light2", ambientIntensity=0.7, color=[(0.8,0.8,1)], location=((0,10,-7))),
 Comment(value=''' External from the Humanoid viewpoints '''),
-
 Viewpoint(DEF="Scene_InclinedView", centerOfRotation=((0,0.85,0)), description="Scene_Inclined View", orientation=((-0.113,0.993,0.0347,0.671)), position=((1.62,1.05,3.06))),
 Viewpoint(DEF="Scene_FrontView", centerOfRotation=((0,0.8,0)), description="Scene Front View", position=((0,0.8,2.58))),
 Viewpoint(DEF="Scene_SideView", centerOfRotation=((0,0.8,0)), description="Scene Side View", orientation=((0,1,0,1.5708)), position=((2.6,0.5,0))),
@@ -265,7 +267,6 @@ HAnimSite(USE="Joe_RootFront_view")])]),
 Group(children=[
 TimeSensor(DEF="KickTimer", cycleInterval=3.73, loop=True),
 Comment(value=''' Interpolators '''),
-
 OrientationInterpolator(DEF="HumanoidRoot_RotationInterpolator", key=[float(0),float(0.1),float(0.4),float(0.6),float(1)], keyValue=[(float(1),float(0),float(0),float(0.5)),(float(1),float(0),float(0),float(0.5)),(float(-1),float(0),float(0),float(0.1)),(float(-1),float(0),float(0),float(0.5)),(float(-1),float(0),float(0),float(0.5))]),
 PositionInterpolator(DEF="HumanoidRoot_TranslationInterpolator", key=[float(0),float(0.2),float(0.6),float(1)], keyValue=[(1,0.3,-1),(0.4,-0.04,-0.4),(-0.18,0.1,0),(-0.2,0.15,0.15)]),
 OrientationInterpolator(DEF="sacroiliac_RotationInterpolator", key=[float(0),float(0.5),float(1)], keyValue=[(float(0),float(0),float(1),float(0)),(float(0),float(0),float(1),float(0)),(float(0),float(0),float(1),float(0))]),
@@ -362,7 +363,6 @@ OrientationInterpolator(DEF="r_pinky1_RotationInterpolator", key=[float(0),float
 OrientationInterpolator(DEF="r_pinky2_RotationInterpolator", key=[float(0),float(0.5),float(0.75),float(1)], keyValue=[(float(0),float(0),float(1),float(0)),(float(0),float(0),float(1),float(0)),(float(0),float(0),float(1),float(1.5)),(float(0),float(0),float(1),float(0))]),
 OrientationInterpolator(DEF="r_pinky3_RotationInterpolator", key=[float(0),float(0.5),float(0.75),float(1)], keyValue=[(float(0),float(0),float(1),float(0)),(float(0),float(0),float(1),float(0)),(float(0),float(0),float(1),float(1.5)),(float(0),float(0),float(1),float(0))]),]),
 Comment(value=''' TimeSensor to Interpolators '''),
-
 ROUTE(fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="HumanoidRoot_RotationInterpolator"),
 ROUTE(fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="HumanoidRoot_TranslationInterpolator"),
 ROUTE(fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="sacroiliac_RotationInterpolator"),
@@ -459,7 +459,6 @@ ROUTE(fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction"
 ROUTE(fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="r_pinky2_RotationInterpolator"),
 ROUTE(fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="r_pinky3_RotationInterpolator"),
 Comment(value=''' Routes from Interpolators to Joe_ model Joints '''),
-
 ROUTE(fromField="value_changed", fromNode="HumanoidRoot_RotationInterpolator", toField="set_rotation", toNode="Joe_HumanoidRoot"),
 ROUTE(fromField="value_changed", fromNode="HumanoidRoot_TranslationInterpolator", toField="set_translation", toNode="Joe_HumanoidRoot"),
 ROUTE(fromField="value_changed", fromNode="sacroiliac_RotationInterpolator", toField="set_rotation", toNode="Joe_sacroiliac"),
@@ -557,7 +556,6 @@ ROUTE(fromField="value_changed", fromNode="r_pinky2_RotationInterpolator", toFie
 ROUTE(fromField="value_changed", fromNode="r_pinky3_RotationInterpolator", toField="set_rotation", toNode="Joe_r_pinky3"),
 Group(DEF="DisplacersAnimationGroup", children=[
 Comment(value=''' TimeSensor DEF='skull_tipInterpolatorTimer' cycleInterval='5.73' loop='true' enabled='true'></TimeSensor '''),
-
 ScalarInterpolator(DEF="skull_tipInterpolator", key=[float(0),float(0.1),float(0.2),float(0.35),float(0.6),float(0.7),float(0.85),float(0.88),float(0.94),float(0.97),float(1)], keyValue=[float(0),float(0),float(0),float(0),float(0.2),float(0.4),float(1),float(0),float(1),float(0.4),float(0)]),
 ROUTE(fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="skull_tipInterpolator"),
 ROUTE(fromField="value_changed", fromNode="skull_tipInterpolator", toField="weight", toNode="Joe_skull_tip_raiser_action"),]),
@@ -580,11 +578,9 @@ coord=
 Coordinate(DEF="Ball_Coordinates", point=[(0,0.4675,0),(0,0.4049,-0.2338),(-0.1169,0.4049,-0.2024),(-0.2024,0.4049,-0.1169),(-0.2338,0.4049,0),(-0.2024,0.4049,0.1169),(-0.1169,0.4049,0.2024),(0,0.4049,0.2338),(0.1169,0.4049,0.2024),(0.2024,0.4049,0.1169),(0.2338,0.4049,0),(0.2024,0.4049,-0.1169),(0.1169,0.4049,-0.2024),(0,0.2338,-0.4049),(-0.2024,0.2338,-0.3506),(-0.3506,0.2338,-0.2024),(-0.4049,0.2338,0),(-0.3506,0.2338,0.2024),(-0.2024,0.2338,0.3506),(0,0.2338,0.4049),(0.2024,0.2338,0.3506),(0.3506,0.2338,0.2024),(0.4049,0.2338,0),(0.3506,0.2338,-0.2024),(0.2024,0.2338,-0.3506),(0,0,-0.4675),(-0.2338,0,-0.4049),(-0.4049,0,-0.2338),(-0.4675,0,0),(-0.4049,0,0.2338),(-0.2338,0,0.4049),(0,0,0.4675),(0.2338,0,0.4049),(0.4049,0,0.2338),(0.4675,0,0),(0.4049,0,-0.2338),(0.2338,0,-0.4049),(0,-0.2338,-0.4049),(-0.2024,-0.2338,-0.3506),(-0.3506,-0.2338,-0.2024),(-0.4049,-0.2338,0),(-0.3506,-0.2338,0.2024),(-0.2024,-0.2338,0.3506),(0,-0.2338,0.4049),(0.2024,-0.2338,0.3506),(0.3506,-0.2338,0.2024),(0.4049,-0.2338,0),(0.3506,-0.2338,-0.2024),(0.2024,-0.2338,-0.3506),(0,-0.4049,-0.2338),(-0.1169,-0.4049,-0.2024),(-0.2024,-0.4049,-0.1169),(-0.2338,-0.4049,0),(-0.2024,-0.4049,0.1169),(-0.1169,-0.4049,0.2024),(0,-0.4049,0.2338),(0.1169,-0.4049,0.2024),(0.2024,-0.4049,0.1169),(0.2338,-0.4049,0),(0.2024,-0.4049,-0.1169),(0.1169,-0.4049,-0.2024),(0,-0.4675,0)]))),
 Viewpoint(DEF="ballView_1", description="Ball View")]),
 Comment(value=''' Ball Animation interpolators '''),
-
 PositionInterpolator(DEF="ball_TranslationInterpolator", key=[float(0),float(0.4),float(0.409),float(1)], keyValue=[(-1,0.4,-1),(0,0.07,0),(0.05,0.06,0.05),(2,4,10)]),
 OrientationInterpolator(DEF="ball_RotationInterpolator", key=[float(0),float(0.4),float(0.41),float(0.71),float(1)], keyValue=[(float(1),float(0),float(1),float(0.25)),(float(-1),float(0),float(-1),float(1.35)),(float(-1),float(1),float(-1),float(3.35)),(float(-1),float(0.2),float(-1),float(3)),(float(-1),float(0.2),float(-1),float(3))]),
 Comment(value=''' Ball Animation Routes '''),
-
 ROUTE(fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="ball_TranslationInterpolator"),
 ROUTE(fromField="value_changed", fromNode="ball_TranslationInterpolator", toField="set_translation", toNode="SBall"),
 ROUTE(fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="ball_RotationInterpolator"),
@@ -617,5 +613,6 @@ Appearance(DEF="circle2_Appearance",
 material=
 Material(DEF="circle2_Material", diffuseColor=((0.9,0,0.7)), emissiveColor=((0.424956,0.483976,1)))), 
 geometry=
-IndexedLineSet(USE="Orbit1"))])]),]))
-.XML())
+IndexedLineSet(USE="Orbit1"))])]),])))
+output = model.JSON()
+json.loads(output)

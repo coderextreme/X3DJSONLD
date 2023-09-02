@@ -181,7 +181,7 @@ IndexedFaceSet35->setTexCoord(*TextureCoordinate37);
 
 Shape31->setGeometry(IndexedFaceSet35);
 
-Transform30->addChildren(*Shape31);
+Transform30->addChild(*Shape31);
 
 HAnimSegment29->addChildren(*Transform30);
 
@@ -224,7 +224,7 @@ IndexedFaceSet45->setTexCoord(*TextureCoordinate47);
 
 Shape41->setGeometry(IndexedFaceSet45);
 
-Transform40->addChildren(*Shape41);
+Transform40->addChild(*Shape41);
 
 HAnimSegment39->addChildren(*Transform40);
 
@@ -267,7 +267,7 @@ IndexedFaceSet55->setTexCoord(*TextureCoordinate57);
 
 Shape51->setGeometry(IndexedFaceSet55);
 
-Transform50->addChildren(*Shape51);
+Transform50->addChild(*Shape51);
 
 HAnimSegment49->addChildren(*Transform50);
 
@@ -310,7 +310,7 @@ IndexedFaceSet65->setTexCoord(*TextureCoordinate67);
 
 Shape61->setGeometry(IndexedFaceSet65);
 
-Transform60->addChildren(*Shape61);
+Transform60->addChild(*Shape61);
 
 HAnimSegment59->addChildren(*Transform60);
 
@@ -353,7 +353,7 @@ IndexedFaceSet75->setTexCoord(*TextureCoordinate77);
 
 Shape71->setGeometry(IndexedFaceSet75);
 
-Transform70->addChildren(*Shape71);
+Transform70->addChild(*Shape71);
 
 HAnimSegment69->addChildren(*Transform70);
 
@@ -396,7 +396,7 @@ IndexedFaceSet85->setTexCoord(*TextureCoordinate87);
 
 Shape81->setGeometry(IndexedFaceSet85);
 
-Transform80->addChildren(*Shape81);
+Transform80->addChild(*Shape81);
 
 HAnimSegment79->addChildren(*Transform80);
 
@@ -447,7 +447,7 @@ IndexedFaceSet95->setTexCoord(*TextureCoordinate97);
 
 Shape91->setGeometry(IndexedFaceSet95);
 
-Transform90->addChildren(*Shape91);
+Transform90->addChild(*Shape91);
 
 HAnimSegment89->addChildren(*Transform90);
 
@@ -490,7 +490,7 @@ IndexedFaceSet105->setTexCoord(*TextureCoordinate107);
 
 Shape101->setGeometry(IndexedFaceSet105);
 
-Transform100->addChildren(*Shape101);
+Transform100->addChild(*Shape101);
 
 HAnimSegment99->addChildren(*Transform100);
 
@@ -533,7 +533,7 @@ IndexedFaceSet115->setTexCoord(*TextureCoordinate117);
 
 Shape111->setGeometry(IndexedFaceSet115);
 
-Transform110->addChildren(*Shape111);
+Transform110->addChild(*Shape111);
 
 HAnimSegment109->addChildren(*Transform110);
 
@@ -576,7 +576,7 @@ IndexedFaceSet125->setTexCoord(*TextureCoordinate127);
 
 Shape121->setGeometry(IndexedFaceSet125);
 
-Transform120->addChildren(*Shape121);
+Transform120->addChild(*Shape121);
 
 HAnimSegment119->addChildren(*Transform120);
 
@@ -627,7 +627,7 @@ IndexedFaceSet135->setTexCoord(*TextureCoordinate137);
 
 Shape131->setGeometry(IndexedFaceSet135);
 
-Transform130->addChildren(*Shape131);
+Transform130->addChild(*Shape131);
 
 HAnimSegment129->addChildren(*Transform130);
 
@@ -670,7 +670,7 @@ IndexedFaceSet145->setTexCoord(*TextureCoordinate147);
 
 Shape141->setGeometry(IndexedFaceSet145);
 
-Transform140->addChildren(*Shape141);
+Transform140->addChild(*Shape141);
 
 HAnimSegment139->addChildren(*Transform140);
 
@@ -715,7 +715,7 @@ IndexedFaceSet155->setTexCoord(*TextureCoordinate157);
 
 Shape151->setGeometry(IndexedFaceSet155);
 
-Transform150->addChildren(*Shape151);
+Transform150->addChild(*Shape151);
 
 HAnimSegment149->addChildren(*Transform150);
 
@@ -758,7 +758,7 @@ IndexedFaceSet165->setTexCoord(*TextureCoordinate167);
 
 Shape161->setGeometry(IndexedFaceSet165);
 
-Transform160->addChildren(*Shape161);
+Transform160->addChild(*Shape161);
 
 HAnimSegment159->addChildren(*Transform160);
 
@@ -801,7 +801,7 @@ IndexedFaceSet175->setTexCoord(*TextureCoordinate177);
 
 Shape171->setGeometry(IndexedFaceSet175);
 
-Transform170->addChildren(*Shape171);
+Transform170->addChild(*Shape171);
 
 HAnimSegment169->addChildren(*Transform170);
 
@@ -850,7 +850,7 @@ IndexedFaceSet185->setTexCoord(*TextureCoordinate187);
 
 Shape181->setGeometry(IndexedFaceSet185);
 
-Transform180->addChildren(*Shape181);
+Transform180->addChild(*Shape181);
 
 HAnimSegment179->addChildren(*Transform180);
 
@@ -893,7 +893,7 @@ IndexedFaceSet195->setTexCoord(*TextureCoordinate197);
 
 Shape191->setGeometry(IndexedFaceSet195);
 
-Transform190->addChildren(*Shape191);
+Transform190->addChild(*Shape191);
 
 HAnimSegment189->addChildren(*Transform190);
 
@@ -936,7 +936,7 @@ IndexedFaceSet205->setTexCoord(*TextureCoordinate207);
 
 Shape201->setGeometry(IndexedFaceSet205);
 
-Transform200->addChildren(*Shape201);
+Transform200->addChild(*Shape201);
 
 HAnimSegment199->addChildren(*Transform200);
 

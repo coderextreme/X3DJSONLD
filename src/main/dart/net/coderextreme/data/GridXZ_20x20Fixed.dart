@@ -78,9 +78,9 @@ var X3D0 =  X3D(
                     Transform(
                       DEF_ : SFString('LinesAlignedAlongX'),
                       rotation_ : SFRotation([SFDouble(0), SFDouble(1), SFDouble(0), SFDouble(1.57079)]),
-                      children_ : [
+                      child_ : 
                         Shape(
-                          USE_ : SFString('LinesAlignedAlongZ'))]),
+                          USE_ : SFString('LinesAlignedAlongZ'))),
 
                     Transform(
                       translation_ : SFVec3f([SFDouble(0), SFDouble(-0.5), SFDouble(0)]),

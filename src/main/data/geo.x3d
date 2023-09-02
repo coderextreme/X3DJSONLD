@@ -14,7 +14,7 @@
         <meta name='title' content='geo.x3d'/>
         <meta name='creator' content='John Carlson'/>
         <meta name='generator' content='manual'/>
-        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/geo.x3d'/>
+	<meta name='identifier' content='https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d'/>
         <meta name='description' content='a sphere'/>      
       </head>
     <Scene>

@@ -68,7 +68,7 @@ var X3D0 =  X3D(
                 ProtoBody(
                   children_ : [
                     Transform(
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
@@ -83,8 +83,7 @@ var X3D0 =  X3D(
                                           protoField_ : SFString('col'))]))),
                           geometry_ : 
                             Sphere(
-                              radius_ : 1.10000002384186))],
-
+                              radius_ : 1.10000002384186)),
                       IS_ : 
                         IS(
                           connect_ : [

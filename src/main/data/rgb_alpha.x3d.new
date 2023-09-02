@@ -23,25 +23,25 @@
 <Group><Transform translation="6.14221 0.0694613 -0.000999451"><Shape><Appearance><Material></Material>
 <PixelTexture containerField="texture" DEF="RgbOpacityCheckerboard" image="2 2 4 4278190335 4294901760 4294901760 4278190335"></PixelTexture>
 </Appearance>
-<Box containerField="geometry"></Box>
+<Box></Box>
 </Shape>
 </Transform>
 <Transform translation="-4.85443 0.0694381 -0.00149918"><Shape><Appearance><Material></Material>
 <PixelTexture containerField="texture" USE="RgbOpacityCheckerboard"></PixelTexture>
 </Appearance>
-<Sphere containerField="geometry"></Sphere>
+<Sphere></Sphere>
 </Shape>
 </Transform>
 <Transform translation="-1.47341 0.036672 -0.00175095"><Shape><Appearance><Material></Material>
 <PixelTexture containerField="texture" USE="RgbOpacityCheckerboard"></PixelTexture>
 </Appearance>
-<Cone containerField="geometry"></Cone>
+<Cone></Cone>
 </Shape>
 </Transform>
 <Transform translation="2.31094 0.0694206 -0.00187683"><Shape><Appearance><Material></Material>
 <PixelTexture containerField="texture" USE="RgbOpacityCheckerboard"></PixelTexture>
 </Appearance>
-<Cylinder containerField="geometry"></Cylinder>
+<Cylinder></Cylinder>
 </Shape>
 </Transform>
 </Group>

@@ -181,7 +181,7 @@ var X3D0 =  X3D(
                                     Viewpoint(
                                       DEF_ : SFString('ViewBodyRootAxes'),
                                       description_ : SFString('Joe_HAnim Root HAnimSite Coordinate Axes View')),
-
+                                  child_ : 
                                     Shape(
                                       DEF_ : SFString('AxisLinesShape'),
                                       /*RGB lines showing XYZ axes*/
@@ -2986,7 +2986,7 @@ var X3D0 =  X3D(
                   rotation_ : SFRotation([SFDouble(0.7), SFDouble(0), SFDouble(0.7), SFDouble(0.1)]),
                   scale_ : SFVec3f([SFDouble(0.23), SFDouble(0.23), SFDouble(0.23)]),
                   translation_ : SFVec3f([SFDouble(-0.916), SFDouble(0.37), SFDouble(-0.92)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       DEF_ : SFString('ball_Shape'),
                       appearance_ : 
@@ -3008,7 +3008,7 @@ var X3D0 =  X3D(
                             Coordinate(
                               DEF_ : SFString('Ball_Coordinates'),
                               point_ : MFVec3f([SFVec3f([0,0.4675,0]),SFVec3f([0,0.4049,-0.2338]),SFVec3f([-0.1169,0.4049,-0.2024]),SFVec3f([-0.2024,0.4049,-0.1169]),SFVec3f([-0.2338,0.4049,0]),SFVec3f([-0.2024,0.4049,0.1169]),SFVec3f([-0.1169,0.4049,0.2024]),SFVec3f([0,0.4049,0.2338]),SFVec3f([0.1169,0.4049,0.2024]),SFVec3f([0.2024,0.4049,0.1169]),SFVec3f([0.2338,0.4049,0]),SFVec3f([0.2024,0.4049,-0.1169]),SFVec3f([0.1169,0.4049,-0.2024]),SFVec3f([0,0.2338,-0.4049]),SFVec3f([-0.2024,0.2338,-0.3506]),SFVec3f([-0.3506,0.2338,-0.2024]),SFVec3f([-0.4049,0.2338,0]),SFVec3f([-0.3506,0.2338,0.2024]),SFVec3f([-0.2024,0.2338,0.3506]),SFVec3f([0,0.2338,0.4049]),SFVec3f([0.2024,0.2338,0.3506]),SFVec3f([0.3506,0.2338,0.2024]),SFVec3f([0.4049,0.2338,0]),SFVec3f([0.3506,0.2338,-0.2024]),SFVec3f([0.2024,0.2338,-0.3506]),SFVec3f([0,0,-0.4675]),SFVec3f([-0.2338,0,-0.4049]),SFVec3f([-0.4049,0,-0.2338]),SFVec3f([-0.4675,0,0]),SFVec3f([-0.4049,0,0.2338]),SFVec3f([-0.2338,0,0.4049]),SFVec3f([0,0,0.4675]),SFVec3f([0.2338,0,0.4049]),SFVec3f([0.4049,0,0.2338]),SFVec3f([0.4675,0,0]),SFVec3f([0.4049,0,-0.2338]),SFVec3f([0.2338,0,-0.4049]),SFVec3f([0,-0.2338,-0.4049]),SFVec3f([-0.2024,-0.2338,-0.3506]),SFVec3f([-0.3506,-0.2338,-0.2024]),SFVec3f([-0.4049,-0.2338,0]),SFVec3f([-0.3506,-0.2338,0.2024]),SFVec3f([-0.2024,-0.2338,0.3506]),SFVec3f([0,-0.2338,0.4049]),SFVec3f([0.2024,-0.2338,0.3506]),SFVec3f([0.3506,-0.2338,0.2024]),SFVec3f([0.4049,-0.2338,0]),SFVec3f([0.3506,-0.2338,-0.2024]),SFVec3f([0.2024,-0.2338,-0.3506]),SFVec3f([0,-0.4049,-0.2338]),SFVec3f([-0.1169,-0.4049,-0.2024]),SFVec3f([-0.2024,-0.4049,-0.1169]),SFVec3f([-0.2338,-0.4049,0]),SFVec3f([-0.2024,-0.4049,0.1169]),SFVec3f([-0.1169,-0.4049,0.2024]),SFVec3f([0,-0.4049,0.2338]),SFVec3f([0.1169,-0.4049,0.2024]),SFVec3f([0.2024,-0.4049,0.1169]),SFVec3f([0.2338,-0.4049,0]),SFVec3f([0.2024,-0.4049,-0.1169]),SFVec3f([0.1169,-0.4049,-0.2024]),SFVec3f([0,-0.4675,0])])))),
-
+                  children_ : [
                     Viewpoint(
                       DEF_ : SFString('ballView_1'),
                       description_ : SFString('Ball View'))]),
@@ -3053,14 +3053,14 @@ var X3D0 =  X3D(
               children_ : [
                 Transform(
                   scale_ : SFVec3f([SFDouble(0.2), SFDouble(0.2), SFDouble(0.2)]),
-                  children_ : [
+                  child_ : 
                     Shape(
-                      USE_ : SFString('AxisLinesShape'))]),
+                      USE_ : SFString('AxisLinesShape'))),
 
                 Transform(
                   DEF_ : SFString('Circle0'),
                   scale_ : SFVec3f([SFDouble(1.175), SFDouble(1), SFDouble(1.175)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       DEF_ : SFString('circle_Shape'),
                       appearance_ : 
@@ -3079,12 +3079,12 @@ var X3D0 =  X3D(
                           coord_ : 
                             Coordinate(
                               DEF_ : SFString('circle_Coordinates'),
-                              point_ : MFVec3f([SFVec3f([1,0,0]),SFVec3f([0.995,0,-0.105]),SFVec3f([0.979,0,-0.208]),SFVec3f([0.951,0,-0.309]),SFVec3f([0.914,0,-0.407]),SFVec3f([0.866,0,-0.5]),SFVec3f([0.809,0,-0.588]),SFVec3f([0.743,0,-0.669]),SFVec3f([0.669,0,-0.743]),SFVec3f([0.588,0,-0.809]),SFVec3f([0.5,0,-0.866]),SFVec3f([0.407,0,-0.914]),SFVec3f([0.309,0,-0.951]),SFVec3f([0.208,0,-0.978]),SFVec3f([0.105,0,-0.995]),SFVec3f([0,0,-1]),SFVec3f([-0.105,0,-0.994522]),SFVec3f([-0.208,0,-0.978]),SFVec3f([-0.309,0,-0.951]),SFVec3f([-0.407,0,-0.914]),SFVec3f([-0.5,0,-0.866]),SFVec3f([-0.588,0,-0.809]),SFVec3f([-0.669,0,-0.743]),SFVec3f([-0.743,0,-0.669]),SFVec3f([-0.809,0,-0.588]),SFVec3f([-0.866,0,-0.5]),SFVec3f([-0.914,0,-0.407]),SFVec3f([-0.951,0,-0.309]),SFVec3f([-0.978,0,-0.208]),SFVec3f([-0.995,0,-0.105]),SFVec3f([-1,0,0]),SFVec3f([-0.995,0,0.105]),SFVec3f([-0.978,0,0.208]),SFVec3f([-0.951,0,0.309]),SFVec3f([-0.914,0,0.407]),SFVec3f([-0.866,0,0.5]),SFVec3f([-0.809,0,0.588]),SFVec3f([-0.743,0,0.669]),SFVec3f([-0.669,0,0.743]),SFVec3f([-0.588,0,0.809]),SFVec3f([-0.5,0,0.866]),SFVec3f([-0.407,0,0.914]),SFVec3f([-0.309,0,0.951]),SFVec3f([-0.208,0,0.978]),SFVec3f([-0.105,0,0.995]),SFVec3f([0,0,1]),SFVec3f([0.105,0,0.995]),SFVec3f([0.208,0,0.978]),SFVec3f([0.309,0,0.951]),SFVec3f([0.407,0,0.914]),SFVec3f([0.5,0,0.866]),SFVec3f([0.588,0,0.809]),SFVec3f([0.669,0,0.743]),SFVec3f([0.743,0,0.669]),SFVec3f([0.809,0,0.588]),SFVec3f([0.866,0,0.5]),SFVec3f([0.914,0,0.407]),SFVec3f([0.951,0,0.309]),SFVec3f([0.978,0,0.208]),SFVec3f([0.995,0,0.104]),SFVec3f([1,0,0])]))))]),
+                              point_ : MFVec3f([SFVec3f([1,0,0]),SFVec3f([0.995,0,-0.105]),SFVec3f([0.979,0,-0.208]),SFVec3f([0.951,0,-0.309]),SFVec3f([0.914,0,-0.407]),SFVec3f([0.866,0,-0.5]),SFVec3f([0.809,0,-0.588]),SFVec3f([0.743,0,-0.669]),SFVec3f([0.669,0,-0.743]),SFVec3f([0.588,0,-0.809]),SFVec3f([0.5,0,-0.866]),SFVec3f([0.407,0,-0.914]),SFVec3f([0.309,0,-0.951]),SFVec3f([0.208,0,-0.978]),SFVec3f([0.105,0,-0.995]),SFVec3f([0,0,-1]),SFVec3f([-0.105,0,-0.994522]),SFVec3f([-0.208,0,-0.978]),SFVec3f([-0.309,0,-0.951]),SFVec3f([-0.407,0,-0.914]),SFVec3f([-0.5,0,-0.866]),SFVec3f([-0.588,0,-0.809]),SFVec3f([-0.669,0,-0.743]),SFVec3f([-0.743,0,-0.669]),SFVec3f([-0.809,0,-0.588]),SFVec3f([-0.866,0,-0.5]),SFVec3f([-0.914,0,-0.407]),SFVec3f([-0.951,0,-0.309]),SFVec3f([-0.978,0,-0.208]),SFVec3f([-0.995,0,-0.105]),SFVec3f([-1,0,0]),SFVec3f([-0.995,0,0.105]),SFVec3f([-0.978,0,0.208]),SFVec3f([-0.951,0,0.309]),SFVec3f([-0.914,0,0.407]),SFVec3f([-0.866,0,0.5]),SFVec3f([-0.809,0,0.588]),SFVec3f([-0.743,0,0.669]),SFVec3f([-0.669,0,0.743]),SFVec3f([-0.588,0,0.809]),SFVec3f([-0.5,0,0.866]),SFVec3f([-0.407,0,0.914]),SFVec3f([-0.309,0,0.951]),SFVec3f([-0.208,0,0.978]),SFVec3f([-0.105,0,0.995]),SFVec3f([0,0,1]),SFVec3f([0.105,0,0.995]),SFVec3f([0.208,0,0.978]),SFVec3f([0.309,0,0.951]),SFVec3f([0.407,0,0.914]),SFVec3f([0.5,0,0.866]),SFVec3f([0.588,0,0.809]),SFVec3f([0.669,0,0.743]),SFVec3f([0.743,0,0.669]),SFVec3f([0.809,0,0.588]),SFVec3f([0.866,0,0.5]),SFVec3f([0.914,0,0.407]),SFVec3f([0.951,0,0.309]),SFVec3f([0.978,0,0.208]),SFVec3f([0.995,0,0.104]),SFVec3f([1,0,0])]))))),
 
                 Transform(
                   DEF_ : SFString('Circle1'),
                   scale_ : SFVec3f([SFDouble(0.5), SFDouble(1), SFDouble(0.5)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       DEF_ : SFString('circle1_Shape'),
                       appearance_ : 
@@ -3097,12 +3097,12 @@ var X3D0 =  X3D(
                               emissiveColor_ : SFColor([SFDouble(0.424956), SFDouble(0.483976), SFDouble(1)]))),
                       geometry_ : 
                         IndexedLineSet(
-                          USE_ : SFString('Orbit1')))]),
+                          USE_ : SFString('Orbit1')))),
 
                 Transform(
                   DEF_ : SFString('Circle2'),
                   scale_ : SFVec3f([SFDouble(0.25), SFDouble(1), SFDouble(0.25)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       DEF_ : SFString('circle2_Shape'),
                       appearance_ : 
@@ -3115,5 +3115,5 @@ var X3D0 =  X3D(
                               emissiveColor_ : SFColor([SFDouble(0.424956), SFDouble(0.483976), SFDouble(1)]))),
                       geometry_ : 
                         IndexedLineSet(
-                          USE_ : SFString('Orbit1')))])])]));
+                          USE_ : SFString('Orbit1'))))])]));
 void main() { exit(0); }

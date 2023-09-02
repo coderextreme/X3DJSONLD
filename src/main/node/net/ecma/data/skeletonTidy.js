@@ -31,11 +31,11 @@ var X3D0 =  new X3D({
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
-              content : new SFString("JohnBoy.x3d")}),
+              content : new SFString("skeletonTidy.x3d")}),
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d")}),
+              content : new SFString("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/skeletonTidy.x3d")}),
 
             new meta({
               name : new SFString("description"),
@@ -60,13 +60,13 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new WorldInfo({
-              title : new SFString("JohnBoy.x3d")}),
+              title : new SFString("skeletonTidy.x3d")}),
 
             new NavigationInfo({
               speed : new SFFloat(1.5)}),
 
             new Viewpoint({
               centerOfRotation : new SFVec3f([0,1,0]),
-              description : new SFString("JohnBoy"),
+              description : new SFString("skeletonTidy"),
               position : new SFVec3f([0,1,3])})])}))});
 console.log(X3D0.toXMLNode());

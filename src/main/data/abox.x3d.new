@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd" ><head><meta name="title" content="abox.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="abox.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="generator" content="manual"></meta>
-<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/abox.x3d"></meta>
-<meta name="description" content="a box"></meta>
+<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d"></meta>
 </head>
-<Scene><ProtoDeclare name="anyShape"><ProtoInterface><field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere containerField="geometry"></Sphere>
+<Scene><ProtoDeclare name="anyShape"><ProtoInterface><field accessType="inputOutput" type="MFNode" name="myShape"><Shape><Sphere></Sphere>
 </Shape>
 </field>
 </ProtoInterface>
@@ -15,7 +14,7 @@
 </Transform>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoDeclare name="one"><ProtoInterface><field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Cylinder containerField="geometry"></Cylinder>
+<ProtoDeclare name="one"><ProtoInterface><field accessType="inputOutput" type="MFNode" name="myShape"><Shape><Cylinder></Cylinder>
 </Shape>
 </field>
 </ProtoInterface>
@@ -25,7 +24,7 @@
 </Transform>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoInstance name="one"><fieldValue name="myShape"><Shape><Box containerField="geometry" size="140 140 140"></Box>
+<ProtoInstance name="one"><fieldValue name="myShape"><Shape DEF="_1"><Box size="140 140 140"></Box>
 </Shape>
 </fieldValue>
 </ProtoInstance>

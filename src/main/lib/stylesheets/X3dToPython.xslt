@@ -13,9 +13,9 @@
 <xsl:stylesheet version="2.0" exclude-result-prefixes="ds saxon"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:xs ="http://www.w3.org/2001/XMLSchema"
-	            xmlns:fn ="http://www.w3.org/2005/xpath-functions"
+	        xmlns:fn ="http://www.w3.org/2005/xpath-functions"
                 xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
-				xmlns:saxon="http://saxon.sf.net/"><!-- http://www.saxonica.com/documentation9.5/extensions/attributes -->
+		xmlns:saxon="http://saxon.sf.net/"><!-- http://www.saxonica.com/documentation9.5/extensions/attributes -->
     
     <!-- "pythonic" configuration: whether or not to insertPackagePrefix, i.e. x3d.X3D, x3d.head, x3d.Scene, x3d.Group etc. -->
     <!-- terse seems better for most programming tasks, certainly clearer for debugging too -->
@@ -60,7 +60,11 @@
         
         <xsl:text>####################################################################################################
 #
-# Now available: developmental python x3d.py package on PyPI for import.
+# Invoking X3D model self-test:
+#
+#   $ python </xsl:text><xsl:value-of select="$modelFileName"/><xsl:text>
+#
+# Python package x3d.py package is available on PyPI for import.
 #   This approach simplifies Python X3D deployment and use.
 #   https://pypi.org/project/x3d
 #
@@ -69,7 +73,7 @@
 # or
 #       python -m pip install x3d
 #
-# Developer options for loading x3d package:
+# Developer options for loading x3d package in other Python programs:
 #
 #    from x3d import *  # preferred approach, terser source that avoids x3d.* class prefixes
 #

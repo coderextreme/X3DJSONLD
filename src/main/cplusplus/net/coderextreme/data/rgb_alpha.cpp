@@ -129,7 +129,7 @@ Shape24->setAppearance(*Appearance25);
 CBox* Box28 = (CBox *)(m_pScene.createNode("Box"));
 Shape24->setGeometry(Box28);
 
-Transform23->addChildren(*Shape24);
+Transform23->addChild(*Shape24);
 
 Group22->addChildren(*Transform23);
 
@@ -149,7 +149,7 @@ Shape30->setAppearance(*Appearance31);
 CSphere* Sphere34 = (CSphere *)(m_pScene.createNode("Sphere"));
 Shape30->setGeometry(Sphere34);
 
-Transform29->addChildren(*Shape30);
+Transform29->addChild(*Shape30);
 
 Group22->addChildren(*Transform29);
 
@@ -169,7 +169,7 @@ Shape36->setAppearance(*Appearance37);
 CCone* Cone40 = (CCone *)(m_pScene.createNode("Cone"));
 Shape36->setGeometry(Cone40);
 
-Transform35->addChildren(*Shape36);
+Transform35->addChild(*Shape36);
 
 Group22->addChildren(*Transform35);
 
@@ -189,7 +189,7 @@ Shape42->setAppearance(*Appearance43);
 CCylinder* Cylinder46 = (CCylinder *)(m_pScene.createNode("Cylinder"));
 Shape42->setGeometry(Cylinder46);
 
-Transform41->addChildren(*Shape42);
+Transform41->addChild(*Shape42);
 
 Group22->addChildren(*Transform41);
 

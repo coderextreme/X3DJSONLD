@@ -129,7 +129,7 @@ IndexedFaceSet23->setNormal(*Normal25);
 
 Shape20->setGeometry(IndexedFaceSet23);
 
-Transform19->addChildren(*Shape20);
+Transform19->addChild(*Shape20);
 
 group->addChildren(*Transform19);
 

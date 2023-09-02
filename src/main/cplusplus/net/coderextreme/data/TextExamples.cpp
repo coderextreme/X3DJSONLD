@@ -88,7 +88,7 @@ Appearance17->setMaterial(*Material18);
 
 Shape14->setAppearance(*Appearance17);
 
-Transform13->addChildren(*Shape14);
+Transform13->addChild(*Shape14);
 
 group->addChildren(*Transform13);
 
@@ -107,7 +107,7 @@ CAppearance* Appearance23 = (CAppearance *)(m_pScene.createNode("Appearance"));
 Appearance23->setUSE("LightBlueAppearance");
 Shape20->setAppearance(*Appearance23);
 
-Transform19->addChildren(*Shape20);
+Transform19->addChild(*Shape20);
 
 group->addChildren(*Transform19);
 
@@ -126,7 +126,7 @@ CAppearance* Appearance28 = (CAppearance *)(m_pScene.createNode("Appearance"));
 Appearance28->setUSE("LightBlueAppearance");
 Shape25->setAppearance(*Appearance28);
 
-Transform24->addChildren(*Shape25);
+Transform24->addChild(*Shape25);
 
 group->addChildren(*Transform24);
 

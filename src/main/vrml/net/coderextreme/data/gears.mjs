@@ -32,7 +32,7 @@ head1.meta[4] = meta6;
 
 let meta7 = browser.currentScene.createNode("meta");
 meta7.name = "generator";
-meta7.content = "convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/convertStlToJson.js";
+meta7.content = "convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/src/main/node/convertStlToJson.js";
 head1.meta[5] = meta7;
 
 let meta8 = browser.currentScene.createNode("meta");

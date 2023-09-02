@@ -18,91 +18,91 @@
 <Viewpoint description="looking North" position="0 60 110" orientation="1 0 0 -0.699999988079071" fieldOfView="0.785398125648499"></Viewpoint>
 <Transform translation="-468 0 315"><Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="High Peak Community Arts"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.300000011920929 1"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="5.10000002384186"></Sphere>
+<Sphere radius="5.10000002384186"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
 <Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="People Express"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0.600000023841858 0 0.600000023841858"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="5.10000002384186"></Sphere>
+<Sphere radius="5.10000002384186"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
 <Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="QArts/Studios"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0.600000023841858 0 0.600000023841858"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="5.10000002384186"></Sphere>
+<Sphere radius="5.10000002384186"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
 <Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="First Movement"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="1 0 0.200000002980232"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="5.10000002384186"></Sphere>
+<Sphere radius="5.10000002384186"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
 <Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="City Arts"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0.600000023841858 0 0.600000023841858"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="5.10000002384186"></Sphere>
+<Sphere radius="5.10000002384186"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
 <Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="Indigo Dance Group (Salamanda Tandem)"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.300000011920929 1"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="5.10000002384186"></Sphere>
+<Sphere radius="5.10000002384186"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
 <Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="Watering Seeds"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.300000011920929 1"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="5.10000002384186"></Sphere>
+<Sphere radius="5.10000002384186"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
 <Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="Fased In The Arts"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.300000011920929 1"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="5.10000002384186"></Sphere>
+<Sphere radius="5.10000002384186"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
 <Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="27a Access Artspace"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="1 0 0.200000002980232"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="5.10000002384186"></Sphere>
+<Sphere radius="5.10000002384186"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
 <Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="Bamboozle Theatre Company"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.300000011920929 1"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="5.10000002384186"></Sphere>
+<Sphere radius="5.10000002384186"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
 <Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="Mantle Community Arts"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.300000011920929 1"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="5.10000002384186"></Sphere>
+<Sphere radius="5.10000002384186"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
 <Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="Artlink East"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.300000011920929 1"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="5.10000002384186"></Sphere>
+<Sphere radius="5.10000002384186"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
 <Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="Creations"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.300000011920929 1"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="5.10000002384186"></Sphere>
+<Sphere radius="5.10000002384186"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
 <Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="New Perspectives"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="1 0 0.200000002980232"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="5.10000002384186"></Sphere>
+<Sphere radius="5.10000002384186"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
 <Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="UKan2"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.300000011920929 1"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="5.10000002384186"></Sphere>
+<Sphere radius="5.10000002384186"></Sphere>
 </Shape>
 </Transform>
 </Anchor>

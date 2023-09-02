@@ -7,7 +7,7 @@
     <meta content='Template for an Indexed Face Set' name='description'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='4 April 2017' name='created'/>
-    <meta content='convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/convertStlToJson.js' name='generator'/>
+    <meta content='convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/src/main/node/convertStlToJson.js' name='generator'/>
     <meta content='../license.html' name='license'/>
     <meta content='30 April 2017' name='modified'/>
     <meta content='30 April 2017' name='translated'/>

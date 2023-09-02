@@ -61,9 +61,9 @@ Appearance14.material = Material15;
 
 Shape12.appearance = Appearance14;
 
-Transform11.children = new MFNode();
+Transform11.child = new undefined();
 
-Transform11.children[0] = Shape12;
+Transform11.child[0] = Shape12;
 
 PositionInterpolator PositionInterpolator16 = createNode("PositionInterpolator");
 PositionInterpolator16.DEF = "DECLpoint_INSTANCE_PI1";
@@ -174,9 +174,9 @@ Appearance32.material = Material33;
 
 Shape30.appearance = Appearance32;
 
-Transform29.children = new MFNode();
+Transform29.child = new undefined();
 
-Transform29.children[0] = Shape30;
+Transform29.child[0] = Shape30;
 
 PositionInterpolator PositionInterpolator34 = createNode("PositionInterpolator");
 PositionInterpolator34.DEF = "DECLpoint_INSTANCE1000_PI1";
@@ -288,9 +288,9 @@ Cylinder Cylinder51 = createNode("Cylinder");
 Cylinder51.radius = 0.05;
 Shape48.geometry = Cylinder51;
 
-Transform47.children = new MFNode();
+Transform47.child = new undefined();
 
-Transform47.children[0] = Shape48;
+Transform47.child[0] = Shape48;
 
 Transform46.children = new MFNode();
 

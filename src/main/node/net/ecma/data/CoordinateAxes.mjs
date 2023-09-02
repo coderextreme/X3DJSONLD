@@ -118,7 +118,7 @@ var X3D0 =  new X3D({
 
                         new Transform({
                           translation : new SFVec3f([0,1,0]),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               geometry : new SFNode(
                                 new Cone({
@@ -127,7 +127,7 @@ var X3D0 =  new X3D({
                                   height : new SFFloat(0.1)})),
                               appearance : new SFNode(
                                 new Appearance({
-                                  USE : new SFString("Green")}))})])})])}),
+                                  USE : new SFString("Green")}))}))})])}),
 
                     new Transform({
                       translation : new SFVec3f([0,1.08,0]),
@@ -175,14 +175,14 @@ var X3D0 =  new X3D({
 
                             new Transform({
                               translation : new SFVec3f([0,1,0]),
-                              children : new MFNode([
+                              child : new SFNode(
                                 new Shape({
                                   geometry : new SFNode(
                                     new Cone({
                                       USE : new SFString("ArrowCone")})),
                                   appearance : new SFNode(
                                     new Appearance({
-                                      USE : new SFString("Red")}))})])})])}),
+                                      USE : new SFString("Red")}))}))})])}),
 
                         new Transform({
                           rotation : new SFRotation([0,0,1,1.57079]),
@@ -225,14 +225,14 @@ var X3D0 =  new X3D({
 
                             new Transform({
                               translation : new SFVec3f([0,1,0]),
-                              children : new MFNode([
+                              child : new SFNode(
                                 new Shape({
                                   geometry : new SFNode(
                                     new Cone({
                                       USE : new SFString("ArrowCone")})),
                                   appearance : new SFNode(
                                     new Appearance({
-                                      USE : new SFString("Blue")}))})])})])}),
+                                      USE : new SFString("Blue")}))}))})])}),
 
                         new Transform({
                           rotation : new SFRotation([1,0,0,-1.57079]),

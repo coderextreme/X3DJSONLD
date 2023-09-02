@@ -114,9 +114,9 @@ Appearance21.texture = ImageTexture23;
 
 Shape19.appearance = Appearance21;
 
-Transform18.children = new MFNode();
+Transform18.child = new undefined();
 
-Transform18.children[0] = Shape19;
+Transform18.child[0] = Shape19;
 
 //Shape complete
 Group16.children[1] = Transform18;
@@ -149,9 +149,9 @@ Appearance28.material = Material29;
 
 Shape25.appearance = Appearance28;
 
-Transform24.children = new MFNode();
+Transform24.child = new undefined();
 
-Transform24.children[0] = Shape25;
+Transform24.child[0] = Shape25;
 
 //Shape complete
 Group16.children[2] = Transform24;

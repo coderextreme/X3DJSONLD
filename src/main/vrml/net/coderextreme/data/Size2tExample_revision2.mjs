@@ -600,9 +600,9 @@ IndexedFaceSet87.texCoord = TextureCoordinate89;
 
 Shape84.geometry = IndexedFaceSet87;
 
-Transform83.children = new MFNode();
+Transform83.child = new undefined();
 
-Transform83.children[0] = Shape84;
+Transform83.child[0] = Shape84;
 
 Transform82.children = new MFNode();
 
@@ -638,9 +638,9 @@ IndexedFaceSet94.texCoord = TextureCoordinate96;
 
 Shape92.geometry = IndexedFaceSet94;
 
-Transform91.children = new MFNode();
+Transform91.child = new undefined();
 
-Transform91.children[0] = Shape92;
+Transform91.child[0] = Shape92;
 
 Transform90.children = new MFNode();
 
@@ -676,9 +676,9 @@ IndexedFaceSet101.texCoord = TextureCoordinate103;
 
 Shape99.geometry = IndexedFaceSet101;
 
-Transform98.children = new MFNode();
+Transform98.child = new undefined();
 
-Transform98.children[0] = Shape99;
+Transform98.child[0] = Shape99;
 
 Transform97.children = new MFNode();
 
@@ -714,9 +714,9 @@ IndexedFaceSet108.texCoord = TextureCoordinate110;
 
 Shape106.geometry = IndexedFaceSet108;
 
-Transform105.children = new MFNode();
+Transform105.child = new undefined();
 
-Transform105.children[0] = Shape106;
+Transform105.child[0] = Shape106;
 
 Transform104.children = new MFNode();
 
@@ -752,9 +752,9 @@ IndexedFaceSet115.texCoord = TextureCoordinate117;
 
 Shape113.geometry = IndexedFaceSet115;
 
-Transform112.children = new MFNode();
+Transform112.child = new undefined();
 
-Transform112.children[0] = Shape113;
+Transform112.child[0] = Shape113;
 
 Transform111.children = new MFNode();
 
@@ -790,9 +790,9 @@ IndexedFaceSet122.texCoord = TextureCoordinate124;
 
 Shape120.geometry = IndexedFaceSet122;
 
-Transform119.children = new MFNode();
+Transform119.child = new undefined();
 
-Transform119.children[0] = Shape120;
+Transform119.child[0] = Shape120;
 
 Transform118.children = new MFNode();
 
@@ -828,9 +828,9 @@ IndexedFaceSet129.texCoord = TextureCoordinate131;
 
 Shape127.geometry = IndexedFaceSet129;
 
-Transform126.children = new MFNode();
+Transform126.child = new undefined();
 
-Transform126.children[0] = Shape127;
+Transform126.child[0] = Shape127;
 
 Transform125.children = new MFNode();
 
@@ -866,9 +866,9 @@ IndexedFaceSet136.texCoord = TextureCoordinate138;
 
 Shape134.geometry = IndexedFaceSet136;
 
-Transform133.children = new MFNode();
+Transform133.child = new undefined();
 
-Transform133.children[0] = Shape134;
+Transform133.child[0] = Shape134;
 
 Transform132.children = new MFNode();
 
@@ -904,9 +904,9 @@ IndexedFaceSet143.texCoord = TextureCoordinate145;
 
 Shape141.geometry = IndexedFaceSet143;
 
-Transform140.children = new MFNode();
+Transform140.child = new undefined();
 
-Transform140.children[0] = Shape141;
+Transform140.child[0] = Shape141;
 
 Transform139.children = new MFNode();
 

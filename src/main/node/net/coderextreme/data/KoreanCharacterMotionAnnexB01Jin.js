@@ -16,7 +16,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
       var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
       .setHead((new autoclass.head())
         .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
-        .addMeta((new autoclass.meta()).setName("title").setContent("KoreanCharacterAnnexB01Jin.x3d"))
+        .addMeta((new autoclass.meta()).setName("title").setContent("KoreanCharacterMotionAnnexB01Jin.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("Jin Hoon Lee and Min Joo Lee"))
         .addMeta((new autoclass.meta()).setName("translator").setContent("Chul Hee Jung and Myeong Won Lee"))
         .addMeta((new autoclass.meta()).setName("created").setContent("31 March 2011"))
@@ -96,5 +96,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addChild((new autoclass.ROUTE()).setFromField("value_changed").setFromNode("Keyframe_r_knee").setToField("rotation").setToNode("hanim_r_knee"))
           .addChild((new autoclass.ROUTE()).setFromField("value_changed").setFromNode("Keyframe_l_talocrural").setToField("rotation").setToNode("hanim_r_talocrural"))
           .addChild((new autoclass.ROUTE()).setFromField("value_changed").setFromNode("Keyframe_l_talocrural").setToField("rotation").setToNode("hanim_r_metatarsophalangeal"))))      ;
-    X3D0.toFileX3D("../data/KoreanCharacterMotionAnnexB01Jin.new.x3d");
+    X3D0.toFileX3D("../data/KoreanCharacterMotionAnnexB01Jin.new.node.x3d");
     process.exit(0);

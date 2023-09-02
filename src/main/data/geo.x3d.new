@@ -12,13 +12,13 @@
 <meta name="title" content="geo.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="generator" content="manual"></meta>
-<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/geo.x3d"></meta>
+<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d"></meta>
 <meta name="description" content="a sphere"></meta>
 </head>
 <Scene><NavigationInfo type="&quot;ANY&quot; &quot;EXAMINE&quot; &quot;FLY&quot; &quot;LOOKAT&quot;"></NavigationInfo>
 <Viewpoint DEF="Tour" description="Tour Views"></Viewpoint>
 <!--Viewpoint position='0 0 4' description='sphere in road'/--><Background backUrl="&quot;../resources/images/bBK.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png&quot;" bottomUrl="&quot;../resources/images/bBT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png&quot;" frontUrl="&quot;../resources/images/bFR.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png&quot;" leftUrl="&quot;../resources/images/bLF.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png&quot;" rightUrl="&quot;../resources/images/bRT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png&quot;" topUrl="&quot;../resources/images/bTP.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png&quot;"></Background>
-<Transform><Shape><Sphere containerField="geometry"></Sphere>
+<Transform><Shape><Sphere></Sphere>
 <Appearance><Material diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
 <ComposedCubeMapTexture containerField="texture" DEF="texture"><ImageTexture containerField="back" url="&quot;../resources/images/bBK.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png&quot;"></ImageTexture>
 <ImageTexture containerField="bottom" url="&quot;../resources/images/bBT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png&quot;"></ImageTexture>

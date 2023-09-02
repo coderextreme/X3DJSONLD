@@ -143,7 +143,7 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   rotation : new SFRotation([0,1,0,3]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       geometry : new SFNode(
                         new Sphere({})),
@@ -156,11 +156,11 @@ var X3D0 =  new X3D({
                           texture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("ImageCloudlessEarth"),
-                              url : new MFString(["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"])}))}))})])}),
+                              url : new MFString(["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"])}))}))}))}),
 
                 new Transform({
                   translation : new SFVec3f([0,-2,0]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       geometry : new SFNode(
                         new Text({
@@ -173,5 +173,5 @@ var X3D0 =  new X3D({
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              USE : new SFString("MaterialLightBlue")}))}))})])})])})])}))});
+                              USE : new SFString("MaterialLightBlue")}))}))}))})])})])}))});
 console.log(X3D0.toXMLNode());

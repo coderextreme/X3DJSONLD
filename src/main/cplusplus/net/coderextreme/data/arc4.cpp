@@ -31,7 +31,7 @@ head1->addMeta(*meta4);
 
 Cmeta* meta5 = new Cmeta();
 meta5->setName("identifier");
-meta5->setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d");
+meta5->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d");
 head1->addMeta(*meta5);
 
 Cmeta* meta6 = new Cmeta();
@@ -65,7 +65,7 @@ Appearance13->setMaterial(*Material14);
 
 Shape11->setAppearance(*Appearance13);
 
-Transform10->addChildren(*Shape11);
+Transform10->addChild(*Shape11);
 
 CPositionInterpolator* PositionInterpolator15 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator15->setDEF("DECLpoint_G1_PI1");
@@ -162,7 +162,7 @@ Appearance29->setMaterial(*Material30);
 
 Shape27->setAppearance(*Appearance29);
 
-Transform26->addChildren(*Shape27);
+Transform26->addChild(*Shape27);
 
 CPositionInterpolator* PositionInterpolator31 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator31->setDEF("DECLpoint_G2_PI1");
@@ -263,7 +263,7 @@ CCylinder* Cylinder48 = (CCylinder *)(m_pScene.createNode("Cylinder"));
 Cylinder48->setRadius(0.05);
 Shape45->setGeometry(Cylinder48);
 
-Transform44->addChildren(*Shape45);
+Transform44->addChild(*Shape45);
 
 Transform43->addChildren(*Transform44);
 

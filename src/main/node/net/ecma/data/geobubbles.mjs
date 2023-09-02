@@ -58,7 +58,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/geobubbles.x3d")}),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/geobubbles.x3d")}),
 
             new meta({
               name : new SFString("description"),
@@ -75,15 +75,15 @@ var X3D0 =  new X3D({
               description : new SFString("Tour Views")}),
 
             new Background({
-              backUrl : new MFString(["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"]),
-              bottomUrl : new MFString(["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"]),
-              frontUrl : new MFString(["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"]),
-              leftUrl : new MFString(["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"]),
-              rightUrl : new MFString(["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"]),
-              topUrl : new MFString(["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"])}),
+              backUrl : new MFString(["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"]),
+              bottomUrl : new MFString(["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"]),
+              frontUrl : new MFString(["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"]),
+              leftUrl : new MFString(["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"]),
+              rightUrl : new MFString(["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"]),
+              topUrl : new MFString(["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"])}),
 
             new Transform({
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   geometry : new SFNode(
                     new Sphere({})),
@@ -92,7 +92,7 @@ var X3D0 =  new X3D({
                       material : new SFNode(
                         new Material({
                           diffuseColor : new SFColor([0.7,0.7,0.7]),
-                          specularColor : new SFColor([0.5,0.5,0.5])}))}))})])}),
+                          specularColor : new SFColor([0.5,0.5,0.5])}))}))}))}),
 
             new TimeSensor({
               DEF : new SFString("TourTime"),

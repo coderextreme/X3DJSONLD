@@ -12,12 +12,12 @@ head1.component[0] = component2;
 
 let meta3 = browser.currentScene.createNode("meta");
 meta3.name = "title";
-meta3.content = "JohnBoy.x3d";
+meta3.content = "skeleton.x3d";
 head1.meta[1] = meta3;
 
 let meta4 = browser.currentScene.createNode("meta");
 meta4.name = "identifier";
-meta4.content = "http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d";
+meta4.content = "http://www.web3d.org/x3d/content/examples/HumanoidAnimation/skeleton.x3d";
 head1.meta[2] = meta4;
 
 let meta5 = browser.currentScene.createNode("meta");
@@ -55,7 +55,7 @@ browser.currentScene.children[0] = NavigationInfo11;
 
 let Viewpoint12 = browser.currentScene.createNode("Viewpoint");
 Viewpoint12.centerOfRotation = new SFVec3f(new float[0,1,0]);
-Viewpoint12.description = "JohnBoy";
+Viewpoint12.description = "skeleton";
 Viewpoint12.position = new SFVec3f(new float[0,1,3]);
 browser.currentScene.children[1] = Viewpoint12;
 

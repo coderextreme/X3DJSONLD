@@ -6,7 +6,7 @@
         <meta name="title" content="MyBounce.x3d"></meta>
         <meta name="creator" content="John Carlson"></meta>
         <meta name="description" content="3 prismatic spheres"></meta>
-        <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/SFVec3f.x3d"></meta>
+	<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d"></meta>
     </head>
     <Scene>
         <NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"/>

@@ -29,7 +29,7 @@ head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
 meta6.name = "identifier";
-meta6.content = "https://coderextreme.net/X3DJSONLD/bubs.x3d";
+meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d";
 head1.meta[4] = meta6;
 
 head = head1;
@@ -47,12 +47,12 @@ Viewpoint9.description = "Bubbles in action";
 children[1] = Viewpoint9;
 
 Background Background10 = createNode("Background");
-Background10.backUrl = new MFString(new java.lang.String["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"]);
-Background10.bottomUrl = new MFString(new java.lang.String["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"]);
-Background10.frontUrl = new MFString(new java.lang.String["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"]);
-Background10.leftUrl = new MFString(new java.lang.String["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"]);
-Background10.rightUrl = new MFString(new java.lang.String["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"]);
-Background10.topUrl = new MFString(new java.lang.String["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"]);
+Background10.backUrl = new MFString(new java.lang.String["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"]);
+Background10.bottomUrl = new MFString(new java.lang.String["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"]);
+Background10.frontUrl = new MFString(new java.lang.String["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"]);
+Background10.leftUrl = new MFString(new java.lang.String["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"]);
+Background10.rightUrl = new MFString(new java.lang.String["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"]);
+Background10.topUrl = new MFString(new java.lang.String["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"]);
 children[2] = Background10;
 
 Transform Transform11 = createNode("Transform");
@@ -70,9 +70,9 @@ Appearance14.material = Material15;
 
 Shape12.appearance = Appearance14;
 
-Transform11.children = new MFNode();
+Transform11.child = new undefined();
 
-Transform11.children[0] = Shape12;
+Transform11.child[0] = Shape12;
 
 Script Script16 = createNode("Script");
 Script16.DEF = "DECLBubble_bubbleA_bounce";
@@ -198,9 +198,9 @@ Appearance29.material = Material30;
 
 Shape27.appearance = Appearance29;
 
-Transform26.children = new MFNode();
+Transform26.child = new undefined();
 
-Transform26.children[0] = Shape27;
+Transform26.child[0] = Shape27;
 
 Script Script31 = createNode("Script");
 Script31.DEF = "DECLBubble_bubbleB_bounce";
@@ -326,9 +326,9 @@ Appearance44.material = Material45;
 
 Shape42.appearance = Appearance44;
 
-Transform41.children = new MFNode();
+Transform41.child = new undefined();
 
-Transform41.children[0] = Shape42;
+Transform41.child[0] = Shape42;
 
 Script Script46 = createNode("Script");
 Script46.DEF = "DECLBubble_bubbleC_bounce";
@@ -454,9 +454,9 @@ Appearance59.material = Material60;
 
 Shape57.appearance = Appearance59;
 
-Transform56.children = new MFNode();
+Transform56.child = new undefined();
 
-Transform56.children[0] = Shape57;
+Transform56.child[0] = Shape57;
 
 Script Script61 = createNode("Script");
 Script61.DEF = "DECLBubble_bubbleD_bounce";

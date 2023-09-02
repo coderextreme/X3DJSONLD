@@ -14,11 +14,11 @@ var X3D0 =  X3D(
           meta_ : [
             meta(
               name_ : SFString('title'),
-              content_ : SFString('JohnBoy.x3d')),
+              content_ : SFString('skeletonTidy.x3d')),
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d')),
+              content_ : SFString('http://www.web3d.org/x3d/content/examples/HumanoidAnimation/skeletonTidy.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -43,13 +43,13 @@ var X3D0 =  X3D(
         Scene(
           children_ : [
             WorldInfo(
-              title_ : SFString('JohnBoy.x3d')),
+              title_ : SFString('skeletonTidy.x3d')),
 
             NavigationInfo(
               speed_ : 1.5),
 
             Viewpoint(
               centerOfRotation_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
-              description_ : SFString('JohnBoy'),
+              description_ : SFString('skeletonTidy'),
               position_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(3)]))]));
 void main() { exit(0); }

@@ -1,6 +1,10 @@
 ####################################################################################################
 #
-# Now available: developmental python x3d.py package on PyPI for import.
+# Invoking X3D model self-test:
+#
+#   $ python JinLOA494.py
+#
+# Python package x3d.py package is available on PyPI for import.
 #   This approach simplifies Python X3D deployment and use.
 #   https://pypi.org/project/x3d
 #
@@ -9,7 +13,7 @@
 # or
 #       python -m pip install x3d
 #
-# Developer options for loading x3d package:
+# Developer options for loading x3d package in other Python programs:
 #
 #    from x3d import *  # preferred approach, terser source that avoids x3d.* class prefixes
 #
@@ -26,7 +30,7 @@ newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
     component(name='HAnim',level=1),
-    meta(name='title',content='JinLOA4.x3d'),
+    meta(name='title',content='JinLOA494.x3d'),
     meta(name='creator',content='Jin Hoon Lee and Min Joo Lee'),
     meta(name='translator',content='Chul Hee Jung and Myeong Won Lee'),
     meta(name='created',content='31 March 2011'),
@@ -2255,7 +2259,7 @@ newModel=X3D(profile='Immersive',version='4.0',
 # Self-test diagnostics
 ####################################################################################################
 
-print('Self-test diagnostics for JinLOA4.py:')
+print('Self-test diagnostics for JinLOA494.py:')
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel)) # display meta info, hint, warning, error, TODO values in this model
 # print('check newModel.XML() serialization...')
@@ -2284,4 +2288,4 @@ except Exception as err: # usually SyntaxError
     if newModelJSON: # may have failed to generate
         print(prependLineNumbers(newModelJSON,err.lineno))
 
-print("python JinLOA4.py load and self-test diagnostics complete.")
+print("python JinLOA494.py load and self-test diagnostics complete.")

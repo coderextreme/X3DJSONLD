@@ -165,9 +165,9 @@ Box Box32 = createNode("Box");
 Box32.size = new SFVec3f(new float[9,1,9]);
 Shape29.geometry = Box32;
 
-Transform28.children = new MFNode();
+Transform28.child = new undefined();
 
-Transform28.children[0] = Shape29;
+Transform28.child[0] = Shape29;
 
 Transform Transform33 = createNode("Transform");
 Transform33.DEF = "Circle0";
@@ -193,9 +193,9 @@ IndexedLineSet37.coord = Coordinate38;
 
 Shape34.geometry = IndexedLineSet37;
 
-Transform33.children = new MFNode();
+Transform33.child = new undefined();
 
-Transform33.children[0] = Shape34;
+Transform33.child[0] = Shape34;
 
 Transform28.children[1] = Transform33;
 
@@ -211,9 +211,9 @@ IndexedLineSet IndexedLineSet42 = createNode("IndexedLineSet");
 IndexedLineSet42.USE = "Orbit1";
 Shape40.geometry = IndexedLineSet42;
 
-Transform39.children = new MFNode();
+Transform39.child = new undefined();
 
-Transform39.children[0] = Shape40;
+Transform39.child[0] = Shape40;
 
 Transform28.children[2] = Transform39;
 
@@ -229,9 +229,9 @@ IndexedLineSet IndexedLineSet46 = createNode("IndexedLineSet");
 IndexedLineSet46.USE = "Orbit1";
 Shape44.geometry = IndexedLineSet46;
 
-Transform43.children = new MFNode();
+Transform43.child = new undefined();
 
-Transform43.children[0] = Shape44;
+Transform43.child[0] = Shape44;
 
 Transform28.children[3] = Transform43;
 
@@ -247,9 +247,9 @@ IndexedLineSet IndexedLineSet50 = createNode("IndexedLineSet");
 IndexedLineSet50.USE = "Orbit1";
 Shape48.geometry = IndexedLineSet50;
 
-Transform47.children = new MFNode();
+Transform47.child = new undefined();
 
-Transform47.children[0] = Shape48;
+Transform47.child[0] = Shape48;
 
 Transform28.children[4] = Transform47;
 
@@ -265,9 +265,9 @@ IndexedLineSet IndexedLineSet54 = createNode("IndexedLineSet");
 IndexedLineSet54.USE = "Orbit1";
 Shape52.geometry = IndexedLineSet54;
 
-Transform51.children = new MFNode();
+Transform51.child = new undefined();
 
-Transform51.children[0] = Shape52;
+Transform51.child[0] = Shape52;
 
 Transform28.children[5] = Transform51;
 

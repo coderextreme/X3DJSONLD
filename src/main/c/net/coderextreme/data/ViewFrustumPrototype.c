@@ -91,21 +91,21 @@ ProtoDeclare ProtoDeclare17 = browser.createX3DFromString(`<?xml version="1.0" e
 <field name="aspectRatio" accessType="inputOutput" appinfo="assumed ratio height/width, default value 0.75" type="SFFloat" value="0.75"></field>
 <field name="trace" accessType="initializeOnly" appinfo="debug support, default false" type="SFBool" value="false"></field>
 </ProtoInterface>
-<ProtoBody><Switch DEF="VisibilitySwitch" whichChoice="-1"><Transform DEF="PositionTransform" rotation="0 1 0 3.14159"><Transform DEF="OrientationTransform"><Shape><IndexedLineSet containerField="geometry" DEF="FrustumLines" coordIndex="0 1 2 3 0 -1 4 5 6 7 4 -1 0 4 -1 1 5 -1 2 6 -1 3 7 -1"><Coordinate containerField="coord" DEF="FrustumCoordinate" point="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"></Coordinate>
+<ProtoBody><Switch DEF="VisibilitySwitch" whichChoice="-1"><Transform DEF="PositionTransform" rotation="0 1 0 3.14159"><Transform DEF="OrientationTransform"><Shape><IndexedLineSet DEF="FrustumLines" coordIndex="0 1 2 3 0 -1 4 5 6 7 4 -1 0 4 -1 1 5 -1 2 6 -1 3 7 -1"><Coordinate containerField="coord" DEF="FrustumCoordinate" point="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"></Coordinate>
 </IndexedLineSet>
 <Appearance><Material><IS><connect nodeField="emissiveColor" protoField="lineColor"></connect>
 </IS>
 </Material>
 </Appearance>
 </Shape>
-<Shape><Extrusion containerField="geometry" DEF="FrustumExtrusion"></Extrusion>
+<Shape><Extrusion DEF="FrustumExtrusion"></Extrusion>
 <Appearance DEF="FrustumAppearance"><Material><IS><connect nodeField="diffuseColor" protoField="frustumColor"></connect>
 <connect nodeField="transparency" protoField="transparency"></connect>
 </IS>
 </Material>
 </Appearance>
 </Shape>
-<Shape><Sphere containerField="geometry" radius="0.08"></Sphere>
+<Shape><Sphere radius="0.08"></Sphere>
 <Appearance USE="FrustumAppearance"></Appearance>
 </Shape>
 </Transform>
@@ -249,9 +249,9 @@ Appearance34.material = Material35;
 
 Shape31.appearance = Appearance34;
 
-Transform30.children = new MFNode();
+Transform30.child = new undefined();
 
-Transform30.children[0] = Shape31;
+Transform30.child[0] = Shape31;
 
 Shape Shape38 = createNode("Shape");
 Extrusion Extrusion39 = createNode("Extrusion");
@@ -280,7 +280,7 @@ Appearance40.material = Material41;
 
 Shape38.appearance = Appearance40;
 
-Transform30.children[1] = Shape38;
+Transform30.child[1] = Shape38;
 
 Shape Shape45 = createNode("Shape");
 Sphere Sphere46 = createNode("Sphere");
@@ -291,7 +291,7 @@ Appearance Appearance47 = createNode("Appearance");
 Appearance47.USE = "FrustumAppearance";
 Shape45.appearance = Appearance47;
 
-Transform30.children[2] = Shape45;
+Transform30.child[2] = Shape45;
 
 Transform29.children = new MFNode();
 

@@ -154,9 +154,9 @@ let Box30 = browser.currentScene.createNode("Box");
 Box30.size = new SFVec3f(new float[2000,1,2000]);
 Shape27.geometry = Box30;
 
-Transform26.children = new MFNode();
+Transform26.child = new undefined();
 
-Transform26.children[0] = Shape27;
+Transform26.child[0] = Shape27;
 
 browser.currentScene.children[11] = Transform26;
 
@@ -176,9 +176,9 @@ let Sphere35 = browser.currentScene.createNode("Sphere");
 Sphere35.radius = 100;
 Shape32.geometry = Sphere35;
 
-Transform31.children = new MFNode();
+Transform31.child = new undefined();
 
-Transform31.children[0] = Shape32;
+Transform31.child[0] = Shape32;
 
 let Billboard36 = browser.currentScene.createNode("Billboard");
 let Transform37 = browser.currentScene.createNode("Transform");
@@ -207,9 +207,9 @@ Text41.fontStyle = FontStyle42;
 
 Shape38.geometry = Text41;
 
-Transform37.children = new MFNode();
+Transform37.child = new undefined();
 
-Transform37.children[0] = Shape38;
+Transform37.child[0] = Shape38;
 
 Billboard36.children = new MFNode();
 
@@ -235,9 +235,9 @@ let Sphere47 = browser.currentScene.createNode("Sphere");
 Sphere47.radius = 100;
 Shape44.geometry = Sphere47;
 
-Transform43.children = new MFNode();
+Transform43.child = new undefined();
 
-Transform43.children[0] = Shape44;
+Transform43.child[0] = Shape44;
 
 let Billboard48 = browser.currentScene.createNode("Billboard");
 let Transform49 = browser.currentScene.createNode("Transform");
@@ -264,9 +264,9 @@ Text53.fontStyle = FontStyle54;
 
 Shape50.geometry = Text53;
 
-Transform49.children = new MFNode();
+Transform49.child = new undefined();
 
-Transform49.children[0] = Shape50;
+Transform49.child[0] = Shape50;
 
 Billboard48.children = new MFNode();
 

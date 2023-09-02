@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Interchange", version="3.3", 
-head=head(children=[meta(name="title", content="Teapot.x3d"),
+head=head(
+children=[
+meta(name="title", content="Teapot.x3d"),
 meta(name="description", content="A watertight (solid) Utah Teapot Model converted from obj format."),
 meta(name="created", content="20 March 2016"),
 meta(name="modified", content="20 October 2019"),
@@ -20,7 +23,7 @@ meta(name="identifier", content="https://x3dgraphics.com/examples/X3dForAdvanced
 meta(name="generator", content="Meshlab X3D Exported, http://meshlab.sourceforge.net"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -43,5 +46,6 @@ IndexedLineSet(colorIndex=[0,1,2], colorPerVertex=False, coordIndex=[0,1,-1,0,2,
 coord=
 Coordinate(point=[(0,0,0),(1.0,0,0),(0,1.0,0),(0,0,1.0)]), 
 color=(
-Color(color=[(1,0,0),(0,0.6,0),(0,0,1)]))))]))
-.XML())
+Color(color=[(1,0,0),(0,0.6,0),(0,0,1)]))))])))
+output = model.JSON()
+json.loads(output)

@@ -76,5 +76,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addChild((new autoclass.SpatialSound()).setDEF("Audio2").setDistanceModel("INVERSE")
             .addChild((new autoclass.Gain()).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
               .addChild((new autoclass.AudioClip()).setDescription("Saxophone").setLoop(true).setUrl(java.newArray("java.lang.String", ["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"])))))))      ;
-    X3D0.toFileX3D("../data/SpatialAudioCameraAnimation.new.x3d");
+    X3D0.toFileX3D("../data/SpatialAudioCameraAnimation.new.node.x3d");
     process.exit(0);

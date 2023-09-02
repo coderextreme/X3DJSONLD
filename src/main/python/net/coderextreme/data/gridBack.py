@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Interchange", version="3.0", 
-head=head(children=[meta(name="title", content="gridBack.x3d"),
+head=head(
+children=[
+meta(name="title", content="gridBack.x3d"),
 meta(name="description", content="Checkerboard grid background for X3D/VRML materials selection."),
 meta(name="creator", content="David Roussel"),
 meta(name="translator", content="James Harney, Don Brutzman NPS"),
@@ -15,7 +18,7 @@ meta(name="subject", content="Universal Media Material Library"),
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json"),
 meta(name="generator", content="Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -30,5 +33,6 @@ IndexedFaceSet(colorIndex=[0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0
 coord=
 Coordinate(point=[(-5.25,5.25,0.0),(-3.75,5.25,0.0),(-2.25,5.25,0.0),(-0.75,5.25,0.0),(0.75,5.25,0.0),(2.25,5.25,0.0),(3.75,5.25,0.0),(5.25,5.25,0.0),(-5.25,3.75,0.0),(-3.75,3.75,0.0),(-2.25,3.75,0.0),(-0.75,3.75,0.0),(0.75,3.75,0.0),(2.25,3.75,0.0),(3.75,3.75,0.0),(5.25,3.75,0.0),(-5.25,2.25,0.0),(-3.75,2.25,0.0),(-2.25,2.25,0.0),(-0.75,2.25,0.0),(0.75,2.25,0.0),(2.25,2.25,0.0),(3.75,2.25,0.0),(5.25,2.25,0.0),(-5.25,0.75,0.0),(-3.75,0.75,0.0),(-2.25,0.75,0.0),(-0.75,0.75,0.0),(0.75,0.75,0.0),(2.25,0.75,0.0),(3.75,0.75,0.0),(5.25,0.75,0.0),(-5.25,-0.75,0.0),(-3.75,-0.75,0.0),(-2.25,-0.75,0.0),(-0.75,-0.75,0.0),(0.75,-0.75,0.0),(2.25,-0.75,0.0),(3.75,-0.75,0.0),(5.25,-0.75,0.0),(-5.25,-2.25,0.0),(-3.75,-2.25,0.0),(-2.25,-2.25,0.0),(-0.75,-2.25,0.0),(0.75,-2.25,0.0),(2.25,-2.25,0.0),(3.75,-2.25,0.0),(5.25,-2.25,0.0),(-5.25,-3.75,0.0),(-3.75,-3.75,0.0),(-2.25,-3.75,0.0),(-0.75,-3.75,0.0),(0.75,-3.75,0.0),(2.25,-3.75,0.0),(3.75,-3.75,0.0),(5.25,-3.75,0.0),(-5.25,-5.25,0.0),(-3.75,-5.25,0.0),(-2.25,-5.25,0.0),(-0.75,-5.25,0.0),(0.75,-5.25,0.0),(2.25,-5.25,0.0),(3.75,-5.25,0.0),(5.25,-5.25,0.0)]), 
 color=(
-Color(color=[(0.5,0.5,0.5),(0.75,0.75,0.75)]))))]))
-.XML())
+Color(color=[(0.5,0.5,0.5),(0.75,0.75,0.75)]))))])))
+output = model.JSON()
+json.loads(output)

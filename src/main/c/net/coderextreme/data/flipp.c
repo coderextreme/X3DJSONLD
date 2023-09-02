@@ -103,9 +103,9 @@ IndexedFaceSet20.coord = Coordinate21;
 
 Shape17.geometry = IndexedFaceSet20;
 
-Transform16.children = new MFNode();
+Transform16.child = new undefined();
 
-Transform16.children[0] = Shape17;
+Transform16.child[0] = Shape17;
 
 children[6] = Transform16;
 

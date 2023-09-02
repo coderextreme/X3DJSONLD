@@ -85,7 +85,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/geo.x3d")}),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d")}),
 
             new meta({
               name : new SFString("description"),
@@ -110,7 +110,7 @@ var X3D0 =  new X3D({
               topUrl : new MFString(["../resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"])}),
 
             new Transform({
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   geometry : new SFNode(
                     new Sphere({})),
@@ -227,5 +227,5 @@ var X3D0 =  new X3D({
                           parts : new SFNode(
                             new ShaderPart({
                               type : "FRAGMENT",
-                              url : new MFString(["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"])}))}))}))})])})])}))});
+                              url : new MFString(["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"])}))}))}))}))})])}))});
 console.log(X3D0.toXMLNode());

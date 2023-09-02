@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[meta(name="title", content="ArchPrototype.x3d"),
+head=head(
+children=[
+meta(name="title", content="ArchPrototype.x3d"),
 meta(name="description", content="Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js."),
 meta(name="description", content="Possibility to create shapes related to arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information."),
 meta(name="creator", content="Michele Foti, Don Brutzman"),
@@ -15,7 +18,7 @@ meta(name="reference", content="https://en.wikipedia.org/wiki/Arch"),
 meta(name="identifier", content="http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototype.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -38,9 +41,7 @@ field(name="lintel", accessType="initializeOnly", appinfo="lintel: no arc is ren
 ]), 
 ProtoBody=ProtoBody(children=[
 Comment(value=''' First node determines node type of this prototype '''),
-
 Comment(value=''' IndexedFaceset creates arch '''),
-
 Transform(DEF="ArchTransform", children=[
 Shape(DEF="Arch", 
 geometry=
@@ -55,9 +56,7 @@ IS=IS(connect=[connect(nodeField="emissiveColor", protoField="emissiveColor"),
 connect(nodeField="diffuseColor", protoField="diffuseColor")
 ]))))]),
 Comment(value=''' Subsequent nodes do not render, but still must be a valid X3D subgraph '''),
-
 Comment(value=''' This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs '''),
-
 Script(DEF="ArchPrototypeScript", url=["../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"], field=[field(name="clearSpanWidth", accessType="initializeOnly", appinfo="user or default input for clearSpanWidth parameter", type="SFFloat"),
 field(name="riseHeight", accessType="initializeOnly", appinfo="user or default input for riseHeight parameter", type="SFFloat"),
 field(name="depth", accessType="initializeOnly", appinfo="user or default input for depth parameter", type="SFFloat"),
@@ -100,6 +99,6 @@ fieldValue(name="pierWidth", value=1),
 fieldValue(name="pierHeight", value=2)
 ]),
 Comment(value=''' Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare) '''),
-
-Inline(DEF="CoordinateAxes", url=["../data/CoordinateAxes.x3d"]),]))
-.XML())
+Inline(DEF="CoordinateAxes", url=["../data/CoordinateAxes.x3d"]),])))
+output = model.JSON()
+json.loads(output)

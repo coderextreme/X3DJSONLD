@@ -122,5 +122,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .setAppearance((new autoclass.Appearance())
                   .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)])).setEmissiveColor(java.newArray("float", [java.newFloat(0), java.newFloat(0.300000011920929), java.newFloat(1)]))))
                 .setGeometry((new autoclass.Sphere()).setRadius(java.newFloat(5.10000002384186))))))))      ;
-    X3D0.toFileX3D("../data/t3.new.x3d");
+    X3D0.toFileX3D("../data/t3.new.node.x3d");
     process.exit(0);

@@ -317,5 +317,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addChild((new autoclass.ROUTE()).setFromField("value_changed").setFromNode("Keyframe_r_knee").setToField("rotation").setToNode("hanim_r_knee"))
           .addChild((new autoclass.ROUTE()).setFromField("value_changed").setFromNode("Keyframe_l_talocrural").setToField("rotation").setToNode("hanim_r_talocrural"))
           .addChild((new autoclass.ROUTE()).setFromField("value_changed").setFromNode("Keyframe_r_metatarsophalangeal_2").setToField("rotation").setToNode("hanim_r_metatarsophalangeal_2"))))      ;
-    X3D0.toFileX3D("../data/KoreanCharacterMotionAnnexC01Jin.new.x3d");
+    X3D0.toFileX3D("../data/KoreanCharacterMotionAnnexC01Jin.new.node.x3d");
     process.exit(0);

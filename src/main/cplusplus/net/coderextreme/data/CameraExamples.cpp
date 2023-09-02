@@ -1293,7 +1293,7 @@ Appearance233->setMaterial(*Material234);
 
 Shape230->setAppearance(*Appearance233);
 
-Transform224->addChildren(*Shape230);
+Transform224->addChild(*Shape230);
 
 //Simplify intersection test for user selecting text
 CShape* Shape235 = (CShape *)(m_pScene.createNode("Shape"));
@@ -1309,7 +1309,7 @@ CBox* Box238 = (CBox *)(m_pScene.createNode("Box"));
 Box238->setSize(new float[3]{6,2,0.0001});
 Shape235->setGeometry(Box238);
 
-Transform224->addChildren(*Shape235);
+Transform224->addChild(*Shape235);
 
 Group220->addChildren(*Transform224);
 
@@ -1334,7 +1334,7 @@ Appearance243->setTexture(*ImageTexture245);
 
 Shape241->setAppearance(*Appearance243);
 
-Transform240->addChildren(*Shape241);
+Transform240->addChild(*Shape241);
 
 CTransform* Transform246 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform246->setTranslation(new float[3]{0,2,0});
@@ -1353,7 +1353,7 @@ Appearance250->setMaterial(*Material251);
 
 Shape247->setAppearance(*Appearance250);
 
-Transform246->addChildren(*Shape247);
+Transform246->addChild(*Shape247);
 
 Transform240->addChildren(*Transform246);
 
@@ -1376,7 +1376,7 @@ Appearance255->setTexture(*ImageTexture257);
 
 Shape253->setAppearance(*Appearance255);
 
-Transform252->addChildren(*Shape253);
+Transform252->addChild(*Shape253);
 
 CTransform* Transform258 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform258->setTranslation(new float[3]{0,2,0});
@@ -1395,7 +1395,7 @@ Appearance262->setMaterial(*Material263);
 
 Shape259->setAppearance(*Appearance262);
 
-Transform258->addChildren(*Shape259);
+Transform258->addChild(*Shape259);
 
 Transform252->addChildren(*Transform258);
 
@@ -1418,7 +1418,7 @@ Appearance267->setTexture(*ImageTexture269);
 
 Shape265->setAppearance(*Appearance267);
 
-Transform264->addChildren(*Shape265);
+Transform264->addChild(*Shape265);
 
 CTransform* Transform270 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform270->setTranslation(new float[3]{0,2,0});
@@ -1437,7 +1437,7 @@ Appearance274->setMaterial(*Material275);
 
 Shape271->setAppearance(*Appearance274);
 
-Transform270->addChildren(*Shape271);
+Transform270->addChild(*Shape271);
 
 Transform264->addChildren(*Transform270);
 
@@ -1460,7 +1460,7 @@ Appearance279->setTexture(*ImageTexture281);
 
 Shape277->setAppearance(*Appearance279);
 
-Transform276->addChildren(*Shape277);
+Transform276->addChild(*Shape277);
 
 CTransform* Transform282 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform282->setTranslation(new float[3]{0,2,0});
@@ -1479,7 +1479,7 @@ Appearance286->setMaterial(*Material287);
 
 Shape283->setAppearance(*Appearance286);
 
-Transform282->addChildren(*Shape283);
+Transform282->addChild(*Shape283);
 
 Transform276->addChildren(*Transform282);
 
@@ -1502,7 +1502,7 @@ Appearance291->setTexture(*ImageTexture293);
 
 Shape289->setAppearance(*Appearance291);
 
-Transform288->addChildren(*Shape289);
+Transform288->addChild(*Shape289);
 
 CTransform* Transform294 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform294->setTranslation(new float[3]{0,2,0});
@@ -1521,7 +1521,7 @@ Appearance298->setMaterial(*Material299);
 
 Shape295->setAppearance(*Appearance298);
 
-Transform294->addChildren(*Shape295);
+Transform294->addChild(*Shape295);
 
 Transform288->addChildren(*Transform294);
 
@@ -1758,11 +1758,11 @@ Appearance344->setMaterial(*Material345);
 
 Shape341->setAppearance(*Appearance344);
 
-Transform335->addChildren(*Shape341);
+Transform335->addChild(*Shape341);
 
 CShape* Shape346 = (CShape *)(m_pScene.createNode("Shape"));
 Shape346->setUSE("TransparentBox");
-Transform335->addChildren(*Shape346);
+Transform335->addChild(*Shape346);
 
 Group331->addChildren(*Transform335);
 
@@ -1835,7 +1835,7 @@ Appearance359->setMaterial(*Material360);
 
 Shape356->setAppearance(*Appearance359);
 
-Transform353->addChildren(*Shape356);
+Transform353->addChild(*Shape356);
 
 Transform348->addChildren(*Transform353);
 
@@ -2001,7 +2001,7 @@ IndexedFaceSet387->setColor(*Color389);
 
 Shape384->setGeometry(IndexedFaceSet387);
 
-Transform383->addChildren(*Shape384);
+Transform383->addChild(*Shape384);
 
 group->addChildren(*Transform383);
 
@@ -2078,7 +2078,7 @@ Appearance402->setTexture(*ImageTexture404);
 
 Shape400->setAppearance(*Appearance402);
 
-Transform392->addChildren(*Shape400);
+Transform392->addChild(*Shape400);
 
 group->addChildren(*Transform392);
 
@@ -2189,7 +2189,7 @@ Appearance423->setMaterial(*Material424);
 
 Shape420->setAppearance(*Appearance423);
 
-Transform419->addChildren(*Shape420);
+Transform419->addChild(*Shape420);
 
 Anchor418->addChildren(*Transform419);
 

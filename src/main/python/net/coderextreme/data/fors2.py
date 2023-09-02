@@ -2,16 +2,19 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[meta(name="creator", content="John W Carlson"),
+head=head(
+children=[
+meta(name="creator", content="John W Carlson"),
 meta(name="created", content="December 13 2015"),
 meta(name="modified", content="April 18 2017"),
 meta(name="title", content="fors2.x3d"),
-meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/fors2.x3d"),
+meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/fors2.x3d"),
 meta(name="description", content="beginnings of a force directed graph in 3D"),
 meta(name="generator", content="Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -70,5 +73,6 @@ ProtoInstance(name="cylinder", DEF="linkA", fieldValue=[fieldValue(name="positio
 fieldValue(name="positionB", value=[50,50,50])
 ])]),
 ROUTE(fromNode="nodeA", fromField="position", toNode="linkA", toField="positionA"),
-ROUTE(fromNode="nodeB", fromField="position", toNode="linkA", toField="positionB")]))
-.XML())
+ROUTE(fromNode="nodeB", fromField="position", toNode="linkA", toField="positionB")])))
+output = model.JSON()
+json.loads(output)

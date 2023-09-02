@@ -21,7 +21,7 @@
       }]]></Script>
 <Shape><Appearance><Material diffuseColor="1 0 0"></Material>
 </Appearance>
-<Sphere containerField="geometry"></Sphere>
+<Sphere></Sphere>
 </Shape>
 <Sound maxBack="1000" maxFront="1000" minBack="1000" minFront="1000"><AudioClip containerField="source" DEF="Click" stopTime="1" description="clicking sound" url="&quot;../resources/chandubabamusic1.wav&quot;"></AudioClip>
 </Sound>

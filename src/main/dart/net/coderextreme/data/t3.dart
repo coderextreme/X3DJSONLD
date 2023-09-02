@@ -80,7 +80,7 @@ var X3D0 =  X3D(
                   description_ : SFString('High Peak Community Arts'),
                   children_ : [
                     Transform(
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
@@ -90,14 +90,14 @@ var X3D0 =  X3D(
                                   emissiveColor_ : SFColor([SFDouble(0), SFDouble(0.300000011920929), SFDouble(1)]))),
                           geometry_ : 
                             Sphere(
-                              radius_ : 5.10000002384186))])]),
+                              radius_ : 5.10000002384186)))]),
 
                 Anchor(
                   url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('People Express'),
                   children_ : [
                     Transform(
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
@@ -107,14 +107,14 @@ var X3D0 =  X3D(
                                   emissiveColor_ : SFColor([SFDouble(0.600000023841858), SFDouble(0), SFDouble(0.600000023841858)]))),
                           geometry_ : 
                             Sphere(
-                              radius_ : 5.10000002384186))])]),
+                              radius_ : 5.10000002384186)))]),
 
                 Anchor(
                   url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('QArts/Studios'),
                   children_ : [
                     Transform(
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
@@ -124,14 +124,14 @@ var X3D0 =  X3D(
                                   emissiveColor_ : SFColor([SFDouble(0.600000023841858), SFDouble(0), SFDouble(0.600000023841858)]))),
                           geometry_ : 
                             Sphere(
-                              radius_ : 5.10000002384186))])]),
+                              radius_ : 5.10000002384186)))]),
 
                 Anchor(
                   url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('First Movement'),
                   children_ : [
                     Transform(
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
@@ -141,14 +141,14 @@ var X3D0 =  X3D(
                                   emissiveColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0.200000002980232)]))),
                           geometry_ : 
                             Sphere(
-                              radius_ : 5.10000002384186))])]),
+                              radius_ : 5.10000002384186)))]),
 
                 Anchor(
                   url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('City Arts'),
                   children_ : [
                     Transform(
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
@@ -158,14 +158,14 @@ var X3D0 =  X3D(
                                   emissiveColor_ : SFColor([SFDouble(0.600000023841858), SFDouble(0), SFDouble(0.600000023841858)]))),
                           geometry_ : 
                             Sphere(
-                              radius_ : 5.10000002384186))])]),
+                              radius_ : 5.10000002384186)))]),
 
                 Anchor(
                   url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('Indigo Dance Group (Salamanda Tandem)'),
                   children_ : [
                     Transform(
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
@@ -175,14 +175,14 @@ var X3D0 =  X3D(
                                   emissiveColor_ : SFColor([SFDouble(0), SFDouble(0.300000011920929), SFDouble(1)]))),
                           geometry_ : 
                             Sphere(
-                              radius_ : 5.10000002384186))])]),
+                              radius_ : 5.10000002384186)))]),
 
                 Anchor(
                   url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('Watering Seeds'),
                   children_ : [
                     Transform(
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
@@ -192,14 +192,14 @@ var X3D0 =  X3D(
                                   emissiveColor_ : SFColor([SFDouble(0), SFDouble(0.300000011920929), SFDouble(1)]))),
                           geometry_ : 
                             Sphere(
-                              radius_ : 5.10000002384186))])]),
+                              radius_ : 5.10000002384186)))]),
 
                 Anchor(
                   url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('Fased In The Arts'),
                   children_ : [
                     Transform(
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
@@ -209,14 +209,14 @@ var X3D0 =  X3D(
                                   emissiveColor_ : SFColor([SFDouble(0), SFDouble(0.300000011920929), SFDouble(1)]))),
                           geometry_ : 
                             Sphere(
-                              radius_ : 5.10000002384186))])]),
+                              radius_ : 5.10000002384186)))]),
 
                 Anchor(
                   url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('27a Access Artspace'),
                   children_ : [
                     Transform(
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
@@ -226,14 +226,14 @@ var X3D0 =  X3D(
                                   emissiveColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0.200000002980232)]))),
                           geometry_ : 
                             Sphere(
-                              radius_ : 5.10000002384186))])]),
+                              radius_ : 5.10000002384186)))]),
 
                 Anchor(
                   url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('Bamboozle Theatre Company'),
                   children_ : [
                     Transform(
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
@@ -243,14 +243,14 @@ var X3D0 =  X3D(
                                   emissiveColor_ : SFColor([SFDouble(0), SFDouble(0.300000011920929), SFDouble(1)]))),
                           geometry_ : 
                             Sphere(
-                              radius_ : 5.10000002384186))])]),
+                              radius_ : 5.10000002384186)))]),
 
                 Anchor(
                   url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('Mantle Community Arts'),
                   children_ : [
                     Transform(
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
@@ -260,14 +260,14 @@ var X3D0 =  X3D(
                                   emissiveColor_ : SFColor([SFDouble(0), SFDouble(0.300000011920929), SFDouble(1)]))),
                           geometry_ : 
                             Sphere(
-                              radius_ : 5.10000002384186))])]),
+                              radius_ : 5.10000002384186)))]),
 
                 Anchor(
                   url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('Artlink East'),
                   children_ : [
                     Transform(
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
@@ -277,14 +277,14 @@ var X3D0 =  X3D(
                                   emissiveColor_ : SFColor([SFDouble(0), SFDouble(0.300000011920929), SFDouble(1)]))),
                           geometry_ : 
                             Sphere(
-                              radius_ : 5.10000002384186))])]),
+                              radius_ : 5.10000002384186)))]),
 
                 Anchor(
                   url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('Creations'),
                   children_ : [
                     Transform(
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
@@ -294,14 +294,14 @@ var X3D0 =  X3D(
                                   emissiveColor_ : SFColor([SFDouble(0), SFDouble(0.300000011920929), SFDouble(1)]))),
                           geometry_ : 
                             Sphere(
-                              radius_ : 5.10000002384186))])]),
+                              radius_ : 5.10000002384186)))]),
 
                 Anchor(
                   url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('New Perspectives'),
                   children_ : [
                     Transform(
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
@@ -311,14 +311,14 @@ var X3D0 =  X3D(
                                   emissiveColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0.200000002980232)]))),
                           geometry_ : 
                             Sphere(
-                              radius_ : 5.10000002384186))])]),
+                              radius_ : 5.10000002384186)))]),
 
                 Anchor(
                   url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('UKan2'),
                   children_ : [
                     Transform(
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
@@ -328,5 +328,5 @@ var X3D0 =  X3D(
                                   emissiveColor_ : SFColor([SFDouble(0), SFDouble(0.300000011920929), SFDouble(1)]))),
                           geometry_ : 
                             Sphere(
-                              radius_ : 5.10000002384186))])])])]));
+                              radius_ : 5.10000002384186)))])])]));
 void main() { exit(0); }

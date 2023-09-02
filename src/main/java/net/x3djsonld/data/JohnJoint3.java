@@ -14,21 +14,21 @@ import org.web3d.x3d.jsail.Shape.*;
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
  * <p> An attempt at a standard LOA-4 skeleton. </p>
- <p> Related links: JohnBoy.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: JohnJoint3.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.JohnBoy&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.JohnJoint3&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d">JohnBoy.x3d</a> </td>
+			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint3.x3d">JohnJoint3.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d</a> </td>
+			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint3.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint3.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -64,16 +64,18 @@ import org.web3d.x3d.jsail.Shape.*;
 		<a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
 		It has been produced using the 
 		<a href="https://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
-		stylesheet to create Java source code from an <code>.x3d</code> model.
+		stylesheet
+	       (<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">version&amp;nbsp;control</a>)
+                is used to create Java source code from an original <code>.x3d</code> model.
 	</p>
 
 	* @author John Carlson
  */
 
-public class JohnBoy
+public class JohnJoint3
 {
 	/** Default constructor to create this object. */
-	public JohnBoy ()
+	public JohnJoint3 ()
 	{
 	  initialize();
 	}
@@ -85,8 +87,8 @@ public class JohnBoy
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
     .addComponent(new component().setName("HAnim").setLevel(1))
-    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("JohnBoy.x3d"))
-    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"))
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("JohnJoint3.x3d"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint3.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("An attempt at a standard LOA-4 skeleton"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("h2.pl"))
     .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("14 Jan 2023"))
@@ -123,18 +125,13 @@ public class JohnBoy
             .setGeometry(new LineSet().setVertexCount(new int[] {2})
               .setColor(new ColorRGBA("HAnimSegmentLineColorRGBA").setColor(new MFColorRGBA(new double[] {1.0,1.0,0.0,1.0,1.0,1.0,0.0,0.1})))
               .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.05,0.0,0.0,0.05,0.0,0.0}))))))
-        .addComments(new String[] {"",
-"  <Transform translation='0 2.1 0' scale='1 1 1'>",
-"   <Shape DEF='HAnimSiteShape'>",
-"    <IndexedFaceSet DEF='DiamondIFS' creaseAngle='0.5' solid='false' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1'>",
-"     <ColorRGBA DEF='HAnimSiteColorRGBA' color='1 1 0 1 1 1 0 0.1'/>",
-"     <Coordinate point='0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0'/>",
-"    </IndexedFaceSet>",
-"     <Appearance>",
-"      <Material diffuseColor='1 1 0' transparency='0.3'/>",
-"     </Appearance>",
-"   </Shape>",
-"  </Transform>"})))
+        .addChild(new Transform().setTranslation(0.0,2.1,0.0)
+          .addChild(new Shape("HAnimSiteShape")
+            .setGeometry(new IndexedFaceSet("DiamondIFS").setDEF("DiamondIFS").setCreaseAngle(0.5).setSolid(false).setCoordIndex(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1})
+              .setColor(new ColorRGBA("HAnimSiteColorRGBA").setColor(new MFColorRGBA(new double[] {1.0,1.0,0.0,1.0,1.0,1.0,0.0,0.1})))
+              .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0,0.01,0.0,-0.01,0.0,0.0,0.0,0.0,0.01,0.01,0.0,0.0,0.0,0.0,-0.01,0.0,-0.01,0.0}))))
+            .setAppearance(new Appearance()
+              .setMaterial(new Material().setDiffuseColor(1.0,1.0,0.0).setTransparency(0.3)))))))
     .addChild(new NavigationInfo().setSpeed(1.5))
     .addChild(new Viewpoint().setDescription("default"))
     .addChild(new HAnimHumanoid("hanim_HAnim").setName("HAnim").setInfo(new String[] {"humanoidVersion=2.0"}).setVersion("2.0")
@@ -1645,7 +1642,7 @@ public class JohnBoy
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return JohnBoy model
+	 * @return JohnJoint3 model
 	 */
 	public X3D getX3dModel()
 	{	  
@@ -1663,7 +1660,7 @@ public class JohnBoy
      */
     public static void main(String args[])
     {
-        X3D thisExampleX3dModel = new JohnBoy().getX3dModel();
+        X3D thisExampleX3dModel = new JohnJoint3().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
         // next handle command line arguments
@@ -1696,17 +1693,17 @@ public class JohnBoy
                 }
         }
         if      (argumentsLoadNewModel)
-                System.out.println("WARNING: \"net.x3djsonld.data.JohnBoy\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+                System.out.println("WARNING: \"net.x3djsonld.data.JohnJoint3\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
         else if (hasArguments) // if no arguments provided, this method produces usage warning
                 thisExampleX3dModel.handleArguments(args);
 	
         if (validate)
         {
-                System.out.print("Java program \"net.x3djsonld.data.JohnBoy\" self-validation test results: ");
-                String validationResults = thisExampleX3dModel.validationReport();
-                if (validationResults.startsWith("\n") || (validationResults.length() > 10))
+                System.out.print("Java program \"net.x3djsonld.data.JohnJoint3\" self-validation test results: ");
+		String validationResults = thisExampleX3dModel.validationReport();
+                if (validationResults.length() > 10)
                     System.out.println();
-                System.out.println(validationResults.trim());
+                System.out.println(validationResults);
         }
     }
 }

@@ -14,12 +14,12 @@ head1.component[0] = component2;
 
 meta meta3 = createNode("meta");
 meta3.name = "title";
-meta3.content = "JohnBoy.x3d";
+meta3.content = "Humanoid2.x3d";
 head1.meta[1] = meta3;
 
 meta meta4 = createNode("meta");
 meta4.name = "identifier";
-meta4.content = "http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d";
+meta4.content = "http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid2.x3d";
 head1.meta[2] = meta4;
 
 meta meta5 = createNode("meta");
@@ -73,9 +73,9 @@ IndexedLineSet14.color = Color16;
 
 Shape13.geometry = IndexedLineSet14;
 
-Transform12.children = new MFNode();
+Transform12.child = new undefined();
 
-Transform12.children[0] = Shape13;
+Transform12.child[0] = Shape13;
 
 children = new MFNode();
 
@@ -101,9 +101,9 @@ Appearance22.material = Material23;
 
 Shape20.appearance = Appearance22;
 
-Transform19.children = new MFNode();
+Transform19.child = new undefined();
 
-Transform19.children[0] = Shape20;
+Transform19.child[0] = Shape20;
 
 Transform18.children = new MFNode();
 
@@ -126,9 +126,9 @@ Appearance27.material = Material28;
 
 Shape25.appearance = Appearance27;
 
-Transform24.children = new MFNode();
+Transform24.child = new undefined();
 
-Transform24.children[0] = Shape25;
+Transform24.child[0] = Shape25;
 
 Transform18.children[1] = Transform24;
 
@@ -149,9 +149,9 @@ LineSet31.coord = Coordinate33;
 
 Shape30.geometry = LineSet31;
 
-Transform29.children = new MFNode();
+Transform29.child = new undefined();
 
-Transform29.children[0] = Shape30;
+Transform29.child[0] = Shape30;
 
 Transform18.children[2] = Transform29;
 
@@ -183,9 +183,9 @@ Appearance39.material = Material40;
 
 Shape35.appearance = Appearance39;
 
-Transform34.children = new MFNode();
+Transform34.child = new undefined();
 
-Transform34.children[0] = Shape35;
+Transform34.child[0] = Shape35;
 
 Transform18.children[3] = Transform34;
 
@@ -267,9 +267,9 @@ Transform Transform55 = createNode("Transform");
 //Empty Transform
 Shape Shape56 = createNode("Shape");
 Shape56.USE = "HAnimJointShape";
-Transform55.children = new MFNode();
+Transform55.child = new undefined();
 
-Transform55.children[0] = Shape56;
+Transform55.child[0] = Shape56;
 
 Transform54.children = new MFNode();
 
@@ -536,9 +536,9 @@ Transform Transform107 = createNode("Transform");
 //Empty Transform
 Shape Shape108 = createNode("Shape");
 Shape108.USE = "HAnimJointShape";
-Transform107.children = new MFNode();
+Transform107.child = new undefined();
 
-Transform107.children[0] = Shape108;
+Transform107.child[0] = Shape108;
 
 Transform106.children = new MFNode();
 
@@ -725,9 +725,9 @@ Transform Transform144 = createNode("Transform");
 //Empty Transform
 Shape Shape145 = createNode("Shape");
 Shape145.USE = "HAnimJointShape";
-Transform144.children = new MFNode();
+Transform144.child = new undefined();
 
-Transform144.children[0] = Shape145;
+Transform144.child[0] = Shape145;
 
 Transform143.children = new MFNode();
 
@@ -819,9 +819,9 @@ Transform Transform162 = createNode("Transform");
 //Empty Transform
 Shape Shape163 = createNode("Shape");
 Shape163.USE = "HAnimJointShape";
-Transform162.children = new MFNode();
+Transform162.child = new undefined();
 
-Transform162.children[0] = Shape163;
+Transform162.child[0] = Shape163;
 
 Transform161.children = new MFNode();
 
@@ -901,9 +901,9 @@ Transform Transform177 = createNode("Transform");
 //Empty Transform left foot
 Shape Shape178 = createNode("Shape");
 Shape178.USE = "HAnimJointShape";
-Transform177.children = new MFNode();
+Transform177.child = new undefined();
 
-Transform177.children[0] = Shape178;
+Transform177.child[0] = Shape178;
 
 Transform176.children = new MFNode();
 
@@ -948,9 +948,9 @@ Transform Transform186 = createNode("Transform");
 //Empty Transform
 Shape Shape187 = createNode("Shape");
 Shape187.USE = "HAnimJointShape";
-Transform186.children = new MFNode();
+Transform186.child = new undefined();
 
-Transform186.children[0] = Shape187;
+Transform186.child[0] = Shape187;
 
 Transform185.children = new MFNode();
 
@@ -995,9 +995,9 @@ Transform Transform195 = createNode("Transform");
 //Empty Transform
 Shape Shape196 = createNode("Shape");
 Shape196.USE = "HAnimJointShape";
-Transform195.children = new MFNode();
+Transform195.child = new undefined();
 
-Transform195.children[0] = Shape196;
+Transform195.child[0] = Shape196;
 
 Transform194.children = new MFNode();
 
@@ -1076,9 +1076,9 @@ Transform Transform208 = createNode("Transform");
 //Empty Transform
 Shape Shape209 = createNode("Shape");
 Shape209.USE = "HAnimJointShape";
-Transform208.children = new MFNode();
+Transform208.child = new undefined();
 
-Transform208.children[0] = Shape209;
+Transform208.child[0] = Shape209;
 
 Transform207.children = new MFNode();
 
@@ -1170,9 +1170,9 @@ Transform Transform226 = createNode("Transform");
 //Empty Transform
 Shape Shape227 = createNode("Shape");
 Shape227.USE = "HAnimJointShape";
-Transform226.children = new MFNode();
+Transform226.child = new undefined();
 
-Transform226.children[0] = Shape227;
+Transform226.child[0] = Shape227;
 
 Transform225.children = new MFNode();
 
@@ -1252,9 +1252,9 @@ Transform Transform241 = createNode("Transform");
 //Empty Transform right foot
 Shape Shape242 = createNode("Shape");
 Shape242.USE = "HAnimJointShape";
-Transform241.children = new MFNode();
+Transform241.child = new undefined();
 
-Transform241.children[0] = Shape242;
+Transform241.child[0] = Shape242;
 
 Transform240.children = new MFNode();
 
@@ -1299,9 +1299,9 @@ Transform Transform250 = createNode("Transform");
 //Empty Transform
 Shape Shape251 = createNode("Shape");
 Shape251.USE = "HAnimJointShape";
-Transform250.children = new MFNode();
+Transform250.child = new undefined();
 
-Transform250.children[0] = Shape251;
+Transform250.child[0] = Shape251;
 
 Transform249.children = new MFNode();
 
@@ -1346,9 +1346,9 @@ Transform Transform259 = createNode("Transform");
 //Empty Transform
 Shape Shape260 = createNode("Shape");
 Shape260.USE = "HAnimJointShape";
-Transform259.children = new MFNode();
+Transform259.child = new undefined();
 
-Transform259.children[0] = Shape260;
+Transform259.child[0] = Shape260;
 
 Transform258.children = new MFNode();
 
@@ -1429,9 +1429,9 @@ Transform Transform272 = createNode("Transform");
 //Empty Transform
 Shape Shape273 = createNode("Shape");
 Shape273.USE = "HAnimJointShape";
-Transform272.children = new MFNode();
+Transform272.child = new undefined();
 
-Transform272.children[0] = Shape273;
+Transform272.child[0] = Shape273;
 
 Transform271.children = new MFNode();
 
@@ -1476,9 +1476,9 @@ Transform Transform281 = createNode("Transform");
 //Empty Transform
 Shape Shape282 = createNode("Shape");
 Shape282.USE = "HAnimJointShape";
-Transform281.children = new MFNode();
+Transform281.child = new undefined();
 
-Transform281.children[0] = Shape282;
+Transform281.child[0] = Shape282;
 
 Transform280.children = new MFNode();
 
@@ -1523,9 +1523,9 @@ Transform Transform290 = createNode("Transform");
 //Empty Transform
 Shape Shape291 = createNode("Shape");
 Shape291.USE = "HAnimJointShape";
-Transform290.children = new MFNode();
+Transform290.child = new undefined();
 
-Transform290.children[0] = Shape291;
+Transform290.child[0] = Shape291;
 
 Transform289.children = new MFNode();
 
@@ -1586,9 +1586,9 @@ Transform Transform302 = createNode("Transform");
 //Empty Transform
 Shape Shape303 = createNode("Shape");
 Shape303.USE = "HAnimJointShape";
-Transform302.children = new MFNode();
+Transform302.child = new undefined();
 
-Transform302.children[0] = Shape303;
+Transform302.child[0] = Shape303;
 
 Transform301.children = new MFNode();
 
@@ -1693,9 +1693,9 @@ Transform Transform323 = createNode("Transform");
 //Empty Transform
 Shape Shape324 = createNode("Shape");
 Shape324.USE = "HAnimJointShape";
-Transform323.children = new MFNode();
+Transform323.child = new undefined();
 
-Transform323.children[0] = Shape324;
+Transform323.child[0] = Shape324;
 
 Transform322.children = new MFNode();
 
@@ -1772,9 +1772,9 @@ Transform Transform338 = createNode("Transform");
 //Empty Transform
 Shape Shape339 = createNode("Shape");
 Shape339.USE = "HAnimJointShape";
-Transform338.children = new MFNode();
+Transform338.child = new undefined();
 
-Transform338.children[0] = Shape339;
+Transform338.child[0] = Shape339;
 
 Transform337.children = new MFNode();
 
@@ -2009,9 +2009,9 @@ Transform Transform385 = createNode("Transform");
 //Empty Transform
 Shape Shape386 = createNode("Shape");
 Shape386.USE = "HAnimJointShape";
-Transform385.children = new MFNode();
+Transform385.child = new undefined();
 
-Transform385.children[0] = Shape386;
+Transform385.child[0] = Shape386;
 
 Transform384.children = new MFNode();
 
@@ -2071,9 +2071,9 @@ Transform Transform397 = createNode("Transform");
 //Empty Transform
 Shape Shape398 = createNode("Shape");
 Shape398.USE = "HAnimJointShape";
-Transform397.children = new MFNode();
+Transform397.child = new undefined();
 
-Transform397.children[0] = Shape398;
+Transform397.child[0] = Shape398;
 
 Transform396.children = new MFNode();
 
@@ -2302,9 +2302,9 @@ Transform Transform440 = createNode("Transform");
 //Empty Transform
 Shape Shape441 = createNode("Shape");
 Shape441.USE = "HAnimJointShape";
-Transform440.children = new MFNode();
+Transform440.child = new undefined();
 
-Transform440.children[0] = Shape441;
+Transform440.child[0] = Shape441;
 
 Transform439.children = new MFNode();
 
@@ -2349,9 +2349,9 @@ Transform Transform449 = createNode("Transform");
 //Empty Transform
 Shape Shape450 = createNode("Shape");
 Shape450.USE = "HAnimJointShape";
-Transform449.children = new MFNode();
+Transform449.child = new undefined();
 
-Transform449.children[0] = Shape450;
+Transform449.child[0] = Shape450;
 
 Transform448.children = new MFNode();
 
@@ -2427,9 +2427,9 @@ Transform Transform464 = createNode("Transform");
 //Empty Transform
 Shape Shape465 = createNode("Shape");
 Shape465.USE = "HAnimJointShape";
-Transform464.children = new MFNode();
+Transform464.child = new undefined();
 
-Transform464.children[0] = Shape465;
+Transform464.child[0] = Shape465;
 
 Transform463.children = new MFNode();
 
@@ -2538,9 +2538,9 @@ Transform Transform485 = createNode("Transform");
 //Empty Transform
 Shape Shape486 = createNode("Shape");
 Shape486.USE = "HAnimJointShape";
-Transform485.children = new MFNode();
+Transform485.child = new undefined();
 
-Transform485.children[0] = Shape486;
+Transform485.child[0] = Shape486;
 
 Transform484.children = new MFNode();
 
@@ -2605,9 +2605,9 @@ Transform497.rotation = new SFRotation(new float[0,1,0,-1.57]);
 //Transform left hand
 Shape Shape498 = createNode("Shape");
 Shape498.USE = "HAnimJointShape";
-Transform497.children = new MFNode();
+Transform497.child = new undefined();
 
-Transform497.children[0] = Shape498;
+Transform497.child[0] = Shape498;
 
 Transform496.children = new MFNode();
 
@@ -2763,9 +2763,9 @@ Transform Transform531 = createNode("Transform");
 //Empty Transform
 Shape Shape532 = createNode("Shape");
 Shape532.USE = "HAnimJointShape";
-Transform531.children = new MFNode();
+Transform531.child = new undefined();
 
-Transform531.children[0] = Shape532;
+Transform531.child[0] = Shape532;
 
 Transform530.children = new MFNode();
 
@@ -2810,9 +2810,9 @@ Transform Transform540 = createNode("Transform");
 //Empty Transform
 Shape Shape541 = createNode("Shape");
 Shape541.USE = "HAnimJointShape";
-Transform540.children = new MFNode();
+Transform540.child = new undefined();
 
-Transform540.children[0] = Shape541;
+Transform540.child[0] = Shape541;
 
 Transform539.children = new MFNode();
 
@@ -2884,9 +2884,9 @@ Transform Transform553 = createNode("Transform");
 //Empty Transform
 Shape Shape554 = createNode("Shape");
 Shape554.USE = "HAnimJointShape";
-Transform553.children = new MFNode();
+Transform553.child = new undefined();
 
-Transform553.children[0] = Shape554;
+Transform553.child[0] = Shape554;
 
 Transform552.children = new MFNode();
 
@@ -2931,9 +2931,9 @@ Transform Transform562 = createNode("Transform");
 //Empty Transform
 Shape Shape563 = createNode("Shape");
 Shape563.USE = "HAnimJointShape";
-Transform562.children = new MFNode();
+Transform562.child = new undefined();
 
-Transform562.children[0] = Shape563;
+Transform562.child[0] = Shape563;
 
 Transform561.children = new MFNode();
 
@@ -2978,9 +2978,9 @@ Transform Transform571 = createNode("Transform");
 //Empty Transform
 Shape Shape572 = createNode("Shape");
 Shape572.USE = "HAnimJointShape";
-Transform571.children = new MFNode();
+Transform571.child = new undefined();
 
-Transform571.children[0] = Shape572;
+Transform571.child[0] = Shape572;
 
 Transform570.children = new MFNode();
 
@@ -3070,9 +3070,9 @@ Transform Transform587 = createNode("Transform");
 //Empty Transform
 Shape Shape588 = createNode("Shape");
 Shape588.USE = "HAnimJointShape";
-Transform587.children = new MFNode();
+Transform587.child = new undefined();
 
-Transform587.children[0] = Shape588;
+Transform587.child[0] = Shape588;
 
 Transform586.children = new MFNode();
 
@@ -3117,9 +3117,9 @@ Transform Transform596 = createNode("Transform");
 //Empty Transform
 Shape Shape597 = createNode("Shape");
 Shape597.USE = "HAnimJointShape";
-Transform596.children = new MFNode();
+Transform596.child = new undefined();
 
-Transform596.children[0] = Shape597;
+Transform596.child[0] = Shape597;
 
 Transform595.children = new MFNode();
 
@@ -3164,9 +3164,9 @@ Transform Transform605 = createNode("Transform");
 //Empty Transform
 Shape Shape606 = createNode("Shape");
 Shape606.USE = "HAnimJointShape";
-Transform605.children = new MFNode();
+Transform605.child = new undefined();
 
-Transform605.children[0] = Shape606;
+Transform605.child[0] = Shape606;
 
 Transform604.children = new MFNode();
 
@@ -3240,9 +3240,9 @@ Transform Transform618 = createNode("Transform");
 //Empty Transform
 Shape Shape619 = createNode("Shape");
 Shape619.USE = "HAnimJointShape";
-Transform618.children = new MFNode();
+Transform618.child = new undefined();
 
-Transform618.children[0] = Shape619;
+Transform618.child[0] = Shape619;
 
 Transform617.children = new MFNode();
 
@@ -3287,9 +3287,9 @@ Transform Transform627 = createNode("Transform");
 //Empty Transform
 Shape Shape628 = createNode("Shape");
 Shape628.USE = "HAnimJointShape";
-Transform627.children = new MFNode();
+Transform627.child = new undefined();
 
-Transform627.children[0] = Shape628;
+Transform627.child[0] = Shape628;
 
 Transform626.children = new MFNode();
 
@@ -3334,9 +3334,9 @@ Transform Transform636 = createNode("Transform");
 //Empty Transform
 Shape Shape637 = createNode("Shape");
 Shape637.USE = "HAnimJointShape";
-Transform636.children = new MFNode();
+Transform636.child = new undefined();
 
-Transform636.children[0] = Shape637;
+Transform636.child[0] = Shape637;
 
 Transform635.children = new MFNode();
 
@@ -3410,9 +3410,9 @@ Transform Transform649 = createNode("Transform");
 //Empty Transform
 Shape Shape650 = createNode("Shape");
 Shape650.USE = "HAnimJointShape";
-Transform649.children = new MFNode();
+Transform649.child = new undefined();
 
-Transform649.children[0] = Shape650;
+Transform649.child[0] = Shape650;
 
 Transform648.children = new MFNode();
 
@@ -3457,9 +3457,9 @@ Transform Transform658 = createNode("Transform");
 //Empty Transform
 Shape Shape659 = createNode("Shape");
 Shape659.USE = "HAnimJointShape";
-Transform658.children = new MFNode();
+Transform658.child = new undefined();
 
-Transform658.children[0] = Shape659;
+Transform658.child[0] = Shape659;
 
 Transform657.children = new MFNode();
 
@@ -3504,9 +3504,9 @@ Transform Transform667 = createNode("Transform");
 //Empty Transform
 Shape Shape668 = createNode("Shape");
 Shape668.USE = "HAnimJointShape";
-Transform667.children = new MFNode();
+Transform667.child = new undefined();
 
-Transform667.children[0] = Shape668;
+Transform667.child[0] = Shape668;
 
 Transform666.children = new MFNode();
 
@@ -3590,9 +3590,9 @@ Transform Transform680 = createNode("Transform");
 //Empty Transform
 Shape Shape681 = createNode("Shape");
 Shape681.USE = "HAnimJointShape";
-Transform680.children = new MFNode();
+Transform680.child = new undefined();
 
-Transform680.children[0] = Shape681;
+Transform680.child[0] = Shape681;
 
 Transform679.children = new MFNode();
 
@@ -3637,9 +3637,9 @@ Transform Transform689 = createNode("Transform");
 //Empty Transform
 Shape Shape690 = createNode("Shape");
 Shape690.USE = "HAnimJointShape";
-Transform689.children = new MFNode();
+Transform689.child = new undefined();
 
-Transform689.children[0] = Shape690;
+Transform689.child[0] = Shape690;
 
 Transform688.children = new MFNode();
 
@@ -3715,9 +3715,9 @@ Transform Transform704 = createNode("Transform");
 //Empty Transform
 Shape Shape705 = createNode("Shape");
 Shape705.USE = "HAnimJointShape";
-Transform704.children = new MFNode();
+Transform704.child = new undefined();
 
-Transform704.children[0] = Shape705;
+Transform704.child[0] = Shape705;
 
 Transform703.children = new MFNode();
 
@@ -3826,9 +3826,9 @@ Transform Transform725 = createNode("Transform");
 //Empty Transform
 Shape Shape726 = createNode("Shape");
 Shape726.USE = "HAnimJointShape";
-Transform725.children = new MFNode();
+Transform725.child = new undefined();
 
-Transform725.children[0] = Shape726;
+Transform725.child[0] = Shape726;
 
 Transform724.children = new MFNode();
 
@@ -3893,9 +3893,9 @@ Transform737.rotation = new SFRotation(new float[0,1,0,1.57]);
 //Transform right hand
 Shape Shape738 = createNode("Shape");
 Shape738.USE = "HAnimJointShape";
-Transform737.children = new MFNode();
+Transform737.child = new undefined();
 
-Transform737.children[0] = Shape738;
+Transform737.child[0] = Shape738;
 
 Transform736.children = new MFNode();
 
@@ -4051,9 +4051,9 @@ Transform Transform771 = createNode("Transform");
 //Empty Transform
 Shape Shape772 = createNode("Shape");
 Shape772.USE = "HAnimJointShape";
-Transform771.children = new MFNode();
+Transform771.child = new undefined();
 
-Transform771.children[0] = Shape772;
+Transform771.child[0] = Shape772;
 
 Transform770.children = new MFNode();
 
@@ -4098,9 +4098,9 @@ Transform Transform780 = createNode("Transform");
 //Empty Transform
 Shape Shape781 = createNode("Shape");
 Shape781.USE = "HAnimJointShape";
-Transform780.children = new MFNode();
+Transform780.child = new undefined();
 
-Transform780.children[0] = Shape781;
+Transform780.child[0] = Shape781;
 
 Transform779.children = new MFNode();
 
@@ -4172,9 +4172,9 @@ Transform Transform793 = createNode("Transform");
 //Empty Transform
 Shape Shape794 = createNode("Shape");
 Shape794.USE = "HAnimJointShape";
-Transform793.children = new MFNode();
+Transform793.child = new undefined();
 
-Transform793.children[0] = Shape794;
+Transform793.child[0] = Shape794;
 
 Transform792.children = new MFNode();
 
@@ -4219,9 +4219,9 @@ Transform Transform802 = createNode("Transform");
 //Empty Transform
 Shape Shape803 = createNode("Shape");
 Shape803.USE = "HAnimJointShape";
-Transform802.children = new MFNode();
+Transform802.child = new undefined();
 
-Transform802.children[0] = Shape803;
+Transform802.child[0] = Shape803;
 
 Transform801.children = new MFNode();
 
@@ -4266,9 +4266,9 @@ Transform Transform811 = createNode("Transform");
 //Empty Transform
 Shape Shape812 = createNode("Shape");
 Shape812.USE = "HAnimJointShape";
-Transform811.children = new MFNode();
+Transform811.child = new undefined();
 
-Transform811.children[0] = Shape812;
+Transform811.child[0] = Shape812;
 
 Transform810.children = new MFNode();
 
@@ -4358,9 +4358,9 @@ Transform Transform827 = createNode("Transform");
 //Empty Transform
 Shape Shape828 = createNode("Shape");
 Shape828.USE = "HAnimJointShape";
-Transform827.children = new MFNode();
+Transform827.child = new undefined();
 
-Transform827.children[0] = Shape828;
+Transform827.child[0] = Shape828;
 
 Transform826.children = new MFNode();
 
@@ -4405,9 +4405,9 @@ Transform Transform836 = createNode("Transform");
 //Empty Transform
 Shape Shape837 = createNode("Shape");
 Shape837.USE = "HAnimJointShape";
-Transform836.children = new MFNode();
+Transform836.child = new undefined();
 
-Transform836.children[0] = Shape837;
+Transform836.child[0] = Shape837;
 
 Transform835.children = new MFNode();
 
@@ -4452,9 +4452,9 @@ Transform Transform845 = createNode("Transform");
 //Empty Transform
 Shape Shape846 = createNode("Shape");
 Shape846.USE = "HAnimJointShape";
-Transform845.children = new MFNode();
+Transform845.child = new undefined();
 
-Transform845.children[0] = Shape846;
+Transform845.child[0] = Shape846;
 
 Transform844.children = new MFNode();
 
@@ -4528,9 +4528,9 @@ Transform Transform858 = createNode("Transform");
 //Empty Transform
 Shape Shape859 = createNode("Shape");
 Shape859.USE = "HAnimJointShape";
-Transform858.children = new MFNode();
+Transform858.child = new undefined();
 
-Transform858.children[0] = Shape859;
+Transform858.child[0] = Shape859;
 
 Transform857.children = new MFNode();
 
@@ -4575,9 +4575,9 @@ Transform Transform867 = createNode("Transform");
 //Empty Transform
 Shape Shape868 = createNode("Shape");
 Shape868.USE = "HAnimJointShape";
-Transform867.children = new MFNode();
+Transform867.child = new undefined();
 
-Transform867.children[0] = Shape868;
+Transform867.child[0] = Shape868;
 
 Transform866.children = new MFNode();
 
@@ -4622,9 +4622,9 @@ Transform Transform876 = createNode("Transform");
 //Empty Transform
 Shape Shape877 = createNode("Shape");
 Shape877.USE = "HAnimJointShape";
-Transform876.children = new MFNode();
+Transform876.child = new undefined();
 
-Transform876.children[0] = Shape877;
+Transform876.child[0] = Shape877;
 
 Transform875.children = new MFNode();
 
@@ -4698,9 +4698,9 @@ Transform Transform889 = createNode("Transform");
 //Empty Transform
 Shape Shape890 = createNode("Shape");
 Shape890.USE = "HAnimJointShape";
-Transform889.children = new MFNode();
+Transform889.child = new undefined();
 
-Transform889.children[0] = Shape890;
+Transform889.child[0] = Shape890;
 
 Transform888.children = new MFNode();
 
@@ -4745,9 +4745,9 @@ Transform Transform898 = createNode("Transform");
 //Empty Transform
 Shape Shape899 = createNode("Shape");
 Shape899.USE = "HAnimJointShape";
-Transform898.children = new MFNode();
+Transform898.child = new undefined();
 
-Transform898.children[0] = Shape899;
+Transform898.child[0] = Shape899;
 
 Transform897.children = new MFNode();
 
@@ -4792,9 +4792,9 @@ Transform Transform907 = createNode("Transform");
 //Empty Transform
 Shape Shape908 = createNode("Shape");
 Shape908.USE = "HAnimJointShape";
-Transform907.children = new MFNode();
+Transform907.child = new undefined();
 
-Transform907.children[0] = Shape908;
+Transform907.child[0] = Shape908;
 
 Transform906.children = new MFNode();
 

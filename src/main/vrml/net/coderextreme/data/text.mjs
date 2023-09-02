@@ -22,7 +22,7 @@ head1.meta[2] = meta4;
 
 let meta5 = browser.currentScene.createNode("meta");
 meta5.name = "identifier";
-meta5.content = "https://coderextreme.net/X3DJSONLD/text.x3d";
+meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/data/text.x3d";
 head1.meta[3] = meta5;
 
 let meta6 = browser.currentScene.createNode("meta");
@@ -52,9 +52,9 @@ Appearance13.material = Material14;
 
 Shape10.appearance = Appearance13;
 
-Transform9.children = new MFNode();
+Transform9.child = new undefined();
 
-Transform9.children[0] = Shape10;
+Transform9.child[0] = Shape10;
 
 let Shape15 = browser.currentScene.createNode("Shape");
 let Text16 = browser.currentScene.createNode("Text");
@@ -70,7 +70,7 @@ Appearance18.material = Material19;
 
 Shape15.appearance = Appearance18;
 
-Transform9.children[1] = Shape15;
+Transform9.child[1] = Shape15;
 
 let Shape20 = browser.currentScene.createNode("Shape");
 let Text21 = browser.currentScene.createNode("Text");
@@ -86,7 +86,7 @@ Appearance23.material = Material24;
 
 Shape20.appearance = Appearance23;
 
-Transform9.children[2] = Shape20;
+Transform9.child[2] = Shape20;
 
 let Script25 = browser.currentScene.createNode("Script");
 let field26 = browser.currentScene.createNode("field");

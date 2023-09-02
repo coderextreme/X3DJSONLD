@@ -14,7 +14,7 @@ var X3D0 =  X3D(
           meta_ : [
             meta(
               name_ : SFString('title'),
-              content_ : SFString('JohnIFS.x3d')),
+              content_ : SFString('IFS.x3d')),
 
             meta(
               name_ : SFString('identifier'),
@@ -51,7 +51,7 @@ var X3D0 =  X3D(
               children_ : [
                 Transform(
                   translation_ : SFVec3f([SFDouble(0), SFDouble(2.1), SFDouble(0)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       DEF_ : SFString('HAnimSiteShape'),
                       geometry_ : 
@@ -72,7 +72,7 @@ var X3D0 =  X3D(
                           material_ : 
                             Material(
                               diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(0)]),
-                              transparency_ : 0.3)))])]),
+                              transparency_ : 0.3))))]),
 
             NavigationInfo(
               speed_ : 1.5),

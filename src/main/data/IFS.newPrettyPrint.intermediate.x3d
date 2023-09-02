@@ -3,7 +3,7 @@
 <X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <component name='HAnim' level='1'/>
-    <meta content='JohnIFS.x3d' name='title'/>
+    <meta content='IFS.x3d' name='title'/>
     <meta content='http://www.web3d.org/x3d/content/examples/HumanoidAnimation/IFS.x3d' name='identifier'/>
     <meta content='An attempt at a standard LOA-4 skeleton' name='description'/>
     <meta content='h2.pl' name='generator'/>

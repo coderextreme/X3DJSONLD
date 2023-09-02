@@ -75,9 +75,9 @@ Appearance15.material = Material16;
 
 Shape13.appearance = Appearance15;
 
-Transform12.children = new MFNode();
+Transform12.child = new undefined();
 
-Transform12.children[0] = Shape13;
+Transform12.child[0] = Shape13;
 
 children[1] = Transform12;
 

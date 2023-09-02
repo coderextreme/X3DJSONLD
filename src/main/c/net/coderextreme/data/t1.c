@@ -58,7 +58,7 @@ ProtoDeclare ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" e
 </ProtoInterface>
 <ProtoBody><Transform><Shape><Appearance><Material transparency="0.20000000298023224" diffuseColor="0.5 0 1"></Material>
 </Appearance>
-<IndexedFaceSet containerField="geometry" coordIndex="0 1 4 -1 1 2 4 -1 2 3 4 -1 3 0 4 -1 0 3 2 1 -1"><Coordinate containerField="coord" point="-0.3499999940395355 -0.3499999940395355 0.3499999940395355 0.3499999940395355 -0.3499999940395355 0.3499999940395355 0.3499999940395355 -0.3499999940395355 -0.3499999940395355 -0.3499999940395355 -0.3499999940395355 -0.3499999940395355 0 0.3499999940395355 0"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 4 -1 1 2 4 -1 2 3 4 -1 3 0 4 -1 0 3 2 1 -1"><Coordinate containerField="coord" point="-0.3499999940395355 -0.3499999940395355 0.3499999940395355 0.3499999940395355 -0.3499999940395355 0.3499999940395355 0.3499999940395355 -0.3499999940395355 -0.3499999940395355 -0.3499999940395355 -0.3499999940395355 -0.3499999940395355 0 0.3499999940395355 0"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 <IS><connect nodeField="translation" protoField="pos"></connect>
@@ -98,9 +98,9 @@ IndexedFaceSet18.coord = Coordinate19;
 
 Shape15.geometry = IndexedFaceSet18;
 
-Transform14.children = new MFNode();
+Transform14.child = new undefined();
 
-Transform14.children[0] = Shape15;
+Transform14.child[0] = Shape15;
 
 IS IS20 = createNode("IS");
 connect connect21 = createNode("connect");
@@ -126,7 +126,7 @@ ProtoDeclare ProtoDeclare22 = browser.createX3DFromString(`<?xml version="1.0" e
 </ProtoInterface>
 <ProtoBody><Transform><Shape><Appearance><Material transparency="0.20000000298023224" diffuseColor="1 1 0"></Material>
 </Appearance>
-<Box containerField="geometry" size="0.699999988079071 0.699999988079071 0.699999988079071"></Box>
+<Box size="0.699999988079071 0.699999988079071 0.699999988079071"></Box>
 </Shape>
 <IS><connect nodeField="translation" protoField="pos"></connect>
 </IS>
@@ -161,9 +161,9 @@ Box Box30 = createNode("Box");
 Box30.size = new SFVec3f(new float[0.699999988079071,0.699999988079071,0.699999988079071]);
 Shape27.geometry = Box30;
 
-Transform26.children = new MFNode();
+Transform26.child = new undefined();
 
-Transform26.children[0] = Shape27;
+Transform26.child[0] = Shape27;
 
 IS IS31 = createNode("IS");
 connect connect32 = createNode("connect");
@@ -189,7 +189,7 @@ ProtoDeclare ProtoDeclare33 = browser.createX3DFromString(`<?xml version="1.0" e
 </ProtoInterface>
 <ProtoBody><Transform><Shape><Appearance><Material diffuseColor="1 1 0"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="0.699999988079071"></Sphere>
+<Sphere radius="0.699999988079071"></Sphere>
 </Shape>
 <IS><connect nodeField="translation" protoField="pos"></connect>
 </IS>
@@ -223,9 +223,9 @@ Sphere Sphere41 = createNode("Sphere");
 Sphere41.radius = 0.699999988079071;
 Shape38.geometry = Sphere41;
 
-Transform37.children = new MFNode();
+Transform37.child = new undefined();
 
-Transform37.children[0] = Shape38;
+Transform37.child[0] = Shape38;
 
 IS IS42 = createNode("IS");
 connect connect43 = createNode("connect");
@@ -254,7 +254,7 @@ ProtoDeclare ProtoDeclare44 = browser.createX3DFromString(`<?xml version="1.0" e
 </IS>
 </Material>
 </Appearance>
-<Sphere containerField="geometry" radius="1.100000023841858"></Sphere>
+<Sphere radius="1.100000023841858"></Sphere>
 </Shape>
 <IS><connect nodeField="translation" protoField="posi"></connect>
 </IS>
@@ -305,9 +305,9 @@ Sphere Sphere55 = createNode("Sphere");
 Sphere55.radius = 1.100000023841858;
 Shape50.geometry = Sphere55;
 
-Transform49.children = new MFNode();
+Transform49.child = new undefined();
 
-Transform49.children[0] = Shape50;
+Transform49.child[0] = Shape50;
 
 IS IS56 = createNode("IS");
 connect connect57 = createNode("connect");
@@ -1492,7 +1492,7 @@ IndexedLineSet251.coord = Coordinate252;
 
 Shape248.geometry = IndexedLineSet251;
 
-Transform90.children[53] = Shape248;
+Transform90.child[53] = Shape248;
 
 Shape Shape253 = createNode("Shape");
 Appearance Appearance254 = createNode("Appearance");
@@ -1511,7 +1511,7 @@ IndexedLineSet256.coord = Coordinate257;
 
 Shape253.geometry = IndexedLineSet256;
 
-Transform90.children[54] = Shape253;
+Transform90.child[54] = Shape253;
 
 Shape Shape258 = createNode("Shape");
 Appearance Appearance259 = createNode("Appearance");
@@ -1530,7 +1530,7 @@ IndexedLineSet261.coord = Coordinate262;
 
 Shape258.geometry = IndexedLineSet261;
 
-Transform90.children[55] = Shape258;
+Transform90.child[55] = Shape258;
 
 children[13] = Transform90;
 

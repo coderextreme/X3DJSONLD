@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="4.0", 
-head=head(children=[component(name="Scripting", level=1),
+head=head(
+children=[
+component(name="Scripting", level=1),
 component(name="EnvironmentalEffects", level=3),
 component(name="Shaders", level=1),
 component(name="CubeMapTexturing", level=1),
@@ -16,27 +19,27 @@ component(name="Core", level=1),
 meta(name="title", content="mirror.x3d"),
 meta(name="creator", content="John Carlson"),
 meta(name="generator", content="manual"),
-meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/mirror.x3d"),
+meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/mirror.x3d"),
 meta(name="description", content="sphere with alternating backgrounds"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
 Scene=Scene(children=[
 Viewpoint(position=((0,5,100)), description="Switch background and images texture"),
 TextureBackground(
-leftTexture=
-ImageTexture(DEF="leftBackgroundTexture", url=["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"]), 
-rightTexture=
-ImageTexture(DEF="rightBackgroundTexture", url=["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"]), 
-frontTexture=
-ImageTexture(DEF="frontBackgroundTexture", url=["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"]), 
-backTexture=
-ImageTexture(DEF="backBackgroundTexture", url=["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"]), 
-topTexture=
-ImageTexture(DEF="topBackgroundTexture", url=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"]), 
-bottomTexture=
-ImageTexture(DEF="bottomBackgroundTexture", url=["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"])),
+leftTexture=(
+ImageTexture(DEF="leftBackgroundTexture", url=["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"])), 
+rightTexture=(
+ImageTexture(DEF="rightBackgroundTexture", url=["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"])), 
+frontTexture=(
+ImageTexture(DEF="frontBackgroundTexture", url=["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"])), 
+backTexture=(
+ImageTexture(DEF="backBackgroundTexture", url=["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"])), 
+topTexture=(
+ImageTexture(DEF="topBackgroundTexture", url=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"])), 
+bottomTexture=(
+ImageTexture(DEF="bottomBackgroundTexture", url=["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]))),
 Transform(children=[
 Shape(
 appearance=
@@ -103,5 +106,6 @@ ROUTE(fromNode="UrlSelector", fromField="back_changed", toNode="backShader", toF
 ROUTE(fromNode="UrlSelector", fromField="left_changed", toNode="leftShader", toField="url"),
 ROUTE(fromNode="UrlSelector", fromField="right_changed", toNode="rightShader", toField="url"),
 ROUTE(fromNode="UrlSelector", fromField="top_changed", toNode="topShader", toField="url"),
-ROUTE(fromNode="UrlSelector", fromField="bottom_changed", toNode="bottomShader", toField="url")])]))
-.XML())
+ROUTE(fromNode="UrlSelector", fromField="bottom_changed", toNode="bottomShader", toField="url")])])))
+output = model.JSON()
+json.loads(output)

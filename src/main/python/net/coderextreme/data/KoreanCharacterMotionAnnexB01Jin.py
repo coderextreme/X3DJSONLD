@@ -2,10 +2,13 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="4.0", 
-head=head(children=[component(name="HAnim", level=1),
-meta(name="title", content="KoreanCharacterAnnexB01Jin.x3d"),
+head=head(
+children=[
+component(name="HAnim", level=1),
+meta(name="title", content="KoreanCharacterMotionAnnexB01Jin.x3d"),
 meta(name="creator", content="Jin Hoon Lee and Min Joo Lee"),
 meta(name="translator", content="Chul Hee Jung and Myeong Won Lee"),
 meta(name="created", content="31 March 2011"),
@@ -23,7 +26,7 @@ meta(name="generator", content="Suwon HAnim Converter"),
 meta(name="generator", content="Gnu Image Manipulation Program, http://www.gimp.org"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -88,5 +91,6 @@ ROUTE(fromField="value_changed", fromNode="Keyframe_l_talocrural", toField="rota
 ROUTE(fromField="value_changed", fromNode="Keyframe_r_hip", toField="rotation", toNode="hanim_r_hip"),
 ROUTE(fromField="value_changed", fromNode="Keyframe_r_knee", toField="rotation", toNode="hanim_r_knee"),
 ROUTE(fromField="value_changed", fromNode="Keyframe_l_talocrural", toField="rotation", toNode="hanim_r_talocrural"),
-ROUTE(fromField="value_changed", fromNode="Keyframe_l_talocrural", toField="rotation", toNode="hanim_r_metatarsophalangeal")])]))
-.XML())
+ROUTE(fromField="value_changed", fromNode="Keyframe_l_talocrural", toField="rotation", toNode="hanim_r_metatarsophalangeal")])])))
+output = model.JSON()
+json.loads(output)

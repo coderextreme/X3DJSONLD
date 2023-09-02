@@ -58,7 +58,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/geo.x3d')),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -83,7 +83,7 @@ var X3D0 =  X3D(
               topUrl_ : MFString([SFString("../resources/images/bTP.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png")])),
 
             Transform(
-              children_ : [
+              child_ : 
                 Shape(
                   geometry_ : 
                     Sphere(),
@@ -200,5 +200,5 @@ var X3D0 =  X3D(
                           parts_ : 
                             ShaderPart(
                               type_ : SFString("FRAGMENT",
-                              url_ : MFString([SFString("../shaders/x_ite.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs")])))))])]));
+                              url_ : MFString([SFString("../shaders/x_ite.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs")]))))))]));
 void main() { exit(0); }

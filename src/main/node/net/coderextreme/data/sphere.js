@@ -19,7 +19,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("title").setContent("sphere.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/sphere.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/sphere.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("a sphere")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.Group())
@@ -27,5 +27,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setAppearance((new autoclass.Appearance())
               .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)]))))
             .setGeometry((new autoclass.Sphere())))))      ;
-    X3D0.toFileX3D("../data/sphere.new.x3d");
+    X3D0.toFileX3D("../data/sphere.new.node.x3d");
     process.exit(0);

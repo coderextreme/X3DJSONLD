@@ -67,7 +67,7 @@ head1.meta[11] = meta13;
 
 let meta14 = browser.currentScene.createNode("meta");
 meta14.name = "identifier";
-meta14.content = "https://coderextreme.net/X3DJSONLD/geo.x3d";
+meta14.content = "https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d";
 head1.meta[12] = meta14;
 
 let meta15 = browser.currentScene.createNode("meta");
@@ -254,9 +254,9 @@ Appearance23.shaders[1] = ComposedShader41;
 
 Shape21.appearance = Appearance23;
 
-Transform20.children = new MFNode();
+Transform20.child = new undefined();
 
-Transform20.children[0] = Shape21;
+Transform20.child[0] = Shape21;
 
 browser.currentScene.children[3] = Transform20;
 

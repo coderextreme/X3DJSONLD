@@ -18,7 +18,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("title").setContent("browser.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/browser.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/browser.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("a script test with embedded \\n between single quotes, a double backslash \\\\\\\\ a backslash \\\\ and a closing quote \"")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.Script()).setDEF("Browser")
@@ -37,5 +37,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "'    ' + '               	\\n';\n"+
 "\n"+
 "}")))      ;
-    X3D0.toFileX3D("../data/browser.new.x3d");
+    X3D0.toFileX3D("../data/browser.new.node.x3d");
     process.exit(0);

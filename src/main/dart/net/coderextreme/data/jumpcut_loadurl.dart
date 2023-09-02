@@ -93,14 +93,14 @@ var X3D0 =  X3D(
 
             Transform(
               DEF_ : SFString('ROOT'),
-              children_ : [
+              child_ : 
                 Shape(
                   appearance_ : 
                     Appearance(
                       material_ : 
                         Material()),
                   geometry_ : 
-                    Box())]),
+                    Box())),
 
             Script(
               DEF_ : SFString('MYSCRIPT'),

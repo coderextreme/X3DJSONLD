@@ -22,7 +22,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d')),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -39,7 +39,7 @@ var X3D0 =  X3D(
 
             Transform(
               DEF_ : SFString('G1'),
-              children_ : [
+              child_ : 
                 Shape(
                   appearance_ : 
                     Appearance(
@@ -49,7 +49,7 @@ var X3D0 =  X3D(
                   geometry_ : 
                     Sphere(
                       radius_ : 0.1)),
-
+              children_ : [
                 PlaneSensor(
                   description_ : SFString('Grab to move'),
                   DEF_ : SFString('PS1')),
@@ -63,7 +63,7 @@ var X3D0 =  X3D(
             Transform(
               DEF_ : SFString('G2'),
               translation_ : SFVec3f([SFDouble(1), SFDouble(-1), SFDouble(0.01)]),
-              children_ : [
+              child_ : 
                 Shape(
                   appearance_ : 
                     Appearance(
@@ -73,7 +73,7 @@ var X3D0 =  X3D(
                   geometry_ : 
                     Sphere(
                       radius_ : 0.1)),
-
+              children_ : [
                 PlaneSensor(
                   description_ : SFString('Grab to move'),
                   offset_ : SFVec3f([SFDouble(1), SFDouble(-1), SFDouble(0.01)]),
@@ -90,7 +90,7 @@ var X3D0 =  X3D(
               children_ : [
                 Transform(
                   DEF_ : SFString('rotscaleC1'),
-                  children_ : [
+                  child_ : 
                     Shape(
                       appearance_ : 
                         Appearance(
@@ -100,7 +100,7 @@ var X3D0 =  X3D(
                               transparency_ : 0.5)),
                       geometry_ : 
                         Cylinder(
-                          radius_ : 0.05))])]),
+                          radius_ : 0.05)))]),
 
             ProtoDeclare(
               name_ : SFString('x3dconnector'),

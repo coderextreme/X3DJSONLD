@@ -42,5 +42,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setGeometry((new autoclass.Text()).setString(java.newArray("java.lang.String", ["I don't think so","","he said \"Hi\""]))
               .setFontStyle((new autoclass.FontStyle()).setUSE("testFontStyle")))
             .setAppearance((new autoclass.Appearance()).setUSE("LightBlueAppearance")))))      ;
-    X3D0.toFileX3D("../data/TextExamples.new.x3d");
+    X3D0.toFileX3D("../data/TextExamples.new.node.x3d");
     process.exit(0);

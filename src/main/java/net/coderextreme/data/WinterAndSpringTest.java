@@ -95,7 +95,7 @@ public class WinterAndSpringTest {
                       .setGeometry(new IndexedLineSet().setColorIndex(new MFInt324().getArray()).setColorPerVertex(false).setCoordIndex(new MFInt325().getArray())
                         .setCoord(new Coordinate().setPoint(new MFVec3f6().getArray()))
                         .setColor(new Color().setColor(new MFColor7().getArray()))))
-                    .addSkin(new Shape().setDEF("OldMan_Shape")
+                    .addChild(new Shape().setDEF("OldMan_Shape")
                       .setAppearance(new Appearance().setDEF("OldMan_skin_Appearance")
                         .setMaterial(new Material().setDEF("OldMan_skin_Material").setDiffuseColor(new float[] {0.3f,0.3f,0.6f}).setEmissiveColor(new float[] {0.3f,0.3f,0.6f}))
                         .setTexture(new ImageTexture().setDEF("OldManSkinImageTexture").setUrl(new MFString8().getArray()))

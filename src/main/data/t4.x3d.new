@@ -22,7 +22,7 @@
 </IS>
 </Material>
 </Appearance>
-<Sphere containerField="geometry" radius="5.10000002384186"></Sphere>
+<Sphere radius="5.10000002384186"></Sphere>
 </Shape>
 </Transform>
 </ProtoBody>

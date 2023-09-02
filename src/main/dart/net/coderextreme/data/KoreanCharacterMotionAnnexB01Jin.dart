@@ -14,7 +14,7 @@ var X3D0 =  X3D(
           meta_ : [
             meta(
               name_ : SFString('title'),
-              content_ : SFString('KoreanCharacterAnnexB01Jin.x3d')),
+              content_ : SFString('KoreanCharacterMotionAnnexB01Jin.x3d')),
 
             meta(
               name_ : SFString('creator'),

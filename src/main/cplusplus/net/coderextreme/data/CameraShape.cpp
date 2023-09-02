@@ -219,7 +219,7 @@ CIndexedFaceSet* IndexedFaceSet45 = (CIndexedFaceSet *)(m_pScene.createNode("Ind
 IndexedFaceSet45->setUSE("pCylinder1_0Geo");
 Shape43->setGeometry(IndexedFaceSet45);
 
-Transform42->addChildren(*Shape43);
+Transform42->addChild(*Shape43);
 
 Group41->addChildren(*Transform42);
 
@@ -236,7 +236,7 @@ CIndexedFaceSet* IndexedFaceSet49 = (CIndexedFaceSet *)(m_pScene.createNode("Ind
 IndexedFaceSet49->setUSE("pCube1_0Geo");
 Shape47->setGeometry(IndexedFaceSet49);
 
-Transform46->addChildren(*Shape47);
+Transform46->addChild(*Shape47);
 
 Group41->addChildren(*Transform46);
 
@@ -253,7 +253,7 @@ CIndexedFaceSet* IndexedFaceSet53 = (CIndexedFaceSet *)(m_pScene.createNode("Ind
 IndexedFaceSet53->setUSE("pPipe1_0Geo");
 Shape51->setGeometry(IndexedFaceSet53);
 
-Transform50->addChildren(*Shape51);
+Transform50->addChild(*Shape51);
 
 Group41->addChildren(*Transform50);
 
@@ -270,7 +270,7 @@ CIndexedFaceSet* IndexedFaceSet57 = (CIndexedFaceSet *)(m_pScene.createNode("Ind
 IndexedFaceSet57->setUSE("pSphere1_0Geo");
 Shape55->setGeometry(IndexedFaceSet57);
 
-Transform54->addChildren(*Shape55);
+Transform54->addChild(*Shape55);
 
 Group41->addChildren(*Transform54);
 

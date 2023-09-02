@@ -26,13 +26,13 @@
 </head>
 <Scene><!--Example scene to illustrate X3D nodes and fields (XML elements and attributes)--><WorldInfo info="&quot;Example scene to illustrate a simple X3D model&quot;" title="Hello World!"></WorldInfo>
 <Group><Viewpoint DEF="ViewUpClose" centerOfRotation="0 -1 0" description="Hello world!" position="0 -1 7"></Viewpoint>
-<Transform rotation="0 1 0 3"><Shape><Sphere containerField="geometry"></Sphere>
+<Transform rotation="0 1 0 3"><Shape><Sphere></Sphere>
 <Appearance><Material DEF="MaterialLightBlue" diffuseColor="0.1 0.5 1"></Material>
 <ImageTexture containerField="texture" DEF="ImageCloudlessEarth" url="&quot;earth-topo.png&quot; &quot;earth-topo.jpg&quot; &quot;earth-topo-small.gif&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif&quot;"></ImageTexture>
 </Appearance>
 </Shape>
 </Transform>
-<Transform translation="0 -2 0"><Shape><Text containerField="geometry" DEF="TextMessage" string="&quot;Hello&quot; &quot;world!&quot;"><FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
+<Transform translation="0 -2 0"><Shape><Text DEF="TextMessage" string="&quot;Hello&quot; &quot;world!&quot;"><FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
 </Text>
 <Appearance><Material USE="MaterialLightBlue"></Material>
 </Appearance>

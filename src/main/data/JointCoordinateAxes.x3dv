@@ -1,6 +1,7 @@
-#X3D V3.0 utf8
+#X3D V3.1 utf8
 
-PROFILE Interactive
+PROFILE Immersive
+
 DEF _1 NavigationInfo {
   headlight FALSE 
   type ["EXAMINE","ANY"]

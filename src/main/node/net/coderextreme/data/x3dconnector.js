@@ -19,7 +19,7 @@ var ProtoInstance0 = null;
         .addMeta((new autoclass.meta()).setName("title").setContent("x3dconnector"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("Lost, Doug Sanden I think"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("a generic proto to connect two objects")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.Viewpoint()).setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(5)])).setDescription("Only Viewpoint"))
@@ -127,5 +127,5 @@ ProtoInstance0
           .addFieldValue((new autoclass.fieldValue()).setName("set_startpoint"));
 ProtoInstance0
           .addFieldValue((new autoclass.fieldValue()).setName("set_endpoint"));
-    X3D0.toFileX3D("../data/x3dconnector.new.x3d");
+    X3D0.toFileX3D("../data/x3dconnector.new.node.x3d");
     process.exit(0);

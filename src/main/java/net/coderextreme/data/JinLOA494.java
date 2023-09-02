@@ -48,7 +48,7 @@ public class JinLOA494 {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addComponent(new component().setName("HAnim").setLevel(1))
-        .addMeta(new meta().setName("title").setContent("JinLOA4.x3d"))
+        .addMeta(new meta().setName("title").setContent("JinLOA494.x3d"))
         .addMeta(new meta().setName("creator").setContent("Jin Hoon Lee and Min Joo Lee"))
         .addMeta(new meta().setName("translator").setContent("Chul Hee Jung and Myeong Won Lee"))
         .addMeta(new meta().setName("created").setContent("31 March 2011"))

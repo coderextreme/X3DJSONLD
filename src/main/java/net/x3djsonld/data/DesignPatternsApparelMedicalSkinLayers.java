@@ -50,7 +50,7 @@ import org.web3d.x3d.jsail.Text.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 26 December 2022 </td>
+			<td> 2 July 2023 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -94,7 +94,9 @@ import org.web3d.x3d.jsail.Text.*;
 		<a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
 		It has been produced using the 
 		<a href="https://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
-		stylesheet to create Java source code from an <code>.x3d</code> model.
+		stylesheet
+	       (<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">version&amp;nbsp;control</a>)
+                is used to create Java source code from an original <code>.x3d</code> model.
 	</p>
 
 	* @author Don Brutzman
@@ -122,7 +124,7 @@ public class DesignPatternsApparelMedicalSkinLayers
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Joe D. Williams"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Dick Puk"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("23 December 2022"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("26 December 2022"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("2 July 2023"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("DesignPatternsApparelVariations.txt"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("HAnim2 Part 1, HAnim architecture, 4.3 Humanoid object https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#HumanoidObject"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("HAnim2 Part 1, HAnim architecture, E.4 Multiple humanoids per file https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile"))
@@ -165,11 +167,10 @@ public class DesignPatternsApparelMedicalSkinLayers
       .addChild(new HAnimHumanoid("e_SkinSwitchShapeIndexedGeometry").setName("SkinSwitchShapeIndexedGeometry").setVersion("2.0")
         .addSkeleton(new HAnimJoint().setName("humanoid_root").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
           .addChild(new HAnimSegment().setName("sacrum")))
-        .addComments(" TODO proposed for X3D4 <Switch DEF='AlternativeSkins' containerField='skin'> ")
-        .addChild(new Shape()
+        .addComments(" TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'> ")
+        .addSkin(new Shape()
           .setGeometry(new IndexedFaceSet("IndexedSkinMeshIFS").setDEF("IndexedSkinMeshIFS")
-            .setCoord(new Coordinate("SkinMeshCoordinate"))))
-        .addComments(" TODO proposed for X3D4 </Switch> "))
+            .setCoord(new Coordinate("SkinMeshCoordinate")))))
       .addComments(" similarly for LOD ")
       .addComments(" ============================== ")
       .addChild(new HAnimHumanoid("f_SynthesizedSkinShapeIndexedTwoPartGeometry").setName("SynthesizedSkinShapeIndexedTwoPartGeometry").setVersion("2.0")
@@ -190,9 +191,7 @@ public class DesignPatternsApparelMedicalSkinLayers
         .addSkeleton(new HAnimJoint().setName("humanoid_root").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
           .addChild(new HAnimSegment().setName("sacrum")))
         .addComments(" allow multiple Shape nodes with containerField='skin', one for each layer of skin ")
-        .addSkin(new Shape())
-        .addComments(" TODO proposed for X3D4.1 <Shape containerField='skin'/> ")
-        .addComments(" TODO proposed for X3D4.1 <Shape containerField='skin'/> "))
+        .addSkin(new Shape()))
       .addComments(" ============================== "))
     .addChild(new Viewpoint("ViewHelpText").setDescription("Select text to see website").setPosition(0.0,0.0,12.0))
     .addComments(" Selectable Text design pattern has transparent Box and TouchSensor description as a tooltip ")
@@ -284,10 +283,10 @@ public class DesignPatternsApparelMedicalSkinLayers
         if (validate)
         {
                 System.out.print("Java program \"net.x3djsonld.data.DesignPatternsApparelMedicalSkinLayers\" self-validation test results: ");
-                String validationResults = thisExampleX3dModel.validationReport();
-                if (validationResults.startsWith("\n") || (validationResults.length() > 10))
+		String validationResults = thisExampleX3dModel.validationReport();
+                if (validationResults.length() > 10)
                     System.out.println();
-                System.out.println(validationResults.trim());
+                System.out.println(validationResults);
         }
     }
 }

@@ -250,7 +250,7 @@ CSphere* Sphere46 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere46->setRadius(30);
 Shape20->setGeometry(Sphere46);
 
-Transform19->addChildren(*Shape20);
+Transform19->addChild(*Shape20);
 
 CScript* Script47 = (CScript *)(m_pScene.createNode("Script"));
 Script47->setDEF("UrlSelector");

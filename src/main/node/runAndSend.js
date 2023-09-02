@@ -15,7 +15,7 @@ function runAndSend(args, callback) {
 	} else if (infile.startsWith("http://")) {
 		infile = config.x3dcode+infile.substr(7);
 	}
-	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
+	var outfile = infile.substr(0, infile.lastIndexOf("."))+".x3dj";
 	var content;
 	/*
 	try {

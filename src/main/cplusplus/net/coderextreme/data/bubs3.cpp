@@ -36,7 +36,7 @@ head1->addMeta(*meta5);
 
 Cmeta* meta6 = new Cmeta();
 meta6->setName("identifier");
-meta6->setContent("https://coderextreme.net/X3DJSONLD/bubs.x3d");
+meta6->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d");
 head1->addMeta(*meta6);
 
 X3D0->setHead(*head1);
@@ -53,12 +53,12 @@ Viewpoint9->setDescription("Bubbles in action");
 group->addChildren(*Viewpoint9);
 
 CBackground* Background10 = (CBackground *)(m_pScene.createNode("Background"));
-Background10->setBackUrl(new CString[2]{"../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"}, 2);
-Background10->setBottomUrl(new CString[2]{"../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"}, 2);
-Background10->setFrontUrl(new CString[2]{"../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"}, 2);
-Background10->setLeftUrl(new CString[2]{"../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"}, 2);
-Background10->setRightUrl(new CString[2]{"../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"}, 2);
-Background10->setTopUrl(new CString[2]{"../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"}, 2);
+Background10->setBackUrl(new CString[2]{"../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"}, 2);
+Background10->setBottomUrl(new CString[2]{"../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"}, 2);
+Background10->setFrontUrl(new CString[2]{"../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"}, 2);
+Background10->setLeftUrl(new CString[2]{"../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"}, 2);
+Background10->setRightUrl(new CString[2]{"../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"}, 2);
+Background10->setTopUrl(new CString[2]{"../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"}, 2);
 group->addChildren(*Background10);
 
 CTransform* Transform11 = (CTransform *)(m_pScene.createNode("Transform"));
@@ -76,7 +76,7 @@ Appearance14->setMaterial(*Material15);
 
 Shape12->setAppearance(*Appearance14);
 
-Transform11->addChildren(*Shape12);
+Transform11->addChild(*Shape12);
 
 CScript* Script16 = (CScript *)(m_pScene.createNode("Script"));
 Script16->setDEF("DECLBubble_bubbleA_bounce");
@@ -200,7 +200,7 @@ Appearance29->setMaterial(*Material30);
 
 Shape27->setAppearance(*Appearance29);
 
-Transform26->addChildren(*Shape27);
+Transform26->addChild(*Shape27);
 
 CScript* Script31 = (CScript *)(m_pScene.createNode("Script"));
 Script31->setDEF("DECLBubble_bubbleB_bounce");
@@ -324,7 +324,7 @@ Appearance44->setMaterial(*Material45);
 
 Shape42->setAppearance(*Appearance44);
 
-Transform41->addChildren(*Shape42);
+Transform41->addChild(*Shape42);
 
 CScript* Script46 = (CScript *)(m_pScene.createNode("Script"));
 Script46->setDEF("DECLBubble_bubbleC_bounce");
@@ -448,7 +448,7 @@ Appearance59->setMaterial(*Material60);
 
 Shape57->setAppearance(*Appearance59);
 
-Transform56->addChildren(*Shape57);
+Transform56->addChild(*Shape57);
 
 CScript* Script61 = (CScript *)(m_pScene.createNode("Script"));
 Script61->setDEF("DECLBubble_bubbleD_bounce");

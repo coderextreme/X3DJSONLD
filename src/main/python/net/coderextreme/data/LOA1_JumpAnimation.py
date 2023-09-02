@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[meta(name="title", content="LOA1_JumpAnimation.x3d"),
+head=head(
+children=[
+meta(name="title", content="LOA1_JumpAnimation.x3d"),
 meta(name="description", content="Humanoid animation prototype reusable by any Humanoid."),
 meta(name="creator", content="Cindy Ballreich cindy@ballreich.net 3Name3D"),
 meta(name="rights", content="1997 3Name3D / Yglesias, Wallock, Divekar, Inc., all rights reserved."),
@@ -19,7 +22,7 @@ meta(name="subject", content="InterchangableActorsViaDynamicRouting Nancy jump A
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_JumpAnimation.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -149,5 +152,6 @@ FontStyle(justify=["MIDDLE","MIDDLE"], size=0.8)),
 appearance=
 Appearance(
 material=
-Material(diffuseColor=((1,1,0.2)))))])]))
-.XML())
+Material(diffuseColor=((1,1,0.2)))))])])))
+output = model.JSON()
+json.loads(output)

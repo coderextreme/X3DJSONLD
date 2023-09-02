@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[component(name="HAnim", level=1),
+head=head(
+children=[
+component(name="HAnim", level=1),
 meta(name="title", content="HAnimBehaviorPrototypes.x3d"),
 meta(name="description", content="Prototypes for HAnimBehavior node, which collects OrientationInterpolators for aggregate animation of an HAnim humanoid model, and HAnimBodyBehaviorChooser, which selects one body and enables/disables multiple aggregated behaviors."),
 meta(name="creator", content="Don Brutzman, Jeff Weekley, MV4205 Advanced X3D Authoring class, and Keith Victor"),
@@ -20,7 +23,7 @@ meta(name="warning", content="under development. should joint translations be ex
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypes.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -42,1332 +45,953 @@ field(name="elapsedTime", accessType="outputOnly", appinfo="current elapsed time
 field(name="time", accessType="outputOnly", appinfo="continuously sends the absolute time (since January 1 1970)", type="SFBool"),
 field(name="fraction_changed", accessType="outputOnly", appinfo="fraction_changed continuously sends value in range [0 1] showing time progress in the current cycle.", type="SFFloat"),
 field(name="HumanoidRoot_translation_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="HumanoidRoot_translation_keyValue", accessType="inputOutput", type="MFVec3f", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="HumanoidRoot_translation_changed", accessType="outputOnly", type="SFVec3f"),
 field(name="HumanoidRoot_rotation_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="HumanoidRoot_rotation_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="HumanoidRoot_rotation_changed", accessType="outputOnly", type="SFRotation"),
 field(name="c1_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="c1_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="c1_changed", accessType="outputOnly", type="SFRotation"),
 field(name="c2_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="c2_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="c2_changed", accessType="outputOnly", type="SFRotation"),
 field(name="c3_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="c3_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="c3_changed", accessType="outputOnly", type="SFRotation"),
 field(name="c4_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="c4_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="c4_changed", accessType="outputOnly", type="SFRotation"),
 field(name="c5_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="c5_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="c5_changed", accessType="outputOnly", type="SFRotation"),
 field(name="c6_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="c6_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="c6_changed", accessType="outputOnly", type="SFRotation"),
 field(name="c7_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="c7_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="c7_changed", accessType="outputOnly", type="SFRotation"),
 field(name="jaw_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="jaw_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="jaw_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l1_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l1_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l1_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l2_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l2_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l2_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l3_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l3_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l3_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l4_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l4_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l4_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l5_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l5_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l5_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_acromioclavicular_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_acromioclavicular_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_acromioclavicular_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_ankle_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_ankle_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_ankle_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_calf_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_calf_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_calf_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_clavicle_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_clavicle_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_clavicle_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_elbow_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_elbow_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_elbow_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_eyeball_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_eyeball_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_eyeball_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_eyeball_joint_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_eyeball_joint_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_eyeball_joint_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_eyebrow_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_eyebrow_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_eyebrow_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_eyebrow_joint_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_eyebrow_joint_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_eyebrow_joint_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_eyelid_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_eyelid_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_eyelid_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_eyelid_joint_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_eyelid_joint_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_eyelid_joint_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_forearm_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_forearm_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_forearm_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_forefoot_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_forefoot_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_forefoot_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_hand_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_hand_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_hand_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_hindfoot_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_hindfoot_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_hindfoot_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_hip_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_hip_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_hip_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_index0_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_index0_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_index0_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_index1_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_index1_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_index1_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_index2_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_index2_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_index2_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_index3_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_index3_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_index3_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_index_distal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_index_distal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_index_distal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_index_metacarpal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_index_metacarpal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_index_metacarpal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_index_middle_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_index_middle_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_index_middle_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_index_proximal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_index_proximal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_index_proximal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_knee_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_knee_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_knee_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_metatarsal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_metatarsal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_metatarsal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_middistal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_middistal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_middistal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_middle0_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_middle0_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_middle0_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_middle1_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_middle1_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_middle1_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_middle2_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_middle2_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_middle2_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_middle3_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_middle3_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_middle3_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_middle_distal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_middle_distal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_middle_distal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_middle_metacarpal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_middle_metacarpal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_middle_metacarpal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_middle_middle_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_middle_middle_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_middle_middle_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_middle_proximal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_middle_proximal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_middle_proximal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_midproximal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_midproximal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_midproximal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_midtarsal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_midtarsal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_midtarsal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_pinky0_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_pinky0_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_pinky0_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_pinky1_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_pinky1_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_pinky1_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_pinky2_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_pinky2_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_pinky2_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_pinky3_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_pinky3_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_pinky3_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_pinky_distal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_pinky_distal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_pinky_distal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_pinky_metacarpal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_pinky_metacarpal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_pinky_metacarpal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_pinky_middle_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_pinky_middle_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_pinky_middle_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_pinky_proximal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_pinky_proximal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_pinky_proximal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_ring0_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_ring0_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_ring0_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_ring1_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_ring1_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_ring1_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_ring2_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_ring2_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_ring2_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_ring3_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_ring3_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_ring3_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_ring_distal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_ring_distal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_ring_distal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_ring_metacarpal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_ring_metacarpal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_ring_metacarpal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_ring_middle_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_ring_middle_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_ring_middle_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_ring_proximal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_ring_proximal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_ring_proximal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_scapula_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_scapula_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_scapula_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_shoulder_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_shoulder_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_shoulder_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_sternoclavicular_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_sternoclavicular_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_sternoclavicular_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_subtalar_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_subtalar_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_subtalar_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_thigh_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_thigh_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_thigh_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_thumb1_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_thumb1_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_thumb1_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_thumb2_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_thumb2_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_thumb2_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_thumb3_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_thumb3_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_thumb3_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_thumb_distal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_thumb_distal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_thumb_distal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_thumb_metacarpal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_thumb_metacarpal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_thumb_metacarpal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_thumb_proximal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_thumb_proximal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_thumb_proximal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_upperarm_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_upperarm_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_upperarm_changed", accessType="outputOnly", type="SFRotation"),
 field(name="l_wrist_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_wrist_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="l_wrist_changed", accessType="outputOnly", type="SFRotation"),
 field(name="pelvis_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="pelvis_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="pelvis_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_acromioclavicular_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_acromioclavicular_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_acromioclavicular_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_ankle_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_ankle_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_ankle_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_calf_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_calf_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_calf_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_clavicle_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_clavicle_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_clavicle_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_elbow_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_elbow_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_elbow_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_eyeball_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_eyeball_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_eyeball_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_eyeball_joint_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_eyeball_joint_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_eyeball_joint_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_eyebrow_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_eyebrow_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_eyebrow_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_eyebrow_joint_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_eyebrow_joint_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_eyebrow_joint_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_eyelid_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_eyelid_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_eyelid_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_eyelid_joint_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_eyelid_joint_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_eyelid_joint_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_forearm_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_forearm_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_forearm_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_forefoot_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_forefoot_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_forefoot_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_hand_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_hand_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_hand_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_hindfoot_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_hindfoot_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_hindfoot_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_hip_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_hip_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_hip_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_index0_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_index0_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_index0_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_index1_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_index1_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_index1_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_index2_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_index2_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_index2_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_index3_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_index3_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_index3_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_index_distal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_index_distal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_index_distal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_index_metacarpal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_index_metacarpal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_index_metacarpal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_index_middle_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_index_middle_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_index_middle_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_index_proximal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_index_proximal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_index_proximal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_knee_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_knee_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_knee_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_metatarsal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_metatarsal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_metatarsal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_middistal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_middistal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_middistal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_middle0_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_middle0_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_middle0_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_middle1_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_middle1_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_middle1_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_middle2_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_middle2_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_middle2_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_middle3_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_middle3_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_middle3_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_middle_distal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_middle_distal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_middle_distal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_middle_metacarpal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_middle_metacarpal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_middle_metacarpal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_middle_middle_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_middle_middle_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_middle_middle_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_middle_proximal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_middle_proximal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_middle_proximal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_midproximal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_midproximal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_midproximal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_midtarsal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_midtarsal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_midtarsal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_pinky0_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_pinky0_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_pinky0_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_pinky1_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_pinky1_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_pinky1_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_pinky2_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_pinky2_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_pinky2_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_pinky3_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_pinky3_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_pinky3_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_pinky_distal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_pinky_distal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_pinky_distal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_pinky_metacarpal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_pinky_metacarpal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_pinky_metacarpal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_pinky_middle_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_pinky_middle_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_pinky_middle_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_pinky_proximal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_pinky_proximal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_pinky_proximal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_ring0_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_ring0_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_ring0_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_ring1_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_ring1_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_ring1_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_ring2_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_ring2_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_ring2_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_ring3_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_ring3_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_ring3_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_ring_distal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_ring_distal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_ring_distal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_ring_metacarpal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_ring_metacarpal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_ring_metacarpal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_ring_middle_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_ring_middle_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_ring_middle_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_ring_proximal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_ring_proximal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_ring_proximal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_scapula_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_scapula_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_scapula_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_shoulder_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_shoulder_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_shoulder_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_sternoclavicular_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_sternoclavicular_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_sternoclavicular_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_subtalar_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_subtalar_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_subtalar_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_thigh_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_thigh_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_thigh_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_thumb1_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_thumb1_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_thumb1_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_thumb2_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_thumb2_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_thumb2_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_thumb3_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_thumb3_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_thumb3_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_thumb_distal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_thumb_distal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_thumb_distal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_thumb_metacarpal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_thumb_metacarpal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_thumb_metacarpal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_thumb_proximal_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_thumb_proximal_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_thumb_proximal_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_upperarm_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_upperarm_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_upperarm_changed", accessType="outputOnly", type="SFRotation"),
 field(name="r_wrist_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_wrist_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="r_wrist_changed", accessType="outputOnly", type="SFRotation"),
 field(name="sacroiliac_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="sacroiliac_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="sacroiliac_changed", accessType="outputOnly", type="SFRotation"),
 field(name="sacrum_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="sacrum_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="sacrum_changed", accessType="outputOnly", type="SFRotation"),
 field(name="skull_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="skull_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="skull_changed", accessType="outputOnly", type="SFRotation"),
 field(name="skullbase_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="skullbase_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="skullbase_changed", accessType="outputOnly", type="SFRotation"),
 field(name="t10_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="t10_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="t10_changed", accessType="outputOnly", type="SFRotation"),
 field(name="t11_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="t11_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="t11_changed", accessType="outputOnly", type="SFRotation"),
 field(name="t12_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="t12_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="t12_changed", accessType="outputOnly", type="SFRotation"),
 field(name="t1_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="t1_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="t1_changed", accessType="outputOnly", type="SFRotation"),
 field(name="t2_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="t2_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="t2_changed", accessType="outputOnly", type="SFRotation"),
 field(name="t3_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="t3_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="t3_changed", accessType="outputOnly", type="SFRotation"),
 field(name="t4_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="t4_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="t4_changed", accessType="outputOnly", type="SFRotation"),
 field(name="t5_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="t5_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="t5_changed", accessType="outputOnly", type="SFRotation"),
 field(name="t6_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="t6_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="t6_changed", accessType="outputOnly", type="SFRotation"),
 field(name="t7_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="t7_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="t7_changed", accessType="outputOnly", type="SFRotation"),
 field(name="t8_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="t8_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="t8_changed", accessType="outputOnly", type="SFRotation"),
 field(name="t9_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="t9_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="t9_changed", accessType="outputOnly", type="SFRotation"),
 field(name="temporomandibular_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="temporomandibular_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="temporomandibular_changed", accessType="outputOnly", type="SFRotation"),
 field(name="vc1_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vc1_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vc1_changed", accessType="outputOnly", type="SFRotation"),
 field(name="vc2_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vc2_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vc2_changed", accessType="outputOnly", type="SFRotation"),
 field(name="vc3_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vc3_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vc3_changed", accessType="outputOnly", type="SFRotation"),
 field(name="vc4_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vc4_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vc4_changed", accessType="outputOnly", type="SFRotation"),
 field(name="vc5_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vc5_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vc5_changed", accessType="outputOnly", type="SFRotation"),
 field(name="vc6_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vc6_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vc6_changed", accessType="outputOnly", type="SFRotation"),
 field(name="vc7_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vc7_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vc7_changed", accessType="outputOnly", type="SFRotation"),
 field(name="vl1_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vl1_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vl1_changed", accessType="outputOnly", type="SFRotation"),
 field(name="vl2_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vl2_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vl2_changed", accessType="outputOnly", type="SFRotation"),
 field(name="vl3_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vl3_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vl3_changed", accessType="outputOnly", type="SFRotation"),
 field(name="vl4_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vl4_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vl4_changed", accessType="outputOnly", type="SFRotation"),
 field(name="vl5_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vl5_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vl5_changed", accessType="outputOnly", type="SFRotation"),
 field(name="vt10_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vt10_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vt10_changed", accessType="outputOnly", type="SFRotation"),
 field(name="vt11_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vt11_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vt11_changed", accessType="outputOnly", type="SFRotation"),
 field(name="vt12_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vt12_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vt12_changed", accessType="outputOnly", type="SFRotation"),
 field(name="vt1_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vt1_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vt1_changed", accessType="outputOnly", type="SFRotation"),
 field(name="vt2_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vt2_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vt2_changed", accessType="outputOnly", type="SFRotation"),
 field(name="vt3_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vt3_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vt3_changed", accessType="outputOnly", type="SFRotation"),
 field(name="vt4_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vt4_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vt4_changed", accessType="outputOnly", type="SFRotation"),
 field(name="vt5_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vt5_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vt5_changed", accessType="outputOnly", type="SFRotation"),
 field(name="vt6_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vt6_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vt6_changed", accessType="outputOnly", type="SFRotation"),
 field(name="vt7_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vt7_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vt7_changed", accessType="outputOnly", type="SFRotation"),
 field(name="vt8_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vt8_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vt8_changed", accessType="outputOnly", type="SFRotation"),
 field(name="vt9_key", accessType="inputOutput", type="MFFloat", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vt9_keyValue", accessType="inputOutput", type="MFRotation", children=[
-Comment(value=''' no default value '''),
-]),
+Comment(value=''' no default value '''),]),
 field(name="vt9_changed", accessType="outputOnly", type="SFRotation")
 ]), 
 ProtoBody=ProtoBody(children=[
 Comment(value=''' design alternative: move TimeSensor out of the prototype, instead expose set_fraction globally to all interpolators '''),
-
 TimeSensor(DEF="BehaviorClock", 
 IS=IS(connect=[connect(nodeField="enabled", protoField="enabled"),
 connect(nodeField="cycleInterval", protoField="cycleInterval"),
@@ -1384,7 +1008,6 @@ connect(nodeField="time", protoField="time"),
 connect(nodeField="fraction_changed", protoField="fraction_changed")
 ])),
 Comment(value=''' note that other nodes following the first node in the ProtoBody are not rendered but remain active nevertheless '''),
-
 Switch(DEF="SupportedLoaHolder1", whichChoice=-1, 
 IS=IS(connect=[connect(nodeField="whichChoice", protoField="supportedLOA")
 ])),
@@ -2525,17 +2148,14 @@ ROUTE(fromField="fraction_changed", fromNode="BehaviorClock", toField="set_fract
 ProtoDeclare(name="HAnimBodyBehaviorChooser", appinfo="The HAnimBodyBehaviorChooser node allows an author to select one of several HAnimHumanoid bodies and simultaneously apply multiple HAnimBehavior animations to the active body. Individual behaviors may be enabled or disabled at any time.", 
 ProtoInterface=ProtoInterface(field=[field(name="supportedLOA", accessType="inputOutput", appinfo="Level of Articulation (LOA) support needed by authored HAnimBehavior set of OrientationInterpolator values. Legal values 0 1 2 3.", type="SFInt32", value=-1),
 field(name="HumanoidArray", accessType="initializeOnly", appinfo="[HAnimHumanoid] nodes only", type="MFNode", children=[
-Comment(value=''' default NULL '''),
-]),
+Comment(value=''' default NULL '''),]),
 field(name="whichBody", accessType="initializeOnly", appinfo="whichBody is selected default is initial member of HumanoidArray", type="SFInt32", value=-1),
 field(name="set_whichBody", accessType="inputOnly", appinfo="whichBody is selected default is none", type="SFInt32"),
 field(name="whichBody_changed", accessType="outputOnly", appinfo="whichBody is selected default is none", type="SFInt32"),
 field(name="hAnimBehaviorNodes", accessType="initializeOnly", appinfo="[HAnimBehavior] nodes only some or all of which may be enabled. Warning: do not animate a single joint with more than one interpolator at a given time.", type="MFNode", children=[
-Comment(value=''' default NULL '''),
-]),
+Comment(value=''' default NULL '''),]),
 field(name="enabledBehaviorsArray", accessType="initializeOnly", appinfo="indicate which HAnimBehavior nodes are activated, empty indicates all enabled true", type="MFBool", children=[
-Comment(value=''' no default values '''),
-]),
+Comment(value=''' no default values '''),]),
 field(name="enableBehavior", accessType="inputOnly", appinfo="enable corresponding behavior identified by index number", type="SFInt32"),
 field(name="disableBehavior", accessType="inputOnly", appinfo="disable corresponding behavior identified by index number", type="SFInt32"),
 field(name="startTime", accessType="inputOutput", type="SFTime", value=0),
@@ -2547,7 +2167,6 @@ IS=IS(connect=[connect(nodeField="whichChoice", protoField="whichBody"),
 connect(nodeField="children", protoField="HumanoidArray")
 ])),
 Comment(value=''' note that other nodes following the first node in the ProtoBody are not rendered but remain active nevertheless '''),
-
 Group(DEF="BehaviorArrayHolder", 
 IS=IS(connect=[connect(nodeField="children", protoField="hAnimBehaviorNodes")
 ])),
@@ -2563,8 +2182,7 @@ field(name="whichBody", accessType="initializeOnly", appinfo="whichBody is selec
 field(name="set_whichBody", accessType="inputOnly", appinfo="whichBody is selected default is none", type="SFInt32"),
 field(name="whichBody_changed", accessType="outputOnly", appinfo="whichBody is selected default is none", type="SFInt32"),
 field(name="hAnimBehaviorNodes", accessType="initializeOnly", appinfo="[HAnimBehavior] nodes only", type="MFNode", children=[
-Comment(value=''' TODO: might consider accessType="inputOutput" if VRML97 compatibility not needed '''),
-]),
+Comment(value=''' TODO: might consider accessType="inputOutput" if VRML97 compatibility not needed '''),]),
 field(name="enabledBehaviorsArray", accessType="initializeOnly", type="MFBool"),
 field(name="enableBehavior", accessType="inputOnly", appinfo="enable corresponding behavior", type="SFInt32"),
 field(name="disableBehavior", accessType="inputOnly", appinfo="enable corresponding behavior", type="SFInt32"),
@@ -2583,7 +2201,6 @@ connect(nodeField="enableBehavior", protoField="enableBehavior"),
 connect(nodeField="disableBehavior", protoField="disableBehavior")
 ])),])),
 Comment(value=''' TODO: Goal is to have 3 different ways to present a body: local creation, Inline with IMPORT/EXPORT, or external prototype. '''),
-
 ProtoInstance(name="HAnimBehavior", DEF="BehaviorTest1", fieldValue=[fieldValue(name="HumanoidRoot_translation_key", value=[0,0.25,0.5,0.75,1.0]),
 fieldValue(name="HumanoidRoot_translation_keyValue", value=[0,0,0,0,0,10,0,0,20,0,0,30,0,0,40,0,0,50]),
 fieldValue(name="r_ankle_key", value=[0,0.5,1]),
@@ -2595,5 +2212,6 @@ fieldValue(name="whichBody", value=0),
 fieldValue(name="hAnimBehaviorNodes", children=[
 ProtoInstance(USE="BehaviorTest1")]),
 fieldValue(name="enabledBehaviorsArray", value=True)
-]),]))
-.XML())
+]),])))
+output = model.JSON()
+json.loads(output)

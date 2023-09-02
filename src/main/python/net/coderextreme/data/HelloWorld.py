@@ -2,9 +2,14 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[meta(name="title", content="HelloWorld.x3d"),
+head=head(
+children=[
+children=[
+Comment(value=''' Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON '''),
+meta(name="title", content="HelloWorld.x3d"),
 meta(name="description", content="Simple X3D model example: Hello World!"),
 meta(name="created", content="30 October 2000"),
 meta(name="modified", content="20 October 2019"),
@@ -27,13 +32,12 @@ meta(name="reference", content="HelloWorld.x3dv"),
 meta(name="reference", content="HelloWorld.x3db"),
 meta(name="reference", content="HelloWorld.xhtml"),
 meta(name="reference", content="HelloWorld.json"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
 Scene=Scene(children=[
 Comment(value=''' Example scene to illustrate X3D nodes and fields (XML elements and attributes) '''),
-
 WorldInfo(info=["Example scene to illustrate a simple X3D model"], title="Hello World!"),
 Group(children=[
 Viewpoint(DEF="ViewUpClose", centerOfRotation=((0,-1,0)), description="Hello world!", position=((0,-1,7))),
@@ -56,5 +60,6 @@ FontStyle(justify=["MIDDLE","MIDDLE"])),
 appearance=
 Appearance(
 material=
-Material(USE="MaterialLightBlue")))])]),]))
-.XML())
+Material(USE="MaterialLightBlue")))])]),])))
+output = model.JSON()
+json.loads(output)

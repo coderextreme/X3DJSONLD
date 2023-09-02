@@ -49,7 +49,7 @@ var X3D0 =  X3D(
               DEF_ : SFString('ScubaTank'),
               children_ : [
                 Transform(
-                  children_ : [
+                  child_ : 
                     Shape(
                       appearance_ : 
                         Appearance(
@@ -63,11 +63,11 @@ var X3D0 =  X3D(
                       geometry_ : 
                         Cylinder(
                           height_ : 0.7,
-                          radius_ : 0.1))]),
+                          radius_ : 0.1))),
 
                 Transform(
                   translation_ : SFVec3f([SFDouble(0), SFDouble(0.35), SFDouble(0)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       appearance_ : 
                         Appearance(
@@ -76,11 +76,11 @@ var X3D0 =  X3D(
                               USE_ : SFString('tank'))),
                       geometry_ : 
                         Sphere(
-                          radius_ : 0.098))]),
+                          radius_ : 0.098))),
 
                 Transform(
                   translation_ : SFVec3f([SFDouble(0), SFDouble(-0.35), SFDouble(0)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       DEF_ : SFString('tankBottom'),
                       appearance_ : 
@@ -93,7 +93,7 @@ var X3D0 =  X3D(
                       geometry_ : 
                         Cylinder(
                           height_ : 0.06,
-                          radius_ : 0.115))]),
+                          radius_ : 0.115))),
 
                 Group(
                   DEF_ : SFString('tankNozzle'),
@@ -102,7 +102,7 @@ var X3D0 =  X3D(
                       children_ : [
                         Transform(
                           translation_ : SFVec3f([SFDouble(0), SFDouble(0.45), SFDouble(0)]),
-                          children_ : [
+                          child_ : 
                             Shape(
                               DEF_ : SFString('pressure'),
                               appearance_ : 
@@ -117,11 +117,11 @@ var X3D0 =  X3D(
                               geometry_ : 
                                 Cylinder(
                                   height_ : 0.1,
-                                  radius_ : 0.015))]),
+                                  radius_ : 0.015))),
 
                         Transform(
                           translation_ : SFVec3f([SFDouble(0), SFDouble(0.5), SFDouble(0)]),
-                          children_ : [
+                          child_ : 
                             Shape(
                               DEF_ : SFString('pressureTop'),
                               appearance_ : 
@@ -132,14 +132,14 @@ var X3D0 =  X3D(
                               geometry_ : 
                                 Cylinder(
                                   height_ : 0.02,
-                                  radius_ : 0.025))]),
+                                  radius_ : 0.025))),
 
                         Transform(
                           rotation_ : SFRotation([SFDouble(0), SFDouble(0), SFDouble(1), SFDouble(1.57)]),
                           translation_ : SFVec3f([SFDouble(-0.028), SFDouble(0.462), SFDouble(0)]),
                           children_ : [
                             Transform(
-                              children_ : [
+                              child_ : 
                                 Shape(
                                   DEF_ : SFString('connectorToRegulator'),
                                   appearance_ : 
@@ -150,11 +150,11 @@ var X3D0 =  X3D(
                                   geometry_ : 
                                     Cylinder(
                                       height_ : 0.03,
-                                      radius_ : 0.01))]),
+                                      radius_ : 0.01))),
 
                             Transform(
                               translation_ : SFVec3f([SFDouble(0), SFDouble(0.02), SFDouble(0)]),
-                              children_ : [
+                              child_ : 
                                 Shape(
                                   DEF_ : SFString('connectorToRegulatorTop'),
                                   appearance_ : 
@@ -165,11 +165,11 @@ var X3D0 =  X3D(
                                   geometry_ : 
                                     Cylinder(
                                       height_ : 0.02,
-                                      radius_ : 0.02))])])])]),
+                                      radius_ : 0.02)))])])]),
 
                 Transform(
                   translation_ : SFVec3f([SFDouble(0), SFDouble(0.2), SFDouble(0)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       DEF_ : SFString('tankHoldBelt'),
                       appearance_ : 
@@ -180,7 +180,7 @@ var X3D0 =  X3D(
                       geometry_ : 
                         Cylinder(
                           height_ : 0.1,
-                          radius_ : 0.115))])]),
+                          radius_ : 0.115)))]),
 
             Background(
               skyColor_ : MFColor([SFColor(0.6), SFColor(0.6), SFColor(0.6)]))]));

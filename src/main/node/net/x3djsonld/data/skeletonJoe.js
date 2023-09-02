@@ -20,11 +20,11 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d">JohnBoy.x3d</a> </td>
+			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/skeletonJoe.x3d">skeletonJoe.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d</a> </td>
+			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/skeletonJoe.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/HumanoidAnimation/skeletonJoe.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -78,8 +78,8 @@ skeletonJoe.prototype = {
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
-    .addMeta((new autoclass.meta()).setName("title").setContent("JohnBoy.x3d"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"))
+    .addMeta((new autoclass.meta()).setName("title").setContent("skeletonJoe.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/skeletonJoe.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("An attempt at a standard LOA-4 skeleton"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("h.pl"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
@@ -120,7 +120,7 @@ skeletonJoe.prototype = {
             .setAppearance((new autoclass.Appearance())
               .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,1.0,0.0).setTransparency(0.3)))))))
     .addChild((new autoclass.NavigationInfo()).setSpeed(1.5))
-    .addChild((new autoclass.Viewpoint()).setDescription("JohnBoy").setCenterOfRotation(0.0,1.0,0.0).setPosition(0.0,1.0,3.0))
+    .addChild((new autoclass.Viewpoint()).setDescription("skeletonJoe").setCenterOfRotation(0.0,1.0,0.0).setPosition(0.0,1.0,3.0))
     .addChild((new autoclass.HAnimHumanoid("STD_HAnim")).setName("HAnim").setInfo(new autoclass.MFString("\"humanoidVersion=2.0\"")).setVersion("2.0")
       .addChild((new autoclass.HAnimJoint("STD_Joint_humanoid_root")).setName("humanoid_root").setCenter(0.0000,0.8240,0.0277).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
         .addChild((new autoclass.HAnimSegment("STD_Segment_sacrum")).setName("sacrum"))

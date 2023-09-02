@@ -97,7 +97,7 @@ CProtoDeclare ProtoDeclare17 = browser.createX3DFromString(R"foo(<?xml version="
 </IS>
 </Material>
 </Appearance>
-<!--<IndexedFaceSet DEF="Orbit" creaseAngle="0"> <Coordinate DEF="OrbitCoordinates"></Coordinate> </IndexedFaceSet>--><IndexedFaceSet containerField="geometry" ccw="false" convex="false" coordIndex="0 1 2 -1" DEF="Orbit"><Coordinate containerField="coord" DEF="OrbitCoordinates" point="0 0 1 0 1 0 1 0 0"></Coordinate>
+<!--<IndexedFaceSet DEF="Orbit" creaseAngle="0"> <Coordinate DEF="OrbitCoordinates"></Coordinate> </IndexedFaceSet>--><IndexedFaceSet ccw="false" convex="false" coordIndex="0 1 2 -1" DEF="Orbit"><Coordinate containerField="coord" DEF="OrbitCoordinates" point="0 0 1 0 1 0 1 0 0"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
@@ -285,7 +285,7 @@ IndexedFaceSet37->setCoord(*Coordinate38);
 
 Shape30->setGeometry(IndexedFaceSet37);
 
-Transform27->addChildren(*Shape30);
+Transform27->addChild(*Shape30);
 
 Group24->addChildren(*Transform27);
 

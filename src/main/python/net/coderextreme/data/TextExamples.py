@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.0", 
-head=head(children=[meta(name="title", content="TextExamples.x3d"),
+head=head(
+children=[
+meta(name="title", content="TextExamples.x3d"),
 meta(name="description", content="Show different escape-character text examples for embedded quotation marks."),
 meta(name="creator", content="Don Brutzman"),
 meta(name="created", content="7 April 2001"),
@@ -14,7 +17,7 @@ meta(name="warning", content="Usually this source document needs to be inspected
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Basic/development/TextExamples.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -44,5 +47,6 @@ Text(string=["I don't think so","","he said \"Hi\""],
 fontStyle=
 FontStyle(USE="testFontStyle")), 
 appearance=
-Appearance(USE="LightBlueAppearance"))])]))
-.XML())
+Appearance(USE="LightBlueAppearance"))])])))
+output = model.JSON()
+json.loads(output)

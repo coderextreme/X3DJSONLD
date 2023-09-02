@@ -96,9 +96,9 @@ Transform20.DEF = "LinesAlignedAlongX";
 Transform20.rotation = new SFRotation(new float[0,1,0,1.57079]);
 Shape Shape21 = createNode("Shape");
 Shape21.USE = "LinesAlignedAlongZ";
-Transform20.children = new MFNode();
+Transform20.child = new undefined();
 
-Transform20.children[0] = Shape21;
+Transform20.child[0] = Shape21;
 
 Group15.children[1] = Transform20;
 

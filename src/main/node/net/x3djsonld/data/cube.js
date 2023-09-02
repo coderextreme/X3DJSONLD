@@ -20,7 +20,7 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/cube.x3d">cube.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/cube.x3d">cube.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -40,11 +40,11 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/../license.html">../license.html</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/../license.html">../license.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/cube.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/cube.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/cube.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/cube.x3d</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -184,7 +184,7 @@ cube.prototype = {
     .addMeta((new autoclass.meta()).setName("created").setContent("4 April 2017"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
     .addMeta((new autoclass.meta()).setName("license").setContent("../license.html"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/cube.x3d")))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/cube.x3d")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.Group())
       .addChild((new autoclass.Shape())

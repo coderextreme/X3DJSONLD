@@ -36,7 +36,7 @@ head1->addMeta(*meta5);
 
 Cmeta* meta6 = new Cmeta();
 meta6->setName("identifier");
-meta6->setContent("https://coderextreme.net/X3DJSONLD/SFVec3f.x3d");
+meta6->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d");
 head1->addMeta(*meta6);
 
 X3D0->setHead(*head1);
@@ -59,7 +59,7 @@ Shape10->setAppearance(*Appearance11);
 CSphere* Sphere13 = (CSphere *)(m_pScene.createNode("Sphere"));
 Shape10->setGeometry(Sphere13);
 
-Transform9->addChildren(*Shape10);
+Transform9->addChild(*Shape10);
 
 group->addChildren(*Transform9);
 

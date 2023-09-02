@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[meta(name="title", content="LOA1_KneelAnimation.x3d"),
+head=head(
+children=[
+meta(name="title", content="LOA1_KneelAnimation.x3d"),
 meta(name="description", content="Humanoid animation prototype reusable by any Humanoid."),
 meta(name="creator", content="Tom Miller"),
 meta(name="translator", content="Curt Blais"),
@@ -19,7 +22,7 @@ meta(name="subject", content="Nancy kneel Animation HAnim 2001"),
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_KneelAnimation.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -71,7 +74,6 @@ OrientationInterpolator(DEF="HUMANOIDROOT_ANIMATOR", key=[float(0),float(1)], ke
 IS=IS(connect=[connect(nodeField="value_changed", protoField="HumanoidRoot_rotation_changed")
 ])),
 Comment(value=''' no SACROILIAC_ANIMATOR '''),
-
 OrientationInterpolator(DEF="L_HIP_ANIMATOR", key=[float(0),float(0.3125),float(0.625),float(1)], keyValue=[(float(1),float(0),float(0),float(0)),(float(-1),float(0),float(0),float(0.619393)),(float(-1),float(0),float(0),float(1.069302)),(float(-1),float(0),float(0),float(1.937315))], 
 IS=IS(connect=[connect(nodeField="value_changed", protoField="l_hip_rotation_changed")
 ])),
@@ -82,7 +84,6 @@ OrientationInterpolator(DEF="L_ANKLE_ANIMATOR", key=[float(0),float(0.3125),floa
 IS=IS(connect=[connect(nodeField="value_changed", protoField="l_ankle_rotation_changed")
 ])),
 Comment(value=''' no L_MIDTARSAL_ANIMATOR '''),
-
 OrientationInterpolator(DEF="R_HIP_ANIMATOR", key=[float(0),float(0.3125),float(1)], keyValue=[(float(1),float(0),float(0),float(0)),(float(1),float(0),float(0),float(0.523598)),(float(-1),float(0),float(0),float(0.157079))], 
 IS=IS(connect=[connect(nodeField="value_changed", protoField="r_hip_rotation_changed")
 ])),
@@ -93,12 +94,10 @@ OrientationInterpolator(DEF="R_ANKLE_ANIMATOR", key=[float(0),float(0.3125),floa
 IS=IS(connect=[connect(nodeField="value_changed", protoField="r_ankle_rotation_changed")
 ])),
 Comment(value=''' no R_MIDTARSAL_ANIMATOR '''),
-
 OrientationInterpolator(DEF="VL5_ANIMATOR", key=[float(0),float(1)], keyValue=[(float(1),float(0),float(0),float(0)),(float(1),float(0),float(0),float(0.174533))], 
 IS=IS(connect=[connect(nodeField="value_changed", protoField="vl5_rotation_changed")
 ])),
 Comment(value=''' no SKULLBASE_ANIMATOR '''),
-
 OrientationInterpolator(DEF="L_SHOULDER_ANIMATOR", key=[float(0),float(0.3125),float(0.625),float(1)], keyValue=[(float(1),float(0),float(0),float(0)),(float(-1),float(0),float(0),float(0.279252)),(float(-1),float(0),float(0),float(0.506145)),(float(-1),float(0),float(0),float(0.191986))], 
 IS=IS(connect=[connect(nodeField="value_changed", protoField="l_shoulder_rotation_changed")
 ])),
@@ -106,15 +105,13 @@ OrientationInterpolator(DEF="L_ELBOW_ANIMATOR", key=[float(0),float(0.3125),floa
 IS=IS(connect=[connect(nodeField="value_changed", protoField="l_elbow_rotation_changed")
 ])),
 Comment(value=''' no L_WRIST_ANIMATOR '''),
-
 OrientationInterpolator(DEF="R_SHOULDER_ANIMATOR", key=[float(0),float(0.3125),float(0.625),float(1)], keyValue=[(float(1),float(0),float(0),float(0)),(float(-1),float(0),float(0),float(0.104719)),(float(-1),float(0),float(0),float(0.157079)),(float(1),float(0),float(0),float(0.314159))], 
 IS=IS(connect=[connect(nodeField="value_changed", protoField="r_shoulder_rotation_changed")
 ])),
 OrientationInterpolator(DEF="R_ELBOW_ANIMATOR", key=[float(0),float(0.3125),float(0.625),float(1)], keyValue=[(float(1),float(0),float(0),float(0)),(float(-1),float(0),float(0),float(0.837757)),(float(-1),float(0),float(0),float(1.239183)),(float(-1),float(0),float(0),float(1.500983))], 
 IS=IS(connect=[connect(nodeField="value_changed", protoField="r_elbow_rotation_changed")
 ])),
-Comment(value=''' no R_WRIST_ANIMATOR '''),
-]),
+Comment(value=''' no R_WRIST_ANIMATOR '''),]),
 ROUTE(fromField="fraction_changed", fromNode="TIMER", toField="set_fraction", toNode="HUMANOIDROOT_POSITION_ANIMATOR"),
 ROUTE(fromField="fraction_changed", fromNode="TIMER", toField="set_fraction", toNode="HUMANOIDROOT_ANIMATOR"),
 ROUTE(fromField="fraction_changed", fromNode="TIMER", toField="set_fraction", toNode="L_HIP_ANIMATOR"),
@@ -137,5 +134,6 @@ FontStyle(justify=["MIDDLE","MIDDLE"], size=0.8)),
 appearance=
 Appearance(
 material=
-Material(diffuseColor=((1,1,0.2)))))])]))
-.XML())
+Material(diffuseColor=((1,1,0.2)))))])])))
+output = model.JSON()
+json.loads(output)

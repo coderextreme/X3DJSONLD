@@ -18,7 +18,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("creator").setContent("John W Carlson"))
         .addMeta((new autoclass.meta()).setName("created").setContent("December 13 2015"))
         .addMeta((new autoclass.meta()).setName("title").setContent("text.x3d"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/text.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/text.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("test \\n text"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
       .setScene((new autoclass.Scene())
@@ -42,5 +42,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFSTRING).setName("frontUrls").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setValue("\"rnl_front.png\" \"uffizi_front.png\""))
             .setSourceCode("ecmascript:\n"+
 "			    var me = '\"1\" \"\"2\" \"\\n3\"';"))))      ;
-    X3D0.toFileX3D("../data/text.new.x3d");
+    X3D0.toFileX3D("../data/text.new.node.x3d");
     process.exit(0);

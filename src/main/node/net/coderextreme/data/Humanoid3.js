@@ -16,8 +16,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
       var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
       .setHead((new autoclass.head())
         .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
-        .addMeta((new autoclass.meta()).setName("title").setContent("JohnBoy.x3d"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"))
+        .addMeta((new autoclass.meta()).setName("title").setContent("Humanoid3.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid3.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("An attempt at a standard LOA-4 skeleton"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("h2.pl"))
         .addMeta((new autoclass.meta()).setName("modified").setContent("14 Jan 2023"))
@@ -1601,5 +1601,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addSites((new autoclass.HAnimSite()).setUSE("hanim_r_carpal_distal_phalanx_3_tip"))
           .addSites((new autoclass.HAnimSite()).setUSE("hanim_r_carpal_distal_phalanx_4_tip"))
           .addSites((new autoclass.HAnimSite()).setUSE("hanim_r_carpal_distal_phalanx_5_tip"))))      ;
-    X3D0.toFileX3D("../data/Humanoid3.new.x3d");
+    X3D0.toFileX3D("../data/Humanoid3.new.node.x3d");
     process.exit(0);

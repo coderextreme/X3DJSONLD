@@ -107,9 +107,9 @@ Sphere Sphere23 = createNode("Sphere");
 Sphere23.radius = 30;
 Shape20.geometry = Sphere23;
 
-Transform19.children = new MFNode();
+Transform19.child = new undefined();
 
-Transform19.children[0] = Shape20;
+Transform19.child[0] = Shape20;
 
 children[4] = Transform19;
 
@@ -131,9 +131,9 @@ Sphere Sphere28 = createNode("Sphere");
 Sphere28.radius = 30;
 Shape25.geometry = Sphere28;
 
-Transform24.children = new MFNode();
+Transform24.child = new undefined();
 
-Transform24.children[0] = Shape25;
+Transform24.child[0] = Shape25;
 
 children[5] = Transform24;
 
@@ -155,9 +155,9 @@ Sphere Sphere33 = createNode("Sphere");
 Sphere33.radius = 30;
 Shape30.geometry = Sphere33;
 
-Transform29.children = new MFNode();
+Transform29.child = new undefined();
 
-Transform29.children[0] = Shape30;
+Transform29.child[0] = Shape30;
 
 children[6] = Transform29;
 
@@ -207,9 +207,9 @@ Cylinder Cylinder44 = createNode("Cylinder");
 Cylinder44.radius = 500;
 Shape41.geometry = Cylinder44;
 
-Transform40.children = new MFNode();
+Transform40.child = new undefined();
 
-Transform40.children[0] = Shape41;
+Transform40.child[0] = Shape41;
 
 children[13] = Transform40;
 

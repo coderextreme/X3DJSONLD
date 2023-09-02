@@ -35,7 +35,7 @@
 <ShaderPart DEF="_1" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 </Appearance>
-<Sphere containerField="geometry" radius="1.75"></Sphere>
+<Sphere radius="1.75"></Sphere>
 </Shape>
 </Transform>
 </ProtoBody>

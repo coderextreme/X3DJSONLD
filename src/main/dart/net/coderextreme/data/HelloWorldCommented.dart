@@ -77,7 +77,7 @@ var X3D0 =  X3D(
                 Transform(
                   rotation_ : SFRotation([SFDouble(0), SFDouble(1), SFDouble(0), SFDouble(3)]),
                   /*Shape begin*/
-                  children_ : [
+                  child_ : 
                     Shape(
                       /*Sphere begin*/
                       /*Sphere complete, Appearance begin*/
@@ -97,13 +97,13 @@ var X3D0 =  X3D(
                             ImageTexture(
                               DEF_ : SFString('ImageCloudlessEarth'),
                               url_ : MFString([SFString("earth-topo.png"), SFString("earth-topo.jpg"), SFString("earth-topo-small.gif"), SFString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"), SFString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg"), SFString("https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif")])))),
-                  /*Shape complete*/]),
+                  /*Shape complete*/),
               /*Transform complete, Transform begin*/
 
                 Transform(
                   translation_ : SFVec3f([SFDouble(0), SFDouble(-2), SFDouble(0)]),
                   /*Shape begin*/
-                  children_ : [
+                  child_ : 
                     Shape(
                       /*Text begin*/
                       /*Text complete, Appearance begin*/
@@ -124,7 +124,7 @@ var X3D0 =  X3D(
                           material_ : 
                             Material(
                               USE_ : SFString('MaterialLightBlue')))),
-                  /*Shape complete*/]),
+                  /*Shape complete*/),
               /*Transform complete*/]),
           /*Group complete*/]));
 void main() { exit(0); }

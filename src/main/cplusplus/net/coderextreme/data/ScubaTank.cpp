@@ -81,7 +81,7 @@ Cylinder17->setHeight(0.7);
 Cylinder17->setRadius(0.1);
 Shape14->setGeometry(Cylinder17);
 
-Transform13->addChildren(*Shape14);
+Transform13->addChild(*Shape14);
 
 Transform12->addChildren(*Transform13);
 
@@ -99,7 +99,7 @@ CSphere* Sphere22 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere22->setRadius(0.098);
 Shape19->setGeometry(Sphere22);
 
-Transform18->addChildren(*Shape19);
+Transform18->addChild(*Shape19);
 
 Transform12->addChildren(*Transform18);
 
@@ -121,7 +121,7 @@ Cylinder27->setHeight(0.06);
 Cylinder27->setRadius(0.115);
 Shape24->setGeometry(Cylinder27);
 
-Transform23->addChildren(*Shape24);
+Transform23->addChild(*Shape24);
 
 Transform12->addChildren(*Transform23);
 
@@ -148,7 +148,7 @@ Cylinder34->setHeight(0.1);
 Cylinder34->setRadius(0.015);
 Shape31->setGeometry(Cylinder34);
 
-Transform30->addChildren(*Shape31);
+Transform30->addChild(*Shape31);
 
 Transform29->addChildren(*Transform30);
 
@@ -168,7 +168,7 @@ Cylinder39->setHeight(0.02);
 Cylinder39->setRadius(0.025);
 Shape36->setGeometry(Cylinder39);
 
-Transform35->addChildren(*Shape36);
+Transform35->addChild(*Shape36);
 
 Transform29->addChildren(*Transform35);
 
@@ -190,7 +190,7 @@ Cylinder45->setHeight(0.03);
 Cylinder45->setRadius(0.01);
 Shape42->setGeometry(Cylinder45);
 
-Transform41->addChildren(*Shape42);
+Transform41->addChild(*Shape42);
 
 Transform40->addChildren(*Transform41);
 
@@ -210,7 +210,7 @@ Cylinder50->setHeight(0.02);
 Cylinder50->setRadius(0.02);
 Shape47->setGeometry(Cylinder50);
 
-Transform46->addChildren(*Shape47);
+Transform46->addChild(*Shape47);
 
 Transform40->addChildren(*Transform46);
 
@@ -236,7 +236,7 @@ Cylinder55->setHeight(0.1);
 Cylinder55->setRadius(0.115);
 Shape52->setGeometry(Cylinder55);
 
-Transform51->addChildren(*Shape52);
+Transform51->addChild(*Shape52);
 
 Transform12->addChildren(*Transform51);
 

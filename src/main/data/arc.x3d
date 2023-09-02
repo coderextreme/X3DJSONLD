@@ -5,7 +5,7 @@
         <meta name='title' content='arc'/>
         <meta name='creator' content='Lost, Doug Sanden I think'/>
         <meta name='generator' content='manual'/>
-        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d'/>
+	<meta name='identifier' content='https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d'/>
         <meta name='description' content='a generic proto to connect two objects'/>
 </head>
 <Scene>

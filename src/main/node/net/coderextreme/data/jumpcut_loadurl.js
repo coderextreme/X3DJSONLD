@@ -46,5 +46,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFSTRING).setName("myUrl").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setValue("\"jumpcut_loadurl.x3d#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View\" \"jumpcut_loadurl.wrl#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View\""))
           .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("trigger_event").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY)))
         .addChild((new autoclass.ROUTE()).setFromField("isActive").setFromNode("STARTER").setToField("trigger_event").setToNode("MYSCRIPT")))      ;
-    X3D0.toFileX3D("../data/jumpcut_loadurl.new.x3d");
+    X3D0.toFileX3D("../data/jumpcut_loadurl.new.node.x3d");
     process.exit(0);

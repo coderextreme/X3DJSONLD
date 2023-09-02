@@ -119,7 +119,7 @@
 </ProtoBody>
 </ProtoDeclare>
 <Viewpoint description="LOA1_SwimmingFlutterKickAnimation scene" position="0 0 12"></Viewpoint>
-<Anchor description="Nancy Diving" parameter="&quot;target=_blank&quot;" url="&quot;NancyDiving.x3d&quot; &quot;https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/NancyDiving.x3d&quot; &quot;NancyDiving.wrl&quot; &quot;https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/NancyDiving.wrl&quot;"><Shape><Text containerField="geometry" string="&quot;LOA1_SwimmingFlutterKickAnimation.x3d&quot; &quot;defines a prototype&quot; &quot;for animating a humanoid.&quot; &quot;&quot; &quot;Click text to see example.&quot;"><FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="0.8"></FontStyle>
+<Anchor description="Nancy Diving" parameter="&quot;target=_blank&quot;" url="&quot;NancyDiving.x3d&quot; &quot;https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/NancyDiving.x3d&quot; &quot;NancyDiving.wrl&quot; &quot;https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/NancyDiving.wrl&quot;"><Shape><Text string="&quot;LOA1_SwimmingFlutterKickAnimation.x3d&quot; &quot;defines a prototype&quot; &quot;for animating a humanoid.&quot; &quot;&quot; &quot;Click text to see example.&quot;"><FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="0.8"></FontStyle>
 </Text>
 <Appearance><Material diffuseColor="1 1 0.2"></Material>
 </Appearance>

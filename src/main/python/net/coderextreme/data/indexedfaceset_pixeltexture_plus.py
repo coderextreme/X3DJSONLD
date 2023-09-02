@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Interchange", version="3.0", 
-head=head(children=[meta(name="title", content="indexedfaceset_pixeltexture_plus.x3d"),
+head=head(
+children=[
+meta(name="title", content="indexedfaceset_pixeltexture_plus.x3d"),
 meta(name="Image", content="indexedfaceset_pixeltexture_plus-front.jpg"),
 meta(name="Image", content="indexedfaceset_pixeltexture_plus-rear.jpg"),
 meta(name="Image", content="indexedfaceset_pixeltexture_plus-top.jpg"),
@@ -24,7 +27,7 @@ meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Conf
 meta(name="generator", content="Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -50,5 +53,6 @@ Color(color=[(0,1,0),(0,1,0),(0,1,0),(0,1,0),(0,1,0),(0,1,0)])),
 coord=
 Coordinate(point=[(-2,1,1),(-2,-1,1),(2,1,1),(2,-1,1),(2,1,-1),(2,-1,-1),(-2,1,-1),(-2,-1,-1)]), 
 texCoord=
-TextureCoordinate(point=[(-1,2),(-1,-1),(2,2),(2,-1)])))]))
-.XML())
+TextureCoordinate(point=[(-1,2),(-1,-1),(2,2),(2,-1)])))])))
+output = model.JSON()
+json.loads(output)

@@ -52,7 +52,7 @@ var X3D0 =  X3D(
               DEF_ : SFString('maskAndSnorkel'),
               children_ : [
                 Transform(
-                  children_ : [
+                  child_ : 
                     Shape(
                       DEF_ : SFString('maskFrame'),
                       appearance_ : 
@@ -68,12 +68,12 @@ var X3D0 =  X3D(
                           solid_ : false,
                           coord_ : 
                             Coordinate(
-                              point_ : MFVec3f([SFVec3f([0,0.08,0]),SFVec3f([0.02,0.05,0]),SFVec3f([0.05,0.05,0]),SFVec3f([0.06,0.06,0]),SFVec3f([0.06,0.09,0]),SFVec3f([0.05,0.1,0]),SFVec3f([0,0.1,0]),SFVec3f([-0.05,0.1,0]),SFVec3f([-0.06,0.09,0]),SFVec3f([-0.06,0.06,0]),SFVec3f([-0.05,0.05,0]),SFVec3f([-0.02,0.05,0]),SFVec3f([0.005,0.08,0]),SFVec3f([0.02,0.055,0]),SFVec3f([0.05,0.055,0]),SFVec3f([0.055,0.06,0]),SFVec3f([0.055,0.09,0]),SFVec3f([0.045,0.095,0]),SFVec3f([0.005,0.095,0]),SFVec3f([-0.005,0.08,0]),SFVec3f([-0.02,0.055,0]),SFVec3f([-0.05,0.055,0]),SFVec3f([-0.055,0.06,0]),SFVec3f([-0.055,0.09,0]),SFVec3f([-0.045,0.095,0]),SFVec3f([-0.005,0.095,0])]))))]),
+                              point_ : MFVec3f([SFVec3f([0,0.08,0]),SFVec3f([0.02,0.05,0]),SFVec3f([0.05,0.05,0]),SFVec3f([0.06,0.06,0]),SFVec3f([0.06,0.09,0]),SFVec3f([0.05,0.1,0]),SFVec3f([0,0.1,0]),SFVec3f([-0.05,0.1,0]),SFVec3f([-0.06,0.09,0]),SFVec3f([-0.06,0.06,0]),SFVec3f([-0.05,0.05,0]),SFVec3f([-0.02,0.05,0]),SFVec3f([0.005,0.08,0]),SFVec3f([0.02,0.055,0]),SFVec3f([0.05,0.055,0]),SFVec3f([0.055,0.06,0]),SFVec3f([0.055,0.09,0]),SFVec3f([0.045,0.095,0]),SFVec3f([0.005,0.095,0]),SFVec3f([-0.005,0.08,0]),SFVec3f([-0.02,0.055,0]),SFVec3f([-0.05,0.055,0]),SFVec3f([-0.055,0.06,0]),SFVec3f([-0.055,0.09,0]),SFVec3f([-0.045,0.095,0]),SFVec3f([-0.005,0.095,0])]))))),
 
                 Transform(
                   DEF_ : SFString('snorkelHoldRing'),
                   translation_ : SFVec3f([SFDouble(0.075), SFDouble(0.075), SFDouble(-0.02)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       appearance_ : 
                         Appearance(
@@ -83,7 +83,7 @@ var X3D0 =  X3D(
                       geometry_ : 
                         Cylinder(
                           height_ : 0.003,
-                          radius_ : 0.015))]),
+                          radius_ : 0.015))),
 
                 Group(
                   DEF_ : SFString('snorkel'),
@@ -94,7 +94,7 @@ var X3D0 =  X3D(
                         Transform(
                           scale_ : SFVec3f([SFDouble(0.9), SFDouble(0.9), SFDouble(0.9)]),
                           translation_ : SFVec3f([SFDouble(0.035), SFDouble(-0.07), SFDouble(-0.02)]),
-                          children_ : [
+                          child_ : 
                             Shape(
                               appearance_ : 
                                 Appearance(
@@ -106,13 +106,13 @@ var X3D0 =  X3D(
                               geometry_ : 
                                 Extrusion(
                                   crossSection_ : MFVec2f([SFVec2f([0,0.013]),SFVec2f([0.00494,0.01196]),SFVec2f([0.00923,0.00923]),SFVec2f([0.01196,0.00494]),SFVec2f([0.013,0]),SFVec2f([0.01196,-0.00494]),SFVec2f([0.00923,-0.00923]),SFVec2f([0.00494,-0.01196]),SFVec2f([0,0.013]),SFVec2f([-0.00494,-0.01196]),SFVec2f([-0.00923,-0.00923]),SFVec2f([-0.01196,-0.00494]),SFVec2f([-0.013,0]),SFVec2f([-0.01196,0.00494]),SFVec2f([-0.00923,0.00923]),SFVec2f([-0.00494,0.01196]),SFVec2f([0,0.013])]),
-                                  spine_ : MFVec3f([SFVec3f([-0.01,-0.04,0]),SFVec3f([0,0,0]),SFVec3f([0.03,0.05,0]),SFVec3f([0.05,0.2,0]),SFVec3f([0.03,0.4,0.03])])))]),
+                                  spine_ : MFVec3f([SFVec3f([-0.01,-0.04,0]),SFVec3f([0,0,0]),SFVec3f([0.03,0.05,0]),SFVec3f([0.05,0.2,0]),SFVec3f([0.03,0.4,0.03])])))),
 
                         Transform(
                           rotation_ : SFRotation([SFDouble(0), SFDouble(0), SFDouble(1), SFDouble(1.57)]),
                           scale_ : SFVec3f([SFDouble(0.9), SFDouble(0.9), SFDouble(0.9)]),
                           translation_ : SFVec3f([SFDouble(0.01), SFDouble(-0.04), SFDouble(-0.02)]),
-                          children_ : [
+                          child_ : 
                             Shape(
                               appearance_ : 
                                 Appearance(
@@ -124,13 +124,13 @@ var X3D0 =  X3D(
                               geometry_ : 
                                 Extrusion(
                                   crossSection_ : MFVec2f([SFVec2f([0,0.013]),SFVec2f([0.00494,0.01196]),SFVec2f([0.00923,0.00923]),SFVec2f([0.01196,0.00494]),SFVec2f([0.013,0]),SFVec2f([0.01196,-0.00494]),SFVec2f([0.00923,-0.00923]),SFVec2f([0.00494,-0.01196]),SFVec2f([0,0.013]),SFVec2f([-0.00494,-0.01196]),SFVec2f([-0.00923,-0.00923]),SFVec2f([-0.01196,-0.00494]),SFVec2f([-0.013,0]),SFVec2f([-0.01196,0.00494]),SFVec2f([-0.00923,0.00923]),SFVec2f([-0.00494,0.01196]),SFVec2f([0,0.013])]),
-                                  spine_ : MFVec3f([SFVec3f([-0.01,-0.03,0]),SFVec3f([0,0,0]),SFVec3f([0.02,0.01,0])])))]),
+                                  spine_ : MFVec3f([SFVec3f([-0.01,-0.03,0]),SFVec3f([0,0,0]),SFVec3f([0.02,0.01,0])])))),
 
                         Transform(
                           rotation_ : SFRotation([SFDouble(0), SFDouble(0), SFDouble(1), SFDouble(-0.85)]),
                           scale_ : SFVec3f([SFDouble(0.9), SFDouble(0.9), SFDouble(0.9)]),
                           translation_ : SFVec3f([SFDouble(0.005), SFDouble(-0.01), SFDouble(-0.02)]),
-                          children_ : [
+                          child_ : 
                             Shape(
                               appearance_ : 
                                 Appearance(
@@ -140,10 +140,10 @@ var X3D0 =  X3D(
                               geometry_ : 
                                 Extrusion(
                                   crossSection_ : MFVec2f([SFVec2f([0,0.013]),SFVec2f([0.00494,0.01196]),SFVec2f([0.00923,0.00923]),SFVec2f([0.01196,0.00494]),SFVec2f([0.013,0]),SFVec2f([0.01196,-0.00494]),SFVec2f([0.00923,-0.00923]),SFVec2f([0.00494,-0.01196]),SFVec2f([0,0.013])]),
-                                  spine_ : MFVec3f([SFVec3f([-0.02,-0.03,0]),SFVec3f([-0.01,-0.03,0]),SFVec3f([0,-0.0175,0]),SFVec3f([0,-0.0135,0]),SFVec3f([-0.01,0,0]),SFVec3f([-0.02,0,0])])))])])]),
+                                  spine_ : MFVec3f([SFVec3f([-0.02,-0.03,0]),SFVec3f([-0.01,-0.03,0]),SFVec3f([0,-0.0175,0]),SFVec3f([0,-0.0135,0]),SFVec3f([-0.01,0,0]),SFVec3f([-0.02,0,0])]))))])]),
 
                 Transform(
-                  children_ : [
+                  child_ : 
                     Shape(
                       DEF_ : SFString('maskLensR'),
                       appearance_ : 
@@ -160,10 +160,10 @@ var X3D0 =  X3D(
                           solid_ : false,
                           coord_ : 
                             Coordinate(
-                              point_ : MFVec3f([SFVec3f([0,0.08,0]),SFVec3f([0.02,0.05,0]),SFVec3f([0.05,0.05,0]),SFVec3f([0.06,0.06,0]),SFVec3f([0.06,0.09,0]),SFVec3f([0.05,0.1,0]),SFVec3f([0,0.1,0]),SFVec3f([-0.05,0.1,0]),SFVec3f([-0.06,0.09,0]),SFVec3f([-0.06,0.06,0]),SFVec3f([-0.05,0.05,0]),SFVec3f([-0.02,0.05,0]),SFVec3f([0.005,0.08,0]),SFVec3f([0.02,0.055,0]),SFVec3f([0.05,0.055,0]),SFVec3f([0.055,0.06,0]),SFVec3f([0.055,0.09,0]),SFVec3f([0.045,0.095,0]),SFVec3f([0.005,0.095,0]),SFVec3f([-0.005,0.08,0]),SFVec3f([-0.02,0.055,0]),SFVec3f([-0.05,0.055,0]),SFVec3f([-0.055,0.06,0]),SFVec3f([-0.055,0.09,0]),SFVec3f([-0.045,0.095,0]),SFVec3f([-0.005,0.095,0])]))))]),
+                              point_ : MFVec3f([SFVec3f([0,0.08,0]),SFVec3f([0.02,0.05,0]),SFVec3f([0.05,0.05,0]),SFVec3f([0.06,0.06,0]),SFVec3f([0.06,0.09,0]),SFVec3f([0.05,0.1,0]),SFVec3f([0,0.1,0]),SFVec3f([-0.05,0.1,0]),SFVec3f([-0.06,0.09,0]),SFVec3f([-0.06,0.06,0]),SFVec3f([-0.05,0.05,0]),SFVec3f([-0.02,0.05,0]),SFVec3f([0.005,0.08,0]),SFVec3f([0.02,0.055,0]),SFVec3f([0.05,0.055,0]),SFVec3f([0.055,0.06,0]),SFVec3f([0.055,0.09,0]),SFVec3f([0.045,0.095,0]),SFVec3f([0.005,0.095,0]),SFVec3f([-0.005,0.08,0]),SFVec3f([-0.02,0.055,0]),SFVec3f([-0.05,0.055,0]),SFVec3f([-0.055,0.06,0]),SFVec3f([-0.055,0.09,0]),SFVec3f([-0.045,0.095,0]),SFVec3f([-0.005,0.095,0])]))))),
 
                 Transform(
-                  children_ : [
+                  child_ : 
                     Shape(
                       DEF_ : SFString('maskLensL'),
                       appearance_ : 
@@ -178,10 +178,10 @@ var X3D0 =  X3D(
                           solid_ : false,
                           coord_ : 
                             Coordinate(
-                              point_ : MFVec3f([SFVec3f([0,0.08,0]),SFVec3f([0.02,0.05,0]),SFVec3f([0.05,0.05,0]),SFVec3f([0.06,0.06,0]),SFVec3f([0.06,0.09,0]),SFVec3f([0.05,0.1,0]),SFVec3f([0,0.1,0]),SFVec3f([-0.05,0.1,0]),SFVec3f([-0.06,0.09,0]),SFVec3f([-0.06,0.06,0]),SFVec3f([-0.05,0.05,0]),SFVec3f([-0.02,0.05,0]),SFVec3f([0.005,0.08,0]),SFVec3f([0.02,0.055,0]),SFVec3f([0.05,0.055,0]),SFVec3f([0.055,0.06,0]),SFVec3f([0.055,0.09,0]),SFVec3f([0.045,0.095,0]),SFVec3f([0.005,0.095,0]),SFVec3f([-0.005,0.08,0]),SFVec3f([-0.02,0.055,0]),SFVec3f([-0.05,0.055,0]),SFVec3f([-0.055,0.06,0]),SFVec3f([-0.055,0.09,0]),SFVec3f([-0.045,0.095,0]),SFVec3f([-0.005,0.095,0])]))))]),
+                              point_ : MFVec3f([SFVec3f([0,0.08,0]),SFVec3f([0.02,0.05,0]),SFVec3f([0.05,0.05,0]),SFVec3f([0.06,0.06,0]),SFVec3f([0.06,0.09,0]),SFVec3f([0.05,0.1,0]),SFVec3f([0,0.1,0]),SFVec3f([-0.05,0.1,0]),SFVec3f([-0.06,0.09,0]),SFVec3f([-0.06,0.06,0]),SFVec3f([-0.05,0.05,0]),SFVec3f([-0.02,0.05,0]),SFVec3f([0.005,0.08,0]),SFVec3f([0.02,0.055,0]),SFVec3f([0.05,0.055,0]),SFVec3f([0.055,0.06,0]),SFVec3f([0.055,0.09,0]),SFVec3f([0.045,0.095,0]),SFVec3f([0.005,0.095,0]),SFVec3f([-0.005,0.08,0]),SFVec3f([-0.02,0.055,0]),SFVec3f([-0.05,0.055,0]),SFVec3f([-0.055,0.06,0]),SFVec3f([-0.055,0.09,0]),SFVec3f([-0.045,0.095,0]),SFVec3f([-0.005,0.095,0])]))))),
 
                 Transform(
-                  children_ : [
+                  child_ : 
                     Shape(
                       DEF_ : SFString('nose'),
                       appearance_ : 
@@ -198,10 +198,10 @@ var X3D0 =  X3D(
                           solid_ : false,
                           coord_ : 
                             Coordinate(
-                              point_ : MFVec3f([SFVec3f([0,0.08,0]),SFVec3f([0.02,0.05,0]),SFVec3f([0.05,0.05,0]),SFVec3f([0.06,0.06,0]),SFVec3f([0.06,0.09,0]),SFVec3f([0.05,0.1,0]),SFVec3f([0,0.1,0]),SFVec3f([-0.05,0.1,0]),SFVec3f([-0.06,0.09,0]),SFVec3f([-0.06,0.06,0]),SFVec3f([-0.05,0.05,0]),SFVec3f([-0.02,0.05,0]),SFVec3f([0.005,0.08,0]),SFVec3f([0.02,0.055,0]),SFVec3f([0.05,0.055,0]),SFVec3f([0.055,0.06,0]),SFVec3f([0.055,0.09,0]),SFVec3f([0.045,0.095,0]),SFVec3f([0.005,0.095,0]),SFVec3f([-0.005,0.08,0]),SFVec3f([-0.02,0.055,0]),SFVec3f([-0.05,0.055,0]),SFVec3f([-0.055,0.06,0]),SFVec3f([-0.055,0.09,0]),SFVec3f([-0.045,0.095,0]),SFVec3f([-0.005,0.095,0]),SFVec3f([0,0.04,0.015]),SFVec3f([0.05,0.04,-0.03]),SFVec3f([0.06,0.05,-0.03]),SFVec3f([0.07,0.095,-0.03]),SFVec3f([0.055,0.11,-0.03]),SFVec3f([0,0.11,-0.02]),SFVec3f([-0.055,0.11,-0.03]),SFVec3f([-0.07,0.095,-0.03]),SFVec3f([-0.06,0.05,-0.03]),SFVec3f([-0.05,0.04,-0.03]),SFVec3f([-0.02,0.04,-0.02]),SFVec3f([0.02,0.04,-0.02])]))))]),
+                              point_ : MFVec3f([SFVec3f([0,0.08,0]),SFVec3f([0.02,0.05,0]),SFVec3f([0.05,0.05,0]),SFVec3f([0.06,0.06,0]),SFVec3f([0.06,0.09,0]),SFVec3f([0.05,0.1,0]),SFVec3f([0,0.1,0]),SFVec3f([-0.05,0.1,0]),SFVec3f([-0.06,0.09,0]),SFVec3f([-0.06,0.06,0]),SFVec3f([-0.05,0.05,0]),SFVec3f([-0.02,0.05,0]),SFVec3f([0.005,0.08,0]),SFVec3f([0.02,0.055,0]),SFVec3f([0.05,0.055,0]),SFVec3f([0.055,0.06,0]),SFVec3f([0.055,0.09,0]),SFVec3f([0.045,0.095,0]),SFVec3f([0.005,0.095,0]),SFVec3f([-0.005,0.08,0]),SFVec3f([-0.02,0.055,0]),SFVec3f([-0.05,0.055,0]),SFVec3f([-0.055,0.06,0]),SFVec3f([-0.055,0.09,0]),SFVec3f([-0.045,0.095,0]),SFVec3f([-0.005,0.095,0]),SFVec3f([0,0.04,0.015]),SFVec3f([0.05,0.04,-0.03]),SFVec3f([0.06,0.05,-0.03]),SFVec3f([0.07,0.095,-0.03]),SFVec3f([0.055,0.11,-0.03]),SFVec3f([0,0.11,-0.02]),SFVec3f([-0.055,0.11,-0.03]),SFVec3f([-0.07,0.095,-0.03]),SFVec3f([-0.06,0.05,-0.03]),SFVec3f([-0.05,0.04,-0.03]),SFVec3f([-0.02,0.04,-0.02]),SFVec3f([0.02,0.04,-0.02])]))))),
 
                 Transform(
-                  children_ : [
+                  child_ : 
                     Shape(
                       DEF_ : SFString('faceFit'),
                       appearance_ : 
@@ -216,10 +216,10 @@ var X3D0 =  X3D(
                           solid_ : false,
                           coord_ : 
                             Coordinate(
-                              point_ : MFVec3f([SFVec3f([0,0.08,0]),SFVec3f([0.02,0.05,0]),SFVec3f([0.05,0.05,0]),SFVec3f([0.06,0.06,0]),SFVec3f([0.06,0.09,0]),SFVec3f([0.05,0.1,0]),SFVec3f([0,0.1,0]),SFVec3f([-0.05,0.1,0]),SFVec3f([-0.06,0.09,0]),SFVec3f([-0.06,0.06,0]),SFVec3f([-0.05,0.05,0]),SFVec3f([-0.02,0.05,0]),SFVec3f([0.005,0.08,0]),SFVec3f([0.02,0.055,0]),SFVec3f([0.05,0.055,0]),SFVec3f([0.055,0.06,0]),SFVec3f([0.055,0.09,0]),SFVec3f([0.045,0.095,0]),SFVec3f([0.005,0.095,0]),SFVec3f([-0.005,0.08,0]),SFVec3f([-0.02,0.055,0]),SFVec3f([-0.05,0.055,0]),SFVec3f([-0.055,0.06,0]),SFVec3f([-0.055,0.09,0]),SFVec3f([-0.045,0.095,0]),SFVec3f([-0.005,0.095,0]),SFVec3f([0,0.05,0.015]),SFVec3f([0.05,0.04,-0.03]),SFVec3f([0.06,0.05,-0.03]),SFVec3f([0.07,0.095,-0.03]),SFVec3f([0.055,0.11,-0.03]),SFVec3f([0,0.11,-0.02]),SFVec3f([-0.055,0.11,-0.03]),SFVec3f([-0.07,0.095,-0.03]),SFVec3f([-0.06,0.05,-0.03]),SFVec3f([-0.05,0.04,-0.03]),SFVec3f([-0.02,0.04,-0.02]),SFVec3f([0.02,0.04,-0.02])]))))]),
+                              point_ : MFVec3f([SFVec3f([0,0.08,0]),SFVec3f([0.02,0.05,0]),SFVec3f([0.05,0.05,0]),SFVec3f([0.06,0.06,0]),SFVec3f([0.06,0.09,0]),SFVec3f([0.05,0.1,0]),SFVec3f([0,0.1,0]),SFVec3f([-0.05,0.1,0]),SFVec3f([-0.06,0.09,0]),SFVec3f([-0.06,0.06,0]),SFVec3f([-0.05,0.05,0]),SFVec3f([-0.02,0.05,0]),SFVec3f([0.005,0.08,0]),SFVec3f([0.02,0.055,0]),SFVec3f([0.05,0.055,0]),SFVec3f([0.055,0.06,0]),SFVec3f([0.055,0.09,0]),SFVec3f([0.045,0.095,0]),SFVec3f([0.005,0.095,0]),SFVec3f([-0.005,0.08,0]),SFVec3f([-0.02,0.055,0]),SFVec3f([-0.05,0.055,0]),SFVec3f([-0.055,0.06,0]),SFVec3f([-0.055,0.09,0]),SFVec3f([-0.045,0.095,0]),SFVec3f([-0.005,0.095,0]),SFVec3f([0,0.05,0.015]),SFVec3f([0.05,0.04,-0.03]),SFVec3f([0.06,0.05,-0.03]),SFVec3f([0.07,0.095,-0.03]),SFVec3f([0.055,0.11,-0.03]),SFVec3f([0,0.11,-0.02]),SFVec3f([-0.055,0.11,-0.03]),SFVec3f([-0.07,0.095,-0.03]),SFVec3f([-0.06,0.05,-0.03]),SFVec3f([-0.05,0.04,-0.03]),SFVec3f([-0.02,0.04,-0.02]),SFVec3f([0.02,0.04,-0.02])]))))),
 
                 Transform(
-                  children_ : [
+                  child_ : 
                     Shape(
                       DEF_ : SFString('belt'),
                       appearance_ : 
@@ -234,5 +234,5 @@ var X3D0 =  X3D(
                           solid_ : false,
                           coord_ : 
                             Coordinate(
-                              point_ : MFVec3f([SFVec3f([0,0.08,0]),SFVec3f([0.02,0.05,0]),SFVec3f([0.05,0.05,0]),SFVec3f([0.06,0.06,0]),SFVec3f([0.06,0.09,0]),SFVec3f([0.05,0.1,0]),SFVec3f([0,0.1,0]),SFVec3f([-0.05,0.1,0]),SFVec3f([-0.06,0.09,0]),SFVec3f([-0.06,0.06,0]),SFVec3f([-0.05,0.05,0]),SFVec3f([-0.02,0.05,0]),SFVec3f([0.005,0.08,0]),SFVec3f([0.02,0.055,0]),SFVec3f([0.05,0.055,0]),SFVec3f([0.055,0.06,0]),SFVec3f([0.055,0.09,0]),SFVec3f([0.045,0.095,0]),SFVec3f([0.005,0.095,0]),SFVec3f([-0.005,0.08,0]),SFVec3f([-0.02,0.055,0]),SFVec3f([-0.05,0.055,0]),SFVec3f([-0.055,0.06,0]),SFVec3f([-0.055,0.09,0]),SFVec3f([-0.045,0.095,0]),SFVec3f([-0.005,0.095,0]),SFVec3f([0,0.05,0.015]),SFVec3f([0.05,0.04,-0.03]),SFVec3f([0.06,0.05,-0.03]),SFVec3f([0.07,0.095,-0.03]),SFVec3f([0.055,0.11,-0.03]),SFVec3f([0,0.11,-0.02]),SFVec3f([-0.055,0.11,-0.03]),SFVec3f([-0.07,0.095,-0.03]),SFVec3f([-0.06,0.05,-0.03]),SFVec3f([-0.05,0.04,-0.03]),SFVec3f([-0.02,0.04,-0.02]),SFVec3f([0.02,0.04,-0.02]),SFVec3f([0.075,0.06,-0.135]),SFVec3f([0.075,0.09,-0.135]),SFVec3f([-0.075,0.06,-0.135]),SFVec3f([-0.075,0.09,-0.135]),SFVec3f([0.06,0.09,-0.165]),SFVec3f([0.06,0.06,-0.165]),SFVec3f([-0.06,0.09,-0.165]),SFVec3f([-0.06,0.06,-0.165]),SFVec3f([0,0.09,-0.2]),SFVec3f([0,0.06,-0.175])]))))])])]));
+                              point_ : MFVec3f([SFVec3f([0,0.08,0]),SFVec3f([0.02,0.05,0]),SFVec3f([0.05,0.05,0]),SFVec3f([0.06,0.06,0]),SFVec3f([0.06,0.09,0]),SFVec3f([0.05,0.1,0]),SFVec3f([0,0.1,0]),SFVec3f([-0.05,0.1,0]),SFVec3f([-0.06,0.09,0]),SFVec3f([-0.06,0.06,0]),SFVec3f([-0.05,0.05,0]),SFVec3f([-0.02,0.05,0]),SFVec3f([0.005,0.08,0]),SFVec3f([0.02,0.055,0]),SFVec3f([0.05,0.055,0]),SFVec3f([0.055,0.06,0]),SFVec3f([0.055,0.09,0]),SFVec3f([0.045,0.095,0]),SFVec3f([0.005,0.095,0]),SFVec3f([-0.005,0.08,0]),SFVec3f([-0.02,0.055,0]),SFVec3f([-0.05,0.055,0]),SFVec3f([-0.055,0.06,0]),SFVec3f([-0.055,0.09,0]),SFVec3f([-0.045,0.095,0]),SFVec3f([-0.005,0.095,0]),SFVec3f([0,0.05,0.015]),SFVec3f([0.05,0.04,-0.03]),SFVec3f([0.06,0.05,-0.03]),SFVec3f([0.07,0.095,-0.03]),SFVec3f([0.055,0.11,-0.03]),SFVec3f([0,0.11,-0.02]),SFVec3f([-0.055,0.11,-0.03]),SFVec3f([-0.07,0.095,-0.03]),SFVec3f([-0.06,0.05,-0.03]),SFVec3f([-0.05,0.04,-0.03]),SFVec3f([-0.02,0.04,-0.02]),SFVec3f([0.02,0.04,-0.02]),SFVec3f([0.075,0.06,-0.135]),SFVec3f([0.075,0.09,-0.135]),SFVec3f([-0.075,0.06,-0.135]),SFVec3f([-0.075,0.09,-0.135]),SFVec3f([0.06,0.09,-0.165]),SFVec3f([0.06,0.06,-0.165]),SFVec3f([-0.06,0.09,-0.165]),SFVec3f([-0.06,0.06,-0.165]),SFVec3f([0,0.09,-0.2]),SFVec3f([0,0.06,-0.175])])))))])]));
 void main() { exit(0); }

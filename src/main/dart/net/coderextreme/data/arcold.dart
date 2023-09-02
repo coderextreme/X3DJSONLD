@@ -22,7 +22,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/arc.x3d')),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -42,7 +42,7 @@ var X3D0 =  X3D(
               children_ : [
                 Transform(
                   DEF_ : SFString('rotscale1'),
-                  children_ : [
+                  child_ : 
                     Shape(
                       appearance_ : 
                         Appearance(
@@ -51,14 +51,14 @@ var X3D0 =  X3D(
                               diffuseColor_ : SFColor([SFDouble(0.2), SFDouble(0.7), SFDouble(0.7)]))),
                       geometry_ : 
                         Cylinder(
-                          radius_ : 0.1))])]),
+                          radius_ : 0.1)))]),
 
             Transform(
               DEF_ : SFString('trans2'),
               children_ : [
                 Transform(
                   DEF_ : SFString('rotscale2'),
-                  children_ : [
+                  child_ : 
                     Shape(
                       appearance_ : 
                         Appearance(
@@ -67,14 +67,14 @@ var X3D0 =  X3D(
                               diffuseColor_ : SFColor([SFDouble(0.2), SFDouble(0.7), SFDouble(0.7)]))),
                       geometry_ : 
                         Cylinder(
-                          radius_ : 0.1))])]),
+                          radius_ : 0.1)))]),
 
             Transform(
               DEF_ : SFString('trans3'),
               children_ : [
                 Transform(
                   DEF_ : SFString('rotscale3'),
-                  children_ : [
+                  child_ : 
                     Shape(
                       appearance_ : 
                         Appearance(
@@ -83,7 +83,7 @@ var X3D0 =  X3D(
                               diffuseColor_ : SFColor([SFDouble(0.2), SFDouble(0.7), SFDouble(0.7)]))),
                       geometry_ : 
                         Cylinder(
-                          radius_ : 0.1))])]),
+                          radius_ : 0.1)))]),
 
             ProtoDeclare(
               name_ : SFString('point'),
@@ -106,7 +106,7 @@ var X3D0 =  X3D(
                             connect(
                               nodeField_ : SFString('translation'),
                               protoField_ : SFString('translation'))]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           geometry_ : 
                             Sphere(
@@ -116,7 +116,7 @@ var X3D0 =  X3D(
                               material_ : 
                                 Material(
                                   diffuseColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0)])))),
-
+                      children_ : [
                         PositionInterpolator(
                           DEF_ : SFString('PI1'),
                           key_ : MFFloat([SFFloat(0), SFFloat(1)]),

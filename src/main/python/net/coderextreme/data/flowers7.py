@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="4.0", 
-head=head(children=[component(name="Scripting", level=1),
+head=head(
+children=[
+component(name="Scripting", level=1),
 component(name="EnvironmentalEffects", level=3),
 component(name="Shaders", level=1),
 component(name="CubeMapTexturing", level=1),
@@ -16,17 +19,16 @@ component(name="Core", level=1),
 meta(name="title", content="flowers7.x3d"),
 meta(name="creator", content="John Carlson"),
 meta(name="generator", content="manual"),
-meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/flowers7.x3d"),
+meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/flowers7.x3d"),
 meta(name="description", content="a flower"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
 Scene=Scene(children=[
 NavigationInfo(),
 Comment(value=''' Images courtesy of Paul Debevec's Light Probe Image Gallery '''),
-
-Background(DEF="background", backUrl=["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"], bottomUrl=["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"], frontUrl=["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"], leftUrl=["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"], rightUrl=["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"], topUrl=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"]),
+Background(DEF="background", backUrl=["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"], bottomUrl=["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"], frontUrl=["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"], leftUrl=["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"], rightUrl=["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"], topUrl=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"]),
 Viewpoint(position=((0,0,40)), description="Transparent rose"),
 Transform(children=[
 Shape(
@@ -37,17 +39,17 @@ Material(diffuseColor=((0.7,0.7,0.7)), specularColor=((0.5,0.5,0.5))),
 texture=
 ComposedCubeMapTexture(DEF="texture", 
 backTexture=
-ImageTexture(DEF="backShader", url=["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"]), 
+ImageTexture(DEF="backShader", url=["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"]), 
 bottomTexture=
-ImageTexture(DEF="bottomShader", url=["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"]), 
+ImageTexture(DEF="bottomShader", url=["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]), 
 frontTexture=
-ImageTexture(DEF="frontShader", url=["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"]), 
+ImageTexture(DEF="frontShader", url=["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"]), 
 leftTexture=
-ImageTexture(DEF="leftShader", url=["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"]), 
+ImageTexture(DEF="leftShader", url=["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"]), 
 rightTexture=
-ImageTexture(DEF="rightShader", url=["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"]), 
+ImageTexture(DEF="rightShader", url=["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"]), 
 topTexture=
-ImageTexture(DEF="topShader", url=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"])), shaders=[
+ImageTexture(DEF="topShader", url=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"])), shaders=[
 ComposedShader(DEF="x3dom", language="GLSL", field=[field(name="cube", type="SFInt32", accessType="inputOutput", value=0),
 field(name="chromaticDispertion", accessType="initializeOnly", type="SFVec3f", value=(0.98,1.0,1.033)),
 field(name="bias", type="SFFloat", accessType="inputOutput", value=0.5),
@@ -95,7 +97,6 @@ field(name="set_fraction", type="SFFloat", accessType="inputOnly"),
 field(name="old", type="SFInt32", accessType="inputOutput", value=-1)
 ], sourceCode="""['', '', 'ecmascript:', '        function set_fraction( f, tm ) {', '            var side = Math.floor(f*frontUrls.length);', '            if (side > frontUrls.length-1) {', '                side = 0;', '            }', '            if (side != old) {', '                    old = side;', '                    front[0] = frontUrls[side];', '                    back[0] = backUrls[side];', '                    left[0] = leftUrls[side];', '                    right[0] = rightUrls[side];', '                    top[0] = topUrls[side];', '                    bottom[0] = bottomUrls[side];', '            }', '        }', '', '']""",),
 Comment(value=''' <TimeSensor DEF="Clock" cycleInterval="45" loop='true'/> <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/> '''),
-
 Script(DEF="Animate", directOutput=True, field=[field(name="set_fraction", type="SFFloat", accessType="inputOnly"),
 field(name="a", type="SFFloat", accessType="inputOutput", value=10),
 field(name="b", type="SFFloat", accessType="inputOutput", value=1),
@@ -117,5 +118,6 @@ ROUTE(fromNode="Animate", fromField="b", toNode="x3dom", toField="b"),
 ROUTE(fromNode="Animate", fromField="c", toNode="x3dom", toField="c"),
 ROUTE(fromNode="Animate", fromField="d", toNode="x3dom", toField="d"),
 ROUTE(fromNode="Animate", fromField="pdelta", toNode="x3dom", toField="pdelta"),
-ROUTE(fromNode="Animate", fromField="tdelta", toNode="x3dom", toField="tdelta"),]))
-.XML())
+ROUTE(fromNode="Animate", fromField="tdelta", toNode="x3dom", toField="tdelta"),])))
+output = model.JSON()
+json.loads(output)

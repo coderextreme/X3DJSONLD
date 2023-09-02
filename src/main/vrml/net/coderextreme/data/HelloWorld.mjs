@@ -160,9 +160,9 @@ Appearance32.texture = ImageTexture34;
 
 Shape30.appearance = Appearance32;
 
-Transform29.children = new MFNode();
+Transform29.child = new undefined();
 
-Transform29.children[0] = Shape30;
+Transform29.child[0] = Shape30;
 
 Group27.children[1] = Transform29;
 
@@ -185,9 +185,9 @@ Appearance39.material = Material40;
 
 Shape36.appearance = Appearance39;
 
-Transform35.children = new MFNode();
+Transform35.child = new undefined();
 
-Transform35.children[0] = Shape36;
+Transform35.child[0] = Shape36;
 
 Group27.children[2] = Transform35;
 

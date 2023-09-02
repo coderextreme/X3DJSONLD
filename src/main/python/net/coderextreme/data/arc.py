@@ -2,14 +2,17 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[meta(name="title", content="arc"),
+head=head(
+children=[
+meta(name="title", content="arc"),
 meta(name="creator", content="Lost, Doug Sanden I think"),
 meta(name="generator", content="manual"),
-meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"),
+meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d"),
 meta(name="description", content="a generic proto to connect two objects"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -102,5 +105,6 @@ ROUTE(fromNode="G2", fromField="translation", toNode="connector1", toField="set_
 ROUTE(fromNode="G1", fromField="translation", toNode="connector2", toField="set_startpoint"),
 ROUTE(fromNode="G3", fromField="translation", toNode="connector2", toField="set_endpoint"),
 ROUTE(fromNode="G1", fromField="translation", toNode="connector3", toField="set_startpoint"),
-ROUTE(fromNode="G4", fromField="translation", toNode="connector3", toField="set_endpoint")]))
-.XML())
+ROUTE(fromNode="G4", fromField="translation", toNode="connector3", toField="set_endpoint")])))
+output = model.JSON()
+json.loads(output)

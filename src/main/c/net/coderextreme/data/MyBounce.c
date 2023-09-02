@@ -29,7 +29,7 @@ head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
 meta6.name = "identifier";
-meta6.content = "https://coderextreme.net/X3DJSONLD/SFVec3f.x3d";
+meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d";
 head1.meta[4] = meta6;
 
 head = head1;
@@ -53,9 +53,9 @@ Shape10.appearance = Appearance11;
 Sphere Sphere13 = createNode("Sphere");
 Shape10.geometry = Sphere13;
 
-Transform9.children = new MFNode();
+Transform9.child = new undefined();
 
-Transform9.children[0] = Shape10;
+Transform9.child[0] = Shape10;
 
 children[1] = Transform9;
 

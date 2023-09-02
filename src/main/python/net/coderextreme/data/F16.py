@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.0", 
-head=head(children=[meta(name="title", content="F16.x3d"),
+head=head(
+children=[
+meta(name="title", content="F16.x3d"),
 meta(name="description", content="F-16, The Fighting Falcon, Turkish Air Force (TUAF), Turkey"),
 meta(name="creator", content="Murat ONDER, LTJG, Turkish Navy"),
 meta(name="creator", content="The coordinates of the main body (Except landing gears, nose antenna, flag, weapons, missile holders, cockpit, cockpit seat and fuel tanks) are mostly similar to the model of Soji Yamakawa and used with permission."),
@@ -19,7 +22,7 @@ meta(name="identifier", content="https://savage.nps.edu/Savage/AircraftFixedWing
 meta(name="subject", content="F16, F-16, Fighting Falcon"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -131,15 +134,12 @@ Transform(DEF="SeatTransform", rotation=((-1,0,0,-0.1)), scale=((0.9,0.9,0.9)), 
 Inline(url=["Seat.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.x3d","Seat.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.wrl"])]),
 Transform(DEF="FrontWheelTransform", center=((0,2.5,0)), rotation=((-1,0,0,1.92)), translation=((0.7,-5.2,-6.5)), children=[
 Comment(value=''' Front wheel is taken from the Savage Library, modified and re-animated.(from F18 Blue Angel) '''),
-
 Inline(url=["FrontWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.x3d","FrontWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.wrl"]),]),
 Transform(DEF="RearLeftWheelTransform", center=((0,2.5,0)), rotation=((1,0,1,1.92)), translation=((-2.95,-5,7)), children=[
 Comment(value=''' Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel) '''),
-
 Inline(url=["RearLeftWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.x3d","RearLeftWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.wrl"]),]),
 Transform(DEF="RearRightWheelTransform", center=((0,2.5,0)), rotation=((-1,0,-1,1.92)), translation=((2.95,-5,7)), children=[
 Comment(value=''' Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel) '''),
-
 Inline(url=["RearRightWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.x3d","RearRightWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.wrl"]),]),
 Transform(DEF="CockpitButtonsTransform", children=[
 Transform(DEF="UpButtonTransform", rotation=((1,0,0,1.57)), scale=((0.008,0.008,0.008)), translation=((-0.95,1.05,-10)), children=[
@@ -218,7 +218,6 @@ ROUTE(fromField="touchTime", fromNode="TouchSensorDown", toField="set_startTime"
 ROUTE(fromField="fraction_changed", fromNode="WheelDown", toField="set_fraction", toNode="GearDownInterpolator"),
 ROUTE(fromField="value_changed", fromNode="GearDownInterpolator", toField="set_rotation", toNode="FrontWheelTransform"),
 Comment(value=''' Animation commands for Rear Right Wheel Starts '''),
-
 TimeSensor(DEF="RRearUp1", cycleInterval=8),
 TimeSensor(DEF="RRearDown1", cycleInterval=8),
 OrientationInterpolator(DEF="RRearInterUp1", key=[float(0),float(0.5),float(1.0)], keyValue=[(float(-1),float(0),float(-1),float(0.0)),(float(-1),float(0),float(-1),float(0.44)),(float(-1),float(0),float(-1),float(1.92))]),
@@ -230,7 +229,6 @@ ROUTE(fromField="fraction_changed", fromNode="RRearUp1", toField="set_fraction",
 ROUTE(fromField="value_changed", fromNode="RRearInterDown1", toField="set_rotation", toNode="RearRightWheelTransform"),
 ROUTE(fromField="value_changed", fromNode="RRearInterUp1", toField="set_rotation", toNode="RearRightWheelTransform"),
 Comment(value=''' Animation commands for Rear Left Wheel '''),
-
 TimeSensor(DEF="LRearUp1", cycleInterval=8),
 TimeSensor(DEF="LRearDown1", cycleInterval=8),
 OrientationInterpolator(DEF="LRearInterUp1", key=[float(0),float(0.5),float(1.0)], keyValue=[(float(1),float(0),float(1),float(0.0)),(float(1),float(0),float(1),float(0.44)),(float(1),float(0),float(1),float(1.92))]),
@@ -291,6 +289,6 @@ ROUTE(fromField="fraction_changed", fromNode="FireClock", toField="set_fraction"
 ROUTE(fromField="value_changed", fromNode="MissilePath", toField="set_translation", toNode="LeftmostAmraamTransform"),
 Viewpoint(DEF="MissileLaunchView", description="Missile Fire View", orientation=((0.094,-0.994,0.057,1.1716)), position=((-344.3,-142.8,-27.7))),
 ROUTE(fromField="isActive", fromNode="FireSensor", toField="set_bind", toNode="MissileLaunchView"),
-Comment(value=''' TODO fix type, add filter '''),
-]))
-.XML())
+Comment(value=''' TODO fix type, add filter '''),])))
+output = model.JSON()
+json.loads(output)

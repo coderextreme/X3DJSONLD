@@ -80,7 +80,7 @@ var X3D0 =  X3D(
               rotation_ : SFRotation([SFDouble(0.40671), SFDouble(-0.71645), SFDouble(-0.56683), SFDouble(2.6753)]),
               translation_ : SFVec3f([SFDouble(-3), SFDouble(0), SFDouble(0)]),
               /*RotationCalculator composed rotation: 0.0 0.0 1.0 -1.829527, 1.0 0.0 0.0 -4.400301, 0.0 1.0 0.0 -0.381611*/
-              children_ : [
+              child_ : 
                 Shape(
                   DEF_ : SFString('BoxShape'),
                   geometry_ : 
@@ -91,7 +91,7 @@ var X3D0 =  X3D(
                       material_ : 
                         Material(
                           diffuseColor_ : SFColor([SFDouble(0.9), SFDouble(0.9), SFDouble(0.9)])))),
-
+              child_ : 
                 Shape(
                   DEF_ : SFString('AxisLinesShape'),
                   /*RGB lines showing XYZ axes*/
@@ -105,19 +105,19 @@ var X3D0 =  X3D(
                           point_ : MFVec3f([SFVec3f([0,0,0]),SFVec3f([1,0,0]),SFVec3f([0,1,0]),SFVec3f([0,0,1])])),
                       color_ : 
                         Color(
-                          color_ : MFColor([SFColor(1), SFColor(0), SFColor(0), SFColor(0), SFColor(0.6), SFColor(0), SFColor(0), SFColor(0), SFColor(1)]))))]),
+                          color_ : MFColor([SFColor(1), SFColor(0), SFColor(0), SFColor(0), SFColor(0.6), SFColor(0), SFColor(0), SFColor(0), SFColor(1)]))))),
           /**Expected rotation values for initial rotations* in Interpolator2*/
 
             Transform(
               DEF_ : SFString('Transform2'),
               rotation_ : SFRotation([SFDouble(-0.96458), SFDouble(0.07774), SFDouble(0.25206), SFDouble(2.59674)]),
               /*RotationCalculator composed rotation: 0.0 0.0 1.0 2.832229, 1.0 0.0 0.0 5.801149, 0.0 1.0 0.0 2.55377*/
-              children_ : [
+              child_ : 
                 Shape(
                   USE_ : SFString('BoxShape')),
-
+              child_ : 
                 Shape(
-                  USE_ : SFString('AxisLinesShape'))]),
+                  USE_ : SFString('AxisLinesShape'))),
           /**Expected rotation values for initial rotations* in Interpolator3*/
 
             Transform(
@@ -125,12 +125,12 @@ var X3D0 =  X3D(
               rotation_ : SFRotation([SFDouble(0.40758), SFDouble(-0.49149), SFDouble(-0.76962), SFDouble(1.12862)]),
               translation_ : SFVec3f([SFDouble(3), SFDouble(0), SFDouble(0)]),
               /*RotationCalculator composed rotation: 0.0 0.0 1.0 -3.939975, 1.0 0.0 0.0 -3.766201, 0.0 1.0 0.0 -3.474078*/
-              children_ : [
+              child_ : 
                 Shape(
                   USE_ : SFString('BoxShape')),
-
+              child_ : 
                 Shape(
-                  USE_ : SFString('AxisLinesShape'))]),
+                  USE_ : SFString('AxisLinesShape'))),
           /*Animation playback: enable ClockTimer for continuous motion at 60.000 frames/second (fps)*/
 
             TimeSensor(

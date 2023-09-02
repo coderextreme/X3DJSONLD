@@ -2,10 +2,13 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(version="3.0", profile="Immersive", 
-head=head(children=[meta(name="filename", content="Scripting.x3d"),
-meta(name="translated", content="16 July 2023"),
+head=head(
+children=[
+meta(name="filename", content="Scripting.x3d"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -28,5 +31,6 @@ AudioClip(DEF="Click", stopTime=1, description="clicking sound", url=["../resour
 TouchSensor(DEF="TS"),
 ROUTE(fromNode="TS", fromField="isOver", toNode="OpenVault", toField="combinationEntered"),
 ROUTE(fromNode="TS", fromField="touchTime", toNode="OpenVault", toField="openVault"),
-ROUTE(fromNode="OpenVault", fromField="vaultUnlocked", toNode="Click", toField="startTime")]))
-.XML())
+ROUTE(fromNode="OpenVault", fromField="vaultUnlocked", toNode="Click", toField="startTime")])))
+output = model.JSON()
+json.loads(output)

@@ -588,5 +588,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .setAppearance((new autoclass.Appearance()).setDEF("circle2_Appearance")
                 .setMaterial((new autoclass.Material()).setDEF("circle2_Material").setDiffuseColor(java.newArray("float", [java.newFloat(0.9), java.newFloat(0), java.newFloat(0.7)])).setEmissiveColor(java.newArray("float", [java.newFloat(0.424956), java.newFloat(0.483976), java.newFloat(1)]))))
               .setGeometry((new autoclass.IndexedLineSet()).setUSE("Orbit1"))))))      ;
-    X3D0.toFileX3D("../data/JoeKick.new.x3d");
+    X3D0.toFileX3D("../data/JoeKick.new.node.x3d");
     process.exit(0);

@@ -16,8 +16,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
       var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
       .setHead((new autoclass.head())
         .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
-        .addMeta((new autoclass.meta()).setName("title").setContent("JohnBoy.x3d"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"))
+        .addMeta((new autoclass.meta()).setName("title").setContent("JohnJoint2.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint2.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("An attempt at a standard LOA-4 skeleton"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("h2.pl"))
         .addMeta((new autoclass.meta()).setName("modified").setContent("14 Jan 2023"))
@@ -342,5 +342,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_metacarpophalangeal_5"))
           .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_carpal_proximal_interphalangeal_5"))
           .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_r_carpal_distal_interphalangeal_5"))))      ;
-    X3D0.toFileX3D("../data/JohnJoint2.new.x3d");
+    X3D0.toFileX3D("../data/JohnJoint2.new.node.x3d");
     process.exit(0);

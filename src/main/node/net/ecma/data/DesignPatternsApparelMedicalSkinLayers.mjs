@@ -68,7 +68,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("26 December 2022")}),
+              content : new SFString("2 July 2023")}),
 
             new meta({
               name : new SFString("reference"),
@@ -213,7 +213,7 @@ var X3D0 =  new X3D({
                       children : new MFNode([
                         new HAnimSegment({
                           name : new SFString("sacrum")})])}),
-                  /*TODO proposed for X3D4 <Switch DEF='AlternativeSkins' containerField='skin'>*/
+                  /*TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'>*/
                   skin : new SFNode(
                     new Shape({
                       geometry : new SFNode(
@@ -221,8 +221,7 @@ var X3D0 =  new X3D({
                           DEF : new SFString("IndexedSkinMeshIFS"),
                           coord : new SFNode(
                             new Coordinate({
-                              DEF : new SFString("SkinMeshCoordinate")}))}))})]),
-                  /*TODO proposed for X3D4 </Switch>*/}),
+                              DEF : new SFString("SkinMeshCoordinate")}))}))})])}),
               /*similarly for LOD*/
               /*==============================*/
 
@@ -279,8 +278,6 @@ var X3D0 =  new X3D({
                         new HAnimSegment({
                           name : new SFString("sacrum")})])}),
                   /*allow multiple Shape nodes with containerField='skin', one for each layer of skin*/
-                  /*TODO proposed for X3D4.1 <Shape containerField='skin'/>*/
-                  /*TODO proposed for X3D4.1 <Shape containerField='skin'/>*/
                   skin : new SFNode(
                     new Shape({})])}),
               /*==============================*/])}),

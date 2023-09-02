@@ -34,7 +34,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('modified'),
-              content_ : SFString('26 December 2022')),
+              content_ : SFString('2 July 2023')),
 
             meta(
               name_ : SFString('reference'),
@@ -179,7 +179,7 @@ var X3D0 =  X3D(
                       children_ : [
                         HAnimSegment(
                           name_ : SFString('sacrum'))]),
-                  /*TODO proposed for X3D4 <Switch DEF='AlternativeSkins' containerField='skin'>*/
+                  /*TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'>*/
                   skin_ : 
                     Shape(
                       geometry_ : 
@@ -187,8 +187,7 @@ var X3D0 =  X3D(
                           DEF_ : SFString('IndexedSkinMeshIFS'),
                           coord_ : 
                             Coordinate(
-                              DEF_ : SFString('SkinMeshCoordinate'))))],
-                  /*TODO proposed for X3D4 </Switch>*/),
+                              DEF_ : SFString('SkinMeshCoordinate'))))]),
               /*similarly for LOD*/
               /*==============================*/
 
@@ -245,8 +244,6 @@ var X3D0 =  X3D(
                         HAnimSegment(
                           name_ : SFString('sacrum'))]),
                   /*allow multiple Shape nodes with containerField='skin', one for each layer of skin*/
-                  /*TODO proposed for X3D4.1 <Shape containerField='skin'/>*/
-                  /*TODO proposed for X3D4.1 <Shape containerField='skin'/>*/
                   skin_ : 
                     Shape()]),
               /*==============================*/]),

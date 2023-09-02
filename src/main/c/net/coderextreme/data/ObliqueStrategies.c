@@ -207,7 +207,7 @@ Appearance42.material = Material43;
 
 Shape39.appearance = Appearance42;
 
-Transform37.children[1] = Shape39;
+Transform37.child[1] = Shape39;
 
 Transform Transform44 = createNode("Transform");
 Transform44.scale = new SFVec3f(new float[10,3,1]);
@@ -233,9 +233,9 @@ Appearance48.material = Material49;
 
 Shape45.appearance = Appearance48;
 
-Transform44.children = new MFNode();
+Transform44.child = new undefined();
 
-Transform44.children[0] = Shape45;
+Transform44.child[0] = Shape45;
 
 Transform37.children[2] = Transform44;
 
@@ -327,9 +327,9 @@ Appearance63.material = Material64;
 
 Shape60.appearance = Appearance63;
 
-Transform59.children = new MFNode();
+Transform59.child = new undefined();
 
-Transform59.children[0] = Shape60;
+Transform59.child[0] = Shape60;
 
 ROUTE ROUTE65 = createNode("ROUTE");
 ROUTE65.fromField = "string_changed";
@@ -406,7 +406,7 @@ Appearance76.material = Material77;
 
 Shape73.appearance = Appearance76;
 
-Transform70.children[2] = Shape73;
+Transform70.child[2] = Shape73;
 
 Transform Transform78 = createNode("Transform");
 Transform78.scale = new SFVec3f(new float[2,0.6,1]);
@@ -429,9 +429,9 @@ Appearance82.material = Material83;
 
 Shape79.appearance = Appearance82;
 
-Transform78.children = new MFNode();
+Transform78.child = new undefined();
 
-Transform78.children[0] = Shape79;
+Transform78.child[0] = Shape79;
 
 Transform70.children[3] = Transform78;
 
@@ -467,15 +467,15 @@ Appearance Appearance90 = createNode("Appearance");
 Appearance90.USE = "InterfaceAppearance";
 Shape87.appearance = Appearance90;
 
-Transform84.children[2] = Shape87;
+Transform84.child[2] = Shape87;
 
 Transform Transform91 = createNode("Transform");
 Transform91.scale = new SFVec3f(new float[1.2,0.6,1]);
 Shape Shape92 = createNode("Shape");
 Shape92.USE = "TransparentClickSurface";
-Transform91.children = new MFNode();
+Transform91.child = new undefined();
 
-Transform91.children[0] = Shape92;
+Transform91.child[0] = Shape92;
 
 Transform84.children[3] = Transform91;
 
@@ -510,15 +510,15 @@ Appearance Appearance99 = createNode("Appearance");
 Appearance99.USE = "InterfaceAppearance";
 Shape96.appearance = Appearance99;
 
-Transform93.children[2] = Shape96;
+Transform93.child[2] = Shape96;
 
 Transform Transform100 = createNode("Transform");
 Transform100.scale = new SFVec3f(new float[1.8,0.6,1]);
 Shape Shape101 = createNode("Shape");
 Shape101.USE = "TransparentClickSurface";
-Transform100.children = new MFNode();
+Transform100.child = new undefined();
 
-Transform100.children[0] = Shape101;
+Transform100.child[0] = Shape101;
 
 Transform93.children[3] = Transform100;
 
@@ -560,9 +560,9 @@ Transform Transform109 = createNode("Transform");
 Transform109.scale = new SFVec3f(new float[1.8,0.6,1]);
 Shape Shape110 = createNode("Shape");
 Shape110.USE = "TransparentClickSurface";
-Transform109.children = new MFNode();
+Transform109.child = new undefined();
 
-Transform109.children[0] = Shape110;
+Transform109.child[0] = Shape110;
 
 Anchor103.children[2] = Transform109;
 

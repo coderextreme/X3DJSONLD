@@ -119,7 +119,7 @@ var X3D0 =  X3D(
             Transform(
               DEF_ : SFString('Floor'),
               translation_ : SFVec3f([SFDouble(1.241), SFDouble(0), SFDouble(0.358)]),
-              children_ : [
+              child_ : 
                 Shape(
                   appearance_ : 
                     Appearance(
@@ -129,12 +129,12 @@ var X3D0 =  X3D(
                           diffuseColor_ : SFColor([SFDouble(0.122), SFDouble(0.114), SFDouble(0.125)]))),
                   geometry_ : 
                     Box(
-                      size_ : SFVec3f([SFDouble(2000), SFDouble(1), SFDouble(2000)])))]),
+                      size_ : SFVec3f([SFDouble(2000), SFDouble(1), SFDouble(2000)])))),
 
             Transform(
               DEF_ : SFString('TransformAudio1'),
               translation_ : SFVec3f([SFDouble(-933.123474), SFDouble(0), SFDouble(-926.253235)]),
-              children_ : [
+              child_ : 
                 Shape(
                   appearance_ : 
                     Appearance(
@@ -145,7 +145,7 @@ var X3D0 =  X3D(
                   geometry_ : 
                     Sphere(
                       radius_ : 100)),
-
+              children_ : [
                 Billboard(
                   children_ : [
                     Transform(
@@ -153,7 +153,7 @@ var X3D0 =  X3D(
                       rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
                       scale_ : SFVec3f([SFDouble(100), SFDouble(100), SFDouble(100)]),
                       translation_ : SFVec3f([SFDouble(0), SFDouble(100), SFDouble(0)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
@@ -170,12 +170,12 @@ var X3D0 =  X3D(
                                 FontStyle(
                                   DEF_ : SFString('ModelFontStyle'),
                                   family_ : MFString([SFString("Times"), SFString("SERIF")]),
-                                  style_ : SFString('BOLD'))))])])]),
+                                  style_ : SFString('BOLD')))))])]),
 
             Transform(
               DEF_ : SFString('TransformAudio2'),
               translation_ : SFVec3f([SFDouble(933.475586), SFDouble(0), SFDouble(924.423218)]),
-              children_ : [
+              child_ : 
                 Shape(
                   appearance_ : 
                     Appearance(
@@ -186,7 +186,7 @@ var X3D0 =  X3D(
                   geometry_ : 
                     Sphere(
                       radius_ : 100)),
-
+              children_ : [
                 Billboard(
                   children_ : [
                     Transform(
@@ -194,7 +194,7 @@ var X3D0 =  X3D(
                       rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
                       scale_ : SFVec3f([SFDouble(100), SFDouble(100), SFDouble(100)]),
                       translation_ : SFVec3f([SFDouble(0), SFDouble(100), SFDouble(0)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
@@ -209,7 +209,7 @@ var X3D0 =  X3D(
                               string_ : MFString([SFString("Saxophone")]),
                               fontStyle_ : 
                                 FontStyle(
-                                  USE_ : SFString('ModelFontStyle'))))])])]),
+                                  USE_ : SFString('ModelFontStyle')))))])]),
 
             ListenerPointSource(
               trackCurrentView_ : true),

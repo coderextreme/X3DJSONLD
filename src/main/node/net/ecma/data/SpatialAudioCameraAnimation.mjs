@@ -161,7 +161,7 @@ var X3D0 =  new X3D({
             new Transform({
               DEF : new SFString("Floor"),
               translation : new SFVec3f([1.241,0,0.358]),
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
@@ -171,12 +171,12 @@ var X3D0 =  new X3D({
                           diffuseColor : new SFColor([0.122,0.114,0.125])}))})),
                   geometry : new SFNode(
                     new Box({
-                      size : new SFVec3f([2000,1,2000])}))})])}),
+                      size : new SFVec3f([2000,1,2000])}))}))}),
 
             new Transform({
               DEF : new SFString("TransformAudio1"),
               translation : new SFVec3f([-933.123474,0,-926.253235]),
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
@@ -186,8 +186,8 @@ var X3D0 =  new X3D({
                           diffuseColor : new SFColor([0.690196,0.101961,0.101961])}))})),
                   geometry : new SFNode(
                     new Sphere({
-                      radius : new SFFloat(100)}))}),
-
+                      radius : new SFFloat(100)}))})),
+              children : new MFNode([
                 new Billboard({
                   children : new MFNode([
                     new Transform({
@@ -195,7 +195,7 @@ var X3D0 =  new X3D({
                       rotation : new SFRotation([1,0,0,-0.5]),
                       scale : new SFVec3f([100,100,100]),
                       translation : new SFVec3f([0,100,0]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           appearance : new SFNode(
                             new Appearance({
@@ -212,12 +212,12 @@ var X3D0 =  new X3D({
                                 new FontStyle({
                                   DEF : new SFString("ModelFontStyle"),
                                   family : new MFString(["Times","SERIF"]),
-                                  style : new SFString("BOLD")}))}))})])})])})])}),
+                                  style : new SFString("BOLD")}))}))}))})])})])}),
 
             new Transform({
               DEF : new SFString("TransformAudio2"),
               translation : new SFVec3f([933.475586,0,924.423218]),
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
@@ -227,8 +227,8 @@ var X3D0 =  new X3D({
                           diffuseColor : new SFColor([0.105882,0.694118,0.580392])}))})),
                   geometry : new SFNode(
                     new Sphere({
-                      radius : new SFFloat(100)}))}),
-
+                      radius : new SFFloat(100)}))})),
+              children : new MFNode([
                 new Billboard({
                   children : new MFNode([
                     new Transform({
@@ -236,7 +236,7 @@ var X3D0 =  new X3D({
                       rotation : new SFRotation([1,0,0,-0.5]),
                       scale : new SFVec3f([100,100,100]),
                       translation : new SFVec3f([0,100,0]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           appearance : new SFNode(
                             new Appearance({
@@ -251,7 +251,7 @@ var X3D0 =  new X3D({
                               string : new MFString(["Saxophone"]),
                               fontStyle : new SFNode(
                                 new FontStyle({
-                                  USE : new SFString("ModelFontStyle")}))}))})])})])})])}),
+                                  USE : new SFString("ModelFontStyle")}))}))}))})])})])}),
 
             new ListenerPointSource({
               trackCurrentView : new SFBool(true)}),

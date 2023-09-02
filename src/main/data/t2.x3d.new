@@ -16,7 +16,7 @@
 </IS>
 </Material>
 </Appearance>
-<Sphere containerField="geometry" radius="1.10000002384186"></Sphere>
+<Sphere radius="1.10000002384186"></Sphere>
 </Shape>
 <IS><connect nodeField="translation" protoField="posi"></connect>
 </IS>

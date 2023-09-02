@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[meta(name="title", content="pp3.x3d"),
+head=head(
+children=[
+meta(name="title", content="pp3.x3d"),
 meta(name="creator", content="John Carlson"),
 meta(name="translator", content="John Carlson"),
 meta(name="created", content="5 May 2015"),
@@ -12,7 +15,7 @@ meta(name="modified", content="23 Dec 2022"),
 meta(name="description", content="A process pipeline between three spheres (try typing on spheres and blue"),
 meta(name="identifier", content="https://coderextreme.net/x3d/pp3.x3d"),
 meta(name="generator", content="manual"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -21,7 +24,6 @@ ProtoDeclare(name="Process",
 ProtoBody=ProtoBody(children=[
 Group(children=[
 Comment(value=''' left '''),
-
 Transform(scale=((0.5,0.5,0.5)), children=[
 Shape(
 appearance=
@@ -30,10 +32,8 @@ material=
 Material(diffuseColor=((0.7,1,0)), transparency=0.5)), 
 geometry=
 Extrusion(creaseAngle=0.785, crossSection=[(1,0),(0.92,-0.38),(0.71,-0.71),(0.38,-0.92),(0,-1),(-0.38,-0.92),(-0.71,-0.71),(-0.92,-0.38),(-1,0),(-0.92,0.38),(-0.71,0.71),(-0.38,0.92),(0,1),(0.38,0.92),(0.71,0.71),(0.92,0.38),(1,0)], spine=[(-2.5,0,0),(-1.5,0,0)])),
-Comment(value=''' <Transform translation="-2.5 0 0"> <Shape> <Text DEF="LeftString" string='"l"'/> </Shape> </Transform> <StringSensor DEF="LeftSensor" enabled="false"/> <TouchSensor DEF="LeftTouch" enabled="true"/> '''),
-]),
+Comment(value=''' <Transform translation="-2.5 0 0"> <Shape> <Text DEF="LeftString" string='"l"'/> </Shape> </Transform> <StringSensor DEF="LeftSensor" enabled="false"/> <TouchSensor DEF="LeftTouch" enabled="true"/> '''),]),
 Comment(value=''' right '''),
-
 Transform(scale=((0.5,0.5,0.5)), children=[
 Shape(
 appearance=
@@ -53,7 +53,6 @@ Text(DEF="RightString", string=["r"]))]),
 StringSensor(DEF="RightSensor", enabled=False),
 TouchSensor(description="touch to activate", DEF="RightTouch")]),
 Comment(value=''' up '''),
-
 Transform(scale=((0.5,0.5,0.5)), children=[
 Shape(
 appearance=
@@ -73,7 +72,6 @@ Text(DEF="UpString", string=["u"]))]),
 StringSensor(DEF="UpSensor", enabled=False),
 TouchSensor(description="touch to activate", DEF="UpTouch")]),
 Comment(value=''' down '''),
-
 Transform(scale=((0.5,0.5,0.5)), children=[
 Shape(
 appearance=
@@ -82,10 +80,8 @@ material=
 Material(diffuseColor=((0.7,1,0)), transparency=0.5)), 
 geometry=
 Extrusion(creaseAngle=0.785, crossSection=[(1,0),(0.92,-0.38),(0.71,-0.71),(0.38,-0.92),(0,-1),(-0.38,-0.92),(-0.71,-0.71),(-0.92,-0.38),(-1,0),(-0.92,0.38),(-0.71,0.71),(-0.38,0.92),(0,1),(0.38,0.92),(0.71,0.71),(0.92,0.38),(1,0)], spine=[(0,-2.5,0),(0,-1.5,0)])),
-Comment(value=''' <Transform translation="-0.5 -2.5 0"> <Shape> <Text DEF="DownString" string='"d"'/> </Shape> </Transform> <StringSensor DEF="DownSensor" enabled="false"/> <TouchSensor description='touch to activate' DEF="DownTouch" enabled="true"/> '''),
-]),
+Comment(value=''' <Transform translation="-0.5 -2.5 0"> <Shape> <Text DEF="DownString" string='"d"'/> </Shape> </Transform> <StringSensor DEF="DownSensor" enabled="false"/> <TouchSensor description='touch to activate' DEF="DownTouch" enabled="true"/> '''),]),
 Comment(value=''' center '''),
-
 Transform(children=[
 Shape(
 appearance=
@@ -129,5 +125,6 @@ ProtoInstance(name="Process")]),
 Transform(children=[
 ProtoInstance(name="Process")]),
 Transform(translation=((0,2.5,0)), children=[
-ProtoInstance(name="Process")])]))
-.XML())
+ProtoInstance(name="Process")])])))
+output = model.JSON()
+json.loads(output)

@@ -20,11 +20,11 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d">JohnBoy.x3d</a> </td>
+			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/DonHumanoid.x3d">DonHumanoid.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d</a> </td>
+			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/DonHumanoid.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/HumanoidAnimation/DonHumanoid.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -200,8 +200,8 @@ DonHumanoid.prototype = {
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
-    .addMeta((new autoclass.meta()).setName("title").setContent("JohnBoy.x3d"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"))
+    .addMeta((new autoclass.meta()).setName("title").setContent("DonHumanoid.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/DonHumanoid.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("An attempt at a standard LOA-4 skeleton"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("h2.pl"))
     .addMeta((new autoclass.meta()).setName("modified").setContent("14 Jan 2023"))
@@ -250,7 +250,7 @@ DonHumanoid.prototype = {
           .setCoord((new autoclass.Coordinate("TheSkinCoord")).setPoint(this.TheSkinCoord_6_42_point))
           .setColor((new autoclass.Color()).setColor(this.Color_6_43_color)))
         .setAppearance((new autoclass.Appearance("SkinAppearance"))
-          .setTexture((new autoclass.ImageTexture("zBlueSpiralBkg2")).setDescription("Blue Spiral Pattern").setUrl(new autoclass.MFString("\"zBlueSpiralBkg2.gif\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif\"")))
+          .setTexture((new autoclass.ImageTexture("zBlueSpiralBkg2")).setDescription("Blue Spiral Pattern").setUrl(new autoclass.MFString("\"./data/zBlueSpiralBkg2.gif\" \"zBlueSpiralBkg2.gif\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif\"")))
           .setMaterial((new autoclass.Material("SkinMaterial")).setAmbientIntensity(0.6).setDiffuseColor(1.0,1.0,1.0).setShininess(0.6).setTransparency(0.2))))
       .addComments(" </LOD> ")
       .setSkinCoord((new autoclass.Coordinate()))

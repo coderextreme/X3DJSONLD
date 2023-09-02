@@ -20,11 +20,11 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d">JohnBoy.x3d</a> </td>
+			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint3.x3d">JohnJoint3.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d</a> </td>
+			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint3.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint3.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -82,8 +82,8 @@ JohnJoint3.prototype = {
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
-    .addMeta((new autoclass.meta()).setName("title").setContent("JohnBoy.x3d"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"))
+    .addMeta((new autoclass.meta()).setName("title").setContent("JohnJoint3.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint3.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("An attempt at a standard LOA-4 skeleton"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("h2.pl"))
     .addMeta((new autoclass.meta()).setName("modified").setContent("14 Jan 2023"))
@@ -120,18 +120,13 @@ JohnJoint3.prototype = {
             .setGeometry((new autoclass.LineSet()).setVertexCount(java.newArray("int", [2]))
               .setColor((new autoclass.ColorRGBA("HAnimSegmentLineColorRGBA")).setColor(new autoclass.MFColorRGBA(java.newArray("float", [1.0,1.0,0.0,1.0,1.0,1.0,0.0,0.1]))))
               .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.05,0.0,0.0,0.05,0.0,0.0])))))))
-        .addComments(java.newArray("java.lang.String",["",
-"  <Transform translation='0 2.1 0' scale='1 1 1'>",
-"   <Shape DEF='HAnimSiteShape'>",
-"    <IndexedFaceSet DEF='DiamondIFS' creaseAngle='0.5' solid='false' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1'>",
-"     <ColorRGBA DEF='HAnimSiteColorRGBA' color='1 1 0 1 1 1 0 0.1'/>",
-"     <Coordinate point='0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0'/>",
-"    </IndexedFaceSet>",
-"     <Appearance>",
-"      <Material diffuseColor='1 1 0' transparency='0.3'/>",
-"     </Appearance>",
-"   </Shape>",
-"  </Transform>"]))))
+        .addChild((new autoclass.Transform()).setTranslation(0.0,2.1,0.0)
+          .addChild((new autoclass.Shape("HAnimSiteShape"))
+            .setGeometry((new autoclass.IndexedFaceSet("DiamondIFS")).setDEF("DiamondIFS").setCreaseAngle(0.5).setSolid(false).setCoordIndex(java.newArray("int", [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1]))
+              .setColor((new autoclass.ColorRGBA("HAnimSiteColorRGBA")).setColor(new autoclass.MFColorRGBA(java.newArray("float", [1.0,1.0,0.0,1.0,1.0,1.0,0.0,0.1]))))
+              .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0,0.01,0.0,-0.01,0.0,0.0,0.0,0.0,0.01,0.01,0.0,0.0,0.0,0.0,-0.01,0.0,-0.01,0.0])))))
+            .setAppearance((new autoclass.Appearance())
+              .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,1.0,0.0).setTransparency(0.3)))))))
     .addChild((new autoclass.NavigationInfo()).setSpeed(1.5))
     .addChild((new autoclass.Viewpoint()).setDescription("default"))
     .addChild((new autoclass.HAnimHumanoid("hanim_HAnim")).setName("HAnim").setInfo(new autoclass.MFString("\"humanoidVersion=2.0\"")).setVersion("2.0")

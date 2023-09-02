@@ -29,7 +29,7 @@ head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
 meta6.name = "identifier";
-meta6.content = "https://coderextreme.net/X3DJSONLD/force.x3d";
+meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d";
 head1.meta[4] = meta6;
 
 meta meta7 = createNode("meta");
@@ -50,11 +50,11 @@ ProtoDeclare ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" e
 </ProtoInterface>
 <ProtoBody><Group><Transform DEF="transform"><IS><connect nodeField="translation" protoField="position"></connect>
 </IS>
-<Shape><Sphere containerField="geometry"></Sphere>
+<Shape><Sphere></Sphere>
 <Appearance><Material diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
-<Transform translation="1 0 0"><Shape><Text containerField="geometry" string="&quot;Node&quot;"><FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="5"></FontStyle>
+<Transform translation="1 0 0"><Shape><Text string="&quot;Node&quot;"><FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="5"></FontStyle>
 </Text>
 <Appearance><Material diffuseColor="0 0 1"></Material>
 </Appearance>
@@ -119,9 +119,9 @@ Appearance20.material = Material21;
 
 Shape18.appearance = Appearance20;
 
-Transform15.children = new MFNode();
+Transform15.child = new undefined();
 
-Transform15.children[0] = Shape18;
+Transform15.child[0] = Shape18;
 
 Transform Transform22 = createNode("Transform");
 Transform22.translation = new SFVec3f(new float[1,0,0]);
@@ -142,9 +142,9 @@ Appearance26.material = Material27;
 
 Shape23.appearance = Appearance26;
 
-Transform22.children = new MFNode();
+Transform22.child = new undefined();
 
-Transform22.children[0] = Shape23;
+Transform22.child[0] = Shape23;
 
 Transform15.children[1] = Transform22;
 
@@ -247,7 +247,7 @@ ProtoDeclare ProtoDeclare39 = browser.createX3DFromString(`<?xml version="1.0" e
 <ProtoDeclare name="cylinder" ><ProtoInterface><field name="set_positionA" accessType="inputOnly" type="SFVec3f"></field>
 <field name="set_positionB" accessType="inputOnly" type="SFVec3f"></field>
 </ProtoInterface>
-<ProtoBody><Group><Shape><Extrusion containerField="geometry" DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 50 0"></Extrusion>
+<ProtoBody><Group><Shape><Extrusion DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 50 0"></Extrusion>
 <Appearance><Material diffuseColor="0 1 0"></Material>
 </Appearance>
 </Shape>

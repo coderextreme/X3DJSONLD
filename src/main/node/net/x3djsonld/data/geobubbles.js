@@ -20,7 +20,7 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/geobubbles.x3d">geobubbles.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/geobubbles.x3d">geobubbles.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -32,7 +32,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/geobubbles.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/geobubbles.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/geobubbles.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/geobubbles.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -73,13 +73,13 @@ geobubbles.prototype = {
     .addMeta((new autoclass.meta()).setName("title").setContent("geobubbles.x3d"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/geobubbles.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/geobubbles.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("geo bubbles")))
   .setScene((new autoclass.Scene())
     .addComments("Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/")
     .addComments("PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/")
     .addChild((new autoclass.GeoViewpoint("Tour")).setDescription("Tour Views").setOrientation(1.0,0.0,0.0,0.0).setPosition(0.0,0.0,4.0))
-    .addChild((new autoclass.Background()).setBackUrl(new autoclass.MFString("\"../resources/images/BK.png\" \"https://coderextreme.net/X3DJSONLD/images/BK.png\"")).setBottomUrl(new autoclass.MFString("\"../resources/images/BT.png\" \"https://coderextreme.net/X3DJSONLD/images/BT.png\"")).setFrontUrl(new autoclass.MFString("\"../resources/images/FR.png\" \"https://coderextreme.net/X3DJSONLD/images/FR.png\"")).setLeftUrl(new autoclass.MFString("\"../resources/images/LF.png\" \"https://coderextreme.net/X3DJSONLD/images/LF.png\"")).setRightUrl(new autoclass.MFString("\"../resources/images/RT.png\" \"https://coderextreme.net/X3DJSONLD/images/RT.png\"")).setTopUrl(new autoclass.MFString("\"../resources/images/TP.png\" \"https://coderextreme.net/X3DJSONLD/images/TP.png\"")))
+    .addChild((new autoclass.Background()).setBackUrl(new autoclass.MFString("\"../resources/images/BK.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png\"")).setBottomUrl(new autoclass.MFString("\"../resources/images/BT.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png\"")).setFrontUrl(new autoclass.MFString("\"../resources/images/FR.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png\"")).setLeftUrl(new autoclass.MFString("\"../resources/images/LF.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png\"")).setRightUrl(new autoclass.MFString("\"../resources/images/RT.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png\"")).setTopUrl(new autoclass.MFString("\"../resources/images/TP.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png\"")))
     .addChild((new autoclass.Transform())
       .addChild((new autoclass.Shape())
         .setGeometry((new autoclass.Sphere()))

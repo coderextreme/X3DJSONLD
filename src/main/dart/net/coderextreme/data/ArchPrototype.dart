@@ -168,7 +168,7 @@ var X3D0 =  X3D(
                   children_ : [
                     Transform(
                       DEF_ : SFString('ArchTransform'),
-                      children_ : [
+                      child_ : 
                         Shape(
                           DEF_ : SFString('Arch'),
                           /*note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly*/
@@ -194,7 +194,7 @@ var X3D0 =  X3D(
 
                                         connect(
                                           nodeField_ : SFString('diffuseColor'),
-                                          protoField_ : SFString('diffuseColor'))]))))]),
+                                          protoField_ : SFString('diffuseColor'))]))))),
                   /*Subsequent nodes do not render, but still must be a valid X3D subgraph*/
                   /*This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs*/
 

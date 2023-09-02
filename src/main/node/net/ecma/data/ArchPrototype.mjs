@@ -197,7 +197,7 @@ var X3D0 =  new X3D({
                   children : new MFNode([
                     new Transform({
                       DEF : new SFString("ArchTransform"),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           DEF : new SFString("Arch"),
                           /*note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly*/
@@ -223,7 +223,7 @@ var X3D0 =  new X3D({
 
                                         new connect({
                                           nodeField : new SFString("diffuseColor"),
-                                          protoField : new SFString("diffuseColor")})])}))}))}))})])}),
+                                          protoField : new SFString("diffuseColor")})])}))}))}))}))}),
                   /*Subsequent nodes do not render, but still must be a valid X3D subgraph*/
                   /*This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs*/
 

@@ -153,7 +153,7 @@ var X3D0 =  new X3D({
                                     new connect({
                                       nodeField : new SFString("translation"),
                                       protoField : new SFString("translation")})])})),
-                              children : new MFNode([
+                              child : new SFNode(
                                 new Shape({
                                   appearance : new SFNode(
                                     new Appearance({
@@ -183,7 +183,7 @@ var X3D0 =  new X3D({
                                       coord : new SFNode(
                                         new Coordinate({
                                           DEF : new SFString("OrbitCoordinates"),
-                                          point : new MFVec3f([0,0,1,0,1,0,1,0,0])}))}))})])}),
+                                          point : new MFVec3f([0,0,1,0,1,0,1,0,0])}))}))}))}),
 
                             new Script({
                               DEF : new SFString("OrbitScript"),

@@ -21,12 +21,12 @@ head1->addComponent(*component2);
 
 Cmeta* meta3 = new Cmeta();
 meta3->setName("title");
-meta3->setContent("JohnBoy.x3d");
+meta3->setContent("Humanoid4_1.x3d");
 head1->addMeta(*meta3);
 
 Cmeta* meta4 = new Cmeta();
 meta4->setName("identifier");
-meta4->setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d");
+meta4->setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid4_1.x3d");
 head1->addMeta(*meta4);
 
 Cmeta* meta5 = new Cmeta();
@@ -81,7 +81,7 @@ IndexedLineSet14->setColor(*Color16);
 
 Shape13->setGeometry(IndexedLineSet14);
 
-Transform12->addChildren(*Shape13);
+Transform12->addChild(*Shape13);
 
 group->addChildren(*Transform12);
 
@@ -105,7 +105,7 @@ Appearance22->setMaterial(*Material23);
 
 Shape20->setAppearance(*Appearance22);
 
-Transform19->addChildren(*Shape20);
+Transform19->addChild(*Shape20);
 
 Transform18->addChildren(*Transform19);
 
@@ -126,7 +126,7 @@ Appearance27->setMaterial(*Material28);
 
 Shape25->setAppearance(*Appearance27);
 
-Transform24->addChildren(*Shape25);
+Transform24->addChild(*Shape25);
 
 Transform18->addChildren(*Transform24);
 
@@ -147,7 +147,7 @@ LineSet31->setCoord(*Coordinate33);
 
 Shape30->setGeometry(LineSet31);
 
-Transform29->addChildren(*Shape30);
+Transform29->addChild(*Shape30);
 
 Transform18->addChildren(*Transform29);
 
@@ -179,7 +179,7 @@ Appearance39->setMaterial(*Material40);
 
 Shape35->setAppearance(*Appearance39);
 
-Transform34->addChildren(*Shape35);
+Transform34->addChild(*Shape35);
 
 Transform18->addChildren(*Transform34);
 
@@ -220,7 +220,7 @@ CTransform* Transform48 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape49 = (CShape *)(m_pScene.createNode("Shape"));
 Shape49->setUSE("HAnimJointShape");
-Transform48->addChildren(*Shape49);
+Transform48->addChild(*Shape49);
 
 Transform47->addChildren(*Transform48);
 
@@ -455,7 +455,7 @@ CTransform* Transform100 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape101 = (CShape *)(m_pScene.createNode("Shape"));
 Shape101->setUSE("HAnimJointShape");
-Transform100->addChildren(*Shape101);
+Transform100->addChild(*Shape101);
 
 Transform99->addChildren(*Transform100);
 
@@ -620,7 +620,7 @@ CTransform* Transform137 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape138 = (CShape *)(m_pScene.createNode("Shape"));
 Shape138->setUSE("HAnimJointShape");
-Transform137->addChildren(*Shape138);
+Transform137->addChild(*Shape138);
 
 Transform136->addChildren(*Transform137);
 
@@ -700,7 +700,7 @@ CTransform* Transform155 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape156 = (CShape *)(m_pScene.createNode("Shape"));
 Shape156->setUSE("HAnimJointShape");
-Transform155->addChildren(*Shape156);
+Transform155->addChild(*Shape156);
 
 Transform154->addChildren(*Transform155);
 
@@ -770,7 +770,7 @@ CTransform* Transform170 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform left foot
 CShape* Shape171 = (CShape *)(m_pScene.createNode("Shape"));
 Shape171->setUSE("HAnimJointShape");
-Transform170->addChildren(*Shape171);
+Transform170->addChild(*Shape171);
 
 Transform169->addChildren(*Transform170);
 
@@ -825,7 +825,7 @@ CTransform* Transform183 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape184 = (CShape *)(m_pScene.createNode("Shape"));
 Shape184->setUSE("HAnimJointShape");
-Transform183->addChildren(*Shape184);
+Transform183->addChild(*Shape184);
 
 Transform182->addChildren(*Transform183);
 
@@ -896,7 +896,7 @@ CTransform* Transform200 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape201 = (CShape *)(m_pScene.createNode("Shape"));
 Shape201->setUSE("HAnimJointShape");
-Transform200->addChildren(*Shape201);
+Transform200->addChild(*Shape201);
 
 Transform199->addChildren(*Transform200);
 
@@ -935,7 +935,7 @@ CTransform* Transform209 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape210 = (CShape *)(m_pScene.createNode("Shape"));
 Shape210->setUSE("HAnimJointShape");
-Transform209->addChildren(*Shape210);
+Transform209->addChild(*Shape210);
 
 Transform208->addChildren(*Transform209);
 
@@ -987,7 +987,7 @@ CTransform* Transform221 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape222 = (CShape *)(m_pScene.createNode("Shape"));
 Shape222->setUSE("HAnimJointShape");
-Transform221->addChildren(*Shape222);
+Transform221->addChild(*Shape222);
 
 Transform220->addChildren(*Transform221);
 
@@ -1052,7 +1052,7 @@ CTransform* Transform234 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape235 = (CShape *)(m_pScene.createNode("Shape"));
 Shape235->setUSE("HAnimJointShape");
-Transform234->addChildren(*Shape235);
+Transform234->addChild(*Shape235);
 
 Transform233->addChildren(*Transform234);
 
@@ -1091,7 +1091,7 @@ CTransform* Transform243 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape244 = (CShape *)(m_pScene.createNode("Shape"));
 Shape244->setUSE("HAnimJointShape");
-Transform243->addChildren(*Shape244);
+Transform243->addChild(*Shape244);
 
 Transform242->addChildren(*Transform243);
 
@@ -1130,7 +1130,7 @@ CTransform* Transform252 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape253 = (CShape *)(m_pScene.createNode("Shape"));
 Shape253->setUSE("HAnimJointShape");
-Transform252->addChildren(*Shape253);
+Transform252->addChild(*Shape253);
 
 Transform251->addChildren(*Transform252);
 
@@ -1169,7 +1169,7 @@ CTransform* Transform261 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape262 = (CShape *)(m_pScene.createNode("Shape"));
 Shape262->setUSE("HAnimJointShape");
-Transform261->addChildren(*Shape262);
+Transform261->addChild(*Shape262);
 
 Transform260->addChildren(*Transform261);
 
@@ -1238,7 +1238,7 @@ CTransform* Transform274 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape275 = (CShape *)(m_pScene.createNode("Shape"));
 Shape275->setUSE("HAnimJointShape");
-Transform274->addChildren(*Shape275);
+Transform274->addChild(*Shape275);
 
 Transform273->addChildren(*Transform274);
 
@@ -1276,7 +1276,7 @@ CTransform* Transform283 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape284 = (CShape *)(m_pScene.createNode("Shape"));
 Shape284->setUSE("HAnimJointShape");
-Transform283->addChildren(*Shape284);
+Transform283->addChild(*Shape284);
 
 Transform282->addChildren(*Transform283);
 
@@ -1315,7 +1315,7 @@ CTransform* Transform292 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape293 = (CShape *)(m_pScene.createNode("Shape"));
 Shape293->setUSE("HAnimJointShape");
-Transform292->addChildren(*Shape293);
+Transform292->addChild(*Shape293);
 
 Transform291->addChildren(*Transform292);
 
@@ -1354,7 +1354,7 @@ CTransform* Transform301 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape302 = (CShape *)(m_pScene.createNode("Shape"));
 Shape302->setUSE("HAnimJointShape");
-Transform301->addChildren(*Shape302);
+Transform301->addChild(*Shape302);
 
 Transform300->addChildren(*Transform301);
 
@@ -1424,7 +1424,7 @@ CTransform* Transform314 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape315 = (CShape *)(m_pScene.createNode("Shape"));
 Shape315->setUSE("HAnimJointShape");
-Transform314->addChildren(*Shape315);
+Transform314->addChild(*Shape315);
 
 Transform313->addChildren(*Transform314);
 
@@ -1463,7 +1463,7 @@ CTransform* Transform323 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape324 = (CShape *)(m_pScene.createNode("Shape"));
 Shape324->setUSE("HAnimJointShape");
-Transform323->addChildren(*Shape324);
+Transform323->addChild(*Shape324);
 
 Transform322->addChildren(*Transform323);
 
@@ -1518,7 +1518,7 @@ CTransform* Transform336 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape337 = (CShape *)(m_pScene.createNode("Shape"));
 Shape337->setUSE("HAnimJointShape");
-Transform336->addChildren(*Shape337);
+Transform336->addChild(*Shape337);
 
 Transform335->addChildren(*Transform336);
 
@@ -1557,7 +1557,7 @@ CTransform* Transform345 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape346 = (CShape *)(m_pScene.createNode("Shape"));
 Shape346->setUSE("HAnimJointShape");
-Transform345->addChildren(*Shape346);
+Transform345->addChild(*Shape346);
 
 Transform344->addChildren(*Transform345);
 
@@ -1596,7 +1596,7 @@ CTransform* Transform354 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape355 = (CShape *)(m_pScene.createNode("Shape"));
 Shape355->setUSE("HAnimJointShape");
-Transform354->addChildren(*Shape355);
+Transform354->addChild(*Shape355);
 
 Transform353->addChildren(*Transform354);
 
@@ -1662,7 +1662,7 @@ CTransform* Transform367 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape368 = (CShape *)(m_pScene.createNode("Shape"));
 Shape368->setUSE("HAnimJointShape");
-Transform367->addChildren(*Shape368);
+Transform367->addChild(*Shape368);
 
 Transform366->addChildren(*Transform367);
 
@@ -1714,7 +1714,7 @@ CTransform* Transform379 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape380 = (CShape *)(m_pScene.createNode("Shape"));
 Shape380->setUSE("HAnimJointShape");
-Transform379->addChildren(*Shape380);
+Transform379->addChild(*Shape380);
 
 Transform378->addChildren(*Transform379);
 
@@ -1753,7 +1753,7 @@ CTransform* Transform388 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape389 = (CShape *)(m_pScene.createNode("Shape"));
 Shape389->setUSE("HAnimJointShape");
-Transform388->addChildren(*Shape389);
+Transform388->addChild(*Shape389);
 
 Transform387->addChildren(*Transform388);
 
@@ -1829,7 +1829,7 @@ CTransform* Transform401 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape402 = (CShape *)(m_pScene.createNode("Shape"));
 Shape402->setUSE("HAnimJointShape");
-Transform401->addChildren(*Shape402);
+Transform401->addChild(*Shape402);
 
 Transform400->addChildren(*Transform401);
 
@@ -1909,7 +1909,7 @@ CTransform* Transform419 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape420 = (CShape *)(m_pScene.createNode("Shape"));
 Shape420->setUSE("HAnimJointShape");
-Transform419->addChildren(*Shape420);
+Transform419->addChild(*Shape420);
 
 Transform418->addChildren(*Transform419);
 
@@ -1979,7 +1979,7 @@ CTransform* Transform434 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform right foot
 CShape* Shape435 = (CShape *)(m_pScene.createNode("Shape"));
 Shape435->setUSE("HAnimJointShape");
-Transform434->addChildren(*Shape435);
+Transform434->addChild(*Shape435);
 
 Transform433->addChildren(*Transform434);
 
@@ -2034,7 +2034,7 @@ CTransform* Transform447 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape448 = (CShape *)(m_pScene.createNode("Shape"));
 Shape448->setUSE("HAnimJointShape");
-Transform447->addChildren(*Shape448);
+Transform447->addChild(*Shape448);
 
 Transform446->addChildren(*Transform447);
 
@@ -2105,7 +2105,7 @@ CTransform* Transform464 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape465 = (CShape *)(m_pScene.createNode("Shape"));
 Shape465->setUSE("HAnimJointShape");
-Transform464->addChildren(*Shape465);
+Transform464->addChild(*Shape465);
 
 Transform463->addChildren(*Transform464);
 
@@ -2144,7 +2144,7 @@ CTransform* Transform473 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape474 = (CShape *)(m_pScene.createNode("Shape"));
 Shape474->setUSE("HAnimJointShape");
-Transform473->addChildren(*Shape474);
+Transform473->addChild(*Shape474);
 
 Transform472->addChildren(*Transform473);
 
@@ -2196,7 +2196,7 @@ CTransform* Transform485 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape486 = (CShape *)(m_pScene.createNode("Shape"));
 Shape486->setUSE("HAnimJointShape");
-Transform485->addChildren(*Shape486);
+Transform485->addChild(*Shape486);
 
 Transform484->addChildren(*Transform485);
 
@@ -2261,7 +2261,7 @@ CTransform* Transform498 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape499 = (CShape *)(m_pScene.createNode("Shape"));
 Shape499->setUSE("HAnimJointShape");
-Transform498->addChildren(*Shape499);
+Transform498->addChild(*Shape499);
 
 Transform497->addChildren(*Transform498);
 
@@ -2300,7 +2300,7 @@ CTransform* Transform507 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape508 = (CShape *)(m_pScene.createNode("Shape"));
 Shape508->setUSE("HAnimJointShape");
-Transform507->addChildren(*Shape508);
+Transform507->addChild(*Shape508);
 
 Transform506->addChildren(*Transform507);
 
@@ -2339,7 +2339,7 @@ CTransform* Transform516 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape517 = (CShape *)(m_pScene.createNode("Shape"));
 Shape517->setUSE("HAnimJointShape");
-Transform516->addChildren(*Shape517);
+Transform516->addChild(*Shape517);
 
 Transform515->addChildren(*Transform516);
 
@@ -2378,7 +2378,7 @@ CTransform* Transform525 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape526 = (CShape *)(m_pScene.createNode("Shape"));
 Shape526->setUSE("HAnimJointShape");
-Transform525->addChildren(*Shape526);
+Transform525->addChild(*Shape526);
 
 Transform524->addChildren(*Transform525);
 
@@ -2447,7 +2447,7 @@ CTransform* Transform538 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape539 = (CShape *)(m_pScene.createNode("Shape"));
 Shape539->setUSE("HAnimJointShape");
-Transform538->addChildren(*Shape539);
+Transform538->addChild(*Shape539);
 
 Transform537->addChildren(*Transform538);
 
@@ -2485,7 +2485,7 @@ CTransform* Transform547 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape548 = (CShape *)(m_pScene.createNode("Shape"));
 Shape548->setUSE("HAnimJointShape");
-Transform547->addChildren(*Shape548);
+Transform547->addChild(*Shape548);
 
 Transform546->addChildren(*Transform547);
 
@@ -2524,7 +2524,7 @@ CTransform* Transform556 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape557 = (CShape *)(m_pScene.createNode("Shape"));
 Shape557->setUSE("HAnimJointShape");
-Transform556->addChildren(*Shape557);
+Transform556->addChild(*Shape557);
 
 Transform555->addChildren(*Transform556);
 
@@ -2563,7 +2563,7 @@ CTransform* Transform565 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape566 = (CShape *)(m_pScene.createNode("Shape"));
 Shape566->setUSE("HAnimJointShape");
-Transform565->addChildren(*Shape566);
+Transform565->addChild(*Shape566);
 
 Transform564->addChildren(*Transform565);
 
@@ -2633,7 +2633,7 @@ CTransform* Transform578 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape579 = (CShape *)(m_pScene.createNode("Shape"));
 Shape579->setUSE("HAnimJointShape");
-Transform578->addChildren(*Shape579);
+Transform578->addChild(*Shape579);
 
 Transform577->addChildren(*Transform578);
 
@@ -2672,7 +2672,7 @@ CTransform* Transform587 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape588 = (CShape *)(m_pScene.createNode("Shape"));
 Shape588->setUSE("HAnimJointShape");
-Transform587->addChildren(*Shape588);
+Transform587->addChild(*Shape588);
 
 Transform586->addChildren(*Transform587);
 
@@ -2727,7 +2727,7 @@ CTransform* Transform600 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape601 = (CShape *)(m_pScene.createNode("Shape"));
 Shape601->setUSE("HAnimJointShape");
-Transform600->addChildren(*Shape601);
+Transform600->addChild(*Shape601);
 
 Transform599->addChildren(*Transform600);
 
@@ -2766,7 +2766,7 @@ CTransform* Transform609 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape610 = (CShape *)(m_pScene.createNode("Shape"));
 Shape610->setUSE("HAnimJointShape");
-Transform609->addChildren(*Shape610);
+Transform609->addChild(*Shape610);
 
 Transform608->addChildren(*Transform609);
 
@@ -2805,7 +2805,7 @@ CTransform* Transform618 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape619 = (CShape *)(m_pScene.createNode("Shape"));
 Shape619->setUSE("HAnimJointShape");
-Transform618->addChildren(*Shape619);
+Transform618->addChild(*Shape619);
 
 Transform617->addChildren(*Transform618);
 
@@ -2871,7 +2871,7 @@ CTransform* Transform631 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape632 = (CShape *)(m_pScene.createNode("Shape"));
 Shape632->setUSE("HAnimJointShape");
-Transform631->addChildren(*Shape632);
+Transform631->addChild(*Shape632);
 
 Transform630->addChildren(*Transform631);
 
@@ -2923,7 +2923,7 @@ CTransform* Transform643 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape644 = (CShape *)(m_pScene.createNode("Shape"));
 Shape644->setUSE("HAnimJointShape");
-Transform643->addChildren(*Shape644);
+Transform643->addChild(*Shape644);
 
 Transform642->addChildren(*Transform643);
 
@@ -2962,7 +2962,7 @@ CTransform* Transform652 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape653 = (CShape *)(m_pScene.createNode("Shape"));
 Shape653->setUSE("HAnimJointShape");
-Transform652->addChildren(*Shape653);
+Transform652->addChild(*Shape653);
 
 Transform651->addChildren(*Transform652);
 
@@ -3040,7 +3040,7 @@ CTransform* Transform665 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape666 = (CShape *)(m_pScene.createNode("Shape"));
 Shape666->setUSE("HAnimJointShape");
-Transform665->addChildren(*Shape666);
+Transform665->addChild(*Shape666);
 
 Transform664->addChildren(*Transform665);
 
@@ -3079,7 +3079,7 @@ CTransform* Transform674 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape675 = (CShape *)(m_pScene.createNode("Shape"));
 Shape675->setUSE("HAnimJointShape");
-Transform674->addChildren(*Shape675);
+Transform674->addChild(*Shape675);
 
 Transform673->addChildren(*Transform674);
 
@@ -3118,7 +3118,7 @@ CTransform* Transform683 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape684 = (CShape *)(m_pScene.createNode("Shape"));
 Shape684->setUSE("HAnimJointShape");
-Transform683->addChildren(*Shape684);
+Transform683->addChild(*Shape684);
 
 Transform682->addChildren(*Transform683);
 
@@ -3198,7 +3198,7 @@ CTransform* Transform701 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape702 = (CShape *)(m_pScene.createNode("Shape"));
 Shape702->setUSE("HAnimJointShape");
-Transform701->addChildren(*Shape702);
+Transform701->addChild(*Shape702);
 
 Transform700->addChildren(*Transform701);
 
@@ -3237,7 +3237,7 @@ CTransform* Transform710 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape711 = (CShape *)(m_pScene.createNode("Shape"));
 Shape711->setUSE("HAnimJointShape");
-Transform710->addChildren(*Shape711);
+Transform710->addChild(*Shape711);
 
 Transform709->addChildren(*Transform710);
 
@@ -3276,7 +3276,7 @@ CTransform* Transform719 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape720 = (CShape *)(m_pScene.createNode("Shape"));
 Shape720->setUSE("HAnimJointShape");
-Transform719->addChildren(*Shape720);
+Transform719->addChild(*Shape720);
 
 Transform718->addChildren(*Transform719);
 
@@ -3315,7 +3315,7 @@ CTransform* Transform728 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape729 = (CShape *)(m_pScene.createNode("Shape"));
 Shape729->setUSE("HAnimJointShape");
-Transform728->addChildren(*Shape729);
+Transform728->addChild(*Shape729);
 
 Transform727->addChildren(*Transform728);
 
@@ -3368,7 +3368,7 @@ CTransform* Transform740 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape741 = (CShape *)(m_pScene.createNode("Shape"));
 Shape741->setUSE("HAnimJointShape");
-Transform740->addChildren(*Shape741);
+Transform740->addChild(*Shape741);
 
 Transform739->addChildren(*Transform740);
 
@@ -3435,7 +3435,7 @@ CTransform* Transform755 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape756 = (CShape *)(m_pScene.createNode("Shape"));
 Shape756->setUSE("HAnimJointShape");
-Transform755->addChildren(*Shape756);
+Transform755->addChild(*Shape756);
 
 Transform754->addChildren(*Transform755);
 
@@ -3474,7 +3474,7 @@ CTransform* Transform764 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape765 = (CShape *)(m_pScene.createNode("Shape"));
 Shape765->setUSE("HAnimJointShape");
-Transform764->addChildren(*Shape765);
+Transform764->addChild(*Shape765);
 
 Transform763->addChildren(*Transform764);
 
@@ -3513,7 +3513,7 @@ CTransform* Transform773 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape774 = (CShape *)(m_pScene.createNode("Shape"));
 Shape774->setUSE("HAnimJointShape");
-Transform773->addChildren(*Shape774);
+Transform773->addChild(*Shape774);
 
 Transform772->addChildren(*Transform773);
 
@@ -3604,7 +3604,7 @@ CTransform* Transform794 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape795 = (CShape *)(m_pScene.createNode("Shape"));
 Shape795->setUSE("HAnimJointShape");
-Transform794->addChildren(*Shape795);
+Transform794->addChild(*Shape795);
 
 Transform793->addChildren(*Transform794);
 
@@ -3656,7 +3656,7 @@ CTransform* Transform806 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape807 = (CShape *)(m_pScene.createNode("Shape"));
 Shape807->setUSE("HAnimJointShape");
-Transform806->addChildren(*Shape807);
+Transform806->addChild(*Shape807);
 
 Transform805->addChildren(*Transform806);
 
@@ -3695,7 +3695,7 @@ CTransform* Transform815 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape816 = (CShape *)(m_pScene.createNode("Shape"));
 Shape816->setUSE("HAnimJointShape");
-Transform815->addChildren(*Shape816);
+Transform815->addChild(*Shape816);
 
 Transform814->addChildren(*Transform815);
 
@@ -3734,7 +3734,7 @@ CTransform* Transform824 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape825 = (CShape *)(m_pScene.createNode("Shape"));
 Shape825->setUSE("HAnimJointShape");
-Transform824->addChildren(*Shape825);
+Transform824->addChild(*Shape825);
 
 Transform823->addChildren(*Transform824);
 
@@ -3773,7 +3773,7 @@ CTransform* Transform833 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape834 = (CShape *)(m_pScene.createNode("Shape"));
 Shape834->setUSE("HAnimJointShape");
-Transform833->addChildren(*Shape834);
+Transform833->addChild(*Shape834);
 
 Transform832->addChildren(*Transform833);
 
@@ -3840,7 +3840,7 @@ CTransform* Transform848 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape849 = (CShape *)(m_pScene.createNode("Shape"));
 Shape849->setUSE("HAnimJointShape");
-Transform848->addChildren(*Shape849);
+Transform848->addChild(*Shape849);
 
 Transform847->addChildren(*Transform848);
 
@@ -4077,7 +4077,7 @@ CTransform* Transform901 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape902 = (CShape *)(m_pScene.createNode("Shape"));
 Shape902->setUSE("HAnimJointShape");
-Transform901->addChildren(*Shape902);
+Transform901->addChild(*Shape902);
 
 Transform900->addChildren(*Transform901);
 
@@ -4116,7 +4116,7 @@ CTransform* Transform910 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape911 = (CShape *)(m_pScene.createNode("Shape"));
 Shape911->setUSE("HAnimJointShape");
-Transform910->addChildren(*Shape911);
+Transform910->addChild(*Shape911);
 
 Transform909->addChildren(*Transform910);
 
@@ -4155,7 +4155,7 @@ CTransform* Transform919 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape920 = (CShape *)(m_pScene.createNode("Shape"));
 Shape920->setUSE("HAnimJointShape");
-Transform919->addChildren(*Shape920);
+Transform919->addChild(*Shape920);
 
 Transform918->addChildren(*Transform919);
 
@@ -4194,7 +4194,7 @@ CTransform* Transform928 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape929 = (CShape *)(m_pScene.createNode("Shape"));
 Shape929->setUSE("HAnimJointShape");
-Transform928->addChildren(*Shape929);
+Transform928->addChild(*Shape929);
 
 Transform927->addChildren(*Transform928);
 
@@ -4233,7 +4233,7 @@ CTransform* Transform937 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape938 = (CShape *)(m_pScene.createNode("Shape"));
 Shape938->setUSE("HAnimJointShape");
-Transform937->addChildren(*Shape938);
+Transform937->addChild(*Shape938);
 
 Transform936->addChildren(*Transform937);
 
@@ -4285,7 +4285,7 @@ CTransform* Transform949 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape950 = (CShape *)(m_pScene.createNode("Shape"));
 Shape950->setUSE("HAnimJointShape");
-Transform949->addChildren(*Shape950);
+Transform949->addChild(*Shape950);
 
 Transform948->addChildren(*Transform949);
 
@@ -4324,7 +4324,7 @@ CTransform* Transform958 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape959 = (CShape *)(m_pScene.createNode("Shape"));
 Shape959->setUSE("HAnimJointShape");
-Transform958->addChildren(*Shape959);
+Transform958->addChild(*Shape959);
 
 Transform957->addChildren(*Transform958);
 
@@ -4513,7 +4513,7 @@ CTransform* Transform1000 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1001 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1001->setUSE("HAnimJointShape");
-Transform1000->addChildren(*Shape1001);
+Transform1000->addChild(*Shape1001);
 
 Transform999->addChildren(*Transform1000);
 
@@ -4775,7 +4775,7 @@ CTransform* Transform1052 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1053 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1053->setUSE("HAnimJointShape");
-Transform1052->addChildren(*Shape1053);
+Transform1052->addChild(*Shape1053);
 
 Transform1051->addChildren(*Transform1052);
 
@@ -4814,7 +4814,7 @@ CTransform* Transform1061 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1062 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1062->setUSE("HAnimJointShape");
-Transform1061->addChildren(*Shape1062);
+Transform1061->addChild(*Shape1062);
 
 Transform1060->addChildren(*Transform1061);
 
@@ -4880,7 +4880,7 @@ CTransform* Transform1076 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1077 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1077->setUSE("HAnimJointShape");
-Transform1076->addChildren(*Shape1077);
+Transform1076->addChild(*Shape1077);
 
 Transform1075->addChildren(*Transform1076);
 
@@ -4975,7 +4975,7 @@ CTransform* Transform1097 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1098 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1098->setUSE("HAnimJointShape");
-Transform1097->addChildren(*Shape1098);
+Transform1097->addChild(*Shape1098);
 
 Transform1096->addChildren(*Transform1097);
 
@@ -5032,7 +5032,7 @@ Transform1109->setRotation(new float[4]{0,1,0,-1.57});
 //Transform left hand
 CShape* Shape1110 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1110->setUSE("HAnimJointShape");
-Transform1109->addChildren(*Shape1110);
+Transform1109->addChild(*Shape1110);
 
 Transform1108->addChildren(*Transform1109);
 
@@ -5119,7 +5119,7 @@ CTransform* Transform1130 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1131 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1131->setUSE("HAnimJointShape");
-Transform1130->addChildren(*Shape1131);
+Transform1130->addChild(*Shape1131);
 
 Transform1129->addChildren(*Transform1130);
 
@@ -5158,7 +5158,7 @@ CTransform* Transform1139 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1140 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1140->setUSE("HAnimJointShape");
-Transform1139->addChildren(*Shape1140);
+Transform1139->addChild(*Shape1140);
 
 Transform1138->addChildren(*Transform1139);
 
@@ -5197,7 +5197,7 @@ CTransform* Transform1148 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1149 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1149->setUSE("HAnimJointShape");
-Transform1148->addChildren(*Shape1149);
+Transform1148->addChild(*Shape1149);
 
 Transform1147->addChildren(*Transform1148);
 
@@ -5263,7 +5263,7 @@ CTransform* Transform1161 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1162 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1162->setUSE("HAnimJointShape");
-Transform1161->addChildren(*Shape1162);
+Transform1161->addChild(*Shape1162);
 
 Transform1160->addChildren(*Transform1161);
 
@@ -5316,7 +5316,7 @@ CTransform* Transform1173 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1174 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1174->setUSE("HAnimJointShape");
-Transform1173->addChildren(*Shape1174);
+Transform1173->addChild(*Shape1174);
 
 Transform1172->addChildren(*Transform1173);
 
@@ -5355,7 +5355,7 @@ CTransform* Transform1182 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1183 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1183->setUSE("HAnimJointShape");
-Transform1182->addChildren(*Shape1183);
+Transform1182->addChild(*Shape1183);
 
 Transform1181->addChildren(*Transform1182);
 
@@ -5394,7 +5394,7 @@ CTransform* Transform1191 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1192 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1192->setUSE("HAnimJointShape");
-Transform1191->addChildren(*Shape1192);
+Transform1191->addChild(*Shape1192);
 
 Transform1190->addChildren(*Transform1191);
 
@@ -5476,7 +5476,7 @@ CTransform* Transform1207 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1208 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1208->setUSE("HAnimJointShape");
-Transform1207->addChildren(*Shape1208);
+Transform1207->addChild(*Shape1208);
 
 Transform1206->addChildren(*Transform1207);
 
@@ -5528,7 +5528,7 @@ CTransform* Transform1219 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1220 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1220->setUSE("HAnimJointShape");
-Transform1219->addChildren(*Shape1220);
+Transform1219->addChild(*Shape1220);
 
 Transform1218->addChildren(*Transform1219);
 
@@ -5567,7 +5567,7 @@ CTransform* Transform1228 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1229 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1229->setUSE("HAnimJointShape");
-Transform1228->addChildren(*Shape1229);
+Transform1228->addChild(*Shape1229);
 
 Transform1227->addChildren(*Transform1228);
 
@@ -5606,7 +5606,7 @@ CTransform* Transform1237 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1238 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1238->setUSE("HAnimJointShape");
-Transform1237->addChildren(*Shape1238);
+Transform1237->addChild(*Shape1238);
 
 Transform1236->addChildren(*Transform1237);
 
@@ -5674,7 +5674,7 @@ CTransform* Transform1250 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1251 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1251->setUSE("HAnimJointShape");
-Transform1250->addChildren(*Shape1251);
+Transform1250->addChild(*Shape1251);
 
 Transform1249->addChildren(*Transform1250);
 
@@ -5743,7 +5743,7 @@ CTransform* Transform1266 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1267 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1267->setUSE("HAnimJointShape");
-Transform1266->addChildren(*Shape1267);
+Transform1266->addChild(*Shape1267);
 
 Transform1265->addChildren(*Transform1266);
 
@@ -5782,7 +5782,7 @@ CTransform* Transform1275 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1276 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1276->setUSE("HAnimJointShape");
-Transform1275->addChildren(*Shape1276);
+Transform1275->addChild(*Shape1276);
 
 Transform1274->addChildren(*Transform1275);
 
@@ -5821,7 +5821,7 @@ CTransform* Transform1284 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1285 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1285->setUSE("HAnimJointShape");
-Transform1284->addChildren(*Shape1285);
+Transform1284->addChild(*Shape1285);
 
 Transform1283->addChildren(*Transform1284);
 
@@ -5887,7 +5887,7 @@ CTransform* Transform1297 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1298 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1298->setUSE("HAnimJointShape");
-Transform1297->addChildren(*Shape1298);
+Transform1297->addChild(*Shape1298);
 
 Transform1296->addChildren(*Transform1297);
 
@@ -5926,7 +5926,7 @@ CTransform* Transform1306 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1307 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1307->setUSE("HAnimJointShape");
-Transform1306->addChildren(*Shape1307);
+Transform1306->addChild(*Shape1307);
 
 Transform1305->addChildren(*Transform1306);
 
@@ -5965,7 +5965,7 @@ CTransform* Transform1315 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1316 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1316->setUSE("HAnimJointShape");
-Transform1315->addChildren(*Shape1316);
+Transform1315->addChild(*Shape1316);
 
 Transform1314->addChildren(*Transform1315);
 
@@ -6043,7 +6043,7 @@ CTransform* Transform1328 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1329 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1329->setUSE("HAnimJointShape");
-Transform1328->addChildren(*Shape1329);
+Transform1328->addChild(*Shape1329);
 
 Transform1327->addChildren(*Transform1328);
 
@@ -6082,7 +6082,7 @@ CTransform* Transform1337 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1338 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1338->setUSE("HAnimJointShape");
-Transform1337->addChildren(*Shape1338);
+Transform1337->addChild(*Shape1338);
 
 Transform1336->addChildren(*Transform1337);
 
@@ -6148,7 +6148,7 @@ CTransform* Transform1352 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1353 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1353->setUSE("HAnimJointShape");
-Transform1352->addChildren(*Shape1353);
+Transform1352->addChild(*Shape1353);
 
 Transform1351->addChildren(*Transform1352);
 
@@ -6243,7 +6243,7 @@ CTransform* Transform1373 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1374 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1374->setUSE("HAnimJointShape");
-Transform1373->addChildren(*Shape1374);
+Transform1373->addChild(*Shape1374);
 
 Transform1372->addChildren(*Transform1373);
 
@@ -6300,7 +6300,7 @@ Transform1385->setRotation(new float[4]{0,1,0,1.57});
 //Transform right hand
 CShape* Shape1386 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1386->setUSE("HAnimJointShape");
-Transform1385->addChildren(*Shape1386);
+Transform1385->addChild(*Shape1386);
 
 Transform1384->addChildren(*Transform1385);
 
@@ -6387,7 +6387,7 @@ CTransform* Transform1406 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1407 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1407->setUSE("HAnimJointShape");
-Transform1406->addChildren(*Shape1407);
+Transform1406->addChild(*Shape1407);
 
 Transform1405->addChildren(*Transform1406);
 
@@ -6426,7 +6426,7 @@ CTransform* Transform1415 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1416 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1416->setUSE("HAnimJointShape");
-Transform1415->addChildren(*Shape1416);
+Transform1415->addChild(*Shape1416);
 
 Transform1414->addChildren(*Transform1415);
 
@@ -6465,7 +6465,7 @@ CTransform* Transform1424 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1425 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1425->setUSE("HAnimJointShape");
-Transform1424->addChildren(*Shape1425);
+Transform1424->addChild(*Shape1425);
 
 Transform1423->addChildren(*Transform1424);
 
@@ -6531,7 +6531,7 @@ CTransform* Transform1437 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1438 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1438->setUSE("HAnimJointShape");
-Transform1437->addChildren(*Shape1438);
+Transform1437->addChild(*Shape1438);
 
 Transform1436->addChildren(*Transform1437);
 
@@ -6584,7 +6584,7 @@ CTransform* Transform1449 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1450 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1450->setUSE("HAnimJointShape");
-Transform1449->addChildren(*Shape1450);
+Transform1449->addChild(*Shape1450);
 
 Transform1448->addChildren(*Transform1449);
 
@@ -6623,7 +6623,7 @@ CTransform* Transform1458 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1459 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1459->setUSE("HAnimJointShape");
-Transform1458->addChildren(*Shape1459);
+Transform1458->addChild(*Shape1459);
 
 Transform1457->addChildren(*Transform1458);
 
@@ -6662,7 +6662,7 @@ CTransform* Transform1467 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1468 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1468->setUSE("HAnimJointShape");
-Transform1467->addChildren(*Shape1468);
+Transform1467->addChild(*Shape1468);
 
 Transform1466->addChildren(*Transform1467);
 
@@ -6744,7 +6744,7 @@ CTransform* Transform1483 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1484 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1484->setUSE("HAnimJointShape");
-Transform1483->addChildren(*Shape1484);
+Transform1483->addChild(*Shape1484);
 
 Transform1482->addChildren(*Transform1483);
 
@@ -6796,7 +6796,7 @@ CTransform* Transform1495 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1496 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1496->setUSE("HAnimJointShape");
-Transform1495->addChildren(*Shape1496);
+Transform1495->addChild(*Shape1496);
 
 Transform1494->addChildren(*Transform1495);
 
@@ -6835,7 +6835,7 @@ CTransform* Transform1504 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1505 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1505->setUSE("HAnimJointShape");
-Transform1504->addChildren(*Shape1505);
+Transform1504->addChild(*Shape1505);
 
 Transform1503->addChildren(*Transform1504);
 
@@ -6874,7 +6874,7 @@ CTransform* Transform1513 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1514 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1514->setUSE("HAnimJointShape");
-Transform1513->addChildren(*Shape1514);
+Transform1513->addChild(*Shape1514);
 
 Transform1512->addChildren(*Transform1513);
 
@@ -6942,7 +6942,7 @@ CTransform* Transform1526 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1527 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1527->setUSE("HAnimJointShape");
-Transform1526->addChildren(*Shape1527);
+Transform1526->addChild(*Shape1527);
 
 Transform1525->addChildren(*Transform1526);
 
@@ -7011,7 +7011,7 @@ CTransform* Transform1542 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1543 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1543->setUSE("HAnimJointShape");
-Transform1542->addChildren(*Shape1543);
+Transform1542->addChild(*Shape1543);
 
 Transform1541->addChildren(*Transform1542);
 
@@ -7050,7 +7050,7 @@ CTransform* Transform1551 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1552 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1552->setUSE("HAnimJointShape");
-Transform1551->addChildren(*Shape1552);
+Transform1551->addChild(*Shape1552);
 
 Transform1550->addChildren(*Transform1551);
 
@@ -7089,7 +7089,7 @@ CTransform* Transform1560 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1561 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1561->setUSE("HAnimJointShape");
-Transform1560->addChildren(*Shape1561);
+Transform1560->addChild(*Shape1561);
 
 Transform1559->addChildren(*Transform1560);
 
@@ -7155,7 +7155,7 @@ CTransform* Transform1573 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1574 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1574->setUSE("HAnimJointShape");
-Transform1573->addChildren(*Shape1574);
+Transform1573->addChild(*Shape1574);
 
 Transform1572->addChildren(*Transform1573);
 
@@ -7194,7 +7194,7 @@ CTransform* Transform1582 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1583 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1583->setUSE("HAnimJointShape");
-Transform1582->addChildren(*Shape1583);
+Transform1582->addChild(*Shape1583);
 
 Transform1581->addChildren(*Transform1582);
 
@@ -7233,7 +7233,7 @@ CTransform* Transform1591 = (CTransform *)(m_pScene.createNode("Transform"));
 //Empty Transform
 CShape* Shape1592 = (CShape *)(m_pScene.createNode("Shape"));
 Shape1592->setUSE("HAnimJointShape");
-Transform1591->addChildren(*Shape1592);
+Transform1591->addChild(*Shape1592);
 
 Transform1590->addChildren(*Transform1591);
 

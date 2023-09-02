@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Interchange", version="3.0", 
-head=head(children=[meta(name="title", content="rgb_alpha.x3d"),
+head=head(
+children=[
+meta(name="title", content="rgb_alpha.x3d"),
 meta(name="Image", content="rgb_alpha-front.jpg"),
 meta(name="Image", content="rgb_alpha-rear.jpg"),
 meta(name="Image", content="rgb_alpha-top.jpg"),
@@ -22,7 +25,7 @@ meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Conf
 meta(name="generator", content="Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -68,5 +71,6 @@ Material(),
 texture=
 PixelTexture(USE="RgbOpacityCheckerboard")), 
 geometry=
-Cylinder())])])]))
-.XML())
+Cylinder())])])])))
+output = model.JSON()
+json.loads(output)

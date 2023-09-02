@@ -19,7 +19,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("title").setContent("MyBounce.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("description").setContent("3 prismatic spheres"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/SFVec3f.x3d")))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.NavigationInfo()))
         .addChild((new autoclass.Transform()).setDEF("transform")
@@ -67,5 +67,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.TimeSensor()).setDEF("TourTime").setCycleInterval(0.15).setLoop(true))
         .addChild((new autoclass.ROUTE()).setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce2").setToField("set_fraction"))
         .addChild((new autoclass.ROUTE()).setFromNode("Bounce2").setFromField("translation_changed").setToNode("transform").setToField("set_translation")))      ;
-    X3D0.toFileX3D("../data/MyBounce.new.x3d");
+    X3D0.toFileX3D("../data/MyBounce.new.node.x3d");
     process.exit(0);

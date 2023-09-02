@@ -48,8 +48,8 @@ public class skeleton {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addComponent(new component().setName("HAnim").setLevel(1))
-        .addMeta(new meta().setName("title").setContent("JohnBoy.x3d"))
-        .addMeta(new meta().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"))
+        .addMeta(new meta().setName("title").setContent("skeleton.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/skeleton.x3d"))
         .addMeta(new meta().setName("description").setContent("An attempt at a standard LOA-4 skeleton"))
         .addMeta(new meta().setName("generator").setContent("h.pl"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
@@ -57,7 +57,7 @@ public class skeleton {
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new NavigationInfo().setSpeed(1.5f))
-        .addChild(new Viewpoint().setCenterOfRotation(new float[] {0f,1f,0f}).setDescription("JohnBoy").setPosition(new float[] {0f,1f,3f})))      ;
+        .addChild(new Viewpoint().setCenterOfRotation(new float[] {0f,1f,0f}).setDescription("skeleton").setPosition(new float[] {0f,1f,3f})))      ;
     return X3D0;
     }
 }

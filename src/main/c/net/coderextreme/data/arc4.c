@@ -24,7 +24,7 @@ head1.meta[2] = meta4;
 
 meta meta5 = createNode("meta");
 meta5.name = "identifier";
-meta5.content = "https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d";
+meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d";
 head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
@@ -59,9 +59,9 @@ Appearance13.material = Material14;
 
 Shape11.appearance = Appearance13;
 
-Transform10.children = new MFNode();
+Transform10.child = new undefined();
 
-Transform10.children[0] = Shape11;
+Transform10.child[0] = Shape11;
 
 PositionInterpolator PositionInterpolator15 = createNode("PositionInterpolator");
 PositionInterpolator15.DEF = "DECLpoint_G1_PI1";
@@ -160,9 +160,9 @@ Appearance29.material = Material30;
 
 Shape27.appearance = Appearance29;
 
-Transform26.children = new MFNode();
+Transform26.child = new undefined();
 
-Transform26.children[0] = Shape27;
+Transform26.child[0] = Shape27;
 
 PositionInterpolator PositionInterpolator31 = createNode("PositionInterpolator");
 PositionInterpolator31.DEF = "DECLpoint_G2_PI1";
@@ -265,9 +265,9 @@ Cylinder Cylinder48 = createNode("Cylinder");
 Cylinder48.radius = 0.05;
 Shape45.geometry = Cylinder48;
 
-Transform44.children = new MFNode();
+Transform44.child = new undefined();
 
-Transform44.children[0] = Shape45;
+Transform44.child[0] = Shape45;
 
 Transform43.children = new MFNode();
 

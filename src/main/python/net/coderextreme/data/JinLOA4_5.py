@@ -2,10 +2,13 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="4.0", 
-head=head(children=[component(name="HAnim", level=1),
-meta(name="title", content="JinLOA4.x3d"),
+head=head(
+children=[
+component(name="HAnim", level=1),
+meta(name="title", content="JinLOA4_5.x3d"),
 meta(name="creator", content="Jin Hoon Lee and Min Joo Lee"),
 meta(name="translator", content="Chul Hee Jung and Myeong Won Lee"),
 meta(name="created", content="31 March 2011"),
@@ -21,7 +24,7 @@ meta(name="generator", content="Suwon HAnim Converter"),
 meta(name="generator", content="Gnu Image Manipulation Program, http://www.gimp.org"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -2665,5 +2668,6 @@ HAnimSegment(USE="hanim_r_trapezium"),
 HAnimSegment(USE="hanim_l_trapezoid"),
 HAnimSegment(USE="hanim_r_trapezoid"),
 HAnimSegment(USE="hanim_l_upperarm"),
-HAnimSegment(USE="hanim_r_upperarm")])]))
-.XML())
+HAnimSegment(USE="hanim_r_upperarm")])])))
+output = model.JSON()
+json.loads(output)

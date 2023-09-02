@@ -110,7 +110,7 @@ var X3D0 =  new X3D({
             new Transform({
               DEF : new SFString("TransformAudio1"),
               translation : new SFVec3f([-200,50,0]),
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
@@ -122,12 +122,12 @@ var X3D0 =  new X3D({
                           specularColor : new SFColor([0.01,0.01,0.01])}))})),
                   geometry : new SFNode(
                     new Sphere({
-                      radius : new SFFloat(30)}))})])}),
+                      radius : new SFFloat(30)}))}))}),
 
             new Transform({
               DEF : new SFString("TransformAudio2"),
               translation : new SFVec3f([0,50,0]),
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
@@ -139,12 +139,12 @@ var X3D0 =  new X3D({
                           specularColor : new SFColor([0.01,0.01,0.01])}))})),
                   geometry : new SFNode(
                     new Sphere({
-                      radius : new SFFloat(30)}))})])}),
+                      radius : new SFFloat(30)}))}))}),
 
             new Transform({
               DEF : new SFString("TransformAudio3"),
               translation : new SFVec3f([200,50,0]),
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
@@ -156,7 +156,7 @@ var X3D0 =  new X3D({
                           specularColor : new SFColor([0.01,0.01,0.01])}))})),
                   geometry : new SFNode(
                     new Sphere({
-                      radius : new SFFloat(30)}))})])}),
+                      radius : new SFFloat(30)}))}))}),
 
             new Transform({
               DEF : new SFString("AnimData"),
@@ -183,7 +183,7 @@ var X3D0 =  new X3D({
               translation : new SFVec3f([-30,100,0])}),
 
             new Transform({
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
@@ -195,7 +195,7 @@ var X3D0 =  new X3D({
                           specularColor : new SFColor([0.5,0.6,0.7])}))})),
                   geometry : new SFNode(
                     new Cylinder({
-                      radius : new SFFloat(500)}))})])}),
+                      radius : new SFFloat(500)}))}))}),
 
             new ListenerPointSource({
               trackCurrentView : new SFBool(true)}),

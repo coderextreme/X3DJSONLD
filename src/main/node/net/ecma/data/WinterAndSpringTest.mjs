@@ -258,7 +258,7 @@ var X3D0 =  new X3D({
                                     new Viewpoint({
                                       DEF : new SFString("ViewBodyRootAxes"),
                                       description : new SFString("Joe_HAnim Root HAnimSite Coordinate Axes View")}),
-
+                                  child : new SFNode(
                                     new Shape({
                                       DEF : new SFString("AxisLinesShape"),
                                       /*RGB lines showing XYZ axes*/
@@ -272,8 +272,8 @@ var X3D0 =  new X3D({
                                               point : new MFVec3f([0,0,0,1,0,0,0,1,0,0,0,1])})),
                                           color : new SFNode(
                                             new Color({
-                                              color : new MFColor([1,0,0,0,0.6,0,0,0,1])}))}))}),
-
+                                              color : new MFColor([1,0,0,0,0.6,0,0,0,1])}))}))})]),
+                                  child : new SFNode(
                                     new Shape({
                                       DEF : new SFString("OldMan_Shape"),
                                       appearance : new SFNode(
@@ -293,7 +293,7 @@ var X3D0 =  new X3D({
                                               DEF : new SFString("KickTextureTransform")}))})),
                                       geometry : new SFNode(
                                         new IndexedFaceSet({
-                                          DEF : new SFString("OldMan_skin_IndexedFaceSet")}))})])})])})])}),
+                                          DEF : new SFString("OldMan_skin_IndexedFaceSet")}))}))})])})])}),
 
                         new HAnimJoint({
                           name : new SFString("sacroiliac"),
