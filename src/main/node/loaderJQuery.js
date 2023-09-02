@@ -575,7 +575,7 @@ function updateStl(json) {
 				console.error(e);
 			}
 		} else {
-			console.log("Perhaps you need to include convertJsonToStl.js if you want STL output?");
+			console.error("Perhaps you need to include convertJsonToStl.js if you want STL output?");
 		}
 }
 
