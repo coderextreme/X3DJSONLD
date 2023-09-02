@@ -111,11 +111,11 @@ function convertStlToJson(file) {
 		"meta": [
 		  {
 		    "@name":"title",
-		    "@content":"template.json"
+		    "@content":"template.x3dj"
 		  },
 		  {
 		    "@name":"identifier",
-		    "@content":"https://coderextreme.net/X3DJSONLD/template.json"
+		    "@content":"https://coderextreme.net/X3DJSONLD/template.x3dj"
 		  },
 		  {
 		    "@name":"description",

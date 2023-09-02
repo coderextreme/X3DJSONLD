@@ -11,6 +11,6 @@ convertXML([
 	{ 
 	serializer : './DOM2JSONSerializer.js',
 	folder : "../",
-	extension : ".json",
+	extension : ".x3dj",
 	}
 	]);

@@ -62,13 +62,13 @@ convertJSON.convertJSON([
 	folder : "../cplusplus/net/coderextreme/",
 	extension : ".cpp",
 	codeOutput : "../"
-/*
 	},
 	{ 
 	serializer : './JavaScriptSerializer.js',
 	folder : "../nashorn/net/coderextreme/",
-	extension : ".mjs",
+	extension : ".js",
 	codeOutput : "../"
+/*
 	},
 	{ 
 	serializer : './PythonSerializer.js',
