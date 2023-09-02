@@ -66,7 +66,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 July 2023"
+            "@content":"02 September 2023"
           },
           {
             "@name":"generator",
@@ -88,42 +88,42 @@
           },
           { "TextureBackground":
             {
-              "-left":
+              "-leftTexture":
                 { "ImageTexture":
                   {
                     "@DEF":"leftBackgroundTexture",
                     "@url":["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"]
                   }
                 },
-              "-right":
+              "-rightTexture":
                 { "ImageTexture":
                   {
                     "@DEF":"rightBackgroundTexture",
                     "@url":["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"]
                   }
                 },
-              "-front":
+              "-frontTexture":
                 { "ImageTexture":
                   {
                     "@DEF":"frontBackgroundTexture",
                     "@url":["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"]
                   }
                 },
-              "-back":
+              "-backTexture":
                 { "ImageTexture":
                   {
                     "@DEF":"backBackgroundTexture",
                     "@url":["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"]
                   }
                 },
-              "-top":
+              "-topTexture":
                 { "ImageTexture":
                   {
                     "@DEF":"topBackgroundTexture",
                     "@url":["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"]
                   }
                 },
-              "-bottom":
+              "-bottomTexture":
                 { "ImageTexture":
                   {
                     "@DEF":"bottomBackgroundTexture",

@@ -26,7 +26,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"https://coderextreme.net/X3DJSONLD/force.x3d"
+            "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d"
           },
           {
             "@name":"description",
@@ -38,7 +38,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 July 2023"
+            "@content":"02 September 2023"
           },
           {
             "@name":"generator",

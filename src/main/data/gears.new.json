@@ -28,7 +28,7 @@
           },
           {
             "@name":"generator",
-            "@content":"convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/convertStlToJson.js"
+            "@content":"convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/src/main/node/convertStlToJson.js"
           },
           {
             "@name":"license",
@@ -48,7 +48,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 July 2023"
+            "@content":"02 September 2023"
           },
           {
             "@name":"generator",

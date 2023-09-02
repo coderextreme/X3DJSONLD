@@ -32,7 +32,7 @@
           },
           {
             "@name":"modified",
-            "@content":"26 December 2022"
+            "@content":"2 July 2023"
           },
           {
             "@name":"reference",
@@ -68,7 +68,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 July 2023"
+            "@content":"02 September 2023"
           },
           {
             "@name":"generator",
@@ -95,14 +95,15 @@
           { "Group":
             {
               "@DEF":"MultipleHumanoids",
-              "-metadata":
+              "-value":[
                 { "MetadataString":
                   {
                     "@name":"HAnimArchitecture",
                     "@reference":"https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile",
                     "@value":["E.4 Multiple humanoids per file"]
                   }
-                },
+                }
+              ],
               "-children":[
                 {
                   "#comment":"=============================="
@@ -290,8 +291,10 @@
                     ],
                     "-children":[
                       {
-                        "#comment":"TODO proposed for X3D4 <Switch DEF='AlternativeSkins' containerField='skin'>"
-                      },
+                        "#comment":"TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'>"
+                      }
+                    ],
+                    "-skin":[
                       { "Shape":
                         {
                           "-geometry":
@@ -307,9 +310,6 @@
                               }
                             }
                         }
-                      },
-                      {
-                        "#comment":"TODO proposed for X3D4 </Switch>"
                       }
                     ]
                   }
@@ -428,12 +428,6 @@
                     "-children":[
                       {
                         "#comment":"allow multiple Shape nodes with containerField='skin', one for each layer of skin"
-                      },
-                      {
-                        "#comment":"TODO proposed for X3D4.1 <Shape containerField='skin'/>"
-                      },
-                      {
-                        "#comment":"TODO proposed for X3D4.1 <Shape containerField='skin'/>"
                       }
                     ],
                     "-skin":[
