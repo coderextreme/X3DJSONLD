@@ -2,17 +2,20 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd">
     <head>
+    	      <component level='1' name='Scripting'/>
+	      <component name='EnvironmentalEffects' level='3'></component>
 	      <component name='Shaders' level='1'></component>
 	      <component name='CubeMapTexturing' level='1'></component>
 	      <component name='Texturing' level='1'></component>
 	      <component name='Rendering' level='1'></component>
 	      <component name='Shape' level='4'></component>
 	      <component name='Grouping' level='3'></component>
+	      <component name='Core' level='1'></component>
         <meta name="title" content="flowerproto.x3d"></meta>
         <meta name="creator" content="John Carlson"></meta>
         <meta name="description" content="A flower proto with configurable shaders"></meta>
         <meta name="generator" content="X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
-        <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/flowerproto.x3d"></meta>
+	<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d"></meta>
     </head>
     <Scene>
         <ProtoDeclare name="FlowerProto">
@@ -26,12 +29,12 @@
                         <Appearance>
                             <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5"/>
                             <ComposedCubeMapTexture DEF="texture">
-                                <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"' containerField="backTexture"/>
-                                <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"' containerField="bottomTexture"/>
-                                <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"' containerField="frontTexture"/>
-                                <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"' containerField="leftTexture"/>
-                                <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"' containerField="rightTexture"/>
-                                <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"' containerField="topTexture"/>
+				    <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' containerField="back"/>
+				    <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' containerField="bottom"/>
+				    <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' containerField="front"/>
+				    <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' containerField="left"/>
+				    <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' containerField="right"/>
+				    <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' containerField="top"/>
                             </ComposedCubeMapTexture>
 
                             <ComposedShader DEF="shader" language="GLSL">
