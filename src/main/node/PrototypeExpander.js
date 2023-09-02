@@ -1071,17 +1071,19 @@ PROTOS.prototype = {
 			/*
 			var x3d = localArray[url].lastIndexOf(".x3d") ;
 			if (x3d === localArray[url].length - 4) {
-				localArray[url] = localArray[url].substring(0, x3d)+".json" + hash;
+				localArray[url] = localArray[url].substring(0, x3d)+".x3dj" + hash;
 			}
 			*/
+			/*
 			var wrl = localArray[url].lastIndexOf(".wrl") ;
 			if (wrl === localArray[url].length - 4) {
-				localArray[url] = localArray[url].substring(0, wrl)+".json" + hash;
+				localArray[url] = localArray[url].substring(0, wrl)+".x3dj" + hash;
 			}
 			var wrz = localArray[url].lastIndexOf(".wrz") ;
 			if (wrz === localArray[url].length - 4) {
-				localArray[url] = localArray[url].substring(0, wrz)+".json" + hash;
+				localArray[url] = localArray[url].substring(0, wrz)+".x3dj" + hash;
 			}
+			*/
 				
 		}
 		// console.error("Processed URLs", localArray.join(" "));
@@ -1179,7 +1181,7 @@ PROTOS.prototype = {
 								loadedCallback(data.toString(), url, protoexp, done, externProtoDeclare, obj);
 							} catch (e) {
 								var filename = url;
-								if (filename.endsWith(".json")) {
+								if (filename.endsWith(".json") || filename.endsWith(".x3dj")) {
 									filename = filename.substring(0, filename.lastIndexOf("."))+".x3d";
 									if (typeof DOM2JSONSerializer === 'function') {
 										try {

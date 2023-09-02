@@ -12,6 +12,6 @@ convertXML([
 	serializer : './ThreeSerializer.js',
 
 	folder : "../three/",
-	extension : ".three.json",
+	extension : ".three.x3dj",
 	}
 	]);

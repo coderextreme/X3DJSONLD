@@ -65,7 +65,7 @@ Browser : {
 	},
 	appendTo : function(element, jsobj) {
 		 if (element != null) {
-			 return X3DJSONLD.ConvertToX3DOM(document, jsobj, "", element, 'foo.json');
+			 return X3DJSONLD.ConvertToX3DOM(document, jsobj, "", element, 'foo.x3dj');
 		 }
 	},
 	getDocument : function() {
@@ -136,17 +136,19 @@ processURLs: function(localArray, path) {
 		/*
 		var x3d = localArray[url].lastIndexOf(".x3d") ;
 		if (x3d === localArray[url].length - 4) {
-			localArray[url] = localArray[url].substring(0, x3d)+".json" + hash;
+			localArray[url] = localArray[url].substring(0, x3d)+".x3dj" + hash;
 		}
 		*/
+		/*
 		var wrl = localArray[url].lastIndexOf(".wrl") ;
 		if (wrl === localArray[url].length - 4) {
-			localArray[url] = localArray[url].substring(0, wrl)+".json" + hash;
+			localArray[url] = localArray[url].substring(0, wrl)+".x3dj" + hash;
 		}
 		var wrz = localArray[url].lastIndexOf(".wrz") ;
 		if (wrz === localArray[url].length - 4) {
-			localArray[url] = localArray[url].substring(0, wrz)+".json" + hash;
+			localArray[url] = localArray[url].substring(0, wrz)+".x3dj" + hash;
 		}
+		*/
 			
         }
 	// console.error("Processed URLs", localArray.join(" "));
@@ -226,7 +228,7 @@ loadURLs : function(loadpath, urls, loadedCallback, protoexp, done, externProtoD
 							loadedCallback(data.toString(), url, protoexp, done, externProtoDeclare, obj);
 						} catch (e) {
 							var filename = url;
-							if (filename.endsWith(".json")) {
+							if (filename.endsWith(".json") || filename.endsWith(".x3dj")) {
 								filename = filename.substring(0, filename.lastIndexOf("."))+".x3d";
 								// console.error("converting possible X3D to JSON", filename);
 								if (typeof runAndSend === 'function') {
@@ -522,7 +524,7 @@ ConvertToX3DOM : function(xmlDoc, object, parentkey, element, path, containerFie
 						for (var skv in firstNode) {
 							for (var prop in firstNode[skv]) {
 								firstNode[skv][prop]['@containerField'] = key.substring(1);
-								console.log(firstNode[skv]);
+								// console.log(firstNode[skv]);
 							}
 						}
 						X3DJSONLD.ConvertObject(xmlDoc, key, object, element, path, key.substring(1));

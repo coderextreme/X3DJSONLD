@@ -556,7 +556,7 @@ window.myLoadJson = function myLoadJson(url) {
 	.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
 }
 
-myLoadJson("../data/ball.json");
+myLoadJson("../data/sphereflowers.x3dj");
 
 function updateXml(json, path) {
 	//  This step is an important validation step.
@@ -583,6 +583,9 @@ function updateStl(json) {
 $("#file").change(function() {
 	var url = $('#file option:selected').text();
 	if (url.endsWith(".json")) {
+		window.myLoadJson(url);
+		if (typeof threeLoadFile === 'function') threeLoadFile(url);
+	} else if (url.endsWith(".x3dj")) {
 		window.myLoadJson(url);
 		if (typeof threeLoadFile === 'function') threeLoadFile(url);
 	} else if (url.endsWith(".x3d")) {
