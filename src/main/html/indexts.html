@@ -215,7 +215,9 @@ Click <a onclick='window.updateFromPly($("#file option:selected").text()); retur
 	<script src="../node/loaderJQuery.js"></script>
 	<script src="../node/loadJson.js"></script>
     	<script type="text/javascript">
-		window.myLoadJson('../data/sphereflowers.json'); // does load sphereflowers.json
+		document.addEventListener('DOMContentLoaded', function() {
+			window.myLoadJson('../data/sphereflowers.json'); // does load sphereflowers.json
+		}
 	</script>
 </html>
 <!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
