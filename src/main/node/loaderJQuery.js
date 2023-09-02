@@ -556,7 +556,7 @@ window.myLoadJson = function myLoadJson(url) {
 	.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
 }
 
-myLoadJson("../data/ballx_ite.json");
+myLoadJson("../data/ball.json");
 
 function updateXml(json, path) {
 	//  This step is an important validation step.
