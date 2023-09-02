@@ -125,7 +125,7 @@ var X3D0 =  X3D(
                   DEF_ : SFString('StageGeometry'),
                   scale_ : SFVec3f([SFDouble(1), SFDouble(0.01), SFDouble(1)]),
                   translation_ : SFVec3f([SFDouble(0), SFDouble(-0.01), SFDouble(0)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       appearance_ : 
                         Appearance(
@@ -135,10 +135,10 @@ var X3D0 =  X3D(
                       geometry_ : 
                         Box(
                           size_ : SFVec3f([SFDouble(9), SFDouble(1), SFDouble(9)]))),
-
+                  children_ : [
                     Transform(
                       DEF_ : SFString('Circle0'),
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
@@ -156,53 +156,53 @@ var X3D0 =  X3D(
                               coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(2), SFInt32(3), SFInt32(4), SFInt32(5), SFInt32(6), SFInt32(7), SFInt32(8), SFInt32(9), SFInt32(10), SFInt32(11), SFInt32(12), SFInt32(13), SFInt32(14), SFInt32(15), SFInt32(16), SFInt32(17), SFInt32(18), SFInt32(19), SFInt32(20), SFInt32(21), SFInt32(22), SFInt32(23), SFInt32(24), SFInt32(25), SFInt32(26), SFInt32(27), SFInt32(28), SFInt32(29), SFInt32(30), SFInt32(31), SFInt32(32), SFInt32(33), SFInt32(34), SFInt32(35), SFInt32(36), SFInt32(37), SFInt32(38), SFInt32(39), SFInt32(40), SFInt32(41), SFInt32(42), SFInt32(43), SFInt32(44), SFInt32(45), SFInt32(46), SFInt32(47), SFInt32(48), SFInt32(49), SFInt32(50), SFInt32(51), SFInt32(52), SFInt32(53), SFInt32(54), SFInt32(55), SFInt32(56), SFInt32(57), SFInt32(58), SFInt32(59), SFInt32(60), SFInt32(-1)]),
                               coord_ : 
                                 Coordinate(
-                                  point_ : MFVec3f([SFVec3f([1,0,0]),SFVec3f([0.995000005,0,-0.104999997]),SFVec3f([0.978999972,0,-0.208000004]),SFVec3f([0.950999975,0,-0.308999985]),SFVec3f([0.913999975,0,-0.407000005]),SFVec3f([0.865999997,0,-0.5]),SFVec3f([0.809000015,0,-0.588]),SFVec3f([0.742999971,0,-0.66900003]),SFVec3f([0.66900003,0,-0.742999971]),SFVec3f([0.588,0,-0.809000015]),SFVec3f([0.5,0,-0.865999997]),SFVec3f([0.407000005,0,-0.913999975]),SFVec3f([0.308999985,0,-0.950999975]),SFVec3f([0.208000004,0,-0.977999985]),SFVec3f([0.104999997,0,-0.995000005]),SFVec3f([0,0,-1]),SFVec3f([-0.104999997,0,-0.994521976]),SFVec3f([-0.208000004,0,-0.977999985]),SFVec3f([-0.308999985,0,-0.950999975]),SFVec3f([-0.407000005,0,-0.913999975]),SFVec3f([-0.5,0,-0.865999997]),SFVec3f([-0.588,0,-0.809000015]),SFVec3f([-0.66900003,0,-0.742999971]),SFVec3f([-0.742999971,0,-0.66900003]),SFVec3f([-0.809000015,0,-0.588]),SFVec3f([-0.865999997,0,-0.5]),SFVec3f([-0.913999975,0,-0.407000005]),SFVec3f([-0.950999975,0,-0.308999985]),SFVec3f([-0.977999985,0,-0.208000004]),SFVec3f([-0.995000005,0,-0.104999997]),SFVec3f([-1,0,0]),SFVec3f([-0.995000005,0,0.104999997]),SFVec3f([-0.977999985,0,0.208000004]),SFVec3f([-0.950999975,0,0.308999985]),SFVec3f([-0.913999975,0,0.407000005]),SFVec3f([-0.865999997,0,0.5]),SFVec3f([-0.809000015,0,0.588]),SFVec3f([-0.742999971,0,0.66900003]),SFVec3f([-0.66900003,0,0.742999971]),SFVec3f([-0.588,0,0.809000015]),SFVec3f([-0.5,0,0.865999997]),SFVec3f([-0.407000005,0,0.913999975]),SFVec3f([-0.308999985,0,0.950999975]),SFVec3f([-0.208000004,0,0.977999985]),SFVec3f([-0.104999997,0,0.995000005]),SFVec3f([0,0,1]),SFVec3f([0.104999997,0,0.995000005]),SFVec3f([0.208000004,0,0.977999985]),SFVec3f([0.308999985,0,0.950999975]),SFVec3f([0.407000005,0,0.913999975]),SFVec3f([0.5,0,0.865999997]),SFVec3f([0.588,0,0.809000015]),SFVec3f([0.66900003,0,0.742999971]),SFVec3f([0.742999971,0,0.66900003]),SFVec3f([0.809000015,0,0.588]),SFVec3f([0.865999997,0,0.5]),SFVec3f([0.913999975,0,0.407000005]),SFVec3f([0.950999975,0,0.308999985]),SFVec3f([0.977999985,0,0.208000004]),SFVec3f([0.995000005,0,0.104000002]),SFVec3f([1,0,0])]))))]),
+                                  point_ : MFVec3f([SFVec3f([1,0,0]),SFVec3f([0.995000005,0,-0.104999997]),SFVec3f([0.978999972,0,-0.208000004]),SFVec3f([0.950999975,0,-0.308999985]),SFVec3f([0.913999975,0,-0.407000005]),SFVec3f([0.865999997,0,-0.5]),SFVec3f([0.809000015,0,-0.588]),SFVec3f([0.742999971,0,-0.66900003]),SFVec3f([0.66900003,0,-0.742999971]),SFVec3f([0.588,0,-0.809000015]),SFVec3f([0.5,0,-0.865999997]),SFVec3f([0.407000005,0,-0.913999975]),SFVec3f([0.308999985,0,-0.950999975]),SFVec3f([0.208000004,0,-0.977999985]),SFVec3f([0.104999997,0,-0.995000005]),SFVec3f([0,0,-1]),SFVec3f([-0.104999997,0,-0.994521976]),SFVec3f([-0.208000004,0,-0.977999985]),SFVec3f([-0.308999985,0,-0.950999975]),SFVec3f([-0.407000005,0,-0.913999975]),SFVec3f([-0.5,0,-0.865999997]),SFVec3f([-0.588,0,-0.809000015]),SFVec3f([-0.66900003,0,-0.742999971]),SFVec3f([-0.742999971,0,-0.66900003]),SFVec3f([-0.809000015,0,-0.588]),SFVec3f([-0.865999997,0,-0.5]),SFVec3f([-0.913999975,0,-0.407000005]),SFVec3f([-0.950999975,0,-0.308999985]),SFVec3f([-0.977999985,0,-0.208000004]),SFVec3f([-0.995000005,0,-0.104999997]),SFVec3f([-1,0,0]),SFVec3f([-0.995000005,0,0.104999997]),SFVec3f([-0.977999985,0,0.208000004]),SFVec3f([-0.950999975,0,0.308999985]),SFVec3f([-0.913999975,0,0.407000005]),SFVec3f([-0.865999997,0,0.5]),SFVec3f([-0.809000015,0,0.588]),SFVec3f([-0.742999971,0,0.66900003]),SFVec3f([-0.66900003,0,0.742999971]),SFVec3f([-0.588,0,0.809000015]),SFVec3f([-0.5,0,0.865999997]),SFVec3f([-0.407000005,0,0.913999975]),SFVec3f([-0.308999985,0,0.950999975]),SFVec3f([-0.208000004,0,0.977999985]),SFVec3f([-0.104999997,0,0.995000005]),SFVec3f([0,0,1]),SFVec3f([0.104999997,0,0.995000005]),SFVec3f([0.208000004,0,0.977999985]),SFVec3f([0.308999985,0,0.950999975]),SFVec3f([0.407000005,0,0.913999975]),SFVec3f([0.5,0,0.865999997]),SFVec3f([0.588,0,0.809000015]),SFVec3f([0.66900003,0,0.742999971]),SFVec3f([0.742999971,0,0.66900003]),SFVec3f([0.809000015,0,0.588]),SFVec3f([0.865999997,0,0.5]),SFVec3f([0.913999975,0,0.407000005]),SFVec3f([0.950999975,0,0.308999985]),SFVec3f([0.977999985,0,0.208000004]),SFVec3f([0.995000005,0,0.104000002]),SFVec3f([1,0,0])]))))),
 
                     Transform(
                       DEF_ : SFString('Circle1'),
                       scale_ : SFVec3f([SFDouble(0.5), SFDouble(1), SFDouble(0.5)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
                               USE_ : SFString('LineColor')),
                           geometry_ : 
                             IndexedLineSet(
-                              USE_ : SFString('Orbit1')))]),
+                              USE_ : SFString('Orbit1')))),
 
                     Transform(
                       DEF_ : SFString('Circle2'),
                       scale_ : SFVec3f([SFDouble(0.25), SFDouble(1), SFDouble(0.25)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
                               USE_ : SFString('LineColor')),
                           geometry_ : 
                             IndexedLineSet(
-                              USE_ : SFString('Orbit1')))]),
+                              USE_ : SFString('Orbit1')))),
 
                     Transform(
                       DEF_ : SFString('Circle3'),
                       scale_ : SFVec3f([SFDouble(2), SFDouble(1), SFDouble(2)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
                               USE_ : SFString('LineColor')),
                           geometry_ : 
                             IndexedLineSet(
-                              USE_ : SFString('Orbit1')))]),
+                              USE_ : SFString('Orbit1')))),
 
                     Transform(
                       DEF_ : SFString('Circle4'),
                       scale_ : SFVec3f([SFDouble(3), SFDouble(1), SFDouble(3)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
                               USE_ : SFString('LineColor')),
                           geometry_ : 
                             IndexedLineSet(
-                              USE_ : SFString('Orbit1')))])])])]));
+                              USE_ : SFString('Orbit1'))))])])]));
 void main() { exit(0); }

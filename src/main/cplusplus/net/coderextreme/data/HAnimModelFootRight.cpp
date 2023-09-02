@@ -182,7 +182,7 @@ Appearance36->setMaterial(*Material37);
 
 Shape34->setAppearance(*Appearance36);
 
-Transform33->addChildren(*Shape34);
+Transform33->addChild(*Shape34);
 
 HAnimSegment32->addChildren(*Transform33);
 
@@ -240,7 +240,7 @@ CTransform* Transform50 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform50->setTranslation(new float[3]{0,-0.3,0});
 CShape* Shape51 = (CShape *)(m_pScene.createNode("Shape"));
 Shape51->setUSE("HAnimJointShape");
-Transform50->addChildren(*Shape51);
+Transform50->addChild(*Shape51);
 
 HAnimSegment49->addChildren(*Transform50);
 
@@ -317,7 +317,7 @@ CTransform* Transform69 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform69->setTranslation(new float[3]{0.1,-0.45,0});
 CShape* Shape70 = (CShape *)(m_pScene.createNode("Shape"));
 Shape70->setUSE("HAnimJointShape");
-Transform69->addChildren(*Shape70);
+Transform69->addChild(*Shape70);
 
 HAnimSegment68->addChildren(*Transform69);
 
@@ -355,7 +355,7 @@ CTransform* Transform78 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform78->setTranslation(new float[3]{0.1,-0.6,0});
 CShape* Shape79 = (CShape *)(m_pScene.createNode("Shape"));
 Shape79->setUSE("HAnimJointShape");
-Transform78->addChildren(*Shape79);
+Transform78->addChild(*Shape79);
 
 HAnimSegment77->addChildren(*Transform78);
 
@@ -393,7 +393,7 @@ CTransform* Transform87 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform87->setTranslation(new float[3]{0.1,-0.9,0});
 CShape* Shape88 = (CShape *)(m_pScene.createNode("Shape"));
 Shape88->setUSE("HAnimJointShape");
-Transform87->addChildren(*Shape88);
+Transform87->addChild(*Shape88);
 
 HAnimSegment86->addChildren(*Transform87);
 
@@ -431,7 +431,7 @@ CTransform* Transform96 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform96->setTranslation(new float[3]{0.1,-1.05,0});
 CShape* Shape97 = (CShape *)(m_pScene.createNode("Shape"));
 Shape97->setUSE("HAnimJointShape");
-Transform96->addChildren(*Shape97);
+Transform96->addChild(*Shape97);
 
 HAnimSegment95->addChildren(*Transform96);
 
@@ -478,7 +478,7 @@ CTransform* Transform105 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform105->setTranslation(new float[3]{0,-0.45,0});
 CShape* Shape106 = (CShape *)(m_pScene.createNode("Shape"));
 Shape106->setUSE("HAnimJointShape");
-Transform105->addChildren(*Shape106);
+Transform105->addChild(*Shape106);
 
 HAnimSegment104->addChildren(*Transform105);
 
@@ -516,7 +516,7 @@ CTransform* Transform114 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform114->setTranslation(new float[3]{-0.05,-0.6,0});
 CShape* Shape115 = (CShape *)(m_pScene.createNode("Shape"));
 Shape115->setUSE("HAnimJointShape");
-Transform114->addChildren(*Shape115);
+Transform114->addChild(*Shape115);
 
 HAnimSegment113->addChildren(*Transform114);
 
@@ -554,7 +554,7 @@ CTransform* Transform123 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform123->setTranslation(new float[3]{-0.05,-0.9,0});
 CShape* Shape124 = (CShape *)(m_pScene.createNode("Shape"));
 Shape124->setUSE("HAnimJointShape");
-Transform123->addChildren(*Shape124);
+Transform123->addChild(*Shape124);
 
 HAnimSegment122->addChildren(*Transform123);
 
@@ -592,7 +592,7 @@ CTransform* Transform132 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform132->setTranslation(new float[3]{-0.05,-1.05,0});
 CShape* Shape133 = (CShape *)(m_pScene.createNode("Shape"));
 Shape133->setUSE("HAnimJointShape");
-Transform132->addChildren(*Shape133);
+Transform132->addChild(*Shape133);
 
 HAnimSegment131->addChildren(*Transform132);
 
@@ -630,7 +630,7 @@ CTransform* Transform141 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform141->setTranslation(new float[3]{-0.05,-1.12,0});
 CShape* Shape142 = (CShape *)(m_pScene.createNode("Shape"));
 Shape142->setUSE("HAnimJointShape");
-Transform141->addChildren(*Shape142);
+Transform141->addChild(*Shape142);
 
 HAnimSegment140->addChildren(*Transform141);
 
@@ -679,7 +679,7 @@ CTransform* Transform150 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform150->setTranslation(new float[3]{-0.1,-0.4,0});
 CShape* Shape151 = (CShape *)(m_pScene.createNode("Shape"));
 Shape151->setUSE("HAnimJointShape");
-Transform150->addChildren(*Shape151);
+Transform150->addChild(*Shape151);
 
 HAnimSegment149->addChildren(*Transform150);
 
@@ -717,7 +717,7 @@ CTransform* Transform159 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform159->setTranslation(new float[3]{-0.15,-0.6,0});
 CShape* Shape160 = (CShape *)(m_pScene.createNode("Shape"));
 Shape160->setUSE("HAnimJointShape");
-Transform159->addChildren(*Shape160);
+Transform159->addChild(*Shape160);
 
 HAnimSegment158->addChildren(*Transform159);
 
@@ -755,7 +755,7 @@ CTransform* Transform168 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform168->setTranslation(new float[3]{-0.15,-0.9,0});
 CShape* Shape169 = (CShape *)(m_pScene.createNode("Shape"));
 Shape169->setUSE("HAnimJointShape");
-Transform168->addChildren(*Shape169);
+Transform168->addChild(*Shape169);
 
 HAnimSegment167->addChildren(*Transform168);
 
@@ -793,7 +793,7 @@ CTransform* Transform177 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform177->setTranslation(new float[3]{-0.15,-1.05,0});
 CShape* Shape178 = (CShape *)(m_pScene.createNode("Shape"));
 Shape178->setUSE("HAnimJointShape");
-Transform177->addChildren(*Shape178);
+Transform177->addChild(*Shape178);
 
 HAnimSegment176->addChildren(*Transform177);
 
@@ -831,7 +831,7 @@ CTransform* Transform186 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform186->setTranslation(new float[3]{-0.15,-1.13,0});
 CShape* Shape187 = (CShape *)(m_pScene.createNode("Shape"));
 Shape187->setUSE("HAnimJointShape");
-Transform186->addChildren(*Shape187);
+Transform186->addChild(*Shape187);
 
 HAnimSegment185->addChildren(*Transform186);
 
@@ -882,7 +882,7 @@ CTransform* Transform195 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform195->setTranslation(new float[3]{-0.2,0.3,0});
 CShape* Shape196 = (CShape *)(m_pScene.createNode("Shape"));
 Shape196->setUSE("HAnimJointShape");
-Transform195->addChildren(*Shape196);
+Transform195->addChild(*Shape196);
 
 HAnimSegment194->addChildren(*Transform195);
 
@@ -921,7 +921,7 @@ CTransform* Transform204 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform204->setTranslation(new float[3]{-0.21,-0.3,0});
 CShape* Shape205 = (CShape *)(m_pScene.createNode("Shape"));
 Shape205->setUSE("HAnimJointShape");
-Transform204->addChildren(*Shape205);
+Transform204->addChild(*Shape205);
 
 HAnimSegment203->addChildren(*Transform204);
 
@@ -979,7 +979,7 @@ CTransform* Transform218 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform218->setTranslation(new float[3]{-0.25,-0.58,0});
 CShape* Shape219 = (CShape *)(m_pScene.createNode("Shape"));
 Shape219->setUSE("HAnimJointShape");
-Transform218->addChildren(*Shape219);
+Transform218->addChild(*Shape219);
 
 HAnimSegment217->addChildren(*Transform218);
 
@@ -1017,7 +1017,7 @@ CTransform* Transform227 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform227->setTranslation(new float[3]{-0.25,-0.87,0});
 CShape* Shape228 = (CShape *)(m_pScene.createNode("Shape"));
 Shape228->setUSE("HAnimJointShape");
-Transform227->addChildren(*Shape228);
+Transform227->addChild(*Shape228);
 
 HAnimSegment226->addChildren(*Transform227);
 
@@ -1055,7 +1055,7 @@ CTransform* Transform236 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform236->setTranslation(new float[3]{-0.25,-1,0});
 CShape* Shape237 = (CShape *)(m_pScene.createNode("Shape"));
 Shape237->setUSE("HAnimJointShape");
-Transform236->addChildren(*Shape237);
+Transform236->addChild(*Shape237);
 
 HAnimSegment235->addChildren(*Transform236);
 
@@ -1093,7 +1093,7 @@ CTransform* Transform245 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform245->setTranslation(new float[3]{-0.25,-1.1,0});
 CShape* Shape246 = (CShape *)(m_pScene.createNode("Shape"));
 Shape246->setUSE("HAnimJointShape");
-Transform245->addChildren(*Shape246);
+Transform245->addChild(*Shape246);
 
 HAnimSegment244->addChildren(*Transform245);
 
@@ -1140,7 +1140,7 @@ CTransform* Transform254 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform254->setTranslation(new float[3]{-0.33,-0.52,0});
 CShape* Shape255 = (CShape *)(m_pScene.createNode("Shape"));
 Shape255->setUSE("HAnimJointShape");
-Transform254->addChildren(*Shape255);
+Transform254->addChild(*Shape255);
 
 HAnimSegment253->addChildren(*Transform254);
 
@@ -1178,7 +1178,7 @@ CTransform* Transform263 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform263->setTranslation(new float[3]{-0.34,-0.8,0});
 CShape* Shape264 = (CShape *)(m_pScene.createNode("Shape"));
 Shape264->setUSE("HAnimJointShape");
-Transform263->addChildren(*Shape264);
+Transform263->addChild(*Shape264);
 
 HAnimSegment262->addChildren(*Transform263);
 
@@ -1216,7 +1216,7 @@ CTransform* Transform272 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform272->setTranslation(new float[3]{-0.34,-0.95,0});
 CShape* Shape273 = (CShape *)(m_pScene.createNode("Shape"));
 Shape273->setUSE("HAnimJointShape");
-Transform272->addChildren(*Shape273);
+Transform272->addChild(*Shape273);
 
 HAnimSegment271->addChildren(*Transform272);
 
@@ -1254,7 +1254,7 @@ CTransform* Transform281 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform281->setTranslation(new float[3]{-0.34,-1.05,0});
 CShape* Shape282 = (CShape *)(m_pScene.createNode("Shape"));
 Shape282->setUSE("HAnimJointShape");
-Transform281->addChildren(*Shape282);
+Transform281->addChild(*Shape282);
 
 HAnimSegment280->addChildren(*Transform281);
 

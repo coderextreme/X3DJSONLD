@@ -75,7 +75,7 @@ var X3D0 =  X3D(
             Transform(
               DEF_ : SFString('TransformAudio1'),
               translation_ : SFVec3f([SFDouble(-200), SFDouble(50), SFDouble(0)]),
-              children_ : [
+              child_ : 
                 Shape(
                   appearance_ : 
                     Appearance(
@@ -87,12 +87,12 @@ var X3D0 =  X3D(
                           specularColor_ : SFColor([SFDouble(0.01), SFDouble(0.01), SFDouble(0.01)]))),
                   geometry_ : 
                     Sphere(
-                      radius_ : 30))]),
+                      radius_ : 30))),
 
             Transform(
               DEF_ : SFString('TransformAudio2'),
               translation_ : SFVec3f([SFDouble(0), SFDouble(50), SFDouble(0)]),
-              children_ : [
+              child_ : 
                 Shape(
                   appearance_ : 
                     Appearance(
@@ -104,12 +104,12 @@ var X3D0 =  X3D(
                           specularColor_ : SFColor([SFDouble(0.01), SFDouble(0.01), SFDouble(0.01)]))),
                   geometry_ : 
                     Sphere(
-                      radius_ : 30))]),
+                      radius_ : 30))),
 
             Transform(
               DEF_ : SFString('TransformAudio3'),
               translation_ : SFVec3f([SFDouble(200), SFDouble(50), SFDouble(0)]),
-              children_ : [
+              child_ : 
                 Shape(
                   appearance_ : 
                     Appearance(
@@ -121,7 +121,7 @@ var X3D0 =  X3D(
                           specularColor_ : SFColor([SFDouble(0.01), SFDouble(0.01), SFDouble(0.01)]))),
                   geometry_ : 
                     Sphere(
-                      radius_ : 30))]),
+                      radius_ : 30))),
 
             Transform(
               DEF_ : SFString('AnimData'),
@@ -148,7 +148,7 @@ var X3D0 =  X3D(
               translation_ : SFVec3f([SFDouble(-30), SFDouble(100), SFDouble(0)])),
 
             Transform(
-              children_ : [
+              child_ : 
                 Shape(
                   appearance_ : 
                     Appearance(
@@ -160,7 +160,7 @@ var X3D0 =  X3D(
                           specularColor_ : SFColor([SFDouble(0.5), SFDouble(0.6), SFDouble(0.7)]))),
                   geometry_ : 
                     Cylinder(
-                      radius_ : 500))]),
+                      radius_ : 500))),
 
             ListenerPointSource(
               trackCurrentView_ : true),

@@ -22,16 +22,24 @@ var ProtoInstance5 = null;
 var ProtoInstance6 = null;
       var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
       .setHead((new autoclass.head())
+        .addComponent((new autoclass.component()).setName("Scripting").setLevel(1))
+        .addComponent((new autoclass.component()).setName("EnvironmentalEffects").setLevel(3))
+        .addComponent((new autoclass.component()).setName("Shaders").setLevel(1))
+        .addComponent((new autoclass.component()).setName("CubeMapTexturing").setLevel(1))
+        .addComponent((new autoclass.component()).setName("Texturing").setLevel(1))
+        .addComponent((new autoclass.component()).setName("Rendering").setLevel(1))
+        .addComponent((new autoclass.component()).setName("Grouping").setLevel(3))
+        .addComponent((new autoclass.component()).setName("Core").setLevel(1))
         .addMeta((new autoclass.meta()).setName("title").setContent("sphereflowers.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("description").setContent("5 or more prismatic flowers"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/sphereflowers.x3d")))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/sphereflowers.x3d")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.NavigationInfo()))
-        .addChild((new autoclass.Background()).setBackUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resourcesimages/all_probes/stpeters_cross/stpeters_back.png"])).setBottomUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resourcesimages/all_probes/stpeters_cross/stpeters_bottom.png"])).setFrontUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resourcesimages/all_probes/stpeters_cross/stpeters_front.png"])).setLeftUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resourcesimages/all_probes/stpeters_cross/stpeters_left.png"])).setRightUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resourcesimages/all_probes/stpeters_cross/stpeters_right.png"])).setTopUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/src/main/resourcesall_probes/stpeters_cross/stpeters_top.png"])))
+        .addChild((new autoclass.Background()).setBackUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"])).setBottomUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])).setFrontUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"])).setLeftUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"])).setRightUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"])).setTopUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/src/main/resourcesall_probes/stpeters_cross/stpeters_top.png"])))
         .addChild((new autoclass.Group())
-          .addChild((new autoclass.ExternProtoDeclare()).setName("FlowerProto").setUrl(java.newArray("java.lang.String", ["../personal/flowerproto.json#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto"]))
+          .addChild((new autoclass.ExternProtoDeclare()).setName("FlowerProto").setUrl(java.newArray("java.lang.String", ["../personal/flowerproto.json#FlowerProto","https://localhost:3000/src/main/personal/flowerproto.json#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto"]))
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFSTRING).setName("vertex").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT))
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFSTRING).setName("fragment").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT)))
           .addChild((new autoclass.ProtoDeclare()).setName("flower")
@@ -46,11 +54,11 @@ var ProtoInstance6 = null;
           .addChild(ProtoInstance6 = (new autoclass.ProtoInstance()).setName("flower"))
           .addChild((new autoclass.TimeSensor()).setDEF("SongTime").setLoop(true))
           .addChild((new autoclass.Sound()).setMaxBack(java.newFloat(100)).setMaxFront(java.newFloat(100)).setMinBack(java.newFloat(20)).setMinFront(java.newFloat(20))
-            .setSource((new autoclass.AudioClip()).setDEF("AudioClip").setDescription("Chandubabamusic #1").setUrl(java.newArray("java.lang.String", ["../resources/chandubabamusic1.wav"]))))
+            .setSource((new autoclass.AudioClip()).setDEF("AudioClip").setDescription("Chandubabamusic #1").setUrl(java.newArray("java.lang.String", ["../resources/chandubabamusic1.wav","https://localhost:3000/src/main/resources/chandubabamusic1.wav","https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav"]))))
           .addChild((new autoclass.ROUTE()).setFromField("cycleTime").setFromNode("SongTime").setToField("startTime").setToNode("AudioClip"))))      ;
 ProtoInstance0
                   .addFieldValue((new autoclass.fieldValue()).setName("vertex").setValue("\"../shaders/x_ite_flowers_chromatic.vs\""));
 ProtoInstance0
                   .addFieldValue((new autoclass.fieldValue()).setName("fragment").setValue("\"../shaders/x_ite.fs\""));
-    X3D0.toFileX3D("../data/sphereflowers.new.x3d");
+    X3D0.toFileX3D("../data/sphereflowers.new.node.x3d");
     process.exit(0);

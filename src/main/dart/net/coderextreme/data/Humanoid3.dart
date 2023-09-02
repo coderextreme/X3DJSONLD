@@ -14,11 +14,11 @@ var X3D0 =  X3D(
           meta_ : [
             meta(
               name_ : SFString('title'),
-              content_ : SFString('JohnBoy.x3d')),
+              content_ : SFString('Humanoid3.x3d')),
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d')),
+              content_ : SFString('http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid3.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -48,7 +48,7 @@ var X3D0 =  X3D(
           children_ : [
             Transform(
               /*DEF for markerfor XYZ axes*/
-              children_ : [
+              child_ : 
                 Shape(
                   DEF_ : SFString('AxisLinesShape'),
                   /*RGB lines showing XYZ axes*/
@@ -62,7 +62,7 @@ var X3D0 =  X3D(
                           point_ : MFVec3f([SFVec3f([0,0,0]),SFVec3f([0.1,0,0]),SFVec3f([0,0.1,0]),SFVec3f([0,0,0.1])])),
                       color_ : 
                         Color(
-                          color_ : MFColor([SFColor(1), SFColor(0), SFColor(0), SFColor(0), SFColor(0.6), SFColor(0), SFColor(0), SFColor(0), SFColor(1)]))))]),
+                          color_ : MFColor([SFColor(1), SFColor(0), SFColor(0), SFColor(0), SFColor(0.6), SFColor(0), SFColor(0), SFColor(0), SFColor(1)]))))),
 
             Group(
               /*DEFS for markers of skeleton joints, segments, and sites*/
@@ -71,7 +71,7 @@ var X3D0 =  X3D(
                   children_ : [
                     Transform(
                       translation_ : SFVec3f([SFDouble(0), SFDouble(2), SFDouble(0)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           DEF_ : SFString('HAnimRootShape'),
                           geometry_ : 
@@ -83,11 +83,11 @@ var X3D0 =  X3D(
                                 Material(
                                   DEF_ : SFString('HAnimRootMaterial'),
                                   diffuseColor_ : SFColor([SFDouble(0.8), SFDouble(0), SFDouble(0)]),
-                                  transparency_ : 0.3)))]),
+                                  transparency_ : 0.3)))),
 
                     Transform(
                       translation_ : SFVec3f([SFDouble(0), SFDouble(2.1), SFDouble(0)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           DEF_ : SFString('HAnimJointShape'),
                           geometry_ : 
@@ -99,11 +99,11 @@ var X3D0 =  X3D(
                                 Material(
                                   DEF_ : SFString('HAnimJointMaterial'),
                                   diffuseColor_ : SFColor([SFDouble(0), SFDouble(0), SFDouble(0.8)]),
-                                  transparency_ : 0.3)))]),
+                                  transparency_ : 0.3)))),
 
                     Transform(
                       translation_ : SFVec3f([SFDouble(0), SFDouble(2.05), SFDouble(0)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           DEF_ : SFString('HAnimSegmentLine'),
                           geometry_ : 
@@ -115,11 +115,11 @@ var X3D0 =  X3D(
                                   color_ : MFColorRGBA([SFColorRGBA(1), SFColorRGBA(1), SFColorRGBA(0), SFColorRGBA(1), SFColorRGBA(1), SFColorRGBA(1), SFColorRGBA(0), SFColorRGBA(0.1)])),
                               coord_ : 
                                 Coordinate(
-                                  point_ : MFVec3f([SFVec3f([-0.05,0,0]),SFVec3f([0.05,0,0])]))))]),
+                                  point_ : MFVec3f([SFVec3f([-0.05,0,0]),SFVec3f([0.05,0,0])]))))),
 
                     Transform(
                       translation_ : SFVec3f([SFDouble(0), SFDouble(2.1), SFDouble(0)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           DEF_ : SFString('HAnimSiteShape'),
                           geometry_ : 
@@ -140,7 +140,7 @@ var X3D0 =  X3D(
                               material_ : 
                                 Material(
                                   diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(0)]),
-                                  transparency_ : 0.3)))])])]),
+                                  transparency_ : 0.3))))])]),
 
             NavigationInfo(
               speed_ : 1.5),
@@ -204,9 +204,9 @@ var X3D0 =  X3D(
                           children_ : [
                             Transform(
                               /*Empty Transform*/
-                              children_ : [
+                              child_ : 
                                 Shape(
-                                  USE_ : SFString('HAnimJointShape'))])]),
+                                  USE_ : SFString('HAnimJointShape')))]),
 
                         Shape(
                           geometry_ : 
@@ -389,9 +389,9 @@ var X3D0 =  X3D(
                               children_ : [
                                 Transform(
                                   /*Empty Transform*/
-                                  children_ : [
+                                  child_ : 
                                     Shape(
-                                      USE_ : SFString('HAnimJointShape'))])]),
+                                      USE_ : SFString('HAnimJointShape')))]),
 
                             Shape(
                               geometry_ : 
@@ -519,9 +519,9 @@ var X3D0 =  X3D(
                                   children_ : [
                                     Transform(
                                       /*Empty Transform*/
-                                      children_ : [
+                                      child_ : 
                                         Shape(
-                                          USE_ : SFString('HAnimJointShape'))])]),
+                                          USE_ : SFString('HAnimJointShape')))]),
 
                                 Shape(
                                   geometry_ : 
@@ -583,9 +583,9 @@ var X3D0 =  X3D(
                                       children_ : [
                                         Transform(
                                           /*Empty Transform*/
-                                          children_ : [
+                                          child_ : 
                                             Shape(
-                                              USE_ : SFString('HAnimJointShape'))])]),
+                                              USE_ : SFString('HAnimJointShape')))]),
 
                                     Shape(
                                       geometry_ : 
@@ -640,9 +640,9 @@ var X3D0 =  X3D(
                                           children_ : [
                                             Transform(
                                               /*Empty Transform left foot*/
-                                              children_ : [
+                                              child_ : 
                                                 Shape(
-                                                  USE_ : SFString('HAnimJointShape'))])]),
+                                                  USE_ : SFString('HAnimJointShape')))]),
 
                                         Shape(
                                           geometry_ : 
@@ -672,9 +672,9 @@ var X3D0 =  X3D(
                                               children_ : [
                                                 Transform(
                                                   /*Empty Transform*/
-                                                  children_ : [
+                                                  child_ : 
                                                     Shape(
-                                                      USE_ : SFString('HAnimJointShape'))])]),
+                                                      USE_ : SFString('HAnimJointShape')))]),
 
                                             Shape(
                                               geometry_ : 
@@ -704,9 +704,9 @@ var X3D0 =  X3D(
                                                   children_ : [
                                                     Transform(
                                                       /*Empty Transform*/
-                                                      children_ : [
+                                                      child_ : 
                                                         Shape(
-                                                          USE_ : SFString('HAnimJointShape'))])]),
+                                                          USE_ : SFString('HAnimJointShape')))]),
 
                                                 Shape(
                                                   geometry_ : 
@@ -754,9 +754,9 @@ var X3D0 =  X3D(
                                   children_ : [
                                     Transform(
                                       /*Empty Transform*/
-                                      children_ : [
+                                      child_ : 
                                         Shape(
-                                          USE_ : SFString('HAnimJointShape'))])]),
+                                          USE_ : SFString('HAnimJointShape')))]),
 
                                 Shape(
                                   geometry_ : 
@@ -818,9 +818,9 @@ var X3D0 =  X3D(
                                       children_ : [
                                         Transform(
                                           /*Empty Transform*/
-                                          children_ : [
+                                          child_ : 
                                             Shape(
-                                              USE_ : SFString('HAnimJointShape'))])]),
+                                              USE_ : SFString('HAnimJointShape')))]),
 
                                     Shape(
                                       geometry_ : 
@@ -875,9 +875,9 @@ var X3D0 =  X3D(
                                           children_ : [
                                             Transform(
                                               /*Empty Transform right foot*/
-                                              children_ : [
+                                              child_ : 
                                                 Shape(
-                                                  USE_ : SFString('HAnimJointShape'))])]),
+                                                  USE_ : SFString('HAnimJointShape')))]),
 
                                         Shape(
                                           geometry_ : 
@@ -907,9 +907,9 @@ var X3D0 =  X3D(
                                               children_ : [
                                                 Transform(
                                                   /*Empty Transform*/
-                                                  children_ : [
+                                                  child_ : 
                                                     Shape(
-                                                      USE_ : SFString('HAnimJointShape'))])]),
+                                                      USE_ : SFString('HAnimJointShape')))]),
 
                                             Shape(
                                               geometry_ : 
@@ -939,9 +939,9 @@ var X3D0 =  X3D(
                                                   children_ : [
                                                     Transform(
                                                       /*Empty Transform*/
-                                                      children_ : [
+                                                      child_ : 
                                                         Shape(
-                                                          USE_ : SFString('HAnimJointShape'))])]),
+                                                          USE_ : SFString('HAnimJointShape')))]),
 
                                                 Shape(
                                                   geometry_ : 
@@ -989,9 +989,9 @@ var X3D0 =  X3D(
                               children_ : [
                                 Transform(
                                   /*Empty Transform*/
-                                  children_ : [
+                                  child_ : 
                                     Shape(
-                                      USE_ : SFString('HAnimJointShape'))])]),
+                                      USE_ : SFString('HAnimJointShape')))]),
 
                             Shape(
                               geometry_ : 
@@ -1021,9 +1021,9 @@ var X3D0 =  X3D(
                                   children_ : [
                                     Transform(
                                       /*Empty Transform*/
-                                      children_ : [
+                                      child_ : 
                                         Shape(
-                                          USE_ : SFString('HAnimJointShape'))])]),
+                                          USE_ : SFString('HAnimJointShape')))]),
 
                                 Shape(
                                   geometry_ : 
@@ -1053,9 +1053,9 @@ var X3D0 =  X3D(
                                       children_ : [
                                         Transform(
                                           /*Empty Transform*/
-                                          children_ : [
+                                          child_ : 
                                             Shape(
-                                              USE_ : SFString('HAnimJointShape'))])]),
+                                              USE_ : SFString('HAnimJointShape')))]),
 
                                     Shape(
                                       geometry_ : 
@@ -1117,9 +1117,9 @@ var X3D0 =  X3D(
                                           children_ : [
                                             Transform(
                                               /*Empty Transform*/
-                                              children_ : [
+                                              child_ : 
                                                 Shape(
-                                                  USE_ : SFString('HAnimJointShape'))])]),
+                                                  USE_ : SFString('HAnimJointShape')))]),
 
                                         Shape(
                                           geometry_ : 
@@ -1149,9 +1149,9 @@ var X3D0 =  X3D(
                                               children_ : [
                                                 Transform(
                                                   /*Empty Transform*/
-                                                  children_ : [
+                                                  child_ : 
                                                     Shape(
-                                                      USE_ : SFString('HAnimJointShape'))])]),
+                                                      USE_ : SFString('HAnimJointShape')))]),
 
                                             Shape(
                                               geometry_ : 
@@ -1181,9 +1181,9 @@ var X3D0 =  X3D(
                                                   children_ : [
                                                     Transform(
                                                       /*Empty Transform*/
-                                                      children_ : [
+                                                      child_ : 
                                                         Shape(
-                                                          USE_ : SFString('HAnimJointShape'))])]),
+                                                          USE_ : SFString('HAnimJointShape')))]),
 
                                                 Shape(
                                                   geometry_ : 
@@ -1213,9 +1213,9 @@ var X3D0 =  X3D(
                                                       children_ : [
                                                         Transform(
                                                           /*Empty Transform*/
-                                                          children_ : [
+                                                          child_ : 
                                                             Shape(
-                                                              USE_ : SFString('HAnimJointShape'))])]),
+                                                              USE_ : SFString('HAnimJointShape')))]),
 
                                                     Shape(
                                                       geometry_ : 
@@ -1256,9 +1256,9 @@ var X3D0 =  X3D(
                                                           children_ : [
                                                             Transform(
                                                               /*Empty Transform*/
-                                                              children_ : [
+                                                              child_ : 
                                                                 Shape(
-                                                                  USE_ : SFString('HAnimJointShape'))])]),
+                                                                  USE_ : SFString('HAnimJointShape')))]),
 
                                                         Shape(
                                                           geometry_ : 
@@ -1310,9 +1310,9 @@ var X3D0 =  X3D(
                                                               children_ : [
                                                                 Transform(
                                                                   /*Empty Transform*/
-                                                                  children_ : [
+                                                                  child_ : 
                                                                     Shape(
-                                                                      USE_ : SFString('HAnimJointShape'))])]),
+                                                                      USE_ : SFString('HAnimJointShape')))]),
 
                                                             Shape(
                                                               geometry_ : 
@@ -1342,9 +1342,9 @@ var X3D0 =  X3D(
                                                                   children_ : [
                                                                     Transform(
                                                                       /*Empty Transform*/
-                                                                      children_ : [
+                                                                      child_ : 
                                                                         Shape(
-                                                                          USE_ : SFString('HAnimJointShape'))])]),
+                                                                          USE_ : SFString('HAnimJointShape')))]),
 
                                                                 Shape(
                                                                   geometry_ : 
@@ -1374,9 +1374,9 @@ var X3D0 =  X3D(
                                                                       children_ : [
                                                                         Transform(
                                                                           /*Empty Transform*/
-                                                                          children_ : [
+                                                                          child_ : 
                                                                             Shape(
-                                                                              USE_ : SFString('HAnimJointShape'))])]),
+                                                                              USE_ : SFString('HAnimJointShape')))]),
 
                                                                     Shape(
                                                                       geometry_ : 
@@ -1446,9 +1446,9 @@ var X3D0 =  X3D(
                                                                           children_ : [
                                                                             Transform(
                                                                               /*Empty Transform*/
-                                                                              children_ : [
+                                                                              child_ : 
                                                                                 Shape(
-                                                                                  USE_ : SFString('HAnimJointShape'))])]),
+                                                                                  USE_ : SFString('HAnimJointShape')))]),
 
                                                                         Shape(
                                                                           geometry_ : 
@@ -1488,9 +1488,9 @@ var X3D0 =  X3D(
                                                                               children_ : [
                                                                                 Transform(
                                                                                   /*Empty Transform*/
-                                                                                  children_ : [
+                                                                                  child_ : 
                                                                                     Shape(
-                                                                                      USE_ : SFString('HAnimJointShape'))])]),
+                                                                                      USE_ : SFString('HAnimJointShape')))]),
 
                                                                             Shape(
                                                                               geometry_ : 
@@ -1520,9 +1520,9 @@ var X3D0 =  X3D(
                                                                                   children_ : [
                                                                                     Transform(
                                                                                       /*Empty Transform*/
-                                                                                      children_ : [
+                                                                                      child_ : 
                                                                                         Shape(
-                                                                                          USE_ : SFString('HAnimJointShape'))])]),
+                                                                                          USE_ : SFString('HAnimJointShape')))]),
 
                                                                                 Shape(
                                                                                   geometry_ : 
@@ -1552,9 +1552,9 @@ var X3D0 =  X3D(
                                                                                       children_ : [
                                                                                         Transform(
                                                                                           /*Empty Transform*/
-                                                                                          children_ : [
+                                                                                          child_ : 
                                                                                             Shape(
-                                                                                              USE_ : SFString('HAnimJointShape'))])]),
+                                                                                              USE_ : SFString('HAnimJointShape')))]),
 
                                                                                     Shape(
                                                                                       geometry_ : 
@@ -1584,9 +1584,9 @@ var X3D0 =  X3D(
                                                                                           children_ : [
                                                                                             Transform(
                                                                                               /*Empty Transform*/
-                                                                                              children_ : [
+                                                                                              child_ : 
                                                                                                 Shape(
-                                                                                                  USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                  USE_ : SFString('HAnimJointShape')))]),
 
                                                                                         Shape(
                                                                                           geometry_ : 
@@ -1638,9 +1638,9 @@ var X3D0 =  X3D(
                                                                                               children_ : [
                                                                                                 Transform(
                                                                                                   /*Empty Transform*/
-                                                                                                  children_ : [
+                                                                                                  child_ : 
                                                                                                     Shape(
-                                                                                                      USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                      USE_ : SFString('HAnimJointShape')))]),
 
                                                                                             Shape(
                                                                                               geometry_ : 
@@ -1824,9 +1824,9 @@ var X3D0 =  X3D(
                                                                                                   children_ : [
                                                                                                     Transform(
                                                                                                       /*Empty Transform*/
-                                                                                                      children_ : [
+                                                                                                      child_ : 
                                                                                                         Shape(
-                                                                                                          USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                          USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                 Shape(
                                                                                                   geometry_ : 
@@ -1856,9 +1856,9 @@ var X3D0 =  X3D(
                                                                                                       children_ : [
                                                                                                         Transform(
                                                                                                           /*Empty Transform*/
-                                                                                                          children_ : [
+                                                                                                          child_ : 
                                                                                                             Shape(
-                                                                                                              USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                              USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                     Shape(
                                                                                                       geometry_ : 
@@ -1888,9 +1888,9 @@ var X3D0 =  X3D(
                                                                                                           children_ : [
                                                                                                             Transform(
                                                                                                               /*Empty Transform*/
-                                                                                                              children_ : [
+                                                                                                              child_ : 
                                                                                                                 Shape(
-                                                                                                                  USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                  USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                         Shape(
                                                                                                           geometry_ : 
@@ -1920,9 +1920,9 @@ var X3D0 =  X3D(
                                                                                                               children_ : [
                                                                                                                 Transform(
                                                                                                                   /*Empty Transform*/
-                                                                                                                  children_ : [
+                                                                                                                  child_ : 
                                                                                                                     Shape(
-                                                                                                                      USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                      USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                             Shape(
                                                                                                               geometry_ : 
@@ -1952,9 +1952,9 @@ var X3D0 =  X3D(
                                                                                                                   children_ : [
                                                                                                                     Transform(
                                                                                                                       /*Empty Transform*/
-                                                                                                                      children_ : [
+                                                                                                                      child_ : 
                                                                                                                         Shape(
-                                                                                                                          USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                          USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                 Shape(
                                                                                                                   geometry_ : 
@@ -1994,9 +1994,9 @@ var X3D0 =  X3D(
                                                                                                                       children_ : [
                                                                                                                         Transform(
                                                                                                                           /*Empty Transform*/
-                                                                                                                          children_ : [
+                                                                                                                          child_ : 
                                                                                                                             Shape(
-                                                                                                                              USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                              USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                     Shape(
                                                                                                                       geometry_ : 
@@ -2026,9 +2026,9 @@ var X3D0 =  X3D(
                                                                                                                           children_ : [
                                                                                                                             Transform(
                                                                                                                               /*Empty Transform*/
-                                                                                                                              children_ : [
+                                                                                                                              child_ : 
                                                                                                                                 Shape(
-                                                                                                                                  USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                                  USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
@@ -2175,9 +2175,9 @@ var X3D0 =  X3D(
                                                                                                                               children_ : [
                                                                                                                                 Transform(
                                                                                                                                   /*Empty Transform*/
-                                                                                                                                  children_ : [
+                                                                                                                                  child_ : 
                                                                                                                                     Shape(
-                                                                                                                                      USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                                      USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                             Shape(
                                                                                                                               geometry_ : 
@@ -2371,9 +2371,9 @@ var X3D0 =  X3D(
                                                                                                   children_ : [
                                                                                                     Transform(
                                                                                                       /*Empty Transform*/
-                                                                                                      children_ : [
+                                                                                                      child_ : 
                                                                                                         Shape(
-                                                                                                          USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                          USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                 Shape(
                                                                                                   geometry_ : 
@@ -2403,9 +2403,9 @@ var X3D0 =  X3D(
                                                                                                       children_ : [
                                                                                                         Transform(
                                                                                                           /*Empty Transform*/
-                                                                                                          children_ : [
+                                                                                                          child_ : 
                                                                                                             Shape(
-                                                                                                              USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                              USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                     Shape(
                                                                                                       geometry_ : 
@@ -2456,9 +2456,9 @@ var X3D0 =  X3D(
                                                                                                           children_ : [
                                                                                                             Transform(
                                                                                                               /*Empty Transform*/
-                                                                                                              children_ : [
+                                                                                                              child_ : 
                                                                                                                 Shape(
-                                                                                                                  USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                  USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                         Shape(
                                                                                                           geometry_ : 
@@ -2532,9 +2532,9 @@ var X3D0 =  X3D(
                                                                                                               children_ : [
                                                                                                                 Transform(
                                                                                                                   /*Empty Transform*/
-                                                                                                                  children_ : [
+                                                                                                                  child_ : 
                                                                                                                     Shape(
-                                                                                                                      USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                      USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                             Shape(
                                                                                                               geometry_ : 
@@ -2579,9 +2579,9 @@ var X3D0 =  X3D(
                                                                                                                     Transform(
                                                                                                                       rotation_ : SFRotation([SFDouble(0), SFDouble(1), SFDouble(0), SFDouble(-1.57)]),
                                                                                                                       /*Transform left hand*/
-                                                                                                                      children_ : [
+                                                                                                                      child_ : 
                                                                                                                         Shape(
-                                                                                                                          USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                          USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                 Shape(
                                                                                                                   geometry_ : 
@@ -2691,9 +2691,9 @@ var X3D0 =  X3D(
                                                                                                                       children_ : [
                                                                                                                         Transform(
                                                                                                                           /*Empty Transform*/
-                                                                                                                          children_ : [
+                                                                                                                          child_ : 
                                                                                                                             Shape(
-                                                                                                                              USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                              USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                     Shape(
                                                                                                                       geometry_ : 
@@ -2723,9 +2723,9 @@ var X3D0 =  X3D(
                                                                                                                           children_ : [
                                                                                                                             Transform(
                                                                                                                               /*Empty Transform*/
-                                                                                                                              children_ : [
+                                                                                                                              child_ : 
                                                                                                                                 Shape(
-                                                                                                                                  USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                                  USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
@@ -2772,9 +2772,9 @@ var X3D0 =  X3D(
                                                                                                                       children_ : [
                                                                                                                         Transform(
                                                                                                                           /*Empty Transform*/
-                                                                                                                          children_ : [
+                                                                                                                          child_ : 
                                                                                                                             Shape(
-                                                                                                                              USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                              USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                     Shape(
                                                                                                                       geometry_ : 
@@ -2804,9 +2804,9 @@ var X3D0 =  X3D(
                                                                                                                           children_ : [
                                                                                                                             Transform(
                                                                                                                               /*Empty Transform*/
-                                                                                                                              children_ : [
+                                                                                                                              child_ : 
                                                                                                                                 Shape(
-                                                                                                                                  USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                                  USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
@@ -2836,9 +2836,9 @@ var X3D0 =  X3D(
                                                                                                                               children_ : [
                                                                                                                                 Transform(
                                                                                                                                   /*Empty Transform*/
-                                                                                                                                  children_ : [
+                                                                                                                                  child_ : 
                                                                                                                                     Shape(
-                                                                                                                                      USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                                      USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                             Shape(
                                                                                                                               geometry_ : 
@@ -2896,9 +2896,9 @@ var X3D0 =  X3D(
                                                                                                                       children_ : [
                                                                                                                         Transform(
                                                                                                                           /*Empty Transform*/
-                                                                                                                          children_ : [
+                                                                                                                          child_ : 
                                                                                                                             Shape(
-                                                                                                                              USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                              USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                     Shape(
                                                                                                                       geometry_ : 
@@ -2928,9 +2928,9 @@ var X3D0 =  X3D(
                                                                                                                           children_ : [
                                                                                                                             Transform(
                                                                                                                               /*Empty Transform*/
-                                                                                                                              children_ : [
+                                                                                                                              child_ : 
                                                                                                                                 Shape(
-                                                                                                                                  USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                                  USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
@@ -2960,9 +2960,9 @@ var X3D0 =  X3D(
                                                                                                                               children_ : [
                                                                                                                                 Transform(
                                                                                                                                   /*Empty Transform*/
-                                                                                                                                  children_ : [
+                                                                                                                                  child_ : 
                                                                                                                                     Shape(
-                                                                                                                                      USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                                      USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                             Shape(
                                                                                                                               geometry_ : 
@@ -3009,9 +3009,9 @@ var X3D0 =  X3D(
                                                                                                                       children_ : [
                                                                                                                         Transform(
                                                                                                                           /*Empty Transform*/
-                                                                                                                          children_ : [
+                                                                                                                          child_ : 
                                                                                                                             Shape(
-                                                                                                                              USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                              USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                     Shape(
                                                                                                                       geometry_ : 
@@ -3041,9 +3041,9 @@ var X3D0 =  X3D(
                                                                                                                           children_ : [
                                                                                                                             Transform(
                                                                                                                               /*Empty Transform*/
-                                                                                                                              children_ : [
+                                                                                                                              child_ : 
                                                                                                                                 Shape(
-                                                                                                                                  USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                                  USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
@@ -3073,9 +3073,9 @@ var X3D0 =  X3D(
                                                                                                                               children_ : [
                                                                                                                                 Transform(
                                                                                                                                   /*Empty Transform*/
-                                                                                                                                  children_ : [
+                                                                                                                                  child_ : 
                                                                                                                                     Shape(
-                                                                                                                                      USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                                      USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                             Shape(
                                                                                                                               geometry_ : 
@@ -3122,9 +3122,9 @@ var X3D0 =  X3D(
                                                                                                                       children_ : [
                                                                                                                         Transform(
                                                                                                                           /*Empty Transform*/
-                                                                                                                          children_ : [
+                                                                                                                          child_ : 
                                                                                                                             Shape(
-                                                                                                                              USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                              USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                     Shape(
                                                                                                                       geometry_ : 
@@ -3154,9 +3154,9 @@ var X3D0 =  X3D(
                                                                                                                           children_ : [
                                                                                                                             Transform(
                                                                                                                               /*Empty Transform*/
-                                                                                                                              children_ : [
+                                                                                                                              child_ : 
                                                                                                                                 Shape(
-                                                                                                                                  USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                                  USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
@@ -3186,9 +3186,9 @@ var X3D0 =  X3D(
                                                                                                                               children_ : [
                                                                                                                                 Transform(
                                                                                                                                   /*Empty Transform*/
-                                                                                                                                  children_ : [
+                                                                                                                                  child_ : 
                                                                                                                                     Shape(
-                                                                                                                                      USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                                      USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                             Shape(
                                                                                                                               geometry_ : 
@@ -3235,9 +3235,9 @@ var X3D0 =  X3D(
                                                                                                   children_ : [
                                                                                                     Transform(
                                                                                                       /*Empty Transform*/
-                                                                                                      children_ : [
+                                                                                                      child_ : 
                                                                                                         Shape(
-                                                                                                          USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                          USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                 Shape(
                                                                                                   geometry_ : 
@@ -3267,9 +3267,9 @@ var X3D0 =  X3D(
                                                                                                       children_ : [
                                                                                                         Transform(
                                                                                                           /*Empty Transform*/
-                                                                                                          children_ : [
+                                                                                                          child_ : 
                                                                                                             Shape(
-                                                                                                              USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                              USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                     Shape(
                                                                                                       geometry_ : 
@@ -3320,9 +3320,9 @@ var X3D0 =  X3D(
                                                                                                           children_ : [
                                                                                                             Transform(
                                                                                                               /*Empty Transform*/
-                                                                                                              children_ : [
+                                                                                                              child_ : 
                                                                                                                 Shape(
-                                                                                                                  USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                  USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                         Shape(
                                                                                                           geometry_ : 
@@ -3396,9 +3396,9 @@ var X3D0 =  X3D(
                                                                                                               children_ : [
                                                                                                                 Transform(
                                                                                                                   /*Empty Transform*/
-                                                                                                                  children_ : [
+                                                                                                                  child_ : 
                                                                                                                     Shape(
-                                                                                                                      USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                      USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                             Shape(
                                                                                                               geometry_ : 
@@ -3443,9 +3443,9 @@ var X3D0 =  X3D(
                                                                                                                     Transform(
                                                                                                                       rotation_ : SFRotation([SFDouble(0), SFDouble(1), SFDouble(0), SFDouble(1.57)]),
                                                                                                                       /*Transform right hand*/
-                                                                                                                      children_ : [
+                                                                                                                      child_ : 
                                                                                                                         Shape(
-                                                                                                                          USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                          USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                 Shape(
                                                                                                                   geometry_ : 
@@ -3555,9 +3555,9 @@ var X3D0 =  X3D(
                                                                                                                       children_ : [
                                                                                                                         Transform(
                                                                                                                           /*Empty Transform*/
-                                                                                                                          children_ : [
+                                                                                                                          child_ : 
                                                                                                                             Shape(
-                                                                                                                              USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                              USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                     Shape(
                                                                                                                       geometry_ : 
@@ -3587,9 +3587,9 @@ var X3D0 =  X3D(
                                                                                                                           children_ : [
                                                                                                                             Transform(
                                                                                                                               /*Empty Transform*/
-                                                                                                                              children_ : [
+                                                                                                                              child_ : 
                                                                                                                                 Shape(
-                                                                                                                                  USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                                  USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
@@ -3636,9 +3636,9 @@ var X3D0 =  X3D(
                                                                                                                       children_ : [
                                                                                                                         Transform(
                                                                                                                           /*Empty Transform*/
-                                                                                                                          children_ : [
+                                                                                                                          child_ : 
                                                                                                                             Shape(
-                                                                                                                              USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                              USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                     Shape(
                                                                                                                       geometry_ : 
@@ -3668,9 +3668,9 @@ var X3D0 =  X3D(
                                                                                                                           children_ : [
                                                                                                                             Transform(
                                                                                                                               /*Empty Transform*/
-                                                                                                                              children_ : [
+                                                                                                                              child_ : 
                                                                                                                                 Shape(
-                                                                                                                                  USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                                  USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
@@ -3700,9 +3700,9 @@ var X3D0 =  X3D(
                                                                                                                               children_ : [
                                                                                                                                 Transform(
                                                                                                                                   /*Empty Transform*/
-                                                                                                                                  children_ : [
+                                                                                                                                  child_ : 
                                                                                                                                     Shape(
-                                                                                                                                      USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                                      USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                             Shape(
                                                                                                                               geometry_ : 
@@ -3760,9 +3760,9 @@ var X3D0 =  X3D(
                                                                                                                       children_ : [
                                                                                                                         Transform(
                                                                                                                           /*Empty Transform*/
-                                                                                                                          children_ : [
+                                                                                                                          child_ : 
                                                                                                                             Shape(
-                                                                                                                              USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                              USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                     Shape(
                                                                                                                       geometry_ : 
@@ -3792,9 +3792,9 @@ var X3D0 =  X3D(
                                                                                                                           children_ : [
                                                                                                                             Transform(
                                                                                                                               /*Empty Transform*/
-                                                                                                                              children_ : [
+                                                                                                                              child_ : 
                                                                                                                                 Shape(
-                                                                                                                                  USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                                  USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
@@ -3824,9 +3824,9 @@ var X3D0 =  X3D(
                                                                                                                               children_ : [
                                                                                                                                 Transform(
                                                                                                                                   /*Empty Transform*/
-                                                                                                                                  children_ : [
+                                                                                                                                  child_ : 
                                                                                                                                     Shape(
-                                                                                                                                      USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                                      USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                             Shape(
                                                                                                                               geometry_ : 
@@ -3873,9 +3873,9 @@ var X3D0 =  X3D(
                                                                                                                       children_ : [
                                                                                                                         Transform(
                                                                                                                           /*Empty Transform*/
-                                                                                                                          children_ : [
+                                                                                                                          child_ : 
                                                                                                                             Shape(
-                                                                                                                              USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                              USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                     Shape(
                                                                                                                       geometry_ : 
@@ -3905,9 +3905,9 @@ var X3D0 =  X3D(
                                                                                                                           children_ : [
                                                                                                                             Transform(
                                                                                                                               /*Empty Transform*/
-                                                                                                                              children_ : [
+                                                                                                                              child_ : 
                                                                                                                                 Shape(
-                                                                                                                                  USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                                  USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
@@ -3937,9 +3937,9 @@ var X3D0 =  X3D(
                                                                                                                               children_ : [
                                                                                                                                 Transform(
                                                                                                                                   /*Empty Transform*/
-                                                                                                                                  children_ : [
+                                                                                                                                  child_ : 
                                                                                                                                     Shape(
-                                                                                                                                      USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                                      USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                             Shape(
                                                                                                                               geometry_ : 
@@ -3986,9 +3986,9 @@ var X3D0 =  X3D(
                                                                                                                       children_ : [
                                                                                                                         Transform(
                                                                                                                           /*Empty Transform*/
-                                                                                                                          children_ : [
+                                                                                                                          child_ : 
                                                                                                                             Shape(
-                                                                                                                              USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                              USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                     Shape(
                                                                                                                       geometry_ : 
@@ -4018,9 +4018,9 @@ var X3D0 =  X3D(
                                                                                                                           children_ : [
                                                                                                                             Transform(
                                                                                                                               /*Empty Transform*/
-                                                                                                                              children_ : [
+                                                                                                                              child_ : 
                                                                                                                                 Shape(
-                                                                                                                                  USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                                  USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
@@ -4050,9 +4050,9 @@ var X3D0 =  X3D(
                                                                                                                               children_ : [
                                                                                                                                 Transform(
                                                                                                                                   /*Empty Transform*/
-                                                                                                                                  children_ : [
+                                                                                                                                  child_ : 
                                                                                                                                     Shape(
-                                                                                                                                      USE_ : SFString('HAnimJointShape'))])]),
+                                                                                                                                      USE_ : SFString('HAnimJointShape')))]),
 
                                                                                                                             Shape(
                                                                                                                               geometry_ : 

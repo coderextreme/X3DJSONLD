@@ -66,7 +66,7 @@ ProtoDeclare ProtoDeclare11 = browser.createX3DFromString(`<?xml version="1.0" e
 </IS>
 </Material>
 </Appearance>
-<Sphere containerField="geometry" radius="1.10000002384186"></Sphere>
+<Sphere radius="1.10000002384186"></Sphere>
 </Shape>
 <IS><connect nodeField="translation" protoField="posi"></connect>
 </IS>
@@ -117,9 +117,9 @@ Sphere Sphere22 = createNode("Sphere");
 Sphere22.radius = 1.10000002384186;
 Shape17.geometry = Sphere22;
 
-Transform16.children = new MFNode();
+Transform16.child = new undefined();
 
-Transform16.children[0] = Shape17;
+Transform16.child[0] = Shape17;
 
 IS IS23 = createNode("IS");
 connect connect24 = createNode("connect");

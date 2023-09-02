@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Full", version="4.0", 
-head=head(children=[meta(name="title", content="SplitChannels.x3d"),
+head=head(
+children=[
+meta(name="title", content="SplitChannels.x3d"),
 meta(name="description", content="This X3D scene includes a simple sound source which can be moved right and left. Depending on the position of the sound source, the user can hear the produced sound from the corresponding output speaker. Accordingly, there is a source that can be passed through a SpatialSound for the spatialization of the input audio. The approach is based on the relative position of the source and the listener, in comparison to the panner."),
 meta(name="info", content="This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API."),
 meta(name="creator", content="Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman"),
@@ -16,7 +19,7 @@ meta(name="reference", content="http://www.medialab.hmu.gr/minipages/x3domAudio"
 meta(name="identifier", content="https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d"),
 meta(name="generator", content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -110,5 +113,6 @@ Material(diffuseColor=((0.3,1,0.3)), emissiveColor=((0.8,0.8,0.8)), specularColo
 texture=
 ImageTexture(url=["images/loudspeaker.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"])), 
 geometry=
-Box(size=((100,100,0.001))))])]))
-.XML())
+Box(size=((100,100,0.001))))])])))
+output = model.JSON()
+json.loads(output)

@@ -2,25 +2,27 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="4.0", 
-head=head(children=[component(name="HAnim", level=1),
-meta(name="title", content="JohnBoy.x3d"),
-meta(name="identifier", content="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"),
+head=head(
+children=[
+component(name="HAnim", level=1),
+meta(name="title", content="Humanoid1.x3d"),
+meta(name="identifier", content="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid1.x3d"),
 meta(name="description", content="An attempt at a standard LOA-4 skeleton"),
 meta(name="generator", content="h2.pl"),
 meta(name="modified", content="14 Jan 2023"),
 meta(name="creator", content="John Carlson"),
 meta(name="created", content="9 November 2020"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
 Scene=Scene(children=[
 Transform(children=[
 Comment(value=''' DEF for markerfor XYZ axes '''),
-
 Shape(DEF="AxisLinesShape", 
 geometry=
 IndexedLineSet(colorIndex=[0,1,2], colorPerVertex=False, coordIndex=[0,1,-1,0,2,-1,0,3,-1], 
@@ -30,7 +32,6 @@ color=(
 Color(color=[(1,0,0),(0,0.6,0),(0,0,1)])))),]),
 Group(children=[
 Comment(value=''' DEFS for markers of skeleton joints, segments, and sites '''),
-
 Transform(children=[
 Transform(translation=((0,2,0)), children=[
 Shape(DEF="HAnimRootShape", 
@@ -91,7 +92,6 @@ HAnimSegment(name="sacrum", DEF="hanim_sacrum", children=[
 Transform(translation=((0.0,0.824,0.0277)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
-
 Shape(USE="HAnimJointShape"),])]),
 Shape(
 geometry=
@@ -151,7 +151,6 @@ HAnimSegment(name="pelvis", DEF="hanim_pelvis", children=[
 Transform(translation=((0.0,0.9149,0.0016)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
-
 Shape(USE="HAnimJointShape"),])]),
 Shape(
 geometry=
@@ -196,7 +195,6 @@ HAnimSegment(name="l_thigh", DEF="hanim_l_thigh", children=[
 Transform(translation=((0.0961,0.9124,-0.0001)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
-
 Shape(USE="HAnimJointShape"),])]),
 Shape(
 geometry=
@@ -219,7 +217,6 @@ HAnimSegment(name="l_calf", DEF="hanim_l_calf", children=[
 Transform(translation=((0.104,0.4867,0.0308)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
-
 Shape(USE="HAnimJointShape"),])]),
 Shape(
 geometry=
@@ -238,10 +235,8 @@ HAnimJoint(name="l_talocrural", DEF="hanim_l_talocrural", center=((0.1101,0.0656
 HAnimSegment(name="l_talus", DEF="hanim_l_talus", children=[
 Transform(scale=((0.15,0.15,0.15)), translation=((0.08,0.06,-0.025)), rotation=((1,0,0,-1.57)), children=[
 Comment(value=''' Transform left foot '''),
-
 Transform(children=[
 Comment(value=''' Empty Transform left foot '''),
-
 Shape(USE="HAnimJointShape"),]),]),
 Shape(
 geometry=
@@ -256,7 +251,6 @@ HAnimSegment(name="r_thigh", DEF="hanim_r_thigh", children=[
 Transform(translation=((-0.095,0.9171,0.0029)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
-
 Shape(USE="HAnimJointShape"),])]),
 Shape(
 geometry=
@@ -279,7 +273,6 @@ HAnimSegment(name="r_calf", DEF="hanim_r_calf", children=[
 Transform(translation=((-0.0867,0.4913,0.0318)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
-
 Shape(USE="HAnimJointShape"),])]),
 Shape(
 geometry=
@@ -298,10 +291,8 @@ HAnimJoint(name="r_talocrural", DEF="hanim_r_talocrural", center=((-0.0801,0.071
 HAnimSegment(name="r_talus", DEF="hanim_r_talus", children=[
 Transform(scale=((0.15,0.15,0.15)), translation=((-0.05,0.06,-0.025)), rotation=((1,0,0,-1.57)), children=[
 Comment(value=''' Transform right foot '''),
-
 Transform(children=[
 Comment(value=''' Empty Transform right foot '''),
-
 Shape(USE="HAnimJointShape"),]),]),
 Shape(
 geometry=
@@ -316,7 +307,6 @@ HAnimSegment(name="l5", DEF="hanim_l5", children=[
 Transform(translation=((0.0028,1.0568,-0.0776)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
-
 Shape(USE="HAnimJointShape"),])]),
 Shape(
 geometry=
@@ -390,7 +380,6 @@ HAnimSegment(name="l_upperarm", DEF="hanim_l_upperarm", children=[
 Transform(translation=((0.2029,1.4376,-0.0387)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
-
 Shape(USE="HAnimJointShape"),])]),
 Shape(
 geometry=
@@ -416,7 +405,6 @@ HAnimSegment(name="l_forearm", DEF="hanim_l_forearm", children=[
 Transform(translation=((0.2014,1.1357,-0.0682)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
-
 Shape(USE="HAnimJointShape"),])]),
 Shape(
 geometry=
@@ -434,7 +422,6 @@ HAnimSegment(name="r_upperarm", DEF="hanim_r_upperarm", children=[
 Transform(translation=((-0.1907,1.4407,-0.0325)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
-
 Shape(USE="HAnimJointShape"),])]),
 Shape(
 geometry=
@@ -460,7 +447,6 @@ HAnimSegment(name="r_forearm", DEF="hanim_r_forearm", children=[
 Transform(translation=((-0.1949,1.1388,-0.062)), children=[
 Transform(children=[
 Comment(value=''' Empty Transform '''),
-
 Shape(USE="HAnimJointShape"),])]),
 Shape(
 geometry=
@@ -559,5 +545,6 @@ HAnimSite(USE="hanim_r_humeral_medial_epicondyles_pt"),
 HAnimSite(USE="hanim_r_olecranon_pt"),
 HAnimSite(USE="hanim_r_radial_styloid_pt"),
 HAnimSite(USE="hanim_r_radiale_pt"),
-HAnimSite(USE="hanim_r_ulnar_styloid_pt")])]))
-.XML())
+HAnimSite(USE="hanim_r_ulnar_styloid_pt")])])))
+output = model.JSON()
+json.loads(output)

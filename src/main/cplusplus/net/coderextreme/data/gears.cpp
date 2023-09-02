@@ -41,7 +41,7 @@ head1->addMeta(*meta6);
 
 Cmeta* meta7 = new Cmeta();
 meta7->setName("generator");
-meta7->setContent("convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/convertStlToJson.js");
+meta7->setContent("convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/src/main/node/convertStlToJson.js");
 head1->addMeta(*meta7);
 
 Cmeta* meta8 = new Cmeta();

@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[component(name="Networking", level=2),
+head=head(
+children=[
+component(name="Networking", level=2),
 component(name="Core", level=2),
 meta(name="title", content="t4.x3d"),
 meta(name="identifier", content="http://coderextreme.net/X3DJSONLD/src/main/data/t4.x3d"),
@@ -13,7 +16,7 @@ meta(name="creator", content="Andreas Plesch and John Carlson"),
 meta(name="source", content="t1.wrl"),
 meta(name="description", content="Test Case for Proto Expander"),
 meta(name="license", content="https://www.web3d.org/x3d/content/examples/license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -107,5 +110,6 @@ ProtoInstance(name="n", fieldValue=[fieldValue(name="pos", value=[457.3999938964
 ])]),
 Anchor(url=[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"], description="UKan2", children=[
 ProtoInstance(name="r", fieldValue=[fieldValue(name="pos", value=[458.700012207031,0.100000001490116,-262.700012207031])
-])])])]))
-.XML())
+])])])])))
+output = model.JSON()
+json.loads(output)

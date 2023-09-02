@@ -127,7 +127,7 @@ HAnimBehaviorPrototypes.prototype = {
 	this.field_hAnimBehaviorNodes_5_1760_appinfo = new autoclass.SFString("[HAnimBehavior] nodes only some or all of which may be enabled. Warning: do not animate a single joint with more than one interpolator at a given time.");
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
   .setHead((new autoclass.head())
-    .addComponent((new autoclass.component()).setName("H-Anim").setLevel(1))
+    .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
     .addMeta((new autoclass.meta()).setName("title").setContent("HAnimBehaviorPrototypes.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Prototypes for HAnimBehavior node, which collects OrientationInterpolators for aggregate animation of an HAnim humanoid model, and HAnimBodyBehaviorChooser, which selects one body and enables/disables multiple aggregated behaviors."))
     .addMeta((new autoclass.meta()).setName("creator").setContent("Don Brutzman, Jeff Weekley, MV4205 Advanced X3D Authoring class, and Keith Victor"))

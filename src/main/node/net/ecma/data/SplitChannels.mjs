@@ -116,7 +116,7 @@ var X3D0 =  new X3D({
                 new Transform({
                   rotation : new SFRotation([1,0,0,-0.5]),
                   translation : new SFVec3f([0,40,0]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       appearance : new SFNode(
                         new Appearance({
@@ -128,12 +128,12 @@ var X3D0 =  new X3D({
                               specularColor : new SFColor([0.01,0.01,0.01])}))})),
                       geometry : new SFNode(
                         new Box({
-                          size : new SFVec3f([10,80,0.01])}))})])}),
+                          size : new SFVec3f([10,80,0.01])}))}))}),
 
                 new Transform({
                   rotation : new SFRotation([1,0,0,-0.5]),
                   translation : new SFVec3f([-2.7,37,0]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       appearance : new SFNode(
                         new Appearance({
@@ -148,14 +148,14 @@ var X3D0 =  new X3D({
                               url : new MFString(["images/line.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"])}))})),
                       geometry : new SFNode(
                         new Box({
-                          size : new SFVec3f([25,83,0.01])}))})])}),
+                          size : new SFVec3f([25,83,0.01])}))}))}),
 
                 new Transform({
                   DEF : new SFString("volumeRight"),
                   rotation : new SFRotation([1,0,0,-0.5]),
                   scale : new SFVec3f([10,10,10]),
                   translation : new SFVec3f([0,-10,0]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       appearance : new SFNode(
                         new Appearance({
@@ -171,7 +171,7 @@ var X3D0 =  new X3D({
                           fontStyle : new SFNode(
                             new FontStyle({
                               family : new MFString(["Times"]),
-                              style : new SFString("BOLD")}))}))})])})])}),
+                              style : new SFString("BOLD")}))}))}))})])}),
 
             new Transform({
               DEF : new SFString("PowerL"),
@@ -180,7 +180,7 @@ var X3D0 =  new X3D({
                 new Transform({
                   rotation : new SFRotation([1,0,0,-0.5]),
                   translation : new SFVec3f([0,40,0]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       appearance : new SFNode(
                         new Appearance({
@@ -192,12 +192,12 @@ var X3D0 =  new X3D({
                               specularColor : new SFColor([0.01,0.01,0.01])}))})),
                       geometry : new SFNode(
                         new Box({
-                          size : new SFVec3f([10,80,0.01])}))})])}),
+                          size : new SFVec3f([10,80,0.01])}))}))}),
 
                 new Transform({
                   rotation : new SFRotation([1,0,0,-0.5]),
                   translation : new SFVec3f([13.2,37,0]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       appearance : new SFNode(
                         new Appearance({
@@ -212,14 +212,14 @@ var X3D0 =  new X3D({
                               url : new MFString(["images/line.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"])}))})),
                       geometry : new SFNode(
                         new Box({
-                          size : new SFVec3f([25,83,0.01])}))})])}),
+                          size : new SFVec3f([25,83,0.01])}))}))}),
 
                 new Transform({
                   DEF : new SFString("volumeLeft"),
                   rotation : new SFRotation([1,0,0,-0.5]),
                   scale : new SFVec3f([10,10,10]),
                   translation : new SFVec3f([0,-10,0]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       appearance : new SFNode(
                         new Appearance({
@@ -235,10 +235,10 @@ var X3D0 =  new X3D({
                           fontStyle : new SFNode(
                             new FontStyle({
                               family : new MFString(["Times"]),
-                              style : new SFString("BOLD")}))}))})])})])}),
+                              style : new SFString("BOLD")}))}))}))})])}),
 
             new Transform({
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
@@ -250,7 +250,7 @@ var X3D0 =  new X3D({
                           specularColor : new SFColor([0.5,0.6,0.7])}))})),
                   geometry : new SFNode(
                     new Box({
-                      size : new SFVec3f([1500,10,500])}))})])}),
+                      size : new SFVec3f([1500,10,500])}))}))}),
 
             new ListenerPointSource({
               trackCurrentView : new SFBool(true)}),
@@ -295,7 +295,7 @@ var X3D0 =  new X3D({
               DEF : new SFString("Audio3"),
               rotation : new SFRotation([1,0,0,-0.5]),
               translation : new SFVec3f([0,100,0]),
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
@@ -310,5 +310,5 @@ var X3D0 =  new X3D({
                           url : new MFString(["images/loudspeaker.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"])}))})),
                   geometry : new SFNode(
                     new Box({
-                      size : new SFVec3f([100,100,0.001])}))})])})])}))});
+                      size : new SFVec3f([100,100,0.001])}))}))})])}))});
 console.log(X3D0.toXMLNode());

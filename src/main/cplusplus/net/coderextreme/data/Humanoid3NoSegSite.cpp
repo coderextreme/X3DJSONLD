@@ -21,12 +21,12 @@ head1->addComponent(*component2);
 
 Cmeta* meta3 = new Cmeta();
 meta3->setName("title");
-meta3->setContent("JohnBoy.x3d");
+meta3->setContent("Humanoid3NoSegSite.x3d");
 head1->addMeta(*meta3);
 
 Cmeta* meta4 = new Cmeta();
 meta4->setName("identifier");
-meta4->setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d");
+meta4->setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid3NoSegSite.x3d");
 head1->addMeta(*meta4);
 
 Cmeta* meta5 = new Cmeta();
@@ -81,7 +81,7 @@ IndexedLineSet14->setColor(*Color16);
 
 Shape13->setGeometry(IndexedLineSet14);
 
-Transform12->addChildren(*Shape13);
+Transform12->addChild(*Shape13);
 
 group->addChildren(*Transform12);
 
@@ -105,7 +105,7 @@ Appearance22->setMaterial(*Material23);
 
 Shape20->setAppearance(*Appearance22);
 
-Transform19->addChildren(*Shape20);
+Transform19->addChild(*Shape20);
 
 Transform18->addChildren(*Transform19);
 
@@ -126,7 +126,7 @@ Appearance27->setMaterial(*Material28);
 
 Shape25->setAppearance(*Appearance27);
 
-Transform24->addChildren(*Shape25);
+Transform24->addChild(*Shape25);
 
 Transform18->addChildren(*Transform24);
 
@@ -147,7 +147,7 @@ LineSet31->setCoord(*Coordinate33);
 
 Shape30->setGeometry(LineSet31);
 
-Transform29->addChildren(*Shape30);
+Transform29->addChild(*Shape30);
 
 Transform18->addChildren(*Transform29);
 
@@ -179,7 +179,7 @@ Appearance39->setMaterial(*Material40);
 
 Shape35->setAppearance(*Appearance39);
 
-Transform34->addChildren(*Shape35);
+Transform34->addChild(*Shape35);
 
 Transform18->addChildren(*Transform34);
 

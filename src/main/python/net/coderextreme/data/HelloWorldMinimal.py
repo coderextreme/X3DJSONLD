@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[meta(name="title", content="HelloWorldMinimal.x3d"),
+head=head(
+children=[
+meta(name="title", content="HelloWorldMinimal.x3d"),
 meta(name="description", content="Hello World minimal example scene."),
 meta(name="creator", content="Don Brutzman"),
 meta(name="created", content="19 January 2020"),
@@ -19,7 +22,7 @@ meta(name="reference", content="https://x3dgraphics.com/examples/X3dForAdvancedM
 meta(name="identifier", content="https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldMinimal.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -27,5 +30,6 @@ Scene=Scene(children=[
 WorldInfo(title="HelloWorldMinimal.x3d"),
 Shape(
 geometry=
-Text(string=["hello, world"]))]))
-.XML())
+Text(string=["hello, world"]))])))
+output = model.JSON()
+json.loads(output)

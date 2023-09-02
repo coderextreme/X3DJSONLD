@@ -97,21 +97,21 @@ CProtoDeclare ProtoDeclare17 = browser.createX3DFromString(R"foo(<?xml version="
 <field name="aspectRatio" accessType="inputOutput" appinfo="assumed ratio height/width, default value 0.75" type="SFFloat" value="0.75"></field>
 <field name="trace" accessType="initializeOnly" appinfo="debug support, default false" type="SFBool" value="false"></field>
 </ProtoInterface>
-<ProtoBody><Switch DEF="VisibilitySwitch" whichChoice="-1"><Transform DEF="PositionTransform" rotation="0 1 0 3.14159"><Transform DEF="OrientationTransform"><Shape><IndexedLineSet containerField="geometry" DEF="FrustumLines" coordIndex="0 1 2 3 0 -1 4 5 6 7 4 -1 0 4 -1 1 5 -1 2 6 -1 3 7 -1"><Coordinate containerField="coord" DEF="FrustumCoordinate" point="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"></Coordinate>
+<ProtoBody><Switch DEF="VisibilitySwitch" whichChoice="-1"><Transform DEF="PositionTransform" rotation="0 1 0 3.14159"><Transform DEF="OrientationTransform"><Shape><IndexedLineSet DEF="FrustumLines" coordIndex="0 1 2 3 0 -1 4 5 6 7 4 -1 0 4 -1 1 5 -1 2 6 -1 3 7 -1"><Coordinate containerField="coord" DEF="FrustumCoordinate" point="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"></Coordinate>
 </IndexedLineSet>
 <Appearance><Material><IS><connect nodeField="emissiveColor" protoField="lineColor"></connect>
 </IS>
 </Material>
 </Appearance>
 </Shape>
-<Shape><Extrusion containerField="geometry" DEF="FrustumExtrusion"></Extrusion>
+<Shape><Extrusion DEF="FrustumExtrusion"></Extrusion>
 <Appearance DEF="FrustumAppearance"><Material><IS><connect nodeField="diffuseColor" protoField="frustumColor"></connect>
 <connect nodeField="transparency" protoField="transparency"></connect>
 </IS>
 </Material>
 </Appearance>
 </Shape>
-<Shape><Sphere containerField="geometry" radius="0.08"></Sphere>
+<Shape><Sphere radius="0.08"></Sphere>
 <Appearance USE="FrustumAppearance"></Appearance>
 </Shape>
 </Transform>
@@ -251,7 +251,7 @@ Appearance34->setMaterial(*Material35);
 
 Shape31->setAppearance(*Appearance34);
 
-Transform30->addChildren(*Shape31);
+Transform30->addChild(*Shape31);
 
 CShape* Shape38 = (CShape *)(m_pScene.createNode("Shape"));
 CExtrusion* Extrusion39 = (CExtrusion *)(m_pScene.createNode("Extrusion"));
@@ -278,7 +278,7 @@ Appearance40->setMaterial(*Material41);
 
 Shape38->setAppearance(*Appearance40);
 
-Transform30->addChildren(*Shape38);
+Transform30->addChild(*Shape38);
 
 CShape* Shape45 = (CShape *)(m_pScene.createNode("Shape"));
 CSphere* Sphere46 = (CSphere *)(m_pScene.createNode("Sphere"));
@@ -289,7 +289,7 @@ CAppearance* Appearance47 = (CAppearance *)(m_pScene.createNode("Appearance"));
 Appearance47->setUSE("FrustumAppearance");
 Shape45->setAppearance(*Appearance47);
 
-Transform30->addChildren(*Shape45);
+Transform30->addChild(*Shape45);
 
 Transform29->addChildren(*Transform30);
 

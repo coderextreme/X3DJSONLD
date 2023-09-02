@@ -216,7 +216,7 @@ RotationTests.prototype = {
 	.append(new autoclass.MFRotation(java.newArray("float", [0.8877,-0.3946,0.2373,2.8828,0.4947,-0.6826,0.5379,3.1277,-0.1094,-0.6973,0.7083,2.9901,-0.6527,-0.4615,0.6008,2.7229,-0.9366,-0.1455,0.3186,2.7823,-0.9963,0.0509,0.0689,3.0582])));
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
   .setHead((new autoclass.head())
-    .addComponent((new autoclass.component()).setName("H-Anim").setLevel(1))
+    .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
     .addMeta((new autoclass.meta()).setName("title").setContent("RotationTests.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("BVH file conversion support: test and visualize various rotations in order to properly configure converter from Euler angles to SFRotation values."))
     .addMeta((new autoclass.meta()).setName("creator").setContent("Don Brutzman"))

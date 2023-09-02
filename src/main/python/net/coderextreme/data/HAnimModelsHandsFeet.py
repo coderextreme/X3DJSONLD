@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="4.0", 
-head=head(children=[component(name="HAnim", level=1),
+head=head(
+children=[
+component(name="HAnim", level=1),
 meta(name="title", content="HAnimModelsHandsFeet.x3d"),
 meta(name="description", content="Left and right hands and feet, using high-fidelity definitions for HAnim version 2.0"),
 meta(name="creator", content="YOO Kwan Hee and Don Brutzman"),
@@ -22,7 +25,7 @@ meta(name="subject", content="X3D HAnim humanoid animation"),
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelsHandsFeet.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -33,7 +36,6 @@ Viewpoint(description="Hands and feet 1.7m", position=((0,0,1.7))),
 Transform(translation=((-1,1,0)), children=[
 Inline(url=["HAnimModelHandLeft.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandLeft.x3d","HAnimModelHandLeft.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandLeft.wrl"]),
 Comment(value=''' Grid overlay authoring hint: first adjust grid scale to convenient large size, then adjust overall scale for your scene model '''),
-
 Transform(DEF="GridXY_20x20Fixed_AdjustScale", scale=((0.1,0.1,0.1)), children=[
 Inline(DEF="GridXY_20x20Fixed", url=["GridXY_20x20Fixed.x3d","../../Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","GridXY_20x20Fixed.wrl","../../Savage/Tools/Authoring/GridXY_20x20Fixed.wrl","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.wrl"])]),]),
 Transform(translation=((1,1,0)), children=[
@@ -41,12 +43,11 @@ Inline(url=["HAnimModelHandRight.x3d","https://www.web3d.org/x3d/content/example
 Transform(USE="GridXY_20x20Fixed_AdjustScale")]),
 Transform(translation=((-1,-1,0)), children=[
 Comment(value=''' rotation='0 0 1 3.141593' '''),
-
 Inline(url=["HAnimModelFootLeft.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.x3d","HAnimModelFootLeft.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.wrl"]),
 Transform(USE="GridXY_20x20Fixed_AdjustScale"),]),
 Transform(translation=((1,-1,0)), children=[
 Comment(value=''' rotation='0 0 1 3.141593' '''),
-
 Inline(url=["HAnimModelFootRight.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.x3d","HAnimModelFootRight.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.wrl"]),
-Transform(USE="GridXY_20x20Fixed_AdjustScale"),])]))
-.XML())
+Transform(USE="GridXY_20x20Fixed_AdjustScale"),])])))
+output = model.JSON()
+json.loads(output)

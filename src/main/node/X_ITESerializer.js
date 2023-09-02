@@ -43,7 +43,7 @@ X_ITESerializer.prototype = {
 				str += this.postcode[postno];
 			}
 		}
-		str += "    "+element.nodeName+0+".toFileX3D(\""+clazz+".new.x3d\");\n";
+		str += "    "+element.nodeName+0+".toFileX3D(\""+clazz+".new.x_ite.x3d\");\n";
 
 		return str;
 	},

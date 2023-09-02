@@ -54,7 +54,7 @@ ProtoInstance ProtoInstance2 = null;
         .addMeta(new meta().setName("created").setContent("December 13 2015"))
         .addMeta(new meta().setName("modified").setContent("April 18 2017"))
         .addMeta(new meta().setName("title").setContent("fors2.x3d"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/fors2.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/fors2.x3d"))
         .addMeta(new meta().setName("description").setContent("beginnings of a force directed graph in 3D"))
         .addMeta(new meta().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
       .setScene(new Scene()

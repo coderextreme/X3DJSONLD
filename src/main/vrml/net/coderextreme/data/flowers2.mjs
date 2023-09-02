@@ -91,7 +91,7 @@ let ProtoDeclare17 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 </IS>
 </Material>
 </Appearance>
-<!--<IndexedFaceSet DEF="Orbit" creaseAngle="0"> <Coordinate DEF="OrbitCoordinates"></Coordinate> </IndexedFaceSet>--><IndexedFaceSet containerField="geometry" ccw="false" convex="false" coordIndex="0 1 2 -1" DEF="Orbit"><Coordinate containerField="coord" DEF="OrbitCoordinates" point="0 0 1 0 1 0 1 0 0"></Coordinate>
+<!--<IndexedFaceSet DEF="Orbit" creaseAngle="0"> <Coordinate DEF="OrbitCoordinates"></Coordinate> </IndexedFaceSet>--><IndexedFaceSet ccw="false" convex="false" coordIndex="0 1 2 -1" DEF="Orbit"><Coordinate containerField="coord" DEF="OrbitCoordinates" point="0 0 1 0 1 0 1 0 0"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
@@ -287,9 +287,9 @@ IndexedFaceSet37.coord = Coordinate38;
 
 Shape30.geometry = IndexedFaceSet37;
 
-Transform27.children = new MFNode();
+Transform27.child = new undefined();
 
-Transform27.children[0] = Shape30;
+Transform27.child[0] = Shape30;
 
 Group24.children[2] = Transform27;
 

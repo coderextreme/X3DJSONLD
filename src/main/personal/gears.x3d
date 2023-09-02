@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D  profile="Interchange" version="4.0" ><head><meta name="title" content="gears.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D  profile="Interchange" version="3.3" ><head><meta name="title" content="gears.x3d"></meta>
 <meta name="identifier" content="http://coderextreme.net/X3DJSONLD/template.json"></meta>
 <meta name="description" content="Template for an Indexed Face Set"></meta>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="created" content="4 April 2017"></meta>
-<meta name="generator" content="convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/convertStlToJson.js"></meta>
+<meta name="generator" content="convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/src/main/node/convertStlToJson.js"></meta>
 <meta name="license" content="../license.html"></meta>
 <meta name="modified" content="30 April 2017"></meta>
 <meta name="translated" content="30 April 2017"></meta>

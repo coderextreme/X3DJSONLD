@@ -57,7 +57,7 @@ CProtoDeclare ProtoDeclare10 = browser.createX3DFromString(R"foo(<?xml version="
 </ProtoInterface>
 <ProtoBody><Transform DEF="node"><IS><connect nodeField="translation" protoField="translation"></connect>
 </IS>
-<Shape><Sphere containerField="geometry" radius="0.1"></Sphere>
+<Shape><Sphere radius="0.1"></Sphere>
 <Appearance><Material diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
@@ -115,7 +115,7 @@ Appearance19->setMaterial(*Material20);
 
 Shape17->setAppearance(*Appearance19);
 
-Transform14->addChildren(*Shape17);
+Transform14->addChild(*Shape17);
 
 CPositionInterpolator* PositionInterpolator21 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator21->setDEF("PI1");
@@ -241,7 +241,7 @@ CCylinder* Cylinder42 = (CCylinder *)(m_pScene.createNode("Cylinder"));
 Cylinder42->setRadius(0.05);
 Shape39->setGeometry(Cylinder42);
 
-Transform38->addChildren(*Shape39);
+Transform38->addChild(*Shape39);
 
 Transform37->addChildren(*Transform38);
 

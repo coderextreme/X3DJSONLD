@@ -60,7 +60,7 @@ ProtoInstance ProtoInstance9 = null;
         .addMeta(new meta().setName("title").setContent("ThreeDTexture.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/ThreeDTexture.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/ThreeDTexture.x3d"))
         .addMeta(new meta().setName("description").setContent("a kind of ThreeDTexture cube with spheres")))
       .setScene(new Scene()
         .addChild(new NavigationInfo().setType("\"EXAMINE\""))

@@ -31,7 +31,7 @@ head1->addMeta(*meta4);
 
 Cmeta* meta5 = new Cmeta();
 meta5->setName("identifier");
-meta5->setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d");
+meta5->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d");
 head1->addMeta(*meta5);
 
 Cmeta* meta6 = new Cmeta();
@@ -57,7 +57,7 @@ CProtoDeclare ProtoDeclare10 = browser.createX3DFromString(R"foo(<?xml version="
 </ProtoInterface>
 <ProtoBody><Transform DEF="node"><IS><connect nodeField="translation" protoField="translation"></connect>
 </IS>
-<Shape><Sphere containerField="geometry" radius="0.1"></Sphere>
+<Shape><Sphere radius="0.1"></Sphere>
 <Appearance><Material diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
@@ -115,7 +115,7 @@ Appearance19->setMaterial(*Material20);
 
 Shape17->setAppearance(*Appearance19);
 
-Transform14->addChildren(*Shape17);
+Transform14->addChild(*Shape17);
 
 CPositionInterpolator* PositionInterpolator21 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator21->setDEF("PI1");
@@ -211,7 +211,7 @@ CProtoDeclare ProtoDeclare32 = browser.createX3DFromString(R"foo(<?xml version="
 </ProtoInterface>
 <ProtoBody><Group><Transform DEF="trans"><Transform DEF="rotscale"><Shape><Appearance><Material diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
 </Appearance>
-<Cylinder containerField="geometry" radius="0.05"></Cylinder>
+<Cylinder radius="0.05"></Cylinder>
 </Shape>
 </Transform>
 </Transform>
@@ -324,7 +324,7 @@ CCylinder* Cylinder45 = (CCylinder *)(m_pScene.createNode("Cylinder"));
 Cylinder45->setRadius(0.05);
 Shape42->setGeometry(Cylinder45);
 
-Transform41->addChildren(*Shape42);
+Transform41->addChild(*Shape42);
 
 Transform40->addChildren(*Transform41);
 

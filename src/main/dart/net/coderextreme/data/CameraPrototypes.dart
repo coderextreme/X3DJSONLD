@@ -1915,7 +1915,7 @@ ecmascript:eval (0
               url_ : MFString([SFString("CameraExamples.x3d"), SFString("https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d"), SFString("CameraExamples.wrl"), SFString("https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl")]),
               children_ : [
                 Transform(
-                  children_ : [
+                  child_ : 
                     Shape(
                       geometry_ : 
                         Text(
@@ -1927,5 +1927,5 @@ ecmascript:eval (0
                         Appearance(
                           material_ : 
                             Material(
-                              diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(0.2)]))))])])]));
+                              diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(0.2)])))))])]));
 void main() { exit(0); }

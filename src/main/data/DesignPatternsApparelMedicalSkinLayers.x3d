@@ -8,7 +8,7 @@
     <meta content='Joe D. Williams' name='creator'/>
     <meta content='Dick Puk' name='creator'/>
     <meta content='23 December 2022' name='created'/>
-    <meta content='26 December 2022' name='modified'/>
+    <meta content='2 July 2023' name='modified'/>
     <meta content='DesignPatternsApparelVariations.txt' name='reference'/>
     <meta content='HAnim2 Part 1, HAnim architecture, 4.3 Humanoid object https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#HumanoidObject' name='reference'/>
     <meta content='HAnim2 Part 1, HAnim architecture, E.4 Multiple humanoids per file https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile' name='reference'/>
@@ -22,7 +22,7 @@
     <WorldInfo title='HAnimHumanoid skin design patterns for apparel, medical'/>
     <Background skyColor='0 0.6 0.6'/>
     <Group DEF='MultipleHumanoids'>
-      <MetadataString name='HAnimArchitecture' containerField="metadata" reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile' value='"E.4 Multiple humanoids per file"'/>
+      <MetadataString name='HAnimArchitecture' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile' value='"E.4 Multiple humanoids per file"'/>
       <!-- ============================== -->
       <HAnimHumanoid DEF='a_SimpleSkeleton' name='SimpleSkeleton' version='2.0'>
         <HAnimJoint containerField='skeleton' name='humanoid_root'>
@@ -66,13 +66,12 @@
         <HAnimJoint containerField='skeleton' name='humanoid_root'>
           <HAnimSegment name='sacrum'/>
         </HAnimJoint>
-        <!-- TODO proposed for X3D4 <Switch DEF='AlternativeSkins' containerField='skin'> -->
-        <Shape>
+        <!-- TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'> -->
+        <Shape containerField='skin'>
           <IndexedFaceSet DEF='IndexedSkinMeshIFS'>
             <Coordinate DEF='SkinMeshCoordinate'/>
           </IndexedFaceSet>
         </Shape>
-        <!-- TODO proposed for X3D4 </Switch> -->
       </HAnimHumanoid>
       <!-- similarly for LOD -->
       <!-- ============================== -->
@@ -102,8 +101,6 @@
         </HAnimJoint>
         <!-- allow multiple Shape nodes with containerField='skin', one for each layer of skin -->
         <Shape containerField='skin'/>
-        <!-- TODO proposed for X3D4.1 <Shape containerField='skin'/> -->
-        <!-- TODO proposed for X3D4.1 <Shape containerField='skin'/> -->
       </HAnimHumanoid>
       <!-- ============================== -->
     </Group>

@@ -605,5 +605,5 @@ var ProtoInstance34 = null;
                     .setFontStyle((new autoclass.FontStyle()).setUSE("Style"))))))))
         .addChild((new autoclass.ROUTE()).setFromField("fraction_changed").setFromNode("Close_Time").setToField("set_fraction").setToNode("Close_Mover"))
         .addChild((new autoclass.ROUTE()).setFromField("value_changed").setFromNode("Close_Mover").setToField("set_translation").setToNode("Close_travel")))      ;
-    X3D0.toFileX3D("../data/ArtDecoExamples.new.x3d");
+    X3D0.toFileX3D("../data/ArtDecoExamples.new.node.x3d");
     process.exit(0);

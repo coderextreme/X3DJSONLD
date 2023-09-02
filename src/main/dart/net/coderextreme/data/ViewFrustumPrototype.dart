@@ -139,7 +139,7 @@ var X3D0 =  X3D(
                           children_ : [
                             Transform(
                               DEF_ : SFString('OrientationTransform'),
-                              children_ : [
+                              child_ : 
                                 Shape(
                                   geometry_ : 
                                     IndexedLineSet(
@@ -159,7 +159,7 @@ var X3D0 =  X3D(
                                                 connect(
                                                   nodeField_ : SFString('emissiveColor'),
                                                   protoField_ : SFString('lineColor'))])))),
-
+                              child_ : 
                                 Shape(
                                   geometry_ : 
                                     Extrusion(
@@ -179,14 +179,14 @@ var X3D0 =  X3D(
                                                 connect(
                                                   nodeField_ : SFString('transparency'),
                                                   protoField_ : SFString('transparency'))])))),
-
+                              child_ : 
                                 Shape(
                                   geometry_ : 
                                     Sphere(
                                       radius_ : 0.08),
                                   appearance_ : 
                                     Appearance(
-                                      USE_ : SFString('FrustumAppearance')))])])]),
+                                      USE_ : SFString('FrustumAppearance'))))])]),
 
                     Script(
                       DEF_ : SFString('GeometryComputationScript'),

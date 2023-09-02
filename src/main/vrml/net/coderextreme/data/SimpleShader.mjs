@@ -124,7 +124,7 @@ let ProtoDeclare23 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <ShaderPart DEF="_1" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 </Appearance>
-<Sphere containerField="geometry" radius="1.75"></Sphere>
+<Sphere radius="1.75"></Sphere>
 </Shape>
 </Transform>
 </ProtoBody>
@@ -212,9 +212,9 @@ let Sphere41 = browser.currentScene.createNode("Sphere");
 Sphere41.radius = 1.75;
 Shape28.geometry = Sphere41;
 
-Transform27.children = new MFNode();
+Transform27.child = new undefined();
 
-Transform27.children[0] = Shape28;
+Transform27.child[0] = Shape28;
 
 ProtoBody26.children = new MFNode();
 

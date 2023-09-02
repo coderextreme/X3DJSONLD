@@ -11,7 +11,7 @@
 <meta name="license" content="../license.html"></meta>
 </head>
 <Scene><WorldInfo title="AllAudioGraphNodes.x3d"></WorldInfo>
-<Shape><Box containerField="geometry"></Box>
+<Shape><Box></Box>
 <Appearance><AcousticProperties description="Testing of X3D4 nodes demonstrating W3C Audio API in progress" diffuse="0.25" refraction="0.5" specular="1"></AcousticProperties>
 <Material></Material>
 </Appearance>

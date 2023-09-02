@@ -163,9 +163,9 @@ Appearance33.material = Material34;
 
 Shape31.appearance = Appearance33;
 
-Transform30.children = new MFNode();
+Transform30.child = new undefined();
 
-Transform30.children[0] = Shape31;
+Transform30.child[0] = Shape31;
 
 HAnimSegment29.children = new MFNode();
 
@@ -227,9 +227,9 @@ let Transform47 = browser.currentScene.createNode("Transform");
 Transform47.translation = new SFVec3f(new float[0,-0.3,0]);
 let Shape48 = browser.currentScene.createNode("Shape");
 Shape48.USE = "HAnimJointShape";
-Transform47.children = new MFNode();
+Transform47.child = new undefined();
 
-Transform47.children[0] = Shape48;
+Transform47.child[0] = Shape48;
 
 HAnimSegment46.children = new MFNode();
 
@@ -310,9 +310,9 @@ let Transform66 = browser.currentScene.createNode("Transform");
 Transform66.translation = new SFVec3f(new float[-0.1,-0.45,0]);
 let Shape67 = browser.currentScene.createNode("Shape");
 Shape67.USE = "HAnimJointShape";
-Transform66.children = new MFNode();
+Transform66.child = new undefined();
 
-Transform66.children[0] = Shape67;
+Transform66.child[0] = Shape67;
 
 HAnimSegment65.children = new MFNode();
 
@@ -354,9 +354,9 @@ let Transform75 = browser.currentScene.createNode("Transform");
 Transform75.translation = new SFVec3f(new float[-0.1,-0.6,0]);
 let Shape76 = browser.currentScene.createNode("Shape");
 Shape76.USE = "HAnimJointShape";
-Transform75.children = new MFNode();
+Transform75.child = new undefined();
 
-Transform75.children[0] = Shape76;
+Transform75.child[0] = Shape76;
 
 HAnimSegment74.children = new MFNode();
 
@@ -398,9 +398,9 @@ let Transform84 = browser.currentScene.createNode("Transform");
 Transform84.translation = new SFVec3f(new float[-0.1,-0.9,0]);
 let Shape85 = browser.currentScene.createNode("Shape");
 Shape85.USE = "HAnimJointShape";
-Transform84.children = new MFNode();
+Transform84.child = new undefined();
 
-Transform84.children[0] = Shape85;
+Transform84.child[0] = Shape85;
 
 HAnimSegment83.children = new MFNode();
 
@@ -442,9 +442,9 @@ let Transform93 = browser.currentScene.createNode("Transform");
 Transform93.translation = new SFVec3f(new float[-0.1,-1.05,0]);
 let Shape94 = browser.currentScene.createNode("Shape");
 Shape94.USE = "HAnimJointShape";
-Transform93.children = new MFNode();
+Transform93.child = new undefined();
 
-Transform93.children[0] = Shape94;
+Transform93.child[0] = Shape94;
 
 HAnimSegment92.children = new MFNode();
 
@@ -495,9 +495,9 @@ let Transform102 = browser.currentScene.createNode("Transform");
 Transform102.translation = new SFVec3f(new float[0,-0.45,0]);
 let Shape103 = browser.currentScene.createNode("Shape");
 Shape103.USE = "HAnimJointShape";
-Transform102.children = new MFNode();
+Transform102.child = new undefined();
 
-Transform102.children[0] = Shape103;
+Transform102.child[0] = Shape103;
 
 HAnimSegment101.children = new MFNode();
 
@@ -539,9 +539,9 @@ let Transform111 = browser.currentScene.createNode("Transform");
 Transform111.translation = new SFVec3f(new float[0.05,-0.6,0]);
 let Shape112 = browser.currentScene.createNode("Shape");
 Shape112.USE = "HAnimJointShape";
-Transform111.children = new MFNode();
+Transform111.child = new undefined();
 
-Transform111.children[0] = Shape112;
+Transform111.child[0] = Shape112;
 
 HAnimSegment110.children = new MFNode();
 
@@ -583,9 +583,9 @@ let Transform120 = browser.currentScene.createNode("Transform");
 Transform120.translation = new SFVec3f(new float[0.05,-0.9,0]);
 let Shape121 = browser.currentScene.createNode("Shape");
 Shape121.USE = "HAnimJointShape";
-Transform120.children = new MFNode();
+Transform120.child = new undefined();
 
-Transform120.children[0] = Shape121;
+Transform120.child[0] = Shape121;
 
 HAnimSegment119.children = new MFNode();
 
@@ -627,9 +627,9 @@ let Transform129 = browser.currentScene.createNode("Transform");
 Transform129.translation = new SFVec3f(new float[0.05,-1.05,0]);
 let Shape130 = browser.currentScene.createNode("Shape");
 Shape130.USE = "HAnimJointShape";
-Transform129.children = new MFNode();
+Transform129.child = new undefined();
 
-Transform129.children[0] = Shape130;
+Transform129.child[0] = Shape130;
 
 HAnimSegment128.children = new MFNode();
 
@@ -671,9 +671,9 @@ let Transform138 = browser.currentScene.createNode("Transform");
 Transform138.translation = new SFVec3f(new float[0.05,-1.12,0]);
 let Shape139 = browser.currentScene.createNode("Shape");
 Shape139.USE = "HAnimJointShape";
-Transform138.children = new MFNode();
+Transform138.child = new undefined();
 
-Transform138.children[0] = Shape139;
+Transform138.child[0] = Shape139;
 
 HAnimSegment137.children = new MFNode();
 
@@ -726,9 +726,9 @@ let Transform147 = browser.currentScene.createNode("Transform");
 Transform147.translation = new SFVec3f(new float[0.1,-0.4,0]);
 let Shape148 = browser.currentScene.createNode("Shape");
 Shape148.USE = "HAnimJointShape";
-Transform147.children = new MFNode();
+Transform147.child = new undefined();
 
-Transform147.children[0] = Shape148;
+Transform147.child[0] = Shape148;
 
 HAnimSegment146.children = new MFNode();
 
@@ -770,9 +770,9 @@ let Transform156 = browser.currentScene.createNode("Transform");
 Transform156.translation = new SFVec3f(new float[0.15,-0.6,0]);
 let Shape157 = browser.currentScene.createNode("Shape");
 Shape157.USE = "HAnimJointShape";
-Transform156.children = new MFNode();
+Transform156.child = new undefined();
 
-Transform156.children[0] = Shape157;
+Transform156.child[0] = Shape157;
 
 HAnimSegment155.children = new MFNode();
 
@@ -814,9 +814,9 @@ let Transform165 = browser.currentScene.createNode("Transform");
 Transform165.translation = new SFVec3f(new float[0.15,-0.9,0]);
 let Shape166 = browser.currentScene.createNode("Shape");
 Shape166.USE = "HAnimJointShape";
-Transform165.children = new MFNode();
+Transform165.child = new undefined();
 
-Transform165.children[0] = Shape166;
+Transform165.child[0] = Shape166;
 
 HAnimSegment164.children = new MFNode();
 
@@ -858,9 +858,9 @@ let Transform174 = browser.currentScene.createNode("Transform");
 Transform174.translation = new SFVec3f(new float[0.15,-1.05,0]);
 let Shape175 = browser.currentScene.createNode("Shape");
 Shape175.USE = "HAnimJointShape";
-Transform174.children = new MFNode();
+Transform174.child = new undefined();
 
-Transform174.children[0] = Shape175;
+Transform174.child[0] = Shape175;
 
 HAnimSegment173.children = new MFNode();
 
@@ -902,9 +902,9 @@ let Transform183 = browser.currentScene.createNode("Transform");
 Transform183.translation = new SFVec3f(new float[0.15,-1.13,0]);
 let Shape184 = browser.currentScene.createNode("Shape");
 Shape184.USE = "HAnimJointShape";
-Transform183.children = new MFNode();
+Transform183.child = new undefined();
 
-Transform183.children[0] = Shape184;
+Transform183.child[0] = Shape184;
 
 HAnimSegment182.children = new MFNode();
 
@@ -959,9 +959,9 @@ let Transform192 = browser.currentScene.createNode("Transform");
 Transform192.translation = new SFVec3f(new float[0.2,0.3,0]);
 let Shape193 = browser.currentScene.createNode("Shape");
 Shape193.USE = "HAnimJointShape";
-Transform192.children = new MFNode();
+Transform192.child = new undefined();
 
-Transform192.children[0] = Shape193;
+Transform192.child[0] = Shape193;
 
 HAnimSegment191.children = new MFNode();
 
@@ -1004,9 +1004,9 @@ let Transform201 = browser.currentScene.createNode("Transform");
 Transform201.translation = new SFVec3f(new float[0.21,-0.3,0]);
 let Shape202 = browser.currentScene.createNode("Shape");
 Shape202.USE = "HAnimJointShape";
-Transform201.children = new MFNode();
+Transform201.child = new undefined();
 
-Transform201.children[0] = Shape202;
+Transform201.child[0] = Shape202;
 
 HAnimSegment200.children = new MFNode();
 
@@ -1068,9 +1068,9 @@ let Transform215 = browser.currentScene.createNode("Transform");
 Transform215.translation = new SFVec3f(new float[0.25,-0.58,0]);
 let Shape216 = browser.currentScene.createNode("Shape");
 Shape216.USE = "HAnimJointShape";
-Transform215.children = new MFNode();
+Transform215.child = new undefined();
 
-Transform215.children[0] = Shape216;
+Transform215.child[0] = Shape216;
 
 HAnimSegment214.children = new MFNode();
 
@@ -1112,9 +1112,9 @@ let Transform224 = browser.currentScene.createNode("Transform");
 Transform224.translation = new SFVec3f(new float[0.25,-0.87,0]);
 let Shape225 = browser.currentScene.createNode("Shape");
 Shape225.USE = "HAnimJointShape";
-Transform224.children = new MFNode();
+Transform224.child = new undefined();
 
-Transform224.children[0] = Shape225;
+Transform224.child[0] = Shape225;
 
 HAnimSegment223.children = new MFNode();
 
@@ -1156,9 +1156,9 @@ let Transform233 = browser.currentScene.createNode("Transform");
 Transform233.translation = new SFVec3f(new float[0.25,-1,0]);
 let Shape234 = browser.currentScene.createNode("Shape");
 Shape234.USE = "HAnimJointShape";
-Transform233.children = new MFNode();
+Transform233.child = new undefined();
 
-Transform233.children[0] = Shape234;
+Transform233.child[0] = Shape234;
 
 HAnimSegment232.children = new MFNode();
 
@@ -1200,9 +1200,9 @@ let Transform242 = browser.currentScene.createNode("Transform");
 Transform242.translation = new SFVec3f(new float[0.25,-1.1,0]);
 let Shape243 = browser.currentScene.createNode("Shape");
 Shape243.USE = "HAnimJointShape";
-Transform242.children = new MFNode();
+Transform242.child = new undefined();
 
-Transform242.children[0] = Shape243;
+Transform242.child[0] = Shape243;
 
 HAnimSegment241.children = new MFNode();
 
@@ -1253,9 +1253,9 @@ let Transform251 = browser.currentScene.createNode("Transform");
 Transform251.translation = new SFVec3f(new float[0.33,-0.52,0]);
 let Shape252 = browser.currentScene.createNode("Shape");
 Shape252.USE = "HAnimJointShape";
-Transform251.children = new MFNode();
+Transform251.child = new undefined();
 
-Transform251.children[0] = Shape252;
+Transform251.child[0] = Shape252;
 
 HAnimSegment250.children = new MFNode();
 
@@ -1297,9 +1297,9 @@ let Transform260 = browser.currentScene.createNode("Transform");
 Transform260.translation = new SFVec3f(new float[0.34,-0.8,0]);
 let Shape261 = browser.currentScene.createNode("Shape");
 Shape261.USE = "HAnimJointShape";
-Transform260.children = new MFNode();
+Transform260.child = new undefined();
 
-Transform260.children[0] = Shape261;
+Transform260.child[0] = Shape261;
 
 HAnimSegment259.children = new MFNode();
 
@@ -1341,9 +1341,9 @@ let Transform269 = browser.currentScene.createNode("Transform");
 Transform269.translation = new SFVec3f(new float[0.34,-0.95,0]);
 let Shape270 = browser.currentScene.createNode("Shape");
 Shape270.USE = "HAnimJointShape";
-Transform269.children = new MFNode();
+Transform269.child = new undefined();
 
-Transform269.children[0] = Shape270;
+Transform269.child[0] = Shape270;
 
 HAnimSegment268.children = new MFNode();
 
@@ -1385,9 +1385,9 @@ let Transform278 = browser.currentScene.createNode("Transform");
 Transform278.translation = new SFVec3f(new float[0.34,-1.05,0]);
 let Shape279 = browser.currentScene.createNode("Shape");
 Shape279.USE = "HAnimJointShape";
-Transform278.children = new MFNode();
+Transform278.child = new undefined();
 
-Transform278.children[0] = Shape279;
+Transform278.child[0] = Shape279;
 
 HAnimSegment277.children = new MFNode();
 

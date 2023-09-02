@@ -20,7 +20,7 @@ var ProtoInstance1 = null;
         .addMeta((new autoclass.meta()).setName("title").setContent("asmallbox.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/abox.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("a box")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.ProtoDeclare()).setName("anyShape")
@@ -47,5 +47,5 @@ ProtoInstance1
           .addFieldValue((new autoclass.fieldValue()).setName("myShape")
             .addChild((new autoclass.Shape())
               .setGeometry((new autoclass.Box()))));
-    X3D0.toFileX3D("../data/asmallbox.new.x3d");
+    X3D0.toFileX3D("../data/asmallbox.new.node.x3d");
     process.exit(0);

@@ -113,7 +113,7 @@ var X3D0 =  new X3D({
               bottomUrl : new MFString(["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"])}),
 
             new Transform({
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
@@ -234,8 +234,8 @@ var X3D0 =  new X3D({
                               url : new MFString(["../shaders/mix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"])}))}))})),
                   geometry : new SFNode(
                     new Sphere({
-                      radius : new SFFloat(30)}))}),
-
+                      radius : new SFFloat(30)}))})),
+              children : new MFNode([
                 new Script({
                   DEF : new SFString("UrlSelector"),
                   directOutput : new SFBool(true),

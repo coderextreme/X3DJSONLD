@@ -159,7 +159,7 @@ var X3D0 =  new X3D({
               rotation : new SFRotation([0,1,0,1.57]),
               scale : new SFVec3f([0.5,0.5,0.5]),
               translation : new SFVec3f([10.5,6.5,4.5]),
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
@@ -172,7 +172,7 @@ var X3D0 =  new X3D({
                     new Text({
                       string : new MFString(["Click Sling to Select Projectile"]),
                       fontStyle : new SFNode(
-                        new FontStyle({}))}))})])}),
+                        new FontStyle({}))}))}))}),
 
             new Transform({
               rotation : new SFRotation([0,1,0,1.57]),
@@ -229,7 +229,7 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([8,0,0]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       geometry : new SFNode(
                         new Box({
@@ -238,7 +238,7 @@ var X3D0 =  new X3D({
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              transparency : new SFFloat(1)}))}))})])})])}),
+                              transparency : new SFFloat(1)}))}))}))})])}),
 
             new Transform({
               rotation : new SFRotation([0,1,0,1.57]),
@@ -264,7 +264,7 @@ var X3D0 =  new X3D({
 
                         new Transform({
                           translation : new SFVec3f([2,0.3,0]),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               geometry : new SFNode(
                                 new Box({
@@ -273,7 +273,7 @@ var X3D0 =  new X3D({
                                 new Appearance({
                                   material : new SFNode(
                                     new Material({
-                                      transparency : new SFFloat(1)}))}))})])}),
+                                      transparency : new SFFloat(1)}))}))}))}),
 
                         new Switch({
                           DEF : new SFString("PigdogMonk"),
@@ -394,7 +394,7 @@ var X3D0 =  new X3D({
 
             new Transform({
               translation : new SFVec3f([0,3,0]),
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   DEF : new SFString("plank"),
                   geometry : new SFNode(
@@ -406,41 +406,41 @@ var X3D0 =  new X3D({
                       texture : new SFNode(
                         new ImageTexture({
                           DEF : new SFString("woodTexture"),
-                          url : new MFString(["wood.gif","https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/wood.gif"])}))}))}),
-
+                          url : new MFString(["wood.gif","https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/wood.gif"])}))}))})),
+              children : new MFNode([
                 new Transform({
                   DEF : new SFString("angledsupport"),
                   rotation : new SFRotation([0,0,1,1]),
                   translation : new SFVec3f([-5,10,0]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
-                      USE : new SFString("plank")})])}),
+                      USE : new SFString("plank")}))}),
 
                 new Transform({
                   DEF : new SFString("angledsupport2"),
                   rotation : new SFRotation([0,0,1,-1]),
                   translation : new SFVec3f([5,10,0]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
-                      USE : new SFString("plank")})])}),
+                      USE : new SFString("plank")}))}),
 
                 new Transform({
                   DEF : new SFString("verticalsupport"),
                   rotation : new SFRotation([0,0,1,1.57]),
                   scale : new SFVec3f([0.9,1,1]),
                   translation : new SFVec3f([0,11,0]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
-                      USE : new SFString("plank")}),
-                  /*Main Verticle Support*/])}),
+                      USE : new SFString("plank")})),
+                  /*Main Verticle Support*/}),
 
                 new Transform({
                   DEF : new SFString("horizontalsupport"),
                   scale : new SFVec3f([0.4,1,1]),
                   translation : new SFVec3f([0,10,0]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
-                      USE : new SFString("plank")})])}),
+                      USE : new SFString("plank")}))}),
 
                 new Transform({
                   rotation : new SFRotation([0,0,1,1.57]),
@@ -449,21 +449,21 @@ var X3D0 =  new X3D({
                   children : new MFNode([
                     new Transform({
                       rotation : new SFRotation([0,1,0,0.4]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
-                          USE : new SFString("plank")})])})])}),
+                          USE : new SFString("plank")}))})])}),
 
                 new Transform({
                   DEF : new SFString("panel"),
                   translation : new SFVec3f([0,18.2,-0.3]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       geometry : new SFNode(
                         new Box({
                           size : new SFVec3f([5,5,0.5])})),
                       appearance : new SFNode(
                         new Appearance({
-                          USE : new SFString("wood")}))})])}),
+                          USE : new SFString("wood")}))}))}),
 
                 new Transform({
                   rotation : new SFRotation([1,0,0,-1.57]),
@@ -471,7 +471,7 @@ var X3D0 =  new X3D({
                   children : new MFNode([
                     new Transform({
                       rotation : new SFRotation([0,0,1,1.57]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           geometry : new SFNode(
                             new Extrusion({
@@ -482,7 +482,7 @@ var X3D0 =  new X3D({
                               spine : new MFVec3f([0,6,0,0,-11,0])})),
                           appearance : new SFNode(
                             new Appearance({
-                              USE : new SFString("wood")}))})])})])}),
+                              USE : new SFString("wood")}))}))})])}),
 
                 new Transform({
                   DEF : new SFString("flinger"),
@@ -492,31 +492,31 @@ var X3D0 =  new X3D({
                   translation : new SFVec3f([-7,18,2.5]),
                   children : new MFNode([
                     new Transform({
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           geometry : new SFNode(
                             new Box({
                               size : new SFVec3f([35,1,1])})),
                           appearance : new SFNode(
                             new Appearance({
-                              USE : new SFString("wood")}))}),
-
+                              USE : new SFString("wood")}))})),
+                      children : new MFNode([
                         new Transform({
                           translation : new SFVec3f([7,0,0]),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               geometry : new SFNode(
                                 new Box({
                                   size : new SFVec3f([8,2,2])})),
                               appearance : new SFNode(
                                 new Appearance({
-                                  USE : new SFString("wood")}))})])})])}),
+                                  USE : new SFString("wood")}))}))})])}),
 
                     new Transform({
                       rotation : new SFRotation([1,0,0,1.57]),
                       scale : new SFVec3f([0.2,0.2,0.2]),
                       translation : new SFVec3f([-15,-1,0]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           DEF : new SFString("Torus"),
                           appearance : new SFNode(
@@ -531,11 +531,11 @@ var X3D0 =  new X3D({
                               creaseAngle : new SFFloat(1.57),
                               crossSection : new MFVec2f([0.9,0,0.81,-0.34,0.63,-0.63,0.34,-0.83,0,-0.9,-0.34,-0.81,-0.63,-0.63,-0.81,-0.34,-0.9,0,-0.81,0.34,-0.63,0.63,-0.34,0.81,0,0.9,0.38,0.81,0.63,0.63,0.81,0.34,0.9,0]),
                               endCap : new SFBool(false),
-                              spine : new MFVec3f([2,0,0,1.85,0,0.77,1.41,0,1.41,0.77,0,1.85,0,0,2,-0.77,0,1.85,-1.41,0,1.41,-1.85,0,0.77,-2,0,0,-1.85,0,-0.77,-1.41,0,-1.41,-0.77,0,-1.85,0,0,-2,0.77,0,-1.85,1.41,0,-1.41,1.85,0,-0.77,2,0,0])}))}),
-
+                              spine : new MFVec3f([2,0,0,1.85,0,0.77,1.41,0,1.41,0.77,0,1.85,0,0,2,-0.77,0,1.85,-1.41,0,1.41,-1.85,0,0.77,-2,0,0,-1.85,0,-0.77,-1.41,0,-1.41,-0.77,0,-1.85,0,0,-2,0.77,0,-1.85,1.41,0,-1.41,1.85,0,-0.77,2,0,0])}))})),
+                      children : new MFNode([
                         new Transform({
                           translation : new SFVec3f([1,0,2]),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               appearance : new SFNode(
                                 new Appearance({
@@ -545,15 +545,15 @@ var X3D0 =  new X3D({
                                       USE : new SFString("woodTexture")}))})),
                               geometry : new SFNode(
                                 new Sphere({
-                                  radius : new SFFloat(1.5)}))}),
-                          /*knott*/])})])}),
+                                  radius : new SFFloat(1.5)}))})),
+                          /*knott*/})])}),
                   /*The Unicorn*/
 
                     new Transform({
                       rotation : new SFRotation([0,0,1,1.2]),
                       scale : new SFVec3f([0.2,0.2,0.2]),
                       translation : new SFVec3f([-18.3,0.3,0]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           geometry : new SFNode(
                             new Cylinder({
@@ -562,26 +562,26 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  specularColor : new SFColor([1,1,1])}))}))}),
-
+                                  specularColor : new SFColor([1,1,1])}))}))})),
+                      children : new MFNode([
                         new Transform({
                           translation : new SFVec3f([0,-2.5,0]),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
-                              USE : new SFString("Torus")}),
+                              USE : new SFString("Torus")})),
                           /*The Unicorn*/
-
+                          children : new MFNode([
                             new Transform({
                               translation : new SFVec3f([-2,0,0]),
-                              children : new MFNode([
+                              child : new SFNode(
                                 new Shape({
                                   geometry : new SFNode(
                                     new Sphere({
                                       radius : new SFFloat(1.5)})),
                                   appearance : new SFNode(
                                     new Appearance({
-                                      USE : new SFString("rope")}))}),
-                              /*Knott*/])})])}),
+                                      USE : new SFString("rope")}))})),
+                              /*Knott*/})])}),
 
                         new Transform({
                           rotation : new SFRotation([0,0,1,1.2]),
@@ -589,7 +589,7 @@ var X3D0 =  new X3D({
                           children : new MFNode([
                             new Transform({
                               scale : new SFVec3f([5,5,5]),
-                              children : new MFNode([
+                              child : new SFNode(
                                 new Shape({
                                   appearance : new SFNode(
                                     new Appearance({
@@ -601,7 +601,7 @@ var X3D0 =  new X3D({
                                       crossSection : new MFVec2f([0.1,0,0.092,-0.038,0.071,-0.071,0.038,-0.092,0,-0.1,-0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.1,0,-0.092,0.038,-0.071,0.071,-0.038,0.092,0,0.1,0.038,0.092,0.071,0.071,0.092,0.038,0.1,0]),
                                       endCap : new SFBool(false),
                                       solid : new SFBool(false),
-                                      spine : new MFVec3f([-15.2,1.4,2.2,-12,-0.8,2.2])}))})])})])})])}),
+                                      spine : new MFVec3f([-15.2,1.4,2.2,-12,-0.8,2.2])}))}))})])})])}),
 
                     new Transform({
                       rotation : new SFRotation([1,0,0,-1.7]),
@@ -609,21 +609,21 @@ var X3D0 =  new X3D({
                       children : new MFNode([
                         new Transform({
                           scale : new SFVec3f([0.2,0.2,0.2]),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               USE : new SFString("Torus"),
-                              /*Knot*/}),
-
+                              /*Knot*/})),
+                          children : new MFNode([
                             new Transform({
                               translation : new SFVec3f([-1,0,1.7]),
-                              children : new MFNode([
+                              child : new SFNode(
                                 new Shape({
                                   geometry : new SFNode(
                                     new Sphere({
                                       radius : new SFFloat(1.5)})),
                                   appearance : new SFNode(
                                     new Appearance({
-                                      USE : new SFString("rope")}))})])})])})])}),
+                                      USE : new SFString("rope")}))}))})])})])}),
 
                     new Transform({
                       DEF : new SFString("RnS"),
@@ -634,7 +634,7 @@ var X3D0 =  new X3D({
                             new Transform({
                               rotation : new SFRotation([0,0,1,-0.82]),
                               translation : new SFVec3f([7,-26,-2.5]),
-                              children : new MFNode([
+                              child : new SFNode(
                                 new Shape({
                                   appearance : new SFNode(
                                     new Appearance({
@@ -646,8 +646,8 @@ var X3D0 =  new X3D({
                                       crossSection : new MFVec2f([0.1,0,0.092,-0.038,0.071,-0.071,0.038,-0.092,0,-0.1,-0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.1,0,-0.092,0.038,-0.071,0.071,-0.038,0.092,0,0.1,0.038,0.092,0.071,0.071,0.092,0.038,0.1,0]),
                                       endCap : new SFBool(false),
                                       solid : new SFBool(false),
-                                      spine : new MFVec3f([-33,0.9,2.5,-18.5,1.9,2.55])}))}),
-
+                                      spine : new MFVec3f([-33,0.9,2.5,-18.5,1.9,2.55])}))})),
+                              child : new SFNode(
                                 new Shape({
                                   appearance : new SFNode(
                                     new Appearance({
@@ -659,7 +659,7 @@ var X3D0 =  new X3D({
                                       crossSection : new MFVec2f([0.1,0,0.092,-0.038,0.071,-0.071,0.038,-0.092,0,-0.1,-0.038,-0.092,-0.071,-0.071,-0.092,-0.038,-0.1,0,-0.092,0.038,-0.071,0.071,-0.038,0.092,0,0.1,0.038,0.092,0.071,0.071,0.092,0.038,0.1,0]),
                                       endCap : new SFBool(false),
                                       solid : new SFBool(false),
-                                      spine : new MFVec3f([-35.7,-0.8,2.5,-18.8,-0.8,2.55])}))})])})])}),
+                                      spine : new MFVec3f([-35.7,-0.8,2.5,-18.8,-0.8,2.55])}))}))})])}),
 
                         new Transform({
                           DEF : new SFString("sling"),
@@ -678,7 +678,7 @@ var X3D0 =  new X3D({
                                       children : new MFNode([
                                         new Transform({
                                           scale : new SFVec3f([0.3,0.3,0.3]),
-                                          children : new MFNode([
+                                          child : new SFNode(
                                             new Shape({
                                               DEF : new SFString("halfsling"),
                                               appearance : new SFNode(
@@ -690,54 +690,54 @@ var X3D0 =  new X3D({
                                               geometry : new SFNode(
                                                 new Extrusion({
                                                   crossSection : new MFVec2f([0,0,0,5,0.5,7,1,8,2,9,3,11,3.5,11.2,4,11,5,9,6,8,6.5,7,6.7,5,6.7,0,0,0]),
-                                                  spine : new MFVec3f([0,0,0,0.1,0,0])}))}),
-
+                                                  spine : new MFVec3f([0,0,0,0.1,0,0])}))})),
+                                          children : new MFNode([
                                             new Transform({
                                               scale : new SFVec3f([0.3,0.3,0.3]),
                                               translation : new SFVec3f([0,-3.5,11.5]),
-                                              children : new MFNode([
+                                              child : new SFNode(
                                                 new Shape({
-                                                  USE : new SFString("Torus")}),
-
+                                                  USE : new SFString("Torus")})),
+                                              children : new MFNode([
                                                 new Transform({
                                                   translation : new SFVec3f([0,0,2]),
-                                                  children : new MFNode([
+                                                  child : new SFNode(
                                                     new Shape({
                                                       appearance : new SFNode(
                                                         new Appearance({
                                                           USE : new SFString("rope")})),
                                                       geometry : new SFNode(
                                                         new Sphere({
-                                                          radius : new SFFloat(1.5)}))})])})])})])}),
+                                                          radius : new SFFloat(1.5)}))}))})])})])}),
 
                                         new Transform({
                                           scale : new SFVec3f([0.3,0.3,0.3]),
                                           translation : new SFVec3f([2,0,0]),
-                                          children : new MFNode([
+                                          child : new SFNode(
                                             new Shape({
-                                              USE : new SFString("halfsling")}),
-
+                                              USE : new SFString("halfsling")})),
+                                          children : new MFNode([
                                             new Transform({
                                               scale : new SFVec3f([0.3,0.3,0.3]),
                                               translation : new SFVec3f([0,-3.5,11.3]),
-                                              children : new MFNode([
+                                              child : new SFNode(
                                                 new Shape({
-                                                  USE : new SFString("Torus")}),
-
+                                                  USE : new SFString("Torus")})),
+                                              children : new MFNode([
                                                 new Transform({
                                                   translation : new SFVec3f([0,0,2]),
-                                                  children : new MFNode([
+                                                  child : new SFNode(
                                                     new Shape({
                                                       appearance : new SFNode(
                                                         new Appearance({
                                                           USE : new SFString("rope")})),
                                                       geometry : new SFNode(
                                                         new Sphere({
-                                                          radius : new SFFloat(1.5)}))})])})])})])}),
+                                                          radius : new SFFloat(1.5)}))}))})])})])}),
 
                                         new Transform({
                                           translation : new SFVec3f([1,-1,0]),
-                                          children : new MFNode([
+                                          child : new SFNode(
                                             new Shape({
                                               geometry : new SFNode(
                                                 new Extrusion({
@@ -749,7 +749,7 @@ var X3D0 =  new X3D({
                                                   spine : new MFVec3f([0,-1,0,0,1,0])})),
                                               appearance : new SFNode(
                                                 new Appearance({
-                                                  USE : new SFString("clear")}))})])})])}),
+                                                  USE : new SFString("clear")}))}))})])}),
 
                                     new TouchSensor({
                                       DEF : new SFString("LauncheeChoice"),
@@ -767,7 +767,7 @@ var X3D0 =  new X3D({
                                           children : new MFNode([
                                             new Transform({
                                               translation : new SFVec3f([0,0.7,0]),
-                                              children : new MFNode([
+                                              child : new SFNode(
                                                 new Shape({
                                                   geometry : new SFNode(
                                                     new Sphere({
@@ -778,7 +778,7 @@ var X3D0 =  new X3D({
                                                       material : new SFNode(
                                                         new Material({
                                                           diffuseColor : new SFColor([0,0,0]),
-                                                          specularColor : new SFColor([1,1,1])}))}))})])})])}),
+                                                          specularColor : new SFColor([1,1,1])}))}))}))})])}),
 
                                         new Group({
                                           children : new MFNode([
@@ -800,7 +800,7 @@ var X3D0 =  new X3D({
                 new Transform({
                   rotation : new SFRotation([1,0,0,1.57]),
                   translation : new SFVec3f([0,18,2.5]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       geometry : new SFNode(
                         new Cylinder({
@@ -811,38 +811,38 @@ var X3D0 =  new X3D({
                           material : new SFNode(
                             new Material({
                               diffuseColor : new SFColor([0,0,0]),
-                              specularColor : new SFColor([1,1,1])}))}))}),
-                  /*Top Pivot*/])}),
+                              specularColor : new SFColor([1,1,1])}))}))})),
+                  /*Top Pivot*/}),
 
                 new Transform({
                   DEF : new SFString("verticalweight"),
                   children : new MFNode([
                     new Transform({
                       translation : new SFVec3f([4,18,1.8]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           geometry : new SFNode(
                             new Box({
                               size : new SFVec3f([1,10,0.5])})),
                           appearance : new SFNode(
                             new Appearance({
-                              USE : new SFString("wood")}))})])}),
+                              USE : new SFString("wood")}))}))}),
 
                     new Transform({
                       translation : new SFVec3f([4,18,3.2]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           geometry : new SFNode(
                             new Box({
                               size : new SFVec3f([1,10,0.5])})),
                           appearance : new SFNode(
                             new Appearance({
-                              USE : new SFString("wood")}))})])}),
+                              USE : new SFString("wood")}))}))}),
 
                     new Transform({
                       translation : new SFVec3f([4,14,2.5]),
                       /*CounterWeight*/
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           geometry : new SFNode(
                             new Cylinder({
@@ -853,12 +853,12 @@ var X3D0 =  new X3D({
                               material : new SFNode(
                                 new Material({
                                   diffuseColor : new SFColor([0,0,0]),
-                                  specularColor : new SFColor([1,1,1])}))}))})])}),
+                                  specularColor : new SFColor([1,1,1])}))}))}))}),
 
                     new Transform({
                       rotation : new SFRotation([1,0,0,1.57]),
                       translation : new SFVec3f([4,22,2.5]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           geometry : new SFNode(
                             new Cylinder({
@@ -869,7 +869,7 @@ var X3D0 =  new X3D({
                               material : new SFNode(
                                 new Material({
                                   diffuseColor : new SFColor([0,0,0]),
-                                  specularColor : new SFColor([1,1,1])}))}))})])})])}),
+                                  specularColor : new SFColor([1,1,1])}))}))}))})])}),
 
                 new Transform({
                   rotation : new SFRotation([0,0,1,1.57]),
@@ -879,14 +879,14 @@ var X3D0 =  new X3D({
                     new Transform({
                       DEF : new SFString("screw"),
                       rotation : new SFRotation([1,0,0,1.57]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
-                          USE : new SFString("Torus")}),
-
+                          USE : new SFString("Torus")})),
+                      children : new MFNode([
                         new Transform({
                           rotation : new SFRotation([1,0,0,-1.57]),
                           translation : new SFVec3f([0,0,7]),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               geometry : new SFNode(
                                 new Cylinder({
@@ -896,7 +896,7 @@ var X3D0 =  new X3D({
                                 new Appearance({
                                   material : new SFNode(
                                     new Material({
-                                      specularColor : new SFColor([1,1,1])}))}))})])})])}),
+                                      specularColor : new SFColor([1,1,1])}))}))}))})])}),
 
                     new Transform({
                       translation : new SFVec3f([0,0,7]),
@@ -915,10 +915,10 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([0,0,5]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
-                      USE : new SFString("plank")}),
-
+                      USE : new SFString("plank")})),
+                  children : new MFNode([
                     new Transform({
                       USE : new SFString("angledsupport")}),
 
@@ -946,9 +946,9 @@ var X3D0 =  new X3D({
                       children : new MFNode([
                         new Transform({
                           rotation : new SFRotation([0,1,0,0.4]),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
-                              USE : new SFString("plank")})])})])}),
+                              USE : new SFString("plank")}))})])}),
 
                     new Transform({
                       translation : new SFVec3f([0,0,0.6]),
@@ -958,7 +958,7 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([10,-1,2.5]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       DEF : new SFString("Axle"),
                       geometry : new SFNode(
@@ -966,12 +966,12 @@ var X3D0 =  new X3D({
                           size : new SFVec3f([1,1,8])})),
                       appearance : new SFNode(
                         new Appearance({
-                          USE : new SFString("wood")}))}),
-
+                          USE : new SFString("wood")}))})),
+                  children : new MFNode([
                     new Transform({
                       rotation : new SFRotation([1,0,0,1.57]),
                       translation : new SFVec3f([0,0,4.5]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           DEF : new SFString("wheel"),
                           geometry : new SFNode(
@@ -979,8 +979,8 @@ var X3D0 =  new X3D({
                               radius : new SFFloat(2)})),
                           appearance : new SFNode(
                             new Appearance({
-                              USE : new SFString("wood")}))}),
-
+                              USE : new SFString("wood")}))})),
+                      child : new SFNode(
                         new Shape({
                           DEF : new SFString("tracks"),
                           geometry : new SFNode(
@@ -988,11 +988,11 @@ var X3D0 =  new X3D({
                               radius : new SFFloat(1.5)})),
                           appearance : new SFNode(
                             new Appearance({
-                              USE : new SFString("black")}))}),
-
+                              USE : new SFString("black")}))})),
+                      children : new MFNode([
                         new Transform({
                           translation : new SFVec3f([0,0.55,0]),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               DEF : new SFString("hub"),
                               geometry : new SFNode(
@@ -1000,61 +1000,61 @@ var X3D0 =  new X3D({
                                   radius : new SFFloat(1.5)})),
                               appearance : new SFNode(
                                 new Appearance({
-                                  USE : new SFString("black")}))})])})])}),
+                                  USE : new SFString("black")}))}))})])}),
 
                     new Transform({
                       rotation : new SFRotation([1,0,0,1.57]),
                       translation : new SFVec3f([0,0,-4.5]),
+                      child : new SFNode(
+                        new Shape({
+                          USE : new SFString("wheel")})),
+                      child : new SFNode(
+                        new Shape({
+                          USE : new SFString("tracks")})),
                       children : new MFNode([
-                        new Shape({
-                          USE : new SFString("wheel")}),
-
-                        new Shape({
-                          USE : new SFString("tracks")}),
-
                         new Transform({
                           translation : new SFVec3f([0,-0.55,0]),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
-                              USE : new SFString("hub")})])})])})])}),
+                              USE : new SFString("hub")}))})])})])}),
 
                 new Transform({
                   translation : new SFVec3f([-10,-1,2.5]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
-                      USE : new SFString("Axle")}),
-
+                      USE : new SFString("Axle")})),
+                  children : new MFNode([
                     new Transform({
                       rotation : new SFRotation([1,0,0,1.57]),
                       translation : new SFVec3f([0,0,4.5]),
+                      child : new SFNode(
+                        new Shape({
+                          USE : new SFString("wheel")})),
+                      child : new SFNode(
+                        new Shape({
+                          USE : new SFString("tracks")})),
                       children : new MFNode([
-                        new Shape({
-                          USE : new SFString("wheel")}),
-
-                        new Shape({
-                          USE : new SFString("tracks")}),
-
                         new Transform({
                           translation : new SFVec3f([0,0.55,0]),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
-                              USE : new SFString("hub")})])})])}),
+                              USE : new SFString("hub")}))})])}),
 
                     new Transform({
                       rotation : new SFRotation([1,0,0,1.57]),
                       translation : new SFVec3f([0,0,-4.5]),
+                      child : new SFNode(
+                        new Shape({
+                          USE : new SFString("wheel")})),
+                      child : new SFNode(
+                        new Shape({
+                          USE : new SFString("tracks")})),
                       children : new MFNode([
-                        new Shape({
-                          USE : new SFString("wheel")}),
-
-                        new Shape({
-                          USE : new SFString("tracks")}),
-
                         new Transform({
                           translation : new SFVec3f([0,-0.55,0]),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
-                              USE : new SFString("hub")})])})])}),
+                              USE : new SFString("hub")}))})])}),
 
                     new Transform({
                       rotation : new SFRotation([0,1,0,-0.6]),
@@ -1079,7 +1079,7 @@ var X3D0 =  new X3D({
 
                             new Transform({
                               translation : new SFVec3f([2.5,0,0]),
-                              children : new MFNode([
+                              child : new SFNode(
                                 new Shape({
                                   geometry : new SFNode(
                                     new Box({
@@ -1088,7 +1088,7 @@ var X3D0 =  new X3D({
                                     new Appearance({
                                       material : new SFNode(
                                         new Material({
-                                          transparency : new SFFloat(1)}))}))})])})])}),
+                                          transparency : new SFFloat(1)}))}))}))})])}),
 
                         new Transform({
                           scale : new SFVec3f([0.5,0.5,0.5]),
@@ -1102,7 +1102,7 @@ var X3D0 =  new X3D({
 
                             new Transform({
                               translation : new SFVec3f([8,0,0]),
-                              children : new MFNode([
+                              child : new SFNode(
                                 new Shape({
                                   geometry : new SFNode(
                                     new Box({
@@ -1111,7 +1111,7 @@ var X3D0 =  new X3D({
                                     new Appearance({
                                       material : new SFNode(
                                         new Material({
-                                          transparency : new SFFloat(1)}))}))})])})])})])}),
+                                          transparency : new SFFloat(1)}))}))}))})])})])}),
 
                     new Transform({
                       DEF : new SFString("ProjectileTransform"),

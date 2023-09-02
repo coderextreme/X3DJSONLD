@@ -319,7 +319,7 @@ Text65->setFontStyle(*FontStyle66);
 
 Shape61->setGeometry(Text65);
 
-Transform60->addChildren(*Shape61);
+Transform60->addChild(*Shape61);
 
 group->addChildren(*Transform60);
 

@@ -248,9 +248,9 @@ let Sphere46 = browser.currentScene.createNode("Sphere");
 Sphere46.radius = 30;
 Shape20.geometry = Sphere46;
 
-Transform19.children = new MFNode();
+Transform19.child = new undefined();
 
-Transform19.children[0] = Shape20;
+Transform19.child[0] = Shape20;
 
 let Script47 = browser.currentScene.createNode("Script");
 Script47.DEF = "UrlSelector";

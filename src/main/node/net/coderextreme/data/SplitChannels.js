@@ -89,5 +89,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0.3), java.newFloat(1), java.newFloat(0.3)])).setEmissiveColor(java.newArray("float", [java.newFloat(0.8), java.newFloat(0.8), java.newFloat(0.8)])).setSpecularColor(java.newArray("float", [java.newFloat(0.01), java.newFloat(0.01), java.newFloat(0.01)])))
               .setTexture((new autoclass.ImageTexture()).setUrl(java.newArray("java.lang.String", ["images/loudspeaker.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"]))))
             .setGeometry((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(100), java.newFloat(100), java.newFloat(0.001)]))))))      ;
-    X3D0.toFileX3D("../data/SplitChannels.new.x3d");
+    X3D0.toFileX3D("../data/SplitChannels.new.node.x3d");
     process.exit(0);

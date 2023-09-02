@@ -5,7 +5,7 @@
         <meta name='title' content='ThreeDTexture.x3d'/>
         <meta name='creator' content='John Carlson'/>
         <meta name='generator' content='manual'/>
-        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/ThreeDTexture.x3d'/>
+	<meta name='identifier' content='https://coderextreme.net/X3DJSONLD/src/main/data/ThreeDTexture.x3d'/>
         <meta name='description' content='a kind of ThreeDTexture cube with spheres'/>      
       </head>
     <Scene>

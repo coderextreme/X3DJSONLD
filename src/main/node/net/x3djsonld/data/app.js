@@ -15,9 +15,13 @@ var autoclass = require('./X3Dautoclass');
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.app&nbsp; Document Metadata </td>
 		</tr>
 
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
+			<td> <a href="app.x3d">app.x3d</a> </td>
+		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
 			<td> Carlson, I </td>
@@ -63,6 +67,7 @@ app.prototype = {
   {
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
+    .addMeta((new autoclass.meta()).setName("title").setContent("app.x3d"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("Carlson, I"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("Carlson, II"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("Carlson, III")))

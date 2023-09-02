@@ -3041,8 +3041,9 @@ POSSIBILITY OF SUCH DAMAGE.
 				(contains($parentElementName,'Light') and $attributeName='color') or
 				($parentElementName='FillProperties' and ($attributeName='hatchColor')) or
 				(contains($parentElementName,'Fog') and $attributeName='color') or
-					(ends-with($parentElementName,'Material') and contains($attributeName,'Color')) or
-				($parentElementName='MultiTexture' and $attributeName='color')">
+				(ends-with($parentElementName,'Material') and contains($attributeName,'Color')) or
+				($parentElementName='MultiTexture' and $attributeName='color') or
+				(starts-with($parentElementName,'TextureProjector') and ($attributeName='color'))">
 		  <xsl:text>SFColor</xsl:text>
 	  </xsl:when>
 	  <!-- SFColorRGBA -->
@@ -3292,7 +3293,7 @@ POSSIBILITY OF SUCH DAMAGE.
 	  <!-- note TextureTransform tests must precede these default checks -->
 	  <xsl:when test="
 				($localFieldType='SFVec3f')    or 
-                ($attributeName='anchorPoint') or
+				($attributeName='anchorPoint') or
 				($attributeName='bboxCenter')  or
 				($attributeName='bboxSize')    or
 				($attributeName='center')      or
@@ -3322,7 +3323,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				($parentElementName='SliderJoint' and ($attributeName='axis')) or
 				($parentElementName='Sound' and ($attributeName='direction' or $attributeName='location')) or
 				($parentElementName='SpotLight' and ($attributeName='attenuation' or $attributeName='direction' or $attributeName='location')) or
-				(starts-with($parentElementName,'TextureProjector') and ($attributeName='direction' or $attributeName='location')) or
+				(starts-with($parentElementName,'TextureProjector') and ($attributeName='direction' or $attributeName='location' or $attributeName='upVector')) or
 				($parentElementName='Transform' and ($attributeName='center' or $attributeName='scale' or $attributeName='translation')) or
 				($parentElementName='TransformSensor' and ($attributeName='size')) or
 				($parentElementName='TransmitterPdu' and (ends-with($attributeName,'Location'))) or

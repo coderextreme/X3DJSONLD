@@ -72,7 +72,7 @@ var X3D0 =  new X3D({
 
             new Transform({
               translation : new SFVec3f([0,-0.5,0]),
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   geometry : new SFNode(
                     new Extrusion({
@@ -85,5 +85,5 @@ var X3D0 =  new X3D({
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor([0.8,0.3,0.3])}))}))})])})])}))});
+                          diffuseColor : new SFColor([0.8,0.3,0.3])}))}))}))})])}))});
 console.log(X3D0.toXMLNode());

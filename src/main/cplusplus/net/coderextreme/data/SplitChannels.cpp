@@ -116,7 +116,7 @@ CBox* Box24 = (CBox *)(m_pScene.createNode("Box"));
 Box24->setSize(new float[3]{10,80,0.01});
 Shape21->setGeometry(Box24);
 
-Transform20->addChildren(*Shape21);
+Transform20->addChild(*Shape21);
 
 Transform19->addChildren(*Transform20);
 
@@ -142,7 +142,7 @@ CBox* Box30 = (CBox *)(m_pScene.createNode("Box"));
 Box30->setSize(new float[3]{25,83,0.01});
 Shape26->setGeometry(Box30);
 
-Transform25->addChildren(*Shape26);
+Transform25->addChild(*Shape26);
 
 Transform19->addChildren(*Transform25);
 
@@ -171,7 +171,7 @@ Text35->setFontStyle(*FontStyle36);
 
 Shape32->setGeometry(Text35);
 
-Transform31->addChildren(*Shape32);
+Transform31->addChild(*Shape32);
 
 Transform19->addChildren(*Transform31);
 
@@ -198,7 +198,7 @@ CBox* Box42 = (CBox *)(m_pScene.createNode("Box"));
 Box42->setSize(new float[3]{10,80,0.01});
 Shape39->setGeometry(Box42);
 
-Transform38->addChildren(*Shape39);
+Transform38->addChild(*Shape39);
 
 Transform37->addChildren(*Transform38);
 
@@ -224,7 +224,7 @@ CBox* Box48 = (CBox *)(m_pScene.createNode("Box"));
 Box48->setSize(new float[3]{25,83,0.01});
 Shape44->setGeometry(Box48);
 
-Transform43->addChildren(*Shape44);
+Transform43->addChild(*Shape44);
 
 Transform37->addChildren(*Transform43);
 
@@ -253,7 +253,7 @@ Text53->setFontStyle(*FontStyle54);
 
 Shape50->setGeometry(Text53);
 
-Transform49->addChildren(*Shape50);
+Transform49->addChild(*Shape50);
 
 Transform37->addChildren(*Transform49);
 
@@ -275,7 +275,7 @@ CBox* Box59 = (CBox *)(m_pScene.createNode("Box"));
 Box59->setSize(new float[3]{1500,10,500});
 Shape56->setGeometry(Box59);
 
-Transform55->addChildren(*Shape56);
+Transform55->addChild(*Shape56);
 
 group->addChildren(*Transform55);
 
@@ -351,7 +351,7 @@ CBox* Box75 = (CBox *)(m_pScene.createNode("Box"));
 Box75->setSize(new float[3]{100,100,0.001});
 Shape71->setGeometry(Box75);
 
-Transform70->addChildren(*Shape71);
+Transform70->addChild(*Shape71);
 
 group->addChildren(*Transform70);
 

@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.0", 
-head=head(children=[component(name="Scripting", level=1),
+head=head(
+children=[
+component(name="Scripting", level=1),
 meta(name="title", content="flowers2.x3d"),
 meta(name="creator", content="John Carlson"),
 meta(name="transcriber", content="John Carlson"),
@@ -14,7 +17,7 @@ meta(name="description", content="2 random mathematical roses in spherical dimen
 meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"),
 meta(name="generator", content="manually written"),
 meta(name="license", content="https://www.web3d.org/x3d/content/examples/license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -72,5 +75,6 @@ ProtoInstance(name="orbit", fieldValue=[fieldValue(name="translation", value=[8,
 fieldValue(name="diffuseColor", value=[0,0.5,1]),
 fieldValue(name="specularColor", value=[0,0.5,1]),
 fieldValue(name="transparency", value=0.5)
-])])]))
-.XML())
+])])])))
+output = model.JSON()
+json.loads(output)

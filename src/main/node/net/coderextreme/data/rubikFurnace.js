@@ -28,7 +28,7 @@ var ProtoInstance9 = null;
         .addMeta((new autoclass.meta()).setName("title").setContent("rubikFurnace.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/rubikFurnace.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/rubikFurnace.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("a green rubik cube")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.NavigationInfo()).setType(java.newArray("java.lang.String", ["EXAMINE"])))
@@ -136,5 +136,5 @@ ProtoInstance9
               .setGeometry((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)])))
               .setAppearance((new autoclass.Appearance())
                 .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0)]))))));
-    X3D0.toFileX3D("../data/rubikFurnace.new.x3d");
+    X3D0.toFileX3D("../data/rubikFurnace.new.node.x3d");
     process.exit(0);

@@ -105,9 +105,9 @@ let Sphere24 = browser.currentScene.createNode("Sphere");
 Sphere24.radius = 5.10000002384186;
 Shape21.geometry = Sphere24;
 
-Transform20.children = new MFNode();
+Transform20.child = new undefined();
 
-Transform20.children[0] = Shape21;
+Transform20.child[0] = Shape21;
 
 Anchor19.children = new MFNode();
 
@@ -134,9 +134,9 @@ let Sphere30 = browser.currentScene.createNode("Sphere");
 Sphere30.radius = 5.10000002384186;
 Shape27.geometry = Sphere30;
 
-Transform26.children = new MFNode();
+Transform26.child = new undefined();
 
-Transform26.children[0] = Shape27;
+Transform26.child[0] = Shape27;
 
 Anchor25.children = new MFNode();
 
@@ -161,9 +161,9 @@ let Sphere36 = browser.currentScene.createNode("Sphere");
 Sphere36.radius = 5.10000002384186;
 Shape33.geometry = Sphere36;
 
-Transform32.children = new MFNode();
+Transform32.child = new undefined();
 
-Transform32.children[0] = Shape33;
+Transform32.child[0] = Shape33;
 
 Anchor31.children = new MFNode();
 
@@ -188,9 +188,9 @@ let Sphere42 = browser.currentScene.createNode("Sphere");
 Sphere42.radius = 5.10000002384186;
 Shape39.geometry = Sphere42;
 
-Transform38.children = new MFNode();
+Transform38.child = new undefined();
 
-Transform38.children[0] = Shape39;
+Transform38.child[0] = Shape39;
 
 Anchor37.children = new MFNode();
 
@@ -215,9 +215,9 @@ let Sphere48 = browser.currentScene.createNode("Sphere");
 Sphere48.radius = 5.10000002384186;
 Shape45.geometry = Sphere48;
 
-Transform44.children = new MFNode();
+Transform44.child = new undefined();
 
-Transform44.children[0] = Shape45;
+Transform44.child[0] = Shape45;
 
 Anchor43.children = new MFNode();
 
@@ -242,9 +242,9 @@ let Sphere54 = browser.currentScene.createNode("Sphere");
 Sphere54.radius = 5.10000002384186;
 Shape51.geometry = Sphere54;
 
-Transform50.children = new MFNode();
+Transform50.child = new undefined();
 
-Transform50.children[0] = Shape51;
+Transform50.child[0] = Shape51;
 
 Anchor49.children = new MFNode();
 
@@ -269,9 +269,9 @@ let Sphere60 = browser.currentScene.createNode("Sphere");
 Sphere60.radius = 5.10000002384186;
 Shape57.geometry = Sphere60;
 
-Transform56.children = new MFNode();
+Transform56.child = new undefined();
 
-Transform56.children[0] = Shape57;
+Transform56.child[0] = Shape57;
 
 Anchor55.children = new MFNode();
 
@@ -296,9 +296,9 @@ let Sphere66 = browser.currentScene.createNode("Sphere");
 Sphere66.radius = 5.10000002384186;
 Shape63.geometry = Sphere66;
 
-Transform62.children = new MFNode();
+Transform62.child = new undefined();
 
-Transform62.children[0] = Shape63;
+Transform62.child[0] = Shape63;
 
 Anchor61.children = new MFNode();
 
@@ -323,9 +323,9 @@ let Sphere72 = browser.currentScene.createNode("Sphere");
 Sphere72.radius = 5.10000002384186;
 Shape69.geometry = Sphere72;
 
-Transform68.children = new MFNode();
+Transform68.child = new undefined();
 
-Transform68.children[0] = Shape69;
+Transform68.child[0] = Shape69;
 
 Anchor67.children = new MFNode();
 
@@ -350,9 +350,9 @@ let Sphere78 = browser.currentScene.createNode("Sphere");
 Sphere78.radius = 5.10000002384186;
 Shape75.geometry = Sphere78;
 
-Transform74.children = new MFNode();
+Transform74.child = new undefined();
 
-Transform74.children[0] = Shape75;
+Transform74.child[0] = Shape75;
 
 Anchor73.children = new MFNode();
 
@@ -377,9 +377,9 @@ let Sphere84 = browser.currentScene.createNode("Sphere");
 Sphere84.radius = 5.10000002384186;
 Shape81.geometry = Sphere84;
 
-Transform80.children = new MFNode();
+Transform80.child = new undefined();
 
-Transform80.children[0] = Shape81;
+Transform80.child[0] = Shape81;
 
 Anchor79.children = new MFNode();
 
@@ -404,9 +404,9 @@ let Sphere90 = browser.currentScene.createNode("Sphere");
 Sphere90.radius = 5.10000002384186;
 Shape87.geometry = Sphere90;
 
-Transform86.children = new MFNode();
+Transform86.child = new undefined();
 
-Transform86.children[0] = Shape87;
+Transform86.child[0] = Shape87;
 
 Anchor85.children = new MFNode();
 
@@ -431,9 +431,9 @@ let Sphere96 = browser.currentScene.createNode("Sphere");
 Sphere96.radius = 5.10000002384186;
 Shape93.geometry = Sphere96;
 
-Transform92.children = new MFNode();
+Transform92.child = new undefined();
 
-Transform92.children[0] = Shape93;
+Transform92.child[0] = Shape93;
 
 Anchor91.children = new MFNode();
 
@@ -458,9 +458,9 @@ let Sphere102 = browser.currentScene.createNode("Sphere");
 Sphere102.radius = 5.10000002384186;
 Shape99.geometry = Sphere102;
 
-Transform98.children = new MFNode();
+Transform98.child = new undefined();
 
-Transform98.children[0] = Shape99;
+Transform98.child[0] = Shape99;
 
 Anchor97.children = new MFNode();
 
@@ -485,9 +485,9 @@ let Sphere108 = browser.currentScene.createNode("Sphere");
 Sphere108.radius = 5.10000002384186;
 Shape105.geometry = Sphere108;
 
-Transform104.children = new MFNode();
+Transform104.child = new undefined();
 
-Transform104.children[0] = Shape105;
+Transform104.child[0] = Shape105;
 
 Anchor103.children = new MFNode();
 

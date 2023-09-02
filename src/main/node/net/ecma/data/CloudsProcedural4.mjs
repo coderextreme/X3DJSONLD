@@ -117,7 +117,7 @@ var X3D0 =  new X3D({
                 new Transform({
                   rotation : new SFRotation([1,0,0,1.57]),
                   translation : new SFVec3f([25000,0,25000]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       geometry : new SFNode(
                         new Rectangle2D({
@@ -126,7 +126,7 @@ var X3D0 =  new X3D({
                         new Appearance({
                           texture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["ocean.png","https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png"])}))}))})])})])}),
+                              url : new MFString(["ocean.png","https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png"])}))}))}))})])}),
 
             new Group({
               DEF : new SFString("Placemarks"),

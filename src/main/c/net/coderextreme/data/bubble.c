@@ -29,7 +29,7 @@ head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
 meta6.name = "identifier";
-meta6.content = "https://coderextreme.net/X3DJSONLD/bubble.x3d";
+meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/data/bubble.x3d";
 head1.meta[4] = meta6;
 
 head = head1;
@@ -48,7 +48,7 @@ children[1] = Viewpoint9;
 
 ProtoDeclare ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="Bubble" ><ProtoBody><Transform DEF="transform"><Shape><Sphere containerField="geometry" radius="0.25"></Sphere>
+<ProtoDeclare name="Bubble" ><ProtoBody><Transform DEF="transform"><Shape><Sphere radius="0.25"></Sphere>
 <Appearance><Material diffuseColor="1 0 0" transparency="0.2"></Material>
 </Appearance>
 </Shape>
@@ -126,9 +126,9 @@ Appearance15.material = Material16;
 
 Shape13.appearance = Appearance15;
 
-Transform12.children = new MFNode();
+Transform12.child = new undefined();
 
-Transform12.children[0] = Shape13;
+Transform12.child[0] = Shape13;
 
 Script Script17 = createNode("Script");
 Script17.DEF = "bounce";

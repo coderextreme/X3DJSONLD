@@ -61,12 +61,12 @@ CProtoDeclare ProtoDeclare11 = browser.createX3DFromString(R"foo(<?xml version="
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="Process" ><ProtoBody><Group><!--left--><Transform scale="0.5 0.5 0.5"><Shape DEF="ShapeLeftDown"><Appearance><Material diffuseColor="0.7 1 0"></Material>
 </Appearance>
-<Extrusion containerField="geometry" spine="-2.5 0 0 -1.5 0 0" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0"></Extrusion>
+<Extrusion spine="-2.5 0 0 -1.5 0 0" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0"></Extrusion>
 </Shape>
 </Transform>
 <!--right--><Transform scale="0.5 0.5 0.5"><Shape DEF="ShapeUpRight"><Appearance><Material diffuseColor="0 0.7 1"></Material>
 </Appearance>
-<Extrusion containerField="geometry" spine="1.5 0 0 2.5 0 0" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0"></Extrusion>
+<Extrusion spine="1.5 0 0 2.5 0 0" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0"></Extrusion>
 </Shape>
 </Transform>
 <!--up--><Transform scale="0.5 0.5 0.5"><Shape USE="ShapeUpRight"></Shape>
@@ -97,7 +97,7 @@ Extrusion18->setCreaseAngle(0.785);
 Extrusion18->setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0});
 Shape15->setGeometry(Extrusion18);
 
-Transform14->addChildren(*Shape15);
+Transform14->addChild(*Shape15);
 
 Group13->addChildren(*Transform14);
 
@@ -119,7 +119,7 @@ Extrusion23->setCreaseAngle(0.785);
 Extrusion23->setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0});
 Shape20->setGeometry(Extrusion23);
 
-Transform19->addChildren(*Shape20);
+Transform19->addChild(*Shape20);
 
 Group13->addChildren(*Transform19);
 
@@ -128,7 +128,7 @@ CTransform* Transform24 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform24->setScale(new float[3]{0.5,0.5,0.5});
 CShape* Shape25 = (CShape *)(m_pScene.createNode("Shape"));
 Shape25->setUSE("ShapeUpRight");
-Transform24->addChildren(*Shape25);
+Transform24->addChild(*Shape25);
 
 Group13->addChildren(*Transform24);
 
@@ -137,7 +137,7 @@ CTransform* Transform26 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform26->setScale(new float[3]{0.5,0.5,0.5});
 CShape* Shape27 = (CShape *)(m_pScene.createNode("Shape"));
 Shape27->setUSE("ShapeLeftDown");
-Transform26->addChildren(*Shape27);
+Transform26->addChild(*Shape27);
 
 Group13->addChildren(*Transform26);
 

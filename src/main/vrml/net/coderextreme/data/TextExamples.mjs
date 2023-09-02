@@ -78,9 +78,9 @@ Appearance17.material = Material18;
 
 Shape14.appearance = Appearance17;
 
-Transform13.children = new MFNode();
+Transform13.child = new undefined();
 
-Transform13.children[0] = Shape14;
+Transform13.child[0] = Shape14;
 
 browser.currentScene.children = new MFNode();
 
@@ -101,9 +101,9 @@ let Appearance23 = browser.currentScene.createNode("Appearance");
 Appearance23.USE = "LightBlueAppearance";
 Shape20.appearance = Appearance23;
 
-Transform19.children = new MFNode();
+Transform19.child = new undefined();
 
-Transform19.children[0] = Shape20;
+Transform19.child[0] = Shape20;
 
 browser.currentScene.children[1] = Transform19;
 
@@ -122,9 +122,9 @@ let Appearance28 = browser.currentScene.createNode("Appearance");
 Appearance28.USE = "LightBlueAppearance";
 Shape25.appearance = Appearance28;
 
-Transform24.children = new MFNode();
+Transform24.child = new undefined();
 
-Transform24.children[0] = Shape25;
+Transform24.child[0] = Shape25;
 
 browser.currentScene.children[2] = Transform24;
 

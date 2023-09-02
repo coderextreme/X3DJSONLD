@@ -12,7 +12,7 @@
 <Viewpoint description="One mathematical orbital" position="0 0 50"></Viewpoint>
 <Transform DEF="OrbitTransform" translation="8 0 0"><Shape><Appearance><Material diffuseColor="0 0.5 1" specularColor="0 0.5 1"></Material>
 </Appearance>
-<IndexedFaceSet containerField="geometry" convex="false" DEF="Orbit"><Coordinate containerField="coord" DEF="OrbitCoordinates"></Coordinate>
+<IndexedFaceSet convex="false" DEF="Orbit"><Coordinate containerField="coord" DEF="OrbitCoordinates"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>

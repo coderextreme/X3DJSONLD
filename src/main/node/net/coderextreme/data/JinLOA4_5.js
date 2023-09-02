@@ -16,7 +16,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
       var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
       .setHead((new autoclass.head())
         .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
-        .addMeta((new autoclass.meta()).setName("title").setContent("JinLOA4.x3d"))
+        .addMeta((new autoclass.meta()).setName("title").setContent("JinLOA4_5.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("Jin Hoon Lee and Min Joo Lee"))
         .addMeta((new autoclass.meta()).setName("translator").setContent("Chul Hee Jung and Myeong Won Lee"))
         .addMeta((new autoclass.meta()).setName("created").setContent("31 March 2011"))
@@ -1796,5 +1796,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addSegments((new autoclass.HAnimSegment()).setUSE("hanim_r_trapezoid"))
           .addSegments((new autoclass.HAnimSegment()).setUSE("hanim_l_upperarm"))
           .addSegments((new autoclass.HAnimSegment()).setUSE("hanim_r_upperarm"))))      ;
-    X3D0.toFileX3D("../data/JinLOA4_5.new.x3d");
+    X3D0.toFileX3D("../data/JinLOA4_5.new.node.x3d");
     process.exit(0);

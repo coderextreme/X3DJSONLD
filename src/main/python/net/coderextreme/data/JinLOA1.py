@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="4.0", 
-head=head(children=[component(name="HAnim", level=1),
+head=head(
+children=[
+component(name="HAnim", level=1),
 meta(name="title", content="JinLOA1.x3d"),
 meta(name="creator", content="Jin Hoon Lee and Min Joo Lee"),
 meta(name="translator", content="Chul Hee Jung and Myeong Won Lee"),
@@ -22,7 +25,7 @@ meta(name="generator", content="Suwon HAnim Converter"),
 meta(name="generator", content="Gnu Image Manipulation Program, http://www.gimp.org"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -123,7 +126,6 @@ TextureCoordinate(point=[(0.3819,0.171),(0.4216,0.1651),(0.3819,0.171),(0.4216,0
 HAnimJoint(name="l_metatarsophalangeal_2", DEF="hanim_l_metatarsophalangeal_2", center=((3.854,3.64,0.7402)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_tarsal_proximal_phalanx_2", DEF="hanim_l_tarsal_proximal_phalanx_2", children=[
 Comment(value=''' TODO append _2 '''),
-
 Transform(translation=((3.854,3.64,0.7402)), children=[
 Shape(
 appearance=
@@ -189,7 +191,6 @@ TextureCoordinate(point=[(0.3819,0.171),(0.4216,0.1651),(0.3819,0.171),(0.4216,0
 HAnimJoint(name="r_metatarsophalangeal_2", DEF="hanim_r_metatarsophalangeal_2", center=((-3.854,3.64,0.7402)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_tarsal_proximal_phalanx_2", DEF="hanim_r_tarsal_proximal_phalanx_2", children=[
 Comment(value=''' TODO append _2 '''),
-
 Transform(translation=((-3.854,3.64,0.7402)), children=[
 Shape(
 appearance=
@@ -367,5 +368,6 @@ HAnimSegment(USE="hanim_r_tarsal_proximal_phalanx_2"),
 HAnimSegment(USE="hanim_l_thigh"),
 HAnimSegment(USE="hanim_r_thigh"),
 HAnimSegment(USE="hanim_l_upperarm"),
-HAnimSegment(USE="hanim_r_upperarm")])]))
-.XML())
+HAnimSegment(USE="hanim_r_upperarm")])])))
+output = model.JSON()
+json.loads(output)

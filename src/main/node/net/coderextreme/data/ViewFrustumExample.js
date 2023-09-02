@@ -70,5 +70,5 @@ ProtoInstance0
           .addFieldValue((new autoclass.fieldValue()).setName("transparency").setValue("0.75"));
 ProtoInstance0
           .addFieldValue((new autoclass.fieldValue()).setName("trace").setValue("true"));
-    X3D0.toFileX3D("../data/ViewFrustumExample.new.x3d");
+    X3D0.toFileX3D("../data/ViewFrustumExample.new.node.x3d");
     process.exit(0);

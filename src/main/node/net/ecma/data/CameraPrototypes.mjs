@@ -1949,7 +1949,7 @@ ecmascript:eval (0
               url : new MFString(["CameraExamples.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d","CameraExamples.wrl","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl"]),
               children : new MFNode([
                 new Transform({
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       geometry : new SFNode(
                         new Text({
@@ -1961,5 +1961,5 @@ ecmascript:eval (0
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor([1,1,0.2])}))}))})])})])})])}))});
+                              diffuseColor : new SFColor([1,1,0.2])}))}))}))})])})])}))});
 console.log(X3D0.toXMLNode());

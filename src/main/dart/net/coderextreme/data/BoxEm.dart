@@ -22,7 +22,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/box.x3d')),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/box.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -177,7 +177,7 @@ var X3D0 =  X3D(
 
             Transform(
               translation_ : SFVec3f([SFDouble(0), SFDouble(2), SFDouble(0)]),
-              children_ : [
+              child_ : 
                 Shape(
-                  USE_ : SFString('box'))])]));
+                  USE_ : SFString('box')))]));
 void main() { exit(0); }

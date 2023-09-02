@@ -72,9 +72,9 @@ IndexedFaceSet16.coord = Coordinate17;
 
 Shape13.geometry = IndexedFaceSet16;
 
-Transform12.children = new MFNode();
+Transform12.child = new undefined();
 
-Transform12.children[0] = Shape13;
+Transform12.child[0] = Shape13;
 
 browser.currentScene.children[4] = Transform12;
 

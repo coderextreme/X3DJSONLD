@@ -24,7 +24,7 @@ head1.meta[2] = meta4;
 
 meta meta5 = createNode("meta");
 meta5.name = "identifier";
-meta5.content = "https://coderextreme.net/X3DJSONLD/rubikFurnace.x3d";
+meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/data/rubikFurnace.x3d";
 head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
@@ -48,7 +48,7 @@ children[1] = Viewpoint9;
 ProtoDeclare ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="anyShape" ><ProtoInterface><field name="xtranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere containerField="geometry"></Sphere>
+<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere></Sphere>
 <Appearance><Material diffuseColor="1 1 1"></Material>
 </Appearance>
 </Shape>
@@ -122,7 +122,7 @@ children[2] = ProtoDeclare10;
 ProtoDeclare ProtoDeclare23 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="three" ><ProtoInterface><field name="ytranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere containerField="geometry"></Sphere>
+<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere></Sphere>
 <Appearance><Material diffuseColor="1 1 1"></Material>
 </Appearance>
 </Shape>
@@ -267,7 +267,7 @@ children[3] = ProtoDeclare23;
 ProtoDeclare ProtoDeclare47 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="nine" ><ProtoInterface><field name="ztranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere containerField="geometry"></Sphere>
+<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere></Sphere>
 <Appearance><Material diffuseColor="1 1 1"></Material>
 </Appearance>
 </Shape>
@@ -412,7 +412,7 @@ children[4] = ProtoDeclare47;
 ProtoDeclare ProtoDeclare71 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="twentyseven" ><ProtoInterface><field name="ttranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere containerField="geometry"></Sphere>
+<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere></Sphere>
 <Appearance><Material diffuseColor="1 1 1"></Material>
 </Appearance>
 </Shape>

@@ -86,7 +86,7 @@ var X3D0 =  X3D(
                             connect(
                               nodeField_ : SFString('translation'),
                               protoField_ : SFString('posi'))]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
@@ -101,7 +101,7 @@ var X3D0 =  X3D(
                                           protoField_ : SFString('col'))]))),
                           geometry_ : 
                             Sphere(
-                              radius_ : 5.10000002384186))])])),
+                              radius_ : 5.10000002384186)))])),
 
             ProtoDeclare(
               name_ : SFString('r'),

@@ -347,7 +347,7 @@ Text65->setFontStyle(*FontStyle69);
 
 Shape62->setGeometry(Text65);
 
-Transform61->addChildren(*Shape62);
+Transform61->addChild(*Shape62);
 
 CCollision* Collision70 = (CCollision *)(m_pScene.createNode("Collision"));
 //test containerField='proxy'
@@ -845,7 +845,7 @@ CMetadataString* MetadataString144 = (CMetadataString *)(m_pScene.createNode("Me
 MetadataString144->setName("findThisNameValue");
 MetadataString144->setDEF("FindableMetadataStringTest");
 MetadataString144->setValue(new CString[1]{"test case"}, 1);
-Shape143->setValue(*MetadataString144);
+Shape143->setMetadata(*MetadataString144);
 
 CAppearance* Appearance145 = (CAppearance *)(m_pScene.createNode("Appearance"));
 Appearance145->setDEF("DeclarativeAppearanceExample");

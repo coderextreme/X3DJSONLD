@@ -52,7 +52,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/convertStlToJson.js")}),
+              content : new SFString("convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/src/main/node/convertStlToJson.js")}),
 
             new meta({
               name : new SFString("license"),

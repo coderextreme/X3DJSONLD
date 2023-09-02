@@ -211,7 +211,7 @@ var X3D0 =  X3D(
 
             Transform(
               translation_ : SFVec3f([SFDouble(0), SFDouble(-2.5), SFDouble(0)]),
-              children_ : [
+              child_ : 
                 Shape(
                   appearance_ : 
                     Appearance(
@@ -228,7 +228,7 @@ var X3D0 =  X3D(
                       fontStyle_ : 
                         FontStyle(
                           justify_ : MFString([SFString("MIDDLE"), SFString("MIDDLE")]),
-                          size_ : 0.6)))]),
+                          size_ : 0.6)))),
 
             ProtoInstance(
               name_ : SFString('ViewPositionOrientation'),

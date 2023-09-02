@@ -64,7 +64,7 @@ CProtoDeclare ProtoDeclare10 = browser.createX3DFromString(R"foo(<?xml version="
 </ProtoInterface>
 <ProtoBody><Transform><Shape><Appearance><Material transparency="0.20000000298023224" diffuseColor="0.5 0 1"></Material>
 </Appearance>
-<IndexedFaceSet containerField="geometry" coordIndex="0 1 4 -1 1 2 4 -1 2 3 4 -1 3 0 4 -1 0 3 2 1 -1"><Coordinate containerField="coord" point="-0.3499999940395355 -0.3499999940395355 0.3499999940395355 0.3499999940395355 -0.3499999940395355 0.3499999940395355 0.3499999940395355 -0.3499999940395355 -0.3499999940395355 -0.3499999940395355 -0.3499999940395355 -0.3499999940395355 0 0.3499999940395355 0"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 4 -1 1 2 4 -1 2 3 4 -1 3 0 4 -1 0 3 2 1 -1"><Coordinate containerField="coord" point="-0.3499999940395355 -0.3499999940395355 0.3499999940395355 0.3499999940395355 -0.3499999940395355 0.3499999940395355 0.3499999940395355 -0.3499999940395355 -0.3499999940395355 -0.3499999940395355 -0.3499999940395355 -0.3499999940395355 0 0.3499999940395355 0"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 <IS><connect nodeField="translation" protoField="pos"></connect>
@@ -102,7 +102,7 @@ IndexedFaceSet18->setCoord(*Coordinate19);
 
 Shape15->setGeometry(IndexedFaceSet18);
 
-Transform14->addChildren(*Shape15);
+Transform14->addChild(*Shape15);
 
 CIS* IS20 = new CIS();
 Cconnect* connect21 = new Cconnect();
@@ -124,7 +124,7 @@ CProtoDeclare ProtoDeclare22 = browser.createX3DFromString(R"foo(<?xml version="
 </ProtoInterface>
 <ProtoBody><Transform><Shape><Appearance><Material transparency="0.20000000298023224" diffuseColor="1 1 0"></Material>
 </Appearance>
-<Box containerField="geometry" size="0.699999988079071 0.699999988079071 0.699999988079071"></Box>
+<Box size="0.699999988079071 0.699999988079071 0.699999988079071"></Box>
 </Shape>
 <IS><connect nodeField="translation" protoField="pos"></connect>
 </IS>
@@ -157,7 +157,7 @@ CBox* Box30 = (CBox *)(m_pScene.createNode("Box"));
 Box30->setSize(new float[3]{0.699999988079071,0.699999988079071,0.699999988079071});
 Shape27->setGeometry(Box30);
 
-Transform26->addChildren(*Shape27);
+Transform26->addChild(*Shape27);
 
 CIS* IS31 = new CIS();
 Cconnect* connect32 = new Cconnect();
@@ -179,7 +179,7 @@ CProtoDeclare ProtoDeclare33 = browser.createX3DFromString(R"foo(<?xml version="
 </ProtoInterface>
 <ProtoBody><Transform><Shape><Appearance><Material diffuseColor="1 1 0"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="0.699999988079071"></Sphere>
+<Sphere radius="0.699999988079071"></Sphere>
 </Shape>
 <IS><connect nodeField="translation" protoField="pos"></connect>
 </IS>
@@ -211,7 +211,7 @@ CSphere* Sphere41 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere41->setRadius(0.699999988079071);
 Shape38->setGeometry(Sphere41);
 
-Transform37->addChildren(*Shape38);
+Transform37->addChild(*Shape38);
 
 CIS* IS42 = new CIS();
 Cconnect* connect43 = new Cconnect();
@@ -236,7 +236,7 @@ CProtoDeclare ProtoDeclare44 = browser.createX3DFromString(R"foo(<?xml version="
 </IS>
 </Material>
 </Appearance>
-<Sphere containerField="geometry" radius="1.100000023841858"></Sphere>
+<Sphere radius="1.100000023841858"></Sphere>
 </Shape>
 <IS><connect nodeField="translation" protoField="posi"></connect>
 </IS>
@@ -283,7 +283,7 @@ CSphere* Sphere55 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere55->setRadius(1.100000023841858);
 Shape50->setGeometry(Sphere55);
 
-Transform49->addChildren(*Shape50);
+Transform49->addChild(*Shape50);
 
 CIS* IS56 = new CIS();
 Cconnect* connect57 = new Cconnect();
@@ -1222,7 +1222,7 @@ IndexedLineSet251->setCoord(*Coordinate252);
 
 Shape248->setGeometry(IndexedLineSet251);
 
-Transform90->addChildren(*Shape248);
+Transform90->addChild(*Shape248);
 
 CShape* Shape253 = (CShape *)(m_pScene.createNode("Shape"));
 CAppearance* Appearance254 = (CAppearance *)(m_pScene.createNode("Appearance"));
@@ -1241,7 +1241,7 @@ IndexedLineSet256->setCoord(*Coordinate257);
 
 Shape253->setGeometry(IndexedLineSet256);
 
-Transform90->addChildren(*Shape253);
+Transform90->addChild(*Shape253);
 
 CShape* Shape258 = (CShape *)(m_pScene.createNode("Shape"));
 CAppearance* Appearance259 = (CAppearance *)(m_pScene.createNode("Appearance"));
@@ -1260,7 +1260,7 @@ IndexedLineSet261->setCoord(*Coordinate262);
 
 Shape258->setGeometry(IndexedLineSet261);
 
-Transform90->addChildren(*Shape258);
+Transform90->addChild(*Shape258);
 
 group->addChildren(*Transform90);
 

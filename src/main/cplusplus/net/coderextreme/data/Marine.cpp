@@ -128,7 +128,7 @@ IndexedFaceSet26->setTexCoord(*TextureCoordinate28);
 
 Shape22->setGeometry(IndexedFaceSet26);
 
-Transform21->addChildren(*Shape22);
+Transform21->addChild(*Shape22);
 
 Group20->addChildren(*Transform21);
 
@@ -168,7 +168,7 @@ IndexedFaceSet34->setTexCoord(*TextureCoordinate36);
 
 Shape30->setGeometry(IndexedFaceSet34);
 
-Transform29->addChildren(*Shape30);
+Transform29->addChild(*Shape30);
 
 Group20->addChildren(*Transform29);
 
@@ -208,7 +208,7 @@ IndexedFaceSet42->setTexCoord(*TextureCoordinate44);
 
 Shape38->setGeometry(IndexedFaceSet42);
 
-Transform37->addChildren(*Shape38);
+Transform37->addChild(*Shape38);
 
 Group20->addChildren(*Transform37);
 

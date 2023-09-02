@@ -17,7 +17,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
       .setHead((new autoclass.head())
         .addComponent((new autoclass.component()).setName("HAnim").setLevel(1)))
       .setScene((new autoclass.Scene())
-        .addChild((new autoclass.WorldInfo()).setTitle("JinLOA4.x3d"))
+        .addChild((new autoclass.WorldInfo()).setTitle("JinLOA4Canonical101.x3d"))
         .addChild((new autoclass.NavigationInfo()).setSpeed(java.newFloat(1.5)))
         .addChild((new autoclass.Viewpoint()).setCenterOfRotation(java.newArray("float", [java.newFloat(-0.0002), java.newFloat(0.0139), java.newFloat(-0.1019)])).setDescription("JinLOA4").setPosition(java.newArray("float", [java.newFloat(-0.0002), java.newFloat(0.0139), java.newFloat(-0.0344)])))
         .addChild((new autoclass.Transform()).setDEF("cordsysfloor").setScale(java.newArray("float", [java.newFloat(0.175), java.newFloat(0.175), java.newFloat(0.175)]))
@@ -1775,5 +1775,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addSegments((new autoclass.HAnimSegment()).setUSE("hanim_r_trapezoid"))
           .addSegments((new autoclass.HAnimSegment()).setUSE("hanim_l_upperarm"))
           .addSegments((new autoclass.HAnimSegment()).setUSE("hanim_r_upperarm"))))      ;
-    X3D0.toFileX3D("../data/JinLOA4Canonical101.new.x3d");
+    X3D0.toFileX3D("../data/JinLOA4Canonical101.new.node.x3d");
     process.exit(0);

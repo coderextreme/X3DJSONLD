@@ -163,7 +163,7 @@ SplitChannels.prototype = {
             .addChild((new autoclass.Gain()).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")))
           .addChild((new autoclass.ChannelSelector()).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS").setChannelSelection(1).setId("ChannelSelector1")
             .addChild((new autoclass.Gain()).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS"))))))
-    .addChild((new autoclass.ChannelSplitter("ChannelSplitter")).setChannelCountMode("explicit").setChannelInterpretation("SPEAKERS")
+    .addChild((new autoclass.ChannelSplitter("ChannelSplitter")).setChannelCountMode("EXPLICIT").setChannelInterpretation("SPEAKERS")
       .addChild((new autoclass.AudioClip()).setDescription("Violin").setUrl(new autoclass.MFString("\"sound/violin.mp3\" \"https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3\""))))
     .addChild((new autoclass.Transform("Audio3")).setRotation(1.0,0.0,0.0,-0.5).setTranslation(0.0,100.0,0.0)
       .addChild((new autoclass.Shape())

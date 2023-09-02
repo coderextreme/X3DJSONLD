@@ -30,7 +30,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/convertStlToJson.js')),
+              content_ : SFString('convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/src/main/node/convertStlToJson.js')),
 
             meta(
               name_ : SFString('license'),

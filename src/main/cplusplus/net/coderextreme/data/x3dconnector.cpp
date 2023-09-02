@@ -31,7 +31,7 @@ head1->addMeta(*meta4);
 
 Cmeta* meta5 = new Cmeta();
 meta5->setName("identifier");
-meta5->setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d");
+meta5->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d");
 head1->addMeta(*meta5);
 
 Cmeta* meta6 = new Cmeta();
@@ -65,7 +65,7 @@ CSphere* Sphere14 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere14->setRadius(0.1);
 Shape11->setGeometry(Sphere14);
 
-Transform10->addChildren(*Shape11);
+Transform10->addChild(*Shape11);
 
 CPlaneSensor* PlaneSensor15 = (CPlaneSensor *)(m_pScene.createNode("PlaneSensor"));
 PlaneSensor15->setDescription("Grab to move");
@@ -96,7 +96,7 @@ CSphere* Sphere21 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere21->setRadius(0.1);
 Shape18->setGeometry(Sphere21);
 
-Transform17->addChildren(*Shape18);
+Transform17->addChild(*Shape18);
 
 CPlaneSensor* PlaneSensor22 = (CPlaneSensor *)(m_pScene.createNode("PlaneSensor"));
 PlaneSensor22->setDescription("Grab to move");
@@ -130,7 +130,7 @@ CCylinder* Cylinder29 = (CCylinder *)(m_pScene.createNode("Cylinder"));
 Cylinder29->setRadius(0.05);
 Shape26->setGeometry(Cylinder29);
 
-Transform25->addChildren(*Shape26);
+Transform25->addChild(*Shape26);
 
 Transform24->addChildren(*Transform25);
 

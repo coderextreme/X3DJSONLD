@@ -21,12 +21,12 @@ head1->addComponent(*component2);
 
 Cmeta* meta3 = new Cmeta();
 meta3->setName("title");
-meta3->setContent("JohnBoy.x3d");
+meta3->setContent("skeleton.x3d");
 head1->addMeta(*meta3);
 
 Cmeta* meta4 = new Cmeta();
 meta4->setName("identifier");
-meta4->setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d");
+meta4->setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/skeleton.x3d");
 head1->addMeta(*meta4);
 
 Cmeta* meta5 = new Cmeta();
@@ -63,7 +63,7 @@ group->addChildren(*NavigationInfo11);
 
 CViewpoint* Viewpoint12 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
 Viewpoint12->setCenterOfRotation(new float[3]{0,1,0});
-Viewpoint12->setDescription("JohnBoy");
+Viewpoint12->setDescription("skeleton");
 Viewpoint12->setPosition(new float[3]{0,1,3});
 group->addChildren(*Viewpoint12);
 

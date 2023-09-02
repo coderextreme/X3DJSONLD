@@ -109,7 +109,7 @@ IndexedFaceSet20->setCoord(*Coordinate21);
 
 Shape17->setGeometry(IndexedFaceSet20);
 
-Transform16->addChildren(*Shape17);
+Transform16->addChild(*Shape17);
 
 group->addChildren(*Transform16);
 

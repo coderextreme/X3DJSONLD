@@ -22,7 +22,7 @@ head1.meta[2] = meta4;
 
 let meta5 = browser.currentScene.createNode("meta");
 meta5.name = "identifier";
-meta5.content = "https://coderextreme.net/X3DJSONLD/rubikOnFire.x3d";
+meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/data/rubikOnFire.x3d";
 head1.meta[3] = meta5;
 
 let meta6 = browser.currentScene.createNode("meta");
@@ -113,9 +113,9 @@ Appearance22.material = Material23;
 
 Shape19.appearance = Appearance22;
 
-Transform16.children = new MFNode();
+Transform16.child = new undefined();
 
-Transform16.children[0] = Shape19;
+Transform16.child[0] = Shape19;
 
 ProtoBody15.children = new MFNode();
 

@@ -32,6 +32,7 @@ var SFColor = require('./x3d.mjs');
 var LineSet = require('./x3d.mjs');
 var ColorRGBA = require('./x3d.mjs');
 var MFColorRGBA = require('./x3d.mjs');
+var IndexedFaceSet = require('./x3d.mjs');
 var NavigationInfo = require('./x3d.mjs');
 var Viewpoint = require('./x3d.mjs');
 var HAnimHumanoid = require('./x3d.mjs');
@@ -53,11 +54,11 @@ var X3D0 =  new X3D({
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
-              content : new SFString("JohnBoy.x3d")}),
+              content : new SFString("JohnJoint3.x3d")}),
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d")}),
+              content : new SFString("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint3.x3d")}),
 
             new meta({
               name : new SFString("description"),
@@ -87,7 +88,7 @@ var X3D0 =  new X3D({
           children : new MFNode([
             new Transform({
               /*DEF for markerfor XYZ axes*/
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   DEF : new SFString("AxisLinesShape"),
                   /*RGB lines showing XYZ axes*/
@@ -101,7 +102,7 @@ var X3D0 =  new X3D({
                           point : new MFVec3f([0,0,0,0.1,0,0,0,0.1,0,0,0,0.1])})),
                       color : new SFNode(
                         new Color({
-                          color : new MFColor([1,0,0,0,0.6,0,0,0,1])}))}))})])}),
+                          color : new MFColor([1,0,0,0,0.6,0,0,0,1])}))}))}))}),
 
             new Group({
               /*DEFS for markers of skeleton joints, segments, and sites*/
@@ -111,7 +112,7 @@ var X3D0 =  new X3D({
                   children : new MFNode([
                     new Transform({
                       translation : new SFVec3f([0,2.1,0]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           DEF : new SFString("HAnimJointShape"),
                           geometry : new SFNode(
@@ -123,11 +124,11 @@ var X3D0 =  new X3D({
                                 new Material({
                                   DEF : new SFString("HAnimJointMaterial"),
                                   diffuseColor : new SFColor([0,0,0.8]),
-                                  transparency : new SFFloat(0.3)}))}))})])}),
+                                  transparency : new SFFloat(0.3)}))}))}))}),
 
                     new Transform({
                       translation : new SFVec3f([0,2.05,0]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           DEF : new SFString("HAnimSegmentLine"),
                           geometry : new SFNode(
@@ -139,8 +140,32 @@ var X3D0 =  new X3D({
                                   color : new MFColorRGBA([1,1,0,1,1,1,0,0.1])})),
                               coord : new SFNode(
                                 new Coordinate({
-                                  point : new MFVec3f([-0.05,0,0,0.05,0,0])}))}))})])}),
-                  /*<Transform translation='0 2.1 0' scale='1 1 1'> <Shape DEF='HAnimSiteShape'> <IndexedFaceSet DEF='DiamondIFS' creaseAngle='0.5' solid='false' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1'> <ColorRGBA DEF='HAnimSiteColorRGBA' color='1 1 0 1 1 1 0 0.1'/> <Coordinate point='0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0'/> </IndexedFaceSet> <Appearance> <Material diffuseColor='1 1 0' transparency='0.3'/> </Appearance> </Shape> </Transform>*/])})])}),
+                                  point : new MFVec3f([-0.05,0,0,0.05,0,0])}))}))}))}),
+
+                    new Transform({
+                      translation : new SFVec3f([0,2.1,0]),
+                      child : new SFNode(
+                        new Shape({
+                          DEF : new SFString("HAnimSiteShape"),
+                          geometry : new SFNode(
+                            new IndexedFaceSet({
+                              DEF : new SFString("DiamondIFS"),
+                              creaseAngle : new SFFloat(0.5),
+                              solid : new SFBool(false),
+                              coordIndex : new MFInt32([0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1]),
+                              color : new SFNode(
+                                new ColorRGBA({
+                                  DEF : new SFString("HAnimSiteColorRGBA"),
+                                  color : new MFColorRGBA([1,1,0,1,1,1,0,0.1])})),
+                              coord : new SFNode(
+                                new Coordinate({
+                                  point : new MFVec3f([0,0.01,0,-0.01,0,0,0,0,0.01,0.01,0,0,0,0,-0.01,0,-0.01,0])}))})),
+                          appearance : new SFNode(
+                            new Appearance({
+                              material : new SFNode(
+                                new Material({
+                                  diffuseColor : new SFColor([1,1,0]),
+                                  transparency : new SFFloat(0.3)}))}))}))})])})])}),
 
             new NavigationInfo({
               speed : new SFFloat(1.5)}),
@@ -160,7 +185,7 @@ var X3D0 =  new X3D({
                   center : new SFVec3f([0,0.824,0.0277]),
                   ulimit : new MFFloat([0,0,0]),
                   llimit : new MFFloat([0,0,0]),
-                  shape : new SFNode(
+                  child : new SFNode(
                     new Shape({
                       geometry : new SFNode(
                         new LineSet({
@@ -172,7 +197,7 @@ var X3D0 =  new X3D({
                           color : new SFNode(
                             new ColorRGBA({
                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                  hAnimSite : new SFNode(
+                  child : new SFNode(
                     new HAnimSite({
                       name : new SFString("buttocks_standing_wall_contact_point_pt"),
                       DEF : new SFString("hanim_buttocks_standing_wall_contact_point_pt"),
@@ -183,7 +208,7 @@ var X3D0 =  new X3D({
 
                         new Shape({
                           USE : new SFString("HAnimSiteShape")})])})),
-                  hAnimSite : new SFNode(
+                  child : new SFNode(
                     new HAnimSite({
                       name : new SFString("crotch_pt"),
                       DEF : new SFString("hanim_crotch_pt"),
@@ -194,7 +219,7 @@ var X3D0 =  new X3D({
 
                         new Shape({
                           USE : new SFString("HAnimSiteShape")})])})),
-                  hAnimSite : new SFNode(
+                  child : new SFNode(
                     new HAnimSite({
                       name : new SFString("l_asis_pt"),
                       DEF : new SFString("hanim_l_asis_pt"),
@@ -205,7 +230,7 @@ var X3D0 =  new X3D({
 
                         new Shape({
                           USE : new SFString("HAnimSiteShape")})])})),
-                  hAnimSite : new SFNode(
+                  child : new SFNode(
                     new HAnimSite({
                       name : new SFString("l_iliocristale_pt"),
                       DEF : new SFString("hanim_l_iliocristale_pt"),
@@ -216,7 +241,7 @@ var X3D0 =  new X3D({
 
                         new Shape({
                           USE : new SFString("HAnimSiteShape")})])})),
-                  hAnimSite : new SFNode(
+                  child : new SFNode(
                     new HAnimSite({
                       name : new SFString("l_psis_pt"),
                       DEF : new SFString("hanim_l_psis_pt"),
@@ -227,7 +252,7 @@ var X3D0 =  new X3D({
 
                         new Shape({
                           USE : new SFString("HAnimSiteShape")})])})),
-                  hAnimSite : new SFNode(
+                  child : new SFNode(
                     new HAnimSite({
                       name : new SFString("l_trochanterion_pt"),
                       DEF : new SFString("hanim_l_trochanterion_pt"),
@@ -238,7 +263,7 @@ var X3D0 =  new X3D({
 
                         new Shape({
                           USE : new SFString("HAnimSiteShape")})])})),
-                  hAnimSite : new SFNode(
+                  child : new SFNode(
                     new HAnimSite({
                       name : new SFString("r_asis_pt"),
                       DEF : new SFString("hanim_r_asis_pt"),
@@ -249,7 +274,7 @@ var X3D0 =  new X3D({
 
                         new Shape({
                           USE : new SFString("HAnimSiteShape")})])})),
-                  hAnimSite : new SFNode(
+                  child : new SFNode(
                     new HAnimSite({
                       name : new SFString("r_iliocristale_pt"),
                       DEF : new SFString("hanim_r_iliocristale_pt"),
@@ -260,7 +285,7 @@ var X3D0 =  new X3D({
 
                         new Shape({
                           USE : new SFString("HAnimSiteShape")})])})),
-                  hAnimSite : new SFNode(
+                  child : new SFNode(
                     new HAnimSite({
                       name : new SFString("r_psis_pt"),
                       DEF : new SFString("hanim_r_psis_pt"),
@@ -271,7 +296,7 @@ var X3D0 =  new X3D({
 
                         new Shape({
                           USE : new SFString("HAnimSiteShape")})])})),
-                  hAnimSite : new SFNode(
+                  child : new SFNode(
                     new HAnimSite({
                       name : new SFString("r_trochanterion_pt"),
                       DEF : new SFString("hanim_r_trochanterion_pt"),
@@ -282,7 +307,7 @@ var X3D0 =  new X3D({
 
                         new Shape({
                           USE : new SFString("HAnimSiteShape")})])})),
-                  shape : new SFNode(
+                  child : new SFNode(
                     new Shape({
                       geometry : new SFNode(
                         new LineSet({
@@ -294,7 +319,7 @@ var X3D0 =  new X3D({
                           color : new SFNode(
                             new ColorRGBA({
                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                  hAnimSite : new SFNode(
+                  child : new SFNode(
                     new HAnimSite({
                       name : new SFString("navel_pt"),
                       DEF : new SFString("hanim_navel_pt"),
@@ -305,7 +330,7 @@ var X3D0 =  new X3D({
 
                         new Shape({
                           USE : new SFString("HAnimSiteShape")})])})),
-                  hAnimSite : new SFNode(
+                  child : new SFNode(
                     new HAnimSite({
                       name : new SFString("waist_preferred_anterior_pt"),
                       DEF : new SFString("hanim_waist_preferred_anterior_pt"),
@@ -316,7 +341,7 @@ var X3D0 =  new X3D({
 
                         new Shape({
                           USE : new SFString("HAnimSiteShape")})])})),
-                  hAnimSite : new SFNode(
+                  child : new SFNode(
                     new HAnimSite({
                       name : new SFString("waist_preferred_posterior_pt"),
                       DEF : new SFString("hanim_waist_preferred_posterior_pt"),
@@ -334,7 +359,7 @@ var X3D0 =  new X3D({
                       center : new SFVec3f([0,0.9149,0.0016]),
                       ulimit : new MFFloat([0,0,0]),
                       llimit : new MFFloat([0,0,0]),
-                      shape : new SFNode(
+                      child : new SFNode(
                         new Shape({
                           geometry : new SFNode(
                             new LineSet({
@@ -346,7 +371,7 @@ var X3D0 =  new X3D({
                               color : new SFNode(
                                 new ColorRGBA({
                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                      hAnimSite : new SFNode(
+                      child : new SFNode(
                         new HAnimSite({
                           name : new SFString("l_femoral_lateral_epicondyles_pt"),
                           DEF : new SFString("hanim_l_femoral_lateral_epicondyles_pt"),
@@ -357,7 +382,7 @@ var X3D0 =  new X3D({
 
                             new Shape({
                               USE : new SFString("HAnimSiteShape")})])})),
-                      hAnimSite : new SFNode(
+                      child : new SFNode(
                         new HAnimSite({
                           name : new SFString("l_femoral_medial_epicondyles_pt"),
                           DEF : new SFString("hanim_l_femoral_medial_epicondyles_pt"),
@@ -368,7 +393,7 @@ var X3D0 =  new X3D({
 
                             new Shape({
                               USE : new SFString("HAnimSiteShape")})])})),
-                      hAnimSite : new SFNode(
+                      child : new SFNode(
                         new HAnimSite({
                           name : new SFString("l_knee_crease_pt"),
                           DEF : new SFString("hanim_l_knee_crease_pt"),
@@ -379,7 +404,7 @@ var X3D0 =  new X3D({
 
                             new Shape({
                               USE : new SFString("HAnimSiteShape")})])})),
-                      hAnimSite : new SFNode(
+                      child : new SFNode(
                         new HAnimSite({
                           name : new SFString("l_suprapatella_pt"),
                           DEF : new SFString("hanim_l_suprapatella_pt"),
@@ -390,7 +415,7 @@ var X3D0 =  new X3D({
 
                             new Shape({
                               USE : new SFString("HAnimSiteShape")})])})),
-                      shape : new SFNode(
+                      child : new SFNode(
                         new Shape({
                           geometry : new SFNode(
                             new LineSet({
@@ -402,7 +427,7 @@ var X3D0 =  new X3D({
                               color : new SFNode(
                                 new ColorRGBA({
                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                      hAnimSite : new SFNode(
+                      child : new SFNode(
                         new HAnimSite({
                           name : new SFString("r_femoral_lateral_epicondyles_pt"),
                           DEF : new SFString("hanim_r_femoral_lateral_epicondyles_pt"),
@@ -413,7 +438,7 @@ var X3D0 =  new X3D({
 
                             new Shape({
                               USE : new SFString("HAnimSiteShape")})])})),
-                      hAnimSite : new SFNode(
+                      child : new SFNode(
                         new HAnimSite({
                           name : new SFString("r_femoral_medial_epicondyles_pt"),
                           DEF : new SFString("hanim_r_femoral_medial_epicondyles_pt"),
@@ -424,7 +449,7 @@ var X3D0 =  new X3D({
 
                             new Shape({
                               USE : new SFString("HAnimSiteShape")})])})),
-                      hAnimSite : new SFNode(
+                      child : new SFNode(
                         new HAnimSite({
                           name : new SFString("r_knee_crease_pt"),
                           DEF : new SFString("hanim_r_knee_crease_pt"),
@@ -435,7 +460,7 @@ var X3D0 =  new X3D({
 
                             new Shape({
                               USE : new SFString("HAnimSiteShape")})])})),
-                      hAnimSite : new SFNode(
+                      child : new SFNode(
                         new HAnimSite({
                           name : new SFString("r_suprapatella_pt"),
                           DEF : new SFString("hanim_r_suprapatella_pt"),
@@ -453,7 +478,7 @@ var X3D0 =  new X3D({
                           center : new SFVec3f([0.0961,0.9124,-0.0001]),
                           ulimit : new MFFloat([0,0,0]),
                           llimit : new MFFloat([0,0,0]),
-                          shape : new SFNode(
+                          child : new SFNode(
                             new Shape({
                               geometry : new SFNode(
                                 new LineSet({
@@ -465,7 +490,7 @@ var X3D0 =  new X3D({
                                   color : new SFNode(
                                     new ColorRGBA({
                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                          hAnimSite : new SFNode(
+                          child : new SFNode(
                             new HAnimSite({
                               name : new SFString("l_lateral_malleolus_pt"),
                               DEF : new SFString("hanim_l_lateral_malleolus_pt"),
@@ -476,7 +501,7 @@ var X3D0 =  new X3D({
 
                                 new Shape({
                                   USE : new SFString("HAnimSiteShape")})])})),
-                          hAnimSite : new SFNode(
+                          child : new SFNode(
                             new HAnimSite({
                               name : new SFString("l_medial_malleolus_pt"),
                               DEF : new SFString("hanim_l_medial_malleolus_pt"),
@@ -487,7 +512,7 @@ var X3D0 =  new X3D({
 
                                 new Shape({
                                   USE : new SFString("HAnimSiteShape")})])})),
-                          hAnimSite : new SFNode(
+                          child : new SFNode(
                             new HAnimSite({
                               name : new SFString("l_tibiale_pt"),
                               DEF : new SFString("hanim_l_tibiale_pt"),
@@ -505,7 +530,7 @@ var X3D0 =  new X3D({
                               center : new SFVec3f([0.104,0.4867,0.0308]),
                               ulimit : new MFFloat([0,0,0]),
                               llimit : new MFFloat([0,0,0]),
-                              shape : new SFNode(
+                              child : new SFNode(
                                 new Shape({
                                   geometry : new SFNode(
                                     new LineSet({
@@ -517,7 +542,7 @@ var X3D0 =  new X3D({
                                       color : new SFNode(
                                         new ColorRGBA({
                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                              hAnimSite : new SFNode(
+                              child : new SFNode(
                                 new HAnimSite({
                                   name : new SFString("l_calcaneus_posterior_pt"),
                                   DEF : new SFString("hanim_l_calcaneus_posterior_pt"),
@@ -528,7 +553,7 @@ var X3D0 =  new X3D({
 
                                     new Shape({
                                       USE : new SFString("HAnimSiteShape")})])})),
-                              hAnimSite : new SFNode(
+                              child : new SFNode(
                                 new HAnimSite({
                                   name : new SFString("l_sphyrion_pt"),
                                   DEF : new SFString("hanim_l_sphyrion_pt"),
@@ -546,7 +571,7 @@ var X3D0 =  new X3D({
                                   center : new SFVec3f([0.1101,0.0656,-0.0736]),
                                   ulimit : new MFFloat([0,0,0]),
                                   llimit : new MFFloat([0,0,0]),
-                                  shape : new SFNode(
+                                  child : new SFNode(
                                     new Shape({
                                       geometry : new SFNode(
                                         new LineSet({
@@ -558,7 +583,7 @@ var X3D0 =  new X3D({
                                           color : new SFNode(
                                             new ColorRGBA({
                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                  shape : new SFNode(
+                                  child : new SFNode(
                                     new Shape({
                                       geometry : new SFNode(
                                         new LineSet({
@@ -577,7 +602,7 @@ var X3D0 =  new X3D({
                                       center : new SFVec3f([0,1,0]),
                                       ulimit : new MFFloat([0,0,0]),
                                       llimit : new MFFloat([0,0,0]),
-                                      shape : new SFNode(
+                                      child : new SFNode(
                                         new Shape({
                                           geometry : new SFNode(
                                             new LineSet({
@@ -589,7 +614,7 @@ var X3D0 =  new X3D({
                                               color : new SFNode(
                                                 new ColorRGBA({
                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                      shape : new SFNode(
+                                      child : new SFNode(
                                         new Shape({
                                           geometry : new SFNode(
                                             new LineSet({
@@ -601,7 +626,7 @@ var X3D0 =  new X3D({
                                               color : new SFNode(
                                                 new ColorRGBA({
                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                      shape : new SFNode(
+                                      child : new SFNode(
                                         new Shape({
                                           geometry : new SFNode(
                                             new LineSet({
@@ -620,7 +645,7 @@ var X3D0 =  new X3D({
                                           center : new SFVec3f([0,1,0]),
                                           ulimit : new MFFloat([0,0,0]),
                                           llimit : new MFFloat([0,0,0]),
-                                          shape : new SFNode(
+                                          child : new SFNode(
                                             new Shape({
                                               geometry : new SFNode(
                                                 new LineSet({
@@ -639,7 +664,7 @@ var X3D0 =  new X3D({
                                               center : new SFVec3f([0,1,0]),
                                               ulimit : new MFFloat([0,0,0]),
                                               llimit : new MFFloat([0,0,0]),
-                                              shape : new SFNode(
+                                              child : new SFNode(
                                                 new Shape({
                                                   geometry : new SFNode(
                                                     new LineSet({
@@ -651,7 +676,7 @@ var X3D0 =  new X3D({
                                                       color : new SFNode(
                                                         new ColorRGBA({
                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                              hAnimSite : new SFNode(
+                                              child : new SFNode(
                                                 new HAnimSite({
                                                   name : new SFString("l_metatarsal_phalanx_1_pt"),
                                                   DEF : new SFString("hanim_l_metatarsal_phalanx_1_pt"),
@@ -669,7 +694,7 @@ var X3D0 =  new X3D({
                                                   center : new SFVec3f([0,1,0]),
                                                   ulimit : new MFFloat([0,0,0]),
                                                   llimit : new MFFloat([0,0,0]),
-                                                  shape : new SFNode(
+                                                  child : new SFNode(
                                                     new Shape({
                                                       geometry : new SFNode(
                                                         new LineSet({
@@ -681,7 +706,7 @@ var X3D0 =  new X3D({
                                                           color : new SFNode(
                                                             new ColorRGBA({
                                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                  hAnimSite : new SFNode(
+                                                  child : new SFNode(
                                                     new HAnimSite({
                                                       name : new SFString("l_tarsal_distal_phalanx_1_tip"),
                                                       DEF : new SFString("hanim_l_tarsal_distal_phalanx_1_tip"),
@@ -706,7 +731,7 @@ var X3D0 =  new X3D({
                                           center : new SFVec3f([0,1,0]),
                                           ulimit : new MFFloat([0,0,0]),
                                           llimit : new MFFloat([0,0,0]),
-                                          shape : new SFNode(
+                                          child : new SFNode(
                                             new Shape({
                                               geometry : new SFNode(
                                                 new LineSet({
@@ -725,7 +750,7 @@ var X3D0 =  new X3D({
                                               center : new SFVec3f([0,1,0]),
                                               ulimit : new MFFloat([0,0,0]),
                                               llimit : new MFFloat([0,0,0]),
-                                              shape : new SFNode(
+                                              child : new SFNode(
                                                 new Shape({
                                                   geometry : new SFNode(
                                                     new LineSet({
@@ -744,7 +769,7 @@ var X3D0 =  new X3D({
                                                   center : new SFVec3f([0,1,0]),
                                                   ulimit : new MFFloat([0,0,0]),
                                                   llimit : new MFFloat([0,0,0]),
-                                                  shape : new SFNode(
+                                                  child : new SFNode(
                                                     new Shape({
                                                       geometry : new SFNode(
                                                         new LineSet({
@@ -763,7 +788,7 @@ var X3D0 =  new X3D({
                                                       center : new SFVec3f([0,1,0]),
                                                       ulimit : new MFFloat([0,0,0]),
                                                       llimit : new MFFloat([0,0,0]),
-                                                      shape : new SFNode(
+                                                      child : new SFNode(
                                                         new Shape({
                                                           geometry : new SFNode(
                                                             new LineSet({
@@ -775,7 +800,7 @@ var X3D0 =  new X3D({
                                                               color : new SFNode(
                                                                 new ColorRGBA({
                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                      hAnimSite : new SFNode(
+                                                      child : new SFNode(
                                                         new HAnimSite({
                                                           name : new SFString("l_tarsal_distal_phalanx_2_tip"),
                                                           DEF : new SFString("hanim_l_tarsal_distal_phalanx_2_tip"),
@@ -800,7 +825,7 @@ var X3D0 =  new X3D({
                                           center : new SFVec3f([0,1,0]),
                                           ulimit : new MFFloat([0,0,0]),
                                           llimit : new MFFloat([0,0,0]),
-                                          shape : new SFNode(
+                                          child : new SFNode(
                                             new Shape({
                                               geometry : new SFNode(
                                                 new LineSet({
@@ -819,7 +844,7 @@ var X3D0 =  new X3D({
                                               center : new SFVec3f([0,1,0]),
                                               ulimit : new MFFloat([0,0,0]),
                                               llimit : new MFFloat([0,0,0]),
-                                              shape : new SFNode(
+                                              child : new SFNode(
                                                 new Shape({
                                                   geometry : new SFNode(
                                                     new LineSet({
@@ -838,7 +863,7 @@ var X3D0 =  new X3D({
                                                   center : new SFVec3f([0,1,0]),
                                                   ulimit : new MFFloat([0,0,0]),
                                                   llimit : new MFFloat([0,0,0]),
-                                                  shape : new SFNode(
+                                                  child : new SFNode(
                                                     new Shape({
                                                       geometry : new SFNode(
                                                         new LineSet({
@@ -857,7 +882,7 @@ var X3D0 =  new X3D({
                                                       center : new SFVec3f([0,1,0]),
                                                       ulimit : new MFFloat([0,0,0]),
                                                       llimit : new MFFloat([0,0,0]),
-                                                      shape : new SFNode(
+                                                      child : new SFNode(
                                                         new Shape({
                                                           geometry : new SFNode(
                                                             new LineSet({
@@ -869,7 +894,7 @@ var X3D0 =  new X3D({
                                                               color : new SFNode(
                                                                 new ColorRGBA({
                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                      hAnimSite : new SFNode(
+                                                      child : new SFNode(
                                                         new HAnimSite({
                                                           name : new SFString("l_tarsal_distal_phalanx_3_tip"),
                                                           DEF : new SFString("hanim_l_tarsal_distal_phalanx_3_tip"),
@@ -894,7 +919,7 @@ var X3D0 =  new X3D({
                                       center : new SFVec3f([0,1,0]),
                                       ulimit : new MFFloat([0,0,0]),
                                       llimit : new MFFloat([0,0,0]),
-                                      shape : new SFNode(
+                                      child : new SFNode(
                                         new Shape({
                                           geometry : new SFNode(
                                             new LineSet({
@@ -913,7 +938,7 @@ var X3D0 =  new X3D({
                                           center : new SFVec3f([0,1,0]),
                                           ulimit : new MFFloat([0,0,0]),
                                           llimit : new MFFloat([0,0,0]),
-                                          shape : new SFNode(
+                                          child : new SFNode(
                                             new Shape({
                                               geometry : new SFNode(
                                                 new LineSet({
@@ -925,7 +950,7 @@ var X3D0 =  new X3D({
                                                   color : new SFNode(
                                                     new ColorRGBA({
                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                          shape : new SFNode(
+                                          child : new SFNode(
                                             new Shape({
                                               geometry : new SFNode(
                                                 new LineSet({
@@ -944,7 +969,7 @@ var X3D0 =  new X3D({
                                               center : new SFVec3f([0,1,0]),
                                               ulimit : new MFFloat([0,0,0]),
                                               llimit : new MFFloat([0,0,0]),
-                                              shape : new SFNode(
+                                              child : new SFNode(
                                                 new Shape({
                                                   geometry : new SFNode(
                                                     new LineSet({
@@ -963,7 +988,7 @@ var X3D0 =  new X3D({
                                                   center : new SFVec3f([0,1,0]),
                                                   ulimit : new MFFloat([0,0,0]),
                                                   llimit : new MFFloat([0,0,0]),
-                                                  shape : new SFNode(
+                                                  child : new SFNode(
                                                     new Shape({
                                                       geometry : new SFNode(
                                                         new LineSet({
@@ -982,7 +1007,7 @@ var X3D0 =  new X3D({
                                                       center : new SFVec3f([0,1,0]),
                                                       ulimit : new MFFloat([0,0,0]),
                                                       llimit : new MFFloat([0,0,0]),
-                                                      shape : new SFNode(
+                                                      child : new SFNode(
                                                         new Shape({
                                                           geometry : new SFNode(
                                                             new LineSet({
@@ -994,7 +1019,7 @@ var X3D0 =  new X3D({
                                                               color : new SFNode(
                                                                 new ColorRGBA({
                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                      hAnimSite : new SFNode(
+                                                      child : new SFNode(
                                                         new HAnimSite({
                                                           name : new SFString("l_tarsal_distal_phalanx_4_tip"),
                                                           DEF : new SFString("hanim_l_tarsal_distal_phalanx_4_tip"),
@@ -1019,7 +1044,7 @@ var X3D0 =  new X3D({
                                               center : new SFVec3f([0,1,0]),
                                               ulimit : new MFFloat([0,0,0]),
                                               llimit : new MFFloat([0,0,0]),
-                                              shape : new SFNode(
+                                              child : new SFNode(
                                                 new Shape({
                                                   geometry : new SFNode(
                                                     new LineSet({
@@ -1031,7 +1056,7 @@ var X3D0 =  new X3D({
                                                       color : new SFNode(
                                                         new ColorRGBA({
                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                              hAnimSite : new SFNode(
+                                              child : new SFNode(
                                                 new HAnimSite({
                                                   name : new SFString("l_metatarsal_phalanx_5_pt"),
                                                   DEF : new SFString("hanim_l_metatarsal_phalanx_5_pt"),
@@ -1049,7 +1074,7 @@ var X3D0 =  new X3D({
                                                   center : new SFVec3f([0,1,0]),
                                                   ulimit : new MFFloat([0,0,0]),
                                                   llimit : new MFFloat([0,0,0]),
-                                                  shape : new SFNode(
+                                                  child : new SFNode(
                                                     new Shape({
                                                       geometry : new SFNode(
                                                         new LineSet({
@@ -1068,7 +1093,7 @@ var X3D0 =  new X3D({
                                                       center : new SFVec3f([0,1,0]),
                                                       ulimit : new MFFloat([0,0,0]),
                                                       llimit : new MFFloat([0,0,0]),
-                                                      shape : new SFNode(
+                                                      child : new SFNode(
                                                         new Shape({
                                                           geometry : new SFNode(
                                                             new LineSet({
@@ -1080,7 +1105,7 @@ var X3D0 =  new X3D({
                                                               color : new SFNode(
                                                                 new ColorRGBA({
                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                      hAnimSite : new SFNode(
+                                                      child : new SFNode(
                                                         new HAnimSite({
                                                           name : new SFString("l_tarsal_distal_phalanx_5_tip"),
                                                           DEF : new SFString("hanim_l_tarsal_distal_phalanx_5_tip"),
@@ -1105,7 +1130,7 @@ var X3D0 =  new X3D({
                           center : new SFVec3f([-0.095,0.9171,0.0029]),
                           ulimit : new MFFloat([0,0,0]),
                           llimit : new MFFloat([0,0,0]),
-                          shape : new SFNode(
+                          child : new SFNode(
                             new Shape({
                               geometry : new SFNode(
                                 new LineSet({
@@ -1117,7 +1142,7 @@ var X3D0 =  new X3D({
                                   color : new SFNode(
                                     new ColorRGBA({
                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                          hAnimSite : new SFNode(
+                          child : new SFNode(
                             new HAnimSite({
                               name : new SFString("r_lateral_malleolus_pt"),
                               DEF : new SFString("hanim_r_lateral_malleolus_pt"),
@@ -1128,7 +1153,7 @@ var X3D0 =  new X3D({
 
                                 new Shape({
                                   USE : new SFString("HAnimSiteShape")})])})),
-                          hAnimSite : new SFNode(
+                          child : new SFNode(
                             new HAnimSite({
                               name : new SFString("r_medial_malleolus_pt"),
                               DEF : new SFString("hanim_r_medial_malleolus_pt"),
@@ -1139,7 +1164,7 @@ var X3D0 =  new X3D({
 
                                 new Shape({
                                   USE : new SFString("HAnimSiteShape")})])})),
-                          hAnimSite : new SFNode(
+                          child : new SFNode(
                             new HAnimSite({
                               name : new SFString("r_tibiale_pt"),
                               DEF : new SFString("hanim_r_tibiale_pt"),
@@ -1157,7 +1182,7 @@ var X3D0 =  new X3D({
                               center : new SFVec3f([-0.0867,0.4913,0.0318]),
                               ulimit : new MFFloat([0,0,0]),
                               llimit : new MFFloat([0,0,0]),
-                              shape : new SFNode(
+                              child : new SFNode(
                                 new Shape({
                                   geometry : new SFNode(
                                     new LineSet({
@@ -1169,7 +1194,7 @@ var X3D0 =  new X3D({
                                       color : new SFNode(
                                         new ColorRGBA({
                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                              hAnimSite : new SFNode(
+                              child : new SFNode(
                                 new HAnimSite({
                                   name : new SFString("r_calcaneus_posterior_pt"),
                                   DEF : new SFString("hanim_r_calcaneus_posterior_pt"),
@@ -1180,7 +1205,7 @@ var X3D0 =  new X3D({
 
                                     new Shape({
                                       USE : new SFString("HAnimSiteShape")})])})),
-                              hAnimSite : new SFNode(
+                              child : new SFNode(
                                 new HAnimSite({
                                   name : new SFString("r_sphyrion_pt"),
                                   DEF : new SFString("hanim_r_sphyrion_pt"),
@@ -1198,7 +1223,7 @@ var X3D0 =  new X3D({
                                   center : new SFVec3f([-0.0801,0.0712,-0.0766]),
                                   ulimit : new MFFloat([0,0,0]),
                                   llimit : new MFFloat([0,0,0]),
-                                  shape : new SFNode(
+                                  child : new SFNode(
                                     new Shape({
                                       geometry : new SFNode(
                                         new LineSet({
@@ -1210,7 +1235,7 @@ var X3D0 =  new X3D({
                                           color : new SFNode(
                                             new ColorRGBA({
                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                  shape : new SFNode(
+                                  child : new SFNode(
                                     new Shape({
                                       geometry : new SFNode(
                                         new LineSet({
@@ -1229,7 +1254,7 @@ var X3D0 =  new X3D({
                                       center : new SFVec3f([0,1,0]),
                                       ulimit : new MFFloat([0,0,0]),
                                       llimit : new MFFloat([0,0,0]),
-                                      shape : new SFNode(
+                                      child : new SFNode(
                                         new Shape({
                                           geometry : new SFNode(
                                             new LineSet({
@@ -1241,7 +1266,7 @@ var X3D0 =  new X3D({
                                               color : new SFNode(
                                                 new ColorRGBA({
                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                      shape : new SFNode(
+                                      child : new SFNode(
                                         new Shape({
                                           geometry : new SFNode(
                                             new LineSet({
@@ -1253,7 +1278,7 @@ var X3D0 =  new X3D({
                                               color : new SFNode(
                                                 new ColorRGBA({
                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                      shape : new SFNode(
+                                      child : new SFNode(
                                         new Shape({
                                           geometry : new SFNode(
                                             new LineSet({
@@ -1272,7 +1297,7 @@ var X3D0 =  new X3D({
                                           center : new SFVec3f([0,1,0]),
                                           ulimit : new MFFloat([0,0,0]),
                                           llimit : new MFFloat([0,0,0]),
-                                          shape : new SFNode(
+                                          child : new SFNode(
                                             new Shape({
                                               geometry : new SFNode(
                                                 new LineSet({
@@ -1291,7 +1316,7 @@ var X3D0 =  new X3D({
                                               center : new SFVec3f([0,1,0]),
                                               ulimit : new MFFloat([0,0,0]),
                                               llimit : new MFFloat([0,0,0]),
-                                              shape : new SFNode(
+                                              child : new SFNode(
                                                 new Shape({
                                                   geometry : new SFNode(
                                                     new LineSet({
@@ -1303,7 +1328,7 @@ var X3D0 =  new X3D({
                                                       color : new SFNode(
                                                         new ColorRGBA({
                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                              hAnimSite : new SFNode(
+                                              child : new SFNode(
                                                 new HAnimSite({
                                                   name : new SFString("r_metatarsal_phalanx_1_pt"),
                                                   DEF : new SFString("hanim_r_metatarsal_phalanx_1_pt"),
@@ -1321,7 +1346,7 @@ var X3D0 =  new X3D({
                                                   center : new SFVec3f([0,1,0]),
                                                   ulimit : new MFFloat([0,0,0]),
                                                   llimit : new MFFloat([0,0,0]),
-                                                  shape : new SFNode(
+                                                  child : new SFNode(
                                                     new Shape({
                                                       geometry : new SFNode(
                                                         new LineSet({
@@ -1333,7 +1358,7 @@ var X3D0 =  new X3D({
                                                           color : new SFNode(
                                                             new ColorRGBA({
                                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                  hAnimSite : new SFNode(
+                                                  child : new SFNode(
                                                     new HAnimSite({
                                                       name : new SFString("r_tarsal_distal_phalanx_1_tip"),
                                                       DEF : new SFString("hanim_r_tarsal_distal_phalanx_1_tip"),
@@ -1358,7 +1383,7 @@ var X3D0 =  new X3D({
                                           center : new SFVec3f([0,1,0]),
                                           ulimit : new MFFloat([0,0,0]),
                                           llimit : new MFFloat([0,0,0]),
-                                          shape : new SFNode(
+                                          child : new SFNode(
                                             new Shape({
                                               geometry : new SFNode(
                                                 new LineSet({
@@ -1377,7 +1402,7 @@ var X3D0 =  new X3D({
                                               center : new SFVec3f([0,1,0]),
                                               ulimit : new MFFloat([0,0,0]),
                                               llimit : new MFFloat([0,0,0]),
-                                              shape : new SFNode(
+                                              child : new SFNode(
                                                 new Shape({
                                                   geometry : new SFNode(
                                                     new LineSet({
@@ -1396,7 +1421,7 @@ var X3D0 =  new X3D({
                                                   center : new SFVec3f([0,1,0]),
                                                   ulimit : new MFFloat([0,0,0]),
                                                   llimit : new MFFloat([0,0,0]),
-                                                  shape : new SFNode(
+                                                  child : new SFNode(
                                                     new Shape({
                                                       geometry : new SFNode(
                                                         new LineSet({
@@ -1415,7 +1440,7 @@ var X3D0 =  new X3D({
                                                       center : new SFVec3f([0,1,0]),
                                                       ulimit : new MFFloat([0,0,0]),
                                                       llimit : new MFFloat([0,0,0]),
-                                                      shape : new SFNode(
+                                                      child : new SFNode(
                                                         new Shape({
                                                           geometry : new SFNode(
                                                             new LineSet({
@@ -1427,7 +1452,7 @@ var X3D0 =  new X3D({
                                                               color : new SFNode(
                                                                 new ColorRGBA({
                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                      hAnimSite : new SFNode(
+                                                      child : new SFNode(
                                                         new HAnimSite({
                                                           name : new SFString("r_tarsal_distal_phalanx_2_tip"),
                                                           DEF : new SFString("hanim_r_tarsal_distal_phalanx_2_tip"),
@@ -1452,7 +1477,7 @@ var X3D0 =  new X3D({
                                           center : new SFVec3f([0,1,0]),
                                           ulimit : new MFFloat([0,0,0]),
                                           llimit : new MFFloat([0,0,0]),
-                                          shape : new SFNode(
+                                          child : new SFNode(
                                             new Shape({
                                               geometry : new SFNode(
                                                 new LineSet({
@@ -1471,7 +1496,7 @@ var X3D0 =  new X3D({
                                               center : new SFVec3f([0,1,0]),
                                               ulimit : new MFFloat([0,0,0]),
                                               llimit : new MFFloat([0,0,0]),
-                                              shape : new SFNode(
+                                              child : new SFNode(
                                                 new Shape({
                                                   geometry : new SFNode(
                                                     new LineSet({
@@ -1490,7 +1515,7 @@ var X3D0 =  new X3D({
                                                   center : new SFVec3f([0,1,0]),
                                                   ulimit : new MFFloat([0,0,0]),
                                                   llimit : new MFFloat([0,0,0]),
-                                                  shape : new SFNode(
+                                                  child : new SFNode(
                                                     new Shape({
                                                       geometry : new SFNode(
                                                         new LineSet({
@@ -1509,7 +1534,7 @@ var X3D0 =  new X3D({
                                                       center : new SFVec3f([0,1,0]),
                                                       ulimit : new MFFloat([0,0,0]),
                                                       llimit : new MFFloat([0,0,0]),
-                                                      shape : new SFNode(
+                                                      child : new SFNode(
                                                         new Shape({
                                                           geometry : new SFNode(
                                                             new LineSet({
@@ -1521,7 +1546,7 @@ var X3D0 =  new X3D({
                                                               color : new SFNode(
                                                                 new ColorRGBA({
                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                      hAnimSite : new SFNode(
+                                                      child : new SFNode(
                                                         new HAnimSite({
                                                           name : new SFString("r_tarsal_distal_phalanx_3_tip"),
                                                           DEF : new SFString("hanim_r_tarsal_distal_phalanx_3_tip"),
@@ -1546,7 +1571,7 @@ var X3D0 =  new X3D({
                                       center : new SFVec3f([0,1,0]),
                                       ulimit : new MFFloat([0,0,0]),
                                       llimit : new MFFloat([0,0,0]),
-                                      shape : new SFNode(
+                                      child : new SFNode(
                                         new Shape({
                                           geometry : new SFNode(
                                             new LineSet({
@@ -1565,7 +1590,7 @@ var X3D0 =  new X3D({
                                           center : new SFVec3f([0,1,0]),
                                           ulimit : new MFFloat([0,0,0]),
                                           llimit : new MFFloat([0,0,0]),
-                                          shape : new SFNode(
+                                          child : new SFNode(
                                             new Shape({
                                               geometry : new SFNode(
                                                 new LineSet({
@@ -1577,7 +1602,7 @@ var X3D0 =  new X3D({
                                                   color : new SFNode(
                                                     new ColorRGBA({
                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                          shape : new SFNode(
+                                          child : new SFNode(
                                             new Shape({
                                               geometry : new SFNode(
                                                 new LineSet({
@@ -1596,7 +1621,7 @@ var X3D0 =  new X3D({
                                               center : new SFVec3f([0,1,0]),
                                               ulimit : new MFFloat([0,0,0]),
                                               llimit : new MFFloat([0,0,0]),
-                                              shape : new SFNode(
+                                              child : new SFNode(
                                                 new Shape({
                                                   geometry : new SFNode(
                                                     new LineSet({
@@ -1615,7 +1640,7 @@ var X3D0 =  new X3D({
                                                   center : new SFVec3f([0,1,0]),
                                                   ulimit : new MFFloat([0,0,0]),
                                                   llimit : new MFFloat([0,0,0]),
-                                                  shape : new SFNode(
+                                                  child : new SFNode(
                                                     new Shape({
                                                       geometry : new SFNode(
                                                         new LineSet({
@@ -1634,7 +1659,7 @@ var X3D0 =  new X3D({
                                                       center : new SFVec3f([0,1,0]),
                                                       ulimit : new MFFloat([0,0,0]),
                                                       llimit : new MFFloat([0,0,0]),
-                                                      shape : new SFNode(
+                                                      child : new SFNode(
                                                         new Shape({
                                                           geometry : new SFNode(
                                                             new LineSet({
@@ -1646,7 +1671,7 @@ var X3D0 =  new X3D({
                                                               color : new SFNode(
                                                                 new ColorRGBA({
                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                      hAnimSite : new SFNode(
+                                                      child : new SFNode(
                                                         new HAnimSite({
                                                           name : new SFString("r_tarsal_distal_phalanx_4_tip"),
                                                           DEF : new SFString("hanim_r_tarsal_distal_phalanx_4_tip"),
@@ -1671,7 +1696,7 @@ var X3D0 =  new X3D({
                                               center : new SFVec3f([0,1,0]),
                                               ulimit : new MFFloat([0,0,0]),
                                               llimit : new MFFloat([0,0,0]),
-                                              shape : new SFNode(
+                                              child : new SFNode(
                                                 new Shape({
                                                   geometry : new SFNode(
                                                     new LineSet({
@@ -1683,7 +1708,7 @@ var X3D0 =  new X3D({
                                                       color : new SFNode(
                                                         new ColorRGBA({
                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                              hAnimSite : new SFNode(
+                                              child : new SFNode(
                                                 new HAnimSite({
                                                   name : new SFString("r_metatarsal_phalanx_5_pt"),
                                                   DEF : new SFString("hanim_r_metatarsal_phalanx_5_pt"),
@@ -1701,7 +1726,7 @@ var X3D0 =  new X3D({
                                                   center : new SFVec3f([0,1,0]),
                                                   ulimit : new MFFloat([0,0,0]),
                                                   llimit : new MFFloat([0,0,0]),
-                                                  shape : new SFNode(
+                                                  child : new SFNode(
                                                     new Shape({
                                                       geometry : new SFNode(
                                                         new LineSet({
@@ -1720,7 +1745,7 @@ var X3D0 =  new X3D({
                                                       center : new SFVec3f([0,1,0]),
                                                       ulimit : new MFFloat([0,0,0]),
                                                       llimit : new MFFloat([0,0,0]),
-                                                      shape : new SFNode(
+                                                      child : new SFNode(
                                                         new Shape({
                                                           geometry : new SFNode(
                                                             new LineSet({
@@ -1732,7 +1757,7 @@ var X3D0 =  new X3D({
                                                               color : new SFNode(
                                                                 new ColorRGBA({
                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                      hAnimSite : new SFNode(
+                                                      child : new SFNode(
                                                         new HAnimSite({
                                                           name : new SFString("r_tarsal_distal_phalanx_5_tip"),
                                                           DEF : new SFString("hanim_r_tarsal_distal_phalanx_5_tip"),
@@ -1757,7 +1782,7 @@ var X3D0 =  new X3D({
                       center : new SFVec3f([0.0028,1.0568,-0.0776]),
                       ulimit : new MFFloat([0,0,0]),
                       llimit : new MFFloat([0,0,0]),
-                      shape : new SFNode(
+                      child : new SFNode(
                         new Shape({
                           geometry : new SFNode(
                             new LineSet({
@@ -1776,7 +1801,7 @@ var X3D0 =  new X3D({
                           center : new SFVec3f([0.0035,1.0925,-0.0787]),
                           ulimit : new MFFloat([0,0,0]),
                           llimit : new MFFloat([0,0,0]),
-                          shape : new SFNode(
+                          child : new SFNode(
                             new Shape({
                               geometry : new SFNode(
                                 new LineSet({
@@ -1795,7 +1820,7 @@ var X3D0 =  new X3D({
                               center : new SFVec3f([0.0041,1.1276,-0.0796]),
                               ulimit : new MFFloat([0,0,0]),
                               llimit : new MFFloat([0,0,0]),
-                              shape : new SFNode(
+                              child : new SFNode(
                                 new Shape({
                                   geometry : new SFNode(
                                     new LineSet({
@@ -1807,7 +1832,7 @@ var X3D0 =  new X3D({
                                       color : new SFNode(
                                         new ColorRGBA({
                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                              hAnimSite : new SFNode(
+                              child : new SFNode(
                                 new HAnimSite({
                                   name : new SFString("l_rib10_pt"),
                                   DEF : new SFString("hanim_l_rib10_pt"),
@@ -1818,7 +1843,7 @@ var X3D0 =  new X3D({
 
                                     new Shape({
                                       USE : new SFString("HAnimSiteShape")})])})),
-                              hAnimSite : new SFNode(
+                              child : new SFNode(
                                 new HAnimSite({
                                   name : new SFString("r_rib10_pt"),
                                   DEF : new SFString("hanim_r_rib10_pt"),
@@ -1829,7 +1854,7 @@ var X3D0 =  new X3D({
 
                                     new Shape({
                                       USE : new SFString("HAnimSiteShape")})])})),
-                              hAnimSite : new SFNode(
+                              child : new SFNode(
                                 new HAnimSite({
                                   name : new SFString("spine_2_middle_back_pt"),
                                   DEF : new SFString("hanim_spine_2_middle_back_pt"),
@@ -1847,7 +1872,7 @@ var X3D0 =  new X3D({
                                   center : new SFVec3f([0.0045,1.1546,-0.08]),
                                   ulimit : new MFFloat([0,0,0]),
                                   llimit : new MFFloat([0,0,0]),
-                                  shape : new SFNode(
+                                  child : new SFNode(
                                     new Shape({
                                       geometry : new SFNode(
                                         new LineSet({
@@ -1866,7 +1891,7 @@ var X3D0 =  new X3D({
                                       center : new SFVec3f([0.0048,1.1912,-0.0805]),
                                       ulimit : new MFFloat([0,0,0]),
                                       llimit : new MFFloat([0,0,0]),
-                                      shape : new SFNode(
+                                      child : new SFNode(
                                         new Shape({
                                           geometry : new SFNode(
                                             new LineSet({
@@ -1885,7 +1910,7 @@ var X3D0 =  new X3D({
                                           center : new SFVec3f([0.0051,1.2278,-0.0808]),
                                           ulimit : new MFFloat([0,0,0]),
                                           llimit : new MFFloat([0,0,0]),
-                                          shape : new SFNode(
+                                          child : new SFNode(
                                             new Shape({
                                               geometry : new SFNode(
                                                 new LineSet({
@@ -1904,7 +1929,7 @@ var X3D0 =  new X3D({
                                               center : new SFVec3f([0.0053,1.2679,-0.081]),
                                               ulimit : new MFFloat([0,0,0]),
                                               llimit : new MFFloat([0,0,0]),
-                                              shape : new SFNode(
+                                              child : new SFNode(
                                                 new Shape({
                                                   geometry : new SFNode(
                                                     new LineSet({
@@ -1916,7 +1941,7 @@ var X3D0 =  new X3D({
                                                       color : new SFNode(
                                                         new ColorRGBA({
                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                              hAnimSite : new SFNode(
+                                              child : new SFNode(
                                                 new HAnimSite({
                                                   name : new SFString("substernale_pt"),
                                                   DEF : new SFString("hanim_substernale_pt"),
@@ -1934,7 +1959,7 @@ var X3D0 =  new X3D({
                                                   center : new SFVec3f([0.0056,1.2848,-0.0822]),
                                                   ulimit : new MFFloat([0,0,0]),
                                                   llimit : new MFFloat([0,0,0]),
-                                                  shape : new SFNode(
+                                                  child : new SFNode(
                                                     new Shape({
                                                       geometry : new SFNode(
                                                         new LineSet({
@@ -1946,7 +1971,7 @@ var X3D0 =  new X3D({
                                                           color : new SFNode(
                                                             new ColorRGBA({
                                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                  hAnimSite : new SFNode(
+                                                  child : new SFNode(
                                                     new HAnimSite({
                                                       name : new SFString("l_thelion_pt"),
                                                       DEF : new SFString("hanim_l_thelion_pt"),
@@ -1957,7 +1982,7 @@ var X3D0 =  new X3D({
 
                                                         new Shape({
                                                           USE : new SFString("HAnimSiteShape")})])})),
-                                                  hAnimSite : new SFNode(
+                                                  child : new SFNode(
                                                     new HAnimSite({
                                                       name : new SFString("r_thelion_pt"),
                                                       DEF : new SFString("hanim_r_thelion_pt"),
@@ -1975,7 +2000,7 @@ var X3D0 =  new X3D({
                                                       center : new SFVec3f([0.0057,1.3126,-0.0838]),
                                                       ulimit : new MFFloat([0,0,0]),
                                                       llimit : new MFFloat([0,0,0]),
-                                                      shape : new SFNode(
+                                                      child : new SFNode(
                                                         new Shape({
                                                           geometry : new SFNode(
                                                             new LineSet({
@@ -1994,7 +2019,7 @@ var X3D0 =  new X3D({
                                                           center : new SFVec3f([0.0057,1.3382,-0.0845]),
                                                           ulimit : new MFFloat([0,0,0]),
                                                           llimit : new MFFloat([0,0,0]),
-                                                          shape : new SFNode(
+                                                          child : new SFNode(
                                                             new Shape({
                                                               geometry : new SFNode(
                                                                 new LineSet({
@@ -2013,7 +2038,7 @@ var X3D0 =  new X3D({
                                                               center : new SFVec3f([0.0058,1.3625,-0.0833]),
                                                               ulimit : new MFFloat([0,0,0]),
                                                               llimit : new MFFloat([0,0,0]),
-                                                              shape : new SFNode(
+                                                              child : new SFNode(
                                                                 new Shape({
                                                                   geometry : new SFNode(
                                                                     new LineSet({
@@ -2025,7 +2050,7 @@ var X3D0 =  new X3D({
                                                                       color : new SFNode(
                                                                         new ColorRGBA({
                                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                              hAnimSite : new SFNode(
+                                                              child : new SFNode(
                                                                 new HAnimSite({
                                                                   name : new SFString("l_chest_midsagittal_plane_pt"),
                                                                   DEF : new SFString("hanim_l_chest_midsagittal_plane_pt"),
@@ -2036,7 +2061,7 @@ var X3D0 =  new X3D({
 
                                                                     new Shape({
                                                                       USE : new SFString("HAnimSiteShape")})])})),
-                                                              hAnimSite : new SFNode(
+                                                              child : new SFNode(
                                                                 new HAnimSite({
                                                                   name : new SFString("mesosternale_pt"),
                                                                   DEF : new SFString("hanim_mesosternale_pt"),
@@ -2047,7 +2072,7 @@ var X3D0 =  new X3D({
 
                                                                     new Shape({
                                                                       USE : new SFString("HAnimSiteShape")})])})),
-                                                              hAnimSite : new SFNode(
+                                                              child : new SFNode(
                                                                 new HAnimSite({
                                                                   name : new SFString("r_chest_midsagittal_plane_pt"),
                                                                   DEF : new SFString("hanim_r_chest_midsagittal_plane_pt"),
@@ -2058,7 +2083,7 @@ var X3D0 =  new X3D({
 
                                                                     new Shape({
                                                                       USE : new SFString("HAnimSiteShape")})])})),
-                                                              hAnimSite : new SFNode(
+                                                              child : new SFNode(
                                                                 new HAnimSite({
                                                                   name : new SFString("rear_center_midsagittal_plane_pt"),
                                                                   DEF : new SFString("hanim_rear_center_midsagittal_plane_pt"),
@@ -2076,7 +2101,7 @@ var X3D0 =  new X3D({
                                                                   center : new SFVec3f([0.0059,1.3866,-0.08]),
                                                                   ulimit : new MFFloat([0,0,0]),
                                                                   llimit : new MFFloat([0,0,0]),
-                                                                  shape : new SFNode(
+                                                                  child : new SFNode(
                                                                     new Shape({
                                                                       geometry : new SFNode(
                                                                         new LineSet({
@@ -2088,7 +2113,7 @@ var X3D0 =  new X3D({
                                                                           color : new SFNode(
                                                                             new ColorRGBA({
                                                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                  hAnimSite : new SFNode(
+                                                                  child : new SFNode(
                                                                     new HAnimSite({
                                                                       name : new SFString("spine_1_middle_back_pt"),
                                                                       DEF : new SFString("hanim_spine_1_middle_back_pt"),
@@ -2106,7 +2131,7 @@ var X3D0 =  new X3D({
                                                                       center : new SFVec3f([0.006,1.4102,-0.0745]),
                                                                       ulimit : new MFFloat([0,0,0]),
                                                                       llimit : new MFFloat([0,0,0]),
-                                                                      shape : new SFNode(
+                                                                      child : new SFNode(
                                                                         new Shape({
                                                                           geometry : new SFNode(
                                                                             new LineSet({
@@ -2125,7 +2150,7 @@ var X3D0 =  new X3D({
                                                                           center : new SFVec3f([0.0061,1.432,-0.0675]),
                                                                           ulimit : new MFFloat([0,0,0]),
                                                                           llimit : new MFFloat([0,0,0]),
-                                                                          shape : new SFNode(
+                                                                          child : new SFNode(
                                                                             new Shape({
                                                                               geometry : new SFNode(
                                                                                 new LineSet({
@@ -2144,7 +2169,7 @@ var X3D0 =  new X3D({
                                                                               center : new SFVec3f([0.0062,1.4583,-0.057]),
                                                                               ulimit : new MFFloat([0,0,0]),
                                                                               llimit : new MFFloat([0,0,0]),
-                                                                              shape : new SFNode(
+                                                                              child : new SFNode(
                                                                                 new Shape({
                                                                                   geometry : new SFNode(
                                                                                     new LineSet({
@@ -2163,7 +2188,7 @@ var X3D0 =  new X3D({
                                                                                   center : new SFVec3f([0.0063,1.4761,-0.0484]),
                                                                                   ulimit : new MFFloat([0,0,0]),
                                                                                   llimit : new MFFloat([0,0,0]),
-                                                                                  shape : new SFNode(
+                                                                                  child : new SFNode(
                                                                                     new Shape({
                                                                                       geometry : new SFNode(
                                                                                         new LineSet({
@@ -2175,7 +2200,7 @@ var X3D0 =  new X3D({
                                                                                           color : new SFNode(
                                                                                             new ColorRGBA({
                                                                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                  hAnimSite : new SFNode(
+                                                                                  child : new SFNode(
                                                                                     new HAnimSite({
                                                                                       name : new SFString("cervicale_pt"),
                                                                                       DEF : new SFString("hanim_cervicale_pt"),
@@ -2186,7 +2211,7 @@ var X3D0 =  new X3D({
 
                                                                                         new Shape({
                                                                                           USE : new SFString("HAnimSiteShape")})])})),
-                                                                                  hAnimSite : new SFNode(
+                                                                                  child : new SFNode(
                                                                                     new HAnimSite({
                                                                                       name : new SFString("suprasternale_pt"),
                                                                                       DEF : new SFString("hanim_suprasternale_pt"),
@@ -2204,7 +2229,7 @@ var X3D0 =  new X3D({
                                                                                       center : new SFVec3f([0.0065,1.4951,-0.0387]),
                                                                                       ulimit : new MFFloat([0,0,0]),
                                                                                       llimit : new MFFloat([0,0,0]),
-                                                                                      shape : new SFNode(
+                                                                                      child : new SFNode(
                                                                                         new Shape({
                                                                                           geometry : new SFNode(
                                                                                             new LineSet({
@@ -2216,7 +2241,7 @@ var X3D0 =  new X3D({
                                                                                               color : new SFNode(
                                                                                                 new ColorRGBA({
                                                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                      hAnimSite : new SFNode(
+                                                                                      child : new SFNode(
                                                                                         new HAnimSite({
                                                                                           name : new SFString("l_neck_base_pt"),
                                                                                           DEF : new SFString("hanim_l_neck_base_pt"),
@@ -2227,7 +2252,7 @@ var X3D0 =  new X3D({
 
                                                                                             new Shape({
                                                                                               USE : new SFString("HAnimSiteShape")})])})),
-                                                                                      hAnimSite : new SFNode(
+                                                                                      child : new SFNode(
                                                                                         new HAnimSite({
                                                                                           name : new SFString("r_neck_base_pt"),
                                                                                           DEF : new SFString("hanim_r_neck_base_pt"),
@@ -2238,7 +2263,7 @@ var X3D0 =  new X3D({
 
                                                                                             new Shape({
                                                                                               USE : new SFString("HAnimSiteShape")})])})),
-                                                                                      shape : new SFNode(
+                                                                                      child : new SFNode(
                                                                                         new Shape({
                                                                                           geometry : new SFNode(
                                                                                             new LineSet({
@@ -2250,7 +2275,7 @@ var X3D0 =  new X3D({
                                                                                               color : new SFNode(
                                                                                                 new ColorRGBA({
                                                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                      hAnimSite : new SFNode(
+                                                                                      child : new SFNode(
                                                                                         new HAnimSite({
                                                                                           name : new SFString("l_acromion_pt"),
                                                                                           DEF : new SFString("hanim_l_acromion_pt"),
@@ -2261,7 +2286,7 @@ var X3D0 =  new X3D({
 
                                                                                             new Shape({
                                                                                               USE : new SFString("HAnimSiteShape")})])})),
-                                                                                      hAnimSite : new SFNode(
+                                                                                      child : new SFNode(
                                                                                         new HAnimSite({
                                                                                           name : new SFString("l_axilla_distal_pt"),
                                                                                           DEF : new SFString("hanim_l_axilla_distal_pt"),
@@ -2272,7 +2297,7 @@ var X3D0 =  new X3D({
 
                                                                                             new Shape({
                                                                                               USE : new SFString("HAnimSiteShape")})])})),
-                                                                                      hAnimSite : new SFNode(
+                                                                                      child : new SFNode(
                                                                                         new HAnimSite({
                                                                                           name : new SFString("l_axilla_posterior_folds_pt"),
                                                                                           DEF : new SFString("hanim_l_axilla_posterior_folds_pt"),
@@ -2283,7 +2308,7 @@ var X3D0 =  new X3D({
 
                                                                                             new Shape({
                                                                                               USE : new SFString("HAnimSiteShape")})])})),
-                                                                                      hAnimSite : new SFNode(
+                                                                                      child : new SFNode(
                                                                                         new HAnimSite({
                                                                                           name : new SFString("l_axilla_proximal_pt"),
                                                                                           DEF : new SFString("hanim_l_axilla_proximal_pt"),
@@ -2294,7 +2319,7 @@ var X3D0 =  new X3D({
 
                                                                                             new Shape({
                                                                                               USE : new SFString("HAnimSiteShape")})])})),
-                                                                                      hAnimSite : new SFNode(
+                                                                                      child : new SFNode(
                                                                                         new HAnimSite({
                                                                                           name : new SFString("l_clavicale_pt"),
                                                                                           DEF : new SFString("hanim_l_clavicale_pt"),
@@ -2305,7 +2330,7 @@ var X3D0 =  new X3D({
 
                                                                                             new Shape({
                                                                                               USE : new SFString("HAnimSiteShape")})])})),
-                                                                                      shape : new SFNode(
+                                                                                      child : new SFNode(
                                                                                         new Shape({
                                                                                           geometry : new SFNode(
                                                                                             new LineSet({
@@ -2317,7 +2342,7 @@ var X3D0 =  new X3D({
                                                                                               color : new SFNode(
                                                                                                 new ColorRGBA({
                                                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                      hAnimSite : new SFNode(
+                                                                                      child : new SFNode(
                                                                                         new HAnimSite({
                                                                                           name : new SFString("r_acromion_pt"),
                                                                                           DEF : new SFString("hanim_r_acromion_pt"),
@@ -2328,7 +2353,7 @@ var X3D0 =  new X3D({
 
                                                                                             new Shape({
                                                                                               USE : new SFString("HAnimSiteShape")})])})),
-                                                                                      hAnimSite : new SFNode(
+                                                                                      child : new SFNode(
                                                                                         new HAnimSite({
                                                                                           name : new SFString("r_axilla_distal_pt"),
                                                                                           DEF : new SFString("hanim_r_axilla_distal_pt"),
@@ -2339,7 +2364,7 @@ var X3D0 =  new X3D({
 
                                                                                             new Shape({
                                                                                               USE : new SFString("HAnimSiteShape")})])})),
-                                                                                      hAnimSite : new SFNode(
+                                                                                      child : new SFNode(
                                                                                         new HAnimSite({
                                                                                           name : new SFString("r_axilla_posterior_folds_pt"),
                                                                                           DEF : new SFString("hanim_r_axilla_posterior_folds_pt"),
@@ -2350,7 +2375,7 @@ var X3D0 =  new X3D({
 
                                                                                             new Shape({
                                                                                               USE : new SFString("HAnimSiteShape")})])})),
-                                                                                      hAnimSite : new SFNode(
+                                                                                      child : new SFNode(
                                                                                         new HAnimSite({
                                                                                           name : new SFString("r_axilla_proximal_pt"),
                                                                                           DEF : new SFString("hanim_r_axilla_proximal_pt"),
@@ -2361,7 +2386,7 @@ var X3D0 =  new X3D({
 
                                                                                             new Shape({
                                                                                               USE : new SFString("HAnimSiteShape")})])})),
-                                                                                      hAnimSite : new SFNode(
+                                                                                      child : new SFNode(
                                                                                         new HAnimSite({
                                                                                           name : new SFString("r_clavicale_pt"),
                                                                                           DEF : new SFString("hanim_r_clavicale_pt"),
@@ -2379,7 +2404,7 @@ var X3D0 =  new X3D({
                                                                                           center : new SFVec3f([0.0066,1.5132,-0.0301]),
                                                                                           ulimit : new MFFloat([0,0,0]),
                                                                                           llimit : new MFFloat([0,0,0]),
-                                                                                          shape : new SFNode(
+                                                                                          child : new SFNode(
                                                                                             new Shape({
                                                                                               geometry : new SFNode(
                                                                                                 new LineSet({
@@ -2398,7 +2423,7 @@ var X3D0 =  new X3D({
                                                                                               center : new SFVec3f([0.0066,1.5357,-0.0143]),
                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                               llimit : new MFFloat([0,0,0]),
-                                                                                              shape : new SFNode(
+                                                                                              child : new SFNode(
                                                                                                 new Shape({
                                                                                                   geometry : new SFNode(
                                                                                                     new LineSet({
@@ -2417,7 +2442,7 @@ var X3D0 =  new X3D({
                                                                                                   center : new SFVec3f([0.0066,1.552,-0.0082]),
                                                                                                   ulimit : new MFFloat([0,0,0]),
                                                                                                   llimit : new MFFloat([0,0,0]),
-                                                                                                  shape : new SFNode(
+                                                                                                  child : new SFNode(
                                                                                                     new Shape({
                                                                                                       geometry : new SFNode(
                                                                                                         new LineSet({
@@ -2436,7 +2461,7 @@ var X3D0 =  new X3D({
                                                                                                       center : new SFVec3f([0.0066,1.5662,-0.0084]),
                                                                                                       ulimit : new MFFloat([0,0,0]),
                                                                                                       llimit : new MFFloat([0,0,0]),
-                                                                                                      shape : new SFNode(
+                                                                                                      child : new SFNode(
                                                                                                         new Shape({
                                                                                                           geometry : new SFNode(
                                                                                                             new LineSet({
@@ -2455,7 +2480,7 @@ var X3D0 =  new X3D({
                                                                                                           center : new SFVec3f([0.0066,1.58,-0.0103]),
                                                                                                           ulimit : new MFFloat([0,0,0]),
                                                                                                           llimit : new MFFloat([0,0,0]),
-                                                                                                          shape : new SFNode(
+                                                                                                          child : new SFNode(
                                                                                                             new Shape({
                                                                                                               geometry : new SFNode(
                                                                                                                 new LineSet({
@@ -2467,7 +2492,7 @@ var X3D0 =  new X3D({
                                                                                                                   color : new SFNode(
                                                                                                                     new ColorRGBA({
                                                                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                          hAnimSite : new SFNode(
+                                                                                                          child : new SFNode(
                                                                                                             new HAnimSite({
                                                                                                               name : new SFString("adams_apple_pt"),
                                                                                                               DEF : new SFString("hanim_adams_apple_pt"),
@@ -2485,7 +2510,7 @@ var X3D0 =  new X3D({
                                                                                                               center : new SFVec3f([0.0066,1.5928,-0.0103]),
                                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                                               llimit : new MFFloat([0,0,0]),
-                                                                                                              shape : new SFNode(
+                                                                                                              child : new SFNode(
                                                                                                                 new Shape({
                                                                                                                   geometry : new SFNode(
                                                                                                                     new LineSet({
@@ -2504,7 +2529,7 @@ var X3D0 =  new X3D({
                                                                                                                   center : new SFVec3f([0.0066,1.6144,-0.0034]),
                                                                                                                   ulimit : new MFFloat([0,0,0]),
                                                                                                                   llimit : new MFFloat([0,0,0]),
-                                                                                                                  shape : new SFNode(
+                                                                                                                  child : new SFNode(
                                                                                                                     new Shape({
                                                                                                                       geometry : new SFNode(
                                                                                                                         new LineSet({
@@ -2516,7 +2541,7 @@ var X3D0 =  new X3D({
                                                                                                                           color : new SFNode(
                                                                                                                             new ColorRGBA({
                                                                                                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                                  hAnimSite : new SFNode(
+                                                                                                                  child : new SFNode(
                                                                                                                     new HAnimSite({
                                                                                                                       name : new SFString("glabella_pt"),
                                                                                                                       DEF : new SFString("hanim_glabella_pt"),
@@ -2527,7 +2552,7 @@ var X3D0 =  new X3D({
 
                                                                                                                         new Shape({
                                                                                                                           USE : new SFString("HAnimSiteShape")})])})),
-                                                                                                                  hAnimSite : new SFNode(
+                                                                                                                  child : new SFNode(
                                                                                                                     new HAnimSite({
                                                                                                                       name : new SFString("l_ectocanthus_pt"),
                                                                                                                       DEF : new SFString("hanim_l_ectocanthus_pt"),
@@ -2538,7 +2563,7 @@ var X3D0 =  new X3D({
 
                                                                                                                         new Shape({
                                                                                                                           USE : new SFString("HAnimSiteShape")})])})),
-                                                                                                                  hAnimSite : new SFNode(
+                                                                                                                  child : new SFNode(
                                                                                                                     new HAnimSite({
                                                                                                                       name : new SFString("l_infraorbitale_pt"),
                                                                                                                       DEF : new SFString("hanim_l_infraorbitale_pt"),
@@ -2549,7 +2574,7 @@ var X3D0 =  new X3D({
 
                                                                                                                         new Shape({
                                                                                                                           USE : new SFString("HAnimSiteShape")})])})),
-                                                                                                                  hAnimSite : new SFNode(
+                                                                                                                  child : new SFNode(
                                                                                                                     new HAnimSite({
                                                                                                                       name : new SFString("l_tragion_pt"),
                                                                                                                       DEF : new SFString("hanim_l_tragion_pt"),
@@ -2560,7 +2585,7 @@ var X3D0 =  new X3D({
 
                                                                                                                         new Shape({
                                                                                                                           USE : new SFString("HAnimSiteShape")})])})),
-                                                                                                                  hAnimSite : new SFNode(
+                                                                                                                  child : new SFNode(
                                                                                                                     new HAnimSite({
                                                                                                                       name : new SFString("nuchale_pt"),
                                                                                                                       DEF : new SFString("hanim_nuchale_pt"),
@@ -2571,7 +2596,7 @@ var X3D0 =  new X3D({
 
                                                                                                                         new Shape({
                                                                                                                           USE : new SFString("HAnimSiteShape")})])})),
-                                                                                                                  hAnimSite : new SFNode(
+                                                                                                                  child : new SFNode(
                                                                                                                     new HAnimSite({
                                                                                                                       name : new SFString("opisthocranion_pt"),
                                                                                                                       DEF : new SFString("hanim_opisthocranion_pt"),
@@ -2582,7 +2607,7 @@ var X3D0 =  new X3D({
 
                                                                                                                         new Shape({
                                                                                                                           USE : new SFString("HAnimSiteShape")})])})),
-                                                                                                                  hAnimSite : new SFNode(
+                                                                                                                  child : new SFNode(
                                                                                                                     new HAnimSite({
                                                                                                                       name : new SFString("r_ectocanthus_pt"),
                                                                                                                       DEF : new SFString("hanim_r_ectocanthus_pt"),
@@ -2593,7 +2618,7 @@ var X3D0 =  new X3D({
 
                                                                                                                         new Shape({
                                                                                                                           USE : new SFString("HAnimSiteShape")})])})),
-                                                                                                                  hAnimSite : new SFNode(
+                                                                                                                  child : new SFNode(
                                                                                                                     new HAnimSite({
                                                                                                                       name : new SFString("r_infraorbitale_pt"),
                                                                                                                       DEF : new SFString("hanim_r_infraorbitale_pt"),
@@ -2604,7 +2629,7 @@ var X3D0 =  new X3D({
 
                                                                                                                         new Shape({
                                                                                                                           USE : new SFString("HAnimSiteShape")})])})),
-                                                                                                                  hAnimSite : new SFNode(
+                                                                                                                  child : new SFNode(
                                                                                                                     new HAnimSite({
                                                                                                                       name : new SFString("r_tragion_pt"),
                                                                                                                       DEF : new SFString("hanim_r_tragion_pt"),
@@ -2615,7 +2640,7 @@ var X3D0 =  new X3D({
 
                                                                                                                         new Shape({
                                                                                                                           USE : new SFString("HAnimSiteShape")})])})),
-                                                                                                                  hAnimSite : new SFNode(
+                                                                                                                  child : new SFNode(
                                                                                                                     new HAnimSite({
                                                                                                                       name : new SFString("sellion_pt"),
                                                                                                                       DEF : new SFString("hanim_sellion_pt"),
@@ -2626,7 +2651,7 @@ var X3D0 =  new X3D({
 
                                                                                                                         new Shape({
                                                                                                                           USE : new SFString("HAnimSiteShape")})])})),
-                                                                                                                  hAnimSite : new SFNode(
+                                                                                                                  child : new SFNode(
                                                                                                                     new HAnimSite({
                                                                                                                       name : new SFString("skull_vertex_pt"),
                                                                                                                       DEF : new SFString("hanim_skull_vertex_pt"),
@@ -2644,7 +2669,7 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([0.0044,1.6209,0.0236]),
                                                                                                                       ulimit : new MFFloat([0,0,0]),
                                                                                                                       llimit : new MFFloat([0,0,0]),
-                                                                                                                      shape : new SFNode(
+                                                                                                                      child : new SFNode(
                                                                                                                         new Shape({
                                                                                                                           geometry : new SFNode(
                                                                                                                             new LineSet({
@@ -2656,7 +2681,7 @@ var X3D0 =  new X3D({
                                                                                                                               color : new SFNode(
                                                                                                                                 new ColorRGBA({
                                                                                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                                      shape : new SFNode(
+                                                                                                                      child : new SFNode(
                                                                                                                         new Shape({
                                                                                                                           geometry : new SFNode(
                                                                                                                             new LineSet({
@@ -2668,7 +2693,7 @@ var X3D0 =  new X3D({
                                                                                                                               color : new SFNode(
                                                                                                                                 new ColorRGBA({
                                                                                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                                      shape : new SFNode(
+                                                                                                                      child : new SFNode(
                                                                                                                         new Shape({
                                                                                                                           geometry : new SFNode(
                                                                                                                             new LineSet({
@@ -2680,7 +2705,7 @@ var X3D0 =  new X3D({
                                                                                                                               color : new SFNode(
                                                                                                                                 new ColorRGBA({
                                                                                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                                      shape : new SFNode(
+                                                                                                                      child : new SFNode(
                                                                                                                         new Shape({
                                                                                                                           geometry : new SFNode(
                                                                                                                             new LineSet({
@@ -2692,7 +2717,7 @@ var X3D0 =  new X3D({
                                                                                                                               color : new SFNode(
                                                                                                                                 new ColorRGBA({
                                                                                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                                      shape : new SFNode(
+                                                                                                                      child : new SFNode(
                                                                                                                         new Shape({
                                                                                                                           geometry : new SFNode(
                                                                                                                             new LineSet({
@@ -2704,7 +2729,7 @@ var X3D0 =  new X3D({
                                                                                                                               color : new SFNode(
                                                                                                                                 new ColorRGBA({
                                                                                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                                      shape : new SFNode(
+                                                                                                                      child : new SFNode(
                                                                                                                         new Shape({
                                                                                                                           geometry : new SFNode(
                                                                                                                             new LineSet({
@@ -2716,7 +2741,7 @@ var X3D0 =  new X3D({
                                                                                                                               color : new SFNode(
                                                                                                                                 new ColorRGBA({
                                                                                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                                      shape : new SFNode(
+                                                                                                                      child : new SFNode(
                                                                                                                         new Shape({
                                                                                                                           geometry : new SFNode(
                                                                                                                             new LineSet({
@@ -2728,7 +2753,7 @@ var X3D0 =  new X3D({
                                                                                                                               color : new SFNode(
                                                                                                                                 new ColorRGBA({
                                                                                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                                      hAnimSite : new SFNode(
+                                                                                                                      child : new SFNode(
                                                                                                                         new HAnimSite({
                                                                                                                           name : new SFString("l_gonion_pt"),
                                                                                                                           DEF : new SFString("hanim_l_gonion_pt"),
@@ -2739,7 +2764,7 @@ var X3D0 =  new X3D({
 
                                                                                                                             new Shape({
                                                                                                                               USE : new SFString("HAnimSiteShape")})])})),
-                                                                                                                      hAnimSite : new SFNode(
+                                                                                                                      child : new SFNode(
                                                                                                                         new HAnimSite({
                                                                                                                           name : new SFString("menton_pt"),
                                                                                                                           DEF : new SFString("hanim_menton_pt"),
@@ -2750,7 +2775,7 @@ var X3D0 =  new X3D({
 
                                                                                                                             new Shape({
                                                                                                                               USE : new SFString("HAnimSiteShape")})])})),
-                                                                                                                      hAnimSite : new SFNode(
+                                                                                                                      child : new SFNode(
                                                                                                                         new HAnimSite({
                                                                                                                           name : new SFString("r_gonion_pt"),
                                                                                                                           DEF : new SFString("hanim_r_gonion_pt"),
@@ -2761,7 +2786,7 @@ var X3D0 =  new X3D({
 
                                                                                                                             new Shape({
                                                                                                                               USE : new SFString("HAnimSiteShape")})])})),
-                                                                                                                      hAnimSite : new SFNode(
+                                                                                                                      child : new SFNode(
                                                                                                                         new HAnimSite({
                                                                                                                           name : new SFString("supramenton_pt"),
                                                                                                                           DEF : new SFString("hanim_supramenton_pt"),
@@ -2828,7 +2853,7 @@ var X3D0 =  new X3D({
                                                                                           center : new SFVec3f([0.082,1.4488,-0.0353]),
                                                                                           ulimit : new MFFloat([0,0,0]),
                                                                                           llimit : new MFFloat([0,0,0]),
-                                                                                          shape : new SFNode(
+                                                                                          child : new SFNode(
                                                                                             new Shape({
                                                                                               geometry : new SFNode(
                                                                                                 new LineSet({
@@ -2847,7 +2872,7 @@ var X3D0 =  new X3D({
                                                                                               center : new SFVec3f([0.0962,1.4269,-0.0424]),
                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                               llimit : new MFFloat([0,0,0]),
-                                                                                              shape : new SFNode(
+                                                                                              child : new SFNode(
                                                                                                 new Shape({
                                                                                                   geometry : new SFNode(
                                                                                                     new LineSet({
@@ -2859,7 +2884,7 @@ var X3D0 =  new X3D({
                                                                                                       color : new SFNode(
                                                                                                         new ColorRGBA({
                                                                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                              hAnimSite : new SFNode(
+                                                                                              child : new SFNode(
                                                                                                 new HAnimSite({
                                                                                                   name : new SFString("l_bideltoid_pt"),
                                                                                                   DEF : new SFString("hanim_l_bideltoid_pt"),
@@ -2870,7 +2895,7 @@ var X3D0 =  new X3D({
 
                                                                                                     new Shape({
                                                                                                       USE : new SFString("HAnimSiteShape")})])})),
-                                                                                              hAnimSite : new SFNode(
+                                                                                              child : new SFNode(
                                                                                                 new HAnimSite({
                                                                                                   name : new SFString("l_humeral_lateral_epicondyles_pt"),
                                                                                                   DEF : new SFString("hanim_l_humeral_lateral_epicondyles_pt"),
@@ -2888,7 +2913,7 @@ var X3D0 =  new X3D({
                                                                                                   center : new SFVec3f([0.2029,1.4376,-0.0387]),
                                                                                                   ulimit : new MFFloat([0,0,0]),
                                                                                                   llimit : new MFFloat([0,0,0]),
-                                                                                                  shape : new SFNode(
+                                                                                                  child : new SFNode(
                                                                                                     new Shape({
                                                                                                       geometry : new SFNode(
                                                                                                         new LineSet({
@@ -2900,7 +2925,7 @@ var X3D0 =  new X3D({
                                                                                                           color : new SFNode(
                                                                                                             new ColorRGBA({
                                                                                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                  hAnimSite : new SFNode(
+                                                                                                  child : new SFNode(
                                                                                                     new HAnimSite({
                                                                                                       name : new SFString("l_humeral_medial_epicondyles_pt"),
                                                                                                       DEF : new SFString("hanim_l_humeral_medial_epicondyles_pt"),
@@ -2911,7 +2936,7 @@ var X3D0 =  new X3D({
 
                                                                                                         new Shape({
                                                                                                           USE : new SFString("HAnimSiteShape")})])})),
-                                                                                                  hAnimSite : new SFNode(
+                                                                                                  child : new SFNode(
                                                                                                     new HAnimSite({
                                                                                                       name : new SFString("l_olecranon_pt"),
                                                                                                       DEF : new SFString("hanim_l_olecranon_pt"),
@@ -2922,7 +2947,7 @@ var X3D0 =  new X3D({
 
                                                                                                         new Shape({
                                                                                                           USE : new SFString("HAnimSiteShape")})])})),
-                                                                                                  hAnimSite : new SFNode(
+                                                                                                  child : new SFNode(
                                                                                                     new HAnimSite({
                                                                                                       name : new SFString("l_radial_styloid_pt"),
                                                                                                       DEF : new SFString("hanim_l_radial_styloid_pt"),
@@ -2933,7 +2958,7 @@ var X3D0 =  new X3D({
 
                                                                                                         new Shape({
                                                                                                           USE : new SFString("HAnimSiteShape")})])})),
-                                                                                                  hAnimSite : new SFNode(
+                                                                                                  child : new SFNode(
                                                                                                     new HAnimSite({
                                                                                                       name : new SFString("l_radiale_pt"),
                                                                                                       DEF : new SFString("hanim_l_radiale_pt"),
@@ -2951,7 +2976,7 @@ var X3D0 =  new X3D({
                                                                                                       center : new SFVec3f([0.2014,1.1357,-0.0682]),
                                                                                                       ulimit : new MFFloat([0,0,0]),
                                                                                                       llimit : new MFFloat([0,0,0]),
-                                                                                                      shape : new SFNode(
+                                                                                                      child : new SFNode(
                                                                                                         new Shape({
                                                                                                           geometry : new SFNode(
                                                                                                             new LineSet({
@@ -2963,7 +2988,7 @@ var X3D0 =  new X3D({
                                                                                                               color : new SFNode(
                                                                                                                 new ColorRGBA({
                                                                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                      hAnimSite : new SFNode(
+                                                                                                      child : new SFNode(
                                                                                                         new HAnimSite({
                                                                                                           name : new SFString("l_ulnar_styloid_pt"),
                                                                                                           DEF : new SFString("hanim_l_ulnar_styloid_pt"),
@@ -2981,7 +3006,7 @@ var X3D0 =  new X3D({
                                                                                                           center : new SFVec3f([0.1984,0.8663,-0.0583]),
                                                                                                           ulimit : new MFFloat([0,0,0]),
                                                                                                           llimit : new MFFloat([0,0,0]),
-                                                                                                          shape : new SFNode(
+                                                                                                          child : new SFNode(
                                                                                                             new Shape({
                                                                                                               geometry : new SFNode(
                                                                                                                 new LineSet({
@@ -2993,7 +3018,7 @@ var X3D0 =  new X3D({
                                                                                                                   color : new SFNode(
                                                                                                                     new ColorRGBA({
                                                                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                          shape : new SFNode(
+                                                                                                          child : new SFNode(
                                                                                                             new Shape({
                                                                                                               geometry : new SFNode(
                                                                                                                 new LineSet({
@@ -3005,7 +3030,7 @@ var X3D0 =  new X3D({
                                                                                                                   color : new SFNode(
                                                                                                                     new ColorRGBA({
                                                                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                          shape : new SFNode(
+                                                                                                          child : new SFNode(
                                                                                                             new Shape({
                                                                                                               geometry : new SFNode(
                                                                                                                 new LineSet({
@@ -3017,7 +3042,7 @@ var X3D0 =  new X3D({
                                                                                                                   color : new SFNode(
                                                                                                                     new ColorRGBA({
                                                                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                          shape : new SFNode(
+                                                                                                          child : new SFNode(
                                                                                                             new Shape({
                                                                                                               geometry : new SFNode(
                                                                                                                 new LineSet({
@@ -3036,7 +3061,7 @@ var X3D0 =  new X3D({
                                                                                                               center : new SFVec3f([0,1,0]),
                                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                                               llimit : new MFFloat([0,0,0]),
-                                                                                                              shape : new SFNode(
+                                                                                                              child : new SFNode(
                                                                                                                 new Shape({
                                                                                                                   geometry : new SFNode(
                                                                                                                     new LineSet({
@@ -3055,7 +3080,7 @@ var X3D0 =  new X3D({
                                                                                                                   center : new SFVec3f([0.1924,0.8472,-0.0534]),
                                                                                                                   ulimit : new MFFloat([0,0,0]),
                                                                                                                   llimit : new MFFloat([0,0,0]),
-                                                                                                                  shape : new SFNode(
+                                                                                                                  child : new SFNode(
                                                                                                                     new Shape({
                                                                                                                       geometry : new SFNode(
                                                                                                                         new LineSet({
@@ -3074,7 +3099,7 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([0.1951,0.8226,0.0246]),
                                                                                                                       ulimit : new MFFloat([0,0,0]),
                                                                                                                       llimit : new MFFloat([0,0,0]),
-                                                                                                                      shape : new SFNode(
+                                                                                                                      child : new SFNode(
                                                                                                                         new Shape({
                                                                                                                           geometry : new SFNode(
                                                                                                                             new LineSet({
@@ -3086,7 +3111,7 @@ var X3D0 =  new X3D({
                                                                                                                               color : new SFNode(
                                                                                                                                 new ColorRGBA({
                                                                                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                                      hAnimSite : new SFNode(
+                                                                                                                      child : new SFNode(
                                                                                                                         new HAnimSite({
                                                                                                                           name : new SFString("l_carpal_distal_phalanx_1_tip"),
                                                                                                                           DEF : new SFString("hanim_l_carpal_distal_phalanx_1_tip"),
@@ -3111,7 +3136,7 @@ var X3D0 =  new X3D({
                                                                                                               center : new SFVec3f([0,1,0]),
                                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                                               llimit : new MFFloat([0,0,0]),
-                                                                                                              shape : new SFNode(
+                                                                                                              child : new SFNode(
                                                                                                                 new Shape({
                                                                                                                   geometry : new SFNode(
                                                                                                                     new LineSet({
@@ -3123,7 +3148,7 @@ var X3D0 =  new X3D({
                                                                                                                       color : new SFNode(
                                                                                                                         new ColorRGBA({
                                                                                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                              hAnimSite : new SFNode(
+                                                                                                              child : new SFNode(
                                                                                                                 new HAnimSite({
                                                                                                                   name : new SFString("l_metacarpal_phalanx_2_pt"),
                                                                                                                   DEF : new SFString("hanim_l_metacarpal_phalanx_2_pt"),
@@ -3141,7 +3166,7 @@ var X3D0 =  new X3D({
                                                                                                                   center : new SFVec3f([0.1983,0.8024,-0.028]),
                                                                                                                   ulimit : new MFFloat([0,0,0]),
                                                                                                                   llimit : new MFFloat([0,0,0]),
-                                                                                                                  shape : new SFNode(
+                                                                                                                  child : new SFNode(
                                                                                                                     new Shape({
                                                                                                                       geometry : new SFNode(
                                                                                                                         new LineSet({
@@ -3160,7 +3185,7 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([0.1983,0.7815,-0.028]),
                                                                                                                       ulimit : new MFFloat([0,0,0]),
                                                                                                                       llimit : new MFFloat([0,0,0]),
-                                                                                                                      shape : new SFNode(
+                                                                                                                      child : new SFNode(
                                                                                                                         new Shape({
                                                                                                                           geometry : new SFNode(
                                                                                                                             new LineSet({
@@ -3179,7 +3204,7 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([0.2017,0.7363,-0.0248]),
                                                                                                                           ulimit : new MFFloat([0,0,0]),
                                                                                                                           llimit : new MFFloat([0,0,0]),
-                                                                                                                          shape : new SFNode(
+                                                                                                                          child : new SFNode(
                                                                                                                             new Shape({
                                                                                                                               geometry : new SFNode(
                                                                                                                                 new LineSet({
@@ -3191,7 +3216,7 @@ var X3D0 =  new X3D({
                                                                                                                                   color : new SFNode(
                                                                                                                                     new ColorRGBA({
                                                                                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                                          hAnimSite : new SFNode(
+                                                                                                                          child : new SFNode(
                                                                                                                             new HAnimSite({
                                                                                                                               name : new SFString("l_carpal_distal_phalanx_2_tip"),
                                                                                                                               DEF : new SFString("hanim_l_carpal_distal_phalanx_2_tip"),
@@ -3202,7 +3227,7 @@ var X3D0 =  new X3D({
 
                                                                                                                                 new Shape({
                                                                                                                                   USE : new SFString("HAnimSiteShape")})])})),
-                                                                                                                          hAnimSite : new SFNode(
+                                                                                                                          child : new SFNode(
                                                                                                                             new HAnimSite({
                                                                                                                               name : new SFString("l_dactylion_pt"),
                                                                                                                               DEF : new SFString("hanim_l_dactylion_pt"),
@@ -3227,7 +3252,7 @@ var X3D0 =  new X3D({
                                                                                                               center : new SFVec3f([0,1,0]),
                                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                                               llimit : new MFFloat([0,0,0]),
-                                                                                                              shape : new SFNode(
+                                                                                                              child : new SFNode(
                                                                                                                 new Shape({
                                                                                                                   geometry : new SFNode(
                                                                                                                     new LineSet({
@@ -3239,7 +3264,7 @@ var X3D0 =  new X3D({
                                                                                                                       color : new SFNode(
                                                                                                                         new ColorRGBA({
                                                                                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                              hAnimSite : new SFNode(
+                                                                                                              child : new SFNode(
                                                                                                                 new HAnimSite({
                                                                                                                   name : new SFString("l_metacarpal_phalanx_3_pt"),
                                                                                                                   DEF : new SFString("hanim_l_metacarpal_phalanx_3_pt"),
@@ -3257,7 +3282,7 @@ var X3D0 =  new X3D({
                                                                                                                   center : new SFVec3f([0.1987,0.8029,-0.053]),
                                                                                                                   ulimit : new MFFloat([0,0,0]),
                                                                                                                   llimit : new MFFloat([0,0,0]),
-                                                                                                                  shape : new SFNode(
+                                                                                                                  child : new SFNode(
                                                                                                                     new Shape({
                                                                                                                       geometry : new SFNode(
                                                                                                                         new LineSet({
@@ -3276,7 +3301,7 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([0.1987,0.7818,-0.053]),
                                                                                                                       ulimit : new MFFloat([0,0,0]),
                                                                                                                       llimit : new MFFloat([0,0,0]),
-                                                                                                                      shape : new SFNode(
+                                                                                                                      child : new SFNode(
                                                                                                                         new Shape({
                                                                                                                           geometry : new SFNode(
                                                                                                                             new LineSet({
@@ -3295,7 +3320,7 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([0.2013,0.7273,-0.0503]),
                                                                                                                           ulimit : new MFFloat([0,0,0]),
                                                                                                                           llimit : new MFFloat([0,0,0]),
-                                                                                                                          shape : new SFNode(
+                                                                                                                          child : new SFNode(
                                                                                                                             new Shape({
                                                                                                                               geometry : new SFNode(
                                                                                                                                 new LineSet({
@@ -3307,7 +3332,7 @@ var X3D0 =  new X3D({
                                                                                                                                   color : new SFNode(
                                                                                                                                     new ColorRGBA({
                                                                                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                                          hAnimSite : new SFNode(
+                                                                                                                          child : new SFNode(
                                                                                                                             new HAnimSite({
                                                                                                                               name : new SFString("l_carpal_distal_phalanx_3_tip"),
                                                                                                                               DEF : new SFString("hanim_l_carpal_distal_phalanx_3_tip"),
@@ -3332,7 +3357,7 @@ var X3D0 =  new X3D({
                                                                                                               center : new SFVec3f([0,1,0]),
                                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                                               llimit : new MFFloat([0,0,0]),
-                                                                                                              shape : new SFNode(
+                                                                                                              child : new SFNode(
                                                                                                                 new Shape({
                                                                                                                   geometry : new SFNode(
                                                                                                                     new LineSet({
@@ -3344,7 +3369,7 @@ var X3D0 =  new X3D({
                                                                                                                       color : new SFNode(
                                                                                                                         new ColorRGBA({
                                                                                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                              shape : new SFNode(
+                                                                                                              child : new SFNode(
                                                                                                                 new Shape({
                                                                                                                   geometry : new SFNode(
                                                                                                                     new LineSet({
@@ -3356,7 +3381,7 @@ var X3D0 =  new X3D({
                                                                                                                       color : new SFNode(
                                                                                                                         new ColorRGBA({
                                                                                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                              hAnimSite : new SFNode(
+                                                                                                              child : new SFNode(
                                                                                                                 new HAnimSite({
                                                                                                                   name : new SFString("l_metacarpal_phalanx_5_pt"),
                                                                                                                   DEF : new SFString("hanim_l_metacarpal_phalanx_5_pt"),
@@ -3374,7 +3399,7 @@ var X3D0 =  new X3D({
                                                                                                                   center : new SFVec3f([0.1956,0.8019,-0.0794]),
                                                                                                                   ulimit : new MFFloat([0,0,0]),
                                                                                                                   llimit : new MFFloat([0,0,0]),
-                                                                                                                  shape : new SFNode(
+                                                                                                                  child : new SFNode(
                                                                                                                     new Shape({
                                                                                                                       geometry : new SFNode(
                                                                                                                         new LineSet({
@@ -3393,7 +3418,7 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([0.1956,0.7815,-0.0794]),
                                                                                                                       ulimit : new MFFloat([0,0,0]),
                                                                                                                       llimit : new MFFloat([0,0,0]),
-                                                                                                                      shape : new SFNode(
+                                                                                                                      child : new SFNode(
                                                                                                                         new Shape({
                                                                                                                           geometry : new SFNode(
                                                                                                                             new LineSet({
@@ -3412,7 +3437,7 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([0.1973,0.7287,-0.0777]),
                                                                                                                           ulimit : new MFFloat([0,0,0]),
                                                                                                                           llimit : new MFFloat([0,0,0]),
-                                                                                                                          shape : new SFNode(
+                                                                                                                          child : new SFNode(
                                                                                                                             new Shape({
                                                                                                                               geometry : new SFNode(
                                                                                                                                 new LineSet({
@@ -3424,7 +3449,7 @@ var X3D0 =  new X3D({
                                                                                                                                   color : new SFNode(
                                                                                                                                     new ColorRGBA({
                                                                                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                                          hAnimSite : new SFNode(
+                                                                                                                          child : new SFNode(
                                                                                                                             new HAnimSite({
                                                                                                                               name : new SFString("l_carpal_distal_phalanx_4_tip"),
                                                                                                                               DEF : new SFString("hanim_l_carpal_distal_phalanx_4_tip"),
@@ -3449,7 +3474,7 @@ var X3D0 =  new X3D({
                                                                                                                   center : new SFVec3f([0.1925,0.8066,-0.1036]),
                                                                                                                   ulimit : new MFFloat([0,0,0]),
                                                                                                                   llimit : new MFFloat([0,0,0]),
-                                                                                                                  shape : new SFNode(
+                                                                                                                  child : new SFNode(
                                                                                                                     new Shape({
                                                                                                                       geometry : new SFNode(
                                                                                                                         new LineSet({
@@ -3468,7 +3493,7 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([0.1925,0.7866,-0.1036]),
                                                                                                                       ulimit : new MFFloat([0,0,0]),
                                                                                                                       llimit : new MFFloat([0,0,0]),
-                                                                                                                      shape : new SFNode(
+                                                                                                                      child : new SFNode(
                                                                                                                         new Shape({
                                                                                                                           geometry : new SFNode(
                                                                                                                             new LineSet({
@@ -3487,7 +3512,7 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([0.1938,0.7452,-0.1024]),
                                                                                                                           ulimit : new MFFloat([0,0,0]),
                                                                                                                           llimit : new MFFloat([0,0,0]),
-                                                                                                                          shape : new SFNode(
+                                                                                                                          child : new SFNode(
                                                                                                                             new Shape({
                                                                                                                               geometry : new SFNode(
                                                                                                                                 new LineSet({
@@ -3499,7 +3524,7 @@ var X3D0 =  new X3D({
                                                                                                                                   color : new SFNode(
                                                                                                                                     new ColorRGBA({
                                                                                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                                          hAnimSite : new SFNode(
+                                                                                                                          child : new SFNode(
                                                                                                                             new HAnimSite({
                                                                                                                               name : new SFString("l_carpal_distal_phalanx_5_tip"),
                                                                                                                               DEF : new SFString("hanim_l_carpal_distal_phalanx_5_tip"),
@@ -3524,7 +3549,7 @@ var X3D0 =  new X3D({
                                                                                           center : new SFVec3f([-0.0694,1.46,-0.033]),
                                                                                           ulimit : new MFFloat([0,0,0]),
                                                                                           llimit : new MFFloat([0,0,0]),
-                                                                                          shape : new SFNode(
+                                                                                          child : new SFNode(
                                                                                             new Shape({
                                                                                               geometry : new SFNode(
                                                                                                 new LineSet({
@@ -3543,7 +3568,7 @@ var X3D0 =  new X3D({
                                                                                               center : new SFVec3f([-0.0836,1.4281,-0.0401]),
                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                               llimit : new MFFloat([0,0,0]),
-                                                                                              shape : new SFNode(
+                                                                                              child : new SFNode(
                                                                                                 new Shape({
                                                                                                   geometry : new SFNode(
                                                                                                     new LineSet({
@@ -3555,7 +3580,7 @@ var X3D0 =  new X3D({
                                                                                                       color : new SFNode(
                                                                                                         new ColorRGBA({
                                                                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                              hAnimSite : new SFNode(
+                                                                                              child : new SFNode(
                                                                                                 new HAnimSite({
                                                                                                   name : new SFString("r_bideltoid_pt"),
                                                                                                   DEF : new SFString("hanim_r_bideltoid_pt"),
@@ -3566,7 +3591,7 @@ var X3D0 =  new X3D({
 
                                                                                                     new Shape({
                                                                                                       USE : new SFString("HAnimSiteShape")})])})),
-                                                                                              hAnimSite : new SFNode(
+                                                                                              child : new SFNode(
                                                                                                 new HAnimSite({
                                                                                                   name : new SFString("r_humeral_lateral_epicondyles_pt"),
                                                                                                   DEF : new SFString("hanim_r_humeral_lateral_epicondyles_pt"),
@@ -3584,7 +3609,7 @@ var X3D0 =  new X3D({
                                                                                                   center : new SFVec3f([-0.1907,1.4407,-0.0325]),
                                                                                                   ulimit : new MFFloat([0,0,0]),
                                                                                                   llimit : new MFFloat([0,0,0]),
-                                                                                                  shape : new SFNode(
+                                                                                                  child : new SFNode(
                                                                                                     new Shape({
                                                                                                       geometry : new SFNode(
                                                                                                         new LineSet({
@@ -3596,7 +3621,7 @@ var X3D0 =  new X3D({
                                                                                                           color : new SFNode(
                                                                                                             new ColorRGBA({
                                                                                                               USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                  hAnimSite : new SFNode(
+                                                                                                  child : new SFNode(
                                                                                                     new HAnimSite({
                                                                                                       name : new SFString("r_humeral_medial_epicondyles_pt"),
                                                                                                       DEF : new SFString("hanim_r_humeral_medial_epicondyles_pt"),
@@ -3607,7 +3632,7 @@ var X3D0 =  new X3D({
 
                                                                                                         new Shape({
                                                                                                           USE : new SFString("HAnimSiteShape")})])})),
-                                                                                                  hAnimSite : new SFNode(
+                                                                                                  child : new SFNode(
                                                                                                     new HAnimSite({
                                                                                                       name : new SFString("r_olecranon_pt"),
                                                                                                       DEF : new SFString("hanim_r_olecranon_pt"),
@@ -3618,7 +3643,7 @@ var X3D0 =  new X3D({
 
                                                                                                         new Shape({
                                                                                                           USE : new SFString("HAnimSiteShape")})])})),
-                                                                                                  hAnimSite : new SFNode(
+                                                                                                  child : new SFNode(
                                                                                                     new HAnimSite({
                                                                                                       name : new SFString("r_radial_styloid_pt"),
                                                                                                       DEF : new SFString("hanim_r_radial_styloid_pt"),
@@ -3629,7 +3654,7 @@ var X3D0 =  new X3D({
 
                                                                                                         new Shape({
                                                                                                           USE : new SFString("HAnimSiteShape")})])})),
-                                                                                                  hAnimSite : new SFNode(
+                                                                                                  child : new SFNode(
                                                                                                     new HAnimSite({
                                                                                                       name : new SFString("r_radiale_pt"),
                                                                                                       DEF : new SFString("hanim_r_radiale_pt"),
@@ -3647,7 +3672,7 @@ var X3D0 =  new X3D({
                                                                                                       center : new SFVec3f([-0.1949,1.1388,-0.062]),
                                                                                                       ulimit : new MFFloat([0,0,0]),
                                                                                                       llimit : new MFFloat([0,0,0]),
-                                                                                                      shape : new SFNode(
+                                                                                                      child : new SFNode(
                                                                                                         new Shape({
                                                                                                           geometry : new SFNode(
                                                                                                             new LineSet({
@@ -3659,7 +3684,7 @@ var X3D0 =  new X3D({
                                                                                                               color : new SFNode(
                                                                                                                 new ColorRGBA({
                                                                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                      hAnimSite : new SFNode(
+                                                                                                      child : new SFNode(
                                                                                                         new HAnimSite({
                                                                                                           name : new SFString("r_ulnar_styloid_pt"),
                                                                                                           DEF : new SFString("hanim_r_ulnar_styloid_pt"),
@@ -3677,7 +3702,7 @@ var X3D0 =  new X3D({
                                                                                                           center : new SFVec3f([-0.1959,0.8694,-0.0521]),
                                                                                                           ulimit : new MFFloat([0,0,0]),
                                                                                                           llimit : new MFFloat([0,0,0]),
-                                                                                                          shape : new SFNode(
+                                                                                                          child : new SFNode(
                                                                                                             new Shape({
                                                                                                               geometry : new SFNode(
                                                                                                                 new LineSet({
@@ -3689,7 +3714,7 @@ var X3D0 =  new X3D({
                                                                                                                   color : new SFNode(
                                                                                                                     new ColorRGBA({
                                                                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                          shape : new SFNode(
+                                                                                                          child : new SFNode(
                                                                                                             new Shape({
                                                                                                               geometry : new SFNode(
                                                                                                                 new LineSet({
@@ -3701,7 +3726,7 @@ var X3D0 =  new X3D({
                                                                                                                   color : new SFNode(
                                                                                                                     new ColorRGBA({
                                                                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                          shape : new SFNode(
+                                                                                                          child : new SFNode(
                                                                                                             new Shape({
                                                                                                               geometry : new SFNode(
                                                                                                                 new LineSet({
@@ -3713,7 +3738,7 @@ var X3D0 =  new X3D({
                                                                                                                   color : new SFNode(
                                                                                                                     new ColorRGBA({
                                                                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                          shape : new SFNode(
+                                                                                                          child : new SFNode(
                                                                                                             new Shape({
                                                                                                               geometry : new SFNode(
                                                                                                                 new LineSet({
@@ -3732,7 +3757,7 @@ var X3D0 =  new X3D({
                                                                                                               center : new SFVec3f([0,1,0]),
                                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                                               llimit : new MFFloat([0,0,0]),
-                                                                                                              shape : new SFNode(
+                                                                                                              child : new SFNode(
                                                                                                                 new Shape({
                                                                                                                   geometry : new SFNode(
                                                                                                                     new LineSet({
@@ -3751,7 +3776,7 @@ var X3D0 =  new X3D({
                                                                                                                   center : new SFVec3f([-0.1899,0.8502,-0.0473]),
                                                                                                                   ulimit : new MFFloat([0,0,0]),
                                                                                                                   llimit : new MFFloat([0,0,0]),
-                                                                                                                  shape : new SFNode(
+                                                                                                                  child : new SFNode(
                                                                                                                     new Shape({
                                                                                                                       geometry : new SFNode(
                                                                                                                         new LineSet({
@@ -3770,7 +3795,7 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([-0.1874,0.8256,0.0306]),
                                                                                                                       ulimit : new MFFloat([0,0,0]),
                                                                                                                       llimit : new MFFloat([0,0,0]),
-                                                                                                                      shape : new SFNode(
+                                                                                                                      child : new SFNode(
                                                                                                                         new Shape({
                                                                                                                           geometry : new SFNode(
                                                                                                                             new LineSet({
@@ -3782,7 +3807,7 @@ var X3D0 =  new X3D({
                                                                                                                               color : new SFNode(
                                                                                                                                 new ColorRGBA({
                                                                                                                                   USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                                      hAnimSite : new SFNode(
+                                                                                                                      child : new SFNode(
                                                                                                                         new HAnimSite({
                                                                                                                           name : new SFString("r_carpal_distal_phalanx_1_tip"),
                                                                                                                           DEF : new SFString("hanim_r_carpal_distal_phalanx_1_tip"),
@@ -3807,7 +3832,7 @@ var X3D0 =  new X3D({
                                                                                                               center : new SFVec3f([0,1,0]),
                                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                                               llimit : new MFFloat([0,0,0]),
-                                                                                                              shape : new SFNode(
+                                                                                                              child : new SFNode(
                                                                                                                 new Shape({
                                                                                                                   geometry : new SFNode(
                                                                                                                     new LineSet({
@@ -3819,7 +3844,7 @@ var X3D0 =  new X3D({
                                                                                                                       color : new SFNode(
                                                                                                                         new ColorRGBA({
                                                                                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                              hAnimSite : new SFNode(
+                                                                                                              child : new SFNode(
                                                                                                                 new HAnimSite({
                                                                                                                   name : new SFString("r_metacarpal_phalanx_2_pt"),
                                                                                                                   DEF : new SFString("hanim_r_metacarpal_phalanx_2_pt"),
@@ -3837,7 +3862,7 @@ var X3D0 =  new X3D({
                                                                                                                   center : new SFVec3f([-0.1961,0.8055,-0.0218]),
                                                                                                                   ulimit : new MFFloat([0,0,0]),
                                                                                                                   llimit : new MFFloat([0,0,0]),
-                                                                                                                  shape : new SFNode(
+                                                                                                                  child : new SFNode(
                                                                                                                     new Shape({
                                                                                                                       geometry : new SFNode(
                                                                                                                         new LineSet({
@@ -3856,7 +3881,7 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([-0.1961,0.7846,-0.0218]),
                                                                                                                       ulimit : new MFFloat([0,0,0]),
                                                                                                                       llimit : new MFFloat([0,0,0]),
-                                                                                                                      shape : new SFNode(
+                                                                                                                      child : new SFNode(
                                                                                                                         new Shape({
                                                                                                                           geometry : new SFNode(
                                                                                                                             new LineSet({
@@ -3875,7 +3900,7 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([-0.1954,0.7393,-0.0185]),
                                                                                                                           ulimit : new MFFloat([0,0,0]),
                                                                                                                           llimit : new MFFloat([0,0,0]),
-                                                                                                                          shape : new SFNode(
+                                                                                                                          child : new SFNode(
                                                                                                                             new Shape({
                                                                                                                               geometry : new SFNode(
                                                                                                                                 new LineSet({
@@ -3887,7 +3912,7 @@ var X3D0 =  new X3D({
                                                                                                                                   color : new SFNode(
                                                                                                                                     new ColorRGBA({
                                                                                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                                          hAnimSite : new SFNode(
+                                                                                                                          child : new SFNode(
                                                                                                                             new HAnimSite({
                                                                                                                               name : new SFString("r_carpal_distal_phalanx_2_tip"),
                                                                                                                               DEF : new SFString("hanim_r_carpal_distal_phalanx_2_tip"),
@@ -3898,7 +3923,7 @@ var X3D0 =  new X3D({
 
                                                                                                                                 new Shape({
                                                                                                                                   USE : new SFString("HAnimSiteShape")})])})),
-                                                                                                                          hAnimSite : new SFNode(
+                                                                                                                          child : new SFNode(
                                                                                                                             new HAnimSite({
                                                                                                                               name : new SFString("r_dactylion_pt"),
                                                                                                                               DEF : new SFString("hanim_r_dactylion_pt"),
@@ -3923,7 +3948,7 @@ var X3D0 =  new X3D({
                                                                                                               center : new SFVec3f([0,1,0]),
                                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                                               llimit : new MFFloat([0,0,0]),
-                                                                                                              shape : new SFNode(
+                                                                                                              child : new SFNode(
                                                                                                                 new Shape({
                                                                                                                   geometry : new SFNode(
                                                                                                                     new LineSet({
@@ -3935,7 +3960,7 @@ var X3D0 =  new X3D({
                                                                                                                       color : new SFNode(
                                                                                                                         new ColorRGBA({
                                                                                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                              hAnimSite : new SFNode(
+                                                                                                              child : new SFNode(
                                                                                                                 new HAnimSite({
                                                                                                                   name : new SFString("r_metacarpal_phalanx_3_pt"),
                                                                                                                   DEF : new SFString("hanim_r_metacarpal_phalanx_3_pt"),
@@ -3953,7 +3978,7 @@ var X3D0 =  new X3D({
                                                                                                                   center : new SFVec3f([-0.1972,0.806,-0.0468]),
                                                                                                                   ulimit : new MFFloat([0,0,0]),
                                                                                                                   llimit : new MFFloat([0,0,0]),
-                                                                                                                  shape : new SFNode(
+                                                                                                                  child : new SFNode(
                                                                                                                     new Shape({
                                                                                                                       geometry : new SFNode(
                                                                                                                         new LineSet({
@@ -3972,7 +3997,7 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([-0.1972,0.7849,-0.0468]),
                                                                                                                       ulimit : new MFFloat([0,0,0]),
                                                                                                                       llimit : new MFFloat([0,0,0]),
-                                                                                                                      shape : new SFNode(
+                                                                                                                      child : new SFNode(
                                                                                                                         new Shape({
                                                                                                                           geometry : new SFNode(
                                                                                                                             new LineSet({
@@ -3991,7 +4016,7 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([-0.195,0.7304,-0.0441]),
                                                                                                                           ulimit : new MFFloat([0,0,0]),
                                                                                                                           llimit : new MFFloat([0,0,0]),
-                                                                                                                          shape : new SFNode(
+                                                                                                                          child : new SFNode(
                                                                                                                             new Shape({
                                                                                                                               geometry : new SFNode(
                                                                                                                                 new LineSet({
@@ -4003,7 +4028,7 @@ var X3D0 =  new X3D({
                                                                                                                                   color : new SFNode(
                                                                                                                                     new ColorRGBA({
                                                                                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                                          hAnimSite : new SFNode(
+                                                                                                                          child : new SFNode(
                                                                                                                             new HAnimSite({
                                                                                                                               name : new SFString("r_carpal_distal_phalanx_3_tip"),
                                                                                                                               DEF : new SFString("hanim_r_carpal_distal_phalanx_3_tip"),
@@ -4028,7 +4053,7 @@ var X3D0 =  new X3D({
                                                                                                               center : new SFVec3f([0,1,0]),
                                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                                               llimit : new MFFloat([0,0,0]),
-                                                                                                              shape : new SFNode(
+                                                                                                              child : new SFNode(
                                                                                                                 new Shape({
                                                                                                                   geometry : new SFNode(
                                                                                                                     new LineSet({
@@ -4040,7 +4065,7 @@ var X3D0 =  new X3D({
                                                                                                                       color : new SFNode(
                                                                                                                         new ColorRGBA({
                                                                                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                              shape : new SFNode(
+                                                                                                              child : new SFNode(
                                                                                                                 new Shape({
                                                                                                                   geometry : new SFNode(
                                                                                                                     new LineSet({
@@ -4052,7 +4077,7 @@ var X3D0 =  new X3D({
                                                                                                                       color : new SFNode(
                                                                                                                         new ColorRGBA({
                                                                                                                           USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                              hAnimSite : new SFNode(
+                                                                                                              child : new SFNode(
                                                                                                                 new HAnimSite({
                                                                                                                   name : new SFString("r_metacarpal_phalanx_5_pt"),
                                                                                                                   DEF : new SFString("hanim_r_metacarpal_phalanx_5_pt"),
@@ -4070,7 +4095,7 @@ var X3D0 =  new X3D({
                                                                                                                   center : new SFVec3f([-0.1951,0.8049,-0.0732]),
                                                                                                                   ulimit : new MFFloat([0,0,0]),
                                                                                                                   llimit : new MFFloat([0,0,0]),
-                                                                                                                  shape : new SFNode(
+                                                                                                                  child : new SFNode(
                                                                                                                     new Shape({
                                                                                                                       geometry : new SFNode(
                                                                                                                         new LineSet({
@@ -4089,7 +4114,7 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([-0.1951,0.7845,-0.0732]),
                                                                                                                       ulimit : new MFFloat([0,0,0]),
                                                                                                                       llimit : new MFFloat([0,0,0]),
-                                                                                                                      shape : new SFNode(
+                                                                                                                      child : new SFNode(
                                                                                                                         new Shape({
                                                                                                                           geometry : new SFNode(
                                                                                                                             new LineSet({
@@ -4108,7 +4133,7 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([-0.192,0.7318,-0.0716]),
                                                                                                                           ulimit : new MFFloat([0,0,0]),
                                                                                                                           llimit : new MFFloat([0,0,0]),
-                                                                                                                          shape : new SFNode(
+                                                                                                                          child : new SFNode(
                                                                                                                             new Shape({
                                                                                                                               geometry : new SFNode(
                                                                                                                                 new LineSet({
@@ -4120,7 +4145,7 @@ var X3D0 =  new X3D({
                                                                                                                                   color : new SFNode(
                                                                                                                                     new ColorRGBA({
                                                                                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                                          hAnimSite : new SFNode(
+                                                                                                                          child : new SFNode(
                                                                                                                             new HAnimSite({
                                                                                                                               name : new SFString("r_carpal_distal_phalanx_4_tip"),
                                                                                                                               DEF : new SFString("hanim_r_carpal_distal_phalanx_4_tip"),
@@ -4145,7 +4170,7 @@ var X3D0 =  new X3D({
                                                                                                                   center : new SFVec3f([-0.1926,0.8096,-0.0975]),
                                                                                                                   ulimit : new MFFloat([0,0,0]),
                                                                                                                   llimit : new MFFloat([0,0,0]),
-                                                                                                                  shape : new SFNode(
+                                                                                                                  child : new SFNode(
                                                                                                                     new Shape({
                                                                                                                       geometry : new SFNode(
                                                                                                                         new LineSet({
@@ -4164,7 +4189,7 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([-0.1926,0.7896,-0.0975]),
                                                                                                                       ulimit : new MFFloat([0,0,0]),
                                                                                                                       llimit : new MFFloat([0,0,0]),
-                                                                                                                      shape : new SFNode(
+                                                                                                                      child : new SFNode(
                                                                                                                         new Shape({
                                                                                                                           geometry : new SFNode(
                                                                                                                             new LineSet({
@@ -4183,7 +4208,7 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([-0.1902,0.7483,-0.0963]),
                                                                                                                           ulimit : new MFFloat([0,0,0]),
                                                                                                                           llimit : new MFFloat([0,0,0]),
-                                                                                                                          shape : new SFNode(
+                                                                                                                          child : new SFNode(
                                                                                                                             new Shape({
                                                                                                                               geometry : new SFNode(
                                                                                                                                 new LineSet({
@@ -4195,7 +4220,7 @@ var X3D0 =  new X3D({
                                                                                                                                   color : new SFNode(
                                                                                                                                     new ColorRGBA({
                                                                                                                                       USE : new SFString("HAnimSegmentLineColorRGBA")}))}))})),
-                                                                                                                          hAnimSite : new SFNode(
+                                                                                                                          child : new SFNode(
                                                                                                                             new HAnimSite({
                                                                                                                               name : new SFString("r_carpal_distal_phalanx_5_tip"),
                                                                                                                               DEF : new SFString("hanim_r_carpal_distal_phalanx_5_tip"),

@@ -3223,7 +3223,7 @@ JinLOA4Canonical.prototype = {
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("HAnim").setLevel(1)))
   .setScene((new autoclass.Scene())
-    .addChild((new autoclass.WorldInfo()).setTitle("JinLOA4.x3d"))
+    .addChild((new autoclass.WorldInfo()).setTitle("JinLOA4Canonical.x3d"))
     .addChild((new autoclass.NavigationInfo()).setSpeed(1.5))
     .addChild((new autoclass.Viewpoint()).setDescription("JinLOA4").setCenterOfRotation(0.0,1.0,0.0).setPosition(0.0,1.0,3.0))
     .addChild((new autoclass.Transform("cordsysfloor")).setScale(.175,.175,.175)

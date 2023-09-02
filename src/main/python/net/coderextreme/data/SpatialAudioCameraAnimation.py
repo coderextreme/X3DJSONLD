@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Full", version="4.0", 
-head=head(children=[meta(name="title", content="SpatialAudioCameraAnimation.x3d"),
+head=head(
+children=[
+meta(name="title", content="SpatialAudioCameraAnimation.x3d"),
 meta(name="description", content="In the last demo, there are two sound sources in different positions. Through the immersion in the X3D scene the user could attend a rational navigation. Whenever the camera moves in the direction of an existing sound source, the strength of this source increases, while the sound strength of the other (the second one) decreases and vice versa. Through this process, great realism of the scene is achieved, since it emulates the spatial sound in real world."),
 meta(name="info", content="This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API."),
 meta(name="creator", content="Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman"),
@@ -16,7 +19,7 @@ meta(name="reference", content="https://www.medialab.hmu.gr/minipages/x3domAudio
 meta(name="identifier", content="https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SpatialAudioCameraAnimation.x3d"),
 meta(name="generator", content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -85,5 +88,6 @@ Gain(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
 AudioClip(description="Violin", loop=True, url=["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"])])]),
 SpatialSound(DEF="Audio2", distanceModel="INVERSE", children=[
 Gain(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
-AudioClip(description="Saxophone", loop=True, url=["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"])])])])]))
-.XML())
+AudioClip(description="Saxophone", loop=True, url=["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"])])])])])))
+output = model.JSON()
+json.loads(output)

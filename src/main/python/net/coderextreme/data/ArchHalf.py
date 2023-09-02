@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Interchange", version="3.3", 
-head=head(children=[meta(name="title", content="ArchHalf.x3d"),
+head=head(
+children=[
+meta(name="title", content="ArchHalf.x3d"),
 meta(name="description", content="Create a half arch with parameters clearSpanWidth=4; riseHeight=2; depth=3; topAbutmentHeight=0.5; pierWidth=0.5; pierHeight=1. Parameter clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width. Modify them with Transform > scale or editing the IndexedFileSet node. See the reference file ArchModelingDiagrams.pdf and the ArchScript_more_readable.js script to find further information."),
 meta(name="creator", content="Michele Foti, Don Brutzman"),
 meta(name="created", content="15 December 2014"),
@@ -14,7 +17,7 @@ meta(name="reference", content="https://en.wikipedia.org/wiki/Arch"),
 meta(name="identifier", content="http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchHalf.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -27,5 +30,6 @@ Coordinate(DEF="ArchChord", point=[(2,0,0),(1.997498435543818,0.1,0),(1.98997487
 appearance=
 Appearance(
 material=
-Material(DEF="MaterialNode", diffuseColor=((1,0.75,0.25)))))]))
-.XML())
+Material(DEF="MaterialNode", diffuseColor=((1,0.75,0.25)))))])))
+output = model.JSON()
+json.loads(output)

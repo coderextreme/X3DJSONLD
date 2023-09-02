@@ -118,9 +118,9 @@ Appearance Appearance26 = createNode("Appearance");
 Appearance26.USE = "Green";
 Shape24.appearance = Appearance26;
 
-Transform23.children = new MFNode();
+Transform23.child = new undefined();
 
-Transform23.children[0] = Shape24;
+Transform23.child[0] = Shape24;
 
 Group18.children[1] = Transform23;
 
@@ -199,9 +199,9 @@ Appearance Appearance44 = createNode("Appearance");
 Appearance44.USE = "Red";
 Shape42.appearance = Appearance44;
 
-Transform41.children = new MFNode();
+Transform41.child = new undefined();
 
-Transform41.children[0] = Shape42;
+Transform41.child[0] = Shape42;
 
 Group36.children[1] = Transform41;
 
@@ -278,9 +278,9 @@ Appearance Appearance61 = createNode("Appearance");
 Appearance61.USE = "Blue";
 Shape59.appearance = Appearance61;
 
-Transform58.children = new MFNode();
+Transform58.child = new undefined();
 
-Transform58.children[0] = Shape59;
+Transform58.child[0] = Shape59;
 
 Group53.children[1] = Transform58;
 

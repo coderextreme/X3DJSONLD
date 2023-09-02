@@ -72,7 +72,7 @@ var X3D0 =  new X3D({
           children : new MFNode([
             new Transform({
               translation : new SFVec3f([0,2,0]),
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   geometry : new SFNode(
                     new Text({
@@ -87,11 +87,11 @@ var X3D0 =  new X3D({
                       DEF : new SFString("LightBlueAppearance"),
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor([0.1,0.7,0.7])}))}))})])}),
+                          diffuseColor : new SFColor([0.1,0.7,0.7])}))}))}))}),
 
             new Transform({
               translation : new SFVec3f([-3,0,0]),
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   geometry : new SFNode(
                     new Text({
@@ -101,11 +101,11 @@ var X3D0 =  new X3D({
                           USE : new SFString("testFontStyle")}))})),
                   appearance : new SFNode(
                     new Appearance({
-                      USE : new SFString("LightBlueAppearance")}))})])}),
+                      USE : new SFString("LightBlueAppearance")}))}))}),
 
             new Transform({
               translation : new SFVec3f([3,0,0]),
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   geometry : new SFNode(
                     new Text({
@@ -115,5 +115,5 @@ var X3D0 =  new X3D({
                           USE : new SFString("testFontStyle")}))})),
                   appearance : new SFNode(
                     new Appearance({
-                      USE : new SFString("LightBlueAppearance")}))})])})])}))});
+                      USE : new SFString("LightBlueAppearance")}))}))})])}))});
 console.log(X3D0.toXMLNode());

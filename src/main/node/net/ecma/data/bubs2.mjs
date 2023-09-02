@@ -60,7 +60,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/geo.x3d")}),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d")}),
 
             new meta({
               name : new SFString("translated"),
@@ -85,12 +85,12 @@ var X3D0 =  new X3D({
               description : new SFString("Bubbles in action")}),
 
             new Background({
-              backUrl : new MFString(["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"]),
-              bottomUrl : new MFString(["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"]),
-              frontUrl : new MFString(["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"]),
-              leftUrl : new MFString(["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"]),
-              rightUrl : new MFString(["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"]),
-              topUrl : new MFString(["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"])}),
+              backUrl : new MFString(["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"]),
+              bottomUrl : new MFString(["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"]),
+              frontUrl : new MFString(["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"]),
+              leftUrl : new MFString(["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"]),
+              rightUrl : new MFString(["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"]),
+              topUrl : new MFString(["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"])}),
 
             new ProtoDeclare({
               name : new SFString("Bubble"),
@@ -99,7 +99,7 @@ var X3D0 =  new X3D({
                   children : new MFNode([
                     new Transform({
                       DEF : new SFString("body_trans"),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           geometry : new SFNode(
                             new Sphere({
@@ -109,8 +109,8 @@ var X3D0 =  new X3D({
                               material : new SFNode(
                                 new Material({
                                   diffuseColor : new SFColor([1,0,0]),
-                                  transparency : new SFFloat(0.2)}))}))}),
-
+                                  transparency : new SFFloat(0.2)}))}))})),
+                      children : new MFNode([
                         new Script({
                           DEF : new SFString("bounce"),
                           field : new MFNode([

@@ -130,7 +130,7 @@ Shape24->setAppearance(*Appearance25);
 CBox* Box27 = (CBox *)(m_pScene.createNode("Box"));
 Shape24->setGeometry(Box27);
 
-Transform23->addChildren(*Shape24);
+Transform23->addChild(*Shape24);
 
 group->addChildren(*Transform23);
 

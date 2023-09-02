@@ -53,5 +53,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addComments((new autoclass.CommentsBlock("rotation='0 0 1 3.141593'")))
           .addChild((new autoclass.Inline()).setUrl(java.newArray("java.lang.String", ["HAnimModelFootRight.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.x3d","HAnimModelFootRight.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.wrl"])))
           .addChild((new autoclass.Transform()).setUSE("GridXY_20x20Fixed_AdjustScale"))))      ;
-    X3D0.toFileX3D("../data/HAnimModelsHandsFeet.new.x3d");
+    X3D0.toFileX3D("../data/HAnimModelsHandsFeet.new.node.x3d");
     process.exit(0);

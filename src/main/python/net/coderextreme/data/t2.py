@@ -2,12 +2,15 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Interchange", version="3.0", 
-head=head(children=[component(name="Networking", level=2),
+head=head(
+children=[
+component(name="Networking", level=2),
 meta(name="generator", content="view3dscene, https://castle-engine.io/view3dscene.php"),
 meta(name="source", content="t1.wrl"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -45,5 +48,6 @@ IS=IS(connect=[connect(nodeField="posi", protoField="pos")
 ]))])),
 Anchor(url=["javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"], description="High Peak Community Arts", children=[
 ProtoInstance(name="r", fieldValue=[fieldValue(name="pos", value=[400,0.100000001490116,-385])
-])])]))
-.XML())
+])])])))
+output = model.JSON()
+json.loads(output)

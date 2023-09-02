@@ -26,16 +26,16 @@
 <ROUTE fromField="value_changed" fromNode="Camera001-ROT-INTERP" toField="set_orientation" toNode="Camera001"></ROUTE>
 <Transform DEF="Floor" translation="1.241 0 0.358"><Shape><Appearance DEF="WireColor"><Material diffuseColor="0.122 0.114 0.125"></Material>
 </Appearance>
-<Box containerField="geometry" size="2000 1 2000"></Box>
+<Box size="2000 1 2000"></Box>
 </Shape>
 </Transform>
 <Transform DEF="TransformAudio1" translation="-933.123474 0 -926.253235"><Shape><Appearance DEF="WireColor_1"><Material diffuseColor="0.690196 0.101961 0.101961"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="100"></Sphere>
+<Sphere radius="100"></Sphere>
 </Shape>
 <Billboard><Transform DEF="violin" rotation="1 0 0 -0.5" scale="100 100 100" translation="0 100 0"><Shape><Appearance><Material ambientIntensity="0.0933" diffuseColor="1 1 1" shininess="0.51" specularColor="0.46 0.46 0.46"></Material>
 </Appearance>
-<Text containerField="geometry" string="&quot;Violin&quot;"><FontStyle DEF="ModelFontStyle" family="&quot;Times&quot; &quot;SERIF&quot;" style="BOLD"></FontStyle>
+<Text string="&quot;Violin&quot;"><FontStyle DEF="ModelFontStyle" family="&quot;Times&quot; &quot;SERIF&quot;" style="BOLD"></FontStyle>
 </Text>
 </Shape>
 </Transform>
@@ -43,11 +43,11 @@
 </Transform>
 <Transform DEF="TransformAudio2" translation="933.475586 0 924.423218"><Shape><Appearance DEF="WireColor_2"><Material diffuseColor="0.105882 0.694118 0.580392"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="100"></Sphere>
+<Sphere radius="100"></Sphere>
 </Shape>
 <Billboard><Transform DEF="saxophone" rotation="1 0 0 -0.5" scale="100 100 100" translation="0 100 0"><Shape><Appearance><Material ambientIntensity="0.0933" diffuseColor="1 1 1" shininess="0.51" specularColor="0.46 0.46 0.46"></Material>
 </Appearance>
-<Text containerField="geometry" string="&quot;Saxophone&quot;"><FontStyle USE="ModelFontStyle"></FontStyle>
+<Text string="&quot;Saxophone&quot;"><FontStyle USE="ModelFontStyle"></FontStyle>
 </Text>
 </Shape>
 </Transform>

@@ -339,9 +339,9 @@ Text65.fontStyle = FontStyle66;
 
 Shape61.geometry = Text65;
 
-Transform60.children = new MFNode();
+Transform60.child = new undefined();
 
-Transform60.children[0] = Shape61;
+Transform60.child[0] = Shape61;
 
 browser.currentScene.children[10] = Transform60;
 

@@ -26,35 +26,35 @@
 <Scene><WorldInfo title="HAnimModelHandRight.x3d"></WorldInfo>
 <HAnimHumanoid name="Hand_Right" DEF="hanim_Hand_Right" loa="4" version="2.0"><!--original HAnimHumanoid info='"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams"'--><MetadataSet containerField="metadata" name="HAnimHumanoid.info" reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"><MetadataString name="authorName" value="&quot;Kwan-Hee YOO, Don Brutzman and Joe Williams&quot;" containerField="value"></MetadataString>
 </MetadataSet>
-<HAnimJoint name="humanoid_root" DEF="hanim_humanoid_root" ulimit="0 0 0" llimit="0 0 0" containerField="skeleton"><!--Might consider putting a HAnimSegment here, but that doesn't help with re-use of this hand model--><HAnimJoint name="r_radiocarpal" DEF="hanim_r_radiocarpal" description="connection joint of hand to leg above" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_carpal" DEF="hanim_r_carpal"><Transform><Shape DEF="HAnimJointShape"><Sphere containerField="geometry" radius="0.025"></Sphere>
+<HAnimJoint name="humanoid_root" DEF="hanim_humanoid_root" ulimit="0 0 0" llimit="0 0 0" containerField="skeleton"><!--Might consider putting a HAnimSegment here, but that doesn't help with re-use of this hand model--><HAnimJoint name="r_radiocarpal" DEF="hanim_r_radiocarpal" description="connection joint of hand to leg above" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_carpal" DEF="hanim_r_carpal"><Transform><Shape DEF="HAnimJointShape"><Sphere radius="0.025"></Sphere>
 <Appearance DEF="HAnimJointAppearanceBlue"><Material diffuseColor="0 0 1"></Material>
 </Appearance>
 </Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="RCToMC12" coordIndex="0 1"><Coordinate containerField="coord" point="0 0 0 -0.1 0.1 0"></Coordinate>
+<IndexedLineSet DEF="RCToMC12" coordIndex="0 1"><Coordinate containerField="coord" point="0 0 0 -0.1 0.1 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="RCToMC3" coordIndex="0 1"><Coordinate containerField="coord" point="0 0 0 0 0.07 0"></Coordinate>
+<IndexedLineSet DEF="RCToMC3" coordIndex="0 1"><Coordinate containerField="coord" point="0 0 0 0 0.07 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="RCToMC45" coordIndex="0 1"><Coordinate containerField="coord" point="0 0 0 0.1 0.1 0"></Coordinate>
+<IndexedLineSet DEF="RCToMC45" coordIndex="0 1"><Coordinate containerField="coord" point="0 0 0 0.1 0.1 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
-<!--MC1--><HAnimJoint name="r_midcarpal_1" DEF="hanim_r_midcarpal_1" center="-0.14 0.09 0" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_trapezium" DEF="hanim_r_trapezium"><Transform translation="-0.14 0.09 0"><Shape DEF="HAnimNewJointShape"><Sphere containerField="geometry" radius="0.025"></Sphere>
+<!--MC1--><HAnimJoint name="r_midcarpal_1" DEF="hanim_r_midcarpal_1" center="-0.14 0.09 0" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_trapezium" DEF="hanim_r_trapezium"><Transform translation="-0.14 0.09 0"><Shape DEF="HAnimNewJointShape"><Sphere radius="0.025"></Sphere>
 <Appearance DEF="HAnimJointAppearanceRed"><Material diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="MC12toCMC1" coordIndex="0 1"><Coordinate containerField="coord" point="-0.1 0.1 0 -0.2 0.15 0"></Coordinate>
+<IndexedLineSet DEF="MC12toCMC1" coordIndex="0 1"><Coordinate containerField="coord" point="-0.1 0.1 0 -0.2 0.15 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -62,7 +62,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="CMC1toMCP1xxx" coordIndex="0 1"><Coordinate containerField="coord" point="-0.2 0.15 0 -0.3 0.3 0"></Coordinate>
+<IndexedLineSet DEF="CMC1toMCP1xxx" coordIndex="0 1"><Coordinate containerField="coord" point="-0.2 0.15 0 -0.3 0.3 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -70,7 +70,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="MCP11toIP1" coordIndex="0 1"><Coordinate containerField="coord" point="-0.3 0.3 0 -0.35 0.4 0"></Coordinate>
+<IndexedLineSet DEF="MCP11toIP1" coordIndex="0 1"><Coordinate containerField="coord" point="-0.3 0.3 0 -0.35 0.4 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -78,7 +78,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="fingertip_r_carpal_interphalangeal_1" coordIndex="0 1"><Coordinate containerField="coord" point="-0.35 0.4 0 -0.36 0.45 0"></Coordinate>
+<IndexedLineSet DEF="fingertip_r_carpal_interphalangeal_1" coordIndex="0 1"><Coordinate containerField="coord" point="-0.35 0.4 0 -0.36 0.45 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -90,7 +90,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="MC12toCMC2" coordIndex="0 1"><Coordinate containerField="coord" point="-0.1 0.1 0 -0.1 0.2 0"></Coordinate>
+<IndexedLineSet DEF="MC12toCMC2" coordIndex="0 1"><Coordinate containerField="coord" point="-0.1 0.1 0 -0.1 0.2 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -98,7 +98,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="CMC2toMCP2" coordIndex="0 1"><Coordinate containerField="coord" point="-0.1 0.2 0 -0.15 0.5 0"></Coordinate>
+<IndexedLineSet DEF="CMC2toMCP2" coordIndex="0 1"><Coordinate containerField="coord" point="-0.1 0.2 0 -0.15 0.5 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -106,7 +106,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="MCP2toPIP2" coordIndex="0 1"><Coordinate containerField="coord" point="-0.15 0.5 0 -0.2 0.7 0"></Coordinate>
+<IndexedLineSet DEF="MCP2toPIP2" coordIndex="0 1"><Coordinate containerField="coord" point="-0.15 0.5 0 -0.2 0.7 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -114,7 +114,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="PIP2toDIP2" coordIndex="0 1"><Coordinate containerField="coord" point="-0.2 0.7 0 -0.24 0.87 0"></Coordinate>
+<IndexedLineSet DEF="PIP2toDIP2" coordIndex="0 1"><Coordinate containerField="coord" point="-0.2 0.7 0 -0.24 0.87 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -122,7 +122,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="fingertip_r_carpal_distal_interphalangeal_2" coordIndex="0 1"><Coordinate containerField="coord" point="-0.24 0.87 0 -0.26 0.93 0"></Coordinate>
+<IndexedLineSet DEF="fingertip_r_carpal_distal_interphalangeal_2" coordIndex="0 1"><Coordinate containerField="coord" point="-0.24 0.87 0 -0.26 0.93 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -135,7 +135,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="MC3toCMC3" coordIndex="0 1"><Coordinate containerField="coord" point="0 0.07 0 0 0.2 0"></Coordinate>
+<IndexedLineSet DEF="MC3toCMC3" coordIndex="0 1"><Coordinate containerField="coord" point="0 0.07 0 0 0.2 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -143,7 +143,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="CMC3toMCP3" coordIndex="0 1"><Coordinate containerField="coord" point="0 0.2 0 -0.03 0.5 0"></Coordinate>
+<IndexedLineSet DEF="CMC3toMCP3" coordIndex="0 1"><Coordinate containerField="coord" point="0 0.2 0 -0.03 0.5 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -151,7 +151,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="MCP3toPIP3" coordIndex="0 1"><Coordinate containerField="coord" point="-0.03 0.5 0 -0.05 0.75 0"></Coordinate>
+<IndexedLineSet DEF="MCP3toPIP3" coordIndex="0 1"><Coordinate containerField="coord" point="-0.03 0.5 0 -0.05 0.75 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -159,7 +159,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="PIP3toDIP3" coordIndex="0 1"><Coordinate containerField="coord" point="-0.05 0.75 0 -0.08 0.96 0"></Coordinate>
+<IndexedLineSet DEF="PIP3toDIP3" coordIndex="0 1"><Coordinate containerField="coord" point="-0.05 0.75 0 -0.08 0.96 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -167,7 +167,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="fingertip_r_carpal_distal_interphalangeal_3" coordIndex="0 1"><Coordinate containerField="coord" point="-0.08 0.96 0 -0.09 1.05 0"></Coordinate>
+<IndexedLineSet DEF="fingertip_r_carpal_distal_interphalangeal_3" coordIndex="0 1"><Coordinate containerField="coord" point="-0.08 0.96 0 -0.09 1.05 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -180,12 +180,12 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="MC45toCMC4" coordIndex="0 1"><Coordinate containerField="coord" point="0.1 0.1 0 0.1 0.2 0"></Coordinate>
+<IndexedLineSet DEF="MC45toCMC4" coordIndex="0 1"><Coordinate containerField="coord" point="0.1 0.1 0 0.1 0.2 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="MC45toCMC5" coordIndex="0 1"><Coordinate containerField="coord" point="0.1 0.1 0 0.15 0.17 0"></Coordinate>
+<IndexedLineSet DEF="MC45toCMC5" coordIndex="0 1"><Coordinate containerField="coord" point="0.1 0.1 0 0.15 0.17 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -193,7 +193,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="CMC4toMCP4" coordIndex="0 1"><Coordinate containerField="coord" point="0.1 0.2 0 0.1 0.47 0"></Coordinate>
+<IndexedLineSet DEF="CMC4toMCP4" coordIndex="0 1"><Coordinate containerField="coord" point="0.1 0.2 0 0.1 0.47 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -201,7 +201,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="MCP4toPIP4" coordIndex="0 1"><Coordinate containerField="coord" point="0.1 0.47 0 0.1 0.7 0"></Coordinate>
+<IndexedLineSet DEF="MCP4toPIP4" coordIndex="0 1"><Coordinate containerField="coord" point="0.1 0.47 0 0.1 0.7 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -209,7 +209,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="PIP4toDIP4" coordIndex="0 1"><Coordinate containerField="coord" point="0.1 0.7 0 0.1 0.93 0"></Coordinate>
+<IndexedLineSet DEF="PIP4toDIP4" coordIndex="0 1"><Coordinate containerField="coord" point="0.1 0.7 0 0.1 0.93 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -217,7 +217,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="fingertip_r_carpal_distal_interphalangeal_4" coordIndex="0 1"><Coordinate containerField="coord" point="0.1 0.93 0 0.1 1 0"></Coordinate>
+<IndexedLineSet DEF="fingertip_r_carpal_distal_interphalangeal_4" coordIndex="0 1"><Coordinate containerField="coord" point="0.1 0.93 0 0.1 1 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -229,7 +229,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="CMC5toMCP5" coordIndex="0 1"><Coordinate containerField="coord" point="0.15 0.17 0 0.2 0.4 0"></Coordinate>
+<IndexedLineSet DEF="CMC5toMCP5" coordIndex="0 1"><Coordinate containerField="coord" point="0.15 0.17 0 0.2 0.4 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -237,7 +237,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="MCP5toPIP5" coordIndex="0 1"><Coordinate containerField="coord" point="0.2 0.4 0 0.23 0.63 0"></Coordinate>
+<IndexedLineSet DEF="MCP5toPIP5" coordIndex="0 1"><Coordinate containerField="coord" point="0.2 0.4 0 0.23 0.63 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -245,7 +245,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="PIP5toDIP5" coordIndex="0 1"><Coordinate containerField="coord" point="0.23 0.63 0 0.25 0.79 0"></Coordinate>
+<IndexedLineSet DEF="PIP5toDIP5" coordIndex="0 1"><Coordinate containerField="coord" point="0.23 0.63 0 0.25 0.79 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -253,7 +253,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="fingertip_r_carpal_distal_interphalangeal_5" coordIndex="0 1"><Coordinate containerField="coord" point="0.25 0.79 0 0.26 0.85 0"></Coordinate>
+<IndexedLineSet DEF="fingertip_r_carpal_distal_interphalangeal_5" coordIndex="0 1"><Coordinate containerField="coord" point="0.25 0.79 0 0.26 0.85 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>

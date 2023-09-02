@@ -60,7 +60,7 @@ POSSIBILITY OF SUCH DAMAGE.
 <xsl:stylesheet version="2.0" exclude-result-prefixes="ds saxon"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
-				xmlns:saxon="http://saxon.sf.net/"><!-- http://www.saxonica.com/documentation9.5/extensions/attributes -->
+		xmlns:saxon="http://saxon.sf.net/"><!-- http://www.saxonica.com/documentation9.5/extensions/attributes -->
     <!--        
                 xmlns="http://www.w3.org/TR/xhtml1/strict"
                 xmlns:fn="http://www.w3.org/2005/xpath-functions" -->
@@ -378,10 +378,10 @@ POSSIBILITY OF SUCH DAMAGE.
         {
                 System.out.print("Java program \"]]></xsl:text><xsl:value-of select="$newFullyQualifiedClassName"/>
                 <xsl:text disable-output-escaping="yes"><![CDATA[\" self-validation test results: ");
-                String validationResults = thisExampleX3dModel.validationReport();
-                if (validationResults.startsWith("\n") || (validationResults.length() > 10))
+		String validationResults = thisExampleX3dModel.validationReport();
+                if (validationResults.length() > 10)
                     System.out.println();
-                System.out.println(validationResults.trim());
+                System.out.println(validationResults);
         }
     }
 }
@@ -731,7 +731,9 @@ POSSIBILITY OF SUCH DAMAGE.
 		<a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
 		It has been produced using the 
 		<a href="https://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
-		stylesheet to create Java source code from an <code>.x3d</code> model.
+		stylesheet
+	       (<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">version&amp;nbsp;control</a>)
+                is used to create Java source code from an original <code>.x3d</code> model.
 	</p>
 ]]></xsl:text>
 			<xsl:for-each select="//meta[@name='creator']">
@@ -901,7 +903,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:text>Networking.</xsl:text>
                 </xsl:when>
                 <xsl:when test="starts-with(local-name(), 'ProjectiveTexture')">
-                    <xsl:text>TextureProjector.</xsl:text>
+                    <xsl:text>TextureProjection.</xsl:text>
                 </xsl:when>
                 <xsl:when test="(local-name() = 'Color') or (local-name() = 'ColorRGBA') or (local-name() = 'ElevationGrid') or (local-name() = 'Extrusion') or (local-name() = 'Normal') or
                                 (local-name() = 'IndexedFaceSet') or (local-name() = 'IndexedLineSet') or (local-name() = 'LineSet') or (local-name() = 'PointSet') or
@@ -3717,7 +3719,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[starts-with(name(),'TextureProjector')]">
-			<xsl:text>import org.web3d.x3d.jsail.TextureProjector.*;</xsl:text>
+			<xsl:text>import org.web3d.x3d.jsail.TextureProjection.*;</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[name()='ClipPlane'] or //*[name()='Color'] or //*[name()='ColorRGA'] or //*[name()='Coordinate'] or
@@ -4120,14 +4122,15 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <!-- SFColor -->
 		  <xsl:when test="
 					($localFieldType='SFColor')  or 
-                    ($parentElementName='CartoonVolumeStyle' and ($attributeName='orthogonalColor' or $attributeName='parallelColor')) or
+					($parentElementName='CartoonVolumeStyle' and ($attributeName='orthogonalColor' or $attributeName='parallelColor')) or
 					($parentElementName='ColorChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
 					($parentElementName='ColorDamper' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
 					(contains($parentElementName,'Light') and $attributeName='color') or
 					($parentElementName='FillProperties' and ($attributeName='hatchColor')) or
 					(contains($parentElementName,'Fog') and $attributeName='color') or
 					(ends-with($parentElementName,'Material') and contains($attributeName,'Color')) or
-					($parentElementName='MultiTexture' and $attributeName='color')">
+					($parentElementName='MultiTexture' and $attributeName='color') or
+                                        (starts-with($parentElementName,'TextureProjector') and $attributeName='color')">
 			  <xsl:text>SFColor</xsl:text>
 		  </xsl:when>
 		  <!-- SFColorRGBA -->
@@ -4387,7 +4390,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <!-- note TextureTransform tests must precede these default checks -->
 		  <xsl:when test="
 					($localFieldType='SFVec3f')    or 
-                    ($attributeName='anchorPoint') or
+                                        ($attributeName='anchorPoint') or
 					($attributeName='bboxCenter')  or
 					($attributeName='bboxSize')    or
 					($attributeName='center')      or
@@ -4422,7 +4425,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					($parentElementName='SliderJoint' and ($attributeName='axis')) or
 					($parentElementName='Sound' and ($attributeName='direction' or $attributeName='location')) or
 					($parentElementName='SpotLight' and ($attributeName='attenuation' or $attributeName='direction' or $attributeName='location')) or
-					(starts-with($parentElementName,'TextureProjector') and ($attributeName='direction' or $attributeName='location')) or
+					(starts-with($parentElementName,'TextureProjector') and ($attributeName='direction' or $attributeName='location' or $attributeName='upVector')) or
 					($parentElementName='Transform' and ($attributeName='center' or $attributeName='scale' or $attributeName='translation')) or
 					($parentElementName='TransformSensor' and ($attributeName='size')) or
 					($parentElementName='TransmitterPdu' and (ends-with($attributeName,'Location'))) or
@@ -5150,7 +5153,8 @@ POSSIBILITY OF SUCH DAMAGE.
 			</xsl:when>
 			<xsl:when test="($attributeType = 'MFBool')">
 				<xsl:text>new boolean[] {</xsl:text>
-				<xsl:value-of select="translate(normalize-space(string(.)),' ',',')"/>
+                                <!-- first strip excess commas, then normalize-space, then insert commas -->
+				<xsl:value-of select="translate(normalize-space(translate(string(.),',',' ')),' ',',')"/>
 				<xsl:text>}</xsl:text>
 			</xsl:when>
 			<xsl:when test="($attributeType = 'SFFloat')">
@@ -5162,7 +5166,8 @@ POSSIBILITY OF SUCH DAMAGE.
 			</xsl:when>
 			<xsl:when test="($attributeType = 'MFInt32') or ($attributeType = 'SFImage')">
 				<xsl:text>new int[] {</xsl:text>
-				<xsl:value-of select="translate(normalize-space(string(.)),' ',',')"/>
+                                <!-- first strip excess commas, then normalize-space, then insert commas -->
+				<xsl:value-of select="translate(normalize-space(translate(string(.),',',' ')),' ',',')"/>
 				<xsl:text>}</xsl:text>
 			</xsl:when>
 			<xsl:when test="($attributeType = 'MFFloat')">

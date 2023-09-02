@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D  profile="Immersive" version="4.0" >
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D  profile="Immersive" version="3.3" >
     <head>
         <meta name="creator" content="John W Carlson"></meta>
         <meta name="created" content="December 13 2015"></meta>
         <meta name="modified" content="April 18 2017"></meta>
         <meta name="title" content="fors2.x3d"></meta>
-        <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/fors2.x3d"></meta>
+	<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/fors2.x3d"></meta>
         <meta name="description" content="beginnings of a force directed graph in 3D"></meta>
         <meta name="generator" content="Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
     </head>

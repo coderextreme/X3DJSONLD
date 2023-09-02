@@ -2,14 +2,17 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[meta(name="title", content="arcold.x3d"),
+head=head(
+children=[
+meta(name="title", content="arcold.x3d"),
 meta(name="creator", content="John Carlson"),
 meta(name="generator", content="manual"),
-meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/arc.x3d"),
+meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d"),
 meta(name="description", content="an attempt to implement an arc in a graph"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -69,7 +72,6 @@ ROUTE(fromNode="CL1", fromField="fraction_changed", toNode="PI1", toField="set_f
 ROUTE(fromNode="MB1", fromField="keyValue", toNode="PI1", toField="keyValue"),
 ROUTE(fromNode="PI1", fromField="value_changed", toNode="node", toField="set_translation")])])),
 Comment(value=''' from doug sanden '''),
-
 ProtoDeclare(name="x3dconnector", 
 ProtoInterface=ProtoInterface(field=[field(name="startnode", accessType="inputOutput", type="SFNode"),
 field(name="endnode", accessType="inputOutput", type="SFNode"),
@@ -129,5 +131,6 @@ ROUTE(fromNode="G2", fromField="translation_changed", toNode="connector1", toFie
 ROUTE(fromNode="G1", fromField="translation_changed", toNode="connector2", toField="set_startpoint"),
 ROUTE(fromNode="G3", fromField="translation_changed", toNode="connector2", toField="set_endpoint"),
 ROUTE(fromNode="G1", fromField="translation_changed", toNode="connector3", toField="set_startpoint"),
-ROUTE(fromNode="G4", fromField="translation_changed", toNode="connector3", toField="set_endpoint"),]))
-.XML())
+ROUTE(fromNode="G4", fromField="translation_changed", toNode="connector3", toField="set_endpoint"),])))
+output = model.JSON()
+json.loads(output)

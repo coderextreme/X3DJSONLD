@@ -34,7 +34,7 @@ head1.meta[4] = meta6;
 
 meta meta7 = createNode("meta");
 meta7.name = "generator";
-meta7.content = "convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/convertStlToJson.js";
+meta7.content = "convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/src/main/node/convertStlToJson.js";
 head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");

@@ -26,7 +26,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/fors2.x3d')),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/fors2.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -59,7 +59,7 @@ var X3D0 =  X3D(
                             connect(
                               nodeField_ : SFString('translation'),
                               protoField_ : SFString('position'))]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           /*comment before Sphere*/
                           /*comment after Sphere*/
@@ -72,7 +72,7 @@ var X3D0 =  X3D(
                               /*comment after Material*/
                               material_ : 
                                 Material(
-                                  diffuseColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0)]))))]),
+                                  diffuseColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0)]))))),
 
                     PositionInterpolator(
                       DEF_ : SFString('NodePosition'),

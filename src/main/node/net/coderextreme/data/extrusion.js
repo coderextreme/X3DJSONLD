@@ -18,7 +18,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("creator").setContent("John W Carlson"))
         .addMeta((new autoclass.meta()).setName("created").setContent("December 13 2015"))
         .addMeta((new autoclass.meta()).setName("title").setContent("extrusion.x3d"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/force.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("beginnings of a force directed graph in 3D"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
       .setScene((new autoclass.Scene())
@@ -41,5 +41,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "                }"))
           .addChild((new autoclass.ROUTE()).setFromNode("TourTime").setFromField("cycleTime").setToNode("MoveCylinder").setToField("set_cycle"))
           .addChild((new autoclass.ROUTE()).setFromNode("MoveCylinder").setFromField("spine_changed").setToNode("extrusion").setToField("set_spine"))))      ;
-    X3D0.toFileX3D("../data/extrusion.new.x3d");
+    X3D0.toFileX3D("../data/extrusion.new.node.x3d");
     process.exit(0);

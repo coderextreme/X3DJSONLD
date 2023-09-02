@@ -1,6 +1,10 @@
 ####################################################################################################
 #
-# Now available: developmental python x3d.py package on PyPI for import.
+# Invoking X3D model self-test:
+#
+#   $ python forcenode.py
+#
+# Python package x3d.py package is available on PyPI for import.
 #   This approach simplifies Python X3D deployment and use.
 #   https://pypi.org/project/x3d
 #
@@ -9,7 +13,7 @@
 # or
 #       python -m pip install x3d
 #
-# Developer options for loading x3d package:
+# Developer options for loading x3d package in other Python programs:
 #
 #    from x3d import *  # preferred approach, terser source that avoids x3d.* class prefixes
 #
@@ -28,7 +32,7 @@ newModel=X3D(profile='Immersive',version='3.3',
     meta(name='creator',content='John W Carlson'),
     meta(name='created',content='December 13 2015'),
     meta(name='title',content='forcenode.x3d'),
-    meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/force.x3d'),
+    meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d'),
     meta(name='description',content='beginnings of a force directed graph in 3D'),
     meta(name='generator',content='Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit')]),
   Scene=Scene(

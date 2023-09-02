@@ -281,7 +281,7 @@ var X3D0 =  new X3D({
             new Transform({
               DEF : new SFString("TextTransform"),
               translation : new SFVec3f([0,-1.5,0]),
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
@@ -306,8 +306,8 @@ var X3D0 =  new X3D({
                               value : new MFString(["checks MetadataSetObject addValue() method"])}))}),
                       fontStyle : new SFNode(
                         new FontStyle({
-                          justify : new MFString(["MIDDLE","MIDDLE"])})])}))}),
-
+                          justify : new MFString(["MIDDLE","MIDDLE"])})])}))})),
+              children : new MFNode([
                 new Collision({
                   /*test containerField='proxy'*/
                   proxy : new SFNode(

@@ -1092,7 +1092,7 @@ var X3D0 =  new X3D({
                       fromNode : new SFString("TextTouch.SimpleShots"),
                       toField : new SFString("startTime"),
                       toNode : new SFString("CameraTimer.SimpleShots")}),
-
+                  child : new SFNode(
                     new Shape({
                       geometry : new SFNode(
                         new Text({
@@ -1109,9 +1109,9 @@ var X3D0 =  new X3D({
                               diffuseColor : new SFColor([0.945455,0.318988,0.321717]),
                               shininess : new SFFloat(0.01),
                               specularColor : new SFColor([0.072727,0.021705,0.010732]),
-                              /*Universal Media Library: ArtDeco 5*/}))}))}),
+                              /*Universal Media Library: ArtDeco 5*/}))}))})]),
                   /*Simplify intersection test for user selecting text*/
-
+                  child : new SFNode(
                     new Shape({
                       DEF : new SFString("TransparentBox"),
                       appearance : new SFNode(
@@ -1121,7 +1121,7 @@ var X3D0 =  new X3D({
                               transparency : new SFFloat(1)}))})),
                       geometry : new SFNode(
                         new Box({
-                          size : new SFVec3f([6,2,0.0001])}))})])})])}),
+                          size : new SFVec3f([6,2,0.0001])}))}))})])}),
 
             new Group({
               DEF : new SFString("SimpleShotsTargets"),
@@ -1129,7 +1129,7 @@ var X3D0 =  new X3D({
                 new Transform({
                   DEF : new SFString("TargetBoxZoom"),
                   translation : new SFVec3f([-50,1,-20]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       geometry : new SFNode(
                         new Box({})),
@@ -1139,11 +1139,11 @@ var X3D0 =  new X3D({
                             new Material({})),
                           texture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["images/CameraMoveZoom.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveZoom.png"])}))}))}),
-
+                              url : new MFString(["images/CameraMoveZoom.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveZoom.png"])}))}))})),
+                  children : new MFNode([
                     new Transform({
                       translation : new SFVec3f([0,2,0]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           geometry : new SFNode(
                             new Text({
@@ -1154,12 +1154,12 @@ var X3D0 =  new X3D({
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
-                                new Material({}))}))})])})])}),
+                                new Material({}))}))}))})])}),
 
                 new Transform({
                   DEF : new SFString("TargetBoxDolly"),
                   translation : new SFVec3f([-40,1,-20]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       geometry : new SFNode(
                         new Box({})),
@@ -1169,11 +1169,11 @@ var X3D0 =  new X3D({
                             new Material({})),
                           texture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["images/CameraMoveDolly.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveDolly.png"])}))}))}),
-
+                              url : new MFString(["images/CameraMoveDolly.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveDolly.png"])}))}))})),
+                  children : new MFNode([
                     new Transform({
                       translation : new SFVec3f([0,2,0]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           geometry : new SFNode(
                             new Text({
@@ -1184,12 +1184,12 @@ var X3D0 =  new X3D({
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
-                                new Material({}))}))})])})])}),
+                                new Material({}))}))}))})])}),
 
                 new Transform({
                   DEF : new SFString("TargetBoxPan"),
                   translation : new SFVec3f([-30,1,-20]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       geometry : new SFNode(
                         new Box({})),
@@ -1199,11 +1199,11 @@ var X3D0 =  new X3D({
                             new Material({})),
                           texture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["images/CameraMovePan.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMovePan.png"])}))}))}),
-
+                              url : new MFString(["images/CameraMovePan.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMovePan.png"])}))}))})),
+                  children : new MFNode([
                     new Transform({
                       translation : new SFVec3f([0,2,0]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           geometry : new SFNode(
                             new Text({
@@ -1214,12 +1214,12 @@ var X3D0 =  new X3D({
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
-                                new Material({}))}))})])})])}),
+                                new Material({}))}))}))})])}),
 
                 new Transform({
                   DEF : new SFString("TargetBoxBoom"),
                   translation : new SFVec3f([-20,1,-20]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       geometry : new SFNode(
                         new Box({})),
@@ -1229,11 +1229,11 @@ var X3D0 =  new X3D({
                             new Material({})),
                           texture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["images/CameraMoveBoom.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveBoom.png"])}))}))}),
-
+                              url : new MFString(["images/CameraMoveBoom.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveBoom.png"])}))}))})),
+                  children : new MFNode([
                     new Transform({
                       translation : new SFVec3f([0,2,0]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           geometry : new SFNode(
                             new Text({
@@ -1244,12 +1244,12 @@ var X3D0 =  new X3D({
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
-                                new Material({}))}))})])})])}),
+                                new Material({}))}))}))})])}),
 
                 new Transform({
                   DEF : new SFString("TargetBoxTilt"),
                   translation : new SFVec3f([-10,1,-20]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       geometry : new SFNode(
                         new Box({})),
@@ -1259,11 +1259,11 @@ var X3D0 =  new X3D({
                             new Material({})),
                           texture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["images/CameraMoveTilt.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveTilt.png"])}))}))}),
-
+                              url : new MFString(["images/CameraMoveTilt.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveTilt.png"])}))}))})),
+                  children : new MFNode([
                     new Transform({
                       translation : new SFVec3f([0,2,0]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           geometry : new SFNode(
                             new Text({
@@ -1274,7 +1274,7 @@ var X3D0 =  new X3D({
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
-                                new Material({}))}))})])})])})])}),
+                                new Material({}))}))}))})])})])}),
           /*=============== Camera.AimPointTest ==============*/
 
             new ProtoInstance({
@@ -1451,7 +1451,7 @@ var X3D0 =  new X3D({
                       fromNode : new SFString("TextTouch.AimPointTest"),
                       toField : new SFString("startTime"),
                       toNode : new SFString("CameraTimer.AimPointTest")}),
-
+                  child : new SFNode(
                     new Shape({
                       geometry : new SFNode(
                         new Text({
@@ -1463,10 +1463,10 @@ var X3D0 =  new X3D({
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              USE : new SFString("ArtDeco5")}))}))}),
-
+                              USE : new SFString("ArtDeco5")}))}))})]),
+                  child : new SFNode(
                     new Shape({
-                      USE : new SFString("TransparentBox")})])})])}),
+                      USE : new SFString("TransparentBox")}))})])}),
           /*TODO build a test once implemented*/
 
             new ProtoInstance({
@@ -1512,7 +1512,7 @@ var X3D0 =  new X3D({
                     new Inline({
                       DEF : new SFString("CameraShape"),
                       url : new MFString(["CameraShape.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraShape.x3d"])}),
-
+                  child : new SFNode(
                     new Shape({
                       DEF : new SFString("SightLine"),
                       geometry : new SFNode(
@@ -1639,7 +1639,7 @@ var X3D0 =  new X3D({
             new Transform({
               rotation : new SFRotation([1,0,0,-1.57079]),
               scale : new SFVec3f([10,10,10]),
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
@@ -1660,7 +1660,7 @@ var X3D0 =  new X3D({
                           point : new MFVec3f([-5.25,5.25,0,-3.75,5.25,0,-2.25,5.25,0,-0.75,5.25,0,0.75,5.25,0,2.25,5.25,0,3.75,5.25,0,5.25,5.25,0,-5.25,3.75,0,-3.75,3.75,0,-2.25,3.75,0,-0.75,3.75,0,0.75,3.75,0,2.25,3.75,0,3.75,3.75,0,5.25,3.75,0,-5.25,2.25,0,-3.75,2.25,0,-2.25,2.25,0,-0.75,2.25,0,0.75,2.25,0,2.25,2.25,0,3.75,2.25,0,5.25,2.25,0,-5.25,0.75,0,-3.75,0.75,0,-2.25,0.75,0,-0.75,0.75,0,0.75,0.75,0,2.25,0.75,0,3.75,0.75,0,5.25,0.75,0,-5.25,-0.75,0,-3.75,-0.75,0,-2.25,-0.75,0,-0.75,-0.75,0,0.75,-0.75,0,2.25,-0.75,0,3.75,-0.75,0,5.25,-0.75,0,-5.25,-2.25,0,-3.75,-2.25,0,-2.25,-2.25,0,-0.75,-2.25,0,0.75,-2.25,0,2.25,-2.25,0,3.75,-2.25,0,5.25,-2.25,0,-5.25,-3.75,0,-3.75,-3.75,0,-2.25,-3.75,0,-0.75,-3.75,0,0.75,-3.75,0,2.25,-3.75,0,3.75,-3.75,0,5.25,-3.75,0,-5.25,-5.25,0,-3.75,-5.25,0,-2.25,-5.25,0,-0.75,-5.25,0,0.75,-5.25,0,2.25,-5.25,0,3.75,-5.25,0,5.25,-5.25,0])})),
                       color : new SFNode(
                         new Color({
-                          color : new MFColor([0.435294,0.741176,0,0,0.560784,0.580392])}))}))})])}),
+                          color : new MFColor([0.435294,0.741176,0,0,0.560784,0.580392])}))}))}))}),
 
             new Transform({
               scale : new SFVec3f([3,3,3]),
@@ -1712,7 +1712,7 @@ var X3D0 =  new X3D({
                   fromNode : new SFString("BoxTimer"),
                   toField : new SFString("set_fraction"),
                   toNode : new SFString("BoxPath")}),
-
+              child : new SFNode(
                 new Shape({
                   geometry : new SFNode(
                     new Box({})),
@@ -1802,7 +1802,7 @@ var X3D0 =  new X3D({
               children : new MFNode([
                 new Transform({
                   translation : new SFVec3f([0,-3,0]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       geometry : new SFNode(
                         new Text({
@@ -1815,5 +1815,5 @@ var X3D0 =  new X3D({
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              diffuseColor : new SFColor([1,1,0.2])}))}))})])})])})])}))});
+                              diffuseColor : new SFColor([1,1,0.2])}))}))}))})])})])}))});
 console.log(X3D0.toXMLNode());

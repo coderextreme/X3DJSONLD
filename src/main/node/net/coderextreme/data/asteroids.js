@@ -19,7 +19,7 @@ var ProtoInstance0 = null;
         .addMeta((new autoclass.meta()).setName("title").setContent("asteroids.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/asteroids.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/asteroids.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("asteroids")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.ProtoDeclare()).setName("anyShape")
@@ -32,5 +32,5 @@ var ProtoInstance0 = null;
               .setIS((new autoclass.IS())
                 .addConnect((new autoclass.connect()).setNodeField("children").setProtoField("myShape"))))))
         .addChild(ProtoInstance0 = (new autoclass.ProtoInstance()).setName("anyShape")))      ;
-    X3D0.toFileX3D("../data/asteroids.new.x3d");
+    X3D0.toFileX3D("../data/asteroids.new.node.x3d");
     process.exit(0);

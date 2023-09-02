@@ -5,7 +5,7 @@
     <component level='1' name='HAnim'/>
   </head>
   <Scene>
-    <WorldInfo title='JinLOA4.x3d'/>
+    <WorldInfo title='JinLOA4Canonical.x3d'/>
     <NavigationInfo speed='1.5'/>
     <Viewpoint centerOfRotation='0 1 0' description='JinLOA4' position='0 1 3'/>
 

@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Interchange", version="3.3", 
-head=head(children=[meta(name="title", content="ScubaTank.x3d"),
+head=head(
+children=[
+meta(name="title", content="ScubaTank.x3d"),
 meta(name="description", content="Scuba gear used by Nancy Diving example."),
 meta(name="creator", content="Etsuko Lippi"),
 meta(name="created", content="24 January 2001"),
@@ -12,7 +15,7 @@ meta(name="modified", content="23 May 2020"),
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/ScubaTank.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -86,5 +89,6 @@ material=
 Material(USE="black")), 
 geometry=
 Cylinder(height=0.1, radius=0.115))])]),
-Background(skyColor=[(0.6,0.6,0.6)])]))
-.XML())
+Background(skyColor=[(0.6,0.6,0.6)])])))
+output = model.JSON()
+json.loads(output)

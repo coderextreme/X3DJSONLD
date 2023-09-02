@@ -108,9 +108,9 @@ Appearance22.material = Material23;
 
 Shape20.appearance = Appearance22;
 
-Transform19.children = new MFNode();
+Transform19.child = new undefined();
 
-Transform19.children[0] = Shape20;
+Transform19.child[0] = Shape20;
 
 let Shape24 = browser.currentScene.createNode("Shape");
 Shape24.DEF = "AxisLinesShape";
@@ -129,7 +129,7 @@ IndexedLineSet25.color = Color27;
 
 Shape24.geometry = IndexedLineSet25;
 
-Transform19.children[1] = Shape24;
+Transform19.child[1] = Shape24;
 
 browser.currentScene.children[1] = Transform19;
 
@@ -140,13 +140,13 @@ Transform28.rotation = new SFRotation(new float[-0.96458,0.07774,0.25206,2.59674
 //RotationCalculator composed rotation: 0.0 0.0 1.0 2.832229, 1.0 0.0 0.0 5.801149, 0.0 1.0 0.0 2.55377
 let Shape29 = browser.currentScene.createNode("Shape");
 Shape29.USE = "BoxShape";
-Transform28.children = new MFNode();
+Transform28.child = new undefined();
 
-Transform28.children[0] = Shape29;
+Transform28.child[0] = Shape29;
 
 let Shape30 = browser.currentScene.createNode("Shape");
 Shape30.USE = "AxisLinesShape";
-Transform28.children[1] = Shape30;
+Transform28.child[1] = Shape30;
 
 browser.currentScene.children[2] = Transform28;
 
@@ -158,13 +158,13 @@ Transform31.translation = new SFVec3f(new float[3,0,0]);
 //RotationCalculator composed rotation: 0.0 0.0 1.0 -3.939975, 1.0 0.0 0.0 -3.766201, 0.0 1.0 0.0 -3.474078
 let Shape32 = browser.currentScene.createNode("Shape");
 Shape32.USE = "BoxShape";
-Transform31.children = new MFNode();
+Transform31.child = new undefined();
 
-Transform31.children[0] = Shape32;
+Transform31.child[0] = Shape32;
 
 let Shape33 = browser.currentScene.createNode("Shape");
 Shape33.USE = "AxisLinesShape";
-Transform31.children[1] = Shape33;
+Transform31.child[1] = Shape33;
 
 browser.currentScene.children[3] = Transform31;
 

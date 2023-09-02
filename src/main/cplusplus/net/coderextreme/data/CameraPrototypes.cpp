@@ -2999,7 +2999,7 @@ Appearance260->setMaterial(*Material261);
 
 Shape257->setAppearance(*Appearance260);
 
-Transform256->addChildren(*Shape257);
+Transform256->addChild(*Shape257);
 
 Anchor255->addChildren(*Transform256);
 

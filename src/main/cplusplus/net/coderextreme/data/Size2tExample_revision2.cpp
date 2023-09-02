@@ -502,7 +502,7 @@ IndexedFaceSet87->setTexCoord(*TextureCoordinate89);
 
 Shape84->setGeometry(IndexedFaceSet87);
 
-Transform83->addChildren(*Shape84);
+Transform83->addChild(*Shape84);
 
 Transform82->addChildren(*Transform83);
 
@@ -536,7 +536,7 @@ IndexedFaceSet94->setTexCoord(*TextureCoordinate96);
 
 Shape92->setGeometry(IndexedFaceSet94);
 
-Transform91->addChildren(*Shape92);
+Transform91->addChild(*Shape92);
 
 Transform90->addChildren(*Transform91);
 
@@ -570,7 +570,7 @@ IndexedFaceSet101->setTexCoord(*TextureCoordinate103);
 
 Shape99->setGeometry(IndexedFaceSet101);
 
-Transform98->addChildren(*Shape99);
+Transform98->addChild(*Shape99);
 
 Transform97->addChildren(*Transform98);
 
@@ -604,7 +604,7 @@ IndexedFaceSet108->setTexCoord(*TextureCoordinate110);
 
 Shape106->setGeometry(IndexedFaceSet108);
 
-Transform105->addChildren(*Shape106);
+Transform105->addChild(*Shape106);
 
 Transform104->addChildren(*Transform105);
 
@@ -638,7 +638,7 @@ IndexedFaceSet115->setTexCoord(*TextureCoordinate117);
 
 Shape113->setGeometry(IndexedFaceSet115);
 
-Transform112->addChildren(*Shape113);
+Transform112->addChild(*Shape113);
 
 Transform111->addChildren(*Transform112);
 
@@ -672,7 +672,7 @@ IndexedFaceSet122->setTexCoord(*TextureCoordinate124);
 
 Shape120->setGeometry(IndexedFaceSet122);
 
-Transform119->addChildren(*Shape120);
+Transform119->addChild(*Shape120);
 
 Transform118->addChildren(*Transform119);
 
@@ -706,7 +706,7 @@ IndexedFaceSet129->setTexCoord(*TextureCoordinate131);
 
 Shape127->setGeometry(IndexedFaceSet129);
 
-Transform126->addChildren(*Shape127);
+Transform126->addChild(*Shape127);
 
 Transform125->addChildren(*Transform126);
 
@@ -740,7 +740,7 @@ IndexedFaceSet136->setTexCoord(*TextureCoordinate138);
 
 Shape134->setGeometry(IndexedFaceSet136);
 
-Transform133->addChildren(*Shape134);
+Transform133->addChild(*Shape134);
 
 Transform132->addChildren(*Transform133);
 
@@ -774,7 +774,7 @@ IndexedFaceSet143->setTexCoord(*TextureCoordinate145);
 
 Shape141->setGeometry(IndexedFaceSet143);
 
-Transform140->addChildren(*Shape141);
+Transform140->addChild(*Shape141);
 
 Transform139->addChildren(*Transform140);
 

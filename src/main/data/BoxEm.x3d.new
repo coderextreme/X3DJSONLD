@@ -3,13 +3,13 @@
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd" ><head><meta name="title" content="BoxEm.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="generator" content="manual"></meta>
-<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/box.x3d"></meta>
+<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/box.x3d"></meta>
 <meta name="description" content="3 boxes"></meta>
 </head>
 <Scene><NavigationInfo type="&quot;EXAMINE&quot;"></NavigationInfo>
 <Viewpoint description="Cubes on Fire" position="0 0 12"></Viewpoint>
 <ProtoDeclare name="anyShape"><ProtoInterface><field name="xtranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere containerField="geometry"></Sphere>
+<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere></Sphere>
 <Appearance><Material diffuseColor="1 1 1"></Material>
 </Appearance>
 </Shape>
@@ -22,7 +22,7 @@
 </ProtoBody>
 </ProtoDeclare>
 <ProtoDeclare name="three"><ProtoInterface><field name="ytranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Cylinder containerField="geometry"></Cylinder>
+<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Cylinder></Cylinder>
 <Appearance><Material diffuseColor="1 1 1"></Material>
 </Appearance>
 </Shape>
@@ -46,7 +46,7 @@
 </ProtoBody>
 </ProtoDeclare>
 <ProtoInstance name="three" DEF="threepi"><fieldValue name="ytranslation" value="0 0 0"></fieldValue>
-<fieldValue name="myShape"><Shape DEF="box"><Box containerField="geometry" size="1 1 1"></Box>
+<fieldValue name="myShape"><Shape DEF="box"><Box size="1 1 1"></Box>
 <Appearance><Material diffuseColor="0 1 0"></Material>
 </Appearance>
 </Shape>

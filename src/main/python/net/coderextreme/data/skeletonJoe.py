@@ -4,15 +4,17 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="4.0", 
-head=head(children=[component(name="HAnim", level=1),
-meta(name="title", content="JohnBoy.x3d"),
-meta(name="identifier", content="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"),
+head=head(
+children=[
+component(name="HAnim", level=1),
+meta(name="title", content="skeletonJoe.x3d"),
+meta(name="identifier", content="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/skeletonJoe.x3d"),
 meta(name="description", content="An attempt at a standard LOA-4 skeleton"),
 meta(name="generator", content="h.pl"),
 meta(name="creator", content="John Carlson"),
 meta(name="created", content="12 June 2020"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="30 July 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -20,7 +22,6 @@ Scene=Scene(children=[
 Viewpoint(description="default"),
 Transform(children=[
 Comment(value=''' DEF for markerfor XYZ axes '''),
-
 Shape(DEF="AxisLinesShape", 
 geometry=
 IndexedLineSet(colorIndex=[0,1,2], colorPerVertex=False, coordIndex=[0,1,-1,0,2,-1,0,3,-1], 
@@ -30,7 +31,6 @@ color=(
 Color(color=[(1,0,0),(0,0.6,0),(0,0,1)])))),]),
 Group(children=[
 Comment(value=''' DEFS for markers of skeleton joints, segments, and sites '''),
-
 Transform(children=[
 Transform(translation=((0,2,0)), children=[
 Shape(DEF="HAnimRootShape", 
@@ -69,5 +69,5 @@ Appearance(
 material=
 Material(diffuseColor=((1,1,0)), transparency=0.3)))])]),]),
 NavigationInfo(speed=1.5),
-Viewpoint(centerOfRotation=((0,1,0)), description="JohnBoy", position=((0,1,3)))]))
+Viewpoint(centerOfRotation=((0,1,0)), description="skeletonJoe", position=((0,1,3)))]))
 .XML())

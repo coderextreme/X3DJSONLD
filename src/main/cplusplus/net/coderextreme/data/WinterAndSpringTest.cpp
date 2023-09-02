@@ -265,7 +265,7 @@ IndexedLineSet44->setColor(*Color46);
 
 Shape43->setGeometry(IndexedLineSet44);
 
-Transform41->addChildren(*Shape43);
+Transform41->addChild(*Shape43);
 
 CShape* Shape47 = (CShape *)(m_pScene.createNode("Shape"));
 Shape47->setDEF("OldMan_Shape");

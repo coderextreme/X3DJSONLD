@@ -51,7 +51,7 @@ ProtoInstance ProtoInstance0 = null;
         .addMeta(new meta().setName("title").setContent("asteroids.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/asteroids.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/asteroids.x3d"))
         .addMeta(new meta().setName("description").setContent("asteroids")))
       .setScene(new Scene()
         .addChild(new ProtoDeclare().setName("anyShape")

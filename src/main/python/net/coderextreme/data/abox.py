@@ -2,20 +2,22 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
-X3D(profile="Immersive", version="3.3", 
-head=head(children=[meta(name="title", content="abox.x3d"),
+import json
+model = (
+X3D(profile="Immersive", version="4.0", 
+head=head(
+children=[
+meta(name="title", content="abox.x3d"),
 meta(name="creator", content="John Carlson"),
 meta(name="generator", content="manual"),
-meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/abox.x3d"),
+meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d"),
 meta(name="description", content="a box"),
-meta(name="translated", content="16 July 2023"),
-meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
-meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+meta(name="converter", content="x3d-tidy V1.0.56, https://www.npmjs.com/package/x3d-tidy"),
+meta(name="converted", content="Sat, 02 Sep 2023 10:56:46 GMT")
 ]), 
 Scene=Scene(children=[
 ProtoDeclare(name="anyShape", 
-ProtoInterface=ProtoInterface(field=[field(name="myShape", accessType="inputOutput", type="MFNode", children=[
+ProtoInterface=ProtoInterface(field=[field(accessType="inputOutput", type="MFNode", name="myShape", children=[
 Shape(
 geometry=
 Sphere())])
@@ -25,19 +27,20 @@ Transform(
 IS=IS(connect=[connect(nodeField="children", protoField="myShape")
 ]))])),
 ProtoDeclare(name="one", 
-ProtoInterface=ProtoInterface(field=[field(name="myShape", accessType="inputOutput", type="MFNode", children=[
+ProtoInterface=ProtoInterface(field=[field(accessType="inputOutput", type="MFNode", name="myShape", children=[
 Shape(
 geometry=
 Cylinder())])
 ]), 
 ProtoBody=ProtoBody(children=[
 Transform(children=[
-ProtoInstance(name="anyShape", 
+ProtoInstance(name="anyShape", fieldValue=[], 
 IS=IS(connect=[connect(nodeField="myShape", protoField="myShape")
 ]))])])),
 ProtoInstance(name="one", fieldValue=[fieldValue(name="myShape", children=[
-Shape(
+Shape(DEF="_1", 
 geometry=
 Box(size=((140,140,140))))])
-])]))
-.XML())
+])])))
+output = model.JSON()
+json.loads(output)

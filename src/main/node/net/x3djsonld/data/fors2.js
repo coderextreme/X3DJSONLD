@@ -32,11 +32,11 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/fors2.x3d">fors2.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/fors2.x3d">fors2.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/fors2.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/fors2.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/fors2.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/fors2.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -86,7 +86,7 @@ fors2.prototype = {
     .addMeta((new autoclass.meta()).setName("created").setContent("December 13 2015"))
     .addMeta((new autoclass.meta()).setName("modified").setContent("April 18 2017"))
     .addMeta((new autoclass.meta()).setName("title").setContent("fors2.x3d"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/fors2.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/fors2.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("beginnings of a force directed graph in 3D"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
   .setScene((new autoclass.Scene())

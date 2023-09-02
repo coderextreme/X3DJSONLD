@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.0", 
-head=head(children=[meta(name="title", content="ArtDecoPrototypes.x3d"),
+head=head(
+children=[
+meta(name="title", content="ArtDecoPrototypes.x3d"),
 meta(name="description", content="Prototype declarations defining values for X3D/VRML materials, originally converted from SGI's Open Inventor material examples."),
 meta(name="creator", content="David Roussel"),
 meta(name="translator", content="James Harney, Don Brutzman NPS"),
@@ -15,7 +18,7 @@ meta(name="subject", content="Universal Media Material Library"),
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d"),
 meta(name="generator", content="Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -135,5 +138,6 @@ Material(diffuseColor=((0.8,0.4,0)))),
 geometry=
 Text(string=["ArtDecoExamples.x3d","is a Materials Prototype declaration file.","","For an example scene using these node,","click this text and view","ArtDecoExamples.x3d"], 
 fontStyle=
-FontStyle(justify=["MIDDLE","MIDDLE"], size=0.8)))])]))
-.XML())
+FontStyle(justify=["MIDDLE","MIDDLE"], size=0.8)))])])))
+output = model.JSON()
+json.loads(output)

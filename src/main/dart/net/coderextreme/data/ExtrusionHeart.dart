@@ -49,7 +49,7 @@ var X3D0 =  X3D(
 
             Transform(
               translation_ : SFVec3f([SFDouble(0), SFDouble(-0.5), SFDouble(0)]),
-              children_ : [
+              child_ : 
                 Shape(
                   geometry_ : 
                     Extrusion(
@@ -62,5 +62,5 @@ var X3D0 =  X3D(
                     Appearance(
                       material_ : 
                         Material(
-                          diffuseColor_ : SFColor([SFDouble(0.8), SFDouble(0.3), SFDouble(0.3)]))))])]));
+                          diffuseColor_ : SFColor([SFDouble(0.8), SFDouble(0.3), SFDouble(0.3)])))))]));
 void main() { exit(0); }

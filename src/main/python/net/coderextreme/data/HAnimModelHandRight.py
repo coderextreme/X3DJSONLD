@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="4.0", 
-head=head(children=[component(name="HAnim", level=1),
+head=head(
+children=[
+component(name="HAnim", level=1),
 meta(name="title", content="HAnimModelHandRight.x3d"),
 meta(name="description", content="Right hand using high-fidelity definitions for HAnim version 2.0"),
 meta(name="creator", content="Kwan-Hee YOO, Don Brutzman and Joe Williams"),
@@ -26,7 +29,7 @@ meta(name="TODO", content="Integrate and confirm Segment/Joint names, Viewpoints
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandRight.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -38,7 +41,6 @@ MetadataSet(name="HAnimHumanoid.info", reference="https://www.web3d.org/document
 MetadataString(name="authorName", value=["Kwan-Hee YOO, Don Brutzman and Joe Williams"])])), skeleton=[
 HAnimJoint(name="humanoid_root", DEF="hanim_humanoid_root", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 Comment(value=''' Might consider putting a HAnimSegment here, but that doesn't help with re-use of this hand model '''),
-
 HAnimJoint(name="r_radiocarpal", DEF="hanim_r_radiocarpal", description="connection joint of hand to leg above", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_carpal", DEF="hanim_r_carpal", children=[
 Transform(children=[
@@ -77,7 +79,6 @@ IndexedLineSet(DEF="RCToMC45", coordIndex=[0,1],
 coord=
 Coordinate(point=[(0,0,0),(0.1,0.1,0)])))]),
 Comment(value=''' MC1 '''),
-
 HAnimJoint(name="r_midcarpal_1", DEF="hanim_r_midcarpal_1", center=((-0.14,0.09,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_trapezium", DEF="hanim_r_trapezium", children=[
 Transform(translation=((-0.14,0.09,0)), children=[
@@ -98,7 +99,6 @@ IndexedLineSet(DEF="MC12toCMC1", coordIndex=[0,1],
 coord=
 Coordinate(point=[(-0.1,0.1,0),(-0.2,0.15,0)])))]),
 Comment(value=''' thumb finger '''),
-
 HAnimJoint(name="r_carpometacarpal_1", DEF="hanim_r_carpometacarpal_1", center=((-0.2,0.15,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_metacarpal_1", DEF="hanim_r_metacarpal_1", children=[
 Transform(translation=((-0.2,0.15,0)), children=[
@@ -139,7 +139,6 @@ IndexedLineSet(DEF="fingertip_r_carpal_interphalangeal_1", coordIndex=[0,1],
 coord=
 Coordinate(point=[(-0.35,0.4,0),(-0.36,0.45,0)])))])])])]),]),
 Comment(value=''' MC2 '''),
-
 HAnimJoint(name="r_midcarpal_2", DEF="hanim_r_midcarpal_2", center=((-0.07,0.07,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_trapezoid", DEF="hanim_r_trapezoid", children=[
 Transform(translation=((-0.07,0.07,0)), children=[
@@ -154,7 +153,6 @@ IndexedLineSet(DEF="MC12toCMC2", coordIndex=[0,1],
 coord=
 Coordinate(point=[(-0.1,0.1,0),(-0.1,0.2,0)])))]),
 Comment(value=''' index finger '''),
-
 HAnimJoint(name="r_carpometacarpal_2", DEF="hanim_r_carpometacarpal_2", center=((-0.1,0.2,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_metacarpal_2", DEF="hanim_r_metacarpal_2", children=[
 Transform(translation=((-0.1,0.2,0)), children=[
@@ -208,7 +206,6 @@ IndexedLineSet(DEF="fingertip_r_carpal_distal_interphalangeal_2", coordIndex=[0,
 coord=
 Coordinate(point=[(-0.24,0.87,0),(-0.26,0.93,0)])))])])])])]),]),
 Comment(value=''' MC3 '''),
-
 HAnimJoint(name="r_midcarpal_3", DEF="hanim_r_midcarpal_3", center=((0.0,0.07,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_capitate", DEF="hanim_r_capitate", children=[
 Transform(translation=((0.0,0.07,0)), children=[
@@ -223,7 +220,6 @@ IndexedLineSet(DEF="MC3toCMC3", coordIndex=[0,1],
 coord=
 Coordinate(point=[(0.0,0.07,0),(0.0,0.2,0)])))]),
 Comment(value=''' Middle fingle '''),
-
 HAnimJoint(name="r_carpometacarpal_3", DEF="hanim_r_carpometacarpal_3", center=((0.0,0.2,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_metacarpal_3", DEF="hanim_r_metacarpal_3", children=[
 Transform(translation=((0.0,0.2,0)), children=[
@@ -277,7 +273,6 @@ IndexedLineSet(DEF="fingertip_r_carpal_distal_interphalangeal_3", coordIndex=[0,
 coord=
 Coordinate(point=[(-0.08,0.96,0),(-0.09,1.05,0)])))])])])])]),]),
 Comment(value=''' MC4_5 '''),
-
 HAnimJoint(name="r_midcarpal_4_5", DEF="hanim_r_midcarpal_4_5", center=((0.1,0.1,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_hamate", DEF="hanim_r_hamate", children=[
 Transform(translation=((0.1,0.1,0)), children=[
@@ -301,7 +296,6 @@ IndexedLineSet(DEF="MC45toCMC5", coordIndex=[0,1],
 coord=
 Coordinate(point=[(0.1,0.1,0),(0.15,0.17,0)])))]),
 Comment(value=''' ring finger '''),
-
 HAnimJoint(name="r_carpometacarpal_4", DEF="hanim_r_carpometacarpal_4", center=((0.1,0.2,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_metacarpal_4", DEF="hanim_r_metacarpal_4", children=[
 Transform(translation=((0.1,0.2,0)), children=[
@@ -355,7 +349,6 @@ IndexedLineSet(DEF="fingertip_r_carpal_distal_interphalangeal_4", coordIndex=[0,
 coord=
 Coordinate(point=[(0.1,0.93,0),(0.1,1.0,0)])))])])])])]),
 Comment(value=''' pinky finger '''),
-
 HAnimJoint(name="r_carpometacarpal_5", DEF="hanim_r_carpometacarpal_5", center=((0.15,0.17,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_metacarpal_5", DEF="hanim_r_metacarpal_5", children=[
 Transform(translation=((0.15,0.17,0)), children=[
@@ -456,5 +449,6 @@ HAnimSegment(USE="hanim_r_metacarpal_3"),
 HAnimSegment(USE="hanim_r_metacarpal_4"),
 HAnimSegment(USE="hanim_r_metacarpal_5"),
 HAnimSegment(USE="hanim_r_trapezium"),
-HAnimSegment(USE="hanim_r_trapezoid")])]))
-.XML())
+HAnimSegment(USE="hanim_r_trapezoid")])])))
+output = model.JSON()
+json.loads(output)

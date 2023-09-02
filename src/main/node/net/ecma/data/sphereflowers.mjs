@@ -8,6 +8,8 @@ console.log("Problems loading fs. On browser?",e);
 var SFString = require('./x3d.mjs');
 var SFNode = require('./x3d.mjs');
 var head = require('./x3d.mjs');
+var component = require('./x3d.mjs');
+var SFInt32 = require('./x3d.mjs');
 var MFNode = require('./x3d.mjs');
 var meta = require('./x3d.mjs');
 var Scene = require('./x3d.mjs');
@@ -33,6 +35,38 @@ var X3D0 =  new X3D({
       version : new SFString("4.0"),
       head : new SFNode(
         new head({
+          component : new SFNode(
+            new component({
+              name : new SFString("Scripting"),
+              level : new SFInt32(1)})),
+          component : new SFNode(
+            new component({
+              name : new SFString("EnvironmentalEffects"),
+              level : new SFInt32(3)})),
+          component : new SFNode(
+            new component({
+              name : new SFString("Shaders"),
+              level : new SFInt32(1)})),
+          component : new SFNode(
+            new component({
+              name : new SFString("CubeMapTexturing"),
+              level : new SFInt32(1)})),
+          component : new SFNode(
+            new component({
+              name : new SFString("Texturing"),
+              level : new SFInt32(1)})),
+          component : new SFNode(
+            new component({
+              name : new SFString("Rendering"),
+              level : new SFInt32(1)})),
+          component : new SFNode(
+            new component({
+              name : new SFString("Grouping"),
+              level : new SFInt32(3)})),
+          component : new SFNode(
+            new component({
+              name : new SFString("Core"),
+              level : new SFInt32(1)})),
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
@@ -52,25 +86,25 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/sphereflowers.x3d")})])})),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/sphereflowers.x3d")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
             new NavigationInfo({}),
 
             new Background({
-              backUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resourcesimages/all_probes/stpeters_cross/stpeters_back.png"]),
-              bottomUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resourcesimages/all_probes/stpeters_cross/stpeters_bottom.png"]),
-              frontUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resourcesimages/all_probes/stpeters_cross/stpeters_front.png"]),
-              leftUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resourcesimages/all_probes/stpeters_cross/stpeters_left.png"]),
-              rightUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resourcesimages/all_probes/stpeters_cross/stpeters_right.png"]),
-              topUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/src/main/resourcesall_probes/stpeters_cross/stpeters_top.png"])}),
+              backUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]),
+              bottomUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]),
+              frontUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]),
+              leftUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]),
+              rightUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]),
+              topUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/src/main/resourcesall_probes/stpeters_cross/stpeters_top.png"])}),
 
             new Group({
               children : new MFNode([
                 new ExternProtoDeclare({
                   name : new SFString("FlowerProto"),
-                  url : new MFString(["../personal/flowerproto.json#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto"]),
+                  url : new MFString(["../personal/flowerproto.json#FlowerProto","https://localhost:3000/src/main/personal/flowerproto.json#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto"]),
                   field : new MFNode([
                     new field({
                       type : field.TYPE_MFSTRING,
@@ -131,7 +165,7 @@ var X3D0 =  new X3D({
                     new AudioClip({
                       DEF : new SFString("AudioClip"),
                       description : new SFString("Chandubabamusic #1"),
-                      url : new MFString(["../resources/chandubabamusic1.wav"])}))}),
+                      url : new MFString(["../resources/chandubabamusic1.wav","https://localhost:3000/src/main/resources/chandubabamusic1.wav","https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav"])}))}),
 
                 new ROUTE({
                   fromField : new SFString("cycleTime"),

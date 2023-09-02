@@ -123,7 +123,7 @@ IndexedFaceSet23->setNormal(*Normal25);
 
 Shape20->setGeometry(IndexedFaceSet23);
 
-Transform19->addChildren(*Shape20);
+Transform19->addChild(*Shape20);
 
 CShape* Shape26 = (CShape *)(m_pScene.createNode("Shape"));
 Shape26->setDEF("Canopy");
@@ -150,7 +150,7 @@ IndexedFaceSet29->setNormal(*Normal31);
 
 Shape26->setGeometry(IndexedFaceSet29);
 
-Transform19->addChildren(*Shape26);
+Transform19->addChild(*Shape26);
 
 CShape* Shape32 = (CShape *)(m_pScene.createNode("Shape"));
 Shape32->setDEF("MainBodyAndWingEdges");
@@ -176,7 +176,7 @@ IndexedFaceSet35->setNormal(*Normal37);
 
 Shape32->setGeometry(IndexedFaceSet35);
 
-Transform19->addChildren(*Shape32);
+Transform19->addChild(*Shape32);
 
 CShape* Shape38 = (CShape *)(m_pScene.createNode("Shape"));
 Shape38->setDEF("ExhaustExitFlatPanel");
@@ -202,7 +202,7 @@ IndexedFaceSet41->setNormal(*Normal43);
 
 Shape38->setGeometry(IndexedFaceSet41);
 
-Transform19->addChildren(*Shape38);
+Transform19->addChild(*Shape38);
 
 CShape* Shape44 = (CShape *)(m_pScene.createNode("Shape"));
 Shape44->setDEF("ExhaustEntranceFrontBottomPart");
@@ -228,7 +228,7 @@ IndexedFaceSet47->setNormal(*Normal49);
 
 Shape44->setGeometry(IndexedFaceSet47);
 
-Transform19->addChildren(*Shape44);
+Transform19->addChild(*Shape44);
 
 CShape* Shape50 = (CShape *)(m_pScene.createNode("Shape"));
 Shape50->setDEF("ThirdPartFromNoseUnderCanopy");
@@ -254,7 +254,7 @@ IndexedFaceSet53->setNormal(*Normal55);
 
 Shape50->setGeometry(IndexedFaceSet53);
 
-Transform19->addChildren(*Shape50);
+Transform19->addChild(*Shape50);
 
 CShape* Shape56 = (CShape *)(m_pScene.createNode("Shape"));
 Shape56->setDEF("RearExhaustExitPartLastPartOfMainBody");
@@ -281,7 +281,7 @@ IndexedFaceSet59->setNormal(*Normal61);
 
 Shape56->setGeometry(IndexedFaceSet59);
 
-Transform19->addChildren(*Shape56);
+Transform19->addChild(*Shape56);
 
 CShape* Shape62 = (CShape *)(m_pScene.createNode("Shape"));
 Shape62->setDEF("WingsAndTail");
@@ -308,7 +308,7 @@ IndexedFaceSet65->setNormal(*Normal67);
 
 Shape62->setGeometry(IndexedFaceSet65);
 
-Transform19->addChildren(*Shape62);
+Transform19->addChild(*Shape62);
 
 CShape* Shape68 = (CShape *)(m_pScene.createNode("Shape"));
 Shape68->setDEF("SecondPartAfterNose");
@@ -334,7 +334,7 @@ IndexedFaceSet71->setNormal(*Normal73);
 
 Shape68->setGeometry(IndexedFaceSet71);
 
-Transform19->addChildren(*Shape68);
+Transform19->addChild(*Shape68);
 
 Transform18->addChildren(*Transform19);
 
@@ -417,7 +417,7 @@ Appearance88->setMaterial(*Material89);
 
 Shape86->setAppearance(*Appearance88);
 
-Transform85->addChildren(*Shape86);
+Transform85->addChild(*Shape86);
 
 CTouchSensor* TouchSensor90 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
 TouchSensor90->setDEF("TouchSensorUp");
@@ -445,7 +445,7 @@ Appearance94->setMaterial(*Material95);
 
 Shape92->setAppearance(*Appearance94);
 
-Transform91->addChildren(*Shape92);
+Transform91->addChild(*Shape92);
 
 CTouchSensor* TouchSensor96 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
 TouchSensor96->setDEF("TouchSensorDown");
@@ -470,7 +470,7 @@ Appearance100->setMaterial(*Material101);
 
 Shape98->setAppearance(*Appearance100);
 
-Transform97->addChildren(*Shape98);
+Transform97->addChild(*Shape98);
 
 Transform84->addChildren(*Transform97);
 
@@ -491,7 +491,7 @@ Appearance105->setMaterial(*Material106);
 
 Shape103->setAppearance(*Appearance105);
 
-Transform102->addChildren(*Shape103);
+Transform102->addChild(*Shape103);
 
 Transform84->addChildren(*Transform102);
 
@@ -514,7 +514,7 @@ Appearance110->setMaterial(*Material111);
 
 Shape108->setAppearance(*Appearance110);
 
-Transform107->addChildren(*Shape108);
+Transform107->addChild(*Shape108);
 
 CTouchSensor* TouchSensor112 = (CTouchSensor *)(m_pScene.createNode("TouchSensor"));
 TouchSensor112->setDEF("FireSensor");
@@ -539,7 +539,7 @@ Appearance116->setMaterial(*Material117);
 
 Shape114->setAppearance(*Appearance116);
 
-Transform113->addChildren(*Shape114);
+Transform113->addChild(*Shape114);
 
 Transform84->addChildren(*Transform113);
 
@@ -599,7 +599,7 @@ Appearance127->setMaterial(*Material128);
 
 Shape125->setAppearance(*Appearance127);
 
-Transform124->addChildren(*Shape125);
+Transform124->addChild(*Shape125);
 
 Transform18->addChildren(*Transform124);
 
@@ -998,7 +998,7 @@ Appearance195->setMaterial(*Material196);
 
 Shape193->setAppearance(*Appearance195);
 
-Transform192->addChildren(*Shape193);
+Transform192->addChild(*Shape193);
 
 group->addChildren(*Transform192);
 

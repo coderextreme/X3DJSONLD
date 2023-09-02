@@ -14,9 +14,13 @@ import org.web3d.x3d.jsail.Shape.*;
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.app&nbsp; Document Metadata </td>
 		</tr>
 
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
+			<td> <a href="app.x3d">app.x3d</a> </td>
+		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
 			<td> Carlson, I </td>
@@ -39,7 +43,9 @@ import org.web3d.x3d.jsail.Shape.*;
 		<a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
 		It has been produced using the 
 		<a href="https://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
-		stylesheet to create Java source code from an <code>.x3d</code> model.
+		stylesheet
+	       (<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">version&amp;nbsp;control</a>)
+                is used to create Java source code from an original <code>.x3d</code> model.
 	</p>
 
 	* @author Carlson, I
@@ -61,6 +67,7 @@ public class app
             try { // catch-all
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("app.x3d"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Carlson, I"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Carlson, II"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Carlson, III")))
@@ -147,10 +154,10 @@ public class app
         if (validate)
         {
                 System.out.print("Java program \"net.x3djsonld.data.app\" self-validation test results: ");
-                String validationResults = thisExampleX3dModel.validationReport();
-                if (validationResults.startsWith("\n") || (validationResults.length() > 10))
+		String validationResults = thisExampleX3dModel.validationReport();
+                if (validationResults.length() > 10)
                     System.out.println();
-                System.out.println(validationResults.trim());
+                System.out.println(validationResults);
         }
     }
 }

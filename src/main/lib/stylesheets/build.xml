@@ -270,8 +270,8 @@ POSSIBILITY OF SUCH DAMAGE.
 	
     <!-- ensure backwards compatibility to specified version of Java -->
     <!-- https://stackoverflow.com/questions/66068153/java-warning-options-system-modules-path-not-set-in-conjunction-with-source -->
-    <property name="java.source"                 value="16"/><!-- 1.8 is strictest, 15 or higher allows use of """text blocks""" for Script CDATA -->
-    <property name="java.target"                 value="16"/><!-- LTS -->
+    <property name="java.source"                 value="17"/><!-- 1.8 is strictest, 15 or higher allows use of """text blocks""" for Script CDATA -->
+    <property name="java.target"                 value="17"/><!-- 17 is LTS -->
     <!-- TODO compiler bug, java source and target 17 not supported as advertised -->
     
     <property name="javac.verbose"               value="false"/>
@@ -471,13 +471,13 @@ POSSIBILITY OF SUCH DAMAGE.
         <!-- empty classpath to ensure internal consistency of package compilation -->
         <echo message="Compiling ${src.org.web3d.x3d.sai} interfaces"/>
         <mkdir  dir="${X3DJSAIL.classes.dir}"/>
+        <!-- avoid warning by using - -release rather than - -source and - -target, https://ant.apache.org/manual/Tasks/javac.html -->
         <javac   srcdir="${src.org.web3d.x3d.sai}"
                 destdir="${X3DJSAIL.classes.dir}"
               classpath=""
                   debug="on"
                encoding="UTF-8"
-                 source="${java.source}"
-                 target="${java.target}"
+                release="${java.source}"
                 verbose="${javac.verbose}"
                 includeantruntime="false">
             <!-- -Xlint reports problems with no definition of serialVersionUID
@@ -494,11 +494,11 @@ POSSIBILITY OF SUCH DAMAGE.
         </javac>
         <!-- compiling interfaces must precede concrete classes -->
         <echo message="Compiling org.web3d.x3d.jsail, .util.exi, and .util.x3duom concrete classes"/>
+        <!-- avoid warning by using - -release rather than - -source and - -target, https://ant.apache.org/manual/Tasks/javac.html -->
         <javac  destdir="${X3DJSAIL.classes.dir}"
                   debug="on"
                encoding="UTF-8"
-                 source="${java.source}"
-                 target="${java.target}"
+                release="${java.source}"
                 verbose="${javac.verbose}"
       includeantruntime="false">
             <src path="${src.org.web3d.x3d.jsail}"/>
@@ -541,13 +541,13 @@ POSSIBILITY OF SUCH DAMAGE.
             </fileset>
         </delete>
         <echo message="compile HelloWorldProgram.java source..."/>
+        <!-- avoid warning by using - -release rather than - -source and - -target, https://ant.apache.org/manual/Tasks/javac.html -->
         <javac   srcdir="${X3DJSAIL.examples.dir}"
                 destdir="${X3DJSAIL.examples.dir}"
               classpath="${X3DJSAIL.jars.dir}/${jsail.full.archive.jar.name};"
                   debug="on"
                encoding="UTF-8"
-                 source="${java.source}"
-                 target="${java.target}"
+                release="${java.source}"
                 verbose="${javac.verbose}"
       includeantruntime="false" fork="${fork}">
         <!--<include name="NewX3dModel.java"/>-->
@@ -568,13 +568,13 @@ POSSIBILITY OF SUCH DAMAGE.
         
     <target name="compile.X3DJSAIL.tests">
         <echo message="Compiling ${src.org.web3d.x3d.tests} classes"/>
+        <!-- avoid warning by using - -release rather than - -source and - -target, https://ant.apache.org/manual/Tasks/javac.html -->
         <javac   srcdir="${src.org.web3d.x3d.tests}"
                 destdir="${X3DJSAIL.classes.dir}"
               classpath="${X3DJSAIL.jars.dir}/${jsail.full.archive.jar.name}"
                   debug="on"
                encoding="UTF-8"
-                 source="${java.source}"
-                 target="${java.target}"
+                release="${java.source}"
                 verbose="${javac.verbose}"
       includeantruntime="false"
             failonerror="false"><!-- permit library recompilation to continue even if unit tests fail during development -->
@@ -1975,13 +1975,13 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="==========================================="/>
         <echo message="compile HelloWorldProgramOutput.java source..."/>
         <echo message="     (i.e. new source program which was just produced by HelloWorldProgram execution)"/>
+        <!-- avoid warning by using - -release rather than - -source and - -target, https://ant.apache.org/manual/Tasks/javac.html -->
         <javac   srcdir="${X3DJSAIL.examples.dir}"
                 destdir="${X3DJSAIL.examples.dir}"
               classpath="${X3DJSAIL.jars.dir}/${jsail.full.archive.jar.name};"
                   debug="on"
                encoding="UTF-8"
-                 source="${java.source}"
-                 target="${java.target}"
+                release="${java.source}"
                 verbose="${javac.verbose}"
                 includeantruntime="false" fork="${fork}">
             <include name="HelloWorldProgramOutput.java"/>
@@ -2090,13 +2090,13 @@ POSSIBILITY OF SUCH DAMAGE.
             <arg value="${X3DJSAIL.examples.dir}/flowers4.java"/>
         </java>
         <echo message="compile flowers4.java source..."/>
+        <!-- avoid warning by using - -release rather than - -source and - -target, https://ant.apache.org/manual/Tasks/javac.html -->
         <javac   srcdir="${X3DJSAIL.examples.dir}"
                 destdir="${X3DJSAIL.examples.dir}"
               classpath="${X3DJSAIL.jars.dir}/${jsail.full.archive.jar.name};"
                   debug="on"
                encoding="UTF-8"
-                 source="${java.source}"
-                 target="${java.target}"
+                release="${java.source}"
                 verbose="false"
                 includeantruntime="false" fork="${fork}">
             <!-- -Xlint reports problem with direct object invocation of .isNode() or isStatement()
@@ -2183,7 +2183,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="test X3DUnifiedObjectModel JAXB invocations"/>
         <antcall target="test.X3DUnifiedObjectModelJaxbTests"/>
         <echo message="==========================================="/>
-        <echo message="HelloWorldProgramOutputLog.txt holds output results"/>
+        <echo message="build.test.X3DJSAIL.txt holds output results"/>
         <echo message="==========================================="/>
     </target>
     
@@ -2390,13 +2390,13 @@ POSSIBILITY OF SUCH DAMAGE.
             <!-- <arg value="className=CameraExamples"/> parameter -->
         </java>
         <echo message="compile ${oneFileName}.java source..."/>
+        <!-- avoid warning by using - -release rather than - -source and - -target, https://ant.apache.org/manual/Tasks/javac.html -->
         <javac   srcdir="test"
                 destdir="test"
               classpath="${X3DJSAIL.jars.dir}/${jsail.full.archive.jar.name};"
                   debug="on"
                encoding="UTF-8"
-                 source="${java.source}"
-                 target="${java.target}"
+                release="${java.source}"
                 verbose="false"
                 includeantruntime="false" fork="${fork}">
             <!-- -Xlint reports problem with direct object invocation of .isNode() or isStatement()
@@ -2501,14 +2501,14 @@ POSSIBILITY OF SUCH DAMAGE.
             <arg value="className=CameraExamples" description="parameter"/>
         </java>
         <echo message="compile..."/>
+        <!-- avoid warning by using - -release rather than - -source and - -target, https://ant.apache.org/manual/Tasks/javac.html -->
         <javac includes="CameraExamples.java" 
                  srcdir="test"
                 destdir="test"
               classpath="${X3DJSAIL.jars.dir}/${jsail.full.archive.jar.name};"
                   debug="on"
                encoding="UTF-8"
-                 source="${java.source}"
-                 target="${java.target}"
+                release="${java.source}"
                 verbose="false"
             failonerror="false"
                includeantruntime="false" fork="${fork}">
@@ -2538,13 +2538,13 @@ POSSIBILITY OF SUCH DAMAGE.
             <arg value="test/arc.java"/>
         </java>
         <echo message="compile arc.java source..."/>
+        <!-- avoid warning by using - -release rather than - -source and - -target, https://ant.apache.org/manual/Tasks/javac.html -->
         <javac   srcdir="test"
                 destdir="test"
               classpath="${X3DJSAIL.jars.dir}/${jsail.full.archive.jar.name};"
                   debug="on"
                encoding="UTF-8"
-                 source="${java.source}"
-                 target="${java.target}"
+                release="${java.source}"
                 verbose="false"
             failonerror="false"
                 includeantruntime="false" fork="${fork}">
@@ -2574,14 +2574,14 @@ POSSIBILITY OF SUCH DAMAGE.
             <arg value="test/flowers4.java"/>
         </java>
         <echo message="compile..."/>
+        <!-- avoid warning by using - -release rather than - -source and - -target, https://ant.apache.org/manual/Tasks/javac.html -->
         <javac includes="flowers4.java" 
                  srcdir="test"
                 destdir="test"
               classpath="${X3DJSAIL.jars.dir}/${jsail.full.archive.jar.name};"
                   debug="on"
                encoding="UTF-8"
-                 source="${java.source}"
-                 target="${java.target}"
+                release="${java.source}"
                 verbose="false"
             failonerror="false"
                includeantruntime="false" fork="${fork}">
@@ -2619,14 +2619,14 @@ POSSIBILITY OF SUCH DAMAGE.
             <arg value="className=TestSurface" description="parameter"/>
         </java>
         <echo message="compile..."/>
+        <!-- avoid warning by using - -release rather than - -source and - -target, https://ant.apache.org/manual/Tasks/javac.html -->
         <javac includes="TestSurface.java" 
                  srcdir="test"
                 destdir="test"
               classpath="${X3DJSAIL.jars.dir}/${jsail.full.archive.jar.name};"
                   debug="on"
                encoding="UTF-8"
-                 source="${java.source}"
-                 target="${java.target}"
+                release="${java.source}"
                 verbose="false"
                includeantruntime="false" fork="${fork}">
             <!-- -Xlint reports problem with direct object invocation of .isNode() or isStatement()
@@ -3409,12 +3409,12 @@ POSSIBILITY OF SUCH DAMAGE.
              classpath="${jaxb.dir}" destdir="java/src" header="true" readonly="true">
         </xjc>
         <echo message="Compiling org.web3d.x3d.x3duom JAXB classes"/>
+        <!-- avoid warning by using - -release rather than - -source and - -target, https://ant.apache.org/manual/Tasks/javac.html -->
         <javac   srcdir="${src.org.web3d.x3d.util.x3duom}"
                 destdir="${X3DJSAIL.classes.dir}"
                   debug="on"
                encoding="UTF-8"
-                 source="${java.source}"
-                 target="${java.target}"
+                release="${java.source}"
                 verbose="${javac.verbose}"
       includeantruntime="false">
             <classpath>

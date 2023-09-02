@@ -186,7 +186,7 @@ var X3D0 =  new X3D({
                 new TouchSensor({
                   DEF : new SFString("RandomTextClickedSensor"),
                   description : new SFString("Select to see a new strategy")}),
-
+              child : new SFNode(
                 new Shape({
                   geometry : new SFNode(
                     new Text({
@@ -201,11 +201,11 @@ var X3D0 =  new X3D({
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor([1,1,1])}))}))}),
+                          diffuseColor : new SFColor([1,1,1])}))}))})]),
 
                 new Transform({
                   scale : new SFVec3f([10,3,1]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       DEF : new SFString("HeadlineClickSurface"),
                       geometry : new SFNode(
@@ -223,7 +223,7 @@ var X3D0 =  new X3D({
                               diffuseColor : new SFColor([0.34773,0.090909,0.005289]),
                               shininess : new SFFloat(0.07),
                               specularColor : new SFColor([0.336735,0.051091,0.051091]),
-                              transparency : new SFFloat(0.8)}))}))})])})])}),
+                              transparency : new SFFloat(0.8)}))}))}))})}),
 
             new Script({
               DEF : new SFString("TextScript"),
@@ -282,7 +282,7 @@ var X3D0 =  new X3D({
               DEF : new SFString("CardTransform"),
               scale : new SFVec3f([0.4,0.4,0.4]),
               translation : new SFVec3f([0,-1.5,0]),
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   geometry : new SFNode(
                     new Text({
@@ -296,8 +296,8 @@ var X3D0 =  new X3D({
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor([1,1,1])}))}))}),
-
+                          diffuseColor : new SFColor([1,1,1])}))}))})),
+              children : new MFNode([
                 new ROUTE({
                   fromField : new SFString("string_changed"),
                   fromNode : new SFString("TextScript"),
@@ -345,7 +345,7 @@ var X3D0 =  new X3D({
                   fromNode : new SFString("PreviousTextClickedSensor"),
                   toField : new SFString("selectPreviousCard"),
                   toNode : new SFString("TextScript")}),
-
+              child : new SFNode(
                 new Shape({
                   geometry : new SFNode(
                     new Text({
@@ -358,11 +358,11 @@ var X3D0 =  new X3D({
                       DEF : new SFString("InterfaceAppearance"),
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor([1,0,0.6])}))}))}),
+                          diffuseColor : new SFColor([1,0,0.6])}))}))})]),
 
                 new Transform({
                   scale : new SFVec3f([2,0.6,1]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       DEF : new SFString("TransparentClickSurface"),
                       /*support Selectable Text with a scalable IFS*/
@@ -377,7 +377,7 @@ var X3D0 =  new X3D({
                         new Appearance({
                           material : new SFNode(
                             new Material({
-                              transparency : new SFFloat(1)}))}))})])})])}),
+                              transparency : new SFFloat(1)}))}))}))})}),
 
             new Transform({
               scale : new SFVec3f([0.4,0.4,0.4]),
@@ -392,7 +392,7 @@ var X3D0 =  new X3D({
                   fromNode : new SFString("NextTextClickedSensor"),
                   toField : new SFString("selectNextCard"),
                   toNode : new SFString("TextScript")}),
-
+              child : new SFNode(
                 new Shape({
                   geometry : new SFNode(
                     new Text({
@@ -402,13 +402,13 @@ var X3D0 =  new X3D({
                           USE : new SFString("MessageFont")}))})),
                   appearance : new SFNode(
                     new Appearance({
-                      USE : new SFString("InterfaceAppearance")}))}),
+                      USE : new SFString("InterfaceAppearance")}))})]),
 
                 new Transform({
                   scale : new SFVec3f([1.2,0.6,1]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
-                      USE : new SFString("TransparentClickSurface")})])})])}),
+                      USE : new SFString("TransparentClickSurface")}))})}),
 
             new Transform({
               scale : new SFVec3f([0.4,0.4,0.4]),
@@ -422,7 +422,7 @@ var X3D0 =  new X3D({
                   fromNode : new SFString("RandomTextClickedSensor"),
                   toField : new SFString("selectRandomCard"),
                   toNode : new SFString("TextScript")}),
-
+              child : new SFNode(
                 new Shape({
                   geometry : new SFNode(
                     new Text({
@@ -432,13 +432,13 @@ var X3D0 =  new X3D({
                           USE : new SFString("MessageFont")}))})),
                   appearance : new SFNode(
                     new Appearance({
-                      USE : new SFString("InterfaceAppearance")}))}),
+                      USE : new SFString("InterfaceAppearance")}))})]),
 
                 new Transform({
                   scale : new SFVec3f([1.8,0.6,1]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
-                      USE : new SFString("TransparentClickSurface")})])})])}),
+                      USE : new SFString("TransparentClickSurface")}))})}),
 
             new Transform({
               scale : new SFVec3f([0.4,0.4,0.4]),
@@ -469,7 +469,7 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       scale : new SFVec3f([1.8,0.6,1]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
-                          USE : new SFString("TransparentClickSurface")})])})])})])})])}))});
+                          USE : new SFString("TransparentClickSurface")}))})])})])})])}))});
 console.log(X3D0.toXMLNode());

@@ -56,7 +56,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/bubble.x3d")})])})),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/bubble.x3d")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
@@ -75,7 +75,7 @@ var X3D0 =  new X3D({
                   children : new MFNode([
                     new Transform({
                       DEF : new SFString("transform"),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           geometry : new SFNode(
                             new Sphere({
@@ -85,8 +85,8 @@ var X3D0 =  new X3D({
                               material : new SFNode(
                                 new Material({
                                   diffuseColor : new SFColor([1,0,0]),
-                                  transparency : new SFFloat(0.2)}))}))}),
-
+                                  transparency : new SFFloat(0.2)}))}))})),
+                      children : new MFNode([
                         new Script({
                           DEF : new SFString("bounce"),
                           field : new MFNode([

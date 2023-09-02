@@ -105,9 +105,9 @@ let Sphere23 = browser.currentScene.createNode("Sphere");
 Sphere23.radius = 30;
 Shape20.geometry = Sphere23;
 
-Transform19.children = new MFNode();
+Transform19.child = new undefined();
 
-Transform19.children[0] = Shape20;
+Transform19.child[0] = Shape20;
 
 browser.currentScene.children[4] = Transform19;
 
@@ -129,9 +129,9 @@ let Sphere28 = browser.currentScene.createNode("Sphere");
 Sphere28.radius = 30;
 Shape25.geometry = Sphere28;
 
-Transform24.children = new MFNode();
+Transform24.child = new undefined();
 
-Transform24.children[0] = Shape25;
+Transform24.child[0] = Shape25;
 
 browser.currentScene.children[5] = Transform24;
 
@@ -153,9 +153,9 @@ let Sphere33 = browser.currentScene.createNode("Sphere");
 Sphere33.radius = 30;
 Shape30.geometry = Sphere33;
 
-Transform29.children = new MFNode();
+Transform29.child = new undefined();
 
-Transform29.children[0] = Shape30;
+Transform29.child[0] = Shape30;
 
 browser.currentScene.children[6] = Transform29;
 
@@ -205,9 +205,9 @@ let Cylinder44 = browser.currentScene.createNode("Cylinder");
 Cylinder44.radius = 500;
 Shape41.geometry = Cylinder44;
 
-Transform40.children = new MFNode();
+Transform40.child = new undefined();
 
-Transform40.children[0] = Shape41;
+Transform40.child[0] = Shape41;
 
 browser.currentScene.children[13] = Transform40;
 

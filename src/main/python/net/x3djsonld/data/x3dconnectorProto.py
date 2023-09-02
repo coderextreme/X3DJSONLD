@@ -1,6 +1,10 @@
 ####################################################################################################
 #
-# Now available: developmental python x3d.py package on PyPI for import.
+# Invoking X3D model self-test:
+#
+#   $ python .py
+#
+# Python package x3d.py package is available on PyPI for import.
 #   This approach simplifies Python X3D deployment and use.
 #   https://pypi.org/project/x3d
 #
@@ -9,7 +13,7 @@
 # or
 #       python -m pip install x3d
 #
-# Developer options for loading x3d package:
+# Developer options for loading x3d package in other Python programs:
 #
 #    from x3d import *  # preferred approach, terser source that avoids x3d.* class prefixes
 #
@@ -27,8 +31,10 @@ newModel=X3D(profile='Immersive',version='3.3',
     children=[
     meta(name='title',content='x3dconnectorProto'),
     meta(name='creator',content='Lost, Doug Sanden I think'),
+    meta(name='created',content='Unknown'),
+    meta(name='modified',content='July 30 2023'),
     meta(name='generator',content='manual'),
-    meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d'),
+    meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d'),
     meta(name='description',content='a generic proto to connect two objects'),
     meta(content='https://www.web3d.org/x3d/content/examples/license.html',name='license')]),
   Scene=Scene(
@@ -103,7 +109,7 @@ newModel=X3D(profile='Immersive',version='3.3',
         field(accessType='inputOnly',name='set_endpoint',type='SFVec3f')]),
       ProtoBody=ProtoBody(
         children=[
-        Script(DEF='S1',
+        Script(DEF='S1',directOutput=True,
           field=[
           field(accessType='initializeOnly',name='startnode',type='SFNode'),
           field(accessType='initializeOnly',name='endnode',type='SFNode'),
@@ -126,11 +132,11 @@ ecmascript:
 	    if (typeof endpoint === 'undefined') {
 		return;
 	    }
-            var dif = endpoint.subtract(startpoint);
-            var dist = dif.length()*0.5;
-            var dif2 = dif.multiply(0.5);
-            var norm = dif.normalize();
-            var transl = startpoint.add(dif2);
+            let dif = endpoint.subtract(startpoint);
+            let dist = dif.length()*0.5;
+            let dif2 = dif.multiply(0.5);
+            let norm = dif.normalize();
+            let transl = startpoint.add(dif2);
 	    if (typeof Quaternion !== 'undefined') {
 		    return {
 			    scale : new SFVec3f(1.0,dist,1.0),
@@ -146,7 +152,7 @@ ecmascript:
 	    }
 	}
 	function recompute_and_route(startpoint, endpoint) {
-	      var trafo = recompute(startpoint, endpoint);
+	      let trafo = recompute(startpoint, endpoint);
 	      if (trafo) {
 		      transnode.translation = trafo.translation;
 		      rotscalenode.rotation = trafo.rotation;

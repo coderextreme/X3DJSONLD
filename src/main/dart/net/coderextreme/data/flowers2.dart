@@ -112,7 +112,7 @@ var X3D0 =  X3D(
                                     connect(
                                       nodeField_ : SFString('translation'),
                                       protoField_ : SFString('translation'))]),
-                              children_ : [
+                              child_ : 
                                 Shape(
                                   appearance_ : 
                                     Appearance(
@@ -142,7 +142,7 @@ var X3D0 =  X3D(
                                       coord_ : 
                                         Coordinate(
                                           DEF_ : SFString('OrbitCoordinates'),
-                                          point_ : MFVec3f([SFVec3f([0,0,1]),SFVec3f([0,1,0]),SFVec3f([1,0,0])]))))]),
+                                          point_ : MFVec3f([SFVec3f([0,0,1]),SFVec3f([0,1,0]),SFVec3f([1,0,0])]))))),
 
                             Script(
                               DEF_ : SFString('OrbitScript'),

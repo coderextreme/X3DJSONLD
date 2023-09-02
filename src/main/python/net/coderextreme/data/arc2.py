@@ -2,14 +2,17 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[meta(name="title", content="arc2.x3d"),
+head=head(
+children=[
+meta(name="title", content="arc2.x3d"),
 meta(name="creator", content="Lost, Doug Sanden I think"),
 meta(name="generator", content="manual"),
 meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d"),
 meta(name="description", content="a generic proto to connect two objects"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -79,5 +82,6 @@ field(name="set_startpoint", accessType="inputOnly", type="SFVec3f"),
 field(name="set_endpoint", accessType="inputOnly", type="SFVec3f")
 ], sourceCode="""['', '', '            ecmascript:', '        function recompute(startpoint,endpoint){', "\t    if (typeof endpoint === 'undefined') {", '\t\treturn;', '\t    }', '            var dif = endpoint.subtract(startpoint);', '            var dist = dif.length()*0.5;', '            var dif2 = dif.multiply(0.5);', '            var norm = dif.normalize();', '            var transl = startpoint.add(dif2);', "\t    if (typeof Quaternion !== 'undefined') {", '\t\t    return {', '\t\t\t    scale : new SFVec3f(1.0,dist,1.0),', '\t\t\t    translation : transl,', '\t\t\t    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)', '\t\t    };', '\t    } else {', '\t\t    return {', '\t\t\t    scale : new SFVec3f(1.0,dist,1.0),', '\t\t\t    translation : transl,', '\t\t\t    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)', '\t\t    };', '\t    }', '\t}', '\tfunction recompute_and_route(startpoint, endpoint) {', '\t      var trafo = recompute(startpoint, endpoint);', '\t      transC1.translation = trafo.translation;', '\t      rotscaleC1.rotation = trafo.rotation;', '\t      rotscaleC1.scale = trafo.scale;', '\t}', '        function initialize(){', '            recompute_and_route(startnode.translation,endnode.translation);', '        }', '        function set_startpoint(val,t){', '            recompute_and_route(val,endnode.translation);', '        }', '        function set_endpoint(val,t){', '            recompute_and_route(startnode.translation,val);', '        }', '', '', '']""",),
 ROUTE(fromNode="G1", fromField="translation_changed", toNode="DECLx3dconnector_connector1_S1", toField="set_startpoint"),
-ROUTE(fromNode="G2", fromField="translation_changed", toNode="DECLx3dconnector_connector1_S1", toField="set_endpoint")]))
-.XML())
+ROUTE(fromNode="G2", fromField="translation_changed", toNode="DECLx3dconnector_connector1_S1", toField="set_endpoint")])))
+output = model.JSON()
+json.loads(output)

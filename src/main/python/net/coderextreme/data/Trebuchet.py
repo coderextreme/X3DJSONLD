@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.0", 
-head=head(children=[meta(name="title", content="Trebuchet.x3d"),
+head=head(
+children=[
+meta(name="title", content="Trebuchet.x3d"),
 meta(name="description", content="Working model of a 14th century Trebuchet Catapult."),
 meta(name="creator", content="LT Joe Roth"),
 meta(name="created", content="20 June 2001"),
@@ -19,7 +22,7 @@ meta(name="reference", content="https://www.web3d.org/WorkingGroups/media/textur
 meta(name="reference", content="http://www.revemonde.net/UniversalMedia/textures/nature/leaves_5.jpg.htm"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -164,8 +167,7 @@ Transform(DEF="angledsupport2", rotation=((0,0,1,-1)), translation=((5,10,0)), c
 Shape(USE="plank")]),
 Transform(DEF="verticalsupport", rotation=((0,0,1,1.57)), scale=((0.9,1,1)), translation=((0,11,0)), children=[
 Shape(USE="plank"),
-Comment(value=''' Main Verticle Support '''),
-]),
+Comment(value=''' Main Verticle Support '''),]),
 Transform(DEF="horizontalsupport", scale=((0.4,1,1)), translation=((0,10,0)), children=[
 Shape(USE="plank")]),
 Transform(rotation=((0,0,1,1.57)), scale=((0.6,1,1)), translation=((0,5,10)), children=[
@@ -213,10 +215,8 @@ texture=
 ImageTexture(USE="woodTexture")), 
 geometry=
 Sphere(radius=1.5)),
-Comment(value=''' knott '''),
-])]),
+Comment(value=''' knott '''),])]),
 Comment(value=''' The Unicorn '''),
-
 Transform(rotation=((0,0,1,1.2)), scale=((0.2,0.2,0.2)), translation=((-18.3,0.3,0)), children=[
 Shape(
 geometry=
@@ -228,15 +228,13 @@ Material(specularColor=((1,1,1))))),
 Transform(translation=((0,-2.5,0)), children=[
 Shape(USE="Torus"),
 Comment(value=''' The Unicorn '''),
-
 Transform(translation=((-2,0,0)), children=[
 Shape(
 geometry=
 Sphere(radius=1.5), 
 appearance=
 Appearance(USE="rope")),
-Comment(value=''' Knott '''),
-]),]),
+Comment(value=''' Knott '''),]),]),
 Transform(rotation=((0,0,1,1.2)), translation=((15,55,-11)), children=[
 Transform(scale=((5,5,5)), children=[
 Shape(
@@ -328,8 +326,7 @@ appearance=
 Appearance(
 material=
 Material(diffuseColor=((0,0,0)), specularColor=((1,1,1))))),
-Comment(value=''' Top Pivot '''),
-]),
+Comment(value=''' Top Pivot '''),]),
 Transform(DEF="verticalweight", children=[
 Transform(translation=((4,18,1.8)), children=[
 Shape(
@@ -345,7 +342,6 @@ appearance=
 Appearance(USE="wood"))]),
 Transform(translation=((4,14,2.5)), children=[
 Comment(value=''' CounterWeight '''),
-
 Shape(
 geometry=
 Cylinder(height=4, radius=1.5), 
@@ -375,7 +371,6 @@ Material(specularColor=((1,1,1)))))])]),
 Transform(translation=((0,0,7)), children=[
 Transform(USE="screw")]),
 Comment(value=''' Release Pin '''),
-
 Transform(DEF="Pin", rotation=((1,0,0,-1.57)), translation=((0,0,-3)), children=[
 Transform(USE="screw")]),]),
 Transform(translation=((0,0,5)), children=[
@@ -517,5 +512,6 @@ ROUTE(fromField="value_changed", fromNode="flingerangles", toField="set_rotation
 ROUTE(fromField="fraction_changed", fromNode="clock", toField="set_fraction", toNode="verticalweightpath"),
 ROUTE(fromField="value_changed", fromNode="verticalweightpath", toField="set_translation", toNode="verticalweight"),
 ROUTE(fromField="fraction_changed", fromNode="clock", toField="set_fraction", toNode="pinpath"),
-ROUTE(fromField="value_changed", fromNode="pinpath", toField="set_translation", toNode="Pin")]))
-.XML())
+ROUTE(fromField="value_changed", fromNode="pinpath", toField="set_translation", toNode="Pin")])))
+output = model.JSON()
+json.loads(output)

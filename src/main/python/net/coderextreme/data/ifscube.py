@@ -2,14 +2,17 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Interchange", version="3.3", 
-head=head(children=[meta(name="title", content="ifscube.x3d"),
+head=head(
+children=[
+meta(name="title", content="ifscube.x3d"),
 meta(name="identifier", content="http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d"),
 meta(name="description", content="Template for an Indexed Face Set"),
 meta(name="creator", content="John Carlson"),
 meta(name="created", content="4 April 2017"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -23,5 +26,6 @@ Coordinate(point=[(0,0,1),(0,1,1),(1,1,1),(1,0,1)]),
 normal=
 Normal(vector=[(1,0,0),(-1,0,0),(0,1,0),(0,0,-1),(0,-1,0),(0,0,1)]), 
 color=(
-Color(color=[(0,1,0)]))))])]))
-.XML())
+Color(color=[(0,1,0)]))))])])))
+output = model.JSON()
+json.loads(output)

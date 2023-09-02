@@ -72,7 +72,7 @@ CProtoDeclare ProtoDeclare11 = browser.createX3DFromString(R"foo(<?xml version="
 </IS>
 </Material>
 </Appearance>
-<Sphere containerField="geometry" radius="1.10000002384186"></Sphere>
+<Sphere radius="1.10000002384186"></Sphere>
 </Shape>
 <IS><connect nodeField="translation" protoField="posi"></connect>
 </IS>
@@ -119,7 +119,7 @@ CSphere* Sphere22 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere22->setRadius(1.10000002384186);
 Shape17->setGeometry(Sphere22);
 
-Transform16->addChildren(*Shape17);
+Transform16->addChild(*Shape17);
 
 CIS* IS23 = new CIS();
 Cconnect* connect24 = new Cconnect();

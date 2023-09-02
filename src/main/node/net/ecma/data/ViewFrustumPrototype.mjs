@@ -178,7 +178,7 @@ var X3D0 =  new X3D({
                           children : new MFNode([
                             new Transform({
                               DEF : new SFString("OrientationTransform"),
-                              children : new MFNode([
+                              child : new SFNode(
                                 new Shape({
                                   geometry : new SFNode(
                                     new IndexedLineSet({
@@ -197,8 +197,8 @@ var X3D0 =  new X3D({
                                               connect : new MFNode([
                                                 new connect({
                                                   nodeField : new SFString("emissiveColor"),
-                                                  protoField : new SFString("lineColor")})])}))}))}))}),
-
+                                                  protoField : new SFString("lineColor")})])}))}))}))})),
+                              child : new SFNode(
                                 new Shape({
                                   geometry : new SFNode(
                                     new Extrusion({
@@ -217,15 +217,15 @@ var X3D0 =  new X3D({
 
                                                 new connect({
                                                   nodeField : new SFString("transparency"),
-                                                  protoField : new SFString("transparency")})])}))}))}))}),
-
+                                                  protoField : new SFString("transparency")})])}))}))}))})),
+                              child : new SFNode(
                                 new Shape({
                                   geometry : new SFNode(
                                     new Sphere({
                                       radius : new SFFloat(0.08)})),
                                   appearance : new SFNode(
                                     new Appearance({
-                                      USE : new SFString("FrustumAppearance")}))})])})])})])}),
+                                      USE : new SFString("FrustumAppearance")}))}))})])})])}),
 
                     new Script({
                       DEF : new SFString("GeometryComputationScript"),

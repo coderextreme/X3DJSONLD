@@ -23,11 +23,19 @@ import org.web3d.x3d.jsail.Shape.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/x3dconnectorProto">x3dconnectorProto</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto">x3dconnectorProto</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
 			<td> Lost, Doug Sanden I think </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> created </i> </td>
+			<td> Unknown </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
+			<td> July 30 2023 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -35,7 +43,7 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -55,7 +63,9 @@ import org.web3d.x3d.jsail.Shape.*;
 		<a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
 		It has been produced using the 
 		<a href="https://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
-		stylesheet to create Java source code from an <code>.x3d</code> model.
+		stylesheet
+	       (<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">version&amp;nbsp;control</a>)
+                is used to create Java source code from an original <code>.x3d</code> model.
 	</p>
 
 	* @author Lost, Doug Sanden I think
@@ -77,8 +87,10 @@ public class x3dconnectorProto
   .setHead(new head()
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("x3dconnectorProto"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Lost, Doug Sanden I think"))
+    .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("Unknown"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("July 30 2023"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("manual"))
-    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("a generic proto to connect two objects"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("https://www.web3d.org/x3d/content/examples/license.html")))
   .setScene(new Scene()
@@ -140,17 +152,17 @@ public class x3dconnectorProto
         .addField(new field().setName("set_startpoint").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTONLY))
         .addField(new field().setName("set_endpoint").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTONLY)))
       .setProtoBody(new ProtoBody()
-        .addChild(new Script("S1").setSourceCode("""
+        .addChild(new Script("S1").setDirectOutput(true).setSourceCode("""
 ecmascript:
         function recompute(startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
 		return;
 	    }
-            var dif = endpoint.subtract(startpoint);
-            var dist = dif.length()*0.5;
-            var dif2 = dif.multiply(0.5);
-            var norm = dif.normalize();
-            var transl = startpoint.add(dif2);
+            let dif = endpoint.subtract(startpoint);
+            let dist = dif.length()*0.5;
+            let dif2 = dif.multiply(0.5);
+            let norm = dif.normalize();
+            let transl = startpoint.add(dif2);
 	    if (typeof Quaternion !== 'undefined') {
 		    return {
 			    scale : new SFVec3f(1.0,dist,1.0),
@@ -166,7 +178,7 @@ ecmascript:
 	    }
 	}
 	function recompute_and_route(startpoint, endpoint) {
-	      var trafo = recompute(startpoint, endpoint);
+	      let trafo = recompute(startpoint, endpoint);
 	      if (trafo) {
 		      transnode.translation = trafo.translation;
 		      rotscalenode.rotation = trafo.rotation;
@@ -311,10 +323,10 @@ ecmascript:
         if (validate)
         {
                 System.out.print("Java program \"net.x3djsonld.data.x3dconnectorProto\" self-validation test results: ");
-                String validationResults = thisExampleX3dModel.validationReport();
-                if (validationResults.startsWith("\n") || (validationResults.length() > 10))
+		String validationResults = thisExampleX3dModel.validationReport();
+                if (validationResults.length() > 10)
                     System.out.println();
-                System.out.println(validationResults.trim());
+                System.out.println(validationResults);
         }
     }
 }

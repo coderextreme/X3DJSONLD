@@ -58,7 +58,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/flowers7.x3d')),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/flowers7.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -71,19 +71,19 @@ var X3D0 =  X3D(
 
             Background(
               DEF_ : SFString('background'),
-              backUrl_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_back.png"), SFString("https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png")]),
-              bottomUrl_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_bottom.png"), SFString("https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png")]),
-              frontUrl_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_front.png"), SFString("https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png")]),
-              leftUrl_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_left.png"), SFString("https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png")]),
-              rightUrl_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_right.png"), SFString("https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png")]),
-              topUrl_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_top.png"), SFString("https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png")])),
+              backUrl_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_back.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png")]),
+              bottomUrl_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_bottom.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png")]),
+              frontUrl_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_front.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png")]),
+              leftUrl_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_left.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png")]),
+              rightUrl_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_right.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png")]),
+              topUrl_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_top.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png")])),
 
             Viewpoint(
               position_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(40)]),
               description_ : SFString('Transparent rose')),
 
             Transform(
-              children_ : [
+              child_ : 
                 Shape(
                   appearance_ : 
                     Appearance(
@@ -97,27 +97,27 @@ var X3D0 =  X3D(
                           topTexture_ : 
                             ImageTexture(
                               DEF_ : SFString('backShader'),
-                              url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_back.png"), SFString("https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png")])),
+                              url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_back.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png")])),
                           topTexture_ : 
                             ImageTexture(
                               DEF_ : SFString('bottomShader'),
-                              url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_bottom.png"), SFString("https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png")])),
+                              url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_bottom.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png")])),
                           topTexture_ : 
                             ImageTexture(
                               DEF_ : SFString('frontShader'),
-                              url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_front.png"), SFString("https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png")])),
+                              url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_front.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png")])),
                           topTexture_ : 
                             ImageTexture(
                               DEF_ : SFString('leftShader'),
-                              url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_left.png"), SFString("https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png")])),
+                              url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_left.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png")])),
                           topTexture_ : 
                             ImageTexture(
                               DEF_ : SFString('rightShader'),
-                              url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_right.png"), SFString("https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png")])),
+                              url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_right.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png")])),
                           topTexture_ : 
                             ImageTexture(
                               DEF_ : SFString('topShader'),
-                              url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_top.png"), SFString("https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png")]))),
+                              url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_top.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png")]))),
                       shaders_ : 
                         ComposedShader(
                           DEF_ : SFString('x3dom'),
@@ -278,7 +278,7 @@ var X3D0 =  X3D(
                               type_ : SFString("FRAGMENT",
                               url_ : MFString([SFString("../shaders/x_ite.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs")])))),
                   geometry_ : 
-                    Sphere())]),
+                    Sphere())),
 
             Script(
               DEF_ : SFString('UrlSelector'),

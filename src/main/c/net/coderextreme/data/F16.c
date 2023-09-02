@@ -115,9 +115,9 @@ IndexedFaceSet23.normal = Normal25;
 
 Shape20.geometry = IndexedFaceSet23;
 
-Transform19.children = new MFNode();
+Transform19.child = new undefined();
 
-Transform19.children[0] = Shape20;
+Transform19.child[0] = Shape20;
 
 Shape Shape26 = createNode("Shape");
 Shape26.DEF = "Canopy";
@@ -144,7 +144,7 @@ IndexedFaceSet29.normal = Normal31;
 
 Shape26.geometry = IndexedFaceSet29;
 
-Transform19.children[1] = Shape26;
+Transform19.child[1] = Shape26;
 
 Shape Shape32 = createNode("Shape");
 Shape32.DEF = "MainBodyAndWingEdges";
@@ -170,7 +170,7 @@ IndexedFaceSet35.normal = Normal37;
 
 Shape32.geometry = IndexedFaceSet35;
 
-Transform19.children[2] = Shape32;
+Transform19.child[2] = Shape32;
 
 Shape Shape38 = createNode("Shape");
 Shape38.DEF = "ExhaustExitFlatPanel";
@@ -196,7 +196,7 @@ IndexedFaceSet41.normal = Normal43;
 
 Shape38.geometry = IndexedFaceSet41;
 
-Transform19.children[3] = Shape38;
+Transform19.child[3] = Shape38;
 
 Shape Shape44 = createNode("Shape");
 Shape44.DEF = "ExhaustEntranceFrontBottomPart";
@@ -222,7 +222,7 @@ IndexedFaceSet47.normal = Normal49;
 
 Shape44.geometry = IndexedFaceSet47;
 
-Transform19.children[4] = Shape44;
+Transform19.child[4] = Shape44;
 
 Shape Shape50 = createNode("Shape");
 Shape50.DEF = "ThirdPartFromNoseUnderCanopy";
@@ -248,7 +248,7 @@ IndexedFaceSet53.normal = Normal55;
 
 Shape50.geometry = IndexedFaceSet53;
 
-Transform19.children[5] = Shape50;
+Transform19.child[5] = Shape50;
 
 Shape Shape56 = createNode("Shape");
 Shape56.DEF = "RearExhaustExitPartLastPartOfMainBody";
@@ -275,7 +275,7 @@ IndexedFaceSet59.normal = Normal61;
 
 Shape56.geometry = IndexedFaceSet59;
 
-Transform19.children[6] = Shape56;
+Transform19.child[6] = Shape56;
 
 Shape Shape62 = createNode("Shape");
 Shape62.DEF = "WingsAndTail";
@@ -302,7 +302,7 @@ IndexedFaceSet65.normal = Normal67;
 
 Shape62.geometry = IndexedFaceSet65;
 
-Transform19.children[7] = Shape62;
+Transform19.child[7] = Shape62;
 
 Shape Shape68 = createNode("Shape");
 Shape68.DEF = "SecondPartAfterNose";
@@ -328,7 +328,7 @@ IndexedFaceSet71.normal = Normal73;
 
 Shape68.geometry = IndexedFaceSet71;
 
-Transform19.children[8] = Shape68;
+Transform19.child[8] = Shape68;
 
 Transform18.children = new MFNode();
 
@@ -423,9 +423,9 @@ Appearance88.material = Material89;
 
 Shape86.appearance = Appearance88;
 
-Transform85.children = new MFNode();
+Transform85.child = new undefined();
 
-Transform85.children[0] = Shape86;
+Transform85.child[0] = Shape86;
 
 TouchSensor TouchSensor90 = createNode("TouchSensor");
 TouchSensor90.DEF = "TouchSensorUp";
@@ -455,9 +455,9 @@ Appearance94.material = Material95;
 
 Shape92.appearance = Appearance94;
 
-Transform91.children = new MFNode();
+Transform91.child = new undefined();
 
-Transform91.children[0] = Shape92;
+Transform91.child[0] = Shape92;
 
 TouchSensor TouchSensor96 = createNode("TouchSensor");
 TouchSensor96.DEF = "TouchSensorDown";
@@ -482,9 +482,9 @@ Appearance100.material = Material101;
 
 Shape98.appearance = Appearance100;
 
-Transform97.children = new MFNode();
+Transform97.child = new undefined();
 
-Transform97.children[0] = Shape98;
+Transform97.child[0] = Shape98;
 
 Transform84.children[2] = Transform97;
 
@@ -505,9 +505,9 @@ Appearance105.material = Material106;
 
 Shape103.appearance = Appearance105;
 
-Transform102.children = new MFNode();
+Transform102.child = new undefined();
 
-Transform102.children[0] = Shape103;
+Transform102.child[0] = Shape103;
 
 Transform84.children[3] = Transform102;
 
@@ -530,9 +530,9 @@ Appearance110.material = Material111;
 
 Shape108.appearance = Appearance110;
 
-Transform107.children = new MFNode();
+Transform107.child = new undefined();
 
-Transform107.children[0] = Shape108;
+Transform107.child[0] = Shape108;
 
 TouchSensor TouchSensor112 = createNode("TouchSensor");
 TouchSensor112.DEF = "FireSensor";
@@ -557,9 +557,9 @@ Appearance116.material = Material117;
 
 Shape114.appearance = Appearance116;
 
-Transform113.children = new MFNode();
+Transform113.child = new undefined();
 
-Transform113.children[0] = Shape114;
+Transform113.child[0] = Shape114;
 
 Transform84.children[5] = Transform113;
 
@@ -619,9 +619,9 @@ Appearance127.material = Material128;
 
 Shape125.appearance = Appearance127;
 
-Transform124.children = new MFNode();
+Transform124.child = new undefined();
 
-Transform124.children[0] = Shape125;
+Transform124.child[0] = Shape125;
 
 Transform18.children[13] = Transform124;
 
@@ -1054,9 +1054,9 @@ Appearance195.material = Material196;
 
 Shape193.appearance = Appearance195;
 
-Transform192.children = new MFNode();
+Transform192.child = new undefined();
 
-Transform192.children[0] = Shape193;
+Transform192.child[0] = Shape193;
 
 children[48] = Transform192;
 

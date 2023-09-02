@@ -230,7 +230,7 @@ IndexedLineSet40->setColor(*Color42);
 
 Shape39->setGeometry(IndexedLineSet40);
 
-Transform37->addChildren(*Shape39);
+Transform37->addChild(*Shape39);
 
 HAnimSite36->addChildren(*Transform37);
 
@@ -3552,7 +3552,7 @@ IndexedFaceSet543->setCoord(*Coordinate544);
 
 Shape539->setGeometry(IndexedFaceSet543);
 
-Transform538->addChildren(*Shape539);
+Transform538->addChild(*Shape539);
 
 CViewpoint* Viewpoint545 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
 Viewpoint545->setDEF("ballView_1");
@@ -3610,7 +3610,7 @@ CTransform* Transform553 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform553->setScale(new float[3]{0.2,0.2,0.2});
 CShape* Shape554 = (CShape *)(m_pScene.createNode("Shape"));
 Shape554->setUSE("AxisLinesShape");
-Transform553->addChildren(*Shape554);
+Transform553->addChild(*Shape554);
 
 Group552->addChildren(*Transform553);
 
@@ -3640,7 +3640,7 @@ IndexedLineSet559->setCoord(*Coordinate560);
 
 Shape556->setGeometry(IndexedLineSet559);
 
-Transform555->addChildren(*Shape556);
+Transform555->addChild(*Shape556);
 
 Group552->addChildren(*Transform555);
 
@@ -3663,7 +3663,7 @@ CIndexedLineSet* IndexedLineSet565 = (CIndexedLineSet *)(m_pScene.createNode("In
 IndexedLineSet565->setUSE("Orbit1");
 Shape562->setGeometry(IndexedLineSet565);
 
-Transform561->addChildren(*Shape562);
+Transform561->addChild(*Shape562);
 
 Group552->addChildren(*Transform561);
 
@@ -3686,7 +3686,7 @@ CIndexedLineSet* IndexedLineSet570 = (CIndexedLineSet *)(m_pScene.createNode("In
 IndexedLineSet570->setUSE("Orbit1");
 Shape567->setGeometry(IndexedLineSet570);
 
-Transform566->addChildren(*Shape567);
+Transform566->addChild(*Shape567);
 
 Group552->addChildren(*Transform566);
 

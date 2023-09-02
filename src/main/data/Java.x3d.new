@@ -37,13 +37,13 @@
 <Transform DEF="LogoGeometryTransform" translation="0 1.5 0"><Anchor description="select for X3D Java SAI Library (X3DJSAIL) description" url="&quot;../X3DJSAIL.html&quot; &quot;https://www.web3d.org/specifications/java/X3DJSAIL.html&quot;"><Shape DEF="BoxShape"><Appearance><Material DEF="GreenMaterial" diffuseColor="0 1 1" emissiveColor="0.8 0 0" transparency="0.1"></Material>
 <ImageTexture containerField="texture" url="&quot;images/X3dJavaSceneAccessInterfaceSaiLibrary.png&quot; &quot;https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png&quot;"></ImageTexture>
 </Appearance>
-<Box containerField="geometry" DEF="test-NMTOKEN_regex.0123456789" class="untextured"></Box>
+<Box DEF="test-NMTOKEN_regex.0123456789" class="untextured"></Box>
 </Shape>
 </Anchor>
 </Transform>
 <Shape DEF="LineShape"><Appearance><Material emissiveColor="0.6 0.19607843 0.8"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" coordIndex="0 1 2 3 4 0"><!--Coordinate 3-tuple point count: 6--><Coordinate containerField="coord" point="0 1.5 0 2 1.5 0 2 1.5 -2 -2 1.5 -2 -2 1.5 0 0 1.5 0"></Coordinate>
+<IndexedLineSet coordIndex="0 1 2 3 4 0"><!--Coordinate 3-tuple point count: 6--><Coordinate containerField="coord" point="0 1.5 0 2 1.5 0 2 1.5 -2 -2 1.5 -2 -2 1.5 0 0 1.5 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 <PositionInterpolator DEF="BoxPathAnimator" key="0 0.125 0.375 0.625 0.875 1" keyValue="0 1.5 0 2 1.5 0 2 1.5 -2 -2 1.5 -2 -2 1.5 0 0 1.5 0"></PositionInterpolator>
@@ -52,13 +52,13 @@
 <ROUTE fromField="value_changed" fromNode="BoxPathAnimator" toField="set_translation" toNode="LogoGeometryTransform"></ROUTE>
 <Transform DEF="TextTransform" translation="0 -1.5 0"><Shape><Appearance><Material USE="GreenMaterial"></Material>
 </Appearance>
-<Text containerField="geometry" string="&quot;X3D Java&quot; &quot;SAI Library&quot; &quot;X3DJSAIL&quot;"><!--Comment example A, plain quotation marks: He said, "Immel did it!"--><!--Comment example B, XML character entities: He said, &quot;Immel did it!&quot;--><MetadataSet containerField="metadata" name="EscapedQuotationMarksMetadataSet"><MetadataString name="quotesTestC" value="&quot;MFString example C, backslash-escaped quotes: He said, \&quot;Immel did it!\&quot;&quot;" containerField="value"></MetadataString>
+<Text string="&quot;X3D Java&quot; &quot;SAI Library&quot; &quot;X3DJSAIL&quot;"><!--Comment example A, plain quotation marks: He said, "Immel did it!"--><!--Comment example B, XML character entities: He said, &quot;Immel did it!&quot;--><MetadataSet containerField="metadata" name="EscapedQuotationMarksMetadataSet"><MetadataString name="quotesTestC" value="&quot;MFString example C, backslash-escaped quotes: He said, \&quot;Immel did it!\&quot;&quot;" containerField="value"></MetadataString>
 <MetadataString name="extraChildTest" value="&quot;checks MetadataSetObject addValue() method&quot;" containerField="value"></MetadataString>
 </MetadataSet>
 <FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
 </Text>
 </Shape>
-<Collision><!--test containerField='proxy'--><Shape containerField="proxy" DEF="ProxyShape"><!--alternative XML encoding: Text string='"One, Two, Comment" "" "He said, \&quot;Immel did it!\&quot;"'--><!--alternative XML encoding: Text string='"One, Two, Comment" "" "He said, \&quot;Immel did it!\&quot;" ""'--><!--alternative Java source: .setString(new String [] {"One, Two, Comment", "", "He said, \""Immel did it!\"""})--><!--reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html--><Text containerField="geometry" string="&quot;One, Two, Text&quot; &quot;&quot; &quot;He said, \&quot;Immel did it!\&quot; \&quot;\&quot;&quot;"></Text>
+<Collision><!--test containerField='proxy'--><Shape containerField="proxy" DEF="ProxyShape"><!--alternative XML encoding: Text string='"One, Two, Comment" "" "He said, \&quot;Immel did it!\&quot;"'--><!--alternative XML encoding: Text string='"One, Two, Comment" "" "He said, \&quot;Immel did it!\&quot;" ""'--><!--alternative Java source: .setString(new String [] {"One, Two, Comment", "", "He said, \""Immel did it!\"""})--><!--reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html--><Text string="&quot;One, Two, Text&quot; &quot;&quot; &quot;He said, \&quot;Immel did it!\&quot; \&quot;\&quot;&quot;"></Text>
 </Shape>
 </Collision>
 <!--It's a beautiful world--><!--... for you!--><!--https://en.wikipedia.org/wiki/Beautiful_World_(Devo_song)--></Transform>
@@ -97,16 +97,16 @@ function colorInput (eventValue) // Example source code
 <!--Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place--><Shape DEF="TestShape1"><Appearance DEF="TestAppearance1"><!--ArtDeco01Material prototype goes here... TODO ensure setContainerField is handled in exported Java--><ProtoInstance containerField="material" name="ArtDeco01Material"><!--[HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()="Material"--><fieldValue name="description" value="ArtDeco01Material can substitute for a Material node"></fieldValue>
 </ProtoInstance>
 </Appearance>
-<Sphere containerField="geometry" radius="0.001"></Sphere>
+<Sphere radius="0.001"></Sphere>
 </Shape>
 <Shape DEF="TestShape2"><Appearance DEF="TestAppearance2"><!--ArtDeco02Material prototype goes here... TODO ensure setContainerField is handled in exported Java--><ProtoInstance containerField="material" name="ArtDeco02Material" DEF="ArtDeco02MaterialDEF"><!--[HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()="ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability."--><fieldValue name="description" value="ArtDeco02Material can substitute for another Material node"></fieldValue>
 </ProtoInstance>
 </Appearance>
-<Cone containerField="geometry" bottomRadius="0.001" height="0.001"></Cone>
+<Cone bottomRadius="0.001" height="0.001"></Cone>
 </Shape>
 <Shape DEF="TestShape3"><Appearance DEF="TestAppearance3"><!--ArtDeco02Material ProtoInstance USE goes here...--><ProtoInstance containerField="material" USE="ArtDeco02MaterialDEF"></ProtoInstance>
 </Appearance>
-<Cylinder containerField="geometry" height="0.001" radius="0.001"></Cylinder>
+<Cylinder height="0.001" radius="0.001"></Cylinder>
 </Shape>
 <Inline DEF="inlineSceneDef" url="&quot;someOtherScene.x3d&quot;"></Inline>
 <IMPORT AS="WorldInfoDEF2" importedDEF="WorldInfoDEF" inlineDEF="inlineSceneDef"></IMPORT>
@@ -162,7 +162,7 @@ function clockTrigger (timeValue)
 <!--Test success: declarative statement createDeclarativeShapeTests()--><Group DEF="DeclarativeGroupExample"><Shape><MetadataString containerField="metadata" name="findThisNameValue" DEF="FindableMetadataStringTest" value="&quot;test case&quot;"></MetadataString>
 <Appearance DEF="DeclarativeAppearanceExample"><!--DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance--><ProtoInstance containerField="material" name="MaterialModulator" DEF="MyMaterialModulator"></ProtoInstance>
 </Appearance>
-<Cone containerField="geometry" bottom="false" bottomRadius="0.05" height="0.1"></Cone>
+<Cone bottom="false" bottomRadius="0.05" height="0.1"></Cone>
 </Shape>
 <!--Test success: declarativeGroup.addChild() singleton pipeline method--></Group>
 <!--Test success: declarative statement addChild()--><!--Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'></Appearance> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'></ProtoInstance> </Appearance>--><!--Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='"test case"'></MetadataString>--><!--Test success: x3dModel.findElementByNameValue("ArtDeco01Material", "ProtoDeclare") found--><!--Test success: x3dModel.findElementByNameValue("MaterialModulator", "ProtoDeclare") found--><!--Test success: x3dModel.findElementByNameValue("MaterialModulator", "ProtoInstance") found--><Group DEF="TestFieldObjectsGroup"><!--testFieldObjects() results--><!--SFBool default=true, true=true, false=false, negate()=true--><!--MFBool default=, initial=true false true, negate()=false true false--><!--SFFloat default=0.0, initial=1.0, setValue(2)=2.0, setValue(3.0f)=3.0, setValue(4.0)=4.0--><!--MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7--><!--... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear=--><!--SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344--></Group>
@@ -172,7 +172,7 @@ function clockTrigger (timeValue)
 </Sound>
 <!--Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true--><!--Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false--><!--Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false--><!--Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true--><!--Test success: CommentsBlock.isNode()=false, testComments.isNode()=false--><!--Test failure: CommentsBlock.isStatement()=true, testComments.isStatement()=true--><Shape DEF="ExtrusionShape"><!--ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]'--><!--ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]'--><Appearance DEF="TransparentAppearance"><Material transparency="1"></Material>
 </Appearance>
-<Extrusion containerField="geometry" DEF="ExampleExtrusion"></Extrusion>
+<Extrusion DEF="ExampleExtrusion"></Extrusion>
 </Shape>
 </Scene>
 </X3D>

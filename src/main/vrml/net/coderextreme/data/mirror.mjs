@@ -67,7 +67,7 @@ head1.meta[11] = meta13;
 
 let meta14 = browser.currentScene.createNode("meta");
 meta14.name = "identifier";
-meta14.content = "https://coderextreme.net/X3DJSONLD/mirror.x3d";
+meta14.content = "https://coderextreme.net/X3DJSONLD/src/main/data/mirror.x3d";
 head1.meta[12] = meta14;
 
 let meta15 = browser.currentScene.createNode("meta");
@@ -271,9 +271,9 @@ let Sphere52 = browser.currentScene.createNode("Sphere");
 Sphere52.radius = 30;
 Shape26.geometry = Sphere52;
 
-Transform25.children = new MFNode();
+Transform25.child = new undefined();
 
-Transform25.children[0] = Shape26;
+Transform25.child[0] = Shape26;
 
 let Script53 = browser.currentScene.createNode("Script");
 Script53.DEF = "UrlSelector";

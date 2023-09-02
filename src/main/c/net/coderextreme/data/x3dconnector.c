@@ -24,7 +24,7 @@ head1.meta[2] = meta4;
 
 meta meta5 = createNode("meta");
 meta5.name = "identifier";
-meta5.content = "https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d";
+meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d";
 head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
@@ -59,9 +59,9 @@ Sphere Sphere14 = createNode("Sphere");
 Sphere14.radius = 0.1;
 Shape11.geometry = Sphere14;
 
-Transform10.children = new MFNode();
+Transform10.child = new undefined();
 
-Transform10.children[0] = Shape11;
+Transform10.child[0] = Shape11;
 
 PlaneSensor PlaneSensor15 = createNode("PlaneSensor");
 PlaneSensor15.description = "Grab to move";
@@ -92,9 +92,9 @@ Sphere Sphere21 = createNode("Sphere");
 Sphere21.radius = 0.1;
 Shape18.geometry = Sphere21;
 
-Transform17.children = new MFNode();
+Transform17.child = new undefined();
 
-Transform17.children[0] = Shape18;
+Transform17.child[0] = Shape18;
 
 PlaneSensor PlaneSensor22 = createNode("PlaneSensor");
 PlaneSensor22.description = "Grab to move";
@@ -128,9 +128,9 @@ Cylinder Cylinder29 = createNode("Cylinder");
 Cylinder29.radius = 0.05;
 Shape26.geometry = Cylinder29;
 
-Transform25.children = new MFNode();
+Transform25.child = new undefined();
 
-Transform25.children[0] = Shape26;
+Transform25.child[0] = Shape26;
 
 Transform24.children = new MFNode();
 

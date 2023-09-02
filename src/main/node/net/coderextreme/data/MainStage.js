@@ -68,5 +68,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .addChild((new autoclass.Shape())
                 .setAppearance((new autoclass.Appearance()).setUSE("LineColor"))
                 .setGeometry((new autoclass.IndexedLineSet()).setUSE("Orbit1")))))))      ;
-    X3D0.toFileX3D("../data/MainStage.new.x3d");
+    X3D0.toFileX3D("../data/MainStage.new.node.x3d");
     process.exit(0);

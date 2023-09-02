@@ -156,7 +156,7 @@ Text30->setFontStyle(*FontStyle31);
 
 Shape27->setGeometry(Text30);
 
-Transform26->addChildren(*Shape27);
+Transform26->addChild(*Shape27);
 
 group->addChildren(*Transform26);
 
@@ -244,7 +244,7 @@ Appearance54->setMaterial(*Material55);
 
 Shape52->setAppearance(*Appearance54);
 
-Transform51->addChildren(*Shape52);
+Transform51->addChild(*Shape52);
 
 Transform32->addChildren(*Transform51);
 
@@ -288,7 +288,7 @@ Appearance67->setMaterial(*Material68);
 
 Shape65->setAppearance(*Appearance67);
 
-Transform64->addChildren(*Shape65);
+Transform64->addChild(*Shape65);
 
 Billboard58->addChildren(*Transform64);
 
@@ -467,7 +467,7 @@ Appearance107->setTexture(*ImageTexture108);
 
 Shape105->setAppearance(*Appearance107);
 
-Transform104->addChildren(*Shape105);
+Transform104->addChild(*Shape105);
 
 CTransform* Transform109 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform109->setDEF("angledsupport");
@@ -475,7 +475,7 @@ Transform109->setRotation(new float[4]{0,0,1,1});
 Transform109->setTranslation(new float[3]{-5,10,0});
 CShape* Shape110 = (CShape *)(m_pScene.createNode("Shape"));
 Shape110->setUSE("plank");
-Transform109->addChildren(*Shape110);
+Transform109->addChild(*Shape110);
 
 Transform104->addChildren(*Transform109);
 
@@ -485,7 +485,7 @@ Transform111->setRotation(new float[4]{0,0,1,-1});
 Transform111->setTranslation(new float[3]{5,10,0});
 CShape* Shape112 = (CShape *)(m_pScene.createNode("Shape"));
 Shape112->setUSE("plank");
-Transform111->addChildren(*Shape112);
+Transform111->addChild(*Shape112);
 
 Transform104->addChildren(*Transform111);
 
@@ -496,7 +496,7 @@ Transform113->setScale(new float[3]{0.9,1,1});
 Transform113->setTranslation(new float[3]{0,11,0});
 CShape* Shape114 = (CShape *)(m_pScene.createNode("Shape"));
 Shape114->setUSE("plank");
-Transform113->addChildren(*Shape114);
+Transform113->addChild(*Shape114);
 
 //Main Verticle Support
 Transform104->addChildren(*Transform113);
@@ -507,7 +507,7 @@ Transform115->setScale(new float[3]{0.4,1,1});
 Transform115->setTranslation(new float[3]{0,10,0});
 CShape* Shape116 = (CShape *)(m_pScene.createNode("Shape"));
 Shape116->setUSE("plank");
-Transform115->addChildren(*Shape116);
+Transform115->addChild(*Shape116);
 
 Transform104->addChildren(*Transform115);
 
@@ -519,7 +519,7 @@ CTransform* Transform118 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform118->setRotation(new float[4]{0,1,0,0.4});
 CShape* Shape119 = (CShape *)(m_pScene.createNode("Shape"));
 Shape119->setUSE("plank");
-Transform118->addChildren(*Shape119);
+Transform118->addChild(*Shape119);
 
 Transform117->addChildren(*Transform118);
 
@@ -537,7 +537,7 @@ CAppearance* Appearance123 = (CAppearance *)(m_pScene.createNode("Appearance"));
 Appearance123->setUSE("wood");
 Shape121->setAppearance(*Appearance123);
 
-Transform120->addChildren(*Shape121);
+Transform120->addChild(*Shape121);
 
 Transform104->addChildren(*Transform120);
 
@@ -559,7 +559,7 @@ CAppearance* Appearance128 = (CAppearance *)(m_pScene.createNode("Appearance"));
 Appearance128->setUSE("wood");
 Shape126->setAppearance(*Appearance128);
 
-Transform125->addChildren(*Shape126);
+Transform125->addChild(*Shape126);
 
 Transform124->addChildren(*Transform125);
 
@@ -581,7 +581,7 @@ CAppearance* Appearance133 = (CAppearance *)(m_pScene.createNode("Appearance"));
 Appearance133->setUSE("wood");
 Shape131->setAppearance(*Appearance133);
 
-Transform130->addChildren(*Shape131);
+Transform130->addChild(*Shape131);
 
 CTransform* Transform134 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform134->setTranslation(new float[3]{7,0,0});
@@ -594,7 +594,7 @@ CAppearance* Appearance137 = (CAppearance *)(m_pScene.createNode("Appearance"));
 Appearance137->setUSE("wood");
 Shape135->setAppearance(*Appearance137);
 
-Transform134->addChildren(*Shape135);
+Transform134->addChild(*Shape135);
 
 Transform130->addChildren(*Transform134);
 
@@ -622,7 +622,7 @@ Extrusion142->setEndCap(False);
 Extrusion142->setSpine(new float[51]{2,0,0,1.85,0,0.77,1.41,0,1.41,0.77,0,1.85,0,0,2,-0.77,0,1.85,-1.41,0,1.41,-1.85,0,0.77,-2,0,0,-1.85,0,-0.77,-1.41,0,-1.41,-0.77,0,-1.85,0,0,-2,0.77,0,-1.85,1.41,0,-1.41,1.85,0,-0.77,2,0,0});
 Shape139->setGeometry(Extrusion142);
 
-Transform138->addChildren(*Shape139);
+Transform138->addChild(*Shape139);
 
 CTransform* Transform143 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform143->setTranslation(new float[3]{1,0,2});
@@ -639,7 +639,7 @@ CSphere* Sphere147 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere147->setRadius(1.5);
 Shape144->setGeometry(Sphere147);
 
-Transform143->addChildren(*Shape144);
+Transform143->addChild(*Shape144);
 
 //knott
 Transform138->addChildren(*Transform143);
@@ -663,13 +663,13 @@ Appearance151->setMaterial(*Material152);
 
 Shape149->setAppearance(*Appearance151);
 
-Transform148->addChildren(*Shape149);
+Transform148->addChild(*Shape149);
 
 CTransform* Transform153 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform153->setTranslation(new float[3]{0,-2.5,0});
 CShape* Shape154 = (CShape *)(m_pScene.createNode("Shape"));
 Shape154->setUSE("Torus");
-Transform153->addChildren(*Shape154);
+Transform153->addChild(*Shape154);
 
 //The Unicorn
 CTransform* Transform155 = (CTransform *)(m_pScene.createNode("Transform"));
@@ -683,7 +683,7 @@ CAppearance* Appearance158 = (CAppearance *)(m_pScene.createNode("Appearance"));
 Appearance158->setUSE("rope");
 Shape156->setAppearance(*Appearance158);
 
-Transform155->addChildren(*Shape156);
+Transform155->addChild(*Shape156);
 
 //Knott
 Transform153->addChildren(*Transform155);
@@ -709,7 +709,7 @@ Extrusion163->setSolid(False);
 Extrusion163->setSpine(new float[6]{-15.2,1.4,2.2,-12,-0.8,2.2});
 Shape161->setGeometry(Extrusion163);
 
-Transform160->addChildren(*Shape161);
+Transform160->addChild(*Shape161);
 
 Transform159->addChildren(*Transform160);
 
@@ -725,7 +725,7 @@ Transform165->setScale(new float[3]{0.2,0.2,0.2});
 CShape* Shape166 = (CShape *)(m_pScene.createNode("Shape"));
 Shape166->setUSE("Torus");
 //Knot
-Transform165->addChildren(*Shape166);
+Transform165->addChild(*Shape166);
 
 CTransform* Transform167 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform167->setTranslation(new float[3]{-1,0,1.7});
@@ -738,7 +738,7 @@ CAppearance* Appearance170 = (CAppearance *)(m_pScene.createNode("Appearance"));
 Appearance170->setUSE("rope");
 Shape168->setAppearance(*Appearance170);
 
-Transform167->addChildren(*Shape168);
+Transform167->addChild(*Shape168);
 
 Transform165->addChildren(*Transform167);
 
@@ -767,7 +767,7 @@ Extrusion176->setSolid(False);
 Extrusion176->setSpine(new float[6]{-33,0.9,2.5,-18.5,1.9,2.55});
 Shape174->setGeometry(Extrusion176);
 
-Transform173->addChildren(*Shape174);
+Transform173->addChild(*Shape174);
 
 CShape* Shape177 = (CShape *)(m_pScene.createNode("Shape"));
 CAppearance* Appearance178 = (CAppearance *)(m_pScene.createNode("Appearance"));
@@ -783,7 +783,7 @@ Extrusion179->setSolid(False);
 Extrusion179->setSpine(new float[6]{-35.7,-0.8,2.5,-18.8,-0.8,2.55});
 Shape177->setGeometry(Extrusion179);
 
-Transform173->addChildren(*Shape177);
+Transform173->addChild(*Shape177);
 
 Transform172->addChildren(*Transform173);
 
@@ -817,14 +817,14 @@ Extrusion188->setCrossSection(new float[28]{0,0,0,5,0.5,7,1,8,2,9,3,11,3.5,11.2,
 Extrusion188->setSpine(new float[6]{0,0,0,0.1,0,0});
 Shape185->setGeometry(Extrusion188);
 
-Transform184->addChildren(*Shape185);
+Transform184->addChild(*Shape185);
 
 CTransform* Transform189 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform189->setScale(new float[3]{0.3,0.3,0.3});
 Transform189->setTranslation(new float[3]{0,-3.5,11.5});
 CShape* Shape190 = (CShape *)(m_pScene.createNode("Shape"));
 Shape190->setUSE("Torus");
-Transform189->addChildren(*Shape190);
+Transform189->addChild(*Shape190);
 
 CTransform* Transform191 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform191->setTranslation(new float[3]{0,0,2});
@@ -837,7 +837,7 @@ CSphere* Sphere194 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere194->setRadius(1.5);
 Shape192->setGeometry(Sphere194);
 
-Transform191->addChildren(*Shape192);
+Transform191->addChild(*Shape192);
 
 Transform189->addChildren(*Transform191);
 
@@ -850,14 +850,14 @@ Transform195->setScale(new float[3]{0.3,0.3,0.3});
 Transform195->setTranslation(new float[3]{2,0,0});
 CShape* Shape196 = (CShape *)(m_pScene.createNode("Shape"));
 Shape196->setUSE("halfsling");
-Transform195->addChildren(*Shape196);
+Transform195->addChild(*Shape196);
 
 CTransform* Transform197 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform197->setScale(new float[3]{0.3,0.3,0.3});
 Transform197->setTranslation(new float[3]{0,-3.5,11.3});
 CShape* Shape198 = (CShape *)(m_pScene.createNode("Shape"));
 Shape198->setUSE("Torus");
-Transform197->addChildren(*Shape198);
+Transform197->addChild(*Shape198);
 
 CTransform* Transform199 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform199->setTranslation(new float[3]{0,0,2});
@@ -870,7 +870,7 @@ CSphere* Sphere202 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere202->setRadius(1.5);
 Shape200->setGeometry(Sphere202);
 
-Transform199->addChildren(*Shape200);
+Transform199->addChild(*Shape200);
 
 Transform197->addChildren(*Transform199);
 
@@ -894,7 +894,7 @@ CAppearance* Appearance206 = (CAppearance *)(m_pScene.createNode("Appearance"));
 Appearance206->setUSE("clear");
 Shape204->setAppearance(*Appearance206);
 
-Transform203->addChildren(*Shape204);
+Transform203->addChild(*Shape204);
 
 Transform183->addChildren(*Transform203);
 
@@ -930,7 +930,7 @@ Appearance214->setMaterial(*Material215);
 
 Shape212->setAppearance(*Appearance214);
 
-Transform211->addChildren(*Shape212);
+Transform211->addChild(*Shape212);
 
 Group210->addChildren(*Transform211);
 
@@ -988,7 +988,7 @@ Appearance225->setMaterial(*Material226);
 
 Shape223->setAppearance(*Appearance225);
 
-Transform222->addChildren(*Shape223);
+Transform222->addChild(*Shape223);
 
 //Top Pivot
 Transform104->addChildren(*Transform222);
@@ -1006,7 +1006,7 @@ CAppearance* Appearance231 = (CAppearance *)(m_pScene.createNode("Appearance"));
 Appearance231->setUSE("wood");
 Shape229->setAppearance(*Appearance231);
 
-Transform228->addChildren(*Shape229);
+Transform228->addChild(*Shape229);
 
 Transform227->addChildren(*Transform228);
 
@@ -1021,7 +1021,7 @@ CAppearance* Appearance235 = (CAppearance *)(m_pScene.createNode("Appearance"));
 Appearance235->setUSE("wood");
 Shape233->setAppearance(*Appearance235);
 
-Transform232->addChildren(*Shape233);
+Transform232->addChild(*Shape233);
 
 Transform227->addChildren(*Transform232);
 
@@ -1042,7 +1042,7 @@ Appearance239->setMaterial(*Material240);
 
 Shape237->setAppearance(*Appearance239);
 
-Transform236->addChildren(*Shape237);
+Transform236->addChild(*Shape237);
 
 Transform227->addChildren(*Transform236);
 
@@ -1063,7 +1063,7 @@ Appearance244->setMaterial(*Material245);
 
 Shape242->setAppearance(*Appearance244);
 
-Transform241->addChildren(*Shape242);
+Transform241->addChild(*Shape242);
 
 Transform227->addChildren(*Transform241);
 
@@ -1078,7 +1078,7 @@ Transform247->setDEF("screw");
 Transform247->setRotation(new float[4]{1,0,0,1.57});
 CShape* Shape248 = (CShape *)(m_pScene.createNode("Shape"));
 Shape248->setUSE("Torus");
-Transform247->addChildren(*Shape248);
+Transform247->addChild(*Shape248);
 
 CTransform* Transform249 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform249->setRotation(new float[4]{1,0,0,-1.57});
@@ -1096,7 +1096,7 @@ Appearance252->setMaterial(*Material253);
 
 Shape250->setAppearance(*Appearance252);
 
-Transform249->addChildren(*Shape250);
+Transform249->addChild(*Shape250);
 
 Transform247->addChildren(*Transform249);
 
@@ -1127,7 +1127,7 @@ CTransform* Transform258 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform258->setTranslation(new float[3]{0,0,5});
 CShape* Shape259 = (CShape *)(m_pScene.createNode("Shape"));
 Shape259->setUSE("plank");
-Transform258->addChildren(*Shape259);
+Transform258->addChild(*Shape259);
 
 CTransform* Transform260 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform260->setUSE("angledsupport");
@@ -1163,7 +1163,7 @@ CTransform* Transform267 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform267->setRotation(new float[4]{0,1,0,0.4});
 CShape* Shape268 = (CShape *)(m_pScene.createNode("Shape"));
 Shape268->setUSE("plank");
-Transform267->addChildren(*Shape268);
+Transform267->addChild(*Shape268);
 
 Transform266->addChildren(*Transform267);
 
@@ -1191,7 +1191,7 @@ CAppearance* Appearance274 = (CAppearance *)(m_pScene.createNode("Appearance"));
 Appearance274->setUSE("wood");
 Shape272->setAppearance(*Appearance274);
 
-Transform271->addChildren(*Shape272);
+Transform271->addChild(*Shape272);
 
 CTransform* Transform275 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform275->setRotation(new float[4]{1,0,0,1.57});
@@ -1206,7 +1206,7 @@ CAppearance* Appearance278 = (CAppearance *)(m_pScene.createNode("Appearance"));
 Appearance278->setUSE("wood");
 Shape276->setAppearance(*Appearance278);
 
-Transform275->addChildren(*Shape276);
+Transform275->addChild(*Shape276);
 
 CShape* Shape279 = (CShape *)(m_pScene.createNode("Shape"));
 Shape279->setDEF("tracks");
@@ -1218,7 +1218,7 @@ CAppearance* Appearance281 = (CAppearance *)(m_pScene.createNode("Appearance"));
 Appearance281->setUSE("black");
 Shape279->setAppearance(*Appearance281);
 
-Transform275->addChildren(*Shape279);
+Transform275->addChild(*Shape279);
 
 CTransform* Transform282 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform282->setTranslation(new float[3]{0,0.55,0});
@@ -1232,7 +1232,7 @@ CAppearance* Appearance285 = (CAppearance *)(m_pScene.createNode("Appearance"));
 Appearance285->setUSE("black");
 Shape283->setAppearance(*Appearance285);
 
-Transform282->addChildren(*Shape283);
+Transform282->addChild(*Shape283);
 
 Transform275->addChildren(*Transform282);
 
@@ -1243,17 +1243,17 @@ Transform286->setRotation(new float[4]{1,0,0,1.57});
 Transform286->setTranslation(new float[3]{0,0,-4.5});
 CShape* Shape287 = (CShape *)(m_pScene.createNode("Shape"));
 Shape287->setUSE("wheel");
-Transform286->addChildren(*Shape287);
+Transform286->addChild(*Shape287);
 
 CShape* Shape288 = (CShape *)(m_pScene.createNode("Shape"));
 Shape288->setUSE("tracks");
-Transform286->addChildren(*Shape288);
+Transform286->addChild(*Shape288);
 
 CTransform* Transform289 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform289->setTranslation(new float[3]{0,-0.55,0});
 CShape* Shape290 = (CShape *)(m_pScene.createNode("Shape"));
 Shape290->setUSE("hub");
-Transform289->addChildren(*Shape290);
+Transform289->addChild(*Shape290);
 
 Transform286->addChildren(*Transform289);
 
@@ -1265,24 +1265,24 @@ CTransform* Transform291 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform291->setTranslation(new float[3]{-10,-1,2.5});
 CShape* Shape292 = (CShape *)(m_pScene.createNode("Shape"));
 Shape292->setUSE("Axle");
-Transform291->addChildren(*Shape292);
+Transform291->addChild(*Shape292);
 
 CTransform* Transform293 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform293->setRotation(new float[4]{1,0,0,1.57});
 Transform293->setTranslation(new float[3]{0,0,4.5});
 CShape* Shape294 = (CShape *)(m_pScene.createNode("Shape"));
 Shape294->setUSE("wheel");
-Transform293->addChildren(*Shape294);
+Transform293->addChild(*Shape294);
 
 CShape* Shape295 = (CShape *)(m_pScene.createNode("Shape"));
 Shape295->setUSE("tracks");
-Transform293->addChildren(*Shape295);
+Transform293->addChild(*Shape295);
 
 CTransform* Transform296 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform296->setTranslation(new float[3]{0,0.55,0});
 CShape* Shape297 = (CShape *)(m_pScene.createNode("Shape"));
 Shape297->setUSE("hub");
-Transform296->addChildren(*Shape297);
+Transform296->addChild(*Shape297);
 
 Transform293->addChildren(*Transform296);
 
@@ -1293,17 +1293,17 @@ Transform298->setRotation(new float[4]{1,0,0,1.57});
 Transform298->setTranslation(new float[3]{0,0,-4.5});
 CShape* Shape299 = (CShape *)(m_pScene.createNode("Shape"));
 Shape299->setUSE("wheel");
-Transform298->addChildren(*Shape299);
+Transform298->addChild(*Shape299);
 
 CShape* Shape300 = (CShape *)(m_pScene.createNode("Shape"));
 Shape300->setUSE("tracks");
-Transform298->addChildren(*Shape300);
+Transform298->addChild(*Shape300);
 
 CTransform* Transform301 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform301->setTranslation(new float[3]{0,-0.55,0});
 CShape* Shape302 = (CShape *)(m_pScene.createNode("Shape"));
 Shape302->setUSE("hub");
-Transform301->addChildren(*Shape302);
+Transform301->addChild(*Shape302);
 
 Transform298->addChildren(*Transform301);
 
@@ -1347,7 +1347,7 @@ Appearance313->setMaterial(*Material314);
 
 Shape311->setAppearance(*Appearance313);
 
-Transform310->addChildren(*Shape311);
+Transform310->addChild(*Shape311);
 
 Transform307->addChildren(*Transform310);
 
@@ -1378,7 +1378,7 @@ Appearance321->setMaterial(*Material322);
 
 Shape319->setAppearance(*Appearance321);
 
-Transform318->addChildren(*Shape319);
+Transform318->addChild(*Shape319);
 
 Transform315->addChildren(*Transform318);
 

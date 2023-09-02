@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.2", 
-head=head(children=[meta(name="title", content="CameraPrototypes.x3d"),
+head=head(
+children=[
+meta(name="title", content="CameraPrototypes.x3d"),
 meta(name="description", content="Camera, CameraShot and CameraMovement prototypes that demonstrate storyboard capabilities and precise camera operation. This is a developmental effort for potential X3D Specification improvement."),
 meta(name="creator", content="Don Brutzman and Jeff Weekley"),
 meta(name="created", content="16 March 2009"),
@@ -18,13 +21,12 @@ meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Basi
 meta(name="reference", content="http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
 Scene=Scene(children=[
 Comment(value=''' =============== Camera ============== '''),
-
 ProtoDeclare(name="Camera", appinfo="Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images.", 
 ProtoInterface=ProtoInterface(field=[field(name="description", accessType="inputOutput", appinfo="Text description to be displayed for this Camera", type="SFString"),
 field(name="position", accessType="inputOutput", appinfo="Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated", type="SFVec3f", value=(0,0,10)),
@@ -37,8 +39,7 @@ field(name="isBound", accessType="outputOnly", appinfo="output event indicates w
 field(name="nearClipPlane", accessType="inputOutput", appinfo="Vector distance to near clipping plane corresponds to NavigationInfo.avatarSize[0]", type="SFFloat", value=0.25),
 field(name="farClipPlane", accessType="inputOutput", appinfo="Vector distance to far clipping plane corresponds to NavigationInfo.visibilityLimit", type="SFFloat", value=0.0),
 field(name="shots", accessType="inputOutput", appinfo="Array of CameraShot nodes which in turn contain CameraMovement nodes", type="MFNode", children=[
-Comment(value=''' initialization nodes (if any) go here '''),
-]),
+Comment(value=''' initialization nodes (if any) go here '''),]),
 field(name="headlight", accessType="inputOutput", appinfo="Whether camera headlight is on or off", type="SFBool", value=True),
 field(name="headlightColor", accessType="inputOutput", appinfo="Camera headlight color", type="SFColor", value=(1,1,1)),
 field(name="headlightIntensity", accessType="inputOutput", appinfo="Camera headlight intensity", type="SFFloat", value=1),
@@ -50,8 +51,7 @@ field(name="focusDistance", accessType="inputOutput", appinfo="Distance to focal
 field(name="isActive", accessType="outputOnly", appinfo="Mark start/stop with true/false output respectively useful to trigger external animations", type="SFBool"),
 field(name="totalDuration", accessType="outputOnly", appinfo="Total duration of contained enabled CameraShot (and thus CameraMovement) move durations", type="SFTime"),
 field(name="offlineRender", accessType="inputOutput", appinfo="OfflineRender node", type="SFNode", children=[
-Comment(value=''' initialization node (if any) goes here '''),
-]),
+Comment(value=''' initialization node (if any) goes here '''),]),
 field(name="traceEnabled", accessType="initializeOnly", appinfo="enable console output to trace script computations and prototype progress", type="SFBool", value=False)
 ]), 
 ProtoBody=ProtoBody(children=[
@@ -65,19 +65,15 @@ connect(nodeField="bindTime", protoField="bindTime"),
 connect(nodeField="isBound", protoField="isBound")
 ])),
 Comment(value=''' NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation '''),
-
 NavigationInfo(DEF="CameraNavInfo", type="\"EXAMINE\" \"FLY\" \"ANY\"", 
 IS=IS(connect=[connect(nodeField="set_bind", protoField="set_bind"),
 connect(nodeField="headlight", protoField="headlight"),
 connect(nodeField="visibilityLimit", protoField="farClipPlane")
 ], children=[
-Comment(value=''' No need to bind outputs bindTime, isBound from NavigationInfo since Viewpoint outputs will suffice. TODO inform BitManagement that bindTime field is missing. '''),
-])),
+Comment(value=''' No need to bind outputs bindTime, isBound from NavigationInfo since Viewpoint outputs will suffice. TODO inform BitManagement that bindTime field is missing. '''),])),
 Comment(value=''' this DirectionalLight replaces NavigationInfo headlight in order to add color capability '''),
-
 DirectionalLight(DEF="CameraDirectionalLight", global_=True, children=[
-Comment(value=''' TODO confirm other default field values match NavigationInfo spec '''),
-], 
+Comment(value=''' TODO confirm other default field values match NavigationInfo spec '''),], 
 IS=IS(connect=[connect(nodeField="on", protoField="headlight"),
 connect(nodeField="color", protoField="headlightColor"),
 connect(nodeField="intensity", protoField="headlightIntensity")
@@ -99,8 +95,7 @@ field(name="fieldOfView", accessType="inputOutput", appinfo="pi/4", type="SFFloa
 field(name="nearClipPlane", accessType="inputOutput", appinfo="Vector distance to near clipping plane", type="SFFloat"),
 field(name="farClipPlane", accessType="inputOutput", appinfo="Vector distance to far clipping plane", type="SFFloat"),
 field(name="shots", accessType="inputOutput", appinfo="Array of CameraShot nodes which in turn contain CameraMovement nodes", type="MFNode", children=[
-Comment(value=''' initialization nodes (if any) go here '''),
-]),
+Comment(value=''' initialization nodes (if any) go here '''),]),
 field(name="filterColor", accessType="inputOutput", appinfo="Camera filter color that modifies virtual lens capture", type="SFColor"),
 field(name="filterTransparency", accessType="inputOutput", appinfo="Camera filter transparency that modifies virtual lens capture", type="SFFloat"),
 field(name="upVector", accessType="inputOutput", appinfo="upVector changes modify camera orientation (and possibly vice versa)", type="SFVec3f"),
@@ -109,8 +104,7 @@ field(name="focusDistance", accessType="inputOutput", appinfo="Distance to focal
 field(name="isActive", accessType="outputOnly", appinfo="Mark start/stop with true/false output respectively useful to trigger external animations", type="SFBool"),
 field(name="totalDuration", accessType="outputOnly", appinfo="Total duration of contained enabled CameraShot (and thus CameraMovement) move durations", type="SFTime"),
 field(name="offlineRender", accessType="inputOutput", appinfo="OfflineRender node", type="SFNode", children=[
-Comment(value=''' initialization node (if any) goes here '''),
-]),
+Comment(value=''' initialization node (if any) goes here '''),]),
 field(name="ViewpointNode", accessType="initializeOnly", appinfo="node reference to permit getting setting fields from within Script", type="SFNode", children=[
 Viewpoint(USE="CameraViewpoint")]),
 field(name="NavInfoNode", accessType="initializeOnly", appinfo="node reference to permit getting setting fields from within Script", type="SFNode", children=[
@@ -156,13 +150,11 @@ ROUTE(fromField="isActive", fromNode="CameraScript", toField="set_bind", toNode=
 ROUTE(fromField="isActive", fromNode="CameraScript", toField="set_bind", toNode="CameraNavInfo"),
 ROUTE(fromField="isActive", fromNode="CameraScript", toField="on", toNode="CameraDirectionalLight"),])),
 Comment(value=''' =============== CameraShot ============== '''),
-
 ProtoDeclare(name="CameraShot", appinfo="CameraShot collects a specific set of CameraMovement animations that make up an individual shot.", 
 ProtoInterface=ProtoInterface(field=[field(name="description", accessType="inputOutput", appinfo="Text description to be displayed for this CameraShot", type="SFString"),
 field(name="enabled", accessType="inputOutput", appinfo="Whether this CameraShot can be activated", type="SFBool", value=True),
 field(name="moves", accessType="inputOutput", appinfo="Set of CameraMovement nodes", type="MFNode", children=[
-Comment(value=''' initializing CameraMovement nodes are inserted here by scene author using ProtoInstance '''),
-]),
+Comment(value=''' initializing CameraMovement nodes are inserted here by scene author using ProtoInstance '''),]),
 field(name="initialPosition", accessType="inputOutput", appinfo="Setup to reinitialize camera position for this shot", type="SFVec3f", value=(0,0,10)),
 field(name="initialOrientation", accessType="inputOutput", appinfo="Setup to reinitialize camera rotation for this shot", type="SFRotation", value=(0,0,1,0)),
 field(name="initialAimPoint", accessType="inputOutput", appinfo="Setup to reinitialize aimpoint (relative location for camera direction) for this shot", type="SFVec3f", value=(0,0,0)),
@@ -177,8 +169,7 @@ ProtoBody=ProtoBody(children=[
 Script(DEF="CameraShotScript", directOutput=True, mustEvaluate=True, field=[field(name="description", accessType="inputOutput", appinfo="Text description to be displayed for this CameraShot", type="SFString"),
 field(name="enabled", accessType="inputOutput", appinfo="Whether this CameraShot can be activated", type="SFBool"),
 field(name="moves", accessType="inputOutput", appinfo="Set of CameraMovement nodes", type="MFNode", children=[
-Comment(value=''' initialization nodes (if any) go here '''),
-]),
+Comment(value=''' initialization nodes (if any) go here '''),]),
 field(name="initialPosition", accessType="inputOutput", appinfo="Setup to reinitialize camera position for this shot", type="SFVec3f"),
 field(name="initialOrientation", accessType="inputOutput", appinfo="Setup to reinitialize camera rotation for this shot", type="SFRotation"),
 field(name="initialAimPoint", accessType="inputOutput", appinfo="Setup to reinitialize aimpoint (relative location for camera direction) for this shot", type="SFVec3f"),
@@ -205,10 +196,8 @@ connect(nodeField="shotDuration", protoField="shotDuration"),
 connect(nodeField="isActive", protoField="isActive"),
 connect(nodeField="traceEnabled", protoField="traceEnabled")
 ]), sourceCode="""['', '', 'ecmascript:', 'function initialize () // CameraShotScript', '{', "//  tracePrint ('initialize start...');", '', '    // compute shotDuration by summing durations from contained CameraMovement nodes', '    shotDuration = 0;', '    for (i = 0; i < moves.length; i++)', '    {', '        shotDuration = shotDuration + moves[i].duration;', '    }', "    alwaysPrint ('number of contained CameraMove nodes=' + moves.length + ', shotDuration=' + shotDuration + ' seconds');", '', "//  tracePrint ('... initialize() complete');", '}', '', 'function set_description (eventValue) // input event received for inputOutput field', '{', '    description = eventValue;', '}', '', 'function set_enabled (eventValue) // input event received for inputOutput field', '{', '    enabled = eventValue;', '}', '', 'function set_moves (eventValue) // input event received for inputOutput field', '{', '    moves = eventValue;', '}', '', 'function set_initialPosition (eventValue) // input event received for inputOutput field', '{', '    initialPosition = eventValue;', '}', '', 'function set_initialOrientation (eventValue) // input event received for inputOutput field', '{', '    initialOrientation = eventValue;', '}', '', 'function set_initialAimPoint (eventValue) // input event received for inputOutput field', '{', '    initialAimPoint = eventValue;', '}', '', 'function set_initialFieldOfView (eventValue) // input event received for inputOutput field', '{', '    initialFieldOfView = eventValue;', '}', '', 'function set_initialFStop (eventValue) // input event received for inputOutput field', '{', '    initialFStop = eventValue;', '}', '', 'function set_initialFocusDistance (eventValue) // input event received for inputOutput field', '{', '    initialFocusDistance = eventValue;', '}', '', 'function set_key (eventValue) // input event received for inputOutput field', '{', '    key = eventValue;', '}', '', 'function set_keyValuePosition (eventValue) // input event received for inputOutput field', '{', '    keyValuePosition = eventValue;', '}', '', 'function set_keyValueOrientation (eventValue) // input event received for inputOutput field', '{', '    keyValueOrientation = eventValue;', '}', '', '// TODO consider method set_active for constructed Camera node BooleanSequencer to send isActive', '', 'function tracePrint (outputValue)', '{', '\tif (traceEnabled) alwaysPrint (outputValue);', '}', 'function alwaysPrint (outputValue)', '{', '\t// try to ensure outputValue is converted to string despite browser idiosyncracies', '    var outputString = outputValue.toString(); // utility function according to spec', '    if (outputString == null) outputString = outputValue; // direct cast', '', '    if  (description.length > 0)', "         Browser.print ('[CameraShot: ' + description + '] ' + outputString + '\n');", '    else', "         Browser.print ('[CameraShot] ' + outputString + '\n');", '}', '', '']""",),
-Comment(value=''' Add any ROUTEs here, going from Script to other nodes within ProtoBody '''),
-])),
+Comment(value=''' Add any ROUTEs here, going from Script to other nodes within ProtoBody '''),])),
 Comment(value=''' =============== CameraMovement ============== '''),
-
 ProtoDeclare(name="CameraMovement", appinfo="CameraMovement node defines a single camera movement animation including goalPosition, goalOrientation, goalAimPoint and goalFieldOfView.", 
 ProtoInterface=ProtoInterface(field=[field(name="description", accessType="inputOutput", appinfo="Text description to be displayed for this CameraMovement", type="SFString"),
 field(name="enabled", accessType="inputOutput", appinfo="Whether this CameraMovement can be activated", type="SFBool", value=True),
@@ -225,11 +214,8 @@ field(name="traceEnabled", accessType="initializeOnly", appinfo="enable console 
 ]), 
 ProtoBody=ProtoBody(children=[
 Comment(value=''' First node determines node type of this prototype '''),
-
 Comment(value=''' Subsequent nodes do not render, but still must be a valid X3D subgraph '''),
-
 Comment(value=''' Script holds CameraMovement initialization values for query by parent CameraShot, and also permits changing values via events '''),
-
 Script(DEF="CameraMovementScript", directOutput=True, mustEvaluate=True, field=[field(name="description", accessType="inputOutput", appinfo="Text description to be displayed for this CameraMovement", type="SFString"),
 field(name="enabled", accessType="inputOutput", appinfo="Whether this CameraMovement can be activated", type="SFBool"),
 field(name="duration", accessType="inputOutput", appinfo="Duration in seconds for this move", type="SFFloat"),
@@ -256,10 +242,8 @@ connect(nodeField="goalFocusDistance", protoField="goalFocusDistance"),
 connect(nodeField="isActive", protoField="isActive"),
 connect(nodeField="traceEnabled", protoField="traceEnabled")
 ]), sourceCode="""['', '', 'ecmascript:', 'function initialize () // CameraMovementScript', '{', "//  tracePrint ('initialize start...');", "    alwaysPrint ('initialize goalPosition=' + goalPosition.toString() + ', goalOrientation=' + goalOrientation.toString() +", "                           ', goalAimPoint=' + goalAimPoint.toString() // + ', tracking=' + tracking.toString()", '                           );', '    if (duration < 0)', '    {', "       alwaysPrint ('error: negative duration=' + duration + ', reset to 0 and ignored');", '       duration = 0;', '    }', '    else if (duration == 0)', '    {', "       alwaysPrint ('warning: duration=0, nothing to do!');", '    }', "    tracePrint ('... initialize complete');", '}', '', 'function set_goalAimPoint (eventValue) // input event received for inputOutput field', '{', '    goalAimPoint_changed = eventValue;', "    tracePrint ('goalAimPoint=' + goalAimPoint.toString());", '', '    // updated goalOrientation tracking is handled by Camera recomputing the OrientationInterpolator', '}', '', 'function set_description (eventValue) // input event received for inputOutput field', '{', '    description = eventValue;', '}', '', 'function set_enabled (eventValue) // input event received for inputOutput field', '{', '    enabled = eventValue;', '}', '', 'function set_duration (eventValue) // input event received for inputOutput field', '{', '    duration = eventValue;', '}', '', 'function set_goalPosition (eventValue) // input event received for inputOutput field', '{', '    goalPosition = eventValue;', '}', '', 'function set_goalOrientation (eventValue) // input event received for inputOutput field', '{', '    goalOrientation = eventValue;', '}', '', 'function set_tracking (eventValue) // input event received for inputOutput field', '{', '    tracking = eventValue;', '}', '', 'function set_goalFieldOfView (eventValue) // input event received for inputOutput field', '{', '    goalFieldOfView = eventValue;', '}', '', 'function set_goalFStop (eventValue) // input event received for inputOutput field', '{', '    goalFStop = eventValue;', '}', '', 'function set_goalFocusDistance (eventValue) // input event received for inputOutput field', '{', '    goalFocusDistance = eventValue;', '}', '', '// TODO consider method set_active for constructed Camera node BooleanSequencer to send isActive', '', 'function tracePrint (outputValue)', '{', '\tif (traceEnabled) alwaysPrint (outputValue);', '}', '', 'function alwaysPrint (outputValue)', '{', '\t// try to ensure outputValue is converted to string despite browser idiosyncracies', '    var outputString = outputValue.toString(); // utility function according to spec', '    if (outputString == null) outputString = outputValue; // direct cast', '', '    if  (description.length > 0)', "         Browser.print ('[CameraMovement: ' + description + '] ' + outputString + '\n');", '    else', "         Browser.print ('[CameraMovement] ' + outputString + '\n');", '}', '', '']""",),
-Comment(value=''' Add any ROUTEs here, going from Script to other nodes within ProtoBody '''),
-])),
+Comment(value=''' Add any ROUTEs here, going from Script to other nodes within ProtoBody '''),])),
 Comment(value=''' =============== OfflineRender ============== '''),
-
 ProtoDeclare(name="OfflineRender", appinfo="OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot).", 
 ProtoInterface=ProtoInterface(field=[field(name="description", accessType="inputOutput", appinfo="Text description to be displayed for this OfflineRender", type="SFString"),
 field(name="enabled", accessType="inputOutput", appinfo="Whether this OfflineRender can be activated", type="SFBool", value=True),
@@ -275,9 +259,7 @@ field(name="traceEnabled", accessType="initializeOnly", appinfo="enable console 
 ]), 
 ProtoBody=ProtoBody(children=[
 Comment(value=''' First node determines node type of this prototype '''),
-
 Comment(value=''' Subsequent nodes do not render, but still must be a valid X3D subgraph '''),
-
 Script(DEF="OfflineRenderScript", mustEvaluate=True, field=[field(name="description", accessType="inputOutput", appinfo="Text description to be displayed for this OfflineRender", type="SFString"),
 field(name="enabled", accessType="inputOutput", appinfo="Whether this OfflineRender can be activated", type="SFBool"),
 field(name="frameRate", accessType="inputOutput", appinfo="Frames per second recorded for this rendering", type="SFFloat"),
@@ -302,10 +284,8 @@ connect(nodeField="movieFormat", protoField="movieFormat"),
 connect(nodeField="imageFormat", protoField="imageFormat"),
 connect(nodeField="traceEnabled", protoField="traceEnabled")
 ]), sourceCode="""['', '', 'ecmascript:', 'function initialize () // OfflineRenderScript', '{', "//  tracePrint ('initialize start...');", '', "    tracePrint ('... initialize complete');", '}', '', 'function set_description (eventValue) // input event received for inputOutput field', '{', '    description = eventValue;', '}', '', 'function set_enabled (eventValue) // input event received for inputOutput field', '{', '    enabled = eventValue;', '}', '', 'function set_frameRate (eventValue) // input event received for inputOutput field', '{', '    frameRate = eventValue;', '}', '', 'function set_frameSize (eventValue) // input event received for inputOutput field', '{', '    frameSize = eventValue;', '}', '', 'function set_pixelAspectRatio (eventValue) // input event received for inputOutput field', '{', '    pixelAspectRatio = eventValue;', '}', '', 'function set_startTime (eventValue) // input event received for inputOnly field', '{', '   // do something with input eventValue;', '}', '', 'function tracePrint (outputValue)', '{', '\tif (traceEnabled) alwaysPrint (outputValue);', '}', '', 'function alwaysPrint (outputValue)', '{', '\t// try to ensure outputValue is converted to string despite browser idiosyncracies', '    var outputString = outputValue.toString(); // utility function according to spec', '    if (outputString == null) outputString = outputValue; // direct cast', '', '    if  (description.length > 0)', "         Browser.print ('[OfflineRender: ' + description + '] ' + outputString + '\n');", '    else', "         Browser.print ('[OfflineRender] ' + outputString + '\n');", '}', '', '']""",),
-Comment(value=''' Add any ROUTEs here, going from Script to other nodes within ProtoBody '''),
-])),
+Comment(value=''' Add any ROUTEs here, going from Script to other nodes within ProtoBody '''),])),
 Comment(value=''' =============== Launch Prototype Example ============== '''),
-
 Background(skyColor=[(0.282353,0.380392,0.470588)]),
 Anchor(description="launch CameraExample scene", url=["CameraExamples.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d","CameraExamples.wrl","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl"], children=[
 Transform(children=[
@@ -317,5 +297,6 @@ FontStyle(justify=["MIDDLE","MIDDLE"])),
 appearance=
 Appearance(
 material=
-Material(diffuseColor=((1,1,0.2)))))])]),]))
-.XML())
+Material(diffuseColor=((1,1,0.2)))))])]),])))
+output = model.JSON()
+json.loads(output)

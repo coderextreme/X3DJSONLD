@@ -87,7 +87,7 @@ var X3D0 =  X3D(
                 Transform(
                   rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(1.57)]),
                   translation_ : SFVec3f([SFDouble(25000), SFDouble(0), SFDouble(25000)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       geometry_ : 
                         Rectangle2D(
@@ -96,7 +96,7 @@ var X3D0 =  X3D(
                         Appearance(
                           texture_ : 
                             ImageTexture(
-                              url_ : MFString([SFString("ocean.png"), SFString("https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png")]))))])]),
+                              url_ : MFString([SFString("ocean.png"), SFString("https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png")])))))]),
 
             Group(
               DEF_ : SFString('Placemarks'),

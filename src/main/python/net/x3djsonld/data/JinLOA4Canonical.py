@@ -1,6 +1,10 @@
 ####################################################################################################
 #
-# Now available: developmental python x3d.py package on PyPI for import.
+# Invoking X3D model self-test:
+#
+#   $ python 
+#
+# Python package x3d.py package is available on PyPI for import.
 #   This approach simplifies Python X3D deployment and use.
 #   https://pypi.org/project/x3d
 #
@@ -9,7 +13,7 @@
 # or
 #       python -m pip install x3d
 #
-# Developer options for loading x3d package:
+# Developer options for loading x3d package in other Python programs:
 #
 #    from x3d import *  # preferred approach, terser source that avoids x3d.* class prefixes
 #
@@ -28,7 +32,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     component(level=1,name='HAnim')]),
   Scene=Scene(
     children=[
-    WorldInfo(title='JinLOA4.x3d'),
+    WorldInfo(title='JinLOA4Canonical.x3d'),
     NavigationInfo(speed=1.5),
     Viewpoint(centerOfRotation=(0,1,0),description='JinLOA4',position=(0,1,3)),
     Transform(DEF='cordsysfloor',scale=(.175,.175,.175),

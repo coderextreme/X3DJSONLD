@@ -695,7 +695,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                 <xsl:text>info &amp; logs</xsl:text>
                             </span>
 							<xsl:text>, </xsl:text>
-							<a href="https://www.x3dom.org" onclick="target='_blank';">X3DOM Player</a>
+							<a href="https://www.x3dom.org" onclick="target='_blank';">X3DOM home</a>
                             <xsl:text>)</xsl:text>
                         </td>
                     </tr>
@@ -2226,7 +2226,7 @@ body {margin:0;padding:10px;width:100%;height:100%;}
 
 <script type="text/javascript"><xsl:text>
 var zoomed = false;
-var showStatistics = </xsl:text><xsl:value-of select="$showStatistics"/><xsl:text>;
+var showStatistics = </xsl:text><xsl:value-of select="not($showStatistics)"/><xsl:text>;
 var showDebugLog   = </xsl:text><xsl:value-of select="$showDebugLog"/><xsl:text>;
 
 function toggleZoom(button) {

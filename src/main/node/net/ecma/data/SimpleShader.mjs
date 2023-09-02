@@ -140,7 +140,7 @@ var X3D0 =  new X3D({
                   children : new MFNode([
                     new Transform({
                       DEF : new SFString("TR"),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           appearance : new SFNode(
                             new Appearance({
@@ -186,7 +186,7 @@ var X3D0 =  new X3D({
                                       DEF : new SFString("_1")}))}))})),
                           geometry : new SFNode(
                             new Sphere({
-                              radius : new SFFloat(1.75)}))})])})])}))}),
+                              radius : new SFFloat(1.75)}))}))})])}))}),
 
             new WorldInfo({
               title : new SFString("SimpleShader"),

@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="4.0", 
-head=head(children=[component(name="HAnim", level=1),
+head=head(
+children=[
+component(name="HAnim", level=1),
 meta(name="title", content="KoreanCharacter09Ru.x3d"),
 meta(name="creator", content="Jin Hoon Lee and Min Joo Lee"),
 meta(name="translator", content="Chul Hee Jung and Myeong Won Lee"),
@@ -21,7 +24,7 @@ meta(name="generator", content="Suwon University HAnim Editor"),
 meta(name="generator", content="Gnu Image Manipulation Program, http://www.gimp.org"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -72,7 +75,6 @@ texCoord=
 TextureCoordinate(point=[(0.6973,0.5621),(0.6732,0.5606),(0.6756,0.5519),(0.6995,0.5558),(0.6514,0.5517),(0.651,0.5639),(0.6265,0.5674),(0.6243,0.5513),(0.5714,0.5516),(0.5801,0.5716),(0.5399,0.5593),(0.5961,0.5491),(0.6012,0.5661),(0.7333,0.5682),(0.7145,0.5596),(0.7098,0.5282),(0.7413,0.5299),(0.6253,0.5254),(0.653,0.5279),(0.6771,0.5279),(0.5348,0.5231),(0.5674,0.5231),(0.5944,0.524),(0.7049,0.442),(0.7293,0.4364),(0.6272,0.4503),(0.6521,0.4495),(0.6763,0.4477),(0.5451,0.4382),(0.5738,0.4439),(0.5999,0.4487),(0.6315,0.5952),(0.6081,0.5939),(0.6539,0.5942),(0.6605,0.5859),(0.6782,0.5885),(0.7019,0.6058),(0.6914,0.5906),(0.5618,0.5888),(0.595,0.5899),(0.6258,0.3561),(0.636,0.3553),(0.6403,0.3637),(0.6255,0.3643),(0.6483,0.35),(0.6552,0.3607),(0.6618,0.3404),(0.6747,0.3534),(0.5858,0.3255),(0.5913,0.338),(0.5779,0.3505),(0.6892,0.3432),(0.6036,0.3477),(0.5961,0.3584),(0.6143,0.3548),(0.61,0.3628),(0.6267,0.3323),(0.6238,0.6177),(0.5128,0.5646),(0.5065,0.5242),(0.5221,0.4313),(0.545,0.6041),(0.6679,0.3286),(0.5641,0.3396)])))])]),
 HAnimJoint(name="l_knee", DEF="hanim_l_knee", center=((3.931,18.23,-1.935)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 Comment(value=''' weight values go here in HAnimJoint, or within animating HAnimDisplacer '''),
-
 HAnimSegment(name="l_calf", DEF="hanim_l_calf", children=[
 Transform(translation=((3.931,18.23,-1.935)), children=[
 Shape(
@@ -363,5 +365,6 @@ HAnimSegment(USE="hanim_r_tarsal_proximal_phalanx_2"),
 HAnimSegment(USE="hanim_l_thigh"),
 HAnimSegment(USE="hanim_r_thigh"),
 HAnimSegment(USE="hanim_l_upperarm"),
-HAnimSegment(USE="hanim_r_upperarm")])]))
-.XML())
+HAnimSegment(USE="hanim_r_upperarm")])])))
+output = model.JSON()
+json.loads(output)

@@ -24,7 +24,7 @@ head1.meta[2] = meta4;
 
 meta meta5 = createNode("meta");
 meta5.name = "identifier";
-meta5.content = "https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d";
+meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d";
 head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
@@ -51,7 +51,7 @@ ProtoDeclare ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" e
 </ProtoInterface>
 <ProtoBody><Transform DEF="node"><IS><connect nodeField="translation" protoField="translation"></connect>
 </IS>
-<Shape><Sphere containerField="geometry" radius="0.1"></Sphere>
+<Shape><Sphere radius="0.1"></Sphere>
 <Appearance><Material diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
@@ -113,9 +113,9 @@ Appearance19.material = Material20;
 
 Shape17.appearance = Appearance19;
 
-Transform14.children = new MFNode();
+Transform14.child = new undefined();
 
-Transform14.children[0] = Shape17;
+Transform14.child[0] = Shape17;
 
 PositionInterpolator PositionInterpolator21 = createNode("PositionInterpolator");
 PositionInterpolator21.DEF = "PI1";
@@ -215,7 +215,7 @@ ProtoDeclare ProtoDeclare32 = browser.createX3DFromString(`<?xml version="1.0" e
 </ProtoInterface>
 <ProtoBody><Group><Transform DEF="trans"><Transform DEF="rotscale"><Shape><Appearance><Material diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
 </Appearance>
-<Cylinder containerField="geometry" radius="0.05"></Cylinder>
+<Cylinder radius="0.05"></Cylinder>
 </Shape>
 </Transform>
 </Transform>
@@ -330,9 +330,9 @@ Cylinder Cylinder45 = createNode("Cylinder");
 Cylinder45.radius = 0.05;
 Shape42.geometry = Cylinder45;
 
-Transform41.children = new MFNode();
+Transform41.child = new undefined();
 
-Transform41.children[0] = Shape42;
+Transform41.child[0] = Shape42;
 
 Transform40.children = new MFNode();
 

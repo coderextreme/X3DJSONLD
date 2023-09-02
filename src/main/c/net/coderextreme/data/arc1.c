@@ -51,7 +51,7 @@ ProtoDeclare ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" e
 </ProtoInterface>
 <ProtoBody><Transform DEF="node"><IS><connect nodeField="translation" protoField="translation"></connect>
 </IS>
-<Shape><Sphere containerField="geometry" radius="0.1"></Sphere>
+<Shape><Sphere radius="0.1"></Sphere>
 <Appearance><Material diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
@@ -113,9 +113,9 @@ Appearance19.material = Material20;
 
 Shape17.appearance = Appearance19;
 
-Transform14.children = new MFNode();
+Transform14.child = new undefined();
 
-Transform14.children[0] = Shape17;
+Transform14.child[0] = Shape17;
 
 PositionInterpolator PositionInterpolator21 = createNode("PositionInterpolator");
 PositionInterpolator21.DEF = "PI1";
@@ -249,9 +249,9 @@ Cylinder Cylinder42 = createNode("Cylinder");
 Cylinder42.radius = 0.05;
 Shape39.geometry = Cylinder42;
 
-Transform38.children = new MFNode();
+Transform38.child = new undefined();
 
-Transform38.children[0] = Shape39;
+Transform38.child[0] = Shape39;
 
 Transform37.children = new MFNode();
 

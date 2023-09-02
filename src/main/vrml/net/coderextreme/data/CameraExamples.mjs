@@ -1361,7 +1361,7 @@ Appearance233.material = Material234;
 
 Shape230.appearance = Appearance233;
 
-Transform224.children[5] = Shape230;
+Transform224.child[5] = Shape230;
 
 //Simplify intersection test for user selecting text
 let Shape235 = browser.currentScene.createNode("Shape");
@@ -1377,7 +1377,7 @@ let Box238 = browser.currentScene.createNode("Box");
 Box238.size = new SFVec3f(new float[6,2,0.0001]);
 Shape235.geometry = Box238;
 
-Transform224.children[6] = Shape235;
+Transform224.child[6] = Shape235;
 
 Group220.children[3] = Transform224;
 
@@ -1402,9 +1402,9 @@ Appearance243.texture = ImageTexture245;
 
 Shape241.appearance = Appearance243;
 
-Transform240.children = new MFNode();
+Transform240.child = new undefined();
 
-Transform240.children[0] = Shape241;
+Transform240.child[0] = Shape241;
 
 let Transform246 = browser.currentScene.createNode("Transform");
 Transform246.translation = new SFVec3f(new float[0,2,0]);
@@ -1423,9 +1423,9 @@ Appearance250.material = Material251;
 
 Shape247.appearance = Appearance250;
 
-Transform246.children = new MFNode();
+Transform246.child = new undefined();
 
-Transform246.children[0] = Shape247;
+Transform246.child[0] = Shape247;
 
 Transform240.children[1] = Transform246;
 
@@ -1450,9 +1450,9 @@ Appearance255.texture = ImageTexture257;
 
 Shape253.appearance = Appearance255;
 
-Transform252.children = new MFNode();
+Transform252.child = new undefined();
 
-Transform252.children[0] = Shape253;
+Transform252.child[0] = Shape253;
 
 let Transform258 = browser.currentScene.createNode("Transform");
 Transform258.translation = new SFVec3f(new float[0,2,0]);
@@ -1471,9 +1471,9 @@ Appearance262.material = Material263;
 
 Shape259.appearance = Appearance262;
 
-Transform258.children = new MFNode();
+Transform258.child = new undefined();
 
-Transform258.children[0] = Shape259;
+Transform258.child[0] = Shape259;
 
 Transform252.children[1] = Transform258;
 
@@ -1496,9 +1496,9 @@ Appearance267.texture = ImageTexture269;
 
 Shape265.appearance = Appearance267;
 
-Transform264.children = new MFNode();
+Transform264.child = new undefined();
 
-Transform264.children[0] = Shape265;
+Transform264.child[0] = Shape265;
 
 let Transform270 = browser.currentScene.createNode("Transform");
 Transform270.translation = new SFVec3f(new float[0,2,0]);
@@ -1517,9 +1517,9 @@ Appearance274.material = Material275;
 
 Shape271.appearance = Appearance274;
 
-Transform270.children = new MFNode();
+Transform270.child = new undefined();
 
-Transform270.children[0] = Shape271;
+Transform270.child[0] = Shape271;
 
 Transform264.children[1] = Transform270;
 
@@ -1542,9 +1542,9 @@ Appearance279.texture = ImageTexture281;
 
 Shape277.appearance = Appearance279;
 
-Transform276.children = new MFNode();
+Transform276.child = new undefined();
 
-Transform276.children[0] = Shape277;
+Transform276.child[0] = Shape277;
 
 let Transform282 = browser.currentScene.createNode("Transform");
 Transform282.translation = new SFVec3f(new float[0,2,0]);
@@ -1563,9 +1563,9 @@ Appearance286.material = Material287;
 
 Shape283.appearance = Appearance286;
 
-Transform282.children = new MFNode();
+Transform282.child = new undefined();
 
-Transform282.children[0] = Shape283;
+Transform282.child[0] = Shape283;
 
 Transform276.children[1] = Transform282;
 
@@ -1588,9 +1588,9 @@ Appearance291.texture = ImageTexture293;
 
 Shape289.appearance = Appearance291;
 
-Transform288.children = new MFNode();
+Transform288.child = new undefined();
 
-Transform288.children[0] = Shape289;
+Transform288.child[0] = Shape289;
 
 let Transform294 = browser.currentScene.createNode("Transform");
 Transform294.translation = new SFVec3f(new float[0,2,0]);
@@ -1609,9 +1609,9 @@ Appearance298.material = Material299;
 
 Shape295.appearance = Appearance298;
 
-Transform294.children = new MFNode();
+Transform294.child = new undefined();
 
-Transform294.children[0] = Shape295;
+Transform294.child[0] = Shape295;
 
 Transform288.children[1] = Transform294;
 
@@ -1868,11 +1868,11 @@ Appearance344.material = Material345;
 
 Shape341.appearance = Appearance344;
 
-Transform335.children[5] = Shape341;
+Transform335.child[5] = Shape341;
 
 let Shape346 = browser.currentScene.createNode("Shape");
 Shape346.USE = "TransparentBox";
-Transform335.children[6] = Shape346;
+Transform335.child[6] = Shape346;
 
 Group331.children[3] = Transform335;
 
@@ -1949,7 +1949,7 @@ Appearance359.material = Material360;
 
 Shape356.appearance = Appearance359;
 
-Transform353.children[2] = Shape356;
+Transform353.child[2] = Shape356;
 
 Transform348.children[4] = Transform353;
 
@@ -2123,9 +2123,9 @@ IndexedFaceSet387.color = Color389;
 
 Shape384.geometry = IndexedFaceSet387;
 
-Transform383.children = new MFNode();
+Transform383.child = new undefined();
 
-Transform383.children[0] = Shape384;
+Transform383.child[0] = Shape384;
 
 browser.currentScene.children[17] = Transform383;
 
@@ -2206,7 +2206,7 @@ Appearance402.texture = ImageTexture404;
 
 Shape400.appearance = Appearance402;
 
-Transform392.children[7] = Shape400;
+Transform392.child[7] = Shape400;
 
 browser.currentScene.children[19] = Transform392;
 
@@ -2321,9 +2321,9 @@ Appearance423.material = Material424;
 
 Shape420.appearance = Appearance423;
 
-Transform419.children = new MFNode();
+Transform419.child = new undefined();
 
-Transform419.children[0] = Shape420;
+Transform419.child[0] = Shape420;
 
 Anchor418.children = new MFNode();
 

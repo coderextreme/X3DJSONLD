@@ -39,7 +39,7 @@ head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");
 meta8.name = "modified";
-meta8.content = "26 December 2022";
+meta8.content = "2 July 2023";
 head1.meta[6] = meta8;
 
 meta meta9 = createNode("meta");
@@ -248,7 +248,7 @@ HAnimHumanoid43.joints = new MFNode();
 
 HAnimHumanoid43.joints[0] = HAnimJoint44;
 
-//TODO proposed for X3D4 <Switch DEF='AlternativeSkins' containerField='skin'>
+//TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'>
 Shape Shape46 = createNode("Shape");
 IndexedFaceSet IndexedFaceSet47 = createNode("IndexedFaceSet");
 IndexedFaceSet47.DEF = "IndexedSkinMeshIFS";
@@ -260,7 +260,6 @@ Shape46.geometry = IndexedFaceSet47;
 
 HAnimHumanoid43.skin[1] = Shape46;
 
-//TODO proposed for X3D4 </Switch>
 Group20.children[4] = HAnimHumanoid43;
 
 //similarly for LOD
@@ -342,8 +341,6 @@ HAnimHumanoid59.joints = new MFNode();
 HAnimHumanoid59.joints[0] = HAnimJoint60;
 
 //allow multiple Shape nodes with containerField='skin', one for each layer of skin
-//TODO proposed for X3D4.1 <Shape containerField='skin'/>
-//TODO proposed for X3D4.1 <Shape containerField='skin'/>
 Shape Shape62 = createNode("Shape");
 HAnimHumanoid59.skin[1] = Shape62;
 

@@ -2,12 +2,15 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="4.0", 
-head=head(children=[component(name="HAnim", level=1),
+head=head(
+children=[
+component(name="HAnim", level=1),
 ]), 
 Scene=Scene(children=[
-WorldInfo(title="JinLOA4.x3d"),
+WorldInfo(title="JinLOA4Canonical101.x3d"),
 NavigationInfo(speed=1.5),
 Viewpoint(centerOfRotation=((-0.0002,0.0139,-0.1019)), description="JinLOA4", position=((-0.0002,0.0139,-0.0344))),
 Transform(DEF="cordsysfloor", scale=((0.175,0.175,0.175)), children=[
@@ -2640,5 +2643,6 @@ HAnimSegment(USE="hanim_r_trapezium"),
 HAnimSegment(USE="hanim_l_trapezoid"),
 HAnimSegment(USE="hanim_r_trapezoid"),
 HAnimSegment(USE="hanim_l_upperarm"),
-HAnimSegment(USE="hanim_r_upperarm")])]))
-.XML())
+HAnimSegment(USE="hanim_r_upperarm")])])))
+output = model.JSON()
+json.loads(output)

@@ -1,6 +1,10 @@
 ####################################################################################################
 #
-# Now available: developmental python x3d.py package on PyPI for import.
+# Invoking X3D model self-test:
+#
+#   $ python HelloWorldProgramOutput.py
+#
+# Python package x3d.py package is available on PyPI for import.
 #   This approach simplifies Python X3D deployment and use.
 #   https://pypi.org/project/x3d
 #
@@ -9,7 +13,7 @@
 # or
 #       python -m pip install x3d
 #
-# Developer options for loading x3d package:
+# Developer options for loading x3d package in other Python programs:
 #
 #    from x3d import *  # preferred approach, terser source that avoids x3d.* class prefixes
 #
@@ -46,7 +50,7 @@ newModel=X3D(class_='x3dModel.class',id_='x3dModel.id',profile='Full',style_='x3
     meta(content='https://www.web3d.org/specifications/java/X3DJSAIL.html',name='reference'),
     meta(content='HelloWorldProgramOutput.java',name='generator'),
     meta(content='6 September 2016',name='created'),
-    meta(content='3 July 2023',name='modified'),
+    meta(content='30 July 2023',name='modified'),
     meta(content='X3D Java Scene Access Interface Library (X3DJSAIL)',name='generator'),
     meta(content='https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java',name='generator'),
     meta(content='Netbeans https://www.netbeans.org',name='generator'),

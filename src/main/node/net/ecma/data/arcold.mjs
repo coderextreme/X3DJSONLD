@@ -60,7 +60,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/arc.x3d")}),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d")}),
 
             new meta({
               name : new SFString("description"),
@@ -80,7 +80,7 @@ var X3D0 =  new X3D({
               children : new MFNode([
                 new Transform({
                   DEF : new SFString("rotscale1"),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       appearance : new SFNode(
                         new Appearance({
@@ -89,14 +89,14 @@ var X3D0 =  new X3D({
                               diffuseColor : new SFColor([0.2,0.7,0.7])}))})),
                       geometry : new SFNode(
                         new Cylinder({
-                          radius : new SFFloat(0.1)}))})])})])}),
+                          radius : new SFFloat(0.1)}))}))})])}),
 
             new Transform({
               DEF : new SFString("trans2"),
               children : new MFNode([
                 new Transform({
                   DEF : new SFString("rotscale2"),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       appearance : new SFNode(
                         new Appearance({
@@ -105,14 +105,14 @@ var X3D0 =  new X3D({
                               diffuseColor : new SFColor([0.2,0.7,0.7])}))})),
                       geometry : new SFNode(
                         new Cylinder({
-                          radius : new SFFloat(0.1)}))})])})])}),
+                          radius : new SFFloat(0.1)}))}))})])}),
 
             new Transform({
               DEF : new SFString("trans3"),
               children : new MFNode([
                 new Transform({
                   DEF : new SFString("rotscale3"),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       appearance : new SFNode(
                         new Appearance({
@@ -121,7 +121,7 @@ var X3D0 =  new X3D({
                               diffuseColor : new SFColor([0.2,0.7,0.7])}))})),
                       geometry : new SFNode(
                         new Cylinder({
-                          radius : new SFFloat(0.1)}))})])})])}),
+                          radius : new SFFloat(0.1)}))}))})])}),
 
             new ProtoDeclare({
               name : new SFString("point"),
@@ -144,7 +144,7 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("translation"),
                               protoField : new SFString("translation")})])})),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           geometry : new SFNode(
                             new Sphere({
@@ -153,8 +153,8 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,0,0])}))}))}),
-
+                                  diffuseColor : new SFColor([1,0,0])}))}))})),
+                      children : new MFNode([
                         new PositionInterpolator({
                           DEF : new SFString("PI1"),
                           key : new MFFloat([0,1]),

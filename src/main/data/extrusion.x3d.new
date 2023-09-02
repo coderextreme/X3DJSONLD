@@ -3,11 +3,11 @@
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd" ><head><meta name="creator" content="John W Carlson"></meta>
 <meta name="created" content="December 13 2015"></meta>
 <meta name="title" content="extrusion.x3d"></meta>
-<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/force.x3d"></meta>
+<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d"></meta>
 <meta name="description" content="beginnings of a force directed graph in 3D"></meta>
 <meta name="generator" content="Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
 </head>
-<Scene><Group><Shape><Extrusion containerField="geometry" DEF="extrusion" spine="-50 -50 0 50 50 0" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0"></Extrusion>
+<Scene><Group><Shape><Extrusion DEF="extrusion" spine="-50 -50 0 50 50 0" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0"></Extrusion>
 <Appearance><Material diffuseColor="0 1 0"></Material>
 </Appearance>
 </Shape>

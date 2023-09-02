@@ -124,9 +124,9 @@ Shape24.appearance = Appearance25;
 Box Box27 = createNode("Box");
 Shape24.geometry = Box27;
 
-Transform23.children = new MFNode();
+Transform23.child = new undefined();
 
-Transform23.children[0] = Shape24;
+Transform23.child[0] = Shape24;
 
 children[6] = Transform23;
 

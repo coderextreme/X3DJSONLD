@@ -22,7 +22,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d')),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -58,7 +58,7 @@ var X3D0 =  X3D(
                             connect(
                               nodeField_ : SFString('translation'),
                               protoField_ : SFString('translation'))]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           geometry_ : 
                             Sphere(
@@ -68,7 +68,7 @@ var X3D0 =  X3D(
                               material_ : 
                                 Material(
                                   diffuseColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0)])))),
-
+                      children_ : [
                         PositionInterpolator(
                           DEF_ : SFString('PI1'),
                           key_ : MFFloat([SFFloat(0), SFFloat(1)]),
@@ -171,7 +171,7 @@ ecmascript:eval (0
                           children_ : [
                             Transform(
                               DEF_ : SFString('rotscale'),
-                              children_ : [
+                              child_ : 
                                 Shape(
                                   appearance_ : 
                                     Appearance(
@@ -181,7 +181,7 @@ ecmascript:eval (0
                                           transparency_ : 0.5)),
                                   geometry_ : 
                                     Cylinder(
-                                      radius_ : 0.05))])]),
+                                      radius_ : 0.05)))]),
 
                         Script(
                           DEF_ : SFString('S1'),

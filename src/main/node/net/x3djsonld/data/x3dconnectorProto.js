@@ -20,11 +20,19 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/x3dconnectorProto">x3dconnectorProto</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto">x3dconnectorProto</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
 			<td> Lost, Doug Sanden I think </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> created </i> </td>
+			<td> Unknown </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
+			<td> July 30 2023 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -32,7 +40,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -75,8 +83,10 @@ x3dconnectorProto.prototype = {
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("x3dconnectorProto"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("Lost, Doug Sanden I think"))
+    .addMeta((new autoclass.meta()).setName("created").setContent("Unknown"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("July 30 2023"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("a generic proto to connect two objects"))
     .addMeta((new autoclass.meta()).setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html")))
   .setScene((new autoclass.Scene())
@@ -138,17 +148,17 @@ x3dconnectorProto.prototype = {
         .addField((new autoclass.field()).setName("set_startpoint").setType("SFVec3f").setAccessType("inputOnly"))
         .addField((new autoclass.field()).setName("set_endpoint").setType("SFVec3f").setAccessType("inputOnly")))
       .setProtoBody((new autoclass.ProtoBody())
-        .addChild((new autoclass.Script("S1")).setSourceCode("\n" + 
+        .addChild((new autoclass.Script("S1")).setDirectOutput(true).setSourceCode("\n" + 
 "            ecmascript:" + "\n" + 
 "        function recompute(startpoint,endpoint){" + "\n" + 
 "	    if (typeof endpoint === 'undefined') {" + "\n" + 
 "		return;" + "\n" + 
 "	    }" + "\n" + 
-"            var dif = endpoint.subtract(startpoint);" + "\n" + 
-"            var dist = dif.length()*0.5;" + "\n" + 
-"            var dif2 = dif.multiply(0.5);" + "\n" + 
-"            var norm = dif.normalize();" + "\n" + 
-"            var transl = startpoint.add(dif2);" + "\n" + 
+"            let dif = endpoint.subtract(startpoint);" + "\n" + 
+"            let dist = dif.length()*0.5;" + "\n" + 
+"            let dif2 = dif.multiply(0.5);" + "\n" + 
+"            let norm = dif.normalize();" + "\n" + 
+"            let transl = startpoint.add(dif2);" + "\n" + 
 "	    if (typeof Quaternion !== 'undefined') {" + "\n" + 
 "		    return {" + "\n" + 
 "			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
@@ -164,7 +174,7 @@ x3dconnectorProto.prototype = {
 "	    }" + "\n" + 
 "	}" + "\n" + 
 "	function recompute_and_route(startpoint, endpoint) {" + "\n" + 
-"	      var trafo = recompute(startpoint, endpoint);" + "\n" + 
+"	      let trafo = recompute(startpoint, endpoint);" + "\n" + 
 "	      if (trafo) {" + "\n" + 
 "		      transnode.translation = trafo.translation;" + "\n" + 
 "		      rotscalenode.rotation = trafo.rotation;" + "\n" + 

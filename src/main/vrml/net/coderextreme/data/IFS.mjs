@@ -12,7 +12,7 @@ head1.component[0] = component2;
 
 let meta3 = browser.currentScene.createNode("meta");
 meta3.name = "title";
-meta3.content = "JohnIFS.x3d";
+meta3.content = "IFS.x3d";
 head1.meta[1] = meta3;
 
 let meta4 = browser.currentScene.createNode("meta");
@@ -82,9 +82,9 @@ Appearance18.material = Material19;
 
 Shape14.appearance = Appearance18;
 
-Transform13.children = new MFNode();
+Transform13.child = new undefined();
 
-Transform13.children[0] = Shape14;
+Transform13.child[0] = Shape14;
 
 Group12.children = new MFNode();
 

@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[meta(name="title", content="ViewFrustumExample.x3d"),
+head=head(
+children=[
+meta(name="title", content="ViewFrustumExample.x3d"),
 meta(name="description", content="Display view frustum associated with a given pair of Viewpoint and NavigationInfo nodes, illustrating ProtoInstance reuse of a separately declared prototype."),
 meta(name="creator", content="Don Brutzman"),
 meta(name="translated", content="16 August 2008"),
@@ -19,7 +22,7 @@ meta(name="subject", content="view culling frustum"),
 meta(name="identifier", content="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -40,10 +43,8 @@ field(name="aspectRatio", accessType="inputOutput", appinfo="assumed ratio heigh
 field(name="trace", accessType="initializeOnly", appinfo="debug support, default false", type="SFBool")
 ]),
 Comment(value=''' Example use '''),
-
 ProtoInstance(name="ViewFrustum", fieldValue=[fieldValue(name="ViewpointNode", children=[
 Comment(value=''' prefer empty description to prevent entry in player's ViewpointList '''),
-
 Viewpoint(description="ViewFrustum ViewpointNode"),]),
 fieldValue(name="NavigationInfoNode", children=[
 NavigationInfo(visibilityLimit=15)]),
@@ -54,8 +55,8 @@ fieldValue(name="transparency", value=0.75),
 fieldValue(name="trace", value=True)
 ]),
 Comment(value=''' Visualization assists '''),
-
 Inline(DEF="GridXZ", url=["GridXZ_20x20Fixed.x3d"]),
 Transform(scale=((5,5,5)), children=[
-Inline(DEF="CoordinateAxes", url=["CoordinateAxes.x3d"])]),]))
-.XML())
+Inline(DEF="CoordinateAxes", url=["CoordinateAxes.x3d"])]),])))
+output = model.JSON()
+json.loads(output)

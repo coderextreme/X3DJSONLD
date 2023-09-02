@@ -22,7 +22,7 @@ var ProtoInstance3 = null;
         .addMeta((new autoclass.meta()).setName("title").setContent("BoxEm.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/box.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/box.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("3 boxes")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.NavigationInfo()).setType(java.newArray("java.lang.String", ["EXAMINE"])))
@@ -78,5 +78,5 @@ ProtoInstance3
               .setGeometry((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)])))
               .setAppearance((new autoclass.Appearance())
                 .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0)]))))));
-    X3D0.toFileX3D("../data/BoxEm.new.x3d");
+    X3D0.toFileX3D("../data/BoxEm.new.node.x3d");
     process.exit(0);

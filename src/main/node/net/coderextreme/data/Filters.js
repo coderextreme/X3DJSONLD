@@ -77,5 +77,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                   .addChild((new autoclass.Analyser()).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
                     .addChild((new autoclass.BiquadFilter()).setType(autoclass.field.TYPE_ALLPASS).setFrequency(java.newFloat(1000)).setQualityFactor(java.newFloat(0)).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
                       .addChild((new autoclass.AudioClip()).setDescription("Wobble loop").setLoop(true).setUrl(java.newArray("java.lang.String", ["sound/wobble_loop.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3"])))))))))))      ;
-    X3D0.toFileX3D("../data/Filters.new.x3d");
+    X3D0.toFileX3D("../data/Filters.new.node.x3d");
     process.exit(0);

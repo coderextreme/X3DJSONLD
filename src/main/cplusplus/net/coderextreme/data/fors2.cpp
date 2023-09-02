@@ -36,7 +36,7 @@ head1->addMeta(*meta5);
 
 Cmeta* meta6 = new Cmeta();
 meta6->setName("identifier");
-meta6->setContent("https://coderextreme.net/X3DJSONLD/fors2.x3d");
+meta6->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/fors2.x3d");
 head1->addMeta(*meta6);
 
 Cmeta* meta7 = new Cmeta();
@@ -58,7 +58,7 @@ CProtoDeclare ProtoDeclare10 = browser.createX3DFromString(R"foo(<?xml version="
 </ProtoInterface>
 <ProtoBody><Transform DEF="transform"><IS><connect nodeField="translation" protoField="position"></connect>
 </IS>
-<Shape><!--comment before Sphere--><!--comment after Sphere--><!--comment after Appearance--><Sphere containerField="geometry"></Sphere>
+<Shape><!--comment before Sphere--><!--comment after Sphere--><!--comment after Appearance--><Sphere></Sphere>
 <Appearance><!--comment before Material--><!--comment after Material--><Material diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
@@ -120,7 +120,7 @@ Appearance19->setMaterial(*Material20);
 
 Shape17->setAppearance(*Appearance19);
 
-Transform14->addChildren(*Shape17);
+Transform14->addChild(*Shape17);
 
 ProtoBody13->addChildren(*Transform14);
 
@@ -211,7 +211,7 @@ CProtoDeclare ProtoDeclare32 = browser.createX3DFromString(R"foo(<?xml version="
 <ProtoDeclare name="cylinder" ><ProtoInterface><field name="positionA" accessType="inputOnly" type="SFVec3f"></field>
 <field name="positionB" accessType="inputOnly" type="SFVec3f"></field>
 </ProtoInterface>
-<ProtoBody><Shape><Extrusion containerField="geometry" DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 0 0 0 50 0"></Extrusion>
+<ProtoBody><Shape><Extrusion DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 0 0 0 50 0"></Extrusion>
 <Appearance><Material diffuseColor="0 1 0"></Material>
 </Appearance>
 </Shape>

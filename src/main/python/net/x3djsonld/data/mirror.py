@@ -1,6 +1,10 @@
 ####################################################################################################
 #
-# Now available: developmental python x3d.py package on PyPI for import.
+# Invoking X3D model self-test:
+#
+#   $ python mirror.py
+#
+# Python package x3d.py package is available on PyPI for import.
 #   This approach simplifies Python X3D deployment and use.
 #   https://pypi.org/project/x3d
 #
@@ -9,7 +13,7 @@
 # or
 #       python -m pip install x3d
 #
-# Developer options for loading x3d package:
+# Developer options for loading x3d package in other Python programs:
 #
 #    from x3d import *  # preferred approach, terser source that avoids x3d.* class prefixes
 #
@@ -37,18 +41,18 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(name='title',content='mirror.x3d'),
     meta(name='creator',content='John Carlson'),
     meta(name='generator',content='manual'),
-    meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/mirror.x3d'),
+    meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/src/main/data/mirror.x3d'),
     meta(name='description',content='sphere with alternating backgrounds')]),
   Scene=Scene(
     children=[
     Viewpoint(position=(0,5,100),description='Switch background and images texture'),
     TextureBackground(
-      left=ImageTexture(DEF='leftBackgroundTexture',url=["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"]),
-      right=ImageTexture(DEF='rightBackgroundTexture',url=["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"]),
-      front=ImageTexture(DEF='frontBackgroundTexture',url=["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"]),
-      back=ImageTexture(DEF='backBackgroundTexture',url=["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"]),
-      top=ImageTexture(DEF='topBackgroundTexture',url=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"]),
-      bottom=ImageTexture(DEF='bottomBackgroundTexture',url=["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"])),
+      leftTexture=ImageTexture(DEF='leftBackgroundTexture',url=["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"]),
+      rightTexture=ImageTexture(DEF='rightBackgroundTexture',url=["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"]),
+      frontTexture=ImageTexture(DEF='frontBackgroundTexture',url=["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"]),
+      backTexture=ImageTexture(DEF='backBackgroundTexture',url=["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"]),
+      topTexture=ImageTexture(DEF='topBackgroundTexture',url=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"]),
+      bottomTexture=ImageTexture(DEF='bottomBackgroundTexture',url=["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"])),
     Transform(
       children=[
       Shape(

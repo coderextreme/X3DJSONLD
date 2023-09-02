@@ -644,5 +644,5 @@ ProtoInstance34
           .addFieldValue((new autoclass.fieldValue()).setName("scale").setValue("1 1 1"));
 ProtoInstance34
           .addFieldValue((new autoclass.fieldValue()).setName("positionOffsetFromCamera").setValue("0 0 -6"));
-    X3D0.toFileX3D("../data/CameraExamples.new.x3d");
+    X3D0.toFileX3D("../data/CameraExamples.new.node.x3d");
     process.exit(0);

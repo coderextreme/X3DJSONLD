@@ -91,7 +91,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/mirror.x3d")}),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/mirror.x3d")}),
 
             new meta({
               name : new SFString("description"),
@@ -130,7 +130,7 @@ var X3D0 =  new X3D({
                   url : new MFString(["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"])}))}),
 
             new Transform({
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
@@ -251,8 +251,8 @@ var X3D0 =  new X3D({
                               url : new MFString(["../shaders/x_itemix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs"])}))}))})),
                   geometry : new SFNode(
                     new Sphere({
-                      radius : new SFFloat(30)}))}),
-
+                      radius : new SFFloat(30)}))})),
+              children : new MFNode([
                 new Script({
                   DEF : new SFString("UrlSelector"),
                   directOutput : new SFBool(true),

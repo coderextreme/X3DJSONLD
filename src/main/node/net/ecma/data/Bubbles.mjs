@@ -138,7 +138,7 @@ var X3D0 =  new X3D({
                       children : new MFNode([
                         new Transform({
                           DEF : new SFString("bubble1"),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               appearance : new SFNode(
                                 new Appearance({
@@ -148,11 +148,11 @@ var X3D0 =  new X3D({
                                       transparency : new SFFloat(0.8)}))})),
                               geometry : new SFNode(
                                 new Sphere({
-                                  radius : new SFFloat(0.025)}))})])}),
+                                  radius : new SFFloat(0.025)}))}))}),
 
                         new Transform({
                           DEF : new SFString("bubble2"),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               appearance : new SFNode(
                                 new Appearance({
@@ -162,11 +162,11 @@ var X3D0 =  new X3D({
                                       transparency : new SFFloat(0.8)}))})),
                               geometry : new SFNode(
                                 new Sphere({
-                                  radius : new SFFloat(0.055)}))})])}),
+                                  radius : new SFFloat(0.055)}))}))}),
 
                         new Transform({
                           DEF : new SFString("bubble3"),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               appearance : new SFNode(
                                 new Appearance({
@@ -176,11 +176,11 @@ var X3D0 =  new X3D({
                                       transparency : new SFFloat(0.8)}))})),
                               geometry : new SFNode(
                                 new Sphere({
-                                  radius : new SFFloat(0.065)}))})])}),
+                                  radius : new SFFloat(0.065)}))}))}),
 
                         new Transform({
                           DEF : new SFString("bubble4"),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               appearance : new SFNode(
                                 new Appearance({
@@ -190,11 +190,11 @@ var X3D0 =  new X3D({
                                       transparency : new SFFloat(0.8)}))})),
                               geometry : new SFNode(
                                 new Sphere({
-                                  radius : new SFFloat(0.015)}))})])}),
+                                  radius : new SFFloat(0.015)}))}))}),
 
                         new Transform({
                           DEF : new SFString("bubble5"),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               appearance : new SFNode(
                                 new Appearance({
@@ -204,11 +204,11 @@ var X3D0 =  new X3D({
                                       transparency : new SFFloat(0.8)}))})),
                               geometry : new SFNode(
                                 new Sphere({
-                                  radius : new SFFloat(0.075)}))})])}),
+                                  radius : new SFFloat(0.075)}))}))}),
 
                         new Transform({
                           DEF : new SFString("bubble6"),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               appearance : new SFNode(
                                 new Appearance({
@@ -218,11 +218,11 @@ var X3D0 =  new X3D({
                                       transparency : new SFFloat(0.8)}))})),
                               geometry : new SFNode(
                                 new Sphere({
-                                  radius : new SFFloat(0.005)}))})])}),
+                                  radius : new SFFloat(0.005)}))}))}),
 
                         new Transform({
                           DEF : new SFString("bubble7"),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               appearance : new SFNode(
                                 new Appearance({
@@ -232,11 +232,11 @@ var X3D0 =  new X3D({
                                       transparency : new SFFloat(0.8)}))})),
                               geometry : new SFNode(
                                 new Sphere({
-                                  radius : new SFFloat(0.035)}))})])}),
+                                  radius : new SFFloat(0.035)}))}))}),
 
                         new Transform({
                           DEF : new SFString("bubble8"),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               appearance : new SFNode(
                                 new Appearance({
@@ -246,11 +246,11 @@ var X3D0 =  new X3D({
                                       transparency : new SFFloat(0.8)}))})),
                               geometry : new SFNode(
                                 new Sphere({
-                                  radius : new SFFloat(0.05)}))})])}),
+                                  radius : new SFFloat(0.05)}))}))}),
 
                         new Transform({
                           DEF : new SFString("bubble9"),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               appearance : new SFNode(
                                 new Appearance({
@@ -260,11 +260,11 @@ var X3D0 =  new X3D({
                                       transparency : new SFFloat(0.8)}))})),
                               geometry : new SFNode(
                                 new Sphere({
-                                  radius : new SFFloat(0.045)}))})])}),
+                                  radius : new SFFloat(0.045)}))}))}),
 
                         new Transform({
                           DEF : new SFString("bubble10"),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               appearance : new SFNode(
                                 new Appearance({
@@ -274,7 +274,7 @@ var X3D0 =  new X3D({
                                       transparency : new SFFloat(0.8)}))})),
                               geometry : new SFNode(
                                 new Sphere({
-                                  radius : new SFFloat(0.035)}))})])}),
+                                  radius : new SFFloat(0.035)}))}))}),
 
                         new ROUTE({
                           fromField : new SFString("fraction_changed"),

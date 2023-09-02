@@ -21,7 +21,7 @@ head1->addComponent(*component2);
 
 Cmeta* meta3 = new Cmeta();
 meta3->setName("title");
-meta3->setContent("KoreanCharacterAnnexB01Jin.x3d");
+meta3->setContent("KoreanCharacterMotionAnnexB01Jin.x3d");
 head1->addMeta(*meta3);
 
 Cmeta* meta4 = new Cmeta();

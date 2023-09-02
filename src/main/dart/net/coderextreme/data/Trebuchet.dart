@@ -109,7 +109,7 @@ var X3D0 =  X3D(
               rotation_ : SFRotation([SFDouble(0), SFDouble(1), SFDouble(0), SFDouble(1.57)]),
               scale_ : SFVec3f([SFDouble(0.5), SFDouble(0.5), SFDouble(0.5)]),
               translation_ : SFVec3f([SFDouble(10.5), SFDouble(6.5), SFDouble(4.5)]),
-              children_ : [
+              child_ : 
                 Shape(
                   appearance_ : 
                     Appearance(
@@ -122,7 +122,7 @@ var X3D0 =  X3D(
                     Text(
                       string_ : MFString([SFString("Click Sling to Select Projectile")]),
                       fontStyle_ : 
-                        FontStyle()))]),
+                        FontStyle()))),
 
             Transform(
               rotation_ : SFRotation([SFDouble(0), SFDouble(1), SFDouble(0), SFDouble(1.57)]),
@@ -179,7 +179,7 @@ var X3D0 =  X3D(
 
                 Transform(
                   translation_ : SFVec3f([SFDouble(8), SFDouble(0), SFDouble(0)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       geometry_ : 
                         Box(
@@ -188,7 +188,7 @@ var X3D0 =  X3D(
                         Appearance(
                           material_ : 
                             Material(
-                              transparency_ : 1)))])]),
+                              transparency_ : 1))))]),
 
             Transform(
               rotation_ : SFRotation([SFDouble(0), SFDouble(1), SFDouble(0), SFDouble(1.57)]),
@@ -214,7 +214,7 @@ var X3D0 =  X3D(
 
                         Transform(
                           translation_ : SFVec3f([SFDouble(2), SFDouble(0.3), SFDouble(0)]),
-                          children_ : [
+                          child_ : 
                             Shape(
                               geometry_ : 
                                 Box(
@@ -223,7 +223,7 @@ var X3D0 =  X3D(
                                 Appearance(
                                   material_ : 
                                     Material(
-                                      transparency_ : 1)))]),
+                                      transparency_ : 1)))),
 
                         Switch(
                           DEF_ : SFString('PigdogMonk'),
@@ -344,7 +344,7 @@ var X3D0 =  X3D(
 
             Transform(
               translation_ : SFVec3f([SFDouble(0), SFDouble(3), SFDouble(0)]),
-              children_ : [
+              child_ : 
                 Shape(
                   DEF_ : SFString('plank'),
                   geometry_ : 
@@ -357,40 +357,40 @@ var X3D0 =  X3D(
                         ImageTexture(
                           DEF_ : SFString('woodTexture'),
                           url_ : MFString([SFString("wood.gif"), SFString("https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/wood.gif")])))),
-
+              children_ : [
                 Transform(
                   DEF_ : SFString('angledsupport'),
                   rotation_ : SFRotation([SFDouble(0), SFDouble(0), SFDouble(1), SFDouble(1)]),
                   translation_ : SFVec3f([SFDouble(-5), SFDouble(10), SFDouble(0)]),
-                  children_ : [
+                  child_ : 
                     Shape(
-                      USE_ : SFString('plank'))]),
+                      USE_ : SFString('plank'))),
 
                 Transform(
                   DEF_ : SFString('angledsupport2'),
                   rotation_ : SFRotation([SFDouble(0), SFDouble(0), SFDouble(1), SFDouble(-1)]),
                   translation_ : SFVec3f([SFDouble(5), SFDouble(10), SFDouble(0)]),
-                  children_ : [
+                  child_ : 
                     Shape(
-                      USE_ : SFString('plank'))]),
+                      USE_ : SFString('plank'))),
 
                 Transform(
                   DEF_ : SFString('verticalsupport'),
                   rotation_ : SFRotation([SFDouble(0), SFDouble(0), SFDouble(1), SFDouble(1.57)]),
                   scale_ : SFVec3f([SFDouble(0.9), SFDouble(1), SFDouble(1)]),
                   translation_ : SFVec3f([SFDouble(0), SFDouble(11), SFDouble(0)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       USE_ : SFString('plank')),
-                  /*Main Verticle Support*/]),
+                  /*Main Verticle Support*/),
 
                 Transform(
                   DEF_ : SFString('horizontalsupport'),
                   scale_ : SFVec3f([SFDouble(0.4), SFDouble(1), SFDouble(1)]),
                   translation_ : SFVec3f([SFDouble(0), SFDouble(10), SFDouble(0)]),
-                  children_ : [
+                  child_ : 
                     Shape(
-                      USE_ : SFString('plank'))]),
+                      USE_ : SFString('plank'))),
 
                 Transform(
                   rotation_ : SFRotation([SFDouble(0), SFDouble(0), SFDouble(1), SFDouble(1.57)]),
@@ -399,21 +399,21 @@ var X3D0 =  X3D(
                   children_ : [
                     Transform(
                       rotation_ : SFRotation([SFDouble(0), SFDouble(1), SFDouble(0), SFDouble(0.4)]),
-                      children_ : [
+                      child_ : 
                         Shape(
-                          USE_ : SFString('plank'))])]),
+                          USE_ : SFString('plank')))]),
 
                 Transform(
                   DEF_ : SFString('panel'),
                   translation_ : SFVec3f([SFDouble(0), SFDouble(18.2), SFDouble(-0.3)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       geometry_ : 
                         Box(
                           size_ : SFVec3f([SFDouble(5), SFDouble(5), SFDouble(0.5)])),
                       appearance_ : 
                         Appearance(
-                          USE_ : SFString('wood')))]),
+                          USE_ : SFString('wood')))),
 
                 Transform(
                   rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-1.57)]),
@@ -421,7 +421,7 @@ var X3D0 =  X3D(
                   children_ : [
                     Transform(
                       rotation_ : SFRotation([SFDouble(0), SFDouble(0), SFDouble(1), SFDouble(1.57)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           geometry_ : 
                             Extrusion(
@@ -432,7 +432,7 @@ var X3D0 =  X3D(
                               spine_ : MFVec3f([SFVec3f([0,6,0]),SFVec3f([0,-11,0])])),
                           appearance_ : 
                             Appearance(
-                              USE_ : SFString('wood')))])]),
+                              USE_ : SFString('wood'))))]),
 
                 Transform(
                   DEF_ : SFString('flinger'),
@@ -442,7 +442,7 @@ var X3D0 =  X3D(
                   translation_ : SFVec3f([SFDouble(-7), SFDouble(18), SFDouble(2.5)]),
                   children_ : [
                     Transform(
-                      children_ : [
+                      child_ : 
                         Shape(
                           geometry_ : 
                             Box(
@@ -450,23 +450,23 @@ var X3D0 =  X3D(
                           appearance_ : 
                             Appearance(
                               USE_ : SFString('wood'))),
-
+                      children_ : [
                         Transform(
                           translation_ : SFVec3f([SFDouble(7), SFDouble(0), SFDouble(0)]),
-                          children_ : [
+                          child_ : 
                             Shape(
                               geometry_ : 
                                 Box(
                                   size_ : SFVec3f([SFDouble(8), SFDouble(2), SFDouble(2)])),
                               appearance_ : 
                                 Appearance(
-                                  USE_ : SFString('wood')))])]),
+                                  USE_ : SFString('wood'))))]),
 
                     Transform(
                       rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(1.57)]),
                       scale_ : SFVec3f([SFDouble(0.2), SFDouble(0.2), SFDouble(0.2)]),
                       translation_ : SFVec3f([SFDouble(-15), SFDouble(-1), SFDouble(0)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           DEF_ : SFString('Torus'),
                           appearance_ : 
@@ -482,10 +482,10 @@ var X3D0 =  X3D(
                               crossSection_ : MFVec2f([SFVec2f([0.9,0]),SFVec2f([0.81,-0.34]),SFVec2f([0.63,-0.63]),SFVec2f([0.34,-0.83]),SFVec2f([0,-0.9]),SFVec2f([-0.34,-0.81]),SFVec2f([-0.63,-0.63]),SFVec2f([-0.81,-0.34]),SFVec2f([-0.9,0]),SFVec2f([-0.81,0.34]),SFVec2f([-0.63,0.63]),SFVec2f([-0.34,0.81]),SFVec2f([0,0.9]),SFVec2f([0.38,0.81]),SFVec2f([0.63,0.63]),SFVec2f([0.81,0.34]),SFVec2f([0.9,0])]),
                               endCap_ : false,
                               spine_ : MFVec3f([SFVec3f([2,0,0]),SFVec3f([1.85,0,0.77]),SFVec3f([1.41,0,1.41]),SFVec3f([0.77,0,1.85]),SFVec3f([0,0,2]),SFVec3f([-0.77,0,1.85]),SFVec3f([-1.41,0,1.41]),SFVec3f([-1.85,0,0.77]),SFVec3f([-2,0,0]),SFVec3f([-1.85,0,-0.77]),SFVec3f([-1.41,0,-1.41]),SFVec3f([-0.77,0,-1.85]),SFVec3f([0,0,-2]),SFVec3f([0.77,0,-1.85]),SFVec3f([1.41,0,-1.41]),SFVec3f([1.85,0,-0.77]),SFVec3f([2,0,0])]))),
-
+                      children_ : [
                         Transform(
                           translation_ : SFVec3f([SFDouble(1), SFDouble(0), SFDouble(2)]),
-                          children_ : [
+                          child_ : 
                             Shape(
                               appearance_ : 
                                 Appearance(
@@ -496,14 +496,14 @@ var X3D0 =  X3D(
                               geometry_ : 
                                 Sphere(
                                   radius_ : 1.5)),
-                          /*knott*/])]),
+                          /*knott*/)]),
                   /*The Unicorn*/
 
                     Transform(
                       rotation_ : SFRotation([SFDouble(0), SFDouble(0), SFDouble(1), SFDouble(1.2)]),
                       scale_ : SFVec3f([SFDouble(0.2), SFDouble(0.2), SFDouble(0.2)]),
                       translation_ : SFVec3f([SFDouble(-18.3), SFDouble(0.3), SFDouble(0)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           geometry_ : 
                             Cylinder(
@@ -513,17 +513,17 @@ var X3D0 =  X3D(
                               material_ : 
                                 Material(
                                   specularColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)])))),
-
+                      children_ : [
                         Transform(
                           translation_ : SFVec3f([SFDouble(0), SFDouble(-2.5), SFDouble(0)]),
-                          children_ : [
+                          child_ : 
                             Shape(
                               USE_ : SFString('Torus')),
                           /*The Unicorn*/
-
+                          children_ : [
                             Transform(
                               translation_ : SFVec3f([SFDouble(-2), SFDouble(0), SFDouble(0)]),
-                              children_ : [
+                              child_ : 
                                 Shape(
                                   geometry_ : 
                                     Sphere(
@@ -531,7 +531,7 @@ var X3D0 =  X3D(
                                   appearance_ : 
                                     Appearance(
                                       USE_ : SFString('rope'))),
-                              /*Knott*/])]),
+                              /*Knott*/)]),
 
                         Transform(
                           rotation_ : SFRotation([SFDouble(0), SFDouble(0), SFDouble(1), SFDouble(1.2)]),
@@ -539,7 +539,7 @@ var X3D0 =  X3D(
                           children_ : [
                             Transform(
                               scale_ : SFVec3f([SFDouble(5), SFDouble(5), SFDouble(5)]),
-                              children_ : [
+                              child_ : 
                                 Shape(
                                   appearance_ : 
                                     Appearance(
@@ -551,7 +551,7 @@ var X3D0 =  X3D(
                                       crossSection_ : MFVec2f([SFVec2f([0.1,0]),SFVec2f([0.092,-0.038]),SFVec2f([0.071,-0.071]),SFVec2f([0.038,-0.092]),SFVec2f([0,-0.1]),SFVec2f([-0.038,-0.092]),SFVec2f([-0.071,-0.071]),SFVec2f([-0.092,-0.038]),SFVec2f([-0.1,0]),SFVec2f([-0.092,0.038]),SFVec2f([-0.071,0.071]),SFVec2f([-0.038,0.092]),SFVec2f([0,0.1]),SFVec2f([0.038,0.092]),SFVec2f([0.071,0.071]),SFVec2f([0.092,0.038]),SFVec2f([0.1,0])]),
                                       endCap_ : false,
                                       solid_ : false,
-                                      spine_ : MFVec3f([SFVec3f([-15.2,1.4,2.2]),SFVec3f([-12,-0.8,2.2])])))])])]),
+                                      spine_ : MFVec3f([SFVec3f([-15.2,1.4,2.2]),SFVec3f([-12,-0.8,2.2])]))))])]),
 
                     Transform(
                       rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-1.7)]),
@@ -559,21 +559,21 @@ var X3D0 =  X3D(
                       children_ : [
                         Transform(
                           scale_ : SFVec3f([SFDouble(0.2), SFDouble(0.2), SFDouble(0.2)]),
-                          children_ : [
+                          child_ : 
                             Shape(
                               USE_ : SFString('Torus'),
                               /*Knot*/),
-
+                          children_ : [
                             Transform(
                               translation_ : SFVec3f([SFDouble(-1), SFDouble(0), SFDouble(1.7)]),
-                              children_ : [
+                              child_ : 
                                 Shape(
                                   geometry_ : 
                                     Sphere(
                                       radius_ : 1.5),
                                   appearance_ : 
                                     Appearance(
-                                      USE_ : SFString('rope')))])])]),
+                                      USE_ : SFString('rope'))))])]),
 
                     Transform(
                       DEF_ : SFString('RnS'),
@@ -584,7 +584,7 @@ var X3D0 =  X3D(
                             Transform(
                               rotation_ : SFRotation([SFDouble(0), SFDouble(0), SFDouble(1), SFDouble(-0.82)]),
                               translation_ : SFVec3f([SFDouble(7), SFDouble(-26), SFDouble(-2.5)]),
-                              children_ : [
+                              child_ : 
                                 Shape(
                                   appearance_ : 
                                     Appearance(
@@ -597,7 +597,7 @@ var X3D0 =  X3D(
                                       endCap_ : false,
                                       solid_ : false,
                                       spine_ : MFVec3f([SFVec3f([-33,0.9,2.5]),SFVec3f([-18.5,1.9,2.55])]))),
-
+                              child_ : 
                                 Shape(
                                   appearance_ : 
                                     Appearance(
@@ -609,7 +609,7 @@ var X3D0 =  X3D(
                                       crossSection_ : MFVec2f([SFVec2f([0.1,0]),SFVec2f([0.092,-0.038]),SFVec2f([0.071,-0.071]),SFVec2f([0.038,-0.092]),SFVec2f([0,-0.1]),SFVec2f([-0.038,-0.092]),SFVec2f([-0.071,-0.071]),SFVec2f([-0.092,-0.038]),SFVec2f([-0.1,0]),SFVec2f([-0.092,0.038]),SFVec2f([-0.071,0.071]),SFVec2f([-0.038,0.092]),SFVec2f([0,0.1]),SFVec2f([0.038,0.092]),SFVec2f([0.071,0.071]),SFVec2f([0.092,0.038]),SFVec2f([0.1,0])]),
                                       endCap_ : false,
                                       solid_ : false,
-                                      spine_ : MFVec3f([SFVec3f([-35.7,-0.8,2.5]),SFVec3f([-18.8,-0.8,2.55])])))])]),
+                                      spine_ : MFVec3f([SFVec3f([-35.7,-0.8,2.5]),SFVec3f([-18.8,-0.8,2.55])]))))]),
 
                         Transform(
                           DEF_ : SFString('sling'),
@@ -628,7 +628,7 @@ var X3D0 =  X3D(
                                       children_ : [
                                         Transform(
                                           scale_ : SFVec3f([SFDouble(0.3), SFDouble(0.3), SFDouble(0.3)]),
-                                          children_ : [
+                                          child_ : 
                                             Shape(
                                               DEF_ : SFString('halfsling'),
                                               appearance_ : 
@@ -641,53 +641,53 @@ var X3D0 =  X3D(
                                                 Extrusion(
                                                   crossSection_ : MFVec2f([SFVec2f([0,0]),SFVec2f([0,5]),SFVec2f([0.5,7]),SFVec2f([1,8]),SFVec2f([2,9]),SFVec2f([3,11]),SFVec2f([3.5,11.2]),SFVec2f([4,11]),SFVec2f([5,9]),SFVec2f([6,8]),SFVec2f([6.5,7]),SFVec2f([6.7,5]),SFVec2f([6.7,0]),SFVec2f([0,0])]),
                                                   spine_ : MFVec3f([SFVec3f([0,0,0]),SFVec3f([0.1,0,0])]))),
-
+                                          children_ : [
                                             Transform(
                                               scale_ : SFVec3f([SFDouble(0.3), SFDouble(0.3), SFDouble(0.3)]),
                                               translation_ : SFVec3f([SFDouble(0), SFDouble(-3.5), SFDouble(11.5)]),
-                                              children_ : [
+                                              child_ : 
                                                 Shape(
                                                   USE_ : SFString('Torus')),
-
+                                              children_ : [
                                                 Transform(
                                                   translation_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(2)]),
-                                                  children_ : [
+                                                  child_ : 
                                                     Shape(
                                                       appearance_ : 
                                                         Appearance(
                                                           USE_ : SFString('rope')),
                                                       geometry_ : 
                                                         Sphere(
-                                                          radius_ : 1.5))])])]),
+                                                          radius_ : 1.5)))])]),
 
                                         Transform(
                                           scale_ : SFVec3f([SFDouble(0.3), SFDouble(0.3), SFDouble(0.3)]),
                                           translation_ : SFVec3f([SFDouble(2), SFDouble(0), SFDouble(0)]),
-                                          children_ : [
+                                          child_ : 
                                             Shape(
                                               USE_ : SFString('halfsling')),
-
+                                          children_ : [
                                             Transform(
                                               scale_ : SFVec3f([SFDouble(0.3), SFDouble(0.3), SFDouble(0.3)]),
                                               translation_ : SFVec3f([SFDouble(0), SFDouble(-3.5), SFDouble(11.3)]),
-                                              children_ : [
+                                              child_ : 
                                                 Shape(
                                                   USE_ : SFString('Torus')),
-
+                                              children_ : [
                                                 Transform(
                                                   translation_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(2)]),
-                                                  children_ : [
+                                                  child_ : 
                                                     Shape(
                                                       appearance_ : 
                                                         Appearance(
                                                           USE_ : SFString('rope')),
                                                       geometry_ : 
                                                         Sphere(
-                                                          radius_ : 1.5))])])]),
+                                                          radius_ : 1.5)))])]),
 
                                         Transform(
                                           translation_ : SFVec3f([SFDouble(1), SFDouble(-1), SFDouble(0)]),
-                                          children_ : [
+                                          child_ : 
                                             Shape(
                                               geometry_ : 
                                                 Extrusion(
@@ -699,7 +699,7 @@ var X3D0 =  X3D(
                                                   spine_ : MFVec3f([SFVec3f([0,-1,0]),SFVec3f([0,1,0])])),
                                               appearance_ : 
                                                 Appearance(
-                                                  USE_ : SFString('clear')))])]),
+                                                  USE_ : SFString('clear'))))]),
 
                                     TouchSensor(
                                       DEF_ : SFString('LauncheeChoice'),
@@ -717,7 +717,7 @@ var X3D0 =  X3D(
                                           children_ : [
                                             Transform(
                                               translation_ : SFVec3f([SFDouble(0), SFDouble(0.7), SFDouble(0)]),
-                                              children_ : [
+                                              child_ : 
                                                 Shape(
                                                   geometry_ : 
                                                     Sphere(
@@ -728,7 +728,7 @@ var X3D0 =  X3D(
                                                       material_ : 
                                                         Material(
                                                           diffuseColor_ : SFColor([SFDouble(0), SFDouble(0), SFDouble(0)]),
-                                                          specularColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]))))])]),
+                                                          specularColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)])))))]),
 
                                         Group(
                                           children_ : [
@@ -750,7 +750,7 @@ var X3D0 =  X3D(
                 Transform(
                   rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(1.57)]),
                   translation_ : SFVec3f([SFDouble(0), SFDouble(18), SFDouble(2.5)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       geometry_ : 
                         Cylinder(
@@ -762,37 +762,37 @@ var X3D0 =  X3D(
                             Material(
                               diffuseColor_ : SFColor([SFDouble(0), SFDouble(0), SFDouble(0)]),
                               specularColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)])))),
-                  /*Top Pivot*/]),
+                  /*Top Pivot*/),
 
                 Transform(
                   DEF_ : SFString('verticalweight'),
                   children_ : [
                     Transform(
                       translation_ : SFVec3f([SFDouble(4), SFDouble(18), SFDouble(1.8)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           geometry_ : 
                             Box(
                               size_ : SFVec3f([SFDouble(1), SFDouble(10), SFDouble(0.5)])),
                           appearance_ : 
                             Appearance(
-                              USE_ : SFString('wood')))]),
+                              USE_ : SFString('wood')))),
 
                     Transform(
                       translation_ : SFVec3f([SFDouble(4), SFDouble(18), SFDouble(3.2)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           geometry_ : 
                             Box(
                               size_ : SFVec3f([SFDouble(1), SFDouble(10), SFDouble(0.5)])),
                           appearance_ : 
                             Appearance(
-                              USE_ : SFString('wood')))]),
+                              USE_ : SFString('wood')))),
 
                     Transform(
                       translation_ : SFVec3f([SFDouble(4), SFDouble(14), SFDouble(2.5)]),
                       /*CounterWeight*/
-                      children_ : [
+                      child_ : 
                         Shape(
                           geometry_ : 
                             Cylinder(
@@ -803,12 +803,12 @@ var X3D0 =  X3D(
                               material_ : 
                                 Material(
                                   diffuseColor_ : SFColor([SFDouble(0), SFDouble(0), SFDouble(0)]),
-                                  specularColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]))))]),
+                                  specularColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]))))),
 
                     Transform(
                       rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(1.57)]),
                       translation_ : SFVec3f([SFDouble(4), SFDouble(22), SFDouble(2.5)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           geometry_ : 
                             Cylinder(
@@ -819,7 +819,7 @@ var X3D0 =  X3D(
                               material_ : 
                                 Material(
                                   diffuseColor_ : SFColor([SFDouble(0), SFDouble(0), SFDouble(0)]),
-                                  specularColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]))))])]),
+                                  specularColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)])))))]),
 
                 Transform(
                   rotation_ : SFRotation([SFDouble(0), SFDouble(0), SFDouble(1), SFDouble(1.57)]),
@@ -829,14 +829,14 @@ var X3D0 =  X3D(
                     Transform(
                       DEF_ : SFString('screw'),
                       rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(1.57)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           USE_ : SFString('Torus')),
-
+                      children_ : [
                         Transform(
                           rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-1.57)]),
                           translation_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(7)]),
-                          children_ : [
+                          child_ : 
                             Shape(
                               geometry_ : 
                                 Cylinder(
@@ -846,7 +846,7 @@ var X3D0 =  X3D(
                                 Appearance(
                                   material_ : 
                                     Material(
-                                      specularColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]))))])]),
+                                      specularColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)])))))]),
 
                     Transform(
                       translation_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(7)]),
@@ -865,10 +865,10 @@ var X3D0 =  X3D(
 
                 Transform(
                   translation_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(5)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       USE_ : SFString('plank')),
-
+                  children_ : [
                     Transform(
                       USE_ : SFString('angledsupport')),
 
@@ -896,9 +896,9 @@ var X3D0 =  X3D(
                       children_ : [
                         Transform(
                           rotation_ : SFRotation([SFDouble(0), SFDouble(1), SFDouble(0), SFDouble(0.4)]),
-                          children_ : [
+                          child_ : 
                             Shape(
-                              USE_ : SFString('plank'))])]),
+                              USE_ : SFString('plank')))]),
 
                     Transform(
                       translation_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0.6)]),
@@ -908,7 +908,7 @@ var X3D0 =  X3D(
 
                 Transform(
                   translation_ : SFVec3f([SFDouble(10), SFDouble(-1), SFDouble(2.5)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       DEF_ : SFString('Axle'),
                       geometry_ : 
@@ -917,11 +917,11 @@ var X3D0 =  X3D(
                       appearance_ : 
                         Appearance(
                           USE_ : SFString('wood'))),
-
+                  children_ : [
                     Transform(
                       rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(1.57)]),
                       translation_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(4.5)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           DEF_ : SFString('wheel'),
                           geometry_ : 
@@ -930,7 +930,7 @@ var X3D0 =  X3D(
                           appearance_ : 
                             Appearance(
                               USE_ : SFString('wood'))),
-
+                      child_ : 
                         Shape(
                           DEF_ : SFString('tracks'),
                           geometry_ : 
@@ -939,10 +939,10 @@ var X3D0 =  X3D(
                           appearance_ : 
                             Appearance(
                               USE_ : SFString('black'))),
-
+                      children_ : [
                         Transform(
                           translation_ : SFVec3f([SFDouble(0), SFDouble(0.55), SFDouble(0)]),
-                          children_ : [
+                          child_ : 
                             Shape(
                               DEF_ : SFString('hub'),
                               geometry_ : 
@@ -950,61 +950,61 @@ var X3D0 =  X3D(
                                   radius_ : 1.5),
                               appearance_ : 
                                 Appearance(
-                                  USE_ : SFString('black')))])]),
+                                  USE_ : SFString('black'))))]),
 
                     Transform(
                       rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(1.57)]),
                       translation_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(-4.5)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           USE_ : SFString('wheel')),
-
+                      child_ : 
                         Shape(
                           USE_ : SFString('tracks')),
-
+                      children_ : [
                         Transform(
                           translation_ : SFVec3f([SFDouble(0), SFDouble(-0.55), SFDouble(0)]),
-                          children_ : [
+                          child_ : 
                             Shape(
-                              USE_ : SFString('hub'))])])]),
+                              USE_ : SFString('hub')))])]),
 
                 Transform(
                   translation_ : SFVec3f([SFDouble(-10), SFDouble(-1), SFDouble(2.5)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       USE_ : SFString('Axle')),
-
+                  children_ : [
                     Transform(
                       rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(1.57)]),
                       translation_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(4.5)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           USE_ : SFString('wheel')),
-
+                      child_ : 
                         Shape(
                           USE_ : SFString('tracks')),
-
+                      children_ : [
                         Transform(
                           translation_ : SFVec3f([SFDouble(0), SFDouble(0.55), SFDouble(0)]),
-                          children_ : [
+                          child_ : 
                             Shape(
-                              USE_ : SFString('hub'))])]),
+                              USE_ : SFString('hub')))]),
 
                     Transform(
                       rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(1.57)]),
                       translation_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(-4.5)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           USE_ : SFString('wheel')),
-
+                      child_ : 
                         Shape(
                           USE_ : SFString('tracks')),
-
+                      children_ : [
                         Transform(
                           translation_ : SFVec3f([SFDouble(0), SFDouble(-0.55), SFDouble(0)]),
-                          children_ : [
+                          child_ : 
                             Shape(
-                              USE_ : SFString('hub'))])]),
+                              USE_ : SFString('hub')))]),
 
                     Transform(
                       rotation_ : SFRotation([SFDouble(0), SFDouble(1), SFDouble(0), SFDouble(-0.6)]),
@@ -1029,7 +1029,7 @@ var X3D0 =  X3D(
 
                             Transform(
                               translation_ : SFVec3f([SFDouble(2.5), SFDouble(0), SFDouble(0)]),
-                              children_ : [
+                              child_ : 
                                 Shape(
                                   geometry_ : 
                                     Box(
@@ -1038,7 +1038,7 @@ var X3D0 =  X3D(
                                     Appearance(
                                       material_ : 
                                         Material(
-                                          transparency_ : 1)))])]),
+                                          transparency_ : 1))))]),
 
                         Transform(
                           scale_ : SFVec3f([SFDouble(0.5), SFDouble(0.5), SFDouble(0.5)]),
@@ -1052,7 +1052,7 @@ var X3D0 =  X3D(
 
                             Transform(
                               translation_ : SFVec3f([SFDouble(8), SFDouble(0), SFDouble(0)]),
-                              children_ : [
+                              child_ : 
                                 Shape(
                                   geometry_ : 
                                     Box(
@@ -1061,7 +1061,7 @@ var X3D0 =  X3D(
                                     Appearance(
                                       material_ : 
                                         Material(
-                                          transparency_ : 1)))])])]),
+                                          transparency_ : 1))))])]),
 
                     Transform(
                       DEF_ : SFString('ProjectileTransform'),

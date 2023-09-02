@@ -8,6 +8,8 @@ console.log("Problems loading fs. On browser?",e);
 var SFString = require('./x3d.mjs');
 var SFNode = require('./x3d.mjs');
 var head = require('./x3d.mjs');
+var component = require('./x3d.mjs');
+var SFInt32 = require('./x3d.mjs');
 var MFNode = require('./x3d.mjs');
 var meta = require('./x3d.mjs');
 var Scene = require('./x3d.mjs');
@@ -27,6 +29,38 @@ var X3D0 =  new X3D({
       version : new SFString("3.3"),
       head : new SFNode(
         new head({
+          component : new SFNode(
+            new component({
+              name : new SFString("Scripting"),
+              level : new SFInt32(1)})),
+          component : new SFNode(
+            new component({
+              name : new SFString("EnvironmentalEffects"),
+              level : new SFInt32(3)})),
+          component : new SFNode(
+            new component({
+              name : new SFString("Shaders"),
+              level : new SFInt32(1)})),
+          component : new SFNode(
+            new component({
+              name : new SFString("CubeMapTexturing"),
+              level : new SFInt32(1)})),
+          component : new SFNode(
+            new component({
+              name : new SFString("Texturing"),
+              level : new SFInt32(1)})),
+          component : new SFNode(
+            new component({
+              name : new SFString("Rendering"),
+              level : new SFInt32(1)})),
+          component : new SFNode(
+            new component({
+              name : new SFString("Grouping"),
+              level : new SFInt32(3)})),
+          component : new SFNode(
+            new component({
+              name : new SFString("Core"),
+              level : new SFInt32(1)})),
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
@@ -54,12 +88,12 @@ var X3D0 =  new X3D({
           /*Images courtesy of Paul Debevec's Light Probe Image Gallery*/
 
             new Background({
-              backUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"]),
-              bottomUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"]),
-              frontUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"]),
-              leftUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"]),
-              rightUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"]),
-              topUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])}),
+              backUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]),
+              bottomUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]),
+              frontUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]),
+              leftUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]),
+              rightUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]),
+              topUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])}),
 
             new Group({
               children : new MFNode([

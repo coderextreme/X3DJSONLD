@@ -76,7 +76,7 @@ var X3D0 =  new X3D({
             new Transform({
               DEF : new SFString("OrbitTransform"),
               translation : new SFVec3f([8,0,0]),
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
@@ -90,7 +90,7 @@ var X3D0 =  new X3D({
                       DEF : new SFString("Orbit"),
                       coord : new SFNode(
                         new Coordinate({
-                          DEF : new SFString("OrbitCoordinates")}))}))})])}),
+                          DEF : new SFString("OrbitCoordinates")}))}))}))}),
 
             new Script({
               DEF : new SFString("OrbitScript"),

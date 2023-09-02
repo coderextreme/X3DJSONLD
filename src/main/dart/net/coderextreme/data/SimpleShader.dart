@@ -106,7 +106,7 @@ var X3D0 =  X3D(
                   children_ : [
                     Transform(
                       DEF_ : SFString('TR'),
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
@@ -153,7 +153,7 @@ var X3D0 =  X3D(
                                       DEF_ : SFString('_1')))),
                           geometry_ : 
                             Sphere(
-                              radius_ : 1.75))])])),
+                              radius_ : 1.75)))])),
 
             WorldInfo(
               title_ : SFString('SimpleShader'),

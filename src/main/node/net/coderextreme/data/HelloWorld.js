@@ -56,5 +56,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .setFontStyle((new autoclass.FontStyle()).setJustify(java.newArray("java.lang.String", ["MIDDLE","MIDDLE"]))))
               .setAppearance((new autoclass.Appearance())
                 .setMaterial((new autoclass.Material()).setUSE("MaterialLightBlue")))))))      ;
-    X3D0.toFileX3D("../data/HelloWorld.new.x3d");
+    X3D0.toFileX3D("../data/HelloWorld.new.node.x3d");
     process.exit(0);

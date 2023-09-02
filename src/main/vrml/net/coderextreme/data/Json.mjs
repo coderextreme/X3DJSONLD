@@ -347,9 +347,9 @@ Text65.fontStyle = FontStyle69;
 
 Shape62.geometry = Text65;
 
-Transform61.children = new MFNode();
+Transform61.child = new undefined();
 
-Transform61.children[0] = Shape62;
+Transform61.child[0] = Shape62;
 
 let Collision70 = browser.currentScene.createNode("Collision");
 //test containerField='proxy'

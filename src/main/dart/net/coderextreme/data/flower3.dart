@@ -46,7 +46,7 @@ var X3D0 =  X3D(
             Transform(
               DEF_ : SFString('OrbitTransform'),
               translation_ : SFVec3f([SFDouble(8), SFDouble(0), SFDouble(0)]),
-              children_ : [
+              child_ : 
                 Shape(
                   appearance_ : 
                     Appearance(
@@ -60,7 +60,7 @@ var X3D0 =  X3D(
                       DEF_ : SFString('Orbit'),
                       coord_ : 
                         Coordinate(
-                          DEF_ : SFString('OrbitCoordinates'))))]),
+                          DEF_ : SFString('OrbitCoordinates'))))),
 
             Script(
               DEF_ : SFString('OrbitScript'),

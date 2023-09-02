@@ -21,7 +21,7 @@ var ProtoInstance2 = null;
         .addMeta((new autoclass.meta()).setName("creator").setContent("John W Carlson"))
         .addMeta((new autoclass.meta()).setName("created").setContent("December 13 2015"))
         .addMeta((new autoclass.meta()).setName("title").setContent("fors.x3d"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/force.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("beginnings of a force directed graph in 3D"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
       .setScene((new autoclass.Scene())
@@ -113,5 +113,5 @@ ProtoInstance2
             .addFieldValue((new autoclass.fieldValue()).setName("set_positionA").setValue("0 0 0"));
 ProtoInstance2
             .addFieldValue((new autoclass.fieldValue()).setName("set_positionB").setValue("50 50 50"));
-    X3D0.toFileX3D("../data/fors.new.x3d");
+    X3D0.toFileX3D("../data/fors.new.node.x3d");
     process.exit(0);
