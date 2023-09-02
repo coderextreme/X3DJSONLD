@@ -8,11 +8,19 @@ class ClassPrinter:
 
         addinhers = self.node.find_all("AdditionalInheritance")
         for addinher in addinhers:
-            self.parents.append(addinher['baseType'])
+            try:
+                if not addinher['basetype'].startsWith["X3D"] or addinher['basetype'].startswith["X3DConcrete"]:
+                    self.parents.append(addinher['baseType'])
+            except:
+                pass
 
         inhers = self.node.find_all("Inheritance")
         for inher in inhers:
-            self.parents.append(inher['baseType'])
+            try:
+                if not inher['basetype'].startsWith["X3D"] or inher['basetype'].startswith["X3DConcrete"]:
+                    self.parents.append(inher['baseType'])
+            except:
+                pass
 
         self.componentInfo = self.node.find("componentInfo")
         self.metaInfo = metaInfo
@@ -54,13 +62,13 @@ soup = BeautifulSoup(open("../../specifications/X3dUnifiedObjectModel-4.0.xml"),
 
 classes = {}
 
-ants = soup.find_all("AbstractNodeType")
-for ant in ants:
-    classes[ant['name']] = ClassPrinter(ant, "")
+#ants = soup.find_all("AbstractNodeType")
+#for ant in ants:
+#    classes[ant['name']] = ClassPrinter(ant, "")
 
-aots = soup.find_all("AbstractObjectType")
-for aot in aots:
-    classes[aot['name']] = ClassPrinter(aot, "")
+#aots = soup.find_all("AbstractObjectType")
+#for aot in aots:
+#    classes[aot['name']] = ClassPrinter(aot, "")
 
 cns = soup.find_all("ConcreteNode")
 for cn in cns:
@@ -77,6 +85,6 @@ for ft in fts:
 for k,v in classes.items():
     code += v.printClass()
 
-f = open("../nashorn/X3Dautoclass.js", "w")
+f = open("../nashorn/net/coderextreme/data/X3Dautoclass.js", "w")
 f.write(code)
 f.close()
