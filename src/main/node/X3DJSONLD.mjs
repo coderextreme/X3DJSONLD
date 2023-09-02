@@ -38,7 +38,7 @@ Browser : {
 	},
 	appendTo : function(element, jsobj) {
 		 if (element != null) {
-			 return this.ConvertToX3DOM(document, jsobj, "", element, 'foo.json');
+			 return this.ConvertToX3DOM(document, jsobj, "", element, 'foo.x3dj');
 		 }
 	},
 	getDocument : function() {

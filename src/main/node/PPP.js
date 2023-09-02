@@ -74,7 +74,7 @@ process.stdin.on('data', function(buf) { content += buf.toString(); });
 
 process.stdin.on('end', function() {
 	var json = JSON.parse(content);
-	ProcessJSON(json, "foo.json");
+	ProcessJSON(json, "foo.x3dj");
 });
 */
 process.argv.shift();

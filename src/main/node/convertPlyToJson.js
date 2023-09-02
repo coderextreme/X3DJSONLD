@@ -93,7 +93,7 @@ function convertPlyToJson(file) {
 		"meta": [
 		  {
 		    "@name":"title",
-		    "@content":"template.json"
+		    "@content":"template.x3dj"
 		  },
 		  {
 		    "@name":"description",
@@ -117,7 +117,7 @@ function convertPlyToJson(file) {
 		  },
 		  {
 		    "@name":"identifier",
-		    "@content":"https://coderextreme.net/X3DJSONLD/template.json"
+		    "@content":"https://coderextreme.net/X3DJSONLD/template.x3dj"
 		  },
 		  {
 		    "@name":"modified",
@@ -378,7 +378,7 @@ end_header
         "meta": [
           {
             "@name":"title",
-            "@content":"template.json"
+            "@content":"template.x3dj"
           },
           {
             "@name":"description",
