@@ -1,0 +1,90 @@
+{ "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "asteroids.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "generator",
+          "@content": "manual"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/asteroids.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "asteroids"
+        },
+        {
+          "@name": "converter",
+          "@content": "x3d-tidy V1.0.56, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "converted",
+          "@content": "Sat, 02 Sep 2023 10:24:29 GMT"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        { "ProtoDeclare":
+          {
+            "@name":"anyShape",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "MFNode",
+                  "@name": "myShape",
+                  "-children": [
+                    { "Shape":
+                      {
+                        "@DEF": "_1",
+                        "-geometry": { "Sphere":
+                          {
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                { "Transform":
+                  {
+                    "IS": {
+                      "connect": [
+                        {
+                          "@nodeField": "children",
+                          "@protoField": "myShape"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        { "ProtoInstance":
+          {
+            "@name": "anyShape"
+          }
+        }
+      ]
+    }
+  }
+}
