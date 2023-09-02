@@ -120,7 +120,7 @@
 </ProtoDeclare>
 <Anchor description="ArtDecoPrototypeExample" parameter="&quot;target=_blank&quot;" url="&quot;../data/ArtDecoExamples.json&quot; &quot;../data/ArtDecoExamples.x3d&quot; &quot;ArtDecoExamples.json&quot; &quot;ArtDecoExamples.x3d&quot;"><Shape><Appearance><Material diffuseColor="0.8 0.4 0"></Material>
 </Appearance>
-<Text containerField="geometry" string="&quot;ArtDecoExamples.x3d&quot; &quot;is a Materials Prototype declaration file.&quot; &quot;&quot; &quot;For an example scene using these node,&quot; &quot;click this text and view&quot; &quot;ArtDecoExamples.x3d&quot;"><FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="0.8"></FontStyle>
+<Text string="&quot;ArtDecoExamples.x3d&quot; &quot;is a Materials Prototype declaration file.&quot; &quot;&quot; &quot;For an example scene using these node,&quot; &quot;click this text and view&quot; &quot;ArtDecoExamples.x3d&quot;"><FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="0.8"></FontStyle>
 </Text>
 </Shape>
 </Anchor>

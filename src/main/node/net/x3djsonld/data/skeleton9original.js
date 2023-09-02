@@ -20,11 +20,11 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d">JohnBoy.x3d</a> </td>
+			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/skeleton9original.x3d">skeleton9original.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d</a> </td>
+			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/skeleton9original.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/HumanoidAnimation/skeleton9original.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -78,8 +78,8 @@ skeleton9original.prototype = {
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
-    .addMeta((new autoclass.meta()).setName("title").setContent("JohnBoy.x3d"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"))
+    .addMeta((new autoclass.meta()).setName("title").setContent("skeleton9original.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/skeleton9original.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("An attempt at a standard LOA-4 skeleton"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("h2.pl"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))

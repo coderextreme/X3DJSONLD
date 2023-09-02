@@ -36,7 +36,7 @@ head1->addMeta(*meta5);
 
 Cmeta* meta6 = new Cmeta();
 meta6->setName("identifier");
-meta6->setContent("https://coderextreme.net/X3DJSONLD/geo.x3d");
+meta6->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d");
 head1->addMeta(*meta6);
 
 Cmeta* meta7 = new Cmeta();
@@ -68,17 +68,17 @@ Viewpoint12->setDescription("Bubbles in action");
 group->addChildren(*Viewpoint12);
 
 CBackground* Background13 = (CBackground *)(m_pScene.createNode("Background"));
-Background13->setBackUrl(new CString[2]{"../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"}, 2);
-Background13->setBottomUrl(new CString[2]{"../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"}, 2);
-Background13->setFrontUrl(new CString[2]{"../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"}, 2);
-Background13->setLeftUrl(new CString[2]{"../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"}, 2);
-Background13->setRightUrl(new CString[2]{"../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"}, 2);
-Background13->setTopUrl(new CString[2]{"../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"}, 2);
+Background13->setBackUrl(new CString[2]{"../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"}, 2);
+Background13->setBottomUrl(new CString[2]{"../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"}, 2);
+Background13->setFrontUrl(new CString[2]{"../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"}, 2);
+Background13->setLeftUrl(new CString[2]{"../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"}, 2);
+Background13->setRightUrl(new CString[2]{"../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"}, 2);
+Background13->setTopUrl(new CString[2]{"../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"}, 2);
 group->addChildren(*Background13);
 
 CProtoDeclare ProtoDeclare14 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="Bubble" ><ProtoBody><Transform DEF="body_trans"><Shape><Sphere containerField="geometry" radius="0.25"></Sphere>
+<ProtoDeclare name="Bubble" ><ProtoBody><Transform DEF="body_trans"><Shape><Sphere radius="0.25"></Sphere>
 <Appearance><Material diffuseColor="1 0 0" transparency="0.2"></Material>
 </Appearance>
 </Shape>
@@ -162,7 +162,7 @@ Appearance19->setMaterial(*Material20);
 
 Shape17->setAppearance(*Appearance19);
 
-Transform16->addChildren(*Shape17);
+Transform16->addChild(*Shape17);
 
 CScript* Script21 = (CScript *)(m_pScene.createNode("Script"));
 Script21->setDEF("bounce");

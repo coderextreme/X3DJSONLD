@@ -47,6 +47,7 @@ public class app {
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
+        .addMeta(new meta().setName("title").setContent("app.x3d"))
         .addMeta(new meta().setName("creator").setContent("Carlson, I"))
         .addMeta(new meta().setName("creator").setContent("Carlson, II"))
         .addMeta(new meta().setName("creator").setContent("Carlson, III")))

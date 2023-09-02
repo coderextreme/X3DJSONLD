@@ -4,12 +4,12 @@
 <meta name="title" content="sphere.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="generator" content="manual"></meta>
-<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/sphere.x3d"></meta>
+<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/sphere.x3d"></meta>
 <meta name="description" content="a sphere"></meta>
 </head>
 <Scene><Group><Shape><Appearance><Material diffuseColor="1 1 1"></Material>
 </Appearance>
-<Sphere containerField="geometry"></Sphere>
+<Sphere></Sphere>
 </Shape>
 </Group>
 </Scene>

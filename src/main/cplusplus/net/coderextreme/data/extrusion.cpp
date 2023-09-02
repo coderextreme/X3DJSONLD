@@ -31,7 +31,7 @@ head1->addMeta(*meta4);
 
 Cmeta* meta5 = new Cmeta();
 meta5->setName("identifier");
-meta5->setContent("https://coderextreme.net/X3DJSONLD/force.x3d");
+meta5->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d");
 head1->addMeta(*meta5);
 
 Cmeta* meta6 = new Cmeta();

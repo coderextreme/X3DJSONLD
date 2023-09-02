@@ -2,15 +2,18 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Interchange", version="3.3", 
-head=head(children=[component(name="Scripting", level=1),
+head=head(
+children=[
+component(name="Scripting", level=1),
 meta(name="title", content="sphere.x3d"),
 meta(name="creator", content="John Carlson"),
 meta(name="generator", content="manual"),
-meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/sphere.x3d"),
+meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/sphere.x3d"),
 meta(name="description", content="a sphere"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -22,5 +25,6 @@ Appearance(
 material=
 Material(diffuseColor=((1,1,1)))), 
 geometry=
-Sphere())])]))
-.XML())
+Sphere())])])))
+output = model.JSON()
+json.loads(output)

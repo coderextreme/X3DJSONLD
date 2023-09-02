@@ -20,7 +20,7 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/rubikFurnace.x3d">rubikFurnace.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/rubikFurnace.x3d">rubikFurnace.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -32,7 +32,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/rubikFurnace.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/rubikFurnace.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/rubikFurnace.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/rubikFurnace.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -72,7 +72,7 @@ rubikFurnace.prototype = {
     .addMeta((new autoclass.meta()).setName("title").setContent("rubikFurnace.x3d"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/rubikFurnace.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/rubikFurnace.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("a green rubik cube")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.NavigationInfo()).setType("\"EXAMINE\""))

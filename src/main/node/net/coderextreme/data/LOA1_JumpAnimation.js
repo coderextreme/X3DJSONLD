@@ -153,5 +153,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .setFontStyle((new autoclass.FontStyle()).setJustify(java.newArray("java.lang.String", ["MIDDLE","MIDDLE"])).setSize(java.newFloat(0.8))))
             .setAppearance((new autoclass.Appearance())
               .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(0.2)])))))))      ;
-    X3D0.toFileX3D("../data/LOA1_JumpAnimation.new.x3d");
+    X3D0.toFileX3D("../data/LOA1_JumpAnimation.new.node.x3d");
     process.exit(0);

@@ -44,7 +44,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 26 December 2022 </td>
+			<td> 2 July 2023 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -120,7 +120,7 @@ DesignPatternsApparelMedicalSkinLayers.prototype = {
     .addMeta((new autoclass.meta()).setName("creator").setContent("Joe D. Williams"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("Dick Puk"))
     .addMeta((new autoclass.meta()).setName("created").setContent("23 December 2022"))
-    .addMeta((new autoclass.meta()).setName("modified").setContent("26 December 2022"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("2 July 2023"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("DesignPatternsApparelVariations.txt"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("HAnim2 Part 1, HAnim architecture, 4.3 Humanoid object https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#HumanoidObject"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("HAnim2 Part 1, HAnim architecture, E.4 Multiple humanoids per file https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile"))
@@ -133,7 +133,7 @@ DesignPatternsApparelMedicalSkinLayers.prototype = {
     .addChild((new autoclass.WorldInfo()).setTitle("HAnimHumanoid skin design patterns for apparel, medical"))
     .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.0,0.6,0.6]))))
     .addChild((new autoclass.Group("MultipleHumanoids"))
-      .setMetadata((new autoclass.MetadataString()).setName("HAnimArchitecture").setReference(this.MetadataString_HAnimArchitecture_4_19_reference).setValue(new autoclass.MFString("\"E.4 Multiple humanoids per file\"")))
+      .setValue((new autoclass.MetadataString()).setName("HAnimArchitecture").setReference(this.MetadataString_HAnimArchitecture_4_19_reference).setValue(new autoclass.MFString("\"E.4 Multiple humanoids per file\"")))
       .addComments(" ============================== ")
       .addChild((new autoclass.HAnimHumanoid("a_SimpleSkeleton")).setName("SimpleSkeleton").setVersion("2.0")
         .addSkeleton((new autoclass.HAnimJoint()).setName("humanoid_root").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
@@ -163,11 +163,10 @@ DesignPatternsApparelMedicalSkinLayers.prototype = {
       .addChild((new autoclass.HAnimHumanoid("e_SkinSwitchShapeIndexedGeometry")).setName("SkinSwitchShapeIndexedGeometry").setVersion("2.0")
         .addSkeleton((new autoclass.HAnimJoint()).setName("humanoid_root").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
           .addChild((new autoclass.HAnimSegment()).setName("sacrum")))
-        .addComments(" TODO proposed for X3D4 <Switch DEF='AlternativeSkins' containerField='skin'> ")
-        .addChild((new autoclass.Shape())
+        .addComments(" TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'> ")
+        .addSkin((new autoclass.Shape())
           .setGeometry((new autoclass.IndexedFaceSet("IndexedSkinMeshIFS")).setDEF("IndexedSkinMeshIFS")
-            .setCoord((new autoclass.Coordinate("SkinMeshCoordinate")))))
-        .addComments(" TODO proposed for X3D4 </Switch> "))
+            .setCoord((new autoclass.Coordinate("SkinMeshCoordinate"))))))
       .addComments(" similarly for LOD ")
       .addComments(" ============================== ")
       .addChild((new autoclass.HAnimHumanoid("f_SynthesizedSkinShapeIndexedTwoPartGeometry")).setName("SynthesizedSkinShapeIndexedTwoPartGeometry").setVersion("2.0")
@@ -188,9 +187,7 @@ DesignPatternsApparelMedicalSkinLayers.prototype = {
         .addSkeleton((new autoclass.HAnimJoint()).setName("humanoid_root").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
           .addChild((new autoclass.HAnimSegment()).setName("sacrum")))
         .addComments(" allow multiple Shape nodes with containerField='skin', one for each layer of skin ")
-        .addSkin((new autoclass.Shape()))
-        .addComments(" TODO proposed for X3D4.1 <Shape containerField='skin'/> ")
-        .addComments(" TODO proposed for X3D4.1 <Shape containerField='skin'/> "))
+        .addSkin((new autoclass.Shape())))
       .addComments(" ============================== "))
     .addChild((new autoclass.Viewpoint("ViewHelpText")).setDescription("Select text to see website").setPosition(0.0,0.0,12.0))
     .addComments(" Selectable Text design pattern has transparent Box and TouchSensor description as a tooltip ")

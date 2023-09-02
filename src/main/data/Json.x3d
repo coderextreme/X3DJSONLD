@@ -50,7 +50,7 @@
     <WorldInfo DEF='WorldInfoDEF' title='HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)'/>
     <WorldInfo USE='WorldInfoDEF'/>
     <WorldInfo USE='WorldInfoDEF'/>
-    <MetadataString DEF='scene.addChildMetadata' name='test' value='"Top-level root Metadata node beneath Scene needs to be one of &apos;-children&apos; in JSON encoding"'/>
+    <MetadataString containerField="metadata" DEF='scene.addChildMetadata' name='test' value='"Top-level root Metadata node beneath Scene needs to be one of &apos;-children&apos; in JSON encoding"'/>
     <LayerSet DEF='scene.addChildLayerSetTest' order='0'/>
     <Transform DEF='LogoGeometryTransform' translation='0 1.5 0'>
       <Anchor description='select for X3D Java SAI Library (X3DJSAIL) description' url='"../X3DJSAIL.html" "https://www.web3d.org/specifications/java/X3DJSAIL.html"'>
@@ -248,7 +248,7 @@ function clockTrigger (timeValue)
     <!-- Test success: declarative statement createDeclarativeShapeTests() -->
     <Group DEF='DeclarativeGroupExample'>
       <Shape>
-        <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='"test case"'/>
+        <MetadataString containerField="metadata" DEF='FindableMetadataStringTest' name='findThisNameValue' value='"test case"'/>
         <Appearance DEF='DeclarativeAppearanceExample'>
           <!-- DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance -->
           <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/>

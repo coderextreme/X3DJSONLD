@@ -26,7 +26,7 @@ import org.web3d.x3d.jsail.Time.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/mirror.x3d">mirror.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/mirror.x3d">mirror.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -38,7 +38,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/mirror.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/mirror.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/mirror.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/mirror.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -54,7 +54,9 @@ import org.web3d.x3d.jsail.Time.*;
 		<a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
 		It has been produced using the 
 		<a href="https://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
-		stylesheet to create Java source code from an <code>.x3d</code> model.
+		stylesheet
+	       (<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">version&amp;nbsp;control</a>)
+                is used to create Java source code from an original <code>.x3d</code> model.
 	</p>
 
 	* @author John Carlson
@@ -86,17 +88,17 @@ public class mirror
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("mirror.x3d"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John Carlson"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("manual"))
-    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/mirror.x3d"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/src/main/data/mirror.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("sphere with alternating backgrounds")))
   .setScene(new Scene()
     .addChild(new Viewpoint().setDescription("Switch background and images texture").setPosition(0.0,5.0,100.0))
     .addChild(new TextureBackground()
-      .setLeft(new ImageTexture("leftBackgroundTexture").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"}))
-      .setRight(new ImageTexture("rightBackgroundTexture").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"}))
-      .setFront(new ImageTexture("frontBackgroundTexture").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"}))
-      .setBack(new ImageTexture("backBackgroundTexture").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"}))
-      .setTop(new ImageTexture("topBackgroundTexture").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"}))
-      .setBottom(new ImageTexture("bottomBackgroundTexture").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"})))
+      .setLeftTexture(new ImageTexture("leftBackgroundTexture").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"}))
+      .setRightTexture(new ImageTexture("rightBackgroundTexture").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"}))
+      .setFrontTexture(new ImageTexture("frontBackgroundTexture").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"}))
+      .setBackTexture(new ImageTexture("backBackgroundTexture").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"}))
+      .setTopTexture(new ImageTexture("topBackgroundTexture").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"}))
+      .setBottomTexture(new ImageTexture("bottomBackgroundTexture").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"})))
     .addChild(new Transform()
       .addChild(new Shape()
         .setAppearance(new Appearance()
@@ -249,10 +251,10 @@ ecmascript:
         if (validate)
         {
                 System.out.print("Java program \"net.x3djsonld.data.mirror\" self-validation test results: ");
-                String validationResults = thisExampleX3dModel.validationReport();
-                if (validationResults.startsWith("\n") || (validationResults.length() > 10))
+		String validationResults = thisExampleX3dModel.validationReport();
+                if (validationResults.length() > 10)
                     System.out.println();
-                System.out.println(validationResults.trim());
+                System.out.println(validationResults);
         }
     }
 }

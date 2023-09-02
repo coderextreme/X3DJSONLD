@@ -156,7 +156,7 @@ IndexedFaceSet30->setCoord(*Coordinate31);
 
 Shape26->setGeometry(IndexedFaceSet30);
 
-Transform25->addChildren(*Shape26);
+Transform25->addChild(*Shape26);
 
 HAnimSegment24->addChildren(*Transform25);
 
@@ -197,7 +197,7 @@ IndexedFaceSet39->setCoord(*Coordinate40);
 
 Shape35->setGeometry(IndexedFaceSet39);
 
-Transform34->addChildren(*Shape35);
+Transform34->addChild(*Shape35);
 
 HAnimSegment33->addChildren(*Transform34);
 
@@ -238,7 +238,7 @@ IndexedFaceSet48->setCoord(*Coordinate49);
 
 Shape44->setGeometry(IndexedFaceSet48);
 
-Transform43->addChildren(*Shape44);
+Transform43->addChild(*Shape44);
 
 HAnimSegment42->addChildren(*Transform43);
 
@@ -276,7 +276,7 @@ IndexedFaceSet56->setCoord(*Coordinate57);
 
 Shape53->setGeometry(IndexedFaceSet56);
 
-Transform52->addChildren(*Shape53);
+Transform52->addChild(*Shape53);
 
 HAnimSegment51->addChildren(*Transform52);
 
@@ -323,7 +323,7 @@ IndexedFaceSet65->setCoord(*Coordinate66);
 
 Shape61->setGeometry(IndexedFaceSet65);
 
-Transform60->addChildren(*Shape61);
+Transform60->addChild(*Shape61);
 
 HAnimSegment59->addChildren(*Transform60);
 
@@ -364,7 +364,7 @@ IndexedFaceSet74->setCoord(*Coordinate75);
 
 Shape70->setGeometry(IndexedFaceSet74);
 
-Transform69->addChildren(*Shape70);
+Transform69->addChild(*Shape70);
 
 HAnimSegment68->addChildren(*Transform69);
 
@@ -401,7 +401,7 @@ IndexedFaceSet82->setCoord(*Coordinate83);
 
 Shape79->setGeometry(IndexedFaceSet82);
 
-Transform78->addChildren(*Shape79);
+Transform78->addChild(*Shape79);
 
 HAnimSegment77->addChildren(*Transform78);
 
@@ -452,7 +452,7 @@ IndexedFaceSet91->setCoord(*Coordinate92);
 
 Shape87->setGeometry(IndexedFaceSet91);
 
-Transform86->addChildren(*Shape87);
+Transform86->addChild(*Shape87);
 
 HAnimSegment85->addChildren(*Transform86);
 
@@ -495,7 +495,7 @@ IndexedFaceSet100->setCoord(*Coordinate101);
 
 Shape96->setGeometry(IndexedFaceSet100);
 
-Transform95->addChildren(*Shape96);
+Transform95->addChild(*Shape96);
 
 HAnimSegment94->addChildren(*Transform95);
 
@@ -536,7 +536,7 @@ IndexedFaceSet109->setCoord(*Coordinate110);
 
 Shape105->setGeometry(IndexedFaceSet109);
 
-Transform104->addChildren(*Shape105);
+Transform104->addChild(*Shape105);
 
 HAnimSegment103->addChildren(*Transform104);
 
@@ -573,7 +573,7 @@ IndexedFaceSet117->setCoord(*Coordinate118);
 
 Shape114->setGeometry(IndexedFaceSet117);
 
-Transform113->addChildren(*Shape114);
+Transform113->addChild(*Shape114);
 
 HAnimSegment112->addChildren(*Transform113);
 
@@ -620,7 +620,7 @@ IndexedFaceSet126->setCoord(*Coordinate127);
 
 Shape122->setGeometry(IndexedFaceSet126);
 
-Transform121->addChildren(*Shape122);
+Transform121->addChild(*Shape122);
 
 HAnimSegment120->addChildren(*Transform121);
 
@@ -661,7 +661,7 @@ IndexedFaceSet135->setCoord(*Coordinate136);
 
 Shape131->setGeometry(IndexedFaceSet135);
 
-Transform130->addChildren(*Shape131);
+Transform130->addChild(*Shape131);
 
 HAnimSegment129->addChildren(*Transform130);
 
@@ -698,7 +698,7 @@ IndexedFaceSet143->setCoord(*Coordinate144);
 
 Shape140->setGeometry(IndexedFaceSet143);
 
-Transform139->addChildren(*Shape140);
+Transform139->addChild(*Shape140);
 
 HAnimSegment138->addChildren(*Transform139);
 
@@ -746,7 +746,7 @@ IndexedFaceSet152->setCoord(*Coordinate153);
 
 Shape148->setGeometry(IndexedFaceSet152);
 
-Transform147->addChildren(*Shape148);
+Transform147->addChild(*Shape148);
 
 HAnimSegment146->addChildren(*Transform147);
 
@@ -791,7 +791,7 @@ IndexedFaceSet161->setTexCoord(*TextureCoordinate163);
 
 Shape157->setGeometry(IndexedFaceSet161);
 
-Transform156->addChildren(*Shape157);
+Transform156->addChild(*Shape157);
 
 HAnimSegment155->addChildren(*Transform156);
 
@@ -1023,7 +1023,7 @@ Appearance214->setMaterial(*Material215);
 
 Shape211->setAppearance(*Appearance214);
 
-Transform209->addChildren(*Shape211);
+Transform209->addChild(*Shape211);
 
 CTransform* Transform216 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform216->setScale(new float[3]{84.89,77.52,77.52});
@@ -1048,7 +1048,7 @@ Appearance220->setMaterial(*Material221);
 
 Shape217->setAppearance(*Appearance220);
 
-Transform216->addChildren(*Shape217);
+Transform216->addChild(*Shape217);
 
 Transform209->addChildren(*Transform216);
 
@@ -1078,7 +1078,7 @@ Appearance227->setMaterial(*Material228);
 
 Shape224->setAppearance(*Appearance227);
 
-Transform222->addChildren(*Shape224);
+Transform222->addChild(*Shape224);
 
 CTransform* Transform229 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform229->setScale(new float[3]{81.3,81.3,81.31});
@@ -1100,7 +1100,7 @@ Appearance233->setMaterial(*Material234);
 
 Shape230->setAppearance(*Appearance233);
 
-Transform229->addChildren(*Shape230);
+Transform229->addChild(*Shape230);
 
 Transform222->addChildren(*Transform229);
 
@@ -1130,7 +1130,7 @@ Appearance240->setMaterial(*Material241);
 
 Shape237->setAppearance(*Appearance240);
 
-Transform235->addChildren(*Shape237);
+Transform235->addChild(*Shape237);
 
 CTransform* Transform242 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform242->setScale(new float[3]{82.47,82.47,82.48});
@@ -1152,7 +1152,7 @@ Appearance246->setMaterial(*Material247);
 
 Shape243->setAppearance(*Appearance246);
 
-Transform242->addChildren(*Shape243);
+Transform242->addChild(*Shape243);
 
 Transform235->addChildren(*Transform242);
 
@@ -1182,7 +1182,7 @@ Appearance253->setMaterial(*Material254);
 
 Shape250->setAppearance(*Appearance253);
 
-Transform248->addChildren(*Shape250);
+Transform248->addChild(*Shape250);
 
 CTransform* Transform255 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform255->setScale(new float[3]{83.79,83.79,83.79});
@@ -1204,7 +1204,7 @@ Appearance259->setMaterial(*Material260);
 
 Shape256->setAppearance(*Appearance259);
 
-Transform255->addChildren(*Shape256);
+Transform255->addChild(*Shape256);
 
 Transform248->addChildren(*Transform255);
 
@@ -1230,7 +1230,7 @@ Appearance264->setMaterial(*Material265);
 
 Shape262->setAppearance(*Appearance264);
 
-Transform261->addChildren(*Shape262);
+Transform261->addChild(*Shape262);
 
 Group203->addChildren(*Transform261);
 

@@ -52,7 +52,7 @@ ProtoInstance ProtoInstance0 = null;
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("description").setContent("Tour around a prismatic sphere"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/bubble.x3d")))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/bubble.x3d")))
       .setScene(new Scene()
         .addChild(new NavigationInfo().setType("\"EXAMINE\""))
         .addChild(new Viewpoint().setPosition(new float[] {0f,0f,4f}).setOrientation(new float[] {1f,0f,0f,0f}).setDescription("Bubble in action"))

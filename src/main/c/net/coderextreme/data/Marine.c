@@ -124,9 +124,9 @@ IndexedFaceSet26.texCoord = TextureCoordinate28;
 
 Shape22.geometry = IndexedFaceSet26;
 
-Transform21.children = new MFNode();
+Transform21.child = new undefined();
 
-Transform21.children[0] = Shape22;
+Transform21.child[0] = Shape22;
 
 Group20.children = new MFNode();
 
@@ -168,9 +168,9 @@ IndexedFaceSet34.texCoord = TextureCoordinate36;
 
 Shape30.geometry = IndexedFaceSet34;
 
-Transform29.children = new MFNode();
+Transform29.child = new undefined();
 
-Transform29.children[0] = Shape30;
+Transform29.child[0] = Shape30;
 
 Group20.children[1] = Transform29;
 
@@ -210,9 +210,9 @@ IndexedFaceSet42.texCoord = TextureCoordinate44;
 
 Shape38.geometry = IndexedFaceSet42;
 
-Transform37.children = new MFNode();
+Transform37.child = new undefined();
 
-Transform37.children[0] = Shape38;
+Transform37.child[0] = Shape38;
 
 Group20.children[2] = Transform37;
 

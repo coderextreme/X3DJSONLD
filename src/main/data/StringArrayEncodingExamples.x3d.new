@@ -18,7 +18,7 @@
 </head>
 <Scene><Viewpoint DEF="EntryView" description="Hello MFString syntax"></Viewpoint>
 <Background skyColor="0.6 1 0.8"></Background>
-<Shape><Text containerField="geometry" string="&quot;One, Two, Three&quot; &quot;&quot; &quot;He said, \&quot;Immel did it!\&quot;&quot;"><!--alternative XML encoding: Text string='"One, Two, Three" "" "He said, \&quot;Immel did it!\&quot;"'--><!--alternative Java source: .setString(new String [] {"One, Two, Three", "", "He said, \""Immel did it!\"""})--><FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" style="BOLD"></FontStyle>
+<Shape><Text string="&quot;One, Two, Three&quot; &quot;&quot; &quot;He said, \&quot;Immel did it!\&quot;&quot;"><!--alternative XML encoding: Text string='"One, Two, Three" "" "He said, \&quot;Immel did it!\&quot;"'--><!--alternative Java source: .setString(new String [] {"One, Two, Three", "", "He said, \""Immel did it!\"""})--><FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" style="BOLD"></FontStyle>
 </Text>
 <Appearance><Material diffuseColor="0.6 0.4 0.2"></Material>
 </Appearance>

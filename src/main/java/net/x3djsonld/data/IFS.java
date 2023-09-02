@@ -11,17 +11,17 @@ import org.web3d.x3d.jsail.Shape.*;
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
  * <p> An attempt at a standard LOA-4 skeleton. </p>
- <p> Related links: JohnIFS.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: IFS.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.JohnIFS&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.IFS&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="JohnIFS.x3d">JohnIFS.x3d</a> </td>
+			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/IFS.x3d">IFS.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
@@ -49,7 +49,7 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="../license.html">../license.html</a> </td>
+			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/../license.html">../license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -61,16 +61,18 @@ import org.web3d.x3d.jsail.Shape.*;
 		<a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
 		It has been produced using the 
 		<a href="https://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
-		stylesheet to create Java source code from an <code>.x3d</code> model.
+		stylesheet
+	       (<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">version&amp;nbsp;control</a>)
+                is used to create Java source code from an original <code>.x3d</code> model.
 	</p>
 
 	* @author John Carlson
  */
 
-public class JohnIFS
+public class IFS
 {
 	/** Default constructor to create this object. */
-	public JohnIFS ()
+	public IFS ()
 	{
 	  initialize();
 	}
@@ -82,7 +84,7 @@ public class JohnIFS
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
     .addComponent(new component().setName("HAnim").setLevel(1))
-    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("JohnIFS.x3d"))
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("IFS.x3d"))
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/IFS.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("An attempt at a standard LOA-4 skeleton"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("h2.pl"))
@@ -120,7 +122,7 @@ public class JohnIFS
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return JohnIFS model
+	 * @return IFS model
 	 */
 	public X3D getX3dModel()
 	{	  
@@ -138,7 +140,7 @@ public class JohnIFS
      */
     public static void main(String args[])
     {
-        X3D thisExampleX3dModel = new JohnIFS().getX3dModel();
+        X3D thisExampleX3dModel = new IFS().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
         // next handle command line arguments
@@ -171,17 +173,17 @@ public class JohnIFS
                 }
         }
         if      (argumentsLoadNewModel)
-                System.out.println("WARNING: \"net.x3djsonld.data.JohnIFS\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+                System.out.println("WARNING: \"net.x3djsonld.data.IFS\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
         else if (hasArguments) // if no arguments provided, this method produces usage warning
                 thisExampleX3dModel.handleArguments(args);
 	
         if (validate)
         {
-                System.out.print("Java program \"net.x3djsonld.data.JohnIFS\" self-validation test results: ");
-                String validationResults = thisExampleX3dModel.validationReport();
-                if (validationResults.startsWith("\n") || (validationResults.length() > 10))
+                System.out.print("Java program \"net.x3djsonld.data.IFS\" self-validation test results: ");
+		String validationResults = thisExampleX3dModel.validationReport();
+                if (validationResults.length() > 10)
                     System.out.println();
-                System.out.println(validationResults.trim());
+                System.out.println(validationResults);
         }
     }
 }

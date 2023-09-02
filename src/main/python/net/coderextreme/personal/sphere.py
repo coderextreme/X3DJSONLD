@@ -1,52 +1,29 @@
-from x3dpsail import *
-X3D0 = X3D()
-X3D0.setProfile("Interchange")
-X3D0.setVersion("4.0")
-head1 = head()
-meta2 = meta()
-meta2.setName("title")
-meta2.setContent("sphere.x3d")
-
-head1.addMeta(meta2)
-meta3 = meta()
-meta3.setName("creator")
-meta3.setContent("John Carlson")
-
-head1.addMeta(meta3)
-meta4 = meta()
-meta4.setName("generator")
-meta4.setContent("manual")
-
-head1.addMeta(meta4)
-meta5 = meta()
-meta5.setName("identifier")
-meta5.setContent("https://coderextreme.net/X3DJSONLD/sphere.x3d")
-
-head1.addMeta(meta5)
-meta6 = meta()
-meta6.setName("description")
-meta6.setContent("a sphere")
-
-head1.addMeta(meta6)
-
-X3D0.setHead(head1)
-Scene7 = Scene()
-Group8 = Group()
-Shape9 = Shape()
-Appearance10 = Appearance()
-Material11 = Material()
-Material11.setDiffuseColor([1,1,1])
-
-Appearance10.setMaterial(Material11)
-
-Shape9.setAppearance(Appearance10)
-Sphere12 = Sphere()
-
-Shape9.setGeometry(Sphere12)
-
-Group8.addChildren(Shape9)
-
-Scene7.addChildren(Group8)
-
-X3D0.setScene(Scene7)
-X3D0.toFileX3D("../personal/sphere_RoundTrip.x3d")
+# x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
+print("<!--")
+from x3d import *
+print("-->")
+import json
+model = (
+X3D(profile="Interchange", version="3.3", 
+head=head(
+component(name="Scripting", level=1),
+meta(name="title", content="sphere.x3d"),
+meta(name="creator", content="John Carlson"),
+meta(name="generator", content="manual"),
+meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/sphere.x3d"),
+meta(name="description", content="a sphere"),
+meta(name="translated", content="26 August 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
+Scene=Scene(children=[
+Group(children=[
+Shape(
+appearance=
+Appearance(
+material=
+Material(diffuseColor=((1,1,1)))), 
+geometry=
+Sphere())])])))
+output = model.JSON()
+json.loads(output)

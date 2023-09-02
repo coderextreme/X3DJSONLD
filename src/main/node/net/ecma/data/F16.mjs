@@ -116,7 +116,7 @@ var X3D0 =  new X3D({
                 new Transform({
                   DEF : new SFString("MainFrameTransform"),
                   scale : new SFVec3f([3,3,3]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       DEF : new SFString("Nose"),
                       appearance : new SFNode(
@@ -137,8 +137,8 @@ var X3D0 =  new X3D({
                           normal : new SFNode(
                             new Normal({
                               DEF : new SFString("normalVector"),
-                              vector : new MFVec3f([-0.68,0.714,-0.166,-0.689,0.721,-0.072,0,0.965,-0.26,0,0.985,-0.175,-0.99,-0.016,-0.138,-0.999,-0.022,-0.037,0.567,-0.819,-0.093,0.561,-0.828,0,0,-1,0,0,-0.997,-0.071,-0.567,-0.819,-0.093,-0.561,-0.828,0,0.99,-0.016,-0.138,0.999,-0.022,-0.037,0.68,0.714,-0.166,0.689,0.721,-0.072,-0.351,0.889,-0.294,-0.868,-0.459,-0.19,-0.13,-0.982,-0.14,0.13,-0.982,-0.14,0.868,-0.459,-0.19,0.872,0.431,-0.231,-0.834,0.445,-0.327,0,0.929,-0.369,-0.88,0.401,-0.256,-0.799,0.577,0.169,-0.58,0.798,0.164,0,0.998,0.065,-0.862,0.486,0.146,0.886,0.219,0.408,0.799,0.577,0.169,0.834,0.445,-0.327,0.88,0.401,-0.256,0,0.995,-0.096,0.842,0.534,-0.08,0.862,0.486,0.146,0.833,0.549,-0.073,-0.833,0.549,-0.073,-0.842,0.534,-0.08,-0.485,0.87,-0.089,-0.37,0.929,0,0,1,0,0,1,-0.01,-0.592,0.796,-0.125,-0.573,0.818,0.05,-0.37,0.929,-0.01,0,1,-0.025,-0.487,0.873,0.036,-0.923,0.381,0.05,-0.683,0.704,0.195,0,0.99,0.14,-0.707,0.707,0,-0.385,0.912,0.141,0,0.966,0.259,-0.563,0.826,-0.037,-0.661,0.738,-0.138,-0.521,0.846,-0.115,0,-0.996,0.09,-0.773,-0.436,-0.461,-0.42,-0.781,-0.463,-0.474,-0.881,0,-0.871,-0.492,0,0,-0.891,-0.455,-0.917,0.399,0,-0.881,0.074,-0.467,-0.902,-0.429,-0.039,-0.09,-0.995,0.05,-0.451,-0.892,0,-0.28,-0.959,0.04,-0.468,-0.878,0.097,-0.877,-0.474,0.085,0,-0.997,0.072,-0.693,-0.72,0.045,-0.79,-0.562,0.244,-0.968,0.003,0.25,0,-0.966,0.257,0,0,1,-1,0,0,0.987,0,-0.16,1,0,0,-0.831,-0.551,-0.08,0.563,0.826,-0.037,0.661,0.738,-0.138,0.998,-0.037,-0.049,-0.987,0,-0.16,-0.998,-0.037,-0.049,0.831,-0.551,-0.08,0,-0.999,0.04,0,0.993,0.12,0.468,-0.878,0.097,0.877,-0.474,0.085,0.79,-0.562,0.244,-0.419,-0.897,-0.14,0.693,-0.72,0.045,0.968,0.003,0.25,0.521,0.846,-0.115,0.419,-0.897,-0.14,0.871,-0.492,0,0.902,-0.429,-0.039,0.474,-0.881,0,0.37,0.929,0,0.485,0.87,-0.089,0.573,0.818,0.05,0.592,0.796,-0.125,0.37,0.929,-0.01,0.487,0.873,0.036,0.923,0.381,0.05,0.683,0.704,0.195,0.385,0.912,0.141,0.707,0.707,0,0.42,-0.781,-0.463,0.773,-0.436,-0.461,0.917,0.399,0,0.881,0.074,-0.467,0.09,-0.995,0.05,0.451,-0.892,0,0.28,-0.959,0.04,0.42,0.901,-0.11,0,0.666,0.746,-0.481,0.468,0.741,-0.674,0,0.738,-0.475,-0.475,0.741,0,-0.674,0.738,0.475,-0.475,0.741,0.674,0,0.738,0.481,0.468,0.741,0,0,-1,0,-0.893,-0.45,-0.901,-0.224,-0.372,0.901,-0.224,-0.372,0.841,0.34,0.421,-0.841,0.34,0.421])}))}))}),
-
+                              vector : new MFVec3f([-0.68,0.714,-0.166,-0.689,0.721,-0.072,0,0.965,-0.26,0,0.985,-0.175,-0.99,-0.016,-0.138,-0.999,-0.022,-0.037,0.567,-0.819,-0.093,0.561,-0.828,0,0,-1,0,0,-0.997,-0.071,-0.567,-0.819,-0.093,-0.561,-0.828,0,0.99,-0.016,-0.138,0.999,-0.022,-0.037,0.68,0.714,-0.166,0.689,0.721,-0.072,-0.351,0.889,-0.294,-0.868,-0.459,-0.19,-0.13,-0.982,-0.14,0.13,-0.982,-0.14,0.868,-0.459,-0.19,0.872,0.431,-0.231,-0.834,0.445,-0.327,0,0.929,-0.369,-0.88,0.401,-0.256,-0.799,0.577,0.169,-0.58,0.798,0.164,0,0.998,0.065,-0.862,0.486,0.146,0.886,0.219,0.408,0.799,0.577,0.169,0.834,0.445,-0.327,0.88,0.401,-0.256,0,0.995,-0.096,0.842,0.534,-0.08,0.862,0.486,0.146,0.833,0.549,-0.073,-0.833,0.549,-0.073,-0.842,0.534,-0.08,-0.485,0.87,-0.089,-0.37,0.929,0,0,1,0,0,1,-0.01,-0.592,0.796,-0.125,-0.573,0.818,0.05,-0.37,0.929,-0.01,0,1,-0.025,-0.487,0.873,0.036,-0.923,0.381,0.05,-0.683,0.704,0.195,0,0.99,0.14,-0.707,0.707,0,-0.385,0.912,0.141,0,0.966,0.259,-0.563,0.826,-0.037,-0.661,0.738,-0.138,-0.521,0.846,-0.115,0,-0.996,0.09,-0.773,-0.436,-0.461,-0.42,-0.781,-0.463,-0.474,-0.881,0,-0.871,-0.492,0,0,-0.891,-0.455,-0.917,0.399,0,-0.881,0.074,-0.467,-0.902,-0.429,-0.039,-0.09,-0.995,0.05,-0.451,-0.892,0,-0.28,-0.959,0.04,-0.468,-0.878,0.097,-0.877,-0.474,0.085,0,-0.997,0.072,-0.693,-0.72,0.045,-0.79,-0.562,0.244,-0.968,0.003,0.25,0,-0.966,0.257,0,0,1,-1,0,0,0.987,0,-0.16,1,0,0,-0.831,-0.551,-0.08,0.563,0.826,-0.037,0.661,0.738,-0.138,0.998,-0.037,-0.049,-0.987,0,-0.16,-0.998,-0.037,-0.049,0.831,-0.551,-0.08,0,-0.999,0.04,0,0.993,0.12,0.468,-0.878,0.097,0.877,-0.474,0.085,0.79,-0.562,0.244,-0.419,-0.897,-0.14,0.693,-0.72,0.045,0.968,0.003,0.25,0.521,0.846,-0.115,0.419,-0.897,-0.14,0.871,-0.492,0,0.902,-0.429,-0.039,0.474,-0.881,0,0.37,0.929,0,0.485,0.87,-0.089,0.573,0.818,0.05,0.592,0.796,-0.125,0.37,0.929,-0.01,0.487,0.873,0.036,0.923,0.381,0.05,0.683,0.704,0.195,0.385,0.912,0.141,0.707,0.707,0,0.42,-0.781,-0.463,0.773,-0.436,-0.461,0.917,0.399,0,0.881,0.074,-0.467,0.09,-0.995,0.05,0.451,-0.892,0,0.28,-0.959,0.04,0.42,0.901,-0.11,0,0.666,0.746,-0.481,0.468,0.741,-0.674,0,0.738,-0.475,-0.475,0.741,0,-0.674,0.738,0.475,-0.475,0.741,0.674,0,0.738,0.481,0.468,0.741,0,0,-1,0,-0.893,-0.45,-0.901,-0.224,-0.372,0.901,-0.224,-0.372,0.841,0.34,0.421,-0.841,0.34,0.421])}))}))})),
+                  child : new SFNode(
                     new Shape({
                       DEF : new SFString("Canopy"),
                       appearance : new SFNode(
@@ -158,8 +158,8 @@ var X3D0 =  new X3D({
                               USE : new SFString("coordinates")})),
                           normal : new SFNode(
                             new Normal({
-                              USE : new SFString("normalVector")}))}))}),
-
+                              USE : new SFString("normalVector")}))}))})),
+                  child : new SFNode(
                     new Shape({
                       DEF : new SFString("MainBodyAndWingEdges"),
                       appearance : new SFNode(
@@ -178,8 +178,8 @@ var X3D0 =  new X3D({
                               USE : new SFString("coordinates")})),
                           normal : new SFNode(
                             new Normal({
-                              USE : new SFString("normalVector")}))}))}),
-
+                              USE : new SFString("normalVector")}))}))})),
+                  child : new SFNode(
                     new Shape({
                       DEF : new SFString("ExhaustExitFlatPanel"),
                       appearance : new SFNode(
@@ -198,8 +198,8 @@ var X3D0 =  new X3D({
                               USE : new SFString("coordinates")})),
                           normal : new SFNode(
                             new Normal({
-                              USE : new SFString("normalVector")}))}))}),
-
+                              USE : new SFString("normalVector")}))}))})),
+                  child : new SFNode(
                     new Shape({
                       DEF : new SFString("ExhaustEntranceFrontBottomPart"),
                       appearance : new SFNode(
@@ -218,8 +218,8 @@ var X3D0 =  new X3D({
                               USE : new SFString("coordinates")})),
                           normal : new SFNode(
                             new Normal({
-                              USE : new SFString("normalVector")}))}))}),
-
+                              USE : new SFString("normalVector")}))}))})),
+                  child : new SFNode(
                     new Shape({
                       DEF : new SFString("ThirdPartFromNoseUnderCanopy"),
                       appearance : new SFNode(
@@ -238,8 +238,8 @@ var X3D0 =  new X3D({
                               USE : new SFString("coordinates")})),
                           normal : new SFNode(
                             new Normal({
-                              USE : new SFString("normalVector")}))}))}),
-
+                              USE : new SFString("normalVector")}))}))})),
+                  child : new SFNode(
                     new Shape({
                       DEF : new SFString("RearExhaustExitPartLastPartOfMainBody"),
                       appearance : new SFNode(
@@ -259,8 +259,8 @@ var X3D0 =  new X3D({
                               USE : new SFString("coordinates")})),
                           normal : new SFNode(
                             new Normal({
-                              USE : new SFString("normalVector")}))}))}),
-
+                              USE : new SFString("normalVector")}))}))})),
+                  child : new SFNode(
                     new Shape({
                       DEF : new SFString("WingsAndTail"),
                       appearance : new SFNode(
@@ -280,8 +280,8 @@ var X3D0 =  new X3D({
                               USE : new SFString("coordinates")})),
                           normal : new SFNode(
                             new Normal({
-                              USE : new SFString("normalVector")}))}))}),
-
+                              USE : new SFString("normalVector")}))}))})),
+                  child : new SFNode(
                     new Shape({
                       DEF : new SFString("SecondPartAfterNose"),
                       appearance : new SFNode(
@@ -300,7 +300,7 @@ var X3D0 =  new X3D({
                               USE : new SFString("coordinates")})),
                           normal : new SFNode(
                             new Normal({
-                              USE : new SFString("normalVector")}))}))})])}),
+                              USE : new SFString("normalVector")}))}))}))}),
 
                 new Transform({
                   DEF : new SFString("CockpitTransform"),
@@ -358,7 +358,7 @@ var X3D0 =  new X3D({
                       rotation : new SFRotation([1,0,0,1.57]),
                       scale : new SFVec3f([0.008,0.008,0.008]),
                       translation : new SFVec3f([-0.95,1.05,-10]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           geometry : new SFNode(
                             new Cylinder({
@@ -369,8 +369,8 @@ var X3D0 =  new X3D({
                               material : new SFNode(
                                 new Material({
                                   diffuseColor : new SFColor([1,0,0]),
-                                  shininess : new SFFloat(0.8)}))}))}),
-
+                                  shininess : new SFFloat(0.8)}))}))})),
+                      children : new MFNode([
                         new TouchSensor({
                           DEF : new SFString("TouchSensorUp"),
                           description : new SFString("click for gears up")})])}),
@@ -380,7 +380,7 @@ var X3D0 =  new X3D({
                       rotation : new SFRotation([1,0,0,1.57]),
                       scale : new SFVec3f([0.008,0.008,0.008]),
                       translation : new SFVec3f([-0.83,1.05,-10]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           geometry : new SFNode(
                             new Cylinder({
@@ -391,8 +391,8 @@ var X3D0 =  new X3D({
                               material : new SFNode(
                                 new Material({
                                   diffuseColor : new SFColor([1,1,0]),
-                                  shininess : new SFFloat(0.8)}))}))}),
-
+                                  shininess : new SFFloat(0.8)}))}))})),
+                      children : new MFNode([
                         new TouchSensor({
                           DEF : new SFString("TouchSensorDown"),
                           description : new SFString("click for gears down")})])}),
@@ -401,7 +401,7 @@ var X3D0 =  new X3D({
                       DEF : new SFString("GearUpTextTransform"),
                       scale : new SFVec3f([0.06,0.06,0.06]),
                       translation : new SFVec3f([-0.65,1.55,-10]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           geometry : new SFNode(
                             new Text({
@@ -410,13 +410,13 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,0,0])}))}))})])}),
+                                  diffuseColor : new SFColor([1,0,0])}))}))}))}),
 
                     new Transform({
                       DEF : new SFString("GearDownTextTransform"),
                       scale : new SFVec3f([0.06,0.06,0.06]),
                       translation : new SFVec3f([-0.65,1.35,-10]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           geometry : new SFNode(
                             new Text({
@@ -426,14 +426,14 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,1,0])}))}))})])}),
+                                  diffuseColor : new SFColor([1,1,0])}))}))}))}),
 
                     new Transform({
                       DEF : new SFString("FireButtonTransform"),
                       rotation : new SFRotation([1,0,0,1.57]),
                       scale : new SFVec3f([0.008,0.008,0.008]),
                       translation : new SFVec3f([0.52,1.6,-10]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           geometry : new SFNode(
                             new Cylinder({
@@ -444,8 +444,8 @@ var X3D0 =  new X3D({
                               material : new SFNode(
                                 new Material({
                                   diffuseColor : new SFColor([0,0.75,0.18]),
-                                  shininess : new SFFloat(0.8)}))}))}),
-
+                                  shininess : new SFFloat(0.8)}))}))})),
+                      children : new MFNode([
                         new TouchSensor({
                           DEF : new SFString("FireSensor"),
                           description : new SFString("click to fire")})])}),
@@ -454,7 +454,7 @@ var X3D0 =  new X3D({
                       DEF : new SFString("FireTextTransform"),
                       scale : new SFVec3f([0.06,0.06,0.06]),
                       translation : new SFVec3f([0.36,1.5,-10]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           geometry : new SFNode(
                             new Text({
@@ -463,7 +463,7 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([0,0.75,0.18])}))}))})])})])}),
+                                  diffuseColor : new SFColor([0,0.75,0.18])}))}))}))})])}),
 
                 new Viewpoint({
                   description : new SFString("F16 Close Look-up"),
@@ -500,7 +500,7 @@ var X3D0 =  new X3D({
                   DEF : new SFString("NoseAntennaTransform"),
                   rotation : new SFRotation([1,0,0,1.57]),
                   translation : new SFVec3f([0,-0.275,-21]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       geometry : new SFNode(
                         new Cylinder({
@@ -510,7 +510,7 @@ var X3D0 =  new X3D({
                           material : new SFNode(
                             new Material({
                               diffuseColor : new SFColor([0.5,0.5,0.5]),
-                              shininess : new SFFloat(0.5)}))}))})])})])}),
+                              shininess : new SFFloat(0.5)}))}))}))})])}),
 
             new TimeSensor({
               DEF : new SFString("WheelUp"),
@@ -830,7 +830,7 @@ var X3D0 =  new X3D({
 
             new Transform({
               DEF : new SFString("InlineCoverOfPlaneTansform"),
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   geometry : new SFNode(
                     new Box({
@@ -839,7 +839,7 @@ var X3D0 =  new X3D({
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor([0.25,0.25,0.25])}))}))})])}),
+                          diffuseColor : new SFColor([0.25,0.25,0.25])}))}))}))}),
 
             new Transform({
               DEF : new SFString("TargetHelicopterTransform"),

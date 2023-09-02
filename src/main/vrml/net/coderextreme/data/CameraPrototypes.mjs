@@ -3041,9 +3041,9 @@ Appearance260.material = Material261;
 
 Shape257.appearance = Appearance260;
 
-Transform256.children = new MFNode();
+Transform256.child = new undefined();
 
-Transform256.children[0] = Shape257;
+Transform256.child[0] = Shape257;
 
 Anchor255.children = new MFNode();
 

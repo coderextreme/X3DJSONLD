@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Interactive", version="3.1", 
-head=head(children=[meta(name="title", content="CameraShape.x3d"),
+head=head(
+children=[
+meta(name="title", content="CameraShape.x3d"),
 meta(name="description", content="Simple video camera shape"),
 meta(name="creator", content="Jeff Weekley and Don Brutzman"),
 meta(name="created", content="2 June 2009"),
@@ -15,7 +18,7 @@ meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Basi
 meta(name="generator", content="Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -85,5 +88,6 @@ Shape(
 appearance=
 Appearance(USE="CameraAppearance"), 
 geometry=
-IndexedFaceSet(USE="pSphere1_0Geo"))])])])]))
-.XML())
+IndexedFaceSet(USE="pSphere1_0Geo"))])])])])))
+output = model.JSON()
+json.loads(output)

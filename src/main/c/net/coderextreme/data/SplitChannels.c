@@ -110,9 +110,9 @@ Box Box24 = createNode("Box");
 Box24.size = new SFVec3f(new float[10,80,0.01]);
 Shape21.geometry = Box24;
 
-Transform20.children = new MFNode();
+Transform20.child = new undefined();
 
-Transform20.children[0] = Shape21;
+Transform20.child[0] = Shape21;
 
 Transform19.children = new MFNode();
 
@@ -140,9 +140,9 @@ Box Box30 = createNode("Box");
 Box30.size = new SFVec3f(new float[25,83,0.01]);
 Shape26.geometry = Box30;
 
-Transform25.children = new MFNode();
+Transform25.child = new undefined();
 
-Transform25.children[0] = Shape26;
+Transform25.child[0] = Shape26;
 
 Transform19.children[1] = Transform25;
 
@@ -171,9 +171,9 @@ Text35.fontStyle = FontStyle36;
 
 Shape32.geometry = Text35;
 
-Transform31.children = new MFNode();
+Transform31.child = new undefined();
 
-Transform31.children[0] = Shape32;
+Transform31.child[0] = Shape32;
 
 Transform19.children[2] = Transform31;
 
@@ -200,9 +200,9 @@ Box Box42 = createNode("Box");
 Box42.size = new SFVec3f(new float[10,80,0.01]);
 Shape39.geometry = Box42;
 
-Transform38.children = new MFNode();
+Transform38.child = new undefined();
 
-Transform38.children[0] = Shape39;
+Transform38.child[0] = Shape39;
 
 Transform37.children = new MFNode();
 
@@ -230,9 +230,9 @@ Box Box48 = createNode("Box");
 Box48.size = new SFVec3f(new float[25,83,0.01]);
 Shape44.geometry = Box48;
 
-Transform43.children = new MFNode();
+Transform43.child = new undefined();
 
-Transform43.children[0] = Shape44;
+Transform43.child[0] = Shape44;
 
 Transform37.children[1] = Transform43;
 
@@ -261,9 +261,9 @@ Text53.fontStyle = FontStyle54;
 
 Shape50.geometry = Text53;
 
-Transform49.children = new MFNode();
+Transform49.child = new undefined();
 
-Transform49.children[0] = Shape50;
+Transform49.child[0] = Shape50;
 
 Transform37.children[2] = Transform49;
 
@@ -285,9 +285,9 @@ Box Box59 = createNode("Box");
 Box59.size = new SFVec3f(new float[1500,10,500]);
 Shape56.geometry = Box59;
 
-Transform55.children = new MFNode();
+Transform55.child = new undefined();
 
-Transform55.children[0] = Shape56;
+Transform55.child[0] = Shape56;
 
 children[6] = Transform55;
 
@@ -375,9 +375,9 @@ Box Box75 = createNode("Box");
 Box75.size = new SFVec3f(new float[100,100,0.001]);
 Shape71.geometry = Box75;
 
-Transform70.children = new MFNode();
+Transform70.child = new undefined();
 
-Transform70.children[0] = Shape71;
+Transform70.child[0] = Shape71;
 
 children[10] = Transform70;
 

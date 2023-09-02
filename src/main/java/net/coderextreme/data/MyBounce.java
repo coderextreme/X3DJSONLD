@@ -51,7 +51,7 @@ public class MyBounce {
         .addMeta(new meta().setName("title").setContent("MyBounce.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("description").setContent("3 prismatic spheres"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/SFVec3f.x3d")))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
         .addChild(new Transform().setDEF("transform")

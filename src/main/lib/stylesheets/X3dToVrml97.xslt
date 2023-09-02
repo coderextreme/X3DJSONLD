@@ -2160,6 +2160,7 @@ EXTERNPROTO TransmitterPdu [
   	<xsl:value-of select="@level"/>
   </xsl:if>
   <xsl:text>&#10;</xsl:text>
+  <!-- note that a number of components are needed for ClassicVRML encoding, not just VRML97 -->
   <xsl:if test="not(
   	(@name='Core') or
   	(@name='CADGeometry') or
@@ -2168,6 +2169,7 @@ EXTERNPROTO TransmitterPdu [
   	(@name='EnvironmentalEffects') or
   	(@name='EnvironmentalSensor') or
   	(@name='EventUtilities') or
+  	(@name='Followers') or
   	(@name='Geometry2D') or
   	(@name='Geometry3D') or
   	(@name='Geospatial') or
@@ -2176,17 +2178,22 @@ EXTERNPROTO TransmitterPdu [
   	(@name='HAnim') or
   	(@name='Interpolation') or
   	(@name='KeyDeviceSensor') or
+  	(@name='Layering') or
   	(@name='Lighting') or
   	(@name='Navigation') or
   	(@name='Networking') or
   	(@name='NURBS') or
+  	(@name='ParticleSystems') or
+  	(@name='Picking') or
   	(@name='PointingDeviceSensor') or
   	(@name='Rendering') or
+  	(@name='RigidBodyPhysics') or
   	(@name='Scripting') or
   	(@name='Shaders') or
   	(@name='Shape') or
   	(@name='Sound') or
   	(@name='Text') or
+  	(@name='TextureProjection') or
   	(@name='Texturing') or
   	(@name='Texturing3D') or
   	(@name='Time') or
@@ -3846,17 +3853,18 @@ EXTERNPROTO TransmitterPdu [
           <xsl:apply-templates select="HAnimSite[@containerField='sites']"><xsl:with-param name="indent" select="$indent + 2"/></xsl:apply-templates>
           <xsl:text>]&#10;</xsl:text>
         </xsl:if>
+        <!-- put skin before skinCoord since DEF/USE likely occurs there first.  (seems clumsy though to force order, can this be avoided?) -->
+        <xsl:if test="*[@containerField='skin']">
+          <xsl:text>skin [&#10;</xsl:text>
+          <xsl:apply-templates select="*[@containerField='skin']"><xsl:with-param name="indent" select="$indent + 2"/></xsl:apply-templates>
+          <xsl:text>]&#10;</xsl:text>
+        </xsl:if>
         <xsl:if test="*[contains(local-name(),'Coordinate')][@containerField='skinCoord']">
           <xsl:apply-templates select="*[contains(local-name(),'Coordinate')][@containerField='skinCoord']"><xsl:with-param name="indent" select="$indent + 2"/></xsl:apply-templates>
         </xsl:if>
         <xsl:if test="Normal[@containerField='skinNormal']">
           <xsl:text>skinNormal </xsl:text>
           <xsl:apply-templates select="Normal[@containerField='skinNormal']"><xsl:with-param name="indent" select="$indent + 2"/></xsl:apply-templates>
-        </xsl:if>
-        <xsl:if test="*[@containerField='skin']">
-          <xsl:text>skin [&#10;</xsl:text>
-          <xsl:apply-templates select="*[@containerField='skin']"><xsl:with-param name="indent" select="$indent + 2"/></xsl:apply-templates>
-          <xsl:text>]&#10;</xsl:text>
         </xsl:if>
         <xsl:if test="Viewpoint[@containerField='viewpoints']">
           <xsl:text>viewpoints [&#10;</xsl:text>
@@ -4054,7 +4062,7 @@ EXTERNPROTO TransmitterPdu [
                (((local-name(..)='GeoLOD'        and @containerField='rootNode') or
                  (local-name(..)='HAnimSegment'  and @containerField='displacers') or
                  (local-name(..)='HAnimHumanoid' and (@containerField='humanoidBody' or @containerField='skeleton' or @containerField='skin'))
-                ) and * )
+                ) and * and not(local-name()='Shape') )
                 "/>
     <!-- <xsl:text> # $otherChildrenFoundTest1 </xsl:text><xsl:value-of select="$otherChildrenFoundTest1"/><xsl:text>&#10;</xsl:text> -->
     <!-- <xsl:text> # $otherChildrenFoundTest2 </xsl:text><xsl:value-of select="$otherChildrenFoundTest2"/><xsl:text>&#10;</xsl:text> -->
@@ -4085,6 +4093,8 @@ EXTERNPROTO TransmitterPdu [
                  or
                (local-name()='NurbsTrimmedSurface'         or $nodeType='NurbsTrimmedSurface'         or $EPnodeType='NurbsTrimmedSurface')
                 ">
+        <!-- stray block? causes error in JoeKick.x3dv
+        -->
       <xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent + 2"/></xsl:call-template>
       <xsl:text>]</xsl:text>
       <!-- <xsl:text> # local-name()=</xsl:text><xsl:value-of select="local-name()"/> -->
@@ -6575,36 +6585,6 @@ EXTERNPROTO TransmitterPdu [
                 not((local-name(..)='Script' or local-name(..)='field') and (local-name()='xml:space' or local-name()='space')) and
                 not((local-name(..)='Script') and local-name()='url') and
                 not((local-name(..)='connect') and (local-name()='protoField' or local-name()='nodeField'))"/>
-  <xsl:if test="$notDefaultValue or ((local-name()='name') and not(local-name(..)='ProtoInstance'))">
-    <!-- valid field found by the preceding checks, now output accordingly -->
-    <xsl:call-template name="print-indent">
-      <xsl:with-param name="indent" select="$indent"/>
-    </xsl:call-template>
-    <!-- must filter out any default non-blank attribute values for this test to be effective with SAXON -->
-    <xsl:if test="(../@USE and not(local-name()='USE'))">
-      <!-- <xsl:text>USE </xsl:text><xsl:value-of select="@USE"/>   .. used if located in node template -->
-      <xsl:call-template name="output-error">
-        <xsl:with-param name="errorString">
-          <xsl:text>No additional/overriding attribute values (</xsl:text>
-          <xsl:value-of select="local-name()"/>
-          <xsl:text>='</xsl:text>
-          <xsl:value-of select="."/>
-          <xsl:text>') allowed with USE node </xsl:text>
-          <xsl:text disable-output-escaping="yes"><![CDATA[<]]></xsl:text>
-          <xsl:value-of select="local-name(..)"/>
-          <xsl:text> USE='</xsl:text>
-          <xsl:value-of select="../@USE"/>
-          <xsl:text>'/</xsl:text>
-          <xsl:text disable-output-escaping="yes"><![CDATA[>]]></xsl:text>
-        </xsl:with-param>
-        <xsl:with-param name="node">
-          <xsl:value-of select="local-name(..)"/>
-          <xsl:text> attribute </xsl:text>
-          <xsl:value-of select="local-name(.)"/>
-        </xsl:with-param>
-        <xsl:with-param name="DEF"  select="../@DEF"/>
-      </xsl:call-template>
-    </xsl:if>
     <!-- <xsl:text> # attribute </xsl:text><xsl:value-of select="local-name()"/><xsl:text>&#10;</xsl:text> -->
     <!-- take care of IS attribute definitions for non-node fields inside ProtoDeclarations -->
     <xsl:variable name="PROTOdeclareAncestorName" select="ancestor::*[local-name()='ProtoDeclare']/@name" />
@@ -6628,7 +6608,7 @@ EXTERNPROTO TransmitterPdu [
     <xsl:variable name="EPnodeName" select="//ExternProtoDeclare[@name=$nodeName or @name=$nodeName2]/@name" />
     <xsl:variable name="EPnodeType" select="//ExternProtoDeclare[@name=$nodeName or @name=$nodeName2]/@nodeType" />
     <xsl:variable name="EPfieldType" select="//ExternProtoDeclare[@name=$nodeName or @name=$nodeName2]/field[@name=$fieldName]/@type" />
-    <!-- debug diagnosis statements -->
+    <!-- debug diagnosis statements, appearing as comments in output file -->
     <!-- <xsl:if test="$nodeName"><xsl:text># $nodeName </xsl:text><xsl:value-of select="$nodeName"/><xsl:text>&#10;</xsl:text></xsl:if> -->
     <!-- <xsl:text># nodeName </xsl:text><xsl:value-of select="$nodeName"/><xsl:text>&#10;</xsl:text> -->
     <!-- <xsl:text># nodeName2 </xsl:text><xsl:value-of select="$nodeName2"/><xsl:text>&#10;</xsl:text> -->
@@ -6773,6 +6753,49 @@ EXTERNPROTO TransmitterPdu [
         <xsl:with-param name="parameter" select="."/>
       </xsl:call-template>
     </xsl:variable>
+    <!-- debug
+    <xsl:message>
+      <xsl:text>*** type variables test </xsl:text>
+      <xsl:text>$MFtypes=</xsl:text>
+      <xsl:value-of select="$MFtypes"/>
+      <xsl:text> $nodeType=</xsl:text>
+      <xsl:value-of select="$nodeType"/>
+      <xsl:text> for </xsl:text>
+      <xsl:value-of select="local-name(..)"/>
+      <xsl:text> </xsl:text>
+      <xsl:value-of select="local-name()"/>
+    </xsl:message>
+     -->
+  <xsl:if test="$notDefaultValue or ((local-name()='name') and not(local-name(..)='ProtoInstance'))">
+    <!-- valid field found by the preceding checks, now output accordingly -->
+    <xsl:call-template name="print-indent">
+      <xsl:with-param name="indent" select="$indent"/>
+    </xsl:call-template>
+    <!-- must filter out any default non-blank attribute values for this test to be effective with SAXON -->
+    <xsl:if test="(../@USE and not(local-name()='USE'))">
+      <!-- <xsl:text>USE </xsl:text><xsl:value-of select="@USE"/>   .. used if located in node template -->
+      <xsl:call-template name="output-error">
+        <xsl:with-param name="errorString">
+          <xsl:text>No additional/overriding attribute values (</xsl:text>
+          <xsl:value-of select="local-name()"/>
+          <xsl:text>='</xsl:text>
+          <xsl:value-of select="."/>
+          <xsl:text>') allowed with USE node </xsl:text>
+          <xsl:text disable-output-escaping="yes"><![CDATA[<]]></xsl:text>
+          <xsl:value-of select="local-name(..)"/>
+          <xsl:text> USE='</xsl:text>
+          <xsl:value-of select="../@USE"/>
+          <xsl:text>'/</xsl:text>
+          <xsl:text disable-output-escaping="yes"><![CDATA[>]]></xsl:text>
+        </xsl:with-param>
+        <xsl:with-param name="node">
+          <xsl:value-of select="local-name(..)"/>
+          <xsl:text> attribute </xsl:text>
+          <xsl:value-of select="local-name(.)"/>
+        </xsl:with-param>
+        <xsl:with-param name="DEF"  select="../@DEF"/>
+      </xsl:call-template>
+    </xsl:if>
     <!-- output attribute value -->
     <xsl:if test="($fileEncoding!='ClassicVRML')">
       <xsl:choose>
@@ -7149,11 +7172,25 @@ EXTERNPROTO TransmitterPdu [
                       ((local-name(..)='TextureCoordinate'	or $nodeType='TextureCoordinate' or $EPnodeType='TextureCoordinate') and
       				    local-name()='point') or
       		      ((local-name(..)='MetadataDouble' or local-name(..)='MetadataFloat' or local-name(..)='MetadataInteger') and local-name()='value') or
-      				  $ExtensionMFtypes or
-      				  $Geometry2d3dMFtypes or
-      				  $ColorCoordinateMFtypes or
-        			  $MFtypes
+      		      ((local-name(..)='HAnimDisplacer') and (local-name()='coordIndex' or local-name()='displacements')) or
+                        $ExtensionMFtypes or
+                        $Geometry2d3dMFtypes or
+                        $ColorCoordinateMFtypes or
+                        $MFtypes
                      ">
+          <!-- debug 
+          <xsl:message>
+            <xsl:text>*** take care of other MF field types by wrapping [ ] </xsl:text>
+            <xsl:text>$MFtypes=</xsl:text>
+            <xsl:value-of select="$MFtypes"/>
+            <xsl:text> $nodeType=</xsl:text>
+            <xsl:value-of select="$nodeType"/>
+            <xsl:text> found </xsl:text>
+            <xsl:value-of select="local-name(..)"/>
+            <xsl:text> </xsl:text>
+            <xsl:value-of select="local-name()"/>
+          </xsl:message>
+          -->
         <!-- could put traps here to eliminate default-valued fields -->
         <!-- ?? is a local construct needed here to check and wrap quotes around individual string elements in MFString, if content didn't comply?? -->
         <xsl:value-of select="local-name()"/><xsl:text> [ </xsl:text>
@@ -7204,7 +7241,16 @@ EXTERNPROTO TransmitterPdu [
         <xsl:value-of select="local-name()"/><xsl:text> FALSE&#10;</xsl:text>
       </xsl:when>
       <!-- default field output is merely standalone value(s), if there is an error it should be flagged -->
+      <!-- TODO there is a significant problem in field-type testing, refactoring needed -->
       <xsl:otherwise>
+        <!-- once debugged, can leave this block exposed as a gap diagnostic
+        <xsl:message>
+            <xsl:text>*** type not found, outputing simple value </xsl:text>
+            <xsl:value-of select="local-name(..)"/>
+            <xsl:text> </xsl:text>
+            <xsl:value-of select="local-name()"/>
+        </xsl:message>
+        -->
         <xsl:if test=".">
           <xsl:value-of select="local-name()"/><xsl:text> </xsl:text><xsl:value-of select="."/><xsl:text>&#10;</xsl:text>
         </xsl:if>
@@ -9900,6 +9946,12 @@ EXTERNPROTO TransmitterPdu [
           <xsl:text>.</xsl:text>
           <xsl:value-of select="$shortFieldName"/>
           <xsl:text>.FieldTypeNotFound</xsl:text>
+          <xsl:message>
+              <xsl:text>*** FieldTypeNotFound </xsl:text>
+              <xsl:value-of select="$nodeName"/>
+              <xsl:text> </xsl:text>
+              <xsl:value-of select="$shortFieldName"/>
+          </xsl:message>
         </xsl:otherwise>
         <!-- done with check for node name -->
       </xsl:choose>
@@ -10438,12 +10490,18 @@ EXTERNPROTO TransmitterPdu [
       				    local-name()='length') or
                       ((local-name(..)='TextureCoordinate'	or $nodeType='TextureCoordinate' or $EPnodeType='TextureCoordinate') and
       				    local-name()='point') or
-      			((local-name(..)='TextureCoordinate'	or $nodeType='TextureCoordinate' or $EPnodeType='TextureCoordinate') and
-      				    local-name()='point') or
-      			    $ColorCoordinateMFtypes or
-      			    $MFtypes
+      		      ((local-name(..)='MetadataDouble' or local-name(..)='MetadataFloat' or local-name(..)='MetadataInteger') and local-name()='value') or
+      		      ((local-name(..)='HAnimDisplacer') and (local-name()='coordIndex' or local-name()='displacements')) or
+                        $ColorCoordinateMFtypes or
+                        $MFtypes
       			">
-        <!-- could put traps here to eliminate default-valued fields -->
+          <!-- out of scope?? nodeType not properly defined for regular nodes
+                        $ExtensionMFtypes or
+                        $Geometry2d3dMFtypes or
+          -->
+        <!-- 
+                        $ExtensionMFtypes or
+                        $Geometry2d3dMFtypes orcould put traps here to eliminate default-valued fields -->
         <!-- ?? is a local construct needed here to check and wrap quotes around individual string elements in MFString, if content didn't comply?? -->
         <xsl:text> [ </xsl:text><xsl:value-of select="@value"/><xsl:text> ]&#10;</xsl:text>
       </xsl:when>

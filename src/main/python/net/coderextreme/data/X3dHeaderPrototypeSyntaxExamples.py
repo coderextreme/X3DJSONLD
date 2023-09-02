@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[component(name="Geospatial", level=1),
+head=head(
+children=[
+component(name="Geospatial", level=1),
 component(name="NURBS", level=2),
 component(name="Core", level=2),
 component(name="Navigation", level=1),
@@ -19,7 +22,7 @@ meta(name="specificationUrl", content="https://www.web3d.org/documents/specifica
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/X3dHeaderPrototypeSyntaxExamples.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -40,15 +43,13 @@ ProtoInterface=ProtoInterface(field=[field(name="onlyColor", accessType="inputOu
 ]), 
 ProtoBody=ProtoBody(children=[
 Comment(value=''' Override default diffuseColor value 0.8 0.8 0.8 '''),
-
 Material(diffuseColor=((0,0,0)), 
 IS=IS(connect=[connect(nodeField="emissiveColor", protoField="onlyColor")
 ])),])),
 ProtoDeclare(name="ShiftGroupUp2m", 
 ProtoInterface=ProtoInterface(field=[field(name="children", accessType="inputOutput", type="MFNode", children=[
 Group(DEF="DefaultNodeValue", bboxSize=((2,2,2)), children=[
-Comment(value=''' Authors need to override this node when creating the ProtoInstance fieldValue name="children" '''),
-])])
+Comment(value=''' Authors need to override this node when creating the ProtoInstance fieldValue name="children" '''),])])
 ]), 
 ProtoBody=ProtoBody(children=[
 Transform(translation=((0,2,0)), children=[
@@ -57,7 +58,6 @@ IS=IS(connect=[connect(nodeField="children", protoField="children")
 ]))])])),
 ProtoInstance(name="ShiftGroupUp2m"),
 Comment(value=''' ==================== '''),
-
 Viewpoint(DEF="ExampleSingleElement", description="Hello syntax"),
 Group(DEF="ExampleChildElement", children=[
 Shape(
@@ -99,5 +99,6 @@ Inline(DEF="someInline", url=["someUrl.x3d","https://www.web3d.org/x3d/content/e
 IMPORT(AS="someInlineRoot", importedDEF="someName", inlineDEF="someInline"),
 PositionInterpolator(DEF="StayInPlace", key=[float(0),float(1)], keyValue=[(0,0,0),(0,0,0)]),
 ROUTE(fromField="fraction_changed", fromNode="Clock", toField="set_fraction", toNode="StayInPlace"),
-ROUTE(fromField="value_changed", fromNode="StayInPlace", toField="set_translation", toNode="someInlineRoot"),]))
-.XML())
+ROUTE(fromField="value_changed", fromNode="StayInPlace", toField="set_translation", toNode="someInlineRoot"),])))
+output = model.JSON()
+json.loads(output)

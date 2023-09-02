@@ -211,7 +211,7 @@ Appearance42->setMaterial(*Material43);
 
 Shape39->setAppearance(*Appearance42);
 
-Transform37->addChildren(*Shape39);
+Transform37->addChild(*Shape39);
 
 CTransform* Transform44 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform44->setScale(new float[3]{10,3,1});
@@ -237,7 +237,7 @@ Appearance48->setMaterial(*Material49);
 
 Shape45->setAppearance(*Appearance48);
 
-Transform44->addChildren(*Shape45);
+Transform44->addChild(*Shape45);
 
 Transform37->addChildren(*Transform44);
 
@@ -327,7 +327,7 @@ Appearance63->setMaterial(*Material64);
 
 Shape60->setAppearance(*Appearance63);
 
-Transform59->addChildren(*Shape60);
+Transform59->addChild(*Shape60);
 
 CROUTE* ROUTE65 = new CROUTE();
 ROUTE65->setFromField("string_changed");
@@ -402,7 +402,7 @@ Appearance76->setMaterial(*Material77);
 
 Shape73->setAppearance(*Appearance76);
 
-Transform70->addChildren(*Shape73);
+Transform70->addChild(*Shape73);
 
 CTransform* Transform78 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform78->setScale(new float[3]{2,0.6,1});
@@ -425,7 +425,7 @@ Appearance82->setMaterial(*Material83);
 
 Shape79->setAppearance(*Appearance82);
 
-Transform78->addChildren(*Shape79);
+Transform78->addChild(*Shape79);
 
 Transform70->addChildren(*Transform78);
 
@@ -459,13 +459,13 @@ CAppearance* Appearance90 = (CAppearance *)(m_pScene.createNode("Appearance"));
 Appearance90->setUSE("InterfaceAppearance");
 Shape87->setAppearance(*Appearance90);
 
-Transform84->addChildren(*Shape87);
+Transform84->addChild(*Shape87);
 
 CTransform* Transform91 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform91->setScale(new float[3]{1.2,0.6,1});
 CShape* Shape92 = (CShape *)(m_pScene.createNode("Shape"));
 Shape92->setUSE("TransparentClickSurface");
-Transform91->addChildren(*Shape92);
+Transform91->addChild(*Shape92);
 
 Transform84->addChildren(*Transform91);
 
@@ -498,13 +498,13 @@ CAppearance* Appearance99 = (CAppearance *)(m_pScene.createNode("Appearance"));
 Appearance99->setUSE("InterfaceAppearance");
 Shape96->setAppearance(*Appearance99);
 
-Transform93->addChildren(*Shape96);
+Transform93->addChild(*Shape96);
 
 CTransform* Transform100 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform100->setScale(new float[3]{1.8,0.6,1});
 CShape* Shape101 = (CShape *)(m_pScene.createNode("Shape"));
 Shape101->setUSE("TransparentClickSurface");
-Transform100->addChildren(*Shape101);
+Transform100->addChild(*Shape101);
 
 Transform93->addChildren(*Transform100);
 
@@ -544,7 +544,7 @@ CTransform* Transform109 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform109->setScale(new float[3]{1.8,0.6,1});
 CShape* Shape110 = (CShape *)(m_pScene.createNode("Shape"));
 Shape110->setUSE("TransparentClickSurface");
-Transform109->addChildren(*Shape110);
+Transform109->addChild(*Shape110);
 
 Anchor103->addChildren(*Transform109);
 

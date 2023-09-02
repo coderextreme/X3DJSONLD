@@ -102,7 +102,7 @@ var X3D0 =  new X3D({
                 new Transform({
                   rotation : new SFRotation([0,1,0,3]),
                   /*Shape begin*/
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       /*Sphere begin*/
                       /*Sphere complete, Appearance begin*/
@@ -121,14 +121,14 @@ var X3D0 =  new X3D({
                           texture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("ImageCloudlessEarth"),
-                              url : new MFString(["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"])}))}))}),
-                  /*Shape complete*/])}),
+                              url : new MFString(["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"])}))}))})),
+                  /*Shape complete*/}),
               /*Transform complete, Transform begin*/
 
                 new Transform({
                   translation : new SFVec3f([0,-2,0]),
                   /*Shape begin*/
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       /*Text begin*/
                       /*Text complete, Appearance begin*/
@@ -148,8 +148,8 @@ var X3D0 =  new X3D({
                           /*Material complete*/
                           material : new SFNode(
                             new Material({
-                              USE : new SFString("MaterialLightBlue")}))}))}),
-                  /*Shape complete*/])}),
+                              USE : new SFString("MaterialLightBlue")}))}))})),
+                  /*Shape complete*/}),
               /*Transform complete*/])}),
           /*Group complete*/])}))});
 console.log(X3D0.toXMLNode());

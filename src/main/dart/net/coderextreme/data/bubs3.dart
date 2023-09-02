@@ -26,7 +26,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/bubs.x3d'))]),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d'))]),
       Scene_ : 
         Scene(
           children_ : [
@@ -39,16 +39,16 @@ var X3D0 =  X3D(
               description_ : SFString('Bubbles in action')),
 
             Background(
-              backUrl_ : MFString([SFString("../resources/images/BK.png"), SFString("https://coderextreme.net/X3DJSONLD/images/BK.png")]),
-              bottomUrl_ : MFString([SFString("../resources/images/BT.png"), SFString("https://coderextreme.net/X3DJSONLD/images/BT.png")]),
-              frontUrl_ : MFString([SFString("../resources/images/FR.png"), SFString("https://coderextreme.net/X3DJSONLD/images/FR.png")]),
-              leftUrl_ : MFString([SFString("../resources/images/LF.png"), SFString("https://coderextreme.net/X3DJSONLD/images/LF.png")]),
-              rightUrl_ : MFString([SFString("../resources/images/RT.png"), SFString("https://coderextreme.net/X3DJSONLD/images/RT.png")]),
-              topUrl_ : MFString([SFString("../resources/images/TP.png"), SFString("https://coderextreme.net/X3DJSONLD/images/TP.png")])),
+              backUrl_ : MFString([SFString("../resources/images/BK.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png")]),
+              bottomUrl_ : MFString([SFString("../resources/images/BT.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png")]),
+              frontUrl_ : MFString([SFString("../resources/images/FR.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png")]),
+              leftUrl_ : MFString([SFString("../resources/images/LF.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png")]),
+              rightUrl_ : MFString([SFString("../resources/images/RT.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png")]),
+              topUrl_ : MFString([SFString("../resources/images/TP.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png")])),
 
             Transform(
               DEF_ : SFString('DECLBubble_bubbleA'),
-              children_ : [
+              child_ : 
                 Shape(
                   geometry_ : 
                     Sphere(
@@ -59,7 +59,7 @@ var X3D0 =  X3D(
                         Material(
                           diffuseColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0)]),
                           transparency_ : 0.2))),
-
+              children_ : [
                 Script(
                   DEF_ : SFString('DECLBubble_bubbleA_bounce'),
                   field_ : [
@@ -157,7 +157,7 @@ ecmascript:eval (0
 
             Transform(
               DEF_ : SFString('DECLBubble_bubbleB'),
-              children_ : [
+              child_ : 
                 Shape(
                   geometry_ : 
                     Sphere(
@@ -168,7 +168,7 @@ ecmascript:eval (0
                         Material(
                           diffuseColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0)]),
                           transparency_ : 0.2))),
-
+              children_ : [
                 Script(
                   DEF_ : SFString('DECLBubble_bubbleB_bounce'),
                   field_ : [
@@ -266,7 +266,7 @@ ecmascript:eval (0
 
             Transform(
               DEF_ : SFString('DECLBubble_bubbleC'),
-              children_ : [
+              child_ : 
                 Shape(
                   geometry_ : 
                     Sphere(
@@ -277,7 +277,7 @@ ecmascript:eval (0
                         Material(
                           diffuseColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0)]),
                           transparency_ : 0.2))),
-
+              children_ : [
                 Script(
                   DEF_ : SFString('DECLBubble_bubbleC_bounce'),
                   field_ : [
@@ -375,7 +375,7 @@ ecmascript:eval (0
 
             Transform(
               DEF_ : SFString('DECLBubble_bubbleD'),
-              children_ : [
+              child_ : 
                 Shape(
                   geometry_ : 
                     Sphere(
@@ -386,7 +386,7 @@ ecmascript:eval (0
                         Material(
                           diffuseColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0)]),
                           transparency_ : 0.2))),
-
+              children_ : [
                 Script(
                   DEF_ : SFString('DECLBubble_bubbleD_bounce'),
                   field_ : [

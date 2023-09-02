@@ -20,7 +20,7 @@ import org.web3d.x3d.jsail.Shape.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/cube.x3d">cube.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/cube.x3d">cube.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -40,11 +40,11 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/../license.html">../license.html</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/../license.html">../license.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/cube.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/cube.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/cube.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/cube.x3d</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -56,7 +56,9 @@ import org.web3d.x3d.jsail.Shape.*;
 		<a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
 		It has been produced using the 
 		<a href="https://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
-		stylesheet to create Java source code from an <code>.x3d</code> model.
+		stylesheet
+	       (<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">version&amp;nbsp;control</a>)
+                is used to create Java source code from an original <code>.x3d</code> model.
 	</p>
 
 	* @author John Carlson
@@ -82,7 +84,7 @@ public class cube
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("4 April 2017"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("manual"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html"))
-    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/cube.x3d")))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/src/main/data/cube.x3d")))
   .setScene(new Scene()
     .addChild(new Group()
       .addChild(new Shape()
@@ -343,10 +345,10 @@ public class cube
         if (validate)
         {
                 System.out.print("Java program \"net.x3djsonld.data.cube\" self-validation test results: ");
-                String validationResults = thisExampleX3dModel.validationReport();
-                if (validationResults.startsWith("\n") || (validationResults.length() > 10))
+		String validationResults = thisExampleX3dModel.validationReport();
+                if (validationResults.length() > 10)
                     System.out.println();
-                System.out.println(validationResults.trim());
+                System.out.println(validationResults);
         }
     }
 }

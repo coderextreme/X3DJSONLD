@@ -43,7 +43,7 @@ var X3D0 =  new X3D({
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
-              content : new SFString("JohnIFS.x3d")}),
+              content : new SFString("IFS.x3d")}),
 
             new meta({
               name : new SFString("identifier"),
@@ -80,7 +80,7 @@ var X3D0 =  new X3D({
               children : new MFNode([
                 new Transform({
                   translation : new SFVec3f([0,2.1,0]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       DEF : new SFString("HAnimSiteShape"),
                       geometry : new SFNode(
@@ -101,7 +101,7 @@ var X3D0 =  new X3D({
                           material : new SFNode(
                             new Material({
                               diffuseColor : new SFColor([1,1,0]),
-                              transparency : new SFFloat(0.3)}))}))})])})])}),
+                              transparency : new SFFloat(0.3)}))}))}))})])}),
 
             new NavigationInfo({
               speed : new SFFloat(1.5)}),

@@ -22,7 +22,7 @@ head1.meta[2] = meta4;
 
 let meta5 = browser.currentScene.createNode("meta");
 meta5.name = "identifier";
-meta5.content = "https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d";
+meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d";
 head1.meta[3] = meta5;
 
 let meta6 = browser.currentScene.createNode("meta");
@@ -57,9 +57,9 @@ let Sphere14 = browser.currentScene.createNode("Sphere");
 Sphere14.radius = 0.1;
 Shape11.geometry = Sphere14;
 
-Transform10.children = new MFNode();
+Transform10.child = new undefined();
 
-Transform10.children[0] = Shape11;
+Transform10.child[0] = Shape11;
 
 let PlaneSensor15 = browser.currentScene.createNode("PlaneSensor");
 PlaneSensor15.description = "Grab to move";
@@ -90,9 +90,9 @@ let Sphere21 = browser.currentScene.createNode("Sphere");
 Sphere21.radius = 0.1;
 Shape18.geometry = Sphere21;
 
-Transform17.children = new MFNode();
+Transform17.child = new undefined();
 
-Transform17.children[0] = Shape18;
+Transform17.child[0] = Shape18;
 
 let PlaneSensor22 = browser.currentScene.createNode("PlaneSensor");
 PlaneSensor22.description = "Grab to move";
@@ -126,9 +126,9 @@ let Cylinder29 = browser.currentScene.createNode("Cylinder");
 Cylinder29.radius = 0.05;
 Shape26.geometry = Cylinder29;
 
-Transform25.children = new MFNode();
+Transform25.child = new undefined();
 
-Transform25.children[0] = Shape26;
+Transform25.child[0] = Shape26;
 
 Transform24.children = new MFNode();
 

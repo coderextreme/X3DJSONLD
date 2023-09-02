@@ -32,7 +32,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/abox.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/abox.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -72,7 +72,7 @@ asmallbox.prototype = {
     .addMeta((new autoclass.meta()).setName("title").setContent("asmallbox.x3d"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/abox.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("a box")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.ProtoDeclare()).setName("anyShape")

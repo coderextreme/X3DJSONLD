@@ -53,7 +53,7 @@ public class cube {
         .addMeta(new meta().setName("created").setContent("4 April 2017"))
         .addMeta(new meta().setName("generator").setContent("manual"))
         .addMeta(new meta().setName("license").setContent("../license.html"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/cube.x3d")))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/cube.x3d")))
       .setScene(new Scene()
         .addChild(new Group()
           .addChild(new Shape()

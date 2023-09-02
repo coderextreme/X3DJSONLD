@@ -81,7 +81,7 @@ ProtoDeclare ProtoDeclare14 = browser.createX3DFromString(`<?xml version="1.0" e
 <field name="archHalfFilled" accessType="initializeOnly" appinfo="archHalfFilled: note it is a quarter cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalfFilled width." type="SFBool" value="false"></field>
 <field name="lintel" accessType="initializeOnly" appinfo="lintel: no arc is rendered, but a lintel: topAbutmentHeight on pierHeight, total height is pierHeight + topAbutmentHeight, if needed apply archHalf=true." type="SFBool" value="false"></field>
 </ProtoInterface>
-<ProtoBody><!--First node determines node type of this prototype--><!--IndexedFaceset creates arch--><Transform DEF="ArchTransform"><Shape DEF="Arch"><!--note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly--><IndexedFaceSet containerField="geometry" DEF="ArchIndex" convex="false" solid="false"><Coordinate containerField="coord" DEF="ArchChord"></Coordinate>
+<ProtoBody><!--First node determines node type of this prototype--><!--IndexedFaceset creates arch--><Transform DEF="ArchTransform"><Shape DEF="Arch"><!--note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly--><IndexedFaceSet DEF="ArchIndex" convex="false" solid="false"><Coordinate containerField="coord" DEF="ArchChord"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material DEF="MaterialNode"><IS><connect nodeField="emissiveColor" protoField="emissiveColor"></connect>
 <connect nodeField="diffuseColor" protoField="diffuseColor"></connect>
@@ -287,9 +287,9 @@ Appearance35.material = Material36;
 
 Shape32.appearance = Appearance35;
 
-Transform31.children = new MFNode();
+Transform31.child = new undefined();
 
-Transform31.children[0] = Shape32;
+Transform31.child[0] = Shape32;
 
 ProtoBody30.children = new MFNode();
 

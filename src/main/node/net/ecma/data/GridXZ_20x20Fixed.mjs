@@ -108,9 +108,9 @@ var X3D0 =  new X3D({
                     new Transform({
                       DEF : new SFString("LinesAlignedAlongX"),
                       rotation : new SFRotation([0,1,0,1.57079]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
-                          USE : new SFString("LinesAlignedAlongZ")})])}),
+                          USE : new SFString("LinesAlignedAlongZ")}))}),
 
                     new Transform({
                       translation : new SFVec3f([0,-0.5,0]),

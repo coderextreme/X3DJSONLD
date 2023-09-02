@@ -73,9 +73,9 @@ Cylinder17.height = 0.7;
 Cylinder17.radius = 0.1;
 Shape14.geometry = Cylinder17;
 
-Transform13.children = new MFNode();
+Transform13.child = new undefined();
 
-Transform13.children[0] = Shape14;
+Transform13.child[0] = Shape14;
 
 Transform12.children = new MFNode();
 
@@ -95,9 +95,9 @@ let Sphere22 = browser.currentScene.createNode("Sphere");
 Sphere22.radius = 0.098;
 Shape19.geometry = Sphere22;
 
-Transform18.children = new MFNode();
+Transform18.child = new undefined();
 
-Transform18.children[0] = Shape19;
+Transform18.child[0] = Shape19;
 
 Transform12.children[1] = Transform18;
 
@@ -119,9 +119,9 @@ Cylinder27.height = 0.06;
 Cylinder27.radius = 0.115;
 Shape24.geometry = Cylinder27;
 
-Transform23.children = new MFNode();
+Transform23.child = new undefined();
 
-Transform23.children[0] = Shape24;
+Transform23.child[0] = Shape24;
 
 Transform12.children[2] = Transform23;
 
@@ -148,9 +148,9 @@ Cylinder34.height = 0.1;
 Cylinder34.radius = 0.015;
 Shape31.geometry = Cylinder34;
 
-Transform30.children = new MFNode();
+Transform30.child = new undefined();
 
-Transform30.children[0] = Shape31;
+Transform30.child[0] = Shape31;
 
 Transform29.children = new MFNode();
 
@@ -172,9 +172,9 @@ Cylinder39.height = 0.02;
 Cylinder39.radius = 0.025;
 Shape36.geometry = Cylinder39;
 
-Transform35.children = new MFNode();
+Transform35.child = new undefined();
 
-Transform35.children[0] = Shape36;
+Transform35.child[0] = Shape36;
 
 Transform29.children[1] = Transform35;
 
@@ -196,9 +196,9 @@ Cylinder45.height = 0.03;
 Cylinder45.radius = 0.01;
 Shape42.geometry = Cylinder45;
 
-Transform41.children = new MFNode();
+Transform41.child = new undefined();
 
-Transform41.children[0] = Shape42;
+Transform41.child[0] = Shape42;
 
 Transform40.children = new MFNode();
 
@@ -220,9 +220,9 @@ Cylinder50.height = 0.02;
 Cylinder50.radius = 0.02;
 Shape47.geometry = Cylinder50;
 
-Transform46.children = new MFNode();
+Transform46.child = new undefined();
 
-Transform46.children[0] = Shape47;
+Transform46.child[0] = Shape47;
 
 Transform40.children[1] = Transform46;
 
@@ -250,9 +250,9 @@ Cylinder55.height = 0.1;
 Cylinder55.radius = 0.115;
 Shape52.geometry = Cylinder55;
 
-Transform51.children = new MFNode();
+Transform51.child = new undefined();
 
-Transform51.children[0] = Shape52;
+Transform51.child[0] = Shape52;
 
 Transform12.children[4] = Transform51;
 

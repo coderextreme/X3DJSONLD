@@ -37,7 +37,7 @@ head1.meta[5] = meta7;
 
 let meta8 = browser.currentScene.createNode("meta");
 meta8.name = "identifier";
-meta8.content = "https://coderextreme.net/X3DJSONLD/cube.x3d";
+meta8.content = "https://coderextreme.net/X3DJSONLD/src/main/data/cube.x3d";
 head1.meta[6] = meta8;
 
 head = head1;

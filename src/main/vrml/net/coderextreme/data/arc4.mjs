@@ -22,7 +22,7 @@ head1.meta[2] = meta4;
 
 let meta5 = browser.currentScene.createNode("meta");
 meta5.name = "identifier";
-meta5.content = "https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d";
+meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d";
 head1.meta[3] = meta5;
 
 let meta6 = browser.currentScene.createNode("meta");
@@ -57,9 +57,9 @@ Appearance13.material = Material14;
 
 Shape11.appearance = Appearance13;
 
-Transform10.children = new MFNode();
+Transform10.child = new undefined();
 
-Transform10.children[0] = Shape11;
+Transform10.child[0] = Shape11;
 
 let PositionInterpolator15 = browser.currentScene.createNode("PositionInterpolator");
 PositionInterpolator15.DEF = "DECLpoint_G1_PI1";
@@ -158,9 +158,9 @@ Appearance29.material = Material30;
 
 Shape27.appearance = Appearance29;
 
-Transform26.children = new MFNode();
+Transform26.child = new undefined();
 
-Transform26.children[0] = Shape27;
+Transform26.child[0] = Shape27;
 
 let PositionInterpolator31 = browser.currentScene.createNode("PositionInterpolator");
 PositionInterpolator31.DEF = "DECLpoint_G2_PI1";
@@ -263,9 +263,9 @@ let Cylinder48 = browser.currentScene.createNode("Cylinder");
 Cylinder48.radius = 0.05;
 Shape45.geometry = Cylinder48;
 
-Transform44.children = new MFNode();
+Transform44.child = new undefined();
 
-Transform44.children[0] = Shape45;
+Transform44.child[0] = Shape45;
 
 Transform43.children = new MFNode();
 

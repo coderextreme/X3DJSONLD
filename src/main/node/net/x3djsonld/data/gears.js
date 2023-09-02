@@ -40,7 +40,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
-			<td> convertStlToJson.js: <a href="https://github.com/coderextreme/X3DJSONLD/convertStlToJson.js" target="_blank">https://github.com/coderextreme/X3DJSONLD/convertStlToJson.js</a> </td>
+			<td> convertStlToJson.js: <a href="https://github.com/coderextreme/X3DJSONLD/src/main/node/convertStlToJson.js" target="_blank">https://github.com/coderextreme/X3DJSONLD/src/main/node/convertStlToJson.js</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
@@ -380,7 +380,7 @@ gears.prototype = {
     .addMeta((new autoclass.meta()).setName("description").setContent("Template for an Indexed Face Set"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
     .addMeta((new autoclass.meta()).setName("created").setContent("4 April 2017"))
-    .addMeta((new autoclass.meta()).setName("generator").setContent("convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/convertStlToJson.js"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/src/main/node/convertStlToJson.js"))
     .addMeta((new autoclass.meta()).setName("license").setContent("../license.html"))
     .addMeta((new autoclass.meta()).setName("modified").setContent("30 April 2017"))
     .addMeta((new autoclass.meta()).setName("translated").setContent("30 April 2017"))

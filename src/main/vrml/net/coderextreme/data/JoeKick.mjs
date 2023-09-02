@@ -213,7 +213,7 @@ IndexedLineSet37.color = Color39;
 
 Shape36.geometry = IndexedLineSet37;
 
-Transform34.children[1] = Shape36;
+Transform34.child[1] = Shape36;
 
 HAnimSite33.children = new MFNode();
 
@@ -3695,9 +3695,9 @@ IndexedFaceSet540.coord = Coordinate541;
 
 Shape536.geometry = IndexedFaceSet540;
 
-Transform535.children = new MFNode();
+Transform535.child = new undefined();
 
-Transform535.children[0] = Shape536;
+Transform535.child[0] = Shape536;
 
 let Viewpoint542 = browser.currentScene.createNode("Viewpoint");
 Viewpoint542.DEF = "ballView_1";
@@ -3757,9 +3757,9 @@ let Transform550 = browser.currentScene.createNode("Transform");
 Transform550.scale = new SFVec3f(new float[0.2,0.2,0.2]);
 let Shape551 = browser.currentScene.createNode("Shape");
 Shape551.USE = "AxisLinesShape";
-Transform550.children = new MFNode();
+Transform550.child = new undefined();
 
-Transform550.children[0] = Shape551;
+Transform550.child[0] = Shape551;
 
 Group549.children = new MFNode();
 
@@ -3791,9 +3791,9 @@ IndexedLineSet556.coord = Coordinate557;
 
 Shape553.geometry = IndexedLineSet556;
 
-Transform552.children = new MFNode();
+Transform552.child = new undefined();
 
-Transform552.children[0] = Shape553;
+Transform552.child[0] = Shape553;
 
 Group549.children[1] = Transform552;
 
@@ -3816,9 +3816,9 @@ let IndexedLineSet562 = browser.currentScene.createNode("IndexedLineSet");
 IndexedLineSet562.USE = "Orbit1";
 Shape559.geometry = IndexedLineSet562;
 
-Transform558.children = new MFNode();
+Transform558.child = new undefined();
 
-Transform558.children[0] = Shape559;
+Transform558.child[0] = Shape559;
 
 Group549.children[2] = Transform558;
 
@@ -3841,9 +3841,9 @@ let IndexedLineSet567 = browser.currentScene.createNode("IndexedLineSet");
 IndexedLineSet567.USE = "Orbit1";
 Shape564.geometry = IndexedLineSet567;
 
-Transform563.children = new MFNode();
+Transform563.child = new undefined();
 
-Transform563.children[0] = Shape564;
+Transform563.child[0] = Shape564;
 
 Group549.children[3] = Transform563;
 

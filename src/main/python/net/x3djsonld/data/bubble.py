@@ -1,6 +1,10 @@
 ####################################################################################################
 #
-# Now available: developmental python x3d.py package on PyPI for import.
+# Invoking X3D model self-test:
+#
+#   $ python bubble.py
+#
+# Python package x3d.py package is available on PyPI for import.
 #   This approach simplifies Python X3D deployment and use.
 #   https://pypi.org/project/x3d
 #
@@ -9,7 +13,7 @@
 # or
 #       python -m pip install x3d
 #
-# Developer options for loading x3d package:
+# Developer options for loading x3d package in other Python programs:
 #
 #    from x3d import *  # preferred approach, terser source that avoids x3d.* class prefixes
 #
@@ -29,7 +33,7 @@ newModel=X3D(profile='Immersive',version='3.3',
     meta(name='creator',content='John Carlson'),
     meta(name='description',content='Tour around a prismatic sphere'),
     meta(name='generator',content='X3D-Edit, https://savage.nps.edu/X3D-Edit'),
-    meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/bubble.x3d')]),
+    meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/src/main/data/bubble.x3d')]),
   Scene=Scene(
     children=[
     NavigationInfo(type='"EXAMINE"'),

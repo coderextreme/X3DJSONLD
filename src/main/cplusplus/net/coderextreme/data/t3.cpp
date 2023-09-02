@@ -113,7 +113,7 @@ CSphere* Sphere24 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere24->setRadius(5.10000002384186);
 Shape21->setGeometry(Sphere24);
 
-Transform20->addChildren(*Shape21);
+Transform20->addChild(*Shape21);
 
 Anchor19->addChildren(*Transform20);
 
@@ -136,7 +136,7 @@ CSphere* Sphere30 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere30->setRadius(5.10000002384186);
 Shape27->setGeometry(Sphere30);
 
-Transform26->addChildren(*Shape27);
+Transform26->addChild(*Shape27);
 
 Anchor25->addChildren(*Transform26);
 
@@ -159,7 +159,7 @@ CSphere* Sphere36 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere36->setRadius(5.10000002384186);
 Shape33->setGeometry(Sphere36);
 
-Transform32->addChildren(*Shape33);
+Transform32->addChild(*Shape33);
 
 Anchor31->addChildren(*Transform32);
 
@@ -182,7 +182,7 @@ CSphere* Sphere42 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere42->setRadius(5.10000002384186);
 Shape39->setGeometry(Sphere42);
 
-Transform38->addChildren(*Shape39);
+Transform38->addChild(*Shape39);
 
 Anchor37->addChildren(*Transform38);
 
@@ -205,7 +205,7 @@ CSphere* Sphere48 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere48->setRadius(5.10000002384186);
 Shape45->setGeometry(Sphere48);
 
-Transform44->addChildren(*Shape45);
+Transform44->addChild(*Shape45);
 
 Anchor43->addChildren(*Transform44);
 
@@ -228,7 +228,7 @@ CSphere* Sphere54 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere54->setRadius(5.10000002384186);
 Shape51->setGeometry(Sphere54);
 
-Transform50->addChildren(*Shape51);
+Transform50->addChild(*Shape51);
 
 Anchor49->addChildren(*Transform50);
 
@@ -251,7 +251,7 @@ CSphere* Sphere60 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere60->setRadius(5.10000002384186);
 Shape57->setGeometry(Sphere60);
 
-Transform56->addChildren(*Shape57);
+Transform56->addChild(*Shape57);
 
 Anchor55->addChildren(*Transform56);
 
@@ -274,7 +274,7 @@ CSphere* Sphere66 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere66->setRadius(5.10000002384186);
 Shape63->setGeometry(Sphere66);
 
-Transform62->addChildren(*Shape63);
+Transform62->addChild(*Shape63);
 
 Anchor61->addChildren(*Transform62);
 
@@ -297,7 +297,7 @@ CSphere* Sphere72 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere72->setRadius(5.10000002384186);
 Shape69->setGeometry(Sphere72);
 
-Transform68->addChildren(*Shape69);
+Transform68->addChild(*Shape69);
 
 Anchor67->addChildren(*Transform68);
 
@@ -320,7 +320,7 @@ CSphere* Sphere78 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere78->setRadius(5.10000002384186);
 Shape75->setGeometry(Sphere78);
 
-Transform74->addChildren(*Shape75);
+Transform74->addChild(*Shape75);
 
 Anchor73->addChildren(*Transform74);
 
@@ -343,7 +343,7 @@ CSphere* Sphere84 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere84->setRadius(5.10000002384186);
 Shape81->setGeometry(Sphere84);
 
-Transform80->addChildren(*Shape81);
+Transform80->addChild(*Shape81);
 
 Anchor79->addChildren(*Transform80);
 
@@ -366,7 +366,7 @@ CSphere* Sphere90 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere90->setRadius(5.10000002384186);
 Shape87->setGeometry(Sphere90);
 
-Transform86->addChildren(*Shape87);
+Transform86->addChild(*Shape87);
 
 Anchor85->addChildren(*Transform86);
 
@@ -389,7 +389,7 @@ CSphere* Sphere96 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere96->setRadius(5.10000002384186);
 Shape93->setGeometry(Sphere96);
 
-Transform92->addChildren(*Shape93);
+Transform92->addChild(*Shape93);
 
 Anchor91->addChildren(*Transform92);
 
@@ -412,7 +412,7 @@ CSphere* Sphere102 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere102->setRadius(5.10000002384186);
 Shape99->setGeometry(Sphere102);
 
-Transform98->addChildren(*Shape99);
+Transform98->addChild(*Shape99);
 
 Anchor97->addChildren(*Transform98);
 
@@ -435,7 +435,7 @@ CSphere* Sphere108 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere108->setRadius(5.10000002384186);
 Shape105->setGeometry(Sphere108);
 
-Transform104->addChildren(*Shape105);
+Transform104->addChild(*Shape105);
 
 Anchor103->addChildren(*Transform104);
 

@@ -1041,7 +1041,7 @@ var X3D0 =  X3D(
                       fromNode_ : SFString('TextTouch.SimpleShots'),
                       toField_ : SFString('startTime'),
                       toNode_ : SFString('CameraTimer.SimpleShots')),
-
+                  child_ : 
                     Shape(
                       geometry_ : 
                         Text(
@@ -1058,9 +1058,9 @@ var X3D0 =  X3D(
                               diffuseColor_ : SFColor([SFDouble(0.945455), SFDouble(0.318988), SFDouble(0.321717)]),
                               shininess_ : 0.01,
                               specularColor_ : SFColor([SFDouble(0.072727), SFDouble(0.021705), SFDouble(0.010732)]),
-                              /*Universal Media Library: ArtDeco 5*/))),
+                              /*Universal Media Library: ArtDeco 5*/)))],
                   /*Simplify intersection test for user selecting text*/
-
+                  child_ : 
                     Shape(
                       DEF_ : SFString('TransparentBox'),
                       appearance_ : 
@@ -1070,7 +1070,7 @@ var X3D0 =  X3D(
                               transparency_ : 1)),
                       geometry_ : 
                         Box(
-                          size_ : SFVec3f([SFDouble(6), SFDouble(2), SFDouble(0.0001)])))])]),
+                          size_ : SFVec3f([SFDouble(6), SFDouble(2), SFDouble(0.0001)]))))]),
 
             Group(
               DEF_ : SFString('SimpleShotsTargets'),
@@ -1078,7 +1078,7 @@ var X3D0 =  X3D(
                 Transform(
                   DEF_ : SFString('TargetBoxZoom'),
                   translation_ : SFVec3f([SFDouble(-50), SFDouble(1), SFDouble(-20)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       geometry_ : 
                         Box(),
@@ -1089,10 +1089,10 @@ var X3D0 =  X3D(
                           texture_ : 
                             ImageTexture(
                               url_ : MFString([SFString("images/CameraMoveZoom.png"), SFString("https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveZoom.png")])))),
-
+                  children_ : [
                     Transform(
                       translation_ : SFVec3f([SFDouble(0), SFDouble(2), SFDouble(0)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           geometry_ : 
                             Text(
@@ -1103,12 +1103,12 @@ var X3D0 =  X3D(
                           appearance_ : 
                             Appearance(
                               material_ : 
-                                Material()))])]),
+                                Material())))]),
 
                 Transform(
                   DEF_ : SFString('TargetBoxDolly'),
                   translation_ : SFVec3f([SFDouble(-40), SFDouble(1), SFDouble(-20)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       geometry_ : 
                         Box(),
@@ -1119,10 +1119,10 @@ var X3D0 =  X3D(
                           texture_ : 
                             ImageTexture(
                               url_ : MFString([SFString("images/CameraMoveDolly.png"), SFString("https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveDolly.png")])))),
-
+                  children_ : [
                     Transform(
                       translation_ : SFVec3f([SFDouble(0), SFDouble(2), SFDouble(0)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           geometry_ : 
                             Text(
@@ -1133,12 +1133,12 @@ var X3D0 =  X3D(
                           appearance_ : 
                             Appearance(
                               material_ : 
-                                Material()))])]),
+                                Material())))]),
 
                 Transform(
                   DEF_ : SFString('TargetBoxPan'),
                   translation_ : SFVec3f([SFDouble(-30), SFDouble(1), SFDouble(-20)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       geometry_ : 
                         Box(),
@@ -1149,10 +1149,10 @@ var X3D0 =  X3D(
                           texture_ : 
                             ImageTexture(
                               url_ : MFString([SFString("images/CameraMovePan.png"), SFString("https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMovePan.png")])))),
-
+                  children_ : [
                     Transform(
                       translation_ : SFVec3f([SFDouble(0), SFDouble(2), SFDouble(0)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           geometry_ : 
                             Text(
@@ -1163,12 +1163,12 @@ var X3D0 =  X3D(
                           appearance_ : 
                             Appearance(
                               material_ : 
-                                Material()))])]),
+                                Material())))]),
 
                 Transform(
                   DEF_ : SFString('TargetBoxBoom'),
                   translation_ : SFVec3f([SFDouble(-20), SFDouble(1), SFDouble(-20)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       geometry_ : 
                         Box(),
@@ -1179,10 +1179,10 @@ var X3D0 =  X3D(
                           texture_ : 
                             ImageTexture(
                               url_ : MFString([SFString("images/CameraMoveBoom.png"), SFString("https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveBoom.png")])))),
-
+                  children_ : [
                     Transform(
                       translation_ : SFVec3f([SFDouble(0), SFDouble(2), SFDouble(0)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           geometry_ : 
                             Text(
@@ -1193,12 +1193,12 @@ var X3D0 =  X3D(
                           appearance_ : 
                             Appearance(
                               material_ : 
-                                Material()))])]),
+                                Material())))]),
 
                 Transform(
                   DEF_ : SFString('TargetBoxTilt'),
                   translation_ : SFVec3f([SFDouble(-10), SFDouble(1), SFDouble(-20)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       geometry_ : 
                         Box(),
@@ -1209,10 +1209,10 @@ var X3D0 =  X3D(
                           texture_ : 
                             ImageTexture(
                               url_ : MFString([SFString("images/CameraMoveTilt.png"), SFString("https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveTilt.png")])))),
-
+                  children_ : [
                     Transform(
                       translation_ : SFVec3f([SFDouble(0), SFDouble(2), SFDouble(0)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           geometry_ : 
                             Text(
@@ -1223,7 +1223,7 @@ var X3D0 =  X3D(
                           appearance_ : 
                             Appearance(
                               material_ : 
-                                Material()))])])]),
+                                Material())))])]),
           /*=============== Camera.AimPointTest ==============*/
 
             ProtoInstance(
@@ -1400,7 +1400,7 @@ var X3D0 =  X3D(
                       fromNode_ : SFString('TextTouch.AimPointTest'),
                       toField_ : SFString('startTime'),
                       toNode_ : SFString('CameraTimer.AimPointTest')),
-
+                  child_ : 
                     Shape(
                       geometry_ : 
                         Text(
@@ -1412,10 +1412,10 @@ var X3D0 =  X3D(
                         Appearance(
                           material_ : 
                             Material(
-                              USE_ : SFString('ArtDeco5')))),
-
+                              USE_ : SFString('ArtDeco5'))))],
+                  child_ : 
                     Shape(
-                      USE_ : SFString('TransparentBox'))])]),
+                      USE_ : SFString('TransparentBox')))]),
           /*TODO build a test once implemented*/
 
             ProtoInstance(
@@ -1461,7 +1461,7 @@ var X3D0 =  X3D(
                     Inline(
                       DEF_ : SFString('CameraShape'),
                       url_ : MFString([SFString("CameraShape.x3d"), SFString("https://www.web3d.org/x3d/content/examples/Basic/development/CameraShape.x3d")])),
-
+                  child_ : 
                     Shape(
                       DEF_ : SFString('SightLine'),
                       geometry_ : 
@@ -1588,7 +1588,7 @@ var X3D0 =  X3D(
             Transform(
               rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-1.57079)]),
               scale_ : SFVec3f([SFDouble(10), SFDouble(10), SFDouble(10)]),
-              children_ : [
+              child_ : 
                 Shape(
                   appearance_ : 
                     Appearance(
@@ -1609,7 +1609,7 @@ var X3D0 =  X3D(
                           point_ : MFVec3f([SFVec3f([-5.25,5.25,0]),SFVec3f([-3.75,5.25,0]),SFVec3f([-2.25,5.25,0]),SFVec3f([-0.75,5.25,0]),SFVec3f([0.75,5.25,0]),SFVec3f([2.25,5.25,0]),SFVec3f([3.75,5.25,0]),SFVec3f([5.25,5.25,0]),SFVec3f([-5.25,3.75,0]),SFVec3f([-3.75,3.75,0]),SFVec3f([-2.25,3.75,0]),SFVec3f([-0.75,3.75,0]),SFVec3f([0.75,3.75,0]),SFVec3f([2.25,3.75,0]),SFVec3f([3.75,3.75,0]),SFVec3f([5.25,3.75,0]),SFVec3f([-5.25,2.25,0]),SFVec3f([-3.75,2.25,0]),SFVec3f([-2.25,2.25,0]),SFVec3f([-0.75,2.25,0]),SFVec3f([0.75,2.25,0]),SFVec3f([2.25,2.25,0]),SFVec3f([3.75,2.25,0]),SFVec3f([5.25,2.25,0]),SFVec3f([-5.25,0.75,0]),SFVec3f([-3.75,0.75,0]),SFVec3f([-2.25,0.75,0]),SFVec3f([-0.75,0.75,0]),SFVec3f([0.75,0.75,0]),SFVec3f([2.25,0.75,0]),SFVec3f([3.75,0.75,0]),SFVec3f([5.25,0.75,0]),SFVec3f([-5.25,-0.75,0]),SFVec3f([-3.75,-0.75,0]),SFVec3f([-2.25,-0.75,0]),SFVec3f([-0.75,-0.75,0]),SFVec3f([0.75,-0.75,0]),SFVec3f([2.25,-0.75,0]),SFVec3f([3.75,-0.75,0]),SFVec3f([5.25,-0.75,0]),SFVec3f([-5.25,-2.25,0]),SFVec3f([-3.75,-2.25,0]),SFVec3f([-2.25,-2.25,0]),SFVec3f([-0.75,-2.25,0]),SFVec3f([0.75,-2.25,0]),SFVec3f([2.25,-2.25,0]),SFVec3f([3.75,-2.25,0]),SFVec3f([5.25,-2.25,0]),SFVec3f([-5.25,-3.75,0]),SFVec3f([-3.75,-3.75,0]),SFVec3f([-2.25,-3.75,0]),SFVec3f([-0.75,-3.75,0]),SFVec3f([0.75,-3.75,0]),SFVec3f([2.25,-3.75,0]),SFVec3f([3.75,-3.75,0]),SFVec3f([5.25,-3.75,0]),SFVec3f([-5.25,-5.25,0]),SFVec3f([-3.75,-5.25,0]),SFVec3f([-2.25,-5.25,0]),SFVec3f([-0.75,-5.25,0]),SFVec3f([0.75,-5.25,0]),SFVec3f([2.25,-5.25,0]),SFVec3f([3.75,-5.25,0]),SFVec3f([5.25,-5.25,0])])),
                       color_ : 
                         Color(
-                          color_ : MFColor([SFColor(0.435294), SFColor(0.741176), SFColor(0), SFColor(0), SFColor(0.560784), SFColor(0.580392)]))))]),
+                          color_ : MFColor([SFColor(0.435294), SFColor(0.741176), SFColor(0), SFColor(0), SFColor(0.560784), SFColor(0.580392)]))))),
 
             Transform(
               scale_ : SFVec3f([SFDouble(3), SFDouble(3), SFDouble(3)]),
@@ -1661,7 +1661,7 @@ var X3D0 =  X3D(
                   fromNode_ : SFString('BoxTimer'),
                   toField_ : SFString('set_fraction'),
                   toNode_ : SFString('BoxPath')),
-
+              child_ : 
                 Shape(
                   geometry_ : 
                     Box(),
@@ -1751,7 +1751,7 @@ var X3D0 =  X3D(
               children_ : [
                 Transform(
                   translation_ : SFVec3f([SFDouble(0), SFDouble(-3), SFDouble(0)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       geometry_ : 
                         Text(
@@ -1764,5 +1764,5 @@ var X3D0 =  X3D(
                         Appearance(
                           material_ : 
                             Material(
-                              diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(0.2)]))))])])]));
+                              diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(0.2)])))))])]));
 void main() { exit(0); }

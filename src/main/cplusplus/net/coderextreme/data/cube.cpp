@@ -46,7 +46,7 @@ head1->addMeta(*meta7);
 
 Cmeta* meta8 = new Cmeta();
 meta8->setName("identifier");
-meta8->setContent("https://coderextreme.net/X3DJSONLD/cube.x3d");
+meta8->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/cube.x3d");
 head1->addMeta(*meta8);
 
 X3D0->setHead(*head1);

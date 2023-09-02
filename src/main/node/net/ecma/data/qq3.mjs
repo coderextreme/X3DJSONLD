@@ -78,7 +78,7 @@ var X3D0 =  new X3D({
                       children : new MFNode([
                         new Transform({
                           scale : new SFVec3f([0.5,0.5,0.5]),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               DEF : new SFString("ShapeLeftDown"),
                               appearance : new SFNode(
@@ -90,12 +90,12 @@ var X3D0 =  new X3D({
                                 new Extrusion({
                                   spine : new MFVec3f([-2.5,0,0,-1.5,0,0]),
                                   creaseAngle : new SFFloat(0.785),
-                                  crossSection : new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0])}))})])}),
+                                  crossSection : new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0])}))}))}),
                       /*right*/
 
                         new Transform({
                           scale : new SFVec3f([0.5,0.5,0.5]),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               DEF : new SFString("ShapeUpRight"),
                               appearance : new SFNode(
@@ -107,21 +107,21 @@ var X3D0 =  new X3D({
                                 new Extrusion({
                                   spine : new MFVec3f([1.5,0,0,2.5,0,0]),
                                   creaseAngle : new SFFloat(0.785),
-                                  crossSection : new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0])}))})])}),
+                                  crossSection : new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0])}))}))}),
                       /*up*/
 
                         new Transform({
                           scale : new SFVec3f([0.5,0.5,0.5]),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
-                              USE : new SFString("ShapeUpRight")})])}),
+                              USE : new SFString("ShapeUpRight")}))}),
                       /*down*/
 
                         new Transform({
                           scale : new SFVec3f([0.5,0.5,0.5]),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
-                              USE : new SFString("ShapeLeftDown")})])})])})])}))}),
+                              USE : new SFString("ShapeLeftDown")}))})])})])}))}),
 
             new Viewpoint({
               description : new SFString("Process pipes"),

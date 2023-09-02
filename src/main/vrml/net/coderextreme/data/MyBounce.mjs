@@ -27,7 +27,7 @@ head1.meta[3] = meta5;
 
 let meta6 = browser.currentScene.createNode("meta");
 meta6.name = "identifier";
-meta6.content = "https://coderextreme.net/X3DJSONLD/SFVec3f.x3d";
+meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d";
 head1.meta[4] = meta6;
 
 head = head1;
@@ -51,9 +51,9 @@ Shape10.appearance = Appearance11;
 let Sphere13 = browser.currentScene.createNode("Sphere");
 Shape10.geometry = Sphere13;
 
-Transform9.children = new MFNode();
+Transform9.child = new undefined();
 
-Transform9.children[0] = Shape10;
+Transform9.child[0] = Shape10;
 
 browser.currentScene.children[1] = Transform9;
 

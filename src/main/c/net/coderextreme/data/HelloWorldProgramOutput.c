@@ -99,7 +99,7 @@ head1.meta[15] = meta17;
 
 meta meta18 = createNode("meta");
 meta18.name = "modified";
-meta18.content = "3 July 2023";
+meta18.content = "30 July 2023";
 head1.meta[16] = meta18;
 
 meta meta19 = createNode("meta");
@@ -339,9 +339,9 @@ Text62.fontStyle = FontStyle66;
 
 Shape59.geometry = Text62;
 
-Transform58.children = new MFNode();
+Transform58.child = new undefined();
 
-Transform58.children[0] = Shape59;
+Transform58.child[0] = Shape59;
 
 Collision Collision67 = createNode("Collision");
 //test containerField='proxy'

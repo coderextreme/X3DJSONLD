@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.0", 
-head=head(children=[meta(name="title", content="GridXZ_20x20Fixed.x3d"),
+head=head(
+children=[
+meta(name="title", content="GridXZ_20x20Fixed.x3d"),
 meta(name="creator", content="MV4204 class"),
 meta(name="created", content="3 September 2000"),
 meta(name="modified", content="30 March 2016"),
@@ -14,7 +17,7 @@ meta(name="description", content="Line grid authoring tool to enable precise vis
 meta(name="identifier", content="https://savage.nps.edu/Savage/Tools/Authoring/GridXZ_20x20Fixed.x3d"),
 meta(name="generator", content="X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -77,5 +80,6 @@ Text(string=["-10 0 -10"],
 fontStyle=
 FontStyle(USE="FS4")), 
 appearance=
-Appearance(USE="DefaultAppearance"))])])])])]))
-.XML())
+Appearance(USE="DefaultAppearance"))])])])])])))
+output = model.JSON()
+json.loads(output)

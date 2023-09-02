@@ -35,7 +35,7 @@
 <Group DEF="OldMan_Humanoid"><HAnimHumanoid name="Walk" DEF="OldMan" loa="3" version="2.0"><MetadataSet containerField="metadata" name="warnings" reference="HAnim"><MetadataString name="SymmetricalLeftRight" reference="correction options: ignore, warn, average, left, right, largest, smallest" value="&quot;ignore&quot;" containerField="value"></MetadataString>
 </MetadataSet>
 <HAnimJoint name="humanoid_root" DEF="OldMan_humanoid_root" ulimit="0 0 0" llimit="0 0 0" containerField="skeleton"><!--TODO center='x 0.9155 z'--><HAnimSegment name="sacrum" DEF="OldMan_sacrum"><HAnimSite name="RootBack_view" DEF="OldMan_RootBack_view"><Transform DEF="hanimcordsys" scale="0.175 0.175 0.175"><Viewpoint DEF="ViewBodyRootAxes" description="Joe_HAnim Root HAnimSite Coordinate Axes View"></Viewpoint>
-<Shape DEF="AxisLinesShape"><!--RGB lines showing XYZ axes--><IndexedLineSet containerField="geometry" colorIndex="0 1 2" colorPerVertex="false" coordIndex="0 1 -1 0 2 -1 0 3 -1"><Coordinate containerField="coord" point="0 0 0 1 0 0 0 1 0 0 0 1"></Coordinate>
+<Shape DEF="AxisLinesShape"><!--RGB lines showing XYZ axes--><IndexedLineSet colorIndex="0 1 2" colorPerVertex="false" coordIndex="0 1 -1 0 2 -1 0 3 -1"><Coordinate containerField="coord" point="0 0 0 1 0 0 0 1 0 0 0 1"></Coordinate>
 <Color color="1 0 0 0 0.6 0 0 0 1"></Color>
 </IndexedLineSet>
 </Shape>
@@ -43,7 +43,7 @@
 <ImageTexture containerField="texture" DEF="OldManSkinImageTexture" url="&quot;OldManBodyTexture29.png&quot; &quot;https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JoeBodyTexture29.png&quot;"></ImageTexture>
 <TextureTransform DEF="KickTextureTransform"></TextureTransform>
 </Appearance>
-<IndexedFaceSet containerField="geometry" DEF="OldMan_skin_IndexedFaceSet"></IndexedFaceSet>
+<IndexedFaceSet DEF="OldMan_skin_IndexedFaceSet"></IndexedFaceSet>
 </Shape>
 </Transform>
 </HAnimSite>

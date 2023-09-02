@@ -113,7 +113,7 @@ CSphere* Sphere23 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere23->setRadius(30);
 Shape20->setGeometry(Sphere23);
 
-Transform19->addChildren(*Shape20);
+Transform19->addChild(*Shape20);
 
 group->addChildren(*Transform19);
 
@@ -135,7 +135,7 @@ CSphere* Sphere28 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere28->setRadius(30);
 Shape25->setGeometry(Sphere28);
 
-Transform24->addChildren(*Shape25);
+Transform24->addChild(*Shape25);
 
 group->addChildren(*Transform24);
 
@@ -157,7 +157,7 @@ CSphere* Sphere33 = (CSphere *)(m_pScene.createNode("Sphere"));
 Sphere33->setRadius(30);
 Shape30->setGeometry(Sphere33);
 
-Transform29->addChildren(*Shape30);
+Transform29->addChild(*Shape30);
 
 group->addChildren(*Transform29);
 
@@ -207,7 +207,7 @@ CCylinder* Cylinder44 = (CCylinder *)(m_pScene.createNode("Cylinder"));
 Cylinder44->setRadius(500);
 Shape41->setGeometry(Cylinder44);
 
-Transform40->addChildren(*Shape41);
+Transform40->addChild(*Shape41);
 
 group->addChildren(*Transform40);
 

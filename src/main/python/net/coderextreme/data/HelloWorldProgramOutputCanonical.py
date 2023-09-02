@@ -2,9 +2,11 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.3", 
 head=head(
+children=[
 children=[
 Comment(value=''' comment #1 '''),
 Comment(value=''' comment #2 '''),
@@ -34,7 +36,7 @@ meta(name="reference", content="HelloWorldProgramOutput.html"),
 meta(name="reference", content="https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"),
 meta(name="identifier", content="http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="17 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -249,5 +251,6 @@ ProgramShader(DEF="TestShader1", programs=[
 ShaderProgram(DEF="TestShader2", type="VERTEX")]),
 ProtoInstance(name="ShaderProto", DEF="TestShader3"),
 ComposedShader(DEF="TestShader4", parts=[
-ShaderPart(DEF="TestShader5", type="VERTEX")])])),]))
-.XML())
+ShaderPart(DEF="TestShader5", type="VERTEX")])])),])))
+output = model.JSON()
+json.loads(output)

@@ -2,14 +2,17 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[meta(name="title", content="asteroids.x3d"),
+head=head(
+children=[
+meta(name="title", content="asteroids.x3d"),
 meta(name="creator", content="John Carlson"),
 meta(name="generator", content="manual"),
-meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/asteroids.x3d"),
+meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/asteroids.x3d"),
 meta(name="description", content="asteroids"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -24,5 +27,6 @@ ProtoBody=ProtoBody(children=[
 Transform(
 IS=IS(connect=[connect(nodeField="children", protoField="myShape")
 ]))])),
-ProtoInstance(name="anyShape")]))
-.XML())
+ProtoInstance(name="anyShape")])))
+output = model.JSON()
+json.loads(output)

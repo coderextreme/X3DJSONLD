@@ -49,7 +49,7 @@ public class JinLOA4Canonical {
       .setHead(new head()
         .addComponent(new component().setName("HAnim").setLevel(1)))
       .setScene(new Scene()
-        .addChild(new WorldInfo().setTitle("JinLOA4.x3d"))
+        .addChild(new WorldInfo().setTitle("JinLOA4Canonical.x3d"))
         .addChild(new NavigationInfo().setSpeed(1.5f))
         .addChild(new Viewpoint().setCenterOfRotation(new float[] {0f,1f,0f}).setDescription("JinLOA4").setPosition(new float[] {0f,1f,3f}))
         .addChild(new Transform().setDEF("cordsysfloor").setScale(new float[] {0.175f,0.175f,0.175f})

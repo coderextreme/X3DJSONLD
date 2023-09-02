@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[meta(name="title", content="ViewFrustumPrototype.x3d"),
+head=head(
+children=[
+meta(name="title", content="ViewFrustumPrototype.x3d"),
 meta(name="description", content="Define a view frustum associated with a given pair of Viewpoint and NavigationInfo nodes, provided as a reusable prototype."),
 meta(name="creator", content="Don Brutzman"),
 meta(name="translated", content="16 August 2008"),
@@ -17,7 +20,7 @@ meta(name="subject", content="view culling frustum"),
 meta(name="identifier", content="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -25,11 +28,9 @@ Scene=Scene(children=[
 WorldInfo(title="ViewFrustumPrototype.x3d"),
 ProtoDeclare(name="ViewFrustum", appinfo="Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes", 
 ProtoInterface=ProtoInterface(field=[field(name="ViewpointNode", accessType="initializeOnly", appinfo="required: insert Viewpoint DEF or USE node for view of interest", type="SFNode", children=[
-Comment(value=''' NULL node, ProtoInstance must provide '''),
-]),
+Comment(value=''' NULL node, ProtoInstance must provide '''),]),
 field(name="NavigationInfoNode", accessType="initializeOnly", appinfo="required: insert NavigationInfo DEF or USE node of interest", type="SFNode", children=[
-Comment(value=''' NULL node, ProtoInstance must provide '''),
-]),
+Comment(value=''' NULL node, ProtoInstance must provide '''),]),
 field(name="visible", accessType="inputOutput", appinfo="whether or not frustum geometry is rendered", type="SFBool", value=True),
 field(name="lineColor", accessType="inputOutput", appinfo="RGB color of ViewFrustum outline, default value 0.9 0.9 0.9", type="SFColor", value=(0.9,0.9,0.9)),
 field(name="frustumColor", accessType="inputOutput", appinfo="RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8", type="SFColor", value=(0.8,0.8,0.8)),
@@ -70,11 +71,9 @@ Appearance(USE="FrustumAppearance"))])])]),
 Script(DEF="GeometryComputationScript", directOutput=True, url=["ViewFrustumPrototypeScript.js"], field=[field(name="visible", accessType="inputOutput", appinfo="Whether or not frustum geometry is rendered", type="SFBool"),
 field(name="visibilitySwitchSelection", accessType="outputOnly", appinfo="Adjust Switch selection to make geometry visible or not", type="SFInt32"),
 field(name="ViewpointNode", accessType="initializeOnly", type="SFNode", children=[
-Comment(value=''' initialization node (if any) goes here '''),
-]),
+Comment(value=''' initialization node (if any) goes here '''),]),
 field(name="NavigationInfoNode", accessType="initializeOnly", type="SFNode", children=[
-Comment(value=''' initialization node (if any) goes here '''),
-]),
+Comment(value=''' initialization node (if any) goes here '''),]),
 field(name="FrustumCoordinate", accessType="initializeOnly", type="SFNode", children=[
 Coordinate(USE="FrustumCoordinate")]),
 field(name="FrustumExtrusion", accessType="initializeOnly", type="SFNode", children=[
@@ -101,7 +100,6 @@ ROUTE(fromField="spine_changed", fromNode="GeometryComputationScript", toField="
 ROUTE(fromField="scale_changed", fromNode="GeometryComputationScript", toField="set_scale", toNode="FrustumExtrusion"),
 ROUTE(fromField="point_changed", fromNode="GeometryComputationScript", toField="point", toNode="FrustumCoordinate")])),
 Comment(value=''' Example use is in separate scene '''),
-
 Anchor(description="ViewFrustum Example", url=["ViewFrustumExample.x3d"], children=[
 Shape(
 appearance=
@@ -111,5 +109,6 @@ Material(diffuseColor=((0.8,0.4,0)))),
 geometry=
 Text(string=["ViewFrustumPrototype.x3d","is a Prototype declaration file.","For an example scene using the prototype,","click this text and view","ViewFrustumExample.x3d"], 
 fontStyle=
-FontStyle(justify=["MIDDLE","MIDDLE"], size=0.8)))]),]))
-.XML())
+FontStyle(justify=["MIDDLE","MIDDLE"], size=0.8)))]),])))
+output = model.JSON()
+json.loads(output)

@@ -41,7 +41,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/text.x3d")}),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/text.x3d")}),
 
             new meta({
               name : new SFString("description"),
@@ -54,7 +54,7 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new Transform({
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   geometry : new SFNode(
                     new Text({
@@ -64,8 +64,8 @@ var X3D0 =  new X3D({
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
-                        new Material({}))}))}),
-
+                        new Material({}))}))})),
+              child : new SFNode(
                 new Shape({
                   geometry : new SFNode(
                     new Text({
@@ -75,8 +75,8 @@ var X3D0 =  new X3D({
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
-                        new Material({}))}))}),
-
+                        new Material({}))}))})),
+              child : new SFNode(
                 new Shape({
                   geometry : new SFNode(
                     new Text({
@@ -86,8 +86,8 @@ var X3D0 =  new X3D({
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
-                        new Material({}))}))}),
-
+                        new Material({}))}))})),
+              children : new MFNode([
                 new Script({
                   field : new MFNode([
                     new field({

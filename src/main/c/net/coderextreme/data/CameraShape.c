@@ -217,9 +217,9 @@ IndexedFaceSet IndexedFaceSet45 = createNode("IndexedFaceSet");
 IndexedFaceSet45.USE = "pCylinder1_0Geo";
 Shape43.geometry = IndexedFaceSet45;
 
-Transform42.children = new MFNode();
+Transform42.child = new undefined();
 
-Transform42.children[0] = Shape43;
+Transform42.child[0] = Shape43;
 
 Group41.children = new MFNode();
 
@@ -238,9 +238,9 @@ IndexedFaceSet IndexedFaceSet49 = createNode("IndexedFaceSet");
 IndexedFaceSet49.USE = "pCube1_0Geo";
 Shape47.geometry = IndexedFaceSet49;
 
-Transform46.children = new MFNode();
+Transform46.child = new undefined();
 
-Transform46.children[0] = Shape47;
+Transform46.child[0] = Shape47;
 
 Group41.children[1] = Transform46;
 
@@ -257,9 +257,9 @@ IndexedFaceSet IndexedFaceSet53 = createNode("IndexedFaceSet");
 IndexedFaceSet53.USE = "pPipe1_0Geo";
 Shape51.geometry = IndexedFaceSet53;
 
-Transform50.children = new MFNode();
+Transform50.child = new undefined();
 
-Transform50.children[0] = Shape51;
+Transform50.child[0] = Shape51;
 
 Group41.children[2] = Transform50;
 
@@ -276,9 +276,9 @@ IndexedFaceSet IndexedFaceSet57 = createNode("IndexedFaceSet");
 IndexedFaceSet57.USE = "pSphere1_0Geo";
 Shape55.geometry = IndexedFaceSet57;
 
-Transform54.children = new MFNode();
+Transform54.child = new undefined();
 
-Transform54.children[0] = Shape55;
+Transform54.child[0] = Shape55;
 
 Group41.children[3] = Transform54;
 

@@ -23,7 +23,7 @@
 <TouchSensor DEF="STARTER" description="touch to activate"></TouchSensor>
 <Transform DEF="ROOT"><Shape><Appearance><Material></Material>
 </Appearance>
-<Box containerField="geometry"></Box>
+<Box></Box>
 </Shape>
 </Transform>
 <Script DEF="MYSCRIPT" url="&quot;jumpcut_loadurl.js&quot; &quot;https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.js&quot;"><field name="myParameter" accessType="initializeOnly" type="MFString" value="&quot;Top_View&quot;"></field>

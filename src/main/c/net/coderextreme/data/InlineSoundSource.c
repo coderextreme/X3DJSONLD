@@ -123,9 +123,9 @@ IndexedFaceSet23.normal = Normal25;
 
 Shape20.geometry = IndexedFaceSet23;
 
-Transform19.children = new MFNode();
+Transform19.child = new undefined();
 
-Transform19.children[0] = Shape20;
+Transform19.child[0] = Shape20;
 
 children[4] = Transform19;
 

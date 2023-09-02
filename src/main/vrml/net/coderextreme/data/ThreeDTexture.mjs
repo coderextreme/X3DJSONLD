@@ -22,7 +22,7 @@ head1.meta[2] = meta4;
 
 let meta5 = browser.currentScene.createNode("meta");
 meta5.name = "identifier";
-meta5.content = "https://coderextreme.net/X3DJSONLD/ThreeDTexture.x3d";
+meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/data/ThreeDTexture.x3d";
 head1.meta[3] = meta5;
 
 let meta6 = browser.currentScene.createNode("meta");
@@ -49,7 +49,7 @@ let ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 </ProtoInterface>
 <ProtoBody><Transform><IS><connect nodeField="translation" protoField="xtranslation"></connect>
 </IS>
-<Shape><Sphere containerField="geometry"></Sphere>
+<Shape><Sphere></Sphere>
 <Appearance><Material diffuseColor="1 1 1"></Material>
 </Appearance>
 </Shape>
@@ -92,9 +92,9 @@ Appearance19.material = Material20;
 
 Shape17.appearance = Appearance19;
 
-Transform14.children = new MFNode();
+Transform14.child = new undefined();
 
-Transform14.children[0] = Shape17;
+Transform14.child[0] = Shape17;
 
 ProtoBody13.children = new MFNode();
 

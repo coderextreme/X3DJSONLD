@@ -90,7 +90,7 @@ var X3D0 =  X3D(
 
                         Transform(
                           translation_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
-                          children_ : [
+                          child_ : 
                             Shape(
                               geometry_ : 
                                 Cone(
@@ -99,7 +99,7 @@ var X3D0 =  X3D(
                                   height_ : 0.1),
                               appearance_ : 
                                 Appearance(
-                                  USE_ : SFString('Green')))])]),
+                                  USE_ : SFString('Green'))))]),
 
                     Transform(
                       translation_ : SFVec3f([SFDouble(0), SFDouble(1.08), SFDouble(0)]),
@@ -147,14 +147,14 @@ var X3D0 =  X3D(
 
                             Transform(
                               translation_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
-                              children_ : [
+                              child_ : 
                                 Shape(
                                   geometry_ : 
                                     Cone(
                                       USE_ : SFString('ArrowCone')),
                                   appearance_ : 
                                     Appearance(
-                                      USE_ : SFString('Red')))])]),
+                                      USE_ : SFString('Red'))))]),
 
                         Transform(
                           rotation_ : SFRotation([SFDouble(0), SFDouble(0), SFDouble(1), SFDouble(1.57079)]),
@@ -197,14 +197,14 @@ var X3D0 =  X3D(
 
                             Transform(
                               translation_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
-                              children_ : [
+                              child_ : 
                                 Shape(
                                   geometry_ : 
                                     Cone(
                                       USE_ : SFString('ArrowCone')),
                                   appearance_ : 
                                     Appearance(
-                                      USE_ : SFString('Blue')))])]),
+                                      USE_ : SFString('Blue'))))]),
 
                         Transform(
                           rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-1.57079)]),

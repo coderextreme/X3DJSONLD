@@ -115,7 +115,7 @@ var X3D0 =  new X3D({
               rotation : new SFRotation([0.40671,-0.71645,-0.56683,2.6753]),
               translation : new SFVec3f([-3,0,0]),
               /*RotationCalculator composed rotation: 0.0 0.0 1.0 -1.829527, 1.0 0.0 0.0 -4.400301, 0.0 1.0 0.0 -0.381611*/
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   DEF : new SFString("BoxShape"),
                   geometry : new SFNode(
@@ -125,8 +125,8 @@ var X3D0 =  new X3D({
                     new Appearance({
                       material : new SFNode(
                         new Material({
-                          diffuseColor : new SFColor([0.9,0.9,0.9])}))}))}),
-
+                          diffuseColor : new SFColor([0.9,0.9,0.9])}))}))})),
+              child : new SFNode(
                 new Shape({
                   DEF : new SFString("AxisLinesShape"),
                   /*RGB lines showing XYZ axes*/
@@ -140,19 +140,19 @@ var X3D0 =  new X3D({
                           point : new MFVec3f([0,0,0,1,0,0,0,1,0,0,0,1])})),
                       color : new SFNode(
                         new Color({
-                          color : new MFColor([1,0,0,0,0.6,0,0,0,1])}))}))})])}),
+                          color : new MFColor([1,0,0,0,0.6,0,0,0,1])}))}))}))}),
           /**Expected rotation values for initial rotations* in Interpolator2*/
 
             new Transform({
               DEF : new SFString("Transform2"),
               rotation : new SFRotation([-0.96458,0.07774,0.25206,2.59674]),
               /*RotationCalculator composed rotation: 0.0 0.0 1.0 2.832229, 1.0 0.0 0.0 5.801149, 0.0 1.0 0.0 2.55377*/
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
-                  USE : new SFString("BoxShape")}),
-
+                  USE : new SFString("BoxShape")})),
+              child : new SFNode(
                 new Shape({
-                  USE : new SFString("AxisLinesShape")})])}),
+                  USE : new SFString("AxisLinesShape")}))}),
           /**Expected rotation values for initial rotations* in Interpolator3*/
 
             new Transform({
@@ -160,12 +160,12 @@ var X3D0 =  new X3D({
               rotation : new SFRotation([0.40758,-0.49149,-0.76962,1.12862]),
               translation : new SFVec3f([3,0,0]),
               /*RotationCalculator composed rotation: 0.0 0.0 1.0 -3.939975, 1.0 0.0 0.0 -3.766201, 0.0 1.0 0.0 -3.474078*/
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
-                  USE : new SFString("BoxShape")}),
-
+                  USE : new SFString("BoxShape")})),
+              child : new SFNode(
                 new Shape({
-                  USE : new SFString("AxisLinesShape")})])}),
+                  USE : new SFString("AxisLinesShape")}))}),
           /*Animation playback: enable ClockTimer for continuous motion at 60.000 frames/second (fps)*/
 
             new TimeSensor({

@@ -52,7 +52,7 @@ var X3D0 =  X3D(
           children_ : [
             Transform(
               translation_ : SFVec3f([SFDouble(0), SFDouble(2), SFDouble(0)]),
-              children_ : [
+              child_ : 
                 Shape(
                   geometry_ : 
                     Text(
@@ -67,11 +67,11 @@ var X3D0 =  X3D(
                       DEF_ : SFString('LightBlueAppearance'),
                       material_ : 
                         Material(
-                          diffuseColor_ : SFColor([SFDouble(0.1), SFDouble(0.7), SFDouble(0.7)]))))]),
+                          diffuseColor_ : SFColor([SFDouble(0.1), SFDouble(0.7), SFDouble(0.7)]))))),
 
             Transform(
               translation_ : SFVec3f([SFDouble(-3), SFDouble(0), SFDouble(0)]),
-              children_ : [
+              child_ : 
                 Shape(
                   geometry_ : 
                     Text(
@@ -81,11 +81,11 @@ var X3D0 =  X3D(
                           USE_ : SFString('testFontStyle'))),
                   appearance_ : 
                     Appearance(
-                      USE_ : SFString('LightBlueAppearance')))]),
+                      USE_ : SFString('LightBlueAppearance')))),
 
             Transform(
               translation_ : SFVec3f([SFDouble(3), SFDouble(0), SFDouble(0)]),
-              children_ : [
+              child_ : 
                 Shape(
                   geometry_ : 
                     Text(
@@ -95,5 +95,5 @@ var X3D0 =  X3D(
                           USE_ : SFString('testFontStyle'))),
                   appearance_ : 
                     Appearance(
-                      USE_ : SFString('LightBlueAppearance')))])]));
+                      USE_ : SFString('LightBlueAppearance'))))]));
 void main() { exit(0); }

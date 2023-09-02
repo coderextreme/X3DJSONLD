@@ -2242,5 +2242,5 @@ ProtoInstance1
             .addChild(ProtoInstance2 = (new autoclass.ProtoInstance()).setUSE("BehaviorTest1")));
 ProtoInstance1
           .addFieldValue((new autoclass.fieldValue()).setName("enabledBehaviorsArray").setValue("true"));
-    X3D0.toFileX3D("../data/HAnimBehaviorPrototypes.new.x3d");
+    X3D0.toFileX3D("../data/HAnimBehaviorPrototypes.new.node.x3d");
     process.exit(0);

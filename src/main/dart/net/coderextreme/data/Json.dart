@@ -250,7 +250,7 @@ var X3D0 =  X3D(
             Transform(
               DEF_ : SFString('TextTransform'),
               translation_ : SFVec3f([SFDouble(0), SFDouble(-1.5), SFDouble(0)]),
-              children_ : [
+              child_ : 
                 Shape(
                   appearance_ : 
                     Appearance(
@@ -276,7 +276,7 @@ var X3D0 =  X3D(
                       fontStyle_ : 
                         FontStyle(
                           justify_ : MFString([SFString("MIDDLE"), SFString("MIDDLE")]))])),
-
+              children_ : [
                 Collision(
                   /*test containerField='proxy'*/
                   proxy_ : 

@@ -46,7 +46,7 @@ head1->addMeta(*meta7);
 
 Cmeta* meta8 = new Cmeta();
 meta8->setName("modified");
-meta8->setContent("26 December 2022");
+meta8->setContent("2 July 2023");
 head1->addMeta(*meta8);
 
 Cmeta* meta9 = new Cmeta();
@@ -106,7 +106,7 @@ CMetadataString* MetadataString21 = (CMetadataString *)(m_pScene.createNode("Met
 MetadataString21->setName("HAnimArchitecture");
 MetadataString21->setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile");
 MetadataString21->setValue(new CString[1]{"E.4 Multiple humanoids per file"}, 1);
-Group20->setMetadata(*MetadataString21);
+Group20->setValue(*MetadataString21);
 
 //==============================
 CHAnimHumanoid* HAnimHumanoid22 = (CHAnimHumanoid *)(m_pScene.createNode("HAnimHumanoid"));
@@ -226,7 +226,7 @@ HAnimJoint44->addChildren(*HAnimSegment45);
 
 HAnimHumanoid43->setSkeleton(*HAnimJoint44);
 
-//TODO proposed for X3D4 <Switch DEF='AlternativeSkins' containerField='skin'>
+//TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'>
 CShape* Shape46 = (CShape *)(m_pScene.createNode("Shape"));
 CIndexedFaceSet* IndexedFaceSet47 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
 IndexedFaceSet47->setDEF("IndexedSkinMeshIFS");
@@ -236,9 +236,8 @@ IndexedFaceSet47->setCoord(*Coordinate48);
 
 Shape46->setGeometry(IndexedFaceSet47);
 
-HAnimHumanoid43->addSkin(*Shape46);
+HAnimHumanoid43->setSkin(*Shape46);
 
-//TODO proposed for X3D4 </Switch>
 Group20->addChildren(*HAnimHumanoid43);
 
 //similarly for LOD
@@ -308,8 +307,6 @@ HAnimJoint60->addChildren(*HAnimSegment61);
 HAnimHumanoid59->setSkeleton(*HAnimJoint60);
 
 //allow multiple Shape nodes with containerField='skin', one for each layer of skin
-//TODO proposed for X3D4.1 <Shape containerField='skin'/>
-//TODO proposed for X3D4.1 <Shape containerField='skin'/>
 CShape* Shape62 = (CShape *)(m_pScene.createNode("Shape"));
 HAnimHumanoid59->setSkin(*Shape62);
 

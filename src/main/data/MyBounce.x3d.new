@@ -4,12 +4,12 @@
 <meta name="title" content="MyBounce.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="description" content="3 prismatic spheres"></meta>
-<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/SFVec3f.x3d"></meta>
+<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d"></meta>
 </head>
 <Scene><NavigationInfo></NavigationInfo>
 <Transform DEF="transform"><Shape><Appearance><Material diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
 </Appearance>
-<Sphere containerField="geometry"></Sphere>
+<Sphere></Sphere>
 </Shape>
 </Transform>
 <Script DEF="Bounce2"><field name="set_translation" accessType="inputOnly" type="SFVec3f" value="0 0 0"></field>

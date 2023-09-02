@@ -301,7 +301,7 @@ Text56->setFontStyle(*FontStyle60);
 
 Shape53->setGeometry(Text56);
 
-Transform52->addChildren(*Shape53);
+Transform52->addChild(*Shape53);
 
 CCollision* Collision61 = (CCollision *)(m_pScene.createNode("Collision"));
 //test containerField='proxy'

@@ -2299,7 +2299,7 @@ BvhSeamless3dExport1.prototype = {
 	.append(new autoclass.MFRotation(java.newArray("float", [.693832,-.183386,.696395,.151225,.691596,-.176825,.700306,.152423,.682848,-.174988,.709294,.153024,.673585,-.170659,.719138,.154216,.661547,-.167221,.731021,.154643,.642045,-.159456,.749901,.154709])));
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.1")
   .setHead((new autoclass.head())
-    .addComponent((new autoclass.component()).setName("H-Anim").setLevel(1))
+    .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
     .addMeta((new autoclass.meta()).setName("title").setContent("BvhSeamless3dExport1.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Seamless3d tool import of bvh file and export of x3d scene. Note use of single skin mesh, animated by unadorned skeleton."))
     .addMeta((new autoclass.meta()).setName("translator").setContent("Don Brutzman"))

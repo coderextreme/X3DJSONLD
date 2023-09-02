@@ -119,9 +119,9 @@ Appearance23.texture = ImageTexture24;
 
 Shape21.appearance = Appearance23;
 
-Transform20.children = new MFNode();
+Transform20.child = new undefined();
 
-Transform20.children[0] = Shape21;
+Transform20.child[0] = Shape21;
 
 Group17.children[1] = Transform20;
 

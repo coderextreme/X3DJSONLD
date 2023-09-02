@@ -1796,5 +1796,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addSegments((new autoclass.HAnimSegment()).setUSE("hanim_r_trapezoid"))
           .addSegments((new autoclass.HAnimSegment()).setUSE("hanim_l_upperarm"))
           .addSegments((new autoclass.HAnimSegment()).setUSE("hanim_r_upperarm"))))      ;
-    X3D0.toFileX3D("../data/JinLOA4_3.new.x3d");
+    X3D0.toFileX3D("../data/JinLOA4_3.new.node.x3d");
     process.exit(0);

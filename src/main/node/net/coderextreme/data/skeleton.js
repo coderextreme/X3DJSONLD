@@ -16,8 +16,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
       var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
       .setHead((new autoclass.head())
         .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
-        .addMeta((new autoclass.meta()).setName("title").setContent("JohnBoy.x3d"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"))
+        .addMeta((new autoclass.meta()).setName("title").setContent("skeleton.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/skeleton.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("An attempt at a standard LOA-4 skeleton"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("h.pl"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
@@ -25,6 +25,6 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.NavigationInfo()).setSpeed(java.newFloat(1.5)))
-        .addChild((new autoclass.Viewpoint()).setCenterOfRotation(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0)])).setDescription("JohnBoy").setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(3)]))))      ;
+        .addChild((new autoclass.Viewpoint()).setCenterOfRotation(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0)])).setDescription("skeleton").setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(3)]))))      ;
     X3D0.toFileX3D("../data/skeleton.new.x3d");
     process.exit(0);

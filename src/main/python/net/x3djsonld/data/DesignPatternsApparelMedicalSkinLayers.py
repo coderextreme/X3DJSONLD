@@ -1,6 +1,10 @@
 ####################################################################################################
 #
-# Now available: developmental python x3d.py package on PyPI for import.
+# Invoking X3D model self-test:
+#
+#   $ python DesignPatternsApparelMedicalSkinLayers.py
+#
+# Python package x3d.py package is available on PyPI for import.
 #   This approach simplifies Python X3D deployment and use.
 #   https://pypi.org/project/x3d
 #
@@ -9,7 +13,7 @@
 # or
 #       python -m pip install x3d
 #
-# Developer options for loading x3d package:
+# Developer options for loading x3d package in other Python programs:
 #
 #    from x3d import *  # preferred approach, terser source that avoids x3d.* class prefixes
 #
@@ -31,7 +35,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(content='Joe D. Williams',name='creator'),
     meta(content='Dick Puk',name='creator'),
     meta(content='23 December 2022',name='created'),
-    meta(content='26 December 2022',name='modified'),
+    meta(content='2 July 2023',name='modified'),
     meta(content='DesignPatternsApparelVariations.txt',name='reference'),
     meta(content='HAnim2 Part 1, HAnim architecture, 4.3 Humanoid object https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#HumanoidObject',name='reference'),
     meta(content='HAnim2 Part 1, HAnim architecture, E.4 Multiple humanoids per file https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile',name='reference'),
@@ -90,13 +94,11 @@ newModel=X3D(profile='Immersive',version='4.0',
         HAnimJoint(name='humanoid_root',ulimit=[0,0,0],llimit=[0,0,0],
           children=[
           HAnimSegment(name='sacrum')]),],
-        #  TODO proposed for X3D4 <Switch DEF='AlternativeSkins' containerField='skin'> 
-        children=[
+        #  TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'> 
+        skin=[
         Shape(
           geometry=IndexedFaceSet(DEF='IndexedSkinMeshIFS',
-            coord=Coordinate(DEF='SkinMeshCoordinate')))],
-        #  TODO proposed for X3D4 </Switch> 
-        ),
+            coord=Coordinate(DEF='SkinMeshCoordinate')))],),
       #  similarly for LOD 
       #  ============================== 
       HAnimHumanoid(DEF='f_SynthesizedSkinShapeIndexedTwoPartGeometry',name='SynthesizedSkinShapeIndexedTwoPartGeometry',version='2.0',
@@ -127,10 +129,7 @@ newModel=X3D(profile='Immersive',version='4.0',
           HAnimSegment(name='sacrum')]),],
         #  allow multiple Shape nodes with containerField='skin', one for each layer of skin 
         skin=[
-        Shape(),],
-        #  TODO proposed for X3D4.1 <Shape containerField='skin'/> 
-        #  TODO proposed for X3D4.1 <Shape containerField='skin'/> 
-        )]
+        Shape(),],)]
       #  ============================== 
       ),
     Viewpoint(DEF='ViewHelpText',description='Select text to see website',position=(0,0,12)),

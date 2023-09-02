@@ -76,7 +76,7 @@ IndexedLineSet13->setColor(*Color15);
 
 Shape12->setGeometry(IndexedLineSet13);
 
-Transform11->addChildren(*Shape12);
+Transform11->addChild(*Shape12);
 
 group->addChildren(*Transform11);
 
@@ -101,7 +101,7 @@ Appearance21->setMaterial(*Material22);
 
 Shape19->setAppearance(*Appearance21);
 
-Transform18->addChildren(*Shape19);
+Transform18->addChild(*Shape19);
 
 Transform17->addChildren(*Transform18);
 
@@ -122,7 +122,7 @@ LineSet25->setCoord(*Coordinate27);
 
 Shape24->setGeometry(LineSet25);
 
-Transform23->addChildren(*Shape24);
+Transform23->addChild(*Shape24);
 
 Transform17->addChildren(*Transform23);
 

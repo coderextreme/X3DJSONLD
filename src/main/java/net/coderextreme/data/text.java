@@ -50,7 +50,7 @@ public class text {
         .addMeta(new meta().setName("creator").setContent("John W Carlson"))
         .addMeta(new meta().setName("created").setContent("December 13 2015"))
         .addMeta(new meta().setName("title").setContent("text.x3d"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/text.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/text.x3d"))
         .addMeta(new meta().setName("description").setContent("test \\n text"))
         .addMeta(new meta().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
       .setScene(new Scene()

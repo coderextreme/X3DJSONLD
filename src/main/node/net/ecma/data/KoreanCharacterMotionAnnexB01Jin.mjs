@@ -40,7 +40,7 @@ var X3D0 =  new X3D({
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
-              content : new SFString("KoreanCharacterAnnexB01Jin.x3d")}),
+              content : new SFString("KoreanCharacterMotionAnnexB01Jin.x3d")}),
 
             new meta({
               name : new SFString("creator"),

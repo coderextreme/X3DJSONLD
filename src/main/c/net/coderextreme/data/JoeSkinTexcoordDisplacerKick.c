@@ -228,7 +228,7 @@ IndexedLineSet40.color = Color42;
 
 Shape39.geometry = IndexedLineSet40;
 
-Transform37.children[1] = Shape39;
+Transform37.child[1] = Shape39;
 
 HAnimSite36.children = new MFNode();
 
@@ -3714,9 +3714,9 @@ IndexedFaceSet543.coord = Coordinate544;
 
 Shape539.geometry = IndexedFaceSet543;
 
-Transform538.children = new MFNode();
+Transform538.child = new undefined();
 
-Transform538.children[0] = Shape539;
+Transform538.child[0] = Shape539;
 
 Viewpoint Viewpoint545 = createNode("Viewpoint");
 Viewpoint545.DEF = "ballView_1";
@@ -3776,9 +3776,9 @@ Transform Transform553 = createNode("Transform");
 Transform553.scale = new SFVec3f(new float[0.2,0.2,0.2]);
 Shape Shape554 = createNode("Shape");
 Shape554.USE = "AxisLinesShape";
-Transform553.children = new MFNode();
+Transform553.child = new undefined();
 
-Transform553.children[0] = Shape554;
+Transform553.child[0] = Shape554;
 
 Group552.children = new MFNode();
 
@@ -3810,9 +3810,9 @@ IndexedLineSet559.coord = Coordinate560;
 
 Shape556.geometry = IndexedLineSet559;
 
-Transform555.children = new MFNode();
+Transform555.child = new undefined();
 
-Transform555.children[0] = Shape556;
+Transform555.child[0] = Shape556;
 
 Group552.children[1] = Transform555;
 
@@ -3835,9 +3835,9 @@ IndexedLineSet IndexedLineSet565 = createNode("IndexedLineSet");
 IndexedLineSet565.USE = "Orbit1";
 Shape562.geometry = IndexedLineSet565;
 
-Transform561.children = new MFNode();
+Transform561.child = new undefined();
 
-Transform561.children[0] = Shape562;
+Transform561.child[0] = Shape562;
 
 Group552.children[2] = Transform561;
 
@@ -3860,9 +3860,9 @@ IndexedLineSet IndexedLineSet570 = createNode("IndexedLineSet");
 IndexedLineSet570.USE = "Orbit1";
 Shape567.geometry = IndexedLineSet570;
 
-Transform566.children = new MFNode();
+Transform566.child = new undefined();
 
-Transform566.children[0] = Shape567;
+Transform566.child[0] = Shape567;
 
 Group552.children[3] = Transform566;
 

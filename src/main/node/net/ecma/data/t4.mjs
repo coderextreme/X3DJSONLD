@@ -121,7 +121,7 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("translation"),
                               protoField : new SFString("posi")})])})),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           appearance : new SFNode(
                             new Appearance({
@@ -136,7 +136,7 @@ var X3D0 =  new X3D({
                                           protoField : new SFString("col")})])}))}))})),
                           geometry : new SFNode(
                             new Sphere({
-                              radius : new SFFloat(5.10000002384186)}))})])})])}))}),
+                              radius : new SFFloat(5.10000002384186)}))}))})])}))}),
 
             new ProtoDeclare({
               name : new SFString("r"),

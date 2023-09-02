@@ -225,5 +225,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.Viewpoint()).setDEF("MissileLaunchView").setDescription("Missile Fire View").setOrientation(java.newArray("float", [java.newFloat(0.094), java.newFloat(-0.994), java.newFloat(0.057), java.newFloat(1.1716)])).setPosition(java.newArray("float", [java.newFloat(-344.3), java.newFloat(-142.8), java.newFloat(-27.7)])))
         .addChild((new autoclass.ROUTE()).setFromField("isActive").setFromNode("FireSensor").setToField("set_bind").setToNode("MissileLaunchView"))
         .addComments((new autoclass.CommentsBlock("TODO fix type, add filter"))))      ;
-    X3D0.toFileX3D("../data/F16.new.x3d");
+    X3D0.toFileX3D("../data/F16.new.node.x3d");
     process.exit(0);

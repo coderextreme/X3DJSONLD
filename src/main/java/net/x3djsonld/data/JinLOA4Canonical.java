@@ -21,7 +21,9 @@ import org.web3d.x3d.jsail.Texturing.*;
 		<a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
 		It has been produced using the 
 		<a href="https://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
-		stylesheet to create Java source code from an <code>.x3d</code> model.
+		stylesheet
+	       (<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">version&amp;nbsp;control</a>)
+                is used to create Java source code from an original <code>.x3d</code> model.
 	</p>
 
  */
@@ -42,7 +44,7 @@ public class JinLOA4Canonical
   .setHead(new head()
     .addComponent(new component().setName("HAnim").setLevel(1)))
   .setScene(new Scene()
-    .addChild(new WorldInfo().setTitle("JinLOA4.x3d"))
+    .addChild(new WorldInfo().setTitle("JinLOA4Canonical.x3d"))
     .addChild(new NavigationInfo().setSpeed(1.5))
     .addChild(new Viewpoint().setDescription("JinLOA4").setCenterOfRotation(0.0,1.0,0.0).setPosition(0.0,1.0,3.0))
     .addChild(new Transform("cordsysfloor").setScale(.175,.175,.175)
@@ -4380,10 +4382,10 @@ public class JinLOA4Canonical
         if (validate)
         {
                 System.out.print("Java program \"net.x3djsonld.data.JinLOA4Canonical\" self-validation test results: ");
-                String validationResults = thisExampleX3dModel.validationReport();
-                if (validationResults.startsWith("\n") || (validationResults.length() > 10))
+		String validationResults = thisExampleX3dModel.validationReport();
+                if (validationResults.length() > 10)
                     System.out.println();
-                System.out.println(validationResults.trim());
+                System.out.println(validationResults);
         }
     }
 }

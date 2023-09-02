@@ -67,7 +67,7 @@ Appearance14->setMaterial(*Material15);
 
 Shape12->setAppearance(*Appearance14);
 
-Transform11->addChildren(*Shape12);
+Transform11->addChild(*Shape12);
 
 CPositionInterpolator* PositionInterpolator16 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator16->setDEF("DECLpoint_INSTANCE_PI1");
@@ -174,7 +174,7 @@ Appearance32->setMaterial(*Material33);
 
 Shape30->setAppearance(*Appearance32);
 
-Transform29->addChildren(*Shape30);
+Transform29->addChild(*Shape30);
 
 CPositionInterpolator* PositionInterpolator34 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
 PositionInterpolator34->setDEF("DECLpoint_INSTANCE1000_PI1");
@@ -282,7 +282,7 @@ CCylinder* Cylinder51 = (CCylinder *)(m_pScene.createNode("Cylinder"));
 Cylinder51->setRadius(0.05);
 Shape48->setGeometry(Cylinder51);
 
-Transform47->addChildren(*Shape48);
+Transform47->addChild(*Shape48);
 
 Transform46->addChildren(*Transform47);
 

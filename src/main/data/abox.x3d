@@ -5,7 +5,7 @@
         <meta name='title' content='abox.x3d'/>
         <meta name='creator' content='John Carlson'/>
         <meta name='generator' content='manual'/>
-        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/abox.x3d'/>
+	<meta name='identifier' content='https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d'/>
         <meta name='description' content='a box'/>      
       </head>
 	<Scene><ProtoDeclare name="anyShape"><ProtoInterface><field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere containerField="geometry"></Sphere>

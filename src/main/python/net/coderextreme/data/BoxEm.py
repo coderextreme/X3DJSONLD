@@ -2,14 +2,17 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[meta(name="title", content="BoxEm.x3d"),
+head=head(
+children=[
+meta(name="title", content="BoxEm.x3d"),
 meta(name="creator", content="John Carlson"),
 meta(name="generator", content="manual"),
-meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/box.x3d"),
+meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/box.x3d"),
 meta(name="description", content="3 boxes"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -70,5 +73,6 @@ material=
 Material(diffuseColor=((0,1,0)))))])
 ]),
 Transform(translation=((0,2,0)), children=[
-Shape(USE="box")])]))
-.XML())
+Shape(USE="box")])])))
+output = model.JSON()
+json.loads(output)

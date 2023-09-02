@@ -67,9 +67,11 @@ npm install xml2js
 npm un ajv-formats && npm i ajv-formats
 
 # maven build
-mvn clean install
+# mvn clean install
+gradle clean
 bash FixNeedClassName.sh
-mvn install
+# mvn install
+gradle build
 echo Press Return to Continue
 read
 

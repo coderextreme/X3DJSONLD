@@ -3,12 +3,12 @@
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd" ><head><meta name="title" content="arc4.x3d"></meta>
 <meta name="creator" content="Lost, Doug Sanden I think"></meta>
 <meta name="generator" content="manual"></meta>
-<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"></meta>
+<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d"></meta>
 <meta name="description" content="a generic proto to connect two objects"></meta>
 </head>
 <Scene><Viewpoint position="0 0 5" description="Only Viewpoint"></Viewpoint>
 <Background skyColor="0.4 0.4 0.4"></Background>
-<Transform DEF="DECLpoint_G1_node"><Shape><Sphere containerField="geometry" radius="0.1"></Sphere>
+<Transform DEF="DECLpoint_G1_node"><Shape><Sphere radius="0.1"></Sphere>
 <Appearance><Material diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
@@ -30,7 +30,7 @@
 <ROUTE fromNode="DECLpoint_G1_MB1" fromField="keyValue" toNode="DECLpoint_G1_PI1" toField="keyValue"></ROUTE>
 <ROUTE fromNode="DECLpoint_G1_PI1" fromField="value_changed" toNode="DECLpoint_G1_node" toField="set_translation"></ROUTE>
 </Transform>
-<Transform DEF="DECLpoint_G2_node"><Shape><Sphere containerField="geometry" radius="0.1"></Sphere>
+<Transform DEF="DECLpoint_G2_node"><Shape><Sphere radius="0.1"></Sphere>
 <Appearance><Material diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
@@ -54,7 +54,7 @@
 </Transform>
 <Group><Transform DEF="DECLx3dconnector_connector1_trans"><Transform DEF="DECLx3dconnector_connector1_rotscale"><Shape><Appearance><Material diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
 </Appearance>
-<Cylinder containerField="geometry" radius="0.05"></Cylinder>
+<Cylinder radius="0.05"></Cylinder>
 </Shape>
 </Transform>
 </Transform>

@@ -19,17 +19,17 @@
 <Viewpoint description="View entire audio model" orientation="1 0 0 -0.5" position="0 500 600" retainUserOffsets="true"></Viewpoint>
 <Transform DEF="TransformAudio1" translation="-200 50 0"><Shape><Appearance DEF="audio_emit"><Material diffuseColor="0.1 0.1 0.1" emissiveColor="0.8 0.8 0.8" specularColor="0.01 0.01 0.01"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="30"></Sphere>
+<Sphere radius="30"></Sphere>
 </Shape>
 </Transform>
 <Transform DEF="TransformAudio2" translation="0 50 0"><Shape><Appearance DEF="audio_emit2"><Material diffuseColor="0.1 0.1 0.1" emissiveColor="0.8 0.8 0.8" specularColor="0.01 0.01 0.01"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="30"></Sphere>
+<Sphere radius="30"></Sphere>
 </Shape>
 </Transform>
 <Transform DEF="TransformAudio3" translation="200 50 0"><Shape><Appearance DEF="audio_emit3"><Material diffuseColor="0.1 0.1 0.1" emissiveColor="0.8 0.8 0.8" specularColor="0.01 0.01 0.01"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="30"></Sphere>
+<Sphere radius="30"></Sphere>
 </Shape>
 </Transform>
 <Transform DEF="AnimData" translation="0 50 0"></Transform>
@@ -40,7 +40,7 @@
 <Transform DEF="AnimDataBoxLM" translation="-30 100 0"></Transform>
 <Transform><Shape><Appearance DEF="floor"><Material diffuseColor="0.1 0.1 0.1" shininess="0.8" specularColor="0.5 0.6 0.7"></Material>
 </Appearance>
-<Cylinder containerField="geometry" radius="500"></Cylinder>
+<Cylinder radius="500"></Cylinder>
 </Shape>
 </Transform>
 <ListenerPointSource trackCurrentView="true"></ListenerPointSource>

@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.1", 
-head=head(children=[component(name="HAnim", level=1),
+head=head(
+children=[
+component(name="HAnim", level=1),
 meta(name="title", content="BvhSeamless3dExport1.x3d"),
 meta(name="description", content="Seamless3d tool import of bvh file and export of x3d scene. Note use of single skin mesh, animated by unadorned skeleton."),
 meta(name="translator", content="Don Brutzman"),
@@ -20,7 +23,7 @@ meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/MotionAnimation/BvhSeamless3dExport1.x3d"),
 meta(name="reference", content="https://sourceforge.net/p/x3d/code/24079"),
 meta(name="license", content="license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="26 August 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -223,5 +226,6 @@ OrientationInterpolator(USE="oi_Head")]),
 field(name="Head", accessType="inputOutput", type="SFNode", children=[
 HAnimJoint(USE="_Head")])
 ], sourceCode="""['', '', 'ecmascript:', 'function f03e07a38(v){', 'pi_Hips.set_fraction = v;', 'Hips.translation = pi_Hips.value_changed;', 'oi_Hips.set_fraction = v;', 'Hips.rotation = oi_Hips.value_changed;', 'oi_LeftHip.set_fraction = v;', 'LeftHip.rotation = oi_LeftHip.value_changed;', 'oi_LeftKnee.set_fraction = v;', 'LeftKnee.rotation = oi_LeftKnee.value_changed;', 'oi_LeftAnkle.set_fraction = v;', 'LeftAnkle.rotation = oi_LeftAnkle.value_changed;', 'oi_LeftAnkleEnd.set_fraction = v;', 'LeftAnkleEnd.rotation = oi_LeftAnkleEnd.value_changed;', 'oi_RightHip.set_fraction = v;', 'RightHip.rotation = oi_RightHip.value_changed;', 'oi_RightKnee.set_fraction = v;', 'RightKnee.rotation = oi_RightKnee.value_changed;', 'oi_RightAnkle.set_fraction = v;', 'RightAnkle.rotation = oi_RightAnkle.value_changed;', 'oi_RightAnkleEnd.set_fraction = v;', 'RightAnkleEnd.rotation = oi_RightAnkleEnd.value_changed;', 'oi_Chest.set_fraction = v;', 'Chest.rotation = oi_Chest.value_changed;', 'oi_Chest2.set_fraction = v;', 'Chest2.rotation = oi_Chest2.value_changed;', 'oi_LeftCollar.set_fraction = v;', 'LeftCollar.rotation = oi_LeftCollar.value_changed;', 'oi_LeftShoulder.set_fraction = v;', 'LeftShoulder.rotation = oi_LeftShoulder.value_changed;', 'oi_LeftElbow.set_fraction = v;', 'LeftElbow.rotation = oi_LeftElbow.value_changed;', 'oi_LeftWrist.set_fraction = v;', 'LeftWrist.rotation = oi_LeftWrist.value_changed;', 'oi_RightCollar.set_fraction = v;', 'RightCollar.rotation = oi_RightCollar.value_changed;', 'oi_RightShoulder.set_fraction = v;', 'RightShoulder.rotation = oi_RightShoulder.value_changed;', 'oi_RightElbow.set_fraction = v;', 'RightElbow.rotation = oi_RightElbow.value_changed;', 'oi_RightWrist.set_fraction = v;', 'RightWrist.rotation = oi_RightWrist.value_changed;', 'oi_Neck.set_fraction = v;', 'Neck.rotation = oi_Neck.value_changed;', 'oi_Head.set_fraction = v;', 'Head.rotation = oi_Head.value_changed;', '}', '', '']""",),
-ROUTE(fromField="slider", fromNode="t02de8af0", toField="f03e07a38", toNode="s03e13e80")]))
-.XML())
+ROUTE(fromField="slider", fromNode="t02de8af0", toField="f03e07a38", toNode="s03e13e80")])))
+output = model.JSON()
+json.loads(output)

@@ -20,7 +20,7 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JinLOA4.x3d">JinLOA4.x3d</a> </td>
+			<td> <a href="JinLOA496.x3d">JinLOA496.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -52,11 +52,11 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/KoreanCharacterHumanMotion_Infotech2014_140706.pdf">KoreanCharacterHumanMotion_Infotech2014_140706.pdf</a> </td>
+			<td> <a href="KoreanCharacterHumanMotion_Infotech2014_140706.pdf">KoreanCharacterHumanMotion_Infotech2014_140706.pdf</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/KoreanCharactersIllustrated.pdf">KoreanCharactersIllustrated.pdf</a> </td>
+			<td> <a href="KoreanCharactersIllustrated.pdf">KoreanCharactersIllustrated.pdf</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
@@ -80,7 +80,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/../license.html">../license.html</a> </td>
+			<td> <a href="../license.html">../license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -3301,7 +3301,7 @@ JinLOA496.prototype = {
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
-    .addMeta((new autoclass.meta()).setName("title").setContent("JinLOA4.x3d"))
+    .addMeta((new autoclass.meta()).setName("title").setContent("JinLOA496.x3d"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("Jin Hoon Lee and Min Joo Lee"))
     .addMeta((new autoclass.meta()).setName("translator").setContent("Chul Hee Jung and Myeong Won Lee"))
     .addMeta((new autoclass.meta()).setName("created").setContent("31 March 2011"))

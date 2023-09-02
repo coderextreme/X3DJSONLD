@@ -59,7 +59,7 @@ public class mirror {
         .addMeta(new meta().setName("title").setContent("mirror.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/mirror.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/mirror.x3d"))
         .addMeta(new meta().setName("description").setContent("sphere with alternating backgrounds")))
       .setScene(new Scene()
         .addChild(new Viewpoint().setPosition(new float[] {0f,5f,100f}).setDescription("Switch background and images texture"))

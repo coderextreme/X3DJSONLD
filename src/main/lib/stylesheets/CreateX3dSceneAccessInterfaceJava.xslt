@@ -6541,7 +6541,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		exceptionResult = e.getMessage(); // report exception failures, if any
 	    if (exceptionResult.isBlank())
 	    {
-                exceptionResult = "Exception caught but blank message! \n";
+                exceptionResult = "Exception caught but no description found! \n";
                 // https://stackoverflow.com/questions/1149703/how-can-i-convert-a-stack-trace-to-a-string
                 StringWriter sw = new StringWriter();
                 e.printStackTrace(new PrintWriter(sw));
@@ -6555,13 +6555,14 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	else
 	{
 		if (!metaResult.isEmpty())
-			metaResult = "\n" + metaResult; // easier to read
+                     metaResult = "\n" + metaResult; // easier to read
 		String returnMessage = metaResult;
-		if  (!exceptionResult.isEmpty() && !validationResult.isEmpty())
-			returnMessage += "\n*** ";
-		returnMessage += "Exception: " + exceptionResult;
-		if  (exceptionResult.isEmpty() && !validationResult.isEmpty())
-			returnMessage = "\n" + returnMessage; // skip line before meta tags, etc.
+	//	if  (!exceptionResult.isEmpty() || !validationResult.isEmpty())
+        //           returnMessage += "\n*** ";
+		if  (!exceptionResult.isEmpty())
+                     returnMessage += "*** Exception: " + exceptionResult;
+		if  (!validationResult.isEmpty())
+		     returnMessage = "\n" + returnMessage; // skip line before meta tags, etc.
 		returnMessage += "\n" + validationResult;
 		return returnMessage;
 	}
@@ -10903,7 +10904,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<xsl:value-of select="@acceptableNodeTypes"/>
 										<xsl:text>)</xsl:text>
 									</xsl:if>
-									<xsl:if test="($isX3dStatement = 'true')">
+									<xsl:if test="($isX3dStatement = 'true') or ($name = 'ProtoBody')">
 										<xsl:text>&#10;</xsl:text>
 										<xsl:text>	 * @return {@link </xsl:text>
 										<xsl:value-of select="$thisClassName"/>
@@ -15254,9 +15255,10 @@ setAttribute method invocations).
 									</xsl:choose>
 								</xsl:variable>
 								<xsl:variable name="isRequired"><!-- either by X3D Schema/OM4X3D or X3D semantics -->
+                                                                        <!-- Metadata* node name is not required, omit: or starts-with(@name,'Metadata') -->
 									<xsl:value-of select="(@use = 'required') or
 														  ((@name = 'name') and not(ancestor::ConcreteNode[(@name = 'ProtoInstance')]) and
-														   (ancestor::ConcreteNode[starts-with(@name,'HAnim') or starts-with(@name,'Metadata') or
+														   (ancestor::ConcreteNode[starts-with(@name,'HAnim') or
 																				   starts-with(@name,'field') or contains(@name,'ProtoDeclare')])) or
 														  (ancestor::ConcreteNode[(@name = 'component') or (@name = 'connect') or (@name = '') or (@name = 'ROUTE') or (@name = 'unit')]) or
 														  ((@name = 'localDEF')                               and (ancestor::ConcreteNode[(@name = 'EXPORT')])) or
@@ -18208,7 +18210,7 @@ public String getAccessType(String fieldName)
         int hasLevelGEOMETRY3D           = 0;
         int hasLevelGEOSPATIAL           = 0;
         int hasLevelGROUPING             = 0;
-        int hasLevelH_ANIM               = 0;
+        int hasLevelHANIM                = 0;
         int hasLevelINTERPOLATION        = 0;
         int hasLevelKEYDEVICESENSOR      = 0;
         int hasLevelLAYERING             = 0;
@@ -18259,9 +18261,9 @@ public String getAccessType(String fieldName)
             if (head.hasComponent(component.NAME_GROUPING))
                 hasLevelGROUPING             = head.findComponentByName(component.NAME_GROUPING).getLevel();
             if (head.hasComponent(component.NAME_H_ANIM)) // v1 H-Anim
-                hasLevelH_ANIM               = head.findComponentByName(component.NAME_H_ANIM).getLevel();
+                hasLevelHANIM               = head.findComponentByName(component.NAME_H_ANIM).getLevel();
             if (head.hasComponent(component.NAME_HANIM))  // v2 HAnim
-                hasLevelH_ANIM               = head.findComponentByName(component.NAME_HANIM).getLevel();
+                hasLevelHANIM               = head.findComponentByName(component.NAME_HANIM).getLevel();
             if (head.hasComponent(component.NAME_INTERPOLATION))
                 hasLevelINTERPOLATION        = head.findComponentByName(component.NAME_INTERPOLATION).getLevel();
             if (head.hasComponent(component.NAME_KEYDEVICESENSOR))
@@ -18537,7 +18539,7 @@ public String getAccessType(String fieldName)
                 (minimumLevel <= hasLevelGROUPING)) ||
 			((otherComponent.equals(component.NAME_H_ANIM) || otherComponent.equals(component.NAME_HANIM))
                                                                         && hasComponentH_ANIM &&
-                (minimumLevel <= hasLevelH_ANIM)) ||
+                (minimumLevel <= hasLevelHANIM)) ||
 			(otherComponent.equals(component.NAME_INTERPOLATION)        && hasComponentINTERPOLATION &&
                 (minimumLevel <= hasLevelINTERPOLATION)) ||
 			(otherComponent.equals(component.NAME_KEYDEVICESENSOR)      && hasComponentKEYDEVICESENSOR &&
@@ -20538,6 +20540,9 @@ shall not include the underlying field's values at that point in time.
                 }
                 else if (value.equals(meta.NAME_CML_VERSION))
                         return true; // special case
+                else if (value.equals(meta.NAME_SOUND) || value.equals(meta.NAME_TEXT))
+                        // Sound component and Text component names are overloaded and match a corresponding node name -->
+                        return true; // special case, TODO check parent before avoiding diagnostic reporting here
 		else    return result;
 	}
 
@@ -40320,17 +40325,27 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
                 <xsl:choose>
                     <xsl:when test="($elementName = 'component') and  (@name = 'name')">
                         <!-- HAnim enumeration is poorly named, deserves specification change -->
-                        <xsl:text disable-output-escaping="yes"><![CDATA[!newValue.equals(NAME_H_ANIM) && ]]></xsl:text>
+                        <xsl:text disable-output-escaping="yes"><![CDATA[!newValue.equals(NAME_H_ANIM) && !newValue.equals(NAME_HANIM) && ]]></xsl:text>
+                        <xsl:text>&#10;</xsl:text>
+                        <xsl:text>                             </xsl:text>
+                        <!-- Sound and Text component names are overloaded and match a corresponding node name -->
+                        <xsl:text disable-output-escaping="yes"><![CDATA[!newValue.equals(NAME_SOUND) && !newValue.equals(NAME_TEXT) && ]]></xsl:text>     
+                        <xsl:text>&#10;</xsl:text>
+                        <xsl:text>                             </xsl:text>
+                        <!-- Text component is overloaded and matches a node name -->
+                        <xsl:text disable-output-escaping="yes"><![CDATA[!newValue.equals(NAME_TEXT) && ]]></xsl:text>
                     </xsl:when>
-                    <xsl:when test="($elementName = 'meta') and  (@name = 'name')">
-                        <!-- DCMI metadata terms include "Sound" https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dcmitype/Sound/ -->
+                    <xsl:when test="($elementName = 'meta') and (@name = 'name')">
+                        <xsl:text>&#10;</xsl:text>
+                        <xsl:text>                             </xsl:text>
+                        <!-- DCMI metadata terms include "Sound" https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dcmitype/Sound -->
                         <xsl:text disable-output-escaping="yes"><![CDATA[!newValue.equals(NAME_SOUND) && ]]></xsl:text>
+                        <xsl:text>&#10;</xsl:text>
+                        <xsl:text>                             </xsl:text>
+                        <!-- DCMI metadata terms include "Text" https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dcmitype/Text -->
+                        <xsl:text disable-output-escaping="yes"><![CDATA[!newValue.equals(NAME_TEXT) && ]]></xsl:text>
                     </xsl:when>
                 </xsl:choose>
-                    <xsl:if test="($elementName = 'component') and  (@name = 'name')">
-                        <!-- HAnim enumeration is poorly named, deserves specification change -->
-                        <xsl:text disable-output-escaping="yes"><![CDATA[!newValue.equals(NAME_H_ANIM) && ]]></xsl:text>
-                    </xsl:if>
                 <xsl:text>!org.web3d.x3d.jsail.fields.SFString.meetsX3dInteroperabilityNamingConventions(newValue))</xsl:text>
                 <xsl:text>&#10;</xsl:text>
                 <xsl:text>		{</xsl:text>

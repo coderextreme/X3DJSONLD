@@ -80,6 +80,7 @@ Recommended tools:
     <xsl:param name="fixGeoSystemMetadata"        ><xsl:text>true</xsl:text></xsl:param>
     <!-- TODO fixHAnimHumanoidMetadataDefault -->
     <xsl:param name="fixMetaNamesMatchDublinCore" ><xsl:text>true</xsl:text></xsl:param>
+    <xsl:param name="omitNegativeScaleValues"     ><xsl:text>true</xsl:text></xsl:param>
     <xsl:param name="omitObsoleteAttributes"      ><xsl:text>true</xsl:text></xsl:param><!-- TODO add to X3D-Edit -->
     <!-- prependWorldInfoIfMissing values: true, false, or can also provide name to use -->
     <xsl:param name="prependWorldInfoIfMissing"   ><xsl:text>true</xsl:text></xsl:param><!-- TODO add to X3D-Edit -->
@@ -5469,7 +5470,7 @@ Recommended tools:
                         <xsl:text>'</xsl:text>
                         <xsl:text>/&gt;</xsl:text>
 					</xsl:message>
-				</xsl:when>
+		</xsl:when>
                 <xsl:when test="(local-name(..)='TextureProperties') and contains(../@minificationFilter,'MIPMAP') and (local-name()='generateMipMaps') and not(string(.)='true')">
                     <xsl:text>true</xsl:text>
                     <xsl:message>
@@ -5479,7 +5480,7 @@ Recommended tools:
                         <xsl:value-of select="../@minificationFilter"/>
                         <xsl:text>'</xsl:text>
                     </xsl:message>
-					<!-- TODO how to handle case where generateMipMaps is not defined and has devalue value of false? -->
+                    <!-- TODO how to handle case where generateMipMaps is not defined and has devalue value of false? -->
                 </xsl:when>
                 <xsl:when test="(local-name() = 'translation') and (local-name(..) = 'Transform') and (local-name(../..) = 'HAnimSegment') and (local-name(../../..) = 'HAnimJoint')
                               and not(. = ../../../@center)">
@@ -5510,20 +5511,43 @@ Recommended tools:
                         <!-- corrected value -->
                         <xsl:value-of select="../../../@center"/>
                 </xsl:when>
+                <xsl:when test="(local-name() = 'scale') and ((local-name(..) = 'Transform') or (local-name(..) = 'GeoTransform')) and
+                                contains(.,'-') and (($omitNegativeScaleValues = 'true') or (//X3D/@version = '3.0'))">
+                    <!-- negative scale values first allowed in X3D 3.1 -->
+                    <!-- https://www.web3d.org/documents/specifications/19775-1/V3.1/Part01/components/group.html -->
+                    <xsl:variable name="newScale" select="normalize-space(translate(.,'-',' '))"/>
+                    <xsl:value-of select="$newScale"/>
+                    <xsl:message>
+                        <xsl:text disable-output-escaping="yes">*** omitNegativeScaleValues: &lt;</xsl:text>
+                        <xsl:value-of select="local-name(..)"/>
+                        <xsl:text> DEF='</xsl:text>
+                        <xsl:value-of select="../@DEF"/>
+                        <xsl:text> scale='</xsl:text>
+                        <xsl:value-of select="../@scale"/>
+                        <xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
+                        <xsl:text> includes negative value(s), changing all values to positive numbers,</xsl:text>
+                        <xsl:text> new scale='</xsl:text>
+                        <xsl:value-of select="$newScale"/>
+                        <xsl:text>'</xsl:text>
+                        <xsl:if test="(//X3D/@version = '3.0')">
+                            <xsl:text> (not allowed in X3D version='3.0')</xsl:text>
+                        </xsl:if>
+                    </xsl:message>
+                </xsl:when>
                 <xsl:when test="($omitObsoleteAttributes = 'true') and (local-name(..) = 'GeoViewpoint') and ((local-name() = 'headlight') or (local-name() = 'navType'))">
-                        <xsl:message>
-                            <xsl:text disable-output-escaping="yes">*** error: &lt;</xsl:text>
-                            <xsl:value-of select="local-name(..)"/>
-                            <xsl:text> DEF='</xsl:text>
-                            <xsl:value-of select="../@DEF"/>
-                            <xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
-                            <xsl:text>&gt; defines obsolete attribute value(s)</xsl:text>
-                            <xsl:text> headlight='</xsl:text>
-                            <xsl:value-of select="../@headlight"/>
-                            <xsl:text>' navType='</xsl:text>
-                            <xsl:value-of select="../@navType"/>
-                            <xsl:text>', now omitted</xsl:text>
-                        </xsl:message>
+                    <xsl:message>
+                        <xsl:text disable-output-escaping="yes">*** error: &lt;</xsl:text>
+                        <xsl:value-of select="local-name(..)"/>
+                        <xsl:text> DEF='</xsl:text>
+                        <xsl:value-of select="../@DEF"/>
+                        <xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
+                        <xsl:text>&gt; defines obsolete attribute value(s)</xsl:text>
+                        <xsl:text> headlight='</xsl:text>
+                        <xsl:value-of select="../@headlight"/>
+                        <xsl:text>' navType='</xsl:text>
+                        <xsl:value-of select="../@navType"/>
+                        <xsl:text>', now omitted</xsl:text>
+                    </xsl:message>
                     <!-- omit value, canonicalization will remove attribute -->
                 </xsl:when>
                 <!-- remove whitespace from selected name fields -->
@@ -5586,7 +5610,7 @@ Recommended tools:
                         <xsl:text>'/&gt; has incorrect reference='</xsl:text>
                         <xsl:value-of select="../@reference"/>
                         <xsl:text> and so replacing with '</xsl:text>
-                    <xsl:text>https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/geospatial.html#GeoMetadata</xsl:text>
+                        <xsl:text>https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/geospatial.html#GeoMetadata</xsl:text>
                         <xsl:text>'</xsl:text>
                     </xsl:message>
                     <xsl:text>https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/geospatial.html#GeoMetadata</xsl:text>

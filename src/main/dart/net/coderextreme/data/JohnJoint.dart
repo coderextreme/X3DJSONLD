@@ -44,7 +44,7 @@ var X3D0 =  X3D(
           children_ : [
             Transform(
               /*DEF for markerfor XYZ axes*/
-              children_ : [
+              child_ : 
                 Shape(
                   DEF_ : SFString('AxisLinesShape'),
                   /*RGB lines showing XYZ axes*/
@@ -58,7 +58,7 @@ var X3D0 =  X3D(
                           point_ : MFVec3f([SFVec3f([0,0,0]),SFVec3f([0.1,0,0]),SFVec3f([0,0.1,0]),SFVec3f([0,0,0.1])])),
                       color_ : 
                         Color(
-                          color_ : MFColor([SFColor(1), SFColor(0), SFColor(0), SFColor(0), SFColor(0.6), SFColor(0), SFColor(0), SFColor(0), SFColor(1)]))))]),
+                          color_ : MFColor([SFColor(1), SFColor(0), SFColor(0), SFColor(0), SFColor(0.6), SFColor(0), SFColor(0), SFColor(0), SFColor(1)]))))),
 
             Group(
               /*DEFS for markers of skeleton joints, segments, and sites*/
@@ -68,7 +68,7 @@ var X3D0 =  X3D(
                   children_ : [
                     Transform(
                       translation_ : SFVec3f([SFDouble(0), SFDouble(2.1), SFDouble(0)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           DEF_ : SFString('HAnimJointShape'),
                           geometry_ : 
@@ -80,11 +80,11 @@ var X3D0 =  X3D(
                                 Material(
                                   DEF_ : SFString('HAnimJointMaterial'),
                                   diffuseColor_ : SFColor([SFDouble(0), SFDouble(0), SFDouble(0.8)]),
-                                  transparency_ : 0.3)))]),
+                                  transparency_ : 0.3)))),
 
                     Transform(
                       translation_ : SFVec3f([SFDouble(0), SFDouble(2.05), SFDouble(0)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           DEF_ : SFString('HAnimSegmentLine'),
                           geometry_ : 
@@ -96,7 +96,7 @@ var X3D0 =  X3D(
                                   color_ : MFColorRGBA([SFColorRGBA(1), SFColorRGBA(1), SFColorRGBA(0), SFColorRGBA(1), SFColorRGBA(1), SFColorRGBA(1), SFColorRGBA(0), SFColorRGBA(0.1)])),
                               coord_ : 
                                 Coordinate(
-                                  point_ : MFVec3f([SFVec3f([-0.05,0,0]),SFVec3f([0.05,0,0])]))))]),
+                                  point_ : MFVec3f([SFVec3f([-0.05,0,0]),SFVec3f([0.05,0,0])]))))),
                   /*<Transform translation='0 2.1 0' scale='1 1 1'> <Shape DEF='HAnimSiteShape'> <IndexedFaceSet DEF='DiamondIFS' creaseAngle='0.5' solid='false' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1'> <ColorRGBA DEF='HAnimSiteColorRGBA' color='1 1 0 1 1 1 0 0.1'/> <Coordinate point='0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0'/> </IndexedFaceSet> <Appearance> <Material diffuseColor='1 1 0' transparency='0.3'/> </Appearance> </Shape> </Transform>*/])]),
 
             NavigationInfo(

@@ -1,6 +1,10 @@
 ####################################################################################################
 #
-# Now available: developmental python x3d.py package on PyPI for import.
+# Invoking X3D model self-test:
+#
+#   $ python skeletonTidy.py
+#
+# Python package x3d.py package is available on PyPI for import.
 #   This approach simplifies Python X3D deployment and use.
 #   https://pypi.org/project/x3d
 #
@@ -9,7 +13,7 @@
 # or
 #       python -m pip install x3d
 #
-# Developer options for loading x3d package:
+# Developer options for loading x3d package in other Python programs:
 #
 #    from x3d import *  # preferred approach, terser source that avoids x3d.* class prefixes
 #
@@ -25,9 +29,9 @@ from x3d import *
 newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
-    component(level=1,name='H-Anim'),
-    meta(content='JohnBoy.x3d',name='title'),
-    meta(content='http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d',name='identifier'),
+    component(level=1,name='HAnim'),
+    meta(content='skeletonTidy.x3d',name='title'),
+    meta(content='http://www.web3d.org/x3d/content/examples/HumanoidAnimation/skeletonTidy.x3d',name='identifier'),
     meta(content='An attempt at a standard LOA-4 skeleton',name='description'),
     meta(content='h.pl',name='generator'),
     meta(content='John Carlson',name='creator'),
@@ -35,9 +39,9 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(content='../license.html',name='license')]),
   Scene=Scene(
     children=[
-    WorldInfo(title='JohnBoy.x3d'),
+    WorldInfo(title='skeletonTidy.x3d'),
     NavigationInfo(speed=1.5),
-    Viewpoint(centerOfRotation=(0,1,0),description='JohnBoy',position=(0,1,3)),
+    Viewpoint(centerOfRotation=(0,1,0),description='skeletonTidy',position=(0,1,3)),
     HAnimHumanoid(DEF='STD_HAnim',name='HAnim',scale=(0.0225,0.0225,0.0225),version='2.0',
       sites=[
       HAnimSite(USE='STD_Site_crotch_pt'),
@@ -1456,7 +1460,7 @@ newModel=X3D(profile='Immersive',version='4.0',
 # Self-test diagnostics
 ####################################################################################################
 
-print('Self-test diagnostics for JohnBoy.py:')
+print('Self-test diagnostics for skeletonTidy.py:')
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel)) # display meta info, hint, warning, error, TODO values in this model
 # print('check newModel.XML() serialization...')
@@ -1485,4 +1489,4 @@ except Exception as err: # usually SyntaxError
     if newModelJSON: # may have failed to generate
         print(prependLineNumbers(newModelJSON,err.lineno))
 
-print("python JohnBoy.py load and self-test diagnostics complete.")
+print("python skeletonTidy.py load and self-test diagnostics complete.")

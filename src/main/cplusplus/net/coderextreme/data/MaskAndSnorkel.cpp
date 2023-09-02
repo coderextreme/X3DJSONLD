@@ -88,7 +88,7 @@ IndexedFaceSet18->setCoord(*Coordinate19);
 
 Shape15->setGeometry(IndexedFaceSet18);
 
-Transform14->addChildren(*Shape15);
+Transform14->addChild(*Shape15);
 
 Transform13->addChildren(*Transform14);
 
@@ -108,7 +108,7 @@ Cylinder24->setHeight(0.003);
 Cylinder24->setRadius(0.015);
 Shape21->setGeometry(Cylinder24);
 
-Transform20->addChildren(*Shape21);
+Transform20->addChild(*Shape21);
 
 Transform13->addChildren(*Transform20);
 
@@ -134,7 +134,7 @@ Extrusion31->setCrossSection(new float[34]{0,0.013,0.00494,0.01196,0.00923,0.009
 Extrusion31->setSpine(new float[15]{-0.01,-0.04,0,0,0,0,0.03,0.05,0,0.05,0.2,0,0.03,0.4,0.03});
 Shape28->setGeometry(Extrusion31);
 
-Transform27->addChildren(*Shape28);
+Transform27->addChild(*Shape28);
 
 Transform26->addChildren(*Transform27);
 
@@ -157,7 +157,7 @@ Extrusion36->setCrossSection(new float[34]{0,0.013,0.00494,0.01196,0.00923,0.009
 Extrusion36->setSpine(new float[9]{-0.01,-0.03,0,0,0,0,0.02,0.01,0});
 Shape33->setGeometry(Extrusion36);
 
-Transform32->addChildren(*Shape33);
+Transform32->addChild(*Shape33);
 
 Transform26->addChildren(*Transform32);
 
@@ -178,7 +178,7 @@ Extrusion41->setCrossSection(new float[18]{0,0.013,0.00494,0.01196,0.00923,0.009
 Extrusion41->setSpine(new float[18]{-0.02,-0.03,0,-0.01,-0.03,0,0,-0.0175,0,0,-0.0135,0,-0.01,0,0,-0.02,0,0});
 Shape38->setGeometry(Extrusion41);
 
-Transform37->addChildren(*Shape38);
+Transform37->addChild(*Shape38);
 
 Transform26->addChildren(*Transform37);
 
@@ -208,7 +208,7 @@ IndexedFaceSet46->setCoord(*Coordinate47);
 
 Shape43->setGeometry(IndexedFaceSet46);
 
-Transform42->addChildren(*Shape43);
+Transform42->addChild(*Shape43);
 
 Transform13->addChildren(*Transform42);
 
@@ -232,7 +232,7 @@ IndexedFaceSet52->setCoord(*Coordinate53);
 
 Shape49->setGeometry(IndexedFaceSet52);
 
-Transform48->addChildren(*Shape49);
+Transform48->addChild(*Shape49);
 
 Transform13->addChildren(*Transform48);
 
@@ -258,7 +258,7 @@ IndexedFaceSet58->setCoord(*Coordinate59);
 
 Shape55->setGeometry(IndexedFaceSet58);
 
-Transform54->addChildren(*Shape55);
+Transform54->addChild(*Shape55);
 
 Transform13->addChildren(*Transform54);
 
@@ -282,7 +282,7 @@ IndexedFaceSet64->setCoord(*Coordinate65);
 
 Shape61->setGeometry(IndexedFaceSet64);
 
-Transform60->addChildren(*Shape61);
+Transform60->addChild(*Shape61);
 
 Transform13->addChildren(*Transform60);
 
@@ -306,7 +306,7 @@ IndexedFaceSet70->setCoord(*Coordinate71);
 
 Shape67->setGeometry(IndexedFaceSet70);
 
-Transform66->addChildren(*Shape67);
+Transform66->addChild(*Shape67);
 
 Transform13->addChildren(*Transform66);
 

@@ -40,7 +40,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 27 January 2023 </td>
+			<td> 2 July 2023 </td>
 		</tr>
 		<tr style="color:burntorange">
 			<td style="text-align:right; vertical-align: text-top;"> <i> warning </i> </td>
@@ -635,13 +635,13 @@ JoeSkeletonSkinSiteSaluteWalk.prototype = {
 	this.R_WRIST_ANIMATOR_4_1395_keyValue = new autoclass.MFRotation(java.newArray("float", [-0.81290000677108765,0.47589999437332153,-0.33570000529289246,0.13459999859333038,0.15330000221729279,-0.9878000020980835,0.025820000097155571,0.39019998908042908,-0.57010000944137573,0.76039999723434448,-0.31099998950958252,0.36599999666213989,-0.81290000677108765,0.47589999437332153,-0.33570000529289246,0.13459999859333038]));
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
-    .addComponent((new autoclass.component()).setName("H-Anim").setLevel(2))
+    .addComponent((new autoclass.component()).setName("HAnim").setLevel(2))
     .addMeta((new autoclass.meta()).setName("title").setContent("JoeSkeletonSkinSaluteSiteWalk.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Comprehensive example showing skeleton, skin, sites and interpolator animation together."))
     .addMeta((new autoclass.meta()).setName("creator").setContent("Joe D. Williams"))
     .addMeta((new autoclass.meta()).setName("created").setContent("9 January 2004"))
     .addMeta((new autoclass.meta()).setName("translated").setContent("4 December 2022"))
-    .addMeta((new autoclass.meta()).setName("modified").setContent("27 January 2023"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("2 July 2023"))
     .addMeta((new autoclass.meta()).setName("warning").setContent("Under development, numerous errors and warnings"))
     .addMeta((new autoclass.meta()).setName("TODO").setContent("This is an HAnimV1 loa model, might need to convert to X3D4 to note loa value"))
     .addMeta((new autoclass.meta()).setName("TODO").setContent("Provide feedback to tovrmlx3d converter"))
@@ -674,7 +674,7 @@ JoeSkeletonSkinSiteSaluteWalk.prototype = {
     .addChild((new autoclass.NavigationInfo("HeadlightOnRevealsSkinTextureAndColors")))
     .addChild((new autoclass.Background()).setGroundAngle(java.newArray("float", [1.57])).setGroundColor(new autoclass.MFColor(java.newArray("float", [0.0,0.1,0.0,0.0,0.1,0.0]))).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.0,0.0,0.1]))))
     .addChild((new autoclass.Transform("cordsysfloor")).setScale(0.175,0.175,0.175)
-      .addChild((new autoclass.Inline("CoordinateAxes")).setUrl(new autoclass.MFString("\"../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d\" \"../../../Savage/Tools/Authoring/CoordinateAxes.x3d\" \"https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d\" \"https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d\" \"../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl\" \"../../../Savage/Tools/Authoring/CoordinateAxes.wrl\" \"https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl\" \"https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl\""))))
+      .addChild((new autoclass.Inline("CoordinateAxes")).setUrl(new autoclass.MFString("\"../data/CoordinateAxes.x3d\" \"../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d\" \"../../../Savage/Tools/Authoring/CoordinateAxes.x3d\" \"https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d\" \"https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d\" \"../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl\" \"../../../Savage/Tools/Authoring/CoordinateAxes.wrl\" \"https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl\" \"https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl\""))))
     .addComments(" Authoring hint: these axes are aligned within local coordinate system ")
     .addChild((new autoclass.Group("ViewpointGroup"))
       .addChild((new autoclass.Viewpoint()).setDescription("Front Up View").setOrientation(-1.0,-1.0,0.0,0.55).setPosition(-1.0,2.0,2.5))
@@ -722,11 +722,11 @@ JoeSkeletonSkinSiteSaluteWalk.prototype = {
               .setCoord((new autoclass.Coordinate("TheSkinCoord")).setPoint(this.TheSkinCoord_8_78_point))
               .setColor((new autoclass.Color()).setColor(this.Color_8_79_color)))
             .setAppearance((new autoclass.Appearance("SkinAppearance"))
-              .setTexture((new autoclass.ImageTexture("zBlueSpiralBkg2")).setDescription("Blue Spiral Pattern").setUrl(new autoclass.MFString("\"zBlueSpiralBkg2.gif\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif\"")))
+              .setTexture((new autoclass.ImageTexture("zBlueSpiralBkg2")).setDescription("Blue Spiral Pattern").setUrl(new autoclass.MFString("\"../data/zBlueSpiralBkg2.gif\" \"zBlueSpiralBkg2.gif\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif\"")))
               .setMaterial((new autoclass.Material("SkinMaterial")).setAmbientIntensity(0.6).setDiffuseColor(1.0,1.0,1.0).setShininess(0.6).setTransparency(0.2))))
           .addComments(" </LOD> ")
           .setSkinCoord((new autoclass.Coordinate()))
-          .addSkeleton((new autoclass.HAnimJoint("Joe_HumanoidRoot")).setName("HumanoidRoot").setCenter(0.0,0.875,0.0).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+          .addSkeleton((new autoclass.HAnimJoint("Joe_HumanoidRoot")).setName("humanoid_root").setCenter(0.0,0.875,0.0).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
             .addChild((new autoclass.HAnimSegment("Joe_sacrum")).setName("sacrum")
               .addChild((new autoclass.Transform()).setTranslation(0.0,0.875,0.0)
                 .addChild((new autoclass.Shape())))

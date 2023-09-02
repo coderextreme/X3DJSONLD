@@ -14,12 +14,12 @@ head1.component[0] = component2;
 
 meta meta3 = createNode("meta");
 meta3.name = "title";
-meta3.content = "JohnBoy.x3d";
+meta3.content = "skeleton3.x3d";
 head1.meta[1] = meta3;
 
 meta meta4 = createNode("meta");
 meta4.name = "identifier";
-meta4.content = "http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d";
+meta4.content = "http://www.web3d.org/x3d/content/examples/HumanoidAnimation/skeleton3.x3d";
 head1.meta[2] = meta4;
 
 meta meta5 = createNode("meta");

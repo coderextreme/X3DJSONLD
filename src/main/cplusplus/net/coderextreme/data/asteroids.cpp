@@ -31,7 +31,7 @@ head1->addMeta(*meta4);
 
 Cmeta* meta5 = new Cmeta();
 meta5->setName("identifier");
-meta5->setContent("https://coderextreme.net/X3DJSONLD/asteroids.x3d");
+meta5->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/asteroids.x3d");
 head1->addMeta(*meta5);
 
 Cmeta* meta6 = new Cmeta();
@@ -44,7 +44,7 @@ X3D0->setHead(*head1);
 CScene* Scene7 = new CScene();
 CProtoDeclare ProtoDeclare8 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="anyShape" ><ProtoInterface><field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere containerField="geometry"></Sphere>
+<ProtoDeclare name="anyShape" ><ProtoInterface><field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere></Sphere>
 </Shape>
 </field>
 </ProtoInterface>

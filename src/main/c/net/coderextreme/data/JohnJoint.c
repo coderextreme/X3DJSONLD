@@ -68,9 +68,9 @@ IndexedLineSet13.color = Color15;
 
 Shape12.geometry = IndexedLineSet13;
 
-Transform11.children = new MFNode();
+Transform11.child = new undefined();
 
-Transform11.children[0] = Shape12;
+Transform11.child[0] = Shape12;
 
 children = new MFNode();
 
@@ -97,9 +97,9 @@ Appearance21.material = Material22;
 
 Shape19.appearance = Appearance21;
 
-Transform18.children = new MFNode();
+Transform18.child = new undefined();
 
-Transform18.children[0] = Shape19;
+Transform18.child[0] = Shape19;
 
 Transform17.children = new MFNode();
 
@@ -122,9 +122,9 @@ LineSet25.coord = Coordinate27;
 
 Shape24.geometry = LineSet25;
 
-Transform23.children = new MFNode();
+Transform23.child = new undefined();
 
-Transform23.children[0] = Shape24;
+Transform23.child[0] = Shape24;
 
 Transform17.children[1] = Transform23;
 

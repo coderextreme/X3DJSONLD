@@ -52,8 +52,10 @@ ProtoInstance ProtoInstance2 = null;
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("x3dconnectorProto"))
         .addMeta(new meta().setName("creator").setContent("Lost, Doug Sanden I think"))
+        .addMeta(new meta().setName("created").setContent("Unknown"))
+        .addMeta(new meta().setName("modified").setContent("July 30 2023"))
         .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d"))
         .addMeta(new meta().setName("description").setContent("a generic proto to connect two objects"))
         .addMeta(new meta().setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html")))
       .setScene(new Scene()
@@ -115,7 +117,7 @@ ProtoInstance ProtoInstance2 = null;
             .addField(new field().setType("SFVec3f").setName("set_startpoint").setAccessType(field.ACCESSTYPE_INPUTONLY))
             .addField(new field().setType("SFVec3f").setName("set_endpoint").setAccessType(field.ACCESSTYPE_INPUTONLY)))
           .setProtoBody(new ProtoBody()
-            .addChild(new Script().setDEF("S1")
+            .addChild(new Script().setDEF("S1").setDirectOutput(true)
               .addField(new field().setType("SFNode").setName("startnode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
               .addField(new field().setType("SFNode").setName("endnode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
               .addField(new field().setType("SFNode").setName("transnode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
@@ -134,11 +136,11 @@ ProtoInstance ProtoInstance2 = null;
 "	    if (typeof endpoint === 'undefined') {\n"+
 "		return;\n"+
 "	    }\n"+
-"            var dif = endpoint.subtract(startpoint);\n"+
-"            var dist = dif.length()*0.5;\n"+
-"            var dif2 = dif.multiply(0.5);\n"+
-"            var norm = dif.normalize();\n"+
-"            var transl = startpoint.add(dif2);\n"+
+"            let dif = endpoint.subtract(startpoint);\n"+
+"            let dist = dif.length()*0.5;\n"+
+"            let dif2 = dif.multiply(0.5);\n"+
+"            let norm = dif.normalize();\n"+
+"            let transl = startpoint.add(dif2);\n"+
 "	    if (typeof Quaternion !== 'undefined') {\n"+
 "		    return {\n"+
 "			    scale : new SFVec3f(1.0,dist,1.0),\n"+
@@ -154,7 +156,7 @@ ProtoInstance ProtoInstance2 = null;
 "	    }\n"+
 "	}\n"+
 "	function recompute_and_route(startpoint, endpoint) {\n"+
-"	      var trafo = recompute(startpoint, endpoint);\n"+
+"	      let trafo = recompute(startpoint, endpoint);\n"+
 "	      if (trafo) {\n"+
 "		      transnode.translation = trafo.translation;\n"+
 "		      rotscalenode.rotation = trafo.rotation;\n"+

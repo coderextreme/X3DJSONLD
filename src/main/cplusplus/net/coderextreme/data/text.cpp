@@ -31,7 +31,7 @@ head1->addMeta(*meta4);
 
 Cmeta* meta5 = new Cmeta();
 meta5->setName("identifier");
-meta5->setContent("https://coderextreme.net/X3DJSONLD/text.x3d");
+meta5->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/text.x3d");
 head1->addMeta(*meta5);
 
 Cmeta* meta6 = new Cmeta();
@@ -62,7 +62,7 @@ Appearance13->setMaterial(*Material14);
 
 Shape10->setAppearance(*Appearance13);
 
-Transform9->addChildren(*Shape10);
+Transform9->addChild(*Shape10);
 
 CShape* Shape15 = (CShape *)(m_pScene.createNode("Shape"));
 CText* Text16 = (CText *)(m_pScene.createNode("Text"));
@@ -78,7 +78,7 @@ Appearance18->setMaterial(*Material19);
 
 Shape15->setAppearance(*Appearance18);
 
-Transform9->addChildren(*Shape15);
+Transform9->addChild(*Shape15);
 
 CShape* Shape20 = (CShape *)(m_pScene.createNode("Shape"));
 CText* Text21 = (CText *)(m_pScene.createNode("Text"));
@@ -94,7 +94,7 @@ Appearance23->setMaterial(*Material24);
 
 Shape20->setAppearance(*Appearance23);
 
-Transform9->addChildren(*Shape20);
+Transform9->addChild(*Shape20);
 
 CScript* Script25 = (CScript *)(m_pScene.createNode("Script"));
 Cfield* field26 = new Cfield();

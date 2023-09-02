@@ -31,7 +31,7 @@ head1->addMeta(*meta4);
 
 Cmeta* meta5 = new Cmeta();
 meta5->setName("identifier");
-meta5->setContent("https://coderextreme.net/X3DJSONLD/rubik.x3d");
+meta5->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/rubik.x3d");
 head1->addMeta(*meta5);
 
 Cmeta* meta6 = new Cmeta();
@@ -57,7 +57,7 @@ CProtoDeclare ProtoDeclare10 = browser.createX3DFromString(R"foo(<?xml version="
 </ProtoInterface>
 <ProtoBody><Transform><IS><connect nodeField="translation" protoField="xtranslation"></connect>
 </IS>
-<Shape><Sphere containerField="geometry"></Sphere>
+<Shape><Sphere></Sphere>
 <Appearance><Material diffuseColor="1 1 1"></Material>
 </Appearance>
 </Shape>
@@ -96,7 +96,7 @@ Appearance19->setMaterial(*Material20);
 
 Shape17->setAppearance(*Appearance19);
 
-Transform14->addChildren(*Shape17);
+Transform14->addChild(*Shape17);
 
 ProtoBody13->addChildren(*Transform14);
 

@@ -28,7 +28,7 @@ var ProtoInstance9 = null;
         .addMeta((new autoclass.meta()).setName("title").setContent("rubikOnFire.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/rubikOnFire.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/rubikOnFire.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("a white rubik cube")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.NavigationInfo()).setType(java.newArray("java.lang.String", ["EXAMINE"])))
@@ -125,5 +125,5 @@ ProtoInstance9
 ProtoInstance9
           .addFieldValue((new autoclass.fieldValue()).setName("myShape")
             .addChild((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)]))));
-    X3D0.toFileX3D("../data/rubikOnFire.new.x3d");
+    X3D0.toFileX3D("../data/rubikOnFire.new.node.x3d");
     process.exit(0);

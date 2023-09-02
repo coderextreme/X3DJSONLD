@@ -61,16 +61,16 @@ CProtoDeclare ProtoDeclare11 = browser.createX3DFromString(R"foo(<?xml version="
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="Process" ><ProtoBody><Group><!--left--><Transform scale="0.5 0.5 0.5"><Shape><Appearance><Material diffuseColor="0.7 1 0" transparency="0.5"></Material>
 </Appearance>
-<Extrusion containerField="geometry" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="-2.5 0 0 -1.5 0 0"></Extrusion>
+<Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="-2.5 0 0 -1.5 0 0"></Extrusion>
 </Shape>
 <!--<Transform translation="-2.5 0 0"> <Shape> <Text DEF="LeftString" string='"l"'></Text> </Shape> </Transform> <StringSensor DEF="LeftSensor" enabled="false"></StringSensor> <TouchSensor DEF="LeftTouch" enabled="true"></TouchSensor>--></Transform>
 <!--right--><Transform scale="0.5 0.5 0.5"><Shape><Appearance><Material diffuseColor="0 0.7 1" transparency="0.5"></Material>
 </Appearance>
-<Extrusion containerField="geometry" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="1.5 0 0 2.5 0 0"></Extrusion>
+<Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="1.5 0 0 2.5 0 0"></Extrusion>
 </Shape>
 <Transform translation="2 0 0"><Shape><Appearance><Material DEF="MaterialLightBlue" diffuseColor="1 1 1"></Material>
 </Appearance>
-<Text containerField="geometry" DEF="RightString" string="&quot;r&quot;"></Text>
+<Text DEF="RightString" string="&quot;r&quot;"></Text>
 </Shape>
 </Transform>
 <StringSensor DEF="RightSensor" enabled="false"></StringSensor>
@@ -78,11 +78,11 @@ CProtoDeclare ProtoDeclare11 = browser.createX3DFromString(R"foo(<?xml version="
 </Transform>
 <!--up--><Transform scale="0.5 0.5 0.5"><Shape><Appearance><Material diffuseColor="0 0.7 1" transparency="0.5"></Material>
 </Appearance>
-<Extrusion containerField="geometry" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 1.5 0 0 2.5 0"></Extrusion>
+<Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 1.5 0 0 2.5 0"></Extrusion>
 </Shape>
 <Transform translation="-0.5 2 0"><Shape><Appearance><Material USE="MaterialLightBlue"></Material>
 </Appearance>
-<Text containerField="geometry" DEF="UpString" string="&quot;u&quot;"></Text>
+<Text DEF="UpString" string="&quot;u&quot;"></Text>
 </Shape>
 </Transform>
 <StringSensor DEF="UpSensor" enabled="false"></StringSensor>
@@ -90,16 +90,16 @@ CProtoDeclare ProtoDeclare11 = browser.createX3DFromString(R"foo(<?xml version="
 </Transform>
 <!--down--><Transform scale="0.5 0.5 0.5"><Shape><Appearance><Material diffuseColor="0.7 1 0" transparency="0.5"></Material>
 </Appearance>
-<Extrusion containerField="geometry" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -2.5 0 0 -1.5 0"></Extrusion>
+<Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -2.5 0 0 -1.5 0"></Extrusion>
 </Shape>
 <!--<Transform translation="-0.5 -2.5 0"> <Shape> <Text DEF="DownString" string='"d"'></Text> </Shape> </Transform> <StringSensor DEF="DownSensor" enabled="false"></StringSensor> <TouchSensor description='touch to activate' DEF="DownTouch" enabled="true"></TouchSensor>--></Transform>
 <!--center--><Transform><Shape><Appearance><Material diffuseColor="1 0 0.7"></Material>
 </Appearance>
-<Sphere containerField="geometry"></Sphere>
+<Sphere></Sphere>
 </Shape>
 <Transform scale="0.5 0.5 0.5" translation="-0.5 0 1"><Shape><Appearance><Material USE="MaterialLightBlue"></Material>
 </Appearance>
-<Text containerField="geometry" DEF="CenterString"></Text>
+<Text DEF="CenterString"></Text>
 </Shape>
 </Transform>
 <StringSensor DEF="CenterSensor" enabled="false"></StringSensor>
@@ -171,7 +171,7 @@ Extrusion18->setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,
 Extrusion18->setSpine(new float[6]{-2.5,0,0,-1.5,0,0});
 Shape15->setGeometry(Extrusion18);
 
-Transform14->addChildren(*Shape15);
+Transform14->addChild(*Shape15);
 
 //<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>
 Group13->addChildren(*Transform14);
@@ -194,7 +194,7 @@ Extrusion23->setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,
 Extrusion23->setSpine(new float[6]{1.5,0,0,2.5,0,0});
 Shape20->setGeometry(Extrusion23);
 
-Transform19->addChildren(*Shape20);
+Transform19->addChild(*Shape20);
 
 CTransform* Transform24 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform24->setTranslation(new float[3]{2,0,0});
@@ -212,7 +212,7 @@ Text28->setDEF("RightString");
 Text28->setString(new CString[1]{"r"}, 1);
 Shape25->setGeometry(Text28);
 
-Transform24->addChildren(*Shape25);
+Transform24->addChild(*Shape25);
 
 Transform19->addChildren(*Transform24);
 
@@ -246,7 +246,7 @@ Extrusion35->setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,
 Extrusion35->setSpine(new float[6]{0,1.5,0,0,2.5,0});
 Shape32->setGeometry(Extrusion35);
 
-Transform31->addChildren(*Shape32);
+Transform31->addChild(*Shape32);
 
 CTransform* Transform36 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform36->setTranslation(new float[3]{-0.5,2,0});
@@ -263,7 +263,7 @@ Text40->setDEF("UpString");
 Text40->setString(new CString[1]{"u"}, 1);
 Shape37->setGeometry(Text40);
 
-Transform36->addChildren(*Shape37);
+Transform36->addChild(*Shape37);
 
 Transform31->addChildren(*Transform36);
 
@@ -297,7 +297,7 @@ Extrusion47->setCrossSection(new float[34]{1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,
 Extrusion47->setSpine(new float[6]{0,-2.5,0,0,-1.5,0});
 Shape44->setGeometry(Extrusion47);
 
-Transform43->addChildren(*Shape44);
+Transform43->addChild(*Shape44);
 
 //<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>
 Group13->addChildren(*Transform43);
@@ -315,7 +315,7 @@ Shape49->setAppearance(*Appearance50);
 CSphere* Sphere52 = (CSphere *)(m_pScene.createNode("Sphere"));
 Shape49->setGeometry(Sphere52);
 
-Transform48->addChildren(*Shape49);
+Transform48->addChild(*Shape49);
 
 CTransform* Transform53 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform53->setScale(new float[3]{0.5,0.5,0.5});
@@ -332,7 +332,7 @@ CText* Text57 = (CText *)(m_pScene.createNode("Text"));
 Text57->setDEF("CenterString");
 Shape54->setGeometry(Text57);
 
-Transform53->addChildren(*Shape54);
+Transform53->addChild(*Shape54);
 
 Transform48->addChildren(*Transform53);
 

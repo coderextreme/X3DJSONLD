@@ -80,7 +80,7 @@ var X3D0 =  X3D(
               bottomUrl_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_bottom.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png")])),
 
             Transform(
-              children_ : [
+              child_ : 
                 Shape(
                   appearance_ : 
                     Appearance(
@@ -202,7 +202,7 @@ var X3D0 =  X3D(
                   geometry_ : 
                     Sphere(
                       radius_ : 30)),
-
+              children_ : [
                 Script(
                   DEF_ : SFString('UrlSelector'),
                   directOutput_ : true,

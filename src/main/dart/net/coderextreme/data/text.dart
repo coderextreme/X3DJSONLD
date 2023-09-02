@@ -22,7 +22,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/text.x3d')),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/text.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -35,7 +35,7 @@ var X3D0 =  X3D(
         Scene(
           children_ : [
             Transform(
-              children_ : [
+              child_ : 
                 Shape(
                   geometry_ : 
                     Text(
@@ -46,7 +46,7 @@ var X3D0 =  X3D(
                     Appearance(
                       material_ : 
                         Material())),
-
+              child_ : 
                 Shape(
                   geometry_ : 
                     Text(
@@ -57,7 +57,7 @@ var X3D0 =  X3D(
                     Appearance(
                       material_ : 
                         Material())),
-
+              child_ : 
                 Shape(
                   geometry_ : 
                     Text(
@@ -68,7 +68,7 @@ var X3D0 =  X3D(
                     Appearance(
                       material_ : 
                         Material())),
-
+              children_ : [
                 Script(
                   field_ : [
                     field(

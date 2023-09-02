@@ -28,7 +28,7 @@ var ProtoInstance9 = null;
         .addMeta((new autoclass.meta()).setName("title").setContent("rubik.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/rubik.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/rubik.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("a kind of rubik cube with spheres")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.NavigationInfo()).setType(java.newArray("java.lang.String", ["EXAMINE"])))
@@ -95,5 +95,5 @@ ProtoInstance8
                 .addFieldValue((new autoclass.fieldValue()).setName("ztranslation").setValue("0 0 -2"));
 ProtoInstance9
           .addFieldValue((new autoclass.fieldValue()).setName("ttranslation").setValue("0 0 0"));
-    X3D0.toFileX3D("../data/rubik.new.x3d");
+    X3D0.toFileX3D("../data/rubik.new.node.x3d");
     process.exit(0);

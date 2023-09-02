@@ -36,12 +36,12 @@
 <NavigationInfo type="&quot;NONE&quot;"></NavigationInfo>
 <Background skyColor="0.419608 0.427451 1"></Background>
 <Transform scale="0.4 0.4 0.4" translation="0 1 0"><TouchSensor DEF="RandomTextClickedSensor" description="Select to see a new strategy"></TouchSensor>
-<Shape><Text containerField="geometry" string="&quot;Oblique Strategies&quot; &quot;&quot; &quot;(Over One Hundred Worthwhile Dilemmas)&quot; &quot;&quot; &quot;by Brian Eno and Peter Schmidt&quot;"><FontStyle DEF="MessageFont" family="&quot;SANS&quot;" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" style="BOLD"></FontStyle>
+<Shape><Text string="&quot;Oblique Strategies&quot; &quot;&quot; &quot;(Over One Hundred Worthwhile Dilemmas)&quot; &quot;&quot; &quot;by Brian Eno and Peter Schmidt&quot;"><FontStyle DEF="MessageFont" family="&quot;SANS&quot;" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" style="BOLD"></FontStyle>
 </Text>
 <Appearance><Material diffuseColor="1 1 1"></Material>
 </Appearance>
 </Shape>
-<Transform scale="10 3 1"><Shape DEF="HeadlineClickSurface"><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 3 -1" solid="false"><Coordinate containerField="coord" point="1 1 0 1 -1 0 -1 -1 0 -1 1 0"></Coordinate>
+<Transform scale="10 3 1"><Shape DEF="HeadlineClickSurface"><IndexedFaceSet coordIndex="0 1 2 3 -1" solid="false"><Coordinate containerField="coord" point="1 1 0 1 -1 0 -1 -1 0 -1 1 0"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material ambientIntensity="0.245763" diffuseColor="0.34773 0.090909 0.005289" shininess="0.07" specularColor="0.336735 0.051091 0.051091" transparency="0.8"></Material>
 </Appearance>
@@ -57,7 +57,7 @@
 <field name="selectRandomCard" accessType="inputOnly" type="SFBool"></field>
 <field name="traceEnabled" accessType="initializeOnly" appinfo="controls console tracing" type="SFBool" value="true"></field>
 </Script>
-<Transform DEF="CardTransform" scale="0.4 0.4 0.4" translation="0 -1.5 0"><Shape><Text containerField="geometry" DEF="CardText"><FontStyle family="&quot;SANS&quot;" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" style="BOLD"></FontStyle>
+<Transform DEF="CardTransform" scale="0.4 0.4 0.4" translation="0 -1.5 0"><Shape><Text DEF="CardText"><FontStyle family="&quot;SANS&quot;" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" style="BOLD"></FontStyle>
 </Text>
 <Appearance><Material diffuseColor="1 1 1"></Material>
 </Appearance>
@@ -70,12 +70,12 @@
 </Transform>
 <Transform scale="0.4 0.4 0.4" translation="-3.2 2.5 0"><TouchSensor DEF="PreviousTextClickedSensor" description="Select to see previous strategy"></TouchSensor>
 <ROUTE fromField="isActive" fromNode="PreviousTextClickedSensor" toField="selectPreviousCard" toNode="TextScript"></ROUTE>
-<Shape><Text containerField="geometry" string="&quot;previous&quot;"><FontStyle USE="MessageFont"></FontStyle>
+<Shape><Text string="&quot;previous&quot;"><FontStyle USE="MessageFont"></FontStyle>
 </Text>
 <Appearance DEF="InterfaceAppearance"><Material diffuseColor="1 0 0.6"></Material>
 </Appearance>
 </Shape>
-<Transform scale="2 0.6 1"><Shape DEF="TransparentClickSurface"><!--support Selectable Text with a scalable IFS--><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 3 -1" solid="false"><Coordinate containerField="coord" point="1 1 0 1 -1 0 -1 -1 0 -1 1 0"></Coordinate>
+<Transform scale="2 0.6 1"><Shape DEF="TransparentClickSurface"><!--support Selectable Text with a scalable IFS--><IndexedFaceSet coordIndex="0 1 2 3 -1" solid="false"><Coordinate containerField="coord" point="1 1 0 1 -1 0 -1 -1 0 -1 1 0"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material transparency="1"></Material>
 </Appearance>
@@ -84,7 +84,7 @@
 </Transform>
 <Transform scale="0.4 0.4 0.4" translation="3.5 2.5 0"><TouchSensor DEF="NextTextClickedSensor" description="Select to see next strategy"></TouchSensor>
 <ROUTE fromField="isActive" fromNode="NextTextClickedSensor" toField="selectNextCard" toNode="TextScript"></ROUTE>
-<Shape><Text containerField="geometry" string="&quot;next&quot;"><FontStyle USE="MessageFont"></FontStyle>
+<Shape><Text string="&quot;next&quot;"><FontStyle USE="MessageFont"></FontStyle>
 </Text>
 <Appearance USE="InterfaceAppearance"></Appearance>
 </Shape>
@@ -93,7 +93,7 @@
 </Transform>
 <Transform scale="0.4 0.4 0.4" translation="-3.3 -0.5 0"><TouchSensor USE="RandomTextClickedSensor"></TouchSensor>
 <ROUTE fromField="isActive" fromNode="RandomTextClickedSensor" toField="selectRandomCard" toNode="TextScript"></ROUTE>
-<Shape><Text containerField="geometry" string="&quot;random&quot;"><FontStyle USE="MessageFont"></FontStyle>
+<Shape><Text string="&quot;random&quot;"><FontStyle USE="MessageFont"></FontStyle>
 </Text>
 <Appearance USE="InterfaceAppearance"></Appearance>
 </Shape>
@@ -101,7 +101,7 @@
 </Transform>
 </Transform>
 <Transform scale="0.4 0.4 0.4" translation="3.3 -0.5 0"><Anchor DEF="TextToSpeechAnchor" description="text to speech in browser" parameter="&quot;target=_blank&quot;" url="&quot;http://translate.google.com/translate_tts?tl=en&amp;amp;q=Overtly%20resist%20change&quot;"><ROUTE fromField="textToSpeechUrl" fromNode="TextScript" toField="url" toNode="TextToSpeechAnchor"></ROUTE>
-<Shape><Text containerField="geometry" string="&quot;speech&quot;"><FontStyle USE="MessageFont"></FontStyle>
+<Shape><Text string="&quot;speech&quot;"><FontStyle USE="MessageFont"></FontStyle>
 </Text>
 <Appearance USE="InterfaceAppearance"></Appearance>
 </Shape>

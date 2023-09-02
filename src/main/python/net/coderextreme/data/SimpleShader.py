@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.2", 
-head=head(children=[component(name="Shaders", level=1),
+head=head(
+children=[
+component(name="Shaders", level=1),
 meta(name="title", content="SimpleShader.x3d"),
 meta(name="description", content="Simple shader example"),
 meta(name="creator", content="John Stewart"),
@@ -24,9 +27,11 @@ meta(name="outputStyle", content="nicest"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"),
 meta(name="license", content="../../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+children=[
+Comment(value=''' meta content='under development' name='warning'/ '''),
 ]), 
 Scene=Scene(children=[
 ProtoDeclare(name="myPrototype", 
@@ -62,5 +67,6 @@ MetadataSet(name="Viewpoint", DEF="Viewpoint", reference="http://titania.create3
 MetadataDouble(name="position", DEF="position", reference="http://titania.create3000.de", value=[float(6.24067728185014),float(0.00250837343276661),float(2.92117542307615)]),
 MetadataDouble(name="orientation", DEF="orientation", reference="http://titania.create3000.de", value=[float(-0.110173424710488),float(0.990158061907379),float(-0.0863065984000336),float(1.21146676119191)]),
 MetadataDouble(name="centerOfRotation", DEF="centerOfRotation", reference="http://titania.create3000.de", value=[float(-0.808320198626341),float(-0.358072370409949),float(0.22817191560906)])])]))),
-ProtoInstance(name="myPrototype")]))
-.XML())
+ProtoInstance(name="myPrototype")])))
+output = model.JSON()
+json.loads(output)

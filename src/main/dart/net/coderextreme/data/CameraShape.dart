@@ -168,51 +168,51 @@ var X3D0 =  X3D(
                       DEF_ : SFString('pCylinder1'),
                       rotation_ : SFRotation([SFDouble(-1), SFDouble(0), SFDouble(0), SFDouble(0.373518)]),
                       translation_ : SFVec3f([SFDouble(-0.038462), SFDouble(3.596312), SFDouble(3.297562)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
                               USE_ : SFString('CameraAppearance')),
                           geometry_ : 
                             IndexedFaceSet(
-                              USE_ : SFString('pCylinder1_0Geo')))]),
+                              USE_ : SFString('pCylinder1_0Geo')))),
 
                     Transform(
                       DEF_ : SFString('pCube1'),
                       scale_ : SFVec3f([SFDouble(1), SFDouble(0.727134), SFDouble(0.801457)]),
                       translation_ : SFVec3f([SFDouble(-0.030769), SFDouble(1.738461), SFDouble(1.4436)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
                               USE_ : SFString('CameraAppearance')),
                           geometry_ : 
                             IndexedFaceSet(
-                              USE_ : SFString('pCube1_0Geo')))]),
+                              USE_ : SFString('pCube1_0Geo')))),
 
                     Transform(
                       DEF_ : SFString('pPipe1'),
                       scale_ : SFVec3f([SFDouble(1), SFDouble(1), SFDouble(0.569444)]),
                       translation_ : SFVec3f([SFDouble(0.015385), SFDouble(1.630769), SFDouble(-1.973274)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
                               USE_ : SFString('CameraAppearance')),
                           geometry_ : 
                             IndexedFaceSet(
-                              USE_ : SFString('pPipe1_0Geo')))]),
+                              USE_ : SFString('pPipe1_0Geo')))),
 
                     Transform(
                       DEF_ : SFString('pSphere1'),
                       scale_ : SFVec3f([SFDouble(1.1), SFDouble(1.1), SFDouble(0.1)]),
                       translation_ : SFVec3f([SFDouble(-0.015385), SFDouble(1.628515), SFDouble(-2.569231)]),
-                      children_ : [
+                      child_ : 
                         Shape(
                           appearance_ : 
                             Appearance(
                               USE_ : SFString('CameraAppearance')),
                           geometry_ : 
                             IndexedFaceSet(
-                              USE_ : SFString('pSphere1_0Geo')))])])])]));
+                              USE_ : SFString('pSphere1_0Geo'))))])])]));
 void main() { exit(0); }

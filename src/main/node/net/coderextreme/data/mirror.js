@@ -27,7 +27,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("title").setContent("mirror.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/mirror.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/mirror.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("sphere with alternating backgrounds")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.Viewpoint()).setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(5), java.newFloat(100)])).setDescription("Switch background and images texture"))
@@ -113,5 +113,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addChild((new autoclass.ROUTE()).setFromNode("UrlSelector").setFromField("right_changed").setToNode("rightShader").setToField("url"))
           .addChild((new autoclass.ROUTE()).setFromNode("UrlSelector").setFromField("top_changed").setToNode("topShader").setToField("url"))
           .addChild((new autoclass.ROUTE()).setFromNode("UrlSelector").setFromField("bottom_changed").setToNode("bottomShader").setToField("url"))))      ;
-    X3D0.toFileX3D("../data/mirror.new.x3d");
+    X3D0.toFileX3D("../data/mirror.new.node.x3d");
     process.exit(0);

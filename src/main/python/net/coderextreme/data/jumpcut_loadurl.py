@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="3.0", 
-head=head(children=[meta(name="title", content="jumpcut_loadurl.x3d"),
+head=head(
+children=[
+meta(name="title", content="jumpcut_loadurl.x3d"),
 meta(name="reference", content="http://www.nist.gov/vrml.html"),
 meta(name="reference", content="http://www.itl.nist.gov/div897/ctg/vrml/vrml.html"),
 meta(name="creator", content="http://www.itl.nist.gov/div897/ctg/vrml/members.html"),
@@ -18,7 +21,7 @@ meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Conf
 meta(name="generator", content="Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -41,5 +44,6 @@ Script(DEF="MYSCRIPT", url=["jumpcut_loadurl.js","https://www.web3d.org/x3d/cont
 field(name="myUrl", accessType="initializeOnly", type="MFString", value=["jumpcut_loadurl.x3d#Top_View","https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View","jumpcut_loadurl.wrl#Top_View","https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View"]),
 field(name="trigger_event", accessType="inputOnly", type="SFBool")
 ]),
-ROUTE(fromField="isActive", fromNode="STARTER", toField="trigger_event", toNode="MYSCRIPT")]))
-.XML())
+ROUTE(fromField="isActive", fromNode="STARTER", toField="trigger_event", toNode="MYSCRIPT")])))
+output = model.JSON()
+json.loads(output)

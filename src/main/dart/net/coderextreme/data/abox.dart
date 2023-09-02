@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('3.3'),
+      version_ : SFString('4.0'),
       head_ : 
         head(
           meta_ : [
@@ -22,11 +22,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/abox.x3d')),
-
-            meta(
-              name_ : SFString('description'),
-              content_ : SFString('a box'))]),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d'))]),
       Scene_ : 
         Scene(
           children_ : [
@@ -37,8 +33,8 @@ var X3D0 =  X3D(
                   field_ : [
                     field(
                       type_ : SFString("MFNode"),
-                      name_ : SFString('myShape'),
                       accessType_ : SFString("inputOutput"),
+                      name_ : SFString('myShape'),
                       children_ : [
                         Shape(
                           geometry_ : 
@@ -61,8 +57,8 @@ var X3D0 =  X3D(
                   field_ : [
                     field(
                       type_ : SFString("MFNode"),
-                      name_ : SFString('myShape'),
                       accessType_ : SFString("inputOutput"),
+                      name_ : SFString('myShape'),
                       children_ : [
                         Shape(
                           geometry_ : 
@@ -88,6 +84,7 @@ var X3D0 =  X3D(
                   name_ : SFString('myShape'),
                   children_ : [
                     Shape(
+                      DEF_ : SFString('_1'),
                       geometry_ : 
                         Box(
                           size_ : SFVec3f([SFDouble(140), SFDouble(140), SFDouble(140)])))])])]));

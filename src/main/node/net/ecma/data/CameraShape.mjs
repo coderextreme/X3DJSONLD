@@ -197,51 +197,51 @@ var X3D0 =  new X3D({
                       DEF : new SFString("pCylinder1"),
                       rotation : new SFRotation([-1,0,0,0.373518]),
                       translation : new SFVec3f([-0.038462,3.596312,3.297562]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           appearance : new SFNode(
                             new Appearance({
                               USE : new SFString("CameraAppearance")})),
                           geometry : new SFNode(
                             new IndexedFaceSet({
-                              USE : new SFString("pCylinder1_0Geo")}))})])}),
+                              USE : new SFString("pCylinder1_0Geo")}))}))}),
 
                     new Transform({
                       DEF : new SFString("pCube1"),
                       scale : new SFVec3f([1,0.727134,0.801457]),
                       translation : new SFVec3f([-0.030769,1.738461,1.4436]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           appearance : new SFNode(
                             new Appearance({
                               USE : new SFString("CameraAppearance")})),
                           geometry : new SFNode(
                             new IndexedFaceSet({
-                              USE : new SFString("pCube1_0Geo")}))})])}),
+                              USE : new SFString("pCube1_0Geo")}))}))}),
 
                     new Transform({
                       DEF : new SFString("pPipe1"),
                       scale : new SFVec3f([1,1,0.569444]),
                       translation : new SFVec3f([0.015385,1.630769,-1.973274]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           appearance : new SFNode(
                             new Appearance({
                               USE : new SFString("CameraAppearance")})),
                           geometry : new SFNode(
                             new IndexedFaceSet({
-                              USE : new SFString("pPipe1_0Geo")}))})])}),
+                              USE : new SFString("pPipe1_0Geo")}))}))}),
 
                     new Transform({
                       DEF : new SFString("pSphere1"),
                       scale : new SFVec3f([1.1,1.1,0.1]),
                       translation : new SFVec3f([-0.015385,1.628515,-2.569231]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           appearance : new SFNode(
                             new Appearance({
                               USE : new SFString("CameraAppearance")})),
                           geometry : new SFNode(
                             new IndexedFaceSet({
-                              USE : new SFString("pSphere1_0Geo")}))})])})])})])})])}))});
+                              USE : new SFString("pSphere1_0Geo")}))}))})])})])})])}))});
 console.log(X3D0.toXMLNode());

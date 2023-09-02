@@ -212,7 +212,7 @@ var X3D0 =  X3D(
                                     Viewpoint(
                                       DEF_ : SFString('ViewBodyRootAxes'),
                                       description_ : SFString('Joe_HAnim Root HAnimSite Coordinate Axes View')),
-
+                                  child_ : 
                                     Shape(
                                       DEF_ : SFString('AxisLinesShape'),
                                       /*RGB lines showing XYZ axes*/
@@ -226,8 +226,8 @@ var X3D0 =  X3D(
                                               point_ : MFVec3f([SFVec3f([0,0,0]),SFVec3f([1,0,0]),SFVec3f([0,1,0]),SFVec3f([0,0,1])])),
                                           color_ : 
                                             Color(
-                                              color_ : MFColor([SFColor(1), SFColor(0), SFColor(0), SFColor(0), SFColor(0.6), SFColor(0), SFColor(0), SFColor(0), SFColor(1)])))),
-
+                                              color_ : MFColor([SFColor(1), SFColor(0), SFColor(0), SFColor(0), SFColor(0.6), SFColor(0), SFColor(0), SFColor(0), SFColor(1)]))))],
+                                  child_ : 
                                     Shape(
                                       DEF_ : SFString('OldMan_Shape'),
                                       appearance_ : 
@@ -247,7 +247,7 @@ var X3D0 =  X3D(
                                               DEF_ : SFString('KickTextureTransform'))),
                                       geometry_ : 
                                         IndexedFaceSet(
-                                          DEF_ : SFString('OldMan_skin_IndexedFaceSet')))])])]),
+                                          DEF_ : SFString('OldMan_skin_IndexedFaceSet'))))])]),
 
                         HAnimJoint(
                           name_ : SFString('sacroiliac'),

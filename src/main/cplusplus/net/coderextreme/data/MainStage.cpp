@@ -167,7 +167,7 @@ CBox* Box32 = (CBox *)(m_pScene.createNode("Box"));
 Box32->setSize(new float[3]{9,1,9});
 Shape29->setGeometry(Box32);
 
-Transform28->addChildren(*Shape29);
+Transform28->addChild(*Shape29);
 
 CTransform* Transform33 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform33->setDEF("Circle0");
@@ -193,7 +193,7 @@ IndexedLineSet37->setCoord(*Coordinate38);
 
 Shape34->setGeometry(IndexedLineSet37);
 
-Transform33->addChildren(*Shape34);
+Transform33->addChild(*Shape34);
 
 Transform28->addChildren(*Transform33);
 
@@ -209,7 +209,7 @@ CIndexedLineSet* IndexedLineSet42 = (CIndexedLineSet *)(m_pScene.createNode("Ind
 IndexedLineSet42->setUSE("Orbit1");
 Shape40->setGeometry(IndexedLineSet42);
 
-Transform39->addChildren(*Shape40);
+Transform39->addChild(*Shape40);
 
 Transform28->addChildren(*Transform39);
 
@@ -225,7 +225,7 @@ CIndexedLineSet* IndexedLineSet46 = (CIndexedLineSet *)(m_pScene.createNode("Ind
 IndexedLineSet46->setUSE("Orbit1");
 Shape44->setGeometry(IndexedLineSet46);
 
-Transform43->addChildren(*Shape44);
+Transform43->addChild(*Shape44);
 
 Transform28->addChildren(*Transform43);
 
@@ -241,7 +241,7 @@ CIndexedLineSet* IndexedLineSet50 = (CIndexedLineSet *)(m_pScene.createNode("Ind
 IndexedLineSet50->setUSE("Orbit1");
 Shape48->setGeometry(IndexedLineSet50);
 
-Transform47->addChildren(*Shape48);
+Transform47->addChild(*Shape48);
 
 Transform28->addChildren(*Transform47);
 
@@ -257,7 +257,7 @@ CIndexedLineSet* IndexedLineSet54 = (CIndexedLineSet *)(m_pScene.createNode("Ind
 IndexedLineSet54->setUSE("Orbit1");
 Shape52->setGeometry(IndexedLineSet54);
 
-Transform51->addChildren(*Shape52);
+Transform51->addChild(*Shape52);
 
 Transform28->addChildren(*Transform51);
 

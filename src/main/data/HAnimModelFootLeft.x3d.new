@@ -24,19 +24,19 @@
 <Scene><WorldInfo title="HAnimModelFootLeft.x3d"></WorldInfo>
 <HAnimHumanoid name="Foot_Left" DEF="hanim_Foot_Left" loa="4" version="2.0"><!--original HAnimHumanoid info='"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams"'--><MetadataSet containerField="metadata" name="HAnimHumanoid.info" reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"><MetadataString name="authorName" value="&quot;Kwan-Hee YOO, Don Brutzman and Joe Williams&quot;" containerField="value"></MetadataString>
 </MetadataSet>
-<HAnimJoint name="humanoid_root" DEF="hanim_humanoid_root" ulimit="0 0 0" llimit="0 0 0" containerField="skeleton"><!--Might consider putting a HAnimSegment here, but that doesn't help with re-use of this foot model--><HAnimJoint name="l_talocrural" DEF="hanim_l_talocrural" description="connection joint of foot to leg above" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_talus" DEF="hanim_l_talus"><Transform><Shape DEF="HAnimJointShape"><Sphere containerField="geometry" radius="0.025"></Sphere>
+<HAnimJoint name="humanoid_root" DEF="hanim_humanoid_root" ulimit="0 0 0" llimit="0 0 0" containerField="skeleton"><!--Might consider putting a HAnimSegment here, but that doesn't help with re-use of this foot model--><HAnimJoint name="l_talocrural" DEF="hanim_l_talocrural" description="connection joint of foot to leg above" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_talus" DEF="hanim_l_talus"><Transform><Shape DEF="HAnimJointShape"><Sphere radius="0.025"></Sphere>
 <Appearance DEF="HAnimJointAppearance"><Material diffuseColor="0 0 1"></Material>
 </Appearance>
 </Shape>
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="TCtoTCN" coordIndex="0 1"><Coordinate containerField="coord" point="0 0 0 0 -0.3 0"></Coordinate>
+<IndexedLineSet DEF="TCtoTCN" coordIndex="0 1"><Coordinate containerField="coord" point="0 0 0 0 -0.3 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="TCtoCC" coordIndex="0 1"><Coordinate containerField="coord" point="0 0 0 0.2 0.3 0"></Coordinate>
+<IndexedLineSet DEF="TCtoCC" coordIndex="0 1"><Coordinate containerField="coord" point="0 0 0 0.2 0.3 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -44,17 +44,17 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="TCNtoCN1" coordIndex="0 1"><Coordinate containerField="coord" point="0 -0.3 0 -0.1 -0.45 0"></Coordinate>
+<IndexedLineSet DEF="TCNtoCN1" coordIndex="0 1"><Coordinate containerField="coord" point="0 -0.3 0 -0.1 -0.45 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="TCNtoCN2" coordIndex="0 1"><Coordinate containerField="coord" point="0 -0.3 0 0 -0.45 0"></Coordinate>
+<IndexedLineSet DEF="TCNtoCN2" coordIndex="0 1"><Coordinate containerField="coord" point="0 -0.3 0 0 -0.45 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="TCNtoCN3" coordIndex="0 1"><Coordinate containerField="coord" point="0 -0.3 0 0.1 -0.4 0"></Coordinate>
+<IndexedLineSet DEF="TCNtoCN3" coordIndex="0 1"><Coordinate containerField="coord" point="0 -0.3 0 0.1 -0.4 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -62,7 +62,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="CN1toTMT1" coordIndex="0 1"><Coordinate containerField="coord" point="-0.1 -0.45 0 -0.1 -0.6 0"></Coordinate>
+<IndexedLineSet DEF="CN1toTMT1" coordIndex="0 1"><Coordinate containerField="coord" point="-0.1 -0.45 0 -0.1 -0.6 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -70,7 +70,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="TMT1toMTP1" coordIndex="0 1"><Coordinate containerField="coord" point="-0.1 -0.6 0 -0.1 -0.9 0"></Coordinate>
+<IndexedLineSet DEF="TMT1toMTP1" coordIndex="0 1"><Coordinate containerField="coord" point="-0.1 -0.6 0 -0.1 -0.9 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -78,7 +78,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="MTP1toIP1" coordIndex="0 1"><Coordinate containerField="coord" point="-0.1 -0.9 0 -0.1 -1.05 0"></Coordinate>
+<IndexedLineSet DEF="MTP1toIP1" coordIndex="0 1"><Coordinate containerField="coord" point="-0.1 -0.9 0 -0.1 -1.05 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -86,7 +86,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="tiptoe_l_tarsal_distal_interphalangeal_1" coordIndex="0 1"><Coordinate containerField="coord" point="-0.1 -1.05 0 -0.1 -1.1 0"></Coordinate>
+<IndexedLineSet DEF="tiptoe_l_tarsal_distal_interphalangeal_1" coordIndex="0 1"><Coordinate containerField="coord" point="-0.1 -1.05 0 -0.1 -1.1 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -98,7 +98,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="CN2toTMT2" coordIndex="0 1"><Coordinate containerField="coord" point="0 -0.45 0 0.05 -0.6 0"></Coordinate>
+<IndexedLineSet DEF="CN2toTMT2" coordIndex="0 1"><Coordinate containerField="coord" point="0 -0.45 0 0.05 -0.6 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -106,7 +106,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="TMT2toMTP2" coordIndex="0 1"><Coordinate containerField="coord" point="0.05 -0.6 0 0.05 -0.9 0"></Coordinate>
+<IndexedLineSet DEF="TMT2toMTP2" coordIndex="0 1"><Coordinate containerField="coord" point="0.05 -0.6 0 0.05 -0.9 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -114,7 +114,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="MTP2toPIP2" coordIndex="0 1"><Coordinate containerField="coord" point="0.05 -0.9 0 0.05 -1.05 0"></Coordinate>
+<IndexedLineSet DEF="MTP2toPIP2" coordIndex="0 1"><Coordinate containerField="coord" point="0.05 -0.9 0 0.05 -1.05 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -122,7 +122,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="PIP2toDIP2" coordIndex="0 1"><Coordinate containerField="coord" point="0.05 -1.05 0 0.05 -1.12 0"></Coordinate>
+<IndexedLineSet DEF="PIP2toDIP2" coordIndex="0 1"><Coordinate containerField="coord" point="0.05 -1.05 0 0.05 -1.12 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -130,7 +130,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="tiptoe_l_tarsal_distal_phalanx_2" coordIndex="0 1"><Coordinate containerField="coord" point="0.05 -1.12 0 0.05 -1.16 0"></Coordinate>
+<IndexedLineSet DEF="tiptoe_l_tarsal_distal_phalanx_2" coordIndex="0 1"><Coordinate containerField="coord" point="0.05 -1.12 0 0.05 -1.16 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -143,7 +143,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="CN3toTMT3" coordIndex="0 1"><Coordinate containerField="coord" point="0.1 -0.4 0 0.15 -0.6 0"></Coordinate>
+<IndexedLineSet DEF="CN3toTMT3" coordIndex="0 1"><Coordinate containerField="coord" point="0.1 -0.4 0 0.15 -0.6 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -151,7 +151,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="TMT3toMTP3" coordIndex="0 1"><Coordinate containerField="coord" point="0.15 -0.6 0 0.15 -0.9 0"></Coordinate>
+<IndexedLineSet DEF="TMT3toMTP3" coordIndex="0 1"><Coordinate containerField="coord" point="0.15 -0.6 0 0.15 -0.9 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -159,7 +159,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="MTP3toPIP3" coordIndex="0 1"><Coordinate containerField="coord" point="0.15 -0.9 0 0.15 -1.05 0"></Coordinate>
+<IndexedLineSet DEF="MTP3toPIP3" coordIndex="0 1"><Coordinate containerField="coord" point="0.15 -0.9 0 0.15 -1.05 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -167,7 +167,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="PIP3toDIP3" coordIndex="0 1"><Coordinate containerField="coord" point="0.15 -1.05 0 0.15 -1.13 0"></Coordinate>
+<IndexedLineSet DEF="PIP3toDIP3" coordIndex="0 1"><Coordinate containerField="coord" point="0.15 -1.05 0 0.15 -1.13 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -175,7 +175,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="tiptoe_l_tarsal_distal_interphalangeal_3" coordIndex="0 1"><Coordinate containerField="coord" point="0.15 -1.13 0 0.15 -1.16 0"></Coordinate>
+<IndexedLineSet DEF="tiptoe_l_tarsal_distal_interphalangeal_3" coordIndex="0 1"><Coordinate containerField="coord" point="0.15 -1.13 0 0.15 -1.16 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -189,7 +189,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="CCtoTT" coordIndex="0 1"><Coordinate containerField="coord" point="0.2 0.3 0 0.21 -0.3 0"></Coordinate>
+<IndexedLineSet DEF="CCtoTT" coordIndex="0 1"><Coordinate containerField="coord" point="0.2 0.3 0 0.21 -0.3 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -197,12 +197,12 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="TTtoTMT4" coordIndex="0 1"><Coordinate containerField="coord" point="0.21 -0.3 0 0.25 -0.58 0"></Coordinate>
+<IndexedLineSet DEF="TTtoTMT4" coordIndex="0 1"><Coordinate containerField="coord" point="0.21 -0.3 0 0.25 -0.58 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="TTtoTMT5" coordIndex="0 1"><Coordinate containerField="coord" point="0.21 -0.3 0 0.33 -0.52 0"></Coordinate>
+<IndexedLineSet DEF="TTtoTMT5" coordIndex="0 1"><Coordinate containerField="coord" point="0.21 -0.3 0 0.33 -0.52 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -210,7 +210,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="TMT4toMTP4" coordIndex="0 1"><Coordinate containerField="coord" point="0.25 -0.58 0 0.25 -0.87 0"></Coordinate>
+<IndexedLineSet DEF="TMT4toMTP4" coordIndex="0 1"><Coordinate containerField="coord" point="0.25 -0.58 0 0.25 -0.87 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -218,7 +218,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="MTP4toPIP4" coordIndex="0 1"><Coordinate containerField="coord" point="0.25 -0.87 0 0.25 -1 0"></Coordinate>
+<IndexedLineSet DEF="MTP4toPIP4" coordIndex="0 1"><Coordinate containerField="coord" point="0.25 -0.87 0 0.25 -1 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -226,7 +226,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="PIP4toDIP4" coordIndex="0 1"><Coordinate containerField="coord" point="0.25 -1 0 0.25 -1.1 0"></Coordinate>
+<IndexedLineSet DEF="PIP4toDIP4" coordIndex="0 1"><Coordinate containerField="coord" point="0.25 -1 0 0.25 -1.1 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -234,7 +234,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="tiptoe_l_tarsal_distal_interphalangeal_4" coordIndex="0 1"><Coordinate containerField="coord" point="0.25 -1.1 0 0.25 -1.15 0"></Coordinate>
+<IndexedLineSet DEF="tiptoe_l_tarsal_distal_interphalangeal_4" coordIndex="0 1"><Coordinate containerField="coord" point="0.25 -1.1 0 0.25 -1.15 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -246,7 +246,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="TMT5toMTP5" coordIndex="0 1"><Coordinate containerField="coord" point="0.33 -0.52 0 0.34 -0.8 0"></Coordinate>
+<IndexedLineSet DEF="TMT5toMTP5" coordIndex="0 1"><Coordinate containerField="coord" point="0.33 -0.52 0 0.34 -0.8 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -254,7 +254,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="MTP5toPIP5" coordIndex="0 1"><Coordinate containerField="coord" point="0.34 -0.8 0 0.34 -0.95 0"></Coordinate>
+<IndexedLineSet DEF="MTP5toPIP5" coordIndex="0 1"><Coordinate containerField="coord" point="0.34 -0.8 0 0.34 -0.95 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -262,7 +262,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="PIP5toDIP5" coordIndex="0 1"><Coordinate containerField="coord" point="0.34 -0.95 0 0.34 -1.05 0"></Coordinate>
+<IndexedLineSet DEF="PIP5toDIP5" coordIndex="0 1"><Coordinate containerField="coord" point="0.34 -0.95 0 0.34 -1.05 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>
@@ -270,7 +270,7 @@
 </Transform>
 <Shape><Appearance><Material emissiveColor="1 1 1"></Material>
 </Appearance>
-<IndexedLineSet containerField="geometry" DEF="tiptoe_l_tarsal_distal_interphalangeal_5" coordIndex="0 1"><Coordinate containerField="coord" point="0.34 -1.05 0 0.34 -1.08 0"></Coordinate>
+<IndexedLineSet DEF="tiptoe_l_tarsal_distal_interphalangeal_5" coordIndex="0 1"><Coordinate containerField="coord" point="0.34 -1.05 0 0.34 -1.08 0"></Coordinate>
 </IndexedLineSet>
 </Shape>
 </HAnimSegment>

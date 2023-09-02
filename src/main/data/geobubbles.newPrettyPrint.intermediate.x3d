@@ -6,14 +6,14 @@
     <meta content='geobubbles.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='manual' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/geobubbles.x3d' name='identifier'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/geobubbles.x3d' name='identifier'/>
     <meta content='geo bubbles' name='description'/>
   </head>
   <Scene>
     <!-- Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/ -->
     <!-- PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/ -->
     <GeoViewpoint DEF='Tour' description='Tour Views' geoSystem='"GD" "WE"' orientation='1 0 0 0' position='0 0 4'/>
-    <Background backUrl='"../resources/images/BK.png" "https://coderextreme.net/X3DJSONLD/images/BK.png"' bottomUrl='"../resources/images/BT.png" "https://coderextreme.net/X3DJSONLD/images/BT.png"' frontUrl='"../resources/images/FR.png" "https://coderextreme.net/X3DJSONLD/images/FR.png"' leftUrl='"../resources/images/LF.png" "https://coderextreme.net/X3DJSONLD/images/LF.png"' rightUrl='"../resources/images/RT.png" "https://coderextreme.net/X3DJSONLD/images/RT.png"' topUrl='"../resources/images/TP.png" "https://coderextreme.net/X3DJSONLD/images/TP.png"'/>
+    <Background backUrl='"../resources/images/BK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"' bottomUrl='"../resources/images/BT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"' frontUrl='"../resources/images/FR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"' leftUrl='"../resources/images/LF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"' rightUrl='"../resources/images/RT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"' topUrl='"../resources/images/TP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"'/>
     <Transform>
       <Shape>
         <Appearance>

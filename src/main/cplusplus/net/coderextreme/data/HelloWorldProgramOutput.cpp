@@ -106,7 +106,7 @@ head1->addMeta(*meta17);
 
 Cmeta* meta18 = new Cmeta();
 meta18->setName("modified");
-meta18->setContent("3 July 2023");
+meta18->setContent("30 July 2023");
 head1->addMeta(*meta18);
 
 Cmeta* meta19 = new Cmeta();
@@ -337,7 +337,7 @@ Text62->setFontStyle(*FontStyle66);
 
 Shape59->setGeometry(Text62);
 
-Transform58->addChildren(*Shape59);
+Transform58->addChild(*Shape59);
 
 CCollision* Collision67 = (CCollision *)(m_pScene.createNode("Collision"));
 //test containerField='proxy'
@@ -835,7 +835,7 @@ CMetadataString* MetadataString141 = (CMetadataString *)(m_pScene.createNode("Me
 MetadataString141->setName("findThisNameValue");
 MetadataString141->setDEF("FindableMetadataStringTest");
 MetadataString141->setValue(new CString[1]{"test case"}, 1);
-Shape140->setMetadata(*MetadataString141);
+Shape140->setValue(*MetadataString141);
 
 CAppearance* Appearance142 = (CAppearance *)(m_pScene.createNode("Appearance"));
 Appearance142->setDEF("DeclarativeAppearanceExample");

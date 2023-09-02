@@ -122,7 +122,7 @@ CAppearance* Appearance26 = (CAppearance *)(m_pScene.createNode("Appearance"));
 Appearance26->setUSE("Green");
 Shape24->setAppearance(*Appearance26);
 
-Transform23->addChildren(*Shape24);
+Transform23->addChild(*Shape24);
 
 Group18->addChildren(*Transform23);
 
@@ -193,7 +193,7 @@ CAppearance* Appearance44 = (CAppearance *)(m_pScene.createNode("Appearance"));
 Appearance44->setUSE("Red");
 Shape42->setAppearance(*Appearance44);
 
-Transform41->addChildren(*Shape42);
+Transform41->addChild(*Shape42);
 
 Group36->addChildren(*Transform41);
 
@@ -260,7 +260,7 @@ CAppearance* Appearance61 = (CAppearance *)(m_pScene.createNode("Appearance"));
 Appearance61->setUSE("Blue");
 Shape59->setAppearance(*Appearance61);
 
-Transform58->addChildren(*Shape59);
+Transform58->addChild(*Shape59);
 
 Group53->addChildren(*Transform58);
 

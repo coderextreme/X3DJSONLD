@@ -45,5 +45,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .setGeometry((new autoclass.IndexedLineSet()).setColorIndex(java.newArray("int", [0,1,2])).setColorPerVertex(false).setCoordIndex(java.newArray("int", [0,1,-1,0,2,-1,0,3,-1]))
             .setCoord((new autoclass.Coordinate()).setPoint(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(1)])))
             .setColor((new autoclass.Color()).setColor(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(0.6), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(1)]))))))      ;
-    X3D0.toFileX3D("../data/Teapot.new.x3d");
+    X3D0.toFileX3D("../data/Teapot.new.node.x3d");
     process.exit(0);

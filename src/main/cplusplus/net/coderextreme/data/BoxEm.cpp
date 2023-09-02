@@ -31,7 +31,7 @@ head1->addMeta(*meta4);
 
 Cmeta* meta5 = new Cmeta();
 meta5->setName("identifier");
-meta5->setContent("https://coderextreme.net/X3DJSONLD/box.x3d");
+meta5->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/box.x3d");
 head1->addMeta(*meta5);
 
 Cmeta* meta6 = new Cmeta();
@@ -54,7 +54,7 @@ group->addChildren(*Viewpoint9);
 CProtoDeclare ProtoDeclare10 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="anyShape" ><ProtoInterface><field name="xtranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere containerField="geometry"></Sphere>
+<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere></Sphere>
 <Appearance><Material diffuseColor="1 1 1"></Material>
 </Appearance>
 </Shape>
@@ -120,7 +120,7 @@ group->addChildren(*ProtoDeclare10);
 CProtoDeclare ProtoDeclare23 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="three" ><ProtoInterface><field name="ytranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Cylinder containerField="geometry"></Cylinder>
+<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Cylinder></Cylinder>
 <Appearance><Material diffuseColor="1 1 1"></Material>
 </Appearance>
 </Shape>
@@ -273,7 +273,7 @@ CTransform* Transform54 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform54->setTranslation(new float[3]{0,2,0});
 CShape* Shape55 = (CShape *)(m_pScene.createNode("Shape"));
 Shape55->setUSE("box");
-Transform54->addChildren(*Shape55);
+Transform54->addChild(*Shape55);
 
 group->addChildren(*Transform54);
 

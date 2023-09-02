@@ -11,18 +11,18 @@
 <meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
 <meta name="license" content="../license.html"></meta>
 </head>
-<Scene><Transform translation="0 2 0"><Shape><Text containerField="geometry" string="&quot;Compare special character escaping&quot;"><FontStyle DEF="testFontStyle" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="0.8"></FontStyle>
+<Scene><Transform translation="0 2 0"><Shape><Text string="&quot;Compare special character escaping&quot;"><FontStyle DEF="testFontStyle" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="0.8"></FontStyle>
 </Text>
 <Appearance DEF="LightBlueAppearance"><Material diffuseColor="0.1 0.7 0.7"></Material>
 </Appearance>
 </Shape>
 </Transform>
-<Transform translation="-3 0 0"><Shape><Text containerField="geometry" string="&quot;I don't think so&quot; &quot;&quot; &quot;he said \&quot;Hi\&quot;&quot;"><FontStyle USE="testFontStyle"></FontStyle>
+<Transform translation="-3 0 0"><Shape><Text string="&quot;I don't think so&quot; &quot;&quot; &quot;he said \&quot;Hi\&quot;&quot;"><FontStyle USE="testFontStyle"></FontStyle>
 </Text>
 <Appearance USE="LightBlueAppearance"></Appearance>
 </Shape>
 </Transform>
-<Transform translation="3 0 0"><Shape><Text containerField="geometry" string="&quot;I don't think so&quot; &quot;&quot; &quot;he said \&quot;Hi\&quot;&quot;"><FontStyle USE="testFontStyle"></FontStyle>
+<Transform translation="3 0 0"><Shape><Text string="&quot;I don't think so&quot; &quot;&quot; &quot;he said \&quot;Hi\&quot;&quot;"><FontStyle USE="testFontStyle"></FontStyle>
 </Text>
 <Appearance USE="LightBlueAppearance"></Appearance>
 </Shape>

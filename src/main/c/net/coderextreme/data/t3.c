@@ -107,9 +107,9 @@ Sphere Sphere24 = createNode("Sphere");
 Sphere24.radius = 5.10000002384186;
 Shape21.geometry = Sphere24;
 
-Transform20.children = new MFNode();
+Transform20.child = new undefined();
 
-Transform20.children[0] = Shape21;
+Transform20.child[0] = Shape21;
 
 Anchor19.children = new MFNode();
 
@@ -136,9 +136,9 @@ Sphere Sphere30 = createNode("Sphere");
 Sphere30.radius = 5.10000002384186;
 Shape27.geometry = Sphere30;
 
-Transform26.children = new MFNode();
+Transform26.child = new undefined();
 
-Transform26.children[0] = Shape27;
+Transform26.child[0] = Shape27;
 
 Anchor25.children = new MFNode();
 
@@ -163,9 +163,9 @@ Sphere Sphere36 = createNode("Sphere");
 Sphere36.radius = 5.10000002384186;
 Shape33.geometry = Sphere36;
 
-Transform32.children = new MFNode();
+Transform32.child = new undefined();
 
-Transform32.children[0] = Shape33;
+Transform32.child[0] = Shape33;
 
 Anchor31.children = new MFNode();
 
@@ -190,9 +190,9 @@ Sphere Sphere42 = createNode("Sphere");
 Sphere42.radius = 5.10000002384186;
 Shape39.geometry = Sphere42;
 
-Transform38.children = new MFNode();
+Transform38.child = new undefined();
 
-Transform38.children[0] = Shape39;
+Transform38.child[0] = Shape39;
 
 Anchor37.children = new MFNode();
 
@@ -217,9 +217,9 @@ Sphere Sphere48 = createNode("Sphere");
 Sphere48.radius = 5.10000002384186;
 Shape45.geometry = Sphere48;
 
-Transform44.children = new MFNode();
+Transform44.child = new undefined();
 
-Transform44.children[0] = Shape45;
+Transform44.child[0] = Shape45;
 
 Anchor43.children = new MFNode();
 
@@ -244,9 +244,9 @@ Sphere Sphere54 = createNode("Sphere");
 Sphere54.radius = 5.10000002384186;
 Shape51.geometry = Sphere54;
 
-Transform50.children = new MFNode();
+Transform50.child = new undefined();
 
-Transform50.children[0] = Shape51;
+Transform50.child[0] = Shape51;
 
 Anchor49.children = new MFNode();
 
@@ -271,9 +271,9 @@ Sphere Sphere60 = createNode("Sphere");
 Sphere60.radius = 5.10000002384186;
 Shape57.geometry = Sphere60;
 
-Transform56.children = new MFNode();
+Transform56.child = new undefined();
 
-Transform56.children[0] = Shape57;
+Transform56.child[0] = Shape57;
 
 Anchor55.children = new MFNode();
 
@@ -298,9 +298,9 @@ Sphere Sphere66 = createNode("Sphere");
 Sphere66.radius = 5.10000002384186;
 Shape63.geometry = Sphere66;
 
-Transform62.children = new MFNode();
+Transform62.child = new undefined();
 
-Transform62.children[0] = Shape63;
+Transform62.child[0] = Shape63;
 
 Anchor61.children = new MFNode();
 
@@ -325,9 +325,9 @@ Sphere Sphere72 = createNode("Sphere");
 Sphere72.radius = 5.10000002384186;
 Shape69.geometry = Sphere72;
 
-Transform68.children = new MFNode();
+Transform68.child = new undefined();
 
-Transform68.children[0] = Shape69;
+Transform68.child[0] = Shape69;
 
 Anchor67.children = new MFNode();
 
@@ -352,9 +352,9 @@ Sphere Sphere78 = createNode("Sphere");
 Sphere78.radius = 5.10000002384186;
 Shape75.geometry = Sphere78;
 
-Transform74.children = new MFNode();
+Transform74.child = new undefined();
 
-Transform74.children[0] = Shape75;
+Transform74.child[0] = Shape75;
 
 Anchor73.children = new MFNode();
 
@@ -379,9 +379,9 @@ Sphere Sphere84 = createNode("Sphere");
 Sphere84.radius = 5.10000002384186;
 Shape81.geometry = Sphere84;
 
-Transform80.children = new MFNode();
+Transform80.child = new undefined();
 
-Transform80.children[0] = Shape81;
+Transform80.child[0] = Shape81;
 
 Anchor79.children = new MFNode();
 
@@ -406,9 +406,9 @@ Sphere Sphere90 = createNode("Sphere");
 Sphere90.radius = 5.10000002384186;
 Shape87.geometry = Sphere90;
 
-Transform86.children = new MFNode();
+Transform86.child = new undefined();
 
-Transform86.children[0] = Shape87;
+Transform86.child[0] = Shape87;
 
 Anchor85.children = new MFNode();
 
@@ -433,9 +433,9 @@ Sphere Sphere96 = createNode("Sphere");
 Sphere96.radius = 5.10000002384186;
 Shape93.geometry = Sphere96;
 
-Transform92.children = new MFNode();
+Transform92.child = new undefined();
 
-Transform92.children[0] = Shape93;
+Transform92.child[0] = Shape93;
 
 Anchor91.children = new MFNode();
 
@@ -460,9 +460,9 @@ Sphere Sphere102 = createNode("Sphere");
 Sphere102.radius = 5.10000002384186;
 Shape99.geometry = Sphere102;
 
-Transform98.children = new MFNode();
+Transform98.child = new undefined();
 
-Transform98.children[0] = Shape99;
+Transform98.child[0] = Shape99;
 
 Anchor97.children = new MFNode();
 
@@ -487,9 +487,9 @@ Sphere Sphere108 = createNode("Sphere");
 Sphere108.radius = 5.10000002384186;
 Shape105.geometry = Sphere108;
 
-Transform104.children = new MFNode();
+Transform104.child = new undefined();
 
-Transform104.children[0] = Shape105;
+Transform104.child[0] = Shape105;
 
 Anchor103.children = new MFNode();
 

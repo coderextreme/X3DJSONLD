@@ -77,7 +77,7 @@ var X3D0 =  new X3D({
           children : new MFNode([
             new Transform({
               /*DEF for markerfor XYZ axes*/
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   DEF : new SFString("AxisLinesShape"),
                   /*RGB lines showing XYZ axes*/
@@ -91,7 +91,7 @@ var X3D0 =  new X3D({
                           point : new MFVec3f([0,0,0,0.1,0,0,0,0.1,0,0,0,0.1])})),
                       color : new SFNode(
                         new Color({
-                          color : new MFColor([1,0,0,0,0.6,0,0,0,1])}))}))})])}),
+                          color : new MFColor([1,0,0,0,0.6,0,0,0,1])}))}))}))}),
 
             new Group({
               /*DEFS for markers of skeleton joints, segments, and sites*/
@@ -101,7 +101,7 @@ var X3D0 =  new X3D({
                   children : new MFNode([
                     new Transform({
                       translation : new SFVec3f([0,2.1,0]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           DEF : new SFString("HAnimJointShape"),
                           geometry : new SFNode(
@@ -113,11 +113,11 @@ var X3D0 =  new X3D({
                                 new Material({
                                   DEF : new SFString("HAnimJointMaterial"),
                                   diffuseColor : new SFColor([0,0,0.8]),
-                                  transparency : new SFFloat(0.3)}))}))})])}),
+                                  transparency : new SFFloat(0.3)}))}))}))}),
 
                     new Transform({
                       translation : new SFVec3f([0,2.05,0]),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           DEF : new SFString("HAnimSegmentLine"),
                           geometry : new SFNode(
@@ -129,7 +129,7 @@ var X3D0 =  new X3D({
                                   color : new MFColorRGBA([1,1,0,1,1,1,0,0.1])})),
                               coord : new SFNode(
                                 new Coordinate({
-                                  point : new MFVec3f([-0.05,0,0,0.05,0,0])}))}))})])}),
+                                  point : new MFVec3f([-0.05,0,0,0.05,0,0])}))}))}))}),
                   /*<Transform translation='0 2.1 0' scale='1 1 1'> <Shape DEF='HAnimSiteShape'> <IndexedFaceSet DEF='DiamondIFS' creaseAngle='0.5' solid='false' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1'> <ColorRGBA DEF='HAnimSiteColorRGBA' color='1 1 0 1 1 1 0 0.1'/> <Coordinate point='0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0'/> </IndexedFaceSet> <Appearance> <Material diffuseColor='1 1 0' transparency='0.3'/> </Appearance> </Shape> </Transform>*/])})])}),
 
             new NavigationInfo({

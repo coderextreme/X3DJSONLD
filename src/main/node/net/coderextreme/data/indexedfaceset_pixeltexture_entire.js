@@ -43,5 +43,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setTexture((new autoclass.PixelTexture()).setImage(java.newArray("int", [2,2,4,4278190335,16711935,4294967295,4294902015])).setRepeatS(false).setRepeatT(false)))
           .setGeometry((new autoclass.IndexedFaceSet()).setCoordIndex(java.newArray("int", [0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]))
             .setCoord((new autoclass.Coordinate()).setPoint(java.newArray("float", [java.newFloat(-2), java.newFloat(1.5), java.newFloat(1), java.newFloat(-2), java.newFloat(-1.5), java.newFloat(1), java.newFloat(2), java.newFloat(1.5), java.newFloat(1), java.newFloat(2), java.newFloat(-1.5), java.newFloat(1), java.newFloat(2), java.newFloat(1.5), java.newFloat(-1), java.newFloat(2), java.newFloat(-1.5), java.newFloat(-1), java.newFloat(-2), java.newFloat(1.5), java.newFloat(-1), java.newFloat(-2), java.newFloat(-1.5), java.newFloat(-1)]))))))      ;
-    X3D0.toFileX3D("../data/indexedfaceset_pixeltexture_entire.new.x3d");
+    X3D0.toFileX3D("../data/indexedfaceset_pixeltexture_entire.new.node.x3d");
     process.exit(0);

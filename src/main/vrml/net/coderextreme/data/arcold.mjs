@@ -22,7 +22,7 @@ head1.meta[2] = meta4;
 
 let meta5 = browser.currentScene.createNode("meta");
 meta5.name = "identifier";
-meta5.content = "https://coderextreme.net/X3DJSONLD/arc.x3d";
+meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d";
 head1.meta[3] = meta5;
 
 let meta6 = browser.currentScene.createNode("meta");
@@ -59,9 +59,9 @@ let Cylinder15 = browser.currentScene.createNode("Cylinder");
 Cylinder15.radius = 0.1;
 Shape12.geometry = Cylinder15;
 
-Transform11.children = new MFNode();
+Transform11.child = new undefined();
 
-Transform11.children[0] = Shape12;
+Transform11.child[0] = Shape12;
 
 Transform10.children = new MFNode();
 
@@ -85,9 +85,9 @@ let Cylinder21 = browser.currentScene.createNode("Cylinder");
 Cylinder21.radius = 0.1;
 Shape18.geometry = Cylinder21;
 
-Transform17.children = new MFNode();
+Transform17.child = new undefined();
 
-Transform17.children[0] = Shape18;
+Transform17.child[0] = Shape18;
 
 Transform16.children = new MFNode();
 
@@ -111,9 +111,9 @@ let Cylinder27 = browser.currentScene.createNode("Cylinder");
 Cylinder27.radius = 0.1;
 Shape24.geometry = Cylinder27;
 
-Transform23.children = new MFNode();
+Transform23.child = new undefined();
 
-Transform23.children[0] = Shape24;
+Transform23.child[0] = Shape24;
 
 Transform22.children = new MFNode();
 
@@ -127,7 +127,7 @@ let ProtoDeclare28 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 </ProtoInterface>
 <ProtoBody><Transform DEF="node"><IS><connect nodeField="translation" protoField="translation"></connect>
 </IS>
-<Shape><Sphere containerField="geometry" radius="0.1"></Sphere>
+<Shape><Sphere radius="0.1"></Sphere>
 <Appearance><Material diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
@@ -189,9 +189,9 @@ Appearance37.material = Material38;
 
 Shape35.appearance = Appearance37;
 
-Transform32.children = new MFNode();
+Transform32.child = new undefined();
 
-Transform32.children[0] = Shape35;
+Transform32.child[0] = Shape35;
 
 let PositionInterpolator39 = browser.currentScene.createNode("PositionInterpolator");
 PositionInterpolator39.DEF = "PI1";

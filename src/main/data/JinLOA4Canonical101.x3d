@@ -2,7 +2,7 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><component name="HAnim" level="1"></component>
 </head>
-<Scene><WorldInfo title="JinLOA4.x3d"></WorldInfo>
+<Scene><WorldInfo title="JinLOA4Canonical101.x3d"></WorldInfo>
 <NavigationInfo speed="1.5"></NavigationInfo>
 <Viewpoint centerOfRotation="-0.0002 0.0139 -0.1019" description="JinLOA4" position="-0.0002 0.0139 -0.0344"></Viewpoint>
 <Transform DEF="cordsysfloor" scale="0.175 0.175 0.175"><Inline url="&quot;JointCoordinateAxes.x3dv&quot;"></Inline>

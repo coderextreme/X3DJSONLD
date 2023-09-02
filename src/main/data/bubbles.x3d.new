@@ -23,52 +23,52 @@
 <PositionInterpolator DEF="BubblePath10" key="0 0.00025 0.035 0.6895 1" keyValue="0 0 0 0.8765 0.445 0.00335 0.3336 0.4446 0.005556 0.765 0.75 0.0075 1 1 0.1"></PositionInterpolator>
 <Transform><Transform DEF="bubble1"><Shape><Appearance><Material diffuseColor="1 1 1" transparency="0.8"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="0.025"></Sphere>
+<Sphere radius="0.025"></Sphere>
 </Shape>
 </Transform>
 <Transform DEF="bubble2"><Shape><Appearance><Material diffuseColor="1 1 1" transparency="0.8"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="0.055"></Sphere>
+<Sphere radius="0.055"></Sphere>
 </Shape>
 </Transform>
 <Transform DEF="bubble3"><Shape><Appearance><Material diffuseColor="1 1 1" transparency="0.8"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="0.065"></Sphere>
+<Sphere radius="0.065"></Sphere>
 </Shape>
 </Transform>
 <Transform DEF="bubble4"><Shape><Appearance><Material diffuseColor="1 1 1" transparency="0.8"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="0.015"></Sphere>
+<Sphere radius="0.015"></Sphere>
 </Shape>
 </Transform>
 <Transform DEF="bubble5"><Shape><Appearance><Material diffuseColor="1 1 1" transparency="0.8"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="0.075"></Sphere>
+<Sphere radius="0.075"></Sphere>
 </Shape>
 </Transform>
 <Transform DEF="bubble6"><Shape><Appearance><Material diffuseColor="1 1 1" transparency="0.8"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="0.005"></Sphere>
+<Sphere radius="0.005"></Sphere>
 </Shape>
 </Transform>
 <Transform DEF="bubble7"><Shape><Appearance><Material diffuseColor="1 1 1" transparency="0.8"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="0.035"></Sphere>
+<Sphere radius="0.035"></Sphere>
 </Shape>
 </Transform>
 <Transform DEF="bubble8"><Shape><Appearance><Material diffuseColor="1 1 1" transparency="0.8"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="0.05"></Sphere>
+<Sphere radius="0.05"></Sphere>
 </Shape>
 </Transform>
 <Transform DEF="bubble9"><Shape><Appearance><Material diffuseColor="1 1 1" transparency="0.8"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="0.045"></Sphere>
+<Sphere radius="0.045"></Sphere>
 </Shape>
 </Transform>
 <Transform DEF="bubble10"><Shape><Appearance><Material diffuseColor="1 1 1" transparency="0.8"></Material>
 </Appearance>
-<Sphere containerField="geometry" radius="0.035"></Sphere>
+<Sphere radius="0.035"></Sphere>
 </Shape>
 </Transform>
 <ROUTE fromField="fraction_changed" fromNode="BubbleClock" toField="set_fraction" toNode="BubblePath1"></ROUTE>

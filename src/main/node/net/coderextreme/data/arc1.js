@@ -148,5 +148,5 @@ ProtoInstance2
           .addFieldValue((new autoclass.fieldValue()).setName("set_startpoint"));
 ProtoInstance2
           .addFieldValue((new autoclass.fieldValue()).setName("set_endpoint"));
-    X3D0.toFileX3D("../data/arc1.new.x3d");
+    X3D0.toFileX3D("../data/arc1.new.node.x3d");
     process.exit(0);

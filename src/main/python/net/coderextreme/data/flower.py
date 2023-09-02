@@ -4,7 +4,9 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Interchange", version="4.0", 
-head=head(children=[meta(name="title", content="Flower.x3d"),
+head=head(
+children=[
+meta(name="title", content="Flower.x3d"),
 meta(name="description", content="Flower for HAnim scene Winter and Spring."),
 meta(name="creator", content="Carol McDonald"),
 meta(name="translator", content="Joe Williams and Don Brutzman"),
@@ -14,7 +16,7 @@ meta(name="reference", content="originals/flower.x3dv"),
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/WinterAndSpring/Flower.x3d"),
 meta(name="generator", content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="24 August 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 

@@ -150,7 +150,7 @@ var X3D0 =  X3D(
                 TouchSensor(
                   DEF_ : SFString('RandomTextClickedSensor'),
                   description_ : SFString('Select to see a new strategy')),
-
+              child_ : 
                 Shape(
                   geometry_ : 
                     Text(
@@ -165,11 +165,11 @@ var X3D0 =  X3D(
                     Appearance(
                       material_ : 
                         Material(
-                          diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)])))),
+                          diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]))))],
 
                 Transform(
                   scale_ : SFVec3f([SFDouble(10), SFDouble(3), SFDouble(1)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       DEF_ : SFString('HeadlineClickSurface'),
                       geometry_ : 
@@ -187,7 +187,7 @@ var X3D0 =  X3D(
                               diffuseColor_ : SFColor([SFDouble(0.34773), SFDouble(0.090909), SFDouble(0.005289)]),
                               shininess_ : 0.07,
                               specularColor_ : SFColor([SFDouble(0.336735), SFDouble(0.051091), SFDouble(0.051091)]),
-                              transparency_ : 0.8)))])]),
+                              transparency_ : 0.8))))),
 
             Script(
               DEF_ : SFString('TextScript'),
@@ -246,7 +246,7 @@ var X3D0 =  X3D(
               DEF_ : SFString('CardTransform'),
               scale_ : SFVec3f([SFDouble(0.4), SFDouble(0.4), SFDouble(0.4)]),
               translation_ : SFVec3f([SFDouble(0), SFDouble(-1.5), SFDouble(0)]),
-              children_ : [
+              child_ : 
                 Shape(
                   geometry_ : 
                     Text(
@@ -261,7 +261,7 @@ var X3D0 =  X3D(
                       material_ : 
                         Material(
                           diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)])))),
-
+              children_ : [
                 ROUTE(
                   fromField_ : SFString('string_changed'),
                   fromNode_ : SFString('TextScript'),
@@ -309,7 +309,7 @@ var X3D0 =  X3D(
                   fromNode_ : SFString('PreviousTextClickedSensor'),
                   toField_ : SFString('selectPreviousCard'),
                   toNode_ : SFString('TextScript')),
-
+              child_ : 
                 Shape(
                   geometry_ : 
                     Text(
@@ -322,11 +322,11 @@ var X3D0 =  X3D(
                       DEF_ : SFString('InterfaceAppearance'),
                       material_ : 
                         Material(
-                          diffuseColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0.6)])))),
+                          diffuseColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0.6)]))))],
 
                 Transform(
                   scale_ : SFVec3f([SFDouble(2), SFDouble(0.6), SFDouble(1)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       DEF_ : SFString('TransparentClickSurface'),
                       /*support Selectable Text with a scalable IFS*/
@@ -341,7 +341,7 @@ var X3D0 =  X3D(
                         Appearance(
                           material_ : 
                             Material(
-                              transparency_ : 1)))])]),
+                              transparency_ : 1))))),
 
             Transform(
               scale_ : SFVec3f([SFDouble(0.4), SFDouble(0.4), SFDouble(0.4)]),
@@ -356,7 +356,7 @@ var X3D0 =  X3D(
                   fromNode_ : SFString('NextTextClickedSensor'),
                   toField_ : SFString('selectNextCard'),
                   toNode_ : SFString('TextScript')),
-
+              child_ : 
                 Shape(
                   geometry_ : 
                     Text(
@@ -366,13 +366,13 @@ var X3D0 =  X3D(
                           USE_ : SFString('MessageFont'))),
                   appearance_ : 
                     Appearance(
-                      USE_ : SFString('InterfaceAppearance'))),
+                      USE_ : SFString('InterfaceAppearance')))],
 
                 Transform(
                   scale_ : SFVec3f([SFDouble(1.2), SFDouble(0.6), SFDouble(1)]),
-                  children_ : [
+                  child_ : 
                     Shape(
-                      USE_ : SFString('TransparentClickSurface'))])]),
+                      USE_ : SFString('TransparentClickSurface')))),
 
             Transform(
               scale_ : SFVec3f([SFDouble(0.4), SFDouble(0.4), SFDouble(0.4)]),
@@ -386,7 +386,7 @@ var X3D0 =  X3D(
                   fromNode_ : SFString('RandomTextClickedSensor'),
                   toField_ : SFString('selectRandomCard'),
                   toNode_ : SFString('TextScript')),
-
+              child_ : 
                 Shape(
                   geometry_ : 
                     Text(
@@ -396,13 +396,13 @@ var X3D0 =  X3D(
                           USE_ : SFString('MessageFont'))),
                   appearance_ : 
                     Appearance(
-                      USE_ : SFString('InterfaceAppearance'))),
+                      USE_ : SFString('InterfaceAppearance')))],
 
                 Transform(
                   scale_ : SFVec3f([SFDouble(1.8), SFDouble(0.6), SFDouble(1)]),
-                  children_ : [
+                  child_ : 
                     Shape(
-                      USE_ : SFString('TransparentClickSurface'))])]),
+                      USE_ : SFString('TransparentClickSurface')))),
 
             Transform(
               scale_ : SFVec3f([SFDouble(0.4), SFDouble(0.4), SFDouble(0.4)]),
@@ -433,7 +433,7 @@ var X3D0 =  X3D(
 
                     Transform(
                       scale_ : SFVec3f([SFDouble(1.8), SFDouble(0.6), SFDouble(1)]),
-                      children_ : [
+                      child_ : 
                         Shape(
-                          USE_ : SFString('TransparentClickSurface'))])])])]));
+                          USE_ : SFString('TransparentClickSurface')))])])]));
 void main() { exit(0); }

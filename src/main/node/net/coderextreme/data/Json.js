@@ -220,7 +220,7 @@ var ProtoInstance4 = null;
         .addComments((new autoclass.CommentsBlock("Test success: declarative statement createDeclarativeShapeTests()")))
         .addChild((new autoclass.Group()).setDEF("DeclarativeGroupExample")
           .addChild((new autoclass.Shape())
-            .setValue((new autoclass.MetadataString()).setName("findThisNameValue").setDEF("FindableMetadataStringTest").setValue(java.newArray("java.lang.String", ["test case"])))
+            .setMetadata((new autoclass.MetadataString()).setName("findThisNameValue").setDEF("FindableMetadataStringTest").setValue(java.newArray("java.lang.String", ["test case"])))
             .setAppearance((new autoclass.Appearance()).setDEF("DeclarativeAppearanceExample")
               .addComments((new autoclass.CommentsBlock("DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance")))
               .setMaterial(ProtoInstance3 = (new autoclass.ProtoInstance()).setName("MaterialModulator").setDEF("MyMaterialModulator")))
@@ -301,5 +301,5 @@ ProtoInstance0
               .addFieldValue((new autoclass.fieldValue()).setName("description").setValue("ArtDeco01Material can substitute for a Material node"));
 ProtoInstance1
               .addFieldValue((new autoclass.fieldValue()).setName("description").setValue("ArtDeco02Material can substitute for another Material node"));
-    X3D0.toFileX3D("../data/Json.new.x3d");
+    X3D0.toFileX3D("../data/Json.new.node.x3d");
     process.exit(0);

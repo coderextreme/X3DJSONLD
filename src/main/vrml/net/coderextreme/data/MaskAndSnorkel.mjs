@@ -80,9 +80,9 @@ IndexedFaceSet18.coord = Coordinate19;
 
 Shape15.geometry = IndexedFaceSet18;
 
-Transform14.children = new MFNode();
+Transform14.child = new undefined();
 
-Transform14.children[0] = Shape15;
+Transform14.child[0] = Shape15;
 
 Transform13.children = new MFNode();
 
@@ -104,9 +104,9 @@ Cylinder24.height = 0.003;
 Cylinder24.radius = 0.015;
 Shape21.geometry = Cylinder24;
 
-Transform20.children = new MFNode();
+Transform20.child = new undefined();
 
-Transform20.children[0] = Shape21;
+Transform20.child[0] = Shape21;
 
 Transform13.children[1] = Transform20;
 
@@ -132,9 +132,9 @@ Extrusion31.crossSection = new MFVec2f(new float[0,0.013,0.00494,0.01196,0.00923
 Extrusion31.spine = new MFVec3f(new float[-0.01,-0.04,0,0,0,0,0.03,0.05,0,0.05,0.2,0,0.03,0.4,0.03]);
 Shape28.geometry = Extrusion31;
 
-Transform27.children = new MFNode();
+Transform27.child = new undefined();
 
-Transform27.children[0] = Shape28;
+Transform27.child[0] = Shape28;
 
 Transform26.children = new MFNode();
 
@@ -159,9 +159,9 @@ Extrusion36.crossSection = new MFVec2f(new float[0,0.013,0.00494,0.01196,0.00923
 Extrusion36.spine = new MFVec3f(new float[-0.01,-0.03,0,0,0,0,0.02,0.01,0]);
 Shape33.geometry = Extrusion36;
 
-Transform32.children = new MFNode();
+Transform32.child = new undefined();
 
-Transform32.children[0] = Shape33;
+Transform32.child[0] = Shape33;
 
 Transform26.children[1] = Transform32;
 
@@ -182,9 +182,9 @@ Extrusion41.crossSection = new MFVec2f(new float[0,0.013,0.00494,0.01196,0.00923
 Extrusion41.spine = new MFVec3f(new float[-0.02,-0.03,0,-0.01,-0.03,0,0,-0.0175,0,0,-0.0135,0,-0.01,0,0,-0.02,0,0]);
 Shape38.geometry = Extrusion41;
 
-Transform37.children = new MFNode();
+Transform37.child = new undefined();
 
-Transform37.children[0] = Shape38;
+Transform37.child[0] = Shape38;
 
 Transform26.children[2] = Transform37;
 
@@ -216,9 +216,9 @@ IndexedFaceSet46.coord = Coordinate47;
 
 Shape43.geometry = IndexedFaceSet46;
 
-Transform42.children = new MFNode();
+Transform42.child = new undefined();
 
-Transform42.children[0] = Shape43;
+Transform42.child[0] = Shape43;
 
 Transform13.children[3] = Transform42;
 
@@ -242,9 +242,9 @@ IndexedFaceSet52.coord = Coordinate53;
 
 Shape49.geometry = IndexedFaceSet52;
 
-Transform48.children = new MFNode();
+Transform48.child = new undefined();
 
-Transform48.children[0] = Shape49;
+Transform48.child[0] = Shape49;
 
 Transform13.children[4] = Transform48;
 
@@ -270,9 +270,9 @@ IndexedFaceSet58.coord = Coordinate59;
 
 Shape55.geometry = IndexedFaceSet58;
 
-Transform54.children = new MFNode();
+Transform54.child = new undefined();
 
-Transform54.children[0] = Shape55;
+Transform54.child[0] = Shape55;
 
 Transform13.children[5] = Transform54;
 
@@ -296,9 +296,9 @@ IndexedFaceSet64.coord = Coordinate65;
 
 Shape61.geometry = IndexedFaceSet64;
 
-Transform60.children = new MFNode();
+Transform60.child = new undefined();
 
-Transform60.children[0] = Shape61;
+Transform60.child[0] = Shape61;
 
 Transform13.children[6] = Transform60;
 
@@ -322,9 +322,9 @@ IndexedFaceSet70.coord = Coordinate71;
 
 Shape67.geometry = IndexedFaceSet70;
 
-Transform66.children = new MFNode();
+Transform66.child = new undefined();
 
-Transform66.children[0] = Shape67;
+Transform66.child[0] = Shape67;
 
 Transform13.children[7] = Transform66;
 

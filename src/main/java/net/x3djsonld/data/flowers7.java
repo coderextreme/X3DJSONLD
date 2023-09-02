@@ -26,7 +26,7 @@ import org.web3d.x3d.jsail.Time.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/flowers7.x3d">flowers7.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/flowers7.x3d">flowers7.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -38,7 +38,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/flowers7.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/flowers7.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/flowers7.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/flowers7.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -54,7 +54,9 @@ import org.web3d.x3d.jsail.Time.*;
 		<a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
 		It has been produced using the 
 		<a href="https://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
-		stylesheet to create Java source code from an <code>.x3d</code> model.
+		stylesheet
+	       (<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">version&amp;nbsp;control</a>)
+                is used to create Java source code from an original <code>.x3d</code> model.
 	</p>
 
 	* @author John Carlson
@@ -86,24 +88,24 @@ public class flowers7
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("flowers7.x3d"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John Carlson"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("manual"))
-    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/flowers7.x3d"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowers7.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("a flower")))
   .setScene(new Scene()
     .addChild(new NavigationInfo())
     .addComments(" Images courtesy of Paul Debevec's Light Probe Image Gallery ")
-    .addChild(new Background("background").setBackUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"}).setBottomUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"}).setFrontUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"}).setLeftUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"}).setRightUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"}).setTopUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"}))
+    .addChild(new Background("background").setBackUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"}).setBottomUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"}).setFrontUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"}).setLeftUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"}).setRightUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"}).setTopUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"}))
     .addChild(new Viewpoint().setDescription("Transparent rose").setPosition(0.0,0.0,40.0))
     .addChild(new Transform()
       .addChild(new Shape()
         .setAppearance(new Appearance()
           .setMaterial(new Material().setDiffuseColor(.7,.7,.7).setSpecularColor(.5,.5,.5))
           .setTexture(new ComposedCubeMapTexture("texture")
-            .setBackTexture(new ImageTexture("backShader").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"}))
-            .setBottomTexture(new ImageTexture("bottomShader").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"}))
-            .setFrontTexture(new ImageTexture("frontShader").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"}))
-            .setLeftTexture(new ImageTexture("leftShader").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"}))
-            .setRightTexture(new ImageTexture("rightShader").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"}))
-            .setTopTexture(new ImageTexture("topShader").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"})))
+            .setBackTexture(new ImageTexture("backShader").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"}))
+            .setBottomTexture(new ImageTexture("bottomShader").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"}))
+            .setFrontTexture(new ImageTexture("frontShader").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"}))
+            .setLeftTexture(new ImageTexture("leftShader").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"}))
+            .setRightTexture(new ImageTexture("rightShader").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"}))
+            .setTopTexture(new ImageTexture("topShader").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"})))
           .addShaders(new ComposedShader("x3dom").setLanguage("GLSL")
             .addField(new field().setName("cube").setType(field.TYPE_SFINT32).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0))
             .addComments(new String[] {" ",
@@ -323,10 +325,10 @@ function set_fraction() {
         if (validate)
         {
                 System.out.print("Java program \"net.x3djsonld.data.flowers7\" self-validation test results: ");
-                String validationResults = thisExampleX3dModel.validationReport();
-                if (validationResults.startsWith("\n") || (validationResults.length() > 10))
+		String validationResults = thisExampleX3dModel.validationReport();
+                if (validationResults.length() > 10)
                     System.out.println();
-                System.out.println(validationResults.trim());
+                System.out.println(validationResults);
         }
     }
 }

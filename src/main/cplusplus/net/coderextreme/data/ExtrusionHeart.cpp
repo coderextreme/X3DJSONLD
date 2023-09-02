@@ -81,7 +81,7 @@ Appearance15->setMaterial(*Material16);
 
 Shape13->setAppearance(*Appearance15);
 
-Transform12->addChildren(*Shape13);
+Transform12->addChild(*Shape13);
 
 group->addChildren(*Transform12);
 

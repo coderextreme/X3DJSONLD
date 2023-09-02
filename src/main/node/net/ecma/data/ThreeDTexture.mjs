@@ -49,7 +49,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/ThreeDTexture.x3d")}),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/ThreeDTexture.x3d")}),
 
             new meta({
               name : new SFString("description"),
@@ -84,7 +84,7 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("translation"),
                               protoField : new SFString("xtranslation")})])})),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           geometry : new SFNode(
                             new Sphere({})),
@@ -92,7 +92,7 @@ var X3D0 =  new X3D({
                             new Appearance({
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,1,1])}))}))})])})])}))}),
+                                  diffuseColor : new SFColor([1,1,1])}))}))}))})])}))}),
 
             new ProtoDeclare({
               name : new SFString("three"),

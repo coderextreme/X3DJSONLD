@@ -82,7 +82,7 @@ let ProtoDeclare15 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 </IS>
 </Material>
 </Appearance>
-<Sphere containerField="geometry" radius="5.10000002384186"></Sphere>
+<Sphere radius="5.10000002384186"></Sphere>
 </Shape>
 </Transform>
 </ProtoBody>
@@ -141,9 +141,9 @@ let Sphere28 = browser.currentScene.createNode("Sphere");
 Sphere28.radius = 5.10000002384186;
 Shape23.geometry = Sphere28;
 
-Transform20.children = new MFNode();
+Transform20.child = new undefined();
 
-Transform20.children[0] = Shape23;
+Transform20.child[0] = Shape23;
 
 ProtoBody19.children = new MFNode();
 

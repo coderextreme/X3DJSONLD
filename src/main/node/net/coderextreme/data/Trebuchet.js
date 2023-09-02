@@ -495,5 +495,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.ROUTE()).setFromField("value_changed").setFromNode("verticalweightpath").setToField("set_translation").setToNode("verticalweight"))
         .addChild((new autoclass.ROUTE()).setFromField("fraction_changed").setFromNode("clock").setToField("set_fraction").setToNode("pinpath"))
         .addChild((new autoclass.ROUTE()).setFromField("value_changed").setFromNode("pinpath").setToField("set_translation").setToNode("Pin")))      ;
-    X3D0.toFileX3D("../data/Trebuchet.new.x3d");
+    X3D0.toFileX3D("../data/Trebuchet.new.node.x3d");
     process.exit(0);

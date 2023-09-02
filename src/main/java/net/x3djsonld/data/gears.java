@@ -41,7 +41,7 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
-			<td> convertStlToJson.js: <a href="https://github.com/coderextreme/X3DJSONLD/convertStlToJson.js" target="_blank">https://github.com/coderextreme/X3DJSONLD/convertStlToJson.js</a> </td>
+			<td> convertStlToJson.js: <a href="https://github.com/coderextreme/X3DJSONLD/src/main/node/convertStlToJson.js" target="_blank">https://github.com/coderextreme/X3DJSONLD/src/main/node/convertStlToJson.js</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
@@ -69,7 +69,9 @@ import org.web3d.x3d.jsail.Shape.*;
 		<a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
 		It has been produced using the 
 		<a href="https://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
-		stylesheet to create Java source code from an <code>.x3d</code> model.
+		stylesheet
+	       (<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">version&amp;nbsp;control</a>)
+                is used to create Java source code from an original <code>.x3d</code> model.
 	</p>
 
 	* @author John Carlson
@@ -94,7 +96,7 @@ public class gears
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Template for an Indexed Face Set"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John Carlson"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("4 April 2017"))
-    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/convertStlToJson.js"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/src/main/node/convertStlToJson.js"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html"))
     .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("30 April 2017"))
     .addMeta(new meta().setName(meta.NAME_TRANSLATED ).setContent("30 April 2017"))
@@ -654,10 +656,10 @@ public class gears
         if (validate)
         {
                 System.out.print("Java program \"net.x3djsonld.data.gears\" self-validation test results: ");
-                String validationResults = thisExampleX3dModel.validationReport();
-                if (validationResults.startsWith("\n") || (validationResults.length() > 10))
+		String validationResults = thisExampleX3dModel.validationReport();
+                if (validationResults.length() > 10)
                     System.out.println();
-                System.out.println(validationResults.trim());
+                System.out.println(validationResults);
         }
     }
 }

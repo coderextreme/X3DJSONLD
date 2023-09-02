@@ -76,7 +76,7 @@ head1->addMeta(*meta13);
 
 Cmeta* meta14 = new Cmeta();
 meta14->setName("identifier");
-meta14->setContent("https://coderextreme.net/X3DJSONLD/geo.x3d");
+meta14->setContent("https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d");
 head1->addMeta(*meta14);
 
 Cmeta* meta15 = new Cmeta();
@@ -252,7 +252,7 @@ Appearance23->addShaders(*ComposedShader41);
 
 Shape21->setAppearance(*Appearance23);
 
-Transform20->addChildren(*Shape21);
+Transform20->addChild(*Shape21);
 
 group->addChildren(*Transform20);
 

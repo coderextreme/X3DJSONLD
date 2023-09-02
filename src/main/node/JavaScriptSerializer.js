@@ -49,7 +49,7 @@ JavaScriptSerializer.prototype = {
 				str += this.postcode[postno];
 			}
 		}
-		str += "    "+element.nodeName+0+".toFileX3D(\""+clazz+".new.x3d\");\n";
+		str += "    "+element.nodeName+0+".toFileX3D(\""+clazz+".new.graal.x3d\");\n";
 
 		return str;
 	},
@@ -319,7 +319,7 @@ JavaScriptSerializer.prototype = {
 						attrType === "SFRotation"||
 						attrType === "MFRotation"||
 						attrType === "MFFloat") {
-						strval = this.printSubArray(attrType, "float", attrs[a].nodeValue.split(/[ ,]+/), this.codeno, this.FLOAT_SUFFIX+',', '', this.FLOAT_SUFFIX);
+						strval = this.printSubArray(attrType, "double", attrs[a].nodeValue.split(/[ ,]+/), this.codeno, this.FLOAT_SUFFIX+',', '', this.FLOAT_SUFFIX);
 					} else if (
 						attrType === "SFVec2d"||
 						attrType === "SFVec3d"||

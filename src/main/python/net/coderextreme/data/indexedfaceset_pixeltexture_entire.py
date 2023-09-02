@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Interchange", version="3.0", 
-head=head(children=[meta(name="title", content="indexedfaceset_pixeltexture_entire.x3d"),
+head=head(
+children=[
+meta(name="title", content="indexedfaceset_pixeltexture_entire.x3d"),
 meta(name="reference", content="http://www.nist.gov/vrml.html"),
 meta(name="reference", content="http://www.itl.nist.gov/div897/ctg/vrml/vrml.html"),
 meta(name="creator", content="http://www.itl.nist.gov/div897/ctg/vrml/members.html"),
@@ -18,7 +21,7 @@ meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Conf
 meta(name="generator", content="Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -40,5 +43,6 @@ PixelTexture(image=[2,2,4,4278190335,16711935,4294967295,4294902015], repeatS=Fa
 geometry=
 IndexedFaceSet(coordIndex=[0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1], 
 coord=
-Coordinate(point=[(-2,1.5,1),(-2,-1.5,1),(2,1.5,1),(2,-1.5,1),(2,1.5,-1),(2,-1.5,-1),(-2,1.5,-1),(-2,-1.5,-1)])))]))
-.XML())
+Coordinate(point=[(-2,1.5,1),(-2,-1.5,1),(2,1.5,1),(2,-1.5,1),(2,1.5,-1),(2,-1.5,-1),(-2,1.5,-1),(-2,-1.5,-1)])))])))
+output = model.JSON()
+json.loads(output)

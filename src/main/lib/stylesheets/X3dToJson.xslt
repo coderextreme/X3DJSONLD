@@ -65,7 +65,7 @@ POSSIBILITY OF SUCH DAMAGE.
 <xsl:stylesheet version="2.0" exclude-result-prefixes="ds saxon"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
-				xmlns:saxon="http://saxon.sf.net/">
+		xmlns:saxon="http://saxon.sf.net/">
     <!--
                 xmlns="http://www.w3.org/TR/xhtml1/strict"
                 xmlns:fn="http://www.w3.org/2005/xpath-functions" -->
@@ -3818,7 +3818,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					($parentElementName='SpotLight' and ($attributeName='radius' or $attributeName='cutOffAngle' or $attributeName='beamWidth')) or
 					($parentElementName='Text' and $attributeName='maxExtent') or
 					($parentElementName='TextureProperties' and ($attributeName='anisotropicDegree' or $attributeName='texturePriority')) or
-					(starts-with($parentElementName,'TextureProjector') and ($attributeName='farDistance' or $attributeName='nearDistance')) or
+					(starts-with($parentElementName,'TextureProjector') and ($attributeName='farDistance' or $attributeName='nearDistance' or $attributeName='upVector')) or
                                         ($parentElementName='TextureTransform' and $attributeName='rotation') or
 					($parentElementName='TransmitterPdu' and ($attributeName='power' or $attributeName='transmitFrequencyBandwidth')) or
 					($parentElementName='UniversalJoint' and starts-with($attributeName,'stop')) or
@@ -3966,7 +3966,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					($parentElementName='SliderJoint' and ($attributeName='axis')) or
 					($parentElementName='Sound' and ($attributeName='direction' or $attributeName='location')) or
 					($parentElementName='SpotLight' and ($attributeName='attenuation' or $attributeName='direction' or $attributeName='location')) or
-					(starts-with($parentElementName,'TextureProjector') and ($attributeName='direction' or $attributeName='location')) or
+					(starts-with($parentElementName,'TextureProjector') and ($attributeName='direction' or $attributeName='location' or $attributeName='upVector')) or
 					($parentElementName='Transform' and ($attributeName='center' or $attributeName='scale' or $attributeName='translation')) or
 					($parentElementName='TransformSensor' and ($attributeName='size')) or
 					($parentElementName='TransmitterPdu' and (ends-with($attributeName,'Location'))) or

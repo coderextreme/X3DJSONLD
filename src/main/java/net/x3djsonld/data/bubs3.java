@@ -39,7 +39,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/bubs.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/bubs.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -51,7 +51,9 @@ import org.web3d.x3d.jsail.Time.*;
 		<a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
 		It has been produced using the 
 		<a href="https://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
-		stylesheet to create Java source code from an <code>.x3d</code> model.
+		stylesheet
+	       (<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">version&amp;nbsp;control</a>)
+                is used to create Java source code from an original <code>.x3d</code> model.
 	</p>
 
 	* @author John Carlson
@@ -75,11 +77,11 @@ public class bubs3
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John Carlson"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Tour around a prismatic sphere"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/bubs.x3d")))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d")))
   .setScene(new Scene()
     .addChild(new NavigationInfo().setType("\"EXAMINE\""))
     .addChild(new Viewpoint().setDescription("Bubbles in action").setOrientation(1.0,0.0,0.0,0.0).setPosition(0.0,0.0,4.0))
-    .addChild(new Background().setBackUrl(new String[] {"../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"}).setBottomUrl(new String[] {"../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"}).setFrontUrl(new String[] {"../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"}).setLeftUrl(new String[] {"../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"}).setRightUrl(new String[] {"../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"}).setTopUrl(new String[] {"../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"}))
+    .addChild(new Background().setBackUrl(new String[] {"../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"}).setBottomUrl(new String[] {"../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"}).setFrontUrl(new String[] {"../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"}).setLeftUrl(new String[] {"../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"}).setRightUrl(new String[] {"../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"}).setTopUrl(new String[] {"../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"}))
     .addChild(new Transform("DECLBubble_bubbleA")
       .addChild(new Shape()
         .setGeometry(new Sphere().setRadius(0.25))
@@ -376,10 +378,10 @@ function set_fraction(value) {
         if (validate)
         {
                 System.out.print("Java program \"net.x3djsonld.data.bubs3\" self-validation test results: ");
-                String validationResults = thisExampleX3dModel.validationReport();
-                if (validationResults.startsWith("\n") || (validationResults.length() > 10))
+		String validationResults = thisExampleX3dModel.validationReport();
+                if (validationResults.length() > 10)
                     System.out.println();
-                System.out.println(validationResults.trim());
+                System.out.println(validationResults);
         }
     }
 }

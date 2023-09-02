@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Interchange" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd">
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Interchange" version="3.3" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd">
       <head>
+        <component name='Scripting' level='1'/>
         <meta name='title' content='sphere.x3d'/>
         <meta name='creator' content='John Carlson'/>
         <meta name='generator' content='manual'/>
-        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/sphere.x3d'/>
+	<meta name='identifier' content='https://coderextreme.net/X3DJSONLD/src/main/data/sphere.x3d'/>
         <meta name='description' content='a sphere'/>      
       </head>
 <Scene>

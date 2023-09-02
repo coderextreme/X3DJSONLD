@@ -45,14 +45,14 @@
 </ProtoDeclare>
 <ProtoInstance name="ShiftGroupUp2m"></ProtoInstance>
 <!--====================--><Viewpoint DEF="ExampleSingleElement" description="Hello syntax"></Viewpoint>
-<Group DEF="ExampleChildElement"><Shape><Box containerField="geometry"></Box>
+<Group DEF="ExampleChildElement"><Shape><Box></Box>
 <Appearance><Material diffuseColor="0.6 0.4 0.2"></Material>
 </Appearance>
 </Shape>
 </Group>
 <Transform DEF="TransformExampleUSE" rotation="0 1 0 0.78" translation="0 2.5 0"><Group USE="ExampleChildElement"></Group>
 </Transform>
-<Collision><Shape containerField="proxy"><!--note that Collision proxy Shape is not rendered--><Sphere containerField="geometry"></Sphere>
+<Collision><Shape containerField="proxy"><!--note that Collision proxy Shape is not rendered--><Sphere></Sphere>
 <Appearance><Material></Material>
 </Appearance>
 </Shape>
@@ -61,7 +61,7 @@
 <Transform translation="0 -2.5 0"><Shape><Appearance><ProtoInstance containerField="material" name="EmissiveMaterial"><fieldValue name="onlyColor" value="0.2 0.6 0.6"></fieldValue>
 </ProtoInstance>
 </Appearance>
-<Text containerField="geometry" string="&quot;X3D Header Prototype syntax examples&quot; &quot;(view console for EXTERNPROTO output)&quot;"><FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="0.6"></FontStyle>
+<Text string="&quot;X3D Header Prototype syntax examples&quot; &quot;(view console for EXTERNPROTO output)&quot;"><FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="0.6"></FontStyle>
 </Text>
 </Shape>
 </Transform>

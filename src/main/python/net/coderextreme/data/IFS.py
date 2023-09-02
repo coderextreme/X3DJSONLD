@@ -2,10 +2,13 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Immersive", version="4.0", 
-head=head(children=[component(name="HAnim", level=1),
-meta(name="title", content="JohnIFS.x3d"),
+head=head(
+children=[
+component(name="HAnim", level=1),
+meta(name="title", content="IFS.x3d"),
 meta(name="identifier", content="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/IFS.x3d"),
 meta(name="description", content="An attempt at a standard LOA-4 skeleton"),
 meta(name="generator", content="h2.pl"),
@@ -13,14 +16,13 @@ meta(name="modified", content="18 Jan 2023"),
 meta(name="creator", content="John Carlson"),
 meta(name="created", content="9 November 2020"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
 Scene=Scene(children=[
 Group(children=[
 Comment(value=''' DEFS for markers of skeleton joints, segments, and sites '''),
-
 Transform(translation=((0,2.1,0)), children=[
 Shape(DEF="HAnimSiteShape", 
 geometry=
@@ -34,5 +36,6 @@ Appearance(
 material=
 Material(diffuseColor=((1,1,0)), transparency=0.3)))]),]),
 NavigationInfo(speed=1.5),
-Viewpoint(description="default")]))
-.XML())
+Viewpoint(description="default")])))
+output = model.JSON()
+json.loads(output)

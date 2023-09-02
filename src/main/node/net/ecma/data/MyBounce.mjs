@@ -51,7 +51,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/SFVec3f.x3d")})])})),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
@@ -59,7 +59,7 @@ var X3D0 =  new X3D({
 
             new Transform({
               DEF : new SFString("transform"),
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
@@ -68,7 +68,7 @@ var X3D0 =  new X3D({
                           diffuseColor : new SFColor([0.7,0.7,0.7]),
                           specularColor : new SFColor([0.5,0.5,0.5])}))})),
                   geometry : new SFNode(
-                    new Sphere({}))})])}),
+                    new Sphere({}))}))}),
 
             new Script({
               DEF : new SFString("Bounce2"),

@@ -5,7 +5,7 @@
         <meta name='creator' content='John W Carlson'/>
         <meta name='created' content='December 13 2015'/>
         <meta name='title' content='extrusion.x3d'/>
-        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/force.x3d'/>
+	<meta name='identifier' content='https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d'/>
         <meta name='description' content='beginnings of a force directed graph in 3D'/>
         <meta name='generator' content='Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit'/>
     </head>

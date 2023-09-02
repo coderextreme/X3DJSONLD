@@ -118,5 +118,5 @@ ProtoInstance0
           .addFieldValue((new autoclass.fieldValue()).setName("pierWidth").setValue("1"));
 ProtoInstance0
           .addFieldValue((new autoclass.fieldValue()).setName("pierHeight").setValue("2"));
-    X3D0.toFileX3D("../data/ArchPrototype.new.x3d");
+    X3D0.toFileX3D("../data/ArchPrototype.new.node.x3d");
     process.exit(0);

@@ -19,43 +19,43 @@
 <Viewpoint orientation="1 0 0 -0.5" position="0 500 600" retainUserOffsets="true"></Viewpoint>
 <Transform DEF="PowerR" translation="100 400 400"><Transform rotation="1 0 0 -0.5" translation="0 40 0"><Shape><Appearance DEF="audio_emit"><Material diffuseColor="0 1 0" emissiveColor="0.8 0.8 0.8" specularColor="0.01 0.01 0.01"></Material>
 </Appearance>
-<Box containerField="geometry" size="10 80 0.01"></Box>
+<Box size="10 80 0.01"></Box>
 </Shape>
 </Transform>
 <Transform rotation="1 0 0 -0.5" translation="-2.7 37 0"><Shape><Appearance DEF="audio_emit2"><Material diffuseColor="0 1 0" emissiveColor="0.8 0.8 0.8" specularColor="0.01 0.01 0.01"></Material>
 <ImageTexture containerField="texture" url="&quot;images/line.png&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png&quot;"></ImageTexture>
 </Appearance>
-<Box containerField="geometry" size="25 83 0.01"></Box>
+<Box size="25 83 0.01"></Box>
 </Shape>
 </Transform>
 <Transform DEF="volumeRight" rotation="1 0 0 -0.5" scale="10 10 10" translation="0 -10 0"><Shape><Appearance><Material ambientIntensity="0.0933" diffuseColor="0.345 0.345 0.882" shininess="0.51" specularColor="0.46 0.46 0.46"></Material>
 </Appearance>
-<Text containerField="geometry" string="&quot;Right Channel Volume&quot;"><FontStyle family="&quot;Times&quot;" style="BOLD"></FontStyle>
+<Text string="&quot;Right Channel Volume&quot;"><FontStyle family="&quot;Times&quot;" style="BOLD"></FontStyle>
 </Text>
 </Shape>
 </Transform>
 </Transform>
 <Transform DEF="PowerL" translation="-100 400 400"><Transform rotation="1 0 0 -0.5" translation="0 40 0"><Shape><Appearance DEF="audio_emit3"><Material diffuseColor="0 1 0" emissiveColor="0.8 0.8 0.8" specularColor="0.01 0.01 0.01"></Material>
 </Appearance>
-<Box containerField="geometry" size="10 80 0.01"></Box>
+<Box size="10 80 0.01"></Box>
 </Shape>
 </Transform>
 <Transform rotation="1 0 0 -0.5" translation="13.2 37 0"><Shape><Appearance DEF="audio_emit4"><Material diffuseColor="0 1 0" emissiveColor="0.8 0.8 0.8" specularColor="0.01 0.01 0.01"></Material>
 <ImageTexture containerField="texture" url="&quot;images/line.png&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png&quot;"></ImageTexture>
 </Appearance>
-<Box containerField="geometry" size="25 83 0.01"></Box>
+<Box size="25 83 0.01"></Box>
 </Shape>
 </Transform>
 <Transform DEF="volumeLeft" rotation="1 0 0 -0.5" scale="10 10 10" translation="0 -10 0"><Shape><Appearance><Material ambientIntensity="0.0933" diffuseColor="0.345 0.345 0.882" shininess="0.51" specularColor="0.46 0.46 0.46"></Material>
 </Appearance>
-<Text containerField="geometry" string="&quot;Left Channel Volume&quot;"><FontStyle family="&quot;Times&quot;" style="BOLD"></FontStyle>
+<Text string="&quot;Left Channel Volume&quot;"><FontStyle family="&quot;Times&quot;" style="BOLD"></FontStyle>
 </Text>
 </Shape>
 </Transform>
 </Transform>
 <Transform><Shape><Appearance DEF="floor"><Material diffuseColor="0.1 0.1 0.1" shininess="0.8" specularColor="0.5 0.6 0.7"></Material>
 </Appearance>
-<Box containerField="geometry" size="1500 10 500"></Box>
+<Box size="1500 10 500"></Box>
 </Shape>
 </Transform>
 <ListenerPointSource trackCurrentView="true"></ListenerPointSource>
@@ -71,7 +71,7 @@
 <Transform DEF="Audio3" rotation="1 0 0 -0.5" translation="0 100 0"><Shape><Appearance DEF="audio_emit5"><Material diffuseColor="0.3 1 0.3" emissiveColor="0.8 0.8 0.8" specularColor="0.01 0.01 0.01"></Material>
 <ImageTexture containerField="texture" url="&quot;images/loudspeaker.png&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png&quot;"></ImageTexture>
 </Appearance>
-<Box containerField="geometry" size="100 100 0.001"></Box>
+<Box size="100 100 0.001"></Box>
 </Shape>
 </Transform>
 </Scene>

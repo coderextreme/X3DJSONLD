@@ -2,9 +2,12 @@
 print("<!--")
 from x3d import *
 print("-->")
-print(
+import json
+model = (
 X3D(profile="Interchange", version="4.0", 
-head=head(children=[meta(name="title", content="Pathway.x3d"),
+head=head(
+children=[
+meta(name="title", content="Pathway.x3d"),
 meta(name="description", content="Pathway for HAnim scene Winter and Spring."),
 meta(name="creator", content="Carol McDonald"),
 meta(name="translator", content="Joe Williams and Don Brutzman"),
@@ -17,7 +20,7 @@ meta(name="reference", content="originals/pathway.x3dv"),
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/WinterAndSpring/Pathway.x3d"),
 meta(name="generator", content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="16 July 2023"),
+meta(name="translated", content="02 September 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
@@ -4000,5 +4003,6 @@ Material(ambientIntensity=0.0, diffuseColor=((0.784313738,0,0)), shininess=1.0))
 geometry=
 IndexedFaceSet(coordIndex=[1,0,2,-1,1,2,3,-1,5,4,6,-1,5,6,7,-1,9,8,10,-1,9,10,11,-1,13,12,14,-1,13,14,15,-1], solid=False, texCoordIndex=[1,0,2,-1,1,2,3,-1,5,4,6,-1,5,6,7,-1,9,8,10,-1,9,10,11,-1,13,12,14,-1,13,14,15,-1], 
 coord=
-Coordinate(point=[(0.88447243,0,-0.156810224),(0.07690154,0,0.007801231),(0.88447243,0.075000003,-0.156810224),(0.07690154,0.075000003,0.007801231),(0.07690154,0,0.007801231),(0.211020976,0,0.665780663),(0.07690154,0.075000003,0.007801231),(0.211020976,0.075000003,0.665780663),(0.211020976,0,0.665780663),(1.018591881,0,0.501169205),(0.211020976,0.075000003,0.665780663),(1.018591881,0.075000003,0.501169205),(1.018591881,0,0.501169205),(0.88447243,0,-0.156810224),(1.018591881,0.075000003,0.501169205),(0.88447243,0.075000003,-0.156810224)])))]))
-.XML())
+Coordinate(point=[(0.88447243,0,-0.156810224),(0.07690154,0,0.007801231),(0.88447243,0.075000003,-0.156810224),(0.07690154,0.075000003,0.007801231),(0.07690154,0,0.007801231),(0.211020976,0,0.665780663),(0.07690154,0.075000003,0.007801231),(0.211020976,0.075000003,0.665780663),(0.211020976,0,0.665780663),(1.018591881,0,0.501169205),(0.211020976,0.075000003,0.665780663),(1.018591881,0.075000003,0.501169205),(1.018591881,0,0.501169205),(0.88447243,0,-0.156810224),(1.018591881,0.075000003,0.501169205),(0.88447243,0.075000003,-0.156810224)])))])))
+output = model.JSON()
+json.loads(output)

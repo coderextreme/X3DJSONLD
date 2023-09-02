@@ -116,7 +116,7 @@ Appearance22->setMaterial(*Material23);
 
 Shape20->setAppearance(*Appearance22);
 
-Transform19->addChildren(*Shape20);
+Transform19->addChild(*Shape20);
 
 CShape* Shape24 = (CShape *)(m_pScene.createNode("Shape"));
 Shape24->setDEF("AxisLinesShape");
@@ -135,7 +135,7 @@ IndexedLineSet25->setColor(*Color27);
 
 Shape24->setGeometry(IndexedLineSet25);
 
-Transform19->addChildren(*Shape24);
+Transform19->addChild(*Shape24);
 
 group->addChildren(*Transform19);
 
@@ -146,11 +146,11 @@ Transform28->setRotation(new float[4]{-0.96458,0.07774,0.25206,2.59674});
 //RotationCalculator composed rotation: 0.0 0.0 1.0 2.832229, 1.0 0.0 0.0 5.801149, 0.0 1.0 0.0 2.55377
 CShape* Shape29 = (CShape *)(m_pScene.createNode("Shape"));
 Shape29->setUSE("BoxShape");
-Transform28->addChildren(*Shape29);
+Transform28->addChild(*Shape29);
 
 CShape* Shape30 = (CShape *)(m_pScene.createNode("Shape"));
 Shape30->setUSE("AxisLinesShape");
-Transform28->addChildren(*Shape30);
+Transform28->addChild(*Shape30);
 
 group->addChildren(*Transform28);
 
@@ -162,11 +162,11 @@ Transform31->setTranslation(new float[3]{3,0,0});
 //RotationCalculator composed rotation: 0.0 0.0 1.0 -3.939975, 1.0 0.0 0.0 -3.766201, 0.0 1.0 0.0 -3.474078
 CShape* Shape32 = (CShape *)(m_pScene.createNode("Shape"));
 Shape32->setUSE("BoxShape");
-Transform31->addChildren(*Shape32);
+Transform31->addChild(*Shape32);
 
 CShape* Shape33 = (CShape *)(m_pScene.createNode("Shape"));
 Shape33->setUSE("AxisLinesShape");
-Transform31->addChildren(*Shape33);
+Transform31->addChild(*Shape33);
 
 group->addChildren(*Transform31);
 

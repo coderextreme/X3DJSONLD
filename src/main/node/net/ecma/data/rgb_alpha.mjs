@@ -112,7 +112,7 @@ var X3D0 =  new X3D({
               children : new MFNode([
                 new Transform({
                   translation : new SFVec3f([6.14221,0.0694613,-0.000999451]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       appearance : new SFNode(
                         new Appearance({
@@ -123,11 +123,11 @@ var X3D0 =  new X3D({
                               DEF : new SFString("RgbOpacityCheckerboard"),
                               image : new SFImage([2,2,4,4278190335,4294901760,4294901760,4278190335])}))})),
                       geometry : new SFNode(
-                        new Box({}))})])}),
+                        new Box({}))}))}),
 
                 new Transform({
                   translation : new SFVec3f([-4.85443,0.0694381,-0.00149918]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       appearance : new SFNode(
                         new Appearance({
@@ -137,11 +137,11 @@ var X3D0 =  new X3D({
                             new PixelTexture({
                               USE : new SFString("RgbOpacityCheckerboard")}))})),
                       geometry : new SFNode(
-                        new Sphere({}))})])}),
+                        new Sphere({}))}))}),
 
                 new Transform({
                   translation : new SFVec3f([-1.47341,0.036672,-0.00175095]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       appearance : new SFNode(
                         new Appearance({
@@ -151,11 +151,11 @@ var X3D0 =  new X3D({
                             new PixelTexture({
                               USE : new SFString("RgbOpacityCheckerboard")}))})),
                       geometry : new SFNode(
-                        new Cone({}))})])}),
+                        new Cone({}))}))}),
 
                 new Transform({
                   translation : new SFVec3f([2.31094,0.0694206,-0.00187683]),
-                  children : new MFNode([
+                  child : new SFNode(
                     new Shape({
                       appearance : new SFNode(
                         new Appearance({
@@ -165,5 +165,5 @@ var X3D0 =  new X3D({
                             new PixelTexture({
                               USE : new SFString("RgbOpacityCheckerboard")}))})),
                       geometry : new SFNode(
-                        new Cylinder({}))})])})])})])}))});
+                        new Cylinder({}))}))})])})])}))});
 console.log(X3D0.toXMLNode());

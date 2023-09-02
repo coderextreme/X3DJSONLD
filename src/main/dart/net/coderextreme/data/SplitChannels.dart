@@ -79,7 +79,7 @@ var X3D0 =  X3D(
                 Transform(
                   rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
                   translation_ : SFVec3f([SFDouble(0), SFDouble(40), SFDouble(0)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       appearance_ : 
                         Appearance(
@@ -91,12 +91,12 @@ var X3D0 =  X3D(
                               specularColor_ : SFColor([SFDouble(0.01), SFDouble(0.01), SFDouble(0.01)]))),
                       geometry_ : 
                         Box(
-                          size_ : SFVec3f([SFDouble(10), SFDouble(80), SFDouble(0.01)])))]),
+                          size_ : SFVec3f([SFDouble(10), SFDouble(80), SFDouble(0.01)])))),
 
                 Transform(
                   rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
                   translation_ : SFVec3f([SFDouble(-2.7), SFDouble(37), SFDouble(0)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       appearance_ : 
                         Appearance(
@@ -111,14 +111,14 @@ var X3D0 =  X3D(
                               url_ : MFString([SFString("images/line.png"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png")]))),
                       geometry_ : 
                         Box(
-                          size_ : SFVec3f([SFDouble(25), SFDouble(83), SFDouble(0.01)])))]),
+                          size_ : SFVec3f([SFDouble(25), SFDouble(83), SFDouble(0.01)])))),
 
                 Transform(
                   DEF_ : SFString('volumeRight'),
                   rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
                   scale_ : SFVec3f([SFDouble(10), SFDouble(10), SFDouble(10)]),
                   translation_ : SFVec3f([SFDouble(0), SFDouble(-10), SFDouble(0)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       appearance_ : 
                         Appearance(
@@ -134,7 +134,7 @@ var X3D0 =  X3D(
                           fontStyle_ : 
                             FontStyle(
                               family_ : MFString([SFString("Times")]),
-                              style_ : SFString('BOLD'))))])]),
+                              style_ : SFString('BOLD')))))]),
 
             Transform(
               DEF_ : SFString('PowerL'),
@@ -143,7 +143,7 @@ var X3D0 =  X3D(
                 Transform(
                   rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
                   translation_ : SFVec3f([SFDouble(0), SFDouble(40), SFDouble(0)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       appearance_ : 
                         Appearance(
@@ -155,12 +155,12 @@ var X3D0 =  X3D(
                               specularColor_ : SFColor([SFDouble(0.01), SFDouble(0.01), SFDouble(0.01)]))),
                       geometry_ : 
                         Box(
-                          size_ : SFVec3f([SFDouble(10), SFDouble(80), SFDouble(0.01)])))]),
+                          size_ : SFVec3f([SFDouble(10), SFDouble(80), SFDouble(0.01)])))),
 
                 Transform(
                   rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
                   translation_ : SFVec3f([SFDouble(13.2), SFDouble(37), SFDouble(0)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       appearance_ : 
                         Appearance(
@@ -175,14 +175,14 @@ var X3D0 =  X3D(
                               url_ : MFString([SFString("images/line.png"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png")]))),
                       geometry_ : 
                         Box(
-                          size_ : SFVec3f([SFDouble(25), SFDouble(83), SFDouble(0.01)])))]),
+                          size_ : SFVec3f([SFDouble(25), SFDouble(83), SFDouble(0.01)])))),
 
                 Transform(
                   DEF_ : SFString('volumeLeft'),
                   rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
                   scale_ : SFVec3f([SFDouble(10), SFDouble(10), SFDouble(10)]),
                   translation_ : SFVec3f([SFDouble(0), SFDouble(-10), SFDouble(0)]),
-                  children_ : [
+                  child_ : 
                     Shape(
                       appearance_ : 
                         Appearance(
@@ -198,10 +198,10 @@ var X3D0 =  X3D(
                           fontStyle_ : 
                             FontStyle(
                               family_ : MFString([SFString("Times")]),
-                              style_ : SFString('BOLD'))))])]),
+                              style_ : SFString('BOLD')))))]),
 
             Transform(
-              children_ : [
+              child_ : 
                 Shape(
                   appearance_ : 
                     Appearance(
@@ -213,7 +213,7 @@ var X3D0 =  X3D(
                           specularColor_ : SFColor([SFDouble(0.5), SFDouble(0.6), SFDouble(0.7)]))),
                   geometry_ : 
                     Box(
-                      size_ : SFVec3f([SFDouble(1500), SFDouble(10), SFDouble(500)])))]),
+                      size_ : SFVec3f([SFDouble(1500), SFDouble(10), SFDouble(500)])))),
 
             ListenerPointSource(
               trackCurrentView_ : true),
@@ -258,7 +258,7 @@ var X3D0 =  X3D(
               DEF_ : SFString('Audio3'),
               rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
               translation_ : SFVec3f([SFDouble(0), SFDouble(100), SFDouble(0)]),
-              children_ : [
+              child_ : 
                 Shape(
                   appearance_ : 
                     Appearance(
@@ -273,5 +273,5 @@ var X3D0 =  X3D(
                           url_ : MFString([SFString("images/loudspeaker.png"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png")]))),
                   geometry_ : 
                     Box(
-                      size_ : SFVec3f([SFDouble(100), SFDouble(100), SFDouble(0.001)])))])]));
+                      size_ : SFVec3f([SFDouble(100), SFDouble(100), SFDouble(0.001)]))))]));
 void main() { exit(0); }

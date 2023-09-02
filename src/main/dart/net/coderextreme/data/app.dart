@@ -9,6 +9,10 @@ var X3D0 =  X3D(
         head(
           meta_ : [
             meta(
+              name_ : SFString('title'),
+              content_ : SFString('app.x3d')),
+
+            meta(
               name_ : SFString('creator'),
               content_ : SFString('Carlson, I')),
 

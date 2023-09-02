@@ -20,7 +20,7 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/KoreanCharacterAnnexB01Jin.x3d">KoreanCharacterAnnexB01Jin.x3d</a> </td>
+			<td> <a href="KoreanCharacterMotionAnnexB01Jin.x3d">KoreanCharacterMotionAnnexB01Jin.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -52,11 +52,11 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/KoreanCharacterHumanMotion_Infotech2014_140706.pdf">KoreanCharacterHumanMotion_Infotech2014_140706.pdf</a> </td>
+			<td> <a href="KoreanCharacterHumanMotion_Infotech2014_140706.pdf">KoreanCharacterHumanMotion_Infotech2014_140706.pdf</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/KoreanCharactersIllustrated.pdf">KoreanCharactersIllustrated.pdf</a> </td>
+			<td> <a href="KoreanCharactersIllustrated.pdf">KoreanCharactersIllustrated.pdf</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> specificationSection </i> </td>
@@ -88,7 +88,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/../license.html">../license.html</a> </td>
+			<td> <a href="../license.html">../license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -628,7 +628,7 @@ KoreanCharacterMotionAnnexB01Jin.prototype = {
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
-    .addMeta((new autoclass.meta()).setName("title").setContent("KoreanCharacterAnnexB01Jin.x3d"))
+    .addMeta((new autoclass.meta()).setName("title").setContent("KoreanCharacterMotionAnnexB01Jin.x3d"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("Jin Hoon Lee and Min Joo Lee"))
     .addMeta((new autoclass.meta()).setName("translator").setContent("Chul Hee Jung and Myeong Won Lee"))
     .addMeta((new autoclass.meta()).setName("created").setContent("31 March 2011"))
