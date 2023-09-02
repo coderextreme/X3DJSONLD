@@ -18,6 +18,17 @@ if (typeof xmldom !== 'undefined') {
 }
 //  X3DJSONLD.setProcessURLs(function() {}); // do modify URLs in GUI
 
+function myGetJSON(url, data, success) {
+	$.ajax({
+	  dataType: "json",
+	  url: url,
+	  data: data,
+	  success: success
+	});
+}
+
+window.myGetJSON = myGetJSON;
+
 // https://stackoverflow.com/questions/1043339/javascript-for-detecting-browser-language-preference
 var getFirstBrowserLanguage = function () {
     var nav = window.navigator,
@@ -318,7 +329,7 @@ window.loadX3D = function loadX3D(selector, json, url) {
  * url -- JSON url to add
  */
 function appendInline(element, url, xmlDoc, next) {
-	$.getJSON(url, function(json) {
+	myGetJSON(url, function(json) {
 		var pros = new window.PROTOS();
 		if (typeof pros !== 'undefined' && typeof pros.prototypeExpander === 'function') {
 			try {
@@ -339,7 +350,7 @@ function appendInline(element, url, xmlDoc, next) {
 		}, function(e) {
 			console.error(e);
 		});
-	}).fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed for '+url+'! ' + textStatus + ' ' + errorThrown); });
+	}).fail(function(jqXHR, textStatus, errorThrown) { alert('myGetJSON request failed for '+url+'! ' + textStatus + ' ' + errorThrown); });
 }
 
 
@@ -549,11 +560,11 @@ function loadImage(url) {
 	}
 }
 window.myLoadJson = function myLoadJson(url) {
-	$.getJSON(url, function(json) {
+	myGetJSON(url, function(json) {
 		updateFromJson(json, url);
 		updateXml(json, url);
 	})
-	.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed for '+url+'! ' + textStatus + ' ' + errorThrown); });
+	.fail(function(jqXHR, textStatus, errorThrown) { alert('myGetJSON request failed for '+url+'! ' + textStatus + ' ' + errorThrown); });
 }
 
 myLoadJson("../data/sphereflowers.x3dj");
@@ -726,7 +737,7 @@ window.validator = function validator() {
 	try {
 		var data = $("#json").val();
 		if (data.startsWith("http")) {
-			$.getJSON(data, function(json) {
+			myGetJSON(data, function(json) {
 				loadSchema(json, "<unknown>", function() {
 					alert("Valid or user clicked OK");
 				}, function(e) {
