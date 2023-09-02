@@ -1,5 +1,5 @@
 #!/bin/bash
-for i in `ls src/main/*/net/*/data/*.* | grep -v .bak |grep -v .class`
+for i in `ls -d src/main/java/net/{coderextreme,x3djsonld}/{data,personal}/*.java | grep -v .bak |grep -v .class`
 do
 	CLASS=`basename $i | sed -e 's/\([^\.]*\)\..*/\1/'`
 	FILE=$i
