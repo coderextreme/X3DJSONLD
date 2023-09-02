@@ -329,7 +329,7 @@ window.loadX3D = function loadX3D(selector, json, url) {
  * url -- JSON url to add
  */
 function appendInline(element, url, xmlDoc, next) {
-	myGetJSON(url, function(json) {
+	window.myGetJSON(url, function(json) {
 		var pros = new window.PROTOS();
 		if (typeof pros !== 'undefined' && typeof pros.prototypeExpander === 'function') {
 			try {
@@ -350,7 +350,7 @@ function appendInline(element, url, xmlDoc, next) {
 		}, function(e) {
 			console.error(e);
 		});
-	}).fail(function(jqXHR, textStatus, errorThrown) { alert('myGetJSON request failed for '+url+'! ' + textStatus + ' ' + errorThrown); });
+	}).fail(function(jqXHR, textStatus, errorThrown) { alert('window.myGetJSON request failed for '+url+'! ' + textStatus + ' ' + errorThrown); });
 }
 
 
@@ -560,11 +560,11 @@ function loadImage(url) {
 	}
 }
 window.myLoadJson = function myLoadJson(url) {
-	myGetJSON(url, function(json) {
+	window.myGetJSON(url, function(json) {
 		updateFromJson(json, url);
 		updateXml(json, url);
 	})
-	.fail(function(jqXHR, textStatus, errorThrown) { alert('myGetJSON request failed for '+url+'! ' + textStatus + ' ' + errorThrown); });
+	.fail(function(jqXHR, textStatus, errorThrown) { alert('window.myGetJSON request failed for '+url+'! ' + textStatus + ' ' + errorThrown); });
 }
 
 myLoadJson("../data/sphereflowers.x3dj");
@@ -737,7 +737,7 @@ window.validator = function validator() {
 	try {
 		var data = $("#json").val();
 		if (data.startsWith("http")) {
-			myGetJSON(data, function(json) {
+			window.myGetJSON(data, function(json) {
 				loadSchema(json, "<unknown>", function() {
 					alert("Valid or user clicked OK");
 				}, function(e) {
