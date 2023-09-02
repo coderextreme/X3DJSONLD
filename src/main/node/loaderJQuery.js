@@ -4,6 +4,10 @@ if (typeof loadSchema === 'undefined' && typeof window !== 'undefined') {
 	loadSchema = window.loadSchema;
 }
 
+if (typeof window === 'undefined') {
+	window = {};
+}
+
 if (typeof window.PROTOS === 'undefined') {
 	var PROTOS = require('./PrototypeExpander');
 	window.PROTOS = PROTOS;
@@ -26,8 +30,12 @@ function myGetJSON(url, data, success) {
 	  success: success
 	});
 }
+if (typeof myGetJSON === 'undefined' || myGetJSON === null) {
+	myGetJSON = $.getJSON;
+}
 
 window.myGetJSON = myGetJSON;
+
 
 // https://stackoverflow.com/questions/1043339/javascript-for-detecting-browser-language-preference
 var getFirstBrowserLanguage = function () {
@@ -560,11 +568,16 @@ function loadImage(url) {
 	}
 }
 window.myLoadJson = function myLoadJson(url) {
-	window.myGetJSON(url, function(json) {
-		updateFromJson(json, url);
-		updateXml(json, url);
-	})
-	.fail(function(jqXHR, textStatus, errorThrown) { alert('window.myGetJSON request failed for '+url+'! ' + textStatus + ' ' + errorThrown); });
+	$(document).ready(function() {
+		if (window.myGetJSON === 'undefined' || window.myGetJSON === null) {
+			window.myGetJSON = myGetJSON;
+		}
+		window.myGetJSON(url, function(json) {
+			updateFromJson(json, url);
+			updateXml(json, url);
+		})
+		.fail(function(jqXHR, textStatus, errorThrown) { alert('window.myGetJSON request failed for '+url+'! ' + textStatus + ' ' + errorThrown); });
+	});
 }
 
 myLoadJson("../data/sphereflowers.x3dj");
