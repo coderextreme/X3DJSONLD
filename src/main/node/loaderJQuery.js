@@ -575,6 +575,7 @@ window.myLoadJson = function myLoadJson(url) {
 		updateFromJson(json, url);
 		updateXml(json, url);
 	}).catch(err => {
+		console.error('myloadJSON request failed for '+url+'! ' + json, err);
 		alert('myloadJSON request failed for '+url+'! ' + json, err);
 	});
 }
