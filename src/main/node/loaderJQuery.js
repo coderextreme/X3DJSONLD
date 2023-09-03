@@ -23,11 +23,11 @@ if (typeof xmldom !== 'undefined') {
 //  X3DJSONLD.setProcessURLs(function() {}); // do modify URLs in GUI
 
 function myGetJSON(url, data, success) {
-	$.ajax({
-	  dataType: "json",
-	  url: url,
-	  data: data,
-	  success: success
+	fetch(url).then(response => {
+	  return response.json();
+	}).then(jsobj => {
+		data(jsobj);
+	}).catch(err => {
 	});
 }
 if (typeof myGetJSON === 'undefined' || myGetJSON === null) {
@@ -568,19 +568,17 @@ function loadImage(url) {
 	}
 }
 window.myLoadJson = function myLoadJson(url) {
-	$(document).ready(function() {
-		if (window.myGetJSON === 'undefined' || window.myGetJSON === null) {
-			window.myGetJSON = myGetJSON;
-		}
-		window.myGetJSON(url, function(json) {
-			updateFromJson(json, url);
-			updateXml(json, url);
-		})
-		.fail(function(jqXHR, textStatus, errorThrown) { alert('window.myGetJSON request failed for '+url+'! ' + textStatus + ' ' + errorThrown); });
+	fetch(url).then(response => {
+	  return response.json();
+	}).then(json => {
+		updateFromJson(json, url);
+		updateXml(json, url);
+	}).catch(err => {
+		alert('myloadJSON request failed for '+url+'! ' + json);
 	});
 }
 
-myLoadJson("../data/sphereflowers.x3dj");
+myLoadJson("../personal/sphereflowers.x3dj");
 
 function updateXml(json, path) {
 	//  This step is an important validation step.
