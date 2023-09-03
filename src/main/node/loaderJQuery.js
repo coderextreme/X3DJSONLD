@@ -571,7 +571,8 @@ function loadImage(url) {
 }
 window.myLoadJson = function myLoadJson(url) {
 	fetch(url).then(response => {
-	  return response.json();
+	  let jsonresponse =  response.json();
+	  console.log(jsonresponse);
 	}).then(json => {
 		updateFromJson(json, url);
 		updateXml(json, url);
