@@ -192,6 +192,7 @@ window.load_X_ITE_JS = async function load_X_ITE_JS(jsobj, selector) {
 			await browser.replaceWorld(importedScene);
 		} else {
 			alert("X_ITE could not replaceWorld in load_X_ITE_JS()");
+			console.error("X_ITE could not replaceWorld in load_X_ITE_JS()", selector, jsobj );
 		}
 	} catch (e) {
 		console.error(e);
