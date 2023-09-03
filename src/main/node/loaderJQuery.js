@@ -459,6 +459,7 @@ window.replaceX3DJSON = function replaceX3DJSON(selector, json, url, NS, next) {
 
 window.updateFromJson = async function updateFromJson(json, path) {
 	try {
+		console.log("updateFromJson", json);
 		if (typeof json === 'undefined') {
 				json = JSON.parse($("#json").val());
 		}
@@ -574,7 +575,7 @@ window.myLoadJson = function myLoadJson(url) {
 		updateFromJson(json, url);
 		updateXml(json, url);
 	}).catch(err => {
-		alert('myloadJSON request failed for '+url+'! ' + json);
+		alert('myloadJSON request failed for '+url+'! ' + json, err);
 	});
 }
 
