@@ -573,6 +573,7 @@ window.myLoadJson = function myLoadJson(url) {
 	fetch(url).then(response => {
 	  let jsonresponse =  response.json();
 	  console.log(jsonresponse);
+	  return jsonresponse;
 	}).then(json => {
 		updateFromJson(json, url);
 		updateXml(json, url);
