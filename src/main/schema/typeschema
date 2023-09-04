@@ -1,0 +1,22 @@
+            "@type": {
+              "$comment": "MFString inputOutput",
+              "anyOf": [
+                {
+                 "enum": [
+		   "ANY",
+		   "WALK",
+		   "EXAMINE",
+		   "FLY",
+                   "LOOKAT",
+		   "NONE",
+		   "EXPLORE"
+                 ]
+               },
+               {
+                   "type": "string"
+               },
+               {
+                   "type": "array"
+               }
+              ]
+            },
