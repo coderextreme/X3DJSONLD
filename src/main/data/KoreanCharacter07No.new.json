@@ -73,10 +73,6 @@
             "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
           },
           {
-            "@name":"license",
-            "@content":"../license.html"
-          },
-          {
             "@name":"translated",
             "@content":"04 September 2023"
           },
@@ -115,10 +111,22 @@
               "@DEF":"hanim_No",
               "@scale":[0.0225,0.0225,0.0225],
               "@version":"2.0",
-              "-children":[
-                {
-                  "#comment":"original HAnimHumanoid info='\"authorName=Chul Hee Jung and Myeong Won Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"humanoidVersion=2.0\" \"gender=male\" \"height=1.5\"'"
+              "-metadata":
+                { "MetadataSet":
+                  {
+                    "@name":"HAnimHumanoid.info",
+                    "@reference":"https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid",
+                    "-value":[
+                      { "MetadataString":
+                        {
+                          "@name":"humanoidVersion",
+                          "@value":["2.0"]
+                        }
+                      }
+                    ]
+                  }
                 },
+              "-children":[
                 { "HAnimJoint":
                   {
                     "@USE":"hanim_humanoid_root"
@@ -171,12 +179,12 @@
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_l_metatarsophalangeal_2"
+                    "@USE":"hanim_l_metatarsophalangeal_1"
                   }
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_r_metatarsophalangeal_2"
+                    "@USE":"hanim_r_metatarsophalangeal_1"
                   }
                 },
                 { "HAnimJoint":
@@ -271,12 +279,12 @@
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_l_tarsal_proximal_phalanx_2"
+                    "@USE":"hanim_l_tarsal_proximal_phalanx_1"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_r_tarsal_proximal_phalanx_2"
+                    "@USE":"hanim_r_tarsal_proximal_phalanx_1"
                   }
                 },
                 { "HAnimSegment":
@@ -559,7 +567,7 @@
                                         { "HAnimJoint":
                                           {
                                             "@name":"l_metatarsophalangeal_2",
-                                            "@DEF":"hanim_l_metatarsophalangeal_2",
+                                            "@DEF":"hanim_l_metatarsophalangeal_1",
                                             "@center":[3.826,3.118,-0.2867],
                                             "@llimit":[0,0,0],
                                             "@ulimit":[0,0,0],
@@ -567,7 +575,7 @@
                                               { "HAnimSegment":
                                                 {
                                                   "@name":"l_tarsal_proximal_phalanx_2",
-                                                  "@DEF":"hanim_l_tarsal_proximal_phalanx_2",
+                                                  "@DEF":"hanim_l_tarsal_proximal_phalanx_1",
                                                   "-children":[
                                                     { "Transform":
                                                       {
@@ -827,7 +835,7 @@
                                         { "HAnimJoint":
                                           {
                                             "@name":"r_metatarsophalangeal_2",
-                                            "@DEF":"hanim_r_metatarsophalangeal_2",
+                                            "@DEF":"hanim_r_metatarsophalangeal_1",
                                             "@center":[-3.826,3.118,-0.2867],
                                             "@llimit":[0,0,0],
                                             "@ulimit":[0,0,0],
@@ -835,7 +843,7 @@
                                               { "HAnimSegment":
                                                 {
                                                   "@name":"r_tarsal_proximal_phalanx_2",
-                                                  "@DEF":"hanim_r_tarsal_proximal_phalanx_2",
+                                                  "@DEF":"hanim_r_tarsal_proximal_phalanx_1",
                                                   "-children":[
                                                     { "Transform":
                                                       {
@@ -1506,28 +1514,7 @@
                     ]
                   }
                 }
-              ],
-              "-metadata":
-                { "MetadataSet":
-                  {
-                    "@name":"HAnimHumanoid.info",
-                    "@reference":"https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid",
-                    "-value":[
-                      { "MetadataString":
-                        {
-                          "@name":"humanoidVersion",
-                          "@value":["2.0"]
-                        }
-                      },
-                      { "MetadataFloat":
-                        {
-                          "@name":"height",
-                          "@value":[1.5]
-                        }
-                      }
-                    ]
-                  }
-                }
+              ]
             }
           }
         ]

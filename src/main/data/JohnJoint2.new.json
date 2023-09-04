@@ -41,10 +41,6 @@
             "@content":"9 November 2020"
           },
           {
-            "@name":"license",
-            "@content":"../license.html"
-          },
-          {
             "@name":"translated",
             "@content":"04 September 2023"
           },
@@ -63,17 +59,9 @@
           { "Transform":
             {
               "-children":[
-                {
-                  "#comment":"DEF for markerfor XYZ axes"
-                },
                 { "Shape":
                   {
                     "@DEF":"AxisLinesShape",
-                    "-children":[
-                      {
-                        "#comment":"RGB lines showing XYZ axes"
-                      }
-                    ],
                     "-geometry":
                       { "IndexedLineSet":
                         {
@@ -102,15 +90,9 @@
           { "Group":
             {
               "-children":[
-                {
-                  "#comment":"DEFS for markers of skeleton joints, segments, and sites"
-                },
                 { "Transform":
                   {
                     "-children":[
-                      {
-                        "#comment":"<Transform translation='0 2 0' scale='1 1 1'> <Shape DEF='HAnimRootShape'> <Sphere radius='0.02' /> <Appearance> <Material DEF='HAnimRootMaterial' diffuseColor='0.8 0 0' transparency='0.3'/> </Appearance> </Shape> </Transform>"
-                      },
                       { "Transform":
                         {
                           "@translation":[0,2.1,0],
@@ -172,9 +154,6 @@
                             }
                           ]
                         }
-                      },
-                      {
-                        "#comment":"<Transform translation='0 2.1 0' scale='1 1 1'> <Shape DEF='HAnimSiteShape'> <IndexedFaceSet DEF='DiamondIFS' creaseAngle='0.5' solid='false' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1'> <ColorRGBA DEF='HAnimSiteColorRGBA' color='1 1 0 1 1 1 0 0.1'/> <Coordinate point='0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0'/> </IndexedFaceSet> <Appearance> <Material diffuseColor='1 1 0' transparency='0.3'/> </Appearance> </Shape> </Transform>"
                       }
                     ]
                   }
@@ -266,12 +245,12 @@
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_l_tarsal_proximal_interphalangeal_2"
+                    "@USE":"hanim_l_tarsal_proximal_interphalangeal_1"
                   }
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_l_tarsal_distal_interphalangeal_2"
+                    "@USE":"hanim_l_tarsal_distal_interphalangeal_1"
                   }
                 },
                 { "HAnimJoint":
@@ -291,12 +270,12 @@
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_l_tarsal_proximal_interphalangeal_3"
+                    "@USE":"hanim_l_tarsal_proximal_interphalangeal_2"
                   }
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_l_tarsal_distal_interphalangeal_3"
+                    "@USE":"hanim_l_tarsal_distal_interphalangeal_2"
                   }
                 },
                 { "HAnimJoint":
@@ -321,12 +300,12 @@
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_l_tarsal_proximal_interphalangeal_4"
+                    "@USE":"hanim_l_tarsal_proximal_interphalangeal_3"
                   }
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_l_tarsal_distal_interphalangeal_4"
+                    "@USE":"hanim_l_tarsal_distal_interphalangeal_3"
                   }
                 },
                 { "HAnimJoint":
@@ -341,12 +320,12 @@
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_l_tarsal_proximal_interphalangeal_5"
+                    "@USE":"hanim_l_tarsal_proximal_interphalangeal_4"
                   }
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_l_tarsal_distal_interphalangeal_5"
+                    "@USE":"hanim_l_tarsal_distal_interphalangeal_4"
                   }
                 },
                 { "HAnimJoint":
@@ -406,12 +385,12 @@
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_r_tarsal_proximal_interphalangeal_2"
+                    "@USE":"hanim_r_tarsal_proximal_interphalangeal_1"
                   }
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_r_tarsal_distal_interphalangeal_2"
+                    "@USE":"hanim_r_tarsal_distal_interphalangeal_1"
                   }
                 },
                 { "HAnimJoint":
@@ -431,12 +410,12 @@
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_r_tarsal_proximal_interphalangeal_3"
+                    "@USE":"hanim_r_tarsal_proximal_interphalangeal_2"
                   }
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_r_tarsal_distal_interphalangeal_3"
+                    "@USE":"hanim_r_tarsal_distal_interphalangeal_2"
                   }
                 },
                 { "HAnimJoint":
@@ -461,12 +440,12 @@
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_r_tarsal_proximal_interphalangeal_4"
+                    "@USE":"hanim_r_tarsal_proximal_interphalangeal_3"
                   }
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_r_tarsal_distal_interphalangeal_4"
+                    "@USE":"hanim_r_tarsal_distal_interphalangeal_3"
                   }
                 },
                 { "HAnimJoint":
@@ -481,12 +460,12 @@
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_r_tarsal_proximal_interphalangeal_5"
+                    "@USE":"hanim_r_tarsal_proximal_interphalangeal_4"
                   }
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_r_tarsal_distal_interphalangeal_5"
+                    "@USE":"hanim_r_tarsal_distal_interphalangeal_4"
                   }
                 },
                 { "HAnimJoint":
@@ -711,12 +690,12 @@
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_l_carpal_proximal_interphalangeal_2"
+                    "@USE":"hanim_l_carpal_proximal_interphalangeal_1"
                   }
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_l_carpal_distal_interphalangeal_2"
+                    "@USE":"hanim_l_carpal_distal_interphalangeal_1"
                   }
                 },
                 { "HAnimJoint":
@@ -736,17 +715,17 @@
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_l_carpal_proximal_interphalangeal_3"
+                    "@USE":"hanim_l_carpal_proximal_interphalangeal_2"
                   }
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_l_carpal_distal_interphalangeal_3"
+                    "@USE":"hanim_l_carpal_distal_interphalangeal_2"
                   }
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_l_midcarpal_4_5"
+                    "@USE":"hanim_l_midcarpal_4_1"
                   }
                 },
                 { "HAnimJoint":
@@ -761,12 +740,12 @@
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_l_carpal_proximal_interphalangeal_4"
+                    "@USE":"hanim_l_carpal_proximal_interphalangeal_3"
                   }
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_l_carpal_distal_interphalangeal_4"
+                    "@USE":"hanim_l_carpal_distal_interphalangeal_3"
                   }
                 },
                 { "HAnimJoint":
@@ -781,12 +760,12 @@
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_l_carpal_proximal_interphalangeal_5"
+                    "@USE":"hanim_l_carpal_proximal_interphalangeal_4"
                   }
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_l_carpal_distal_interphalangeal_5"
+                    "@USE":"hanim_l_carpal_distal_interphalangeal_4"
                   }
                 },
                 { "HAnimJoint":
@@ -851,12 +830,12 @@
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_r_carpal_proximal_interphalangeal_2"
+                    "@USE":"hanim_r_carpal_proximal_interphalangeal_1"
                   }
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_r_carpal_distal_interphalangeal_2"
+                    "@USE":"hanim_r_carpal_distal_interphalangeal_1"
                   }
                 },
                 { "HAnimJoint":
@@ -876,17 +855,17 @@
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_r_carpal_proximal_interphalangeal_3"
+                    "@USE":"hanim_r_carpal_proximal_interphalangeal_2"
                   }
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_r_carpal_distal_interphalangeal_3"
+                    "@USE":"hanim_r_carpal_distal_interphalangeal_2"
                   }
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_r_midcarpal_4_5"
+                    "@USE":"hanim_r_midcarpal_4_1"
                   }
                 },
                 { "HAnimJoint":
@@ -901,12 +880,12 @@
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_r_carpal_proximal_interphalangeal_4"
+                    "@USE":"hanim_r_carpal_proximal_interphalangeal_3"
                   }
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_r_carpal_distal_interphalangeal_4"
+                    "@USE":"hanim_r_carpal_distal_interphalangeal_3"
                   }
                 },
                 { "HAnimJoint":
@@ -921,12 +900,12 @@
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_r_carpal_proximal_interphalangeal_5"
+                    "@USE":"hanim_r_carpal_proximal_interphalangeal_4"
                   }
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_r_carpal_distal_interphalangeal_5"
+                    "@USE":"hanim_r_carpal_distal_interphalangeal_4"
                   }
                 },
                 { "HAnimJoint":
@@ -1046,7 +1025,7 @@
                                                                       { "HAnimJoint":
                                                                         {
                                                                           "@name":"l_tarsal_proximal_interphalangeal_2",
-                                                                          "@DEF":"hanim_l_tarsal_proximal_interphalangeal_2",
+                                                                          "@DEF":"hanim_l_tarsal_proximal_interphalangeal_1",
                                                                           "@center":[0,1,0],
                                                                           "@llimit":[0,0,0],
                                                                           "@ulimit":[0,0,0],
@@ -1054,7 +1033,7 @@
                                                                             { "HAnimJoint":
                                                                               {
                                                                                 "@name":"l_tarsal_distal_interphalangeal_2",
-                                                                                "@DEF":"hanim_l_tarsal_distal_interphalangeal_2",
+                                                                                "@DEF":"hanim_l_tarsal_distal_interphalangeal_1",
                                                                                 "@center":[0,1,0],
                                                                                 "@llimit":[0,0,0],
                                                                                 "@ulimit":[0,0,0]
@@ -1099,7 +1078,7 @@
                                                                       { "HAnimJoint":
                                                                         {
                                                                           "@name":"l_tarsal_proximal_interphalangeal_3",
-                                                                          "@DEF":"hanim_l_tarsal_proximal_interphalangeal_3",
+                                                                          "@DEF":"hanim_l_tarsal_proximal_interphalangeal_2",
                                                                           "@center":[0,1,0],
                                                                           "@llimit":[0,0,0],
                                                                           "@ulimit":[0,0,0],
@@ -1107,7 +1086,7 @@
                                                                             { "HAnimJoint":
                                                                               {
                                                                                 "@name":"l_tarsal_distal_interphalangeal_3",
-                                                                                "@DEF":"hanim_l_tarsal_distal_interphalangeal_3",
+                                                                                "@DEF":"hanim_l_tarsal_distal_interphalangeal_2",
                                                                                 "@center":[0,1,0],
                                                                                 "@llimit":[0,0,0],
                                                                                 "@ulimit":[0,0,0]
@@ -1163,7 +1142,7 @@
                                                                       { "HAnimJoint":
                                                                         {
                                                                           "@name":"l_tarsal_proximal_interphalangeal_4",
-                                                                          "@DEF":"hanim_l_tarsal_proximal_interphalangeal_4",
+                                                                          "@DEF":"hanim_l_tarsal_proximal_interphalangeal_3",
                                                                           "@center":[0,1,0],
                                                                           "@llimit":[0,0,0],
                                                                           "@ulimit":[0,0,0],
@@ -1171,7 +1150,7 @@
                                                                             { "HAnimJoint":
                                                                               {
                                                                                 "@name":"l_tarsal_distal_interphalangeal_4",
-                                                                                "@DEF":"hanim_l_tarsal_distal_interphalangeal_4",
+                                                                                "@DEF":"hanim_l_tarsal_distal_interphalangeal_3",
                                                                                 "@center":[0,1,0],
                                                                                 "@llimit":[0,0,0],
                                                                                 "@ulimit":[0,0,0]
@@ -1205,7 +1184,7 @@
                                                                       { "HAnimJoint":
                                                                         {
                                                                           "@name":"l_tarsal_proximal_interphalangeal_5",
-                                                                          "@DEF":"hanim_l_tarsal_proximal_interphalangeal_5",
+                                                                          "@DEF":"hanim_l_tarsal_proximal_interphalangeal_4",
                                                                           "@center":[0,1,0],
                                                                           "@llimit":[0,0,0],
                                                                           "@ulimit":[0,0,0],
@@ -1213,7 +1192,7 @@
                                                                             { "HAnimJoint":
                                                                               {
                                                                                 "@name":"l_tarsal_distal_interphalangeal_5",
-                                                                                "@DEF":"hanim_l_tarsal_distal_interphalangeal_5",
+                                                                                "@DEF":"hanim_l_tarsal_distal_interphalangeal_4",
                                                                                 "@center":[0,1,0],
                                                                                 "@llimit":[0,0,0],
                                                                                 "@ulimit":[0,0,0]
@@ -1344,7 +1323,7 @@
                                                                       { "HAnimJoint":
                                                                         {
                                                                           "@name":"r_tarsal_proximal_interphalangeal_2",
-                                                                          "@DEF":"hanim_r_tarsal_proximal_interphalangeal_2",
+                                                                          "@DEF":"hanim_r_tarsal_proximal_interphalangeal_1",
                                                                           "@center":[0,1,0],
                                                                           "@llimit":[0,0,0],
                                                                           "@ulimit":[0,0,0],
@@ -1352,7 +1331,7 @@
                                                                             { "HAnimJoint":
                                                                               {
                                                                                 "@name":"r_tarsal_distal_interphalangeal_2",
-                                                                                "@DEF":"hanim_r_tarsal_distal_interphalangeal_2",
+                                                                                "@DEF":"hanim_r_tarsal_distal_interphalangeal_1",
                                                                                 "@center":[0,1,0],
                                                                                 "@llimit":[0,0,0],
                                                                                 "@ulimit":[0,0,0]
@@ -1397,7 +1376,7 @@
                                                                       { "HAnimJoint":
                                                                         {
                                                                           "@name":"r_tarsal_proximal_interphalangeal_3",
-                                                                          "@DEF":"hanim_r_tarsal_proximal_interphalangeal_3",
+                                                                          "@DEF":"hanim_r_tarsal_proximal_interphalangeal_2",
                                                                           "@center":[0,1,0],
                                                                           "@llimit":[0,0,0],
                                                                           "@ulimit":[0,0,0],
@@ -1405,7 +1384,7 @@
                                                                             { "HAnimJoint":
                                                                               {
                                                                                 "@name":"r_tarsal_distal_interphalangeal_3",
-                                                                                "@DEF":"hanim_r_tarsal_distal_interphalangeal_3",
+                                                                                "@DEF":"hanim_r_tarsal_distal_interphalangeal_2",
                                                                                 "@center":[0,1,0],
                                                                                 "@llimit":[0,0,0],
                                                                                 "@ulimit":[0,0,0]
@@ -1461,7 +1440,7 @@
                                                                       { "HAnimJoint":
                                                                         {
                                                                           "@name":"r_tarsal_proximal_interphalangeal_4",
-                                                                          "@DEF":"hanim_r_tarsal_proximal_interphalangeal_4",
+                                                                          "@DEF":"hanim_r_tarsal_proximal_interphalangeal_3",
                                                                           "@center":[0,1,0],
                                                                           "@llimit":[0,0,0],
                                                                           "@ulimit":[0,0,0],
@@ -1469,7 +1448,7 @@
                                                                             { "HAnimJoint":
                                                                               {
                                                                                 "@name":"r_tarsal_distal_interphalangeal_4",
-                                                                                "@DEF":"hanim_r_tarsal_distal_interphalangeal_4",
+                                                                                "@DEF":"hanim_r_tarsal_distal_interphalangeal_3",
                                                                                 "@center":[0,1,0],
                                                                                 "@llimit":[0,0,0],
                                                                                 "@ulimit":[0,0,0]
@@ -1503,7 +1482,7 @@
                                                                       { "HAnimJoint":
                                                                         {
                                                                           "@name":"r_tarsal_proximal_interphalangeal_5",
-                                                                          "@DEF":"hanim_r_tarsal_proximal_interphalangeal_5",
+                                                                          "@DEF":"hanim_r_tarsal_proximal_interphalangeal_4",
                                                                           "@center":[0,1,0],
                                                                           "@llimit":[0,0,0],
                                                                           "@ulimit":[0,0,0],
@@ -1511,7 +1490,7 @@
                                                                             { "HAnimJoint":
                                                                               {
                                                                                 "@name":"r_tarsal_distal_interphalangeal_5",
-                                                                                "@DEF":"hanim_r_tarsal_distal_interphalangeal_5",
+                                                                                "@DEF":"hanim_r_tarsal_distal_interphalangeal_4",
                                                                                 "@center":[0,1,0],
                                                                                 "@llimit":[0,0,0],
                                                                                 "@ulimit":[0,0,0]
@@ -1940,7 +1919,7 @@
                                                                                                                                                                             { "HAnimJoint":
                                                                                                                                                                               {
                                                                                                                                                                                 "@name":"l_carpal_proximal_interphalangeal_2",
-                                                                                                                                                                                "@DEF":"hanim_l_carpal_proximal_interphalangeal_2",
+                                                                                                                                                                                "@DEF":"hanim_l_carpal_proximal_interphalangeal_1",
                                                                                                                                                                                 "@center":[0.2017,0.7363,-0.0248],
                                                                                                                                                                                 "@llimit":[0,0,0],
                                                                                                                                                                                 "@ulimit":[0,0,0],
@@ -1948,7 +1927,7 @@
                                                                                                                                                                                   { "HAnimJoint":
                                                                                                                                                                                     {
                                                                                                                                                                                       "@name":"l_carpal_distal_interphalangeal_2",
-                                                                                                                                                                                      "@DEF":"hanim_l_carpal_distal_interphalangeal_2",
+                                                                                                                                                                                      "@DEF":"hanim_l_carpal_distal_interphalangeal_1",
                                                                                                                                                                                       "@center":[0.2028,0.7139,-0.0236],
                                                                                                                                                                                       "@llimit":[0,0,0],
                                                                                                                                                                                       "@ulimit":[0,0,0]
@@ -1993,7 +1972,7 @@
                                                                                                                                                                             { "HAnimJoint":
                                                                                                                                                                               {
                                                                                                                                                                                 "@name":"l_carpal_proximal_interphalangeal_3",
-                                                                                                                                                                                "@DEF":"hanim_l_carpal_proximal_interphalangeal_3",
+                                                                                                                                                                                "@DEF":"hanim_l_carpal_proximal_interphalangeal_2",
                                                                                                                                                                                 "@center":[0.2013,0.7273,-0.0503],
                                                                                                                                                                                 "@llimit":[0,0,0],
                                                                                                                                                                                 "@ulimit":[0,0,0],
@@ -2001,7 +1980,7 @@
                                                                                                                                                                                   { "HAnimJoint":
                                                                                                                                                                                     {
                                                                                                                                                                                       "@name":"l_carpal_distal_interphalangeal_3",
-                                                                                                                                                                                      "@DEF":"hanim_l_carpal_distal_interphalangeal_3",
+                                                                                                                                                                                      "@DEF":"hanim_l_carpal_distal_interphalangeal_2",
                                                                                                                                                                                       "@center":[0.2026,0.7011,-0.0494],
                                                                                                                                                                                       "@llimit":[0,0,0],
                                                                                                                                                                                       "@ulimit":[0,0,0]
@@ -2022,7 +2001,7 @@
                                                                                                                                                           { "HAnimJoint":
                                                                                                                                                             {
                                                                                                                                                               "@name":"l_midcarpal_4_5",
-                                                                                                                                                              "@DEF":"hanim_l_midcarpal_4_5",
+                                                                                                                                                              "@DEF":"hanim_l_midcarpal_4_1",
                                                                                                                                                               "@center":[0,1,0],
                                                                                                                                                               "@llimit":[0,0,0],
                                                                                                                                                               "@ulimit":[0,0,0],
@@ -2046,7 +2025,7 @@
                                                                                                                                                                             { "HAnimJoint":
                                                                                                                                                                               {
                                                                                                                                                                                 "@name":"l_carpal_proximal_interphalangeal_4",
-                                                                                                                                                                                "@DEF":"hanim_l_carpal_proximal_interphalangeal_4",
+                                                                                                                                                                                "@DEF":"hanim_l_carpal_proximal_interphalangeal_3",
                                                                                                                                                                                 "@center":[0.1973,0.7287,-0.0777],
                                                                                                                                                                                 "@llimit":[0,0,0],
                                                                                                                                                                                 "@ulimit":[0,0,0],
@@ -2054,7 +2033,7 @@
                                                                                                                                                                                   { "HAnimJoint":
                                                                                                                                                                                     {
                                                                                                                                                                                       "@name":"l_carpal_distal_interphalangeal_4",
-                                                                                                                                                                                      "@DEF":"hanim_l_carpal_distal_interphalangeal_4",
+                                                                                                                                                                                      "@DEF":"hanim_l_carpal_distal_interphalangeal_3",
                                                                                                                                                                                       "@center":[0.1983,0.7045,-0.0767],
                                                                                                                                                                                       "@llimit":[0,0,0],
                                                                                                                                                                                       "@ulimit":[0,0,0]
@@ -2088,7 +2067,7 @@
                                                                                                                                                                             { "HAnimJoint":
                                                                                                                                                                               {
                                                                                                                                                                                 "@name":"l_carpal_proximal_interphalangeal_5",
-                                                                                                                                                                                "@DEF":"hanim_l_carpal_proximal_interphalangeal_5",
+                                                                                                                                                                                "@DEF":"hanim_l_carpal_proximal_interphalangeal_4",
                                                                                                                                                                                 "@center":[0.1938,0.7452,-0.1024],
                                                                                                                                                                                 "@llimit":[0,0,0],
                                                                                                                                                                                 "@ulimit":[0,0,0],
@@ -2096,7 +2075,7 @@
                                                                                                                                                                                   { "HAnimJoint":
                                                                                                                                                                                     {
                                                                                                                                                                                       "@name":"l_carpal_distal_interphalangeal_5",
-                                                                                                                                                                                      "@DEF":"hanim_l_carpal_distal_interphalangeal_5",
+                                                                                                                                                                                      "@DEF":"hanim_l_carpal_distal_interphalangeal_4",
                                                                                                                                                                                       "@center":[0.1948,0.7277,-0.1017],
                                                                                                                                                                                       "@llimit":[0,0,0],
                                                                                                                                                                                       "@ulimit":[0,0,0]
@@ -2238,7 +2217,7 @@
                                                                                                                                                                             { "HAnimJoint":
                                                                                                                                                                               {
                                                                                                                                                                                 "@name":"r_carpal_proximal_interphalangeal_2",
-                                                                                                                                                                                "@DEF":"hanim_r_carpal_proximal_interphalangeal_2",
+                                                                                                                                                                                "@DEF":"hanim_r_carpal_proximal_interphalangeal_1",
                                                                                                                                                                                 "@center":[-0.1954,0.7393,-0.0185],
                                                                                                                                                                                 "@llimit":[0,0,0],
                                                                                                                                                                                 "@ulimit":[0,0,0],
@@ -2246,7 +2225,7 @@
                                                                                                                                                                                   { "HAnimJoint":
                                                                                                                                                                                     {
                                                                                                                                                                                       "@name":"r_carpal_distal_interphalangeal_2",
-                                                                                                                                                                                      "@DEF":"hanim_r_carpal_distal_interphalangeal_2",
+                                                                                                                                                                                      "@DEF":"hanim_r_carpal_distal_interphalangeal_1",
                                                                                                                                                                                       "@center":[-0.1945,0.7169,-0.0173],
                                                                                                                                                                                       "@llimit":[0,0,0],
                                                                                                                                                                                       "@ulimit":[0,0,0]
@@ -2291,7 +2270,7 @@
                                                                                                                                                                             { "HAnimJoint":
                                                                                                                                                                               {
                                                                                                                                                                                 "@name":"r_carpal_proximal_interphalangeal_3",
-                                                                                                                                                                                "@DEF":"hanim_r_carpal_proximal_interphalangeal_3",
+                                                                                                                                                                                "@DEF":"hanim_r_carpal_proximal_interphalangeal_2",
                                                                                                                                                                                 "@center":[-0.195,0.7304,-0.0441],
                                                                                                                                                                                 "@llimit":[0,0,0],
                                                                                                                                                                                 "@ulimit":[0,0,0],
@@ -2299,7 +2278,7 @@
                                                                                                                                                                                   { "HAnimJoint":
                                                                                                                                                                                     {
                                                                                                                                                                                       "@name":"r_carpal_distal_interphalangeal_3",
-                                                                                                                                                                                      "@DEF":"hanim_r_carpal_distal_interphalangeal_3",
+                                                                                                                                                                                      "@DEF":"hanim_r_carpal_distal_interphalangeal_2",
                                                                                                                                                                                       "@center":[-0.1939,0.7042,-0.0432],
                                                                                                                                                                                       "@llimit":[0,0,0],
                                                                                                                                                                                       "@ulimit":[0,0,0]
@@ -2320,7 +2299,7 @@
                                                                                                                                                           { "HAnimJoint":
                                                                                                                                                             {
                                                                                                                                                               "@name":"r_midcarpal_4_5",
-                                                                                                                                                              "@DEF":"hanim_r_midcarpal_4_5",
+                                                                                                                                                              "@DEF":"hanim_r_midcarpal_4_1",
                                                                                                                                                               "@center":[0,1,0],
                                                                                                                                                               "@llimit":[0,0,0],
                                                                                                                                                               "@ulimit":[0,0,0],
@@ -2344,7 +2323,7 @@
                                                                                                                                                                             { "HAnimJoint":
                                                                                                                                                                               {
                                                                                                                                                                                 "@name":"r_carpal_proximal_interphalangeal_4",
-                                                                                                                                                                                "@DEF":"hanim_r_carpal_proximal_interphalangeal_4",
+                                                                                                                                                                                "@DEF":"hanim_r_carpal_proximal_interphalangeal_3",
                                                                                                                                                                                 "@center":[-0.192,0.7318,-0.0716],
                                                                                                                                                                                 "@llimit":[0,0,0],
                                                                                                                                                                                 "@ulimit":[0,0,0],
@@ -2352,7 +2331,7 @@
                                                                                                                                                                                   { "HAnimJoint":
                                                                                                                                                                                     {
                                                                                                                                                                                       "@name":"r_carpal_distal_interphalangeal_4",
-                                                                                                                                                                                      "@DEF":"hanim_r_carpal_distal_interphalangeal_4",
+                                                                                                                                                                                      "@DEF":"hanim_r_carpal_distal_interphalangeal_3",
                                                                                                                                                                                       "@center":[-0.1908,0.7077,-0.0706],
                                                                                                                                                                                       "@llimit":[0,0,0],
                                                                                                                                                                                       "@ulimit":[0,0,0]
@@ -2386,7 +2365,7 @@
                                                                                                                                                                             { "HAnimJoint":
                                                                                                                                                                               {
                                                                                                                                                                                 "@name":"r_carpal_proximal_interphalangeal_5",
-                                                                                                                                                                                "@DEF":"hanim_r_carpal_proximal_interphalangeal_5",
+                                                                                                                                                                                "@DEF":"hanim_r_carpal_proximal_interphalangeal_4",
                                                                                                                                                                                 "@center":[-0.1902,0.7483,-0.0963],
                                                                                                                                                                                 "@llimit":[0,0,0],
                                                                                                                                                                                 "@ulimit":[0,0,0],
@@ -2394,7 +2373,7 @@
                                                                                                                                                                                   { "HAnimJoint":
                                                                                                                                                                                     {
                                                                                                                                                                                       "@name":"r_carpal_distal_interphalangeal_5",
-                                                                                                                                                                                      "@DEF":"hanim_r_carpal_distal_interphalangeal_5",
+                                                                                                                                                                                      "@DEF":"hanim_r_carpal_distal_interphalangeal_4",
                                                                                                                                                                                       "@center":[-0.1908,0.754,-0.096],
                                                                                                                                                                                       "@llimit":[0,0,0],
                                                                                                                                                                                       "@ulimit":[0,0,0]

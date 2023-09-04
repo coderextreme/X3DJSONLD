@@ -35,12 +35,12 @@
             "@content":"CHANGELOG.txt"
           },
           {
-            "@name":"TODO",
-            "@content":"credit for audio files"
-          },
-          {
             "@name":"reference",
             "@content":"http://www.medialab.hmu.gr/minipages/x3domAudio"
+          },
+          {
+            "@name":"TODO",
+            "@content":"credit for audio files"
           },
           {
             "@name":"identifier",
@@ -49,10 +49,6 @@
           {
             "@name":"generator",
             "@content":"X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
-          },
-          {
-            "@name":"license",
-            "@content":"../license.html"
           },
           {
             "@name":"translated",
@@ -77,7 +73,6 @@
           },
           { "NavigationInfo":
             {
-              "@type":"\"NONE\""
             }
           },
           { "Background":
@@ -193,7 +188,6 @@
                           "-geometry":
                             { "Text":
                               {
-                                "@string":["Right Channel Volume"],
                                 "-fontStyle":
                                   { "FontStyle":
                                     {
@@ -312,7 +306,6 @@
                           "-geometry":
                             { "Text":
                               {
-                                "@string":["Left Channel Volume"],
                                 "-fontStyle":
                                   { "FontStyle":
                                     {
@@ -379,7 +372,6 @@
                                 "-children":[
                                   { "Gain":
                                     {
-                                      "@USE":"ChannelSplitter"
                                     }
                                   }
                                 ]
@@ -391,7 +383,6 @@
                                 "-children":[
                                   { "Gain":
                                     {
-                                      "@USE":"ChannelSplitter"
                                     }
                                   }
                                 ]

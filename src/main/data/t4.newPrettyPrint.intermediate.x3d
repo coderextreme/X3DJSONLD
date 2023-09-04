@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <component name='Networking' level='2'/>
     <component name='Core' level='2'/>
@@ -10,16 +10,12 @@
     <meta content='Andreas Plesch and John Carlson' name='creator'/>
     <meta content='t1.wrl' name='source'/>
     <meta content='Test Case for Proto Expander' name='description'/>
-    <meta content='https://www.web3d.org/x3d/content/examples/license.html' name='license'/>
   </head>
   <Scene>
-    <NavigationInfo avatarSize='200 200 120' speed='3.0' transitionType='"LINEAR"' type='"EXAMINE" "FLY" "WALK"'/>
-    <WorldInfo title='Arts Mapper'/>
-    <Viewpoint description='looking North' fieldOfView='0.7853981' orientation='1 0 0 -0.7' position='0 60 110'/>
     <ProtoDeclare name='org'>
       <ProtoInterface>
-        <field name='posi' accessType='initializeOnly' type='SFVec3f' value='0 0 0'/>
-        <field name='col' accessType='initializeOnly' type='SFColor' value='0 0 0'/>
+        <field name='posi' accessType='initializeOnly' type='SFVec3f'/>
+        <field name='col' accessType='initializeOnly' type='SFColor'/>
       </ProtoInterface>
       <ProtoBody>
         <Transform>
@@ -41,7 +37,7 @@
     </ProtoDeclare>
     <ProtoDeclare name='r'>
       <ProtoInterface>
-        <field name='pos' accessType='initializeOnly' type='SFVec3f' value='0 0 0'/>
+        <field name='pos' accessType='initializeOnly' type='SFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
         <ProtoInstance name='org'>
@@ -54,7 +50,7 @@
     </ProtoDeclare>
     <ProtoDeclare name='n'>
       <ProtoInterface>
-        <field name='pos' accessType='initializeOnly' type='SFVec3f' value='0 0 0'/>
+        <field name='pos' accessType='initializeOnly' type='SFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
         <ProtoInstance name='org'>
@@ -67,7 +63,7 @@
     </ProtoDeclare>
     <ProtoDeclare name='i'>
       <ProtoInterface>
-        <field name='pos' accessType='initializeOnly' type='SFVec3f' value='0 0 0'/>
+        <field name='pos' accessType='initializeOnly' type='SFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
         <ProtoInstance name='org'>
@@ -78,78 +74,81 @@
         </ProtoInstance>
       </ProtoBody>
     </ProtoDeclare>
+    <NavigationInfo avatarSize='200 200 120' speed='3.0' transitionType='"LINEAR"' type='"EXAMINE" "FLY" "WALK"'/>
+    <WorldInfo title='Arts Mapper'/>
+    <Viewpoint description='looking North' fieldOfView='0.7853981' orientation='1 0 0 -0.7' position='0 60 110'/>
     <Transform translation='-468 0 315'>
-      <Anchor description='High Peak Community Arts' url='", " "javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/574.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);javascript:window.open(&apos;./data/574.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
+      <Anchor description='High Peak Community Arts' url='"javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/574.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);" "javascript:window.open(&apos;./data/574.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
         <ProtoInstance name='r'>
           <fieldValue name='pos' value='400 0.1 -385'/>
         </ProtoInstance>
       </Anchor>
-      <Anchor description='People Express' url='", " "javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/583.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);javascript:window.open(&apos;./data/583.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
+      <Anchor description='People Express' url='"javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/583.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);" "javascript:window.open(&apos;./data/583.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
         <ProtoInstance name='i'>
           <fieldValue name='pos' value='429.9 0.1 -319.6'/>
         </ProtoInstance>
       </Anchor>
-      <Anchor description='QArts/Studios' url='", " "javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/589.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);javascript:window.open(&apos;./data/589.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
+      <Anchor description='QArts/Studios' url='"javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/589.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);" "javascript:window.open(&apos;./data/589.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
         <ProtoInstance name='i'>
           <fieldValue name='pos' value='430 0.1 -335'/>
         </ProtoInstance>
       </Anchor>
-      <Anchor description='First Movement' url='", " "javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/593.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);javascript:window.open(&apos;./data/593.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
+      <Anchor description='First Movement' url='"javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/593.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);" "javascript:window.open(&apos;./data/593.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
         <ProtoInstance name='n'>
           <fieldValue name='pos' value='429.9 0.1 -360.3'/>
         </ProtoInstance>
       </Anchor>
-      <Anchor description='City Arts' url='", " "javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/612.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);javascript:window.open(&apos;./data/612.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
+      <Anchor description='City Arts' url='"javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/612.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);" "javascript:window.open(&apos;./data/612.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
         <ProtoInstance name='i'>
           <fieldValue name='pos' value='455.9 0.1 -341.3'/>
         </ProtoInstance>
       </Anchor>
-      <Anchor description='Indigo Dance Group (Salamanda Tandem)' url='", " "javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/615.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);javascript:window.open(&apos;./data/615.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
+      <Anchor description='Indigo Dance Group (Salamanda Tandem)' url='"javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/615.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);" "javascript:window.open(&apos;./data/615.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
         <ProtoInstance name='r'>
           <fieldValue name='pos' value='456.1 0.1 -341.5'/>
         </ProtoInstance>
       </Anchor>
-      <Anchor description='Watering Seeds' url='", " "javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/623.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);javascript:window.open(&apos;./data/623.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
+      <Anchor description='Watering Seeds' url='"javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/623.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);" "javascript:window.open(&apos;./data/623.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
         <ProtoInstance name='r'>
           <fieldValue name='pos' value='454 0.1 -361.3'/>
         </ProtoInstance>
       </Anchor>
-      <Anchor description='Fased In The Arts' url='", " "javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/630.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);javascript:window.open(&apos;./data/630.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
+      <Anchor description='Fased In The Arts' url='"javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/630.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);" "javascript:window.open(&apos;./data/630.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
         <ProtoInstance name='r'>
           <fieldValue name='pos' value='440 0.1 -350'/>
         </ProtoInstance>
       </Anchor>
-      <Anchor description='27a Access Artspace' url='", " "javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/633.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);javascript:window.open(&apos;./data/633.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
+      <Anchor description='27a Access Artspace' url='"javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/633.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);" "javascript:window.open(&apos;./data/633.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
         <ProtoInstance name='n'>
           <fieldValue name='pos' value='458.9 0.1 -304.3'/>
         </ProtoInstance>
       </Anchor>
-      <Anchor description='Bamboozle Theatre Company' url='", " "javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/638.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);javascript:window.open(&apos;./data/638.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
+      <Anchor description='Bamboozle Theatre Company' url='"javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/638.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);" "javascript:window.open(&apos;./data/638.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
         <ProtoInstance name='r'>
           <fieldValue name='pos' value='457.1 0.1 -300.8'/>
         </ProtoInstance>
       </Anchor>
-      <Anchor description='Mantle Community Arts' url='", " "javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/648.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);javascript:window.open(&apos;./data/648.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
+      <Anchor description='Mantle Community Arts' url='"javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/648.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);" "javascript:window.open(&apos;./data/648.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
         <ProtoInstance name='r'>
           <fieldValue name='pos' value='442.4 0.1 -314.5'/>
         </ProtoInstance>
       </Anchor>
-      <Anchor description='Artlink East' url='", " "javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/658.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);javascript:window.open(&apos;./data/658.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
+      <Anchor description='Artlink East' url='"javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/658.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);" "javascript:window.open(&apos;./data/658.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
         <ProtoInstance name='r'>
           <fieldValue name='pos' value='491.6 0.1 -335.7'/>
         </ProtoInstance>
       </Anchor>
-      <Anchor description='Creations' url='", " "javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/665.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);javascript:window.open(&apos;./data/665.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
+      <Anchor description='Creations' url='"javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/665.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);" "javascript:window.open(&apos;./data/665.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
         <ProtoInstance name='r'>
           <fieldValue name='pos' value='467 0.1 -243.9'/>
         </ProtoInstance>
       </Anchor>
-      <Anchor description='New Perspectives' url='", " "javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/670.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);javascript:window.open(&apos;./data/670.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
+      <Anchor description='New Perspectives' url='"javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/670.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);" "javascript:window.open(&apos;./data/670.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
         <ProtoInstance name='n'>
           <fieldValue name='pos' value='457.4 0.1 -262.7'/>
         </ProtoInstance>
       </Anchor>
-      <Anchor description='UKan2' url='", " "javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/671.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);javascript:window.open(&apos;./data/671.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
+      <Anchor description='UKan2' url='"javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/671.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);" "javascript:window.open(&apos;./data/671.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
         <ProtoInstance name='r'>
           <fieldValue name='pos' value='458.7 0.1 -262.7'/>
         </ProtoInstance>

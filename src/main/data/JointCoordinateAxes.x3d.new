@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-4.0.xsd" ><head></head>
+<Scene><NavigationInfo headlight="false"></NavigationInfo>
+<Group><Group DEF="ARROW"><Shape><Appearance DEF="ARROW_APPEARANCE"><Material diffuseColor="0.3 0.3 1" emissiveColor="0.3 0.3 0.33"></Material>
+</Appearance>
+<Cylinder top="false" bottom="false" radius="0.025"></Cylinder>
+</Shape>
+<Transform translation="0 1 0"><Shape DEF="ARROW_POINTER"><Appearance USE="ARROW_APPEARANCE"></Appearance>
+<Cone height="0.1" bottomRadius="0.05"></Cone>
+</Shape>
+</Transform>
+<Transform translation="0 -1 0" rotation="1 0 0 3.1416"><Shape USE="ARROW_POINTER"></Shape>
+</Transform>
+</Group>
+<Transform translation="0 1.08 0"><Billboard><Shape><Appearance DEF="LABEL_APPEARANCE"><Material diffuseColor="1 1 0.3" emissiveColor="0.33 0.33 0.1"></Material>
+</Appearance>
+<Text string="&quot;Y&quot;"><FontStyle DEF="LABEL_FONT" family="&quot;SANS&quot;" size="0.2" justify="&quot;MIDDLE&quot;"></FontStyle>
+</Text>
+</Shape>
+</Billboard>
+</Transform>
+</Group>
+<Transform rotation="0 0 1 -1.5708"><Group><Group USE="ARROW"></Group>
+<Transform translation="0.072 1.1 0" rotation="0 0 1 1.5708"><Billboard><Shape><Appearance USE="LABEL_APPEARANCE"></Appearance>
+<Text string="&quot;X&quot;"><FontStyle USE="LABEL_FONT"></FontStyle>
+</Text>
+</Shape>
+</Billboard>
+</Transform>
+</Group>
+</Transform>
+<Transform rotation="1 0 0 1.5708"><Group><Group USE="ARROW"></Group>
+<Transform translation="0 1.1 0.072" rotation="1 0 0 -1.5708"><Billboard><Shape><Appearance USE="LABEL_APPEARANCE"></Appearance>
+<Text string="&quot;Z&quot;"><FontStyle USE="LABEL_FONT"></FontStyle>
+</Text>
+</Shape>
+</Billboard>
+</Transform>
+</Group>
+</Transform>
+</Scene>
+</X3D>

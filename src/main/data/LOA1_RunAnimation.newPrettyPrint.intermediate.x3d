@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='LOA1_RunAnimation.x3d' name='title'/>
     <meta content='Humanoid animation prototype reusable by any Humanoid.' name='description'/>
@@ -16,10 +16,8 @@
     <meta content='Nancy Run Animation HAnim 2001' name='subject'/>
     <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_RunAnimation.x3d' name='identifier'/>
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
-    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
-    <WorldInfo title='LOA1_RunAnimation.x3d'/>
     <ProtoDeclare name='LOA1_RunAnimation'>
       <ProtoInterface>
         <field name='cycleInterval' accessType='inputOutput' type='SFTime'/>
@@ -53,13 +51,13 @@
         <Group>
           <TimeSensor DEF='TIMER'>
             <IS>
-              <connect nodeField='cycleInterval' protoField='cycleInterval'/>
               <connect nodeField='enabled' protoField='enabled'/>
+              <connect nodeField='cycleInterval' protoField='cycleInterval'/>
               <connect nodeField='loop' protoField='loop'/>
               <connect nodeField='startTime' protoField='startTime'/>
               <connect nodeField='stopTime' protoField='stopTime'/>
-              <connect nodeField='fraction_changed' protoField='fraction_changed'/>
               <connect nodeField='isActive' protoField='isActive'/>
+              <connect nodeField='fraction_changed' protoField='fraction_changed'/>
             </IS>
           </TimeSensor>
           <PositionInterpolator DEF='HUMANOIDROOT_POSITION_ANIMATOR' key='0 0.2182 0.2909 0.3091 0.7091 0.8 0.8182 1' keyValue='0 -0.0351 0 0 -0.0351 0 0 -0.04087 0 0 -0.04886 0 0 -0.04051 0 0 -0.03666 0 0 -0.03666 0 0 -0.0351 0'>
@@ -179,8 +177,7 @@
         <ROUTE fromField='fraction_changed' fromNode='TIMER' toField='set_fraction' toNode='R_WRIST_ANIMATOR'/>
       </ProtoBody>
     </ProtoDeclare>
-    <!-- ====================================== -->
-    <!-- Point to example use in case someone inspects this file -->
+    <WorldInfo title='LOA1_RunAnimation.x3d'/>
     <Anchor description='InterchangableActorsViaDynamicRouting' parameter='"target=_blank"' url='"InterchangableActorsViaDynamicRouting.x3d" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.x3d" "InterchangableActorsViaDynamicRouting.wrl" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.wrl"'>
       <Shape>
         <Appearance>

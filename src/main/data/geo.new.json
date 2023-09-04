@@ -61,10 +61,6 @@
             "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d"
           },
           {
-            "@name":"description",
-            "@content":"a sphere"
-          },
-          {
             "@name":"translated",
             "@content":"04 September 2023"
           },
@@ -90,9 +86,6 @@
               "@DEF":"Tour",
               "@description":"Tour Views"
             }
-          },
-          {
-            "#comment":"Viewpoint position='0 0 4' description='sphere in road'/"
           },
           { "Background":
             {
@@ -239,43 +232,7 @@
                           "-texture":
                             { "ComposedCubeMapTexture":
                               {
-                                "@DEF":"texture",
-                                "-backTexture":
-                                  { "ImageTexture":
-                                    {
-                                      "@url":["../resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"]
-                                    }
-                                  },
-                                "-bottomTexture":
-                                  { "ImageTexture":
-                                    {
-                                      "@url":["../resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"]
-                                    }
-                                  },
-                                "-frontTexture":
-                                  { "ImageTexture":
-                                    {
-                                      "@url":["../resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"]
-                                    }
-                                  },
-                                "-leftTexture":
-                                  { "ImageTexture":
-                                    {
-                                      "@url":["../resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"]
-                                    }
-                                  },
-                                "-rightTexture":
-                                  { "ImageTexture":
-                                    {
-                                      "@url":["../resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"]
-                                    }
-                                  },
-                                "-topTexture":
-                                  { "ImageTexture":
-                                    {
-                                      "@url":["../resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"]
-                                    }
-                                  }
+                                "@DEF":"texture"
                               }
                             }
                         }
