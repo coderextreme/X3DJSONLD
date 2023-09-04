@@ -13,7 +13,7 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
-      var X3D0 =  (new autoclass.X3D()).setProfile("Interchange").setVersion("3.0")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Interchange").setVersion("4.0")
       .setHead((new autoclass.head())
         .addMeta((new autoclass.meta()).setName("title").setContent("indexedfaceset_pixeltexture_plus.x3d"))
         .addMeta((new autoclass.meta()).setName("Image").setContent("indexedfaceset_pixeltexture_plus-front.jpg"))
@@ -33,23 +33,22 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("description").setContent("Test of browser ability to map a 3 times multiple of an PixelTexture onto an IndexedFaceSet geometry. A 3 by 3 matrix of four equal sized red, green, white and yellow squares in the pixel texture map all the faces of the cube."))
         .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/ConformanceNist/GeometricProperties/TextureCoordinate/indexedfaceset_pixeltexture_plus.x3d"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
-        .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta((new autoclass.meta()).setName("license").setContent("../../license.html")))
+        .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.Viewpoint()).setDescription("Front View"))
-        .addChild((new autoclass.Viewpoint()).setDescription("Rear View").setOrientation(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(3.14)])).setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(-10)])))
-        .addChild((new autoclass.Viewpoint()).setDescription("Top View").setOrientation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(-1.57)])).setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(10), java.newFloat(0)])))
-        .addChild((new autoclass.Viewpoint()).setDescription("Bottom View").setOrientation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(1.57)])).setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(-10), java.newFloat(0)])))
-        .addChild((new autoclass.Viewpoint()).setDescription("Right View").setOrientation(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(1.57)])).setPosition(java.newArray("float", [java.newFloat(10), java.newFloat(0), java.newFloat(0)])))
-        .addChild((new autoclass.Viewpoint()).setDescription("Left View").setOrientation(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(-1.57)])).setPosition(java.newArray("float", [java.newFloat(-10), java.newFloat(0), java.newFloat(0)])))
+        .addChild((new autoclass.Viewpoint()).setDescription("Rear View").setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(-10)])).setOrientation(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(3.14)])))
+        .addChild((new autoclass.Viewpoint()).setDescription("Top View").setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(10), java.newFloat(0)])).setOrientation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(-1.57)])))
+        .addChild((new autoclass.Viewpoint()).setDescription("Bottom View").setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(-10), java.newFloat(0)])).setOrientation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(1.57)])))
+        .addChild((new autoclass.Viewpoint()).setDescription("Right View").setPosition(java.newArray("float", [java.newFloat(10), java.newFloat(0), java.newFloat(0)])).setOrientation(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(1.57)])))
+        .addChild((new autoclass.Viewpoint()).setDescription("Left View").setPosition(java.newArray("float", [java.newFloat(-10), java.newFloat(0), java.newFloat(0)])).setOrientation(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(-1.57)])))
         .addChild((new autoclass.NavigationInfo()).setType(java.newArray("java.lang.String", ["EXAMINE","WALK","FLY","ANY"])))
         .addChild((new autoclass.Shape())
           .setAppearance((new autoclass.Appearance())
             .setMaterial((new autoclass.Material()))
-            .setTexture((new autoclass.PixelTexture()).setImage(java.newArray("int", [2,2,4,4278190335,16711935,4294967295,4294902015]))))
-          .setGeometry((new autoclass.IndexedFaceSet()).setColorPerVertex(false).setCoordIndex(java.newArray("int", [0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1])).setCreaseAngle(java.newFloat(0.5)).setTexCoordIndex(java.newArray("int", [0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1]))
+            .setTexture((new autoclass.PixelTexture()).setImage(java.newArray("int", [2,2,4,-16776961,16711935,-1,-65281]))))
+          .setGeometry((new autoclass.IndexedFaceSet()).setCreaseAngle(java.newFloat(0.5)).setColorPerVertex(false).setTexCoordIndex(java.newArray("int", [0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1])).setCoordIndex(java.newArray("int", [0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]))
             .setColor((new autoclass.Color()).setColor(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(0)])))
-            .setCoord((new autoclass.Coordinate()).setPoint(java.newArray("float", [java.newFloat(-2), java.newFloat(1), java.newFloat(1), java.newFloat(-2), java.newFloat(-1), java.newFloat(1), java.newFloat(2), java.newFloat(1), java.newFloat(1), java.newFloat(2), java.newFloat(-1), java.newFloat(1), java.newFloat(2), java.newFloat(1), java.newFloat(-1), java.newFloat(2), java.newFloat(-1), java.newFloat(-1), java.newFloat(-2), java.newFloat(1), java.newFloat(-1), java.newFloat(-2), java.newFloat(-1), java.newFloat(-1)])))
-            .setTexCoord((new autoclass.TextureCoordinate()).setPoint(java.newArray("float", [java.newFloat(-1), java.newFloat(2), java.newFloat(-1), java.newFloat(-1), java.newFloat(2), java.newFloat(2), java.newFloat(2), java.newFloat(-1)]))))))      ;
+            .setTexCoord((new autoclass.TextureCoordinate()).setPoint(java.newArray("float", [java.newFloat(-1), java.newFloat(2), java.newFloat(-1), java.newFloat(-1), java.newFloat(2), java.newFloat(2), java.newFloat(2), java.newFloat(-1)])))
+            .setCoord((new autoclass.Coordinate()).setPoint(java.newArray("float", [java.newFloat(-2), java.newFloat(1), java.newFloat(1), java.newFloat(-2), java.newFloat(-1), java.newFloat(1), java.newFloat(2), java.newFloat(1), java.newFloat(1), java.newFloat(2), java.newFloat(-1), java.newFloat(1), java.newFloat(2), java.newFloat(1), java.newFloat(-1), java.newFloat(2), java.newFloat(-1), java.newFloat(-1), java.newFloat(-2), java.newFloat(1), java.newFloat(-1), java.newFloat(-2), java.newFloat(-1), java.newFloat(-1)]))))))      ;
     X3D0.toFileX3D("../data/indexedfaceset_pixeltexture_plus.new.node.x3d");
     process.exit(0);

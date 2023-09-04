@@ -37,12 +37,12 @@ var X3D0 =  X3D(
               content_ : SFString('CHANGELOG.txt')),
 
             meta(
-              name_ : SFString('TODO'),
-              content_ : SFString('credit for audio files')),
-
-            meta(
               name_ : SFString('reference'),
               content_ : SFString('http://www.medialab.hmu.gr/minipages/x3domAudio')),
+
+            meta(
+              name_ : SFString('TODO'),
+              content_ : SFString('credit for audio files')),
 
             meta(
               name_ : SFString('identifier'),
@@ -50,26 +50,21 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit')),
-
-            meta(
-              name_ : SFString('license'),
-              content_ : SFString('../license.html'))]),
+              content_ : SFString('X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit'))]),
       Scene_ : 
         Scene(
           children_ : [
             WorldInfo(
               title_ : SFString('SplitChannels.x3d')),
 
-            NavigationInfo(
-              type_ : MFString([SFString("ON")])),
+            NavigationInfo(),
 
             Background(
               skyColor_ : MFColor([SFColor(0.2), SFColor(0.2), SFColor(0.21)])),
 
             Viewpoint(
-              orientation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
               position_ : SFVec3f([SFDouble(0), SFDouble(500), SFDouble(600)]),
+              orientation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
               retainUserOffsets_ : true),
 
             Transform(
@@ -77,8 +72,8 @@ var X3D0 =  X3D(
               translation_ : SFVec3f([SFDouble(100), SFDouble(400), SFDouble(400)]),
               children_ : [
                 Transform(
-                  rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
                   translation_ : SFVec3f([SFDouble(0), SFDouble(40), SFDouble(0)]),
+                  rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
                   child_ : 
                     Shape(
                       appearance_ : 
@@ -87,15 +82,15 @@ var X3D0 =  X3D(
                           material_ : 
                             Material(
                               diffuseColor_ : SFColor([SFDouble(0), SFDouble(1), SFDouble(0)]),
-                              emissiveColor_ : SFColor([SFDouble(0.8), SFDouble(0.8), SFDouble(0.8)]),
-                              specularColor_ : SFColor([SFDouble(0.01), SFDouble(0.01), SFDouble(0.01)]))),
+                              specularColor_ : SFColor([SFDouble(0.01), SFDouble(0.01), SFDouble(0.01)]),
+                              emissiveColor_ : SFColor([SFDouble(0.8), SFDouble(0.8), SFDouble(0.8)]))),
                       geometry_ : 
                         Box(
                           size_ : SFVec3f([SFDouble(10), SFDouble(80), SFDouble(0.01)])))),
 
                 Transform(
-                  rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
                   translation_ : SFVec3f([SFDouble(-2.7), SFDouble(37), SFDouble(0)]),
+                  rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
                   child_ : 
                     Shape(
                       appearance_ : 
@@ -104,8 +99,8 @@ var X3D0 =  X3D(
                           material_ : 
                             Material(
                               diffuseColor_ : SFColor([SFDouble(0), SFDouble(1), SFDouble(0)]),
-                              emissiveColor_ : SFColor([SFDouble(0.8), SFDouble(0.8), SFDouble(0.8)]),
-                              specularColor_ : SFColor([SFDouble(0.01), SFDouble(0.01), SFDouble(0.01)])),
+                              specularColor_ : SFColor([SFDouble(0.01), SFDouble(0.01), SFDouble(0.01)]),
+                              emissiveColor_ : SFColor([SFDouble(0.8), SFDouble(0.8), SFDouble(0.8)])),
                           texture_ : 
                             ImageTexture(
                               url_ : MFString([SFString("images/line.png"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png")]))),
@@ -115,9 +110,9 @@ var X3D0 =  X3D(
 
                 Transform(
                   DEF_ : SFString('volumeRight'),
+                  translation_ : SFVec3f([SFDouble(0), SFDouble(-10), SFDouble(0)]),
                   rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
                   scale_ : SFVec3f([SFDouble(10), SFDouble(10), SFDouble(10)]),
-                  translation_ : SFVec3f([SFDouble(0), SFDouble(-10), SFDouble(0)]),
                   child_ : 
                     Shape(
                       appearance_ : 
@@ -126,11 +121,10 @@ var X3D0 =  X3D(
                             Material(
                               ambientIntensity_ : 0.0933,
                               diffuseColor_ : SFColor([SFDouble(0.345), SFDouble(0.345), SFDouble(0.882)]),
-                              shininess_ : 0.51,
-                              specularColor_ : SFColor([SFDouble(0.46), SFDouble(0.46), SFDouble(0.46)]))),
+                              specularColor_ : SFColor([SFDouble(0.46), SFDouble(0.46), SFDouble(0.46)]),
+                              shininess_ : 0.51)),
                       geometry_ : 
                         Text(
-                          string_ : MFString([SFString("Right Channel Volume")]),
                           fontStyle_ : 
                             FontStyle(
                               family_ : MFString([SFString("Times")]),
@@ -141,8 +135,8 @@ var X3D0 =  X3D(
               translation_ : SFVec3f([SFDouble(-100), SFDouble(400), SFDouble(400)]),
               children_ : [
                 Transform(
-                  rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
                   translation_ : SFVec3f([SFDouble(0), SFDouble(40), SFDouble(0)]),
+                  rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
                   child_ : 
                     Shape(
                       appearance_ : 
@@ -151,15 +145,15 @@ var X3D0 =  X3D(
                           material_ : 
                             Material(
                               diffuseColor_ : SFColor([SFDouble(0), SFDouble(1), SFDouble(0)]),
-                              emissiveColor_ : SFColor([SFDouble(0.8), SFDouble(0.8), SFDouble(0.8)]),
-                              specularColor_ : SFColor([SFDouble(0.01), SFDouble(0.01), SFDouble(0.01)]))),
+                              specularColor_ : SFColor([SFDouble(0.01), SFDouble(0.01), SFDouble(0.01)]),
+                              emissiveColor_ : SFColor([SFDouble(0.8), SFDouble(0.8), SFDouble(0.8)]))),
                       geometry_ : 
                         Box(
                           size_ : SFVec3f([SFDouble(10), SFDouble(80), SFDouble(0.01)])))),
 
                 Transform(
-                  rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
                   translation_ : SFVec3f([SFDouble(13.2), SFDouble(37), SFDouble(0)]),
+                  rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
                   child_ : 
                     Shape(
                       appearance_ : 
@@ -168,8 +162,8 @@ var X3D0 =  X3D(
                           material_ : 
                             Material(
                               diffuseColor_ : SFColor([SFDouble(0), SFDouble(1), SFDouble(0)]),
-                              emissiveColor_ : SFColor([SFDouble(0.8), SFDouble(0.8), SFDouble(0.8)]),
-                              specularColor_ : SFColor([SFDouble(0.01), SFDouble(0.01), SFDouble(0.01)])),
+                              specularColor_ : SFColor([SFDouble(0.01), SFDouble(0.01), SFDouble(0.01)]),
+                              emissiveColor_ : SFColor([SFDouble(0.8), SFDouble(0.8), SFDouble(0.8)])),
                           texture_ : 
                             ImageTexture(
                               url_ : MFString([SFString("images/line.png"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png")]))),
@@ -179,9 +173,9 @@ var X3D0 =  X3D(
 
                 Transform(
                   DEF_ : SFString('volumeLeft'),
+                  translation_ : SFVec3f([SFDouble(0), SFDouble(-10), SFDouble(0)]),
                   rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
                   scale_ : SFVec3f([SFDouble(10), SFDouble(10), SFDouble(10)]),
-                  translation_ : SFVec3f([SFDouble(0), SFDouble(-10), SFDouble(0)]),
                   child_ : 
                     Shape(
                       appearance_ : 
@@ -190,11 +184,10 @@ var X3D0 =  X3D(
                             Material(
                               ambientIntensity_ : 0.0933,
                               diffuseColor_ : SFColor([SFDouble(0.345), SFDouble(0.345), SFDouble(0.882)]),
-                              shininess_ : 0.51,
-                              specularColor_ : SFColor([SFDouble(0.46), SFDouble(0.46), SFDouble(0.46)]))),
+                              specularColor_ : SFColor([SFDouble(0.46), SFDouble(0.46), SFDouble(0.46)]),
+                              shininess_ : 0.51)),
                       geometry_ : 
                         Text(
-                          string_ : MFString([SFString("Left Channel Volume")]),
                           fontStyle_ : 
                             FontStyle(
                               family_ : MFString([SFString("Times")]),
@@ -209,8 +202,8 @@ var X3D0 =  X3D(
                       material_ : 
                         Material(
                           diffuseColor_ : SFColor([SFDouble(0.1), SFDouble(0.1), SFDouble(0.1)]),
-                          shininess_ : 0.8,
-                          specularColor_ : SFColor([SFDouble(0.5), SFDouble(0.6), SFDouble(0.7)]))),
+                          specularColor_ : SFColor([SFDouble(0.5), SFDouble(0.6), SFDouble(0.7)]),
+                          shininess_ : 0.8)),
                   geometry_ : 
                     Box(
                       size_ : SFVec3f([SFDouble(1500), SFDouble(10), SFDouble(500)])))),
@@ -219,36 +212,23 @@ var X3D0 =  X3D(
               trackCurrentView_ : true),
 
             StreamAudioDestination(
-              channelCountMode_ : SFString('MAX'),
-              channelInterpretation_ : SFString('SPEAKERS'),
               children_ : [
                 Gain(
-                  channelCountMode_ : SFString('MAX'),
-                  channelInterpretation_ : SFString('SPEAKERS'),
                   children_ : [
                     ChannelMerger(
-                      channelCountMode_ : SFString('MAX'),
-                      channelInterpretation_ : SFString('SPEAKERS'),
                       children_ : [
                         ChannelSelector(
-                          channelCountMode_ : SFString('MAX'),
-                          channelInterpretation_ : SFString('SPEAKERS'),
                           children_ : [
-                            Gain(
-                              USE_ : SFString('ChannelSplitter'))]),
+                            Gain()]),
 
                         ChannelSelector(
                           channelSelection_ : 1,
-                          channelCountMode_ : SFString('MAX'),
-                          channelInterpretation_ : SFString('SPEAKERS'),
                           children_ : [
-                            Gain(
-                              USE_ : SFString('ChannelSplitter'))])])])]),
+                            Gain()])])])]),
 
             ChannelSplitter(
               DEF_ : SFString('ChannelSplitter'),
               channelCountMode_ : SFString('EXPLICIT'),
-              channelInterpretation_ : SFString('SPEAKERS'),
               outputs_ : 
                 AudioClip(
                   description_ : SFString('Violin'),
@@ -256,8 +236,8 @@ var X3D0 =  X3D(
 
             Transform(
               DEF_ : SFString('Audio3'),
-              rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
               translation_ : SFVec3f([SFDouble(0), SFDouble(100), SFDouble(0)]),
+              rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
               child_ : 
                 Shape(
                   appearance_ : 
@@ -266,8 +246,8 @@ var X3D0 =  X3D(
                       material_ : 
                         Material(
                           diffuseColor_ : SFColor([SFDouble(0.3), SFDouble(1), SFDouble(0.3)]),
-                          emissiveColor_ : SFColor([SFDouble(0.8), SFDouble(0.8), SFDouble(0.8)]),
-                          specularColor_ : SFColor([SFDouble(0.01), SFDouble(0.01), SFDouble(0.01)])),
+                          specularColor_ : SFColor([SFDouble(0.01), SFDouble(0.01), SFDouble(0.01)]),
+                          emissiveColor_ : SFColor([SFDouble(0.8), SFDouble(0.8), SFDouble(0.8)])),
                       texture_ : 
                         ImageTexture(
                           url_ : MFString([SFString("images/loudspeaker.png"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png")]))),

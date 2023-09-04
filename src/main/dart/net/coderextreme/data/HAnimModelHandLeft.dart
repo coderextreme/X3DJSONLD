@@ -7,10 +7,6 @@ var X3D0 =  X3D(
       version_ : SFString('4.0'),
       head_ : 
         head(
-          component_ : 
-            component(
-              name_ : SFString('HAnim'),
-              level_ : 1),
           meta_ : [
             meta(
               name_ : SFString('title'),
@@ -35,6 +31,10 @@ var X3D0 =  X3D(
             meta(
               name_ : SFString('TODO'),
               content_ : SFString('fix visible geometry for thumb and index finger, midcarpal_1 and midcarpal_2')),
+
+            meta(
+              name_ : SFString('TODO'),
+              content_ : SFString('Integrate and confirm Segment/Joint names, Viewpoints.')),
 
             meta(
               name_ : SFString('Image'),
@@ -81,20 +81,16 @@ var X3D0 =  X3D(
               content_ : SFString('X3D HAnim humanoid animation')),
 
             meta(
-              name_ : SFString('TODO'),
-              content_ : SFString('Integrate and confirm Segment/Joint names, Viewpoints.')),
-
-            meta(
               name_ : SFString('identifier'),
               content_ : SFString('https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandLeft.x3d')),
 
             meta(
               name_ : SFString('generator'),
               content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit')),
-
-            meta(
-              name_ : SFString('license'),
-              content_ : SFString('../license.html'))]),
+          component_ : 
+            component(
+              name_ : SFString('HAnim'),
+              level_ : 1)]),
       Scene_ : 
         Scene(
           children_ : [
@@ -102,51 +98,44 @@ var X3D0 =  X3D(
               title_ : SFString('HAnimModelHandLeft.x3d')),
 
             HAnimHumanoid(
-              name_ : SFString('Hand_Left'),
               DEF_ : SFString('hanim_Hand_Left'),
-              loa_ : 4,
               version_ : SFString('2.0'),
-              /*original HAnimHumanoid info='\"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams\"'*/
+              name_ : SFString('Hand_Left'),
+              loa_ : 4,
               metadata_ : [
                 MetadataSet(
                   name_ : SFString('HAnimHumanoid.info'),
                   reference_ : SFString('https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'),
                   value_ : 
                     MetadataString(
-                      name_ : SFString('authorName'),
-                      value_ : MFString([SFString("Kwan-Hee YOO, Don Brutzman and Joe Williams")]))),
+                      name_ : SFString('authorName'))),
               joints_ : [
                 HAnimJoint(
-                  name_ : SFString('humanoid_root'),
                   DEF_ : SFString('hanim_humanoid_root'),
-                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                  /*Might consider putting a HAnimSegment here, but that doesn't help with re-use of this hand model*/
+                  name_ : SFString('humanoid_root'),
                   children_ : [
                     HAnimJoint(
-                      name_ : SFString('l_radiocarpal'),
                       DEF_ : SFString('hanim_l_radiocarpal'),
                       description_ : SFString('connection joint of hand to leg above'),
-                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                      name_ : SFString('l_radiocarpal'),
                       children_ : [
                         HAnimSegment(
-                          name_ : SFString('l_carpal'),
                           DEF_ : SFString('hanim_l_carpal'),
+                          name_ : SFString('l_carpal'),
                           children_ : [
                             Transform(
                               child_ : 
                                 Shape(
                                   DEF_ : SFString('HAnimJointShape'),
-                                  geometry_ : 
-                                    Sphere(
-                                      radius_ : 0.025),
                                   appearance_ : 
                                     Appearance(
                                       DEF_ : SFString('HAnimJointAppearanceBlue'),
                                       material_ : 
                                         Material(
-                                          diffuseColor_ : SFColor([SFDouble(0), SFDouble(0), SFDouble(1)]))))),
+                                          diffuseColor_ : SFColor([SFDouble(0), SFDouble(0), SFDouble(1)]))),
+                                  geometry_ : 
+                                    Sphere(
+                                      radius_ : 0.025))),
 
                             Shape(
                               appearance_ : 
@@ -189,33 +178,30 @@ var X3D0 =  X3D(
                                   coord_ : 
                                     Coordinate(
                                       point_ : MFVec3f([SFVec3f([0,0,0]),SFVec3f([-0.1,0.1,0])]))))]),
-                      /*MC1*/
 
                         HAnimJoint(
-                          name_ : SFString('l_midcarpal_1'),
                           DEF_ : SFString('hanim_l_midcarpal_1'),
+                          name_ : SFString('l_midcarpal_1'),
                           center_ : SFVec3f([SFDouble(0.14), SFDouble(0.09), SFDouble(0)]),
-                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                           children_ : [
                             HAnimSegment(
-                              name_ : SFString('l_trapezium'),
                               DEF_ : SFString('hanim_l_trapezium'),
+                              name_ : SFString('l_trapezium'),
                               children_ : [
                                 Transform(
                                   translation_ : SFVec3f([SFDouble(0.14), SFDouble(0.09), SFDouble(0)]),
                                   child_ : 
                                     Shape(
                                       DEF_ : SFString('HAnimNewJointShape'),
-                                      geometry_ : 
-                                        Sphere(
-                                          radius_ : 0.025),
                                       appearance_ : 
                                         Appearance(
                                           DEF_ : SFString('HAnimJointAppearanceRed'),
                                           material_ : 
                                             Material(
-                                              diffuseColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0)]))))),
+                                              diffuseColor_ : SFColor([SFDouble(1), SFDouble(0), SFDouble(0)]))),
+                                      geometry_ : 
+                                        Sphere(
+                                          radius_ : 0.025))),
 
                                 Shape(
                                   appearance_ : 
@@ -244,18 +230,15 @@ var X3D0 =  X3D(
                                       coord_ : 
                                         Coordinate(
                                           point_ : MFVec3f([SFVec3f([0.1,0.1,0]),SFVec3f([0.1,0.2,0])]))))]),
-                          /*thumb finger*/
 
                             HAnimJoint(
-                              name_ : SFString('l_carpometacarpal_1'),
                               DEF_ : SFString('hanim_l_carpometacarpal_1'),
+                              name_ : SFString('l_carpometacarpal_1'),
                               center_ : SFVec3f([SFDouble(0.2), SFDouble(0.15), SFDouble(0)]),
-                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                               children_ : [
                                 HAnimSegment(
-                                  name_ : SFString('l_metacarpal_1'),
                                   DEF_ : SFString('hanim_l_metacarpal_1'),
+                                  name_ : SFString('l_metacarpal_1'),
                                   children_ : [
                                     Transform(
                                       translation_ : SFVec3f([SFDouble(0.2), SFDouble(0.15), SFDouble(0)]),
@@ -278,15 +261,13 @@ var X3D0 =  X3D(
                                               point_ : MFVec3f([SFVec3f([0.2,0.15,0]),SFVec3f([0.3,0.3,0])]))))]),
 
                                 HAnimJoint(
-                                  name_ : SFString('l_metacarpophalangeal_1'),
                                   DEF_ : SFString('hanim_l_metacarpophalangeal_1'),
+                                  name_ : SFString('l_metacarpophalangeal_1'),
                                   center_ : SFVec3f([SFDouble(0.3), SFDouble(0.3), SFDouble(0)]),
-                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                   children_ : [
                                     HAnimSegment(
-                                      name_ : SFString('l_carpal_proximal_phalanx_1'),
                                       DEF_ : SFString('hanim_l_carpal_proximal_phalanx_1'),
+                                      name_ : SFString('l_carpal_proximal_phalanx_1'),
                                       children_ : [
                                         Transform(
                                           translation_ : SFVec3f([SFDouble(0.3), SFDouble(0.3), SFDouble(0)]),
@@ -309,15 +290,13 @@ var X3D0 =  X3D(
                                                   point_ : MFVec3f([SFVec3f([0.3,0.3,0]),SFVec3f([0.35,0.4,0])]))))]),
 
                                     HAnimJoint(
-                                      name_ : SFString('l_carpal_interphalangeal_1'),
                                       DEF_ : SFString('hanim_l_carpal_interphalangeal_1'),
+                                      name_ : SFString('l_carpal_interphalangeal_1'),
                                       center_ : SFVec3f([SFDouble(0.35), SFDouble(0.4), SFDouble(0)]),
-                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                       children_ : [
                                         HAnimSegment(
-                                          name_ : SFString('l_carpal_distal_phalanx_1'),
                                           DEF_ : SFString('hanim_l_carpal_distal_phalanx_1'),
+                                          name_ : SFString('l_carpal_distal_phalanx_1'),
                                           children_ : [
                                             Transform(
                                               translation_ : SFVec3f([SFDouble(0.35), SFDouble(0.4), SFDouble(0)]),
@@ -338,18 +317,15 @@ var X3D0 =  X3D(
                                                   coord_ : 
                                                     Coordinate(
                                                       point_ : MFVec3f([SFVec3f([0.35,0.4,0]),SFVec3f([0.36,0.45,0])]))))])])])])]),
-                      /*MC2*/
 
                         HAnimJoint(
-                          name_ : SFString('l_midcarpal_2'),
                           DEF_ : SFString('hanim_l_midcarpal_2'),
+                          name_ : SFString('l_midcarpal_2'),
                           center_ : SFVec3f([SFDouble(0.07), SFDouble(0.07), SFDouble(0)]),
-                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                           children_ : [
                             HAnimSegment(
-                              name_ : SFString('l_trapezoid'),
                               DEF_ : SFString('hanim_l_trapezoid'),
+                              name_ : SFString('l_trapezoid'),
                               children_ : [
                                 Transform(
                                   translation_ : SFVec3f([SFDouble(0.07), SFDouble(0.07), SFDouble(0)]),
@@ -370,18 +346,15 @@ var X3D0 =  X3D(
                                       coord_ : 
                                         Coordinate(
                                           point_ : MFVec3f([SFVec3f([-0.1,0.1,0]),SFVec3f([-0.1,0.2,0])]))))]),
-                          /*index finger*/
 
                             HAnimJoint(
-                              name_ : SFString('l_carpometacarpal_2'),
                               DEF_ : SFString('hanim_l_carpometacarpal_2'),
+                              name_ : SFString('l_carpometacarpal_2'),
                               center_ : SFVec3f([SFDouble(0.1), SFDouble(0.2), SFDouble(0)]),
-                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                               children_ : [
                                 HAnimSegment(
-                                  name_ : SFString('l_metacarpal_2'),
                                   DEF_ : SFString('hanim_l_metacarpal_2'),
+                                  name_ : SFString('l_metacarpal_2'),
                                   children_ : [
                                     Transform(
                                       translation_ : SFVec3f([SFDouble(0.1), SFDouble(0.2), SFDouble(0)]),
@@ -404,15 +377,13 @@ var X3D0 =  X3D(
                                               point_ : MFVec3f([SFVec3f([0.1,0.2,0]),SFVec3f([0.15,0.5,0])]))))]),
 
                                 HAnimJoint(
-                                  name_ : SFString('l_metacarpophalangeal_2'),
                                   DEF_ : SFString('hanim_l_metacarpophalangeal_2'),
+                                  name_ : SFString('l_metacarpophalangeal_2'),
                                   center_ : SFVec3f([SFDouble(0.15), SFDouble(0.5), SFDouble(0)]),
-                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                   children_ : [
                                     HAnimSegment(
-                                      name_ : SFString('l_carpal_proximal_phalanx_2'),
                                       DEF_ : SFString('hanim_l_carpal_proximal_phalanx_2'),
+                                      name_ : SFString('l_carpal_proximal_phalanx_2'),
                                       children_ : [
                                         Transform(
                                           translation_ : SFVec3f([SFDouble(0.15), SFDouble(0.5), SFDouble(0)]),
@@ -435,15 +406,13 @@ var X3D0 =  X3D(
                                                   point_ : MFVec3f([SFVec3f([0.15,0.5,0]),SFVec3f([0.2,0.7,0])]))))]),
 
                                     HAnimJoint(
+                                      DEF_ : SFString('hanim_l_carpal_proximal_interphalangeal_1'),
                                       name_ : SFString('l_carpal_proximal_interphalangeal_2'),
-                                      DEF_ : SFString('hanim_l_carpal_proximal_interphalangeal_2'),
                                       center_ : SFVec3f([SFDouble(0.2), SFDouble(0.7), SFDouble(0)]),
-                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                       children_ : [
                                         HAnimSegment(
+                                          DEF_ : SFString('hanim_l_carpal_middle_phalanx_1'),
                                           name_ : SFString('l_carpal_middle_phalanx_2'),
-                                          DEF_ : SFString('hanim_l_carpal_middle_phalanx_2'),
                                           children_ : [
                                             Transform(
                                               translation_ : SFVec3f([SFDouble(0.2), SFDouble(0.7), SFDouble(0)]),
@@ -466,15 +435,13 @@ var X3D0 =  X3D(
                                                       point_ : MFVec3f([SFVec3f([0.2,0.7,0]),SFVec3f([0.24,0.87,0])]))))]),
 
                                         HAnimJoint(
+                                          DEF_ : SFString('hanim_l_carpal_distal_interphalangeal_1'),
                                           name_ : SFString('l_carpal_distal_interphalangeal_2'),
-                                          DEF_ : SFString('hanim_l_carpal_distal_interphalangeal_2'),
                                           center_ : SFVec3f([SFDouble(0.24), SFDouble(0.87), SFDouble(0)]),
-                                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                           children_ : [
                                             HAnimSegment(
-                                              name_ : SFString('l_carpal_distal_phalanx_2'),
                                               DEF_ : SFString('hanim_l_carpal_distal_phalanx_2'),
+                                              name_ : SFString('l_carpal_distal_phalanx_2'),
                                               children_ : [
                                                 Transform(
                                                   translation_ : SFVec3f([SFDouble(0.24), SFDouble(0.87), SFDouble(0)]),
@@ -490,23 +457,20 @@ var X3D0 =  X3D(
                                                           emissiveColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]))),
                                                   geometry_ : 
                                                     IndexedLineSet(
-                                                      DEF_ : SFString('fingertip_l_carpal_distal_interphalangeal_2'),
+                                                      DEF_ : SFString('fingertip_l_carpal_distal_interphalangeal_1'),
                                                       coordIndex_ : MFInt32([SFInt32(0), SFInt32(1)]),
                                                       coord_ : 
                                                         Coordinate(
                                                           point_ : MFVec3f([SFVec3f([0.24,0.87,0]),SFVec3f([0.26,0.93,0])]))))])])])])])]),
-                      /*MC3*/
 
                         HAnimJoint(
-                          name_ : SFString('l_midcarpal_3'),
                           DEF_ : SFString('hanim_l_midcarpal_3'),
+                          name_ : SFString('l_midcarpal_3'),
                           center_ : SFVec3f([SFDouble(0), SFDouble(0.07), SFDouble(0)]),
-                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                           children_ : [
                             HAnimSegment(
-                              name_ : SFString('l_capitate'),
                               DEF_ : SFString('hanim_l_capitate'),
+                              name_ : SFString('l_capitate'),
                               children_ : [
                                 Transform(
                                   translation_ : SFVec3f([SFDouble(0), SFDouble(0.07), SFDouble(0)]),
@@ -527,18 +491,15 @@ var X3D0 =  X3D(
                                       coord_ : 
                                         Coordinate(
                                           point_ : MFVec3f([SFVec3f([0,0.07,0]),SFVec3f([0,0.2,0])]))))]),
-                          /*Middle fingle*/
 
                             HAnimJoint(
-                              name_ : SFString('l_carpometacarpal_3'),
                               DEF_ : SFString('hanim_l_carpometacarpal_3'),
+                              name_ : SFString('l_carpometacarpal_3'),
                               center_ : SFVec3f([SFDouble(0), SFDouble(0.2), SFDouble(0)]),
-                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                               children_ : [
                                 HAnimSegment(
-                                  name_ : SFString('l_metacarpal_3'),
                                   DEF_ : SFString('hanim_l_metacarpal_3'),
+                                  name_ : SFString('l_metacarpal_3'),
                                   children_ : [
                                     Transform(
                                       translation_ : SFVec3f([SFDouble(0), SFDouble(0.2), SFDouble(0)]),
@@ -561,15 +522,13 @@ var X3D0 =  X3D(
                                               point_ : MFVec3f([SFVec3f([0,0.2,0]),SFVec3f([0.03,0.5,0])]))))]),
 
                                 HAnimJoint(
-                                  name_ : SFString('l_metacarpophalangeal_3'),
                                   DEF_ : SFString('hanim_l_metacarpophalangeal_3'),
+                                  name_ : SFString('l_metacarpophalangeal_3'),
                                   center_ : SFVec3f([SFDouble(0.03), SFDouble(0.5), SFDouble(0)]),
-                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                   children_ : [
                                     HAnimSegment(
-                                      name_ : SFString('l_carpal_proximal_phalanx_3'),
                                       DEF_ : SFString('hanim_l_carpal_proximal_phalanx_3'),
+                                      name_ : SFString('l_carpal_proximal_phalanx_3'),
                                       children_ : [
                                         Transform(
                                           translation_ : SFVec3f([SFDouble(0.03), SFDouble(0.5), SFDouble(0)]),
@@ -592,15 +551,13 @@ var X3D0 =  X3D(
                                                   point_ : MFVec3f([SFVec3f([0.03,0.5,0]),SFVec3f([0.05,0.75,0])]))))]),
 
                                     HAnimJoint(
+                                      DEF_ : SFString('hanim_l_carpal_proximal_interphalangeal_2'),
                                       name_ : SFString('l_carpal_proximal_interphalangeal_3'),
-                                      DEF_ : SFString('hanim_l_carpal_proximal_interphalangeal_3'),
                                       center_ : SFVec3f([SFDouble(0.05), SFDouble(0.75), SFDouble(0)]),
-                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                       children_ : [
                                         HAnimSegment(
+                                          DEF_ : SFString('hanim_l_carpal_middle_phalanx_2'),
                                           name_ : SFString('l_carpal_middle_phalanx_3'),
-                                          DEF_ : SFString('hanim_l_carpal_middle_phalanx_3'),
                                           children_ : [
                                             Transform(
                                               translation_ : SFVec3f([SFDouble(0.05), SFDouble(0.75), SFDouble(0)]),
@@ -623,15 +580,13 @@ var X3D0 =  X3D(
                                                       point_ : MFVec3f([SFVec3f([0.05,0.75,0]),SFVec3f([0.08,0.96,0])]))))]),
 
                                         HAnimJoint(
+                                          DEF_ : SFString('hanim_l_carpal_distal_interphalangeal_2'),
                                           name_ : SFString('l_carpal_distal_interphalangeal_3'),
-                                          DEF_ : SFString('hanim_l_carpal_distal_interphalangeal_3'),
                                           center_ : SFVec3f([SFDouble(0.08), SFDouble(0.96), SFDouble(0)]),
-                                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                           children_ : [
                                             HAnimSegment(
-                                              name_ : SFString('l_carpal_distal_phalanx_3'),
                                               DEF_ : SFString('hanim_l_carpal_distal_phalanx_3'),
+                                              name_ : SFString('l_carpal_distal_phalanx_3'),
                                               children_ : [
                                                 Transform(
                                                   translation_ : SFVec3f([SFDouble(0.08), SFDouble(0.96), SFDouble(0)]),
@@ -647,23 +602,20 @@ var X3D0 =  X3D(
                                                           emissiveColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]))),
                                                   geometry_ : 
                                                     IndexedLineSet(
-                                                      DEF_ : SFString('fingertip_l_carpal_distal_interphalangeal_3'),
+                                                      DEF_ : SFString('fingertip_l_carpal_distal_interphalangeal_2'),
                                                       coordIndex_ : MFInt32([SFInt32(0), SFInt32(1)]),
                                                       coord_ : 
                                                         Coordinate(
                                                           point_ : MFVec3f([SFVec3f([0.08,0.96,0]),SFVec3f([0.09,1.05,0])]))))])])])])])]),
-                      /*MC45*/
 
                         HAnimJoint(
+                          DEF_ : SFString('hanim_l_midcarpal_4_1'),
                           name_ : SFString('l_midcarpal_4_5'),
-                          DEF_ : SFString('hanim_l_midcarpal_4_5'),
                           center_ : SFVec3f([SFDouble(-0.1), SFDouble(0.1), SFDouble(0)]),
-                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                           children_ : [
                             HAnimSegment(
-                              name_ : SFString('l_hamate'),
                               DEF_ : SFString('hanim_l_hamate'),
+                              name_ : SFString('l_hamate'),
                               children_ : [
                                 Transform(
                                   translation_ : SFVec3f([SFDouble(-0.1), SFDouble(0.1), SFDouble(0)]),
@@ -698,18 +650,15 @@ var X3D0 =  X3D(
                                       coord_ : 
                                         Coordinate(
                                           point_ : MFVec3f([SFVec3f([-0.1,0.1,0]),SFVec3f([-0.15,0.17,0])]))))]),
-                          /*ring finger*/
 
                             HAnimJoint(
-                              name_ : SFString('l_carpometacarpal_4'),
                               DEF_ : SFString('hanim_l_carpometacarpal_4'),
+                              name_ : SFString('l_carpometacarpal_4'),
                               center_ : SFVec3f([SFDouble(-0.1), SFDouble(0.2), SFDouble(0)]),
-                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                               children_ : [
                                 HAnimSegment(
-                                  name_ : SFString('l_metacarpal_4'),
                                   DEF_ : SFString('hanim_l_metacarpal_4'),
+                                  name_ : SFString('l_metacarpal_4'),
                                   children_ : [
                                     Transform(
                                       translation_ : SFVec3f([SFDouble(-0.1), SFDouble(0.2), SFDouble(0)]),
@@ -732,15 +681,13 @@ var X3D0 =  X3D(
                                               point_ : MFVec3f([SFVec3f([-0.1,0.2,0]),SFVec3f([-0.1,0.47,0])]))))]),
 
                                 HAnimJoint(
-                                  name_ : SFString('l_metacarpophalangeal_4'),
                                   DEF_ : SFString('hanim_l_metacarpophalangeal_4'),
+                                  name_ : SFString('l_metacarpophalangeal_4'),
                                   center_ : SFVec3f([SFDouble(-0.1), SFDouble(0.47), SFDouble(0)]),
-                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                   children_ : [
                                     HAnimSegment(
-                                      name_ : SFString('l_carpal_proximal_phalanx_4'),
                                       DEF_ : SFString('hanim_l_carpal_proximal_phalanx_4'),
+                                      name_ : SFString('l_carpal_proximal_phalanx_4'),
                                       children_ : [
                                         Transform(
                                           translation_ : SFVec3f([SFDouble(-0.1), SFDouble(0.47), SFDouble(0)]),
@@ -763,15 +710,13 @@ var X3D0 =  X3D(
                                                   point_ : MFVec3f([SFVec3f([-0.1,0.47,0]),SFVec3f([-0.1,0.7,0])]))))]),
 
                                     HAnimJoint(
+                                      DEF_ : SFString('hanim_l_carpal_proximal_interphalangeal_3'),
                                       name_ : SFString('l_carpal_proximal_interphalangeal_4'),
-                                      DEF_ : SFString('hanim_l_carpal_proximal_interphalangeal_4'),
                                       center_ : SFVec3f([SFDouble(-0.1), SFDouble(0.7), SFDouble(0)]),
-                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                       children_ : [
                                         HAnimSegment(
+                                          DEF_ : SFString('hanim_l_carpal_middle_phalanx_3'),
                                           name_ : SFString('l_carpal_middle_phalanx_4'),
-                                          DEF_ : SFString('hanim_l_carpal_middle_phalanx_4'),
                                           children_ : [
                                             Transform(
                                               translation_ : SFVec3f([SFDouble(-0.1), SFDouble(0.7), SFDouble(0)]),
@@ -794,15 +739,13 @@ var X3D0 =  X3D(
                                                       point_ : MFVec3f([SFVec3f([-0.1,0.7,0]),SFVec3f([-0.1,0.93,0])]))))]),
 
                                         HAnimJoint(
+                                          DEF_ : SFString('hanim_l_carpal_distal_interphalangeal_3'),
                                           name_ : SFString('l_carpal_distal_interphalangeal_4'),
-                                          DEF_ : SFString('hanim_l_carpal_distal_interphalangeal_4'),
                                           center_ : SFVec3f([SFDouble(-0.1), SFDouble(0.93), SFDouble(0)]),
-                                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                           children_ : [
                                             HAnimSegment(
-                                              name_ : SFString('l_carpal_distal_phalanx_4'),
                                               DEF_ : SFString('hanim_l_carpal_distal_phalanx_4'),
+                                              name_ : SFString('l_carpal_distal_phalanx_4'),
                                               children_ : [
                                                 Transform(
                                                   translation_ : SFVec3f([SFDouble(-0.1), SFDouble(0.93), SFDouble(0)]),
@@ -818,23 +761,20 @@ var X3D0 =  X3D(
                                                           emissiveColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]))),
                                                   geometry_ : 
                                                     IndexedLineSet(
-                                                      DEF_ : SFString('fingertip_l_carpal_distal_interphalangeal_4'),
+                                                      DEF_ : SFString('fingertip_l_carpal_distal_interphalangeal_3'),
                                                       coordIndex_ : MFInt32([SFInt32(0), SFInt32(1)]),
                                                       coord_ : 
                                                         Coordinate(
                                                           point_ : MFVec3f([SFVec3f([-0.1,0.93,0]),SFVec3f([-0.1,1,0])]))))])])])])]),
-                          /*pinky finger*/
 
                             HAnimJoint(
-                              name_ : SFString('l_carpometacarpal_5'),
                               DEF_ : SFString('hanim_l_carpometacarpal_5'),
+                              name_ : SFString('l_carpometacarpal_5'),
                               center_ : SFVec3f([SFDouble(-0.15), SFDouble(0.17), SFDouble(0)]),
-                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                               children_ : [
                                 HAnimSegment(
-                                  name_ : SFString('l_metacarpal_5'),
                                   DEF_ : SFString('hanim_l_metacarpal_5'),
+                                  name_ : SFString('l_metacarpal_5'),
                                   children_ : [
                                     Transform(
                                       translation_ : SFVec3f([SFDouble(-0.15), SFDouble(0.17), SFDouble(0)]),
@@ -857,15 +797,13 @@ var X3D0 =  X3D(
                                               point_ : MFVec3f([SFVec3f([-0.15,0.17,0]),SFVec3f([-0.2,0.4,0])]))))]),
 
                                 HAnimJoint(
-                                  name_ : SFString('l_metacarpophalangeal_5'),
                                   DEF_ : SFString('hanim_l_metacarpophalangeal_5'),
+                                  name_ : SFString('l_metacarpophalangeal_5'),
                                   center_ : SFVec3f([SFDouble(-0.2), SFDouble(0.4), SFDouble(0)]),
-                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                   children_ : [
                                     HAnimSegment(
-                                      name_ : SFString('l_carpal_proximal_phalanx_5'),
                                       DEF_ : SFString('hanim_l_carpal_proximal_phalanx_5'),
+                                      name_ : SFString('l_carpal_proximal_phalanx_5'),
                                       children_ : [
                                         Transform(
                                           translation_ : SFVec3f([SFDouble(-0.2), SFDouble(0.4), SFDouble(0)]),
@@ -888,15 +826,13 @@ var X3D0 =  X3D(
                                                   point_ : MFVec3f([SFVec3f([-0.2,0.4,0]),SFVec3f([-0.23,0.63,0])]))))]),
 
                                     HAnimJoint(
+                                      DEF_ : SFString('hanim_l_carpal_proximal_interphalangeal_4'),
                                       name_ : SFString('l_carpal_proximal_interphalangeal_5'),
-                                      DEF_ : SFString('hanim_l_carpal_proximal_interphalangeal_5'),
                                       center_ : SFVec3f([SFDouble(-0.23), SFDouble(0.63), SFDouble(0)]),
-                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                       children_ : [
                                         HAnimSegment(
+                                          DEF_ : SFString('hanim_l_carpal_middle_phalanx_4'),
                                           name_ : SFString('l_carpal_middle_phalanx_5'),
-                                          DEF_ : SFString('hanim_l_carpal_middle_phalanx_5'),
                                           children_ : [
                                             Transform(
                                               translation_ : SFVec3f([SFDouble(-0.23), SFDouble(0.63), SFDouble(0)]),
@@ -919,15 +855,13 @@ var X3D0 =  X3D(
                                                       point_ : MFVec3f([SFVec3f([-0.23,0.63,0]),SFVec3f([-0.25,0.79,0])]))))]),
 
                                         HAnimJoint(
+                                          DEF_ : SFString('hanim_l_carpal_distal_interphalangeal_4'),
                                           name_ : SFString('l_carpal_distal_interphalangeal_5'),
-                                          DEF_ : SFString('hanim_l_carpal_distal_interphalangeal_5'),
                                           center_ : SFVec3f([SFDouble(-0.25), SFDouble(0.79), SFDouble(0)]),
-                                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                           children_ : [
                                             HAnimSegment(
-                                              name_ : SFString('l_carpal_distal_phalanx_5'),
                                               DEF_ : SFString('hanim_l_carpal_distal_phalanx_5'),
+                                              name_ : SFString('l_carpal_distal_phalanx_5'),
                                               children_ : [
                                                 Transform(
                                                   translation_ : SFVec3f([SFDouble(-0.25), SFDouble(0.79), SFDouble(0)]),
@@ -943,14 +877,89 @@ var X3D0 =  X3D(
                                                           emissiveColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]))),
                                                   geometry_ : 
                                                     IndexedLineSet(
-                                                      DEF_ : SFString('fingertip_l_carpal_distal_interphalangeal_5'),
+                                                      DEF_ : SFString('fingertip_l_carpal_distal_interphalangeal_4'),
                                                       coordIndex_ : MFInt32([SFInt32(0), SFInt32(1)]),
                                                       coord_ : 
                                                         Coordinate(
                                                           point_ : MFVec3f([SFVec3f([-0.25,0.79,0]),SFVec3f([-0.26,0.85,0])]))))])])])])])])])]),
+              segments_ : [
+                HAnimSegment(
+                  USE_ : SFString('hanim_l_capitate')),
+
+                HAnimSegment(
+                  USE_ : SFString('hanim_l_carpal')),
+
+                HAnimSegment(
+                  USE_ : SFString('hanim_l_carpal_distal_phalanx_1')),
+
+                HAnimSegment(
+                  USE_ : SFString('hanim_l_carpal_distal_phalanx_2')),
+
+                HAnimSegment(
+                  USE_ : SFString('hanim_l_carpal_distal_phalanx_3')),
+
+                HAnimSegment(
+                  USE_ : SFString('hanim_l_carpal_distal_phalanx_4')),
+
+                HAnimSegment(
+                  USE_ : SFString('hanim_l_carpal_distal_phalanx_5')),
+
+                HAnimSegment(
+                  USE_ : SFString('hanim_l_carpal_middle_phalanx_1')),
+
+                HAnimSegment(
+                  USE_ : SFString('hanim_l_carpal_middle_phalanx_2')),
+
+                HAnimSegment(
+                  USE_ : SFString('hanim_l_carpal_middle_phalanx_3')),
+
+                HAnimSegment(
+                  USE_ : SFString('hanim_l_carpal_middle_phalanx_4')),
+
+                HAnimSegment(
+                  USE_ : SFString('hanim_l_carpal_proximal_phalanx_1')),
+
+                HAnimSegment(
+                  USE_ : SFString('hanim_l_carpal_proximal_phalanx_2')),
+
+                HAnimSegment(
+                  USE_ : SFString('hanim_l_carpal_proximal_phalanx_3')),
+
+                HAnimSegment(
+                  USE_ : SFString('hanim_l_carpal_proximal_phalanx_4')),
+
+                HAnimSegment(
+                  USE_ : SFString('hanim_l_carpal_proximal_phalanx_5')),
+
+                HAnimSegment(
+                  USE_ : SFString('hanim_l_hamate')),
+
+                HAnimSegment(
+                  USE_ : SFString('hanim_l_metacarpal_1')),
+
+                HAnimSegment(
+                  USE_ : SFString('hanim_l_metacarpal_2')),
+
+                HAnimSegment(
+                  USE_ : SFString('hanim_l_metacarpal_3')),
+
+                HAnimSegment(
+                  USE_ : SFString('hanim_l_metacarpal_4')),
+
+                HAnimSegment(
+                  USE_ : SFString('hanim_l_metacarpal_5')),
+
+                HAnimSegment(
+                  USE_ : SFString('hanim_l_trapezium')),
+
+                HAnimSegment(
+                  USE_ : SFString('hanim_l_trapezoid')),
 
                 HAnimJoint(
                   USE_ : SFString('hanim_humanoid_root')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_carpal_distal_interphalangeal_1')),
 
                 HAnimJoint(
                   USE_ : SFString('hanim_l_carpal_distal_interphalangeal_2')),
@@ -962,10 +971,10 @@ var X3D0 =  X3D(
                   USE_ : SFString('hanim_l_carpal_distal_interphalangeal_4')),
 
                 HAnimJoint(
-                  USE_ : SFString('hanim_l_carpal_distal_interphalangeal_5')),
+                  USE_ : SFString('hanim_l_carpal_interphalangeal_1')),
 
                 HAnimJoint(
-                  USE_ : SFString('hanim_l_carpal_interphalangeal_1')),
+                  USE_ : SFString('hanim_l_carpal_proximal_interphalangeal_1')),
 
                 HAnimJoint(
                   USE_ : SFString('hanim_l_carpal_proximal_interphalangeal_2')),
@@ -975,9 +984,6 @@ var X3D0 =  X3D(
 
                 HAnimJoint(
                   USE_ : SFString('hanim_l_carpal_proximal_interphalangeal_4')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_carpal_proximal_interphalangeal_5')),
 
                 HAnimJoint(
                   USE_ : SFString('hanim_l_carpometacarpal_1')),
@@ -1019,80 +1025,8 @@ var X3D0 =  X3D(
                   USE_ : SFString('hanim_l_midcarpal_3')),
 
                 HAnimJoint(
-                  USE_ : SFString('hanim_l_midcarpal_4_5')),
+                  USE_ : SFString('hanim_l_midcarpal_4_1')),
 
                 HAnimJoint(
-                  USE_ : SFString('hanim_l_radiocarpal')),
-              segments_ : [
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_capitate')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_carpal')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_carpal_distal_phalanx_1')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_carpal_distal_phalanx_2')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_carpal_distal_phalanx_3')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_carpal_distal_phalanx_4')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_carpal_distal_phalanx_5')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_carpal_middle_phalanx_2')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_carpal_middle_phalanx_3')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_carpal_middle_phalanx_4')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_carpal_middle_phalanx_5')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_carpal_proximal_phalanx_1')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_carpal_proximal_phalanx_2')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_carpal_proximal_phalanx_3')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_carpal_proximal_phalanx_4')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_carpal_proximal_phalanx_5')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_hamate')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_metacarpal_1')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_metacarpal_2')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_metacarpal_3')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_metacarpal_4')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_metacarpal_5')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_trapezium')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_trapezoid'))])]));
+                  USE_ : SFString('hanim_l_radiocarpal'))])]));
 void main() { exit(0); }

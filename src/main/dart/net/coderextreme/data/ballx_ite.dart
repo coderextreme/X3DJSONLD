@@ -7,10 +7,26 @@ var X3D0 =  X3D(
       version_ : SFString('4.0'),
       head_ : 
         head(
+          meta_ : [
+            meta(
+              name_ : SFString('title'),
+              content_ : SFString('ballx_ite.x3d')),
+
+            meta(
+              name_ : SFString('creator'),
+              content_ : SFString('John Carlson')),
+
+            meta(
+              name_ : SFString('generator'),
+              content_ : SFString('manual')),
+
+            meta(
+              name_ : SFString('identifier'),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d')),
           component_ : 
             component(
               name_ : SFString('Scripting'),
-              level_ : 1),
+              level_ : 1)],
           component_ : 
             component(
               name_ : SFString('EnvironmentalEffects'),
@@ -38,27 +54,7 @@ var X3D0 =  X3D(
           component_ : 
             component(
               name_ : SFString('Core'),
-              level_ : 1),
-          meta_ : [
-            meta(
-              name_ : SFString('title'),
-              content_ : SFString('ballx_ite.x3d')),
-
-            meta(
-              name_ : SFString('creator'),
-              content_ : SFString('John Carlson')),
-
-            meta(
-              name_ : SFString('generator'),
-              content_ : SFString('manual')),
-
-            meta(
-              name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d')),
-
-            meta(
-              name_ : SFString('description'),
-              content_ : SFString('a prismatic sphere'))]),
+              level_ : 1)),
       Scene_ : 
         Scene(
           children_ : [
@@ -72,18 +68,16 @@ var X3D0 =  X3D(
               description_ : SFString('Tour Views')),
 
             Background(
-              backUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")]),
-              bottomUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")]),
               frontUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_front.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")]),
+              backUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")]),
               leftUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")]),
               rightUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")]),
-              topUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")])),
+              topUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")]),
+              bottomUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")])),
 
             Transform(
               child_ : 
                 Shape(
-                  geometry_ : 
-                    Sphere(),
                   appearance_ : 
                     Appearance(
                       material_ : 
@@ -95,13 +89,10 @@ var X3D0 =  X3D(
                           DEF_ : SFString('texture'),
                           topTexture_ : 
                             ImageTexture(
-                              url_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")])),
-                          topTexture_ : 
-                            ImageTexture(
-                              url_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")])),
-                          topTexture_ : 
-                            ImageTexture(
                               url_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_front.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")])),
+                          topTexture_ : 
+                            ImageTexture(
+                              url_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")])),
                           topTexture_ : 
                             ImageTexture(
                               url_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")])),
@@ -110,48 +101,52 @@ var X3D0 =  X3D(
                               url_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")])),
                           topTexture_ : 
                             ImageTexture(
-                              url_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")]))),
+                              url_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")])),
+                          topTexture_ : 
+                            ImageTexture(
+                              url_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")]))),
                       shaders_ : 
                         ComposedShader(
                           language_ : SFString('GLSL'),
+                          parts_ : 
+                            ShaderPart(
+                              url_ : MFString([SFString("../shaders/x_ite.vs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs")])),
+                          parts_ : 
+                            ShaderPart(
+                              type_ : SFString("FRAGMENT",
+                              url_ : MFString([SFString("../shaders/x_itebubbles.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs")])),
                           field_ : [
                             field(
                               type_ : SFString("SFVec3f"),
-                              name_ : SFString('chromaticDispertion'),
                               accessType_ : SFString("initializeOnly"),
+                              name_ : SFString('chromaticDispertion'),
                               value_ : SFString('0.98 1 1.033')),
 
                             field(
                               type_ : SFString("SFNode"),
-                              name_ : SFString('cube'),
                               accessType_ : SFString("initializeOnly"),
+                              name_ : SFString('cube'),
                               children_ : [
                                 ComposedCubeMapTexture(
                                   USE_ : SFString('texture'))]),
 
                             field(
                               type_ : SFString("SFFloat"),
+                              accessType_ : SFString("initializeOnly"),
                               name_ : SFString('bias'),
-                              accessType_ : SFString("initializeOnly"),
                               value_ : SFString('0.5')),
 
                             field(
                               type_ : SFString("SFFloat"),
+                              accessType_ : SFString("initializeOnly"),
                               name_ : SFString('scale'),
-                              accessType_ : SFString("initializeOnly"),
                               value_ : SFString('0.5')),
 
                             field(
                               type_ : SFString("SFFloat"),
-                              name_ : SFString('power'),
                               accessType_ : SFString("initializeOnly"),
-                              value_ : SFString('2')),
-                          parts_ : 
-                            ShaderPart(
-                              type_ : SFString("VERTEX",
-                              url_ : MFString([SFString("../shaders/x_ite.vs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs")]))],
-                          parts_ : 
-                            ShaderPart(
-                              type_ : SFString("FRAGMENT",
-                              url_ : MFString([SFString("../shaders/x_itebubbles.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs")]))))))]));
+                              name_ : SFString('power'),
+                              value_ : SFString('2'))])),
+                  geometry_ : 
+                    Sphere()))]));
 void main() { exit(0); }

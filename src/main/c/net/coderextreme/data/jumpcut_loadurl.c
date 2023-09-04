@@ -3,7 +3,7 @@ void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Immersive";
-X3D0.version = "3.0";
+X3D0.version = "4.0";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "title";
@@ -72,96 +72,91 @@ meta14.name = "generator";
 meta14.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
 head1.meta[12] = meta14;
 
-meta meta15 = createNode("meta");
-meta15.name = "license";
-meta15.content = "../../license.html";
-head1.meta[13] = meta15;
-
 head = head1;
 
-WorldInfo WorldInfo17 = createNode("WorldInfo");
-WorldInfo17.title = "jumpcut_loadurl.x3d";
+WorldInfo WorldInfo16 = createNode("WorldInfo");
+WorldInfo16.title = "jumpcut_loadurl.x3d";
 children = new MFNode();
 
-children[0] = WorldInfo17;
+children[0] = WorldInfo16;
 
-Background Background18 = createNode("Background");
-Background18.groundAngle = new MFFloat(new float[1.57]);
-Background18.groundColor = new MFColor(new float[0,0.5,0,0,0.5,0]);
-Background18.skyColor = new MFColor(new float[0,0,1]);
-children[1] = Background18;
+Background Background17 = createNode("Background");
+Background17.skyColor = new MFColor(new float[0,0,1]);
+Background17.groundAngle = new MFFloat(new float[1.57]);
+Background17.groundColor = new MFColor(new float[0,0.5,0,0,0.5,0]);
+children[1] = Background17;
 
-NavigationInfo NavigationInfo19 = createNode("NavigationInfo");
-NavigationInfo19.type = new MFString(new java.lang.String["EXAMINE","WALK","FLY","ANY"]);
-children[2] = NavigationInfo19;
+NavigationInfo NavigationInfo18 = createNode("NavigationInfo");
+NavigationInfo18.type = new MFString(new java.lang.String["EXAMINE","WALK","FLY","ANY"]);
+children[2] = NavigationInfo18;
+
+Viewpoint Viewpoint19 = createNode("Viewpoint");
+Viewpoint19.DEF = "Front_View";
+Viewpoint19.description = "Front View";
+children[3] = Viewpoint19;
 
 Viewpoint Viewpoint20 = createNode("Viewpoint");
-Viewpoint20.DEF = "Front_View";
-Viewpoint20.description = "Front View";
-children[3] = Viewpoint20;
+Viewpoint20.DEF = "Top_View";
+Viewpoint20.description = "Top View";
+Viewpoint20.position = new SFVec3f(new float[0,10,0]);
+Viewpoint20.orientation = new SFRotation(new float[1,0,0,-1.57]);
+children[4] = Viewpoint20;
 
-Viewpoint Viewpoint21 = createNode("Viewpoint");
-Viewpoint21.DEF = "Top_View";
-Viewpoint21.description = "Top View";
-Viewpoint21.orientation = new SFRotation(new float[1,0,0,-1.57]);
-Viewpoint21.position = new SFVec3f(new float[0,10,0]);
-children[4] = Viewpoint21;
+TouchSensor TouchSensor21 = createNode("TouchSensor");
+TouchSensor21.DEF = "STARTER";
+TouchSensor21.description = "touch to activate";
+children[5] = TouchSensor21;
 
-TouchSensor TouchSensor22 = createNode("TouchSensor");
-TouchSensor22.DEF = "STARTER";
-TouchSensor22.description = "touch to activate";
-children[5] = TouchSensor22;
+Transform Transform22 = createNode("Transform");
+Transform22.DEF = "ROOT";
+Shape Shape23 = createNode("Shape");
+Appearance Appearance24 = createNode("Appearance");
+Material Material25 = createNode("Material");
+Appearance24.material = Material25;
 
-Transform Transform23 = createNode("Transform");
-Transform23.DEF = "ROOT";
-Shape Shape24 = createNode("Shape");
-Appearance Appearance25 = createNode("Appearance");
-Material Material26 = createNode("Material");
-Appearance25.material = Material26;
+Shape23.appearance = Appearance24;
 
-Shape24.appearance = Appearance25;
+Box Box26 = createNode("Box");
+Shape23.geometry = Box26;
 
-Box Box27 = createNode("Box");
-Shape24.geometry = Box27;
+Transform22.child = new undefined();
 
-Transform23.child = new undefined();
+Transform22.child[0] = Shape23;
 
-Transform23.child[0] = Shape24;
+children[6] = Transform22;
 
-children[6] = Transform23;
+Script Script27 = createNode("Script");
+Script27.DEF = "MYSCRIPT";
+Script27.url = new MFString(new java.lang.String["jumpcut_loadurl.js","https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.js"]);
+field field28 = createNode("field");
+field28.accessType = "initializeOnly";
+field28.type = "MFString";
+field28.name = "myParameter";
+field28.value = "\"Top_View\"";
+Script27.field = new MFNode();
 
-Script Script28 = createNode("Script");
-Script28.DEF = "MYSCRIPT";
-Script28.url = new MFString(new java.lang.String["jumpcut_loadurl.js","https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.js"]);
+Script27.field[0] = field28;
+
 field field29 = createNode("field");
-field29.name = "myParameter";
 field29.accessType = "initializeOnly";
 field29.type = "MFString";
-field29.value = "\"Top_View\"";
-Script28.field = new MFNode();
-
-Script28.field[0] = field29;
+field29.name = "myUrl";
+field29.value = "\"jumpcut_loadurl.x3d#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View\" \"jumpcut_loadurl.wrl#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View\"";
+Script27.field[1] = field29;
 
 field field30 = createNode("field");
-field30.name = "myUrl";
-field30.accessType = "initializeOnly";
-field30.type = "MFString";
-field30.value = "\"jumpcut_loadurl.x3d#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View\" \"jumpcut_loadurl.wrl#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View\"";
-Script28.field[1] = field30;
+field30.accessType = "inputOnly";
+field30.type = "SFBool";
+field30.name = "trigger_event";
+Script27.field[2] = field30;
 
-field field31 = createNode("field");
-field31.name = "trigger_event";
-field31.accessType = "inputOnly";
-field31.type = "SFBool";
-Script28.field[2] = field31;
+children[7] = Script27;
 
-children[7] = Script28;
-
-ROUTE ROUTE32 = createNode("ROUTE");
-ROUTE32.fromField = "isActive";
-ROUTE32.fromNode = "STARTER";
-ROUTE32.toField = "trigger_event";
-ROUTE32.toNode = "MYSCRIPT";
-children[8] = ROUTE32;
+ROUTE ROUTE31 = createNode("ROUTE");
+ROUTE31.fromNode = "STARTER";
+ROUTE31.fromField = "isActive";
+ROUTE31.toNode = "MYSCRIPT";
+ROUTE31.toField = "trigger_event";
+children[8] = ROUTE31;
 
 }

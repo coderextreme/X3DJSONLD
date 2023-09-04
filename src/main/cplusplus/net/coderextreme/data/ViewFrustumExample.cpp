@@ -12,7 +12,7 @@ CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Immersive");
-X3D0->setVersion("3.3");
+X3D0->setVersion("4.0");
 Chead* head1 = new Chead();
 Cmeta* meta2 = new Cmeta();
 meta2->setName("title");
@@ -84,155 +84,146 @@ meta15->setName("generator");
 meta15->setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
 head1->addMeta(*meta15);
 
-Cmeta* meta16 = new Cmeta();
-meta16->setName("license");
-meta16->setContent("../license.html");
-head1->addMeta(*meta16);
-
 X3D0->setHead(*head1);
 
-CScene* Scene17 = new CScene();
-CWorldInfo* WorldInfo18 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
-WorldInfo18->setTitle("ViewFrustumExample.x3d");
-group->addChildren(*WorldInfo18);
+CScene* Scene16 = new CScene();
+CExternProtoDeclare* ExternProtoDeclare17 = new CExternProtoDeclare();
+ExternProtoDeclare17->setName("ViewFrustum");
+ExternProtoDeclare17->setUrl(new CString[1]{"ViewFrustumPrototype.x3d#ViewFrustum"}, 1);
+Cfield* field18 = new Cfield();
+field18->setAccessType("initializeOnly");
+field18->setType("SFNode");
+field18->setName("ViewpointNode");
+ExternProtoDeclare17->addField(*field18);
 
-CViewpoint* Viewpoint19 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint19->setDescription("ViewFrustum from above, looking down");
-Viewpoint19->setOrientation(new float[4]{1,0,0,-1.57});
-Viewpoint19->setPosition(new float[3]{0,40,0});
-group->addChildren(*Viewpoint19);
+Cfield* field19 = new Cfield();
+field19->setAccessType("initializeOnly");
+field19->setType("SFNode");
+field19->setName("NavigationInfoNode");
+ExternProtoDeclare17->addField(*field19);
 
-CViewpoint* Viewpoint20 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint20->setDescription("ViewFrustum from point of view");
-group->addChildren(*Viewpoint20);
+Cfield* field20 = new Cfield();
+field20->setAccessType("inputOutput");
+field20->setType("SFBool");
+field20->setName("visible");
+ExternProtoDeclare17->addField(*field20);
 
-CViewpoint* Viewpoint21 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint21->setDescription("ViewFrustum behind point of view");
-Viewpoint21->setPosition(new float[3]{0,0,15});
-group->addChildren(*Viewpoint21);
+Cfield* field21 = new Cfield();
+field21->setAccessType("inputOutput");
+field21->setType("SFColor");
+field21->setName("lineColor");
+ExternProtoDeclare17->addField(*field21);
 
-CViewpoint* Viewpoint22 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint22->setDescription("ViewFrustum oblique side view");
-Viewpoint22->setOrientation(new float[4]{0.8005,0.5926,0.0898,-0.3743});
-Viewpoint22->setPosition(new float[3]{-5,5,20});
-group->addChildren(*Viewpoint22);
+Cfield* field22 = new Cfield();
+field22->setAccessType("inputOutput");
+field22->setType("SFColor");
+field22->setName("frustumColor");
+ExternProtoDeclare17->addField(*field22);
 
-CNavigationInfo* NavigationInfo23 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-NavigationInfo23->setType(new CString[3]{"EXAMINE","FLY","ANY"}, 3);
-group->addChildren(*NavigationInfo23);
+Cfield* field23 = new Cfield();
+field23->setAccessType("inputOutput");
+field23->setType("SFFloat");
+field23->setName("transparency");
+ExternProtoDeclare17->addField(*field23);
 
-CExternProtoDeclare* ExternProtoDeclare24 = new CExternProtoDeclare();
-ExternProtoDeclare24->setName("ViewFrustum");
-ExternProtoDeclare24->setAppinfo("Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes");
-ExternProtoDeclare24->setUrl(new CString[1]{"ViewFrustumPrototype.x3d#ViewFrustum"}, 1);
+Cfield* field24 = new Cfield();
+field24->setAccessType("inputOutput");
+field24->setType("SFFloat");
+field24->setName("aspectRatio");
+ExternProtoDeclare17->addField(*field24);
+
 Cfield* field25 = new Cfield();
-field25->setName("ViewpointNode");
 field25->setAccessType("initializeOnly");
-field25->setAppinfo("required: insert Viewpoint DEF or USE node for view of interest");
-field25->setType("SFNode");
-ExternProtoDeclare24->addField(*field25);
+field25->setType("SFBool");
+field25->setName("trace");
+ExternProtoDeclare17->addField(*field25);
 
-Cfield* field26 = new Cfield();
-field26->setName("NavigationInfoNode");
-field26->setAccessType("initializeOnly");
-field26->setAppinfo("required: insert NavigationInfo DEF or USE node of interest");
-field26->setType("SFNode");
-ExternProtoDeclare24->addField(*field26);
+group->addChildren(*ExternProtoDeclare17);
 
-Cfield* field27 = new Cfield();
-field27->setName("visible");
-field27->setAccessType("inputOutput");
-field27->setAppinfo("whether or not frustum geometry is rendered");
-field27->setType("SFBool");
-ExternProtoDeclare24->addField(*field27);
+CWorldInfo* WorldInfo26 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
+WorldInfo26->setTitle("ViewFrustumExample.x3d");
+group->addChildren(*WorldInfo26);
 
-Cfield* field28 = new Cfield();
-field28->setName("lineColor");
-field28->setAccessType("inputOutput");
-field28->setAppinfo("RGB color of ViewFrustum outline, default value 0.9 0.9 0.9");
-field28->setType("SFColor");
-ExternProtoDeclare24->addField(*field28);
+CViewpoint* Viewpoint27 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint27->setDescription("ViewFrustum from above, looking down");
+Viewpoint27->setPosition(new float[3]{0,40,0});
+Viewpoint27->setOrientation(new float[4]{1,0,0,-1.57});
+group->addChildren(*Viewpoint27);
 
-Cfield* field29 = new Cfield();
-field29->setName("frustumColor");
-field29->setAccessType("inputOutput");
-field29->setAppinfo("RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8");
-field29->setType("SFColor");
-ExternProtoDeclare24->addField(*field29);
+CViewpoint* Viewpoint28 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint28->setDescription("ViewFrustum from point of view");
+group->addChildren(*Viewpoint28);
 
-Cfield* field30 = new Cfield();
-field30->setName("transparency");
-field30->setAccessType("inputOutput");
-field30->setAppinfo("transparency of ViewFrustum hull geometry, default value 0.5");
-field30->setType("SFFloat");
-ExternProtoDeclare24->addField(*field30);
+CViewpoint* Viewpoint29 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint29->setDescription("ViewFrustum behind point of view");
+Viewpoint29->setPosition(new float[3]{0,0,15});
+group->addChildren(*Viewpoint29);
 
-Cfield* field31 = new Cfield();
-field31->setName("aspectRatio");
-field31->setAccessType("inputOutput");
-field31->setAppinfo("assumed ratio height/width, default value 0.75");
-field31->setType("SFFloat");
-ExternProtoDeclare24->addField(*field31);
+CViewpoint* Viewpoint30 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint30->setDescription("ViewFrustum oblique side view");
+Viewpoint30->setPosition(new float[3]{-5,5,20});
+Viewpoint30->setOrientation(new float[4]{0.8005,0.5926,0.0898,-0.3743});
+group->addChildren(*Viewpoint30);
 
-Cfield* field32 = new Cfield();
-field32->setName("trace");
-field32->setAccessType("initializeOnly");
-field32->setAppinfo("debug support, default false");
-field32->setType("SFBool");
-ExternProtoDeclare24->addField(*field32);
+CNavigationInfo* NavigationInfo31 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
+NavigationInfo31->setType(new CString[3]{"EXAMINE","FLY","ANY"}, 3);
+group->addChildren(*NavigationInfo31);
 
-group->addChildren(*ExternProtoDeclare24);
+CProtoInstance* ProtoInstance32 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance32->setName("ViewFrustum");
+CfieldValue* fieldValue33 = new CfieldValue();
+fieldValue33->setName("ViewpointNode");
+CViewpoint* Viewpoint34 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint34->setDEF("_1");
+Viewpoint34->setDescription("ViewFrustum ViewpointNode");
+fieldValue33->addChildren(*Viewpoint34);
 
-//Example use
-CProtoInstance* ProtoInstance33 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance33->setName("ViewFrustum");
-CfieldValue* fieldValue34 = new CfieldValue();
-fieldValue34->setName("ViewpointNode");
-//prefer empty description to prevent entry in player's ViewpointList
-CViewpoint* Viewpoint35 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint35->setDescription("ViewFrustum ViewpointNode");
-fieldValue34->addChildren(*Viewpoint35);
+ProtoInstance32->addFieldValue(*fieldValue33);
 
-ProtoInstance33->addFieldValue(*fieldValue34);
+CfieldValue* fieldValue35 = new CfieldValue();
+fieldValue35->setName("NavigationInfoNode");
+CNavigationInfo* NavigationInfo36 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
+NavigationInfo36->setDEF("_2");
+NavigationInfo36->setVisibilityLimit(15);
+fieldValue35->addChildren(*NavigationInfo36);
 
-CfieldValue* fieldValue36 = new CfieldValue();
-fieldValue36->setName("NavigationInfoNode");
-CNavigationInfo* NavigationInfo37 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-NavigationInfo37->setVisibilityLimit(15);
-fieldValue36->addChildren(*NavigationInfo37);
+ProtoInstance32->addFieldValue(*fieldValue35);
 
-ProtoInstance33->addFieldValue(*fieldValue36);
+CfieldValue* fieldValue37 = new CfieldValue();
+fieldValue37->setName("visible");
+fieldValue37->setValue("true");
+ProtoInstance32->addFieldValue(*fieldValue37);
 
 CfieldValue* fieldValue38 = new CfieldValue();
-fieldValue38->setName("visible");
-fieldValue38->setValue("true");
-ProtoInstance33->addFieldValue(*fieldValue38);
+fieldValue38->setName("lineColor");
+fieldValue38->setValue("0.9 0.9 0.9");
+ProtoInstance32->addFieldValue(*fieldValue38);
 
 CfieldValue* fieldValue39 = new CfieldValue();
-fieldValue39->setName("lineColor");
-fieldValue39->setValue("0.9 0.9 0.9");
-ProtoInstance33->addFieldValue(*fieldValue39);
+fieldValue39->setName("frustumColor");
+fieldValue39->setValue("0.8 0.8 0.8");
+ProtoInstance32->addFieldValue(*fieldValue39);
 
 CfieldValue* fieldValue40 = new CfieldValue();
-fieldValue40->setName("frustumColor");
-fieldValue40->setValue("0.8 0.8 0.8");
-ProtoInstance33->addFieldValue(*fieldValue40);
+fieldValue40->setName("transparency");
+fieldValue40->setValue("0.75");
+ProtoInstance32->addFieldValue(*fieldValue40);
 
 CfieldValue* fieldValue41 = new CfieldValue();
-fieldValue41->setName("transparency");
+fieldValue41->setName("aspectRatio");
 fieldValue41->setValue("0.75");
-ProtoInstance33->addFieldValue(*fieldValue41);
+ProtoInstance32->addFieldValue(*fieldValue41);
 
 CfieldValue* fieldValue42 = new CfieldValue();
 fieldValue42->setName("trace");
 fieldValue42->setValue("true");
-ProtoInstance33->addFieldValue(*fieldValue42);
+ProtoInstance32->addFieldValue(*fieldValue42);
 
-group->addChildren(*ProtoInstance33);
+group->addChildren(*ProtoInstance32);
 
-//Visualization assists
 CInline* Inline43 = (CInline *)(m_pScene.createNode("Inline"));
 Inline43->setDEF("GridXZ");
+Inline43->setGlobal(True);
 Inline43->setUrl(new CString[1]{"GridXZ_20x20Fixed.x3d"}, 1);
 group->addChildren(*Inline43);
 
@@ -240,12 +231,13 @@ CTransform* Transform44 = (CTransform *)(m_pScene.createNode("Transform"));
 Transform44->setScale(new float[3]{5,5,5});
 CInline* Inline45 = (CInline *)(m_pScene.createNode("Inline"));
 Inline45->setDEF("CoordinateAxes");
+Inline45->setGlobal(True);
 Inline45->setUrl(new CString[1]{"CoordinateAxes.x3d"}, 1);
 Transform44->addChildren(*Inline45);
 
 group->addChildren(*Transform44);
 
-X3D0->setScene(*Scene17);
+X3D0->setScene(*Scene16);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

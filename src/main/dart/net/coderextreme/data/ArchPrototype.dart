@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('3.3'),
+      version_ : SFString('4.0'),
       head_ : 
         head(
           meta_ : [
@@ -46,140 +46,100 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit')),
-
-            meta(
-              name_ : SFString('license'),
-              content_ : SFString('../license.html'))]),
+              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit'))]),
       Scene_ : 
         Scene(
           children_ : [
             ProtoDeclare(
               name_ : SFString('ArchPrototype'),
-              appinfo_ : SFString('Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js.'),
               ProtoInterface_ : 
                 ProtoInterface(
-                  /*COLOR OF ARCH*/
-                  /*INPUT PARAMETERS*/
-                  /*General parameters: measures in meters*/
-                  /*Parameters to create to create shapes related to arch: put true to apply*/
                   field_ : [
                     field(
                       type_ : SFString("SFColor"),
-                      name_ : SFString('diffuseColor'),
                       accessType_ : SFString("inputOutput"),
-                      appinfo_ : SFString('color of arch'),
+                      name_ : SFString('diffuseColor'),
                       value_ : SFString('0.2 0.8 0.8')),
 
                     field(
                       type_ : SFString("SFColor"),
-                      name_ : SFString('emissiveColor'),
                       accessType_ : SFString("inputOutput"),
-                      appinfo_ : SFString('color of arch'),
+                      name_ : SFString('emissiveColor'),
                       value_ : SFString('0.2 0.8 0.8')),
 
                     field(
                       type_ : SFString("SFFloat"),
-                      name_ : SFString('clearSpanWidth'),
                       accessType_ : SFString("initializeOnly"),
-                      appinfo_ : SFString('clearSpanWidth: clearSpanWidth must be double of riseHeight to obtain an half circumference'),
+                      name_ : SFString('clearSpanWidth'),
                       value_ : SFString('4')),
 
                     field(
                       type_ : SFString("SFFloat"),
-                      name_ : SFString('riseHeight'),
                       accessType_ : SFString("initializeOnly"),
-                      appinfo_ : SFString('riseHeight: riseHeight must be half of clearSpanWidth to obtain an half circumference'),
+                      name_ : SFString('riseHeight'),
                       value_ : SFString('2')),
 
                     field(
                       type_ : SFString("SFFloat"),
-                      name_ : SFString('depth'),
                       accessType_ : SFString("initializeOnly"),
-                      appinfo_ : SFString('depth'),
+                      name_ : SFString('depth'),
                       value_ : SFString('3')),
 
                     field(
                       type_ : SFString("SFFloat"),
+                      accessType_ : SFString("initializeOnly"),
                       name_ : SFString('topAbutmentHeight'),
-                      accessType_ : SFString("initializeOnly"),
-                      appinfo_ : SFString('topAbutmentHeight:topAbutmentHeight=0 means no topAbutment'),
                       value_ : SFString('0.5')),
 
                     field(
                       type_ : SFString("SFFloat"),
+                      accessType_ : SFString("initializeOnly"),
                       name_ : SFString('pierWidth'),
-                      accessType_ : SFString("initializeOnly"),
-                      appinfo_ : SFString('pierWidth:pierWidtht=0 means no pierWidth'),
                       value_ : SFString('0.5')),
 
                     field(
                       type_ : SFString("SFFloat"),
-                      name_ : SFString('pierHeight'),
                       accessType_ : SFString("initializeOnly"),
-                      appinfo_ : SFString('pierHeight: pierHeight=0 means no pierHeight'),
+                      name_ : SFString('pierHeight'),
                       value_ : SFString('1')),
 
                     field(
                       type_ : SFString("SFBool"),
-                      name_ : SFString('archHalf'),
                       accessType_ : SFString("initializeOnly"),
-                      appinfo_ : SFString('archHalf: can modify also clearSpanWidth, riseHeight, depth, pierWidth, pierHeight, topAbutmentHeight, archHalfExtensionWidth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width'),
-                      value_ : SFString('false')),
+                      name_ : SFString('archHalf')),
 
                     field(
                       type_ : SFString("SFFloat"),
-                      name_ : SFString('archHalfExtensionWidth'),
                       accessType_ : SFString("initializeOnly"),
-                      appinfo_ : SFString('archHalfExtensionWidth: measure in meters, use only if archHalf=true, it is the width of the etension of the abutment of the archHalf. See the reference file ArchModelingDiagrams.pdf to find further information.'),
-                      value_ : SFString('0')),
+                      name_ : SFString('archHalfExtensionWidth')),
 
                     field(
                       type_ : SFString("SFBool"),
-                      name_ : SFString('onlyIntrados'),
                       accessType_ : SFString("initializeOnly"),
-                      appinfo_ : SFString('onlyIntrados: note it is a flat curved surface, can modify also clearSpanWidth, riseHeight, depth at purpose, if needed apply archHalf=true.'),
-                      value_ : SFString('false')),
+                      name_ : SFString('onlyIntrados')),
 
                     field(
                       type_ : SFString("SFBool"),
-                      name_ : SFString('archFilled'),
                       accessType_ : SFString("initializeOnly"),
-                      appinfo_ : SFString('archFilled: note it is an half cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose.'),
-                      value_ : SFString('false')),
+                      name_ : SFString('archFilled')),
 
                     field(
                       type_ : SFString("SFBool"),
-                      name_ : SFString('archHalfFilled'),
                       accessType_ : SFString("initializeOnly"),
-                      appinfo_ : SFString('archHalfFilled: note it is a quarter cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalfFilled width.'),
-                      value_ : SFString('false')),
+                      name_ : SFString('archHalfFilled')),
 
                     field(
                       type_ : SFString("SFBool"),
-                      name_ : SFString('lintel'),
                       accessType_ : SFString("initializeOnly"),
-                      appinfo_ : SFString('lintel: no arc is rendered, but a lintel: topAbutmentHeight on pierHeight, total height is pierHeight + topAbutmentHeight, if needed apply archHalf=true.'),
-                      value_ : SFString('false'))]),
+                      name_ : SFString('lintel'))]),
               ProtoBody_ : 
                 ProtoBody(
-                  /*First node determines node type of this prototype*/
-                  /*IndexedFaceset creates arch*/
                   children_ : [
                     Transform(
                       DEF_ : SFString('ArchTransform'),
                       child_ : 
                         Shape(
                           DEF_ : SFString('Arch'),
-                          /*note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly*/
-                          geometry_ : 
-                            IndexedFaceSet(
-                              DEF_ : SFString('ArchIndex'),
-                              convex_ : false,
-                              solid_ : false,
-                              coord_ : 
-                                Coordinate(
-                                  DEF_ : SFString('ArchChord'))),
                           appearance_ : 
                             Appearance(
                               material_ : 
@@ -189,112 +149,99 @@ var X3D0 =  X3D(
                                     IS(
                                       connect_ : [
                                         connect(
-                                          nodeField_ : SFString('emissiveColor'),
-                                          protoField_ : SFString('emissiveColor')),
+                                          nodeField_ : SFString('diffuseColor'),
+                                          protoField_ : SFString('diffuseColor')),
 
                                         connect(
-                                          nodeField_ : SFString('diffuseColor'),
-                                          protoField_ : SFString('diffuseColor'))]))))),
-                  /*Subsequent nodes do not render, but still must be a valid X3D subgraph*/
-                  /*This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs*/
+                                          nodeField_ : SFString('emissiveColor'),
+                                          protoField_ : SFString('emissiveColor'))]))),
+                          geometry_ : 
+                            IndexedFaceSet(
+                              DEF_ : SFString('ArchIndex'),
+                              solid_ : false,
+                              convex_ : false,
+                              coord_ : 
+                                Coordinate(
+                                  DEF_ : SFString('ArchChord'))))),
 
                     Script(
                       DEF_ : SFString('ArchPrototypeScript'),
                       url_ : MFString([SFString("../node/ArchPrototypeScript.js"), SFString("https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js")]),
-                      /*INPUT PARAMETERS*/
-                      /*General parameters*/
-                      /*Parameters to create to create shapes related to arch: put true to apply*/
-                      /*OUTPUT PARAMETERS*/
                       field_ : [
                         field(
                           type_ : SFString("SFFloat"),
-                          name_ : SFString('clearSpanWidth'),
                           accessType_ : SFString("initializeOnly"),
-                          appinfo_ : SFString('user or default input for clearSpanWidth parameter')),
+                          name_ : SFString('clearSpanWidth')),
 
                         field(
                           type_ : SFString("SFFloat"),
-                          name_ : SFString('riseHeight'),
                           accessType_ : SFString("initializeOnly"),
-                          appinfo_ : SFString('user or default input for riseHeight parameter')),
+                          name_ : SFString('riseHeight')),
 
                         field(
                           type_ : SFString("SFFloat"),
-                          name_ : SFString('depth'),
                           accessType_ : SFString("initializeOnly"),
-                          appinfo_ : SFString('user or default input for depth parameter')),
+                          name_ : SFString('depth')),
 
                         field(
                           type_ : SFString("SFFloat"),
-                          name_ : SFString('topAbutmentHeight'),
                           accessType_ : SFString("initializeOnly"),
-                          appinfo_ : SFString('user or default input for topAbutmentHeight parameter')),
+                          name_ : SFString('topAbutmentHeight')),
 
                         field(
                           type_ : SFString("SFFloat"),
-                          name_ : SFString('pierWidth'),
                           accessType_ : SFString("initializeOnly"),
-                          appinfo_ : SFString('user or default input for pierWidth parameter')),
+                          name_ : SFString('pierWidth')),
 
                         field(
                           type_ : SFString("SFFloat"),
-                          name_ : SFString('pierHeight'),
                           accessType_ : SFString("initializeOnly"),
-                          appinfo_ : SFString('user or default input for pierHeight parameter')),
+                          name_ : SFString('pierHeight')),
 
                         field(
                           type_ : SFString("SFBool"),
-                          name_ : SFString('archHalf'),
                           accessType_ : SFString("initializeOnly"),
-                          appinfo_ : SFString('user or default input for archHalf parameter')),
+                          name_ : SFString('archHalf')),
 
                         field(
                           type_ : SFString("SFFloat"),
-                          name_ : SFString('archHalfExtensionWidth'),
                           accessType_ : SFString("initializeOnly"),
-                          appinfo_ : SFString('user or default input for archHalfExtensionWidth parameter')),
+                          name_ : SFString('archHalfExtensionWidth')),
 
                         field(
                           type_ : SFString("SFBool"),
-                          name_ : SFString('onlyIntrados'),
                           accessType_ : SFString("initializeOnly"),
-                          appinfo_ : SFString('user or default input for onlyIntrados parameter')),
+                          name_ : SFString('onlyIntrados')),
 
                         field(
                           type_ : SFString("SFBool"),
-                          name_ : SFString('archFilled'),
                           accessType_ : SFString("initializeOnly"),
-                          appinfo_ : SFString('user or default input for archFilled parameter')),
+                          name_ : SFString('archFilled')),
 
                         field(
                           type_ : SFString("SFBool"),
-                          name_ : SFString('archHalfFilled'),
                           accessType_ : SFString("initializeOnly"),
-                          appinfo_ : SFString('user or default input for archHalfFilled parameter')),
+                          name_ : SFString('archHalfFilled')),
 
                         field(
                           type_ : SFString("SFBool"),
-                          name_ : SFString('lintel'),
                           accessType_ : SFString("initializeOnly"),
-                          appinfo_ : SFString('user or default input for lintel parameter')),
+                          name_ : SFString('lintel')),
 
                         field(
                           type_ : SFString("SFVec3f"),
-                          name_ : SFString('computedScale'),
                           accessType_ : SFString("outputOnly"),
-                          appinfo_ : SFString('computedScale: modify scale field - NOTE it is not used to modify the whole arch, but to modify clearSpanWidth, riseHeight, depth. It does not affect topAbutmentHeight, pierWidth, pierHeight, archHalfExtensionWidth')),
+                          name_ : SFString('computedScale')),
 
                         field(
                           type_ : SFString("MFVec3f"),
-                          name_ : SFString('pointOut'),
                           accessType_ : SFString("outputOnly"),
-                          appinfo_ : SFString('send computed points to the Coordinate node')),
+                          name_ : SFString('pointOut')),
 
                         field(
                           type_ : SFString("MFInt32"),
-                          name_ : SFString('indexOut'),
                           accessType_ : SFString("outputOnly"),
-                          appinfo_ : SFString('send computed indices to the IndexedFaceSet node'))],
+                          name_ : SFString('indexOut'))],
 
                       IS_ : 
                         IS(
@@ -312,12 +259,12 @@ var X3D0 =  X3D(
                               protoField_ : SFString('depth')),
 
                             connect(
-                              nodeField_ : SFString('pierWidth'),
-                              protoField_ : SFString('pierWidth')),
-
-                            connect(
                               nodeField_ : SFString('topAbutmentHeight'),
                               protoField_ : SFString('topAbutmentHeight')),
+
+                            connect(
+                              nodeField_ : SFString('pierWidth'),
+                              protoField_ : SFString('pierWidth')),
 
                             connect(
                               nodeField_ : SFString('pierHeight'),
@@ -348,26 +295,26 @@ var X3D0 =  X3D(
                               protoField_ : SFString('lintel'))])),
 
                     ROUTE(
+                      fromNode_ : SFString('ArchPrototypeScript'),
                       fromField_ : SFString('computedScale'),
-                      fromNode_ : SFString('ArchPrototypeScript'),
-                      toField_ : SFString('scale'),
-                      toNode_ : SFString('ArchTransform')),
+                      toNode_ : SFString('ArchTransform'),
+                      toField_ : SFString('scale')),
 
                     ROUTE(
+                      fromNode_ : SFString('ArchPrototypeScript'),
                       fromField_ : SFString('pointOut'),
-                      fromNode_ : SFString('ArchPrototypeScript'),
-                      toField_ : SFString('point'),
-                      toNode_ : SFString('ArchChord')),
+                      toNode_ : SFString('ArchChord'),
+                      toField_ : SFString('point')),
 
                     ROUTE(
-                      fromField_ : SFString('indexOut'),
                       fromNode_ : SFString('ArchPrototypeScript'),
-                      toField_ : SFString('set_coordIndex'),
-                      toNode_ : SFString('ArchIndex'))])),
+                      fromField_ : SFString('indexOut'),
+                      toNode_ : SFString('ArchIndex'),
+                      toField_ : SFString('set_coordIndex'))])),
 
             ProtoInstance(
-              name_ : SFString('ArchPrototype'),
               DEF_ : SFString('ArchInstance'),
+              name_ : SFString('ArchPrototype'),
               fieldValue_ : [
                 fieldValue(
                   name_ : SFString('diffuseColor'),
@@ -400,9 +347,9 @@ var X3D0 =  X3D(
                 fieldValue(
                   name_ : SFString('pierHeight'),
                   value_ : SFString('2'))]),
-          /*Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)*/
 
             Inline(
               DEF_ : SFString('CoordinateAxes'),
+              global_ : true,
               url_ : MFString([SFString("../data/CoordinateAxes.x3d")]))]));
 void main() { exit(0); }

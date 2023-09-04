@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('3.3'),
+      version_ : SFString('4.0'),
       head_ : 
         head(
           meta_ : [
@@ -50,11 +50,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit')),
-
-            meta(
-              name_ : SFString('license'),
-              content_ : SFString('../license.html'))]),
+              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit'))]),
       Scene_ : 
         Scene(
           children_ : [
@@ -63,43 +59,38 @@ var X3D0 =  X3D(
 
             Collision(
               DEF_ : SFString('DoNotCollideWithVisualizationWidget'),
-              /*Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph.*/
-              /*This NavigationInfo allows examine mode and will be overridden by any parent scene.*/
-              /*Each arrow goes from +1m to -1m to allow linear scaling to fit a scene*/
-              /*Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user*/
               proxy_ : 
                 Group(
-                  /*Vertical Y arrow and label*/
                   children_ : [
                     Group(
                       DEF_ : SFString('ArrowGreen'),
                       children_ : [
                         Shape(
-                          geometry_ : 
-                            Cylinder(
-                              DEF_ : SFString('ArrowCylinder'),
-                              radius_ : 0.025,
-                              top_ : false),
                           appearance_ : 
                             Appearance(
                               DEF_ : SFString('Green'),
                               material_ : 
                                 Material(
                                   diffuseColor_ : SFColor([SFDouble(0.1), SFDouble(0.6), SFDouble(0.1)]),
-                                  emissiveColor_ : SFColor([SFDouble(0.05), SFDouble(0.2), SFDouble(0.05)])))),
+                                  emissiveColor_ : SFColor([SFDouble(0.05), SFDouble(0.2), SFDouble(0.05)]))),
+                          geometry_ : 
+                            Cylinder(
+                              DEF_ : SFString('ArrowCylinder'),
+                              top_ : false,
+                              radius_ : 0.025)),
 
                         Transform(
                           translation_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                           child_ : 
                             Shape(
+                              appearance_ : 
+                                Appearance(
+                                  USE_ : SFString('Green')),
                               geometry_ : 
                                 Cone(
                                   DEF_ : SFString('ArrowCone'),
-                                  bottomRadius_ : 0.05,
-                                  height_ : 0.1),
-                              appearance_ : 
-                                Appearance(
-                                  USE_ : SFString('Green'))))]),
+                                  height_ : 0.1,
+                                  bottomRadius_ : 0.05)))]),
 
                     Transform(
                       translation_ : SFVec3f([SFDouble(0), SFDouble(1.08), SFDouble(0)]),
@@ -121,12 +112,11 @@ var X3D0 =  X3D(
                                     FontStyle(
                                       DEF_ : SFString('LABEL_FONT'),
                                       family_ : MFString([SFString("SANS")]),
-                                      justify_ : MFString([SFString("MIDDLE"), SFString("MIDDLE")]),
-                                      size_ : 0.2)))])])]),
+                                      size_ : 0.2,
+                                      justify_ : MFString([SFString("MIDDLE"), SFString("MIDDLE")]))))])])]),
               proxy_ : 
                 Transform(
                   rotation_ : SFRotation([SFDouble(0), SFDouble(0), SFDouble(1), SFDouble(-1.57079)]),
-                  /*Horizontal X arrow and label*/
                   children_ : [
                     Group(
                       children_ : [
@@ -134,32 +124,31 @@ var X3D0 =  X3D(
                           DEF_ : SFString('ArrowRed'),
                           children_ : [
                             Shape(
-                              geometry_ : 
-                                Cylinder(
-                                  USE_ : SFString('ArrowCylinder')),
                               appearance_ : 
                                 Appearance(
                                   DEF_ : SFString('Red'),
                                   material_ : 
                                     Material(
                                       diffuseColor_ : SFColor([SFDouble(0.7), SFDouble(0.1), SFDouble(0.1)]),
-                                      emissiveColor_ : SFColor([SFDouble(0.33), SFDouble(0), SFDouble(0)])))),
+                                      emissiveColor_ : SFColor([SFDouble(0.33), SFDouble(0), SFDouble(0)]))),
+                              geometry_ : 
+                                Cylinder(
+                                  USE_ : SFString('ArrowCylinder'))),
 
                             Transform(
                               translation_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                               child_ : 
                                 Shape(
-                                  geometry_ : 
-                                    Cone(
-                                      USE_ : SFString('ArrowCone')),
                                   appearance_ : 
                                     Appearance(
-                                      USE_ : SFString('Red'))))]),
+                                      USE_ : SFString('Red')),
+                                  geometry_ : 
+                                    Cone(
+                                      USE_ : SFString('ArrowCone'))))]),
 
                         Transform(
-                          rotation_ : SFRotation([SFDouble(0), SFDouble(0), SFDouble(1), SFDouble(1.57079)]),
                           translation_ : SFVec3f([SFDouble(0.072), SFDouble(1.1), SFDouble(0)]),
-                          /*note label rotated back to original coordinate frame*/
+                          rotation_ : SFRotation([SFDouble(0), SFDouble(0), SFDouble(1), SFDouble(1.57079)]),
                           children_ : [
                             Billboard(
                               children_ : [
@@ -176,7 +165,6 @@ var X3D0 =  X3D(
               proxy_ : 
                 Transform(
                   rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(1.57079)]),
-                  /*Perpendicular Z arrow and label, note right-hand rule*/
                   children_ : [
                     Group(
                       children_ : [
@@ -184,32 +172,31 @@ var X3D0 =  X3D(
                           DEF_ : SFString('ArrowBlue'),
                           children_ : [
                             Shape(
-                              geometry_ : 
-                                Cylinder(
-                                  USE_ : SFString('ArrowCylinder')),
                               appearance_ : 
                                 Appearance(
                                   DEF_ : SFString('Blue'),
                                   material_ : 
                                     Material(
                                       diffuseColor_ : SFColor([SFDouble(0.3), SFDouble(0.3), SFDouble(1)]),
-                                      emissiveColor_ : SFColor([SFDouble(0.1), SFDouble(0.1), SFDouble(0.33)])))),
+                                      emissiveColor_ : SFColor([SFDouble(0.1), SFDouble(0.1), SFDouble(0.33)]))),
+                              geometry_ : 
+                                Cylinder(
+                                  USE_ : SFString('ArrowCylinder'))),
 
                             Transform(
                               translation_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(0)]),
                               child_ : 
                                 Shape(
-                                  geometry_ : 
-                                    Cone(
-                                      USE_ : SFString('ArrowCone')),
                                   appearance_ : 
                                     Appearance(
-                                      USE_ : SFString('Blue'))))]),
+                                      USE_ : SFString('Blue')),
+                                  geometry_ : 
+                                    Cone(
+                                      USE_ : SFString('ArrowCone'))))]),
 
                         Transform(
-                          rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-1.57079)]),
                           translation_ : SFVec3f([SFDouble(0), SFDouble(1.1), SFDouble(0.072)]),
-                          /*note label rotated back to original coordinate frame*/
+                          rotation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-1.57079)]),
                           children_ : [
                             Billboard(
                               children_ : [

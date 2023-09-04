@@ -45,7 +45,7 @@ public class TextExamples {
     model.toFileJSON("../data/TextExamples.new.json");
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.0")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("TextExamples.x3d"))
         .addMeta(new meta().setName("description").setContent("Show different escape-character text examples for embedded quotation marks."))
@@ -55,44 +55,43 @@ public class TextExamples {
         .addMeta(new meta().setName("warning").setContent("Note that X3D Canonicalization (C14N) will scrub alternate XML character representations, be careful to check original encoding into version control."))
         .addMeta(new meta().setName("warning").setContent("Usually this source document needs to be inspected and edited using a plain-text editor in order to see the differences in these XML-equivalent text representations."))
         .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/development/TextExamples.x3d"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("license").setContent("../license.html")))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")))
       .setScene(new Scene()
         .addChild(new Transform().setTranslation(new float[] {0f,2f,0f})
           .addChild(new Shape()
-            .setGeometry(new Text().setString(new MFString0().getArray())
-              .setFontStyle(new FontStyle().setDEF("testFontStyle").setJustify(new MFString1().getArray()).setSize(0.8f)))
             .setAppearance(new Appearance().setDEF("LightBlueAppearance")
-              .setMaterial(new Material().setDiffuseColor(new float[] {0.1f,0.7f,0.7f})))))
+              .setMaterial(new Material().setDiffuseColor(new float[] {0.1f,0.7f,0.7f})))
+            .setGeometry(new Text().setString(new MFString0().getArray())
+              .setFontStyle(new FontStyle().setDEF("testFontStyle").setSize(0.8f).setJustify(new MFString1().getArray())))))
         .addChild(new Transform().setTranslation(new float[] {-3f,0f,0f})
           .addChild(new Shape()
+            .setAppearance(new Appearance().setUSE("LightBlueAppearance"))
             .setGeometry(new Text().setString(new MFString2().getArray())
-              .setFontStyle(new FontStyle().setUSE("testFontStyle")))
-            .setAppearance(new Appearance().setUSE("LightBlueAppearance"))))
+              .setFontStyle(new FontStyle().setUSE("testFontStyle")))))
         .addChild(new Transform().setTranslation(new float[] {3f,0f,0f})
           .addChild(new Shape()
+            .setAppearance(new Appearance().setUSE("LightBlueAppearance"))
             .setGeometry(new Text().setString(new MFString3().getArray())
-              .setFontStyle(new FontStyle().setUSE("testFontStyle")))
-            .setAppearance(new Appearance().setUSE("LightBlueAppearance")))))      ;
+              .setFontStyle(new FontStyle().setUSE("testFontStyle"))))))      ;
     return X3D0;
     }
-protected class MFString0 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString0 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Compare special character escaping"});
   }
 }
-protected class MFString1 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString1 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
-protected class MFString2 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString2 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"I don't think so","","he said \"Hi\""});
   }
 }
-protected class MFString3 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString3 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"I don't think so","","he said \"Hi\""});
   }
 }

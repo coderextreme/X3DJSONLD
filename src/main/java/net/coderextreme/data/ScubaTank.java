@@ -45,7 +45,7 @@ public class ScubaTank {
     model.toFileJSON("../data/ScubaTank.new.json");
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("3.3")
+      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("ScubaTank.x3d"))
         .addMeta(new meta().setName("description").setContent("Scuba gear used by Nancy Diving example."))
@@ -53,15 +53,14 @@ public class ScubaTank {
         .addMeta(new meta().setName("created").setContent("24 January 2001"))
         .addMeta(new meta().setName("modified").setContent("23 May 2020"))
         .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/ScubaTank.x3d"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("license").setContent("../license.html")))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("ScubaTank.x3d"))
         .addChild(new Transform().setDEF("ScubaTank")
           .addChild(new Transform()
             .addChild(new Shape()
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDEF("tank").setAmbientIntensity(0.3f).setDiffuseColor(new float[] {0.3f,0.3f,0.5f}).setShininess(0.1f).setSpecularColor(new float[] {0.7f,0.7f,0.8f})))
+                .setMaterial(new Material().setDEF("tank").setAmbientIntensity(0.3f).setDiffuseColor(new float[] {0.3f,0.3f,0.5f}).setSpecularColor(new float[] {0.7f,0.7f,0.8f}).setShininess(0.1f)))
               .setGeometry(new Cylinder().setHeight(0.7f).setRadius(0.1f))))
           .addChild(new Transform().setTranslation(new float[] {0f,0.35f,0f})
             .addChild(new Shape()
@@ -78,14 +77,14 @@ public class ScubaTank {
               .addChild(new Transform().setTranslation(new float[] {0f,0.45f,0f})
                 .addChild(new Shape().setDEF("pressure")
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDEF("pressureColor").setAmbientIntensity(0.4f).setDiffuseColor(new float[] {0.91f,0.91f,0.91f}).setShininess(0.16f).setSpecularColor(new float[] {0.91f,0.9f,0.91f})))
+                    .setMaterial(new Material().setDEF("pressureColor").setAmbientIntensity(0.4f).setDiffuseColor(new float[] {0.91f,0.91f,0.91f}).setSpecularColor(new float[] {0.91f,0.9f,0.91f}).setShininess(0.16f)))
                   .setGeometry(new Cylinder().setHeight(0.1f).setRadius(0.015f))))
               .addChild(new Transform().setTranslation(new float[] {0f,0.5f,0f})
                 .addChild(new Shape().setDEF("pressureTop")
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("black")))
                   .setGeometry(new Cylinder().setHeight(0.02f).setRadius(0.025f))))
-              .addChild(new Transform().setRotation(new float[] {0f,0f,1f,1.57f}).setTranslation(new float[] {-0.028f,0.462f,0f})
+              .addChild(new Transform().setTranslation(new float[] {-0.028f,0.462f,0f}).setRotation(new float[] {0f,0f,1f,1.57f})
                 .addChild(new Transform()
                   .addChild(new Shape().setDEF("connectorToRegulator")
                     .setAppearance(new Appearance()
@@ -104,8 +103,8 @@ public class ScubaTank {
         .addChild(new Background().setSkyColor(new MFColor0().getArray())))      ;
     return X3D0;
     }
-protected class MFColor0 {
-  protected org.web3d.x3d.jsail.fields.MFColor getArray() {
+private class MFColor0 {
+  private org.web3d.x3d.jsail.fields.MFColor getArray() {
     return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.6f,0.6f,0.6f});
   }
 }

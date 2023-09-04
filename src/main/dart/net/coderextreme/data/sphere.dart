@@ -4,13 +4,9 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Interchange'),
-      version_ : SFString('3.3'),
+      version_ : SFString('4.0'),
       head_ : 
         head(
-          component_ : 
-            component(
-              name_ : SFString('Scripting'),
-              level_ : 1),
           meta_ : [
             meta(
               name_ : SFString('title'),
@@ -27,10 +23,10 @@ var X3D0 =  X3D(
             meta(
               name_ : SFString('identifier'),
               content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/sphere.x3d')),
-
-            meta(
-              name_ : SFString('description'),
-              content_ : SFString('a sphere'))]),
+          component_ : 
+            component(
+              name_ : SFString('Scripting'),
+              level_ : 1)]),
       Scene_ : 
         Scene(
           children_ : [

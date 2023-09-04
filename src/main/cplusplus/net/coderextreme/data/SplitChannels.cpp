@@ -50,13 +50,13 @@ meta8->setContent("CHANGELOG.txt");
 head1->addMeta(*meta8);
 
 Cmeta* meta9 = new Cmeta();
-meta9->setName("TODO");
-meta9->setContent("credit for audio files");
+meta9->setName("reference");
+meta9->setContent("http://www.medialab.hmu.gr/minipages/x3domAudio");
 head1->addMeta(*meta9);
 
 Cmeta* meta10 = new Cmeta();
-meta10->setName("reference");
-meta10->setContent("http://www.medialab.hmu.gr/minipages/x3domAudio");
+meta10->setName("TODO");
+meta10->setContent("credit for audio files");
 head1->addMeta(*meta10);
 
 Cmeta* meta11 = new Cmeta();
@@ -69,293 +69,272 @@ meta12->setName("generator");
 meta12->setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit");
 head1->addMeta(*meta12);
 
-Cmeta* meta13 = new Cmeta();
-meta13->setName("license");
-meta13->setContent("../license.html");
-head1->addMeta(*meta13);
-
 X3D0->setHead(*head1);
 
-CScene* Scene14 = new CScene();
-CWorldInfo* WorldInfo15 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
-WorldInfo15->setTitle("SplitChannels.x3d");
-group->addChildren(*WorldInfo15);
+CScene* Scene13 = new CScene();
+CWorldInfo* WorldInfo14 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
+WorldInfo14->setTitle("SplitChannels.x3d");
+group->addChildren(*WorldInfo14);
 
-CNavigationInfo* NavigationInfo16 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-NavigationInfo16->setType(new CString[1]{"ON"}, 1);
-group->addChildren(*NavigationInfo16);
+CNavigationInfo* NavigationInfo15 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
+group->addChildren(*NavigationInfo15);
 
-CBackground* Background17 = (CBackground *)(m_pScene.createNode("Background"));
-Background17->setSkyColor(new float[3]{0.2,0.2,0.21});
-group->addChildren(*Background17);
+CBackground* Background16 = (CBackground *)(m_pScene.createNode("Background"));
+Background16->setSkyColor(new float[3]{0.2,0.2,0.21});
+group->addChildren(*Background16);
 
-CViewpoint* Viewpoint18 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint18->setOrientation(new float[4]{1,0,0,-0.5});
-Viewpoint18->setPosition(new float[3]{0,500,600});
-Viewpoint18->setRetainUserOffsets(True);
-group->addChildren(*Viewpoint18);
+CViewpoint* Viewpoint17 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint17->setPosition(new float[3]{0,500,600});
+Viewpoint17->setOrientation(new float[4]{1,0,0,-0.5});
+Viewpoint17->setRetainUserOffsets(True);
+group->addChildren(*Viewpoint17);
 
+CTransform* Transform18 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform18->setDEF("PowerR");
+Transform18->setTranslation(new float[3]{100,400,400});
 CTransform* Transform19 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform19->setDEF("PowerR");
-Transform19->setTranslation(new float[3]{100,400,400});
-CTransform* Transform20 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform20->setRotation(new float[4]{1,0,0,-0.5});
-Transform20->setTranslation(new float[3]{0,40,0});
-CShape* Shape21 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance22 = (CAppearance *)(m_pScene.createNode("Appearance"));
-Appearance22->setDEF("audio_emit");
-CMaterial* Material23 = (CMaterial *)(m_pScene.createNode("Material"));
-Material23->setDiffuseColor(new float[3]{0,1,0});
-Material23->setEmissiveColor(new float[3]{0.8,0.8,0.8});
-Material23->setSpecularColor(new float[3]{0.01,0.01,0.01});
-Appearance22->setMaterial(*Material23);
+Transform19->setTranslation(new float[3]{0,40,0});
+Transform19->setRotation(new float[4]{1,0,0,-0.5});
+CShape* Shape20 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance21 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance21->setDEF("audio_emit");
+CMaterial* Material22 = (CMaterial *)(m_pScene.createNode("Material"));
+Material22->setDiffuseColor(new float[3]{0,1,0});
+Material22->setSpecularColor(new float[3]{0.01,0.01,0.01});
+Material22->setEmissiveColor(new float[3]{0.8,0.8,0.8});
+Appearance21->setMaterial(*Material22);
 
-Shape21->setAppearance(*Appearance22);
+Shape20->setAppearance(*Appearance21);
 
-CBox* Box24 = (CBox *)(m_pScene.createNode("Box"));
-Box24->setSize(new float[3]{10,80,0.01});
-Shape21->setGeometry(Box24);
+CBox* Box23 = (CBox *)(m_pScene.createNode("Box"));
+Box23->setSize(new float[3]{10,80,0.01});
+Shape20->setGeometry(Box23);
 
-Transform20->addChild(*Shape21);
+Transform19->addChild(*Shape20);
 
-Transform19->addChildren(*Transform20);
+Transform18->addChildren(*Transform19);
 
-CTransform* Transform25 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform25->setRotation(new float[4]{1,0,0,-0.5});
-Transform25->setTranslation(new float[3]{-2.7,37,0});
-CShape* Shape26 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance27 = (CAppearance *)(m_pScene.createNode("Appearance"));
-Appearance27->setDEF("audio_emit2");
-CMaterial* Material28 = (CMaterial *)(m_pScene.createNode("Material"));
-Material28->setDiffuseColor(new float[3]{0,1,0});
-Material28->setEmissiveColor(new float[3]{0.8,0.8,0.8});
-Material28->setSpecularColor(new float[3]{0.01,0.01,0.01});
-Appearance27->setMaterial(*Material28);
+CTransform* Transform24 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform24->setTranslation(new float[3]{-2.7,37,0});
+Transform24->setRotation(new float[4]{1,0,0,-0.5});
+CShape* Shape25 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance26 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance26->setDEF("audio_emit2");
+CMaterial* Material27 = (CMaterial *)(m_pScene.createNode("Material"));
+Material27->setDiffuseColor(new float[3]{0,1,0});
+Material27->setSpecularColor(new float[3]{0.01,0.01,0.01});
+Material27->setEmissiveColor(new float[3]{0.8,0.8,0.8});
+Appearance26->setMaterial(*Material27);
 
-CImageTexture* ImageTexture29 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture29->setUrl(new CString[2]{"images/line.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"}, 2);
-Appearance27->setTexture(*ImageTexture29);
+CImageTexture* ImageTexture28 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture28->setUrl(new CString[2]{"images/line.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"}, 2);
+Appearance26->setTexture(*ImageTexture28);
 
-Shape26->setAppearance(*Appearance27);
+Shape25->setAppearance(*Appearance26);
 
-CBox* Box30 = (CBox *)(m_pScene.createNode("Box"));
-Box30->setSize(new float[3]{25,83,0.01});
-Shape26->setGeometry(Box30);
+CBox* Box29 = (CBox *)(m_pScene.createNode("Box"));
+Box29->setSize(new float[3]{25,83,0.01});
+Shape25->setGeometry(Box29);
 
-Transform25->addChild(*Shape26);
+Transform24->addChild(*Shape25);
 
-Transform19->addChildren(*Transform25);
+Transform18->addChildren(*Transform24);
 
-CTransform* Transform31 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform31->setDEF("volumeRight");
-Transform31->setRotation(new float[4]{1,0,0,-0.5});
-Transform31->setScale(new float[3]{10,10,10});
-Transform31->setTranslation(new float[3]{0,-10,0});
-CShape* Shape32 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance33 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material34 = (CMaterial *)(m_pScene.createNode("Material"));
-Material34->setAmbientIntensity(0.0933);
-Material34->setDiffuseColor(new float[3]{0.345,0.345,0.882});
-Material34->setShininess(0.51);
-Material34->setSpecularColor(new float[3]{0.46,0.46,0.46});
-Appearance33->setMaterial(*Material34);
+CTransform* Transform30 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform30->setDEF("volumeRight");
+Transform30->setTranslation(new float[3]{0,-10,0});
+Transform30->setRotation(new float[4]{1,0,0,-0.5});
+Transform30->setScale(new float[3]{10,10,10});
+CShape* Shape31 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance32 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material33 = (CMaterial *)(m_pScene.createNode("Material"));
+Material33->setAmbientIntensity(0.0933);
+Material33->setDiffuseColor(new float[3]{0.345,0.345,0.882});
+Material33->setSpecularColor(new float[3]{0.46,0.46,0.46});
+Material33->setShininess(0.51);
+Appearance32->setMaterial(*Material33);
 
-Shape32->setAppearance(*Appearance33);
+Shape31->setAppearance(*Appearance32);
 
-CText* Text35 = (CText *)(m_pScene.createNode("Text"));
-Text35->setString(new CString[1]{"Right Channel Volume"}, 1);
-CFontStyle* FontStyle36 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle36->setFamily(new CString[1]{"Times"}, 1);
-FontStyle36->setStyle("BOLD");
-Text35->setFontStyle(*FontStyle36);
+CText* Text34 = (CText *)(m_pScene.createNode("Text"));
+CFontStyle* FontStyle35 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle35->setFamily(new CString[1]{"Times"}, 1);
+FontStyle35->setStyle("BOLD");
+Text34->setFontStyle(*FontStyle35);
 
-Shape32->setGeometry(Text35);
+Shape31->setGeometry(Text34);
 
-Transform31->addChild(*Shape32);
+Transform30->addChild(*Shape31);
 
-Transform19->addChildren(*Transform31);
+Transform18->addChildren(*Transform30);
 
-group->addChildren(*Transform19);
+group->addChildren(*Transform18);
 
+CTransform* Transform36 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform36->setDEF("PowerL");
+Transform36->setTranslation(new float[3]{-100,400,400});
 CTransform* Transform37 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform37->setDEF("PowerL");
-Transform37->setTranslation(new float[3]{-100,400,400});
-CTransform* Transform38 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform38->setRotation(new float[4]{1,0,0,-0.5});
-Transform38->setTranslation(new float[3]{0,40,0});
-CShape* Shape39 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance40 = (CAppearance *)(m_pScene.createNode("Appearance"));
-Appearance40->setDEF("audio_emit3");
-CMaterial* Material41 = (CMaterial *)(m_pScene.createNode("Material"));
-Material41->setDiffuseColor(new float[3]{0,1,0});
-Material41->setEmissiveColor(new float[3]{0.8,0.8,0.8});
-Material41->setSpecularColor(new float[3]{0.01,0.01,0.01});
-Appearance40->setMaterial(*Material41);
+Transform37->setTranslation(new float[3]{0,40,0});
+Transform37->setRotation(new float[4]{1,0,0,-0.5});
+CShape* Shape38 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance39 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance39->setDEF("audio_emit3");
+CMaterial* Material40 = (CMaterial *)(m_pScene.createNode("Material"));
+Material40->setDiffuseColor(new float[3]{0,1,0});
+Material40->setSpecularColor(new float[3]{0.01,0.01,0.01});
+Material40->setEmissiveColor(new float[3]{0.8,0.8,0.8});
+Appearance39->setMaterial(*Material40);
 
-Shape39->setAppearance(*Appearance40);
+Shape38->setAppearance(*Appearance39);
 
-CBox* Box42 = (CBox *)(m_pScene.createNode("Box"));
-Box42->setSize(new float[3]{10,80,0.01});
-Shape39->setGeometry(Box42);
+CBox* Box41 = (CBox *)(m_pScene.createNode("Box"));
+Box41->setSize(new float[3]{10,80,0.01});
+Shape38->setGeometry(Box41);
 
-Transform38->addChild(*Shape39);
+Transform37->addChild(*Shape38);
 
-Transform37->addChildren(*Transform38);
+Transform36->addChildren(*Transform37);
 
-CTransform* Transform43 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform43->setRotation(new float[4]{1,0,0,-0.5});
-Transform43->setTranslation(new float[3]{13.2,37,0});
-CShape* Shape44 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance45 = (CAppearance *)(m_pScene.createNode("Appearance"));
-Appearance45->setDEF("audio_emit4");
-CMaterial* Material46 = (CMaterial *)(m_pScene.createNode("Material"));
-Material46->setDiffuseColor(new float[3]{0,1,0});
-Material46->setEmissiveColor(new float[3]{0.8,0.8,0.8});
-Material46->setSpecularColor(new float[3]{0.01,0.01,0.01});
-Appearance45->setMaterial(*Material46);
+CTransform* Transform42 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform42->setTranslation(new float[3]{13.2,37,0});
+Transform42->setRotation(new float[4]{1,0,0,-0.5});
+CShape* Shape43 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance44 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance44->setDEF("audio_emit4");
+CMaterial* Material45 = (CMaterial *)(m_pScene.createNode("Material"));
+Material45->setDiffuseColor(new float[3]{0,1,0});
+Material45->setSpecularColor(new float[3]{0.01,0.01,0.01});
+Material45->setEmissiveColor(new float[3]{0.8,0.8,0.8});
+Appearance44->setMaterial(*Material45);
 
-CImageTexture* ImageTexture47 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture47->setUrl(new CString[2]{"images/line.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"}, 2);
-Appearance45->setTexture(*ImageTexture47);
+CImageTexture* ImageTexture46 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture46->setUrl(new CString[2]{"images/line.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"}, 2);
+Appearance44->setTexture(*ImageTexture46);
 
-Shape44->setAppearance(*Appearance45);
+Shape43->setAppearance(*Appearance44);
 
-CBox* Box48 = (CBox *)(m_pScene.createNode("Box"));
-Box48->setSize(new float[3]{25,83,0.01});
-Shape44->setGeometry(Box48);
+CBox* Box47 = (CBox *)(m_pScene.createNode("Box"));
+Box47->setSize(new float[3]{25,83,0.01});
+Shape43->setGeometry(Box47);
 
-Transform43->addChild(*Shape44);
+Transform42->addChild(*Shape43);
 
-Transform37->addChildren(*Transform43);
+Transform36->addChildren(*Transform42);
 
-CTransform* Transform49 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform49->setDEF("volumeLeft");
-Transform49->setRotation(new float[4]{1,0,0,-0.5});
-Transform49->setScale(new float[3]{10,10,10});
-Transform49->setTranslation(new float[3]{0,-10,0});
-CShape* Shape50 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance51 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material52 = (CMaterial *)(m_pScene.createNode("Material"));
-Material52->setAmbientIntensity(0.0933);
-Material52->setDiffuseColor(new float[3]{0.345,0.345,0.882});
-Material52->setShininess(0.51);
-Material52->setSpecularColor(new float[3]{0.46,0.46,0.46});
-Appearance51->setMaterial(*Material52);
+CTransform* Transform48 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform48->setDEF("volumeLeft");
+Transform48->setTranslation(new float[3]{0,-10,0});
+Transform48->setRotation(new float[4]{1,0,0,-0.5});
+Transform48->setScale(new float[3]{10,10,10});
+CShape* Shape49 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance50 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material51 = (CMaterial *)(m_pScene.createNode("Material"));
+Material51->setAmbientIntensity(0.0933);
+Material51->setDiffuseColor(new float[3]{0.345,0.345,0.882});
+Material51->setSpecularColor(new float[3]{0.46,0.46,0.46});
+Material51->setShininess(0.51);
+Appearance50->setMaterial(*Material51);
 
-Shape50->setAppearance(*Appearance51);
+Shape49->setAppearance(*Appearance50);
 
-CText* Text53 = (CText *)(m_pScene.createNode("Text"));
-Text53->setString(new CString[1]{"Left Channel Volume"}, 1);
-CFontStyle* FontStyle54 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle54->setFamily(new CString[1]{"Times"}, 1);
-FontStyle54->setStyle("BOLD");
-Text53->setFontStyle(*FontStyle54);
+CText* Text52 = (CText *)(m_pScene.createNode("Text"));
+CFontStyle* FontStyle53 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle53->setFamily(new CString[1]{"Times"}, 1);
+FontStyle53->setStyle("BOLD");
+Text52->setFontStyle(*FontStyle53);
 
-Shape50->setGeometry(Text53);
+Shape49->setGeometry(Text52);
 
-Transform49->addChild(*Shape50);
+Transform48->addChild(*Shape49);
 
-Transform37->addChildren(*Transform49);
+Transform36->addChildren(*Transform48);
 
-group->addChildren(*Transform37);
+group->addChildren(*Transform36);
 
-CTransform* Transform55 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape56 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance57 = (CAppearance *)(m_pScene.createNode("Appearance"));
-Appearance57->setDEF("floor");
-CMaterial* Material58 = (CMaterial *)(m_pScene.createNode("Material"));
-Material58->setDiffuseColor(new float[3]{0.1,0.1,0.1});
-Material58->setShininess(0.8);
-Material58->setSpecularColor(new float[3]{0.5,0.6,0.7});
-Appearance57->setMaterial(*Material58);
+CTransform* Transform54 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape55 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance56 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance56->setDEF("floor");
+CMaterial* Material57 = (CMaterial *)(m_pScene.createNode("Material"));
+Material57->setDiffuseColor(new float[3]{0.1,0.1,0.1});
+Material57->setSpecularColor(new float[3]{0.5,0.6,0.7});
+Material57->setShininess(0.8);
+Appearance56->setMaterial(*Material57);
 
-Shape56->setAppearance(*Appearance57);
+Shape55->setAppearance(*Appearance56);
 
-CBox* Box59 = (CBox *)(m_pScene.createNode("Box"));
-Box59->setSize(new float[3]{1500,10,500});
-Shape56->setGeometry(Box59);
+CBox* Box58 = (CBox *)(m_pScene.createNode("Box"));
+Box58->setSize(new float[3]{1500,10,500});
+Shape55->setGeometry(Box58);
 
-Transform55->addChild(*Shape56);
+Transform54->addChild(*Shape55);
 
-group->addChildren(*Transform55);
+group->addChildren(*Transform54);
 
-CListenerPointSource* ListenerPointSource60 = (CListenerPointSource *)(m_pScene.createNode("ListenerPointSource"));
-ListenerPointSource60->setTrackCurrentView(True);
-group->addChildren(*ListenerPointSource60);
+CListenerPointSource* ListenerPointSource59 = (CListenerPointSource *)(m_pScene.createNode("ListenerPointSource"));
+ListenerPointSource59->setTrackCurrentView(True);
+group->addChildren(*ListenerPointSource59);
 
-CStreamAudioDestination* StreamAudioDestination61 = (CStreamAudioDestination *)(m_pScene.createNode("StreamAudioDestination"));
-StreamAudioDestination61->setChannelCountMode("MAX");
-StreamAudioDestination61->setChannelInterpretation("SPEAKERS");
-CGain* Gain62 = (CGain *)(m_pScene.createNode("Gain"));
-Gain62->setChannelCountMode("MAX");
-Gain62->setChannelInterpretation("SPEAKERS");
-CChannelMerger* ChannelMerger63 = (CChannelMerger *)(m_pScene.createNode("ChannelMerger"));
-ChannelMerger63->setChannelCountMode("MAX");
-ChannelMerger63->setChannelInterpretation("SPEAKERS");
-CChannelSelector* ChannelSelector64 = (CChannelSelector *)(m_pScene.createNode("ChannelSelector"));
-ChannelSelector64->setChannelCountMode("MAX");
-ChannelSelector64->setChannelInterpretation("SPEAKERS");
-CGain* Gain65 = (CGain *)(m_pScene.createNode("Gain"));
-Gain65->setUSE("ChannelSplitter");
-ChannelSelector64->addChildren(*Gain65);
+CStreamAudioDestination* StreamAudioDestination60 = (CStreamAudioDestination *)(m_pScene.createNode("StreamAudioDestination"));
+CGain* Gain61 = (CGain *)(m_pScene.createNode("Gain"));
+CChannelMerger* ChannelMerger62 = (CChannelMerger *)(m_pScene.createNode("ChannelMerger"));
+CChannelSelector* ChannelSelector63 = (CChannelSelector *)(m_pScene.createNode("ChannelSelector"));
+CGain* Gain64 = (CGain *)(m_pScene.createNode("Gain"));
+ChannelSelector63->addChildren(*Gain64);
 
-ChannelMerger63->addChildren(*ChannelSelector64);
+ChannelMerger62->addChildren(*ChannelSelector63);
 
-CChannelSelector* ChannelSelector66 = (CChannelSelector *)(m_pScene.createNode("ChannelSelector"));
-ChannelSelector66->setChannelSelection(1);
-ChannelSelector66->setChannelCountMode("MAX");
-ChannelSelector66->setChannelInterpretation("SPEAKERS");
-CGain* Gain67 = (CGain *)(m_pScene.createNode("Gain"));
-Gain67->setUSE("ChannelSplitter");
-ChannelSelector66->addChildren(*Gain67);
+CChannelSelector* ChannelSelector65 = (CChannelSelector *)(m_pScene.createNode("ChannelSelector"));
+ChannelSelector65->setChannelSelection(1);
+CGain* Gain66 = (CGain *)(m_pScene.createNode("Gain"));
+ChannelSelector65->addChildren(*Gain66);
 
-ChannelMerger63->addChildren(*ChannelSelector66);
+ChannelMerger62->addChildren(*ChannelSelector65);
 
-Gain62->addChildren(*ChannelMerger63);
+Gain61->addChildren(*ChannelMerger62);
 
-StreamAudioDestination61->addChildren(*Gain62);
+StreamAudioDestination60->addChildren(*Gain61);
 
-group->addChildren(*StreamAudioDestination61);
+group->addChildren(*StreamAudioDestination60);
 
-CChannelSplitter* ChannelSplitter68 = (CChannelSplitter *)(m_pScene.createNode("ChannelSplitter"));
-ChannelSplitter68->setDEF("ChannelSplitter");
-ChannelSplitter68->setChannelCountMode("EXPLICIT");
-ChannelSplitter68->setChannelInterpretation("SPEAKERS");
-CAudioClip* AudioClip69 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
-AudioClip69->setDescription("Violin");
-AudioClip69->setUrl(new CString[2]{"sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"}, 2);
-ChannelSplitter68->addOutputs(*AudioClip69);
+CChannelSplitter* ChannelSplitter67 = (CChannelSplitter *)(m_pScene.createNode("ChannelSplitter"));
+ChannelSplitter67->setDEF("ChannelSplitter");
+ChannelSplitter67->setChannelCountMode("EXPLICIT");
+CAudioClip* AudioClip68 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
+AudioClip68->setDescription("Violin");
+AudioClip68->setUrl(new CString[2]{"sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"}, 2);
+ChannelSplitter67->addOutputs(*AudioClip68);
 
-group->addChildren(*ChannelSplitter68);
+group->addChildren(*ChannelSplitter67);
 
-CTransform* Transform70 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform70->setDEF("Audio3");
-Transform70->setRotation(new float[4]{1,0,0,-0.5});
-Transform70->setTranslation(new float[3]{0,100,0});
-CShape* Shape71 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance72 = (CAppearance *)(m_pScene.createNode("Appearance"));
-Appearance72->setDEF("audio_emit5");
-CMaterial* Material73 = (CMaterial *)(m_pScene.createNode("Material"));
-Material73->setDiffuseColor(new float[3]{0.3,1,0.3});
-Material73->setEmissiveColor(new float[3]{0.8,0.8,0.8});
-Material73->setSpecularColor(new float[3]{0.01,0.01,0.01});
-Appearance72->setMaterial(*Material73);
+CTransform* Transform69 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform69->setDEF("Audio3");
+Transform69->setTranslation(new float[3]{0,100,0});
+Transform69->setRotation(new float[4]{1,0,0,-0.5});
+CShape* Shape70 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance71 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance71->setDEF("audio_emit5");
+CMaterial* Material72 = (CMaterial *)(m_pScene.createNode("Material"));
+Material72->setDiffuseColor(new float[3]{0.3,1,0.3});
+Material72->setSpecularColor(new float[3]{0.01,0.01,0.01});
+Material72->setEmissiveColor(new float[3]{0.8,0.8,0.8});
+Appearance71->setMaterial(*Material72);
 
-CImageTexture* ImageTexture74 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture74->setUrl(new CString[2]{"images/loudspeaker.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"}, 2);
-Appearance72->setTexture(*ImageTexture74);
+CImageTexture* ImageTexture73 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture73->setUrl(new CString[2]{"images/loudspeaker.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"}, 2);
+Appearance71->setTexture(*ImageTexture73);
 
-Shape71->setAppearance(*Appearance72);
+Shape70->setAppearance(*Appearance71);
 
-CBox* Box75 = (CBox *)(m_pScene.createNode("Box"));
-Box75->setSize(new float[3]{100,100,0.001});
-Shape71->setGeometry(Box75);
+CBox* Box74 = (CBox *)(m_pScene.createNode("Box"));
+Box74->setSize(new float[3]{100,100,0.001});
+Shape70->setGeometry(Box74);
 
-Transform70->addChild(*Shape71);
+Transform69->addChild(*Shape70);
 
-group->addChildren(*Transform70);
+group->addChildren(*Transform69);
 
-X3D0->setScene(*Scene14);
+X3D0->setScene(*Scene13);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

@@ -62,11 +62,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit')),
-
-            meta(
-              name_ : SFString('license'),
-              content_ : SFString('../license.html'))]),
+              content_ : SFString('X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit'))]),
       Scene_ : 
         Scene(
           children_ : [
@@ -82,208 +78,41 @@ var X3D0 =  X3D(
                 MetadataString(
                   name_ : SFString('HAnimArchitecture'),
                   reference_ : SFString('https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile'),
-                  value_ : MFString([SFString("E.4 Multiple humanoids per file")])),
-              /*==============================*/
-              children_ : [
-                HAnimHumanoid(
-                  name_ : SFString('SimpleSkeleton'),
-                  DEF_ : SFString('a_SimpleSkeleton'),
-                  version_ : SFString('2.0'),
-                  joints_ : [
-                    HAnimJoint(
-                      name_ : SFString('humanoid_root'),
-                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      children_ : [
-                        HAnimSegment(
-                          name_ : SFString('sacrum'),
-                          children_ : [
-                            Shape(
-                              DEF_ : SFString('JointVisualization')),
-
-                            Shape(
-                              DEF_ : SFString('SegmentVisualization')),
-
-                            HAnimSite(
-                              name_ : SFString('feature01_tip'),
-                              DEF_ : SFString('a_feature01_tip'),
-                              children_ : [
-                                Shape(
-                                  DEF_ : SFString('SiteVisualization'))])])])]),
-              /*==============================*/
-
-                HAnimHumanoid(
-                  name_ : SFString('SimpleSkeletonMesh'),
-                  DEF_ : SFString('b_SimpleSkeletonMesh'),
-                  version_ : SFString('2.0'),
-                  joints_ : [
-                    HAnimJoint(
-                      name_ : SFString('humanoid_root'),
-                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      children_ : [
-                        HAnimSegment(
-                          name_ : SFString('sacrum'),
-                          children_ : [
-                            Shape(
-                              geometry_ : 
-                                IndexedFaceSet(
-                                  DEF_ : SFString('SegmentBoneMesh')))])])]),
-              /*==============================*/
-
-                HAnimHumanoid(
-                  name_ : SFString('SkinIndexedGeometry'),
-                  DEF_ : SFString('c_SkinIndexedGeometry'),
-                  version_ : SFString('2.0'),
-                  joints_ : [
-                    HAnimJoint(
-                      name_ : SFString('humanoid_root'),
-                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      children_ : [
-                        HAnimSegment(
-                          name_ : SFString('sacrum'))]),
-                  skin_ : 
-                    IndexedFaceSet(
-                      DEF_ : SFString('SkinMeshIFS'))]),
-              /*==============================*/
-
-                HAnimHumanoid(
-                  name_ : SFString('SkinShapeIndexedGeometry'),
-                  DEF_ : SFString('d_SkinShapeIndexedGeometry'),
-                  version_ : SFString('2.0'),
-                  joints_ : [
-                    HAnimJoint(
-                      name_ : SFString('humanoid_root'),
-                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      children_ : [
-                        HAnimSegment(
-                          name_ : SFString('sacrum'))]),
-                  skin_ : 
-                    Shape(
-                      geometry_ : 
-                        IndexedFaceSet(
-                          USE_ : SFString('SkinMeshIFS')))]),
-              /*==============================*/
-
-                HAnimHumanoid(
-                  name_ : SFString('SkinSwitchShapeIndexedGeometry'),
-                  DEF_ : SFString('e_SkinSwitchShapeIndexedGeometry'),
-                  version_ : SFString('2.0'),
-                  joints_ : [
-                    HAnimJoint(
-                      name_ : SFString('humanoid_root'),
-                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      children_ : [
-                        HAnimSegment(
-                          name_ : SFString('sacrum'))]),
-                  /*TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'>*/
-                  skin_ : 
-                    Shape(
-                      geometry_ : 
-                        IndexedFaceSet(
-                          DEF_ : SFString('IndexedSkinMeshIFS'),
-                          coord_ : 
-                            Coordinate(
-                              DEF_ : SFString('SkinMeshCoordinate'))))]),
-              /*similarly for LOD*/
-              /*==============================*/
-
-                HAnimHumanoid(
-                  name_ : SFString('SynthesizedSkinShapeIndexedTwoPartGeometry'),
-                  DEF_ : SFString('f_SynthesizedSkinShapeIndexedTwoPartGeometry'),
-                  version_ : SFString('2.0'),
-                  joints_ : [
-                    HAnimJoint(
-                      name_ : SFString('humanoid_root'),
-                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      children_ : [
-                        HAnimSegment(
-                          name_ : SFString('sacrum'))]),
-                  skin_ : 
-                    Shape(
-                      geometry_ : 
-                        IndexedFaceSet(
-                          DEF_ : SFString('TwoPartIndexedSkinMesh'),
-                          coord_ : 
-                            Coordinate(
-                              DEF_ : SFString('TwoPartSkinMesh'))))]),
-              /*==============================*/
-
-                HAnimHumanoid(
-                  name_ : SFString('ApparelSkinIndexedGeometryMultipleShapes'),
-                  DEF_ : SFString('g_ApparelSkinIndexedGeometryMultipleShapes'),
-                  version_ : SFString('2.0'),
-                  joints_ : [
-                    HAnimJoint(
-                      name_ : SFString('humanoid_root'),
-                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      children_ : [
-                        HAnimSegment(
-                          name_ : SFString('sacrum'))]),
-                  skin_ : 
-                    Shape()],
-                  /*allow multiple Shape nodes with containerField='apparel', one for each layer of clothing*/
-                  /*TODO proposed for X3D4.1 <Shape containerField='apparel'/>*/),
-              /*==============================*/
-
-                HAnimHumanoid(
-                  name_ : SFString('AnatomySkinIndexedGeometryMultipleShapes'),
-                  DEF_ : SFString('h_AnatomySkinIndexedGeometryMultipleShapes'),
-                  version_ : SFString('2.0'),
-                  joints_ : [
-                    HAnimJoint(
-                      name_ : SFString('humanoid_root'),
-                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                      children_ : [
-                        HAnimSegment(
-                          name_ : SFString('sacrum'))]),
-                  /*allow multiple Shape nodes with containerField='skin', one for each layer of skin*/
-                  skin_ : 
-                    Shape()]),
-              /*==============================*/]),
+                  value_ : MFString([SFString("E.4 Multiple humanoids per file")]))]),
 
             Viewpoint(
               DEF_ : SFString('ViewHelpText'),
               description_ : SFString('Select text to see website'),
               position_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(12)])),
-          /*Selectable Text design pattern has transparent Box and TouchSensor description as a tooltip*/
 
             Anchor(
               description_ : SFString('DesignPatternsApparelMedicalSkinLayers.x3d explores potential apparel approaches'),
-              parameter_ : MFString([SFString("target=blank")]),
               url_ : MFString([SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayersIndex.html")]),
+              parameter_ : MFString([SFString("target=blank")]),
               children_ : [
                 Shape(
-                  /*TODO adjust Text string and Box size, then set Material transparency='1'*/
+                  appearance_ : 
+                    Appearance(
+                      material_ : 
+                        Material(
+                          diffuseColor_ : SFColor([SFDouble(0.9), SFDouble(0.9), SFDouble(0.9)]))),
                   geometry_ : 
                     Text(
                       string_ : MFString([SFString("DesignPatternsApparelMedicalSkinLayers.x3d"), SFString(""), SFString("explores potential apparel approaches")]),
                       fontStyle_ : 
                         FontStyle(
                           family_ : MFString([SFString("SANS")]),
-                          justify_ : MFString([SFString("MIDDLE"), SFString("MIDDLE")]),
+                          style_ : SFString('BOLD'),
                           size_ : 0.6,
-                          style_ : SFString('BOLD'))),
-                  appearance_ : 
-                    Appearance(
-                      material_ : 
-                        Material(
-                          diffuseColor_ : SFColor([SFDouble(0.9), SFDouble(0.9), SFDouble(0.9)])))),
+                          justify_ : MFString([SFString("MIDDLE"), SFString("MIDDLE")])))),
 
                 Shape(
-                  /*Author TODO: to adjust transparent Box as text-selection assist, set width and height to match size, then set transparency='1' to make invisible.*/
-                  geometry_ : 
-                    Box(
-                      size_ : SFVec3f([SFDouble(11), SFDouble(2), SFDouble(0.001)])),
                   appearance_ : 
                     Appearance(
                       material_ : 
                         Material(
-                          transparency_ : 1)))])]));
+                          transparency_ : 1)),
+                  geometry_ : 
+                    Box(
+                      size_ : SFVec3f([SFDouble(11), SFDouble(2), SFDouble(0.001)])))])]));
 void main() { exit(0); }

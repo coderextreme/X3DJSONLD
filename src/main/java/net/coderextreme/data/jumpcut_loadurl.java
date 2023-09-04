@@ -45,7 +45,7 @@ public class jumpcut_loadurl {
     model.toFileJSON("../data/jumpcut_loadurl.new.json");
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.0")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("jumpcut_loadurl.x3d"))
         .addMeta(new meta().setName("reference").setContent("http://www.nist.gov/vrml.html"))
@@ -59,14 +59,13 @@ public class jumpcut_loadurl {
         .addMeta(new meta().setName("description").setContent("Test jumpcut Viewpoint transition using Script loadUrl method. A NavigationInfo type of ANY is NOT included in the NavigationInfo node field in this world. Consequently, a Script node with a call to the \"loadURL\" method, with a url corresponding to the MFString \"Top_View\" (the name of a Viewpoint in this world) should create a \"jump cut\" transition of views when the Box geometry in this world is indicated by the pointing device. As a result, indicating the Box geometry should result in a Viewpoint transition to the top view of the Box geometry."))
         .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d"))
         .addMeta(new meta().setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("license").setContent("../../license.html")))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("jumpcut_loadurl.x3d"))
-        .addChild(new Background().setGroundAngle(new MFFloat0().getArray()).setGroundColor(new MFColor1().getArray()).setSkyColor(new MFColor2().getArray()))
+        .addChild(new Background().setSkyColor(new MFColor0().getArray()).setGroundAngle(new MFFloat1().getArray()).setGroundColor(new MFColor2().getArray()))
         .addChild(new NavigationInfo().setType("\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\""))
         .addChild(new Viewpoint().setDEF("Front_View").setDescription("Front View"))
-        .addChild(new Viewpoint().setDEF("Top_View").setDescription("Top View").setOrientation(new float[] {1f,0f,0f,-1.57f}).setPosition(new float[] {0f,10f,0f}))
+        .addChild(new Viewpoint().setDEF("Top_View").setDescription("Top View").setPosition(new float[] {0f,10f,0f}).setOrientation(new float[] {1f,0f,0f,-1.57f}))
         .addChild(new TouchSensor().setDEF("STARTER").setDescription("touch to activate"))
         .addChild(new Transform().setDEF("ROOT")
           .addChild(new Shape()
@@ -74,29 +73,29 @@ public class jumpcut_loadurl {
               .setMaterial(new Material()))
             .setGeometry(new Box())))
         .addChild(new Script().setDEF("MYSCRIPT").setUrl(new MFString3().getArray())
-          .addField(new field().setType("MFString").setName("myParameter").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("\"Top_View\""))
-          .addField(new field().setType("MFString").setName("myUrl").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("\"jumpcut_loadurl.x3d#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View\" \"jumpcut_loadurl.wrl#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View\""))
-          .addField(new field().setType("SFBool").setName("trigger_event").setAccessType(field.ACCESSTYPE_INPUTONLY)))
-        .addChild(new ROUTE().setFromField("isActive").setFromNode("STARTER").setToField("trigger_event").setToNode("MYSCRIPT")))      ;
+          .addField(new field().setType("MFString").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("myParameter").setValue("\"Top_View\""))
+          .addField(new field().setType("MFString").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("myUrl").setValue("\"jumpcut_loadurl.x3d#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View\" \"jumpcut_loadurl.wrl#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View\""))
+          .addField(new field().setType("SFBool").setAccessType(field.ACCESSTYPE_INPUTONLY).setName("trigger_event")))
+        .addChild(new ROUTE().setFromNode("STARTER").setFromField("isActive").setToNode("MYSCRIPT").setToField("trigger_event")))      ;
     return X3D0;
     }
-protected class MFFloat0 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1.57f});
-  }
-}
-protected class MFColor1 {
-  protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f,0.5f,0f,0f,0.5f,0f});
-  }
-}
-protected class MFColor2 {
-  protected org.web3d.x3d.jsail.fields.MFColor getArray() {
+private class MFColor0 {
+  private org.web3d.x3d.jsail.fields.MFColor getArray() {
     return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f,0f,1f});
   }
 }
-protected class MFString3 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFFloat1 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1.57f});
+  }
+}
+private class MFColor2 {
+  private org.web3d.x3d.jsail.fields.MFColor getArray() {
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f,0.5f,0f,0f,0.5f,0f});
+  }
+}
+private class MFString3 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"jumpcut_loadurl.js","https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.js"});
   }
 }

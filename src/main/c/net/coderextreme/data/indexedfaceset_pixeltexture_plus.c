@@ -3,7 +3,7 @@ void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Interchange";
-X3D0.version = "3.0";
+X3D0.version = "4.0";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "title";
@@ -102,83 +102,78 @@ meta20.name = "generator";
 meta20.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
 head1.meta[18] = meta20;
 
-meta meta21 = createNode("meta");
-meta21.name = "license";
-meta21.content = "../../license.html";
-head1.meta[19] = meta21;
-
 head = head1;
 
-Viewpoint Viewpoint23 = createNode("Viewpoint");
-Viewpoint23.description = "Front View";
+Viewpoint Viewpoint22 = createNode("Viewpoint");
+Viewpoint22.description = "Front View";
 children = new MFNode();
 
-children[0] = Viewpoint23;
+children[0] = Viewpoint22;
+
+Viewpoint Viewpoint23 = createNode("Viewpoint");
+Viewpoint23.description = "Rear View";
+Viewpoint23.position = new SFVec3f(new float[0,0,-10]);
+Viewpoint23.orientation = new SFRotation(new float[0,1,0,3.14]);
+children[1] = Viewpoint23;
 
 Viewpoint Viewpoint24 = createNode("Viewpoint");
-Viewpoint24.description = "Rear View";
-Viewpoint24.orientation = new SFRotation(new float[0,1,0,3.14]);
-Viewpoint24.position = new SFVec3f(new float[0,0,-10]);
-children[1] = Viewpoint24;
+Viewpoint24.description = "Top View";
+Viewpoint24.position = new SFVec3f(new float[0,10,0]);
+Viewpoint24.orientation = new SFRotation(new float[1,0,0,-1.57]);
+children[2] = Viewpoint24;
 
 Viewpoint Viewpoint25 = createNode("Viewpoint");
-Viewpoint25.description = "Top View";
-Viewpoint25.orientation = new SFRotation(new float[1,0,0,-1.57]);
-Viewpoint25.position = new SFVec3f(new float[0,10,0]);
-children[2] = Viewpoint25;
+Viewpoint25.description = "Bottom View";
+Viewpoint25.position = new SFVec3f(new float[0,-10,0]);
+Viewpoint25.orientation = new SFRotation(new float[1,0,0,1.57]);
+children[3] = Viewpoint25;
 
 Viewpoint Viewpoint26 = createNode("Viewpoint");
-Viewpoint26.description = "Bottom View";
-Viewpoint26.orientation = new SFRotation(new float[1,0,0,1.57]);
-Viewpoint26.position = new SFVec3f(new float[0,-10,0]);
-children[3] = Viewpoint26;
+Viewpoint26.description = "Right View";
+Viewpoint26.position = new SFVec3f(new float[10,0,0]);
+Viewpoint26.orientation = new SFRotation(new float[0,1,0,1.57]);
+children[4] = Viewpoint26;
 
 Viewpoint Viewpoint27 = createNode("Viewpoint");
-Viewpoint27.description = "Right View";
-Viewpoint27.orientation = new SFRotation(new float[0,1,0,1.57]);
-Viewpoint27.position = new SFVec3f(new float[10,0,0]);
-children[4] = Viewpoint27;
+Viewpoint27.description = "Left View";
+Viewpoint27.position = new SFVec3f(new float[-10,0,0]);
+Viewpoint27.orientation = new SFRotation(new float[0,1,0,-1.57]);
+children[5] = Viewpoint27;
 
-Viewpoint Viewpoint28 = createNode("Viewpoint");
-Viewpoint28.description = "Left View";
-Viewpoint28.orientation = new SFRotation(new float[0,1,0,-1.57]);
-Viewpoint28.position = new SFVec3f(new float[-10,0,0]);
-children[5] = Viewpoint28;
+NavigationInfo NavigationInfo28 = createNode("NavigationInfo");
+NavigationInfo28.type = new MFString(new java.lang.String["EXAMINE","WALK","FLY","ANY"]);
+children[6] = NavigationInfo28;
 
-NavigationInfo NavigationInfo29 = createNode("NavigationInfo");
-NavigationInfo29.type = new MFString(new java.lang.String["EXAMINE","WALK","FLY","ANY"]);
-children[6] = NavigationInfo29;
+Shape Shape29 = createNode("Shape");
+Appearance Appearance30 = createNode("Appearance");
+Material Material31 = createNode("Material");
+Appearance30.material = Material31;
 
-Shape Shape30 = createNode("Shape");
-Appearance Appearance31 = createNode("Appearance");
-Material Material32 = createNode("Material");
-Appearance31.material = Material32;
+PixelTexture PixelTexture32 = createNode("PixelTexture");
+PixelTexture32.image = new SFImage(new int[2,2,4,-16776961,16711935,-1,-65281]);
+Appearance30.texture = PixelTexture32;
 
-PixelTexture PixelTexture33 = createNode("PixelTexture");
-PixelTexture33.image = new SFImage(new int[2,2,4,-16776961,16711935,-1,-65281]);
-Appearance31.texture = PixelTexture33;
+Shape29.appearance = Appearance30;
 
-Shape30.appearance = Appearance31;
+IndexedFaceSet IndexedFaceSet33 = createNode("IndexedFaceSet");
+IndexedFaceSet33.creaseAngle = 0.5;
+IndexedFaceSet33.colorPerVertex = False;
+IndexedFaceSet33.texCoordIndex = new MFInt32(new int[0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1]);
+IndexedFaceSet33.coordIndex = new MFInt32(new int[0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]);
+Color Color34 = createNode("Color");
+Color34.color = new MFColor(new float[0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0]);
+IndexedFaceSet33.color = Color34;
 
-IndexedFaceSet IndexedFaceSet34 = createNode("IndexedFaceSet");
-IndexedFaceSet34.colorPerVertex = False;
-IndexedFaceSet34.coordIndex = new MFInt32(new int[0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]);
-IndexedFaceSet34.creaseAngle = 0.5;
-IndexedFaceSet34.texCoordIndex = new MFInt32(new int[0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1]);
-Color Color35 = createNode("Color");
-Color35.color = new MFColor(new float[0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0]);
-IndexedFaceSet34.color = Color35;
+TextureCoordinate TextureCoordinate35 = createNode("TextureCoordinate");
+TextureCoordinate35.point = new MFVec2f(new float[-1,2,-1,-1,2,2,2,-1]);
+IndexedFaceSet33.texCoord = TextureCoordinate35;
 
 Coordinate Coordinate36 = createNode("Coordinate");
 Coordinate36.point = new MFVec3f(new float[-2,1,1,-2,-1,1,2,1,1,2,-1,1,2,1,-1,2,-1,-1,-2,1,-1,-2,-1,-1]);
-IndexedFaceSet34.coord = Coordinate36;
+IndexedFaceSet33.coord = Coordinate36;
 
-TextureCoordinate TextureCoordinate37 = createNode("TextureCoordinate");
-TextureCoordinate37.point = new MFVec2f(new float[-1,2,-1,-1,2,2,2,-1]);
-IndexedFaceSet34.texCoord = TextureCoordinate37;
+Shape29.geometry = IndexedFaceSet33;
 
-Shape30.geometry = IndexedFaceSet34;
-
-children[7] = Shape30;
+children[7] = Shape29;
 
 }

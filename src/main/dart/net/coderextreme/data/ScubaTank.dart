@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Interchange'),
-      version_ : SFString('3.3'),
+      version_ : SFString('4.0'),
       head_ : 
         head(
           meta_ : [
@@ -34,11 +34,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit')),
-
-            meta(
-              name_ : SFString('license'),
-              content_ : SFString('../license.html'))]),
+              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit'))]),
       Scene_ : 
         Scene(
           children_ : [
@@ -58,8 +54,8 @@ var X3D0 =  X3D(
                               DEF_ : SFString('tank'),
                               ambientIntensity_ : 0.3,
                               diffuseColor_ : SFColor([SFDouble(0.3), SFDouble(0.3), SFDouble(0.5)]),
-                              shininess_ : 0.1,
-                              specularColor_ : SFColor([SFDouble(0.7), SFDouble(0.7), SFDouble(0.8)]))),
+                              specularColor_ : SFColor([SFDouble(0.7), SFDouble(0.7), SFDouble(0.8)]),
+                              shininess_ : 0.1)),
                       geometry_ : 
                         Cylinder(
                           height_ : 0.7,
@@ -112,8 +108,8 @@ var X3D0 =  X3D(
                                       DEF_ : SFString('pressureColor'),
                                       ambientIntensity_ : 0.4,
                                       diffuseColor_ : SFColor([SFDouble(0.91), SFDouble(0.91), SFDouble(0.91)]),
-                                      shininess_ : 0.16,
-                                      specularColor_ : SFColor([SFDouble(0.91), SFDouble(0.9), SFDouble(0.91)]))),
+                                      specularColor_ : SFColor([SFDouble(0.91), SFDouble(0.9), SFDouble(0.91)]),
+                                      shininess_ : 0.16)),
                               geometry_ : 
                                 Cylinder(
                                   height_ : 0.1,
@@ -135,8 +131,8 @@ var X3D0 =  X3D(
                                   radius_ : 0.025))),
 
                         Transform(
-                          rotation_ : SFRotation([SFDouble(0), SFDouble(0), SFDouble(1), SFDouble(1.57)]),
                           translation_ : SFVec3f([SFDouble(-0.028), SFDouble(0.462), SFDouble(0)]),
+                          rotation_ : SFRotation([SFDouble(0), SFDouble(0), SFDouble(1), SFDouble(1.57)]),
                           children_ : [
                             Transform(
                               child_ : 

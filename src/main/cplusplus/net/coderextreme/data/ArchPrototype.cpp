@@ -12,7 +12,7 @@ CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Immersive");
-X3D0->setVersion("3.3");
+X3D0->setVersion("4.0");
 Chead* head1 = new Chead();
 Cmeta* meta2 = new Cmeta();
 meta2->setName("title");
@@ -64,60 +64,55 @@ meta11->setName("generator");
 meta11->setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
 head1->addMeta(*meta11);
 
-Cmeta* meta12 = new Cmeta();
-meta12->setName("license");
-meta12->setContent("../license.html");
-head1->addMeta(*meta12);
-
 X3D0->setHead(*head1);
 
-CScene* Scene13 = new CScene();
-CProtoDeclare ProtoDeclare14 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
+CScene* Scene12 = new CScene();
+CProtoDeclare ProtoDeclare13 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="ArchPrototype" appinfo="Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js." ><ProtoInterface><!--COLOR OF ARCH--><!--INPUT PARAMETERS--><!--General parameters: measures in meters--><!--Parameters to create to create shapes related to arch: put true to apply--><field name="diffuseColor" accessType="inputOutput" appinfo="color of arch" type="SFColor" value="0.2 0.8 0.8"></field>
-<field name="emissiveColor" accessType="inputOutput" appinfo="color of arch" type="SFColor" value="0.2 0.8 0.8"></field>
-<field name="clearSpanWidth" accessType="initializeOnly" appinfo="clearSpanWidth: clearSpanWidth must be double of riseHeight to obtain an half circumference" type="SFFloat" value="4"></field>
-<field name="riseHeight" accessType="initializeOnly" appinfo="riseHeight: riseHeight must be half of clearSpanWidth to obtain an half circumference" type="SFFloat" value="2"></field>
-<field name="depth" accessType="initializeOnly" appinfo="depth" type="SFFloat" value="3"></field>
-<field name="topAbutmentHeight" accessType="initializeOnly" appinfo="topAbutmentHeight:topAbutmentHeight=0 means no topAbutment" type="SFFloat" value="0.5"></field>
-<field name="pierWidth" accessType="initializeOnly" appinfo="pierWidth:pierWidtht=0 means no pierWidth" type="SFFloat" value="0.5"></field>
-<field name="pierHeight" accessType="initializeOnly" appinfo="pierHeight: pierHeight=0 means no pierHeight" type="SFFloat" value="1"></field>
-<field name="archHalf" accessType="initializeOnly" appinfo="archHalf: can modify also clearSpanWidth, riseHeight, depth, pierWidth, pierHeight, topAbutmentHeight, archHalfExtensionWidth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width" type="SFBool" value="false"></field>
-<field name="archHalfExtensionWidth" accessType="initializeOnly" appinfo="archHalfExtensionWidth: measure in meters, use only if archHalf=true, it is the width of the etension of the abutment of the archHalf. See the reference file ArchModelingDiagrams.pdf to find further information." type="SFFloat" value="0"></field>
-<field name="onlyIntrados" accessType="initializeOnly" appinfo="onlyIntrados: note it is a flat curved surface, can modify also clearSpanWidth, riseHeight, depth at purpose, if needed apply archHalf=true." type="SFBool" value="false"></field>
-<field name="archFilled" accessType="initializeOnly" appinfo="archFilled: note it is an half cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose." type="SFBool" value="false"></field>
-<field name="archHalfFilled" accessType="initializeOnly" appinfo="archHalfFilled: note it is a quarter cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalfFilled width." type="SFBool" value="false"></field>
-<field name="lintel" accessType="initializeOnly" appinfo="lintel: no arc is rendered, but a lintel: topAbutmentHeight on pierHeight, total height is pierHeight + topAbutmentHeight, if needed apply archHalf=true." type="SFBool" value="false"></field>
+<ProtoDeclare name="ArchPrototype" ><ProtoInterface><field accessType="inputOutput" type="SFColor" name="diffuseColor" value="0.2 0.8 0.8"></field>
+<field accessType="inputOutput" type="SFColor" name="emissiveColor" value="0.2 0.8 0.8"></field>
+<field accessType="initializeOnly" type="SFFloat" name="clearSpanWidth" value="4"></field>
+<field accessType="initializeOnly" type="SFFloat" name="riseHeight" value="2"></field>
+<field accessType="initializeOnly" type="SFFloat" name="depth" value="3"></field>
+<field accessType="initializeOnly" type="SFFloat" name="topAbutmentHeight" value="0.5"></field>
+<field accessType="initializeOnly" type="SFFloat" name="pierWidth" value="0.5"></field>
+<field accessType="initializeOnly" type="SFFloat" name="pierHeight" value="1"></field>
+<field accessType="initializeOnly" type="SFBool" name="archHalf"></field>
+<field accessType="initializeOnly" type="SFFloat" name="archHalfExtensionWidth"></field>
+<field accessType="initializeOnly" type="SFBool" name="onlyIntrados"></field>
+<field accessType="initializeOnly" type="SFBool" name="archFilled"></field>
+<field accessType="initializeOnly" type="SFBool" name="archHalfFilled"></field>
+<field accessType="initializeOnly" type="SFBool" name="lintel"></field>
 </ProtoInterface>
-<ProtoBody><!--First node determines node type of this prototype--><!--IndexedFaceset creates arch--><Transform DEF="ArchTransform"><Shape DEF="Arch"><!--note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly--><IndexedFaceSet DEF="ArchIndex" convex="false" solid="false"><Coordinate containerField="coord" DEF="ArchChord"></Coordinate>
-</IndexedFaceSet>
-<Appearance><Material DEF="MaterialNode"><IS><connect nodeField="emissiveColor" protoField="emissiveColor"></connect>
-<connect nodeField="diffuseColor" protoField="diffuseColor"></connect>
+<ProtoBody><Transform DEF="ArchTransform"><Shape DEF="Arch"><Appearance><Material DEF="MaterialNode"><IS><connect nodeField="diffuseColor" protoField="diffuseColor"></connect>
+<connect nodeField="emissiveColor" protoField="emissiveColor"></connect>
 </IS>
 </Material>
 </Appearance>
+<IndexedFaceSet DEF="ArchIndex" solid="false" convex="false"><Coordinate containerField="coord" DEF="ArchChord"></Coordinate>
+</IndexedFaceSet>
 </Shape>
 </Transform>
-<!--Subsequent nodes do not render, but still must be a valid X3D subgraph--><!--This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs--><Script DEF="ArchPrototypeScript" url="&quot;../node/ArchPrototypeScript.js&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js&quot;"><!--INPUT PARAMETERS--><!--General parameters--><!--Parameters to create to create shapes related to arch: put true to apply--><!--OUTPUT PARAMETERS--><field name="clearSpanWidth" accessType="initializeOnly" appinfo="user or default input for clearSpanWidth parameter" type="SFFloat"></field>
-<field name="riseHeight" accessType="initializeOnly" appinfo="user or default input for riseHeight parameter" type="SFFloat"></field>
-<field name="depth" accessType="initializeOnly" appinfo="user or default input for depth parameter" type="SFFloat"></field>
-<field name="topAbutmentHeight" accessType="initializeOnly" appinfo="user or default input for topAbutmentHeight parameter" type="SFFloat"></field>
-<field name="pierWidth" accessType="initializeOnly" appinfo="user or default input for pierWidth parameter" type="SFFloat"></field>
-<field name="pierHeight" accessType="initializeOnly" appinfo="user or default input for pierHeight parameter" type="SFFloat"></field>
-<field name="archHalf" accessType="initializeOnly" appinfo="user or default input for archHalf parameter" type="SFBool"></field>
-<field name="archHalfExtensionWidth" accessType="initializeOnly" appinfo="user or default input for archHalfExtensionWidth parameter" type="SFFloat"></field>
-<field name="onlyIntrados" accessType="initializeOnly" appinfo="user or default input for onlyIntrados parameter" type="SFBool"></field>
-<field name="archFilled" accessType="initializeOnly" appinfo="user or default input for archFilled parameter" type="SFBool"></field>
-<field name="archHalfFilled" accessType="initializeOnly" appinfo="user or default input for archHalfFilled parameter" type="SFBool"></field>
-<field name="lintel" accessType="initializeOnly" appinfo="user or default input for lintel parameter" type="SFBool"></field>
-<field name="computedScale" accessType="outputOnly" appinfo="computedScale: modify scale field - NOTE it is not used to modify the whole arch, but to modify clearSpanWidth, riseHeight, depth. It does not affect topAbutmentHeight, pierWidth, pierHeight, archHalfExtensionWidth" type="SFVec3f"></field>
-<field name="pointOut" accessType="outputOnly" appinfo="send computed points to the Coordinate node" type="MFVec3f"></field>
-<field name="indexOut" accessType="outputOnly" appinfo="send computed indices to the IndexedFaceSet node" type="MFInt32"></field>
+<Script DEF="ArchPrototypeScript" url="&quot;../node/ArchPrototypeScript.js&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js&quot;"><field accessType="initializeOnly" type="SFFloat" name="clearSpanWidth"></field>
+<field accessType="initializeOnly" type="SFFloat" name="riseHeight"></field>
+<field accessType="initializeOnly" type="SFFloat" name="depth"></field>
+<field accessType="initializeOnly" type="SFFloat" name="topAbutmentHeight"></field>
+<field accessType="initializeOnly" type="SFFloat" name="pierWidth"></field>
+<field accessType="initializeOnly" type="SFFloat" name="pierHeight"></field>
+<field accessType="initializeOnly" type="SFBool" name="archHalf"></field>
+<field accessType="initializeOnly" type="SFFloat" name="archHalfExtensionWidth"></field>
+<field accessType="initializeOnly" type="SFBool" name="onlyIntrados"></field>
+<field accessType="initializeOnly" type="SFBool" name="archFilled"></field>
+<field accessType="initializeOnly" type="SFBool" name="archHalfFilled"></field>
+<field accessType="initializeOnly" type="SFBool" name="lintel"></field>
+<field accessType="outputOnly" type="SFVec3f" name="computedScale"></field>
+<field accessType="outputOnly" type="MFVec3f" name="pointOut"></field>
+<field accessType="outputOnly" type="MFInt32" name="indexOut"></field>
 <IS><connect nodeField="clearSpanWidth" protoField="clearSpanWidth"></connect>
 <connect nodeField="riseHeight" protoField="riseHeight"></connect>
 <connect nodeField="depth" protoField="depth"></connect>
-<connect nodeField="pierWidth" protoField="pierWidth"></connect>
 <connect nodeField="topAbutmentHeight" protoField="topAbutmentHeight"></connect>
+<connect nodeField="pierWidth" protoField="pierWidth"></connect>
 <connect nodeField="pierHeight" protoField="pierHeight"></connect>
 <connect nodeField="archHalf" protoField="archHalf"></connect>
 <connect nodeField="archHalfExtensionWidth" protoField="archHalfExtensionWidth"></connect>
@@ -127,430 +122,381 @@ CProtoDeclare ProtoDeclare14 = browser.createX3DFromString(R"foo(<?xml version="
 <connect nodeField="lintel" protoField="lintel"></connect>
 </IS>
 </Script>
-<ROUTE fromField="computedScale" fromNode="ArchPrototypeScript" toField="scale" toNode="ArchTransform"></ROUTE>
-<ROUTE fromField="pointOut" fromNode="ArchPrototypeScript" toField="point" toNode="ArchChord"></ROUTE>
-<ROUTE fromField="indexOut" fromNode="ArchPrototypeScript" toField="set_coordIndex" toNode="ArchIndex"></ROUTE>
+<ROUTE fromNode="ArchPrototypeScript" fromField="computedScale" toNode="ArchTransform" toField="scale"></ROUTE>
+<ROUTE fromNode="ArchPrototypeScript" fromField="pointOut" toNode="ArchChord" toField="point"></ROUTE>
+<ROUTE fromNode="ArchPrototypeScript" fromField="indexOut" toNode="ArchIndex" toField="set_coordIndex"></ROUTE>
 </ProtoBody>
 </ProtoDeclare>)foo");
-ProtoDeclare14->setName("ArchPrototype");
-ProtoDeclare14->setAppinfo("Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js.");
-CProtoInterface* ProtoInterface15 = new CProtoInterface();
-//COLOR OF ARCH
-//INPUT PARAMETERS
-//General parameters: measures in meters
-//Parameters to create to create shapes related to arch: put true to apply
+ProtoDeclare13->setName("ArchPrototype");
+CProtoInterface* ProtoInterface14 = new CProtoInterface();
+Cfield* field15 = new Cfield();
+field15->setAccessType("inputOutput");
+field15->setType("SFColor");
+field15->setName("diffuseColor");
+field15->setValue("0.2 0.8 0.8");
+ProtoInterface14->addField(*field15);
+
 Cfield* field16 = new Cfield();
-field16->setName("diffuseColor");
 field16->setAccessType("inputOutput");
-field16->setAppinfo("color of arch");
 field16->setType("SFColor");
+field16->setName("emissiveColor");
 field16->setValue("0.2 0.8 0.8");
-ProtoInterface15->addField(*field16);
+ProtoInterface14->addField(*field16);
 
 Cfield* field17 = new Cfield();
-field17->setName("emissiveColor");
-field17->setAccessType("inputOutput");
-field17->setAppinfo("color of arch");
-field17->setType("SFColor");
-field17->setValue("0.2 0.8 0.8");
-ProtoInterface15->addField(*field17);
+field17->setAccessType("initializeOnly");
+field17->setType("SFFloat");
+field17->setName("clearSpanWidth");
+field17->setValue("4");
+ProtoInterface14->addField(*field17);
 
 Cfield* field18 = new Cfield();
-field18->setName("clearSpanWidth");
 field18->setAccessType("initializeOnly");
-field18->setAppinfo("clearSpanWidth: clearSpanWidth must be double of riseHeight to obtain an half circumference");
 field18->setType("SFFloat");
-field18->setValue("4");
-ProtoInterface15->addField(*field18);
+field18->setName("riseHeight");
+field18->setValue("2");
+ProtoInterface14->addField(*field18);
 
 Cfield* field19 = new Cfield();
-field19->setName("riseHeight");
 field19->setAccessType("initializeOnly");
-field19->setAppinfo("riseHeight: riseHeight must be half of clearSpanWidth to obtain an half circumference");
 field19->setType("SFFloat");
-field19->setValue("2");
-ProtoInterface15->addField(*field19);
+field19->setName("depth");
+field19->setValue("3");
+ProtoInterface14->addField(*field19);
 
 Cfield* field20 = new Cfield();
-field20->setName("depth");
 field20->setAccessType("initializeOnly");
-field20->setAppinfo("depth");
 field20->setType("SFFloat");
-field20->setValue("3");
-ProtoInterface15->addField(*field20);
+field20->setName("topAbutmentHeight");
+field20->setValue("0.5");
+ProtoInterface14->addField(*field20);
 
 Cfield* field21 = new Cfield();
-field21->setName("topAbutmentHeight");
 field21->setAccessType("initializeOnly");
-field21->setAppinfo("topAbutmentHeight:topAbutmentHeight=0 means no topAbutment");
 field21->setType("SFFloat");
+field21->setName("pierWidth");
 field21->setValue("0.5");
-ProtoInterface15->addField(*field21);
+ProtoInterface14->addField(*field21);
 
 Cfield* field22 = new Cfield();
-field22->setName("pierWidth");
 field22->setAccessType("initializeOnly");
-field22->setAppinfo("pierWidth:pierWidtht=0 means no pierWidth");
 field22->setType("SFFloat");
-field22->setValue("0.5");
-ProtoInterface15->addField(*field22);
+field22->setName("pierHeight");
+field22->setValue("1");
+ProtoInterface14->addField(*field22);
 
 Cfield* field23 = new Cfield();
-field23->setName("pierHeight");
 field23->setAccessType("initializeOnly");
-field23->setAppinfo("pierHeight: pierHeight=0 means no pierHeight");
-field23->setType("SFFloat");
-field23->setValue("1");
-ProtoInterface15->addField(*field23);
+field23->setType("SFBool");
+field23->setName("archHalf");
+ProtoInterface14->addField(*field23);
 
 Cfield* field24 = new Cfield();
-field24->setName("archHalf");
 field24->setAccessType("initializeOnly");
-field24->setAppinfo("archHalf: can modify also clearSpanWidth, riseHeight, depth, pierWidth, pierHeight, topAbutmentHeight, archHalfExtensionWidth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width");
-field24->setType("SFBool");
-field24->setValue("false");
-ProtoInterface15->addField(*field24);
+field24->setType("SFFloat");
+field24->setName("archHalfExtensionWidth");
+ProtoInterface14->addField(*field24);
 
 Cfield* field25 = new Cfield();
-field25->setName("archHalfExtensionWidth");
 field25->setAccessType("initializeOnly");
-field25->setAppinfo("archHalfExtensionWidth: measure in meters, use only if archHalf=true, it is the width of the etension of the abutment of the archHalf. See the reference file ArchModelingDiagrams.pdf to find further information.");
-field25->setType("SFFloat");
-field25->setValue("0");
-ProtoInterface15->addField(*field25);
+field25->setType("SFBool");
+field25->setName("onlyIntrados");
+ProtoInterface14->addField(*field25);
 
 Cfield* field26 = new Cfield();
-field26->setName("onlyIntrados");
 field26->setAccessType("initializeOnly");
-field26->setAppinfo("onlyIntrados: note it is a flat curved surface, can modify also clearSpanWidth, riseHeight, depth at purpose, if needed apply archHalf=true.");
 field26->setType("SFBool");
-field26->setValue("false");
-ProtoInterface15->addField(*field26);
+field26->setName("archFilled");
+ProtoInterface14->addField(*field26);
 
 Cfield* field27 = new Cfield();
-field27->setName("archFilled");
 field27->setAccessType("initializeOnly");
-field27->setAppinfo("archFilled: note it is an half cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose.");
 field27->setType("SFBool");
-field27->setValue("false");
-ProtoInterface15->addField(*field27);
+field27->setName("archHalfFilled");
+ProtoInterface14->addField(*field27);
 
 Cfield* field28 = new Cfield();
-field28->setName("archHalfFilled");
 field28->setAccessType("initializeOnly");
-field28->setAppinfo("archHalfFilled: note it is a quarter cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalfFilled width.");
 field28->setType("SFBool");
-field28->setValue("false");
-ProtoInterface15->addField(*field28);
+field28->setName("lintel");
+ProtoInterface14->addField(*field28);
 
-Cfield* field29 = new Cfield();
-field29->setName("lintel");
-field29->setAccessType("initializeOnly");
-field29->setAppinfo("lintel: no arc is rendered, but a lintel: topAbutmentHeight on pierHeight, total height is pierHeight + topAbutmentHeight, if needed apply archHalf=true.");
-field29->setType("SFBool");
-field29->setValue("false");
-ProtoInterface15->addField(*field29);
+ProtoDeclare13->setProtoInterface(*ProtoInterface14);
 
-ProtoDeclare14->setProtoInterface(*ProtoInterface15);
+CProtoBody* ProtoBody29 = new CProtoBody();
+CTransform* Transform30 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform30->setDEF("ArchTransform");
+CShape* Shape31 = (CShape *)(m_pScene.createNode("Shape"));
+Shape31->setDEF("Arch");
+CAppearance* Appearance32 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material33 = (CMaterial *)(m_pScene.createNode("Material"));
+Material33->setDEF("MaterialNode");
+CIS* IS34 = new CIS();
+Cconnect* connect35 = new Cconnect();
+connect35->setNodeField("diffuseColor");
+connect35->setProtoField("diffuseColor");
+IS34->addConnect(*connect35);
 
-CProtoBody* ProtoBody30 = new CProtoBody();
-//First node determines node type of this prototype
-//IndexedFaceset creates arch
-CTransform* Transform31 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform31->setDEF("ArchTransform");
-CShape* Shape32 = (CShape *)(m_pScene.createNode("Shape"));
-Shape32->setDEF("Arch");
-//note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly
-CIndexedFaceSet* IndexedFaceSet33 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
-IndexedFaceSet33->setDEF("ArchIndex");
-IndexedFaceSet33->setConvex(False);
-IndexedFaceSet33->setSolid(False);
-CCoordinate* Coordinate34 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate34->setDEF("ArchChord");
-IndexedFaceSet33->setCoord(*Coordinate34);
+Cconnect* connect36 = new Cconnect();
+connect36->setNodeField("emissiveColor");
+connect36->setProtoField("emissiveColor");
+IS34->addConnect(*connect36);
 
-Shape32->setGeometry(IndexedFaceSet33);
+Material33->setIS(*IS34);
 
-CAppearance* Appearance35 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material36 = (CMaterial *)(m_pScene.createNode("Material"));
-Material36->setDEF("MaterialNode");
-CIS* IS37 = new CIS();
-Cconnect* connect38 = new Cconnect();
-connect38->setNodeField("emissiveColor");
-connect38->setProtoField("emissiveColor");
-IS37->addConnect(*connect38);
+Appearance32->setMaterial(*Material33);
 
-Cconnect* connect39 = new Cconnect();
-connect39->setNodeField("diffuseColor");
-connect39->setProtoField("diffuseColor");
-IS37->addConnect(*connect39);
+Shape31->setAppearance(*Appearance32);
 
-Material36->setIS(*IS37);
+CIndexedFaceSet* IndexedFaceSet37 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet37->setDEF("ArchIndex");
+IndexedFaceSet37->setSolid(False);
+IndexedFaceSet37->setConvex(False);
+CCoordinate* Coordinate38 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate38->setDEF("ArchChord");
+IndexedFaceSet37->setCoord(*Coordinate38);
 
-Appearance35->setMaterial(*Material36);
+Shape31->setGeometry(IndexedFaceSet37);
 
-Shape32->setAppearance(*Appearance35);
+Transform30->addChild(*Shape31);
 
-Transform31->addChild(*Shape32);
+ProtoBody29->addChildren(*Transform30);
 
-ProtoBody30->addChildren(*Transform31);
+CScript* Script39 = (CScript *)(m_pScene.createNode("Script"));
+Script39->setDEF("ArchPrototypeScript");
+Script39->setUrl(new CString[2]{"../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"}, 2);
+Cfield* field40 = new Cfield();
+field40->setAccessType("initializeOnly");
+field40->setType("SFFloat");
+field40->setName("clearSpanWidth");
+Script39->addField(*field40);
 
-//Subsequent nodes do not render, but still must be a valid X3D subgraph
-//This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs
-CScript* Script40 = (CScript *)(m_pScene.createNode("Script"));
-Script40->setDEF("ArchPrototypeScript");
-Script40->setUrl(new CString[2]{"../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"}, 2);
-//INPUT PARAMETERS
-//General parameters
-//Parameters to create to create shapes related to arch: put true to apply
-//OUTPUT PARAMETERS
 Cfield* field41 = new Cfield();
-field41->setName("clearSpanWidth");
 field41->setAccessType("initializeOnly");
-field41->setAppinfo("user or default input for clearSpanWidth parameter");
 field41->setType("SFFloat");
-Script40->addField(*field41);
+field41->setName("riseHeight");
+Script39->addField(*field41);
 
 Cfield* field42 = new Cfield();
-field42->setName("riseHeight");
 field42->setAccessType("initializeOnly");
-field42->setAppinfo("user or default input for riseHeight parameter");
 field42->setType("SFFloat");
-Script40->addField(*field42);
+field42->setName("depth");
+Script39->addField(*field42);
 
 Cfield* field43 = new Cfield();
-field43->setName("depth");
 field43->setAccessType("initializeOnly");
-field43->setAppinfo("user or default input for depth parameter");
 field43->setType("SFFloat");
-Script40->addField(*field43);
+field43->setName("topAbutmentHeight");
+Script39->addField(*field43);
 
 Cfield* field44 = new Cfield();
-field44->setName("topAbutmentHeight");
 field44->setAccessType("initializeOnly");
-field44->setAppinfo("user or default input for topAbutmentHeight parameter");
 field44->setType("SFFloat");
-Script40->addField(*field44);
+field44->setName("pierWidth");
+Script39->addField(*field44);
 
 Cfield* field45 = new Cfield();
-field45->setName("pierWidth");
 field45->setAccessType("initializeOnly");
-field45->setAppinfo("user or default input for pierWidth parameter");
 field45->setType("SFFloat");
-Script40->addField(*field45);
+field45->setName("pierHeight");
+Script39->addField(*field45);
 
 Cfield* field46 = new Cfield();
-field46->setName("pierHeight");
 field46->setAccessType("initializeOnly");
-field46->setAppinfo("user or default input for pierHeight parameter");
-field46->setType("SFFloat");
-Script40->addField(*field46);
+field46->setType("SFBool");
+field46->setName("archHalf");
+Script39->addField(*field46);
 
 Cfield* field47 = new Cfield();
-field47->setName("archHalf");
 field47->setAccessType("initializeOnly");
-field47->setAppinfo("user or default input for archHalf parameter");
-field47->setType("SFBool");
-Script40->addField(*field47);
+field47->setType("SFFloat");
+field47->setName("archHalfExtensionWidth");
+Script39->addField(*field47);
 
 Cfield* field48 = new Cfield();
-field48->setName("archHalfExtensionWidth");
 field48->setAccessType("initializeOnly");
-field48->setAppinfo("user or default input for archHalfExtensionWidth parameter");
-field48->setType("SFFloat");
-Script40->addField(*field48);
+field48->setType("SFBool");
+field48->setName("onlyIntrados");
+Script39->addField(*field48);
 
 Cfield* field49 = new Cfield();
-field49->setName("onlyIntrados");
 field49->setAccessType("initializeOnly");
-field49->setAppinfo("user or default input for onlyIntrados parameter");
 field49->setType("SFBool");
-Script40->addField(*field49);
+field49->setName("archFilled");
+Script39->addField(*field49);
 
 Cfield* field50 = new Cfield();
-field50->setName("archFilled");
 field50->setAccessType("initializeOnly");
-field50->setAppinfo("user or default input for archFilled parameter");
 field50->setType("SFBool");
-Script40->addField(*field50);
+field50->setName("archHalfFilled");
+Script39->addField(*field50);
 
 Cfield* field51 = new Cfield();
-field51->setName("archHalfFilled");
 field51->setAccessType("initializeOnly");
-field51->setAppinfo("user or default input for archHalfFilled parameter");
 field51->setType("SFBool");
-Script40->addField(*field51);
+field51->setName("lintel");
+Script39->addField(*field51);
 
 Cfield* field52 = new Cfield();
-field52->setName("lintel");
-field52->setAccessType("initializeOnly");
-field52->setAppinfo("user or default input for lintel parameter");
-field52->setType("SFBool");
-Script40->addField(*field52);
+field52->setAccessType("outputOnly");
+field52->setType("SFVec3f");
+field52->setName("computedScale");
+Script39->addField(*field52);
 
 Cfield* field53 = new Cfield();
-field53->setName("computedScale");
 field53->setAccessType("outputOnly");
-field53->setAppinfo("computedScale: modify scale field - NOTE it is not used to modify the whole arch, but to modify clearSpanWidth, riseHeight, depth. It does not affect topAbutmentHeight, pierWidth, pierHeight, archHalfExtensionWidth");
-field53->setType("SFVec3f");
-Script40->addField(*field53);
+field53->setType("MFVec3f");
+field53->setName("pointOut");
+Script39->addField(*field53);
 
 Cfield* field54 = new Cfield();
-field54->setName("pointOut");
 field54->setAccessType("outputOnly");
-field54->setAppinfo("send computed points to the Coordinate node");
-field54->setType("MFVec3f");
-Script40->addField(*field54);
+field54->setType("MFInt32");
+field54->setName("indexOut");
+Script39->addField(*field54);
 
-Cfield* field55 = new Cfield();
-field55->setName("indexOut");
-field55->setAccessType("outputOnly");
-field55->setAppinfo("send computed indices to the IndexedFaceSet node");
-field55->setType("MFInt32");
-Script40->addField(*field55);
+CIS* IS55 = new CIS();
+Cconnect* connect56 = new Cconnect();
+connect56->setNodeField("clearSpanWidth");
+connect56->setProtoField("clearSpanWidth");
+IS55->addConnect(*connect56);
 
-CIS* IS56 = new CIS();
 Cconnect* connect57 = new Cconnect();
-connect57->setNodeField("clearSpanWidth");
-connect57->setProtoField("clearSpanWidth");
-IS56->addConnect(*connect57);
+connect57->setNodeField("riseHeight");
+connect57->setProtoField("riseHeight");
+IS55->addConnect(*connect57);
 
 Cconnect* connect58 = new Cconnect();
-connect58->setNodeField("riseHeight");
-connect58->setProtoField("riseHeight");
-IS56->addConnect(*connect58);
+connect58->setNodeField("depth");
+connect58->setProtoField("depth");
+IS55->addConnect(*connect58);
 
 Cconnect* connect59 = new Cconnect();
-connect59->setNodeField("depth");
-connect59->setProtoField("depth");
-IS56->addConnect(*connect59);
+connect59->setNodeField("topAbutmentHeight");
+connect59->setProtoField("topAbutmentHeight");
+IS55->addConnect(*connect59);
 
 Cconnect* connect60 = new Cconnect();
 connect60->setNodeField("pierWidth");
 connect60->setProtoField("pierWidth");
-IS56->addConnect(*connect60);
+IS55->addConnect(*connect60);
 
 Cconnect* connect61 = new Cconnect();
-connect61->setNodeField("topAbutmentHeight");
-connect61->setProtoField("topAbutmentHeight");
-IS56->addConnect(*connect61);
+connect61->setNodeField("pierHeight");
+connect61->setProtoField("pierHeight");
+IS55->addConnect(*connect61);
 
 Cconnect* connect62 = new Cconnect();
-connect62->setNodeField("pierHeight");
-connect62->setProtoField("pierHeight");
-IS56->addConnect(*connect62);
+connect62->setNodeField("archHalf");
+connect62->setProtoField("archHalf");
+IS55->addConnect(*connect62);
 
 Cconnect* connect63 = new Cconnect();
-connect63->setNodeField("archHalf");
-connect63->setProtoField("archHalf");
-IS56->addConnect(*connect63);
+connect63->setNodeField("archHalfExtensionWidth");
+connect63->setProtoField("archHalfExtensionWidth");
+IS55->addConnect(*connect63);
 
 Cconnect* connect64 = new Cconnect();
-connect64->setNodeField("archHalfExtensionWidth");
-connect64->setProtoField("archHalfExtensionWidth");
-IS56->addConnect(*connect64);
+connect64->setNodeField("onlyIntrados");
+connect64->setProtoField("onlyIntrados");
+IS55->addConnect(*connect64);
 
 Cconnect* connect65 = new Cconnect();
-connect65->setNodeField("onlyIntrados");
-connect65->setProtoField("onlyIntrados");
-IS56->addConnect(*connect65);
+connect65->setNodeField("archFilled");
+connect65->setProtoField("archFilled");
+IS55->addConnect(*connect65);
 
 Cconnect* connect66 = new Cconnect();
-connect66->setNodeField("archFilled");
-connect66->setProtoField("archFilled");
-IS56->addConnect(*connect66);
+connect66->setNodeField("archHalfFilled");
+connect66->setProtoField("archHalfFilled");
+IS55->addConnect(*connect66);
 
 Cconnect* connect67 = new Cconnect();
-connect67->setNodeField("archHalfFilled");
-connect67->setProtoField("archHalfFilled");
-IS56->addConnect(*connect67);
+connect67->setNodeField("lintel");
+connect67->setProtoField("lintel");
+IS55->addConnect(*connect67);
 
-Cconnect* connect68 = new Cconnect();
-connect68->setNodeField("lintel");
-connect68->setProtoField("lintel");
-IS56->addConnect(*connect68);
+Script39->setIS(*IS55);
 
-Script40->setIS(*IS56);
+ProtoBody29->addChildren(*Script39);
 
-ProtoBody30->addChildren(*Script40);
+CROUTE* ROUTE68 = new CROUTE();
+ROUTE68->setFromNode("ArchPrototypeScript");
+ROUTE68->setFromField("computedScale");
+ROUTE68->setToNode("ArchTransform");
+ROUTE68->setToField("scale");
+ProtoBody29->addChildren(*ROUTE68);
 
 CROUTE* ROUTE69 = new CROUTE();
-ROUTE69->setFromField("computedScale");
 ROUTE69->setFromNode("ArchPrototypeScript");
-ROUTE69->setToField("scale");
-ROUTE69->setToNode("ArchTransform");
-ProtoBody30->addChildren(*ROUTE69);
+ROUTE69->setFromField("pointOut");
+ROUTE69->setToNode("ArchChord");
+ROUTE69->setToField("point");
+ProtoBody29->addChildren(*ROUTE69);
 
 CROUTE* ROUTE70 = new CROUTE();
-ROUTE70->setFromField("pointOut");
 ROUTE70->setFromNode("ArchPrototypeScript");
-ROUTE70->setToField("point");
-ROUTE70->setToNode("ArchChord");
-ProtoBody30->addChildren(*ROUTE70);
+ROUTE70->setFromField("indexOut");
+ROUTE70->setToNode("ArchIndex");
+ROUTE70->setToField("set_coordIndex");
+ProtoBody29->addChildren(*ROUTE70);
 
-CROUTE* ROUTE71 = new CROUTE();
-ROUTE71->setFromField("indexOut");
-ROUTE71->setFromNode("ArchPrototypeScript");
-ROUTE71->setToField("set_coordIndex");
-ROUTE71->setToNode("ArchIndex");
-ProtoBody30->addChildren(*ROUTE71);
+ProtoDeclare13->setProtoBody(*ProtoBody29);
 
-ProtoDeclare14->setProtoBody(*ProtoBody30);
+group->addChildren(*ProtoDeclare13);
 
-group->addChildren(*ProtoDeclare14);
+CProtoInstance* ProtoInstance71 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance71->setDEF("ArchInstance");
+ProtoInstance71->setName("ArchPrototype");
+CfieldValue* fieldValue72 = new CfieldValue();
+fieldValue72->setName("diffuseColor");
+fieldValue72->setValue("0.5 0.3 0.6");
+ProtoInstance71->addFieldValue(*fieldValue72);
 
-CProtoInstance* ProtoInstance72 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance72->setName("ArchPrototype");
-ProtoInstance72->setDEF("ArchInstance");
 CfieldValue* fieldValue73 = new CfieldValue();
-fieldValue73->setName("diffuseColor");
+fieldValue73->setName("emissiveColor");
 fieldValue73->setValue("0.5 0.3 0.6");
-ProtoInstance72->addFieldValue(*fieldValue73);
+ProtoInstance71->addFieldValue(*fieldValue73);
 
 CfieldValue* fieldValue74 = new CfieldValue();
-fieldValue74->setName("emissiveColor");
-fieldValue74->setValue("0.5 0.3 0.6");
-ProtoInstance72->addFieldValue(*fieldValue74);
+fieldValue74->setName("clearSpanWidth");
+fieldValue74->setValue("5");
+ProtoInstance71->addFieldValue(*fieldValue74);
 
 CfieldValue* fieldValue75 = new CfieldValue();
-fieldValue75->setName("clearSpanWidth");
-fieldValue75->setValue("5");
-ProtoInstance72->addFieldValue(*fieldValue75);
+fieldValue75->setName("riseHeight");
+fieldValue75->setValue("2.5");
+ProtoInstance71->addFieldValue(*fieldValue75);
 
 CfieldValue* fieldValue76 = new CfieldValue();
-fieldValue76->setName("riseHeight");
-fieldValue76->setValue("2.5");
-ProtoInstance72->addFieldValue(*fieldValue76);
+fieldValue76->setName("depth");
+fieldValue76->setValue("2");
+ProtoInstance71->addFieldValue(*fieldValue76);
 
 CfieldValue* fieldValue77 = new CfieldValue();
-fieldValue77->setName("depth");
-fieldValue77->setValue("2");
-ProtoInstance72->addFieldValue(*fieldValue77);
+fieldValue77->setName("topAbutmentHeight");
+fieldValue77->setValue("0.6");
+ProtoInstance71->addFieldValue(*fieldValue77);
 
 CfieldValue* fieldValue78 = new CfieldValue();
-fieldValue78->setName("topAbutmentHeight");
-fieldValue78->setValue("0.6");
-ProtoInstance72->addFieldValue(*fieldValue78);
+fieldValue78->setName("pierWidth");
+fieldValue78->setValue("1");
+ProtoInstance71->addFieldValue(*fieldValue78);
 
 CfieldValue* fieldValue79 = new CfieldValue();
-fieldValue79->setName("pierWidth");
-fieldValue79->setValue("1");
-ProtoInstance72->addFieldValue(*fieldValue79);
+fieldValue79->setName("pierHeight");
+fieldValue79->setValue("2");
+ProtoInstance71->addFieldValue(*fieldValue79);
 
-CfieldValue* fieldValue80 = new CfieldValue();
-fieldValue80->setName("pierHeight");
-fieldValue80->setValue("2");
-ProtoInstance72->addFieldValue(*fieldValue80);
+group->addChildren(*ProtoInstance71);
 
-group->addChildren(*ProtoInstance72);
+CInline* Inline80 = (CInline *)(m_pScene.createNode("Inline"));
+Inline80->setDEF("CoordinateAxes");
+Inline80->setGlobal(True);
+Inline80->setUrl(new CString[1]{"../data/CoordinateAxes.x3d"}, 1);
+group->addChildren(*Inline80);
 
-//Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)
-CInline* Inline81 = (CInline *)(m_pScene.createNode("Inline"));
-Inline81->setDEF("CoordinateAxes");
-Inline81->setUrl(new CString[1]{"../data/CoordinateAxes.x3d"}, 1);
-group->addChildren(*Inline81);
-
-X3D0->setScene(*Scene13);
+X3D0->setScene(*Scene12);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

@@ -50,13 +50,13 @@ meta8->setContent("CHANGELOG.txt");
 head1->addMeta(*meta8);
 
 Cmeta* meta9 = new Cmeta();
-meta9->setName("TODO");
-meta9->setContent("credit for audio files");
+meta9->setName("reference");
+meta9->setContent("https://www.medialab.hmu.gr/minipages/x3domAudio");
 head1->addMeta(*meta9);
 
 Cmeta* meta10 = new Cmeta();
-meta10->setName("reference");
-meta10->setContent("https://www.medialab.hmu.gr/minipages/x3domAudio");
+meta10->setName("TODO");
+meta10->setContent("credit for audio files");
 head1->addMeta(*meta10);
 
 Cmeta* meta11 = new Cmeta();
@@ -69,249 +69,236 @@ meta12->setName("generator");
 meta12->setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit");
 head1->addMeta(*meta12);
 
-Cmeta* meta13 = new Cmeta();
-meta13->setName("license");
-meta13->setContent("../license.html");
-head1->addMeta(*meta13);
-
 X3D0->setHead(*head1);
 
-CScene* Scene14 = new CScene();
-CWorldInfo* WorldInfo15 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
-WorldInfo15->setTitle("SpatialAudioCameraAnimation.x3d");
-group->addChildren(*WorldInfo15);
+CScene* Scene13 = new CScene();
+CWorldInfo* WorldInfo14 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
+WorldInfo14->setTitle("SpatialAudioCameraAnimation.x3d");
+group->addChildren(*WorldInfo14);
 
-CNavigationInfo* NavigationInfo16 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-group->addChildren(*NavigationInfo16);
+CNavigationInfo* NavigationInfo15 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
+group->addChildren(*NavigationInfo15);
 
-CBackground* Background17 = (CBackground *)(m_pScene.createNode("Background"));
-Background17->setBackUrl(new CString[2]{"images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"}, 2);
-Background17->setBottomUrl(new CString[2]{"images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"}, 2);
-Background17->setFrontUrl(new CString[2]{"images/generic/FR1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"}, 2);
-Background17->setLeftUrl(new CString[2]{"images/generic/LF1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"}, 2);
-Background17->setRightUrl(new CString[2]{"images/generic/RT1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"}, 2);
-Background17->setTopUrl(new CString[2]{"images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"}, 2);
-group->addChildren(*Background17);
+CBackground* Background16 = (CBackground *)(m_pScene.createNode("Background"));
+Background16->setFrontUrl(new CString[2]{"images/generic/FR1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"}, 2);
+Background16->setBackUrl(new CString[2]{"images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"}, 2);
+Background16->setLeftUrl(new CString[2]{"images/generic/LF1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"}, 2);
+Background16->setRightUrl(new CString[2]{"images/generic/RT1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"}, 2);
+Background16->setTopUrl(new CString[2]{"images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"}, 2);
+Background16->setBottomUrl(new CString[2]{"images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"}, 2);
+group->addChildren(*Background16);
 
-CViewpoint* Viewpoint18 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint18->setDEF("Camera001");
-Viewpoint18->setDescription("Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view");
-Viewpoint18->setOrientation(new float[4]{1,0,0,-0.523599});
-Viewpoint18->setPosition(new float[3]{0,2000,3500});
-group->addChildren(*Viewpoint18);
+CViewpoint* Viewpoint17 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint17->setDEF("Camera001");
+Viewpoint17->setDescription("Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view");
+Viewpoint17->setPosition(new float[3]{0,2000,3500});
+Viewpoint17->setOrientation(new float[4]{1,0,0,-0.523599});
+group->addChildren(*Viewpoint17);
 
-CTimeSensor* TimeSensor19 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
-TimeSensor19->setDEF("TIMER");
-TimeSensor19->setCycleInterval(33.333332);
-TimeSensor19->setLoop(True);
-group->addChildren(*TimeSensor19);
+CTimeSensor* TimeSensor18 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
+TimeSensor18->setDEF("TIMER");
+TimeSensor18->setCycleInterval(33.333332);
+TimeSensor18->setLoop(True);
+group->addChildren(*TimeSensor18);
 
-CPositionInterpolator* PositionInterpolator20 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
-PositionInterpolator20->setDEF("Camera001-POS-INTERP");
-PositionInterpolator20->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
-PositionInterpolator20->setKeyValue(new float[15]{0,2000,3500,0,2000,0,0,2000,-3500,0,2000,0,0,2000,3500});
-group->addChildren(*PositionInterpolator20);
+CPositionInterpolator* PositionInterpolator19 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator19->setDEF("Camera001-POS-INTERP");
+PositionInterpolator19->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
+PositionInterpolator19->setKeyValue(new float[15]{0,2000,3500,0,2000,0,0,2000,-3500,0,2000,0,0,2000,3500});
+group->addChildren(*PositionInterpolator19);
 
-COrientationInterpolator* OrientationInterpolator21 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
-OrientationInterpolator21->setDEF("Camera001-ROT-INTERP");
-OrientationInterpolator21->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
-OrientationInterpolator21->setKeyValue(new float[20]{1,0,0,-0.523599,0.99999,0.003554,0.002727,-1.309007,0,-0.965926,-0.258819,-3.141593,0.002282,-0.793351,-0.60876,-3.135645,1,-0.000001,0,-0.523599});
-group->addChildren(*OrientationInterpolator21);
+COrientationInterpolator* OrientationInterpolator20 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator20->setDEF("Camera001-ROT-INTERP");
+OrientationInterpolator20->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator20->setKeyValue(new float[20]{1,0,0,-0.523599,0.99999,0.003554,0.002727,-1.309007,0,-0.965926,-0.258819,-3.141593,0.002282,-0.793351,-0.60876,-3.135645,1,-0.000001,0,-0.523599});
+group->addChildren(*OrientationInterpolator20);
 
-CROUTE* ROUTE22 = new CROUTE();
-ROUTE22->setFromField("fraction_changed");
-ROUTE22->setFromNode("TIMER");
-ROUTE22->setToField("set_fraction");
-ROUTE22->setToNode("Camera001-POS-INTERP");
-group->addChildren(*ROUTE22);
+CTransform* Transform21 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform21->setDEF("Floor");
+Transform21->setTranslation(new float[3]{1.241,0,0.358});
+CShape* Shape22 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance23 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance23->setDEF("WireColor");
+CMaterial* Material24 = (CMaterial *)(m_pScene.createNode("Material"));
+Material24->setDiffuseColor(new float[3]{0.122,0.114,0.125});
+Appearance23->setMaterial(*Material24);
 
-CROUTE* ROUTE23 = new CROUTE();
-ROUTE23->setFromField("value_changed");
-ROUTE23->setFromNode("Camera001-POS-INTERP");
-ROUTE23->setToField("set_position");
-ROUTE23->setToNode("Camera001");
-group->addChildren(*ROUTE23);
+Shape22->setAppearance(*Appearance23);
 
-CROUTE* ROUTE24 = new CROUTE();
-ROUTE24->setFromField("fraction_changed");
-ROUTE24->setFromNode("TIMER");
-ROUTE24->setToField("set_fraction");
-ROUTE24->setToNode("Camera001-ROT-INTERP");
-group->addChildren(*ROUTE24);
+CBox* Box25 = (CBox *)(m_pScene.createNode("Box"));
+Box25->setSize(new float[3]{2000,1,2000});
+Shape22->setGeometry(Box25);
 
-CROUTE* ROUTE25 = new CROUTE();
-ROUTE25->setFromField("value_changed");
-ROUTE25->setFromNode("Camera001-ROT-INTERP");
-ROUTE25->setToField("set_orientation");
-ROUTE25->setToNode("Camera001");
-group->addChildren(*ROUTE25);
+Transform21->addChild(*Shape22);
+
+group->addChildren(*Transform21);
 
 CTransform* Transform26 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform26->setDEF("Floor");
-Transform26->setTranslation(new float[3]{1.241,0,0.358});
+Transform26->setDEF("TransformAudio1");
+Transform26->setTranslation(new float[3]{-933.1235,0,-926.2532});
 CShape* Shape27 = (CShape *)(m_pScene.createNode("Shape"));
 CAppearance* Appearance28 = (CAppearance *)(m_pScene.createNode("Appearance"));
-Appearance28->setDEF("WireColor");
+Appearance28->setDEF("WireColor_1");
 CMaterial* Material29 = (CMaterial *)(m_pScene.createNode("Material"));
-Material29->setDiffuseColor(new float[3]{0.122,0.114,0.125});
+Material29->setDiffuseColor(new float[3]{0.690196,0.101961,0.101961});
 Appearance28->setMaterial(*Material29);
 
 Shape27->setAppearance(*Appearance28);
 
-CBox* Box30 = (CBox *)(m_pScene.createNode("Box"));
-Box30->setSize(new float[3]{2000,1,2000});
-Shape27->setGeometry(Box30);
+CSphere* Sphere30 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere30->setRadius(100);
+Shape27->setGeometry(Sphere30);
 
 Transform26->addChild(*Shape27);
 
+CBillboard* Billboard31 = (CBillboard *)(m_pScene.createNode("Billboard"));
+CTransform* Transform32 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform32->setDEF("violin");
+Transform32->setTranslation(new float[3]{0,100,0});
+Transform32->setRotation(new float[4]{1,0,0,-0.5});
+Transform32->setScale(new float[3]{100,100,100});
+CShape* Shape33 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance34 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material35 = (CMaterial *)(m_pScene.createNode("Material"));
+Material35->setAmbientIntensity(0.0933);
+Material35->setDiffuseColor(new float[3]{1,1,1});
+Material35->setSpecularColor(new float[3]{0.46,0.46,0.46});
+Material35->setShininess(0.51);
+Appearance34->setMaterial(*Material35);
+
+Shape33->setAppearance(*Appearance34);
+
+CText* Text36 = (CText *)(m_pScene.createNode("Text"));
+Text36->setString(new CString[1]{"Violin"}, 1);
+CFontStyle* FontStyle37 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle37->setDEF("ModelFontStyle");
+FontStyle37->setFamily(new CString[2]{"Times","SERIF"}, 2);
+FontStyle37->setStyle("BOLD");
+Text36->setFontStyle(*FontStyle37);
+
+Shape33->setGeometry(Text36);
+
+Transform32->addChild(*Shape33);
+
+Billboard31->addChildren(*Transform32);
+
+Transform26->addChildren(*Billboard31);
+
 group->addChildren(*Transform26);
 
-CTransform* Transform31 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform31->setDEF("TransformAudio1");
-Transform31->setTranslation(new float[3]{-933.123474,0,-926.253235});
-CShape* Shape32 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance33 = (CAppearance *)(m_pScene.createNode("Appearance"));
-Appearance33->setDEF("WireColor_1");
-CMaterial* Material34 = (CMaterial *)(m_pScene.createNode("Material"));
-Material34->setDiffuseColor(new float[3]{0.690196,0.101961,0.101961});
-Appearance33->setMaterial(*Material34);
+CTransform* Transform38 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform38->setDEF("TransformAudio2");
+Transform38->setTranslation(new float[3]{933.4756,0,924.4232});
+CShape* Shape39 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance40 = (CAppearance *)(m_pScene.createNode("Appearance"));
+Appearance40->setDEF("WireColor_2");
+CMaterial* Material41 = (CMaterial *)(m_pScene.createNode("Material"));
+Material41->setDiffuseColor(new float[3]{0.105882,0.694118,0.580392});
+Appearance40->setMaterial(*Material41);
 
-Shape32->setAppearance(*Appearance33);
+Shape39->setAppearance(*Appearance40);
 
-CSphere* Sphere35 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere35->setRadius(100);
-Shape32->setGeometry(Sphere35);
+CSphere* Sphere42 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere42->setRadius(100);
+Shape39->setGeometry(Sphere42);
 
-Transform31->addChild(*Shape32);
+Transform38->addChild(*Shape39);
 
-CBillboard* Billboard36 = (CBillboard *)(m_pScene.createNode("Billboard"));
-CTransform* Transform37 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform37->setDEF("violin");
-Transform37->setRotation(new float[4]{1,0,0,-0.5});
-Transform37->setScale(new float[3]{100,100,100});
-Transform37->setTranslation(new float[3]{0,100,0});
-CShape* Shape38 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance39 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material40 = (CMaterial *)(m_pScene.createNode("Material"));
-Material40->setAmbientIntensity(0.0933);
-Material40->setDiffuseColor(new float[3]{1,1,1});
-Material40->setShininess(0.51);
-Material40->setSpecularColor(new float[3]{0.46,0.46,0.46});
-Appearance39->setMaterial(*Material40);
+CBillboard* Billboard43 = (CBillboard *)(m_pScene.createNode("Billboard"));
+CTransform* Transform44 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform44->setDEF("saxophone");
+Transform44->setTranslation(new float[3]{0,100,0});
+Transform44->setRotation(new float[4]{1,0,0,-0.5});
+Transform44->setScale(new float[3]{100,100,100});
+CShape* Shape45 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance46 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material47 = (CMaterial *)(m_pScene.createNode("Material"));
+Material47->setAmbientIntensity(0.0933);
+Material47->setDiffuseColor(new float[3]{1,1,1});
+Material47->setSpecularColor(new float[3]{0.46,0.46,0.46});
+Material47->setShininess(0.51);
+Appearance46->setMaterial(*Material47);
 
-Shape38->setAppearance(*Appearance39);
+Shape45->setAppearance(*Appearance46);
 
-CText* Text41 = (CText *)(m_pScene.createNode("Text"));
-Text41->setString(new CString[1]{"Violin"}, 1);
-CFontStyle* FontStyle42 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle42->setDEF("ModelFontStyle");
-FontStyle42->setFamily(new CString[2]{"Times","SERIF"}, 2);
-FontStyle42->setStyle("BOLD");
-Text41->setFontStyle(*FontStyle42);
+CText* Text48 = (CText *)(m_pScene.createNode("Text"));
+Text48->setString(new CString[1]{"Saxophone"}, 1);
+CFontStyle* FontStyle49 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle49->setUSE("ModelFontStyle");
+Text48->setFontStyle(*FontStyle49);
 
-Shape38->setGeometry(Text41);
+Shape45->setGeometry(Text48);
 
-Transform37->addChild(*Shape38);
+Transform44->addChild(*Shape45);
 
-Billboard36->addChildren(*Transform37);
+Billboard43->addChildren(*Transform44);
 
-Transform31->addChildren(*Billboard36);
+Transform38->addChildren(*Billboard43);
 
-group->addChildren(*Transform31);
+group->addChildren(*Transform38);
 
-CTransform* Transform43 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform43->setDEF("TransformAudio2");
-Transform43->setTranslation(new float[3]{933.475586,0,924.423218});
-CShape* Shape44 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance45 = (CAppearance *)(m_pScene.createNode("Appearance"));
-Appearance45->setDEF("WireColor_2");
-CMaterial* Material46 = (CMaterial *)(m_pScene.createNode("Material"));
-Material46->setDiffuseColor(new float[3]{0.105882,0.694118,0.580392});
-Appearance45->setMaterial(*Material46);
+CListenerPointSource* ListenerPointSource50 = (CListenerPointSource *)(m_pScene.createNode("ListenerPointSource"));
+ListenerPointSource50->setTrackCurrentView(True);
+group->addChildren(*ListenerPointSource50);
 
-Shape44->setAppearance(*Appearance45);
+CStreamAudioDestination* StreamAudioDestination51 = (CStreamAudioDestination *)(m_pScene.createNode("StreamAudioDestination"));
+CSpatialSound* SpatialSound52 = (CSpatialSound *)(m_pScene.createNode("SpatialSound"));
+SpatialSound52->setDEF("Audio1");
+CGain* Gain53 = (CGain *)(m_pScene.createNode("Gain"));
+CAudioClip* AudioClip54 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
+AudioClip54->setDescription("Violin");
+AudioClip54->setUrl(new CString[2]{"sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"}, 2);
+AudioClip54->setLoop(True);
+Gain53->addChildren(*AudioClip54);
 
-CSphere* Sphere47 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere47->setRadius(100);
-Shape44->setGeometry(Sphere47);
+SpatialSound52->addChildren(*Gain53);
 
-Transform43->addChild(*Shape44);
+StreamAudioDestination51->addChildren(*SpatialSound52);
 
-CBillboard* Billboard48 = (CBillboard *)(m_pScene.createNode("Billboard"));
-CTransform* Transform49 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform49->setDEF("saxophone");
-Transform49->setRotation(new float[4]{1,0,0,-0.5});
-Transform49->setScale(new float[3]{100,100,100});
-Transform49->setTranslation(new float[3]{0,100,0});
-CShape* Shape50 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance51 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material52 = (CMaterial *)(m_pScene.createNode("Material"));
-Material52->setAmbientIntensity(0.0933);
-Material52->setDiffuseColor(new float[3]{1,1,1});
-Material52->setShininess(0.51);
-Material52->setSpecularColor(new float[3]{0.46,0.46,0.46});
-Appearance51->setMaterial(*Material52);
+CSpatialSound* SpatialSound55 = (CSpatialSound *)(m_pScene.createNode("SpatialSound"));
+SpatialSound55->setDEF("Audio2");
+CGain* Gain56 = (CGain *)(m_pScene.createNode("Gain"));
+CAudioClip* AudioClip57 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
+AudioClip57->setDescription("Saxophone");
+AudioClip57->setUrl(new CString[2]{"sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"}, 2);
+AudioClip57->setLoop(True);
+Gain56->addChildren(*AudioClip57);
 
-Shape50->setAppearance(*Appearance51);
+SpatialSound55->addChildren(*Gain56);
 
-CText* Text53 = (CText *)(m_pScene.createNode("Text"));
-Text53->setString(new CString[1]{"Saxophone"}, 1);
-CFontStyle* FontStyle54 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle54->setUSE("ModelFontStyle");
-Text53->setFontStyle(*FontStyle54);
+StreamAudioDestination51->addChildren(*SpatialSound55);
 
-Shape50->setGeometry(Text53);
+group->addChildren(*StreamAudioDestination51);
 
-Transform49->addChild(*Shape50);
+CROUTE* ROUTE58 = new CROUTE();
+ROUTE58->setFromNode("TIMER");
+ROUTE58->setFromField("fraction_changed");
+ROUTE58->setToNode("Camera001-POS-INTERP");
+ROUTE58->setToField("set_fraction");
+group->addChildren(*ROUTE58);
 
-Billboard48->addChildren(*Transform49);
+CROUTE* ROUTE59 = new CROUTE();
+ROUTE59->setFromNode("Camera001-POS-INTERP");
+ROUTE59->setFromField("value_changed");
+ROUTE59->setToNode("Camera001");
+ROUTE59->setToField("position");
+group->addChildren(*ROUTE59);
 
-Transform43->addChildren(*Billboard48);
+CROUTE* ROUTE60 = new CROUTE();
+ROUTE60->setFromNode("TIMER");
+ROUTE60->setFromField("fraction_changed");
+ROUTE60->setToNode("Camera001-ROT-INTERP");
+ROUTE60->setToField("set_fraction");
+group->addChildren(*ROUTE60);
 
-group->addChildren(*Transform43);
+CROUTE* ROUTE61 = new CROUTE();
+ROUTE61->setFromNode("Camera001-ROT-INTERP");
+ROUTE61->setFromField("value_changed");
+ROUTE61->setToNode("Camera001");
+ROUTE61->setToField("orientation");
+group->addChildren(*ROUTE61);
 
-CListenerPointSource* ListenerPointSource55 = (CListenerPointSource *)(m_pScene.createNode("ListenerPointSource"));
-ListenerPointSource55->setTrackCurrentView(True);
-group->addChildren(*ListenerPointSource55);
-
-CStreamAudioDestination* StreamAudioDestination56 = (CStreamAudioDestination *)(m_pScene.createNode("StreamAudioDestination"));
-StreamAudioDestination56->setChannelCountMode("MAX");
-StreamAudioDestination56->setChannelInterpretation("SPEAKERS");
-CSpatialSound* SpatialSound57 = (CSpatialSound *)(m_pScene.createNode("SpatialSound"));
-SpatialSound57->setDEF("Audio1");
-SpatialSound57->setDistanceModel("INVERSE");
-CGain* Gain58 = (CGain *)(m_pScene.createNode("Gain"));
-Gain58->setChannelCountMode("MAX");
-Gain58->setChannelInterpretation("SPEAKERS");
-CAudioClip* AudioClip59 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
-AudioClip59->setDescription("Violin");
-AudioClip59->setLoop(True);
-AudioClip59->setUrl(new CString[2]{"sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"}, 2);
-Gain58->addChildren(*AudioClip59);
-
-SpatialSound57->addChildren(*Gain58);
-
-StreamAudioDestination56->addChildren(*SpatialSound57);
-
-CSpatialSound* SpatialSound60 = (CSpatialSound *)(m_pScene.createNode("SpatialSound"));
-SpatialSound60->setDEF("Audio2");
-SpatialSound60->setDistanceModel("INVERSE");
-CGain* Gain61 = (CGain *)(m_pScene.createNode("Gain"));
-Gain61->setChannelCountMode("MAX");
-Gain61->setChannelInterpretation("SPEAKERS");
-CAudioClip* AudioClip62 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
-AudioClip62->setDescription("Saxophone");
-AudioClip62->setLoop(True);
-AudioClip62->setUrl(new CString[2]{"sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"}, 2);
-Gain61->addChildren(*AudioClip62);
-
-SpatialSound60->addChildren(*Gain61);
-
-StreamAudioDestination56->addChildren(*SpatialSound60);
-
-group->addChildren(*StreamAudioDestination56);
-
-X3D0->setScene(*Scene14);
+X3D0->setScene(*Scene13);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

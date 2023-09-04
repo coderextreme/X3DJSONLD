@@ -3,585 +3,575 @@ void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Immersive";
-X3D0.version = "3.3";
+X3D0.version = "4.0";
 head head1 = createNode("head");
-component component2 = createNode("component");
-component2.name = "Networking";
-component2.level = 2;
-head1.component = new MFNode();
+meta meta2 = createNode("meta");
+meta2.name = "title";
+meta2.content = "t4.x3d";
+head1.meta = new MFNode();
 
-head1.component[0] = component2;
+head1.meta[0] = meta2;
 
-component component3 = createNode("component");
-component3.name = "Core";
-component3.level = 2;
-head1.component[1] = component3;
+meta meta3 = createNode("meta");
+meta3.name = "identifier";
+meta3.content = "http://coderextreme.net/X3DJSONLD/src/main/data/t4.x3d";
+head1.meta[1] = meta3;
 
 meta meta4 = createNode("meta");
-meta4.name = "title";
-meta4.content = "t4.x3d";
+meta4.name = "generator";
+meta4.content = "view3dscene, https://castle-engine.io/view3dscene.php";
 head1.meta[2] = meta4;
 
 meta meta5 = createNode("meta");
-meta5.name = "identifier";
-meta5.content = "http://coderextreme.net/X3DJSONLD/src/main/data/t4.x3d";
+meta5.name = "creator";
+meta5.content = "Andreas Plesch and John Carlson";
 head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
-meta6.name = "generator";
-meta6.content = "view3dscene, https://castle-engine.io/view3dscene.php";
+meta6.name = "source";
+meta6.content = "t1.wrl";
 head1.meta[4] = meta6;
 
 meta meta7 = createNode("meta");
-meta7.name = "creator";
-meta7.content = "Andreas Plesch and John Carlson";
+meta7.name = "description";
+meta7.content = "Test Case for Proto Expander";
 head1.meta[5] = meta7;
 
-meta meta8 = createNode("meta");
-meta8.name = "source";
-meta8.content = "t1.wrl";
-head1.meta[6] = meta8;
+component component8 = createNode("component");
+component8.name = "Networking";
+component8.level = 2;
+head1.component[6] = component8;
 
-meta meta9 = createNode("meta");
-meta9.name = "description";
-meta9.content = "Test Case for Proto Expander";
-head1.meta[7] = meta9;
-
-meta meta10 = createNode("meta");
-meta10.name = "license";
-meta10.content = "https://www.web3d.org/x3d/content/examples/license.html";
-head1.meta[8] = meta10;
+component component9 = createNode("component");
+component9.name = "Core";
+component9.level = 2;
+head1.component[7] = component9;
 
 head = head1;
 
-NavigationInfo NavigationInfo12 = createNode("NavigationInfo");
-NavigationInfo12.type = new MFString(new java.lang.String["EXAMINE","FLY","WALK"]);
-NavigationInfo12.speed = 3;
-NavigationInfo12.avatarSize = new MFFloat(new float[200,200,120]);
-children = new MFNode();
-
-children[0] = NavigationInfo12;
-
-WorldInfo WorldInfo13 = createNode("WorldInfo");
-WorldInfo13.title = "Arts Mapper";
-children[1] = WorldInfo13;
-
-Viewpoint Viewpoint14 = createNode("Viewpoint");
-Viewpoint14.description = "looking North";
-Viewpoint14.position = new SFVec3f(new float[0,60,110]);
-Viewpoint14.orientation = new SFRotation(new float[1,0,0,-0.699999988079071]);
-Viewpoint14.fieldOfView = 0.785398125648499;
-children[2] = Viewpoint14;
-
-ProtoDeclare ProtoDeclare15 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+ProtoDeclare ProtoDeclare11 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="org" ><ProtoInterface><field name="posi" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
-<field name="col" accessType="initializeOnly" type="SFColor" value="0 0 0"></field>
+<ProtoDeclare name="org" ><ProtoInterface><field accessType="initializeOnly" type="SFVec3f" name="posi"></field>
+<field accessType="initializeOnly" type="SFColor" name="col"></field>
 </ProtoInterface>
-<ProtoBody><Transform><IS><connect nodeField="translation" protoField="posi"></connect>
-</IS>
-<Shape><Appearance><Material diffuseColor="1 1 1"><IS><connect nodeField="emissiveColor" protoField="col"></connect>
+<ProtoBody><Transform><Shape><Appearance><Material diffuseColor="1 1 1"><IS><connect nodeField="emissiveColor" protoField="col"></connect>
 </IS>
 </Material>
 </Appearance>
-<Sphere radius="5.10000002384186"></Sphere>
+<Sphere radius="5.1"></Sphere>
 </Shape>
+<IS><connect nodeField="translation" protoField="posi"></connect>
+</IS>
 </Transform>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare15.name = "org";
-ProtoInterface ProtoInterface16 = createNode("ProtoInterface");
-field field17 = createNode("field");
-field17.name = "posi";
-field17.accessType = "initializeOnly";
-field17.type = "SFVec3f";
-field17.value = "0 0 0";
-ProtoInterface16.field = new MFNode();
+ProtoDeclare11.name = "org";
+ProtoInterface ProtoInterface12 = createNode("ProtoInterface");
+field field13 = createNode("field");
+field13.accessType = "initializeOnly";
+field13.type = "SFVec3f";
+field13.name = "posi";
+ProtoInterface12.field = new MFNode();
 
-ProtoInterface16.field[0] = field17;
+ProtoInterface12.field[0] = field13;
 
-field field18 = createNode("field");
-field18.name = "col";
-field18.accessType = "initializeOnly";
-field18.type = "SFColor";
-field18.value = "0 0 0";
-ProtoInterface16.field[1] = field18;
+field field14 = createNode("field");
+field14.accessType = "initializeOnly";
+field14.type = "SFColor";
+field14.name = "col";
+ProtoInterface12.field[1] = field14;
 
-ProtoDeclare15.protoInterface = ProtoInterface16;
+ProtoDeclare11.protoInterface = ProtoInterface12;
 
-ProtoBody ProtoBody19 = createNode("ProtoBody");
-Transform Transform20 = createNode("Transform");
-IS IS21 = createNode("IS");
-connect connect22 = createNode("connect");
-connect22.nodeField = "translation";
-connect22.protoField = "posi";
-IS21.connect = new MFNode();
+ProtoBody ProtoBody15 = createNode("ProtoBody");
+Transform Transform16 = createNode("Transform");
+Shape Shape17 = createNode("Shape");
+Appearance Appearance18 = createNode("Appearance");
+Material Material19 = createNode("Material");
+Material19.diffuseColor = new SFColor(new float[1,1,1]);
+IS IS20 = createNode("IS");
+connect connect21 = createNode("connect");
+connect21.nodeField = "emissiveColor";
+connect21.protoField = "col";
+IS20.connect = new MFNode();
 
-IS21.connect[0] = connect22;
+IS20.connect[0] = connect21;
 
-Transform20.iS = IS21;
+Material19.iS = IS20;
 
-Shape Shape23 = createNode("Shape");
-Appearance Appearance24 = createNode("Appearance");
-Material Material25 = createNode("Material");
-Material25.diffuseColor = new SFColor(new float[1,1,1]);
-IS IS26 = createNode("IS");
-connect connect27 = createNode("connect");
-connect27.nodeField = "emissiveColor";
-connect27.protoField = "col";
-IS26.connect = new MFNode();
+Appearance18.material = Material19;
 
-IS26.connect[0] = connect27;
+Shape17.appearance = Appearance18;
 
-Material25.iS = IS26;
+Sphere Sphere22 = createNode("Sphere");
+Sphere22.radius = 5.1;
+Shape17.geometry = Sphere22;
 
-Appearance24.material = Material25;
+Transform16.child = new undefined();
 
-Shape23.appearance = Appearance24;
+Transform16.child[0] = Shape17;
 
-Sphere Sphere28 = createNode("Sphere");
-Sphere28.radius = 5.10000002384186;
-Shape23.geometry = Sphere28;
+IS IS23 = createNode("IS");
+connect connect24 = createNode("connect");
+connect24.nodeField = "translation";
+connect24.protoField = "posi";
+IS23.connect = new MFNode();
 
-Transform20.child = new undefined();
+IS23.connect[0] = connect24;
 
-Transform20.child[0] = Shape23;
+Transform16.iS = IS23;
 
-ProtoBody19.children = new MFNode();
+ProtoBody15.children = new MFNode();
 
-ProtoBody19.children[0] = Transform20;
+ProtoBody15.children[0] = Transform16;
 
-ProtoDeclare15.protoBody = ProtoBody19;
+ProtoDeclare11.protoBody = ProtoBody15;
 
-children[3] = ProtoDeclare15;
+children = new MFNode();
 
-ProtoDeclare ProtoDeclare29 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+children[0] = ProtoDeclare11;
+
+ProtoDeclare ProtoDeclare25 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="r" ><ProtoInterface><field name="pos" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
+<ProtoDeclare name="r" ><ProtoInterface><field accessType="initializeOnly" type="SFVec3f" name="pos"></field>
 </ProtoInterface>
-<ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="0 0.300000011920929 1"></fieldValue>
+<ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="0 0.3 1"></fieldValue>
 <IS><connect nodeField="posi" protoField="pos"></connect>
 </IS>
 </ProtoInstance>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare29.name = "r";
-ProtoInterface ProtoInterface30 = createNode("ProtoInterface");
-field field31 = createNode("field");
-field31.name = "pos";
-field31.accessType = "initializeOnly";
-field31.type = "SFVec3f";
-field31.value = "0 0 0";
-ProtoInterface30.field = new MFNode();
+ProtoDeclare25.name = "r";
+ProtoInterface ProtoInterface26 = createNode("ProtoInterface");
+field field27 = createNode("field");
+field27.accessType = "initializeOnly";
+field27.type = "SFVec3f";
+field27.name = "pos";
+ProtoInterface26.field = new MFNode();
 
-ProtoInterface30.field[0] = field31;
+ProtoInterface26.field[0] = field27;
 
-ProtoDeclare29.protoInterface = ProtoInterface30;
+ProtoDeclare25.protoInterface = ProtoInterface26;
 
-ProtoBody ProtoBody32 = createNode("ProtoBody");
-ProtoInstance ProtoInstance33 = createNode("ProtoInstance");
-ProtoInstance33.name = "org";
-fieldValue fieldValue34 = createNode("fieldValue");
-fieldValue34.name = "col";
-fieldValue34.value = "0 0.300000011920929 1";
-ProtoInstance33.fieldValue = new MFNode();
+ProtoBody ProtoBody28 = createNode("ProtoBody");
+ProtoInstance ProtoInstance29 = createNode("ProtoInstance");
+ProtoInstance29.name = "org";
+fieldValue fieldValue30 = createNode("fieldValue");
+fieldValue30.name = "col";
+fieldValue30.value = "0 0.3 1";
+ProtoInstance29.fieldValue = new MFNode();
 
-ProtoInstance33.fieldValue[0] = fieldValue34;
+ProtoInstance29.fieldValue[0] = fieldValue30;
 
-IS IS35 = createNode("IS");
-connect connect36 = createNode("connect");
-connect36.nodeField = "posi";
-connect36.protoField = "pos";
-IS35.connect = new MFNode();
+IS IS31 = createNode("IS");
+connect connect32 = createNode("connect");
+connect32.nodeField = "posi";
+connect32.protoField = "pos";
+IS31.connect = new MFNode();
 
-IS35.connect[0] = connect36;
+IS31.connect[0] = connect32;
 
-ProtoInstance33.iS = IS35;
+ProtoInstance29.iS = IS31;
 
-ProtoBody32.children = new MFNode();
+ProtoBody28.children = new MFNode();
 
-ProtoBody32.children[0] = ProtoInstance33;
+ProtoBody28.children[0] = ProtoInstance29;
 
-ProtoDeclare29.protoBody = ProtoBody32;
+ProtoDeclare25.protoBody = ProtoBody28;
 
-children[4] = ProtoDeclare29;
+children[1] = ProtoDeclare25;
 
-ProtoDeclare ProtoDeclare37 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+ProtoDeclare ProtoDeclare33 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="n" ><ProtoInterface><field name="pos" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
+<ProtoDeclare name="n" ><ProtoInterface><field accessType="initializeOnly" type="SFVec3f" name="pos"></field>
 </ProtoInterface>
-<ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="1 0 0.200000002980232"></fieldValue>
+<ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="1 0 0.2"></fieldValue>
 <IS><connect nodeField="posi" protoField="pos"></connect>
 </IS>
 </ProtoInstance>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare37.name = "n";
-ProtoInterface ProtoInterface38 = createNode("ProtoInterface");
-field field39 = createNode("field");
-field39.name = "pos";
-field39.accessType = "initializeOnly";
-field39.type = "SFVec3f";
-field39.value = "0 0 0";
-ProtoInterface38.field = new MFNode();
+ProtoDeclare33.name = "n";
+ProtoInterface ProtoInterface34 = createNode("ProtoInterface");
+field field35 = createNode("field");
+field35.accessType = "initializeOnly";
+field35.type = "SFVec3f";
+field35.name = "pos";
+ProtoInterface34.field = new MFNode();
 
-ProtoInterface38.field[0] = field39;
+ProtoInterface34.field[0] = field35;
 
-ProtoDeclare37.protoInterface = ProtoInterface38;
+ProtoDeclare33.protoInterface = ProtoInterface34;
 
-ProtoBody ProtoBody40 = createNode("ProtoBody");
-ProtoInstance ProtoInstance41 = createNode("ProtoInstance");
-ProtoInstance41.name = "org";
-fieldValue fieldValue42 = createNode("fieldValue");
-fieldValue42.name = "col";
-fieldValue42.value = "1 0 0.200000002980232";
-ProtoInstance41.fieldValue = new MFNode();
+ProtoBody ProtoBody36 = createNode("ProtoBody");
+ProtoInstance ProtoInstance37 = createNode("ProtoInstance");
+ProtoInstance37.name = "org";
+fieldValue fieldValue38 = createNode("fieldValue");
+fieldValue38.name = "col";
+fieldValue38.value = "1 0 0.2";
+ProtoInstance37.fieldValue = new MFNode();
 
-ProtoInstance41.fieldValue[0] = fieldValue42;
+ProtoInstance37.fieldValue[0] = fieldValue38;
 
-IS IS43 = createNode("IS");
-connect connect44 = createNode("connect");
-connect44.nodeField = "posi";
-connect44.protoField = "pos";
-IS43.connect = new MFNode();
+IS IS39 = createNode("IS");
+connect connect40 = createNode("connect");
+connect40.nodeField = "posi";
+connect40.protoField = "pos";
+IS39.connect = new MFNode();
 
-IS43.connect[0] = connect44;
+IS39.connect[0] = connect40;
 
-ProtoInstance41.iS = IS43;
+ProtoInstance37.iS = IS39;
 
-ProtoBody40.children = new MFNode();
+ProtoBody36.children = new MFNode();
 
-ProtoBody40.children[0] = ProtoInstance41;
+ProtoBody36.children[0] = ProtoInstance37;
 
-ProtoDeclare37.protoBody = ProtoBody40;
+ProtoDeclare33.protoBody = ProtoBody36;
 
-children[5] = ProtoDeclare37;
+children[2] = ProtoDeclare33;
 
-ProtoDeclare ProtoDeclare45 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+ProtoDeclare ProtoDeclare41 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="i" ><ProtoInterface><field name="pos" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
+<ProtoDeclare name="i" ><ProtoInterface><field accessType="initializeOnly" type="SFVec3f" name="pos"></field>
 </ProtoInterface>
-<ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="0.600000023841858 0 0.600000023841858"></fieldValue>
+<ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="0.6 0 0.6"></fieldValue>
 <IS><connect nodeField="posi" protoField="pos"></connect>
 </IS>
 </ProtoInstance>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare45.name = "i";
-ProtoInterface ProtoInterface46 = createNode("ProtoInterface");
-field field47 = createNode("field");
-field47.name = "pos";
-field47.accessType = "initializeOnly";
-field47.type = "SFVec3f";
-field47.value = "0 0 0";
-ProtoInterface46.field = new MFNode();
+ProtoDeclare41.name = "i";
+ProtoInterface ProtoInterface42 = createNode("ProtoInterface");
+field field43 = createNode("field");
+field43.accessType = "initializeOnly";
+field43.type = "SFVec3f";
+field43.name = "pos";
+ProtoInterface42.field = new MFNode();
 
-ProtoInterface46.field[0] = field47;
+ProtoInterface42.field[0] = field43;
 
-ProtoDeclare45.protoInterface = ProtoInterface46;
+ProtoDeclare41.protoInterface = ProtoInterface42;
 
-ProtoBody ProtoBody48 = createNode("ProtoBody");
-ProtoInstance ProtoInstance49 = createNode("ProtoInstance");
-ProtoInstance49.name = "org";
-fieldValue fieldValue50 = createNode("fieldValue");
-fieldValue50.name = "col";
-fieldValue50.value = "0.600000023841858 0 0.600000023841858";
-ProtoInstance49.fieldValue = new MFNode();
+ProtoBody ProtoBody44 = createNode("ProtoBody");
+ProtoInstance ProtoInstance45 = createNode("ProtoInstance");
+ProtoInstance45.name = "org";
+fieldValue fieldValue46 = createNode("fieldValue");
+fieldValue46.name = "col";
+fieldValue46.value = "0.6 0 0.6";
+ProtoInstance45.fieldValue = new MFNode();
 
-ProtoInstance49.fieldValue[0] = fieldValue50;
+ProtoInstance45.fieldValue[0] = fieldValue46;
 
-IS IS51 = createNode("IS");
-connect connect52 = createNode("connect");
-connect52.nodeField = "posi";
-connect52.protoField = "pos";
-IS51.connect = new MFNode();
+IS IS47 = createNode("IS");
+connect connect48 = createNode("connect");
+connect48.nodeField = "posi";
+connect48.protoField = "pos";
+IS47.connect = new MFNode();
 
-IS51.connect[0] = connect52;
+IS47.connect[0] = connect48;
 
-ProtoInstance49.iS = IS51;
+ProtoInstance45.iS = IS47;
 
-ProtoBody48.children = new MFNode();
+ProtoBody44.children = new MFNode();
 
-ProtoBody48.children[0] = ProtoInstance49;
+ProtoBody44.children[0] = ProtoInstance45;
 
-ProtoDeclare45.protoBody = ProtoBody48;
+ProtoDeclare41.protoBody = ProtoBody44;
 
-children[6] = ProtoDeclare45;
+children[3] = ProtoDeclare41;
 
-Transform Transform53 = createNode("Transform");
-Transform53.translation = new SFVec3f(new float[-468,0,315]);
-Anchor Anchor54 = createNode("Anchor");
-Anchor54.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor54.description = "High Peak Community Arts";
-ProtoInstance ProtoInstance55 = createNode("ProtoInstance");
-ProtoInstance55.name = "r";
-fieldValue fieldValue56 = createNode("fieldValue");
-fieldValue56.name = "pos";
-fieldValue56.value = "400 0.100000001490116 -385";
-ProtoInstance55.fieldValue = new MFNode();
+NavigationInfo NavigationInfo49 = createNode("NavigationInfo");
+NavigationInfo49.type = new MFString(new java.lang.String["EXAMINE","FLY","WALK"]);
+NavigationInfo49.avatarSize = new MFFloat(new float[200,200,120]);
+NavigationInfo49.speed = 3;
+children[4] = NavigationInfo49;
 
-ProtoInstance55.fieldValue[0] = fieldValue56;
+WorldInfo WorldInfo50 = createNode("WorldInfo");
+WorldInfo50.title = "Arts Mapper";
+children[5] = WorldInfo50;
 
-Anchor54.children = new MFNode();
+Viewpoint Viewpoint51 = createNode("Viewpoint");
+Viewpoint51.description = "looking North";
+Viewpoint51.position = new SFVec3f(new float[0,60,110]);
+Viewpoint51.orientation = new SFRotation(new float[1,0,0,-0.699999988079071]);
+Viewpoint51.fieldOfView = 0.7853981;
+children[6] = Viewpoint51;
 
-Anchor54.children[0] = ProtoInstance55;
+Transform Transform52 = createNode("Transform");
+Transform52.translation = new SFVec3f(new float[-468,0,315]);
+Anchor Anchor53 = createNode("Anchor");
+Anchor53.description = "High Peak Community Arts";
+Anchor53.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+ProtoInstance ProtoInstance54 = createNode("ProtoInstance");
+ProtoInstance54.name = "r";
+fieldValue fieldValue55 = createNode("fieldValue");
+fieldValue55.name = "pos";
+fieldValue55.value = "400 0.1 -385";
+ProtoInstance54.fieldValue = new MFNode();
 
-Transform53.children = new MFNode();
+ProtoInstance54.fieldValue[0] = fieldValue55;
 
-Transform53.children[0] = Anchor54;
+Anchor53.children = new MFNode();
 
-Anchor Anchor57 = createNode("Anchor");
-Anchor57.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor57.description = "People Express";
-ProtoInstance ProtoInstance58 = createNode("ProtoInstance");
-ProtoInstance58.name = "i";
-fieldValue fieldValue59 = createNode("fieldValue");
-fieldValue59.name = "pos";
-fieldValue59.value = "429.899993896484 0.100000001490116 -319.600006103516";
-ProtoInstance58.fieldValue = new MFNode();
+Anchor53.children[0] = ProtoInstance54;
 
-ProtoInstance58.fieldValue[0] = fieldValue59;
+Transform52.children = new MFNode();
 
-Anchor57.children = new MFNode();
+Transform52.children[0] = Anchor53;
 
-Anchor57.children[0] = ProtoInstance58;
+Anchor Anchor56 = createNode("Anchor");
+Anchor56.description = "People Express";
+Anchor56.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+ProtoInstance ProtoInstance57 = createNode("ProtoInstance");
+ProtoInstance57.name = "i";
+fieldValue fieldValue58 = createNode("fieldValue");
+fieldValue58.name = "pos";
+fieldValue58.value = "429.9 0.1 -319.6";
+ProtoInstance57.fieldValue = new MFNode();
 
-Transform53.children[1] = Anchor57;
+ProtoInstance57.fieldValue[0] = fieldValue58;
 
-Anchor Anchor60 = createNode("Anchor");
-Anchor60.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor60.description = "QArts/Studios";
-ProtoInstance ProtoInstance61 = createNode("ProtoInstance");
-ProtoInstance61.name = "i";
-fieldValue fieldValue62 = createNode("fieldValue");
-fieldValue62.name = "pos";
-fieldValue62.value = "430 0.100000001490116 -335";
-ProtoInstance61.fieldValue = new MFNode();
+Anchor56.children = new MFNode();
 
-ProtoInstance61.fieldValue[0] = fieldValue62;
+Anchor56.children[0] = ProtoInstance57;
 
-Anchor60.children = new MFNode();
+Transform52.children[1] = Anchor56;
 
-Anchor60.children[0] = ProtoInstance61;
+Anchor Anchor59 = createNode("Anchor");
+Anchor59.description = "QArts/Studios";
+Anchor59.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+ProtoInstance ProtoInstance60 = createNode("ProtoInstance");
+ProtoInstance60.name = "i";
+fieldValue fieldValue61 = createNode("fieldValue");
+fieldValue61.name = "pos";
+fieldValue61.value = "430 0.1 -335";
+ProtoInstance60.fieldValue = new MFNode();
 
-Transform53.children[2] = Anchor60;
+ProtoInstance60.fieldValue[0] = fieldValue61;
 
-Anchor Anchor63 = createNode("Anchor");
-Anchor63.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor63.description = "First Movement";
-ProtoInstance ProtoInstance64 = createNode("ProtoInstance");
-ProtoInstance64.name = "n";
-fieldValue fieldValue65 = createNode("fieldValue");
-fieldValue65.name = "pos";
-fieldValue65.value = "429.899993896484 0.100000001490116 -360.299987792969";
-ProtoInstance64.fieldValue = new MFNode();
+Anchor59.children = new MFNode();
 
-ProtoInstance64.fieldValue[0] = fieldValue65;
+Anchor59.children[0] = ProtoInstance60;
 
-Anchor63.children = new MFNode();
+Transform52.children[2] = Anchor59;
 
-Anchor63.children[0] = ProtoInstance64;
+Anchor Anchor62 = createNode("Anchor");
+Anchor62.description = "First Movement";
+Anchor62.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+ProtoInstance ProtoInstance63 = createNode("ProtoInstance");
+ProtoInstance63.name = "n";
+fieldValue fieldValue64 = createNode("fieldValue");
+fieldValue64.name = "pos";
+fieldValue64.value = "429.9 0.1 -360.3";
+ProtoInstance63.fieldValue = new MFNode();
 
-Transform53.children[3] = Anchor63;
+ProtoInstance63.fieldValue[0] = fieldValue64;
 
-Anchor Anchor66 = createNode("Anchor");
-Anchor66.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor66.description = "City Arts";
-ProtoInstance ProtoInstance67 = createNode("ProtoInstance");
-ProtoInstance67.name = "i";
-fieldValue fieldValue68 = createNode("fieldValue");
-fieldValue68.name = "pos";
-fieldValue68.value = "455.899993896484 0.100000001490116 -341.299987792969";
-ProtoInstance67.fieldValue = new MFNode();
+Anchor62.children = new MFNode();
 
-ProtoInstance67.fieldValue[0] = fieldValue68;
+Anchor62.children[0] = ProtoInstance63;
 
-Anchor66.children = new MFNode();
+Transform52.children[3] = Anchor62;
 
-Anchor66.children[0] = ProtoInstance67;
+Anchor Anchor65 = createNode("Anchor");
+Anchor65.description = "City Arts";
+Anchor65.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+ProtoInstance ProtoInstance66 = createNode("ProtoInstance");
+ProtoInstance66.name = "i";
+fieldValue fieldValue67 = createNode("fieldValue");
+fieldValue67.name = "pos";
+fieldValue67.value = "455.9 0.1 -341.3";
+ProtoInstance66.fieldValue = new MFNode();
 
-Transform53.children[4] = Anchor66;
+ProtoInstance66.fieldValue[0] = fieldValue67;
 
-Anchor Anchor69 = createNode("Anchor");
-Anchor69.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor69.description = "Indigo Dance Group (Salamanda Tandem)";
-ProtoInstance ProtoInstance70 = createNode("ProtoInstance");
-ProtoInstance70.name = "r";
-fieldValue fieldValue71 = createNode("fieldValue");
-fieldValue71.name = "pos";
-fieldValue71.value = "456.100006103516 0.100000001490116 -341.5";
-ProtoInstance70.fieldValue = new MFNode();
+Anchor65.children = new MFNode();
 
-ProtoInstance70.fieldValue[0] = fieldValue71;
+Anchor65.children[0] = ProtoInstance66;
 
-Anchor69.children = new MFNode();
+Transform52.children[4] = Anchor65;
 
-Anchor69.children[0] = ProtoInstance70;
+Anchor Anchor68 = createNode("Anchor");
+Anchor68.description = "Indigo Dance Group (Salamanda Tandem)";
+Anchor68.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+ProtoInstance ProtoInstance69 = createNode("ProtoInstance");
+ProtoInstance69.name = "r";
+fieldValue fieldValue70 = createNode("fieldValue");
+fieldValue70.name = "pos";
+fieldValue70.value = "456.1 0.1 -341.5";
+ProtoInstance69.fieldValue = new MFNode();
 
-Transform53.children[5] = Anchor69;
+ProtoInstance69.fieldValue[0] = fieldValue70;
 
-Anchor Anchor72 = createNode("Anchor");
-Anchor72.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor72.description = "Watering Seeds";
-ProtoInstance ProtoInstance73 = createNode("ProtoInstance");
-ProtoInstance73.name = "r";
-fieldValue fieldValue74 = createNode("fieldValue");
-fieldValue74.name = "pos";
-fieldValue74.value = "454 0.100000001490116 -361.299987792969";
-ProtoInstance73.fieldValue = new MFNode();
+Anchor68.children = new MFNode();
 
-ProtoInstance73.fieldValue[0] = fieldValue74;
+Anchor68.children[0] = ProtoInstance69;
 
-Anchor72.children = new MFNode();
+Transform52.children[5] = Anchor68;
 
-Anchor72.children[0] = ProtoInstance73;
+Anchor Anchor71 = createNode("Anchor");
+Anchor71.description = "Watering Seeds";
+Anchor71.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+ProtoInstance ProtoInstance72 = createNode("ProtoInstance");
+ProtoInstance72.name = "r";
+fieldValue fieldValue73 = createNode("fieldValue");
+fieldValue73.name = "pos";
+fieldValue73.value = "454 0.1 -361.3";
+ProtoInstance72.fieldValue = new MFNode();
 
-Transform53.children[6] = Anchor72;
+ProtoInstance72.fieldValue[0] = fieldValue73;
 
-Anchor Anchor75 = createNode("Anchor");
-Anchor75.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor75.description = "Fased In The Arts";
-ProtoInstance ProtoInstance76 = createNode("ProtoInstance");
-ProtoInstance76.name = "r";
-fieldValue fieldValue77 = createNode("fieldValue");
-fieldValue77.name = "pos";
-fieldValue77.value = "440 0.100000001490116 -350";
-ProtoInstance76.fieldValue = new MFNode();
+Anchor71.children = new MFNode();
 
-ProtoInstance76.fieldValue[0] = fieldValue77;
+Anchor71.children[0] = ProtoInstance72;
 
-Anchor75.children = new MFNode();
+Transform52.children[6] = Anchor71;
 
-Anchor75.children[0] = ProtoInstance76;
+Anchor Anchor74 = createNode("Anchor");
+Anchor74.description = "Fased In The Arts";
+Anchor74.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+ProtoInstance ProtoInstance75 = createNode("ProtoInstance");
+ProtoInstance75.name = "r";
+fieldValue fieldValue76 = createNode("fieldValue");
+fieldValue76.name = "pos";
+fieldValue76.value = "440 0.1 -350";
+ProtoInstance75.fieldValue = new MFNode();
 
-Transform53.children[7] = Anchor75;
+ProtoInstance75.fieldValue[0] = fieldValue76;
 
-Anchor Anchor78 = createNode("Anchor");
-Anchor78.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor78.description = "27a Access Artspace";
-ProtoInstance ProtoInstance79 = createNode("ProtoInstance");
-ProtoInstance79.name = "n";
-fieldValue fieldValue80 = createNode("fieldValue");
-fieldValue80.name = "pos";
-fieldValue80.value = "458.899993896484 0.100000001490116 -304.299987792969";
-ProtoInstance79.fieldValue = new MFNode();
+Anchor74.children = new MFNode();
 
-ProtoInstance79.fieldValue[0] = fieldValue80;
+Anchor74.children[0] = ProtoInstance75;
 
-Anchor78.children = new MFNode();
+Transform52.children[7] = Anchor74;
 
-Anchor78.children[0] = ProtoInstance79;
+Anchor Anchor77 = createNode("Anchor");
+Anchor77.description = "27a Access Artspace";
+Anchor77.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+ProtoInstance ProtoInstance78 = createNode("ProtoInstance");
+ProtoInstance78.name = "n";
+fieldValue fieldValue79 = createNode("fieldValue");
+fieldValue79.name = "pos";
+fieldValue79.value = "458.9 0.1 -304.3";
+ProtoInstance78.fieldValue = new MFNode();
 
-Transform53.children[8] = Anchor78;
+ProtoInstance78.fieldValue[0] = fieldValue79;
 
-Anchor Anchor81 = createNode("Anchor");
-Anchor81.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor81.description = "Bamboozle Theatre Company";
-ProtoInstance ProtoInstance82 = createNode("ProtoInstance");
-ProtoInstance82.name = "r";
-fieldValue fieldValue83 = createNode("fieldValue");
-fieldValue83.name = "pos";
-fieldValue83.value = "457.100006103516 0.100000001490116 -300.799987792969";
-ProtoInstance82.fieldValue = new MFNode();
+Anchor77.children = new MFNode();
 
-ProtoInstance82.fieldValue[0] = fieldValue83;
+Anchor77.children[0] = ProtoInstance78;
 
-Anchor81.children = new MFNode();
+Transform52.children[8] = Anchor77;
 
-Anchor81.children[0] = ProtoInstance82;
+Anchor Anchor80 = createNode("Anchor");
+Anchor80.description = "Bamboozle Theatre Company";
+Anchor80.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+ProtoInstance ProtoInstance81 = createNode("ProtoInstance");
+ProtoInstance81.name = "r";
+fieldValue fieldValue82 = createNode("fieldValue");
+fieldValue82.name = "pos";
+fieldValue82.value = "457.1 0.1 -300.8";
+ProtoInstance81.fieldValue = new MFNode();
 
-Transform53.children[9] = Anchor81;
+ProtoInstance81.fieldValue[0] = fieldValue82;
 
-Anchor Anchor84 = createNode("Anchor");
-Anchor84.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor84.description = "Mantle Community Arts";
-ProtoInstance ProtoInstance85 = createNode("ProtoInstance");
-ProtoInstance85.name = "r";
-fieldValue fieldValue86 = createNode("fieldValue");
-fieldValue86.name = "pos";
-fieldValue86.value = "442.399993896484 0.100000001490116 -314.5";
-ProtoInstance85.fieldValue = new MFNode();
+Anchor80.children = new MFNode();
 
-ProtoInstance85.fieldValue[0] = fieldValue86;
+Anchor80.children[0] = ProtoInstance81;
 
-Anchor84.children = new MFNode();
+Transform52.children[9] = Anchor80;
 
-Anchor84.children[0] = ProtoInstance85;
+Anchor Anchor83 = createNode("Anchor");
+Anchor83.description = "Mantle Community Arts";
+Anchor83.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+ProtoInstance ProtoInstance84 = createNode("ProtoInstance");
+ProtoInstance84.name = "r";
+fieldValue fieldValue85 = createNode("fieldValue");
+fieldValue85.name = "pos";
+fieldValue85.value = "442.4 0.1 -314.5";
+ProtoInstance84.fieldValue = new MFNode();
 
-Transform53.children[10] = Anchor84;
+ProtoInstance84.fieldValue[0] = fieldValue85;
 
-Anchor Anchor87 = createNode("Anchor");
-Anchor87.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor87.description = "Artlink East";
-ProtoInstance ProtoInstance88 = createNode("ProtoInstance");
-ProtoInstance88.name = "r";
-fieldValue fieldValue89 = createNode("fieldValue");
-fieldValue89.name = "pos";
-fieldValue89.value = "491.600006103516 0.100000001490116 -335.700012207031";
-ProtoInstance88.fieldValue = new MFNode();
+Anchor83.children = new MFNode();
 
-ProtoInstance88.fieldValue[0] = fieldValue89;
+Anchor83.children[0] = ProtoInstance84;
 
-Anchor87.children = new MFNode();
+Transform52.children[10] = Anchor83;
 
-Anchor87.children[0] = ProtoInstance88;
+Anchor Anchor86 = createNode("Anchor");
+Anchor86.description = "Artlink East";
+Anchor86.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+ProtoInstance ProtoInstance87 = createNode("ProtoInstance");
+ProtoInstance87.name = "r";
+fieldValue fieldValue88 = createNode("fieldValue");
+fieldValue88.name = "pos";
+fieldValue88.value = "491.6 0.1 -335.7";
+ProtoInstance87.fieldValue = new MFNode();
 
-Transform53.children[11] = Anchor87;
+ProtoInstance87.fieldValue[0] = fieldValue88;
 
-Anchor Anchor90 = createNode("Anchor");
-Anchor90.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor90.description = "Creations";
-ProtoInstance ProtoInstance91 = createNode("ProtoInstance");
-ProtoInstance91.name = "r";
-fieldValue fieldValue92 = createNode("fieldValue");
-fieldValue92.name = "pos";
-fieldValue92.value = "467 0.100000001490116 -243.899993896484";
-ProtoInstance91.fieldValue = new MFNode();
+Anchor86.children = new MFNode();
 
-ProtoInstance91.fieldValue[0] = fieldValue92;
+Anchor86.children[0] = ProtoInstance87;
 
-Anchor90.children = new MFNode();
+Transform52.children[11] = Anchor86;
 
-Anchor90.children[0] = ProtoInstance91;
+Anchor Anchor89 = createNode("Anchor");
+Anchor89.description = "Creations";
+Anchor89.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+ProtoInstance ProtoInstance90 = createNode("ProtoInstance");
+ProtoInstance90.name = "r";
+fieldValue fieldValue91 = createNode("fieldValue");
+fieldValue91.name = "pos";
+fieldValue91.value = "467 0.1 -243.9";
+ProtoInstance90.fieldValue = new MFNode();
 
-Transform53.children[12] = Anchor90;
+ProtoInstance90.fieldValue[0] = fieldValue91;
 
-Anchor Anchor93 = createNode("Anchor");
-Anchor93.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor93.description = "New Perspectives";
-ProtoInstance ProtoInstance94 = createNode("ProtoInstance");
-ProtoInstance94.name = "n";
-fieldValue fieldValue95 = createNode("fieldValue");
-fieldValue95.name = "pos";
-fieldValue95.value = "457.399993896484 0.100000001490116 -262.700012207031";
-ProtoInstance94.fieldValue = new MFNode();
+Anchor89.children = new MFNode();
 
-ProtoInstance94.fieldValue[0] = fieldValue95;
+Anchor89.children[0] = ProtoInstance90;
 
-Anchor93.children = new MFNode();
+Transform52.children[12] = Anchor89;
 
-Anchor93.children[0] = ProtoInstance94;
+Anchor Anchor92 = createNode("Anchor");
+Anchor92.description = "New Perspectives";
+Anchor92.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+ProtoInstance ProtoInstance93 = createNode("ProtoInstance");
+ProtoInstance93.name = "n";
+fieldValue fieldValue94 = createNode("fieldValue");
+fieldValue94.name = "pos";
+fieldValue94.value = "457.4 0.1 -262.7";
+ProtoInstance93.fieldValue = new MFNode();
 
-Transform53.children[13] = Anchor93;
+ProtoInstance93.fieldValue[0] = fieldValue94;
 
-Anchor Anchor96 = createNode("Anchor");
-Anchor96.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor96.description = "UKan2";
-ProtoInstance ProtoInstance97 = createNode("ProtoInstance");
-ProtoInstance97.name = "r";
-fieldValue fieldValue98 = createNode("fieldValue");
-fieldValue98.name = "pos";
-fieldValue98.value = "458.700012207031 0.100000001490116 -262.700012207031";
-ProtoInstance97.fieldValue = new MFNode();
+Anchor92.children = new MFNode();
 
-ProtoInstance97.fieldValue[0] = fieldValue98;
+Anchor92.children[0] = ProtoInstance93;
 
-Anchor96.children = new MFNode();
+Transform52.children[13] = Anchor92;
 
-Anchor96.children[0] = ProtoInstance97;
+Anchor Anchor95 = createNode("Anchor");
+Anchor95.description = "UKan2";
+Anchor95.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+ProtoInstance ProtoInstance96 = createNode("ProtoInstance");
+ProtoInstance96.name = "r";
+fieldValue fieldValue97 = createNode("fieldValue");
+fieldValue97.name = "pos";
+fieldValue97.value = "458.7 0.1 -262.7";
+ProtoInstance96.fieldValue = new MFNode();
 
-Transform53.children[14] = Anchor96;
+ProtoInstance96.fieldValue[0] = fieldValue97;
 
-children[7] = Transform53;
+Anchor95.children = new MFNode();
+
+Anchor95.children[0] = ProtoInstance96;
+
+Transform52.children[14] = Anchor95;
+
+children[7] = Transform52;
 
 }

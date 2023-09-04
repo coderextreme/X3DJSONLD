@@ -45,165 +45,128 @@ meta9.name = "generator";
 meta9.content = "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit";
 head1.meta[7] = meta9;
 
-let meta10 = browser.currentScene.createNode("meta");
-meta10.name = "license";
-meta10.content = "../license.html";
-head1.meta[8] = meta10;
-
 head = head1;
 
-let WorldInfo12 = browser.currentScene.createNode("WorldInfo");
-WorldInfo12.title = "AllAudioGraphNodes.x3d";
+let WorldInfo11 = browser.currentScene.createNode("WorldInfo");
+WorldInfo11.title = "AllAudioGraphNodes.x3d";
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = WorldInfo12;
+browser.currentScene.children[0] = WorldInfo11;
 
-let Shape13 = browser.currentScene.createNode("Shape");
-let Box14 = browser.currentScene.createNode("Box");
-Shape13.geometry = Box14;
+let Shape12 = browser.currentScene.createNode("Shape");
+let Appearance13 = browser.currentScene.createNode("Appearance");
+let AcousticProperties14 = browser.currentScene.createNode("AcousticProperties");
+AcousticProperties14.description = "Testing of X3D4 nodes demonstrating W3C Audio API in progress";
+AcousticProperties14.refraction = 0.5;
+AcousticProperties14.diffuse = 0.25;
+AcousticProperties14.specular = 1;
+Appearance13.acousticProperties = AcousticProperties14;
 
-let Appearance15 = browser.currentScene.createNode("Appearance");
-let AcousticProperties16 = browser.currentScene.createNode("AcousticProperties");
-AcousticProperties16.description = "Testing of X3D4 nodes demonstrating W3C Audio API in progress";
-AcousticProperties16.diffuse = 0.25;
-AcousticProperties16.refraction = 0.5;
-AcousticProperties16.specular = 1;
-Appearance15.acousticProperties = AcousticProperties16;
+let Material15 = browser.currentScene.createNode("Material");
+Appearance13.material = Material15;
 
-let Material17 = browser.currentScene.createNode("Material");
-Appearance15.material = Material17;
+Shape12.appearance = Appearance13;
 
-Shape13.appearance = Appearance15;
+let Box16 = browser.currentScene.createNode("Box");
+Shape12.geometry = Box16;
 
-browser.currentScene.children[1] = Shape13;
+browser.currentScene.children[1] = Shape12;
 
-let Sound18 = browser.currentScene.createNode("Sound");
-Sound18.location = new SFVec3f(new float[0,1.6,0]);
-let AudioClip19 = browser.currentScene.createNode("AudioClip");
-AudioClip19.description = "testing";
-AudioClip19.url = new MFString(new java.lang.String["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"]);
-Sound18.source = AudioClip19;
+let Sound17 = browser.currentScene.createNode("Sound");
+Sound17.location = new SFVec3f(new float[0,1.6,0]);
+let AudioClip18 = browser.currentScene.createNode("AudioClip");
+AudioClip18.description = "testing";
+AudioClip18.url = new MFString(new java.lang.String["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"]);
+Sound17.source = AudioClip18;
 
-browser.currentScene.children[2] = Sound18;
+browser.currentScene.children[2] = Sound17;
 
-let Sound20 = browser.currentScene.createNode("Sound");
-Sound20.location = new SFVec3f(new float[0,1.6,0]);
-let MovieTexture21 = browser.currentScene.createNode("MovieTexture");
-MovieTexture21.description = "testing";
-MovieTexture21.url = new MFString(new java.lang.String["bogus.mpg","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"]);
-Sound20.source = MovieTexture21;
+let Sound19 = browser.currentScene.createNode("Sound");
+Sound19.location = new SFVec3f(new float[0,1.6,0]);
+let MovieTexture20 = browser.currentScene.createNode("MovieTexture");
+MovieTexture20.description = "testing";
+MovieTexture20.url = new MFString(new java.lang.String["bogus.mpg","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"]);
+Sound19.source = MovieTexture20;
 
-browser.currentScene.children[3] = Sound20;
+browser.currentScene.children[3] = Sound19;
 
-let SpatialSound22 = browser.currentScene.createNode("SpatialSound");
-SpatialSound22.distanceModel = "INVERSE";
-let Analyser23 = browser.currentScene.createNode("Analyser");
-Analyser23.channelCountMode = "MAX";
-Analyser23.channelInterpretation = "SPEAKERS";
-let StreamAudioDestination24 = browser.currentScene.createNode("StreamAudioDestination");
-StreamAudioDestination24.channelCountMode = "MAX";
-StreamAudioDestination24.channelInterpretation = "SPEAKERS";
-let BiquadFilter25 = browser.currentScene.createNode("BiquadFilter");
-BiquadFilter25.channelCountMode = "MAX";
-BiquadFilter25.channelInterpretation = "SPEAKERS";
-BiquadFilter25.type = "LOWPASS";
-let ChannelMerger26 = browser.currentScene.createNode("ChannelMerger");
-ChannelMerger26.channelCountMode = "MAX";
-ChannelMerger26.channelInterpretation = "SPEAKERS";
-let ChannelSelector27 = browser.currentScene.createNode("ChannelSelector");
-ChannelSelector27.channelCountMode = "MAX";
-ChannelSelector27.channelInterpretation = "SPEAKERS";
-let ChannelSplitter28 = browser.currentScene.createNode("ChannelSplitter");
-ChannelSplitter28.channelCountMode = "MAX";
-ChannelSplitter28.channelInterpretation = "SPEAKERS";
-let Convolver29 = browser.currentScene.createNode("Convolver");
-Convolver29.channelCountMode = "MAX";
-Convolver29.channelInterpretation = "SPEAKERS";
-let Delay30 = browser.currentScene.createNode("Delay");
-Delay30.channelCountMode = "MAX";
-Delay30.channelInterpretation = "SPEAKERS";
-let DynamicsCompressor31 = browser.currentScene.createNode("DynamicsCompressor");
-DynamicsCompressor31.channelCountMode = "MAX";
-DynamicsCompressor31.channelInterpretation = "SPEAKERS";
-let Gain32 = browser.currentScene.createNode("Gain");
-Gain32.channelCountMode = "MAX";
-Gain32.channelInterpretation = "SPEAKERS";
-let StreamAudioDestination33 = browser.currentScene.createNode("StreamAudioDestination");
-StreamAudioDestination33.channelCountMode = "MAX";
-StreamAudioDestination33.channelInterpretation = "SPEAKERS";
-let WaveShaper34 = browser.currentScene.createNode("WaveShaper");
-WaveShaper34.channelCountMode = "MAX";
-WaveShaper34.channelInterpretation = "SPEAKERS";
-//The following X3DSoundSourceNode nodes have no audio-graph children
-let BufferAudioSource35 = browser.currentScene.createNode("BufferAudioSource");
-BufferAudioSource35.channelCountMode = "MAX";
-BufferAudioSource35.channelInterpretation = "SPEAKERS";
-WaveShaper34.children = new MFNode();
+let SpatialSound21 = browser.currentScene.createNode("SpatialSound");
+let Analyser22 = browser.currentScene.createNode("Analyser");
+let StreamAudioDestination23 = browser.currentScene.createNode("StreamAudioDestination");
+let BiquadFilter24 = browser.currentScene.createNode("BiquadFilter");
+let ChannelMerger25 = browser.currentScene.createNode("ChannelMerger");
+let ChannelSelector26 = browser.currentScene.createNode("ChannelSelector");
+let ChannelSplitter27 = browser.currentScene.createNode("ChannelSplitter");
+let Convolver28 = browser.currentScene.createNode("Convolver");
+let Delay29 = browser.currentScene.createNode("Delay");
+let DynamicsCompressor30 = browser.currentScene.createNode("DynamicsCompressor");
+let Gain31 = browser.currentScene.createNode("Gain");
+let StreamAudioDestination32 = browser.currentScene.createNode("StreamAudioDestination");
+let WaveShaper33 = browser.currentScene.createNode("WaveShaper");
+let BufferAudioSource34 = browser.currentScene.createNode("BufferAudioSource");
+WaveShaper33.children = new MFNode();
 
-WaveShaper34.children[0] = BufferAudioSource35;
+WaveShaper33.children[0] = BufferAudioSource34;
 
-let ListenerPointSource36 = browser.currentScene.createNode("ListenerPointSource");
-WaveShaper34.children[1] = ListenerPointSource36;
+let ListenerPointSource35 = browser.currentScene.createNode("ListenerPointSource");
+WaveShaper33.children[1] = ListenerPointSource35;
 
-let MicrophoneSource37 = browser.currentScene.createNode("MicrophoneSource");
-WaveShaper34.children[2] = MicrophoneSource37;
+let MicrophoneSource36 = browser.currentScene.createNode("MicrophoneSource");
+WaveShaper33.children[2] = MicrophoneSource36;
 
-let OscillatorSource38 = browser.currentScene.createNode("OscillatorSource");
-OscillatorSource38.frequency = 440;
-WaveShaper34.children[3] = OscillatorSource38;
+let OscillatorSource37 = browser.currentScene.createNode("OscillatorSource");
+WaveShaper33.children[3] = OscillatorSource37;
 
-let StreamAudioSource39 = browser.currentScene.createNode("StreamAudioSource");
-StreamAudioSource39.channelCountMode = "MAX";
-StreamAudioSource39.channelInterpretation = "SPEAKERS";
-WaveShaper34.children[4] = StreamAudioSource39;
+let StreamAudioSource38 = browser.currentScene.createNode("StreamAudioSource");
+WaveShaper33.children[4] = StreamAudioSource38;
 
-StreamAudioDestination33.children = new MFNode();
+StreamAudioDestination32.children = new MFNode();
 
-StreamAudioDestination33.children[0] = WaveShaper34;
+StreamAudioDestination32.children[0] = WaveShaper33;
 
-Gain32.children = new MFNode();
+Gain31.children = new MFNode();
 
-Gain32.children[0] = StreamAudioDestination33;
+Gain31.children[0] = StreamAudioDestination32;
 
-DynamicsCompressor31.children = new MFNode();
+DynamicsCompressor30.children = new MFNode();
 
-DynamicsCompressor31.children[0] = Gain32;
+DynamicsCompressor30.children[0] = Gain31;
 
-Delay30.children = new MFNode();
+Delay29.children = new MFNode();
 
-Delay30.children[0] = DynamicsCompressor31;
+Delay29.children[0] = DynamicsCompressor30;
 
-Convolver29.children = new MFNode();
+Convolver28.children = new MFNode();
 
-Convolver29.children[0] = Delay30;
+Convolver28.children[0] = Delay29;
 
-ChannelSplitter28.outputs = new MFNode();
+ChannelSplitter27.outputs = new MFNode();
 
-ChannelSplitter28.outputs[0] = Convolver29;
+ChannelSplitter27.outputs[0] = Convolver28;
 
-ChannelSelector27.children = new MFNode();
+ChannelSelector26.children = new MFNode();
 
-ChannelSelector27.children[0] = ChannelSplitter28;
+ChannelSelector26.children[0] = ChannelSplitter27;
 
-ChannelMerger26.children = new MFNode();
+ChannelMerger25.children = new MFNode();
 
-ChannelMerger26.children[0] = ChannelSelector27;
+ChannelMerger25.children[0] = ChannelSelector26;
 
-BiquadFilter25.children = new MFNode();
+BiquadFilter24.children = new MFNode();
 
-BiquadFilter25.children[0] = ChannelMerger26;
+BiquadFilter24.children[0] = ChannelMerger25;
 
-StreamAudioDestination24.children = new MFNode();
+StreamAudioDestination23.children = new MFNode();
 
-StreamAudioDestination24.children[0] = BiquadFilter25;
+StreamAudioDestination23.children[0] = BiquadFilter24;
 
-Analyser23.children = new MFNode();
+Analyser22.children = new MFNode();
 
-Analyser23.children[0] = StreamAudioDestination24;
+Analyser22.children[0] = StreamAudioDestination23;
 
-SpatialSound22.children = new MFNode();
+SpatialSound21.children = new MFNode();
 
-SpatialSound22.children[0] = Analyser23;
+SpatialSound21.children[0] = Analyser22;
 
-browser.currentScene.children[4] = SpatialSound22;
+browser.currentScene.children[4] = SpatialSound21;
 

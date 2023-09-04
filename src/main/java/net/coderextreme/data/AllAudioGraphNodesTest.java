@@ -54,47 +54,45 @@ public class AllAudioGraphNodesTest {
         .addMeta(new meta().setName("modified").setContent("26 November 2021"))
         .addMeta(new meta().setName("warning").setContent("Developmental test, no actual 3D model expected"))
         .addMeta(new meta().setName("identifier").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/AllAudioGraphNodesTest.x3d"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("license").setContent("../license.html")))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("AllAudioGraphNodes.x3d"))
         .addChild(new Shape()
-          .setGeometry(new Box())
           .setAppearance(new Appearance()
-            .setAcousticProperties(new AcousticProperties().setDescription("Testing of X3D4 nodes demonstrating W3C Audio API in progress").setDiffuse(0.25f).setRefraction(0.5f).setSpecular(1f))
-            .setMaterial(new Material())))
+            .setAcousticProperties(new AcousticProperties().setDescription("Testing of X3D4 nodes demonstrating W3C Audio API in progress").setRefraction(0.5f).setDiffuse(0.25f).setSpecular(1f))
+            .setMaterial(new Material()))
+          .setGeometry(new Box()))
         .addChild(new Sound().setLocation(new float[] {0f,1.6f,0f})
           .setSource(new AudioClip().setDescription("testing").setUrl(new MFString0().getArray())))
         .addChild(new Sound().setLocation(new float[] {0f,1.6f,0f})
           .setSource(new MovieTexture().setDescription("testing").setUrl(new MFString1().getArray())))
-        .addChild(new SpatialSound().setDistanceModel("INVERSE")
-          .addChild(new Analyser().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
-            .addChild(new StreamAudioDestination().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
-              .addChild(new BiquadFilter().setType("LOWPASS").setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
-                .addChild(new ChannelMerger().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
-                  .addChild(new ChannelSelector().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
-                    .addChild(new ChannelSplitter().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
-                      .addOutputs(new Convolver().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
-                        .addChild(new Delay().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
-                          .addChild(new DynamicsCompressor().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
-                            .addChild(new Gain().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
-                              .addChild(new StreamAudioDestination().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
-                                .addChild(new WaveShaper().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
-                                  .addComments("The following X3DSoundSourceNode nodes have no audio-graph children")
-                                  .addChild(new BufferAudioSource().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS"))
+        .addChild(new SpatialSound()
+          .addChild(new Analyser()
+            .addChild(new StreamAudioDestination()
+              .addChild(new BiquadFilter()
+                .addChild(new ChannelMerger()
+                  .addChild(new ChannelSelector()
+                    .addChild(new ChannelSplitter()
+                      .addOutputs(new Convolver()
+                        .addChild(new Delay()
+                          .addChild(new DynamicsCompressor()
+                            .addChild(new Gain()
+                              .addChild(new StreamAudioDestination()
+                                .addChild(new WaveShaper()
+                                  .addChild(new BufferAudioSource())
                                   .addChild(new ListenerPointSource())
                                   .addChild(new MicrophoneSource())
-                                  .addChild(new OscillatorSource().setFrequency(440f))
-                                  .addChild(new StreamAudioSource().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS"))))))))))))))))      ;
+                                  .addChild(new OscillatorSource())
+                                  .addChild(new StreamAudioSource())))))))))))))))      ;
     return X3D0;
     }
-protected class MFString0 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString0 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"});
   }
 }
-protected class MFString1 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString1 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"bogus.mpg","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"});
   }
 }

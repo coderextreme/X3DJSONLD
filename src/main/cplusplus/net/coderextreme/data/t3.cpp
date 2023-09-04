@@ -12,438 +12,433 @@ CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Immersive");
-X3D0->setVersion("3.3");
+X3D0->setVersion("4.0");
 Chead* head1 = new Chead();
-Ccomponent* component2 = new Ccomponent();
-component2->setName("Networking");
-component2->setLevel(2);
-head1->addComponent(*component2);
+Cmeta* meta2 = new Cmeta();
+meta2->setName("title");
+meta2->setContent("t3.x3d");
+head1->addMeta(*meta2);
 
-Ccomponent* component3 = new Ccomponent();
-component3->setName("Core");
-component3->setLevel(2);
-head1->addComponent(*component3);
+Cmeta* meta3 = new Cmeta();
+meta3->setName("identifier");
+meta3->setContent("http://coderextreme.net/X3DJSONLD/src/main/data/t4.x3d");
+head1->addMeta(*meta3);
 
 Cmeta* meta4 = new Cmeta();
-meta4->setName("title");
-meta4->setContent("t3.x3d");
+meta4->setName("generator");
+meta4->setContent("view3dscene, https://castle-engine.io/view3dscene.php");
 head1->addMeta(*meta4);
 
 Cmeta* meta5 = new Cmeta();
-meta5->setName("identifier");
-meta5->setContent("http://coderextreme.net/X3DJSONLD/src/main/data/t4.x3d");
+meta5->setName("generator");
+meta5->setContent("DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js");
 head1->addMeta(*meta5);
 
 Cmeta* meta6 = new Cmeta();
-meta6->setName("generator");
-meta6->setContent("view3dscene, https://castle-engine.io/view3dscene.php");
+meta6->setName("creator");
+meta6->setContent("Andreas Plesch and John Carlson");
 head1->addMeta(*meta6);
 
 Cmeta* meta7 = new Cmeta();
-meta7->setName("creator");
-meta7->setContent("Andreas Plesch and John Carlson");
+meta7->setName("source");
+meta7->setContent("t1.wrl");
 head1->addMeta(*meta7);
 
 Cmeta* meta8 = new Cmeta();
-meta8->setName("source");
-meta8->setContent("t1.wrl");
+meta8->setName("description");
+meta8->setContent("Test Case for Proto Expander");
 head1->addMeta(*meta8);
 
 Cmeta* meta9 = new Cmeta();
-meta9->setName("description");
-meta9->setContent("Test Case for Proto Expander");
+meta9->setName("license");
+meta9->setContent("https://www.web3d.org/x3d/content/examples/license.html");
 head1->addMeta(*meta9);
 
 Cmeta* meta10 = new Cmeta();
-meta10->setName("license");
-meta10->setContent("https://www.web3d.org/x3d/content/examples/license.html");
+meta10->setName("translated");
+meta10->setContent("12 May 2020");
 head1->addMeta(*meta10);
 
-Cmeta* meta11 = new Cmeta();
-meta11->setName("translated");
-meta11->setContent("12 May 2020");
-head1->addMeta(*meta11);
+Ccomponent* component11 = new Ccomponent();
+component11->setName("Networking");
+component11->setLevel(2);
+head1->addComponent(*component11);
 
-Cmeta* meta12 = new Cmeta();
-meta12->setName("generator");
-meta12->setContent("DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js");
-head1->addMeta(*meta12);
-
-Cmeta* meta13 = new Cmeta();
-meta13->setName("reference");
-meta13->setContent("X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding");
-head1->addMeta(*meta13);
+Ccomponent* component12 = new Ccomponent();
+component12->setName("Core");
+component12->setLevel(2);
+head1->addComponent(*component12);
 
 X3D0->setHead(*head1);
 
-CScene* Scene14 = new CScene();
-CNavigationInfo* NavigationInfo15 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-NavigationInfo15->setType(new CString[3]{"EXAMINE","FLY","WALK"}, 3);
-NavigationInfo15->setSpeed(3);
-NavigationInfo15->setAvatarSize(new float[3]{200,200,120}, 3);
-group->addChildren(*NavigationInfo15);
-
-CWorldInfo* WorldInfo16 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
-WorldInfo16->setTitle("Arts Mapper");
-group->addChildren(*WorldInfo16);
-
-CViewpoint* Viewpoint17 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint17->setDescription("looking North");
-Viewpoint17->setPosition(new float[3]{0,60,110});
-Viewpoint17->setOrientation(new float[4]{1,0,0,-0.699999988079071});
-Viewpoint17->setFieldOfView(0.785398125648499);
-group->addChildren(*Viewpoint17);
-
-CTransform* Transform18 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform18->setTranslation(new float[3]{-468,0,315});
-CAnchor* Anchor19 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor19->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
-Anchor19->setDescription("High Peak Community Arts");
-CTransform* Transform20 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape21 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance22 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material23 = (CMaterial *)(m_pScene.createNode("Material"));
-Material23->setDiffuseColor(new float[3]{1,1,1});
-Material23->setEmissiveColor(new float[3]{0,0.300000011920929,1});
-Appearance22->setMaterial(*Material23);
-
-Shape21->setAppearance(*Appearance22);
-
-CSphere* Sphere24 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere24->setRadius(5.10000002384186);
-Shape21->setGeometry(Sphere24);
-
-Transform20->addChild(*Shape21);
-
-Anchor19->addChildren(*Transform20);
-
-Transform18->addChildren(*Anchor19);
-
-CAnchor* Anchor25 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor25->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
-Anchor25->setDescription("People Express");
-CTransform* Transform26 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape27 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance28 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material29 = (CMaterial *)(m_pScene.createNode("Material"));
-Material29->setDiffuseColor(new float[3]{1,1,1});
-Material29->setEmissiveColor(new float[3]{0.600000023841858,0,0.600000023841858});
-Appearance28->setMaterial(*Material29);
-
-Shape27->setAppearance(*Appearance28);
-
-CSphere* Sphere30 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere30->setRadius(5.10000002384186);
-Shape27->setGeometry(Sphere30);
-
-Transform26->addChild(*Shape27);
-
-Anchor25->addChildren(*Transform26);
-
-Transform18->addChildren(*Anchor25);
-
-CAnchor* Anchor31 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor31->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
-Anchor31->setDescription("QArts/Studios");
-CTransform* Transform32 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape33 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance34 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material35 = (CMaterial *)(m_pScene.createNode("Material"));
-Material35->setDiffuseColor(new float[3]{1,1,1});
-Material35->setEmissiveColor(new float[3]{0.600000023841858,0,0.600000023841858});
-Appearance34->setMaterial(*Material35);
-
-Shape33->setAppearance(*Appearance34);
-
-CSphere* Sphere36 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere36->setRadius(5.10000002384186);
-Shape33->setGeometry(Sphere36);
-
-Transform32->addChild(*Shape33);
-
-Anchor31->addChildren(*Transform32);
-
-Transform18->addChildren(*Anchor31);
-
-CAnchor* Anchor37 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor37->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
-Anchor37->setDescription("First Movement");
-CTransform* Transform38 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape39 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance40 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material41 = (CMaterial *)(m_pScene.createNode("Material"));
-Material41->setDiffuseColor(new float[3]{1,1,1});
-Material41->setEmissiveColor(new float[3]{1,0,0.200000002980232});
-Appearance40->setMaterial(*Material41);
-
-Shape39->setAppearance(*Appearance40);
+CScene* Scene13 = new CScene();
+CNavigationInfo* NavigationInfo14 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
+NavigationInfo14->setType(new CString[3]{"EXAMINE","FLY","WALK"}, 3);
+NavigationInfo14->setAvatarSize(new float[3]{200,200,120}, 3);
+NavigationInfo14->setSpeed(3);
+group->addChildren(*NavigationInfo14);
+
+CWorldInfo* WorldInfo15 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
+WorldInfo15->setTitle("Arts Mapper");
+group->addChildren(*WorldInfo15);
+
+CViewpoint* Viewpoint16 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint16->setDescription("looking North");
+Viewpoint16->setPosition(new float[3]{0,60,110});
+Viewpoint16->setOrientation(new float[4]{1,0,0,-0.699999988079071});
+Viewpoint16->setFieldOfView(0.7853981);
+group->addChildren(*Viewpoint16);
+
+CTransform* Transform17 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform17->setTranslation(new float[3]{-468,0,315});
+CAnchor* Anchor18 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor18->setDescription("High Peak Community Arts");
+Anchor18->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
+CTransform* Transform19 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape20 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance21 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material22 = (CMaterial *)(m_pScene.createNode("Material"));
+Material22->setDiffuseColor(new float[3]{1,1,1});
+Material22->setEmissiveColor(new float[3]{0,0.3,1});
+Appearance21->setMaterial(*Material22);
+
+Shape20->setAppearance(*Appearance21);
+
+CSphere* Sphere23 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere23->setRadius(5.1);
+Shape20->setGeometry(Sphere23);
+
+Transform19->addChild(*Shape20);
+
+Anchor18->addChildren(*Transform19);
+
+Transform17->addChildren(*Anchor18);
+
+CAnchor* Anchor24 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor24->setDescription("People Express");
+Anchor24->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
+CTransform* Transform25 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape26 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance27 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material28 = (CMaterial *)(m_pScene.createNode("Material"));
+Material28->setDiffuseColor(new float[3]{1,1,1});
+Material28->setEmissiveColor(new float[3]{0.6,0,0.6});
+Appearance27->setMaterial(*Material28);
+
+Shape26->setAppearance(*Appearance27);
+
+CSphere* Sphere29 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere29->setRadius(5.1);
+Shape26->setGeometry(Sphere29);
+
+Transform25->addChild(*Shape26);
+
+Anchor24->addChildren(*Transform25);
+
+Transform17->addChildren(*Anchor24);
+
+CAnchor* Anchor30 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor30->setDescription("QArts/Studios");
+Anchor30->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
+CTransform* Transform31 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape32 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance33 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material34 = (CMaterial *)(m_pScene.createNode("Material"));
+Material34->setDiffuseColor(new float[3]{1,1,1});
+Material34->setEmissiveColor(new float[3]{0.6,0,0.6});
+Appearance33->setMaterial(*Material34);
+
+Shape32->setAppearance(*Appearance33);
+
+CSphere* Sphere35 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere35->setRadius(5.1);
+Shape32->setGeometry(Sphere35);
+
+Transform31->addChild(*Shape32);
+
+Anchor30->addChildren(*Transform31);
+
+Transform17->addChildren(*Anchor30);
+
+CAnchor* Anchor36 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor36->setDescription("First Movement");
+Anchor36->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
+CTransform* Transform37 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape38 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance39 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material40 = (CMaterial *)(m_pScene.createNode("Material"));
+Material40->setDiffuseColor(new float[3]{1,1,1});
+Material40->setEmissiveColor(new float[3]{1,0,0.2});
+Appearance39->setMaterial(*Material40);
+
+Shape38->setAppearance(*Appearance39);
 
-CSphere* Sphere42 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere42->setRadius(5.10000002384186);
-Shape39->setGeometry(Sphere42);
+CSphere* Sphere41 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere41->setRadius(5.1);
+Shape38->setGeometry(Sphere41);
 
-Transform38->addChild(*Shape39);
+Transform37->addChild(*Shape38);
 
-Anchor37->addChildren(*Transform38);
+Anchor36->addChildren(*Transform37);
 
-Transform18->addChildren(*Anchor37);
+Transform17->addChildren(*Anchor36);
 
-CAnchor* Anchor43 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor43->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
-Anchor43->setDescription("City Arts");
-CTransform* Transform44 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape45 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance46 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material47 = (CMaterial *)(m_pScene.createNode("Material"));
-Material47->setDiffuseColor(new float[3]{1,1,1});
-Material47->setEmissiveColor(new float[3]{0.600000023841858,0,0.600000023841858});
-Appearance46->setMaterial(*Material47);
+CAnchor* Anchor42 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor42->setDescription("City Arts");
+Anchor42->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
+CTransform* Transform43 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape44 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance45 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material46 = (CMaterial *)(m_pScene.createNode("Material"));
+Material46->setDiffuseColor(new float[3]{1,1,1});
+Material46->setEmissiveColor(new float[3]{0.6,0,0.6});
+Appearance45->setMaterial(*Material46);
 
-Shape45->setAppearance(*Appearance46);
+Shape44->setAppearance(*Appearance45);
 
-CSphere* Sphere48 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere48->setRadius(5.10000002384186);
-Shape45->setGeometry(Sphere48);
+CSphere* Sphere47 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere47->setRadius(5.1);
+Shape44->setGeometry(Sphere47);
 
-Transform44->addChild(*Shape45);
+Transform43->addChild(*Shape44);
 
-Anchor43->addChildren(*Transform44);
+Anchor42->addChildren(*Transform43);
 
-Transform18->addChildren(*Anchor43);
+Transform17->addChildren(*Anchor42);
 
-CAnchor* Anchor49 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor49->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
-Anchor49->setDescription("Indigo Dance Group (Salamanda Tandem)");
-CTransform* Transform50 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape51 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance52 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material53 = (CMaterial *)(m_pScene.createNode("Material"));
-Material53->setDiffuseColor(new float[3]{1,1,1});
-Material53->setEmissiveColor(new float[3]{0,0.300000011920929,1});
-Appearance52->setMaterial(*Material53);
+CAnchor* Anchor48 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor48->setDescription("Indigo Dance Group (Salamanda Tandem)");
+Anchor48->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
+CTransform* Transform49 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape50 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance51 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material52 = (CMaterial *)(m_pScene.createNode("Material"));
+Material52->setDiffuseColor(new float[3]{1,1,1});
+Material52->setEmissiveColor(new float[3]{0,0.3,1});
+Appearance51->setMaterial(*Material52);
 
-Shape51->setAppearance(*Appearance52);
+Shape50->setAppearance(*Appearance51);
 
-CSphere* Sphere54 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere54->setRadius(5.10000002384186);
-Shape51->setGeometry(Sphere54);
+CSphere* Sphere53 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere53->setRadius(5.1);
+Shape50->setGeometry(Sphere53);
 
-Transform50->addChild(*Shape51);
+Transform49->addChild(*Shape50);
 
-Anchor49->addChildren(*Transform50);
+Anchor48->addChildren(*Transform49);
 
-Transform18->addChildren(*Anchor49);
+Transform17->addChildren(*Anchor48);
 
-CAnchor* Anchor55 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor55->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
-Anchor55->setDescription("Watering Seeds");
-CTransform* Transform56 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape57 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance58 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material59 = (CMaterial *)(m_pScene.createNode("Material"));
-Material59->setDiffuseColor(new float[3]{1,1,1});
-Material59->setEmissiveColor(new float[3]{0,0.300000011920929,1});
-Appearance58->setMaterial(*Material59);
+CAnchor* Anchor54 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor54->setDescription("Watering Seeds");
+Anchor54->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
+CTransform* Transform55 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape56 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance57 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material58 = (CMaterial *)(m_pScene.createNode("Material"));
+Material58->setDiffuseColor(new float[3]{1,1,1});
+Material58->setEmissiveColor(new float[3]{0,0.3,1});
+Appearance57->setMaterial(*Material58);
 
-Shape57->setAppearance(*Appearance58);
+Shape56->setAppearance(*Appearance57);
 
-CSphere* Sphere60 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere60->setRadius(5.10000002384186);
-Shape57->setGeometry(Sphere60);
+CSphere* Sphere59 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere59->setRadius(5.1);
+Shape56->setGeometry(Sphere59);
 
-Transform56->addChild(*Shape57);
+Transform55->addChild(*Shape56);
 
-Anchor55->addChildren(*Transform56);
+Anchor54->addChildren(*Transform55);
 
-Transform18->addChildren(*Anchor55);
+Transform17->addChildren(*Anchor54);
 
-CAnchor* Anchor61 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor61->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
-Anchor61->setDescription("Fased In The Arts");
-CTransform* Transform62 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape63 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance64 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material65 = (CMaterial *)(m_pScene.createNode("Material"));
-Material65->setDiffuseColor(new float[3]{1,1,1});
-Material65->setEmissiveColor(new float[3]{0,0.300000011920929,1});
-Appearance64->setMaterial(*Material65);
+CAnchor* Anchor60 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor60->setDescription("Fased In The Arts");
+Anchor60->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
+CTransform* Transform61 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape62 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance63 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material64 = (CMaterial *)(m_pScene.createNode("Material"));
+Material64->setDiffuseColor(new float[3]{1,1,1});
+Material64->setEmissiveColor(new float[3]{0,0.3,1});
+Appearance63->setMaterial(*Material64);
 
-Shape63->setAppearance(*Appearance64);
+Shape62->setAppearance(*Appearance63);
 
-CSphere* Sphere66 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere66->setRadius(5.10000002384186);
-Shape63->setGeometry(Sphere66);
+CSphere* Sphere65 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere65->setRadius(5.1);
+Shape62->setGeometry(Sphere65);
 
-Transform62->addChild(*Shape63);
+Transform61->addChild(*Shape62);
 
-Anchor61->addChildren(*Transform62);
+Anchor60->addChildren(*Transform61);
 
-Transform18->addChildren(*Anchor61);
+Transform17->addChildren(*Anchor60);
 
-CAnchor* Anchor67 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor67->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
-Anchor67->setDescription("27a Access Artspace");
-CTransform* Transform68 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape69 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance70 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material71 = (CMaterial *)(m_pScene.createNode("Material"));
-Material71->setDiffuseColor(new float[3]{1,1,1});
-Material71->setEmissiveColor(new float[3]{1,0,0.200000002980232});
-Appearance70->setMaterial(*Material71);
+CAnchor* Anchor66 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor66->setDescription("27a Access Artspace");
+Anchor66->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
+CTransform* Transform67 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape68 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance69 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material70 = (CMaterial *)(m_pScene.createNode("Material"));
+Material70->setDiffuseColor(new float[3]{1,1,1});
+Material70->setEmissiveColor(new float[3]{1,0,0.2});
+Appearance69->setMaterial(*Material70);
 
-Shape69->setAppearance(*Appearance70);
+Shape68->setAppearance(*Appearance69);
 
-CSphere* Sphere72 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere72->setRadius(5.10000002384186);
-Shape69->setGeometry(Sphere72);
+CSphere* Sphere71 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere71->setRadius(5.1);
+Shape68->setGeometry(Sphere71);
 
-Transform68->addChild(*Shape69);
+Transform67->addChild(*Shape68);
 
-Anchor67->addChildren(*Transform68);
+Anchor66->addChildren(*Transform67);
 
-Transform18->addChildren(*Anchor67);
+Transform17->addChildren(*Anchor66);
 
-CAnchor* Anchor73 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor73->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
-Anchor73->setDescription("Bamboozle Theatre Company");
-CTransform* Transform74 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape75 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance76 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material77 = (CMaterial *)(m_pScene.createNode("Material"));
-Material77->setDiffuseColor(new float[3]{1,1,1});
-Material77->setEmissiveColor(new float[3]{0,0.300000011920929,1});
-Appearance76->setMaterial(*Material77);
+CAnchor* Anchor72 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor72->setDescription("Bamboozle Theatre Company");
+Anchor72->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
+CTransform* Transform73 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape74 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance75 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material76 = (CMaterial *)(m_pScene.createNode("Material"));
+Material76->setDiffuseColor(new float[3]{1,1,1});
+Material76->setEmissiveColor(new float[3]{0,0.3,1});
+Appearance75->setMaterial(*Material76);
 
-Shape75->setAppearance(*Appearance76);
+Shape74->setAppearance(*Appearance75);
 
-CSphere* Sphere78 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere78->setRadius(5.10000002384186);
-Shape75->setGeometry(Sphere78);
+CSphere* Sphere77 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere77->setRadius(5.1);
+Shape74->setGeometry(Sphere77);
 
-Transform74->addChild(*Shape75);
+Transform73->addChild(*Shape74);
 
-Anchor73->addChildren(*Transform74);
+Anchor72->addChildren(*Transform73);
 
-Transform18->addChildren(*Anchor73);
+Transform17->addChildren(*Anchor72);
 
-CAnchor* Anchor79 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor79->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
-Anchor79->setDescription("Mantle Community Arts");
-CTransform* Transform80 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape81 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance82 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material83 = (CMaterial *)(m_pScene.createNode("Material"));
-Material83->setDiffuseColor(new float[3]{1,1,1});
-Material83->setEmissiveColor(new float[3]{0,0.300000011920929,1});
-Appearance82->setMaterial(*Material83);
+CAnchor* Anchor78 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor78->setDescription("Mantle Community Arts");
+Anchor78->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
+CTransform* Transform79 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape80 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance81 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material82 = (CMaterial *)(m_pScene.createNode("Material"));
+Material82->setDiffuseColor(new float[3]{1,1,1});
+Material82->setEmissiveColor(new float[3]{0,0.3,1});
+Appearance81->setMaterial(*Material82);
 
-Shape81->setAppearance(*Appearance82);
+Shape80->setAppearance(*Appearance81);
 
-CSphere* Sphere84 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere84->setRadius(5.10000002384186);
-Shape81->setGeometry(Sphere84);
+CSphere* Sphere83 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere83->setRadius(5.1);
+Shape80->setGeometry(Sphere83);
 
-Transform80->addChild(*Shape81);
+Transform79->addChild(*Shape80);
 
-Anchor79->addChildren(*Transform80);
+Anchor78->addChildren(*Transform79);
 
-Transform18->addChildren(*Anchor79);
+Transform17->addChildren(*Anchor78);
 
-CAnchor* Anchor85 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor85->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
-Anchor85->setDescription("Artlink East");
-CTransform* Transform86 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape87 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance88 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material89 = (CMaterial *)(m_pScene.createNode("Material"));
-Material89->setDiffuseColor(new float[3]{1,1,1});
-Material89->setEmissiveColor(new float[3]{0,0.300000011920929,1});
-Appearance88->setMaterial(*Material89);
+CAnchor* Anchor84 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor84->setDescription("Artlink East");
+Anchor84->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
+CTransform* Transform85 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape86 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance87 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material88 = (CMaterial *)(m_pScene.createNode("Material"));
+Material88->setDiffuseColor(new float[3]{1,1,1});
+Material88->setEmissiveColor(new float[3]{0,0.3,1});
+Appearance87->setMaterial(*Material88);
 
-Shape87->setAppearance(*Appearance88);
+Shape86->setAppearance(*Appearance87);
 
-CSphere* Sphere90 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere90->setRadius(5.10000002384186);
-Shape87->setGeometry(Sphere90);
+CSphere* Sphere89 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere89->setRadius(5.1);
+Shape86->setGeometry(Sphere89);
 
-Transform86->addChild(*Shape87);
+Transform85->addChild(*Shape86);
 
-Anchor85->addChildren(*Transform86);
+Anchor84->addChildren(*Transform85);
 
-Transform18->addChildren(*Anchor85);
+Transform17->addChildren(*Anchor84);
 
-CAnchor* Anchor91 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor91->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
-Anchor91->setDescription("Creations");
-CTransform* Transform92 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape93 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance94 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material95 = (CMaterial *)(m_pScene.createNode("Material"));
-Material95->setDiffuseColor(new float[3]{1,1,1});
-Material95->setEmissiveColor(new float[3]{0,0.300000011920929,1});
-Appearance94->setMaterial(*Material95);
+CAnchor* Anchor90 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor90->setDescription("Creations");
+Anchor90->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
+CTransform* Transform91 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape92 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance93 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material94 = (CMaterial *)(m_pScene.createNode("Material"));
+Material94->setDiffuseColor(new float[3]{1,1,1});
+Material94->setEmissiveColor(new float[3]{0,0.3,1});
+Appearance93->setMaterial(*Material94);
 
-Shape93->setAppearance(*Appearance94);
+Shape92->setAppearance(*Appearance93);
 
-CSphere* Sphere96 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere96->setRadius(5.10000002384186);
-Shape93->setGeometry(Sphere96);
+CSphere* Sphere95 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere95->setRadius(5.1);
+Shape92->setGeometry(Sphere95);
 
-Transform92->addChild(*Shape93);
+Transform91->addChild(*Shape92);
 
-Anchor91->addChildren(*Transform92);
+Anchor90->addChildren(*Transform91);
 
-Transform18->addChildren(*Anchor91);
+Transform17->addChildren(*Anchor90);
 
-CAnchor* Anchor97 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor97->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
-Anchor97->setDescription("New Perspectives");
-CTransform* Transform98 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape99 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance100 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material101 = (CMaterial *)(m_pScene.createNode("Material"));
-Material101->setDiffuseColor(new float[3]{1,1,1});
-Material101->setEmissiveColor(new float[3]{1,0,0.200000002980232});
-Appearance100->setMaterial(*Material101);
+CAnchor* Anchor96 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor96->setDescription("New Perspectives");
+Anchor96->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
+CTransform* Transform97 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape98 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance99 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material100 = (CMaterial *)(m_pScene.createNode("Material"));
+Material100->setDiffuseColor(new float[3]{1,1,1});
+Material100->setEmissiveColor(new float[3]{1,0,0.2});
+Appearance99->setMaterial(*Material100);
 
-Shape99->setAppearance(*Appearance100);
+Shape98->setAppearance(*Appearance99);
 
-CSphere* Sphere102 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere102->setRadius(5.10000002384186);
-Shape99->setGeometry(Sphere102);
+CSphere* Sphere101 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere101->setRadius(5.1);
+Shape98->setGeometry(Sphere101);
 
-Transform98->addChild(*Shape99);
+Transform97->addChild(*Shape98);
 
-Anchor97->addChildren(*Transform98);
+Anchor96->addChildren(*Transform97);
 
-Transform18->addChildren(*Anchor97);
+Transform17->addChildren(*Anchor96);
 
-CAnchor* Anchor103 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor103->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
-Anchor103->setDescription("UKan2");
-CTransform* Transform104 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape105 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance106 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material107 = (CMaterial *)(m_pScene.createNode("Material"));
-Material107->setDiffuseColor(new float[3]{1,1,1});
-Material107->setEmissiveColor(new float[3]{0,0.300000011920929,1});
-Appearance106->setMaterial(*Material107);
+CAnchor* Anchor102 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor102->setDescription("UKan2");
+Anchor102->setUrl(new CString[2]{"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 2);
+CTransform* Transform103 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape104 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance105 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material106 = (CMaterial *)(m_pScene.createNode("Material"));
+Material106->setDiffuseColor(new float[3]{1,1,1});
+Material106->setEmissiveColor(new float[3]{0,0.3,1});
+Appearance105->setMaterial(*Material106);
 
-Shape105->setAppearance(*Appearance106);
+Shape104->setAppearance(*Appearance105);
 
-CSphere* Sphere108 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere108->setRadius(5.10000002384186);
-Shape105->setGeometry(Sphere108);
+CSphere* Sphere107 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere107->setRadius(5.1);
+Shape104->setGeometry(Sphere107);
 
-Transform104->addChild(*Shape105);
+Transform103->addChild(*Shape104);
 
-Anchor103->addChildren(*Transform104);
+Anchor102->addChildren(*Transform103);
 
-Transform18->addChildren(*Anchor103);
+Transform17->addChildren(*Anchor102);
 
-group->addChildren(*Transform18);
+group->addChildren(*Transform17);
 
-X3D0->setScene(*Scene14);
+X3D0->setScene(*Scene13);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

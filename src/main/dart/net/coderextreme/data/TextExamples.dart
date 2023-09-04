@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('3.0'),
+      version_ : SFString('4.0'),
       head_ : 
         head(
           meta_ : [
@@ -42,11 +42,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit')),
-
-            meta(
-              name_ : SFString('license'),
-              content_ : SFString('../license.html'))]),
+              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit'))]),
       Scene_ : 
         Scene(
           children_ : [
@@ -54,46 +50,46 @@ var X3D0 =  X3D(
               translation_ : SFVec3f([SFDouble(0), SFDouble(2), SFDouble(0)]),
               child_ : 
                 Shape(
+                  appearance_ : 
+                    Appearance(
+                      DEF_ : SFString('LightBlueAppearance'),
+                      material_ : 
+                        Material(
+                          diffuseColor_ : SFColor([SFDouble(0.1), SFDouble(0.7), SFDouble(0.7)]))),
                   geometry_ : 
                     Text(
                       string_ : MFString([SFString("Compare special character escaping")]),
                       fontStyle_ : 
                         FontStyle(
                           DEF_ : SFString('testFontStyle'),
-                          justify_ : MFString([SFString("MIDDLE"), SFString("MIDDLE")]),
-                          size_ : 0.8)),
-                  appearance_ : 
-                    Appearance(
-                      DEF_ : SFString('LightBlueAppearance'),
-                      material_ : 
-                        Material(
-                          diffuseColor_ : SFColor([SFDouble(0.1), SFDouble(0.7), SFDouble(0.7)]))))),
+                          size_ : 0.8,
+                          justify_ : MFString([SFString("MIDDLE"), SFString("MIDDLE")]))))),
 
             Transform(
               translation_ : SFVec3f([SFDouble(-3), SFDouble(0), SFDouble(0)]),
               child_ : 
                 Shape(
+                  appearance_ : 
+                    Appearance(
+                      USE_ : SFString('LightBlueAppearance')),
                   geometry_ : 
                     Text(
                       string_ : MFString([SFString("I don't think so"), SFString(""), SFString("he said \"Hi\"")]),
                       fontStyle_ : 
                         FontStyle(
-                          USE_ : SFString('testFontStyle'))),
-                  appearance_ : 
-                    Appearance(
-                      USE_ : SFString('LightBlueAppearance')))),
+                          USE_ : SFString('testFontStyle'))))),
 
             Transform(
               translation_ : SFVec3f([SFDouble(3), SFDouble(0), SFDouble(0)]),
               child_ : 
                 Shape(
+                  appearance_ : 
+                    Appearance(
+                      USE_ : SFString('LightBlueAppearance')),
                   geometry_ : 
                     Text(
                       string_ : MFString([SFString("I don't think so"), SFString(""), SFString("he said \"Hi\"")]),
                       fontStyle_ : 
                         FontStyle(
-                          USE_ : SFString('testFontStyle'))),
-                  appearance_ : 
-                    Appearance(
-                      USE_ : SFString('LightBlueAppearance'))))]));
+                          USE_ : SFString('testFontStyle')))))]));
 void main() { exit(0); }

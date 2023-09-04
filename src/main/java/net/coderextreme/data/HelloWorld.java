@@ -45,9 +45,8 @@ public class HelloWorld {
     model.toFileJSON("../data/HelloWorld.new.json");
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
-        .addComments("Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON")
         .addMeta(new meta().setName("title").setContent("HelloWorld.x3d"))
         .addMeta(new meta().setName("description").setContent("Simple X3D model example: Hello World!"))
         .addMeta(new meta().setName("created").setContent("30 October 2000"))
@@ -63,50 +62,48 @@ public class HelloWorld {
         .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/realtime-3d/news/internationalization-x3d"))
         .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/x3d/content/examples/HelloWorld.x3d"))
         .addMeta(new meta().setName("reference").setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d"))
-        .addMeta(new meta().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"))
-        .addMeta(new meta().setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("reference").setContent("HelloWorld.wrl"))
         .addMeta(new meta().setName("reference").setContent("HelloWorld.x3dv"))
         .addMeta(new meta().setName("reference").setContent("HelloWorld.x3db"))
         .addMeta(new meta().setName("reference").setContent("HelloWorld.xhtml"))
-        .addMeta(new meta().setName("reference").setContent("HelloWorld.json")))
+        .addMeta(new meta().setName("reference").setContent("HelloWorld.json"))
+        .addMeta(new meta().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"))
+        .addMeta(new meta().setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html")))
       .setScene(new Scene()
-        .addComments("Example scene to illustrate X3D nodes and fields (XML elements and attributes)")
-        .addChild(new WorldInfo().setInfo(new MFString0().getArray()).setTitle("Hello World!"))
+        .addChild(new WorldInfo().setTitle("Hello World!").setInfo(new MFString0().getArray()))
         .addChild(new Group()
-          .addChild(new Viewpoint().setDEF("ViewUpClose").setCenterOfRotation(new float[] {0f,-1f,0f}).setDescription("Hello world!").setPosition(new float[] {0f,-1f,7f}))
+          .addChild(new Viewpoint().setDEF("ViewUpClose").setDescription("Hello world!").setPosition(new float[] {0f,-1f,7f}).setCenterOfRotation(new float[] {0f,-1f,0f}))
           .addChild(new Transform().setRotation(new float[] {0f,1f,0f,3f})
             .addChild(new Shape()
-              .setGeometry(new Sphere())
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDEF("MaterialLightBlue").setDiffuseColor(new float[] {0.1f,0.5f,1f}))
-                .setTexture(new ImageTexture().setDEF("ImageCloudlessEarth").setUrl(new MFString1().getArray())))))
+                .setTexture(new ImageTexture().setDEF("ImageCloudlessEarth").setUrl(new MFString1().getArray())))
+              .setGeometry(new Sphere())))
           .addChild(new Transform().setTranslation(new float[] {0f,-2f,0f})
             .addChild(new Shape()
-              .setGeometry(new Text().setDEF("TextMessage").setString(new MFString2().getArray())
-                .setFontStyle(new FontStyle().setJustify(new MFString3().getArray())))
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setUSE("MaterialLightBlue")))))))      ;
+                .setMaterial(new Material().setUSE("MaterialLightBlue")))
+              .setGeometry(new Text().setDEF("TextMessage").setString(new MFString2().getArray())
+                .setFontStyle(new FontStyle().setJustify(new MFString3().getArray())))))))      ;
     return X3D0;
     }
-protected class MFString0 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString0 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Example scene to illustrate a simple X3D model"});
   }
 }
-protected class MFString1 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString1 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"});
   }
 }
-protected class MFString2 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString2 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Hello","world!"});
   }
 }
-protected class MFString3 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString3 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }

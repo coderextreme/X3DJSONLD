@@ -12,192 +12,179 @@ CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Interchange");
-X3D0->setVersion("3.0");
+X3D0->setVersion("4.0");
 Chead* head1 = new Chead();
-Ccomponent* component2 = new Ccomponent();
-component2->setName("Networking");
-component2->setLevel(2);
-head1->addComponent(*component2);
+Cmeta* meta2 = new Cmeta();
+meta2->setName("generator");
+meta2->setContent("view3dscene, https://castle-engine.io/view3dscene.php");
+head1->addMeta(*meta2);
 
-Cmeta* meta3 = new Cmeta();
-meta3->setName("generator");
-meta3->setContent("view3dscene, https://castle-engine.io/view3dscene.php");
-head1->addMeta(*meta3);
-
-Cmeta* meta4 = new Cmeta();
-meta4->setName("source");
-meta4->setContent("t1.wrl");
-head1->addMeta(*meta4);
+Ccomponent* component3 = new Ccomponent();
+component3->setName("Networking");
+component3->setLevel(2);
+head1->addComponent(*component3);
 
 X3D0->setHead(*head1);
 
-CScene* Scene5 = new CScene();
-CNavigationInfo* NavigationInfo6 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-NavigationInfo6->setType(new CString[3]{"EXAMINE","FLY","WALK"}, 3);
-NavigationInfo6->setSpeed(3);
-NavigationInfo6->setAvatarSize(new float[3]{200,200,120}, 3);
-group->addChildren(*NavigationInfo6);
-
-CWorldInfo* WorldInfo7 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
-WorldInfo7->setTitle("Arts Mapper");
-group->addChildren(*WorldInfo7);
-
-CViewpoint* Viewpoint8 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint8->setDescription("looking North");
-Viewpoint8->setPosition(new float[3]{0,60,110});
-Viewpoint8->setOrientation(new float[4]{1,0,0,-0.699999988079071});
-Viewpoint8->setFieldOfView(0.785398125648499);
-group->addChildren(*Viewpoint8);
-
-CViewpoint* Viewpoint9 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint9->setDescription("looking East");
-Viewpoint9->setPosition(new float[3]{-140,30,0});
-Viewpoint9->setOrientation(new float[4]{0,0.400000005960464,0,-1.39999997615814});
-Viewpoint9->setFieldOfView(0.785398125648499);
-group->addChildren(*Viewpoint9);
-
-CViewpoint* Viewpoint10 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint10->setDescription("Overhead");
-Viewpoint10->setPosition(new float[3]{0,150,0});
-Viewpoint10->setOrientation(new float[4]{1,0,0,-1.57000005245209});
-Viewpoint10->setFieldOfView(0.785398125648499);
-group->addChildren(*Viewpoint10);
-
-CProtoDeclare ProtoDeclare11 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
+CScene* Scene4 = new CScene();
+CProtoDeclare ProtoDeclare5 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="org" ><ProtoInterface><field name="posi" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
-<field name="col" accessType="initializeOnly" type="SFColor" value="0 0 0"></field>
+<ProtoDeclare name="org" ><ProtoInterface><field accessType="initializeOnly" type="SFVec3f" name="posi"></field>
+<field accessType="initializeOnly" type="SFColor" name="col"></field>
 </ProtoInterface>
-<ProtoBody><Transform><Shape><Appearance><Material transparency="0.400000005960464"><IS><connect nodeField="emissiveColor" protoField="col"></connect>
+<ProtoBody><Transform><Shape><Appearance><Material transparency="0.4"><IS><connect nodeField="emissiveColor" protoField="col"></connect>
 </IS>
 </Material>
 </Appearance>
-<Sphere radius="1.10000002384186"></Sphere>
+<Sphere radius="1.1"></Sphere>
 </Shape>
 <IS><connect nodeField="translation" protoField="posi"></connect>
 </IS>
 </Transform>
 </ProtoBody>
 </ProtoDeclare>)foo");
-ProtoDeclare11->setName("org");
-CProtoInterface* ProtoInterface12 = new CProtoInterface();
-Cfield* field13 = new Cfield();
-field13->setName("posi");
-field13->setAccessType("initializeOnly");
-field13->setType("SFVec3f");
-field13->setValue("0 0 0");
-ProtoInterface12->addField(*field13);
+ProtoDeclare5->setName("org");
+CProtoInterface* ProtoInterface6 = new CProtoInterface();
+Cfield* field7 = new Cfield();
+field7->setAccessType("initializeOnly");
+field7->setType("SFVec3f");
+field7->setName("posi");
+ProtoInterface6->addField(*field7);
 
-Cfield* field14 = new Cfield();
-field14->setName("col");
-field14->setAccessType("initializeOnly");
-field14->setType("SFColor");
-field14->setValue("0 0 0");
-ProtoInterface12->addField(*field14);
+Cfield* field8 = new Cfield();
+field8->setAccessType("initializeOnly");
+field8->setType("SFColor");
+field8->setName("col");
+ProtoInterface6->addField(*field8);
 
-ProtoDeclare11->setProtoInterface(*ProtoInterface12);
+ProtoDeclare5->setProtoInterface(*ProtoInterface6);
 
-CProtoBody* ProtoBody15 = new CProtoBody();
-CTransform* Transform16 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape17 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance18 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material19 = (CMaterial *)(m_pScene.createNode("Material"));
-Material19->setTransparency(0.400000005960464);
-CIS* IS20 = new CIS();
-Cconnect* connect21 = new Cconnect();
-connect21->setNodeField("emissiveColor");
-connect21->setProtoField("col");
-IS20->addConnect(*connect21);
+CProtoBody* ProtoBody9 = new CProtoBody();
+CTransform* Transform10 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape11 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance12 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material13 = (CMaterial *)(m_pScene.createNode("Material"));
+Material13->setTransparency(0.4);
+CIS* IS14 = new CIS();
+Cconnect* connect15 = new Cconnect();
+connect15->setNodeField("emissiveColor");
+connect15->setProtoField("col");
+IS14->addConnect(*connect15);
 
-Material19->setIS(*IS20);
+Material13->setIS(*IS14);
 
-Appearance18->setMaterial(*Material19);
+Appearance12->setMaterial(*Material13);
 
-Shape17->setAppearance(*Appearance18);
+Shape11->setAppearance(*Appearance12);
 
-CSphere* Sphere22 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere22->setRadius(1.10000002384186);
-Shape17->setGeometry(Sphere22);
+CSphere* Sphere16 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere16->setRadius(1.1);
+Shape11->setGeometry(Sphere16);
 
-Transform16->addChild(*Shape17);
+Transform10->addChild(*Shape11);
 
-CIS* IS23 = new CIS();
-Cconnect* connect24 = new Cconnect();
-connect24->setNodeField("translation");
-connect24->setProtoField("posi");
-IS23->addConnect(*connect24);
+CIS* IS17 = new CIS();
+Cconnect* connect18 = new Cconnect();
+connect18->setNodeField("translation");
+connect18->setProtoField("posi");
+IS17->addConnect(*connect18);
 
-Transform16->setIS(*IS23);
+Transform10->setIS(*IS17);
 
-ProtoBody15->addChildren(*Transform16);
+ProtoBody9->addChildren(*Transform10);
 
-ProtoDeclare11->setProtoBody(*ProtoBody15);
+ProtoDeclare5->setProtoBody(*ProtoBody9);
 
-group->addChildren(*ProtoDeclare11);
+group->addChildren(*ProtoDeclare5);
 
-CProtoDeclare ProtoDeclare25 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
+CProtoDeclare ProtoDeclare19 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="r" ><ProtoInterface><field name="pos" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
+<ProtoDeclare name="r" ><ProtoInterface><field accessType="initializeOnly" type="SFVec3f" name="pos"></field>
 </ProtoInterface>
-<ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="0 0.300000011920929 1"></fieldValue>
-<fieldValue name="posi"></fieldValue>
+<ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="0 0.3 1"></fieldValue>
 <IS><connect nodeField="posi" protoField="pos"></connect>
 </IS>
 </ProtoInstance>
 </ProtoBody>
 </ProtoDeclare>)foo");
-ProtoDeclare25->setName("r");
-CProtoInterface* ProtoInterface26 = new CProtoInterface();
-Cfield* field27 = new Cfield();
-field27->setName("pos");
-field27->setAccessType("initializeOnly");
-field27->setType("SFVec3f");
-field27->setValue("0 0 0");
-ProtoInterface26->addField(*field27);
+ProtoDeclare19->setName("r");
+CProtoInterface* ProtoInterface20 = new CProtoInterface();
+Cfield* field21 = new Cfield();
+field21->setAccessType("initializeOnly");
+field21->setType("SFVec3f");
+field21->setName("pos");
+ProtoInterface20->addField(*field21);
 
-ProtoDeclare25->setProtoInterface(*ProtoInterface26);
+ProtoDeclare19->setProtoInterface(*ProtoInterface20);
 
-CProtoBody* ProtoBody28 = new CProtoBody();
-CProtoInstance* ProtoInstance29 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance29->setName("org");
-CfieldValue* fieldValue30 = new CfieldValue();
-fieldValue30->setName("col");
-fieldValue30->setValue("0 0.300000011920929 1");
-ProtoInstance29->addFieldValue(*fieldValue30);
+CProtoBody* ProtoBody22 = new CProtoBody();
+CProtoInstance* ProtoInstance23 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance23->setName("org");
+CfieldValue* fieldValue24 = new CfieldValue();
+fieldValue24->setName("col");
+fieldValue24->setValue("0 0.3 1");
+ProtoInstance23->addFieldValue(*fieldValue24);
 
-CfieldValue* fieldValue31 = new CfieldValue();
-fieldValue31->setName("posi");
-ProtoInstance29->addFieldValue(*fieldValue31);
+CIS* IS25 = new CIS();
+Cconnect* connect26 = new Cconnect();
+connect26->setNodeField("posi");
+connect26->setProtoField("pos");
+IS25->addConnect(*connect26);
 
-CIS* IS32 = new CIS();
-Cconnect* connect33 = new Cconnect();
-connect33->setNodeField("posi");
-connect33->setProtoField("pos");
-IS32->addConnect(*connect33);
+ProtoInstance23->setIS(*IS25);
 
-ProtoInstance29->setIS(*IS32);
+ProtoBody22->addChildren(*ProtoInstance23);
 
-ProtoBody28->addChildren(*ProtoInstance29);
+ProtoDeclare19->setProtoBody(*ProtoBody22);
 
-ProtoDeclare25->setProtoBody(*ProtoBody28);
+group->addChildren(*ProtoDeclare19);
 
-group->addChildren(*ProtoDeclare25);
+CNavigationInfo* NavigationInfo27 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
+NavigationInfo27->setType(new CString[3]{"EXAMINE","FLY","WALK"}, 3);
+NavigationInfo27->setAvatarSize(new float[3]{200,200,120}, 3);
+NavigationInfo27->setSpeed(3);
+group->addChildren(*NavigationInfo27);
 
-CAnchor* Anchor34 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor34->setUrl(new CString[1]{"javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 1);
-Anchor34->setDescription("High Peak Community Arts");
-CProtoInstance* ProtoInstance35 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance35->setName("r");
-CfieldValue* fieldValue36 = new CfieldValue();
-fieldValue36->setName("pos");
-fieldValue36->setValue("400 0.100000001490116 -385");
-ProtoInstance35->addFieldValue(*fieldValue36);
+CWorldInfo* WorldInfo28 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
+WorldInfo28->setTitle("Arts Mapper");
+group->addChildren(*WorldInfo28);
 
-Anchor34->addChildren(*ProtoInstance35);
+CViewpoint* Viewpoint29 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint29->setDescription("looking North");
+Viewpoint29->setPosition(new float[3]{0,60,110});
+Viewpoint29->setOrientation(new float[4]{1,0,0,-0.699999988079071});
+Viewpoint29->setFieldOfView(0.7853981);
+group->addChildren(*Viewpoint29);
 
-group->addChildren(*Anchor34);
+CViewpoint* Viewpoint30 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint30->setDescription("looking East");
+Viewpoint30->setPosition(new float[3]{-140,30,0});
+Viewpoint30->setOrientation(new float[4]{0,0.400000005960464,0,-1.39999997615814});
+Viewpoint30->setFieldOfView(0.7853981);
+group->addChildren(*Viewpoint30);
 
-X3D0->setScene(*Scene5);
+CViewpoint* Viewpoint31 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint31->setDescription("Overhead");
+Viewpoint31->setPosition(new float[3]{0,150,0});
+Viewpoint31->setOrientation(new float[4]{1,0,0,-1.57000005245209});
+Viewpoint31->setFieldOfView(0.7853981);
+group->addChildren(*Viewpoint31);
+
+CAnchor* Anchor32 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor32->setDescription("High Peak Community Arts");
+Anchor32->setUrl(new CString[1]{"javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"}, 1);
+CProtoInstance* ProtoInstance33 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance33->setName("r");
+CfieldValue* fieldValue34 = new CfieldValue();
+fieldValue34->setName("pos");
+fieldValue34->setValue("400 0.1 -385");
+ProtoInstance33->addFieldValue(*fieldValue34);
+
+Anchor32->addChildren(*ProtoInstance33);
+
+group->addChildren(*Anchor32);
+
+X3D0->setScene(*Scene4);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

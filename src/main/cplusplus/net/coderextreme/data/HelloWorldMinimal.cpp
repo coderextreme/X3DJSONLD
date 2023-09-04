@@ -12,9 +12,7 @@ CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Immersive");
-X3D0->setVersion("3.3");
-//All head/meta tags are optional, WorldInfo is also optional
-//Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1
+X3D0->setVersion("4.0");
 Chead* head1 = new Chead();
 Cmeta* meta2 = new Cmeta();
 meta2->setName("title");
@@ -86,26 +84,21 @@ meta15->setName("generator");
 meta15->setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
 head1->addMeta(*meta15);
 
-Cmeta* meta16 = new Cmeta();
-meta16->setName("license");
-meta16->setContent("../license.html");
-head1->addMeta(*meta16);
-
 X3D0->setHead(*head1);
 
-CScene* Scene17 = new CScene();
-CWorldInfo* WorldInfo18 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
-WorldInfo18->setTitle("HelloWorldMinimal.x3d");
-group->addChildren(*WorldInfo18);
+CScene* Scene16 = new CScene();
+CWorldInfo* WorldInfo17 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
+WorldInfo17->setTitle("HelloWorldMinimal.x3d");
+group->addChildren(*WorldInfo17);
 
-CShape* Shape19 = (CShape *)(m_pScene.createNode("Shape"));
-CText* Text20 = (CText *)(m_pScene.createNode("Text"));
-Text20->setString(new CString[1]{"hello, world"}, 1);
-Shape19->setGeometry(Text20);
+CShape* Shape18 = (CShape *)(m_pScene.createNode("Shape"));
+CText* Text19 = (CText *)(m_pScene.createNode("Text"));
+Text19->setString(new CString[1]{"hello, world"}, 1);
+Shape18->setGeometry(Text19);
 
-group->addChildren(*Shape19);
+group->addChildren(*Shape18);
 
-X3D0->setScene(*Scene17);
+X3D0->setScene(*Scene16);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

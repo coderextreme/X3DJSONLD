@@ -46,7 +46,7 @@ public class ViewFrustumExample {
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("ViewFrustumExample.x3d"))
         .addMeta(new meta().setName("description").setContent("Display view frustum associated with a given pair of Viewpoint and NavigationInfo nodes, illustrating ProtoInstance reuse of a separately declared prototype."))
@@ -61,37 +61,33 @@ ProtoInstance ProtoInstance0 = null;
         .addMeta(new meta().setName("Image").setContent("ViewpointCalculatorComposed.png"))
         .addMeta(new meta().setName("subject").setContent("view culling frustum"))
         .addMeta(new meta().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("license").setContent("../license.html")))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")))
       .setScene(new Scene()
+        .addChild(new ExternProtoDeclare().setName("ViewFrustum").setUrl(new MFString0().getArray())
+          .addField(new field().setType("SFNode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("ViewpointNode"))
+          .addField(new field().setType("SFNode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("NavigationInfoNode"))
+          .addField(new field().setType("SFBool").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("visible"))
+          .addField(new field().setType("SFColor").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("lineColor"))
+          .addField(new field().setType("SFColor").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("frustumColor"))
+          .addField(new field().setType("SFFloat").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("transparency"))
+          .addField(new field().setType("SFFloat").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("aspectRatio"))
+          .addField(new field().setType("SFBool").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("trace")))
         .addChild(new WorldInfo().setTitle("ViewFrustumExample.x3d"))
-        .addChild(new Viewpoint().setDescription("ViewFrustum from above, looking down").setOrientation(new float[] {1f,0f,0f,-1.57f}).setPosition(new float[] {0f,40f,0f}))
+        .addChild(new Viewpoint().setDescription("ViewFrustum from above, looking down").setPosition(new float[] {0f,40f,0f}).setOrientation(new float[] {1f,0f,0f,-1.57f}))
         .addChild(new Viewpoint().setDescription("ViewFrustum from point of view"))
         .addChild(new Viewpoint().setDescription("ViewFrustum behind point of view").setPosition(new float[] {0f,0f,15f}))
-        .addChild(new Viewpoint().setDescription("ViewFrustum oblique side view").setOrientation(new float[] {0.8005f,0.5926f,0.0898f,-0.3743f}).setPosition(new float[] {-5f,5f,20f}))
+        .addChild(new Viewpoint().setDescription("ViewFrustum oblique side view").setPosition(new float[] {-5f,5f,20f}).setOrientation(new float[] {0.8005f,0.5926f,0.0898f,-0.3743f}))
         .addChild(new NavigationInfo().setType("\"EXAMINE\" \"FLY\" \"ANY\""))
-        .addChild(new ExternProtoDeclare().setName("ViewFrustum").setAppinfo("Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes").setUrl(new MFString0().getArray())
-          .addField(new field().setType("SFNode").setName("ViewpointNode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("required: insert Viewpoint DEF or USE node for view of interest"))
-          .addField(new field().setType("SFNode").setName("NavigationInfoNode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("required: insert NavigationInfo DEF or USE node of interest"))
-          .addField(new field().setType("SFBool").setName("visible").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("whether or not frustum geometry is rendered"))
-          .addField(new field().setType("SFColor").setName("lineColor").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("RGB color of ViewFrustum outline, default value 0.9 0.9 0.9"))
-          .addField(new field().setType("SFColor").setName("frustumColor").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8"))
-          .addField(new field().setType("SFFloat").setName("transparency").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("transparency of ViewFrustum hull geometry, default value 0.5"))
-          .addField(new field().setType("SFFloat").setName("aspectRatio").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("assumed ratio height/width, default value 0.75"))
-          .addField(new field().setType("SFBool").setName("trace").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("debug support, default false")))
-        .addComments("Example use")
         .addChild(ProtoInstance0 = new ProtoInstance().setName("ViewFrustum"))
-        .addComments("Visualization assists")
-        .addChild(new Inline().setDEF("GridXZ").setUrl(new MFString1().getArray()))
+        .addChild(new Inline().setDEF("GridXZ").setGlobal(true).setUrl(new MFString1().getArray()))
         .addChild(new Transform().setScale(new float[] {5f,5f,5f})
-          .addChild(new Inline().setDEF("CoordinateAxes").setUrl(new MFString2().getArray()))))      ;
+          .addChild(new Inline().setDEF("CoordinateAxes").setGlobal(true).setUrl(new MFString2().getArray()))))      ;
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("ViewpointNode")
-            .addComments("prefer empty description to prevent entry in player's ViewpointList")
-            .addChild(new Viewpoint().setDescription("ViewFrustum ViewpointNode")));
+            .addChild(new Viewpoint().setDEF("_1").setDescription("ViewFrustum ViewpointNode")));
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("NavigationInfoNode")
-            .addChild(new NavigationInfo().setVisibilityLimit(15f)));
+            .addChild(new NavigationInfo().setDEF("_2").setVisibilityLimit(15f)));
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("visible").setValue("true"));
 ProtoInstance0
@@ -101,21 +97,23 @@ ProtoInstance0
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("transparency").setValue("0.75"));
 ProtoInstance0
+          .addFieldValue(new fieldValue().setName("aspectRatio").setValue("0.75"));
+ProtoInstance0
           .addFieldValue(new fieldValue().setName("trace").setValue("true"));
     return X3D0;
     }
-protected class MFString0 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString0 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ViewFrustumPrototype.x3d#ViewFrustum"});
   }
 }
-protected class MFString1 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString1 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"GridXZ_20x20Fixed.x3d"});
   }
 }
-protected class MFString2 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString2 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"CoordinateAxes.x3d"});
   }
 }
