@@ -38,13 +38,17 @@ var ROUTE = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
-      version : new SFString("3.3"),
+      version : new SFString("4.0"),
       head : new SFNode(
         new head({
           meta : new MFNode([
             new meta({
               name : new SFString("generator"),
               content : new SFString("hand conversion from http://www.x3dom.org/x3dom/test/functional/flipper.html")}),
+
+            new meta({
+              name : new SFString("generator"),
+              content : new SFString("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html")}),
 
             new meta({
               name : new SFString("title"),
@@ -60,15 +64,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("creator"),
-              content : new SFString("Yvonne Jung, metadata by John Carlson")}),
-
-            new meta({
-              name : new SFString("translated"),
-              content : new SFString("13 March 2016")}),
-
-            new meta({
-              name : new SFString("generator"),
-              content : new SFString("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html")})])})),
+              content : new SFString("Yvonne Jung, metadata by John Carlson")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
@@ -88,10 +84,10 @@ var X3D0 =  new X3D({
               position : new SFVec3f([0,200,1000])}),
 
             new Background({
-              groundAngle : new MFFloat([0.9,1.5,1.57]),
-              groundColor : new MFColor([0.21,0.18,0.66,0.2,0.44,0.85,0.51,0.81,0.95,0.51,0.81,0.95]),
               skyAngle : new MFFloat([0.9,1.5,1.57]),
-              skyColor : new MFColor([0.21,0.18,0.66,0.2,0.44,0.85,0.51,0.81,0.95,0.51,0.81,0.95])}),
+              skyColor : new MFColor([0.21,0.18,0.66,0.2,0.44,0.85,0.51,0.81,0.95,0.51,0.81,0.95]),
+              groundAngle : new MFFloat([0.9,1.5,1.57]),
+              groundColor : new MFColor([0.21,0.18,0.66,0.2,0.44,0.85,0.51,0.81,0.95,0.51,0.81,0.95])}),
 
             new NavigationInfo({
               DEF : new SFString("user01"),
@@ -140,7 +136,7 @@ var X3D0 =  new X3D({
               fromNode : new SFString("ci"),
               fromField : new SFString("value_changed"),
               toNode : new SFString("pointList"),
-              toField : new SFString("set_point")}),
+              toField : new SFString("point")}),
 
             new ROUTE({
               fromNode : new SFString("si"),
