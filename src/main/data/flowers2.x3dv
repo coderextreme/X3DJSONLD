@@ -1,0 +1,191 @@
+#X3D V4.0 utf8 X_ITE V8.9.1
+
+PROFILE Immersive
+
+COMPONENT Scripting : 1
+
+META "title" "flowers2.x3d"
+META "creator" "John Carlson"
+META "transcriber" "John Carlson"
+META "created" "23 January 2005"
+META "modified" "21 March 2018"
+META "description" "2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"
+META "identifier" "https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"
+META "generator" "manually written"
+META "license" "https://www.web3d.org/x3d/content/examples/license.html"
+META "converter" "x3d-tidy V1.0.56, https://www.npmjs.com/package/x3d-tidy"
+META "converted" "Thu, 24 Aug 2023 18:06:22 GMT"
+
+PROTO orbit [
+  inputOutput SFVec3f translation -8 0 0
+  inputOutput SFColor diffuseColor 1 0.5 0
+  inputOutput SFColor specularColor 1 0.5 0
+  inputOutput SFFloat transparency 0.75
+]
+{
+  Group {
+    children [
+      DEF Clock TimeSensor {
+        cycleInterval 16
+        loop TRUE
+      }
+      DEF OrbitPath OrientationInterpolator {
+        key [
+          0,
+          0.5,
+          1
+        ]
+        keyValue [
+          1 0 0 0,
+          1 0 0 3.14,
+          1 0 0 6.28
+        ]
+      }
+      DEF OrbitTransform Transform {
+        translation IS translation
+        children Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor IS diffuseColor
+              specularColor IS specularColor
+              transparency IS transparency
+            }
+          }
+          geometry DEF Orbit IndexedFaceSet {
+            ccw FALSE
+            convex FALSE
+            creaseAngle 3.14
+            coordIndex [
+              0,
+              1,
+              2,
+              -1
+            ]
+            coord DEF OrbitCoordinates Coordinate {
+              point [
+                0 0 1,
+                0 1 0,
+                1 0 0
+              ]
+            }
+          }
+        }
+      }
+      DEF OrbitScript Script {
+        inputOnly   SFFloat set_fraction
+        outputOnly  MFVec3f coordinates
+        outputOnly  MFInt32 coordIndexes
+        inputOutput SFFloat e 5
+        inputOutput SFFloat f 5
+        inputOutput SFFloat g 5
+        inputOutput SFFloat h 5
+        inputOutput SFInt32 resolution 50
+
+        url "
+			ecmascript:
+
+			var e = 5;
+			var f = 5;
+			var g = 5;
+			var h = 5;
+			var resolution = 100;
+
+			function initialize() {
+			     generateCoordinates();
+			     var localci = [];
+			     for (var i = 0; i < resolution-1; i++) {
+				for (var j = 0; j < resolution-1; j++) {
+				     localci.push(i*resolution+j);
+				     localci.push(i*resolution+j+1);
+				     localci.push((i+1)*resolution+j+1);
+				     localci.push((i+1)*resolution+j);
+				     localci.push(-1);
+				}
+			    }
+			    coordIndexes = new MFInt32(localci);
+			}
+
+			function generateCoordinates() {
+			     var theta = 0.0;
+			     var phi = 0.0;
+			     var delta = (2 * 3.141592653) / (resolution-1);
+			     var localc = [];
+			     for (var i = 0; i < resolution; i++) {
+				for (var j = 0; j < resolution; j++) {
+					var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
+					localc.push(new SFVec3f(
+						rho * Math.cos(phi) * Math.cos(theta),
+						rho * Math.cos(phi) * Math.sin(theta),
+						rho * Math.sin(phi)
+					));
+					theta += delta;
+				}
+				phi += delta;
+			     }
+			     
+			     coordinates = new MFVec3f(localc);
+			}
+
+			function set_fraction(fraction, eventTime) {
+				var choice = Math.floor(Math.random() * 4);
+				switch (choice) {
+				case 0:
+					e += Math.floor(Math.random() * 2) * 2 - 1;
+					break;
+				case 1:
+					f += Math.floor(Math.random() * 2) * 2 - 1;
+					break;
+				case 2:
+					g += Math.floor(Math.random() * 2) * 2 - 1;
+					break;
+				case 3:
+					h += Math.floor(Math.random() * 2) * 2 - 1;
+					break;
+				}
+				if (e < 1) {
+					f = 10;
+				}
+				if (f < 1) {
+					f = 10;
+				}
+				if (g < 1) {
+					g = 4;
+				}
+				if (h < 1) {
+					h = 4;
+				}
+				generateCoordinates();
+			}
+			      "
+      }
+    ]
+  }
+
+  ROUTE OrbitScript.coordIndexes TO Orbit.set_coordIndex
+  ROUTE OrbitScript.coordinates TO OrbitCoordinates.set_point
+  ROUTE Clock.fraction_changed TO OrbitScript.set_fraction
+  ROUTE OrbitPath.value_changed TO OrbitTransform.set_rotation
+  ROUTE Clock.fraction_changed TO OrbitPath.set_fraction
+}
+
+NavigationInfo { }
+
+Viewpoint {
+  description "Two mathematical orbitals"
+  position 0 0 30
+}
+
+Group {
+  children [
+    DirectionalLight {
+      direction 1 1 1
+    }
+    orbit { }
+    orbit {
+      translation 8 0 0
+      diffuseColor 0 0.5 1
+      specularColor 0 0.5 1
+      transparency 0.5
+    }
+  ]
+}
