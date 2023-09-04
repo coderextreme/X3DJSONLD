@@ -16,8 +16,8 @@ var NavigationInfo = require('./x3d.mjs');
 var Background = require('./x3d.mjs');
 var MFString = require('./x3d.mjs');
 var Viewpoint = require('./x3d.mjs');
-var SFRotation = require('./x3d.mjs');
 var SFVec3f = require('./x3d.mjs');
+var SFRotation = require('./x3d.mjs');
 var TimeSensor = require('./x3d.mjs');
 var SFTime = require('./x3d.mjs');
 var SFBool = require('./x3d.mjs');
@@ -26,7 +26,6 @@ var MFFloat = require('./x3d.mjs');
 var MFVec3f = require('./x3d.mjs');
 var OrientationInterpolator = require('./x3d.mjs');
 var MFRotation = require('./x3d.mjs');
-var ROUTE = require('./x3d.mjs');
 var Transform = require('./x3d.mjs');
 var Shape = require('./x3d.mjs');
 var Appearance = require('./x3d.mjs');
@@ -43,6 +42,7 @@ var StreamAudioDestination = require('./x3d.mjs');
 var SpatialSound = require('./x3d.mjs');
 var Gain = require('./x3d.mjs');
 var AudioClip = require('./x3d.mjs');
+var ROUTE = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Full"),
@@ -79,12 +79,12 @@ var X3D0 =  new X3D({
               content : new SFString("CHANGELOG.txt")}),
 
             new meta({
-              name : new SFString("TODO"),
-              content : new SFString("credit for audio files")}),
-
-            new meta({
               name : new SFString("reference"),
               content : new SFString("https://www.medialab.hmu.gr/minipages/x3domAudio")}),
+
+            new meta({
+              name : new SFString("TODO"),
+              content : new SFString("credit for audio files")}),
 
             new meta({
               name : new SFString("identifier"),
@@ -92,11 +92,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")}),
-
-            new meta({
-              name : new SFString("license"),
-              content : new SFString("../license.html")})])})),
+              content : new SFString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
@@ -106,18 +102,18 @@ var X3D0 =  new X3D({
             new NavigationInfo({}),
 
             new Background({
-              backUrl : new MFString(["images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"]),
-              bottomUrl : new MFString(["images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"]),
               frontUrl : new MFString(["images/generic/FR1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"]),
+              backUrl : new MFString(["images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"]),
               leftUrl : new MFString(["images/generic/LF1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"]),
               rightUrl : new MFString(["images/generic/RT1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"]),
-              topUrl : new MFString(["images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"])}),
+              topUrl : new MFString(["images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"]),
+              bottomUrl : new MFString(["images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"])}),
 
             new Viewpoint({
               DEF : new SFString("Camera001"),
               description : new SFString("Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view"),
-              orientation : new SFRotation([1,0,0,-0.523599]),
-              position : new SFVec3f([0,2000,3500])}),
+              position : new SFVec3f([0,2000,3500]),
+              orientation : new SFRotation([1,0,0,-0.523599])}),
 
             new TimeSensor({
               DEF : new SFString("TIMER"),
@@ -133,30 +129,6 @@ var X3D0 =  new X3D({
               DEF : new SFString("Camera001-ROT-INTERP"),
               key : new MFFloat([0,0.25,0.5,0.75,1]),
               keyValue : new MFRotation([1,0,0,-0.523599,0.99999,0.003554,0.002727,-1.309007,0,-0.965926,-0.258819,-3.141593,0.002282,-0.793351,-0.60876,-3.135645,1,-0.000001,0,-0.523599])}),
-
-            new ROUTE({
-              fromField : new SFString("fraction_changed"),
-              fromNode : new SFString("TIMER"),
-              toField : new SFString("set_fraction"),
-              toNode : new SFString("Camera001-POS-INTERP")}),
-
-            new ROUTE({
-              fromField : new SFString("value_changed"),
-              fromNode : new SFString("Camera001-POS-INTERP"),
-              toField : new SFString("set_position"),
-              toNode : new SFString("Camera001")}),
-
-            new ROUTE({
-              fromField : new SFString("fraction_changed"),
-              fromNode : new SFString("TIMER"),
-              toField : new SFString("set_fraction"),
-              toNode : new SFString("Camera001-ROT-INTERP")}),
-
-            new ROUTE({
-              fromField : new SFString("value_changed"),
-              fromNode : new SFString("Camera001-ROT-INTERP"),
-              toField : new SFString("set_orientation"),
-              toNode : new SFString("Camera001")}),
 
             new Transform({
               DEF : new SFString("Floor"),
@@ -175,7 +147,7 @@ var X3D0 =  new X3D({
 
             new Transform({
               DEF : new SFString("TransformAudio1"),
-              translation : new SFVec3f([-933.123474,0,-926.253235]),
+              translation : new SFVec3f([-933.1235,0,-926.2532]),
               child : new SFNode(
                 new Shape({
                   appearance : new SFNode(
@@ -192,9 +164,9 @@ var X3D0 =  new X3D({
                   children : new MFNode([
                     new Transform({
                       DEF : new SFString("violin"),
+                      translation : new SFVec3f([0,100,0]),
                       rotation : new SFRotation([1,0,0,-0.5]),
                       scale : new SFVec3f([100,100,100]),
-                      translation : new SFVec3f([0,100,0]),
                       child : new SFNode(
                         new Shape({
                           appearance : new SFNode(
@@ -203,8 +175,8 @@ var X3D0 =  new X3D({
                                 new Material({
                                   ambientIntensity : new SFFloat(0.0933),
                                   diffuseColor : new SFColor([1,1,1]),
-                                  shininess : new SFFloat(0.51),
-                                  specularColor : new SFColor([0.46,0.46,0.46])}))})),
+                                  specularColor : new SFColor([0.46,0.46,0.46]),
+                                  shininess : new SFFloat(0.51)}))})),
                           geometry : new SFNode(
                             new Text({
                               string : new MFString(["Violin"]),
@@ -216,7 +188,7 @@ var X3D0 =  new X3D({
 
             new Transform({
               DEF : new SFString("TransformAudio2"),
-              translation : new SFVec3f([933.475586,0,924.423218]),
+              translation : new SFVec3f([933.4756,0,924.4232]),
               child : new SFNode(
                 new Shape({
                   appearance : new SFNode(
@@ -233,9 +205,9 @@ var X3D0 =  new X3D({
                   children : new MFNode([
                     new Transform({
                       DEF : new SFString("saxophone"),
+                      translation : new SFVec3f([0,100,0]),
                       rotation : new SFRotation([1,0,0,-0.5]),
                       scale : new SFVec3f([100,100,100]),
-                      translation : new SFVec3f([0,100,0]),
                       child : new SFNode(
                         new Shape({
                           appearance : new SFNode(
@@ -244,8 +216,8 @@ var X3D0 =  new X3D({
                                 new Material({
                                   ambientIntensity : new SFFloat(0.0933),
                                   diffuseColor : new SFColor([1,1,1]),
-                                  shininess : new SFFloat(0.51),
-                                  specularColor : new SFColor([0.46,0.46,0.46])}))})),
+                                  specularColor : new SFColor([0.46,0.46,0.46]),
+                                  shininess : new SFFloat(0.51)}))})),
                           geometry : new SFNode(
                             new Text({
                               string : new MFString(["Saxophone"]),
@@ -257,32 +229,48 @@ var X3D0 =  new X3D({
               trackCurrentView : new SFBool(true)}),
 
             new StreamAudioDestination({
-              channelCountMode : new SFString("MAX"),
-              channelInterpretation : new SFString("SPEAKERS"),
               children : new MFNode([
                 new SpatialSound({
                   DEF : new SFString("Audio1"),
-                  distanceModel : new SFString("INVERSE"),
                   children : new MFNode([
                     new Gain({
-                      channelCountMode : new SFString("MAX"),
-                      channelInterpretation : new SFString("SPEAKERS"),
                       children : new MFNode([
                         new AudioClip({
                           description : new SFString("Violin"),
-                          loop : new SFBool(true),
-                          url : new MFString(["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"])})])})])}),
+                          url : new MFString(["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"]),
+                          loop : new SFBool(true)})])})])}),
 
                 new SpatialSound({
                   DEF : new SFString("Audio2"),
-                  distanceModel : new SFString("INVERSE"),
                   children : new MFNode([
                     new Gain({
-                      channelCountMode : new SFString("MAX"),
-                      channelInterpretation : new SFString("SPEAKERS"),
                       children : new MFNode([
                         new AudioClip({
                           description : new SFString("Saxophone"),
-                          loop : new SFBool(true),
-                          url : new MFString(["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"])})])})])})])})])}))});
+                          url : new MFString(["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"]),
+                          loop : new SFBool(true)})])})])})])}),
+
+            new ROUTE({
+              fromNode : new SFString("TIMER"),
+              fromField : new SFString("fraction_changed"),
+              toNode : new SFString("Camera001-POS-INTERP"),
+              toField : new SFString("set_fraction")}),
+
+            new ROUTE({
+              fromNode : new SFString("Camera001-POS-INTERP"),
+              fromField : new SFString("value_changed"),
+              toNode : new SFString("Camera001"),
+              toField : new SFString("position")}),
+
+            new ROUTE({
+              fromNode : new SFString("TIMER"),
+              fromField : new SFString("fraction_changed"),
+              toNode : new SFString("Camera001-ROT-INTERP"),
+              toField : new SFString("set_fraction")}),
+
+            new ROUTE({
+              fromNode : new SFString("Camera001-ROT-INTERP"),
+              fromField : new SFString("value_changed"),
+              toNode : new SFString("Camera001"),
+              toField : new SFString("orientation")})])}))});
 console.log(X3D0.toXMLNode());

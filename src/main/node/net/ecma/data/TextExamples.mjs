@@ -14,17 +14,17 @@ var Scene = require('./x3d.mjs');
 var Transform = require('./x3d.mjs');
 var SFVec3f = require('./x3d.mjs');
 var Shape = require('./x3d.mjs');
+var Appearance = require('./x3d.mjs');
+var Material = require('./x3d.mjs');
+var SFColor = require('./x3d.mjs');
 var Text = require('./x3d.mjs');
 var MFString = require('./x3d.mjs');
 var FontStyle = require('./x3d.mjs');
 var SFFloat = require('./x3d.mjs');
-var Appearance = require('./x3d.mjs');
-var Material = require('./x3d.mjs');
-var SFColor = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
-      version : new SFString("3.0"),
+      version : new SFString("4.0"),
       head : new SFNode(
         new head({
           meta : new MFNode([
@@ -62,11 +62,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
-
-            new meta({
-              name : new SFString("license"),
-              content : new SFString("../license.html")})])})),
+              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
@@ -74,46 +70,46 @@ var X3D0 =  new X3D({
               translation : new SFVec3f([0,2,0]),
               child : new SFNode(
                 new Shape({
+                  appearance : new SFNode(
+                    new Appearance({
+                      DEF : new SFString("LightBlueAppearance"),
+                      material : new SFNode(
+                        new Material({
+                          diffuseColor : new SFColor([0.1,0.7,0.7])}))})),
                   geometry : new SFNode(
                     new Text({
                       string : new MFString(["Compare special character escaping"]),
                       fontStyle : new SFNode(
                         new FontStyle({
                           DEF : new SFString("testFontStyle"),
-                          justify : new MFString(["MIDDLE","MIDDLE"]),
-                          size : new SFFloat(0.8)}))})),
-                  appearance : new SFNode(
-                    new Appearance({
-                      DEF : new SFString("LightBlueAppearance"),
-                      material : new SFNode(
-                        new Material({
-                          diffuseColor : new SFColor([0.1,0.7,0.7])}))}))}))}),
+                          size : new SFFloat(0.8),
+                          justify : new MFString(["MIDDLE","MIDDLE"])}))}))}))}),
 
             new Transform({
               translation : new SFVec3f([-3,0,0]),
               child : new SFNode(
                 new Shape({
+                  appearance : new SFNode(
+                    new Appearance({
+                      USE : new SFString("LightBlueAppearance")})),
                   geometry : new SFNode(
                     new Text({
                       string : new MFString(["I don't think so","","he said \"Hi\""]),
                       fontStyle : new SFNode(
                         new FontStyle({
-                          USE : new SFString("testFontStyle")}))})),
-                  appearance : new SFNode(
-                    new Appearance({
-                      USE : new SFString("LightBlueAppearance")}))}))}),
+                          USE : new SFString("testFontStyle")}))}))}))}),
 
             new Transform({
               translation : new SFVec3f([3,0,0]),
               child : new SFNode(
                 new Shape({
+                  appearance : new SFNode(
+                    new Appearance({
+                      USE : new SFString("LightBlueAppearance")})),
                   geometry : new SFNode(
                     new Text({
                       string : new MFString(["I don't think so","","he said \"Hi\""]),
                       fontStyle : new SFNode(
                         new FontStyle({
-                          USE : new SFString("testFontStyle")}))})),
-                  appearance : new SFNode(
-                    new Appearance({
-                      USE : new SFString("LightBlueAppearance")}))}))})])}))});
+                          USE : new SFString("testFontStyle")}))}))}))})])}))});
 console.log(X3D0.toXMLNode());

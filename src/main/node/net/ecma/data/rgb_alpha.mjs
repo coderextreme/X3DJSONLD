@@ -27,7 +27,7 @@ var Cylinder = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Interchange"),
-      version : new SFString("3.0"),
+      version : new SFString("4.0"),
       head : new SFNode(
         new head({
           meta : new MFNode([
@@ -97,11 +97,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
-
-            new meta({
-              name : new SFString("license"),
-              content : new SFString("../../license.html")})])})),
+              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
@@ -121,7 +117,7 @@ var X3D0 =  new X3D({
                           texture : new SFNode(
                             new PixelTexture({
                               DEF : new SFString("RgbOpacityCheckerboard"),
-                              image : new SFImage([2,2,4,4278190335,4294901760,4294901760,4278190335])}))})),
+                              image : new SFImage([2,2,4,-16776961,-65536,-65536,-16776961])}))})),
                       geometry : new SFNode(
                         new Box({}))}))}),
 
