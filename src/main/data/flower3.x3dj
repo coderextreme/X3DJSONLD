@@ -1,3 +1,237 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:39717d675d5347f2ec7ce031a94713c11ab30aa847e99d898270903b0bbcb15e
-size 7223
+{ "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "flower3.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "generator",
+          "@content": "manual"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/flower3.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "a flower"
+        },
+        {
+          "@name": "converter",
+          "@content": "x3d-tidy V1.0.56, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "converted",
+          "@content": "Mon, 04 Sep 2023 07:51:11 GMT"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        { "NavigationInfo":
+          {
+          }
+        },
+        { "DirectionalLight":
+          {
+            "@intensity": 0.5,
+            "@direction": [ 0, -0.8, -0.2 ]
+          }
+        },
+        { "Background":
+          {
+            "@skyColor": [
+              1, 1, 1
+            ]
+          }
+        },
+        { "Viewpoint":
+          {
+            "@description": "One mathematical orbital",
+            "@position": [ 0, 0, 50 ]
+          }
+        },
+        { "Transform":
+          {
+            "@DEF": "OrbitTransform",
+            "@translation": [ 8, 0, 0 ],
+            "-children": [
+              { "Shape":
+                {
+                  "-appearance": { "Appearance":
+                    {
+                      "-material": { "Material":
+                        {
+                          "@diffuseColor": [ 0, 0.5, 1 ],
+                          "@specularColor": [ 0, 0.5, 1 ]
+                        }
+                      }
+                    }
+                  },
+                  "-geometry": { "IndexedFaceSet":
+                    {
+                      "@DEF": "Orbit",
+                      "@convex": false,
+                      "@coordIndex": [
+                        0,
+                        -1
+                      ],
+                      "-coord": { "Coordinate":
+                        {
+                          "@DEF": "OrbitCoordinates",
+                          "@point": [
+                            "NaN", "NaN", "NaN"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        { "Script":
+          {
+            "@DEF": "OrbitScript",
+            "field": [
+              {
+                "@accessType": "inputOnly",
+                "@type": "SFFloat",
+                "@name": "set_fraction"
+              },
+              {
+                "@accessType": "outputOnly",
+                "@type": "MFVec3f",
+                "@name": "coordinates"
+              },
+              {
+                "@accessType": "outputOnly",
+                "@type": "MFInt32",
+                "@name": "coordIndexes"
+              }
+            ],
+            "#sourceText": [
+              "ecmascript:\r",
+              "    \r",
+              "var e = 5;\r",
+              "var f = 5;\r",
+              "var g = 5;\r",
+              "var h = 5;\r",
+              "var resolution = 100;\r",
+              "var t = 0;\r",
+              "var p = 0;\r",
+              "\r",
+              "function initialize() {\r",
+              "     generateCoordinates(resolution);\r",
+              "     var localci = [];\r",
+              "     for ( i = 0; i < resolution-1; i++) {\r",
+              "     \tfor ( j = 0; j < resolution-1; j++) {\r",
+              "\t     localci.push(i*resolution+j);\r",
+              "\t     localci.push(i*resolution+j+1);\r",
+              "\t     localci.push((i+1)*resolution+j+1);\r",
+              "\t     localci.push((i+1)*resolution+j);\r",
+              "\t     localci.push(-1);\r",
+              "\t}\r",
+              "    }\r",
+              "    coordIndexes = new MFInt32(localci);\r",
+              "}\r",
+              "\r",
+              "function generateCoordinates(resolution) {\r",
+              "     var theta = 0.0;\r",
+              "     var phi = 0.0;\r",
+              "     var delta = (2 * 3.141592653) / (resolution-1);\r",
+              "     var localc = [];\r",
+              "     for (var  i = 0; i < resolution; i++) {\r",
+              "     \tfor (var  j = 0; j < resolution; j++) {\r",
+              "\t\tvar rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\r",
+              "\t\tlocalc.push(new SFVec3f(\r",
+              "\t\t\trho * Math.cos(phi) * Math.cos(theta),\r",
+              "\t\t\trho * Math.cos(phi) * Math.sin(theta),\r",
+              "\t\t\trho * Math.sin(phi)\r",
+              "\t\t));\r",
+              "\t\ttheta += delta;\r",
+              "\t}\r",
+              "\tphi += delta;\r",
+              "     }\r",
+              "     coordinates = new MFVec3f(localc);\r",
+              "}\r",
+              "\r",
+              "function set_fraction(fraction, eventTime) {\r",
+              "\tt += 0.5;\r",
+              "\tp += 0.5;\r",
+              "\tvar choice = Math.floor(Math.random() * 4);\r",
+              "\tswitch (choice) {\r",
+              "\tcase 0:\r",
+              "\t\te += Math.floor(Math.random() * 2) * 2 - 1;\r",
+              "\t\tbreak;\r",
+              "\tcase 1:\r",
+              "\t\tf += Math.floor(Math.random() * 2) * 2 - 1;\r",
+              "\t\tbreak;\r",
+              "\tcase 2:\r",
+              "\t\tg += Math.floor(Math.random() * 2) * 2 - 1;\r",
+              "\t\tbreak;\r",
+              "\tcase 3:\r",
+              "\t\th += Math.floor(Math.random() * 2) * 2 - 1;\r",
+              "\t\tbreak;\r",
+              "\t}\r",
+              "\tif (f < 1) {\r",
+              "\t\tf = 10;\r",
+              "\t}\r",
+              "\tif (g < 1) {\r",
+              "\t\tg = 4;\r",
+              "\t}\r",
+              "\tif (h < 1) {\r",
+              "\t\th = 4;\r",
+              "\t}\r",
+              "\tgenerateCoordinates(resolution);\r",
+              "}\r",
+              ""
+            ]
+          }
+        },
+        { "TimeSensor":
+          {
+            "@DEF": "Clock",
+            "@cycleInterval": 16,
+            "@loop": true
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "OrbitScript",
+            "@fromField": "coordIndexes",
+            "@toNode": "Orbit",
+            "@toField": "set_coordIndex"
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "OrbitScript",
+            "@fromField": "coordinates",
+            "@toNode": "OrbitCoordinates",
+            "@toField": "point"
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "Clock",
+            "@fromField": "fraction_changed",
+            "@toNode": "OrbitScript",
+            "@toField": "set_fraction"
+          }
+        }
+      ]
+    }
+  }
+}

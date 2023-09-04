@@ -1,3 +1,267 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c45338579e6f5fe13f088457901fc56a20402d5a80bcf28f9567d546f3ad0238
-size 10119
+{ "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "ballx_ite.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "generator",
+          "@content": "manual"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "a prismatic sphere"
+        },
+        {
+          "@name": "converter",
+          "@content": "x3d-tidy V1.0.56, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "converted",
+          "@content": "Mon, 04 Sep 2023 09:26:30 GMT"
+        }
+      ],
+      "component": [
+        {
+          "@name": "Scripting",
+          "@level": 1
+        },
+        {
+          "@name": "EnvironmentalEffects",
+          "@level": 3
+        },
+        {
+          "@name": "Shaders",
+          "@level": 1
+        },
+        {
+          "@name": "CubeMapTexturing",
+          "@level": 1
+        },
+        {
+          "@name": "Texturing",
+          "@level": 1
+        },
+        {
+          "@name": "Rendering",
+          "@level": 1
+        },
+        {
+          "@name": "Grouping",
+          "@level": 3
+        },
+        {
+          "@name": "Core",
+          "@level": 1
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        { "WorldInfo":
+          {
+            "@title": "ball.x3d"
+          }
+        },
+        { "NavigationInfo":
+          {
+            "@type": [
+              "ANY",
+              "EXAMINE",
+              "FLY",
+              "LOOKAT"
+            ]
+          }
+        },
+        { "Viewpoint":
+          {
+            "@description": "Tour Views"
+          }
+        },
+        { "Background":
+          {
+            "@frontUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"
+            ],
+            "@backUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"
+            ],
+            "@leftUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"
+            ],
+            "@rightUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"
+            ],
+            "@topUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"
+            ],
+            "@bottomUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"
+            ]
+          }
+        },
+        { "Transform":
+          {
+            "-children": [
+              { "Shape":
+                {
+                  "-appearance": { "Appearance":
+                    {
+                      "-material": { "Material":
+                        {
+                          "@diffuseColor": [ 0.7, 0.7, 0.7 ],
+                          "@specularColor": [ 0.5, 0.5, 0.5 ]
+                        }
+                      },
+                      "-texture": { "ComposedCubeMapTexture":
+                        {
+                          "@DEF": "texture",
+                          "-frontTexture": { "ImageTexture":
+                            {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"
+                              ]
+                            }
+                          },
+                          "-backTexture": { "ImageTexture":
+                            {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"
+                              ]
+                            }
+                          },
+                          "-leftTexture": { "ImageTexture":
+                            {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"
+                              ]
+                            }
+                          },
+                          "-rightTexture": { "ImageTexture":
+                            {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"
+                              ]
+                            }
+                          },
+                          "-topTexture": { "ImageTexture":
+                            {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"
+                              ]
+                            }
+                          },
+                          "-bottomTexture": { "ImageTexture":
+                            {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "-shaders": [
+                        { "ComposedShader":
+                          {
+                            "@language": "GLSL",
+                            "-parts": [
+                              { "ShaderPart":
+                                {
+                                  "@url": [
+                                    "../shaders/x_ite.vs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"
+                                  ]
+                                }
+                              },
+                              { "ShaderPart":
+                                {
+                                  "@type": "FRAGMENT",
+                                  "@url": [
+                                    "../shaders/x_itebubbles.fs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"
+                                  ]
+                                }
+                              }
+                            ],
+                            "field": [
+                              {
+                                "@accessType": "initializeOnly",
+                                "@type": "SFVec3f",
+                                "@name": "chromaticDispertion",
+                                "@value": [ 0.98, 1, 1.033 ]
+                              },
+                              {
+                                "@accessType": "initializeOnly",
+                                "@type": "SFNode",
+                                "@name": "cube",
+                                "-children": [
+                                  { "ComposedCubeMapTexture":
+                                    {
+                                      "@USE": "texture"
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "@accessType": "initializeOnly",
+                                "@type": "SFFloat",
+                                "@name": "bias",
+                                "@value": 0.5
+                              },
+                              {
+                                "@accessType": "initializeOnly",
+                                "@type": "SFFloat",
+                                "@name": "scale",
+                                "@value": 0.5
+                              },
+                              {
+                                "@accessType": "initializeOnly",
+                                "@type": "SFFloat",
+                                "@name": "power",
+                                "@value": 2
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "-geometry": { "Sphere":
+                    {
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
