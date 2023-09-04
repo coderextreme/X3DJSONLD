@@ -1,0 +1,43 @@
+#X3D V4.0 utf8 X_ITE V8.9.1
+
+PROFILE Immersive
+
+META "title" "abox.x3d"
+META "creator" "John Carlson"
+META "generator" "manual"
+META "identifier" "https://coderextreme.net/X3DJSONLD/abox.x3d"
+META "description" "a box"
+META "converter" "x3d-tidy V1.0.56, https://www.npmjs.com/package/x3d-tidy"
+META "converted" "Mon, 10 Jul 2023 14:54:07 GMT"
+
+PROTO anyShape [
+  inputOutput MFNode myShape Shape {
+    geometry Sphere { }
+  }
+]
+{
+  Transform {
+    children IS myShape
+  }
+}
+
+PROTO one [
+  inputOutput MFNode myShape Shape {
+    geometry Cylinder { }
+  }
+]
+{
+  Transform {
+    children anyShape {
+      myShape IS myShape
+    }
+  }
+}
+
+one {
+  myShape DEF _1 Shape {
+    geometry Box {
+      size 140 140 140
+    }
+  }
+}
