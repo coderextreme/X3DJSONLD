@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Interchange' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
+  <head>
+    <component name='Scripting' level='1'/>
+    <meta content='sphere.x3d' name='title'/>
+    <meta content='John Carlson' name='creator'/>
+    <meta content='manual' name='generator'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/sphere.x3d' name='identifier'/>
+    <meta content='a sphere' name='description'/>
+  </head>
+  <Scene>
+    <Group>
+      <Shape>
+        <Appearance>
+          <Material diffuseColor='1 1 1'/>
+        </Appearance>
+        <Sphere/>
+      </Shape>
+    </Group>
+  </Scene>
+</X3D>
