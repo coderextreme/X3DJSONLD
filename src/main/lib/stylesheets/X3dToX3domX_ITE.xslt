@@ -236,7 +236,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:message>
                         <xsl:text>*** Warning, possible mismatch between WorldInfo/@title=</xsl:text>
                         <xsl:value-of select="$x3dWorldInfoTitle"/>
-                        <xsl:text> and filename=</xsl:text>
+                        <xsl:text> and meta title=</xsl:text>
                         <xsl:value-of select="$fileName"/>
                         <xsl:text> ?</xsl:text>
                     </xsl:message>
@@ -247,10 +247,12 @@ POSSIBILITY OF SUCH DAMAGE.
             <!-- <xsl:text> X3dToX3domX_ITE.xslt</xsl:text> -->
             <xsl:text>)</xsl:text>
         </xsl:variable>
+        <!-- debug
         <xsl:message>
             <xsl:text>$htmlTitle=</xsl:text>
             <xsl:value-of select="$htmlTitle"/>
         </xsl:message>
+        -->
         <html xmlns="http://www.w3.org/1999/xhtml">
             <head>
                 <title>
@@ -561,7 +563,8 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                    <xsl:text disable-output-escaping="yes">&#160;<!-- nbsp; --></xsl:text>
                                    <xsl:choose>
                                        <xsl:when test="X3D/head/meta[@name='description']">
-                                           <xsl:value-of select="X3D/head/meta[@name='description']/@content" disable-output-escaping="yes"/><!-- I18N -->
+                                           <!-- counterintuitive but disable-output-escaping="no" is important to preserve HTML-parsable result -->
+                                           <xsl:value-of select="X3D/head/meta[@name='description']/@content" disable-output-escaping="no"/><!-- I18N -->
                                        </xsl:when>
                                        <xsl:otherwise>
                                            <xsl:text disable-output-escaping="yes">&#160;<!-- nbsp; --></xsl:text>
@@ -706,7 +709,8 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                 <span class="webfont">
                                     <xsl:choose>
                                         <xsl:when test="X3D/head/meta[@name='description']">
-                                                <xsl:value-of select="X3D/head/meta[@name='description']/@content" disable-output-escaping="yes"/><!-- I18N -->
+                                            <!-- counterintuitive but disable-output-escaping="no" is important to preserve HTML-parsable result -->
+                                            <xsl:value-of select="X3D/head/meta[@name='description']/@content" disable-output-escaping="no"/><!-- I18N -->
                                         </xsl:when>
                                         <xsl:otherwise>
                                             <xsl:text disable-output-escaping="yes">&#160;<!-- nbsp; --></xsl:text>
@@ -1047,10 +1051,10 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                 <xsl:text disable-output-escaping="yes"> &#160;&#160;&#160; </xsl:text>
                                 <!-- anchor target attribute replaced as shown below -->
                                 <xsl:text>References: </xsl:text>
-                                <a href="https://www.x3dom.org/check"                                   onclick="target='_blank';">X3DOM browser check</a>,
-                                <a href="https://www.x3dom.org"                                         onclick="target='_blank';">X3DOM home</a>,
-                                <a href="https://doc.x3dom.org"                                         onclick="target='_blank';">X3DOM documentation</a>,
-                                <a href="https://x3dom.org/x3dom/test/functional/dumpNodeTypeTree.html" onclick="target='_blank';">X3DOM list of supported nodes</a>,
+                                <a href="https://doc.x3dom.org/tutorials/basics/sound/example.html" onclick="target='_blank';">X3DOM browser check</a>,
+                                <a href="https://www.x3dom.org"                                     onclick="target='_blank';">X3DOM home</a>,
+                                <a href="https://doc.x3dom.org"                                     onclick="target='_blank';">X3DOM documentation</a>,
+                                <a href="https://doc.x3dom.org/author/nodes.html"                   onclick="target='_blank';">X3DOM list of supported nodes</a>,
                                 and
                                 <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html"  onclick="target='_blank';">X3D Resources</a>
                                 <!-- apparently old but thorough: https://examples.x3dom.org/simpleExamples.html -->
@@ -1115,8 +1119,8 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                       not( local-name()='bboxSize'	and	(string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')) and
                       not( local-name()='bboxDisplay' and string(.)='false') and
                       not( local-name()='castShadow' and string(.)='true') and
-                      not( local-name()='channelCountMode' and string(.)='max') and
-                      not( local-name()='channelInterpretation' and string(.)='speakers') and
+                      not( local-name()='channelCountMode' and string(.)='MAX') and
+                      not( local-name()='channelInterpretation' and string(.)='SPEAKERS') and
                       not( local-name()='detune' and (string(.)='0' or string(.)='0.0')) and
                       not( local-name()='enabled' and string(.)='true') and
                       not( local-name()='gain' and (string(.)='1' or string(.)='1.0')) and
@@ -1236,7 +1240,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                       ((local-name()='enabled' and string(.)='true') or
                       (local-name()='timeOut' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='LOD'	and	((local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or (local-name()='forceTransitions' and string(.)='false'))) and
-                      not(((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial')) and
+                      not(((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial') or (local-name(..)='PhysicalMaterial')) and
                       ((local-name()='ambientIntensity' and string(.)='0.2') or
                       (local-name()='diffuseColor' and string(.)='0.8 0.8 0.8') or
                       (local-name()='emissiveColor' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
@@ -1521,7 +1525,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                       not( local-name(..)='BufferAudioSource' and
                       ((local-name()='containerField' and string(.)='children') or
                       (local-name()='bufferDuration' and (string(.)='0' or string(.)='0.0')) or
-                      (local-name()='type' and (string(.)='lowpass')) or
+                      (local-name()='type' and (string(.)='LOWPASS')) or
                       (local-name()='loopStart' and (string(.)='0' or string(.)='0.0')) or
                       (local-name()='loopEnd' and (string(.)='0' or string(.)='0.0')) or
                       (local-name()='numberOfChannels' and string(.)='0') or
@@ -1573,14 +1577,14 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                       (local-name()='frequency' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='PeriodicWave' and
                       ((local-name()='containerField' and string(.)='children') or
-                      (local-name()='type' and (string(.)='square')))) and
+                      (local-name()='type' and (string(.)='SQUARE')))) and
                       not( local-name(..)='SpatialSound' and
                       ((local-name()='containerField' and string(.)='children') or
                       (local-name()='coneInnerAngle' and (string(.)='6.2832')) or
                       (local-name()='coneOuterAngle' and (string(.)='6.2832')) or
                       (local-name()='coneOuterGain' and (string(.)='0' or string(.)='0.0')) or
                       (local-name()='direction' and (string(.)='0 0 1' or string(.)='0.0 0.0 1.0')) or
-                      (local-name()='distanceModel' and (string(.)='inverse')) or
+                      (local-name()='distanceModel' and (string(.)='INVERSE')) or
                       (local-name()='dopplerEnabled' and (string(.)='false')) or
                       (local-name()='enableHRTF' and (string(.)='false')) or
                       (local-name()='intensity' and (string(.)='1' or string(.)='1.0')) or
@@ -1596,10 +1600,13 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                       ((local-name()='containerField' and string(.)='children'))) and
                       not( local-name(..)='WaveShaper' and
                       ((local-name()='containerField' and string(.)='children') or
-                      (local-name()='oversample' and (string(.)='none'))))" />
+                      (local-name()='oversample' and (string(.)='NONE'))))" />
         <xsl:variable name="notDefaultContainerField1"
                       select="not((local-name()='containerField' and string(.)='children')	and
                       (contains(local-name(..),'Interpolator') or
+                      ends-with(local-name(..),'Filter') or
+                      ends-with(local-name(..),'Sequencer') or
+                      ends-with(local-name(..),'Trigger') or
                       contains(local-name(..),'Light') or
                       contains(local-name(..),'Sensor') or
                       local-name(..)='Anchor' or
@@ -1637,7 +1644,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
         <xsl:variable name="notDefaultContainerField2"
                       select="not((local-name()='containerField' and string(.)='source')   and (local-name(..)='AudioClip')) and
                       not((local-name()='containerField' and string(.)='appearance')	   and (local-name(..)='Appearance')) and
-                      not((local-name()='containerField' and string(.)='material')         and ((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial'))) and
+                      not((local-name()='containerField' and string(.)='material')         and ((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial') or (local-name(..)='PhysicalMaterial'))) and
                       not((local-name()='containerField' and string(.)='color')            and (local-name(..)='Color' or local-name(..)='ColorRGBA')) and
                       not((local-name()='containerField' and string(.)='coord')            and ((local-name(..)='Coordinate') or (local-name(..)='CoordinateDouble') or (local-name(..)='GeoCoordinate'))) and
                       not((local-name()='containerField' and string(.)='normal')           and (local-name(..)='Normal')) and

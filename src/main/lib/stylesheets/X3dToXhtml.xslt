@@ -134,18 +134,19 @@ Recommended tools:
                 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
                 <!-- first put generic XML constructs, then X3D & specialized constructs -->
                 <style type="text/css"><![CDATA[
-span.element {color: navy}
+span.element   {color: navy}
 span.attribute {color: green}
-span.value {color: teal}
-span.plain {color: black}
-span.gray  {color: gray}
-span.idName {color: maroon}
+span.value     {color: teal}
+span.plain     {color: black}
+span.gray      {color: gray}
+span.idName    {color: maroon}
 span.addedDocumentation {background-color:#EEEEEE} /* slightly darker for html page contrast */
 span.behaviorNode       {background-color:#DDEEFF} /*      light blue for html page contrast */
 span.extensibilityNode  {background-color:#FFEEFF} /*    lighter blue for html page contrast */
 a.idName {color: maroon}
+div.block               {border: 1px solid grey; }
 div.center {text-align: center}
-div.indent {margin-left: 25px}
+div.indented {margin-left: 25px}
 
 span.prototype {color: purple}
 a.prototype {color: purple}
@@ -415,7 +416,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                         <td colspan="2">
                                             <!-- <xsl:text>&lt;! - - USE nodes go here for access by inverse kinematics (IK) engines and other tools - -&gt;</xsl:text> -->
                                             <br />
-                                            <div class="indent">
+                                            <div class="indented">
                                             <xsl:for-each select="*[string-length(@USE) > 0]">
                                                 <!-- https://p2p.wrox.com/xslt/70832-preceding-sibling-comment.html -->
                                                 <xsl:if test="preceding-sibling::node()[1][self::comment()]">
@@ -456,6 +457,34 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 </xsl:if>
                 
                 <xsl:variable name="identifierUrl" select="normalize-space(substring-before(//head/meta[@name='identifier']/@content,'.x3d'))"/>
+		<xsl:variable name="versionControlUrl">
+                    <xsl:choose>
+                        <xsl:when test="starts-with($identifierUrl,'https://www.web3d.org/x3d/content/examples/')">
+                            <xsl:text>https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/</xsl:text>
+                            <xsl:value-of select="normalize-space(substring-after(substring-before(//head/meta[@name='identifier']/@content,'.x3d'),
+                                                                                 'https://www.web3d.org/x3d/content/examples/'))"/>
+                            <xsl:text>.x3d</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="starts-with($identifierUrl,'https://savage.nps.edu/Savage/')">
+                            <xsl:text>https://gitlab.nps.edu/Savage/Savage/</xsl:text>
+                            <xsl:value-of select="normalize-space(substring-after(substring-before(//head/meta[@name='identifier']/@content,'.x3d'),
+                                                                                 'https://savage.nps.edu/Savage/'))"/>
+                            <xsl:text>.x3d</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="starts-with($identifierUrl,'https://SavageDefense.nps.edu/SavageDefense/')">
+                            <xsl:text>https://gitlab.nps.edu/SavageDefense/SavageDefense/</xsl:text>
+                            <xsl:value-of select="normalize-space(substring-after(substring-before(//head/meta[@name='identifier']/@content,'.x3d'),
+                                                                                 'https://SavageDefense.nps.edu/SavageDefense/'))"/>
+                            <xsl:text>.x3d</xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:message>
+                                <xsl:text>*** Unrecognized archive identifier, corresponding version control archive unknown: </xsl:text>
+                                <xsl:value-of select="$identifierUrl"/>
+                            </xsl:message>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
 		<!-- debug
 		<xsl:message>
 			<xsl:text>$identifierUrl=</xsl:text>
@@ -470,6 +499,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <span style="color:white">&lt;!--</span>
                         <xsl:text>&#10;</xsl:text>
                         <xsl:text>Online at </xsl:text>
+                        <xsl:text>&#10;</xsl:text>
+                        <br />
+                        <xsl:text>&#10;</xsl:text>
                         <xsl:element name="a">
                             <xsl:attribute name="href">
                                 <xsl:value-of select="$identifierUrl"/><xsl:text>Index.html</xsl:text>
@@ -482,6 +514,28 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:text>&#10;</xsl:text>
                         <span style="color:white">--&gt;</span>
                         <xsl:text>&#10;</xsl:text>
+                        <xsl:if test="(string-length($versionControlUrl) > 0)">
+                            <br />
+                            <xsl:text>&#10;</xsl:text>
+                            <span style="color:white">&lt;!--</span>
+                            <xsl:text>&#10;</xsl:text>
+                            <xsl:text>Version control at </xsl:text>
+                            <xsl:text>&#10;</xsl:text>
+                            <br />
+                            <xsl:text>&#10;</xsl:text>
+                            <xsl:element name="a">
+                                <xsl:attribute name="href">
+                                    <xsl:value-of select="$versionControlUrl"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="target">
+                                    <xsl:text>_blank</xsl:text>
+                                </xsl:attribute>
+                                <xsl:value-of select="$versionControlUrl"/>
+                            </xsl:element>
+                            <xsl:text>&#10;</xsl:text>
+                            <span style="color:white">--&gt;</span>
+                            <xsl:text>&#10;</xsl:text>
+                        </xsl:if>
                     </p>
                 </xsl:if>
 
@@ -490,7 +544,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:text>&#10;</xsl:text>
                     <span style="color:white">&lt;!--</span>
                     <xsl:text>&#10;</xsl:text>
-                    <xsl:text>Color key: </xsl:text>
+                    <xsl:text>Color legend: X3D terminology </xsl:text>
                     <xsl:comment>(matching X3D and XML terminology) </xsl:comment>
                     <xsl:text>&#10;</xsl:text>
                     
@@ -519,7 +573,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:text>'/&gt; </xsl:text>
                     <xsl:text>&#10;</xsl:text>
 
-                    <xsl:text> matches </xsl:text>
+                    <xsl:text> matches XML terminology </xsl:text>
                     <xsl:text>&#10;</xsl:text>
                     
                     <xsl:text>&lt;</xsl:text>
@@ -547,9 +601,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:text>'/&gt; </xsl:text>
                     <br />
                     <xsl:text>&#10;</xsl:text>
-                    <xsl:text disable-output-escaping="yes">&lt;span title="behavior node" style="background-color:#DDEEFF;"&gt;(Light blue background: behavior node)&lt;/span&gt;</xsl:text>
+                    <xsl:text disable-output-escaping="yes">&lt;span title="behavior node" style="background-color:#DDEEFF;"&gt;(Light-blue background: event-based behavior node)&lt;/span&gt;</xsl:text>
                     <xsl:text> </xsl:text>
-                    <xsl:text disable-output-escaping="yes">&lt;span title="inserted documentation about ROUTE connections" style="background-color:#EEEEEE;"&gt;(Grey background: inserted documentation)&lt;/span&gt;</xsl:text>
+                    <xsl:text disable-output-escaping="yes">&lt;span title="inserted documentation about ROUTE connections" style="background-color:#EEEEEE;"&gt;(Grey background inside box: inserted documentation)&lt;/span&gt;</xsl:text>
                     <xsl:text> </xsl:text>
                     <xsl:text disable-output-escaping="yes">&lt;span title="X3D Extensibility" style="background-color:#FFEEFF;"&gt;(Magenta background: X3D Extensibility)&lt;/span&gt;</xsl:text>
                     <br />
@@ -602,8 +656,8 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" title="Summary descriptions and authoring hints for each X3D node (element) and field (attribute)" target="_blank">X3D Tooltips</a>
                     <xsl:text>, </xsl:text>
                     <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" title="Numerous resources that support X3D graphics" target="_blank">X3D Resources</a>
-                    <xsl:text> and </xsl:text>
-                    <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" title="Style guidelines, authoring tips and best practices" target="_blank">X3D Scene Authoring Hints</a>
+                    <xsl:text>, and </xsl:text>
+                    <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" title="Style guidelines, authoring tips, and best practices" target="_blank">X3D Scene Authoring Hints</a>
                     <xsl:text>.</xsl:text>
                     <xsl:text>&#10;</xsl:text>
                     <span style="color:white">--&gt;</span>
@@ -1246,6 +1300,12 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
     <!-- process all elements/nodes -->
     <xsl:template match="*" >
         <xsl:param name="lineBreaks"><xsl:text>true</xsl:text></xsl:param>
+        
+        <xsl:variable name="DEFname" select="@DEF"/>
+        <xsl:variable name="IncomingRoutes" select="//ROUTE[(@toNode=$DEFname)   and not(@fromNode=$DEFname)]"/>
+        <xsl:variable name="OutgoingRoutes" select="//ROUTE[(@fromNode=$DEFname) and not(@toNode=$DEFname)]"/>
+        <xsl:variable name="SelfRoutes"     select="//ROUTE[(@fromNode=$DEFname) and    (@toNode=$DEFname)]"/>
+            
         <!-- break to new line if needed -->
         <xsl:if test="(position() > 1) and not(local-name() ='X3D') and ($lineBreaks='true')"><xsl:text disable-output-escaping="yes">&lt;br /&gt;&#10;</xsl:text></xsl:if>
         <xsl:if test="@DEF or local-name()='ProtoDeclare' or local-name()='ExternProtoDeclare' or (local-name(..)='ProtoInterface' and local-name()='field') or local-name()='ROUTE' or local-name()='Viewpoint'">
@@ -1286,13 +1346,11 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         <xsl:text>&#10;</xsl:text>
         <!-- insert ROUTE comment preceding node, if applicable -->
         <xsl:if test="@DEF">
-            <xsl:variable name="DEFname" select="@DEF"/>
-            <xsl:variable name="IncomingRoutes" select="//ROUTE[(@toNode=$DEFname)   and not(@fromNode=$DEFname)]"/>
-            <xsl:variable name="OutgoingRoutes" select="//ROUTE[(@fromNode=$DEFname) and not(@toNode=$DEFname)]"/>
-            <xsl:variable name="SelfRoutes"     select="//ROUTE[(@fromNode=$DEFname) and    (@toNode=$DEFname)]"/>
             <xsl:if test="boolean($IncomingRoutes | $OutgoingRoutes | $SelfRoutes)">
-                <!-- addedDocumentationColor.HTML -->
-                <xsl:text disable-output-escaping="yes">&lt;span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections"&gt;</xsl:text>
+                    <!-- addedDocumentationColor.HTML -->
+                <xsl:text disable-output-escaping="yes">&lt;div class="block"&gt;</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+                    <xsl:text disable-output-escaping="yes">&lt;span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections"&gt;</xsl:text>
                     <xsl:text>&lt;!-- </xsl:text>
                     <i>
                         <xsl:text>ROUTE</xsl:text>
@@ -1870,6 +1928,13 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:text>&gt;&#10;</xsl:text>
                     <xsl:if test="string-length($elementTooltip) > 0">
                         <xsl:text disable-output-escaping="yes">&lt;/span&gt;</xsl:text>
+                        <xsl:text>&#10;</xsl:text>
+                    </xsl:if>
+                    <xsl:if test="boolean($IncomingRoutes | $OutgoingRoutes | $SelfRoutes)">
+                        <xsl:text>&#10;</xsl:text>
+                        <xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+                        <xsl:comment>div.block</xsl:comment>
+                        <xsl:text>&#10;</xsl:text>
                     </xsl:if>
 
             <!-- DEBUG statements are for use in X3D Validator servlet output excerpt:
@@ -1885,8 +1950,8 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
             </xsl:if>
                         -->
 
-                    <!-- indent children -->
-                    <div class="indent">
+                    <!-- indented children -->
+                    <div class="indented">
                         <xsl:apply-templates select="* | comment()" />
                         <xsl:choose>
                             <!-- Script node:  output script source, preserve CDATA delimiters around contained code -->
@@ -1898,7 +1963,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                 <xsl:text>&#10;</xsl:text>
                                 <!-- eliminate/restore left margin so that CDATA script code has maximum page width -->
                                 <xsl:for-each select="ancestor::*">
-                                    <xsl:text disable-output-escaping="yes">&lt;/div class="indent"&gt;</xsl:text>
+                                    <xsl:text disable-output-escaping="yes">&lt;/div class="indented"&gt;</xsl:text>
                                     <xsl:text>&#10;</xsl:text>
                                 </xsl:for-each>
                                 <code><b><xsl:text>&lt;![CDATA[</xsl:text></b></code>
@@ -1922,7 +1987,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                 <xsl:text>&#10;</xsl:text>
                                 <!-- eliminate/restore left margin so that CDATA script code has maximum page width -->
                                 <xsl:for-each select="ancestor::*">
-                                    <xsl:text disable-output-escaping="yes">&lt;div class="indent"&gt;</xsl:text>
+                                    <xsl:text disable-output-escaping="yes">&lt;div class="indented"&gt;</xsl:text>
                                     <xsl:text>&#10;</xsl:text>
                                 </xsl:for-each>
                             </xsl:when>
@@ -1952,6 +2017,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:text>&gt;&#10;</xsl:text>
                     <xsl:if test="string-length($elementTooltip) > 0">
                         <xsl:text disable-output-escaping="yes">&lt;/span&gt;</xsl:text>
+                        <xsl:text>&#10;</xsl:text>
                     </xsl:if>
                 </xsl:when>
                 <xsl:otherwise>
@@ -1978,6 +2044,11 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:text>/&gt;&#10;</xsl:text>
                     <xsl:if test="string-length($elementTooltip) > 0">
                         <xsl:text disable-output-escaping="yes">&lt;/span&gt;</xsl:text>
+                    </xsl:if>
+                    <xsl:if test="boolean($IncomingRoutes | $OutgoingRoutes | $SelfRoutes)">
+                        <xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+                        <xsl:comment>div.block</xsl:comment>
+                        <xsl:text>&#10;</xsl:text>
                     </xsl:if>
                 </xsl:otherwise>
             </xsl:choose>
@@ -2176,8 +2247,8 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       not( local-name()='bboxSize'	and	(string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')) and
                       not( local-name()='bboxDisplay' and string(.)='false') and
                       not( local-name()='castShadow' and string(.)='true') and
-                      not( local-name()='channelCountMode' and string(.)='max') and
-                      not( local-name()='channelInterpretation' and string(.)='speakers') and
+                      not( local-name()='channelCountMode' and string(.)='MAX') and
+                      not( local-name()='channelInterpretation' and string(.)='SPEAKERS') and
                       not( local-name()='detune' and (string(.)='0' or string(.)='0.0')) and
                       not( local-name()='enabled' and string(.)='true') and
                       not( local-name()='gain' and (string(.)='1' or string(.)='1.0')) and
@@ -2297,7 +2368,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       ((local-name()='enabled' and string(.)='true') or
                       (local-name()='timeOut' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='LOD'	and	((local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or (local-name()='forceTransitions' and string(.)='false'))) and
-                      not(((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial')) and
+                      not(((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial') or (local-name(..)='PhysicalMaterial')) and
                       ((local-name()='ambientIntensity' and string(.)='0.2') or
                       (local-name()='diffuseColor' and string(.)='0.8 0.8 0.8') or
                       (local-name()='emissiveColor' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
@@ -2584,7 +2655,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       not( local-name(..)='BufferAudioSource' and
                       ((local-name()='containerField' and string(.)='children') or
                       (local-name()='bufferDuration' and (string(.)='0' or string(.)='0.0')) or
-                      (local-name()='type' and (string(.)='lowpass')) or
+                      (local-name()='type' and (string(.)='LOWPASS')) or
                       (local-name()='loopStart' and (string(.)='0' or string(.)='0.0')) or
                       (local-name()='loopEnd' and (string(.)='0' or string(.)='0.0')) or
                       (local-name()='numberOfChannels' and string(.)='0') or
@@ -2636,14 +2707,14 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       (local-name()='frequency' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='PeriodicWave' and
                       ((local-name()='containerField' and string(.)='children') or
-                      (local-name()='type' and (string(.)='square')))) and
+                      (local-name()='type' and (string(.)='SQUARE')))) and
                       not( local-name(..)='SpatialSound' and
                       ((local-name()='containerField' and string(.)='children') or
                       (local-name()='coneInnerAngle' and (string(.)='6.2832')) or
                       (local-name()='coneOuterAngle' and (string(.)='6.2832')) or
                       (local-name()='coneOuterGain' and (string(.)='0' or string(.)='0.0')) or
                       (local-name()='direction' and (string(.)='0 0 1' or string(.)='0.0 0.0 1.0')) or
-                      (local-name()='distanceModel' and (string(.)='inverse')) or
+                      (local-name()='distanceModel' and (string(.)='INVERSE')) or
                       (local-name()='dopplerEnabled' and (string(.)='false')) or
                       (local-name()='enableHRTF' and (string(.)='false')) or
                       (local-name()='intensity' and (string(.)='1' or string(.)='1.0')) or
@@ -2659,10 +2730,13 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       ((local-name()='containerField' and string(.)='children'))) and
                       not( local-name(..)='WaveShaper' and
                       ((local-name()='containerField' and string(.)='children') or
-                      (local-name()='oversample' and (string(.)='none'))))" />
+                      (local-name()='oversample' and (string(.)='NONE'))))" />
         <xsl:variable name="notDefaultContainerField1"
                       select="not((local-name()='containerField' and string(.)='children')	and
                       (contains(local-name(..),'Interpolator') or
+                      ends-with(local-name(..),'Filter') or
+                      ends-with(local-name(..),'Sequencer') or
+                      ends-with(local-name(..),'Trigger') or
                       contains(local-name(..),'Light') or
                       contains(local-name(..),'Sensor') or
                       local-name(..)='Anchor' or
@@ -2700,7 +2774,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         <xsl:variable name="notDefaultContainerField2"
                       select="not((local-name()='containerField' and string(.)='source')   and (local-name(..)='AudioClip')) and
                       not((local-name()='containerField' and string(.)='appearance')	   and (local-name(..)='Appearance')) and
-                      not((local-name()='containerField' and string(.)='material')         and ((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial'))) and
+                      not((local-name()='containerField' and string(.)='material')         and ((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial') or (local-name(..)='PhysicalMaterial'))) and
                       not((local-name()='containerField' and string(.)='color')            and (local-name(..)='Color' or local-name(..)='ColorRGBA')) and
                       not((local-name()='containerField' and string(.)='coord')            and ((local-name(..)='Coordinate') or (local-name(..)='CoordinateDouble') or (local-name(..)='GeoCoordinate'))) and
                       not((local-name()='containerField' and string(.)='normal')           and (local-name(..)='Normal')) and
@@ -3905,7 +3979,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <xsl:text>,</xsl:text>
                         </xsl:if>
                     </xsl:for-each>
-                    <hr width="50%"/>
+                    <hr width="25%"/>
                 </xsl:if>
                 <xsl:if test="//*[local-name()='ExternProtoDeclare']">
                     <xsl:text>&#10;</xsl:text>
@@ -3942,7 +4016,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:text>&#10;</xsl:text>
                     <xsl:if test="//*[local-name()='ExternProtoDeclare']">
                         <xsl:text disable-output-escaping="yes">&lt;br /&gt;</xsl:text>
-                        <hr width="50%"/>
+                        <hr width="25%"/>
                         <xsl:text>&#10;</xsl:text>
                     </xsl:if>
                     <b><i>
@@ -3978,7 +4052,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:text>&#10;</xsl:text>
                     <xsl:if test="boolean(//*[local-name()='ProtoDeclare'] | //*[local-name()='ExternProtoDeclare'])">
                         <xsl:text disable-output-escaping="yes">&lt;br /&gt;</xsl:text>
-                        <hr width="50%"/>
+                        <hr width="25%"/>
                         <xsl:text>&#10;</xsl:text>
                     </xsl:if>
                     <b><i>
@@ -4016,7 +4090,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:text>&#10;</xsl:text>
                     <xsl:if test="boolean(//*[local-name()='ProtoDeclare'] | //*[local-name()='ExternProtoDeclare'] | //*[@DEF])">
                         <xsl:text disable-output-escaping="yes">&lt;br /&gt;</xsl:text>
-                        <hr width="50%"/>
+                        <hr width="25%"/>
                         <xsl:text>&#10;</xsl:text>
                     </xsl:if>
                     <b><i>

@@ -29,6 +29,14 @@ from x3d import *
 newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
+    component(level=1,name='Scripting'),
+    component(name='EnvironmentalEffects',level=3),
+    component(name='Shaders',level=1),
+    component(name='CubeMapTexturing',level=1),
+    component(name='Texturing',level=1),
+    component(name='Rendering',level=1),
+    component(name='Grouping',level=3),
+    component(name='Core',level=1),
     meta(name='title',content='sphereflowers.x3d'),
     meta(name='creator',content='John Carlson'),
     meta(name='description',content='5 or more prismatic flowers'),
@@ -61,7 +69,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       ProtoInstance(name='flower'),
       TimeSensor(DEF='SongTime',loop=True),
       Sound(maxBack=100,maxFront=100,minBack=20,minFront=20,
-        source=AudioClip(DEF='AudioClip',description='Chandubabamusic #1',url=["../resources/chandubabamusic1.wav"])),
+        source=AudioClip(DEF='AudioClip',description='Chandubabamusic #1',url=["../resources/chandubabamusic1.wav","https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav"])),
       ROUTE(fromField='cycleTime',fromNode='SongTime',toField='startTime',toNode='AudioClip')])])
 ) # X3D model complete
 

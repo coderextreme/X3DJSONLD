@@ -157,12 +157,12 @@ public class SpatialAudioCameraAnimation
             .setGeometry(new Text().setString(new String[] {"Saxophone"})
               .setFontStyle(new FontStyle().setUSE("ModelFontStyle")))))))
     .addChild(new ListenerPointSource().setHtmlID("ListenerPointSource").setTrackCurrentView(true))
-    .addChild(new StreamAudioDestination().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS").setHtmlID("AudioDestination")
-      .addChild(new SpatialSound("Audio1").setDistanceModel("INVERSE").setHtmlID("SpatialSound1")
-        .addChild(new Gain().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS").setHtmlID("Gain1")
+    .addChild(new StreamAudioDestination().setHtmlID("AudioDestination")
+      .addChild(new SpatialSound("Audio1").setHtmlID("SpatialSound1")
+        .addChild(new Gain().setHtmlID("Gain1")
           .addChild(new AudioClip().setDescription("Violin").setHtmlID("AudioClip1").setLoop(true).setUrl(new String[] {"sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"}))))
-      .addChild(new SpatialSound("Audio2").setDistanceModel("INVERSE").setHtmlID("SpatialSound2")
-        .addChild(new Gain().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS").setHtmlID("Gain2")
+      .addChild(new SpatialSound("Audio2").setHtmlID("SpatialSound2")
+        .addChild(new Gain().setHtmlID("Gain2")
           .addChild(new AudioClip().setDescription("Saxophone").setHtmlID("AudioClip2").setLoop(true).setUrl(new String[] {"sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"}))))));
             }
             catch (Exception ex)

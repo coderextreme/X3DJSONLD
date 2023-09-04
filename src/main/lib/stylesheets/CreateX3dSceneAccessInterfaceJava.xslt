@@ -40135,16 +40135,29 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
             <xsl:text> + "\n" +</xsl:text>
             <xsl:text>&#10;</xsl:text>
             <xsl:text>			"Supported values are </xsl:text>
-            <!-- TODO list allowed values -->
-            <xsl:for-each select="enumeration">
-                <xsl:call-template name="backslash-quote-characters"> <!-- tail recursion -->
-                        <xsl:with-param name="inputValue" select="@value"/>
-                </xsl:call-template>
-                <xsl:if test="not(position() = last())">
-                    <xsl:text>, </xsl:text>
-                </xsl:if>
-            </xsl:for-each> 
-            <xsl:text>."</xsl:text>
+            <xsl:choose>
+                <xsl:when test="(($elementName = 'HAnimJoint') or ($elementName = 'HAnimSegment') or ($elementName = 'HAnimSite')) and (@name = 'name')">
+                    <xsl:text>found in X3D Tooltips for </xsl:text>
+                    <xsl:value-of select="$elementName"/>
+                    <xsl:text>.name at </xsl:text>
+                    <xsl:text>https://www.web3d.org/x3d/content/X3dTooltips.html</xsl:text>
+                    <xsl:value-of select="$elementName"/>
+                    <xsl:text>.name"</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <!-- TODO list allowed values -->
+                    <xsl:for-each select="enumeration">
+                        <xsl:call-template name="backslash-quote-characters"> <!-- tail recursion -->
+                                <xsl:with-param name="inputValue" select="@value"/>
+                        </xsl:call-template>
+                        <xsl:if test="not(position() = last())">
+                            <xsl:text>, </xsl:text>
+                        </xsl:if>
+                    </xsl:for-each> 
+                    <xsl:text>"</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:text>&#10;</xsl:text>
             <xsl:if test="($elementName = 'HAnimHumanoid') and (@name = 'version')">
                 <xsl:text>&#10;</xsl:text>
                 <xsl:text>			 + "\n" + "*** HAnimHumanoid version='1.0' models might not run correctly in X3D 4.0 and upgrading model to HAnim version='2.0' is advised."</xsl:text>

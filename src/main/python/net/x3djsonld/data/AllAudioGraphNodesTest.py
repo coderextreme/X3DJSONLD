@@ -50,38 +50,38 @@ newModel=X3D(profile='Full',version='4.0',
       source=AudioClip(description='testing',url=["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"])),
     Sound(location=(0,1.6,0),
       source=MovieTexture(description='testing',url=["bogus.mpg","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"])),
-    SpatialSound(distanceModel='INVERSE',
+    SpatialSound(
       children=[
-      Analyser(channelCountMode='MAX',channelInterpretation='SPEAKERS',
+      Analyser(
         children=[
-        StreamAudioDestination(channelCountMode='MAX',channelInterpretation='SPEAKERS',
+        StreamAudioDestination(
           children=[
-          BiquadFilter(channelCountMode='MAX',channelInterpretation='SPEAKERS',type='LOWPASS',
+          BiquadFilter(type='LOWPASS',
             children=[
-            ChannelMerger(channelCountMode='MAX',channelInterpretation='SPEAKERS',
+            ChannelMerger(
               children=[
-              ChannelSelector(channelCountMode='MAX',channelInterpretation='SPEAKERS',
+              ChannelSelector(
                 children=[
-                ChannelSplitter(channelCountMode='MAX',channelInterpretation='SPEAKERS',
+                ChannelSplitter(
                   children=[
-                  Convolver(channelCountMode='MAX',channelInterpretation='SPEAKERS',
+                  Convolver(
                     children=[
-                    Delay(channelCountMode='MAX',channelInterpretation='SPEAKERS',
+                    Delay(
                       children=[
-                      DynamicsCompressor(channelCountMode='MAX',channelInterpretation='SPEAKERS',
+                      DynamicsCompressor(
                         children=[
-                        Gain(channelCountMode='MAX',channelInterpretation='SPEAKERS',
+                        Gain(
                           children=[
-                          StreamAudioDestination(channelCountMode='MAX',channelInterpretation='SPEAKERS',
+                          StreamAudioDestination(
                             children=[
-                            WaveShaper(channelCountMode='MAX',channelInterpretation='SPEAKERS',
+                            WaveShaper(oversample='none',
                               #  The following X3DSoundSourceNode nodes have no audio-graph children 
                               children=[
-                              BufferAudioSource(channelCountMode='MAX',channelInterpretation='SPEAKERS'),
+                              BufferAudioSource(),
                               ListenerPointSource(),
                               MicrophoneSource(),
                               OscillatorSource(frequency=440.0),
-                              StreamAudioSource(channelCountMode='MAX',channelInterpretation='SPEAKERS')])])])])])])])])])])])])])])
+                              StreamAudioSource(),])])])])])])])])])])])])])])
 ) # X3D model complete
 
 ####################################################################################################

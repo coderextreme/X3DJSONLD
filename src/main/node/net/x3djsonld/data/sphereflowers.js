@@ -69,6 +69,14 @@ sphereflowers.prototype = {
   {
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
+    .addComponent((new autoclass.component()).setName("Scripting").setLevel(1))
+    .addComponent((new autoclass.component()).setName("EnvironmentalEffects").setLevel(3))
+    .addComponent((new autoclass.component()).setName("Shaders").setLevel(1))
+    .addComponent((new autoclass.component()).setName("CubeMapTexturing").setLevel(1))
+    .addComponent((new autoclass.component()).setName("Texturing").setLevel(1))
+    .addComponent((new autoclass.component()).setName("Rendering").setLevel(1))
+    .addComponent((new autoclass.component()).setName("Grouping").setLevel(3))
+    .addComponent((new autoclass.component()).setName("Core").setLevel(1))
     .addMeta((new autoclass.meta()).setName("title").setContent("sphereflowers.x3d"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
     .addMeta((new autoclass.meta()).setName("description").setContent("5 or more prismatic flowers"))
@@ -95,7 +103,7 @@ sphereflowers.prototype = {
       .addChild((new autoclass.ProtoInstance()))
       .addChild((new autoclass.TimeSensor("SongTime")).setLoop(true))
       .addChild((new autoclass.Sound()).setMaxBack(100).setMaxFront(100).setMinBack(20).setMinFront(20)
-        .setSource((new autoclass.AudioClip("AudioClip")).setDescription("Chandubabamusic #1").setUrl(new autoclass.MFString("\"../resources/chandubabamusic1.wav\""))))
+        .setSource((new autoclass.AudioClip("AudioClip")).setDescription("Chandubabamusic #1").setUrl(new autoclass.MFString("\"../resources/chandubabamusic1.wav\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav\""))))
       .addChild((new autoclass.ROUTE()).setFromNode("SongTime").setFromField("cycleTime").setToNode("AudioClip").setToField("startTime"))));
   },
   // end of initialize() method
