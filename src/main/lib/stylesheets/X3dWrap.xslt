@@ -136,8 +136,8 @@ Problems:
                       not( local-name()='bboxSize'	and	(string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')) and
                       not( local-name()='bboxDisplay' and string(.)='false') and
                       not( local-name()='castShadow' and string(.)='true') and
-                      not( local-name()='channelCountMode' and string(.)='max') and
-                      not( local-name()='channelInterpretation' and string(.)='speakers') and
+                      not( local-name()='channelCountMode' and string(.)='MAX') and
+                      not( local-name()='channelInterpretation' and string(.)='SPEAKERS') and
                       not( local-name()='detune' and (string(.)='0' or string(.)='0.0')) and
                       not( local-name()='enabled' and string(.)='true') and
                       not( local-name()='gain' and (string(.)='1' or string(.)='1.0')) and
@@ -250,7 +250,7 @@ Problems:
                       ((local-name()='enabled' and string(.)='true') or
                       (local-name()='timeOut' and (string(.)='0' or string(.)='0.0')))) and
 		not( local-name(..)='LOD '	and	 local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) and
-		not( ((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial')) and
+		not( ((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial') or (local-name(..)='PhysicalMaterial')) and
                       	((local-name()='ambientIntensity' and string(.)='0.2') or
 						 (local-name()='diffuseColor' and string(.)='0.8 0.8 0.8') or
 						 (local-name()='emissiveColor' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
@@ -429,7 +429,7 @@ Problems:
                       not( local-name(..)='BufferAudioSource' and
                       ((local-name()='containerField' and string(.)='children') or
                       (local-name()='bufferDuration' and (string(.)='0' or string(.)='0.0')) or
-                      (local-name()='type' and (string(.)='lowpass')) or
+                      (local-name()='type' and (string(.)='LOWPASS')) or
                       (local-name()='loopStart' and (string(.)='0' or string(.)='0.0')) or
                       (local-name()='loopEnd' and (string(.)='0' or string(.)='0.0')) or
                       (local-name()='numberOfChannels' and string(.)='0') or
@@ -481,14 +481,14 @@ Problems:
                       (local-name()='frequency' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='PeriodicWave' and
                       ((local-name()='containerField' and string(.)='children') or
-                      (local-name()='type' and (string(.)='square')))) and
+                      (local-name()='type' and (string(.)='SQUARE')))) and
                       not( local-name(..)='SpatialSound' and
                       ((local-name()='containerField' and string(.)='children') or
                       (local-name()='coneInnerAngle' and (string(.)='6.2832')) or
                       (local-name()='coneOuterAngle' and (string(.)='6.2832')) or
                       (local-name()='coneOuterGain' and (string(.)='0' or string(.)='0.0')) or
                       (local-name()='direction' and (string(.)='0 0 1' or string(.)='0.0 0.0 1.0')) or
-                      (local-name()='distanceModel' and (string(.)='inverse')) or
+                      (local-name()='distanceModel' and (string(.)='INVERSE')) or
                       (local-name()='dopplerEnabled' and (string(.)='false')) or
                       (local-name()='enableHRTF' and (string(.)='false')) or
                       (local-name()='intensity' and (string(.)='1' or string(.)='1.0')) or
@@ -504,7 +504,7 @@ Problems:
                       ((local-name()='containerField' and string(.)='children'))) and
                       not( local-name(..)='WaveShaper' and
                       ((local-name()='containerField' and string(.)='children') or
-                      (local-name()='oversample' and (string(.)='none'))))" />
+                      (local-name()='oversample' and (string(.)='NONE'))))" />
  <xsl:if test="	$notImplicitEvent and
                 $notDefaultFieldValue1 and
                 $notDefaultFieldValue2 and

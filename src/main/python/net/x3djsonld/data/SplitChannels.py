@@ -98,19 +98,19 @@ newModel=X3D(profile='Full',version='4.0',
           material=Material(diffuseColor=(0.1,0.1,0.1),shininess=0.8,specularColor=(0.5,0.6,0.7))),
         geometry=Box(size=(1500,10,500)))]),
     ListenerPointSource(id_='ListenerPointSource',trackCurrentView=True),
-    StreamAudioDestination(id_='AudioDestination',channelCountMode='MAX',channelInterpretation='SPEAKERS',
+    StreamAudioDestination(id_='AudioDestination',
       children=[
-      Gain(id_='Gain3',channelCountMode='MAX',channelInterpretation='SPEAKERS',
+      Gain(id_='Gain3',
         children=[
-        ChannelMerger(id_='ChannelMerger',channelCountMode='MAX',channelInterpretation='SPEAKERS',
+        ChannelMerger(id_='ChannelMerger',
           children=[
-          ChannelSelector(id_='ChannelSelector0',channelCountMode='MAX',channelInterpretation='SPEAKERS',
+          ChannelSelector(id_='ChannelSelector0',
             children=[
-            Gain(USE='ChannelSplitter',channelCountMode='MAX',channelInterpretation='SPEAKERS')]),
-          ChannelSelector(channelSelection=1,id_='ChannelSelector1',channelCountMode='MAX',channelInterpretation='SPEAKERS',
+            Gain(USE='ChannelSplitter')]),
+          ChannelSelector(channelSelection=1,id_='ChannelSelector1',
             children=[
-            Gain(USE='ChannelSplitter',channelCountMode='MAX',channelInterpretation='SPEAKERS')])])])]),
-    ChannelSplitter(DEF='ChannelSplitter',channelCountMode='EXPLICIT',channelInterpretation='SPEAKERS',
+            Gain(USE='ChannelSplitter')])])])]),
+    ChannelSplitter(DEF='ChannelSplitter',channelCountMode='EXPLICIT',
       children=[
       AudioClip(description='Violin',url=["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"])]),
     Transform(DEF='Audio3',rotation=(1,0,0,-0.5),translation=(0,100,0),

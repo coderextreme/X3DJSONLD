@@ -3,10 +3,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-
 	<groupId>net.coderextreme</groupId>
 	<artifactId>X3DJSONLD</artifactId>
-	<version>8.1-SNAPSHOT</version>
+	<version>11.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>X3DJSONLD</name>
@@ -113,6 +112,9 @@
 					<source>20</source>
 					<target>20</target>
 					<fork>true</fork>
+					<maxmem>4096m</maxmem>
+					<executable>C:/graalvm-jdk-20_windows-x64_bin/graalvm-jdk-20.0.2+9.1/bin/javac.exe</executable>
+
 				</configuration>
 			</plugin>
 			<plugin>
@@ -138,8 +140,11 @@
 							<excludes>
 								<exclude>**/*.intermediate.x3d</exclude>
 								<exclude>**/*.don.x3d</exclude>
+								<exclude>**/*.john.x3d</exclude>
+								<exclude>**/*.new.john.x3d</exclude>
 								<exclude>**/*.new</exclude>
 								<exclude>**/*.new.x3d</exclude>
+								<exclude>**/*.new.graal.x3d</exclude>
 								<exclude>**/*.json</exclude>
 							</excludes>
 							<outputDir>src/main/data</outputDir>
@@ -160,8 +165,11 @@
 							<excludes>
 								<exclude>**/*.intermediate.x3d</exclude>
 								<exclude>**/*.don.x3d</exclude>
+								<exclude>**/*.john.x3d</exclude>
+								<exclude>**/*.new.john.x3d</exclude>
 								<exclude>**/*.new</exclude>
 								<exclude>**/*.new.x3d</exclude>
+								<exclude>**/*.new.graal.x3d</exclude>
 								<exclude>**/*.json</exclude>
 							</excludes>
 							<fileMappers>
@@ -187,8 +195,11 @@
 							<excludes>
 								<exclude>**/*.intermediate.x3d</exclude>
 								<exclude>**/*.don.x3d</exclude>
+								<exclude>**/*.john.x3d</exclude>
+								<exclude>**/*.new.john.x3d</exclude>
 								<exclude>**/*.new</exclude>
 								<exclude>**/*.new.x3d</exclude>
+								<exclude>**/*.new.graal.x3d</exclude>
 								<exclude>**/*.json</exclude>
 							</excludes>
 							<fileMappers>
@@ -214,8 +225,11 @@
 							<excludes>
 								<exclude>**/*.intermediate.x3d</exclude>
 								<exclude>**/*.don.x3d</exclude>
+								<exclude>**/*.john.x3d</exclude>
+								<exclude>**/*.new.john.x3d</exclude>
 								<exclude>**/*.new</exclude>
 								<exclude>**/*.new.x3d</exclude>
+								<exclude>**/*.new.graal.x3d</exclude>
 								<exclude>**/*.json</exclude>
 							</excludes>
 							<fileMappers>
@@ -242,8 +256,11 @@
 							<excludes>
 								<exclude>**/*.intermediate.x3d</exclude>
 								<exclude>**/*.don.x3d</exclude>
+								<exclude>**/*.john.x3d</exclude>
+								<exclude>**/*.new.john.x3d</exclude>
 								<exclude>**/*.new</exclude>
 								<exclude>**/*.new.x3d</exclude>
+								<exclude>**/*.new.graal.x3d</exclude>
 								<exclude>**/*.json</exclude>
 							</excludes>
 							<fileMappers>

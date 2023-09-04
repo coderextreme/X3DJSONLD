@@ -267,7 +267,7 @@ Recommended tools:
     </xsl:variable>
     <xsl:variable name="isX3D3" select="starts-with($x3dVersion,'3')"/>
     <xsl:variable name="isX3D4" select="starts-with($x3dVersion,'4')"/>
-    
+        
     <xsl:strip-space elements="*"/>
     <!-- TODO add flexibility to handle X3D embedded using X3DOM within HTML page, likely via an external stylesheet -->
     <xsl:output encoding="UTF-8" media-type="text/xml" indent="yes" cdata-section-elements="Script ShaderPart ShaderProgram" omit-xml-declaration="yes" method="xml"/>
@@ -531,26 +531,26 @@ Recommended tools:
                         <xsl:value-of select="$prependWorldInfoIfMissing"/>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:text>*TODO add title*"</xsl:text>
+                        <xsl:text>*TODO add title*</xsl:text>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:variable>
             <xsl:if test="(count(//WorldInfo[string-length(@title) > 0]) = 0)">
-                <xsl:text disable-output-escaping="yes">&lt;</xsl:text>
-                <xsl:text>WorldInfo title="</xsl:text>
-                <xsl:value-of select="$WorldInfoTitle"/>
-                <xsl:text>"</xsl:text>
-                <xsl:text disable-output-escaping="yes">/&gt;</xsl:text>
-                <xsl:text>&#10;</xsl:text>
-                <!-- indent -->
-                <xsl:for-each select="ancestor::*">
-                    <xsl:text>  </xsl:text>
-                </xsl:for-each>
-                <xsl:message>
-                    <xsl:text>*** prepend &lt;WorldInfo title='</xsl:text>
+                    <xsl:text disable-output-escaping="yes">&lt;</xsl:text>
+                    <xsl:text>WorldInfo title="</xsl:text>
                     <xsl:value-of select="$WorldInfoTitle"/>
-                    <xsl:text>'/&gt;</xsl:text>
-                </xsl:message>
+                    <xsl:text>"</xsl:text>
+                    <xsl:text disable-output-escaping="yes">/&gt;</xsl:text>
+                    <xsl:text>&#10;</xsl:text>
+                    <!-- indent -->
+                    <xsl:for-each select="ancestor::*">
+                        <xsl:text>  </xsl:text>
+                    </xsl:for-each>
+                    <xsl:message>
+                        <xsl:text>*** prepend &lt;WorldInfo title='</xsl:text>
+                        <xsl:value-of select="$WorldInfoTitle"/>
+                        <xsl:text>'/&gt;</xsl:text>
+                    </xsl:message>
             </xsl:if>
         </xsl:if>
         
@@ -2304,6 +2304,7 @@ Recommended tools:
             </xsl:when>
             <!-- X3dTidy checks to insert additional attributes go here -->
             <!-- Material for line geometry: copy diffuseColor value to emissiveColor if default (black) or missing -->
+            <!-- TODO what about PhysicalMaterial? -->
             <xsl:when test="(local-name()='Material') and ((../../PointSet) or (../../LineSet) or (../../IndexedLineSet) or (../../Arc2D) or (../../ArcClose2D) or (../../Circle2D))
                             and not(../../*/Color) and not(../../*/ColorRGBA) and not(IS/connect[@nodeField='emissiveColor'])">
                 <xsl:apply-templates select="@DEF | @containerField "/>
@@ -2884,6 +2885,11 @@ Recommended tools:
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
+        <xsl:variable name="fileName">
+            <xsl:if test="//head/meta[@name='title']/@content[.!='*enter FileNameWithNoAbbreviations.x3d here*']">
+                <xsl:value-of select="//head/meta[@name='title']/@content"/>
+            </xsl:if>
+        </xsl:variable>
         
         <xsl:if test="starts-with(local-name(..),'HAnim') and (($isHAnim1 = true()) or ($isHAnim2 = true())) and ((local-name() = 'DEF') or (local-name() = 'USE') or (local-name() = 'name'))">
 			<!-- debug 
@@ -2990,8 +2996,8 @@ Recommended tools:
                       not( local-name()='bboxSize'	and	(string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')) and
                       not( local-name()='bboxDisplay' and string(.)='false') and
                       not( local-name()='castShadow' and string(.)='true') and
-                      not( local-name()='channelCountMode' and string(.)='max') and
-                      not( local-name()='channelInterpretation' and string(.)='speakers') and
+                      not( local-name()='channelCountMode' and string(.)='MAX') and
+                      not( local-name()='channelInterpretation' and string(.)='SPEAKERS') and
                       not( local-name()='detune' and (string(.)='0' or string(.)='0.0')) and
                       not( local-name()='enabled' and string(.)='true') and
                       not( local-name()='gain' and (string(.)='1' or string(.)='1.0')) and
@@ -3111,7 +3117,7 @@ Recommended tools:
                       ((local-name()='enabled' and string(.)='true') or
                       (local-name()='timeOut' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='LOD'	and	((local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or (local-name()='forceTransitions' and string(.)='false'))) and
-                      not(((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial')) and
+                      not(((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial') or (local-name(..)='PhysicalMaterial')) and
                       ((local-name()='ambientIntensity' and string(.)='0.2') or
                       (local-name()='diffuseColor' and string(.)='0.8 0.8 0.8') or
                       (local-name()='emissiveColor' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
@@ -3396,7 +3402,7 @@ Recommended tools:
                       not( local-name(..)='BufferAudioSource' and
                       ((local-name()='containerField' and string(.)='children') or
                       (local-name()='bufferDuration' and (string(.)='0' or string(.)='0.0')) or
-                      (local-name()='type' and (string(.)='lowpass')) or
+                      (local-name()='type' and (string(.)='LOWPASS')) or
                       (local-name()='loopStart' and (string(.)='0' or string(.)='0.0')) or
                       (local-name()='loopEnd' and (string(.)='0' or string(.)='0.0')) or
                       (local-name()='numberOfChannels' and string(.)='0') or
@@ -3448,14 +3454,14 @@ Recommended tools:
                       (local-name()='frequency' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='PeriodicWave' and
                       ((local-name()='containerField' and string(.)='children') or
-                      (local-name()='type' and (string(.)='square')))) and
+                      (local-name()='type' and (string(.)='SQUARE')))) and
                       not( local-name(..)='SpatialSound' and
                       ((local-name()='containerField' and string(.)='children') or
                       (local-name()='coneInnerAngle' and (string(.)='6.2832')) or
                       (local-name()='coneOuterAngle' and (string(.)='6.2832')) or
                       (local-name()='coneOuterGain' and (string(.)='0' or string(.)='0.0')) or
                       (local-name()='direction' and (string(.)='0 0 1' or string(.)='0.0 0.0 1.0')) or
-                      (local-name()='distanceModel' and (string(.)='inverse')) or
+                      (local-name()='distanceModel' and (string(.)='INVERSE')) or
                       (local-name()='dopplerEnabled' and (string(.)='false')) or
                       (local-name()='enableHRTF' and (string(.)='false')) or
                       (local-name()='intensity' and (string(.)='1' or string(.)='1.0')) or
@@ -3471,10 +3477,13 @@ Recommended tools:
                       ((local-name()='containerField' and string(.)='children'))) and
                       not( local-name(..)='WaveShaper' and
                       ((local-name()='containerField' and string(.)='children') or
-                      (local-name()='oversample' and (string(.)='none'))))" />
+                      (local-name()='oversample' and (string(.)='NONE'))))" />
         <xsl:variable name="notDefaultContainerField1"
                       select="not((local-name()='containerField' and string(.)='children')	and
                       (contains(local-name(..),'Interpolator') or
+                      ends-with(local-name(..),'Filter') or
+                      ends-with(local-name(..),'Sequencer') or
+                      ends-with(local-name(..),'Trigger') or
                       contains(local-name(..),'Light') or
                       contains(local-name(..),'Sensor') or
                       local-name(..)='Anchor' or
@@ -3512,7 +3521,7 @@ Recommended tools:
         <xsl:variable name="notDefaultContainerField2"
                       select="not((local-name()='containerField' and string(.)='source')   and (local-name(..)='AudioClip')) and
                       not((local-name()='containerField' and string(.)='appearance')	   and (local-name(..)='Appearance')) and
-                      not((local-name()='containerField' and string(.)='material')         and ((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial'))) and
+                      not((local-name()='containerField' and string(.)='material')         and ((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial') or (local-name(..)='PhysicalMaterial'))) and
                       not((local-name()='containerField' and string(.)='color')            and (local-name(..)='Color' or local-name(..)='ColorRGBA')) and
                       not((local-name()='containerField' and string(.)='coord')            and ((local-name(..)='Coordinate') or (local-name(..)='CoordinateDouble') or (local-name(..)='GeoCoordinate'))) and
                       not((local-name()='containerField' and string(.)='normal')           and (local-name(..)='Normal')) and
@@ -5738,6 +5747,19 @@ Recommended tools:
                         <xsl:text>'</xsl:text>
                     </xsl:message>
                 </xsl:when>
+                <xsl:when test="(local-name(../..)='Scene') and (local-name(..)='WorldInfo') and (local-name()='title') and (string-length(.) > 0) and 
+                                ends-with($fileName,'.x3d') and ends-with(.,'.x3d') and ends-with($fileName,'.x3d') and 
+                                not(. = $fileName)">
+                    <xsl:value-of select="$fileName"/>
+                    <xsl:message>
+                        <xsl:text>*** Warning, mismatch between root WorldInfo/@title=</xsl:text>
+                        <xsl:value-of select="."/>
+                        <xsl:text> and meta title=</xsl:text>
+                        <xsl:value-of select="$fileName"/>
+                        <xsl:text>, resetting WorldInfo/@title to </xsl:text>
+                        <xsl:value-of select="$fileName"/>
+                    </xsl:message>
+                </xsl:when>
                 <!-- TODO how to handle case where generateMipMaps is not defined and has devalue value of false? -->
                 <!-- *** new fixes: other new attribute-value rules go here *** -->
                 
@@ -5884,7 +5906,6 @@ Recommended tools:
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:if>
-            
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>

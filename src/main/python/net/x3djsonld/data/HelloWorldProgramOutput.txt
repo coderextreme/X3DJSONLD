@@ -1,0 +1,1236 @@
+x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
+Self-test diagnostics for HelloWorldProgramOutput.py:
+meta information, info: continued development and testing in progress
+*** Python-to-XML well-formed XML document test failed.
+    x3dSchemaUrl=https://www.web3d.org/specifications/x3d-4.0.xsd
+    XMLSchemaParseError cannot import namespace 'http://www.w3.org/2000/09/xmldsig#': Entities are forbidden (entity_name='dsig')
+Python-to-VRML export of VRML output successful
+{
+    "X3D":,
+    {
+        "encoding":"UTF-8",
+        "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "@version":"4.0",
+        "@profile":"Full",
+    "head":
+    {
+        "component":
+        {
+      {
+        "@level":"3",
+        "@name":"Navigation"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Shaders"
+      }
+    },
+        "component":
+        {
+      {
+        "@level":"2",
+        "@name":"CADGeometry"
+      }
+    },
+        "component":
+        {
+      {
+        "@level":"2",
+        "@name":"DIS"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"HAnim"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Grouping"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Layering"
+      }
+    },
+        "unit":
+        {
+      {
+        "@category":"angle",
+        "@name":"AngleUnitConversion"
+      }
+    },
+        "unit":
+        {
+      {
+        "@category":"length",
+        "@name":"LengthUnitConversion"
+      }
+    },
+        "unit":
+        {
+      {
+        "@category":"force",
+        "@conversionFactor":"4.4482",
+        "@name":"ForceFromPoundsToNewtons"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"HelloWorldProgramOutput.x3d",
+        "@name":"title"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"continued development and testing in progress",
+        "@name":"info"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)",
+        "@name":"description"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https://www.web3d.org/specifications/java/X3DJSAIL.html",
+        "@name":"reference"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"HelloWorldProgramOutput.java",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"6 September 2016",
+        "@name":"created"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"30 July 2023",
+        "@name":"modified"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"X3D Java Scene Access Interface Library (X3DJSAIL)",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Netbeans https://www.netbeans.org",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Don Brutzman",
+        "@name":"creator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d",
+        "@name":"reference"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Console output, ClassicVRML encoding, VRML97 encoding and pretty-print documentation:",
+        "@name":"reference"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"HelloWorldProgramOutput.txt",
+        "@name":"reference"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"HelloWorldProgramOutput.x3dv",
+        "@name":"reference"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"HelloWorldProgramOutput.wrl",
+        "@name":"reference"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"HelloWorldProgramOutput.html",
+        "@name":"reference"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d",
+        "@name":"reference"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d",
+        "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"../license.html",
+        "@name":"license"
+      }
+    },
+    }    "Scene":
+    {
+        "MetadataSet":
+        {
+      {
+        "@name":"topLevelSceneMetadata"
+      }
+    },
+        "ViewpointGroup":
+        {
+      {
+        "@description":"Available viewpoints"
+      }
+            "Viewpoint":
+            {
+      {
+        "@DEF":"DefaultView",
+        "@description":"Hello X3DJSAIL"
+      }
+    },
+            "Viewpoint":
+            {
+      {
+        "@DEF":"TopDownView",
+        "@description":"top-down view from above",
+        "@orientation":"1 0 0 -1.570796",
+        "@position":"0 100 0"
+      }
+    },
+        }        "NavigationInfo":
+        {
+      {
+        "@type":""&quot;EXAMINE&quot; &quot;FLY&quot; &quot;ANY&quot;""
+      }
+    },
+        "WorldInfo":
+        {
+      {
+        "@DEF":"WorldInfoDEF",
+        "@class":"worldInfoNode.class",
+        "@id":"worldInfoNode.id",
+        "@style":"worldInfoNode.style",
+        "@title":"HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)"
+      }
+    }
+        "WorldInfo":
+        {
+      {
+        "@USE":"WorldInfoDEF"
+      }
+    }
+        "WorldInfo":
+        {
+      {
+        "@USE":"WorldInfoDEF"
+      }
+    }
+        "MetadataString":
+        {
+      {
+        "@DEF":"scene.addChildMetadata",
+        "@name":"test",
+        "@value":""Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding""
+      }
+    },
+        "LayerSet":
+        {
+      {
+        "@DEF":"scene.addChildLayerSetTest"
+      }
+    },
+        "Transform":
+        {
+      {
+        "@DEF":"LogoGeometryTransform",
+        "@translation":"0 1.5 0"
+      }
+            "Anchor":
+            {
+      {
+        "@DEF":"siteAnchor",
+        "@description":"select for X3D Java SAI Library (X3DJSAIL) description",
+        "@url":""../X3DJSAIL.html" "https://www.web3d.org/specifications/java/X3DJSAIL.html""
+      }
+                "Shape":
+                {
+      {
+        "@DEF":"BoxShape",
+        "@id":"BoxShapeID"
+      }
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@DEF":"GreenMaterial",
+        "@diffuseColor":"0 1 1",
+        "@emissiveColor":"0.8 0 0",
+        "@transparency":"0.1"
+      }
+    },
+                        "ImageTexture":
+                        {
+      {
+        "@url":""images/X3dJavaSceneAccessInterfaceSaiLibrary.png" "https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png""
+      }
+    },
+                    }                    "Box":
+                    {
+      {
+        "@DEF":"test-NMTOKEN_regex.0123456789",
+        "@class":"untextured"
+      }
+    },
+                }            }        }        "Shape":
+        {
+      {
+        "@DEF":"LineShape"
+      }
+            "Appearance":
+            {
+                "Material":
+                {
+      {
+        "@emissiveColor":"0.6 0.19607843 0.8"
+      }
+    },
+            }            "IndexedLineSet":
+            {
+      {
+        "@coordIndex":"0 1 2 3 4 0"
+      }
+                "Coordinate":
+                {
+      {
+        "@point":"0 1.5 0 2 1.5 0 2 1.5 -2 -2 1.5 -2 -2 1.5 0 0 1.5 0"
+      }
+    },
+            }        }        "PositionInterpolator":
+        {
+      {
+        "@DEF":"BoxPathAnimator",
+        "@key":"0 0.125 0.375 0.625 0.875 1",
+        "@keyValue":"0 1.5 0 2 1.5 0 2 1.5 -2 -2 1.5 -2 -2 1.5 0 0 1.5 0"
+      }
+    },
+        "TimeSensor":
+        {
+      {
+        "@DEF":"OrbitClock",
+        "@cycleInterval":"8.0",
+        "@loop":"true"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"OrbitClock",
+        "@toField":"set_fraction",
+        "@toNode":"BoxPathAnimator"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"value_changed",
+        "@fromNode":"BoxPathAnimator",
+        "@toField":"set_translation",
+        "@toNode":"LogoGeometryTransform"
+      }
+    },
+        "Transform":
+        {
+      {
+        "@DEF":"TextTransform",
+        "@translation":"0 -1.5 0"
+      }
+            "Shape":
+            {
+                "Appearance":
+                {
+                    "Material":
+                    {
+      {
+        "@USE":"GreenMaterial"
+      }
+    },
+                }                "Text":
+                {
+      {
+        "@string":""X3D Java" "SAI Library" "X3DJSAIL""
+      }
+                    "FontStyle":
+                    {
+      {
+        "@justify":""MIDDLE" "MIDDLE""
+      }
+    },
+                    "MetadataSet":
+                    {
+      {
+        "@name":"EscapedQuotationMarksMetadataSet"
+      }
+                        "MetadataString":
+                        {
+      {
+        "@name":"quotesTestC",
+        "@value":""MFString example C, backslash-escaped quotes: He said, &quot;Immel did it!&quot;""
+      }
+    },
+                        "MetadataString":
+                        {
+      {
+        "@name":"extraChildTest",
+        "@value":""checks MetadataSet addValue() method""
+      }
+    },
+                    }                }            }            "Collision":
+            {
+                "Shape":
+                {
+      {
+        "@DEF":"ProxyShape"
+      }
+                    "Text":
+                    {
+      {
+        "@string":""One, Two, Text" "" "He said, &quot;Immel did it!&quot; &quot;&quot;""
+      }
+    },
+                }            }        }        "OrientationInterpolator":
+        {
+      {
+        "@DEF":"SpinInterpolator",
+        "@key":"0 0.5 1",
+        "@keyValue":"0 1 0 4.712389 0 1 0 0 0 1 0 1.5707964"
+      }
+    },
+        "TimeSensor":
+        {
+      {
+        "@DEF":"SpinClock",
+        "@cycleInterval":"5.0",
+        "@loop":"true"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"SpinClock",
+        "@toField":"set_fraction",
+        "@toNode":"SpinInterpolator"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"value_changed",
+        "@fromNode":"SpinInterpolator",
+        "@toField":"rotation",
+        "@toNode":"TextTransform"
+      }
+    },
+        "Group":
+        {
+      {
+        "@DEF":"BackgroundGroup"
+      }
+            "Background":
+            {
+      {
+        "@DEF":"GradualBackground"
+      }
+    },
+            "Script":
+            {
+      {
+        "@DEF":"colorTypeConversionScript",
+        "@sourceCode":"
+ecmascript:
+
+function colorInput (eventValue) // Example source code
+{
+   colorsOutput = new MFColor(eventValue); // assigning value sends output event
+// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '
+');
+}
+"
+      }
+                "field":
+                {
+      {
+        "@accessType":"inputOnly",
+        "@name":"colorInput",
+        "@type":"SFColor"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"outputOnly",
+        "@name":"colorsOutput",
+        "@type":"MFColor"
+      }
+    },
+            }            "ColorInterpolator":
+            {
+      {
+        "@DEF":"ColorAnimator",
+        "@key":"0 0.5 1",
+        "@keyValue":"0.9411765 1 1 0.29411766 0 0.50980395 0.9411765 1 1"
+      }
+    },
+            "TimeSensor":
+            {
+      {
+        "@DEF":"ColorClock",
+        "@cycleInterval":"60.0",
+        "@loop":"true"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"colorsOutput",
+        "@fromNode":"colorTypeConversionScript",
+        "@toField":"skyColor",
+        "@toNode":"GradualBackground"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"value_changed",
+        "@fromNode":"ColorAnimator",
+        "@toField":"colorInput",
+        "@toNode":"colorTypeConversionScript"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"ColorClock",
+        "@toField":"set_fraction",
+        "@toNode":"ColorAnimator"
+      }
+    },
+        }        "ProtoDeclare":
+        {
+      {
+        "@appinfo":"tooltip: ArtDeco01Material prototype is a Material node",
+        "@name":"ArtDeco01Material"
+      }
+            "ProtoInterface":
+            {
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@appinfo":"tooltip for descriptionField",
+        "@name":"description",
+        "@type":"SFString",
+        "@value":"ArtDeco01Material prototype is a Material node"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"enabled",
+        "@type":"SFBool",
+        "@value":"True"
+      }
+    },
+            }            "ProtoBody":
+            {
+                "Material":
+                {
+      {
+        "@ambientIntensity":"0.25",
+        "@diffuseColor":"0.282435 0.085159 0.134462",
+        "@shininess":"0.127273",
+        "@specularColor":"0.276305 0.11431 0.139857"
+      }
+    },
+                "TouchSensor":
+                {
+      {
+        "@description":"within ProtoBody"
+      }
+                    "IS":
+                    {
+                        "connect":
+                        {
+      {
+        "@nodeField":"description",
+        "@protoField":"description"
+      }
+    },
+                        "connect":
+                        {
+      {
+        "@nodeField":"enabled",
+        "@protoField":"enabled"
+      }
+    },
+                    }                }            }        }        "ExternProtoDeclare":
+        {
+      {
+        "@appinfo":"this is a different Material node",
+        "@name":"ArtDeco02Material",
+        "@url":""https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material" "https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material""
+      }
+            "field":
+            {
+      {
+        "@accessType":"inputOutput",
+        "@appinfo":"tooltip for descriptionField",
+        "@name":"description",
+        "@type":"SFString"
+      }
+    },
+        }        "Shape":
+        {
+      {
+        "@DEF":"TestShape1"
+      }
+            "Appearance":
+            {
+      {
+        "@DEF":"TestAppearance1"
+      }
+                "ProtoInstance":
+                {
+      {
+        "@name":"ArtDeco01Material"
+      }
+                    "fieldValue":
+                    {
+      {
+        "@name":"description",
+        "@value":"ArtDeco01Material can substitute for a Material node"
+      }
+    },
+                }            }            "Sphere":
+            {
+      {
+        "@radius":"0.001"
+      }
+    },
+        }        "Shape":
+        {
+      {
+        "@DEF":"TestShape2"
+      }
+            "Appearance":
+            {
+      {
+        "@DEF":"TestAppearance2"
+      }
+                "ProtoInstance":
+                {
+      {
+        "@DEF":"ArtDeco02MaterialDEF",
+        "@name":"ArtDeco02Material"
+      }
+                    "fieldValue":
+                    {
+      {
+        "@name":"description",
+        "@value":"ArtDeco02Material can substitute for another Material node"
+      }
+    },
+                }            }            "Cone":
+            {
+      {
+        "@bottomRadius":"0.001",
+        "@height":"0.001"
+      }
+    },
+        }        "Shape":
+        {
+      {
+        "@DEF":"TestShape3"
+      }
+            "Appearance":
+            {
+      {
+        "@DEF":"TestAppearance3"
+      }
+                "ProtoInstance":
+                {
+      {
+        "@USE":"ArtDeco02MaterialDEF"
+      }
+    },
+            }            "Cylinder":
+            {
+      {
+        "@height":"0.001",
+        "@radius":"0.001"
+      }
+    },
+        }        "Inline":
+        {
+      {
+        "@DEF":"inlineScene",
+        "@url":""someOtherScene.x3d" "https://www.web3d.org/specifications/java/examples/someOtherScene.x3d""
+      }
+    },
+        "IMPORT":
+        {
+      {
+        "@AS":"WorldInfoDEF2",
+        "@importedDEF":"WorldInfoDEF",
+        "@inlineDEF":"inlineScene"
+      }
+    },
+        "EXPORT":
+        {
+      {
+        "@AS":"WorldInfoDEF3",
+        "@localDEF":"WorldInfoDEF"
+      }
+    },
+        "ProtoDeclare":
+        {
+      {
+        "@appinfo":"mimic a Material node and modulate fields as an animation effect",
+        "@documentation":"https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html",
+        "@name":"MaterialModulator"
+      }
+            "ProtoInterface":
+            {
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"enabled",
+        "@type":"SFBool",
+        "@value":"True"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"diffuseColor",
+        "@type":"SFColor",
+        "@value":"(0, 0, 0)"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"emissiveColor",
+        "@type":"SFColor",
+        "@value":"(0.05, 0.05, 0.5)"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"specularColor",
+        "@type":"SFColor",
+        "@value":"(0, 0, 0)"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"transparency",
+        "@type":"SFFloat"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"shininess",
+        "@type":"SFFloat"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"ambientIntensity",
+        "@type":"SFFloat"
+      }
+    },
+            }            "ProtoBody":
+            {
+                "Material":
+                {
+      {
+        "@DEF":"MaterialNode"
+      }
+                    "IS":
+                    {
+                        "connect":
+                        {
+      {
+        "@nodeField":"diffuseColor",
+        "@protoField":"diffuseColor"
+      }
+    },
+                        "connect":
+                        {
+      {
+        "@nodeField":"emissiveColor",
+        "@protoField":"emissiveColor"
+      }
+    },
+                        "connect":
+                        {
+      {
+        "@nodeField":"specularColor",
+        "@protoField":"specularColor"
+      }
+    },
+                        "connect":
+                        {
+      {
+        "@nodeField":"transparency",
+        "@protoField":"transparency"
+      }
+    },
+                        "connect":
+                        {
+      {
+        "@nodeField":"shininess",
+        "@protoField":"shininess"
+      }
+    },
+                        "connect":
+                        {
+      {
+        "@nodeField":"ambientIntensity",
+        "@protoField":"ambientIntensity"
+      }
+    },
+                    }                }                "Script":
+                {
+      {
+        "@DEF":"MaterialModulatorScript",
+        "@sourceCode":"
+ecmascript:
+function initialize ()
+{
+    newColor = diffuseColor; // start with correct color
+}
+function set_enabled (newValue)
+{
+	enabled = newValue;
+}
+function clockTrigger (timeValue)
+{
+    if (!enabled) return;
+    red   = newColor.r;
+    green = newColor.g;
+    blue  = newColor.b;
+
+    // note different modulation rates for each color component, % is modulus operator
+    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);
+	if (enabled)
+	{
+		Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '
+');
+	}
+}
+"
+      }
+                    "IS":
+                    {
+                        "connect":
+                        {
+      {
+        "@nodeField":"enabled",
+        "@protoField":"enabled"
+      }
+    },
+                        "connect":
+                        {
+      {
+        "@nodeField":"diffuseColor",
+        "@protoField":"diffuseColor"
+      }
+    },
+                    }                    "field":
+                    {
+      {
+        "@accessType":"inputOutput",
+        "@name":"enabled",
+        "@type":"SFBool"
+      }
+    },
+                    "field":
+                    {
+      {
+        "@accessType":"inputOutput",
+        "@name":"diffuseColor",
+        "@type":"SFColor"
+      }
+    },
+                    "field":
+                    {
+      {
+        "@accessType":"outputOnly",
+        "@name":"newColor",
+        "@type":"SFColor"
+      }
+    },
+                    "field":
+                    {
+      {
+        "@accessType":"inputOnly",
+        "@name":"clockTrigger",
+        "@type":"SFTime"
+      }
+    },
+                }            }        }        "Group":
+        {
+      {
+        "@DEF":"DeclarativeGroupExample"
+      }
+            "Shape":
+            {
+                "Appearance":
+                {
+      {
+        "@DEF":"DeclarativeAppearanceExample"
+      }
+                    "ProtoInstance":
+                    {
+      {
+        "@DEF":"MyMaterialModulator",
+        "@name":"MaterialModulator"
+      }
+    },
+                }                "Cone":
+                {
+      {
+        "@bottom":"false",
+        "@bottomRadius":"0.05",
+        "@height":"0.1"
+      }
+    },
+                "MetadataString":
+                {
+      {
+        "@DEF":"FindableMetadataStringTest",
+        "@name":"findThisNameValue",
+        "@value":""test case""
+      }
+    },
+            }        }        "Group":
+        {
+      {
+        "@DEF":"TestFieldObjectsGroup"
+      }
+    },
+        "Sound":
+        {
+      {
+        "@location":"0 1.6 0"
+      }
+            "AudioClip":
+            {
+      {
+        "@description":"chimes",
+        "@url":""chimes.wav" "https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav""
+      }
+    },
+        }        "Sound":
+        {
+      {
+        "@location":"0 1.6 0"
+      }
+            "MovieTexture":
+            {
+      {
+        "@description":"mpgsys.mpg from ConformanceNist suite",
+        "@url":""mpgsys.mpg" "https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg""
+      }
+    },
+        }        "Shape":
+        {
+      {
+        "@DEF":"ExtrusionShape"
+      }
+            "Appearance":
+            {
+      {
+        "@DEF":"TransparentAppearance"
+      }
+                "Material":
+                {
+      {
+        "@transparency":"1.0"
+      }
+    },
+            }            "Extrusion":
+            {
+      {
+        "@DEF":"ExampleExtrusion"
+      }
+    },
+        }        "Group":
+        {
+            "ProtoDeclare":
+            {
+      {
+        "@name":"NewWorldInfo"
+      }
+                "ProtoInterface":
+                {
+                    "field":
+                    {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"description",
+        "@type":"SFString"
+      }
+    },
+                }                "ProtoBody":
+                {
+                    "WorldInfo":
+                    {
+    }
+                }            }            "ProtoInstance":
+            {
+      {
+        "@DEF":"Proto1",
+        "@name":"NewWorldInfo"
+      }
+                "fieldValue":
+                {
+      {
+        "@name":"description",
+        "@value":"testing 1 2 3"
+      }
+    },
+            }            "Group":
+            {
+      {
+        "@DEF":"Node2"
+      }
+    },
+            "ProtoInstance":
+            {
+      {
+        "@DEF":"Proto3",
+        "@name":"NewWorldInfo"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@DEF":"Node4"
+      }
+    },
+        }        "ProtoDeclare":
+        {
+      {
+        "@name":"ShaderProto"
+      }
+            "ProtoBody":
+            {
+                "ProgramShader":
+                {
+    },
+            }        }        "Shape":
+        {
+            "Appearance":
+            {
+                "ProgramShader":
+                {
+      {
+        "@DEF":"TestShader1"
+      }
+                    "ShaderProgram":
+                    {
+      {
+        "@DEF":"TestShader2"
+      }
+    },
+                }                "ProtoInstance":
+                {
+      {
+        "@DEF":"TestShader3",
+        "@name":"ShaderProto"
+      }
+    },
+                "ComposedShader":
+                {
+      {
+        "@DEF":"TestShader4"
+      }
+                    "ShaderPart":
+                    {
+      {
+        "@DEF":"TestShader5"
+      }
+    },
+                }            }        }        "Transform":
+        {
+      {
+        "@DEF":"SpecialtyNodes"
+      }
+            "CADLayer":
+            {
+                "CADAssembly":
+                {
+                    "CADPart":
+                    {
+                        "CADFace":
+                        {
+    },
+                    }                }            }            "EspduTransform":
+            {
+    },
+            "ReceiverPdu":
+            {
+    },
+            "SignalPdu":
+            {
+    },
+            "TransmitterPdu":
+            {
+    },
+            "DISEntityManager":
+            {
+                "DISEntityTypeMapping":
+                {
+    },
+            }        }        "EspduTransform":
+        {
+            "WorldInfo":
+            {
+    }
+        }        "ReceiverPdu":
+        {
+    },
+        "SignalPdu":
+        {
+    },
+        "TransmitterPdu":
+        {
+    },
+        "DISEntityManager":
+        {
+            "DISEntityTypeMapping":
+            {
+    },
+        }        "LoadSensor":
+        {
+            "Anchor":
+            {
+      {
+        "@USE":"siteAnchor"
+      }
+    },
+            "Inline":
+            {
+      {
+        "@USE":"inlineScene"
+      }
+    },
+            "DISEntityTypeMapping":
+            {
+    },
+            "GeoMetadata":
+            {
+    },
+            "AudioClip":
+            {
+    },
+            "ImageCubeMapTexture":
+            {
+    },
+            "ImageTexture3D":
+            {
+    },
+            "ImageTexture":
+            {
+    },
+            "MovieTexture":
+            {
+    },
+            "Script":
+            {
+    },
+            "PackagedShader":
+            {
+    },
+            "ShaderPart":
+            {
+    },
+            "ShaderProgram":
+            {
+    },
+        }    }}
+
+Python-to-JSON export of JSON output successful (under development)
+python HelloWorldProgramOutput.py load and self-test diagnostics complete.
