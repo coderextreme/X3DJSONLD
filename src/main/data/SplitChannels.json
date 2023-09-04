@@ -56,7 +56,7 @@
           },
           {
             "@name":"translated",
-            "@content":"02 September 2023"
+            "@content":"04 September 2023"
           },
           {
             "@name":"generator",
@@ -367,23 +367,15 @@
           },
           { "StreamAudioDestination":
             {
-              "@channelCountMode":"MAX",
-              "@channelInterpretation":"SPEAKERS",
               "-children":[
                 { "Gain":
                   {
-                    "@channelCountMode":"MAX",
-                    "@channelInterpretation":"SPEAKERS",
                     "-children":[
                       { "ChannelMerger":
                         {
-                          "@channelCountMode":"MAX",
-                          "@channelInterpretation":"SPEAKERS",
                           "-children":[
                             { "ChannelSelector":
                               {
-                                "@channelCountMode":"MAX",
-                                "@channelInterpretation":"SPEAKERS",
                                 "-children":[
                                   { "Gain":
                                     {
@@ -396,8 +388,6 @@
                             { "ChannelSelector":
                               {
                                 "@channelSelection":1,
-                                "@channelCountMode":"MAX",
-                                "@channelInterpretation":"SPEAKERS",
                                 "-children":[
                                   { "Gain":
                                     {
@@ -420,7 +410,6 @@
             {
               "@DEF":"ChannelSplitter",
               "@channelCountMode":"EXPLICIT",
-              "@channelInterpretation":"SPEAKERS",
               "-children":[
                 { "AudioClip":
                   {

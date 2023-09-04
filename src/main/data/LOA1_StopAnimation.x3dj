@@ -1,0 +1,880 @@
+{ "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "LOA1_StopAnimation.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "Humanoid animation prototype reusable by any Humanoid."
+        },
+        {
+          "@name": "creator",
+          "@content": "Cindy Ballreich cindy@ballreich.net 3Name3D, Joe Williams, Don Brutzman"
+        },
+        {
+          "@name": "rights",
+          "@content": "1997 3Name3D / Yglesias, Wallock, Divekar, Inc., all rights reserved."
+        },
+        {
+          "@name": "translator",
+          "@content": "Ozan APAYDIN"
+        },
+        {
+          "@name": "created",
+          "@content": "1 December 2001"
+        },
+        {
+          "@name": "modified",
+          "@content": "23 May 2020"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://www.HAnim.org"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://HAnim.org/Models"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://HAnim.org/Nodes"
+        },
+        {
+          "@name": "subject",
+          "@content": "Nancy Stand Animation HAnim 2001"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_StopAnimation.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        },
+        {
+          "@name": "converter",
+          "@content": "x3d-tidy V1.0.56, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "converted",
+          "@content": "Mon, 04 Sep 2023 07:58:29 GMT"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        { "ProtoDeclare":
+          {
+            "@name":"LOA1_StopAnimation",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFTime",
+                  "@name": "cycleInterval",
+                  "@value": 0.00999999977648258
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFBool",
+                  "@name": "enabled",
+                  "@value": true
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFBool",
+                  "@name": "loop",
+                  "@value": true
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFTime",
+                  "@name": "startTime"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFTime",
+                  "@name": "stopTime",
+                  "@value": -1
+                },
+                {
+                  "@accessType": "outputOnly",
+                  "@type": "SFFloat",
+                  "@name": "fraction_changed"
+                },
+                {
+                  "@accessType": "outputOnly",
+                  "@type": "SFBool",
+                  "@name": "isActive"
+                },
+                {
+                  "@accessType": "outputOnly",
+                  "@type": "SFVec3f",
+                  "@name": "HumanoidRoot_translation_changed"
+                },
+                {
+                  "@accessType": "outputOnly",
+                  "@type": "SFRotation",
+                  "@name": "HumanoidRoot_rotation_changed"
+                },
+                {
+                  "@accessType": "outputOnly",
+                  "@type": "SFRotation",
+                  "@name": "lower_body_rotation_changed"
+                },
+                {
+                  "@accessType": "outputOnly",
+                  "@type": "SFRotation",
+                  "@name": "l_hip_rotation_changed"
+                },
+                {
+                  "@accessType": "outputOnly",
+                  "@type": "SFRotation",
+                  "@name": "l_knee_rotation_changed"
+                },
+                {
+                  "@accessType": "outputOnly",
+                  "@type": "SFRotation",
+                  "@name": "l_ankle_rotation_changed"
+                },
+                {
+                  "@accessType": "outputOnly",
+                  "@type": "SFRotation",
+                  "@name": "l_midtarsal_rotation_changed"
+                },
+                {
+                  "@accessType": "outputOnly",
+                  "@type": "SFRotation",
+                  "@name": "r_hip_rotation_changed"
+                },
+                {
+                  "@accessType": "outputOnly",
+                  "@type": "SFRotation",
+                  "@name": "r_knee_rotation_changed"
+                },
+                {
+                  "@accessType": "outputOnly",
+                  "@type": "SFRotation",
+                  "@name": "r_ankle_rotation_changed"
+                },
+                {
+                  "@accessType": "outputOnly",
+                  "@type": "SFRotation",
+                  "@name": "r_midtarsal_rotation_changed"
+                },
+                {
+                  "@accessType": "outputOnly",
+                  "@type": "SFRotation",
+                  "@name": "vl5_rotation_changed"
+                },
+                {
+                  "@accessType": "outputOnly",
+                  "@type": "SFRotation",
+                  "@name": "skullbase_rotation_changed"
+                },
+                {
+                  "@accessType": "outputOnly",
+                  "@type": "SFRotation",
+                  "@name": "l_shoulder_rotation_changed"
+                },
+                {
+                  "@accessType": "outputOnly",
+                  "@type": "SFRotation",
+                  "@name": "l_elbow_rotation_changed"
+                },
+                {
+                  "@accessType": "outputOnly",
+                  "@type": "SFRotation",
+                  "@name": "l_wrist_rotation_changed"
+                },
+                {
+                  "@accessType": "outputOnly",
+                  "@type": "SFRotation",
+                  "@name": "r_shoulder_rotation_changed"
+                },
+                {
+                  "@accessType": "outputOnly",
+                  "@type": "SFRotation",
+                  "@name": "r_elbow_rotation_changed"
+                },
+                {
+                  "@accessType": "outputOnly",
+                  "@type": "SFRotation",
+                  "@name": "r_wrist_rotation_changed"
+                }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                { "Group":
+                  {
+                    "-children": [
+                      { "TimeSensor":
+                        {
+                          "@DEF": "TIMER",
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "enabled",
+                                "@protoField": "enabled"
+                              },
+                              {
+                                "@nodeField": "cycleInterval",
+                                "@protoField": "cycleInterval"
+                              },
+                              {
+                                "@nodeField": "loop",
+                                "@protoField": "loop"
+                              },
+                              {
+                                "@nodeField": "startTime",
+                                "@protoField": "startTime"
+                              },
+                              {
+                                "@nodeField": "stopTime",
+                                "@protoField": "stopTime"
+                              },
+                              {
+                                "@nodeField": "isActive",
+                                "@protoField": "isActive"
+                              },
+                              {
+                                "@nodeField": "fraction_changed",
+                                "@protoField": "fraction_changed"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      { "PositionInterpolator":
+                        {
+                          "@DEF": "HUMANOIDROOT_POSITION_ANIMATOR",
+                          "@key": [
+                            0,
+                            1
+                          ],
+                          "@keyValue": [
+                            0, 0, 0,
+                            0, 0, 0
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "value_changed",
+                                "@protoField": "HumanoidRoot_translation_changed"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      { "OrientationInterpolator":
+                        {
+                          "@DEF": "HUMANOIDROOT_ANIMATOR",
+                          "@key": [
+                            0,
+                            1
+                          ],
+                          "@keyValue": [
+                            0, 0, 1, 0,
+                            0, 0, 1, 0
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "value_changed",
+                                "@protoField": "HumanoidRoot_rotation_changed"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      { "OrientationInterpolator":
+                        {
+                          "@DEF": "SACROILIAC_ANIMATOR",
+                          "@key": [
+                            0,
+                            1
+                          ],
+                          "@keyValue": [
+                            0, 0, 1, 0,
+                            0, 0, 1, 0
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "value_changed",
+                                "@protoField": "lower_body_rotation_changed"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      { "OrientationInterpolator":
+                        {
+                          "@DEF": "L_HIP_ANIMATOR",
+                          "@key": [
+                            0,
+                            1
+                          ],
+                          "@keyValue": [
+                            0, 0, 1, 0,
+                            0, 0, 1, 0
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "value_changed",
+                                "@protoField": "l_hip_rotation_changed"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      { "OrientationInterpolator":
+                        {
+                          "@DEF": "L_KNEE_ANIMATOR",
+                          "@key": [
+                            0,
+                            1
+                          ],
+                          "@keyValue": [
+                            0, 0, 1, 0,
+                            0, 0, 1, 0
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "value_changed",
+                                "@protoField": "l_knee_rotation_changed"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      { "OrientationInterpolator":
+                        {
+                          "@DEF": "L_ANKLE_ANIMATOR",
+                          "@key": [
+                            0,
+                            1
+                          ],
+                          "@keyValue": [
+                            0, 0, 1, 0,
+                            0, 0, 1, 0
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "value_changed",
+                                "@protoField": "l_ankle_rotation_changed"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      { "OrientationInterpolator":
+                        {
+                          "@DEF": "L_MIDTARSAL_ANIMATOR",
+                          "@key": [
+                            0,
+                            1
+                          ],
+                          "@keyValue": [
+                            1, 0, 0, 0,
+                            1, 0, 0, 0
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "value_changed",
+                                "@protoField": "l_midtarsal_rotation_changed"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      { "OrientationInterpolator":
+                        {
+                          "@DEF": "R_HIP_ANIMATOR",
+                          "@key": [
+                            0,
+                            1
+                          ],
+                          "@keyValue": [
+                            0, 0, 1, 0,
+                            0, 0, 1, 0
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "value_changed",
+                                "@protoField": "r_hip_rotation_changed"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      { "OrientationInterpolator":
+                        {
+                          "@DEF": "R_KNEE_ANIMATOR",
+                          "@key": [
+                            0,
+                            1
+                          ],
+                          "@keyValue": [
+                            0, 0, 1, 0,
+                            0, 0, 1, 0
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "value_changed",
+                                "@protoField": "r_knee_rotation_changed"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      { "OrientationInterpolator":
+                        {
+                          "@DEF": "R_ANKLE_ANIMATOR",
+                          "@key": [
+                            0,
+                            1
+                          ],
+                          "@keyValue": [
+                            0, 0, 1, 0,
+                            0, 0, 1, 0
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "value_changed",
+                                "@protoField": "r_ankle_rotation_changed"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      { "OrientationInterpolator":
+                        {
+                          "@DEF": "R_MIDTARSAL_ANIMATOR",
+                          "@key": [
+                            0,
+                            1
+                          ],
+                          "@keyValue": [
+                            1, 0, 0, 0,
+                            1, 0, 0, 0
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "value_changed",
+                                "@protoField": "r_midtarsal_rotation_changed"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      { "OrientationInterpolator":
+                        {
+                          "@DEF": "VL5_ANIMATOR",
+                          "@key": [
+                            0,
+                            1
+                          ],
+                          "@keyValue": [
+                            0, 0, 1, 0,
+                            0, 0, 1, 0
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "value_changed",
+                                "@protoField": "vl5_rotation_changed"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      { "OrientationInterpolator":
+                        {
+                          "@DEF": "SKULLBASE_ANIMATOR",
+                          "@key": [
+                            0,
+                            1
+                          ],
+                          "@keyValue": [
+                            0, 0, 1, 0,
+                            0, 0, 1, 0
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "value_changed",
+                                "@protoField": "skullbase_rotation_changed"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      { "OrientationInterpolator":
+                        {
+                          "@DEF": "L_SHOULDER_ANIMATOR",
+                          "@key": [
+                            0,
+                            1
+                          ],
+                          "@keyValue": [
+                            0, 0, 1, 0,
+                            0, 0, 1, 0
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "value_changed",
+                                "@protoField": "l_shoulder_rotation_changed"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      { "OrientationInterpolator":
+                        {
+                          "@DEF": "L_ELBOW_ANIMATOR",
+                          "@key": [
+                            0,
+                            1
+                          ],
+                          "@keyValue": [
+                            0, 0, 1, 0,
+                            0, 0, 1, 0
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "value_changed",
+                                "@protoField": "l_elbow_rotation_changed"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      { "OrientationInterpolator":
+                        {
+                          "@DEF": "L_WRIST_ANIMATOR",
+                          "@key": [
+                            0,
+                            1
+                          ],
+                          "@keyValue": [
+                            0, 0, 1, 0,
+                            0, 0, 1, 0
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "value_changed",
+                                "@protoField": "l_wrist_rotation_changed"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      { "OrientationInterpolator":
+                        {
+                          "@DEF": "R_SHOULDER_ANIMATOR",
+                          "@key": [
+                            0,
+                            1
+                          ],
+                          "@keyValue": [
+                            0, 0, 1, 0,
+                            0, 0, 1, 0
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "value_changed",
+                                "@protoField": "r_shoulder_rotation_changed"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      { "OrientationInterpolator":
+                        {
+                          "@DEF": "R_ELBOW_ANIMATOR",
+                          "@key": [
+                            0,
+                            1
+                          ],
+                          "@keyValue": [
+                            0, 0, 1, 0,
+                            0, 0, 1, 0
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "value_changed",
+                                "@protoField": "r_elbow_rotation_changed"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      { "OrientationInterpolator":
+                        {
+                          "@DEF": "R_WRIST_ANIMATOR",
+                          "@key": [
+                            0,
+                            1
+                          ],
+                          "@keyValue": [
+                            0, 0, 1, 0,
+                            0, 0, 1, 0
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "value_changed",
+                                "@protoField": "r_wrist_rotation_changed"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "TIMER",
+                    "@fromField": "fraction_changed",
+                    "@toNode": "HUMANOIDROOT_POSITION_ANIMATOR",
+                    "@toField": "set_fraction"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "TIMER",
+                    "@fromField": "fraction_changed",
+                    "@toNode": "HUMANOIDROOT_ANIMATOR",
+                    "@toField": "set_fraction"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "TIMER",
+                    "@fromField": "fraction_changed",
+                    "@toNode": "SACROILIAC_ANIMATOR",
+                    "@toField": "set_fraction"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "TIMER",
+                    "@fromField": "fraction_changed",
+                    "@toNode": "L_HIP_ANIMATOR",
+                    "@toField": "set_fraction"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "TIMER",
+                    "@fromField": "fraction_changed",
+                    "@toNode": "L_KNEE_ANIMATOR",
+                    "@toField": "set_fraction"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "TIMER",
+                    "@fromField": "fraction_changed",
+                    "@toNode": "L_ANKLE_ANIMATOR",
+                    "@toField": "set_fraction"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "TIMER",
+                    "@fromField": "fraction_changed",
+                    "@toNode": "L_MIDTARSAL_ANIMATOR",
+                    "@toField": "set_fraction"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "TIMER",
+                    "@fromField": "fraction_changed",
+                    "@toNode": "R_HIP_ANIMATOR",
+                    "@toField": "set_fraction"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "TIMER",
+                    "@fromField": "fraction_changed",
+                    "@toNode": "R_KNEE_ANIMATOR",
+                    "@toField": "set_fraction"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "TIMER",
+                    "@fromField": "fraction_changed",
+                    "@toNode": "R_ANKLE_ANIMATOR",
+                    "@toField": "set_fraction"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "TIMER",
+                    "@fromField": "fraction_changed",
+                    "@toNode": "R_MIDTARSAL_ANIMATOR",
+                    "@toField": "set_fraction"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "TIMER",
+                    "@fromField": "fraction_changed",
+                    "@toNode": "VL5_ANIMATOR",
+                    "@toField": "set_fraction"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "TIMER",
+                    "@fromField": "fraction_changed",
+                    "@toNode": "SKULLBASE_ANIMATOR",
+                    "@toField": "set_fraction"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "TIMER",
+                    "@fromField": "fraction_changed",
+                    "@toNode": "L_SHOULDER_ANIMATOR",
+                    "@toField": "set_fraction"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "TIMER",
+                    "@fromField": "fraction_changed",
+                    "@toNode": "L_ELBOW_ANIMATOR",
+                    "@toField": "set_fraction"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "TIMER",
+                    "@fromField": "fraction_changed",
+                    "@toNode": "L_WRIST_ANIMATOR",
+                    "@toField": "set_fraction"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "TIMER",
+                    "@fromField": "fraction_changed",
+                    "@toNode": "R_SHOULDER_ANIMATOR",
+                    "@toField": "set_fraction"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "TIMER",
+                    "@fromField": "fraction_changed",
+                    "@toNode": "R_ELBOW_ANIMATOR",
+                    "@toField": "set_fraction"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "TIMER",
+                    "@fromField": "fraction_changed",
+                    "@toNode": "R_WRIST_ANIMATOR",
+                    "@toField": "set_fraction"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        { "WorldInfo":
+          {
+            "@title": "LOA1_StopAnimation.x3d"
+          }
+        },
+        { "Anchor":
+          {
+            "@description": "InterchangableActorsViaDynamicRouting",
+            "@url": [
+              "InterchangableActorsViaDynamicRouting.x3d",
+              "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.x3d",
+              "InterchangableActorsViaDynamicRouting.wrl",
+              "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.wrl"
+            ],
+            "@parameter": [
+              "target=_blank"
+            ],
+            "-children": [
+              { "Shape":
+                {
+                  "-appearance": { "Appearance":
+                    {
+                      "-material": { "Material":
+                        {
+                          "@diffuseColor": [ 1, 1, 0.2 ]
+                        }
+                      }
+                    }
+                  },
+                  "-geometry": { "Text":
+                    {
+                      "@string": [
+                        "LOA1_StopAnimation.x3d",
+                        "defines a prototype",
+                        "for animating a humanoid.",
+                        "",
+                        "Click this text to see",
+                        "InterchangableActorsViaDynamicRouting example."
+                      ],
+                      "-fontStyle": { "FontStyle":
+                        {
+                          "@size": 0.8,
+                          "@justify": [
+                            "MIDDLE",
+                            "MIDDLE"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
