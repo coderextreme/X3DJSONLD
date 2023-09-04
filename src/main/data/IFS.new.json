@@ -41,10 +41,6 @@
             "@content":"9 November 2020"
           },
           {
-            "@name":"license",
-            "@content":"../license.html"
-          },
-          {
             "@name":"translated",
             "@content":"04 September 2023"
           },
@@ -63,9 +59,6 @@
           { "Group":
             {
               "-children":[
-                {
-                  "#comment":"DEFS for markers of skeleton joints, segments, and sites"
-                },
                 { "Transform":
                   {
                     "@translation":[0,2.1,0],

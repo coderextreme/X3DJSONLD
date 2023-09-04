@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "https://www.web3d.org/specifications/x3d-3.0.dtd">
-<X3D profile='Interchange' version='3.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Interchange' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='tovrmlx3d, http://castle-engine.sourceforge.net/view3dscene.php#section_converting' name='generator'/>
-    <meta content='t1.wrl' name='source'/>
   </head>
   <Scene>
-    <NavigationInfo avatarSize='200 200 120' speed='3.0' transitionType='"LINEAR"' type='"EXAMINE" "FLY" "WALK"'/>
-    <WorldInfo title='Arts Mapper'/>
-    <Viewpoint description='looking North' fieldOfView='0.7853981' orientation='1 0 0 -0.7' position='0 60 110'/>
-    <Viewpoint description='looking East' fieldOfView='0.7853981' orientation='0 0.4 0 -1.4' position='-140 30 0'/>
-    <Viewpoint description='Overhead' fieldOfView='0.7853981' orientation='1 0 0 -1.57' position='0 150 0'/>
     <ProtoDeclare name='school'>
       <ProtoInterface>
-        <field name='pos' accessType='initializeOnly' type='SFVec3f' value='0 0 0'/>
+        <field name='pos' accessType='initializeOnly' type='SFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
         <Transform>
@@ -33,7 +27,7 @@
     </ProtoDeclare>
     <ProtoDeclare name='institute'>
       <ProtoInterface>
-        <field name='pos' accessType='initializeOnly' type='SFVec3f' value='0 0 0'/>
+        <field name='pos' accessType='initializeOnly' type='SFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
         <Transform>
@@ -51,7 +45,7 @@
     </ProtoDeclare>
     <ProtoDeclare name='disart_org'>
       <ProtoInterface>
-        <field name='pos' accessType='initializeOnly' type='SFVec3f' value='0 0 0'/>
+        <field name='pos' accessType='initializeOnly' type='SFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
         <Transform>
@@ -69,8 +63,8 @@
     </ProtoDeclare>
     <ProtoDeclare name='org'>
       <ProtoInterface>
-        <field name='posi' accessType='initializeOnly' type='SFVec3f' value='0 0 0'/>
-        <field name='col' accessType='initializeOnly' type='SFColor' value='0 0 0'/>
+        <field name='posi' accessType='initializeOnly' type='SFVec3f'/>
+        <field name='col' accessType='initializeOnly' type='SFColor'/>
       </ProtoInterface>
       <ProtoBody>
         <Transform>
@@ -92,7 +86,7 @@
     </ProtoDeclare>
     <ProtoDeclare name='l'>
       <ProtoInterface>
-        <field name='pos' accessType='initializeOnly' type='SFVec3f' value='0 0 0'/>
+        <field name='pos' accessType='initializeOnly' type='SFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
         <ProtoInstance name='org'>
@@ -105,7 +99,7 @@
     </ProtoDeclare>
     <ProtoDeclare name='r'>
       <ProtoInterface>
-        <field name='pos' accessType='initializeOnly' type='SFVec3f' value='0 0 0'/>
+        <field name='pos' accessType='initializeOnly' type='SFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
         <ProtoInstance name='org'>
@@ -118,7 +112,7 @@
     </ProtoDeclare>
     <ProtoDeclare name='n'>
       <ProtoInterface>
-        <field name='pos' accessType='initializeOnly' type='SFVec3f' value='0 0 0'/>
+        <field name='pos' accessType='initializeOnly' type='SFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
         <ProtoInstance name='org'>
@@ -131,7 +125,7 @@
     </ProtoDeclare>
     <ProtoDeclare name='i'>
       <ProtoInterface>
-        <field name='pos' accessType='initializeOnly' type='SFVec3f' value='0 0 0'/>
+        <field name='pos' accessType='initializeOnly' type='SFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
         <ProtoInstance name='org'>
@@ -142,8 +136,13 @@
         </ProtoInstance>
       </ProtoBody>
     </ProtoDeclare>
+    <NavigationInfo avatarSize='200 200 120' speed='3.0' transitionType='"LINEAR"' type='"EXAMINE" "FLY" "WALK"'/>
+    <WorldInfo title='Arts Mapper'/>
+    <Viewpoint description='looking North' fieldOfView='0.7853981' orientation='1 0 0 -0.7' position='0 60 110'/>
+    <Viewpoint description='looking East' fieldOfView='0.7853981' orientation='0 0.4 0 -1.4' position='-140 30 0'/>
+    <Viewpoint description='Overhead' fieldOfView='0.7853981' orientation='1 0 0 -1.57' position='0 150 0'/>
     <Transform translation='-468 0 315'>
-      <Inline url='"t.wrl"'/>
+      <Inline global='true' url='"t.wrl"'/>
       <Anchor description='Derby Women&apos;s Centre' url='"javascript:window.open(&apos;./data/566.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
         <ProtoInstance name='institute'>
           <fieldValue name='pos' value='435.3 0.1 -335.6'/>

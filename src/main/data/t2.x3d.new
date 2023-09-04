@@ -1,38 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "https://www.web3d.org/specifications/x3d-3.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Interchange" version="3.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.0.xsd" ><head><component name="Networking" level="2"></component>
-<meta name="generator" content="view3dscene, https://castle-engine.io/view3dscene.php"></meta>
-<meta name="source" content="t1.wrl"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Interchange" version="4.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="generator" content="view3dscene, https://castle-engine.io/view3dscene.php"></meta>
+<component name="Networking" level="2"></component>
 </head>
-<Scene><NavigationInfo type="&quot;EXAMINE&quot; &quot;FLY&quot; &quot;WALK&quot;" speed="3" avatarSize="200 200 120"></NavigationInfo>
-<WorldInfo title="Arts Mapper"></WorldInfo>
-<Viewpoint description="looking North" position="0 60 110" orientation="1 0 0 -0.699999988079071" fieldOfView="0.785398125648499"></Viewpoint>
-<Viewpoint description="looking East" position="-140 30 0" orientation="0 0.400000005960464 0 -1.39999997615814" fieldOfView="0.785398125648499"></Viewpoint>
-<Viewpoint description="Overhead" position="0 150 0" orientation="1 0 0 -1.57000005245209" fieldOfView="0.785398125648499"></Viewpoint>
-<ProtoDeclare name="org"><ProtoInterface><field name="posi" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
-<field name="col" accessType="initializeOnly" type="SFColor" value="0 0 0"></field>
+<Scene><ProtoDeclare name="org"><ProtoInterface><field accessType="initializeOnly" type="SFVec3f" name="posi"></field>
+<field accessType="initializeOnly" type="SFColor" name="col"></field>
 </ProtoInterface>
-<ProtoBody><Transform><Shape><Appearance><Material transparency="0.400000005960464"><IS><connect nodeField="emissiveColor" protoField="col"></connect>
+<ProtoBody><Transform><Shape><Appearance><Material transparency="0.4"><IS><connect nodeField="emissiveColor" protoField="col"></connect>
 </IS>
 </Material>
 </Appearance>
-<Sphere radius="1.10000002384186"></Sphere>
+<Sphere radius="1.1"></Sphere>
 </Shape>
 <IS><connect nodeField="translation" protoField="posi"></connect>
 </IS>
 </Transform>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoDeclare name="r"><ProtoInterface><field name="pos" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
+<ProtoDeclare name="r"><ProtoInterface><field accessType="initializeOnly" type="SFVec3f" name="pos"></field>
 </ProtoInterface>
-<ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="0 0.300000011920929 1"></fieldValue>
-<fieldValue name="posi"></fieldValue>
+<ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="0 0.3 1"></fieldValue>
 <IS><connect nodeField="posi" protoField="pos"></connect>
 </IS>
 </ProtoInstance>
 </ProtoBody>
 </ProtoDeclare>
-<Anchor url="&quot;javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="High Peak Community Arts"><ProtoInstance name="r"><fieldValue name="pos" value="400 0.100000001490116 -385"></fieldValue>
+<NavigationInfo type="&quot;EXAMINE&quot; &quot;FLY&quot; &quot;WALK&quot;" avatarSize="200 200 120" speed="3"></NavigationInfo>
+<WorldInfo title="Arts Mapper"></WorldInfo>
+<Viewpoint description="looking North" position="0 60 110" orientation="1 0 0 -0.699999988079071" fieldOfView="0.7853981"></Viewpoint>
+<Viewpoint description="looking East" position="-140 30 0" orientation="0 0.400000005960464 0 -1.39999997615814" fieldOfView="0.7853981"></Viewpoint>
+<Viewpoint description="Overhead" position="0 150 0" orientation="1 0 0 -1.57000005245209" fieldOfView="0.7853981"></Viewpoint>
+<Anchor description="High Peak Community Arts" url="&quot;javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;"><ProtoInstance name="r"><fieldValue name="pos" value="400 0.1 -385"></fieldValue>
 </ProtoInstance>
 </Anchor>
 </Scene>

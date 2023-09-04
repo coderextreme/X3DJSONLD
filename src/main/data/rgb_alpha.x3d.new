@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "https://www.web3d.org/specifications/x3d-3.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Interchange" version="3.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.0.xsd" ><head><meta name="title" content="rgb_alpha.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Interchange" version="4.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="rgb_alpha.x3d"></meta>
 <meta name="Image" content="rgb_alpha-front.jpg"></meta>
 <meta name="Image" content="rgb_alpha-rear.jpg"></meta>
 <meta name="Image" content="rgb_alpha-top.jpg"></meta>
@@ -17,11 +17,10 @@
 <meta name="identifier" content="https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/PixelTexture/rgb_alpha.x3d"></meta>
 <meta name="generator" content="Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"></meta>
 <meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
-<meta name="license" content="../../license.html"></meta>
 </head>
 <Scene><NavigationInfo type="&quot;EXAMINE&quot; &quot;WALK&quot; &quot;FLY&quot; &quot;ANY&quot;"></NavigationInfo>
 <Group><Transform translation="6.14221 0.0694613 -0.000999451"><Shape><Appearance><Material></Material>
-<PixelTexture containerField="texture" DEF="RgbOpacityCheckerboard" image="2 2 4 4278190335 4294901760 4294901760 4278190335"></PixelTexture>
+<PixelTexture containerField="texture" DEF="RgbOpacityCheckerboard" image="2 2 4 -16776961 -65536 -65536 -16776961"></PixelTexture>
 </Appearance>
 <Box></Box>
 </Shape>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <component name='HAnim' level='1'/>
     <meta content='AllenDutton.x3d' name='title'/>
@@ -18,10 +18,8 @@
     <meta content='http://www.HAnim.org' name='reference'/>
     <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/AllenDutton.x3d' name='identifier'/>
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
-    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
-    <!-- Start scene graph. -->
     <WorldInfo title='AllenDutton.x3d'/>
     <HAnimHumanoid DEF='hanim_Humanoid' name='Humanoid' version='2.0'>
       <HAnimJoint USE='hanim_humanoid_root'/>
@@ -427,7 +425,7 @@
         <OrientationInterpolator DEF='upper_body_RotationInterpolator_Stand' key='0 1' keyValue='0 0 1 0 0 0 1 0'/>
         <OrientationInterpolator DEF='whole_body_RotationInterpolator_Stand' key='0 1' keyValue='0 0 1 0 0 0 1 0'/>
         <PositionInterpolator DEF='whole_body_TranslationInterpolator_Stand' key='0 1' keyValue='0 0 0 0 0 0'/>
-        <TimeSensor DEF='Stand_Time' cycleInterval='0.009999999776482582'/>
+        <TimeSensor DEF='Stand_Time' cycleInterval='0.00999999977648258'/>
       </Group>
       <Group DEF='Walk_Animation'>
         <OrientationInterpolator DEF='r_ankle_RotationInterpolator_BasicWalk' key='0 0.125 0.2083 0.375 0.4583 0.5 0.6667 0.75 0.7917 0.9167 1' keyValue='0 0 1 0 -1 0 0 0.3533 -1 0 0 0.1072 1 0 0 0.2612 1 0 0 0.1268 -1 0 0 0.01793 -1 0 0 0.05824 -1 0 0 0.2398 -1 0 0 0.35 -1 0 0 0.3322 0 0 1 0'/>
@@ -493,8 +491,8 @@
         <TimeSensor DEF='Jump_Time' cycleInterval='2.0' startTime='-1.0'/>
       </Group>
     </Group>
-    <ROUTE fromField='position_changed' fromNode='HudProx' toField='set_translation' toNode='HudXform'/>
-    <ROUTE fromField='orientation_changed' fromNode='HudProx' toField='set_rotation' toNode='HudXform'/>
+    <ROUTE fromField='position_changed' fromNode='HudProx' toField='translation' toNode='HudXform'/>
+    <ROUTE fromField='orientation_changed' fromNode='HudProx' toField='rotation' toNode='HudXform'/>
     <ROUTE fromField='touchTime' fromNode='Stand_Touch' toField='stopTime' toNode='Walk_Time'/>
     <ROUTE fromField='touchTime' fromNode='Stand_Touch' toField='stopTime' toNode='Run_Time'/>
     <ROUTE fromField='touchTime' fromNode='Stand_Touch' toField='stopTime' toNode='Jump_Time'/>
@@ -529,24 +527,24 @@
     <ROUTE fromField='fraction_changed' fromNode='Stand_Time' toField='set_fraction' toNode='upper_body_RotationInterpolator_Stand'/>
     <ROUTE fromField='fraction_changed' fromNode='Stand_Time' toField='set_fraction' toNode='whole_body_RotationInterpolator_Stand'/>
     <ROUTE fromField='fraction_changed' fromNode='Stand_Time' toField='set_fraction' toNode='whole_body_TranslationInterpolator_Stand'/>
-    <ROUTE fromField='value_changed' fromNode='r_ankle_RotationInterpolator_Stand' toField='set_rotation' toNode='hanim_r_ankle'/>
-    <ROUTE fromField='value_changed' fromNode='r_knee_RotationInterpolator_Stand' toField='set_rotation' toNode='hanim_r_knee'/>
-    <ROUTE fromField='value_changed' fromNode='r_hip_RotationInterpolator_Stand' toField='set_rotation' toNode='hanim_r_hip'/>
-    <ROUTE fromField='value_changed' fromNode='l_ankle_RotationInterpolator_Stand' toField='set_rotation' toNode='hanim_l_ankle'/>
-    <ROUTE fromField='value_changed' fromNode='l_knee_RotationInterpolator_Stand' toField='set_rotation' toNode='hanim_l_knee'/>
-    <ROUTE fromField='value_changed' fromNode='l_hip_RotationInterpolator_Stand' toField='set_rotation' toNode='hanim_l_hip'/>
-    <ROUTE fromField='value_changed' fromNode='lower_body_RotationInterpolator_Stand' toField='set_rotation' toNode='hanim_sacroiliac'/>
-    <ROUTE fromField='value_changed' fromNode='r_wrist_RotationInterpolator_Stand' toField='set_rotation' toNode='hanim_r_wrist'/>
-    <ROUTE fromField='value_changed' fromNode='r_elbow_RotationInterpolator_Stand' toField='set_rotation' toNode='hanim_r_elbow'/>
-    <ROUTE fromField='value_changed' fromNode='r_shoulder_RotationInterpolator_Stand' toField='set_rotation' toNode='hanim_r_shoulder'/>
-    <ROUTE fromField='value_changed' fromNode='l_wrist_RotationInterpolator_Stand' toField='set_rotation' toNode='hanim_l_wrist'/>
-    <ROUTE fromField='value_changed' fromNode='l_elbow_RotationInterpolator_Stand' toField='set_rotation' toNode='hanim_l_elbow'/>
-    <ROUTE fromField='value_changed' fromNode='l_shoulder_RotationInterpolator_Stand' toField='set_rotation' toNode='hanim_l_shoulder'/>
-    <ROUTE fromField='value_changed' fromNode='head_RotationInterpolator_Stand' toField='set_rotation' toNode='hanim_skullbase'/>
-    <ROUTE fromField='value_changed' fromNode='neck_RotationInterpolator_Stand' toField='set_rotation' toNode='hanim_vc4'/>
-    <ROUTE fromField='value_changed' fromNode='upper_body_RotationInterpolator_Stand' toField='set_rotation' toNode='hanim_vl1'/>
-    <ROUTE fromField='value_changed' fromNode='whole_body_RotationInterpolator_Stand' toField='set_rotation' toNode='hanim_humanoid_root'/>
-    <ROUTE fromField='value_changed' fromNode='whole_body_TranslationInterpolator_Stand' toField='set_translation' toNode='hanim_humanoid_root'/>
+    <ROUTE fromField='value_changed' fromNode='r_ankle_RotationInterpolator_Stand' toField='rotation' toNode='hanim_r_ankle'/>
+    <ROUTE fromField='value_changed' fromNode='r_knee_RotationInterpolator_Stand' toField='rotation' toNode='hanim_r_knee'/>
+    <ROUTE fromField='value_changed' fromNode='r_hip_RotationInterpolator_Stand' toField='rotation' toNode='hanim_r_hip'/>
+    <ROUTE fromField='value_changed' fromNode='l_ankle_RotationInterpolator_Stand' toField='rotation' toNode='hanim_l_ankle'/>
+    <ROUTE fromField='value_changed' fromNode='l_knee_RotationInterpolator_Stand' toField='rotation' toNode='hanim_l_knee'/>
+    <ROUTE fromField='value_changed' fromNode='l_hip_RotationInterpolator_Stand' toField='rotation' toNode='hanim_l_hip'/>
+    <ROUTE fromField='value_changed' fromNode='lower_body_RotationInterpolator_Stand' toField='rotation' toNode='hanim_sacroiliac'/>
+    <ROUTE fromField='value_changed' fromNode='r_wrist_RotationInterpolator_Stand' toField='rotation' toNode='hanim_r_wrist'/>
+    <ROUTE fromField='value_changed' fromNode='r_elbow_RotationInterpolator_Stand' toField='rotation' toNode='hanim_r_elbow'/>
+    <ROUTE fromField='value_changed' fromNode='r_shoulder_RotationInterpolator_Stand' toField='rotation' toNode='hanim_r_shoulder'/>
+    <ROUTE fromField='value_changed' fromNode='l_wrist_RotationInterpolator_Stand' toField='rotation' toNode='hanim_l_wrist'/>
+    <ROUTE fromField='value_changed' fromNode='l_elbow_RotationInterpolator_Stand' toField='rotation' toNode='hanim_l_elbow'/>
+    <ROUTE fromField='value_changed' fromNode='l_shoulder_RotationInterpolator_Stand' toField='rotation' toNode='hanim_l_shoulder'/>
+    <ROUTE fromField='value_changed' fromNode='head_RotationInterpolator_Stand' toField='rotation' toNode='hanim_skullbase'/>
+    <ROUTE fromField='value_changed' fromNode='neck_RotationInterpolator_Stand' toField='rotation' toNode='hanim_vc4'/>
+    <ROUTE fromField='value_changed' fromNode='upper_body_RotationInterpolator_Stand' toField='rotation' toNode='hanim_vl1'/>
+    <ROUTE fromField='value_changed' fromNode='whole_body_RotationInterpolator_Stand' toField='rotation' toNode='hanim_humanoid_root'/>
+    <ROUTE fromField='value_changed' fromNode='whole_body_TranslationInterpolator_Stand' toField='translation' toNode='hanim_humanoid_root'/>
     <ROUTE fromField='fraction_changed' fromNode='Walk_Time' toField='set_fraction' toNode='r_ankle_RotationInterpolator_BasicWalk'/>
     <ROUTE fromField='fraction_changed' fromNode='Walk_Time' toField='set_fraction' toNode='r_knee_RotationInterpolator_BasicWalk'/>
     <ROUTE fromField='fraction_changed' fromNode='Walk_Time' toField='set_fraction' toNode='r_hip_RotationInterpolator_BasicWalk'/>
@@ -565,24 +563,24 @@
     <ROUTE fromField='fraction_changed' fromNode='Walk_Time' toField='set_fraction' toNode='upper_body_RotationInterpolator_BasicWalk'/>
     <ROUTE fromField='fraction_changed' fromNode='Walk_Time' toField='set_fraction' toNode='whole_body_RotationInterpolator_BasicWalk'/>
     <ROUTE fromField='fraction_changed' fromNode='Walk_Time' toField='set_fraction' toNode='whole_body_TranslationInterpolator_BasicWalk'/>
-    <ROUTE fromField='value_changed' fromNode='r_ankle_RotationInterpolator_BasicWalk' toField='set_rotation' toNode='hanim_r_ankle'/>
-    <ROUTE fromField='value_changed' fromNode='r_knee_RotationInterpolator_BasicWalk' toField='set_rotation' toNode='hanim_r_knee'/>
-    <ROUTE fromField='value_changed' fromNode='r_hip_RotationInterpolator_BasicWalk' toField='set_rotation' toNode='hanim_r_hip'/>
-    <ROUTE fromField='value_changed' fromNode='l_ankle_RotationInterpolator_BasicWalk' toField='set_rotation' toNode='hanim_l_ankle'/>
-    <ROUTE fromField='value_changed' fromNode='l_knee_RotationInterpolator_BasicWalk' toField='set_rotation' toNode='hanim_l_knee'/>
-    <ROUTE fromField='value_changed' fromNode='l_hip_RotationInterpolator_BasicWalk' toField='set_rotation' toNode='hanim_l_hip'/>
-    <ROUTE fromField='value_changed' fromNode='lower_body_RotationInterpolator_BasicWalk' toField='set_rotation' toNode='hanim_sacroiliac'/>
-    <ROUTE fromField='value_changed' fromNode='r_wrist_RotationInterpolator_BasicWalk' toField='set_rotation' toNode='hanim_r_wrist'/>
-    <ROUTE fromField='value_changed' fromNode='r_elbow_RotationInterpolator_BasicWalk' toField='set_rotation' toNode='hanim_r_elbow'/>
-    <ROUTE fromField='value_changed' fromNode='r_shoulder_RotationInterpolator_BasicWalk' toField='set_rotation' toNode='hanim_r_shoulder'/>
-    <ROUTE fromField='value_changed' fromNode='l_wrist_RotationInterpolator_BasicWalk' toField='set_rotation' toNode='hanim_l_wrist'/>
-    <ROUTE fromField='value_changed' fromNode='l_elbow_RotationInterpolator_BasicWalk' toField='set_rotation' toNode='hanim_l_elbow'/>
-    <ROUTE fromField='value_changed' fromNode='l_shoulder_RotationInterpolator_BasicWalk' toField='set_rotation' toNode='hanim_l_shoulder'/>
-    <ROUTE fromField='value_changed' fromNode='head_RotationInterpolator_BasicWalk' toField='set_rotation' toNode='hanim_skullbase'/>
-    <ROUTE fromField='value_changed' fromNode='neck_RotationInterpolator_BasicWalk' toField='set_rotation' toNode='hanim_vc4'/>
-    <ROUTE fromField='value_changed' fromNode='upper_body_RotationInterpolator_BasicWalk' toField='set_rotation' toNode='hanim_vl1'/>
-    <ROUTE fromField='value_changed' fromNode='whole_body_RotationInterpolator_BasicWalk' toField='set_rotation' toNode='hanim_humanoid_root'/>
-    <ROUTE fromField='value_changed' fromNode='whole_body_TranslationInterpolator_BasicWalk' toField='set_translation' toNode='hanim_humanoid_root'/>
+    <ROUTE fromField='value_changed' fromNode='r_ankle_RotationInterpolator_BasicWalk' toField='rotation' toNode='hanim_r_ankle'/>
+    <ROUTE fromField='value_changed' fromNode='r_knee_RotationInterpolator_BasicWalk' toField='rotation' toNode='hanim_r_knee'/>
+    <ROUTE fromField='value_changed' fromNode='r_hip_RotationInterpolator_BasicWalk' toField='rotation' toNode='hanim_r_hip'/>
+    <ROUTE fromField='value_changed' fromNode='l_ankle_RotationInterpolator_BasicWalk' toField='rotation' toNode='hanim_l_ankle'/>
+    <ROUTE fromField='value_changed' fromNode='l_knee_RotationInterpolator_BasicWalk' toField='rotation' toNode='hanim_l_knee'/>
+    <ROUTE fromField='value_changed' fromNode='l_hip_RotationInterpolator_BasicWalk' toField='rotation' toNode='hanim_l_hip'/>
+    <ROUTE fromField='value_changed' fromNode='lower_body_RotationInterpolator_BasicWalk' toField='rotation' toNode='hanim_sacroiliac'/>
+    <ROUTE fromField='value_changed' fromNode='r_wrist_RotationInterpolator_BasicWalk' toField='rotation' toNode='hanim_r_wrist'/>
+    <ROUTE fromField='value_changed' fromNode='r_elbow_RotationInterpolator_BasicWalk' toField='rotation' toNode='hanim_r_elbow'/>
+    <ROUTE fromField='value_changed' fromNode='r_shoulder_RotationInterpolator_BasicWalk' toField='rotation' toNode='hanim_r_shoulder'/>
+    <ROUTE fromField='value_changed' fromNode='l_wrist_RotationInterpolator_BasicWalk' toField='rotation' toNode='hanim_l_wrist'/>
+    <ROUTE fromField='value_changed' fromNode='l_elbow_RotationInterpolator_BasicWalk' toField='rotation' toNode='hanim_l_elbow'/>
+    <ROUTE fromField='value_changed' fromNode='l_shoulder_RotationInterpolator_BasicWalk' toField='rotation' toNode='hanim_l_shoulder'/>
+    <ROUTE fromField='value_changed' fromNode='head_RotationInterpolator_BasicWalk' toField='rotation' toNode='hanim_skullbase'/>
+    <ROUTE fromField='value_changed' fromNode='neck_RotationInterpolator_BasicWalk' toField='rotation' toNode='hanim_vc4'/>
+    <ROUTE fromField='value_changed' fromNode='upper_body_RotationInterpolator_BasicWalk' toField='rotation' toNode='hanim_vl1'/>
+    <ROUTE fromField='value_changed' fromNode='whole_body_RotationInterpolator_BasicWalk' toField='rotation' toNode='hanim_humanoid_root'/>
+    <ROUTE fromField='value_changed' fromNode='whole_body_TranslationInterpolator_BasicWalk' toField='translation' toNode='hanim_humanoid_root'/>
     <ROUTE fromField='fraction_changed' fromNode='Run_Time' toField='set_fraction' toNode='r_ankle_RotationInterpolator_Run'/>
     <ROUTE fromField='fraction_changed' fromNode='Run_Time' toField='set_fraction' toNode='r_knee_RotationInterpolator_Run'/>
     <ROUTE fromField='fraction_changed' fromNode='Run_Time' toField='set_fraction' toNode='r_hip_RotationInterpolator_Run'/>
@@ -601,24 +599,24 @@
     <ROUTE fromField='fraction_changed' fromNode='Run_Time' toField='set_fraction' toNode='upper_body_RotationInterpolator_Run'/>
     <ROUTE fromField='fraction_changed' fromNode='Run_Time' toField='set_fraction' toNode='whole_body_RotationInterpolator_Run'/>
     <ROUTE fromField='fraction_changed' fromNode='Run_Time' toField='set_fraction' toNode='whole_body_TranslationInterpolator_Run'/>
-    <ROUTE fromField='value_changed' fromNode='r_ankle_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_r_ankle'/>
-    <ROUTE fromField='value_changed' fromNode='r_knee_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_r_knee'/>
-    <ROUTE fromField='value_changed' fromNode='r_hip_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_r_hip'/>
-    <ROUTE fromField='value_changed' fromNode='l_ankle_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_l_ankle'/>
-    <ROUTE fromField='value_changed' fromNode='l_knee_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_l_knee'/>
-    <ROUTE fromField='value_changed' fromNode='l_hip_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_l_hip'/>
-    <ROUTE fromField='value_changed' fromNode='lower_body_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_sacroiliac'/>
-    <ROUTE fromField='value_changed' fromNode='r_wrist_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_r_wrist'/>
-    <ROUTE fromField='value_changed' fromNode='r_elbow_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_r_elbow'/>
-    <ROUTE fromField='value_changed' fromNode='r_shoulder_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_r_shoulder'/>
-    <ROUTE fromField='value_changed' fromNode='l_wrist_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_l_wrist'/>
-    <ROUTE fromField='value_changed' fromNode='l_elbow_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_l_elbow'/>
-    <ROUTE fromField='value_changed' fromNode='l_shoulder_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_l_shoulder'/>
-    <ROUTE fromField='value_changed' fromNode='head_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_skullbase'/>
-    <ROUTE fromField='value_changed' fromNode='neck_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_vc4'/>
-    <ROUTE fromField='value_changed' fromNode='upper_body_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_vl1'/>
-    <ROUTE fromField='value_changed' fromNode='whole_body_RotationInterpolator_Run' toField='set_rotation' toNode='hanim_humanoid_root'/>
-    <ROUTE fromField='value_changed' fromNode='whole_body_TranslationInterpolator_Run' toField='set_translation' toNode='hanim_humanoid_root'/>
+    <ROUTE fromField='value_changed' fromNode='r_ankle_RotationInterpolator_Run' toField='rotation' toNode='hanim_r_ankle'/>
+    <ROUTE fromField='value_changed' fromNode='r_knee_RotationInterpolator_Run' toField='rotation' toNode='hanim_r_knee'/>
+    <ROUTE fromField='value_changed' fromNode='r_hip_RotationInterpolator_Run' toField='rotation' toNode='hanim_r_hip'/>
+    <ROUTE fromField='value_changed' fromNode='l_ankle_RotationInterpolator_Run' toField='rotation' toNode='hanim_l_ankle'/>
+    <ROUTE fromField='value_changed' fromNode='l_knee_RotationInterpolator_Run' toField='rotation' toNode='hanim_l_knee'/>
+    <ROUTE fromField='value_changed' fromNode='l_hip_RotationInterpolator_Run' toField='rotation' toNode='hanim_l_hip'/>
+    <ROUTE fromField='value_changed' fromNode='lower_body_RotationInterpolator_Run' toField='rotation' toNode='hanim_sacroiliac'/>
+    <ROUTE fromField='value_changed' fromNode='r_wrist_RotationInterpolator_Run' toField='rotation' toNode='hanim_r_wrist'/>
+    <ROUTE fromField='value_changed' fromNode='r_elbow_RotationInterpolator_Run' toField='rotation' toNode='hanim_r_elbow'/>
+    <ROUTE fromField='value_changed' fromNode='r_shoulder_RotationInterpolator_Run' toField='rotation' toNode='hanim_r_shoulder'/>
+    <ROUTE fromField='value_changed' fromNode='l_wrist_RotationInterpolator_Run' toField='rotation' toNode='hanim_l_wrist'/>
+    <ROUTE fromField='value_changed' fromNode='l_elbow_RotationInterpolator_Run' toField='rotation' toNode='hanim_l_elbow'/>
+    <ROUTE fromField='value_changed' fromNode='l_shoulder_RotationInterpolator_Run' toField='rotation' toNode='hanim_l_shoulder'/>
+    <ROUTE fromField='value_changed' fromNode='head_RotationInterpolator_Run' toField='rotation' toNode='hanim_skullbase'/>
+    <ROUTE fromField='value_changed' fromNode='neck_RotationInterpolator_Run' toField='rotation' toNode='hanim_vc4'/>
+    <ROUTE fromField='value_changed' fromNode='upper_body_RotationInterpolator_Run' toField='rotation' toNode='hanim_vl1'/>
+    <ROUTE fromField='value_changed' fromNode='whole_body_RotationInterpolator_Run' toField='rotation' toNode='hanim_humanoid_root'/>
+    <ROUTE fromField='value_changed' fromNode='whole_body_TranslationInterpolator_Run' toField='translation' toNode='hanim_humanoid_root'/>
     <ROUTE fromField='fraction_changed' fromNode='Jump_Time' toField='set_fraction' toNode='r_ankle_RotationInterpolator_Jump'/>
     <ROUTE fromField='fraction_changed' fromNode='Jump_Time' toField='set_fraction' toNode='r_knee_RotationInterpolator_Jump'/>
     <ROUTE fromField='fraction_changed' fromNode='Jump_Time' toField='set_fraction' toNode='r_hip_RotationInterpolator_Jump'/>
@@ -637,23 +635,23 @@
     <ROUTE fromField='fraction_changed' fromNode='Jump_Time' toField='set_fraction' toNode='upper_body_RotationInterpolator_Jump'/>
     <ROUTE fromField='fraction_changed' fromNode='Jump_Time' toField='set_fraction' toNode='whole_body_RotationInterpolator_Jump'/>
     <ROUTE fromField='fraction_changed' fromNode='Jump_Time' toField='set_fraction' toNode='whole_body_TranslationInterpolator_Jump'/>
-    <ROUTE fromField='value_changed' fromNode='r_ankle_RotationInterpolator_Jump' toField='set_rotation' toNode='hanim_r_ankle'/>
-    <ROUTE fromField='value_changed' fromNode='r_knee_RotationInterpolator_Jump' toField='set_rotation' toNode='hanim_r_knee'/>
-    <ROUTE fromField='value_changed' fromNode='r_hip_RotationInterpolator_Jump' toField='set_rotation' toNode='hanim_r_hip'/>
-    <ROUTE fromField='value_changed' fromNode='l_ankle_RotationInterpolator_Jump' toField='set_rotation' toNode='hanim_l_ankle'/>
-    <ROUTE fromField='value_changed' fromNode='l_knee_RotationInterpolator_Jump' toField='set_rotation' toNode='hanim_l_knee'/>
-    <ROUTE fromField='value_changed' fromNode='l_hip_RotationInterpolator_Jump' toField='set_rotation' toNode='hanim_l_hip'/>
-    <ROUTE fromField='value_changed' fromNode='lower_body_RotationInterpolator_Jump' toField='set_rotation' toNode='hanim_sacroiliac'/>
-    <ROUTE fromField='value_changed' fromNode='r_wrist_RotationInterpolator_Jump' toField='set_rotation' toNode='hanim_r_wrist'/>
-    <ROUTE fromField='value_changed' fromNode='r_elbow_RotationInterpolator_Jump' toField='set_rotation' toNode='hanim_r_elbow'/>
-    <ROUTE fromField='value_changed' fromNode='r_shoulder_RotationInterpolator_Jump' toField='set_rotation' toNode='hanim_r_shoulder'/>
-    <ROUTE fromField='value_changed' fromNode='l_wrist_RotationInterpolator_Jump' toField='set_rotation' toNode='hanim_l_wrist'/>
-    <ROUTE fromField='value_changed' fromNode='l_elbow_RotationInterpolator_Jump' toField='set_rotation' toNode='hanim_l_elbow'/>
-    <ROUTE fromField='value_changed' fromNode='l_shoulder_RotationInterpolator_Jump' toField='set_rotation' toNode='hanim_l_shoulder'/>
-    <ROUTE fromField='value_changed' fromNode='head_RotationInterpolator_Jump' toField='set_rotation' toNode='hanim_skullbase'/>
-    <ROUTE fromField='value_changed' fromNode='neck_RotationInterpolator_Jump' toField='set_rotation' toNode='hanim_vc4'/>
-    <ROUTE fromField='value_changed' fromNode='upper_body_RotationInterpolator_Jump' toField='set_rotation' toNode='hanim_vl1'/>
-    <ROUTE fromField='value_changed' fromNode='whole_body_RotationInterpolator_Jump' toField='set_rotation' toNode='hanim_humanoid_root'/>
-    <ROUTE fromField='value_changed' fromNode='whole_body_TranslationInterpolator_Jump' toField='set_translation' toNode='hanim_humanoid_root'/>
+    <ROUTE fromField='value_changed' fromNode='r_ankle_RotationInterpolator_Jump' toField='rotation' toNode='hanim_r_ankle'/>
+    <ROUTE fromField='value_changed' fromNode='r_knee_RotationInterpolator_Jump' toField='rotation' toNode='hanim_r_knee'/>
+    <ROUTE fromField='value_changed' fromNode='r_hip_RotationInterpolator_Jump' toField='rotation' toNode='hanim_r_hip'/>
+    <ROUTE fromField='value_changed' fromNode='l_ankle_RotationInterpolator_Jump' toField='rotation' toNode='hanim_l_ankle'/>
+    <ROUTE fromField='value_changed' fromNode='l_knee_RotationInterpolator_Jump' toField='rotation' toNode='hanim_l_knee'/>
+    <ROUTE fromField='value_changed' fromNode='l_hip_RotationInterpolator_Jump' toField='rotation' toNode='hanim_l_hip'/>
+    <ROUTE fromField='value_changed' fromNode='lower_body_RotationInterpolator_Jump' toField='rotation' toNode='hanim_sacroiliac'/>
+    <ROUTE fromField='value_changed' fromNode='r_wrist_RotationInterpolator_Jump' toField='rotation' toNode='hanim_r_wrist'/>
+    <ROUTE fromField='value_changed' fromNode='r_elbow_RotationInterpolator_Jump' toField='rotation' toNode='hanim_r_elbow'/>
+    <ROUTE fromField='value_changed' fromNode='r_shoulder_RotationInterpolator_Jump' toField='rotation' toNode='hanim_r_shoulder'/>
+    <ROUTE fromField='value_changed' fromNode='l_wrist_RotationInterpolator_Jump' toField='rotation' toNode='hanim_l_wrist'/>
+    <ROUTE fromField='value_changed' fromNode='l_elbow_RotationInterpolator_Jump' toField='rotation' toNode='hanim_l_elbow'/>
+    <ROUTE fromField='value_changed' fromNode='l_shoulder_RotationInterpolator_Jump' toField='rotation' toNode='hanim_l_shoulder'/>
+    <ROUTE fromField='value_changed' fromNode='head_RotationInterpolator_Jump' toField='rotation' toNode='hanim_skullbase'/>
+    <ROUTE fromField='value_changed' fromNode='neck_RotationInterpolator_Jump' toField='rotation' toNode='hanim_vc4'/>
+    <ROUTE fromField='value_changed' fromNode='upper_body_RotationInterpolator_Jump' toField='rotation' toNode='hanim_vl1'/>
+    <ROUTE fromField='value_changed' fromNode='whole_body_RotationInterpolator_Jump' toField='rotation' toNode='hanim_humanoid_root'/>
+    <ROUTE fromField='value_changed' fromNode='whole_body_TranslationInterpolator_Jump' toField='translation' toNode='hanim_humanoid_root'/>
   </Scene>
 </X3D>

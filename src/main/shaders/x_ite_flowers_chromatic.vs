@@ -1,4 +1,6 @@
+/*
 #version 300 es
+*/
 precision mediump float;
 
 uniform mat4 x3d_ModelViewMatrix;

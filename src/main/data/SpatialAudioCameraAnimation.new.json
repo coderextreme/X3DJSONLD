@@ -35,12 +35,12 @@
             "@content":"CHANGELOG.txt"
           },
           {
-            "@name":"TODO",
-            "@content":"credit for audio files"
-          },
-          {
             "@name":"reference",
             "@content":"https://www.medialab.hmu.gr/minipages/x3domAudio"
+          },
+          {
+            "@name":"TODO",
+            "@content":"credit for audio files"
           },
           {
             "@name":"identifier",
@@ -49,10 +49,6 @@
           {
             "@name":"generator",
             "@content":"X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
-          },
-          {
-            "@name":"license",
-            "@content":"../license.html"
           },
           {
             "@name":"translated",
@@ -118,38 +114,6 @@
               "@keyValue":[1,0,0,-0.523599,0.99999,0.003554,0.002727,-1.309007,0,-0.965926,-0.258819,-3.141593,0.002282,-0.793351,-0.60876,-3.135645,1,-1.0E-6,0,-0.523599]
             }
           },
-          { "ROUTE":
-            {
-              "@fromField":"fraction_changed",
-              "@fromNode":"TIMER",
-              "@toField":"set_fraction",
-              "@toNode":"Camera001-POS-INTERP"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"value_changed",
-              "@fromNode":"Camera001-POS-INTERP",
-              "@toField":"set_position",
-              "@toNode":"Camera001"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"fraction_changed",
-              "@fromNode":"TIMER",
-              "@toField":"set_fraction",
-              "@toNode":"Camera001-ROT-INTERP"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"value_changed",
-              "@fromNode":"Camera001-ROT-INTERP",
-              "@toField":"set_orientation",
-              "@toNode":"Camera001"
-            }
-          },
           { "Transform":
             {
               "@DEF":"Floor",
@@ -183,7 +147,7 @@
           { "Transform":
             {
               "@DEF":"TransformAudio1",
-              "@translation":[-933.1235,0,-926.25323],
+              "@translation":[-933.1235,0,-926.2532],
               "-children":[
                 { "Shape":
                   {
@@ -383,6 +347,38 @@
                   }
                 }
               ]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TIMER",
+              "@toField":"set_fraction",
+              "@toNode":"Camera001-POS-INTERP"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"Camera001-POS-INTERP",
+              "@toField":"position",
+              "@toNode":"Camera001"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"TIMER",
+              "@toField":"set_fraction",
+              "@toNode":"Camera001-ROT-INTERP"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"value_changed",
+              "@fromNode":"Camera001-ROT-INTERP",
+              "@toField":"orientation",
+              "@toNode":"Camera001"
             }
           }
         ]

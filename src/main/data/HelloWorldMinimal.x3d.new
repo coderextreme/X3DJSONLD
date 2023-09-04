@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd" ><!--All head/meta tags are optional, WorldInfo is also optional--><!--Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1--><head><meta name="title" content="HelloWorldMinimal.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="HelloWorldMinimal.x3d"></meta>
 <meta name="description" content="Hello World minimal example scene."></meta>
 <meta name="creator" content="Don Brutzman"></meta>
 <meta name="created" content="19 January 2020"></meta>
@@ -14,7 +14,6 @@
 <meta name="reference" content="https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldMinimalIndex.html"></meta>
 <meta name="identifier" content="https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldMinimal.x3d"></meta>
 <meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
-<meta name="license" content="../license.html"></meta>
 </head>
 <Scene><WorldInfo title="HelloWorldMinimal.x3d"></WorldInfo>
 <Shape><Text string="&quot;hello, world&quot;"></Text>
