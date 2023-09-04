@@ -146,8 +146,8 @@ JavaSerializer.prototype = {
 					max = i + 840;
 				}
 				this.codeno++;
-				this.code[co] = "protected class "+attrType+co+" {\n";
-				this.code[co] +=  "  protected org.web3d.x3d.jsail.fields."+attrType+" getArray() {\n";
+				this.code[co] = "private class "+attrType+co+" {\n";
+				this.code[co] +=  "  private org.web3d.x3d.jsail.fields."+attrType+" getArray() {\n";
 				this.code[co] += "    return new org.web3d.x3d.jsail.fields."+attrType+"(new "+type+"[] {"+lead+values.slice(i, max).join(j)+trail+"});\n";
 				this.code[co] += "  }\n";
 				this.code[co] += "}\n";

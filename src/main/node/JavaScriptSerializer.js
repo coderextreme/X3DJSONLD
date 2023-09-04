@@ -49,7 +49,7 @@ JavaScriptSerializer.prototype = {
 				str += this.postcode[postno];
 			}
 		}
-		str += "    "+element.nodeName+0+".toFileX3D(\""+clazz+".new.graal.x3d\");\n";
+		str += "    "+element.nodeName+0+".toFileJSON(\""+clazz+".new.graal.json\");\n";
 
 		return str;
 	},
