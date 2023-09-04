@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('3.3'),
+      version_ : SFString('4.0'),
       head_ : 
         head(
           meta_ : [
@@ -22,21 +22,10 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/rubikOnFire.x3d')),
-
-            meta(
-              name_ : SFString('description'),
-              content_ : SFString('a white rubik cube'))]),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/rubikOnFire.x3d'))]),
       Scene_ : 
         Scene(
           children_ : [
-            NavigationInfo(
-              type_ : MFString([SFString("EXAMINE")])),
-
-            Viewpoint(
-              description_ : SFString('Rubiks Cube on Fire'),
-              position_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(12)])),
-
             ProtoDeclare(
               name_ : SFString('anyShape'),
               ProtoInterface_ : 
@@ -44,39 +33,38 @@ var X3D0 =  X3D(
                   field_ : [
                     field(
                       type_ : SFString("SFVec3f"),
-                      name_ : SFString('xtranslation'),
                       accessType_ : SFString("inputOutput"),
-                      value_ : SFString('0 0 0')),
+                      name_ : SFString('xtranslation')),
 
                     field(
                       type_ : SFString("SFNode"),
-                      name_ : SFString('myShape'),
                       accessType_ : SFString("inputOutput"),
+                      name_ : SFString('myShape'),
                       children_ : [
                         Sphere()])]),
               ProtoBody_ : 
                 ProtoBody(
                   children_ : [
                     Transform(
-                      IS_ : 
-                        IS(
-                          connect_ : [
-                            connect(
-                              nodeField_ : SFString('translation'),
-                              protoField_ : SFString('xtranslation'))]),
                       child_ : 
                         Shape(
+                          appearance_ : 
+                            Appearance(
+                              material_ : 
+                                Material(
+                                  diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]))),
                           IS_ : 
                             IS(
                               connect_ : [
                                 connect(
                                   nodeField_ : SFString('geometry'),
-                                  protoField_ : SFString('myShape'))]),
-                          appearance_ : 
-                            Appearance(
-                              material_ : 
-                                Material(
-                                  diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)])))))])),
+                                  protoField_ : SFString('myShape'))])),
+                      IS_ : 
+                        IS(
+                          connect_ : [
+                            connect(
+                              nodeField_ : SFString('translation'),
+                              protoField_ : SFString('xtranslation'))]))])),
 
             ProtoDeclare(
               name_ : SFString('three'),
@@ -85,34 +73,23 @@ var X3D0 =  X3D(
                   field_ : [
                     field(
                       type_ : SFString("SFVec3f"),
-                      name_ : SFString('ytranslation'),
                       accessType_ : SFString("inputOutput"),
-                      value_ : SFString('0 0 0')),
+                      name_ : SFString('ytranslation')),
 
                     field(
                       type_ : SFString("SFNode"),
-                      name_ : SFString('myShape'),
                       accessType_ : SFString("inputOutput"),
+                      name_ : SFString('myShape'),
                       children_ : [
-                        Sphere()])]),
+                        Sphere(
+                          DEF_ : SFString('_1'))])]),
               ProtoBody_ : 
                 ProtoBody(
                   children_ : [
                     Transform(
-                      IS_ : 
-                        IS(
-                          connect_ : [
-                            connect(
-                              nodeField_ : SFString('translation'),
-                              protoField_ : SFString('ytranslation'))]),
                       children_ : [
                         ProtoInstance(
                           name_ : SFString('anyShape'),
-                          fieldValue_ : [
-                            fieldValue(
-                              name_ : SFString('xtranslation'),
-                              value_ : SFString('0 0 0'))],
-
                           IS_ : 
                             IS(
                               connect_ : [
@@ -146,7 +123,14 @@ var X3D0 =  X3D(
                               connect_ : [
                                 connect(
                                   nodeField_ : SFString('myShape'),
-                                  protoField_ : SFString('myShape'))]))])])),
+                                  protoField_ : SFString('myShape'))]))],
+
+                      IS_ : 
+                        IS(
+                          connect_ : [
+                            connect(
+                              nodeField_ : SFString('translation'),
+                              protoField_ : SFString('ytranslation'))]))])),
 
             ProtoDeclare(
               name_ : SFString('nine'),
@@ -155,34 +139,23 @@ var X3D0 =  X3D(
                   field_ : [
                     field(
                       type_ : SFString("SFVec3f"),
-                      name_ : SFString('ztranslation'),
                       accessType_ : SFString("inputOutput"),
-                      value_ : SFString('0 0 0')),
+                      name_ : SFString('ztranslation')),
 
                     field(
                       type_ : SFString("SFNode"),
-                      name_ : SFString('myShape'),
                       accessType_ : SFString("inputOutput"),
+                      name_ : SFString('myShape'),
                       children_ : [
-                        Sphere()])]),
+                        Sphere(
+                          DEF_ : SFString('_2'))])]),
               ProtoBody_ : 
                 ProtoBody(
                   children_ : [
                     Transform(
-                      IS_ : 
-                        IS(
-                          connect_ : [
-                            connect(
-                              nodeField_ : SFString('translation'),
-                              protoField_ : SFString('ztranslation'))]),
                       children_ : [
                         ProtoInstance(
                           name_ : SFString('three'),
-                          fieldValue_ : [
-                            fieldValue(
-                              name_ : SFString('ytranslation'),
-                              value_ : SFString('0 0 0'))],
-
                           IS_ : 
                             IS(
                               connect_ : [
@@ -216,7 +189,14 @@ var X3D0 =  X3D(
                               connect_ : [
                                 connect(
                                   nodeField_ : SFString('myShape'),
-                                  protoField_ : SFString('myShape'))]))])])),
+                                  protoField_ : SFString('myShape'))]))],
+
+                      IS_ : 
+                        IS(
+                          connect_ : [
+                            connect(
+                              nodeField_ : SFString('translation'),
+                              protoField_ : SFString('ztranslation'))]))])),
 
             ProtoDeclare(
               name_ : SFString('twentyseven'),
@@ -225,34 +205,23 @@ var X3D0 =  X3D(
                   field_ : [
                     field(
                       type_ : SFString("SFVec3f"),
-                      name_ : SFString('ttranslation'),
                       accessType_ : SFString("inputOutput"),
-                      value_ : SFString('0 0 0')),
+                      name_ : SFString('ttranslation')),
 
                     field(
                       type_ : SFString("SFNode"),
-                      name_ : SFString('myShape'),
                       accessType_ : SFString("inputOutput"),
+                      name_ : SFString('myShape'),
                       children_ : [
-                        Sphere()])]),
+                        Sphere(
+                          DEF_ : SFString('_3'))])]),
               ProtoBody_ : 
                 ProtoBody(
                   children_ : [
                     Transform(
-                      IS_ : 
-                        IS(
-                          connect_ : [
-                            connect(
-                              nodeField_ : SFString('translation'),
-                              protoField_ : SFString('ttranslation'))]),
                       children_ : [
                         ProtoInstance(
                           name_ : SFString('nine'),
-                          fieldValue_ : [
-                            fieldValue(
-                              name_ : SFString('ztranslation'),
-                              value_ : SFString('0 0 0'))],
-
                           IS_ : 
                             IS(
                               connect_ : [
@@ -286,18 +255,29 @@ var X3D0 =  X3D(
                               connect_ : [
                                 connect(
                                   nodeField_ : SFString('myShape'),
-                                  protoField_ : SFString('myShape'))]))])])),
+                                  protoField_ : SFString('myShape'))]))],
+
+                      IS_ : 
+                        IS(
+                          connect_ : [
+                            connect(
+                              nodeField_ : SFString('translation'),
+                              protoField_ : SFString('ttranslation'))]))])),
+
+            NavigationInfo(
+              type_ : MFString([SFString("EXAMINE")])),
+
+            Viewpoint(
+              description_ : SFString('Rubiks Cube on Fire'),
+              position_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(12)])),
 
             ProtoInstance(
               name_ : SFString('twentyseven'),
               fieldValue_ : [
                 fieldValue(
-                  name_ : SFString('ttranslation'),
-                  value_ : SFString('0 0 0')),
-
-                fieldValue(
                   name_ : SFString('myShape'),
                   children_ : [
                     Box(
+                      DEF_ : SFString('_4'),
                       size_ : SFVec3f([SFDouble(1), SFDouble(1), SFDouble(1)]))])])]));
 void main() { exit(0); }

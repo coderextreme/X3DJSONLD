@@ -4,7 +4,7 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
-      var X3D0 =  new X3D().setProfile("Interchange").setVersion("3.3")
+      var X3D0 =  new X3D().setProfile("Interchange").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("ScubaTank.x3d"))
         .addMeta(new meta().setName("description").setContent("Scuba gear used by Nancy Diving example."))
@@ -12,15 +12,14 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta(new meta().setName("created").setContent("24 January 2001"))
         .addMeta(new meta().setName("modified").setContent("23 May 2020"))
         .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/ScubaTank.x3d"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("license").setContent("../license.html")))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("ScubaTank.x3d"))
         .addChild(new Transform().setDEF("ScubaTank")
           .addChild(new Transform()
             .addChild(new Shape()
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDEF("tank").setAmbientIntensity(0.3).setDiffuseColor(Java.to([0.3,0.3,0.5], Java.type("double[]"))).setShininess(0.1).setSpecularColor(Java.to([0.7,0.7,0.8], Java.type("double[]")))))
+                .setMaterial(new Material().setDEF("tank").setAmbientIntensity(0.3).setDiffuseColor(Java.to([0.3,0.3,0.5], Java.type("double[]"))).setSpecularColor(Java.to([0.7,0.7,0.8], Java.type("double[]"))).setShininess(0.1)))
               .setGeometry(new Cylinder().setHeight(0.7).setRadius(0.1))))
           .addChild(new Transform().setTranslation(Java.to([0,0.35,0], Java.type("double[]")))
             .addChild(new Shape()
@@ -37,14 +36,14 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .addChild(new Transform().setTranslation(Java.to([0,0.45,0], Java.type("double[]")))
                 .addChild(new Shape().setDEF("pressure")
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDEF("pressureColor").setAmbientIntensity(0.4).setDiffuseColor(Java.to([0.91,0.91,0.91], Java.type("double[]"))).setShininess(0.16).setSpecularColor(Java.to([0.91,0.9,0.91], Java.type("double[]")))))
+                    .setMaterial(new Material().setDEF("pressureColor").setAmbientIntensity(0.4).setDiffuseColor(Java.to([0.91,0.91,0.91], Java.type("double[]"))).setSpecularColor(Java.to([0.91,0.9,0.91], Java.type("double[]"))).setShininess(0.16)))
                   .setGeometry(new Cylinder().setHeight(0.1).setRadius(0.015))))
               .addChild(new Transform().setTranslation(Java.to([0,0.5,0], Java.type("double[]")))
                 .addChild(new Shape().setDEF("pressureTop")
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("black")))
                   .setGeometry(new Cylinder().setHeight(0.02).setRadius(0.025))))
-              .addChild(new Transform().setRotation(Java.to([0,0,1,1.57], Java.type("double[]"))).setTranslation(Java.to([-0.028,0.462,0], Java.type("double[]")))
+              .addChild(new Transform().setTranslation(Java.to([-0.028,0.462,0], Java.type("double[]"))).setRotation(Java.to([0,0,1,1.57], Java.type("double[]")))
                 .addChild(new Transform()
                   .addChild(new Shape().setDEF("connectorToRegulator")
                     .setAppearance(new Appearance()
@@ -61,4 +60,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .setMaterial(new Material().setUSE("black")))
               .setGeometry(new Cylinder().setHeight(0.1).setRadius(0.115)))))
         .addChild(new Background().setSkyColor(Java.to([0.6,0.6,0.6], Java.type("double[]")))))      ;
-    X3D0.toFileX3D("../data/ScubaTank.new.graal.x3d");
+    X3D0.toFileJSON("../data/ScubaTank.new.graal.json");

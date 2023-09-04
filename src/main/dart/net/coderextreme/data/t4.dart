@@ -4,17 +4,9 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('3.3'),
+      version_ : SFString('4.0'),
       head_ : 
         head(
-          component_ : 
-            component(
-              name_ : SFString('Networking'),
-              level_ : 2),
-          component_ : 
-            component(
-              name_ : SFString('Core'),
-              level_ : 2),
           meta_ : [
             meta(
               name_ : SFString('title'),
@@ -39,27 +31,17 @@ var X3D0 =  X3D(
             meta(
               name_ : SFString('description'),
               content_ : SFString('Test Case for Proto Expander')),
-
-            meta(
-              name_ : SFString('license'),
-              content_ : SFString('https://www.web3d.org/x3d/content/examples/license.html'))]),
+          component_ : 
+            component(
+              name_ : SFString('Networking'),
+              level_ : 2)],
+          component_ : 
+            component(
+              name_ : SFString('Core'),
+              level_ : 2)),
       Scene_ : 
         Scene(
           children_ : [
-            NavigationInfo(
-              type_ : MFString([SFString("EXAMINE"), SFString("FLY"), SFString("WALK")]),
-              speed_ : 3,
-              avatarSize_ : MFFloat([SFFloat(200), SFFloat(200), SFFloat(120)])),
-
-            WorldInfo(
-              title_ : SFString('Arts Mapper')),
-
-            Viewpoint(
-              description_ : SFString('looking North'),
-              position_ : SFVec3f([SFDouble(0), SFDouble(60), SFDouble(110)]),
-              orientation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.699999988079071)]),
-              fieldOfView_ : 0.785398125648499),
-
             ProtoDeclare(
               name_ : SFString('org'),
               ProtoInterface_ : 
@@ -67,25 +49,17 @@ var X3D0 =  X3D(
                   field_ : [
                     field(
                       type_ : SFString("SFVec3f"),
-                      name_ : SFString('posi'),
                       accessType_ : SFString("initializeOnly"),
-                      value_ : SFString('0 0 0')),
+                      name_ : SFString('posi')),
 
                     field(
                       type_ : SFString("SFColor"),
-                      name_ : SFString('col'),
                       accessType_ : SFString("initializeOnly"),
-                      value_ : SFString('0 0 0'))]),
+                      name_ : SFString('col'))]),
               ProtoBody_ : 
                 ProtoBody(
                   children_ : [
                     Transform(
-                      IS_ : 
-                        IS(
-                          connect_ : [
-                            connect(
-                              nodeField_ : SFString('translation'),
-                              protoField_ : SFString('posi'))]),
                       child_ : 
                         Shape(
                           appearance_ : 
@@ -101,7 +75,13 @@ var X3D0 =  X3D(
                                           protoField_ : SFString('col'))]))),
                           geometry_ : 
                             Sphere(
-                              radius_ : 5.10000002384186)))])),
+                              radius_ : 5.1)),
+                      IS_ : 
+                        IS(
+                          connect_ : [
+                            connect(
+                              nodeField_ : SFString('translation'),
+                              protoField_ : SFString('posi'))]))])),
 
             ProtoDeclare(
               name_ : SFString('r'),
@@ -110,9 +90,8 @@ var X3D0 =  X3D(
                   field_ : [
                     field(
                       type_ : SFString("SFVec3f"),
-                      name_ : SFString('pos'),
                       accessType_ : SFString("initializeOnly"),
-                      value_ : SFString('0 0 0'))]),
+                      name_ : SFString('pos'))]),
               ProtoBody_ : 
                 ProtoBody(
                   children_ : [
@@ -121,7 +100,7 @@ var X3D0 =  X3D(
                       fieldValue_ : [
                         fieldValue(
                           name_ : SFString('col'),
-                          value_ : SFString('0 0.300000011920929 1'))],
+                          value_ : SFString('0 0.3 1'))],
 
                       IS_ : 
                         IS(
@@ -137,9 +116,8 @@ var X3D0 =  X3D(
                   field_ : [
                     field(
                       type_ : SFString("SFVec3f"),
-                      name_ : SFString('pos'),
                       accessType_ : SFString("initializeOnly"),
-                      value_ : SFString('0 0 0'))]),
+                      name_ : SFString('pos'))]),
               ProtoBody_ : 
                 ProtoBody(
                   children_ : [
@@ -148,7 +126,7 @@ var X3D0 =  X3D(
                       fieldValue_ : [
                         fieldValue(
                           name_ : SFString('col'),
-                          value_ : SFString('1 0 0.200000002980232'))],
+                          value_ : SFString('1 0 0.2'))],
 
                       IS_ : 
                         IS(
@@ -164,9 +142,8 @@ var X3D0 =  X3D(
                   field_ : [
                     field(
                       type_ : SFString("SFVec3f"),
-                      name_ : SFString('pos'),
                       accessType_ : SFString("initializeOnly"),
-                      value_ : SFString('0 0 0'))]),
+                      name_ : SFString('pos'))]),
               ProtoBody_ : 
                 ProtoBody(
                   children_ : [
@@ -175,7 +152,7 @@ var X3D0 =  X3D(
                       fieldValue_ : [
                         fieldValue(
                           name_ : SFString('col'),
-                          value_ : SFString('0.600000023841858 0 0.600000023841858'))],
+                          value_ : SFString('0.6 0 0.6'))],
 
                       IS_ : 
                         IS(
@@ -184,171 +161,185 @@ var X3D0 =  X3D(
                               nodeField_ : SFString('posi'),
                               protoField_ : SFString('pos'))]))])),
 
+            NavigationInfo(
+              type_ : MFString([SFString("EXAMINE"), SFString("FLY"), SFString("WALK")]),
+              avatarSize_ : MFFloat([SFFloat(200), SFFloat(200), SFFloat(120)]),
+              speed_ : 3),
+
+            WorldInfo(
+              title_ : SFString('Arts Mapper')),
+
+            Viewpoint(
+              description_ : SFString('looking North'),
+              position_ : SFVec3f([SFDouble(0), SFDouble(60), SFDouble(110)]),
+              orientation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.699999988079071)]),
+              fieldOfView_ : 0.7853981),
+
             Transform(
               translation_ : SFVec3f([SFDouble(-468), SFDouble(0), SFDouble(315)]),
               children_ : [
                 Anchor(
-                  url_ : MFString([SFString(", "), SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('High Peak Community Arts'),
+                  url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   children_ : [
                     ProtoInstance(
                       name_ : SFString('r'),
                       fieldValue_ : [
                         fieldValue(
                           name_ : SFString('pos'),
-                          value_ : SFString('400 0.100000001490116 -385'))])]),
+                          value_ : SFString('400 0.1 -385'))])]),
 
                 Anchor(
-                  url_ : MFString([SFString(", "), SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('People Express'),
+                  url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   children_ : [
                     ProtoInstance(
                       name_ : SFString('i'),
                       fieldValue_ : [
                         fieldValue(
                           name_ : SFString('pos'),
-                          value_ : SFString('429.899993896484 0.100000001490116 -319.600006103516'))])]),
+                          value_ : SFString('429.9 0.1 -319.6'))])]),
 
                 Anchor(
-                  url_ : MFString([SFString(", "), SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('QArts/Studios'),
+                  url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   children_ : [
                     ProtoInstance(
                       name_ : SFString('i'),
                       fieldValue_ : [
                         fieldValue(
                           name_ : SFString('pos'),
-                          value_ : SFString('430 0.100000001490116 -335'))])]),
+                          value_ : SFString('430 0.1 -335'))])]),
 
                 Anchor(
-                  url_ : MFString([SFString(", "), SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('First Movement'),
+                  url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   children_ : [
                     ProtoInstance(
                       name_ : SFString('n'),
                       fieldValue_ : [
                         fieldValue(
                           name_ : SFString('pos'),
-                          value_ : SFString('429.899993896484 0.100000001490116 -360.299987792969'))])]),
+                          value_ : SFString('429.9 0.1 -360.3'))])]),
 
                 Anchor(
-                  url_ : MFString([SFString(", "), SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('City Arts'),
+                  url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   children_ : [
                     ProtoInstance(
                       name_ : SFString('i'),
                       fieldValue_ : [
                         fieldValue(
                           name_ : SFString('pos'),
-                          value_ : SFString('455.899993896484 0.100000001490116 -341.299987792969'))])]),
+                          value_ : SFString('455.9 0.1 -341.3'))])]),
 
                 Anchor(
-                  url_ : MFString([SFString(", "), SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('Indigo Dance Group (Salamanda Tandem)'),
+                  url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   children_ : [
                     ProtoInstance(
                       name_ : SFString('r'),
                       fieldValue_ : [
                         fieldValue(
                           name_ : SFString('pos'),
-                          value_ : SFString('456.100006103516 0.100000001490116 -341.5'))])]),
+                          value_ : SFString('456.1 0.1 -341.5'))])]),
 
                 Anchor(
-                  url_ : MFString([SFString(", "), SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('Watering Seeds'),
+                  url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   children_ : [
                     ProtoInstance(
                       name_ : SFString('r'),
                       fieldValue_ : [
                         fieldValue(
                           name_ : SFString('pos'),
-                          value_ : SFString('454 0.100000001490116 -361.299987792969'))])]),
+                          value_ : SFString('454 0.1 -361.3'))])]),
 
                 Anchor(
-                  url_ : MFString([SFString(", "), SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('Fased In The Arts'),
+                  url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   children_ : [
                     ProtoInstance(
                       name_ : SFString('r'),
                       fieldValue_ : [
                         fieldValue(
                           name_ : SFString('pos'),
-                          value_ : SFString('440 0.100000001490116 -350'))])]),
+                          value_ : SFString('440 0.1 -350'))])]),
 
                 Anchor(
-                  url_ : MFString([SFString(", "), SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('27a Access Artspace'),
+                  url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   children_ : [
                     ProtoInstance(
                       name_ : SFString('n'),
                       fieldValue_ : [
                         fieldValue(
                           name_ : SFString('pos'),
-                          value_ : SFString('458.899993896484 0.100000001490116 -304.299987792969'))])]),
+                          value_ : SFString('458.9 0.1 -304.3'))])]),
 
                 Anchor(
-                  url_ : MFString([SFString(", "), SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('Bamboozle Theatre Company'),
+                  url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   children_ : [
                     ProtoInstance(
                       name_ : SFString('r'),
                       fieldValue_ : [
                         fieldValue(
                           name_ : SFString('pos'),
-                          value_ : SFString('457.100006103516 0.100000001490116 -300.799987792969'))])]),
+                          value_ : SFString('457.1 0.1 -300.8'))])]),
 
                 Anchor(
-                  url_ : MFString([SFString(", "), SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('Mantle Community Arts'),
+                  url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   children_ : [
                     ProtoInstance(
                       name_ : SFString('r'),
                       fieldValue_ : [
                         fieldValue(
                           name_ : SFString('pos'),
-                          value_ : SFString('442.399993896484 0.100000001490116 -314.5'))])]),
+                          value_ : SFString('442.4 0.1 -314.5'))])]),
 
                 Anchor(
-                  url_ : MFString([SFString(", "), SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('Artlink East'),
+                  url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   children_ : [
                     ProtoInstance(
                       name_ : SFString('r'),
                       fieldValue_ : [
                         fieldValue(
                           name_ : SFString('pos'),
-                          value_ : SFString('491.600006103516 0.100000001490116 -335.700012207031'))])]),
+                          value_ : SFString('491.6 0.1 -335.7'))])]),
 
                 Anchor(
-                  url_ : MFString([SFString(", "), SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('Creations'),
+                  url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   children_ : [
                     ProtoInstance(
                       name_ : SFString('r'),
                       fieldValue_ : [
                         fieldValue(
                           name_ : SFString('pos'),
-                          value_ : SFString('467 0.100000001490116 -243.899993896484'))])]),
+                          value_ : SFString('467 0.1 -243.9'))])]),
 
                 Anchor(
-                  url_ : MFString([SFString(", "), SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('New Perspectives'),
+                  url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   children_ : [
                     ProtoInstance(
                       name_ : SFString('n'),
                       fieldValue_ : [
                         fieldValue(
                           name_ : SFString('pos'),
-                          value_ : SFString('457.399993896484 0.100000001490116 -262.700012207031'))])]),
+                          value_ : SFString('457.4 0.1 -262.7'))])]),
 
                 Anchor(
-                  url_ : MFString([SFString(", "), SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   description_ : SFString('UKan2'),
+                  url_ : MFString([SFString("javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"), SFString("javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');")]),
                   children_ : [
                     ProtoInstance(
                       name_ : SFString('r'),
                       fieldValue_ : [
                         fieldValue(
                           name_ : SFString('pos'),
-                          value_ : SFString('458.700012207031 0.100000001490116 -262.700012207031'))])])])]));
+                          value_ : SFString('458.7 0.1 -262.7'))])])])]));
 void main() { exit(0); }

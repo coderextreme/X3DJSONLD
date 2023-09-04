@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('3.3'),
+      version_ : SFString('4.0'),
       head_ : 
         head(
           meta_ : [
@@ -62,21 +62,61 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit')),
-
-            meta(
-              name_ : SFString('license'),
-              content_ : SFString('../license.html'))]),
+              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit'))]),
       Scene_ : 
         Scene(
           children_ : [
+            ExternProtoDeclare(
+              name_ : SFString('ViewFrustum'),
+              url_ : MFString([SFString("ViewFrustumPrototype.x3d#ViewFrustum")]),
+              field_ : [
+                field(
+                  type_ : SFString("SFNode"),
+                  accessType_ : SFString("initializeOnly"),
+                  name_ : SFString('ViewpointNode')),
+
+                field(
+                  type_ : SFString("SFNode"),
+                  accessType_ : SFString("initializeOnly"),
+                  name_ : SFString('NavigationInfoNode')),
+
+                field(
+                  type_ : SFString("SFBool"),
+                  accessType_ : SFString("inputOutput"),
+                  name_ : SFString('visible')),
+
+                field(
+                  type_ : SFString("SFColor"),
+                  accessType_ : SFString("inputOutput"),
+                  name_ : SFString('lineColor')),
+
+                field(
+                  type_ : SFString("SFColor"),
+                  accessType_ : SFString("inputOutput"),
+                  name_ : SFString('frustumColor')),
+
+                field(
+                  type_ : SFString("SFFloat"),
+                  accessType_ : SFString("inputOutput"),
+                  name_ : SFString('transparency')),
+
+                field(
+                  type_ : SFString("SFFloat"),
+                  accessType_ : SFString("inputOutput"),
+                  name_ : SFString('aspectRatio')),
+
+                field(
+                  type_ : SFString("SFBool"),
+                  accessType_ : SFString("initializeOnly"),
+                  name_ : SFString('trace'))]),
+
             WorldInfo(
               title_ : SFString('ViewFrustumExample.x3d')),
 
             Viewpoint(
               description_ : SFString('ViewFrustum from above, looking down'),
-              orientation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-1.57)]),
-              position_ : SFVec3f([SFDouble(0), SFDouble(40), SFDouble(0)])),
+              position_ : SFVec3f([SFDouble(0), SFDouble(40), SFDouble(0)]),
+              orientation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-1.57)])),
 
             Viewpoint(
               description_ : SFString('ViewFrustum from point of view')),
@@ -87,80 +127,27 @@ var X3D0 =  X3D(
 
             Viewpoint(
               description_ : SFString('ViewFrustum oblique side view'),
-              orientation_ : SFRotation([SFDouble(0.8005), SFDouble(0.5926), SFDouble(0.0898), SFDouble(-0.3743)]),
-              position_ : SFVec3f([SFDouble(-5), SFDouble(5), SFDouble(20)])),
+              position_ : SFVec3f([SFDouble(-5), SFDouble(5), SFDouble(20)]),
+              orientation_ : SFRotation([SFDouble(0.8005), SFDouble(0.5926), SFDouble(0.0898), SFDouble(-0.3743)])),
 
             NavigationInfo(
               type_ : MFString([SFString("EXAMINE"), SFString("FLY"), SFString("ANY")])),
-
-            ExternProtoDeclare(
-              name_ : SFString('ViewFrustum'),
-              appinfo_ : SFString('Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes'),
-              url_ : MFString([SFString("ViewFrustumPrototype.x3d#ViewFrustum")]),
-              field_ : [
-                field(
-                  type_ : SFString("SFNode"),
-                  name_ : SFString('ViewpointNode'),
-                  accessType_ : SFString("initializeOnly"),
-                  appinfo_ : SFString('required: insert Viewpoint DEF or USE node for view of interest')),
-
-                field(
-                  type_ : SFString("SFNode"),
-                  name_ : SFString('NavigationInfoNode'),
-                  accessType_ : SFString("initializeOnly"),
-                  appinfo_ : SFString('required: insert NavigationInfo DEF or USE node of interest')),
-
-                field(
-                  type_ : SFString("SFBool"),
-                  name_ : SFString('visible'),
-                  accessType_ : SFString("inputOutput"),
-                  appinfo_ : SFString('whether or not frustum geometry is rendered')),
-
-                field(
-                  type_ : SFString("SFColor"),
-                  name_ : SFString('lineColor'),
-                  accessType_ : SFString("inputOutput"),
-                  appinfo_ : SFString('RGB color of ViewFrustum outline, default value 0.9 0.9 0.9')),
-
-                field(
-                  type_ : SFString("SFColor"),
-                  name_ : SFString('frustumColor'),
-                  accessType_ : SFString("inputOutput"),
-                  appinfo_ : SFString('RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8')),
-
-                field(
-                  type_ : SFString("SFFloat"),
-                  name_ : SFString('transparency'),
-                  accessType_ : SFString("inputOutput"),
-                  appinfo_ : SFString('transparency of ViewFrustum hull geometry, default value 0.5')),
-
-                field(
-                  type_ : SFString("SFFloat"),
-                  name_ : SFString('aspectRatio'),
-                  accessType_ : SFString("inputOutput"),
-                  appinfo_ : SFString('assumed ratio height/width, default value 0.75')),
-
-                field(
-                  type_ : SFString("SFBool"),
-                  name_ : SFString('trace'),
-                  accessType_ : SFString("initializeOnly"),
-                  appinfo_ : SFString('debug support, default false'))]),
-          /*Example use*/
 
             ProtoInstance(
               name_ : SFString('ViewFrustum'),
               fieldValue_ : [
                 fieldValue(
                   name_ : SFString('ViewpointNode'),
-                  /*prefer empty description to prevent entry in player's ViewpointList*/
                   children_ : [
                     Viewpoint(
+                      DEF_ : SFString('_1'),
                       description_ : SFString('ViewFrustum ViewpointNode'))]),
 
                 fieldValue(
                   name_ : SFString('NavigationInfoNode'),
                   children_ : [
                     NavigationInfo(
+                      DEF_ : SFString('_2'),
                       visibilityLimit_ : 15)]),
 
                 fieldValue(
@@ -180,12 +167,16 @@ var X3D0 =  X3D(
                   value_ : SFString('0.75')),
 
                 fieldValue(
+                  name_ : SFString('aspectRatio'),
+                  value_ : SFString('0.75')),
+
+                fieldValue(
                   name_ : SFString('trace'),
                   value_ : SFString('true'))]),
-          /*Visualization assists*/
 
             Inline(
               DEF_ : SFString('GridXZ'),
+              global_ : true,
               url_ : MFString([SFString("GridXZ_20x20Fixed.x3d")])),
 
             Transform(
@@ -193,5 +184,6 @@ var X3D0 =  X3D(
               children_ : [
                 Inline(
                   DEF_ : SFString('CoordinateAxes'),
+                  global_ : true,
                   url_ : MFString([SFString("CoordinateAxes.x3d")]))])]));
 void main() { exit(0); }

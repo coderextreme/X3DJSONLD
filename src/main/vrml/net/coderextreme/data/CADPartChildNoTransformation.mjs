@@ -1,182 +1,174 @@
 let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "CADInterchange";
-X3D0.version = "3.1";
+X3D0.version = "4.0";
 let head1 = browser.currentScene.createNode("head");
-let component2 = browser.currentScene.createNode("component");
-component2.name = "CADGeometry";
-component2.level = 2;
-head1.component = new MFNode();
+let meta2 = browser.currentScene.createNode("meta");
+meta2.name = "title";
+meta2.content = "CADPartChildNoTransformation.x3d";
+head1.meta = new MFNode();
 
-head1.component[0] = component2;
+head1.meta[0] = meta2;
 
-let component3 = browser.currentScene.createNode("component");
-component3.name = "EnvironmentalEffects";
-component3.level = 1;
-head1.component[1] = component3;
+let meta3 = browser.currentScene.createNode("meta");
+meta3.name = "description";
+meta3.content = "Developer scene to explore Mantis Issue 528, providing a baseline example with no transformation of CADPart children.";
+head1.meta[1] = meta3;
 
 let meta4 = browser.currentScene.createNode("meta");
-meta4.name = "title";
-meta4.content = "CADPartChildNoTransformation.x3d";
+meta4.name = "creator";
+meta4.content = "Vince Marchetti, Don Brutzman, Hyokwang Lee, Dick Puk";
 head1.meta[2] = meta4;
 
 let meta5 = browser.currentScene.createNode("meta");
-meta5.name = "description";
-meta5.content = "Developer scene to explore Mantis Issue 528, providing a baseline example with no transformation of CADPart children.";
+meta5.name = "translator";
+meta5.content = "Vince Marchetti bushing generation using python scripts";
 head1.meta[3] = meta5;
 
 let meta6 = browser.currentScene.createNode("meta");
-meta6.name = "creator";
-meta6.content = "Vince Marchetti, Don Brutzman, Hyokwang Lee, Dick Puk";
+meta6.name = "reference";
+meta6.content = "https://www.web3d.org/member-only/mantis/view.php?id=528";
 head1.meta[4] = meta6;
 
 let meta7 = browser.currentScene.createNode("meta");
-meta7.name = "translator";
-meta7.content = "Vince Marchetti bushing generation using python scripts";
+meta7.name = "warning";
+meta7.content = "This scene is intended for specification development only.";
 head1.meta[5] = meta7;
 
 let meta8 = browser.currentScene.createNode("meta");
-meta8.name = "reference";
-meta8.content = "https://www.web3d.org/member-only/mantis/view.php?id=528";
+meta8.name = "created";
+meta8.content = "29 June 2012";
 head1.meta[6] = meta8;
 
 let meta9 = browser.currentScene.createNode("meta");
-meta9.name = "warning";
-meta9.content = "This scene is intended for specification development only.";
+meta9.name = "modified";
+meta9.content = "20 October 2019";
 head1.meta[7] = meta9;
 
 let meta10 = browser.currentScene.createNode("meta");
-meta10.name = "created";
-meta10.content = "29 June 2012";
+meta10.name = "identifier";
+meta10.content = "https://www.web3d.org/x3d/content/examples/Basic/CAD/CADPartChildNoTransformation.x3d";
 head1.meta[8] = meta10;
 
 let meta11 = browser.currentScene.createNode("meta");
-meta11.name = "modified";
-meta11.content = "20 October 2019";
+meta11.name = "generator";
+meta11.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
 head1.meta[9] = meta11;
 
-let meta12 = browser.currentScene.createNode("meta");
-meta12.name = "identifier";
-meta12.content = "https://www.web3d.org/x3d/content/examples/Basic/CAD/CADPartChildNoTransformation.x3d";
-head1.meta[10] = meta12;
+let component12 = browser.currentScene.createNode("component");
+component12.name = "CADGeometry";
+component12.level = 2;
+head1.component[10] = component12;
 
-let meta13 = browser.currentScene.createNode("meta");
-meta13.name = "generator";
-meta13.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
-head1.meta[11] = meta13;
-
-let meta14 = browser.currentScene.createNode("meta");
-meta14.name = "license";
-meta14.content = "../license.html";
-head1.meta[12] = meta14;
+let component13 = browser.currentScene.createNode("component");
+component13.name = "EnvironmentalEffects";
+component13.level = 1;
+head1.component[11] = component13;
 
 head = head1;
 
-let WorldInfo16 = browser.currentScene.createNode("WorldInfo");
-WorldInfo16.title = "CADPartChildNoTransformation.x3d";
+let WorldInfo15 = browser.currentScene.createNode("WorldInfo");
+WorldInfo15.title = "CADPartChildNoTransformation.x3d";
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = WorldInfo16;
+browser.currentScene.children[0] = WorldInfo15;
 
-let Background17 = browser.currentScene.createNode("Background");
-Background17.skyColor = new MFColor(new float[0.9607843,1,0.9607843]);
-browser.currentScene.children[1] = Background17;
+let Background16 = browser.currentScene.createNode("Background");
+Background16.skyColor = new MFColor(new float[0.9607843,1,0.9607843]);
+browser.currentScene.children[1] = Background16;
 
-let Viewpoint18 = browser.currentScene.createNode("Viewpoint");
-Viewpoint18.description = "Hello CAD bushing";
-Viewpoint18.orientation = new SFRotation(new float[1,0,0,-0.321751]);
-Viewpoint18.position = new SFVec3f(new float[0,5,15]);
-browser.currentScene.children[2] = Viewpoint18;
+let Viewpoint17 = browser.currentScene.createNode("Viewpoint");
+Viewpoint17.description = "Hello CAD bushing";
+Viewpoint17.position = new SFVec3f(new float[0,5,15]);
+Viewpoint17.orientation = new SFRotation(new float[1,0,0,-0.321751]);
+browser.currentScene.children[2] = Viewpoint17;
 
-let CADAssembly19 = browser.currentScene.createNode("CADAssembly");
-CADAssembly19.name = "DesignPatternAssembly";
-let CADPart20 = browser.currentScene.createNode("CADPart");
-CADPart20.name = "CADPartExample";
-//the rotation and translation attributes serve to position the bushing within the assembly
-let CADFace21 = browser.currentScene.createNode("CADFace");
-CADFace21.name = "outerSurface";
-let Shape22 = browser.currentScene.createNode("Shape");
-//note solid='true' and so one-sided external rendering only
-let Cylinder23 = browser.currentScene.createNode("Cylinder");
-Cylinder23.bottom = False;
-Cylinder23.height = 3;
-Cylinder23.radius = 2;
-Cylinder23.top = False;
-Shape22.geometry = Cylinder23;
+let CADAssembly18 = browser.currentScene.createNode("CADAssembly");
+CADAssembly18.name = "DesignPatternAssembly";
+let CADPart19 = browser.currentScene.createNode("CADPart");
+CADPart19.name = "CADPartExample";
+let CADFace20 = browser.currentScene.createNode("CADFace");
+CADFace20.name = "outerSurface";
+let Shape21 = browser.currentScene.createNode("Shape");
+let Appearance22 = browser.currentScene.createNode("Appearance");
+Appearance22.DEF = "AppearanceGrey";
+let Material23 = browser.currentScene.createNode("Material");
+Appearance22.material = Material23;
 
-let Appearance24 = browser.currentScene.createNode("Appearance");
-Appearance24.DEF = "AppearanceGrey";
-let Material25 = browser.currentScene.createNode("Material");
-Appearance24.material = Material25;
+Shape21.appearance = Appearance22;
 
-Shape22.appearance = Appearance24;
+let Cylinder24 = browser.currentScene.createNode("Cylinder");
+Cylinder24.top = False;
+Cylinder24.bottom = False;
+Cylinder24.height = 3;
+Cylinder24.radius = 2;
+Shape21.geometry = Cylinder24;
 
-CADFace21.shape = Shape22;
+CADFace20.shape = Shape21;
 
-CADPart20.children = new MFNode();
+CADPart19.children = new MFNode();
 
-CADPart20.children[0] = CADFace21;
+CADPart19.children[0] = CADFace20;
 
-let CADFace26 = browser.currentScene.createNode("CADFace");
-CADFace26.name = "innerSurface";
-let Shape27 = browser.currentScene.createNode("Shape");
-//note solid='false' and so two-sided internal + external rendering
+let CADFace25 = browser.currentScene.createNode("CADFace");
+CADFace25.name = "innerSurface";
+let Shape26 = browser.currentScene.createNode("Shape");
+let Appearance27 = browser.currentScene.createNode("Appearance");
+Appearance27.USE = "AppearanceGrey";
+Shape26.appearance = Appearance27;
+
 let Cylinder28 = browser.currentScene.createNode("Cylinder");
+Cylinder28.top = False;
 Cylinder28.bottom = False;
 Cylinder28.height = 3;
 Cylinder28.solid = False;
-Cylinder28.top = False;
-Shape27.geometry = Cylinder28;
+Shape26.geometry = Cylinder28;
 
-let Appearance29 = browser.currentScene.createNode("Appearance");
-Appearance29.USE = "AppearanceGrey";
-Shape27.appearance = Appearance29;
+CADFace25.shape = Shape26;
 
-CADFace26.shape = Shape27;
+CADPart19.children[1] = CADFace25;
 
-CADPart20.children[1] = CADFace26;
+let CADFace29 = browser.currentScene.createNode("CADFace");
+CADFace29.name = "topCap";
+let Shape30 = browser.currentScene.createNode("Shape");
+let Appearance31 = browser.currentScene.createNode("Appearance");
+Appearance31.USE = "AppearanceGrey";
+Shape30.appearance = Appearance31;
 
-let CADFace30 = browser.currentScene.createNode("CADFace");
-CADFace30.name = "topCap";
-let Shape31 = browser.currentScene.createNode("Shape");
 let IndexedTriangleSet32 = browser.currentScene.createNode("IndexedTriangleSet");
 IndexedTriangleSet32.index = new MFInt32(new int[0,1,2,2,1,3,2,3,4,4,3,5,4,5,6,6,5,7,6,7,8,8,7,9,8,9,10,10,9,11,10,11,12,12,11,13,12,13,14,14,13,15,14,15,16,16,15,17,16,17,18,18,17,19,18,19,20,20,19,21,20,21,22,22,21,23,22,23,24,24,23,25,24,25,26,26,25,27,26,27,28,28,27,29,28,29,30,30,29,31,30,31,32,32,31,33,32,33,34,34,33,35,34,35,36,36,35,37,36,37,38,38,37,39,38,39,40,40,39,41,40,41,42,42,41,43,42,43,44,44,43,45,44,45,46,46,45,47,46,47,48,48,47,49,48,49,50,50,49,51,50,51,52,52,51,53,52,53,54,54,53,55,54,55,56,56,55,57,56,57,58,58,57,59,58,59,60,60,59,61,60,61,62,62,61,63,62,63,64,64,63,65]);
 let Coordinate33 = browser.currentScene.createNode("Coordinate");
 Coordinate33.point = new MFVec3f(new float[2,1.5,0,1,1.5,0,1.9616,1.5,0.3902,0.9808,1.5,0.1951,1.8478,1.5,0.7654,0.9239,1.5,0.3827,1.6629,1.5,1.1111,0.8315,1.5,0.5556,1.4142,1.5,1.4142,0.7071,1.5,0.7071,1.1111,1.5,1.6629,0.5556,1.5,0.8315,0.7654,1.5,1.8478,0.3827,1.5,0.9239,0.3902,1.5,1.9616,0.1951,1.5,0.9808,0,1.5,2,0,1.5,1,-0.3902,1.5,1.9616,-0.1951,1.5,0.9808,-0.7654,1.5,1.8478,-0.3827,1.5,0.9239,-1.1111,1.5,1.6629,-0.5556,1.5,0.8315,-1.4142,1.5,1.4142,-0.7071,1.5,0.7071,-1.6629,1.5,1.1111,-0.8315,1.5,0.5556,-1.8478,1.5,0.7654,-0.9239,1.5,0.3827,-1.9616,1.5,0.3902,-0.9808,1.5,0.1951,-2,1.5,0,-1,1.5,0,-1.9616,1.5,-0.3902,-0.9808,1.5,-0.1951,-1.8478,1.5,-0.7654,-0.9239,1.5,-0.3827,-1.6629,1.5,-1.1111,-0.8315,1.5,-0.5556,-1.4142,1.5,-1.4142,-0.7071,1.5,-0.7071,-1.1111,1.5,-1.6629,-0.5556,1.5,-0.8315,-0.7654,1.5,-1.8478,-0.3827,1.5,-0.9239,-0.3902,1.5,-1.9616,-0.1951,1.5,-0.9808,0,1.5,-2,0,1.5,-1,0.3902,1.5,-1.9616,0.1951,1.5,-0.9808,0.7654,1.5,-1.8478,0.3827,1.5,-0.9239,1.1111,1.5,-1.6629,0.5556,1.5,-0.8315,1.4142,1.5,-1.4142,0.7071,1.5,-0.7071,1.6629,1.5,-1.1111,0.8315,1.5,-0.5556,1.8478,1.5,-0.7654,0.9239,1.5,-0.3827,1.9616,1.5,-0.3902,0.9808,1.5,-0.1951,2,1.5,0,1,1.5,0]);
 IndexedTriangleSet32.coord = Coordinate33;
 
-Shape31.geometry = IndexedTriangleSet32;
+Shape30.geometry = IndexedTriangleSet32;
 
-let Appearance34 = browser.currentScene.createNode("Appearance");
-Appearance34.USE = "AppearanceGrey";
-Shape31.appearance = Appearance34;
+CADFace29.shape = Shape30;
 
-CADFace30.shape = Shape31;
+CADPart19.children[2] = CADFace29;
 
-CADPart20.children[2] = CADFace30;
+let CADFace34 = browser.currentScene.createNode("CADFace");
+CADFace34.name = "bottomCap";
+let Shape35 = browser.currentScene.createNode("Shape");
+let Appearance36 = browser.currentScene.createNode("Appearance");
+Appearance36.USE = "AppearanceGrey";
+Shape35.appearance = Appearance36;
 
-let CADFace35 = browser.currentScene.createNode("CADFace");
-CADFace35.name = "bottomCap";
-let Shape36 = browser.currentScene.createNode("Shape");
 let IndexedTriangleSet37 = browser.currentScene.createNode("IndexedTriangleSet");
 IndexedTriangleSet37.index = new MFInt32(new int[0,1,2,2,1,3,2,3,4,4,3,5,4,5,6,6,5,7,6,7,8,8,7,9,8,9,10,10,9,11,10,11,12,12,11,13,12,13,14,14,13,15,14,15,16,16,15,17,16,17,18,18,17,19,18,19,20,20,19,21,20,21,22,22,21,23,22,23,24,24,23,25,24,25,26,26,25,27,26,27,28,28,27,29,28,29,30,30,29,31,30,31,32,32,31,33,32,33,34,34,33,35,34,35,36,36,35,37,36,37,38,38,37,39,38,39,40,40,39,41,40,41,42,42,41,43,42,43,44,44,43,45,44,45,46,46,45,47,46,47,48,48,47,49,48,49,50,50,49,51,50,51,52,52,51,53,52,53,54,54,53,55,54,55,56,56,55,57,56,57,58,58,57,59,58,59,60,60,59,61,60,61,62,62,61,63,62,63,64,64,63,65]);
 let Coordinate38 = browser.currentScene.createNode("Coordinate");
 Coordinate38.point = new MFVec3f(new float[2,-1.5,0,1,-1.5,0,1.9616,-1.5,-0.3902,0.9808,-1.5,-0.1951,1.8478,-1.5,-0.7654,0.9239,-1.5,-0.3827,1.6629,-1.5,-1.1111,0.8315,-1.5,-0.5556,1.4142,-1.5,-1.4142,0.7071,-1.5,-0.7071,1.1111,-1.5,-1.6629,0.5556,-1.5,-0.8315,0.7654,-1.5,-1.8478,0.3827,-1.5,-0.9239,0.3902,-1.5,-1.9616,0.1951,-1.5,-0.9808,0,-1.5,-2,0,-1.5,-1,-0.3902,-1.5,-1.9616,-0.1951,-1.5,-0.9808,-0.7654,-1.5,-1.8478,-0.3827,-1.5,-0.9239,-1.1111,-1.5,-1.6629,-0.5556,-1.5,-0.8315,-1.4142,-1.5,-1.4142,-0.7071,-1.5,-0.7071,-1.6629,-1.5,-1.1111,-0.8315,-1.5,-0.5556,-1.8478,-1.5,-0.7654,-0.9239,-1.5,-0.3827,-1.9616,-1.5,-0.3902,-0.9808,-1.5,-0.1951,-2,-1.5,0,-1,-1.5,0,-1.9616,-1.5,0.3902,-0.9808,-1.5,0.1951,-1.8478,-1.5,0.7654,-0.9239,-1.5,0.3827,-1.6629,-1.5,1.1111,-0.8315,-1.5,0.5556,-1.4142,-1.5,1.4142,-0.7071,-1.5,0.7071,-1.1111,-1.5,1.6629,-0.5556,-1.5,0.8315,-0.7654,-1.5,1.8478,-0.3827,-1.5,0.9239,-0.3902,-1.5,1.9616,-0.1951,-1.5,0.9808,0,-1.5,2,0,-1.5,1,0.3902,-1.5,1.9616,0.1951,-1.5,0.9808,0.7654,-1.5,1.8478,0.3827,-1.5,0.9239,1.1111,-1.5,1.6629,0.5556,-1.5,0.8315,1.4142,-1.5,1.4142,0.7071,-1.5,0.7071,1.6629,-1.5,1.1111,0.8315,-1.5,0.5556,1.8478,-1.5,0.7654,0.9239,-1.5,0.3827,1.9616,-1.5,0.3902,0.9808,-1.5,0.1951,2,-1.5,0,1,-1.5,0]);
 IndexedTriangleSet37.coord = Coordinate38;
 
-Shape36.geometry = IndexedTriangleSet37;
+Shape35.geometry = IndexedTriangleSet37;
 
-let Appearance39 = browser.currentScene.createNode("Appearance");
-Appearance39.USE = "AppearanceGrey";
-Shape36.appearance = Appearance39;
+CADFace34.shape = Shape35;
 
-CADFace35.shape = Shape36;
+CADPart19.children[3] = CADFace34;
 
-CADPart20.children[3] = CADFace35;
+CADAssembly18.children = new MFNode();
 
-CADAssembly19.children = new MFNode();
+CADAssembly18.children[0] = CADPart19;
 
-CADAssembly19.children[0] = CADPart20;
-
-browser.currentScene.children[3] = CADAssembly19;
+browser.currentScene.children[3] = CADAssembly18;
 

@@ -3,214 +3,201 @@ void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Interchange";
-X3D0.version = "3.0";
+X3D0.version = "4.0";
 head head1 = createNode("head");
-component component2 = createNode("component");
-component2.name = "Networking";
-component2.level = 2;
-head1.component = new MFNode();
+meta meta2 = createNode("meta");
+meta2.name = "generator";
+meta2.content = "view3dscene, https://castle-engine.io/view3dscene.php";
+head1.meta = new MFNode();
 
-head1.component[0] = component2;
+head1.meta[0] = meta2;
 
-meta meta3 = createNode("meta");
-meta3.name = "generator";
-meta3.content = "view3dscene, https://castle-engine.io/view3dscene.php";
-head1.meta[1] = meta3;
-
-meta meta4 = createNode("meta");
-meta4.name = "source";
-meta4.content = "t1.wrl";
-head1.meta[2] = meta4;
+component component3 = createNode("component");
+component3.name = "Networking";
+component3.level = 2;
+head1.component[1] = component3;
 
 head = head1;
 
-NavigationInfo NavigationInfo6 = createNode("NavigationInfo");
-NavigationInfo6.type = new MFString(new java.lang.String["EXAMINE","FLY","WALK"]);
-NavigationInfo6.speed = 3;
-NavigationInfo6.avatarSize = new MFFloat(new float[200,200,120]);
-children = new MFNode();
-
-children[0] = NavigationInfo6;
-
-WorldInfo WorldInfo7 = createNode("WorldInfo");
-WorldInfo7.title = "Arts Mapper";
-children[1] = WorldInfo7;
-
-Viewpoint Viewpoint8 = createNode("Viewpoint");
-Viewpoint8.description = "looking North";
-Viewpoint8.position = new SFVec3f(new float[0,60,110]);
-Viewpoint8.orientation = new SFRotation(new float[1,0,0,-0.699999988079071]);
-Viewpoint8.fieldOfView = 0.785398125648499;
-children[2] = Viewpoint8;
-
-Viewpoint Viewpoint9 = createNode("Viewpoint");
-Viewpoint9.description = "looking East";
-Viewpoint9.position = new SFVec3f(new float[-140,30,0]);
-Viewpoint9.orientation = new SFRotation(new float[0,0.400000005960464,0,-1.39999997615814]);
-Viewpoint9.fieldOfView = 0.785398125648499;
-children[3] = Viewpoint9;
-
-Viewpoint Viewpoint10 = createNode("Viewpoint");
-Viewpoint10.description = "Overhead";
-Viewpoint10.position = new SFVec3f(new float[0,150,0]);
-Viewpoint10.orientation = new SFRotation(new float[1,0,0,-1.57000005245209]);
-Viewpoint10.fieldOfView = 0.785398125648499;
-children[4] = Viewpoint10;
-
-ProtoDeclare ProtoDeclare11 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+ProtoDeclare ProtoDeclare5 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="org" ><ProtoInterface><field name="posi" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
-<field name="col" accessType="initializeOnly" type="SFColor" value="0 0 0"></field>
+<ProtoDeclare name="org" ><ProtoInterface><field accessType="initializeOnly" type="SFVec3f" name="posi"></field>
+<field accessType="initializeOnly" type="SFColor" name="col"></field>
 </ProtoInterface>
-<ProtoBody><Transform><Shape><Appearance><Material transparency="0.400000005960464"><IS><connect nodeField="emissiveColor" protoField="col"></connect>
+<ProtoBody><Transform><Shape><Appearance><Material transparency="0.4"><IS><connect nodeField="emissiveColor" protoField="col"></connect>
 </IS>
 </Material>
 </Appearance>
-<Sphere radius="1.10000002384186"></Sphere>
+<Sphere radius="1.1"></Sphere>
 </Shape>
 <IS><connect nodeField="translation" protoField="posi"></connect>
 </IS>
 </Transform>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare11.name = "org";
-ProtoInterface ProtoInterface12 = createNode("ProtoInterface");
-field field13 = createNode("field");
-field13.name = "posi";
-field13.accessType = "initializeOnly";
-field13.type = "SFVec3f";
-field13.value = "0 0 0";
-ProtoInterface12.field = new MFNode();
+ProtoDeclare5.name = "org";
+ProtoInterface ProtoInterface6 = createNode("ProtoInterface");
+field field7 = createNode("field");
+field7.accessType = "initializeOnly";
+field7.type = "SFVec3f";
+field7.name = "posi";
+ProtoInterface6.field = new MFNode();
 
-ProtoInterface12.field[0] = field13;
+ProtoInterface6.field[0] = field7;
 
-field field14 = createNode("field");
-field14.name = "col";
-field14.accessType = "initializeOnly";
-field14.type = "SFColor";
-field14.value = "0 0 0";
-ProtoInterface12.field[1] = field14;
+field field8 = createNode("field");
+field8.accessType = "initializeOnly";
+field8.type = "SFColor";
+field8.name = "col";
+ProtoInterface6.field[1] = field8;
 
-ProtoDeclare11.protoInterface = ProtoInterface12;
+ProtoDeclare5.protoInterface = ProtoInterface6;
 
-ProtoBody ProtoBody15 = createNode("ProtoBody");
-Transform Transform16 = createNode("Transform");
-Shape Shape17 = createNode("Shape");
-Appearance Appearance18 = createNode("Appearance");
-Material Material19 = createNode("Material");
-Material19.transparency = 0.400000005960464;
-IS IS20 = createNode("IS");
-connect connect21 = createNode("connect");
-connect21.nodeField = "emissiveColor";
-connect21.protoField = "col";
-IS20.connect = new MFNode();
+ProtoBody ProtoBody9 = createNode("ProtoBody");
+Transform Transform10 = createNode("Transform");
+Shape Shape11 = createNode("Shape");
+Appearance Appearance12 = createNode("Appearance");
+Material Material13 = createNode("Material");
+Material13.transparency = 0.4;
+IS IS14 = createNode("IS");
+connect connect15 = createNode("connect");
+connect15.nodeField = "emissiveColor";
+connect15.protoField = "col";
+IS14.connect = new MFNode();
 
-IS20.connect[0] = connect21;
+IS14.connect[0] = connect15;
 
-Material19.iS = IS20;
+Material13.iS = IS14;
 
-Appearance18.material = Material19;
+Appearance12.material = Material13;
 
-Shape17.appearance = Appearance18;
+Shape11.appearance = Appearance12;
 
-Sphere Sphere22 = createNode("Sphere");
-Sphere22.radius = 1.10000002384186;
-Shape17.geometry = Sphere22;
+Sphere Sphere16 = createNode("Sphere");
+Sphere16.radius = 1.1;
+Shape11.geometry = Sphere16;
 
-Transform16.child = new undefined();
+Transform10.child = new undefined();
 
-Transform16.child[0] = Shape17;
+Transform10.child[0] = Shape11;
 
-IS IS23 = createNode("IS");
-connect connect24 = createNode("connect");
-connect24.nodeField = "translation";
-connect24.protoField = "posi";
-IS23.connect = new MFNode();
+IS IS17 = createNode("IS");
+connect connect18 = createNode("connect");
+connect18.nodeField = "translation";
+connect18.protoField = "posi";
+IS17.connect = new MFNode();
 
-IS23.connect[0] = connect24;
+IS17.connect[0] = connect18;
 
-Transform16.iS = IS23;
+Transform10.iS = IS17;
 
-ProtoBody15.children = new MFNode();
+ProtoBody9.children = new MFNode();
 
-ProtoBody15.children[0] = Transform16;
+ProtoBody9.children[0] = Transform10;
 
-ProtoDeclare11.protoBody = ProtoBody15;
+ProtoDeclare5.protoBody = ProtoBody9;
 
-children[5] = ProtoDeclare11;
+children = new MFNode();
 
-ProtoDeclare ProtoDeclare25 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+children[0] = ProtoDeclare5;
+
+ProtoDeclare ProtoDeclare19 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="r" ><ProtoInterface><field name="pos" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
+<ProtoDeclare name="r" ><ProtoInterface><field accessType="initializeOnly" type="SFVec3f" name="pos"></field>
 </ProtoInterface>
-<ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="0 0.300000011920929 1"></fieldValue>
-<fieldValue name="posi"></fieldValue>
+<ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="0 0.3 1"></fieldValue>
 <IS><connect nodeField="posi" protoField="pos"></connect>
 </IS>
 </ProtoInstance>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare25.name = "r";
-ProtoInterface ProtoInterface26 = createNode("ProtoInterface");
-field field27 = createNode("field");
-field27.name = "pos";
-field27.accessType = "initializeOnly";
-field27.type = "SFVec3f";
-field27.value = "0 0 0";
-ProtoInterface26.field = new MFNode();
+ProtoDeclare19.name = "r";
+ProtoInterface ProtoInterface20 = createNode("ProtoInterface");
+field field21 = createNode("field");
+field21.accessType = "initializeOnly";
+field21.type = "SFVec3f";
+field21.name = "pos";
+ProtoInterface20.field = new MFNode();
 
-ProtoInterface26.field[0] = field27;
+ProtoInterface20.field[0] = field21;
 
-ProtoDeclare25.protoInterface = ProtoInterface26;
+ProtoDeclare19.protoInterface = ProtoInterface20;
 
-ProtoBody ProtoBody28 = createNode("ProtoBody");
-ProtoInstance ProtoInstance29 = createNode("ProtoInstance");
-ProtoInstance29.name = "org";
-fieldValue fieldValue30 = createNode("fieldValue");
-fieldValue30.name = "col";
-fieldValue30.value = "0 0.300000011920929 1";
-ProtoInstance29.fieldValue = new MFNode();
+ProtoBody ProtoBody22 = createNode("ProtoBody");
+ProtoInstance ProtoInstance23 = createNode("ProtoInstance");
+ProtoInstance23.name = "org";
+fieldValue fieldValue24 = createNode("fieldValue");
+fieldValue24.name = "col";
+fieldValue24.value = "0 0.3 1";
+ProtoInstance23.fieldValue = new MFNode();
 
-ProtoInstance29.fieldValue[0] = fieldValue30;
+ProtoInstance23.fieldValue[0] = fieldValue24;
 
-fieldValue fieldValue31 = createNode("fieldValue");
-fieldValue31.name = "posi";
-ProtoInstance29.fieldValue[1] = fieldValue31;
+IS IS25 = createNode("IS");
+connect connect26 = createNode("connect");
+connect26.nodeField = "posi";
+connect26.protoField = "pos";
+IS25.connect = new MFNode();
 
-IS IS32 = createNode("IS");
-connect connect33 = createNode("connect");
-connect33.nodeField = "posi";
-connect33.protoField = "pos";
-IS32.connect = new MFNode();
+IS25.connect[0] = connect26;
 
-IS32.connect[0] = connect33;
+ProtoInstance23.iS = IS25;
 
-ProtoInstance29.iS = IS32;
+ProtoBody22.children = new MFNode();
 
-ProtoBody28.children = new MFNode();
+ProtoBody22.children[0] = ProtoInstance23;
 
-ProtoBody28.children[0] = ProtoInstance29;
+ProtoDeclare19.protoBody = ProtoBody22;
 
-ProtoDeclare25.protoBody = ProtoBody28;
+children[1] = ProtoDeclare19;
 
-children[6] = ProtoDeclare25;
+NavigationInfo NavigationInfo27 = createNode("NavigationInfo");
+NavigationInfo27.type = new MFString(new java.lang.String["EXAMINE","FLY","WALK"]);
+NavigationInfo27.avatarSize = new MFFloat(new float[200,200,120]);
+NavigationInfo27.speed = 3;
+children[2] = NavigationInfo27;
 
-Anchor Anchor34 = createNode("Anchor");
-Anchor34.url = new MFString(new java.lang.String["javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor34.description = "High Peak Community Arts";
-ProtoInstance ProtoInstance35 = createNode("ProtoInstance");
-ProtoInstance35.name = "r";
-fieldValue fieldValue36 = createNode("fieldValue");
-fieldValue36.name = "pos";
-fieldValue36.value = "400 0.100000001490116 -385";
-ProtoInstance35.fieldValue = new MFNode();
+WorldInfo WorldInfo28 = createNode("WorldInfo");
+WorldInfo28.title = "Arts Mapper";
+children[3] = WorldInfo28;
 
-ProtoInstance35.fieldValue[0] = fieldValue36;
+Viewpoint Viewpoint29 = createNode("Viewpoint");
+Viewpoint29.description = "looking North";
+Viewpoint29.position = new SFVec3f(new float[0,60,110]);
+Viewpoint29.orientation = new SFRotation(new float[1,0,0,-0.699999988079071]);
+Viewpoint29.fieldOfView = 0.7853981;
+children[4] = Viewpoint29;
 
-Anchor34.children = new MFNode();
+Viewpoint Viewpoint30 = createNode("Viewpoint");
+Viewpoint30.description = "looking East";
+Viewpoint30.position = new SFVec3f(new float[-140,30,0]);
+Viewpoint30.orientation = new SFRotation(new float[0,0.400000005960464,0,-1.39999997615814]);
+Viewpoint30.fieldOfView = 0.7853981;
+children[5] = Viewpoint30;
 
-Anchor34.children[0] = ProtoInstance35;
+Viewpoint Viewpoint31 = createNode("Viewpoint");
+Viewpoint31.description = "Overhead";
+Viewpoint31.position = new SFVec3f(new float[0,150,0]);
+Viewpoint31.orientation = new SFRotation(new float[1,0,0,-1.57000005245209]);
+Viewpoint31.fieldOfView = 0.7853981;
+children[6] = Viewpoint31;
 
-children[7] = Anchor34;
+Anchor Anchor32 = createNode("Anchor");
+Anchor32.description = "High Peak Community Arts";
+Anchor32.url = new MFString(new java.lang.String["javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+ProtoInstance ProtoInstance33 = createNode("ProtoInstance");
+ProtoInstance33.name = "r";
+fieldValue fieldValue34 = createNode("fieldValue");
+fieldValue34.name = "pos";
+fieldValue34.value = "400 0.1 -385";
+ProtoInstance33.fieldValue = new MFNode();
+
+ProtoInstance33.fieldValue[0] = fieldValue34;
+
+Anchor32.children = new MFNode();
+
+Anchor32.children[0] = ProtoInstance33;
+
+children[7] = Anchor32;
 
 }

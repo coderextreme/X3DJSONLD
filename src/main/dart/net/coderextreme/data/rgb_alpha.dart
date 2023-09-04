@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Interchange'),
-      version_ : SFString('3.0'),
+      version_ : SFString('4.0'),
       head_ : 
         head(
           meta_ : [
@@ -74,11 +74,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit')),
-
-            meta(
-              name_ : SFString('license'),
-              content_ : SFString('../../license.html'))]),
+              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit'))]),
       Scene_ : 
         Scene(
           children_ : [
@@ -98,7 +94,7 @@ var X3D0 =  X3D(
                           texture_ : 
                             PixelTexture(
                               DEF_ : SFString('RgbOpacityCheckerboard'),
-                              image_ : SFImage([SFInt32(2), SFInt32(2), SFInt32(4), SFInt32(4278190335), SFInt32(4294901760), SFInt32(4294901760), SFInt32(4278190335)]))),
+                              image_ : SFImage([SFInt32(2), SFInt32(2), SFInt32(4), SFInt32(-16776961), SFInt32(-65536), SFInt32(-65536), SFInt32(-16776961)]))),
                       geometry_ : 
                         Box())),
 

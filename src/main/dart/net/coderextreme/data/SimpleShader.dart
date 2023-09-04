@@ -4,13 +4,9 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('3.2'),
+      version_ : SFString('4.0'),
       head_ : 
         head(
-          component_ : 
-            component(
-              name_ : SFString('Shaders'),
-              level_ : 1),
           meta_ : [
             meta(
               name_ : SFString('title'),
@@ -53,10 +49,6 @@ var X3D0 =  X3D(
               content_ : SFString('https://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest')),
 
             meta(
-              name_ : SFString('subject'),
-              content_ : SFString('X3D shader example')),
-
-            meta(
               name_ : SFString('reference'),
               content_ : SFString('originals/simpleShader.x3dv')),
 
@@ -65,8 +57,16 @@ var X3D0 =  X3D(
               content_ : SFString('ShaderTutorialInstantReality.pdf')),
 
             meta(
+              name_ : SFString('subject'),
+              content_ : SFString('X3D shader example')),
+
+            meta(
               name_ : SFString('generator'),
               content_ : SFString('Titania V3.0.3, http://titania.create3000.de')),
+
+            meta(
+              name_ : SFString('generator'),
+              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit')),
 
             meta(
               name_ : SFString('info'),
@@ -77,17 +77,12 @@ var X3D0 =  X3D(
               content_ : SFString('nicest')),
 
             meta(
-              name_ : SFString('generator'),
-              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit')),
-
-            meta(
               name_ : SFString('identifier'),
               content_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d')),
-
-            meta(
-              name_ : SFString('license'),
-              content_ : SFString('../../license.html')),
-          /*meta content='under development' name='warning'/*/]),
+          component_ : 
+            component(
+              name_ : SFString('Shaders'),
+              level_ : 1)]),
       Scene_ : 
         Scene(
           children_ : [
@@ -98,8 +93,8 @@ var X3D0 =  X3D(
                   field_ : [
                     field(
                       type_ : SFString("SFVec3f"),
-                      name_ : SFString('myInputRange'),
                       accessType_ : SFString("initializeOnly"),
+                      name_ : SFString('myInputRange'),
                       value_ : SFString('0.95 0.44 0.22'))]),
               ProtoBody_ : 
                 ProtoBody(
@@ -116,41 +111,38 @@ var X3D0 =  X3D(
                               shaders_ : 
                                 ComposedShader(
                                   language_ : SFString('GLSL'),
+                                  parts_ : 
+                                    ShaderPart(),
+                                  parts_ : 
+                                    ShaderPart(
+                                      type_ : SFString("FRAGMENT"),
                                   field_ : [
                                     field(
                                       type_ : SFString("SFVec3f"),
-                                      name_ : SFString('decis'),
-                                      accessType_ : SFString("initializeOnly"))],
+                                      accessType_ : SFString("initializeOnly"),
+                                      name_ : SFString('decis'))],
 
                                   IS_ : 
                                     IS(
                                       connect_ : [
                                         connect(
                                           nodeField_ : SFString('decis'),
-                                          protoField_ : SFString('myInputRange'))]),
-                                  parts_ : 
-                                    ShaderPart(
-                                      type_ : SFString("VERTEX"),
-                                  parts_ : 
-                                    ShaderPart(
-                                      type_ : SFString("FRAGMENT")),
+                                          protoField_ : SFString('myInputRange'))])),
                               shaders_ : 
                                 ComposedShader(
                                   DEF_ : SFString('Cobweb'),
                                   language_ : SFString('GLSL'),
+                                  parts_ : 
+                                    ShaderPart(),
+                                  parts_ : 
+                                    ShaderPart(
+                                      type_ : SFString("FRAGMENT"),
                                   field_ : [
                                     field(
                                       type_ : SFString("SFVec3f"),
-                                      name_ : SFString('decis'),
                                       accessType_ : SFString("initializeOnly"),
-                                      value_ : SFString('0.95 0.77 0.44')),
-                                  parts_ : 
-                                    ShaderPart(
-                                      type_ : SFString("VERTEX")],
-                                  parts_ : 
-                                    ShaderPart(
-                                      type_ : SFString("FRAGMENT",
-                                      DEF_ : SFString('_1')))),
+                                      name_ : SFString('decis'),
+                                      value_ : SFString('0.95 0.77 0.44'))])),
                           geometry_ : 
                             Sphere(
                               radius_ : 1.75)))])),
@@ -159,52 +151,51 @@ var X3D0 =  X3D(
               title_ : SFString('SimpleShader'),
               metadata_ : [
                 MetadataSet(
-                  name_ : SFString('Titania'),
                   DEF_ : SFString('Titania'),
+                  name_ : SFString('Titania'),
                   reference_ : SFString('http://titania.create3000.de'),
                   value_ : 
                     MetadataSet(
-                      name_ : SFString('Selection'),
                       DEF_ : SFString('Selection'),
+                      name_ : SFString('Selection'),
                       reference_ : SFString('http://titania.create3000.de'),
                       value_ : 
                         MetadataSet(
-                          name_ : SFString('nodes'),
                           DEF_ : SFString('nodes'),
-                          reference_ : SFString('http://titania.create3000.de'),
-                          /*NULL*/)),
+                          name_ : SFString('nodes'),
+                          reference_ : SFString('http://titania.create3000.de'))),
                   value_ : 
                     MetadataSet(
-                      name_ : SFString('NavigationInfo'),
                       DEF_ : SFString('NavigationInfo'),
+                      name_ : SFString('NavigationInfo'),
                       reference_ : SFString('http://titania.create3000.de'),
                       value_ : 
                         MetadataString(
-                          name_ : SFString('type'),
                           DEF_ : SFString('type'),
+                          name_ : SFString('type'),
                           reference_ : SFString('http://titania.create3000.de'),
                           value_ : MFString([SFString("EXAMINE")]))),
                   value_ : 
                     MetadataSet(
-                      name_ : SFString('Viewpoint'),
                       DEF_ : SFString('Viewpoint'),
+                      name_ : SFString('Viewpoint'),
                       reference_ : SFString('http://titania.create3000.de'),
                       value_ : 
                         MetadataDouble(
-                          name_ : SFString('position'),
                           DEF_ : SFString('position'),
+                          name_ : SFString('position'),
                           reference_ : SFString('http://titania.create3000.de'),
                           value_ : MFDouble([SFDouble(6.24067728185014), SFDouble(0.00250837343276661), SFDouble(2.92117542307615)])),
                       value_ : 
                         MetadataDouble(
-                          name_ : SFString('orientation'),
                           DEF_ : SFString('orientation'),
+                          name_ : SFString('orientation'),
                           reference_ : SFString('http://titania.create3000.de'),
                           value_ : MFDouble([SFDouble(-0.110173424710488), SFDouble(0.990158061907379), SFDouble(-0.0863065984000336), SFDouble(1.21146676119191)])),
                       value_ : 
                         MetadataDouble(
-                          name_ : SFString('centerOfRotation'),
                           DEF_ : SFString('centerOfRotation'),
+                          name_ : SFString('centerOfRotation'),
                           reference_ : SFString('http://titania.create3000.de'),
                           value_ : MFDouble([SFDouble(-0.808320198626341), SFDouble(-0.358072370409949), SFDouble(0.22817191560906)]))))]),
 

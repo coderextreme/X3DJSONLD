@@ -54,117 +54,106 @@ public class SplitChannels {
         .addMeta(new meta().setName("created").setContent("28 October 2020"))
         .addMeta(new meta().setName("modified").setContent("5 December 2021"))
         .addMeta(new meta().setName("reference").setContent("CHANGELOG.txt"))
-        .addMeta(new meta().setName("TODO").setContent("credit for audio files"))
         .addMeta(new meta().setName("reference").setContent("http://www.medialab.hmu.gr/minipages/x3domAudio"))
+        .addMeta(new meta().setName("TODO").setContent("credit for audio files"))
         .addMeta(new meta().setName("identifier").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("license").setContent("../license.html")))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("SplitChannels.x3d"))
-        .addChild(new NavigationInfo().setType("NONE"))
+        .addChild(new NavigationInfo())
         .addChild(new Background().setSkyColor(new MFColor0().getArray()))
-        .addChild(new Viewpoint().setOrientation(new float[] {1f,0f,0f,-0.5f}).setPosition(new float[] {0f,500f,600f}).setRetainUserOffsets(true))
+        .addChild(new Viewpoint().setPosition(new float[] {0f,500f,600f}).setOrientation(new float[] {1f,0f,0f,-0.5f}).setRetainUserOffsets(true))
         .addChild(new Transform().setDEF("PowerR").setTranslation(new float[] {100f,400f,400f})
-          .addChild(new Transform().setRotation(new float[] {1f,0f,0f,-0.5f}).setTranslation(new float[] {0f,40f,0f})
+          .addChild(new Transform().setTranslation(new float[] {0f,40f,0f}).setRotation(new float[] {1f,0f,0f,-0.5f})
             .addChild(new Shape()
               .setAppearance(new Appearance().setDEF("audio_emit")
-                .setMaterial(new Material().setDiffuseColor(new float[] {0f,1f,0f}).setEmissiveColor(new float[] {0.8f,0.8f,0.8f}).setSpecularColor(new float[] {0.01f,0.01f,0.01f})))
+                .setMaterial(new Material().setDiffuseColor(new float[] {0f,1f,0f}).setSpecularColor(new float[] {0.01f,0.01f,0.01f}).setEmissiveColor(new float[] {0.8f,0.8f,0.8f})))
               .setGeometry(new Box().setSize(new float[] {10f,80f,0.01f}))))
-          .addChild(new Transform().setRotation(new float[] {1f,0f,0f,-0.5f}).setTranslation(new float[] {-2.7f,37f,0f})
+          .addChild(new Transform().setTranslation(new float[] {-2.7f,37f,0f}).setRotation(new float[] {1f,0f,0f,-0.5f})
             .addChild(new Shape()
               .setAppearance(new Appearance().setDEF("audio_emit2")
-                .setMaterial(new Material().setDiffuseColor(new float[] {0f,1f,0f}).setEmissiveColor(new float[] {0.8f,0.8f,0.8f}).setSpecularColor(new float[] {0.01f,0.01f,0.01f}))
+                .setMaterial(new Material().setDiffuseColor(new float[] {0f,1f,0f}).setSpecularColor(new float[] {0.01f,0.01f,0.01f}).setEmissiveColor(new float[] {0.8f,0.8f,0.8f}))
                 .setTexture(new ImageTexture().setUrl(new MFString1().getArray())))
               .setGeometry(new Box().setSize(new float[] {25f,83f,0.01f}))))
-          .addChild(new Transform().setDEF("volumeRight").setRotation(new float[] {1f,0f,0f,-0.5f}).setScale(new float[] {10f,10f,10f}).setTranslation(new float[] {0f,-10f,0f})
+          .addChild(new Transform().setDEF("volumeRight").setTranslation(new float[] {0f,-10f,0f}).setRotation(new float[] {1f,0f,0f,-0.5f}).setScale(new float[] {10f,10f,10f})
             .addChild(new Shape()
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setAmbientIntensity(0.0933f).setDiffuseColor(new float[] {0.345f,0.345f,0.882f}).setShininess(0.51f).setSpecularColor(new float[] {0.46f,0.46f,0.46f})))
-              .setGeometry(new Text().setString(new MFString2().getArray())
-                .setFontStyle(new FontStyle().setFamily(new MFString3().getArray()).setStyle("BOLD"))))))
+                .setMaterial(new Material().setAmbientIntensity(0.0933f).setDiffuseColor(new float[] {0.345f,0.345f,0.882f}).setSpecularColor(new float[] {0.46f,0.46f,0.46f}).setShininess(0.51f)))
+              .setGeometry(new Text()
+                .setFontStyle(new FontStyle().setFamily(new MFString2().getArray()).setStyle("BOLD"))))))
         .addChild(new Transform().setDEF("PowerL").setTranslation(new float[] {-100f,400f,400f})
-          .addChild(new Transform().setRotation(new float[] {1f,0f,0f,-0.5f}).setTranslation(new float[] {0f,40f,0f})
+          .addChild(new Transform().setTranslation(new float[] {0f,40f,0f}).setRotation(new float[] {1f,0f,0f,-0.5f})
             .addChild(new Shape()
               .setAppearance(new Appearance().setDEF("audio_emit3")
-                .setMaterial(new Material().setDiffuseColor(new float[] {0f,1f,0f}).setEmissiveColor(new float[] {0.8f,0.8f,0.8f}).setSpecularColor(new float[] {0.01f,0.01f,0.01f})))
+                .setMaterial(new Material().setDiffuseColor(new float[] {0f,1f,0f}).setSpecularColor(new float[] {0.01f,0.01f,0.01f}).setEmissiveColor(new float[] {0.8f,0.8f,0.8f})))
               .setGeometry(new Box().setSize(new float[] {10f,80f,0.01f}))))
-          .addChild(new Transform().setRotation(new float[] {1f,0f,0f,-0.5f}).setTranslation(new float[] {13.2f,37f,0f})
+          .addChild(new Transform().setTranslation(new float[] {13.2f,37f,0f}).setRotation(new float[] {1f,0f,0f,-0.5f})
             .addChild(new Shape()
               .setAppearance(new Appearance().setDEF("audio_emit4")
-                .setMaterial(new Material().setDiffuseColor(new float[] {0f,1f,0f}).setEmissiveColor(new float[] {0.8f,0.8f,0.8f}).setSpecularColor(new float[] {0.01f,0.01f,0.01f}))
-                .setTexture(new ImageTexture().setUrl(new MFString4().getArray())))
+                .setMaterial(new Material().setDiffuseColor(new float[] {0f,1f,0f}).setSpecularColor(new float[] {0.01f,0.01f,0.01f}).setEmissiveColor(new float[] {0.8f,0.8f,0.8f}))
+                .setTexture(new ImageTexture().setUrl(new MFString3().getArray())))
               .setGeometry(new Box().setSize(new float[] {25f,83f,0.01f}))))
-          .addChild(new Transform().setDEF("volumeLeft").setRotation(new float[] {1f,0f,0f,-0.5f}).setScale(new float[] {10f,10f,10f}).setTranslation(new float[] {0f,-10f,0f})
+          .addChild(new Transform().setDEF("volumeLeft").setTranslation(new float[] {0f,-10f,0f}).setRotation(new float[] {1f,0f,0f,-0.5f}).setScale(new float[] {10f,10f,10f})
             .addChild(new Shape()
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setAmbientIntensity(0.0933f).setDiffuseColor(new float[] {0.345f,0.345f,0.882f}).setShininess(0.51f).setSpecularColor(new float[] {0.46f,0.46f,0.46f})))
-              .setGeometry(new Text().setString(new MFString5().getArray())
-                .setFontStyle(new FontStyle().setFamily(new MFString6().getArray()).setStyle("BOLD"))))))
+                .setMaterial(new Material().setAmbientIntensity(0.0933f).setDiffuseColor(new float[] {0.345f,0.345f,0.882f}).setSpecularColor(new float[] {0.46f,0.46f,0.46f}).setShininess(0.51f)))
+              .setGeometry(new Text()
+                .setFontStyle(new FontStyle().setFamily(new MFString4().getArray()).setStyle("BOLD"))))))
         .addChild(new Transform()
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("floor")
-              .setMaterial(new Material().setDiffuseColor(new float[] {0.1f,0.1f,0.1f}).setShininess(0.8f).setSpecularColor(new float[] {0.5f,0.6f,0.7f})))
+              .setMaterial(new Material().setDiffuseColor(new float[] {0.1f,0.1f,0.1f}).setSpecularColor(new float[] {0.5f,0.6f,0.7f}).setShininess(0.8f)))
             .setGeometry(new Box().setSize(new float[] {1500f,10f,500f}))))
         .addChild(new ListenerPointSource().setTrackCurrentView(true))
-        .addChild(new StreamAudioDestination().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
-          .addChild(new Gain().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
-            .addChild(new ChannelMerger().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
-              .addChild(new ChannelSelector().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
-                .addChild(new Gain().setUSE("ChannelSplitter")))
-              .addChild(new ChannelSelector().setChannelSelection(1).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
-                .addChild(new Gain().setUSE("ChannelSplitter"))))))
-        .addChild(new ChannelSplitter().setDEF("ChannelSplitter").setChannelCountMode("EXPLICIT").setChannelInterpretation("SPEAKERS")
-          .addOutputs(new AudioClip().setDescription("Violin").setUrl(new MFString7().getArray())))
-        .addChild(new Transform().setDEF("Audio3").setRotation(new float[] {1f,0f,0f,-0.5f}).setTranslation(new float[] {0f,100f,0f})
+        .addChild(new StreamAudioDestination()
+          .addChild(new Gain()
+            .addChild(new ChannelMerger()
+              .addChild(new ChannelSelector()
+                .addChild(new Gain()))
+              .addChild(new ChannelSelector().setChannelSelection(1)
+                .addChild(new Gain())))))
+        .addChild(new ChannelSplitter().setDEF("ChannelSplitter").setChannelCountMode("EXPLICIT")
+          .addOutputs(new AudioClip().setDescription("Violin").setUrl(new MFString5().getArray())))
+        .addChild(new Transform().setDEF("Audio3").setTranslation(new float[] {0f,100f,0f}).setRotation(new float[] {1f,0f,0f,-0.5f})
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("audio_emit5")
-              .setMaterial(new Material().setDiffuseColor(new float[] {0.3f,1f,0.3f}).setEmissiveColor(new float[] {0.8f,0.8f,0.8f}).setSpecularColor(new float[] {0.01f,0.01f,0.01f}))
-              .setTexture(new ImageTexture().setUrl(new MFString8().getArray())))
+              .setMaterial(new Material().setDiffuseColor(new float[] {0.3f,1f,0.3f}).setSpecularColor(new float[] {0.01f,0.01f,0.01f}).setEmissiveColor(new float[] {0.8f,0.8f,0.8f}))
+              .setTexture(new ImageTexture().setUrl(new MFString6().getArray())))
             .setGeometry(new Box().setSize(new float[] {100f,100f,0.001f})))))      ;
     return X3D0;
     }
-protected class MFColor0 {
-  protected org.web3d.x3d.jsail.fields.MFColor getArray() {
+private class MFColor0 {
+  private org.web3d.x3d.jsail.fields.MFColor getArray() {
     return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.2f,0.2f,0.21f});
   }
 }
-protected class MFString1 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString1 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"images/line.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"});
   }
 }
-protected class MFString2 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Right Channel Volume"});
-  }
-}
-protected class MFString3 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString2 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Times"});
   }
 }
-protected class MFString4 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString3 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"images/line.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"});
   }
 }
-protected class MFString5 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Left Channel Volume"});
-  }
-}
-protected class MFString6 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString4 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Times"});
   }
 }
-protected class MFString7 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString5 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"});
   }
 }
-protected class MFString8 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString6 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"images/loudspeaker.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"});
   }
 }

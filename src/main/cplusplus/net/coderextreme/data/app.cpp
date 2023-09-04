@@ -29,37 +29,32 @@ meta4->setName("creator");
 meta4->setContent("Carlson, II");
 head1->addMeta(*meta4);
 
-Cmeta* meta5 = new Cmeta();
-meta5->setName("creator");
-meta5->setContent("Carlson, III");
-head1->addMeta(*meta5);
-
 X3D0->setHead(*head1);
 
-CScene* Scene6 = new CScene();
-CGroup* Group7 = (CGroup *)(m_pScene.createNode("Group"));
-CShape* Shape8 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance9 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material10 = (CMaterial *)(m_pScene.createNode("Material"));
-Material10->setDiffuseColor(new float[3]{1,0,0});
-Appearance9->setMaterial(*Material10);
+CScene* Scene5 = new CScene();
+CGroup* Group6 = (CGroup *)(m_pScene.createNode("Group"));
+CShape* Shape7 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance8 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material9 = (CMaterial *)(m_pScene.createNode("Material"));
+Material9->setDiffuseColor(new float[3]{1,0,0});
+Appearance8->setMaterial(*Material9);
 
-Shape8->setAppearance(*Appearance9);
+Shape7->setAppearance(*Appearance8);
 
-CBox* Box11 = (CBox *)(m_pScene.createNode("Box"));
-Shape8->setGeometry(Box11);
+CBox* Box10 = (CBox *)(m_pScene.createNode("Box"));
+Shape7->setGeometry(Box10);
 
-Group7->addChildren(*Shape8);
+Group6->addChildren(*Shape7);
 
-group->addChildren(*Group7);
+group->addChildren(*Group6);
 
-CTransform* Transform12 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform12->setRotation(new float[4]{7,8,9,3.14});
-Transform12->setScale(new float[3]{4,5,6});
-Transform12->setTranslation(new float[3]{1,2,3});
-group->addChildren(*Transform12);
+CTransform* Transform11 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform11->setTranslation(new float[3]{1,2,3});
+Transform11->setRotation(new float[4]{7,8,9,3.14});
+Transform11->setScale(new float[3]{4,5,6});
+group->addChildren(*Transform11);
 
-X3D0->setScene(*Scene6);
+X3D0->setScene(*Scene5);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

@@ -45,7 +45,7 @@ public class indexedfaceset_pixeltexture_part {
     model.toFileJSON("../data/indexedfaceset_pixeltexture_part.new.json");
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("3.0")
+      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("indexedfaceset_pixeltexture_part.x3d"))
         .addMeta(new meta().setName("Image").setContent("indexedfaceset_pixeltexture_part-front.jpg"))
@@ -65,49 +65,48 @@ public class indexedfaceset_pixeltexture_part {
         .addMeta(new meta().setName("description").setContent("Test of browser ability to map a partial portion of an PixelTexture onto an IndexedFaceSet geometry. Only the yellow portion of four equal sized red, green, yellow and white squares in the pixel texture map all the faces of the cube."))
         .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/ConformanceNist/GeometricProperties/TextureCoordinate/indexedfaceset_pixeltexture_part.x3d"))
         .addMeta(new meta().setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("license").setContent("../../license.html")))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")))
       .setScene(new Scene()
         .addChild(new Viewpoint().setDescription("Front View"))
-        .addChild(new Viewpoint().setDescription("Rear View").setOrientation(new float[] {0f,1f,0f,3.14f}).setPosition(new float[] {0f,0f,-10f}))
-        .addChild(new Viewpoint().setDescription("Top View").setOrientation(new float[] {1f,0f,0f,-1.57f}).setPosition(new float[] {0f,10f,0f}))
-        .addChild(new Viewpoint().setDescription("Bottom View").setOrientation(new float[] {1f,0f,0f,1.57f}).setPosition(new float[] {0f,-10f,0f}))
-        .addChild(new Viewpoint().setDescription("Right View").setOrientation(new float[] {0f,1f,0f,1.57f}).setPosition(new float[] {10f,0f,0f}))
-        .addChild(new Viewpoint().setDescription("Left View").setOrientation(new float[] {0f,1f,0f,-1.57f}).setPosition(new float[] {-10f,0f,0f}))
+        .addChild(new Viewpoint().setDescription("Rear View").setPosition(new float[] {0f,0f,-10f}).setOrientation(new float[] {0f,1f,0f,3.14f}))
+        .addChild(new Viewpoint().setDescription("Top View").setPosition(new float[] {0f,10f,0f}).setOrientation(new float[] {1f,0f,0f,-1.57f}))
+        .addChild(new Viewpoint().setDescription("Bottom View").setPosition(new float[] {0f,-10f,0f}).setOrientation(new float[] {1f,0f,0f,1.57f}))
+        .addChild(new Viewpoint().setDescription("Right View").setPosition(new float[] {10f,0f,0f}).setOrientation(new float[] {0f,1f,0f,1.57f}))
+        .addChild(new Viewpoint().setDescription("Left View").setPosition(new float[] {-10f,0f,0f}).setOrientation(new float[] {0f,1f,0f,-1.57f}))
         .addChild(new NavigationInfo().setType("\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\""))
         .addChild(new Shape()
           .setAppearance(new Appearance()
             .setMaterial(new Material())
-            .setTexture(new PixelTexture().setImage(new int[] {2,2,4,0xFF0000FF,16711935,0xFFFFFFFF,0xFFFF00FF})))
-          .setGeometry(new IndexedFaceSet().setColorPerVertex(false).setCoordIndex(new MFInt320().getArray()).setCreaseAngle(0.5f).setTexCoordIndex(new MFInt321().getArray())
+            .setTexture(new PixelTexture().setImage(new int[] {2,2,4,-16776961,16711935,-1,-65281})))
+          .setGeometry(new IndexedFaceSet().setCreaseAngle(0.5f).setColorPerVertex(false).setTexCoordIndex(new MFInt320().getArray()).setCoordIndex(new MFInt321().getArray())
             .setColor(new Color().setColor(new MFColor2().getArray()))
-            .setCoord(new Coordinate().setPoint(new MFVec3f3().getArray()))
-            .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f4().getArray())))))      ;
+            .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f3().getArray()))
+            .setCoord(new Coordinate().setPoint(new MFVec3f4().getArray())))))      ;
     return X3D0;
     }
-protected class MFInt320 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1});
-  }
-}
-protected class MFInt321 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+private class MFInt320 {
+  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1});
   }
 }
-protected class MFColor2 {
-  protected org.web3d.x3d.jsail.fields.MFColor getArray() {
+private class MFInt321 {
+  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1});
+  }
+}
+private class MFColor2 {
+  private org.web3d.x3d.jsail.fields.MFColor getArray() {
     return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f});
   }
 }
-protected class MFVec3f3 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-2f,1f,1f,-2f,-1f,1f,2f,1f,1f,2f,-1f,1f,2f,1f,-1f,2f,-1f,-1f,-2f,1f,-1f,-2f,-1f,-1f});
+private class MFVec2f3 {
+  private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0.5f,1f,0.5f,0.5f,1f,1f,1f,0.5f});
   }
 }
-protected class MFVec2f4 {
-  protected org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0.5f,1f,0.5f,0.5f,1f,1f,1f,0.5f});
+private class MFVec3f4 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-2f,1f,1f,-2f,-1f,1f,2f,1f,1f,2f,-1f,1f,2f,1f,-1f,2f,-1f,-1f,-2f,1f,-1f,-2f,-1f,-1f});
   }
 }
 }

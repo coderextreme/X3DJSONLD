@@ -5,9 +5,7 @@ ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
-      .setHead(new head()
-        .addMeta(new meta().setName("converter").setContent("x3d-tidy V1.0.56, https://www.npmjs.com/package/x3d-tidy"))
-        .addMeta(new meta().setName("converted").setContent("Mon, 31 Jul 2023 03:48:04 GMT")))
+      .setHead(new head())
       .setScene(new Scene()
         .addChild(new NavigationInfo().setHeadlight(false))
         .addChild(new Group()
@@ -47,4 +45,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                   .setAppearance(new Appearance().setUSE("LABEL_APPEARANCE"))
                   .setGeometry(new Text().setString(Java.to(["Z"], Java.type("java.lang.String[]")))
                     .setFontStyle(new FontStyle().setUSE("LABEL_FONT")))))))))      ;
-    X3D0.toFileX3D("../data/JointCoordinateAxes.new.graal.x3d");
+    X3D0.toFileJSON("../data/JointCoordinateAxes.new.graal.json");

@@ -3,7 +3,7 @@ void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Interchange";
-X3D0.version = "3.0";
+X3D0.version = "4.0";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "title";
@@ -92,111 +92,106 @@ meta18.name = "generator";
 meta18.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
 head1.meta[16] = meta18;
 
-meta meta19 = createNode("meta");
-meta19.name = "license";
-meta19.content = "../../license.html";
-head1.meta[17] = meta19;
-
 head = head1;
 
-NavigationInfo NavigationInfo21 = createNode("NavigationInfo");
-NavigationInfo21.type = new MFString(new java.lang.String["EXAMINE","WALK","FLY","ANY"]);
+NavigationInfo NavigationInfo20 = createNode("NavigationInfo");
+NavigationInfo20.type = new MFString(new java.lang.String["EXAMINE","WALK","FLY","ANY"]);
 children = new MFNode();
 
-children[0] = NavigationInfo21;
+children[0] = NavigationInfo20;
 
-Group Group22 = createNode("Group");
-Transform Transform23 = createNode("Transform");
-Transform23.translation = new SFVec3f(new float[6.14221,0.0694613,-0.000999451]);
-Shape Shape24 = createNode("Shape");
-Appearance Appearance25 = createNode("Appearance");
-Material Material26 = createNode("Material");
-Appearance25.material = Material26;
+Group Group21 = createNode("Group");
+Transform Transform22 = createNode("Transform");
+Transform22.translation = new SFVec3f(new float[6.14221,0.0694613,-0.000999451]);
+Shape Shape23 = createNode("Shape");
+Appearance Appearance24 = createNode("Appearance");
+Material Material25 = createNode("Material");
+Appearance24.material = Material25;
 
-PixelTexture PixelTexture27 = createNode("PixelTexture");
-PixelTexture27.DEF = "RgbOpacityCheckerboard";
-PixelTexture27.image = new SFImage(new int[2,2,4,-16776961,-65536,-65536,-16776961]);
-Appearance25.texture = PixelTexture27;
+PixelTexture PixelTexture26 = createNode("PixelTexture");
+PixelTexture26.DEF = "RgbOpacityCheckerboard";
+PixelTexture26.image = new SFImage(new int[2,2,4,-16776961,-65536,-65536,-16776961]);
+Appearance24.texture = PixelTexture26;
 
-Shape24.appearance = Appearance25;
+Shape23.appearance = Appearance24;
 
-Box Box28 = createNode("Box");
-Shape24.geometry = Box28;
+Box Box27 = createNode("Box");
+Shape23.geometry = Box27;
 
-Transform23.child = new undefined();
+Transform22.child = new undefined();
 
-Transform23.child[0] = Shape24;
+Transform22.child[0] = Shape23;
 
-Group22.children = new MFNode();
+Group21.children = new MFNode();
 
-Group22.children[0] = Transform23;
+Group21.children[0] = Transform22;
 
-Transform Transform29 = createNode("Transform");
-Transform29.translation = new SFVec3f(new float[-4.85443,0.0694381,-0.00149918]);
-Shape Shape30 = createNode("Shape");
-Appearance Appearance31 = createNode("Appearance");
-Material Material32 = createNode("Material");
-Appearance31.material = Material32;
+Transform Transform28 = createNode("Transform");
+Transform28.translation = new SFVec3f(new float[-4.85443,0.0694381,-0.00149918]);
+Shape Shape29 = createNode("Shape");
+Appearance Appearance30 = createNode("Appearance");
+Material Material31 = createNode("Material");
+Appearance30.material = Material31;
 
-PixelTexture PixelTexture33 = createNode("PixelTexture");
-PixelTexture33.USE = "RgbOpacityCheckerboard";
-Appearance31.texture = PixelTexture33;
+PixelTexture PixelTexture32 = createNode("PixelTexture");
+PixelTexture32.USE = "RgbOpacityCheckerboard";
+Appearance30.texture = PixelTexture32;
 
-Shape30.appearance = Appearance31;
+Shape29.appearance = Appearance30;
 
-Sphere Sphere34 = createNode("Sphere");
-Shape30.geometry = Sphere34;
+Sphere Sphere33 = createNode("Sphere");
+Shape29.geometry = Sphere33;
 
-Transform29.child = new undefined();
+Transform28.child = new undefined();
 
-Transform29.child[0] = Shape30;
+Transform28.child[0] = Shape29;
 
-Group22.children[1] = Transform29;
+Group21.children[1] = Transform28;
 
-Transform Transform35 = createNode("Transform");
-Transform35.translation = new SFVec3f(new float[-1.47341,0.036672,-0.00175095]);
-Shape Shape36 = createNode("Shape");
-Appearance Appearance37 = createNode("Appearance");
-Material Material38 = createNode("Material");
-Appearance37.material = Material38;
+Transform Transform34 = createNode("Transform");
+Transform34.translation = new SFVec3f(new float[-1.47341,0.036672,-0.00175095]);
+Shape Shape35 = createNode("Shape");
+Appearance Appearance36 = createNode("Appearance");
+Material Material37 = createNode("Material");
+Appearance36.material = Material37;
 
-PixelTexture PixelTexture39 = createNode("PixelTexture");
-PixelTexture39.USE = "RgbOpacityCheckerboard";
-Appearance37.texture = PixelTexture39;
+PixelTexture PixelTexture38 = createNode("PixelTexture");
+PixelTexture38.USE = "RgbOpacityCheckerboard";
+Appearance36.texture = PixelTexture38;
 
-Shape36.appearance = Appearance37;
+Shape35.appearance = Appearance36;
 
-Cone Cone40 = createNode("Cone");
-Shape36.geometry = Cone40;
+Cone Cone39 = createNode("Cone");
+Shape35.geometry = Cone39;
 
-Transform35.child = new undefined();
+Transform34.child = new undefined();
 
-Transform35.child[0] = Shape36;
+Transform34.child[0] = Shape35;
 
-Group22.children[2] = Transform35;
+Group21.children[2] = Transform34;
 
-Transform Transform41 = createNode("Transform");
-Transform41.translation = new SFVec3f(new float[2.31094,0.0694206,-0.00187683]);
-Shape Shape42 = createNode("Shape");
-Appearance Appearance43 = createNode("Appearance");
-Material Material44 = createNode("Material");
-Appearance43.material = Material44;
+Transform Transform40 = createNode("Transform");
+Transform40.translation = new SFVec3f(new float[2.31094,0.0694206,-0.00187683]);
+Shape Shape41 = createNode("Shape");
+Appearance Appearance42 = createNode("Appearance");
+Material Material43 = createNode("Material");
+Appearance42.material = Material43;
 
-PixelTexture PixelTexture45 = createNode("PixelTexture");
-PixelTexture45.USE = "RgbOpacityCheckerboard";
-Appearance43.texture = PixelTexture45;
+PixelTexture PixelTexture44 = createNode("PixelTexture");
+PixelTexture44.USE = "RgbOpacityCheckerboard";
+Appearance42.texture = PixelTexture44;
 
-Shape42.appearance = Appearance43;
+Shape41.appearance = Appearance42;
 
-Cylinder Cylinder46 = createNode("Cylinder");
-Shape42.geometry = Cylinder46;
+Cylinder Cylinder45 = createNode("Cylinder");
+Shape41.geometry = Cylinder45;
 
-Transform41.child = new undefined();
+Transform40.child = new undefined();
 
-Transform41.child[0] = Shape42;
+Transform40.child[0] = Shape41;
 
-Group22.children[3] = Transform41;
+Group21.children[3] = Transform40;
 
-children[1] = Group22;
+children[1] = Group21;
 
 }

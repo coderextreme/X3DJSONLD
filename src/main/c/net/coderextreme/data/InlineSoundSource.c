@@ -43,13 +43,13 @@ meta8.content = "CHANGELOG.txt";
 head1.meta[6] = meta8;
 
 meta meta9 = createNode("meta");
-meta9.name = "TODO";
-meta9.content = "credit for audio files";
+meta9.name = "reference";
+meta9.content = "https://medialab.hmu.gr/minipages/x3domAudio";
 head1.meta[7] = meta9;
 
 meta meta10 = createNode("meta");
-meta10.name = "reference";
-meta10.content = "https://medialab.hmu.gr/minipages/x3domAudio";
+meta10.name = "TODO";
+meta10.content = "credit for audio files";
 head1.meta[8] = meta10;
 
 meta meta11 = createNode("meta");
@@ -62,82 +62,77 @@ meta12.name = "generator";
 meta12.content = "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit";
 head1.meta[10] = meta12;
 
-meta meta13 = createNode("meta");
-meta13.name = "license";
-meta13.content = "../license.html";
-head1.meta[11] = meta13;
-
 head = head1;
 
-WorldInfo WorldInfo15 = createNode("WorldInfo");
-WorldInfo15.title = "InlineSoundSource.x3d";
+WorldInfo WorldInfo14 = createNode("WorldInfo");
+WorldInfo14.title = "InlineSoundSource.x3d";
 children = new MFNode();
 
-children[0] = WorldInfo15;
+children[0] = WorldInfo14;
 
-NavigationInfo NavigationInfo16 = createNode("NavigationInfo");
-NavigationInfo16.DEF = "NAV";
-children[1] = NavigationInfo16;
+NavigationInfo NavigationInfo15 = createNode("NavigationInfo");
+NavigationInfo15.DEF = "NAV";
+children[1] = NavigationInfo15;
 
-Background Background17 = createNode("Background");
-Background17.backUrl = new MFString(new java.lang.String["images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"]);
-Background17.bottomUrl = new MFString(new java.lang.String["images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"]);
-Background17.frontUrl = new MFString(new java.lang.String["images/generic/FR1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"]);
-Background17.leftUrl = new MFString(new java.lang.String["images/generic/LF1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"]);
-Background17.rightUrl = new MFString(new java.lang.String["images/generic/RT1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"]);
-Background17.topUrl = new MFString(new java.lang.String["images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"]);
-children[2] = Background17;
+Background Background16 = createNode("Background");
+Background16.frontUrl = new MFString(new java.lang.String["images/generic/FR1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"]);
+Background16.backUrl = new MFString(new java.lang.String["images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"]);
+Background16.leftUrl = new MFString(new java.lang.String["images/generic/LF1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"]);
+Background16.rightUrl = new MFString(new java.lang.String["images/generic/RT1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"]);
+Background16.topUrl = new MFString(new java.lang.String["images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"]);
+Background16.bottomUrl = new MFString(new java.lang.String["images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"]);
+children[2] = Background16;
 
-Viewpoint Viewpoint18 = createNode("Viewpoint");
-Viewpoint18.DEF = "Camera001";
-Viewpoint18.description = "Camera001";
-Viewpoint18.farDistance = 0;
-Viewpoint18.nearDistance = 1;
-Viewpoint18.orientation = new SFRotation(new float[1,0,0,-0.523599]);
-Viewpoint18.position = new SFVec3f(new float[0,2000,3500]);
-children[3] = Viewpoint18;
+Viewpoint Viewpoint17 = createNode("Viewpoint");
+Viewpoint17.DEF = "Camera001";
+Viewpoint17.description = "Camera001";
+Viewpoint17.position = new SFVec3f(new float[0,2000,3500]);
+Viewpoint17.orientation = new SFRotation(new float[1,0,0,-0.523599]);
+Viewpoint17.nearDistance = 1;
+Viewpoint17.farDistance = 0;
+children[3] = Viewpoint17;
 
-Transform Transform19 = createNode("Transform");
-Transform19.DEF = "Floor";
-Transform19.translation = new SFVec3f(new float[1.241,0,0.358]);
-Shape Shape20 = createNode("Shape");
-Appearance Appearance21 = createNode("Appearance");
-Appearance21.DEF = "WireColor";
-Material Material22 = createNode("Material");
-Material22.diffuseColor = new SFColor(new float[0.122,0.114,0.125]);
-Appearance21.material = Material22;
+Transform Transform18 = createNode("Transform");
+Transform18.DEF = "Floor";
+Transform18.translation = new SFVec3f(new float[1.241,0,0.358]);
+Shape Shape19 = createNode("Shape");
+Appearance Appearance20 = createNode("Appearance");
+Appearance20.DEF = "WireColor";
+Material Material21 = createNode("Material");
+Material21.diffuseColor = new SFColor(new float[0.122,0.114,0.125]);
+Appearance20.material = Material21;
 
-Shape20.appearance = Appearance21;
+Shape19.appearance = Appearance20;
 
-IndexedFaceSet IndexedFaceSet23 = createNode("IndexedFaceSet");
-IndexedFaceSet23.DEF = "Box001-GEOMETRY";
-IndexedFaceSet23.coordIndex = new MFInt32(new int[0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,15,16,17,-1,18,19,20,-1,21,22,23,-1,24,25,26,-1,27,28,29,-1,30,31,32,-1,33,34,35,-1]);
-IndexedFaceSet23.solid = False;
+IndexedFaceSet IndexedFaceSet22 = createNode("IndexedFaceSet");
+IndexedFaceSet22.DEF = "Box001-GEOMETRY";
+IndexedFaceSet22.solid = False;
+IndexedFaceSet22.coordIndex = new MFInt32(new int[0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,15,16,17,-1,18,19,20,-1,21,22,23,-1,24,25,26,-1,27,28,29,-1,30,31,32,-1,33,34,35,-1]);
+Normal Normal23 = createNode("Normal");
+Normal23.vector = new MFVec3f(new float[0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0]);
+IndexedFaceSet22.normal = Normal23;
+
 Coordinate Coordinate24 = createNode("Coordinate");
 Coordinate24.point = new MFVec3f(new float[-1000,0,1000,-1000,0,-1000,1000,0,-1000,1000,0,-1000,1000,0,1000,-1000,0,1000,-1000,8.031588,1000,1000,8.031588,1000,1000,8.031588,-1000,1000,8.031588,-1000,-1000,8.031588,-1000,-1000,8.031588,1000,-1000,0,1000,1000,0,1000,1000,8.031588,1000,1000,8.031588,1000,-1000,8.031588,1000,-1000,0,1000,1000,0,1000,1000,0,-1000,1000,8.031588,-1000,1000,8.031588,-1000,1000,8.031588,1000,1000,0,1000,1000,0,-1000,-1000,0,-1000,-1000,8.031588,-1000,-1000,8.031588,-1000,1000,8.031588,-1000,1000,0,-1000,-1000,0,-1000,-1000,0,1000,-1000,8.031588,1000,-1000,8.031588,1000,-1000,8.031588,-1000,-1000,0,-1000]);
-IndexedFaceSet23.coord = Coordinate24;
+IndexedFaceSet22.coord = Coordinate24;
 
-Normal Normal25 = createNode("Normal");
-Normal25.vector = new MFVec3f(new float[0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0]);
-IndexedFaceSet23.normal = Normal25;
+Shape19.geometry = IndexedFaceSet22;
 
-Shape20.geometry = IndexedFaceSet23;
+Transform18.child = new undefined();
 
-Transform19.child = new undefined();
+Transform18.child[0] = Shape19;
 
-Transform19.child[0] = Shape20;
+children[4] = Transform18;
 
-children[4] = Transform19;
+Transform Transform25 = createNode("Transform");
+Transform25.DEF = "InlineScene";
+Inline Inline26 = createNode("Inline");
+Inline26.DEF = "inline";
+Inline26.url = new MFString(new java.lang.String["x3d/example1.x3d","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.x3d","x3d/example1.wrl","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.wrl"]);
+Transform25.children = new MFNode();
 
-Transform Transform26 = createNode("Transform");
-Transform26.DEF = "InlineScene";
-Inline Inline27 = createNode("Inline");
-Inline27.DEF = "inline";
-Inline27.url = new MFString(new java.lang.String["x3d/example1.x3d","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.x3d","x3d/example1.wrl","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.wrl"]);
-Transform26.children = new MFNode();
+Transform25.children[0] = Inline26;
 
-Transform26.children[0] = Inline27;
-
-children[5] = Transform26;
+children[5] = Transform25;
 
 }
