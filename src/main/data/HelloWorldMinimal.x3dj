@@ -1,3 +1,100 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ea31f286c3d105591ad55c92753b9db91c1e580466780b9eb4fe397069b79f11
-size 2804
+{ "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "HelloWorldMinimal.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "Hello World minimal example scene."
+        },
+        {
+          "@name": "creator",
+          "@content": "Don Brutzman"
+        },
+        {
+          "@name": "created",
+          "@content": "19 January 2020"
+        },
+        {
+          "@name": "modified",
+          "@content": "24 January 2020"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://helloworldcollection.de"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://en.wiktionary.org/wiki/Hello_World"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://en.wikipedia.org/wiki/%22Hello,%20World!%22_program"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world#X3D_(Extensible_3D)"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldMinimalIndex.html"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldMinimal.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        },
+        {
+          "@name": "converter",
+          "@content": "x3d-tidy V1.0.56, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "converted",
+          "@content": "Mon, 04 Sep 2023 07:53:05 GMT"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        { "WorldInfo":
+          {
+            "@title": "HelloWorldMinimal.x3d"
+          }
+        },
+        { "Shape":
+          {
+            "-geometry": { "Text":
+              {
+                "@string": [
+                  "hello, world"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,3 +1,601 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3e5ee27bed274c8fd81b9553daf346db073fc22395a8e268d8f0acbabfd4504e
-size 24234
+{ "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "flowers.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "description",
+          "@content": "5 or more prismatic flowers"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/flowers.x3d"
+        },
+        {
+          "@name": "converter",
+          "@content": "x3d-tidy V1.0.56, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "converted",
+          "@content": "Mon, 04 Sep 2023 07:51:21 GMT"
+        }
+      ],
+      "component": [
+        {
+          "@name": "Scripting",
+          "@level": 1
+        },
+        {
+          "@name": "EnvironmentalEffects",
+          "@level": 3
+        },
+        {
+          "@name": "Shaders",
+          "@level": 1
+        },
+        {
+          "@name": "CubeMapTexturing",
+          "@level": 1
+        },
+        {
+          "@name": "Texturing",
+          "@level": 1
+        },
+        {
+          "@name": "Rendering",
+          "@level": 1
+        },
+        {
+          "@name": "Shape",
+          "@level": 4
+        },
+        {
+          "@name": "Grouping",
+          "@level": 3
+        },
+        {
+          "@name": "Core",
+          "@level": 1
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        { "ProtoDeclare":
+          {
+            "@name":"flower",
+            "ProtoInterface": {
+
+            },
+            "ProtoBody": {
+              "-children": [
+                { "Transform":
+                  {
+                    "@DEF": "animate_transform",
+                    "-children": [
+                      { "Shape":
+                        {
+                          "-appearance": { "Appearance":
+                            {
+                              "-material": { "Material":
+                                {
+                                  "@diffuseColor": [ 0.7, 0.7, 0.7 ],
+                                  "@specularColor": [ 0.5, 0.5, 0.5 ]
+                                }
+                              },
+                              "-texture": { "ComposedCubeMapTexture":
+                                {
+                                  "@DEF": "texture"
+                                }
+                              },
+                              "-shaders": [
+                                { "ComposedShader":
+                                  {
+                                    "@DEF": "x3dom",
+                                    "@language": "GLSL",
+                                    "-parts": [
+                                      { "ShaderPart":
+                                        {
+                                          "@url": [
+                                            "../shaders/x3dom_flowers_chromatic.vs",
+                                            "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"
+                                          ]
+                                        }
+                                      },
+                                      { "ShaderPart":
+                                        {
+                                          "@type": "FRAGMENT",
+                                          "@url": [
+                                            "../shaders/common.fs",
+                                            "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    "field": [
+                                      {
+                                        "@accessType": "inputOutput",
+                                        "@type": "SFInt32",
+                                        "@name": "cube"
+                                      },
+                                      {
+                                        "@accessType": "initializeOnly",
+                                        "@type": "SFVec3f",
+                                        "@name": "chromaticDispertion",
+                                        "@value": [ 0.98, 1, 1.033 ]
+                                      },
+                                      {
+                                        "@accessType": "inputOutput",
+                                        "@type": "SFFloat",
+                                        "@name": "bias",
+                                        "@value": 0.5
+                                      },
+                                      {
+                                        "@accessType": "inputOutput",
+                                        "@type": "SFFloat",
+                                        "@name": "scale",
+                                        "@value": 0.5
+                                      },
+                                      {
+                                        "@accessType": "inputOutput",
+                                        "@type": "SFFloat",
+                                        "@name": "power",
+                                        "@value": 2
+                                      },
+                                      {
+                                        "@accessType": "inputOutput",
+                                        "@type": "SFFloat",
+                                        "@name": "a",
+                                        "@value": 10
+                                      },
+                                      {
+                                        "@accessType": "inputOutput",
+                                        "@type": "SFFloat",
+                                        "@name": "b",
+                                        "@value": 1
+                                      },
+                                      {
+                                        "@accessType": "inputOutput",
+                                        "@type": "SFFloat",
+                                        "@name": "c",
+                                        "@value": 20
+                                      },
+                                      {
+                                        "@accessType": "inputOutput",
+                                        "@type": "SFFloat",
+                                        "@name": "d",
+                                        "@value": 20
+                                      },
+                                      {
+                                        "@accessType": "inputOutput",
+                                        "@type": "SFFloat",
+                                        "@name": "tdelta"
+                                      },
+                                      {
+                                        "@accessType": "inputOutput",
+                                        "@type": "SFFloat",
+                                        "@name": "pdelta"
+                                      }
+                                    ]
+                                  }
+                                },
+                                { "ComposedShader":
+                                  {
+                                    "@DEF": "x_ite",
+                                    "@language": "GLSL",
+                                    "-parts": [
+                                      { "ShaderPart":
+                                        {
+                                          "@url": [
+                                            "../shaders/x_ite_flowers_chromatic.vs",
+                                            "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"
+                                          ]
+                                        }
+                                      },
+                                      { "ShaderPart":
+                                        {
+                                          "@type": "FRAGMENT",
+                                          "@url": [
+                                            "../shaders/x_ite.fs",
+                                            "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    "field": [
+                                      {
+                                        "@accessType": "inputOutput",
+                                        "@type": "SFNode",
+                                        "@name": "cube",
+                                        "-children": [
+                                          { "ComposedCubeMapTexture":
+                                            {
+                                              "@USE": "texture"
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "@accessType": "initializeOnly",
+                                        "@type": "SFVec3f",
+                                        "@name": "chromaticDispertion",
+                                        "@value": [ 0.98, 1, 1.033 ]
+                                      },
+                                      {
+                                        "@accessType": "inputOnly",
+                                        "@type": "SFFloat",
+                                        "@name": "bias"
+                                      },
+                                      {
+                                        "@accessType": "inputOnly",
+                                        "@type": "SFFloat",
+                                        "@name": "scale"
+                                      },
+                                      {
+                                        "@accessType": "inputOnly",
+                                        "@type": "SFFloat",
+                                        "@name": "power"
+                                      },
+                                      {
+                                        "@accessType": "inputOnly",
+                                        "@type": "SFFloat",
+                                        "@name": "a"
+                                      },
+                                      {
+                                        "@accessType": "inputOnly",
+                                        "@type": "SFFloat",
+                                        "@name": "b"
+                                      },
+                                      {
+                                        "@accessType": "inputOnly",
+                                        "@type": "SFFloat",
+                                        "@name": "c"
+                                      },
+                                      {
+                                        "@accessType": "inputOnly",
+                                        "@type": "SFFloat",
+                                        "@name": "d"
+                                      },
+                                      {
+                                        "@accessType": "inputOnly",
+                                        "@type": "SFFloat",
+                                        "@name": "tdelta"
+                                      },
+                                      {
+                                        "@accessType": "inputOnly",
+                                        "@type": "SFFloat",
+                                        "@name": "pdelta"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "-geometry": { "Sphere":
+                            {
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Script":
+                  {
+                    "@DEF": "Animate",
+                    "field": [
+                      {
+                        "@accessType": "inputOutput",
+                        "@type": "SFVec3f",
+                        "@name": "translation"
+                      },
+                      {
+                        "@accessType": "inputOutput",
+                        "@type": "SFVec3f",
+                        "@name": "velocity"
+                      },
+                      {
+                        "@accessType": "inputOnly",
+                        "@type": "SFFloat",
+                        "@name": "set_fraction"
+                      },
+                      {
+                        "@accessType": "inputOutput",
+                        "@type": "SFFloat",
+                        "@name": "a",
+                        "@value": 0.5
+                      },
+                      {
+                        "@accessType": "inputOutput",
+                        "@type": "SFFloat",
+                        "@name": "b",
+                        "@value": 0.5
+                      },
+                      {
+                        "@accessType": "inputOutput",
+                        "@type": "SFFloat",
+                        "@name": "c",
+                        "@value": 3
+                      },
+                      {
+                        "@accessType": "inputOutput",
+                        "@type": "SFFloat",
+                        "@name": "d",
+                        "@value": 3
+                      },
+                      {
+                        "@accessType": "inputOutput",
+                        "@type": "SFFloat",
+                        "@name": "tdelta",
+                        "@value": 0.5
+                      },
+                      {
+                        "@accessType": "inputOutput",
+                        "@type": "SFFloat",
+                        "@name": "pdelta",
+                        "@value": 0.5
+                      }
+                    ],
+                    "#sourceText": [
+                      "\r",
+                      "ecmascript:\r",
+                      "\r",
+                      "\t\t\tfunction initialize() {\r",
+                      "\t\t\t    translation = new SFVec3f(0, 0, 0);\r",
+                      "\t\t\t    velocity = new SFVec3f(\r",
+                      "\t\t\t    \tMath.random() - 0.5,\r",
+                      "\t\t\t\tMath.random() - 0.5,\r",
+                      "\t\t\t\tMath.random() - 0.5);\r",
+                      "\t\t\t}\r",
+                      "\t\t\tfunction set_fraction() {\r",
+                      "\t\t\t    translation = new SFVec3f(\r",
+                      "\t\t\t    \ttranslation.x + velocity.x,\r",
+                      "\t\t\t\ttranslation.y + velocity.y,\r",
+                      "\t\t\t\ttranslation.z + velocity.z);\r",
+                      "\t\t\t    for (var j = 0; j <= 2; j++) {\r",
+                      "\t\t\t\t    if (Math.abs(translation.x) > 10) {\r",
+                      "\t\t\t\t\tinitialize();\r",
+                      "\t\t\t\t    } else if (Math.abs(translation.y) > 10) {\r",
+                      "\t\t\t\t\tinitialize();\r",
+                      "\t\t\t\t    } else if (Math.abs(translation.z) > 10) {\r",
+                      "\t\t\t\t\tinitialize();\r",
+                      "\t\t\t\t    } else {\r",
+                      "\t\t\t\t\tvelocity.x += Math.random() * 0.2 - 0.1;\r",
+                      "\t\t\t\t\tvelocity.y += Math.random() * 0.2 - 0.1;\r",
+                      "\t\t\t\t\tvelocity.z += Math.random() * 0.2 - 0.1;\r",
+                      "\t\t\t\t    }\r",
+                      "\t\t\t    }\r",
+                      "\t\t\t    animate_flowers();\r",
+                      "\t\t\t}\r",
+                      "\r",
+                      "\t\t\tfunction animate_flowers(fraction, eventTime) {\r",
+                      "\t\t\t\tvar choice = Math.floor(Math.random() * 4);\r",
+                      "\t\t\t\tswitch (choice) {\r",
+                      "\t\t\t\tcase 0:\r",
+                      "\t\t\t\t\ta += Math.random() * 0.2 - 0.1;\r",
+                      "\t\t\t\t\tbreak;\r",
+                      "\t\t\t\tcase 1:\r",
+                      "\t\t\t\t\tb += Math.random() * 0.2 - 0.1;\r",
+                      "\t\t\t\t\tbreak;\r",
+                      "\t\t\t\tcase 2:\r",
+                      "\t\t\t\t\tc += Math.random() * 2 - 1;\r",
+                      "\t\t\t\t\tbreak;\r",
+                      "\t\t\t\tcase 3:\r",
+                      "\t\t\t\t\td += Math.random() * 2 - 1;\r",
+                      "\t\t\t\t\tbreak;\r",
+                      "\t\t\t\t}\r",
+                      "\t\t\t\ttdelta = tdelta + 0.5;\r",
+                      "\t\t\t\tpdelta = pdelta + 0.5;\r",
+                      "\t\t\t\tif (a > 1) {\r",
+                      "\t\t\t\t\ta =  0.5;\r",
+                      "\t\t\t\t}\r",
+                      "\t\t\t\tif (b > 1) {\r",
+                      "\t\t\t\t\tb =  0.5;\r",
+                      "\t\t\t\t}\r",
+                      "\t\t\t\tif (c < 1) {\r",
+                      "\t\t\t\t\tc =  4;\r",
+                      "\t\t\t\t}\r",
+                      "\t\t\t\tif (d < 1) {\r",
+                      "\t\t\t\t\td =  4;\r",
+                      "\t\t\t\t}\r",
+                      "\t\t\t\tif (c > 10) {\r",
+                      "\t\t\t\t\tc = 4;\r",
+                      "\t\t\t\t}\r",
+                      "\t\t\t\tif (d > 10) {\r",
+                      "\t\t\t\t\td = 4;\r",
+                      "\t\t\t\t}\r",
+                      "\t\t\t}\r",
+                      ""
+                    ]
+                  }
+                },
+                { "TimeSensor":
+                  {
+                    "@DEF": "TourTime",
+                    "@cycleInterval": 5,
+                    "@loop": true
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "TourTime",
+                    "@fromField": "fraction_changed",
+                    "@toNode": "Animate",
+                    "@toField": "set_fraction"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "Animate",
+                    "@fromField": "translation",
+                    "@toNode": "animate_transform",
+                    "@toField": "translation"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "Animate",
+                    "@fromField": "a",
+                    "@toNode": "x_ite",
+                    "@toField": "a"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "Animate",
+                    "@fromField": "b",
+                    "@toNode": "x_ite",
+                    "@toField": "b"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "Animate",
+                    "@fromField": "c",
+                    "@toNode": "x_ite",
+                    "@toField": "c"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "Animate",
+                    "@fromField": "d",
+                    "@toNode": "x_ite",
+                    "@toField": "d"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "Animate",
+                    "@fromField": "pdelta",
+                    "@toNode": "x_ite",
+                    "@toField": "pdelta"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "Animate",
+                    "@fromField": "tdelta",
+                    "@toNode": "x_ite",
+                    "@toField": "tdelta"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "Animate",
+                    "@fromField": "a",
+                    "@toNode": "x3dom",
+                    "@toField": "a"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "Animate",
+                    "@fromField": "b",
+                    "@toNode": "x3dom",
+                    "@toField": "b"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "Animate",
+                    "@fromField": "c",
+                    "@toNode": "x3dom",
+                    "@toField": "c"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "Animate",
+                    "@fromField": "d",
+                    "@toNode": "x3dom",
+                    "@toField": "d"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "Animate",
+                    "@fromField": "pdelta",
+                    "@toNode": "x3dom",
+                    "@toField": "pdelta"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode": "Animate",
+                    "@fromField": "tdelta",
+                    "@toNode": "x3dom",
+                    "@toField": "tdelta"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        { "NavigationInfo":
+          {
+          }
+        },
+        { "Background":
+          {
+            "@frontUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"
+            ],
+            "@backUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"
+            ],
+            "@leftUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"
+            ],
+            "@rightUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"
+            ],
+            "@topUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"
+            ],
+            "@bottomUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"
+            ]
+          }
+        },
+        { "ProtoInstance":
+          {
+            "@name": "flower"
+          }
+        },
+        { "ProtoInstance":
+          {
+            "@name": "flower"
+          }
+        },
+        { "ProtoInstance":
+          {
+            "@name": "flower"
+          }
+        }
+      ]
+    }
+  }
+}
