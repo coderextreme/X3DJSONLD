@@ -3,7 +3,7 @@ void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Immersive";
-X3D0.version = "3.0";
+X3D0.version = "4.0";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "title";
@@ -57,2713 +57,2639 @@ meta11.name = "generator";
 meta11.content = "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html";
 head1.meta[9] = meta11;
 
-meta meta12 = createNode("meta");
-meta12.name = "license";
-meta12.content = "../license.html";
-head1.meta[10] = meta12;
-
 head = head1;
 
-WorldInfo WorldInfo14 = createNode("WorldInfo");
-WorldInfo14.title = "ArtDecoExamples.x3d";
+ExternProtoDeclare ExternProtoDeclare13 = createNode("ExternProtoDeclare");
+ExternProtoDeclare13.name = "ArtDeco00";
+ExternProtoDeclare13.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00","ArtDecoPrototypes.wrl#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00"]);
 children = new MFNode();
 
-children[0] = WorldInfo14;
+children[0] = ExternProtoDeclare13;
+
+ExternProtoDeclare ExternProtoDeclare14 = createNode("ExternProtoDeclare");
+ExternProtoDeclare14.name = "ArtDeco01";
+ExternProtoDeclare14.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01","ArtDecoPrototypes.wrl#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01"]);
+children[1] = ExternProtoDeclare14;
 
 ExternProtoDeclare ExternProtoDeclare15 = createNode("ExternProtoDeclare");
-ExternProtoDeclare15.name = "ArtDeco00";
-ExternProtoDeclare15.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare15.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare15.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00","ArtDecoPrototypes.wrl#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00"]);
-children[1] = ExternProtoDeclare15;
+ExternProtoDeclare15.name = "ArtDeco02";
+ExternProtoDeclare15.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02","ArtDecoPrototypes.wrl#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02"]);
+children[2] = ExternProtoDeclare15;
 
 ExternProtoDeclare ExternProtoDeclare16 = createNode("ExternProtoDeclare");
-ExternProtoDeclare16.name = "ArtDeco01";
-ExternProtoDeclare16.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare16.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare16.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01","ArtDecoPrototypes.wrl#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01"]);
-children[2] = ExternProtoDeclare16;
+ExternProtoDeclare16.name = "ArtDeco03";
+ExternProtoDeclare16.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03","ArtDecoPrototypes.wrl#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03"]);
+children[3] = ExternProtoDeclare16;
 
 ExternProtoDeclare ExternProtoDeclare17 = createNode("ExternProtoDeclare");
-ExternProtoDeclare17.name = "ArtDeco02";
-ExternProtoDeclare17.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare17.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare17.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02","ArtDecoPrototypes.wrl#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02"]);
-children[3] = ExternProtoDeclare17;
+ExternProtoDeclare17.name = "ArtDeco04";
+ExternProtoDeclare17.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04","ArtDecoPrototypes.wrl#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04"]);
+children[4] = ExternProtoDeclare17;
 
 ExternProtoDeclare ExternProtoDeclare18 = createNode("ExternProtoDeclare");
-ExternProtoDeclare18.name = "ArtDeco03";
-ExternProtoDeclare18.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare18.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare18.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03","ArtDecoPrototypes.wrl#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03"]);
-children[4] = ExternProtoDeclare18;
+ExternProtoDeclare18.name = "ArtDeco05";
+ExternProtoDeclare18.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05","ArtDecoPrototypes.wrl#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05"]);
+children[5] = ExternProtoDeclare18;
 
 ExternProtoDeclare ExternProtoDeclare19 = createNode("ExternProtoDeclare");
-ExternProtoDeclare19.name = "ArtDeco04";
-ExternProtoDeclare19.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare19.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare19.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04","ArtDecoPrototypes.wrl#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04"]);
-children[5] = ExternProtoDeclare19;
+ExternProtoDeclare19.name = "ArtDeco06";
+ExternProtoDeclare19.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06","ArtDecoPrototypes.wrl#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06"]);
+children[6] = ExternProtoDeclare19;
 
 ExternProtoDeclare ExternProtoDeclare20 = createNode("ExternProtoDeclare");
-ExternProtoDeclare20.name = "ArtDeco05";
-ExternProtoDeclare20.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare20.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare20.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05","ArtDecoPrototypes.wrl#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05"]);
-children[6] = ExternProtoDeclare20;
+ExternProtoDeclare20.name = "ArtDeco07";
+ExternProtoDeclare20.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07","ArtDecoPrototypes.wrl#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07"]);
+children[7] = ExternProtoDeclare20;
 
 ExternProtoDeclare ExternProtoDeclare21 = createNode("ExternProtoDeclare");
-ExternProtoDeclare21.name = "ArtDeco06";
-ExternProtoDeclare21.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare21.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare21.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06","ArtDecoPrototypes.wrl#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06"]);
-children[7] = ExternProtoDeclare21;
+ExternProtoDeclare21.name = "ArtDeco08";
+ExternProtoDeclare21.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08","ArtDecoPrototypes.wrl#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08"]);
+children[8] = ExternProtoDeclare21;
 
 ExternProtoDeclare ExternProtoDeclare22 = createNode("ExternProtoDeclare");
-ExternProtoDeclare22.name = "ArtDeco07";
-ExternProtoDeclare22.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare22.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare22.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07","ArtDecoPrototypes.wrl#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07"]);
-children[8] = ExternProtoDeclare22;
+ExternProtoDeclare22.name = "ArtDeco09";
+ExternProtoDeclare22.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09","ArtDecoPrototypes.wrl#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09"]);
+children[9] = ExternProtoDeclare22;
 
 ExternProtoDeclare ExternProtoDeclare23 = createNode("ExternProtoDeclare");
-ExternProtoDeclare23.name = "ArtDeco08";
-ExternProtoDeclare23.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare23.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare23.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08","ArtDecoPrototypes.wrl#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08"]);
-children[9] = ExternProtoDeclare23;
+ExternProtoDeclare23.name = "ArtDeco10";
+ExternProtoDeclare23.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10","ArtDecoPrototypes.wrl#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10"]);
+children[10] = ExternProtoDeclare23;
 
 ExternProtoDeclare ExternProtoDeclare24 = createNode("ExternProtoDeclare");
-ExternProtoDeclare24.name = "ArtDeco09";
-ExternProtoDeclare24.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare24.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare24.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09","ArtDecoPrototypes.wrl#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09"]);
-children[10] = ExternProtoDeclare24;
+ExternProtoDeclare24.name = "ArtDeco11";
+ExternProtoDeclare24.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11","ArtDecoPrototypes.wrl#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11"]);
+children[11] = ExternProtoDeclare24;
 
 ExternProtoDeclare ExternProtoDeclare25 = createNode("ExternProtoDeclare");
-ExternProtoDeclare25.name = "ArtDeco10";
-ExternProtoDeclare25.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare25.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare25.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10","ArtDecoPrototypes.wrl#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10"]);
-children[11] = ExternProtoDeclare25;
+ExternProtoDeclare25.name = "ArtDeco12";
+ExternProtoDeclare25.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12","ArtDecoPrototypes.wrl#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12"]);
+children[12] = ExternProtoDeclare25;
 
 ExternProtoDeclare ExternProtoDeclare26 = createNode("ExternProtoDeclare");
-ExternProtoDeclare26.name = "ArtDeco11";
-ExternProtoDeclare26.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare26.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare26.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11","ArtDecoPrototypes.wrl#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11"]);
-children[12] = ExternProtoDeclare26;
+ExternProtoDeclare26.name = "ArtDeco13";
+ExternProtoDeclare26.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13","ArtDecoPrototypes.wrl#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13"]);
+children[13] = ExternProtoDeclare26;
 
 ExternProtoDeclare ExternProtoDeclare27 = createNode("ExternProtoDeclare");
-ExternProtoDeclare27.name = "ArtDeco12";
-ExternProtoDeclare27.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare27.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare27.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12","ArtDecoPrototypes.wrl#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12"]);
-children[13] = ExternProtoDeclare27;
+ExternProtoDeclare27.name = "ArtDeco14";
+ExternProtoDeclare27.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14","ArtDecoPrototypes.wrl#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14"]);
+children[14] = ExternProtoDeclare27;
 
 ExternProtoDeclare ExternProtoDeclare28 = createNode("ExternProtoDeclare");
-ExternProtoDeclare28.name = "ArtDeco13";
-ExternProtoDeclare28.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare28.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare28.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13","ArtDecoPrototypes.wrl#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13"]);
-children[14] = ExternProtoDeclare28;
+ExternProtoDeclare28.name = "ArtDeco15";
+ExternProtoDeclare28.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15","ArtDecoPrototypes.wrl#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15"]);
+children[15] = ExternProtoDeclare28;
 
 ExternProtoDeclare ExternProtoDeclare29 = createNode("ExternProtoDeclare");
-ExternProtoDeclare29.name = "ArtDeco14";
-ExternProtoDeclare29.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare29.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare29.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14","ArtDecoPrototypes.wrl#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14"]);
-children[15] = ExternProtoDeclare29;
+ExternProtoDeclare29.name = "ArtDeco16";
+ExternProtoDeclare29.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16","ArtDecoPrototypes.wrl#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16"]);
+children[16] = ExternProtoDeclare29;
 
 ExternProtoDeclare ExternProtoDeclare30 = createNode("ExternProtoDeclare");
-ExternProtoDeclare30.name = "ArtDeco15";
-ExternProtoDeclare30.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare30.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare30.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15","ArtDecoPrototypes.wrl#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15"]);
-children[16] = ExternProtoDeclare30;
+ExternProtoDeclare30.name = "ArtDeco17";
+ExternProtoDeclare30.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17","ArtDecoPrototypes.wrl#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17"]);
+children[17] = ExternProtoDeclare30;
 
 ExternProtoDeclare ExternProtoDeclare31 = createNode("ExternProtoDeclare");
-ExternProtoDeclare31.name = "ArtDeco16";
-ExternProtoDeclare31.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare31.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare31.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16","ArtDecoPrototypes.wrl#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16"]);
-children[17] = ExternProtoDeclare31;
+ExternProtoDeclare31.name = "ArtDeco18";
+ExternProtoDeclare31.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18","ArtDecoPrototypes.wrl#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18"]);
+children[18] = ExternProtoDeclare31;
 
 ExternProtoDeclare ExternProtoDeclare32 = createNode("ExternProtoDeclare");
-ExternProtoDeclare32.name = "ArtDeco17";
-ExternProtoDeclare32.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare32.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare32.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17","ArtDecoPrototypes.wrl#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17"]);
-children[18] = ExternProtoDeclare32;
+ExternProtoDeclare32.name = "ArtDeco19";
+ExternProtoDeclare32.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19","ArtDecoPrototypes.wrl#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19"]);
+children[19] = ExternProtoDeclare32;
 
 ExternProtoDeclare ExternProtoDeclare33 = createNode("ExternProtoDeclare");
-ExternProtoDeclare33.name = "ArtDeco18";
-ExternProtoDeclare33.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare33.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare33.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18","ArtDecoPrototypes.wrl#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18"]);
-children[19] = ExternProtoDeclare33;
+ExternProtoDeclare33.name = "ArtDeco20";
+ExternProtoDeclare33.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20","ArtDecoPrototypes.wrl#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20"]);
+children[20] = ExternProtoDeclare33;
 
 ExternProtoDeclare ExternProtoDeclare34 = createNode("ExternProtoDeclare");
-ExternProtoDeclare34.name = "ArtDeco19";
-ExternProtoDeclare34.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare34.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare34.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19","ArtDecoPrototypes.wrl#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19"]);
-children[20] = ExternProtoDeclare34;
+ExternProtoDeclare34.name = "ArtDeco21";
+ExternProtoDeclare34.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21","ArtDecoPrototypes.wrl#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21"]);
+children[21] = ExternProtoDeclare34;
 
 ExternProtoDeclare ExternProtoDeclare35 = createNode("ExternProtoDeclare");
-ExternProtoDeclare35.name = "ArtDeco20";
-ExternProtoDeclare35.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare35.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare35.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20","ArtDecoPrototypes.wrl#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20"]);
-children[21] = ExternProtoDeclare35;
+ExternProtoDeclare35.name = "ArtDeco22";
+ExternProtoDeclare35.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22","ArtDecoPrototypes.wrl#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22"]);
+children[22] = ExternProtoDeclare35;
 
 ExternProtoDeclare ExternProtoDeclare36 = createNode("ExternProtoDeclare");
-ExternProtoDeclare36.name = "ArtDeco21";
-ExternProtoDeclare36.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare36.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare36.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21","ArtDecoPrototypes.wrl#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21"]);
-children[22] = ExternProtoDeclare36;
+ExternProtoDeclare36.name = "ArtDeco23";
+ExternProtoDeclare36.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23","ArtDecoPrototypes.wrl#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23"]);
+children[23] = ExternProtoDeclare36;
 
 ExternProtoDeclare ExternProtoDeclare37 = createNode("ExternProtoDeclare");
-ExternProtoDeclare37.name = "ArtDeco22";
-ExternProtoDeclare37.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare37.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare37.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22","ArtDecoPrototypes.wrl#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22"]);
-children[23] = ExternProtoDeclare37;
+ExternProtoDeclare37.name = "ArtDeco24";
+ExternProtoDeclare37.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24","ArtDecoPrototypes.wrl#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24"]);
+children[24] = ExternProtoDeclare37;
 
 ExternProtoDeclare ExternProtoDeclare38 = createNode("ExternProtoDeclare");
-ExternProtoDeclare38.name = "ArtDeco23";
-ExternProtoDeclare38.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare38.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare38.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23","ArtDecoPrototypes.wrl#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23"]);
-children[24] = ExternProtoDeclare38;
+ExternProtoDeclare38.name = "ArtDeco25";
+ExternProtoDeclare38.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25","ArtDecoPrototypes.wrl#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25"]);
+children[25] = ExternProtoDeclare38;
 
 ExternProtoDeclare ExternProtoDeclare39 = createNode("ExternProtoDeclare");
-ExternProtoDeclare39.name = "ArtDeco24";
-ExternProtoDeclare39.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare39.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare39.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24","ArtDecoPrototypes.wrl#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24"]);
-children[25] = ExternProtoDeclare39;
+ExternProtoDeclare39.name = "ArtDeco26";
+ExternProtoDeclare39.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26","ArtDecoPrototypes.wrl#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26"]);
+children[26] = ExternProtoDeclare39;
 
 ExternProtoDeclare ExternProtoDeclare40 = createNode("ExternProtoDeclare");
-ExternProtoDeclare40.name = "ArtDeco25";
-ExternProtoDeclare40.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare40.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare40.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25","ArtDecoPrototypes.wrl#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25"]);
-children[26] = ExternProtoDeclare40;
+ExternProtoDeclare40.name = "ArtDeco27";
+ExternProtoDeclare40.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27","ArtDecoPrototypes.wrl#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27"]);
+children[27] = ExternProtoDeclare40;
 
 ExternProtoDeclare ExternProtoDeclare41 = createNode("ExternProtoDeclare");
-ExternProtoDeclare41.name = "ArtDeco26";
-ExternProtoDeclare41.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare41.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare41.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26","ArtDecoPrototypes.wrl#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26"]);
-children[27] = ExternProtoDeclare41;
+ExternProtoDeclare41.name = "ArtDeco28";
+ExternProtoDeclare41.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28","ArtDecoPrototypes.wrl#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28"]);
+children[28] = ExternProtoDeclare41;
 
 ExternProtoDeclare ExternProtoDeclare42 = createNode("ExternProtoDeclare");
-ExternProtoDeclare42.name = "ArtDeco27";
-ExternProtoDeclare42.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare42.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare42.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27","ArtDecoPrototypes.wrl#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27"]);
-children[28] = ExternProtoDeclare42;
+ExternProtoDeclare42.name = "ArtDeco29";
+ExternProtoDeclare42.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29","ArtDecoPrototypes.wrl#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29"]);
+children[29] = ExternProtoDeclare42;
 
 ExternProtoDeclare ExternProtoDeclare43 = createNode("ExternProtoDeclare");
-ExternProtoDeclare43.name = "ArtDeco28";
-ExternProtoDeclare43.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare43.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare43.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28","ArtDecoPrototypes.wrl#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28"]);
-children[29] = ExternProtoDeclare43;
+ExternProtoDeclare43.name = "ArtDeco30";
+ExternProtoDeclare43.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30","ArtDecoPrototypes.wrl#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30"]);
+children[30] = ExternProtoDeclare43;
 
 ExternProtoDeclare ExternProtoDeclare44 = createNode("ExternProtoDeclare");
-ExternProtoDeclare44.name = "ArtDeco29";
-ExternProtoDeclare44.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare44.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare44.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29","ArtDecoPrototypes.wrl#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29"]);
-children[30] = ExternProtoDeclare44;
+ExternProtoDeclare44.name = "ArtDeco31";
+ExternProtoDeclare44.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31","ArtDecoPrototypes.wrl#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31"]);
+children[31] = ExternProtoDeclare44;
 
 ExternProtoDeclare ExternProtoDeclare45 = createNode("ExternProtoDeclare");
-ExternProtoDeclare45.name = "ArtDeco30";
-ExternProtoDeclare45.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare45.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare45.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30","ArtDecoPrototypes.wrl#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30"]);
-children[31] = ExternProtoDeclare45;
+ExternProtoDeclare45.name = "ArtDeco32";
+ExternProtoDeclare45.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32","ArtDecoPrototypes.wrl#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32"]);
+children[32] = ExternProtoDeclare45;
 
 ExternProtoDeclare ExternProtoDeclare46 = createNode("ExternProtoDeclare");
-ExternProtoDeclare46.name = "ArtDeco31";
-ExternProtoDeclare46.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare46.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare46.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31","ArtDecoPrototypes.wrl#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31"]);
-children[32] = ExternProtoDeclare46;
+ExternProtoDeclare46.name = "ArtDeco33";
+ExternProtoDeclare46.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33","ArtDecoPrototypes.wrl#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33"]);
+children[33] = ExternProtoDeclare46;
 
 ExternProtoDeclare ExternProtoDeclare47 = createNode("ExternProtoDeclare");
-ExternProtoDeclare47.name = "ArtDeco32";
-ExternProtoDeclare47.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare47.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare47.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32","ArtDecoPrototypes.wrl#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32"]);
-children[33] = ExternProtoDeclare47;
+ExternProtoDeclare47.name = "ArtDeco34";
+ExternProtoDeclare47.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34","ArtDecoPrototypes.wrl#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34"]);
+children[34] = ExternProtoDeclare47;
 
-ExternProtoDeclare ExternProtoDeclare48 = createNode("ExternProtoDeclare");
-ExternProtoDeclare48.name = "ArtDeco33";
-ExternProtoDeclare48.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare48.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare48.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33","ArtDecoPrototypes.wrl#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33"]);
-children[34] = ExternProtoDeclare48;
+WorldInfo WorldInfo48 = createNode("WorldInfo");
+WorldInfo48.title = "ArtDecoExamples.x3d";
+children[35] = WorldInfo48;
 
-ExternProtoDeclare ExternProtoDeclare49 = createNode("ExternProtoDeclare");
-ExternProtoDeclare49.name = "ArtDeco34";
-ExternProtoDeclare49.appinfo = "UniversalMediaMaterials prototype";
-ExternProtoDeclare49.documentation = "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials";
-ExternProtoDeclare49.url = new MFString(new java.lang.String["ArtDecoPrototypes.x3d#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34","ArtDecoPrototypes.wrl#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34"]);
-children[35] = ExternProtoDeclare49;
+Group Group49 = createNode("Group");
+NavigationInfo NavigationInfo50 = createNode("NavigationInfo");
+NavigationInfo50.headlight = False;
+Group49.children = new MFNode();
 
-Group Group50 = createNode("Group");
-NavigationInfo NavigationInfo51 = createNode("NavigationInfo");
-NavigationInfo51.headlight = False;
-Group50.children = new MFNode();
+Group49.children[0] = NavigationInfo50;
 
-Group50.children[0] = NavigationInfo51;
+Viewpoint Viewpoint51 = createNode("Viewpoint");
+Viewpoint51.DEF = "Front";
+Viewpoint51.description = "Front view";
+Viewpoint51.position = new SFVec3f(new float[0,0,12]);
+Group49.children[1] = Viewpoint51;
 
 Viewpoint Viewpoint52 = createNode("Viewpoint");
-Viewpoint52.DEF = "Front";
-Viewpoint52.description = "Front view";
-Viewpoint52.position = new SFVec3f(new float[0,0,12]);
-Group50.children[1] = Viewpoint52;
+Viewpoint52.DEF = "PersRight";
+Viewpoint52.description = "Low Right";
+Viewpoint52.position = new SFVec3f(new float[6.9282,-6.9282,6.9282]);
+Viewpoint52.orientation = new SFRotation(new float[0.74291,0.30772,0.59447,1.2171]);
+Group49.children[2] = Viewpoint52;
 
 Viewpoint Viewpoint53 = createNode("Viewpoint");
-Viewpoint53.DEF = "PersRight";
-Viewpoint53.description = "Low Right";
-Viewpoint53.orientation = new SFRotation(new float[0.74291,0.30772,0.59447,1.2171]);
-Viewpoint53.position = new SFVec3f(new float[6.9282,-6.9282,6.9282]);
-Group50.children[2] = Viewpoint53;
+Viewpoint53.DEF = "PersLeft";
+Viewpoint53.description = "Low Left";
+Viewpoint53.position = new SFVec3f(new float[-6.9282,-6.9282,6.9282]);
+Viewpoint53.orientation = new SFRotation(new float[0.74291,-0.30772,-0.59447,1.2171]);
+Group49.children[3] = Viewpoint53;
 
 Viewpoint Viewpoint54 = createNode("Viewpoint");
-Viewpoint54.DEF = "PersLeft";
-Viewpoint54.description = "Low Left";
-Viewpoint54.orientation = new SFRotation(new float[0.74291,-0.30772,-0.59447,1.2171]);
-Viewpoint54.position = new SFVec3f(new float[-6.9282,-6.9282,6.9282]);
-Group50.children[3] = Viewpoint54;
+Viewpoint54.DEF = "Back";
+Viewpoint54.description = "Back view";
+Viewpoint54.position = new SFVec3f(new float[0,0,-12]);
+Viewpoint54.orientation = new SFRotation(new float[0,1,0,3.1416]);
+Group49.children[4] = Viewpoint54;
 
-Viewpoint Viewpoint55 = createNode("Viewpoint");
-Viewpoint55.DEF = "Back";
-Viewpoint55.description = "Back view";
-Viewpoint55.orientation = new SFRotation(new float[0,1,0,3.1416]);
-Viewpoint55.position = new SFVec3f(new float[0,0,-12]);
-Group50.children[4] = Viewpoint55;
+Transform Transform55 = createNode("Transform");
+Transform55.DEF = "Close_travel";
+PositionInterpolator PositionInterpolator56 = createNode("PositionInterpolator");
+PositionInterpolator56.DEF = "Close_Mover";
+PositionInterpolator56.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+PositionInterpolator56.keyValue = new MFVec3f(new float[0,2.5,0,0,0,0,0,-2.5,0,0,0,0,0,2.5,0]);
+Transform55.children = new MFNode();
 
-Transform Transform56 = createNode("Transform");
-Transform56.DEF = "Close_travel";
-PositionInterpolator PositionInterpolator57 = createNode("PositionInterpolator");
-PositionInterpolator57.DEF = "Close_Mover";
-PositionInterpolator57.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
-PositionInterpolator57.keyValue = new MFVec3f(new float[0,2.5,0,0,0,0,0,-2.5,0,0,0,0,0,2.5,0]);
-Transform56.children = new MFNode();
+Transform55.children[0] = PositionInterpolator56;
 
-Transform56.children[0] = PositionInterpolator57;
+TimeSensor TimeSensor57 = createNode("TimeSensor");
+TimeSensor57.DEF = "Close_Time";
+TimeSensor57.cycleInterval = 12;
+TimeSensor57.loop = True;
+Transform55.children[1] = TimeSensor57;
 
-TimeSensor TimeSensor58 = createNode("TimeSensor");
-TimeSensor58.DEF = "Close_Time";
-TimeSensor58.cycleInterval = 12;
-TimeSensor58.loop = True;
-Transform56.children[1] = TimeSensor58;
+Viewpoint Viewpoint58 = createNode("Viewpoint");
+Viewpoint58.DEF = "Close";
+Viewpoint58.description = "Close Front";
+Viewpoint58.position = new SFVec3f(new float[0,0,6]);
+Transform55.children[2] = Viewpoint58;
 
-Viewpoint Viewpoint59 = createNode("Viewpoint");
-Viewpoint59.DEF = "Close";
-Viewpoint59.description = "Close Front";
-Viewpoint59.position = new SFVec3f(new float[0,0,6]);
-Transform56.children[2] = Viewpoint59;
+Group49.children[5] = Transform55;
 
-Group50.children[5] = Transform56;
+DirectionalLight DirectionalLight59 = createNode("DirectionalLight");
+DirectionalLight59.direction = new SFVec3f(new float[1,-1,-1]);
+Group49.children[6] = DirectionalLight59;
 
 DirectionalLight DirectionalLight60 = createNode("DirectionalLight");
-DirectionalLight60.direction = new SFVec3f(new float[1,-1,-1]);
-Group50.children[6] = DirectionalLight60;
+DirectionalLight60.intensity = 0.5;
+DirectionalLight60.direction = new SFVec3f(new float[0,1,-0.5]);
+Group49.children[7] = DirectionalLight60;
 
-DirectionalLight DirectionalLight61 = createNode("DirectionalLight");
-DirectionalLight61.direction = new SFVec3f(new float[0,1,-0.5]);
-DirectionalLight61.intensity = 0.5;
-Group50.children[7] = DirectionalLight61;
+Anchor Anchor61 = createNode("Anchor");
+Anchor61.description = "Back to front view";
+Anchor61.url = new MFString(new java.lang.String["#Front"]);
+Transform Transform62 = createNode("Transform");
+Transform62.translation = new SFVec3f(new float[0,0,-0.5]);
+Inline Inline63 = createNode("Inline");
+Inline63.global = True;
+Inline63.url = new MFString(new java.lang.String["../data/gridBack.json","../data/gridBack.x3d","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d","gridBack.wrl","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl"]);
+Transform62.children = new MFNode();
+
+Transform62.children[0] = Inline63;
+
+Anchor61.children = new MFNode();
+
+Anchor61.children[0] = Transform62;
+
+Group49.children[8] = Anchor61;
+
+Viewpoint Viewpoint64 = createNode("Viewpoint");
+Viewpoint64.DEF = "View00";
+Viewpoint64.description = "ArtDeco00";
+Viewpoint64.position = new SFVec3f(new float[-3.75,3.75,3]);
+Group49.children[9] = Viewpoint64;
 
-Anchor Anchor62 = createNode("Anchor");
-Anchor62.description = "Back to front view";
-Anchor62.url = new MFString(new java.lang.String["#Front"]);
-Transform Transform63 = createNode("Transform");
-Transform63.translation = new SFVec3f(new float[0,0,-0.5]);
-Inline Inline64 = createNode("Inline");
-Inline64.url = new MFString(new java.lang.String["../data/gridBack.json","../data/gridBack.x3d","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d","gridBack.wrl","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl"]);
-Transform63.children = new MFNode();
-
-Transform63.children[0] = Inline64;
-
-Anchor62.children = new MFNode();
+Transform Transform65 = createNode("Transform");
+Transform65.translation = new SFVec3f(new float[-3.75,3.75,0]);
+Anchor Anchor66 = createNode("Anchor");
+Anchor66.description = "ArtDeco00 view";
+Anchor66.url = new MFString(new java.lang.String["#View00"]);
+Shape Shape67 = createNode("Shape");
+Appearance Appearance68 = createNode("Appearance");
+ProtoInstance ProtoInstance69 = createNode("ProtoInstance");
+ProtoInstance69.name = "ArtDeco00";
+Appearance68.shaders = new MFNode();
+
+Appearance68.shaders[0] = ProtoInstance69;
 
-Anchor62.children[0] = Transform63;
-
-Group50.children[8] = Anchor62;
+Shape67.appearance = Appearance68;
 
-Viewpoint Viewpoint65 = createNode("Viewpoint");
-Viewpoint65.DEF = "View00";
-Viewpoint65.description = "ArtDeco00";
-Viewpoint65.position = new SFVec3f(new float[-3.75,3.75,3]);
-Group50.children[9] = Viewpoint65;
+Sphere Sphere70 = createNode("Sphere");
+Sphere70.DEF = "Ball";
+Sphere70.radius = 0.5;
+Shape67.geometry = Sphere70;
+
+Anchor66.children = new MFNode();
+
+Anchor66.children[0] = Shape67;
 
-Transform Transform66 = createNode("Transform");
-Transform66.translation = new SFVec3f(new float[-3.75,3.75,0]);
-Anchor Anchor67 = createNode("Anchor");
-Anchor67.description = "ArtDeco00 view";
-Anchor67.url = new MFString(new java.lang.String["#View00"]);
-Shape Shape68 = createNode("Shape");
-Appearance Appearance69 = createNode("Appearance");
-ProtoInstance ProtoInstance70 = createNode("ProtoInstance");
-ProtoInstance70.name = "ArtDeco00";
-Appearance69.shaders = new MFNode();
-
-Appearance69.shaders[0] = ProtoInstance70;
+Transform65.children = new MFNode();
 
-Shape68.appearance = Appearance69;
+Transform65.children[0] = Anchor66;
 
-Sphere Sphere71 = createNode("Sphere");
-Sphere71.DEF = "Ball";
-Sphere71.radius = 0.5;
-Shape68.geometry = Sphere71;
-
-Anchor67.children = new MFNode();
+Transform Transform71 = createNode("Transform");
+Transform71.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor72 = createNode("Anchor");
+Anchor72.description = "ArtDeco00";
+Anchor72.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00"]);
+Anchor72.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape73 = createNode("Shape");
+Appearance Appearance74 = createNode("Appearance");
+Material Material75 = createNode("Material");
+Material75.DEF = "TextMat";
+Material75.diffuseColor = new SFColor(new float[1,1,1]);
+Appearance74.material = Material75;
 
-Anchor67.children[0] = Shape68;
+Shape73.appearance = Appearance74;
 
-Transform66.children = new MFNode();
+Text Text76 = createNode("Text");
+Text76.string = new MFString(new java.lang.String["ArtDeco00"]);
+FontStyle FontStyle77 = createNode("FontStyle");
+FontStyle77.DEF = "Style";
+FontStyle77.family = new MFString(new java.lang.String["SANS"]);
+FontStyle77.style = "BOLD";
+FontStyle77.size = 0.3;
+FontStyle77.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
+Text76.fontStyle = FontStyle77;
 
-Transform66.children[0] = Anchor67;
+Shape73.geometry = Text76;
 
-Transform Transform72 = createNode("Transform");
-Transform72.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor73 = createNode("Anchor");
-Anchor73.description = "ArtDeco00";
-Anchor73.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor73.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00"]);
-Shape Shape74 = createNode("Shape");
-Appearance Appearance75 = createNode("Appearance");
-Material Material76 = createNode("Material");
-Material76.DEF = "TextMat";
-Material76.diffuseColor = new SFColor(new float[1,1,1]);
-Appearance75.material = Material76;
+Anchor72.children = new MFNode();
 
-Shape74.appearance = Appearance75;
+Anchor72.children[0] = Shape73;
 
-Text Text77 = createNode("Text");
-Text77.string = new MFString(new java.lang.String["ArtDeco00"]);
-FontStyle FontStyle78 = createNode("FontStyle");
-FontStyle78.DEF = "Style";
-FontStyle78.family = new MFString(new java.lang.String["SANS"]);
-FontStyle78.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
-FontStyle78.size = 0.3;
-FontStyle78.style = "BOLD";
-Text77.fontStyle = FontStyle78;
+Transform71.children = new MFNode();
 
-Shape74.geometry = Text77;
+Transform71.children[0] = Anchor72;
 
-Anchor73.children = new MFNode();
+Transform65.children[1] = Transform71;
 
-Anchor73.children[0] = Shape74;
+Group49.children[10] = Transform65;
 
-Transform72.children = new MFNode();
+Viewpoint Viewpoint78 = createNode("Viewpoint");
+Viewpoint78.DEF = "View01";
+Viewpoint78.description = "ArtDeco01";
+Viewpoint78.position = new SFVec3f(new float[-2.25,3.75,3]);
+Group49.children[11] = Viewpoint78;
 
-Transform72.children[0] = Anchor73;
+Transform Transform79 = createNode("Transform");
+Transform79.translation = new SFVec3f(new float[-2.25,3.75,0]);
+Anchor Anchor80 = createNode("Anchor");
+Anchor80.description = "ArtDeco01 view";
+Anchor80.url = new MFString(new java.lang.String["#View01"]);
+Shape Shape81 = createNode("Shape");
+Appearance Appearance82 = createNode("Appearance");
+ProtoInstance ProtoInstance83 = createNode("ProtoInstance");
+ProtoInstance83.name = "ArtDeco01";
+Appearance82.shaders = new MFNode();
 
-Transform66.children[1] = Transform72;
+Appearance82.shaders[0] = ProtoInstance83;
 
-Group50.children[10] = Transform66;
+Shape81.appearance = Appearance82;
 
-Viewpoint Viewpoint79 = createNode("Viewpoint");
-Viewpoint79.DEF = "View01";
-Viewpoint79.description = "ArtDeco01";
-Viewpoint79.position = new SFVec3f(new float[-2.25,3.75,3]);
-Group50.children[11] = Viewpoint79;
+Sphere Sphere84 = createNode("Sphere");
+Sphere84.USE = "Ball";
+Shape81.geometry = Sphere84;
 
-Transform Transform80 = createNode("Transform");
-Transform80.translation = new SFVec3f(new float[-2.25,3.75,0]);
-Anchor Anchor81 = createNode("Anchor");
-Anchor81.description = "ArtDeco01 view";
-Anchor81.url = new MFString(new java.lang.String["#View01"]);
-Shape Shape82 = createNode("Shape");
-Appearance Appearance83 = createNode("Appearance");
-ProtoInstance ProtoInstance84 = createNode("ProtoInstance");
-ProtoInstance84.name = "ArtDeco01";
-Appearance83.shaders = new MFNode();
+Anchor80.children = new MFNode();
 
-Appearance83.shaders[0] = ProtoInstance84;
+Anchor80.children[0] = Shape81;
 
-Shape82.appearance = Appearance83;
+Transform79.children = new MFNode();
 
-Sphere Sphere85 = createNode("Sphere");
-Sphere85.USE = "Ball";
-Shape82.geometry = Sphere85;
+Transform79.children[0] = Anchor80;
 
-Anchor81.children = new MFNode();
+Transform Transform85 = createNode("Transform");
+Transform85.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor86 = createNode("Anchor");
+Anchor86.description = "ArtDeco01";
+Anchor86.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01"]);
+Anchor86.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape87 = createNode("Shape");
+Appearance Appearance88 = createNode("Appearance");
+Material Material89 = createNode("Material");
+Material89.USE = "TextMat";
+Appearance88.material = Material89;
 
-Anchor81.children[0] = Shape82;
+Shape87.appearance = Appearance88;
 
-Transform80.children = new MFNode();
+Text Text90 = createNode("Text");
+Text90.string = new MFString(new java.lang.String["ArtDeco01"]);
+FontStyle FontStyle91 = createNode("FontStyle");
+FontStyle91.USE = "Style";
+Text90.fontStyle = FontStyle91;
 
-Transform80.children[0] = Anchor81;
+Shape87.geometry = Text90;
 
-Transform Transform86 = createNode("Transform");
-Transform86.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor87 = createNode("Anchor");
-Anchor87.description = "ArtDeco01";
-Anchor87.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor87.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01"]);
-Shape Shape88 = createNode("Shape");
-Appearance Appearance89 = createNode("Appearance");
-Material Material90 = createNode("Material");
-Material90.USE = "TextMat";
-Appearance89.material = Material90;
+Anchor86.children = new MFNode();
 
-Shape88.appearance = Appearance89;
+Anchor86.children[0] = Shape87;
 
-Text Text91 = createNode("Text");
-Text91.string = new MFString(new java.lang.String["ArtDeco01"]);
-FontStyle FontStyle92 = createNode("FontStyle");
-FontStyle92.USE = "Style";
-Text91.fontStyle = FontStyle92;
+Transform85.children = new MFNode();
 
-Shape88.geometry = Text91;
+Transform85.children[0] = Anchor86;
 
-Anchor87.children = new MFNode();
+Transform79.children[1] = Transform85;
 
-Anchor87.children[0] = Shape88;
+Group49.children[12] = Transform79;
 
-Transform86.children = new MFNode();
+Viewpoint Viewpoint92 = createNode("Viewpoint");
+Viewpoint92.DEF = "View02";
+Viewpoint92.description = "ArtDeco02";
+Viewpoint92.position = new SFVec3f(new float[-0.75,3.75,3]);
+Group49.children[13] = Viewpoint92;
 
-Transform86.children[0] = Anchor87;
+Transform Transform93 = createNode("Transform");
+Transform93.translation = new SFVec3f(new float[-0.75,3.75,0]);
+Anchor Anchor94 = createNode("Anchor");
+Anchor94.description = "ArtDeco02 view";
+Anchor94.url = new MFString(new java.lang.String["#View02"]);
+Shape Shape95 = createNode("Shape");
+Appearance Appearance96 = createNode("Appearance");
+ProtoInstance ProtoInstance97 = createNode("ProtoInstance");
+ProtoInstance97.name = "ArtDeco02";
+Appearance96.shaders = new MFNode();
 
-Transform80.children[1] = Transform86;
+Appearance96.shaders[0] = ProtoInstance97;
 
-Group50.children[12] = Transform80;
+Shape95.appearance = Appearance96;
 
-Viewpoint Viewpoint93 = createNode("Viewpoint");
-Viewpoint93.DEF = "View02";
-Viewpoint93.description = "ArtDeco02";
-Viewpoint93.position = new SFVec3f(new float[-0.75,3.75,3]);
-Group50.children[13] = Viewpoint93;
+Sphere Sphere98 = createNode("Sphere");
+Sphere98.USE = "Ball";
+Shape95.geometry = Sphere98;
 
-Transform Transform94 = createNode("Transform");
-Transform94.translation = new SFVec3f(new float[-0.75,3.75,0]);
-Anchor Anchor95 = createNode("Anchor");
-Anchor95.description = "ArtDeco02 view";
-Anchor95.url = new MFString(new java.lang.String["#View02"]);
-Shape Shape96 = createNode("Shape");
-Appearance Appearance97 = createNode("Appearance");
-ProtoInstance ProtoInstance98 = createNode("ProtoInstance");
-ProtoInstance98.name = "ArtDeco02";
-Appearance97.shaders = new MFNode();
+Anchor94.children = new MFNode();
 
-Appearance97.shaders[0] = ProtoInstance98;
+Anchor94.children[0] = Shape95;
 
-Shape96.appearance = Appearance97;
+Transform93.children = new MFNode();
 
-Sphere Sphere99 = createNode("Sphere");
-Sphere99.USE = "Ball";
-Shape96.geometry = Sphere99;
+Transform93.children[0] = Anchor94;
 
-Anchor95.children = new MFNode();
+Transform Transform99 = createNode("Transform");
+Transform99.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor100 = createNode("Anchor");
+Anchor100.description = "ArtDeco02";
+Anchor100.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02"]);
+Anchor100.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape101 = createNode("Shape");
+Appearance Appearance102 = createNode("Appearance");
+Material Material103 = createNode("Material");
+Material103.USE = "TextMat";
+Appearance102.material = Material103;
 
-Anchor95.children[0] = Shape96;
+Shape101.appearance = Appearance102;
 
-Transform94.children = new MFNode();
+Text Text104 = createNode("Text");
+Text104.string = new MFString(new java.lang.String["ArtDeco02"]);
+FontStyle FontStyle105 = createNode("FontStyle");
+FontStyle105.USE = "Style";
+Text104.fontStyle = FontStyle105;
 
-Transform94.children[0] = Anchor95;
+Shape101.geometry = Text104;
 
-Transform Transform100 = createNode("Transform");
-Transform100.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor101 = createNode("Anchor");
-Anchor101.description = "ArtDeco02";
-Anchor101.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor101.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02"]);
-Shape Shape102 = createNode("Shape");
-Appearance Appearance103 = createNode("Appearance");
-Material Material104 = createNode("Material");
-Material104.USE = "TextMat";
-Appearance103.material = Material104;
+Anchor100.children = new MFNode();
 
-Shape102.appearance = Appearance103;
+Anchor100.children[0] = Shape101;
 
-Text Text105 = createNode("Text");
-Text105.string = new MFString(new java.lang.String["ArtDeco02"]);
-FontStyle FontStyle106 = createNode("FontStyle");
-FontStyle106.USE = "Style";
-Text105.fontStyle = FontStyle106;
+Transform99.children = new MFNode();
 
-Shape102.geometry = Text105;
+Transform99.children[0] = Anchor100;
 
-Anchor101.children = new MFNode();
+Transform93.children[1] = Transform99;
 
-Anchor101.children[0] = Shape102;
+Group49.children[14] = Transform93;
 
-Transform100.children = new MFNode();
+Viewpoint Viewpoint106 = createNode("Viewpoint");
+Viewpoint106.DEF = "View03";
+Viewpoint106.description = "ArtDeco03";
+Viewpoint106.position = new SFVec3f(new float[0.75,3.75,3]);
+Group49.children[15] = Viewpoint106;
 
-Transform100.children[0] = Anchor101;
+Transform Transform107 = createNode("Transform");
+Transform107.translation = new SFVec3f(new float[0.75,3.75,0]);
+Anchor Anchor108 = createNode("Anchor");
+Anchor108.description = "ArtDeco03 view";
+Anchor108.url = new MFString(new java.lang.String["#View03"]);
+Shape Shape109 = createNode("Shape");
+Appearance Appearance110 = createNode("Appearance");
+ProtoInstance ProtoInstance111 = createNode("ProtoInstance");
+ProtoInstance111.name = "ArtDeco03";
+Appearance110.shaders = new MFNode();
 
-Transform94.children[1] = Transform100;
+Appearance110.shaders[0] = ProtoInstance111;
 
-Group50.children[14] = Transform94;
+Shape109.appearance = Appearance110;
 
-Viewpoint Viewpoint107 = createNode("Viewpoint");
-Viewpoint107.DEF = "View03";
-Viewpoint107.description = "ArtDeco03";
-Viewpoint107.position = new SFVec3f(new float[0.75,3.75,3]);
-Group50.children[15] = Viewpoint107;
+Sphere Sphere112 = createNode("Sphere");
+Sphere112.USE = "Ball";
+Shape109.geometry = Sphere112;
 
-Transform Transform108 = createNode("Transform");
-Transform108.translation = new SFVec3f(new float[0.75,3.75,0]);
-Anchor Anchor109 = createNode("Anchor");
-Anchor109.description = "ArtDeco03 view";
-Anchor109.url = new MFString(new java.lang.String["#View03"]);
-Shape Shape110 = createNode("Shape");
-Appearance Appearance111 = createNode("Appearance");
-ProtoInstance ProtoInstance112 = createNode("ProtoInstance");
-ProtoInstance112.name = "ArtDeco03";
-Appearance111.shaders = new MFNode();
+Anchor108.children = new MFNode();
 
-Appearance111.shaders[0] = ProtoInstance112;
+Anchor108.children[0] = Shape109;
 
-Shape110.appearance = Appearance111;
+Transform107.children = new MFNode();
 
-Sphere Sphere113 = createNode("Sphere");
-Sphere113.USE = "Ball";
-Shape110.geometry = Sphere113;
+Transform107.children[0] = Anchor108;
 
-Anchor109.children = new MFNode();
+Transform Transform113 = createNode("Transform");
+Transform113.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor114 = createNode("Anchor");
+Anchor114.description = "ArtDeco03";
+Anchor114.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03"]);
+Anchor114.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape115 = createNode("Shape");
+Appearance Appearance116 = createNode("Appearance");
+Material Material117 = createNode("Material");
+Material117.USE = "TextMat";
+Appearance116.material = Material117;
 
-Anchor109.children[0] = Shape110;
+Shape115.appearance = Appearance116;
 
-Transform108.children = new MFNode();
+Text Text118 = createNode("Text");
+Text118.string = new MFString(new java.lang.String["ArtDeco03"]);
+FontStyle FontStyle119 = createNode("FontStyle");
+FontStyle119.USE = "Style";
+Text118.fontStyle = FontStyle119;
 
-Transform108.children[0] = Anchor109;
+Shape115.geometry = Text118;
 
-Transform Transform114 = createNode("Transform");
-Transform114.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor115 = createNode("Anchor");
-Anchor115.description = "ArtDeco03";
-Anchor115.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor115.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03"]);
-Shape Shape116 = createNode("Shape");
-Appearance Appearance117 = createNode("Appearance");
-Material Material118 = createNode("Material");
-Material118.USE = "TextMat";
-Appearance117.material = Material118;
+Anchor114.children = new MFNode();
 
-Shape116.appearance = Appearance117;
+Anchor114.children[0] = Shape115;
 
-Text Text119 = createNode("Text");
-Text119.string = new MFString(new java.lang.String["ArtDeco03"]);
-FontStyle FontStyle120 = createNode("FontStyle");
-FontStyle120.USE = "Style";
-Text119.fontStyle = FontStyle120;
+Transform113.children = new MFNode();
 
-Shape116.geometry = Text119;
+Transform113.children[0] = Anchor114;
 
-Anchor115.children = new MFNode();
+Transform107.children[1] = Transform113;
 
-Anchor115.children[0] = Shape116;
+Group49.children[16] = Transform107;
 
-Transform114.children = new MFNode();
+Viewpoint Viewpoint120 = createNode("Viewpoint");
+Viewpoint120.DEF = "View04";
+Viewpoint120.description = "ArtDeco04";
+Viewpoint120.position = new SFVec3f(new float[2.25,3.75,3]);
+Group49.children[17] = Viewpoint120;
 
-Transform114.children[0] = Anchor115;
+Transform Transform121 = createNode("Transform");
+Transform121.translation = new SFVec3f(new float[2.25,3.75,0]);
+Anchor Anchor122 = createNode("Anchor");
+Anchor122.description = "ArtDeco04 view";
+Anchor122.url = new MFString(new java.lang.String["#View04"]);
+Shape Shape123 = createNode("Shape");
+Appearance Appearance124 = createNode("Appearance");
+ProtoInstance ProtoInstance125 = createNode("ProtoInstance");
+ProtoInstance125.name = "ArtDeco04";
+Appearance124.shaders = new MFNode();
 
-Transform108.children[1] = Transform114;
+Appearance124.shaders[0] = ProtoInstance125;
 
-Group50.children[16] = Transform108;
+Shape123.appearance = Appearance124;
 
-Viewpoint Viewpoint121 = createNode("Viewpoint");
-Viewpoint121.DEF = "View04";
-Viewpoint121.description = "ArtDeco04";
-Viewpoint121.position = new SFVec3f(new float[2.25,3.75,3]);
-Group50.children[17] = Viewpoint121;
+Sphere Sphere126 = createNode("Sphere");
+Sphere126.USE = "Ball";
+Shape123.geometry = Sphere126;
 
-Transform Transform122 = createNode("Transform");
-Transform122.translation = new SFVec3f(new float[2.25,3.75,0]);
-Anchor Anchor123 = createNode("Anchor");
-Anchor123.description = "ArtDeco04 view";
-Anchor123.url = new MFString(new java.lang.String["#View04"]);
-Shape Shape124 = createNode("Shape");
-Appearance Appearance125 = createNode("Appearance");
-ProtoInstance ProtoInstance126 = createNode("ProtoInstance");
-ProtoInstance126.name = "ArtDeco04";
-Appearance125.shaders = new MFNode();
+Anchor122.children = new MFNode();
 
-Appearance125.shaders[0] = ProtoInstance126;
+Anchor122.children[0] = Shape123;
 
-Shape124.appearance = Appearance125;
+Transform121.children = new MFNode();
 
-Sphere Sphere127 = createNode("Sphere");
-Sphere127.USE = "Ball";
-Shape124.geometry = Sphere127;
+Transform121.children[0] = Anchor122;
 
-Anchor123.children = new MFNode();
+Transform Transform127 = createNode("Transform");
+Transform127.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor128 = createNode("Anchor");
+Anchor128.description = "ArtDeco04";
+Anchor128.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04"]);
+Anchor128.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape129 = createNode("Shape");
+Appearance Appearance130 = createNode("Appearance");
+Material Material131 = createNode("Material");
+Material131.USE = "TextMat";
+Appearance130.material = Material131;
 
-Anchor123.children[0] = Shape124;
+Shape129.appearance = Appearance130;
 
-Transform122.children = new MFNode();
+Text Text132 = createNode("Text");
+Text132.string = new MFString(new java.lang.String["ArtDeco04"]);
+FontStyle FontStyle133 = createNode("FontStyle");
+FontStyle133.USE = "Style";
+Text132.fontStyle = FontStyle133;
 
-Transform122.children[0] = Anchor123;
+Shape129.geometry = Text132;
 
-Transform Transform128 = createNode("Transform");
-Transform128.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor129 = createNode("Anchor");
-Anchor129.description = "ArtDeco04";
-Anchor129.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor129.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04"]);
-Shape Shape130 = createNode("Shape");
-Appearance Appearance131 = createNode("Appearance");
-Material Material132 = createNode("Material");
-Material132.USE = "TextMat";
-Appearance131.material = Material132;
+Anchor128.children = new MFNode();
 
-Shape130.appearance = Appearance131;
+Anchor128.children[0] = Shape129;
 
-Text Text133 = createNode("Text");
-Text133.string = new MFString(new java.lang.String["ArtDeco04"]);
-FontStyle FontStyle134 = createNode("FontStyle");
-FontStyle134.USE = "Style";
-Text133.fontStyle = FontStyle134;
+Transform127.children = new MFNode();
 
-Shape130.geometry = Text133;
+Transform127.children[0] = Anchor128;
 
-Anchor129.children = new MFNode();
+Transform121.children[1] = Transform127;
 
-Anchor129.children[0] = Shape130;
+Group49.children[18] = Transform121;
 
-Transform128.children = new MFNode();
+Viewpoint Viewpoint134 = createNode("Viewpoint");
+Viewpoint134.DEF = "View05";
+Viewpoint134.description = "ArtDeco05";
+Viewpoint134.position = new SFVec3f(new float[3.75,3.75,3]);
+Group49.children[19] = Viewpoint134;
 
-Transform128.children[0] = Anchor129;
+Transform Transform135 = createNode("Transform");
+Transform135.translation = new SFVec3f(new float[3.75,3.75,0]);
+Anchor Anchor136 = createNode("Anchor");
+Anchor136.description = "ArtDeco05 view";
+Anchor136.url = new MFString(new java.lang.String["#View05"]);
+Shape Shape137 = createNode("Shape");
+Appearance Appearance138 = createNode("Appearance");
+ProtoInstance ProtoInstance139 = createNode("ProtoInstance");
+ProtoInstance139.name = "ArtDeco05";
+Appearance138.shaders = new MFNode();
 
-Transform122.children[1] = Transform128;
+Appearance138.shaders[0] = ProtoInstance139;
 
-Group50.children[18] = Transform122;
+Shape137.appearance = Appearance138;
 
-Viewpoint Viewpoint135 = createNode("Viewpoint");
-Viewpoint135.DEF = "View05";
-Viewpoint135.description = "ArtDeco05";
-Viewpoint135.position = new SFVec3f(new float[3.75,3.75,3]);
-Group50.children[19] = Viewpoint135;
+Sphere Sphere140 = createNode("Sphere");
+Sphere140.USE = "Ball";
+Shape137.geometry = Sphere140;
 
-Transform Transform136 = createNode("Transform");
-Transform136.translation = new SFVec3f(new float[3.75,3.75,0]);
-Anchor Anchor137 = createNode("Anchor");
-Anchor137.description = "ArtDeco05 view";
-Anchor137.url = new MFString(new java.lang.String["#View05"]);
-Shape Shape138 = createNode("Shape");
-Appearance Appearance139 = createNode("Appearance");
-ProtoInstance ProtoInstance140 = createNode("ProtoInstance");
-ProtoInstance140.name = "ArtDeco05";
-Appearance139.shaders = new MFNode();
+Anchor136.children = new MFNode();
 
-Appearance139.shaders[0] = ProtoInstance140;
+Anchor136.children[0] = Shape137;
 
-Shape138.appearance = Appearance139;
+Transform135.children = new MFNode();
 
-Sphere Sphere141 = createNode("Sphere");
-Sphere141.USE = "Ball";
-Shape138.geometry = Sphere141;
+Transform135.children[0] = Anchor136;
 
-Anchor137.children = new MFNode();
+Transform Transform141 = createNode("Transform");
+Transform141.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor142 = createNode("Anchor");
+Anchor142.description = "ArtDeco05";
+Anchor142.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05"]);
+Anchor142.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape143 = createNode("Shape");
+Appearance Appearance144 = createNode("Appearance");
+Material Material145 = createNode("Material");
+Material145.USE = "TextMat";
+Appearance144.material = Material145;
 
-Anchor137.children[0] = Shape138;
+Shape143.appearance = Appearance144;
 
-Transform136.children = new MFNode();
+Text Text146 = createNode("Text");
+Text146.string = new MFString(new java.lang.String["ArtDeco05"]);
+FontStyle FontStyle147 = createNode("FontStyle");
+FontStyle147.USE = "Style";
+Text146.fontStyle = FontStyle147;
 
-Transform136.children[0] = Anchor137;
+Shape143.geometry = Text146;
 
-Transform Transform142 = createNode("Transform");
-Transform142.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor143 = createNode("Anchor");
-Anchor143.description = "ArtDeco05";
-Anchor143.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor143.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05"]);
-Shape Shape144 = createNode("Shape");
-Appearance Appearance145 = createNode("Appearance");
-Material Material146 = createNode("Material");
-Material146.USE = "TextMat";
-Appearance145.material = Material146;
+Anchor142.children = new MFNode();
 
-Shape144.appearance = Appearance145;
+Anchor142.children[0] = Shape143;
 
-Text Text147 = createNode("Text");
-Text147.string = new MFString(new java.lang.String["ArtDeco05"]);
-FontStyle FontStyle148 = createNode("FontStyle");
-FontStyle148.USE = "Style";
-Text147.fontStyle = FontStyle148;
+Transform141.children = new MFNode();
 
-Shape144.geometry = Text147;
+Transform141.children[0] = Anchor142;
 
-Anchor143.children = new MFNode();
+Transform135.children[1] = Transform141;
 
-Anchor143.children[0] = Shape144;
+Group49.children[20] = Transform135;
 
-Transform142.children = new MFNode();
+Viewpoint Viewpoint148 = createNode("Viewpoint");
+Viewpoint148.DEF = "View06";
+Viewpoint148.description = "ArtDeco06";
+Viewpoint148.position = new SFVec3f(new float[-3.75,2.25,3]);
+Group49.children[21] = Viewpoint148;
 
-Transform142.children[0] = Anchor143;
+Transform Transform149 = createNode("Transform");
+Transform149.translation = new SFVec3f(new float[-3.75,2.25,0]);
+Anchor Anchor150 = createNode("Anchor");
+Anchor150.description = "ArtDeco06 view";
+Anchor150.url = new MFString(new java.lang.String["#View06"]);
+Shape Shape151 = createNode("Shape");
+Appearance Appearance152 = createNode("Appearance");
+ProtoInstance ProtoInstance153 = createNode("ProtoInstance");
+ProtoInstance153.name = "ArtDeco06";
+Appearance152.shaders = new MFNode();
 
-Transform136.children[1] = Transform142;
+Appearance152.shaders[0] = ProtoInstance153;
 
-Group50.children[20] = Transform136;
+Shape151.appearance = Appearance152;
 
-Viewpoint Viewpoint149 = createNode("Viewpoint");
-Viewpoint149.DEF = "View06";
-Viewpoint149.description = "ArtDeco06";
-Viewpoint149.position = new SFVec3f(new float[-3.75,2.25,3]);
-Group50.children[21] = Viewpoint149;
+Sphere Sphere154 = createNode("Sphere");
+Sphere154.USE = "Ball";
+Shape151.geometry = Sphere154;
 
-Transform Transform150 = createNode("Transform");
-Transform150.translation = new SFVec3f(new float[-3.75,2.25,0]);
-Anchor Anchor151 = createNode("Anchor");
-Anchor151.description = "ArtDeco06 view";
-Anchor151.url = new MFString(new java.lang.String["#View06"]);
-Shape Shape152 = createNode("Shape");
-Appearance Appearance153 = createNode("Appearance");
-ProtoInstance ProtoInstance154 = createNode("ProtoInstance");
-ProtoInstance154.name = "ArtDeco06";
-Appearance153.shaders = new MFNode();
+Anchor150.children = new MFNode();
 
-Appearance153.shaders[0] = ProtoInstance154;
+Anchor150.children[0] = Shape151;
 
-Shape152.appearance = Appearance153;
+Transform149.children = new MFNode();
 
-Sphere Sphere155 = createNode("Sphere");
-Sphere155.USE = "Ball";
-Shape152.geometry = Sphere155;
+Transform149.children[0] = Anchor150;
 
-Anchor151.children = new MFNode();
+Transform Transform155 = createNode("Transform");
+Transform155.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor156 = createNode("Anchor");
+Anchor156.description = "ArtDeco06";
+Anchor156.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06"]);
+Anchor156.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape157 = createNode("Shape");
+Appearance Appearance158 = createNode("Appearance");
+Material Material159 = createNode("Material");
+Material159.USE = "TextMat";
+Appearance158.material = Material159;
 
-Anchor151.children[0] = Shape152;
+Shape157.appearance = Appearance158;
 
-Transform150.children = new MFNode();
+Text Text160 = createNode("Text");
+Text160.string = new MFString(new java.lang.String["ArtDeco06"]);
+FontStyle FontStyle161 = createNode("FontStyle");
+FontStyle161.USE = "Style";
+Text160.fontStyle = FontStyle161;
 
-Transform150.children[0] = Anchor151;
+Shape157.geometry = Text160;
 
-Transform Transform156 = createNode("Transform");
-Transform156.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor157 = createNode("Anchor");
-Anchor157.description = "ArtDeco06";
-Anchor157.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor157.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06"]);
-Shape Shape158 = createNode("Shape");
-Appearance Appearance159 = createNode("Appearance");
-Material Material160 = createNode("Material");
-Material160.USE = "TextMat";
-Appearance159.material = Material160;
+Anchor156.children = new MFNode();
 
-Shape158.appearance = Appearance159;
+Anchor156.children[0] = Shape157;
 
-Text Text161 = createNode("Text");
-Text161.string = new MFString(new java.lang.String["ArtDeco06"]);
-FontStyle FontStyle162 = createNode("FontStyle");
-FontStyle162.USE = "Style";
-Text161.fontStyle = FontStyle162;
+Transform155.children = new MFNode();
 
-Shape158.geometry = Text161;
+Transform155.children[0] = Anchor156;
 
-Anchor157.children = new MFNode();
+Transform149.children[1] = Transform155;
 
-Anchor157.children[0] = Shape158;
+Group49.children[22] = Transform149;
 
-Transform156.children = new MFNode();
+Viewpoint Viewpoint162 = createNode("Viewpoint");
+Viewpoint162.DEF = "View07";
+Viewpoint162.description = "ArtDeco07";
+Viewpoint162.position = new SFVec3f(new float[-2.25,2.25,3]);
+Group49.children[23] = Viewpoint162;
 
-Transform156.children[0] = Anchor157;
+Transform Transform163 = createNode("Transform");
+Transform163.translation = new SFVec3f(new float[-2.25,2.25,0]);
+Anchor Anchor164 = createNode("Anchor");
+Anchor164.description = "ArtDeco07 view";
+Anchor164.url = new MFString(new java.lang.String["#View07"]);
+Shape Shape165 = createNode("Shape");
+Appearance Appearance166 = createNode("Appearance");
+ProtoInstance ProtoInstance167 = createNode("ProtoInstance");
+ProtoInstance167.name = "ArtDeco07";
+Appearance166.shaders = new MFNode();
 
-Transform150.children[1] = Transform156;
+Appearance166.shaders[0] = ProtoInstance167;
 
-Group50.children[22] = Transform150;
+Shape165.appearance = Appearance166;
 
-Viewpoint Viewpoint163 = createNode("Viewpoint");
-Viewpoint163.DEF = "View07";
-Viewpoint163.description = "ArtDeco07";
-Viewpoint163.position = new SFVec3f(new float[-2.25,2.25,3]);
-Group50.children[23] = Viewpoint163;
+Sphere Sphere168 = createNode("Sphere");
+Sphere168.USE = "Ball";
+Shape165.geometry = Sphere168;
 
-Transform Transform164 = createNode("Transform");
-Transform164.translation = new SFVec3f(new float[-2.25,2.25,0]);
-Anchor Anchor165 = createNode("Anchor");
-Anchor165.description = "ArtDeco07 view";
-Anchor165.url = new MFString(new java.lang.String["#View07"]);
-Shape Shape166 = createNode("Shape");
-Appearance Appearance167 = createNode("Appearance");
-ProtoInstance ProtoInstance168 = createNode("ProtoInstance");
-ProtoInstance168.name = "ArtDeco07";
-Appearance167.shaders = new MFNode();
+Anchor164.children = new MFNode();
 
-Appearance167.shaders[0] = ProtoInstance168;
+Anchor164.children[0] = Shape165;
 
-Shape166.appearance = Appearance167;
+Transform163.children = new MFNode();
 
-Sphere Sphere169 = createNode("Sphere");
-Sphere169.USE = "Ball";
-Shape166.geometry = Sphere169;
+Transform163.children[0] = Anchor164;
 
-Anchor165.children = new MFNode();
+Transform Transform169 = createNode("Transform");
+Transform169.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor170 = createNode("Anchor");
+Anchor170.description = "ArtDeco07";
+Anchor170.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07"]);
+Anchor170.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape171 = createNode("Shape");
+Appearance Appearance172 = createNode("Appearance");
+Material Material173 = createNode("Material");
+Material173.USE = "TextMat";
+Appearance172.material = Material173;
 
-Anchor165.children[0] = Shape166;
+Shape171.appearance = Appearance172;
 
-Transform164.children = new MFNode();
+Text Text174 = createNode("Text");
+Text174.string = new MFString(new java.lang.String["ArtDeco07"]);
+FontStyle FontStyle175 = createNode("FontStyle");
+FontStyle175.USE = "Style";
+Text174.fontStyle = FontStyle175;
 
-Transform164.children[0] = Anchor165;
+Shape171.geometry = Text174;
 
-Transform Transform170 = createNode("Transform");
-Transform170.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor171 = createNode("Anchor");
-Anchor171.description = "ArtDeco07";
-Anchor171.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor171.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07"]);
-Shape Shape172 = createNode("Shape");
-Appearance Appearance173 = createNode("Appearance");
-Material Material174 = createNode("Material");
-Material174.USE = "TextMat";
-Appearance173.material = Material174;
+Anchor170.children = new MFNode();
 
-Shape172.appearance = Appearance173;
+Anchor170.children[0] = Shape171;
 
-Text Text175 = createNode("Text");
-Text175.string = new MFString(new java.lang.String["ArtDeco07"]);
-FontStyle FontStyle176 = createNode("FontStyle");
-FontStyle176.USE = "Style";
-Text175.fontStyle = FontStyle176;
+Transform169.children = new MFNode();
 
-Shape172.geometry = Text175;
+Transform169.children[0] = Anchor170;
 
-Anchor171.children = new MFNode();
+Transform163.children[1] = Transform169;
 
-Anchor171.children[0] = Shape172;
+Group49.children[24] = Transform163;
 
-Transform170.children = new MFNode();
+Viewpoint Viewpoint176 = createNode("Viewpoint");
+Viewpoint176.DEF = "View08";
+Viewpoint176.description = "ArtDeco08";
+Viewpoint176.position = new SFVec3f(new float[-0.75,2.25,3]);
+Group49.children[25] = Viewpoint176;
 
-Transform170.children[0] = Anchor171;
+Transform Transform177 = createNode("Transform");
+Transform177.translation = new SFVec3f(new float[-0.75,2.25,0]);
+Anchor Anchor178 = createNode("Anchor");
+Anchor178.description = "ArtDeco08 view";
+Anchor178.url = new MFString(new java.lang.String["#View08"]);
+Shape Shape179 = createNode("Shape");
+Appearance Appearance180 = createNode("Appearance");
+ProtoInstance ProtoInstance181 = createNode("ProtoInstance");
+ProtoInstance181.name = "ArtDeco08";
+Appearance180.shaders = new MFNode();
 
-Transform164.children[1] = Transform170;
+Appearance180.shaders[0] = ProtoInstance181;
 
-Group50.children[24] = Transform164;
+Shape179.appearance = Appearance180;
 
-Viewpoint Viewpoint177 = createNode("Viewpoint");
-Viewpoint177.DEF = "View08";
-Viewpoint177.description = "ArtDeco08";
-Viewpoint177.position = new SFVec3f(new float[-0.75,2.25,3]);
-Group50.children[25] = Viewpoint177;
+Sphere Sphere182 = createNode("Sphere");
+Sphere182.USE = "Ball";
+Shape179.geometry = Sphere182;
 
-Transform Transform178 = createNode("Transform");
-Transform178.translation = new SFVec3f(new float[-0.75,2.25,0]);
-Anchor Anchor179 = createNode("Anchor");
-Anchor179.description = "ArtDeco08 view";
-Anchor179.url = new MFString(new java.lang.String["#View08"]);
-Shape Shape180 = createNode("Shape");
-Appearance Appearance181 = createNode("Appearance");
-ProtoInstance ProtoInstance182 = createNode("ProtoInstance");
-ProtoInstance182.name = "ArtDeco08";
-Appearance181.shaders = new MFNode();
+Anchor178.children = new MFNode();
 
-Appearance181.shaders[0] = ProtoInstance182;
+Anchor178.children[0] = Shape179;
 
-Shape180.appearance = Appearance181;
+Transform177.children = new MFNode();
 
-Sphere Sphere183 = createNode("Sphere");
-Sphere183.USE = "Ball";
-Shape180.geometry = Sphere183;
+Transform177.children[0] = Anchor178;
 
-Anchor179.children = new MFNode();
+Transform Transform183 = createNode("Transform");
+Transform183.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor184 = createNode("Anchor");
+Anchor184.description = "ArtDeco08";
+Anchor184.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08"]);
+Anchor184.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape185 = createNode("Shape");
+Appearance Appearance186 = createNode("Appearance");
+Material Material187 = createNode("Material");
+Material187.USE = "TextMat";
+Appearance186.material = Material187;
 
-Anchor179.children[0] = Shape180;
+Shape185.appearance = Appearance186;
 
-Transform178.children = new MFNode();
+Text Text188 = createNode("Text");
+Text188.string = new MFString(new java.lang.String["ArtDeco08"]);
+FontStyle FontStyle189 = createNode("FontStyle");
+FontStyle189.USE = "Style";
+Text188.fontStyle = FontStyle189;
 
-Transform178.children[0] = Anchor179;
+Shape185.geometry = Text188;
 
-Transform Transform184 = createNode("Transform");
-Transform184.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor185 = createNode("Anchor");
-Anchor185.description = "ArtDeco08";
-Anchor185.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor185.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08"]);
-Shape Shape186 = createNode("Shape");
-Appearance Appearance187 = createNode("Appearance");
-Material Material188 = createNode("Material");
-Material188.USE = "TextMat";
-Appearance187.material = Material188;
+Anchor184.children = new MFNode();
 
-Shape186.appearance = Appearance187;
+Anchor184.children[0] = Shape185;
 
-Text Text189 = createNode("Text");
-Text189.string = new MFString(new java.lang.String["ArtDeco08"]);
-FontStyle FontStyle190 = createNode("FontStyle");
-FontStyle190.USE = "Style";
-Text189.fontStyle = FontStyle190;
+Transform183.children = new MFNode();
 
-Shape186.geometry = Text189;
+Transform183.children[0] = Anchor184;
 
-Anchor185.children = new MFNode();
+Transform177.children[1] = Transform183;
 
-Anchor185.children[0] = Shape186;
+Group49.children[26] = Transform177;
 
-Transform184.children = new MFNode();
+Viewpoint Viewpoint190 = createNode("Viewpoint");
+Viewpoint190.DEF = "View09";
+Viewpoint190.description = "ArtDeco09";
+Viewpoint190.position = new SFVec3f(new float[0.75,2.25,3]);
+Group49.children[27] = Viewpoint190;
 
-Transform184.children[0] = Anchor185;
+Transform Transform191 = createNode("Transform");
+Transform191.translation = new SFVec3f(new float[0.75,2.25,0]);
+Anchor Anchor192 = createNode("Anchor");
+Anchor192.description = "ArtDeco09 view";
+Anchor192.url = new MFString(new java.lang.String["#View09"]);
+Shape Shape193 = createNode("Shape");
+Appearance Appearance194 = createNode("Appearance");
+ProtoInstance ProtoInstance195 = createNode("ProtoInstance");
+ProtoInstance195.name = "ArtDeco09";
+Appearance194.shaders = new MFNode();
 
-Transform178.children[1] = Transform184;
+Appearance194.shaders[0] = ProtoInstance195;
 
-Group50.children[26] = Transform178;
+Shape193.appearance = Appearance194;
 
-Viewpoint Viewpoint191 = createNode("Viewpoint");
-Viewpoint191.DEF = "View09";
-Viewpoint191.description = "ArtDeco09";
-Viewpoint191.position = new SFVec3f(new float[0.75,2.25,3]);
-Group50.children[27] = Viewpoint191;
+Sphere Sphere196 = createNode("Sphere");
+Sphere196.USE = "Ball";
+Shape193.geometry = Sphere196;
 
-Transform Transform192 = createNode("Transform");
-Transform192.translation = new SFVec3f(new float[0.75,2.25,0]);
-Anchor Anchor193 = createNode("Anchor");
-Anchor193.description = "ArtDeco09 view";
-Anchor193.url = new MFString(new java.lang.String["#View09"]);
-Shape Shape194 = createNode("Shape");
-Appearance Appearance195 = createNode("Appearance");
-ProtoInstance ProtoInstance196 = createNode("ProtoInstance");
-ProtoInstance196.name = "ArtDeco09";
-Appearance195.shaders = new MFNode();
+Anchor192.children = new MFNode();
 
-Appearance195.shaders[0] = ProtoInstance196;
+Anchor192.children[0] = Shape193;
 
-Shape194.appearance = Appearance195;
+Transform191.children = new MFNode();
 
-Sphere Sphere197 = createNode("Sphere");
-Sphere197.USE = "Ball";
-Shape194.geometry = Sphere197;
+Transform191.children[0] = Anchor192;
 
-Anchor193.children = new MFNode();
+Transform Transform197 = createNode("Transform");
+Transform197.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor198 = createNode("Anchor");
+Anchor198.description = "ArtDeco09";
+Anchor198.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09"]);
+Anchor198.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape199 = createNode("Shape");
+Appearance Appearance200 = createNode("Appearance");
+Material Material201 = createNode("Material");
+Material201.USE = "TextMat";
+Appearance200.material = Material201;
 
-Anchor193.children[0] = Shape194;
+Shape199.appearance = Appearance200;
 
-Transform192.children = new MFNode();
+Text Text202 = createNode("Text");
+Text202.string = new MFString(new java.lang.String["ArtDeco09"]);
+FontStyle FontStyle203 = createNode("FontStyle");
+FontStyle203.USE = "Style";
+Text202.fontStyle = FontStyle203;
 
-Transform192.children[0] = Anchor193;
+Shape199.geometry = Text202;
 
-Transform Transform198 = createNode("Transform");
-Transform198.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor199 = createNode("Anchor");
-Anchor199.description = "ArtDeco09";
-Anchor199.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor199.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09"]);
-Shape Shape200 = createNode("Shape");
-Appearance Appearance201 = createNode("Appearance");
-Material Material202 = createNode("Material");
-Material202.USE = "TextMat";
-Appearance201.material = Material202;
+Anchor198.children = new MFNode();
 
-Shape200.appearance = Appearance201;
+Anchor198.children[0] = Shape199;
 
-Text Text203 = createNode("Text");
-Text203.string = new MFString(new java.lang.String["ArtDeco09"]);
-FontStyle FontStyle204 = createNode("FontStyle");
-FontStyle204.USE = "Style";
-Text203.fontStyle = FontStyle204;
+Transform197.children = new MFNode();
 
-Shape200.geometry = Text203;
+Transform197.children[0] = Anchor198;
 
-Anchor199.children = new MFNode();
+Transform191.children[1] = Transform197;
 
-Anchor199.children[0] = Shape200;
+Group49.children[28] = Transform191;
 
-Transform198.children = new MFNode();
+Viewpoint Viewpoint204 = createNode("Viewpoint");
+Viewpoint204.DEF = "View10";
+Viewpoint204.description = "ArtDeco10";
+Viewpoint204.position = new SFVec3f(new float[2.25,2.25,3]);
+Group49.children[29] = Viewpoint204;
 
-Transform198.children[0] = Anchor199;
+Transform Transform205 = createNode("Transform");
+Transform205.translation = new SFVec3f(new float[2.25,2.25,0]);
+Anchor Anchor206 = createNode("Anchor");
+Anchor206.description = "ArtDeco10 view";
+Anchor206.url = new MFString(new java.lang.String["#View10"]);
+Shape Shape207 = createNode("Shape");
+Appearance Appearance208 = createNode("Appearance");
+ProtoInstance ProtoInstance209 = createNode("ProtoInstance");
+ProtoInstance209.name = "ArtDeco10";
+Appearance208.shaders = new MFNode();
 
-Transform192.children[1] = Transform198;
+Appearance208.shaders[0] = ProtoInstance209;
 
-Group50.children[28] = Transform192;
+Shape207.appearance = Appearance208;
 
-Viewpoint Viewpoint205 = createNode("Viewpoint");
-Viewpoint205.DEF = "View10";
-Viewpoint205.description = "ArtDeco10";
-Viewpoint205.position = new SFVec3f(new float[2.25,2.25,3]);
-Group50.children[29] = Viewpoint205;
+Sphere Sphere210 = createNode("Sphere");
+Sphere210.USE = "Ball";
+Shape207.geometry = Sphere210;
 
-Transform Transform206 = createNode("Transform");
-Transform206.translation = new SFVec3f(new float[2.25,2.25,0]);
-Anchor Anchor207 = createNode("Anchor");
-Anchor207.description = "ArtDeco10 view";
-Anchor207.url = new MFString(new java.lang.String["#View10"]);
-Shape Shape208 = createNode("Shape");
-Appearance Appearance209 = createNode("Appearance");
-ProtoInstance ProtoInstance210 = createNode("ProtoInstance");
-ProtoInstance210.name = "ArtDeco10";
-Appearance209.shaders = new MFNode();
+Anchor206.children = new MFNode();
 
-Appearance209.shaders[0] = ProtoInstance210;
+Anchor206.children[0] = Shape207;
 
-Shape208.appearance = Appearance209;
+Transform205.children = new MFNode();
 
-Sphere Sphere211 = createNode("Sphere");
-Sphere211.USE = "Ball";
-Shape208.geometry = Sphere211;
+Transform205.children[0] = Anchor206;
 
-Anchor207.children = new MFNode();
+Transform Transform211 = createNode("Transform");
+Transform211.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor212 = createNode("Anchor");
+Anchor212.description = "ArtDeco10";
+Anchor212.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10"]);
+Anchor212.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape213 = createNode("Shape");
+Appearance Appearance214 = createNode("Appearance");
+Material Material215 = createNode("Material");
+Material215.USE = "TextMat";
+Appearance214.material = Material215;
 
-Anchor207.children[0] = Shape208;
+Shape213.appearance = Appearance214;
 
-Transform206.children = new MFNode();
+Text Text216 = createNode("Text");
+Text216.string = new MFString(new java.lang.String["ArtDeco10"]);
+FontStyle FontStyle217 = createNode("FontStyle");
+FontStyle217.USE = "Style";
+Text216.fontStyle = FontStyle217;
 
-Transform206.children[0] = Anchor207;
+Shape213.geometry = Text216;
 
-Transform Transform212 = createNode("Transform");
-Transform212.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor213 = createNode("Anchor");
-Anchor213.description = "ArtDeco10";
-Anchor213.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor213.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10"]);
-Shape Shape214 = createNode("Shape");
-Appearance Appearance215 = createNode("Appearance");
-Material Material216 = createNode("Material");
-Material216.USE = "TextMat";
-Appearance215.material = Material216;
+Anchor212.children = new MFNode();
 
-Shape214.appearance = Appearance215;
+Anchor212.children[0] = Shape213;
 
-Text Text217 = createNode("Text");
-Text217.string = new MFString(new java.lang.String["ArtDeco10"]);
-FontStyle FontStyle218 = createNode("FontStyle");
-FontStyle218.USE = "Style";
-Text217.fontStyle = FontStyle218;
+Transform211.children = new MFNode();
 
-Shape214.geometry = Text217;
+Transform211.children[0] = Anchor212;
 
-Anchor213.children = new MFNode();
+Transform205.children[1] = Transform211;
 
-Anchor213.children[0] = Shape214;
+Group49.children[30] = Transform205;
 
-Transform212.children = new MFNode();
+Viewpoint Viewpoint218 = createNode("Viewpoint");
+Viewpoint218.DEF = "View11";
+Viewpoint218.description = "ArtDeco11";
+Viewpoint218.position = new SFVec3f(new float[3.75,2.25,3]);
+Group49.children[31] = Viewpoint218;
 
-Transform212.children[0] = Anchor213;
+Transform Transform219 = createNode("Transform");
+Transform219.translation = new SFVec3f(new float[3.75,2.25,0]);
+Anchor Anchor220 = createNode("Anchor");
+Anchor220.description = "ArtDeco11 view";
+Anchor220.url = new MFString(new java.lang.String["#View11"]);
+Shape Shape221 = createNode("Shape");
+Appearance Appearance222 = createNode("Appearance");
+ProtoInstance ProtoInstance223 = createNode("ProtoInstance");
+ProtoInstance223.name = "ArtDeco11";
+Appearance222.shaders = new MFNode();
 
-Transform206.children[1] = Transform212;
+Appearance222.shaders[0] = ProtoInstance223;
 
-Group50.children[30] = Transform206;
+Shape221.appearance = Appearance222;
 
-Viewpoint Viewpoint219 = createNode("Viewpoint");
-Viewpoint219.DEF = "View11";
-Viewpoint219.description = "ArtDeco11";
-Viewpoint219.position = new SFVec3f(new float[3.75,2.25,3]);
-Group50.children[31] = Viewpoint219;
+Sphere Sphere224 = createNode("Sphere");
+Sphere224.USE = "Ball";
+Shape221.geometry = Sphere224;
 
-Transform Transform220 = createNode("Transform");
-Transform220.translation = new SFVec3f(new float[3.75,2.25,0]);
-Anchor Anchor221 = createNode("Anchor");
-Anchor221.description = "ArtDeco11 view";
-Anchor221.url = new MFString(new java.lang.String["#View11"]);
-Shape Shape222 = createNode("Shape");
-Appearance Appearance223 = createNode("Appearance");
-ProtoInstance ProtoInstance224 = createNode("ProtoInstance");
-ProtoInstance224.name = "ArtDeco11";
-Appearance223.shaders = new MFNode();
+Anchor220.children = new MFNode();
 
-Appearance223.shaders[0] = ProtoInstance224;
+Anchor220.children[0] = Shape221;
 
-Shape222.appearance = Appearance223;
+Transform219.children = new MFNode();
 
-Sphere Sphere225 = createNode("Sphere");
-Sphere225.USE = "Ball";
-Shape222.geometry = Sphere225;
+Transform219.children[0] = Anchor220;
 
-Anchor221.children = new MFNode();
+Transform Transform225 = createNode("Transform");
+Transform225.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor226 = createNode("Anchor");
+Anchor226.description = "ArtDeco11";
+Anchor226.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11"]);
+Anchor226.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape227 = createNode("Shape");
+Appearance Appearance228 = createNode("Appearance");
+Material Material229 = createNode("Material");
+Material229.USE = "TextMat";
+Appearance228.material = Material229;
 
-Anchor221.children[0] = Shape222;
+Shape227.appearance = Appearance228;
 
-Transform220.children = new MFNode();
+Text Text230 = createNode("Text");
+Text230.string = new MFString(new java.lang.String["ArtDeco11"]);
+FontStyle FontStyle231 = createNode("FontStyle");
+FontStyle231.USE = "Style";
+Text230.fontStyle = FontStyle231;
 
-Transform220.children[0] = Anchor221;
+Shape227.geometry = Text230;
 
-Transform Transform226 = createNode("Transform");
-Transform226.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor227 = createNode("Anchor");
-Anchor227.description = "ArtDeco11";
-Anchor227.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor227.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11"]);
-Shape Shape228 = createNode("Shape");
-Appearance Appearance229 = createNode("Appearance");
-Material Material230 = createNode("Material");
-Material230.USE = "TextMat";
-Appearance229.material = Material230;
+Anchor226.children = new MFNode();
 
-Shape228.appearance = Appearance229;
+Anchor226.children[0] = Shape227;
 
-Text Text231 = createNode("Text");
-Text231.string = new MFString(new java.lang.String["ArtDeco11"]);
-FontStyle FontStyle232 = createNode("FontStyle");
-FontStyle232.USE = "Style";
-Text231.fontStyle = FontStyle232;
+Transform225.children = new MFNode();
 
-Shape228.geometry = Text231;
+Transform225.children[0] = Anchor226;
 
-Anchor227.children = new MFNode();
+Transform219.children[1] = Transform225;
 
-Anchor227.children[0] = Shape228;
+Group49.children[32] = Transform219;
 
-Transform226.children = new MFNode();
+Viewpoint Viewpoint232 = createNode("Viewpoint");
+Viewpoint232.DEF = "View12";
+Viewpoint232.description = "ArtDeco12";
+Viewpoint232.position = new SFVec3f(new float[-3.75,0.75,3]);
+Group49.children[33] = Viewpoint232;
 
-Transform226.children[0] = Anchor227;
+Transform Transform233 = createNode("Transform");
+Transform233.translation = new SFVec3f(new float[-3.75,0.75,0]);
+Anchor Anchor234 = createNode("Anchor");
+Anchor234.description = "ArtDeco12 view";
+Anchor234.url = new MFString(new java.lang.String["#View12"]);
+Shape Shape235 = createNode("Shape");
+Appearance Appearance236 = createNode("Appearance");
+ProtoInstance ProtoInstance237 = createNode("ProtoInstance");
+ProtoInstance237.name = "ArtDeco12";
+Appearance236.shaders = new MFNode();
 
-Transform220.children[1] = Transform226;
+Appearance236.shaders[0] = ProtoInstance237;
 
-Group50.children[32] = Transform220;
+Shape235.appearance = Appearance236;
 
-Viewpoint Viewpoint233 = createNode("Viewpoint");
-Viewpoint233.DEF = "View12";
-Viewpoint233.description = "ArtDeco12";
-Viewpoint233.position = new SFVec3f(new float[-3.75,0.75,3]);
-Group50.children[33] = Viewpoint233;
+Sphere Sphere238 = createNode("Sphere");
+Sphere238.USE = "Ball";
+Shape235.geometry = Sphere238;
 
-Transform Transform234 = createNode("Transform");
-Transform234.translation = new SFVec3f(new float[-3.75,0.75,0]);
-Anchor Anchor235 = createNode("Anchor");
-Anchor235.description = "ArtDeco12 view";
-Anchor235.url = new MFString(new java.lang.String["#View12"]);
-Shape Shape236 = createNode("Shape");
-Appearance Appearance237 = createNode("Appearance");
-ProtoInstance ProtoInstance238 = createNode("ProtoInstance");
-ProtoInstance238.name = "ArtDeco12";
-Appearance237.shaders = new MFNode();
+Anchor234.children = new MFNode();
 
-Appearance237.shaders[0] = ProtoInstance238;
+Anchor234.children[0] = Shape235;
 
-Shape236.appearance = Appearance237;
+Transform233.children = new MFNode();
 
-Sphere Sphere239 = createNode("Sphere");
-Sphere239.USE = "Ball";
-Shape236.geometry = Sphere239;
+Transform233.children[0] = Anchor234;
 
-Anchor235.children = new MFNode();
+Transform Transform239 = createNode("Transform");
+Transform239.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor240 = createNode("Anchor");
+Anchor240.description = "ArtDeco12";
+Anchor240.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12"]);
+Anchor240.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape241 = createNode("Shape");
+Appearance Appearance242 = createNode("Appearance");
+Material Material243 = createNode("Material");
+Material243.USE = "TextMat";
+Appearance242.material = Material243;
 
-Anchor235.children[0] = Shape236;
+Shape241.appearance = Appearance242;
 
-Transform234.children = new MFNode();
+Text Text244 = createNode("Text");
+Text244.string = new MFString(new java.lang.String["ArtDeco12"]);
+FontStyle FontStyle245 = createNode("FontStyle");
+FontStyle245.USE = "Style";
+Text244.fontStyle = FontStyle245;
 
-Transform234.children[0] = Anchor235;
+Shape241.geometry = Text244;
 
-Transform Transform240 = createNode("Transform");
-Transform240.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor241 = createNode("Anchor");
-Anchor241.description = "ArtDeco12";
-Anchor241.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor241.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12"]);
-Shape Shape242 = createNode("Shape");
-Appearance Appearance243 = createNode("Appearance");
-Material Material244 = createNode("Material");
-Material244.USE = "TextMat";
-Appearance243.material = Material244;
+Anchor240.children = new MFNode();
 
-Shape242.appearance = Appearance243;
+Anchor240.children[0] = Shape241;
 
-Text Text245 = createNode("Text");
-Text245.string = new MFString(new java.lang.String["ArtDeco12"]);
-FontStyle FontStyle246 = createNode("FontStyle");
-FontStyle246.USE = "Style";
-Text245.fontStyle = FontStyle246;
+Transform239.children = new MFNode();
 
-Shape242.geometry = Text245;
+Transform239.children[0] = Anchor240;
 
-Anchor241.children = new MFNode();
+Transform233.children[1] = Transform239;
 
-Anchor241.children[0] = Shape242;
+Group49.children[34] = Transform233;
 
-Transform240.children = new MFNode();
+Viewpoint Viewpoint246 = createNode("Viewpoint");
+Viewpoint246.DEF = "View13";
+Viewpoint246.description = "ArtDeco13";
+Viewpoint246.position = new SFVec3f(new float[-2.25,0.75,3]);
+Group49.children[35] = Viewpoint246;
 
-Transform240.children[0] = Anchor241;
+Transform Transform247 = createNode("Transform");
+Transform247.translation = new SFVec3f(new float[-2.25,0.75,0]);
+Anchor Anchor248 = createNode("Anchor");
+Anchor248.description = "ArtDeco13 view";
+Anchor248.url = new MFString(new java.lang.String["#View13"]);
+Shape Shape249 = createNode("Shape");
+Appearance Appearance250 = createNode("Appearance");
+ProtoInstance ProtoInstance251 = createNode("ProtoInstance");
+ProtoInstance251.name = "ArtDeco13";
+Appearance250.shaders = new MFNode();
 
-Transform234.children[1] = Transform240;
+Appearance250.shaders[0] = ProtoInstance251;
 
-Group50.children[34] = Transform234;
+Shape249.appearance = Appearance250;
 
-Viewpoint Viewpoint247 = createNode("Viewpoint");
-Viewpoint247.DEF = "View13";
-Viewpoint247.description = "ArtDeco13";
-Viewpoint247.position = new SFVec3f(new float[-2.25,0.75,3]);
-Group50.children[35] = Viewpoint247;
+Sphere Sphere252 = createNode("Sphere");
+Sphere252.USE = "Ball";
+Shape249.geometry = Sphere252;
 
-Transform Transform248 = createNode("Transform");
-Transform248.translation = new SFVec3f(new float[-2.25,0.75,0]);
-Anchor Anchor249 = createNode("Anchor");
-Anchor249.description = "ArtDeco13 view";
-Anchor249.url = new MFString(new java.lang.String["#View13"]);
-Shape Shape250 = createNode("Shape");
-Appearance Appearance251 = createNode("Appearance");
-ProtoInstance ProtoInstance252 = createNode("ProtoInstance");
-ProtoInstance252.name = "ArtDeco13";
-Appearance251.shaders = new MFNode();
+Anchor248.children = new MFNode();
 
-Appearance251.shaders[0] = ProtoInstance252;
+Anchor248.children[0] = Shape249;
 
-Shape250.appearance = Appearance251;
+Transform247.children = new MFNode();
 
-Sphere Sphere253 = createNode("Sphere");
-Sphere253.USE = "Ball";
-Shape250.geometry = Sphere253;
+Transform247.children[0] = Anchor248;
 
-Anchor249.children = new MFNode();
+Transform Transform253 = createNode("Transform");
+Transform253.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor254 = createNode("Anchor");
+Anchor254.description = "ArtDeco13";
+Anchor254.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco3","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco13"]);
+Anchor254.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape255 = createNode("Shape");
+Appearance Appearance256 = createNode("Appearance");
+Material Material257 = createNode("Material");
+Material257.USE = "TextMat";
+Appearance256.material = Material257;
 
-Anchor249.children[0] = Shape250;
+Shape255.appearance = Appearance256;
 
-Transform248.children = new MFNode();
+Text Text258 = createNode("Text");
+Text258.string = new MFString(new java.lang.String["ArtDeco13"]);
+FontStyle FontStyle259 = createNode("FontStyle");
+FontStyle259.USE = "Style";
+Text258.fontStyle = FontStyle259;
 
-Transform248.children[0] = Anchor249;
+Shape255.geometry = Text258;
 
-Transform Transform254 = createNode("Transform");
-Transform254.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor255 = createNode("Anchor");
-Anchor255.description = "ArtDeco13";
-Anchor255.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor255.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco3","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco13"]);
-Shape Shape256 = createNode("Shape");
-Appearance Appearance257 = createNode("Appearance");
-Material Material258 = createNode("Material");
-Material258.USE = "TextMat";
-Appearance257.material = Material258;
+Anchor254.children = new MFNode();
 
-Shape256.appearance = Appearance257;
+Anchor254.children[0] = Shape255;
 
-Text Text259 = createNode("Text");
-Text259.string = new MFString(new java.lang.String["ArtDeco13"]);
-FontStyle FontStyle260 = createNode("FontStyle");
-FontStyle260.USE = "Style";
-Text259.fontStyle = FontStyle260;
+Transform253.children = new MFNode();
 
-Shape256.geometry = Text259;
+Transform253.children[0] = Anchor254;
 
-Anchor255.children = new MFNode();
+Transform247.children[1] = Transform253;
 
-Anchor255.children[0] = Shape256;
+Group49.children[36] = Transform247;
 
-Transform254.children = new MFNode();
+Viewpoint Viewpoint260 = createNode("Viewpoint");
+Viewpoint260.DEF = "View14";
+Viewpoint260.description = "ArtDeco14";
+Viewpoint260.position = new SFVec3f(new float[-0.75,0.75,3]);
+Group49.children[37] = Viewpoint260;
 
-Transform254.children[0] = Anchor255;
+Transform Transform261 = createNode("Transform");
+Transform261.translation = new SFVec3f(new float[-0.75,0.75,0]);
+Anchor Anchor262 = createNode("Anchor");
+Anchor262.description = "ArtDeco14 view";
+Anchor262.url = new MFString(new java.lang.String["#View14"]);
+Shape Shape263 = createNode("Shape");
+Appearance Appearance264 = createNode("Appearance");
+ProtoInstance ProtoInstance265 = createNode("ProtoInstance");
+ProtoInstance265.name = "ArtDeco14";
+Appearance264.shaders = new MFNode();
 
-Transform248.children[1] = Transform254;
+Appearance264.shaders[0] = ProtoInstance265;
 
-Group50.children[36] = Transform248;
+Shape263.appearance = Appearance264;
 
-Viewpoint Viewpoint261 = createNode("Viewpoint");
-Viewpoint261.DEF = "View14";
-Viewpoint261.description = "ArtDeco14";
-Viewpoint261.position = new SFVec3f(new float[-0.75,0.75,3]);
-Group50.children[37] = Viewpoint261;
+Sphere Sphere266 = createNode("Sphere");
+Sphere266.USE = "Ball";
+Shape263.geometry = Sphere266;
 
-Transform Transform262 = createNode("Transform");
-Transform262.translation = new SFVec3f(new float[-0.75,0.75,0]);
-Anchor Anchor263 = createNode("Anchor");
-Anchor263.description = "ArtDeco14 view";
-Anchor263.url = new MFString(new java.lang.String["#View14"]);
-Shape Shape264 = createNode("Shape");
-Appearance Appearance265 = createNode("Appearance");
-ProtoInstance ProtoInstance266 = createNode("ProtoInstance");
-ProtoInstance266.name = "ArtDeco14";
-Appearance265.shaders = new MFNode();
+Anchor262.children = new MFNode();
 
-Appearance265.shaders[0] = ProtoInstance266;
+Anchor262.children[0] = Shape263;
 
-Shape264.appearance = Appearance265;
+Transform261.children = new MFNode();
 
-Sphere Sphere267 = createNode("Sphere");
-Sphere267.USE = "Ball";
-Shape264.geometry = Sphere267;
+Transform261.children[0] = Anchor262;
 
-Anchor263.children = new MFNode();
+Transform Transform267 = createNode("Transform");
+Transform267.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor268 = createNode("Anchor");
+Anchor268.description = "ArtDeco14";
+Anchor268.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco4","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco14"]);
+Anchor268.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape269 = createNode("Shape");
+Appearance Appearance270 = createNode("Appearance");
+Material Material271 = createNode("Material");
+Material271.USE = "TextMat";
+Appearance270.material = Material271;
 
-Anchor263.children[0] = Shape264;
+Shape269.appearance = Appearance270;
 
-Transform262.children = new MFNode();
+Text Text272 = createNode("Text");
+Text272.string = new MFString(new java.lang.String["ArtDeco14"]);
+FontStyle FontStyle273 = createNode("FontStyle");
+FontStyle273.USE = "Style";
+Text272.fontStyle = FontStyle273;
 
-Transform262.children[0] = Anchor263;
+Shape269.geometry = Text272;
 
-Transform Transform268 = createNode("Transform");
-Transform268.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor269 = createNode("Anchor");
-Anchor269.description = "ArtDeco14";
-Anchor269.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor269.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco4","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco14"]);
-Shape Shape270 = createNode("Shape");
-Appearance Appearance271 = createNode("Appearance");
-Material Material272 = createNode("Material");
-Material272.USE = "TextMat";
-Appearance271.material = Material272;
+Anchor268.children = new MFNode();
 
-Shape270.appearance = Appearance271;
+Anchor268.children[0] = Shape269;
 
-Text Text273 = createNode("Text");
-Text273.string = new MFString(new java.lang.String["ArtDeco14"]);
-FontStyle FontStyle274 = createNode("FontStyle");
-FontStyle274.USE = "Style";
-Text273.fontStyle = FontStyle274;
+Transform267.children = new MFNode();
 
-Shape270.geometry = Text273;
+Transform267.children[0] = Anchor268;
 
-Anchor269.children = new MFNode();
+Transform261.children[1] = Transform267;
 
-Anchor269.children[0] = Shape270;
+Group49.children[38] = Transform261;
 
-Transform268.children = new MFNode();
+Viewpoint Viewpoint274 = createNode("Viewpoint");
+Viewpoint274.DEF = "View15";
+Viewpoint274.description = "ArtDeco15";
+Viewpoint274.position = new SFVec3f(new float[0.75,0.75,3]);
+Group49.children[39] = Viewpoint274;
 
-Transform268.children[0] = Anchor269;
+Transform Transform275 = createNode("Transform");
+Transform275.translation = new SFVec3f(new float[0.75,0.75,0]);
+Anchor Anchor276 = createNode("Anchor");
+Anchor276.description = "ArtDeco15 view";
+Anchor276.url = new MFString(new java.lang.String["#View15"]);
+Shape Shape277 = createNode("Shape");
+Appearance Appearance278 = createNode("Appearance");
+ProtoInstance ProtoInstance279 = createNode("ProtoInstance");
+ProtoInstance279.name = "ArtDeco15";
+Appearance278.shaders = new MFNode();
 
-Transform262.children[1] = Transform268;
+Appearance278.shaders[0] = ProtoInstance279;
 
-Group50.children[38] = Transform262;
+Shape277.appearance = Appearance278;
 
-Viewpoint Viewpoint275 = createNode("Viewpoint");
-Viewpoint275.DEF = "View15";
-Viewpoint275.description = "ArtDeco15";
-Viewpoint275.position = new SFVec3f(new float[0.75,0.75,3]);
-Group50.children[39] = Viewpoint275;
+Sphere Sphere280 = createNode("Sphere");
+Sphere280.USE = "Ball";
+Shape277.geometry = Sphere280;
 
-Transform Transform276 = createNode("Transform");
-Transform276.translation = new SFVec3f(new float[0.75,0.75,0]);
-Anchor Anchor277 = createNode("Anchor");
-Anchor277.description = "ArtDeco15 view";
-Anchor277.url = new MFString(new java.lang.String["#View15"]);
-Shape Shape278 = createNode("Shape");
-Appearance Appearance279 = createNode("Appearance");
-ProtoInstance ProtoInstance280 = createNode("ProtoInstance");
-ProtoInstance280.name = "ArtDeco15";
-Appearance279.shaders = new MFNode();
+Anchor276.children = new MFNode();
 
-Appearance279.shaders[0] = ProtoInstance280;
+Anchor276.children[0] = Shape277;
 
-Shape278.appearance = Appearance279;
+Transform275.children = new MFNode();
 
-Sphere Sphere281 = createNode("Sphere");
-Sphere281.USE = "Ball";
-Shape278.geometry = Sphere281;
+Transform275.children[0] = Anchor276;
 
-Anchor277.children = new MFNode();
+Transform Transform281 = createNode("Transform");
+Transform281.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor282 = createNode("Anchor");
+Anchor282.description = "ArtDeco15";
+Anchor282.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco5","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco15"]);
+Anchor282.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape283 = createNode("Shape");
+Appearance Appearance284 = createNode("Appearance");
+Material Material285 = createNode("Material");
+Material285.USE = "TextMat";
+Appearance284.material = Material285;
 
-Anchor277.children[0] = Shape278;
+Shape283.appearance = Appearance284;
 
-Transform276.children = new MFNode();
+Text Text286 = createNode("Text");
+Text286.string = new MFString(new java.lang.String["ArtDeco15"]);
+FontStyle FontStyle287 = createNode("FontStyle");
+FontStyle287.USE = "Style";
+Text286.fontStyle = FontStyle287;
 
-Transform276.children[0] = Anchor277;
+Shape283.geometry = Text286;
 
-Transform Transform282 = createNode("Transform");
-Transform282.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor283 = createNode("Anchor");
-Anchor283.description = "ArtDeco15";
-Anchor283.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor283.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco5","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco15"]);
-Shape Shape284 = createNode("Shape");
-Appearance Appearance285 = createNode("Appearance");
-Material Material286 = createNode("Material");
-Material286.USE = "TextMat";
-Appearance285.material = Material286;
+Anchor282.children = new MFNode();
 
-Shape284.appearance = Appearance285;
+Anchor282.children[0] = Shape283;
 
-Text Text287 = createNode("Text");
-Text287.string = new MFString(new java.lang.String["ArtDeco15"]);
-FontStyle FontStyle288 = createNode("FontStyle");
-FontStyle288.USE = "Style";
-Text287.fontStyle = FontStyle288;
+Transform281.children = new MFNode();
 
-Shape284.geometry = Text287;
+Transform281.children[0] = Anchor282;
 
-Anchor283.children = new MFNode();
+Transform275.children[1] = Transform281;
 
-Anchor283.children[0] = Shape284;
+Group49.children[40] = Transform275;
 
-Transform282.children = new MFNode();
+Viewpoint Viewpoint288 = createNode("Viewpoint");
+Viewpoint288.DEF = "View16";
+Viewpoint288.description = "ArtDeco16";
+Viewpoint288.position = new SFVec3f(new float[2.25,0.75,3]);
+Group49.children[41] = Viewpoint288;
 
-Transform282.children[0] = Anchor283;
+Transform Transform289 = createNode("Transform");
+Transform289.translation = new SFVec3f(new float[2.25,0.75,0]);
+Anchor Anchor290 = createNode("Anchor");
+Anchor290.description = "ArtDeco16 view";
+Anchor290.url = new MFString(new java.lang.String["#View16"]);
+Shape Shape291 = createNode("Shape");
+Appearance Appearance292 = createNode("Appearance");
+ProtoInstance ProtoInstance293 = createNode("ProtoInstance");
+ProtoInstance293.name = "ArtDeco16";
+Appearance292.shaders = new MFNode();
 
-Transform276.children[1] = Transform282;
+Appearance292.shaders[0] = ProtoInstance293;
 
-Group50.children[40] = Transform276;
+Shape291.appearance = Appearance292;
 
-Viewpoint Viewpoint289 = createNode("Viewpoint");
-Viewpoint289.DEF = "View16";
-Viewpoint289.description = "ArtDeco16";
-Viewpoint289.position = new SFVec3f(new float[2.25,0.75,3]);
-Group50.children[41] = Viewpoint289;
+Sphere Sphere294 = createNode("Sphere");
+Sphere294.USE = "Ball";
+Shape291.geometry = Sphere294;
 
-Transform Transform290 = createNode("Transform");
-Transform290.translation = new SFVec3f(new float[2.25,0.75,0]);
-Anchor Anchor291 = createNode("Anchor");
-Anchor291.description = "ArtDeco16 view";
-Anchor291.url = new MFString(new java.lang.String["#View16"]);
-Shape Shape292 = createNode("Shape");
-Appearance Appearance293 = createNode("Appearance");
-ProtoInstance ProtoInstance294 = createNode("ProtoInstance");
-ProtoInstance294.name = "ArtDeco16";
-Appearance293.shaders = new MFNode();
+Anchor290.children = new MFNode();
 
-Appearance293.shaders[0] = ProtoInstance294;
+Anchor290.children[0] = Shape291;
 
-Shape292.appearance = Appearance293;
+Transform289.children = new MFNode();
 
-Sphere Sphere295 = createNode("Sphere");
-Sphere295.USE = "Ball";
-Shape292.geometry = Sphere295;
+Transform289.children[0] = Anchor290;
 
-Anchor291.children = new MFNode();
+Transform Transform295 = createNode("Transform");
+Transform295.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor296 = createNode("Anchor");
+Anchor296.description = "ArtDeco16";
+Anchor296.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16"]);
+Anchor296.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape297 = createNode("Shape");
+Appearance Appearance298 = createNode("Appearance");
+Material Material299 = createNode("Material");
+Material299.USE = "TextMat";
+Appearance298.material = Material299;
 
-Anchor291.children[0] = Shape292;
+Shape297.appearance = Appearance298;
 
-Transform290.children = new MFNode();
+Text Text300 = createNode("Text");
+Text300.string = new MFString(new java.lang.String["ArtDeco16"]);
+FontStyle FontStyle301 = createNode("FontStyle");
+FontStyle301.USE = "Style";
+Text300.fontStyle = FontStyle301;
 
-Transform290.children[0] = Anchor291;
+Shape297.geometry = Text300;
 
-Transform Transform296 = createNode("Transform");
-Transform296.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor297 = createNode("Anchor");
-Anchor297.description = "ArtDeco16";
-Anchor297.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor297.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16"]);
-Shape Shape298 = createNode("Shape");
-Appearance Appearance299 = createNode("Appearance");
-Material Material300 = createNode("Material");
-Material300.USE = "TextMat";
-Appearance299.material = Material300;
+Anchor296.children = new MFNode();
 
-Shape298.appearance = Appearance299;
+Anchor296.children[0] = Shape297;
 
-Text Text301 = createNode("Text");
-Text301.string = new MFString(new java.lang.String["ArtDeco16"]);
-FontStyle FontStyle302 = createNode("FontStyle");
-FontStyle302.USE = "Style";
-Text301.fontStyle = FontStyle302;
+Transform295.children = new MFNode();
 
-Shape298.geometry = Text301;
+Transform295.children[0] = Anchor296;
 
-Anchor297.children = new MFNode();
+Transform289.children[1] = Transform295;
 
-Anchor297.children[0] = Shape298;
+Group49.children[42] = Transform289;
 
-Transform296.children = new MFNode();
+Viewpoint Viewpoint302 = createNode("Viewpoint");
+Viewpoint302.DEF = "View17";
+Viewpoint302.description = "ArtDeco17";
+Viewpoint302.position = new SFVec3f(new float[3.75,0.75,3]);
+Group49.children[43] = Viewpoint302;
 
-Transform296.children[0] = Anchor297;
+Transform Transform303 = createNode("Transform");
+Transform303.translation = new SFVec3f(new float[3.75,0.75,0]);
+Anchor Anchor304 = createNode("Anchor");
+Anchor304.description = "ArtDeco17 view";
+Anchor304.url = new MFString(new java.lang.String["#View17"]);
+Shape Shape305 = createNode("Shape");
+Appearance Appearance306 = createNode("Appearance");
+ProtoInstance ProtoInstance307 = createNode("ProtoInstance");
+ProtoInstance307.name = "ArtDeco17";
+Appearance306.shaders = new MFNode();
 
-Transform290.children[1] = Transform296;
+Appearance306.shaders[0] = ProtoInstance307;
 
-Group50.children[42] = Transform290;
+Shape305.appearance = Appearance306;
 
-Viewpoint Viewpoint303 = createNode("Viewpoint");
-Viewpoint303.DEF = "View17";
-Viewpoint303.description = "ArtDeco17";
-Viewpoint303.position = new SFVec3f(new float[3.75,0.75,3]);
-Group50.children[43] = Viewpoint303;
+Sphere Sphere308 = createNode("Sphere");
+Sphere308.USE = "Ball";
+Shape305.geometry = Sphere308;
 
-Transform Transform304 = createNode("Transform");
-Transform304.translation = new SFVec3f(new float[3.75,0.75,0]);
-Anchor Anchor305 = createNode("Anchor");
-Anchor305.description = "ArtDeco17 view";
-Anchor305.url = new MFString(new java.lang.String["#View17"]);
-Shape Shape306 = createNode("Shape");
-Appearance Appearance307 = createNode("Appearance");
-ProtoInstance ProtoInstance308 = createNode("ProtoInstance");
-ProtoInstance308.name = "ArtDeco17";
-Appearance307.shaders = new MFNode();
+Anchor304.children = new MFNode();
 
-Appearance307.shaders[0] = ProtoInstance308;
+Anchor304.children[0] = Shape305;
 
-Shape306.appearance = Appearance307;
+Transform303.children = new MFNode();
 
-Sphere Sphere309 = createNode("Sphere");
-Sphere309.USE = "Ball";
-Shape306.geometry = Sphere309;
+Transform303.children[0] = Anchor304;
 
-Anchor305.children = new MFNode();
+Transform Transform309 = createNode("Transform");
+Transform309.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor310 = createNode("Anchor");
+Anchor310.description = "ArtDeco17";
+Anchor310.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco7","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco17"]);
+Anchor310.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape311 = createNode("Shape");
+Appearance Appearance312 = createNode("Appearance");
+Material Material313 = createNode("Material");
+Material313.USE = "TextMat";
+Appearance312.material = Material313;
 
-Anchor305.children[0] = Shape306;
+Shape311.appearance = Appearance312;
 
-Transform304.children = new MFNode();
+Text Text314 = createNode("Text");
+Text314.string = new MFString(new java.lang.String["ArtDeco17"]);
+FontStyle FontStyle315 = createNode("FontStyle");
+FontStyle315.USE = "Style";
+Text314.fontStyle = FontStyle315;
 
-Transform304.children[0] = Anchor305;
+Shape311.geometry = Text314;
 
-Transform Transform310 = createNode("Transform");
-Transform310.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor311 = createNode("Anchor");
-Anchor311.description = "ArtDeco17";
-Anchor311.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor311.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco7","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco17"]);
-Shape Shape312 = createNode("Shape");
-Appearance Appearance313 = createNode("Appearance");
-Material Material314 = createNode("Material");
-Material314.USE = "TextMat";
-Appearance313.material = Material314;
+Anchor310.children = new MFNode();
 
-Shape312.appearance = Appearance313;
+Anchor310.children[0] = Shape311;
 
-Text Text315 = createNode("Text");
-Text315.string = new MFString(new java.lang.String["ArtDeco17"]);
-FontStyle FontStyle316 = createNode("FontStyle");
-FontStyle316.USE = "Style";
-Text315.fontStyle = FontStyle316;
+Transform309.children = new MFNode();
 
-Shape312.geometry = Text315;
+Transform309.children[0] = Anchor310;
 
-Anchor311.children = new MFNode();
+Transform303.children[1] = Transform309;
 
-Anchor311.children[0] = Shape312;
+Group49.children[44] = Transform303;
 
-Transform310.children = new MFNode();
+Viewpoint Viewpoint316 = createNode("Viewpoint");
+Viewpoint316.DEF = "View18";
+Viewpoint316.description = "ArtDeco18";
+Viewpoint316.position = new SFVec3f(new float[-3.75,-0.75,3]);
+Group49.children[45] = Viewpoint316;
 
-Transform310.children[0] = Anchor311;
+Transform Transform317 = createNode("Transform");
+Transform317.translation = new SFVec3f(new float[-3.75,-0.75,0]);
+Anchor Anchor318 = createNode("Anchor");
+Anchor318.description = "ArtDeco18 view";
+Anchor318.url = new MFString(new java.lang.String["#View18"]);
+Shape Shape319 = createNode("Shape");
+Appearance Appearance320 = createNode("Appearance");
+ProtoInstance ProtoInstance321 = createNode("ProtoInstance");
+ProtoInstance321.name = "ArtDeco18";
+Appearance320.shaders = new MFNode();
 
-Transform304.children[1] = Transform310;
+Appearance320.shaders[0] = ProtoInstance321;
 
-Group50.children[44] = Transform304;
+Shape319.appearance = Appearance320;
 
-Viewpoint Viewpoint317 = createNode("Viewpoint");
-Viewpoint317.DEF = "View18";
-Viewpoint317.description = "ArtDeco18";
-Viewpoint317.position = new SFVec3f(new float[-3.75,-0.75,3]);
-Group50.children[45] = Viewpoint317;
+Sphere Sphere322 = createNode("Sphere");
+Sphere322.USE = "Ball";
+Shape319.geometry = Sphere322;
 
-Transform Transform318 = createNode("Transform");
-Transform318.translation = new SFVec3f(new float[-3.75,-0.75,0]);
-Anchor Anchor319 = createNode("Anchor");
-Anchor319.description = "ArtDeco18 view";
-Anchor319.url = new MFString(new java.lang.String["#View18"]);
-Shape Shape320 = createNode("Shape");
-Appearance Appearance321 = createNode("Appearance");
-ProtoInstance ProtoInstance322 = createNode("ProtoInstance");
-ProtoInstance322.name = "ArtDeco18";
-Appearance321.shaders = new MFNode();
+Anchor318.children = new MFNode();
 
-Appearance321.shaders[0] = ProtoInstance322;
+Anchor318.children[0] = Shape319;
 
-Shape320.appearance = Appearance321;
+Transform317.children = new MFNode();
 
-Sphere Sphere323 = createNode("Sphere");
-Sphere323.USE = "Ball";
-Shape320.geometry = Sphere323;
+Transform317.children[0] = Anchor318;
 
-Anchor319.children = new MFNode();
+Transform Transform323 = createNode("Transform");
+Transform323.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor324 = createNode("Anchor");
+Anchor324.description = "ArtDeco18";
+Anchor324.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18"]);
+Anchor324.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape325 = createNode("Shape");
+Appearance Appearance326 = createNode("Appearance");
+Material Material327 = createNode("Material");
+Material327.USE = "TextMat";
+Appearance326.material = Material327;
 
-Anchor319.children[0] = Shape320;
+Shape325.appearance = Appearance326;
 
-Transform318.children = new MFNode();
+Text Text328 = createNode("Text");
+Text328.string = new MFString(new java.lang.String["ArtDeco18"]);
+FontStyle FontStyle329 = createNode("FontStyle");
+FontStyle329.USE = "Style";
+Text328.fontStyle = FontStyle329;
 
-Transform318.children[0] = Anchor319;
+Shape325.geometry = Text328;
 
-Transform Transform324 = createNode("Transform");
-Transform324.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor325 = createNode("Anchor");
-Anchor325.description = "ArtDeco18";
-Anchor325.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor325.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18"]);
-Shape Shape326 = createNode("Shape");
-Appearance Appearance327 = createNode("Appearance");
-Material Material328 = createNode("Material");
-Material328.USE = "TextMat";
-Appearance327.material = Material328;
+Anchor324.children = new MFNode();
 
-Shape326.appearance = Appearance327;
+Anchor324.children[0] = Shape325;
 
-Text Text329 = createNode("Text");
-Text329.string = new MFString(new java.lang.String["ArtDeco18"]);
-FontStyle FontStyle330 = createNode("FontStyle");
-FontStyle330.USE = "Style";
-Text329.fontStyle = FontStyle330;
+Transform323.children = new MFNode();
 
-Shape326.geometry = Text329;
+Transform323.children[0] = Anchor324;
 
-Anchor325.children = new MFNode();
+Transform317.children[1] = Transform323;
 
-Anchor325.children[0] = Shape326;
+Group49.children[46] = Transform317;
 
-Transform324.children = new MFNode();
+Viewpoint Viewpoint330 = createNode("Viewpoint");
+Viewpoint330.DEF = "View19";
+Viewpoint330.description = "ArtDeco19";
+Viewpoint330.position = new SFVec3f(new float[-2.25,-0.75,3]);
+Group49.children[47] = Viewpoint330;
 
-Transform324.children[0] = Anchor325;
+Transform Transform331 = createNode("Transform");
+Transform331.translation = new SFVec3f(new float[-2.25,-0.75,0]);
+Anchor Anchor332 = createNode("Anchor");
+Anchor332.description = "ArtDeco19 view";
+Anchor332.url = new MFString(new java.lang.String["#View19"]);
+Shape Shape333 = createNode("Shape");
+Appearance Appearance334 = createNode("Appearance");
+ProtoInstance ProtoInstance335 = createNode("ProtoInstance");
+ProtoInstance335.name = "ArtDeco19";
+Appearance334.shaders = new MFNode();
 
-Transform318.children[1] = Transform324;
+Appearance334.shaders[0] = ProtoInstance335;
 
-Group50.children[46] = Transform318;
+Shape333.appearance = Appearance334;
 
-Viewpoint Viewpoint331 = createNode("Viewpoint");
-Viewpoint331.DEF = "View19";
-Viewpoint331.description = "ArtDeco19";
-Viewpoint331.position = new SFVec3f(new float[-2.25,-0.75,3]);
-Group50.children[47] = Viewpoint331;
+Sphere Sphere336 = createNode("Sphere");
+Sphere336.USE = "Ball";
+Shape333.geometry = Sphere336;
 
-Transform Transform332 = createNode("Transform");
-Transform332.translation = new SFVec3f(new float[-2.25,-0.75,0]);
-Anchor Anchor333 = createNode("Anchor");
-Anchor333.description = "ArtDeco19 view";
-Anchor333.url = new MFString(new java.lang.String["#View19"]);
-Shape Shape334 = createNode("Shape");
-Appearance Appearance335 = createNode("Appearance");
-ProtoInstance ProtoInstance336 = createNode("ProtoInstance");
-ProtoInstance336.name = "ArtDeco19";
-Appearance335.shaders = new MFNode();
+Anchor332.children = new MFNode();
 
-Appearance335.shaders[0] = ProtoInstance336;
+Anchor332.children[0] = Shape333;
 
-Shape334.appearance = Appearance335;
+Transform331.children = new MFNode();
 
-Sphere Sphere337 = createNode("Sphere");
-Sphere337.USE = "Ball";
-Shape334.geometry = Sphere337;
+Transform331.children[0] = Anchor332;
 
-Anchor333.children = new MFNode();
+Transform Transform337 = createNode("Transform");
+Transform337.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor338 = createNode("Anchor");
+Anchor338.description = "ArtDeco19";
+Anchor338.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco9","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco19"]);
+Anchor338.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape339 = createNode("Shape");
+Appearance Appearance340 = createNode("Appearance");
+Material Material341 = createNode("Material");
+Material341.USE = "TextMat";
+Appearance340.material = Material341;
 
-Anchor333.children[0] = Shape334;
+Shape339.appearance = Appearance340;
 
-Transform332.children = new MFNode();
+Text Text342 = createNode("Text");
+Text342.string = new MFString(new java.lang.String["ArtDeco19"]);
+FontStyle FontStyle343 = createNode("FontStyle");
+FontStyle343.USE = "Style";
+Text342.fontStyle = FontStyle343;
 
-Transform332.children[0] = Anchor333;
+Shape339.geometry = Text342;
 
-Transform Transform338 = createNode("Transform");
-Transform338.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor339 = createNode("Anchor");
-Anchor339.description = "ArtDeco19";
-Anchor339.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor339.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco9","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco19"]);
-Shape Shape340 = createNode("Shape");
-Appearance Appearance341 = createNode("Appearance");
-Material Material342 = createNode("Material");
-Material342.USE = "TextMat";
-Appearance341.material = Material342;
+Anchor338.children = new MFNode();
 
-Shape340.appearance = Appearance341;
+Anchor338.children[0] = Shape339;
 
-Text Text343 = createNode("Text");
-Text343.string = new MFString(new java.lang.String["ArtDeco19"]);
-FontStyle FontStyle344 = createNode("FontStyle");
-FontStyle344.USE = "Style";
-Text343.fontStyle = FontStyle344;
+Transform337.children = new MFNode();
 
-Shape340.geometry = Text343;
+Transform337.children[0] = Anchor338;
 
-Anchor339.children = new MFNode();
+Transform331.children[1] = Transform337;
 
-Anchor339.children[0] = Shape340;
+Group49.children[48] = Transform331;
 
-Transform338.children = new MFNode();
+Viewpoint Viewpoint344 = createNode("Viewpoint");
+Viewpoint344.DEF = "View20";
+Viewpoint344.description = "ArtDeco20";
+Viewpoint344.position = new SFVec3f(new float[-0.75,-0.75,3]);
+Group49.children[49] = Viewpoint344;
 
-Transform338.children[0] = Anchor339;
+Transform Transform345 = createNode("Transform");
+Transform345.translation = new SFVec3f(new float[-0.75,-0.75,0]);
+Anchor Anchor346 = createNode("Anchor");
+Anchor346.description = "ArtDeco20 view";
+Anchor346.url = new MFString(new java.lang.String["#View20"]);
+Shape Shape347 = createNode("Shape");
+Appearance Appearance348 = createNode("Appearance");
+ProtoInstance ProtoInstance349 = createNode("ProtoInstance");
+ProtoInstance349.name = "ArtDeco20";
+Appearance348.shaders = new MFNode();
 
-Transform332.children[1] = Transform338;
+Appearance348.shaders[0] = ProtoInstance349;
 
-Group50.children[48] = Transform332;
+Shape347.appearance = Appearance348;
 
-Viewpoint Viewpoint345 = createNode("Viewpoint");
-Viewpoint345.DEF = "View20";
-Viewpoint345.description = "ArtDeco20";
-Viewpoint345.position = new SFVec3f(new float[-0.75,-0.75,3]);
-Group50.children[49] = Viewpoint345;
+Sphere Sphere350 = createNode("Sphere");
+Sphere350.USE = "Ball";
+Shape347.geometry = Sphere350;
 
-Transform Transform346 = createNode("Transform");
-Transform346.translation = new SFVec3f(new float[-0.75,-0.75,0]);
-Anchor Anchor347 = createNode("Anchor");
-Anchor347.description = "ArtDeco20 view";
-Anchor347.url = new MFString(new java.lang.String["#View20"]);
-Shape Shape348 = createNode("Shape");
-Appearance Appearance349 = createNode("Appearance");
-ProtoInstance ProtoInstance350 = createNode("ProtoInstance");
-ProtoInstance350.name = "ArtDeco20";
-Appearance349.shaders = new MFNode();
+Anchor346.children = new MFNode();
 
-Appearance349.shaders[0] = ProtoInstance350;
+Anchor346.children[0] = Shape347;
 
-Shape348.appearance = Appearance349;
+Transform345.children = new MFNode();
 
-Sphere Sphere351 = createNode("Sphere");
-Sphere351.USE = "Ball";
-Shape348.geometry = Sphere351;
+Transform345.children[0] = Anchor346;
 
-Anchor347.children = new MFNode();
+Transform Transform351 = createNode("Transform");
+Transform351.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor352 = createNode("Anchor");
+Anchor352.description = "ArtDeco20";
+Anchor352.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20"]);
+Anchor352.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape353 = createNode("Shape");
+Appearance Appearance354 = createNode("Appearance");
+Material Material355 = createNode("Material");
+Material355.USE = "TextMat";
+Appearance354.material = Material355;
 
-Anchor347.children[0] = Shape348;
+Shape353.appearance = Appearance354;
 
-Transform346.children = new MFNode();
+Text Text356 = createNode("Text");
+Text356.string = new MFString(new java.lang.String["ArtDeco20"]);
+FontStyle FontStyle357 = createNode("FontStyle");
+FontStyle357.USE = "Style";
+Text356.fontStyle = FontStyle357;
 
-Transform346.children[0] = Anchor347;
+Shape353.geometry = Text356;
 
-Transform Transform352 = createNode("Transform");
-Transform352.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor353 = createNode("Anchor");
-Anchor353.description = "ArtDeco20";
-Anchor353.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor353.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20"]);
-Shape Shape354 = createNode("Shape");
-Appearance Appearance355 = createNode("Appearance");
-Material Material356 = createNode("Material");
-Material356.USE = "TextMat";
-Appearance355.material = Material356;
+Anchor352.children = new MFNode();
 
-Shape354.appearance = Appearance355;
+Anchor352.children[0] = Shape353;
 
-Text Text357 = createNode("Text");
-Text357.string = new MFString(new java.lang.String["ArtDeco20"]);
-FontStyle FontStyle358 = createNode("FontStyle");
-FontStyle358.USE = "Style";
-Text357.fontStyle = FontStyle358;
+Transform351.children = new MFNode();
 
-Shape354.geometry = Text357;
+Transform351.children[0] = Anchor352;
 
-Anchor353.children = new MFNode();
+Transform345.children[1] = Transform351;
 
-Anchor353.children[0] = Shape354;
+Group49.children[50] = Transform345;
 
-Transform352.children = new MFNode();
+Viewpoint Viewpoint358 = createNode("Viewpoint");
+Viewpoint358.DEF = "View21";
+Viewpoint358.description = "ArtDeco21";
+Viewpoint358.position = new SFVec3f(new float[0.75,-0.75,3]);
+Group49.children[51] = Viewpoint358;
 
-Transform352.children[0] = Anchor353;
+Transform Transform359 = createNode("Transform");
+Transform359.translation = new SFVec3f(new float[0.75,-0.75,0]);
+Anchor Anchor360 = createNode("Anchor");
+Anchor360.description = "ArtDeco21 view";
+Anchor360.url = new MFString(new java.lang.String["#View21"]);
+Shape Shape361 = createNode("Shape");
+Appearance Appearance362 = createNode("Appearance");
+ProtoInstance ProtoInstance363 = createNode("ProtoInstance");
+ProtoInstance363.name = "ArtDeco21";
+Appearance362.shaders = new MFNode();
 
-Transform346.children[1] = Transform352;
+Appearance362.shaders[0] = ProtoInstance363;
 
-Group50.children[50] = Transform346;
+Shape361.appearance = Appearance362;
 
-Viewpoint Viewpoint359 = createNode("Viewpoint");
-Viewpoint359.DEF = "View21";
-Viewpoint359.description = "ArtDeco21";
-Viewpoint359.position = new SFVec3f(new float[0.75,-0.75,3]);
-Group50.children[51] = Viewpoint359;
+Sphere Sphere364 = createNode("Sphere");
+Sphere364.USE = "Ball";
+Shape361.geometry = Sphere364;
 
-Transform Transform360 = createNode("Transform");
-Transform360.translation = new SFVec3f(new float[0.75,-0.75,0]);
-Anchor Anchor361 = createNode("Anchor");
-Anchor361.description = "ArtDeco21 view";
-Anchor361.url = new MFString(new java.lang.String["#View21"]);
-Shape Shape362 = createNode("Shape");
-Appearance Appearance363 = createNode("Appearance");
-ProtoInstance ProtoInstance364 = createNode("ProtoInstance");
-ProtoInstance364.name = "ArtDeco21";
-Appearance363.shaders = new MFNode();
+Anchor360.children = new MFNode();
 
-Appearance363.shaders[0] = ProtoInstance364;
+Anchor360.children[0] = Shape361;
 
-Shape362.appearance = Appearance363;
+Transform359.children = new MFNode();
 
-Sphere Sphere365 = createNode("Sphere");
-Sphere365.USE = "Ball";
-Shape362.geometry = Sphere365;
+Transform359.children[0] = Anchor360;
 
-Anchor361.children = new MFNode();
+Transform Transform365 = createNode("Transform");
+Transform365.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor366 = createNode("Anchor");
+Anchor366.description = "ArtDeco21";
+Anchor366.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21"]);
+Anchor366.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape367 = createNode("Shape");
+Appearance Appearance368 = createNode("Appearance");
+Material Material369 = createNode("Material");
+Material369.USE = "TextMat";
+Appearance368.material = Material369;
 
-Anchor361.children[0] = Shape362;
+Shape367.appearance = Appearance368;
 
-Transform360.children = new MFNode();
+Text Text370 = createNode("Text");
+Text370.string = new MFString(new java.lang.String["ArtDeco21"]);
+FontStyle FontStyle371 = createNode("FontStyle");
+FontStyle371.USE = "Style";
+Text370.fontStyle = FontStyle371;
 
-Transform360.children[0] = Anchor361;
+Shape367.geometry = Text370;
 
-Transform Transform366 = createNode("Transform");
-Transform366.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor367 = createNode("Anchor");
-Anchor367.description = "ArtDeco21";
-Anchor367.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor367.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21"]);
-Shape Shape368 = createNode("Shape");
-Appearance Appearance369 = createNode("Appearance");
-Material Material370 = createNode("Material");
-Material370.USE = "TextMat";
-Appearance369.material = Material370;
+Anchor366.children = new MFNode();
 
-Shape368.appearance = Appearance369;
+Anchor366.children[0] = Shape367;
 
-Text Text371 = createNode("Text");
-Text371.string = new MFString(new java.lang.String["ArtDeco21"]);
-FontStyle FontStyle372 = createNode("FontStyle");
-FontStyle372.USE = "Style";
-Text371.fontStyle = FontStyle372;
+Transform365.children = new MFNode();
 
-Shape368.geometry = Text371;
+Transform365.children[0] = Anchor366;
 
-Anchor367.children = new MFNode();
+Transform359.children[1] = Transform365;
 
-Anchor367.children[0] = Shape368;
+Group49.children[52] = Transform359;
 
-Transform366.children = new MFNode();
+Viewpoint Viewpoint372 = createNode("Viewpoint");
+Viewpoint372.DEF = "View22";
+Viewpoint372.description = "ArtDeco22";
+Viewpoint372.position = new SFVec3f(new float[2.25,-0.75,3]);
+Group49.children[53] = Viewpoint372;
 
-Transform366.children[0] = Anchor367;
+Transform Transform373 = createNode("Transform");
+Transform373.translation = new SFVec3f(new float[2.25,-0.75,0]);
+Anchor Anchor374 = createNode("Anchor");
+Anchor374.description = "ArtDeco22 view";
+Anchor374.url = new MFString(new java.lang.String["#View22"]);
+Shape Shape375 = createNode("Shape");
+Appearance Appearance376 = createNode("Appearance");
+ProtoInstance ProtoInstance377 = createNode("ProtoInstance");
+ProtoInstance377.name = "ArtDeco22";
+Appearance376.shaders = new MFNode();
 
-Transform360.children[1] = Transform366;
+Appearance376.shaders[0] = ProtoInstance377;
 
-Group50.children[52] = Transform360;
+Shape375.appearance = Appearance376;
 
-Viewpoint Viewpoint373 = createNode("Viewpoint");
-Viewpoint373.DEF = "View22";
-Viewpoint373.description = "ArtDeco22";
-Viewpoint373.position = new SFVec3f(new float[2.25,-0.75,3]);
-Group50.children[53] = Viewpoint373;
+Sphere Sphere378 = createNode("Sphere");
+Sphere378.USE = "Ball";
+Shape375.geometry = Sphere378;
 
-Transform Transform374 = createNode("Transform");
-Transform374.translation = new SFVec3f(new float[2.25,-0.75,0]);
-Anchor Anchor375 = createNode("Anchor");
-Anchor375.description = "ArtDeco22 view";
-Anchor375.url = new MFString(new java.lang.String["#View22"]);
-Shape Shape376 = createNode("Shape");
-Appearance Appearance377 = createNode("Appearance");
-ProtoInstance ProtoInstance378 = createNode("ProtoInstance");
-ProtoInstance378.name = "ArtDeco22";
-Appearance377.shaders = new MFNode();
+Anchor374.children = new MFNode();
 
-Appearance377.shaders[0] = ProtoInstance378;
+Anchor374.children[0] = Shape375;
 
-Shape376.appearance = Appearance377;
+Transform373.children = new MFNode();
 
-Sphere Sphere379 = createNode("Sphere");
-Sphere379.USE = "Ball";
-Shape376.geometry = Sphere379;
+Transform373.children[0] = Anchor374;
 
-Anchor375.children = new MFNode();
+Transform Transform379 = createNode("Transform");
+Transform379.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor380 = createNode("Anchor");
+Anchor380.description = "ArtDeco22";
+Anchor380.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22"]);
+Anchor380.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape381 = createNode("Shape");
+Appearance Appearance382 = createNode("Appearance");
+Material Material383 = createNode("Material");
+Material383.USE = "TextMat";
+Appearance382.material = Material383;
 
-Anchor375.children[0] = Shape376;
+Shape381.appearance = Appearance382;
 
-Transform374.children = new MFNode();
+Text Text384 = createNode("Text");
+Text384.string = new MFString(new java.lang.String["ArtDeco22"]);
+FontStyle FontStyle385 = createNode("FontStyle");
+FontStyle385.USE = "Style";
+Text384.fontStyle = FontStyle385;
 
-Transform374.children[0] = Anchor375;
+Shape381.geometry = Text384;
 
-Transform Transform380 = createNode("Transform");
-Transform380.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor381 = createNode("Anchor");
-Anchor381.description = "ArtDeco22";
-Anchor381.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor381.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22"]);
-Shape Shape382 = createNode("Shape");
-Appearance Appearance383 = createNode("Appearance");
-Material Material384 = createNode("Material");
-Material384.USE = "TextMat";
-Appearance383.material = Material384;
+Anchor380.children = new MFNode();
 
-Shape382.appearance = Appearance383;
+Anchor380.children[0] = Shape381;
 
-Text Text385 = createNode("Text");
-Text385.string = new MFString(new java.lang.String["ArtDeco22"]);
-FontStyle FontStyle386 = createNode("FontStyle");
-FontStyle386.USE = "Style";
-Text385.fontStyle = FontStyle386;
+Transform379.children = new MFNode();
 
-Shape382.geometry = Text385;
+Transform379.children[0] = Anchor380;
 
-Anchor381.children = new MFNode();
+Transform373.children[1] = Transform379;
 
-Anchor381.children[0] = Shape382;
+Group49.children[54] = Transform373;
 
-Transform380.children = new MFNode();
+Viewpoint Viewpoint386 = createNode("Viewpoint");
+Viewpoint386.DEF = "View23";
+Viewpoint386.description = "ArtDeco23";
+Viewpoint386.position = new SFVec3f(new float[3.75,-0.75,3]);
+Group49.children[55] = Viewpoint386;
 
-Transform380.children[0] = Anchor381;
+Transform Transform387 = createNode("Transform");
+Transform387.translation = new SFVec3f(new float[3.75,-0.75,0]);
+Anchor Anchor388 = createNode("Anchor");
+Anchor388.description = "ArtDeco23 view";
+Anchor388.url = new MFString(new java.lang.String["#View23"]);
+Shape Shape389 = createNode("Shape");
+Appearance Appearance390 = createNode("Appearance");
+ProtoInstance ProtoInstance391 = createNode("ProtoInstance");
+ProtoInstance391.name = "ArtDeco23";
+Appearance390.shaders = new MFNode();
 
-Transform374.children[1] = Transform380;
+Appearance390.shaders[0] = ProtoInstance391;
 
-Group50.children[54] = Transform374;
+Shape389.appearance = Appearance390;
 
-Viewpoint Viewpoint387 = createNode("Viewpoint");
-Viewpoint387.DEF = "View23";
-Viewpoint387.description = "ArtDeco23";
-Viewpoint387.position = new SFVec3f(new float[3.75,-0.75,3]);
-Group50.children[55] = Viewpoint387;
+Sphere Sphere392 = createNode("Sphere");
+Sphere392.USE = "Ball";
+Shape389.geometry = Sphere392;
 
-Transform Transform388 = createNode("Transform");
-Transform388.translation = new SFVec3f(new float[3.75,-0.75,0]);
-Anchor Anchor389 = createNode("Anchor");
-Anchor389.description = "ArtDeco23 view";
-Anchor389.url = new MFString(new java.lang.String["#View23"]);
-Shape Shape390 = createNode("Shape");
-Appearance Appearance391 = createNode("Appearance");
-ProtoInstance ProtoInstance392 = createNode("ProtoInstance");
-ProtoInstance392.name = "ArtDeco23";
-Appearance391.shaders = new MFNode();
+Anchor388.children = new MFNode();
 
-Appearance391.shaders[0] = ProtoInstance392;
+Anchor388.children[0] = Shape389;
 
-Shape390.appearance = Appearance391;
+Transform387.children = new MFNode();
 
-Sphere Sphere393 = createNode("Sphere");
-Sphere393.USE = "Ball";
-Shape390.geometry = Sphere393;
+Transform387.children[0] = Anchor388;
 
-Anchor389.children = new MFNode();
+Transform Transform393 = createNode("Transform");
+Transform393.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor394 = createNode("Anchor");
+Anchor394.description = "ArtDeco23";
+Anchor394.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23"]);
+Anchor394.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape395 = createNode("Shape");
+Appearance Appearance396 = createNode("Appearance");
+Material Material397 = createNode("Material");
+Material397.USE = "TextMat";
+Appearance396.material = Material397;
 
-Anchor389.children[0] = Shape390;
+Shape395.appearance = Appearance396;
 
-Transform388.children = new MFNode();
+Text Text398 = createNode("Text");
+Text398.string = new MFString(new java.lang.String["ArtDeco23"]);
+FontStyle FontStyle399 = createNode("FontStyle");
+FontStyle399.USE = "Style";
+Text398.fontStyle = FontStyle399;
 
-Transform388.children[0] = Anchor389;
+Shape395.geometry = Text398;
 
-Transform Transform394 = createNode("Transform");
-Transform394.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor395 = createNode("Anchor");
-Anchor395.description = "ArtDeco23";
-Anchor395.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor395.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23"]);
-Shape Shape396 = createNode("Shape");
-Appearance Appearance397 = createNode("Appearance");
-Material Material398 = createNode("Material");
-Material398.USE = "TextMat";
-Appearance397.material = Material398;
+Anchor394.children = new MFNode();
 
-Shape396.appearance = Appearance397;
+Anchor394.children[0] = Shape395;
 
-Text Text399 = createNode("Text");
-Text399.string = new MFString(new java.lang.String["ArtDeco23"]);
-FontStyle FontStyle400 = createNode("FontStyle");
-FontStyle400.USE = "Style";
-Text399.fontStyle = FontStyle400;
+Transform393.children = new MFNode();
 
-Shape396.geometry = Text399;
+Transform393.children[0] = Anchor394;
 
-Anchor395.children = new MFNode();
+Transform387.children[1] = Transform393;
 
-Anchor395.children[0] = Shape396;
+Group49.children[56] = Transform387;
 
-Transform394.children = new MFNode();
+Viewpoint Viewpoint400 = createNode("Viewpoint");
+Viewpoint400.DEF = "View24";
+Viewpoint400.description = "ArtDeco24";
+Viewpoint400.position = new SFVec3f(new float[-3.75,-2.25,3]);
+Group49.children[57] = Viewpoint400;
 
-Transform394.children[0] = Anchor395;
+Transform Transform401 = createNode("Transform");
+Transform401.translation = new SFVec3f(new float[-3.75,-2.25,0]);
+Anchor Anchor402 = createNode("Anchor");
+Anchor402.description = "ArtDeco24 view";
+Anchor402.url = new MFString(new java.lang.String["#View24"]);
+Shape Shape403 = createNode("Shape");
+Appearance Appearance404 = createNode("Appearance");
+ProtoInstance ProtoInstance405 = createNode("ProtoInstance");
+ProtoInstance405.name = "ArtDeco24";
+Appearance404.shaders = new MFNode();
 
-Transform388.children[1] = Transform394;
+Appearance404.shaders[0] = ProtoInstance405;
 
-Group50.children[56] = Transform388;
+Shape403.appearance = Appearance404;
 
-Viewpoint Viewpoint401 = createNode("Viewpoint");
-Viewpoint401.DEF = "View24";
-Viewpoint401.description = "ArtDeco24";
-Viewpoint401.position = new SFVec3f(new float[-3.75,-2.25,3]);
-Group50.children[57] = Viewpoint401;
+Sphere Sphere406 = createNode("Sphere");
+Sphere406.USE = "Ball";
+Shape403.geometry = Sphere406;
 
-Transform Transform402 = createNode("Transform");
-Transform402.translation = new SFVec3f(new float[-3.75,-2.25,0]);
-Anchor Anchor403 = createNode("Anchor");
-Anchor403.description = "ArtDeco24 view";
-Anchor403.url = new MFString(new java.lang.String["#View24"]);
-Shape Shape404 = createNode("Shape");
-Appearance Appearance405 = createNode("Appearance");
-ProtoInstance ProtoInstance406 = createNode("ProtoInstance");
-ProtoInstance406.name = "ArtDeco24";
-Appearance405.shaders = new MFNode();
+Anchor402.children = new MFNode();
 
-Appearance405.shaders[0] = ProtoInstance406;
+Anchor402.children[0] = Shape403;
 
-Shape404.appearance = Appearance405;
+Transform401.children = new MFNode();
 
-Sphere Sphere407 = createNode("Sphere");
-Sphere407.USE = "Ball";
-Shape404.geometry = Sphere407;
+Transform401.children[0] = Anchor402;
 
-Anchor403.children = new MFNode();
+Transform Transform407 = createNode("Transform");
+Transform407.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor408 = createNode("Anchor");
+Anchor408.description = "ArtDeco24";
+Anchor408.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24"]);
+Anchor408.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape409 = createNode("Shape");
+Appearance Appearance410 = createNode("Appearance");
+Material Material411 = createNode("Material");
+Material411.USE = "TextMat";
+Appearance410.material = Material411;
 
-Anchor403.children[0] = Shape404;
+Shape409.appearance = Appearance410;
 
-Transform402.children = new MFNode();
+Text Text412 = createNode("Text");
+Text412.string = new MFString(new java.lang.String["ArtDeco24"]);
+FontStyle FontStyle413 = createNode("FontStyle");
+FontStyle413.USE = "Style";
+Text412.fontStyle = FontStyle413;
 
-Transform402.children[0] = Anchor403;
+Shape409.geometry = Text412;
 
-Transform Transform408 = createNode("Transform");
-Transform408.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor409 = createNode("Anchor");
-Anchor409.description = "ArtDeco24";
-Anchor409.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor409.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24"]);
-Shape Shape410 = createNode("Shape");
-Appearance Appearance411 = createNode("Appearance");
-Material Material412 = createNode("Material");
-Material412.USE = "TextMat";
-Appearance411.material = Material412;
+Anchor408.children = new MFNode();
 
-Shape410.appearance = Appearance411;
+Anchor408.children[0] = Shape409;
 
-Text Text413 = createNode("Text");
-Text413.string = new MFString(new java.lang.String["ArtDeco24"]);
-FontStyle FontStyle414 = createNode("FontStyle");
-FontStyle414.USE = "Style";
-Text413.fontStyle = FontStyle414;
+Transform407.children = new MFNode();
 
-Shape410.geometry = Text413;
+Transform407.children[0] = Anchor408;
 
-Anchor409.children = new MFNode();
+Transform401.children[1] = Transform407;
 
-Anchor409.children[0] = Shape410;
+Group49.children[58] = Transform401;
 
-Transform408.children = new MFNode();
+Viewpoint Viewpoint414 = createNode("Viewpoint");
+Viewpoint414.DEF = "View25";
+Viewpoint414.description = "ArtDeco25";
+Viewpoint414.position = new SFVec3f(new float[-2.25,-2.25,3]);
+Group49.children[59] = Viewpoint414;
 
-Transform408.children[0] = Anchor409;
+Transform Transform415 = createNode("Transform");
+Transform415.translation = new SFVec3f(new float[-2.25,-2.25,0]);
+Anchor Anchor416 = createNode("Anchor");
+Anchor416.description = "ArtDeco25 view";
+Anchor416.url = new MFString(new java.lang.String["#View25"]);
+Shape Shape417 = createNode("Shape");
+Appearance Appearance418 = createNode("Appearance");
+ProtoInstance ProtoInstance419 = createNode("ProtoInstance");
+ProtoInstance419.name = "ArtDeco25";
+Appearance418.shaders = new MFNode();
 
-Transform402.children[1] = Transform408;
+Appearance418.shaders[0] = ProtoInstance419;
 
-Group50.children[58] = Transform402;
+Shape417.appearance = Appearance418;
 
-Viewpoint Viewpoint415 = createNode("Viewpoint");
-Viewpoint415.DEF = "View25";
-Viewpoint415.description = "ArtDeco25";
-Viewpoint415.position = new SFVec3f(new float[-2.25,-2.25,3]);
-Group50.children[59] = Viewpoint415;
+Sphere Sphere420 = createNode("Sphere");
+Sphere420.USE = "Ball";
+Shape417.geometry = Sphere420;
 
-Transform Transform416 = createNode("Transform");
-Transform416.translation = new SFVec3f(new float[-2.25,-2.25,0]);
-Anchor Anchor417 = createNode("Anchor");
-Anchor417.description = "ArtDeco25 view";
-Anchor417.url = new MFString(new java.lang.String["#View25"]);
-Shape Shape418 = createNode("Shape");
-Appearance Appearance419 = createNode("Appearance");
-ProtoInstance ProtoInstance420 = createNode("ProtoInstance");
-ProtoInstance420.name = "ArtDeco25";
-Appearance419.shaders = new MFNode();
+Anchor416.children = new MFNode();
 
-Appearance419.shaders[0] = ProtoInstance420;
+Anchor416.children[0] = Shape417;
 
-Shape418.appearance = Appearance419;
+Transform415.children = new MFNode();
 
-Sphere Sphere421 = createNode("Sphere");
-Sphere421.USE = "Ball";
-Shape418.geometry = Sphere421;
+Transform415.children[0] = Anchor416;
 
-Anchor417.children = new MFNode();
+Transform Transform421 = createNode("Transform");
+Transform421.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor422 = createNode("Anchor");
+Anchor422.description = "ArtDeco25";
+Anchor422.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25"]);
+Anchor422.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape423 = createNode("Shape");
+Appearance Appearance424 = createNode("Appearance");
+Material Material425 = createNode("Material");
+Material425.USE = "TextMat";
+Appearance424.material = Material425;
 
-Anchor417.children[0] = Shape418;
+Shape423.appearance = Appearance424;
 
-Transform416.children = new MFNode();
+Text Text426 = createNode("Text");
+Text426.string = new MFString(new java.lang.String["ArtDeco25"]);
+FontStyle FontStyle427 = createNode("FontStyle");
+FontStyle427.USE = "Style";
+Text426.fontStyle = FontStyle427;
 
-Transform416.children[0] = Anchor417;
+Shape423.geometry = Text426;
 
-Transform Transform422 = createNode("Transform");
-Transform422.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor423 = createNode("Anchor");
-Anchor423.description = "ArtDeco25";
-Anchor423.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor423.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25"]);
-Shape Shape424 = createNode("Shape");
-Appearance Appearance425 = createNode("Appearance");
-Material Material426 = createNode("Material");
-Material426.USE = "TextMat";
-Appearance425.material = Material426;
+Anchor422.children = new MFNode();
 
-Shape424.appearance = Appearance425;
+Anchor422.children[0] = Shape423;
 
-Text Text427 = createNode("Text");
-Text427.string = new MFString(new java.lang.String["ArtDeco25"]);
-FontStyle FontStyle428 = createNode("FontStyle");
-FontStyle428.USE = "Style";
-Text427.fontStyle = FontStyle428;
+Transform421.children = new MFNode();
 
-Shape424.geometry = Text427;
+Transform421.children[0] = Anchor422;
 
-Anchor423.children = new MFNode();
+Transform415.children[1] = Transform421;
 
-Anchor423.children[0] = Shape424;
+Group49.children[60] = Transform415;
 
-Transform422.children = new MFNode();
+Viewpoint Viewpoint428 = createNode("Viewpoint");
+Viewpoint428.DEF = "View26";
+Viewpoint428.description = "ArtDeco26";
+Viewpoint428.position = new SFVec3f(new float[-0.75,-2.25,3]);
+Group49.children[61] = Viewpoint428;
 
-Transform422.children[0] = Anchor423;
+Transform Transform429 = createNode("Transform");
+Transform429.translation = new SFVec3f(new float[-0.75,-2.25,0]);
+Anchor Anchor430 = createNode("Anchor");
+Anchor430.description = "ArtDeco26 view";
+Anchor430.url = new MFString(new java.lang.String["#View26"]);
+Shape Shape431 = createNode("Shape");
+Appearance Appearance432 = createNode("Appearance");
+ProtoInstance ProtoInstance433 = createNode("ProtoInstance");
+ProtoInstance433.name = "ArtDeco26";
+Appearance432.shaders = new MFNode();
 
-Transform416.children[1] = Transform422;
+Appearance432.shaders[0] = ProtoInstance433;
 
-Group50.children[60] = Transform416;
+Shape431.appearance = Appearance432;
 
-Viewpoint Viewpoint429 = createNode("Viewpoint");
-Viewpoint429.DEF = "View26";
-Viewpoint429.description = "ArtDeco26";
-Viewpoint429.position = new SFVec3f(new float[-0.75,-2.25,3]);
-Group50.children[61] = Viewpoint429;
+Sphere Sphere434 = createNode("Sphere");
+Sphere434.USE = "Ball";
+Shape431.geometry = Sphere434;
 
-Transform Transform430 = createNode("Transform");
-Transform430.translation = new SFVec3f(new float[-0.75,-2.25,0]);
-Anchor Anchor431 = createNode("Anchor");
-Anchor431.description = "ArtDeco26 view";
-Anchor431.url = new MFString(new java.lang.String["#View26"]);
-Shape Shape432 = createNode("Shape");
-Appearance Appearance433 = createNode("Appearance");
-ProtoInstance ProtoInstance434 = createNode("ProtoInstance");
-ProtoInstance434.name = "ArtDeco26";
-Appearance433.shaders = new MFNode();
+Anchor430.children = new MFNode();
 
-Appearance433.shaders[0] = ProtoInstance434;
+Anchor430.children[0] = Shape431;
 
-Shape432.appearance = Appearance433;
+Transform429.children = new MFNode();
 
-Sphere Sphere435 = createNode("Sphere");
-Sphere435.USE = "Ball";
-Shape432.geometry = Sphere435;
+Transform429.children[0] = Anchor430;
 
-Anchor431.children = new MFNode();
+Transform Transform435 = createNode("Transform");
+Transform435.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor436 = createNode("Anchor");
+Anchor436.description = "ArtDeco26";
+Anchor436.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26"]);
+Anchor436.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape437 = createNode("Shape");
+Appearance Appearance438 = createNode("Appearance");
+Material Material439 = createNode("Material");
+Material439.USE = "TextMat";
+Appearance438.material = Material439;
 
-Anchor431.children[0] = Shape432;
+Shape437.appearance = Appearance438;
 
-Transform430.children = new MFNode();
+Text Text440 = createNode("Text");
+Text440.string = new MFString(new java.lang.String["ArtDeco26"]);
+FontStyle FontStyle441 = createNode("FontStyle");
+FontStyle441.USE = "Style";
+Text440.fontStyle = FontStyle441;
 
-Transform430.children[0] = Anchor431;
+Shape437.geometry = Text440;
 
-Transform Transform436 = createNode("Transform");
-Transform436.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor437 = createNode("Anchor");
-Anchor437.description = "ArtDeco26";
-Anchor437.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor437.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26"]);
-Shape Shape438 = createNode("Shape");
-Appearance Appearance439 = createNode("Appearance");
-Material Material440 = createNode("Material");
-Material440.USE = "TextMat";
-Appearance439.material = Material440;
+Anchor436.children = new MFNode();
 
-Shape438.appearance = Appearance439;
+Anchor436.children[0] = Shape437;
 
-Text Text441 = createNode("Text");
-Text441.string = new MFString(new java.lang.String["ArtDeco26"]);
-FontStyle FontStyle442 = createNode("FontStyle");
-FontStyle442.USE = "Style";
-Text441.fontStyle = FontStyle442;
+Transform435.children = new MFNode();
 
-Shape438.geometry = Text441;
+Transform435.children[0] = Anchor436;
 
-Anchor437.children = new MFNode();
+Transform429.children[1] = Transform435;
 
-Anchor437.children[0] = Shape438;
+Group49.children[62] = Transform429;
 
-Transform436.children = new MFNode();
+Viewpoint Viewpoint442 = createNode("Viewpoint");
+Viewpoint442.DEF = "View27";
+Viewpoint442.description = "ArtDeco27";
+Viewpoint442.position = new SFVec3f(new float[0.75,-2.25,3]);
+Group49.children[63] = Viewpoint442;
 
-Transform436.children[0] = Anchor437;
+Transform Transform443 = createNode("Transform");
+Transform443.translation = new SFVec3f(new float[0.75,-2.25,0]);
+Anchor Anchor444 = createNode("Anchor");
+Anchor444.description = "ArtDeco27 view";
+Anchor444.url = new MFString(new java.lang.String["#View27"]);
+Shape Shape445 = createNode("Shape");
+Appearance Appearance446 = createNode("Appearance");
+ProtoInstance ProtoInstance447 = createNode("ProtoInstance");
+ProtoInstance447.name = "ArtDeco27";
+Appearance446.shaders = new MFNode();
 
-Transform430.children[1] = Transform436;
+Appearance446.shaders[0] = ProtoInstance447;
 
-Group50.children[62] = Transform430;
+Shape445.appearance = Appearance446;
 
-Viewpoint Viewpoint443 = createNode("Viewpoint");
-Viewpoint443.DEF = "View27";
-Viewpoint443.description = "ArtDeco27";
-Viewpoint443.position = new SFVec3f(new float[0.75,-2.25,3]);
-Group50.children[63] = Viewpoint443;
+Sphere Sphere448 = createNode("Sphere");
+Sphere448.USE = "Ball";
+Shape445.geometry = Sphere448;
 
-Transform Transform444 = createNode("Transform");
-Transform444.translation = new SFVec3f(new float[0.75,-2.25,0]);
-Anchor Anchor445 = createNode("Anchor");
-Anchor445.description = "ArtDeco27 view";
-Anchor445.url = new MFString(new java.lang.String["#View27"]);
-Shape Shape446 = createNode("Shape");
-Appearance Appearance447 = createNode("Appearance");
-ProtoInstance ProtoInstance448 = createNode("ProtoInstance");
-ProtoInstance448.name = "ArtDeco27";
-Appearance447.shaders = new MFNode();
+Anchor444.children = new MFNode();
 
-Appearance447.shaders[0] = ProtoInstance448;
+Anchor444.children[0] = Shape445;
 
-Shape446.appearance = Appearance447;
+Transform443.children = new MFNode();
 
-Sphere Sphere449 = createNode("Sphere");
-Sphere449.USE = "Ball";
-Shape446.geometry = Sphere449;
+Transform443.children[0] = Anchor444;
 
-Anchor445.children = new MFNode();
+Transform Transform449 = createNode("Transform");
+Transform449.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor450 = createNode("Anchor");
+Anchor450.description = "ArtDeco27";
+Anchor450.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27"]);
+Anchor450.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape451 = createNode("Shape");
+Appearance Appearance452 = createNode("Appearance");
+Material Material453 = createNode("Material");
+Material453.USE = "TextMat";
+Appearance452.material = Material453;
 
-Anchor445.children[0] = Shape446;
+Shape451.appearance = Appearance452;
 
-Transform444.children = new MFNode();
+Text Text454 = createNode("Text");
+Text454.string = new MFString(new java.lang.String["ArtDeco27"]);
+FontStyle FontStyle455 = createNode("FontStyle");
+FontStyle455.USE = "Style";
+Text454.fontStyle = FontStyle455;
 
-Transform444.children[0] = Anchor445;
+Shape451.geometry = Text454;
 
-Transform Transform450 = createNode("Transform");
-Transform450.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor451 = createNode("Anchor");
-Anchor451.description = "ArtDeco27";
-Anchor451.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor451.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27"]);
-Shape Shape452 = createNode("Shape");
-Appearance Appearance453 = createNode("Appearance");
-Material Material454 = createNode("Material");
-Material454.USE = "TextMat";
-Appearance453.material = Material454;
+Anchor450.children = new MFNode();
 
-Shape452.appearance = Appearance453;
+Anchor450.children[0] = Shape451;
 
-Text Text455 = createNode("Text");
-Text455.string = new MFString(new java.lang.String["ArtDeco27"]);
-FontStyle FontStyle456 = createNode("FontStyle");
-FontStyle456.USE = "Style";
-Text455.fontStyle = FontStyle456;
+Transform449.children = new MFNode();
 
-Shape452.geometry = Text455;
+Transform449.children[0] = Anchor450;
 
-Anchor451.children = new MFNode();
+Transform443.children[1] = Transform449;
 
-Anchor451.children[0] = Shape452;
+Group49.children[64] = Transform443;
 
-Transform450.children = new MFNode();
+Viewpoint Viewpoint456 = createNode("Viewpoint");
+Viewpoint456.DEF = "View28";
+Viewpoint456.description = "ArtDeco28";
+Viewpoint456.position = new SFVec3f(new float[2.25,-2.25,3]);
+Group49.children[65] = Viewpoint456;
 
-Transform450.children[0] = Anchor451;
+Transform Transform457 = createNode("Transform");
+Transform457.translation = new SFVec3f(new float[2.25,-2.25,0]);
+Anchor Anchor458 = createNode("Anchor");
+Anchor458.description = "ArtDeco28 view";
+Anchor458.url = new MFString(new java.lang.String["#View28"]);
+Shape Shape459 = createNode("Shape");
+Appearance Appearance460 = createNode("Appearance");
+ProtoInstance ProtoInstance461 = createNode("ProtoInstance");
+ProtoInstance461.name = "ArtDeco28";
+Appearance460.shaders = new MFNode();
 
-Transform444.children[1] = Transform450;
+Appearance460.shaders[0] = ProtoInstance461;
 
-Group50.children[64] = Transform444;
+Shape459.appearance = Appearance460;
 
-Viewpoint Viewpoint457 = createNode("Viewpoint");
-Viewpoint457.DEF = "View28";
-Viewpoint457.description = "ArtDeco28";
-Viewpoint457.position = new SFVec3f(new float[2.25,-2.25,3]);
-Group50.children[65] = Viewpoint457;
+Sphere Sphere462 = createNode("Sphere");
+Sphere462.USE = "Ball";
+Shape459.geometry = Sphere462;
 
-Transform Transform458 = createNode("Transform");
-Transform458.translation = new SFVec3f(new float[2.25,-2.25,0]);
-Anchor Anchor459 = createNode("Anchor");
-Anchor459.description = "ArtDeco28 view";
-Anchor459.url = new MFString(new java.lang.String["#View28"]);
-Shape Shape460 = createNode("Shape");
-Appearance Appearance461 = createNode("Appearance");
-ProtoInstance ProtoInstance462 = createNode("ProtoInstance");
-ProtoInstance462.name = "ArtDeco28";
-Appearance461.shaders = new MFNode();
+Anchor458.children = new MFNode();
 
-Appearance461.shaders[0] = ProtoInstance462;
+Anchor458.children[0] = Shape459;
 
-Shape460.appearance = Appearance461;
+Transform457.children = new MFNode();
 
-Sphere Sphere463 = createNode("Sphere");
-Sphere463.USE = "Ball";
-Shape460.geometry = Sphere463;
+Transform457.children[0] = Anchor458;
 
-Anchor459.children = new MFNode();
+Transform Transform463 = createNode("Transform");
+Transform463.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor464 = createNode("Anchor");
+Anchor464.description = "ArtDeco28";
+Anchor464.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28"]);
+Anchor464.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape465 = createNode("Shape");
+Appearance Appearance466 = createNode("Appearance");
+Material Material467 = createNode("Material");
+Material467.USE = "TextMat";
+Appearance466.material = Material467;
 
-Anchor459.children[0] = Shape460;
+Shape465.appearance = Appearance466;
 
-Transform458.children = new MFNode();
+Text Text468 = createNode("Text");
+Text468.string = new MFString(new java.lang.String["ArtDeco28"]);
+FontStyle FontStyle469 = createNode("FontStyle");
+FontStyle469.USE = "Style";
+Text468.fontStyle = FontStyle469;
 
-Transform458.children[0] = Anchor459;
+Shape465.geometry = Text468;
 
-Transform Transform464 = createNode("Transform");
-Transform464.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor465 = createNode("Anchor");
-Anchor465.description = "ArtDeco28";
-Anchor465.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor465.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28"]);
-Shape Shape466 = createNode("Shape");
-Appearance Appearance467 = createNode("Appearance");
-Material Material468 = createNode("Material");
-Material468.USE = "TextMat";
-Appearance467.material = Material468;
+Anchor464.children = new MFNode();
 
-Shape466.appearance = Appearance467;
+Anchor464.children[0] = Shape465;
 
-Text Text469 = createNode("Text");
-Text469.string = new MFString(new java.lang.String["ArtDeco28"]);
-FontStyle FontStyle470 = createNode("FontStyle");
-FontStyle470.USE = "Style";
-Text469.fontStyle = FontStyle470;
+Transform463.children = new MFNode();
 
-Shape466.geometry = Text469;
+Transform463.children[0] = Anchor464;
 
-Anchor465.children = new MFNode();
+Transform457.children[1] = Transform463;
 
-Anchor465.children[0] = Shape466;
+Group49.children[66] = Transform457;
 
-Transform464.children = new MFNode();
+Viewpoint Viewpoint470 = createNode("Viewpoint");
+Viewpoint470.DEF = "View29";
+Viewpoint470.description = "ArtDeco29";
+Viewpoint470.position = new SFVec3f(new float[3.75,-2.25,3]);
+Group49.children[67] = Viewpoint470;
 
-Transform464.children[0] = Anchor465;
+Transform Transform471 = createNode("Transform");
+Transform471.translation = new SFVec3f(new float[3.75,-2.25,0]);
+Anchor Anchor472 = createNode("Anchor");
+Anchor472.description = "ArtDeco29 view";
+Anchor472.url = new MFString(new java.lang.String["#View29"]);
+Shape Shape473 = createNode("Shape");
+Appearance Appearance474 = createNode("Appearance");
+ProtoInstance ProtoInstance475 = createNode("ProtoInstance");
+ProtoInstance475.name = "ArtDeco29";
+Appearance474.shaders = new MFNode();
 
-Transform458.children[1] = Transform464;
+Appearance474.shaders[0] = ProtoInstance475;
 
-Group50.children[66] = Transform458;
+Shape473.appearance = Appearance474;
 
-Viewpoint Viewpoint471 = createNode("Viewpoint");
-Viewpoint471.DEF = "View29";
-Viewpoint471.description = "ArtDeco29";
-Viewpoint471.position = new SFVec3f(new float[3.75,-2.25,3]);
-Group50.children[67] = Viewpoint471;
+Sphere Sphere476 = createNode("Sphere");
+Sphere476.USE = "Ball";
+Shape473.geometry = Sphere476;
 
-Transform Transform472 = createNode("Transform");
-Transform472.translation = new SFVec3f(new float[3.75,-2.25,0]);
-Anchor Anchor473 = createNode("Anchor");
-Anchor473.description = "ArtDeco29 view";
-Anchor473.url = new MFString(new java.lang.String["#View29"]);
-Shape Shape474 = createNode("Shape");
-Appearance Appearance475 = createNode("Appearance");
-ProtoInstance ProtoInstance476 = createNode("ProtoInstance");
-ProtoInstance476.name = "ArtDeco29";
-Appearance475.shaders = new MFNode();
+Anchor472.children = new MFNode();
 
-Appearance475.shaders[0] = ProtoInstance476;
+Anchor472.children[0] = Shape473;
 
-Shape474.appearance = Appearance475;
+Transform471.children = new MFNode();
 
-Sphere Sphere477 = createNode("Sphere");
-Sphere477.USE = "Ball";
-Shape474.geometry = Sphere477;
+Transform471.children[0] = Anchor472;
 
-Anchor473.children = new MFNode();
+Transform Transform477 = createNode("Transform");
+Transform477.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor478 = createNode("Anchor");
+Anchor478.description = "ArtDeco29";
+Anchor478.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29"]);
+Anchor478.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape479 = createNode("Shape");
+Appearance Appearance480 = createNode("Appearance");
+Material Material481 = createNode("Material");
+Material481.USE = "TextMat";
+Appearance480.material = Material481;
 
-Anchor473.children[0] = Shape474;
+Shape479.appearance = Appearance480;
 
-Transform472.children = new MFNode();
+Text Text482 = createNode("Text");
+Text482.string = new MFString(new java.lang.String["ArtDeco29"]);
+FontStyle FontStyle483 = createNode("FontStyle");
+FontStyle483.USE = "Style";
+Text482.fontStyle = FontStyle483;
 
-Transform472.children[0] = Anchor473;
+Shape479.geometry = Text482;
 
-Transform Transform478 = createNode("Transform");
-Transform478.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor479 = createNode("Anchor");
-Anchor479.description = "ArtDeco29";
-Anchor479.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor479.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29"]);
-Shape Shape480 = createNode("Shape");
-Appearance Appearance481 = createNode("Appearance");
-Material Material482 = createNode("Material");
-Material482.USE = "TextMat";
-Appearance481.material = Material482;
+Anchor478.children = new MFNode();
 
-Shape480.appearance = Appearance481;
+Anchor478.children[0] = Shape479;
 
-Text Text483 = createNode("Text");
-Text483.string = new MFString(new java.lang.String["ArtDeco29"]);
-FontStyle FontStyle484 = createNode("FontStyle");
-FontStyle484.USE = "Style";
-Text483.fontStyle = FontStyle484;
+Transform477.children = new MFNode();
 
-Shape480.geometry = Text483;
+Transform477.children[0] = Anchor478;
 
-Anchor479.children = new MFNode();
+Transform471.children[1] = Transform477;
 
-Anchor479.children[0] = Shape480;
+Group49.children[68] = Transform471;
 
-Transform478.children = new MFNode();
+Viewpoint Viewpoint484 = createNode("Viewpoint");
+Viewpoint484.DEF = "View30";
+Viewpoint484.description = "ArtDeco30";
+Viewpoint484.position = new SFVec3f(new float[-3.75,-3.75,3]);
+Group49.children[69] = Viewpoint484;
 
-Transform478.children[0] = Anchor479;
+Transform Transform485 = createNode("Transform");
+Transform485.translation = new SFVec3f(new float[-3.75,-3.75,0]);
+Anchor Anchor486 = createNode("Anchor");
+Anchor486.description = "ArtDeco30 view";
+Anchor486.url = new MFString(new java.lang.String["#View30"]);
+Shape Shape487 = createNode("Shape");
+Appearance Appearance488 = createNode("Appearance");
+ProtoInstance ProtoInstance489 = createNode("ProtoInstance");
+ProtoInstance489.name = "ArtDeco30";
+Appearance488.shaders = new MFNode();
 
-Transform472.children[1] = Transform478;
+Appearance488.shaders[0] = ProtoInstance489;
 
-Group50.children[68] = Transform472;
+Shape487.appearance = Appearance488;
 
-Viewpoint Viewpoint485 = createNode("Viewpoint");
-Viewpoint485.DEF = "View30";
-Viewpoint485.description = "ArtDeco30";
-Viewpoint485.position = new SFVec3f(new float[-3.75,-3.75,3]);
-Group50.children[69] = Viewpoint485;
+Sphere Sphere490 = createNode("Sphere");
+Sphere490.USE = "Ball";
+Shape487.geometry = Sphere490;
 
-Transform Transform486 = createNode("Transform");
-Transform486.translation = new SFVec3f(new float[-3.75,-3.75,0]);
-Anchor Anchor487 = createNode("Anchor");
-Anchor487.description = "ArtDeco30 view";
-Anchor487.url = new MFString(new java.lang.String["#View30"]);
-Shape Shape488 = createNode("Shape");
-Appearance Appearance489 = createNode("Appearance");
-ProtoInstance ProtoInstance490 = createNode("ProtoInstance");
-ProtoInstance490.name = "ArtDeco30";
-Appearance489.shaders = new MFNode();
+Anchor486.children = new MFNode();
 
-Appearance489.shaders[0] = ProtoInstance490;
+Anchor486.children[0] = Shape487;
 
-Shape488.appearance = Appearance489;
+Transform485.children = new MFNode();
 
-Sphere Sphere491 = createNode("Sphere");
-Sphere491.USE = "Ball";
-Shape488.geometry = Sphere491;
+Transform485.children[0] = Anchor486;
 
-Anchor487.children = new MFNode();
+Transform Transform491 = createNode("Transform");
+Transform491.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor492 = createNode("Anchor");
+Anchor492.description = "ArtDeco30";
+Anchor492.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30"]);
+Anchor492.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape493 = createNode("Shape");
+Appearance Appearance494 = createNode("Appearance");
+Material Material495 = createNode("Material");
+Material495.USE = "TextMat";
+Appearance494.material = Material495;
 
-Anchor487.children[0] = Shape488;
+Shape493.appearance = Appearance494;
 
-Transform486.children = new MFNode();
+Text Text496 = createNode("Text");
+Text496.string = new MFString(new java.lang.String["ArtDeco30"]);
+FontStyle FontStyle497 = createNode("FontStyle");
+FontStyle497.USE = "Style";
+Text496.fontStyle = FontStyle497;
 
-Transform486.children[0] = Anchor487;
+Shape493.geometry = Text496;
 
-Transform Transform492 = createNode("Transform");
-Transform492.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor493 = createNode("Anchor");
-Anchor493.description = "ArtDeco30";
-Anchor493.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor493.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30"]);
-Shape Shape494 = createNode("Shape");
-Appearance Appearance495 = createNode("Appearance");
-Material Material496 = createNode("Material");
-Material496.USE = "TextMat";
-Appearance495.material = Material496;
+Anchor492.children = new MFNode();
 
-Shape494.appearance = Appearance495;
+Anchor492.children[0] = Shape493;
 
-Text Text497 = createNode("Text");
-Text497.string = new MFString(new java.lang.String["ArtDeco30"]);
-FontStyle FontStyle498 = createNode("FontStyle");
-FontStyle498.USE = "Style";
-Text497.fontStyle = FontStyle498;
+Transform491.children = new MFNode();
 
-Shape494.geometry = Text497;
+Transform491.children[0] = Anchor492;
 
-Anchor493.children = new MFNode();
+Transform485.children[1] = Transform491;
 
-Anchor493.children[0] = Shape494;
+Group49.children[70] = Transform485;
 
-Transform492.children = new MFNode();
+Viewpoint Viewpoint498 = createNode("Viewpoint");
+Viewpoint498.DEF = "View31";
+Viewpoint498.description = "ArtDeco31";
+Viewpoint498.position = new SFVec3f(new float[-2.25,-3.75,3]);
+Group49.children[71] = Viewpoint498;
 
-Transform492.children[0] = Anchor493;
+Transform Transform499 = createNode("Transform");
+Transform499.translation = new SFVec3f(new float[-2.25,-3.75,0]);
+Anchor Anchor500 = createNode("Anchor");
+Anchor500.description = "ArtDeco31 view";
+Anchor500.url = new MFString(new java.lang.String["#View31"]);
+Shape Shape501 = createNode("Shape");
+Appearance Appearance502 = createNode("Appearance");
+ProtoInstance ProtoInstance503 = createNode("ProtoInstance");
+ProtoInstance503.name = "ArtDeco31";
+Appearance502.shaders = new MFNode();
 
-Transform486.children[1] = Transform492;
+Appearance502.shaders[0] = ProtoInstance503;
 
-Group50.children[70] = Transform486;
+Shape501.appearance = Appearance502;
 
-Viewpoint Viewpoint499 = createNode("Viewpoint");
-Viewpoint499.DEF = "View31";
-Viewpoint499.description = "ArtDeco31";
-Viewpoint499.position = new SFVec3f(new float[-2.25,-3.75,3]);
-Group50.children[71] = Viewpoint499;
+Sphere Sphere504 = createNode("Sphere");
+Sphere504.USE = "Ball";
+Shape501.geometry = Sphere504;
 
-Transform Transform500 = createNode("Transform");
-Transform500.translation = new SFVec3f(new float[-2.25,-3.75,0]);
-Anchor Anchor501 = createNode("Anchor");
-Anchor501.description = "ArtDeco31 view";
-Anchor501.url = new MFString(new java.lang.String["#View31"]);
-Shape Shape502 = createNode("Shape");
-Appearance Appearance503 = createNode("Appearance");
-ProtoInstance ProtoInstance504 = createNode("ProtoInstance");
-ProtoInstance504.name = "ArtDeco31";
-Appearance503.shaders = new MFNode();
+Anchor500.children = new MFNode();
 
-Appearance503.shaders[0] = ProtoInstance504;
+Anchor500.children[0] = Shape501;
 
-Shape502.appearance = Appearance503;
+Transform499.children = new MFNode();
 
-Sphere Sphere505 = createNode("Sphere");
-Sphere505.USE = "Ball";
-Shape502.geometry = Sphere505;
+Transform499.children[0] = Anchor500;
 
-Anchor501.children = new MFNode();
+Transform Transform505 = createNode("Transform");
+Transform505.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor506 = createNode("Anchor");
+Anchor506.description = "ArtDeco31";
+Anchor506.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31"]);
+Anchor506.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape507 = createNode("Shape");
+Appearance Appearance508 = createNode("Appearance");
+Material Material509 = createNode("Material");
+Material509.USE = "TextMat";
+Appearance508.material = Material509;
 
-Anchor501.children[0] = Shape502;
+Shape507.appearance = Appearance508;
 
-Transform500.children = new MFNode();
+Text Text510 = createNode("Text");
+Text510.string = new MFString(new java.lang.String["ArtDeco31"]);
+FontStyle FontStyle511 = createNode("FontStyle");
+FontStyle511.USE = "Style";
+Text510.fontStyle = FontStyle511;
 
-Transform500.children[0] = Anchor501;
+Shape507.geometry = Text510;
 
-Transform Transform506 = createNode("Transform");
-Transform506.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor507 = createNode("Anchor");
-Anchor507.description = "ArtDeco31";
-Anchor507.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor507.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31"]);
-Shape Shape508 = createNode("Shape");
-Appearance Appearance509 = createNode("Appearance");
-Material Material510 = createNode("Material");
-Material510.USE = "TextMat";
-Appearance509.material = Material510;
+Anchor506.children = new MFNode();
 
-Shape508.appearance = Appearance509;
+Anchor506.children[0] = Shape507;
 
-Text Text511 = createNode("Text");
-Text511.string = new MFString(new java.lang.String["ArtDeco31"]);
-FontStyle FontStyle512 = createNode("FontStyle");
-FontStyle512.USE = "Style";
-Text511.fontStyle = FontStyle512;
+Transform505.children = new MFNode();
 
-Shape508.geometry = Text511;
+Transform505.children[0] = Anchor506;
 
-Anchor507.children = new MFNode();
+Transform499.children[1] = Transform505;
 
-Anchor507.children[0] = Shape508;
+Group49.children[72] = Transform499;
 
-Transform506.children = new MFNode();
+Viewpoint Viewpoint512 = createNode("Viewpoint");
+Viewpoint512.DEF = "View32";
+Viewpoint512.description = "ArtDeco32";
+Viewpoint512.position = new SFVec3f(new float[-0.75,-3.75,3]);
+Group49.children[73] = Viewpoint512;
 
-Transform506.children[0] = Anchor507;
+Transform Transform513 = createNode("Transform");
+Transform513.translation = new SFVec3f(new float[-0.75,-3.75,0]);
+Anchor Anchor514 = createNode("Anchor");
+Anchor514.description = "ArtDeco32 view";
+Anchor514.url = new MFString(new java.lang.String["#View32"]);
+Shape Shape515 = createNode("Shape");
+Appearance Appearance516 = createNode("Appearance");
+ProtoInstance ProtoInstance517 = createNode("ProtoInstance");
+ProtoInstance517.name = "ArtDeco32";
+Appearance516.shaders = new MFNode();
 
-Transform500.children[1] = Transform506;
+Appearance516.shaders[0] = ProtoInstance517;
 
-Group50.children[72] = Transform500;
+Shape515.appearance = Appearance516;
 
-Viewpoint Viewpoint513 = createNode("Viewpoint");
-Viewpoint513.DEF = "View32";
-Viewpoint513.description = "ArtDeco32";
-Viewpoint513.position = new SFVec3f(new float[-0.75,-3.75,3]);
-Group50.children[73] = Viewpoint513;
+Sphere Sphere518 = createNode("Sphere");
+Sphere518.USE = "Ball";
+Shape515.geometry = Sphere518;
 
-Transform Transform514 = createNode("Transform");
-Transform514.translation = new SFVec3f(new float[-0.75,-3.75,0]);
-Anchor Anchor515 = createNode("Anchor");
-Anchor515.description = "ArtDeco32 view";
-Anchor515.url = new MFString(new java.lang.String["#View32"]);
-Shape Shape516 = createNode("Shape");
-Appearance Appearance517 = createNode("Appearance");
-ProtoInstance ProtoInstance518 = createNode("ProtoInstance");
-ProtoInstance518.name = "ArtDeco32";
-Appearance517.shaders = new MFNode();
+Anchor514.children = new MFNode();
 
-Appearance517.shaders[0] = ProtoInstance518;
+Anchor514.children[0] = Shape515;
 
-Shape516.appearance = Appearance517;
+Transform513.children = new MFNode();
 
-Sphere Sphere519 = createNode("Sphere");
-Sphere519.USE = "Ball";
-Shape516.geometry = Sphere519;
+Transform513.children[0] = Anchor514;
 
-Anchor515.children = new MFNode();
+Transform Transform519 = createNode("Transform");
+Transform519.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor520 = createNode("Anchor");
+Anchor520.description = "ArtDeco32";
+Anchor520.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32"]);
+Anchor520.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape521 = createNode("Shape");
+Appearance Appearance522 = createNode("Appearance");
+Material Material523 = createNode("Material");
+Material523.USE = "TextMat";
+Appearance522.material = Material523;
 
-Anchor515.children[0] = Shape516;
+Shape521.appearance = Appearance522;
 
-Transform514.children = new MFNode();
+Text Text524 = createNode("Text");
+Text524.string = new MFString(new java.lang.String["ArtDeco32"]);
+FontStyle FontStyle525 = createNode("FontStyle");
+FontStyle525.USE = "Style";
+Text524.fontStyle = FontStyle525;
 
-Transform514.children[0] = Anchor515;
+Shape521.geometry = Text524;
 
-Transform Transform520 = createNode("Transform");
-Transform520.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor521 = createNode("Anchor");
-Anchor521.description = "ArtDeco32";
-Anchor521.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor521.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32"]);
-Shape Shape522 = createNode("Shape");
-Appearance Appearance523 = createNode("Appearance");
-Material Material524 = createNode("Material");
-Material524.USE = "TextMat";
-Appearance523.material = Material524;
+Anchor520.children = new MFNode();
 
-Shape522.appearance = Appearance523;
+Anchor520.children[0] = Shape521;
 
-Text Text525 = createNode("Text");
-Text525.string = new MFString(new java.lang.String["ArtDeco32"]);
-FontStyle FontStyle526 = createNode("FontStyle");
-FontStyle526.USE = "Style";
-Text525.fontStyle = FontStyle526;
+Transform519.children = new MFNode();
 
-Shape522.geometry = Text525;
+Transform519.children[0] = Anchor520;
 
-Anchor521.children = new MFNode();
+Transform513.children[1] = Transform519;
 
-Anchor521.children[0] = Shape522;
+Group49.children[74] = Transform513;
 
-Transform520.children = new MFNode();
+Viewpoint Viewpoint526 = createNode("Viewpoint");
+Viewpoint526.DEF = "View33";
+Viewpoint526.description = "ArtDeco33";
+Viewpoint526.position = new SFVec3f(new float[0.75,-3.75,3]);
+Group49.children[75] = Viewpoint526;
 
-Transform520.children[0] = Anchor521;
+Transform Transform527 = createNode("Transform");
+Transform527.translation = new SFVec3f(new float[0.75,-3.75,0]);
+Anchor Anchor528 = createNode("Anchor");
+Anchor528.description = "ArtDeco33 view";
+Anchor528.url = new MFString(new java.lang.String["#View33"]);
+Shape Shape529 = createNode("Shape");
+Appearance Appearance530 = createNode("Appearance");
+ProtoInstance ProtoInstance531 = createNode("ProtoInstance");
+ProtoInstance531.name = "ArtDeco33";
+Appearance530.shaders = new MFNode();
 
-Transform514.children[1] = Transform520;
+Appearance530.shaders[0] = ProtoInstance531;
 
-Group50.children[74] = Transform514;
+Shape529.appearance = Appearance530;
 
-Viewpoint Viewpoint527 = createNode("Viewpoint");
-Viewpoint527.DEF = "View33";
-Viewpoint527.description = "ArtDeco33";
-Viewpoint527.position = new SFVec3f(new float[0.75,-3.75,3]);
-Group50.children[75] = Viewpoint527;
+Sphere Sphere532 = createNode("Sphere");
+Sphere532.USE = "Ball";
+Shape529.geometry = Sphere532;
 
-Transform Transform528 = createNode("Transform");
-Transform528.translation = new SFVec3f(new float[0.75,-3.75,0]);
-Anchor Anchor529 = createNode("Anchor");
-Anchor529.description = "ArtDeco33 view";
-Anchor529.url = new MFString(new java.lang.String["#View33"]);
-Shape Shape530 = createNode("Shape");
-Appearance Appearance531 = createNode("Appearance");
-ProtoInstance ProtoInstance532 = createNode("ProtoInstance");
-ProtoInstance532.name = "ArtDeco33";
-Appearance531.shaders = new MFNode();
+Anchor528.children = new MFNode();
 
-Appearance531.shaders[0] = ProtoInstance532;
+Anchor528.children[0] = Shape529;
 
-Shape530.appearance = Appearance531;
+Transform527.children = new MFNode();
 
-Sphere Sphere533 = createNode("Sphere");
-Sphere533.USE = "Ball";
-Shape530.geometry = Sphere533;
+Transform527.children[0] = Anchor528;
 
-Anchor529.children = new MFNode();
+Transform Transform533 = createNode("Transform");
+Transform533.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor534 = createNode("Anchor");
+Anchor534.description = "ArtDeco33";
+Anchor534.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33"]);
+Anchor534.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape535 = createNode("Shape");
+Appearance Appearance536 = createNode("Appearance");
+Material Material537 = createNode("Material");
+Material537.USE = "TextMat";
+Appearance536.material = Material537;
 
-Anchor529.children[0] = Shape530;
+Shape535.appearance = Appearance536;
 
-Transform528.children = new MFNode();
+Text Text538 = createNode("Text");
+Text538.string = new MFString(new java.lang.String["ArtDeco33"]);
+FontStyle FontStyle539 = createNode("FontStyle");
+FontStyle539.USE = "Style";
+Text538.fontStyle = FontStyle539;
 
-Transform528.children[0] = Anchor529;
+Shape535.geometry = Text538;
 
-Transform Transform534 = createNode("Transform");
-Transform534.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor535 = createNode("Anchor");
-Anchor535.description = "ArtDeco33";
-Anchor535.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor535.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33"]);
-Shape Shape536 = createNode("Shape");
-Appearance Appearance537 = createNode("Appearance");
-Material Material538 = createNode("Material");
-Material538.USE = "TextMat";
-Appearance537.material = Material538;
+Anchor534.children = new MFNode();
 
-Shape536.appearance = Appearance537;
+Anchor534.children[0] = Shape535;
 
-Text Text539 = createNode("Text");
-Text539.string = new MFString(new java.lang.String["ArtDeco33"]);
-FontStyle FontStyle540 = createNode("FontStyle");
-FontStyle540.USE = "Style";
-Text539.fontStyle = FontStyle540;
+Transform533.children = new MFNode();
 
-Shape536.geometry = Text539;
+Transform533.children[0] = Anchor534;
 
-Anchor535.children = new MFNode();
+Transform527.children[1] = Transform533;
 
-Anchor535.children[0] = Shape536;
+Group49.children[76] = Transform527;
 
-Transform534.children = new MFNode();
+Viewpoint Viewpoint540 = createNode("Viewpoint");
+Viewpoint540.DEF = "View34";
+Viewpoint540.description = "ArtDeco34";
+Viewpoint540.position = new SFVec3f(new float[2.25,-3.75,3]);
+Group49.children[77] = Viewpoint540;
 
-Transform534.children[0] = Anchor535;
+Transform Transform541 = createNode("Transform");
+Transform541.translation = new SFVec3f(new float[2.25,-3.75,0]);
+Anchor Anchor542 = createNode("Anchor");
+Anchor542.description = "ArtDeco34 view";
+Anchor542.url = new MFString(new java.lang.String["#View34"]);
+Shape Shape543 = createNode("Shape");
+Appearance Appearance544 = createNode("Appearance");
+ProtoInstance ProtoInstance545 = createNode("ProtoInstance");
+ProtoInstance545.name = "ArtDeco34";
+Appearance544.shaders = new MFNode();
 
-Transform528.children[1] = Transform534;
+Appearance544.shaders[0] = ProtoInstance545;
 
-Group50.children[76] = Transform528;
+Shape543.appearance = Appearance544;
 
-Viewpoint Viewpoint541 = createNode("Viewpoint");
-Viewpoint541.DEF = "View34";
-Viewpoint541.description = "ArtDeco34";
-Viewpoint541.position = new SFVec3f(new float[2.25,-3.75,3]);
-Group50.children[77] = Viewpoint541;
+Sphere Sphere546 = createNode("Sphere");
+Sphere546.USE = "Ball";
+Shape543.geometry = Sphere546;
 
-Transform Transform542 = createNode("Transform");
-Transform542.translation = new SFVec3f(new float[2.25,-3.75,0]);
-Anchor Anchor543 = createNode("Anchor");
-Anchor543.description = "ArtDeco34 view";
-Anchor543.url = new MFString(new java.lang.String["#View34"]);
-Shape Shape544 = createNode("Shape");
-Appearance Appearance545 = createNode("Appearance");
-ProtoInstance ProtoInstance546 = createNode("ProtoInstance");
-ProtoInstance546.name = "ArtDeco34";
-Appearance545.shaders = new MFNode();
+Anchor542.children = new MFNode();
 
-Appearance545.shaders[0] = ProtoInstance546;
+Anchor542.children[0] = Shape543;
 
-Shape544.appearance = Appearance545;
+Transform541.children = new MFNode();
 
-Sphere Sphere547 = createNode("Sphere");
-Sphere547.USE = "Ball";
-Shape544.geometry = Sphere547;
+Transform541.children[0] = Anchor542;
 
-Anchor543.children = new MFNode();
+Transform Transform547 = createNode("Transform");
+Transform547.translation = new SFVec3f(new float[0,0.3,0.5]);
+Anchor Anchor548 = createNode("Anchor");
+Anchor548.description = "ArtDeco34";
+Anchor548.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34"]);
+Anchor548.parameter = new MFString(new java.lang.String["target=_source"]);
+Shape Shape549 = createNode("Shape");
+Appearance Appearance550 = createNode("Appearance");
+Material Material551 = createNode("Material");
+Material551.USE = "TextMat";
+Appearance550.material = Material551;
 
-Anchor543.children[0] = Shape544;
+Shape549.appearance = Appearance550;
 
-Transform542.children = new MFNode();
+Text Text552 = createNode("Text");
+Text552.string = new MFString(new java.lang.String["ArtDeco34"]);
+FontStyle FontStyle553 = createNode("FontStyle");
+FontStyle553.USE = "Style";
+Text552.fontStyle = FontStyle553;
 
-Transform542.children[0] = Anchor543;
+Shape549.geometry = Text552;
 
-Transform Transform548 = createNode("Transform");
-Transform548.translation = new SFVec3f(new float[0,0.3,0.5]);
-Anchor Anchor549 = createNode("Anchor");
-Anchor549.description = "ArtDeco34";
-Anchor549.parameter = new MFString(new java.lang.String["target=_source"]);
-Anchor549.url = new MFString(new java.lang.String["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34"]);
-Shape Shape550 = createNode("Shape");
-Appearance Appearance551 = createNode("Appearance");
-Material Material552 = createNode("Material");
-Material552.USE = "TextMat";
-Appearance551.material = Material552;
+Anchor548.children = new MFNode();
 
-Shape550.appearance = Appearance551;
+Anchor548.children[0] = Shape549;
 
-Text Text553 = createNode("Text");
-Text553.string = new MFString(new java.lang.String["ArtDeco34"]);
-FontStyle FontStyle554 = createNode("FontStyle");
-FontStyle554.USE = "Style";
-Text553.fontStyle = FontStyle554;
+Transform547.children = new MFNode();
 
-Shape550.geometry = Text553;
+Transform547.children[0] = Anchor548;
 
-Anchor549.children = new MFNode();
+Transform541.children[1] = Transform547;
 
-Anchor549.children[0] = Shape550;
+Group49.children[78] = Transform541;
 
-Transform548.children = new MFNode();
+children[36] = Group49;
 
-Transform548.children[0] = Anchor549;
-
-Transform542.children[1] = Transform548;
-
-Group50.children[78] = Transform542;
-
-children[36] = Group50;
+ROUTE ROUTE554 = createNode("ROUTE");
+ROUTE554.fromNode = "Close_Time";
+ROUTE554.fromField = "fraction_changed";
+ROUTE554.toNode = "Close_Mover";
+ROUTE554.toField = "set_fraction";
+children[37] = ROUTE554;
 
 ROUTE ROUTE555 = createNode("ROUTE");
-ROUTE555.fromField = "fraction_changed";
-ROUTE555.fromNode = "Close_Time";
-ROUTE555.toField = "set_fraction";
-ROUTE555.toNode = "Close_Mover";
-children[37] = ROUTE555;
-
-ROUTE ROUTE556 = createNode("ROUTE");
-ROUTE556.fromField = "value_changed";
-ROUTE556.fromNode = "Close_Mover";
-ROUTE556.toField = "set_translation";
-ROUTE556.toNode = "Close_travel";
-children[38] = ROUTE556;
+ROUTE555.fromNode = "Close_Mover";
+ROUTE555.fromField = "value_changed";
+ROUTE555.toNode = "Close_travel";
+ROUTE555.toField = "translation";
+children[38] = ROUTE555;
 
 }

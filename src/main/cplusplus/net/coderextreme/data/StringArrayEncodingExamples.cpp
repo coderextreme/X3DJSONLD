@@ -12,7 +12,7 @@ CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Immersive");
-X3D0->setVersion("3.3");
+X3D0->setVersion("4.0");
 Chead* head1 = new Chead();
 Cmeta* meta2 = new Cmeta();
 meta2->setName("title");
@@ -50,23 +50,23 @@ meta8->setContent("X3D encodings, ISO/IEC 19775-1, Part 1: Architecture and base
 head1->addMeta(*meta8);
 
 Cmeta* meta9 = new Cmeta();
-meta9->setName("specificationUrl");
-meta9->setContent("https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFStringAndMFString");
+meta9->setName("specificationSection");
+meta9->setContent("X3D encodings, ISO/IEC 19776-1.3, Part 1: XML encoding, 5.3.14 SFString and MFString");
 head1->addMeta(*meta9);
 
 Cmeta* meta10 = new Cmeta();
 meta10->setName("specificationSection");
-meta10->setContent("X3D encodings, ISO/IEC 19776-1.3, Part 1: XML encoding, 5.3.14 SFString and MFString");
+meta10->setContent("X3D encodings, ISO/IEC 19776-2 v3.3, Part 2: Classic VRML encoding, 5.15 SFString and MFString");
 head1->addMeta(*meta10);
 
 Cmeta* meta11 = new Cmeta();
 meta11->setName("specificationUrl");
-meta11->setContent("https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/EncodingOfFields.html#SFString");
+meta11->setContent("https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFStringAndMFString");
 head1->addMeta(*meta11);
 
 Cmeta* meta12 = new Cmeta();
-meta12->setName("specificationSection");
-meta12->setContent("X3D encodings, ISO/IEC 19776-2 v3.3, Part 2: Classic VRML encoding, 5.15 SFString and MFString");
+meta12->setName("specificationUrl");
+meta12->setContent("https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/EncodingOfFields.html#SFString");
 head1->addMeta(*meta12);
 
 Cmeta* meta13 = new Cmeta();
@@ -84,45 +84,38 @@ meta15->setName("generator");
 meta15->setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
 head1->addMeta(*meta15);
 
-Cmeta* meta16 = new Cmeta();
-meta16->setName("license");
-meta16->setContent("../license.html");
-head1->addMeta(*meta16);
-
 X3D0->setHead(*head1);
 
-CScene* Scene17 = new CScene();
-CViewpoint* Viewpoint18 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint18->setDEF("EntryView");
-Viewpoint18->setDescription("Hello MFString syntax");
-group->addChildren(*Viewpoint18);
+CScene* Scene16 = new CScene();
+CViewpoint* Viewpoint17 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint17->setDEF("EntryView");
+Viewpoint17->setDescription("Hello MFString syntax");
+group->addChildren(*Viewpoint17);
 
-CBackground* Background19 = (CBackground *)(m_pScene.createNode("Background"));
-Background19->setSkyColor(new float[3]{0.6,1,0.8});
-group->addChildren(*Background19);
+CBackground* Background18 = (CBackground *)(m_pScene.createNode("Background"));
+Background18->setSkyColor(new float[3]{0.6,1,0.8});
+group->addChildren(*Background18);
 
-CShape* Shape20 = (CShape *)(m_pScene.createNode("Shape"));
-CText* Text21 = (CText *)(m_pScene.createNode("Text"));
-Text21->setString(new CString[3]{"One, Two, Three","","He said, \"Immel did it!\""}, 3);
-//alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'
-//alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})
-CFontStyle* FontStyle22 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle22->setJustify(new CString[2]{"MIDDLE","MIDDLE"}, 2);
-FontStyle22->setStyle("BOLD");
-Text21->setFontStyle(*FontStyle22);
+CShape* Shape19 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance20 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material21 = (CMaterial *)(m_pScene.createNode("Material"));
+Material21->setDiffuseColor(new float[3]{0.6,0.4,0.2});
+Appearance20->setMaterial(*Material21);
 
-Shape20->setGeometry(Text21);
+Shape19->setAppearance(*Appearance20);
 
-CAppearance* Appearance23 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material24 = (CMaterial *)(m_pScene.createNode("Material"));
-Material24->setDiffuseColor(new float[3]{0.6,0.4,0.2});
-Appearance23->setMaterial(*Material24);
+CText* Text22 = (CText *)(m_pScene.createNode("Text"));
+Text22->setString(new CString[3]{"One, Two, Three","","He said, \"Immel did it!\""}, 3);
+CFontStyle* FontStyle23 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle23->setStyle("BOLD");
+FontStyle23->setJustify(new CString[2]{"MIDDLE","MIDDLE"}, 2);
+Text22->setFontStyle(*FontStyle23);
 
-Shape20->setAppearance(*Appearance23);
+Shape19->setGeometry(Text22);
 
-group->addChildren(*Shape20);
+group->addChildren(*Shape19);
 
-X3D0->setScene(*Scene17);
+X3D0->setScene(*Scene16);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

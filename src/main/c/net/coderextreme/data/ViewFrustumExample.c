@@ -3,7 +3,7 @@ void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Immersive";
-X3D0.version = "3.3";
+X3D0.version = "4.0";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "title";
@@ -77,164 +77,155 @@ meta15.name = "generator";
 meta15.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
 head1.meta[13] = meta15;
 
-meta meta16 = createNode("meta");
-meta16.name = "license";
-meta16.content = "../license.html";
-head1.meta[14] = meta16;
-
 head = head1;
 
-WorldInfo WorldInfo18 = createNode("WorldInfo");
-WorldInfo18.title = "ViewFrustumExample.x3d";
+ExternProtoDeclare ExternProtoDeclare17 = createNode("ExternProtoDeclare");
+ExternProtoDeclare17.name = "ViewFrustum";
+ExternProtoDeclare17.url = new MFString(new java.lang.String["ViewFrustumPrototype.x3d#ViewFrustum"]);
+field field18 = createNode("field");
+field18.accessType = "initializeOnly";
+field18.type = "SFNode";
+field18.name = "ViewpointNode";
+ExternProtoDeclare17.field = new MFNode();
+
+ExternProtoDeclare17.field[0] = field18;
+
+field field19 = createNode("field");
+field19.accessType = "initializeOnly";
+field19.type = "SFNode";
+field19.name = "NavigationInfoNode";
+ExternProtoDeclare17.field[1] = field19;
+
+field field20 = createNode("field");
+field20.accessType = "inputOutput";
+field20.type = "SFBool";
+field20.name = "visible";
+ExternProtoDeclare17.field[2] = field20;
+
+field field21 = createNode("field");
+field21.accessType = "inputOutput";
+field21.type = "SFColor";
+field21.name = "lineColor";
+ExternProtoDeclare17.field[3] = field21;
+
+field field22 = createNode("field");
+field22.accessType = "inputOutput";
+field22.type = "SFColor";
+field22.name = "frustumColor";
+ExternProtoDeclare17.field[4] = field22;
+
+field field23 = createNode("field");
+field23.accessType = "inputOutput";
+field23.type = "SFFloat";
+field23.name = "transparency";
+ExternProtoDeclare17.field[5] = field23;
+
+field field24 = createNode("field");
+field24.accessType = "inputOutput";
+field24.type = "SFFloat";
+field24.name = "aspectRatio";
+ExternProtoDeclare17.field[6] = field24;
+
+field field25 = createNode("field");
+field25.accessType = "initializeOnly";
+field25.type = "SFBool";
+field25.name = "trace";
+ExternProtoDeclare17.field[7] = field25;
+
 children = new MFNode();
 
-children[0] = WorldInfo18;
+children[0] = ExternProtoDeclare17;
 
-Viewpoint Viewpoint19 = createNode("Viewpoint");
-Viewpoint19.description = "ViewFrustum from above, looking down";
-Viewpoint19.orientation = new SFRotation(new float[1,0,0,-1.57]);
-Viewpoint19.position = new SFVec3f(new float[0,40,0]);
-children[1] = Viewpoint19;
+WorldInfo WorldInfo26 = createNode("WorldInfo");
+WorldInfo26.title = "ViewFrustumExample.x3d";
+children[1] = WorldInfo26;
 
-Viewpoint Viewpoint20 = createNode("Viewpoint");
-Viewpoint20.description = "ViewFrustum from point of view";
-children[2] = Viewpoint20;
+Viewpoint Viewpoint27 = createNode("Viewpoint");
+Viewpoint27.description = "ViewFrustum from above, looking down";
+Viewpoint27.position = new SFVec3f(new float[0,40,0]);
+Viewpoint27.orientation = new SFRotation(new float[1,0,0,-1.57]);
+children[2] = Viewpoint27;
 
-Viewpoint Viewpoint21 = createNode("Viewpoint");
-Viewpoint21.description = "ViewFrustum behind point of view";
-Viewpoint21.position = new SFVec3f(new float[0,0,15]);
-children[3] = Viewpoint21;
+Viewpoint Viewpoint28 = createNode("Viewpoint");
+Viewpoint28.description = "ViewFrustum from point of view";
+children[3] = Viewpoint28;
 
-Viewpoint Viewpoint22 = createNode("Viewpoint");
-Viewpoint22.description = "ViewFrustum oblique side view";
-Viewpoint22.orientation = new SFRotation(new float[0.8005,0.5926,0.0898,-0.3743]);
-Viewpoint22.position = new SFVec3f(new float[-5,5,20]);
-children[4] = Viewpoint22;
+Viewpoint Viewpoint29 = createNode("Viewpoint");
+Viewpoint29.description = "ViewFrustum behind point of view";
+Viewpoint29.position = new SFVec3f(new float[0,0,15]);
+children[4] = Viewpoint29;
 
-NavigationInfo NavigationInfo23 = createNode("NavigationInfo");
-NavigationInfo23.type = new MFString(new java.lang.String["EXAMINE","FLY","ANY"]);
-children[5] = NavigationInfo23;
+Viewpoint Viewpoint30 = createNode("Viewpoint");
+Viewpoint30.description = "ViewFrustum oblique side view";
+Viewpoint30.position = new SFVec3f(new float[-5,5,20]);
+Viewpoint30.orientation = new SFRotation(new float[0.8005,0.5926,0.0898,-0.3743]);
+children[5] = Viewpoint30;
 
-ExternProtoDeclare ExternProtoDeclare24 = createNode("ExternProtoDeclare");
-ExternProtoDeclare24.name = "ViewFrustum";
-ExternProtoDeclare24.appinfo = "Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes";
-ExternProtoDeclare24.url = new MFString(new java.lang.String["ViewFrustumPrototype.x3d#ViewFrustum"]);
-field field25 = createNode("field");
-field25.name = "ViewpointNode";
-field25.accessType = "initializeOnly";
-field25.appinfo = "required: insert Viewpoint DEF or USE node for view of interest";
-field25.type = "SFNode";
-ExternProtoDeclare24.field = new MFNode();
+NavigationInfo NavigationInfo31 = createNode("NavigationInfo");
+NavigationInfo31.type = new MFString(new java.lang.String["EXAMINE","FLY","ANY"]);
+children[6] = NavigationInfo31;
 
-ExternProtoDeclare24.field[0] = field25;
+ProtoInstance ProtoInstance32 = createNode("ProtoInstance");
+ProtoInstance32.name = "ViewFrustum";
+fieldValue fieldValue33 = createNode("fieldValue");
+fieldValue33.name = "ViewpointNode";
+Viewpoint Viewpoint34 = createNode("Viewpoint");
+Viewpoint34.DEF = "_1";
+Viewpoint34.description = "ViewFrustum ViewpointNode";
+fieldValue33.children = new MFNode();
 
-field field26 = createNode("field");
-field26.name = "NavigationInfoNode";
-field26.accessType = "initializeOnly";
-field26.appinfo = "required: insert NavigationInfo DEF or USE node of interest";
-field26.type = "SFNode";
-ExternProtoDeclare24.field[1] = field26;
+fieldValue33.children[0] = Viewpoint34;
 
-field field27 = createNode("field");
-field27.name = "visible";
-field27.accessType = "inputOutput";
-field27.appinfo = "whether or not frustum geometry is rendered";
-field27.type = "SFBool";
-ExternProtoDeclare24.field[2] = field27;
+ProtoInstance32.fieldValue = new MFNode();
 
-field field28 = createNode("field");
-field28.name = "lineColor";
-field28.accessType = "inputOutput";
-field28.appinfo = "RGB color of ViewFrustum outline, default value 0.9 0.9 0.9";
-field28.type = "SFColor";
-ExternProtoDeclare24.field[3] = field28;
+ProtoInstance32.fieldValue[0] = fieldValue33;
 
-field field29 = createNode("field");
-field29.name = "frustumColor";
-field29.accessType = "inputOutput";
-field29.appinfo = "RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8";
-field29.type = "SFColor";
-ExternProtoDeclare24.field[4] = field29;
+fieldValue fieldValue35 = createNode("fieldValue");
+fieldValue35.name = "NavigationInfoNode";
+NavigationInfo NavigationInfo36 = createNode("NavigationInfo");
+NavigationInfo36.DEF = "_2";
+NavigationInfo36.visibilityLimit = 15;
+fieldValue35.children = new MFNode();
 
-field field30 = createNode("field");
-field30.name = "transparency";
-field30.accessType = "inputOutput";
-field30.appinfo = "transparency of ViewFrustum hull geometry, default value 0.5";
-field30.type = "SFFloat";
-ExternProtoDeclare24.field[5] = field30;
+fieldValue35.children[0] = NavigationInfo36;
 
-field field31 = createNode("field");
-field31.name = "aspectRatio";
-field31.accessType = "inputOutput";
-field31.appinfo = "assumed ratio height/width, default value 0.75";
-field31.type = "SFFloat";
-ExternProtoDeclare24.field[6] = field31;
+ProtoInstance32.fieldValue[1] = fieldValue35;
 
-field field32 = createNode("field");
-field32.name = "trace";
-field32.accessType = "initializeOnly";
-field32.appinfo = "debug support, default false";
-field32.type = "SFBool";
-ExternProtoDeclare24.field[7] = field32;
-
-children[6] = ExternProtoDeclare24;
-
-//Example use
-ProtoInstance ProtoInstance33 = createNode("ProtoInstance");
-ProtoInstance33.name = "ViewFrustum";
-fieldValue fieldValue34 = createNode("fieldValue");
-fieldValue34.name = "ViewpointNode";
-//prefer empty description to prevent entry in player's ViewpointList
-Viewpoint Viewpoint35 = createNode("Viewpoint");
-Viewpoint35.description = "ViewFrustum ViewpointNode";
-fieldValue34.children = new MFNode();
-
-fieldValue34.children[0] = Viewpoint35;
-
-ProtoInstance33.fieldValue = new MFNode();
-
-ProtoInstance33.fieldValue[0] = fieldValue34;
-
-fieldValue fieldValue36 = createNode("fieldValue");
-fieldValue36.name = "NavigationInfoNode";
-NavigationInfo NavigationInfo37 = createNode("NavigationInfo");
-NavigationInfo37.visibilityLimit = 15;
-fieldValue36.children = new MFNode();
-
-fieldValue36.children[0] = NavigationInfo37;
-
-ProtoInstance33.fieldValue[1] = fieldValue36;
+fieldValue fieldValue37 = createNode("fieldValue");
+fieldValue37.name = "visible";
+fieldValue37.value = "true";
+ProtoInstance32.fieldValue[2] = fieldValue37;
 
 fieldValue fieldValue38 = createNode("fieldValue");
-fieldValue38.name = "visible";
-fieldValue38.value = "true";
-ProtoInstance33.fieldValue[2] = fieldValue38;
+fieldValue38.name = "lineColor";
+fieldValue38.value = "0.9 0.9 0.9";
+ProtoInstance32.fieldValue[3] = fieldValue38;
 
 fieldValue fieldValue39 = createNode("fieldValue");
-fieldValue39.name = "lineColor";
-fieldValue39.value = "0.9 0.9 0.9";
-ProtoInstance33.fieldValue[3] = fieldValue39;
+fieldValue39.name = "frustumColor";
+fieldValue39.value = "0.8 0.8 0.8";
+ProtoInstance32.fieldValue[4] = fieldValue39;
 
 fieldValue fieldValue40 = createNode("fieldValue");
-fieldValue40.name = "frustumColor";
-fieldValue40.value = "0.8 0.8 0.8";
-ProtoInstance33.fieldValue[4] = fieldValue40;
+fieldValue40.name = "transparency";
+fieldValue40.value = "0.75";
+ProtoInstance32.fieldValue[5] = fieldValue40;
 
 fieldValue fieldValue41 = createNode("fieldValue");
-fieldValue41.name = "transparency";
+fieldValue41.name = "aspectRatio";
 fieldValue41.value = "0.75";
-ProtoInstance33.fieldValue[5] = fieldValue41;
+ProtoInstance32.fieldValue[6] = fieldValue41;
 
 fieldValue fieldValue42 = createNode("fieldValue");
 fieldValue42.name = "trace";
 fieldValue42.value = "true";
-ProtoInstance33.fieldValue[6] = fieldValue42;
+ProtoInstance32.fieldValue[7] = fieldValue42;
 
-children[7] = ProtoInstance33;
+children[7] = ProtoInstance32;
 
-//Visualization assists
 Inline Inline43 = createNode("Inline");
 Inline43.DEF = "GridXZ";
+Inline43.global = True;
 Inline43.url = new MFString(new java.lang.String["GridXZ_20x20Fixed.x3d"]);
 children[8] = Inline43;
 
@@ -242,6 +233,7 @@ Transform Transform44 = createNode("Transform");
 Transform44.scale = new SFVec3f(new float[5,5,5]);
 Inline Inline45 = createNode("Inline");
 Inline45.DEF = "CoordinateAxes";
+Inline45.global = True;
 Inline45.url = new MFString(new java.lang.String["CoordinateAxes.x3d"]);
 Transform44.children = new MFNode();
 

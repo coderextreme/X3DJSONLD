@@ -45,7 +45,7 @@ public class CoordinateAxes {
     model.toFileJSON("../data/CoordinateAxes.new.json");
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("CoordinateAxes.x3d"))
         .addMeta(new meta().setName("creator").setContent("Don Brutzman, Byounghyun Yoo"))
@@ -57,66 +57,56 @@ public class CoordinateAxes {
         .addMeta(new meta().setName("reference").setContent("https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d"))
         .addMeta(new meta().setName("reference").setContent("https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxesNSEW.x3d"))
         .addMeta(new meta().setName("identifier").setContent("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("license").setContent("../license.html")))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("CoordinateAxes.x3d"))
         .addChild(new Collision().setDEF("DoNotCollideWithVisualizationWidget")
-          .addComments("Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph.")
-          .addComments("This NavigationInfo allows examine mode and will be overridden by any parent scene.")
-          .addComments("Each arrow goes from +1m to -1m to allow linear scaling to fit a scene")
-          .addComments("Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user")
           .addChild(new Group()
-            .addComments("Vertical Y arrow and label")
             .addChild(new Group().setDEF("ArrowGreen")
               .addChild(new Shape()
-                .setGeometry(new Cylinder().setDEF("ArrowCylinder").setRadius(0.025f).setTop(false))
                 .setAppearance(new Appearance().setDEF("Green")
-                  .setMaterial(new Material().setDiffuseColor(new float[] {0.1f,0.6f,0.1f}).setEmissiveColor(new float[] {0.05f,0.2f,0.05f}))))
+                  .setMaterial(new Material().setDiffuseColor(new float[] {0.1f,0.6f,0.1f}).setEmissiveColor(new float[] {0.05f,0.2f,0.05f})))
+                .setGeometry(new Cylinder().setDEF("ArrowCylinder").setTop(false).setRadius(0.025f)))
               .addChild(new Transform().setTranslation(new float[] {0f,1f,0f})
                 .addChild(new Shape()
-                  .setGeometry(new Cone().setDEF("ArrowCone").setBottomRadius(0.05f).setHeight(0.1f))
-                  .setAppearance(new Appearance().setUSE("Green")))))
+                  .setAppearance(new Appearance().setUSE("Green"))
+                  .setGeometry(new Cone().setDEF("ArrowCone").setHeight(0.1f).setBottomRadius(0.05f)))))
             .addChild(new Transform().setTranslation(new float[] {0f,1.08f,0f})
               .addChild(new Billboard()
                 .addChild(new Shape()
                   .setAppearance(new Appearance().setDEF("LABEL_APPEARANCE")
                     .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,0.3f}).setEmissiveColor(new float[] {0.33f,0.33f,0.1f})))
                   .setGeometry(new Text().setString(new MFString0().getArray())
-                    .setFontStyle(new FontStyle().setDEF("LABEL_FONT").setFamily(new MFString1().getArray()).setJustify(new MFString2().getArray()).setSize(0.2f)))))))
+                    .setFontStyle(new FontStyle().setDEF("LABEL_FONT").setFamily(new MFString1().getArray()).setSize(0.2f).setJustify(new MFString2().getArray())))))))
           .addChild(new Transform().setRotation(new float[] {0f,0f,1f,-1.57079f})
-            .addComments("Horizontal X arrow and label")
             .addChild(new Group()
               .addChild(new Group().setDEF("ArrowRed")
                 .addChild(new Shape()
-                  .setGeometry(new Cylinder().setUSE("ArrowCylinder"))
                   .setAppearance(new Appearance().setDEF("Red")
-                    .setMaterial(new Material().setDiffuseColor(new float[] {0.7f,0.1f,0.1f}).setEmissiveColor(new float[] {0.33f,0f,0f}))))
+                    .setMaterial(new Material().setDiffuseColor(new float[] {0.7f,0.1f,0.1f}).setEmissiveColor(new float[] {0.33f,0f,0f})))
+                  .setGeometry(new Cylinder().setUSE("ArrowCylinder")))
                 .addChild(new Transform().setTranslation(new float[] {0f,1f,0f})
                   .addChild(new Shape()
-                    .setGeometry(new Cone().setUSE("ArrowCone"))
-                    .setAppearance(new Appearance().setUSE("Red")))))
-              .addChild(new Transform().setRotation(new float[] {0f,0f,1f,1.57079f}).setTranslation(new float[] {0.072f,1.1f,0f})
-                .addComments("note label rotated back to original coordinate frame")
+                    .setAppearance(new Appearance().setUSE("Red"))
+                    .setGeometry(new Cone().setUSE("ArrowCone")))))
+              .addChild(new Transform().setTranslation(new float[] {0.072f,1.1f,0f}).setRotation(new float[] {0f,0f,1f,1.57079f})
                 .addChild(new Billboard()
                   .addChild(new Shape()
                     .setAppearance(new Appearance().setUSE("LABEL_APPEARANCE"))
                     .setGeometry(new Text().setString(new MFString3().getArray())
                       .setFontStyle(new FontStyle().setUSE("LABEL_FONT"))))))))
           .addChild(new Transform().setRotation(new float[] {1f,0f,0f,1.57079f})
-            .addComments("Perpendicular Z arrow and label, note right-hand rule")
             .addChild(new Group()
               .addChild(new Group().setDEF("ArrowBlue")
                 .addChild(new Shape()
-                  .setGeometry(new Cylinder().setUSE("ArrowCylinder"))
                   .setAppearance(new Appearance().setDEF("Blue")
-                    .setMaterial(new Material().setDiffuseColor(new float[] {0.3f,0.3f,1f}).setEmissiveColor(new float[] {0.1f,0.1f,0.33f}))))
+                    .setMaterial(new Material().setDiffuseColor(new float[] {0.3f,0.3f,1f}).setEmissiveColor(new float[] {0.1f,0.1f,0.33f})))
+                  .setGeometry(new Cylinder().setUSE("ArrowCylinder")))
                 .addChild(new Transform().setTranslation(new float[] {0f,1f,0f})
                   .addChild(new Shape()
-                    .setGeometry(new Cone().setUSE("ArrowCone"))
-                    .setAppearance(new Appearance().setUSE("Blue")))))
-              .addChild(new Transform().setRotation(new float[] {1f,0f,0f,-1.57079f}).setTranslation(new float[] {0f,1.1f,0.072f})
-                .addComments("note label rotated back to original coordinate frame")
+                    .setAppearance(new Appearance().setUSE("Blue"))
+                    .setGeometry(new Cone().setUSE("ArrowCone")))))
+              .addChild(new Transform().setTranslation(new float[] {0f,1.1f,0.072f}).setRotation(new float[] {1f,0f,0f,-1.57079f})
                 .addChild(new Billboard()
                   .addChild(new Shape()
                     .setAppearance(new Appearance().setUSE("LABEL_APPEARANCE"))
@@ -124,28 +114,28 @@ public class CoordinateAxes {
                       .setFontStyle(new FontStyle().setUSE("LABEL_FONT"))))))))))      ;
     return X3D0;
     }
-protected class MFString0 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString0 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Y"});
   }
 }
-protected class MFString1 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString1 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"SANS"});
   }
 }
-protected class MFString2 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString2 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
-protected class MFString3 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString3 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"X"});
   }
 }
-protected class MFString4 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString4 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Z"});
   }
 }

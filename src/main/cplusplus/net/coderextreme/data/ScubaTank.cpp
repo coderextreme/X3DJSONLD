@@ -12,7 +12,7 @@ CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Interchange");
-X3D0->setVersion("3.3");
+X3D0->setVersion("4.0");
 Chead* head1 = new Chead();
 Cmeta* meta2 = new Cmeta();
 meta2->setName("title");
@@ -49,204 +49,199 @@ meta8->setName("generator");
 meta8->setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
 head1->addMeta(*meta8);
 
-Cmeta* meta9 = new Cmeta();
-meta9->setName("license");
-meta9->setContent("../license.html");
-head1->addMeta(*meta9);
-
 X3D0->setHead(*head1);
 
-CScene* Scene10 = new CScene();
-CWorldInfo* WorldInfo11 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
-WorldInfo11->setTitle("ScubaTank.x3d");
-group->addChildren(*WorldInfo11);
+CScene* Scene9 = new CScene();
+CWorldInfo* WorldInfo10 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
+WorldInfo10->setTitle("ScubaTank.x3d");
+group->addChildren(*WorldInfo10);
 
+CTransform* Transform11 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform11->setDEF("ScubaTank");
 CTransform* Transform12 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform12->setDEF("ScubaTank");
-CTransform* Transform13 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape14 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance15 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material16 = (CMaterial *)(m_pScene.createNode("Material"));
-Material16->setDEF("tank");
-Material16->setAmbientIntensity(0.3);
-Material16->setDiffuseColor(new float[3]{0.3,0.3,0.5});
-Material16->setShininess(0.1);
-Material16->setSpecularColor(new float[3]{0.7,0.7,0.8});
-Appearance15->setMaterial(*Material16);
+CShape* Shape13 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance14 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material15 = (CMaterial *)(m_pScene.createNode("Material"));
+Material15->setDEF("tank");
+Material15->setAmbientIntensity(0.3);
+Material15->setDiffuseColor(new float[3]{0.3,0.3,0.5});
+Material15->setSpecularColor(new float[3]{0.7,0.7,0.8});
+Material15->setShininess(0.1);
+Appearance14->setMaterial(*Material15);
 
-Shape14->setAppearance(*Appearance15);
+Shape13->setAppearance(*Appearance14);
 
-CCylinder* Cylinder17 = (CCylinder *)(m_pScene.createNode("Cylinder"));
-Cylinder17->setHeight(0.7);
-Cylinder17->setRadius(0.1);
-Shape14->setGeometry(Cylinder17);
+CCylinder* Cylinder16 = (CCylinder *)(m_pScene.createNode("Cylinder"));
+Cylinder16->setHeight(0.7);
+Cylinder16->setRadius(0.1);
+Shape13->setGeometry(Cylinder16);
 
-Transform13->addChild(*Shape14);
+Transform12->addChild(*Shape13);
 
-Transform12->addChildren(*Transform13);
+Transform11->addChildren(*Transform12);
 
-CTransform* Transform18 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform18->setTranslation(new float[3]{0,0.35,0});
-CShape* Shape19 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance20 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material21 = (CMaterial *)(m_pScene.createNode("Material"));
-Material21->setUSE("tank");
-Appearance20->setMaterial(*Material21);
+CTransform* Transform17 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform17->setTranslation(new float[3]{0,0.35,0});
+CShape* Shape18 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance19 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material20 = (CMaterial *)(m_pScene.createNode("Material"));
+Material20->setUSE("tank");
+Appearance19->setMaterial(*Material20);
 
-Shape19->setAppearance(*Appearance20);
+Shape18->setAppearance(*Appearance19);
 
-CSphere* Sphere22 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere22->setRadius(0.098);
-Shape19->setGeometry(Sphere22);
+CSphere* Sphere21 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere21->setRadius(0.098);
+Shape18->setGeometry(Sphere21);
 
-Transform18->addChild(*Shape19);
+Transform17->addChild(*Shape18);
 
-Transform12->addChildren(*Transform18);
+Transform11->addChildren(*Transform17);
 
-CTransform* Transform23 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform23->setTranslation(new float[3]{0,-0.35,0});
-CShape* Shape24 = (CShape *)(m_pScene.createNode("Shape"));
-Shape24->setDEF("tankBottom");
-CAppearance* Appearance25 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material26 = (CMaterial *)(m_pScene.createNode("Material"));
-Material26->setDEF("black");
-Material26->setAmbientIntensity(0.3);
-Material26->setDiffuseColor(new float[3]{0,0,0});
-Appearance25->setMaterial(*Material26);
+CTransform* Transform22 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform22->setTranslation(new float[3]{0,-0.35,0});
+CShape* Shape23 = (CShape *)(m_pScene.createNode("Shape"));
+Shape23->setDEF("tankBottom");
+CAppearance* Appearance24 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material25 = (CMaterial *)(m_pScene.createNode("Material"));
+Material25->setDEF("black");
+Material25->setAmbientIntensity(0.3);
+Material25->setDiffuseColor(new float[3]{0,0,0});
+Appearance24->setMaterial(*Material25);
 
-Shape24->setAppearance(*Appearance25);
+Shape23->setAppearance(*Appearance24);
 
-CCylinder* Cylinder27 = (CCylinder *)(m_pScene.createNode("Cylinder"));
-Cylinder27->setHeight(0.06);
-Cylinder27->setRadius(0.115);
-Shape24->setGeometry(Cylinder27);
+CCylinder* Cylinder26 = (CCylinder *)(m_pScene.createNode("Cylinder"));
+Cylinder26->setHeight(0.06);
+Cylinder26->setRadius(0.115);
+Shape23->setGeometry(Cylinder26);
 
-Transform23->addChild(*Shape24);
+Transform22->addChild(*Shape23);
 
-Transform12->addChildren(*Transform23);
+Transform11->addChildren(*Transform22);
 
-CGroup* Group28 = (CGroup *)(m_pScene.createNode("Group"));
-Group28->setDEF("tankNozzle");
+CGroup* Group27 = (CGroup *)(m_pScene.createNode("Group"));
+Group27->setDEF("tankNozzle");
+CTransform* Transform28 = (CTransform *)(m_pScene.createNode("Transform"));
 CTransform* Transform29 = (CTransform *)(m_pScene.createNode("Transform"));
-CTransform* Transform30 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform30->setTranslation(new float[3]{0,0.45,0});
-CShape* Shape31 = (CShape *)(m_pScene.createNode("Shape"));
-Shape31->setDEF("pressure");
-CAppearance* Appearance32 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material33 = (CMaterial *)(m_pScene.createNode("Material"));
-Material33->setDEF("pressureColor");
-Material33->setAmbientIntensity(0.4);
-Material33->setDiffuseColor(new float[3]{0.91,0.91,0.91});
-Material33->setShininess(0.16);
-Material33->setSpecularColor(new float[3]{0.91,0.9,0.91});
-Appearance32->setMaterial(*Material33);
+Transform29->setTranslation(new float[3]{0,0.45,0});
+CShape* Shape30 = (CShape *)(m_pScene.createNode("Shape"));
+Shape30->setDEF("pressure");
+CAppearance* Appearance31 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material32 = (CMaterial *)(m_pScene.createNode("Material"));
+Material32->setDEF("pressureColor");
+Material32->setAmbientIntensity(0.4);
+Material32->setDiffuseColor(new float[3]{0.91,0.91,0.91});
+Material32->setSpecularColor(new float[3]{0.91,0.9,0.91});
+Material32->setShininess(0.16);
+Appearance31->setMaterial(*Material32);
 
-Shape31->setAppearance(*Appearance32);
+Shape30->setAppearance(*Appearance31);
 
-CCylinder* Cylinder34 = (CCylinder *)(m_pScene.createNode("Cylinder"));
-Cylinder34->setHeight(0.1);
-Cylinder34->setRadius(0.015);
-Shape31->setGeometry(Cylinder34);
+CCylinder* Cylinder33 = (CCylinder *)(m_pScene.createNode("Cylinder"));
+Cylinder33->setHeight(0.1);
+Cylinder33->setRadius(0.015);
+Shape30->setGeometry(Cylinder33);
 
-Transform30->addChild(*Shape31);
+Transform29->addChild(*Shape30);
 
-Transform29->addChildren(*Transform30);
+Transform28->addChildren(*Transform29);
 
-CTransform* Transform35 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform35->setTranslation(new float[3]{0,0.5,0});
-CShape* Shape36 = (CShape *)(m_pScene.createNode("Shape"));
-Shape36->setDEF("pressureTop");
-CAppearance* Appearance37 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material38 = (CMaterial *)(m_pScene.createNode("Material"));
-Material38->setUSE("black");
-Appearance37->setMaterial(*Material38);
+CTransform* Transform34 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform34->setTranslation(new float[3]{0,0.5,0});
+CShape* Shape35 = (CShape *)(m_pScene.createNode("Shape"));
+Shape35->setDEF("pressureTop");
+CAppearance* Appearance36 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material37 = (CMaterial *)(m_pScene.createNode("Material"));
+Material37->setUSE("black");
+Appearance36->setMaterial(*Material37);
 
-Shape36->setAppearance(*Appearance37);
+Shape35->setAppearance(*Appearance36);
 
-CCylinder* Cylinder39 = (CCylinder *)(m_pScene.createNode("Cylinder"));
-Cylinder39->setHeight(0.02);
-Cylinder39->setRadius(0.025);
-Shape36->setGeometry(Cylinder39);
+CCylinder* Cylinder38 = (CCylinder *)(m_pScene.createNode("Cylinder"));
+Cylinder38->setHeight(0.02);
+Cylinder38->setRadius(0.025);
+Shape35->setGeometry(Cylinder38);
 
-Transform35->addChild(*Shape36);
+Transform34->addChild(*Shape35);
 
-Transform29->addChildren(*Transform35);
+Transform28->addChildren(*Transform34);
 
+CTransform* Transform39 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform39->setTranslation(new float[3]{-0.028,0.462,0});
+Transform39->setRotation(new float[4]{0,0,1,1.57});
 CTransform* Transform40 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform40->setRotation(new float[4]{0,0,1,1.57});
-Transform40->setTranslation(new float[3]{-0.028,0.462,0});
-CTransform* Transform41 = (CTransform *)(m_pScene.createNode("Transform"));
-CShape* Shape42 = (CShape *)(m_pScene.createNode("Shape"));
-Shape42->setDEF("connectorToRegulator");
-CAppearance* Appearance43 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material44 = (CMaterial *)(m_pScene.createNode("Material"));
-Material44->setUSE("pressureColor");
-Appearance43->setMaterial(*Material44);
+CShape* Shape41 = (CShape *)(m_pScene.createNode("Shape"));
+Shape41->setDEF("connectorToRegulator");
+CAppearance* Appearance42 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material43 = (CMaterial *)(m_pScene.createNode("Material"));
+Material43->setUSE("pressureColor");
+Appearance42->setMaterial(*Material43);
 
-Shape42->setAppearance(*Appearance43);
+Shape41->setAppearance(*Appearance42);
 
-CCylinder* Cylinder45 = (CCylinder *)(m_pScene.createNode("Cylinder"));
-Cylinder45->setHeight(0.03);
-Cylinder45->setRadius(0.01);
-Shape42->setGeometry(Cylinder45);
+CCylinder* Cylinder44 = (CCylinder *)(m_pScene.createNode("Cylinder"));
+Cylinder44->setHeight(0.03);
+Cylinder44->setRadius(0.01);
+Shape41->setGeometry(Cylinder44);
 
-Transform41->addChild(*Shape42);
+Transform40->addChild(*Shape41);
 
-Transform40->addChildren(*Transform41);
+Transform39->addChildren(*Transform40);
 
-CTransform* Transform46 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform46->setTranslation(new float[3]{0,0.02,0});
-CShape* Shape47 = (CShape *)(m_pScene.createNode("Shape"));
-Shape47->setDEF("connectorToRegulatorTop");
-CAppearance* Appearance48 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material49 = (CMaterial *)(m_pScene.createNode("Material"));
-Material49->setUSE("black");
-Appearance48->setMaterial(*Material49);
+CTransform* Transform45 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform45->setTranslation(new float[3]{0,0.02,0});
+CShape* Shape46 = (CShape *)(m_pScene.createNode("Shape"));
+Shape46->setDEF("connectorToRegulatorTop");
+CAppearance* Appearance47 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material48 = (CMaterial *)(m_pScene.createNode("Material"));
+Material48->setUSE("black");
+Appearance47->setMaterial(*Material48);
 
-Shape47->setAppearance(*Appearance48);
+Shape46->setAppearance(*Appearance47);
 
-CCylinder* Cylinder50 = (CCylinder *)(m_pScene.createNode("Cylinder"));
-Cylinder50->setHeight(0.02);
-Cylinder50->setRadius(0.02);
-Shape47->setGeometry(Cylinder50);
+CCylinder* Cylinder49 = (CCylinder *)(m_pScene.createNode("Cylinder"));
+Cylinder49->setHeight(0.02);
+Cylinder49->setRadius(0.02);
+Shape46->setGeometry(Cylinder49);
 
-Transform46->addChild(*Shape47);
+Transform45->addChild(*Shape46);
 
-Transform40->addChildren(*Transform46);
+Transform39->addChildren(*Transform45);
 
-Transform29->addChildren(*Transform40);
+Transform28->addChildren(*Transform39);
 
-Group28->addChildren(*Transform29);
+Group27->addChildren(*Transform28);
 
-Transform12->addChildren(*Group28);
+Transform11->addChildren(*Group27);
 
-CTransform* Transform51 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform51->setTranslation(new float[3]{0,0.2,0});
-CShape* Shape52 = (CShape *)(m_pScene.createNode("Shape"));
-Shape52->setDEF("tankHoldBelt");
-CAppearance* Appearance53 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material54 = (CMaterial *)(m_pScene.createNode("Material"));
-Material54->setUSE("black");
-Appearance53->setMaterial(*Material54);
+CTransform* Transform50 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform50->setTranslation(new float[3]{0,0.2,0});
+CShape* Shape51 = (CShape *)(m_pScene.createNode("Shape"));
+Shape51->setDEF("tankHoldBelt");
+CAppearance* Appearance52 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material53 = (CMaterial *)(m_pScene.createNode("Material"));
+Material53->setUSE("black");
+Appearance52->setMaterial(*Material53);
 
-Shape52->setAppearance(*Appearance53);
+Shape51->setAppearance(*Appearance52);
 
-CCylinder* Cylinder55 = (CCylinder *)(m_pScene.createNode("Cylinder"));
-Cylinder55->setHeight(0.1);
-Cylinder55->setRadius(0.115);
-Shape52->setGeometry(Cylinder55);
+CCylinder* Cylinder54 = (CCylinder *)(m_pScene.createNode("Cylinder"));
+Cylinder54->setHeight(0.1);
+Cylinder54->setRadius(0.115);
+Shape51->setGeometry(Cylinder54);
 
-Transform51->addChild(*Shape52);
+Transform50->addChild(*Shape51);
 
-Transform12->addChildren(*Transform51);
+Transform11->addChildren(*Transform50);
 
-group->addChildren(*Transform12);
+group->addChildren(*Transform11);
 
-CBackground* Background56 = (CBackground *)(m_pScene.createNode("Background"));
-Background56->setSkyColor(new float[3]{0.6,0.6,0.6});
-group->addChildren(*Background56);
+CBackground* Background55 = (CBackground *)(m_pScene.createNode("Background"));
+Background55->setSkyColor(new float[3]{0.6,0.6,0.6});
+group->addChildren(*Background55);
 
-X3D0->setScene(*Scene10);
+X3D0->setScene(*Scene9);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

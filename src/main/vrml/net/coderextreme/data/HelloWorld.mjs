@@ -1,9 +1,8 @@
 let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Immersive";
-X3D0.version = "3.3";
+X3D0.version = "4.0";
 let head1 = browser.currentScene.createNode("head");
-//Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON
 let meta2 = browser.currentScene.createNode("meta");
 meta2.name = "title";
 meta2.content = "HelloWorld.x3d";
@@ -82,114 +81,108 @@ meta16.content = "http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWo
 head1.meta[14] = meta16;
 
 let meta17 = browser.currentScene.createNode("meta");
-meta17.name = "identifier";
-meta17.content = "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d";
+meta17.name = "reference";
+meta17.content = "HelloWorld.wrl";
 head1.meta[15] = meta17;
 
 let meta18 = browser.currentScene.createNode("meta");
-meta18.name = "license";
-meta18.content = "https://www.web3d.org/x3d/content/examples/license.html";
+meta18.name = "reference";
+meta18.content = "HelloWorld.x3dv";
 head1.meta[16] = meta18;
 
 let meta19 = browser.currentScene.createNode("meta");
-meta19.name = "generator";
-meta19.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
+meta19.name = "reference";
+meta19.content = "HelloWorld.x3db";
 head1.meta[17] = meta19;
 
 let meta20 = browser.currentScene.createNode("meta");
 meta20.name = "reference";
-meta20.content = "HelloWorld.wrl";
+meta20.content = "HelloWorld.xhtml";
 head1.meta[18] = meta20;
 
 let meta21 = browser.currentScene.createNode("meta");
 meta21.name = "reference";
-meta21.content = "HelloWorld.x3dv";
+meta21.content = "HelloWorld.json";
 head1.meta[19] = meta21;
 
 let meta22 = browser.currentScene.createNode("meta");
-meta22.name = "reference";
-meta22.content = "HelloWorld.x3db";
+meta22.name = "identifier";
+meta22.content = "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d";
 head1.meta[20] = meta22;
 
 let meta23 = browser.currentScene.createNode("meta");
-meta23.name = "reference";
-meta23.content = "HelloWorld.xhtml";
+meta23.name = "license";
+meta23.content = "https://www.web3d.org/x3d/content/examples/license.html";
 head1.meta[21] = meta23;
-
-let meta24 = browser.currentScene.createNode("meta");
-meta24.name = "reference";
-meta24.content = "HelloWorld.json";
-head1.meta[22] = meta24;
 
 head = head1;
 
-//Example scene to illustrate X3D nodes and fields (XML elements and attributes)
-let WorldInfo26 = browser.currentScene.createNode("WorldInfo");
-WorldInfo26.info = new MFString(new java.lang.String["Example scene to illustrate a simple X3D model"]);
-WorldInfo26.title = "Hello World!";
+let WorldInfo25 = browser.currentScene.createNode("WorldInfo");
+WorldInfo25.title = "Hello World!";
+WorldInfo25.info = new MFString(new java.lang.String["Example scene to illustrate a simple X3D model"]);
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = WorldInfo26;
+browser.currentScene.children[0] = WorldInfo25;
 
-let Group27 = browser.currentScene.createNode("Group");
-let Viewpoint28 = browser.currentScene.createNode("Viewpoint");
-Viewpoint28.DEF = "ViewUpClose";
-Viewpoint28.centerOfRotation = new SFVec3f(new float[0,-1,0]);
-Viewpoint28.description = "Hello world!";
-Viewpoint28.position = new SFVec3f(new float[0,-1,7]);
-Group27.children = new MFNode();
+let Group26 = browser.currentScene.createNode("Group");
+let Viewpoint27 = browser.currentScene.createNode("Viewpoint");
+Viewpoint27.DEF = "ViewUpClose";
+Viewpoint27.description = "Hello world!";
+Viewpoint27.position = new SFVec3f(new float[0,-1,7]);
+Viewpoint27.centerOfRotation = new SFVec3f(new float[0,-1,0]);
+Group26.children = new MFNode();
 
-Group27.children[0] = Viewpoint28;
+Group26.children[0] = Viewpoint27;
 
-let Transform29 = browser.currentScene.createNode("Transform");
-Transform29.rotation = new SFRotation(new float[0,1,0,3]);
-let Shape30 = browser.currentScene.createNode("Shape");
-let Sphere31 = browser.currentScene.createNode("Sphere");
-Shape30.geometry = Sphere31;
+let Transform28 = browser.currentScene.createNode("Transform");
+Transform28.rotation = new SFRotation(new float[0,1,0,3]);
+let Shape29 = browser.currentScene.createNode("Shape");
+let Appearance30 = browser.currentScene.createNode("Appearance");
+let Material31 = browser.currentScene.createNode("Material");
+Material31.DEF = "MaterialLightBlue";
+Material31.diffuseColor = new SFColor(new float[0.1,0.5,1]);
+Appearance30.material = Material31;
 
-let Appearance32 = browser.currentScene.createNode("Appearance");
-let Material33 = browser.currentScene.createNode("Material");
-Material33.DEF = "MaterialLightBlue";
-Material33.diffuseColor = new SFColor(new float[0.1,0.5,1]);
-Appearance32.material = Material33;
+let ImageTexture32 = browser.currentScene.createNode("ImageTexture");
+ImageTexture32.DEF = "ImageCloudlessEarth";
+ImageTexture32.url = new MFString(new java.lang.String["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]);
+Appearance30.texture = ImageTexture32;
 
-let ImageTexture34 = browser.currentScene.createNode("ImageTexture");
-ImageTexture34.DEF = "ImageCloudlessEarth";
-ImageTexture34.url = new MFString(new java.lang.String["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]);
-Appearance32.texture = ImageTexture34;
+Shape29.appearance = Appearance30;
 
-Shape30.appearance = Appearance32;
+let Sphere33 = browser.currentScene.createNode("Sphere");
+Shape29.geometry = Sphere33;
 
-Transform29.child = new undefined();
+Transform28.child = new undefined();
 
-Transform29.child[0] = Shape30;
+Transform28.child[0] = Shape29;
 
-Group27.children[1] = Transform29;
+Group26.children[1] = Transform28;
 
-let Transform35 = browser.currentScene.createNode("Transform");
-Transform35.translation = new SFVec3f(new float[0,-2,0]);
-let Shape36 = browser.currentScene.createNode("Shape");
-let Text37 = browser.currentScene.createNode("Text");
-Text37.DEF = "TextMessage";
-Text37.string = new MFString(new java.lang.String["Hello","world!"]);
-let FontStyle38 = browser.currentScene.createNode("FontStyle");
-FontStyle38.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
-Text37.fontStyle = FontStyle38;
+let Transform34 = browser.currentScene.createNode("Transform");
+Transform34.translation = new SFVec3f(new float[0,-2,0]);
+let Shape35 = browser.currentScene.createNode("Shape");
+let Appearance36 = browser.currentScene.createNode("Appearance");
+let Material37 = browser.currentScene.createNode("Material");
+Material37.USE = "MaterialLightBlue";
+Appearance36.material = Material37;
 
-Shape36.geometry = Text37;
+Shape35.appearance = Appearance36;
 
-let Appearance39 = browser.currentScene.createNode("Appearance");
-let Material40 = browser.currentScene.createNode("Material");
-Material40.USE = "MaterialLightBlue";
-Appearance39.material = Material40;
+let Text38 = browser.currentScene.createNode("Text");
+Text38.DEF = "TextMessage";
+Text38.string = new MFString(new java.lang.String["Hello","world!"]);
+let FontStyle39 = browser.currentScene.createNode("FontStyle");
+FontStyle39.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
+Text38.fontStyle = FontStyle39;
 
-Shape36.appearance = Appearance39;
+Shape35.geometry = Text38;
 
-Transform35.child = new undefined();
+Transform34.child = new undefined();
 
-Transform35.child[0] = Shape36;
+Transform34.child[0] = Shape35;
 
-Group27.children[2] = Transform35;
+Group26.children[2] = Transform34;
 
-browser.currentScene.children[1] = Group27;
+browser.currentScene.children[1] = Group26;
 

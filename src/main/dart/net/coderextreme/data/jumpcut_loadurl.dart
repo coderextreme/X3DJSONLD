@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('3.0'),
+      version_ : SFString('4.0'),
       head_ : 
         head(
           meta_ : [
@@ -58,11 +58,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit')),
-
-            meta(
-              name_ : SFString('license'),
-              content_ : SFString('../../license.html'))]),
+              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit'))]),
       Scene_ : 
         Scene(
           children_ : [
@@ -70,9 +66,9 @@ var X3D0 =  X3D(
               title_ : SFString('jumpcut_loadurl.x3d')),
 
             Background(
+              skyColor_ : MFColor([SFColor(0), SFColor(0), SFColor(1)]),
               groundAngle_ : MFFloat([SFFloat(1.57)]),
-              groundColor_ : MFColor([SFColor(0), SFColor(0.5), SFColor(0), SFColor(0), SFColor(0.5), SFColor(0)]),
-              skyColor_ : MFColor([SFColor(0), SFColor(0), SFColor(1)])),
+              groundColor_ : MFColor([SFColor(0), SFColor(0.5), SFColor(0), SFColor(0), SFColor(0.5), SFColor(0)])),
 
             NavigationInfo(
               type_ : MFString([SFString("EXAMINE"), SFString("WALK"), SFString("FLY"), SFString("ANY")])),
@@ -84,8 +80,8 @@ var X3D0 =  X3D(
             Viewpoint(
               DEF_ : SFString('Top_View'),
               description_ : SFString('Top View'),
-              orientation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-1.57)]),
-              position_ : SFVec3f([SFDouble(0), SFDouble(10), SFDouble(0)])),
+              position_ : SFVec3f([SFDouble(0), SFDouble(10), SFDouble(0)]),
+              orientation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-1.57)])),
 
             TouchSensor(
               DEF_ : SFString('STARTER'),
@@ -108,24 +104,24 @@ var X3D0 =  X3D(
               field_ : [
                 field(
                   type_ : SFString("MFString"),
-                  name_ : SFString('myParameter'),
                   accessType_ : SFString("initializeOnly"),
+                  name_ : SFString('myParameter'),
                   value_ : SFString('\"Top_View\"')),
 
                 field(
                   type_ : SFString("MFString"),
-                  name_ : SFString('myUrl'),
                   accessType_ : SFString("initializeOnly"),
+                  name_ : SFString('myUrl'),
                   value_ : SFString('\"jumpcut_loadurl.x3d#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View\" \"jumpcut_loadurl.wrl#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View\"')),
 
                 field(
                   type_ : SFString("SFBool"),
-                  name_ : SFString('trigger_event'),
-                  accessType_ : SFString("inputOnly"))]),
+                  accessType_ : SFString("inputOnly"),
+                  name_ : SFString('trigger_event'))]),
 
             ROUTE(
-              fromField_ : SFString('isActive'),
               fromNode_ : SFString('STARTER'),
-              toField_ : SFString('trigger_event'),
-              toNode_ : SFString('MYSCRIPT'))]));
+              fromField_ : SFString('isActive'),
+              toNode_ : SFString('MYSCRIPT'),
+              toField_ : SFString('trigger_event'))]));
 void main() { exit(0); }

@@ -4,7 +4,7 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
-      var X3D0 =  new X3D().setProfile("Interchange").setVersion("3.0")
+      var X3D0 =  new X3D().setProfile("Interchange").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("rgb_alpha.x3d"))
         .addMeta(new meta().setName("Image").setContent("rgb_alpha-front.jpg"))
@@ -22,8 +22,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta(new meta().setName("description").setContent("Test browser ability to map a RGB plus alpha opacity to geometry. A checkerboard of four colored squares: lower left (red), lower right (transparent), uppser left (transparent) and upper right (red) map onto the faces of all geometry. For the sphere, the texture should cover the entire surface, and wrap counterclockwise from the back of the sphere. For the cone, the texture should wrap counterclockwise (from above) starting at the back of the cone. A circle cutout of the texture is applied right side up to the base of the cone when the cone is tilted toward the -z axis. For the cylinder, the texture should wrap counterclockwise (from above) starting at the back of the cylinder. A circle cutout of the texture is applied right side up to the top and bottom caps of the cylinder. For the box, the texture should be applied right side up in its entirety to each face of the box."))
         .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/PixelTexture/rgb_alpha.x3d"))
         .addMeta(new meta().setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("license").setContent("../../license.html")))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")))
       .setScene(new Scene()
         .addChild(new NavigationInfo().setType(Java.to(["EXAMINE","WALK","FLY","ANY"], Java.type("java.lang.String[]"))))
         .addChild(new Group()
@@ -31,7 +30,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material())
-                .setTexture(new PixelTexture().setDEF("RgbOpacityCheckerboard").setImage(Java.to([2,2,4,4278190335,4294901760,4294901760,4278190335], Java.type("int[]")))))
+                .setTexture(new PixelTexture().setDEF("RgbOpacityCheckerboard").setImage(Java.to([2,2,4,-16776961,-65536,-65536,-16776961], Java.type("int[]")))))
               .setGeometry(new Box())))
           .addChild(new Transform().setTranslation(Java.to([-4.85443,0.0694381,-0.00149918], Java.type("double[]")))
             .addChild(new Shape()
@@ -51,4 +50,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .setMaterial(new Material())
                 .setTexture(new PixelTexture().setUSE("RgbOpacityCheckerboard")))
               .setGeometry(new Cylinder())))))      ;
-    X3D0.toFileX3D("../data/rgb_alpha.new.graal.x3d");
+    X3D0.toFileJSON("../data/rgb_alpha.new.graal.json");

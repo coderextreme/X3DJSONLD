@@ -3,7 +3,7 @@ void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Immersive";
-X3D0.version = "3.3";
+X3D0.version = "4.0";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "title";
@@ -62,266 +62,252 @@ meta12.name = "generator";
 meta12.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
 head1.meta[10] = meta12;
 
-meta meta13 = createNode("meta");
-meta13.name = "license";
-meta13.content = "../license.html";
-head1.meta[11] = meta13;
-
 head = head1;
 
-WorldInfo WorldInfo15 = createNode("WorldInfo");
-WorldInfo15.title = "CoordinateAxes.x3d";
+WorldInfo WorldInfo14 = createNode("WorldInfo");
+WorldInfo14.title = "CoordinateAxes.x3d";
 children = new MFNode();
 
-children[0] = WorldInfo15;
+children[0] = WorldInfo14;
 
-Collision Collision16 = createNode("Collision");
-Collision16.DEF = "DoNotCollideWithVisualizationWidget";
-//Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph.
-//This NavigationInfo allows examine mode and will be overridden by any parent scene.
-//Each arrow goes from +1m to -1m to allow linear scaling to fit a scene
-//Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user
+Collision Collision15 = createNode("Collision");
+Collision15.DEF = "DoNotCollideWithVisualizationWidget";
+Group Group16 = createNode("Group");
 Group Group17 = createNode("Group");
-//Vertical Y arrow and label
-Group Group18 = createNode("Group");
-Group18.DEF = "ArrowGreen";
-Shape Shape19 = createNode("Shape");
-Cylinder Cylinder20 = createNode("Cylinder");
-Cylinder20.DEF = "ArrowCylinder";
-Cylinder20.radius = 0.025;
-Cylinder20.top = False;
-Shape19.geometry = Cylinder20;
+Group17.DEF = "ArrowGreen";
+Shape Shape18 = createNode("Shape");
+Appearance Appearance19 = createNode("Appearance");
+Appearance19.DEF = "Green";
+Material Material20 = createNode("Material");
+Material20.diffuseColor = new SFColor(new float[0.1,0.6,0.1]);
+Material20.emissiveColor = new SFColor(new float[0.05,0.2,0.05]);
+Appearance19.material = Material20;
 
-Appearance Appearance21 = createNode("Appearance");
-Appearance21.DEF = "Green";
-Material Material22 = createNode("Material");
-Material22.diffuseColor = new SFColor(new float[0.1,0.6,0.1]);
-Material22.emissiveColor = new SFColor(new float[0.05,0.2,0.05]);
-Appearance21.material = Material22;
+Shape18.appearance = Appearance19;
 
-Shape19.appearance = Appearance21;
-
-Group18.children = new MFNode();
-
-Group18.children[0] = Shape19;
-
-Transform Transform23 = createNode("Transform");
-Transform23.translation = new SFVec3f(new float[0,1,0]);
-Shape Shape24 = createNode("Shape");
-Cone Cone25 = createNode("Cone");
-Cone25.DEF = "ArrowCone";
-Cone25.bottomRadius = 0.05;
-Cone25.height = 0.1;
-Shape24.geometry = Cone25;
-
-Appearance Appearance26 = createNode("Appearance");
-Appearance26.USE = "Green";
-Shape24.appearance = Appearance26;
-
-Transform23.child = new undefined();
-
-Transform23.child[0] = Shape24;
-
-Group18.children[1] = Transform23;
+Cylinder Cylinder21 = createNode("Cylinder");
+Cylinder21.DEF = "ArrowCylinder";
+Cylinder21.top = False;
+Cylinder21.radius = 0.025;
+Shape18.geometry = Cylinder21;
 
 Group17.children = new MFNode();
 
-Group17.children[0] = Group18;
+Group17.children[0] = Shape18;
 
-Transform Transform27 = createNode("Transform");
-Transform27.translation = new SFVec3f(new float[0,1.08,0]);
-Billboard Billboard28 = createNode("Billboard");
-Shape Shape29 = createNode("Shape");
-Appearance Appearance30 = createNode("Appearance");
-Appearance30.DEF = "LABEL_APPEARANCE";
-Material Material31 = createNode("Material");
-Material31.diffuseColor = new SFColor(new float[1,1,0.3]);
-Material31.emissiveColor = new SFColor(new float[0.33,0.33,0.1]);
-Appearance30.material = Material31;
+Transform Transform22 = createNode("Transform");
+Transform22.translation = new SFVec3f(new float[0,1,0]);
+Shape Shape23 = createNode("Shape");
+Appearance Appearance24 = createNode("Appearance");
+Appearance24.USE = "Green";
+Shape23.appearance = Appearance24;
 
-Shape29.appearance = Appearance30;
+Cone Cone25 = createNode("Cone");
+Cone25.DEF = "ArrowCone";
+Cone25.height = 0.1;
+Cone25.bottomRadius = 0.05;
+Shape23.geometry = Cone25;
 
-Text Text32 = createNode("Text");
-Text32.string = new MFString(new java.lang.String["Y"]);
-FontStyle FontStyle33 = createNode("FontStyle");
-FontStyle33.DEF = "LABEL_FONT";
-FontStyle33.family = new MFString(new java.lang.String["SANS"]);
-FontStyle33.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
-FontStyle33.size = 0.2;
-Text32.fontStyle = FontStyle33;
+Transform22.child = new undefined();
 
-Shape29.geometry = Text32;
+Transform22.child[0] = Shape23;
 
-Billboard28.children = new MFNode();
+Group17.children[1] = Transform22;
 
-Billboard28.children[0] = Shape29;
+Group16.children = new MFNode();
 
-Transform27.children = new MFNode();
+Group16.children[0] = Group17;
 
-Transform27.children[0] = Billboard28;
+Transform Transform26 = createNode("Transform");
+Transform26.translation = new SFVec3f(new float[0,1.08,0]);
+Billboard Billboard27 = createNode("Billboard");
+Shape Shape28 = createNode("Shape");
+Appearance Appearance29 = createNode("Appearance");
+Appearance29.DEF = "LABEL_APPEARANCE";
+Material Material30 = createNode("Material");
+Material30.diffuseColor = new SFColor(new float[1,1,0.3]);
+Material30.emissiveColor = new SFColor(new float[0.33,0.33,0.1]);
+Appearance29.material = Material30;
 
-Group17.children[1] = Transform27;
+Shape28.appearance = Appearance29;
 
-Collision16.proxy = Group17;
+Text Text31 = createNode("Text");
+Text31.string = new MFString(new java.lang.String["Y"]);
+FontStyle FontStyle32 = createNode("FontStyle");
+FontStyle32.DEF = "LABEL_FONT";
+FontStyle32.family = new MFString(new java.lang.String["SANS"]);
+FontStyle32.size = 0.2;
+FontStyle32.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
+Text31.fontStyle = FontStyle32;
 
-Transform Transform34 = createNode("Transform");
-Transform34.rotation = new SFRotation(new float[0,0,1,-1.57079]);
-//Horizontal X arrow and label
+Shape28.geometry = Text31;
+
+Billboard27.children = new MFNode();
+
+Billboard27.children[0] = Shape28;
+
+Transform26.children = new MFNode();
+
+Transform26.children[0] = Billboard27;
+
+Group16.children[1] = Transform26;
+
+Collision15.proxy = Group16;
+
+Transform Transform33 = createNode("Transform");
+Transform33.rotation = new SFRotation(new float[0,0,1,-1.57079]);
+Group Group34 = createNode("Group");
 Group Group35 = createNode("Group");
-Group Group36 = createNode("Group");
-Group36.DEF = "ArrowRed";
-Shape Shape37 = createNode("Shape");
-Cylinder Cylinder38 = createNode("Cylinder");
-Cylinder38.USE = "ArrowCylinder";
-Shape37.geometry = Cylinder38;
+Group35.DEF = "ArrowRed";
+Shape Shape36 = createNode("Shape");
+Appearance Appearance37 = createNode("Appearance");
+Appearance37.DEF = "Red";
+Material Material38 = createNode("Material");
+Material38.diffuseColor = new SFColor(new float[0.7,0.1,0.1]);
+Material38.emissiveColor = new SFColor(new float[0.33,0,0]);
+Appearance37.material = Material38;
 
-Appearance Appearance39 = createNode("Appearance");
-Appearance39.DEF = "Red";
-Material Material40 = createNode("Material");
-Material40.diffuseColor = new SFColor(new float[0.7,0.1,0.1]);
-Material40.emissiveColor = new SFColor(new float[0.33,0,0]);
-Appearance39.material = Material40;
+Shape36.appearance = Appearance37;
 
-Shape37.appearance = Appearance39;
-
-Group36.children = new MFNode();
-
-Group36.children[0] = Shape37;
-
-Transform Transform41 = createNode("Transform");
-Transform41.translation = new SFVec3f(new float[0,1,0]);
-Shape Shape42 = createNode("Shape");
-Cone Cone43 = createNode("Cone");
-Cone43.USE = "ArrowCone";
-Shape42.geometry = Cone43;
-
-Appearance Appearance44 = createNode("Appearance");
-Appearance44.USE = "Red";
-Shape42.appearance = Appearance44;
-
-Transform41.child = new undefined();
-
-Transform41.child[0] = Shape42;
-
-Group36.children[1] = Transform41;
+Cylinder Cylinder39 = createNode("Cylinder");
+Cylinder39.USE = "ArrowCylinder";
+Shape36.geometry = Cylinder39;
 
 Group35.children = new MFNode();
 
-Group35.children[0] = Group36;
+Group35.children[0] = Shape36;
 
-Transform Transform45 = createNode("Transform");
-Transform45.rotation = new SFRotation(new float[0,0,1,1.57079]);
-Transform45.translation = new SFVec3f(new float[0.072,1.1,0]);
-//note label rotated back to original coordinate frame
-Billboard Billboard46 = createNode("Billboard");
-Shape Shape47 = createNode("Shape");
-Appearance Appearance48 = createNode("Appearance");
-Appearance48.USE = "LABEL_APPEARANCE";
-Shape47.appearance = Appearance48;
+Transform Transform40 = createNode("Transform");
+Transform40.translation = new SFVec3f(new float[0,1,0]);
+Shape Shape41 = createNode("Shape");
+Appearance Appearance42 = createNode("Appearance");
+Appearance42.USE = "Red";
+Shape41.appearance = Appearance42;
 
-Text Text49 = createNode("Text");
-Text49.string = new MFString(new java.lang.String["X"]);
-FontStyle FontStyle50 = createNode("FontStyle");
-FontStyle50.USE = "LABEL_FONT";
-Text49.fontStyle = FontStyle50;
+Cone Cone43 = createNode("Cone");
+Cone43.USE = "ArrowCone";
+Shape41.geometry = Cone43;
 
-Shape47.geometry = Text49;
+Transform40.child = new undefined();
 
-Billboard46.children = new MFNode();
+Transform40.child[0] = Shape41;
 
-Billboard46.children[0] = Shape47;
+Group35.children[1] = Transform40;
 
-Transform45.children = new MFNode();
+Group34.children = new MFNode();
 
-Transform45.children[0] = Billboard46;
+Group34.children[0] = Group35;
 
-Group35.children[1] = Transform45;
+Transform Transform44 = createNode("Transform");
+Transform44.translation = new SFVec3f(new float[0.072,1.1,0]);
+Transform44.rotation = new SFRotation(new float[0,0,1,1.57079]);
+Billboard Billboard45 = createNode("Billboard");
+Shape Shape46 = createNode("Shape");
+Appearance Appearance47 = createNode("Appearance");
+Appearance47.USE = "LABEL_APPEARANCE";
+Shape46.appearance = Appearance47;
 
-Transform34.children = new MFNode();
+Text Text48 = createNode("Text");
+Text48.string = new MFString(new java.lang.String["X"]);
+FontStyle FontStyle49 = createNode("FontStyle");
+FontStyle49.USE = "LABEL_FONT";
+Text48.fontStyle = FontStyle49;
 
-Transform34.children[0] = Group35;
+Shape46.geometry = Text48;
 
-Collision16.proxy = Transform34;
+Billboard45.children = new MFNode();
 
-Transform Transform51 = createNode("Transform");
-Transform51.rotation = new SFRotation(new float[1,0,0,1.57079]);
-//Perpendicular Z arrow and label, note right-hand rule
+Billboard45.children[0] = Shape46;
+
+Transform44.children = new MFNode();
+
+Transform44.children[0] = Billboard45;
+
+Group34.children[1] = Transform44;
+
+Transform33.children = new MFNode();
+
+Transform33.children[0] = Group34;
+
+Collision15.proxy = Transform33;
+
+Transform Transform50 = createNode("Transform");
+Transform50.rotation = new SFRotation(new float[1,0,0,1.57079]);
+Group Group51 = createNode("Group");
 Group Group52 = createNode("Group");
-Group Group53 = createNode("Group");
-Group53.DEF = "ArrowBlue";
-Shape Shape54 = createNode("Shape");
-Cylinder Cylinder55 = createNode("Cylinder");
-Cylinder55.USE = "ArrowCylinder";
-Shape54.geometry = Cylinder55;
+Group52.DEF = "ArrowBlue";
+Shape Shape53 = createNode("Shape");
+Appearance Appearance54 = createNode("Appearance");
+Appearance54.DEF = "Blue";
+Material Material55 = createNode("Material");
+Material55.diffuseColor = new SFColor(new float[0.3,0.3,1]);
+Material55.emissiveColor = new SFColor(new float[0.1,0.1,0.33]);
+Appearance54.material = Material55;
 
-Appearance Appearance56 = createNode("Appearance");
-Appearance56.DEF = "Blue";
-Material Material57 = createNode("Material");
-Material57.diffuseColor = new SFColor(new float[0.3,0.3,1]);
-Material57.emissiveColor = new SFColor(new float[0.1,0.1,0.33]);
-Appearance56.material = Material57;
+Shape53.appearance = Appearance54;
 
-Shape54.appearance = Appearance56;
-
-Group53.children = new MFNode();
-
-Group53.children[0] = Shape54;
-
-Transform Transform58 = createNode("Transform");
-Transform58.translation = new SFVec3f(new float[0,1,0]);
-Shape Shape59 = createNode("Shape");
-Cone Cone60 = createNode("Cone");
-Cone60.USE = "ArrowCone";
-Shape59.geometry = Cone60;
-
-Appearance Appearance61 = createNode("Appearance");
-Appearance61.USE = "Blue";
-Shape59.appearance = Appearance61;
-
-Transform58.child = new undefined();
-
-Transform58.child[0] = Shape59;
-
-Group53.children[1] = Transform58;
+Cylinder Cylinder56 = createNode("Cylinder");
+Cylinder56.USE = "ArrowCylinder";
+Shape53.geometry = Cylinder56;
 
 Group52.children = new MFNode();
 
-Group52.children[0] = Group53;
+Group52.children[0] = Shape53;
 
-Transform Transform62 = createNode("Transform");
-Transform62.rotation = new SFRotation(new float[1,0,0,-1.57079]);
-Transform62.translation = new SFVec3f(new float[0,1.1,0.072]);
-//note label rotated back to original coordinate frame
-Billboard Billboard63 = createNode("Billboard");
-Shape Shape64 = createNode("Shape");
-Appearance Appearance65 = createNode("Appearance");
-Appearance65.USE = "LABEL_APPEARANCE";
-Shape64.appearance = Appearance65;
+Transform Transform57 = createNode("Transform");
+Transform57.translation = new SFVec3f(new float[0,1,0]);
+Shape Shape58 = createNode("Shape");
+Appearance Appearance59 = createNode("Appearance");
+Appearance59.USE = "Blue";
+Shape58.appearance = Appearance59;
 
-Text Text66 = createNode("Text");
-Text66.string = new MFString(new java.lang.String["Z"]);
-FontStyle FontStyle67 = createNode("FontStyle");
-FontStyle67.USE = "LABEL_FONT";
-Text66.fontStyle = FontStyle67;
+Cone Cone60 = createNode("Cone");
+Cone60.USE = "ArrowCone";
+Shape58.geometry = Cone60;
 
-Shape64.geometry = Text66;
+Transform57.child = new undefined();
 
-Billboard63.children = new MFNode();
+Transform57.child[0] = Shape58;
 
-Billboard63.children[0] = Shape64;
+Group52.children[1] = Transform57;
 
-Transform62.children = new MFNode();
+Group51.children = new MFNode();
 
-Transform62.children[0] = Billboard63;
+Group51.children[0] = Group52;
 
-Group52.children[1] = Transform62;
+Transform Transform61 = createNode("Transform");
+Transform61.translation = new SFVec3f(new float[0,1.1,0.072]);
+Transform61.rotation = new SFRotation(new float[1,0,0,-1.57079]);
+Billboard Billboard62 = createNode("Billboard");
+Shape Shape63 = createNode("Shape");
+Appearance Appearance64 = createNode("Appearance");
+Appearance64.USE = "LABEL_APPEARANCE";
+Shape63.appearance = Appearance64;
 
-Transform51.children = new MFNode();
+Text Text65 = createNode("Text");
+Text65.string = new MFString(new java.lang.String["Z"]);
+FontStyle FontStyle66 = createNode("FontStyle");
+FontStyle66.USE = "LABEL_FONT";
+Text65.fontStyle = FontStyle66;
 
-Transform51.children[0] = Group52;
+Shape63.geometry = Text65;
 
-Collision16.proxy = Transform51;
+Billboard62.children = new MFNode();
 
-children[1] = Collision16;
+Billboard62.children[0] = Shape63;
+
+Transform61.children = new MFNode();
+
+Transform61.children[0] = Billboard62;
+
+Group51.children[1] = Transform61;
+
+Transform50.children = new MFNode();
+
+Transform50.children[0] = Group51;
+
+Collision15.proxy = Transform50;
+
+children[1] = Collision15;
 
 }

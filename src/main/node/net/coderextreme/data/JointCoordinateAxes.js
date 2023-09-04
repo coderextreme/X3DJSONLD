@@ -1,0 +1,58 @@
+var java = require('java');
+var util = require('util');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: util.promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
+var autoclass = require('../../../X3Dautoclass');
+var ConfigurationProperties = autoclass.ConfigurationProperties;
+ConfigurationProperties.showDefaultAttributes = false;
+ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
+ConfigurationProperties.deleteIntermediateFiles = false;
+ConfigurationProperties.setStripTrailingZeroes(true);
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
+      .setHead((new autoclass.head()))
+      .setScene((new autoclass.Scene())
+        .addChild((new autoclass.NavigationInfo()).setHeadlight(false))
+        .addChild((new autoclass.Group())
+          .addChild((new autoclass.Group()).setDEF("ARROW")
+            .addChild((new autoclass.Shape())
+              .setAppearance((new autoclass.Appearance()).setDEF("ARROW_APPEARANCE")
+                .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0.3), java.newFloat(0.3), java.newFloat(1)])).setEmissiveColor(java.newArray("float", [java.newFloat(0.3), java.newFloat(0.3), java.newFloat(0.33)]))))
+              .setGeometry((new autoclass.Cylinder()).setTop(false).setBottom(false).setRadius(java.newFloat(0.025))))
+            .addChild((new autoclass.Transform()).setTranslation(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0)]))
+              .addChild((new autoclass.Shape()).setDEF("ARROW_POINTER")
+                .setAppearance((new autoclass.Appearance()).setUSE("ARROW_APPEARANCE"))
+                .setGeometry((new autoclass.Cone()).setHeight(java.newFloat(0.1)).setBottomRadius(java.newFloat(0.05)))))
+            .addChild((new autoclass.Transform()).setTranslation(java.newArray("float", [java.newFloat(0), java.newFloat(-1), java.newFloat(0)])).setRotation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(3.1416)]))
+              .addChild((new autoclass.Shape()).setUSE("ARROW_POINTER"))))
+          .addChild((new autoclass.Transform()).setTranslation(java.newArray("float", [java.newFloat(0), java.newFloat(1.08), java.newFloat(0)]))
+            .addChild((new autoclass.Billboard())
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance()).setDEF("LABEL_APPEARANCE")
+                  .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(0.3)])).setEmissiveColor(java.newArray("float", [java.newFloat(0.33), java.newFloat(0.33), java.newFloat(0.1)]))))
+                .setGeometry((new autoclass.Text()).setString(java.newArray("java.lang.String", ["Y"]))
+                  .setFontStyle((new autoclass.FontStyle()).setDEF("LABEL_FONT").setFamily(java.newArray("java.lang.String", ["SANS"])).setSize(java.newFloat(0.2)).setJustify(java.newArray("java.lang.String", ["MIDDLE"]))))))))
+        .addChild((new autoclass.Transform()).setRotation(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(-1.5708)]))
+          .addChild((new autoclass.Group())
+            .addChild((new autoclass.Group()).setUSE("ARROW"))
+            .addChild((new autoclass.Transform()).setTranslation(java.newArray("float", [java.newFloat(0.072), java.newFloat(1.1), java.newFloat(0)])).setRotation(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(1.5708)]))
+              .addChild((new autoclass.Billboard())
+                .addChild((new autoclass.Shape())
+                  .setAppearance((new autoclass.Appearance()).setUSE("LABEL_APPEARANCE"))
+                  .setGeometry((new autoclass.Text()).setString(java.newArray("java.lang.String", ["X"]))
+                    .setFontStyle((new autoclass.FontStyle()).setUSE("LABEL_FONT"))))))))
+        .addChild((new autoclass.Transform()).setRotation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(1.5708)]))
+          .addChild((new autoclass.Group())
+            .addChild((new autoclass.Group()).setUSE("ARROW"))
+            .addChild((new autoclass.Transform()).setTranslation(java.newArray("float", [java.newFloat(0), java.newFloat(1.1), java.newFloat(0.072)])).setRotation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(-1.5708)]))
+              .addChild((new autoclass.Billboard())
+                .addChild((new autoclass.Shape())
+                  .setAppearance((new autoclass.Appearance()).setUSE("LABEL_APPEARANCE"))
+                  .setGeometry((new autoclass.Text()).setString(java.newArray("java.lang.String", ["Z"]))
+                    .setFontStyle((new autoclass.FontStyle()).setUSE("LABEL_FONT")))))))))      ;
+    X3D0.toFileX3D("../data/JointCoordinateAxes.new.node.x3d");
+    process.exit(0);

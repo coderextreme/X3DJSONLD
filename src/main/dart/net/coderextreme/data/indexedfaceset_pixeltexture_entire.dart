@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Interchange'),
-      version_ : SFString('3.0'),
+      version_ : SFString('4.0'),
       head_ : 
         head(
           meta_ : [
@@ -58,11 +58,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit')),
-
-            meta(
-              name_ : SFString('license'),
-              content_ : SFString('../../license.html'))]),
+              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit'))]),
       Scene_ : 
         Scene(
           children_ : [
@@ -71,28 +67,28 @@ var X3D0 =  X3D(
 
             Viewpoint(
               description_ : SFString('Rear View'),
-              orientation_ : SFRotation([SFDouble(0), SFDouble(1), SFDouble(0), SFDouble(3.14)]),
-              position_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(-10)])),
+              position_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(-10)]),
+              orientation_ : SFRotation([SFDouble(0), SFDouble(1), SFDouble(0), SFDouble(3.14)])),
 
             Viewpoint(
               description_ : SFString('Top View'),
-              orientation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-1.57)]),
-              position_ : SFVec3f([SFDouble(0), SFDouble(10), SFDouble(0)])),
+              position_ : SFVec3f([SFDouble(0), SFDouble(10), SFDouble(0)]),
+              orientation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-1.57)])),
 
             Viewpoint(
               description_ : SFString('Bottom View'),
-              orientation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(1.57)]),
-              position_ : SFVec3f([SFDouble(0), SFDouble(-10), SFDouble(0)])),
+              position_ : SFVec3f([SFDouble(0), SFDouble(-10), SFDouble(0)]),
+              orientation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(1.57)])),
 
             Viewpoint(
               description_ : SFString('Right View'),
-              orientation_ : SFRotation([SFDouble(0), SFDouble(1), SFDouble(0), SFDouble(1.57)]),
-              position_ : SFVec3f([SFDouble(10), SFDouble(0), SFDouble(0)])),
+              position_ : SFVec3f([SFDouble(10), SFDouble(0), SFDouble(0)]),
+              orientation_ : SFRotation([SFDouble(0), SFDouble(1), SFDouble(0), SFDouble(1.57)])),
 
             Viewpoint(
               description_ : SFString('Left View'),
-              orientation_ : SFRotation([SFDouble(0), SFDouble(1), SFDouble(0), SFDouble(-1.57)]),
-              position_ : SFVec3f([SFDouble(-10), SFDouble(0), SFDouble(0)])),
+              position_ : SFVec3f([SFDouble(-10), SFDouble(0), SFDouble(0)]),
+              orientation_ : SFRotation([SFDouble(0), SFDouble(1), SFDouble(0), SFDouble(-1.57)])),
 
             NavigationInfo(
               type_ : MFString([SFString("EXAMINE"), SFString("WALK"), SFString("FLY"), SFString("ANY")])),
@@ -104,7 +100,7 @@ var X3D0 =  X3D(
                     Material(),
                   texture_ : 
                     PixelTexture(
-                      image_ : SFImage([SFInt32(2), SFInt32(2), SFInt32(4), SFInt32(4278190335), SFInt32(16711935), SFInt32(4294967295), SFInt32(4294902015)]),
+                      image_ : SFImage([SFInt32(2), SFInt32(2), SFInt32(4), SFInt32(-16776961), SFInt32(16711935), SFInt32(-1), SFInt32(-65281)]),
                       repeatS_ : false,
                       repeatT_ : false)),
               geometry_ : 

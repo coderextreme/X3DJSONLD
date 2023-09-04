@@ -37,12 +37,12 @@ var X3D0 =  X3D(
               content_ : SFString('CHANGELOG.txt')),
 
             meta(
-              name_ : SFString('TODO'),
-              content_ : SFString('credit for audio files')),
-
-            meta(
               name_ : SFString('reference'),
               content_ : SFString('https://medialab.hmu.gr/minipages/x3domAudio')),
+
+            meta(
+              name_ : SFString('TODO'),
+              content_ : SFString('credit for audio files')),
 
             meta(
               name_ : SFString('identifier'),
@@ -50,11 +50,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit')),
-
-            meta(
-              name_ : SFString('license'),
-              content_ : SFString('../license.html'))]),
+              content_ : SFString('X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit'))]),
       Scene_ : 
         Scene(
           children_ : [
@@ -65,20 +61,20 @@ var X3D0 =  X3D(
               DEF_ : SFString('NAV')),
 
             Background(
-              backUrl_ : MFString([SFString("images/generic/BK1.png"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png")]),
-              bottomUrl_ : MFString([SFString("images/generic/DN1.png"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png")]),
               frontUrl_ : MFString([SFString("images/generic/FR1.png"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png")]),
+              backUrl_ : MFString([SFString("images/generic/BK1.png"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png")]),
               leftUrl_ : MFString([SFString("images/generic/LF1.png"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png")]),
               rightUrl_ : MFString([SFString("images/generic/RT1.png"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png")]),
-              topUrl_ : MFString([SFString("images/generic/UP1.png"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png")])),
+              topUrl_ : MFString([SFString("images/generic/UP1.png"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png")]),
+              bottomUrl_ : MFString([SFString("images/generic/DN1.png"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png")])),
 
             Viewpoint(
               DEF_ : SFString('Camera001'),
               description_ : SFString('Camera001'),
-              farDistance_ : 0,
-              nearDistance_ : 1,
+              position_ : SFVec3f([SFDouble(0), SFDouble(2000), SFDouble(3500)]),
               orientation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.523599)]),
-              position_ : SFVec3f([SFDouble(0), SFDouble(2000), SFDouble(3500)])),
+              nearDistance_ : 1,
+              farDistance_ : 0),
 
             Transform(
               DEF_ : SFString('Floor'),
@@ -94,14 +90,14 @@ var X3D0 =  X3D(
                   geometry_ : 
                     IndexedFaceSet(
                       DEF_ : SFString('Box001-GEOMETRY'),
-                      coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(2), SFInt32(-1), SFInt32(3), SFInt32(4), SFInt32(5), SFInt32(-1), SFInt32(6), SFInt32(7), SFInt32(8), SFInt32(-1), SFInt32(9), SFInt32(10), SFInt32(11), SFInt32(-1), SFInt32(12), SFInt32(13), SFInt32(14), SFInt32(-1), SFInt32(15), SFInt32(16), SFInt32(17), SFInt32(-1), SFInt32(18), SFInt32(19), SFInt32(20), SFInt32(-1), SFInt32(21), SFInt32(22), SFInt32(23), SFInt32(-1), SFInt32(24), SFInt32(25), SFInt32(26), SFInt32(-1), SFInt32(27), SFInt32(28), SFInt32(29), SFInt32(-1), SFInt32(30), SFInt32(31), SFInt32(32), SFInt32(-1), SFInt32(33), SFInt32(34), SFInt32(35), SFInt32(-1)]),
                       solid_ : false,
-                      coord_ : 
-                        Coordinate(
-                          point_ : MFVec3f([SFVec3f([-1000,0,1000]),SFVec3f([-1000,0,-1000]),SFVec3f([1000,0,-1000]),SFVec3f([1000,0,-1000]),SFVec3f([1000,0,1000]),SFVec3f([-1000,0,1000]),SFVec3f([-1000,8.031588,1000]),SFVec3f([1000,8.031588,1000]),SFVec3f([1000,8.031588,-1000]),SFVec3f([1000,8.031588,-1000]),SFVec3f([-1000,8.031588,-1000]),SFVec3f([-1000,8.031588,1000]),SFVec3f([-1000,0,1000]),SFVec3f([1000,0,1000]),SFVec3f([1000,8.031588,1000]),SFVec3f([1000,8.031588,1000]),SFVec3f([-1000,8.031588,1000]),SFVec3f([-1000,0,1000]),SFVec3f([1000,0,1000]),SFVec3f([1000,0,-1000]),SFVec3f([1000,8.031588,-1000]),SFVec3f([1000,8.031588,-1000]),SFVec3f([1000,8.031588,1000]),SFVec3f([1000,0,1000]),SFVec3f([1000,0,-1000]),SFVec3f([-1000,0,-1000]),SFVec3f([-1000,8.031588,-1000]),SFVec3f([-1000,8.031588,-1000]),SFVec3f([1000,8.031588,-1000]),SFVec3f([1000,0,-1000]),SFVec3f([-1000,0,-1000]),SFVec3f([-1000,0,1000]),SFVec3f([-1000,8.031588,1000]),SFVec3f([-1000,8.031588,1000]),SFVec3f([-1000,8.031588,-1000]),SFVec3f([-1000,0,-1000])])),
+                      coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(2), SFInt32(-1), SFInt32(3), SFInt32(4), SFInt32(5), SFInt32(-1), SFInt32(6), SFInt32(7), SFInt32(8), SFInt32(-1), SFInt32(9), SFInt32(10), SFInt32(11), SFInt32(-1), SFInt32(12), SFInt32(13), SFInt32(14), SFInt32(-1), SFInt32(15), SFInt32(16), SFInt32(17), SFInt32(-1), SFInt32(18), SFInt32(19), SFInt32(20), SFInt32(-1), SFInt32(21), SFInt32(22), SFInt32(23), SFInt32(-1), SFInt32(24), SFInt32(25), SFInt32(26), SFInt32(-1), SFInt32(27), SFInt32(28), SFInt32(29), SFInt32(-1), SFInt32(30), SFInt32(31), SFInt32(32), SFInt32(-1), SFInt32(33), SFInt32(34), SFInt32(35), SFInt32(-1)]),
                       normal_ : 
                         Normal(
-                          vector_ : MFVec3f([SFVec3f([0,-1,0]),SFVec3f([0,-1,0]),SFVec3f([0,-1,0]),SFVec3f([0,-1,0]),SFVec3f([0,-1,0]),SFVec3f([0,-1,0]),SFVec3f([0,1,0]),SFVec3f([0,1,0]),SFVec3f([0,1,0]),SFVec3f([0,1,0]),SFVec3f([0,1,0]),SFVec3f([0,1,0]),SFVec3f([0,0,1]),SFVec3f([0,0,1]),SFVec3f([0,0,1]),SFVec3f([0,0,1]),SFVec3f([0,0,1]),SFVec3f([0,0,1]),SFVec3f([1,0,0]),SFVec3f([1,0,0]),SFVec3f([1,0,0]),SFVec3f([1,0,0]),SFVec3f([1,0,0]),SFVec3f([1,0,0]),SFVec3f([0,0,-1]),SFVec3f([0,0,-1]),SFVec3f([0,0,-1]),SFVec3f([0,0,-1]),SFVec3f([0,0,-1]),SFVec3f([0,0,-1]),SFVec3f([-1,0,0]),SFVec3f([-1,0,0]),SFVec3f([-1,0,0]),SFVec3f([-1,0,0]),SFVec3f([-1,0,0]),SFVec3f([-1,0,0])]))))),
+                          vector_ : MFVec3f([SFVec3f([0,-1,0]),SFVec3f([0,-1,0]),SFVec3f([0,-1,0]),SFVec3f([0,-1,0]),SFVec3f([0,-1,0]),SFVec3f([0,-1,0]),SFVec3f([0,1,0]),SFVec3f([0,1,0]),SFVec3f([0,1,0]),SFVec3f([0,1,0]),SFVec3f([0,1,0]),SFVec3f([0,1,0]),SFVec3f([0,0,1]),SFVec3f([0,0,1]),SFVec3f([0,0,1]),SFVec3f([0,0,1]),SFVec3f([0,0,1]),SFVec3f([0,0,1]),SFVec3f([1,0,0]),SFVec3f([1,0,0]),SFVec3f([1,0,0]),SFVec3f([1,0,0]),SFVec3f([1,0,0]),SFVec3f([1,0,0]),SFVec3f([0,0,-1]),SFVec3f([0,0,-1]),SFVec3f([0,0,-1]),SFVec3f([0,0,-1]),SFVec3f([0,0,-1]),SFVec3f([0,0,-1]),SFVec3f([-1,0,0]),SFVec3f([-1,0,0]),SFVec3f([-1,0,0]),SFVec3f([-1,0,0]),SFVec3f([-1,0,0]),SFVec3f([-1,0,0])])),
+                      coord_ : 
+                        Coordinate(
+                          point_ : MFVec3f([SFVec3f([-1000,0,1000]),SFVec3f([-1000,0,-1000]),SFVec3f([1000,0,-1000]),SFVec3f([1000,0,-1000]),SFVec3f([1000,0,1000]),SFVec3f([-1000,0,1000]),SFVec3f([-1000,8.031588,1000]),SFVec3f([1000,8.031588,1000]),SFVec3f([1000,8.031588,-1000]),SFVec3f([1000,8.031588,-1000]),SFVec3f([-1000,8.031588,-1000]),SFVec3f([-1000,8.031588,1000]),SFVec3f([-1000,0,1000]),SFVec3f([1000,0,1000]),SFVec3f([1000,8.031588,1000]),SFVec3f([1000,8.031588,1000]),SFVec3f([-1000,8.031588,1000]),SFVec3f([-1000,0,1000]),SFVec3f([1000,0,1000]),SFVec3f([1000,0,-1000]),SFVec3f([1000,8.031588,-1000]),SFVec3f([1000,8.031588,-1000]),SFVec3f([1000,8.031588,1000]),SFVec3f([1000,0,1000]),SFVec3f([1000,0,-1000]),SFVec3f([-1000,0,-1000]),SFVec3f([-1000,8.031588,-1000]),SFVec3f([-1000,8.031588,-1000]),SFVec3f([1000,8.031588,-1000]),SFVec3f([1000,0,-1000]),SFVec3f([-1000,0,-1000]),SFVec3f([-1000,0,1000]),SFVec3f([-1000,8.031588,1000]),SFVec3f([-1000,8.031588,1000]),SFVec3f([-1000,8.031588,-1000]),SFVec3f([-1000,0,-1000])]))))),
 
             Transform(
               DEF_ : SFString('InlineScene'),

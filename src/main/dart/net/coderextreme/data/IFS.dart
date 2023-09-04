@@ -7,10 +7,6 @@ var X3D0 =  X3D(
       version_ : SFString('4.0'),
       head_ : 
         head(
-          component_ : 
-            component(
-              name_ : SFString('HAnim'),
-              level_ : 1),
           meta_ : [
             meta(
               name_ : SFString('title'),
@@ -39,26 +35,31 @@ var X3D0 =  X3D(
             meta(
               name_ : SFString('created'),
               content_ : SFString('9 November 2020')),
-
-            meta(
-              name_ : SFString('license'),
-              content_ : SFString('../license.html'))]),
+          component_ : 
+            component(
+              name_ : SFString('HAnim'),
+              level_ : 1)]),
       Scene_ : 
         Scene(
           children_ : [
             Group(
-              /*DEFS for markers of skeleton joints, segments, and sites*/
               children_ : [
                 Transform(
                   translation_ : SFVec3f([SFDouble(0), SFDouble(2.1), SFDouble(0)]),
                   child_ : 
                     Shape(
                       DEF_ : SFString('HAnimSiteShape'),
+                      appearance_ : 
+                        Appearance(
+                          material_ : 
+                            Material(
+                              diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(0)]),
+                              transparency_ : 0.3)),
                       geometry_ : 
                         IndexedFaceSet(
                           DEF_ : SFString('DiamondIFS'),
-                          creaseAngle_ : 0.5,
                           solid_ : false,
+                          creaseAngle_ : 0.5,
                           coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(2), SFInt32(-1), SFInt32(0), SFInt32(2), SFInt32(3), SFInt32(-1), SFInt32(0), SFInt32(3), SFInt32(4), SFInt32(-1), SFInt32(0), SFInt32(4), SFInt32(1), SFInt32(-1), SFInt32(5), SFInt32(2), SFInt32(1), SFInt32(-1), SFInt32(5), SFInt32(3), SFInt32(2), SFInt32(-1), SFInt32(5), SFInt32(4), SFInt32(3), SFInt32(-1), SFInt32(5), SFInt32(1), SFInt32(4), SFInt32(-1)]),
                           color_ : 
                             ColorRGBA(
@@ -66,13 +67,7 @@ var X3D0 =  X3D(
                               color_ : MFColorRGBA([SFColorRGBA(1), SFColorRGBA(1), SFColorRGBA(0), SFColorRGBA(1), SFColorRGBA(1), SFColorRGBA(1), SFColorRGBA(0), SFColorRGBA(0.1)])),
                           coord_ : 
                             Coordinate(
-                              point_ : MFVec3f([SFVec3f([0,0.01,0]),SFVec3f([-0.01,0,0]),SFVec3f([0,0,0.01]),SFVec3f([0.01,0,0]),SFVec3f([0,0,-0.01]),SFVec3f([0,-0.01,0])]))),
-                      appearance_ : 
-                        Appearance(
-                          material_ : 
-                            Material(
-                              diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(0)]),
-                              transparency_ : 0.3))))]),
+                              point_ : MFVec3f([SFVec3f([0,0.01,0]),SFVec3f([-0.01,0,0]),SFVec3f([0,0,0.01]),SFVec3f([0.01,0,0]),SFVec3f([0,0,-0.01]),SFVec3f([0,-0.01,0])])))))]),
 
             NavigationInfo(
               speed_ : 1.5),

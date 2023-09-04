@@ -45,7 +45,7 @@ public class gridBack {
     model.toFileJSON("../data/gridBack.new.json");
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("3.0")
+      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("gridBack.x3d"))
         .addMeta(new meta().setName("description").setContent("Checkerboard grid background for X3D/VRML materials selection."))
@@ -56,35 +56,34 @@ public class gridBack {
         .addMeta(new meta().setName("reference").setContent("http://vrmlstuff.free.fr/materials"))
         .addMeta(new meta().setName("subject").setContent("Universal Media Material Library"))
         .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json"))
-        .addMeta(new meta().setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
-        .addMeta(new meta().setName("license").setContent("../license.html")))
+        .addMeta(new meta().setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html")))
       .setScene(new Scene()
         .addChild(new Shape()
           .setAppearance(new Appearance()
             .setMaterial(new Material().setAmbientIntensity(0.01f).setDiffuseColor(new float[] {1f,1f,1f}).setShininess(0.05f)))
-          .setGeometry(new IndexedFaceSet().setColorIndex(new MFInt320().getArray()).setColorPerVertex(false).setCoordIndex(new MFInt321().getArray()).setNormalPerVertex(false)
-            .setCoord(new Coordinate().setPoint(new MFVec3f2().getArray()))
-            .setColor(new Color().setColor(new MFColor3().getArray())))))      ;
+          .setGeometry(new IndexedFaceSet().setColorPerVertex(false).setNormalPerVertex(false).setColorIndex(new MFInt320().getArray()).setCoordIndex(new MFInt321().getArray())
+            .setColor(new Color().setColor(new MFColor2().getArray()))
+            .setCoord(new Coordinate().setPoint(new MFVec3f3().getArray())))))      ;
     return X3D0;
     }
-protected class MFInt320 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+private class MFInt320 {
+  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0});
   }
 }
-protected class MFInt321 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+private class MFInt321 {
+  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,8,9,1,-1,1,9,10,2,-1,2,10,11,3,-1,3,11,12,4,-1,4,12,13,5,-1,5,13,14,6,-1,6,14,15,7,-1,8,16,17,9,-1,9,17,18,10,-1,10,18,19,11,-1,11,19,20,12,-1,12,20,21,13,-1,13,21,22,14,-1,14,22,23,15,-1,16,24,25,17,-1,17,25,26,18,-1,18,26,27,19,-1,19,27,28,20,-1,20,28,29,21,-1,21,29,30,22,-1,22,30,31,23,-1,24,32,33,25,-1,25,33,34,26,-1,26,34,35,27,-1,27,35,36,28,-1,28,36,37,29,-1,29,37,38,30,-1,30,38,39,31,-1,32,40,41,33,-1,33,41,42,34,-1,34,42,43,35,-1,35,43,44,36,-1,36,44,45,37,-1,37,45,46,38,-1,38,46,47,39,-1,40,48,49,41,-1,41,49,50,42,-1,42,50,51,43,-1,43,51,52,44,-1,44,52,53,45,-1,45,53,54,46,-1,46,54,55,47,-1,48,56,57,49,-1,49,57,58,50,-1,50,58,59,51,-1,51,59,60,52,-1,52,60,61,53,-1,53,61,62,54,-1,54,62,63,55,-1});
   }
 }
-protected class MFVec3f2 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-5.25f,5.25f,0f,-3.75f,5.25f,0f,-2.25f,5.25f,0f,-0.75f,5.25f,0f,0.75f,5.25f,0f,2.25f,5.25f,0f,3.75f,5.25f,0f,5.25f,5.25f,0f,-5.25f,3.75f,0f,-3.75f,3.75f,0f,-2.25f,3.75f,0f,-0.75f,3.75f,0f,0.75f,3.75f,0f,2.25f,3.75f,0f,3.75f,3.75f,0f,5.25f,3.75f,0f,-5.25f,2.25f,0f,-3.75f,2.25f,0f,-2.25f,2.25f,0f,-0.75f,2.25f,0f,0.75f,2.25f,0f,2.25f,2.25f,0f,3.75f,2.25f,0f,5.25f,2.25f,0f,-5.25f,0.75f,0f,-3.75f,0.75f,0f,-2.25f,0.75f,0f,-0.75f,0.75f,0f,0.75f,0.75f,0f,2.25f,0.75f,0f,3.75f,0.75f,0f,5.25f,0.75f,0f,-5.25f,-0.75f,0f,-3.75f,-0.75f,0f,-2.25f,-0.75f,0f,-0.75f,-0.75f,0f,0.75f,-0.75f,0f,2.25f,-0.75f,0f,3.75f,-0.75f,0f,5.25f,-0.75f,0f,-5.25f,-2.25f,0f,-3.75f,-2.25f,0f,-2.25f,-2.25f,0f,-0.75f,-2.25f,0f,0.75f,-2.25f,0f,2.25f,-2.25f,0f,3.75f,-2.25f,0f,5.25f,-2.25f,0f,-5.25f,-3.75f,0f,-3.75f,-3.75f,0f,-2.25f,-3.75f,0f,-0.75f,-3.75f,0f,0.75f,-3.75f,0f,2.25f,-3.75f,0f,3.75f,-3.75f,0f,5.25f,-3.75f,0f,-5.25f,-5.25f,0f,-3.75f,-5.25f,0f,-2.25f,-5.25f,0f,-0.75f,-5.25f,0f,0.75f,-5.25f,0f,2.25f,-5.25f,0f,3.75f,-5.25f,0f,5.25f,-5.25f,0f});
+private class MFColor2 {
+  private org.web3d.x3d.jsail.fields.MFColor getArray() {
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.5f,0.5f,0.5f,0.75f,0.75f,0.75f});
   }
 }
-protected class MFColor3 {
-  protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.5f,0.5f,0.5f,0.75f,0.75f,0.75f});
+private class MFVec3f3 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-5.25f,5.25f,0f,-3.75f,5.25f,0f,-2.25f,5.25f,0f,-0.75f,5.25f,0f,0.75f,5.25f,0f,2.25f,5.25f,0f,3.75f,5.25f,0f,5.25f,5.25f,0f,-5.25f,3.75f,0f,-3.75f,3.75f,0f,-2.25f,3.75f,0f,-0.75f,3.75f,0f,0.75f,3.75f,0f,2.25f,3.75f,0f,3.75f,3.75f,0f,5.25f,3.75f,0f,-5.25f,2.25f,0f,-3.75f,2.25f,0f,-2.25f,2.25f,0f,-0.75f,2.25f,0f,0.75f,2.25f,0f,2.25f,2.25f,0f,3.75f,2.25f,0f,5.25f,2.25f,0f,-5.25f,0.75f,0f,-3.75f,0.75f,0f,-2.25f,0.75f,0f,-0.75f,0.75f,0f,0.75f,0.75f,0f,2.25f,0.75f,0f,3.75f,0.75f,0f,5.25f,0.75f,0f,-5.25f,-0.75f,0f,-3.75f,-0.75f,0f,-2.25f,-0.75f,0f,-0.75f,-0.75f,0f,0.75f,-0.75f,0f,2.25f,-0.75f,0f,3.75f,-0.75f,0f,5.25f,-0.75f,0f,-5.25f,-2.25f,0f,-3.75f,-2.25f,0f,-2.25f,-2.25f,0f,-0.75f,-2.25f,0f,0.75f,-2.25f,0f,2.25f,-2.25f,0f,3.75f,-2.25f,0f,5.25f,-2.25f,0f,-5.25f,-3.75f,0f,-3.75f,-3.75f,0f,-2.25f,-3.75f,0f,-0.75f,-3.75f,0f,0.75f,-3.75f,0f,2.25f,-3.75f,0f,3.75f,-3.75f,0f,5.25f,-3.75f,0f,-5.25f,-5.25f,0f,-3.75f,-5.25f,0f,-2.25f,-5.25f,0f,-0.75f,-5.25f,0f,0.75f,-5.25f,0f,2.25f,-5.25f,0f,3.75f,-5.25f,0f,5.25f,-5.25f,0f});
   }
 }
 }

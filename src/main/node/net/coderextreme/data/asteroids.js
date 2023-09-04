@@ -14,18 +14,17 @@ ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
 var ProtoInstance0 = null;
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
       .setHead((new autoclass.head())
         .addMeta((new autoclass.meta()).setName("title").setContent("asteroids.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/asteroids.x3d"))
-        .addMeta((new autoclass.meta()).setName("description").setContent("asteroids")))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/asteroids.x3d")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.ProtoDeclare()).setName("anyShape")
           .setProtoInterface((new autoclass.ProtoInterface())
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setName("myShape").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT)
-              .addChild((new autoclass.Shape())
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("myShape")
+              .addChild((new autoclass.Shape()).setDEF("_1")
                 .setGeometry((new autoclass.Sphere())))))
           .setProtoBody((new autoclass.ProtoBody())
             .addChild((new autoclass.Transform())

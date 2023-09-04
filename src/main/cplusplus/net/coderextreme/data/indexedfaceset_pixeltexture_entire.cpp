@@ -12,7 +12,7 @@ CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Interchange");
-X3D0->setVersion("3.0");
+X3D0->setVersion("4.0");
 Chead* head1 = new Chead();
 Cmeta* meta2 = new Cmeta();
 meta2->setName("title");
@@ -79,76 +79,71 @@ meta14->setName("generator");
 meta14->setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
 head1->addMeta(*meta14);
 
-Cmeta* meta15 = new Cmeta();
-meta15->setName("license");
-meta15->setContent("../../license.html");
-head1->addMeta(*meta15);
-
 X3D0->setHead(*head1);
 
-CScene* Scene16 = new CScene();
+CScene* Scene15 = new CScene();
+CViewpoint* Viewpoint16 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint16->setDescription("Front View");
+group->addChildren(*Viewpoint16);
+
 CViewpoint* Viewpoint17 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint17->setDescription("Front View");
+Viewpoint17->setDescription("Rear View");
+Viewpoint17->setPosition(new float[3]{0,0,-10});
+Viewpoint17->setOrientation(new float[4]{0,1,0,3.14});
 group->addChildren(*Viewpoint17);
 
 CViewpoint* Viewpoint18 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint18->setDescription("Rear View");
-Viewpoint18->setOrientation(new float[4]{0,1,0,3.14});
-Viewpoint18->setPosition(new float[3]{0,0,-10});
+Viewpoint18->setDescription("Top View");
+Viewpoint18->setPosition(new float[3]{0,10,0});
+Viewpoint18->setOrientation(new float[4]{1,0,0,-1.57});
 group->addChildren(*Viewpoint18);
 
 CViewpoint* Viewpoint19 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint19->setDescription("Top View");
-Viewpoint19->setOrientation(new float[4]{1,0,0,-1.57});
-Viewpoint19->setPosition(new float[3]{0,10,0});
+Viewpoint19->setDescription("Bottom View");
+Viewpoint19->setPosition(new float[3]{0,-10,0});
+Viewpoint19->setOrientation(new float[4]{1,0,0,1.57});
 group->addChildren(*Viewpoint19);
 
 CViewpoint* Viewpoint20 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint20->setDescription("Bottom View");
-Viewpoint20->setOrientation(new float[4]{1,0,0,1.57});
-Viewpoint20->setPosition(new float[3]{0,-10,0});
+Viewpoint20->setDescription("Right View");
+Viewpoint20->setPosition(new float[3]{10,0,0});
+Viewpoint20->setOrientation(new float[4]{0,1,0,1.57});
 group->addChildren(*Viewpoint20);
 
 CViewpoint* Viewpoint21 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint21->setDescription("Right View");
-Viewpoint21->setOrientation(new float[4]{0,1,0,1.57});
-Viewpoint21->setPosition(new float[3]{10,0,0});
+Viewpoint21->setDescription("Left View");
+Viewpoint21->setPosition(new float[3]{-10,0,0});
+Viewpoint21->setOrientation(new float[4]{0,1,0,-1.57});
 group->addChildren(*Viewpoint21);
 
-CViewpoint* Viewpoint22 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint22->setDescription("Left View");
-Viewpoint22->setOrientation(new float[4]{0,1,0,-1.57});
-Viewpoint22->setPosition(new float[3]{-10,0,0});
-group->addChildren(*Viewpoint22);
+CNavigationInfo* NavigationInfo22 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
+NavigationInfo22->setType(new CString[4]{"EXAMINE","WALK","FLY","ANY"}, 4);
+group->addChildren(*NavigationInfo22);
 
-CNavigationInfo* NavigationInfo23 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-NavigationInfo23->setType(new CString[4]{"EXAMINE","WALK","FLY","ANY"}, 4);
-group->addChildren(*NavigationInfo23);
+CShape* Shape23 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance24 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material25 = (CMaterial *)(m_pScene.createNode("Material"));
+Appearance24->setMaterial(*Material25);
 
-CShape* Shape24 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance25 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material26 = (CMaterial *)(m_pScene.createNode("Material"));
-Appearance25->setMaterial(*Material26);
+CPixelTexture* PixelTexture26 = (CPixelTexture *)(m_pScene.createNode("PixelTexture"));
+PixelTexture26->setImage(new int[7]{2,2,4,-16776961,16711935,-1,-65281});
+PixelTexture26->setRepeatS(False);
+PixelTexture26->setRepeatT(False);
+Appearance24->setTexture(*PixelTexture26);
 
-CPixelTexture* PixelTexture27 = (CPixelTexture *)(m_pScene.createNode("PixelTexture"));
-PixelTexture27->setImage(new int[7]{2,2,4,-16776961,16711935,-1,-65281});
-PixelTexture27->setRepeatS(False);
-PixelTexture27->setRepeatT(False);
-Appearance25->setTexture(*PixelTexture27);
+Shape23->setAppearance(*Appearance24);
 
-Shape24->setAppearance(*Appearance25);
+CIndexedFaceSet* IndexedFaceSet27 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet27->setCoordIndex(new int[30]{0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1});
+CCoordinate* Coordinate28 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate28->setPoint(new float[24]{-2,1.5,1,-2,-1.5,1,2,1.5,1,2,-1.5,1,2,1.5,-1,2,-1.5,-1,-2,1.5,-1,-2,-1.5,-1});
+IndexedFaceSet27->setCoord(*Coordinate28);
 
-CIndexedFaceSet* IndexedFaceSet28 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
-IndexedFaceSet28->setCoordIndex(new int[30]{0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1});
-CCoordinate* Coordinate29 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
-Coordinate29->setPoint(new float[24]{-2,1.5,1,-2,-1.5,1,2,1.5,1,2,-1.5,1,2,1.5,-1,2,-1.5,-1,-2,1.5,-1,-2,-1.5,-1});
-IndexedFaceSet28->setCoord(*Coordinate29);
+Shape23->setGeometry(IndexedFaceSet27);
 
-Shape24->setGeometry(IndexedFaceSet28);
+group->addChildren(*Shape23);
 
-group->addChildren(*Shape24);
-
-X3D0->setScene(*Scene16);
+X3D0->setScene(*Scene15);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

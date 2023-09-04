@@ -5,290 +5,263 @@ X3D X3D0;
 X3D0.profile = "Immersive";
 X3D0.version = "4.0";
 head head1 = createNode("head");
-component component2 = createNode("component");
-component2.name = "HAnim";
-component2.level = 1;
-head1.component = new MFNode();
+meta meta2 = createNode("meta");
+meta2.name = "title";
+meta2.content = "JoeKick.x3d";
+head1.meta = new MFNode();
 
-head1.component[0] = component2;
+head1.meta[0] = meta2;
 
 meta meta3 = createNode("meta");
-meta3.name = "title";
-meta3.content = "JoeKick.x3d";
+meta3.name = "description";
+meta3.content = "This Joe model is a HAnim version 2 LOA-3 Humanoid with textured skin based on the original HAnim Specification and data from CAESAR models.";
 head1.meta[1] = meta3;
 
 meta meta4 = createNode("meta");
-meta4.name = "description";
-meta4.content = "This Joe model is a HAnim version 2 LOA-3 Humanoid with textured skin based on the original HAnim Specification and data from CAESAR models.";
+meta4.name = "creator";
+meta4.content = "Joe D. Williams";
 head1.meta[2] = meta4;
 
 meta meta5 = createNode("meta");
-meta5.name = "creator";
-meta5.content = "Joe D. Williams";
+meta5.name = "created";
+meta5.content = "9 January 2004";
 head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
-meta6.name = "created";
-meta6.content = "9 January 2004";
+meta6.name = "translated";
+meta6.content = "12 January 2017";
 head1.meta[4] = meta6;
 
 meta meta7 = createNode("meta");
-meta7.name = "translated";
-meta7.content = "12 January 2017";
+meta7.name = "modified";
+meta7.content = "29 January 2023";
 head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");
-meta8.name = "modified";
-meta8.content = "29 January 2023";
+meta8.name = "TODO";
+meta8.content = "Record information about skin coordinates (found in comment at end of scene) as a structured MetadataSet containing MetadataString nodes";
 head1.meta[6] = meta8;
 
 meta meta9 = createNode("meta");
-meta9.name = "TODO";
-meta9.content = "Record information about skin coordinates (found in comment at end of scene) as a structured MetadataSet containing MetadataString nodes";
+meta9.name = "translators";
+meta9.content = "Roy Walmsley, Don Brutzman, John Carlson";
 head1.meta[7] = meta9;
 
 meta meta10 = createNode("meta");
-meta10.name = "translators";
-meta10.content = "Roy Walmsley, Don Brutzman, John Carlson";
+meta10.name = "reference";
+meta10.content = "../Characters/JoeSkinTexcoordDisplacerKick.x3d";
 head1.meta[8] = meta10;
 
 meta meta11 = createNode("meta");
-meta11.name = "reference";
-meta11.content = "../Characters/JoeSkinTexcoordDisplacerKick.x3d";
+meta11.name = "identifier";
+meta11.content = "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JoeKick.x3d";
 head1.meta[9] = meta11;
 
 meta meta12 = createNode("meta");
-meta12.name = "identifier";
-meta12.content = "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JoeKick.x3d";
+meta12.name = "generator";
+meta12.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
 head1.meta[10] = meta12;
 
 meta meta13 = createNode("meta");
 meta13.name = "generator";
-meta13.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
+meta13.content = "BS studio translation from .x3dv by Joe using BS Contact";
 head1.meta[11] = meta13;
 
-meta meta14 = createNode("meta");
-meta14.name = "generator";
-meta14.content = "BS studio translation from .x3dv by Joe using BS Contact";
-head1.meta[12] = meta14;
-
-meta meta15 = createNode("meta");
-meta15.name = "license";
-meta15.content = "../license.html";
-head1.meta[13] = meta15;
+component component14 = createNode("component");
+component14.name = "HAnim";
+component14.level = 1;
+head1.component[12] = component14;
 
 head = head1;
 
-WorldInfo WorldInfo17 = createNode("WorldInfo");
-WorldInfo17.info = new MFString(new java.lang.String["X3D Humanoid LOA3 skeleton","skin from hanim sites, surface features, and some added points","390 points"]);
-WorldInfo17.title = "X3D HANIM LOA3 Skeleton, 390 point Skin, texcoords, Displacer, teTrans for Joe_ by Joe";
+WorldInfo WorldInfo16 = createNode("WorldInfo");
+WorldInfo16.title = "X3D HANIM LOA3 Skeleton, 390 point Skin, texcoords, Displacer, teTrans for Joe_ by Joe";
+WorldInfo16.info = new MFString(new java.lang.String["X3D Humanoid LOA3 skeleton","skin from hanim sites, surface features, and some added points","390 points"]);
 children = new MFNode();
 
-children[0] = WorldInfo17;
+children[0] = WorldInfo16;
 
-NavigationInfo NavigationInfo18 = createNode("NavigationInfo");
-NavigationInfo18.DEF = "Start_NavigationInfo";
-NavigationInfo18.headlight = False;
-NavigationInfo18.speed = 2.5;
-children[1] = NavigationInfo18;
+NavigationInfo NavigationInfo17 = createNode("NavigationInfo");
+NavigationInfo17.DEF = "Start_NavigationInfo";
+NavigationInfo17.speed = 2.5;
+NavigationInfo17.headlight = False;
+children[1] = NavigationInfo17;
 
-Background Background19 = createNode("Background");
-Background19.DEF = "blue_Background";
-children[2] = Background19;
+Background Background18 = createNode("Background");
+Background18.DEF = "blue_Background";
+children[2] = Background18;
 
-SpotLight SpotLight20 = createNode("SpotLight");
-SpotLight20.DEF = "light1";
-SpotLight20.ambientIntensity = 0.7;
-SpotLight20.beamWidth = 1.5;
-SpotLight20.color = new SFColor(new float[0.8,0.8,1]);
-SpotLight20.cutOffAngle = 0.6;
-SpotLight20.direction = new SFVec3f(new float[0,0,0]);
-SpotLight20.location = new SFVec3f(new float[0,3,3]);
-SpotLight20.radius = 10;
-children[3] = SpotLight20;
+SpotLight SpotLight19 = createNode("SpotLight");
+SpotLight19.DEF = "light1";
+SpotLight19.color = new SFColor(new float[0.8,0.8,1]);
+SpotLight19.ambientIntensity = 0.7;
+SpotLight19.location = new SFVec3f(new float[0,3,3]);
+SpotLight19.direction = new SFVec3f(new float[0,0,0]);
+SpotLight19.radius = 10;
+SpotLight19.beamWidth = 1.5;
+SpotLight19.cutOffAngle = 0.6;
+children[3] = SpotLight19;
 
-PointLight PointLight21 = createNode("PointLight");
-PointLight21.DEF = "light2";
-PointLight21.ambientIntensity = 0.7;
-PointLight21.color = new SFColor(new float[0.8,0.8,1]);
-PointLight21.location = new SFVec3f(new float[0,10,-7]);
-children[4] = PointLight21;
+PointLight PointLight20 = createNode("PointLight");
+PointLight20.DEF = "light2";
+PointLight20.color = new SFColor(new float[0.8,0.8,1]);
+PointLight20.ambientIntensity = 0.7;
+PointLight20.location = new SFVec3f(new float[0,10,-7]);
+children[4] = PointLight20;
 
-//External from the Humanoid viewpoints
+Viewpoint Viewpoint21 = createNode("Viewpoint");
+Viewpoint21.DEF = "Scene_InclinedView";
+Viewpoint21.description = "Scene_Inclined View";
+Viewpoint21.position = new SFVec3f(new float[1.62,1.05,3.06]);
+Viewpoint21.orientation = new SFRotation(new float[-0.113,0.993,0.0347,0.671]);
+Viewpoint21.centerOfRotation = new SFVec3f(new float[0,0.85,0]);
+children[5] = Viewpoint21;
+
 Viewpoint Viewpoint22 = createNode("Viewpoint");
-Viewpoint22.DEF = "Scene_InclinedView";
-Viewpoint22.centerOfRotation = new SFVec3f(new float[0,0.85,0]);
-Viewpoint22.description = "Scene_Inclined View";
-Viewpoint22.orientation = new SFRotation(new float[-0.113,0.993,0.0347,0.671]);
-Viewpoint22.position = new SFVec3f(new float[1.62,1.05,3.06]);
-children[5] = Viewpoint22;
+Viewpoint22.DEF = "Scene_IFrontView";
+Viewpoint22.description = "Scene_Front View";
+Viewpoint22.position = new SFVec3f(new float[0,0.8,2.58]);
+Viewpoint22.centerOfRotation = new SFVec3f(new float[0,0.8,0]);
+children[6] = Viewpoint22;
 
 Viewpoint Viewpoint23 = createNode("Viewpoint");
-Viewpoint23.DEF = "Scene_IFrontView";
+Viewpoint23.DEF = "Scene_ISideView";
+Viewpoint23.description = "Scene_Side View";
+Viewpoint23.position = new SFVec3f(new float[2.6,0.8,0]);
+Viewpoint23.orientation = new SFRotation(new float[0,1,0,1.5708]);
 Viewpoint23.centerOfRotation = new SFVec3f(new float[0,0.8,0]);
-Viewpoint23.description = "Scene_Front View";
-Viewpoint23.position = new SFVec3f(new float[0,0.8,2.58]);
-children[6] = Viewpoint23;
+children[7] = Viewpoint23;
 
 Viewpoint Viewpoint24 = createNode("Viewpoint");
-Viewpoint24.DEF = "Scene_ISideView";
-Viewpoint24.centerOfRotation = new SFVec3f(new float[0,0.8,0]);
-Viewpoint24.description = "Scene_Side View";
-Viewpoint24.orientation = new SFRotation(new float[0,1,0,1.5708]);
-Viewpoint24.position = new SFVec3f(new float[2.6,0.8,0]);
-children[7] = Viewpoint24;
+Viewpoint24.DEF = "Scene_BackView";
+Viewpoint24.description = "Scene_Back View";
+Viewpoint24.position = new SFVec3f(new float[0,1.5,-3]);
+Viewpoint24.orientation = new SFRotation(new float[0,1,0,3.14]);
+Viewpoint24.centerOfRotation = new SFVec3f(new float[0,1.5,0]);
+children[8] = Viewpoint24;
 
 Viewpoint Viewpoint25 = createNode("Viewpoint");
-Viewpoint25.DEF = "Scene_BackView";
+Viewpoint25.DEF = "Scene_TopView";
+Viewpoint25.description = "Scene_Top View";
+Viewpoint25.position = new SFVec3f(new float[0,3.5,0]);
+Viewpoint25.orientation = new SFRotation(new float[1,0,0,-1.5708]);
 Viewpoint25.centerOfRotation = new SFVec3f(new float[0,1.5,0]);
-Viewpoint25.description = "Scene_Back View";
-Viewpoint25.orientation = new SFRotation(new float[0,1,0,3.14]);
-Viewpoint25.position = new SFVec3f(new float[0,1.5,-3]);
-children[8] = Viewpoint25;
+children[9] = Viewpoint25;
 
-Viewpoint Viewpoint26 = createNode("Viewpoint");
-Viewpoint26.DEF = "Scene_TopView";
-Viewpoint26.centerOfRotation = new SFVec3f(new float[0,1.5,0]);
-Viewpoint26.description = "Scene_Top View";
-Viewpoint26.orientation = new SFRotation(new float[1,0,0,-1.5708]);
-Viewpoint26.position = new SFVec3f(new float[0,3.5,0]);
-children[9] = Viewpoint26;
+Group Group26 = createNode("Group");
+Group26.DEF = "Joe_Humanoid";
+HAnimHumanoid HAnimHumanoid27 = createNode("HAnimHumanoid");
+HAnimHumanoid27.DEF = "Joe_Kick";
+HAnimHumanoid27.version = "2.0";
+HAnimHumanoid27.name = "Kick";
+HAnimHumanoid27.loa = 3;
+MetadataSet MetadataSet28 = createNode("MetadataSet");
+MetadataSet28.name = "warnings";
+MetadataSet28.reference = "HAnim";
+MetadataString MetadataString29 = createNode("MetadataString");
+MetadataString29.name = "SymmetricalLeftRight";
+MetadataString29.reference = "correction options: ignore, warn, average, left, right, largest, smallest";
+MetadataString29.value = new MFString(new java.lang.String["ignore"]);
+MetadataSet28.value = new MFNode();
 
-Group Group27 = createNode("Group");
-Group27.DEF = "Joe_Humanoid";
-HAnimHumanoid HAnimHumanoid28 = createNode("HAnimHumanoid");
-HAnimHumanoid28.name = "Kick";
-HAnimHumanoid28.DEF = "Joe_Kick";
-HAnimHumanoid28.loa = 3;
-HAnimHumanoid28.version = "2.0";
-MetadataSet MetadataSet29 = createNode("MetadataSet");
-MetadataSet29.name = "warnings";
-MetadataSet29.reference = "HAnim";
-MetadataString MetadataString30 = createNode("MetadataString");
-MetadataString30.name = "SymmetricalLeftRight";
-MetadataString30.reference = "correction options: ignore, warn, average, left, right, largest, smallest";
-MetadataString30.value = new MFString(new java.lang.String["ignore"]);
-MetadataSet29.value = new MFNode();
+MetadataSet28.value[0] = MetadataString29;
 
-MetadataSet29.value[0] = MetadataString30;
+HAnimHumanoid27.metadata = new SFNode();
 
-HAnimHumanoid28.metadata = new SFNode();
+HAnimHumanoid27.metadata[0] = MetadataSet28;
 
-HAnimHumanoid28.metadata[0] = MetadataSet29;
+HAnimJoint HAnimJoint30 = createNode("HAnimJoint");
+HAnimJoint30.DEF = "Joe_humanoid_root";
+HAnimJoint30.name = "humanoid_root";
+HAnimJoint30.center = new SFVec3f(new float[0,0.875,0]);
+HAnimSegment HAnimSegment31 = createNode("HAnimSegment");
+HAnimSegment31.DEF = "Joe_sacrum";
+HAnimSegment31.name = "sacrum";
+HAnimSite HAnimSite32 = createNode("HAnimSite");
+HAnimSite32.DEF = "Joe_RootFront_view";
+HAnimSite32.name = "RootFront_view";
+Transform Transform33 = createNode("Transform");
+Transform33.DEF = "hanimcordsys";
+Transform33.scale = new SFVec3f(new float[0.175,0.175,0.175]);
+Viewpoint Viewpoint34 = createNode("Viewpoint");
+Viewpoint34.DEF = "ViewBodyRootAxes";
+Viewpoint34.description = "Joe_HAnim Root HAnimSite Coordinate Axes View";
+Transform33.children = new MFNode();
 
-HAnimJoint HAnimJoint31 = createNode("HAnimJoint");
-HAnimJoint31.name = "humanoid_root";
-HAnimJoint31.DEF = "Joe_humanoid_root";
-HAnimJoint31.center = new SFVec3f(new float[0,0.875,0]);
-HAnimJoint31.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint31.llimit = new MFFloat(new float[0,0,0]);
-HAnimSegment HAnimSegment32 = createNode("HAnimSegment");
-HAnimSegment32.name = "sacrum";
-HAnimSegment32.DEF = "Joe_sacrum";
-HAnimSite HAnimSite33 = createNode("HAnimSite");
-HAnimSite33.name = "RootFront_view";
-HAnimSite33.DEF = "Joe_RootFront_view";
-Transform Transform34 = createNode("Transform");
-Transform34.DEF = "hanimcordsys";
-Transform34.scale = new SFVec3f(new float[0.175,0.175,0.175]);
-Viewpoint Viewpoint35 = createNode("Viewpoint");
-Viewpoint35.DEF = "ViewBodyRootAxes";
-Viewpoint35.description = "Joe_HAnim Root HAnimSite Coordinate Axes View";
-Transform34.children = new MFNode();
+Transform33.children[0] = Viewpoint34;
 
-Transform34.children[0] = Viewpoint35;
+Shape Shape35 = createNode("Shape");
+Shape35.DEF = "AxisLinesShape";
+IndexedLineSet IndexedLineSet36 = createNode("IndexedLineSet");
+IndexedLineSet36.colorPerVertex = False;
+IndexedLineSet36.colorIndex = new MFInt32(new int[0,1,2]);
+IndexedLineSet36.coordIndex = new MFInt32(new int[0,1,-1,0,2,-1,0,3,-1]);
+Color Color37 = createNode("Color");
+Color37.color = new MFColor(new float[1,0,0,0,0.6,0,0,0,1]);
+IndexedLineSet36.color = Color37;
 
-Shape Shape36 = createNode("Shape");
-Shape36.DEF = "AxisLinesShape";
-//RGB lines showing XYZ axes
-IndexedLineSet IndexedLineSet37 = createNode("IndexedLineSet");
-IndexedLineSet37.colorIndex = new MFInt32(new int[0,1,2]);
-IndexedLineSet37.colorPerVertex = False;
-IndexedLineSet37.coordIndex = new MFInt32(new int[0,1,-1,0,2,-1,0,3,-1]);
 Coordinate Coordinate38 = createNode("Coordinate");
 Coordinate38.point = new MFVec3f(new float[0,0,0,1,0,0,0,1,0,0,0,1]);
-IndexedLineSet37.coord = Coordinate38;
+IndexedLineSet36.coord = Coordinate38;
 
-Color Color39 = createNode("Color");
-Color39.color = new MFColor(new float[1,0,0,0,0.6,0,0,0,1]);
-IndexedLineSet37.color = Color39;
+Shape35.geometry = IndexedLineSet36;
 
-Shape36.geometry = IndexedLineSet37;
+Transform33.child[1] = Shape35;
 
-Transform34.child[1] = Shape36;
+HAnimSite32.children = new MFNode();
 
-HAnimSite33.children = new MFNode();
+HAnimSite32.children[0] = Transform33;
 
-HAnimSite33.children[0] = Transform34;
+HAnimSegment31.children = new MFNode();
 
-HAnimSegment32.children = new MFNode();
+HAnimSegment31.children[0] = HAnimSite32;
 
-HAnimSegment32.children[0] = HAnimSite33;
+HAnimJoint30.children = new MFNode();
 
-HAnimJoint31.children = new MFNode();
+HAnimJoint30.children[0] = HAnimSegment31;
 
-HAnimJoint31.children[0] = HAnimSegment32;
-
+HAnimJoint HAnimJoint39 = createNode("HAnimJoint");
+HAnimJoint39.DEF = "Joe_sacroiliac";
+HAnimJoint39.name = "sacroiliac";
+HAnimJoint39.center = new SFVec3f(new float[0,0.92,0]);
+HAnimJoint39.skinCoordIndex = new MFInt32(new int[17,19,20,21,22,23,26,27,73,82,89,91,93]);
+HAnimJoint39.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1,1,0.35,0.35,1]);
 HAnimJoint HAnimJoint40 = createNode("HAnimJoint");
-HAnimJoint40.name = "sacroiliac";
-HAnimJoint40.DEF = "Joe_sacroiliac";
-HAnimJoint40.center = new SFVec3f(new float[0,0.92,0]);
-HAnimJoint40.skinCoordIndex = new MFInt32(new int[17,19,20,21,22,23,26,27,73,82,89,91,93]);
-HAnimJoint40.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1,1,0.35,0.35,1]);
-HAnimJoint40.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint40.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint40.DEF = "Joe_l_hip";
+HAnimJoint40.name = "l_hip";
+HAnimJoint40.center = new SFVec3f(new float[0.1,0.92,0]);
+HAnimJoint40.skinCoordIndex = new MFInt32(new int[89,90,94,95,96,97]);
+HAnimJoint40.skinCoordWeight = new MFFloat(new float[0.65,1,1,1,1,1]);
 HAnimJoint HAnimJoint41 = createNode("HAnimJoint");
-HAnimJoint41.name = "l_hip";
-HAnimJoint41.DEF = "Joe_l_hip";
-HAnimJoint41.center = new SFVec3f(new float[0.1,0.92,0]);
-HAnimJoint41.skinCoordIndex = new MFInt32(new int[89,90,94,95,96,97]);
-HAnimJoint41.skinCoordWeight = new MFFloat(new float[0.65,1,1,1,1,1]);
-HAnimJoint41.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint41.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint41.DEF = "Joe_l_knee";
+HAnimJoint41.name = "l_knee";
+HAnimJoint41.center = new SFVec3f(new float[0.115,0.466,0]);
+HAnimJoint41.skinCoordIndex = new MFInt32(new int[334,335,336,337,338,339,340,341]);
+HAnimJoint41.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
 HAnimJoint HAnimJoint42 = createNode("HAnimJoint");
-HAnimJoint42.name = "l_knee";
-HAnimJoint42.DEF = "Joe_l_knee";
-HAnimJoint42.center = new SFVec3f(new float[0.115,0.466,0]);
-HAnimJoint42.skinCoordIndex = new MFInt32(new int[334,335,336,337,338,339,340,341]);
-HAnimJoint42.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
-HAnimJoint42.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint42.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint42.DEF = "Joe_l_talocrural";
+HAnimJoint42.name = "l_talocrural";
+HAnimJoint42.center = new SFVec3f(new float[0.115,0.069,0]);
+HAnimJoint42.skinCoordIndex = new MFInt32(new int[342,343,344,345]);
+HAnimJoint42.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
 HAnimJoint HAnimJoint43 = createNode("HAnimJoint");
-HAnimJoint43.name = "l_talocrural";
-HAnimJoint43.DEF = "Joe_l_talocrural";
-HAnimJoint43.center = new SFVec3f(new float[0.115,0.069,0]);
-HAnimJoint43.skinCoordIndex = new MFInt32(new int[342,343,344,345]);
+HAnimJoint43.DEF = "Joe_l_tarsometatarsal_1";
+HAnimJoint43.name = "l_tarsometatarsal_2";
+HAnimJoint43.center = new SFVec3f(new float[0.115,0.031,0.03]);
+HAnimJoint43.skinCoordIndex = new MFInt32(new int[346,347,348,71]);
 HAnimJoint43.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint43.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint43.llimit = new MFFloat(new float[0,0,0]);
 HAnimJoint HAnimJoint44 = createNode("HAnimJoint");
-HAnimJoint44.name = "l_tarsometatarsal_2";
-HAnimJoint44.DEF = "Joe_l_tarsometatarsal_2";
-HAnimJoint44.center = new SFVec3f(new float[0.115,0.031,0.03]);
-HAnimJoint44.skinCoordIndex = new MFInt32(new int[346,347,348,71]);
+HAnimJoint44.DEF = "Joe_l_metatarsophalangeal_1";
+HAnimJoint44.name = "l_metatarsophalangeal_2";
+HAnimJoint44.center = new SFVec3f(new float[0.115,0.037,0.09]);
+HAnimJoint44.skinCoordIndex = new MFInt32(new int[349,350,351,352]);
 HAnimJoint44.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint44.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint44.llimit = new MFFloat(new float[0,0,0]);
 HAnimJoint HAnimJoint45 = createNode("HAnimJoint");
-HAnimJoint45.name = "l_metatarsophalangeal_2";
-HAnimJoint45.DEF = "Joe_l_metatarsophalangeal_2";
-HAnimJoint45.center = new SFVec3f(new float[0.115,0.037,0.09]);
-HAnimJoint45.skinCoordIndex = new MFInt32(new int[349,350,351,352]);
-HAnimJoint45.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint45.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint45.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint HAnimJoint46 = createNode("HAnimJoint");
-HAnimJoint46.name = "l_tarsal_distal_interphalangeal_2";
-HAnimJoint46.DEF = "Joe_l_tarsal_distal_interphalangeal_2";
-HAnimJoint46.center = new SFVec3f(new float[0.115,0.02,0.122]);
-HAnimJoint46.skinCoordIndex = new MFInt32(new int[353,354,355,356,357,358,359,360,361]);
-HAnimJoint46.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint46.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint46.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint45.children = new MFNode();
-
-HAnimJoint45.children[0] = HAnimJoint46;
-
+HAnimJoint45.DEF = "Joe_l_tarsal_distal_interphalangeal_1";
+HAnimJoint45.name = "l_tarsal_distal_interphalangeal_2";
+HAnimJoint45.center = new SFVec3f(new float[0.115,0.02,0.122]);
+HAnimJoint45.skinCoordIndex = new MFInt32(new int[353,354,355,356,357,358,359,360,361]);
+HAnimJoint45.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
 HAnimJoint44.children = new MFNode();
 
 HAnimJoint44.children[0] = HAnimJoint45;
@@ -309,58 +282,46 @@ HAnimJoint40.children = new MFNode();
 
 HAnimJoint40.children[0] = HAnimJoint41;
 
+HAnimJoint39.children = new MFNode();
+
+HAnimJoint39.children[0] = HAnimJoint40;
+
+HAnimJoint HAnimJoint46 = createNode("HAnimJoint");
+HAnimJoint46.DEF = "Joe_r_hip";
+HAnimJoint46.name = "r_hip";
+HAnimJoint46.center = new SFVec3f(new float[-0.1,0.92,0]);
+HAnimJoint46.skinCoordIndex = new MFInt32(new int[91,92,98,99,100,101,362,363]);
+HAnimJoint46.skinCoordWeight = new MFFloat(new float[0.65,1,0.8,1,1,1,0.4,0.8]);
 HAnimJoint HAnimJoint47 = createNode("HAnimJoint");
-HAnimJoint47.name = "r_hip";
-HAnimJoint47.DEF = "Joe_r_hip";
-HAnimJoint47.center = new SFVec3f(new float[-0.1,0.92,0]);
-HAnimJoint47.skinCoordIndex = new MFInt32(new int[91,92,98,99,100,101,362,363]);
-HAnimJoint47.skinCoordWeight = new MFFloat(new float[0.65,1,0.8,1,1,1,0.4,0.8]);
-HAnimJoint47.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint47.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint47.DEF = "Joe_r_knee";
+HAnimJoint47.name = "r_knee";
+HAnimJoint47.center = new SFVec3f(new float[-0.05,0.466,0]);
+HAnimJoint47.skinCoordIndex = new MFInt32(new int[362,363,364,365,366,367,368,369,98]);
+HAnimJoint47.skinCoordWeight = new MFFloat(new float[0.6,0.2,1,1,1,1,1,1,0.2]);
 HAnimJoint HAnimJoint48 = createNode("HAnimJoint");
-HAnimJoint48.name = "r_knee";
-HAnimJoint48.DEF = "Joe_r_knee";
-HAnimJoint48.center = new SFVec3f(new float[-0.05,0.466,0]);
-HAnimJoint48.skinCoordIndex = new MFInt32(new int[362,363,364,365,366,367,368,369,98]);
-HAnimJoint48.skinCoordWeight = new MFFloat(new float[0.6,0.2,1,1,1,1,1,1,0.2]);
-HAnimJoint48.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint48.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint48.DEF = "Joe_r_talocrural";
+HAnimJoint48.name = "r_talocrural";
+HAnimJoint48.center = new SFVec3f(new float[-0.115,0.069,0]);
+HAnimJoint48.skinCoordIndex = new MFInt32(new int[370,371,372,373]);
+HAnimJoint48.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
 HAnimJoint HAnimJoint49 = createNode("HAnimJoint");
-HAnimJoint49.name = "r_talocrural";
-HAnimJoint49.DEF = "Joe_r_talocrural";
-HAnimJoint49.center = new SFVec3f(new float[-0.115,0.069,0]);
-HAnimJoint49.skinCoordIndex = new MFInt32(new int[370,371,372,373]);
-HAnimJoint49.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint49.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint49.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint49.DEF = "Joe_r_tarsometatarsal_1";
+HAnimJoint49.name = "r_tarsometatarsal_2";
+HAnimJoint49.center = new SFVec3f(new float[-0.1,0.015,-0.01]);
+HAnimJoint49.skinCoordIndex = new MFInt32(new int[374,375,376]);
+HAnimJoint49.skinCoordWeight = new MFFloat(new float[1,1,1]);
 HAnimJoint HAnimJoint50 = createNode("HAnimJoint");
-HAnimJoint50.name = "r_tarsometatarsal_2";
-HAnimJoint50.DEF = "Joe_r_tarsometatarsal_2";
-HAnimJoint50.center = new SFVec3f(new float[-0.1,0.015,-0.01]);
-HAnimJoint50.skinCoordIndex = new MFInt32(new int[374,375,376]);
-HAnimJoint50.skinCoordWeight = new MFFloat(new float[1,1,1]);
-HAnimJoint50.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint50.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint50.DEF = "Joe_r_metatarsophalangeal_1";
+HAnimJoint50.name = "r_metatarsophalangeal_2";
+HAnimJoint50.center = new SFVec3f(new float[-0.115,0.037,0.09]);
+HAnimJoint50.skinCoordIndex = new MFInt32(new int[377,378,379,380]);
+HAnimJoint50.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
 HAnimJoint HAnimJoint51 = createNode("HAnimJoint");
-HAnimJoint51.name = "r_metatarsophalangeal_2";
-HAnimJoint51.DEF = "Joe_r_metatarsophalangeal_2";
-HAnimJoint51.center = new SFVec3f(new float[-0.115,0.037,0.09]);
-HAnimJoint51.skinCoordIndex = new MFInt32(new int[377,378,379,380]);
-HAnimJoint51.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint51.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint51.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint HAnimJoint52 = createNode("HAnimJoint");
-HAnimJoint52.name = "r_tarsal_distal_interphalangeal_2";
-HAnimJoint52.DEF = "Joe_r_tarsal_distal_interphalangeal_2";
-HAnimJoint52.center = new SFVec3f(new float[-0.1,0.01,0.14]);
-HAnimJoint52.skinCoordIndex = new MFInt32(new int[381,382,383,384,385,386,387,388,389]);
-HAnimJoint52.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint52.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint52.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint51.children = new MFNode();
-
-HAnimJoint51.children[0] = HAnimJoint52;
-
+HAnimJoint51.DEF = "Joe_r_tarsal_distal_interphalangeal_1";
+HAnimJoint51.name = "r_tarsal_distal_interphalangeal_2";
+HAnimJoint51.center = new SFVec3f(new float[-0.1,0.01,0.14]);
+HAnimJoint51.skinCoordIndex = new MFInt32(new int[381,382,383,384,385,386,387,388,389]);
+HAnimJoint51.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
 HAnimJoint50.children = new MFNode();
 
 HAnimJoint50.children[0] = HAnimJoint51;
@@ -377,244 +338,180 @@ HAnimJoint47.children = new MFNode();
 
 HAnimJoint47.children[0] = HAnimJoint48;
 
-HAnimJoint40.children[1] = HAnimJoint47;
+HAnimJoint46.children = new MFNode();
 
-HAnimJoint31.children[1] = HAnimJoint40;
+HAnimJoint46.children[0] = HAnimJoint47;
 
+HAnimJoint39.children[1] = HAnimJoint46;
+
+HAnimJoint30.children[1] = HAnimJoint39;
+
+HAnimJoint HAnimJoint52 = createNode("HAnimJoint");
+HAnimJoint52.DEF = "Joe_vl5";
+HAnimJoint52.name = "vl5";
+HAnimJoint52.center = new SFVec3f(new float[0,1.045,-0.095]);
+HAnimJoint52.skinCoordIndex = new MFInt32(new int[28,76]);
+HAnimJoint52.skinCoordWeight = new MFFloat(new float[1,1]);
 HAnimJoint HAnimJoint53 = createNode("HAnimJoint");
-HAnimJoint53.name = "vl5";
-HAnimJoint53.DEF = "Joe_vl5";
-HAnimJoint53.center = new SFVec3f(new float[0,1.045,-0.095]);
-HAnimJoint53.skinCoordIndex = new MFInt32(new int[28,76]);
-HAnimJoint53.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint53.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint53.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint53.DEF = "Joe_vl4";
+HAnimJoint53.name = "vl4";
+HAnimJoint53.center = new SFVec3f(new float[0,1.068,-0.085]);
 HAnimJoint HAnimJoint54 = createNode("HAnimJoint");
-HAnimJoint54.name = "vl4";
-HAnimJoint54.DEF = "Joe_vl4";
-HAnimJoint54.center = new SFVec3f(new float[0,1.068,-0.085]);
-HAnimJoint54.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint54.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint54.DEF = "Joe_vl3";
+HAnimJoint54.name = "vl3";
+HAnimJoint54.center = new SFVec3f(new float[0,1.092,-0.0725]);
 HAnimJoint HAnimJoint55 = createNode("HAnimJoint");
-HAnimJoint55.name = "vl3";
-HAnimJoint55.DEF = "Joe_vl3";
-HAnimJoint55.center = new SFVec3f(new float[0,1.092,-0.0725]);
-HAnimJoint55.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint55.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint55.DEF = "Joe_vl2";
+HAnimJoint55.name = "vl2";
+HAnimJoint55.center = new SFVec3f(new float[0,1.12,-0.065]);
+HAnimJoint55.skinCoordIndex = new MFInt32(new int[16,18,25,83,84,85,86,87,88]);
+HAnimJoint55.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,0.7,1,0.8]);
 HAnimJoint HAnimJoint56 = createNode("HAnimJoint");
-HAnimJoint56.name = "vl2";
-HAnimJoint56.DEF = "Joe_vl2";
-HAnimJoint56.center = new SFVec3f(new float[0,1.12,-0.065]);
-HAnimJoint56.skinCoordIndex = new MFInt32(new int[16,18,25,83,84,85,86,87,88]);
-HAnimJoint56.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,0.7,1,0.8]);
-HAnimJoint56.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint56.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint56.DEF = "Joe_vl1";
+HAnimJoint56.name = "vl1";
+HAnimJoint56.center = new SFVec3f(new float[0,1.1459,-0.0625]);
 HAnimJoint HAnimJoint57 = createNode("HAnimJoint");
-HAnimJoint57.name = "vl1";
-HAnimJoint57.DEF = "Joe_vl1";
-HAnimJoint57.center = new SFVec3f(new float[0,1.1459,-0.0625]);
-HAnimJoint57.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint57.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint57.DEF = "Joe_vt12";
+HAnimJoint57.name = "vt12";
+HAnimJoint57.center = new SFVec3f(new float[0,1.179,-0.068]);
 HAnimJoint HAnimJoint58 = createNode("HAnimJoint");
-HAnimJoint58.name = "vt12";
-HAnimJoint58.DEF = "Joe_vt12";
-HAnimJoint58.center = new SFVec3f(new float[0,1.179,-0.068]);
-HAnimJoint58.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint58.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint58.DEF = "Joe_vt11";
+HAnimJoint58.name = "vt11";
+HAnimJoint58.center = new SFVec3f(new float[0,1.2679,-0.081]);
 HAnimJoint HAnimJoint59 = createNode("HAnimJoint");
-HAnimJoint59.name = "vt11";
-HAnimJoint59.DEF = "Joe_vt11";
-HAnimJoint59.center = new SFVec3f(new float[0,1.2679,-0.081]);
-HAnimJoint59.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint59.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint59.DEF = "Joe_vt10";
+HAnimJoint59.name = "vt10";
+HAnimJoint59.center = new SFVec3f(new float[0,1.242,-0.09]);
+HAnimJoint59.skinCoordIndex = new MFInt32(new int[15]);
+HAnimJoint59.skinCoordWeight = new MFFloat(new float[1]);
 HAnimJoint HAnimJoint60 = createNode("HAnimJoint");
-HAnimJoint60.name = "vt10";
-HAnimJoint60.DEF = "Joe_vt10";
-HAnimJoint60.center = new SFVec3f(new float[0,1.242,-0.09]);
-HAnimJoint60.skinCoordIndex = new MFInt32(new int[15]);
-HAnimJoint60.skinCoordWeight = new MFFloat(new float[1]);
-HAnimJoint60.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint60.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint60.DEF = "Joe_vt9";
+HAnimJoint60.name = "vt9";
+HAnimJoint60.center = new SFVec3f(new float[0,1.268,-0.1]);
+HAnimJoint60.skinCoordIndex = new MFInt32(new int[13,14]);
+HAnimJoint60.skinCoordWeight = new MFFloat(new float[1,1]);
 HAnimJoint HAnimJoint61 = createNode("HAnimJoint");
-HAnimJoint61.name = "vt9";
-HAnimJoint61.DEF = "Joe_vt9";
-HAnimJoint61.center = new SFVec3f(new float[0,1.268,-0.1]);
-HAnimJoint61.skinCoordIndex = new MFInt32(new int[13,14]);
-HAnimJoint61.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint61.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint61.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint61.DEF = "Joe_vt8";
+HAnimJoint61.name = "vt8";
+HAnimJoint61.center = new SFVec3f(new float[0,1.294,-0.11]);
 HAnimJoint HAnimJoint62 = createNode("HAnimJoint");
-HAnimJoint62.name = "vt8";
-HAnimJoint62.DEF = "Joe_vt8";
-HAnimJoint62.center = new SFVec3f(new float[0,1.294,-0.11]);
-HAnimJoint62.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint62.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint62.DEF = "Joe_vt7";
+HAnimJoint62.name = "vt7";
+HAnimJoint62.center = new SFVec3f(new float[0,1.323,-0.1155]);
 HAnimJoint HAnimJoint63 = createNode("HAnimJoint");
-HAnimJoint63.name = "vt7";
-HAnimJoint63.DEF = "Joe_vt7";
-HAnimJoint63.center = new SFVec3f(new float[0,1.323,-0.1155]);
-HAnimJoint63.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint63.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint63.DEF = "Joe_vt6";
+HAnimJoint63.name = "vt6";
+HAnimJoint63.center = new SFVec3f(new float[0,1.352,-0.12]);
 HAnimJoint HAnimJoint64 = createNode("HAnimJoint");
-HAnimJoint64.name = "vt6";
-HAnimJoint64.DEF = "Joe_vt6";
-HAnimJoint64.center = new SFVec3f(new float[0,1.352,-0.12]);
-HAnimJoint64.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint64.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint64.DEF = "Joe_vt5";
+HAnimJoint64.name = "vt5";
+HAnimJoint64.center = new SFVec3f(new float[0,1.381,-0.1235]);
 HAnimJoint HAnimJoint65 = createNode("HAnimJoint");
-HAnimJoint65.name = "vt5";
-HAnimJoint65.DEF = "Joe_vt5";
-HAnimJoint65.center = new SFVec3f(new float[0,1.381,-0.1235]);
-HAnimJoint65.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint65.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint65.DEF = "Joe_vt4";
+HAnimJoint65.name = "vt4";
+HAnimJoint65.center = new SFVec3f(new float[0,1.41,-0.1235]);
+HAnimJoint65.skinCoordIndex = new MFInt32(new int[81]);
+HAnimJoint65.skinCoordWeight = new MFFloat(new float[1]);
 HAnimJoint HAnimJoint66 = createNode("HAnimJoint");
-HAnimJoint66.name = "vt4";
-HAnimJoint66.DEF = "Joe_vt4";
-HAnimJoint66.center = new SFVec3f(new float[0,1.41,-0.1235]);
-HAnimJoint66.skinCoordIndex = new MFInt32(new int[81]);
-HAnimJoint66.skinCoordWeight = new MFFloat(new float[1]);
-HAnimJoint66.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint66.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint66.DEF = "Joe_vt3";
+HAnimJoint66.name = "vt3";
+HAnimJoint66.center = new SFVec3f(new float[0,1.438,-0.12]);
 HAnimJoint HAnimJoint67 = createNode("HAnimJoint");
-HAnimJoint67.name = "vt3";
-HAnimJoint67.DEF = "Joe_vt3";
-HAnimJoint67.center = new SFVec3f(new float[0,1.438,-0.12]);
-HAnimJoint67.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint67.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint67.DEF = "Joe_vt2";
+HAnimJoint67.name = "vt2";
+HAnimJoint67.center = new SFVec3f(new float[0,1.468,-0.105]);
 HAnimJoint HAnimJoint68 = createNode("HAnimJoint");
-HAnimJoint68.name = "vt2";
-HAnimJoint68.DEF = "Joe_vt2";
-HAnimJoint68.center = new SFVec3f(new float[0,1.468,-0.105]);
-HAnimJoint68.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint68.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint68.DEF = "Joe_vt1";
+HAnimJoint68.name = "vt1";
+HAnimJoint68.center = new SFVec3f(new float[0,1.497,-0.09]);
+HAnimJoint68.skinCoordIndex = new MFInt32(new int[11,24]);
+HAnimJoint68.skinCoordWeight = new MFFloat(new float[1,1]);
 HAnimJoint HAnimJoint69 = createNode("HAnimJoint");
-HAnimJoint69.name = "vt1";
-HAnimJoint69.DEF = "Joe_vt1";
-HAnimJoint69.center = new SFVec3f(new float[0,1.497,-0.09]);
-HAnimJoint69.skinCoordIndex = new MFInt32(new int[11,24]);
+HAnimJoint69.DEF = "Joe_vc7";
+HAnimJoint69.name = "vc7";
+HAnimJoint69.center = new SFVec3f(new float[0,1.525,-0.072]);
+HAnimJoint69.skinCoordIndex = new MFInt32(new int[74,75]);
 HAnimJoint69.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint69.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint69.llimit = new MFFloat(new float[0,0,0]);
 HAnimJoint HAnimJoint70 = createNode("HAnimJoint");
-HAnimJoint70.name = "vc7";
-HAnimJoint70.DEF = "Joe_vc7";
-HAnimJoint70.center = new SFVec3f(new float[0,1.525,-0.072]);
-HAnimJoint70.skinCoordIndex = new MFInt32(new int[74,75]);
-HAnimJoint70.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint70.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint70.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint70.DEF = "Joe_vc6";
+HAnimJoint70.name = "vc6";
+HAnimJoint70.center = new SFVec3f(new float[0,1.54,-0.05]);
 HAnimJoint HAnimJoint71 = createNode("HAnimJoint");
-HAnimJoint71.name = "vc6";
-HAnimJoint71.DEF = "Joe_vc6";
-HAnimJoint71.center = new SFVec3f(new float[0,1.54,-0.05]);
-HAnimJoint71.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint71.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint71.DEF = "Joe_vc5";
+HAnimJoint71.name = "vc5";
+HAnimJoint71.center = new SFVec3f(new float[0,1.552,-0.035]);
 HAnimJoint HAnimJoint72 = createNode("HAnimJoint");
-HAnimJoint72.name = "vc5";
-HAnimJoint72.DEF = "Joe_vc5";
-HAnimJoint72.center = new SFVec3f(new float[0,1.552,-0.035]);
-HAnimJoint72.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint72.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint72.DEF = "Joe_vc4";
+HAnimJoint72.name = "vc4";
+HAnimJoint72.center = new SFVec3f(new float[0,1.5675,-0.0256]);
 HAnimJoint HAnimJoint73 = createNode("HAnimJoint");
-HAnimJoint73.name = "vc4";
-HAnimJoint73.DEF = "Joe_vc4";
-HAnimJoint73.center = new SFVec3f(new float[0,1.5675,-0.0256]);
-HAnimJoint73.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint73.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint73.DEF = "Joe_vc3";
+HAnimJoint73.name = "vc3";
+HAnimJoint73.center = new SFVec3f(new float[0,1.58225,-0.0185]);
 HAnimJoint HAnimJoint74 = createNode("HAnimJoint");
-HAnimJoint74.name = "vc3";
-HAnimJoint74.DEF = "Joe_vc3";
-HAnimJoint74.center = new SFVec3f(new float[0,1.58225,-0.0185]);
-HAnimJoint74.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint74.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint74.DEF = "Joe_vc2";
+HAnimJoint74.name = "vc2";
+HAnimJoint74.center = new SFVec3f(new float[0,1.595,-0.0175]);
 HAnimJoint HAnimJoint75 = createNode("HAnimJoint");
-HAnimJoint75.name = "vc2";
-HAnimJoint75.DEF = "Joe_vc2";
-HAnimJoint75.center = new SFVec3f(new float[0,1.595,-0.0175]);
-HAnimJoint75.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint75.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint75.DEF = "Joe_vc1";
+HAnimJoint75.name = "vc1";
+HAnimJoint75.center = new SFVec3f(new float[0,1.61,-0.015]);
 HAnimJoint HAnimJoint76 = createNode("HAnimJoint");
-HAnimJoint76.name = "vc1";
-HAnimJoint76.DEF = "Joe_vc1";
-HAnimJoint76.center = new SFVec3f(new float[0,1.61,-0.015]);
-HAnimJoint76.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint76.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint HAnimJoint77 = createNode("HAnimJoint");
-HAnimJoint77.name = "skullbase";
-HAnimJoint77.DEF = "Joe_skullbase";
-HAnimJoint77.center = new SFVec3f(new float[0,1.63,-0.01]);
-HAnimJoint77.skinCoordIndex = new MFInt32(new int[0,1,2,3,4,5,6,7,8,9]);
-HAnimJoint77.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1,1]);
-HAnimJoint77.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint77.llimit = new MFFloat(new float[0,0,0]);
-HAnimDisplacer HAnimDisplacer78 = createNode("HAnimDisplacer");
-HAnimDisplacer78.name = "skull_tip_raiser_action";
-HAnimDisplacer78.DEF = "Joe_skull_tip_raiser_action";
-HAnimDisplacer78.coordIndex = new MFInt32(new int[0,1,2,3,4,5,6,7,8,9]);
-HAnimDisplacer78.displacements = new MFVec3f(new float[0,0.15,0,0,0,0.15,-0.1,0,0.15,0.1,0,0.05,0,-0.02,0.05,-0.15,0,0,-0.05,0,0,0.15,0,0,0.05,0,0,0,0,-0.15]);
-HAnimJoint77.displacers = new MFNode();
+HAnimJoint76.DEF = "Joe_skullbase";
+HAnimJoint76.name = "skullbase";
+HAnimJoint76.center = new SFVec3f(new float[0,1.63,-0.01]);
+HAnimJoint76.skinCoordIndex = new MFInt32(new int[0,1,2,3,4,5,6,7,8,9]);
+HAnimJoint76.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1,1]);
+HAnimDisplacer HAnimDisplacer77 = createNode("HAnimDisplacer");
+HAnimDisplacer77.DEF = "Joe_skull_tip_raiser_action";
+HAnimDisplacer77.name = "skull_tip_raiser_action";
+HAnimDisplacer77.coordIndex = new MFInt32(new int[0,1,2,3,4,5,6,7,8,9]);
+HAnimDisplacer77.displacements = new MFVec3f(new float[0,0.15,0,0,0,0.15,-0.1,0,0.15,0.1,0,0.05,0,-0.02,0.05,-0.15,0,0,-0.05,0,0,0.15,0,0,0.05,0,0,0,0,-0.15]);
+HAnimJoint76.displacers = new MFNode();
 
-HAnimJoint77.displacers[0] = HAnimDisplacer78;
+HAnimJoint76.displacers[0] = HAnimDisplacer77;
+
+HAnimJoint HAnimJoint78 = createNode("HAnimJoint");
+HAnimJoint78.DEF = "Joe_l_eyelid_joint";
+HAnimJoint78.name = "l_eyelid_joint";
+HAnimJoint78.center = new SFVec3f(new float[0.034,1.659,0.06]);
+HAnimJoint76.children[1] = HAnimJoint78;
 
 HAnimJoint HAnimJoint79 = createNode("HAnimJoint");
-HAnimJoint79.name = "l_eyelid_joint";
-HAnimJoint79.DEF = "Joe_l_eyelid_joint";
+HAnimJoint79.DEF = "Joe_l_eyeball_joint";
+HAnimJoint79.name = "l_eyeball_joint";
 HAnimJoint79.center = new SFVec3f(new float[0.034,1.659,0.06]);
-HAnimJoint79.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint79.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint77.children[1] = HAnimJoint79;
+HAnimJoint76.children[2] = HAnimJoint79;
 
 HAnimJoint HAnimJoint80 = createNode("HAnimJoint");
-HAnimJoint80.name = "l_eyeball_joint";
-HAnimJoint80.DEF = "Joe_l_eyeball_joint";
+HAnimJoint80.DEF = "Joe_l_eyebrow_joint";
+HAnimJoint80.name = "l_eyebrow_joint";
 HAnimJoint80.center = new SFVec3f(new float[0.034,1.659,0.06]);
-HAnimJoint80.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint80.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint77.children[2] = HAnimJoint80;
+HAnimJoint76.children[3] = HAnimJoint80;
 
 HAnimJoint HAnimJoint81 = createNode("HAnimJoint");
-HAnimJoint81.name = "l_eyebrow_joint";
-HAnimJoint81.DEF = "Joe_l_eyebrow_joint";
-HAnimJoint81.center = new SFVec3f(new float[0.034,1.659,0.06]);
-HAnimJoint81.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint81.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint77.children[3] = HAnimJoint81;
+HAnimJoint81.DEF = "Joe_r_eyelid_joint";
+HAnimJoint81.name = "r_eyelid_joint";
+HAnimJoint81.center = new SFVec3f(new float[-0.034,1.659,0.06]);
+HAnimJoint76.children[4] = HAnimJoint81;
 
 HAnimJoint HAnimJoint82 = createNode("HAnimJoint");
-HAnimJoint82.name = "r_eyelid_joint";
-HAnimJoint82.DEF = "Joe_r_eyelid_joint";
+HAnimJoint82.DEF = "Joe_r_eyeball_joint";
+HAnimJoint82.name = "r_eyeball_joint";
 HAnimJoint82.center = new SFVec3f(new float[-0.034,1.659,0.06]);
-HAnimJoint82.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint82.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint77.children[4] = HAnimJoint82;
+HAnimJoint76.children[5] = HAnimJoint82;
 
 HAnimJoint HAnimJoint83 = createNode("HAnimJoint");
-HAnimJoint83.name = "r_eyeball_joint";
-HAnimJoint83.DEF = "Joe_r_eyeball_joint";
+HAnimJoint83.DEF = "Joe_r_eyebrow_joint";
+HAnimJoint83.name = "r_eyebrow_joint";
 HAnimJoint83.center = new SFVec3f(new float[-0.034,1.659,0.06]);
-HAnimJoint83.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint83.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint77.children[5] = HAnimJoint83;
+HAnimJoint76.children[6] = HAnimJoint83;
 
 HAnimJoint HAnimJoint84 = createNode("HAnimJoint");
-HAnimJoint84.name = "r_eyebrow_joint";
-HAnimJoint84.DEF = "Joe_r_eyebrow_joint";
-HAnimJoint84.center = new SFVec3f(new float[-0.034,1.659,0.06]);
-HAnimJoint84.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint84.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint77.children[6] = HAnimJoint84;
-
-HAnimJoint HAnimJoint85 = createNode("HAnimJoint");
-HAnimJoint85.name = "temporomandibular";
-HAnimJoint85.DEF = "Joe_temporomandibular";
-HAnimJoint85.center = new SFVec3f(new float[0.034,1.659,0.06]);
-HAnimJoint85.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint85.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint77.children[7] = HAnimJoint85;
-
-HAnimJoint76.children = new MFNode();
-
-HAnimJoint76.children[0] = HAnimJoint77;
+HAnimJoint84.DEF = "Joe_temporomandibular";
+HAnimJoint84.name = "temporomandibular";
+HAnimJoint84.center = new SFVec3f(new float[0.034,1.659,0.06]);
+HAnimJoint76.children[7] = HAnimJoint84;
 
 HAnimJoint75.children = new MFNode();
 
@@ -644,73 +541,57 @@ HAnimJoint69.children = new MFNode();
 
 HAnimJoint69.children[0] = HAnimJoint70;
 
+HAnimJoint68.children = new MFNode();
+
+HAnimJoint68.children[0] = HAnimJoint69;
+
+HAnimJoint HAnimJoint85 = createNode("HAnimJoint");
+HAnimJoint85.DEF = "Joe_l_acromioclavicular";
+HAnimJoint85.center = new SFVec3f(new float[0.082,1.4488,-0.0353]);
+HAnimJoint85.skinCoordIndex = new MFInt32(new int[12]);
+HAnimJoint85.skinCoordWeight = new MFFloat(new float[1]);
 HAnimJoint HAnimJoint86 = createNode("HAnimJoint");
-HAnimJoint86.DEF = "Joe_l_acromioclavicular";
-HAnimJoint86.center = new SFVec3f(new float[0.082,1.4488,-0.0353]);
-HAnimJoint86.skinCoordIndex = new MFInt32(new int[12]);
+HAnimJoint86.DEF = "Joe_l_sternoclavicular";
+HAnimJoint86.name = "l_acromioclavicular";
+HAnimJoint86.center = new SFVec3f(new float[0.0962,1.4269,-0.0424]);
+HAnimJoint86.skinCoordIndex = new MFInt32(new int[79]);
 HAnimJoint86.skinCoordWeight = new MFFloat(new float[1]);
-HAnimJoint86.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint86.llimit = new MFFloat(new float[0,0,0]);
 HAnimJoint HAnimJoint87 = createNode("HAnimJoint");
-HAnimJoint87.name = "l_acromioclavicular";
-HAnimJoint87.DEF = "Joe_l_sternoclavicular";
-HAnimJoint87.center = new SFVec3f(new float[0.0962,1.4269,-0.0424]);
-HAnimJoint87.skinCoordIndex = new MFInt32(new int[79]);
-HAnimJoint87.skinCoordWeight = new MFFloat(new float[1]);
-HAnimJoint87.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint87.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint87.DEF = "Joe_l_shoulder";
+HAnimJoint87.name = "l_shoulder";
+HAnimJoint87.center = new SFVec3f(new float[0.2,1.44,-0.04]);
+HAnimJoint87.skinCoordIndex = new MFInt32(new int[41,42,44,80,102,103,104,105]);
+HAnimJoint87.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
 HAnimJoint HAnimJoint88 = createNode("HAnimJoint");
-HAnimJoint88.name = "l_shoulder";
-HAnimJoint88.DEF = "Joe_l_shoulder";
-HAnimJoint88.center = new SFVec3f(new float[0.2,1.44,-0.04]);
-HAnimJoint88.skinCoordIndex = new MFInt32(new int[41,42,44,80,102,103,104,105]);
-HAnimJoint88.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
-HAnimJoint88.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint88.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint88.DEF = "Joe_l_elbow";
+HAnimJoint88.name = "l_elbow";
+HAnimJoint88.center = new SFVec3f(new float[0.2,1.1388,-0.04]);
+HAnimJoint88.skinCoordIndex = new MFInt32(new int[45,46,47,109,110,111,112,113,115,116,117,118]);
+HAnimJoint88.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]);
 HAnimJoint HAnimJoint89 = createNode("HAnimJoint");
-HAnimJoint89.name = "l_elbow";
-HAnimJoint89.DEF = "Joe_l_elbow";
-HAnimJoint89.center = new SFVec3f(new float[0.2,1.1388,-0.04]);
-HAnimJoint89.skinCoordIndex = new MFInt32(new int[45,46,47,109,110,111,112,113,115,116,117,118]);
-HAnimJoint89.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]);
-HAnimJoint89.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint89.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint89.DEF = "Joe_l_radiocarpal";
+HAnimJoint89.name = "l_radiocarpal";
+HAnimJoint89.center = new SFVec3f(new float[0.2,0.87,-0.04]);
+HAnimJoint89.skinCoordIndex = new MFInt32(new int[119,120,121,122,123,124,125,126]);
+HAnimJoint89.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
 HAnimJoint HAnimJoint90 = createNode("HAnimJoint");
-HAnimJoint90.name = "l_radiocarpal";
-HAnimJoint90.DEF = "Joe_l_radiocarpal";
-HAnimJoint90.center = new SFVec3f(new float[0.2,0.87,-0.04]);
-HAnimJoint90.skinCoordIndex = new MFInt32(new int[119,120,121,122,123,124,125,126]);
-HAnimJoint90.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
-HAnimJoint90.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint90.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint90.DEF = "Joe_l_carpometacarpal_1";
+HAnimJoint90.name = "l_carpometacarpal_1";
+HAnimJoint90.center = new SFVec3f(new float[0.1924,0.8472,-0.0534]);
+HAnimJoint90.skinCoordIndex = new MFInt32(new int[127,128]);
+HAnimJoint90.skinCoordWeight = new MFFloat(new float[1,1]);
 HAnimJoint HAnimJoint91 = createNode("HAnimJoint");
-HAnimJoint91.name = "l_carpometacarpal_1";
-HAnimJoint91.DEF = "Joe_l_carpometacarpal_1";
-HAnimJoint91.center = new SFVec3f(new float[0.1924,0.8472,-0.0534]);
-HAnimJoint91.skinCoordIndex = new MFInt32(new int[127,128]);
-HAnimJoint91.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint91.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint91.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint91.DEF = "Joe_l_metacarpophalangeal_1";
+HAnimJoint91.name = "l_metacarpophalangeal_1";
+HAnimJoint91.center = new SFVec3f(new float[0.1951,0.8226,0.0246]);
+HAnimJoint91.skinCoordIndex = new MFInt32(new int[138,139,140,141,142,143]);
+HAnimJoint91.skinCoordWeight = new MFFloat(new float[0.5,0.5,0.5,1,1,1]);
 HAnimJoint HAnimJoint92 = createNode("HAnimJoint");
-HAnimJoint92.name = "l_metacarpophalangeal_1";
-HAnimJoint92.DEF = "Joe_l_metacarpophalangeal_1";
-HAnimJoint92.center = new SFVec3f(new float[0.1951,0.8226,0.0246]);
-HAnimJoint92.skinCoordIndex = new MFInt32(new int[138,139,140,141,142,143]);
-HAnimJoint92.skinCoordWeight = new MFFloat(new float[0.5,0.5,0.5,1,1,1]);
-HAnimJoint92.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint92.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint HAnimJoint93 = createNode("HAnimJoint");
-HAnimJoint93.name = "l_carpal_interphalangeal_1";
-HAnimJoint93.DEF = "Joe_l_carpal_interphalangeal_1";
-HAnimJoint93.center = new SFVec3f(new float[0.1955,0.8159,0.0464]);
-HAnimJoint93.skinCoordIndex = new MFInt32(new int[144,145,146,147,148,149,150,151,152]);
-HAnimJoint93.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint93.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint93.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint92.children = new MFNode();
-
-HAnimJoint92.children[0] = HAnimJoint93;
-
+HAnimJoint92.DEF = "Joe_l_carpal_interphalangeal_1";
+HAnimJoint92.name = "l_carpal_interphalangeal_1";
+HAnimJoint92.center = new SFVec3f(new float[0.1955,0.8159,0.0464]);
+HAnimJoint92.skinCoordIndex = new MFInt32(new int[144,145,146,147,148,149,150,151,152]);
+HAnimJoint92.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
 HAnimJoint91.children = new MFNode();
 
 HAnimJoint91.children[0] = HAnimJoint92;
@@ -719,42 +600,34 @@ HAnimJoint90.children = new MFNode();
 
 HAnimJoint90.children[0] = HAnimJoint91;
 
+HAnimJoint89.children = new MFNode();
+
+HAnimJoint89.children[0] = HAnimJoint90;
+
+HAnimJoint HAnimJoint93 = createNode("HAnimJoint");
+HAnimJoint93.DEF = "Joe_l_carpometacarpal_2";
+HAnimJoint93.name = "l_carpometacarpal_2";
+HAnimJoint93.center = new SFVec3f(new float[0.1983,0.8024,-0.028]);
+HAnimJoint93.skinCoordIndex = new MFInt32(new int[129,130]);
+HAnimJoint93.skinCoordWeight = new MFFloat(new float[1,1]);
 HAnimJoint HAnimJoint94 = createNode("HAnimJoint");
-HAnimJoint94.name = "l_carpometacarpal_2";
-HAnimJoint94.DEF = "Joe_l_carpometacarpal_2";
-HAnimJoint94.center = new SFVec3f(new float[0.1983,0.8024,-0.028]);
-HAnimJoint94.skinCoordIndex = new MFInt32(new int[129,130]);
-HAnimJoint94.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint94.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint94.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint94.DEF = "Joe_l_metacarpophalangeal_2";
+HAnimJoint94.name = "l_metacarpophalangeal_2";
+HAnimJoint94.center = new SFVec3f(new float[0.1983,0.7815,-0.028]);
+HAnimJoint94.skinCoordIndex = new MFInt32(new int[138,139,140,153,154,155,163]);
+HAnimJoint94.skinCoordWeight = new MFFloat(new float[0.5,0.5,0.5,1,1,1,0.5]);
 HAnimJoint HAnimJoint95 = createNode("HAnimJoint");
-HAnimJoint95.name = "l_metacarpophalangeal_2";
-HAnimJoint95.DEF = "Joe_l_metacarpophalangeal_2";
-HAnimJoint95.center = new SFVec3f(new float[0.1983,0.7815,-0.028]);
-HAnimJoint95.skinCoordIndex = new MFInt32(new int[138,139,140,153,154,155,163]);
-HAnimJoint95.skinCoordWeight = new MFFloat(new float[0.5,0.5,0.5,1,1,1,0.5]);
-HAnimJoint95.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint95.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint95.DEF = "Joe_l_carpal_proximal_interphalangeal_1";
+HAnimJoint95.name = "l_carpal_proximal_interphalangeal_2";
+HAnimJoint95.center = new SFVec3f(new float[0.2017,0.7363,-0.0248]);
+HAnimJoint95.skinCoordIndex = new MFInt32(new int[166,167,168,169]);
+HAnimJoint95.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
 HAnimJoint HAnimJoint96 = createNode("HAnimJoint");
-HAnimJoint96.name = "l_carpal_proximal_interphalangeal_2";
-HAnimJoint96.DEF = "Joe_l_carpal_proximal_interphalangeal_2";
-HAnimJoint96.center = new SFVec3f(new float[0.2017,0.7363,-0.0248]);
-HAnimJoint96.skinCoordIndex = new MFInt32(new int[166,167,168,169]);
-HAnimJoint96.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint96.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint96.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint HAnimJoint97 = createNode("HAnimJoint");
-HAnimJoint97.name = "l_carpal_distal_interphalangeal_2";
-HAnimJoint97.DEF = "Joe_l_carpal_distal_interphalangeal_2";
-HAnimJoint97.center = new SFVec3f(new float[0.2028,0.7139,-0.0236]);
-HAnimJoint97.skinCoordIndex = new MFInt32(new int[170,171,172,173,174,175,176,177,178]);
-HAnimJoint97.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint97.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint97.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint96.children = new MFNode();
-
-HAnimJoint96.children[0] = HAnimJoint97;
-
+HAnimJoint96.DEF = "Joe_l_carpal_distal_interphalangeal_1";
+HAnimJoint96.name = "l_carpal_distal_interphalangeal_2";
+HAnimJoint96.center = new SFVec3f(new float[0.2028,0.7139,-0.0236]);
+HAnimJoint96.skinCoordIndex = new MFInt32(new int[170,171,172,173,174,175,176,177,178]);
+HAnimJoint96.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
 HAnimJoint95.children = new MFNode();
 
 HAnimJoint95.children[0] = HAnimJoint96;
@@ -763,44 +636,36 @@ HAnimJoint94.children = new MFNode();
 
 HAnimJoint94.children[0] = HAnimJoint95;
 
-HAnimJoint90.children[1] = HAnimJoint94;
+HAnimJoint93.children = new MFNode();
 
+HAnimJoint93.children[0] = HAnimJoint94;
+
+HAnimJoint89.children[1] = HAnimJoint93;
+
+HAnimJoint HAnimJoint97 = createNode("HAnimJoint");
+HAnimJoint97.DEF = "Joe_l_carpometacarpal_3";
+HAnimJoint97.name = "l_carpometacarpal_3";
+HAnimJoint97.center = new SFVec3f(new float[0.1987,0.8029,-0.053]);
+HAnimJoint97.skinCoordIndex = new MFInt32(new int[131,132]);
+HAnimJoint97.skinCoordWeight = new MFFloat(new float[1,1]);
 HAnimJoint HAnimJoint98 = createNode("HAnimJoint");
-HAnimJoint98.name = "l_carpometacarpal_3";
-HAnimJoint98.DEF = "Joe_l_carpometacarpal_3";
-HAnimJoint98.center = new SFVec3f(new float[0.1987,0.8029,-0.053]);
-HAnimJoint98.skinCoordIndex = new MFInt32(new int[131,132]);
-HAnimJoint98.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint98.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint98.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint98.DEF = "Joe_l_metacarpophalangeal_3";
+HAnimJoint98.name = "l_metacarpophalangeal_3";
+HAnimJoint98.center = new SFVec3f(new float[0.1987,0.7818,-0.053]);
+HAnimJoint98.skinCoordIndex = new MFInt32(new int[156,157,163,164]);
+HAnimJoint98.skinCoordWeight = new MFFloat(new float[1,1,0.5,0.5]);
 HAnimJoint HAnimJoint99 = createNode("HAnimJoint");
-HAnimJoint99.name = "l_metacarpophalangeal_3";
-HAnimJoint99.DEF = "Joe_l_metacarpophalangeal_3";
-HAnimJoint99.center = new SFVec3f(new float[0.1987,0.7818,-0.053]);
-HAnimJoint99.skinCoordIndex = new MFInt32(new int[156,157,163,164]);
-HAnimJoint99.skinCoordWeight = new MFFloat(new float[1,1,0.5,0.5]);
-HAnimJoint99.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint99.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint99.DEF = "Joe_l_carpal_proximal_interphalangeal_2";
+HAnimJoint99.name = "l_carpal_proximal_interphalangeal_3";
+HAnimJoint99.center = new SFVec3f(new float[0.2013,0.7273,-0.0503]);
+HAnimJoint99.skinCoordIndex = new MFInt32(new int[179,180,181,182]);
+HAnimJoint99.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
 HAnimJoint HAnimJoint100 = createNode("HAnimJoint");
-HAnimJoint100.name = "l_carpal_proximal_interphalangeal_3";
-HAnimJoint100.DEF = "Joe_l_carpal_proximal_interphalangeal_3";
-HAnimJoint100.center = new SFVec3f(new float[0.2013,0.7273,-0.0503]);
-HAnimJoint100.skinCoordIndex = new MFInt32(new int[179,180,181,182]);
-HAnimJoint100.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint100.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint100.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint HAnimJoint101 = createNode("HAnimJoint");
-HAnimJoint101.name = "l_carpal_distal_interphalangeal_3";
-HAnimJoint101.DEF = "Joe_l_carpal_distal_interphalangeal_3";
-HAnimJoint101.center = new SFVec3f(new float[0.2026,0.7011,-0.0494]);
-HAnimJoint101.skinCoordIndex = new MFInt32(new int[183,184,185,186,187,188,189,190,191]);
-HAnimJoint101.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint101.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint101.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint100.children = new MFNode();
-
-HAnimJoint100.children[0] = HAnimJoint101;
-
+HAnimJoint100.DEF = "Joe_l_carpal_distal_interphalangeal_2";
+HAnimJoint100.name = "l_carpal_distal_interphalangeal_3";
+HAnimJoint100.center = new SFVec3f(new float[0.2026,0.7011,-0.0494]);
+HAnimJoint100.skinCoordIndex = new MFInt32(new int[183,184,185,186,187,188,189,190,191]);
+HAnimJoint100.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
 HAnimJoint99.children = new MFNode();
 
 HAnimJoint99.children[0] = HAnimJoint100;
@@ -809,44 +674,36 @@ HAnimJoint98.children = new MFNode();
 
 HAnimJoint98.children[0] = HAnimJoint99;
 
-HAnimJoint90.children[2] = HAnimJoint98;
+HAnimJoint97.children = new MFNode();
 
+HAnimJoint97.children[0] = HAnimJoint98;
+
+HAnimJoint89.children[2] = HAnimJoint97;
+
+HAnimJoint HAnimJoint101 = createNode("HAnimJoint");
+HAnimJoint101.DEF = "Joe_l_carpometacarpal_4";
+HAnimJoint101.name = "l_carpometacarpal_4";
+HAnimJoint101.center = new SFVec3f(new float[0.1956,0.8019,-0.0794]);
+HAnimJoint101.skinCoordIndex = new MFInt32(new int[133,134]);
+HAnimJoint101.skinCoordWeight = new MFFloat(new float[1,1]);
 HAnimJoint HAnimJoint102 = createNode("HAnimJoint");
-HAnimJoint102.name = "l_carpometacarpal_4";
-HAnimJoint102.DEF = "Joe_l_carpometacarpal_4";
-HAnimJoint102.center = new SFVec3f(new float[0.1956,0.8019,-0.0794]);
-HAnimJoint102.skinCoordIndex = new MFInt32(new int[133,134]);
-HAnimJoint102.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint102.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint102.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint102.DEF = "Joe_l_metacarpophalangeal_4";
+HAnimJoint102.name = "l_metacarpophalangeal_4";
+HAnimJoint102.center = new SFVec3f(new float[0.1956,0.7815,-0.0794]);
+HAnimJoint102.skinCoordIndex = new MFInt32(new int[158,159,164,165]);
+HAnimJoint102.skinCoordWeight = new MFFloat(new float[1,1,0.5,0.5]);
 HAnimJoint HAnimJoint103 = createNode("HAnimJoint");
-HAnimJoint103.name = "l_metacarpophalangeal_4";
-HAnimJoint103.DEF = "Joe_l_metacarpophalangeal_4";
-HAnimJoint103.center = new SFVec3f(new float[0.1956,0.7815,-0.0794]);
-HAnimJoint103.skinCoordIndex = new MFInt32(new int[158,159,164,165]);
-HAnimJoint103.skinCoordWeight = new MFFloat(new float[1,1,0.5,0.5]);
-HAnimJoint103.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint103.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint103.DEF = "Joe_l_carpal_proximal_interphalangeal_3";
+HAnimJoint103.name = "l_carpal_proximal_interphalangeal_4";
+HAnimJoint103.center = new SFVec3f(new float[0.1973,0.7287,-0.0777]);
+HAnimJoint103.skinCoordIndex = new MFInt32(new int[192,193,194,195]);
+HAnimJoint103.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
 HAnimJoint HAnimJoint104 = createNode("HAnimJoint");
-HAnimJoint104.name = "l_carpal_proximal_interphalangeal_4";
-HAnimJoint104.DEF = "Joe_l_carpal_proximal_interphalangeal_4";
-HAnimJoint104.center = new SFVec3f(new float[0.1973,0.7287,-0.0777]);
-HAnimJoint104.skinCoordIndex = new MFInt32(new int[192,193,194,195]);
-HAnimJoint104.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint104.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint104.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint HAnimJoint105 = createNode("HAnimJoint");
-HAnimJoint105.name = "l_carpal_distal_interphalangeal_4";
-HAnimJoint105.DEF = "Joe_l_carpal_distal_interphalangeal_4";
-HAnimJoint105.center = new SFVec3f(new float[0.1983,0.7045,-0.0767]);
-HAnimJoint105.skinCoordIndex = new MFInt32(new int[196,197,198,199,200,201,202,203,204]);
-HAnimJoint105.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint105.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint105.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint104.children = new MFNode();
-
-HAnimJoint104.children[0] = HAnimJoint105;
-
+HAnimJoint104.DEF = "Joe_l_carpal_distal_interphalangeal_3";
+HAnimJoint104.name = "l_carpal_distal_interphalangeal_4";
+HAnimJoint104.center = new SFVec3f(new float[0.1983,0.7045,-0.0767]);
+HAnimJoint104.skinCoordIndex = new MFInt32(new int[196,197,198,199,200,201,202,203,204]);
+HAnimJoint104.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
 HAnimJoint103.children = new MFNode();
 
 HAnimJoint103.children[0] = HAnimJoint104;
@@ -855,44 +712,36 @@ HAnimJoint102.children = new MFNode();
 
 HAnimJoint102.children[0] = HAnimJoint103;
 
-HAnimJoint90.children[3] = HAnimJoint102;
+HAnimJoint101.children = new MFNode();
 
+HAnimJoint101.children[0] = HAnimJoint102;
+
+HAnimJoint89.children[3] = HAnimJoint101;
+
+HAnimJoint HAnimJoint105 = createNode("HAnimJoint");
+HAnimJoint105.DEF = "Joe_l_carpometacarpal_5";
+HAnimJoint105.name = "l_carpometacarpal_5";
+HAnimJoint105.center = new SFVec3f(new float[0.1925,0.8066,-0.1036]);
+HAnimJoint105.skinCoordIndex = new MFInt32(new int[135,136,137,165]);
+HAnimJoint105.skinCoordWeight = new MFFloat(new float[1,1,1,0.5]);
 HAnimJoint HAnimJoint106 = createNode("HAnimJoint");
-HAnimJoint106.name = "l_carpometacarpal_5";
-HAnimJoint106.DEF = "Joe_l_carpometacarpal_5";
-HAnimJoint106.center = new SFVec3f(new float[0.1925,0.8066,-0.1036]);
-HAnimJoint106.skinCoordIndex = new MFInt32(new int[135,136,137,165]);
-HAnimJoint106.skinCoordWeight = new MFFloat(new float[1,1,1,0.5]);
-HAnimJoint106.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint106.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint106.DEF = "Joe_l_metacarpophalangeal_5";
+HAnimJoint106.name = "l_metacarpophalangeal_5";
+HAnimJoint106.center = new SFVec3f(new float[0.1925,0.7866,-0.1036]);
+HAnimJoint106.skinCoordIndex = new MFInt32(new int[160,161,162]);
+HAnimJoint106.skinCoordWeight = new MFFloat(new float[1,1,1]);
 HAnimJoint HAnimJoint107 = createNode("HAnimJoint");
-HAnimJoint107.name = "l_metacarpophalangeal_5";
-HAnimJoint107.DEF = "Joe_l_metacarpophalangeal_5";
-HAnimJoint107.center = new SFVec3f(new float[0.1925,0.7866,-0.1036]);
-HAnimJoint107.skinCoordIndex = new MFInt32(new int[160,161,162]);
-HAnimJoint107.skinCoordWeight = new MFFloat(new float[1,1,1]);
-HAnimJoint107.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint107.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint107.DEF = "Joe_l_carpal_proximal_interphalangeal_4";
+HAnimJoint107.name = "l_carpal_proximal_interphalangeal_5";
+HAnimJoint107.center = new SFVec3f(new float[0.1938,0.7452,-0.1024]);
+HAnimJoint107.skinCoordIndex = new MFInt32(new int[205,206,207,208]);
+HAnimJoint107.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
 HAnimJoint HAnimJoint108 = createNode("HAnimJoint");
-HAnimJoint108.name = "l_carpal_proximal_interphalangeal_5";
-HAnimJoint108.DEF = "Joe_l_carpal_proximal_interphalangeal_5";
-HAnimJoint108.center = new SFVec3f(new float[0.1938,0.7452,-0.1024]);
-HAnimJoint108.skinCoordIndex = new MFInt32(new int[205,206,207,208]);
-HAnimJoint108.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint108.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint108.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint HAnimJoint109 = createNode("HAnimJoint");
-HAnimJoint109.name = "l_carpal_distal_interphalangeal_5";
-HAnimJoint109.DEF = "Joe_l_carpal_distal_interphalangeal_5";
-HAnimJoint109.center = new SFVec3f(new float[0.1948,0.7277,-0.1017]);
-HAnimJoint109.skinCoordIndex = new MFInt32(new int[209,210,211,212,213,214,215,216,217]);
-HAnimJoint109.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint109.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint109.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint108.children = new MFNode();
-
-HAnimJoint108.children[0] = HAnimJoint109;
-
+HAnimJoint108.DEF = "Joe_l_carpal_distal_interphalangeal_4";
+HAnimJoint108.name = "l_carpal_distal_interphalangeal_5";
+HAnimJoint108.center = new SFVec3f(new float[0.1948,0.7277,-0.1017]);
+HAnimJoint108.skinCoordIndex = new MFInt32(new int[209,210,211,212,213,214,215,216,217]);
+HAnimJoint108.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
 HAnimJoint107.children = new MFNode();
 
 HAnimJoint107.children[0] = HAnimJoint108;
@@ -901,11 +750,11 @@ HAnimJoint106.children = new MFNode();
 
 HAnimJoint106.children[0] = HAnimJoint107;
 
-HAnimJoint90.children[4] = HAnimJoint106;
+HAnimJoint105.children = new MFNode();
 
-HAnimJoint89.children = new MFNode();
+HAnimJoint105.children[0] = HAnimJoint106;
 
-HAnimJoint89.children[0] = HAnimJoint90;
+HAnimJoint89.children[4] = HAnimJoint105;
 
 HAnimJoint88.children = new MFNode();
 
@@ -919,76 +768,60 @@ HAnimJoint86.children = new MFNode();
 
 HAnimJoint86.children[0] = HAnimJoint87;
 
-HAnimJoint69.children[1] = HAnimJoint86;
+HAnimJoint85.children = new MFNode();
 
+HAnimJoint85.children[0] = HAnimJoint86;
+
+HAnimJoint68.children[1] = HAnimJoint85;
+
+HAnimJoint HAnimJoint109 = createNode("HAnimJoint");
+HAnimJoint109.DEF = "Joe_r_sternoclavicular";
+HAnimJoint109.name = "r_sternoclavicular";
+HAnimJoint109.center = new SFVec3f(new float[-0.03,1.46,0]);
+HAnimJoint109.skinCoordIndex = new MFInt32(new int[10]);
+HAnimJoint109.skinCoordWeight = new MFFloat(new float[1]);
 HAnimJoint HAnimJoint110 = createNode("HAnimJoint");
-HAnimJoint110.name = "r_sternoclavicular";
-HAnimJoint110.DEF = "Joe_r_sternoclavicular";
-HAnimJoint110.center = new SFVec3f(new float[-0.03,1.46,0]);
-HAnimJoint110.skinCoordIndex = new MFInt32(new int[10]);
-HAnimJoint110.skinCoordWeight = new MFFloat(new float[1]);
-HAnimJoint110.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint110.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint110.DEF = "Joe_r_acromioclavicular";
+HAnimJoint110.name = "r_acromioclavicular";
+HAnimJoint110.center = new SFVec3f(new float[-0.09,1.41,-0.11]);
+HAnimJoint110.skinCoordIndex = new MFInt32(new int[77,29]);
+HAnimJoint110.skinCoordWeight = new MFFloat(new float[1,0.9]);
 HAnimJoint HAnimJoint111 = createNode("HAnimJoint");
-HAnimJoint111.name = "r_acromioclavicular";
-HAnimJoint111.DEF = "Joe_r_acromioclavicular";
-HAnimJoint111.center = new SFVec3f(new float[-0.09,1.41,-0.11]);
-HAnimJoint111.skinCoordIndex = new MFInt32(new int[77,29]);
-HAnimJoint111.skinCoordWeight = new MFFloat(new float[1,0.9]);
-HAnimJoint111.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint111.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint111.DEF = "Joe_r_shoulder";
+HAnimJoint111.name = "r_shoulder";
+HAnimJoint111.center = new SFVec3f(new float[-0.2,1.44,-0.04]);
+HAnimJoint111.skinCoordIndex = new MFInt32(new int[29,30,32,78,218,219,220,221,86,88]);
+HAnimJoint111.skinCoordWeight = new MFFloat(new float[0.1,1,1,1,1,1,1,1,0.3,0.2]);
 HAnimJoint HAnimJoint112 = createNode("HAnimJoint");
-HAnimJoint112.name = "r_shoulder";
-HAnimJoint112.DEF = "Joe_r_shoulder";
-HAnimJoint112.center = new SFVec3f(new float[-0.2,1.44,-0.04]);
-HAnimJoint112.skinCoordIndex = new MFInt32(new int[29,30,32,78,218,219,220,221,86,88]);
-HAnimJoint112.skinCoordWeight = new MFFloat(new float[0.1,1,1,1,1,1,1,1,0.3,0.2]);
-HAnimJoint112.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint112.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint112.DEF = "Joe_r_elbow";
+HAnimJoint112.name = "r_elbow";
+HAnimJoint112.center = new SFVec3f(new float[-0.2,1.1388,-0.04]);
+HAnimJoint112.skinCoordIndex = new MFInt32(new int[33,34,35,225,226,227,228,229,231,232,233,234]);
+HAnimJoint112.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1,1,1,1]);
 HAnimJoint HAnimJoint113 = createNode("HAnimJoint");
-HAnimJoint113.name = "r_elbow";
-HAnimJoint113.DEF = "Joe_r_elbow";
-HAnimJoint113.center = new SFVec3f(new float[-0.2,1.1388,-0.04]);
-HAnimJoint113.skinCoordIndex = new MFInt32(new int[33,34,35,225,226,227,228,229,231,232,233,234]);
-HAnimJoint113.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1,1,1,1]);
-HAnimJoint113.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint113.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint113.DEF = "Joe_r_radiocarpal";
+HAnimJoint113.name = "r_radiocarpal";
+HAnimJoint113.center = new SFVec3f(new float[-0.2,0.89,-0.04]);
+HAnimJoint113.skinCoordIndex = new MFInt32(new int[235,236,237,238,239,240,241,242]);
+HAnimJoint113.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
 HAnimJoint HAnimJoint114 = createNode("HAnimJoint");
-HAnimJoint114.name = "r_radiocarpal";
-HAnimJoint114.DEF = "Joe_r_radiocarpal";
-HAnimJoint114.center = new SFVec3f(new float[-0.2,0.89,-0.04]);
-HAnimJoint114.skinCoordIndex = new MFInt32(new int[235,236,237,238,239,240,241,242]);
-HAnimJoint114.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
-HAnimJoint114.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint114.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint114.DEF = "Joe_r_carpometacarpal_1";
+HAnimJoint114.name = "r_carpometacarpal_1";
+HAnimJoint114.center = new SFVec3f(new float[-0.2,0.85,0]);
+HAnimJoint114.skinCoordIndex = new MFInt32(new int[243,244]);
+HAnimJoint114.skinCoordWeight = new MFFloat(new float[1,1]);
 HAnimJoint HAnimJoint115 = createNode("HAnimJoint");
-HAnimJoint115.name = "r_carpometacarpal_1";
-HAnimJoint115.DEF = "Joe_r_carpometacarpal_1";
-HAnimJoint115.center = new SFVec3f(new float[-0.2,0.85,0]);
-HAnimJoint115.skinCoordIndex = new MFInt32(new int[243,244]);
-HAnimJoint115.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint115.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint115.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint115.DEF = "Joe_r_metacarpophalangeal_1";
+HAnimJoint115.name = "r_metacarpophalangeal_1";
+HAnimJoint115.center = new SFVec3f(new float[-0.2,0.82,0.03]);
+HAnimJoint115.skinCoordIndex = new MFInt32(new int[254,255,256,257,258,259]);
+HAnimJoint115.skinCoordWeight = new MFFloat(new float[0.5,0.5,0.5,1,1,1]);
 HAnimJoint HAnimJoint116 = createNode("HAnimJoint");
-HAnimJoint116.name = "r_metacarpophalangeal_1";
-HAnimJoint116.DEF = "Joe_r_metacarpophalangeal_1";
-HAnimJoint116.center = new SFVec3f(new float[-0.2,0.82,0.03]);
-HAnimJoint116.skinCoordIndex = new MFInt32(new int[254,255,256,257,258,259]);
-HAnimJoint116.skinCoordWeight = new MFFloat(new float[0.5,0.5,0.5,1,1,1]);
-HAnimJoint116.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint116.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint HAnimJoint117 = createNode("HAnimJoint");
-HAnimJoint117.name = "r_carpal_interphalangeal_1";
-HAnimJoint117.DEF = "Joe_r_carpal_interphalangeal_1";
-HAnimJoint117.center = new SFVec3f(new float[-0.2,0.8,0.05]);
-HAnimJoint117.skinCoordIndex = new MFInt32(new int[260,261,262,263,264,265,266,267,268]);
-HAnimJoint117.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint117.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint117.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint116.children = new MFNode();
-
-HAnimJoint116.children[0] = HAnimJoint117;
-
+HAnimJoint116.DEF = "Joe_r_carpal_interphalangeal_1";
+HAnimJoint116.name = "r_carpal_interphalangeal_1";
+HAnimJoint116.center = new SFVec3f(new float[-0.2,0.8,0.05]);
+HAnimJoint116.skinCoordIndex = new MFInt32(new int[260,261,262,263,264,265,266,267,268]);
+HAnimJoint116.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
 HAnimJoint115.children = new MFNode();
 
 HAnimJoint115.children[0] = HAnimJoint116;
@@ -997,42 +830,34 @@ HAnimJoint114.children = new MFNode();
 
 HAnimJoint114.children[0] = HAnimJoint115;
 
+HAnimJoint113.children = new MFNode();
+
+HAnimJoint113.children[0] = HAnimJoint114;
+
+HAnimJoint HAnimJoint117 = createNode("HAnimJoint");
+HAnimJoint117.DEF = "Joe_r_carpometacarpal_2";
+HAnimJoint117.name = "r_carpometacarpal_2";
+HAnimJoint117.center = new SFVec3f(new float[-0.2,0.84,-0.015]);
+HAnimJoint117.skinCoordIndex = new MFInt32(new int[245,246]);
+HAnimJoint117.skinCoordWeight = new MFFloat(new float[1,1]);
 HAnimJoint HAnimJoint118 = createNode("HAnimJoint");
-HAnimJoint118.name = "r_carpometacarpal_2";
-HAnimJoint118.DEF = "Joe_r_carpometacarpal_2";
-HAnimJoint118.center = new SFVec3f(new float[-0.2,0.84,-0.015]);
-HAnimJoint118.skinCoordIndex = new MFInt32(new int[245,246]);
-HAnimJoint118.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint118.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint118.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint118.DEF = "Joe_r_metacarpophalangeal_2";
+HAnimJoint118.name = "r_metacarpophalangeal_2";
+HAnimJoint118.center = new SFVec3f(new float[-0.2,0.793,-0.015]);
+HAnimJoint118.skinCoordIndex = new MFInt32(new int[254,255,256,269,270,271,279]);
+HAnimJoint118.skinCoordWeight = new MFFloat(new float[0.5,0.5,0.5,1,1,1,0.5]);
 HAnimJoint HAnimJoint119 = createNode("HAnimJoint");
-HAnimJoint119.name = "r_metacarpophalangeal_2";
-HAnimJoint119.DEF = "Joe_r_metacarpophalangeal_2";
-HAnimJoint119.center = new SFVec3f(new float[-0.2,0.793,-0.015]);
-HAnimJoint119.skinCoordIndex = new MFInt32(new int[254,255,256,269,270,271,279]);
-HAnimJoint119.skinCoordWeight = new MFFloat(new float[0.5,0.5,0.5,1,1,1,0.5]);
-HAnimJoint119.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint119.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint119.DEF = "Joe_r_carpal_proximal_interphalangeal_1";
+HAnimJoint119.name = "r_carpal_proximal_interphalangeal_2";
+HAnimJoint119.center = new SFVec3f(new float[-0.2,0.745,-0.015]);
+HAnimJoint119.skinCoordIndex = new MFInt32(new int[282,283,284,285]);
+HAnimJoint119.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
 HAnimJoint HAnimJoint120 = createNode("HAnimJoint");
-HAnimJoint120.name = "r_carpal_proximal_interphalangeal_2";
-HAnimJoint120.DEF = "Joe_r_carpal_proximal_interphalangeal_2";
-HAnimJoint120.center = new SFVec3f(new float[-0.2,0.745,-0.015]);
-HAnimJoint120.skinCoordIndex = new MFInt32(new int[282,283,284,285]);
-HAnimJoint120.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint120.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint120.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint HAnimJoint121 = createNode("HAnimJoint");
-HAnimJoint121.name = "r_carpal_distal_interphalangeal_2";
-HAnimJoint121.DEF = "Joe_r_carpal_distal_interphalangeal_2";
-HAnimJoint121.center = new SFVec3f(new float[-0.2,0.72,-0.015]);
-HAnimJoint121.skinCoordIndex = new MFInt32(new int[286,287,288,289,290,291,292,293,294]);
-HAnimJoint121.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint121.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint121.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint120.children = new MFNode();
-
-HAnimJoint120.children[0] = HAnimJoint121;
-
+HAnimJoint120.DEF = "Joe_r_carpal_distal_interphalangeal_1";
+HAnimJoint120.name = "r_carpal_distal_interphalangeal_2";
+HAnimJoint120.center = new SFVec3f(new float[-0.2,0.72,-0.015]);
+HAnimJoint120.skinCoordIndex = new MFInt32(new int[286,287,288,289,290,291,292,293,294]);
+HAnimJoint120.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
 HAnimJoint119.children = new MFNode();
 
 HAnimJoint119.children[0] = HAnimJoint120;
@@ -1041,44 +866,36 @@ HAnimJoint118.children = new MFNode();
 
 HAnimJoint118.children[0] = HAnimJoint119;
 
-HAnimJoint114.children[1] = HAnimJoint118;
+HAnimJoint117.children = new MFNode();
 
+HAnimJoint117.children[0] = HAnimJoint118;
+
+HAnimJoint113.children[1] = HAnimJoint117;
+
+HAnimJoint HAnimJoint121 = createNode("HAnimJoint");
+HAnimJoint121.DEF = "Joe_r_carpometacarpal_3";
+HAnimJoint121.name = "r_carpometacarpal_3";
+HAnimJoint121.center = new SFVec3f(new float[-0.2,0.835,-0.04]);
+HAnimJoint121.skinCoordIndex = new MFInt32(new int[247,248]);
+HAnimJoint121.skinCoordWeight = new MFFloat(new float[1,1]);
 HAnimJoint HAnimJoint122 = createNode("HAnimJoint");
-HAnimJoint122.name = "r_carpometacarpal_3";
-HAnimJoint122.DEF = "Joe_r_carpometacarpal_3";
-HAnimJoint122.center = new SFVec3f(new float[-0.2,0.835,-0.04]);
-HAnimJoint122.skinCoordIndex = new MFInt32(new int[247,248]);
-HAnimJoint122.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint122.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint122.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint122.DEF = "Joe_r_metacarpophalangeal_3";
+HAnimJoint122.name = "r_metacarpophalangeal_3";
+HAnimJoint122.center = new SFVec3f(new float[-0.2,0.788,-0.04]);
+HAnimJoint122.skinCoordIndex = new MFInt32(new int[272,273,279,280]);
+HAnimJoint122.skinCoordWeight = new MFFloat(new float[1,1,0.5,0.5]);
 HAnimJoint HAnimJoint123 = createNode("HAnimJoint");
-HAnimJoint123.name = "r_metacarpophalangeal_3";
-HAnimJoint123.DEF = "Joe_r_metacarpophalangeal_3";
-HAnimJoint123.center = new SFVec3f(new float[-0.2,0.788,-0.04]);
-HAnimJoint123.skinCoordIndex = new MFInt32(new int[272,273,279,280]);
-HAnimJoint123.skinCoordWeight = new MFFloat(new float[1,1,0.5,0.5]);
-HAnimJoint123.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint123.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint123.DEF = "Joe_r_carpal_proximal_interphalangeal_2";
+HAnimJoint123.name = "r_carpal_proximal_interphalangeal_3";
+HAnimJoint123.center = new SFVec3f(new float[-0.2,0.74,-0.04]);
+HAnimJoint123.skinCoordIndex = new MFInt32(new int[295,296,297,298]);
+HAnimJoint123.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
 HAnimJoint HAnimJoint124 = createNode("HAnimJoint");
-HAnimJoint124.name = "r_carpal_proximal_interphalangeal_3";
-HAnimJoint124.DEF = "Joe_r_carpal_proximal_interphalangeal_3";
-HAnimJoint124.center = new SFVec3f(new float[-0.2,0.74,-0.04]);
-HAnimJoint124.skinCoordIndex = new MFInt32(new int[295,296,297,298]);
-HAnimJoint124.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint124.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint124.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint HAnimJoint125 = createNode("HAnimJoint");
-HAnimJoint125.name = "r_carpal_distal_interphalangeal_3";
-HAnimJoint125.DEF = "Joe_r_carpal_distal_interphalangeal_3";
-HAnimJoint125.center = new SFVec3f(new float[-0.2,0.7142,-0.04]);
-HAnimJoint125.skinCoordIndex = new MFInt32(new int[299,300,301,302,303,304,305,306,307]);
-HAnimJoint125.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint125.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint125.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint124.children = new MFNode();
-
-HAnimJoint124.children[0] = HAnimJoint125;
-
+HAnimJoint124.DEF = "Joe_r_carpal_distal_interphalangeal_2";
+HAnimJoint124.name = "r_carpal_distal_interphalangeal_3";
+HAnimJoint124.center = new SFVec3f(new float[-0.2,0.7142,-0.04]);
+HAnimJoint124.skinCoordIndex = new MFInt32(new int[299,300,301,302,303,304,305,306,307]);
+HAnimJoint124.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
 HAnimJoint123.children = new MFNode();
 
 HAnimJoint123.children[0] = HAnimJoint124;
@@ -1087,44 +904,36 @@ HAnimJoint122.children = new MFNode();
 
 HAnimJoint122.children[0] = HAnimJoint123;
 
-HAnimJoint114.children[2] = HAnimJoint122;
+HAnimJoint121.children = new MFNode();
 
+HAnimJoint121.children[0] = HAnimJoint122;
+
+HAnimJoint113.children[2] = HAnimJoint121;
+
+HAnimJoint HAnimJoint125 = createNode("HAnimJoint");
+HAnimJoint125.DEF = "Joe_r_carpometacarpal_4";
+HAnimJoint125.name = "r_carpometacarpal_4";
+HAnimJoint125.center = new SFVec3f(new float[-0.2,0.835,-0.065]);
+HAnimJoint125.skinCoordIndex = new MFInt32(new int[249,250]);
+HAnimJoint125.skinCoordWeight = new MFFloat(new float[1,1]);
 HAnimJoint HAnimJoint126 = createNode("HAnimJoint");
-HAnimJoint126.name = "r_carpometacarpal_4";
-HAnimJoint126.DEF = "Joe_r_carpometacarpal_4";
-HAnimJoint126.center = new SFVec3f(new float[-0.2,0.835,-0.065]);
-HAnimJoint126.skinCoordIndex = new MFInt32(new int[249,250]);
-HAnimJoint126.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint126.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint126.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint126.DEF = "Joe_r_metacarpophalangeal_4";
+HAnimJoint126.name = "r_metacarpophalangeal_4";
+HAnimJoint126.center = new SFVec3f(new float[-0.2,0.793,-0.065]);
+HAnimJoint126.skinCoordIndex = new MFInt32(new int[274,275,280,281]);
+HAnimJoint126.skinCoordWeight = new MFFloat(new float[1,1,0.5,0.5]);
 HAnimJoint HAnimJoint127 = createNode("HAnimJoint");
-HAnimJoint127.name = "r_metacarpophalangeal_4";
-HAnimJoint127.DEF = "Joe_r_metacarpophalangeal_4";
-HAnimJoint127.center = new SFVec3f(new float[-0.2,0.793,-0.065]);
-HAnimJoint127.skinCoordIndex = new MFInt32(new int[274,275,280,281]);
-HAnimJoint127.skinCoordWeight = new MFFloat(new float[1,1,0.5,0.5]);
-HAnimJoint127.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint127.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint127.DEF = "Joe_r_carpal_proximal_interphalangeal_3";
+HAnimJoint127.name = "r_carpal_proximal_interphalangeal_4";
+HAnimJoint127.center = new SFVec3f(new float[-0.2,0.74,-0.065]);
+HAnimJoint127.skinCoordIndex = new MFInt32(new int[308,309,310,311]);
+HAnimJoint127.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
 HAnimJoint HAnimJoint128 = createNode("HAnimJoint");
-HAnimJoint128.name = "r_carpal_proximal_interphalangeal_4";
-HAnimJoint128.DEF = "Joe_r_carpal_proximal_interphalangeal_4";
-HAnimJoint128.center = new SFVec3f(new float[-0.2,0.74,-0.065]);
-HAnimJoint128.skinCoordIndex = new MFInt32(new int[308,309,310,311]);
-HAnimJoint128.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint128.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint128.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint HAnimJoint129 = createNode("HAnimJoint");
-HAnimJoint129.name = "r_carpal_distal_interphalangeal_4";
-HAnimJoint129.DEF = "Joe_r_carpal_distal_interphalangeal_4";
-HAnimJoint129.center = new SFVec3f(new float[-0.2,0.7177,-0.065]);
-HAnimJoint129.skinCoordIndex = new MFInt32(new int[312,313,314,315,316,317,318,319,320]);
-HAnimJoint129.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint129.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint129.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint128.children = new MFNode();
-
-HAnimJoint128.children[0] = HAnimJoint129;
-
+HAnimJoint128.DEF = "Joe_r_carpal_distal_interphalangeal_3";
+HAnimJoint128.name = "r_carpal_distal_interphalangeal_4";
+HAnimJoint128.center = new SFVec3f(new float[-0.2,0.7177,-0.065]);
+HAnimJoint128.skinCoordIndex = new MFInt32(new int[312,313,314,315,316,317,318,319,320]);
+HAnimJoint128.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
 HAnimJoint127.children = new MFNode();
 
 HAnimJoint127.children[0] = HAnimJoint128;
@@ -1133,44 +942,36 @@ HAnimJoint126.children = new MFNode();
 
 HAnimJoint126.children[0] = HAnimJoint127;
 
-HAnimJoint114.children[3] = HAnimJoint126;
+HAnimJoint125.children = new MFNode();
 
+HAnimJoint125.children[0] = HAnimJoint126;
+
+HAnimJoint113.children[3] = HAnimJoint125;
+
+HAnimJoint HAnimJoint129 = createNode("HAnimJoint");
+HAnimJoint129.DEF = "Joe_r_carpometacarpal_5";
+HAnimJoint129.name = "r_carpometacarpal_5";
+HAnimJoint129.center = new SFVec3f(new float[-0.2,0.84,-0.085]);
+HAnimJoint129.skinCoordIndex = new MFInt32(new int[251,252,253,281]);
+HAnimJoint129.skinCoordWeight = new MFFloat(new float[1,1,1,0.5]);
 HAnimJoint HAnimJoint130 = createNode("HAnimJoint");
-HAnimJoint130.name = "r_carpometacarpal_5";
-HAnimJoint130.DEF = "Joe_r_carpometacarpal_5";
-HAnimJoint130.center = new SFVec3f(new float[-0.2,0.84,-0.085]);
-HAnimJoint130.skinCoordIndex = new MFInt32(new int[251,252,253,281]);
-HAnimJoint130.skinCoordWeight = new MFFloat(new float[1,1,1,0.5]);
-HAnimJoint130.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint130.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint130.DEF = "Joe_r_metacarpophalangeal_5";
+HAnimJoint130.name = "r_metacarpophalangeal_5";
+HAnimJoint130.center = new SFVec3f(new float[-0.2,0.79,-0.085]);
+HAnimJoint130.skinCoordIndex = new MFInt32(new int[276,277,278]);
+HAnimJoint130.skinCoordWeight = new MFFloat(new float[1,1,1]);
 HAnimJoint HAnimJoint131 = createNode("HAnimJoint");
-HAnimJoint131.name = "r_metacarpophalangeal_5";
-HAnimJoint131.DEF = "Joe_r_metacarpophalangeal_5";
-HAnimJoint131.center = new SFVec3f(new float[-0.2,0.79,-0.085]);
-HAnimJoint131.skinCoordIndex = new MFInt32(new int[276,277,278]);
-HAnimJoint131.skinCoordWeight = new MFFloat(new float[1,1,1]);
-HAnimJoint131.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint131.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint131.DEF = "Joe_r_carpal_proximal_interphalangeal_4";
+HAnimJoint131.name = "r_carpal_proximal_interphalangeal_5";
+HAnimJoint131.center = new SFVec3f(new float[-0.2,0.755,-0.085]);
+HAnimJoint131.skinCoordIndex = new MFInt32(new int[321,322,323,324]);
+HAnimJoint131.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
 HAnimJoint HAnimJoint132 = createNode("HAnimJoint");
-HAnimJoint132.name = "r_carpal_proximal_interphalangeal_5";
-HAnimJoint132.DEF = "Joe_r_carpal_proximal_interphalangeal_5";
-HAnimJoint132.center = new SFVec3f(new float[-0.2,0.755,-0.085]);
-HAnimJoint132.skinCoordIndex = new MFInt32(new int[321,322,323,324]);
-HAnimJoint132.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint132.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint132.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint HAnimJoint133 = createNode("HAnimJoint");
-HAnimJoint133.name = "r_carpal_distal_interphalangeal_5";
-HAnimJoint133.DEF = "Joe_r_carpal_distal_interphalangeal_5";
-HAnimJoint133.center = new SFVec3f(new float[-0.2,0.735,-0.09]);
-HAnimJoint133.skinCoordIndex = new MFInt32(new int[325,326,327,328,329,330,331,332,333]);
-HAnimJoint133.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint133.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint133.llimit = new MFFloat(new float[0,0,0]);
-HAnimJoint132.children = new MFNode();
-
-HAnimJoint132.children[0] = HAnimJoint133;
-
+HAnimJoint132.DEF = "Joe_r_carpal_distal_interphalangeal_4";
+HAnimJoint132.name = "r_carpal_distal_interphalangeal_5";
+HAnimJoint132.center = new SFVec3f(new float[-0.2,0.735,-0.09]);
+HAnimJoint132.skinCoordIndex = new MFInt32(new int[325,326,327,328,329,330,331,332,333]);
+HAnimJoint132.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
 HAnimJoint131.children = new MFNode();
 
 HAnimJoint131.children[0] = HAnimJoint132;
@@ -1179,11 +980,11 @@ HAnimJoint130.children = new MFNode();
 
 HAnimJoint130.children[0] = HAnimJoint131;
 
-HAnimJoint114.children[4] = HAnimJoint130;
+HAnimJoint129.children = new MFNode();
 
-HAnimJoint113.children = new MFNode();
+HAnimJoint129.children[0] = HAnimJoint130;
 
-HAnimJoint113.children[0] = HAnimJoint114;
+HAnimJoint113.children[4] = HAnimJoint129;
 
 HAnimJoint112.children = new MFNode();
 
@@ -1197,11 +998,11 @@ HAnimJoint110.children = new MFNode();
 
 HAnimJoint110.children[0] = HAnimJoint111;
 
-HAnimJoint69.children[2] = HAnimJoint110;
+HAnimJoint109.children = new MFNode();
 
-HAnimJoint68.children = new MFNode();
+HAnimJoint109.children[0] = HAnimJoint110;
 
-HAnimJoint68.children[0] = HAnimJoint69;
+HAnimJoint68.children[2] = HAnimJoint109;
 
 HAnimJoint67.children = new MFNode();
 
@@ -1263,2592 +1064,2591 @@ HAnimJoint53.children = new MFNode();
 
 HAnimJoint53.children[0] = HAnimJoint54;
 
-HAnimJoint31.children[2] = HAnimJoint53;
+HAnimJoint52.children = new MFNode();
 
-HAnimHumanoid28.joints[1] = HAnimJoint31;
+HAnimJoint52.children[0] = HAnimJoint53;
 
-Shape Shape134 = createNode("Shape");
-Shape134.DEF = "Joe_Shape";
-Appearance Appearance135 = createNode("Appearance");
-Appearance135.DEF = "Joe_skin_Appearance";
-Material Material136 = createNode("Material");
-Material136.DEF = "Joe_skin_Material";
-Material136.diffuseColor = new SFColor(new float[0.3,0.3,0.6]);
-Material136.emissiveColor = new SFColor(new float[0.3,0.3,0.6]);
-Appearance135.material = Material136;
+HAnimJoint30.children[2] = HAnimJoint52;
 
-ImageTexture ImageTexture137 = createNode("ImageTexture");
-ImageTexture137.DEF = "JoeSkinImageTexture";
-ImageTexture137.url = new MFString(new java.lang.String["JoeBodyTexture29.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JoeBodyTexture29.png"]);
-Appearance135.texture = ImageTexture137;
+HAnimHumanoid27.joints[1] = HAnimJoint30;
 
-TextureTransform TextureTransform138 = createNode("TextureTransform");
-TextureTransform138.DEF = "KickTextureTransform";
-Appearance135.textureTransform = TextureTransform138;
+HAnimSite HAnimSite133 = createNode("HAnimSite");
+HAnimSite133.USE = "Joe_RootFront_view";
+HAnimHumanoid27.viewpoints[2] = HAnimSite133;
 
-Shape134.appearance = Appearance135;
+HAnimSegment HAnimSegment134 = createNode("HAnimSegment");
+HAnimSegment134.USE = "Joe_sacrum";
+HAnimHumanoid27.segments[3] = HAnimSegment134;
 
-IndexedFaceSet IndexedFaceSet139 = createNode("IndexedFaceSet");
-IndexedFaceSet139.DEF = "Joe_skin_IndexedFaceSet";
-IndexedFaceSet139.coordIndex = new MFInt32(new int[0,9,5,-1,0,7,9,-1,0,5,1,-1,1,5,2,-1,1,3,7,-1,2,4,3,-1,0,1,7,-1,1,2,3,-1,5,6,2,-1,7,3,8,-1,6,4,2,-1,3,4,8,-1,9,6,5,-1,9,7,8,-1,4,6,10,-1,4,10,12,-1,4,12,8,-1,10,11,12,-1,9,75,24,-1,9,24,74,-1,9,8,75,-1,9,74,6,-1,10,6,74,-1,12,75,8,-1,74,24,29,-1,24,77,29,-1,10,74,29,-1,77,32,29,-1,32,78,29,-1,78,30,29,-1,30,10,29,-1,41,24,75,-1,41,75,12,-1,41,12,42,-1,41,42,80,-1,41,80,44,-1,41,44,79,-1,41,79,24,-1,81,24,79,-1,81,77,24,-1,81,25,77,-1,81,79,25,-1,25,79,44,-1,25,32,77,-1,25,83,32,-1,25,26,83,-1,25,27,26,-1,25,84,27,-1,25,44,84,-1,11,10,30,-1,11,30,13,-1,11,13,15,-1,11,15,14,-1,11,14,42,-1,11,42,12,-1,15,13,16,-1,15,18,14,-1,15,16,76,-1,15,76,18,-1,76,16,17,-1,76,17,82,-1,76,82,19,-1,76,19,18,-1,22,18,19,-1,22,87,18,-1,22,27,84,-1,22,84,87,-1,87,84,85,-1,85,84,44,-1,85,42,14,-1,87,14,18,-1,87,85,14,-1,20,83,26,-1,20,17,16,-1,20,16,88,-1,20,88,83,-1,88,16,13,-1,88,13,86,-1,88,86,83,-1,86,13,30,-1,86,32,83,-1,23,89,22,-1,89,27,22,-1,89,91,27,-1,91,26,27,-1,91,20,26,-1,21,20,91,-1,21,17,20,-1,21,92,17,-1,82,17,92,-1,82,90,19,-1,23,22,19,-1,23,19,90,-1,82,92,101,-1,82,101,99,-1,82,99,93,-1,82,93,95,-1,82,95,97,-1,82,97,90,-1,23,90,97,-1,23,97,94,-1,23,94,89,-1,89,94,96,-1,89,96,95,-1,89,95,93,-1,89,93,91,-1,91,93,99,-1,91,99,100,-1,91,100,98,-1,21,91,98,-1,21,98,101,-1,21,101,92,-1,85,105,42,-1,85,103,105,-1,85,44,103,-1,103,44,104,-1,80,42,105,-1,80,105,102,-1,80,102,104,-1,80,104,44,-1,105,109,102,-1,102,109,47,-1,47,104,102,-1,104,47,45,-1,104,45,103,-1,103,45,46,-1,103,46,109,-1,103,109,105,-1,109,112,110,-1,109,110,47,-1,47,110,111,-1,47,111,45,-1,45,111,113,-1,113,46,45,-1,46,113,112,-1,112,109,46,-1,112,118,110,-1,110,118,115,-1,110,115,111,-1,111,115,117,-1,111,117,113,-1,113,117,116,-1,113,116,112,-1,112,116,118,-1,115,118,119,-1,119,118,122,-1,118,116,122,-1,122,116,120,-1,116,117,120,-1,120,117,121,-1,117,115,121,-1,115,119,121,-1,119,127,123,-1,119,122,127,-1,122,126,127,-1,122,128,126,-1,122,120,128,-1,120,124,128,-1,120,121,124,-1,121,125,124,-1,121,119,125,-1,119,123,125,-1,127,129,123,-1,127,126,129,-1,129,126,141,-1,141,126,143,-1,126,142,143,-1,126,128,142,-1,128,124,130,-1,142,128,130,-1,124,132,130,-1,124,134,132,-1,125,134,124,-1,125,136,134,-1,125,137,136,-1,125,135,137,-1,125,133,135,-1,125,123,133,-1,123,131,133,-1,123,129,131,-1,131,129,138,-1,129,141,138,-1,138,141,144,-1,141,143,144,-1,143,146,144,-1,142,146,143,-1,142,145,146,-1,139,145,142,-1,130,139,142,-1,139,130,132,-1,139,132,154,-1,132,157,154,-1,132,159,157,-1,132,134,159,-1,134,136,159,-1,136,161,159,-1,136,137,161,-1,137,162,161,-1,160,162,137,-1,135,160,137,-1,133,160,135,-1,133,158,160,-1,131,158,133,-1,156,158,131,-1,153,156,131,-1,131,138,153,-1,138,155,153,-1,140,155,138,-1,138,144,140,-1,144,147,140,-1,140,147,145,-1,140,145,139,-1,139,155,140,-1,154,155,139,-1,146,149,144,-1,146,151,149,-1,145,151,146,-1,150,151,145,-1,145,152,150,-1,147,152,145,-1,147,149,152,-1,147,144,149,-1,148,149,151,-1,148,152,149,-1,148,150,152,-1,148,151,150,-1,160,207,162,-1,160,205,207,-1,165,208,205,-1,160,165,205,-1,158,165,160,-1,161,162,207,-1,161,207,206,-1,165,206,208,-1,206,165,161,-1,161,165,159,-1,207,209,211,-1,205,209,207,-1,205,212,209,-1,205,208,212,-1,206,212,208,-1,206,210,212,-1,206,207,210,-1,207,211,210,-1,209,212,213,-1,212,216,213,-1,212,214,216,-1,210,214,212,-1,210,215,214,-1,210,211,215,-1,209,215,211,-1,209,213,215,-1,217,213,216,-1,217,215,213,-1,217,214,215,-1,217,216,214,-1,158,194,165,-1,192,194,158,-1,164,195,192,-1,158,164,192,-1,156,164,158,-1,159,194,165,-1,159,194,193,-1,159,193,195,-1,159,195,164,-1,159,164,157,-1,157,164,180,-1,192,198,194,-1,192,196,198,-1,192,195,196,-1,195,199,196,-1,196,199,200,-1,199,203,200,-1,193,199,195,-1,193,197,199,-1,193,198,197,-1,193,194,198,-1,199,201,203,-1,197,201,199,-1,197,198,201,-1,198,202,201,-1,196,202,198,-1,200,202,196,-1,204,202,200,-1,204,201,202,-1,204,203,201,-1,204,200,203,-1,156,181,164,-1,156,179,181,-1,156,182,179,-1,156,163,182,-1,163,180,182,-1,157,180,163,-1,164,181,180,-1,179,182,183,-1,182,186,183,-1,182,184,186,-1,180,184,182,-1,180,181,184,-1,181,185,184,-1,179,185,181,-1,183,185,179,-1,183,186,187,-1,186,190,187,-1,184,190,186,-1,184,188,190,-1,184,185,188,-1,185,189,188,-1,185,183,189,-1,183,187,189,-1,191,189,187,-1,191,188,189,-1,191,190,188,-1,191,187,190,-1,153,163,156,-1,153,168,163,-1,153,166,168,-1,153,169,166,-1,155,169,153,-1,155,167,169,-1,154,167,155,-1,154,163,167,-1,154,157,163,-1,163,168,167,-1,166,169,170,-1,169,173,170,-1,169,171,173,-1,169,167,171,-1,167,168,171,-1,168,172,171,-1,168,170,172,-1,170,168,166,-1,170,173,174,-1,173,177,174,-1,173,175,177,-1,173,171,175,-1,171,172,175,-1,172,176,175,-1,172,174,176,-1,170,174,172,-1,178,176,174,-1,178,175,176,-1,178,177,175,-1,178,174,177,-1,86,30,221,-1,86,221,219,-1,86,219,32,-1,32,219,220,-1,78,32,220,-1,78,220,218,-1,78,218,221,-1,78,221,30,-1,221,225,219,-1,219,225,35,-1,35,33,219,-1,33,220,219,-1,33,34,220,-1,220,34,218,-1,221,218,34,-1,34,225,221,-1,225,226,228,-1,225,228,35,-1,35,228,229,-1,35,229,33,-1,33,229,227,-1,33,227,34,-1,34,227,226,-1,34,226,225,-1,226,234,228,-1,228,234,232,-1,232,229,228,-1,232,233,229,-1,229,233,227,-1,227,233,231,-1,227,231,226,-1,226,231,234,-1,231,235,234,-1,235,238,234,-1,234,238,232,-1,238,236,232,-1,232,236,233,-1,236,237,233,-1,233,237,231,-1,231,237,235,-1,235,239,243,-1,235,243,238,-1,238,243,242,-1,238,242,244,-1,238,244,236,-1,236,244,240,-1,236,240,237,-1,237,240,241,-1,237,241,235,-1,235,241,239,-1,243,239,245,-1,243,245,242,-1,245,257,242,-1,257,259,242,-1,242,259,258,-1,242,258,244,-1,244,246,240,-1,258,246,244,-1,240,246,248,-1,240,248,250,-1,241,240,250,-1,241,250,252,-1,241,252,253,-1,241,253,251,-1,241,251,249,-1,241,249,239,-1,239,249,247,-1,239,247,245,-1,247,254,245,-1,245,254,257,-1,254,260,257,-1,257,260,259,-1,259,260,262,-1,258,259,262,-1,258,262,261,-1,255,258,261,-1,246,258,255,-1,255,248,246,-1,255,270,248,-1,248,270,273,-1,248,273,275,-1,248,275,250,-1,250,275,252,-1,252,275,277,-1,252,277,253,-1,253,277,278,-1,276,253,278,-1,251,253,276,-1,249,251,276,-1,249,276,274,-1,247,249,274,-1,272,247,274,-1,269,247,272,-1,247,269,254,-1,254,269,271,-1,256,254,271,-1,254,256,260,-1,260,256,263,-1,256,261,263,-1,256,255,261,-1,255,256,271,-1,270,255,271,-1,262,260,265,-1,262,265,267,-1,261,262,267,-1,266,261,267,-1,261,266,268,-1,263,261,268,-1,263,268,265,-1,263,265,260,-1,264,267,265,-1,264,265,268,-1,264,268,266,-1,264,266,267,-1,276,278,323,-1,276,323,321,-1,281,321,324,-1,276,321,281,-1,274,276,281,-1,277,323,278,-1,277,322,323,-1,281,324,322,-1,322,277,281,-1,277,275,281,-1,323,327,325,-1,321,323,325,-1,321,325,328,-1,321,328,324,-1,322,324,328,-1,322,328,326,-1,322,326,323,-1,323,326,327,-1,325,329,328,-1,328,329,332,-1,328,332,330,-1,326,328,330,-1,326,330,331,-1,326,331,327,-1,325,327,331,-1,325,331,329,-1,333,332,329,-1,333,329,331,-1,333,331,330,-1,333,330,332,-1,274,281,310,-1,308,274,310,-1,280,308,311,-1,274,308,280,-1,272,274,280,-1,275,310,281,-1,275,309,310,-1,275,311,309,-1,275,280,311,-1,275,273,280,-1,273,296,280,-1,308,310,314,-1,308,314,312,-1,308,312,311,-1,311,312,315,-1,312,316,315,-1,315,316,319,-1,309,311,315,-1,309,315,313,-1,309,313,314,-1,309,314,310,-1,315,319,317,-1,313,315,317,-1,313,317,314,-1,314,317,318,-1,312,314,318,-1,316,312,318,-1,320,316,318,-1,320,318,317,-1,320,317,319,-1,320,319,316,-1,272,280,297,-1,272,297,295,-1,272,295,298,-1,272,298,279,-1,279,298,296,-1,273,279,296,-1,280,296,297,-1,295,299,298,-1,298,299,302,-1,298,302,300,-1,296,298,300,-1,296,300,297,-1,297,300,301,-1,295,297,301,-1,299,295,301,-1,299,303,302,-1,302,303,306,-1,300,302,306,-1,300,306,304,-1,300,304,301,-1,301,304,305,-1,301,305,299,-1,299,305,303,-1,307,303,305,-1,307,305,304,-1,307,304,306,-1,307,306,303,-1,269,272,279,-1,269,279,284,-1,269,284,282,-1,269,282,285,-1,271,269,285,-1,271,285,283,-1,270,271,283,-1,270,283,279,-1,270,279,273,-1,279,283,284,-1,282,286,285,-1,285,286,289,-1,285,289,287,-1,285,287,283,-1,283,287,284,-1,284,287,288,-1,284,288,286,-1,286,282,284,-1,286,290,289,-1,289,290,293,-1,289,293,291,-1,289,291,287,-1,287,291,288,-1,288,291,292,-1,288,292,290,-1,286,288,290,-1,294,290,292,-1,294,292,291,-1,294,291,293,-1,294,293,290,-1,97,334,336,-1,97,336,94,-1,94,336,96,-1,336,335,96,-1,96,335,95,-1,95,335,337,-1,95,337,334,-1,95,334,97,-1,334,341,336,-1,336,341,338,-1,336,338,335,-1,335,338,340,-1,335,340,337,-1,337,340,339,-1,337,339,334,-1,334,339,341,-1,341,345,342,-1,341,342,338,-1,338,342,340,-1,340,342,344,-1,340,344,339,-1,339,344,343,-1,339,343,345,-1,339,345,341,-1,345,349,342,-1,342,349,351,-1,342,351,346,-1,342,346,344,-1,71,346,348,-1,71,344,346,-1,71,348,347,-1,71,347,344,-1,344,347,343,-1,343,347,352,-1,343,352,349,-1,343,349,345,-1,349,352,356,-1,349,356,353,-1,349,353,355,-1,349,355,351,-1,354,356,352,-1,354,352,350,-1,354,350,351,-1,354,351,355,-1,353,356,357,-1,353,357,358,-1,353,358,359,-1,353,359,360,-1,353,360,361,-1,353,361,355,-1,354,357,356,-1,350,346,351,-1,348,346,347,-1,350,347,346,-1,350,352,347,-1,354,358,357,-1,354,359,358,-1,354,360,359,-1,354,361,360,-1,354,355,361,-1,101,362,365,-1,101,365,99,-1,99,365,100,-1,100,365,363,-1,100,363,98,-1,98,363,364,-1,98,364,101,-1,101,364,362,-1,362,369,367,-1,362,367,365,-1,365,367,363,-1,363,367,368,-1,363,367,368,-1,363,368,366,-1,363,366,364,-1,364,366,362,-1,362,366,369,-1,369,373,371,-1,369,371,367,-1,367,371,368,-1,368,371,372,-1,368,372,366,-1,366,372,370,-1,366,370,369,-1,369,370,373,-1,373,377,380,-1,373,380,375,-1,373,375,371,-1,371,375,372,-1,372,375,376,-1,372,376,374,-1,372,374,370,-1,370,374,379,-1,373,370,379,-1,373,379,377,-1,377,379,383,-1,377,383,381,-1,377,381,384,-1,377,384,380,-1,381,383,389,-1,381,389,388,-1,381,388,387,-1,381,387,386,-1,381,386,385,-1,381,385,384,-1,376,375,374,-1,378,379,374,-1,378,374,375,-1,378,375,380,-1,382,386,387,-1,382,387,388,-1,382,388,389,-1,382,389,383,-1,382,383,379,-1,382,379,378,-1,382,378,380,-1,382,380,384,-1,382,384,385,-1,382,385,386,-1]);
-IndexedFaceSet139.creaseAngle = 3.14;
-Coordinate Coordinate140 = createNode("Coordinate");
-Coordinate140.DEF = "Joe_SkinCoord";
-Coordinate140.point = new MFVec3f(new float[0,1.77,0,0,1.665,0.09,-0.033,1.62,0.087,0.033,1.62,0.087,0,1.55,0.097,-0.077,1.64,-0.01,-0.0527,1.58,0.015,0.077,1.64,-0.01,0.0527,1.58,0.015,0,1.625,-0.0925,-0.03,1.46,0.035,0,1.44,0.03,0.03,1.46,0.035,-0.1135,1.318,0.095,0.1135,1.318,0.095,0,1.25,0.113,-0.087,1.19,0.09,-0.0935,1.03,0.075,0.087,1.19,0.09,0.0935,1.03,0.075,-0.1425,1.065,0.0033,-0.15,0.9,-0.01,0.1425,1.065,0.0033,0.15,0.9,-0.01,0,1.53,-0.084,0.0049,1.1908,-0.1113,-0.0773,1.019,-0.12,0.0773,1.019,-0.12,0.005,1.0915,-0.1091,-0.178,1.4825,-0.0625,-0.17,1.38,0.007,-0.1884,0.8676,-0.036,-0.16,1.38,-0.127,-0.2,1.1388,-0.08,-0.244,1.1388,-0.04,-0.165,1.1388,-0.04,-0.23,1.133,-0.055,-0.1977,0.8169,-0.0177,-0.1941,0.6772,-0.0423,-0.2117,0.8562,-0.0584,-0.1929,0.789,-0.1064,0.175,1.4825,-0.06,0.17,1.38,0.007,0.1901,0.8645,-0.0415,0.16,1.38,-0.125,0.2,1.1388,-0.08,0.165,1.1388,-0.04,0.244,1.1388,-0.04,0.23,1.133,-0.055,0.2009,0.8139,-0.0237,0.2056,0.6743,-0.0482,0.2142,0.8529,-0.0648,0.1929,0.786,-0.1122,-0.1,0.4913,-0.03,-0.17,0.466,0,-0.05,0.466,0,-0.165,0.01,0.12,-0.15,0.07,0,-0.085,0.086,0.0125,-0.09,0.056,0.0125,-0.115,0.02,0.122,-0.115,0.04,-0.055,-0.11,0.011,0.19,0.0993,0.4881,-0.0309,0.17,0.466,0,0.05,0.4867,0,0.165,0.01,0.12,0.15,0.07,0,0.085,0.086,0.0125,0.09,0.056,0.0125,0.115,0.02,0.122,0.115,0.04,-0.055,0.11,0.011,0.19,0,0.875,0,-0.0646,1.5149,-0.038,0.0646,1.5149,-0.038,0,1.07225,0.09,-0.11,1.427,-0.1375,-0.235,1.42,-0.0625,0.11,1.427,-0.1375,0.235,1.42,-0.0625,0,1.41,-0.145,0,0.925,0.08,-0.087,1.19,-0.09,0.087,1.19,-0.09,0.172,1.32,-0.03,-0.172,1.32,-0.03,0.15,1.23,-0.015,-0.15,1.23,-0.015,0.079,0.92,-0.14,0.1,0.9,0.077,-0.079,0.92,-0.14,-0.1,0.9,0.075,0,0.87,0,0.171,0.65,0,0.02,0.65,0,0.1,0.65,-0.08,0.1,0.65,0.07,-0.171,0.65,0,-0.02,0.65,0,-0.1,0.65,-0.08,-0.1,0.65,0.07,0.25,1.27,-0.04,0.17,1.27,-0.04,0.2,1.27,-0.09,0.2,1.27,0.02,0.244,1.1388,-0.04,0.165,1.1388,-0.04,0.2,1.1388,-0.08,0.2,1.1388,-0.013,0.225,1,-0.01,0.225,1,-0.07,0.185,1,-0.01,0.185,1,-0.07,0.2,1.1388,-0.04,0.225,0.92,-0.04,0.175,0.92,-0.04,0.2,0.92,-0.065,0.2,0.92,-0.015,0.225,0.89,-0.04,0.175,0.89,-0.04,0.2,0.89,-0.065,0.2,0.89,-0.015,0.218,0.86,-0.04,0.184,0.86,-0.04,0.2,0.87,-0.07,0.2,0.87,0,0.21,0.85,0,0.1854,0.85,0,0.212,0.84,-0.015,0.183,0.84,-0.015,0.213,0.835,-0.04,0.19,0.835,-0.04,0.211,0.835,-0.065,0.192,0.835,-0.065,0.208,0.84,-0.085,0.19,0.84,-0.085,0.2,0.84,-0.095,0.215,0.82,0,0.193,0.815,0.005,0.198,0.8,0.012,0.21,0.82,0.03,0.19,0.82,0.03,0.2,0.835,0.039,0.212,0.8,0.05,0.188,0.8,0.05,0.2,0.807,0.057,0.2,0.793,0.035,0.2,0.774,0.076,0.212,0.78,0.07,0.188,0.78,0.07,0.2,0.785,0.075,0.2,0.77,0.062,0.215,0.793,-0.015,0.187,0.793,-0.015,0.2,0.793,-0.005,0.215,0.788,-0.04,0.187,0.788,-0.04,0.215,0.793,-0.065,0.187,0.793,-0.065,0.21,0.79,-0.085,0.19,0.79,-0.085,0.2,0.79,-0.095,0.19,0.77,-0.0275,0.19,0.77,-0.0525,0.19,0.78,-0.0775,0.212,0.745,-0.015,0.188,0.745,-0.02,0.2,0.745,-0.0255,0.2,0.745,-0.0045,0.211,0.72,-0.015,0.189,0.72,-0.015,0.2,0.72,-0.0252,0.2,0.72,-0.0048,0.21,0.695,-0.015,0.19,0.695,-0.015,0.2,0.695,-0.025,0.2,0.695,-0.005,0.2,0.685,-0.015,0.215,0.74,-0.04,0.185,0.74,-0.04,0.2,0.74,-0.055,0.2,0.74,-0.025,0.21,0.7142,-0.04,0.19,0.7142,-0.04,0.2,0.7142,-0.053,0.2,0.7142,-0.027,0.21,0.68,-0.04,0.19,0.68,-0.04,0.2,0.68,-0.05,0.2,0.68,-0.03,0.2,0.67,-0.04,0.212,0.74,-0.065,0.188,0.74,-0.065,0.2,0.74,-0.0756,0.2,0.74,-0.0542,0.21,0.7177,-0.065,0.19,0.7177,-0.065,0.2,0.7177,-0.0751,0.2,0.7177,-0.0549,0.21,0.695,-0.065,0.19,0.695,-0.065,0.2,0.695,-0.075,0.2,0.695,-0.055,0.2,0.685,-0.065,0.211,0.755,-0.085,0.189,0.755,-0.085,0.2,0.755,-0.0952,0.2,0.755,-0.0748,0.21,0.735,-0.085,0.19,0.735,-0.085,0.2,0.735,-0.0951,0.2,0.735,-0.0749,0.21,0.72,-0.085,0.19,0.72,-0.085,0.2,0.72,-0.095,0.2,0.72,-0.075,0.2,0.71,-0.085,-0.23,1.23,-0.04,-0.16,1.23,-0.04,-0.2,1.235,-0.105,-0.2,1.255,0.02,-0.244,1.1388,-0.04,-0.165,1.1388,-0.04,-0.2,1.1388,-0.08,-0.2,1.1388,0.013,-0.225,1,-0.01,-0.225,1,-0.07,-0.185,1,-0.01,-0.185,1,-0.07,-0.2,1.1388,-0.04,-0.225,0.92,-0.04,-0.175,0.92,-0.04,-0.2,0.92,-0.065,-0.2,0.92,-0.015,-0.225,0.89,-0.04,-0.175,0.89,-0.04,-0.2,0.89,-0.065,-0.2,0.89,-0.015,-0.218,0.86,-0.04,-0.184,0.86,-0.04,-0.2,0.87,-0.07,-0.2,0.87,0,-0.21,0.85,0,-0.1854,0.85,0,-0.212,0.84,-0.015,-0.183,0.84,-0.015,-0.213,0.835,-0.04,-0.19,0.835,-0.04,-0.211,0.835,-0.065,-0.192,0.835,-0.065,-0.208,0.84,-0.085,-0.19,0.84,-0.085,-0.2,0.84,-0.095,-0.215,0.82,0,-0.193,0.815,0.005,-0.198,0.8,0.012,-0.21,0.82,0.03,-0.19,0.82,0.03,-0.2,0.835,0.039,-0.212,0.8,0.05,-0.188,0.8,0.05,-0.2,0.807,0.057,-0.2,0.793,0.035,-0.2,0.774,0.076,-0.212,0.78,0.07,-0.188,0.78,0.07,-0.2,0.785,0.075,-0.2,0.77,0.062,-0.215,0.793,-0.015,-0.187,0.793,-0.015,-0.2,0.793,-0.005,-0.215,0.788,-0.04,-0.187,0.788,-0.04,-0.215,0.793,-0.065,-0.187,0.793,-0.065,-0.21,0.79,-0.085,-0.19,0.79,-0.085,-0.2,0.79,-0.095,-0.19,0.77,-0.0275,-0.19,0.77,-0.0525,-0.19,0.78,-0.0775,-0.212,0.745,-0.015,-0.188,0.745,-0.02,-0.2,0.745,-0.0255,-0.2,0.745,-0.0045,-0.211,0.72,-0.015,-0.189,0.72,-0.015,-0.2,0.72,-0.0252,-0.2,0.72,-0.0048,-0.21,0.695,-0.015,-0.19,0.695,-0.015,-0.2,0.695,-0.025,-0.2,0.695,-0.005,-0.2,0.685,-0.015,-0.215,0.74,-0.04,-0.185,0.74,-0.04,-0.2,0.74,-0.055,-0.2,0.74,-0.025,-0.21,0.7142,-0.04,-0.19,0.7142,-0.04,-0.2,0.7142,-0.053,-0.2,0.7142,-0.027,-0.21,0.68,-0.04,-0.19,0.68,-0.04,-0.2,0.68,-0.05,-0.2,0.68,-0.03,-0.2,0.67,-0.04,-0.212,0.74,-0.065,-0.188,0.74,-0.065,-0.2,0.74,-0.0756,-0.2,0.74,-0.0542,-0.21,0.7177,-0.065,-0.19,0.7177,-0.065,-0.2,0.7177,-0.0751,-0.2,0.7177,-0.0549,-0.21,0.695,-0.065,-0.19,0.695,-0.065,-0.2,0.695,-0.075,-0.2,0.695,-0.055,-0.2,0.685,-0.065,-0.211,0.755,-0.085,-0.189,0.755,-0.085,-0.2,0.755,-0.0952,-0.2,0.755,-0.0748,-0.21,0.735,-0.085,-0.19,0.735,-0.085,-0.2,0.735,-0.0951,-0.2,0.735,-0.0749,-0.21,0.72,-0.085,-0.19,0.72,-0.085,-0.2,0.72,-0.095,-0.2,0.72,-0.075,-0.2,0.71,-0.085,0.115,0.466,0.06,0.115,0.466,-0.055,0.15,0.466,0,0.05,0.466,0,0.17,0.3,0,0.06,0.3,0,0.1,0.3,-0.05,0.1,0.3,0.05,0.15,0.07,0,0.085,0.086,0.0125,0.115,0.069,-0.045,0.117,0.0975,0.0615,0.1375,0.006,-0.03,0.095,0.006,-0.03,0.115,0.015,-0.045,0.115,0.06,0.1,0.115,0,0.07,0.165,0,0.07,0.095,0,0.07,0.115,0.04,0.13,0.125,0,0.12,0.165,0,0.12,0.087,0,0.122,0.09,0.012,0.188,0.11,0.011,0.19,0.128,0.011,0.185,0.142,0.011,0.178,0.154,0.01,0.168,-0.115,0.466,0.06,-0.115,0.466,-0.055,-0.17,0.466,0,-0.05,0.466,0,-0.17,0.3,0,-0.06,0.3,0,-0.1,0.3,-0.05,-0.1,0.3,0.05,-0.15,0.07,0,-0.085,0.086,0.0125,-0.115,0.069,-0.045,-0.117,0.0975,0.0615,-0.1375,0.006,-0.03,-0.095,0.006,-0.03,-0.095,0.006,-0.03,-0.115,0.06,0.1,-0.115,0,0.07,-0.165,0,0.07,-0.095,0,0.07,-0.115,0.04,0.13,-0.125,0,0.12,-0.165,0,0.12,-0.087,0,0.122,-0.09,0.012,0.188,-0.11,0.011,0.19,-0.128,0.011,0.185,-0.142,0.011,0.178,-0.154,0.01,0.168]);
-IndexedFaceSet139.coord = Coordinate140;
+HAnimJoint HAnimJoint135 = createNode("HAnimJoint");
+HAnimJoint135.USE = "Joe_humanoid_root";
+HAnimHumanoid27.joints[4] = HAnimJoint135;
 
-TextureCoordinate TextureCoordinate141 = createNode("TextureCoordinate");
-TextureCoordinate141.point = new MFVec2f(new float[0,0,0.5,0.5,0.5,0,0,0.5]);
-IndexedFaceSet139.texCoord = TextureCoordinate141;
+HAnimJoint HAnimJoint136 = createNode("HAnimJoint");
+HAnimJoint136.USE = "Joe_sacroiliac";
+HAnimHumanoid27.joints[5] = HAnimJoint136;
 
-Shape134.geometry = IndexedFaceSet139;
+HAnimJoint HAnimJoint137 = createNode("HAnimJoint");
+HAnimJoint137.USE = "Joe_skullbase";
+HAnimHumanoid27.joints[6] = HAnimJoint137;
 
-HAnimHumanoid28.skin[2] = Shape134;
+HAnimJoint HAnimJoint138 = createNode("HAnimJoint");
+HAnimJoint138.USE = "Joe_temporomandibular";
+HAnimHumanoid27.joints[7] = HAnimJoint138;
 
-Coordinate Coordinate142 = createNode("Coordinate");
-Coordinate142.USE = "Joe_SkinCoord";
-HAnimHumanoid28.skinCoord = Coordinate142;
+HAnimJoint HAnimJoint139 = createNode("HAnimJoint");
+HAnimJoint139.USE = "Joe_vc1";
+HAnimHumanoid27.joints[8] = HAnimJoint139;
+
+HAnimJoint HAnimJoint140 = createNode("HAnimJoint");
+HAnimJoint140.USE = "Joe_vc2";
+HAnimHumanoid27.joints[9] = HAnimJoint140;
+
+HAnimJoint HAnimJoint141 = createNode("HAnimJoint");
+HAnimJoint141.USE = "Joe_vc3";
+HAnimHumanoid27.joints[10] = HAnimJoint141;
+
+HAnimJoint HAnimJoint142 = createNode("HAnimJoint");
+HAnimJoint142.USE = "Joe_vc4";
+HAnimHumanoid27.joints[11] = HAnimJoint142;
 
 HAnimJoint HAnimJoint143 = createNode("HAnimJoint");
-HAnimJoint143.USE = "Joe_humanoid_root";
-HAnimHumanoid28.joints[3] = HAnimJoint143;
+HAnimJoint143.USE = "Joe_vc5";
+HAnimHumanoid27.joints[12] = HAnimJoint143;
 
 HAnimJoint HAnimJoint144 = createNode("HAnimJoint");
-HAnimJoint144.USE = "Joe_sacroiliac";
-HAnimHumanoid28.joints[4] = HAnimJoint144;
+HAnimJoint144.USE = "Joe_vc6";
+HAnimHumanoid27.joints[13] = HAnimJoint144;
 
 HAnimJoint HAnimJoint145 = createNode("HAnimJoint");
-HAnimJoint145.USE = "Joe_skullbase";
-HAnimHumanoid28.joints[5] = HAnimJoint145;
+HAnimJoint145.USE = "Joe_vc7";
+HAnimHumanoid27.joints[14] = HAnimJoint145;
 
 HAnimJoint HAnimJoint146 = createNode("HAnimJoint");
-HAnimJoint146.USE = "Joe_temporomandibular";
-HAnimHumanoid28.joints[6] = HAnimJoint146;
+HAnimJoint146.USE = "Joe_vl1";
+HAnimHumanoid27.joints[15] = HAnimJoint146;
 
 HAnimJoint HAnimJoint147 = createNode("HAnimJoint");
-HAnimJoint147.USE = "Joe_vc1";
-HAnimHumanoid28.joints[7] = HAnimJoint147;
+HAnimJoint147.USE = "Joe_vl2";
+HAnimHumanoid27.joints[16] = HAnimJoint147;
 
 HAnimJoint HAnimJoint148 = createNode("HAnimJoint");
-HAnimJoint148.USE = "Joe_vc2";
-HAnimHumanoid28.joints[8] = HAnimJoint148;
+HAnimJoint148.USE = "Joe_vl3";
+HAnimHumanoid27.joints[17] = HAnimJoint148;
 
 HAnimJoint HAnimJoint149 = createNode("HAnimJoint");
-HAnimJoint149.USE = "Joe_vc3";
-HAnimHumanoid28.joints[9] = HAnimJoint149;
+HAnimJoint149.USE = "Joe_vl4";
+HAnimHumanoid27.joints[18] = HAnimJoint149;
 
 HAnimJoint HAnimJoint150 = createNode("HAnimJoint");
-HAnimJoint150.USE = "Joe_vc4";
-HAnimHumanoid28.joints[10] = HAnimJoint150;
+HAnimJoint150.USE = "Joe_vl5";
+HAnimHumanoid27.joints[19] = HAnimJoint150;
 
 HAnimJoint HAnimJoint151 = createNode("HAnimJoint");
-HAnimJoint151.USE = "Joe_vc5";
-HAnimHumanoid28.joints[11] = HAnimJoint151;
+HAnimJoint151.USE = "Joe_vt1";
+HAnimHumanoid27.joints[20] = HAnimJoint151;
 
 HAnimJoint HAnimJoint152 = createNode("HAnimJoint");
-HAnimJoint152.USE = "Joe_vc6";
-HAnimHumanoid28.joints[12] = HAnimJoint152;
+HAnimJoint152.USE = "Joe_vt10";
+HAnimHumanoid27.joints[21] = HAnimJoint152;
 
 HAnimJoint HAnimJoint153 = createNode("HAnimJoint");
-HAnimJoint153.USE = "Joe_vc7";
-HAnimHumanoid28.joints[13] = HAnimJoint153;
+HAnimJoint153.USE = "Joe_vt11";
+HAnimHumanoid27.joints[22] = HAnimJoint153;
 
 HAnimJoint HAnimJoint154 = createNode("HAnimJoint");
-HAnimJoint154.USE = "Joe_vl1";
-HAnimHumanoid28.joints[14] = HAnimJoint154;
+HAnimJoint154.USE = "Joe_vt12";
+HAnimHumanoid27.joints[23] = HAnimJoint154;
 
 HAnimJoint HAnimJoint155 = createNode("HAnimJoint");
-HAnimJoint155.USE = "Joe_vl2";
-HAnimHumanoid28.joints[15] = HAnimJoint155;
+HAnimJoint155.USE = "Joe_vt2";
+HAnimHumanoid27.joints[24] = HAnimJoint155;
 
 HAnimJoint HAnimJoint156 = createNode("HAnimJoint");
-HAnimJoint156.USE = "Joe_vl3";
-HAnimHumanoid28.joints[16] = HAnimJoint156;
+HAnimJoint156.USE = "Joe_vt3";
+HAnimHumanoid27.joints[25] = HAnimJoint156;
 
 HAnimJoint HAnimJoint157 = createNode("HAnimJoint");
-HAnimJoint157.USE = "Joe_vl4";
-HAnimHumanoid28.joints[17] = HAnimJoint157;
+HAnimJoint157.USE = "Joe_vt4";
+HAnimHumanoid27.joints[26] = HAnimJoint157;
 
 HAnimJoint HAnimJoint158 = createNode("HAnimJoint");
-HAnimJoint158.USE = "Joe_vl5";
-HAnimHumanoid28.joints[18] = HAnimJoint158;
+HAnimJoint158.USE = "Joe_vt5";
+HAnimHumanoid27.joints[27] = HAnimJoint158;
 
 HAnimJoint HAnimJoint159 = createNode("HAnimJoint");
-HAnimJoint159.USE = "Joe_vt1";
-HAnimHumanoid28.joints[19] = HAnimJoint159;
+HAnimJoint159.USE = "Joe_vt6";
+HAnimHumanoid27.joints[28] = HAnimJoint159;
 
 HAnimJoint HAnimJoint160 = createNode("HAnimJoint");
-HAnimJoint160.USE = "Joe_vt10";
-HAnimHumanoid28.joints[20] = HAnimJoint160;
+HAnimJoint160.USE = "Joe_vt7";
+HAnimHumanoid27.joints[29] = HAnimJoint160;
 
 HAnimJoint HAnimJoint161 = createNode("HAnimJoint");
-HAnimJoint161.USE = "Joe_vt11";
-HAnimHumanoid28.joints[21] = HAnimJoint161;
+HAnimJoint161.USE = "Joe_vt8";
+HAnimHumanoid27.joints[30] = HAnimJoint161;
 
 HAnimJoint HAnimJoint162 = createNode("HAnimJoint");
-HAnimJoint162.USE = "Joe_vt12";
-HAnimHumanoid28.joints[22] = HAnimJoint162;
+HAnimJoint162.USE = "Joe_vt9";
+HAnimHumanoid27.joints[31] = HAnimJoint162;
 
 HAnimJoint HAnimJoint163 = createNode("HAnimJoint");
-HAnimJoint163.USE = "Joe_vt2";
-HAnimHumanoid28.joints[23] = HAnimJoint163;
+HAnimJoint163.USE = "Joe_l_acromioclavicular";
+HAnimHumanoid27.joints[32] = HAnimJoint163;
 
 HAnimJoint HAnimJoint164 = createNode("HAnimJoint");
-HAnimJoint164.USE = "Joe_vt3";
-HAnimHumanoid28.joints[24] = HAnimJoint164;
+HAnimJoint164.USE = "Joe_r_acromioclavicular";
+HAnimHumanoid27.joints[33] = HAnimJoint164;
 
 HAnimJoint HAnimJoint165 = createNode("HAnimJoint");
-HAnimJoint165.USE = "Joe_vt4";
-HAnimHumanoid28.joints[25] = HAnimJoint165;
+HAnimJoint165.USE = "Joe_l_carpal_distal_interphalangeal_1";
+HAnimHumanoid27.joints[34] = HAnimJoint165;
 
 HAnimJoint HAnimJoint166 = createNode("HAnimJoint");
-HAnimJoint166.USE = "Joe_vt5";
-HAnimHumanoid28.joints[26] = HAnimJoint166;
+HAnimJoint166.USE = "Joe_r_carpal_distal_interphalangeal_1";
+HAnimHumanoid27.joints[35] = HAnimJoint166;
 
 HAnimJoint HAnimJoint167 = createNode("HAnimJoint");
-HAnimJoint167.USE = "Joe_vt6";
-HAnimHumanoid28.joints[27] = HAnimJoint167;
+HAnimJoint167.USE = "Joe_l_carpal_distal_interphalangeal_2";
+HAnimHumanoid27.joints[36] = HAnimJoint167;
 
 HAnimJoint HAnimJoint168 = createNode("HAnimJoint");
-HAnimJoint168.USE = "Joe_vt7";
-HAnimHumanoid28.joints[28] = HAnimJoint168;
+HAnimJoint168.USE = "Joe_r_carpal_distal_interphalangeal_2";
+HAnimHumanoid27.joints[37] = HAnimJoint168;
 
 HAnimJoint HAnimJoint169 = createNode("HAnimJoint");
-HAnimJoint169.USE = "Joe_vt8";
-HAnimHumanoid28.joints[29] = HAnimJoint169;
+HAnimJoint169.USE = "Joe_l_carpal_distal_interphalangeal_3";
+HAnimHumanoid27.joints[38] = HAnimJoint169;
 
 HAnimJoint HAnimJoint170 = createNode("HAnimJoint");
-HAnimJoint170.USE = "Joe_vt9";
-HAnimHumanoid28.joints[30] = HAnimJoint170;
+HAnimJoint170.USE = "Joe_r_carpal_distal_interphalangeal_3";
+HAnimHumanoid27.joints[39] = HAnimJoint170;
 
 HAnimJoint HAnimJoint171 = createNode("HAnimJoint");
-HAnimJoint171.USE = "Joe_l_acromioclavicular";
-HAnimHumanoid28.joints[31] = HAnimJoint171;
+HAnimJoint171.USE = "Joe_l_carpal_distal_interphalangeal_4";
+HAnimHumanoid27.joints[40] = HAnimJoint171;
 
 HAnimJoint HAnimJoint172 = createNode("HAnimJoint");
-HAnimJoint172.USE = "Joe_r_acromioclavicular";
-HAnimHumanoid28.joints[32] = HAnimJoint172;
+HAnimJoint172.USE = "Joe_r_carpal_distal_interphalangeal_4";
+HAnimHumanoid27.joints[41] = HAnimJoint172;
 
 HAnimJoint HAnimJoint173 = createNode("HAnimJoint");
-HAnimJoint173.USE = "Joe_l_carpal_distal_interphalangeal_2";
-HAnimHumanoid28.joints[33] = HAnimJoint173;
+HAnimJoint173.USE = "Joe_l_carpal_interphalangeal_1";
+HAnimHumanoid27.joints[42] = HAnimJoint173;
 
 HAnimJoint HAnimJoint174 = createNode("HAnimJoint");
-HAnimJoint174.USE = "Joe_r_carpal_distal_interphalangeal_2";
-HAnimHumanoid28.joints[34] = HAnimJoint174;
+HAnimJoint174.USE = "Joe_r_carpal_interphalangeal_1";
+HAnimHumanoid27.joints[43] = HAnimJoint174;
 
 HAnimJoint HAnimJoint175 = createNode("HAnimJoint");
-HAnimJoint175.USE = "Joe_l_carpal_distal_interphalangeal_3";
-HAnimHumanoid28.joints[35] = HAnimJoint175;
+HAnimJoint175.USE = "Joe_l_carpal_proximal_interphalangeal_1";
+HAnimHumanoid27.joints[44] = HAnimJoint175;
 
 HAnimJoint HAnimJoint176 = createNode("HAnimJoint");
-HAnimJoint176.USE = "Joe_r_carpal_distal_interphalangeal_3";
-HAnimHumanoid28.joints[36] = HAnimJoint176;
+HAnimJoint176.USE = "Joe_r_carpal_proximal_interphalangeal_1";
+HAnimHumanoid27.joints[45] = HAnimJoint176;
 
 HAnimJoint HAnimJoint177 = createNode("HAnimJoint");
-HAnimJoint177.USE = "Joe_l_carpal_distal_interphalangeal_4";
-HAnimHumanoid28.joints[37] = HAnimJoint177;
+HAnimJoint177.USE = "Joe_l_carpal_proximal_interphalangeal_2";
+HAnimHumanoid27.joints[46] = HAnimJoint177;
 
 HAnimJoint HAnimJoint178 = createNode("HAnimJoint");
-HAnimJoint178.USE = "Joe_r_carpal_distal_interphalangeal_4";
-HAnimHumanoid28.joints[38] = HAnimJoint178;
+HAnimJoint178.USE = "Joe_r_carpal_proximal_interphalangeal_2";
+HAnimHumanoid27.joints[47] = HAnimJoint178;
 
 HAnimJoint HAnimJoint179 = createNode("HAnimJoint");
-HAnimJoint179.USE = "Joe_l_carpal_distal_interphalangeal_5";
-HAnimHumanoid28.joints[39] = HAnimJoint179;
+HAnimJoint179.USE = "Joe_l_carpal_proximal_interphalangeal_3";
+HAnimHumanoid27.joints[48] = HAnimJoint179;
 
 HAnimJoint HAnimJoint180 = createNode("HAnimJoint");
-HAnimJoint180.USE = "Joe_r_carpal_distal_interphalangeal_5";
-HAnimHumanoid28.joints[40] = HAnimJoint180;
+HAnimJoint180.USE = "Joe_r_carpal_proximal_interphalangeal_3";
+HAnimHumanoid27.joints[49] = HAnimJoint180;
 
 HAnimJoint HAnimJoint181 = createNode("HAnimJoint");
-HAnimJoint181.USE = "Joe_l_carpal_interphalangeal_1";
-HAnimHumanoid28.joints[41] = HAnimJoint181;
+HAnimJoint181.USE = "Joe_l_carpal_proximal_interphalangeal_4";
+HAnimHumanoid27.joints[50] = HAnimJoint181;
 
 HAnimJoint HAnimJoint182 = createNode("HAnimJoint");
-HAnimJoint182.USE = "Joe_r_carpal_interphalangeal_1";
-HAnimHumanoid28.joints[42] = HAnimJoint182;
+HAnimJoint182.USE = "Joe_r_carpal_proximal_interphalangeal_4";
+HAnimHumanoid27.joints[51] = HAnimJoint182;
 
 HAnimJoint HAnimJoint183 = createNode("HAnimJoint");
-HAnimJoint183.USE = "Joe_l_carpal_proximal_interphalangeal_2";
-HAnimHumanoid28.joints[43] = HAnimJoint183;
+HAnimJoint183.USE = "Joe_l_carpometacarpal_1";
+HAnimHumanoid27.joints[52] = HAnimJoint183;
 
 HAnimJoint HAnimJoint184 = createNode("HAnimJoint");
-HAnimJoint184.USE = "Joe_r_carpal_proximal_interphalangeal_2";
-HAnimHumanoid28.joints[44] = HAnimJoint184;
+HAnimJoint184.USE = "Joe_r_carpometacarpal_1";
+HAnimHumanoid27.joints[53] = HAnimJoint184;
 
 HAnimJoint HAnimJoint185 = createNode("HAnimJoint");
-HAnimJoint185.USE = "Joe_l_carpal_proximal_interphalangeal_3";
-HAnimHumanoid28.joints[45] = HAnimJoint185;
+HAnimJoint185.USE = "Joe_l_carpometacarpal_2";
+HAnimHumanoid27.joints[54] = HAnimJoint185;
 
 HAnimJoint HAnimJoint186 = createNode("HAnimJoint");
-HAnimJoint186.USE = "Joe_r_carpal_proximal_interphalangeal_3";
-HAnimHumanoid28.joints[46] = HAnimJoint186;
+HAnimJoint186.USE = "Joe_r_carpometacarpal_2";
+HAnimHumanoid27.joints[55] = HAnimJoint186;
 
 HAnimJoint HAnimJoint187 = createNode("HAnimJoint");
-HAnimJoint187.USE = "Joe_l_carpal_proximal_interphalangeal_4";
-HAnimHumanoid28.joints[47] = HAnimJoint187;
+HAnimJoint187.USE = "Joe_l_carpometacarpal_3";
+HAnimHumanoid27.joints[56] = HAnimJoint187;
 
 HAnimJoint HAnimJoint188 = createNode("HAnimJoint");
-HAnimJoint188.USE = "Joe_r_carpal_proximal_interphalangeal_4";
-HAnimHumanoid28.joints[48] = HAnimJoint188;
+HAnimJoint188.USE = "Joe_r_carpometacarpal_3";
+HAnimHumanoid27.joints[57] = HAnimJoint188;
 
 HAnimJoint HAnimJoint189 = createNode("HAnimJoint");
-HAnimJoint189.USE = "Joe_l_carpal_proximal_interphalangeal_5";
-HAnimHumanoid28.joints[49] = HAnimJoint189;
+HAnimJoint189.USE = "Joe_l_carpometacarpal_4";
+HAnimHumanoid27.joints[58] = HAnimJoint189;
 
 HAnimJoint HAnimJoint190 = createNode("HAnimJoint");
-HAnimJoint190.USE = "Joe_r_carpal_proximal_interphalangeal_5";
-HAnimHumanoid28.joints[50] = HAnimJoint190;
+HAnimJoint190.USE = "Joe_r_carpometacarpal_4";
+HAnimHumanoid27.joints[59] = HAnimJoint190;
 
 HAnimJoint HAnimJoint191 = createNode("HAnimJoint");
-HAnimJoint191.USE = "Joe_l_carpometacarpal_1";
-HAnimHumanoid28.joints[51] = HAnimJoint191;
+HAnimJoint191.USE = "Joe_l_carpometacarpal_5";
+HAnimHumanoid27.joints[60] = HAnimJoint191;
 
 HAnimJoint HAnimJoint192 = createNode("HAnimJoint");
-HAnimJoint192.USE = "Joe_r_carpometacarpal_1";
-HAnimHumanoid28.joints[52] = HAnimJoint192;
+HAnimJoint192.USE = "Joe_r_carpometacarpal_5";
+HAnimHumanoid27.joints[61] = HAnimJoint192;
 
 HAnimJoint HAnimJoint193 = createNode("HAnimJoint");
-HAnimJoint193.USE = "Joe_l_carpometacarpal_2";
-HAnimHumanoid28.joints[53] = HAnimJoint193;
+HAnimJoint193.USE = "Joe_l_elbow";
+HAnimHumanoid27.joints[62] = HAnimJoint193;
 
 HAnimJoint HAnimJoint194 = createNode("HAnimJoint");
-HAnimJoint194.USE = "Joe_r_carpometacarpal_2";
-HAnimHumanoid28.joints[54] = HAnimJoint194;
+HAnimJoint194.USE = "Joe_r_elbow";
+HAnimHumanoid27.joints[63] = HAnimJoint194;
 
 HAnimJoint HAnimJoint195 = createNode("HAnimJoint");
-HAnimJoint195.USE = "Joe_l_carpometacarpal_3";
-HAnimHumanoid28.joints[55] = HAnimJoint195;
+HAnimJoint195.USE = "Joe_l_eyeball_joint";
+HAnimHumanoid27.joints[64] = HAnimJoint195;
 
 HAnimJoint HAnimJoint196 = createNode("HAnimJoint");
-HAnimJoint196.USE = "Joe_r_carpometacarpal_3";
-HAnimHumanoid28.joints[56] = HAnimJoint196;
+HAnimJoint196.USE = "Joe_r_eyeball_joint";
+HAnimHumanoid27.joints[65] = HAnimJoint196;
 
 HAnimJoint HAnimJoint197 = createNode("HAnimJoint");
-HAnimJoint197.USE = "Joe_l_carpometacarpal_4";
-HAnimHumanoid28.joints[57] = HAnimJoint197;
+HAnimJoint197.USE = "Joe_l_eyebrow_joint";
+HAnimHumanoid27.joints[66] = HAnimJoint197;
 
 HAnimJoint HAnimJoint198 = createNode("HAnimJoint");
-HAnimJoint198.USE = "Joe_r_carpometacarpal_4";
-HAnimHumanoid28.joints[58] = HAnimJoint198;
+HAnimJoint198.USE = "Joe_r_eyebrow_joint";
+HAnimHumanoid27.joints[67] = HAnimJoint198;
 
 HAnimJoint HAnimJoint199 = createNode("HAnimJoint");
-HAnimJoint199.USE = "Joe_l_carpometacarpal_5";
-HAnimHumanoid28.joints[59] = HAnimJoint199;
+HAnimJoint199.USE = "Joe_l_eyelid_joint";
+HAnimHumanoid27.joints[68] = HAnimJoint199;
 
 HAnimJoint HAnimJoint200 = createNode("HAnimJoint");
-HAnimJoint200.USE = "Joe_r_carpometacarpal_5";
-HAnimHumanoid28.joints[60] = HAnimJoint200;
+HAnimJoint200.USE = "Joe_r_eyelid_joint";
+HAnimHumanoid27.joints[69] = HAnimJoint200;
 
 HAnimJoint HAnimJoint201 = createNode("HAnimJoint");
-HAnimJoint201.USE = "Joe_l_elbow";
-HAnimHumanoid28.joints[61] = HAnimJoint201;
+HAnimJoint201.USE = "Joe_l_hip";
+HAnimHumanoid27.joints[70] = HAnimJoint201;
 
 HAnimJoint HAnimJoint202 = createNode("HAnimJoint");
-HAnimJoint202.USE = "Joe_r_elbow";
-HAnimHumanoid28.joints[62] = HAnimJoint202;
+HAnimJoint202.USE = "Joe_r_hip";
+HAnimHumanoid27.joints[71] = HAnimJoint202;
 
 HAnimJoint HAnimJoint203 = createNode("HAnimJoint");
-HAnimJoint203.USE = "Joe_l_eyeball_joint";
-HAnimHumanoid28.joints[63] = HAnimJoint203;
+HAnimJoint203.USE = "Joe_l_knee";
+HAnimHumanoid27.joints[72] = HAnimJoint203;
 
 HAnimJoint HAnimJoint204 = createNode("HAnimJoint");
-HAnimJoint204.USE = "Joe_r_eyeball_joint";
-HAnimHumanoid28.joints[64] = HAnimJoint204;
+HAnimJoint204.USE = "Joe_r_knee";
+HAnimHumanoid27.joints[73] = HAnimJoint204;
 
 HAnimJoint HAnimJoint205 = createNode("HAnimJoint");
-HAnimJoint205.USE = "Joe_l_eyebrow_joint";
-HAnimHumanoid28.joints[65] = HAnimJoint205;
+HAnimJoint205.USE = "Joe_l_metacarpophalangeal_1";
+HAnimHumanoid27.joints[74] = HAnimJoint205;
 
 HAnimJoint HAnimJoint206 = createNode("HAnimJoint");
-HAnimJoint206.USE = "Joe_r_eyebrow_joint";
-HAnimHumanoid28.joints[66] = HAnimJoint206;
+HAnimJoint206.USE = "Joe_r_metacarpophalangeal_1";
+HAnimHumanoid27.joints[75] = HAnimJoint206;
 
 HAnimJoint HAnimJoint207 = createNode("HAnimJoint");
-HAnimJoint207.USE = "Joe_l_eyelid_joint";
-HAnimHumanoid28.joints[67] = HAnimJoint207;
+HAnimJoint207.USE = "Joe_l_metacarpophalangeal_2";
+HAnimHumanoid27.joints[76] = HAnimJoint207;
 
 HAnimJoint HAnimJoint208 = createNode("HAnimJoint");
-HAnimJoint208.USE = "Joe_r_eyelid_joint";
-HAnimHumanoid28.joints[68] = HAnimJoint208;
+HAnimJoint208.USE = "Joe_r_metacarpophalangeal_2";
+HAnimHumanoid27.joints[77] = HAnimJoint208;
 
 HAnimJoint HAnimJoint209 = createNode("HAnimJoint");
-HAnimJoint209.USE = "Joe_l_hip";
-HAnimHumanoid28.joints[69] = HAnimJoint209;
+HAnimJoint209.USE = "Joe_l_metacarpophalangeal_3";
+HAnimHumanoid27.joints[78] = HAnimJoint209;
 
 HAnimJoint HAnimJoint210 = createNode("HAnimJoint");
-HAnimJoint210.USE = "Joe_r_hip";
-HAnimHumanoid28.joints[70] = HAnimJoint210;
+HAnimJoint210.USE = "Joe_r_metacarpophalangeal_3";
+HAnimHumanoid27.joints[79] = HAnimJoint210;
 
 HAnimJoint HAnimJoint211 = createNode("HAnimJoint");
-HAnimJoint211.USE = "Joe_l_knee";
-HAnimHumanoid28.joints[71] = HAnimJoint211;
+HAnimJoint211.USE = "Joe_l_metacarpophalangeal_4";
+HAnimHumanoid27.joints[80] = HAnimJoint211;
 
 HAnimJoint HAnimJoint212 = createNode("HAnimJoint");
-HAnimJoint212.USE = "Joe_r_knee";
-HAnimHumanoid28.joints[72] = HAnimJoint212;
+HAnimJoint212.USE = "Joe_r_metacarpophalangeal_4";
+HAnimHumanoid27.joints[81] = HAnimJoint212;
 
 HAnimJoint HAnimJoint213 = createNode("HAnimJoint");
-HAnimJoint213.USE = "Joe_l_metacarpophalangeal_1";
-HAnimHumanoid28.joints[73] = HAnimJoint213;
+HAnimJoint213.USE = "Joe_l_metacarpophalangeal_5";
+HAnimHumanoid27.joints[82] = HAnimJoint213;
 
 HAnimJoint HAnimJoint214 = createNode("HAnimJoint");
-HAnimJoint214.USE = "Joe_r_metacarpophalangeal_1";
-HAnimHumanoid28.joints[74] = HAnimJoint214;
+HAnimJoint214.USE = "Joe_r_metacarpophalangeal_5";
+HAnimHumanoid27.joints[83] = HAnimJoint214;
 
 HAnimJoint HAnimJoint215 = createNode("HAnimJoint");
-HAnimJoint215.USE = "Joe_l_metacarpophalangeal_2";
-HAnimHumanoid28.joints[75] = HAnimJoint215;
+HAnimJoint215.USE = "Joe_l_metatarsophalangeal_1";
+HAnimHumanoid27.joints[84] = HAnimJoint215;
 
 HAnimJoint HAnimJoint216 = createNode("HAnimJoint");
-HAnimJoint216.USE = "Joe_r_metacarpophalangeal_2";
-HAnimHumanoid28.joints[76] = HAnimJoint216;
+HAnimJoint216.USE = "Joe_r_metatarsophalangeal_1";
+HAnimHumanoid27.joints[85] = HAnimJoint216;
 
 HAnimJoint HAnimJoint217 = createNode("HAnimJoint");
-HAnimJoint217.USE = "Joe_l_metacarpophalangeal_3";
-HAnimHumanoid28.joints[77] = HAnimJoint217;
+HAnimJoint217.USE = "Joe_l_radiocarpal";
+HAnimHumanoid27.joints[86] = HAnimJoint217;
 
 HAnimJoint HAnimJoint218 = createNode("HAnimJoint");
-HAnimJoint218.USE = "Joe_r_metacarpophalangeal_3";
-HAnimHumanoid28.joints[78] = HAnimJoint218;
+HAnimJoint218.USE = "Joe_r_radiocarpal";
+HAnimHumanoid27.joints[87] = HAnimJoint218;
 
 HAnimJoint HAnimJoint219 = createNode("HAnimJoint");
-HAnimJoint219.USE = "Joe_l_metacarpophalangeal_4";
-HAnimHumanoid28.joints[79] = HAnimJoint219;
+HAnimJoint219.USE = "Joe_l_shoulder";
+HAnimHumanoid27.joints[88] = HAnimJoint219;
 
 HAnimJoint HAnimJoint220 = createNode("HAnimJoint");
-HAnimJoint220.USE = "Joe_r_metacarpophalangeal_4";
-HAnimHumanoid28.joints[80] = HAnimJoint220;
+HAnimJoint220.USE = "Joe_r_shoulder";
+HAnimHumanoid27.joints[89] = HAnimJoint220;
 
 HAnimJoint HAnimJoint221 = createNode("HAnimJoint");
-HAnimJoint221.USE = "Joe_l_metacarpophalangeal_5";
-HAnimHumanoid28.joints[81] = HAnimJoint221;
+HAnimJoint221.USE = "Joe_l_sternoclavicular";
+HAnimHumanoid27.joints[90] = HAnimJoint221;
 
 HAnimJoint HAnimJoint222 = createNode("HAnimJoint");
-HAnimJoint222.USE = "Joe_r_metacarpophalangeal_5";
-HAnimHumanoid28.joints[82] = HAnimJoint222;
+HAnimJoint222.USE = "Joe_r_sternoclavicular";
+HAnimHumanoid27.joints[91] = HAnimJoint222;
 
 HAnimJoint HAnimJoint223 = createNode("HAnimJoint");
-HAnimJoint223.USE = "Joe_l_metatarsophalangeal_2";
-HAnimHumanoid28.joints[83] = HAnimJoint223;
+HAnimJoint223.USE = "Joe_l_talocrural";
+HAnimHumanoid27.joints[92] = HAnimJoint223;
 
 HAnimJoint HAnimJoint224 = createNode("HAnimJoint");
-HAnimJoint224.USE = "Joe_r_metatarsophalangeal_2";
-HAnimHumanoid28.joints[84] = HAnimJoint224;
+HAnimJoint224.USE = "Joe_r_talocrural";
+HAnimHumanoid27.joints[93] = HAnimJoint224;
 
 HAnimJoint HAnimJoint225 = createNode("HAnimJoint");
-HAnimJoint225.USE = "Joe_l_radiocarpal";
-HAnimHumanoid28.joints[85] = HAnimJoint225;
+HAnimJoint225.USE = "Joe_l_tarsal_distal_interphalangeal_1";
+HAnimHumanoid27.joints[94] = HAnimJoint225;
 
 HAnimJoint HAnimJoint226 = createNode("HAnimJoint");
-HAnimJoint226.USE = "Joe_r_radiocarpal";
-HAnimHumanoid28.joints[86] = HAnimJoint226;
+HAnimJoint226.USE = "Joe_r_tarsal_distal_interphalangeal_1";
+HAnimHumanoid27.joints[95] = HAnimJoint226;
 
 HAnimJoint HAnimJoint227 = createNode("HAnimJoint");
-HAnimJoint227.USE = "Joe_l_shoulder";
-HAnimHumanoid28.joints[87] = HAnimJoint227;
+HAnimJoint227.USE = "Joe_l_tarsometatarsal_1";
+HAnimHumanoid27.joints[96] = HAnimJoint227;
 
 HAnimJoint HAnimJoint228 = createNode("HAnimJoint");
-HAnimJoint228.USE = "Joe_r_shoulder";
-HAnimHumanoid28.joints[88] = HAnimJoint228;
+HAnimJoint228.USE = "Joe_r_tarsometatarsal_1";
+HAnimHumanoid27.joints[97] = HAnimJoint228;
 
-HAnimJoint HAnimJoint229 = createNode("HAnimJoint");
-HAnimJoint229.USE = "Joe_l_sternoclavicular";
-HAnimHumanoid28.joints[89] = HAnimJoint229;
+Coordinate Coordinate229 = createNode("Coordinate");
+Coordinate229.DEF = "Joe_SkinCoord";
+Coordinate229.point = new MFVec3f(new float[0,1.77,0,0,1.665,0.09,-0.033,1.62,0.087,0.033,1.62,0.087,0,1.55,0.097,-0.077,1.64,-0.01,-0.0527,1.58,0.015,0.077,1.64,-0.01,0.0527,1.58,0.015,0,1.625,-0.0925,-0.03,1.46,0.035,0,1.44,0.03,0.03,1.46,0.035,-0.1135,1.318,0.095,0.1135,1.318,0.095,0,1.25,0.113,-0.087,1.19,0.09,-0.0935,1.03,0.075,0.087,1.19,0.09,0.0935,1.03,0.075,-0.1425,1.065,0.0033,-0.15,0.9,-0.01,0.1425,1.065,0.0033,0.15,0.9,-0.01,0,1.53,-0.084,0.0049,1.1908,-0.1113,-0.0773,1.019,-0.12,0.0773,1.019,-0.12,0.005,1.0915,-0.1091,-0.178,1.4825,-0.0625,-0.17,1.38,0.007,-0.1884,0.8676,-0.036,-0.16,1.38,-0.127,-0.2,1.1388,-0.08,-0.244,1.1388,-0.04,-0.165,1.1388,-0.04,-0.23,1.133,-0.055,-0.1977,0.8169,-0.0177,-0.1941,0.6772,-0.0423,-0.2117,0.8562,-0.0584,-0.1929,0.789,-0.1064,0.175,1.4825,-0.06,0.17,1.38,0.007,0.1901,0.8645,-0.0415,0.16,1.38,-0.125,0.2,1.1388,-0.08,0.165,1.1388,-0.04,0.244,1.1388,-0.04,0.23,1.133,-0.055,0.2009,0.8139,-0.0237,0.2056,0.6743,-0.0482,0.2142,0.8529,-0.0648,0.1929,0.786,-0.1122,-0.1,0.4913,-0.03,-0.17,0.466,0,-0.05,0.466,0,-0.165,0.01,0.12,-0.15,0.07,0,-0.085,0.086,0.0125,-0.09,0.056,0.0125,-0.115,0.02,0.122,-0.115,0.04,-0.055,-0.11,0.011,0.19,0.0993,0.4881,-0.0309,0.17,0.466,0,0.05,0.4867,0,0.165,0.01,0.12,0.15,0.07,0,0.085,0.086,0.0125,0.09,0.056,0.0125,0.115,0.02,0.122,0.115,0.04,-0.055,0.11,0.011,0.19,0,0.875,0,-0.0646,1.5149,-0.038,0.0646,1.5149,-0.038,0,1.07225,0.09,-0.11,1.427,-0.1375,-0.235,1.42,-0.0625,0.11,1.427,-0.1375,0.235,1.42,-0.0625,0,1.41,-0.145,0,0.925,0.08,-0.087,1.19,-0.09,0.087,1.19,-0.09,0.172,1.32,-0.03,-0.172,1.32,-0.03,0.15,1.23,-0.015,-0.15,1.23,-0.015,0.079,0.92,-0.14,0.1,0.9,0.077,-0.079,0.92,-0.14,-0.1,0.9,0.075,0,0.87,0,0.171,0.65,0,0.02,0.65,0,0.1,0.65,-0.08,0.1,0.65,0.07,-0.171,0.65,0,-0.02,0.65,0,-0.1,0.65,-0.08,-0.1,0.65,0.07,0.25,1.27,-0.04,0.17,1.27,-0.04,0.2,1.27,-0.09,0.2,1.27,0.02,0.244,1.1388,-0.04,0.165,1.1388,-0.04,0.2,1.1388,-0.08,0.2,1.1388,-0.013,0.225,1,-0.01,0.225,1,-0.07,0.185,1,-0.01,0.185,1,-0.07,0.2,1.1388,-0.04,0.225,0.92,-0.04,0.175,0.92,-0.04,0.2,0.92,-0.065,0.2,0.92,-0.015,0.225,0.89,-0.04,0.175,0.89,-0.04,0.2,0.89,-0.065,0.2,0.89,-0.015,0.218,0.86,-0.04,0.184,0.86,-0.04,0.2,0.87,-0.07,0.2,0.87,0,0.21,0.85,0,0.1854,0.85,0,0.212,0.84,-0.015,0.183,0.84,-0.015,0.213,0.835,-0.04,0.19,0.835,-0.04,0.211,0.835,-0.065,0.192,0.835,-0.065,0.208,0.84,-0.085,0.19,0.84,-0.085,0.2,0.84,-0.095,0.215,0.82,0,0.193,0.815,0.005,0.198,0.8,0.012,0.21,0.82,0.03,0.19,0.82,0.03,0.2,0.835,0.039,0.212,0.8,0.05,0.188,0.8,0.05,0.2,0.807,0.057,0.2,0.793,0.035,0.2,0.774,0.076,0.212,0.78,0.07,0.188,0.78,0.07,0.2,0.785,0.075,0.2,0.77,0.062,0.215,0.793,-0.015,0.187,0.793,-0.015,0.2,0.793,-0.005,0.215,0.788,-0.04,0.187,0.788,-0.04,0.215,0.793,-0.065,0.187,0.793,-0.065,0.21,0.79,-0.085,0.19,0.79,-0.085,0.2,0.79,-0.095,0.19,0.77,-0.0275,0.19,0.77,-0.0525,0.19,0.78,-0.0775,0.212,0.745,-0.015,0.188,0.745,-0.02,0.2,0.745,-0.0255,0.2,0.745,-0.0045,0.211,0.72,-0.015,0.189,0.72,-0.015,0.2,0.72,-0.0252,0.2,0.72,-0.0048,0.21,0.695,-0.015,0.19,0.695,-0.015,0.2,0.695,-0.025,0.2,0.695,-0.005,0.2,0.685,-0.015,0.215,0.74,-0.04,0.185,0.74,-0.04,0.2,0.74,-0.055,0.2,0.74,-0.025,0.21,0.7142,-0.04,0.19,0.7142,-0.04,0.2,0.7142,-0.053,0.2,0.7142,-0.027,0.21,0.68,-0.04,0.19,0.68,-0.04,0.2,0.68,-0.05,0.2,0.68,-0.03,0.2,0.67,-0.04,0.212,0.74,-0.065,0.188,0.74,-0.065,0.2,0.74,-0.0756,0.2,0.74,-0.0542,0.21,0.7177,-0.065,0.19,0.7177,-0.065,0.2,0.7177,-0.0751,0.2,0.7177,-0.0549,0.21,0.695,-0.065,0.19,0.695,-0.065,0.2,0.695,-0.075,0.2,0.695,-0.055,0.2,0.685,-0.065,0.211,0.755,-0.085,0.189,0.755,-0.085,0.2,0.755,-0.0952,0.2,0.755,-0.0748,0.21,0.735,-0.085,0.19,0.735,-0.085,0.2,0.735,-0.0951,0.2,0.735,-0.0749,0.21,0.72,-0.085,0.19,0.72,-0.085,0.2,0.72,-0.095,0.2,0.72,-0.075,0.2,0.71,-0.085,-0.23,1.23,-0.04,-0.16,1.23,-0.04,-0.2,1.235,-0.105,-0.2,1.255,0.02,-0.244,1.1388,-0.04,-0.165,1.1388,-0.04,-0.2,1.1388,-0.08,-0.2,1.1388,0.013,-0.225,1,-0.01,-0.225,1,-0.07,-0.185,1,-0.01,-0.185,1,-0.07,-0.2,1.1388,-0.04,-0.225,0.92,-0.04,-0.175,0.92,-0.04,-0.2,0.92,-0.065,-0.2,0.92,-0.015,-0.225,0.89,-0.04,-0.175,0.89,-0.04,-0.2,0.89,-0.065,-0.2,0.89,-0.015,-0.218,0.86,-0.04,-0.184,0.86,-0.04,-0.2,0.87,-0.07,-0.2,0.87,0,-0.21,0.85,0,-0.1854,0.85,0,-0.212,0.84,-0.015,-0.183,0.84,-0.015,-0.213,0.835,-0.04,-0.19,0.835,-0.04,-0.211,0.835,-0.065,-0.192,0.835,-0.065,-0.208,0.84,-0.085,-0.19,0.84,-0.085,-0.2,0.84,-0.095,-0.215,0.82,0,-0.193,0.815,0.005,-0.198,0.8,0.012,-0.21,0.82,0.03,-0.19,0.82,0.03,-0.2,0.835,0.039,-0.212,0.8,0.05,-0.188,0.8,0.05,-0.2,0.807,0.057,-0.2,0.793,0.035,-0.2,0.774,0.076,-0.212,0.78,0.07,-0.188,0.78,0.07,-0.2,0.785,0.075,-0.2,0.77,0.062,-0.215,0.793,-0.015,-0.187,0.793,-0.015,-0.2,0.793,-0.005,-0.215,0.788,-0.04,-0.187,0.788,-0.04,-0.215,0.793,-0.065,-0.187,0.793,-0.065,-0.21,0.79,-0.085,-0.19,0.79,-0.085,-0.2,0.79,-0.095,-0.19,0.77,-0.0275,-0.19,0.77,-0.0525,-0.19,0.78,-0.0775,-0.212,0.745,-0.015,-0.188,0.745,-0.02,-0.2,0.745,-0.0255,-0.2,0.745,-0.0045,-0.211,0.72,-0.015,-0.189,0.72,-0.015,-0.2,0.72,-0.0252,-0.2,0.72,-0.0048,-0.21,0.695,-0.015,-0.19,0.695,-0.015,-0.2,0.695,-0.025,-0.2,0.695,-0.005,-0.2,0.685,-0.015,-0.215,0.74,-0.04,-0.185,0.74,-0.04,-0.2,0.74,-0.055,-0.2,0.74,-0.025,-0.21,0.7142,-0.04,-0.19,0.7142,-0.04,-0.2,0.7142,-0.053,-0.2,0.7142,-0.027,-0.21,0.68,-0.04,-0.19,0.68,-0.04,-0.2,0.68,-0.05,-0.2,0.68,-0.03,-0.2,0.67,-0.04,-0.212,0.74,-0.065,-0.188,0.74,-0.065,-0.2,0.74,-0.0756,-0.2,0.74,-0.0542,-0.21,0.7177,-0.065,-0.19,0.7177,-0.065,-0.2,0.7177,-0.0751,-0.2,0.7177,-0.0549,-0.21,0.695,-0.065,-0.19,0.695,-0.065,-0.2,0.695,-0.075,-0.2,0.695,-0.055,-0.2,0.685,-0.065,-0.211,0.755,-0.085,-0.189,0.755,-0.085,-0.2,0.755,-0.0952,-0.2,0.755,-0.0748,-0.21,0.735,-0.085,-0.19,0.735,-0.085,-0.2,0.735,-0.0951,-0.2,0.735,-0.0749,-0.21,0.72,-0.085,-0.19,0.72,-0.085,-0.2,0.72,-0.095,-0.2,0.72,-0.075,-0.2,0.71,-0.085,0.115,0.466,0.06,0.115,0.466,-0.055,0.15,0.466,0,0.05,0.466,0,0.17,0.3,0,0.06,0.3,0,0.1,0.3,-0.05,0.1,0.3,0.05,0.15,0.07,0,0.085,0.086,0.0125,0.115,0.069,-0.045,0.117,0.0975,0.0615,0.1375,0.006,-0.03,0.095,0.006,-0.03,0.115,0.015,-0.045,0.115,0.06,0.1,0.115,0,0.07,0.165,0,0.07,0.095,0,0.07,0.115,0.04,0.13,0.125,0,0.12,0.165,0,0.12,0.087,0,0.122,0.09,0.012,0.188,0.11,0.011,0.19,0.128,0.011,0.185,0.142,0.011,0.178,0.154,0.01,0.168,-0.115,0.466,0.06,-0.115,0.466,-0.055,-0.17,0.466,0,-0.05,0.466,0,-0.17,0.3,0,-0.06,0.3,0,-0.1,0.3,-0.05,-0.1,0.3,0.05,-0.15,0.07,0,-0.085,0.086,0.0125,-0.115,0.069,-0.045,-0.117,0.0975,0.0615,-0.1375,0.006,-0.03,-0.095,0.006,-0.03,-0.095,0.006,-0.03,-0.115,0.06,0.1,-0.115,0,0.07,-0.165,0,0.07,-0.095,0,0.07,-0.115,0.04,0.13,-0.125,0,0.12,-0.165,0,0.12,-0.087,0,0.122,-0.09,0.012,0.188,-0.11,0.011,0.19,-0.128,0.011,0.185,-0.142,0.011,0.178,-0.154,0.01,0.168]);
+HAnimHumanoid27.skinCoord = Coordinate229;
 
-HAnimJoint HAnimJoint230 = createNode("HAnimJoint");
-HAnimJoint230.USE = "Joe_r_sternoclavicular";
-HAnimHumanoid28.joints[90] = HAnimJoint230;
+Shape Shape230 = createNode("Shape");
+Shape230.DEF = "Joe_Shape";
+Appearance Appearance231 = createNode("Appearance");
+Appearance231.DEF = "Joe_skin_Appearance";
+Material Material232 = createNode("Material");
+Material232.DEF = "Joe_skin_Material";
+Material232.diffuseColor = new SFColor(new float[0.3,0.3,0.6]);
+Material232.emissiveColor = new SFColor(new float[0.3,0.3,0.6]);
+Appearance231.material = Material232;
 
-HAnimJoint HAnimJoint231 = createNode("HAnimJoint");
-HAnimJoint231.USE = "Joe_l_talocrural";
-HAnimHumanoid28.joints[91] = HAnimJoint231;
+ImageTexture ImageTexture233 = createNode("ImageTexture");
+ImageTexture233.DEF = "JoeSkinImageTexture";
+ImageTexture233.url = new MFString(new java.lang.String["JoeBodyTexture29.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JoeBodyTexture29.png"]);
+Appearance231.texture = ImageTexture233;
 
-HAnimJoint HAnimJoint232 = createNode("HAnimJoint");
-HAnimJoint232.USE = "Joe_r_talocrural";
-HAnimHumanoid28.joints[92] = HAnimJoint232;
+TextureTransform TextureTransform234 = createNode("TextureTransform");
+TextureTransform234.DEF = "KickTextureTransform";
+Appearance231.textureTransform = TextureTransform234;
 
-HAnimJoint HAnimJoint233 = createNode("HAnimJoint");
-HAnimJoint233.USE = "Joe_l_tarsal_distal_interphalangeal_2";
-HAnimHumanoid28.joints[93] = HAnimJoint233;
+Shape230.appearance = Appearance231;
 
-HAnimJoint HAnimJoint234 = createNode("HAnimJoint");
-HAnimJoint234.USE = "Joe_r_tarsal_distal_interphalangeal_2";
-HAnimHumanoid28.joints[94] = HAnimJoint234;
+IndexedFaceSet IndexedFaceSet235 = createNode("IndexedFaceSet");
+IndexedFaceSet235.DEF = "Joe_skin_IndexedFaceSet";
+IndexedFaceSet235.creaseAngle = 3.14;
+IndexedFaceSet235.coordIndex = new MFInt32(new int[0,9,5,-1,0,7,9,-1,0,5,1,-1,1,5,2,-1,1,3,7,-1,2,4,3,-1,0,1,7,-1,1,2,3,-1,5,6,2,-1,7,3,8,-1,6,4,2,-1,3,4,8,-1,9,6,5,-1,9,7,8,-1,4,6,10,-1,4,10,12,-1,4,12,8,-1,10,11,12,-1,9,75,24,-1,9,24,74,-1,9,8,75,-1,9,74,6,-1,10,6,74,-1,12,75,8,-1,74,24,29,-1,24,77,29,-1,10,74,29,-1,77,32,29,-1,32,78,29,-1,78,30,29,-1,30,10,29,-1,41,24,75,-1,41,75,12,-1,41,12,42,-1,41,42,80,-1,41,80,44,-1,41,44,79,-1,41,79,24,-1,81,24,79,-1,81,77,24,-1,81,25,77,-1,81,79,25,-1,25,79,44,-1,25,32,77,-1,25,83,32,-1,25,26,83,-1,25,27,26,-1,25,84,27,-1,25,44,84,-1,11,10,30,-1,11,30,13,-1,11,13,15,-1,11,15,14,-1,11,14,42,-1,11,42,12,-1,15,13,16,-1,15,18,14,-1,15,16,76,-1,15,76,18,-1,76,16,17,-1,76,17,82,-1,76,82,19,-1,76,19,18,-1,22,18,19,-1,22,87,18,-1,22,27,84,-1,22,84,87,-1,87,84,85,-1,85,84,44,-1,85,42,14,-1,87,14,18,-1,87,85,14,-1,20,83,26,-1,20,17,16,-1,20,16,88,-1,20,88,83,-1,88,16,13,-1,88,13,86,-1,88,86,83,-1,86,13,30,-1,86,32,83,-1,23,89,22,-1,89,27,22,-1,89,91,27,-1,91,26,27,-1,91,20,26,-1,21,20,91,-1,21,17,20,-1,21,92,17,-1,82,17,92,-1,82,90,19,-1,23,22,19,-1,23,19,90,-1,82,92,101,-1,82,101,99,-1,82,99,93,-1,82,93,95,-1,82,95,97,-1,82,97,90,-1,23,90,97,-1,23,97,94,-1,23,94,89,-1,89,94,96,-1,89,96,95,-1,89,95,93,-1,89,93,91,-1,91,93,99,-1,91,99,100,-1,91,100,98,-1,21,91,98,-1,21,98,101,-1,21,101,92,-1,85,105,42,-1,85,103,105,-1,85,44,103,-1,103,44,104,-1,80,42,105,-1,80,105,102,-1,80,102,104,-1,80,104,44,-1,105,109,102,-1,102,109,47,-1,47,104,102,-1,104,47,45,-1,104,45,103,-1,103,45,46,-1,103,46,109,-1,103,109,105,-1,109,112,110,-1,109,110,47,-1,47,110,111,-1,47,111,45,-1,45,111,113,-1,113,46,45,-1,46,113,112,-1,112,109,46,-1,112,118,110,-1,110,118,115,-1,110,115,111,-1,111,115,117,-1,111,117,113,-1,113,117,116,-1,113,116,112,-1,112,116,118,-1,115,118,119,-1,119,118,122,-1,118,116,122,-1,122,116,120,-1,116,117,120,-1,120,117,121,-1,117,115,121,-1,115,119,121,-1,119,127,123,-1,119,122,127,-1,122,126,127,-1,122,128,126,-1,122,120,128,-1,120,124,128,-1,120,121,124,-1,121,125,124,-1,121,119,125,-1,119,123,125,-1,127,129,123,-1,127,126,129,-1,129,126,141,-1,141,126,143,-1,126,142,143,-1,126,128,142,-1,128,124,130,-1,142,128,130,-1,124,132,130,-1,124,134,132,-1,125,134,124,-1,125,136,134,-1,125,137,136,-1,125,135,137,-1,125,133,135,-1,125,123,133,-1,123,131,133,-1,123,129,131,-1,131,129,138,-1,129,141,138,-1,138,141,144,-1,141,143,144,-1,143,146,144,-1,142,146,143,-1,142,145,146,-1,139,145,142,-1,130,139,142,-1,139,130,132,-1,139,132,154,-1,132,157,154,-1,132,159,157,-1,132,134,159,-1,134,136,159,-1,136,161,159,-1,136,137,161,-1,137,162,161,-1,160,162,137,-1,135,160,137,-1,133,160,135,-1,133,158,160,-1,131,158,133,-1,156,158,131,-1,153,156,131,-1,131,138,153,-1,138,155,153,-1,140,155,138,-1,138,144,140,-1,144,147,140,-1,140,147,145,-1,140,145,139,-1,139,155,140,-1,154,155,139,-1,146,149,144,-1,146,151,149,-1,145,151,146,-1,150,151,145,-1,145,152,150,-1,147,152,145,-1,147,149,152,-1,147,144,149,-1,148,149,151,-1,148,152,149,-1,148,150,152,-1,148,151,150,-1,160,207,162,-1,160,205,207,-1,165,208,205,-1,160,165,205,-1,158,165,160,-1,161,162,207,-1,161,207,206,-1,165,206,208,-1,206,165,161,-1,161,165,159,-1,207,209,211,-1,205,209,207,-1,205,212,209,-1,205,208,212,-1,206,212,208,-1,206,210,212,-1,206,207,210,-1,207,211,210,-1,209,212,213,-1,212,216,213,-1,212,214,216,-1,210,214,212,-1,210,215,214,-1,210,211,215,-1,209,215,211,-1,209,213,215,-1,217,213,216,-1,217,215,213,-1,217,214,215,-1,217,216,214,-1,158,194,165,-1,192,194,158,-1,164,195,192,-1,158,164,192,-1,156,164,158,-1,159,194,165,-1,159,194,193,-1,159,193,195,-1,159,195,164,-1,159,164,157,-1,157,164,180,-1,192,198,194,-1,192,196,198,-1,192,195,196,-1,195,199,196,-1,196,199,200,-1,199,203,200,-1,193,199,195,-1,193,197,199,-1,193,198,197,-1,193,194,198,-1,199,201,203,-1,197,201,199,-1,197,198,201,-1,198,202,201,-1,196,202,198,-1,200,202,196,-1,204,202,200,-1,204,201,202,-1,204,203,201,-1,204,200,203,-1,156,181,164,-1,156,179,181,-1,156,182,179,-1,156,163,182,-1,163,180,182,-1,157,180,163,-1,164,181,180,-1,179,182,183,-1,182,186,183,-1,182,184,186,-1,180,184,182,-1,180,181,184,-1,181,185,184,-1,179,185,181,-1,183,185,179,-1,183,186,187,-1,186,190,187,-1,184,190,186,-1,184,188,190,-1,184,185,188,-1,185,189,188,-1,185,183,189,-1,183,187,189,-1,191,189,187,-1,191,188,189,-1,191,190,188,-1,191,187,190,-1,153,163,156,-1,153,168,163,-1,153,166,168,-1,153,169,166,-1,155,169,153,-1,155,167,169,-1,154,167,155,-1,154,163,167,-1,154,157,163,-1,163,168,167,-1,166,169,170,-1,169,173,170,-1,169,171,173,-1,169,167,171,-1,167,168,171,-1,168,172,171,-1,168,170,172,-1,170,168,166,-1,170,173,174,-1,173,177,174,-1,173,175,177,-1,173,171,175,-1,171,172,175,-1,172,176,175,-1,172,174,176,-1,170,174,172,-1,178,176,174,-1,178,175,176,-1,178,177,175,-1,178,174,177,-1,86,30,221,-1,86,221,219,-1,86,219,32,-1,32,219,220,-1,78,32,220,-1,78,220,218,-1,78,218,221,-1,78,221,30,-1,221,225,219,-1,219,225,35,-1,35,33,219,-1,33,220,219,-1,33,34,220,-1,220,34,218,-1,221,218,34,-1,34,225,221,-1,225,226,228,-1,225,228,35,-1,35,228,229,-1,35,229,33,-1,33,229,227,-1,33,227,34,-1,34,227,226,-1,34,226,225,-1,226,234,228,-1,228,234,232,-1,232,229,228,-1,232,233,229,-1,229,233,227,-1,227,233,231,-1,227,231,226,-1,226,231,234,-1,231,235,234,-1,235,238,234,-1,234,238,232,-1,238,236,232,-1,232,236,233,-1,236,237,233,-1,233,237,231,-1,231,237,235,-1,235,239,243,-1,235,243,238,-1,238,243,242,-1,238,242,244,-1,238,244,236,-1,236,244,240,-1,236,240,237,-1,237,240,241,-1,237,241,235,-1,235,241,239,-1,243,239,245,-1,243,245,242,-1,245,257,242,-1,257,259,242,-1,242,259,258,-1,242,258,244,-1,244,246,240,-1,258,246,244,-1,240,246,248,-1,240,248,250,-1,241,240,250,-1,241,250,252,-1,241,252,253,-1,241,253,251,-1,241,251,249,-1,241,249,239,-1,239,249,247,-1,239,247,245,-1,247,254,245,-1,245,254,257,-1,254,260,257,-1,257,260,259,-1,259,260,262,-1,258,259,262,-1,258,262,261,-1,255,258,261,-1,246,258,255,-1,255,248,246,-1,255,270,248,-1,248,270,273,-1,248,273,275,-1,248,275,250,-1,250,275,252,-1,252,275,277,-1,252,277,253,-1,253,277,278,-1,276,253,278,-1,251,253,276,-1,249,251,276,-1,249,276,274,-1,247,249,274,-1,272,247,274,-1,269,247,272,-1,247,269,254,-1,254,269,271,-1,256,254,271,-1,254,256,260,-1,260,256,263,-1,256,261,263,-1,256,255,261,-1,255,256,271,-1,270,255,271,-1,262,260,265,-1,262,265,267,-1,261,262,267,-1,266,261,267,-1,261,266,268,-1,263,261,268,-1,263,268,265,-1,263,265,260,-1,264,267,265,-1,264,265,268,-1,264,268,266,-1,264,266,267,-1,276,278,323,-1,276,323,321,-1,281,321,324,-1,276,321,281,-1,274,276,281,-1,277,323,278,-1,277,322,323,-1,281,324,322,-1,322,277,281,-1,277,275,281,-1,323,327,325,-1,321,323,325,-1,321,325,328,-1,321,328,324,-1,322,324,328,-1,322,328,326,-1,322,326,323,-1,323,326,327,-1,325,329,328,-1,328,329,332,-1,328,332,330,-1,326,328,330,-1,326,330,331,-1,326,331,327,-1,325,327,331,-1,325,331,329,-1,333,332,329,-1,333,329,331,-1,333,331,330,-1,333,330,332,-1,274,281,310,-1,308,274,310,-1,280,308,311,-1,274,308,280,-1,272,274,280,-1,275,310,281,-1,275,309,310,-1,275,311,309,-1,275,280,311,-1,275,273,280,-1,273,296,280,-1,308,310,314,-1,308,314,312,-1,308,312,311,-1,311,312,315,-1,312,316,315,-1,315,316,319,-1,309,311,315,-1,309,315,313,-1,309,313,314,-1,309,314,310,-1,315,319,317,-1,313,315,317,-1,313,317,314,-1,314,317,318,-1,312,314,318,-1,316,312,318,-1,320,316,318,-1,320,318,317,-1,320,317,319,-1,320,319,316,-1,272,280,297,-1,272,297,295,-1,272,295,298,-1,272,298,279,-1,279,298,296,-1,273,279,296,-1,280,296,297,-1,295,299,298,-1,298,299,302,-1,298,302,300,-1,296,298,300,-1,296,300,297,-1,297,300,301,-1,295,297,301,-1,299,295,301,-1,299,303,302,-1,302,303,306,-1,300,302,306,-1,300,306,304,-1,300,304,301,-1,301,304,305,-1,301,305,299,-1,299,305,303,-1,307,303,305,-1,307,305,304,-1,307,304,306,-1,307,306,303,-1,269,272,279,-1,269,279,284,-1,269,284,282,-1,269,282,285,-1,271,269,285,-1,271,285,283,-1,270,271,283,-1,270,283,279,-1,270,279,273,-1,279,283,284,-1,282,286,285,-1,285,286,289,-1,285,289,287,-1,285,287,283,-1,283,287,284,-1,284,287,288,-1,284,288,286,-1,286,282,284,-1,286,290,289,-1,289,290,293,-1,289,293,291,-1,289,291,287,-1,287,291,288,-1,288,291,292,-1,288,292,290,-1,286,288,290,-1,294,290,292,-1,294,292,291,-1,294,291,293,-1,294,293,290,-1,97,334,336,-1,97,336,94,-1,94,336,96,-1,336,335,96,-1,96,335,95,-1,95,335,337,-1,95,337,334,-1,95,334,97,-1,334,341,336,-1,336,341,338,-1,336,338,335,-1,335,338,340,-1,335,340,337,-1,337,340,339,-1,337,339,334,-1,334,339,341,-1,341,345,342,-1,341,342,338,-1,338,342,340,-1,340,342,344,-1,340,344,339,-1,339,344,343,-1,339,343,345,-1,339,345,341,-1,345,349,342,-1,342,349,351,-1,342,351,346,-1,342,346,344,-1,71,346,348,-1,71,344,346,-1,71,348,347,-1,71,347,344,-1,344,347,343,-1,343,347,352,-1,343,352,349,-1,343,349,345,-1,349,352,356,-1,349,356,353,-1,349,353,355,-1,349,355,351,-1,354,356,352,-1,354,352,350,-1,354,350,351,-1,354,351,355,-1,353,356,357,-1,353,357,358,-1,353,358,359,-1,353,359,360,-1,353,360,361,-1,353,361,355,-1,354,357,356,-1,350,346,351,-1,348,346,347,-1,350,347,346,-1,350,352,347,-1,354,358,357,-1,354,359,358,-1,354,360,359,-1,354,361,360,-1,354,355,361,-1,101,362,365,-1,101,365,99,-1,99,365,100,-1,100,365,363,-1,100,363,98,-1,98,363,364,-1,98,364,101,-1,101,364,362,-1,362,369,367,-1,362,367,365,-1,365,367,363,-1,363,367,368,-1,363,367,368,-1,363,368,366,-1,363,366,364,-1,364,366,362,-1,362,366,369,-1,369,373,371,-1,369,371,367,-1,367,371,368,-1,368,371,372,-1,368,372,366,-1,366,372,370,-1,366,370,369,-1,369,370,373,-1,373,377,380,-1,373,380,375,-1,373,375,371,-1,371,375,372,-1,372,375,376,-1,372,376,374,-1,372,374,370,-1,370,374,379,-1,373,370,379,-1,373,379,377,-1,377,379,383,-1,377,383,381,-1,377,381,384,-1,377,384,380,-1,381,383,389,-1,381,389,388,-1,381,388,387,-1,381,387,386,-1,381,386,385,-1,381,385,384,-1,376,375,374,-1,378,379,374,-1,378,374,375,-1,378,375,380,-1,382,386,387,-1,382,387,388,-1,382,388,389,-1,382,389,383,-1,382,383,379,-1,382,379,378,-1,382,378,380,-1,382,380,384,-1,382,384,385,-1,382,385,386,-1]);
+TextureCoordinate TextureCoordinate236 = createNode("TextureCoordinate");
+TextureCoordinate236.point = new MFVec2f(new float[0,0,0.5,0.5,0.5,0,0,0.5]);
+IndexedFaceSet235.texCoord = TextureCoordinate236;
 
-HAnimJoint HAnimJoint235 = createNode("HAnimJoint");
-HAnimJoint235.USE = "Joe_l_tarsometatarsal_2";
-HAnimHumanoid28.joints[95] = HAnimJoint235;
+Coordinate Coordinate237 = createNode("Coordinate");
+Coordinate237.USE = "Joe_SkinCoord";
+IndexedFaceSet235.coord = Coordinate237;
 
-HAnimJoint HAnimJoint236 = createNode("HAnimJoint");
-HAnimJoint236.USE = "Joe_r_tarsometatarsal_2";
-HAnimHumanoid28.joints[96] = HAnimJoint236;
+Shape230.geometry = IndexedFaceSet235;
 
-HAnimSegment HAnimSegment237 = createNode("HAnimSegment");
-HAnimSegment237.USE = "Joe_sacrum";
-HAnimHumanoid28.segments[97] = HAnimSegment237;
+HAnimHumanoid27.skin[98] = Shape230;
 
-HAnimSite HAnimSite238 = createNode("HAnimSite");
-HAnimSite238.USE = "Joe_RootFront_view";
-HAnimHumanoid28.viewpoints[98] = HAnimSite238;
+Group26.children = new MFNode();
 
-Group27.children = new MFNode();
+Group26.children[0] = HAnimHumanoid27;
 
-Group27.children[0] = HAnimHumanoid28;
+children[10] = Group26;
 
-children[10] = Group27;
+Group Group238 = createNode("Group");
+TimeSensor TimeSensor239 = createNode("TimeSensor");
+TimeSensor239.DEF = "KickTimer";
+TimeSensor239.cycleInterval = 3.73;
+TimeSensor239.loop = True;
+Group238.children = new MFNode();
 
-Group Group239 = createNode("Group");
-TimeSensor TimeSensor240 = createNode("TimeSensor");
-TimeSensor240.DEF = "KickTimer";
-TimeSensor240.cycleInterval = 3.73;
-TimeSensor240.loop = True;
-Group239.children = new MFNode();
+Group238.children[0] = TimeSensor239;
 
-Group239.children[0] = TimeSensor240;
+OrientationInterpolator OrientationInterpolator240 = createNode("OrientationInterpolator");
+OrientationInterpolator240.DEF = "HumanoidRoot_RotationInterpolator";
+OrientationInterpolator240.key = new MFFloat(new float[0,0.1,0.4,0.6,1]);
+OrientationInterpolator240.keyValue = new MFRotation(new float[1,0,0,0.5,1,0,0,0.5,-1,0,0,0.1,-1,0,0,0.5,-1,0,0,0.5]);
+Group238.children[1] = OrientationInterpolator240;
 
-//Interpolators
-OrientationInterpolator OrientationInterpolator241 = createNode("OrientationInterpolator");
-OrientationInterpolator241.DEF = "HumanoidRoot_RotationInterpolator";
-OrientationInterpolator241.key = new MFFloat(new float[0,0.1,0.4,0.6,1]);
-OrientationInterpolator241.keyValue = new MFRotation(new float[1,0,0,0.5,1,0,0,0.5,-1,0,0,0.1,-1,0,0,0.5,-1,0,0,0.5]);
-Group239.children[1] = OrientationInterpolator241;
+PositionInterpolator PositionInterpolator241 = createNode("PositionInterpolator");
+PositionInterpolator241.DEF = "HumanoidRoot_TranslationInterpolator";
+PositionInterpolator241.key = new MFFloat(new float[0,0.2,0.6,1]);
+PositionInterpolator241.keyValue = new MFVec3f(new float[1,0.3,-1,0.4,-0.04,-0.4,-0.18,0.1,0,-0.2,0.15,0.15]);
+Group238.children[2] = PositionInterpolator241;
 
-PositionInterpolator PositionInterpolator242 = createNode("PositionInterpolator");
-PositionInterpolator242.DEF = "HumanoidRoot_TranslationInterpolator";
-PositionInterpolator242.key = new MFFloat(new float[0,0.2,0.6,1]);
-PositionInterpolator242.keyValue = new MFVec3f(new float[1,0.3,-1,0.4,-0.04,-0.4,-0.18,0.1,0,-0.2,0.15,0.15]);
-Group239.children[2] = PositionInterpolator242;
+OrientationInterpolator OrientationInterpolator242 = createNode("OrientationInterpolator");
+OrientationInterpolator242.DEF = "sacroiliac_RotationInterpolator";
+OrientationInterpolator242.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator242.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group238.children[3] = OrientationInterpolator242;
 
 OrientationInterpolator OrientationInterpolator243 = createNode("OrientationInterpolator");
-OrientationInterpolator243.DEF = "sacroiliac_RotationInterpolator";
-OrientationInterpolator243.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator243.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[3] = OrientationInterpolator243;
+OrientationInterpolator243.DEF = "l_hip_RotationInterpolator";
+OrientationInterpolator243.key = new MFFloat(new float[0,0.1,0.3,0.45,1]);
+OrientationInterpolator243.keyValue = new MFRotation(new float[-1,0,0,1.5,-1,0,0,1,0,0,1,0,1,0,0,0.5,1,0,0,1]);
+Group238.children[4] = OrientationInterpolator243;
 
 OrientationInterpolator OrientationInterpolator244 = createNode("OrientationInterpolator");
-OrientationInterpolator244.DEF = "l_hip_RotationInterpolator";
-OrientationInterpolator244.key = new MFFloat(new float[0,0.1,0.3,0.45,1]);
-OrientationInterpolator244.keyValue = new MFRotation(new float[-1,0,0,1.5,-1,0,0,1,0,0,1,0,1,0,0,0.5,1,0,0,1]);
-Group239.children[4] = OrientationInterpolator244;
+OrientationInterpolator244.DEF = "l_knee_RotationInterpolator";
+OrientationInterpolator244.key = new MFFloat(new float[0,0.2,0.35,0.5,1]);
+OrientationInterpolator244.keyValue = new MFRotation(new float[1,0,0,1,0,0,1,0,0,0,1,0.2,1,0,1,0.5,1,0,0,1.4]);
+Group238.children[5] = OrientationInterpolator244;
 
 OrientationInterpolator OrientationInterpolator245 = createNode("OrientationInterpolator");
-OrientationInterpolator245.DEF = "l_knee_RotationInterpolator";
-OrientationInterpolator245.key = new MFFloat(new float[0,0.2,0.35,0.5,1]);
-OrientationInterpolator245.keyValue = new MFRotation(new float[1,0,0,1,0,0,1,0,0,0,1,0.2,1,0,1,0.5,1,0,0,1.4]);
-Group239.children[5] = OrientationInterpolator245;
+OrientationInterpolator245.DEF = "l_ankle_RotationInterpolator";
+OrientationInterpolator245.key = new MFFloat(new float[0,0.25,1]);
+OrientationInterpolator245.keyValue = new MFRotation(new float[-1,0,0,1,0,0,1,0,1,0,0,1]);
+Group238.children[6] = OrientationInterpolator245;
 
 OrientationInterpolator OrientationInterpolator246 = createNode("OrientationInterpolator");
-OrientationInterpolator246.DEF = "l_ankle_RotationInterpolator";
-OrientationInterpolator246.key = new MFFloat(new float[0,0.25,1]);
-OrientationInterpolator246.keyValue = new MFRotation(new float[-1,0,0,1,0,0,1,0,1,0,0,1]);
-Group239.children[6] = OrientationInterpolator246;
+OrientationInterpolator246.DEF = "l_subtalar_RotationInterpolator";
+OrientationInterpolator246.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator246.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group238.children[7] = OrientationInterpolator246;
 
 OrientationInterpolator OrientationInterpolator247 = createNode("OrientationInterpolator");
-OrientationInterpolator247.DEF = "l_subtalar_RotationInterpolator";
+OrientationInterpolator247.DEF = "l_midtarsal_RotationInterpolator";
 OrientationInterpolator247.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator247.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[7] = OrientationInterpolator247;
+Group238.children[8] = OrientationInterpolator247;
 
 OrientationInterpolator OrientationInterpolator248 = createNode("OrientationInterpolator");
-OrientationInterpolator248.DEF = "l_midtarsal_RotationInterpolator";
+OrientationInterpolator248.DEF = "l_metatarsal_RotationInterpolator";
 OrientationInterpolator248.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator248.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[8] = OrientationInterpolator248;
+Group238.children[9] = OrientationInterpolator248;
 
 OrientationInterpolator OrientationInterpolator249 = createNode("OrientationInterpolator");
-OrientationInterpolator249.DEF = "l_metatarsal_RotationInterpolator";
-OrientationInterpolator249.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator249.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[9] = OrientationInterpolator249;
+OrientationInterpolator249.DEF = "r_hip_RotationInterpolator";
+OrientationInterpolator249.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+OrientationInterpolator249.keyValue = new MFRotation(new float[1,0,0,1,1,0,0,1,-1,0,0,1,-1,0,0,1,-1,0,0,1]);
+Group238.children[10] = OrientationInterpolator249;
 
 OrientationInterpolator OrientationInterpolator250 = createNode("OrientationInterpolator");
-OrientationInterpolator250.DEF = "r_hip_RotationInterpolator";
+OrientationInterpolator250.DEF = "r_knee_RotationInterpolator";
 OrientationInterpolator250.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
-OrientationInterpolator250.keyValue = new MFRotation(new float[1,0,0,1,1,0,0,1,-1,0,0,1,-1,0,0,1,-1,0,0,1]);
-Group239.children[10] = OrientationInterpolator250;
+OrientationInterpolator250.keyValue = new MFRotation(new float[1,0,0,0.1,0,0,1,0,1,0,0,1,1,0,0,1,1,0,0,1.5]);
+Group238.children[11] = OrientationInterpolator250;
 
 OrientationInterpolator OrientationInterpolator251 = createNode("OrientationInterpolator");
-OrientationInterpolator251.DEF = "r_knee_RotationInterpolator";
+OrientationInterpolator251.DEF = "r_ankle_RotationInterpolator";
 OrientationInterpolator251.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
-OrientationInterpolator251.keyValue = new MFRotation(new float[1,0,0,0.1,0,0,1,0,1,0,0,1,1,0,0,1,1,0,0,1.5]);
-Group239.children[11] = OrientationInterpolator251;
+OrientationInterpolator251.keyValue = new MFRotation(new float[-1,0,0,1,0,0,1,0,1,0,0,1,1,0,0,1,1,0,0,0.5]);
+Group238.children[12] = OrientationInterpolator251;
 
 OrientationInterpolator OrientationInterpolator252 = createNode("OrientationInterpolator");
-OrientationInterpolator252.DEF = "r_ankle_RotationInterpolator";
-OrientationInterpolator252.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
-OrientationInterpolator252.keyValue = new MFRotation(new float[-1,0,0,1,0,0,1,0,1,0,0,1,1,0,0,1,1,0,0,0.5]);
-Group239.children[12] = OrientationInterpolator252;
+OrientationInterpolator252.DEF = "r_subtalar_RotationInterpolator";
+OrientationInterpolator252.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator252.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group238.children[13] = OrientationInterpolator252;
 
 OrientationInterpolator OrientationInterpolator253 = createNode("OrientationInterpolator");
-OrientationInterpolator253.DEF = "r_subtalar_RotationInterpolator";
+OrientationInterpolator253.DEF = "r_midtarsal_RotationInterpolator";
 OrientationInterpolator253.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator253.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[13] = OrientationInterpolator253;
+Group238.children[14] = OrientationInterpolator253;
 
 OrientationInterpolator OrientationInterpolator254 = createNode("OrientationInterpolator");
-OrientationInterpolator254.DEF = "r_midtarsal_RotationInterpolator";
+OrientationInterpolator254.DEF = "r_metatarsal_RotationInterpolator";
 OrientationInterpolator254.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator254.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[14] = OrientationInterpolator254;
+Group238.children[15] = OrientationInterpolator254;
 
 OrientationInterpolator OrientationInterpolator255 = createNode("OrientationInterpolator");
-OrientationInterpolator255.DEF = "r_metatarsal_RotationInterpolator";
+OrientationInterpolator255.DEF = "vl5_RotationInterpolator";
 OrientationInterpolator255.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator255.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[15] = OrientationInterpolator255;
+Group238.children[16] = OrientationInterpolator255;
 
 OrientationInterpolator OrientationInterpolator256 = createNode("OrientationInterpolator");
-OrientationInterpolator256.DEF = "vl5_RotationInterpolator";
+OrientationInterpolator256.DEF = "vl4_RotationInterpolator";
 OrientationInterpolator256.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator256.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[16] = OrientationInterpolator256;
+Group238.children[17] = OrientationInterpolator256;
 
 OrientationInterpolator OrientationInterpolator257 = createNode("OrientationInterpolator");
-OrientationInterpolator257.DEF = "vl4_RotationInterpolator";
+OrientationInterpolator257.DEF = "vl3_RotationInterpolator";
 OrientationInterpolator257.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator257.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[17] = OrientationInterpolator257;
+Group238.children[18] = OrientationInterpolator257;
 
 OrientationInterpolator OrientationInterpolator258 = createNode("OrientationInterpolator");
-OrientationInterpolator258.DEF = "vl3_RotationInterpolator";
+OrientationInterpolator258.DEF = "vl2_RotationInterpolator";
 OrientationInterpolator258.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator258.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[18] = OrientationInterpolator258;
+Group238.children[19] = OrientationInterpolator258;
 
 OrientationInterpolator OrientationInterpolator259 = createNode("OrientationInterpolator");
-OrientationInterpolator259.DEF = "vl2_RotationInterpolator";
+OrientationInterpolator259.DEF = "vl1_RotationInterpolator";
 OrientationInterpolator259.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator259.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[19] = OrientationInterpolator259;
+Group238.children[20] = OrientationInterpolator259;
 
 OrientationInterpolator OrientationInterpolator260 = createNode("OrientationInterpolator");
-OrientationInterpolator260.DEF = "vl1_RotationInterpolator";
+OrientationInterpolator260.DEF = "vt12_RotationInterpolator";
 OrientationInterpolator260.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator260.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[20] = OrientationInterpolator260;
+Group238.children[21] = OrientationInterpolator260;
 
 OrientationInterpolator OrientationInterpolator261 = createNode("OrientationInterpolator");
-OrientationInterpolator261.DEF = "vt12_RotationInterpolator";
+OrientationInterpolator261.DEF = "vt11_RotationInterpolator";
 OrientationInterpolator261.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator261.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[21] = OrientationInterpolator261;
+Group238.children[22] = OrientationInterpolator261;
 
 OrientationInterpolator OrientationInterpolator262 = createNode("OrientationInterpolator");
-OrientationInterpolator262.DEF = "vt11_RotationInterpolator";
+OrientationInterpolator262.DEF = "vt10_RotationInterpolator";
 OrientationInterpolator262.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator262.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[22] = OrientationInterpolator262;
+Group238.children[23] = OrientationInterpolator262;
 
 OrientationInterpolator OrientationInterpolator263 = createNode("OrientationInterpolator");
-OrientationInterpolator263.DEF = "vt10_RotationInterpolator";
+OrientationInterpolator263.DEF = "vt9_RotationInterpolator";
 OrientationInterpolator263.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator263.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[23] = OrientationInterpolator263;
+Group238.children[24] = OrientationInterpolator263;
 
 OrientationInterpolator OrientationInterpolator264 = createNode("OrientationInterpolator");
-OrientationInterpolator264.DEF = "vt9_RotationInterpolator";
+OrientationInterpolator264.DEF = "vt8_RotationInterpolator";
 OrientationInterpolator264.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator264.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[24] = OrientationInterpolator264;
+Group238.children[25] = OrientationInterpolator264;
 
 OrientationInterpolator OrientationInterpolator265 = createNode("OrientationInterpolator");
-OrientationInterpolator265.DEF = "vt8_RotationInterpolator";
+OrientationInterpolator265.DEF = "vt7_RotationInterpolator";
 OrientationInterpolator265.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator265.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[25] = OrientationInterpolator265;
+Group238.children[26] = OrientationInterpolator265;
 
 OrientationInterpolator OrientationInterpolator266 = createNode("OrientationInterpolator");
-OrientationInterpolator266.DEF = "vt7_RotationInterpolator";
+OrientationInterpolator266.DEF = "vt6_RotationInterpolator";
 OrientationInterpolator266.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator266.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[26] = OrientationInterpolator266;
+Group238.children[27] = OrientationInterpolator266;
 
 OrientationInterpolator OrientationInterpolator267 = createNode("OrientationInterpolator");
-OrientationInterpolator267.DEF = "vt6_RotationInterpolator";
+OrientationInterpolator267.DEF = "vt5_RotationInterpolator";
 OrientationInterpolator267.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator267.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[27] = OrientationInterpolator267;
+Group238.children[28] = OrientationInterpolator267;
 
 OrientationInterpolator OrientationInterpolator268 = createNode("OrientationInterpolator");
-OrientationInterpolator268.DEF = "vt5_RotationInterpolator";
+OrientationInterpolator268.DEF = "vt4_RotationInterpolator";
 OrientationInterpolator268.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator268.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[28] = OrientationInterpolator268;
+Group238.children[29] = OrientationInterpolator268;
 
 OrientationInterpolator OrientationInterpolator269 = createNode("OrientationInterpolator");
-OrientationInterpolator269.DEF = "vt4_RotationInterpolator";
+OrientationInterpolator269.DEF = "vt3_RotationInterpolator";
 OrientationInterpolator269.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator269.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[29] = OrientationInterpolator269;
+Group238.children[30] = OrientationInterpolator269;
 
 OrientationInterpolator OrientationInterpolator270 = createNode("OrientationInterpolator");
-OrientationInterpolator270.DEF = "vt3_RotationInterpolator";
+OrientationInterpolator270.DEF = "vt2_RotationInterpolator";
 OrientationInterpolator270.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator270.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[30] = OrientationInterpolator270;
+Group238.children[31] = OrientationInterpolator270;
 
 OrientationInterpolator OrientationInterpolator271 = createNode("OrientationInterpolator");
-OrientationInterpolator271.DEF = "vt2_RotationInterpolator";
+OrientationInterpolator271.DEF = "vt1_RotationInterpolator";
 OrientationInterpolator271.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator271.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[31] = OrientationInterpolator271;
+Group238.children[32] = OrientationInterpolator271;
 
 OrientationInterpolator OrientationInterpolator272 = createNode("OrientationInterpolator");
-OrientationInterpolator272.DEF = "vt1_RotationInterpolator";
+OrientationInterpolator272.DEF = "vc7_RotationInterpolator";
 OrientationInterpolator272.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator272.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[32] = OrientationInterpolator272;
+Group238.children[33] = OrientationInterpolator272;
 
 OrientationInterpolator OrientationInterpolator273 = createNode("OrientationInterpolator");
-OrientationInterpolator273.DEF = "vc7_RotationInterpolator";
+OrientationInterpolator273.DEF = "vc6_RotationInterpolator";
 OrientationInterpolator273.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator273.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[33] = OrientationInterpolator273;
+Group238.children[34] = OrientationInterpolator273;
 
 OrientationInterpolator OrientationInterpolator274 = createNode("OrientationInterpolator");
-OrientationInterpolator274.DEF = "vc6_RotationInterpolator";
+OrientationInterpolator274.DEF = "vc5_RotationInterpolator";
 OrientationInterpolator274.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator274.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[34] = OrientationInterpolator274;
+Group238.children[35] = OrientationInterpolator274;
 
 OrientationInterpolator OrientationInterpolator275 = createNode("OrientationInterpolator");
-OrientationInterpolator275.DEF = "vc5_RotationInterpolator";
-OrientationInterpolator275.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator275.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[35] = OrientationInterpolator275;
+OrientationInterpolator275.DEF = "vc4_RotationInterpolator";
+OrientationInterpolator275.key = new MFFloat(new float[0,0.3,0.4,1]);
+OrientationInterpolator275.keyValue = new MFRotation(new float[1,0,1,0.25,-1,0,-1,0.35,1,0,0,0.75,1,0,1,0.5]);
+Group238.children[36] = OrientationInterpolator275;
 
 OrientationInterpolator OrientationInterpolator276 = createNode("OrientationInterpolator");
-OrientationInterpolator276.DEF = "vc4_RotationInterpolator";
-OrientationInterpolator276.key = new MFFloat(new float[0,0.3,0.4,1]);
-OrientationInterpolator276.keyValue = new MFRotation(new float[1,0,1,0.25,-1,0,-1,0.35,1,0,0,0.75,1,0,1,0.5]);
-Group239.children[36] = OrientationInterpolator276;
+OrientationInterpolator276.DEF = "vc3_RotationInterpolator";
+OrientationInterpolator276.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator276.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group238.children[37] = OrientationInterpolator276;
 
 OrientationInterpolator OrientationInterpolator277 = createNode("OrientationInterpolator");
-OrientationInterpolator277.DEF = "vc3_RotationInterpolator";
+OrientationInterpolator277.DEF = "vc2_RotationInterpolator";
 OrientationInterpolator277.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator277.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[37] = OrientationInterpolator277;
+Group238.children[38] = OrientationInterpolator277;
 
 OrientationInterpolator OrientationInterpolator278 = createNode("OrientationInterpolator");
-OrientationInterpolator278.DEF = "vc2_RotationInterpolator";
+OrientationInterpolator278.DEF = "vc1_RotationInterpolator";
 OrientationInterpolator278.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator278.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[38] = OrientationInterpolator278;
+Group238.children[39] = OrientationInterpolator278;
 
 OrientationInterpolator OrientationInterpolator279 = createNode("OrientationInterpolator");
-OrientationInterpolator279.DEF = "vc1_RotationInterpolator";
-OrientationInterpolator279.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator279.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[39] = OrientationInterpolator279;
+OrientationInterpolator279.DEF = "skullbase_RotationInterpolator";
+OrientationInterpolator279.key = new MFFloat(new float[0,0.2,0.75,1]);
+OrientationInterpolator279.keyValue = new MFRotation(new float[0,-1,0,0.5,0,0,1,0,0,0,1,0,0,1,0,0.35]);
+Group238.children[40] = OrientationInterpolator279;
 
 OrientationInterpolator OrientationInterpolator280 = createNode("OrientationInterpolator");
-OrientationInterpolator280.DEF = "skullbase_RotationInterpolator";
-OrientationInterpolator280.key = new MFFloat(new float[0,0.2,0.75,1]);
-OrientationInterpolator280.keyValue = new MFRotation(new float[0,-1,0,0.5,0,0,1,0,0,0,1,0,0,1,0,0.35]);
-Group239.children[40] = OrientationInterpolator280;
+OrientationInterpolator280.DEF = "l_eyelid_joint_RotationInterpolator";
+OrientationInterpolator280.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator280.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group238.children[41] = OrientationInterpolator280;
 
 OrientationInterpolator OrientationInterpolator281 = createNode("OrientationInterpolator");
-OrientationInterpolator281.DEF = "l_eyelid_joint_RotationInterpolator";
+OrientationInterpolator281.DEF = "l_eyeball_joint_RotationInterpolator";
 OrientationInterpolator281.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator281.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[41] = OrientationInterpolator281;
+Group238.children[42] = OrientationInterpolator281;
 
 OrientationInterpolator OrientationInterpolator282 = createNode("OrientationInterpolator");
-OrientationInterpolator282.DEF = "l_eyeball_joint_RotationInterpolator";
+OrientationInterpolator282.DEF = "l_eyebrow_joint_RotationInterpolator";
 OrientationInterpolator282.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator282.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[42] = OrientationInterpolator282;
+Group238.children[43] = OrientationInterpolator282;
 
 OrientationInterpolator OrientationInterpolator283 = createNode("OrientationInterpolator");
-OrientationInterpolator283.DEF = "l_eyebrow_joint_RotationInterpolator";
+OrientationInterpolator283.DEF = "r_eyelid_joint_RotationInterpolator";
 OrientationInterpolator283.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator283.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[43] = OrientationInterpolator283;
+Group238.children[44] = OrientationInterpolator283;
 
 OrientationInterpolator OrientationInterpolator284 = createNode("OrientationInterpolator");
-OrientationInterpolator284.DEF = "r_eyelid_joint_RotationInterpolator";
+OrientationInterpolator284.DEF = "r_eyeball_joint_RotationInterpolator";
 OrientationInterpolator284.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator284.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[44] = OrientationInterpolator284;
+Group238.children[45] = OrientationInterpolator284;
 
 OrientationInterpolator OrientationInterpolator285 = createNode("OrientationInterpolator");
-OrientationInterpolator285.DEF = "r_eyeball_joint_RotationInterpolator";
+OrientationInterpolator285.DEF = "r_eyebrow_joint_RotationInterpolator";
 OrientationInterpolator285.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator285.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[45] = OrientationInterpolator285;
+Group238.children[46] = OrientationInterpolator285;
 
 OrientationInterpolator OrientationInterpolator286 = createNode("OrientationInterpolator");
-OrientationInterpolator286.DEF = "r_eyebrow_joint_RotationInterpolator";
+OrientationInterpolator286.DEF = "temporomandibular_RotationInterpolator";
 OrientationInterpolator286.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator286.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[46] = OrientationInterpolator286;
+Group238.children[47] = OrientationInterpolator286;
 
 OrientationInterpolator OrientationInterpolator287 = createNode("OrientationInterpolator");
-OrientationInterpolator287.DEF = "temporomandibular_RotationInterpolator";
+OrientationInterpolator287.DEF = "l_sternoclavicular_RotationInterpolator";
 OrientationInterpolator287.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator287.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[47] = OrientationInterpolator287;
+Group238.children[48] = OrientationInterpolator287;
 
 OrientationInterpolator OrientationInterpolator288 = createNode("OrientationInterpolator");
-OrientationInterpolator288.DEF = "l_sternoclavicular_RotationInterpolator";
+OrientationInterpolator288.DEF = "l_acromioclavicular_RotationInterpolator";
 OrientationInterpolator288.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator288.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[48] = OrientationInterpolator288;
+Group238.children[49] = OrientationInterpolator288;
 
 OrientationInterpolator OrientationInterpolator289 = createNode("OrientationInterpolator");
-OrientationInterpolator289.DEF = "l_acromioclavicular_RotationInterpolator";
-OrientationInterpolator289.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator289.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[49] = OrientationInterpolator289;
+OrientationInterpolator289.DEF = "l_shoulder_RotationInterpolator";
+OrientationInterpolator289.key = new MFFloat(new float[0,0.4,1]);
+OrientationInterpolator289.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,1.5,-1,0,1,1.75]);
+Group238.children[50] = OrientationInterpolator289;
 
 OrientationInterpolator OrientationInterpolator290 = createNode("OrientationInterpolator");
-OrientationInterpolator290.DEF = "l_shoulder_RotationInterpolator";
-OrientationInterpolator290.key = new MFFloat(new float[0,0.4,1]);
-OrientationInterpolator290.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,1.5,-1,0,1,1.75]);
-Group239.children[50] = OrientationInterpolator290;
+OrientationInterpolator290.DEF = "l_elbow_RotationInterpolator";
+OrientationInterpolator290.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator290.keyValue = new MFRotation(new float[-1,0,0,3,-1,0,0,0.75,-1,-1,0,0.5]);
+Group238.children[51] = OrientationInterpolator290;
 
 OrientationInterpolator OrientationInterpolator291 = createNode("OrientationInterpolator");
-OrientationInterpolator291.DEF = "l_elbow_RotationInterpolator";
-OrientationInterpolator291.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator291.keyValue = new MFRotation(new float[-1,0,0,3,-1,0,0,0.75,-1,-1,0,0.5]);
-Group239.children[51] = OrientationInterpolator291;
+OrientationInterpolator291.DEF = "l_wrist_RotationInterpolator";
+OrientationInterpolator291.key = new MFFloat(new float[0,0.4,0.8,1]);
+OrientationInterpolator291.keyValue = new MFRotation(new float[0,0,1,0,0,1,0,1.3,0,-0.5,1,1.3,0,0,1,0]);
+Group238.children[52] = OrientationInterpolator291;
 
 OrientationInterpolator OrientationInterpolator292 = createNode("OrientationInterpolator");
-OrientationInterpolator292.DEF = "l_wrist_RotationInterpolator";
-OrientationInterpolator292.key = new MFFloat(new float[0,0.4,0.8,1]);
-OrientationInterpolator292.keyValue = new MFRotation(new float[0,0,1,0,0,1,0,1.3,0,-0.5,1,1.3,0,0,1,0]);
-Group239.children[52] = OrientationInterpolator292;
+OrientationInterpolator292.DEF = "l_thumb1_RotationInterpolator";
+OrientationInterpolator292.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator292.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group238.children[53] = OrientationInterpolator292;
 
 OrientationInterpolator OrientationInterpolator293 = createNode("OrientationInterpolator");
-OrientationInterpolator293.DEF = "l_thumb1_RotationInterpolator";
+OrientationInterpolator293.DEF = "l_thumb2_RotationInterpolator";
 OrientationInterpolator293.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator293.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[53] = OrientationInterpolator293;
+Group238.children[54] = OrientationInterpolator293;
 
 OrientationInterpolator OrientationInterpolator294 = createNode("OrientationInterpolator");
-OrientationInterpolator294.DEF = "l_thumb2_RotationInterpolator";
+OrientationInterpolator294.DEF = "l_thumb3_RotationInterpolator";
 OrientationInterpolator294.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator294.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[54] = OrientationInterpolator294;
+Group238.children[55] = OrientationInterpolator294;
 
 OrientationInterpolator OrientationInterpolator295 = createNode("OrientationInterpolator");
-OrientationInterpolator295.DEF = "l_thumb3_RotationInterpolator";
+OrientationInterpolator295.DEF = "l_index0_RotationInterpolator";
 OrientationInterpolator295.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator295.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[55] = OrientationInterpolator295;
+Group238.children[56] = OrientationInterpolator295;
 
 OrientationInterpolator OrientationInterpolator296 = createNode("OrientationInterpolator");
-OrientationInterpolator296.DEF = "l_index0_RotationInterpolator";
+OrientationInterpolator296.DEF = "l_index1_RotationInterpolator";
 OrientationInterpolator296.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator296.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[56] = OrientationInterpolator296;
+Group238.children[57] = OrientationInterpolator296;
 
 OrientationInterpolator OrientationInterpolator297 = createNode("OrientationInterpolator");
-OrientationInterpolator297.DEF = "l_index1_RotationInterpolator";
+OrientationInterpolator297.DEF = "l_index2_RotationInterpolator";
 OrientationInterpolator297.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator297.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[57] = OrientationInterpolator297;
+Group238.children[58] = OrientationInterpolator297;
 
 OrientationInterpolator OrientationInterpolator298 = createNode("OrientationInterpolator");
-OrientationInterpolator298.DEF = "l_index2_RotationInterpolator";
+OrientationInterpolator298.DEF = "l_index3_RotationInterpolator";
 OrientationInterpolator298.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator298.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[58] = OrientationInterpolator298;
+Group238.children[59] = OrientationInterpolator298;
 
 OrientationInterpolator OrientationInterpolator299 = createNode("OrientationInterpolator");
-OrientationInterpolator299.DEF = "l_index3_RotationInterpolator";
+OrientationInterpolator299.DEF = "l_middle0_RotationInterpolator";
 OrientationInterpolator299.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator299.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[59] = OrientationInterpolator299;
+Group238.children[60] = OrientationInterpolator299;
 
 OrientationInterpolator OrientationInterpolator300 = createNode("OrientationInterpolator");
-OrientationInterpolator300.DEF = "l_middle0_RotationInterpolator";
+OrientationInterpolator300.DEF = "l_middle1_RotationInterpolator";
 OrientationInterpolator300.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator300.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[60] = OrientationInterpolator300;
+Group238.children[61] = OrientationInterpolator300;
 
 OrientationInterpolator OrientationInterpolator301 = createNode("OrientationInterpolator");
-OrientationInterpolator301.DEF = "l_middle1_RotationInterpolator";
+OrientationInterpolator301.DEF = "l_middle2_RotationInterpolator";
 OrientationInterpolator301.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator301.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[61] = OrientationInterpolator301;
+Group238.children[62] = OrientationInterpolator301;
 
 OrientationInterpolator OrientationInterpolator302 = createNode("OrientationInterpolator");
-OrientationInterpolator302.DEF = "l_middle2_RotationInterpolator";
+OrientationInterpolator302.DEF = "l_middle3_RotationInterpolator";
 OrientationInterpolator302.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator302.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[62] = OrientationInterpolator302;
+Group238.children[63] = OrientationInterpolator302;
 
 OrientationInterpolator OrientationInterpolator303 = createNode("OrientationInterpolator");
-OrientationInterpolator303.DEF = "l_middle3_RotationInterpolator";
+OrientationInterpolator303.DEF = "l_ring0_RotationInterpolator";
 OrientationInterpolator303.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator303.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[63] = OrientationInterpolator303;
+Group238.children[64] = OrientationInterpolator303;
 
 OrientationInterpolator OrientationInterpolator304 = createNode("OrientationInterpolator");
-OrientationInterpolator304.DEF = "l_ring0_RotationInterpolator";
+OrientationInterpolator304.DEF = "l_ring1_RotationInterpolator";
 OrientationInterpolator304.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator304.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[64] = OrientationInterpolator304;
+Group238.children[65] = OrientationInterpolator304;
 
 OrientationInterpolator OrientationInterpolator305 = createNode("OrientationInterpolator");
-OrientationInterpolator305.DEF = "l_ring1_RotationInterpolator";
+OrientationInterpolator305.DEF = "l_ring2_RotationInterpolator";
 OrientationInterpolator305.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator305.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[65] = OrientationInterpolator305;
+Group238.children[66] = OrientationInterpolator305;
 
 OrientationInterpolator OrientationInterpolator306 = createNode("OrientationInterpolator");
-OrientationInterpolator306.DEF = "l_ring2_RotationInterpolator";
+OrientationInterpolator306.DEF = "l_ring3_RotationInterpolator";
 OrientationInterpolator306.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator306.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[66] = OrientationInterpolator306;
+Group238.children[67] = OrientationInterpolator306;
 
 OrientationInterpolator OrientationInterpolator307 = createNode("OrientationInterpolator");
-OrientationInterpolator307.DEF = "l_ring3_RotationInterpolator";
+OrientationInterpolator307.DEF = "l_pinky0_RotationInterpolator";
 OrientationInterpolator307.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator307.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[67] = OrientationInterpolator307;
+Group238.children[68] = OrientationInterpolator307;
 
 OrientationInterpolator OrientationInterpolator308 = createNode("OrientationInterpolator");
-OrientationInterpolator308.DEF = "l_pinky0_RotationInterpolator";
+OrientationInterpolator308.DEF = "l_pinky1_RotationInterpolator";
 OrientationInterpolator308.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator308.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[68] = OrientationInterpolator308;
+Group238.children[69] = OrientationInterpolator308;
 
 OrientationInterpolator OrientationInterpolator309 = createNode("OrientationInterpolator");
-OrientationInterpolator309.DEF = "l_pinky1_RotationInterpolator";
+OrientationInterpolator309.DEF = "l_pinky2_RotationInterpolator";
 OrientationInterpolator309.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator309.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[69] = OrientationInterpolator309;
+Group238.children[70] = OrientationInterpolator309;
 
 OrientationInterpolator OrientationInterpolator310 = createNode("OrientationInterpolator");
-OrientationInterpolator310.DEF = "l_pinky2_RotationInterpolator";
+OrientationInterpolator310.DEF = "l_pinky3_RotationInterpolator";
 OrientationInterpolator310.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator310.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[70] = OrientationInterpolator310;
+Group238.children[71] = OrientationInterpolator310;
 
 OrientationInterpolator OrientationInterpolator311 = createNode("OrientationInterpolator");
-OrientationInterpolator311.DEF = "l_pinky3_RotationInterpolator";
+OrientationInterpolator311.DEF = "r_sternoclavicular_RotationInterpolator";
 OrientationInterpolator311.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator311.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[71] = OrientationInterpolator311;
+Group238.children[72] = OrientationInterpolator311;
 
 OrientationInterpolator OrientationInterpolator312 = createNode("OrientationInterpolator");
-OrientationInterpolator312.DEF = "r_sternoclavicular_RotationInterpolator";
+OrientationInterpolator312.DEF = "r_acromioclavicular_RotationInterpolator";
 OrientationInterpolator312.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator312.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[72] = OrientationInterpolator312;
+Group238.children[73] = OrientationInterpolator312;
 
 OrientationInterpolator OrientationInterpolator313 = createNode("OrientationInterpolator");
-OrientationInterpolator313.DEF = "r_acromioclavicular_RotationInterpolator";
+OrientationInterpolator313.DEF = "r_shoulder_RotationInterpolator";
 OrientationInterpolator313.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator313.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[73] = OrientationInterpolator313;
+OrientationInterpolator313.keyValue = new MFRotation(new float[0,0,-1,2.5,0,0,-1,1.5,0,0,-1,1.75]);
+Group238.children[74] = OrientationInterpolator313;
 
 OrientationInterpolator OrientationInterpolator314 = createNode("OrientationInterpolator");
-OrientationInterpolator314.DEF = "r_shoulder_RotationInterpolator";
+OrientationInterpolator314.DEF = "r_elbow_RotationInterpolator";
 OrientationInterpolator314.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator314.keyValue = new MFRotation(new float[0,0,-1,2.5,0,0,-1,1.5,0,0,-1,1.75]);
-Group239.children[74] = OrientationInterpolator314;
+OrientationInterpolator314.keyValue = new MFRotation(new float[-1,0,0,3,-1,0,0,0.75,-1,-1,0,0.5]);
+Group238.children[75] = OrientationInterpolator314;
 
 OrientationInterpolator OrientationInterpolator315 = createNode("OrientationInterpolator");
-OrientationInterpolator315.DEF = "r_elbow_RotationInterpolator";
-OrientationInterpolator315.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator315.keyValue = new MFRotation(new float[-1,0,0,3,-1,0,0,0.75,-1,-1,0,0.5]);
-Group239.children[75] = OrientationInterpolator315;
+OrientationInterpolator315.DEF = "r_wrist_RotationInterpolator";
+OrientationInterpolator315.key = new MFFloat(new float[0,0.5,0.7,1]);
+OrientationInterpolator315.keyValue = new MFRotation(new float[0,1,0,0.3,0,0,1,0,0,0,-1,1,0,-1,0,0.3]);
+Group238.children[76] = OrientationInterpolator315;
 
 OrientationInterpolator OrientationInterpolator316 = createNode("OrientationInterpolator");
-OrientationInterpolator316.DEF = "r_wrist_RotationInterpolator";
-OrientationInterpolator316.key = new MFFloat(new float[0,0.5,0.7,1]);
-OrientationInterpolator316.keyValue = new MFRotation(new float[0,1,0,0.3,0,0,1,0,0,0,-1,1,0,-1,0,0.3]);
-Group239.children[76] = OrientationInterpolator316;
+OrientationInterpolator316.DEF = "r_thumb1_RotationInterpolator";
+OrientationInterpolator316.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator316.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
+Group238.children[77] = OrientationInterpolator316;
 
 OrientationInterpolator OrientationInterpolator317 = createNode("OrientationInterpolator");
-OrientationInterpolator317.DEF = "r_thumb1_RotationInterpolator";
+OrientationInterpolator317.DEF = "r_thumb2_RotationInterpolator";
 OrientationInterpolator317.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator317.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[77] = OrientationInterpolator317;
+Group238.children[78] = OrientationInterpolator317;
 
 OrientationInterpolator OrientationInterpolator318 = createNode("OrientationInterpolator");
-OrientationInterpolator318.DEF = "r_thumb2_RotationInterpolator";
+OrientationInterpolator318.DEF = "r_thumb3_RotationInterpolator";
 OrientationInterpolator318.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator318.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[78] = OrientationInterpolator318;
+Group238.children[79] = OrientationInterpolator318;
 
 OrientationInterpolator OrientationInterpolator319 = createNode("OrientationInterpolator");
-OrientationInterpolator319.DEF = "r_thumb3_RotationInterpolator";
-OrientationInterpolator319.key = new MFFloat(new float[0,0.5,1]);
-OrientationInterpolator319.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
-Group239.children[79] = OrientationInterpolator319;
+OrientationInterpolator319.DEF = "r_index0_RotationInterpolator";
+OrientationInterpolator319.key = new MFFloat(new float[0,0.5,0.75,1]);
+OrientationInterpolator319.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0]);
+Group238.children[80] = OrientationInterpolator319;
 
 OrientationInterpolator OrientationInterpolator320 = createNode("OrientationInterpolator");
-OrientationInterpolator320.DEF = "r_index0_RotationInterpolator";
+OrientationInterpolator320.DEF = "r_index1_RotationInterpolator";
 OrientationInterpolator320.key = new MFFloat(new float[0,0.5,0.75,1]);
-OrientationInterpolator320.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0]);
-Group239.children[80] = OrientationInterpolator320;
+OrientationInterpolator320.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
+Group238.children[81] = OrientationInterpolator320;
 
 OrientationInterpolator OrientationInterpolator321 = createNode("OrientationInterpolator");
-OrientationInterpolator321.DEF = "r_index1_RotationInterpolator";
+OrientationInterpolator321.DEF = "r_index2_RotationInterpolator";
 OrientationInterpolator321.key = new MFFloat(new float[0,0.5,0.75,1]);
 OrientationInterpolator321.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
-Group239.children[81] = OrientationInterpolator321;
+Group238.children[82] = OrientationInterpolator321;
 
 OrientationInterpolator OrientationInterpolator322 = createNode("OrientationInterpolator");
-OrientationInterpolator322.DEF = "r_index2_RotationInterpolator";
+OrientationInterpolator322.DEF = "r_index3_RotationInterpolator";
 OrientationInterpolator322.key = new MFFloat(new float[0,0.5,0.75,1]);
 OrientationInterpolator322.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
-Group239.children[82] = OrientationInterpolator322;
+Group238.children[83] = OrientationInterpolator322;
 
 OrientationInterpolator OrientationInterpolator323 = createNode("OrientationInterpolator");
-OrientationInterpolator323.DEF = "r_index3_RotationInterpolator";
+OrientationInterpolator323.DEF = "r_middle0_RotationInterpolator";
 OrientationInterpolator323.key = new MFFloat(new float[0,0.5,0.75,1]);
-OrientationInterpolator323.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
-Group239.children[83] = OrientationInterpolator323;
+OrientationInterpolator323.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0]);
+Group238.children[84] = OrientationInterpolator323;
 
 OrientationInterpolator OrientationInterpolator324 = createNode("OrientationInterpolator");
-OrientationInterpolator324.DEF = "r_middle0_RotationInterpolator";
+OrientationInterpolator324.DEF = "r_middle1_RotationInterpolator";
 OrientationInterpolator324.key = new MFFloat(new float[0,0.5,0.75,1]);
-OrientationInterpolator324.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0]);
-Group239.children[84] = OrientationInterpolator324;
+OrientationInterpolator324.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
+Group238.children[85] = OrientationInterpolator324;
 
 OrientationInterpolator OrientationInterpolator325 = createNode("OrientationInterpolator");
-OrientationInterpolator325.DEF = "r_middle1_RotationInterpolator";
+OrientationInterpolator325.DEF = "r_middle2_RotationInterpolator";
 OrientationInterpolator325.key = new MFFloat(new float[0,0.5,0.75,1]);
 OrientationInterpolator325.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
-Group239.children[85] = OrientationInterpolator325;
+Group238.children[86] = OrientationInterpolator325;
 
 OrientationInterpolator OrientationInterpolator326 = createNode("OrientationInterpolator");
-OrientationInterpolator326.DEF = "r_middle2_RotationInterpolator";
+OrientationInterpolator326.DEF = "r_middle3_RotationInterpolator";
 OrientationInterpolator326.key = new MFFloat(new float[0,0.5,0.75,1]);
 OrientationInterpolator326.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
-Group239.children[86] = OrientationInterpolator326;
+Group238.children[87] = OrientationInterpolator326;
 
 OrientationInterpolator OrientationInterpolator327 = createNode("OrientationInterpolator");
-OrientationInterpolator327.DEF = "r_middle3_RotationInterpolator";
+OrientationInterpolator327.DEF = "r_ring0_RotationInterpolator";
 OrientationInterpolator327.key = new MFFloat(new float[0,0.5,0.75,1]);
-OrientationInterpolator327.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
-Group239.children[87] = OrientationInterpolator327;
+OrientationInterpolator327.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0]);
+Group238.children[88] = OrientationInterpolator327;
 
 OrientationInterpolator OrientationInterpolator328 = createNode("OrientationInterpolator");
-OrientationInterpolator328.DEF = "r_ring0_RotationInterpolator";
+OrientationInterpolator328.DEF = "r_ring1_RotationInterpolator";
 OrientationInterpolator328.key = new MFFloat(new float[0,0.5,0.75,1]);
-OrientationInterpolator328.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0]);
-Group239.children[88] = OrientationInterpolator328;
+OrientationInterpolator328.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
+Group238.children[89] = OrientationInterpolator328;
 
 OrientationInterpolator OrientationInterpolator329 = createNode("OrientationInterpolator");
-OrientationInterpolator329.DEF = "r_ring1_RotationInterpolator";
+OrientationInterpolator329.DEF = "r_ring2_RotationInterpolator";
 OrientationInterpolator329.key = new MFFloat(new float[0,0.5,0.75,1]);
 OrientationInterpolator329.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
-Group239.children[89] = OrientationInterpolator329;
+Group238.children[90] = OrientationInterpolator329;
 
 OrientationInterpolator OrientationInterpolator330 = createNode("OrientationInterpolator");
-OrientationInterpolator330.DEF = "r_ring2_RotationInterpolator";
+OrientationInterpolator330.DEF = "r_ring3_RotationInterpolator";
 OrientationInterpolator330.key = new MFFloat(new float[0,0.5,0.75,1]);
 OrientationInterpolator330.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
-Group239.children[90] = OrientationInterpolator330;
+Group238.children[91] = OrientationInterpolator330;
 
 OrientationInterpolator OrientationInterpolator331 = createNode("OrientationInterpolator");
-OrientationInterpolator331.DEF = "r_ring3_RotationInterpolator";
+OrientationInterpolator331.DEF = "r_pinky0_RotationInterpolator";
 OrientationInterpolator331.key = new MFFloat(new float[0,0.5,0.75,1]);
-OrientationInterpolator331.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
-Group239.children[91] = OrientationInterpolator331;
+OrientationInterpolator331.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0]);
+Group238.children[92] = OrientationInterpolator331;
 
 OrientationInterpolator OrientationInterpolator332 = createNode("OrientationInterpolator");
-OrientationInterpolator332.DEF = "r_pinky0_RotationInterpolator";
+OrientationInterpolator332.DEF = "r_pinky1_RotationInterpolator";
 OrientationInterpolator332.key = new MFFloat(new float[0,0.5,0.75,1]);
-OrientationInterpolator332.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0]);
-Group239.children[92] = OrientationInterpolator332;
+OrientationInterpolator332.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
+Group238.children[93] = OrientationInterpolator332;
 
 OrientationInterpolator OrientationInterpolator333 = createNode("OrientationInterpolator");
-OrientationInterpolator333.DEF = "r_pinky1_RotationInterpolator";
+OrientationInterpolator333.DEF = "r_pinky2_RotationInterpolator";
 OrientationInterpolator333.key = new MFFloat(new float[0,0.5,0.75,1]);
 OrientationInterpolator333.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
-Group239.children[93] = OrientationInterpolator333;
+Group238.children[94] = OrientationInterpolator333;
 
 OrientationInterpolator OrientationInterpolator334 = createNode("OrientationInterpolator");
-OrientationInterpolator334.DEF = "r_pinky2_RotationInterpolator";
+OrientationInterpolator334.DEF = "r_pinky3_RotationInterpolator";
 OrientationInterpolator334.key = new MFFloat(new float[0,0.5,0.75,1]);
 OrientationInterpolator334.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
-Group239.children[94] = OrientationInterpolator334;
+Group238.children[95] = OrientationInterpolator334;
 
-OrientationInterpolator OrientationInterpolator335 = createNode("OrientationInterpolator");
-OrientationInterpolator335.DEF = "r_pinky3_RotationInterpolator";
-OrientationInterpolator335.key = new MFFloat(new float[0,0.5,0.75,1]);
-OrientationInterpolator335.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
-Group239.children[95] = OrientationInterpolator335;
+children[11] = Group238;
 
-children[11] = Group239;
+Group Group335 = createNode("Group");
+Group335.DEF = "DisplacersAnimationGroup";
+ScalarInterpolator ScalarInterpolator336 = createNode("ScalarInterpolator");
+ScalarInterpolator336.DEF = "skull_tipInterpolator";
+ScalarInterpolator336.key = new MFFloat(new float[0,0.1,0.2,0.35,0.6,0.7,0.85,0.88,0.94,0.97,1]);
+ScalarInterpolator336.keyValue = new MFFloat(new float[0,0,0,0,0.2,0.4,1,0,1,0.4,0]);
+Group335.children = new MFNode();
 
-//TimeSensor to Interpolators
-ROUTE ROUTE336 = createNode("ROUTE");
-ROUTE336.fromField = "fraction_changed";
-ROUTE336.fromNode = "KickTimer";
-ROUTE336.toField = "set_fraction";
-ROUTE336.toNode = "HumanoidRoot_RotationInterpolator";
-children[12] = ROUTE336;
+Group335.children[0] = ScalarInterpolator336;
 
-ROUTE ROUTE337 = createNode("ROUTE");
-ROUTE337.fromField = "fraction_changed";
-ROUTE337.fromNode = "KickTimer";
-ROUTE337.toField = "set_fraction";
-ROUTE337.toNode = "HumanoidRoot_TranslationInterpolator";
-children[13] = ROUTE337;
+children[12] = Group335;
 
-ROUTE ROUTE338 = createNode("ROUTE");
-ROUTE338.fromField = "fraction_changed";
-ROUTE338.fromNode = "KickTimer";
-ROUTE338.toField = "set_fraction";
-ROUTE338.toNode = "sacroiliac_RotationInterpolator";
-children[14] = ROUTE338;
+Group Group337 = createNode("Group");
+Group337.DEF = "SkinTextureTransformAnimationGroup";
+ScalarInterpolator ScalarInterpolator338 = createNode("ScalarInterpolator");
+ScalarInterpolator338.DEF = "SkinInterpolator";
+ScalarInterpolator338.key = new MFFloat(new float[0,0.2,0.4,0.5,0.6,0.7,0.8,1]);
+ScalarInterpolator338.keyValue = new MFFloat(new float[0,0,0,0,0,1,2,0]);
+Group337.children = new MFNode();
 
-ROUTE ROUTE339 = createNode("ROUTE");
-ROUTE339.fromField = "fraction_changed";
-ROUTE339.fromNode = "KickTimer";
-ROUTE339.toField = "set_fraction";
-ROUTE339.toNode = "l_hip_RotationInterpolator";
-children[15] = ROUTE339;
+Group337.children[0] = ScalarInterpolator338;
 
-ROUTE ROUTE340 = createNode("ROUTE");
-ROUTE340.fromField = "fraction_changed";
-ROUTE340.fromNode = "KickTimer";
-ROUTE340.toField = "set_fraction";
-ROUTE340.toNode = "l_knee_RotationInterpolator";
-children[16] = ROUTE340;
+children[13] = Group337;
 
-ROUTE ROUTE341 = createNode("ROUTE");
-ROUTE341.fromField = "fraction_changed";
-ROUTE341.fromNode = "KickTimer";
-ROUTE341.toField = "set_fraction";
-ROUTE341.toNode = "l_ankle_RotationInterpolator";
-children[17] = ROUTE341;
+Group Group339 = createNode("Group");
+Transform Transform340 = createNode("Transform");
+Transform340.DEF = "SBall";
+Transform340.translation = new SFVec3f(new float[-0.916,0.37,-0.92]);
+Transform340.rotation = new SFRotation(new float[0.7,0,0.7,0.1]);
+Transform340.scale = new SFVec3f(new float[0.23,0.23,0.23]);
+Shape Shape341 = createNode("Shape");
+Shape341.DEF = "ball_Shape";
+Appearance Appearance342 = createNode("Appearance");
+Appearance342.DEF = "ball_Appearance";
+Material Material343 = createNode("Material");
+Material343.DEF = "ball_Material";
+Material343.diffuseColor = new SFColor(new float[0.3,0.3,1]);
+Material343.emissiveColor = new SFColor(new float[0.3,0.3,0.33]);
+Appearance342.material = Material343;
 
-ROUTE ROUTE342 = createNode("ROUTE");
-ROUTE342.fromField = "fraction_changed";
-ROUTE342.fromNode = "KickTimer";
-ROUTE342.toField = "set_fraction";
-ROUTE342.toNode = "l_subtalar_RotationInterpolator";
-children[18] = ROUTE342;
+ImageTexture ImageTexture344 = createNode("ImageTexture");
+ImageTexture344.USE = "JoeSkinImageTexture";
+Appearance342.texture = ImageTexture344;
 
-ROUTE ROUTE343 = createNode("ROUTE");
-ROUTE343.fromField = "fraction_changed";
-ROUTE343.fromNode = "KickTimer";
-ROUTE343.toField = "set_fraction";
-ROUTE343.toNode = "l_midtarsal_RotationInterpolator";
-children[19] = ROUTE343;
+Shape341.appearance = Appearance342;
 
-ROUTE ROUTE344 = createNode("ROUTE");
-ROUTE344.fromField = "fraction_changed";
-ROUTE344.fromNode = "KickTimer";
-ROUTE344.toField = "set_fraction";
-ROUTE344.toNode = "l_metatarsal_RotationInterpolator";
-children[20] = ROUTE344;
+IndexedFaceSet IndexedFaceSet345 = createNode("IndexedFaceSet");
+IndexedFaceSet345.DEF = "ball_IndexedFaceSet";
+IndexedFaceSet345.coordIndex = new MFInt32(new int[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,1,13,14,-1,1,14,2,-1,2,14,15,-1,2,15,3,-1,3,15,16,-1,3,16,4,-1,4,16,17,-1,4,17,5,-1,5,17,18,-1,5,18,6,-1,6,18,19,-1,6,19,7,-1,7,19,20,-1,7,20,8,-1,8,20,21,-1,8,21,9,-1,9,21,22,-1,9,22,10,-1,10,22,23,-1,10,23,11,-1,11,23,24,-1,11,24,12,-1,12,24,13,-1,12,13,1,-1,13,25,26,-1,13,26,14,-1,14,26,27,-1,14,27,15,-1,15,27,28,-1,15,28,16,-1,16,28,29,-1,16,29,17,-1,17,29,30,-1,17,30,18,-1,18,30,31,-1,18,31,19,-1,19,31,32,-1,19,32,20,-1,20,32,33,-1,20,33,21,-1,21,33,34,-1,21,34,22,-1,22,34,35,-1,22,35,23,-1,23,35,36,-1,23,36,24,-1,24,36,25,-1,24,25,13,-1,25,37,38,-1,25,38,26,-1,26,38,39,-1,26,39,27,-1,27,39,40,-1,27,40,28,-1,28,40,41,-1,28,41,29,-1,29,41,42,-1,29,42,30,-1,30,42,43,-1,30,43,31,-1,31,43,44,-1,31,44,32,-1,32,44,45,-1,32,45,33,-1,33,45,46,-1,33,46,34,-1,34,46,47,-1,34,47,35,-1,35,47,48,-1,35,48,36,-1,36,48,37,-1,36,37,25,-1,37,49,50,-1,37,50,38,-1,38,50,51,-1,38,51,39,-1,39,51,52,-1,39,52,40,-1,40,52,53,-1,40,53,41,-1,41,53,54,-1,41,54,42,-1,42,54,55,-1,42,55,43,-1,43,55,56,-1,43,56,44,-1,44,56,57,-1,44,57,45,-1,45,57,58,-1,45,58,46,-1,46,58,59,-1,46,59,47,-1,47,59,60,-1,47,60,48,-1,48,60,49,-1,48,49,37,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1]);
+Coordinate Coordinate346 = createNode("Coordinate");
+Coordinate346.DEF = "Ball_Coordinates";
+Coordinate346.point = new MFVec3f(new float[0,0.4675,0,0,0.4049,-0.2338,-0.1169,0.4049,-0.2024,-0.2024,0.4049,-0.1169,-0.2338,0.4049,0,-0.2024,0.4049,0.1169,-0.1169,0.4049,0.2024,0,0.4049,0.2338,0.1169,0.4049,0.2024,0.2024,0.4049,0.1169,0.2338,0.4049,0,0.2024,0.4049,-0.1169,0.1169,0.4049,-0.2024,0,0.2338,-0.4049,-0.2024,0.2338,-0.3506,-0.3506,0.2338,-0.2024,-0.4049,0.2338,0,-0.3506,0.2338,0.2024,-0.2024,0.2338,0.3506,0,0.2338,0.4049,0.2024,0.2338,0.3506,0.3506,0.2338,0.2024,0.4049,0.2338,0,0.3506,0.2338,-0.2024,0.2024,0.2338,-0.3506,0,0,-0.4675,-0.2338,0,-0.4049,-0.4049,0,-0.2338,-0.4675,0,0,-0.4049,0,0.2338,-0.2338,0,0.4049,0,0,0.4675,0.2338,0,0.4049,0.4049,0,0.2338,0.4675,0,0,0.4049,0,-0.2338,0.2338,0,-0.4049,0,-0.2338,-0.4049,-0.2024,-0.2338,-0.3506,-0.3506,-0.2338,-0.2024,-0.4049,-0.2338,0,-0.3506,-0.2338,0.2024,-0.2024,-0.2338,0.3506,0,-0.2338,0.4049,0.2024,-0.2338,0.3506,0.3506,-0.2338,0.2024,0.4049,-0.2338,0,0.3506,-0.2338,-0.2024,0.2024,-0.2338,-0.3506,0,-0.4049,-0.2338,-0.1169,-0.4049,-0.2024,-0.2024,-0.4049,-0.1169,-0.2338,-0.4049,0,-0.2024,-0.4049,0.1169,-0.1169,-0.4049,0.2024,0,-0.4049,0.2338,0.1169,-0.4049,0.2024,0.2024,-0.4049,0.1169,0.2338,-0.4049,0,0.2024,-0.4049,-0.1169,0.1169,-0.4049,-0.2024,0,-0.4675,0]);
+IndexedFaceSet345.coord = Coordinate346;
 
-ROUTE ROUTE345 = createNode("ROUTE");
-ROUTE345.fromField = "fraction_changed";
-ROUTE345.fromNode = "KickTimer";
-ROUTE345.toField = "set_fraction";
-ROUTE345.toNode = "r_hip_RotationInterpolator";
-children[21] = ROUTE345;
+Shape341.geometry = IndexedFaceSet345;
 
-ROUTE ROUTE346 = createNode("ROUTE");
-ROUTE346.fromField = "fraction_changed";
-ROUTE346.fromNode = "KickTimer";
-ROUTE346.toField = "set_fraction";
-ROUTE346.toNode = "r_knee_RotationInterpolator";
-children[22] = ROUTE346;
+Transform340.child = new undefined();
 
-ROUTE ROUTE347 = createNode("ROUTE");
-ROUTE347.fromField = "fraction_changed";
-ROUTE347.fromNode = "KickTimer";
-ROUTE347.toField = "set_fraction";
-ROUTE347.toNode = "r_ankle_RotationInterpolator";
-children[23] = ROUTE347;
+Transform340.child[0] = Shape341;
 
-ROUTE ROUTE348 = createNode("ROUTE");
-ROUTE348.fromField = "fraction_changed";
-ROUTE348.fromNode = "KickTimer";
-ROUTE348.toField = "set_fraction";
-ROUTE348.toNode = "r_subtalar_RotationInterpolator";
-children[24] = ROUTE348;
+Viewpoint Viewpoint347 = createNode("Viewpoint");
+Viewpoint347.DEF = "ballView_1";
+Viewpoint347.description = "Ball View";
+Transform340.children[1] = Viewpoint347;
 
-ROUTE ROUTE349 = createNode("ROUTE");
-ROUTE349.fromField = "fraction_changed";
-ROUTE349.fromNode = "KickTimer";
-ROUTE349.toField = "set_fraction";
-ROUTE349.toNode = "r_midtarsal_RotationInterpolator";
-children[25] = ROUTE349;
+Group339.children = new MFNode();
 
-ROUTE ROUTE350 = createNode("ROUTE");
-ROUTE350.fromField = "fraction_changed";
-ROUTE350.fromNode = "KickTimer";
-ROUTE350.toField = "set_fraction";
-ROUTE350.toNode = "r_metatarsal_RotationInterpolator";
-children[26] = ROUTE350;
+Group339.children[0] = Transform340;
 
-ROUTE ROUTE351 = createNode("ROUTE");
-ROUTE351.fromField = "fraction_changed";
-ROUTE351.fromNode = "KickTimer";
-ROUTE351.toField = "set_fraction";
-ROUTE351.toNode = "vl5_RotationInterpolator";
-children[27] = ROUTE351;
+PositionInterpolator PositionInterpolator348 = createNode("PositionInterpolator");
+PositionInterpolator348.DEF = "ball_TranslationInterpolator";
+PositionInterpolator348.key = new MFFloat(new float[0,0.4,0.409,1]);
+PositionInterpolator348.keyValue = new MFVec3f(new float[-1,0.4,-1,0,0.07,0,0.05,0.06,0.05,2,4,10]);
+Group339.children[1] = PositionInterpolator348;
 
-ROUTE ROUTE352 = createNode("ROUTE");
-ROUTE352.fromField = "fraction_changed";
-ROUTE352.fromNode = "KickTimer";
-ROUTE352.toField = "set_fraction";
-ROUTE352.toNode = "vl4_RotationInterpolator";
-children[28] = ROUTE352;
+OrientationInterpolator OrientationInterpolator349 = createNode("OrientationInterpolator");
+OrientationInterpolator349.DEF = "ball_RotationInterpolator";
+OrientationInterpolator349.key = new MFFloat(new float[0,0.4,0.41,0.71,1]);
+OrientationInterpolator349.keyValue = new MFRotation(new float[1,0,1,0.25,-1,0,-1,1.35,-1,1,-1,3.35,-1,0.2,-1,3,-1,0.2,-1,3]);
+Group339.children[2] = OrientationInterpolator349;
 
-ROUTE ROUTE353 = createNode("ROUTE");
-ROUTE353.fromField = "fraction_changed";
-ROUTE353.fromNode = "KickTimer";
-ROUTE353.toField = "set_fraction";
-ROUTE353.toNode = "vl3_RotationInterpolator";
-children[29] = ROUTE353;
+children[14] = Group339;
 
-ROUTE ROUTE354 = createNode("ROUTE");
-ROUTE354.fromField = "fraction_changed";
-ROUTE354.fromNode = "KickTimer";
-ROUTE354.toField = "set_fraction";
-ROUTE354.toNode = "vl2_RotationInterpolator";
-children[30] = ROUTE354;
+Group Group350 = createNode("Group");
+Transform Transform351 = createNode("Transform");
+Transform351.scale = new SFVec3f(new float[0.2,0.2,0.2]);
+Shape Shape352 = createNode("Shape");
+Shape352.USE = "AxisLinesShape";
+Transform351.child = new undefined();
 
-ROUTE ROUTE355 = createNode("ROUTE");
-ROUTE355.fromField = "fraction_changed";
-ROUTE355.fromNode = "KickTimer";
-ROUTE355.toField = "set_fraction";
-ROUTE355.toNode = "vl1_RotationInterpolator";
-children[31] = ROUTE355;
+Transform351.child[0] = Shape352;
 
-ROUTE ROUTE356 = createNode("ROUTE");
-ROUTE356.fromField = "fraction_changed";
-ROUTE356.fromNode = "KickTimer";
-ROUTE356.toField = "set_fraction";
-ROUTE356.toNode = "vt12_RotationInterpolator";
-children[32] = ROUTE356;
+Group350.children = new MFNode();
 
-ROUTE ROUTE357 = createNode("ROUTE");
-ROUTE357.fromField = "fraction_changed";
-ROUTE357.fromNode = "KickTimer";
-ROUTE357.toField = "set_fraction";
-ROUTE357.toNode = "vt11_RotationInterpolator";
-children[33] = ROUTE357;
+Group350.children[0] = Transform351;
 
-ROUTE ROUTE358 = createNode("ROUTE");
-ROUTE358.fromField = "fraction_changed";
-ROUTE358.fromNode = "KickTimer";
-ROUTE358.toField = "set_fraction";
-ROUTE358.toNode = "vt10_RotationInterpolator";
-children[34] = ROUTE358;
+Transform Transform353 = createNode("Transform");
+Transform353.DEF = "Circle0";
+Transform353.scale = new SFVec3f(new float[1.175,1,1.175]);
+Shape Shape354 = createNode("Shape");
+Shape354.DEF = "circle_Shape";
+Appearance Appearance355 = createNode("Appearance");
+Appearance355.DEF = "circle0_Appearance";
+Material Material356 = createNode("Material");
+Material356.DEF = "circle0_Material";
+Material356.ambientIntensity = 0.9;
+Material356.diffuseColor = new SFColor(new float[0.9,0,0.7]);
+Material356.emissiveColor = new SFColor(new float[0.425,0.486,1]);
+Appearance355.material = Material356;
 
-ROUTE ROUTE359 = createNode("ROUTE");
-ROUTE359.fromField = "fraction_changed";
-ROUTE359.fromNode = "KickTimer";
-ROUTE359.toField = "set_fraction";
-ROUTE359.toNode = "vt9_RotationInterpolator";
-children[35] = ROUTE359;
+Shape354.appearance = Appearance355;
 
-ROUTE ROUTE360 = createNode("ROUTE");
-ROUTE360.fromField = "fraction_changed";
-ROUTE360.fromNode = "KickTimer";
-ROUTE360.toField = "set_fraction";
-ROUTE360.toNode = "vt8_RotationInterpolator";
-children[36] = ROUTE360;
+IndexedLineSet IndexedLineSet357 = createNode("IndexedLineSet");
+IndexedLineSet357.DEF = "Orbit1";
+IndexedLineSet357.coordIndex = new MFInt32(new int[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,-1]);
+Coordinate Coordinate358 = createNode("Coordinate");
+Coordinate358.DEF = "circle_Coordinates";
+Coordinate358.point = new MFVec3f(new float[1,0,0,0.995,0,-0.105,0.979,0,-0.208,0.951,0,-0.309,0.914,0,-0.407,0.866,0,-0.5,0.809,0,-0.588,0.743,0,-0.669,0.669,0,-0.743,0.588,0,-0.809,0.5,0,-0.866,0.407,0,-0.914,0.309,0,-0.951,0.208,0,-0.978,0.105,0,-0.995,0,0,-1,-0.105,0,-0.994522,-0.208,0,-0.978,-0.309,0,-0.951,-0.407,0,-0.914,-0.5,0,-0.866,-0.588,0,-0.809,-0.669,0,-0.743,-0.743,0,-0.669,-0.809,0,-0.588,-0.866,0,-0.5,-0.914,0,-0.407,-0.951,0,-0.309,-0.978,0,-0.208,-0.995,0,-0.105,-1,0,0,-0.995,0,0.105,-0.978,0,0.208,-0.951,0,0.309,-0.914,0,0.407,-0.866,0,0.5,-0.809,0,0.588,-0.743,0,0.669,-0.669,0,0.743,-0.588,0,0.809,-0.5,0,0.866,-0.407,0,0.914,-0.309,0,0.951,-0.208,0,0.978,-0.105,0,0.995,0,0,1,0.105,0,0.995,0.208,0,0.978,0.309,0,0.951,0.407,0,0.914,0.5,0,0.866,0.588,0,0.809,0.669,0,0.743,0.743,0,0.669,0.809,0,0.588,0.866,0,0.5,0.914,0,0.407,0.951,0,0.309,0.978,0,0.208,0.995,0,0.104,1,0,0]);
+IndexedLineSet357.coord = Coordinate358;
 
-ROUTE ROUTE361 = createNode("ROUTE");
-ROUTE361.fromField = "fraction_changed";
-ROUTE361.fromNode = "KickTimer";
-ROUTE361.toField = "set_fraction";
-ROUTE361.toNode = "vt7_RotationInterpolator";
-children[37] = ROUTE361;
+Shape354.geometry = IndexedLineSet357;
 
-ROUTE ROUTE362 = createNode("ROUTE");
-ROUTE362.fromField = "fraction_changed";
-ROUTE362.fromNode = "KickTimer";
-ROUTE362.toField = "set_fraction";
-ROUTE362.toNode = "vt6_RotationInterpolator";
-children[38] = ROUTE362;
+Transform353.child = new undefined();
 
-ROUTE ROUTE363 = createNode("ROUTE");
-ROUTE363.fromField = "fraction_changed";
-ROUTE363.fromNode = "KickTimer";
-ROUTE363.toField = "set_fraction";
-ROUTE363.toNode = "vt5_RotationInterpolator";
-children[39] = ROUTE363;
+Transform353.child[0] = Shape354;
 
-ROUTE ROUTE364 = createNode("ROUTE");
-ROUTE364.fromField = "fraction_changed";
-ROUTE364.fromNode = "KickTimer";
-ROUTE364.toField = "set_fraction";
-ROUTE364.toNode = "vt4_RotationInterpolator";
-children[40] = ROUTE364;
+Group350.children[1] = Transform353;
 
-ROUTE ROUTE365 = createNode("ROUTE");
-ROUTE365.fromField = "fraction_changed";
-ROUTE365.fromNode = "KickTimer";
-ROUTE365.toField = "set_fraction";
-ROUTE365.toNode = "vt3_RotationInterpolator";
-children[41] = ROUTE365;
+Transform Transform359 = createNode("Transform");
+Transform359.DEF = "Circle1";
+Transform359.scale = new SFVec3f(new float[0.5,1,0.5]);
+Shape Shape360 = createNode("Shape");
+Shape360.DEF = "circle1_Shape";
+Appearance Appearance361 = createNode("Appearance");
+Appearance361.DEF = "circle1_Appearance";
+Material Material362 = createNode("Material");
+Material362.DEF = "circle1_Material";
+Material362.diffuseColor = new SFColor(new float[0.9,0,0.7]);
+Material362.emissiveColor = new SFColor(new float[0.424956,0.483976,1]);
+Appearance361.material = Material362;
 
-ROUTE ROUTE366 = createNode("ROUTE");
-ROUTE366.fromField = "fraction_changed";
-ROUTE366.fromNode = "KickTimer";
-ROUTE366.toField = "set_fraction";
-ROUTE366.toNode = "vt2_RotationInterpolator";
-children[42] = ROUTE366;
+Shape360.appearance = Appearance361;
 
-ROUTE ROUTE367 = createNode("ROUTE");
-ROUTE367.fromField = "fraction_changed";
-ROUTE367.fromNode = "KickTimer";
-ROUTE367.toField = "set_fraction";
-ROUTE367.toNode = "vt1_RotationInterpolator";
-children[43] = ROUTE367;
+IndexedLineSet IndexedLineSet363 = createNode("IndexedLineSet");
+IndexedLineSet363.USE = "Orbit1";
+Shape360.geometry = IndexedLineSet363;
 
-ROUTE ROUTE368 = createNode("ROUTE");
-ROUTE368.fromField = "fraction_changed";
-ROUTE368.fromNode = "KickTimer";
-ROUTE368.toField = "set_fraction";
-ROUTE368.toNode = "vc7_RotationInterpolator";
-children[44] = ROUTE368;
+Transform359.child = new undefined();
+
+Transform359.child[0] = Shape360;
+
+Group350.children[2] = Transform359;
+
+Transform Transform364 = createNode("Transform");
+Transform364.DEF = "Circle2";
+Transform364.scale = new SFVec3f(new float[0.25,1,0.25]);
+Shape Shape365 = createNode("Shape");
+Shape365.DEF = "circle2_Shape";
+Appearance Appearance366 = createNode("Appearance");
+Appearance366.DEF = "circle2_Appearance";
+Material Material367 = createNode("Material");
+Material367.DEF = "circle2_Material";
+Material367.diffuseColor = new SFColor(new float[0.9,0,0.7]);
+Material367.emissiveColor = new SFColor(new float[0.424956,0.483976,1]);
+Appearance366.material = Material367;
+
+Shape365.appearance = Appearance366;
+
+IndexedLineSet IndexedLineSet368 = createNode("IndexedLineSet");
+IndexedLineSet368.USE = "Orbit1";
+Shape365.geometry = IndexedLineSet368;
+
+Transform364.child = new undefined();
+
+Transform364.child[0] = Shape365;
+
+Group350.children[3] = Transform364;
+
+children[15] = Group350;
 
 ROUTE ROUTE369 = createNode("ROUTE");
-ROUTE369.fromField = "fraction_changed";
 ROUTE369.fromNode = "KickTimer";
+ROUTE369.fromField = "fraction_changed";
+ROUTE369.toNode = "HumanoidRoot_RotationInterpolator";
 ROUTE369.toField = "set_fraction";
-ROUTE369.toNode = "vc6_RotationInterpolator";
-children[45] = ROUTE369;
+children[16] = ROUTE369;
 
 ROUTE ROUTE370 = createNode("ROUTE");
-ROUTE370.fromField = "fraction_changed";
 ROUTE370.fromNode = "KickTimer";
+ROUTE370.fromField = "fraction_changed";
+ROUTE370.toNode = "HumanoidRoot_TranslationInterpolator";
 ROUTE370.toField = "set_fraction";
-ROUTE370.toNode = "vc5_RotationInterpolator";
-children[46] = ROUTE370;
+children[17] = ROUTE370;
 
 ROUTE ROUTE371 = createNode("ROUTE");
-ROUTE371.fromField = "fraction_changed";
 ROUTE371.fromNode = "KickTimer";
+ROUTE371.fromField = "fraction_changed";
+ROUTE371.toNode = "sacroiliac_RotationInterpolator";
 ROUTE371.toField = "set_fraction";
-ROUTE371.toNode = "vc4_RotationInterpolator";
-children[47] = ROUTE371;
+children[18] = ROUTE371;
 
 ROUTE ROUTE372 = createNode("ROUTE");
-ROUTE372.fromField = "fraction_changed";
 ROUTE372.fromNode = "KickTimer";
+ROUTE372.fromField = "fraction_changed";
+ROUTE372.toNode = "l_hip_RotationInterpolator";
 ROUTE372.toField = "set_fraction";
-ROUTE372.toNode = "vc3_RotationInterpolator";
-children[48] = ROUTE372;
+children[19] = ROUTE372;
 
 ROUTE ROUTE373 = createNode("ROUTE");
-ROUTE373.fromField = "fraction_changed";
 ROUTE373.fromNode = "KickTimer";
+ROUTE373.fromField = "fraction_changed";
+ROUTE373.toNode = "l_knee_RotationInterpolator";
 ROUTE373.toField = "set_fraction";
-ROUTE373.toNode = "vc2_RotationInterpolator";
-children[49] = ROUTE373;
+children[20] = ROUTE373;
 
 ROUTE ROUTE374 = createNode("ROUTE");
-ROUTE374.fromField = "fraction_changed";
 ROUTE374.fromNode = "KickTimer";
+ROUTE374.fromField = "fraction_changed";
+ROUTE374.toNode = "l_ankle_RotationInterpolator";
 ROUTE374.toField = "set_fraction";
-ROUTE374.toNode = "vc1_RotationInterpolator";
-children[50] = ROUTE374;
+children[21] = ROUTE374;
 
 ROUTE ROUTE375 = createNode("ROUTE");
-ROUTE375.fromField = "fraction_changed";
 ROUTE375.fromNode = "KickTimer";
+ROUTE375.fromField = "fraction_changed";
+ROUTE375.toNode = "l_subtalar_RotationInterpolator";
 ROUTE375.toField = "set_fraction";
-ROUTE375.toNode = "skullbase_RotationInterpolator";
-children[51] = ROUTE375;
+children[22] = ROUTE375;
 
 ROUTE ROUTE376 = createNode("ROUTE");
-ROUTE376.fromField = "fraction_changed";
 ROUTE376.fromNode = "KickTimer";
+ROUTE376.fromField = "fraction_changed";
+ROUTE376.toNode = "l_midtarsal_RotationInterpolator";
 ROUTE376.toField = "set_fraction";
-ROUTE376.toNode = "l_eyelid_joint_RotationInterpolator";
-children[52] = ROUTE376;
+children[23] = ROUTE376;
 
 ROUTE ROUTE377 = createNode("ROUTE");
-ROUTE377.fromField = "fraction_changed";
 ROUTE377.fromNode = "KickTimer";
+ROUTE377.fromField = "fraction_changed";
+ROUTE377.toNode = "l_metatarsal_RotationInterpolator";
 ROUTE377.toField = "set_fraction";
-ROUTE377.toNode = "l_eyeball_joint_RotationInterpolator";
-children[53] = ROUTE377;
+children[24] = ROUTE377;
 
 ROUTE ROUTE378 = createNode("ROUTE");
-ROUTE378.fromField = "fraction_changed";
 ROUTE378.fromNode = "KickTimer";
+ROUTE378.fromField = "fraction_changed";
+ROUTE378.toNode = "r_hip_RotationInterpolator";
 ROUTE378.toField = "set_fraction";
-ROUTE378.toNode = "l_eyebrow_joint_RotationInterpolator";
-children[54] = ROUTE378;
+children[25] = ROUTE378;
 
 ROUTE ROUTE379 = createNode("ROUTE");
-ROUTE379.fromField = "fraction_changed";
 ROUTE379.fromNode = "KickTimer";
+ROUTE379.fromField = "fraction_changed";
+ROUTE379.toNode = "r_knee_RotationInterpolator";
 ROUTE379.toField = "set_fraction";
-ROUTE379.toNode = "r_eyelid_joint_RotationInterpolator";
-children[55] = ROUTE379;
+children[26] = ROUTE379;
 
 ROUTE ROUTE380 = createNode("ROUTE");
-ROUTE380.fromField = "fraction_changed";
 ROUTE380.fromNode = "KickTimer";
+ROUTE380.fromField = "fraction_changed";
+ROUTE380.toNode = "r_ankle_RotationInterpolator";
 ROUTE380.toField = "set_fraction";
-ROUTE380.toNode = "r_eyeball_joint_RotationInterpolator";
-children[56] = ROUTE380;
+children[27] = ROUTE380;
 
 ROUTE ROUTE381 = createNode("ROUTE");
-ROUTE381.fromField = "fraction_changed";
 ROUTE381.fromNode = "KickTimer";
+ROUTE381.fromField = "fraction_changed";
+ROUTE381.toNode = "r_subtalar_RotationInterpolator";
 ROUTE381.toField = "set_fraction";
-ROUTE381.toNode = "r_eyebrow_joint_RotationInterpolator";
-children[57] = ROUTE381;
+children[28] = ROUTE381;
 
 ROUTE ROUTE382 = createNode("ROUTE");
-ROUTE382.fromField = "fraction_changed";
 ROUTE382.fromNode = "KickTimer";
+ROUTE382.fromField = "fraction_changed";
+ROUTE382.toNode = "r_midtarsal_RotationInterpolator";
 ROUTE382.toField = "set_fraction";
-ROUTE382.toNode = "temporomandibular_RotationInterpolator";
-children[58] = ROUTE382;
+children[29] = ROUTE382;
 
 ROUTE ROUTE383 = createNode("ROUTE");
-ROUTE383.fromField = "fraction_changed";
 ROUTE383.fromNode = "KickTimer";
+ROUTE383.fromField = "fraction_changed";
+ROUTE383.toNode = "r_metatarsal_RotationInterpolator";
 ROUTE383.toField = "set_fraction";
-ROUTE383.toNode = "l_sternoclavicular_RotationInterpolator";
-children[59] = ROUTE383;
+children[30] = ROUTE383;
 
 ROUTE ROUTE384 = createNode("ROUTE");
-ROUTE384.fromField = "fraction_changed";
 ROUTE384.fromNode = "KickTimer";
+ROUTE384.fromField = "fraction_changed";
+ROUTE384.toNode = "vl5_RotationInterpolator";
 ROUTE384.toField = "set_fraction";
-ROUTE384.toNode = "l_acromioclavicular_RotationInterpolator";
-children[60] = ROUTE384;
+children[31] = ROUTE384;
 
 ROUTE ROUTE385 = createNode("ROUTE");
-ROUTE385.fromField = "fraction_changed";
 ROUTE385.fromNode = "KickTimer";
+ROUTE385.fromField = "fraction_changed";
+ROUTE385.toNode = "vl4_RotationInterpolator";
 ROUTE385.toField = "set_fraction";
-ROUTE385.toNode = "l_shoulder_RotationInterpolator";
-children[61] = ROUTE385;
+children[32] = ROUTE385;
 
 ROUTE ROUTE386 = createNode("ROUTE");
-ROUTE386.fromField = "fraction_changed";
 ROUTE386.fromNode = "KickTimer";
+ROUTE386.fromField = "fraction_changed";
+ROUTE386.toNode = "vl3_RotationInterpolator";
 ROUTE386.toField = "set_fraction";
-ROUTE386.toNode = "l_elbow_RotationInterpolator";
-children[62] = ROUTE386;
+children[33] = ROUTE386;
 
 ROUTE ROUTE387 = createNode("ROUTE");
-ROUTE387.fromField = "fraction_changed";
 ROUTE387.fromNode = "KickTimer";
+ROUTE387.fromField = "fraction_changed";
+ROUTE387.toNode = "vl2_RotationInterpolator";
 ROUTE387.toField = "set_fraction";
-ROUTE387.toNode = "l_wrist_RotationInterpolator";
-children[63] = ROUTE387;
+children[34] = ROUTE387;
 
 ROUTE ROUTE388 = createNode("ROUTE");
-ROUTE388.fromField = "fraction_changed";
 ROUTE388.fromNode = "KickTimer";
+ROUTE388.fromField = "fraction_changed";
+ROUTE388.toNode = "vl1_RotationInterpolator";
 ROUTE388.toField = "set_fraction";
-ROUTE388.toNode = "l_thumb1_RotationInterpolator";
-children[64] = ROUTE388;
+children[35] = ROUTE388;
 
 ROUTE ROUTE389 = createNode("ROUTE");
-ROUTE389.fromField = "fraction_changed";
 ROUTE389.fromNode = "KickTimer";
+ROUTE389.fromField = "fraction_changed";
+ROUTE389.toNode = "vt12_RotationInterpolator";
 ROUTE389.toField = "set_fraction";
-ROUTE389.toNode = "l_thumb2_RotationInterpolator";
-children[65] = ROUTE389;
+children[36] = ROUTE389;
 
 ROUTE ROUTE390 = createNode("ROUTE");
-ROUTE390.fromField = "fraction_changed";
 ROUTE390.fromNode = "KickTimer";
+ROUTE390.fromField = "fraction_changed";
+ROUTE390.toNode = "vt11_RotationInterpolator";
 ROUTE390.toField = "set_fraction";
-ROUTE390.toNode = "l_thumb3_RotationInterpolator";
-children[66] = ROUTE390;
+children[37] = ROUTE390;
 
 ROUTE ROUTE391 = createNode("ROUTE");
-ROUTE391.fromField = "fraction_changed";
 ROUTE391.fromNode = "KickTimer";
+ROUTE391.fromField = "fraction_changed";
+ROUTE391.toNode = "vt10_RotationInterpolator";
 ROUTE391.toField = "set_fraction";
-ROUTE391.toNode = "l_index0_RotationInterpolator";
-children[67] = ROUTE391;
+children[38] = ROUTE391;
 
 ROUTE ROUTE392 = createNode("ROUTE");
-ROUTE392.fromField = "fraction_changed";
 ROUTE392.fromNode = "KickTimer";
+ROUTE392.fromField = "fraction_changed";
+ROUTE392.toNode = "vt9_RotationInterpolator";
 ROUTE392.toField = "set_fraction";
-ROUTE392.toNode = "l_index1_RotationInterpolator";
-children[68] = ROUTE392;
+children[39] = ROUTE392;
 
 ROUTE ROUTE393 = createNode("ROUTE");
-ROUTE393.fromField = "fraction_changed";
 ROUTE393.fromNode = "KickTimer";
+ROUTE393.fromField = "fraction_changed";
+ROUTE393.toNode = "vt8_RotationInterpolator";
 ROUTE393.toField = "set_fraction";
-ROUTE393.toNode = "l_index2_RotationInterpolator";
-children[69] = ROUTE393;
+children[40] = ROUTE393;
 
 ROUTE ROUTE394 = createNode("ROUTE");
-ROUTE394.fromField = "fraction_changed";
 ROUTE394.fromNode = "KickTimer";
+ROUTE394.fromField = "fraction_changed";
+ROUTE394.toNode = "vt7_RotationInterpolator";
 ROUTE394.toField = "set_fraction";
-ROUTE394.toNode = "l_index3_RotationInterpolator";
-children[70] = ROUTE394;
+children[41] = ROUTE394;
 
 ROUTE ROUTE395 = createNode("ROUTE");
-ROUTE395.fromField = "fraction_changed";
 ROUTE395.fromNode = "KickTimer";
+ROUTE395.fromField = "fraction_changed";
+ROUTE395.toNode = "vt6_RotationInterpolator";
 ROUTE395.toField = "set_fraction";
-ROUTE395.toNode = "l_middle0_RotationInterpolator";
-children[71] = ROUTE395;
+children[42] = ROUTE395;
 
 ROUTE ROUTE396 = createNode("ROUTE");
-ROUTE396.fromField = "fraction_changed";
 ROUTE396.fromNode = "KickTimer";
+ROUTE396.fromField = "fraction_changed";
+ROUTE396.toNode = "vt5_RotationInterpolator";
 ROUTE396.toField = "set_fraction";
-ROUTE396.toNode = "l_middle1_RotationInterpolator";
-children[72] = ROUTE396;
+children[43] = ROUTE396;
 
 ROUTE ROUTE397 = createNode("ROUTE");
-ROUTE397.fromField = "fraction_changed";
 ROUTE397.fromNode = "KickTimer";
+ROUTE397.fromField = "fraction_changed";
+ROUTE397.toNode = "vt4_RotationInterpolator";
 ROUTE397.toField = "set_fraction";
-ROUTE397.toNode = "l_middle2_RotationInterpolator";
-children[73] = ROUTE397;
+children[44] = ROUTE397;
 
 ROUTE ROUTE398 = createNode("ROUTE");
-ROUTE398.fromField = "fraction_changed";
 ROUTE398.fromNode = "KickTimer";
+ROUTE398.fromField = "fraction_changed";
+ROUTE398.toNode = "vt3_RotationInterpolator";
 ROUTE398.toField = "set_fraction";
-ROUTE398.toNode = "l_middle3_RotationInterpolator";
-children[74] = ROUTE398;
+children[45] = ROUTE398;
 
 ROUTE ROUTE399 = createNode("ROUTE");
-ROUTE399.fromField = "fraction_changed";
 ROUTE399.fromNode = "KickTimer";
+ROUTE399.fromField = "fraction_changed";
+ROUTE399.toNode = "vt2_RotationInterpolator";
 ROUTE399.toField = "set_fraction";
-ROUTE399.toNode = "l_ring0_RotationInterpolator";
-children[75] = ROUTE399;
+children[46] = ROUTE399;
 
 ROUTE ROUTE400 = createNode("ROUTE");
-ROUTE400.fromField = "fraction_changed";
 ROUTE400.fromNode = "KickTimer";
+ROUTE400.fromField = "fraction_changed";
+ROUTE400.toNode = "vt1_RotationInterpolator";
 ROUTE400.toField = "set_fraction";
-ROUTE400.toNode = "l_ring1_RotationInterpolator";
-children[76] = ROUTE400;
+children[47] = ROUTE400;
 
 ROUTE ROUTE401 = createNode("ROUTE");
-ROUTE401.fromField = "fraction_changed";
 ROUTE401.fromNode = "KickTimer";
+ROUTE401.fromField = "fraction_changed";
+ROUTE401.toNode = "vc7_RotationInterpolator";
 ROUTE401.toField = "set_fraction";
-ROUTE401.toNode = "l_ring2_RotationInterpolator";
-children[77] = ROUTE401;
+children[48] = ROUTE401;
 
 ROUTE ROUTE402 = createNode("ROUTE");
-ROUTE402.fromField = "fraction_changed";
 ROUTE402.fromNode = "KickTimer";
+ROUTE402.fromField = "fraction_changed";
+ROUTE402.toNode = "vc6_RotationInterpolator";
 ROUTE402.toField = "set_fraction";
-ROUTE402.toNode = "l_ring3_RotationInterpolator";
-children[78] = ROUTE402;
+children[49] = ROUTE402;
 
 ROUTE ROUTE403 = createNode("ROUTE");
-ROUTE403.fromField = "fraction_changed";
 ROUTE403.fromNode = "KickTimer";
+ROUTE403.fromField = "fraction_changed";
+ROUTE403.toNode = "vc5_RotationInterpolator";
 ROUTE403.toField = "set_fraction";
-ROUTE403.toNode = "l_pinky0_RotationInterpolator";
-children[79] = ROUTE403;
+children[50] = ROUTE403;
 
 ROUTE ROUTE404 = createNode("ROUTE");
-ROUTE404.fromField = "fraction_changed";
 ROUTE404.fromNode = "KickTimer";
+ROUTE404.fromField = "fraction_changed";
+ROUTE404.toNode = "vc4_RotationInterpolator";
 ROUTE404.toField = "set_fraction";
-ROUTE404.toNode = "l_pinky1_RotationInterpolator";
-children[80] = ROUTE404;
+children[51] = ROUTE404;
 
 ROUTE ROUTE405 = createNode("ROUTE");
-ROUTE405.fromField = "fraction_changed";
 ROUTE405.fromNode = "KickTimer";
+ROUTE405.fromField = "fraction_changed";
+ROUTE405.toNode = "vc3_RotationInterpolator";
 ROUTE405.toField = "set_fraction";
-ROUTE405.toNode = "l_pinky2_RotationInterpolator";
-children[81] = ROUTE405;
+children[52] = ROUTE405;
 
 ROUTE ROUTE406 = createNode("ROUTE");
-ROUTE406.fromField = "fraction_changed";
 ROUTE406.fromNode = "KickTimer";
+ROUTE406.fromField = "fraction_changed";
+ROUTE406.toNode = "vc2_RotationInterpolator";
 ROUTE406.toField = "set_fraction";
-ROUTE406.toNode = "l_pinky3_RotationInterpolator";
-children[82] = ROUTE406;
+children[53] = ROUTE406;
 
 ROUTE ROUTE407 = createNode("ROUTE");
-ROUTE407.fromField = "fraction_changed";
 ROUTE407.fromNode = "KickTimer";
+ROUTE407.fromField = "fraction_changed";
+ROUTE407.toNode = "vc1_RotationInterpolator";
 ROUTE407.toField = "set_fraction";
-ROUTE407.toNode = "r_sternoclavicular_RotationInterpolator";
-children[83] = ROUTE407;
+children[54] = ROUTE407;
 
 ROUTE ROUTE408 = createNode("ROUTE");
-ROUTE408.fromField = "fraction_changed";
 ROUTE408.fromNode = "KickTimer";
+ROUTE408.fromField = "fraction_changed";
+ROUTE408.toNode = "skullbase_RotationInterpolator";
 ROUTE408.toField = "set_fraction";
-ROUTE408.toNode = "r_acromioclavicular_RotationInterpolator";
-children[84] = ROUTE408;
+children[55] = ROUTE408;
 
 ROUTE ROUTE409 = createNode("ROUTE");
-ROUTE409.fromField = "fraction_changed";
 ROUTE409.fromNode = "KickTimer";
+ROUTE409.fromField = "fraction_changed";
+ROUTE409.toNode = "l_eyelid_joint_RotationInterpolator";
 ROUTE409.toField = "set_fraction";
-ROUTE409.toNode = "r_shoulder_RotationInterpolator";
-children[85] = ROUTE409;
+children[56] = ROUTE409;
 
 ROUTE ROUTE410 = createNode("ROUTE");
-ROUTE410.fromField = "fraction_changed";
 ROUTE410.fromNode = "KickTimer";
+ROUTE410.fromField = "fraction_changed";
+ROUTE410.toNode = "l_eyeball_joint_RotationInterpolator";
 ROUTE410.toField = "set_fraction";
-ROUTE410.toNode = "r_elbow_RotationInterpolator";
-children[86] = ROUTE410;
+children[57] = ROUTE410;
 
 ROUTE ROUTE411 = createNode("ROUTE");
-ROUTE411.fromField = "fraction_changed";
 ROUTE411.fromNode = "KickTimer";
+ROUTE411.fromField = "fraction_changed";
+ROUTE411.toNode = "l_eyebrow_joint_RotationInterpolator";
 ROUTE411.toField = "set_fraction";
-ROUTE411.toNode = "r_wrist_RotationInterpolator";
-children[87] = ROUTE411;
+children[58] = ROUTE411;
 
 ROUTE ROUTE412 = createNode("ROUTE");
-ROUTE412.fromField = "fraction_changed";
 ROUTE412.fromNode = "KickTimer";
+ROUTE412.fromField = "fraction_changed";
+ROUTE412.toNode = "r_eyelid_joint_RotationInterpolator";
 ROUTE412.toField = "set_fraction";
-ROUTE412.toNode = "r_thumb1_RotationInterpolator";
-children[88] = ROUTE412;
+children[59] = ROUTE412;
 
 ROUTE ROUTE413 = createNode("ROUTE");
-ROUTE413.fromField = "fraction_changed";
 ROUTE413.fromNode = "KickTimer";
+ROUTE413.fromField = "fraction_changed";
+ROUTE413.toNode = "r_eyeball_joint_RotationInterpolator";
 ROUTE413.toField = "set_fraction";
-ROUTE413.toNode = "r_thumb2_RotationInterpolator";
-children[89] = ROUTE413;
+children[60] = ROUTE413;
 
 ROUTE ROUTE414 = createNode("ROUTE");
-ROUTE414.fromField = "fraction_changed";
 ROUTE414.fromNode = "KickTimer";
+ROUTE414.fromField = "fraction_changed";
+ROUTE414.toNode = "r_eyebrow_joint_RotationInterpolator";
 ROUTE414.toField = "set_fraction";
-ROUTE414.toNode = "r_thumb3_RotationInterpolator";
-children[90] = ROUTE414;
+children[61] = ROUTE414;
 
 ROUTE ROUTE415 = createNode("ROUTE");
-ROUTE415.fromField = "fraction_changed";
 ROUTE415.fromNode = "KickTimer";
+ROUTE415.fromField = "fraction_changed";
+ROUTE415.toNode = "temporomandibular_RotationInterpolator";
 ROUTE415.toField = "set_fraction";
-ROUTE415.toNode = "r_index0_RotationInterpolator";
-children[91] = ROUTE415;
+children[62] = ROUTE415;
 
 ROUTE ROUTE416 = createNode("ROUTE");
-ROUTE416.fromField = "fraction_changed";
 ROUTE416.fromNode = "KickTimer";
+ROUTE416.fromField = "fraction_changed";
+ROUTE416.toNode = "l_sternoclavicular_RotationInterpolator";
 ROUTE416.toField = "set_fraction";
-ROUTE416.toNode = "r_index1_RotationInterpolator";
-children[92] = ROUTE416;
+children[63] = ROUTE416;
 
 ROUTE ROUTE417 = createNode("ROUTE");
-ROUTE417.fromField = "fraction_changed";
 ROUTE417.fromNode = "KickTimer";
+ROUTE417.fromField = "fraction_changed";
+ROUTE417.toNode = "l_acromioclavicular_RotationInterpolator";
 ROUTE417.toField = "set_fraction";
-ROUTE417.toNode = "r_index2_RotationInterpolator";
-children[93] = ROUTE417;
+children[64] = ROUTE417;
 
 ROUTE ROUTE418 = createNode("ROUTE");
-ROUTE418.fromField = "fraction_changed";
 ROUTE418.fromNode = "KickTimer";
+ROUTE418.fromField = "fraction_changed";
+ROUTE418.toNode = "l_shoulder_RotationInterpolator";
 ROUTE418.toField = "set_fraction";
-ROUTE418.toNode = "r_index3_RotationInterpolator";
-children[94] = ROUTE418;
+children[65] = ROUTE418;
 
 ROUTE ROUTE419 = createNode("ROUTE");
-ROUTE419.fromField = "fraction_changed";
 ROUTE419.fromNode = "KickTimer";
+ROUTE419.fromField = "fraction_changed";
+ROUTE419.toNode = "l_elbow_RotationInterpolator";
 ROUTE419.toField = "set_fraction";
-ROUTE419.toNode = "r_middle0_RotationInterpolator";
-children[95] = ROUTE419;
+children[66] = ROUTE419;
 
 ROUTE ROUTE420 = createNode("ROUTE");
-ROUTE420.fromField = "fraction_changed";
 ROUTE420.fromNode = "KickTimer";
+ROUTE420.fromField = "fraction_changed";
+ROUTE420.toNode = "l_wrist_RotationInterpolator";
 ROUTE420.toField = "set_fraction";
-ROUTE420.toNode = "r_middle1_RotationInterpolator";
-children[96] = ROUTE420;
+children[67] = ROUTE420;
 
 ROUTE ROUTE421 = createNode("ROUTE");
-ROUTE421.fromField = "fraction_changed";
 ROUTE421.fromNode = "KickTimer";
+ROUTE421.fromField = "fraction_changed";
+ROUTE421.toNode = "l_thumb1_RotationInterpolator";
 ROUTE421.toField = "set_fraction";
-ROUTE421.toNode = "r_middle2_RotationInterpolator";
-children[97] = ROUTE421;
+children[68] = ROUTE421;
 
 ROUTE ROUTE422 = createNode("ROUTE");
-ROUTE422.fromField = "fraction_changed";
 ROUTE422.fromNode = "KickTimer";
+ROUTE422.fromField = "fraction_changed";
+ROUTE422.toNode = "l_thumb2_RotationInterpolator";
 ROUTE422.toField = "set_fraction";
-ROUTE422.toNode = "r_middle3_RotationInterpolator";
-children[98] = ROUTE422;
+children[69] = ROUTE422;
 
 ROUTE ROUTE423 = createNode("ROUTE");
-ROUTE423.fromField = "fraction_changed";
 ROUTE423.fromNode = "KickTimer";
+ROUTE423.fromField = "fraction_changed";
+ROUTE423.toNode = "l_thumb3_RotationInterpolator";
 ROUTE423.toField = "set_fraction";
-ROUTE423.toNode = "r_ring0_RotationInterpolator";
-children[99] = ROUTE423;
+children[70] = ROUTE423;
 
 ROUTE ROUTE424 = createNode("ROUTE");
-ROUTE424.fromField = "fraction_changed";
 ROUTE424.fromNode = "KickTimer";
+ROUTE424.fromField = "fraction_changed";
+ROUTE424.toNode = "l_index0_RotationInterpolator";
 ROUTE424.toField = "set_fraction";
-ROUTE424.toNode = "r_ring1_RotationInterpolator";
-children[100] = ROUTE424;
+children[71] = ROUTE424;
 
 ROUTE ROUTE425 = createNode("ROUTE");
-ROUTE425.fromField = "fraction_changed";
 ROUTE425.fromNode = "KickTimer";
+ROUTE425.fromField = "fraction_changed";
+ROUTE425.toNode = "l_index1_RotationInterpolator";
 ROUTE425.toField = "set_fraction";
-ROUTE425.toNode = "r_ring2_RotationInterpolator";
-children[101] = ROUTE425;
+children[72] = ROUTE425;
 
 ROUTE ROUTE426 = createNode("ROUTE");
-ROUTE426.fromField = "fraction_changed";
 ROUTE426.fromNode = "KickTimer";
+ROUTE426.fromField = "fraction_changed";
+ROUTE426.toNode = "l_index2_RotationInterpolator";
 ROUTE426.toField = "set_fraction";
-ROUTE426.toNode = "r_ring3_RotationInterpolator";
-children[102] = ROUTE426;
+children[73] = ROUTE426;
 
 ROUTE ROUTE427 = createNode("ROUTE");
-ROUTE427.fromField = "fraction_changed";
 ROUTE427.fromNode = "KickTimer";
+ROUTE427.fromField = "fraction_changed";
+ROUTE427.toNode = "l_index3_RotationInterpolator";
 ROUTE427.toField = "set_fraction";
-ROUTE427.toNode = "r_pinky0_RotationInterpolator";
-children[103] = ROUTE427;
+children[74] = ROUTE427;
 
 ROUTE ROUTE428 = createNode("ROUTE");
-ROUTE428.fromField = "fraction_changed";
 ROUTE428.fromNode = "KickTimer";
+ROUTE428.fromField = "fraction_changed";
+ROUTE428.toNode = "l_middle0_RotationInterpolator";
 ROUTE428.toField = "set_fraction";
-ROUTE428.toNode = "r_pinky1_RotationInterpolator";
-children[104] = ROUTE428;
+children[75] = ROUTE428;
 
 ROUTE ROUTE429 = createNode("ROUTE");
-ROUTE429.fromField = "fraction_changed";
 ROUTE429.fromNode = "KickTimer";
+ROUTE429.fromField = "fraction_changed";
+ROUTE429.toNode = "l_middle1_RotationInterpolator";
 ROUTE429.toField = "set_fraction";
-ROUTE429.toNode = "r_pinky2_RotationInterpolator";
-children[105] = ROUTE429;
+children[76] = ROUTE429;
 
 ROUTE ROUTE430 = createNode("ROUTE");
-ROUTE430.fromField = "fraction_changed";
 ROUTE430.fromNode = "KickTimer";
+ROUTE430.fromField = "fraction_changed";
+ROUTE430.toNode = "l_middle2_RotationInterpolator";
 ROUTE430.toField = "set_fraction";
-ROUTE430.toNode = "r_pinky3_RotationInterpolator";
-children[106] = ROUTE430;
+children[77] = ROUTE430;
 
-//Routes from Interpolators to Joe_ model Joints
 ROUTE ROUTE431 = createNode("ROUTE");
-ROUTE431.fromField = "value_changed";
-ROUTE431.fromNode = "HumanoidRoot_RotationInterpolator";
-ROUTE431.toField = "set_rotation";
-ROUTE431.toNode = "Joe_humanoid_root";
-children[107] = ROUTE431;
+ROUTE431.fromNode = "KickTimer";
+ROUTE431.fromField = "fraction_changed";
+ROUTE431.toNode = "l_middle3_RotationInterpolator";
+ROUTE431.toField = "set_fraction";
+children[78] = ROUTE431;
 
 ROUTE ROUTE432 = createNode("ROUTE");
-ROUTE432.fromField = "value_changed";
-ROUTE432.fromNode = "HumanoidRoot_TranslationInterpolator";
-ROUTE432.toField = "set_translation";
-ROUTE432.toNode = "Joe_humanoid_root";
-children[108] = ROUTE432;
+ROUTE432.fromNode = "KickTimer";
+ROUTE432.fromField = "fraction_changed";
+ROUTE432.toNode = "l_ring0_RotationInterpolator";
+ROUTE432.toField = "set_fraction";
+children[79] = ROUTE432;
 
 ROUTE ROUTE433 = createNode("ROUTE");
-ROUTE433.fromField = "value_changed";
-ROUTE433.fromNode = "sacroiliac_RotationInterpolator";
-ROUTE433.toField = "set_rotation";
-ROUTE433.toNode = "Joe_sacroiliac";
-children[109] = ROUTE433;
+ROUTE433.fromNode = "KickTimer";
+ROUTE433.fromField = "fraction_changed";
+ROUTE433.toNode = "l_ring1_RotationInterpolator";
+ROUTE433.toField = "set_fraction";
+children[80] = ROUTE433;
 
 ROUTE ROUTE434 = createNode("ROUTE");
-ROUTE434.fromField = "value_changed";
-ROUTE434.fromNode = "l_hip_RotationInterpolator";
-ROUTE434.toField = "set_rotation";
-ROUTE434.toNode = "Joe_l_hip";
-children[110] = ROUTE434;
+ROUTE434.fromNode = "KickTimer";
+ROUTE434.fromField = "fraction_changed";
+ROUTE434.toNode = "l_ring2_RotationInterpolator";
+ROUTE434.toField = "set_fraction";
+children[81] = ROUTE434;
 
 ROUTE ROUTE435 = createNode("ROUTE");
-ROUTE435.fromField = "value_changed";
-ROUTE435.fromNode = "l_knee_RotationInterpolator";
-ROUTE435.toField = "set_rotation";
-ROUTE435.toNode = "Joe_l_knee";
-children[111] = ROUTE435;
+ROUTE435.fromNode = "KickTimer";
+ROUTE435.fromField = "fraction_changed";
+ROUTE435.toNode = "l_ring3_RotationInterpolator";
+ROUTE435.toField = "set_fraction";
+children[82] = ROUTE435;
 
 ROUTE ROUTE436 = createNode("ROUTE");
-ROUTE436.fromField = "value_changed";
-ROUTE436.fromNode = "l_ankle_RotationInterpolator";
-ROUTE436.toField = "set_rotation";
-ROUTE436.toNode = "Joe_l_talocrural";
-children[112] = ROUTE436;
+ROUTE436.fromNode = "KickTimer";
+ROUTE436.fromField = "fraction_changed";
+ROUTE436.toNode = "l_pinky0_RotationInterpolator";
+ROUTE436.toField = "set_fraction";
+children[83] = ROUTE436;
 
 ROUTE ROUTE437 = createNode("ROUTE");
-ROUTE437.fromField = "value_changed";
-ROUTE437.fromNode = "l_subtalar_RotationInterpolator";
-ROUTE437.toField = "set_rotation";
-ROUTE437.toNode = "Joe_l_tarsometatarsal_2";
-children[113] = ROUTE437;
+ROUTE437.fromNode = "KickTimer";
+ROUTE437.fromField = "fraction_changed";
+ROUTE437.toNode = "l_pinky1_RotationInterpolator";
+ROUTE437.toField = "set_fraction";
+children[84] = ROUTE437;
 
 ROUTE ROUTE438 = createNode("ROUTE");
-ROUTE438.fromField = "value_changed";
-ROUTE438.fromNode = "l_midtarsal_RotationInterpolator";
-ROUTE438.toField = "set_rotation";
-ROUTE438.toNode = "Joe_l_metatarsophalangeal_2";
-children[114] = ROUTE438;
+ROUTE438.fromNode = "KickTimer";
+ROUTE438.fromField = "fraction_changed";
+ROUTE438.toNode = "l_pinky2_RotationInterpolator";
+ROUTE438.toField = "set_fraction";
+children[85] = ROUTE438;
 
 ROUTE ROUTE439 = createNode("ROUTE");
-ROUTE439.fromField = "value_changed";
-ROUTE439.fromNode = "l_metatarsal_RotationInterpolator";
-ROUTE439.toField = "set_rotation";
-ROUTE439.toNode = "Joe_l_tarsal_distal_interphalangeal_2";
-children[115] = ROUTE439;
+ROUTE439.fromNode = "KickTimer";
+ROUTE439.fromField = "fraction_changed";
+ROUTE439.toNode = "l_pinky3_RotationInterpolator";
+ROUTE439.toField = "set_fraction";
+children[86] = ROUTE439;
 
 ROUTE ROUTE440 = createNode("ROUTE");
-ROUTE440.fromField = "value_changed";
-ROUTE440.fromNode = "r_hip_RotationInterpolator";
-ROUTE440.toField = "set_rotation";
-ROUTE440.toNode = "Joe_r_hip";
-children[116] = ROUTE440;
+ROUTE440.fromNode = "KickTimer";
+ROUTE440.fromField = "fraction_changed";
+ROUTE440.toNode = "r_sternoclavicular_RotationInterpolator";
+ROUTE440.toField = "set_fraction";
+children[87] = ROUTE440;
 
 ROUTE ROUTE441 = createNode("ROUTE");
-ROUTE441.fromField = "value_changed";
-ROUTE441.fromNode = "r_knee_RotationInterpolator";
-ROUTE441.toField = "set_rotation";
-ROUTE441.toNode = "Joe_r_knee";
-children[117] = ROUTE441;
+ROUTE441.fromNode = "KickTimer";
+ROUTE441.fromField = "fraction_changed";
+ROUTE441.toNode = "r_acromioclavicular_RotationInterpolator";
+ROUTE441.toField = "set_fraction";
+children[88] = ROUTE441;
 
 ROUTE ROUTE442 = createNode("ROUTE");
-ROUTE442.fromField = "value_changed";
-ROUTE442.fromNode = "r_ankle_RotationInterpolator";
-ROUTE442.toField = "set_rotation";
-ROUTE442.toNode = "Joe_r_talocrural";
-children[118] = ROUTE442;
+ROUTE442.fromNode = "KickTimer";
+ROUTE442.fromField = "fraction_changed";
+ROUTE442.toNode = "r_shoulder_RotationInterpolator";
+ROUTE442.toField = "set_fraction";
+children[89] = ROUTE442;
 
 ROUTE ROUTE443 = createNode("ROUTE");
-ROUTE443.fromField = "value_changed";
-ROUTE443.fromNode = "r_subtalar_RotationInterpolator";
-ROUTE443.toField = "set_rotation";
-ROUTE443.toNode = "Joe_r_tarsometatarsal_2";
-children[119] = ROUTE443;
+ROUTE443.fromNode = "KickTimer";
+ROUTE443.fromField = "fraction_changed";
+ROUTE443.toNode = "r_elbow_RotationInterpolator";
+ROUTE443.toField = "set_fraction";
+children[90] = ROUTE443;
 
 ROUTE ROUTE444 = createNode("ROUTE");
-ROUTE444.fromField = "value_changed";
-ROUTE444.fromNode = "r_midtarsal_RotationInterpolator";
-ROUTE444.toField = "set_rotation";
-ROUTE444.toNode = "Joe_r_metatarsophalangeal_2";
-children[120] = ROUTE444;
+ROUTE444.fromNode = "KickTimer";
+ROUTE444.fromField = "fraction_changed";
+ROUTE444.toNode = "r_wrist_RotationInterpolator";
+ROUTE444.toField = "set_fraction";
+children[91] = ROUTE444;
 
 ROUTE ROUTE445 = createNode("ROUTE");
-ROUTE445.fromField = "value_changed";
-ROUTE445.fromNode = "r_metatarsal_RotationInterpolator";
-ROUTE445.toField = "set_rotation";
-ROUTE445.toNode = "Joe_r_tarsal_distal_interphalangeal_2";
-children[121] = ROUTE445;
+ROUTE445.fromNode = "KickTimer";
+ROUTE445.fromField = "fraction_changed";
+ROUTE445.toNode = "r_thumb1_RotationInterpolator";
+ROUTE445.toField = "set_fraction";
+children[92] = ROUTE445;
 
 ROUTE ROUTE446 = createNode("ROUTE");
-ROUTE446.fromField = "value_changed";
-ROUTE446.fromNode = "vl5_RotationInterpolator";
-ROUTE446.toField = "set_rotation";
-ROUTE446.toNode = "Joe_vl5";
-children[122] = ROUTE446;
+ROUTE446.fromNode = "KickTimer";
+ROUTE446.fromField = "fraction_changed";
+ROUTE446.toNode = "r_thumb2_RotationInterpolator";
+ROUTE446.toField = "set_fraction";
+children[93] = ROUTE446;
 
 ROUTE ROUTE447 = createNode("ROUTE");
-ROUTE447.fromField = "value_changed";
-ROUTE447.fromNode = "vl4_RotationInterpolator";
-ROUTE447.toField = "set_rotation";
-ROUTE447.toNode = "Joe_vl4";
-children[123] = ROUTE447;
+ROUTE447.fromNode = "KickTimer";
+ROUTE447.fromField = "fraction_changed";
+ROUTE447.toNode = "r_thumb3_RotationInterpolator";
+ROUTE447.toField = "set_fraction";
+children[94] = ROUTE447;
 
 ROUTE ROUTE448 = createNode("ROUTE");
-ROUTE448.fromField = "value_changed";
-ROUTE448.fromNode = "vl3_RotationInterpolator";
-ROUTE448.toField = "set_rotation";
-ROUTE448.toNode = "Joe_vl3";
-children[124] = ROUTE448;
+ROUTE448.fromNode = "KickTimer";
+ROUTE448.fromField = "fraction_changed";
+ROUTE448.toNode = "r_index0_RotationInterpolator";
+ROUTE448.toField = "set_fraction";
+children[95] = ROUTE448;
 
 ROUTE ROUTE449 = createNode("ROUTE");
-ROUTE449.fromField = "value_changed";
-ROUTE449.fromNode = "vl2_RotationInterpolator";
-ROUTE449.toField = "set_rotation";
-ROUTE449.toNode = "Joe_vl2";
-children[125] = ROUTE449;
+ROUTE449.fromNode = "KickTimer";
+ROUTE449.fromField = "fraction_changed";
+ROUTE449.toNode = "r_index1_RotationInterpolator";
+ROUTE449.toField = "set_fraction";
+children[96] = ROUTE449;
 
 ROUTE ROUTE450 = createNode("ROUTE");
-ROUTE450.fromField = "value_changed";
-ROUTE450.fromNode = "vl1_RotationInterpolator";
-ROUTE450.toField = "set_rotation";
-ROUTE450.toNode = "Joe_vl1";
-children[126] = ROUTE450;
+ROUTE450.fromNode = "KickTimer";
+ROUTE450.fromField = "fraction_changed";
+ROUTE450.toNode = "r_index2_RotationInterpolator";
+ROUTE450.toField = "set_fraction";
+children[97] = ROUTE450;
 
 ROUTE ROUTE451 = createNode("ROUTE");
-ROUTE451.fromField = "value_changed";
-ROUTE451.fromNode = "vt12_RotationInterpolator";
-ROUTE451.toField = "set_rotation";
-ROUTE451.toNode = "Joe_vt12";
-children[127] = ROUTE451;
+ROUTE451.fromNode = "KickTimer";
+ROUTE451.fromField = "fraction_changed";
+ROUTE451.toNode = "r_index3_RotationInterpolator";
+ROUTE451.toField = "set_fraction";
+children[98] = ROUTE451;
 
 ROUTE ROUTE452 = createNode("ROUTE");
-ROUTE452.fromField = "value_changed";
-ROUTE452.fromNode = "vt11_RotationInterpolator";
-ROUTE452.toField = "set_rotation";
-ROUTE452.toNode = "Joe_vt11";
-children[128] = ROUTE452;
+ROUTE452.fromNode = "KickTimer";
+ROUTE452.fromField = "fraction_changed";
+ROUTE452.toNode = "r_middle0_RotationInterpolator";
+ROUTE452.toField = "set_fraction";
+children[99] = ROUTE452;
 
 ROUTE ROUTE453 = createNode("ROUTE");
-ROUTE453.fromField = "value_changed";
-ROUTE453.fromNode = "vt10_RotationInterpolator";
-ROUTE453.toField = "set_rotation";
-ROUTE453.toNode = "Joe_vt10";
-children[129] = ROUTE453;
+ROUTE453.fromNode = "KickTimer";
+ROUTE453.fromField = "fraction_changed";
+ROUTE453.toNode = "r_middle1_RotationInterpolator";
+ROUTE453.toField = "set_fraction";
+children[100] = ROUTE453;
 
 ROUTE ROUTE454 = createNode("ROUTE");
-ROUTE454.fromField = "value_changed";
-ROUTE454.fromNode = "vt9_RotationInterpolator";
-ROUTE454.toField = "set_rotation";
-ROUTE454.toNode = "Joe_vt9";
-children[130] = ROUTE454;
+ROUTE454.fromNode = "KickTimer";
+ROUTE454.fromField = "fraction_changed";
+ROUTE454.toNode = "r_middle2_RotationInterpolator";
+ROUTE454.toField = "set_fraction";
+children[101] = ROUTE454;
 
 ROUTE ROUTE455 = createNode("ROUTE");
-ROUTE455.fromField = "value_changed";
-ROUTE455.fromNode = "vt8_RotationInterpolator";
-ROUTE455.toField = "set_rotation";
-ROUTE455.toNode = "Joe_vt8";
-children[131] = ROUTE455;
+ROUTE455.fromNode = "KickTimer";
+ROUTE455.fromField = "fraction_changed";
+ROUTE455.toNode = "r_middle3_RotationInterpolator";
+ROUTE455.toField = "set_fraction";
+children[102] = ROUTE455;
 
 ROUTE ROUTE456 = createNode("ROUTE");
-ROUTE456.fromField = "value_changed";
-ROUTE456.fromNode = "vt7_RotationInterpolator";
-ROUTE456.toField = "set_rotation";
-ROUTE456.toNode = "Joe_vt7";
-children[132] = ROUTE456;
+ROUTE456.fromNode = "KickTimer";
+ROUTE456.fromField = "fraction_changed";
+ROUTE456.toNode = "r_ring0_RotationInterpolator";
+ROUTE456.toField = "set_fraction";
+children[103] = ROUTE456;
 
 ROUTE ROUTE457 = createNode("ROUTE");
-ROUTE457.fromField = "value_changed";
-ROUTE457.fromNode = "vt6_RotationInterpolator";
-ROUTE457.toField = "set_rotation";
-ROUTE457.toNode = "Joe_vt6";
-children[133] = ROUTE457;
+ROUTE457.fromNode = "KickTimer";
+ROUTE457.fromField = "fraction_changed";
+ROUTE457.toNode = "r_ring1_RotationInterpolator";
+ROUTE457.toField = "set_fraction";
+children[104] = ROUTE457;
 
 ROUTE ROUTE458 = createNode("ROUTE");
-ROUTE458.fromField = "value_changed";
-ROUTE458.fromNode = "vt5_RotationInterpolator";
-ROUTE458.toField = "set_rotation";
-ROUTE458.toNode = "Joe_vt5";
-children[134] = ROUTE458;
+ROUTE458.fromNode = "KickTimer";
+ROUTE458.fromField = "fraction_changed";
+ROUTE458.toNode = "r_ring2_RotationInterpolator";
+ROUTE458.toField = "set_fraction";
+children[105] = ROUTE458;
 
 ROUTE ROUTE459 = createNode("ROUTE");
-ROUTE459.fromField = "value_changed";
-ROUTE459.fromNode = "vt4_RotationInterpolator";
-ROUTE459.toField = "set_rotation";
-ROUTE459.toNode = "Joe_vt4";
-children[135] = ROUTE459;
+ROUTE459.fromNode = "KickTimer";
+ROUTE459.fromField = "fraction_changed";
+ROUTE459.toNode = "r_ring3_RotationInterpolator";
+ROUTE459.toField = "set_fraction";
+children[106] = ROUTE459;
 
 ROUTE ROUTE460 = createNode("ROUTE");
-ROUTE460.fromField = "value_changed";
-ROUTE460.fromNode = "vt3_RotationInterpolator";
-ROUTE460.toField = "set_rotation";
-ROUTE460.toNode = "Joe_vt3";
-children[136] = ROUTE460;
+ROUTE460.fromNode = "KickTimer";
+ROUTE460.fromField = "fraction_changed";
+ROUTE460.toNode = "r_pinky0_RotationInterpolator";
+ROUTE460.toField = "set_fraction";
+children[107] = ROUTE460;
 
 ROUTE ROUTE461 = createNode("ROUTE");
-ROUTE461.fromField = "value_changed";
-ROUTE461.fromNode = "vt2_RotationInterpolator";
-ROUTE461.toField = "set_rotation";
-ROUTE461.toNode = "Joe_vt2";
-children[137] = ROUTE461;
+ROUTE461.fromNode = "KickTimer";
+ROUTE461.fromField = "fraction_changed";
+ROUTE461.toNode = "r_pinky1_RotationInterpolator";
+ROUTE461.toField = "set_fraction";
+children[108] = ROUTE461;
 
 ROUTE ROUTE462 = createNode("ROUTE");
-ROUTE462.fromField = "value_changed";
-ROUTE462.fromNode = "vt1_RotationInterpolator";
-ROUTE462.toField = "set_rotation";
-ROUTE462.toNode = "Joe_vt1";
-children[138] = ROUTE462;
+ROUTE462.fromNode = "KickTimer";
+ROUTE462.fromField = "fraction_changed";
+ROUTE462.toNode = "r_pinky2_RotationInterpolator";
+ROUTE462.toField = "set_fraction";
+children[109] = ROUTE462;
 
 ROUTE ROUTE463 = createNode("ROUTE");
-ROUTE463.fromField = "value_changed";
-ROUTE463.fromNode = "vc7_RotationInterpolator";
-ROUTE463.toField = "set_rotation";
-ROUTE463.toNode = "Joe_vc7";
-children[139] = ROUTE463;
+ROUTE463.fromNode = "KickTimer";
+ROUTE463.fromField = "fraction_changed";
+ROUTE463.toNode = "r_pinky3_RotationInterpolator";
+ROUTE463.toField = "set_fraction";
+children[110] = ROUTE463;
 
 ROUTE ROUTE464 = createNode("ROUTE");
+ROUTE464.fromNode = "HumanoidRoot_RotationInterpolator";
 ROUTE464.fromField = "value_changed";
-ROUTE464.fromNode = "vc6_RotationInterpolator";
-ROUTE464.toField = "set_rotation";
-ROUTE464.toNode = "Joe_vc6";
-children[140] = ROUTE464;
+ROUTE464.toNode = "Joe_humanoid_root";
+ROUTE464.toField = "rotation";
+children[111] = ROUTE464;
 
 ROUTE ROUTE465 = createNode("ROUTE");
+ROUTE465.fromNode = "HumanoidRoot_TranslationInterpolator";
 ROUTE465.fromField = "value_changed";
-ROUTE465.fromNode = "vc5_RotationInterpolator";
-ROUTE465.toField = "set_rotation";
-ROUTE465.toNode = "Joe_vc5";
-children[141] = ROUTE465;
+ROUTE465.toNode = "Joe_humanoid_root";
+ROUTE465.toField = "translation";
+children[112] = ROUTE465;
 
 ROUTE ROUTE466 = createNode("ROUTE");
+ROUTE466.fromNode = "sacroiliac_RotationInterpolator";
 ROUTE466.fromField = "value_changed";
-ROUTE466.fromNode = "vc4_RotationInterpolator";
-ROUTE466.toField = "set_rotation";
-ROUTE466.toNode = "Joe_vc4";
-children[142] = ROUTE466;
+ROUTE466.toNode = "Joe_sacroiliac";
+ROUTE466.toField = "rotation";
+children[113] = ROUTE466;
 
 ROUTE ROUTE467 = createNode("ROUTE");
+ROUTE467.fromNode = "l_hip_RotationInterpolator";
 ROUTE467.fromField = "value_changed";
-ROUTE467.fromNode = "vc3_RotationInterpolator";
-ROUTE467.toField = "set_rotation";
-ROUTE467.toNode = "Joe_vc3";
-children[143] = ROUTE467;
+ROUTE467.toNode = "Joe_l_hip";
+ROUTE467.toField = "rotation";
+children[114] = ROUTE467;
 
 ROUTE ROUTE468 = createNode("ROUTE");
+ROUTE468.fromNode = "l_knee_RotationInterpolator";
 ROUTE468.fromField = "value_changed";
-ROUTE468.fromNode = "vc2_RotationInterpolator";
-ROUTE468.toField = "set_rotation";
-ROUTE468.toNode = "Joe_vc2";
-children[144] = ROUTE468;
+ROUTE468.toNode = "Joe_l_knee";
+ROUTE468.toField = "rotation";
+children[115] = ROUTE468;
 
 ROUTE ROUTE469 = createNode("ROUTE");
+ROUTE469.fromNode = "l_ankle_RotationInterpolator";
 ROUTE469.fromField = "value_changed";
-ROUTE469.fromNode = "vc1_RotationInterpolator";
-ROUTE469.toField = "set_rotation";
-ROUTE469.toNode = "Joe_vc1";
-children[145] = ROUTE469;
+ROUTE469.toNode = "Joe_l_talocrural";
+ROUTE469.toField = "rotation";
+children[116] = ROUTE469;
 
 ROUTE ROUTE470 = createNode("ROUTE");
+ROUTE470.fromNode = "l_subtalar_RotationInterpolator";
 ROUTE470.fromField = "value_changed";
-ROUTE470.fromNode = "skullbase_RotationInterpolator";
-ROUTE470.toField = "set_rotation";
-ROUTE470.toNode = "Joe_skullbase";
-children[146] = ROUTE470;
+ROUTE470.toNode = "Joe_l_tarsometatarsal_1";
+ROUTE470.toField = "rotation";
+children[117] = ROUTE470;
 
 ROUTE ROUTE471 = createNode("ROUTE");
+ROUTE471.fromNode = "l_midtarsal_RotationInterpolator";
 ROUTE471.fromField = "value_changed";
-ROUTE471.fromNode = "l_eyelid_joint_RotationInterpolator";
-ROUTE471.toField = "set_rotation";
-ROUTE471.toNode = "Joe_l_eyelid_joint";
-children[147] = ROUTE471;
+ROUTE471.toNode = "Joe_l_metatarsophalangeal_1";
+ROUTE471.toField = "rotation";
+children[118] = ROUTE471;
 
 ROUTE ROUTE472 = createNode("ROUTE");
+ROUTE472.fromNode = "l_metatarsal_RotationInterpolator";
 ROUTE472.fromField = "value_changed";
-ROUTE472.fromNode = "l_eyeball_joint_RotationInterpolator";
-ROUTE472.toField = "set_rotation";
-ROUTE472.toNode = "Joe_l_eyeball_joint";
-children[148] = ROUTE472;
+ROUTE472.toNode = "Joe_l_tarsal_distal_interphalangeal_1";
+ROUTE472.toField = "rotation";
+children[119] = ROUTE472;
 
 ROUTE ROUTE473 = createNode("ROUTE");
+ROUTE473.fromNode = "r_hip_RotationInterpolator";
 ROUTE473.fromField = "value_changed";
-ROUTE473.fromNode = "l_eyebrow_joint_RotationInterpolator";
-ROUTE473.toField = "set_rotation";
-ROUTE473.toNode = "Joe_l_eyebrow_joint";
-children[149] = ROUTE473;
+ROUTE473.toNode = "Joe_r_hip";
+ROUTE473.toField = "rotation";
+children[120] = ROUTE473;
 
 ROUTE ROUTE474 = createNode("ROUTE");
+ROUTE474.fromNode = "r_knee_RotationInterpolator";
 ROUTE474.fromField = "value_changed";
-ROUTE474.fromNode = "r_eyelid_joint_RotationInterpolator";
-ROUTE474.toField = "set_rotation";
-ROUTE474.toNode = "Joe_r_eyelid_joint";
-children[150] = ROUTE474;
+ROUTE474.toNode = "Joe_r_knee";
+ROUTE474.toField = "rotation";
+children[121] = ROUTE474;
 
 ROUTE ROUTE475 = createNode("ROUTE");
+ROUTE475.fromNode = "r_ankle_RotationInterpolator";
 ROUTE475.fromField = "value_changed";
-ROUTE475.fromNode = "r_eyeball_joint_RotationInterpolator";
-ROUTE475.toField = "set_rotation";
-ROUTE475.toNode = "Joe_r_eyeball_joint";
-children[151] = ROUTE475;
+ROUTE475.toNode = "Joe_r_talocrural";
+ROUTE475.toField = "rotation";
+children[122] = ROUTE475;
 
 ROUTE ROUTE476 = createNode("ROUTE");
+ROUTE476.fromNode = "r_subtalar_RotationInterpolator";
 ROUTE476.fromField = "value_changed";
-ROUTE476.fromNode = "r_eyebrow_joint_RotationInterpolator";
-ROUTE476.toField = "set_rotation";
-ROUTE476.toNode = "Joe_r_eyebrow_joint";
-children[152] = ROUTE476;
+ROUTE476.toNode = "Joe_r_tarsometatarsal_1";
+ROUTE476.toField = "rotation";
+children[123] = ROUTE476;
 
 ROUTE ROUTE477 = createNode("ROUTE");
+ROUTE477.fromNode = "r_midtarsal_RotationInterpolator";
 ROUTE477.fromField = "value_changed";
-ROUTE477.fromNode = "temporomandibular_RotationInterpolator";
-ROUTE477.toField = "set_rotation";
-ROUTE477.toNode = "Joe_temporomandibular";
-children[153] = ROUTE477;
+ROUTE477.toNode = "Joe_r_metatarsophalangeal_1";
+ROUTE477.toField = "rotation";
+children[124] = ROUTE477;
 
 ROUTE ROUTE478 = createNode("ROUTE");
+ROUTE478.fromNode = "r_metatarsal_RotationInterpolator";
 ROUTE478.fromField = "value_changed";
-ROUTE478.fromNode = "l_sternoclavicular_RotationInterpolator";
-ROUTE478.toField = "set_rotation";
-ROUTE478.toNode = "Joe_l_sternoclavicular";
-children[154] = ROUTE478;
+ROUTE478.toNode = "Joe_r_tarsal_distal_interphalangeal_1";
+ROUTE478.toField = "rotation";
+children[125] = ROUTE478;
 
 ROUTE ROUTE479 = createNode("ROUTE");
+ROUTE479.fromNode = "vl5_RotationInterpolator";
 ROUTE479.fromField = "value_changed";
-ROUTE479.fromNode = "l_acromioclavicular_RotationInterpolator";
-ROUTE479.toField = "set_rotation";
-ROUTE479.toNode = "Joe_l_acromioclavicular";
-children[155] = ROUTE479;
+ROUTE479.toNode = "Joe_vl5";
+ROUTE479.toField = "rotation";
+children[126] = ROUTE479;
 
 ROUTE ROUTE480 = createNode("ROUTE");
+ROUTE480.fromNode = "vl4_RotationInterpolator";
 ROUTE480.fromField = "value_changed";
-ROUTE480.fromNode = "l_shoulder_RotationInterpolator";
-ROUTE480.toField = "set_rotation";
-ROUTE480.toNode = "Joe_l_shoulder";
-children[156] = ROUTE480;
+ROUTE480.toNode = "Joe_vl4";
+ROUTE480.toField = "rotation";
+children[127] = ROUTE480;
 
 ROUTE ROUTE481 = createNode("ROUTE");
+ROUTE481.fromNode = "vl3_RotationInterpolator";
 ROUTE481.fromField = "value_changed";
-ROUTE481.fromNode = "l_elbow_RotationInterpolator";
-ROUTE481.toField = "set_rotation";
-ROUTE481.toNode = "Joe_l_elbow";
-children[157] = ROUTE481;
+ROUTE481.toNode = "Joe_vl3";
+ROUTE481.toField = "rotation";
+children[128] = ROUTE481;
 
 ROUTE ROUTE482 = createNode("ROUTE");
+ROUTE482.fromNode = "vl2_RotationInterpolator";
 ROUTE482.fromField = "value_changed";
-ROUTE482.fromNode = "l_wrist_RotationInterpolator";
-ROUTE482.toField = "set_rotation";
-ROUTE482.toNode = "Joe_l_radiocarpal";
-children[158] = ROUTE482;
+ROUTE482.toNode = "Joe_vl2";
+ROUTE482.toField = "rotation";
+children[129] = ROUTE482;
 
 ROUTE ROUTE483 = createNode("ROUTE");
+ROUTE483.fromNode = "vl1_RotationInterpolator";
 ROUTE483.fromField = "value_changed";
-ROUTE483.fromNode = "l_thumb1_RotationInterpolator";
-ROUTE483.toField = "set_rotation";
-ROUTE483.toNode = "Joe_l_carpometacarpal_1";
-children[159] = ROUTE483;
+ROUTE483.toNode = "Joe_vl1";
+ROUTE483.toField = "rotation";
+children[130] = ROUTE483;
 
 ROUTE ROUTE484 = createNode("ROUTE");
+ROUTE484.fromNode = "vt12_RotationInterpolator";
 ROUTE484.fromField = "value_changed";
-ROUTE484.fromNode = "l_thumb2_RotationInterpolator";
-ROUTE484.toField = "set_rotation";
-ROUTE484.toNode = "Joe_l_metacarpophalangeal_1";
-children[160] = ROUTE484;
+ROUTE484.toNode = "Joe_vt12";
+ROUTE484.toField = "rotation";
+children[131] = ROUTE484;
 
 ROUTE ROUTE485 = createNode("ROUTE");
+ROUTE485.fromNode = "vt11_RotationInterpolator";
 ROUTE485.fromField = "value_changed";
-ROUTE485.fromNode = "l_thumb3_RotationInterpolator";
-ROUTE485.toField = "set_rotation";
-ROUTE485.toNode = "Joe_l_carpal_interphalangeal_1";
-children[161] = ROUTE485;
+ROUTE485.toNode = "Joe_vt11";
+ROUTE485.toField = "rotation";
+children[132] = ROUTE485;
 
 ROUTE ROUTE486 = createNode("ROUTE");
+ROUTE486.fromNode = "vt10_RotationInterpolator";
 ROUTE486.fromField = "value_changed";
-ROUTE486.fromNode = "l_index0_RotationInterpolator";
-ROUTE486.toField = "set_rotation";
-ROUTE486.toNode = "Joe_l_carpometacarpal_2";
-children[162] = ROUTE486;
+ROUTE486.toNode = "Joe_vt10";
+ROUTE486.toField = "rotation";
+children[133] = ROUTE486;
 
 ROUTE ROUTE487 = createNode("ROUTE");
+ROUTE487.fromNode = "vt9_RotationInterpolator";
 ROUTE487.fromField = "value_changed";
-ROUTE487.fromNode = "l_index1_RotationInterpolator";
-ROUTE487.toField = "set_rotation";
-ROUTE487.toNode = "Joe_l_metacarpophalangeal_2";
-children[163] = ROUTE487;
+ROUTE487.toNode = "Joe_vt9";
+ROUTE487.toField = "rotation";
+children[134] = ROUTE487;
 
 ROUTE ROUTE488 = createNode("ROUTE");
+ROUTE488.fromNode = "vt8_RotationInterpolator";
 ROUTE488.fromField = "value_changed";
-ROUTE488.fromNode = "l_index2_RotationInterpolator";
-ROUTE488.toField = "set_rotation";
-ROUTE488.toNode = "Joe_l_carpal_proximal_interphalangeal_2";
-children[164] = ROUTE488;
+ROUTE488.toNode = "Joe_vt8";
+ROUTE488.toField = "rotation";
+children[135] = ROUTE488;
 
 ROUTE ROUTE489 = createNode("ROUTE");
+ROUTE489.fromNode = "vt7_RotationInterpolator";
 ROUTE489.fromField = "value_changed";
-ROUTE489.fromNode = "l_index3_RotationInterpolator";
-ROUTE489.toField = "set_rotation";
-ROUTE489.toNode = "Joe_l_carpal_distal_interphalangeal_2";
-children[165] = ROUTE489;
+ROUTE489.toNode = "Joe_vt7";
+ROUTE489.toField = "rotation";
+children[136] = ROUTE489;
 
 ROUTE ROUTE490 = createNode("ROUTE");
+ROUTE490.fromNode = "vt6_RotationInterpolator";
 ROUTE490.fromField = "value_changed";
-ROUTE490.fromNode = "l_middle0_RotationInterpolator";
-ROUTE490.toField = "set_rotation";
-ROUTE490.toNode = "Joe_l_carpometacarpal_3";
-children[166] = ROUTE490;
+ROUTE490.toNode = "Joe_vt6";
+ROUTE490.toField = "rotation";
+children[137] = ROUTE490;
 
 ROUTE ROUTE491 = createNode("ROUTE");
+ROUTE491.fromNode = "vt5_RotationInterpolator";
 ROUTE491.fromField = "value_changed";
-ROUTE491.fromNode = "l_middle1_RotationInterpolator";
-ROUTE491.toField = "set_rotation";
-ROUTE491.toNode = "Joe_l_metacarpophalangeal_3";
-children[167] = ROUTE491;
+ROUTE491.toNode = "Joe_vt5";
+ROUTE491.toField = "rotation";
+children[138] = ROUTE491;
 
 ROUTE ROUTE492 = createNode("ROUTE");
+ROUTE492.fromNode = "vt4_RotationInterpolator";
 ROUTE492.fromField = "value_changed";
-ROUTE492.fromNode = "l_middle2_RotationInterpolator";
-ROUTE492.toField = "set_rotation";
-ROUTE492.toNode = "Joe_l_carpal_proximal_interphalangeal_3";
-children[168] = ROUTE492;
+ROUTE492.toNode = "Joe_vt4";
+ROUTE492.toField = "rotation";
+children[139] = ROUTE492;
 
 ROUTE ROUTE493 = createNode("ROUTE");
+ROUTE493.fromNode = "vt3_RotationInterpolator";
 ROUTE493.fromField = "value_changed";
-ROUTE493.fromNode = "l_middle3_RotationInterpolator";
-ROUTE493.toField = "set_rotation";
-ROUTE493.toNode = "Joe_l_carpal_distal_interphalangeal_3";
-children[169] = ROUTE493;
+ROUTE493.toNode = "Joe_vt3";
+ROUTE493.toField = "rotation";
+children[140] = ROUTE493;
 
 ROUTE ROUTE494 = createNode("ROUTE");
+ROUTE494.fromNode = "vt2_RotationInterpolator";
 ROUTE494.fromField = "value_changed";
-ROUTE494.fromNode = "l_ring0_RotationInterpolator";
-ROUTE494.toField = "set_rotation";
-ROUTE494.toNode = "Joe_l_carpometacarpal_4";
-children[170] = ROUTE494;
+ROUTE494.toNode = "Joe_vt2";
+ROUTE494.toField = "rotation";
+children[141] = ROUTE494;
 
 ROUTE ROUTE495 = createNode("ROUTE");
+ROUTE495.fromNode = "vt1_RotationInterpolator";
 ROUTE495.fromField = "value_changed";
-ROUTE495.fromNode = "l_ring1_RotationInterpolator";
-ROUTE495.toField = "set_rotation";
-ROUTE495.toNode = "Joe_l_metacarpophalangeal_4";
-children[171] = ROUTE495;
+ROUTE495.toNode = "Joe_vt1";
+ROUTE495.toField = "rotation";
+children[142] = ROUTE495;
 
 ROUTE ROUTE496 = createNode("ROUTE");
+ROUTE496.fromNode = "vc7_RotationInterpolator";
 ROUTE496.fromField = "value_changed";
-ROUTE496.fromNode = "l_ring2_RotationInterpolator";
-ROUTE496.toField = "set_rotation";
-ROUTE496.toNode = "Joe_l_carpal_proximal_interphalangeal_4";
-children[172] = ROUTE496;
+ROUTE496.toNode = "Joe_vc7";
+ROUTE496.toField = "rotation";
+children[143] = ROUTE496;
 
 ROUTE ROUTE497 = createNode("ROUTE");
+ROUTE497.fromNode = "vc6_RotationInterpolator";
 ROUTE497.fromField = "value_changed";
-ROUTE497.fromNode = "l_ring3_RotationInterpolator";
-ROUTE497.toField = "set_rotation";
-ROUTE497.toNode = "Joe_l_carpal_distal_interphalangeal_4";
-children[173] = ROUTE497;
+ROUTE497.toNode = "Joe_vc6";
+ROUTE497.toField = "rotation";
+children[144] = ROUTE497;
 
 ROUTE ROUTE498 = createNode("ROUTE");
+ROUTE498.fromNode = "vc5_RotationInterpolator";
 ROUTE498.fromField = "value_changed";
-ROUTE498.fromNode = "l_pinky0_RotationInterpolator";
-ROUTE498.toField = "set_rotation";
-ROUTE498.toNode = "Joe_l_carpometacarpal_5";
-children[174] = ROUTE498;
+ROUTE498.toNode = "Joe_vc5";
+ROUTE498.toField = "rotation";
+children[145] = ROUTE498;
 
 ROUTE ROUTE499 = createNode("ROUTE");
+ROUTE499.fromNode = "vc4_RotationInterpolator";
 ROUTE499.fromField = "value_changed";
-ROUTE499.fromNode = "l_pinky1_RotationInterpolator";
-ROUTE499.toField = "set_rotation";
-ROUTE499.toNode = "Joe_l_metacarpophalangeal_5";
-children[175] = ROUTE499;
+ROUTE499.toNode = "Joe_vc4";
+ROUTE499.toField = "rotation";
+children[146] = ROUTE499;
 
 ROUTE ROUTE500 = createNode("ROUTE");
+ROUTE500.fromNode = "vc3_RotationInterpolator";
 ROUTE500.fromField = "value_changed";
-ROUTE500.fromNode = "l_pinky2_RotationInterpolator";
-ROUTE500.toField = "set_rotation";
-ROUTE500.toNode = "Joe_l_carpal_proximal_interphalangeal_5";
-children[176] = ROUTE500;
+ROUTE500.toNode = "Joe_vc3";
+ROUTE500.toField = "rotation";
+children[147] = ROUTE500;
 
 ROUTE ROUTE501 = createNode("ROUTE");
+ROUTE501.fromNode = "vc2_RotationInterpolator";
 ROUTE501.fromField = "value_changed";
-ROUTE501.fromNode = "l_pinky3_RotationInterpolator";
-ROUTE501.toField = "set_rotation";
-ROUTE501.toNode = "Joe_l_carpal_distal_interphalangeal_5";
-children[177] = ROUTE501;
+ROUTE501.toNode = "Joe_vc2";
+ROUTE501.toField = "rotation";
+children[148] = ROUTE501;
 
 ROUTE ROUTE502 = createNode("ROUTE");
+ROUTE502.fromNode = "vc1_RotationInterpolator";
 ROUTE502.fromField = "value_changed";
-ROUTE502.fromNode = "r_sternoclavicular_RotationInterpolator";
-ROUTE502.toField = "set_rotation";
-ROUTE502.toNode = "Joe_r_sternoclavicular";
-children[178] = ROUTE502;
+ROUTE502.toNode = "Joe_vc1";
+ROUTE502.toField = "rotation";
+children[149] = ROUTE502;
 
 ROUTE ROUTE503 = createNode("ROUTE");
+ROUTE503.fromNode = "skullbase_RotationInterpolator";
 ROUTE503.fromField = "value_changed";
-ROUTE503.fromNode = "r_acromioclavicular_RotationInterpolator";
-ROUTE503.toField = "set_rotation";
-ROUTE503.toNode = "Joe_r_acromioclavicular";
-children[179] = ROUTE503;
+ROUTE503.toNode = "Joe_skullbase";
+ROUTE503.toField = "rotation";
+children[150] = ROUTE503;
 
 ROUTE ROUTE504 = createNode("ROUTE");
+ROUTE504.fromNode = "l_eyelid_joint_RotationInterpolator";
 ROUTE504.fromField = "value_changed";
-ROUTE504.fromNode = "r_shoulder_RotationInterpolator";
-ROUTE504.toField = "set_rotation";
-ROUTE504.toNode = "Joe_r_shoulder";
-children[180] = ROUTE504;
+ROUTE504.toNode = "Joe_l_eyelid_joint";
+ROUTE504.toField = "rotation";
+children[151] = ROUTE504;
 
 ROUTE ROUTE505 = createNode("ROUTE");
+ROUTE505.fromNode = "l_eyeball_joint_RotationInterpolator";
 ROUTE505.fromField = "value_changed";
-ROUTE505.fromNode = "r_elbow_RotationInterpolator";
-ROUTE505.toField = "set_rotation";
-ROUTE505.toNode = "Joe_r_elbow";
-children[181] = ROUTE505;
+ROUTE505.toNode = "Joe_l_eyeball_joint";
+ROUTE505.toField = "rotation";
+children[152] = ROUTE505;
 
 ROUTE ROUTE506 = createNode("ROUTE");
+ROUTE506.fromNode = "l_eyebrow_joint_RotationInterpolator";
 ROUTE506.fromField = "value_changed";
-ROUTE506.fromNode = "r_wrist_RotationInterpolator";
-ROUTE506.toField = "set_rotation";
-ROUTE506.toNode = "Joe_r_radiocarpal";
-children[182] = ROUTE506;
+ROUTE506.toNode = "Joe_l_eyebrow_joint";
+ROUTE506.toField = "rotation";
+children[153] = ROUTE506;
 
 ROUTE ROUTE507 = createNode("ROUTE");
+ROUTE507.fromNode = "r_eyelid_joint_RotationInterpolator";
 ROUTE507.fromField = "value_changed";
-ROUTE507.fromNode = "r_thumb1_RotationInterpolator";
-ROUTE507.toField = "set_rotation";
-ROUTE507.toNode = "Joe_r_carpometacarpal_1";
-children[183] = ROUTE507;
+ROUTE507.toNode = "Joe_r_eyelid_joint";
+ROUTE507.toField = "rotation";
+children[154] = ROUTE507;
 
 ROUTE ROUTE508 = createNode("ROUTE");
+ROUTE508.fromNode = "r_eyeball_joint_RotationInterpolator";
 ROUTE508.fromField = "value_changed";
-ROUTE508.fromNode = "r_thumb2_RotationInterpolator";
-ROUTE508.toField = "set_rotation";
-ROUTE508.toNode = "Joe_r_metacarpophalangeal_1";
-children[184] = ROUTE508;
+ROUTE508.toNode = "Joe_r_eyeball_joint";
+ROUTE508.toField = "rotation";
+children[155] = ROUTE508;
 
 ROUTE ROUTE509 = createNode("ROUTE");
+ROUTE509.fromNode = "r_eyebrow_joint_RotationInterpolator";
 ROUTE509.fromField = "value_changed";
-ROUTE509.fromNode = "r_thumb3_RotationInterpolator";
-ROUTE509.toField = "set_rotation";
-ROUTE509.toNode = "Joe_r_carpal_interphalangeal_1";
-children[185] = ROUTE509;
+ROUTE509.toNode = "Joe_r_eyebrow_joint";
+ROUTE509.toField = "rotation";
+children[156] = ROUTE509;
 
 ROUTE ROUTE510 = createNode("ROUTE");
+ROUTE510.fromNode = "temporomandibular_RotationInterpolator";
 ROUTE510.fromField = "value_changed";
-ROUTE510.fromNode = "r_index0_RotationInterpolator";
-ROUTE510.toField = "set_rotation";
-ROUTE510.toNode = "Joe_r_carpometacarpal_2";
-children[186] = ROUTE510;
+ROUTE510.toNode = "Joe_temporomandibular";
+ROUTE510.toField = "rotation";
+children[157] = ROUTE510;
 
 ROUTE ROUTE511 = createNode("ROUTE");
+ROUTE511.fromNode = "l_sternoclavicular_RotationInterpolator";
 ROUTE511.fromField = "value_changed";
-ROUTE511.fromNode = "r_index1_RotationInterpolator";
-ROUTE511.toField = "set_rotation";
-ROUTE511.toNode = "Joe_r_metacarpophalangeal_2";
-children[187] = ROUTE511;
+ROUTE511.toNode = "Joe_l_sternoclavicular";
+ROUTE511.toField = "rotation";
+children[158] = ROUTE511;
 
 ROUTE ROUTE512 = createNode("ROUTE");
+ROUTE512.fromNode = "l_acromioclavicular_RotationInterpolator";
 ROUTE512.fromField = "value_changed";
-ROUTE512.fromNode = "r_index2_RotationInterpolator";
-ROUTE512.toField = "set_rotation";
-ROUTE512.toNode = "Joe_r_carpal_proximal_interphalangeal_2";
-children[188] = ROUTE512;
+ROUTE512.toNode = "Joe_l_acromioclavicular";
+ROUTE512.toField = "rotation";
+children[159] = ROUTE512;
 
 ROUTE ROUTE513 = createNode("ROUTE");
+ROUTE513.fromNode = "l_shoulder_RotationInterpolator";
 ROUTE513.fromField = "value_changed";
-ROUTE513.fromNode = "r_index3_RotationInterpolator";
-ROUTE513.toField = "set_rotation";
-ROUTE513.toNode = "Joe_r_carpal_distal_interphalangeal_2";
-children[189] = ROUTE513;
+ROUTE513.toNode = "Joe_l_shoulder";
+ROUTE513.toField = "rotation";
+children[160] = ROUTE513;
 
 ROUTE ROUTE514 = createNode("ROUTE");
+ROUTE514.fromNode = "l_elbow_RotationInterpolator";
 ROUTE514.fromField = "value_changed";
-ROUTE514.fromNode = "r_middle0_RotationInterpolator";
-ROUTE514.toField = "set_rotation";
-ROUTE514.toNode = "Joe_r_carpometacarpal_3";
-children[190] = ROUTE514;
+ROUTE514.toNode = "Joe_l_elbow";
+ROUTE514.toField = "rotation";
+children[161] = ROUTE514;
 
 ROUTE ROUTE515 = createNode("ROUTE");
+ROUTE515.fromNode = "l_wrist_RotationInterpolator";
 ROUTE515.fromField = "value_changed";
-ROUTE515.fromNode = "r_middle1_RotationInterpolator";
-ROUTE515.toField = "set_rotation";
-ROUTE515.toNode = "Joe_r_metacarpophalangeal_3";
-children[191] = ROUTE515;
+ROUTE515.toNode = "Joe_l_radiocarpal";
+ROUTE515.toField = "rotation";
+children[162] = ROUTE515;
 
 ROUTE ROUTE516 = createNode("ROUTE");
+ROUTE516.fromNode = "l_thumb1_RotationInterpolator";
 ROUTE516.fromField = "value_changed";
-ROUTE516.fromNode = "r_middle2_RotationInterpolator";
-ROUTE516.toField = "set_rotation";
-ROUTE516.toNode = "Joe_r_carpal_proximal_interphalangeal_3";
-children[192] = ROUTE516;
+ROUTE516.toNode = "Joe_l_carpometacarpal_1";
+ROUTE516.toField = "rotation";
+children[163] = ROUTE516;
 
 ROUTE ROUTE517 = createNode("ROUTE");
+ROUTE517.fromNode = "l_thumb2_RotationInterpolator";
 ROUTE517.fromField = "value_changed";
-ROUTE517.fromNode = "r_middle3_RotationInterpolator";
-ROUTE517.toField = "set_rotation";
-ROUTE517.toNode = "Joe_r_carpal_distal_interphalangeal_3";
-children[193] = ROUTE517;
+ROUTE517.toNode = "Joe_l_metacarpophalangeal_1";
+ROUTE517.toField = "rotation";
+children[164] = ROUTE517;
 
 ROUTE ROUTE518 = createNode("ROUTE");
+ROUTE518.fromNode = "l_thumb3_RotationInterpolator";
 ROUTE518.fromField = "value_changed";
-ROUTE518.fromNode = "r_ring0_RotationInterpolator";
-ROUTE518.toField = "set_rotation";
-ROUTE518.toNode = "Joe_r_carpometacarpal_4";
-children[194] = ROUTE518;
+ROUTE518.toNode = "Joe_l_carpal_interphalangeal_1";
+ROUTE518.toField = "rotation";
+children[165] = ROUTE518;
 
 ROUTE ROUTE519 = createNode("ROUTE");
+ROUTE519.fromNode = "l_index0_RotationInterpolator";
 ROUTE519.fromField = "value_changed";
-ROUTE519.fromNode = "r_ring1_RotationInterpolator";
-ROUTE519.toField = "set_rotation";
-ROUTE519.toNode = "Joe_r_metacarpophalangeal_4";
-children[195] = ROUTE519;
+ROUTE519.toNode = "Joe_l_carpometacarpal_2";
+ROUTE519.toField = "rotation";
+children[166] = ROUTE519;
 
 ROUTE ROUTE520 = createNode("ROUTE");
+ROUTE520.fromNode = "l_index1_RotationInterpolator";
 ROUTE520.fromField = "value_changed";
-ROUTE520.fromNode = "r_ring2_RotationInterpolator";
-ROUTE520.toField = "set_rotation";
-ROUTE520.toNode = "Joe_r_carpal_proximal_interphalangeal_4";
-children[196] = ROUTE520;
+ROUTE520.toNode = "Joe_l_metacarpophalangeal_2";
+ROUTE520.toField = "rotation";
+children[167] = ROUTE520;
 
 ROUTE ROUTE521 = createNode("ROUTE");
+ROUTE521.fromNode = "l_index2_RotationInterpolator";
 ROUTE521.fromField = "value_changed";
-ROUTE521.fromNode = "r_ring3_RotationInterpolator";
-ROUTE521.toField = "set_rotation";
-ROUTE521.toNode = "Joe_r_carpal_distal_interphalangeal_4";
-children[197] = ROUTE521;
+ROUTE521.toNode = "Joe_l_carpal_proximal_interphalangeal_1";
+ROUTE521.toField = "rotation";
+children[168] = ROUTE521;
 
 ROUTE ROUTE522 = createNode("ROUTE");
+ROUTE522.fromNode = "l_index3_RotationInterpolator";
 ROUTE522.fromField = "value_changed";
-ROUTE522.fromNode = "r_pinky0_RotationInterpolator";
-ROUTE522.toField = "set_rotation";
-ROUTE522.toNode = "Joe_r_carpometacarpal_5";
-children[198] = ROUTE522;
+ROUTE522.toNode = "Joe_l_carpal_distal_interphalangeal_1";
+ROUTE522.toField = "rotation";
+children[169] = ROUTE522;
 
 ROUTE ROUTE523 = createNode("ROUTE");
+ROUTE523.fromNode = "l_middle0_RotationInterpolator";
 ROUTE523.fromField = "value_changed";
-ROUTE523.fromNode = "r_pinky1_RotationInterpolator";
-ROUTE523.toField = "set_rotation";
-ROUTE523.toNode = "Joe_r_metacarpophalangeal_5";
-children[199] = ROUTE523;
+ROUTE523.toNode = "Joe_l_carpometacarpal_3";
+ROUTE523.toField = "rotation";
+children[170] = ROUTE523;
 
 ROUTE ROUTE524 = createNode("ROUTE");
+ROUTE524.fromNode = "l_middle1_RotationInterpolator";
 ROUTE524.fromField = "value_changed";
-ROUTE524.fromNode = "r_pinky2_RotationInterpolator";
-ROUTE524.toField = "set_rotation";
-ROUTE524.toNode = "Joe_r_carpal_proximal_interphalangeal_5";
-children[200] = ROUTE524;
+ROUTE524.toNode = "Joe_l_metacarpophalangeal_3";
+ROUTE524.toField = "rotation";
+children[171] = ROUTE524;
 
 ROUTE ROUTE525 = createNode("ROUTE");
+ROUTE525.fromNode = "l_middle2_RotationInterpolator";
 ROUTE525.fromField = "value_changed";
-ROUTE525.fromNode = "r_pinky3_RotationInterpolator";
-ROUTE525.toField = "set_rotation";
-ROUTE525.toNode = "Joe_r_carpal_distal_interphalangeal_5";
-children[201] = ROUTE525;
+ROUTE525.toNode = "Joe_l_carpal_proximal_interphalangeal_2";
+ROUTE525.toField = "rotation";
+children[172] = ROUTE525;
 
-Group Group526 = createNode("Group");
-Group526.DEF = "DisplacersAnimationGroup";
-ScalarInterpolator ScalarInterpolator527 = createNode("ScalarInterpolator");
-ScalarInterpolator527.DEF = "skull_tipInterpolator";
-ScalarInterpolator527.key = new MFFloat(new float[0,0.1,0.2,0.35,0.6,0.7,0.85,0.88,0.94,0.97,1]);
-ScalarInterpolator527.keyValue = new MFFloat(new float[0,0,0,0,0.2,0.4,1,0,1,0.4,0]);
-Group526.children = new MFNode();
+ROUTE ROUTE526 = createNode("ROUTE");
+ROUTE526.fromNode = "l_middle3_RotationInterpolator";
+ROUTE526.fromField = "value_changed";
+ROUTE526.toNode = "Joe_l_carpal_distal_interphalangeal_2";
+ROUTE526.toField = "rotation";
+children[173] = ROUTE526;
 
-Group526.children[0] = ScalarInterpolator527;
+ROUTE ROUTE527 = createNode("ROUTE");
+ROUTE527.fromNode = "l_ring0_RotationInterpolator";
+ROUTE527.fromField = "value_changed";
+ROUTE527.toNode = "Joe_l_carpometacarpal_4";
+ROUTE527.toField = "rotation";
+children[174] = ROUTE527;
 
 ROUTE ROUTE528 = createNode("ROUTE");
-ROUTE528.fromField = "fraction_changed";
-ROUTE528.fromNode = "KickTimer";
-ROUTE528.toField = "set_fraction";
-ROUTE528.toNode = "skull_tipInterpolator";
-Group526.children[1] = ROUTE528;
+ROUTE528.fromNode = "l_ring1_RotationInterpolator";
+ROUTE528.fromField = "value_changed";
+ROUTE528.toNode = "Joe_l_metacarpophalangeal_4";
+ROUTE528.toField = "rotation";
+children[175] = ROUTE528;
 
 ROUTE ROUTE529 = createNode("ROUTE");
+ROUTE529.fromNode = "l_ring2_RotationInterpolator";
 ROUTE529.fromField = "value_changed";
-ROUTE529.fromNode = "skull_tipInterpolator";
-ROUTE529.toField = "weight";
-ROUTE529.toNode = "Joe_skull_tip_raiser_action";
-Group526.children[2] = ROUTE529;
+ROUTE529.toNode = "Joe_l_carpal_proximal_interphalangeal_3";
+ROUTE529.toField = "rotation";
+children[176] = ROUTE529;
 
-children[202] = Group526;
+ROUTE ROUTE530 = createNode("ROUTE");
+ROUTE530.fromNode = "l_ring3_RotationInterpolator";
+ROUTE530.fromField = "value_changed";
+ROUTE530.toNode = "Joe_l_carpal_distal_interphalangeal_3";
+ROUTE530.toField = "rotation";
+children[177] = ROUTE530;
 
-Group Group530 = createNode("Group");
-Group530.DEF = "SkinTextureTransformAnimationGroup";
-ScalarInterpolator ScalarInterpolator531 = createNode("ScalarInterpolator");
-ScalarInterpolator531.DEF = "SkinInterpolator";
-ScalarInterpolator531.key = new MFFloat(new float[0,0.2,0.4,0.5,0.6,0.7,0.8,1]);
-ScalarInterpolator531.keyValue = new MFFloat(new float[0,0,0,0,0,1,2,0]);
-Group530.children = new MFNode();
-
-Group530.children[0] = ScalarInterpolator531;
+ROUTE ROUTE531 = createNode("ROUTE");
+ROUTE531.fromNode = "l_pinky0_RotationInterpolator";
+ROUTE531.fromField = "value_changed";
+ROUTE531.toNode = "Joe_l_carpometacarpal_5";
+ROUTE531.toField = "rotation";
+children[178] = ROUTE531;
 
 ROUTE ROUTE532 = createNode("ROUTE");
-ROUTE532.fromField = "fraction_changed";
-ROUTE532.fromNode = "KickTimer";
-ROUTE532.toField = "set_fraction";
-ROUTE532.toNode = "SkinInterpolator";
-Group530.children[1] = ROUTE532;
+ROUTE532.fromNode = "l_pinky1_RotationInterpolator";
+ROUTE532.fromField = "value_changed";
+ROUTE532.toNode = "Joe_l_metacarpophalangeal_5";
+ROUTE532.toField = "rotation";
+children[179] = ROUTE532;
 
 ROUTE ROUTE533 = createNode("ROUTE");
+ROUTE533.fromNode = "l_pinky2_RotationInterpolator";
 ROUTE533.fromField = "value_changed";
-ROUTE533.fromNode = "SkinInterpolator";
+ROUTE533.toNode = "Joe_l_carpal_proximal_interphalangeal_4";
 ROUTE533.toField = "rotation";
-ROUTE533.toNode = "KickTextureTransform";
-Group530.children[2] = ROUTE533;
+children[180] = ROUTE533;
 
-children[203] = Group530;
+ROUTE ROUTE534 = createNode("ROUTE");
+ROUTE534.fromNode = "l_pinky3_RotationInterpolator";
+ROUTE534.fromField = "value_changed";
+ROUTE534.toNode = "Joe_l_carpal_distal_interphalangeal_4";
+ROUTE534.toField = "rotation";
+children[181] = ROUTE534;
 
-Group Group534 = createNode("Group");
-Transform Transform535 = createNode("Transform");
-Transform535.DEF = "SBall";
-Transform535.rotation = new SFRotation(new float[0.7,0,0.7,0.1]);
-Transform535.scale = new SFVec3f(new float[0.23,0.23,0.23]);
-Transform535.translation = new SFVec3f(new float[-0.916,0.37,-0.92]);
-Shape Shape536 = createNode("Shape");
-Shape536.DEF = "ball_Shape";
-Appearance Appearance537 = createNode("Appearance");
-Appearance537.DEF = "ball_Appearance";
-Material Material538 = createNode("Material");
-Material538.DEF = "ball_Material";
-Material538.diffuseColor = new SFColor(new float[0.3,0.3,1]);
-Material538.emissiveColor = new SFColor(new float[0.3,0.3,0.33]);
-Appearance537.material = Material538;
+ROUTE ROUTE535 = createNode("ROUTE");
+ROUTE535.fromNode = "r_sternoclavicular_RotationInterpolator";
+ROUTE535.fromField = "value_changed";
+ROUTE535.toNode = "Joe_r_sternoclavicular";
+ROUTE535.toField = "rotation";
+children[182] = ROUTE535;
 
-ImageTexture ImageTexture539 = createNode("ImageTexture");
-ImageTexture539.USE = "JoeSkinImageTexture";
-Appearance537.texture = ImageTexture539;
+ROUTE ROUTE536 = createNode("ROUTE");
+ROUTE536.fromNode = "r_acromioclavicular_RotationInterpolator";
+ROUTE536.fromField = "value_changed";
+ROUTE536.toNode = "Joe_r_acromioclavicular";
+ROUTE536.toField = "rotation";
+children[183] = ROUTE536;
 
-Shape536.appearance = Appearance537;
+ROUTE ROUTE537 = createNode("ROUTE");
+ROUTE537.fromNode = "r_shoulder_RotationInterpolator";
+ROUTE537.fromField = "value_changed";
+ROUTE537.toNode = "Joe_r_shoulder";
+ROUTE537.toField = "rotation";
+children[184] = ROUTE537;
 
-IndexedFaceSet IndexedFaceSet540 = createNode("IndexedFaceSet");
-IndexedFaceSet540.DEF = "ball_IndexedFaceSet";
-IndexedFaceSet540.coordIndex = new MFInt32(new int[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,1,13,14,-1,1,14,2,-1,2,14,15,-1,2,15,3,-1,3,15,16,-1,3,16,4,-1,4,16,17,-1,4,17,5,-1,5,17,18,-1,5,18,6,-1,6,18,19,-1,6,19,7,-1,7,19,20,-1,7,20,8,-1,8,20,21,-1,8,21,9,-1,9,21,22,-1,9,22,10,-1,10,22,23,-1,10,23,11,-1,11,23,24,-1,11,24,12,-1,12,24,13,-1,12,13,1,-1,13,25,26,-1,13,26,14,-1,14,26,27,-1,14,27,15,-1,15,27,28,-1,15,28,16,-1,16,28,29,-1,16,29,17,-1,17,29,30,-1,17,30,18,-1,18,30,31,-1,18,31,19,-1,19,31,32,-1,19,32,20,-1,20,32,33,-1,20,33,21,-1,21,33,34,-1,21,34,22,-1,22,34,35,-1,22,35,23,-1,23,35,36,-1,23,36,24,-1,24,36,25,-1,24,25,13,-1,25,37,38,-1,25,38,26,-1,26,38,39,-1,26,39,27,-1,27,39,40,-1,27,40,28,-1,28,40,41,-1,28,41,29,-1,29,41,42,-1,29,42,30,-1,30,42,43,-1,30,43,31,-1,31,43,44,-1,31,44,32,-1,32,44,45,-1,32,45,33,-1,33,45,46,-1,33,46,34,-1,34,46,47,-1,34,47,35,-1,35,47,48,-1,35,48,36,-1,36,48,37,-1,36,37,25,-1,37,49,50,-1,37,50,38,-1,38,50,51,-1,38,51,39,-1,39,51,52,-1,39,52,40,-1,40,52,53,-1,40,53,41,-1,41,53,54,-1,41,54,42,-1,42,54,55,-1,42,55,43,-1,43,55,56,-1,43,56,44,-1,44,56,57,-1,44,57,45,-1,45,57,58,-1,45,58,46,-1,46,58,59,-1,46,59,47,-1,47,59,60,-1,47,60,48,-1,48,60,49,-1,48,49,37,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1]);
-Coordinate Coordinate541 = createNode("Coordinate");
-Coordinate541.DEF = "Ball_Coordinates";
-Coordinate541.point = new MFVec3f(new float[0,0.4675,0,0,0.4049,-0.2338,-0.1169,0.4049,-0.2024,-0.2024,0.4049,-0.1169,-0.2338,0.4049,0,-0.2024,0.4049,0.1169,-0.1169,0.4049,0.2024,0,0.4049,0.2338,0.1169,0.4049,0.2024,0.2024,0.4049,0.1169,0.2338,0.4049,0,0.2024,0.4049,-0.1169,0.1169,0.4049,-0.2024,0,0.2338,-0.4049,-0.2024,0.2338,-0.3506,-0.3506,0.2338,-0.2024,-0.4049,0.2338,0,-0.3506,0.2338,0.2024,-0.2024,0.2338,0.3506,0,0.2338,0.4049,0.2024,0.2338,0.3506,0.3506,0.2338,0.2024,0.4049,0.2338,0,0.3506,0.2338,-0.2024,0.2024,0.2338,-0.3506,0,0,-0.4675,-0.2338,0,-0.4049,-0.4049,0,-0.2338,-0.4675,0,0,-0.4049,0,0.2338,-0.2338,0,0.4049,0,0,0.4675,0.2338,0,0.4049,0.4049,0,0.2338,0.4675,0,0,0.4049,0,-0.2338,0.2338,0,-0.4049,0,-0.2338,-0.4049,-0.2024,-0.2338,-0.3506,-0.3506,-0.2338,-0.2024,-0.4049,-0.2338,0,-0.3506,-0.2338,0.2024,-0.2024,-0.2338,0.3506,0,-0.2338,0.4049,0.2024,-0.2338,0.3506,0.3506,-0.2338,0.2024,0.4049,-0.2338,0,0.3506,-0.2338,-0.2024,0.2024,-0.2338,-0.3506,0,-0.4049,-0.2338,-0.1169,-0.4049,-0.2024,-0.2024,-0.4049,-0.1169,-0.2338,-0.4049,0,-0.2024,-0.4049,0.1169,-0.1169,-0.4049,0.2024,0,-0.4049,0.2338,0.1169,-0.4049,0.2024,0.2024,-0.4049,0.1169,0.2338,-0.4049,0,0.2024,-0.4049,-0.1169,0.1169,-0.4049,-0.2024,0,-0.4675,0]);
-IndexedFaceSet540.coord = Coordinate541;
+ROUTE ROUTE538 = createNode("ROUTE");
+ROUTE538.fromNode = "r_elbow_RotationInterpolator";
+ROUTE538.fromField = "value_changed";
+ROUTE538.toNode = "Joe_r_elbow";
+ROUTE538.toField = "rotation";
+children[185] = ROUTE538;
 
-Shape536.geometry = IndexedFaceSet540;
+ROUTE ROUTE539 = createNode("ROUTE");
+ROUTE539.fromNode = "r_wrist_RotationInterpolator";
+ROUTE539.fromField = "value_changed";
+ROUTE539.toNode = "Joe_r_radiocarpal";
+ROUTE539.toField = "rotation";
+children[186] = ROUTE539;
 
-Transform535.child = new undefined();
+ROUTE ROUTE540 = createNode("ROUTE");
+ROUTE540.fromNode = "r_thumb1_RotationInterpolator";
+ROUTE540.fromField = "value_changed";
+ROUTE540.toNode = "Joe_r_carpometacarpal_1";
+ROUTE540.toField = "rotation";
+children[187] = ROUTE540;
 
-Transform535.child[0] = Shape536;
+ROUTE ROUTE541 = createNode("ROUTE");
+ROUTE541.fromNode = "r_thumb2_RotationInterpolator";
+ROUTE541.fromField = "value_changed";
+ROUTE541.toNode = "Joe_r_metacarpophalangeal_1";
+ROUTE541.toField = "rotation";
+children[188] = ROUTE541;
 
-Viewpoint Viewpoint542 = createNode("Viewpoint");
-Viewpoint542.DEF = "ballView_1";
-Viewpoint542.description = "Ball View";
-Transform535.children[1] = Viewpoint542;
+ROUTE ROUTE542 = createNode("ROUTE");
+ROUTE542.fromNode = "r_thumb3_RotationInterpolator";
+ROUTE542.fromField = "value_changed";
+ROUTE542.toNode = "Joe_r_carpal_interphalangeal_1";
+ROUTE542.toField = "rotation";
+children[189] = ROUTE542;
 
-Group534.children = new MFNode();
+ROUTE ROUTE543 = createNode("ROUTE");
+ROUTE543.fromNode = "r_index0_RotationInterpolator";
+ROUTE543.fromField = "value_changed";
+ROUTE543.toNode = "Joe_r_carpometacarpal_2";
+ROUTE543.toField = "rotation";
+children[190] = ROUTE543;
 
-Group534.children[0] = Transform535;
+ROUTE ROUTE544 = createNode("ROUTE");
+ROUTE544.fromNode = "r_index1_RotationInterpolator";
+ROUTE544.fromField = "value_changed";
+ROUTE544.toNode = "Joe_r_metacarpophalangeal_2";
+ROUTE544.toField = "rotation";
+children[191] = ROUTE544;
 
-//Ball Animation interpolators
-PositionInterpolator PositionInterpolator543 = createNode("PositionInterpolator");
-PositionInterpolator543.DEF = "ball_TranslationInterpolator";
-PositionInterpolator543.key = new MFFloat(new float[0,0.4,0.409,1]);
-PositionInterpolator543.keyValue = new MFVec3f(new float[-1,0.4,-1,0,0.07,0,0.05,0.06,0.05,2,4,10]);
-Group534.children[1] = PositionInterpolator543;
-
-OrientationInterpolator OrientationInterpolator544 = createNode("OrientationInterpolator");
-OrientationInterpolator544.DEF = "ball_RotationInterpolator";
-OrientationInterpolator544.key = new MFFloat(new float[0,0.4,0.41,0.71,1]);
-OrientationInterpolator544.keyValue = new MFRotation(new float[1,0,1,0.25,-1,0,-1,1.35,-1,1,-1,3.35,-1,0.2,-1,3,-1,0.2,-1,3]);
-Group534.children[2] = OrientationInterpolator544;
-
-//Ball Animation Routes
 ROUTE ROUTE545 = createNode("ROUTE");
-ROUTE545.fromField = "fraction_changed";
-ROUTE545.fromNode = "KickTimer";
-ROUTE545.toField = "set_fraction";
-ROUTE545.toNode = "ball_TranslationInterpolator";
-Group534.children[3] = ROUTE545;
+ROUTE545.fromNode = "r_index2_RotationInterpolator";
+ROUTE545.fromField = "value_changed";
+ROUTE545.toNode = "Joe_r_carpal_proximal_interphalangeal_1";
+ROUTE545.toField = "rotation";
+children[192] = ROUTE545;
 
 ROUTE ROUTE546 = createNode("ROUTE");
+ROUTE546.fromNode = "r_index3_RotationInterpolator";
 ROUTE546.fromField = "value_changed";
-ROUTE546.fromNode = "ball_TranslationInterpolator";
-ROUTE546.toField = "set_translation";
-ROUTE546.toNode = "SBall";
-Group534.children[4] = ROUTE546;
+ROUTE546.toNode = "Joe_r_carpal_distal_interphalangeal_1";
+ROUTE546.toField = "rotation";
+children[193] = ROUTE546;
 
 ROUTE ROUTE547 = createNode("ROUTE");
-ROUTE547.fromField = "fraction_changed";
-ROUTE547.fromNode = "KickTimer";
-ROUTE547.toField = "set_fraction";
-ROUTE547.toNode = "ball_RotationInterpolator";
-Group534.children[5] = ROUTE547;
+ROUTE547.fromNode = "r_middle0_RotationInterpolator";
+ROUTE547.fromField = "value_changed";
+ROUTE547.toNode = "Joe_r_carpometacarpal_3";
+ROUTE547.toField = "rotation";
+children[194] = ROUTE547;
 
 ROUTE ROUTE548 = createNode("ROUTE");
+ROUTE548.fromNode = "r_middle1_RotationInterpolator";
 ROUTE548.fromField = "value_changed";
-ROUTE548.fromNode = "ball_RotationInterpolator";
-ROUTE548.toField = "set_rotation";
-ROUTE548.toNode = "SBall";
-Group534.children[6] = ROUTE548;
+ROUTE548.toNode = "Joe_r_metacarpophalangeal_3";
+ROUTE548.toField = "rotation";
+children[195] = ROUTE548;
 
-children[204] = Group534;
+ROUTE ROUTE549 = createNode("ROUTE");
+ROUTE549.fromNode = "r_middle2_RotationInterpolator";
+ROUTE549.fromField = "value_changed";
+ROUTE549.toNode = "Joe_r_carpal_proximal_interphalangeal_2";
+ROUTE549.toField = "rotation";
+children[196] = ROUTE549;
 
-Group Group549 = createNode("Group");
-Transform Transform550 = createNode("Transform");
-Transform550.scale = new SFVec3f(new float[0.2,0.2,0.2]);
-Shape Shape551 = createNode("Shape");
-Shape551.USE = "AxisLinesShape";
-Transform550.child = new undefined();
+ROUTE ROUTE550 = createNode("ROUTE");
+ROUTE550.fromNode = "r_middle3_RotationInterpolator";
+ROUTE550.fromField = "value_changed";
+ROUTE550.toNode = "Joe_r_carpal_distal_interphalangeal_2";
+ROUTE550.toField = "rotation";
+children[197] = ROUTE550;
 
-Transform550.child[0] = Shape551;
+ROUTE ROUTE551 = createNode("ROUTE");
+ROUTE551.fromNode = "r_ring0_RotationInterpolator";
+ROUTE551.fromField = "value_changed";
+ROUTE551.toNode = "Joe_r_carpometacarpal_4";
+ROUTE551.toField = "rotation";
+children[198] = ROUTE551;
 
-Group549.children = new MFNode();
+ROUTE ROUTE552 = createNode("ROUTE");
+ROUTE552.fromNode = "r_ring1_RotationInterpolator";
+ROUTE552.fromField = "value_changed";
+ROUTE552.toNode = "Joe_r_metacarpophalangeal_4";
+ROUTE552.toField = "rotation";
+children[199] = ROUTE552;
 
-Group549.children[0] = Transform550;
+ROUTE ROUTE553 = createNode("ROUTE");
+ROUTE553.fromNode = "r_ring2_RotationInterpolator";
+ROUTE553.fromField = "value_changed";
+ROUTE553.toNode = "Joe_r_carpal_proximal_interphalangeal_3";
+ROUTE553.toField = "rotation";
+children[200] = ROUTE553;
 
-Transform Transform552 = createNode("Transform");
-Transform552.DEF = "Circle0";
-Transform552.scale = new SFVec3f(new float[1.175,1,1.175]);
-Shape Shape553 = createNode("Shape");
-Shape553.DEF = "circle_Shape";
-Appearance Appearance554 = createNode("Appearance");
-Appearance554.DEF = "circle0_Appearance";
-Material Material555 = createNode("Material");
-Material555.DEF = "circle0_Material";
-Material555.ambientIntensity = 0.9;
-Material555.diffuseColor = new SFColor(new float[0.9,0,0.7]);
-Material555.emissiveColor = new SFColor(new float[0.425,0.486,1]);
-Appearance554.material = Material555;
+ROUTE ROUTE554 = createNode("ROUTE");
+ROUTE554.fromNode = "r_ring3_RotationInterpolator";
+ROUTE554.fromField = "value_changed";
+ROUTE554.toNode = "Joe_r_carpal_distal_interphalangeal_3";
+ROUTE554.toField = "rotation";
+children[201] = ROUTE554;
 
-Shape553.appearance = Appearance554;
+ROUTE ROUTE555 = createNode("ROUTE");
+ROUTE555.fromNode = "r_pinky0_RotationInterpolator";
+ROUTE555.fromField = "value_changed";
+ROUTE555.toNode = "Joe_r_carpometacarpal_5";
+ROUTE555.toField = "rotation";
+children[202] = ROUTE555;
 
-IndexedLineSet IndexedLineSet556 = createNode("IndexedLineSet");
-IndexedLineSet556.DEF = "Orbit1";
-IndexedLineSet556.coordIndex = new MFInt32(new int[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,-1]);
-Coordinate Coordinate557 = createNode("Coordinate");
-Coordinate557.DEF = "circle_Coordinates";
-Coordinate557.point = new MFVec3f(new float[1,0,0,0.995,0,-0.105,0.979,0,-0.208,0.951,0,-0.309,0.914,0,-0.407,0.866,0,-0.5,0.809,0,-0.588,0.743,0,-0.669,0.669,0,-0.743,0.588,0,-0.809,0.5,0,-0.866,0.407,0,-0.914,0.309,0,-0.951,0.208,0,-0.978,0.105,0,-0.995,0,0,-1,-0.105,0,-0.994522,-0.208,0,-0.978,-0.309,0,-0.951,-0.407,0,-0.914,-0.5,0,-0.866,-0.588,0,-0.809,-0.669,0,-0.743,-0.743,0,-0.669,-0.809,0,-0.588,-0.866,0,-0.5,-0.914,0,-0.407,-0.951,0,-0.309,-0.978,0,-0.208,-0.995,0,-0.105,-1,0,0,-0.995,0,0.105,-0.978,0,0.208,-0.951,0,0.309,-0.914,0,0.407,-0.866,0,0.5,-0.809,0,0.588,-0.743,0,0.669,-0.669,0,0.743,-0.588,0,0.809,-0.5,0,0.866,-0.407,0,0.914,-0.309,0,0.951,-0.208,0,0.978,-0.105,0,0.995,0,0,1,0.105,0,0.995,0.208,0,0.978,0.309,0,0.951,0.407,0,0.914,0.5,0,0.866,0.588,0,0.809,0.669,0,0.743,0.743,0,0.669,0.809,0,0.588,0.866,0,0.5,0.914,0,0.407,0.951,0,0.309,0.978,0,0.208,0.995,0,0.104,1,0,0]);
-IndexedLineSet556.coord = Coordinate557;
+ROUTE ROUTE556 = createNode("ROUTE");
+ROUTE556.fromNode = "r_pinky1_RotationInterpolator";
+ROUTE556.fromField = "value_changed";
+ROUTE556.toNode = "Joe_r_metacarpophalangeal_5";
+ROUTE556.toField = "rotation";
+children[203] = ROUTE556;
 
-Shape553.geometry = IndexedLineSet556;
+ROUTE ROUTE557 = createNode("ROUTE");
+ROUTE557.fromNode = "r_pinky2_RotationInterpolator";
+ROUTE557.fromField = "value_changed";
+ROUTE557.toNode = "Joe_r_carpal_proximal_interphalangeal_4";
+ROUTE557.toField = "rotation";
+children[204] = ROUTE557;
 
-Transform552.child = new undefined();
+ROUTE ROUTE558 = createNode("ROUTE");
+ROUTE558.fromNode = "r_pinky3_RotationInterpolator";
+ROUTE558.fromField = "value_changed";
+ROUTE558.toNode = "Joe_r_carpal_distal_interphalangeal_4";
+ROUTE558.toField = "rotation";
+children[205] = ROUTE558;
 
-Transform552.child[0] = Shape553;
+ROUTE ROUTE559 = createNode("ROUTE");
+ROUTE559.fromNode = "KickTimer";
+ROUTE559.fromField = "fraction_changed";
+ROUTE559.toNode = "skull_tipInterpolator";
+ROUTE559.toField = "set_fraction";
+children[206] = ROUTE559;
 
-Group549.children[1] = Transform552;
+ROUTE ROUTE560 = createNode("ROUTE");
+ROUTE560.fromNode = "skull_tipInterpolator";
+ROUTE560.fromField = "value_changed";
+ROUTE560.toNode = "Joe_skull_tip_raiser_action";
+ROUTE560.toField = "weight";
+children[207] = ROUTE560;
 
-Transform Transform558 = createNode("Transform");
-Transform558.DEF = "Circle1";
-Transform558.scale = new SFVec3f(new float[0.5,1,0.5]);
-Shape Shape559 = createNode("Shape");
-Shape559.DEF = "circle1_Shape";
-Appearance Appearance560 = createNode("Appearance");
-Appearance560.DEF = "circle1_Appearance";
-Material Material561 = createNode("Material");
-Material561.DEF = "circle1_Material";
-Material561.diffuseColor = new SFColor(new float[0.9,0,0.7]);
-Material561.emissiveColor = new SFColor(new float[0.424956,0.483976,1]);
-Appearance560.material = Material561;
+ROUTE ROUTE561 = createNode("ROUTE");
+ROUTE561.fromNode = "KickTimer";
+ROUTE561.fromField = "fraction_changed";
+ROUTE561.toNode = "SkinInterpolator";
+ROUTE561.toField = "set_fraction";
+children[208] = ROUTE561;
 
-Shape559.appearance = Appearance560;
+ROUTE ROUTE562 = createNode("ROUTE");
+ROUTE562.fromNode = "SkinInterpolator";
+ROUTE562.fromField = "value_changed";
+ROUTE562.toNode = "KickTextureTransform";
+ROUTE562.toField = "rotation";
+children[209] = ROUTE562;
 
-IndexedLineSet IndexedLineSet562 = createNode("IndexedLineSet");
-IndexedLineSet562.USE = "Orbit1";
-Shape559.geometry = IndexedLineSet562;
+ROUTE ROUTE563 = createNode("ROUTE");
+ROUTE563.fromNode = "KickTimer";
+ROUTE563.fromField = "fraction_changed";
+ROUTE563.toNode = "ball_TranslationInterpolator";
+ROUTE563.toField = "set_fraction";
+children[210] = ROUTE563;
 
-Transform558.child = new undefined();
+ROUTE ROUTE564 = createNode("ROUTE");
+ROUTE564.fromNode = "ball_TranslationInterpolator";
+ROUTE564.fromField = "value_changed";
+ROUTE564.toNode = "SBall";
+ROUTE564.toField = "translation";
+children[211] = ROUTE564;
 
-Transform558.child[0] = Shape559;
+ROUTE ROUTE565 = createNode("ROUTE");
+ROUTE565.fromNode = "KickTimer";
+ROUTE565.fromField = "fraction_changed";
+ROUTE565.toNode = "ball_RotationInterpolator";
+ROUTE565.toField = "set_fraction";
+children[212] = ROUTE565;
 
-Group549.children[2] = Transform558;
-
-Transform Transform563 = createNode("Transform");
-Transform563.DEF = "Circle2";
-Transform563.scale = new SFVec3f(new float[0.25,1,0.25]);
-Shape Shape564 = createNode("Shape");
-Shape564.DEF = "circle2_Shape";
-Appearance Appearance565 = createNode("Appearance");
-Appearance565.DEF = "circle2_Appearance";
-Material Material566 = createNode("Material");
-Material566.DEF = "circle2_Material";
-Material566.diffuseColor = new SFColor(new float[0.9,0,0.7]);
-Material566.emissiveColor = new SFColor(new float[0.424956,0.483976,1]);
-Appearance565.material = Material566;
-
-Shape564.appearance = Appearance565;
-
-IndexedLineSet IndexedLineSet567 = createNode("IndexedLineSet");
-IndexedLineSet567.USE = "Orbit1";
-Shape564.geometry = IndexedLineSet567;
-
-Transform563.child = new undefined();
-
-Transform563.child[0] = Shape564;
-
-Group549.children[3] = Transform563;
-
-children[205] = Group549;
+ROUTE ROUTE566 = createNode("ROUTE");
+ROUTE566.fromNode = "ball_RotationInterpolator";
+ROUTE566.fromField = "value_changed";
+ROUTE566.toNode = "SBall";
+ROUTE566.toField = "rotation";
+children[213] = ROUTE566;
 
 }

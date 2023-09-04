@@ -12,7 +12,7 @@ CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Immersive");
-X3D0->setVersion("3.0");
+X3D0->setVersion("4.0");
 Chead* head1 = new Chead();
 Cmeta* meta2 = new Cmeta();
 meta2->setName("title");
@@ -64,2357 +64,2283 @@ meta11->setName("generator");
 meta11->setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html");
 head1->addMeta(*meta11);
 
-Cmeta* meta12 = new Cmeta();
-meta12->setName("license");
-meta12->setContent("../license.html");
-head1->addMeta(*meta12);
-
 X3D0->setHead(*head1);
 
-CScene* Scene13 = new CScene();
-CWorldInfo* WorldInfo14 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
-WorldInfo14->setTitle("ArtDecoExamples.x3d");
-group->addChildren(*WorldInfo14);
+CScene* Scene12 = new CScene();
+CExternProtoDeclare* ExternProtoDeclare13 = new CExternProtoDeclare();
+ExternProtoDeclare13->setName("ArtDeco00");
+ExternProtoDeclare13->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00","ArtDecoPrototypes.wrl#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00"}, 4);
+group->addChildren(*ExternProtoDeclare13);
+
+CExternProtoDeclare* ExternProtoDeclare14 = new CExternProtoDeclare();
+ExternProtoDeclare14->setName("ArtDeco01");
+ExternProtoDeclare14->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01","ArtDecoPrototypes.wrl#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01"}, 4);
+group->addChildren(*ExternProtoDeclare14);
 
 CExternProtoDeclare* ExternProtoDeclare15 = new CExternProtoDeclare();
-ExternProtoDeclare15->setName("ArtDeco00");
-ExternProtoDeclare15->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare15->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare15->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00","ArtDecoPrototypes.wrl#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00"}, 4);
+ExternProtoDeclare15->setName("ArtDeco02");
+ExternProtoDeclare15->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02","ArtDecoPrototypes.wrl#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02"}, 4);
 group->addChildren(*ExternProtoDeclare15);
 
 CExternProtoDeclare* ExternProtoDeclare16 = new CExternProtoDeclare();
-ExternProtoDeclare16->setName("ArtDeco01");
-ExternProtoDeclare16->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare16->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare16->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01","ArtDecoPrototypes.wrl#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01"}, 4);
+ExternProtoDeclare16->setName("ArtDeco03");
+ExternProtoDeclare16->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03","ArtDecoPrototypes.wrl#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03"}, 4);
 group->addChildren(*ExternProtoDeclare16);
 
 CExternProtoDeclare* ExternProtoDeclare17 = new CExternProtoDeclare();
-ExternProtoDeclare17->setName("ArtDeco02");
-ExternProtoDeclare17->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare17->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare17->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02","ArtDecoPrototypes.wrl#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02"}, 4);
+ExternProtoDeclare17->setName("ArtDeco04");
+ExternProtoDeclare17->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04","ArtDecoPrototypes.wrl#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04"}, 4);
 group->addChildren(*ExternProtoDeclare17);
 
 CExternProtoDeclare* ExternProtoDeclare18 = new CExternProtoDeclare();
-ExternProtoDeclare18->setName("ArtDeco03");
-ExternProtoDeclare18->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare18->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare18->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03","ArtDecoPrototypes.wrl#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03"}, 4);
+ExternProtoDeclare18->setName("ArtDeco05");
+ExternProtoDeclare18->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05","ArtDecoPrototypes.wrl#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05"}, 4);
 group->addChildren(*ExternProtoDeclare18);
 
 CExternProtoDeclare* ExternProtoDeclare19 = new CExternProtoDeclare();
-ExternProtoDeclare19->setName("ArtDeco04");
-ExternProtoDeclare19->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare19->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare19->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04","ArtDecoPrototypes.wrl#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04"}, 4);
+ExternProtoDeclare19->setName("ArtDeco06");
+ExternProtoDeclare19->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06","ArtDecoPrototypes.wrl#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06"}, 4);
 group->addChildren(*ExternProtoDeclare19);
 
 CExternProtoDeclare* ExternProtoDeclare20 = new CExternProtoDeclare();
-ExternProtoDeclare20->setName("ArtDeco05");
-ExternProtoDeclare20->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare20->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare20->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05","ArtDecoPrototypes.wrl#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05"}, 4);
+ExternProtoDeclare20->setName("ArtDeco07");
+ExternProtoDeclare20->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07","ArtDecoPrototypes.wrl#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07"}, 4);
 group->addChildren(*ExternProtoDeclare20);
 
 CExternProtoDeclare* ExternProtoDeclare21 = new CExternProtoDeclare();
-ExternProtoDeclare21->setName("ArtDeco06");
-ExternProtoDeclare21->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare21->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare21->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06","ArtDecoPrototypes.wrl#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06"}, 4);
+ExternProtoDeclare21->setName("ArtDeco08");
+ExternProtoDeclare21->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08","ArtDecoPrototypes.wrl#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08"}, 4);
 group->addChildren(*ExternProtoDeclare21);
 
 CExternProtoDeclare* ExternProtoDeclare22 = new CExternProtoDeclare();
-ExternProtoDeclare22->setName("ArtDeco07");
-ExternProtoDeclare22->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare22->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare22->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07","ArtDecoPrototypes.wrl#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07"}, 4);
+ExternProtoDeclare22->setName("ArtDeco09");
+ExternProtoDeclare22->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09","ArtDecoPrototypes.wrl#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09"}, 4);
 group->addChildren(*ExternProtoDeclare22);
 
 CExternProtoDeclare* ExternProtoDeclare23 = new CExternProtoDeclare();
-ExternProtoDeclare23->setName("ArtDeco08");
-ExternProtoDeclare23->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare23->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare23->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08","ArtDecoPrototypes.wrl#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08"}, 4);
+ExternProtoDeclare23->setName("ArtDeco10");
+ExternProtoDeclare23->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10","ArtDecoPrototypes.wrl#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10"}, 4);
 group->addChildren(*ExternProtoDeclare23);
 
 CExternProtoDeclare* ExternProtoDeclare24 = new CExternProtoDeclare();
-ExternProtoDeclare24->setName("ArtDeco09");
-ExternProtoDeclare24->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare24->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare24->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09","ArtDecoPrototypes.wrl#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09"}, 4);
+ExternProtoDeclare24->setName("ArtDeco11");
+ExternProtoDeclare24->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11","ArtDecoPrototypes.wrl#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11"}, 4);
 group->addChildren(*ExternProtoDeclare24);
 
 CExternProtoDeclare* ExternProtoDeclare25 = new CExternProtoDeclare();
-ExternProtoDeclare25->setName("ArtDeco10");
-ExternProtoDeclare25->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare25->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare25->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10","ArtDecoPrototypes.wrl#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10"}, 4);
+ExternProtoDeclare25->setName("ArtDeco12");
+ExternProtoDeclare25->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12","ArtDecoPrototypes.wrl#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12"}, 4);
 group->addChildren(*ExternProtoDeclare25);
 
 CExternProtoDeclare* ExternProtoDeclare26 = new CExternProtoDeclare();
-ExternProtoDeclare26->setName("ArtDeco11");
-ExternProtoDeclare26->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare26->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare26->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11","ArtDecoPrototypes.wrl#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11"}, 4);
+ExternProtoDeclare26->setName("ArtDeco13");
+ExternProtoDeclare26->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13","ArtDecoPrototypes.wrl#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13"}, 4);
 group->addChildren(*ExternProtoDeclare26);
 
 CExternProtoDeclare* ExternProtoDeclare27 = new CExternProtoDeclare();
-ExternProtoDeclare27->setName("ArtDeco12");
-ExternProtoDeclare27->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare27->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare27->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12","ArtDecoPrototypes.wrl#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12"}, 4);
+ExternProtoDeclare27->setName("ArtDeco14");
+ExternProtoDeclare27->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14","ArtDecoPrototypes.wrl#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14"}, 4);
 group->addChildren(*ExternProtoDeclare27);
 
 CExternProtoDeclare* ExternProtoDeclare28 = new CExternProtoDeclare();
-ExternProtoDeclare28->setName("ArtDeco13");
-ExternProtoDeclare28->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare28->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare28->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13","ArtDecoPrototypes.wrl#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13"}, 4);
+ExternProtoDeclare28->setName("ArtDeco15");
+ExternProtoDeclare28->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15","ArtDecoPrototypes.wrl#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15"}, 4);
 group->addChildren(*ExternProtoDeclare28);
 
 CExternProtoDeclare* ExternProtoDeclare29 = new CExternProtoDeclare();
-ExternProtoDeclare29->setName("ArtDeco14");
-ExternProtoDeclare29->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare29->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare29->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14","ArtDecoPrototypes.wrl#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14"}, 4);
+ExternProtoDeclare29->setName("ArtDeco16");
+ExternProtoDeclare29->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16","ArtDecoPrototypes.wrl#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16"}, 4);
 group->addChildren(*ExternProtoDeclare29);
 
 CExternProtoDeclare* ExternProtoDeclare30 = new CExternProtoDeclare();
-ExternProtoDeclare30->setName("ArtDeco15");
-ExternProtoDeclare30->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare30->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare30->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15","ArtDecoPrototypes.wrl#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15"}, 4);
+ExternProtoDeclare30->setName("ArtDeco17");
+ExternProtoDeclare30->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17","ArtDecoPrototypes.wrl#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17"}, 4);
 group->addChildren(*ExternProtoDeclare30);
 
 CExternProtoDeclare* ExternProtoDeclare31 = new CExternProtoDeclare();
-ExternProtoDeclare31->setName("ArtDeco16");
-ExternProtoDeclare31->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare31->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare31->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16","ArtDecoPrototypes.wrl#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16"}, 4);
+ExternProtoDeclare31->setName("ArtDeco18");
+ExternProtoDeclare31->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18","ArtDecoPrototypes.wrl#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18"}, 4);
 group->addChildren(*ExternProtoDeclare31);
 
 CExternProtoDeclare* ExternProtoDeclare32 = new CExternProtoDeclare();
-ExternProtoDeclare32->setName("ArtDeco17");
-ExternProtoDeclare32->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare32->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare32->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17","ArtDecoPrototypes.wrl#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17"}, 4);
+ExternProtoDeclare32->setName("ArtDeco19");
+ExternProtoDeclare32->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19","ArtDecoPrototypes.wrl#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19"}, 4);
 group->addChildren(*ExternProtoDeclare32);
 
 CExternProtoDeclare* ExternProtoDeclare33 = new CExternProtoDeclare();
-ExternProtoDeclare33->setName("ArtDeco18");
-ExternProtoDeclare33->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare33->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare33->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18","ArtDecoPrototypes.wrl#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18"}, 4);
+ExternProtoDeclare33->setName("ArtDeco20");
+ExternProtoDeclare33->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20","ArtDecoPrototypes.wrl#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20"}, 4);
 group->addChildren(*ExternProtoDeclare33);
 
 CExternProtoDeclare* ExternProtoDeclare34 = new CExternProtoDeclare();
-ExternProtoDeclare34->setName("ArtDeco19");
-ExternProtoDeclare34->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare34->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare34->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19","ArtDecoPrototypes.wrl#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19"}, 4);
+ExternProtoDeclare34->setName("ArtDeco21");
+ExternProtoDeclare34->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21","ArtDecoPrototypes.wrl#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21"}, 4);
 group->addChildren(*ExternProtoDeclare34);
 
 CExternProtoDeclare* ExternProtoDeclare35 = new CExternProtoDeclare();
-ExternProtoDeclare35->setName("ArtDeco20");
-ExternProtoDeclare35->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare35->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare35->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20","ArtDecoPrototypes.wrl#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20"}, 4);
+ExternProtoDeclare35->setName("ArtDeco22");
+ExternProtoDeclare35->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22","ArtDecoPrototypes.wrl#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22"}, 4);
 group->addChildren(*ExternProtoDeclare35);
 
 CExternProtoDeclare* ExternProtoDeclare36 = new CExternProtoDeclare();
-ExternProtoDeclare36->setName("ArtDeco21");
-ExternProtoDeclare36->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare36->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare36->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21","ArtDecoPrototypes.wrl#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21"}, 4);
+ExternProtoDeclare36->setName("ArtDeco23");
+ExternProtoDeclare36->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23","ArtDecoPrototypes.wrl#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23"}, 4);
 group->addChildren(*ExternProtoDeclare36);
 
 CExternProtoDeclare* ExternProtoDeclare37 = new CExternProtoDeclare();
-ExternProtoDeclare37->setName("ArtDeco22");
-ExternProtoDeclare37->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare37->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare37->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22","ArtDecoPrototypes.wrl#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22"}, 4);
+ExternProtoDeclare37->setName("ArtDeco24");
+ExternProtoDeclare37->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24","ArtDecoPrototypes.wrl#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24"}, 4);
 group->addChildren(*ExternProtoDeclare37);
 
 CExternProtoDeclare* ExternProtoDeclare38 = new CExternProtoDeclare();
-ExternProtoDeclare38->setName("ArtDeco23");
-ExternProtoDeclare38->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare38->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare38->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23","ArtDecoPrototypes.wrl#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23"}, 4);
+ExternProtoDeclare38->setName("ArtDeco25");
+ExternProtoDeclare38->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25","ArtDecoPrototypes.wrl#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25"}, 4);
 group->addChildren(*ExternProtoDeclare38);
 
 CExternProtoDeclare* ExternProtoDeclare39 = new CExternProtoDeclare();
-ExternProtoDeclare39->setName("ArtDeco24");
-ExternProtoDeclare39->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare39->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare39->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24","ArtDecoPrototypes.wrl#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24"}, 4);
+ExternProtoDeclare39->setName("ArtDeco26");
+ExternProtoDeclare39->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26","ArtDecoPrototypes.wrl#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26"}, 4);
 group->addChildren(*ExternProtoDeclare39);
 
 CExternProtoDeclare* ExternProtoDeclare40 = new CExternProtoDeclare();
-ExternProtoDeclare40->setName("ArtDeco25");
-ExternProtoDeclare40->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare40->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare40->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25","ArtDecoPrototypes.wrl#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25"}, 4);
+ExternProtoDeclare40->setName("ArtDeco27");
+ExternProtoDeclare40->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27","ArtDecoPrototypes.wrl#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27"}, 4);
 group->addChildren(*ExternProtoDeclare40);
 
 CExternProtoDeclare* ExternProtoDeclare41 = new CExternProtoDeclare();
-ExternProtoDeclare41->setName("ArtDeco26");
-ExternProtoDeclare41->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare41->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare41->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26","ArtDecoPrototypes.wrl#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26"}, 4);
+ExternProtoDeclare41->setName("ArtDeco28");
+ExternProtoDeclare41->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28","ArtDecoPrototypes.wrl#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28"}, 4);
 group->addChildren(*ExternProtoDeclare41);
 
 CExternProtoDeclare* ExternProtoDeclare42 = new CExternProtoDeclare();
-ExternProtoDeclare42->setName("ArtDeco27");
-ExternProtoDeclare42->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare42->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare42->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27","ArtDecoPrototypes.wrl#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27"}, 4);
+ExternProtoDeclare42->setName("ArtDeco29");
+ExternProtoDeclare42->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29","ArtDecoPrototypes.wrl#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29"}, 4);
 group->addChildren(*ExternProtoDeclare42);
 
 CExternProtoDeclare* ExternProtoDeclare43 = new CExternProtoDeclare();
-ExternProtoDeclare43->setName("ArtDeco28");
-ExternProtoDeclare43->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare43->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare43->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28","ArtDecoPrototypes.wrl#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28"}, 4);
+ExternProtoDeclare43->setName("ArtDeco30");
+ExternProtoDeclare43->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30","ArtDecoPrototypes.wrl#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30"}, 4);
 group->addChildren(*ExternProtoDeclare43);
 
 CExternProtoDeclare* ExternProtoDeclare44 = new CExternProtoDeclare();
-ExternProtoDeclare44->setName("ArtDeco29");
-ExternProtoDeclare44->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare44->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare44->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29","ArtDecoPrototypes.wrl#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29"}, 4);
+ExternProtoDeclare44->setName("ArtDeco31");
+ExternProtoDeclare44->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31","ArtDecoPrototypes.wrl#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31"}, 4);
 group->addChildren(*ExternProtoDeclare44);
 
 CExternProtoDeclare* ExternProtoDeclare45 = new CExternProtoDeclare();
-ExternProtoDeclare45->setName("ArtDeco30");
-ExternProtoDeclare45->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare45->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare45->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30","ArtDecoPrototypes.wrl#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30"}, 4);
+ExternProtoDeclare45->setName("ArtDeco32");
+ExternProtoDeclare45->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32","ArtDecoPrototypes.wrl#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32"}, 4);
 group->addChildren(*ExternProtoDeclare45);
 
 CExternProtoDeclare* ExternProtoDeclare46 = new CExternProtoDeclare();
-ExternProtoDeclare46->setName("ArtDeco31");
-ExternProtoDeclare46->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare46->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare46->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31","ArtDecoPrototypes.wrl#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31"}, 4);
+ExternProtoDeclare46->setName("ArtDeco33");
+ExternProtoDeclare46->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33","ArtDecoPrototypes.wrl#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33"}, 4);
 group->addChildren(*ExternProtoDeclare46);
 
 CExternProtoDeclare* ExternProtoDeclare47 = new CExternProtoDeclare();
-ExternProtoDeclare47->setName("ArtDeco32");
-ExternProtoDeclare47->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare47->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare47->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32","ArtDecoPrototypes.wrl#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32"}, 4);
+ExternProtoDeclare47->setName("ArtDeco34");
+ExternProtoDeclare47->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34","ArtDecoPrototypes.wrl#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34"}, 4);
 group->addChildren(*ExternProtoDeclare47);
 
-CExternProtoDeclare* ExternProtoDeclare48 = new CExternProtoDeclare();
-ExternProtoDeclare48->setName("ArtDeco33");
-ExternProtoDeclare48->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare48->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare48->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33","ArtDecoPrototypes.wrl#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33"}, 4);
-group->addChildren(*ExternProtoDeclare48);
+CWorldInfo* WorldInfo48 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
+WorldInfo48->setTitle("ArtDecoExamples.x3d");
+group->addChildren(*WorldInfo48);
 
-CExternProtoDeclare* ExternProtoDeclare49 = new CExternProtoDeclare();
-ExternProtoDeclare49->setName("ArtDeco34");
-ExternProtoDeclare49->setAppinfo("UniversalMediaMaterials prototype");
-ExternProtoDeclare49->setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials");
-ExternProtoDeclare49->setUrl(new CString[4]{"ArtDecoPrototypes.x3d#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34","ArtDecoPrototypes.wrl#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34"}, 4);
-group->addChildren(*ExternProtoDeclare49);
+CGroup* Group49 = (CGroup *)(m_pScene.createNode("Group"));
+CNavigationInfo* NavigationInfo50 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
+NavigationInfo50->setHeadlight(False);
+Group49->addChildren(*NavigationInfo50);
 
-CGroup* Group50 = (CGroup *)(m_pScene.createNode("Group"));
-CNavigationInfo* NavigationInfo51 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-NavigationInfo51->setHeadlight(False);
-Group50->addChildren(*NavigationInfo51);
+CViewpoint* Viewpoint51 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint51->setDEF("Front");
+Viewpoint51->setDescription("Front view");
+Viewpoint51->setPosition(new float[3]{0,0,12});
+Group49->addChildren(*Viewpoint51);
 
 CViewpoint* Viewpoint52 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint52->setDEF("Front");
-Viewpoint52->setDescription("Front view");
-Viewpoint52->setPosition(new float[3]{0,0,12});
-Group50->addChildren(*Viewpoint52);
+Viewpoint52->setDEF("PersRight");
+Viewpoint52->setDescription("Low Right");
+Viewpoint52->setPosition(new float[3]{6.9282,-6.9282,6.9282});
+Viewpoint52->setOrientation(new float[4]{0.74291,0.30772,0.59447,1.2171});
+Group49->addChildren(*Viewpoint52);
 
 CViewpoint* Viewpoint53 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint53->setDEF("PersRight");
-Viewpoint53->setDescription("Low Right");
-Viewpoint53->setOrientation(new float[4]{0.74291,0.30772,0.59447,1.2171});
-Viewpoint53->setPosition(new float[3]{6.9282,-6.9282,6.9282});
-Group50->addChildren(*Viewpoint53);
+Viewpoint53->setDEF("PersLeft");
+Viewpoint53->setDescription("Low Left");
+Viewpoint53->setPosition(new float[3]{-6.9282,-6.9282,6.9282});
+Viewpoint53->setOrientation(new float[4]{0.74291,-0.30772,-0.59447,1.2171});
+Group49->addChildren(*Viewpoint53);
 
 CViewpoint* Viewpoint54 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint54->setDEF("PersLeft");
-Viewpoint54->setDescription("Low Left");
-Viewpoint54->setOrientation(new float[4]{0.74291,-0.30772,-0.59447,1.2171});
-Viewpoint54->setPosition(new float[3]{-6.9282,-6.9282,6.9282});
-Group50->addChildren(*Viewpoint54);
+Viewpoint54->setDEF("Back");
+Viewpoint54->setDescription("Back view");
+Viewpoint54->setPosition(new float[3]{0,0,-12});
+Viewpoint54->setOrientation(new float[4]{0,1,0,3.1416});
+Group49->addChildren(*Viewpoint54);
 
-CViewpoint* Viewpoint55 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint55->setDEF("Back");
-Viewpoint55->setDescription("Back view");
-Viewpoint55->setOrientation(new float[4]{0,1,0,3.1416});
-Viewpoint55->setPosition(new float[3]{0,0,-12});
-Group50->addChildren(*Viewpoint55);
+CTransform* Transform55 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform55->setDEF("Close_travel");
+CPositionInterpolator* PositionInterpolator56 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator56->setDEF("Close_Mover");
+PositionInterpolator56->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
+PositionInterpolator56->setKeyValue(new float[15]{0,2.5,0,0,0,0,0,-2.5,0,0,0,0,0,2.5,0});
+Transform55->addChildren(*PositionInterpolator56);
 
-CTransform* Transform56 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform56->setDEF("Close_travel");
-CPositionInterpolator* PositionInterpolator57 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
-PositionInterpolator57->setDEF("Close_Mover");
-PositionInterpolator57->setKey(new float[5]{0,0.25,0.5,0.75,1}, 5);
-PositionInterpolator57->setKeyValue(new float[15]{0,2.5,0,0,0,0,0,-2.5,0,0,0,0,0,2.5,0});
-Transform56->addChildren(*PositionInterpolator57);
+CTimeSensor* TimeSensor57 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
+TimeSensor57->setDEF("Close_Time");
+TimeSensor57->setCycleInterval(12);
+TimeSensor57->setLoop(True);
+Transform55->addChildren(*TimeSensor57);
 
-CTimeSensor* TimeSensor58 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
-TimeSensor58->setDEF("Close_Time");
-TimeSensor58->setCycleInterval(12);
-TimeSensor58->setLoop(True);
-Transform56->addChildren(*TimeSensor58);
+CViewpoint* Viewpoint58 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint58->setDEF("Close");
+Viewpoint58->setDescription("Close Front");
+Viewpoint58->setPosition(new float[3]{0,0,6});
+Transform55->addChildren(*Viewpoint58);
 
-CViewpoint* Viewpoint59 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint59->setDEF("Close");
-Viewpoint59->setDescription("Close Front");
-Viewpoint59->setPosition(new float[3]{0,0,6});
-Transform56->addChildren(*Viewpoint59);
+Group49->addChildren(*Transform55);
 
-Group50->addChildren(*Transform56);
+CDirectionalLight* DirectionalLight59 = (CDirectionalLight *)(m_pScene.createNode("DirectionalLight"));
+DirectionalLight59->setDirection(new float[3]{1,-1,-1});
+Group49->addChildren(*DirectionalLight59);
 
 CDirectionalLight* DirectionalLight60 = (CDirectionalLight *)(m_pScene.createNode("DirectionalLight"));
-DirectionalLight60->setDirection(new float[3]{1,-1,-1});
-Group50->addChildren(*DirectionalLight60);
-
-CDirectionalLight* DirectionalLight61 = (CDirectionalLight *)(m_pScene.createNode("DirectionalLight"));
-DirectionalLight61->setDirection(new float[3]{0,1,-0.5});
-DirectionalLight61->setIntensity(0.5);
-Group50->addChildren(*DirectionalLight61);
-
-CAnchor* Anchor62 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor62->setDescription("Back to front view");
-Anchor62->setUrl(new CString[1]{"#Front"}, 1);
-CTransform* Transform63 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform63->setTranslation(new float[3]{0,0,-0.5});
-CInline* Inline64 = (CInline *)(m_pScene.createNode("Inline"));
-Inline64->setUrl(new CString[5]{"../data/gridBack.json","../data/gridBack.x3d","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d","gridBack.wrl","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl"}, 5);
-Transform63->addChildren(*Inline64);
-
-Anchor62->addChildren(*Transform63);
-
-Group50->addChildren(*Anchor62);
-
-CViewpoint* Viewpoint65 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint65->setDEF("View00");
-Viewpoint65->setDescription("ArtDeco00");
-Viewpoint65->setPosition(new float[3]{-3.75,3.75,3});
-Group50->addChildren(*Viewpoint65);
-
-CTransform* Transform66 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform66->setTranslation(new float[3]{-3.75,3.75,0});
-CAnchor* Anchor67 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor67->setDescription("ArtDeco00 view");
-Anchor67->setUrl(new CString[1]{"#View00"}, 1);
-CShape* Shape68 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance69 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance70 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance70->setName("ArtDeco00");
-Appearance69->setMaterial(*ProtoInstance70);
-
-Shape68->setAppearance(*Appearance69);
-
-CSphere* Sphere71 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere71->setDEF("Ball");
-Sphere71->setRadius(0.5);
-Shape68->setGeometry(Sphere71);
-
-Anchor67->addChildren(*Shape68);
-
-Transform66->addChildren(*Anchor67);
-
-CTransform* Transform72 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform72->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor73 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor73->setDescription("ArtDeco00");
-Anchor73->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor73->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00"}, 2);
-CShape* Shape74 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance75 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material76 = (CMaterial *)(m_pScene.createNode("Material"));
-Material76->setDEF("TextMat");
-Material76->setDiffuseColor(new float[3]{1,1,1});
-Appearance75->setMaterial(*Material76);
-
-Shape74->setAppearance(*Appearance75);
-
-CText* Text77 = (CText *)(m_pScene.createNode("Text"));
-Text77->setString(new CString[1]{"ArtDeco00"}, 1);
-CFontStyle* FontStyle78 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle78->setDEF("Style");
-FontStyle78->setFamily(new CString[1]{"SANS"}, 1);
-FontStyle78->setJustify(new CString[2]{"MIDDLE","MIDDLE"}, 2);
-FontStyle78->setSize(0.3);
-FontStyle78->setStyle("BOLD");
-Text77->setFontStyle(*FontStyle78);
-
-Shape74->setGeometry(Text77);
-
-Anchor73->addChildren(*Shape74);
-
-Transform72->addChildren(*Anchor73);
-
-Transform66->addChildren(*Transform72);
-
-Group50->addChildren(*Transform66);
-
-CViewpoint* Viewpoint79 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint79->setDEF("View01");
-Viewpoint79->setDescription("ArtDeco01");
-Viewpoint79->setPosition(new float[3]{-2.25,3.75,3});
-Group50->addChildren(*Viewpoint79);
-
-CTransform* Transform80 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform80->setTranslation(new float[3]{-2.25,3.75,0});
-CAnchor* Anchor81 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor81->setDescription("ArtDeco01 view");
-Anchor81->setUrl(new CString[1]{"#View01"}, 1);
-CShape* Shape82 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance83 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance84 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance84->setName("ArtDeco01");
-Appearance83->setMaterial(*ProtoInstance84);
-
-Shape82->setAppearance(*Appearance83);
+DirectionalLight60->setIntensity(0.5);
+DirectionalLight60->setDirection(new float[3]{0,1,-0.5});
+Group49->addChildren(*DirectionalLight60);
+
+CAnchor* Anchor61 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor61->setDescription("Back to front view");
+Anchor61->setUrl(new CString[1]{"#Front"}, 1);
+CTransform* Transform62 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform62->setTranslation(new float[3]{0,0,-0.5});
+CInline* Inline63 = (CInline *)(m_pScene.createNode("Inline"));
+Inline63->setGlobal(True);
+Inline63->setUrl(new CString[5]{"../data/gridBack.json","../data/gridBack.x3d","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d","gridBack.wrl","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl"}, 5);
+Transform62->addChildren(*Inline63);
+
+Anchor61->addChildren(*Transform62);
+
+Group49->addChildren(*Anchor61);
+
+CViewpoint* Viewpoint64 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint64->setDEF("View00");
+Viewpoint64->setDescription("ArtDeco00");
+Viewpoint64->setPosition(new float[3]{-3.75,3.75,3});
+Group49->addChildren(*Viewpoint64);
+
+CTransform* Transform65 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform65->setTranslation(new float[3]{-3.75,3.75,0});
+CAnchor* Anchor66 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor66->setDescription("ArtDeco00 view");
+Anchor66->setUrl(new CString[1]{"#View00"}, 1);
+CShape* Shape67 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance68 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance69 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance69->setName("ArtDeco00");
+Appearance68->setMaterial(*ProtoInstance69);
+
+Shape67->setAppearance(*Appearance68);
+
+CSphere* Sphere70 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere70->setDEF("Ball");
+Sphere70->setRadius(0.5);
+Shape67->setGeometry(Sphere70);
+
+Anchor66->addChildren(*Shape67);
+
+Transform65->addChildren(*Anchor66);
+
+CTransform* Transform71 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform71->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor72 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor72->setDescription("ArtDeco00");
+Anchor72->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00"}, 2);
+Anchor72->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape73 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance74 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material75 = (CMaterial *)(m_pScene.createNode("Material"));
+Material75->setDEF("TextMat");
+Material75->setDiffuseColor(new float[3]{1,1,1});
+Appearance74->setMaterial(*Material75);
+
+Shape73->setAppearance(*Appearance74);
+
+CText* Text76 = (CText *)(m_pScene.createNode("Text"));
+Text76->setString(new CString[1]{"ArtDeco00"}, 1);
+CFontStyle* FontStyle77 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle77->setDEF("Style");
+FontStyle77->setFamily(new CString[1]{"SANS"}, 1);
+FontStyle77->setStyle("BOLD");
+FontStyle77->setSize(0.3);
+FontStyle77->setJustify(new CString[2]{"MIDDLE","MIDDLE"}, 2);
+Text76->setFontStyle(*FontStyle77);
+
+Shape73->setGeometry(Text76);
+
+Anchor72->addChildren(*Shape73);
+
+Transform71->addChildren(*Anchor72);
+
+Transform65->addChildren(*Transform71);
+
+Group49->addChildren(*Transform65);
+
+CViewpoint* Viewpoint78 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint78->setDEF("View01");
+Viewpoint78->setDescription("ArtDeco01");
+Viewpoint78->setPosition(new float[3]{-2.25,3.75,3});
+Group49->addChildren(*Viewpoint78);
+
+CTransform* Transform79 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform79->setTranslation(new float[3]{-2.25,3.75,0});
+CAnchor* Anchor80 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor80->setDescription("ArtDeco01 view");
+Anchor80->setUrl(new CString[1]{"#View01"}, 1);
+CShape* Shape81 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance82 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance83 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance83->setName("ArtDeco01");
+Appearance82->setMaterial(*ProtoInstance83);
+
+Shape81->setAppearance(*Appearance82);
+
+CSphere* Sphere84 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere84->setUSE("Ball");
+Shape81->setGeometry(Sphere84);
 
-CSphere* Sphere85 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere85->setUSE("Ball");
-Shape82->setGeometry(Sphere85);
+Anchor80->addChildren(*Shape81);
+
+Transform79->addChildren(*Anchor80);
+
+CTransform* Transform85 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform85->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor86 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor86->setDescription("ArtDeco01");
+Anchor86->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01"}, 2);
+Anchor86->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape87 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance88 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material89 = (CMaterial *)(m_pScene.createNode("Material"));
+Material89->setUSE("TextMat");
+Appearance88->setMaterial(*Material89);
+
+Shape87->setAppearance(*Appearance88);
+
+CText* Text90 = (CText *)(m_pScene.createNode("Text"));
+Text90->setString(new CString[1]{"ArtDeco01"}, 1);
+CFontStyle* FontStyle91 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle91->setUSE("Style");
+Text90->setFontStyle(*FontStyle91);
+
+Shape87->setGeometry(Text90);
+
+Anchor86->addChildren(*Shape87);
+
+Transform85->addChildren(*Anchor86);
+
+Transform79->addChildren(*Transform85);
+
+Group49->addChildren(*Transform79);
+
+CViewpoint* Viewpoint92 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint92->setDEF("View02");
+Viewpoint92->setDescription("ArtDeco02");
+Viewpoint92->setPosition(new float[3]{-0.75,3.75,3});
+Group49->addChildren(*Viewpoint92);
+
+CTransform* Transform93 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform93->setTranslation(new float[3]{-0.75,3.75,0});
+CAnchor* Anchor94 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor94->setDescription("ArtDeco02 view");
+Anchor94->setUrl(new CString[1]{"#View02"}, 1);
+CShape* Shape95 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance96 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance97 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance97->setName("ArtDeco02");
+Appearance96->setMaterial(*ProtoInstance97);
 
-Anchor81->addChildren(*Shape82);
+Shape95->setAppearance(*Appearance96);
 
-Transform80->addChildren(*Anchor81);
+CSphere* Sphere98 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere98->setUSE("Ball");
+Shape95->setGeometry(Sphere98);
 
-CTransform* Transform86 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform86->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor87 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor87->setDescription("ArtDeco01");
-Anchor87->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor87->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01"}, 2);
-CShape* Shape88 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance89 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material90 = (CMaterial *)(m_pScene.createNode("Material"));
-Material90->setUSE("TextMat");
-Appearance89->setMaterial(*Material90);
+Anchor94->addChildren(*Shape95);
+
+Transform93->addChildren(*Anchor94);
+
+CTransform* Transform99 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform99->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor100 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor100->setDescription("ArtDeco02");
+Anchor100->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02"}, 2);
+Anchor100->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape101 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance102 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material103 = (CMaterial *)(m_pScene.createNode("Material"));
+Material103->setUSE("TextMat");
+Appearance102->setMaterial(*Material103);
+
+Shape101->setAppearance(*Appearance102);
+
+CText* Text104 = (CText *)(m_pScene.createNode("Text"));
+Text104->setString(new CString[1]{"ArtDeco02"}, 1);
+CFontStyle* FontStyle105 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle105->setUSE("Style");
+Text104->setFontStyle(*FontStyle105);
+
+Shape101->setGeometry(Text104);
+
+Anchor100->addChildren(*Shape101);
+
+Transform99->addChildren(*Anchor100);
+
+Transform93->addChildren(*Transform99);
+
+Group49->addChildren(*Transform93);
+
+CViewpoint* Viewpoint106 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint106->setDEF("View03");
+Viewpoint106->setDescription("ArtDeco03");
+Viewpoint106->setPosition(new float[3]{0.75,3.75,3});
+Group49->addChildren(*Viewpoint106);
+
+CTransform* Transform107 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform107->setTranslation(new float[3]{0.75,3.75,0});
+CAnchor* Anchor108 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor108->setDescription("ArtDeco03 view");
+Anchor108->setUrl(new CString[1]{"#View03"}, 1);
+CShape* Shape109 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance110 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance111 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance111->setName("ArtDeco03");
+Appearance110->setMaterial(*ProtoInstance111);
 
-Shape88->setAppearance(*Appearance89);
+Shape109->setAppearance(*Appearance110);
+
+CSphere* Sphere112 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere112->setUSE("Ball");
+Shape109->setGeometry(Sphere112);
+
+Anchor108->addChildren(*Shape109);
+
+Transform107->addChildren(*Anchor108);
+
+CTransform* Transform113 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform113->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor114 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor114->setDescription("ArtDeco03");
+Anchor114->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03"}, 2);
+Anchor114->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape115 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance116 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material117 = (CMaterial *)(m_pScene.createNode("Material"));
+Material117->setUSE("TextMat");
+Appearance116->setMaterial(*Material117);
+
+Shape115->setAppearance(*Appearance116);
+
+CText* Text118 = (CText *)(m_pScene.createNode("Text"));
+Text118->setString(new CString[1]{"ArtDeco03"}, 1);
+CFontStyle* FontStyle119 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle119->setUSE("Style");
+Text118->setFontStyle(*FontStyle119);
+
+Shape115->setGeometry(Text118);
+
+Anchor114->addChildren(*Shape115);
+
+Transform113->addChildren(*Anchor114);
+
+Transform107->addChildren(*Transform113);
+
+Group49->addChildren(*Transform107);
+
+CViewpoint* Viewpoint120 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint120->setDEF("View04");
+Viewpoint120->setDescription("ArtDeco04");
+Viewpoint120->setPosition(new float[3]{2.25,3.75,3});
+Group49->addChildren(*Viewpoint120);
+
+CTransform* Transform121 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform121->setTranslation(new float[3]{2.25,3.75,0});
+CAnchor* Anchor122 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor122->setDescription("ArtDeco04 view");
+Anchor122->setUrl(new CString[1]{"#View04"}, 1);
+CShape* Shape123 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance124 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance125 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance125->setName("ArtDeco04");
+Appearance124->setMaterial(*ProtoInstance125);
 
-CText* Text91 = (CText *)(m_pScene.createNode("Text"));
-Text91->setString(new CString[1]{"ArtDeco01"}, 1);
-CFontStyle* FontStyle92 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle92->setUSE("Style");
-Text91->setFontStyle(*FontStyle92);
-
-Shape88->setGeometry(Text91);
-
-Anchor87->addChildren(*Shape88);
-
-Transform86->addChildren(*Anchor87);
-
-Transform80->addChildren(*Transform86);
-
-Group50->addChildren(*Transform80);
-
-CViewpoint* Viewpoint93 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint93->setDEF("View02");
-Viewpoint93->setDescription("ArtDeco02");
-Viewpoint93->setPosition(new float[3]{-0.75,3.75,3});
-Group50->addChildren(*Viewpoint93);
-
-CTransform* Transform94 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform94->setTranslation(new float[3]{-0.75,3.75,0});
-CAnchor* Anchor95 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor95->setDescription("ArtDeco02 view");
-Anchor95->setUrl(new CString[1]{"#View02"}, 1);
-CShape* Shape96 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance97 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance98 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance98->setName("ArtDeco02");
-Appearance97->setMaterial(*ProtoInstance98);
-
-Shape96->setAppearance(*Appearance97);
-
-CSphere* Sphere99 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere99->setUSE("Ball");
-Shape96->setGeometry(Sphere99);
-
-Anchor95->addChildren(*Shape96);
-
-Transform94->addChildren(*Anchor95);
-
-CTransform* Transform100 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform100->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor101 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor101->setDescription("ArtDeco02");
-Anchor101->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor101->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02"}, 2);
-CShape* Shape102 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance103 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material104 = (CMaterial *)(m_pScene.createNode("Material"));
-Material104->setUSE("TextMat");
-Appearance103->setMaterial(*Material104);
-
-Shape102->setAppearance(*Appearance103);
-
-CText* Text105 = (CText *)(m_pScene.createNode("Text"));
-Text105->setString(new CString[1]{"ArtDeco02"}, 1);
-CFontStyle* FontStyle106 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle106->setUSE("Style");
-Text105->setFontStyle(*FontStyle106);
-
-Shape102->setGeometry(Text105);
-
-Anchor101->addChildren(*Shape102);
-
-Transform100->addChildren(*Anchor101);
-
-Transform94->addChildren(*Transform100);
-
-Group50->addChildren(*Transform94);
-
-CViewpoint* Viewpoint107 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint107->setDEF("View03");
-Viewpoint107->setDescription("ArtDeco03");
-Viewpoint107->setPosition(new float[3]{0.75,3.75,3});
-Group50->addChildren(*Viewpoint107);
-
-CTransform* Transform108 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform108->setTranslation(new float[3]{0.75,3.75,0});
-CAnchor* Anchor109 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor109->setDescription("ArtDeco03 view");
-Anchor109->setUrl(new CString[1]{"#View03"}, 1);
-CShape* Shape110 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance111 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance112 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance112->setName("ArtDeco03");
-Appearance111->setMaterial(*ProtoInstance112);
-
-Shape110->setAppearance(*Appearance111);
-
-CSphere* Sphere113 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere113->setUSE("Ball");
-Shape110->setGeometry(Sphere113);
-
-Anchor109->addChildren(*Shape110);
-
-Transform108->addChildren(*Anchor109);
-
-CTransform* Transform114 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform114->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor115 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor115->setDescription("ArtDeco03");
-Anchor115->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor115->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03"}, 2);
-CShape* Shape116 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance117 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material118 = (CMaterial *)(m_pScene.createNode("Material"));
-Material118->setUSE("TextMat");
-Appearance117->setMaterial(*Material118);
-
-Shape116->setAppearance(*Appearance117);
-
-CText* Text119 = (CText *)(m_pScene.createNode("Text"));
-Text119->setString(new CString[1]{"ArtDeco03"}, 1);
-CFontStyle* FontStyle120 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle120->setUSE("Style");
-Text119->setFontStyle(*FontStyle120);
-
-Shape116->setGeometry(Text119);
-
-Anchor115->addChildren(*Shape116);
-
-Transform114->addChildren(*Anchor115);
-
-Transform108->addChildren(*Transform114);
-
-Group50->addChildren(*Transform108);
-
-CViewpoint* Viewpoint121 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint121->setDEF("View04");
-Viewpoint121->setDescription("ArtDeco04");
-Viewpoint121->setPosition(new float[3]{2.25,3.75,3});
-Group50->addChildren(*Viewpoint121);
-
-CTransform* Transform122 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform122->setTranslation(new float[3]{2.25,3.75,0});
-CAnchor* Anchor123 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor123->setDescription("ArtDeco04 view");
-Anchor123->setUrl(new CString[1]{"#View04"}, 1);
-CShape* Shape124 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance125 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance126 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance126->setName("ArtDeco04");
-Appearance125->setMaterial(*ProtoInstance126);
-
-Shape124->setAppearance(*Appearance125);
-
-CSphere* Sphere127 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere127->setUSE("Ball");
-Shape124->setGeometry(Sphere127);
-
-Anchor123->addChildren(*Shape124);
-
-Transform122->addChildren(*Anchor123);
-
-CTransform* Transform128 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform128->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor129 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor129->setDescription("ArtDeco04");
-Anchor129->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor129->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04"}, 2);
-CShape* Shape130 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance131 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material132 = (CMaterial *)(m_pScene.createNode("Material"));
-Material132->setUSE("TextMat");
-Appearance131->setMaterial(*Material132);
-
-Shape130->setAppearance(*Appearance131);
-
-CText* Text133 = (CText *)(m_pScene.createNode("Text"));
-Text133->setString(new CString[1]{"ArtDeco04"}, 1);
-CFontStyle* FontStyle134 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle134->setUSE("Style");
-Text133->setFontStyle(*FontStyle134);
-
-Shape130->setGeometry(Text133);
-
-Anchor129->addChildren(*Shape130);
-
-Transform128->addChildren(*Anchor129);
-
-Transform122->addChildren(*Transform128);
-
-Group50->addChildren(*Transform122);
-
-CViewpoint* Viewpoint135 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint135->setDEF("View05");
-Viewpoint135->setDescription("ArtDeco05");
-Viewpoint135->setPosition(new float[3]{3.75,3.75,3});
-Group50->addChildren(*Viewpoint135);
-
-CTransform* Transform136 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform136->setTranslation(new float[3]{3.75,3.75,0});
-CAnchor* Anchor137 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor137->setDescription("ArtDeco05 view");
-Anchor137->setUrl(new CString[1]{"#View05"}, 1);
-CShape* Shape138 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance139 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance140 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance140->setName("ArtDeco05");
-Appearance139->setMaterial(*ProtoInstance140);
-
-Shape138->setAppearance(*Appearance139);
-
-CSphere* Sphere141 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere141->setUSE("Ball");
-Shape138->setGeometry(Sphere141);
-
-Anchor137->addChildren(*Shape138);
-
-Transform136->addChildren(*Anchor137);
-
-CTransform* Transform142 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform142->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor143 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor143->setDescription("ArtDeco05");
-Anchor143->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor143->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05"}, 2);
-CShape* Shape144 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance145 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material146 = (CMaterial *)(m_pScene.createNode("Material"));
-Material146->setUSE("TextMat");
-Appearance145->setMaterial(*Material146);
-
-Shape144->setAppearance(*Appearance145);
-
-CText* Text147 = (CText *)(m_pScene.createNode("Text"));
-Text147->setString(new CString[1]{"ArtDeco05"}, 1);
-CFontStyle* FontStyle148 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle148->setUSE("Style");
-Text147->setFontStyle(*FontStyle148);
-
-Shape144->setGeometry(Text147);
-
-Anchor143->addChildren(*Shape144);
-
-Transform142->addChildren(*Anchor143);
-
-Transform136->addChildren(*Transform142);
-
-Group50->addChildren(*Transform136);
-
-CViewpoint* Viewpoint149 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint149->setDEF("View06");
-Viewpoint149->setDescription("ArtDeco06");
-Viewpoint149->setPosition(new float[3]{-3.75,2.25,3});
-Group50->addChildren(*Viewpoint149);
-
-CTransform* Transform150 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform150->setTranslation(new float[3]{-3.75,2.25,0});
-CAnchor* Anchor151 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor151->setDescription("ArtDeco06 view");
-Anchor151->setUrl(new CString[1]{"#View06"}, 1);
-CShape* Shape152 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance153 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance154 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance154->setName("ArtDeco06");
-Appearance153->setMaterial(*ProtoInstance154);
-
-Shape152->setAppearance(*Appearance153);
-
-CSphere* Sphere155 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere155->setUSE("Ball");
-Shape152->setGeometry(Sphere155);
-
-Anchor151->addChildren(*Shape152);
-
-Transform150->addChildren(*Anchor151);
-
-CTransform* Transform156 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform156->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor157 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor157->setDescription("ArtDeco06");
-Anchor157->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor157->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06"}, 2);
-CShape* Shape158 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance159 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material160 = (CMaterial *)(m_pScene.createNode("Material"));
-Material160->setUSE("TextMat");
-Appearance159->setMaterial(*Material160);
-
-Shape158->setAppearance(*Appearance159);
-
-CText* Text161 = (CText *)(m_pScene.createNode("Text"));
-Text161->setString(new CString[1]{"ArtDeco06"}, 1);
-CFontStyle* FontStyle162 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle162->setUSE("Style");
-Text161->setFontStyle(*FontStyle162);
-
-Shape158->setGeometry(Text161);
-
-Anchor157->addChildren(*Shape158);
-
-Transform156->addChildren(*Anchor157);
-
-Transform150->addChildren(*Transform156);
-
-Group50->addChildren(*Transform150);
-
-CViewpoint* Viewpoint163 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint163->setDEF("View07");
-Viewpoint163->setDescription("ArtDeco07");
-Viewpoint163->setPosition(new float[3]{-2.25,2.25,3});
-Group50->addChildren(*Viewpoint163);
-
-CTransform* Transform164 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform164->setTranslation(new float[3]{-2.25,2.25,0});
-CAnchor* Anchor165 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor165->setDescription("ArtDeco07 view");
-Anchor165->setUrl(new CString[1]{"#View07"}, 1);
-CShape* Shape166 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance167 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance168 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance168->setName("ArtDeco07");
-Appearance167->setMaterial(*ProtoInstance168);
-
-Shape166->setAppearance(*Appearance167);
-
-CSphere* Sphere169 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere169->setUSE("Ball");
-Shape166->setGeometry(Sphere169);
-
-Anchor165->addChildren(*Shape166);
-
-Transform164->addChildren(*Anchor165);
-
-CTransform* Transform170 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform170->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor171 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor171->setDescription("ArtDeco07");
-Anchor171->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor171->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07"}, 2);
-CShape* Shape172 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance173 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material174 = (CMaterial *)(m_pScene.createNode("Material"));
-Material174->setUSE("TextMat");
-Appearance173->setMaterial(*Material174);
-
-Shape172->setAppearance(*Appearance173);
-
-CText* Text175 = (CText *)(m_pScene.createNode("Text"));
-Text175->setString(new CString[1]{"ArtDeco07"}, 1);
-CFontStyle* FontStyle176 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle176->setUSE("Style");
-Text175->setFontStyle(*FontStyle176);
-
-Shape172->setGeometry(Text175);
-
-Anchor171->addChildren(*Shape172);
-
-Transform170->addChildren(*Anchor171);
-
-Transform164->addChildren(*Transform170);
-
-Group50->addChildren(*Transform164);
-
-CViewpoint* Viewpoint177 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint177->setDEF("View08");
-Viewpoint177->setDescription("ArtDeco08");
-Viewpoint177->setPosition(new float[3]{-0.75,2.25,3});
-Group50->addChildren(*Viewpoint177);
-
-CTransform* Transform178 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform178->setTranslation(new float[3]{-0.75,2.25,0});
-CAnchor* Anchor179 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor179->setDescription("ArtDeco08 view");
-Anchor179->setUrl(new CString[1]{"#View08"}, 1);
-CShape* Shape180 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance181 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance182 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance182->setName("ArtDeco08");
-Appearance181->setMaterial(*ProtoInstance182);
-
-Shape180->setAppearance(*Appearance181);
-
-CSphere* Sphere183 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere183->setUSE("Ball");
-Shape180->setGeometry(Sphere183);
-
-Anchor179->addChildren(*Shape180);
-
-Transform178->addChildren(*Anchor179);
-
-CTransform* Transform184 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform184->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor185 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor185->setDescription("ArtDeco08");
-Anchor185->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor185->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08"}, 2);
-CShape* Shape186 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance187 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material188 = (CMaterial *)(m_pScene.createNode("Material"));
-Material188->setUSE("TextMat");
-Appearance187->setMaterial(*Material188);
-
-Shape186->setAppearance(*Appearance187);
-
-CText* Text189 = (CText *)(m_pScene.createNode("Text"));
-Text189->setString(new CString[1]{"ArtDeco08"}, 1);
-CFontStyle* FontStyle190 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle190->setUSE("Style");
-Text189->setFontStyle(*FontStyle190);
-
-Shape186->setGeometry(Text189);
-
-Anchor185->addChildren(*Shape186);
-
-Transform184->addChildren(*Anchor185);
-
-Transform178->addChildren(*Transform184);
-
-Group50->addChildren(*Transform178);
-
-CViewpoint* Viewpoint191 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint191->setDEF("View09");
-Viewpoint191->setDescription("ArtDeco09");
-Viewpoint191->setPosition(new float[3]{0.75,2.25,3});
-Group50->addChildren(*Viewpoint191);
-
-CTransform* Transform192 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform192->setTranslation(new float[3]{0.75,2.25,0});
-CAnchor* Anchor193 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor193->setDescription("ArtDeco09 view");
-Anchor193->setUrl(new CString[1]{"#View09"}, 1);
-CShape* Shape194 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance195 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance196 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance196->setName("ArtDeco09");
-Appearance195->setMaterial(*ProtoInstance196);
-
-Shape194->setAppearance(*Appearance195);
-
-CSphere* Sphere197 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere197->setUSE("Ball");
-Shape194->setGeometry(Sphere197);
-
-Anchor193->addChildren(*Shape194);
-
-Transform192->addChildren(*Anchor193);
-
-CTransform* Transform198 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform198->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor199 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor199->setDescription("ArtDeco09");
-Anchor199->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor199->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09"}, 2);
-CShape* Shape200 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance201 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material202 = (CMaterial *)(m_pScene.createNode("Material"));
-Material202->setUSE("TextMat");
-Appearance201->setMaterial(*Material202);
-
-Shape200->setAppearance(*Appearance201);
-
-CText* Text203 = (CText *)(m_pScene.createNode("Text"));
-Text203->setString(new CString[1]{"ArtDeco09"}, 1);
-CFontStyle* FontStyle204 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle204->setUSE("Style");
-Text203->setFontStyle(*FontStyle204);
-
-Shape200->setGeometry(Text203);
-
-Anchor199->addChildren(*Shape200);
-
-Transform198->addChildren(*Anchor199);
-
-Transform192->addChildren(*Transform198);
-
-Group50->addChildren(*Transform192);
-
-CViewpoint* Viewpoint205 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint205->setDEF("View10");
-Viewpoint205->setDescription("ArtDeco10");
-Viewpoint205->setPosition(new float[3]{2.25,2.25,3});
-Group50->addChildren(*Viewpoint205);
-
-CTransform* Transform206 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform206->setTranslation(new float[3]{2.25,2.25,0});
-CAnchor* Anchor207 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor207->setDescription("ArtDeco10 view");
-Anchor207->setUrl(new CString[1]{"#View10"}, 1);
-CShape* Shape208 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance209 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance210 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance210->setName("ArtDeco10");
-Appearance209->setMaterial(*ProtoInstance210);
-
-Shape208->setAppearance(*Appearance209);
-
-CSphere* Sphere211 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere211->setUSE("Ball");
-Shape208->setGeometry(Sphere211);
-
-Anchor207->addChildren(*Shape208);
-
-Transform206->addChildren(*Anchor207);
-
-CTransform* Transform212 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform212->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor213 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor213->setDescription("ArtDeco10");
-Anchor213->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor213->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10"}, 2);
-CShape* Shape214 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance215 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material216 = (CMaterial *)(m_pScene.createNode("Material"));
-Material216->setUSE("TextMat");
-Appearance215->setMaterial(*Material216);
-
-Shape214->setAppearance(*Appearance215);
-
-CText* Text217 = (CText *)(m_pScene.createNode("Text"));
-Text217->setString(new CString[1]{"ArtDeco10"}, 1);
-CFontStyle* FontStyle218 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle218->setUSE("Style");
-Text217->setFontStyle(*FontStyle218);
-
-Shape214->setGeometry(Text217);
-
-Anchor213->addChildren(*Shape214);
-
-Transform212->addChildren(*Anchor213);
-
-Transform206->addChildren(*Transform212);
-
-Group50->addChildren(*Transform206);
-
-CViewpoint* Viewpoint219 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint219->setDEF("View11");
-Viewpoint219->setDescription("ArtDeco11");
-Viewpoint219->setPosition(new float[3]{3.75,2.25,3});
-Group50->addChildren(*Viewpoint219);
-
-CTransform* Transform220 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform220->setTranslation(new float[3]{3.75,2.25,0});
-CAnchor* Anchor221 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor221->setDescription("ArtDeco11 view");
-Anchor221->setUrl(new CString[1]{"#View11"}, 1);
-CShape* Shape222 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance223 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance224 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance224->setName("ArtDeco11");
-Appearance223->setMaterial(*ProtoInstance224);
-
-Shape222->setAppearance(*Appearance223);
-
-CSphere* Sphere225 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere225->setUSE("Ball");
-Shape222->setGeometry(Sphere225);
-
-Anchor221->addChildren(*Shape222);
-
-Transform220->addChildren(*Anchor221);
-
-CTransform* Transform226 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform226->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor227 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor227->setDescription("ArtDeco11");
-Anchor227->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor227->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11"}, 2);
-CShape* Shape228 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance229 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material230 = (CMaterial *)(m_pScene.createNode("Material"));
-Material230->setUSE("TextMat");
-Appearance229->setMaterial(*Material230);
-
-Shape228->setAppearance(*Appearance229);
-
-CText* Text231 = (CText *)(m_pScene.createNode("Text"));
-Text231->setString(new CString[1]{"ArtDeco11"}, 1);
-CFontStyle* FontStyle232 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle232->setUSE("Style");
-Text231->setFontStyle(*FontStyle232);
-
-Shape228->setGeometry(Text231);
-
-Anchor227->addChildren(*Shape228);
-
-Transform226->addChildren(*Anchor227);
-
-Transform220->addChildren(*Transform226);
-
-Group50->addChildren(*Transform220);
-
-CViewpoint* Viewpoint233 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint233->setDEF("View12");
-Viewpoint233->setDescription("ArtDeco12");
-Viewpoint233->setPosition(new float[3]{-3.75,0.75,3});
-Group50->addChildren(*Viewpoint233);
-
-CTransform* Transform234 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform234->setTranslation(new float[3]{-3.75,0.75,0});
-CAnchor* Anchor235 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor235->setDescription("ArtDeco12 view");
-Anchor235->setUrl(new CString[1]{"#View12"}, 1);
-CShape* Shape236 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance237 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance238 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance238->setName("ArtDeco12");
-Appearance237->setMaterial(*ProtoInstance238);
-
-Shape236->setAppearance(*Appearance237);
-
-CSphere* Sphere239 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere239->setUSE("Ball");
-Shape236->setGeometry(Sphere239);
-
-Anchor235->addChildren(*Shape236);
-
-Transform234->addChildren(*Anchor235);
-
-CTransform* Transform240 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform240->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor241 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor241->setDescription("ArtDeco12");
-Anchor241->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor241->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12"}, 2);
-CShape* Shape242 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance243 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material244 = (CMaterial *)(m_pScene.createNode("Material"));
-Material244->setUSE("TextMat");
-Appearance243->setMaterial(*Material244);
-
-Shape242->setAppearance(*Appearance243);
-
-CText* Text245 = (CText *)(m_pScene.createNode("Text"));
-Text245->setString(new CString[1]{"ArtDeco12"}, 1);
-CFontStyle* FontStyle246 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle246->setUSE("Style");
-Text245->setFontStyle(*FontStyle246);
-
-Shape242->setGeometry(Text245);
-
-Anchor241->addChildren(*Shape242);
-
-Transform240->addChildren(*Anchor241);
-
-Transform234->addChildren(*Transform240);
-
-Group50->addChildren(*Transform234);
-
-CViewpoint* Viewpoint247 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint247->setDEF("View13");
-Viewpoint247->setDescription("ArtDeco13");
-Viewpoint247->setPosition(new float[3]{-2.25,0.75,3});
-Group50->addChildren(*Viewpoint247);
-
-CTransform* Transform248 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform248->setTranslation(new float[3]{-2.25,0.75,0});
-CAnchor* Anchor249 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor249->setDescription("ArtDeco13 view");
-Anchor249->setUrl(new CString[1]{"#View13"}, 1);
-CShape* Shape250 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance251 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance252 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance252->setName("ArtDeco13");
-Appearance251->setMaterial(*ProtoInstance252);
-
-Shape250->setAppearance(*Appearance251);
-
-CSphere* Sphere253 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere253->setUSE("Ball");
-Shape250->setGeometry(Sphere253);
-
-Anchor249->addChildren(*Shape250);
-
-Transform248->addChildren(*Anchor249);
-
-CTransform* Transform254 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform254->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor255 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor255->setDescription("ArtDeco13");
-Anchor255->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor255->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco3","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco13"}, 2);
-CShape* Shape256 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance257 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material258 = (CMaterial *)(m_pScene.createNode("Material"));
-Material258->setUSE("TextMat");
-Appearance257->setMaterial(*Material258);
-
-Shape256->setAppearance(*Appearance257);
-
-CText* Text259 = (CText *)(m_pScene.createNode("Text"));
-Text259->setString(new CString[1]{"ArtDeco13"}, 1);
-CFontStyle* FontStyle260 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle260->setUSE("Style");
-Text259->setFontStyle(*FontStyle260);
-
-Shape256->setGeometry(Text259);
-
-Anchor255->addChildren(*Shape256);
-
-Transform254->addChildren(*Anchor255);
-
-Transform248->addChildren(*Transform254);
-
-Group50->addChildren(*Transform248);
-
-CViewpoint* Viewpoint261 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint261->setDEF("View14");
-Viewpoint261->setDescription("ArtDeco14");
-Viewpoint261->setPosition(new float[3]{-0.75,0.75,3});
-Group50->addChildren(*Viewpoint261);
-
-CTransform* Transform262 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform262->setTranslation(new float[3]{-0.75,0.75,0});
-CAnchor* Anchor263 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor263->setDescription("ArtDeco14 view");
-Anchor263->setUrl(new CString[1]{"#View14"}, 1);
-CShape* Shape264 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance265 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance266 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance266->setName("ArtDeco14");
-Appearance265->setMaterial(*ProtoInstance266);
-
-Shape264->setAppearance(*Appearance265);
-
-CSphere* Sphere267 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere267->setUSE("Ball");
-Shape264->setGeometry(Sphere267);
-
-Anchor263->addChildren(*Shape264);
-
-Transform262->addChildren(*Anchor263);
-
-CTransform* Transform268 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform268->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor269 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor269->setDescription("ArtDeco14");
-Anchor269->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor269->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco4","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco14"}, 2);
-CShape* Shape270 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance271 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material272 = (CMaterial *)(m_pScene.createNode("Material"));
-Material272->setUSE("TextMat");
-Appearance271->setMaterial(*Material272);
-
-Shape270->setAppearance(*Appearance271);
-
-CText* Text273 = (CText *)(m_pScene.createNode("Text"));
-Text273->setString(new CString[1]{"ArtDeco14"}, 1);
-CFontStyle* FontStyle274 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle274->setUSE("Style");
-Text273->setFontStyle(*FontStyle274);
-
-Shape270->setGeometry(Text273);
-
-Anchor269->addChildren(*Shape270);
-
-Transform268->addChildren(*Anchor269);
-
-Transform262->addChildren(*Transform268);
-
-Group50->addChildren(*Transform262);
-
-CViewpoint* Viewpoint275 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint275->setDEF("View15");
-Viewpoint275->setDescription("ArtDeco15");
-Viewpoint275->setPosition(new float[3]{0.75,0.75,3});
-Group50->addChildren(*Viewpoint275);
-
-CTransform* Transform276 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform276->setTranslation(new float[3]{0.75,0.75,0});
-CAnchor* Anchor277 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor277->setDescription("ArtDeco15 view");
-Anchor277->setUrl(new CString[1]{"#View15"}, 1);
-CShape* Shape278 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance279 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance280 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance280->setName("ArtDeco15");
-Appearance279->setMaterial(*ProtoInstance280);
-
-Shape278->setAppearance(*Appearance279);
-
-CSphere* Sphere281 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere281->setUSE("Ball");
-Shape278->setGeometry(Sphere281);
-
-Anchor277->addChildren(*Shape278);
-
-Transform276->addChildren(*Anchor277);
-
-CTransform* Transform282 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform282->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor283 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor283->setDescription("ArtDeco15");
-Anchor283->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor283->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco5","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco15"}, 2);
-CShape* Shape284 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance285 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material286 = (CMaterial *)(m_pScene.createNode("Material"));
-Material286->setUSE("TextMat");
-Appearance285->setMaterial(*Material286);
-
-Shape284->setAppearance(*Appearance285);
-
-CText* Text287 = (CText *)(m_pScene.createNode("Text"));
-Text287->setString(new CString[1]{"ArtDeco15"}, 1);
-CFontStyle* FontStyle288 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle288->setUSE("Style");
-Text287->setFontStyle(*FontStyle288);
-
-Shape284->setGeometry(Text287);
-
-Anchor283->addChildren(*Shape284);
-
-Transform282->addChildren(*Anchor283);
-
-Transform276->addChildren(*Transform282);
-
-Group50->addChildren(*Transform276);
-
-CViewpoint* Viewpoint289 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint289->setDEF("View16");
-Viewpoint289->setDescription("ArtDeco16");
-Viewpoint289->setPosition(new float[3]{2.25,0.75,3});
-Group50->addChildren(*Viewpoint289);
-
-CTransform* Transform290 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform290->setTranslation(new float[3]{2.25,0.75,0});
-CAnchor* Anchor291 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor291->setDescription("ArtDeco16 view");
-Anchor291->setUrl(new CString[1]{"#View16"}, 1);
-CShape* Shape292 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance293 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance294 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance294->setName("ArtDeco16");
-Appearance293->setMaterial(*ProtoInstance294);
-
-Shape292->setAppearance(*Appearance293);
-
-CSphere* Sphere295 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere295->setUSE("Ball");
-Shape292->setGeometry(Sphere295);
-
-Anchor291->addChildren(*Shape292);
-
-Transform290->addChildren(*Anchor291);
-
-CTransform* Transform296 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform296->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor297 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor297->setDescription("ArtDeco16");
-Anchor297->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor297->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16"}, 2);
-CShape* Shape298 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance299 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material300 = (CMaterial *)(m_pScene.createNode("Material"));
-Material300->setUSE("TextMat");
-Appearance299->setMaterial(*Material300);
-
-Shape298->setAppearance(*Appearance299);
-
-CText* Text301 = (CText *)(m_pScene.createNode("Text"));
-Text301->setString(new CString[1]{"ArtDeco16"}, 1);
-CFontStyle* FontStyle302 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle302->setUSE("Style");
-Text301->setFontStyle(*FontStyle302);
-
-Shape298->setGeometry(Text301);
-
-Anchor297->addChildren(*Shape298);
-
-Transform296->addChildren(*Anchor297);
-
-Transform290->addChildren(*Transform296);
-
-Group50->addChildren(*Transform290);
-
-CViewpoint* Viewpoint303 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint303->setDEF("View17");
-Viewpoint303->setDescription("ArtDeco17");
-Viewpoint303->setPosition(new float[3]{3.75,0.75,3});
-Group50->addChildren(*Viewpoint303);
-
-CTransform* Transform304 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform304->setTranslation(new float[3]{3.75,0.75,0});
-CAnchor* Anchor305 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor305->setDescription("ArtDeco17 view");
-Anchor305->setUrl(new CString[1]{"#View17"}, 1);
-CShape* Shape306 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance307 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance308 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance308->setName("ArtDeco17");
-Appearance307->setMaterial(*ProtoInstance308);
-
-Shape306->setAppearance(*Appearance307);
-
-CSphere* Sphere309 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere309->setUSE("Ball");
-Shape306->setGeometry(Sphere309);
-
-Anchor305->addChildren(*Shape306);
-
-Transform304->addChildren(*Anchor305);
-
-CTransform* Transform310 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform310->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor311 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor311->setDescription("ArtDeco17");
-Anchor311->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor311->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco7","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco17"}, 2);
-CShape* Shape312 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance313 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material314 = (CMaterial *)(m_pScene.createNode("Material"));
-Material314->setUSE("TextMat");
-Appearance313->setMaterial(*Material314);
-
-Shape312->setAppearance(*Appearance313);
-
-CText* Text315 = (CText *)(m_pScene.createNode("Text"));
-Text315->setString(new CString[1]{"ArtDeco17"}, 1);
-CFontStyle* FontStyle316 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle316->setUSE("Style");
-Text315->setFontStyle(*FontStyle316);
-
-Shape312->setGeometry(Text315);
-
-Anchor311->addChildren(*Shape312);
-
-Transform310->addChildren(*Anchor311);
-
-Transform304->addChildren(*Transform310);
-
-Group50->addChildren(*Transform304);
-
-CViewpoint* Viewpoint317 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint317->setDEF("View18");
-Viewpoint317->setDescription("ArtDeco18");
-Viewpoint317->setPosition(new float[3]{-3.75,-0.75,3});
-Group50->addChildren(*Viewpoint317);
-
-CTransform* Transform318 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform318->setTranslation(new float[3]{-3.75,-0.75,0});
-CAnchor* Anchor319 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor319->setDescription("ArtDeco18 view");
-Anchor319->setUrl(new CString[1]{"#View18"}, 1);
-CShape* Shape320 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance321 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance322 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance322->setName("ArtDeco18");
-Appearance321->setMaterial(*ProtoInstance322);
-
-Shape320->setAppearance(*Appearance321);
-
-CSphere* Sphere323 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere323->setUSE("Ball");
-Shape320->setGeometry(Sphere323);
-
-Anchor319->addChildren(*Shape320);
-
-Transform318->addChildren(*Anchor319);
-
-CTransform* Transform324 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform324->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor325 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor325->setDescription("ArtDeco18");
-Anchor325->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor325->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18"}, 2);
-CShape* Shape326 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance327 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material328 = (CMaterial *)(m_pScene.createNode("Material"));
-Material328->setUSE("TextMat");
-Appearance327->setMaterial(*Material328);
-
-Shape326->setAppearance(*Appearance327);
-
-CText* Text329 = (CText *)(m_pScene.createNode("Text"));
-Text329->setString(new CString[1]{"ArtDeco18"}, 1);
-CFontStyle* FontStyle330 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle330->setUSE("Style");
-Text329->setFontStyle(*FontStyle330);
-
-Shape326->setGeometry(Text329);
-
-Anchor325->addChildren(*Shape326);
-
-Transform324->addChildren(*Anchor325);
-
-Transform318->addChildren(*Transform324);
-
-Group50->addChildren(*Transform318);
-
-CViewpoint* Viewpoint331 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint331->setDEF("View19");
-Viewpoint331->setDescription("ArtDeco19");
-Viewpoint331->setPosition(new float[3]{-2.25,-0.75,3});
-Group50->addChildren(*Viewpoint331);
-
-CTransform* Transform332 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform332->setTranslation(new float[3]{-2.25,-0.75,0});
-CAnchor* Anchor333 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor333->setDescription("ArtDeco19 view");
-Anchor333->setUrl(new CString[1]{"#View19"}, 1);
-CShape* Shape334 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance335 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance336 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance336->setName("ArtDeco19");
-Appearance335->setMaterial(*ProtoInstance336);
-
-Shape334->setAppearance(*Appearance335);
-
-CSphere* Sphere337 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere337->setUSE("Ball");
-Shape334->setGeometry(Sphere337);
-
-Anchor333->addChildren(*Shape334);
-
-Transform332->addChildren(*Anchor333);
-
-CTransform* Transform338 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform338->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor339 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor339->setDescription("ArtDeco19");
-Anchor339->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor339->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco9","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco19"}, 2);
-CShape* Shape340 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance341 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material342 = (CMaterial *)(m_pScene.createNode("Material"));
-Material342->setUSE("TextMat");
-Appearance341->setMaterial(*Material342);
-
-Shape340->setAppearance(*Appearance341);
-
-CText* Text343 = (CText *)(m_pScene.createNode("Text"));
-Text343->setString(new CString[1]{"ArtDeco19"}, 1);
-CFontStyle* FontStyle344 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle344->setUSE("Style");
-Text343->setFontStyle(*FontStyle344);
-
-Shape340->setGeometry(Text343);
-
-Anchor339->addChildren(*Shape340);
-
-Transform338->addChildren(*Anchor339);
-
-Transform332->addChildren(*Transform338);
-
-Group50->addChildren(*Transform332);
-
-CViewpoint* Viewpoint345 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint345->setDEF("View20");
-Viewpoint345->setDescription("ArtDeco20");
-Viewpoint345->setPosition(new float[3]{-0.75,-0.75,3});
-Group50->addChildren(*Viewpoint345);
-
-CTransform* Transform346 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform346->setTranslation(new float[3]{-0.75,-0.75,0});
-CAnchor* Anchor347 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor347->setDescription("ArtDeco20 view");
-Anchor347->setUrl(new CString[1]{"#View20"}, 1);
-CShape* Shape348 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance349 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance350 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance350->setName("ArtDeco20");
-Appearance349->setMaterial(*ProtoInstance350);
-
-Shape348->setAppearance(*Appearance349);
-
-CSphere* Sphere351 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere351->setUSE("Ball");
-Shape348->setGeometry(Sphere351);
-
-Anchor347->addChildren(*Shape348);
-
-Transform346->addChildren(*Anchor347);
-
-CTransform* Transform352 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform352->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor353 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor353->setDescription("ArtDeco20");
-Anchor353->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor353->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20"}, 2);
-CShape* Shape354 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance355 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material356 = (CMaterial *)(m_pScene.createNode("Material"));
-Material356->setUSE("TextMat");
-Appearance355->setMaterial(*Material356);
-
-Shape354->setAppearance(*Appearance355);
-
-CText* Text357 = (CText *)(m_pScene.createNode("Text"));
-Text357->setString(new CString[1]{"ArtDeco20"}, 1);
-CFontStyle* FontStyle358 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle358->setUSE("Style");
-Text357->setFontStyle(*FontStyle358);
-
-Shape354->setGeometry(Text357);
-
-Anchor353->addChildren(*Shape354);
-
-Transform352->addChildren(*Anchor353);
-
-Transform346->addChildren(*Transform352);
-
-Group50->addChildren(*Transform346);
-
-CViewpoint* Viewpoint359 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint359->setDEF("View21");
-Viewpoint359->setDescription("ArtDeco21");
-Viewpoint359->setPosition(new float[3]{0.75,-0.75,3});
-Group50->addChildren(*Viewpoint359);
-
-CTransform* Transform360 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform360->setTranslation(new float[3]{0.75,-0.75,0});
-CAnchor* Anchor361 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor361->setDescription("ArtDeco21 view");
-Anchor361->setUrl(new CString[1]{"#View21"}, 1);
-CShape* Shape362 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance363 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance364 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance364->setName("ArtDeco21");
-Appearance363->setMaterial(*ProtoInstance364);
-
-Shape362->setAppearance(*Appearance363);
-
-CSphere* Sphere365 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere365->setUSE("Ball");
-Shape362->setGeometry(Sphere365);
-
-Anchor361->addChildren(*Shape362);
-
-Transform360->addChildren(*Anchor361);
-
-CTransform* Transform366 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform366->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor367 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor367->setDescription("ArtDeco21");
-Anchor367->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor367->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21"}, 2);
-CShape* Shape368 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance369 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material370 = (CMaterial *)(m_pScene.createNode("Material"));
-Material370->setUSE("TextMat");
-Appearance369->setMaterial(*Material370);
-
-Shape368->setAppearance(*Appearance369);
-
-CText* Text371 = (CText *)(m_pScene.createNode("Text"));
-Text371->setString(new CString[1]{"ArtDeco21"}, 1);
-CFontStyle* FontStyle372 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle372->setUSE("Style");
-Text371->setFontStyle(*FontStyle372);
-
-Shape368->setGeometry(Text371);
-
-Anchor367->addChildren(*Shape368);
-
-Transform366->addChildren(*Anchor367);
-
-Transform360->addChildren(*Transform366);
-
-Group50->addChildren(*Transform360);
-
-CViewpoint* Viewpoint373 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint373->setDEF("View22");
-Viewpoint373->setDescription("ArtDeco22");
-Viewpoint373->setPosition(new float[3]{2.25,-0.75,3});
-Group50->addChildren(*Viewpoint373);
-
-CTransform* Transform374 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform374->setTranslation(new float[3]{2.25,-0.75,0});
-CAnchor* Anchor375 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor375->setDescription("ArtDeco22 view");
-Anchor375->setUrl(new CString[1]{"#View22"}, 1);
-CShape* Shape376 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance377 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance378 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance378->setName("ArtDeco22");
-Appearance377->setMaterial(*ProtoInstance378);
-
-Shape376->setAppearance(*Appearance377);
-
-CSphere* Sphere379 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere379->setUSE("Ball");
-Shape376->setGeometry(Sphere379);
-
-Anchor375->addChildren(*Shape376);
-
-Transform374->addChildren(*Anchor375);
-
-CTransform* Transform380 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform380->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor381 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor381->setDescription("ArtDeco22");
-Anchor381->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor381->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22"}, 2);
-CShape* Shape382 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance383 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material384 = (CMaterial *)(m_pScene.createNode("Material"));
-Material384->setUSE("TextMat");
-Appearance383->setMaterial(*Material384);
-
-Shape382->setAppearance(*Appearance383);
-
-CText* Text385 = (CText *)(m_pScene.createNode("Text"));
-Text385->setString(new CString[1]{"ArtDeco22"}, 1);
-CFontStyle* FontStyle386 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle386->setUSE("Style");
-Text385->setFontStyle(*FontStyle386);
-
-Shape382->setGeometry(Text385);
-
-Anchor381->addChildren(*Shape382);
-
-Transform380->addChildren(*Anchor381);
-
-Transform374->addChildren(*Transform380);
-
-Group50->addChildren(*Transform374);
-
-CViewpoint* Viewpoint387 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint387->setDEF("View23");
-Viewpoint387->setDescription("ArtDeco23");
-Viewpoint387->setPosition(new float[3]{3.75,-0.75,3});
-Group50->addChildren(*Viewpoint387);
-
-CTransform* Transform388 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform388->setTranslation(new float[3]{3.75,-0.75,0});
-CAnchor* Anchor389 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor389->setDescription("ArtDeco23 view");
-Anchor389->setUrl(new CString[1]{"#View23"}, 1);
-CShape* Shape390 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance391 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance392 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance392->setName("ArtDeco23");
-Appearance391->setMaterial(*ProtoInstance392);
-
-Shape390->setAppearance(*Appearance391);
-
-CSphere* Sphere393 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere393->setUSE("Ball");
-Shape390->setGeometry(Sphere393);
-
-Anchor389->addChildren(*Shape390);
-
-Transform388->addChildren(*Anchor389);
-
-CTransform* Transform394 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform394->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor395 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor395->setDescription("ArtDeco23");
-Anchor395->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor395->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23"}, 2);
-CShape* Shape396 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance397 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material398 = (CMaterial *)(m_pScene.createNode("Material"));
-Material398->setUSE("TextMat");
-Appearance397->setMaterial(*Material398);
-
-Shape396->setAppearance(*Appearance397);
-
-CText* Text399 = (CText *)(m_pScene.createNode("Text"));
-Text399->setString(new CString[1]{"ArtDeco23"}, 1);
-CFontStyle* FontStyle400 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle400->setUSE("Style");
-Text399->setFontStyle(*FontStyle400);
-
-Shape396->setGeometry(Text399);
-
-Anchor395->addChildren(*Shape396);
-
-Transform394->addChildren(*Anchor395);
-
-Transform388->addChildren(*Transform394);
-
-Group50->addChildren(*Transform388);
-
-CViewpoint* Viewpoint401 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint401->setDEF("View24");
-Viewpoint401->setDescription("ArtDeco24");
-Viewpoint401->setPosition(new float[3]{-3.75,-2.25,3});
-Group50->addChildren(*Viewpoint401);
-
-CTransform* Transform402 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform402->setTranslation(new float[3]{-3.75,-2.25,0});
-CAnchor* Anchor403 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor403->setDescription("ArtDeco24 view");
-Anchor403->setUrl(new CString[1]{"#View24"}, 1);
-CShape* Shape404 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance405 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance406 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance406->setName("ArtDeco24");
-Appearance405->setMaterial(*ProtoInstance406);
-
-Shape404->setAppearance(*Appearance405);
-
-CSphere* Sphere407 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere407->setUSE("Ball");
-Shape404->setGeometry(Sphere407);
-
-Anchor403->addChildren(*Shape404);
-
-Transform402->addChildren(*Anchor403);
-
-CTransform* Transform408 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform408->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor409 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor409->setDescription("ArtDeco24");
-Anchor409->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor409->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24"}, 2);
-CShape* Shape410 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance411 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material412 = (CMaterial *)(m_pScene.createNode("Material"));
-Material412->setUSE("TextMat");
-Appearance411->setMaterial(*Material412);
-
-Shape410->setAppearance(*Appearance411);
-
-CText* Text413 = (CText *)(m_pScene.createNode("Text"));
-Text413->setString(new CString[1]{"ArtDeco24"}, 1);
-CFontStyle* FontStyle414 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle414->setUSE("Style");
-Text413->setFontStyle(*FontStyle414);
-
-Shape410->setGeometry(Text413);
-
-Anchor409->addChildren(*Shape410);
-
-Transform408->addChildren(*Anchor409);
-
-Transform402->addChildren(*Transform408);
-
-Group50->addChildren(*Transform402);
-
-CViewpoint* Viewpoint415 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint415->setDEF("View25");
-Viewpoint415->setDescription("ArtDeco25");
-Viewpoint415->setPosition(new float[3]{-2.25,-2.25,3});
-Group50->addChildren(*Viewpoint415);
-
-CTransform* Transform416 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform416->setTranslation(new float[3]{-2.25,-2.25,0});
-CAnchor* Anchor417 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor417->setDescription("ArtDeco25 view");
-Anchor417->setUrl(new CString[1]{"#View25"}, 1);
-CShape* Shape418 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance419 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance420 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance420->setName("ArtDeco25");
-Appearance419->setMaterial(*ProtoInstance420);
-
-Shape418->setAppearance(*Appearance419);
-
-CSphere* Sphere421 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere421->setUSE("Ball");
-Shape418->setGeometry(Sphere421);
-
-Anchor417->addChildren(*Shape418);
-
-Transform416->addChildren(*Anchor417);
-
-CTransform* Transform422 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform422->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor423 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor423->setDescription("ArtDeco25");
-Anchor423->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor423->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25"}, 2);
-CShape* Shape424 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance425 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material426 = (CMaterial *)(m_pScene.createNode("Material"));
-Material426->setUSE("TextMat");
-Appearance425->setMaterial(*Material426);
-
-Shape424->setAppearance(*Appearance425);
-
-CText* Text427 = (CText *)(m_pScene.createNode("Text"));
-Text427->setString(new CString[1]{"ArtDeco25"}, 1);
-CFontStyle* FontStyle428 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle428->setUSE("Style");
-Text427->setFontStyle(*FontStyle428);
-
-Shape424->setGeometry(Text427);
-
-Anchor423->addChildren(*Shape424);
-
-Transform422->addChildren(*Anchor423);
-
-Transform416->addChildren(*Transform422);
-
-Group50->addChildren(*Transform416);
-
-CViewpoint* Viewpoint429 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint429->setDEF("View26");
-Viewpoint429->setDescription("ArtDeco26");
-Viewpoint429->setPosition(new float[3]{-0.75,-2.25,3});
-Group50->addChildren(*Viewpoint429);
-
-CTransform* Transform430 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform430->setTranslation(new float[3]{-0.75,-2.25,0});
-CAnchor* Anchor431 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor431->setDescription("ArtDeco26 view");
-Anchor431->setUrl(new CString[1]{"#View26"}, 1);
-CShape* Shape432 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance433 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance434 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance434->setName("ArtDeco26");
-Appearance433->setMaterial(*ProtoInstance434);
-
-Shape432->setAppearance(*Appearance433);
-
-CSphere* Sphere435 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere435->setUSE("Ball");
-Shape432->setGeometry(Sphere435);
-
-Anchor431->addChildren(*Shape432);
-
-Transform430->addChildren(*Anchor431);
-
-CTransform* Transform436 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform436->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor437 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor437->setDescription("ArtDeco26");
-Anchor437->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor437->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26"}, 2);
-CShape* Shape438 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance439 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material440 = (CMaterial *)(m_pScene.createNode("Material"));
-Material440->setUSE("TextMat");
-Appearance439->setMaterial(*Material440);
-
-Shape438->setAppearance(*Appearance439);
-
-CText* Text441 = (CText *)(m_pScene.createNode("Text"));
-Text441->setString(new CString[1]{"ArtDeco26"}, 1);
-CFontStyle* FontStyle442 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle442->setUSE("Style");
-Text441->setFontStyle(*FontStyle442);
-
-Shape438->setGeometry(Text441);
-
-Anchor437->addChildren(*Shape438);
-
-Transform436->addChildren(*Anchor437);
-
-Transform430->addChildren(*Transform436);
-
-Group50->addChildren(*Transform430);
-
-CViewpoint* Viewpoint443 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint443->setDEF("View27");
-Viewpoint443->setDescription("ArtDeco27");
-Viewpoint443->setPosition(new float[3]{0.75,-2.25,3});
-Group50->addChildren(*Viewpoint443);
-
-CTransform* Transform444 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform444->setTranslation(new float[3]{0.75,-2.25,0});
-CAnchor* Anchor445 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor445->setDescription("ArtDeco27 view");
-Anchor445->setUrl(new CString[1]{"#View27"}, 1);
-CShape* Shape446 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance447 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance448 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance448->setName("ArtDeco27");
-Appearance447->setMaterial(*ProtoInstance448);
-
-Shape446->setAppearance(*Appearance447);
-
-CSphere* Sphere449 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere449->setUSE("Ball");
-Shape446->setGeometry(Sphere449);
-
-Anchor445->addChildren(*Shape446);
-
-Transform444->addChildren(*Anchor445);
-
-CTransform* Transform450 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform450->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor451 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor451->setDescription("ArtDeco27");
-Anchor451->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor451->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27"}, 2);
-CShape* Shape452 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance453 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material454 = (CMaterial *)(m_pScene.createNode("Material"));
-Material454->setUSE("TextMat");
-Appearance453->setMaterial(*Material454);
-
-Shape452->setAppearance(*Appearance453);
-
-CText* Text455 = (CText *)(m_pScene.createNode("Text"));
-Text455->setString(new CString[1]{"ArtDeco27"}, 1);
-CFontStyle* FontStyle456 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle456->setUSE("Style");
-Text455->setFontStyle(*FontStyle456);
-
-Shape452->setGeometry(Text455);
-
-Anchor451->addChildren(*Shape452);
-
-Transform450->addChildren(*Anchor451);
-
-Transform444->addChildren(*Transform450);
-
-Group50->addChildren(*Transform444);
-
-CViewpoint* Viewpoint457 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint457->setDEF("View28");
-Viewpoint457->setDescription("ArtDeco28");
-Viewpoint457->setPosition(new float[3]{2.25,-2.25,3});
-Group50->addChildren(*Viewpoint457);
-
-CTransform* Transform458 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform458->setTranslation(new float[3]{2.25,-2.25,0});
-CAnchor* Anchor459 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor459->setDescription("ArtDeco28 view");
-Anchor459->setUrl(new CString[1]{"#View28"}, 1);
-CShape* Shape460 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance461 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance462 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance462->setName("ArtDeco28");
-Appearance461->setMaterial(*ProtoInstance462);
-
-Shape460->setAppearance(*Appearance461);
-
-CSphere* Sphere463 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere463->setUSE("Ball");
-Shape460->setGeometry(Sphere463);
-
-Anchor459->addChildren(*Shape460);
-
-Transform458->addChildren(*Anchor459);
-
-CTransform* Transform464 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform464->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor465 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor465->setDescription("ArtDeco28");
-Anchor465->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor465->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28"}, 2);
-CShape* Shape466 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance467 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material468 = (CMaterial *)(m_pScene.createNode("Material"));
-Material468->setUSE("TextMat");
-Appearance467->setMaterial(*Material468);
-
-Shape466->setAppearance(*Appearance467);
-
-CText* Text469 = (CText *)(m_pScene.createNode("Text"));
-Text469->setString(new CString[1]{"ArtDeco28"}, 1);
-CFontStyle* FontStyle470 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle470->setUSE("Style");
-Text469->setFontStyle(*FontStyle470);
-
-Shape466->setGeometry(Text469);
-
-Anchor465->addChildren(*Shape466);
-
-Transform464->addChildren(*Anchor465);
-
-Transform458->addChildren(*Transform464);
-
-Group50->addChildren(*Transform458);
-
-CViewpoint* Viewpoint471 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint471->setDEF("View29");
-Viewpoint471->setDescription("ArtDeco29");
-Viewpoint471->setPosition(new float[3]{3.75,-2.25,3});
-Group50->addChildren(*Viewpoint471);
-
-CTransform* Transform472 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform472->setTranslation(new float[3]{3.75,-2.25,0});
-CAnchor* Anchor473 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor473->setDescription("ArtDeco29 view");
-Anchor473->setUrl(new CString[1]{"#View29"}, 1);
-CShape* Shape474 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance475 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance476 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance476->setName("ArtDeco29");
-Appearance475->setMaterial(*ProtoInstance476);
-
-Shape474->setAppearance(*Appearance475);
-
-CSphere* Sphere477 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere477->setUSE("Ball");
-Shape474->setGeometry(Sphere477);
-
-Anchor473->addChildren(*Shape474);
-
-Transform472->addChildren(*Anchor473);
-
-CTransform* Transform478 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform478->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor479 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor479->setDescription("ArtDeco29");
-Anchor479->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor479->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29"}, 2);
-CShape* Shape480 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance481 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material482 = (CMaterial *)(m_pScene.createNode("Material"));
-Material482->setUSE("TextMat");
-Appearance481->setMaterial(*Material482);
-
-Shape480->setAppearance(*Appearance481);
-
-CText* Text483 = (CText *)(m_pScene.createNode("Text"));
-Text483->setString(new CString[1]{"ArtDeco29"}, 1);
-CFontStyle* FontStyle484 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle484->setUSE("Style");
-Text483->setFontStyle(*FontStyle484);
-
-Shape480->setGeometry(Text483);
-
-Anchor479->addChildren(*Shape480);
-
-Transform478->addChildren(*Anchor479);
-
-Transform472->addChildren(*Transform478);
-
-Group50->addChildren(*Transform472);
-
-CViewpoint* Viewpoint485 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint485->setDEF("View30");
-Viewpoint485->setDescription("ArtDeco30");
-Viewpoint485->setPosition(new float[3]{-3.75,-3.75,3});
-Group50->addChildren(*Viewpoint485);
-
-CTransform* Transform486 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform486->setTranslation(new float[3]{-3.75,-3.75,0});
-CAnchor* Anchor487 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor487->setDescription("ArtDeco30 view");
-Anchor487->setUrl(new CString[1]{"#View30"}, 1);
-CShape* Shape488 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance489 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance490 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance490->setName("ArtDeco30");
-Appearance489->setMaterial(*ProtoInstance490);
-
-Shape488->setAppearance(*Appearance489);
-
-CSphere* Sphere491 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere491->setUSE("Ball");
-Shape488->setGeometry(Sphere491);
-
-Anchor487->addChildren(*Shape488);
-
-Transform486->addChildren(*Anchor487);
-
-CTransform* Transform492 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform492->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor493 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor493->setDescription("ArtDeco30");
-Anchor493->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor493->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30"}, 2);
-CShape* Shape494 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance495 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material496 = (CMaterial *)(m_pScene.createNode("Material"));
-Material496->setUSE("TextMat");
-Appearance495->setMaterial(*Material496);
-
-Shape494->setAppearance(*Appearance495);
-
-CText* Text497 = (CText *)(m_pScene.createNode("Text"));
-Text497->setString(new CString[1]{"ArtDeco30"}, 1);
-CFontStyle* FontStyle498 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle498->setUSE("Style");
-Text497->setFontStyle(*FontStyle498);
-
-Shape494->setGeometry(Text497);
-
-Anchor493->addChildren(*Shape494);
-
-Transform492->addChildren(*Anchor493);
-
-Transform486->addChildren(*Transform492);
-
-Group50->addChildren(*Transform486);
-
-CViewpoint* Viewpoint499 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint499->setDEF("View31");
-Viewpoint499->setDescription("ArtDeco31");
-Viewpoint499->setPosition(new float[3]{-2.25,-3.75,3});
-Group50->addChildren(*Viewpoint499);
-
-CTransform* Transform500 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform500->setTranslation(new float[3]{-2.25,-3.75,0});
-CAnchor* Anchor501 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor501->setDescription("ArtDeco31 view");
-Anchor501->setUrl(new CString[1]{"#View31"}, 1);
-CShape* Shape502 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance503 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance504 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance504->setName("ArtDeco31");
-Appearance503->setMaterial(*ProtoInstance504);
-
-Shape502->setAppearance(*Appearance503);
-
-CSphere* Sphere505 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere505->setUSE("Ball");
-Shape502->setGeometry(Sphere505);
-
-Anchor501->addChildren(*Shape502);
-
-Transform500->addChildren(*Anchor501);
-
-CTransform* Transform506 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform506->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor507 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor507->setDescription("ArtDeco31");
-Anchor507->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor507->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31"}, 2);
-CShape* Shape508 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance509 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material510 = (CMaterial *)(m_pScene.createNode("Material"));
-Material510->setUSE("TextMat");
-Appearance509->setMaterial(*Material510);
-
-Shape508->setAppearance(*Appearance509);
-
-CText* Text511 = (CText *)(m_pScene.createNode("Text"));
-Text511->setString(new CString[1]{"ArtDeco31"}, 1);
-CFontStyle* FontStyle512 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle512->setUSE("Style");
-Text511->setFontStyle(*FontStyle512);
-
-Shape508->setGeometry(Text511);
-
-Anchor507->addChildren(*Shape508);
-
-Transform506->addChildren(*Anchor507);
-
-Transform500->addChildren(*Transform506);
-
-Group50->addChildren(*Transform500);
-
-CViewpoint* Viewpoint513 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint513->setDEF("View32");
-Viewpoint513->setDescription("ArtDeco32");
-Viewpoint513->setPosition(new float[3]{-0.75,-3.75,3});
-Group50->addChildren(*Viewpoint513);
-
-CTransform* Transform514 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform514->setTranslation(new float[3]{-0.75,-3.75,0});
-CAnchor* Anchor515 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor515->setDescription("ArtDeco32 view");
-Anchor515->setUrl(new CString[1]{"#View32"}, 1);
-CShape* Shape516 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance517 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance518 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance518->setName("ArtDeco32");
-Appearance517->setMaterial(*ProtoInstance518);
-
-Shape516->setAppearance(*Appearance517);
-
-CSphere* Sphere519 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere519->setUSE("Ball");
-Shape516->setGeometry(Sphere519);
-
-Anchor515->addChildren(*Shape516);
-
-Transform514->addChildren(*Anchor515);
-
-CTransform* Transform520 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform520->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor521 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor521->setDescription("ArtDeco32");
-Anchor521->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor521->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32"}, 2);
-CShape* Shape522 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance523 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material524 = (CMaterial *)(m_pScene.createNode("Material"));
-Material524->setUSE("TextMat");
-Appearance523->setMaterial(*Material524);
-
-Shape522->setAppearance(*Appearance523);
-
-CText* Text525 = (CText *)(m_pScene.createNode("Text"));
-Text525->setString(new CString[1]{"ArtDeco32"}, 1);
-CFontStyle* FontStyle526 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle526->setUSE("Style");
-Text525->setFontStyle(*FontStyle526);
-
-Shape522->setGeometry(Text525);
-
-Anchor521->addChildren(*Shape522);
-
-Transform520->addChildren(*Anchor521);
-
-Transform514->addChildren(*Transform520);
-
-Group50->addChildren(*Transform514);
-
-CViewpoint* Viewpoint527 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint527->setDEF("View33");
-Viewpoint527->setDescription("ArtDeco33");
-Viewpoint527->setPosition(new float[3]{0.75,-3.75,3});
-Group50->addChildren(*Viewpoint527);
-
-CTransform* Transform528 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform528->setTranslation(new float[3]{0.75,-3.75,0});
-CAnchor* Anchor529 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor529->setDescription("ArtDeco33 view");
-Anchor529->setUrl(new CString[1]{"#View33"}, 1);
-CShape* Shape530 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance531 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance532 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance532->setName("ArtDeco33");
-Appearance531->setMaterial(*ProtoInstance532);
-
-Shape530->setAppearance(*Appearance531);
-
-CSphere* Sphere533 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere533->setUSE("Ball");
-Shape530->setGeometry(Sphere533);
-
-Anchor529->addChildren(*Shape530);
-
-Transform528->addChildren(*Anchor529);
-
-CTransform* Transform534 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform534->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor535 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor535->setDescription("ArtDeco33");
-Anchor535->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor535->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33"}, 2);
-CShape* Shape536 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance537 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material538 = (CMaterial *)(m_pScene.createNode("Material"));
-Material538->setUSE("TextMat");
-Appearance537->setMaterial(*Material538);
-
-Shape536->setAppearance(*Appearance537);
-
-CText* Text539 = (CText *)(m_pScene.createNode("Text"));
-Text539->setString(new CString[1]{"ArtDeco33"}, 1);
-CFontStyle* FontStyle540 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle540->setUSE("Style");
-Text539->setFontStyle(*FontStyle540);
-
-Shape536->setGeometry(Text539);
-
-Anchor535->addChildren(*Shape536);
-
-Transform534->addChildren(*Anchor535);
-
-Transform528->addChildren(*Transform534);
-
-Group50->addChildren(*Transform528);
-
-CViewpoint* Viewpoint541 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint541->setDEF("View34");
-Viewpoint541->setDescription("ArtDeco34");
-Viewpoint541->setPosition(new float[3]{2.25,-3.75,3});
-Group50->addChildren(*Viewpoint541);
-
-CTransform* Transform542 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform542->setTranslation(new float[3]{2.25,-3.75,0});
-CAnchor* Anchor543 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor543->setDescription("ArtDeco34 view");
-Anchor543->setUrl(new CString[1]{"#View34"}, 1);
-CShape* Shape544 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance545 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CProtoInstance* ProtoInstance546 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
-ProtoInstance546->setName("ArtDeco34");
-Appearance545->setMaterial(*ProtoInstance546);
-
-Shape544->setAppearance(*Appearance545);
-
-CSphere* Sphere547 = (CSphere *)(m_pScene.createNode("Sphere"));
-Sphere547->setUSE("Ball");
-Shape544->setGeometry(Sphere547);
-
-Anchor543->addChildren(*Shape544);
-
-Transform542->addChildren(*Anchor543);
-
-CTransform* Transform548 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform548->setTranslation(new float[3]{0,0.3,0.5});
-CAnchor* Anchor549 = (CAnchor *)(m_pScene.createNode("Anchor"));
-Anchor549->setDescription("ArtDeco34");
-Anchor549->setParameter(new CString[1]{"target=_source"}, 1);
-Anchor549->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34"}, 2);
-CShape* Shape550 = (CShape *)(m_pScene.createNode("Shape"));
-CAppearance* Appearance551 = (CAppearance *)(m_pScene.createNode("Appearance"));
-CMaterial* Material552 = (CMaterial *)(m_pScene.createNode("Material"));
-Material552->setUSE("TextMat");
-Appearance551->setMaterial(*Material552);
-
-Shape550->setAppearance(*Appearance551);
-
-CText* Text553 = (CText *)(m_pScene.createNode("Text"));
-Text553->setString(new CString[1]{"ArtDeco34"}, 1);
-CFontStyle* FontStyle554 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle554->setUSE("Style");
-Text553->setFontStyle(*FontStyle554);
-
-Shape550->setGeometry(Text553);
-
-Anchor549->addChildren(*Shape550);
-
-Transform548->addChildren(*Anchor549);
-
-Transform542->addChildren(*Transform548);
-
-Group50->addChildren(*Transform542);
-
-group->addChildren(*Group50);
+Shape123->setAppearance(*Appearance124);
+
+CSphere* Sphere126 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere126->setUSE("Ball");
+Shape123->setGeometry(Sphere126);
+
+Anchor122->addChildren(*Shape123);
+
+Transform121->addChildren(*Anchor122);
+
+CTransform* Transform127 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform127->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor128 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor128->setDescription("ArtDeco04");
+Anchor128->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04"}, 2);
+Anchor128->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape129 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance130 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material131 = (CMaterial *)(m_pScene.createNode("Material"));
+Material131->setUSE("TextMat");
+Appearance130->setMaterial(*Material131);
+
+Shape129->setAppearance(*Appearance130);
+
+CText* Text132 = (CText *)(m_pScene.createNode("Text"));
+Text132->setString(new CString[1]{"ArtDeco04"}, 1);
+CFontStyle* FontStyle133 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle133->setUSE("Style");
+Text132->setFontStyle(*FontStyle133);
+
+Shape129->setGeometry(Text132);
+
+Anchor128->addChildren(*Shape129);
+
+Transform127->addChildren(*Anchor128);
+
+Transform121->addChildren(*Transform127);
+
+Group49->addChildren(*Transform121);
+
+CViewpoint* Viewpoint134 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint134->setDEF("View05");
+Viewpoint134->setDescription("ArtDeco05");
+Viewpoint134->setPosition(new float[3]{3.75,3.75,3});
+Group49->addChildren(*Viewpoint134);
+
+CTransform* Transform135 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform135->setTranslation(new float[3]{3.75,3.75,0});
+CAnchor* Anchor136 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor136->setDescription("ArtDeco05 view");
+Anchor136->setUrl(new CString[1]{"#View05"}, 1);
+CShape* Shape137 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance138 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance139 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance139->setName("ArtDeco05");
+Appearance138->setMaterial(*ProtoInstance139);
+
+Shape137->setAppearance(*Appearance138);
+
+CSphere* Sphere140 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere140->setUSE("Ball");
+Shape137->setGeometry(Sphere140);
+
+Anchor136->addChildren(*Shape137);
+
+Transform135->addChildren(*Anchor136);
+
+CTransform* Transform141 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform141->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor142 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor142->setDescription("ArtDeco05");
+Anchor142->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05"}, 2);
+Anchor142->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape143 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance144 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material145 = (CMaterial *)(m_pScene.createNode("Material"));
+Material145->setUSE("TextMat");
+Appearance144->setMaterial(*Material145);
+
+Shape143->setAppearance(*Appearance144);
+
+CText* Text146 = (CText *)(m_pScene.createNode("Text"));
+Text146->setString(new CString[1]{"ArtDeco05"}, 1);
+CFontStyle* FontStyle147 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle147->setUSE("Style");
+Text146->setFontStyle(*FontStyle147);
+
+Shape143->setGeometry(Text146);
+
+Anchor142->addChildren(*Shape143);
+
+Transform141->addChildren(*Anchor142);
+
+Transform135->addChildren(*Transform141);
+
+Group49->addChildren(*Transform135);
+
+CViewpoint* Viewpoint148 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint148->setDEF("View06");
+Viewpoint148->setDescription("ArtDeco06");
+Viewpoint148->setPosition(new float[3]{-3.75,2.25,3});
+Group49->addChildren(*Viewpoint148);
+
+CTransform* Transform149 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform149->setTranslation(new float[3]{-3.75,2.25,0});
+CAnchor* Anchor150 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor150->setDescription("ArtDeco06 view");
+Anchor150->setUrl(new CString[1]{"#View06"}, 1);
+CShape* Shape151 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance152 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance153 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance153->setName("ArtDeco06");
+Appearance152->setMaterial(*ProtoInstance153);
+
+Shape151->setAppearance(*Appearance152);
+
+CSphere* Sphere154 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere154->setUSE("Ball");
+Shape151->setGeometry(Sphere154);
+
+Anchor150->addChildren(*Shape151);
+
+Transform149->addChildren(*Anchor150);
+
+CTransform* Transform155 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform155->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor156 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor156->setDescription("ArtDeco06");
+Anchor156->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06"}, 2);
+Anchor156->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape157 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance158 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material159 = (CMaterial *)(m_pScene.createNode("Material"));
+Material159->setUSE("TextMat");
+Appearance158->setMaterial(*Material159);
+
+Shape157->setAppearance(*Appearance158);
+
+CText* Text160 = (CText *)(m_pScene.createNode("Text"));
+Text160->setString(new CString[1]{"ArtDeco06"}, 1);
+CFontStyle* FontStyle161 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle161->setUSE("Style");
+Text160->setFontStyle(*FontStyle161);
+
+Shape157->setGeometry(Text160);
+
+Anchor156->addChildren(*Shape157);
+
+Transform155->addChildren(*Anchor156);
+
+Transform149->addChildren(*Transform155);
+
+Group49->addChildren(*Transform149);
+
+CViewpoint* Viewpoint162 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint162->setDEF("View07");
+Viewpoint162->setDescription("ArtDeco07");
+Viewpoint162->setPosition(new float[3]{-2.25,2.25,3});
+Group49->addChildren(*Viewpoint162);
+
+CTransform* Transform163 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform163->setTranslation(new float[3]{-2.25,2.25,0});
+CAnchor* Anchor164 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor164->setDescription("ArtDeco07 view");
+Anchor164->setUrl(new CString[1]{"#View07"}, 1);
+CShape* Shape165 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance166 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance167 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance167->setName("ArtDeco07");
+Appearance166->setMaterial(*ProtoInstance167);
+
+Shape165->setAppearance(*Appearance166);
+
+CSphere* Sphere168 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere168->setUSE("Ball");
+Shape165->setGeometry(Sphere168);
+
+Anchor164->addChildren(*Shape165);
+
+Transform163->addChildren(*Anchor164);
+
+CTransform* Transform169 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform169->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor170 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor170->setDescription("ArtDeco07");
+Anchor170->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07"}, 2);
+Anchor170->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape171 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance172 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material173 = (CMaterial *)(m_pScene.createNode("Material"));
+Material173->setUSE("TextMat");
+Appearance172->setMaterial(*Material173);
+
+Shape171->setAppearance(*Appearance172);
+
+CText* Text174 = (CText *)(m_pScene.createNode("Text"));
+Text174->setString(new CString[1]{"ArtDeco07"}, 1);
+CFontStyle* FontStyle175 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle175->setUSE("Style");
+Text174->setFontStyle(*FontStyle175);
+
+Shape171->setGeometry(Text174);
+
+Anchor170->addChildren(*Shape171);
+
+Transform169->addChildren(*Anchor170);
+
+Transform163->addChildren(*Transform169);
+
+Group49->addChildren(*Transform163);
+
+CViewpoint* Viewpoint176 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint176->setDEF("View08");
+Viewpoint176->setDescription("ArtDeco08");
+Viewpoint176->setPosition(new float[3]{-0.75,2.25,3});
+Group49->addChildren(*Viewpoint176);
+
+CTransform* Transform177 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform177->setTranslation(new float[3]{-0.75,2.25,0});
+CAnchor* Anchor178 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor178->setDescription("ArtDeco08 view");
+Anchor178->setUrl(new CString[1]{"#View08"}, 1);
+CShape* Shape179 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance180 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance181 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance181->setName("ArtDeco08");
+Appearance180->setMaterial(*ProtoInstance181);
+
+Shape179->setAppearance(*Appearance180);
+
+CSphere* Sphere182 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere182->setUSE("Ball");
+Shape179->setGeometry(Sphere182);
+
+Anchor178->addChildren(*Shape179);
+
+Transform177->addChildren(*Anchor178);
+
+CTransform* Transform183 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform183->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor184 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor184->setDescription("ArtDeco08");
+Anchor184->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08"}, 2);
+Anchor184->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape185 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance186 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material187 = (CMaterial *)(m_pScene.createNode("Material"));
+Material187->setUSE("TextMat");
+Appearance186->setMaterial(*Material187);
+
+Shape185->setAppearance(*Appearance186);
+
+CText* Text188 = (CText *)(m_pScene.createNode("Text"));
+Text188->setString(new CString[1]{"ArtDeco08"}, 1);
+CFontStyle* FontStyle189 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle189->setUSE("Style");
+Text188->setFontStyle(*FontStyle189);
+
+Shape185->setGeometry(Text188);
+
+Anchor184->addChildren(*Shape185);
+
+Transform183->addChildren(*Anchor184);
+
+Transform177->addChildren(*Transform183);
+
+Group49->addChildren(*Transform177);
+
+CViewpoint* Viewpoint190 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint190->setDEF("View09");
+Viewpoint190->setDescription("ArtDeco09");
+Viewpoint190->setPosition(new float[3]{0.75,2.25,3});
+Group49->addChildren(*Viewpoint190);
+
+CTransform* Transform191 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform191->setTranslation(new float[3]{0.75,2.25,0});
+CAnchor* Anchor192 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor192->setDescription("ArtDeco09 view");
+Anchor192->setUrl(new CString[1]{"#View09"}, 1);
+CShape* Shape193 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance194 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance195 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance195->setName("ArtDeco09");
+Appearance194->setMaterial(*ProtoInstance195);
+
+Shape193->setAppearance(*Appearance194);
+
+CSphere* Sphere196 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere196->setUSE("Ball");
+Shape193->setGeometry(Sphere196);
+
+Anchor192->addChildren(*Shape193);
+
+Transform191->addChildren(*Anchor192);
+
+CTransform* Transform197 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform197->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor198 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor198->setDescription("ArtDeco09");
+Anchor198->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09"}, 2);
+Anchor198->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape199 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance200 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material201 = (CMaterial *)(m_pScene.createNode("Material"));
+Material201->setUSE("TextMat");
+Appearance200->setMaterial(*Material201);
+
+Shape199->setAppearance(*Appearance200);
+
+CText* Text202 = (CText *)(m_pScene.createNode("Text"));
+Text202->setString(new CString[1]{"ArtDeco09"}, 1);
+CFontStyle* FontStyle203 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle203->setUSE("Style");
+Text202->setFontStyle(*FontStyle203);
+
+Shape199->setGeometry(Text202);
+
+Anchor198->addChildren(*Shape199);
+
+Transform197->addChildren(*Anchor198);
+
+Transform191->addChildren(*Transform197);
+
+Group49->addChildren(*Transform191);
+
+CViewpoint* Viewpoint204 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint204->setDEF("View10");
+Viewpoint204->setDescription("ArtDeco10");
+Viewpoint204->setPosition(new float[3]{2.25,2.25,3});
+Group49->addChildren(*Viewpoint204);
+
+CTransform* Transform205 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform205->setTranslation(new float[3]{2.25,2.25,0});
+CAnchor* Anchor206 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor206->setDescription("ArtDeco10 view");
+Anchor206->setUrl(new CString[1]{"#View10"}, 1);
+CShape* Shape207 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance208 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance209 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance209->setName("ArtDeco10");
+Appearance208->setMaterial(*ProtoInstance209);
+
+Shape207->setAppearance(*Appearance208);
+
+CSphere* Sphere210 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere210->setUSE("Ball");
+Shape207->setGeometry(Sphere210);
+
+Anchor206->addChildren(*Shape207);
+
+Transform205->addChildren(*Anchor206);
+
+CTransform* Transform211 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform211->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor212 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor212->setDescription("ArtDeco10");
+Anchor212->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10"}, 2);
+Anchor212->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape213 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance214 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material215 = (CMaterial *)(m_pScene.createNode("Material"));
+Material215->setUSE("TextMat");
+Appearance214->setMaterial(*Material215);
+
+Shape213->setAppearance(*Appearance214);
+
+CText* Text216 = (CText *)(m_pScene.createNode("Text"));
+Text216->setString(new CString[1]{"ArtDeco10"}, 1);
+CFontStyle* FontStyle217 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle217->setUSE("Style");
+Text216->setFontStyle(*FontStyle217);
+
+Shape213->setGeometry(Text216);
+
+Anchor212->addChildren(*Shape213);
+
+Transform211->addChildren(*Anchor212);
+
+Transform205->addChildren(*Transform211);
+
+Group49->addChildren(*Transform205);
+
+CViewpoint* Viewpoint218 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint218->setDEF("View11");
+Viewpoint218->setDescription("ArtDeco11");
+Viewpoint218->setPosition(new float[3]{3.75,2.25,3});
+Group49->addChildren(*Viewpoint218);
+
+CTransform* Transform219 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform219->setTranslation(new float[3]{3.75,2.25,0});
+CAnchor* Anchor220 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor220->setDescription("ArtDeco11 view");
+Anchor220->setUrl(new CString[1]{"#View11"}, 1);
+CShape* Shape221 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance222 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance223 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance223->setName("ArtDeco11");
+Appearance222->setMaterial(*ProtoInstance223);
+
+Shape221->setAppearance(*Appearance222);
+
+CSphere* Sphere224 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere224->setUSE("Ball");
+Shape221->setGeometry(Sphere224);
+
+Anchor220->addChildren(*Shape221);
+
+Transform219->addChildren(*Anchor220);
+
+CTransform* Transform225 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform225->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor226 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor226->setDescription("ArtDeco11");
+Anchor226->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11"}, 2);
+Anchor226->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape227 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance228 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material229 = (CMaterial *)(m_pScene.createNode("Material"));
+Material229->setUSE("TextMat");
+Appearance228->setMaterial(*Material229);
+
+Shape227->setAppearance(*Appearance228);
+
+CText* Text230 = (CText *)(m_pScene.createNode("Text"));
+Text230->setString(new CString[1]{"ArtDeco11"}, 1);
+CFontStyle* FontStyle231 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle231->setUSE("Style");
+Text230->setFontStyle(*FontStyle231);
+
+Shape227->setGeometry(Text230);
+
+Anchor226->addChildren(*Shape227);
+
+Transform225->addChildren(*Anchor226);
+
+Transform219->addChildren(*Transform225);
+
+Group49->addChildren(*Transform219);
+
+CViewpoint* Viewpoint232 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint232->setDEF("View12");
+Viewpoint232->setDescription("ArtDeco12");
+Viewpoint232->setPosition(new float[3]{-3.75,0.75,3});
+Group49->addChildren(*Viewpoint232);
+
+CTransform* Transform233 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform233->setTranslation(new float[3]{-3.75,0.75,0});
+CAnchor* Anchor234 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor234->setDescription("ArtDeco12 view");
+Anchor234->setUrl(new CString[1]{"#View12"}, 1);
+CShape* Shape235 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance236 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance237 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance237->setName("ArtDeco12");
+Appearance236->setMaterial(*ProtoInstance237);
+
+Shape235->setAppearance(*Appearance236);
+
+CSphere* Sphere238 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere238->setUSE("Ball");
+Shape235->setGeometry(Sphere238);
+
+Anchor234->addChildren(*Shape235);
+
+Transform233->addChildren(*Anchor234);
+
+CTransform* Transform239 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform239->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor240 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor240->setDescription("ArtDeco12");
+Anchor240->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12"}, 2);
+Anchor240->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape241 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance242 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material243 = (CMaterial *)(m_pScene.createNode("Material"));
+Material243->setUSE("TextMat");
+Appearance242->setMaterial(*Material243);
+
+Shape241->setAppearance(*Appearance242);
+
+CText* Text244 = (CText *)(m_pScene.createNode("Text"));
+Text244->setString(new CString[1]{"ArtDeco12"}, 1);
+CFontStyle* FontStyle245 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle245->setUSE("Style");
+Text244->setFontStyle(*FontStyle245);
+
+Shape241->setGeometry(Text244);
+
+Anchor240->addChildren(*Shape241);
+
+Transform239->addChildren(*Anchor240);
+
+Transform233->addChildren(*Transform239);
+
+Group49->addChildren(*Transform233);
+
+CViewpoint* Viewpoint246 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint246->setDEF("View13");
+Viewpoint246->setDescription("ArtDeco13");
+Viewpoint246->setPosition(new float[3]{-2.25,0.75,3});
+Group49->addChildren(*Viewpoint246);
+
+CTransform* Transform247 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform247->setTranslation(new float[3]{-2.25,0.75,0});
+CAnchor* Anchor248 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor248->setDescription("ArtDeco13 view");
+Anchor248->setUrl(new CString[1]{"#View13"}, 1);
+CShape* Shape249 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance250 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance251 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance251->setName("ArtDeco13");
+Appearance250->setMaterial(*ProtoInstance251);
+
+Shape249->setAppearance(*Appearance250);
+
+CSphere* Sphere252 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere252->setUSE("Ball");
+Shape249->setGeometry(Sphere252);
+
+Anchor248->addChildren(*Shape249);
+
+Transform247->addChildren(*Anchor248);
+
+CTransform* Transform253 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform253->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor254 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor254->setDescription("ArtDeco13");
+Anchor254->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco3","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco13"}, 2);
+Anchor254->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape255 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance256 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material257 = (CMaterial *)(m_pScene.createNode("Material"));
+Material257->setUSE("TextMat");
+Appearance256->setMaterial(*Material257);
+
+Shape255->setAppearance(*Appearance256);
+
+CText* Text258 = (CText *)(m_pScene.createNode("Text"));
+Text258->setString(new CString[1]{"ArtDeco13"}, 1);
+CFontStyle* FontStyle259 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle259->setUSE("Style");
+Text258->setFontStyle(*FontStyle259);
+
+Shape255->setGeometry(Text258);
+
+Anchor254->addChildren(*Shape255);
+
+Transform253->addChildren(*Anchor254);
+
+Transform247->addChildren(*Transform253);
+
+Group49->addChildren(*Transform247);
+
+CViewpoint* Viewpoint260 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint260->setDEF("View14");
+Viewpoint260->setDescription("ArtDeco14");
+Viewpoint260->setPosition(new float[3]{-0.75,0.75,3});
+Group49->addChildren(*Viewpoint260);
+
+CTransform* Transform261 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform261->setTranslation(new float[3]{-0.75,0.75,0});
+CAnchor* Anchor262 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor262->setDescription("ArtDeco14 view");
+Anchor262->setUrl(new CString[1]{"#View14"}, 1);
+CShape* Shape263 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance264 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance265 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance265->setName("ArtDeco14");
+Appearance264->setMaterial(*ProtoInstance265);
+
+Shape263->setAppearance(*Appearance264);
+
+CSphere* Sphere266 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere266->setUSE("Ball");
+Shape263->setGeometry(Sphere266);
+
+Anchor262->addChildren(*Shape263);
+
+Transform261->addChildren(*Anchor262);
+
+CTransform* Transform267 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform267->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor268 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor268->setDescription("ArtDeco14");
+Anchor268->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco4","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco14"}, 2);
+Anchor268->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape269 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance270 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material271 = (CMaterial *)(m_pScene.createNode("Material"));
+Material271->setUSE("TextMat");
+Appearance270->setMaterial(*Material271);
+
+Shape269->setAppearance(*Appearance270);
+
+CText* Text272 = (CText *)(m_pScene.createNode("Text"));
+Text272->setString(new CString[1]{"ArtDeco14"}, 1);
+CFontStyle* FontStyle273 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle273->setUSE("Style");
+Text272->setFontStyle(*FontStyle273);
+
+Shape269->setGeometry(Text272);
+
+Anchor268->addChildren(*Shape269);
+
+Transform267->addChildren(*Anchor268);
+
+Transform261->addChildren(*Transform267);
+
+Group49->addChildren(*Transform261);
+
+CViewpoint* Viewpoint274 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint274->setDEF("View15");
+Viewpoint274->setDescription("ArtDeco15");
+Viewpoint274->setPosition(new float[3]{0.75,0.75,3});
+Group49->addChildren(*Viewpoint274);
+
+CTransform* Transform275 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform275->setTranslation(new float[3]{0.75,0.75,0});
+CAnchor* Anchor276 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor276->setDescription("ArtDeco15 view");
+Anchor276->setUrl(new CString[1]{"#View15"}, 1);
+CShape* Shape277 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance278 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance279 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance279->setName("ArtDeco15");
+Appearance278->setMaterial(*ProtoInstance279);
+
+Shape277->setAppearance(*Appearance278);
+
+CSphere* Sphere280 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere280->setUSE("Ball");
+Shape277->setGeometry(Sphere280);
+
+Anchor276->addChildren(*Shape277);
+
+Transform275->addChildren(*Anchor276);
+
+CTransform* Transform281 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform281->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor282 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor282->setDescription("ArtDeco15");
+Anchor282->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco5","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco15"}, 2);
+Anchor282->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape283 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance284 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material285 = (CMaterial *)(m_pScene.createNode("Material"));
+Material285->setUSE("TextMat");
+Appearance284->setMaterial(*Material285);
+
+Shape283->setAppearance(*Appearance284);
+
+CText* Text286 = (CText *)(m_pScene.createNode("Text"));
+Text286->setString(new CString[1]{"ArtDeco15"}, 1);
+CFontStyle* FontStyle287 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle287->setUSE("Style");
+Text286->setFontStyle(*FontStyle287);
+
+Shape283->setGeometry(Text286);
+
+Anchor282->addChildren(*Shape283);
+
+Transform281->addChildren(*Anchor282);
+
+Transform275->addChildren(*Transform281);
+
+Group49->addChildren(*Transform275);
+
+CViewpoint* Viewpoint288 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint288->setDEF("View16");
+Viewpoint288->setDescription("ArtDeco16");
+Viewpoint288->setPosition(new float[3]{2.25,0.75,3});
+Group49->addChildren(*Viewpoint288);
+
+CTransform* Transform289 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform289->setTranslation(new float[3]{2.25,0.75,0});
+CAnchor* Anchor290 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor290->setDescription("ArtDeco16 view");
+Anchor290->setUrl(new CString[1]{"#View16"}, 1);
+CShape* Shape291 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance292 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance293 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance293->setName("ArtDeco16");
+Appearance292->setMaterial(*ProtoInstance293);
+
+Shape291->setAppearance(*Appearance292);
+
+CSphere* Sphere294 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere294->setUSE("Ball");
+Shape291->setGeometry(Sphere294);
+
+Anchor290->addChildren(*Shape291);
+
+Transform289->addChildren(*Anchor290);
+
+CTransform* Transform295 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform295->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor296 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor296->setDescription("ArtDeco16");
+Anchor296->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16"}, 2);
+Anchor296->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape297 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance298 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material299 = (CMaterial *)(m_pScene.createNode("Material"));
+Material299->setUSE("TextMat");
+Appearance298->setMaterial(*Material299);
+
+Shape297->setAppearance(*Appearance298);
+
+CText* Text300 = (CText *)(m_pScene.createNode("Text"));
+Text300->setString(new CString[1]{"ArtDeco16"}, 1);
+CFontStyle* FontStyle301 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle301->setUSE("Style");
+Text300->setFontStyle(*FontStyle301);
+
+Shape297->setGeometry(Text300);
+
+Anchor296->addChildren(*Shape297);
+
+Transform295->addChildren(*Anchor296);
+
+Transform289->addChildren(*Transform295);
+
+Group49->addChildren(*Transform289);
+
+CViewpoint* Viewpoint302 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint302->setDEF("View17");
+Viewpoint302->setDescription("ArtDeco17");
+Viewpoint302->setPosition(new float[3]{3.75,0.75,3});
+Group49->addChildren(*Viewpoint302);
+
+CTransform* Transform303 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform303->setTranslation(new float[3]{3.75,0.75,0});
+CAnchor* Anchor304 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor304->setDescription("ArtDeco17 view");
+Anchor304->setUrl(new CString[1]{"#View17"}, 1);
+CShape* Shape305 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance306 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance307 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance307->setName("ArtDeco17");
+Appearance306->setMaterial(*ProtoInstance307);
+
+Shape305->setAppearance(*Appearance306);
+
+CSphere* Sphere308 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere308->setUSE("Ball");
+Shape305->setGeometry(Sphere308);
+
+Anchor304->addChildren(*Shape305);
+
+Transform303->addChildren(*Anchor304);
+
+CTransform* Transform309 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform309->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor310 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor310->setDescription("ArtDeco17");
+Anchor310->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco7","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco17"}, 2);
+Anchor310->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape311 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance312 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material313 = (CMaterial *)(m_pScene.createNode("Material"));
+Material313->setUSE("TextMat");
+Appearance312->setMaterial(*Material313);
+
+Shape311->setAppearance(*Appearance312);
+
+CText* Text314 = (CText *)(m_pScene.createNode("Text"));
+Text314->setString(new CString[1]{"ArtDeco17"}, 1);
+CFontStyle* FontStyle315 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle315->setUSE("Style");
+Text314->setFontStyle(*FontStyle315);
+
+Shape311->setGeometry(Text314);
+
+Anchor310->addChildren(*Shape311);
+
+Transform309->addChildren(*Anchor310);
+
+Transform303->addChildren(*Transform309);
+
+Group49->addChildren(*Transform303);
+
+CViewpoint* Viewpoint316 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint316->setDEF("View18");
+Viewpoint316->setDescription("ArtDeco18");
+Viewpoint316->setPosition(new float[3]{-3.75,-0.75,3});
+Group49->addChildren(*Viewpoint316);
+
+CTransform* Transform317 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform317->setTranslation(new float[3]{-3.75,-0.75,0});
+CAnchor* Anchor318 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor318->setDescription("ArtDeco18 view");
+Anchor318->setUrl(new CString[1]{"#View18"}, 1);
+CShape* Shape319 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance320 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance321 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance321->setName("ArtDeco18");
+Appearance320->setMaterial(*ProtoInstance321);
+
+Shape319->setAppearance(*Appearance320);
+
+CSphere* Sphere322 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere322->setUSE("Ball");
+Shape319->setGeometry(Sphere322);
+
+Anchor318->addChildren(*Shape319);
+
+Transform317->addChildren(*Anchor318);
+
+CTransform* Transform323 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform323->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor324 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor324->setDescription("ArtDeco18");
+Anchor324->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18"}, 2);
+Anchor324->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape325 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance326 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material327 = (CMaterial *)(m_pScene.createNode("Material"));
+Material327->setUSE("TextMat");
+Appearance326->setMaterial(*Material327);
+
+Shape325->setAppearance(*Appearance326);
+
+CText* Text328 = (CText *)(m_pScene.createNode("Text"));
+Text328->setString(new CString[1]{"ArtDeco18"}, 1);
+CFontStyle* FontStyle329 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle329->setUSE("Style");
+Text328->setFontStyle(*FontStyle329);
+
+Shape325->setGeometry(Text328);
+
+Anchor324->addChildren(*Shape325);
+
+Transform323->addChildren(*Anchor324);
+
+Transform317->addChildren(*Transform323);
+
+Group49->addChildren(*Transform317);
+
+CViewpoint* Viewpoint330 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint330->setDEF("View19");
+Viewpoint330->setDescription("ArtDeco19");
+Viewpoint330->setPosition(new float[3]{-2.25,-0.75,3});
+Group49->addChildren(*Viewpoint330);
+
+CTransform* Transform331 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform331->setTranslation(new float[3]{-2.25,-0.75,0});
+CAnchor* Anchor332 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor332->setDescription("ArtDeco19 view");
+Anchor332->setUrl(new CString[1]{"#View19"}, 1);
+CShape* Shape333 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance334 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance335 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance335->setName("ArtDeco19");
+Appearance334->setMaterial(*ProtoInstance335);
+
+Shape333->setAppearance(*Appearance334);
+
+CSphere* Sphere336 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere336->setUSE("Ball");
+Shape333->setGeometry(Sphere336);
+
+Anchor332->addChildren(*Shape333);
+
+Transform331->addChildren(*Anchor332);
+
+CTransform* Transform337 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform337->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor338 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor338->setDescription("ArtDeco19");
+Anchor338->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco9","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco19"}, 2);
+Anchor338->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape339 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance340 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material341 = (CMaterial *)(m_pScene.createNode("Material"));
+Material341->setUSE("TextMat");
+Appearance340->setMaterial(*Material341);
+
+Shape339->setAppearance(*Appearance340);
+
+CText* Text342 = (CText *)(m_pScene.createNode("Text"));
+Text342->setString(new CString[1]{"ArtDeco19"}, 1);
+CFontStyle* FontStyle343 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle343->setUSE("Style");
+Text342->setFontStyle(*FontStyle343);
+
+Shape339->setGeometry(Text342);
+
+Anchor338->addChildren(*Shape339);
+
+Transform337->addChildren(*Anchor338);
+
+Transform331->addChildren(*Transform337);
+
+Group49->addChildren(*Transform331);
+
+CViewpoint* Viewpoint344 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint344->setDEF("View20");
+Viewpoint344->setDescription("ArtDeco20");
+Viewpoint344->setPosition(new float[3]{-0.75,-0.75,3});
+Group49->addChildren(*Viewpoint344);
+
+CTransform* Transform345 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform345->setTranslation(new float[3]{-0.75,-0.75,0});
+CAnchor* Anchor346 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor346->setDescription("ArtDeco20 view");
+Anchor346->setUrl(new CString[1]{"#View20"}, 1);
+CShape* Shape347 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance348 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance349 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance349->setName("ArtDeco20");
+Appearance348->setMaterial(*ProtoInstance349);
+
+Shape347->setAppearance(*Appearance348);
+
+CSphere* Sphere350 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere350->setUSE("Ball");
+Shape347->setGeometry(Sphere350);
+
+Anchor346->addChildren(*Shape347);
+
+Transform345->addChildren(*Anchor346);
+
+CTransform* Transform351 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform351->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor352 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor352->setDescription("ArtDeco20");
+Anchor352->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20"}, 2);
+Anchor352->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape353 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance354 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material355 = (CMaterial *)(m_pScene.createNode("Material"));
+Material355->setUSE("TextMat");
+Appearance354->setMaterial(*Material355);
+
+Shape353->setAppearance(*Appearance354);
+
+CText* Text356 = (CText *)(m_pScene.createNode("Text"));
+Text356->setString(new CString[1]{"ArtDeco20"}, 1);
+CFontStyle* FontStyle357 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle357->setUSE("Style");
+Text356->setFontStyle(*FontStyle357);
+
+Shape353->setGeometry(Text356);
+
+Anchor352->addChildren(*Shape353);
+
+Transform351->addChildren(*Anchor352);
+
+Transform345->addChildren(*Transform351);
+
+Group49->addChildren(*Transform345);
+
+CViewpoint* Viewpoint358 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint358->setDEF("View21");
+Viewpoint358->setDescription("ArtDeco21");
+Viewpoint358->setPosition(new float[3]{0.75,-0.75,3});
+Group49->addChildren(*Viewpoint358);
+
+CTransform* Transform359 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform359->setTranslation(new float[3]{0.75,-0.75,0});
+CAnchor* Anchor360 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor360->setDescription("ArtDeco21 view");
+Anchor360->setUrl(new CString[1]{"#View21"}, 1);
+CShape* Shape361 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance362 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance363 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance363->setName("ArtDeco21");
+Appearance362->setMaterial(*ProtoInstance363);
+
+Shape361->setAppearance(*Appearance362);
+
+CSphere* Sphere364 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere364->setUSE("Ball");
+Shape361->setGeometry(Sphere364);
+
+Anchor360->addChildren(*Shape361);
+
+Transform359->addChildren(*Anchor360);
+
+CTransform* Transform365 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform365->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor366 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor366->setDescription("ArtDeco21");
+Anchor366->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21"}, 2);
+Anchor366->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape367 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance368 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material369 = (CMaterial *)(m_pScene.createNode("Material"));
+Material369->setUSE("TextMat");
+Appearance368->setMaterial(*Material369);
+
+Shape367->setAppearance(*Appearance368);
+
+CText* Text370 = (CText *)(m_pScene.createNode("Text"));
+Text370->setString(new CString[1]{"ArtDeco21"}, 1);
+CFontStyle* FontStyle371 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle371->setUSE("Style");
+Text370->setFontStyle(*FontStyle371);
+
+Shape367->setGeometry(Text370);
+
+Anchor366->addChildren(*Shape367);
+
+Transform365->addChildren(*Anchor366);
+
+Transform359->addChildren(*Transform365);
+
+Group49->addChildren(*Transform359);
+
+CViewpoint* Viewpoint372 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint372->setDEF("View22");
+Viewpoint372->setDescription("ArtDeco22");
+Viewpoint372->setPosition(new float[3]{2.25,-0.75,3});
+Group49->addChildren(*Viewpoint372);
+
+CTransform* Transform373 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform373->setTranslation(new float[3]{2.25,-0.75,0});
+CAnchor* Anchor374 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor374->setDescription("ArtDeco22 view");
+Anchor374->setUrl(new CString[1]{"#View22"}, 1);
+CShape* Shape375 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance376 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance377 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance377->setName("ArtDeco22");
+Appearance376->setMaterial(*ProtoInstance377);
+
+Shape375->setAppearance(*Appearance376);
+
+CSphere* Sphere378 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere378->setUSE("Ball");
+Shape375->setGeometry(Sphere378);
+
+Anchor374->addChildren(*Shape375);
+
+Transform373->addChildren(*Anchor374);
+
+CTransform* Transform379 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform379->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor380 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor380->setDescription("ArtDeco22");
+Anchor380->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22"}, 2);
+Anchor380->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape381 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance382 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material383 = (CMaterial *)(m_pScene.createNode("Material"));
+Material383->setUSE("TextMat");
+Appearance382->setMaterial(*Material383);
+
+Shape381->setAppearance(*Appearance382);
+
+CText* Text384 = (CText *)(m_pScene.createNode("Text"));
+Text384->setString(new CString[1]{"ArtDeco22"}, 1);
+CFontStyle* FontStyle385 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle385->setUSE("Style");
+Text384->setFontStyle(*FontStyle385);
+
+Shape381->setGeometry(Text384);
+
+Anchor380->addChildren(*Shape381);
+
+Transform379->addChildren(*Anchor380);
+
+Transform373->addChildren(*Transform379);
+
+Group49->addChildren(*Transform373);
+
+CViewpoint* Viewpoint386 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint386->setDEF("View23");
+Viewpoint386->setDescription("ArtDeco23");
+Viewpoint386->setPosition(new float[3]{3.75,-0.75,3});
+Group49->addChildren(*Viewpoint386);
+
+CTransform* Transform387 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform387->setTranslation(new float[3]{3.75,-0.75,0});
+CAnchor* Anchor388 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor388->setDescription("ArtDeco23 view");
+Anchor388->setUrl(new CString[1]{"#View23"}, 1);
+CShape* Shape389 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance390 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance391 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance391->setName("ArtDeco23");
+Appearance390->setMaterial(*ProtoInstance391);
+
+Shape389->setAppearance(*Appearance390);
+
+CSphere* Sphere392 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere392->setUSE("Ball");
+Shape389->setGeometry(Sphere392);
+
+Anchor388->addChildren(*Shape389);
+
+Transform387->addChildren(*Anchor388);
+
+CTransform* Transform393 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform393->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor394 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor394->setDescription("ArtDeco23");
+Anchor394->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23"}, 2);
+Anchor394->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape395 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance396 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material397 = (CMaterial *)(m_pScene.createNode("Material"));
+Material397->setUSE("TextMat");
+Appearance396->setMaterial(*Material397);
+
+Shape395->setAppearance(*Appearance396);
+
+CText* Text398 = (CText *)(m_pScene.createNode("Text"));
+Text398->setString(new CString[1]{"ArtDeco23"}, 1);
+CFontStyle* FontStyle399 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle399->setUSE("Style");
+Text398->setFontStyle(*FontStyle399);
+
+Shape395->setGeometry(Text398);
+
+Anchor394->addChildren(*Shape395);
+
+Transform393->addChildren(*Anchor394);
+
+Transform387->addChildren(*Transform393);
+
+Group49->addChildren(*Transform387);
+
+CViewpoint* Viewpoint400 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint400->setDEF("View24");
+Viewpoint400->setDescription("ArtDeco24");
+Viewpoint400->setPosition(new float[3]{-3.75,-2.25,3});
+Group49->addChildren(*Viewpoint400);
+
+CTransform* Transform401 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform401->setTranslation(new float[3]{-3.75,-2.25,0});
+CAnchor* Anchor402 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor402->setDescription("ArtDeco24 view");
+Anchor402->setUrl(new CString[1]{"#View24"}, 1);
+CShape* Shape403 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance404 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance405 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance405->setName("ArtDeco24");
+Appearance404->setMaterial(*ProtoInstance405);
+
+Shape403->setAppearance(*Appearance404);
+
+CSphere* Sphere406 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere406->setUSE("Ball");
+Shape403->setGeometry(Sphere406);
+
+Anchor402->addChildren(*Shape403);
+
+Transform401->addChildren(*Anchor402);
+
+CTransform* Transform407 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform407->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor408 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor408->setDescription("ArtDeco24");
+Anchor408->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24"}, 2);
+Anchor408->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape409 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance410 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material411 = (CMaterial *)(m_pScene.createNode("Material"));
+Material411->setUSE("TextMat");
+Appearance410->setMaterial(*Material411);
+
+Shape409->setAppearance(*Appearance410);
+
+CText* Text412 = (CText *)(m_pScene.createNode("Text"));
+Text412->setString(new CString[1]{"ArtDeco24"}, 1);
+CFontStyle* FontStyle413 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle413->setUSE("Style");
+Text412->setFontStyle(*FontStyle413);
+
+Shape409->setGeometry(Text412);
+
+Anchor408->addChildren(*Shape409);
+
+Transform407->addChildren(*Anchor408);
+
+Transform401->addChildren(*Transform407);
+
+Group49->addChildren(*Transform401);
+
+CViewpoint* Viewpoint414 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint414->setDEF("View25");
+Viewpoint414->setDescription("ArtDeco25");
+Viewpoint414->setPosition(new float[3]{-2.25,-2.25,3});
+Group49->addChildren(*Viewpoint414);
+
+CTransform* Transform415 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform415->setTranslation(new float[3]{-2.25,-2.25,0});
+CAnchor* Anchor416 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor416->setDescription("ArtDeco25 view");
+Anchor416->setUrl(new CString[1]{"#View25"}, 1);
+CShape* Shape417 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance418 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance419 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance419->setName("ArtDeco25");
+Appearance418->setMaterial(*ProtoInstance419);
+
+Shape417->setAppearance(*Appearance418);
+
+CSphere* Sphere420 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere420->setUSE("Ball");
+Shape417->setGeometry(Sphere420);
+
+Anchor416->addChildren(*Shape417);
+
+Transform415->addChildren(*Anchor416);
+
+CTransform* Transform421 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform421->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor422 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor422->setDescription("ArtDeco25");
+Anchor422->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25"}, 2);
+Anchor422->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape423 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance424 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material425 = (CMaterial *)(m_pScene.createNode("Material"));
+Material425->setUSE("TextMat");
+Appearance424->setMaterial(*Material425);
+
+Shape423->setAppearance(*Appearance424);
+
+CText* Text426 = (CText *)(m_pScene.createNode("Text"));
+Text426->setString(new CString[1]{"ArtDeco25"}, 1);
+CFontStyle* FontStyle427 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle427->setUSE("Style");
+Text426->setFontStyle(*FontStyle427);
+
+Shape423->setGeometry(Text426);
+
+Anchor422->addChildren(*Shape423);
+
+Transform421->addChildren(*Anchor422);
+
+Transform415->addChildren(*Transform421);
+
+Group49->addChildren(*Transform415);
+
+CViewpoint* Viewpoint428 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint428->setDEF("View26");
+Viewpoint428->setDescription("ArtDeco26");
+Viewpoint428->setPosition(new float[3]{-0.75,-2.25,3});
+Group49->addChildren(*Viewpoint428);
+
+CTransform* Transform429 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform429->setTranslation(new float[3]{-0.75,-2.25,0});
+CAnchor* Anchor430 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor430->setDescription("ArtDeco26 view");
+Anchor430->setUrl(new CString[1]{"#View26"}, 1);
+CShape* Shape431 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance432 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance433 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance433->setName("ArtDeco26");
+Appearance432->setMaterial(*ProtoInstance433);
+
+Shape431->setAppearance(*Appearance432);
+
+CSphere* Sphere434 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere434->setUSE("Ball");
+Shape431->setGeometry(Sphere434);
+
+Anchor430->addChildren(*Shape431);
+
+Transform429->addChildren(*Anchor430);
+
+CTransform* Transform435 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform435->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor436 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor436->setDescription("ArtDeco26");
+Anchor436->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26"}, 2);
+Anchor436->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape437 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance438 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material439 = (CMaterial *)(m_pScene.createNode("Material"));
+Material439->setUSE("TextMat");
+Appearance438->setMaterial(*Material439);
+
+Shape437->setAppearance(*Appearance438);
+
+CText* Text440 = (CText *)(m_pScene.createNode("Text"));
+Text440->setString(new CString[1]{"ArtDeco26"}, 1);
+CFontStyle* FontStyle441 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle441->setUSE("Style");
+Text440->setFontStyle(*FontStyle441);
+
+Shape437->setGeometry(Text440);
+
+Anchor436->addChildren(*Shape437);
+
+Transform435->addChildren(*Anchor436);
+
+Transform429->addChildren(*Transform435);
+
+Group49->addChildren(*Transform429);
+
+CViewpoint* Viewpoint442 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint442->setDEF("View27");
+Viewpoint442->setDescription("ArtDeco27");
+Viewpoint442->setPosition(new float[3]{0.75,-2.25,3});
+Group49->addChildren(*Viewpoint442);
+
+CTransform* Transform443 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform443->setTranslation(new float[3]{0.75,-2.25,0});
+CAnchor* Anchor444 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor444->setDescription("ArtDeco27 view");
+Anchor444->setUrl(new CString[1]{"#View27"}, 1);
+CShape* Shape445 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance446 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance447 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance447->setName("ArtDeco27");
+Appearance446->setMaterial(*ProtoInstance447);
+
+Shape445->setAppearance(*Appearance446);
+
+CSphere* Sphere448 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere448->setUSE("Ball");
+Shape445->setGeometry(Sphere448);
+
+Anchor444->addChildren(*Shape445);
+
+Transform443->addChildren(*Anchor444);
+
+CTransform* Transform449 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform449->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor450 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor450->setDescription("ArtDeco27");
+Anchor450->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27"}, 2);
+Anchor450->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape451 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance452 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material453 = (CMaterial *)(m_pScene.createNode("Material"));
+Material453->setUSE("TextMat");
+Appearance452->setMaterial(*Material453);
+
+Shape451->setAppearance(*Appearance452);
+
+CText* Text454 = (CText *)(m_pScene.createNode("Text"));
+Text454->setString(new CString[1]{"ArtDeco27"}, 1);
+CFontStyle* FontStyle455 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle455->setUSE("Style");
+Text454->setFontStyle(*FontStyle455);
+
+Shape451->setGeometry(Text454);
+
+Anchor450->addChildren(*Shape451);
+
+Transform449->addChildren(*Anchor450);
+
+Transform443->addChildren(*Transform449);
+
+Group49->addChildren(*Transform443);
+
+CViewpoint* Viewpoint456 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint456->setDEF("View28");
+Viewpoint456->setDescription("ArtDeco28");
+Viewpoint456->setPosition(new float[3]{2.25,-2.25,3});
+Group49->addChildren(*Viewpoint456);
+
+CTransform* Transform457 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform457->setTranslation(new float[3]{2.25,-2.25,0});
+CAnchor* Anchor458 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor458->setDescription("ArtDeco28 view");
+Anchor458->setUrl(new CString[1]{"#View28"}, 1);
+CShape* Shape459 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance460 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance461 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance461->setName("ArtDeco28");
+Appearance460->setMaterial(*ProtoInstance461);
+
+Shape459->setAppearance(*Appearance460);
+
+CSphere* Sphere462 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere462->setUSE("Ball");
+Shape459->setGeometry(Sphere462);
+
+Anchor458->addChildren(*Shape459);
+
+Transform457->addChildren(*Anchor458);
+
+CTransform* Transform463 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform463->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor464 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor464->setDescription("ArtDeco28");
+Anchor464->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28"}, 2);
+Anchor464->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape465 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance466 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material467 = (CMaterial *)(m_pScene.createNode("Material"));
+Material467->setUSE("TextMat");
+Appearance466->setMaterial(*Material467);
+
+Shape465->setAppearance(*Appearance466);
+
+CText* Text468 = (CText *)(m_pScene.createNode("Text"));
+Text468->setString(new CString[1]{"ArtDeco28"}, 1);
+CFontStyle* FontStyle469 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle469->setUSE("Style");
+Text468->setFontStyle(*FontStyle469);
+
+Shape465->setGeometry(Text468);
+
+Anchor464->addChildren(*Shape465);
+
+Transform463->addChildren(*Anchor464);
+
+Transform457->addChildren(*Transform463);
+
+Group49->addChildren(*Transform457);
+
+CViewpoint* Viewpoint470 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint470->setDEF("View29");
+Viewpoint470->setDescription("ArtDeco29");
+Viewpoint470->setPosition(new float[3]{3.75,-2.25,3});
+Group49->addChildren(*Viewpoint470);
+
+CTransform* Transform471 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform471->setTranslation(new float[3]{3.75,-2.25,0});
+CAnchor* Anchor472 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor472->setDescription("ArtDeco29 view");
+Anchor472->setUrl(new CString[1]{"#View29"}, 1);
+CShape* Shape473 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance474 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance475 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance475->setName("ArtDeco29");
+Appearance474->setMaterial(*ProtoInstance475);
+
+Shape473->setAppearance(*Appearance474);
+
+CSphere* Sphere476 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere476->setUSE("Ball");
+Shape473->setGeometry(Sphere476);
+
+Anchor472->addChildren(*Shape473);
+
+Transform471->addChildren(*Anchor472);
+
+CTransform* Transform477 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform477->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor478 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor478->setDescription("ArtDeco29");
+Anchor478->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29"}, 2);
+Anchor478->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape479 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance480 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material481 = (CMaterial *)(m_pScene.createNode("Material"));
+Material481->setUSE("TextMat");
+Appearance480->setMaterial(*Material481);
+
+Shape479->setAppearance(*Appearance480);
+
+CText* Text482 = (CText *)(m_pScene.createNode("Text"));
+Text482->setString(new CString[1]{"ArtDeco29"}, 1);
+CFontStyle* FontStyle483 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle483->setUSE("Style");
+Text482->setFontStyle(*FontStyle483);
+
+Shape479->setGeometry(Text482);
+
+Anchor478->addChildren(*Shape479);
+
+Transform477->addChildren(*Anchor478);
+
+Transform471->addChildren(*Transform477);
+
+Group49->addChildren(*Transform471);
+
+CViewpoint* Viewpoint484 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint484->setDEF("View30");
+Viewpoint484->setDescription("ArtDeco30");
+Viewpoint484->setPosition(new float[3]{-3.75,-3.75,3});
+Group49->addChildren(*Viewpoint484);
+
+CTransform* Transform485 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform485->setTranslation(new float[3]{-3.75,-3.75,0});
+CAnchor* Anchor486 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor486->setDescription("ArtDeco30 view");
+Anchor486->setUrl(new CString[1]{"#View30"}, 1);
+CShape* Shape487 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance488 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance489 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance489->setName("ArtDeco30");
+Appearance488->setMaterial(*ProtoInstance489);
+
+Shape487->setAppearance(*Appearance488);
+
+CSphere* Sphere490 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere490->setUSE("Ball");
+Shape487->setGeometry(Sphere490);
+
+Anchor486->addChildren(*Shape487);
+
+Transform485->addChildren(*Anchor486);
+
+CTransform* Transform491 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform491->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor492 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor492->setDescription("ArtDeco30");
+Anchor492->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30"}, 2);
+Anchor492->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape493 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance494 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material495 = (CMaterial *)(m_pScene.createNode("Material"));
+Material495->setUSE("TextMat");
+Appearance494->setMaterial(*Material495);
+
+Shape493->setAppearance(*Appearance494);
+
+CText* Text496 = (CText *)(m_pScene.createNode("Text"));
+Text496->setString(new CString[1]{"ArtDeco30"}, 1);
+CFontStyle* FontStyle497 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle497->setUSE("Style");
+Text496->setFontStyle(*FontStyle497);
+
+Shape493->setGeometry(Text496);
+
+Anchor492->addChildren(*Shape493);
+
+Transform491->addChildren(*Anchor492);
+
+Transform485->addChildren(*Transform491);
+
+Group49->addChildren(*Transform485);
+
+CViewpoint* Viewpoint498 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint498->setDEF("View31");
+Viewpoint498->setDescription("ArtDeco31");
+Viewpoint498->setPosition(new float[3]{-2.25,-3.75,3});
+Group49->addChildren(*Viewpoint498);
+
+CTransform* Transform499 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform499->setTranslation(new float[3]{-2.25,-3.75,0});
+CAnchor* Anchor500 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor500->setDescription("ArtDeco31 view");
+Anchor500->setUrl(new CString[1]{"#View31"}, 1);
+CShape* Shape501 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance502 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance503 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance503->setName("ArtDeco31");
+Appearance502->setMaterial(*ProtoInstance503);
+
+Shape501->setAppearance(*Appearance502);
+
+CSphere* Sphere504 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere504->setUSE("Ball");
+Shape501->setGeometry(Sphere504);
+
+Anchor500->addChildren(*Shape501);
+
+Transform499->addChildren(*Anchor500);
+
+CTransform* Transform505 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform505->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor506 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor506->setDescription("ArtDeco31");
+Anchor506->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31"}, 2);
+Anchor506->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape507 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance508 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material509 = (CMaterial *)(m_pScene.createNode("Material"));
+Material509->setUSE("TextMat");
+Appearance508->setMaterial(*Material509);
+
+Shape507->setAppearance(*Appearance508);
+
+CText* Text510 = (CText *)(m_pScene.createNode("Text"));
+Text510->setString(new CString[1]{"ArtDeco31"}, 1);
+CFontStyle* FontStyle511 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle511->setUSE("Style");
+Text510->setFontStyle(*FontStyle511);
+
+Shape507->setGeometry(Text510);
+
+Anchor506->addChildren(*Shape507);
+
+Transform505->addChildren(*Anchor506);
+
+Transform499->addChildren(*Transform505);
+
+Group49->addChildren(*Transform499);
+
+CViewpoint* Viewpoint512 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint512->setDEF("View32");
+Viewpoint512->setDescription("ArtDeco32");
+Viewpoint512->setPosition(new float[3]{-0.75,-3.75,3});
+Group49->addChildren(*Viewpoint512);
+
+CTransform* Transform513 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform513->setTranslation(new float[3]{-0.75,-3.75,0});
+CAnchor* Anchor514 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor514->setDescription("ArtDeco32 view");
+Anchor514->setUrl(new CString[1]{"#View32"}, 1);
+CShape* Shape515 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance516 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance517 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance517->setName("ArtDeco32");
+Appearance516->setMaterial(*ProtoInstance517);
+
+Shape515->setAppearance(*Appearance516);
+
+CSphere* Sphere518 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere518->setUSE("Ball");
+Shape515->setGeometry(Sphere518);
+
+Anchor514->addChildren(*Shape515);
+
+Transform513->addChildren(*Anchor514);
+
+CTransform* Transform519 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform519->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor520 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor520->setDescription("ArtDeco32");
+Anchor520->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32"}, 2);
+Anchor520->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape521 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance522 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material523 = (CMaterial *)(m_pScene.createNode("Material"));
+Material523->setUSE("TextMat");
+Appearance522->setMaterial(*Material523);
+
+Shape521->setAppearance(*Appearance522);
+
+CText* Text524 = (CText *)(m_pScene.createNode("Text"));
+Text524->setString(new CString[1]{"ArtDeco32"}, 1);
+CFontStyle* FontStyle525 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle525->setUSE("Style");
+Text524->setFontStyle(*FontStyle525);
+
+Shape521->setGeometry(Text524);
+
+Anchor520->addChildren(*Shape521);
+
+Transform519->addChildren(*Anchor520);
+
+Transform513->addChildren(*Transform519);
+
+Group49->addChildren(*Transform513);
+
+CViewpoint* Viewpoint526 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint526->setDEF("View33");
+Viewpoint526->setDescription("ArtDeco33");
+Viewpoint526->setPosition(new float[3]{0.75,-3.75,3});
+Group49->addChildren(*Viewpoint526);
+
+CTransform* Transform527 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform527->setTranslation(new float[3]{0.75,-3.75,0});
+CAnchor* Anchor528 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor528->setDescription("ArtDeco33 view");
+Anchor528->setUrl(new CString[1]{"#View33"}, 1);
+CShape* Shape529 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance530 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance531 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance531->setName("ArtDeco33");
+Appearance530->setMaterial(*ProtoInstance531);
+
+Shape529->setAppearance(*Appearance530);
+
+CSphere* Sphere532 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere532->setUSE("Ball");
+Shape529->setGeometry(Sphere532);
+
+Anchor528->addChildren(*Shape529);
+
+Transform527->addChildren(*Anchor528);
+
+CTransform* Transform533 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform533->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor534 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor534->setDescription("ArtDeco33");
+Anchor534->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33"}, 2);
+Anchor534->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape535 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance536 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material537 = (CMaterial *)(m_pScene.createNode("Material"));
+Material537->setUSE("TextMat");
+Appearance536->setMaterial(*Material537);
+
+Shape535->setAppearance(*Appearance536);
+
+CText* Text538 = (CText *)(m_pScene.createNode("Text"));
+Text538->setString(new CString[1]{"ArtDeco33"}, 1);
+CFontStyle* FontStyle539 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle539->setUSE("Style");
+Text538->setFontStyle(*FontStyle539);
+
+Shape535->setGeometry(Text538);
+
+Anchor534->addChildren(*Shape535);
+
+Transform533->addChildren(*Anchor534);
+
+Transform527->addChildren(*Transform533);
+
+Group49->addChildren(*Transform527);
+
+CViewpoint* Viewpoint540 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint540->setDEF("View34");
+Viewpoint540->setDescription("ArtDeco34");
+Viewpoint540->setPosition(new float[3]{2.25,-3.75,3});
+Group49->addChildren(*Viewpoint540);
+
+CTransform* Transform541 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform541->setTranslation(new float[3]{2.25,-3.75,0});
+CAnchor* Anchor542 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor542->setDescription("ArtDeco34 view");
+Anchor542->setUrl(new CString[1]{"#View34"}, 1);
+CShape* Shape543 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance544 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CProtoInstance* ProtoInstance545 = (CProtoInstance *)(m_pScene.createNode("ProtoInstance"));
+ProtoInstance545->setName("ArtDeco34");
+Appearance544->setMaterial(*ProtoInstance545);
+
+Shape543->setAppearance(*Appearance544);
+
+CSphere* Sphere546 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere546->setUSE("Ball");
+Shape543->setGeometry(Sphere546);
+
+Anchor542->addChildren(*Shape543);
+
+Transform541->addChildren(*Anchor542);
+
+CTransform* Transform547 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform547->setTranslation(new float[3]{0,0.3,0.5});
+CAnchor* Anchor548 = (CAnchor *)(m_pScene.createNode("Anchor"));
+Anchor548->setDescription("ArtDeco34");
+Anchor548->setUrl(new CString[2]{"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34"}, 2);
+Anchor548->setParameter(new CString[1]{"target=_source"}, 1);
+CShape* Shape549 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance550 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material551 = (CMaterial *)(m_pScene.createNode("Material"));
+Material551->setUSE("TextMat");
+Appearance550->setMaterial(*Material551);
+
+Shape549->setAppearance(*Appearance550);
+
+CText* Text552 = (CText *)(m_pScene.createNode("Text"));
+Text552->setString(new CString[1]{"ArtDeco34"}, 1);
+CFontStyle* FontStyle553 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle553->setUSE("Style");
+Text552->setFontStyle(*FontStyle553);
+
+Shape549->setGeometry(Text552);
+
+Anchor548->addChildren(*Shape549);
+
+Transform547->addChildren(*Anchor548);
+
+Transform541->addChildren(*Transform547);
+
+Group49->addChildren(*Transform541);
+
+group->addChildren(*Group49);
+
+CROUTE* ROUTE554 = new CROUTE();
+ROUTE554->setFromNode("Close_Time");
+ROUTE554->setFromField("fraction_changed");
+ROUTE554->setToNode("Close_Mover");
+ROUTE554->setToField("set_fraction");
+group->addChildren(*ROUTE554);
 
 CROUTE* ROUTE555 = new CROUTE();
-ROUTE555->setFromField("fraction_changed");
-ROUTE555->setFromNode("Close_Time");
-ROUTE555->setToField("set_fraction");
-ROUTE555->setToNode("Close_Mover");
+ROUTE555->setFromNode("Close_Mover");
+ROUTE555->setFromField("value_changed");
+ROUTE555->setToNode("Close_travel");
+ROUTE555->setToField("translation");
 group->addChildren(*ROUTE555);
 
-CROUTE* ROUTE556 = new CROUTE();
-ROUTE556->setFromField("value_changed");
-ROUTE556->setFromNode("Close_Mover");
-ROUTE556->setToField("set_translation");
-ROUTE556->setToNode("Close_travel");
-group->addChildren(*ROUTE556);
-
-X3D0->setScene(*Scene13);
+X3D0->setScene(*Scene12);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

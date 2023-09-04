@@ -63,203 +63,202 @@ ProtoInstance ProtoInstance14 = null;
 ProtoInstance ProtoInstance15 = null;
 ProtoInstance ProtoInstance16 = null;
 ProtoInstance ProtoInstance17 = null;
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
-        .addComponent(new component().setName("Networking").setLevel(2))
-        .addComponent(new component().setName("Core").setLevel(2))
         .addMeta(new meta().setName("title").setContent("t4.x3d"))
         .addMeta(new meta().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/src/main/data/t4.x3d"))
         .addMeta(new meta().setName("generator").setContent("view3dscene, https://castle-engine.io/view3dscene.php"))
         .addMeta(new meta().setName("creator").setContent("Andreas Plesch and John Carlson"))
         .addMeta(new meta().setName("source").setContent("t1.wrl"))
         .addMeta(new meta().setName("description").setContent("Test Case for Proto Expander"))
-        .addMeta(new meta().setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html")))
+        .addComponent(new component().setName("Networking").setLevel(2))
+        .addComponent(new component().setName("Core").setLevel(2)))
       .setScene(new Scene()
-        .addChild(new NavigationInfo().setType("\"EXAMINE\" \"FLY\" \"WALK\"").setSpeed(3f).setAvatarSize(new MFFloat0().getArray()))
-        .addChild(new WorldInfo().setTitle("Arts Mapper"))
-        .addChild(new Viewpoint().setDescription("looking North").setPosition(new float[] {0f,60f,110f}).setOrientation(new float[] {1f,0f,0f,-0.699999988079071f}).setFieldOfView(0.785398125648499f))
         .addChild(new ProtoDeclare().setName("org")
           .setProtoInterface(new ProtoInterface()
-            .addField(new field().setType("SFVec3f").setName("posi").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0"))
-            .addField(new field().setType("SFColor").setName("col").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0")))
+            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("posi"))
+            .addField(new field().setType("SFColor").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("col")))
           .setProtoBody(new ProtoBody()
             .addChild(new Transform()
-              .setIS(new IS()
-                .addConnect(new connect().setNodeField("translation").setProtoField("posi")))
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,1f})
                     .setIS(new IS()
                       .addConnect(new connect().setNodeField("emissiveColor").setProtoField("col")))))
-                .setGeometry(new Sphere().setRadius(5.10000002384186f))))))
+                .setGeometry(new Sphere().setRadius(5.1f)))
+              .setIS(new IS()
+                .addConnect(new connect().setNodeField("translation").setProtoField("posi"))))))
         .addChild(new ProtoDeclare().setName("r")
           .setProtoInterface(new ProtoInterface()
-            .addField(new field().setType("SFVec3f").setName("pos").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0")))
+            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("pos")))
           .setProtoBody(new ProtoBody()
             .addChild(ProtoInstance0 = new ProtoInstance().setName("org")
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("posi").setProtoField("pos"))))))
         .addChild(new ProtoDeclare().setName("n")
           .setProtoInterface(new ProtoInterface()
-            .addField(new field().setType("SFVec3f").setName("pos").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0")))
+            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("pos")))
           .setProtoBody(new ProtoBody()
             .addChild(ProtoInstance1 = new ProtoInstance().setName("org")
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("posi").setProtoField("pos"))))))
         .addChild(new ProtoDeclare().setName("i")
           .setProtoInterface(new ProtoInterface()
-            .addField(new field().setType("SFVec3f").setName("pos").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0")))
+            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("pos")))
           .setProtoBody(new ProtoBody()
             .addChild(ProtoInstance2 = new ProtoInstance().setName("org")
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("posi").setProtoField("pos"))))))
+        .addChild(new NavigationInfo().setType("\"EXAMINE\" \"FLY\" \"WALK\"").setAvatarSize(new MFFloat0().getArray()).setSpeed(3f))
+        .addChild(new WorldInfo().setTitle("Arts Mapper"))
+        .addChild(new Viewpoint().setDescription("looking North").setPosition(new float[] {0f,60f,110f}).setOrientation(new float[] {1f,0f,0f,-0.699999988079071f}).setFieldOfView(0.7853981f))
         .addChild(new Transform().setTranslation(new float[] {-468f,0f,315f})
-          .addChild(new Anchor().setUrl(new MFString1().getArray()).setDescription("High Peak Community Arts")
+          .addChild(new Anchor().setDescription("High Peak Community Arts").setUrl(new MFString1().getArray())
             .addChild(ProtoInstance3 = new ProtoInstance().setName("r")))
-          .addChild(new Anchor().setUrl(new MFString2().getArray()).setDescription("People Express")
+          .addChild(new Anchor().setDescription("People Express").setUrl(new MFString2().getArray())
             .addChild(ProtoInstance4 = new ProtoInstance().setName("i")))
-          .addChild(new Anchor().setUrl(new MFString3().getArray()).setDescription("QArts/Studios")
+          .addChild(new Anchor().setDescription("QArts/Studios").setUrl(new MFString3().getArray())
             .addChild(ProtoInstance5 = new ProtoInstance().setName("i")))
-          .addChild(new Anchor().setUrl(new MFString4().getArray()).setDescription("First Movement")
+          .addChild(new Anchor().setDescription("First Movement").setUrl(new MFString4().getArray())
             .addChild(ProtoInstance6 = new ProtoInstance().setName("n")))
-          .addChild(new Anchor().setUrl(new MFString5().getArray()).setDescription("City Arts")
+          .addChild(new Anchor().setDescription("City Arts").setUrl(new MFString5().getArray())
             .addChild(ProtoInstance7 = new ProtoInstance().setName("i")))
-          .addChild(new Anchor().setUrl(new MFString6().getArray()).setDescription("Indigo Dance Group (Salamanda Tandem)")
+          .addChild(new Anchor().setDescription("Indigo Dance Group (Salamanda Tandem)").setUrl(new MFString6().getArray())
             .addChild(ProtoInstance8 = new ProtoInstance().setName("r")))
-          .addChild(new Anchor().setUrl(new MFString7().getArray()).setDescription("Watering Seeds")
+          .addChild(new Anchor().setDescription("Watering Seeds").setUrl(new MFString7().getArray())
             .addChild(ProtoInstance9 = new ProtoInstance().setName("r")))
-          .addChild(new Anchor().setUrl(new MFString8().getArray()).setDescription("Fased In The Arts")
+          .addChild(new Anchor().setDescription("Fased In The Arts").setUrl(new MFString8().getArray())
             .addChild(ProtoInstance10 = new ProtoInstance().setName("r")))
-          .addChild(new Anchor().setUrl(new MFString9().getArray()).setDescription("27a Access Artspace")
+          .addChild(new Anchor().setDescription("27a Access Artspace").setUrl(new MFString9().getArray())
             .addChild(ProtoInstance11 = new ProtoInstance().setName("n")))
-          .addChild(new Anchor().setUrl(new MFString10().getArray()).setDescription("Bamboozle Theatre Company")
+          .addChild(new Anchor().setDescription("Bamboozle Theatre Company").setUrl(new MFString10().getArray())
             .addChild(ProtoInstance12 = new ProtoInstance().setName("r")))
-          .addChild(new Anchor().setUrl(new MFString11().getArray()).setDescription("Mantle Community Arts")
+          .addChild(new Anchor().setDescription("Mantle Community Arts").setUrl(new MFString11().getArray())
             .addChild(ProtoInstance13 = new ProtoInstance().setName("r")))
-          .addChild(new Anchor().setUrl(new MFString12().getArray()).setDescription("Artlink East")
+          .addChild(new Anchor().setDescription("Artlink East").setUrl(new MFString12().getArray())
             .addChild(ProtoInstance14 = new ProtoInstance().setName("r")))
-          .addChild(new Anchor().setUrl(new MFString13().getArray()).setDescription("Creations")
+          .addChild(new Anchor().setDescription("Creations").setUrl(new MFString13().getArray())
             .addChild(ProtoInstance15 = new ProtoInstance().setName("r")))
-          .addChild(new Anchor().setUrl(new MFString14().getArray()).setDescription("New Perspectives")
+          .addChild(new Anchor().setDescription("New Perspectives").setUrl(new MFString14().getArray())
             .addChild(ProtoInstance16 = new ProtoInstance().setName("n")))
-          .addChild(new Anchor().setUrl(new MFString15().getArray()).setDescription("UKan2")
+          .addChild(new Anchor().setDescription("UKan2").setUrl(new MFString15().getArray())
             .addChild(ProtoInstance17 = new ProtoInstance().setName("r")))))      ;
 ProtoInstance0
-              .addFieldValue(new fieldValue().setName("col").setValue("0 0.300000011920929 1"));
+              .addFieldValue(new fieldValue().setName("col").setValue("0 0.3 1"));
 ProtoInstance1
-              .addFieldValue(new fieldValue().setName("col").setValue("1 0 0.200000002980232"));
+              .addFieldValue(new fieldValue().setName("col").setValue("1 0 0.2"));
 ProtoInstance2
-              .addFieldValue(new fieldValue().setName("col").setValue("0.600000023841858 0 0.600000023841858"));
+              .addFieldValue(new fieldValue().setName("col").setValue("0.6 0 0.6"));
 ProtoInstance3
-              .addFieldValue(new fieldValue().setName("pos").setValue("400 0.100000001490116 -385"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("400 0.1 -385"));
 ProtoInstance4
-              .addFieldValue(new fieldValue().setName("pos").setValue("429.899993896484 0.100000001490116 -319.600006103516"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("429.9 0.1 -319.6"));
 ProtoInstance5
-              .addFieldValue(new fieldValue().setName("pos").setValue("430 0.100000001490116 -335"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("430 0.1 -335"));
 ProtoInstance6
-              .addFieldValue(new fieldValue().setName("pos").setValue("429.899993896484 0.100000001490116 -360.299987792969"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("429.9 0.1 -360.3"));
 ProtoInstance7
-              .addFieldValue(new fieldValue().setName("pos").setValue("455.899993896484 0.100000001490116 -341.299987792969"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("455.9 0.1 -341.3"));
 ProtoInstance8
-              .addFieldValue(new fieldValue().setName("pos").setValue("456.100006103516 0.100000001490116 -341.5"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("456.1 0.1 -341.5"));
 ProtoInstance9
-              .addFieldValue(new fieldValue().setName("pos").setValue("454 0.100000001490116 -361.299987792969"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("454 0.1 -361.3"));
 ProtoInstance10
-              .addFieldValue(new fieldValue().setName("pos").setValue("440 0.100000001490116 -350"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("440 0.1 -350"));
 ProtoInstance11
-              .addFieldValue(new fieldValue().setName("pos").setValue("458.899993896484 0.100000001490116 -304.299987792969"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("458.9 0.1 -304.3"));
 ProtoInstance12
-              .addFieldValue(new fieldValue().setName("pos").setValue("457.100006103516 0.100000001490116 -300.799987792969"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("457.1 0.1 -300.8"));
 ProtoInstance13
-              .addFieldValue(new fieldValue().setName("pos").setValue("442.399993896484 0.100000001490116 -314.5"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("442.4 0.1 -314.5"));
 ProtoInstance14
-              .addFieldValue(new fieldValue().setName("pos").setValue("491.600006103516 0.100000001490116 -335.700012207031"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("491.6 0.1 -335.7"));
 ProtoInstance15
-              .addFieldValue(new fieldValue().setName("pos").setValue("467 0.100000001490116 -243.899993896484"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("467 0.1 -243.9"));
 ProtoInstance16
-              .addFieldValue(new fieldValue().setName("pos").setValue("457.399993896484 0.100000001490116 -262.700012207031"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("457.4 0.1 -262.7"));
 ProtoInstance17
-              .addFieldValue(new fieldValue().setName("pos").setValue("458.700012207031 0.100000001490116 -262.700012207031"));
+              .addFieldValue(new fieldValue().setName("pos").setValue("458.7 0.1 -262.7"));
     return X3D0;
     }
-protected class MFFloat0 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+private class MFFloat0 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {200f,200f,120f});
   }
 }
-protected class MFString1 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
+private class MFString1 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
   }
 }
-protected class MFString2 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
+private class MFString2 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
   }
 }
-protected class MFString3 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
+private class MFString3 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
   }
 }
-protected class MFString4 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
+private class MFString4 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
   }
 }
-protected class MFString5 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
+private class MFString5 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
   }
 }
-protected class MFString6 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
+private class MFString6 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
   }
 }
-protected class MFString7 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
+private class MFString7 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
   }
 }
-protected class MFString8 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
+private class MFString8 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
   }
 }
-protected class MFString9 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
+private class MFString9 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
   }
 }
-protected class MFString10 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
+private class MFString10 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
   }
 }
-protected class MFString11 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
+private class MFString11 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
   }
 }
-protected class MFString12 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
+private class MFString12 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
   }
 }
-protected class MFString13 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
+private class MFString13 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
   }
 }
-protected class MFString14 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
+private class MFString14 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
   }
 }
-protected class MFString15 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
+private class MFString15 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"});
   }
 }
 }

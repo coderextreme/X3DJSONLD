@@ -7,10 +7,26 @@ var X3D0 =  X3D(
       version_ : SFString('4.0'),
       head_ : 
         head(
+          meta_ : [
+            meta(
+              name_ : SFString('title'),
+              content_ : SFString('geo.x3d')),
+
+            meta(
+              name_ : SFString('creator'),
+              content_ : SFString('John Carlson')),
+
+            meta(
+              name_ : SFString('generator'),
+              content_ : SFString('manual')),
+
+            meta(
+              name_ : SFString('identifier'),
+              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d')),
           component_ : 
             component(
               name_ : SFString('Scripting'),
-              level_ : 1),
+              level_ : 1)],
           component_ : 
             component(
               name_ : SFString('EnvironmentalEffects'),
@@ -42,27 +58,7 @@ var X3D0 =  X3D(
           component_ : 
             component(
               name_ : SFString('Core'),
-              level_ : 1),
-          meta_ : [
-            meta(
-              name_ : SFString('title'),
-              content_ : SFString('geo.x3d')),
-
-            meta(
-              name_ : SFString('creator'),
-              content_ : SFString('John Carlson')),
-
-            meta(
-              name_ : SFString('generator'),
-              content_ : SFString('manual')),
-
-            meta(
-              name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d')),
-
-            meta(
-              name_ : SFString('description'),
-              content_ : SFString('a sphere'))]),
+              level_ : 1)),
       Scene_ : 
         Scene(
           children_ : [
@@ -72,21 +68,18 @@ var X3D0 =  X3D(
             Viewpoint(
               DEF_ : SFString('Tour'),
               description_ : SFString('Tour Views')),
-          /*Viewpoint position='0 0 4' description='sphere in road'/*/
 
             Background(
-              backUrl_ : MFString([SFString("../resources/images/bBK.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png")]),
-              bottomUrl_ : MFString([SFString("../resources/images/bBT.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png")]),
               frontUrl_ : MFString([SFString("../resources/images/bFR.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png")]),
+              backUrl_ : MFString([SFString("../resources/images/bBK.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png")]),
               leftUrl_ : MFString([SFString("../resources/images/bLF.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png")]),
               rightUrl_ : MFString([SFString("../resources/images/bRT.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png")]),
-              topUrl_ : MFString([SFString("../resources/images/bTP.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png")])),
+              topUrl_ : MFString([SFString("../resources/images/bTP.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png")]),
+              bottomUrl_ : MFString([SFString("../resources/images/bBT.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png")])),
 
             Transform(
               child_ : 
                 Shape(
-                  geometry_ : 
-                    Sphere(),
                   appearance_ : 
                     Appearance(
                       material_ : 
@@ -95,110 +88,92 @@ var X3D0 =  X3D(
                           specularColor_ : SFColor([SFDouble(0.5), SFDouble(0.5), SFDouble(0.5)])),
                       texture_ : 
                         ComposedCubeMapTexture(
-                          DEF_ : SFString('texture'),
-                          topTexture_ : 
-                            ImageTexture(
-                              url_ : MFString([SFString("../resources/images/bBK.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png")])),
-                          topTexture_ : 
-                            ImageTexture(
-                              url_ : MFString([SFString("../resources/images/bBT.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png")])),
-                          topTexture_ : 
-                            ImageTexture(
-                              url_ : MFString([SFString("../resources/images/bFR.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png")])),
-                          topTexture_ : 
-                            ImageTexture(
-                              url_ : MFString([SFString("../resources/images/bLF.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png")])),
-                          topTexture_ : 
-                            ImageTexture(
-                              url_ : MFString([SFString("../resources/images/bRT.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png")])),
-                          topTexture_ : 
-                            ImageTexture(
-                              url_ : MFString([SFString("../resources/images/bTP.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png")]))),
+                          DEF_ : SFString('texture')),
                       shaders_ : 
                         ComposedShader(
                           language_ : SFString('GLSL'),
-                          field_ : [
-                            field(
-                              type_ : SFString("SFVec3f"),
-                              name_ : SFString('chromaticDispertion'),
-                              accessType_ : SFString("inputOutput"),
-                              value_ : SFString('0.98 1 1.033')),
-
-                            field(
-                              type_ : SFString("SFNode"),
-                              name_ : SFString('cube'),
-                              accessType_ : SFString("inputOutput"),
-                              children_ : [
-                                ComposedCubeMapTexture(
-                                  USE_ : SFString('texture'))]),
-
-                            field(
-                              type_ : SFString("SFFloat"),
-                              name_ : SFString('bias'),
-                              accessType_ : SFString("inputOutput"),
-                              value_ : SFString('0.5')),
-
-                            field(
-                              type_ : SFString("SFFloat"),
-                              name_ : SFString('scale'),
-                              accessType_ : SFString("inputOutput"),
-                              value_ : SFString('0.5')),
-
-                            field(
-                              type_ : SFString("SFFloat"),
-                              name_ : SFString('power'),
-                              accessType_ : SFString("inputOutput"),
-                              value_ : SFString('2')),
                           parts_ : 
                             ShaderPart(
-                              type_ : SFString("VERTEX",
-                              url_ : MFString([SFString("../shaders/x3dom.vs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs")]))],
+                              url_ : MFString([SFString("../shaders/x3dom.vs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs")])),
                           parts_ : 
                             ShaderPart(
                               type_ : SFString("FRAGMENT",
                               DEF_ : SFString('common'),
-                              url_ : MFString([SFString("../shaders/common.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs")]))),
-                      shaders_ : 
-                        ComposedShader(
-                          language_ : SFString('GLSL'),
+                              url_ : MFString([SFString("../shaders/common.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs")])),
                           field_ : [
                             field(
                               type_ : SFString("SFVec3f"),
+                              accessType_ : SFString("inputOutput"),
                               name_ : SFString('chromaticDispertion'),
-                              accessType_ : SFString("initializeOnly"),
                               value_ : SFString('0.98 1 1.033')),
 
                             field(
                               type_ : SFString("SFNode"),
+                              accessType_ : SFString("inputOutput"),
                               name_ : SFString('cube'),
-                              accessType_ : SFString("initializeOnly"),
                               children_ : [
                                 ComposedCubeMapTexture(
                                   USE_ : SFString('texture'))]),
 
                             field(
                               type_ : SFString("SFFloat"),
+                              accessType_ : SFString("inputOutput"),
                               name_ : SFString('bias'),
-                              accessType_ : SFString("initializeOnly"),
                               value_ : SFString('0.5')),
 
                             field(
                               type_ : SFString("SFFloat"),
+                              accessType_ : SFString("inputOutput"),
                               name_ : SFString('scale'),
-                              accessType_ : SFString("initializeOnly"),
                               value_ : SFString('0.5')),
 
                             field(
                               type_ : SFString("SFFloat"),
+                              accessType_ : SFString("inputOutput"),
                               name_ : SFString('power'),
-                              accessType_ : SFString("initializeOnly"),
-                              value_ : SFString('2')),
+                              value_ : SFString('2'))]),
+                      shaders_ : 
+                        ComposedShader(
+                          language_ : SFString('GLSL'),
                           parts_ : 
                             ShaderPart(
-                              type_ : SFString("VERTEX",
-                              url_ : MFString([SFString("../shaders/x_ite.vs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs")]))],
+                              url_ : MFString([SFString("../shaders/x_ite.vs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs")])),
                           parts_ : 
                             ShaderPart(
                               type_ : SFString("FRAGMENT",
-                              url_ : MFString([SFString("../shaders/x_ite.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs")]))))))]));
+                              url_ : MFString([SFString("../shaders/x_ite.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs")])),
+                          field_ : [
+                            field(
+                              type_ : SFString("SFVec3f"),
+                              accessType_ : SFString("initializeOnly"),
+                              name_ : SFString('chromaticDispertion'),
+                              value_ : SFString('0.98 1 1.033')),
+
+                            field(
+                              type_ : SFString("SFNode"),
+                              accessType_ : SFString("initializeOnly"),
+                              name_ : SFString('cube'),
+                              children_ : [
+                                ComposedCubeMapTexture(
+                                  USE_ : SFString('texture'))]),
+
+                            field(
+                              type_ : SFString("SFFloat"),
+                              accessType_ : SFString("initializeOnly"),
+                              name_ : SFString('bias'),
+                              value_ : SFString('0.5')),
+
+                            field(
+                              type_ : SFString("SFFloat"),
+                              accessType_ : SFString("initializeOnly"),
+                              name_ : SFString('scale'),
+                              value_ : SFString('0.5')),
+
+                            field(
+                              type_ : SFString("SFFloat"),
+                              accessType_ : SFString("initializeOnly"),
+                              name_ : SFString('power'),
+                              value_ : SFString('2'))])),
+                  geometry_ : 
+                    Sphere()))]));
 void main() { exit(0); }

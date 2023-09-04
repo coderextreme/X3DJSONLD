@@ -54,74 +54,73 @@ public class InlineSoundSource {
         .addMeta(new meta().setName("created").setContent("28 October 2020"))
         .addMeta(new meta().setName("modified").setContent("4 August 2021"))
         .addMeta(new meta().setName("reference").setContent("CHANGELOG.txt"))
-        .addMeta(new meta().setName("TODO").setContent("credit for audio files"))
         .addMeta(new meta().setName("reference").setContent("https://medialab.hmu.gr/minipages/x3domAudio"))
+        .addMeta(new meta().setName("TODO").setContent("credit for audio files"))
         .addMeta(new meta().setName("identifier").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/InlineSoundSource.x3d"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("license").setContent("../license.html")))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("InlineSoundSource.x3d"))
         .addChild(new NavigationInfo().setDEF("NAV"))
-        .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
-        .addChild(new Viewpoint().setDEF("Camera001").setDescription("Camera001").setFarDistance(0f).setNearDistance(1f).setOrientation(new float[] {1f,0f,0f,-0.523599f}).setPosition(new float[] {0f,2000f,3500f}))
+        .addChild(new Background().setFrontUrl(new MFString0().getArray()).setBackUrl(new MFString1().getArray()).setLeftUrl(new MFString2().getArray()).setRightUrl(new MFString3().getArray()).setTopUrl(new MFString4().getArray()).setBottomUrl(new MFString5().getArray()))
+        .addChild(new Viewpoint().setDEF("Camera001").setDescription("Camera001").setPosition(new float[] {0f,2000f,3500f}).setOrientation(new float[] {1f,0f,0f,-0.523599f}).setNearDistance(1f).setFarDistance(0f))
         .addChild(new Transform().setDEF("Floor").setTranslation(new float[] {1.241f,0f,0.358f})
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("WireColor")
               .setMaterial(new Material().setDiffuseColor(new float[] {0.122f,0.114f,0.125f})))
-            .setGeometry(new IndexedFaceSet().setDEF("Box001-GEOMETRY").setCoordIndex(new MFInt326().getArray()).setSolid(false)
-              .setCoord(new Coordinate().setPoint(new MFVec3f7().getArray()))
-              .setNormal(new Normal().setVector(new MFVec3f8().getArray())))))
+            .setGeometry(new IndexedFaceSet().setDEF("Box001-GEOMETRY").setSolid(false).setCoordIndex(new MFInt326().getArray())
+              .setNormal(new Normal().setVector(new MFVec3f7().getArray()))
+              .setCoord(new Coordinate().setPoint(new MFVec3f8().getArray())))))
         .addChild(new Transform().setDEF("InlineScene")
           .addChild(new Inline().setDEF("inline").setUrl(new MFString9().getArray()))))      ;
     return X3D0;
     }
-protected class MFString0 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"});
-  }
-}
-protected class MFString1 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"});
-  }
-}
-protected class MFString2 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString0 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"images/generic/FR1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"});
   }
 }
-protected class MFString3 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString1 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"});
+  }
+}
+private class MFString2 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"images/generic/LF1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"});
   }
 }
-protected class MFString4 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString3 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"images/generic/RT1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"});
   }
 }
-protected class MFString5 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString4 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"});
   }
 }
-protected class MFInt326 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+private class MFString5 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"});
+  }
+}
+private class MFInt326 {
+  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,15,16,17,-1,18,19,20,-1,21,22,23,-1,24,25,26,-1,27,28,29,-1,30,31,32,-1,33,34,35,-1});
   }
 }
-protected class MFVec3f7 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-1000f,0f,1000f,-1000f,0f,-1000f,1000f,0f,-1000f,1000f,0f,-1000f,1000f,0f,1000f,-1000f,0f,1000f,-1000f,8.031588f,1000f,1000f,8.031588f,1000f,1000f,8.031588f,-1000f,1000f,8.031588f,-1000f,-1000f,8.031588f,-1000f,-1000f,8.031588f,1000f,-1000f,0f,1000f,1000f,0f,1000f,1000f,8.031588f,1000f,1000f,8.031588f,1000f,-1000f,8.031588f,1000f,-1000f,0f,1000f,1000f,0f,1000f,1000f,0f,-1000f,1000f,8.031588f,-1000f,1000f,8.031588f,-1000f,1000f,8.031588f,1000f,1000f,0f,1000f,1000f,0f,-1000f,-1000f,0f,-1000f,-1000f,8.031588f,-1000f,-1000f,8.031588f,-1000f,1000f,8.031588f,-1000f,1000f,0f,-1000f,-1000f,0f,-1000f,-1000f,0f,1000f,-1000f,8.031588f,1000f,-1000f,8.031588f,1000f,-1000f,8.031588f,-1000f,-1000f,0f,-1000f});
-  }
-}
-protected class MFVec3f8 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+private class MFVec3f7 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,-1f,0f,0f,-1f,0f,0f,-1f,0f,0f,-1f,0f,0f,-1f,0f,0f,-1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,0f,0f,-1f,0f,0f,-1f,0f,0f,-1f,0f,0f,-1f,0f,0f,-1f,0f,0f,-1f,-1f,0f,0f,-1f,0f,0f,-1f,0f,0f,-1f,0f,0f,-1f,0f,0f,-1f,0f,0f});
   }
 }
-protected class MFString9 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFVec3f8 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-1000f,0f,1000f,-1000f,0f,-1000f,1000f,0f,-1000f,1000f,0f,-1000f,1000f,0f,1000f,-1000f,0f,1000f,-1000f,8.031588f,1000f,1000f,8.031588f,1000f,1000f,8.031588f,-1000f,1000f,8.031588f,-1000f,-1000f,8.031588f,-1000f,-1000f,8.031588f,1000f,-1000f,0f,1000f,1000f,0f,1000f,1000f,8.031588f,1000f,1000f,8.031588f,1000f,-1000f,8.031588f,1000f,-1000f,0f,1000f,1000f,0f,1000f,1000f,0f,-1000f,1000f,8.031588f,-1000f,1000f,8.031588f,-1000f,1000f,8.031588f,1000f,1000f,0f,1000f,1000f,0f,-1000f,-1000f,0f,-1000f,-1000f,8.031588f,-1000f,-1000f,8.031588f,-1000f,1000f,8.031588f,-1000f,1000f,0f,-1000f,-1000f,0f,-1000f,-1000f,0f,1000f,-1000f,8.031588f,1000f,-1000f,8.031588f,1000f,-1000f,8.031588f,-1000f,-1000f,0f,-1000f});
+  }
+}
+private class MFString9 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"x3d/example1.x3d","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.x3d","x3d/example1.wrl","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.wrl"});
   }
 }

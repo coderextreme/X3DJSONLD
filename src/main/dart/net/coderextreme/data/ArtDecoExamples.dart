@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('3.0'),
+      version_ : SFString('4.0'),
       head_ : 
         head(
           meta_ : [
@@ -46,226 +46,152 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html')),
-
-            meta(
-              name_ : SFString('license'),
-              content_ : SFString('../license.html'))]),
+              content_ : SFString('Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html'))]),
       Scene_ : 
         Scene(
           children_ : [
-            WorldInfo(
-              title_ : SFString('ArtDecoExamples.x3d')),
-
             ExternProtoDeclare(
               name_ : SFString('ArtDeco00'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco00"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00"), SFString("ArtDecoPrototypes.wrl#ArtDeco00"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco01'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco01"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01"), SFString("ArtDecoPrototypes.wrl#ArtDeco01"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco02'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco02"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02"), SFString("ArtDecoPrototypes.wrl#ArtDeco02"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco03'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco03"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03"), SFString("ArtDecoPrototypes.wrl#ArtDeco03"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco04'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco04"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04"), SFString("ArtDecoPrototypes.wrl#ArtDeco04"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco05'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco05"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05"), SFString("ArtDecoPrototypes.wrl#ArtDeco05"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco06'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco06"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06"), SFString("ArtDecoPrototypes.wrl#ArtDeco06"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco07'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco07"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07"), SFString("ArtDecoPrototypes.wrl#ArtDeco07"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco08'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco08"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08"), SFString("ArtDecoPrototypes.wrl#ArtDeco08"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco09'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco09"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09"), SFString("ArtDecoPrototypes.wrl#ArtDeco09"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco10'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco10"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10"), SFString("ArtDecoPrototypes.wrl#ArtDeco10"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco11'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco11"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11"), SFString("ArtDecoPrototypes.wrl#ArtDeco11"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco12'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco12"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12"), SFString("ArtDecoPrototypes.wrl#ArtDeco12"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco13'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco13"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13"), SFString("ArtDecoPrototypes.wrl#ArtDeco13"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco14'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco14"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14"), SFString("ArtDecoPrototypes.wrl#ArtDeco14"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco15'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco15"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15"), SFString("ArtDecoPrototypes.wrl#ArtDeco15"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco16'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco16"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16"), SFString("ArtDecoPrototypes.wrl#ArtDeco16"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco17'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco17"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17"), SFString("ArtDecoPrototypes.wrl#ArtDeco17"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco18'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco18"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18"), SFString("ArtDecoPrototypes.wrl#ArtDeco18"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco19'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco19"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19"), SFString("ArtDecoPrototypes.wrl#ArtDeco19"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco20'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco20"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20"), SFString("ArtDecoPrototypes.wrl#ArtDeco20"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco21'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco21"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21"), SFString("ArtDecoPrototypes.wrl#ArtDeco21"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco22'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco22"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22"), SFString("ArtDecoPrototypes.wrl#ArtDeco22"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco23'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco23"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23"), SFString("ArtDecoPrototypes.wrl#ArtDeco23"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco24'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco24"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24"), SFString("ArtDecoPrototypes.wrl#ArtDeco24"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco25'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco25"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25"), SFString("ArtDecoPrototypes.wrl#ArtDeco25"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco26'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco26"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26"), SFString("ArtDecoPrototypes.wrl#ArtDeco26"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco27'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco27"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27"), SFString("ArtDecoPrototypes.wrl#ArtDeco27"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco28'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco28"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28"), SFString("ArtDecoPrototypes.wrl#ArtDeco28"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco29'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco29"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29"), SFString("ArtDecoPrototypes.wrl#ArtDeco29"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco30'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco30"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30"), SFString("ArtDecoPrototypes.wrl#ArtDeco30"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco31'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco31"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31"), SFString("ArtDecoPrototypes.wrl#ArtDeco31"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco32'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco32"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32"), SFString("ArtDecoPrototypes.wrl#ArtDeco32"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco33'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco33"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33"), SFString("ArtDecoPrototypes.wrl#ArtDeco33"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33")])),
 
             ExternProtoDeclare(
               name_ : SFString('ArtDeco34'),
-              appinfo_ : SFString('UniversalMediaMaterials prototype'),
-              documentation_ : SFString('https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials'),
               url_ : MFString([SFString("ArtDecoPrototypes.x3d#ArtDeco34"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34"), SFString("ArtDecoPrototypes.wrl#ArtDeco34"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34")])),
+
+            WorldInfo(
+              title_ : SFString('ArtDecoExamples.x3d')),
 
             Group(
               children_ : [
@@ -280,20 +206,20 @@ var X3D0 =  X3D(
                 Viewpoint(
                   DEF_ : SFString('PersRight'),
                   description_ : SFString('Low Right'),
-                  orientation_ : SFRotation([SFDouble(0.74291), SFDouble(0.30772), SFDouble(0.59447), SFDouble(1.2171)]),
-                  position_ : SFVec3f([SFDouble(6.9282), SFDouble(-6.9282), SFDouble(6.9282)])),
+                  position_ : SFVec3f([SFDouble(6.9282), SFDouble(-6.9282), SFDouble(6.9282)]),
+                  orientation_ : SFRotation([SFDouble(0.74291), SFDouble(0.30772), SFDouble(0.59447), SFDouble(1.2171)])),
 
                 Viewpoint(
                   DEF_ : SFString('PersLeft'),
                   description_ : SFString('Low Left'),
-                  orientation_ : SFRotation([SFDouble(0.74291), SFDouble(-0.30772), SFDouble(-0.59447), SFDouble(1.2171)]),
-                  position_ : SFVec3f([SFDouble(-6.9282), SFDouble(-6.9282), SFDouble(6.9282)])),
+                  position_ : SFVec3f([SFDouble(-6.9282), SFDouble(-6.9282), SFDouble(6.9282)]),
+                  orientation_ : SFRotation([SFDouble(0.74291), SFDouble(-0.30772), SFDouble(-0.59447), SFDouble(1.2171)])),
 
                 Viewpoint(
                   DEF_ : SFString('Back'),
                   description_ : SFString('Back view'),
-                  orientation_ : SFRotation([SFDouble(0), SFDouble(1), SFDouble(0), SFDouble(3.1416)]),
-                  position_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(-12)])),
+                  position_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(-12)]),
+                  orientation_ : SFRotation([SFDouble(0), SFDouble(1), SFDouble(0), SFDouble(3.1416)])),
 
                 Transform(
                   DEF_ : SFString('Close_travel'),
@@ -317,8 +243,8 @@ var X3D0 =  X3D(
                   direction_ : SFVec3f([SFDouble(1), SFDouble(-1), SFDouble(-1)])),
 
                 DirectionalLight(
-                  direction_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(-0.5)]),
-                  intensity_ : 0.5),
+                  intensity_ : 0.5,
+                  direction_ : SFVec3f([SFDouble(0), SFDouble(1), SFDouble(-0.5)])),
 
                 Anchor(
                   description_ : SFString('Back to front view'),
@@ -328,6 +254,7 @@ var X3D0 =  X3D(
                       translation_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
                       children_ : [
                         Inline(
+                          global_ : true,
                           url_ : MFString([SFString("../data/gridBack.json"), SFString("../data/gridBack.x3d"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d"), SFString("gridBack.wrl"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl")]))])]),
 
                 Viewpoint(
@@ -358,8 +285,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco00'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -375,9 +302,9 @@ var X3D0 =  X3D(
                                     FontStyle(
                                       DEF_ : SFString('Style'),
                                       family_ : MFString([SFString("SANS")]),
-                                      justify_ : MFString([SFString("MIDDLE"), SFString("MIDDLE")]),
+                                      style_ : SFString('BOLD'),
                                       size_ : 0.3,
-                                      style_ : SFString('BOLD'))))])])]),
+                                      justify_ : MFString([SFString("MIDDLE"), SFString("MIDDLE")]))))])])]),
 
                 Viewpoint(
                   DEF_ : SFString('View01'),
@@ -406,8 +333,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco01'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -449,8 +376,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco02'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -492,8 +419,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco03'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -535,8 +462,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco04'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -578,8 +505,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco05'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -621,8 +548,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco06'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -664,8 +591,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco07'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -707,8 +634,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco08'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -750,8 +677,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco09'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -793,8 +720,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco10'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -836,8 +763,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco11'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -879,8 +806,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco12'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -922,8 +849,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco13'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco3"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco13")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -965,8 +892,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco14'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco4"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco14")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -1008,8 +935,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco15'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco5"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco15")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -1051,8 +978,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco16'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -1094,8 +1021,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco17'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco7"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco17")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -1137,8 +1064,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco18'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -1180,8 +1107,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco19'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco9"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco19")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -1223,8 +1150,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco20'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -1266,8 +1193,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco21'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -1309,8 +1236,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco22'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -1352,8 +1279,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco23'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -1395,8 +1322,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco24'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -1438,8 +1365,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco25'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -1481,8 +1408,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco26'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -1524,8 +1451,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco27'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -1567,8 +1494,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco28'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -1610,8 +1537,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco29'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -1653,8 +1580,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco30'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -1696,8 +1623,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco31'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -1739,8 +1666,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco32'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -1782,8 +1709,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco33'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -1825,8 +1752,8 @@ var X3D0 =  X3D(
                       children_ : [
                         Anchor(
                           description_ : SFString('ArtDeco34'),
-                          parameter_ : MFString([SFString("target=_source")]),
                           url_ : MFString([SFString("ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34"), SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34")]),
+                          parameter_ : MFString([SFString("target=_source")]),
                           children_ : [
                             Shape(
                               appearance_ : 
@@ -1842,14 +1769,14 @@ var X3D0 =  X3D(
                                       USE_ : SFString('Style'))))])])])]),
 
             ROUTE(
-              fromField_ : SFString('fraction_changed'),
               fromNode_ : SFString('Close_Time'),
-              toField_ : SFString('set_fraction'),
-              toNode_ : SFString('Close_Mover')),
+              fromField_ : SFString('fraction_changed'),
+              toNode_ : SFString('Close_Mover'),
+              toField_ : SFString('set_fraction')),
 
             ROUTE(
-              fromField_ : SFString('value_changed'),
               fromNode_ : SFString('Close_Mover'),
-              toField_ : SFString('set_translation'),
-              toNode_ : SFString('Close_travel'))]));
+              fromField_ : SFString('value_changed'),
+              toNode_ : SFString('Close_travel'),
+              toField_ : SFString('translation'))]));
 void main() { exit(0); }

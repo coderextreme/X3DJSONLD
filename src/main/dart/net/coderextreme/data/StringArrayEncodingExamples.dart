@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('3.3'),
+      version_ : SFString('4.0'),
       head_ : 
         head(
           meta_ : [
@@ -37,20 +37,20 @@ var X3D0 =  X3D(
               content_ : SFString('X3D encodings, ISO/IEC 19775-1, Part 1: Architecture and base components, 5 Field type reference, 5.3.14 SFString and MFString')),
 
             meta(
-              name_ : SFString('specificationUrl'),
-              content_ : SFString('https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFStringAndMFString')),
-
-            meta(
               name_ : SFString('specificationSection'),
               content_ : SFString('X3D encodings, ISO/IEC 19776-1.3, Part 1: XML encoding, 5.3.14 SFString and MFString')),
 
             meta(
-              name_ : SFString('specificationUrl'),
-              content_ : SFString('https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/EncodingOfFields.html#SFString')),
-
-            meta(
               name_ : SFString('specificationSection'),
               content_ : SFString('X3D encodings, ISO/IEC 19776-2 v3.3, Part 2: Classic VRML encoding, 5.15 SFString and MFString')),
+
+            meta(
+              name_ : SFString('specificationUrl'),
+              content_ : SFString('https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFStringAndMFString')),
+
+            meta(
+              name_ : SFString('specificationUrl'),
+              content_ : SFString('https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/EncodingOfFields.html#SFString')),
 
             meta(
               name_ : SFString('specificationUrl'),
@@ -62,11 +62,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit')),
-
-            meta(
-              name_ : SFString('license'),
-              content_ : SFString('../license.html'))]),
+              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit'))]),
       Scene_ : 
         Scene(
           children_ : [
@@ -78,18 +74,16 @@ var X3D0 =  X3D(
               skyColor_ : MFColor([SFColor(0.6), SFColor(1), SFColor(0.8)])),
 
             Shape(
-              geometry_ : 
-                Text(
-                  string_ : MFString([SFString("One, Two, Three"), SFString(""), SFString("He said, \"Immel did it!\"")]),
-                  /*alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'*/
-                  /*alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})*/
-                  fontStyle_ : 
-                    FontStyle(
-                      justify_ : MFString([SFString("MIDDLE"), SFString("MIDDLE")]),
-                      style_ : SFString('BOLD'))),
               appearance_ : 
                 Appearance(
                   material_ : 
                     Material(
-                      diffuseColor_ : SFColor([SFDouble(0.6), SFDouble(0.4), SFDouble(0.2)]))))]));
+                      diffuseColor_ : SFColor([SFDouble(0.6), SFDouble(0.4), SFDouble(0.2)]))),
+              geometry_ : 
+                Text(
+                  string_ : MFString([SFString("One, Two, Three"), SFString(""), SFString("He said, \"Immel did it!\"")]),
+                  fontStyle_ : 
+                    FontStyle(
+                      style_ : SFString('BOLD'),
+                      justify_ : MFString([SFString("MIDDLE"), SFString("MIDDLE")]))))]));
 void main() { exit(0); }

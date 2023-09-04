@@ -45,7 +45,7 @@ public class LOA1_RunAnimation {
     model.toFileJSON("../data/LOA1_RunAnimation.new.json");
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("LOA1_RunAnimation.x3d"))
         .addMeta(new meta().setName("description").setContent("Humanoid animation prototype reusable by any Humanoid."))
@@ -60,49 +60,47 @@ public class LOA1_RunAnimation {
         .addMeta(new meta().setName("reference").setContent("http://HAnim.org/Nodes"))
         .addMeta(new meta().setName("subject").setContent("Nancy Run Animation HAnim 2001"))
         .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_RunAnimation.x3d"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("license").setContent("../license.html")))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")))
       .setScene(new Scene()
-        .addChild(new WorldInfo().setTitle("LOA1_RunAnimation.x3d"))
         .addChild(new ProtoDeclare().setName("LOA1_RunAnimation")
           .setProtoInterface(new ProtoInterface()
-            .addField(new field().setType("SFTime").setName("cycleInterval").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1"))
-            .addField(new field().setType("SFBool").setName("enabled").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("true"))
-            .addField(new field().setType("SFBool").setName("loop").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("true"))
-            .addField(new field().setType("SFTime").setName("startTime").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-            .addField(new field().setType("SFTime").setName("stopTime").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("-1"))
-            .addField(new field().setType("SFFloat").setName("fraction_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-            .addField(new field().setType("SFBool").setName("isActive").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-            .addField(new field().setType("SFVec3f").setName("HumanoidRoot_translation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-            .addField(new field().setType("SFRotation").setName("HumanoidRoot_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-            .addField(new field().setType("SFRotation").setName("lower_body_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-            .addField(new field().setType("SFRotation").setName("l_hip_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-            .addField(new field().setType("SFRotation").setName("l_knee_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-            .addField(new field().setType("SFRotation").setName("l_ankle_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-            .addField(new field().setType("SFRotation").setName("l_midtarsal_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-            .addField(new field().setType("SFRotation").setName("r_hip_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-            .addField(new field().setType("SFRotation").setName("r_knee_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-            .addField(new field().setType("SFRotation").setName("r_ankle_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-            .addField(new field().setType("SFRotation").setName("r_midtarsal_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-            .addField(new field().setType("SFRotation").setName("vl5_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-            .addField(new field().setType("SFRotation").setName("skullbase_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-            .addField(new field().setType("SFRotation").setName("l_shoulder_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-            .addField(new field().setType("SFRotation").setName("l_elbow_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-            .addField(new field().setType("SFRotation").setName("l_wrist_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-            .addField(new field().setType("SFRotation").setName("r_shoulder_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-            .addField(new field().setType("SFRotation").setName("r_elbow_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-            .addField(new field().setType("SFRotation").setName("r_wrist_rotation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
+            .addField(new field().setType("SFTime").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("cycleInterval").setValue("1"))
+            .addField(new field().setType("SFBool").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("enabled").setValue("true"))
+            .addField(new field().setType("SFBool").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("loop").setValue("true"))
+            .addField(new field().setType("SFTime").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("startTime"))
+            .addField(new field().setType("SFTime").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("stopTime").setValue("-1"))
+            .addField(new field().setType("SFFloat").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setName("fraction_changed"))
+            .addField(new field().setType("SFBool").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setName("isActive"))
+            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setName("HumanoidRoot_translation_changed"))
+            .addField(new field().setType("SFRotation").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setName("HumanoidRoot_rotation_changed"))
+            .addField(new field().setType("SFRotation").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setName("lower_body_rotation_changed"))
+            .addField(new field().setType("SFRotation").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setName("l_hip_rotation_changed"))
+            .addField(new field().setType("SFRotation").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setName("l_knee_rotation_changed"))
+            .addField(new field().setType("SFRotation").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setName("l_ankle_rotation_changed"))
+            .addField(new field().setType("SFRotation").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setName("l_midtarsal_rotation_changed"))
+            .addField(new field().setType("SFRotation").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setName("r_hip_rotation_changed"))
+            .addField(new field().setType("SFRotation").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setName("r_knee_rotation_changed"))
+            .addField(new field().setType("SFRotation").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setName("r_ankle_rotation_changed"))
+            .addField(new field().setType("SFRotation").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setName("r_midtarsal_rotation_changed"))
+            .addField(new field().setType("SFRotation").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setName("vl5_rotation_changed"))
+            .addField(new field().setType("SFRotation").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setName("skullbase_rotation_changed"))
+            .addField(new field().setType("SFRotation").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setName("l_shoulder_rotation_changed"))
+            .addField(new field().setType("SFRotation").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setName("l_elbow_rotation_changed"))
+            .addField(new field().setType("SFRotation").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setName("l_wrist_rotation_changed"))
+            .addField(new field().setType("SFRotation").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setName("r_shoulder_rotation_changed"))
+            .addField(new field().setType("SFRotation").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setName("r_elbow_rotation_changed"))
+            .addField(new field().setType("SFRotation").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setName("r_wrist_rotation_changed")))
           .setProtoBody(new ProtoBody()
             .addChild(new Group()
               .addChild(new TimeSensor().setDEF("TIMER")
                 .setIS(new IS()
-                  .addConnect(new connect().setNodeField("cycleInterval").setProtoField("cycleInterval"))
                   .addConnect(new connect().setNodeField("enabled").setProtoField("enabled"))
+                  .addConnect(new connect().setNodeField("cycleInterval").setProtoField("cycleInterval"))
                   .addConnect(new connect().setNodeField("loop").setProtoField("loop"))
                   .addConnect(new connect().setNodeField("startTime").setProtoField("startTime"))
                   .addConnect(new connect().setNodeField("stopTime").setProtoField("stopTime"))
-                  .addConnect(new connect().setNodeField("fraction_changed").setProtoField("fraction_changed"))
-                  .addConnect(new connect().setNodeField("isActive").setProtoField("isActive"))))
+                  .addConnect(new connect().setNodeField("isActive").setProtoField("isActive"))
+                  .addConnect(new connect().setNodeField("fraction_changed").setProtoField("fraction_changed"))))
               .addChild(new PositionInterpolator().setDEF("HUMANOIDROOT_POSITION_ANIMATOR").setKey(new MFFloat0().getArray()).setKeyValue(new MFVec3f1().getArray())
                 .setIS(new IS()
                   .addConnect(new connect().setNodeField("value_changed").setProtoField("HumanoidRoot_translation_changed"))))
@@ -160,242 +158,241 @@ public class LOA1_RunAnimation {
               .addChild(new OrientationInterpolator().setDEF("R_WRIST_ANIMATOR").setKey(new MFFloat36().getArray()).setKeyValue(new MFRotation37().getArray())
                 .setIS(new IS()
                   .addConnect(new connect().setNodeField("value_changed").setProtoField("r_wrist_rotation_changed")))))
-            .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("TIMER").setToField("set_fraction").setToNode("HUMANOIDROOT_POSITION_ANIMATOR"))
-            .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("TIMER").setToField("set_fraction").setToNode("HUMANOIDROOT_ANIMATOR"))
-            .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("TIMER").setToField("set_fraction").setToNode("SACROILIAC_ANIMATOR"))
-            .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("TIMER").setToField("set_fraction").setToNode("L_HIP_ANIMATOR"))
-            .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("TIMER").setToField("set_fraction").setToNode("L_KNEE_ANIMATOR"))
-            .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("TIMER").setToField("set_fraction").setToNode("L_ANKLE_ANIMATOR"))
-            .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("TIMER").setToField("set_fraction").setToNode("L_MIDTARSAL_ANIMATOR"))
-            .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("TIMER").setToField("set_fraction").setToNode("R_HIP_ANIMATOR"))
-            .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("TIMER").setToField("set_fraction").setToNode("R_KNEE_ANIMATOR"))
-            .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("TIMER").setToField("set_fraction").setToNode("R_ANKLE_ANIMATOR"))
-            .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("TIMER").setToField("set_fraction").setToNode("R_MIDTARSAL_ANIMATOR"))
-            .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("TIMER").setToField("set_fraction").setToNode("VL5_ANIMATOR"))
-            .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("TIMER").setToField("set_fraction").setToNode("SKULLBASE_ANIMATOR"))
-            .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("TIMER").setToField("set_fraction").setToNode("L_SHOULDER_ANIMATOR"))
-            .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("TIMER").setToField("set_fraction").setToNode("L_ELBOW_ANIMATOR"))
-            .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("TIMER").setToField("set_fraction").setToNode("L_WRIST_ANIMATOR"))
-            .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("TIMER").setToField("set_fraction").setToNode("R_SHOULDER_ANIMATOR"))
-            .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("TIMER").setToField("set_fraction").setToNode("R_ELBOW_ANIMATOR"))
-            .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("TIMER").setToField("set_fraction").setToNode("R_WRIST_ANIMATOR"))))
-        .addComments("======================================")
-        .addComments("Point to example use in case someone inspects this file")
-        .addChild(new Anchor().setDescription("InterchangableActorsViaDynamicRouting").setParameter(new MFString38().getArray()).setUrl(new MFString39().getArray())
+            .addChild(new ROUTE().setFromNode("TIMER").setFromField("fraction_changed").setToNode("HUMANOIDROOT_POSITION_ANIMATOR").setToField("set_fraction"))
+            .addChild(new ROUTE().setFromNode("TIMER").setFromField("fraction_changed").setToNode("HUMANOIDROOT_ANIMATOR").setToField("set_fraction"))
+            .addChild(new ROUTE().setFromNode("TIMER").setFromField("fraction_changed").setToNode("SACROILIAC_ANIMATOR").setToField("set_fraction"))
+            .addChild(new ROUTE().setFromNode("TIMER").setFromField("fraction_changed").setToNode("L_HIP_ANIMATOR").setToField("set_fraction"))
+            .addChild(new ROUTE().setFromNode("TIMER").setFromField("fraction_changed").setToNode("L_KNEE_ANIMATOR").setToField("set_fraction"))
+            .addChild(new ROUTE().setFromNode("TIMER").setFromField("fraction_changed").setToNode("L_ANKLE_ANIMATOR").setToField("set_fraction"))
+            .addChild(new ROUTE().setFromNode("TIMER").setFromField("fraction_changed").setToNode("L_MIDTARSAL_ANIMATOR").setToField("set_fraction"))
+            .addChild(new ROUTE().setFromNode("TIMER").setFromField("fraction_changed").setToNode("R_HIP_ANIMATOR").setToField("set_fraction"))
+            .addChild(new ROUTE().setFromNode("TIMER").setFromField("fraction_changed").setToNode("R_KNEE_ANIMATOR").setToField("set_fraction"))
+            .addChild(new ROUTE().setFromNode("TIMER").setFromField("fraction_changed").setToNode("R_ANKLE_ANIMATOR").setToField("set_fraction"))
+            .addChild(new ROUTE().setFromNode("TIMER").setFromField("fraction_changed").setToNode("R_MIDTARSAL_ANIMATOR").setToField("set_fraction"))
+            .addChild(new ROUTE().setFromNode("TIMER").setFromField("fraction_changed").setToNode("VL5_ANIMATOR").setToField("set_fraction"))
+            .addChild(new ROUTE().setFromNode("TIMER").setFromField("fraction_changed").setToNode("SKULLBASE_ANIMATOR").setToField("set_fraction"))
+            .addChild(new ROUTE().setFromNode("TIMER").setFromField("fraction_changed").setToNode("L_SHOULDER_ANIMATOR").setToField("set_fraction"))
+            .addChild(new ROUTE().setFromNode("TIMER").setFromField("fraction_changed").setToNode("L_ELBOW_ANIMATOR").setToField("set_fraction"))
+            .addChild(new ROUTE().setFromNode("TIMER").setFromField("fraction_changed").setToNode("L_WRIST_ANIMATOR").setToField("set_fraction"))
+            .addChild(new ROUTE().setFromNode("TIMER").setFromField("fraction_changed").setToNode("R_SHOULDER_ANIMATOR").setToField("set_fraction"))
+            .addChild(new ROUTE().setFromNode("TIMER").setFromField("fraction_changed").setToNode("R_ELBOW_ANIMATOR").setToField("set_fraction"))
+            .addChild(new ROUTE().setFromNode("TIMER").setFromField("fraction_changed").setToNode("R_WRIST_ANIMATOR").setToField("set_fraction"))))
+        .addChild(new WorldInfo().setTitle("LOA1_RunAnimation.x3d"))
+        .addChild(new Anchor().setDescription("InterchangableActorsViaDynamicRouting").setUrl(new MFString38().getArray()).setParameter(new MFString39().getArray())
           .addChild(new Shape()
-            .setGeometry(new Text().setString(new MFString40().getArray())
-              .setFontStyle(new FontStyle().setJustify(new MFString41().getArray()).setSize(0.8f)))
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,0.2f}))))))      ;
+              .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,0.2f})))
+            .setGeometry(new Text().setString(new MFString40().getArray())
+              .setFontStyle(new FontStyle().setSize(0.8f).setJustify(new MFString41().getArray()))))))      ;
     return X3D0;
     }
-protected class MFFloat0 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+private class MFFloat0 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.2182f,0.2909f,0.3091f,0.7091f,0.8f,0.8182f,1f});
   }
 }
-protected class MFVec3f1 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+private class MFVec3f1 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,-0.0351f,0f,0f,-0.0351f,0f,0f,-0.04087f,0f,0f,-0.04886f,0f,0f,-0.04051f,0f,0f,-0.03666f,0f,0f,-0.03666f,0f,0f,-0.0351f,0f});
   }
 }
-protected class MFFloat2 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+private class MFFloat2 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
   }
 }
-protected class MFRotation3 {
-  protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
+private class MFRotation3 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
     return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,1f,0f,0f,0f,1f,0f,0f});
   }
 }
-protected class MFFloat4 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+private class MFFloat4 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
   }
 }
-protected class MFRotation5 {
-  protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
+private class MFRotation5 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
     return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.9969f,-0.05444f,0.05596f,0.07687f,0.9969f,-0.05444f,0.05596f,0.07687f});
   }
 }
-protected class MFFloat6 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+private class MFFloat6 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.2182f,0.4909f,0.7455f,1f});
   }
 }
-protected class MFRotation7 {
-  protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
+private class MFRotation7 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
     return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-0.9986f,0.03354f,0.04001f,1.212f,-0.9889f,0.1328f,0.06696f,0.4025f,0.9894f,0.1453f,0.009351f,0.4114f,-0.9963f,0.07032f,0.05003f,0.7035f,-0.9986f,0.03354f,0.04001f,1.212f});
   }
 }
-protected class MFFloat8 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+private class MFFloat8 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.2182f,0.4909f,0.7455f,1f});
   }
 }
-protected class MFRotation9 {
-  protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
+private class MFRotation9 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
     return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f,0f,0f,1.108f,1f,0f,0f,0.4265f,1f,0f,0f,0.7052f,1f,0f,0f,2.179f,1f,0f,0f,1.108f});
   }
 }
-protected class MFFloat10 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+private class MFFloat10 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.2182f,0.3091f,0.4909f,1f});
   }
 }
-protected class MFRotation11 {
-  protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
+private class MFRotation11 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
     return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f,0f,0f,0.03543f,-1f,0f,0f,0.1037f,-1f,0f,0f,0.4328f,1f,0f,0f,0.1929f,1f,0f,0f,0.03543f});
   }
 }
-protected class MFFloat12 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+private class MFFloat12 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.5f,1f});
   }
 }
-protected class MFRotation13 {
-  protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
+private class MFRotation13 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
     return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f,0f,0f,0f,1f,0f,0f,-0.2f,1f,0f,0f,0f});
   }
 }
-protected class MFFloat14 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+private class MFFloat14 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.2182f,0.4909f,0.7455f,1f});
   }
 }
-protected class MFRotation15 {
-  protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
+private class MFRotation15 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
     return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.9999f,0.00293f,-0.00989f,0.402f,-1f,0.004977f,-0.00497f,0.5943f,-1f,0.003265f,-0.001752f,1.178f,-0.9999f,0.00815f,-0.01093f,0.3031f,0.9999f,0.00293f,-0.00989f,0.402f});
   }
 }
-protected class MFFloat16 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+private class MFFloat16 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.03636f,0.2182f,0.4909f,0.7455f,1f});
   }
 }
-protected class MFRotation17 {
-  protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
+private class MFRotation17 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
     return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f,0f,0f,0.7004f,1f,0f,0f,1.011f,1f,0f,0f,1.892f,1f,0f,0f,1.188f,1f,0f,0f,0.3964f,1f,0f,0f,0.7004f});
   }
 }
-protected class MFFloat18 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+private class MFFloat18 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.4909f,0.7091f,0.8f,0.8182f,1f});
   }
 }
-protected class MFRotation19 {
-  protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
+private class MFRotation19 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
     return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f,0f,0f,0.2323f,-1f,0f,0f,0.07843f,-1f,0f,0f,0.09676f,-1f,0f,0f,0.3274f,-1f,0f,0f,0.3278f,1f,0f,0f,0.2323f});
   }
 }
-protected class MFFloat20 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+private class MFFloat20 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.5f,1f});
   }
 }
-protected class MFRotation21 {
-  protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
+private class MFRotation21 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
     return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f,0f,0f,-0.2f,1f,0f,0f,0f,1f,0f,0f,-0.2f});
   }
 }
-protected class MFFloat22 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+private class MFFloat22 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.2545f,0.4909f,0.7636f,1f});
   }
 }
-protected class MFRotation23 {
-  protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
+private class MFRotation23 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
     return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.7651f,0.6382f,0.08586f,0.2712f,0.9999f,0.002845f,-0.01547f,0.3756f,0.7459f,-0.6505f,-0.1432f,0.2416f,0.9984f,0.05536f,-0.01154f,0.3488f,0.7651f,0.6382f,0.08586f,0.2712f});
   }
 }
-protected class MFFloat24 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+private class MFFloat24 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.4909f,1f});
   }
 }
-protected class MFRotation25 {
-  protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
+private class MFRotation25 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
     return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.6517f,-0.7559f,0.06211f,0.2508f,0.6467f,0.7527f,-0.1238f,0.2344f,0.6517f,-0.7559f,0.06211f,0.2508f});
   }
 }
-protected class MFFloat26 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+private class MFFloat26 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.2182f,0.4909f,0.7455f,1f});
   }
 }
-protected class MFRotation27 {
-  protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
+private class MFRotation27 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
     return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.9907f,-0.07264f,0.115f,1.135f,0.9291f,-0.1222f,0.349f,0.1695f,-0.9892f,0.1364f,-0.05394f,0.5112f,0.9942f,-0.0002052f,0.1073f,0.4975f,0.9907f,-0.07264f,0.115f,1.135f});
   }
 }
-protected class MFFloat28 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+private class MFFloat28 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.2182f,0.4909f,0.7455f,1f});
   }
 }
-protected class MFRotation29 {
-  protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
+private class MFRotation29 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
     return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.9985f,0.03887f,0.03802f,4.689f,-0.965f,-0.1889f,-0.1821f,1.415f,0.9758f,0.1563f,0.1529f,4.666f,-0.9956f,-0.0936f,0.009826f,1.126f,0.9985f,0.03887f,0.03802f,4.689f});
   }
 }
-protected class MFFloat30 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+private class MFFloat30 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
   }
 }
-protected class MFRotation31 {
-  protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
+private class MFRotation31 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
     return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-0.0240995f,-0.999682f,0.00741506f,0.120409f,-0.0240995f,-0.999682f,0.00741506f,0.120409f});
   }
 }
-protected class MFFloat32 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+private class MFFloat32 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.2182f,0.4909f,0.7455f,1f});
   }
 }
-protected class MFRotation33 {
-  protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
+private class MFRotation33 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
     return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-1f,0f,0f,0.6979f,0.9094f,0.2062f,-0.3613f,0.4157f,0.9637f,0.1537f,-0.2185f,1.353f,0.4864f,0.08841f,-0.8693f,0.1716f,-1f,0f,0f,0.6979f});
   }
 }
-protected class MFFloat34 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+private class MFFloat34 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.2182f,0.4909f,0.7455f,1f});
   }
 }
-protected class MFRotation35 {
-  protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
+private class MFRotation35 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
     return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.9353f,-0.2978f,-0.191f,4.222f,-0.9362f,0.2924f,-0.1952f,1.05f,0.9941f,-0.09719f,-0.04725f,4.512f,-0.9594f,0.2653f,0.09579f,1.525f,0.9353f,-0.2978f,-0.191f,4.222f});
   }
 }
-protected class MFFloat36 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+private class MFFloat36 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
   }
 }
-protected class MFRotation37 {
-  protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
+private class MFRotation37 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
     return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-0.917742f,-0.237244f,-0.318536f,0.214273f,-0.917742f,-0.237244f,-0.318536f,0.214273f});
   }
 }
-protected class MFString38 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"target=_blank"});
-  }
-}
-protected class MFString39 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString38 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"InterchangableActorsViaDynamicRouting.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.x3d","InterchangableActorsViaDynamicRouting.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.wrl"});
   }
 }
-protected class MFString40 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString39 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"target=_blank"});
+  }
+}
+private class MFString40 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"LOA1_RunAnimation.x3d","defines a prototype","for animating a humanoid.","","Click this text to see","InterchangableActorsViaDynamicRouting example."});
   }
 }
-protected class MFString41 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString41 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }

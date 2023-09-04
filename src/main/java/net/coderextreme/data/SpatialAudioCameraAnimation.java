@@ -54,134 +54,133 @@ public class SpatialAudioCameraAnimation {
         .addMeta(new meta().setName("created").setContent("28 October 2020"))
         .addMeta(new meta().setName("modified").setContent("5 December 2021"))
         .addMeta(new meta().setName("reference").setContent("CHANGELOG.txt"))
-        .addMeta(new meta().setName("TODO").setContent("credit for audio files"))
         .addMeta(new meta().setName("reference").setContent("https://www.medialab.hmu.gr/minipages/x3domAudio"))
+        .addMeta(new meta().setName("TODO").setContent("credit for audio files"))
         .addMeta(new meta().setName("identifier").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SpatialAudioCameraAnimation.x3d"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("license").setContent("../license.html")))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("SpatialAudioCameraAnimation.x3d"))
         .addChild(new NavigationInfo())
-        .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
-        .addChild(new Viewpoint().setDEF("Camera001").setDescription("Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view").setOrientation(new float[] {1f,0f,0f,-0.523599f}).setPosition(new float[] {0f,2000f,3500f}))
+        .addChild(new Background().setFrontUrl(new MFString0().getArray()).setBackUrl(new MFString1().getArray()).setLeftUrl(new MFString2().getArray()).setRightUrl(new MFString3().getArray()).setTopUrl(new MFString4().getArray()).setBottomUrl(new MFString5().getArray()))
+        .addChild(new Viewpoint().setDEF("Camera001").setDescription("Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view").setPosition(new float[] {0f,2000f,3500f}).setOrientation(new float[] {1f,0f,0f,-0.523599f}))
         .addChild(new TimeSensor().setDEF("TIMER").setCycleInterval(33.333332d).setLoop(true))
         .addChild(new PositionInterpolator().setDEF("Camera001-POS-INTERP").setKey(new MFFloat6().getArray()).setKeyValue(new MFVec3f7().getArray()))
         .addChild(new OrientationInterpolator().setDEF("Camera001-ROT-INTERP").setKey(new MFFloat8().getArray()).setKeyValue(new MFRotation9().getArray()))
-        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("TIMER").setToField("set_fraction").setToNode("Camera001-POS-INTERP"))
-        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Camera001-POS-INTERP").setToField("set_position").setToNode("Camera001"))
-        .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("TIMER").setToField("set_fraction").setToNode("Camera001-ROT-INTERP"))
-        .addChild(new ROUTE().setFromField("value_changed").setFromNode("Camera001-ROT-INTERP").setToField("set_orientation").setToNode("Camera001"))
         .addChild(new Transform().setDEF("Floor").setTranslation(new float[] {1.241f,0f,0.358f})
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("WireColor")
               .setMaterial(new Material().setDiffuseColor(new float[] {0.122f,0.114f,0.125f})))
             .setGeometry(new Box().setSize(new float[] {2000f,1f,2000f}))))
-        .addChild(new Transform().setDEF("TransformAudio1").setTranslation(new float[] {-933.123474f,0f,-926.253235f})
+        .addChild(new Transform().setDEF("TransformAudio1").setTranslation(new float[] {-933.1235f,0f,-926.2532f})
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("WireColor_1")
               .setMaterial(new Material().setDiffuseColor(new float[] {0.690196f,0.101961f,0.101961f})))
             .setGeometry(new Sphere().setRadius(100f)))
           .addChild(new Billboard()
-            .addChild(new Transform().setDEF("violin").setRotation(new float[] {1f,0f,0f,-0.5f}).setScale(new float[] {100f,100f,100f}).setTranslation(new float[] {0f,100f,0f})
+            .addChild(new Transform().setDEF("violin").setTranslation(new float[] {0f,100f,0f}).setRotation(new float[] {1f,0f,0f,-0.5f}).setScale(new float[] {100f,100f,100f})
               .addChild(new Shape()
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setAmbientIntensity(0.0933f).setDiffuseColor(new float[] {1f,1f,1f}).setShininess(0.51f).setSpecularColor(new float[] {0.46f,0.46f,0.46f})))
+                  .setMaterial(new Material().setAmbientIntensity(0.0933f).setDiffuseColor(new float[] {1f,1f,1f}).setSpecularColor(new float[] {0.46f,0.46f,0.46f}).setShininess(0.51f)))
                 .setGeometry(new Text().setString(new MFString10().getArray())
                   .setFontStyle(new FontStyle().setDEF("ModelFontStyle").setFamily(new MFString11().getArray()).setStyle("BOLD")))))))
-        .addChild(new Transform().setDEF("TransformAudio2").setTranslation(new float[] {933.475586f,0f,924.423218f})
+        .addChild(new Transform().setDEF("TransformAudio2").setTranslation(new float[] {933.4756f,0f,924.4232f})
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("WireColor_2")
               .setMaterial(new Material().setDiffuseColor(new float[] {0.105882f,0.694118f,0.580392f})))
             .setGeometry(new Sphere().setRadius(100f)))
           .addChild(new Billboard()
-            .addChild(new Transform().setDEF("saxophone").setRotation(new float[] {1f,0f,0f,-0.5f}).setScale(new float[] {100f,100f,100f}).setTranslation(new float[] {0f,100f,0f})
+            .addChild(new Transform().setDEF("saxophone").setTranslation(new float[] {0f,100f,0f}).setRotation(new float[] {1f,0f,0f,-0.5f}).setScale(new float[] {100f,100f,100f})
               .addChild(new Shape()
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setAmbientIntensity(0.0933f).setDiffuseColor(new float[] {1f,1f,1f}).setShininess(0.51f).setSpecularColor(new float[] {0.46f,0.46f,0.46f})))
+                  .setMaterial(new Material().setAmbientIntensity(0.0933f).setDiffuseColor(new float[] {1f,1f,1f}).setSpecularColor(new float[] {0.46f,0.46f,0.46f}).setShininess(0.51f)))
                 .setGeometry(new Text().setString(new MFString12().getArray())
                   .setFontStyle(new FontStyle().setUSE("ModelFontStyle")))))))
         .addChild(new ListenerPointSource().setTrackCurrentView(true))
-        .addChild(new StreamAudioDestination().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
-          .addChild(new SpatialSound().setDEF("Audio1").setDistanceModel("INVERSE")
-            .addChild(new Gain().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
-              .addChild(new AudioClip().setDescription("Violin").setLoop(true).setUrl(new MFString13().getArray()))))
-          .addChild(new SpatialSound().setDEF("Audio2").setDistanceModel("INVERSE")
-            .addChild(new Gain().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
-              .addChild(new AudioClip().setDescription("Saxophone").setLoop(true).setUrl(new MFString14().getArray()))))))      ;
+        .addChild(new StreamAudioDestination()
+          .addChild(new SpatialSound().setDEF("Audio1")
+            .addChild(new Gain()
+              .addChild(new AudioClip().setDescription("Violin").setUrl(new MFString13().getArray()).setLoop(true))))
+          .addChild(new SpatialSound().setDEF("Audio2")
+            .addChild(new Gain()
+              .addChild(new AudioClip().setDescription("Saxophone").setUrl(new MFString14().getArray()).setLoop(true)))))
+        .addChild(new ROUTE().setFromNode("TIMER").setFromField("fraction_changed").setToNode("Camera001-POS-INTERP").setToField("set_fraction"))
+        .addChild(new ROUTE().setFromNode("Camera001-POS-INTERP").setFromField("value_changed").setToNode("Camera001").setToField("position"))
+        .addChild(new ROUTE().setFromNode("TIMER").setFromField("fraction_changed").setToNode("Camera001-ROT-INTERP").setToField("set_fraction"))
+        .addChild(new ROUTE().setFromNode("Camera001-ROT-INTERP").setFromField("value_changed").setToNode("Camera001").setToField("orientation")))      ;
     return X3D0;
     }
-protected class MFString0 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"});
-  }
-}
-protected class MFString1 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"});
-  }
-}
-protected class MFString2 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString0 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"images/generic/FR1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"});
   }
 }
-protected class MFString3 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString1 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"});
+  }
+}
+private class MFString2 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"images/generic/LF1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"});
   }
 }
-protected class MFString4 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString3 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"images/generic/RT1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"});
   }
 }
-protected class MFString5 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString4 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"});
   }
 }
-protected class MFFloat6 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+private class MFString5 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"});
+  }
+}
+private class MFFloat6 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.25f,0.5f,0.75f,1f});
   }
 }
-protected class MFVec3f7 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+private class MFVec3f7 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,2000f,3500f,0f,2000f,0f,0f,2000f,-3500f,0f,2000f,0f,0f,2000f,3500f});
   }
 }
-protected class MFFloat8 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+private class MFFloat8 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.25f,0.5f,0.75f,1f});
   }
 }
-protected class MFRotation9 {
-  protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
+private class MFRotation9 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
     return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f,0f,0f,-0.523599f,0.99999f,0.003554f,0.002727f,-1.309007f,0f,-0.965926f,-0.258819f,-3.141593f,0.002282f,-0.793351f,-0.60876f,-3.135645f,1f,-0.000001f,0f,-0.523599f});
   }
 }
-protected class MFString10 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString10 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Violin"});
   }
 }
-protected class MFString11 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString11 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Times","SERIF"});
   }
 }
-protected class MFString12 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString12 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Saxophone"});
   }
 }
-protected class MFString13 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString13 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"});
   }
 }
-protected class MFString14 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString14 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"});
   }
 }

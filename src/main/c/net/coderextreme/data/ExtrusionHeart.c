@@ -3,7 +3,7 @@ void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Immersive";
-X3D0.version = "3.0";
+X3D0.version = "4.0";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "title";
@@ -42,43 +42,38 @@ meta8.name = "generator";
 meta8.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
 head1.meta[6] = meta8;
 
-meta meta9 = createNode("meta");
-meta9.name = "license";
-meta9.content = "../license.html";
-head1.meta[7] = meta9;
-
 head = head1;
 
-Viewpoint Viewpoint11 = createNode("Viewpoint");
-Viewpoint11.description = "Extrusion Heart";
-Viewpoint11.orientation = new SFRotation(new float[1,0,0,1.57]);
-Viewpoint11.position = new SFVec3f(new float[0,-4,0]);
+Viewpoint Viewpoint10 = createNode("Viewpoint");
+Viewpoint10.description = "Extrusion Heart";
+Viewpoint10.position = new SFVec3f(new float[0,-4,0]);
+Viewpoint10.orientation = new SFRotation(new float[1,0,0,1.57]);
 children = new MFNode();
 
-children[0] = Viewpoint11;
+children[0] = Viewpoint10;
 
-Transform Transform12 = createNode("Transform");
-Transform12.translation = new SFVec3f(new float[0,-0.5,0]);
-Shape Shape13 = createNode("Shape");
-Extrusion Extrusion14 = createNode("Extrusion");
-Extrusion14.creaseAngle = 3.14159;
-Extrusion14.crossSection = new MFVec2f(new float[0,0.8,0.2,1,0.7,0.95,1,0.5,0.8,0,0.5,-0.3,0,-0.7,-0.5,-0.3,-0.8,0,-1,0.5,-0.7,0.95,-0.2,1,0,0.8]);
-Extrusion14.scale = new MFVec2f(new float[0.01,0.01,0.8,0.8,1,1,0.8,0.8,0.01,0.01]);
-Extrusion14.solid = False;
-Extrusion14.spine = new MFVec3f(new float[0,0,0,0,0.1,0,0,0.5,0,0,0.9,0,0,1,0]);
-Shape13.geometry = Extrusion14;
+Transform Transform11 = createNode("Transform");
+Transform11.translation = new SFVec3f(new float[0,-0.5,0]);
+Shape Shape12 = createNode("Shape");
+Appearance Appearance13 = createNode("Appearance");
+Material Material14 = createNode("Material");
+Material14.diffuseColor = new SFColor(new float[0.8,0.3,0.3]);
+Appearance13.material = Material14;
 
-Appearance Appearance15 = createNode("Appearance");
-Material Material16 = createNode("Material");
-Material16.diffuseColor = new SFColor(new float[0.8,0.3,0.3]);
-Appearance15.material = Material16;
+Shape12.appearance = Appearance13;
 
-Shape13.appearance = Appearance15;
+Extrusion Extrusion15 = createNode("Extrusion");
+Extrusion15.solid = False;
+Extrusion15.creaseAngle = 3.14159;
+Extrusion15.crossSection = new MFVec2f(new float[0,0.8,0.2,1,0.7,0.95,1,0.5,0.8,0,0.5,-0.3,0,-0.7,-0.5,-0.3,-0.8,0,-1,0.5,-0.7,0.95,-0.2,1,0,0.8]);
+Extrusion15.scale = new MFVec2f(new float[0.01,0.01,0.8,0.8,1,1,0.8,0.8,0.01,0.01]);
+Extrusion15.spine = new MFVec3f(new float[0,0,0,0,0.1,0,0,0.5,0,0,0.9,0,0,1,0]);
+Shape12.geometry = Extrusion15;
 
-Transform12.child = new undefined();
+Transform11.child = new undefined();
 
-Transform12.child[0] = Shape13;
+Transform11.child[0] = Shape12;
 
-children[1] = Transform12;
+children[1] = Transform11;
 
 }

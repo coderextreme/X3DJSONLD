@@ -37,4 +37,4 @@ ProtoInstance1
           .addFieldValue(new fieldValue().setName("myShape")
             .addChild(new Shape().setDEF("_1")
               .setGeometry(new Box().setSize(Java.to([140,140,140], Java.type("double[]"))))));
-    X3D0.toFileX3D("../data/abox.new.graal.x3d");
+    X3D0.toFileJSON("../data/abox.new.graal.json");

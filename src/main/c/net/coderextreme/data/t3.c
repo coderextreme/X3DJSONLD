@@ -3,500 +3,495 @@ void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Immersive";
-X3D0.version = "3.3";
+X3D0.version = "4.0";
 head head1 = createNode("head");
-component component2 = createNode("component");
-component2.name = "Networking";
-component2.level = 2;
-head1.component = new MFNode();
+meta meta2 = createNode("meta");
+meta2.name = "title";
+meta2.content = "t3.x3d";
+head1.meta = new MFNode();
 
-head1.component[0] = component2;
+head1.meta[0] = meta2;
 
-component component3 = createNode("component");
-component3.name = "Core";
-component3.level = 2;
-head1.component[1] = component3;
+meta meta3 = createNode("meta");
+meta3.name = "identifier";
+meta3.content = "http://coderextreme.net/X3DJSONLD/src/main/data/t4.x3d";
+head1.meta[1] = meta3;
 
 meta meta4 = createNode("meta");
-meta4.name = "title";
-meta4.content = "t3.x3d";
+meta4.name = "generator";
+meta4.content = "view3dscene, https://castle-engine.io/view3dscene.php";
 head1.meta[2] = meta4;
 
 meta meta5 = createNode("meta");
-meta5.name = "identifier";
-meta5.content = "http://coderextreme.net/X3DJSONLD/src/main/data/t4.x3d";
+meta5.name = "generator";
+meta5.content = "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js";
 head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
-meta6.name = "generator";
-meta6.content = "view3dscene, https://castle-engine.io/view3dscene.php";
+meta6.name = "creator";
+meta6.content = "Andreas Plesch and John Carlson";
 head1.meta[4] = meta6;
 
 meta meta7 = createNode("meta");
-meta7.name = "creator";
-meta7.content = "Andreas Plesch and John Carlson";
+meta7.name = "source";
+meta7.content = "t1.wrl";
 head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");
-meta8.name = "source";
-meta8.content = "t1.wrl";
+meta8.name = "description";
+meta8.content = "Test Case for Proto Expander";
 head1.meta[6] = meta8;
 
 meta meta9 = createNode("meta");
-meta9.name = "description";
-meta9.content = "Test Case for Proto Expander";
+meta9.name = "license";
+meta9.content = "https://www.web3d.org/x3d/content/examples/license.html";
 head1.meta[7] = meta9;
 
 meta meta10 = createNode("meta");
-meta10.name = "license";
-meta10.content = "https://www.web3d.org/x3d/content/examples/license.html";
+meta10.name = "translated";
+meta10.content = "12 May 2020";
 head1.meta[8] = meta10;
 
-meta meta11 = createNode("meta");
-meta11.name = "translated";
-meta11.content = "12 May 2020";
-head1.meta[9] = meta11;
+component component11 = createNode("component");
+component11.name = "Networking";
+component11.level = 2;
+head1.component[9] = component11;
 
-meta meta12 = createNode("meta");
-meta12.name = "generator";
-meta12.content = "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js";
-head1.meta[10] = meta12;
-
-meta meta13 = createNode("meta");
-meta13.name = "reference";
-meta13.content = "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding";
-head1.meta[11] = meta13;
+component component12 = createNode("component");
+component12.name = "Core";
+component12.level = 2;
+head1.component[10] = component12;
 
 head = head1;
 
-NavigationInfo NavigationInfo15 = createNode("NavigationInfo");
-NavigationInfo15.type = new MFString(new java.lang.String["EXAMINE","FLY","WALK"]);
-NavigationInfo15.speed = 3;
-NavigationInfo15.avatarSize = new MFFloat(new float[200,200,120]);
+NavigationInfo NavigationInfo14 = createNode("NavigationInfo");
+NavigationInfo14.type = new MFString(new java.lang.String["EXAMINE","FLY","WALK"]);
+NavigationInfo14.avatarSize = new MFFloat(new float[200,200,120]);
+NavigationInfo14.speed = 3;
 children = new MFNode();
 
-children[0] = NavigationInfo15;
+children[0] = NavigationInfo14;
 
-WorldInfo WorldInfo16 = createNode("WorldInfo");
-WorldInfo16.title = "Arts Mapper";
-children[1] = WorldInfo16;
+WorldInfo WorldInfo15 = createNode("WorldInfo");
+WorldInfo15.title = "Arts Mapper";
+children[1] = WorldInfo15;
 
-Viewpoint Viewpoint17 = createNode("Viewpoint");
-Viewpoint17.description = "looking North";
-Viewpoint17.position = new SFVec3f(new float[0,60,110]);
-Viewpoint17.orientation = new SFRotation(new float[1,0,0,-0.699999988079071]);
-Viewpoint17.fieldOfView = 0.785398125648499;
-children[2] = Viewpoint17;
+Viewpoint Viewpoint16 = createNode("Viewpoint");
+Viewpoint16.description = "looking North";
+Viewpoint16.position = new SFVec3f(new float[0,60,110]);
+Viewpoint16.orientation = new SFRotation(new float[1,0,0,-0.699999988079071]);
+Viewpoint16.fieldOfView = 0.7853981;
+children[2] = Viewpoint16;
 
-Transform Transform18 = createNode("Transform");
-Transform18.translation = new SFVec3f(new float[-468,0,315]);
-Anchor Anchor19 = createNode("Anchor");
-Anchor19.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor19.description = "High Peak Community Arts";
-Transform Transform20 = createNode("Transform");
-Shape Shape21 = createNode("Shape");
-Appearance Appearance22 = createNode("Appearance");
-Material Material23 = createNode("Material");
-Material23.diffuseColor = new SFColor(new float[1,1,1]);
-Material23.emissiveColor = new SFColor(new float[0,0.300000011920929,1]);
-Appearance22.material = Material23;
+Transform Transform17 = createNode("Transform");
+Transform17.translation = new SFVec3f(new float[-468,0,315]);
+Anchor Anchor18 = createNode("Anchor");
+Anchor18.description = "High Peak Community Arts";
+Anchor18.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Transform Transform19 = createNode("Transform");
+Shape Shape20 = createNode("Shape");
+Appearance Appearance21 = createNode("Appearance");
+Material Material22 = createNode("Material");
+Material22.diffuseColor = new SFColor(new float[1,1,1]);
+Material22.emissiveColor = new SFColor(new float[0,0.3,1]);
+Appearance21.material = Material22;
 
-Shape21.appearance = Appearance22;
+Shape20.appearance = Appearance21;
 
-Sphere Sphere24 = createNode("Sphere");
-Sphere24.radius = 5.10000002384186;
-Shape21.geometry = Sphere24;
+Sphere Sphere23 = createNode("Sphere");
+Sphere23.radius = 5.1;
+Shape20.geometry = Sphere23;
 
-Transform20.child = new undefined();
+Transform19.child = new undefined();
 
-Transform20.child[0] = Shape21;
+Transform19.child[0] = Shape20;
 
-Anchor19.children = new MFNode();
+Anchor18.children = new MFNode();
 
-Anchor19.children[0] = Transform20;
+Anchor18.children[0] = Transform19;
 
-Transform18.children = new MFNode();
+Transform17.children = new MFNode();
 
-Transform18.children[0] = Anchor19;
+Transform17.children[0] = Anchor18;
 
-Anchor Anchor25 = createNode("Anchor");
-Anchor25.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor25.description = "People Express";
-Transform Transform26 = createNode("Transform");
-Shape Shape27 = createNode("Shape");
-Appearance Appearance28 = createNode("Appearance");
-Material Material29 = createNode("Material");
-Material29.diffuseColor = new SFColor(new float[1,1,1]);
-Material29.emissiveColor = new SFColor(new float[0.600000023841858,0,0.600000023841858]);
-Appearance28.material = Material29;
+Anchor Anchor24 = createNode("Anchor");
+Anchor24.description = "People Express";
+Anchor24.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Transform Transform25 = createNode("Transform");
+Shape Shape26 = createNode("Shape");
+Appearance Appearance27 = createNode("Appearance");
+Material Material28 = createNode("Material");
+Material28.diffuseColor = new SFColor(new float[1,1,1]);
+Material28.emissiveColor = new SFColor(new float[0.6,0,0.6]);
+Appearance27.material = Material28;
 
-Shape27.appearance = Appearance28;
+Shape26.appearance = Appearance27;
 
-Sphere Sphere30 = createNode("Sphere");
-Sphere30.radius = 5.10000002384186;
-Shape27.geometry = Sphere30;
+Sphere Sphere29 = createNode("Sphere");
+Sphere29.radius = 5.1;
+Shape26.geometry = Sphere29;
 
-Transform26.child = new undefined();
+Transform25.child = new undefined();
 
-Transform26.child[0] = Shape27;
+Transform25.child[0] = Shape26;
 
-Anchor25.children = new MFNode();
+Anchor24.children = new MFNode();
 
-Anchor25.children[0] = Transform26;
+Anchor24.children[0] = Transform25;
 
-Transform18.children[1] = Anchor25;
+Transform17.children[1] = Anchor24;
 
-Anchor Anchor31 = createNode("Anchor");
-Anchor31.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor31.description = "QArts/Studios";
-Transform Transform32 = createNode("Transform");
-Shape Shape33 = createNode("Shape");
-Appearance Appearance34 = createNode("Appearance");
-Material Material35 = createNode("Material");
-Material35.diffuseColor = new SFColor(new float[1,1,1]);
-Material35.emissiveColor = new SFColor(new float[0.600000023841858,0,0.600000023841858]);
-Appearance34.material = Material35;
+Anchor Anchor30 = createNode("Anchor");
+Anchor30.description = "QArts/Studios";
+Anchor30.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Transform Transform31 = createNode("Transform");
+Shape Shape32 = createNode("Shape");
+Appearance Appearance33 = createNode("Appearance");
+Material Material34 = createNode("Material");
+Material34.diffuseColor = new SFColor(new float[1,1,1]);
+Material34.emissiveColor = new SFColor(new float[0.6,0,0.6]);
+Appearance33.material = Material34;
 
-Shape33.appearance = Appearance34;
+Shape32.appearance = Appearance33;
 
-Sphere Sphere36 = createNode("Sphere");
-Sphere36.radius = 5.10000002384186;
-Shape33.geometry = Sphere36;
+Sphere Sphere35 = createNode("Sphere");
+Sphere35.radius = 5.1;
+Shape32.geometry = Sphere35;
 
-Transform32.child = new undefined();
+Transform31.child = new undefined();
 
-Transform32.child[0] = Shape33;
+Transform31.child[0] = Shape32;
 
-Anchor31.children = new MFNode();
+Anchor30.children = new MFNode();
 
-Anchor31.children[0] = Transform32;
+Anchor30.children[0] = Transform31;
 
-Transform18.children[2] = Anchor31;
+Transform17.children[2] = Anchor30;
 
-Anchor Anchor37 = createNode("Anchor");
-Anchor37.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor37.description = "First Movement";
-Transform Transform38 = createNode("Transform");
-Shape Shape39 = createNode("Shape");
-Appearance Appearance40 = createNode("Appearance");
-Material Material41 = createNode("Material");
-Material41.diffuseColor = new SFColor(new float[1,1,1]);
-Material41.emissiveColor = new SFColor(new float[1,0,0.200000002980232]);
-Appearance40.material = Material41;
+Anchor Anchor36 = createNode("Anchor");
+Anchor36.description = "First Movement";
+Anchor36.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Transform Transform37 = createNode("Transform");
+Shape Shape38 = createNode("Shape");
+Appearance Appearance39 = createNode("Appearance");
+Material Material40 = createNode("Material");
+Material40.diffuseColor = new SFColor(new float[1,1,1]);
+Material40.emissiveColor = new SFColor(new float[1,0,0.2]);
+Appearance39.material = Material40;
 
-Shape39.appearance = Appearance40;
+Shape38.appearance = Appearance39;
 
-Sphere Sphere42 = createNode("Sphere");
-Sphere42.radius = 5.10000002384186;
-Shape39.geometry = Sphere42;
+Sphere Sphere41 = createNode("Sphere");
+Sphere41.radius = 5.1;
+Shape38.geometry = Sphere41;
 
-Transform38.child = new undefined();
+Transform37.child = new undefined();
 
-Transform38.child[0] = Shape39;
+Transform37.child[0] = Shape38;
 
-Anchor37.children = new MFNode();
+Anchor36.children = new MFNode();
 
-Anchor37.children[0] = Transform38;
+Anchor36.children[0] = Transform37;
 
-Transform18.children[3] = Anchor37;
+Transform17.children[3] = Anchor36;
 
-Anchor Anchor43 = createNode("Anchor");
-Anchor43.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor43.description = "City Arts";
-Transform Transform44 = createNode("Transform");
-Shape Shape45 = createNode("Shape");
-Appearance Appearance46 = createNode("Appearance");
-Material Material47 = createNode("Material");
-Material47.diffuseColor = new SFColor(new float[1,1,1]);
-Material47.emissiveColor = new SFColor(new float[0.600000023841858,0,0.600000023841858]);
-Appearance46.material = Material47;
+Anchor Anchor42 = createNode("Anchor");
+Anchor42.description = "City Arts";
+Anchor42.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Transform Transform43 = createNode("Transform");
+Shape Shape44 = createNode("Shape");
+Appearance Appearance45 = createNode("Appearance");
+Material Material46 = createNode("Material");
+Material46.diffuseColor = new SFColor(new float[1,1,1]);
+Material46.emissiveColor = new SFColor(new float[0.6,0,0.6]);
+Appearance45.material = Material46;
 
-Shape45.appearance = Appearance46;
+Shape44.appearance = Appearance45;
 
-Sphere Sphere48 = createNode("Sphere");
-Sphere48.radius = 5.10000002384186;
-Shape45.geometry = Sphere48;
+Sphere Sphere47 = createNode("Sphere");
+Sphere47.radius = 5.1;
+Shape44.geometry = Sphere47;
 
-Transform44.child = new undefined();
+Transform43.child = new undefined();
 
-Transform44.child[0] = Shape45;
+Transform43.child[0] = Shape44;
 
-Anchor43.children = new MFNode();
+Anchor42.children = new MFNode();
 
-Anchor43.children[0] = Transform44;
+Anchor42.children[0] = Transform43;
 
-Transform18.children[4] = Anchor43;
+Transform17.children[4] = Anchor42;
 
-Anchor Anchor49 = createNode("Anchor");
-Anchor49.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor49.description = "Indigo Dance Group (Salamanda Tandem)";
-Transform Transform50 = createNode("Transform");
-Shape Shape51 = createNode("Shape");
-Appearance Appearance52 = createNode("Appearance");
-Material Material53 = createNode("Material");
-Material53.diffuseColor = new SFColor(new float[1,1,1]);
-Material53.emissiveColor = new SFColor(new float[0,0.300000011920929,1]);
-Appearance52.material = Material53;
+Anchor Anchor48 = createNode("Anchor");
+Anchor48.description = "Indigo Dance Group (Salamanda Tandem)";
+Anchor48.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Transform Transform49 = createNode("Transform");
+Shape Shape50 = createNode("Shape");
+Appearance Appearance51 = createNode("Appearance");
+Material Material52 = createNode("Material");
+Material52.diffuseColor = new SFColor(new float[1,1,1]);
+Material52.emissiveColor = new SFColor(new float[0,0.3,1]);
+Appearance51.material = Material52;
 
-Shape51.appearance = Appearance52;
+Shape50.appearance = Appearance51;
 
-Sphere Sphere54 = createNode("Sphere");
-Sphere54.radius = 5.10000002384186;
-Shape51.geometry = Sphere54;
+Sphere Sphere53 = createNode("Sphere");
+Sphere53.radius = 5.1;
+Shape50.geometry = Sphere53;
 
-Transform50.child = new undefined();
+Transform49.child = new undefined();
 
-Transform50.child[0] = Shape51;
+Transform49.child[0] = Shape50;
 
-Anchor49.children = new MFNode();
+Anchor48.children = new MFNode();
 
-Anchor49.children[0] = Transform50;
+Anchor48.children[0] = Transform49;
 
-Transform18.children[5] = Anchor49;
+Transform17.children[5] = Anchor48;
 
-Anchor Anchor55 = createNode("Anchor");
-Anchor55.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor55.description = "Watering Seeds";
-Transform Transform56 = createNode("Transform");
-Shape Shape57 = createNode("Shape");
-Appearance Appearance58 = createNode("Appearance");
-Material Material59 = createNode("Material");
-Material59.diffuseColor = new SFColor(new float[1,1,1]);
-Material59.emissiveColor = new SFColor(new float[0,0.300000011920929,1]);
-Appearance58.material = Material59;
+Anchor Anchor54 = createNode("Anchor");
+Anchor54.description = "Watering Seeds";
+Anchor54.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Transform Transform55 = createNode("Transform");
+Shape Shape56 = createNode("Shape");
+Appearance Appearance57 = createNode("Appearance");
+Material Material58 = createNode("Material");
+Material58.diffuseColor = new SFColor(new float[1,1,1]);
+Material58.emissiveColor = new SFColor(new float[0,0.3,1]);
+Appearance57.material = Material58;
 
-Shape57.appearance = Appearance58;
+Shape56.appearance = Appearance57;
 
-Sphere Sphere60 = createNode("Sphere");
-Sphere60.radius = 5.10000002384186;
-Shape57.geometry = Sphere60;
+Sphere Sphere59 = createNode("Sphere");
+Sphere59.radius = 5.1;
+Shape56.geometry = Sphere59;
 
-Transform56.child = new undefined();
+Transform55.child = new undefined();
 
-Transform56.child[0] = Shape57;
+Transform55.child[0] = Shape56;
 
-Anchor55.children = new MFNode();
+Anchor54.children = new MFNode();
 
-Anchor55.children[0] = Transform56;
+Anchor54.children[0] = Transform55;
 
-Transform18.children[6] = Anchor55;
+Transform17.children[6] = Anchor54;
 
-Anchor Anchor61 = createNode("Anchor");
-Anchor61.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor61.description = "Fased In The Arts";
-Transform Transform62 = createNode("Transform");
-Shape Shape63 = createNode("Shape");
-Appearance Appearance64 = createNode("Appearance");
-Material Material65 = createNode("Material");
-Material65.diffuseColor = new SFColor(new float[1,1,1]);
-Material65.emissiveColor = new SFColor(new float[0,0.300000011920929,1]);
-Appearance64.material = Material65;
+Anchor Anchor60 = createNode("Anchor");
+Anchor60.description = "Fased In The Arts";
+Anchor60.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Transform Transform61 = createNode("Transform");
+Shape Shape62 = createNode("Shape");
+Appearance Appearance63 = createNode("Appearance");
+Material Material64 = createNode("Material");
+Material64.diffuseColor = new SFColor(new float[1,1,1]);
+Material64.emissiveColor = new SFColor(new float[0,0.3,1]);
+Appearance63.material = Material64;
 
-Shape63.appearance = Appearance64;
+Shape62.appearance = Appearance63;
 
-Sphere Sphere66 = createNode("Sphere");
-Sphere66.radius = 5.10000002384186;
-Shape63.geometry = Sphere66;
+Sphere Sphere65 = createNode("Sphere");
+Sphere65.radius = 5.1;
+Shape62.geometry = Sphere65;
 
-Transform62.child = new undefined();
+Transform61.child = new undefined();
 
-Transform62.child[0] = Shape63;
+Transform61.child[0] = Shape62;
 
-Anchor61.children = new MFNode();
+Anchor60.children = new MFNode();
 
-Anchor61.children[0] = Transform62;
+Anchor60.children[0] = Transform61;
 
-Transform18.children[7] = Anchor61;
+Transform17.children[7] = Anchor60;
 
-Anchor Anchor67 = createNode("Anchor");
-Anchor67.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor67.description = "27a Access Artspace";
-Transform Transform68 = createNode("Transform");
-Shape Shape69 = createNode("Shape");
-Appearance Appearance70 = createNode("Appearance");
-Material Material71 = createNode("Material");
-Material71.diffuseColor = new SFColor(new float[1,1,1]);
-Material71.emissiveColor = new SFColor(new float[1,0,0.200000002980232]);
-Appearance70.material = Material71;
+Anchor Anchor66 = createNode("Anchor");
+Anchor66.description = "27a Access Artspace";
+Anchor66.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Transform Transform67 = createNode("Transform");
+Shape Shape68 = createNode("Shape");
+Appearance Appearance69 = createNode("Appearance");
+Material Material70 = createNode("Material");
+Material70.diffuseColor = new SFColor(new float[1,1,1]);
+Material70.emissiveColor = new SFColor(new float[1,0,0.2]);
+Appearance69.material = Material70;
 
-Shape69.appearance = Appearance70;
+Shape68.appearance = Appearance69;
 
-Sphere Sphere72 = createNode("Sphere");
-Sphere72.radius = 5.10000002384186;
-Shape69.geometry = Sphere72;
+Sphere Sphere71 = createNode("Sphere");
+Sphere71.radius = 5.1;
+Shape68.geometry = Sphere71;
 
-Transform68.child = new undefined();
+Transform67.child = new undefined();
 
-Transform68.child[0] = Shape69;
+Transform67.child[0] = Shape68;
 
-Anchor67.children = new MFNode();
+Anchor66.children = new MFNode();
 
-Anchor67.children[0] = Transform68;
+Anchor66.children[0] = Transform67;
 
-Transform18.children[8] = Anchor67;
+Transform17.children[8] = Anchor66;
 
-Anchor Anchor73 = createNode("Anchor");
-Anchor73.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor73.description = "Bamboozle Theatre Company";
-Transform Transform74 = createNode("Transform");
-Shape Shape75 = createNode("Shape");
-Appearance Appearance76 = createNode("Appearance");
-Material Material77 = createNode("Material");
-Material77.diffuseColor = new SFColor(new float[1,1,1]);
-Material77.emissiveColor = new SFColor(new float[0,0.300000011920929,1]);
-Appearance76.material = Material77;
+Anchor Anchor72 = createNode("Anchor");
+Anchor72.description = "Bamboozle Theatre Company";
+Anchor72.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Transform Transform73 = createNode("Transform");
+Shape Shape74 = createNode("Shape");
+Appearance Appearance75 = createNode("Appearance");
+Material Material76 = createNode("Material");
+Material76.diffuseColor = new SFColor(new float[1,1,1]);
+Material76.emissiveColor = new SFColor(new float[0,0.3,1]);
+Appearance75.material = Material76;
 
-Shape75.appearance = Appearance76;
+Shape74.appearance = Appearance75;
 
-Sphere Sphere78 = createNode("Sphere");
-Sphere78.radius = 5.10000002384186;
-Shape75.geometry = Sphere78;
+Sphere Sphere77 = createNode("Sphere");
+Sphere77.radius = 5.1;
+Shape74.geometry = Sphere77;
 
-Transform74.child = new undefined();
+Transform73.child = new undefined();
 
-Transform74.child[0] = Shape75;
+Transform73.child[0] = Shape74;
 
-Anchor73.children = new MFNode();
+Anchor72.children = new MFNode();
 
-Anchor73.children[0] = Transform74;
+Anchor72.children[0] = Transform73;
 
-Transform18.children[9] = Anchor73;
+Transform17.children[9] = Anchor72;
 
-Anchor Anchor79 = createNode("Anchor");
-Anchor79.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor79.description = "Mantle Community Arts";
-Transform Transform80 = createNode("Transform");
-Shape Shape81 = createNode("Shape");
-Appearance Appearance82 = createNode("Appearance");
-Material Material83 = createNode("Material");
-Material83.diffuseColor = new SFColor(new float[1,1,1]);
-Material83.emissiveColor = new SFColor(new float[0,0.300000011920929,1]);
-Appearance82.material = Material83;
+Anchor Anchor78 = createNode("Anchor");
+Anchor78.description = "Mantle Community Arts";
+Anchor78.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Transform Transform79 = createNode("Transform");
+Shape Shape80 = createNode("Shape");
+Appearance Appearance81 = createNode("Appearance");
+Material Material82 = createNode("Material");
+Material82.diffuseColor = new SFColor(new float[1,1,1]);
+Material82.emissiveColor = new SFColor(new float[0,0.3,1]);
+Appearance81.material = Material82;
 
-Shape81.appearance = Appearance82;
+Shape80.appearance = Appearance81;
 
-Sphere Sphere84 = createNode("Sphere");
-Sphere84.radius = 5.10000002384186;
-Shape81.geometry = Sphere84;
+Sphere Sphere83 = createNode("Sphere");
+Sphere83.radius = 5.1;
+Shape80.geometry = Sphere83;
 
-Transform80.child = new undefined();
+Transform79.child = new undefined();
 
-Transform80.child[0] = Shape81;
+Transform79.child[0] = Shape80;
 
-Anchor79.children = new MFNode();
+Anchor78.children = new MFNode();
 
-Anchor79.children[0] = Transform80;
+Anchor78.children[0] = Transform79;
 
-Transform18.children[10] = Anchor79;
+Transform17.children[10] = Anchor78;
 
-Anchor Anchor85 = createNode("Anchor");
-Anchor85.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor85.description = "Artlink East";
-Transform Transform86 = createNode("Transform");
-Shape Shape87 = createNode("Shape");
-Appearance Appearance88 = createNode("Appearance");
-Material Material89 = createNode("Material");
-Material89.diffuseColor = new SFColor(new float[1,1,1]);
-Material89.emissiveColor = new SFColor(new float[0,0.300000011920929,1]);
-Appearance88.material = Material89;
+Anchor Anchor84 = createNode("Anchor");
+Anchor84.description = "Artlink East";
+Anchor84.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Transform Transform85 = createNode("Transform");
+Shape Shape86 = createNode("Shape");
+Appearance Appearance87 = createNode("Appearance");
+Material Material88 = createNode("Material");
+Material88.diffuseColor = new SFColor(new float[1,1,1]);
+Material88.emissiveColor = new SFColor(new float[0,0.3,1]);
+Appearance87.material = Material88;
 
-Shape87.appearance = Appearance88;
+Shape86.appearance = Appearance87;
 
-Sphere Sphere90 = createNode("Sphere");
-Sphere90.radius = 5.10000002384186;
-Shape87.geometry = Sphere90;
+Sphere Sphere89 = createNode("Sphere");
+Sphere89.radius = 5.1;
+Shape86.geometry = Sphere89;
 
-Transform86.child = new undefined();
+Transform85.child = new undefined();
 
-Transform86.child[0] = Shape87;
+Transform85.child[0] = Shape86;
 
-Anchor85.children = new MFNode();
+Anchor84.children = new MFNode();
 
-Anchor85.children[0] = Transform86;
+Anchor84.children[0] = Transform85;
 
-Transform18.children[11] = Anchor85;
+Transform17.children[11] = Anchor84;
 
-Anchor Anchor91 = createNode("Anchor");
-Anchor91.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor91.description = "Creations";
-Transform Transform92 = createNode("Transform");
-Shape Shape93 = createNode("Shape");
-Appearance Appearance94 = createNode("Appearance");
-Material Material95 = createNode("Material");
-Material95.diffuseColor = new SFColor(new float[1,1,1]);
-Material95.emissiveColor = new SFColor(new float[0,0.300000011920929,1]);
-Appearance94.material = Material95;
+Anchor Anchor90 = createNode("Anchor");
+Anchor90.description = "Creations";
+Anchor90.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Transform Transform91 = createNode("Transform");
+Shape Shape92 = createNode("Shape");
+Appearance Appearance93 = createNode("Appearance");
+Material Material94 = createNode("Material");
+Material94.diffuseColor = new SFColor(new float[1,1,1]);
+Material94.emissiveColor = new SFColor(new float[0,0.3,1]);
+Appearance93.material = Material94;
 
-Shape93.appearance = Appearance94;
+Shape92.appearance = Appearance93;
 
-Sphere Sphere96 = createNode("Sphere");
-Sphere96.radius = 5.10000002384186;
-Shape93.geometry = Sphere96;
+Sphere Sphere95 = createNode("Sphere");
+Sphere95.radius = 5.1;
+Shape92.geometry = Sphere95;
 
-Transform92.child = new undefined();
+Transform91.child = new undefined();
 
-Transform92.child[0] = Shape93;
+Transform91.child[0] = Shape92;
 
-Anchor91.children = new MFNode();
+Anchor90.children = new MFNode();
 
-Anchor91.children[0] = Transform92;
+Anchor90.children[0] = Transform91;
 
-Transform18.children[12] = Anchor91;
+Transform17.children[12] = Anchor90;
 
-Anchor Anchor97 = createNode("Anchor");
-Anchor97.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor97.description = "New Perspectives";
-Transform Transform98 = createNode("Transform");
-Shape Shape99 = createNode("Shape");
-Appearance Appearance100 = createNode("Appearance");
-Material Material101 = createNode("Material");
-Material101.diffuseColor = new SFColor(new float[1,1,1]);
-Material101.emissiveColor = new SFColor(new float[1,0,0.200000002980232]);
-Appearance100.material = Material101;
+Anchor Anchor96 = createNode("Anchor");
+Anchor96.description = "New Perspectives";
+Anchor96.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Transform Transform97 = createNode("Transform");
+Shape Shape98 = createNode("Shape");
+Appearance Appearance99 = createNode("Appearance");
+Material Material100 = createNode("Material");
+Material100.diffuseColor = new SFColor(new float[1,1,1]);
+Material100.emissiveColor = new SFColor(new float[1,0,0.2]);
+Appearance99.material = Material100;
 
-Shape99.appearance = Appearance100;
+Shape98.appearance = Appearance99;
 
-Sphere Sphere102 = createNode("Sphere");
-Sphere102.radius = 5.10000002384186;
-Shape99.geometry = Sphere102;
+Sphere Sphere101 = createNode("Sphere");
+Sphere101.radius = 5.1;
+Shape98.geometry = Sphere101;
 
-Transform98.child = new undefined();
+Transform97.child = new undefined();
 
-Transform98.child[0] = Shape99;
+Transform97.child[0] = Shape98;
 
-Anchor97.children = new MFNode();
+Anchor96.children = new MFNode();
 
-Anchor97.children[0] = Transform98;
+Anchor96.children[0] = Transform97;
 
-Transform18.children[13] = Anchor97;
+Transform17.children[13] = Anchor96;
 
-Anchor Anchor103 = createNode("Anchor");
-Anchor103.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
-Anchor103.description = "UKan2";
-Transform Transform104 = createNode("Transform");
-Shape Shape105 = createNode("Shape");
-Appearance Appearance106 = createNode("Appearance");
-Material Material107 = createNode("Material");
-Material107.diffuseColor = new SFColor(new float[1,1,1]);
-Material107.emissiveColor = new SFColor(new float[0,0.300000011920929,1]);
-Appearance106.material = Material107;
+Anchor Anchor102 = createNode("Anchor");
+Anchor102.description = "UKan2";
+Anchor102.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Transform Transform103 = createNode("Transform");
+Shape Shape104 = createNode("Shape");
+Appearance Appearance105 = createNode("Appearance");
+Material Material106 = createNode("Material");
+Material106.diffuseColor = new SFColor(new float[1,1,1]);
+Material106.emissiveColor = new SFColor(new float[0,0.3,1]);
+Appearance105.material = Material106;
 
-Shape105.appearance = Appearance106;
+Shape104.appearance = Appearance105;
 
-Sphere Sphere108 = createNode("Sphere");
-Sphere108.radius = 5.10000002384186;
-Shape105.geometry = Sphere108;
+Sphere Sphere107 = createNode("Sphere");
+Sphere107.radius = 5.1;
+Shape104.geometry = Sphere107;
 
-Transform104.child = new undefined();
+Transform103.child = new undefined();
 
-Transform104.child[0] = Shape105;
+Transform103.child[0] = Shape104;
 
-Anchor103.children = new MFNode();
+Anchor102.children = new MFNode();
 
-Anchor103.children[0] = Transform104;
+Anchor102.children[0] = Transform103;
 
-Transform18.children[14] = Anchor103;
+Transform17.children[14] = Anchor102;
 
-children[3] = Transform18;
+children[3] = Transform17;
 
 }
