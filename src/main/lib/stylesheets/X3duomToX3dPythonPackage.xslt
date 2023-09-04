@@ -3863,6 +3863,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         try:
             selfX3dXmlText = ''
             import xmlschema
+            # XML Security dsig namespace validation problem fixed: https://github.com/sissaschool/xmlschema/issues/357
             x3dSchemaUrl = 'https://www.web3d.org/specifications/x3d-' + validationVersion + '.xsd'
             x3dschema = xmlschema.XMLSchema(x3dSchemaUrl)
             try:

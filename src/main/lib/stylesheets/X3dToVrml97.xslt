@@ -217,9 +217,9 @@ EXTERNPROTO BooleanFilter [
   eventOut SFBool inputFalse  # [appinfo] inputFalse only passes a false value, when set_boolean is false.
   eventOut SFBool inputNegate # [appinfo] inputNegate provides opposite value by negating set_boolean input.
 ][
-      "EventUtilityPrototypes.wrl#BooleanFilt
+#     "EventUtilityPrototypes.wrl#BooleanFilter"
 "https://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityPrototypes.wrl#BooleanFilter"
-      "EventUtilityPrototypes.x3d#BooleanFilter"
+#     "EventUtilityPrototypes.x3d#BooleanFilter"
 "https://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityPrototypes.x3d#BooleanFilter"
  ]
 ]]>
@@ -239,9 +239,9 @@ EXTERNPROTO BooleanToggle [
   field    SFBool toggle         # [appinfo] Persistent state value that gets toggled or reset.
   eventOut SFBool toggle_changed
 ][
-      "EventUtilityPrototypes.wrl#BooleanToggle"
+#     "EventUtilityPrototypes.wrl#BooleanToggle"
 "https://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityPrototypes.wrl#BooleanToggle"
-      "EventUtilityPrototypes.x3d#BooleanToggle"
+#     "EventUtilityPrototypes.x3d#BooleanToggle"
 "https://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityPrototypes.x3d#BooleanToggle"
  ]
 ]]>
@@ -255,9 +255,9 @@ EXTERNPROTO BooleanTrigger [
   eventIn  SFTime set_triggerTime # [appinfo] set_triggerTime provides input time event, typical event sent is TouchSensor touchTime.
   eventOut SFBool triggerTrue     # [appinfo] triggerTrue outputs a true value whenever a triggerTime event is received.
 ][
-      "EventUtilityPrototypes.wrl#BooleanTrigger"
+#     "EventUtilityPrototypes.wrl#BooleanTrigger"
 "https://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityPrototypes.wrl#BooleanTrigger"
-      "EventUtilityPrototypes.x3d#BooleanTrigger"
+#     "EventUtilityPrototypes.x3d#BooleanTrigger"
 "https://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityPrototypes.x3d#BooleanTrigger"
  ]
 ]]>
@@ -274,9 +274,9 @@ EXTERNPROTO IntegerTrigger [
   eventOut     SFInt32	integerKey_changed # [appinfo] Reports change in integerKey value.
   eventOut     SFInt32	triggerValue 	# [appinfo] triggerValue provides integer event output matching integerKey when true set_boolean received.
 ][
-      "EventUtilityPrototypes.wrl#IntegerTrigger"
+#     "EventUtilityPrototypes.wrl#IntegerTrigger"
 "https://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityPrototypes.wrl#IntegerTrigger"
-      "EventUtilityPrototypes.x3d#IntegerTrigger"
+#     "EventUtilityPrototypes.x3d#IntegerTrigger"
 "https://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityPrototypes.x3d#IntegerTrigger"
  ]
 ]]>
@@ -290,9 +290,9 @@ EXTERNPROTO TimeTrigger [
   eventIn      SFBool	set_boolean    # [appinfo] If set_boolean input is true, trigger output time value.
   eventOut     SFTime	triggerTime    # [appinfo] triggerTime is output time event, sent when set_boolean input is true.
 ][
-      "EventUtilityPrototypes.wrl#TimeTrigger"
+#     "EventUtilityPrototypes.wrl#TimeTrigger"
 "https://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityPrototypes.wrl#TimeTrigger"
-      "EventUtilityPrototypes.x3d#TimeTrigger"
+#     "EventUtilityPrototypes.x3d#TimeTrigger"
 "https://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityPrototypes.x3d#TimeTrigger"
  ]
 ]]>
@@ -316,9 +316,9 @@ EXTERNPROTO BooleanSequencer [
   eventIn      SFBool	previous
   eventIn      SFBool	next
 ][
-      "BooleanSequencerPrototype.wrl#BooleanSequencer"
+#     "BooleanSequencerPrototype.wrl#BooleanSequencer"
 "https://www.web3d.org/x3d/content/examples/Basic/development/BooleanSequencerPrototype.wrl#BooleanSequencer"
-      "BooleanSequencerPrototype.x3d#BooleanSequencer"
+#     "BooleanSequencerPrototype.x3d#BooleanSequencer"
 "https://www.web3d.org/x3d/content/examples/Basic/development/BooleanSequencerPrototype.x3d#BooleanSequencer"
  ]
 ]]>
@@ -338,9 +338,9 @@ EXTERNPROTO CoordinateInterpolator2D [
   # Regular interpolator-style output
   eventOut     MFVec2f value_changed
 ][
-      "CoordinateInterpolator2dPrototype.wrl#CoordinateInterpolator2D"
+#     "CoordinateInterpolator2dPrototype.wrl#CoordinateInterpolator2D"
 "https://www.web3d.org/x3d/content/examples/Basic/development/CoordinateInterpolator2dPrototype.wrl#CoordinateInterpolator2D"
-      "CoordinateInterpolator2dPrototype.x3d#CoordinateInterpolator2D"
+#     "CoordinateInterpolator2dPrototype.x3d#CoordinateInterpolator2D"
 "https://www.web3d.org/x3d/content/examples/Basic/development/CoordinateInterpolator2dPrototype.x3d#CoordinateInterpolator2D"
 # CosmoPlayer/Netscape 4.8 url bug workaround:
 #"file:///c|\www.web3d.org\x3d\content\examples\development\CoordinateInterpolator2dPrototype.wrl#CoordinateInterpolator2D"
@@ -390,9 +390,9 @@ EXTERNPROTO IntegerSequencer [
   eventIn      SFBool	previous
   eventIn      SFBool	next
 ][
-      "IntegerSequencerPrototype.wrl#IntegerSequencer"
+#     "IntegerSequencerPrototype.wrl#IntegerSequencer"
 "https://www.web3d.org/x3d/content/examples/Basic/development/IntegerSequencerPrototype.wrl#IntegerSequencer"
-      "IntegerSequencerPrototype.x3d#IntegerSequencer"
+#     "IntegerSequencerPrototype.x3d#IntegerSequencer"
 "https://www.web3d.org/x3d/content/examples/Basic/development/IntegerSequencerPrototype.x3d#IntegerSequencer"
  ]
 ]]>
@@ -412,9 +412,9 @@ EXTERNPROTO PositionInterpolator2D [
   # Regular interpolator-style output
   eventOut     SFVec2f value_changed
 ][
-      "PositionInterpolator2dPrototype.wrl#PositionInterpolator2D"
+#     "PositionInterpolator2dPrototype.wrl#PositionInterpolator2D"
 "https://www.web3d.org/x3d/content/examples/Basic/development/PositionInterpolator2dPrototype.wrl#PositionInterpolator2D"
-      "PositionInterpolator2dPrototype.x3d#PositionInterpolator2D"
+#     "PositionInterpolator2dPrototype.x3d#PositionInterpolator2D"
 "https://www.web3d.org/x3d/content/examples/Basic/development/PositionInterpolator2dPrototype.x3d#PositionInterpolator2D"
  ]
 ]]>
@@ -5645,8 +5645,8 @@ EXTERNPROTO TransmitterPdu [
                       not( local-name()='bboxSize'	and	(string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')) and
                       not( local-name()='bboxDisplay' and string(.)='false') and
                       not( local-name()='castShadow' and string(.)='true') and
-                      not( local-name()='channelCountMode' and string(.)='max') and
-                      not( local-name()='channelInterpretation' and string(.)='speakers') and
+                      not( local-name()='channelCountMode' and string(.)='MAX') and
+                      not( local-name()='channelInterpretation' and string(.)='SPEAKERS') and
                       not( local-name()='detune' and (string(.)='0' or string(.)='0.0')) and
                       not( local-name()='enabled' and string(.)='true') and
                       not( local-name()='gain' and (string(.)='1' or string(.)='1.0')) and
@@ -5766,7 +5766,7 @@ EXTERNPROTO TransmitterPdu [
                       ((local-name()='enabled' and string(.)='true') or
                       (local-name()='timeOut' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='LOD'	and	((local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or (local-name()='forceTransitions' and string(.)='false'))) and
-                      not(((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial')) and
+                      not(((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial') or (local-name(..)='PhysicalMaterial')) and
                       ((local-name()='ambientIntensity' and string(.)='0.2') or
                       (local-name()='diffuseColor' and string(.)='0.8 0.8 0.8') or
                       (local-name()='emissiveColor' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
@@ -6053,7 +6053,7 @@ EXTERNPROTO TransmitterPdu [
                       not( local-name(..)='BufferAudioSource' and
                       ((local-name()='containerField' and string(.)='children') or
                       (local-name()='bufferDuration' and (string(.)='0' or string(.)='0.0')) or
-                      (local-name()='type' and (string(.)='lowpass')) or
+                      (local-name()='type' and (string(.)='LOWPASS')) or
                       (local-name()='loopStart' and (string(.)='0' or string(.)='0.0')) or
                       (local-name()='loopEnd' and (string(.)='0' or string(.)='0.0')) or
                       (local-name()='numberOfChannels' and string(.)='0') or
@@ -6105,14 +6105,14 @@ EXTERNPROTO TransmitterPdu [
                       (local-name()='frequency' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='PeriodicWave' and
                       ((local-name()='containerField' and string(.)='children') or
-                      (local-name()='type' and (string(.)='square')))) and
+                      (local-name()='type' and (string(.)='SQUARE')))) and
                       not( local-name(..)='SpatialSound' and
                       ((local-name()='containerField' and string(.)='children') or
                       (local-name()='coneInnerAngle' and (string(.)='6.2832')) or
                       (local-name()='coneOuterAngle' and (string(.)='6.2832')) or
                       (local-name()='coneOuterGain' and (string(.)='0' or string(.)='0.0')) or
                       (local-name()='direction' and (string(.)='0 0 1' or string(.)='0.0 0.0 1.0')) or
-                      (local-name()='distanceModel' and (string(.)='inverse')) or
+                      (local-name()='distanceModel' and (string(.)='INVERSE')) or
                       (local-name()='dopplerEnabled' and (string(.)='false')) or
                       (local-name()='enableHRTF' and (string(.)='false')) or
                       (local-name()='intensity' and (string(.)='1' or string(.)='1.0')) or
@@ -6128,10 +6128,13 @@ EXTERNPROTO TransmitterPdu [
                       ((local-name()='containerField' and string(.)='children'))) and
                       not( local-name(..)='WaveShaper' and
                       ((local-name()='containerField' and string(.)='children') or
-                      (local-name()='oversample' and (string(.)='none'))))" />
+                      (local-name()='oversample' and (string(.)='NONE'))))" />
         <xsl:variable name="notDefaultContainerField1"
                       select="not((local-name()='containerField' and string(.)='children')	and
                       (contains(local-name(..),'Interpolator') or
+                      ends-with(local-name(..),'Filter') or
+                      ends-with(local-name(..),'Sequencer') or
+                      ends-with(local-name(..),'Trigger') or
                       contains(local-name(..),'Light') or
                       contains(local-name(..),'Sensor') or
                       local-name(..)='Anchor' or
@@ -6169,7 +6172,7 @@ EXTERNPROTO TransmitterPdu [
         <xsl:variable name="notDefaultContainerField2"
                       select="not((local-name()='containerField' and string(.)='source')   and (local-name(..)='AudioClip')) and
                       not((local-name()='containerField' and string(.)='appearance')	   and (local-name(..)='Appearance')) and
-                      not((local-name()='containerField' and string(.)='material')         and ((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial'))) and
+                      not((local-name()='containerField' and string(.)='material')         and ((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial') or (local-name(..)='PhysicalMaterial'))) and
                       not((local-name()='containerField' and string(.)='color')            and (local-name(..)='Color' or local-name(..)='ColorRGBA')) and
                       not((local-name()='containerField' and string(.)='coord')            and ((local-name(..)='Coordinate') or (local-name(..)='CoordinateDouble') or (local-name(..)='GeoCoordinate'))) and
                       not((local-name()='containerField' and string(.)='normal')           and (local-name(..)='Normal')) and
@@ -7419,10 +7422,10 @@ EXTERNPROTO TransmitterPdu [
           </xsl:otherwise>
         </xsl:choose>
       </xsl:when>
-      <!-- MFBool:  no native MFBool attributes but Scripts, prototypes and Lattice XvlShell can have them. -->
-      <xsl:when test="(contains($parentElementName,'BooleanSequencer') and $attributeName='keyValue') or
-					($parentElementName='MetadataBoolean' and $attributeName='value') or
-					(local-name(..)='XvlShell' and (local-name()='faceEmpty' or local-name()='faceHidden'))">
+      <!-- MFBool:  BooleanSequencer, MetadataBoolean, Scripts, prototypes and Lattice XvlShell can have MFBool attributes -->
+      <xsl:when test="  (contains($parentElementName,'BooleanSequencer') and $attributeName='keyValue') or
+                        ($parentElementName='MetadataBoolean' and $attributeName='value') or
+                        (local-name(..)='XvlShell' and (local-name()='faceEmpty' or local-name()='faceHidden'))">
         <xsl:call-template name="attribute-value-validation">
           <xsl:with-param name="name"><xsl:value-of select="$attributeName"/></xsl:with-param>
           <xsl:with-param name="type"><xsl:text>MFBool</xsl:text></xsl:with-param>
@@ -7769,9 +7772,9 @@ EXTERNPROTO TransmitterPdu [
       			($attributeName='edgeEndCoordIndex') or
       			($attributeName='index' and ($parentElementName='ContourPolyline2D')) or
       			($attributeName='index' and starts-with($parentElementName,'IndexedTriangle')) or
-				($attributeName='keyValue' and starts-with($parentElementName,'IntegerSequencer')) or
-				($attributeName='vertexCount' and starts-with($parentElementName,'LineSet')) or
-				($attributeName='image' and ($parentElementName='PixelTexture3D')) or
+                        ($attributeName='keyValue' and starts-with($parentElementName,'IntegerSequencer')) or
+                        ($attributeName='vertexCount' and starts-with($parentElementName,'LineSet')) or
+                        ($attributeName='image' and ($parentElementName='PixelTexture3D')) or
       			($attributeName='fanCount') or
       			($attributeName='stripCount') or
       			($attributeName='edgeEndCoordIndex')">
@@ -9320,9 +9323,6 @@ EXTERNPROTO TransmitterPdu [
         <xsl:when test="($nodeName='BooleanSequencer') and ($shortFieldName='keyValue')">
           <xsl:text>MFBool</xsl:text>
         </xsl:when>
-        <xsl:when test="($nodeName='BooleanSequencer') and ($shortFieldName='value')">
-          <xsl:text>SFBool</xsl:text>
-        </xsl:when>
         <xsl:when test="($nodeName='IntegerSequencer') and ($shortFieldName='keyValue')">
           <xsl:text>MFInt32</xsl:text>
         </xsl:when>
@@ -9382,6 +9382,27 @@ EXTERNPROTO TransmitterPdu [
         </xsl:when>
         <xsl:when test="($nodeName='ScalarInterpolator') and ($shortFieldName='value')">
           <xsl:text>SFFloat</xsl:text>
+        </xsl:when>
+        <xsl:when test="(($nodeName='ColorChaser') or ($nodeName='ColorDamper')) and (($shortFieldName='initialDestination') or ($shortFieldName='initialDestination'))">
+          <xsl:text>SFColor</xsl:text>
+        </xsl:when>
+        <xsl:when test="(($nodeName='CooordinateChaser') or ($nodeName='CooordinateDamper')) and (($shortFieldName='initialDestination') or ($shortFieldName='initialDestination'))">
+          <xsl:text>MFVec3f</xsl:text>
+        </xsl:when>
+        <xsl:when test="(($nodeName='OrientationChaser') or ($nodeName='OrientationDamper')) and (($shortFieldName='initialDestination') or ($shortFieldName='initialDestination'))">
+          <xsl:text>SFRotation</xsl:text>
+        </xsl:when>
+        <xsl:when test="(($nodeName='PositionChaser') or ($nodeName='PositionDamper')) and (($shortFieldName='initialDestination') or ($shortFieldName='initialDestination'))">
+          <xsl:text>SFVec3f</xsl:text>
+        </xsl:when>
+        <xsl:when test="(($nodeName='PositionChaser2D') or ($nodeName='PositionDamper2D')) and (($shortFieldName='initialDestination') or ($shortFieldName='initialDestination'))">
+          <xsl:text>SFVec2f</xsl:text>
+        </xsl:when>
+        <xsl:when test="(($nodeName='ScalarChaser') or ($nodeName='ScalarDamper')) and (($shortFieldName='initialDestination') or ($shortFieldName='initialDestination'))">
+          <xsl:text>SFFloat</xsl:text>
+        </xsl:when>
+        <xsl:when test="(($nodeName='TexCoordChaser2D') or ($nodeName='TexCoordDamper2D')) and (($shortFieldName='initialDestination') or ($shortFieldName='initialDestination'))">
+          <xsl:text>SFVec2f</xsl:text>
         </xsl:when>
         <xsl:when test="(($nodeName='CylinderSensor') or ($nodeName='PlaneSensor') or ($nodeName='SphereSensor')) and (($shortFieldName='autoOffset') or ($shortFieldName='isOver'))">
           <xsl:text>SFBool</xsl:text>
@@ -9647,6 +9668,15 @@ EXTERNPROTO TransmitterPdu [
         </xsl:when>
         <xsl:when test="($nodeName='IndexedFaceSet') and (($shortFieldName='convex') or ($shortFieldName='normalPerVertex'))">
           <xsl:text>SFBool</xsl:text>
+        </xsl:when>
+        <xsl:when test="($nodeName='IndexedFaceSet') and (($shortFieldName='color') or ($shortFieldName='coord') or ($shortFieldName='texCoord') or ($shortFieldName='fogCoord'))">
+          <xsl:text>SFNode</xsl:text>
+        </xsl:when>
+        <xsl:when test="($nodeName='CollisionSensor') and (($shortFieldName='contacts') or ($shortFieldName='contacts_changed'))">
+          <xsl:text>MFNode</xsl:text>
+        </xsl:when>
+        <xsl:when test="($nodeName='RigidBodyCollection') and (($shortFieldName='contacts') or ($shortFieldName='set_contacts'))">
+          <xsl:text>MFNode</xsl:text>
         </xsl:when>
         <xsl:when test="($nodeName='IndexedLineSet') and (($shortFieldName='colorIndex') or ($shortFieldName='coordIndex'))">
           <xsl:text>MFInt32</xsl:text>
@@ -9919,6 +9949,10 @@ EXTERNPROTO TransmitterPdu [
         	(($shortFieldName='rotation') or ($shortFieldName='scaleOrientation'))">
           <xsl:text>SFRotation</xsl:text>
         </xsl:when>
+        <xsl:when test="(($nodeName='IndexedTriangleSet') or ($nodeName='IndexedTriangleFanSet') or ($nodeName='IndexedTriangleStripSet')) and
+        	($shortFieldName='index')">
+          <xsl:text>MFInt32</xsl:text>
+        </xsl:when>
         <xsl:when test="($nodeName='LoadSensor') and (($shortFieldName='timeOut') or ($shortFieldName='loadTime'))">
           <xsl:text>SFTime</xsl:text>
         </xsl:when>
@@ -9928,13 +9962,13 @@ EXTERNPROTO TransmitterPdu [
         <xsl:when test="($nodeName='LoadSensor') and ($shortFieldName='progress')">
           <xsl:text>SFFloat</xsl:text>
         </xsl:when>
-        <xsl:when test="($nodeName='NurbsPositionInterpolator') and ($shortFieldName='value_changed')">
+        <xsl:when test="($nodeName='NurbsPositionInterpolator') and (($shortFieldName='value_changed') or ($shortFieldName='value'))">
           <xsl:text>SFVec3f</xsl:text>
         </xsl:when>
-        <xsl:when test="($nodeName=' NurbsOrientationInterpolator') and ($shortFieldName='value_changed')">
+        <xsl:when test="($nodeName=' NurbsOrientationInterpolator') and (($shortFieldName='value_changed') or ($shortFieldName='value'))">
           <xsl:text>SFRotation</xsl:text>
         </xsl:when>
-        <xsl:when test="($nodeName='NurbsSurfaceInterpolator') and (($shortFieldName='position_changed') or ($shortFieldName='normal_changed'))">
+        <xsl:when test="($nodeName='NurbsSurfaceInterpolator') and (($shortFieldName='position_changed') or ($shortFieldName='position') or ($shortFieldName='normal_changed') or ($shortFieldName='normal'))">
           <xsl:text>SFVec3f</xsl:text>
         </xsl:when>
 <!-- TODO:  finish DIS, add multitexture, 2D and advanced geometry, SFNodes -->
@@ -11534,10 +11568,10 @@ EXTERNPROTO TransmitterPdu [
       <!-- <xsl:text> # @value found &#10;</xsl:text> -->
       <xsl:choose>
         <!-- output Boolean values -->
-        <xsl:when test="@type='SFBool' and $value='true'"><xsl:text> TRUE</xsl:text></xsl:when>
-        <xsl:when test="@type='SFBool' and $value='false'"><xsl:text> FALSE</xsl:text></xsl:when>
+        <xsl:when test="@type='SFBool' and upper-case($value)='TRUE'"><xsl:text> TRUE</xsl:text></xsl:when>
+        <xsl:when test="@type='SFBool' and upper-case($value)='FALSE'"><xsl:text> FALSE</xsl:text></xsl:when>
         <xsl:when test="@type='SFBool'"><xsl:text> </xsl:text><xsl:value-of select="$value" /><xsl:text> ### invalid SFBool value! </xsl:text></xsl:when>
-        <xsl:when test="@type='MFBool'"><xsl:text> "</xsl:text><xsl:value-of select="$value" /><xsl:text>" # type MFBool </xsl:text></xsl:when>
+        <xsl:when test="@type='MFBool'"><xsl:text> "</xsl:text><xsl:value-of select="upper-case($value)" /><xsl:text>" # type MFBool </xsl:text></xsl:when>
    <!-- <xsl:when test="@type='MFBool'"><xsl:text> [ </xsl:text><xsl:value-of select="translate($value,'truefalse','TRUEFALSE')" /><xsl:text> ]</xsl:text></xsl:when> -->
         <!-- output other SF values (SFNode  is possible, might contain NULL) -->
         <xsl:when test="(@type='SFColor' or @type='SFFloat' or @type='SFDouble' or @type='SFInt32' or @type='SFNode' or @type='SFRotation' or @type='SFString' or

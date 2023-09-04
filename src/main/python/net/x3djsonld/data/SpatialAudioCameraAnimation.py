@@ -91,16 +91,16 @@ newModel=X3D(profile='Full',version='4.0',
             geometry=Text(string=["Saxophone"],
               fontStyle=FontStyle(USE='ModelFontStyle')))])])]),
     ListenerPointSource(id_='ListenerPointSource',trackCurrentView=True),
-    StreamAudioDestination(id_='AudioDestination',channelCountMode='MAX',channelInterpretation='SPEAKERS',
+    StreamAudioDestination(id_='AudioDestination',
       children=[
-      SpatialSound(DEF='Audio1',id_='SpatialSound1',distanceModel='INVERSE',
+      SpatialSound(DEF='Audio1',id_='SpatialSound1',
         children=[
-        Gain(id_='Gain1',channelCountMode='MAX',channelInterpretation='SPEAKERS',
+        Gain(id_='Gain1',
           children=[
           AudioClip(description='Violin',id_='AudioClip1',loop=True,url=["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"])])]),
-      SpatialSound(DEF='Audio2',id_='SpatialSound2',distanceModel='INVERSE',
+      SpatialSound(DEF='Audio2',id_='SpatialSound2',
         children=[
-        Gain(id_='Gain2',channelCountMode='MAX',channelInterpretation='SPEAKERS',
+        Gain(id_='Gain2',
           children=[
           AudioClip(description='Saxophone',id_='AudioClip2',loop=True,url=["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"])])])])])
 ) # X3D model complete
