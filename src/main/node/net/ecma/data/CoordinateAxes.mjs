@@ -15,12 +15,12 @@ var WorldInfo = require('./x3d.mjs');
 var Collision = require('./x3d.mjs');
 var Group = require('./x3d.mjs');
 var Shape = require('./x3d.mjs');
-var Cylinder = require('./x3d.mjs');
-var SFFloat = require('./x3d.mjs');
-var SFBool = require('./x3d.mjs');
 var Appearance = require('./x3d.mjs');
 var Material = require('./x3d.mjs');
 var SFColor = require('./x3d.mjs');
+var Cylinder = require('./x3d.mjs');
+var SFBool = require('./x3d.mjs');
+var SFFloat = require('./x3d.mjs');
 var Transform = require('./x3d.mjs');
 var SFVec3f = require('./x3d.mjs');
 var Cone = require('./x3d.mjs');
@@ -32,7 +32,7 @@ var SFRotation = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
-      version : new SFString("3.3"),
+      version : new SFString("4.0"),
       head : new SFNode(
         new head({
           meta : new MFNode([
@@ -78,11 +78,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
-
-            new meta({
-              name : new SFString("license"),
-              content : new SFString("../license.html")})])})),
+              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
@@ -91,43 +87,38 @@ var X3D0 =  new X3D({
 
             new Collision({
               DEF : new SFString("DoNotCollideWithVisualizationWidget"),
-              /*Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph.*/
-              /*This NavigationInfo allows examine mode and will be overridden by any parent scene.*/
-              /*Each arrow goes from +1m to -1m to allow linear scaling to fit a scene*/
-              /*Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user*/
               proxy : new SFNode(
                 new Group({
-                  /*Vertical Y arrow and label*/
                   children : new MFNode([
                     new Group({
                       DEF : new SFString("ArrowGreen"),
                       children : new MFNode([
                         new Shape({
-                          geometry : new SFNode(
-                            new Cylinder({
-                              DEF : new SFString("ArrowCylinder"),
-                              radius : new SFFloat(0.025),
-                              top : new SFBool(false)})),
                           appearance : new SFNode(
                             new Appearance({
                               DEF : new SFString("Green"),
                               material : new SFNode(
                                 new Material({
                                   diffuseColor : new SFColor([0.1,0.6,0.1]),
-                                  emissiveColor : new SFColor([0.05,0.2,0.05])}))}))}),
+                                  emissiveColor : new SFColor([0.05,0.2,0.05])}))})),
+                          geometry : new SFNode(
+                            new Cylinder({
+                              DEF : new SFString("ArrowCylinder"),
+                              top : new SFBool(false),
+                              radius : new SFFloat(0.025)}))}),
 
                         new Transform({
                           translation : new SFVec3f([0,1,0]),
                           child : new SFNode(
                             new Shape({
+                              appearance : new SFNode(
+                                new Appearance({
+                                  USE : new SFString("Green")})),
                               geometry : new SFNode(
                                 new Cone({
                                   DEF : new SFString("ArrowCone"),
-                                  bottomRadius : new SFFloat(0.05),
-                                  height : new SFFloat(0.1)})),
-                              appearance : new SFNode(
-                                new Appearance({
-                                  USE : new SFString("Green")}))}))})])}),
+                                  height : new SFFloat(0.1),
+                                  bottomRadius : new SFFloat(0.05)}))}))})])}),
 
                     new Transform({
                       translation : new SFVec3f([0,1.08,0]),
@@ -149,12 +140,11 @@ var X3D0 =  new X3D({
                                     new FontStyle({
                                       DEF : new SFString("LABEL_FONT"),
                                       family : new MFString(["SANS"]),
-                                      justify : new MFString(["MIDDLE","MIDDLE"]),
-                                      size : new SFFloat(0.2)}))}))})])})])})])})),
+                                      size : new SFFloat(0.2),
+                                      justify : new MFString(["MIDDLE","MIDDLE"])}))}))})])})])})])})),
               proxy : new SFNode(
                 new Transform({
                   rotation : new SFRotation([0,0,1,-1.57079]),
-                  /*Horizontal X arrow and label*/
                   children : new MFNode([
                     new Group({
                       children : new MFNode([
@@ -162,32 +152,31 @@ var X3D0 =  new X3D({
                           DEF : new SFString("ArrowRed"),
                           children : new MFNode([
                             new Shape({
-                              geometry : new SFNode(
-                                new Cylinder({
-                                  USE : new SFString("ArrowCylinder")})),
                               appearance : new SFNode(
                                 new Appearance({
                                   DEF : new SFString("Red"),
                                   material : new SFNode(
                                     new Material({
                                       diffuseColor : new SFColor([0.7,0.1,0.1]),
-                                      emissiveColor : new SFColor([0.33,0,0])}))}))}),
+                                      emissiveColor : new SFColor([0.33,0,0])}))})),
+                              geometry : new SFNode(
+                                new Cylinder({
+                                  USE : new SFString("ArrowCylinder")}))}),
 
                             new Transform({
                               translation : new SFVec3f([0,1,0]),
                               child : new SFNode(
                                 new Shape({
-                                  geometry : new SFNode(
-                                    new Cone({
-                                      USE : new SFString("ArrowCone")})),
                                   appearance : new SFNode(
                                     new Appearance({
-                                      USE : new SFString("Red")}))}))})])}),
+                                      USE : new SFString("Red")})),
+                                  geometry : new SFNode(
+                                    new Cone({
+                                      USE : new SFString("ArrowCone")}))}))})])}),
 
                         new Transform({
-                          rotation : new SFRotation([0,0,1,1.57079]),
                           translation : new SFVec3f([0.072,1.1,0]),
-                          /*note label rotated back to original coordinate frame*/
+                          rotation : new SFRotation([0,0,1,1.57079]),
                           children : new MFNode([
                             new Billboard({
                               children : new MFNode([
@@ -204,7 +193,6 @@ var X3D0 =  new X3D({
               proxy : new SFNode(
                 new Transform({
                   rotation : new SFRotation([1,0,0,1.57079]),
-                  /*Perpendicular Z arrow and label, note right-hand rule*/
                   children : new MFNode([
                     new Group({
                       children : new MFNode([
@@ -212,32 +200,31 @@ var X3D0 =  new X3D({
                           DEF : new SFString("ArrowBlue"),
                           children : new MFNode([
                             new Shape({
-                              geometry : new SFNode(
-                                new Cylinder({
-                                  USE : new SFString("ArrowCylinder")})),
                               appearance : new SFNode(
                                 new Appearance({
                                   DEF : new SFString("Blue"),
                                   material : new SFNode(
                                     new Material({
                                       diffuseColor : new SFColor([0.3,0.3,1]),
-                                      emissiveColor : new SFColor([0.1,0.1,0.33])}))}))}),
+                                      emissiveColor : new SFColor([0.1,0.1,0.33])}))})),
+                              geometry : new SFNode(
+                                new Cylinder({
+                                  USE : new SFString("ArrowCylinder")}))}),
 
                             new Transform({
                               translation : new SFVec3f([0,1,0]),
                               child : new SFNode(
                                 new Shape({
-                                  geometry : new SFNode(
-                                    new Cone({
-                                      USE : new SFString("ArrowCone")})),
                                   appearance : new SFNode(
                                     new Appearance({
-                                      USE : new SFString("Blue")}))}))})])}),
+                                      USE : new SFString("Blue")})),
+                                  geometry : new SFNode(
+                                    new Cone({
+                                      USE : new SFString("ArrowCone")}))}))})])}),
 
                         new Transform({
-                          rotation : new SFRotation([1,0,0,-1.57079]),
                           translation : new SFVec3f([0,1.1,0.072]),
-                          /*note label rotated back to original coordinate frame*/
+                          rotation : new SFRotation([1,0,0,-1.57079]),
                           children : new MFNode([
                             new Billboard({
                               children : new MFNode([

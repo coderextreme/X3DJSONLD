@@ -13,12 +13,12 @@ var meta = require('./x3d.mjs');
 var Scene = require('./x3d.mjs');
 var WorldInfo = require('./x3d.mjs');
 var Background = require('./x3d.mjs');
-var MFFloat = require('./x3d.mjs');
 var MFColor = require('./x3d.mjs');
+var MFFloat = require('./x3d.mjs');
 var NavigationInfo = require('./x3d.mjs');
 var Viewpoint = require('./x3d.mjs');
-var SFRotation = require('./x3d.mjs');
 var SFVec3f = require('./x3d.mjs');
+var SFRotation = require('./x3d.mjs');
 var TouchSensor = require('./x3d.mjs');
 var Transform = require('./x3d.mjs');
 var Shape = require('./x3d.mjs');
@@ -32,7 +32,7 @@ var ROUTE = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
-      version : new SFString("3.0"),
+      version : new SFString("4.0"),
       head : new SFNode(
         new head({
           meta : new MFNode([
@@ -86,11 +86,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
-
-            new meta({
-              name : new SFString("license"),
-              content : new SFString("../../license.html")})])})),
+              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
@@ -98,9 +94,9 @@ var X3D0 =  new X3D({
               title : new SFString("jumpcut_loadurl.x3d")}),
 
             new Background({
+              skyColor : new MFColor([0,0,1]),
               groundAngle : new MFFloat([1.57]),
-              groundColor : new MFColor([0,0.5,0,0,0.5,0]),
-              skyColor : new MFColor([0,0,1])}),
+              groundColor : new MFColor([0,0.5,0,0,0.5,0])}),
 
             new NavigationInfo({
               type : ["EXAMINE","WALK","FLY","ANY"]}),
@@ -112,8 +108,8 @@ var X3D0 =  new X3D({
             new Viewpoint({
               DEF : new SFString("Top_View"),
               description : new SFString("Top View"),
-              orientation : new SFRotation([1,0,0,-1.57]),
-              position : new SFVec3f([0,10,0])}),
+              position : new SFVec3f([0,10,0]),
+              orientation : new SFRotation([1,0,0,-1.57])}),
 
             new TouchSensor({
               DEF : new SFString("STARTER"),
@@ -136,24 +132,24 @@ var X3D0 =  new X3D({
               field : new MFNode([
                 new field({
                   type : field.TYPE_MFSTRING,
-                  name : new SFString("myParameter"),
                   accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
+                  name : new SFString("myParameter"),
                   value : new SFString("\"Top_View\"")}),
 
                 new field({
                   type : field.TYPE_MFSTRING,
-                  name : new SFString("myUrl"),
                   accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
+                  name : new SFString("myUrl"),
                   value : new SFString("\"jumpcut_loadurl.x3d#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View\" \"jumpcut_loadurl.wrl#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View\"")}),
 
                 new field({
                   type : field.TYPE_SFBOOL,
-                  name : new SFString("trigger_event"),
-                  accessType : new SFString(field.ACCESSTYPE_INPUTONLY)})])}),
+                  accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
+                  name : new SFString("trigger_event")})])}),
 
             new ROUTE({
-              fromField : new SFString("isActive"),
               fromNode : new SFString("STARTER"),
-              toField : new SFString("trigger_event"),
-              toNode : new SFString("MYSCRIPT")})])}))});
+              fromField : new SFString("isActive"),
+              toNode : new SFString("MYSCRIPT"),
+              toField : new SFString("trigger_event")})])}))});
 console.log(X3D0.toXMLNode());

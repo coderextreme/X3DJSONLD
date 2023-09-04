@@ -15,17 +15,17 @@ var Group = require('./x3d.mjs');
 var Shape = require('./x3d.mjs');
 var IndexedFaceSet = require('./x3d.mjs');
 var SFFloat = require('./x3d.mjs');
-var MFInt32 = require('./x3d.mjs');
 var SFBool = require('./x3d.mjs');
-var Coordinate = require('./x3d.mjs');
-var MFVec3f = require('./x3d.mjs');
-var Normal = require('./x3d.mjs');
+var MFInt32 = require('./x3d.mjs');
 var Color = require('./x3d.mjs');
 var MFColor = require('./x3d.mjs');
+var Normal = require('./x3d.mjs');
+var MFVec3f = require('./x3d.mjs');
+var Coordinate = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Interchange"),
-      version : new SFString("3.3"),
+      version : new SFString("4.0"),
       head : new SFNode(
         new head({
           meta : new MFNode([
@@ -43,11 +43,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("creator"),
-              content : new SFString("John Carlson")}),
-
-            new meta({
-              name : new SFString("created"),
-              content : new SFString("4 April 2017")})])})),
+              content : new SFString("John Carlson")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
@@ -56,19 +52,19 @@ var X3D0 =  new X3D({
                 new Shape({
                   geometry : new SFNode(
                     new IndexedFaceSet({
-                      creaseAngle : new SFFloat(1.57),
                       DEF : new SFString("IndexedFaceSet"),
-                      coordIndex : new MFInt32([0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1]),
-                      normalIndex : new MFInt32([0,-1,0,-1,1,-1,2,-1,3,-1,4,-1,5,-1]),
+                      creaseAngle : new SFFloat(1.57),
                       normalPerVertex : new SFBool(false),
                       colorIndex : new MFInt32([0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1]),
-                      coord : new SFNode(
-                        new Coordinate({
-                          point : new MFVec3f([0,0,1,0,1,1,1,1,1,1,0,1])})),
+                      normalIndex : new MFInt32([0,-1,0,-1,1,-1,2,-1,3,-1,4,-1,5,-1]),
+                      coordIndex : new MFInt32([0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1]),
+                      color : new SFNode(
+                        new Color({
+                          color : new MFColor([0,1,0])})),
                       normal : new SFNode(
                         new Normal({
                           vector : new MFVec3f([1,0,0,-1,0,0,0,1,0,0,0,-1,0,-1,0,0,0,1])})),
-                      color : new SFNode(
-                        new Color({
-                          color : new MFColor([0,1,0])}))}))})])})])}))});
+                      coord : new SFNode(
+                        new Coordinate({
+                          point : new MFVec3f([0,0,1,0,1,1,1,1,1,1,0,1])}))}))})])})])}))});
 console.log(X3D0.toXMLNode());

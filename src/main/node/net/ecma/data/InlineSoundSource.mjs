@@ -16,20 +16,20 @@ var NavigationInfo = require('./x3d.mjs');
 var Background = require('./x3d.mjs');
 var MFString = require('./x3d.mjs');
 var Viewpoint = require('./x3d.mjs');
-var SFFloat = require('./x3d.mjs');
-var SFRotation = require('./x3d.mjs');
 var SFVec3f = require('./x3d.mjs');
+var SFRotation = require('./x3d.mjs');
+var SFFloat = require('./x3d.mjs');
 var Transform = require('./x3d.mjs');
 var Shape = require('./x3d.mjs');
 var Appearance = require('./x3d.mjs');
 var Material = require('./x3d.mjs');
 var SFColor = require('./x3d.mjs');
 var IndexedFaceSet = require('./x3d.mjs');
-var MFInt32 = require('./x3d.mjs');
 var SFBool = require('./x3d.mjs');
-var Coordinate = require('./x3d.mjs');
-var MFVec3f = require('./x3d.mjs');
+var MFInt32 = require('./x3d.mjs');
 var Normal = require('./x3d.mjs');
+var MFVec3f = require('./x3d.mjs');
+var Coordinate = require('./x3d.mjs');
 var Inline = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
@@ -67,12 +67,12 @@ var X3D0 =  new X3D({
               content : new SFString("CHANGELOG.txt")}),
 
             new meta({
-              name : new SFString("TODO"),
-              content : new SFString("credit for audio files")}),
-
-            new meta({
               name : new SFString("reference"),
               content : new SFString("https://medialab.hmu.gr/minipages/x3domAudio")}),
+
+            new meta({
+              name : new SFString("TODO"),
+              content : new SFString("credit for audio files")}),
 
             new meta({
               name : new SFString("identifier"),
@@ -80,11 +80,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")}),
-
-            new meta({
-              name : new SFString("license"),
-              content : new SFString("../license.html")})])})),
+              content : new SFString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
@@ -95,20 +91,20 @@ var X3D0 =  new X3D({
               DEF : new SFString("NAV")}),
 
             new Background({
-              backUrl : new MFString(["images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"]),
-              bottomUrl : new MFString(["images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"]),
               frontUrl : new MFString(["images/generic/FR1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"]),
+              backUrl : new MFString(["images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"]),
               leftUrl : new MFString(["images/generic/LF1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"]),
               rightUrl : new MFString(["images/generic/RT1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"]),
-              topUrl : new MFString(["images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"])}),
+              topUrl : new MFString(["images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"]),
+              bottomUrl : new MFString(["images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"])}),
 
             new Viewpoint({
               DEF : new SFString("Camera001"),
               description : new SFString("Camera001"),
-              farDistance : new SFFloat(0),
-              nearDistance : new SFFloat(1),
+              position : new SFVec3f([0,2000,3500]),
               orientation : new SFRotation([1,0,0,-0.523599]),
-              position : new SFVec3f([0,2000,3500])}),
+              nearDistance : new SFFloat(1),
+              farDistance : new SFFloat(0)}),
 
             new Transform({
               DEF : new SFString("Floor"),
@@ -124,14 +120,14 @@ var X3D0 =  new X3D({
                   geometry : new SFNode(
                     new IndexedFaceSet({
                       DEF : new SFString("Box001-GEOMETRY"),
-                      coordIndex : new MFInt32([0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,15,16,17,-1,18,19,20,-1,21,22,23,-1,24,25,26,-1,27,28,29,-1,30,31,32,-1,33,34,35,-1]),
                       solid : new SFBool(false),
-                      coord : new SFNode(
-                        new Coordinate({
-                          point : new MFVec3f([-1000,0,1000,-1000,0,-1000,1000,0,-1000,1000,0,-1000,1000,0,1000,-1000,0,1000,-1000,8.031588,1000,1000,8.031588,1000,1000,8.031588,-1000,1000,8.031588,-1000,-1000,8.031588,-1000,-1000,8.031588,1000,-1000,0,1000,1000,0,1000,1000,8.031588,1000,1000,8.031588,1000,-1000,8.031588,1000,-1000,0,1000,1000,0,1000,1000,0,-1000,1000,8.031588,-1000,1000,8.031588,-1000,1000,8.031588,1000,1000,0,1000,1000,0,-1000,-1000,0,-1000,-1000,8.031588,-1000,-1000,8.031588,-1000,1000,8.031588,-1000,1000,0,-1000,-1000,0,-1000,-1000,0,1000,-1000,8.031588,1000,-1000,8.031588,1000,-1000,8.031588,-1000,-1000,0,-1000])})),
+                      coordIndex : new MFInt32([0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,15,16,17,-1,18,19,20,-1,21,22,23,-1,24,25,26,-1,27,28,29,-1,30,31,32,-1,33,34,35,-1]),
                       normal : new SFNode(
                         new Normal({
-                          vector : new MFVec3f([0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0])}))}))}))}),
+                          vector : new MFVec3f([0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0])})),
+                      coord : new SFNode(
+                        new Coordinate({
+                          point : new MFVec3f([-1000,0,1000,-1000,0,-1000,1000,0,-1000,1000,0,-1000,1000,0,1000,-1000,0,1000,-1000,8.031588,1000,1000,8.031588,1000,1000,8.031588,-1000,1000,8.031588,-1000,-1000,8.031588,-1000,-1000,8.031588,1000,-1000,0,1000,1000,0,1000,1000,8.031588,1000,1000,8.031588,1000,-1000,8.031588,1000,-1000,0,1000,1000,0,1000,1000,0,-1000,1000,8.031588,-1000,1000,8.031588,-1000,1000,8.031588,1000,1000,0,1000,1000,0,-1000,-1000,0,-1000,-1000,8.031588,-1000,-1000,8.031588,-1000,1000,8.031588,-1000,1000,0,-1000,-1000,0,-1000,-1000,0,1000,-1000,8.031588,1000,-1000,8.031588,1000,-1000,8.031588,-1000,-1000,0,-1000])}))}))}))}),
 
             new Transform({
               DEF : new SFString("InlineScene"),

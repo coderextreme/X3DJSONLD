@@ -24,7 +24,7 @@ var ProtoInstance = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
-      version : new SFString("3.3"),
+      version : new SFString("4.0"),
       head : new SFNode(
         new head({
           meta : new MFNode([
@@ -42,11 +42,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/asteroids.x3d")}),
-
-            new meta({
-              name : new SFString("description"),
-              content : new SFString("asteroids")})])})),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/asteroids.x3d")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
@@ -57,10 +53,11 @@ var X3D0 =  new X3D({
                   field : new MFNode([
                     new field({
                       type : field.TYPE_MFNODE,
-                      name : new SFString("myShape"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("myShape"),
                       children : new MFNode([
                         new Shape({
+                          DEF : new SFString("_1"),
                           geometry : new SFNode(
                             new Sphere({}))})])})])})),
               ProtoBody : new SFNode(

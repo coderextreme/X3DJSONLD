@@ -16,8 +16,8 @@ var NavigationInfo = require('./x3d.mjs');
 var Background = require('./x3d.mjs');
 var MFColor = require('./x3d.mjs');
 var Viewpoint = require('./x3d.mjs');
-var SFRotation = require('./x3d.mjs');
 var SFVec3f = require('./x3d.mjs');
+var SFRotation = require('./x3d.mjs');
 var SFBool = require('./x3d.mjs');
 var Transform = require('./x3d.mjs');
 var Shape = require('./x3d.mjs');
@@ -74,12 +74,12 @@ var X3D0 =  new X3D({
               content : new SFString("CHANGELOG.txt")}),
 
             new meta({
-              name : new SFString("TODO"),
-              content : new SFString("credit for audio files")}),
-
-            new meta({
               name : new SFString("reference"),
               content : new SFString("http://www.medialab.hmu.gr/minipages/x3domAudio")}),
+
+            new meta({
+              name : new SFString("TODO"),
+              content : new SFString("credit for audio files")}),
 
             new meta({
               name : new SFString("identifier"),
@@ -87,26 +87,21 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")}),
-
-            new meta({
-              name : new SFString("license"),
-              content : new SFString("../license.html")})])})),
+              content : new SFString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
             new WorldInfo({
               title : new SFString("SplitChannels.x3d")}),
 
-            new NavigationInfo({
-              type : ["ON"]}),
+            new NavigationInfo({}),
 
             new Background({
               skyColor : new MFColor([0.2,0.2,0.21])}),
 
             new Viewpoint({
-              orientation : new SFRotation([1,0,0,-0.5]),
               position : new SFVec3f([0,500,600]),
+              orientation : new SFRotation([1,0,0,-0.5]),
               retainUserOffsets : new SFBool(true)}),
 
             new Transform({
@@ -114,8 +109,8 @@ var X3D0 =  new X3D({
               translation : new SFVec3f([100,400,400]),
               children : new MFNode([
                 new Transform({
-                  rotation : new SFRotation([1,0,0,-0.5]),
                   translation : new SFVec3f([0,40,0]),
+                  rotation : new SFRotation([1,0,0,-0.5]),
                   child : new SFNode(
                     new Shape({
                       appearance : new SFNode(
@@ -124,15 +119,15 @@ var X3D0 =  new X3D({
                           material : new SFNode(
                             new Material({
                               diffuseColor : new SFColor([0,1,0]),
-                              emissiveColor : new SFColor([0.8,0.8,0.8]),
-                              specularColor : new SFColor([0.01,0.01,0.01])}))})),
+                              specularColor : new SFColor([0.01,0.01,0.01]),
+                              emissiveColor : new SFColor([0.8,0.8,0.8])}))})),
                       geometry : new SFNode(
                         new Box({
                           size : new SFVec3f([10,80,0.01])}))}))}),
 
                 new Transform({
-                  rotation : new SFRotation([1,0,0,-0.5]),
                   translation : new SFVec3f([-2.7,37,0]),
+                  rotation : new SFRotation([1,0,0,-0.5]),
                   child : new SFNode(
                     new Shape({
                       appearance : new SFNode(
@@ -141,8 +136,8 @@ var X3D0 =  new X3D({
                           material : new SFNode(
                             new Material({
                               diffuseColor : new SFColor([0,1,0]),
-                              emissiveColor : new SFColor([0.8,0.8,0.8]),
-                              specularColor : new SFColor([0.01,0.01,0.01])})),
+                              specularColor : new SFColor([0.01,0.01,0.01]),
+                              emissiveColor : new SFColor([0.8,0.8,0.8])})),
                           texture : new SFNode(
                             new ImageTexture({
                               url : new MFString(["images/line.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"])}))})),
@@ -152,9 +147,9 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   DEF : new SFString("volumeRight"),
+                  translation : new SFVec3f([0,-10,0]),
                   rotation : new SFRotation([1,0,0,-0.5]),
                   scale : new SFVec3f([10,10,10]),
-                  translation : new SFVec3f([0,-10,0]),
                   child : new SFNode(
                     new Shape({
                       appearance : new SFNode(
@@ -163,11 +158,10 @@ var X3D0 =  new X3D({
                             new Material({
                               ambientIntensity : new SFFloat(0.0933),
                               diffuseColor : new SFColor([0.345,0.345,0.882]),
-                              shininess : new SFFloat(0.51),
-                              specularColor : new SFColor([0.46,0.46,0.46])}))})),
+                              specularColor : new SFColor([0.46,0.46,0.46]),
+                              shininess : new SFFloat(0.51)}))})),
                       geometry : new SFNode(
                         new Text({
-                          string : new MFString(["Right Channel Volume"]),
                           fontStyle : new SFNode(
                             new FontStyle({
                               family : new MFString(["Times"]),
@@ -178,8 +172,8 @@ var X3D0 =  new X3D({
               translation : new SFVec3f([-100,400,400]),
               children : new MFNode([
                 new Transform({
-                  rotation : new SFRotation([1,0,0,-0.5]),
                   translation : new SFVec3f([0,40,0]),
+                  rotation : new SFRotation([1,0,0,-0.5]),
                   child : new SFNode(
                     new Shape({
                       appearance : new SFNode(
@@ -188,15 +182,15 @@ var X3D0 =  new X3D({
                           material : new SFNode(
                             new Material({
                               diffuseColor : new SFColor([0,1,0]),
-                              emissiveColor : new SFColor([0.8,0.8,0.8]),
-                              specularColor : new SFColor([0.01,0.01,0.01])}))})),
+                              specularColor : new SFColor([0.01,0.01,0.01]),
+                              emissiveColor : new SFColor([0.8,0.8,0.8])}))})),
                       geometry : new SFNode(
                         new Box({
                           size : new SFVec3f([10,80,0.01])}))}))}),
 
                 new Transform({
-                  rotation : new SFRotation([1,0,0,-0.5]),
                   translation : new SFVec3f([13.2,37,0]),
+                  rotation : new SFRotation([1,0,0,-0.5]),
                   child : new SFNode(
                     new Shape({
                       appearance : new SFNode(
@@ -205,8 +199,8 @@ var X3D0 =  new X3D({
                           material : new SFNode(
                             new Material({
                               diffuseColor : new SFColor([0,1,0]),
-                              emissiveColor : new SFColor([0.8,0.8,0.8]),
-                              specularColor : new SFColor([0.01,0.01,0.01])})),
+                              specularColor : new SFColor([0.01,0.01,0.01]),
+                              emissiveColor : new SFColor([0.8,0.8,0.8])})),
                           texture : new SFNode(
                             new ImageTexture({
                               url : new MFString(["images/line.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"])}))})),
@@ -216,9 +210,9 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   DEF : new SFString("volumeLeft"),
+                  translation : new SFVec3f([0,-10,0]),
                   rotation : new SFRotation([1,0,0,-0.5]),
                   scale : new SFVec3f([10,10,10]),
-                  translation : new SFVec3f([0,-10,0]),
                   child : new SFNode(
                     new Shape({
                       appearance : new SFNode(
@@ -227,11 +221,10 @@ var X3D0 =  new X3D({
                             new Material({
                               ambientIntensity : new SFFloat(0.0933),
                               diffuseColor : new SFColor([0.345,0.345,0.882]),
-                              shininess : new SFFloat(0.51),
-                              specularColor : new SFColor([0.46,0.46,0.46])}))})),
+                              specularColor : new SFColor([0.46,0.46,0.46]),
+                              shininess : new SFFloat(0.51)}))})),
                       geometry : new SFNode(
                         new Text({
-                          string : new MFString(["Left Channel Volume"]),
                           fontStyle : new SFNode(
                             new FontStyle({
                               family : new MFString(["Times"]),
@@ -246,8 +239,8 @@ var X3D0 =  new X3D({
                       material : new SFNode(
                         new Material({
                           diffuseColor : new SFColor([0.1,0.1,0.1]),
-                          shininess : new SFFloat(0.8),
-                          specularColor : new SFColor([0.5,0.6,0.7])}))})),
+                          specularColor : new SFColor([0.5,0.6,0.7]),
+                          shininess : new SFFloat(0.8)}))})),
                   geometry : new SFNode(
                     new Box({
                       size : new SFVec3f([1500,10,500])}))}))}),
@@ -256,36 +249,23 @@ var X3D0 =  new X3D({
               trackCurrentView : new SFBool(true)}),
 
             new StreamAudioDestination({
-              channelCountMode : new SFString("MAX"),
-              channelInterpretation : new SFString("SPEAKERS"),
               children : new MFNode([
                 new Gain({
-                  channelCountMode : new SFString("MAX"),
-                  channelInterpretation : new SFString("SPEAKERS"),
                   children : new MFNode([
                     new ChannelMerger({
-                      channelCountMode : new SFString("MAX"),
-                      channelInterpretation : new SFString("SPEAKERS"),
                       children : new MFNode([
                         new ChannelSelector({
-                          channelCountMode : new SFString("MAX"),
-                          channelInterpretation : new SFString("SPEAKERS"),
                           children : new MFNode([
-                            new Gain({
-                              USE : new SFString("ChannelSplitter")})])}),
+                            new Gain({})])}),
 
                         new ChannelSelector({
                           channelSelection : new SFInt32(1),
-                          channelCountMode : new SFString("MAX"),
-                          channelInterpretation : new SFString("SPEAKERS"),
                           children : new MFNode([
-                            new Gain({
-                              USE : new SFString("ChannelSplitter")})])})])})])})])}),
+                            new Gain({})])})])})])})])}),
 
             new ChannelSplitter({
               DEF : new SFString("ChannelSplitter"),
               channelCountMode : new SFString("EXPLICIT"),
-              channelInterpretation : new SFString("SPEAKERS"),
               outputs : new SFNode(
                 new AudioClip({
                   description : new SFString("Violin"),
@@ -293,8 +273,8 @@ var X3D0 =  new X3D({
 
             new Transform({
               DEF : new SFString("Audio3"),
-              rotation : new SFRotation([1,0,0,-0.5]),
               translation : new SFVec3f([0,100,0]),
+              rotation : new SFRotation([1,0,0,-0.5]),
               child : new SFNode(
                 new Shape({
                   appearance : new SFNode(
@@ -303,8 +283,8 @@ var X3D0 =  new X3D({
                       material : new SFNode(
                         new Material({
                           diffuseColor : new SFColor([0.3,1,0.3]),
-                          emissiveColor : new SFColor([0.8,0.8,0.8]),
-                          specularColor : new SFColor([0.01,0.01,0.01])})),
+                          specularColor : new SFColor([0.01,0.01,0.01]),
+                          emissiveColor : new SFColor([0.8,0.8,0.8])})),
                       texture : new SFNode(
                         new ImageTexture({
                           url : new MFString(["images/loudspeaker.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"])}))})),
