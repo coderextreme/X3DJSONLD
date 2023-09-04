@@ -77,10 +77,6 @@
             "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
           },
           {
-            "@name":"license",
-            "@content":"../license.html"
-          },
-          {
             "@name":"translated",
             "@content":"04 September 2023"
           },
@@ -130,18 +126,6 @@
                         {
                           "@name":"humanoidVersion",
                           "@value":["validation testing"]
-                        }
-                      },
-                      { "MetadataFloat":
-                        {
-                          "@name":"height",
-                          "@value":[1.5]
-                        }
-                      },
-                      { "MetadataFloat":
-                        {
-                          "@name":"weight",
-                          "@value":[50]
                         }
                       }
                     ]
@@ -200,12 +184,12 @@
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_l_metatarsophalangeal_2"
+                    "@USE":"hanim_l_metatarsophalangeal_1"
                   }
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_r_metatarsophalangeal_2"
+                    "@USE":"hanim_r_metatarsophalangeal_1"
                   }
                 },
                 { "HAnimJoint":
@@ -300,12 +284,12 @@
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_l_tarsal_proximal_phalanx_2"
+                    "@USE":"hanim_l_tarsal_proximal_phalanx_1"
                   }
                 },
                 { "HAnimSegment":
                   {
-                    "@USE":"hanim_r_tarsal_proximal_phalanx_2"
+                    "@USE":"hanim_r_tarsal_proximal_phalanx_1"
                   }
                 },
                 { "HAnimSegment":
@@ -652,7 +636,7 @@
                                               { "HAnimJoint":
                                                 {
                                                   "@name":"l_metatarsophalangeal_2",
-                                                  "@DEF":"hanim_l_metatarsophalangeal_2",
+                                                  "@DEF":"hanim_l_metatarsophalangeal_1",
                                                   "@center":[3.854,3.64,0.7402],
                                                   "@llimit":[0,0,0],
                                                   "@ulimit":[0,0,0],
@@ -660,11 +644,8 @@
                                                     { "HAnimSegment":
                                                       {
                                                         "@name":"l_tarsal_proximal_phalanx_2",
-                                                        "@DEF":"hanim_l_tarsal_proximal_phalanx_2",
+                                                        "@DEF":"hanim_l_tarsal_proximal_phalanx_1",
                                                         "-children":[
-                                                          {
-                                                            "#comment":"TODO append _2"
-                                                          },
                                                           { "Transform":
                                                             {
                                                               "@translation":[3.854,3.64,0.7402],
@@ -923,7 +904,7 @@
                                               { "HAnimJoint":
                                                 {
                                                   "@name":"r_metatarsophalangeal_2",
-                                                  "@DEF":"hanim_r_metatarsophalangeal_2",
+                                                  "@DEF":"hanim_r_metatarsophalangeal_1",
                                                   "@center":[-3.854,3.64,0.7402],
                                                   "@llimit":[0,0,0],
                                                   "@ulimit":[0,0,0],
@@ -931,11 +912,8 @@
                                                     { "HAnimSegment":
                                                       {
                                                         "@name":"r_tarsal_proximal_phalanx_2",
-                                                        "@DEF":"hanim_r_tarsal_proximal_phalanx_2",
+                                                        "@DEF":"hanim_r_tarsal_proximal_phalanx_1",
                                                         "-children":[
-                                                          {
-                                                            "#comment":"TODO append _2"
-                                                          },
                                                           { "Transform":
                                                             {
                                                               "@translation":[-3.854,3.64,0.7402],

@@ -73,10 +73,6 @@
             "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
           },
           {
-            "@name":"license",
-            "@content":"../license.html"
-          },
-          {
             "@name":"translated",
             "@content":"04 September 2023"
           },
@@ -123,14 +119,8 @@
                     "-value":[
                       { "MetadataString":
                         {
-                          "@name":"humanoidVersion",
-                          "@value":["2.0"]
-                        }
-                      },
-                      { "MetadataFloat":
-                        {
-                          "@name":"height",
-                          "@value":[1.86]
+                          "@name":"authorName",
+                          "@value":["Jin Hoon Lee and Min Joo Lee, Chul Hee Jung and Myeong Won Lee"]
                         }
                       }
                     ]
@@ -299,6 +289,16 @@
                 },
                 { "HAnimJoint":
                   {
+                    "@USE":"hanim_l_carpal_distal_interphalangeal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_carpal_distal_interphalangeal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
                     "@USE":"hanim_l_carpal_distal_interphalangeal_2"
                   }
                 },
@@ -329,22 +329,22 @@
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_l_carpal_distal_interphalangeal_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_carpal_distal_interphalangeal_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
                     "@USE":"hanim_l_carpal_interphalangeal_1"
                   }
                 },
                 { "HAnimJoint":
                   {
                     "@USE":"hanim_r_carpal_interphalangeal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_carpal_proximal_interphalangeal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_carpal_proximal_interphalangeal_1"
                   }
                 },
                 { "HAnimJoint":
@@ -375,16 +375,6 @@
                 { "HAnimJoint":
                   {
                     "@USE":"hanim_r_carpal_proximal_interphalangeal_4"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_carpal_proximal_interphalangeal_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_carpal_proximal_interphalangeal_5"
                   }
                 },
                 { "HAnimJoint":
@@ -659,12 +649,12 @@
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_l_midcarpal_4_5"
+                    "@USE":"hanim_l_midcarpal_4_1"
                   }
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"hanim_r_midcarpal_4_5"
+                    "@USE":"hanim_r_midcarpal_4_1"
                   }
                 },
                 { "HAnimJoint":
@@ -769,6 +759,16 @@
                 },
                 { "HAnimJoint":
                   {
+                    "@USE":"hanim_l_tarsal_proximal_interphalangeal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_tarsal_proximal_interphalangeal_1"
+                  }
+                },
+                { "HAnimJoint":
+                  {
                     "@USE":"hanim_l_tarsal_proximal_interphalangeal_2"
                   }
                 },
@@ -795,16 +795,6 @@
                 { "HAnimJoint":
                   {
                     "@USE":"hanim_r_tarsal_proximal_interphalangeal_4"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_l_tarsal_proximal_interphalangeal_5"
-                  }
-                },
-                { "HAnimJoint":
-                  {
-                    "@USE":"hanim_r_tarsal_proximal_interphalangeal_5"
                   }
                 },
                 { "HAnimJoint":
@@ -1099,6 +1089,16 @@
                 },
                 { "HAnimSegment":
                   {
+                    "@USE":"hanim_l_carpal_middle_phalanx_1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_carpal_middle_phalanx_1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
                     "@USE":"hanim_l_carpal_middle_phalanx_2"
                   }
                 },
@@ -1125,16 +1125,6 @@
                 { "HAnimSegment":
                   {
                     "@USE":"hanim_r_carpal_middle_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_middle_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_middle_phalanx_5"
                   }
                 },
                 { "HAnimSegment":
@@ -1469,6 +1459,16 @@
                 },
                 { "HAnimSegment":
                   {
+                    "@USE":"hanim_l_tarsal_middle_phalanx_1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_tarsal_middle_phalanx_1"
+                  }
+                },
+                { "HAnimSegment":
+                  {
                     "@USE":"hanim_l_tarsal_middle_phalanx_2"
                   }
                 },
@@ -1495,16 +1495,6 @@
                 { "HAnimSegment":
                   {
                     "@USE":"hanim_r_tarsal_middle_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_middle_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_middle_phalanx_5"
                   }
                 },
                 { "HAnimSegment":
@@ -1730,7 +1720,7 @@
                               {
                                 "@name":"l_hip",
                                 "@DEF":"hanim_l_hip",
-                                "@center":[0.0946575,1.0250461,-0.01834875],
+                                "@center":[0.0946575,1.025046,-0.01834875],
                                 "@llimit":[0,0,0],
                                 "@ulimit":[0,0,0],
                                 "-children":[
@@ -1741,7 +1731,7 @@
                                       "-children":[
                                         { "Transform":
                                           {
-                                            "@translation":[0.0946575,1.0250461,-0.01834875],
+                                            "@translation":[0.0946575,1.025046,-0.01834875],
                                             "-children":[
                                               { "Shape":
                                                 {
@@ -2445,7 +2435,7 @@
                                                                       { "HAnimJoint":
                                                                         {
                                                                           "@name":"l_tarsal_proximal_interphalangeal_2",
-                                                                          "@DEF":"hanim_l_tarsal_proximal_interphalangeal_2",
+                                                                          "@DEF":"hanim_l_tarsal_proximal_interphalangeal_1",
                                                                           "@center":[0.0843075,0.01568259,0.1140075],
                                                                           "@llimit":[0,0,0],
                                                                           "@ulimit":[0,0,0],
@@ -2453,7 +2443,7 @@
                                                                             { "HAnimSegment":
                                                                               {
                                                                                 "@name":"l_tarsal_middle_phalanx_2",
-                                                                                "@DEF":"hanim_l_tarsal_middle_phalanx_2",
+                                                                                "@DEF":"hanim_l_tarsal_middle_phalanx_1",
                                                                                 "-children":[
                                                                                   { "Transform":
                                                                                     {
@@ -2780,7 +2770,7 @@
                                                                       { "HAnimJoint":
                                                                         {
                                                                           "@name":"l_tarsal_proximal_interphalangeal_3",
-                                                                          "@DEF":"hanim_l_tarsal_proximal_interphalangeal_3",
+                                                                          "@DEF":"hanim_l_tarsal_proximal_interphalangeal_2",
                                                                           "@center":[0.098865,0.01478421,0.110475],
                                                                           "@llimit":[0,0,0],
                                                                           "@ulimit":[0,0,0],
@@ -2788,7 +2778,7 @@
                                                                             { "HAnimSegment":
                                                                               {
                                                                                 "@name":"l_tarsal_middle_phalanx_3",
-                                                                                "@DEF":"hanim_l_tarsal_middle_phalanx_3",
+                                                                                "@DEF":"hanim_l_tarsal_middle_phalanx_2",
                                                                                 "-children":[
                                                                                   { "Transform":
                                                                                     {
@@ -3182,7 +3172,7 @@
                                                                       { "HAnimJoint":
                                                                         {
                                                                           "@name":"l_tarsal_proximal_interphalangeal_4",
-                                                                          "@DEF":"hanim_l_tarsal_proximal_interphalangeal_4",
+                                                                          "@DEF":"hanim_l_tarsal_proximal_interphalangeal_3",
                                                                           "@center":[0.114165,0.01518318,0.1063125],
                                                                           "@llimit":[0,0,0],
                                                                           "@ulimit":[0,0,0],
@@ -3190,7 +3180,7 @@
                                                                             { "HAnimSegment":
                                                                               {
                                                                                 "@name":"l_tarsal_middle_phalanx_4",
-                                                                                "@DEF":"hanim_l_tarsal_middle_phalanx_4",
+                                                                                "@DEF":"hanim_l_tarsal_middle_phalanx_3",
                                                                                 "-children":[
                                                                                   { "Transform":
                                                                                     {
@@ -3450,7 +3440,7 @@
                                                                       { "HAnimJoint":
                                                                         {
                                                                           "@name":"l_tarsal_proximal_interphalangeal_5",
-                                                                          "@DEF":"hanim_l_tarsal_proximal_interphalangeal_5",
+                                                                          "@DEF":"hanim_l_tarsal_proximal_interphalangeal_4",
                                                                           "@center":[0.1263825,0.01346175,0.09414],
                                                                           "@llimit":[0,0,0],
                                                                           "@ulimit":[0,0,0],
@@ -3458,7 +3448,7 @@
                                                                             { "HAnimSegment":
                                                                               {
                                                                                 "@name":"l_tarsal_middle_phalanx_5",
-                                                                                "@DEF":"hanim_l_tarsal_middle_phalanx_5",
+                                                                                "@DEF":"hanim_l_tarsal_middle_phalanx_4",
                                                                                 "-children":[
                                                                                   { "Transform":
                                                                                     {
@@ -3606,7 +3596,7 @@
                               {
                                 "@name":"r_hip",
                                 "@DEF":"hanim_r_hip",
-                                "@center":[-0.0946575,1.0250461,-0.01834875],
+                                "@center":[-0.0946575,1.025046,-0.01834875],
                                 "@llimit":[0,0,0],
                                 "@ulimit":[0,0,0],
                                 "-children":[
@@ -3617,7 +3607,7 @@
                                       "-children":[
                                         { "Transform":
                                           {
-                                            "@translation":[-0.0946575,1.0250461,-0.01834875],
+                                            "@translation":[-0.0946575,1.025046,-0.01834875],
                                             "-children":[
                                               { "Shape":
                                                 {
@@ -4321,7 +4311,7 @@
                                                                       { "HAnimJoint":
                                                                         {
                                                                           "@name":"r_tarsal_proximal_interphalangeal_2",
-                                                                          "@DEF":"hanim_r_tarsal_proximal_interphalangeal_2",
+                                                                          "@DEF":"hanim_r_tarsal_proximal_interphalangeal_1",
                                                                           "@center":[-0.083925,0.01568259,0.1140075],
                                                                           "@llimit":[0,0,0],
                                                                           "@ulimit":[0,0,0],
@@ -4329,7 +4319,7 @@
                                                                             { "HAnimSegment":
                                                                               {
                                                                                 "@name":"r_tarsal_middle_phalanx_2",
-                                                                                "@DEF":"hanim_r_tarsal_middle_phalanx_2",
+                                                                                "@DEF":"hanim_r_tarsal_middle_phalanx_1",
                                                                                 "-children":[
                                                                                   { "Transform":
                                                                                     {
@@ -4656,7 +4646,7 @@
                                                                       { "HAnimJoint":
                                                                         {
                                                                           "@name":"r_tarsal_proximal_interphalangeal_3",
-                                                                          "@DEF":"hanim_r_tarsal_proximal_interphalangeal_3",
+                                                                          "@DEF":"hanim_r_tarsal_proximal_interphalangeal_2",
                                                                           "@center":[-0.098505,0.01478421,0.110475],
                                                                           "@llimit":[0,0,0],
                                                                           "@ulimit":[0,0,0],
@@ -4664,7 +4654,7 @@
                                                                             { "HAnimSegment":
                                                                               {
                                                                                 "@name":"r_tarsal_middle_phalanx_3",
-                                                                                "@DEF":"hanim_r_tarsal_middle_phalanx_3",
+                                                                                "@DEF":"hanim_r_tarsal_middle_phalanx_2",
                                                                                 "-children":[
                                                                                   { "Transform":
                                                                                     {
@@ -5058,7 +5048,7 @@
                                                                       { "HAnimJoint":
                                                                         {
                                                                           "@name":"r_tarsal_proximal_interphalangeal_4",
-                                                                          "@DEF":"hanim_r_tarsal_proximal_interphalangeal_4",
+                                                                          "@DEF":"hanim_r_tarsal_proximal_interphalangeal_3",
                                                                           "@center":[-0.1137825,0.01518318,0.1063125],
                                                                           "@llimit":[0,0,0],
                                                                           "@ulimit":[0,0,0],
@@ -5066,7 +5056,7 @@
                                                                             { "HAnimSegment":
                                                                               {
                                                                                 "@name":"r_tarsal_middle_phalanx_4",
-                                                                                "@DEF":"hanim_r_tarsal_middle_phalanx_4",
+                                                                                "@DEF":"hanim_r_tarsal_middle_phalanx_3",
                                                                                 "-children":[
                                                                                   { "Transform":
                                                                                     {
@@ -5326,7 +5316,7 @@
                                                                       { "HAnimJoint":
                                                                         {
                                                                           "@name":"r_tarsal_proximal_interphalangeal_5",
-                                                                          "@DEF":"hanim_r_tarsal_proximal_interphalangeal_5",
+                                                                          "@DEF":"hanim_r_tarsal_proximal_interphalangeal_4",
                                                                           "@center":[-0.126,0.01346175,0.09414],
                                                                           "@llimit":[0,0,0],
                                                                           "@ulimit":[0,0,0],
@@ -5334,7 +5324,7 @@
                                                                             { "HAnimSegment":
                                                                               {
                                                                                 "@name":"r_tarsal_middle_phalanx_5",
-                                                                                "@DEF":"hanim_r_tarsal_middle_phalanx_5",
+                                                                                "@DEF":"hanim_r_tarsal_middle_phalanx_4",
                                                                                 "-children":[
                                                                                   { "Transform":
                                                                                     {
@@ -5546,7 +5536,7 @@
                                     {
                                       "@name":"vl4",
                                       "@DEF":"hanim_vl4",
-                                      "@center":[0,1.1776589,-0.01376325],
+                                      "@center":[0,1.177659,-0.01376325],
                                       "@llimit":[0,0,0],
                                       "@ulimit":[0,0,0],
                                       "-children":[
@@ -5557,7 +5547,7 @@
                                             "-children":[
                                               { "Transform":
                                                 {
-                                                  "@translation":[0,1.1776589,-0.01376325],
+                                                  "@translation":[0,1.177659,-0.01376325],
                                                   "-children":[
                                                     { "Shape":
                                                       {
@@ -6058,7 +6048,7 @@
                                                                                     {
                                                                                       "@name":"vt8",
                                                                                       "@DEF":"hanim_vt8",
-                                                                                      "@center":[0,1.3553821,-0.01376325],
+                                                                                      "@center":[0,1.355382,-0.01376325],
                                                                                       "@llimit":[0,0,0],
                                                                                       "@ulimit":[0,0,0],
                                                                                       "-children":[
@@ -6069,7 +6059,7 @@
                                                                                             "-children":[
                                                                                               { "Transform":
                                                                                                 {
-                                                                                                  "@translation":[0,1.3553821,-0.01376325],
+                                                                                                  "@translation":[0,1.355382,-0.01376325],
                                                                                                   "-children":[
                                                                                                     { "Shape":
                                                                                                       {
@@ -6186,7 +6176,7 @@
                                                                                                 {
                                                                                                   "@name":"vt6",
                                                                                                   "@DEF":"hanim_vt6",
-                                                                                                  "@center":[0,1.3908149,-0.01376325],
+                                                                                                  "@center":[0,1.390815,-0.01376325],
                                                                                                   "@llimit":[0,0,0],
                                                                                                   "@ulimit":[0,0,0],
                                                                                                   "-children":[
@@ -6197,7 +6187,7 @@
                                                                                                         "-children":[
                                                                                                           { "Transform":
                                                                                                             {
-                                                                                                              "@translation":[0,1.3908149,-0.01376325],
+                                                                                                              "@translation":[0,1.390815,-0.01376325],
                                                                                                               "-children":[
                                                                                                                 { "Shape":
                                                                                                                   {
@@ -6442,7 +6432,7 @@
                                                                                                                         {
                                                                                                                           "@name":"vt2",
                                                                                                                           "@DEF":"hanim_vt2",
-                                                                                                                          "@center":[0,1.4826059,-0.01378575],
+                                                                                                                          "@center":[0,1.482606,-0.01378575],
                                                                                                                           "@llimit":[0,0,0],
                                                                                                                           "@ulimit":[0,0,0],
                                                                                                                           "-children":[
@@ -6453,7 +6443,7 @@
                                                                                                                                 "-children":[
                                                                                                                                   { "Transform":
                                                                                                                                     {
-                                                                                                                                      "@translation":[0,1.4826059,-0.01378575],
+                                                                                                                                      "@translation":[0,1.482606,-0.01378575],
                                                                                                                                       "-children":[
                                                                                                                                         { "Shape":
                                                                                                                                           {
@@ -6570,7 +6560,7 @@
                                                                                                                                     {
                                                                                                                                       "@name":"vc7",
                                                                                                                                       "@DEF":"hanim_vc7",
-                                                                                                                                      "@center":[0,1.5442649,-0.01506375],
+                                                                                                                                      "@center":[0,1.544265,-0.01506375],
                                                                                                                                       "@llimit":[0,0,0],
                                                                                                                                       "@ulimit":[0,0,0],
                                                                                                                                       "-children":[
@@ -6581,7 +6571,7 @@
                                                                                                                                             "-children":[
                                                                                                                                               { "Transform":
                                                                                                                                                 {
-                                                                                                                                                  "@translation":[0,1.5442649,-0.01506375],
+                                                                                                                                                  "@translation":[0,1.544265,-0.01506375],
                                                                                                                                                   "-children":[
                                                                                                                                                     { "Shape":
                                                                                                                                                       {
@@ -6634,7 +6624,7 @@
                                                                                                                                           {
                                                                                                                                             "@name":"vc6",
                                                                                                                                             "@DEF":"hanim_vc6",
-                                                                                                                                            "@center":[0,1.5593309,-0.01506375],
+                                                                                                                                            "@center":[0,1.559331,-0.01506375],
                                                                                                                                             "@llimit":[0,0,0],
                                                                                                                                             "@ulimit":[0,0,0],
                                                                                                                                             "-children":[
@@ -6645,7 +6635,7 @@
                                                                                                                                                   "-children":[
                                                                                                                                                     { "Transform":
                                                                                                                                                       {
-                                                                                                                                                        "@translation":[0,1.5593309,-0.01506375],
+                                                                                                                                                        "@translation":[0,1.559331,-0.01506375],
                                                                                                                                                         "-children":[
                                                                                                                                                           { "Shape":
                                                                                                                                                             {
@@ -6698,7 +6688,7 @@
                                                                                                                                                 {
                                                                                                                                                   "@name":"vc5",
                                                                                                                                                   "@DEF":"hanim_vc5",
-                                                                                                                                                  "@center":[0,1.5746759,-0.01506375],
+                                                                                                                                                  "@center":[0,1.574676,-0.01506375],
                                                                                                                                                   "@llimit":[0,0,0],
                                                                                                                                                   "@ulimit":[0,0,0],
                                                                                                                                                   "-children":[
@@ -6709,7 +6699,7 @@
                                                                                                                                                         "-children":[
                                                                                                                                                           { "Transform":
                                                                                                                                                             {
-                                                                                                                                                              "@translation":[0,1.5746759,-0.01506375],
+                                                                                                                                                              "@translation":[0,1.574676,-0.01506375],
                                                                                                                                                               "-children":[
                                                                                                                                                                 { "Shape":
                                                                                                                                                                   {
@@ -6954,7 +6944,7 @@
                                                                                                                                                                         {
                                                                                                                                                                           "@name":"vc1",
                                                                                                                                                                           "@DEF":"hanim_vc1",
-                                                                                                                                                                          "@center":[0,1.6349399,-0.01506375],
+                                                                                                                                                                          "@center":[0,1.63494,-0.01506375],
                                                                                                                                                                           "@llimit":[0,0,0],
                                                                                                                                                                           "@ulimit":[0,0,0],
                                                                                                                                                                           "-children":[
@@ -6965,7 +6955,7 @@
                                                                                                                                                                                 "-children":[
                                                                                                                                                                                   { "Transform":
                                                                                                                                                                                     {
-                                                                                                                                                                                      "@translation":[0,1.6349399,-0.01506375],
+                                                                                                                                                                                      "@translation":[0,1.63494,-0.01506375],
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "Shape":
                                                                                                                                                                                           {
@@ -7216,7 +7206,7 @@
                                                                                                                                                                                     {
                                                                                                                                                                                       "@name":"l_eyeball_joint",
                                                                                                                                                                                       "@DEF":"hanim_l_eyeball_joint",
-                                                                                                                                                                                      "@center":[0.0481275,1.7420759,0.0830475],
+                                                                                                                                                                                      "@center":[0.0481275,1.742076,0.0830475],
                                                                                                                                                                                       "@llimit":[0,0,0],
                                                                                                                                                                                       "@ulimit":[0,0,0],
                                                                                                                                                                                       "-children":[
@@ -7227,7 +7217,7 @@
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "Transform":
                                                                                                                                                                                                 {
-                                                                                                                                                                                                  "@translation":[0.0481275,1.7420759,0.0830475],
+                                                                                                                                                                                                  "@translation":[0.0481275,1.742076,0.0830475],
                                                                                                                                                                                                   "-children":[
                                                                                                                                                                                                     { "Shape":
                                                                                                                                                                                                       {
@@ -7283,7 +7273,7 @@
                                                                                                                                                                                     {
                                                                                                                                                                                       "@name":"r_eyeball_joint",
                                                                                                                                                                                       "@DEF":"hanim_r_eyeball_joint",
-                                                                                                                                                                                      "@center":[-0.0481275,1.7420759,0.0830475],
+                                                                                                                                                                                      "@center":[-0.0481275,1.742076,0.0830475],
                                                                                                                                                                                       "@llimit":[0,0,0],
                                                                                                                                                                                       "@ulimit":[0,0,0],
                                                                                                                                                                                       "-children":[
@@ -7294,7 +7284,7 @@
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "Transform":
                                                                                                                                                                                                 {
-                                                                                                                                                                                                  "@translation":[-0.0481275,1.7420759,0.0830475],
+                                                                                                                                                                                                  "@translation":[-0.0481275,1.742076,0.0830475],
                                                                                                                                                                                                   "-children":[
                                                                                                                                                                                                     { "Shape":
                                                                                                                                                                                                       {
@@ -7639,7 +7629,7 @@
                                                                                                                                           {
                                                                                                                                             "@name":"l_sternoclavicular",
                                                                                                                                             "@DEF":"hanim_l_sternoclavicular",
-                                                                                                                                            "@center":[0.12294,1.4778631,-0.012897],
+                                                                                                                                            "@center":[0.12294,1.477863,-0.012897],
                                                                                                                                             "@llimit":[0,0,0],
                                                                                                                                             "@ulimit":[0,0,0],
                                                                                                                                             "-children":[
@@ -7650,7 +7640,7 @@
                                                                                                                                                   "-children":[
                                                                                                                                                     { "Transform":
                                                                                                                                                       {
-                                                                                                                                                        "@translation":[0.12294,1.4778631,-0.012897],
+                                                                                                                                                        "@translation":[0.12294,1.477863,-0.012897],
                                                                                                                                                         "-children":[
                                                                                                                                                           { "Shape":
                                                                                                                                                             {
@@ -8354,7 +8344,7 @@
                                                                                                                                                                                   { "HAnimJoint":
                                                                                                                                                                                     {
                                                                                                                                                                                       "@name":"l_carpal_proximal_interphalangeal_2",
-                                                                                                                                                                                      "@DEF":"hanim_l_carpal_proximal_interphalangeal_2",
+                                                                                                                                                                                      "@DEF":"hanim_l_carpal_proximal_interphalangeal_1",
                                                                                                                                                                                       "@center":[0.18171,0.752463,0.014184],
                                                                                                                                                                                       "@llimit":[0,0,0],
                                                                                                                                                                                       "@ulimit":[0,0,0],
@@ -8362,7 +8352,7 @@
                                                                                                                                                                                         { "HAnimSegment":
                                                                                                                                                                                           {
                                                                                                                                                                                             "@name":"l_carpal_middle_phalanx_2",
-                                                                                                                                                                                            "@DEF":"hanim_l_carpal_middle_phalanx_2",
+                                                                                                                                                                                            "@DEF":"hanim_l_carpal_middle_phalanx_1",
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "Transform":
                                                                                                                                                                                                 {
@@ -8418,7 +8408,7 @@
                                                                                                                                                                                         { "HAnimJoint":
                                                                                                                                                                                           {
                                                                                                                                                                                             "@name":"l_carpal_distal_interphalangeal_2",
-                                                                                                                                                                                            "@DEF":"hanim_l_carpal_distal_interphalangeal_2",
+                                                                                                                                                                                            "@DEF":"hanim_l_carpal_distal_interphalangeal_1",
                                                                                                                                                                                             "@center":[0.180675,0.721215,0.01338525],
                                                                                                                                                                                             "@llimit":[0,0,0],
                                                                                                                                                                                             "@ulimit":[0,0,0],
@@ -8626,7 +8616,7 @@
                                                                                                                                                                               {
                                                                                                                                                                                 "@name":"l_metacarpophalangeal_3",
                                                                                                                                                                                 "@DEF":"hanim_l_metacarpophalangeal_3",
-                                                                                                                                                                                "@center":[0.18369,0.78733796,-0.00391725],
+                                                                                                                                                                                "@center":[0.18369,0.787338,-0.00391725],
                                                                                                                                                                                 "@llimit":[0,0,0],
                                                                                                                                                                                 "@ulimit":[0,0,0],
                                                                                                                                                                                 "-children":[
@@ -8637,7 +8627,7 @@
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "Transform":
                                                                                                                                                                                           {
-                                                                                                                                                                                            "@translation":[0.18369,0.78733796,-0.00391725],
+                                                                                                                                                                                            "@translation":[0.18369,0.787338,-0.00391725],
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "Shape":
                                                                                                                                                                                                 {
@@ -8689,19 +8679,19 @@
                                                                                                                                                                                   { "HAnimJoint":
                                                                                                                                                                                     {
                                                                                                                                                                                       "@name":"l_carpal_proximal_interphalangeal_3",
-                                                                                                                                                                                      "@DEF":"hanim_l_carpal_proximal_interphalangeal_3",
-                                                                                                                                                                                      "@center":[0.18171,0.74799895,-0.003537],
+                                                                                                                                                                                      "@DEF":"hanim_l_carpal_proximal_interphalangeal_2",
+                                                                                                                                                                                      "@center":[0.18171,0.747999,-0.003537],
                                                                                                                                                                                       "@llimit":[0,0,0],
                                                                                                                                                                                       "@ulimit":[0,0,0],
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "HAnimSegment":
                                                                                                                                                                                           {
                                                                                                                                                                                             "@name":"l_carpal_middle_phalanx_3",
-                                                                                                                                                                                            "@DEF":"hanim_l_carpal_middle_phalanx_3",
+                                                                                                                                                                                            "@DEF":"hanim_l_carpal_middle_phalanx_2",
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "Transform":
                                                                                                                                                                                                 {
-                                                                                                                                                                                                  "@translation":[0.18171,0.74799895,-0.003537],
+                                                                                                                                                                                                  "@translation":[0.18171,0.747999,-0.003537],
                                                                                                                                                                                                   "-children":[
                                                                                                                                                                                                     { "Shape":
                                                                                                                                                                                                       {
@@ -8753,7 +8743,7 @@
                                                                                                                                                                                         { "HAnimJoint":
                                                                                                                                                                                           {
                                                                                                                                                                                             "@name":"l_carpal_distal_interphalangeal_3",
-                                                                                                                                                                                            "@DEF":"hanim_l_carpal_distal_interphalangeal_3",
+                                                                                                                                                                                            "@DEF":"hanim_l_carpal_distal_interphalangeal_2",
                                                                                                                                                                                             "@center":[0.180675,0.713403,-0.00375975],
                                                                                                                                                                                             "@llimit":[0,0,0],
                                                                                                                                                                                             "@ulimit":[0,0,0],
@@ -8832,8 +8822,8 @@
                                                                                                                                                                 { "HAnimJoint":
                                                                                                                                                                   {
                                                                                                                                                                     "@name":"l_midcarpal_4_5",
-                                                                                                                                                                    "@DEF":"hanim_l_midcarpal_4_5",
-                                                                                                                                                                    "@center":[0.18108,0.87522304,-0.02574],
+                                                                                                                                                                    "@DEF":"hanim_l_midcarpal_4_1",
+                                                                                                                                                                    "@center":[0.18108,0.875223,-0.02574],
                                                                                                                                                                     "@llimit":[0,0,0],
                                                                                                                                                                     "@ulimit":[0,0,0],
                                                                                                                                                                     "-children":[
@@ -8844,7 +8834,7 @@
                                                                                                                                                                           "-children":[
                                                                                                                                                                             { "Transform":
                                                                                                                                                                               {
-                                                                                                                                                                                "@translation":[0.18108,0.87522304,-0.02574],
+                                                                                                                                                                                "@translation":[0.18108,0.875223,-0.02574],
                                                                                                                                                                                 "-children":[
                                                                                                                                                                                   { "Shape":
                                                                                                                                                                                     {
@@ -9024,7 +9014,7 @@
                                                                                                                                                                                   { "HAnimJoint":
                                                                                                                                                                                     {
                                                                                                                                                                                       "@name":"l_carpal_proximal_interphalangeal_4",
-                                                                                                                                                                                      "@DEF":"hanim_l_carpal_proximal_interphalangeal_4",
+                                                                                                                                                                                      "@DEF":"hanim_l_carpal_proximal_interphalangeal_3",
                                                                                                                                                                                       "@center":[0.18171,0.752184,-0.020646],
                                                                                                                                                                                       "@llimit":[0,0,0],
                                                                                                                                                                                       "@ulimit":[0,0,0],
@@ -9032,7 +9022,7 @@
                                                                                                                                                                                         { "HAnimSegment":
                                                                                                                                                                                           {
                                                                                                                                                                                             "@name":"l_carpal_middle_phalanx_4",
-                                                                                                                                                                                            "@DEF":"hanim_l_carpal_middle_phalanx_4",
+                                                                                                                                                                                            "@DEF":"hanim_l_carpal_middle_phalanx_3",
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "Transform":
                                                                                                                                                                                                 {
@@ -9088,7 +9078,7 @@
                                                                                                                                                                                         { "HAnimJoint":
                                                                                                                                                                                           {
                                                                                                                                                                                             "@name":"l_carpal_distal_interphalangeal_4",
-                                                                                                                                                                                            "@DEF":"hanim_l_carpal_distal_interphalangeal_4",
+                                                                                                                                                                                            "@DEF":"hanim_l_carpal_distal_interphalangeal_3",
                                                                                                                                                                                             "@center":[0.180675,0.720099,-0.0197775],
                                                                                                                                                                                             "@llimit":[0,0,0],
                                                                                                                                                                                             "@ulimit":[0,0,0],
@@ -9232,7 +9222,7 @@
                                                                                                                                                                         {
                                                                                                                                                                           "@name":"l_metacarpophalangeal_5",
                                                                                                                                                                           "@DEF":"hanim_l_metacarpophalangeal_5",
-                                                                                                                                                                          "@center":[0.18333,0.79124403,-0.0370575],
+                                                                                                                                                                          "@center":[0.18333,0.791244,-0.0370575],
                                                                                                                                                                           "@llimit":[0,0,0],
                                                                                                                                                                           "@ulimit":[0,0,0],
                                                                                                                                                                           "-children":[
@@ -9243,7 +9233,7 @@
                                                                                                                                                                                 "-children":[
                                                                                                                                                                                   { "Transform":
                                                                                                                                                                                     {
-                                                                                                                                                                                      "@translation":[0.18333,0.79124403,-0.0370575],
+                                                                                                                                                                                      "@translation":[0.18333,0.791244,-0.0370575],
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "Shape":
                                                                                                                                                                                           {
@@ -9295,7 +9285,7 @@
                                                                                                                                                                             { "HAnimJoint":
                                                                                                                                                                               {
                                                                                                                                                                                 "@name":"l_carpal_proximal_interphalangeal_5",
-                                                                                                                                                                                "@DEF":"hanim_l_carpal_proximal_interphalangeal_5",
+                                                                                                                                                                                "@DEF":"hanim_l_carpal_proximal_interphalangeal_4",
                                                                                                                                                                                 "@center":[0.181665,0.77004,-0.0371475],
                                                                                                                                                                                 "@llimit":[0,0,0],
                                                                                                                                                                                 "@ulimit":[0,0,0],
@@ -9303,7 +9293,7 @@
                                                                                                                                                                                   { "HAnimSegment":
                                                                                                                                                                                     {
                                                                                                                                                                                       "@name":"l_carpal_middle_phalanx_5",
-                                                                                                                                                                                      "@DEF":"hanim_l_carpal_middle_phalanx_5",
+                                                                                                                                                                                      "@DEF":"hanim_l_carpal_middle_phalanx_4",
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "Transform":
                                                                                                                                                                                           {
@@ -9359,7 +9349,7 @@
                                                                                                                                                                                   { "HAnimJoint":
                                                                                                                                                                                     {
                                                                                                                                                                                       "@name":"l_carpal_distal_interphalangeal_5",
-                                                                                                                                                                                      "@DEF":"hanim_l_carpal_distal_interphalangeal_5",
+                                                                                                                                                                                      "@DEF":"hanim_l_carpal_distal_interphalangeal_4",
                                                                                                                                                                                       "@center":[0.18081,0.746883,-0.0369675],
                                                                                                                                                                                       "@llimit":[0,0,0],
                                                                                                                                                                                       "@ulimit":[0,0,0],
@@ -9515,7 +9505,7 @@
                                                                                                                                           {
                                                                                                                                             "@name":"r_sternoclavicular",
                                                                                                                                             "@DEF":"hanim_r_sternoclavicular",
-                                                                                                                                            "@center":[-0.12294,1.4778631,-0.012897],
+                                                                                                                                            "@center":[-0.12294,1.477863,-0.012897],
                                                                                                                                             "@llimit":[0,0,0],
                                                                                                                                             "@ulimit":[0,0,0],
                                                                                                                                             "-children":[
@@ -9526,7 +9516,7 @@
                                                                                                                                                   "-children":[
                                                                                                                                                     { "Transform":
                                                                                                                                                       {
-                                                                                                                                                        "@translation":[-0.12294,1.4778631,-0.012897],
+                                                                                                                                                        "@translation":[-0.12294,1.477863,-0.012897],
                                                                                                                                                         "-children":[
                                                                                                                                                           { "Shape":
                                                                                                                                                             {
@@ -10230,7 +10220,7 @@
                                                                                                                                                                                   { "HAnimJoint":
                                                                                                                                                                                     {
                                                                                                                                                                                       "@name":"r_carpal_proximal_interphalangeal_2",
-                                                                                                                                                                                      "@DEF":"hanim_r_carpal_proximal_interphalangeal_2",
+                                                                                                                                                                                      "@DEF":"hanim_r_carpal_proximal_interphalangeal_1",
                                                                                                                                                                                       "@center":[-0.1813275,0.752463,0.014184],
                                                                                                                                                                                       "@llimit":[0,0,0],
                                                                                                                                                                                       "@ulimit":[0,0,0],
@@ -10238,7 +10228,7 @@
                                                                                                                                                                                         { "HAnimSegment":
                                                                                                                                                                                           {
                                                                                                                                                                                             "@name":"r_carpal_middle_phalanx_2",
-                                                                                                                                                                                            "@DEF":"hanim_r_carpal_middle_phalanx_2",
+                                                                                                                                                                                            "@DEF":"hanim_r_carpal_middle_phalanx_1",
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "Transform":
                                                                                                                                                                                                 {
@@ -10294,7 +10284,7 @@
                                                                                                                                                                                         { "HAnimJoint":
                                                                                                                                                                                           {
                                                                                                                                                                                             "@name":"r_carpal_distal_interphalangeal_2",
-                                                                                                                                                                                            "@DEF":"hanim_r_carpal_distal_interphalangeal_2",
+                                                                                                                                                                                            "@DEF":"hanim_r_carpal_distal_interphalangeal_1",
                                                                                                                                                                                             "@center":[-0.1802925,0.721215,0.01338525],
                                                                                                                                                                                             "@llimit":[0,0,0],
                                                                                                                                                                                             "@ulimit":[0,0,0],
@@ -10502,7 +10492,7 @@
                                                                                                                                                                               {
                                                                                                                                                                                 "@name":"r_metacarpophalangeal_3",
                                                                                                                                                                                 "@DEF":"hanim_r_metacarpophalangeal_3",
-                                                                                                                                                                                "@center":[-0.1833075,0.78733796,-0.00391725],
+                                                                                                                                                                                "@center":[-0.1833075,0.787338,-0.00391725],
                                                                                                                                                                                 "@llimit":[0,0,0],
                                                                                                                                                                                 "@ulimit":[0,0,0],
                                                                                                                                                                                 "-children":[
@@ -10513,7 +10503,7 @@
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "Transform":
                                                                                                                                                                                           {
-                                                                                                                                                                                            "@translation":[-0.1833075,0.78733796,-0.00391725],
+                                                                                                                                                                                            "@translation":[-0.1833075,0.787338,-0.00391725],
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "Shape":
                                                                                                                                                                                                 {
@@ -10565,19 +10555,19 @@
                                                                                                                                                                                   { "HAnimJoint":
                                                                                                                                                                                     {
                                                                                                                                                                                       "@name":"r_carpal_proximal_interphalangeal_3",
-                                                                                                                                                                                      "@DEF":"hanim_r_carpal_proximal_interphalangeal_3",
-                                                                                                                                                                                      "@center":[-0.1813275,0.74799895,-0.003537],
+                                                                                                                                                                                      "@DEF":"hanim_r_carpal_proximal_interphalangeal_2",
+                                                                                                                                                                                      "@center":[-0.1813275,0.747999,-0.003537],
                                                                                                                                                                                       "@llimit":[0,0,0],
                                                                                                                                                                                       "@ulimit":[0,0,0],
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "HAnimSegment":
                                                                                                                                                                                           {
                                                                                                                                                                                             "@name":"r_carpal_middle_phalanx_3",
-                                                                                                                                                                                            "@DEF":"hanim_r_carpal_middle_phalanx_3",
+                                                                                                                                                                                            "@DEF":"hanim_r_carpal_middle_phalanx_2",
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "Transform":
                                                                                                                                                                                                 {
-                                                                                                                                                                                                  "@translation":[-0.1813275,0.74799895,-0.003537],
+                                                                                                                                                                                                  "@translation":[-0.1813275,0.747999,-0.003537],
                                                                                                                                                                                                   "-children":[
                                                                                                                                                                                                     { "Shape":
                                                                                                                                                                                                       {
@@ -10629,7 +10619,7 @@
                                                                                                                                                                                         { "HAnimJoint":
                                                                                                                                                                                           {
                                                                                                                                                                                             "@name":"r_carpal_distal_interphalangeal_3",
-                                                                                                                                                                                            "@DEF":"hanim_r_carpal_distal_interphalangeal_3",
+                                                                                                                                                                                            "@DEF":"hanim_r_carpal_distal_interphalangeal_2",
                                                                                                                                                                                             "@center":[-0.1802925,0.713403,-0.00375975],
                                                                                                                                                                                             "@llimit":[0,0,0],
                                                                                                                                                                                             "@ulimit":[0,0,0],
@@ -10708,8 +10698,8 @@
                                                                                                                                                                 { "HAnimJoint":
                                                                                                                                                                   {
                                                                                                                                                                     "@name":"r_midcarpal_4_5",
-                                                                                                                                                                    "@DEF":"hanim_r_midcarpal_4_5",
-                                                                                                                                                                    "@center":[-0.18072,0.87522304,-0.02574],
+                                                                                                                                                                    "@DEF":"hanim_r_midcarpal_4_1",
+                                                                                                                                                                    "@center":[-0.18072,0.875223,-0.02574],
                                                                                                                                                                     "@llimit":[0,0,0],
                                                                                                                                                                     "@ulimit":[0,0,0],
                                                                                                                                                                     "-children":[
@@ -10720,7 +10710,7 @@
                                                                                                                                                                           "-children":[
                                                                                                                                                                             { "Transform":
                                                                                                                                                                               {
-                                                                                                                                                                                "@translation":[-0.18072,0.87522304,-0.02574],
+                                                                                                                                                                                "@translation":[-0.18072,0.875223,-0.02574],
                                                                                                                                                                                 "-children":[
                                                                                                                                                                                   { "Shape":
                                                                                                                                                                                     {
@@ -10900,7 +10890,7 @@
                                                                                                                                                                                   { "HAnimJoint":
                                                                                                                                                                                     {
                                                                                                                                                                                       "@name":"r_carpal_proximal_interphalangeal_4",
-                                                                                                                                                                                      "@DEF":"hanim_r_carpal_proximal_interphalangeal_4",
+                                                                                                                                                                                      "@DEF":"hanim_r_carpal_proximal_interphalangeal_3",
                                                                                                                                                                                       "@center":[-0.1813275,0.752184,-0.020646],
                                                                                                                                                                                       "@llimit":[0,0,0],
                                                                                                                                                                                       "@ulimit":[0,0,0],
@@ -10908,7 +10898,7 @@
                                                                                                                                                                                         { "HAnimSegment":
                                                                                                                                                                                           {
                                                                                                                                                                                             "@name":"r_carpal_middle_phalanx_4",
-                                                                                                                                                                                            "@DEF":"hanim_r_carpal_middle_phalanx_4",
+                                                                                                                                                                                            "@DEF":"hanim_r_carpal_middle_phalanx_3",
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "Transform":
                                                                                                                                                                                                 {
@@ -10964,7 +10954,7 @@
                                                                                                                                                                                         { "HAnimJoint":
                                                                                                                                                                                           {
                                                                                                                                                                                             "@name":"r_carpal_distal_interphalangeal_4",
-                                                                                                                                                                                            "@DEF":"hanim_r_carpal_distal_interphalangeal_4",
+                                                                                                                                                                                            "@DEF":"hanim_r_carpal_distal_interphalangeal_3",
                                                                                                                                                                                             "@center":[-0.1802925,0.720099,-0.0197775],
                                                                                                                                                                                             "@llimit":[0,0,0],
                                                                                                                                                                                             "@ulimit":[0,0,0],
@@ -11108,7 +11098,7 @@
                                                                                                                                                                         {
                                                                                                                                                                           "@name":"r_metacarpophalangeal_5",
                                                                                                                                                                           "@DEF":"hanim_r_metacarpophalangeal_5",
-                                                                                                                                                                          "@center":[-0.18297,0.79124403,-0.0370575],
+                                                                                                                                                                          "@center":[-0.18297,0.791244,-0.0370575],
                                                                                                                                                                           "@llimit":[0,0,0],
                                                                                                                                                                           "@ulimit":[0,0,0],
                                                                                                                                                                           "-children":[
@@ -11119,7 +11109,7 @@
                                                                                                                                                                                 "-children":[
                                                                                                                                                                                   { "Transform":
                                                                                                                                                                                     {
-                                                                                                                                                                                      "@translation":[-0.18297,0.79124403,-0.0370575],
+                                                                                                                                                                                      "@translation":[-0.18297,0.791244,-0.0370575],
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "Shape":
                                                                                                                                                                                           {
@@ -11171,7 +11161,7 @@
                                                                                                                                                                             { "HAnimJoint":
                                                                                                                                                                               {
                                                                                                                                                                                 "@name":"r_carpal_proximal_interphalangeal_5",
-                                                                                                                                                                                "@DEF":"hanim_r_carpal_proximal_interphalangeal_5",
+                                                                                                                                                                                "@DEF":"hanim_r_carpal_proximal_interphalangeal_4",
                                                                                                                                                                                 "@center":[-0.181305,0.77004,-0.0371475],
                                                                                                                                                                                 "@llimit":[0,0,0],
                                                                                                                                                                                 "@ulimit":[0,0,0],
@@ -11179,7 +11169,7 @@
                                                                                                                                                                                   { "HAnimSegment":
                                                                                                                                                                                     {
                                                                                                                                                                                       "@name":"r_carpal_middle_phalanx_5",
-                                                                                                                                                                                      "@DEF":"hanim_r_carpal_middle_phalanx_5",
+                                                                                                                                                                                      "@DEF":"hanim_r_carpal_middle_phalanx_4",
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "Transform":
                                                                                                                                                                                           {
@@ -11235,7 +11225,7 @@
                                                                                                                                                                                   { "HAnimJoint":
                                                                                                                                                                                     {
                                                                                                                                                                                       "@name":"r_carpal_distal_interphalangeal_5",
-                                                                                                                                                                                      "@DEF":"hanim_r_carpal_distal_interphalangeal_5",
+                                                                                                                                                                                      "@DEF":"hanim_r_carpal_distal_interphalangeal_4",
                                                                                                                                                                                       "@center":[-0.18045,0.746883,-0.0369675],
                                                                                                                                                                                       "@llimit":[0,0,0],
                                                                                                                                                                                       "@ulimit":[0,0,0],
