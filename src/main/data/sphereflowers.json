@@ -54,7 +54,7 @@
           },
           {
             "@name":"modified",
-            "@content":"Sep 03 2023"
+            "@content":"Sep 3 2023"
           },
           {
             "@name":"description",
@@ -133,11 +133,11 @@
                                     "fieldValue": [
                                       {
                                         "@name":"vertex",
-                                        "@value":["../shaders/x_ite_flowers_chromatic.vs"]
+                                        "@value":["../shaders/x_ite_flowers_chromatic.vs","http://coderextreme.net/src/main/shaders/x_ite_flowers_chromatic.vs","http://localhost:8002/src/main/shaders/x_ite_flowers_chromatic.vs"]
                                       },
                                       {
                                         "@name":"fragment",
-                                        "@value":["../shaders/x_ite.fs"]
+                                        "@value":["../shaders/x_ite.fs","","http://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fshttp://localhost:8002/src/main/shaders/x_ite.fs"]
                                       }
                                     ]
                                   }
@@ -191,12 +191,13 @@
                     "@maxFront":100,
                     "@minBack":20,
                     "@minFront":20,
+                    "@location":[0,1,0],
                     "-source":
                       { "AudioClip":
                         {
                           "@DEF":"AudioClip",
                           "@description":"Chandubabamusic #1",
-                          "@url":["../resources/chandubabamusic1.wav","https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav"]
+                          "@url":["../resources/chandubabamusic1.wav","https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav","https://localhost:8002/src/main/resources/chandubabamusic1.wav"]
                         }
                       }
                   }
