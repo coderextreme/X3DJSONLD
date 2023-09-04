@@ -35,12 +35,12 @@
             "@content":"CHANGELOG.txt"
           },
           {
-            "@name":"TODO",
-            "@content":"credit for audio files"
-          },
-          {
             "@name":"reference",
             "@content":"https://www.medialab.hmu.gr/minipages/x3domAudio"
+          },
+          {
+            "@name":"TODO",
+            "@content":"credit for audio files"
           },
           {
             "@name":"identifier",
@@ -49,10 +49,6 @@
           {
             "@name":"generator",
             "@content":"X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
-          },
-          {
-            "@name":"license",
-            "@content":"../license.html"
           },
           {
             "@name":"translated",

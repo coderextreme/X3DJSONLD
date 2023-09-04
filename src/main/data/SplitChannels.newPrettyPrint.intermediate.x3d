@@ -9,15 +9,14 @@
     <meta content='28 October 2020' name='created'/>
     <meta content='5 December 2021' name='modified'/>
     <meta content='CHANGELOG.txt' name='reference'/>
-    <meta content='credit for audio files' name='TODO'/>
     <meta content='http://www.medialab.hmu.gr/minipages/x3domAudio' name='reference'/>
+    <meta content='credit for audio files' name='TODO'/>
     <meta content='https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d' name='identifier'/>
     <meta content='X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit' name='generator'/>
-    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
     <WorldInfo title='SplitChannels.x3d'/>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"NONE"'/>
+    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
     <Background skyColor='0.2 0.2 0.21'/>
     <Viewpoint orientation='1 0 0 -0.5' position='0 500 600' retainUserOffsets='true'/>
     <Transform DEF='PowerR' translation='100 400 400'>
@@ -43,7 +42,7 @@
           <Appearance>
             <Material ambientIntensity='0.0933' diffuseColor='0.345 0.345 0.882' shininess='0.51' specularColor='0.46 0.46 0.46'/>
           </Appearance>
-          <Text string='"Right Channel Volume"'>
+          <Text>
             <FontStyle family='"Times"' justify='"BEGIN"' style='BOLD'/>
           </Text>
         </Shape>
@@ -72,7 +71,7 @@
           <Appearance>
             <Material ambientIntensity='0.0933' diffuseColor='0.345 0.345 0.882' shininess='0.51' specularColor='0.46 0.46 0.46'/>
           </Appearance>
-          <Text string='"Left Channel Volume"'>
+          <Text>
             <FontStyle family='"Times"' justify='"BEGIN"' style='BOLD'/>
           </Text>
         </Shape>
@@ -91,10 +90,10 @@
       <Gain>
         <ChannelMerger>
           <ChannelSelector>
-            <Gain USE='ChannelSplitter'/>
+            <Gain/>
           </ChannelSelector>
           <ChannelSelector channelSelection='1'>
-            <Gain USE='ChannelSplitter'/>
+            <Gain/>
           </ChannelSelector>
         </ChannelMerger>
       </Gain>

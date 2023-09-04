@@ -1,108 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd" ><head><component name="Networking" level="2"></component>
-<component name="Core" level="2"></component>
-<meta name="title" content="t3.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="t3.x3d"></meta>
 <meta name="identifier" content="http://coderextreme.net/X3DJSONLD/src/main/data/t4.x3d"></meta>
 <meta name="generator" content="view3dscene, https://castle-engine.io/view3dscene.php"></meta>
+<meta name="generator" content="DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"></meta>
 <meta name="creator" content="Andreas Plesch and John Carlson"></meta>
 <meta name="source" content="t1.wrl"></meta>
 <meta name="description" content="Test Case for Proto Expander"></meta>
 <meta name="license" content="https://www.web3d.org/x3d/content/examples/license.html"></meta>
 <meta name="translated" content="12 May 2020"></meta>
-<meta name="generator" content="DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"></meta>
-<meta name="reference" content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"></meta>
+<component name="Networking" level="2"></component>
+<component name="Core" level="2"></component>
 </head>
-<Scene><NavigationInfo type="&quot;EXAMINE&quot; &quot;FLY&quot; &quot;WALK&quot;" speed="3" avatarSize="200 200 120"></NavigationInfo>
+<Scene><NavigationInfo type="&quot;EXAMINE&quot; &quot;FLY&quot; &quot;WALK&quot;" avatarSize="200 200 120" speed="3"></NavigationInfo>
 <WorldInfo title="Arts Mapper"></WorldInfo>
-<Viewpoint description="looking North" position="0 60 110" orientation="1 0 0 -0.699999988079071" fieldOfView="0.785398125648499"></Viewpoint>
-<Transform translation="-468 0 315"><Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="High Peak Community Arts"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.300000011920929 1"></Material>
+<Viewpoint description="looking North" position="0 60 110" orientation="1 0 0 -0.699999988079071" fieldOfView="0.7853981"></Viewpoint>
+<Transform translation="-468 0 315"><Anchor description="High Peak Community Arts" url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.3 1"></Material>
 </Appearance>
-<Sphere radius="5.10000002384186"></Sphere>
+<Sphere radius="5.1"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
-<Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="People Express"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0.600000023841858 0 0.600000023841858"></Material>
+<Anchor description="People Express" url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0.6 0 0.6"></Material>
 </Appearance>
-<Sphere radius="5.10000002384186"></Sphere>
+<Sphere radius="5.1"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
-<Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="QArts/Studios"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0.600000023841858 0 0.600000023841858"></Material>
+<Anchor description="QArts/Studios" url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0.6 0 0.6"></Material>
 </Appearance>
-<Sphere radius="5.10000002384186"></Sphere>
+<Sphere radius="5.1"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
-<Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="First Movement"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="1 0 0.200000002980232"></Material>
+<Anchor description="First Movement" url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="1 0 0.2"></Material>
 </Appearance>
-<Sphere radius="5.10000002384186"></Sphere>
+<Sphere radius="5.1"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
-<Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="City Arts"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0.600000023841858 0 0.600000023841858"></Material>
+<Anchor description="City Arts" url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0.6 0 0.6"></Material>
 </Appearance>
-<Sphere radius="5.10000002384186"></Sphere>
+<Sphere radius="5.1"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
-<Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="Indigo Dance Group (Salamanda Tandem)"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.300000011920929 1"></Material>
+<Anchor description="Indigo Dance Group (Salamanda Tandem)" url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.3 1"></Material>
 </Appearance>
-<Sphere radius="5.10000002384186"></Sphere>
+<Sphere radius="5.1"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
-<Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="Watering Seeds"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.300000011920929 1"></Material>
+<Anchor description="Watering Seeds" url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.3 1"></Material>
 </Appearance>
-<Sphere radius="5.10000002384186"></Sphere>
+<Sphere radius="5.1"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
-<Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="Fased In The Arts"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.300000011920929 1"></Material>
+<Anchor description="Fased In The Arts" url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.3 1"></Material>
 </Appearance>
-<Sphere radius="5.10000002384186"></Sphere>
+<Sphere radius="5.1"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
-<Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="27a Access Artspace"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="1 0 0.200000002980232"></Material>
+<Anchor description="27a Access Artspace" url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="1 0 0.2"></Material>
 </Appearance>
-<Sphere radius="5.10000002384186"></Sphere>
+<Sphere radius="5.1"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
-<Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="Bamboozle Theatre Company"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.300000011920929 1"></Material>
+<Anchor description="Bamboozle Theatre Company" url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.3 1"></Material>
 </Appearance>
-<Sphere radius="5.10000002384186"></Sphere>
+<Sphere radius="5.1"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
-<Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="Mantle Community Arts"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.300000011920929 1"></Material>
+<Anchor description="Mantle Community Arts" url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.3 1"></Material>
 </Appearance>
-<Sphere radius="5.10000002384186"></Sphere>
+<Sphere radius="5.1"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
-<Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="Artlink East"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.300000011920929 1"></Material>
+<Anchor description="Artlink East" url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.3 1"></Material>
 </Appearance>
-<Sphere radius="5.10000002384186"></Sphere>
+<Sphere radius="5.1"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
-<Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="Creations"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.300000011920929 1"></Material>
+<Anchor description="Creations" url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.3 1"></Material>
 </Appearance>
-<Sphere radius="5.10000002384186"></Sphere>
+<Sphere radius="5.1"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
-<Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="New Perspectives"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="1 0 0.200000002980232"></Material>
+<Anchor description="New Perspectives" url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="1 0 0.2"></Material>
 </Appearance>
-<Sphere radius="5.10000002384186"></Sphere>
+<Sphere radius="5.1"></Sphere>
 </Shape>
 </Transform>
 </Anchor>
-<Anchor url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="UKan2"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.300000011920929 1"></Material>
+<Anchor description="UKan2" url="&quot;javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot; &quot;javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;"><Transform><Shape><Appearance><Material diffuseColor="1 1 1" emissiveColor="0 0.3 1"></Material>
 </Appearance>
-<Sphere radius="5.10000002384186"></Sphere>
+<Sphere radius="5.1"></Sphere>
 </Shape>
 </Transform>
 </Anchor>

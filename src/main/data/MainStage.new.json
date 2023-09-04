@@ -49,10 +49,6 @@
             "@content":"X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
           },
           {
-            "@name":"license",
-            "@content":"../license.html"
-          },
-          {
             "@name":"translated",
             "@content":"04 September 2023"
           },

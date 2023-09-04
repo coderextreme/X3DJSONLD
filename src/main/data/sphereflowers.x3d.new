@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><component name="Scripting" level="1"></component>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="sphereflowers.x3d"></meta>
+<meta name="creator" content="John Carlson"></meta>
+<meta name="created" content="Jan 17 2022"></meta>
+<meta name="modified" content="Sep 03 2023"></meta>
+<meta name="description" content="5 or more prismatic flowers"></meta>
+<meta name="generator" content="X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
+<component name="Scripting" level="1"></component>
 <component name="EnvironmentalEffects" level="3"></component>
 <component name="Shaders" level="1"></component>
 <component name="CubeMapTexturing" level="1"></component>
@@ -8,33 +14,29 @@
 <component name="Rendering" level="1"></component>
 <component name="Grouping" level="3"></component>
 <component name="Core" level="1"></component>
-<meta name="title" content="sphereflowers.x3d"></meta>
-<meta name="creator" content="John Carlson"></meta>
-<meta name="description" content="5 or more prismatic flowers"></meta>
-<meta name="generator" content="X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
-<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/sphereflowers.x3d"></meta>
 </head>
-<Scene><NavigationInfo></NavigationInfo>
-<Background backUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png&quot;" bottomUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot; &quot;https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;" frontUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot; &quot;https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png&quot;" leftUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_left.png&quot; &quot;https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png&quot;" rightUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_right.png&quot; &quot;https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png&quot;" topUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_top.png&quot; &quot;https://localhost:3000/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/src/main/resourcesall_probes/stpeters_cross/stpeters_top.png&quot;"></Background>
-<Group><ExternProtoDeclare name="FlowerProto" url="&quot;../personal/flowerproto.json#FlowerProto&quot; &quot;https://localhost:3000/src/main/personal/flowerproto.json#FlowerProto&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto&quot;"><field name="vertex" accessType="inputOutput" type="MFString"></field>
-<field name="fragment" accessType="inputOutput" type="MFString"></field>
+<Scene><ExternProtoDeclare name="FlowerProto" url="&quot;../personal/flowerproto.json#FlowerProto&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto&quot;"><field accessType="inputOutput" type="MFString" name="vertex"></field>
+<field accessType="inputOutput" type="MFString" name="fragment"></field>
 </ExternProtoDeclare>
-<ProtoDeclare name="flower"><ProtoBody><Group><ProtoInstance name="FlowerProto"><fieldValue name="vertex" value="&quot;../shaders/x_ite_flowers_chromatic.vs&quot;"></fieldValue>
+<ProtoDeclare name="flower"><ProtoInterface></ProtoInterface>
+<ProtoBody><Group><ProtoInstance name="FlowerProto"><fieldValue name="vertex" value="&quot;../shaders/x_ite_flowers_chromatic.vs&quot;"></fieldValue>
 <fieldValue name="fragment" value="&quot;../shaders/x_ite.fs&quot;"></fieldValue>
 </ProtoInstance>
 </Group>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoInstance name="flower"></ProtoInstance>
+<NavigationInfo></NavigationInfo>
+<Background frontUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png&quot;" backUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png&quot;" leftUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_left.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png&quot;" rightUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_right.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png&quot;" topUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_top.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/src/main/resourcesall_probes/stpeters_cross/stpeters_top.png&quot;" bottomUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;"></Background>
+<Group><ProtoInstance name="flower"></ProtoInstance>
 <ProtoInstance name="flower"></ProtoInstance>
 <ProtoInstance name="flower"></ProtoInstance>
 <ProtoInstance name="flower"></ProtoInstance>
 <ProtoInstance name="flower"></ProtoInstance>
 <ProtoInstance name="flower"></ProtoInstance>
 <TimeSensor DEF="SongTime" loop="true"></TimeSensor>
-<Sound maxBack="100" maxFront="100" minBack="20" minFront="20"><AudioClip containerField="source" DEF="AudioClip" description="Chandubabamusic #1" url="&quot;../resources/chandubabamusic1.wav&quot; &quot;https://localhost:3000/src/main/resources/chandubabamusic1.wav&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav&quot;"></AudioClip>
+<Sound minBack="20" minFront="20" maxBack="100" maxFront="100"><AudioClip containerField="source" DEF="AudioClip" description="Chandubabamusic #1" url="&quot;../resources/chandubabamusic1.wav&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav&quot;"></AudioClip>
 </Sound>
-<ROUTE fromField="cycleTime" fromNode="SongTime" toField="startTime" toNode="AudioClip"></ROUTE>
 </Group>
+<ROUTE fromNode="SongTime" fromField="cycleTime" toNode="AudioClip" toField="startTime"></ROUTE>
 </Scene>
 </X3D>

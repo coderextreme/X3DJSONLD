@@ -10,11 +10,9 @@
     <meta content='18 Jan 2023' name='modified'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='9 November 2020' name='created'/>
-    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
     <Group>
-      <!-- DEFS for markers of skeleton joints, segments, and sites -->
       <Transform translation='0 2.1 0'>
         <Shape DEF='HAnimSiteShape'>
           <Appearance>

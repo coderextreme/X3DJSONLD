@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D profile='Interchange' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Interchange' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='Bubbles.x3d' name='title'/>
     <meta content='Bubble animation used by Nancy Diving example.' name='description'/>
@@ -9,7 +9,6 @@
     <meta content='23 May 2020' name='modified'/>
     <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/Bubbles.x3d' name='identifier'/>
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
-    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
     <WorldInfo title='Bubbles.x3d'/>
@@ -17,7 +16,7 @@
       <Group DEF='Bubble'>
         <TimeSensor DEF='BubbleClock' cycleInterval='6.0' loop='true'/>
         <PositionInterpolator DEF='BubblePath1' key='0 0.5 0.8 0.9 1' keyValue='0 0 0 0.75 0.75 0.75 0.86 0.86 0.86 0.99 0.998 0.9876 1.272 1.9044 0.9509'/>
-        <PositionInterpolator DEF='BubblePath2' key='0 0.3 0.64 0.85 1' keyValue='0.1 0.1 0.1 0.2 0.4 0.25 0.3 0.5 0.46 0.75 0.5 0.575 0.038483478 1.989 1.098373'/>
+        <PositionInterpolator DEF='BubblePath2' key='0 0.3 0.64 0.85 1' keyValue='0.1 0.1 0.1 0.2 0.4 0.25 0.3 0.5 0.46 0.75 0.5 0.575 0.03848348 1.989 1.098373'/>
         <PositionInterpolator DEF='BubblePath3' key='0 0.1 0.45 0.7 1' keyValue='0.01 0.01 0.01 0.25 0.35 0.0045 0.55 0.6 0.0055 0.66 0.665 0.00655 1.555 1.09043 0.005734'/>
         <PositionInterpolator DEF='BubblePath4' key='0 0.5 0.6 0.8 1' keyValue='0 0 0 0.5 0.5 0.005 0.6 0.6 0.006 0.75 0.75 0.0075 1.948594 1.3983 0.009009349'/>
         <PositionInterpolator DEF='BubblePath5' key='0 0.25 0.35 0.65 1' keyValue='0 0 0 0.5 0.5 0.005 0.6 0.6 0.006 0.75 0.75 0.0075 1.84444 1.22222 0.1'/>
@@ -107,29 +106,29 @@
               <Sphere radius='0.035'/>
             </Shape>
           </Transform>
-          <ROUTE fromField='fraction_changed' fromNode='BubbleClock' toField='set_fraction' toNode='BubblePath1'/>
-          <ROUTE fromField='fraction_changed' fromNode='BubbleClock' toField='set_fraction' toNode='BubblePath2'/>
-          <ROUTE fromField='fraction_changed' fromNode='BubbleClock' toField='set_fraction' toNode='BubblePath3'/>
-          <ROUTE fromField='fraction_changed' fromNode='BubbleClock' toField='set_fraction' toNode='BubblePath4'/>
-          <ROUTE fromField='fraction_changed' fromNode='BubbleClock' toField='set_fraction' toNode='BubblePath5'/>
-          <ROUTE fromField='fraction_changed' fromNode='BubbleClock' toField='set_fraction' toNode='BubblePath6'/>
-          <ROUTE fromField='fraction_changed' fromNode='BubbleClock' toField='set_fraction' toNode='BubblePath7'/>
-          <ROUTE fromField='fraction_changed' fromNode='BubbleClock' toField='set_fraction' toNode='BubblePath8'/>
-          <ROUTE fromField='fraction_changed' fromNode='BubbleClock' toField='set_fraction' toNode='BubblePath9'/>
-          <ROUTE fromField='fraction_changed' fromNode='BubbleClock' toField='set_fraction' toNode='BubblePath10'/>
-          <ROUTE fromField='value_changed' fromNode='BubblePath1' toField='set_translation' toNode='bubble1'/>
-          <ROUTE fromField='value_changed' fromNode='BubblePath2' toField='set_translation' toNode='bubble2'/>
-          <ROUTE fromField='value_changed' fromNode='BubblePath3' toField='set_translation' toNode='bubble3'/>
-          <ROUTE fromField='value_changed' fromNode='BubblePath4' toField='set_translation' toNode='bubble4'/>
-          <ROUTE fromField='value_changed' fromNode='BubblePath5' toField='set_translation' toNode='bubble5'/>
-          <ROUTE fromField='value_changed' fromNode='BubblePath6' toField='set_translation' toNode='bubble6'/>
-          <ROUTE fromField='value_changed' fromNode='BubblePath7' toField='set_translation' toNode='bubble7'/>
-          <ROUTE fromField='value_changed' fromNode='BubblePath8' toField='set_translation' toNode='bubble8'/>
-          <ROUTE fromField='value_changed' fromNode='BubblePath9' toField='set_translation' toNode='bubble9'/>
-          <ROUTE fromField='value_changed' fromNode='BubblePath10' toField='set_translation' toNode='bubble10'/>
         </Transform>
       </Group>
     </Transform>
     <Background skyColor='0 0 0.6'/>
+    <ROUTE fromField='fraction_changed' fromNode='BubbleClock' toField='set_fraction' toNode='BubblePath1'/>
+    <ROUTE fromField='fraction_changed' fromNode='BubbleClock' toField='set_fraction' toNode='BubblePath2'/>
+    <ROUTE fromField='fraction_changed' fromNode='BubbleClock' toField='set_fraction' toNode='BubblePath3'/>
+    <ROUTE fromField='fraction_changed' fromNode='BubbleClock' toField='set_fraction' toNode='BubblePath4'/>
+    <ROUTE fromField='fraction_changed' fromNode='BubbleClock' toField='set_fraction' toNode='BubblePath5'/>
+    <ROUTE fromField='fraction_changed' fromNode='BubbleClock' toField='set_fraction' toNode='BubblePath6'/>
+    <ROUTE fromField='fraction_changed' fromNode='BubbleClock' toField='set_fraction' toNode='BubblePath7'/>
+    <ROUTE fromField='fraction_changed' fromNode='BubbleClock' toField='set_fraction' toNode='BubblePath8'/>
+    <ROUTE fromField='fraction_changed' fromNode='BubbleClock' toField='set_fraction' toNode='BubblePath9'/>
+    <ROUTE fromField='fraction_changed' fromNode='BubbleClock' toField='set_fraction' toNode='BubblePath10'/>
+    <ROUTE fromField='value_changed' fromNode='BubblePath1' toField='translation' toNode='bubble1'/>
+    <ROUTE fromField='value_changed' fromNode='BubblePath2' toField='translation' toNode='bubble2'/>
+    <ROUTE fromField='value_changed' fromNode='BubblePath3' toField='translation' toNode='bubble3'/>
+    <ROUTE fromField='value_changed' fromNode='BubblePath4' toField='translation' toNode='bubble4'/>
+    <ROUTE fromField='value_changed' fromNode='BubblePath5' toField='translation' toNode='bubble5'/>
+    <ROUTE fromField='value_changed' fromNode='BubblePath6' toField='translation' toNode='bubble6'/>
+    <ROUTE fromField='value_changed' fromNode='BubblePath7' toField='translation' toNode='bubble7'/>
+    <ROUTE fromField='value_changed' fromNode='BubblePath8' toField='translation' toNode='bubble8'/>
+    <ROUTE fromField='value_changed' fromNode='BubblePath9' toField='translation' toNode='bubble9'/>
+    <ROUTE fromField='value_changed' fromNode='BubblePath10' toField='translation' toNode='bubble10'/>
   </Scene>
 </X3D>
