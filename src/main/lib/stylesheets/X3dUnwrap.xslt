@@ -462,7 +462,7 @@ or
                       ((local-name() = 'mapping') and (string-length(string(.)) = 0))) and
                       not( local-name(..)='TextureCoordinateGenerator' and
                       ((local-name()='mode' and string(.)='SPHERE'))) and
-                      not((local-name(..)='ComposedTexture3D' or local-name(..)='ImageTexture3D' or local-name(..)='PixelTexture3D') and
+                      not((local-name(..)='ComposedTexture3D' or local-name(..)='ImageTexture3D' or local-name(..)='PixelTexture3D' or local-name(..)='GeneratedCubeMapTexture') and
                       ((local-name()='repeatS' or local-name()='repeatT' or local-name()='repeatR') and string(.)='false')) and
                       not( local-name(..)='PixelTexture3D' and
                       (local-name()='image' and (string(.)='0 0 0 0')))" />
@@ -602,7 +602,7 @@ or
 		not((local-name()='containerField' and string(.)='color')	and (local-name(..)='ColorNode' or local-name(..)='Color')) and
 		not((local-name()='containerField' and string(.)='coord')	and ((local-name(..)='Coordinate') or (local-name(..)='CoordinateDouble') or (local-name(..)='GeoCoordinate'))) and
 		not((local-name()='containerField' and string(.)='normal')	and (local-name(..)='Normal')) and
-		not((local-name()='containerField' and string(.)='texture')	and (local-name(..)='ImageTexture' or local-name(..)='PixelTexture' or local-name(..)='MovieTexture' or local-name(..)='MultiTexture' or local-name(..)='ComposedTexture3D' or local-name(..)='ImageTexture3D' or local-name(..)='PixelTexture3D')) and
+		not((local-name()='containerField' and string(.)='texture')	and (local-name(..)='ImageTexture' or local-name(..)='PixelTexture' or local-name(..)='MovieTexture' or local-name(..)='MultiTexture' or local-name(..)='ComposedTexture3D' or local-name(..)='ImageTexture3D' or local-name(..)='PixelTexture3D' or local-name(..)='GeneratedCubeMapTexture')) and
 		not((local-name()='containerField' and string(.)='fontStyle')	and (local-name(..)='FontStyle')) and
 		not((local-name()='containerField' and string(.)='texCoord')	and (local-name(..)='TextureCoordinate' or local-name(..)='TextureCoordinateGenerator')) and
 		not((local-name()='containerField' and string(.)='textureTransform')	and (local-name(..)='TextureTransform'))" />

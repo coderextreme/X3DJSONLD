@@ -3525,7 +3525,7 @@ Recommended tools:
                       not((local-name()='containerField' and string(.)='color')            and (local-name(..)='Color' or local-name(..)='ColorRGBA')) and
                       not((local-name()='containerField' and string(.)='coord')            and ((local-name(..)='Coordinate') or (local-name(..)='CoordinateDouble') or (local-name(..)='GeoCoordinate'))) and
                       not((local-name()='containerField' and string(.)='normal')           and (local-name(..)='Normal')) and
-                      not((local-name()='containerField' and string(.)='texture')          and (local-name(..)='ImageTexture' or local-name(..)='PixelTexture' or local-name(..)='MovieTexture' or local-name(..)='MultiTexture' or local-name(..)='ComposedTexture3D' or local-name(..)='ImageTexture3D' or local-name(..)='PixelTexture3D')) and
+                      not((local-name()='containerField' and string(.)='texture')          and (local-name(..)='ImageTexture' or local-name(..)='PixelTexture' or local-name(..)='MovieTexture' or local-name(..)='MultiTexture' or local-name(..)='ComposedTexture3D' or local-name(..)='ImageTexture3D' or local-name(..)='PixelTexture3D' or local-name(..)='GeneratedCubeMapTexture')) and
                       not((local-name()='containerField' and string(.)='fontStyle')        and (local-name(..)='FontStyle')) and
                       not((local-name()='containerField' and string(.)='texCoord')         and (local-name(..)='TextureCoordinate' or local-name(..)='TextureCoordinateGenerator')) and
                       not((local-name()='containerField' and string(.)='textureTransform') and (local-name(..)='TextureTransform'))" />
@@ -7446,7 +7446,7 @@ Recommended tools:
                     <xsl:value-of select="local-name()"/>
                     <xsl:text> with containerField='</xsl:text>
                     <xsl:value-of select="@containerField"/>
-                    <xsl:text>' rather than 'mapping', which is only allowed value in X3D3</xsl:text>
+                    <xsl:text>' rather than 'mapping', which is the only allowed value in X3D3</xsl:text>
                 </xsl:message>
             </xsl:when>
             <xsl:when test="$isX3D4 and (local-name(..) = 'DISEntityManager') and (local-name() = 'DISEntityTypeMapping') and not(@containerField = 'children')">
@@ -7456,7 +7456,7 @@ Recommended tools:
                     <xsl:value-of select="local-name()"/>
                     <xsl:text> with containerField='</xsl:text>
                     <xsl:value-of select="@containerField"/>
-                    <xsl:text>' rather than 'children', which is only allowed value in X3D4</xsl:text>
+                    <xsl:text>' rather than 'children', which is the only allowed value in X3D4</xsl:text>
                 </xsl:message>
             </xsl:when>
             <xsl:when test="$isX3D3 and (local-name(..) = 'LoadSensor') and (@containerField = 'children')">
@@ -7464,7 +7464,7 @@ Recommended tools:
                 <xsl:message>
                     <xsl:text>*** LoadSensor contains </xsl:text>
                     <xsl:value-of select="local-name()"/>
-                    <xsl:text> with containerField='children' rather than 'watchList', which is only allowed value in X3D3</xsl:text>
+                    <xsl:text> with containerField='children' rather than 'watchList', which is the only allowed value in X3D3</xsl:text>
                 </xsl:message>
             </xsl:when>
             <xsl:when test="$isX3D4 and (local-name(..) = 'LoadSensor') and (@containerField = 'watchList')">
@@ -7472,7 +7472,7 @@ Recommended tools:
                 <xsl:message>
                     <xsl:text>*** LoadSensor contains </xsl:text>
                     <xsl:value-of select="local-name()"/>
-                    <xsl:text> with containerField='watchList' rather than 'children', which is only allowed value in X3D4</xsl:text>
+                    <xsl:text> with containerField='watchList' rather than 'children', which is the only allowed value in X3D4</xsl:text>
                 </xsl:message>
             </xsl:when>
             <xsl:when test="$isX3D3 and (local-name(..) = 'ParticleSystem') and (@containerField = 'color')">
@@ -7480,7 +7480,7 @@ Recommended tools:
                 <xsl:message>
                     <xsl:text>*** ParticleSystem contains </xsl:text>
                     <xsl:value-of select="local-name()"/>
-                    <xsl:text> with containerField='color' rather than 'colorRamp', which is only allowed value in X3D3</xsl:text>
+                    <xsl:text> with containerField='color' rather than 'colorRamp', which is the only allowed value in X3D3</xsl:text>
                 </xsl:message>
             </xsl:when>
             <xsl:when test="$isX3D4 and (local-name(..) = 'ParticleSystem') and (@containerField = 'colorRamp')">
@@ -7488,7 +7488,7 @@ Recommended tools:
                 <xsl:message>
                     <xsl:text>*** ParticleSystem contains </xsl:text>
                     <xsl:value-of select="local-name()"/>
-                    <xsl:text> with containerField='colorRamp' rather than 'color', which is only allowed value in X3D4</xsl:text>
+                    <xsl:text> with containerField='colorRamp' rather than 'color', which is the only allowed value in X3D4</xsl:text>
                 </xsl:message>
             </xsl:when>
             <xsl:when test="$isX3D3 and (local-name(..) = 'ParticleSystem') and (@containerField = 'texCoord')">
@@ -7496,7 +7496,7 @@ Recommended tools:
                 <xsl:message>
                     <xsl:text>*** ParticleSystem contains </xsl:text>
                     <xsl:value-of select="local-name()"/>
-                    <xsl:text> with containerField='texCoord' rather than 'texCoordRamp', which is only allowed value in X3D3</xsl:text>
+                    <xsl:text> with containerField='texCoord' rather than 'texCoordRamp', which is the only allowed value in X3D3</xsl:text>
                 </xsl:message>
             </xsl:when>
             <xsl:when test="$isX3D4 and (local-name(..) = 'ParticleSystem') and (@containerField = 'texCoordRamp')">
@@ -7504,7 +7504,7 @@ Recommended tools:
                 <xsl:message>
                     <xsl:text>*** ParticleSystem contains </xsl:text>
                     <xsl:value-of select="local-name()"/>
-                    <xsl:text> with containerField='texCoordRamp' rather than 'texCoord', which is only allowed value in X3D4</xsl:text>
+                    <xsl:text> with containerField='texCoordRamp' rather than 'texCoord', which is the only allowed value in X3D4</xsl:text>
                 </xsl:message>
             </xsl:when>
         </xsl:choose>

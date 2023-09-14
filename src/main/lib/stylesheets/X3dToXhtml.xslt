@@ -89,23 +89,36 @@ Recommended tools:
     <xsl:variable name="siteColor.HTML"         >#DDDD00</xsl:variable><!-- slightly darker for html page contrast -->
     <xsl:variable name="siteViewpointColor.HTML">#DDDD00</xsl:variable><!-- slightly darker for html page contrast -->
 	
-	<xsl:variable name="hanimHumanoidInternalScale">
-		<xsl:choose>
-			<xsl:when test="(string-length(normalize-space(//HAnimHumanoid/HAnimJoint[1]/@scale)) > 0)">
-				<xsl:value-of select="substring-before(normalize-space(//HAnimHumanoid/HAnimJoint[1]/@scale),' ')"/>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:text>1</xsl:text>
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:variable>
+    <xsl:variable name="hanimHumanoidInternalScale">
+            <xsl:choose>
+                    <xsl:when test="(string-length(normalize-space(//HAnimHumanoid/HAnimJoint[1]/@scale)) > 0)">
+                            <xsl:value-of select="substring-before(normalize-space(//HAnimHumanoid/HAnimJoint[1]/@scale),' ')"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                            <xsl:text>1</xsl:text>
+                    </xsl:otherwise>
+            </xsl:choose>
+    </xsl:variable>
 
-	<xsl:variable name="apos">'</xsl:variable>
-	<xsl:variable name="quot">"</xsl:variable>
-
+    <xsl:variable name="apos">'</xsl:variable>
+    <xsl:variable name="quot">"</xsl:variable>
+    
+    <xsl:variable name="maxROUTEdepth">
+        <!-- global variable -->
+        <xsl:choose>
+            <xsl:when test="(count(//ROUTE) lt 20)">
+                <xsl:value-of select="count(//ROUTE)"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="number(20)"/>
+            </xsl:otherwise>
+        </xsl:choose>
+        
+    </xsl:variable>
+    
     <!-- start - - - - - - - - - - - - - - - - - - - - - - - -->
     <xsl:template match="/">
-
+        
         <!-- line break after XML header line -->
         <xsl:text>&#10;</xsl:text>
         <xsl:text disable-output-escaping="yes"><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -140,11 +153,11 @@ span.value     {color: teal}
 span.plain     {color: black}
 span.gray      {color: gray}
 span.idName    {color: maroon}
-span.addedDocumentation {background-color:#EEEEEE} /* slightly darker for html page contrast */
-span.behaviorNode       {background-color:#DDEEFF} /*      light blue for html page contrast */
-span.extensibilityNode  {background-color:#FFEEFF} /*    lighter blue for html page contrast */
+span.addedDocumentation {background-color:#EEEEEE;} /* slightly darker for html page contrast */
+span.behaviorNode       {background-color:#DDEEFF;} /*      light blue for html page contrast */
+span.extensibilityNode  {background-color:#FFEEFF;} /*    lighter blue for html page contrast */
 a.idName {color: maroon}
-div.block               {border: 1px solid grey; }
+div.boxedBlock          {border: 1px solid grey;  }
 div.center {text-align: center}
 div.indented {margin-left: 25px}
 
@@ -235,7 +248,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
 
                 <div>
                     <xsl:apply-templates select="* | comment()" />
+                    <xsl:comment> apply-templates * | comment() complete </xsl:comment>
                 </div>
+                <xsl:text>&#10;</xsl:text>
                 
                 <!-- HAnimHumanoid reports, wrapped by hidden (white) XML comment delimiters in case HTML is copied/pasted -->
                 <xsl:if test="//HAnimHumanoid[string-length(@name) > 0]">
@@ -448,13 +463,324 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         </table>
                     </xsl:for-each>
                     <!-- end of HAnimHumanoid reports -->
-                    
-                    <p style="text-align:center; background-color:white">
-                        <xsl:text>&#10;</xsl:text>
-                        <span style="color:white">--></span>
-                        <xsl:text>&#10;</xsl:text>
-                    </p>
                 </xsl:if>
+                
+                <!--_ Event Graph ROUTE table ======================================== -->
+                <xsl:if test="(count(//ROUTE) gt 0)">
+        
+                    <!-- debug -->
+                    <xsl:if test="(count(//ROUTE) gt number($maxROUTEdepth))">
+                        <xsl:message>
+                            <xsl:text>*** total # ROUTE statements = </xsl:text>
+                            <xsl:value-of select="count(//ROUTE)"/>
+                            <xsl:text>, maxROUTEdepth=</xsl:text>
+                            <xsl:value-of select="$maxROUTEdepth"/>
+                        </xsl:message>
+                    </xsl:if>
+                    
+                    <!-- =========================== -->
+                    <xsl:for-each select="//ROUTE">
+                        <xsl:sort select="@toNode" order="ascending" case-order="upper-first" data-type="text"/>
+                        
+                        <xsl:variable name="fromNodeDEF"   select="@fromNode"/>
+                        <xsl:variable name=  "toNodeDEF"   select="@toNode"/>
+                        <xsl:variable name="toNodeName"    select="local-name(//*[@DEF = $toNodeDEF])"/>
+                        <xsl:variable name=  "toFieldName" select="@toField"/>
+                        <xsl:variable name="fromFieldName" select="@fromField"/>
+                        
+                        <!-- check for missing DEF definitions -->
+                        <xsl:if test="(count(//*[@DEF = $fromNodeDEF]) = 0)">
+                            <xsl:message>
+                                <xsl:text>*** Error: no node found with origination DEF='</xsl:text>
+                                <xsl:value-of select="$fromNodeDEF"/>
+                                <xsl:text>' for ROUTE fromField='</xsl:text>
+                                <xsl:value-of select="$fromFieldName"/>
+                                <xsl:text>' fromNode='</xsl:text>
+                                <xsl:value-of select="$fromNodeDEF"/>
+                                <xsl:text>' toField='</xsl:text>
+                                <xsl:value-of select="$toFieldName"/>
+                                <xsl:text> 'toNode='</xsl:text>
+                                <xsl:value-of select="$toNodeDEF"/>
+                                <xsl:text>'</xsl:text>
+                            </xsl:message>
+                        </xsl:if>
+                        <xsl:if test="(count(//*[@DEF = $toNodeDEF]) = 0)">
+                            <xsl:message>
+                                <xsl:text>*** Error: no node found with destination DEF='</xsl:text>
+                                <xsl:value-of select="$toNodeDEF"/>
+                                <xsl:text>': ROUTE fromField='</xsl:text>
+                                <xsl:value-of select="$fromFieldName"/>
+                                <xsl:text>' fromNode='</xsl:text>
+                                <xsl:value-of select="$fromNodeDEF"/>
+                                <xsl:text>' toField='</xsl:text>
+                                <xsl:value-of select="$toFieldName"/>
+                                <xsl:text> 'toNode='</xsl:text>
+                                <xsl:value-of select="$toNodeDEF"/>
+                                <xsl:text>'</xsl:text>
+                            </xsl:message>
+                        </xsl:if>
+                        <xsl:if test="(string-length($fromFieldName) = 0) or (string-length($fromNodeDEF) = 0) or (string-length($toFieldName) = 0) or (string-length($toNodeDEF) = 0)">
+                            <xsl:message>
+                                <xsl:text>*** Error: node or field name missing: ROUTE fromField='</xsl:text>
+                                <xsl:value-of select="$fromFieldName"/>
+                                <xsl:text>' fromNode='</xsl:text>
+                                <xsl:value-of select="$fromNodeDEF"/>
+                                <xsl:text>' toField='</xsl:text>
+                                <xsl:value-of select="$toFieldName"/>
+                                <xsl:text> 'toNode='</xsl:text>
+                                <xsl:value-of select="$toNodeDEF"/>
+                                <xsl:text>'</xsl:text>
+                            </xsl:message>
+                        </xsl:if>
+                        <!-- check for duplicate ROUTE definitions -->
+                        <xsl:variable name="precedingDuplicateRouteCount"
+                                    select="count(//preceding::ROUTE[(@fromNode=$fromNodeDEF) and (@fromField=$fromFieldName) and (@toNode=$toNodeDEF) and (@toField=$toFieldName)])"/>
+                        <xsl:variable name="totalIdenticalRouteCount"
+                                    select="count(           //ROUTE[(@fromNode=$fromNodeDEF) and (@fromField=$fromFieldName) and (@toNode=$toNodeDEF) and (@toField=$toFieldName)])"/>
+                        <xsl:if test="($precedingDuplicateRouteCount gt 1)"><!-- inclusive, apparently; just report on first occurrence -->
+                            <xsl:message>
+                                <xsl:text>*** Error: </xsl:text>
+                                <xsl:value-of select="$totalIdenticalRouteCount"/>
+                                <xsl:text> duplicate ROUTE statements found:  ROUTE fromField='</xsl:text>
+                                <xsl:value-of select="$fromFieldName"/>
+                                <xsl:text>' fromNode='</xsl:text>
+                                <xsl:value-of select="$fromNodeDEF"/>
+                                <xsl:text>' toField='</xsl:text>
+                                <xsl:value-of select="$toFieldName"/>
+                                <xsl:text> 'toNode='</xsl:text>
+                                <xsl:value-of select="$toNodeDEF"/>
+                                <xsl:text>'</xsl:text>
+                            </xsl:message>
+                        </xsl:if>
+                        <!-- check for nodes with multiple fan in, which can result in nondeterministic behavior -->
+                        
+                        <xsl:variable name="toNode" select="@toNode"/>
+                        <xsl:if test="(preceding-sibling::*[@toNode = $toNode]) and not(following-sibling::*[@toNode = $toNode])">
+                            <xsl:message>
+                                 <xsl:text>*** Warning: nodes with multiple fan-in of ROUTEd events can have timing variations and possibly varied behaviors: </xsl:text>
+                                <xsl:value-of select="local-name(//*[@DEF = $toNode])"/>
+                                 <xsl:text> DEF='</xsl:text>
+                                <xsl:value-of select="$toNode"/>
+                                 <xsl:text>'</xsl:text>
+                            </xsl:message>
+                        </xsl:if>
+                    </xsl:for-each>
+        
+                    <!-- all candidate event-originating nodes -->
+                    <xsl:variable name="eventProducingNodes" 
+                                select="//TouchSensor | //TimeSensor | //ProtoInstance | //Script | //HAnimDisplacer | //HAnimMotion |
+                                        //*[ends-with(local-name(), 'Sensor')] | //*[ends-with(local-name(), 'Source')] | 
+                                        //AudioClip | //EspduTransform | //*[ends-with(local-name(), 'Pdu')]"/>
+                    <xsl:variable name="routeTableCount">
+                        <xsl:choose>
+                            <xsl:when test="(count(//ROUTE) le 1)">
+                                <xsl:value-of select="count(//ROUTE)"/>
+                            </xsl:when>
+                            <xsl:when test="(count(//ROUTE) le count($eventProducingNodes))">
+                                <xsl:value-of select="count(//ROUTE)"/>
+                            </xsl:when>
+                            <!-- could get fancier here and exclude counting eventProducingNodes with input ROUTE connections -->
+                            <xsl:otherwise>
+                                <xsl:value-of select="count($eventProducingNodes)"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:variable>
+                    
+                    <div style="background-color:#DDEEFF;">
+                    <br /> <!-- light blue margin -->
+                    <p style="text-align:center;">
+                        <b>
+                        <xsl:element name="a">
+                            <xsl:attribute name="name">
+                                <xsl:text>EventGraph</xsl:text>
+                            </xsl:attribute>
+                            <xsl:text> </xsl:text><!-- keep whitespace character here to avoid singleton tag -->
+                        </xsl:element>
+                        <!--<xsl:value-of select="$routeTableCount"/><xsl:text> </xsl:text> -->
+                        <a href="#EventGraph">
+                            <xsl:text>Event Graph ROUTE Table</xsl:text>
+                        </a>
+                        <xsl:if test="($routeTableCount > 1)">
+                            <xsl:text> entries</xsl:text>
+                        </xsl:if>
+                        <xsl:text> with </xsl:text>
+                        <xsl:value-of select="count(//ROUTE)"/>
+                        <xsl:text> ROUTE</xsl:text>
+                        <xsl:if test="(count(//ROUTE) > 0)">
+                            <xsl:text> connections</xsl:text>
+                        </xsl:if>
+                        <xsl:text> total</xsl:text>
+                        <xsl:text>, showing </xsl:text>
+                        <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/concepts.html#Eventmodel" target="_blank" title="X3D 4.0 Architecture, Concepts, Event Model">
+                            <xsl:text>event model</xsl:text>
+                        </a>
+                        <xsl:text> relationships for this scene.</xsl:text>
+                        </b>
+                    </p>
+                    <!-- all candidate event-originating nodes -->
+                    <xsl:for-each select="$eventProducingNodes">
+                        <xsl:sort select="local-name()" order="descending" case-order="upper-first" data-type="text"/>
+                        <xsl:sort select="@DEF"         order="ascending" case-order="upper-first" data-type="text"/>
+                            
+                        <xsl:variable name="DEFname" select="@DEF"/>
+                        <xsl:variable name="nodeName" select="local-name()"/>
+                        <xsl:variable name="IncomingRoutes" select="//ROUTE[  (@toNode=$DEFname) and not(@fromNode=$DEFname)]"/>
+                        <xsl:variable name="OutgoingRoutes" select="//ROUTE[(@fromNode=$DEFname) and not(  @toNode=$DEFname)]"/>
+                        <xsl:variable name="SelfRoutes"     select="//ROUTE[(@fromNode=$DEFname) and    (  @toNode=$DEFname)]"/>
+                        <xsl:variable name="depth"          select="number(1)"/>
+
+                        <!-- debug ROUTE statements
+                        <xsl:message>
+                            <xsl:text>*** Processing </xsl:text>
+                            <xsl:value-of select="local-name()"/>
+                            <xsl:text> DEF='</xsl:text>
+                            <xsl:value-of select="@DEF"/>
+                            <xsl:text>' with </xsl:text>
+                            <xsl:value-of select="count($IncomingRoutes)"/>
+                            <xsl:text> IncomingRoutes, </xsl:text>
+                            <xsl:value-of select="count($OutgoingRoutes)"/>
+                            <xsl:text> OutgoingRoutes, </xsl:text>
+                            <xsl:value-of select="count($SelfRoutes)"/>
+                            <xsl:text> SelfRoutes </xsl:text>
+                        </xsl:message> -->
+                    
+                        <xsl:if test="not(count($IncomingRoutes) > 0)">
+                            <xsl:text>&#10;</xsl:text>
+                            <xsl:comment> EventGraph </xsl:comment>
+                            <xsl:text>&#10;</xsl:text>
+                            <table border="1" style="border: 1px solid black; margin-left: auto; margin-right: auto; background-color:#DDEEFF;">
+                                <xsl:if test="(position() = 1)">
+                                    <!-- start a row -->
+                                    <xsl:comment>starting first row</xsl:comment> <!-- -->
+                                    <xsl:text disable-output-escaping="yes">&#10;&lt;tr>&#10;</xsl:text>
+                                    <xsl:text>         </xsl:text>
+                                </xsl:if>
+
+                                <!-- TODO get column skipping working for TimeSensor -->
+                                <xsl:if test="not(ends-with($nodeName, 'Sensor')) and not(count($IncomingRoutes) = 0)">                                                    
+                                    <!-- skip first columns, TODO match depth -->
+                                    <td>
+                                        <xsl:text disable-output-escaping="yes"> &amp;#160; </xsl:text> <!-- &nbsp; -->
+                                        <xsl:comment>skip1</xsl:comment>
+                                    </td>
+                                    <td>
+                                        <xsl:text disable-output-escaping="yes"> &amp;#160; </xsl:text> <!-- &nbsp; -->
+                                        <xsl:comment>skip1</xsl:comment>
+                                    </td>
+                                    <td>
+                                        <xsl:text disable-output-escaping="yes"> &amp;#160; </xsl:text> <!-- &nbsp; -->
+                                        <xsl:comment>skip1</xsl:comment>
+                                    </td>
+                                </xsl:if>
+                            
+                                <!-- handle first-level trigger nodes -->
+                                <xsl:choose>
+                                    <xsl:when test="(string-length(@USE) gt 0)">
+                                        <!-- ignore USE nodes -->
+                                    </xsl:when>
+                                    <xsl:when test="(local-name() = 'TimeSensor') and (count($IncomingRoutes) gt 0)">
+                                        <!-- this clock is separately triggered and already handled in another animation chain -->
+                                    </xsl:when>
+                                    <xsl:when test="(count($OutgoingRoutes) = 0)">
+                                        <td style="text-align:right">
+                                            <xsl:choose>
+                                                <xsl:when test="(string-length(@DEF) > 0)">
+                                                    <xsl:element name="a">
+                                                        <xsl:attribute name="href">
+                                                            <xsl:text>#</xsl:text>
+                                                            <xsl:value-of select="$DEFname"/>
+                                                        </xsl:attribute>
+                                                        <xsl:value-of select="$DEFname"/>
+                                                    </xsl:element>
+                                                </xsl:when>
+                                                <xsl:otherwise>
+                                                    <!-- no DEF available -->
+                                                </xsl:otherwise>
+                                            </xsl:choose>
+                                            <br />
+                                            <b>
+                                                <xsl:value-of select="$nodeName"/>
+                                            </b>
+                                            <br />
+                                        </td>
+                                        <td> 
+                                            <xsl:if test="(string-length(@description) > 0)">
+                                                <xsl:value-of select="@description"/>
+                                            </xsl:if>
+                                            <br />
+                                            <xsl:text>(No ROUTE connection found for this node)</xsl:text>
+                                            <br />
+                                        </td>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:for-each select="$OutgoingRoutes[position() le number($maxROUTEdepth)]">
+                                            <xsl:variable name="toNodeDEF"     select="@toNode"/>
+                                            <xsl:variable name="toNodeName"    select="local-name(//*[@DEF = $toNodeDEF])"/>
+                                            <xsl:variable name=  "toFieldName" select="@toField"/>
+                                            <xsl:variable name="fromFieldName" select="@fromField"/>
+
+                                            <xsl:choose>
+                                                <xsl:when test="(position() le number($maxROUTEdepth))">
+                                                    <!-- debug
+                                                    <xsl:message>
+                                                        <xsl:text>*** first-level outer-loop trace #</xsl:text>
+                                                        <xsl:value-of select="position()"/>
+                                                        <xsl:text>: from </xsl:text>
+                                                        <xsl:value-of select="$DEFname"/>
+                                                        <xsl:text> OutgoingRoute </xsl:text>
+                                                        <xsl:value-of select="position()"/>
+                                                        <xsl:text> to </xsl:text>
+                                                        <xsl:value-of select="$toNodeDEF"/>
+                                                    </xsl:message>
+                                                    -->
+                                                    <!-- TODO avoid recursive looping !! -->
+                                                    <xsl:call-template name="tableElementEntries">
+                                                        <xsl:with-param name="DEFname"      ><xsl:value-of select="$DEFname"/></xsl:with-param>
+                                                        <xsl:with-param name="nodeName"     ><xsl:value-of select="$nodeName"/></xsl:with-param>
+                                                        <xsl:with-param name="fromFieldName"><xsl:value-of select="$fromFieldName"/></xsl:with-param>
+                                                        <xsl:with-param name="toNodeDEF"    ><xsl:value-of select="$toNodeDEF"/></xsl:with-param>
+                                                        <xsl:with-param name="toNodeName"   ><xsl:value-of select="$toNodeName"/></xsl:with-param>
+                                                        <xsl:with-param name="toFieldName"  ><xsl:value-of select="$toFieldName"/></xsl:with-param>
+                                                        <xsl:with-param name="depth"        ><xsl:value-of select="$depth"/></xsl:with-param><!-- top -->
+                                                    </xsl:call-template>
+
+                                                    <!-- row finished -->
+                                                    <xsl:comment>row finished</xsl:comment>
+                                                    <xsl:text disable-output-escaping="yes">&#10;&lt;/tr>&#10;</xsl:text>
+                                                    <xsl:if test="not(position() = last())">
+                                                        <xsl:comment>starting new row</xsl:comment>
+                                                        <xsl:text disable-output-escaping="yes">&#10;&lt;tr>&#10;</xsl:text>
+                                                        <xsl:text disable-output-escaping="yes">         </xsl:text>
+                                                    </xsl:if>
+                                                </xsl:when>
+                                                <xsl:otherwise>
+                                                    <!-- should never get here -->
+                                                    <xsl:message>
+                                                        <xsl:text>*** first-level outer-loop trace #</xsl:text>
+                                                        <xsl:value-of select="position()"/>
+                                                        <xsl:text> failure!</xsl:text>
+                                                    </xsl:message>
+                                                </xsl:otherwise>
+                                            </xsl:choose>
+                                        </xsl:for-each>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </table>
+                            <xsl:if test="not(position() = last())">
+                                <xsl:text>&#10;</xsl:text>
+                                <br />
+                            </xsl:if>
+                        </xsl:if>
+                        <xsl:text>&#10;</xsl:text>
+                    </xsl:for-each>
+                        
+                    </div>
+                    <hr style="width:100%"/>
+                </xsl:if>
+                
+                <xsl:text>&#10;</xsl:text>
+                <span style="color:white">--></span>
+                <xsl:text>&#10;</xsl:text>
                 
                 <xsl:variable name="identifierUrl" select="normalize-space(substring-before(//head/meta[@name='identifier']/@content,'.x3d'))"/>
 		<xsl:variable name="versionControlUrl">
@@ -601,20 +927,36 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:text>'/&gt; </xsl:text>
                     <br />
                     <xsl:text>&#10;</xsl:text>
-                    <xsl:text disable-output-escaping="yes">&lt;span title="behavior node" style="background-color:#DDEEFF;"&gt;(Light-blue background: event-based behavior node)&lt;/span&gt;</xsl:text>
-                    <xsl:text> </xsl:text>
+                    <xsl:text disable-output-escaping="yes">&lt;span title="behavior node" style="background-color:#DDEEFF;" &gt;(Light-blue background: event-based behavior node or statement)&lt;/span&gt;</xsl:text>
+                    <xsl:text>&#10;</xsl:text>
                     <xsl:text disable-output-escaping="yes">&lt;span title="inserted documentation about ROUTE connections" style="background-color:#EEEEEE;"&gt;(Grey background inside box: inserted documentation)&lt;/span&gt;</xsl:text>
-                    <xsl:text> </xsl:text>
+                    <xsl:text>&#10;</xsl:text>
                     <xsl:text disable-output-escaping="yes">&lt;span title="X3D Extensibility" style="background-color:#FFEEFF;"&gt;(Magenta background: X3D Extensibility)&lt;/span&gt;</xsl:text>
                     <br />
                     <xsl:text>&#10;</xsl:text>
                     
                     <!-- done with node key, begin Prototype key -->
                     <xsl:if test="//*[contains(local-name(),'Proto')]">
+                        <xsl:variable name="protoStatementName">
+                            <xsl:choose>
+                                <xsl:when test="//*[contains(local-name(),'ProtoInstance')]">
+                                    <xsl:text>ProtoInstance</xsl:text>
+                                </xsl:when>
+                                <xsl:when test="//*[contains(local-name(),'ProtoDeclare')]">
+                                    <xsl:text>ProtoDeclare</xsl:text>
+                                </xsl:when>
+                                <xsl:when test="//*[contains(local-name(),'ExternProtoDeclare')]">
+                                    <xsl:text>ExternProtoDeclare</xsl:text>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:text>Prototype</xsl:text>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:variable>
                         <xsl:text disable-output-escaping="yes">&amp;#160;&amp;#160;&amp;#160;</xsl:text> <!-- &nbsp; -->
                         <xsl:text>&#10;&lt;</xsl:text>
                         <span class="prototype">
-                            <xsl:text>Prototype</xsl:text>
+                            <xsl:value-of select="$protoStatementName"/>
                         </span>
                         <xsl:text> </xsl:text>
                         <span class="attribute">
@@ -639,7 +981,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:text>'/&gt;</xsl:text>
                         <xsl:text> &lt;/</xsl:text>
                         <span class="prototype">
-                            <xsl:text>Prototype</xsl:text>
+                            <xsl:value-of select="$protoStatementName"/>
                         </span>
                         <xsl:text>&gt;</xsl:text>
                     </xsl:if>
@@ -1026,6 +1368,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                                     <xsl:text>&lt;!-- </xsl:text>
                                                     <xsl:value-of select="."/>
                                                     <xsl:text>--&gt;</xsl:text>
+                                                    <xsl:text>&#10;</xsl:text>
                                                 </xsl:for-each>
 										<!-- TODO poor design, duplicated for-each loops within/alongside Transorm, should recurse instead -->
                                         <xsl:for-each select="HAnimSite"> <!-- no Viewpoint child [not(Viewpoint)]-->
@@ -1278,7 +1621,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 </xsl:if>
                 <xsl:text>&#10;</xsl:text>
                 
-                <xsl:for-each select="HAnimJoint[string-length(@name) > 0][string-length(@name) > 0]">
+                <xsl:for-each select="HAnimJoint[string-length(@name) > 0]">
                     <xsl:call-template name="HAnimNode-indent">
                         <!--	<xsl:with-param name="list" select="."/> -->
                     </xsl:call-template>
@@ -1307,7 +1650,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         <xsl:variable name="SelfRoutes"     select="//ROUTE[(@fromNode=$DEFname) and    (@toNode=$DEFname)]"/>
             
         <!-- break to new line if needed -->
-        <xsl:if test="(position() > 1) and not(local-name() ='X3D') and ($lineBreaks='true')"><xsl:text disable-output-escaping="yes">&lt;br /&gt;&#10;</xsl:text></xsl:if>
+        <xsl:if test="(position() > 1) and not(local-name()='X3D') and ($lineBreaks='true')"><xsl:text disable-output-escaping="yes">&lt;br /&gt;&#10;</xsl:text></xsl:if>
         <xsl:if test="@DEF or local-name()='ProtoDeclare' or local-name()='ExternProtoDeclare' or (local-name(..)='ProtoInterface' and local-name()='field') or local-name()='ROUTE' or local-name()='Viewpoint'">
             <!-- add bookmarks -->
             <xsl:element name="a">
@@ -1331,7 +1674,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         </xsl:when>
                         <xsl:when test="local-name()='ROUTE'">
                             <xsl:text>ROUTE_</xsl:text>
-                            <xsl:value-of select="count(preceding::ROUTE)"/>
+                            <xsl:value-of select="(count(preceding::ROUTE) + 1)"/>
                         </xsl:when>
                         <xsl:when test="local-name()='Viewpoint'">
                             <xsl:text>Viewpoint_</xsl:text>
@@ -1339,7 +1682,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         </xsl:when>
                     </xsl:choose>
                 </xsl:attribute>
-                <xsl:text> </xsl:text>
+                <xsl:text> </xsl:text><!-- keep whitespace character here to avoid singleton tag -->
             </xsl:element>
             <xsl:text> </xsl:text>
         </xsl:if>
@@ -1348,7 +1691,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         <xsl:if test="@DEF">
             <xsl:if test="boolean($IncomingRoutes | $OutgoingRoutes | $SelfRoutes)">
                     <!-- addedDocumentationColor.HTML -->
-                <xsl:text disable-output-escaping="yes">&lt;div class="block"&gt;</xsl:text>
+                <xsl:text disable-output-escaping="yes">&lt;div class="boxedBlock"&gt;</xsl:text>
                 <xsl:text>&#10;</xsl:text>
                     <xsl:text disable-output-escaping="yes">&lt;span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections"&gt;</xsl:text>
                     <xsl:text>&lt;!-- </xsl:text>
@@ -1376,7 +1719,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             </xsl:attribute>
                             <xsl:attribute name="href">
                                 <xsl:text>#ROUTE_</xsl:text>
-                                <xsl:value-of select="count(preceding::ROUTE)"/>
+                                <xsl:value-of select="(count(preceding::ROUTE) + 1)"/>
                             </xsl:attribute>
                             <xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
                             <xsl:text>from</xsl:text>
@@ -1406,7 +1749,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             </xsl:attribute>
                             <xsl:attribute name="href">
                                 <xsl:text>#ROUTE_</xsl:text>
-                                <xsl:value-of select="count(preceding::ROUTE)"/>
+                                <xsl:value-of select="(count(preceding::ROUTE) + 1)"/>
                             </xsl:attribute>
                             <xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
                             <xsl:text>from</xsl:text>
@@ -1866,10 +2209,10 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:value-of select="$elementTooltip"/>
                         <xsl:choose>
                             <xsl:when test="$isBehaviorNode">
-                                <xsl:text disable-output-escaping="yes">" style="background-color:#DDEEFF</xsl:text>
+                                <xsl:text disable-output-escaping="yes">" style="background-color:#DDEEFF;</xsl:text>
                             </xsl:when>
                             <xsl:when test="$isExtensibleNode">
-                                <xsl:text disable-output-escaping="yes">" style="background-color:#FFEEFF</xsl:text>
+                                <xsl:text disable-output-escaping="yes">" style="background-color:#FFEEFF;</xsl:text>
                             </xsl:when>
                         </xsl:choose>
                         <xsl:text disable-output-escaping="yes">"&gt;</xsl:text>
@@ -1933,7 +2276,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:if test="boolean($IncomingRoutes | $OutgoingRoutes | $SelfRoutes)">
                         <xsl:text>&#10;</xsl:text>
                         <xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
-                        <xsl:comment>div.block</xsl:comment>
+                        <xsl:comment>div.boxedBlock</xsl:comment>
                         <xsl:text>&#10;</xsl:text>
                     </xsl:if>
 
@@ -2003,10 +2346,10 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:value-of select="$elementTooltip"/>
                         <xsl:choose>
                             <xsl:when test="$isBehaviorNode">
-                                <xsl:text disable-output-escaping="yes">" style="background-color:#DDEEFF</xsl:text>
+                                <xsl:text disable-output-escaping="yes">" style="background-color:#DDEEFF;</xsl:text>
                             </xsl:when>
                             <xsl:when test="$isExtensibleNode">
-                                <xsl:text disable-output-escaping="yes">" style="background-color:#FFEEFF</xsl:text>
+                                <xsl:text disable-output-escaping="yes">" style="background-color:#FFEEFF;</xsl:text>
                             </xsl:when>
                         </xsl:choose>
                         <xsl:text disable-output-escaping="yes">"&gt;</xsl:text>
@@ -2027,10 +2370,10 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:value-of select="$elementTooltip"/>
                         <xsl:choose>
                             <xsl:when test="$isBehaviorNode">
-                                <xsl:text disable-output-escaping="yes">" style="background-color:#DDEEFF</xsl:text>
+                                <xsl:text disable-output-escaping="yes">" style="background-color:#DDEEFF;</xsl:text>
                             </xsl:when>
                             <xsl:when test="$isExtensibleNode">
-                                <xsl:text disable-output-escaping="yes">" style="background-color:#FFEEFF</xsl:text>
+                                <xsl:text disable-output-escaping="yes">" style="background-color:#FFEEFF;</xsl:text>
                             </xsl:when>
                         </xsl:choose>
                         <xsl:text disable-output-escaping="yes">"&gt;</xsl:text>
@@ -2047,7 +2390,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     </xsl:if>
                     <xsl:if test="boolean($IncomingRoutes | $OutgoingRoutes | $SelfRoutes)">
                         <xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
-                        <xsl:comment>div.block</xsl:comment>
+                        <xsl:comment>div.boxedBlock</xsl:comment>
                         <xsl:text>&#10;</xsl:text>
                     </xsl:if>
                 </xsl:otherwise>
@@ -2106,7 +2449,23 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
             </xsl:when>
             <xsl:when test="local-name()='ROUTE'">
                 <span class="route">
-                    <xsl:value-of select="local-name()"/>
+                    <xsl:element name="a">
+                        <xsl:attribute name="title">
+                            <xsl:text>bookmark for this ROUTE is #ROUTE_</xsl:text>
+                            <xsl:value-of select="(count(preceding::ROUTE) + 1)"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="href">
+                            <xsl:text>#</xsl:text>
+                            <xsl:value-of select="local-name()"/>
+                            <xsl:text>_</xsl:text>
+                            <xsl:value-of select="(count(preceding::ROUTE) + 1)"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="class">
+                            <xsl:text>route</xsl:text>
+                        </xsl:attribute>
+                        <!-- visible part of anchor -->
+                        <xsl:value-of select="local-name()"/>
+                    </xsl:element>
                 </span>
             </xsl:when>
             <xsl:otherwise>
@@ -2140,12 +2499,71 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 <xsl:apply-templates select="@*[local-name()!='name' and local-name()!='content']"/><!-- safety net -->
             </xsl:when>
             <xsl:when test="local-name()='ROUTE'">
+                <!-- TODO identify type mismatches -->
+                <xsl:variable name="fromFieldType">
+                    <xsl:call-template name="attribute-type">
+                        <xsl:with-param name="parentElementDEF" ><xsl:value-of select="@fromNode"/></xsl:with-param>
+                        <xsl:with-param name="attributeNameFull"><xsl:value-of select="@fromField"/></xsl:with-param>
+                    </xsl:call-template>
+                </xsl:variable>
+                <xsl:variable name="toFieldType">
+                    <xsl:call-template name="attribute-type">
+                        <xsl:with-param name="parentElementDEF" ><xsl:value-of select="@toNode"/></xsl:with-param>
+                        <xsl:with-param name="attributeNameFull"><xsl:value-of select="@toField"/></xsl:with-param>
+                    </xsl:call-template>
+                </xsl:variable>
+                <xsl:variable name="fieldTypeBackgroundColor">
+                    <xsl:choose>
+                        <!-- multipleFanInToNode -->
+                        <xsl:when test="not($fromFieldType = $toFieldType)">
+                            <xsl:text>#FFD580</xsl:text><!-- LightOrange -->
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text>#DDEEFF;</xsl:text><!-- behavior node -->
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
+                <xsl:variable name="fieldMismatchTooltip">
+                    <xsl:choose>
+                        <xsl:when test="not($fromFieldType = $toFieldType)">
+                            <xsl:text>Error, mismatched field types: </xsl:text>
+                            <xsl:value-of select="$fromFieldType"/>
+                            <xsl:text> and </xsl:text>
+                            <xsl:value-of select="$toFieldType"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <!-- otherwise blank -->
+                            <xsl:text></xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
+        
                 <xsl:apply-templates select="@fromNode"/>
-                <xsl:apply-templates select="@fromField"/>
+                <xsl:element name="span">
+                    <xsl:attribute name="title">
+                        <xsl:value-of select="$fieldMismatchTooltip"/>
+                    </xsl:attribute>
+                    <xsl:attribute name="style">
+                        <xsl:text>background-color:</xsl:text>
+                        <xsl:value-of select="$fieldTypeBackgroundColor"/>
+                        <xsl:text>;</xsl:text>
+                    </xsl:attribute>
+                    <xsl:apply-templates select="@fromField"/>
+                </xsl:element>
                 <xsl:apply-templates select="@toNode"/>
-                <xsl:apply-templates select="@toField"/>
+                <xsl:element name="span">
+                    <xsl:attribute name="title">
+                        <xsl:value-of select="$fieldMismatchTooltip"/>
+                    </xsl:attribute>
+                    <xsl:attribute name="style">
+                        <xsl:text>background-color:</xsl:text>
+                        <xsl:value-of select="$fieldTypeBackgroundColor"/>
+                        <xsl:text>;</xsl:text>
+                    </xsl:attribute>
+                    <xsl:apply-templates select="@toField"/>
+                </xsl:element>
                 <xsl:apply-templates select="@*[local-name()!='fromNode' and local-name()!='fromField' and
-												local-name()!=  'toNode' and local-name()!=  'toField']"/><!-- safety net -->
+						local-name()!=  'toNode' and local-name()!=  'toField']"/><!-- safety net -->
             </xsl:when>
             <xsl:when test="local-name()='ElevationGrid' or local-name()='GeoElevationGrid'">
                 <xsl:apply-templates select="@DEF | @USE | @containerField "/>
@@ -2778,7 +3196,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       not((local-name()='containerField' and string(.)='color')            and (local-name(..)='Color' or local-name(..)='ColorRGBA')) and
                       not((local-name()='containerField' and string(.)='coord')            and ((local-name(..)='Coordinate') or (local-name(..)='CoordinateDouble') or (local-name(..)='GeoCoordinate'))) and
                       not((local-name()='containerField' and string(.)='normal')           and (local-name(..)='Normal')) and
-                      not((local-name()='containerField' and string(.)='texture')          and (local-name(..)='ImageTexture' or local-name(..)='PixelTexture' or local-name(..)='MovieTexture' or local-name(..)='MultiTexture' or local-name(..)='ComposedTexture3D' or local-name(..)='ImageTexture3D' or local-name(..)='PixelTexture3D')) and
+                      not((local-name()='containerField' and string(.)='texture')          and (local-name(..)='ImageTexture' or local-name(..)='PixelTexture' or local-name(..)='MovieTexture' or local-name(..)='MultiTexture' or local-name(..)='ComposedTexture3D' or local-name(..)='ImageTexture3D' or local-name(..)='PixelTexture3D' or local-name(..)='GeneratedCubeMapTexture')) and
                       not((local-name()='containerField' and string(.)='fontStyle')        and (local-name(..)='FontStyle')) and
                       not((local-name()='containerField' and string(.)='texCoord')         and (local-name(..)='TextureCoordinate' or local-name(..)='TextureCoordinateGenerator')) and
                       not((local-name()='containerField' and string(.)='textureTransform') and (local-name(..)='TextureTransform'))" />
@@ -3324,6 +3742,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 </xsl:when>
                 <xsl:when test="local-name()='USE' or (local-name(..)='ROUTE' and contains(local-name(),'Node'))">
                     <xsl:variable name="refName" select="."/>
+                    <xsl:text>&#10;</xsl:text>
                     <xsl:choose>
                         <xsl:when test="//*[@DEF=$refName]">
                             <xsl:element name="a">
@@ -3871,6 +4290,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
             <xsl:value-of select="$attributeDelimiter"/>
             <xsl:if test="string-length($attributeTooltip) > 0">
                 <xsl:text disable-output-escaping="yes">&lt;/span&gt;</xsl:text>
+                <xsl:text>&#10;</xsl:text>
             </xsl:if>
             <!-- end if filtering of default attribute values -->
         </xsl:if>
@@ -3918,7 +4338,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <xsl:text>true</xsl:text>
                         </xsl:with-param>
                     </xsl:call-template>
-                    <xsl:text> --&gt;</xsl:text>
+                    <xsl:text> here!!! --&gt;</xsl:text>
                 </span>
                 <xsl:text>&#10;</xsl:text>
             </xsl:otherwise>
@@ -3935,7 +4355,8 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         <xsl:if test="boolean((//*[@DEF]) | (//HAnimHumanoid) | (//*[local-name()='ProtoDeclare']) | (//*[local-name()='ExternProtoDeclare']) | (//Viewpoint))">
             <xsl:text disable-output-escaping="yes">&lt;br /&gt;</xsl:text>
             <!-- hidden comment characters for compatible copy/paste -->
-            <span style="color:white"><xsl:text>&#10;&lt;!--&#10;</xsl:text></span>
+            <span style="color:white"><xsl:text>&lt;!--</xsl:text></span>
+            <xsl:text>&#10;</xsl:text>
             <div class="center">
                 <hr style="width:100%"/>
                 <xsl:if test="//HAnimHumanoid[string-length(@name) > 0]">
@@ -3988,8 +4409,8 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:if test="count(//*[local-name()='ExternProtoDeclare']) > 1">
                             <xsl:text>s</xsl:text>
                         </xsl:if>
+                        <xsl:text>: </xsl:text>
                     </i></b>
-                    <xsl:text>: </xsl:text>
                     <xsl:for-each select="//*[local-name()='ExternProtoDeclare']">
                         <xsl:sort select="@name" order="ascending" case-order="upper-first" data-type="text"/>
                         <xsl:text>&#10;</xsl:text>
@@ -4024,8 +4445,8 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:if test="count(//*[local-name()='ProtoDeclare']) > 1">
                             <xsl:text>s</xsl:text>
                         </xsl:if>
+                        <xsl:text>: </xsl:text>
                     </i></b>
-                    <xsl:text>: </xsl:text>
                     <xsl:for-each select="//*[local-name()='ProtoDeclare']">
                         <xsl:sort select="@name" order="ascending" case-order="upper-first" data-type="text"/>
                         <xsl:text>&#10;</xsl:text>
@@ -4060,8 +4481,8 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:if test="count(//*[@DEF]) > 1">
                             <xsl:text>s</xsl:text>
                         </xsl:if>
+                        <xsl:text>: </xsl:text>
                     </i></b>
-                    <xsl:text>: </xsl:text>
                     <xsl:for-each select="//*[@DEF]">
                         <xsl:sort select="@DEF" order="ascending" case-order="upper-first" data-type="text"/>
                         <xsl:text>&#10;</xsl:text>
@@ -4085,6 +4506,59 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <xsl:text>,</xsl:text>
                         </xsl:if>
                     </xsl:for-each>
+                    <xsl:if test="(count(//ROUTE) > 0)">
+                        <xsl:text> and </xsl:text>
+                        <xsl:element name="a">
+                            <xsl:attribute name="title">
+                                <xsl:text>Event Graph ROUTE Table shows event connections</xsl:text>
+                            </xsl:attribute>
+                            <xsl:attribute name="href">
+                                <xsl:text>#EventGraph</xsl:text>
+                            </xsl:attribute>
+                            <xsl:text disable-output-escaping="yes">Event&amp;#160;Graph ROUTE&amp;#160;Table</xsl:text><!-- &nbsp; -->
+                        </xsl:element>
+                    </xsl:if>
+                </xsl:if>
+                <xsl:if test="false()"><!-- //ROUTE -->
+                    <xsl:text>&#10;</xsl:text>
+                    <xsl:if test="boolean(//*[local-name()='ROUTE'])">
+                        <xsl:text disable-output-escaping="yes">&lt;br /&gt;</xsl:text>
+                        <hr width="25%"/>
+                        <xsl:text>&#10;</xsl:text>
+                    </xsl:if>
+                    <b><i>
+                        <xsl:text>Index for ROUTE node</xsl:text>
+                        <xsl:if test="count(//*[@DEF]) > 1">
+                            <xsl:text>s</xsl:text>
+                        </xsl:if>
+                        <xsl:text>: </xsl:text>
+                    </i></b>
+                    <xsl:for-each select="//ROUTE">
+                        <xsl:text>&#10;</xsl:text>
+                        <xsl:element name="a">
+                            <xsl:attribute name="title">
+                                <xsl:text>go to this </xsl:text>
+                                <xsl:value-of select="local-name()"/>
+                                <xsl:text> node</xsl:text>
+                            </xsl:attribute>
+                            <xsl:attribute name="href">
+                                <xsl:text>#</xsl:text>
+                                <xsl:value-of select="local-name()"/>
+                                <xsl:text>_</xsl:text>
+                                <xsl:value-of select="position()"/>
+                            </xsl:attribute>
+                            <xsl:attribute name="class">
+                                <xsl:text>route</xsl:text>
+                            </xsl:attribute>
+                            <!-- visible part of anchor -->
+                                <xsl:value-of select="local-name()"/>
+                                <xsl:text>_</xsl:text>
+                                <xsl:value-of select="position()"/>
+                        </xsl:element>
+                        <xsl:if test="not(position()=last())">
+                            <xsl:text>,</xsl:text>
+                        </xsl:if>
+                    </xsl:for-each>
                 </xsl:if>
                 <xsl:if test="//Viewpoint and ($linkImages='true')">
                     <xsl:text>&#10;</xsl:text>
@@ -4098,8 +4572,8 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:if test="count(//Viewpoint) > 1">
                             <xsl:text>s</xsl:text>
                         </xsl:if>
+                        <xsl:text>: </xsl:text>
                     </i></b>
-                    <xsl:text>: </xsl:text>
                     <xsl:for-each select="//Viewpoint">
 						<!-- TODO get unnamed viewpoints to appear last -->
                         <xsl:sort select="@DEF[string-length(string(.)) > 0]" order="ascending" case-order="upper-first" data-type="text"/>
@@ -4145,7 +4619,8 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 <hr style="width:100%"/>
             </div>
             <!-- hidden comment characters for compatible copy/paste -->
-            <span style="color:white"><xsl:text>&#10;--&gt;&#10;</xsl:text></span>
+            <span style="color:white"><xsl:text>--&gt;</xsl:text></span>
+            <xsl:text>&#10;</xsl:text>
         </xsl:if>
     </xsl:template>
     
@@ -4984,6 +5459,479 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         </xsl:if>
     </xsl:template>
 
+    <xsl:template name="indentTableColumns">
+        <xsl:param name="newDepth"      ><xsl:text></xsl:text></xsl:param>
+        
+        <!-- skip first columns since this is nested, match depth -->
+        <xsl:variable name="nestedColumnCount">
+            <xsl:choose>
+                <xsl:when test="($newDepth = 1)">
+                    <!-- 3 columns for beginning -->
+                    <xsl:text>3</xsl:text>
+                </xsl:when>
+                <xsl:when test="($newDepth > 1)">
+                    <!-- 4 columns for continuing increment -->
+                    <xsl:value-of select="(4 * $newDepth - 1)"/>
+                </xsl:when>
+            </xsl:choose>
+        </xsl:variable>
+        
+        <td colspan="{$nestedColumnCount}" style="background-color:#DDEEFF;">
+            <!-- debug
+            <xsl:text>newDepth=</xsl:text><xsl:value-of select="$newDepth"/> -->
+            <xsl:text disable-output-escaping="yes"> &amp;#160; </xsl:text> <!-- &nbsp; -->
+            <xsl:comment>
+                <xsl:text>skip </xsl:text>
+                <xsl:value-of select="$nestedColumnCount"/>
+                <xsl:text>for depth </xsl:text>
+                <xsl:value-of select="$newDepth"/>
+            </xsl:comment>
+        </td>
+        
+        <!-- tail recursion no longer needed -->
+    </xsl:template>
+
+    <xsl:template name="tableElementEntries">
+        <xsl:param name="DEFname"      ><xsl:text></xsl:text></xsl:param>
+        <xsl:param name="nodeName"     ><xsl:text></xsl:text></xsl:param>
+        <xsl:param name="fromFieldName"><xsl:text></xsl:text></xsl:param>
+        <xsl:param name="toNodeDEF"    ><xsl:text></xsl:text></xsl:param>
+        <xsl:param name="toNodeName"   ><xsl:text></xsl:text></xsl:param>
+        <xsl:param name="toFieldName"  ><xsl:text></xsl:text></xsl:param>
+        <xsl:param name="depth"        ><xsl:text></xsl:text></xsl:param>
+
+        <!-- debug
+        <xsl:message>
+            <xsl:text>*** inner-loop recursion trace: depth=</xsl:text>
+            <xsl:value-of select="$depth"/>
+            <xsl:text>, from </xsl:text>
+            <xsl:value-of select="$DEFname"/>
+            <xsl:text> to </xsl:text>
+            <xsl:value-of select="$toNodeDEF"/>
+        </xsl:message>
+        -->
+        
+        <xsl:variable name="multipleFanInFromNode" select="(count(//ROUTE[@toNode eq $DEFname])   > 1)"/>
+        <xsl:variable name="multipleFanInToNode"   select="(count(//ROUTE[@toNode eq $toNodeDEF]) > 1)"/>
+        
+        <xsl:variable name="multipleFanInFromNodeTooltip">
+            <xsl:if test="$multipleFanInFromNode">
+                <xsl:text>delivery order for multiple fan-in events may vary</xsl:text>
+            </xsl:if>
+            <!-- otherwise empty -->
+        </xsl:variable>
+        <xsl:variable name="multipleFanInToNodeTooltip">
+            <xsl:if test="$multipleFanInToNode">
+                <xsl:text>delivery order for multiple fan-in events may vary</xsl:text>
+            </xsl:if>
+            <!-- otherwise empty -->
+        </xsl:variable>
+        
+        <xsl:variable name="cellBackgroundColorFromNode">
+            <xsl:choose>
+                <!-- multipleFanInFromNode -->
+                <xsl:when test="$multipleFanInFromNode">
+                    <xsl:text>LightYellow</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>white</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="cellBackgroundColorToNode">
+            <xsl:choose>
+                <!-- multipleFanInToNode -->
+                <xsl:when test="$multipleFanInToNode">
+                    <xsl:text>LightYellow</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>white</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="fromFieldType">
+            <xsl:call-template name="attribute-type">
+                <xsl:with-param name="parentElementDEF" ><xsl:value-of select="$DEFname"/></xsl:with-param>
+                <xsl:with-param name="attributeNameFull"><xsl:value-of select="$fromFieldName"/></xsl:with-param>
+            </xsl:call-template>
+        </xsl:variable>
+        <xsl:variable name="toFieldType">
+            <xsl:call-template name="attribute-type">
+                <xsl:with-param name="parentElementDEF" ><xsl:value-of select="$toNodeDEF"/></xsl:with-param>
+                <xsl:with-param name="attributeNameFull"><xsl:value-of select="$toFieldName"/></xsl:with-param>
+            </xsl:call-template>
+        </xsl:variable>
+        <xsl:variable name="fieldTypeBackgroundColor">
+            <xsl:choose>
+                <!-- multipleFanInToNode -->
+                <xsl:when test="not($fromFieldType = $toFieldType)">
+                    <xsl:text>#FFD580</xsl:text><!-- LightOrange -->
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>white</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="fieldMismatchTooltip">
+            <xsl:choose>
+                <xsl:when test="not($fromFieldType = $toFieldType)">
+                    <xsl:text>Error, mismatched field types: </xsl:text>
+                    <xsl:value-of select="$fromFieldType"/>
+                    <xsl:text> and </xsl:text>
+                    <xsl:value-of select="$toFieldType"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <!-- otherwise blank -->
+                    <xsl:text></xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        
+        <xsl:choose>
+            <xsl:when test="(number($depth) gt number($maxROUTEdepth))">
+                <xsl:message>
+                    <xsl:text>*** Warning [tableElementEntries #1]: ROUTE chain depth=</xsl:text>
+                    <xsl:value-of select="$depth"/>
+                    <xsl:text> exceeded internal limit of $maxROUTEdepth=</xsl:text>
+                    <xsl:value-of select="$maxROUTEdepth"/>
+                    <xsl:text>, check for an illegal loop of ROUTE connections.</xsl:text>
+                </xsl:message>
+                <xsl:message>
+                    <xsl:text>    ROUTE fromNode='</xsl:text>
+                    <xsl:value-of select="$DEFname"/>
+                    <xsl:text>' fromField='</xsl:text>
+                    <xsl:value-of select="$fromFieldName"/>
+                    <xsl:text>' toNode='</xsl:text>
+                    <xsl:value-of select="$toNodeDEF"/>
+                    <xsl:text>' toField='</xsl:text>
+                    <xsl:value-of select="$toFieldName"/>
+                    <xsl:text>'</xsl:text>
+                </xsl:message>
+                <!-- done, end tail recursion -->
+            </xsl:when>
+            <xsl:otherwise>
+                <!-- continue tail recursion -->
+                
+                <td style="text-align:right; background-color:{$cellBackgroundColorFromNode};" title="{$multipleFanInFromNodeTooltip}">
+                    <xsl:element name="a">
+                        <xsl:attribute name="href">
+                            <xsl:text>#</xsl:text>
+                            <xsl:value-of select="$DEFname"/>
+                        </xsl:attribute>
+                        <xsl:value-of select="$DEFname"/>
+                    </xsl:element>
+                    <br />
+                    <b>
+                        <xsl:value-of select="$nodeName"/>
+                    </b>
+                    <br />
+                    <b>
+                        <xsl:element name="a">
+                        <xsl:attribute name="title">
+                            <xsl:text>X3D Tooltips: </xsl:text>
+                            <xsl:value-of select="$nodeName"/>
+                            <xsl:text>.</xsl:text>
+                            <xsl:value-of select="$fromFieldName"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="target">
+                            <xsl:text>_blank</xsl:text>
+                        </xsl:attribute>
+                        <xsl:attribute name="href">
+                            <xsl:text>https://www.web3d.org/x3d/content/X3dTooltips.html#</xsl:text>
+                            <xsl:value-of select="$nodeName"/>
+                            <xsl:text>.</xsl:text>
+                            <xsl:value-of select="$fromFieldName"/>
+                        </xsl:attribute>
+                        <xsl:value-of select="$fromFieldName"/>
+                    </xsl:element> 
+                    </b>
+                    <br />
+                    <xsl:element name="span">
+                        <xsl:attribute name="title">
+                            <xsl:value-of select="$fieldMismatchTooltip"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="style">
+                            <xsl:text>background-color:</xsl:text>
+                            <xsl:value-of select="$fieldTypeBackgroundColor"/>
+                            <xsl:text>;title:</xsl:text>
+                            <xsl:text>;</xsl:text>
+                        </xsl:attribute>
+                        <xsl:element name="a">
+                            <xsl:attribute name="title">
+                                <xsl:text>X3D Tooltips: </xsl:text>
+                                <xsl:value-of select="$fromFieldType"/>
+                            </xsl:attribute>
+                            <xsl:attribute name="target">
+                                <xsl:text>_tooltip_type</xsl:text>
+                            </xsl:attribute>
+                            <xsl:attribute name="href">
+                                <xsl:text>https://www.web3d.org/x3d/content/X3dTooltips.html#</xsl:text>
+                                <xsl:value-of select="$fromFieldType"/>
+                            </xsl:attribute>
+                            <xsl:value-of select="$fromFieldType"/>
+                        </xsl:element>
+                    </xsl:element>
+                </td>
+                <td style="vertical-align:middle; text-align:center; background-color:white;">
+                    <!-- https://stackoverflow.com/questions/6183017/how-to-vertically-align-elements-in-td-tag -->
+                    <xsl:element name="div">
+                        <xsl:attribute name="style">
+                            <xsl:text>background-color:</xsl:text>
+                            <xsl:value-of select="$fieldTypeBackgroundColor"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="title">
+                            <xsl:value-of select="$fieldMismatchTooltip"/>
+                        </xsl:attribute>
+                        <!-- blank line -->
+                        <br />
+                        <xsl:element name="a">
+                            <xsl:attribute name="title">
+                                <xsl:text>go to #ROUTE_</xsl:text>
+                                <xsl:value-of select="(count(preceding::ROUTE) + 1)"/>
+                            </xsl:attribute>
+                            <xsl:attribute name="href">
+                                <xsl:text>#ROUTE_</xsl:text>
+                                <xsl:value-of select="(count(preceding::ROUTE) + 1)"/>
+                            </xsl:attribute>
+                            <xsl:text>ROUTE</xsl:text>
+                        </xsl:element>
+                        <br />
+                        <xsl:text> TO </xsl:text>
+                        <br />
+                        <xsl:text disable-output-escaping="yes"> &amp;#160; </xsl:text> <!-- &nbsp; -->
+                    </xsl:element>
+                </td>
+                <td style="text-align:left; background-color:{$cellBackgroundColorToNode};" title="{$multipleFanInToNodeTooltip}">
+                    <xsl:element name="a">
+                        <xsl:attribute name="href">
+                            <xsl:text>#</xsl:text>
+                            <xsl:value-of select="$toNodeDEF"/>
+                        </xsl:attribute>
+                        <xsl:value-of select="$toNodeDEF"/>
+                    </xsl:element>
+                    <br />
+                    <b>
+                        <xsl:value-of select="$toNodeName"/>
+                    </b>
+                    <br />
+                    <b>
+                        <xsl:element name="a">
+                            <xsl:attribute name="title">
+                                <xsl:text>X3D Tooltips: </xsl:text>
+                                <xsl:value-of select="$toNodeName"/>
+                                <xsl:text>.</xsl:text>
+                                <xsl:value-of select="$toFieldName"/>
+                            </xsl:attribute>
+                            <xsl:attribute name="target">
+                                <xsl:text>_blank</xsl:text>
+                            </xsl:attribute>
+                            <xsl:attribute name="href">
+                                <xsl:text>https://www.web3d.org/x3d/content/X3dTooltips.html#</xsl:text>
+                                <xsl:value-of select="$toNodeName"/>
+                                <xsl:text>.</xsl:text>
+                                <xsl:value-of select="$toFieldName"/>
+                            </xsl:attribute>
+                            <xsl:value-of select="$toFieldName"/>
+                        </xsl:element>
+                    </b>
+                    <br />
+                    <xsl:element name="span">
+                        <xsl:attribute name="title">
+                            <xsl:value-of select="$fieldMismatchTooltip"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="style">
+                            <xsl:text>background-color:</xsl:text>
+                            <xsl:value-of select="$fieldTypeBackgroundColor"/>
+                            <xsl:text>;</xsl:text>
+                        </xsl:attribute>
+                        <xsl:element name="a">
+                            <xsl:attribute name="title">
+                                <xsl:text>X3D Tooltips: </xsl:text>
+                                <xsl:value-of select="$toFieldType"/>
+                            </xsl:attribute>
+                            <xsl:attribute name="target">
+                                <xsl:text>_tooltip_type</xsl:text>
+                            </xsl:attribute>
+                            <xsl:attribute name="href">
+                                <xsl:text>https://www.web3d.org/x3d/content/X3dTooltips.html#</xsl:text>
+                                <xsl:value-of select="$toFieldType"/>
+                            </xsl:attribute>
+                            <xsl:value-of select="$toFieldType"/>
+                        </xsl:element>
+                    </xsl:element>
+                </td>
+                <xsl:choose>
+                    <xsl:when test="(count(//*[@DEF eq $toNodeDEF]) > 1)">
+                        <xsl:message>
+                            <xsl:text>*** Error, more than one node found with DEF='</xsl:text>
+                            <xsl:value-of select="$toNodeDEF"/>
+                            <xsl:text>' and so not continuing</xsl:text>
+                        </xsl:message>
+                    </xsl:when>
+                    <xsl:when test="($DEFname = $toNodeDEF)">
+                        <xsl:message>
+                            <xsl:text>*** Warning: </xsl:text>
+                            <xsl:value-of select="$nodeName"/>
+                            <xsl:text> </xsl:text>
+                            <xsl:text> DEF='</xsl:text>
+                            <xsl:value-of select="$toNodeDEF"/>
+                            <xsl:text>' is self-routing fromfield </xsl:text>
+                            <xsl:value-of select="$toFieldName"/>
+                            <xsl:text>' is self-routing fromField='</xsl:text>
+                            <xsl:value-of select="$fromFieldName"/>
+                            <xsl:text>' toField='</xsl:text>
+                            <xsl:value-of select="$toFieldName"/>
+                            <xsl:text>'</xsl:text>
+                        </xsl:message>
+                    </xsl:when>
+                    <xsl:when test="//ROUTE[@fromNode = $toNodeDEF]">
+                        <!-- more ROUTES in chain to follow, recurse -->
+
+                        <xsl:variable name="newNode"           select="//*[@DEF = $toNodeDEF]"/>
+                        <xsl:variable name="newDEFname"        select="$toNodeDEF"/>
+                        <xsl:variable name="newNodeName"       select="$toNodeName"/>
+                        <xsl:variable name="newIncomingRoutes" select="//ROUTE[(  @toNode=$newDEFname) and not(@fromNode=$newDEFname)]"/>
+                        <xsl:variable name="newOutgoingRoutes" select="//ROUTE[(@fromNode=$newDEFname) and not(  @toNode=$newDEFname)]"/>
+                        <xsl:variable name="newSelfRoutes"     select="//ROUTE[(@fromNode=$newDEFname) and    (  @toNode=$newDEFname)]"/>
+
+                        <xsl:choose>
+                            <xsl:when test="(number($depth) gt number($maxROUTEdepth))">
+                                <xsl:message>
+                                    <xsl:text>*** Warning [tableElementEntries #2]: ROUTE chain depth=</xsl:text>
+                                    <xsl:value-of select="$depth"/>
+                                    <xsl:text> exceeded internal limit of $maxROUTEdepth=</xsl:text>
+                                    <xsl:value-of select="$maxROUTEdepth"/>
+                                    <xsl:text>, check for an illegal loop of ROUTE connections.</xsl:text>
+                                </xsl:message>
+                                <xsl:message>
+                                    <xsl:text>    ROUTE fromNode='</xsl:text>
+                                    <xsl:value-of select="$DEFname"/>
+                                    <xsl:text>' fromField='</xsl:text>
+                                    <xsl:value-of select="$fromFieldName"/>
+                                    <xsl:text>' toNode='</xsl:text>
+                                    <xsl:value-of select="$toNodeDEF"/>
+                                    <xsl:text>' toField='</xsl:text>
+                                    <xsl:value-of select="$toFieldName"/>
+                                    <xsl:text>'</xsl:text>
+                                </xsl:message>
+                                <!-- done, end tail recursion -->
+                            </xsl:when>
+                            <xsl:when test="(count($newOutgoingRoutes) gt number($maxROUTEdepth))">
+                                <xsl:message>
+                                    <xsl:text>*** Warning: count($newOutgoingRoutes)=</xsl:text>
+                                    <xsl:value-of select="count($newOutgoingRoutes)"/>
+                                    <xsl:text> which exceeds internal limit of $maxROUTEdepth=</xsl:text>
+                                    <xsl:value-of select="$maxROUTEdepth"/>
+                                    <xsl:text>, check for an illegal loop of ROUTE connections.</xsl:text>
+                                </xsl:message>
+                                <xsl:message>
+                                    <xsl:text>    ROUTE fromNode='</xsl:text>
+                                    <xsl:value-of select="$DEFname"/>
+                                    <xsl:text>' fromField='</xsl:text>
+                                    <xsl:value-of select="$fromFieldName"/>
+                                    <xsl:text>' toNode='</xsl:text>
+                                    <xsl:value-of select="$toNodeDEF"/>
+                                    <xsl:text>' toField='</xsl:text>
+                                    <xsl:value-of select="$toFieldName"/>
+                                    <xsl:text>'</xsl:text>
+                                </xsl:message>
+                                <!-- done, end tail recursion -->
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <!-- continue tail recursion -->
+                                <xsl:for-each select="$newOutgoingRoutes[position() le number($maxROUTEdepth)]">
+                                    <xsl:sort select="@fromField" order="ascending" case-order="upper-first" data-type="text"/>
+
+                                    <xsl:variable name="toNodeDEF"     select="@toNode"/>
+                                    <xsl:variable name="toNodeName"    select="local-name(//*[@DEF eq $toNodeDEF])"/>
+                                    <xsl:variable name=  "toFieldName" select="@toField"/>
+                                    <xsl:variable name="fromFieldName" select="@fromField"/>
+
+                                    <td style="vertical-align:middle; text-align:center; background-color:lightgrey">
+                                        <!-- https://stackoverflow.com/questions/6183017/how-to-vertically-align-elements-in-td-tag -->
+                                        <i>
+                                            <xsl:text disable-output-escaping="yes">then</xsl:text> <!-- &amp;#160; &nbsp; -->
+                                        </i>
+                                    </td>
+
+                                    <xsl:choose>
+                                        <xsl:when test="(position() gt number($maxROUTEdepth))">
+                                            <xsl:message>
+                                                <xsl:text>*** Warning [tableElementEntries #3]: ROUTE chain position()=</xsl:text>
+                                                <xsl:value-of select="position()"/>
+                                                <xsl:text> exceeded internal limit of $maxROUTEdepth=</xsl:text>
+                                                <xsl:value-of select="$maxROUTEdepth"/>
+                                                <xsl:text>, check for an illegal loop of ROUTE connections.</xsl:text>
+                                            </xsl:message>
+                                            <xsl:message>
+                                                <xsl:text>    ROUTE fromNode='</xsl:text>
+                                                <xsl:value-of select="$DEFname"/>
+                                                <xsl:text>' fromField='</xsl:text>
+                                                <xsl:value-of select="$fromFieldName"/>
+                                                <xsl:text>' toNode='</xsl:text>
+                                                <xsl:value-of select="$toNodeDEF"/>
+                                                <xsl:text>' toField='</xsl:text>
+                                                <xsl:value-of select="$toFieldName"/>
+                                                <xsl:text>'</xsl:text>
+                                            </xsl:message>
+                                            <!-- done, end tail recursion -->
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <!-- debug
+                                            <xsl:message>
+                                                <xsl:text>*** Warning [tableElementEntries #4]: ROUTE chain position()=</xsl:text>
+                                                <xsl:value-of select="position()"/>
+                                            </xsl:message>
+                                            -->
+                                            <xsl:call-template name="tableElementEntries">
+                                                <xsl:with-param name="DEFname"      ><xsl:value-of select="$newDEFname"/></xsl:with-param>
+                                                <xsl:with-param name="nodeName"     ><xsl:value-of select="$newNodeName"/></xsl:with-param>
+                                                <xsl:with-param name="fromFieldName"><xsl:value-of select="$fromFieldName"/></xsl:with-param>
+                                                <xsl:with-param name="toNodeDEF"    ><xsl:value-of select="$toNodeDEF"/></xsl:with-param>
+                                                <xsl:with-param name="toNodeName"   ><xsl:value-of select="$toNodeName"/></xsl:with-param>
+                                                <xsl:with-param name="toFieldName"  ><xsl:value-of select="$toFieldName"/></xsl:with-param>
+                                                <xsl:with-param name="depth"        ><xsl:value-of select="$depth + 1"/></xsl:with-param>
+                                            </xsl:call-template>
+
+                                            <!-- finished with latest, time for a new row? -->
+                                            <xsl:if test="not(position() = last()) and not(position() gt number($maxROUTEdepth)) and not($depth gt number($maxROUTEdepth))">
+                                                <!-- start a new row -->
+                                                <xsl:text disable-output-escaping="yes">&#10;&lt;/tr>&#10;</xsl:text>
+                                                <xsl:text disable-output-escaping="yes">&#10;&lt;tr>&#10;</xsl:text>
+                                                <xsl:text disable-output-escaping="yes">         </xsl:text>
+                                                <xsl:if test="not(ends-with(local-name(), 'Sensor'))"> 
+                                                    <xsl:call-template name="indentTableColumns">
+                                                        <xsl:with-param name="newDepth"      ><xsl:value-of select="$depth"/></xsl:with-param>
+                                                    </xsl:call-template>
+                                                </xsl:if>
+                                            </xsl:if>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </xsl:for-each>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <!-- debug
+                        <xsl:message>
+                            <xsl:text>*** inner-loop tail recursion complete: depth=</xsl:text>
+                            <xsl:value-of select="$depth"/>
+                            <xsl:text>, from </xsl:text>
+                            <xsl:value-of select="$DEFname"/>
+                            <xsl:text> to </xsl:text>
+                            <xsl:value-of select="$toNodeDEF"/>
+                            <xsl:text>, time to start new row</xsl:text>
+                        </xsl:message>
+                        -->
+                        <xsl:comment>time to start new row</xsl:comment>
+                    </xsl:otherwise>
+                </xsl:choose>
+        
+                <!-- completed tail recursion for this event chain -->
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
     <xsl:template name="newHAnimNameValue">
         <xsl:param name="nameValue"><xsl:text></xsl:text></xsl:param>
         <xsl:param name="nodeName"><xsl:text></xsl:text></xsl:param>
@@ -5203,6 +6151,897 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 <xsl:value-of select="$nameValue"/><!-- no change or empty value -->
             </xsl:otherwise>
         </xsl:choose>
+    </xsl:template>
+	
+    <xsl:template name="attribute-type"> <!-- rule to determine attribute type -->
+        <xsl:param name="parentElementDEF" ><xsl:text></xsl:text></xsl:param>
+        <xsl:param name="attributeNameFull"><xsl:text></xsl:text></xsl:param>
+        
+        <xsl:variable name="parentElementName">
+            <xsl:choose>
+                <xsl:when test="(count(//*[@DEF = $parentElementDEF]) = 1)">
+                    <xsl:value-of select="local-name(//*[@DEF = $parentElementDEF])"/>
+                </xsl:when>
+                <xsl:when test="(count(//*[@DEF = $parentElementDEF]) gt 1)">
+                    <xsl:text>MoreThanOneNodeFound</xsl:text>
+                        <xsl:message>
+                            <xsl:text>*** Error: more than one node found for DEF='</xsl:text>
+                            <xsl:value-of select="$parentElementDEF"/>
+                            <xsl:text>'</xsl:text>
+                        </xsl:message>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>NodeNotFound</xsl:text>
+                        <xsl:message>
+                            <xsl:text>*** Error: node not found for DEF='</xsl:text>
+                            <xsl:value-of select="$parentElementDEF"/>
+                            <xsl:text>'</xsl:text>
+                        </xsl:message>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        
+        <xsl:variable name="attributeName">
+            <xsl:choose>
+                <xsl:when               test="starts-with($attributeNameFull, 'set_')">
+                    <xsl:value-of select="substring-after($attributeNameFull, 'set_')"/>
+                </xsl:when>
+                <xsl:when                  test="ends-with($attributeNameFull, '_changed')">
+                    <xsl:value-of select="substring-before($attributeNameFull, '_changed')"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="$attributeNameFull"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <!-- debug
+        <xsl:message>
+            <xsl:text>*** diagnostic: attribute-type start, $parentElementDEF=</xsl:text>
+            <xsl:value-of select="$parentElementDEF"/>
+            <xsl:text>, $attributeNameFull=</xsl:text>
+            <xsl:value-of select="$attributeNameFull"/>
+            <xsl:text>, $parentElementName=</xsl:text>
+            <xsl:value-of select="$parentElementName"/>
+        </xsl:message>
+        -->
+	
+        <!-- Note:  these rules are adapted from X3dToVrml97.xslt X3dToJson.xslt X3dToJava.xslt X3dToES5.xslt etc. so be sure to apply any updates in all stylesheets -->
+
+        <xsl:variable name="normalizeSpaceValue" select="normalize-space(string(.))"/>
+        <xsl:variable name="localFieldType"> <!-- locally defined field -->
+            <xsl:choose>
+                <xsl:when test="($parentElementName = 'Script')"><!-- field -->
+                    <xsl:value-of select="normalize-space(//Script[@DEF = $parentElementDEF]/field[@name = $attributeName]/@type)"/>
+                    <!-- debug
+                    <xsl:message>
+                        <xsl:text>*** diagnostic: Script DEF='</xsl:text>
+                        <xsl:value-of select="$parentElementDEF"/>
+                        <xsl:text>' field attributeName='</xsl:text>
+                        <xsl:value-of select="$attributeName"/>
+                        <xsl:text>' @type='</xsl:text>
+                        <xsl:value-of select="normalize-space(//Script[@DEF = $parentElementDEF]/field[@name = $attributeName]/@type)"/>
+                        <xsl:text>'</xsl:text>
+                    </xsl:message> -->
+                </xsl:when>
+                <xsl:when test="($parentElementName = 'ProtoInstance')"><!-- field -->
+                    <xsl:variable name="prototypeName">
+                        <xsl:choose>
+                            <xsl:when test="(string-length(@name) > 1)">
+                                <xsl:value-of      select="@name"/>
+                            </xsl:when>
+                            <xsl:when test="(string-length(//ProtoInstance[@DEF = $parentElementDEF]/@name) > 1)">
+                                <xsl:value-of      select="//ProtoInstance[@DEF = $parentElementDEF]/@name"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:text>UnknownPrototype</xsl:text>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:variable>
+                    <xsl:variable name="prototypeDefinition">
+                        <xsl:choose>
+                            <xsl:when test="//ProtoDeclare[@name = $prototypeName]">
+                                <xsl:text>ProtoDeclare</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="//ExternProtoDeclare[@name = $prototypeName]">
+                                <xsl:text>ExternProtoDeclare</xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:text>UnknownPrototype</xsl:text>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:variable>
+                    <!-- debug
+                    <xsl:message>
+                        <xsl:text>*** diagnostic: ProtoInstance prototypeName='</xsl:text>
+                        <xsl:value-of select="$prototypeName"/>
+                        <xsl:text>' prototypeDefinition='</xsl:text>
+                        <xsl:value-of select="$prototypeDefinition"/>
+                        <xsl:text>'</xsl:text>
+                    </xsl:message>
+                    -->
+                    <xsl:choose>
+                        <xsl:when test="($prototypeDefinition = 'ProtoDeclare') and 
+                                   (string-length(//ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $attributeName]/@type) > 0)">
+                            <xsl:value-of select="//ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $attributeName]/@type"/>
+                        </xsl:when>
+                        <xsl:when test="($prototypeDefinition = 'ProtoDeclare')">
+                            <xsl:text>UnknownField</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="($prototypeDefinition = 'ExternProtoDeclare')">
+                            <xsl:text>UnknownFieldTypeExternallyDefined</xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text>UnknownFieldType</xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:when>
+                <xsl:when test="(string-length(normalize-space(../@type)) > 0)"><!-- field -->
+                    <xsl:value-of select="normalize-space(../@type)"/>
+                </xsl:when>
+                <xsl:when test="($parentElementName = 'fieldValue')"><!-- fieldValue -->
+                    <xsl:variable name="parentProtoInstanceName" select="../../@name"/><!-- if current element is fieldValue -->
+                    <xsl:variable name="fieldValueName" select="../@name"/>            <!-- if current element is fieldValue -->
+                    <xsl:variable name="fieldValuePriorDeclarationType">
+                        <xsl:choose>
+                            <xsl:when                 test="//ProtoDeclare[@name = $parentProtoInstanceName]">
+                                <xsl:value-of       select="//ProtoDeclare[@name = $parentProtoInstanceName]/ProtoInterface/field[@name = $fieldValueName]/@type"/>
+                                
+                                <xsl:message>
+                                    <xsl:text>     fieldValuePriorDeclarationType=</xsl:text>
+                                    <xsl:value-of select="//ProtoDeclare[@name = $parentProtoInstanceName]/ProtoInterface/field[@name = $fieldValueName]/@type"/>
+                                </xsl:message>
+                            </xsl:when>
+                            <xsl:when           test="//ExternProtoDeclare[@name = $parentProtoInstanceName]">
+                                <xsl:value-of select="//ExternProtoDeclare[@name = $parentProtoInstanceName]/field[@name = $fieldValueName]/@type"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <!-- FIELD_DECLARATION_NOT_FOUND -->
+                                <xsl:message>
+                                    <xsl:text>*** Error: attribute-type: FIELD_DECLARATION_NOT_FOUND, no ProtoDeclare or ExternProtoDeclare found for ProtoInstance name='</xsl:text>
+                                    <xsl:value-of select="$parentProtoInstanceName"/>
+                                    <xsl:text>' $parentElementName='</xsl:text>
+                                    <xsl:value-of select="$parentElementName"/>
+                                    <xsl:text>' fieldValue name='</xsl:text>
+                                    <xsl:value-of select="$fieldValueName"/>
+                                    <xsl:text>', using SFString</xsl:text>
+                                </xsl:message>
+                                <xsl:text>SFString</xsl:text>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:variable>
+                    <xsl:value-of select="$fieldValuePriorDeclarationType"/>
+                    <!-- debug
+                    <xsl:message>
+                        <xsl:text>*** attribute-type: ProtoInstance name='</xsl:text>
+                        <xsl:value-of select="$parentProtoInstanceName"/>
+                        <xsl:text>' $parentElementName='</xsl:text>
+                        <xsl:value-of select="$parentElementName"/>
+                        <xsl:text>' fieldValue name='</xsl:text>
+                        <xsl:value-of select="../@name"/>
+                        <xsl:text>' $fieldValueName='</xsl:text>
+                        <xsl:value-of select="$fieldValueName"/>
+                        <xsl:text>' $attributeName='</xsl:text>
+                        <xsl:value-of select="$attributeName"/>
+                        <xsl:text>' $fieldValuePriorDeclarationType='</xsl:text>
+                        <xsl:value-of select="$fieldValuePriorDeclarationType"/>
+                        <xsl:text>'</xsl:text>
+                    </xsl:message>
+                    -->
+                </xsl:when>
+                <xsl:otherwise>
+                    <!-- not found here, maybe later -->
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+
+        <xsl:choose>
+            <xsl:when test="starts-with($localFieldType, 'Unknown')">
+                <xsl:value-of select="$localFieldType"/>
+            </xsl:when>
+            <!--
+            <xsl:when test="(string-length($localFieldType) = 0)">
+                <xsl:text>Unknown</xsl:text>
+            </xsl:when>
+            -->
+            <!-- SFString -->
+            <!-- omitted SFString test: field/fieldValue contents of value field are determined by 
+               local (Extern)ProtoDeclare/field type definition, not X3D Schema:
+               (starts-with($parentElementName,'field') and ($attributeName='value'))      or -->
+		  <xsl:when test="($localFieldType='SFString')          or
+                          ($attributeName='DEF')                or
+                          ($attributeName='USE')                or
+                          ($attributeName='containerField')     or
+                          ($attributeName='appinfo')            or
+                          ($attributeName='channelCountMode')   or ($attributeName='channelInterpretation')   or
+                          ($attributeName='documentation')      or
+                          ($attributeName='name')               or
+                          ($attributeName='class')              or
+                          ($attributeName='id')                 or
+                          ($attributeName='style')              or
+                          ($attributeName='description')        or
+                          ($attributeName='distanceModel')      or
+                          ($attributeName='address')            or
+                          ($attributeName='language')           or
+                          ($attributeName='mapping')            or
+                          ($attributeName='marking')            or
+                          ($attributeName='multicastAddress')   or
+                          ($attributeName='networkMode')        or
+                          ($attributeName='oversample')         or
+                          ($attributeName='reference')          or
+                          ($attributeName='type')               or
+                            ($attributeName='lang')               or ($attributeName='xml:lang') or
+					      (starts-with($parentElementName,'field')         and (($attributeName='accessType') or ($attributeName='type')       or ($attributeName='appinfo') or ($attributeName='documentation'))) or
+					      (starts-with($parentElementName,'meta')          and (($attributeName='content')    or ($attributeName='http-equiv') or ($attributeName='scheme')  or ($attributeName='dir') or ($attributeName='lang') or ($attributeName='xml:lang'))) or
+                          (($parentElementName='component')                and not($attributeName='level')) or
+                          (($parentElementName='unit')                     and not($attributeName='conversionFactor')) or
+					      ($parentElementName='Appearance'                 and $attributeName='alphaMode') or
+					      ($parentElementName='ArcClose2D'                 and $attributeName='closureType') or
+                            ($parentElementName='BiquadFilter'               and $attributeName='type') or
+					      ($parentElementName='BlendedVolumeStyle'         and (starts-with($attributeName,'weightFunction') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
+                          (ends-with($parentElementName,'Fog')             and $attributeName='fogType') or
+                            ($parentElementName='GeneratedCubeMapTexture'    and $attributeName='update') or
+                          ($parentElementName='HAnimHumanoid'              and (($attributeName='version') or ($attributeName='skeletalConfiguration'))) or
+                          ($parentElementName='HAnimMotion'                and (($attributeName='channels') or ($attributeName='joints'))) or
+                            ($parentElementName='IMPORT'                     and (($attributeName='AS') or ($attributeName='importedDEF') or ($attributeName='inlineDEF'))) or
+                            (ends-with($parentElementName,'Material')	   and ends-with($attributeName,'Mapping')) or
+                          ($parentElementName='ParticleSystem'             and $attributeName='geometryType') or
+						  (ends-with($parentElementName,'PickSensor')      and ($attributeName='intersectionType' or $attributeName='matchCriterion' or $attributeName='sortOrder')) or
+						  ($parentElementName='ProjectionVolumeStyle'      and $attributeName='type') or
+						  ($parentElementName='ShadedVolumeStyle'          and $attributeName='phaseFunction') or
+					      ($parentElementName='ShaderPart'                 and $attributeName='type') or
+					      ($parentElementName='ShaderProgram'              and $attributeName='type') or
+					      ($parentElementName='TextureCoordinateGenerator' and $attributeName='mode') or
+					      ($parentElementName='TextureProperties'          and (starts-with($attributeName,'boundaryMode') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
+                          ($parentElementName='WorldInfo'                  and $attributeName='title') or
+                            ($parentElementName='X3D'                        and (($attributeName='profile') or ($attributeName='version') or ($attributeName='noNamespaceSchemaLocation'))) or
+                          ($parentElementName='XvlShell'                   and $attributeName='shellType')">
+			  <xsl:text>SFString</xsl:text>
+		  </xsl:when>
+		  <!-- FontStyle style->glyphStyle renaming rejected, can accept any kind of value for style field, Mantis 1335 -->
+		  <!-- SFDouble -->
+		  <xsl:when test="($localFieldType='SFDouble')          or 
+                          ($parentElementName='unit'      and $attributeName='conversionFactor')">
+			  <xsl:text>SFDouble</xsl:text>
+		  </xsl:when>
+		  <!-- X3D statements (i.e. not nodes): xs:string (including X3D version attribute) -->
+		  <xsl:when test="($parentElementName='X3D')     or ($parentElementName='ROUTE')   or ($parentElementName='meta')    or
+					      ($parentElementName='EXPORT')  or ($parentElementName='IMPORT')  or ($parentElementName='connect')">
+			  <!-- includes X3D version. field/fieldValue type logic handled separately -->
+			  <xsl:text>xs:string</xsl:text> 
+		  </xsl:when>
+		  <!-- MFString (some are also enumerations) -->
+		  <xsl:when test="
+					($localFieldType='MFString')   or 
+                                        ($attributeName='url') or contains($attributeName,'Url') or
+					($attributeName='forceOutput') or
+					($attributeName='objectType')  or
+					($parentElementName='Anchor' and $attributeName='parameter') or
+					($parentElementName='CollisionCollection' and $attributeName='appliedParameters') or
+					($parentElementName='Contact' and $attributeName='appliedParameters') or
+					(ends-with($parentElementName,'FontStyle') and ($attributeName='family' or $attributeName='justify')) or
+					(starts-with($parentElementName,'Geo') and ($attributeName='geoSystem')) or
+					($parentElementName='GeoMetadata' and $attributeName='summary') or
+					($parentElementName='GeoViewpoint' and contains($attributeName,'navType')) or
+					($parentElementName='HAnimHumanoid' and $attributeName='info') or
+					($parentElementName='Layout' and ($attributeName='align' or $attributeName='offsetUnits' or $attributeName='scaleMode' or $attributeName='sizeUnits')) or
+					($parentElementName='MetadataString' and $attributeName='value') or
+					($parentElementName='MultiTexture' and ($attributeName='function' or $attributeName='mode' or $attributeName='source')) or
+					($parentElementName='NavigationInfo' and ($attributeName='type' or $attributeName='transitionType')) or
+					($parentElementName='Text' and $attributeName='string') or
+					($parentElementName='UniversalJoint' and $attributeName='forceOutput') or
+					($parentElementName='WorldInfo' and $attributeName='info')">
+			  <xsl:text>MFString</xsl:text>
+		  </xsl:when>
+		  <!-- SFBool -->
+		  <xsl:when test="
+					($attributeName='boolean')           or
+					($attributeName='bind')              or
+					($attributeName='isActive')          or
+					($attributeName='isBound')           or
+					($attributeName='isOver')            or
+					($attributeName='isPaused')          or
+					($attributeName='triggerTrue')       or
+					($parentElementName='BooleanSequencer' and $attributeName='value') or
+					($localFieldType='SFBool')           or 
+                                        ($attributeName='activate')          or
+                                        ($attributeName='bboxDisplay')       or
+					($attributeName='ccw')               or
+					($attributeName='closed')            or
+					($attributeName='convex')            or
+					($attributeName='colorPerVertex')    or
+					($attributeName='enabled')           or
+					($attributeName='dopplerEnabled')    or
+					($attributeName='enableHRTF')        or
+					($attributeName='global')            or
+					($attributeName='normalPerVertex')   or
+					($attributeName='on')                or
+					($attributeName='load')              or
+					($attributeName='loop')              or
+					($attributeName='next')              or
+					($attributeName='previous')          or
+					($attributeName='normalize')         or
+					($attributeName='normalizeVelocity') or
+					($attributeName='rtpHeaderExpected') or
+					($attributeName='shadows')           or
+					($attributeName='solid')             or
+					($attributeName='spatialize')        or
+					($attributeName='trackCurrentView')  or
+					($attributeName='uClosed') or ($attributeName='vClosed') or
+					($attributeName='viewAll') or
+					($attributeName='visible') or
+					($parentElementName='AudioClip' and $attributeName='loop') or
+					($parentElementName='BooleanToggle' and $attributeName='toggle') or
+					($parentElementName='Collision' and $attributeName='enabled') or
+					($parentElementName='CollisionSpace' and $attributeName='useGeometry') or
+					($parentElementName='Cone' and ($attributeName='side' or $attributeName='bottom')) or
+					($parentElementName='Cylinder' and ($attributeName='side' or $attributeName='bottom' or $attributeName='top')) or
+					($parentElementName='CylinderSensor' and $attributeName='autoOffset') or
+					($parentElementName='EspduTransform' and ($attributeName='fired1' or $attributeName='fired2')) or
+					($parentElementName='Extrusion' and ($attributeName='beginCap' or $attributeName='endCap')) or
+					($parentElementName='FillProperties' and ($attributeName='filled' or $attributeName='hatched')) or
+					(ends-with($parentElementName,'FontStyle') and ($attributeName='horizontal' or $attributeName='leftToRight' or $attributeName='topToBottom')) or
+					($parentElementName='GeoInline' and $attributeName='load') or
+					($parentElementName='GeoOrigin' and $attributeName='rotateYUp') or
+					($parentElementName='GeoViewpoint' and $attributeName='headlight') or
+					($parentElementName='ImageTexture' and ($attributeName='repeatS' or $attributeName='repeatT')) or
+					(contains($parentElementName,'Texture3D') and starts-with($attributeName,'repeat')) or
+					($parentElementName='Inline' and ($attributeName='load')) or
+					(ends-with($parentElementName,'Layer') and ($attributeName='isPickable')) or
+					($parentElementName='LineProperties' and ($attributeName='applied')) or
+					($parentElementName='ListenerPointSource' and $attributeName='trackCurrentView')  or
+					($parentElementName='LOD' and ($attributeName='forceTransitions')) or
+					($parentElementName='MotorJoint' and $attributeName='autoCalc') or
+					($parentElementName='MovieTexture' and ($attributeName='repeatS' or $attributeName='repeatT' or $attributeName='loop')) or
+					($parentElementName='NurbsPatchSurface' and $attributeName='closedSurface') or
+					($parentElementName='ParticleSystem' and $attributeName='createParticles') or
+					($parentElementName='VolumeEmitter' and $attributeName='internal') or
+					($parentElementName='PickableGroup' and $attributeName='pickable') or
+					($parentElementName='PixelTexture' and ($attributeName='repeatS' or $attributeName='repeatT')) or
+					($parentElementName='NavigationInfo' and $attributeName='headlight') or
+					($parentElementName='PlaneSensor' and $attributeName='autoOffset') or
+					($parentElementName='RigidBody' and ($attributeName='autoDamp' or $attributeName='autoDisable' or $attributeName='fixed' or $attributeName='useFiniteRotation' or $attributeName='useGlobalGravity')) or
+					($parentElementName='RigidBodyCollection' and ($attributeName='autoDisable' or $attributeName='preferAccuracy')) or
+					($parentElementName='Shape' and $attributeName='castShadow') or
+					($parentElementName='SphereSensor' and $attributeName='autoOffset') or
+					($parentElementName='StringSensor' and $attributeName='deletionAllowed') or
+					($parentElementName='Script' and ($attributeName='directOutput' or $attributeName='mustEvaluate')) or
+					($parentElementName='ShadedVolumeStyle' and ($attributeName='lighting' or $attributeName='shadows')) or
+					($parentElementName='Sound' and $attributeName='spatialize') or
+					($parentElementName='TextureProperties' and $attributeName='generateMipMaps') or
+					($parentElementName='TimeSensor' and $attributeName='loop') or
+					($parentElementName='TwoSidedMaterial' and $attributeName='separateBackColor') or
+					(contains($parentElementName,'Viewpoint') and ($attributeName='jump' or $attributeName='retainUserOffsets' or $attributeName='displayed')) or
+					($parentElementName='VolumeEmitter' and $attributeName='internal')">
+			  <xsl:text>SFBool</xsl:text>
+		  </xsl:when>
+		  <!-- MFBool -->
+		  <xsl:when test="
+					($localFieldType='MFBool')  or 
+                                        (contains($parentElementName,'BooleanSequencer') and $attributeName='keyValue') or
+					($parentElementName='CADLayer'                   and ($attributeName='visible') and starts-with(//X3D/@version,'3')) or
+					($parentElementName='HAnimHumanoid'              and $attributeName='motionsEnabled') or
+					($parentElementName='HAnimMotion'                and $attributeName='channelsEnabled') or
+					($parentElementName='MetadataBoolean'            and $attributeName='value') or
+					($parentElementName='SegmentedVolumeData'        and $attributeName='segmentEnabled') or
+					($parentElementName='XvlShell'                   and ($attributeName='faceEmpty' or $attributeName='faceHidden'))">
+			  <xsl:text>MFBool</xsl:text>
+		  </xsl:when>
+		  <!-- SFColor -->
+		  <xsl:when test="
+					(($parentElementName='ColorInterpolator' or $parentElementName='ColorChaser' or $parentElementName='ColorDamper') and 
+                                         ($attributeName='value' or $attributeName='destination')) or
+					($localFieldType='SFColor')  or 
+					($parentElementName='CartoonVolumeStyle' and ($attributeName='orthogonalColor' or $attributeName='parallelColor')) or
+					($parentElementName='ColorChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+					($parentElementName='ColorDamper' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+					(contains($parentElementName,'Light') and $attributeName='color') or
+					($parentElementName='FillProperties' and ($attributeName='hatchColor')) or
+					(contains($parentElementName,'Fog') and $attributeName='color') or
+					(ends-with($parentElementName,'Material') and contains($attributeName,'Color')) or
+					($parentElementName='MultiTexture' and $attributeName='color') or
+                                        (starts-with($parentElementName,'TextureProjector') and $attributeName='color')">
+			  <xsl:text>SFColor</xsl:text>
+		  </xsl:when>
+		  <!-- SFColorRGBA -->
+		  <xsl:when test="
+					($localFieldType='SFColorRGBA')  or 
+                                        ($parentElementName='EdgeEnhancementVolumeStyle' and $attributeName='edgeColor') or
+					($parentElementName='TextureProperties' and $attributeName='borderColor') or
+					($parentElementName='ToneMappedVolumeStyle' and ($attributeName='coolColor' or $attributeName='warmColor'))">
+			  <xsl:text>SFColorRGBA</xsl:text>
+		  </xsl:when>
+		  <!-- MFColor -->
+		  <xsl:when test="
+					($localFieldType='MFColor')  or 
+                    ($parentElementName='Color' and $attributeName='color') or
+					($parentElementName='ColorInterpolator' and $attributeName='keyValue') or
+					(ends-with($parentElementName,'Background') and ($attributeName='groundColor' or $attributeName='skyColor'))">
+			  <xsl:text>MFColor</xsl:text>
+		  </xsl:when>
+		  <!-- MFColorRGBA -->
+		  <xsl:when test="
+					($localFieldType='MFColorRGBA')  or 
+                    ($parentElementName='ColorRGBA' and $attributeName='color')">
+			  <xsl:text>MFColorRGBA</xsl:text>
+		  </xsl:when>
+		  <!-- SFImage -->
+		  <xsl:when test="
+					($localFieldType='SFImage')  or 
+                    ($parentElementName='PixelTexture' and $attributeName='image')">
+			  <xsl:text>SFImage</xsl:text>
+		  </xsl:when>
+		  <!-- no MFImage attributes -->
+		  <!-- SFDouble --> <!-- precedes SFFloat since some fields are different than usual -->
+		  <xsl:when test="
+					($localFieldType='SFDouble')  or 
+                    ($parentElementName='GeoElevationGrid' and (($attributeName='creaseAngle') or ($attributeName='xSpacing') or ($attributeName='zSpacing')))">
+			  <xsl:text>SFDouble</xsl:text>
+		  </xsl:when>
+		  <!-- MFDouble -->
+		  <xsl:when test="
+					($localFieldType='MFDouble')  or 
+                    ($parentElementName='GeoElevationGrid'   and $attributeName='height') or
+					($parentElementName='MetadataDouble'     and $attributeName='value')  or
+					(starts-with($parentElementName,'Nurbs') and (($attributeName='knot') or ($attributeName='weight') or contains($attributeName,'Knot')))">
+			  <xsl:text>MFDouble</xsl:text>
+		  </xsl:when>
+		  <!-- SFFloat -->
+		  <xsl:when test="
+					(($parentElementName='ScalarInterpolator' or $parentElementName='ScalarChaser' or $parentElementName='ScalarDamper') and 
+                                         ($attributeName='value' or $attributeName='destination')) or
+					($localFieldType='SFFloat')  or 
+                                        ends-with($attributeName,'Rate')    or
+                                        ($attributeName='absorption')       or
+                                        ($attributeName='ambientIntensity') or
+					($attributeName='attack')           or
+                                        ($attributeName='coneInnerAngle')   or ($attributeName='coneOuterAngle')  or ($attributeName='coneOuterGain')    or
+					($attributeName='creaseAngle')      or
+                                        ($attributeName='detune')           or
+                                        ($attributeName='diffuse')          or
+					($attributeName='farDistance')      or ($attributeName='nearDistance')    or
+					($attributeName='fraction')         or
+					($attributeName='frequency')        or
+					($attributeName='gain')             or
+					($attributeName='intensity')        or
+					($attributeName='interauralDistance') or
+					($attributeName='knee')             or
+					($attributeName='loopEnd')          or ($attributeName='loopStart')       or
+					($attributeName='maxDistance')      or
+					($attributeName='minDecibels')      or ($attributeName='maxDecibels')     or
+                                        starts-with($attributeName,'pointSize') or
+					($attributeName='priority')         or
+					($attributeName='qualityFactor')    or
+                                        ($attributeName='radius')           or ($attributeName='innerRadius') or ($attributeName='outerRadius') or
+					($attributeName='ratio')            or
+					($attributeName='referenceDistance') or
+                                        ($attributeName='refraction')       or
+                                        ($attributeName='rolloffFactor')    or
+					($attributeName='shadowIntensity')  or
+					($attributeName='smoothingTimeConstant')  or
+                                        ($attributeName='specular')         or
+                                        ($attributeName='startAngle')       or ($attributeName='endAngle') or
+					($attributeName='threshold')        or
+                                        ($attributeName='tolerance')        or
+					($attributeName='transparency')     or
+					(starts-with($parentElementName,'Arc') and (contains($attributeName,'Angle') or $attributeName='radius')) or
+					($parentElementName='AcousticProperties' and ($attributeName='absorption' or $attributeName='diffuse' or $attributeName='refraction' or $attributeName='specular')) or
+					($parentElementName='Appearance'       and $attributeName='alphaCutoff') or
+					($parentElementName='AudioClip' and $attributeName='pitch') or
+					($parentElementName='BlendedVolumeStyle' and starts-with($attributeName,'weightConstant')) or
+					($parentElementName='BoundaryEnhancementVolumeStyle' and (($attributeName='boundaryOpacity') or ($attributeName='opacityFactor') or ($attributeName='retainedOpacity'))) or
+					($parentElementName='Circle2D' and $attributeName='radius') or
+					($parentElementName='CollisionCollection' and ($attributeName='bounce' or $attributeName='minBounceSpeed' or $attributeName='softnessConstantForceMix' or $attributeName='softnessErrorCorrection')) or
+					($parentElementName='Cone' and ($attributeName='bottomRadius' or $attributeName='height')) or
+					($parentElementName='Contact' and ($attributeName='bounce' or $attributeName='depth' or $attributeName='minBounceSpeed' or $attributeName='softnessConstantForceMix' or $attributeName='softnessErrorCorrection')) or
+					($parentElementName='Cylinder' and ($attributeName='radius' or $attributeName='height')) or
+					($parentElementName='CylinderSensor' and ($attributeName='diskAngle' or $attributeName='maxAngle' or $attributeName='minAngle' or $attributeName='offset')) or
+					($parentElementName='Disk2D' and contains($attributeName,'Radius')) or
+					($parentElementName='DoubleAxisHingeJoint' and (starts-with($attributeName,'desiredAngularVelocity') or starts-with($attributeName,'max') or $attributeName='minAngle1' or starts-with($attributeName,'stop') or starts-with($attributeName,'suspension'))) or
+					($parentElementName='EdgeEnhancementVolumeStyle' and $attributeName='gradientThreshold') or
+					(contains($parentElementName,'ElevationGrid') and ($attributeName='xSpacing' or $attributeName='zSpacing')) or
+					(ends-with($parentElementName,'Emitter') and ($attributeName='angle' or $attributeName='speed' or $attributeName='variation' or $attributeName='mass' or $attributeName='surfaceArea')) or
+					($parentElementName='EspduTransform' and $attributeName='firingRange') or
+					(ends-with($parentElementName,'Fog') and $attributeName='visibilityRange') or
+					($parentElementName='FontStyle' and ($attributeName='size' or $attributeName='spacing')) or
+					($parentElementName='GeoElevationGrid' and $attributeName='yScale') or
+					($parentElementName='GeoLOD' and $attributeName='range') or
+					($parentElementName='GeoViewpoint' and $attributeName='speedFactor') or
+					($parentElementName='HAnimDisplacer' and $attributeName='weight') or
+					($parentElementName='HAnimSegment' and $attributeName='mass') or
+					($parentElementName='IsoSurfaceVolumeData' and ($attributeName='contourStepSize' or $attributeName='surfaceTolerance')) or
+					($parentElementName='LineProperties'       and ($attributeName='linewidthScaleFactor')) or
+					(ends-with($parentElementName,'Material')  and ($attributeName='ambientIntensity' or $attributeName='metallic' or $attributeName='normalScale' or $attributeName='occlusionStrength' or $attributeName='roughness' or $attributeName='shininess' or $attributeName='transparency')) or
+					($parentElementName='ParticleSystem'       and ($attributeName='lifetimeVariation' or $attributeName='particleLifetime')) or
+					($parentElementName='TwoSidedMaterial'     and ($attributeName='backAmbientIntensity' or $attributeName='backShininess' or $attributeName='backTransparency')) or
+					($parentElementName='MotorJoint'           and (starts-with($attributeName,'axis') or starts-with($attributeName,'stop'))) or
+					($parentElementName='MovieTexture'         and ($attributeName='pitch' or $attributeName='speed')) or
+					($parentElementName='MultiTexture'         and $attributeName='alpha') or
+					($parentElementName='NavigationInfo'       and ($attributeName='speed' or $attributeName='visibilityLimit' or $attributeName='transitionTime')) or
+					($parentElementName='NurbsSet' and $attributeName='tessellationScale') or
+					($parentElementName='PointLight' and $attributeName='radius') or
+					($parentElementName='ProjectionVolumeStyle' and $attributeName='intensityThreshold') or
+					($parentElementName='ReceiverPdu' and $attributeName='receivedPower') or
+					($parentElementName='RigidBody' and ($attributeName='angularDampingFactor' or starts-with($attributeName,'disable') or $attributeName='linearDampingFactor' or $attributeName='mass')) or
+					($parentElementName='RigidBodyCollection' and ($attributeName='constantForceMix' or $attributeName='contactSurfaceThickness' or starts-with($attributeName,'disable') or $attributeName='errorCorrection' or $attributeName='maxCorrectionSpeed')) or
+					($parentElementName='ScalarChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+					($parentElementName='ScalarDamper' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+					($parentElementName='ScreenFontStyle' and ($attributeName='pointSize' or $attributeName='spacing')) or
+					($parentElementName='SilhouetteEnhancementVolumeStyle' and starts-with($attributeName,'silhouette')) or
+					($parentElementName='SingleAxisHingeJoint' and ($attributeName='maxAngle' or $attributeName='minAngle' or $attributeName='stopBounce' or $attributeName='stopErrorCorrection')) or
+					($parentElementName='SliderJoint' and ($attributeName='maxSeparation' or $attributeName='minSeparation' or $attributeName='sliderForce' or $attributeName='stopBounce' or $attributeName='stopErrorCorrection')) or
+					($parentElementName='Sound' and ($attributeName='maxBack' or $attributeName='minBack' or $attributeName='maxFront' or $attributeName='minFront' or $attributeName='priority')) or
+					($parentElementName='SpatialSound' and ($attributeName='coneInnerAngle' or $attributeName='coneOuterAngle' or $attributeName='coneOuterGain' or $attributeName='maxDistance' or $attributeName='priority' or $attributeName='referenceDistance' or $attributeName='rolloffFactor')) or
+					($parentElementName='Sphere' and $attributeName='radius') or
+					($parentElementName='SpotLight' and ($attributeName='radius' or $attributeName='cutOffAngle' or $attributeName='beamWidth')) or
+					($parentElementName='Text' and $attributeName='maxExtent') or
+					($parentElementName='TextureProperties' and ($attributeName='anisotropicDegree' or $attributeName='texturePriority')) or 
+					(starts-with($parentElementName,'TextureProjector') and ($attributeName='farDistance' or $attributeName='nearDistance')) or
+					($parentElementName='TextureTransform' and $attributeName='rotation') or
+					($parentElementName='TransmitterPdu' and ($attributeName='power' or $attributeName='transmitFrequencyBandwidth')) or
+					($parentElementName='UniversalJoint' and starts-with($attributeName,'stop')) or
+					(($parentElementName='Viewpoint' or $parentElementName='GeoViewpoint' or $parentElementName='TextureProjector') and $attributeName='fieldOfView') or
+					($parentElementName='WindPhysicsModel'    and ($attributeName='gustiness' or $attributeName='speed' or $attributeName='turbulence'))">
+			  <xsl:text>SFFloat</xsl:text>
+		  </xsl:when>
+		  <!-- MFFloat -->
+		  <xsl:when test="
+					($localFieldType='MFFloat')  or 
+					($attributeName='key')       or
+					(contains($parentElementName,'BufferAudioSource') and $attributeName='uffer') or
+					(contains($parentElementName,'ElevationGrid') and $attributeName='height') or
+					(contains($parentElementName,'LOD') and $attributeName='range') or
+					(ends-with($parentElementName,'Background') and ($attributeName='groundAngle' or $attributeName='skyAngle')) or
+					($parentElementName='EnvironmentLight' and $attributeName='diffuseCoefficients') or
+					($parentElementName='EspduTransform' and $attributeName='articulationParameterArray') or
+					($parentElementName='FloatVertexAttribute' and $attributeName='value') or
+					($parentElementName='FogCoordinate' and $attributeName='depth') or
+					($parentElementName='HAnimSisplacer' and $attributeName='weight') or
+					($parentElementName='HAnimJoint' and ($attributeName='llimit' or $attributeName='ulimit' or $attributeName='skinCoordWeight' or $attributeName='stiffness')) or
+					($parentElementName='HAnimMotion' and $attributeName='values') or
+					($parentElementName='HAnimSegment' and $attributeName='momentsOfInertia') or
+					($parentElementName='IsoSurfaceVolumeData' and $attributeName='surfaceValues') or
+					($parentElementName='Layout' and ($attributeName='offset' or $attributeName='size')) or
+					($parentElementName='MetadataFloat' and $attributeName='value') or
+					($parentElementName='NavigationInfo' and $attributeName='avatarSize') or
+					($parentElementName='NurbsTextureCoordinate' and $attributeName='weight') or
+					($parentElementName='ParticleSystem' and ($attributeName='colorKey' or $attributeName='texCoordKey')) or
+					($parentElementName='ScalarInterpolator' and $attributeName='keyValue') or
+					($parentElementName='SplineScalarInterpolator' and ($attributeName='keyValue' or $attributeName='keyVelocity')) or
+					($parentElementName='Text' and $attributeName='length') or
+					($parentElementName='TextureCoordinateGenerator' and $attributeName='parameter') or
+					($parentElementName='Viewport' and $attributeName='clipBoundary') or
+					($parentElementName='XvlShell' and ($attributeName='vertexRound' or $attributeName='edgeRound'))">
+			  <xsl:text>MFFloat</xsl:text>
+		  </xsl:when>
+		  <!-- SFTime -->
+		  <xsl:when test="
+                    ($localFieldType='SFTime')              or 
+                    contains($attributeName,'Time')         or
+                    contains($attributeName,'Duration')     or
+                    ($attributeName='cycleInterval')        or
+                    ($attributeName='cycleTime')            or
+                    ($attributeName='pauseTime')            or
+                    ($attributeName='resumeTime')           or
+                    ($attributeName='startTime')            or
+                    ($attributeName='stopTime')             or
+                    ($attributeName='touchTime')            or
+                    ($attributeName='triggerTime')          or
+                    ($attributeName='time')                 or
+                    ($attributeName='duration')             or
+                    ($attributeName='elapsedTime')          or
+                    ($attributeName='autoRefresh')          or
+                    ($attributeName='autoRefreshTimeLimit') or
+                    ($attributeName='tau')                  or
+                    ($attributeName='timestamp')            or
+                    ($attributeName='readInterval')         or
+                    ($attributeName='writeInterval')        or
+                    ($parentElementName='LoadSensor'     and $attributeName='timeOut')  or
+                    ($parentElementName='AudioClip'      and ends-with($attributeName,'Time'))  or
+                    ($parentElementName='EspduTransform' and ends-with($attributeName,'Time'))  or
+                    ($parentElementName='HAnimMotion'    and $attributeName='frameDuration') or
+                    ($parentElementName='MovieTexture'   and ends-with($attributeName,'Time'))"> 
+			  <!-- TimeSensor loop & enabled are caught by SFBool tests, all other TimeSensor fields are SFTime -->
+			  <xsl:text>SFTime</xsl:text>
+		  </xsl:when>
+		  <!-- no MFTime -->
+		  <!-- SFVec2f -->
+		  <xsl:when test="
+					(($parentElementName='PositionInterpolator2D' or $parentElementName='PositionChaser2D' or $parentElementName='PositionDamper2D') and 
+                                         ($attributeName='value' or $attributeName='destination')) or
+					($localFieldType='SFVec2f')  or 
+                                        ($parentElementName='CollisionCollection' and ($attributeName='frictionCoefficients' or $attributeName='slipFactors' or $attributeName='surfaceSpeed')) or
+					($parentElementName='Contact' and ($attributeName='frictionCoefficients' or $attributeName='slipCoefficients' or $attributeName='surfaceSpeed')) or
+					($parentElementName='ParticleSystem' and $attributeName='particleSize') or
+					($parentElementName='PlaneSensor' and ($attributeName='maxPosition' or $attributeName='minPosition')) or
+					($parentElementName='PositionChaser2D' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+					($parentElementName='PositionDamper2D' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+					($parentElementName='Rectangle2D' and ($attributeName='size')) or
+					($parentElementName='TextureTransform' and ($attributeName='center' or $attributeName='scale' or $attributeName='translation'))">
+			  <xsl:text>SFVec2f</xsl:text>
+		  </xsl:when>
+		  <!-- MFVec2f -->
+		  <xsl:when test="
+					(($parentElementName='CoordinateInterpolator2D' or $parentElementName='CoordinateChaser2D' or $parentElementName='CoordinateDamper2D') and 
+                                         ($attributeName='value' or $attributeName='destination')) or
+					(($parentElementName='TexCoordChaser2D' or $parentElementName='TexCoordDamper2D') and 
+                                         ($attributeName='value' or $attributeName='destination')) or
+					($localFieldType='MFVec2f')  or 
+                                        ($parentElementName='EaseInEaseOut' and $attributeName='easeInEaseOut') or
+					($parentElementName='Extrusion' and ($attributeName='crossSection' or $attributeName='scale')) or
+					(($parentElementName='CoordinateInterpolator2D' or $parentElementName='PositionInterpolator2D') and $attributeName='keyValue') or
+					(($parentElementName='ContourPolyline2D' or $parentElementName='Polypoint2D' or $parentElementName='TextureCoordinate') and $attributeName='point') or
+					(($parentElementName='NurbsTextureCoordinate') and $attributeName='controlPoint') or
+					(($parentElementName='Polyline2D') and $attributeName='lineSegments') or
+					(($parentElementName='SplinePositionInterpolator2D') and ($attributeName='keyValue' or $attributeName='keyVelocity')) or
+					($parentElementName='TexCoordChaser2D' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+					($parentElementName='TexCoordDamper2D' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+					(($parentElementName='TriangleSet2D') and $attributeName='vertices')">
+			  <xsl:text>MFVec2f</xsl:text>
+		  </xsl:when>
+		  <!-- MFVec2d -->
+		  <xsl:when test="
+					($localFieldType='MFVec2d')  or
+					(($parentElementName='ContourPolyline2D') or ($parentElementName='NurbsCurve2D') and $attributeName='controlPoint')">
+                          <xsl:text>MFVec2d</xsl:text>
+		  </xsl:when>
+		   
+		  <!-- SFVec3d -->
+		  <xsl:when test="
+					($localFieldType='SFVec3d')  or 
+                                        ($attributeName='geovalue') or
+                                        ($attributeName='geoCenter') or
+					($attributeName='geoCoords') or
+					($parentElementName='GeoElevationGrid'   and $attributeName='geoGridOrigin') or
+					($parentElementName='GeoLOD'             and $attributeName='center') or
+					($parentElementName='GeoProximitySensor' and $attributeName='center') or
+					($parentElementName='GeoViewpoint'       and ($attributeName='centerOfRotation' or $attributeName='position'))">
+			  <xsl:text>SFVec3d</xsl:text>
+		  </xsl:when>
+		  <!-- MFVec3d -->
+		  <xsl:when test="
+					($localFieldType='MFVec3d')  or
+					($parentElementName='ContourPolyline2D'       and $attributeName='controlPoint') or
+					($parentElementName='CoordinateDouble'        and $attributeName='point') or
+					($parentElementName='GeoCoordinate'           and $attributeName='point') or
+					($parentElementName='GeoPositionInterpolator' and $attributeName='keyValue') or
+					($parentElementName='GeoViewpoint'            and contains($attributeName,'position'))">
+			  <xsl:text>MFVec3d</xsl:text>
+		  </xsl:when>
+		  <!-- SFVec3f -->
+		  <!-- note TextureTransform tests must precede these default checks -->
+		  <xsl:when test="
+					(($parentElementName='PositionInterpolator'      or $parentElementName='PositionChaser' or 
+                                          $parentElementName='PositionDamper'            or $parentElementName='NormalInterpolator' or 
+                                          $parentElementName='NurbsPositionInterpolator' or $parentElementName='GeoPositionInterpolator') and 
+                                         ($attributeName='value' or $attributeName='destination')) or
+					($localFieldType='SFVec3f')    or
+					($attributeName='hitNormal')   or
+					($attributeName='hitPoint')    or
+					($attributeName='hitTexCoord') or
+					($attributeName='trackPoint')  or
+                                        ($attributeName='anchorPoint') or
+					($attributeName='bboxCenter')  or
+					($attributeName='bboxSize')    or
+					($attributeName='center')      or
+					($attributeName='direction')   or
+					($attributeName='location')    or
+					($attributeName='position')    or
+					($attributeName='scale')       or
+					($attributeName='translation') or
+					($parentElementName='Billboard' and $attributeName='axisOfRotation') or
+					($parentElementName='Box' and $attributeName='size') or
+					(ends-with($parentElementName,'Emitter') and ($attributeName='direction' or $attributeName='position')) or
+					($parentElementName='Contact' and ($attributeName='contactNormal' or $attributeName='frictionDirection' or $attributeName='position')) or
+					($parentElementName='DirectionalLight' and $attributeName='direction') or
+					($parentElementName='DoubleAxisHingeJoint' and ($attributeName='axis1' or $attributeName='axis2')) or
+					($parentElementName='EspduTransform' and (ends-with($attributeName,'Location') or $attributeName='linearVelocity' or $attributeName='linearAcceleration' or ends-with($attributeName,'Point'))) or
+					($parentElementName='ForcePhysicsModel' and $attributeName='force') or
+					($parentElementName='GeoProximitySensor' and $attributeName='size') or
+					(starts-with($parentElementName,'HAnim') and ($attributeName='center' or $attributeName='scale' or $attributeName='translation')) or
+					($parentElementName='HAnimSegment' and $attributeName='centerOfMass') or
+					(contains($parentElementName,'LOD') and $attributeName='center') or
+					($parentElementName='MotorJoint' and ($attributeName='motor1Axis' or $attributeName='motor2Axis' or $attributeName='motor3Axis')) or
+					($parentElementName='PlaneSensor' and $attributeName='offset') or
+					($parentElementName='PlaneSensor' and $attributeName='offset') or
+					($parentElementName='PointProperties' and ($attributeName='attenuation')) or
+					($parentElementName='PositionChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+					($parentElementName='PositionDamper' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+					($parentElementName='ProximitySensor' and ($attributeName='center' or $attributeName='size')) or
+					($parentElementName='PointLight' and ($attributeName='attenuation' or $attributeName='location')) or
+					($parentElementName='RigidBody' and ($attributeName='angularVelocity' or $attributeName='centerOfMass' or $attributeName='finiteRotationAxis' or $attributeName='linearVelocity' or $attributeName='position')) or
+					($parentElementName='RigidBodyCollection' and ($attributeName='gravity')) or
+					($parentElementName='SingleAxisHingeJoint' and ($attributeName='axis')) or
+					($parentElementName='SliderJoint' and ($attributeName='axis')) or
+					($parentElementName='Sound' and ($attributeName='direction' or $attributeName='location')) or
+					($parentElementName='SpotLight' and ($attributeName='attenuation' or $attributeName='direction' or $attributeName='location')) or
+					(starts-with($parentElementName,'TextureProjector') and ($attributeName='direction' or $attributeName='location' or $attributeName='upVector')) or
+					($parentElementName='Transform' and ($attributeName='center' or $attributeName='scale' or $attributeName='translation')) or
+					($parentElementName='TransformSensor' and ($attributeName='size')) or
+					($parentElementName='TransmitterPdu' and (ends-with($attributeName,'Location'))) or
+					($parentElementName='UniversalJoint' and ($attributeName='axis1' or $attributeName='axis2')) or
+					(($parentElementName='Viewpoint' or $parentElementName='OrthoViewpoint') and ($attributeName='position' or $attributeName='centerOfRotation')) or
+					($parentElementName='ViewpointGroup'   and $attributeName='size') or
+					($parentElementName='VisibilitySensor' and $attributeName='size') or
+					(contains($parentElementName,'VolumeData') and $attributeName='dimensions') or
+					($parentElementName='WindPhysicsModel' and $attributeName='direction')">
+			  <xsl:text>SFVec3f</xsl:text>
+		  </xsl:when>
+		  <!-- MFVec3f -->
+		  <xsl:when test="
+					(($parentElementName='CoordinateInterpolator' or $parentElementName='CoordinateChaser' or $parentElementName='CoordinateDamper') and 
+                                         ($attributeName='value' or $attributeName='destination')) or
+					($localFieldType='MFVec3f')    or
+					($parentElementName='CoordinateChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+					($parentElementName='CoordinateDamper' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+					($parentElementName='CoordinateInterpolator'     and $attributeName='keyValue') or
+					($parentElementName='HAnimHumanoid'              and $attributeName='jointBindingPositions') or
+					($parentElementName='HAnimHumanoid'              and $attributeName='jointBindingScales') or
+					($parentElementName='NormalInterpolator'         and $attributeName='keyValue') or
+					($parentElementName='PositionInterpolator'       and $attributeName='keyValue') or
+					($parentElementName='SplinePositionInterpolator' and ($attributeName='keyValue' or $attributeName='keyVelocity')) or
+					(contains($parentElementName,'Coordinate') and $attributeName='point') or
+					($parentElementName='Extrusion' and $attributeName='spine') or
+					($parentElementName='Normal' and $attributeName='vector') or
+					($parentElementName='HAnimDisplacer' and $attributeName='displacements') or
+					($parentElementName='XvlShell' and ($attributeName='edgeBeginVector' or $attributeName='edgeEndVector'))">
+			  <xsl:text>MFVec3f</xsl:text>
+		  </xsl:when>
+		  <!-- SFVec4f -->
+		  <xsl:when test="
+					($localFieldType='SFVec4f')    or 
+                                        ($parentElementName='ClipPlane' and $attributeName='plane') or 
+                                        ($parentElementName='OrthoViewpoint' and $attributeName='fieldOfView') or 
+                                        ($parentElementName='TextureProjectorParallel' and $attributeName='fieldOfView')">
+			  <xsl:text>SFVec4f</xsl:text>
+		  </xsl:when>
+		  <!-- SFRotation -->
+		  <!-- note TextureTransform tests must precede these default checks -->
+		  <xsl:when test="
+					(($parentElementName='OrientationInterpolator' or $parentElementName='OrientationChaser' or $parentElementName='OrientationDamper' or $parentElementName='NurbsOrientationInterpolator') and 
+                                         ($attributeName='value' or $attributeName='destination')) or
+					($localFieldType='SFRotation')    or
+					($attributeName='rotation')         or
+					(not($parentElementName='Extrusion') and ($attributeName='orientation'))      or
+					($attributeName='scaleOrientation') or
+					(($parentElementName='CylinderSensor' or $parentElementName='PlaneSensor') and $attributeName='axisRotation') or
+					($parentElementName='OrientationChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+					($parentElementName='OrientationDamper' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+					($parentElementName='RigidBody' and $attributeName='orientation') or
+					($parentElementName='SphereSensor' and $attributeName='offset') or
+					($parentElementName='Transform' and ($attributeName='rotation' or $attributeName='scaleOrientation')) or
+					(contains($parentElementName,'Viewpoint') and $attributeName='orientation') or
+					($parentElementName='HAnimJoint' and ($attributeName='limitOrientation' or $attributeName='rotation' or $attributeName='scaleOrientation')) or
+					($parentElementName='HAnimSite' and ($attributeName='rotation' or $attributeName='scaleOrientation'))">
+			  <xsl:text>SFRotation</xsl:text>
+		  </xsl:when>
+		  <!-- MFRotation -->
+		  <xsl:when test="
+					($localFieldType='MFRotation')    or 
+                    ($parentElementName='Extrusion' and $attributeName='orientation') or
+					($parentElementName='HAnimHumanoid'              and $attributeName='jointBindingRotations') or
+					(ends-with($parentElementName,'OrientationInterpolator') and $attributeName='keyValue')">
+			  <xsl:text>MFRotation</xsl:text>
+		  </xsl:when>
+		  <!-- SFMatrix3f -->
+		  <xsl:when test="
+					($localFieldType='SFMatrix3f')    or 
+                    ($parentElementName='RigidBody' and $attributeName='inertia')">
+			  <xsl:text>SFMatrix3f</xsl:text>
+		  </xsl:when>
+		  <!-- MFMatrix3f -->
+		  <xsl:when test="
+					($localFieldType='MFMatrix3f')    or 
+                    ($parentElementName='Matrix3VertexAttribute' and $attributeName='value')">
+			  <xsl:text>MFMatrix3f</xsl:text>
+		  </xsl:when>
+		  <!-- SFMatrix4f -->
+		  <xsl:when test="
+					($localFieldType='SFMatrix4f')    or 
+                    ($parentElementName='TextureTransformMatrix3D' and $attributeName='matrix')">
+			  <xsl:text>SFMatrix4f</xsl:text>
+		  </xsl:when>
+		  <!-- MFMatrix4f -->
+		  <xsl:when test="
+					($localFieldType='MFVec3f')    or 
+                    ($parentElementName='Matrix4VertexAttribute' and $attributeName='value')">
+			  <xsl:text>MFMatrix4f</xsl:text>
+		  </xsl:when>
+		  <!-- MFInt32 --> <!-- must precede SFInt32 -->
+		  <xsl:when test="
+					($localFieldType='MFInt32')    or 
+            starts-with($attributeName,'numberOfChannels') or 
+                    ($attributeName='colorIndex') or
+					($attributeName='coordIndex') or
+					($attributeName='normalIndex') or
+					($attributeName='texCoordIndex') or
+					($attributeName='faceCoordIndex') or
+					($attributeName='faceTexCoordIndex') or
+					($attributeName='edgeBeginCoordIndex') or
+					($attributeName='edgeEndCoordIndex') or
+					($attributeName='fanCount') or
+					($attributeName='stripCount') or
+					($parentElementName='ContourPolyline2D' and $attributeName='index') or
+					($parentElementName='EspduTransform' and starts-with($attributeName,'articulationParameter') and ends-with($attributeName,'Array')) or
+					($parentElementName='HAnimJoint' and $attributeName='skinCoordIndex') or
+					(starts-with($parentElementName,'IndexedTriangle') and $attributeName='index') or
+					($parentElementName='IndexedQuadSet'               and $attributeName='index') or
+					($parentElementName='IntegerSequencer' and $attributeName='keyValue') or
+					($parentElementName='LayerSet' and ($attributeName='order')) or
+					($parentElementName='LineSet' and $attributeName='vertexCount') or
+					($parentElementName='MetadataInteger' and $attributeName='value') or
+					($parentElementName='PixelTexture3D'  and $attributeName='image') or
+					($parentElementName='SignalPdu' and $attributeName='data')">
+			  <xsl:text>MFInt32</xsl:text>
+		  </xsl:when>
+		  <!-- Statements: xs:integer as SFInt32 - TODO schema/spec change? -->
+		  <!-- SFInt32 --> <!-- Note that other DIS attibutes must get tested before this, including MFInt32 -->
+		  <xsl:when test="
+					($parentElementName='IntegerSequencer' and $attributeName='value') or
+                                        ($localFieldType='SFInt32')                 or 
+                                         ends-with($attributeName,'ID')             or
+					($attributeName='bufferLength')             or
+					($attributeName='channelSelection')         or
+					($attributeName='fftSize')                  or
+					($attributeName='frequencyBinCount')        or
+					($attributeName='maxChannelCount')          or
+                                        ($attributeName='order')                    or
+					($attributeName='uOrder')                   or
+					($attributeName='vOrder')                   or
+					($attributeName='uDimension')               or
+					($attributeName='vDimension')               or
+					($parentElementName='DISEntityManager')     or
+					($parentElementName='DISEntityTypeMapping') or
+					($parentElementName='EspduTransform')       or
+					($parentElementName='SignalPdu')            or
+					($parentElementName='ReceiverPdu')          or
+					($parentElementName='TransmitterPdu')       or
+                                        (($parentElementName='component') and $attributeName='level')    or 
+					($parentElementName='CartoonVolumeStyle' and $attributeName='colorSteps') or
+					(contains($parentElementName,'ElevationGrid') and ($attributeName='xDimension' or $attributeName='zDimension')) or
+					($parentElementName='FillProperties' and ($attributeName='hatchStyle')) or
+					($parentElementName='FloatVertexAttribute' and $attributeName='numComponents') or
+					($parentElementName='GeneratedCubeMapTexture' and $attributeName='size') or
+					(starts-with($parentElementName,'HAnim') and $attributeName='loa') or
+                                        ($parentElementName='HAnimMotion' and (($attributeName='frameIncrement') or ($attributeName='frameIndex') or ($attributeName='startFrame') or ($attributeName='endFrame'))) or
+                                        ($parentElementName='IntegerTrigger' and (($attributeName='integerKey') or ($attributeName='triggerValue'))) or
+					($parentElementName='LayerSet' and ($attributeName='activeLayer')) or
+					($parentElementName='LineProperties' and ($attributeName='linetype')) or
+					($parentElementName='MotorJoint' and $attributeName='enabledAxe') or
+					($parentElementName='ParticleSystem' and $attributeName='maxParticles') or
+					($parentElementName='RigidBodyCollection' and $attributeName='iterations') or
+					($parentElementName='Switch' and $attributeName='whichChoice') or
+					($parentElementName='TextureProperties' and $attributeName='borderWidth') or
+					(starts-with($parentElementName,'Nurbs') and ($attributeName='order' or $attributeName='tessellation' or $attributeName='uTessellation' or $attributeName='vTessellation' or $attributeName='uTessellation' or $attributeName='dimension' or $attributeName='UDimension' or $attributeName='vDimension')) or
+					($parentElementName='XvlShell' and $attributeName='numberOfDivisions')">
+			  <xsl:text>SFInt32</xsl:text>
+		  </xsl:when>
+		  <xsl:otherwise>
+			  <xsl:choose>
+				<xsl:when test="($parentElementName='field') or ($parentElementName='fieldValue')">
+					<xsl:value-of select="$localFieldType"/>
+				</xsl:when>
+				<!-- Other statement values require special handling, do not warn here -->
+				<xsl:when test="($parentElementName='field') or contains($parentElementName,'Proto') or
+                                ($parentElementName='meta')">
+					<xsl:text></xsl:text>
+				</xsl:when>
+				<xsl:when test="preceding::*[(local-name() = $parentElementName) and (starts-with($parentElementName,'Xvl'))]">
+					<!-- avoid repetitious warnings, no message.  TODO fix, test is not trapping properly. -->
+					<xsl:text></xsl:text>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:text>type_UNKNOWN</xsl:text>
+					<xsl:message>
+						  <xsl:text>*** Warning: X3dToXhtml.xslt attribute type not found for </xsl:text>
+						  <xsl:value-of select="$parentElementName"/>
+						  <xsl:text> </xsl:text>
+						  <xsl:value-of select="$attributeNameFull"/>
+					</xsl:message>
+				</xsl:otherwise>
+			  </xsl:choose>
+		  </xsl:otherwise>
+		</xsl:choose>
+
     </xsl:template>
 
 </xsl:stylesheet>
