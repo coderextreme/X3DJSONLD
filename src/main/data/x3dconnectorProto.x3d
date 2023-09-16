@@ -2,7 +2,7 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd">
 <head>        
-        <meta name='title' content='x3dconnectorProto'/>
+        <meta name='title' content='x3dconnectorProto.x3d'/>
         <meta name='creator' content='Lost, Doug Sanden I think'/>
         <meta name='created' content='Unknown'/>
         <meta name='modified' content='July 30 2023'/>
@@ -104,11 +104,11 @@
 	    if (typeof endpoint === 'undefined') {
 		return;
 	    }
-            let dif = endpoint.subtract(startpoint);
-            let dist = dif.length()*0.5;
-            let dif2 = dif.multiply(0.5);
-            let norm = dif.normalize();
-            let transl = startpoint.add(dif2);
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
+            var norm = dif.normalize();
+            var transl = startpoint.add(dif2);
 	    if (typeof Quaternion !== 'undefined') {
 		    return {
 			    scale : new SFVec3f(1.0,dist,1.0),
@@ -124,7 +124,7 @@
 	    }
 	}
 	function recompute_and_route(startpoint, endpoint) {
-	      let trafo = recompute(startpoint, endpoint);
+	      var trafo = recompute(startpoint, endpoint);
 	      if (trafo) {
 		      transnode.translation = trafo.translation;
 		      rotscalenode.rotation = trafo.rotation;

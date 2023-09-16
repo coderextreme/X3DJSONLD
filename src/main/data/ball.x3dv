@@ -1,0 +1,116 @@
+#X3D V4.0 utf8 X_ITE V8.12.0
+
+PROFILE Immersive
+
+COMPONENT Scripting : 1
+COMPONENT EnvironmentalEffects : 3
+COMPONENT Shaders : 1
+COMPONENT CubeMapTexturing : 1
+COMPONENT Texturing : 1
+COMPONENT Rendering : 1
+COMPONENT Grouping : 3
+COMPONENT Core : 1
+
+META "title" "ball.x3d"
+META "creator" "John Carlson"
+META "generator" "manual"
+META "identifier" "https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d"
+META "description" "a prismatic sphere"
+META "converter" "x3d-tidy V1.0.92, https://www.npmjs.com/package/x3d-tidy"
+META "converted" "Mon, 04 Sep 2023 14:34:30 GMT"
+
+WorldInfo {
+  title "ball.x3d"
+}
+
+NavigationInfo {
+  type [
+    "ANY",
+    "EXAMINE",
+    "FLY",
+    "LOOKAT"
+  ]
+}
+
+Viewpoint {
+  description "Tour Views"
+}
+
+Background {
+  frontUrl "../resources/images/all_probes/stpeters_cross/stpeters_front.png"
+  backUrl "../resources/images/all_probes/stpeters_cross/stpeters_back.png"
+  leftUrl "../resources/images/all_probes/stpeters_cross/stpeters_left.png"
+  rightUrl "../resources/images/all_probes/stpeters_cross/stpeters_right.png"
+  topUrl "../resources/images/all_probes/stpeters_cross/stpeters_top.png"
+  bottomUrl "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"
+}
+
+Transform {
+  children Shape {
+    appearance Appearance {
+      material Material {
+        diffuseColor 0.7 0.7 0.7
+        specularColor 0.5 0.5 0.5
+      }
+      texture DEF texture ComposedCubeMapTexture {
+        frontTexture ImageTexture {
+          url "../resources/images/all_probes/stpeters_cross/stpeters_front.png"
+        }
+        backTexture ImageTexture {
+          url "../resources/images/all_probes/stpeters_cross/stpeters_back.png"
+        }
+        leftTexture ImageTexture {
+          url "../resources/images/all_probes/stpeters_cross/stpeters_left.png"
+        }
+        rightTexture ImageTexture {
+          url "../resources/images/all_probes/stpeters_cross/stpeters_right.png"
+        }
+        topTexture ImageTexture {
+          url "../resources/images/all_probes/stpeters_cross/stpeters_top.png"
+        }
+        bottomTexture ImageTexture {
+          url "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"
+        }
+      }
+      shaders [
+        ComposedShader {
+          inputOutput SFVec3f chromaticDispertion 0.98 1 1.033
+          inputOutput SFNode  cube USE texture
+          inputOutput SFFloat bias 0.5
+          inputOutput SFFloat scale 0.5
+          inputOutput SFFloat power 2
+
+          language "GLSL"
+          parts [
+            ShaderPart {
+              url "../shaders/x3dom.vs"
+            }
+            DEF common ShaderPart {
+              type "FRAGMENT"
+              url "../shaders/common.fs"
+            }
+          ]
+        }
+        ComposedShader {
+          initializeOnly SFVec3f chromaticDispertion 0.98 1 1.033
+          initializeOnly SFNode  cube USE texture
+          initializeOnly SFFloat bias 0.5
+          initializeOnly SFFloat scale 0.5
+          initializeOnly SFFloat power 2
+
+          language "GLSL"
+          parts [
+            ShaderPart {
+              url "../shaders/x_ite.vs"
+            }
+            ShaderPart {
+              type "FRAGMENT"
+              url "../shaders/x_itebubbles.fs"
+            }
+          ]
+        }
+      ]
+    }
+    geometry Sphere { }
+  }
+}

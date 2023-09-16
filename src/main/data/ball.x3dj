@@ -32,7 +32,7 @@
         },
         {
           "@name": "converted",
-          "@content": "Mon, 04 Sep 2023 09:26:25 GMT"
+          "@content": "Tue, 12 Sep 2023 05:25:37 GMT"
         }
       ],
       "component": [
@@ -95,28 +95,22 @@
         { "Background":
           {
             "@frontUrl": [
-              "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
-              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"
+              "../resources/images/all_probes/stpeters_cross/stpeters_front.png"
             ],
             "@backUrl": [
-              "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
-              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"
+              "../resources/images/all_probes/stpeters_cross/stpeters_back.png"
             ],
             "@leftUrl": [
-              "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
-              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"
+              "../resources/images/all_probes/stpeters_cross/stpeters_left.png"
             ],
             "@rightUrl": [
-              "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
-              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"
+              "../resources/images/all_probes/stpeters_cross/stpeters_right.png"
             ],
             "@topUrl": [
-              "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
-              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"
+              "../resources/images/all_probes/stpeters_cross/stpeters_top.png"
             ],
             "@bottomUrl": [
-              "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
-              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"
+              "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"
             ]
           }
         },
@@ -139,48 +133,42 @@
                           "-frontTexture": { "ImageTexture":
                             {
                               "@url": [
-                                "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
-                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"
+                                "../resources/images/all_probes/stpeters_cross/stpeters_front.png"
                               ]
                             }
                           },
                           "-backTexture": { "ImageTexture":
                             {
                               "@url": [
-                                "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
-                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"
+                                "../resources/images/all_probes/stpeters_cross/stpeters_back.png"
                               ]
                             }
                           },
                           "-leftTexture": { "ImageTexture":
                             {
                               "@url": [
-                                "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
-                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"
+                                "../resources/images/all_probes/stpeters_cross/stpeters_left.png"
                               ]
                             }
                           },
                           "-rightTexture": { "ImageTexture":
                             {
                               "@url": [
-                                "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
-                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"
+                                "../resources/images/all_probes/stpeters_cross/stpeters_right.png"
                               ]
                             }
                           },
                           "-topTexture": { "ImageTexture":
                             {
                               "@url": [
-                                "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
-                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"
+                                "../resources/images/all_probes/stpeters_cross/stpeters_top.png"
                               ]
                             }
                           },
                           "-bottomTexture": { "ImageTexture":
                             {
                               "@url": [
-                                "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
-                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"
+                                "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"
                               ]
                             }
                           }
@@ -193,9 +181,8 @@
                             "-parts": [
                               { "ShaderPart":
                                 {
-                                  "@url": [
-                                    "../shaders/x3dom.vs",
-                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"
+                                  "#sourceText": [
+                                    "../shaders/x3dom.vs"
                                   ]
                                 }
                               },
@@ -203,9 +190,8 @@
                                 {
                                   "@DEF": "common",
                                   "@type": "FRAGMENT",
-                                  "@url": [
-                                    "../shaders/common.fs",
-                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"
+                                  "#sourceText": [
+                                    "../shaders/common.fs"
                                   ]
                                 }
                               }
@@ -256,18 +242,16 @@
                             "-parts": [
                               { "ShaderPart":
                                 {
-                                  "@url": [
-                                    "../shaders/x_ite.vs",
-                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"
+                                  "#sourceText": [
+                                    "../shaders/x_ite.vs"
                                   ]
                                 }
                               },
                               { "ShaderPart":
                                 {
                                   "@type": "FRAGMENT",
-                                  "@url": [
-                                    "../shaders/x_itebubbles.fs",
-                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"
+                                  "#sourceText": [
+                                    "../shaders/x_itebubbles.fs"
                                   ]
                                 }
                               }
