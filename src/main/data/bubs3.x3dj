@@ -32,7 +32,7 @@
         },
         {
           "@name": "converted",
-          "@content": "Mon, 04 Sep 2023 07:49:55 GMT"
+          "@content": "Tue, 12 Sep 2023 05:27:02 GMT"
         }
       ]
     },
@@ -121,13 +121,13 @@
                       "@accessType": "inputOutput",
                       "@type": "SFVec3f",
                       "@name": "velocity",
-                      "@value": [ 0.1129443, 0.06067315, 0.08688237 ]
+                      "@value": [ -0.01327456, -0.02347011, -0.03536289 ]
                     },
                     {
                       "@accessType": "inputOutput",
                       "@type": "SFVec3f",
                       "@name": "scalvel",
-                      "@value": [ 0.2530852, 0.1721794, 0.09134769 ]
+                      "@value": [ 0.05979596, 0.3563865, 0.2168763 ]
                     },
                     {
                       "@accessType": "inputOnly",
@@ -234,13 +234,13 @@
                       "@accessType": "inputOutput",
                       "@type": "SFVec3f",
                       "@name": "velocity",
-                      "@value": [ -0.09711205, 0.1228946, -0.003267985 ]
+                      "@value": [ -0.0998622, 0.003139081, 0.02810815 ]
                     },
                     {
                       "@accessType": "inputOutput",
                       "@type": "SFVec3f",
                       "@name": "scalvel",
-                      "@value": [ 0.2914623, 0.06152691, 0.338846 ]
+                      "@value": [ 0.1655814, 0.1623726, 0.1637138 ]
                     },
                     {
                       "@accessType": "inputOnly",
@@ -347,13 +347,13 @@
                       "@accessType": "inputOutput",
                       "@type": "SFVec3f",
                       "@name": "velocity",
-                      "@value": [ -0.1215099, 0.1190645, -0.123251 ]
+                      "@value": [ 0.09571928, -0.1248566, 0.06359452 ]
                     },
                     {
                       "@accessType": "inputOutput",
                       "@type": "SFVec3f",
                       "@name": "scalvel",
-                      "@value": [ 0.1269993, 0.351457, 0.3674114 ]
+                      "@value": [ 0.131993, 0.1141726, 0.1781159 ]
                     },
                     {
                       "@accessType": "inputOnly",
@@ -460,13 +460,13 @@
                       "@accessType": "inputOutput",
                       "@type": "SFVec3f",
                       "@name": "velocity",
-                      "@value": [ -0.03823405, 0.02679918, 0.02780823 ]
+                      "@value": [ 0.0009963431, -0.0347736, 0.04216204 ]
                     },
                     {
                       "@accessType": "inputOutput",
                       "@type": "SFVec3f",
                       "@name": "scalvel",
-                      "@value": [ 0.08937837, 0.3078429, 0.1852641 ]
+                      "@value": [ 0.2079803, 0.1869066, 0.1194412 ]
                     },
                     {
                       "@accessType": "inputOnly",

@@ -3,7 +3,7 @@
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="sphereflowers.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="created" content="Jan 17 2022"></meta>
-<meta name="modified" content="Sep 03 2023"></meta>
+<meta name="modified" content="Sep 3 2023"></meta>
 <meta name="description" content="5 or more prismatic flowers"></meta>
 <meta name="generator" content="X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
 <component name="Scripting" level="1"></component>
@@ -15,7 +15,7 @@
 <component name="Grouping" level="3"></component>
 <component name="Core" level="1"></component>
 </head>
-<Scene><ExternProtoDeclare name="FlowerProto" url="&quot;../personal/flowerproto.json#FlowerProto&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto&quot;"><field accessType="inputOutput" type="MFString" name="vertex"></field>
+<Scene><ExternProtoDeclare name="FlowerProto" url="&quot;../personal/flowerproto.json#FlowerProto&quot;"><field accessType="inputOutput" type="MFString" name="vertex"></field>
 <field accessType="inputOutput" type="MFString" name="fragment"></field>
 </ExternProtoDeclare>
 <ProtoDeclare name="flower"><ProtoInterface></ProtoInterface>
@@ -26,7 +26,7 @@
 </ProtoBody>
 </ProtoDeclare>
 <NavigationInfo></NavigationInfo>
-<Background frontUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png&quot;" backUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png&quot;" leftUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_left.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png&quot;" rightUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_right.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png&quot;" topUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_top.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/src/main/resourcesall_probes/stpeters_cross/stpeters_top.png&quot;" bottomUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;"></Background>
+<Background frontUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot;" backUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot;" leftUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_left.png&quot;" rightUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_right.png&quot;" topUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_top.png&quot;" bottomUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;"></Background>
 <Group><ProtoInstance name="flower"></ProtoInstance>
 <ProtoInstance name="flower"></ProtoInstance>
 <ProtoInstance name="flower"></ProtoInstance>
@@ -34,9 +34,6 @@
 <ProtoInstance name="flower"></ProtoInstance>
 <ProtoInstance name="flower"></ProtoInstance>
 <TimeSensor DEF="SongTime" loop="true"></TimeSensor>
-<Sound minBack="20" minFront="20" maxBack="100" maxFront="100"><AudioClip containerField="source" DEF="AudioClip" description="Chandubabamusic #1" url="&quot;../resources/chandubabamusic1.wav&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav&quot;"></AudioClip>
-</Sound>
 </Group>
-<ROUTE fromNode="SongTime" fromField="cycleTime" toNode="AudioClip" toField="startTime"></ROUTE>
 </Scene>
 </X3D>
