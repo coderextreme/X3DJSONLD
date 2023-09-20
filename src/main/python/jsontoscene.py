@@ -3,7 +3,7 @@ import json
 import pprint
 from xml.etree import ElementTree as ET
 from X3Dautoclass import X3dClassLookup
-from X3DfieldTypes import X3dFieldTypesLookup
+# from X3DfieldTypes import X3dFieldTypesLookup
 from X3Dmethods import X3dMethodLookup
 from X3DaccessTypes import X3dAccessTypesLookup
 import numbers
@@ -74,6 +74,7 @@ def buildX3dObject(parentname, parentvalue, propertyname, propertyvalue, indent=
                 if x in ("#comment"):
                     print("1. Trying to set comment %s = %s" % (x, o))
                     comment = Comment(o)
+                    # TODO, this should append to children
                     setattr(x3dout, "children", comment)
                 elif x in ("JSON schema", "encoding", "@xsd:noNamespaceSchemaLocation"):
                     continue
@@ -82,6 +83,7 @@ def buildX3dObject(parentname, parentvalue, propertyname, propertyvalue, indent=
                     field = buildX3d(tag, propertyvalue, x, o, indent+2)
                     print(f"Warning, Field is {x}.{field} tag {tag} prop {propertyname} value {o}")
                     if field is not None:
+                        # TODO, this should check access type
                         setattr(x3dout, x, field);
                 elif tag is not None and not isinstance(tag, numbers.Real) and not tag.startswith("-") and not tag.startswith("@"):
                     print("3. Trying to set %s %s %s %s" % (tag, propertyname, x, o))
