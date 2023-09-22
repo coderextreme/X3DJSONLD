@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-  "title": "X3D V4.0 JSON Schema, generated 2023/09/02 23:13:26",
+  "title": "X3D V4.0 JSON Schema, generated 2023/09/22 12:42:46",
   "description": "Experimental JSON Schema for X3D V4.0",
   "type": "object",
   "properties": {
@@ -11827,6 +11827,13 @@
             "-motions": {
               "$ref": "#/$defs/-HAnimMotionMFNode"
             },
+            "@motionsEnabled": {
+              "$comment": "MFBool inputOutput",
+              "type": "array",
+              "items": {
+                "type": "boolean"
+              }
+            },
             "@name": {
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -12418,11 +12425,8 @@
               "$ref": "#/$defs/IS"
             },
             "@channels": {
-              "$comment": "MFString inputOutput",
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
+              "$comment": "SFString inputOutput",
+              "type": "string"
             },
             "@channelsEnabled": {
               "$comment": "MFBool inputOutput",
@@ -12461,11 +12465,8 @@
               "type": "integer"
             },
             "@joints": {
-              "$comment": "MFString inputOutput",
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
+              "$comment": "SFString inputOutput",
+              "type": "string"
             },
             "@loa": {
               "default": -1,
