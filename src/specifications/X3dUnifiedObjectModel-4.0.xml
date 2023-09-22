@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2023-07-02-07:00 12:06:21.6806626-07:00 -->
+<!-- Generated 2023-09-22-05:00 08:37:04.7286916-05:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                         version="4.0"
                         xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -3847,6 +3847,7 @@
          <enumeration value="modulationTypeDetail"/>
          <enumeration value="modulationTypeSystem"/>
          <enumeration value="momentsOfInertia"/>
+         <enumeration value="motionsEnabled"/>
          <enumeration value="motor1Axis"/>
          <enumeration value="motor2Axis"/>
          <enumeration value="motor3Axis"/>
@@ -21279,6 +21280,10 @@
                     accessType="inputOutput"
                     acceptableNodeTypes="HAnimMotion"
                     description="Contains any HAnimMotion nodes that can animate the HAnimHumanoid."/>
+            <field name="motionsEnabled"
+                    type="MFBool"
+                    accessType="inputOutput"
+                    description="Array of boolean values corresponding to HAnimMotion nodes indicating which can animate the HAnimHumanoid."/>
             <field name="name"
                     type="SFString"
                     accessType="inputOutput"
@@ -22476,11 +22481,11 @@
       </ConcreteNode>
       <ConcreteNode name="HAnimMotion">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/hanim.html#HAnimMotion"
-                               appinfo="An HAnimMotion node supports discrete frame-by-frame playback for H-Anim motion data animation.">
+                               appinfo="An HAnimMotion node supports discrete frame-by-frame playback for HAnim motion data animation.">
             <componentInfo name="HAnim" level="2"/>
             <Inheritance baseType="X3DChildNode"/>
             <field name="channels"
-                    type="MFString"
+                    type="SFString"
                     accessType="inputOutput"
                     description="list of number of channels for transformation, followed by transformation type of each channel of data."/>
             <field name="channelsEnabled"
@@ -22515,7 +22520,8 @@
             <field name="frameCount"
                     type="SFInt32"
                     accessType="outputOnly"
-                    minInclusive="0"/>
+                    minInclusive="0"
+                    description="frameCount is computed at run time and indicates the total number of frames present in the animation, equaling the number of sets of channel data rows present in the values array."/>
             <field name="frameDuration"
                     type="SFTime"
                     accessType="inputOutput"
@@ -22540,7 +22546,7 @@
                     acceptableNodeTypes="IS"
                     inheritedFrom="X3DNode"/>
             <field name="joints"
-                    type="MFString"
+                    type="SFString"
                     accessType="inputOutput"
                     description="joints field lists names of joints that raw motion data is to be applied to."/>
             <field name="loa"
