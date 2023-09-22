@@ -1,10 +1,17 @@
+import pip
+pip.main(['install', 'x3d', '--user'])
+
 import bpy
 import sys
 import bmesh
 import json
+import pprint
 from anytree import Node, RenderTree
+from x3d import HAnimMotion
+from x3d import MFFloat
+import numpy
 
-output_path = "BlenderAnimations.json"
+# output_path = "BlenderAnimations.json"
 
 # bpy.ops.import_scene.fbx(filepath = "../../Tufani/LILY_7_3_BLEND.fbx")
 bpy.ops.wm.open_mainfile(filepath="LILY_7_3_BLEND.blend")
@@ -83,48 +90,76 @@ if armature:
 #            outputWeights(vertex_groups)
 
 if armature:
-    # Get the animation data for the armature
+  bpy.context.view_layer.objects.active = armature
+  bpy.ops.object.mode_set(mode='POSE')
+  if armature:
+        animation_data = armature.animation_data
+        if animation_data:
+            action = animation_data.action
+            if action:
+                values = []
+                for frame in range(int(action.frame_range.x), int(action.frame_range.y) + 1):
+                    # frame is frame number
+                    bpy.context.scene.frame_set(frame)
+                    print(f"Exporting frame {frame}")
+                    for bone in armature.pose.bones:
+                        values.append(bone.location[0]) # location
+                        values.append(bone.location[1]) # location
+                        values.append(bone.location[2]) # location
+                        values.append(bone.rotation_euler[0]) # rotation_euler
+                        values.append(bone.rotation_euler[1]) # rotation_euler
+                        values.append(bone.rotation_euler[2]) # rotation_euler
+                        # values.append(bone.scale[0]) # scale
+                        # values.append(bone.scale[1]) # scale
+                        # values.append(bone.scale[2]) # scale
+                numbones = len(armature.pose.bones)
+                node = HAnimMotion(
+                    channels="6 Xposition Yposition Zposition Xrotation Yrotation Zrotation " * numbones,
+                    joints=" ".join(bone.name for bone in armature.pose.bones),
+                    values=MFFloat(values)
+                    )
+                print(f"{node}")
+            else:
+                print("No animation data associated with the armature.")
+        else:
+            print("No animation data found for the armature.")
+  else:
+      print("No armature found in the scene.")
+exit()
+if armature:
     animation_data = armature.animation_data
     if animation_data:
-        # Access the action (animation) associated with the armature
         action = animation_data.action
         if action:
-            # Create a data structure to store animation data
-            animation_data = {
-                "frames": [],
-                "bone_animations": {}
-            }
-            
-            # Collect animation data for each frame
+            values = []
             for frame in range(int(action.frame_range.x), int(action.frame_range.y) + 1):
+                # frame is frame number
                 bpy.context.scene.frame_set(frame)
-                
-                frame_data = {
-                    "frame_number": frame,
-                    "bone_transforms": {}
-                }
-                
-                # Collect bone transformation data for each bone
                 for bone in armature.pose.bones:
-                    bone_data = {
-                        "location": bone.location[:],
-                        "rotation": bone.rotation_euler[:],
-                        "scale": bone.scale[:]
-                    }
-                    frame_data["bone_transforms"][bone.name] = bone_data
-                
-                animation_data["frames"].append(frame_data)
-                
-            # Export the animation data to your custom format
-            with open(output_path, 'w') as file:
-                # Implement your custom export format logic here
-                # Write animation_data to the file in your desired format
-                file.write(json.dumps(animation_data))
-                
-            print(f"Animation data exported to {output_path}")
+                    values.append(bone.location[0]) # location
+                    values.append(bone.location[1]) # location
+                    values.append(bone.location[2]) # location
+                    values.append(bone.rotation_euler[0]) # rotation_euler
+                    values.append(bone.rotation_euler[1]) # rotation_euler
+                    values.append(bone.rotation_euler[2]) # rotation_euler
+                    # values.append(bone.scale[0]) # scale
+                    # values.append(bone.scale[1]) # scale
+                    # values.append(bone.scale[2]) # scale
+            numbones = len(armature.pose.bones)
+            hAnimMotion = HAnimMotion(
+                channels="6 Xposition Yposition Zposition Xrotation Yrotation Zrotation " * numbones,
+                joints=" ".join(bone.name for bone in armature.pose.bones),
+                values=MFFloat(values)
+                )
+            print(hAnimMotion.VRML())
         else:
             print("No animation data associated with the armature.")
     else:
         print("No animation data found for the armature.")
 else:
     print("No armature found in the scene.")
+
+timers = bpy.app.timers
+
+for timer in timers:
+    print(timer)
