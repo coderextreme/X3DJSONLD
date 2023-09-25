@@ -98,6 +98,10 @@ close(TABLE);
 print STDOUT << "HUMANHEADER";
 import bpy
 
+# remove initial cube
+objs = bpy.data.objects
+objs.remove(objs["Cube"], do_unlink=True)
+
 skeleton = bpy.data.objects.new("Armature", bpy.data.armatures.new("Armature"))
 bpy.context.collection.objects.link(skeleton)
 bpy.context.view_layer.objects.active = skeleton
@@ -141,4 +145,8 @@ for segment in segments:
 
 # Exit edit mode
 bpy.ops.object.mode_set(mode='OBJECT')
+bpy.ops.export_scene.x3dv(filepath="blenderSkeleton.json", export_format="JSON")
+bpy.ops.export_scene.x3dv(filepath="blenderSkeleton.html", export_format="HTML")
+bpy.ops.export_scene.x3dv(filepath="blenderSkeleton.x3d", export_format="X3D")
+bpy.ops.export_scene.x3dv(filepath="blenderSkeleton.x3dv", export_format="X3DV")
 HUMANFOOTER
