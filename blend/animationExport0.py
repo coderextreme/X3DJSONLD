@@ -1,6 +1,3 @@
-import pip
-pip.main(['install', 'x3d', '--user'])
-
 import bpy
 import sys
 import bmesh
@@ -125,7 +122,7 @@ if armature:
             print("No animation data found for the armature.")
   else:
       print("No armature found in the scene.")
-exit()
+
 if armature:
     animation_data = armature.animation_data
     if animation_data:
