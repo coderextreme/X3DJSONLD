@@ -45,7 +45,7 @@ sub printSegment {
 	$segments .= " " x $l3.		'"strategy": "CUBE",'."\n";
         $segments .= " " x $l3.		'"inherit_scale": "FULL",'."\n";
         $segments .= " " x $l3.		'"rigify": {},'."\n";
-        $segments .= " " x $l3.		'"roll": 3.1415927410125732,'."\n";
+        $segments .= " " x $l3.		'"roll": 0,'."\n";  # rotation of bone around it's length
         $segments .= " " x $l3.		'"use_connect": false,'."\n";
         $segments .= " " x $l3.		'"use_inherit_rotation": true,'."\n";
         $segments .= " " x $l3.		'"use_local_location": true'."\n";
