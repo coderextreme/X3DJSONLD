@@ -6,22 +6,24 @@ use warnings;
 # STDIN -- hierarchy file
 # STDOUT -- python output
 
+my $scale = 1;
+
 my %joints = ();
 my $segments = "";
 
 sub printPython {
 	my($prev) = @_;  # $prev is $child
-	$prev->{line} =~ /([ |]*)(.*) : (.*)/;
+	$prev->{line} =~ /([ |]*)(.*)[ \t]+:[ \t]+(.*)/;
 	my $parent_indent = length($1);
 	my $parent_joint = $2;
+	$parent_joint =~ s/\r//;
 	my $parent_segment = $3;
 	if ($joints{$parent_joint}) {
 		my $cenpj = $joints{$parent_joint};
 		my @cenpj = split(/[ ,\t]+/, $cenpj);
-		$cenpj = "$cenpj[0], $cenpj[2], $cenpj[1]";
+		$cenpj = ($cenpj[0]*$scale).", ".($cenpj[2]*$scale).", ".($cenpj[1]*$scale);
 		# print STDOUT " " x $prev->{indent}. '("'.$parent_joint.'", ('.$cenpj.'), (0, 0, 0)),'."\n";
 		foreach my $jnt (@{$prev->{children}}) {   # go through child joints
-			&printPython($jnt);
 			#if ($jnt->{joint} =~ m/_tarsal_interphalangeal_1$/) { # we need to take this out
 				# skip
 				#} else {
@@ -31,13 +33,14 @@ sub printPython {
 				} else {
 					$cencj = $joints{$jnt->{joint}};
 				}
-				$segments .= " " x $jnt->{indent}. '("'.$parent_joint.'", "'.$jnt->{joint}.'"),'."\n";
+				$segments .= " " x $jnt->{indent}. '("'.$parent_segment.'", "'.$jnt->{segment}.'"),'."\n";
 				# print STDERR $segments;
 				# print STDERR $cencj."\n";
 				my @cencj = split(/[ ,\t]+/, $cencj);
-				$cencj = "$cencj[0], $cencj[2], $cencj[1]";
-				print STDOUT " " x $jnt->{indent}. '("'.$jnt->{joint}.'", ('.$cencj.'), ('.$cenpj.')),'."\n";
+				$cencj = ($cencj[0]*$scale).", ".($cencj[2]*$scale).", ".($cencj[1]*$scale);
+				print STDOUT " " x $jnt->{indent}. '("'.$jnt->{segment}.'", ('.$cencj.'), ('.$cenpj.')),'."\n";
 				#}
+			&printPython($jnt);
 		}
 	}
 }
@@ -53,6 +56,7 @@ sub readHierarchy {
 		my $indent = length($1);
 		my $joint = $2;
 		my $segment = $3;
+		$segment =~ s/\r//;
 		my $obj = {};
 		$obj->{line} = $line;
 		$obj->{indent} = $indent;
@@ -83,7 +87,7 @@ sub readHierarchy {
 	return $prev;
 }
 
-open(TABLE, "sh sed.sh|");
+open(TABLE, "sh ./sed.sh|");
 
 while(<TABLE>) {
 	chomp;
@@ -108,29 +112,30 @@ bpy.context.view_layer.objects.active = skeleton
 skeleton.select_set(True)
 bpy.ops.object.mode_set(mode='EDIT')
 
-# Create joints
-joints = [
+# Create bones
+bones = [
 HUMANHEADER
 my $prev = &readHierarchy();
 $prev->{line} =~ /([ |]*)(.*) : (.*)/;
 my $root_indent = length($1);
+$root_indent =~ s/\r//;
 my $cenrj = $joints{$prev->{joint}};
 if ($cenrj) {
 	my @cenrj = split(/[ ,\t]+/, $cenrj);
 	$cenrj = "$cenrj[0], $cenrj[2], $cenrj[1]";
-	print STDOUT " " x $root_indent. '("'.$prev->{joint}.'", ('.$cenrj.'), (0, 0, 0)),'."\n";
+	print STDOUT " " x $root_indent. '("'.$prev->{segment}.'", ('.$cenrj.'), (0, 0, 0)),'."\n";
 }
 &printPython($prev);
 print STDOUT << "HUMANBODY";
 ]\n
-for joint in joints:
-    joint_name, joint_start, joint_end = joint
-    bpy.ops.armature.bone_primitive_add(name=joint_name)
-    new_segment = skeleton.data.edit_bones[joint_name]
-    new_segment.head = joint_start
-    new_segment.tail = joint_end
+for bone in bones:
+    bone_name, bone_start, bone_end = bone
+    bpy.ops.armature.bone_primitive_add(name=bone_name)
+    new_segment = skeleton.data.edit_bones[bone_name]
+    new_segment.head = bone_start
+    new_segment.tail = bone_end
 
-# Connect joints
+# Connect bones
 segments = [
 HUMANBODY
 print STDOUT $segments;
@@ -138,9 +143,9 @@ print STDOUT << "HUMANFOOTER";
 ]
 
 for segment in segments:
-    parent_joint, child_joint = segment
-    parent = skeleton.data.edit_bones[parent_joint]
-    child = skeleton.data.edit_bones[child_joint]
+    parent_bone, child_bone = segment
+    parent = skeleton.data.edit_bones[parent_bone]
+    child = skeleton.data.edit_bones[child_bone]
     child.parent = parent
 
 # Exit edit mode
