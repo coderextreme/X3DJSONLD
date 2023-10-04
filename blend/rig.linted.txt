@@ -1,0 +1,3047 @@
+{
+  "pelvis": {
+    "head": {
+      "cube_name": "humanoid_root",
+      "default_position": [
+        -0.0002,
+        -0.1178,
+        0.8174
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "sacrum",
+    "tail": {
+      "cube_name": "sacroiliac",
+      "default_position": [
+        -0.0002,
+        -0.1178,
+        0.6986
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_thigh": {
+    "head": {
+      "cube_name": "sacroiliac",
+      "default_position": [
+        -0.0002,
+        -0.1178,
+        0.6986
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "pelvis",
+    "tail": {
+      "cube_name": "l_hip",
+      "default_position": [
+        0.0945,
+        -0.1202,
+        0.8181
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_calf": {
+    "head": {
+      "cube_name": "l_hip",
+      "default_position": [
+        0.0945,
+        -0.1202,
+        0.8181
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_thigh",
+    "tail": {
+      "cube_name": "l_knee",
+      "default_position": [
+        0.0924,
+        -0.1213,
+        0.4003
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_talus": {
+    "head": {
+      "cube_name": "l_knee",
+      "default_position": [
+        0.0924,
+        -0.1213,
+        0.4003
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_calf",
+    "tail": {
+      "cube_name": "l_talocrural",
+      "default_position": [
+        0.0886,
+        -0.1123,
+        0.0869
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_navicular": {
+    "head": {
+      "cube_name": "l_talocrural",
+      "default_position": [
+        0.0886,
+        -0.1123,
+        0.0869
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_talus",
+    "tail": {
+      "cube_name": "l_talocalcaneonavicular",
+      "default_position": [
+        0.0781,
+        -0.097,
+        0.0283
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_cuneiform_1": {
+    "head": {
+      "cube_name": "l_talocalcaneonavicular",
+      "default_position": [
+        0.0781,
+        -0.097,
+        0.0283
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_navicular",
+    "tail": {
+      "cube_name": "l_cuneonavicular_1",
+      "default_position": [
+        0.0672,
+        -0.0835,
+        0.0235
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_metatarsal_1": {
+    "head": {
+      "cube_name": "l_cuneonavicular_1",
+      "default_position": [
+        0.0672,
+        -0.0835,
+        0.0235
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_cuneiform_1",
+    "tail": {
+      "cube_name": "l_tarsometatarsal_1",
+      "default_position": [
+        0.0644,
+        -0.0577,
+        0.0147
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_tarsal_proximal_phalanx_1": {
+    "head": {
+      "cube_name": "l_tarsometatarsal_1",
+      "default_position": [
+        0.0644,
+        -0.0577,
+        0.0147
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_metatarsal_1",
+    "tail": {
+      "cube_name": "l_metatarsophalangeal_1",
+      "default_position": [
+        0.0619,
+        -0.0083,
+        0.0059
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_tarsal_distal_phalanx_1": {
+    "head": {
+      "cube_name": "l_metatarsophalangeal_1",
+      "default_position": [
+        0.0619,
+        -0.0083,
+        0.0059
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_tarsal_proximal_phalanx_1",
+    "tail": {
+      "cube_name": "l_tarsal_interphalangeal_1",
+      "default_position": [
+        0,
+        0,
+        0
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_cuneiform_2": {
+    "head": {
+      "cube_name": "l_talocalcaneonavicular",
+      "default_position": [
+        0.0781,
+        -0.097,
+        0.0283
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_navicular",
+    "tail": {
+      "cube_name": "l_cuneonavicular_2",
+      "default_position": [
+        0.0812,
+        -0.0805,
+        0.025
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_metatarsal_2": {
+    "head": {
+      "cube_name": "l_cuneonavicular_2",
+      "default_position": [
+        0.0812,
+        -0.0805,
+        0.025
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_cuneiform_2",
+    "tail": {
+      "cube_name": "l_tarsometatarsal_2",
+      "default_position": [
+        0.08,
+        -0.0608,
+        0.0175
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_tarsal_proximal_phalanx_2": {
+    "head": {
+      "cube_name": "l_tarsometatarsal_2",
+      "default_position": [
+        0.08,
+        -0.0608,
+        0.0175
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_metatarsal_2",
+    "tail": {
+      "cube_name": "l_metatarsophalangeal_2",
+      "default_position": [
+        0.0824,
+        -0.004,
+        0.0064
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_tarsal_middle_phalanx_2": {
+    "head": {
+      "cube_name": "l_metatarsophalangeal_2",
+      "default_position": [
+        0.0824,
+        -0.004,
+        0.0064
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_tarsal_proximal_phalanx_2",
+    "tail": {
+      "cube_name": "l_tarsal_proximal_interphalangeal_2",
+      "default_position": [
+        0.0841,
+        0.0121,
+        0.0041
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_tarsal_distal_phalanx_2": {
+    "head": {
+      "cube_name": "l_tarsal_proximal_interphalangeal_2",
+      "default_position": [
+        0.0841,
+        0.0121,
+        0.0041
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_tarsal_middle_phalanx_2",
+    "tail": {
+      "cube_name": "l_tarsal_distal_interphalangeal_2",
+      "default_position": [
+        0.0841,
+        0.0216,
+        0.0013
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_cuneiform_3": {
+    "head": {
+      "cube_name": "l_talocalcaneonavicular",
+      "default_position": [
+        0.0781,
+        -0.097,
+        0.0283
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_navicular",
+    "tail": {
+      "cube_name": "l_cuneonavicular_3",
+      "default_position": [
+        0.0928,
+        -0.0821,
+        0.0248
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_metatarsal_3": {
+    "head": {
+      "cube_name": "l_cuneonavicular_3",
+      "default_position": [
+        0.0928,
+        -0.0821,
+        0.0248
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_cuneiform_3",
+    "tail": {
+      "cube_name": "l_tarsometatarsal_3",
+      "default_position": [
+        0.0944,
+        -0.0625,
+        0.0175
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_tarsal_proximal_phalanx_3": {
+    "head": {
+      "cube_name": "l_tarsometatarsal_3",
+      "default_position": [
+        0.0944,
+        -0.0625,
+        0.0175
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_metatarsal_3",
+    "tail": {
+      "cube_name": "l_metatarsophalangeal_3",
+      "default_position": [
+        0.0963,
+        -0.0065,
+        0.0065
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_tarsal_middle_phalanx_3": {
+    "head": {
+      "cube_name": "l_metatarsophalangeal_3",
+      "default_position": [
+        0.0963,
+        -0.0065,
+        0.0065
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_tarsal_proximal_phalanx_3",
+    "tail": {
+      "cube_name": "l_tarsal_proximal_interphalangeal_3",
+      "default_position": [
+        0.0987,
+        0.0086,
+        0.0034
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_tarsal_distal_phalanx_3": {
+    "head": {
+      "cube_name": "l_tarsal_proximal_interphalangeal_3",
+      "default_position": [
+        0.0987,
+        0.0086,
+        0.0034
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_tarsal_middle_phalanx_3",
+    "tail": {
+      "cube_name": "l_tarsal_distal_interphalangeal_3",
+      "default_position": [
+        0.1002,
+        0.0178,
+        0.0013
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_calcaneus": {
+    "head": {
+      "cube_name": "l_talocrural",
+      "default_position": [
+        0.0886,
+        -0.1123,
+        0.0869
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_talus",
+    "tail": {
+      "cube_name": "l_calcaneocuboid",
+      "default_position": [
+        0.0889,
+        -0.1278,
+        0.0494
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_cuboid": {
+    "head": {
+      "cube_name": "l_calcaneocuboid",
+      "default_position": [
+        0.0889,
+        -0.1278,
+        0.0494
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_calcaneus",
+    "tail": {
+      "cube_name": "l_transversetarsal",
+      "default_position": [
+        0.1105,
+        -0.0998,
+        0.0267
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_metatarsal_4": {
+    "head": {
+      "cube_name": "l_transversetarsal",
+      "default_position": [
+        0.1105,
+        -0.0998,
+        0.0267
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_cuboid",
+    "tail": {
+      "cube_name": "l_tarsometatarsal_4",
+      "default_position": [
+        0.1063,
+        -0.0634,
+        0.016
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_tarsal_proximal_phalanx_4": {
+    "head": {
+      "cube_name": "l_tarsometatarsal_4",
+      "default_position": [
+        0.1063,
+        -0.0634,
+        0.016
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_metatarsal_4",
+    "tail": {
+      "cube_name": "l_metatarsophalangeal_4",
+      "default_position": [
+        0.1097,
+        -0.0107,
+        0.0058
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_tarsal_middle_phalanx_4": {
+    "head": {
+      "cube_name": "l_metatarsophalangeal_4",
+      "default_position": [
+        0.1097,
+        -0.0107,
+        0.0058
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_tarsal_proximal_phalanx_4",
+    "tail": {
+      "cube_name": "l_tarsal_proximal_interphalangeal_4",
+      "default_position": [
+        0.114,
+        0.0044,
+        0.0037
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_tarsal_distal_phalanx_4": {
+    "head": {
+      "cube_name": "l_tarsal_proximal_interphalangeal_4",
+      "default_position": [
+        0.114,
+        0.0044,
+        0.0037
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_tarsal_middle_phalanx_4",
+    "tail": {
+      "cube_name": "l_tarsal_distal_interphalangeal_4",
+      "default_position": [
+        0.1155,
+        0.0118,
+        0.0008
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_metatarsal_5": {
+    "head": {
+      "cube_name": "l_transversetarsal",
+      "default_position": [
+        0.1105,
+        -0.0998,
+        0.0267
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_cuboid",
+    "tail": {
+      "cube_name": "l_tarsometatarsal_5",
+      "default_position": [
+        0.1206,
+        -0.0671,
+        0.0124
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_tarsal_proximal_phalanx_5": {
+    "head": {
+      "cube_name": "l_tarsometatarsal_5",
+      "default_position": [
+        0.1206,
+        -0.0671,
+        0.0124
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_metatarsal_5",
+    "tail": {
+      "cube_name": "l_metatarsophalangeal_5",
+      "default_position": [
+        0.1239,
+        -0.0153,
+        0.0051
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_tarsal_middle_phalanx_5": {
+    "head": {
+      "cube_name": "l_metatarsophalangeal_5",
+      "default_position": [
+        0.1239,
+        -0.0153,
+        0.0051
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_tarsal_proximal_phalanx_5",
+    "tail": {
+      "cube_name": "l_tarsal_proximal_interphalangeal_5",
+      "default_position": [
+        0.1262,
+        -0.0077,
+        0.0023
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_tarsal_distal_phalanx_5": {
+    "head": {
+      "cube_name": "l_tarsal_proximal_interphalangeal_5",
+      "default_position": [
+        0.1262,
+        -0.0077,
+        0.0023
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_tarsal_middle_phalanx_5",
+    "tail": {
+      "cube_name": "l_tarsal_distal_interphalangeal_5",
+      "default_position": [
+        0.1271,
+        0,
+        0
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_thigh": {
+    "head": {
+      "cube_name": "sacroiliac",
+      "default_position": [
+        -0.0002,
+        -0.1178,
+        0.6986
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "pelvis",
+    "tail": {
+      "cube_name": "r_hip",
+      "default_position": [
+        -0.0948,
+        -0.1202,
+        0.8181
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_calf": {
+    "head": {
+      "cube_name": "r_hip",
+      "default_position": [
+        -0.0948,
+        -0.1202,
+        0.8181
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_thigh",
+    "tail": {
+      "cube_name": "r_knee",
+      "default_position": [
+        -0.0928,
+        -0.1213,
+        0.4003
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_talus": {
+    "head": {
+      "cube_name": "r_knee",
+      "default_position": [
+        -0.0928,
+        -0.1213,
+        0.4003
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_calf",
+    "tail": {
+      "cube_name": "r_talocrural",
+      "default_position": [
+        -0.0886,
+        -0.1123,
+        0.0869
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_navicular": {
+    "head": {
+      "cube_name": "r_talocrural",
+      "default_position": [
+        -0.0886,
+        -0.1123,
+        0.0869
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_talus",
+    "tail": {
+      "cube_name": "r_talocalcaneonavicular",
+      "default_position": [
+        -0.0781,
+        -0.097,
+        0.0283
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_cuneiform_1": {
+    "head": {
+      "cube_name": "r_talocalcaneonavicular",
+      "default_position": [
+        -0.0781,
+        -0.097,
+        0.0283
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_navicular",
+    "tail": {
+      "cube_name": "r_cuneonavicular_1",
+      "default_position": [
+        -0.0672,
+        -0.0835,
+        0.0235
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_metatarsal_1": {
+    "head": {
+      "cube_name": "r_cuneonavicular_1",
+      "default_position": [
+        -0.0672,
+        -0.0835,
+        0.0235
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_cuneiform_1",
+    "tail": {
+      "cube_name": "r_tarsometatarsal_1",
+      "default_position": [
+        -0.0644,
+        -0.0577,
+        0.0147
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_tarsal_proximal_phalanx_1": {
+    "head": {
+      "cube_name": "r_tarsometatarsal_1",
+      "default_position": [
+        -0.0644,
+        -0.0577,
+        0.0147
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_metatarsal_1",
+    "tail": {
+      "cube_name": "r_metatarsophalangeal_1",
+      "default_position": [
+        -0.0619,
+        -0.0083,
+        0.0059
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_tarsal_distal_phalanx_1": {
+    "head": {
+      "cube_name": "r_metatarsophalangeal_1",
+      "default_position": [
+        -0.0619,
+        -0.0083,
+        0.0059
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_tarsal_proximal_phalanx_1",
+    "tail": {
+      "cube_name": "r_tarsal_interphalangeal_1",
+      "default_position": [
+        0,
+        0,
+        0
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_cuneiform_2": {
+    "head": {
+      "cube_name": "r_talocalcaneonavicular",
+      "default_position": [
+        -0.0781,
+        -0.097,
+        0.0283
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_navicular",
+    "tail": {
+      "cube_name": "r_cuneonavicular_2",
+      "default_position": [
+        -0.0812,
+        -0.0805,
+        0.025
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_metatarsal_2": {
+    "head": {
+      "cube_name": "r_cuneonavicular_2",
+      "default_position": [
+        -0.0812,
+        -0.0805,
+        0.025
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_cuneiform_2",
+    "tail": {
+      "cube_name": "r_tarsometatarsal_2",
+      "default_position": [
+        -0.08,
+        -0.0608,
+        0.0175
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_tarsal_proximal_phalanx_2": {
+    "head": {
+      "cube_name": "r_tarsometatarsal_2",
+      "default_position": [
+        -0.08,
+        -0.0608,
+        0.0175
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_metatarsal_2",
+    "tail": {
+      "cube_name": "r_metatarsophalangeal_2",
+      "default_position": [
+        -0.0823,
+        -0.004,
+        0.0064
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_tarsal_middle_phalanx_2": {
+    "head": {
+      "cube_name": "r_metatarsophalangeal_2",
+      "default_position": [
+        -0.0823,
+        -0.004,
+        0.0064
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_tarsal_proximal_phalanx_2",
+    "tail": {
+      "cube_name": "r_tarsal_proximal_interphalangeal_2",
+      "default_position": [
+        -0.0841,
+        0.0121,
+        0.0041
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_tarsal_distal_phalanx_2": {
+    "head": {
+      "cube_name": "r_tarsal_proximal_interphalangeal_2",
+      "default_position": [
+        -0.0841,
+        0.0121,
+        0.0041
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_tarsal_middle_phalanx_2",
+    "tail": {
+      "cube_name": "r_tarsal_distal_interphalangeal_2",
+      "default_position": [
+        -0.0841,
+        0.0216,
+        0.0013
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_cuneiform_3": {
+    "head": {
+      "cube_name": "r_talocalcaneonavicular",
+      "default_position": [
+        -0.0781,
+        -0.097,
+        0.0283
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_navicular",
+    "tail": {
+      "cube_name": "r_cuneonavicular_3",
+      "default_position": [
+        -0.0928,
+        -0.0821,
+        0.0248
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_metatarsal_3": {
+    "head": {
+      "cube_name": "r_cuneonavicular_3",
+      "default_position": [
+        -0.0928,
+        -0.0821,
+        0.0248
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_cuneiform_3",
+    "tail": {
+      "cube_name": "r_tarsometatarsal_3",
+      "default_position": [
+        -0.0944,
+        -0.0625,
+        0.0175
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_tarsal_proximal_phalanx_3": {
+    "head": {
+      "cube_name": "r_tarsometatarsal_3",
+      "default_position": [
+        -0.0944,
+        -0.0625,
+        0.0175
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_metatarsal_3",
+    "tail": {
+      "cube_name": "r_metatarsophalangeal_3",
+      "default_position": [
+        -0.0963,
+        -0.0065,
+        0.0065
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_tarsal_middle_phalanx_3": {
+    "head": {
+      "cube_name": "r_metatarsophalangeal_3",
+      "default_position": [
+        -0.0963,
+        -0.0065,
+        0.0065
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_tarsal_proximal_phalanx_3",
+    "tail": {
+      "cube_name": "r_tarsal_proximal_interphalangeal_3",
+      "default_position": [
+        -0.0987,
+        0.0086,
+        0.0034
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_tarsal_distal_phalanx_3": {
+    "head": {
+      "cube_name": "r_tarsal_proximal_interphalangeal_3",
+      "default_position": [
+        -0.0987,
+        0.0086,
+        0.0034
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_tarsal_middle_phalanx_3",
+    "tail": {
+      "cube_name": "r_tarsal_distal_interphalangeal_3",
+      "default_position": [
+        -0.1002,
+        0.0178,
+        0.0013
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_calcaneus": {
+    "head": {
+      "cube_name": "r_talocrural",
+      "default_position": [
+        -0.0886,
+        -0.1123,
+        0.0869
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_talus",
+    "tail": {
+      "cube_name": "r_calcaneocuboid",
+      "default_position": [
+        -0.0889,
+        -0.1278,
+        0.0494
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_cuboid": {
+    "head": {
+      "cube_name": "r_calcaneocuboid",
+      "default_position": [
+        -0.0889,
+        -0.1278,
+        0.0494
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_calcaneus",
+    "tail": {
+      "cube_name": "r_transversetarsal",
+      "default_position": [
+        -0.1105,
+        -0.0998,
+        0.0267
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_metatarsal_4": {
+    "head": {
+      "cube_name": "r_transversetarsal",
+      "default_position": [
+        -0.1105,
+        -0.0998,
+        0.0267
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_cuboid",
+    "tail": {
+      "cube_name": "r_tarsometatarsal_4",
+      "default_position": [
+        -0.1063,
+        -0.0634,
+        0.016
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_tarsal_proximal_phalanx_4": {
+    "head": {
+      "cube_name": "r_tarsometatarsal_4",
+      "default_position": [
+        -0.1063,
+        -0.0634,
+        0.016
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_metatarsal_4",
+    "tail": {
+      "cube_name": "r_metatarsophalangeal_4",
+      "default_position": [
+        -0.1097,
+        -0.0107,
+        0.0058
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_tarsal_middle_phalanx_4": {
+    "head": {
+      "cube_name": "r_metatarsophalangeal_4",
+      "default_position": [
+        -0.1097,
+        -0.0107,
+        0.0058
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_tarsal_proximal_phalanx_4",
+    "tail": {
+      "cube_name": "r_tarsal_proximal_interphalangeal_4",
+      "default_position": [
+        -0.114,
+        0.0044,
+        0.0037
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_tarsal_distal_phalanx_4": {
+    "head": {
+      "cube_name": "r_tarsal_proximal_interphalangeal_4",
+      "default_position": [
+        -0.114,
+        0.0044,
+        0.0037
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_tarsal_middle_phalanx_4",
+    "tail": {
+      "cube_name": "r_tarsal_distal_interphalangeal_4",
+      "default_position": [
+        -0.1155,
+        0.0118,
+        0.0008
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_metatarsal_5": {
+    "head": {
+      "cube_name": "r_transversetarsal",
+      "default_position": [
+        -0.1105,
+        -0.0998,
+        0.0267
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_cuboid",
+    "tail": {
+      "cube_name": "r_tarsometatarsal_5",
+      "default_position": [
+        -0.1206,
+        -0.0671,
+        0.0124
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_tarsal_proximal_phalanx_5": {
+    "head": {
+      "cube_name": "r_tarsometatarsal_5",
+      "default_position": [
+        -0.1206,
+        -0.0671,
+        0.0124
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_metatarsal_5",
+    "tail": {
+      "cube_name": "r_metatarsophalangeal_5",
+      "default_position": [
+        -0.1239,
+        -0.0153,
+        0.0051
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_tarsal_middle_phalanx_5": {
+    "head": {
+      "cube_name": "r_metatarsophalangeal_5",
+      "default_position": [
+        -0.1239,
+        -0.0153,
+        0.0051
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_tarsal_proximal_phalanx_5",
+    "tail": {
+      "cube_name": "r_tarsal_proximal_interphalangeal_5",
+      "default_position": [
+        -0.1262,
+        -0.0077,
+        0.0023
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_tarsal_distal_phalanx_5": {
+    "head": {
+      "cube_name": "r_tarsal_proximal_interphalangeal_5",
+      "default_position": [
+        -0.1262,
+        -0.0077,
+        0.0023
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_tarsal_middle_phalanx_5",
+    "tail": {
+      "cube_name": "r_tarsal_distal_interphalangeal_5",
+      "default_position": [
+        -0.1271,
+        0,
+        0
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l5": {
+    "head": {
+      "cube_name": "humanoid_root",
+      "default_position": [
+        -0.0002,
+        -0.1178,
+        0.8174
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "sacrum",
+    "tail": {
+      "cube_name": "vl5",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        0.9169
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l4": {
+    "head": {
+      "cube_name": "vl5",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        0.9169
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l5",
+    "tail": {
+      "cube_name": "vl4",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        0.9412
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l3": {
+    "head": {
+      "cube_name": "vl4",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        0.9412
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l4",
+    "tail": {
+      "cube_name": "vl3",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        0.9574
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l2": {
+    "head": {
+      "cube_name": "vl3",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        0.9574
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l3",
+    "tail": {
+      "cube_name": "vl2",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        0.9738
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l1": {
+    "head": {
+      "cube_name": "vl2",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        0.9738
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l2",
+    "tail": {
+      "cube_name": "vl1",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        0.9911
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "t12": {
+    "head": {
+      "cube_name": "vl1",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        0.9911
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l1",
+    "tail": {
+      "cube_name": "vt12",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        1.0145
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "t11": {
+    "head": {
+      "cube_name": "vt12",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        1.0145
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "t12",
+    "tail": {
+      "cube_name": "vt11",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        1.0381
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "t10": {
+    "head": {
+      "cube_name": "vt11",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        1.0381
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "t11",
+    "tail": {
+      "cube_name": "vt10",
+      "default_position": [
+        -0.0002,
+        -0.1157,
+        1.0552
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "t9": {
+    "head": {
+      "cube_name": "vt10",
+      "default_position": [
+        -0.0002,
+        -0.1157,
+        1.0552
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "t10",
+    "tail": {
+      "cube_name": "vt9",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        1.0699
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "t8": {
+    "head": {
+      "cube_name": "vt9",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        1.0699
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "t9",
+    "tail": {
+      "cube_name": "vt8",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        1.0845
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "t7": {
+    "head": {
+      "cube_name": "vt8",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        1.0845
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "t8",
+    "tail": {
+      "cube_name": "vt7",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        1.1002
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "t6": {
+    "head": {
+      "cube_name": "vt7",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        1.1002
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "t7",
+    "tail": {
+      "cube_name": "vt6",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        1.1131
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "t5": {
+    "head": {
+      "cube_name": "vt6",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        1.1131
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "t6",
+    "tail": {
+      "cube_name": "vt5",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        1.1286
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "t4": {
+    "head": {
+      "cube_name": "vt5",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        1.1286
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "t5",
+    "tail": {
+      "cube_name": "vt4",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        1.1439
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "t3": {
+    "head": {
+      "cube_name": "vt4",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        1.1439
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "t4",
+    "tail": {
+      "cube_name": "vt3",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        1.1623
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "t2": {
+    "head": {
+      "cube_name": "vt3",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        1.1623
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "t3",
+    "tail": {
+      "cube_name": "vt2",
+      "default_position": [
+        -0.0002,
+        -0.1157,
+        1.1871
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "t1": {
+    "head": {
+      "cube_name": "vt2",
+      "default_position": [
+        -0.0002,
+        -0.1157,
+        1.1871
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "t2",
+    "tail": {
+      "cube_name": "vt1",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        1.2109
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "c7": {
+    "head": {
+      "cube_name": "vt1",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        1.2109
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "t1",
+    "tail": {
+      "cube_name": "vc7",
+      "default_position": [
+        -0.0002,
+        -0.1169,
+        1.2368
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "c6": {
+    "head": {
+      "cube_name": "vc7",
+      "default_position": [
+        -0.0002,
+        -0.1169,
+        1.2368
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "c7",
+    "tail": {
+      "cube_name": "vc6",
+      "default_position": [
+        -0.0002,
+        -0.1169,
+        1.249
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "c5": {
+    "head": {
+      "cube_name": "vc6",
+      "default_position": [
+        -0.0002,
+        -0.1169,
+        1.249
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "c6",
+    "tail": {
+      "cube_name": "vc5",
+      "default_position": [
+        -0.0002,
+        -0.1169,
+        1.2613
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "c4": {
+    "head": {
+      "cube_name": "vc5",
+      "default_position": [
+        -0.0002,
+        -0.1169,
+        1.2613
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "c5",
+    "tail": {
+      "cube_name": "vc4",
+      "default_position": [
+        -0.0002,
+        -0.1169,
+        1.2737
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "c3": {
+    "head": {
+      "cube_name": "vc4",
+      "default_position": [
+        -0.0002,
+        -0.1169,
+        1.2737
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "c4",
+    "tail": {
+      "cube_name": "vc3",
+      "default_position": [
+        -0.0002,
+        -0.1169,
+        1.2865
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "c2": {
+    "head": {
+      "cube_name": "vc3",
+      "default_position": [
+        -0.0002,
+        -0.1169,
+        1.2865
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "c3",
+    "tail": {
+      "cube_name": "vc2",
+      "default_position": [
+        -0.0002,
+        -0.1169,
+        1.2982
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "c1": {
+    "head": {
+      "cube_name": "vc2",
+      "default_position": [
+        -0.0002,
+        -0.1169,
+        1.2982
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "c2",
+    "tail": {
+      "cube_name": "vc1",
+      "default_position": [
+        -0.0002,
+        -0.1169,
+        1.3099
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "skull": {
+    "head": {
+      "cube_name": "vc1",
+      "default_position": [
+        -0.0002,
+        -0.1169,
+        1.3099
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "c1",
+    "tail": {
+      "cube_name": "skullbase",
+      "default_position": [
+        -0.0002,
+        -0.1173,
+        1.3041
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_eyelid": {
+    "head": {
+      "cube_name": "skullbase",
+      "default_position": [
+        -0.0002,
+        -0.1173,
+        1.3041
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "skull",
+    "tail": {
+      "cube_name": "l_eyelid_joint",
+      "default_position": [
+        0.0503,
+        -0.0689,
+        1.4157
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_eyelid": {
+    "head": {
+      "cube_name": "skullbase",
+      "default_position": [
+        -0.0002,
+        -0.1173,
+        1.3041
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "skull",
+    "tail": {
+      "cube_name": "r_eyelid_joint",
+      "default_position": [
+        -0.0507,
+        -0.0689,
+        1.4157
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_eyeball": {
+    "head": {
+      "cube_name": "skullbase",
+      "default_position": [
+        -0.0002,
+        -0.1173,
+        1.3041
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "skull",
+    "tail": {
+      "cube_name": "l_eyeball_joint",
+      "default_position": [
+        0.0479,
+        -0.0188,
+        1.3963
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_eyeball": {
+    "head": {
+      "cube_name": "skullbase",
+      "default_position": [
+        -0.0002,
+        -0.1173,
+        1.3041
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "skull",
+    "tail": {
+      "cube_name": "r_eyeball_joint",
+      "default_position": [
+        -0.0483,
+        -0.0188,
+        1.3963
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_eyebrow": {
+    "head": {
+      "cube_name": "skullbase",
+      "default_position": [
+        -0.0002,
+        -0.1173,
+        1.3041
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "skull",
+    "tail": {
+      "cube_name": "l_eyebrow_joint",
+      "default_position": [
+        0.0216,
+        0.0051,
+        1.4053
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_eyebrow": {
+    "head": {
+      "cube_name": "skullbase",
+      "default_position": [
+        -0.0002,
+        -0.1173,
+        1.3041
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "skull",
+    "tail": {
+      "cube_name": "r_eyebrow_joint",
+      "default_position": [
+        -0.0219,
+        0.0051,
+        1.4053
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "jaw": {
+    "head": {
+      "cube_name": "skullbase",
+      "default_position": [
+        -0.0002,
+        -0.1173,
+        1.3041
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "skull",
+    "tail": {
+      "cube_name": "temporomandibular",
+      "default_position": [
+        -0.0002,
+        -0.0865,
+        1.3043
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_clavicle": {
+    "head": {
+      "cube_name": "vt1",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        1.2109
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "t1",
+    "tail": {
+      "cube_name": "l_sternoclavicular",
+      "default_position": [
+        0.1228,
+        -0.1148,
+        1.1833
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_scapula": {
+    "head": {
+      "cube_name": "l_sternoclavicular",
+      "default_position": [
+        0.1228,
+        -0.1148,
+        1.1833
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_clavicle",
+    "tail": {
+      "cube_name": "l_acromioclavicular",
+      "default_position": [
+        0.0383,
+        -0.1157,
+        1.2001
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_upperarm": {
+    "head": {
+      "cube_name": "l_acromioclavicular",
+      "default_position": [
+        0.0383,
+        -0.1157,
+        1.2001
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_scapula",
+    "tail": {
+      "cube_name": "l_shoulder",
+      "default_position": [
+        0.1649,
+        -0.1051,
+        1.17
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_forearm": {
+    "head": {
+      "cube_name": "l_shoulder",
+      "default_position": [
+        0.1649,
+        -0.1051,
+        1.17
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_upperarm",
+    "tail": {
+      "cube_name": "l_elbow",
+      "default_position": [
+        0.1819,
+        -0.1075,
+        0.9202
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_carpal": {
+    "head": {
+      "cube_name": "l_elbow",
+      "default_position": [
+        0.1819,
+        -0.1075,
+        0.9202
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_forearm",
+    "tail": {
+      "cube_name": "l_radiocarpal",
+      "default_position": [
+        0.1818,
+        -0.1069,
+        0.7157
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_trapezium": {
+    "head": {
+      "cube_name": "l_radiocarpal",
+      "default_position": [
+        0.1818,
+        -0.1069,
+        0.7157
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_carpal",
+    "tail": {
+      "cube_name": "l_midcarpal_1",
+      "default_position": [
+        0.1811,
+        -0.0826,
+        0.6975
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_metacarpal_1": {
+    "head": {
+      "cube_name": "l_midcarpal_1",
+      "default_position": [
+        0.1811,
+        -0.0826,
+        0.6975
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_trapezium",
+    "tail": {
+      "cube_name": "l_carpometacarpal_1",
+      "default_position": [
+        0.1803,
+        -0.0759,
+        0.684
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_carpal_proximal_phalanx_1": {
+    "head": {
+      "cube_name": "l_carpometacarpal_1",
+      "default_position": [
+        0.1803,
+        -0.0759,
+        0.684
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_metacarpal_1",
+    "tail": {
+      "cube_name": "l_metacarpophalangeal_1",
+      "default_position": [
+        0.1809,
+        -0.0661,
+        0.6642
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_carpal_distal_phalanx_1": {
+    "head": {
+      "cube_name": "l_metacarpophalangeal_1",
+      "default_position": [
+        0.1809,
+        -0.0661,
+        0.6642
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_carpal_proximal_phalanx_1",
+    "tail": {
+      "cube_name": "l_carpal_interphalangeal_1",
+      "default_position": [
+        0.1825,
+        -0.0522,
+        0.6455
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_trapezoid": {
+    "head": {
+      "cube_name": "l_radiocarpal",
+      "default_position": [
+        0.1818,
+        -0.1069,
+        0.7157
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_carpal",
+    "tail": {
+      "cube_name": "l_midcarpal_2",
+      "default_position": [
+        0.1811,
+        -0.0935,
+        0.6984
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_metacarpal_2": {
+    "head": {
+      "cube_name": "l_midcarpal_2",
+      "default_position": [
+        0.1811,
+        -0.0935,
+        0.6984
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_trapezoid",
+    "tail": {
+      "cube_name": "l_carpometacarpal_2",
+      "default_position": [
+        0.1811,
+        -0.0922,
+        0.679
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_carpal_proximal_phalanx_2": {
+    "head": {
+      "cube_name": "l_carpometacarpal_2",
+      "default_position": [
+        0.1811,
+        -0.0922,
+        0.679
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_metacarpal_2",
+    "tail": {
+      "cube_name": "l_metacarpophalangeal_2",
+      "default_position": [
+        0.1836,
+        -0.0868,
+        0.6286
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_carpal_middle_phalanx_2": {
+    "head": {
+      "cube_name": "l_metacarpophalangeal_2",
+      "default_position": [
+        0.1836,
+        -0.0868,
+        0.6286
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_carpal_proximal_phalanx_2",
+    "tail": {
+      "cube_name": "l_carpal_proximal_interphalangeal_2",
+      "default_position": [
+        0.1815,
+        -0.0877,
+        0.5983
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_carpal_distal_phalanx_2": {
+    "head": {
+      "cube_name": "l_carpal_proximal_interphalangeal_2",
+      "default_position": [
+        0.1815,
+        -0.0877,
+        0.5983
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_carpal_middle_phalanx_2",
+    "tail": {
+      "cube_name": "l_carpal_distal_interphalangeal_2",
+      "default_position": [
+        0.1805,
+        -0.0885,
+        0.5731
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_capitate": {
+    "head": {
+      "cube_name": "l_radiocarpal",
+      "default_position": [
+        0.1818,
+        -0.1069,
+        0.7157
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_carpal",
+    "tail": {
+      "cube_name": "l_midcarpal_3",
+      "default_position": [
+        0.1809,
+        -0.1067,
+        0.7
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_metacarpal_3": {
+    "head": {
+      "cube_name": "l_midcarpal_3",
+      "default_position": [
+        0.1809,
+        -0.1067,
+        0.7
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_capitate",
+    "tail": {
+      "cube_name": "l_carpometacarpal_3",
+      "default_position": [
+        0.1809,
+        -0.1081,
+        0.6772
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_carpal_proximal_phalanx_3": {
+    "head": {
+      "cube_name": "l_carpometacarpal_3",
+      "default_position": [
+        0.1809,
+        -0.1081,
+        0.6772
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_metacarpal_3",
+    "tail": {
+      "cube_name": "l_metacarpophalangeal_3",
+      "default_position": [
+        0.1835,
+        -0.1058,
+        0.6264
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_carpal_middle_phalanx_3": {
+    "head": {
+      "cube_name": "l_metacarpophalangeal_3",
+      "default_position": [
+        0.1835,
+        -0.1058,
+        0.6264
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_carpal_proximal_phalanx_3",
+    "tail": {
+      "cube_name": "l_carpal_proximal_interphalangeal_3",
+      "default_position": [
+        0.1815,
+        -0.1054,
+        0.5947
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_carpal_distal_phalanx_3": {
+    "head": {
+      "cube_name": "l_carpal_proximal_interphalangeal_3",
+      "default_position": [
+        0.1815,
+        -0.1054,
+        0.5947
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_carpal_middle_phalanx_3",
+    "tail": {
+      "cube_name": "l_carpal_distal_interphalangeal_3",
+      "default_position": [
+        0.1805,
+        -0.1056,
+        0.5668
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_hamate": {
+    "head": {
+      "cube_name": "l_radiocarpal",
+      "default_position": [
+        0.1818,
+        -0.1069,
+        0.7157
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_carpal",
+    "tail": {
+      "cube_name": "l_midcarpal_4_5",
+      "default_position": [
+        0.1809,
+        -0.1276,
+        0.6973
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_metacarpal_4": {
+    "head": {
+      "cube_name": "l_midcarpal_4_5",
+      "default_position": [
+        0.1809,
+        -0.1276,
+        0.6973
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_hamate",
+    "tail": {
+      "cube_name": "l_carpometacarpal_4",
+      "default_position": [
+        0.1809,
+        -0.1218,
+        0.6777
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_carpal_proximal_phalanx_4": {
+    "head": {
+      "cube_name": "l_carpometacarpal_4",
+      "default_position": [
+        0.1809,
+        -0.1218,
+        0.6777
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_metacarpal_4",
+    "tail": {
+      "cube_name": "l_metacarpophalangeal_4",
+      "default_position": [
+        0.1835,
+        -0.1233,
+        0.6255
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_carpal_middle_phalanx_4": {
+    "head": {
+      "cube_name": "l_metacarpophalangeal_4",
+      "default_position": [
+        0.1835,
+        -0.1233,
+        0.6255
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_carpal_proximal_phalanx_4",
+    "tail": {
+      "cube_name": "l_carpal_proximal_interphalangeal_4",
+      "default_position": [
+        0.1815,
+        -0.1225,
+        0.598
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_carpal_distal_phalanx_4": {
+    "head": {
+      "cube_name": "l_carpal_proximal_interphalangeal_4",
+      "default_position": [
+        0.1815,
+        -0.1225,
+        0.598
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_carpal_middle_phalanx_4",
+    "tail": {
+      "cube_name": "l_carpal_distal_interphalangeal_4",
+      "default_position": [
+        0.1805,
+        -0.1217,
+        0.5722
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_metacarpal_5": {
+    "head": {
+      "cube_name": "l_midcarpal_4_5",
+      "default_position": [
+        0.1809,
+        -0.1276,
+        0.6973
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_hamate",
+    "tail": {
+      "cube_name": "l_carpometacarpal_5",
+      "default_position": [
+        0.1815,
+        -0.1347,
+        0.6797
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_carpal_proximal_phalanx_5": {
+    "head": {
+      "cube_name": "l_carpometacarpal_5",
+      "default_position": [
+        0.1815,
+        -0.1347,
+        0.6797
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_metacarpal_5",
+    "tail": {
+      "cube_name": "l_metacarpophalangeal_5",
+      "default_position": [
+        0.1832,
+        -0.1389,
+        0.6295
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_carpal_middle_phalanx_5": {
+    "head": {
+      "cube_name": "l_metacarpophalangeal_5",
+      "default_position": [
+        0.1832,
+        -0.1389,
+        0.6295
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_carpal_proximal_phalanx_5",
+    "tail": {
+      "cube_name": "l_carpal_proximal_interphalangeal_5",
+      "default_position": [
+        0.1815,
+        -0.139,
+        0.6124
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "l_carpal_distal_phalanx_5": {
+    "head": {
+      "cube_name": "l_carpal_proximal_interphalangeal_5",
+      "default_position": [
+        0.1815,
+        -0.139,
+        0.6124
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "l_carpal_middle_phalanx_5",
+    "tail": {
+      "cube_name": "l_carpal_distal_interphalangeal_5",
+      "default_position": [
+        0.1806,
+        -0.1388,
+        0.5938
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_clavicle": {
+    "head": {
+      "cube_name": "vt1",
+      "default_position": [
+        -0.0002,
+        -0.1156,
+        1.2109
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "t1",
+    "tail": {
+      "cube_name": "r_sternoclavicular",
+      "default_position": [
+        -0.1231,
+        -0.1148,
+        1.1833
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_scapula": {
+    "head": {
+      "cube_name": "r_sternoclavicular",
+      "default_position": [
+        -0.1231,
+        -0.1148,
+        1.1833
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_clavicle",
+    "tail": {
+      "cube_name": "r_acromioclavicular",
+      "default_position": [
+        -0.0387,
+        -0.1157,
+        1.2001
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_upperarm": {
+    "head": {
+      "cube_name": "r_acromioclavicular",
+      "default_position": [
+        -0.0387,
+        -0.1157,
+        1.2001
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_scapula",
+    "tail": {
+      "cube_name": "r_shoulder",
+      "default_position": [
+        -0.1649,
+        -0.1051,
+        1.17
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_forearm": {
+    "head": {
+      "cube_name": "r_shoulder",
+      "default_position": [
+        -0.1649,
+        -0.1051,
+        1.17
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_upperarm",
+    "tail": {
+      "cube_name": "r_elbow",
+      "default_position": [
+        -0.1819,
+        -0.1075,
+        0.9202
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_carpal": {
+    "head": {
+      "cube_name": "r_elbow",
+      "default_position": [
+        -0.1819,
+        -0.1075,
+        0.9202
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_forearm",
+    "tail": {
+      "cube_name": "r_radiocarpal",
+      "default_position": [
+        -0.1818,
+        -0.1069,
+        0.7157
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_trapezium": {
+    "head": {
+      "cube_name": "r_radiocarpal",
+      "default_position": [
+        -0.1818,
+        -0.1069,
+        0.7157
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_carpal",
+    "tail": {
+      "cube_name": "r_midcarpal_1",
+      "default_position": [
+        -0.1811,
+        -0.0826,
+        0.6975
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_metacarpal_1": {
+    "head": {
+      "cube_name": "r_midcarpal_1",
+      "default_position": [
+        -0.1811,
+        -0.0826,
+        0.6975
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_trapezium",
+    "tail": {
+      "cube_name": "r_carpometacarpal_1",
+      "default_position": [
+        -0.1803,
+        -0.0759,
+        0.684
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_carpal_proximal_phalanx_1": {
+    "head": {
+      "cube_name": "r_carpometacarpal_1",
+      "default_position": [
+        -0.1803,
+        -0.0759,
+        0.684
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_metacarpal_1",
+    "tail": {
+      "cube_name": "r_metacarpophalangeal_1",
+      "default_position": [
+        -0.1808,
+        -0.0661,
+        0.6642
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_carpal_distal_phalanx_1": {
+    "head": {
+      "cube_name": "r_metacarpophalangeal_1",
+      "default_position": [
+        -0.1808,
+        -0.0661,
+        0.6642
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_carpal_proximal_phalanx_1",
+    "tail": {
+      "cube_name": "r_carpal_interphalangeal_1",
+      "default_position": [
+        -0.1825,
+        -0.0522,
+        0.6455
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_trapezoid": {
+    "head": {
+      "cube_name": "r_radiocarpal",
+      "default_position": [
+        -0.1818,
+        -0.1069,
+        0.7157
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_carpal",
+    "tail": {
+      "cube_name": "r_midcarpal_2",
+      "default_position": [
+        -0.1811,
+        -0.0935,
+        0.6984
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_metacarpal_2": {
+    "head": {
+      "cube_name": "r_midcarpal_2",
+      "default_position": [
+        -0.1811,
+        -0.0935,
+        0.6984
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_trapezoid",
+    "tail": {
+      "cube_name": "r_carpometacarpal_2",
+      "default_position": [
+        -0.1811,
+        -0.0922,
+        0.679
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_carpal_proximal_phalanx_2": {
+    "head": {
+      "cube_name": "r_carpometacarpal_2",
+      "default_position": [
+        -0.1811,
+        -0.0922,
+        0.679
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_metacarpal_2",
+    "tail": {
+      "cube_name": "r_metacarpophalangeal_2",
+      "default_position": [
+        -0.1835,
+        -0.0868,
+        0.6286
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_carpal_middle_phalanx_2": {
+    "head": {
+      "cube_name": "r_metacarpophalangeal_2",
+      "default_position": [
+        -0.1835,
+        -0.0868,
+        0.6286
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_carpal_proximal_phalanx_2",
+    "tail": {
+      "cube_name": "r_carpal_proximal_interphalangeal_2",
+      "default_position": [
+        -0.1815,
+        -0.0877,
+        0.5983
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_carpal_distal_phalanx_2": {
+    "head": {
+      "cube_name": "r_carpal_proximal_interphalangeal_2",
+      "default_position": [
+        -0.1815,
+        -0.0877,
+        0.5983
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_carpal_middle_phalanx_2",
+    "tail": {
+      "cube_name": "r_carpal_distal_interphalangeal_2",
+      "default_position": [
+        -0.1805,
+        -0.0885,
+        0.5731
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_capitate": {
+    "head": {
+      "cube_name": "r_radiocarpal",
+      "default_position": [
+        -0.1818,
+        -0.1069,
+        0.7157
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_carpal",
+    "tail": {
+      "cube_name": "r_midcarpal_3",
+      "default_position": [
+        -0.1809,
+        -0.1067,
+        0.7
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_metacarpal_3": {
+    "head": {
+      "cube_name": "r_midcarpal_3",
+      "default_position": [
+        -0.1809,
+        -0.1067,
+        0.7
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_capitate",
+    "tail": {
+      "cube_name": "r_carpometacarpal_3",
+      "default_position": [
+        -0.1809,
+        -0.1081,
+        0.6772
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_carpal_proximal_phalanx_3": {
+    "head": {
+      "cube_name": "r_carpometacarpal_3",
+      "default_position": [
+        -0.1809,
+        -0.1081,
+        0.6772
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_metacarpal_3",
+    "tail": {
+      "cube_name": "r_metacarpophalangeal_3",
+      "default_position": [
+        -0.1835,
+        -0.1058,
+        0.6264
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_carpal_middle_phalanx_3": {
+    "head": {
+      "cube_name": "r_metacarpophalangeal_3",
+      "default_position": [
+        -0.1835,
+        -0.1058,
+        0.6264
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_carpal_proximal_phalanx_3",
+    "tail": {
+      "cube_name": "r_carpal_proximal_interphalangeal_3",
+      "default_position": [
+        -0.1815,
+        -0.1054,
+        0.5947
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_carpal_distal_phalanx_3": {
+    "head": {
+      "cube_name": "r_carpal_proximal_interphalangeal_3",
+      "default_position": [
+        -0.1815,
+        -0.1054,
+        0.5947
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_carpal_middle_phalanx_3",
+    "tail": {
+      "cube_name": "r_carpal_distal_interphalangeal_3",
+      "default_position": [
+        -0.1805,
+        -0.1056,
+        0.5668
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_hamate": {
+    "head": {
+      "cube_name": "r_radiocarpal",
+      "default_position": [
+        -0.1818,
+        -0.1069,
+        0.7157
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_carpal",
+    "tail": {
+      "cube_name": "r_midcarpal_4_5",
+      "default_position": [
+        -0.1809,
+        -0.1276,
+        0.6973
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_metacarpal_4": {
+    "head": {
+      "cube_name": "r_midcarpal_4_5",
+      "default_position": [
+        -0.1809,
+        -0.1276,
+        0.6973
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_hamate",
+    "tail": {
+      "cube_name": "r_carpometacarpal_4",
+      "default_position": [
+        -0.1809,
+        -0.1218,
+        0.6777
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_carpal_proximal_phalanx_4": {
+    "head": {
+      "cube_name": "r_carpometacarpal_4",
+      "default_position": [
+        -0.1809,
+        -0.1218,
+        0.6777
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_metacarpal_4",
+    "tail": {
+      "cube_name": "r_metacarpophalangeal_4",
+      "default_position": [
+        -0.1835,
+        -0.1233,
+        0.6255
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_carpal_middle_phalanx_4": {
+    "head": {
+      "cube_name": "r_metacarpophalangeal_4",
+      "default_position": [
+        -0.1835,
+        -0.1233,
+        0.6255
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_carpal_proximal_phalanx_4",
+    "tail": {
+      "cube_name": "r_carpal_proximal_interphalangeal_4",
+      "default_position": [
+        -0.1815,
+        -0.1225,
+        0.598
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_carpal_distal_phalanx_4": {
+    "head": {
+      "cube_name": "r_carpal_proximal_interphalangeal_4",
+      "default_position": [
+        -0.1815,
+        -0.1225,
+        0.598
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_carpal_middle_phalanx_4",
+    "tail": {
+      "cube_name": "r_carpal_distal_interphalangeal_4",
+      "default_position": [
+        -0.1805,
+        -0.1217,
+        0.5722
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_metacarpal_5": {
+    "head": {
+      "cube_name": "r_midcarpal_4_5",
+      "default_position": [
+        -0.1809,
+        -0.1276,
+        0.6973
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_hamate",
+    "tail": {
+      "cube_name": "r_carpometacarpal_5",
+      "default_position": [
+        -0.1814,
+        -0.1347,
+        0.6797
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_carpal_proximal_phalanx_5": {
+    "head": {
+      "cube_name": "r_carpometacarpal_5",
+      "default_position": [
+        -0.1814,
+        -0.1347,
+        0.6797
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_metacarpal_5",
+    "tail": {
+      "cube_name": "r_metacarpophalangeal_5",
+      "default_position": [
+        -0.1832,
+        -0.1389,
+        0.6295
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_carpal_middle_phalanx_5": {
+    "head": {
+      "cube_name": "r_metacarpophalangeal_5",
+      "default_position": [
+        -0.1832,
+        -0.1389,
+        0.6295
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_carpal_proximal_phalanx_5",
+    "tail": {
+      "cube_name": "r_carpal_proximal_interphalangeal_5",
+      "default_position": [
+        -0.1815,
+        -0.139,
+        0.6124
+      ],
+      "strategy": "CUBE"
+    }
+  },
+  "r_carpal_distal_phalanx_5": {
+    "head": {
+      "cube_name": "r_carpal_proximal_interphalangeal_5",
+      "default_position": [
+        -0.1815,
+        -0.139,
+        0.6124
+      ],
+      "strategy": "CUBE"
+    },
+    "parent": "r_carpal_middle_phalanx_5",
+    "tail": {
+      "cube_name": "r_carpal_distal_interphalangeal_5",
+      "default_position": [
+        -0.1806,
+        -0.1388,
+        0.5938
+      ],
+      "strategy": "CUBE"
+    }
+  }
+}
