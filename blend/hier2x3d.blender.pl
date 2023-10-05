@@ -102,7 +102,7 @@ import bpy
 objs = bpy.data.objects
 objs.remove(objs["Cube"], do_unlink=True)
 
-skeleton = bpy.data.objects.new("Armature", bpy.data.armatures.new("Armature"))
+skeleton = bpy.data.objects.new("humanoid_root", bpy.data.armatures.new("Armature"))
 bpy.context.collection.objects.link(skeleton)
 bpy.context.view_layer.objects.active = skeleton
 skeleton.select_set(True)
