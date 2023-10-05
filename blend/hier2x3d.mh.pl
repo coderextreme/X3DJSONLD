@@ -35,6 +35,12 @@ sub printSegment {
 	$segments .= " " x $l3.		'"strategy": "CUBE" '."\n";
 	$segments .= " " x $l2.	'},'."\n";
 	$segments .= " " x $l2.	'"parent": "'.$grandparent_segment.'",'."\n";
+        $segments .= " " x $l2.	'"inherit_scale": "FULL",'."\n";
+        $segments .= " " x $l2.	'"rigify": {},'."\n";
+        $segments .= " " x $l2.	'"roll": 0.00000,'."\n";  # rotation of bone around it's length
+        $segments .= " " x $l2.	'"use_connect": false,'."\n";
+        $segments .= " " x $l2.	'"use_inherit_rotation": true,'."\n";
+        $segments .= " " x $l2.	'"use_local_location": true,'."\n";
 	$segments .= " " x $l2.	'"tail": {'."\n";
 	$segments .= " " x $l3.		'"cube_name": "'.$jnt->{joint}.'",'."\n";
 	$segments .= " " x $l3.		'"default_position": ['."\n";
@@ -42,13 +48,7 @@ sub printSegment {
 	$segments .= " " x $l4.			$cencj[2].",\n";
 	$segments .= " " x $l4.			$cencj[1]."\n";
 	$segments .= " " x $l3.		'],'."\n";
-	$segments .= " " x $l3.		'"strategy": "CUBE",'."\n";
-        $segments .= " " x $l3.		'"inherit_scale": "FULL",'."\n";
-        $segments .= " " x $l3.		'"rigify": {},'."\n";
-        $segments .= " " x $l3.		'"roll": 0,'."\n";  # rotation of bone around it's length
-        $segments .= " " x $l3.		'"use_connect": false,'."\n";
-        $segments .= " " x $l3.		'"use_inherit_rotation": true,'."\n";
-        $segments .= " " x $l3.		'"use_local_location": true'."\n";
+	$segments .= " " x $l3.		'"strategy": "CUBE"'."\n";
 	$segments .= " " x $l2.	'}'."\n";
 	$segments .= " " x $l1.'},'."\n";
 }
