@@ -17,56 +17,57 @@ sub printSegment {
 	if ($parent_segment eq $grandparent_segment) {
 		$grandparent_segment = "";
 	}
-	my $usc = 0;
 	if (!$uniqueSegmentCount{$parent_segment}) {
-		$usc++;
-	}
-	$uniqueSegmentCount{$parent_segment} = $usc;
-	my $cenpj = $joints{$parent_joint};
-	my @cenpj = split(/[ ,\t]+/, $cenpj);
-	my $cencj = "0 0 0";
-	if (!$joints{$jnt->{joint}}) {
-		print STDERR "Using default value for child joint, $jnt->{joint},  center: $cencj\n";
+		$uniqueSegmentCount{$parent_segment} = 1;
 	} else {
-		$cencj = $joints{$jnt->{joint}};
+		$uniqueSegmentCount{$parent_segment} = 2;
 	}
-	my @cencj = split(/[ ,\t]+/, $cencj);
-	my $l1 = $jnt->{indent};
-	my $l2 = $l1 + 2;
-	my $l3 = $l2 + 2;
-	my $l4 = $l3 + 2;
-	if ($uniqueSegmentCount{$parent_segment} > 0) {
-		$usc = "-".$usc;
-	} else {
+	my $usc = $uniqueSegmentCount{$parent_segment} - 1;
+	if ($usc == 0) {
 		$usc = "";
+		#} else {
+		#$usc = - $usc;
+		my $cenpj = $joints{$parent_joint};
+		my @cenpj = split(/[ ,\t]+/, $cenpj);
+		my $cencj = "0 0 0";
+		if (!$joints{$jnt->{joint}}) {
+			print STDERR "Using default value for child joint, $jnt->{joint},  center: $cencj\n";
+		} else {
+			$cencj = $joints{$jnt->{joint}};
+		}
+		my @cencj = split(/[ ,\t]+/, $cencj);
+		my $l1 = $jnt->{indent};
+		my $l2 = $l1 + 2;
+		my $l3 = $l2 + 2;
+		my $l4 = $l3 + 2;
+		$segments .= " " x $l1. '"'.$parent_segment.$usc.'": {'."\n";
+		$segments .= " " x $l2.'"head": {'."\n";
+		$segments .= " " x $l3.		'"cube_name": "'.$parent_joint.'",'."\n";
+		$segments .= " " x $l3.		'"default_position": ['."\n";
+		$segments .= " " x $l4.			$cenpj[0].",\n";
+		$segments .= " " x $l4.			-$cenpj[2].",\n";
+		$segments .= " " x $l4.			$cenpj[1]."\n";
+		$segments .= " " x $l3.		'],'."\n";
+		$segments .= " " x $l3.		'"strategy": "CUBE" '."\n";
+		$segments .= " " x $l2.	'},'."\n";
+		$segments .= " " x $l2.	'"parent": "'.$grandparent_segment.'",'."\n";
+		$segments .= " " x $l2.	'"inherit_scale": "FULL",'."\n";
+		$segments .= " " x $l2.	'"rigify": {},'."\n";
+		$segments .= " " x $l2.	'"roll": 0.00000,'."\n";  # rotation of bone around it's length
+		$segments .= " " x $l2.	'"use_connect": false,'."\n";
+		$segments .= " " x $l2.	'"use_inherit_rotation": true,'."\n";
+		$segments .= " " x $l2.	'"use_local_location": true,'."\n";
+		$segments .= " " x $l2.	'"tail": {'."\n";
+		$segments .= " " x $l3.		'"cube_name": "'.$jnt->{joint}.'",'."\n";
+		$segments .= " " x $l3.		'"default_position": ['."\n";
+		$segments .= " " x $l4.			$cencj[0].",\n";
+		$segments .= " " x $l4.			-$cencj[2].",\n";
+		$segments .= " " x $l4.			$cencj[1]."\n";
+		$segments .= " " x $l3.		'],'."\n";
+		$segments .= " " x $l3.		'"strategy": "CUBE"'."\n";
+		$segments .= " " x $l2.	'}'."\n";
+		$segments .= " " x $l1.'},'."\n";
 	}
-	$segments .= " " x $l1. '"'.$parent_segment.$usc.'": {'."\n";
-	$segments .= " " x $l2.'"head": {'."\n";
-	$segments .= " " x $l3.		'"cube_name": "'.$parent_joint.'",'."\n";
-	$segments .= " " x $l3.		'"default_position": ['."\n";
-	$segments .= " " x $l4.			$cenpj[0].",\n";
-	$segments .= " " x $l4.			-$cenpj[2].",\n";
-	$segments .= " " x $l4.			$cenpj[1]."\n";
-	$segments .= " " x $l3.		'],'."\n";
-	$segments .= " " x $l3.		'"strategy": "CUBE" '."\n";
-	$segments .= " " x $l2.	'},'."\n";
-	$segments .= " " x $l2.	'"parent": "'.$grandparent_segment.'",'."\n";
-        $segments .= " " x $l2.	'"inherit_scale": "FULL",'."\n";
-        $segments .= " " x $l2.	'"rigify": {},'."\n";
-        $segments .= " " x $l2.	'"roll": 0.00000,'."\n";  # rotation of bone around it's length
-        $segments .= " " x $l2.	'"use_connect": false,'."\n";
-        $segments .= " " x $l2.	'"use_inherit_rotation": true,'."\n";
-        $segments .= " " x $l2.	'"use_local_location": true,'."\n";
-	$segments .= " " x $l2.	'"tail": {'."\n";
-	$segments .= " " x $l3.		'"cube_name": "'.$jnt->{joint}.'",'."\n";
-	$segments .= " " x $l3.		'"default_position": ['."\n";
-	$segments .= " " x $l4.			$cencj[0].",\n";
-	$segments .= " " x $l4.			-$cencj[2].",\n";
-	$segments .= " " x $l4.			$cencj[1]."\n";
-	$segments .= " " x $l3.		'],'."\n";
-	$segments .= " " x $l3.		'"strategy": "CUBE"'."\n";
-	$segments .= " " x $l2.	'}'."\n";
-	$segments .= " " x $l1.'},'."\n";
 }
 
 sub printPython {
