@@ -9,8 +9,19 @@ use warnings;
 my %joints = ();
 my $segments = "";
 
+my %uniqueSegmentCount = ();
+
 sub printSegment {
 	my($jnt, $parent_joint, $parent_segment, $grandparent_segment) = @_;
+	print STDERR " joint $jnt->{joint} pjoint $parent_joint psegment $parent_segment gpsegment $grandparent_segment\n";
+	if ($parent_segment eq $grandparent_segment) {
+		$grandparent_segment = "";
+	}
+	my $usc = 0;
+	if (!$uniqueSegmentCount{$parent_segment}) {
+		$usc++;
+	}
+	$uniqueSegmentCount{$parent_segment} = $usc;
 	my $cenpj = $joints{$parent_joint};
 	my @cenpj = split(/[ ,\t]+/, $cenpj);
 	my $cencj = "0 0 0";
@@ -24,12 +35,17 @@ sub printSegment {
 	my $l2 = $l1 + 2;
 	my $l3 = $l2 + 2;
 	my $l4 = $l3 + 2;
-	$segments .= " " x $l1. '"'.$parent_segment.'": {'."\n";
+	if ($uniqueSegmentCount{$parent_segment} > 0) {
+		$usc = "-".$usc;
+	} else {
+		$usc = "";
+	}
+	$segments .= " " x $l1. '"'.$parent_segment.$usc.'": {'."\n";
 	$segments .= " " x $l2.'"head": {'."\n";
 	$segments .= " " x $l3.		'"cube_name": "'.$parent_joint.'",'."\n";
 	$segments .= " " x $l3.		'"default_position": ['."\n";
 	$segments .= " " x $l4.			$cenpj[0].",\n";
-	$segments .= " " x $l4.			$cenpj[2].",\n";
+	$segments .= " " x $l4.			-$cenpj[2].",\n";
 	$segments .= " " x $l4.			$cenpj[1]."\n";
 	$segments .= " " x $l3.		'],'."\n";
 	$segments .= " " x $l3.		'"strategy": "CUBE" '."\n";
@@ -45,7 +61,7 @@ sub printSegment {
 	$segments .= " " x $l3.		'"cube_name": "'.$jnt->{joint}.'",'."\n";
 	$segments .= " " x $l3.		'"default_position": ['."\n";
 	$segments .= " " x $l4.			$cencj[0].",\n";
-	$segments .= " " x $l4.			$cencj[2].",\n";
+	$segments .= " " x $l4.			-$cencj[2].",\n";
 	$segments .= " " x $l4.			$cencj[1]."\n";
 	$segments .= " " x $l3.		'],'."\n";
 	$segments .= " " x $l3.		'"strategy": "CUBE"'."\n";
