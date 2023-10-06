@@ -20,7 +20,7 @@
         },
         {
           "@name": "modified",
-          "@content": "Sep 03 2023"
+          "@content": "Sep 3 2023"
         },
         {
           "@name": "description",
@@ -40,7 +40,7 @@
         },
         {
           "@name": "converted",
-          "@content": "Sun, 03 Sep 2023 18:24:27 GMT"
+          "@content": "Mon, 04 Sep 2023 14:19:55 GMT"
         }
       ],
       "component": [
@@ -96,8 +96,7 @@
               }
             ],
             "@url": [
-              "../personal/flowerproto.json#FlowerProto",
-              "https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto"
+              "../personal/flowerproto.json#FlowerProto"
             ]
           }
         },
@@ -145,28 +144,22 @@
         { "Background":
           {
             "@frontUrl": [
-              "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
-              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"
+              "../resources/images/all_probes/stpeters_cross/stpeters_front.png"
             ],
             "@backUrl": [
-              "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
-              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"
+              "../resources/images/all_probes/stpeters_cross/stpeters_back.png"
             ],
             "@leftUrl": [
-              "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
-              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"
+              "../resources/images/all_probes/stpeters_cross/stpeters_left.png"
             ],
             "@rightUrl": [
-              "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
-              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"
+              "../resources/images/all_probes/stpeters_cross/stpeters_right.png"
             ],
             "@topUrl": [
-              "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
-              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/src/main/resourcesall_probes/stpeters_cross/stpeters_top.png"
+              "../resources/images/all_probes/stpeters_cross/stpeters_top.png"
             ],
             "@bottomUrl": [
-              "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
-              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"
+              "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"
             ]
           }
         },
@@ -208,34 +201,8 @@
                   "@DEF": "SongTime",
                   "@loop": true
                 }
-              },
-              { "Sound":
-                {
-                  "@minBack": 20,
-                  "@minFront": 20,
-                  "@maxBack": 100,
-                  "@maxFront": 100,
-                  "-source": { "AudioClip":
-                    {
-                      "@DEF": "AudioClip",
-                      "@description": "Chandubabamusic #1",
-                      "@url": [
-                        "../resources/chandubabamusic1.wav",
-                        "https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav"
-                      ]
-                    }
-                  }
-                }
               }
             ]
-          }
-        },
-        { "ROUTE":
-          {
-            "@fromNode": "SongTime",
-            "@fromField": "cycleTime",
-            "@toNode": "AudioClip",
-            "@toField": "startTime"
           }
         }
       ]
