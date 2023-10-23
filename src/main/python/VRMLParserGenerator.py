@@ -148,6 +148,13 @@ code += "SFVec3f : SFFloat SFFloat SFFloat;\n"
 code += "SFVec4d : SFDouble SFDouble  SFDouble SFDouble;\n"
 code += "SFVec4f : SFFloat SFFloat SFFloat SFFloat;\n"
 
+sits = soup.iter("SimpleType")
+for sit in sits:
+    values = []
+    for enum in sit.findall("enumeration"):
+        values.append(enum.get("value"))
+    code += sit.get("name")+" : "+" ('"+("'|'".join(values))+"');\n"
+
 fts = soup.iter("FieldType")
 for ft in fts:
     if ft.get("type").startswith("MF"):
