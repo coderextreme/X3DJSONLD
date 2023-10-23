@@ -49,15 +49,6 @@ class ClassPrinter:
 
             return self.children
 
-    def printList(self, doList):
-        str = ""
-        for k,v in doList.items():
-            if not k.startswith("X3D"):
-                str += '\t\t\t\t\t\t\t\t"' + k + '" : {\n'
-                str += '\t\t\t\t\t\t\t\t\t"$ref":"#/$defs/'+k+'"\n'
-                str += '\t\t\t\t\t\t\t\t},\n'
-        return str
-
     def listChildren(self, doList):
             try:
                 if doList[self.name] == True:
@@ -68,56 +59,20 @@ class ClassPrinter:
                doList = classes[k].listChildren(doList)
             return doList
 
-    def listParents(self):
-            str = ""
-            str += '\t\t\t\t\t\t\t\t"' + self.name + '" : {\n'
-            str += '\t\t\t\t\t\t\t\t\t"$ref":"#/$defs/'+self.name+'"\n'
-            str += '\t\t\t\t\t\t\t\t},\n'
-            for parent in self.parents:
-               str += classes[parent].listParents()
-            return str
-
-    def printTypeMinMax(self, field):
-        str = ""
-        try:
-            str += '\t\t\t\t\t\t"exclusiveMaximum" : '+field.get("maxExclusive") + ',\n'
-        except:
-            pass
-        try:
-            str += '\t\t\t\t\t\t"maximum" : '+field.get("maxInclusive") + ',\n'
-        except:
-            pass
-        
-        try:
-            str += '\t\t\t\t\t\t"exclusiveMinimum" : '+field.get("minExclusive") + ',\n'
-        except:
-            pass
-        try:
-            str += '\t\t\t\t\t\t"minimum" : '+field.get("minInclusive") + ',\n'
-        except:
-            pass
-        # if not field.get("type").startswith("MF") and not field.get("type") == "SFVec3f":
-            # str += '\t\t\t\t\t\t"$comment":"'+field.get("type")+' '+field.get("accessType")+'",\n'
-        str += '\t\t\t\t\t\t"type":"'
-        if field.get("type") == "MFBool":
-            str += 'boolean"\n'
-        elif field.get("type") == "MFInt32":
-            str += 'integer"\n'
-        elif field.get("type") == "MFNode":
-            str += 'object"\n'
-        elif field.get("type") == "MFString":
-            str += 'string"\n'
-        else:
-            str += 'number"\n'
-        return str
-
-    def printField(self, field, namesyn):
-        str = ""
-        return str
-
     def printClass(self):
         str = ""
-        if self.node is not None:
+        if len(self.children) > 0:
+            str += self.name+"\n"
+            str += "(\n"
+            doList = {}
+            children = []
+            for child,b in self.listChildren(doList).items():
+                if child != self.name:
+                    children.append(child)
+            str += "\n|".join(children)
+            str += "\n)\n"
+            str += ";\n"
+        elif self.node is not None:
             # print(ET.tostring(self.node))
             str += self.node.get("name")+"\n"
             str += ": ('DEF' xsID)? '"+self.node.get("name")+"' '{'\n"
