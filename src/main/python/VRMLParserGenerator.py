@@ -61,7 +61,7 @@ class ClassPrinter:
 
     def printClass(self):
         str = ""
-        if len(self.children) > 0:
+        if self.name.startswith("X3D") and not self.name == 'X3D':
             str += self.name+"\n"
             str += "(\n"
             doList = {}
