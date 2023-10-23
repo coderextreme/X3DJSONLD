@@ -119,10 +119,7 @@ class ClassPrinter:
         str = ""
         if self.node is not None:
             # print(ET.tostring(self.node))
-            if self.node.get("name").endswith("Node"):
-                str += self.node.get("name")+"\n"
-            else:
-                str += self.node.get("name")+"Node\n"
+            str += self.node.get("name")+"\n"
             str += ": ('DEF' xsID)? '"+self.node.get("name")+"' '{'\n"
             str += "(\n"
             flds = []
