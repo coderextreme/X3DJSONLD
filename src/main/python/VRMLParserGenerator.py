@@ -74,15 +74,28 @@ class ClassPrinter:
             str += ";\n"
         elif self.node is not None:
             # print(ET.tostring(self.node))
+            useFound = False
+            defFound = False
+            optDEF = ""
+            fields = self.node.iter("field")
+            for field in fields:
+                if field.get("name") in ("DEF"):
+                    defFound = True
+                    optDEF = "('DEF' xsID)?"
+                elif field.get("name") in ("USE"):
+                    useFound = True
+
             str += self.node.get("name")+"\n"
-            str += ": ('DEF' xsID)? '"+self.node.get("name")+"' '{'\n"
+            str += ": "+optDEF+" '"+self.node.get("name")+"' '{'\n"
             str += "(\n"
             flds = []
-            fields = self.node.iter("field")
             str += " "
+            fields = self.node.iter("field")
             for field in fields:
                 # print(field)
-                if field.get("name") in ("DEF", "USE"):
+                if field.get("name") in ("DEF"):
+                    pass
+                elif field.get("name") in ("USE"):
                     pass
                 elif field.get("type").endswith("SFNode"):
                     flds.append("  '"+field.get("name")+"' ("+field.get("acceptableNodeTypes")+")")
@@ -95,7 +108,8 @@ class ClassPrinter:
             str += "\n|".join(flds)
             str += "\n)*\n"
             str += "'}'\n"
-            str += "| 'USE' xsIDREF"
+            if useFound:
+                str += "| 'USE' xsIDREF"
             str += ";\n"
         return str
 

@@ -7003,7 +7003,7 @@ WorldInfo
 '}'
 | 'USE' xsIDREF;
 component
-: ('DEF' xsID)? 'component' '{'
+:  'component' '{'
 (
    'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -7012,9 +7012,9 @@ component
 |  'style' SFString
 )*
 '}'
-| 'USE' xsIDREF;
+;
 connect
-: ('DEF' xsID)? 'connect' '{'
+:  'connect' '{'
 (
    'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -7023,9 +7023,9 @@ connect
 |  'style' SFString
 )*
 '}'
-| 'USE' xsIDREF;
+;
 EXPORT
-: ('DEF' xsID)? 'EXPORT' '{'
+:  'EXPORT' '{'
 (
    'AS' xsNMTOKEN
 |  'class' xsNMTOKENS
@@ -7034,9 +7034,9 @@ EXPORT
 |  'style' SFString
 )*
 '}'
-| 'USE' xsIDREF;
+;
 ExternProtoDeclare
-: ('DEF' xsID)? 'ExternProtoDeclare' '{'
+:  'ExternProtoDeclare' '{'
 (
    'appinfo' SFString
 |  'class' xsNMTOKENS
@@ -7048,9 +7048,9 @@ ExternProtoDeclare
 |  'url' MFString
 )*
 '}'
-| 'USE' xsIDREF;
+;
 field
-: ('DEF' xsID)? 'field' '{'
+:  'field' '{'
 (
    'accessType' xsNMTOKEN
 |  'appinfo' SFString
@@ -7064,9 +7064,9 @@ field
 |  'value' SFString
 )*
 '}'
-| 'USE' xsIDREF;
+;
 fieldValue
-: ('DEF' xsID)? 'fieldValue' '{'
+:  'fieldValue' '{'
 (
    'children' (X3DNode)*
 |  'class' xsNMTOKENS
@@ -7076,9 +7076,9 @@ fieldValue
 |  'value' SFString
 )*
 '}'
-| 'USE' xsIDREF;
+;
 head
-: ('DEF' xsID)? 'head' '{'
+:  'head' '{'
 (
    'class' xsNMTOKENS
 |  'component' (component)*
@@ -7088,9 +7088,9 @@ head
 |  'unit' (unit)*
 )*
 '}'
-| 'USE' xsIDREF;
+;
 IMPORT
-: ('DEF' xsID)? 'IMPORT' '{'
+:  'IMPORT' '{'
 (
    'AS' xsID
 |  'class' xsNMTOKENS
@@ -7100,9 +7100,9 @@ IMPORT
 |  'style' SFString
 )*
 '}'
-| 'USE' xsIDREF;
+;
 IS
-: ('DEF' xsID)? 'IS' '{'
+:  'IS' '{'
 (
    'class' xsNMTOKENS
 |  'connect' (connect)*
@@ -7110,9 +7110,9 @@ IS
 |  'style' SFString
 )*
 '}'
-| 'USE' xsIDREF;
+;
 meta
-: ('DEF' xsID)? 'meta' '{'
+:  'meta' '{'
 (
    'class' xsNMTOKENS
 |  'content' SFString
@@ -7125,9 +7125,9 @@ meta
 |  'style' SFString
 )*
 '}'
-| 'USE' xsIDREF;
+;
 ProtoBody
-: ('DEF' xsID)? 'ProtoBody' '{'
+:  'ProtoBody' '{'
 (
    'children' (X3DNode)*
 |  'class' xsNMTOKENS
@@ -7135,9 +7135,9 @@ ProtoBody
 |  'style' SFString
 )*
 '}'
-| 'USE' xsIDREF;
+;
 ProtoDeclare
-: ('DEF' xsID)? 'ProtoDeclare' '{'
+:  'ProtoDeclare' '{'
 (
    'appinfo' SFString
 |  'class' xsNMTOKENS
@@ -7149,9 +7149,9 @@ ProtoDeclare
 |  'style' SFString
 )*
 '}'
-| 'USE' xsIDREF;
+;
 ProtoInterface
-: ('DEF' xsID)? 'ProtoInterface' '{'
+:  'ProtoInterface' '{'
 (
    'class' xsNMTOKENS
 |  'field' (field)*
@@ -7159,9 +7159,9 @@ ProtoInterface
 |  'style' SFString
 )*
 '}'
-| 'USE' xsIDREF;
+;
 ROUTE
-: ('DEF' xsID)? 'ROUTE' '{'
+:  'ROUTE' '{'
 (
    'class' xsNMTOKENS
 |  'fromField' xsNMTOKEN
@@ -7172,9 +7172,9 @@ ROUTE
 |  'toNode' xsIDREF
 )*
 '}'
-| 'USE' xsIDREF;
+;
 Scene
-: ('DEF' xsID)? 'Scene' '{'
+:  'Scene' '{'
 (
    'children' (X3DChildNode|X3DMetadataObject|LayerSet)*
 |  'class' xsNMTOKENS
@@ -7182,9 +7182,9 @@ Scene
 |  'style' SFString
 )*
 '}'
-| 'USE' xsIDREF;
+;
 unit
-: ('DEF' xsID)? 'unit' '{'
+:  'unit' '{'
 (
    'category' xsNMTOKEN
 |  'class' xsNMTOKENS
@@ -7194,9 +7194,9 @@ unit
 |  'style' SFString
 )*
 '}'
-| 'USE' xsIDREF;
+;
 X3D
-: ('DEF' xsID)? 'X3D' '{'
+:  'X3D' '{'
 (
    'class' xsNMTOKENS
 |  'head' (head)
@@ -7207,4 +7207,4 @@ X3D
 |  'version' xsNMTOKEN
 )*
 '}'
-| 'USE' xsIDREF;
+;
