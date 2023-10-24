@@ -91,18 +91,32 @@ class ClassPrinter:
             fields = self.node.iter("field")
             for field in fields:
                 # print(field)
-                if field.get("name") in ("DEF"):
+                field_name = field.get("name") 
+                field_type = field.get("type") 
+                if field_name == 'profile':
+                    field_name = 'PROFILE'
+                elif field_name == 'component':
+                    field_name = 'COMPONENT'
+                elif field_name == 'unit':
+                    field_name = 'UNIT'
+                elif field_name == 'meta':
+                    field_name = 'META'
+                if field_name in ("DEF"):
                     pass
-                elif field.get("name") in ("USE"):
+                elif field_name in ("USE"):
                     pass
-                elif field.get("type").endswith("SFNode"):
-                    flds.append("  '"+field.get("name")+"' ("+field.get("acceptableNodeTypes")+")")
-                elif field.get("type").endswith("MFNode"):
-                    flds.append("  '"+field.get("name")+"' ("+field.get("acceptableNodeTypes")+")*")
+                elif field_type.endswith("SFNode"):
+                    flds.append("  '"+field_name+"' ("+field.get("acceptableNodeTypes")+")")
+                elif field_type.endswith("MFNode"):
+                    flds.append("  '"+field_name+"' '[' ("+field.get("acceptableNodeTypes")+")* ']'")
+                elif field.get("simpleType") is not None and field_type.startswith("SF"):
+                    flds.append("  '"+field_name+"' "+field.get("simpleType"))
+                elif field.get("simpleType") is not None and field_type.startswith("MF"):
+                    flds.append("  '"+field_name+"' '[' ("+field.get("simpleType")+")* ']'")
                 elif field.get("baseType") is not None:
-                    flds.append("  '"+field.get("name")+"' "+field.get("baseType").replace(":",""))
+                    flds.append("  '"+field_name+"' "+field.get("baseType").replace(":",""))
                 else:
-                    flds.append("  '"+field.get("name")+"' "+field.get("type"))
+                    flds.append("  '"+field_name+"' "+field_type)
             str += "\n|".join(flds)
             str += "\n)*\n"
             str += "'}'\n"
@@ -165,7 +179,12 @@ for sit in sits:
     values = []
     for enum in sit.findall("enumeration"):
         values.append(enum.get("value"))
-    code += sit.get("name")+" : "+" ('"+("'|'".join(values))+"');\n"
+    if len(values) > 0:
+        code += sit.get("name")+" : ('"+("'|'".join(values))+"');\n"
+    elif sit.get("baseType") is not None and sit.get("baseType").startswith("SF"):
+        code += sit.get("name")+" : "+sit.get("baseType").replace(":","")+";\n"
+    elif sit.get("baseType") is not None and sit.get("baseType").startswith("MF"):
+        code += sit.get("name")+" : '[' ("+sit.get("baseType").replace(":","")+")* ']';\n"
 
 ants = soup.iter("AbstractNodeType")
 for ant in ants:
