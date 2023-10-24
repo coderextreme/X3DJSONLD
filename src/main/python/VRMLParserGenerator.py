@@ -19,35 +19,28 @@ class ClassPrinter:
             self.node = None
         else:
             self.name = node.get("name")
+            if self.name is None:
+                self.name = node.get("type")
             self.node = node
-
-    def findParents(self):
-        if self.node is not None:
-            inhers = self.node.iter("Inheritance")
-            for inher in inhers:
-                self.parents.update({ inher.get('baseType') : 1} )
-                if inher.get("baseType") is not None:
-                    self.parents.update(classes[inher.get('baseType')].findParents())
-    
-            addinhers = self.node.iter("AdditionalInheritance")
-            for addinher in addinhers:
-                self.parents.update({ addinher.get('baseType') : 1} )
-                self.parents.update(classes[addinher.get('baseType')].findParents())
-
-            return self.parents
 
     def findChildren(self):
         if self.node is not None:
             inhers = self.node.iter("Inheritance")
             for inher in inhers:
-                if inher.get("baseType") is not None:
-                    classes[inher.get('baseType')].children[self.name] = self.name
+                try:
+                    if inher.get("baseType") is not None and self.name is not None:
+                        classes[inher.get('baseType')].children[self.name] = self.name
+                except:
+                    pass
+                if inher.get("x3dType") is not None and self.name is not None:
+                    classes[inher.get('x3dType')].children[self.name] = self.name
     
             addinhers = self.node.iter("AdditionalInheritance")
             for addinher in addinhers:
-                classes[addinher.get('baseType')].children[self.name] = self.name
+                if self.name is not None:
+                    classes[addinher.get('baseType')].children[self.name] = self.name
 
-            return self.children
+        return self.children
 
     def listChildren(self, doList):
             try:
@@ -56,23 +49,24 @@ class ClassPrinter:
             except:
                 doList[self.name] = True
             for k,v in self.children.items():
-               doList = classes[k].listChildren(doList)
+                #if not k.startswith("SF") and not k.startswith("MF"):
+                doList = classes[k].listChildren(doList)
             return doList
 
     def printClass(self):
         str = ""
-        if self.name.startswith("X3D") and not self.name == 'X3D':
+        if self.name is not None and self.name.startswith("X3D") and not self.name == 'X3D':
             str += self.name+"\n"
             str += "(\n"
             doList = {}
             children = []
             for child,b in self.listChildren(doList).items():
-                if child != self.name:
+                if child is not None and child != self.name:
                     children.append(child)
             str += "\n|".join(children)
             str += "\n)\n"
             str += ";\n"
-        elif self.node is not None:
+        elif self.node is not None and self.node.get("name") is not None:
             # print(ET.tostring(self.node))
             useFound = False
             defFound = False
@@ -85,8 +79,12 @@ class ClassPrinter:
                 elif field.get("name") in ("USE"):
                     useFound = True
 
-            str += self.node.get("name")+"\n"
-            str += ": "+optDEF+" '"+self.node.get("name")+"' '{'\n"
+            try:
+                str += self.node.get("name")+"\n"
+                str += ": "+optDEF+" '"+self.node.get("name")+"' '{'\n"
+            except:
+                str += self.node.get("type")+"\n"
+                str += ": "+optDEF+" '"+self.node.get("type")+"' '{'\n"
             str += "(\n"
             flds = []
             str += " "
@@ -169,14 +167,18 @@ for sit in sits:
         values.append(enum.get("value"))
     code += sit.get("name")+" : "+" ('"+("'|'".join(values))+"');\n"
 
-fts = soup.iter("FieldType")
-for ft in fts:
-    if ft.get("type").startswith("MF"):
-        code += ft.get("type")+" : "+"'[' (S"+ft.get("type")[1:]+")* ']';\n"
-
 ants = soup.iter("AbstractNodeType")
 for ant in ants:
     classes[ant.get('name')] = ClassPrinter(ant, {}, True)
+
+fts = soup.iter("FieldType")
+for ft in fts:
+    classes[ft.get('type')] = ClassPrinter(ft, {}, False)
+    if ft.get("type").startswith("MF"):
+        code += ft.get("type")+" : "+"'[' (S"+ft.get("type")[1:]+")* ']';\n"
+        classes["X3DArrayField"].children[ft.get("type")] = ft.get("type")
+    else:
+        classes["X3DField"].children[ft.get("type")] = ft.get("type")
 
 classes["X3DConcreteNode"] = ClassPrinter("X3DConcreteNode", {}, True)
 classes["X3DConcreteStatement"] = ClassPrinter("X3DConcreteStatement", {}, False)
@@ -202,9 +204,6 @@ for st in sts:
 
 for k,v in classes.items():
     v.findChildren()
-
-for k,v in classes.items():
-    v.findParents()
 
 for k,v in classes.items():
     code += v.printClass()
