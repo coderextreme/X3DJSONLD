@@ -38,93 +38,93 @@ SFVec3d : SFDouble SFDouble SFDouble;
 SFVec3f : SFFloat SFFloat SFFloat;
 SFVec4d : SFDouble SFDouble  SFDouble SFDouble;
 SFVec4f : SFFloat SFFloat SFFloat SFFloat;
-accessTypeChoices :  ('initializeOnly'|'inputOnly'|'outputOnly'|'inputOutput');
-acronymChoices :  ('CAD'|'HSV'|'JPEG'|'MIDI'|'MIME'|'MF'|'MPEG'|'PNG'|'RGB'|'RURL'|'SAI'|'SF'|'UCS'|'URI'|'URL'|'URN'|'UTF-8');
-alphaModeChoices :  ('AUTO'|'OPAQUE'|'MASK'|'BLEND');
-appliedParametersChoices :  ('"BOUNCE"'|'"USER_FRICTION"'|'"FRICTION_COEFFICIENT-2"'|'"ERROR_REDUCTION"'|'"CONSTANT_FORCE"'|'"SPEED-1"'|'"SPEED-2"'|'"SLIP-1"'|'"SLIP-2"');
-bboxSizeType :  ('');
-biquadTypeFilterChoices :  ('LOWPASS'|'HIGHPASS'|'BANDPASS'|'LOWSHELF'|'HIGHSHELF'|'PEAKING'|'NOTCH'|'ALLPASS');
-channelCountModeChoices :  ('MAX'|'CLAMPED_MAX'|'EXPLICIT');
-channelInterpretationChoices :  ('SPEAKERS'|'DISCRETE');
-closureTypeChoices :  ('PIE'|'CHORD');
-componentNameChoices :  ('Core'|'CADGeometry'|'CubeMapTexturing'|'DIS'|'EnvironmentalEffects'|'EnvironmentalSensor'|'EventUtilities'|'Followers'|'Geometry2D'|'Geometry3D'|'Geospatial'|'Grouping'|'HAnim'|'H-Anim'|'Interpolation'|'KeyDeviceSensor'|'Layering'|'Layout'|'Lighting'|'Navigation'|'Networking'|'NURBS'|'ParticleSystems'|'Picking'|'PointingDeviceSensor'|'TextureProjection'|'Rendering'|'RigidBodyPhysics'|'Scripting'|'Shaders'|'Shape'|'Sound'|'Text'|'Texturing'|'Texturing3D'|'Time'|'VolumeRendering');
-containerFieldChoicesAudioClip :  ('children'|'source'|'watchList');
-containerFieldChoicesAudioGraph :  ('children'|'outputs'|'source');
-containerFieldChoicesColor :  ('color'|'colorRamp');
-containerFieldChoicesDISEntityTypeMapping :  ('children'|'mapping'|'watchList');
-containerFieldChoicesGroupLODShapeTransformSwitch :  ('children'|'proxy'|'rootNode'|'shape'|'skin');
-containerFieldChoicesHAnimJoint :  ('children'|'joints'|'skeleton');
-containerFieldChoicesHAnimMotion :  ('children'|'motions');
-containerFieldChoicesHAnimSegment :  ('children'|'segments');
-containerFieldChoicesHAnimSite :  ('children'|'sites'|'skeleton'|'viewpoints');
-containerFieldChoicesMetadata :  ('metadata'|'value');
-containerFieldChoicesPackagedShader :  ('shaders'|'children');
-containerFieldChoicesShaderPart :  ('parts'|'children');
-containerFieldChoicesSoundSource :  ('children'|'source');
-containerFieldChoicesTextureCoordinate :  ('texCoord'|'texCoordRamp');
-containerFieldChoicesX3DCoordinateNode :  ('coord'|'controlPoint'|'skinCoord'|'skinBindingCoords');
-containerFieldChoicesX3DNormalNode :  ('normal'|'skinNormal'|'skinBindingNormals');
-containerFieldChoicesX3DTexture2DNode :  ('texture'|'source'|'backTexture'|'bottomTexture'|'frontTexture'|'leftTexture'|'rightTexture'|'topTexture'|'children'|'baseTexture'|'emissiveTexture'|'metallicRoughnessTexture'|'normalTexture'|'occlusionTexture');
-containerFieldChoicesX3DTexture3DNode :  ('gradients'|'segmentIdentifiers'|'surfaceNormals'|'texture'|'voxels'|'children');
-containerFieldChoicesX3DUrlObject :  ('children'|'children');
-containerFieldChoicesX3dUrlObjectTexture :  ('texture'|'children'|'source'|'backTexture'|'bottomTexture'|'frontTexture'|'leftTexture'|'rightTexture'|'topTexture'|'baseTexture'|'emissiveTexture'|'metallicRoughnessTexture'|'normalTexture'|'occlusionTexture');
-distanceModelChoices :  ('LINEAR'|'INVERSE'|'EXPONENTIAL');
-fieldTypeChoices :  ('SFBool'|'MFBool'|'SFColor'|'MFColor'|'SFColorRGBA'|'MFColorRGBA'|'SFDouble'|'MFDouble'|'SFFloat'|'MFFloat'|'SFImage'|'MFImage'|'SFInt32'|'MFInt32'|'SFNode'|'MFNode'|'SFRotation'|'MFRotation'|'SFString'|'MFString'|'SFTime'|'MFTime'|'SFVec2d'|'MFVec2d'|'SFVec2f'|'MFVec2f'|'SFVec3d'|'MFVec3d'|'SFVec3f'|'MFVec3f'|'SFVec4d'|'MFVec4d'|'SFVec4f'|'MFVec4f'|'SFMatrix3d'|'MFMatrix3d'|'SFMatrix3f'|'MFMatrix3f'|'SFMatrix4d'|'MFMatrix4d'|'SFMatrix4f'|'MFMatrix4f');
-fogTypeChoices :  ('LINEAR'|'EXPONENTIAL');
-fontFamilyValues :  ('"SANS"'|'"SERIF"'|'"TYPEWRITER"');
-fontStyleChoices :  ('PLAIN'|'BOLD'|'ITALIC'|'BOLDITALIC');
-forceOutputValues :  ('"ALL"'|'"NONE"');
-generatedCubeMapTextureUpdateChoices :  ('NONE'|'NEXT_FRAME_ONLY'|'ALWAYS');
-geoMetadataSummaryKeyValues :  ('title'|'description'|'coordinateSystem'|'horizontalDatum'|'verticalDatum'|'ellipsoid'|'extent'|'resolution'|'originator'|'copyright'|'date'|'metadataFormat'|'dataUrl'|'dataFormat');
-geoSystemEarthEllipsoidValues :  ('AM'|'AN'|'BN'|'BR'|'CC'|'CD'|'EA'|'EB'|'EC'|'ED'|'EE'|'EF'|'FA'|'HE'|'HO'|'ID'|'IN'|'KA'|'RF'|'SA'|'WD'|'WE'|'WGS84'|'Zn'|'S');
-geoSystemSpatialReferenceFrameValues :  ('GD'|'UTM'|'GC'|'GDC'|'GCC');
-geoSystemType :  ('');
-glossaryChoices :  ('activate'|'ancestor'|'AudioGraph'|'author'|'AuthoringTool'|'avatar'|'bearing'|'BindableNode'|'browser'|'BrowserExtension'|'BuiltInNode'|'callback'|'child'|'ChildrenNode'|'ClientSystem'|'CollisionProxy'|'ColourModel'|'culling'|'descendant'|'DisplayDevice'|'DragSensor'|'EnvironmentalSensor'|'event'|'EventCascade'|'ExecutionModel'|'ExternaPrototype'|'field'|'FieldName'|'frame'|'generator'|'GeometricPropertyNode'|'GeometryNode'|'grab'|'GroupingNode'|'HostApplication'|'image'|'immersive'|'Inlining'|'instance'|'instantiation'|'InterpolatorNode'|'intranet'|'LevelOfDetail'|'LineTerminator'|'loop'|'multimedia'|'network'|'node'|'nodeType'|'object'|'orderOfPreference'|'panorama'|'parent'|'pixel'|'pointer'|'pointingDevice'|'pointingDeviceSensor'|'polyline'|'profile'|'prototype'|'prototyping'|'ROUTE'|'sceneGraph'|'script'|'scripting'|'sensorNode'|'separatorCharacter'|'sibling'|'simulationTick'|'slerp'|'specialGroupNode'|'statement'|'texel'|'texture'|'textureCoordinates'|'time'|'timestamp'|'transformationHierarchy'|'transparencyChunk'|'traverse'|'user'|'viewer'|'virtualWorld'|'whiteSpace'|'world'|'worldCoordinateSpace'|'X3DBrowser'|'X3DDocumentServer'|'X3DFile'|'XYPlane'|'YZPlane'|'ZXPlane');
-hanimFeaturePointNameValues :  ('skull_vertex'|'glabella'|'sellion'|'l_infraorbitale'|'l_tragion'|'l_gonion'|'r_infraorbitale'|'r_tragion'|'r_gonion'|'supramenton'|'cervicale'|'adams_apple'|'suprasternale'|'substernale'|'l_clavicle'|'l_acromion'|'l_axilla_proximal'|'l_axilla_distal'|'l_axilla_posterior_folds'|'r_clavicle'|'r_acromion'|'r_axilla_proximal'|'r_axilla_distal'|'r_axilla_posterior_folds'|'spine_1_middle_back'|'spine_2_lower_back'|'waist_preferred_anterior'|'waist_preferred_posterior'|'l_rib10'|'l_thelion'|'r_rib10'|'r_thelion'|'l_asis'|'l_iliocristale'|'l_psis'|'r_asis'|'r_iliocristale'|'r_psis'|'crotch'|'l_femoral_lateral_epicondyle'|'l_femoral_medial_epicondyle'|'l_suprapatella'|'l_trochanterion'|'r_femoral_lateral_epicondyle'|'r_femoral_medial_epicondyle'|'r_suprapatella'|'r_trochanterion'|'l_tibiale'|'l_medial_malleolus'|'l_lateral_malleolus'|'l_sphyrion'|'r_tibiale'|'r_medial_malleolus'|'r_lateral_malleolus'|'r_sphyrion'|'l_metatarsal_phalanx_1'|'l_metatarsal_phalanx_5'|'l_dactylion'|'l_calcaneus_posterior'|'r_metatarsal_phalanx_1'|'r_metatarsal_phalanx_5'|'r_dactylion'|'r_calcaneus_posterior'|'l_humeral_lateral_epicondyle'|'l_humeral_medial_epicondyle'|'l_olecranon'|'r_humeral_lateral_epicondyle'|'r_humeral_medial_epicondyle'|'r_olecranon'|'l_radiale'|'l_ulnar_styloid'|'l_radial_styloid'|'r_radiale'|'r_ulnar_styloid'|'r_radial_styloid'|'l_metacarpal_phalanx_2'|'l_metacarpal_phalanx_3'|'l_metacarpal_phalanx_5'|'r_metacarpal_phalanx_2'|'r_metacarpal_phalanx_3'|'r_metacarpal_phalanx_5'|'nuchale'|'l_neck_base'|'r_neck_base'|'navel'|'l_ectocanthus'|'r_ectocanthus'|'menton'|'mesosternale'|'opisthocranion'|'l_knee_crease'|'r_knee_crease'|'rear_center_midsagittal_plane'|'buttocks_standing_wall_contact_point'|'l_chest_midsagittal_plane'|'r_chest_midsagittal_plane'|'l_bideltoid'|'r_bideltoid'|'l_carpal_distal_phalanx_1'|'l_carpal_distal_phalanx_2'|'l_carpal_distal_phalanx_3'|'l_carpal_distal_phalanx_4'|'l_carpal_distal_phalanx_5'|'r_carpal_distal_phalanx_1'|'r_carpal_distal_phalanx_2'|'r_carpal_distal_phalanx_3'|'r_carpal_distal_phalanx_4'|'r_carpal_distal_phalanx_5'|'l_tarsal_distal_phalanx_1'|'l_tarsal_distal_phalanx_2'|'l_tarsal_distal_phalanx_3'|'l_tarsal_distal_phalanx_4'|'l_tarsal_distal_phalanx_5'|'r_tarsal_distal_phalanx_1'|'r_tarsal_distal_phalanx_2'|'r_tarsal_distal_phalanx_3'|'r_tarsal_distal_phalanx_4'|'r_tarsal_distal_phalanx_5');
-hanimHumanoidInfoKeyValues :  ('authorName'|'authorEmail'|'copyright'|'creationDate'|'usageRestrictions'|'humanoidVersion'|'age'|'gender'|'height'|'weight');
-hanimJointNameValues :  ('humanoid_root'|'sacroiliac'|'l_hip'|'l_knee'|'l_talocrural'|'l_talocalcaneonavicular'|'l_cuneonavicular_1'|'l_tarsometatarsal_1'|'l_metatarsophalangeal_1'|'l_tarsal_interphalangeal_1'|'l_cuneonavicular_2'|'l_tarsometatarsal_2'|'l_metatarsophalangeal_2'|'l_tarsal_proximal_interphalangeal_2'|'l_tarsal_distal_interphalangeal_2'|'l_cuneonavicular_3'|'l_tarsometatarsal_3'|'l_metatarsophalangeal_3'|'l_tarsal_proximal_interphalangeal_3'|'l_tarsal_distal_interphalangeal_3'|'l_calcaneocuboid'|'l_transversetarsal'|'l_tarsometatarsal_4'|'l_metatarsophalangeal_4'|'l_tarsal_proximal_interphalangeal_4'|'l_tarsal_distal_interphalangeal_4'|'l_tarsometatarsal_5'|'l_metatarsophalangeal_5'|'l_tarsal_proximal_interphalangeal_5'|'l_tarsal_distal_interphalangeal_5'|'r_hip'|'r_knee'|'r_talocrural'|'r_talocalcaneonavicular'|'r_cuneonavicular_1'|'r_tarsometatarsal_1'|'r_metatarsophalangeal_1'|'r_tarsal_interphalangeal_1'|'r_cuneonavicular_2'|'r_tarsometatarsal_2'|'r_metatarsophalangeal_2'|'r_tarsal_proximal_interphalangeal_2'|'r_tarsal_distal_interphalangeal_2'|'r_cuneonavicular_3'|'r_tarsometatarsal_3'|'r_metatarsophalangeal_3'|'r_tarsal_proximal_interphalangeal_3'|'r_tarsal_distal_interphalangeal_3'|'r_calcaneocuboid'|'r_transversetarsal'|'r_tarsometatarsal_4'|'r_metatarsophalangeal_4'|'r_tarsal_proximal_interphalangeal_4'|'r_tarsal_distal_interphalangeal_4'|'r_tarsometatarsal_5'|'r_metatarsophalangeal_5'|'r_tarsal_proximal_interphalangeal_5'|'r_tarsal_distal_interphalangeal_5'|'vl5'|'vl4'|'vl3'|'vl2'|'vl1'|'vt12'|'vt11'|'vt10'|'vt9'|'vt8'|'vt7'|'vt6'|'vt5'|'vt4'|'vt3'|'vt2'|'vt1'|'vc7'|'vc6'|'vc5'|'vc4'|'vc3'|'vc2'|'vc1'|'skullbase'|'l_eyelid_joint'|'r_eyelid_joint'|'l_eyeball_joint'|'r_eyeball_joint'|'l_eyebrow_joint'|'r_eyebrow_joint'|'temporomandibular'|'l_sternoclavicular'|'l_acromioclavicular'|'l_shoulder'|'l_elbow'|'l_radiocarpal'|'l_midcarpal_1'|'l_carpometacarpal_1'|'l_metacarpophalangeal_1'|'l_carpal_interphalangeal_1'|'l_midcarpal_2'|'l_carpometacarpal_2'|'l_metacarpophalangeal_2'|'l_carpal_proximal_interphalangeal_2'|'l_carpal_distal_interphalangeal_2'|'l_midcarpal_3'|'l_carpometacarpal_3'|'l_metacarpophalangeal_3'|'l_carpal_proximal_interphalangeal_3'|'l_carpal_distal_interphalangeal_3'|'l_midcarpal_4_5'|'l_carpometacarpal_4'|'l_metacarpophalangeal_4'|'l_carpal_proximal_interphalangeal_4'|'l_carpal_distal_interphalangeal_4'|'l_carpometacarpal_5'|'l_metacarpophalangeal_5'|'l_carpal_proximal_interphalangeal_5'|'l_carpal_distal_interphalangeal_5'|'r_sternoclavicular'|'r_acromioclavicular'|'r_shoulder'|'r_elbow'|'r_radiocarpal'|'r_midcarpal_1'|'r_carpometacarpal_1'|'r_metacarpophalangeal_1'|'r_carpal_interphalangeal_1'|'r_midcarpal_2'|'r_carpometacarpal_2'|'r_metacarpophalangeal_2'|'r_carpal_proximal_interphalangeal_2'|'r_carpal_distal_interphalangeal_2'|'r_midcarpal_3'|'r_carpometacarpal_3'|'r_metacarpophalangeal_3'|'r_carpal_proximal_interphalangeal_3'|'r_carpal_distal_interphalangeal_3'|'r_midcarpal_4_5'|'r_carpometacarpal_4'|'r_metacarpophalangeal_4'|'r_carpal_proximal_interphalangeal_4'|'r_carpal_distal_interphalangeal_4'|'r_carpometacarpal_5'|'r_metacarpophalangeal_5'|'r_carpal_proximal_interphalangeal_5'|'r_carpal_distal_interphalangeal_5');
-hanimSegmentNameValues :  ('sacrum'|'pelvis'|'l_thigh'|'l_calf'|'l_talus'|'l_navicular'|'l_cuneiform_1'|'l_metatarsal_1'|'l_tarsal_proximal_phalanx_1'|'l_tarsal_distal_phalanx_1'|'l_cuneiform_2'|'l_metatarsal_2'|'l_tarsal_proximal_phalanx_2'|'l_tarsal_middle_phalanx_2'|'l_tarsal_distal_phalanx_2'|'l_cuneiform_3'|'l_metatarsal_3'|'l_tarsal_proximal_phalanx_3'|'l_tarsal_middle_phalanx_3'|'l_tarsal_distal_phalanx_3'|'l_calcaneus'|'l_cuboid'|'l_metatarsal_4'|'l_tarsal_proximal_phalanx_4'|'l_tarsal_middle_phalanx_4'|'l_tarsal_distal_phalanx_4'|'l_metatarsal_5'|'l_tarsal_proximal_phalanx_5'|'l_tarsal_middle_phalanx_5'|'l_tarsal_distal_phalanx_5'|'r_thigh'|'r_calf'|'r_talus'|'r_navicular'|'r_cuneiform_1'|'r_metatarsal_1'|'r_tarsal_proximal_phalanx_1'|'r_tarsal_distal_phalanx_1'|'r_cuneiform_2'|'r_metatarsal_2'|'r_tarsal_proximal_phalanx_2'|'r_tarsal_middle_phalanx_2'|'r_tarsal_distal_phalanx_2'|'r_cuneiform_3'|'r_metatarsal_3'|'r_tarsal_proximal_phalanx_3'|'r_tarsal_middle_phalanx_3'|'r_tarsal_distal_phalanx_3'|'r_calcaneus'|'r_cuboid'|'r_metatarsal_4'|'r_tarsal_proximal_phalanx_4'|'r_tarsal_middle_phalanx_4'|'r_tarsal_distal_phalanx_4'|'r_metatarsal_5'|'r_tarsal_proximal_phalanx_5'|'r_tarsal_middle_phalanx_5'|'r_tarsal_distal_phalanx_5'|'l5'|'l4'|'l3'|'l2'|'l1'|'t12'|'t11'|'t10'|'t9'|'t8'|'t7'|'t6'|'t5'|'t4'|'t3'|'t2'|'t1'|'c7'|'c6'|'c5'|'c4'|'c3'|'c2'|'c1'|'skull'|'l_eyelid'|'r_eyelid'|'l_eyeball'|'r_eyeball'|'l_eyebrow'|'r_eyebrow'|'jaw'|'l_clavicle'|'l_scapula'|'l_upperarm'|'l_forearm'|'l_carpal'|'l_trapezium'|'l_metacarpal_1'|'l_carpal_proximal_phalanx_1'|'l_carpal_distal_phalanx_1'|'l_trapezoid'|'l_metacarpal_2'|'l_carpal_proximal_phalanx_2'|'l_carpal_middle_phalanx_2'|'l_carpal_distal_phalanx_2'|'l_capitate'|'l_metacarpal_3'|'l_carpal_proximal_phalanx_3'|'l_carpal_middle_phalanx_3'|'l_carpal_distal_phalanx_3'|'l_hamate'|'l_metacarpal_4'|'l_carpal_proximal_phalanx_4'|'l_carpal_middle_phalanx_4'|'l_carpal_distal_phalanx_4'|'l_metacarpal_5'|'l_carpal_proximal_phalanx_5'|'l_carpal_middle_phalanx_5'|'l_carpal_distal_phalanx_5'|'r_clavicle'|'r_scapula'|'r_upperarm'|'r_forearm'|'r_carpal'|'r_trapezium'|'r_metacarpal_1'|'r_carpal_proximal_phalanx_1'|'r_carpal_distal_phalanx_1'|'r_trapezoid'|'r_metacarpal_2'|'r_carpal_proximal_phalanx_2'|'r_carpal_middle_phalanx_2'|'r_carpal_distal_phalanx_2'|'r_capitate'|'r_metacarpal_3'|'r_carpal_proximal_phalanx_3'|'r_carpal_middle_phalanx_3'|'r_carpal_distal_phalanx_3'|'r_hamate'|'r_metacarpal_4'|'r_carpal_proximal_phalanx_4'|'r_carpal_middle_phalanx_4'|'r_carpal_distal_phalanx_4'|'r_metacarpal_5'|'r_carpal_proximal_phalanx_5'|'r_carpal_middle_phalanx_5'|'r_carpal_distal_phalanx_5');
-hanimVersionChoices :  ('2.0');
-hatchStyleValues :  ('1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'|'10'|'11'|'12'|'13'|'14'|'15'|'16'|'17'|'18'|'19');
-initializeOnlyAccessTypes :  ('autoCalc'|'bboxCenter'|'bboxSize'|'beginCap'|'bottomRadius'|'category'|'ccw'|'child1Url'|'child2Url'|'child3Url'|'child4Url'|'closed'|'closureType'|'colorKey'|'colorIndex'|'colorPerVertex'|'convex'|'coordIndex'|'country'|'creaseAngle'|'crossSection'|'directOutput'|'domain'|'duration'|'endCap'|'endAngle'|'extra'|'forceTransitions'|'generateMipMaps'|'geoGridOrigin'|'geometryType'|'geoSystem'|'height'|'index'|'initialDestination'|'initialValue'|'innerRadius'|'internal'|'intersectionType'|'kind'|'knot'|'language'|'lineSegments'|'mustEvaluate'|'normalIndex'|'normalPerVertex'|'numComponents'|'order'|'outerRadius'|'phaseFunction'|'radius'|'range'|'repeatR'|'repeatS'|'repeatT'|'rootUrl'|'rotateYUp'|'size'|'sortOrder'|'spatialize'|'specific'|'speedFactor'|'spine'|'startAngle'|'subcategory'|'texCoordIndex'|'texCoordKey'|'uClosed'|'uDimension'|'uKnot'|'uOrder'|'vClosed'|'vDimension'|'vKnot'|'vOrder'|'xDimension'|'xSpacing'|'zDimension'|'zSpacing');
-inputOnlyAccessTypes :  ('activate'|'set_articulationParameterValue0'|'set_articulationParameterValue1'|'set_articulationParameterValue2'|'set_articulationParameterValue3'|'set_articulationParameterValue4'|'set_articulationParameterValue5'|'set_articulationParameterValue6'|'set_articulationParameterValue7'|'set_boolean'|'set_bind'|'set_colorIndex'|'set_contacts'|'set_coordIndex'|'set_crossSection'|'set_destination'|'set_fraction'|'set_height'|'set_index'|'set_normalIndex'|'set_orientation'|'set_scale'|'set_spine'|'set_texCoordIndex'|'set_triggerTime');
-inputOutputAccessTypes :  ('absorption'|'activeLayer'|'address'|'align'|'alpha'|'alphaCutoff'|'alphaMode'|'ambientIntensity'|'ambientTextureMapping'|'anchorPoint'|'angle'|'angularDampingFactor'|'angularVelocity'|'anisotropicDegree'|'antennaLocation'|'applicationID'|'applied'|'appliedParameters'|'antennaPatternType'|'antennaPatternLength'|'articulationParameterArray'|'articulationParameterChangeIndicatorArray'|'articulationParameterCount'|'articulationParameterDesignatorArray'|'articulationParameterIdPartAttachedToArray'|'articulationParameterTypeArray'|'attack'|'attenuation'|'autoDamp'|'autoDisable'|'autoOffset'|'autoRefresh'|'autoRefreshTimeLimit'|'avatarSize'|'axis'|'axis1'|'axis1Angle'|'axis1Torque'|'axis2'|'axis2Angle'|'axis2Torque'|'axis3Angle'|'axis3Torque'|'axisOfRotation'|'axisRotation'|'backAmbientIntensity'|'backDiffuseColor'|'backEmissiveColor'|'backShininess'|'backSpecularColor'|'backTexture'|'backTransparency'|'backUrl'|'baseColor'|'baseTextureMapping'|'beamWidth'|'bottom'|'bottomTexture'|'bottomUrl'|'bounce'|'boundaryOpacity'|'borderColor'|'borderWidth'|'boundaryModeS'|'boundaryModeT'|'boundaryModeR'|'buffer'|'bufferDuration'|'center'|'castShadow'|'centerOfMass'|'centerOfRotation'|'class'|'clipBoundary'|'channels'|'channelCountMode'|'channelInterpretation'|'channelSelection'|'channelsEnabled'|'gain'|'collisionType'|'color'|'colorSteps'|'coneInnerAngle'|'coneOuterAngle'|'coneOuterGain'|'contactNormal'|'contourStepSize'|'controlPoint'|'constantForceMix'|'contactSurfaceThickness'|'coolColor'|'createParticles'|'cryptoSystem'|'cryptoKeyID'|'cutOffAngle'|'cycleInterval'|'data'|'dataLength'|'deadReckoning'|'delayTime'|'deletionAllowed'|'depth'|'description'|'desiredAngularVelocity1'|'desiredAngularVelocity2'|'detonationLocation'|'detonationRelativeLocation'|'detonationResult'|'detune'|'diffuse'|'diffuseColor'|'diffuseTextureMapping'|'dimensions'|'direction'|'disableAngularSpeed'|'disableLinearSpeed'|'disableTime'|'diskAngle'|'displacements'|'bboxDisplay'|'detune'|'displayed'|'distanceModel'|'easeInEaseOut'|'edgeColor'|'emissiveColor'|'emissiveTextureMapping'|'enabled'|'enabledAxes'|'dopplerEnabled'|'enableHRTF'|'encodingScheme'|'endFrame'|'entityID'|'entityKind'|'entityDomain'|'entityCountry'|'entityCategory'|'entitySubcategory'|'entitySpecific'|'entityExtra'|'errorCorrection'|'eventApplicationID'|'eventEntityID'|'eventNumber'|'eventSiteID'|'family'|'fanCount'|'farDistance'|'fftSize'|'fieldOfView'|'filled'|'finiteRotationAxis'|'fired1'|'fired2'|'fireMissionIndex'|'firingRange'|'firingRate'|'fixed'|'fogType'|'force'|'forceID'|'forceOutput'|'forces'|'frameDuration'|'frameIncrement'|'frameIndex'|'frequency'|'frequencyBinCount'|'frictionCoefficients'|'frictionDirection'|'frontTexture'|'frontUrl'|'function'|'fuse'|'gain'|'geoCenter'|'geoCoords'|'global'|'gradientThreshold'|'gravity'|'groundAngle'|'groundColor'|'gustiness'|'hatchColor'|'hatched'|'hatchStyle'|'headlight'|'horizontal'|'id'|'image'|'inertia'|'info'|'inputSource'|'integerKey'|'intensity'|'intensityThreshold'|'interauralDistance'|'iterations'|'jointBindingPositions'|'jointBindingRotations'|'jointBindingScales'|'joints'|'justify'|'key'|'knee'|'keyVelocity'|'jump'|'keyValue'|'language'|'leftTexture'|'leftToRight'|'leftUrl'|'length'|'lengthOfModulationParameters'|'lifetimeVariation'|'lighting'|'limitOrientation'|'linearAcceleration'|'linearDampingFactor'|'linearVelocity'|'linetype'|'linewidthScaleFactor'|'llimit'|'loa'|'load'|'location'|'loop'|'loopEnd'|'loopStart'|'mapping'|'marking'|'mass'|'magnificationFilter'|'matchCriterion'|'matrix'|'maxAngle'|'maxAngle1'|'maxBack'|'maxChannelCount'|'maxCorrectionSpeed'|'maxDecibels'|'maxDelayTime'|'maxDistance'|'maxExtent'|'maxFront'|'maxParticles'|'maxPosition'|'maxSeparation'|'maxTorque1'|'maxTorque2'|'mediaDeviceID'|'metallic'|'metallicRoughnessTextureMapping'|'minAngle'|'minAngle1'|'minBack'|'minBounceSpeed'|'minDecibels'|'minFront'|'minificationFilter'|'minPosition'|'minSeparation'|'mode'|'modulationTypeSpreadSpectrum'|'modulationTypeMajor'|'modulationTypeDetail'|'modulationTypeSystem'|'momentsOfInertia'|'motionsEnabled'|'motor1Axis'|'motor2Axis'|'motor3Axis'|'multicastRelayHost'|'multicastRelayPort'|'munitionEndPoint'|'munitionStartPoint'|'munitionApplicationID'|'munitionEntityID'|'munitionSiteID'|'munitionQuantity'|'name'|'nearDistance'|'networkMode'|'normalScale'|'normalTextureMapping'|'numberOfChannels'|'normalize'|'normalizeVelocity'|'objectType'|'occlusionStrength'|'occlusionTextureMapping'|'offset'|'offsetUnits'|'on'|'opacityFactor'|'optionsImag'|'optionsReal'|'orientation'|'orthogonalColor'|'oversample'|'parallelColor'|'parameter'|'particleLifetime'|'particleSize'|'pauseTime'|'pickable'|'pitch'|'plane'|'playbackRate'|'point'|'pointSize'|'pointSizeScaleFactor'|'pointSizeMinValue'|'pointSizeMaxValue'|'port'|'position'|'power'|'preferAccuracy'|'priority'|'qualityFactor'|'radioID'|'radioEntityTypeKind'|'radioEntityTypeDomain'|'radioEntityTypeCountry'|'radioEntityTypeCategory'|'radioEntityTypeNomenclature'|'radioEntityTypeNomenclatureVersion'|'ratio'|'readInterval'|'receivedPower'|'receiverState'|'reference'|'referenceDistance'|'refraction'|'relativeAntennaLocation'|'release'|'retainedOpacity'|'retainUserOffsets'|'resumeTime'|'rightTexture'|'rightUrl'|'rolloffFactor'|'rotation'|'roughness'|'rtpHeaderExpected'|'sampleRate'|'samples'|'scale'|'scaleMode'|'scaleOrientation'|'segmentEnabled'|'separateBackColor'|'shininess'|'shadowIntensity'|'shadows'|'side'|'shininessTextureMapping'|'silhouetteBoundaryOpacity'|'silhouetteRetainedOpacity'|'silhouetteSharpness'|'siteID'|'size'|'sizeUnits'|'skeletalConfiguration'|'skinCoordIndex'|'skinCoordWeight'|'skyColor'|'skyAngle'|'sliderForce'|'slipCoefficients'|'slipFactors'|'smoothingTimeConstant'|'softnessConstantForceMix'|'softnessErrorCorrection'|'solid'|'source'|'spacing'|'specular'|'specularColor'|'specularTextureMapping'|'speed'|'startFrame'|'startTime'|'stiffness'|'stopBounce'|'stopErrorCorrection'|'stop1ConstantForceMix'|'stop1Bounce'|'stop2Bounce'|'stop3Bounce'|'stop1ErrorCorrection'|'stop2ErrorCorrection'|'stop3ErrorCorrection'|'stopTime'|'streamIdentifier'|'string'|'stripCount'|'style'|'summary'|'surfaceArea'|'surfaceSpeed'|'surfaceTolerance'|'surfaceValues'|'suspensionErrorCorrection'|'suspensionForce'|'tailTime'|'tau'|'tdlType'|'tessellation'|'tessellationScale'|'textureCompression'|'texturePriority'|'threshold'|'timeOut'|'title'|'toggle'|'tolerance'|'top'|'topTexture'|'topToBottom'|'topUrl'|'torques'|'trackCurrentView'|'transitionTime'|'transitionType'|'translation'|'transmitFrequencyBandwidth'|'transmitState'|'transmitterApplicationID'|'transmitterEntityID'|'transmitterRadioID'|'transmitterSiteID'|'transparency'|'turbulence'|'type'|'ulimit'|'upVector'|'update'|'url'|'useFiniteRotation'|'useGeometry'|'useGlobalGravity'|'uTessellation'|'variation'|'value'|'values'|'version'|'vector'|'vertexCount'|'vertices'|'viewAll'|'visibilityLimit'|'visibilityRange'|'visible'|'vTessellation'|'warhead'|'warmColor'|'weight'|'weightConstant1'|'weightConstant2'|'weightFunction1'|'weightFunction2'|'whichChoice'|'whichGeometry'|'writeInterval'|'yScale');
-intersectionTypeValues :  ('BOUNDS'|'GEOMETRY');
-justifyChoices :  ('"MIDDLE"'|'"MIDDLE" "BEGIN"'|'"MIDDLE" "END"'|'"MIDDLE" "FIRST"'|'"MIDDLE" "MIDDLE"'|'"BEGIN"'|'"BEGIN" "BEGIN"'|'"BEGIN" "END"'|'"BEGIN" "FIRST"'|'"BEGIN" "MIDDLE"'|'"END"'|'"END" "BEGIN"'|'"END" "END"'|'"END" "FIRST"'|'"END" "MIDDLE"'|'"FIRST"'|'"FIRST" "BEGIN"'|'"FIRST" "END"'|'"FIRST" "FIRST"'|'"FIRST" "MIDDLE"');
-layoutAlignChoices :  ('"LEFT" "BOTTOM"'|'"LEFT" "CENTER"'|'"LEFT" "TOP"'|'"CENTER" "BOTTOM"'|'"CENTER" "CENTER"'|'"CENTER" "TOP"'|'"RIGHT" "BOTTOM"'|'"RIGHT" "CENTER"'|'"RIGHT" "TOP"');
-layoutScaleModeChoices :  ('"NONE" "NONE"'|'"NONE" "FRACTION"'|'"NONE" "STRETCH"'|'"NONE" "PIXEL"'|'"FRACTION" "NONE"'|'"FRACTION" "FRACTION"'|'"FRACTION" "STRETCH"'|'"FRACTION" "PIXEL"'|'"STRETCH" "NONE"'|'"STRETCH" "FRACTION"'|'"STRETCH" "STRETCH"'|'"STRETCH" "PIXEL"'|'"PIXEL" "NONE"'|'"PIXEL" "FRACTION"'|'"PIXEL" "STRETCH"'|'"PIXEL" "PIXEL"');
-layoutUnitsChoices :  ('"WORLD" "WORLD"'|'"WORLD" "FRACTION"'|'"WORLD" "PIXEL"'|'"FRACTION" "WORLD"'|'"FRACTION" "FRACTION"'|'"FRACTION" "PIXEL"'|'"PIXEL" "WORLD"'|'"PIXEL" "FRACTION"'|'"PIXEL" "PIXEL"');
-lineTypeValues :  ('1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'|'10'|'11'|'12'|'13'|'14'|'15'|'16');
-loaType :  ('');
-metaDirectionChoices :  ('rtl'|'ltr');
-metaNameValues :  ('accessRights'|'author'|'CML-version'|'contributor'|'created'|'creator'|'description'|'disclaimer'|'drawing'|'error'|'generator'|'hint'|'identifier'|'Image'|'info'|'information'|'isVersionOf'|'keywords'|'license'|'mediator'|'modified'|'movie'|'MovingImage'|'original'|'photo'|'photograph'|'publisher'|'reference'|'requires'|'rights'|'robots'|'Sound'|'source'|'specificationSection'|'specificationUrl'|'subject'|'Text'|'title'|'TODO'|'translator'|'translated'|'version'|'warning');
-multiTextureFunctionValues :  ('"COMPLEMENT"'|'"ALPHAREPLICATE"'|'""');
-multiTextureModeValues :  ('"ADD"'|'"ADDSIGNED"'|'"ADDSIGNED2X"'|'"ADDSMOOTH"'|'"BLENDCURRENTALPHA"'|'"BLENDDIFFUSEALPHA"'|'"BLENDFACTORALPHA"'|'"BLENDTEXTUREALPHA"'|'"DOTPRODUCT3"'|'"MODULATE"'|'"MODULATE2X"'|'"MODULATE4X"'|'"MODULATEALPHA_ADDCOLOR"'|'"MODULATEINVALPHA_ADDCOLOR"'|'"MODULATEINVCOLOR_ADDALPHA"'|'"OFF"'|'"REPLACE"'|'"SELECTARG1"'|'"SELECTARG2"'|'"SUBTRACT"');
-multiTextureSourceValues :  ('"DIFFUSE"'|'"FACTOR"'|'"SPECULAR"'|'""');
-navigationTransitionTypeValues :  ('"TELEPORT"'|'"LINEAR"'|'"ANIMATE"');
-navigationTypeValues :  ('"ANY"'|'"WALK"'|'"EXAMINE"'|'"FLY"'|'"LOOKAT"'|'"NONE"'|'"EXPLORE"');
-networkModeChoices :  ('standAlone'|'networkReader'|'networkWriter');
-outputOnlyAccessTypes :  ('actionKeyPress'|'actionKeyRelease'|'altKey'|'angle'|'angleRate'|'articulationParameterValue0_changed'|'articulationParameterValue1_changed'|'articulationParameterValue2_changed'|'articulationParameterValue3_changed'|'articulationParameterValue4_changed'|'articulationParameterValue5_changed'|'articulationParameterValue6_changed'|'articulationParameterValue7_changed'|'bindTime'|'body1AnchorPoint'|'body1Axis'|'body2AnchorPoint'|'body2Axis'|'centerOfRotation_changed'|'channelCount'|'collideTime'|'controlKey'|'cycleTime'|'detonateTime'|'duration_changed'|'elapsedTime'|'enteredText'|'enterTime'|'exitTime'|'finalText'|'firedTime'|'fraction_changed'|'frameCount'|'geovalue_changed'|'hinge1Angle'|'hinge1AngleRate'|'hinge2Angle'|'hinge2AngleRate'|'hitGeoCoord_changed'|'hitNormal_changed'|'hitPoint_changed'|'hitTexCoord_changed'|'inputFalse'|'inputNegate'|'inputTrue'|'isActive'|'isBound'|'isCollided'|'isDetonated'|'isLoaded'|'isOver'|'isPaused'|'isNetworkReader'|'isNetworkWriter'|'isRtpHeaderHeard'|'isSelected'|'isStandAlone'|'isValid'|'keyPress'|'keyRelease'|'level_changed'|'lineBounds'|'loadTime'|'modifiedFraction_changed'|'motor1Angle'|'motor1AngleRate'|'motor2Angle'|'motor2AngleRate'|'motor3Angle'|'motor3AngleRate'|'next'|'normal_changed'|'orientation_changed'|'origin'|'pickedGeometry'|'pickedNormal'|'pickedPoint'|'pickedTextureCoordinate'|'position_changed'|'previous'|'progress'|'rotation_changed'|'separation'|'separationRate'|'shiftKey'|'textBounds'|'time'|'timestamp'|'touchTime'|'trackPoint_changed'|'transitionComplete'|'translation_changed'|'triggerTime'|'triggerTrue'|'triggerValue'|'value_changed');
-particleSystemGeometryTypeValues :  ('LINE'|'POINT'|'QUAD'|'SPRITE'|'TRIANGLE'|'GEOMETRY');
-periodicWaveTypeChoices :  ('SINE'|'SQUARE'|'SAWTOOTH'|'TRIANGLE'|'CUSTOM');
-phaseFunctionValues :  ('Henyey-Greenstein'|'NONE');
-pickableObjectTypeValues :  ('"ALL"'|'"NONE"'|'"TERRAIN"');
-pickSensorMatchCriterionChoices :  ('MATCH_ANY'|'MATCH_EVERY'|'MATCH_ONLY_ONE');
-pickSensorSortOrderValues :  ('ANY'|'CLOSEST'|'ALL'|'ALL_SORTED');
-profileNameChoices :  ('Core'|'Interchange'|'CADInterchange'|'Interactive'|'Immersive'|'MedicalInterchange'|'MPEG4Interactive'|'Full');
-projectionVolumeStyleTypeChoices :  ('MAX'|'MIN'|'AVERAGE');
-shaderLanguageValues :  ('Cg'|'GLSL'|'HLSL');
-shaderPartTypeValues :  ('VERTEX'|'FRAGMENT');
-textureBoundaryModeChoices :  ('CLAMP'|'CLAMP_TO_EDGE'|'CLAMP_TO_BOUNDARY'|'MIRRORED_REPEAT'|'REPEAT');
-textureCompressionModeChoices :  ('DEFAULT'|'FASTEST'|'HIGH'|'LOW'|'MEDIUM'|'NICEST');
-textureCoordinateGeneratorModeChoices :  ('SPHERE'|'CAMERASPACENORMAL'|'CAMERASPACEPOSITION'|'CAMERASPACEREFLECTIONVECTOR'|'SPHERE-LOCAL'|'COORD'|'COORD-EYE'|'NOISE'|'NOISE-EYE'|'SPHERE-REFLECT'|'SPHERE-REFLECT-LOCAL');
-textureMagnificationModeChoices :  ('AVG_PIXEL'|'DEFAULT'|'FASTEST'|'NEAREST_PIXEL'|'NICEST');
-textureMinificationModeChoices :  ('AVG_PIXEL'|'AVG_PIXEL_AVG_MIPMAP'|'AVG_PIXEL_NEAREST_MIPMAP'|'DEFAULT'|'FASTEST'|'NEAREST_PIXEL'|'NEAREST_PIXEL_AVG_MIPMAP'|'NEAREST_PIXEL_NEAREST_MIPMAP'|'NICEST');
-unitCategoryChoices :  ('angle'|'force'|'length'|'mass');
-unitIntervalType :  ('');
-volumeRenderingWeightFunctionChoices :  ('CONSTANT'|'ALPHA1'|'ALPHA2'|'ONE_MINUS_ALPHA1'|'ONE_MINUS_ALPHA2'|'TABLE');
-waveShaperOversampleChoices :  ('NONE'|'2X'|'4X');
-x3dVersionChoices :  ('3.0'|'3.1'|'3.2'|'3.3'|'4.0');
+accessTypeChoices : ('initializeOnly'|'inputOnly'|'outputOnly'|'inputOutput');
+acronymChoices : ('CAD'|'HSV'|'JPEG'|'MIDI'|'MIME'|'MF'|'MPEG'|'PNG'|'RGB'|'RURL'|'SAI'|'SF'|'UCS'|'URI'|'URL'|'URN'|'UTF-8');
+alphaModeChoices : ('AUTO'|'OPAQUE'|'MASK'|'BLEND');
+appliedParametersChoices : ('"BOUNCE"'|'"USER_FRICTION"'|'"FRICTION_COEFFICIENT-2"'|'"ERROR_REDUCTION"'|'"CONSTANT_FORCE"'|'"SPEED-1"'|'"SPEED-2"'|'"SLIP-1"'|'"SLIP-2"');
+bboxSizeType : SFVec3f;
+biquadTypeFilterChoices : ('LOWPASS'|'HIGHPASS'|'BANDPASS'|'LOWSHELF'|'HIGHSHELF'|'PEAKING'|'NOTCH'|'ALLPASS');
+channelCountModeChoices : ('MAX'|'CLAMPED_MAX'|'EXPLICIT');
+channelInterpretationChoices : ('SPEAKERS'|'DISCRETE');
+closureTypeChoices : ('PIE'|'CHORD');
+componentNameChoices : ('Core'|'CADGeometry'|'CubeMapTexturing'|'DIS'|'EnvironmentalEffects'|'EnvironmentalSensor'|'EventUtilities'|'Followers'|'Geometry2D'|'Geometry3D'|'Geospatial'|'Grouping'|'HAnim'|'H-Anim'|'Interpolation'|'KeyDeviceSensor'|'Layering'|'Layout'|'Lighting'|'Navigation'|'Networking'|'NURBS'|'ParticleSystems'|'Picking'|'PointingDeviceSensor'|'TextureProjection'|'Rendering'|'RigidBodyPhysics'|'Scripting'|'Shaders'|'Shape'|'Sound'|'Text'|'Texturing'|'Texturing3D'|'Time'|'VolumeRendering');
+containerFieldChoicesAudioClip : ('children'|'source'|'watchList');
+containerFieldChoicesAudioGraph : ('children'|'outputs'|'source');
+containerFieldChoicesColor : ('color'|'colorRamp');
+containerFieldChoicesDISEntityTypeMapping : ('children'|'mapping'|'watchList');
+containerFieldChoicesGroupLODShapeTransformSwitch : ('children'|'proxy'|'rootNode'|'shape'|'skin');
+containerFieldChoicesHAnimJoint : ('children'|'joints'|'skeleton');
+containerFieldChoicesHAnimMotion : ('children'|'motions');
+containerFieldChoicesHAnimSegment : ('children'|'segments');
+containerFieldChoicesHAnimSite : ('children'|'sites'|'skeleton'|'viewpoints');
+containerFieldChoicesMetadata : ('metadata'|'value');
+containerFieldChoicesPackagedShader : ('shaders'|'children');
+containerFieldChoicesShaderPart : ('parts'|'children');
+containerFieldChoicesSoundSource : ('children'|'source');
+containerFieldChoicesTextureCoordinate : ('texCoord'|'texCoordRamp');
+containerFieldChoicesX3DCoordinateNode : ('coord'|'controlPoint'|'skinCoord'|'skinBindingCoords');
+containerFieldChoicesX3DNormalNode : ('normal'|'skinNormal'|'skinBindingNormals');
+containerFieldChoicesX3DTexture2DNode : ('texture'|'source'|'backTexture'|'bottomTexture'|'frontTexture'|'leftTexture'|'rightTexture'|'topTexture'|'children'|'baseTexture'|'emissiveTexture'|'metallicRoughnessTexture'|'normalTexture'|'occlusionTexture');
+containerFieldChoicesX3DTexture3DNode : ('gradients'|'segmentIdentifiers'|'surfaceNormals'|'texture'|'voxels'|'children');
+containerFieldChoicesX3DUrlObject : ('children'|'children');
+containerFieldChoicesX3dUrlObjectTexture : ('texture'|'children'|'source'|'backTexture'|'bottomTexture'|'frontTexture'|'leftTexture'|'rightTexture'|'topTexture'|'baseTexture'|'emissiveTexture'|'metallicRoughnessTexture'|'normalTexture'|'occlusionTexture');
+distanceModelChoices : ('LINEAR'|'INVERSE'|'EXPONENTIAL');
+fieldTypeChoices : ('SFBool'|'MFBool'|'SFColor'|'MFColor'|'SFColorRGBA'|'MFColorRGBA'|'SFDouble'|'MFDouble'|'SFFloat'|'MFFloat'|'SFImage'|'MFImage'|'SFInt32'|'MFInt32'|'SFNode'|'MFNode'|'SFRotation'|'MFRotation'|'SFString'|'MFString'|'SFTime'|'MFTime'|'SFVec2d'|'MFVec2d'|'SFVec2f'|'MFVec2f'|'SFVec3d'|'MFVec3d'|'SFVec3f'|'MFVec3f'|'SFVec4d'|'MFVec4d'|'SFVec4f'|'MFVec4f'|'SFMatrix3d'|'MFMatrix3d'|'SFMatrix3f'|'MFMatrix3f'|'SFMatrix4d'|'MFMatrix4d'|'SFMatrix4f'|'MFMatrix4f');
+fogTypeChoices : ('LINEAR'|'EXPONENTIAL');
+fontFamilyValues : ('"SANS"'|'"SERIF"'|'"TYPEWRITER"');
+fontStyleChoices : ('PLAIN'|'BOLD'|'ITALIC'|'BOLDITALIC');
+forceOutputValues : ('"ALL"'|'"NONE"');
+generatedCubeMapTextureUpdateChoices : ('NONE'|'NEXT_FRAME_ONLY'|'ALWAYS');
+geoMetadataSummaryKeyValues : ('title'|'description'|'coordinateSystem'|'horizontalDatum'|'verticalDatum'|'ellipsoid'|'extent'|'resolution'|'originator'|'copyright'|'date'|'metadataFormat'|'dataUrl'|'dataFormat');
+geoSystemEarthEllipsoidValues : ('AM'|'AN'|'BN'|'BR'|'CC'|'CD'|'EA'|'EB'|'EC'|'ED'|'EE'|'EF'|'FA'|'HE'|'HO'|'ID'|'IN'|'KA'|'RF'|'SA'|'WD'|'WE'|'WGS84'|'Zn'|'S');
+geoSystemSpatialReferenceFrameValues : ('GD'|'UTM'|'GC'|'GDC'|'GCC');
+geoSystemType : '[' (MFString)* ']';
+glossaryChoices : ('activate'|'ancestor'|'AudioGraph'|'author'|'AuthoringTool'|'avatar'|'bearing'|'BindableNode'|'browser'|'BrowserExtension'|'BuiltInNode'|'callback'|'child'|'ChildrenNode'|'ClientSystem'|'CollisionProxy'|'ColourModel'|'culling'|'descendant'|'DisplayDevice'|'DragSensor'|'EnvironmentalSensor'|'event'|'EventCascade'|'ExecutionModel'|'ExternaPrototype'|'field'|'FieldName'|'frame'|'generator'|'GeometricPropertyNode'|'GeometryNode'|'grab'|'GroupingNode'|'HostApplication'|'image'|'immersive'|'Inlining'|'instance'|'instantiation'|'InterpolatorNode'|'intranet'|'LevelOfDetail'|'LineTerminator'|'loop'|'multimedia'|'network'|'node'|'nodeType'|'object'|'orderOfPreference'|'panorama'|'parent'|'pixel'|'pointer'|'pointingDevice'|'pointingDeviceSensor'|'polyline'|'profile'|'prototype'|'prototyping'|'ROUTE'|'sceneGraph'|'script'|'scripting'|'sensorNode'|'separatorCharacter'|'sibling'|'simulationTick'|'slerp'|'specialGroupNode'|'statement'|'texel'|'texture'|'textureCoordinates'|'time'|'timestamp'|'transformationHierarchy'|'transparencyChunk'|'traverse'|'user'|'viewer'|'virtualWorld'|'whiteSpace'|'world'|'worldCoordinateSpace'|'X3DBrowser'|'X3DDocumentServer'|'X3DFile'|'XYPlane'|'YZPlane'|'ZXPlane');
+hanimFeaturePointNameValues : ('skull_vertex'|'glabella'|'sellion'|'l_infraorbitale'|'l_tragion'|'l_gonion'|'r_infraorbitale'|'r_tragion'|'r_gonion'|'supramenton'|'cervicale'|'adams_apple'|'suprasternale'|'substernale'|'l_clavicle'|'l_acromion'|'l_axilla_proximal'|'l_axilla_distal'|'l_axilla_posterior_folds'|'r_clavicle'|'r_acromion'|'r_axilla_proximal'|'r_axilla_distal'|'r_axilla_posterior_folds'|'spine_1_middle_back'|'spine_2_lower_back'|'waist_preferred_anterior'|'waist_preferred_posterior'|'l_rib10'|'l_thelion'|'r_rib10'|'r_thelion'|'l_asis'|'l_iliocristale'|'l_psis'|'r_asis'|'r_iliocristale'|'r_psis'|'crotch'|'l_femoral_lateral_epicondyle'|'l_femoral_medial_epicondyle'|'l_suprapatella'|'l_trochanterion'|'r_femoral_lateral_epicondyle'|'r_femoral_medial_epicondyle'|'r_suprapatella'|'r_trochanterion'|'l_tibiale'|'l_medial_malleolus'|'l_lateral_malleolus'|'l_sphyrion'|'r_tibiale'|'r_medial_malleolus'|'r_lateral_malleolus'|'r_sphyrion'|'l_metatarsal_phalanx_1'|'l_metatarsal_phalanx_5'|'l_dactylion'|'l_calcaneus_posterior'|'r_metatarsal_phalanx_1'|'r_metatarsal_phalanx_5'|'r_dactylion'|'r_calcaneus_posterior'|'l_humeral_lateral_epicondyle'|'l_humeral_medial_epicondyle'|'l_olecranon'|'r_humeral_lateral_epicondyle'|'r_humeral_medial_epicondyle'|'r_olecranon'|'l_radiale'|'l_ulnar_styloid'|'l_radial_styloid'|'r_radiale'|'r_ulnar_styloid'|'r_radial_styloid'|'l_metacarpal_phalanx_2'|'l_metacarpal_phalanx_3'|'l_metacarpal_phalanx_5'|'r_metacarpal_phalanx_2'|'r_metacarpal_phalanx_3'|'r_metacarpal_phalanx_5'|'nuchale'|'l_neck_base'|'r_neck_base'|'navel'|'l_ectocanthus'|'r_ectocanthus'|'menton'|'mesosternale'|'opisthocranion'|'l_knee_crease'|'r_knee_crease'|'rear_center_midsagittal_plane'|'buttocks_standing_wall_contact_point'|'l_chest_midsagittal_plane'|'r_chest_midsagittal_plane'|'l_bideltoid'|'r_bideltoid'|'l_carpal_distal_phalanx_1'|'l_carpal_distal_phalanx_2'|'l_carpal_distal_phalanx_3'|'l_carpal_distal_phalanx_4'|'l_carpal_distal_phalanx_5'|'r_carpal_distal_phalanx_1'|'r_carpal_distal_phalanx_2'|'r_carpal_distal_phalanx_3'|'r_carpal_distal_phalanx_4'|'r_carpal_distal_phalanx_5'|'l_tarsal_distal_phalanx_1'|'l_tarsal_distal_phalanx_2'|'l_tarsal_distal_phalanx_3'|'l_tarsal_distal_phalanx_4'|'l_tarsal_distal_phalanx_5'|'r_tarsal_distal_phalanx_1'|'r_tarsal_distal_phalanx_2'|'r_tarsal_distal_phalanx_3'|'r_tarsal_distal_phalanx_4'|'r_tarsal_distal_phalanx_5');
+hanimHumanoidInfoKeyValues : ('authorName'|'authorEmail'|'copyright'|'creationDate'|'usageRestrictions'|'humanoidVersion'|'age'|'gender'|'height'|'weight');
+hanimJointNameValues : ('humanoid_root'|'sacroiliac'|'l_hip'|'l_knee'|'l_talocrural'|'l_talocalcaneonavicular'|'l_cuneonavicular_1'|'l_tarsometatarsal_1'|'l_metatarsophalangeal_1'|'l_tarsal_interphalangeal_1'|'l_cuneonavicular_2'|'l_tarsometatarsal_2'|'l_metatarsophalangeal_2'|'l_tarsal_proximal_interphalangeal_2'|'l_tarsal_distal_interphalangeal_2'|'l_cuneonavicular_3'|'l_tarsometatarsal_3'|'l_metatarsophalangeal_3'|'l_tarsal_proximal_interphalangeal_3'|'l_tarsal_distal_interphalangeal_3'|'l_calcaneocuboid'|'l_transversetarsal'|'l_tarsometatarsal_4'|'l_metatarsophalangeal_4'|'l_tarsal_proximal_interphalangeal_4'|'l_tarsal_distal_interphalangeal_4'|'l_tarsometatarsal_5'|'l_metatarsophalangeal_5'|'l_tarsal_proximal_interphalangeal_5'|'l_tarsal_distal_interphalangeal_5'|'r_hip'|'r_knee'|'r_talocrural'|'r_talocalcaneonavicular'|'r_cuneonavicular_1'|'r_tarsometatarsal_1'|'r_metatarsophalangeal_1'|'r_tarsal_interphalangeal_1'|'r_cuneonavicular_2'|'r_tarsometatarsal_2'|'r_metatarsophalangeal_2'|'r_tarsal_proximal_interphalangeal_2'|'r_tarsal_distal_interphalangeal_2'|'r_cuneonavicular_3'|'r_tarsometatarsal_3'|'r_metatarsophalangeal_3'|'r_tarsal_proximal_interphalangeal_3'|'r_tarsal_distal_interphalangeal_3'|'r_calcaneocuboid'|'r_transversetarsal'|'r_tarsometatarsal_4'|'r_metatarsophalangeal_4'|'r_tarsal_proximal_interphalangeal_4'|'r_tarsal_distal_interphalangeal_4'|'r_tarsometatarsal_5'|'r_metatarsophalangeal_5'|'r_tarsal_proximal_interphalangeal_5'|'r_tarsal_distal_interphalangeal_5'|'vl5'|'vl4'|'vl3'|'vl2'|'vl1'|'vt12'|'vt11'|'vt10'|'vt9'|'vt8'|'vt7'|'vt6'|'vt5'|'vt4'|'vt3'|'vt2'|'vt1'|'vc7'|'vc6'|'vc5'|'vc4'|'vc3'|'vc2'|'vc1'|'skullbase'|'l_eyelid_joint'|'r_eyelid_joint'|'l_eyeball_joint'|'r_eyeball_joint'|'l_eyebrow_joint'|'r_eyebrow_joint'|'temporomandibular'|'l_sternoclavicular'|'l_acromioclavicular'|'l_shoulder'|'l_elbow'|'l_radiocarpal'|'l_midcarpal_1'|'l_carpometacarpal_1'|'l_metacarpophalangeal_1'|'l_carpal_interphalangeal_1'|'l_midcarpal_2'|'l_carpometacarpal_2'|'l_metacarpophalangeal_2'|'l_carpal_proximal_interphalangeal_2'|'l_carpal_distal_interphalangeal_2'|'l_midcarpal_3'|'l_carpometacarpal_3'|'l_metacarpophalangeal_3'|'l_carpal_proximal_interphalangeal_3'|'l_carpal_distal_interphalangeal_3'|'l_midcarpal_4_5'|'l_carpometacarpal_4'|'l_metacarpophalangeal_4'|'l_carpal_proximal_interphalangeal_4'|'l_carpal_distal_interphalangeal_4'|'l_carpometacarpal_5'|'l_metacarpophalangeal_5'|'l_carpal_proximal_interphalangeal_5'|'l_carpal_distal_interphalangeal_5'|'r_sternoclavicular'|'r_acromioclavicular'|'r_shoulder'|'r_elbow'|'r_radiocarpal'|'r_midcarpal_1'|'r_carpometacarpal_1'|'r_metacarpophalangeal_1'|'r_carpal_interphalangeal_1'|'r_midcarpal_2'|'r_carpometacarpal_2'|'r_metacarpophalangeal_2'|'r_carpal_proximal_interphalangeal_2'|'r_carpal_distal_interphalangeal_2'|'r_midcarpal_3'|'r_carpometacarpal_3'|'r_metacarpophalangeal_3'|'r_carpal_proximal_interphalangeal_3'|'r_carpal_distal_interphalangeal_3'|'r_midcarpal_4_5'|'r_carpometacarpal_4'|'r_metacarpophalangeal_4'|'r_carpal_proximal_interphalangeal_4'|'r_carpal_distal_interphalangeal_4'|'r_carpometacarpal_5'|'r_metacarpophalangeal_5'|'r_carpal_proximal_interphalangeal_5'|'r_carpal_distal_interphalangeal_5');
+hanimSegmentNameValues : ('sacrum'|'pelvis'|'l_thigh'|'l_calf'|'l_talus'|'l_navicular'|'l_cuneiform_1'|'l_metatarsal_1'|'l_tarsal_proximal_phalanx_1'|'l_tarsal_distal_phalanx_1'|'l_cuneiform_2'|'l_metatarsal_2'|'l_tarsal_proximal_phalanx_2'|'l_tarsal_middle_phalanx_2'|'l_tarsal_distal_phalanx_2'|'l_cuneiform_3'|'l_metatarsal_3'|'l_tarsal_proximal_phalanx_3'|'l_tarsal_middle_phalanx_3'|'l_tarsal_distal_phalanx_3'|'l_calcaneus'|'l_cuboid'|'l_metatarsal_4'|'l_tarsal_proximal_phalanx_4'|'l_tarsal_middle_phalanx_4'|'l_tarsal_distal_phalanx_4'|'l_metatarsal_5'|'l_tarsal_proximal_phalanx_5'|'l_tarsal_middle_phalanx_5'|'l_tarsal_distal_phalanx_5'|'r_thigh'|'r_calf'|'r_talus'|'r_navicular'|'r_cuneiform_1'|'r_metatarsal_1'|'r_tarsal_proximal_phalanx_1'|'r_tarsal_distal_phalanx_1'|'r_cuneiform_2'|'r_metatarsal_2'|'r_tarsal_proximal_phalanx_2'|'r_tarsal_middle_phalanx_2'|'r_tarsal_distal_phalanx_2'|'r_cuneiform_3'|'r_metatarsal_3'|'r_tarsal_proximal_phalanx_3'|'r_tarsal_middle_phalanx_3'|'r_tarsal_distal_phalanx_3'|'r_calcaneus'|'r_cuboid'|'r_metatarsal_4'|'r_tarsal_proximal_phalanx_4'|'r_tarsal_middle_phalanx_4'|'r_tarsal_distal_phalanx_4'|'r_metatarsal_5'|'r_tarsal_proximal_phalanx_5'|'r_tarsal_middle_phalanx_5'|'r_tarsal_distal_phalanx_5'|'l5'|'l4'|'l3'|'l2'|'l1'|'t12'|'t11'|'t10'|'t9'|'t8'|'t7'|'t6'|'t5'|'t4'|'t3'|'t2'|'t1'|'c7'|'c6'|'c5'|'c4'|'c3'|'c2'|'c1'|'skull'|'l_eyelid'|'r_eyelid'|'l_eyeball'|'r_eyeball'|'l_eyebrow'|'r_eyebrow'|'jaw'|'l_clavicle'|'l_scapula'|'l_upperarm'|'l_forearm'|'l_carpal'|'l_trapezium'|'l_metacarpal_1'|'l_carpal_proximal_phalanx_1'|'l_carpal_distal_phalanx_1'|'l_trapezoid'|'l_metacarpal_2'|'l_carpal_proximal_phalanx_2'|'l_carpal_middle_phalanx_2'|'l_carpal_distal_phalanx_2'|'l_capitate'|'l_metacarpal_3'|'l_carpal_proximal_phalanx_3'|'l_carpal_middle_phalanx_3'|'l_carpal_distal_phalanx_3'|'l_hamate'|'l_metacarpal_4'|'l_carpal_proximal_phalanx_4'|'l_carpal_middle_phalanx_4'|'l_carpal_distal_phalanx_4'|'l_metacarpal_5'|'l_carpal_proximal_phalanx_5'|'l_carpal_middle_phalanx_5'|'l_carpal_distal_phalanx_5'|'r_clavicle'|'r_scapula'|'r_upperarm'|'r_forearm'|'r_carpal'|'r_trapezium'|'r_metacarpal_1'|'r_carpal_proximal_phalanx_1'|'r_carpal_distal_phalanx_1'|'r_trapezoid'|'r_metacarpal_2'|'r_carpal_proximal_phalanx_2'|'r_carpal_middle_phalanx_2'|'r_carpal_distal_phalanx_2'|'r_capitate'|'r_metacarpal_3'|'r_carpal_proximal_phalanx_3'|'r_carpal_middle_phalanx_3'|'r_carpal_distal_phalanx_3'|'r_hamate'|'r_metacarpal_4'|'r_carpal_proximal_phalanx_4'|'r_carpal_middle_phalanx_4'|'r_carpal_distal_phalanx_4'|'r_metacarpal_5'|'r_carpal_proximal_phalanx_5'|'r_carpal_middle_phalanx_5'|'r_carpal_distal_phalanx_5');
+hanimVersionChoices : ('2.0');
+hatchStyleValues : ('1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'|'10'|'11'|'12'|'13'|'14'|'15'|'16'|'17'|'18'|'19');
+initializeOnlyAccessTypes : ('autoCalc'|'bboxCenter'|'bboxSize'|'beginCap'|'bottomRadius'|'category'|'ccw'|'child1Url'|'child2Url'|'child3Url'|'child4Url'|'closed'|'closureType'|'colorKey'|'colorIndex'|'colorPerVertex'|'convex'|'coordIndex'|'country'|'creaseAngle'|'crossSection'|'directOutput'|'domain'|'duration'|'endCap'|'endAngle'|'extra'|'forceTransitions'|'generateMipMaps'|'geoGridOrigin'|'geometryType'|'geoSystem'|'height'|'index'|'initialDestination'|'initialValue'|'innerRadius'|'internal'|'intersectionType'|'kind'|'knot'|'language'|'lineSegments'|'mustEvaluate'|'normalIndex'|'normalPerVertex'|'numComponents'|'order'|'outerRadius'|'phaseFunction'|'radius'|'range'|'repeatR'|'repeatS'|'repeatT'|'rootUrl'|'rotateYUp'|'size'|'sortOrder'|'spatialize'|'specific'|'speedFactor'|'spine'|'startAngle'|'subcategory'|'texCoordIndex'|'texCoordKey'|'uClosed'|'uDimension'|'uKnot'|'uOrder'|'vClosed'|'vDimension'|'vKnot'|'vOrder'|'xDimension'|'xSpacing'|'zDimension'|'zSpacing');
+inputOnlyAccessTypes : ('activate'|'set_articulationParameterValue0'|'set_articulationParameterValue1'|'set_articulationParameterValue2'|'set_articulationParameterValue3'|'set_articulationParameterValue4'|'set_articulationParameterValue5'|'set_articulationParameterValue6'|'set_articulationParameterValue7'|'set_boolean'|'set_bind'|'set_colorIndex'|'set_contacts'|'set_coordIndex'|'set_crossSection'|'set_destination'|'set_fraction'|'set_height'|'set_index'|'set_normalIndex'|'set_orientation'|'set_scale'|'set_spine'|'set_texCoordIndex'|'set_triggerTime');
+inputOutputAccessTypes : ('absorption'|'activeLayer'|'address'|'align'|'alpha'|'alphaCutoff'|'alphaMode'|'ambientIntensity'|'ambientTextureMapping'|'anchorPoint'|'angle'|'angularDampingFactor'|'angularVelocity'|'anisotropicDegree'|'antennaLocation'|'applicationID'|'applied'|'appliedParameters'|'antennaPatternType'|'antennaPatternLength'|'articulationParameterArray'|'articulationParameterChangeIndicatorArray'|'articulationParameterCount'|'articulationParameterDesignatorArray'|'articulationParameterIdPartAttachedToArray'|'articulationParameterTypeArray'|'attack'|'attenuation'|'autoDamp'|'autoDisable'|'autoOffset'|'autoRefresh'|'autoRefreshTimeLimit'|'avatarSize'|'axis'|'axis1'|'axis1Angle'|'axis1Torque'|'axis2'|'axis2Angle'|'axis2Torque'|'axis3Angle'|'axis3Torque'|'axisOfRotation'|'axisRotation'|'backAmbientIntensity'|'backDiffuseColor'|'backEmissiveColor'|'backShininess'|'backSpecularColor'|'backTexture'|'backTransparency'|'backUrl'|'baseColor'|'baseTextureMapping'|'beamWidth'|'bottom'|'bottomTexture'|'bottomUrl'|'bounce'|'boundaryOpacity'|'borderColor'|'borderWidth'|'boundaryModeS'|'boundaryModeT'|'boundaryModeR'|'buffer'|'bufferDuration'|'center'|'castShadow'|'centerOfMass'|'centerOfRotation'|'class'|'clipBoundary'|'channels'|'channelCountMode'|'channelInterpretation'|'channelSelection'|'channelsEnabled'|'gain'|'collisionType'|'color'|'colorSteps'|'coneInnerAngle'|'coneOuterAngle'|'coneOuterGain'|'contactNormal'|'contourStepSize'|'controlPoint'|'constantForceMix'|'contactSurfaceThickness'|'coolColor'|'createParticles'|'cryptoSystem'|'cryptoKeyID'|'cutOffAngle'|'cycleInterval'|'data'|'dataLength'|'deadReckoning'|'delayTime'|'deletionAllowed'|'depth'|'description'|'desiredAngularVelocity1'|'desiredAngularVelocity2'|'detonationLocation'|'detonationRelativeLocation'|'detonationResult'|'detune'|'diffuse'|'diffuseColor'|'diffuseTextureMapping'|'dimensions'|'direction'|'disableAngularSpeed'|'disableLinearSpeed'|'disableTime'|'diskAngle'|'displacements'|'bboxDisplay'|'detune'|'displayed'|'distanceModel'|'easeInEaseOut'|'edgeColor'|'emissiveColor'|'emissiveTextureMapping'|'enabled'|'enabledAxes'|'dopplerEnabled'|'enableHRTF'|'encodingScheme'|'endFrame'|'entityID'|'entityKind'|'entityDomain'|'entityCountry'|'entityCategory'|'entitySubcategory'|'entitySpecific'|'entityExtra'|'errorCorrection'|'eventApplicationID'|'eventEntityID'|'eventNumber'|'eventSiteID'|'family'|'fanCount'|'farDistance'|'fftSize'|'fieldOfView'|'filled'|'finiteRotationAxis'|'fired1'|'fired2'|'fireMissionIndex'|'firingRange'|'firingRate'|'fixed'|'fogType'|'force'|'forceID'|'forceOutput'|'forces'|'frameDuration'|'frameIncrement'|'frameIndex'|'frequency'|'frequencyBinCount'|'frictionCoefficients'|'frictionDirection'|'frontTexture'|'frontUrl'|'function'|'fuse'|'gain'|'geoCenter'|'geoCoords'|'global'|'gradientThreshold'|'gravity'|'groundAngle'|'groundColor'|'gustiness'|'hatchColor'|'hatched'|'hatchStyle'|'headlight'|'horizontal'|'id'|'image'|'inertia'|'info'|'inputSource'|'integerKey'|'intensity'|'intensityThreshold'|'interauralDistance'|'iterations'|'jointBindingPositions'|'jointBindingRotations'|'jointBindingScales'|'joints'|'justify'|'key'|'knee'|'keyVelocity'|'jump'|'keyValue'|'language'|'leftTexture'|'leftToRight'|'leftUrl'|'length'|'lengthOfModulationParameters'|'lifetimeVariation'|'lighting'|'limitOrientation'|'linearAcceleration'|'linearDampingFactor'|'linearVelocity'|'linetype'|'linewidthScaleFactor'|'llimit'|'loa'|'load'|'location'|'loop'|'loopEnd'|'loopStart'|'mapping'|'marking'|'mass'|'magnificationFilter'|'matchCriterion'|'matrix'|'maxAngle'|'maxAngle1'|'maxBack'|'maxChannelCount'|'maxCorrectionSpeed'|'maxDecibels'|'maxDelayTime'|'maxDistance'|'maxExtent'|'maxFront'|'maxParticles'|'maxPosition'|'maxSeparation'|'maxTorque1'|'maxTorque2'|'mediaDeviceID'|'metallic'|'metallicRoughnessTextureMapping'|'minAngle'|'minAngle1'|'minBack'|'minBounceSpeed'|'minDecibels'|'minFront'|'minificationFilter'|'minPosition'|'minSeparation'|'mode'|'modulationTypeSpreadSpectrum'|'modulationTypeMajor'|'modulationTypeDetail'|'modulationTypeSystem'|'momentsOfInertia'|'motionsEnabled'|'motor1Axis'|'motor2Axis'|'motor3Axis'|'multicastRelayHost'|'multicastRelayPort'|'munitionEndPoint'|'munitionStartPoint'|'munitionApplicationID'|'munitionEntityID'|'munitionSiteID'|'munitionQuantity'|'name'|'nearDistance'|'networkMode'|'normalScale'|'normalTextureMapping'|'numberOfChannels'|'normalize'|'normalizeVelocity'|'objectType'|'occlusionStrength'|'occlusionTextureMapping'|'offset'|'offsetUnits'|'on'|'opacityFactor'|'optionsImag'|'optionsReal'|'orientation'|'orthogonalColor'|'oversample'|'parallelColor'|'parameter'|'particleLifetime'|'particleSize'|'pauseTime'|'pickable'|'pitch'|'plane'|'playbackRate'|'point'|'pointSize'|'pointSizeScaleFactor'|'pointSizeMinValue'|'pointSizeMaxValue'|'port'|'position'|'power'|'preferAccuracy'|'priority'|'qualityFactor'|'radioID'|'radioEntityTypeKind'|'radioEntityTypeDomain'|'radioEntityTypeCountry'|'radioEntityTypeCategory'|'radioEntityTypeNomenclature'|'radioEntityTypeNomenclatureVersion'|'ratio'|'readInterval'|'receivedPower'|'receiverState'|'reference'|'referenceDistance'|'refraction'|'relativeAntennaLocation'|'release'|'retainedOpacity'|'retainUserOffsets'|'resumeTime'|'rightTexture'|'rightUrl'|'rolloffFactor'|'rotation'|'roughness'|'rtpHeaderExpected'|'sampleRate'|'samples'|'scale'|'scaleMode'|'scaleOrientation'|'segmentEnabled'|'separateBackColor'|'shininess'|'shadowIntensity'|'shadows'|'side'|'shininessTextureMapping'|'silhouetteBoundaryOpacity'|'silhouetteRetainedOpacity'|'silhouetteSharpness'|'siteID'|'size'|'sizeUnits'|'skeletalConfiguration'|'skinCoordIndex'|'skinCoordWeight'|'skyColor'|'skyAngle'|'sliderForce'|'slipCoefficients'|'slipFactors'|'smoothingTimeConstant'|'softnessConstantForceMix'|'softnessErrorCorrection'|'solid'|'source'|'spacing'|'specular'|'specularColor'|'specularTextureMapping'|'speed'|'startFrame'|'startTime'|'stiffness'|'stopBounce'|'stopErrorCorrection'|'stop1ConstantForceMix'|'stop1Bounce'|'stop2Bounce'|'stop3Bounce'|'stop1ErrorCorrection'|'stop2ErrorCorrection'|'stop3ErrorCorrection'|'stopTime'|'streamIdentifier'|'string'|'stripCount'|'style'|'summary'|'surfaceArea'|'surfaceSpeed'|'surfaceTolerance'|'surfaceValues'|'suspensionErrorCorrection'|'suspensionForce'|'tailTime'|'tau'|'tdlType'|'tessellation'|'tessellationScale'|'textureCompression'|'texturePriority'|'threshold'|'timeOut'|'title'|'toggle'|'tolerance'|'top'|'topTexture'|'topToBottom'|'topUrl'|'torques'|'trackCurrentView'|'transitionTime'|'transitionType'|'translation'|'transmitFrequencyBandwidth'|'transmitState'|'transmitterApplicationID'|'transmitterEntityID'|'transmitterRadioID'|'transmitterSiteID'|'transparency'|'turbulence'|'type'|'ulimit'|'upVector'|'update'|'url'|'useFiniteRotation'|'useGeometry'|'useGlobalGravity'|'uTessellation'|'variation'|'value'|'values'|'version'|'vector'|'vertexCount'|'vertices'|'viewAll'|'visibilityLimit'|'visibilityRange'|'visible'|'vTessellation'|'warhead'|'warmColor'|'weight'|'weightConstant1'|'weightConstant2'|'weightFunction1'|'weightFunction2'|'whichChoice'|'whichGeometry'|'writeInterval'|'yScale');
+intersectionTypeValues : ('BOUNDS'|'GEOMETRY');
+justifyChoices : ('"MIDDLE"'|'"MIDDLE" "BEGIN"'|'"MIDDLE" "END"'|'"MIDDLE" "FIRST"'|'"MIDDLE" "MIDDLE"'|'"BEGIN"'|'"BEGIN" "BEGIN"'|'"BEGIN" "END"'|'"BEGIN" "FIRST"'|'"BEGIN" "MIDDLE"'|'"END"'|'"END" "BEGIN"'|'"END" "END"'|'"END" "FIRST"'|'"END" "MIDDLE"'|'"FIRST"'|'"FIRST" "BEGIN"'|'"FIRST" "END"'|'"FIRST" "FIRST"'|'"FIRST" "MIDDLE"');
+layoutAlignChoices : ('"LEFT" "BOTTOM"'|'"LEFT" "CENTER"'|'"LEFT" "TOP"'|'"CENTER" "BOTTOM"'|'"CENTER" "CENTER"'|'"CENTER" "TOP"'|'"RIGHT" "BOTTOM"'|'"RIGHT" "CENTER"'|'"RIGHT" "TOP"');
+layoutScaleModeChoices : ('"NONE" "NONE"'|'"NONE" "FRACTION"'|'"NONE" "STRETCH"'|'"NONE" "PIXEL"'|'"FRACTION" "NONE"'|'"FRACTION" "FRACTION"'|'"FRACTION" "STRETCH"'|'"FRACTION" "PIXEL"'|'"STRETCH" "NONE"'|'"STRETCH" "FRACTION"'|'"STRETCH" "STRETCH"'|'"STRETCH" "PIXEL"'|'"PIXEL" "NONE"'|'"PIXEL" "FRACTION"'|'"PIXEL" "STRETCH"'|'"PIXEL" "PIXEL"');
+layoutUnitsChoices : ('"WORLD" "WORLD"'|'"WORLD" "FRACTION"'|'"WORLD" "PIXEL"'|'"FRACTION" "WORLD"'|'"FRACTION" "FRACTION"'|'"FRACTION" "PIXEL"'|'"PIXEL" "WORLD"'|'"PIXEL" "FRACTION"'|'"PIXEL" "PIXEL"');
+lineTypeValues : ('1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'|'10'|'11'|'12'|'13'|'14'|'15'|'16');
+loaType : SFInt32;
+metaDirectionChoices : ('rtl'|'ltr');
+metaNameValues : ('accessRights'|'author'|'CML-version'|'contributor'|'created'|'creator'|'description'|'disclaimer'|'drawing'|'error'|'generator'|'hint'|'identifier'|'Image'|'info'|'information'|'isVersionOf'|'keywords'|'license'|'mediator'|'modified'|'movie'|'MovingImage'|'original'|'photo'|'photograph'|'publisher'|'reference'|'requires'|'rights'|'robots'|'Sound'|'source'|'specificationSection'|'specificationUrl'|'subject'|'Text'|'title'|'TODO'|'translator'|'translated'|'version'|'warning');
+multiTextureFunctionValues : ('"COMPLEMENT"'|'"ALPHAREPLICATE"'|'""');
+multiTextureModeValues : ('"ADD"'|'"ADDSIGNED"'|'"ADDSIGNED2X"'|'"ADDSMOOTH"'|'"BLENDCURRENTALPHA"'|'"BLENDDIFFUSEALPHA"'|'"BLENDFACTORALPHA"'|'"BLENDTEXTUREALPHA"'|'"DOTPRODUCT3"'|'"MODULATE"'|'"MODULATE2X"'|'"MODULATE4X"'|'"MODULATEALPHA_ADDCOLOR"'|'"MODULATEINVALPHA_ADDCOLOR"'|'"MODULATEINVCOLOR_ADDALPHA"'|'"OFF"'|'"REPLACE"'|'"SELECTARG1"'|'"SELECTARG2"'|'"SUBTRACT"');
+multiTextureSourceValues : ('"DIFFUSE"'|'"FACTOR"'|'"SPECULAR"'|'""');
+navigationTransitionTypeValues : ('"TELEPORT"'|'"LINEAR"'|'"ANIMATE"');
+navigationTypeValues : ('"ANY"'|'"WALK"'|'"EXAMINE"'|'"FLY"'|'"LOOKAT"'|'"NONE"'|'"EXPLORE"');
+networkModeChoices : ('standAlone'|'networkReader'|'networkWriter');
+outputOnlyAccessTypes : ('actionKeyPress'|'actionKeyRelease'|'altKey'|'angle'|'angleRate'|'articulationParameterValue0_changed'|'articulationParameterValue1_changed'|'articulationParameterValue2_changed'|'articulationParameterValue3_changed'|'articulationParameterValue4_changed'|'articulationParameterValue5_changed'|'articulationParameterValue6_changed'|'articulationParameterValue7_changed'|'bindTime'|'body1AnchorPoint'|'body1Axis'|'body2AnchorPoint'|'body2Axis'|'centerOfRotation_changed'|'channelCount'|'collideTime'|'controlKey'|'cycleTime'|'detonateTime'|'duration_changed'|'elapsedTime'|'enteredText'|'enterTime'|'exitTime'|'finalText'|'firedTime'|'fraction_changed'|'frameCount'|'geovalue_changed'|'hinge1Angle'|'hinge1AngleRate'|'hinge2Angle'|'hinge2AngleRate'|'hitGeoCoord_changed'|'hitNormal_changed'|'hitPoint_changed'|'hitTexCoord_changed'|'inputFalse'|'inputNegate'|'inputTrue'|'isActive'|'isBound'|'isCollided'|'isDetonated'|'isLoaded'|'isOver'|'isPaused'|'isNetworkReader'|'isNetworkWriter'|'isRtpHeaderHeard'|'isSelected'|'isStandAlone'|'isValid'|'keyPress'|'keyRelease'|'level_changed'|'lineBounds'|'loadTime'|'modifiedFraction_changed'|'motor1Angle'|'motor1AngleRate'|'motor2Angle'|'motor2AngleRate'|'motor3Angle'|'motor3AngleRate'|'next'|'normal_changed'|'orientation_changed'|'origin'|'pickedGeometry'|'pickedNormal'|'pickedPoint'|'pickedTextureCoordinate'|'position_changed'|'previous'|'progress'|'rotation_changed'|'separation'|'separationRate'|'shiftKey'|'textBounds'|'time'|'timestamp'|'touchTime'|'trackPoint_changed'|'transitionComplete'|'translation_changed'|'triggerTime'|'triggerTrue'|'triggerValue'|'value_changed');
+particleSystemGeometryTypeValues : ('LINE'|'POINT'|'QUAD'|'SPRITE'|'TRIANGLE'|'GEOMETRY');
+periodicWaveTypeChoices : ('SINE'|'SQUARE'|'SAWTOOTH'|'TRIANGLE'|'CUSTOM');
+phaseFunctionValues : ('Henyey-Greenstein'|'NONE');
+pickableObjectTypeValues : ('"ALL"'|'"NONE"'|'"TERRAIN"');
+pickSensorMatchCriterionChoices : ('MATCH_ANY'|'MATCH_EVERY'|'MATCH_ONLY_ONE');
+pickSensorSortOrderValues : ('ANY'|'CLOSEST'|'ALL'|'ALL_SORTED');
+profileNameChoices : ('Core'|'Interchange'|'CADInterchange'|'Interactive'|'Immersive'|'MedicalInterchange'|'MPEG4Interactive'|'Full');
+projectionVolumeStyleTypeChoices : ('MAX'|'MIN'|'AVERAGE');
+shaderLanguageValues : ('Cg'|'GLSL'|'HLSL');
+shaderPartTypeValues : ('VERTEX'|'FRAGMENT');
+textureBoundaryModeChoices : ('CLAMP'|'CLAMP_TO_EDGE'|'CLAMP_TO_BOUNDARY'|'MIRRORED_REPEAT'|'REPEAT');
+textureCompressionModeChoices : ('DEFAULT'|'FASTEST'|'HIGH'|'LOW'|'MEDIUM'|'NICEST');
+textureCoordinateGeneratorModeChoices : ('SPHERE'|'CAMERASPACENORMAL'|'CAMERASPACEPOSITION'|'CAMERASPACEREFLECTIONVECTOR'|'SPHERE-LOCAL'|'COORD'|'COORD-EYE'|'NOISE'|'NOISE-EYE'|'SPHERE-REFLECT'|'SPHERE-REFLECT-LOCAL');
+textureMagnificationModeChoices : ('AVG_PIXEL'|'DEFAULT'|'FASTEST'|'NEAREST_PIXEL'|'NICEST');
+textureMinificationModeChoices : ('AVG_PIXEL'|'AVG_PIXEL_AVG_MIPMAP'|'AVG_PIXEL_NEAREST_MIPMAP'|'DEFAULT'|'FASTEST'|'NEAREST_PIXEL'|'NEAREST_PIXEL_AVG_MIPMAP'|'NEAREST_PIXEL_NEAREST_MIPMAP'|'NICEST');
+unitCategoryChoices : ('angle'|'force'|'length'|'mass');
+unitIntervalType : SFFloat;
+volumeRenderingWeightFunctionChoices : ('CONSTANT'|'ALPHA1'|'ALPHA2'|'ONE_MINUS_ALPHA1'|'ONE_MINUS_ALPHA2'|'TABLE');
+waveShaperOversampleChoices : ('NONE'|'2X'|'4X');
+x3dVersionChoices : ('3.0'|'3.1'|'3.2'|'3.3'|'4.0');
 MFBool : '[' (SFBool)* ']';
 MFColor : '[' (SFColor)* ']';
 MFColorRGBA : '[' (SFColorRGBA)* ']';
@@ -1859,9 +1859,9 @@ Analyser
 : ('DEF' xsID)? 'Analyser' '{'
 (
    'channelCount' SFInt32
-|  'channelCountMode' SFString
-|  'channelInterpretation' SFString
-|  'children' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)*
+|  'channelCountMode' channelCountModeChoices
+|  'channelInterpretation' channelInterpretationChoices
+|  'children' '[' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)* ']'
 |  'description' SFString
 |  'elapsedTime' SFTime
 |  'enabled' SFBool
@@ -1889,19 +1889,19 @@ Analyser
 Anchor
 : ('DEF' xsID)? 'Anchor' '{'
 (
-   'addChildren' (X3DChildNode)*
+   'addChildren' '[' (X3DChildNode)* ']'
 |  'autoRefresh' SFTime
 |  'autoRefreshTimeLimit' SFTime
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' (X3DChildNode)*
+|  'children' '[' (X3DChildNode)* ']'
 |  'description' SFString
 |  'IS' (IS)
 |  'load' SFBool
 |  'metadata' (X3DMetadataObject)
 |  'parameter' MFString
-|  'removeChildren' (X3DChildNode)*
+|  'removeChildren' '[' (X3DChildNode)* ']'
 |  'url' MFString
 |  'visible' SFBool
 |  'class' xsNMTOKENS
@@ -1915,14 +1915,14 @@ Appearance
 (
    'acousticProperties' (AcousticProperties)
 |  'alphaCutoff' unitIntervalType
-|  'alphaMode' SFString
+|  'alphaMode' alphaModeChoices
 |  'fillProperties' (FillProperties)
 |  'IS' (IS)
 |  'lineProperties' (LineProperties)
 |  'material' (X3DMaterialNode)
 |  'metadata' (X3DMetadataObject)
 |  'pointProperties' (PointProperties)
-|  'shaders' (X3DShaderNode)*
+|  'shaders' '[' (X3DShaderNode)* ']'
 |  'texture' (X3DTextureNode)
 |  'textureTransform' (X3DTextureTransformNode)
 |  'class' xsNMTOKENS
@@ -1948,7 +1948,7 @@ Arc2D
 ArcClose2D
 : ('DEF' xsID)? 'ArcClose2D' '{'
 (
-   'closureType' xsNMTOKEN
+   'closureType' closureTypeChoices
 |  'endAngle' SFFloat
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
@@ -1993,9 +1993,9 @@ AudioDestination
 : ('DEF' xsID)? 'AudioDestination' '{'
 (
    'channelCount' SFInt32
-|  'channelCountMode' SFString
-|  'channelInterpretation' SFString
-|  'children' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)*
+|  'channelCountMode' channelCountModeChoices
+|  'channelInterpretation' channelInterpretationChoices
+|  'children' '[' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)* ']'
 |  'description' SFString
 |  'enabled' SFBool
 |  'gain' SFFloat
@@ -2043,7 +2043,7 @@ BallJoint
 |  'body1AnchorPoint' SFVec3f
 |  'body2' (RigidBody)
 |  'body2AnchorPoint' SFVec3f
-|  'forceOutput' MFString
+|  'forceOutput' '[' (forceOutputValues)* ']'
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
 |  'class' xsNMTOKENS
@@ -2055,15 +2055,15 @@ BallJoint
 Billboard
 : ('DEF' xsID)? 'Billboard' '{'
 (
-   'addChildren' (X3DChildNode)*
+   'addChildren' '[' (X3DChildNode)* ']'
 |  'axisOfRotation' SFVec3f
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' (X3DChildNode)*
+|  'children' '[' (X3DChildNode)* ']'
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
-|  'removeChildren' (X3DChildNode)*
+|  'removeChildren' '[' (X3DChildNode)* ']'
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -2075,9 +2075,9 @@ BiquadFilter
 : ('DEF' xsID)? 'BiquadFilter' '{'
 (
    'channelCount' SFInt32
-|  'channelCountMode' SFString
-|  'channelInterpretation' SFString
-|  'children' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)*
+|  'channelCountMode' channelCountModeChoices
+|  'channelInterpretation' channelInterpretationChoices
+|  'children' '[' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)* ']'
 |  'description' SFString
 |  'detune' SFFloat
 |  'elapsedTime' SFTime
@@ -2094,7 +2094,7 @@ BiquadFilter
 |  'startTime' SFTime
 |  'stopTime' SFTime
 |  'tailTime' SFTime
-|  'type' SFString
+|  'type' biquadTypeFilterChoices
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
@@ -2111,8 +2111,8 @@ BlendedVolumeStyle
 |  'voxels' (X3DTexture3DNode)
 |  'weightConstant1' SFFloat
 |  'weightConstant2' SFFloat
-|  'weightFunction1' xsNMTOKEN
-|  'weightFunction2' xsNMTOKEN
+|  'weightFunction1' volumeRenderingWeightFunctionChoices
+|  'weightFunction2' volumeRenderingWeightFunctionChoices
 |  'weightTransferFunction1' (X3DTexture2DNode)
 |  'weightTransferFunction2' (X3DTexture2DNode)
 |  'class' xsNMTOKENS
@@ -2229,8 +2229,8 @@ BufferAudioSource
 |  'bufferDuration' SFTime
 |  'bufferlength' SFInt32
 |  'channelCount' SFInt32
-|  'channelCountMode' SFString
-|  'channelInterpretation' SFString
+|  'channelCountMode' channelCountModeChoices
+|  'channelInterpretation' channelInterpretationChoices
 |  'description' SFString
 |  'detune' SFFloat
 |  'elapsedTime' SFTime
@@ -2262,15 +2262,15 @@ BufferAudioSource
 CADAssembly
 : ('DEF' xsID)? 'CADAssembly' '{'
 (
-   'addChildren' (X3DChildNode)*
+   'addChildren' '[' (X3DChildNode)* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' (X3DChildNode)*
+|  'children' '[' (X3DChildNode)* ']'
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
 |  'name' SFString
-|  'removeChildren' (X3DChildNode)*
+|  'removeChildren' '[' (X3DChildNode)* ']'
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -2298,15 +2298,15 @@ CADFace
 CADLayer
 : ('DEF' xsID)? 'CADLayer' '{'
 (
-   'addChildren' (X3DChildNode)*
+   'addChildren' '[' (X3DChildNode)* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' (X3DChildNode)*
+|  'children' '[' (X3DChildNode)* ']'
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
 |  'name' SFString
-|  'removeChildren' (X3DChildNode)*
+|  'removeChildren' '[' (X3DChildNode)* ']'
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -2317,16 +2317,16 @@ CADLayer
 CADPart
 : ('DEF' xsID)? 'CADPart' '{'
 (
-   'addChildren' (CADFace)*
+   'addChildren' '[' (CADFace)* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
 |  'center' SFVec3f
-|  'children' (CADFace)*
+|  'children' '[' (CADFace)* ']'
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
 |  'name' SFString
-|  'removeChildren' (CADFace)*
+|  'removeChildren' '[' (CADFace)* ']'
 |  'rotation' SFRotation
 |  'scale' SFVec3f
 |  'scaleOrientation' SFRotation
@@ -2358,9 +2358,9 @@ ChannelMerger
 : ('DEF' xsID)? 'ChannelMerger' '{'
 (
    'channelCount' SFInt32
-|  'channelCountMode' SFString
-|  'channelInterpretation' SFString
-|  'children' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)*
+|  'channelCountMode' channelCountModeChoices
+|  'channelInterpretation' channelInterpretationChoices
+|  'children' '[' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)* ']'
 |  'description' SFString
 |  'enabled' SFBool
 |  'gain' SFFloat
@@ -2376,10 +2376,10 @@ ChannelSelector
 : ('DEF' xsID)? 'ChannelSelector' '{'
 (
    'channelCount' SFInt32
-|  'channelCountMode' SFString
-|  'channelInterpretation' SFString
+|  'channelCountMode' channelCountModeChoices
+|  'channelInterpretation' channelInterpretationChoices
 |  'channelSelection' SFInt32
-|  'children' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)*
+|  'children' '[' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)* ']'
 |  'description' SFString
 |  'enabled' SFBool
 |  'gain' SFFloat
@@ -2395,15 +2395,15 @@ ChannelSplitter
 : ('DEF' xsID)? 'ChannelSplitter' '{'
 (
    'channelCount' SFInt32
-|  'channelCountMode' SFString
-|  'channelInterpretation' SFString
-|  'children' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)*
+|  'channelCountMode' channelCountModeChoices
+|  'channelInterpretation' channelInterpretationChoices
+|  'children' '[' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)* ']'
 |  'description' SFString
 |  'enabled' SFBool
 |  'gain' SFFloat
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
-|  'outputs' (X3DSoundChannelNode|X3DSoundProcessingNode|X3DSoundSourceNode)*
+|  'outputs' '[' (X3DSoundChannelNode|X3DSoundProcessingNode|X3DSoundSourceNode)* ']'
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
@@ -2476,11 +2476,11 @@ CollidableShape
 Collision
 : ('DEF' xsID)? 'Collision' '{'
 (
-   'addChildren' (X3DChildNode)*
+   'addChildren' '[' (X3DChildNode)* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' (X3DChildNode)*
+|  'children' '[' (X3DChildNode)* ']'
 |  'collideTime' SFTime
 |  'description' SFString
 |  'enabled' SFBool
@@ -2488,7 +2488,7 @@ Collision
 |  'isActive' SFBool
 |  'metadata' (X3DMetadataObject)
 |  'proxy' (X3DChildNode)
-|  'removeChildren' (X3DChildNode)*
+|  'removeChildren' '[' (X3DChildNode)* ']'
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -2499,12 +2499,12 @@ Collision
 CollisionCollection
 : ('DEF' xsID)? 'CollisionCollection' '{'
 (
-   'appliedParameters' MFString
+   'appliedParameters' '[' (appliedParametersChoices)* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
 |  'bounce' SFFloat
-|  'collidables' (X3DNBodyCollisionSpaceNode|X3DNBodyCollidableNode)*
+|  'collidables' '[' (X3DNBodyCollisionSpaceNode|X3DNBodyCollidableNode)* ']'
 |  'description' SFString
 |  'enabled' SFBool
 |  'frictionCoefficients' SFVec2f
@@ -2526,10 +2526,10 @@ CollisionSensor
 : ('DEF' xsID)? 'CollisionSensor' '{'
 (
    'collider' (CollisionCollection)
-|  'contacts' (Contact)*
+|  'contacts' '[' (Contact)* ']'
 |  'description' SFString
 |  'enabled' SFBool
-|  'intersections' (X3DNBodyCollidableNode)*
+|  'intersections' '[' (X3DNBodyCollidableNode)* ']'
 |  'IS' (IS)
 |  'isActive' SFBool
 |  'metadata' (X3DMetadataObject)
@@ -2545,7 +2545,7 @@ CollisionSpace
    'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'collidables' (X3DNBodyCollisionSpaceNode|X3DNBodyCollidableNode)*
+|  'collidables' '[' (X3DNBodyCollisionSpaceNode|X3DNBodyCollidableNode)* ']'
 |  'enabled' SFBool
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
@@ -2656,13 +2656,13 @@ ComposedShader
 : ('DEF' xsID)? 'ComposedShader' '{'
 (
    'activate' SFBool
-|  'field' (field)*
+|  'field' '[' (field)* ']'
 |  'IS' (IS)
 |  'isSelected' SFBool
 |  'isValid' SFBool
-|  'language' xsNMTOKEN
+|  'language' shaderLanguageValues
 |  'metadata' (X3DMetadataObject)
-|  'parts' (ShaderPart)*
+|  'parts' '[' (ShaderPart)* ']'
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
@@ -2678,7 +2678,7 @@ ComposedTexture3D
 |  'repeatR' SFBool
 |  'repeatS' SFBool
 |  'repeatT' SFBool
-|  'texture' (X3DTexture2DNode)*
+|  'texture' '[' (X3DTexture2DNode)* ']'
 |  'textureProperties' (TextureProperties)
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -2692,7 +2692,7 @@ ComposedVolumeStyle
    'enabled' SFBool
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
-|  'renderStyle' (X3DComposableVolumeRenderStyleNode)*
+|  'renderStyle' '[' (X3DComposableVolumeRenderStyleNode)* ']'
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
@@ -2737,7 +2737,7 @@ ConeEmitter
 Contact
 : ('DEF' xsID)? 'Contact' '{'
 (
-   'appliedParameters' MFString
+   'appliedParameters' '[' (appliedParametersChoices)* ']'
 |  'body1' (RigidBody)
 |  'body2' (RigidBody)
 |  'bounce' SFFloat
@@ -2764,11 +2764,11 @@ Contact
 Contour2D
 : ('DEF' xsID)? 'Contour2D' '{'
 (
-   'addChildren' (NurbsCurve2D|ContourPolyline2D)*
-|  'children' (NurbsCurve2D|ContourPolyline2D)*
+   'addChildren' '[' (NurbsCurve2D|ContourPolyline2D)* ']'
+|  'children' '[' (NurbsCurve2D|ContourPolyline2D)* ']'
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
-|  'removeChildren' (NurbsCurve2D|ContourPolyline2D)*
+|  'removeChildren' '[' (NurbsCurve2D|ContourPolyline2D)* ']'
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
@@ -2792,9 +2792,9 @@ Convolver
 (
    'buffer' MFFloat
 |  'channelCount' SFInt32
-|  'channelCountMode' SFString
-|  'channelInterpretation' SFString
-|  'children' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)*
+|  'channelCountMode' channelCountModeChoices
+|  'channelInterpretation' channelInterpretationChoices
+|  'children' '[' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)* ']'
 |  'description' SFString
 |  'elapsedTime' SFTime
 |  'enabled' SFBool
@@ -2951,9 +2951,9 @@ Delay
 : ('DEF' xsID)? 'Delay' '{'
 (
    'channelCount' SFInt32
-|  'channelCountMode' SFString
-|  'channelInterpretation' SFString
-|  'children' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)*
+|  'channelCountMode' channelCountModeChoices
+|  'channelInterpretation' channelInterpretationChoices
+|  'children' '[' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)* ']'
 |  'delayTime' SFTime
 |  'description' SFString
 |  'elapsedTime' SFTime
@@ -2997,14 +2997,14 @@ DirectionalLight
 DISEntityManager
 : ('DEF' xsID)? 'DISEntityManager' '{'
 (
-   'addedEntities' (EspduTransform)*
+   'addedEntities' '[' (EspduTransform)* ']'
 |  'address' SFString
 |  'applicationID' SFInt32
-|  'children' (DISEntityTypeMapping)*
+|  'children' '[' (DISEntityTypeMapping)* ']'
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
 |  'port' SFInt32
-|  'removedEntities' (EspduTransform)*
+|  'removedEntities' '[' (EspduTransform)* ']'
 |  'siteID' SFInt32
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -3063,7 +3063,7 @@ DoubleAxisHingeJoint
 |  'body2Axis' SFVec3f
 |  'desiredAngularVelocity1' SFFloat
 |  'desiredAngularVelocity2' SFFloat
-|  'forceOutput' MFString
+|  'forceOutput' '[' (forceOutputValues)* ']'
 |  'hinge1Angle' SFFloat
 |  'hinge1AngleRate' SFFloat
 |  'hinge2Angle' SFFloat
@@ -3090,9 +3090,9 @@ DynamicsCompressor
 (
    'attack' SFTime
 |  'channelCount' SFInt32
-|  'channelCountMode' SFString
-|  'channelInterpretation' SFString
-|  'children' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)*
+|  'channelCountMode' channelCountModeChoices
+|  'channelInterpretation' channelInterpretationChoices
+|  'children' '[' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)* ']'
 |  'description' SFString
 |  'elapsedTime' SFTime
 |  'enabled' SFBool
@@ -3150,7 +3150,7 @@ EdgeEnhancementVolumeStyle
 ElevationGrid
 : ('DEF' xsID)? 'ElevationGrid' '{'
 (
-   'attrib' (X3DVertexAttributeNode)*
+   'attrib' '[' (X3DVertexAttributeNode)* ']'
 |  'ccw' SFBool
 |  'color' (X3DColorNode)
 |  'colorPerVertex' SFBool
@@ -3177,7 +3177,7 @@ ElevationGrid
 EspduTransform
 : ('DEF' xsID)? 'EspduTransform' '{'
 (
-   'addChildren' (X3DChildNode)*
+   'addChildren' '[' (X3DChildNode)* ']'
 |  'address' SFString
 |  'applicationID' SFInt32
 |  'articulationParameterArray' MFFloat
@@ -3198,7 +3198,7 @@ EspduTransform
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
 |  'center' SFVec3f
-|  'children' (X3DChildNode)*
+|  'children' '[' (X3DChildNode)* ']'
 |  'collideTime' SFTime
 |  'collisionType' SFInt32
 |  'deadReckoning' SFInt32
@@ -3250,10 +3250,10 @@ EspduTransform
 |  'munitionQuantity' SFInt32
 |  'munitionSiteID' SFInt32
 |  'munitionStartPoint' SFVec3f
-|  'networkMode' xsNMTOKEN
+|  'networkMode' networkModeChoices
 |  'port' SFInt32
 |  'readInterval' SFTime
-|  'removeChildren' (X3DChildNode)*
+|  'removeChildren' '[' (X3DChildNode)* ']'
 |  'rotation' SFRotation
 |  'rtpHeaderExpected' SFBool
 |  'scale' SFVec3f
@@ -3326,7 +3326,7 @@ FillProperties
    'filled' SFBool
 |  'hatchColor' SFColor
 |  'hatched' SFBool
-|  'hatchStyle' SFInt32
+|  'hatchStyle' hatchStyleValues
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
 |  'class' xsNMTOKENS
@@ -3354,7 +3354,7 @@ Fog
 (
    'bindTime' SFTime
 |  'color' SFColor
-|  'fogType' xsNMTOKEN
+|  'fogType' fogTypeChoices
 |  'IS' (IS)
 |  'isBound' SFBool
 |  'metadata' (X3DMetadataObject)
@@ -3382,17 +3382,17 @@ FontStyle
 : ('DEF' xsID)? 'FontStyle' '{'
 (
    'class' xsNMTOKENS
-|  'family' MFString
+|  'family' '[' (fontFamilyValues)* ']'
 |  'horizontal' SFBool
 |  'id' xsNMTOKEN
 |  'IS' (IS)
-|  'justify' MFString
+|  'justify' '[' (justifyChoices)* ']'
 |  'language' SFString
 |  'leftToRight' SFBool
 |  'metadata' (X3DMetadataObject)
 |  'size' SFFloat
 |  'spacing' SFFloat
-|  'style' xsNMTOKEN
+|  'style' fontStyleChoices
 |  'topToBottom' SFBool
 )*
 '}'
@@ -3414,9 +3414,9 @@ Gain
 : ('DEF' xsID)? 'Gain' '{'
 (
    'channelCount' SFInt32
-|  'channelCountMode' SFString
-|  'channelInterpretation' SFString
-|  'children' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)*
+|  'channelCountMode' channelCountModeChoices
+|  'channelInterpretation' channelInterpretationChoices
+|  'children' '[' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)* ']'
 |  'description' SFString
 |  'elapsedTime' SFTime
 |  'enabled' SFBool
@@ -3444,7 +3444,7 @@ GeneratedCubeMapTexture
 |  'metadata' (X3DMetadataObject)
 |  'size' SFInt32
 |  'textureProperties' (TextureProperties)
-|  'update' xsNMTOKEN
+|  'update' generatedCubeMapTextureUpdateChoices
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
@@ -3497,17 +3497,17 @@ GeoElevationGrid
 GeoLocation
 : ('DEF' xsID)? 'GeoLocation' '{'
 (
-   'addChildren' (X3DChildNode)*
+   'addChildren' '[' (X3DChildNode)* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' (X3DChildNode)*
+|  'children' '[' (X3DChildNode)* ']'
 |  'geoCoords' SFVec3d
 |  'geoOrigin' (GeoOrigin)
 |  'geoSystem' geoSystemType
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
-|  'removeChildren' (X3DChildNode)*
+|  'removeChildren' '[' (X3DChildNode)* ']'
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -3526,14 +3526,14 @@ GeoLOD
 |  'child2Url' MFString
 |  'child3Url' MFString
 |  'child4Url' MFString
-|  'children' (X3DChildNode)*
+|  'children' '[' (X3DChildNode)* ']'
 |  'geoOrigin' (GeoOrigin)
 |  'geoSystem' geoSystemType
 |  'IS' (IS)
 |  'level_changed' SFInt32
 |  'metadata' (X3DMetadataObject)
 |  'range' SFFloat
-|  'rootNode' (X3DChildNode)*
+|  'rootNode' '[' (X3DChildNode)* ']'
 |  'rootUrl' MFString
 |  'visible' SFBool
 |  'class' xsNMTOKENS
@@ -3547,7 +3547,7 @@ GeoMetadata
 (
    'autoRefresh' SFTime
 |  'autoRefreshTimeLimit' SFTime
-|  'data' (X3DNode)*
+|  'data' '[' (X3DNode)* ']'
 |  'description' SFString
 |  'IS' (IS)
 |  'load' SFBool
@@ -3642,17 +3642,17 @@ GeoTouchSensor
 GeoTransform
 : ('DEF' xsID)? 'GeoTransform' '{'
 (
-   'addChildren' (X3DChildNode)*
+   'addChildren' '[' (X3DChildNode)* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' (X3DChildNode)*
+|  'children' '[' (X3DChildNode)* ']'
 |  'geoCenter' SFVec3d
 |  'geoOrigin' (GeoOrigin)
 |  'geoSystem' geoSystemType
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
-|  'removeChildren' (X3DChildNode)*
+|  'removeChildren' '[' (X3DChildNode)* ']'
 |  'rotation' SFRotation
 |  'scale' SFVec3f
 |  'scaleOrientation' SFRotation
@@ -3695,14 +3695,14 @@ GeoViewpoint
 Group
 : ('DEF' xsID)? 'Group' '{'
 (
-   'addChildren' (X3DChildNode)*
+   'addChildren' '[' (X3DChildNode)* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' (X3DChildNode)*
+|  'children' '[' (X3DChildNode)* ']'
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
-|  'removeChildren' (X3DChildNode)*
+|  'removeChildren' '[' (X3DChildNode)* ']'
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -3718,7 +3718,7 @@ HAnimDisplacer
 |  'displacements' MFVec3f
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
-|  'name' xsNMTOKEN
+|  'name' hanimFeaturePointNameValues
 |  'weight' SFFloat
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -3739,27 +3739,27 @@ HAnimHumanoid
 |  'jointBindingPositions' MFVec3f
 |  'jointBindingRotations' MFRotation
 |  'jointBindingScales' MFVec3f
-|  'joints' (HAnimJoint)*
+|  'joints' '[' (HAnimJoint)* ']'
 |  'loa' loaType
 |  'metadata' (X3DMetadataObject)
-|  'motions' (HAnimMotion)*
+|  'motions' '[' (HAnimMotion)* ']'
 |  'motionsEnabled' MFBool
 |  'name' xsNMTOKEN
 |  'rotation' SFRotation
 |  'scale' SFVec3f
 |  'scaleOrientation' SFRotation
-|  'segments' (HAnimSegment)*
-|  'sites' (HAnimSite)*
+|  'segments' '[' (HAnimSegment)* ']'
+|  'sites' '[' (HAnimSite)* ']'
 |  'skeletalConfiguration' SFString
-|  'skeleton' (HAnimJoint|HAnimSite)*
-|  'skin' (Group|Transform|Shape|IndexedFaceSet)*
+|  'skeleton' '[' (HAnimJoint|HAnimSite)* ']'
+|  'skin' '[' (Group|Transform|Shape|IndexedFaceSet)* ']'
 |  'skinBindingCoords' (Coordinate|CoordinateDouble)
 |  'skinBindingNormals' (X3DNormalNode)
 |  'skinCoord' (Coordinate|CoordinateDouble)
 |  'skinNormal' (X3DNormalNode)
 |  'translation' SFVec3f
-|  'version' xsNMTOKEN
-|  'viewpoints' (HAnimSite)*
+|  'version' hanimVersionChoices
+|  'viewpoints' '[' (HAnimSite)* ']'
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -3770,20 +3770,20 @@ HAnimHumanoid
 HAnimJoint
 : ('DEF' xsID)? 'HAnimJoint' '{'
 (
-   'addChildren' (HAnimJoint|HAnimSegment)*
+   'addChildren' '[' (HAnimJoint|HAnimSegment)* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
 |  'center' SFVec3f
-|  'children' (HAnimJoint|HAnimSegment)*
+|  'children' '[' (HAnimJoint|HAnimSegment)* ']'
 |  'description' SFString
-|  'displacers' (HAnimDisplacer)*
+|  'displacers' '[' (HAnimDisplacer)* ']'
 |  'IS' (IS)
 |  'limitOrientation' SFRotation
 |  'llimit' MFFloat
 |  'metadata' (X3DMetadataObject)
-|  'name' xsNMTOKEN
-|  'removeChildren' (HAnimJoint|HAnimSegment)*
+|  'name' hanimJointNameValues
+|  'removeChildren' '[' (HAnimJoint|HAnimSegment)* ']'
 |  'rotation' SFRotation
 |  'scale' SFVec3f
 |  'scaleOrientation' SFRotation
@@ -3830,21 +3830,21 @@ HAnimMotion
 HAnimSegment
 : ('DEF' xsID)? 'HAnimSegment' '{'
 (
-   'addChildren' (X3DChildNode)*
+   'addChildren' '[' (X3DChildNode)* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
 |  'centerOfMass' SFVec3f
-|  'children' (X3DChildNode)*
+|  'children' '[' (X3DChildNode)* ']'
 |  'coord' (Coordinate|CoordinateDouble)
 |  'description' SFString
-|  'displacers' (HAnimDisplacer)*
+|  'displacers' '[' (HAnimDisplacer)* ']'
 |  'IS' (IS)
 |  'mass' SFFloat
 |  'metadata' (X3DMetadataObject)
 |  'momentsOfInertia' MFFloat
-|  'name' xsNMTOKEN
-|  'removeChildren' (X3DChildNode)*
+|  'name' hanimSegmentNameValues
+|  'removeChildren' '[' (X3DChildNode)* ']'
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -3855,17 +3855,17 @@ HAnimSegment
 HAnimSite
 : ('DEF' xsID)? 'HAnimSite' '{'
 (
-   'addChildren' (X3DChildNode)*
+   'addChildren' '[' (X3DChildNode)* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
 |  'center' SFVec3f
-|  'children' (X3DChildNode)*
+|  'children' '[' (X3DChildNode)* ']'
 |  'description' SFString
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
-|  'name' xsNMTOKEN
-|  'removeChildren' (X3DChildNode)*
+|  'name' hanimFeaturePointNameValues
+|  'removeChildren' '[' (X3DChildNode)* ']'
 |  'rotation' SFRotation
 |  'scale' SFVec3f
 |  'scaleOrientation' SFRotation
@@ -3936,7 +3936,7 @@ ImageTexture3D
 IndexedFaceSet
 : ('DEF' xsID)? 'IndexedFaceSet' '{'
 (
-   'attrib' (X3DVertexAttributeNode)*
+   'attrib' '[' (X3DVertexAttributeNode)* ']'
 |  'ccw' SFBool
 |  'color' (X3DColorNode)
 |  'colorIndex' MFInt32
@@ -3967,7 +3967,7 @@ IndexedFaceSet
 IndexedLineSet
 : ('DEF' xsID)? 'IndexedLineSet' '{'
 (
-   'attrib' (X3DVertexAttributeNode)*
+   'attrib' '[' (X3DVertexAttributeNode)* ']'
 |  'color' (X3DColorNode)
 |  'colorIndex' MFInt32
 |  'colorPerVertex' SFBool
@@ -3988,7 +3988,7 @@ IndexedLineSet
 IndexedQuadSet
 : ('DEF' xsID)? 'IndexedQuadSet' '{'
 (
-   'attrib' (X3DVertexAttributeNode)*
+   'attrib' '[' (X3DVertexAttributeNode)* ']'
 |  'ccw' SFBool
 |  'color' (X3DColorNode)
 |  'colorPerVertex' SFBool
@@ -4011,7 +4011,7 @@ IndexedQuadSet
 IndexedTriangleFanSet
 : ('DEF' xsID)? 'IndexedTriangleFanSet' '{'
 (
-   'attrib' (X3DVertexAttributeNode)*
+   'attrib' '[' (X3DVertexAttributeNode)* ']'
 |  'ccw' SFBool
 |  'color' (X3DColorNode)
 |  'colorPerVertex' SFBool
@@ -4034,7 +4034,7 @@ IndexedTriangleFanSet
 IndexedTriangleSet
 : ('DEF' xsID)? 'IndexedTriangleSet' '{'
 (
-   'attrib' (X3DVertexAttributeNode)*
+   'attrib' '[' (X3DVertexAttributeNode)* ']'
 |  'ccw' SFBool
 |  'color' (X3DColorNode)
 |  'colorPerVertex' SFBool
@@ -4057,7 +4057,7 @@ IndexedTriangleSet
 IndexedTriangleStripSet
 : ('DEF' xsID)? 'IndexedTriangleStripSet' '{'
 (
-   'attrib' (X3DVertexAttributeNode)*
+   'attrib' '[' (X3DVertexAttributeNode)* ']'
 |  'ccw' SFBool
 |  'color' (X3DColorNode)
 |  'colorPerVertex' SFBool
@@ -4140,7 +4140,7 @@ IsoSurfaceVolumeData
 |  'gradients' (X3DTexture3DNode)
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
-|  'renderStyle' (X3DVolumeRenderStyleNode)*
+|  'renderStyle' '[' (X3DVolumeRenderStyleNode)* ']'
 |  'surfaceTolerance' SFFloat
 |  'surfaceValues' MFFloat
 |  'visible' SFBool
@@ -4175,13 +4175,13 @@ KeySensor
 Layer
 : ('DEF' xsID)? 'Layer' '{'
 (
-   'addChildren' (X3DChildNode)*
-|  'children' (X3DChildNode)*
+   'addChildren' '[' (X3DChildNode)* ']'
+|  'children' '[' (X3DChildNode)* ']'
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
-|  'objectType' MFString
+|  'objectType' '[' (pickableObjectTypeValues)* ']'
 |  'pickable' SFBool
-|  'removeChildren' (X3DChildNode)*
+|  'removeChildren' '[' (X3DChildNode)* ']'
 |  'viewport' (X3DViewportNode)
 |  'visible' SFBool
 |  'class' xsNMTOKENS
@@ -4195,7 +4195,7 @@ LayerSet
 (
    'activeLayer' SFInt32
 |  'IS' (IS)
-|  'layers' (X3DLayerNode)*
+|  'layers' '[' (X3DLayerNode)* ']'
 |  'metadata' (X3DMetadataObject)
 |  'order' MFInt32
 |  'class' xsNMTOKENS
@@ -4207,14 +4207,14 @@ LayerSet
 Layout
 : ('DEF' xsID)? 'Layout' '{'
 (
-   'align' MFString
+   'align' '[' (layoutAlignChoices)* ']'
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
 |  'offset' MFFloat
-|  'offsetUnits' MFString
-|  'scaleMode' MFString
+|  'offsetUnits' '[' (layoutUnitsChoices)* ']'
+|  'scaleMode' '[' (layoutScaleModeChoices)* ']'
 |  'size' MFFloat
-|  'sizeUnits' MFString
+|  'sizeUnits' '[' (layoutUnitsChoices)* ']'
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
@@ -4224,15 +4224,15 @@ Layout
 LayoutGroup
 : ('DEF' xsID)? 'LayoutGroup' '{'
 (
-   'addChildren' (X3DChildNode)*
+   'addChildren' '[' (X3DChildNode)* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' (X3DChildNode)*
+|  'children' '[' (X3DChildNode)* ']'
 |  'IS' (IS)
 |  'layout' (X3DLayoutNode)
 |  'metadata' (X3DMetadataObject)
-|  'removeChildren' (X3DChildNode)*
+|  'removeChildren' '[' (X3DChildNode)* ']'
 |  'viewport' (X3DViewportNode)
 |  'visible' SFBool
 |  'class' xsNMTOKENS
@@ -4244,14 +4244,14 @@ LayoutGroup
 LayoutLayer
 : ('DEF' xsID)? 'LayoutLayer' '{'
 (
-   'addChildren' (X3DChildNode)*
-|  'children' (X3DChildNode)*
+   'addChildren' '[' (X3DChildNode)* ']'
+|  'children' '[' (X3DChildNode)* ']'
 |  'IS' (IS)
 |  'layout' (X3DLayoutNode)
 |  'metadata' (X3DMetadataObject)
-|  'objectType' MFString
+|  'objectType' '[' (pickableObjectTypeValues)* ']'
 |  'pickable' SFBool
-|  'removeChildren' (X3DChildNode)*
+|  'removeChildren' '[' (X3DChildNode)* ']'
 |  'viewport' (X3DViewportNode)
 |  'visible' SFBool
 |  'class' xsNMTOKENS
@@ -4265,19 +4265,19 @@ LinePickSensor
 (
    'description' SFString
 |  'enabled' SFBool
-|  'intersectionType' xsNMTOKEN
+|  'intersectionType' intersectionTypeValues
 |  'IS' (IS)
 |  'isActive' SFBool
-|  'matchCriterion' xsNMTOKEN
+|  'matchCriterion' pickSensorMatchCriterionChoices
 |  'metadata' (X3DMetadataObject)
-|  'objectType' MFString
-|  'pickedGeometry' (X3DChildNode)*
+|  'objectType' '[' (pickableObjectTypeValues)* ']'
+|  'pickedGeometry' '[' (X3DChildNode)* ']'
 |  'pickedNormal' MFVec3f
 |  'pickedPoint' MFVec3f
 |  'pickedTextureCoordinate' MFVec3f
 |  'pickingGeometry' (X3DGeometryNode)
-|  'pickTarget' (X3DGroupingNode|X3DShapeNode|Inline)*
-|  'sortOrder' xsNMTOKEN
+|  'pickTarget' '[' (X3DGroupingNode|X3DShapeNode|Inline)* ']'
+|  'sortOrder' pickSensorSortOrderValues
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
@@ -4289,7 +4289,7 @@ LineProperties
 (
    'applied' SFBool
 |  'IS' (IS)
-|  'linetype' SFInt32
+|  'linetype' lineTypeValues
 |  'linewidthScaleFactor' SFFloat
 |  'metadata' (X3DMetadataObject)
 |  'class' xsNMTOKENS
@@ -4301,7 +4301,7 @@ LineProperties
 LineSet
 : ('DEF' xsID)? 'LineSet' '{'
 (
-   'attrib' (X3DVertexAttributeNode)*
+   'attrib' '[' (X3DVertexAttributeNode)* ']'
 |  'color' (X3DColorNode)
 |  'coord' (X3DCoordinateNode)
 |  'fogCoord' (FogCoordinate)
@@ -4344,7 +4344,7 @@ ListenerPointSource
 LoadSensor
 : ('DEF' xsID)? 'LoadSensor' '{'
 (
-   'children' (X3DUrlObject)*
+   'children' '[' (X3DUrlObject)* ']'
 |  'description' SFString
 |  'enabled' SFBool
 |  'IS' (IS)
@@ -4365,7 +4365,7 @@ LocalFog
 (
    'color' SFColor
 |  'enabled' SFBool
-|  'fogType' xsNMTOKEN
+|  'fogType' fogTypeChoices
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
 |  'visibilityRange' SFFloat
@@ -4378,18 +4378,18 @@ LocalFog
 LOD
 : ('DEF' xsID)? 'LOD' '{'
 (
-   'addChildren' (X3DChildNode)*
+   'addChildren' '[' (X3DChildNode)* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
 |  'center' SFVec3f
-|  'children' (X3DChildNode)*
+|  'children' '[' (X3DChildNode)* ']'
 |  'forceTransitions' SFBool
 |  'IS' (IS)
 |  'level_changed' SFInt32
 |  'metadata' (X3DMetadataObject)
 |  'range' MFFloat
-|  'removeChildren' (X3DChildNode)*
+|  'removeChildren' '[' (X3DChildNode)* ']'
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -4519,7 +4519,7 @@ MetadataSet
 |  'metadata' (X3DMetadataObject)
 |  'name' SFString
 |  'reference' SFString
-|  'value' (X3DMetadataObject)*
+|  'value' '[' (X3DMetadataObject)* ']'
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
@@ -4575,7 +4575,7 @@ MotorJoint
 |  'body1' (RigidBody)
 |  'body2' (RigidBody)
 |  'enabledAxes' SFInt32
-|  'forceOutput' MFString
+|  'forceOutput' '[' (forceOutputValues)* ']'
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
 |  'motor1Angle' SFFloat
@@ -4637,12 +4637,12 @@ MultiTexture
    'alpha' SFFloat
 |  'color' SFColor
 |  'description' SFString
-|  'function' MFString
+|  'function' '[' (multiTextureFunctionValues)* ']'
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
-|  'mode' MFString
-|  'source' MFString
-|  'texture' (X3DSingleTextureNode)*
+|  'mode' '[' (multiTextureModeValues)* ']'
+|  'source' '[' (multiTextureSourceValues)* ']'
+|  'texture' '[' (X3DSingleTextureNode)* ']'
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
@@ -4654,7 +4654,7 @@ MultiTextureCoordinate
 (
    'IS' (IS)
 |  'metadata' (X3DMetadataObject)
-|  'texCoord' (X3DSingleTextureCoordinateNode)*
+|  'texCoord' '[' (X3DSingleTextureCoordinateNode)* ']'
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
@@ -4666,7 +4666,7 @@ MultiTextureTransform
 (
    'IS' (IS)
 |  'metadata' (X3DMetadataObject)
-|  'textureTransform' (X3DSingleTextureTransformNode)*
+|  'textureTransform' '[' (X3DSingleTextureTransformNode)* ']'
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
@@ -4686,8 +4686,8 @@ NavigationInfo
 |  'speed' SFFloat
 |  'transitionComplete' SFBool
 |  'transitionTime' SFTime
-|  'transitionType' MFString
-|  'type' MFString
+|  'transitionType' '[' (navigationTransitionTypeValues)* ']'
+|  'type' '[' (navigationTypeValues)* ']'
 |  'visibilityLimit' SFFloat
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -4818,14 +4818,14 @@ NurbsPositionInterpolator
 NurbsSet
 : ('DEF' xsID)? 'NurbsSet' '{'
 (
-   'addGeometry' (X3DParametricGeometryNode)*
+   'addGeometry' '[' (X3DParametricGeometryNode)* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'geometry' (X3DParametricGeometryNode)*
+|  'geometry' '[' (X3DParametricGeometryNode)* ']'
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
-|  'removeGeometry' (X3DParametricGeometryNode)*
+|  'removeGeometry' '[' (X3DParametricGeometryNode)* ']'
 |  'tessellationScale' SFFloat
 |  'visible' SFBool
 |  'class' xsNMTOKENS
@@ -4908,14 +4908,14 @@ NurbsTextureCoordinate
 NurbsTrimmedSurface
 : ('DEF' xsID)? 'NurbsTrimmedSurface' '{'
 (
-   'addTrimmingContour' (Contour2D)*
+   'addTrimmingContour' '[' (Contour2D)* ']'
 |  'controlPoint' (Coordinate|CoordinateDouble)
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
-|  'removeTrimmingContour' (Contour2D)*
+|  'removeTrimmingContour' '[' (Contour2D)* ']'
 |  'solid' SFBool
 |  'texCoord' (X3DSingleTextureCoordinateNode|NurbsTextureCoordinate)
-|  'trimmingContour' (Contour2D)*
+|  'trimmingContour' '[' (Contour2D)* ']'
 |  'uClosed' SFBool
 |  'uDimension' SFInt32
 |  'uKnot' MFDouble
@@ -5054,11 +5054,11 @@ PackagedShader
 |  'autoRefresh' SFTime
 |  'autoRefreshTimeLimit' SFTime
 |  'description' SFString
-|  'field' (field)*
+|  'field' '[' (field)* ']'
 |  'IS' (IS)
 |  'isSelected' SFBool
 |  'isValid' SFBool
-|  'language' xsNMTOKEN
+|  'language' shaderLanguageValues
 |  'load' SFBool
 |  'metadata' (X3DMetadataObject)
 |  'url' MFString
@@ -5076,13 +5076,13 @@ ParticleSystem
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
 |  'castShadow' SFBool
-|  'color' (X3DColorNode)*
+|  'color' '[' (X3DColorNode)* ']'
 |  'colorKey' MFFloat
 |  'createParticles' SFBool
 |  'emitter' (X3DParticleEmitterNode)
 |  'enabled' SFBool
 |  'geometry' (X3DGeometryNode)
-|  'geometryType' xsNMTOKEN
+|  'geometryType' particleSystemGeometryTypeValues
 |  'IS' (IS)
 |  'isActive' SFBool
 |  'lifetimeVariation' SFFloat
@@ -5090,7 +5090,7 @@ ParticleSystem
 |  'metadata' (X3DMetadataObject)
 |  'particleLifetime' SFFloat
 |  'particleSize' SFVec2f
-|  'physics' (X3DParticlePhysicsModelNode)*
+|  'physics' '[' (X3DParticlePhysicsModelNode)* ']'
 |  'texCoord' (TextureCoordinate|TextureCoordinateGenerator)
 |  'texCoordKey' MFFloat
 |  'visible' SFBool
@@ -5109,7 +5109,7 @@ PeriodicWave
 |  'metadata' (X3DMetadataObject)
 |  'optionsImag' MFFloat
 |  'optionsReal' MFFloat
-|  'type' SFString
+|  'type' periodicWaveTypeChoices
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
@@ -5147,17 +5147,17 @@ PhysicalMaterial
 PickableGroup
 : ('DEF' xsID)? 'PickableGroup' '{'
 (
-   'addChildren' (X3DChildNode)*
+   'addChildren' '[' (X3DChildNode)* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' (X3DChildNode)*
+|  'children' '[' (X3DChildNode)* ']'
 |  'description' SFString
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
-|  'objectType' MFString
+|  'objectType' '[' (pickableObjectTypeValues)* ']'
 |  'pickable' SFBool
-|  'removeChildren' (X3DChildNode)*
+|  'removeChildren' '[' (X3DChildNode)* ']'
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -5264,17 +5264,17 @@ PointPickSensor
 (
    'description' SFString
 |  'enabled' SFBool
-|  'intersectionType' xsNMTOKEN
+|  'intersectionType' intersectionTypeValues
 |  'IS' (IS)
 |  'isActive' SFBool
-|  'matchCriterion' xsNMTOKEN
+|  'matchCriterion' pickSensorMatchCriterionChoices
 |  'metadata' (X3DMetadataObject)
-|  'objectType' MFString
-|  'pickedGeometry' (X3DChildNode)*
+|  'objectType' '[' (pickableObjectTypeValues)* ']'
+|  'pickedGeometry' '[' (X3DChildNode)* ']'
 |  'pickedPoint' MFVec3f
 |  'pickingGeometry' (X3DGeometryNode)
-|  'pickTarget' (X3DGroupingNode|X3DShapeNode|Inline)*
-|  'sortOrder' xsNMTOKEN
+|  'pickTarget' '[' (X3DGroupingNode|X3DShapeNode|Inline)* ']'
+|  'sortOrder' pickSensorSortOrderValues
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
@@ -5299,7 +5299,7 @@ PointProperties
 PointSet
 : ('DEF' xsID)? 'PointSet' '{'
 (
-   'attrib' (X3DVertexAttributeNode)*
+   'attrib' '[' (X3DVertexAttributeNode)* ']'
 |  'color' (X3DColorNode)
 |  'coord' (X3DCoordinateNode)
 |  'fogCoord' (FogCoordinate)
@@ -5467,16 +5467,16 @@ PrimitivePickSensor
 (
    'description' SFString
 |  'enabled' SFBool
-|  'intersectionType' xsNMTOKEN
+|  'intersectionType' intersectionTypeValues
 |  'IS' (IS)
 |  'isActive' SFBool
-|  'matchCriterion' xsNMTOKEN
+|  'matchCriterion' pickSensorMatchCriterionChoices
 |  'metadata' (X3DMetadataObject)
-|  'objectType' MFString
-|  'pickedGeometry' (X3DChildNode)*
+|  'objectType' '[' (pickableObjectTypeValues)* ']'
+|  'pickedGeometry' '[' (X3DChildNode)* ']'
 |  'pickingGeometry' (X3DGeometryNode)
-|  'pickTarget' (X3DGroupingNode|X3DShapeNode|Inline)*
-|  'sortOrder' xsNMTOKEN
+|  'pickTarget' '[' (X3DGroupingNode|X3DShapeNode|Inline)* ']'
+|  'sortOrder' pickSensorSortOrderValues
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
@@ -5490,9 +5490,9 @@ ProgramShader
 |  'IS' (IS)
 |  'isSelected' SFBool
 |  'isValid' SFBool
-|  'language' xsNMTOKEN
+|  'language' shaderLanguageValues
 |  'metadata' (X3DMetadataObject)
-|  'programs' (ShaderProgram)*
+|  'programs' '[' (ShaderProgram)* ']'
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
@@ -5506,7 +5506,7 @@ ProjectionVolumeStyle
 |  'intensityThreshold' SFFloat
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
-|  'type' xsNMTOKEN
+|  'type' projectionVolumeStyleTypeChoices
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
@@ -5516,7 +5516,7 @@ ProjectionVolumeStyle
 ProtoInstance
 : ('DEF' xsID)? 'ProtoInstance' '{'
 (
-   'fieldValue' (fieldValue)*
+   'fieldValue' '[' (fieldValue)* ']'
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
 |  'name' xsNMTOKEN
@@ -5550,7 +5550,7 @@ ProximitySensor
 QuadSet
 : ('DEF' xsID)? 'QuadSet' '{'
 (
-   'attrib' (X3DVertexAttributeNode)*
+   'attrib' '[' (X3DVertexAttributeNode)* ']'
 |  'ccw' SFBool
 |  'color' (X3DColorNode)
 |  'colorPerVertex' SFBool
@@ -5590,7 +5590,7 @@ ReceiverPdu
 |  'metadata' (X3DMetadataObject)
 |  'multicastRelayHost' SFString
 |  'multicastRelayPort' SFInt32
-|  'networkMode' xsNMTOKEN
+|  'networkMode' networkModeChoices
 |  'port' SFInt32
 |  'radioID' SFInt32
 |  'readInterval' SFTime
@@ -5643,7 +5643,7 @@ RigidBody
 |  'finiteRotationAxis' SFVec3f
 |  'fixed' SFBool
 |  'forces' MFVec3f
-|  'geometry' (X3DNBodyCollidableNode)*
+|  'geometry' '[' (X3DNBodyCollidableNode)* ']'
 |  'inertia' SFMatrix3f
 |  'IS' (IS)
 |  'linearDampingFactor' SFFloat
@@ -5670,7 +5670,7 @@ RigidBodyCollection
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'bodies' (RigidBody)*
+|  'bodies' '[' (RigidBody)* ']'
 |  'collider' (CollisionCollection)
 |  'constantForceMix' SFFloat
 |  'contactSurfaceThickness' SFFloat
@@ -5682,11 +5682,11 @@ RigidBodyCollection
 |  'gravity' SFVec3f
 |  'IS' (IS)
 |  'iterations' SFInt32
-|  'joints' (X3DRigidJointNode)*
+|  'joints' '[' (X3DRigidJointNode)* ']'
 |  'maxCorrectionSpeed' SFFloat
 |  'metadata' (X3DMetadataObject)
 |  'preferAccuracy' SFBool
-|  'set_contacts' (Contact)*
+|  'set_contacts' '[' (Contact)* ']'
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -5751,17 +5751,17 @@ ScreenFontStyle
 : ('DEF' xsID)? 'ScreenFontStyle' '{'
 (
    'class' xsNMTOKENS
-|  'family' MFString
+|  'family' '[' (fontFamilyValues)* ']'
 |  'horizontal' SFBool
 |  'id' xsNMTOKEN
 |  'IS' (IS)
-|  'justify' MFString
+|  'justify' '[' (justifyChoices)* ']'
 |  'language' SFString
 |  'leftToRight' SFBool
 |  'metadata' (X3DMetadataObject)
 |  'pointSize' SFFloat
 |  'spacing' SFFloat
-|  'style' xsNMTOKEN
+|  'style' fontStyleChoices
 |  'topToBottom' SFBool
 )*
 '}'
@@ -5769,14 +5769,14 @@ ScreenFontStyle
 ScreenGroup
 : ('DEF' xsID)? 'ScreenGroup' '{'
 (
-   'addChildren' (X3DChildNode)*
+   'addChildren' '[' (X3DChildNode)* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' (X3DChildNode)*
+|  'children' '[' (X3DChildNode)* ']'
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
-|  'removeChildren' (X3DChildNode)*
+|  'removeChildren' '[' (X3DChildNode)* ']'
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -5791,7 +5791,7 @@ Script
 |  'autoRefreshTimeLimit' SFTime
 |  'description' SFString
 |  'directOutput' SFBool
-|  'field' (field)*
+|  'field' '[' (field)* ']'
 |  'IS' (IS)
 |  'load' SFBool
 |  'metadata' (X3DMetadataObject)
@@ -5813,7 +5813,7 @@ SegmentedVolumeData
 |  'dimensions' SFVec3f
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
-|  'renderStyle' (X3DVolumeRenderStyleNode)*
+|  'renderStyle' '[' (X3DVolumeRenderStyleNode)* ']'
 |  'segmentEnabled' MFBool
 |  'segmentIdentifiers' (X3DTexture3DNode)
 |  'visible' SFBool
@@ -5832,7 +5832,7 @@ ShadedVolumeStyle
 |  'lighting' SFBool
 |  'material' (X3DMaterialNode)
 |  'metadata' (X3DMetadataObject)
-|  'phaseFunction' SFString
+|  'phaseFunction' phaseFunctionValues
 |  'shadows' SFBool
 |  'surfaceNormals' (X3DTexture3DNode)
 |  'class' xsNMTOKENS
@@ -5851,7 +5851,7 @@ ShaderPart
 |  'load' SFBool
 |  'metadata' (X3DMetadataObject)
 |  'sourceCode' xsstring
-|  'type' xsNMTOKEN
+|  'type' shaderPartTypeValues
 |  'url' MFString
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -5865,12 +5865,12 @@ ShaderProgram
    'autoRefresh' SFTime
 |  'autoRefreshTimeLimit' SFTime
 |  'description' SFString
-|  'field' (field)*
+|  'field' '[' (field)* ']'
 |  'IS' (IS)
 |  'load' SFBool
 |  'metadata' (X3DMetadataObject)
 |  'sourceCode' xsstring
-|  'type' xsNMTOKEN
+|  'type' shaderPartTypeValues
 |  'url' MFString
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -5921,7 +5921,7 @@ SignalPdu
 |  'metadata' (X3DMetadataObject)
 |  'multicastRelayHost' SFString
 |  'multicastRelayPort' SFInt32
-|  'networkMode' xsNMTOKEN
+|  'networkMode' networkModeChoices
 |  'port' SFInt32
 |  'radioID' SFInt32
 |  'readInterval' SFTime
@@ -5967,7 +5967,7 @@ SingleAxisHingeJoint
 |  'body1AnchorPoint' SFVec3f
 |  'body2' (RigidBody)
 |  'body2AnchorPoint' SFVec3f
-|  'forceOutput' MFString
+|  'forceOutput' '[' (forceOutputValues)* ']'
 |  'IS' (IS)
 |  'maxAngle' SFFloat
 |  'metadata' (X3DMetadataObject)
@@ -5986,7 +5986,7 @@ SliderJoint
    'axis' SFVec3f
 |  'body1' (RigidBody)
 |  'body2' (RigidBody)
-|  'forceOutput' MFString
+|  'forceOutput' '[' (forceOutputValues)* ']'
 |  'IS' (IS)
 |  'maxSeparation' SFFloat
 |  'metadata' (X3DMetadataObject)
@@ -6028,13 +6028,13 @@ Sound
 SpatialSound
 : ('DEF' xsID)? 'SpatialSound' '{'
 (
-   'children' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)*
+   'children' '[' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)* ']'
 |  'coneInnerAngle' SFFloat
 |  'coneOuterAngle' SFFloat
 |  'coneOuterGain' SFFloat
 |  'description' SFString
 |  'direction' SFVec3f
-|  'distanceModel' SFString
+|  'distanceModel' distanceModelChoices
 |  'dopplerEnabled' SFBool
 |  'enabled' SFBool
 |  'enableHRTF' SFBool
@@ -6186,7 +6186,7 @@ StaticGroup
    'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' (X3DChildNode)*
+|  'children' '[' (X3DChildNode)* ']'
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
 |  'visible' SFBool
@@ -6200,9 +6200,9 @@ StreamAudioDestination
 : ('DEF' xsID)? 'StreamAudioDestination' '{'
 (
    'channelCount' SFInt32
-|  'channelCountMode' SFString
-|  'channelInterpretation' SFString
-|  'children' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)*
+|  'channelCountMode' channelCountModeChoices
+|  'channelInterpretation' channelInterpretationChoices
+|  'children' '[' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)* ']'
 |  'description' SFString
 |  'enabled' SFBool
 |  'gain' SFFloat
@@ -6220,8 +6220,8 @@ StreamAudioDestination
 StreamAudioSource
 : ('DEF' xsID)? 'StreamAudioSource' '{'
 (
-   'channelCountMode' SFString
-|  'channelInterpretation' SFString
+   'channelCountMode' channelCountModeChoices
+|  'channelInterpretation' channelInterpretationChoices
 |  'description' SFString
 |  'elapsedTime' SFTime
 |  'enabled' SFBool
@@ -6280,14 +6280,14 @@ SurfaceEmitter
 Switch
 : ('DEF' xsID)? 'Switch' '{'
 (
-   'addChildren' (X3DChildNode)*
+   'addChildren' '[' (X3DChildNode)* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' (X3DChildNode)*
+|  'children' '[' (X3DChildNode)* ']'
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
-|  'removeChildren' (X3DChildNode)*
+|  'removeChildren' '[' (X3DChildNode)* ']'
 |  'visible' SFBool
 |  'whichChoice' SFInt32
 |  'class' xsNMTOKENS
@@ -6423,7 +6423,7 @@ TextureCoordinateGenerator
    'IS' (IS)
 |  'mapping' xsNMTOKEN
 |  'metadata' (X3DMetadataObject)
-|  'mode' xsNMTOKEN
+|  'mode' textureCoordinateGeneratorModeChoices
 |  'parameter' MFFloat
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -6490,15 +6490,15 @@ TextureProperties
    'anisotropicDegree' SFFloat
 |  'borderColor' SFColorRGBA
 |  'borderWidth' SFInt32
-|  'boundaryModeR' xsNMTOKEN
-|  'boundaryModeS' xsNMTOKEN
-|  'boundaryModeT' xsNMTOKEN
+|  'boundaryModeR' textureBoundaryModeChoices
+|  'boundaryModeS' textureBoundaryModeChoices
+|  'boundaryModeT' textureBoundaryModeChoices
 |  'generateMipMaps' SFBool
 |  'IS' (IS)
-|  'magnificationFilter' xsNMTOKEN
+|  'magnificationFilter' textureMagnificationModeChoices
 |  'metadata' (X3DMetadataObject)
-|  'minificationFilter' xsNMTOKEN
-|  'textureCompression' xsNMTOKEN
+|  'minificationFilter' textureMinificationModeChoices
+|  'textureCompression' textureCompressionModeChoices
 |  'texturePriority' SFFloat
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -6623,15 +6623,15 @@ TouchSensor
 Transform
 : ('DEF' xsID)? 'Transform' '{'
 (
-   'addChildren' (X3DChildNode)*
+   'addChildren' '[' (X3DChildNode)* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
 |  'center' SFVec3f
-|  'children' (X3DChildNode)*
+|  'children' '[' (X3DChildNode)* ']'
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
-|  'removeChildren' (X3DChildNode)*
+|  'removeChildren' '[' (X3DChildNode)* ']'
 |  'rotation' SFRotation
 |  'scale' SFVec3f
 |  'scaleOrientation' SFRotation
@@ -6698,7 +6698,7 @@ TransmitterPdu
 |  'modulationTypeSystem' SFInt32
 |  'multicastRelayHost' SFString
 |  'multicastRelayPort' SFInt32
-|  'networkMode' xsNMTOKEN
+|  'networkMode' networkModeChoices
 |  'port' SFInt32
 |  'power' SFFloat
 |  'radioEntityTypeCategory' SFInt32
@@ -6727,7 +6727,7 @@ TransmitterPdu
 TriangleFanSet
 : ('DEF' xsID)? 'TriangleFanSet' '{'
 (
-   'attrib' (X3DVertexAttributeNode)*
+   'attrib' '[' (X3DVertexAttributeNode)* ']'
 |  'ccw' SFBool
 |  'color' (X3DColorNode)
 |  'colorPerVertex' SFBool
@@ -6749,7 +6749,7 @@ TriangleFanSet
 TriangleSet
 : ('DEF' xsID)? 'TriangleSet' '{'
 (
-   'attrib' (X3DVertexAttributeNode)*
+   'attrib' '[' (X3DVertexAttributeNode)* ']'
 |  'ccw' SFBool
 |  'color' (X3DColorNode)
 |  'colorPerVertex' SFBool
@@ -6783,7 +6783,7 @@ TriangleSet2D
 TriangleStripSet
 : ('DEF' xsID)? 'TriangleStripSet' '{'
 (
-   'attrib' (X3DVertexAttributeNode)*
+   'attrib' '[' (X3DVertexAttributeNode)* ']'
 |  'ccw' SFBool
 |  'color' (X3DColorNode)
 |  'colorPerVertex' SFBool
@@ -6838,7 +6838,7 @@ UniversalJoint
 |  'body2' (RigidBody)
 |  'body2AnchorPoint' SFVec3f
 |  'body2Axis' SFFloat
-|  'forceOutput' MFString
+|  'forceOutput' '[' (forceOutputValues)* ']'
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
 |  'stop1Bounce' SFFloat
@@ -6898,7 +6898,7 @@ ViewpointGroup
 : ('DEF' xsID)? 'ViewpointGroup' '{'
 (
    'center' SFVec3f
-|  'children' (X3DViewpointNode|ViewpointGroup)*
+|  'children' '[' (X3DViewpointNode|ViewpointGroup)* ']'
 |  'description' SFString
 |  'displayed' SFBool
 |  'IS' (IS)
@@ -6914,15 +6914,15 @@ ViewpointGroup
 Viewport
 : ('DEF' xsID)? 'Viewport' '{'
 (
-   'addChildren' (X3DChildNode)*
+   'addChildren' '[' (X3DChildNode)* ']'
 |  'bboxCenter' SFVec3f
 |  'bboxDisplay' SFBool
 |  'bboxSize' bboxSizeType
-|  'children' (X3DChildNode)*
+|  'children' '[' (X3DChildNode)* ']'
 |  'clipBoundary' MFFloat
 |  'IS' (IS)
 |  'metadata' (X3DMetadataObject)
-|  'removeChildren' (X3DChildNode)*
+|  'removeChildren' '[' (X3DChildNode)* ']'
 |  'visible' SFBool
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
@@ -6992,16 +6992,16 @@ VolumePickSensor
 (
    'description' SFString
 |  'enabled' SFBool
-|  'intersectionType' xsNMTOKEN
+|  'intersectionType' intersectionTypeValues
 |  'IS' (IS)
 |  'isActive' SFBool
-|  'matchCriterion' xsNMTOKEN
+|  'matchCriterion' pickSensorMatchCriterionChoices
 |  'metadata' (X3DMetadataObject)
-|  'objectType' MFString
-|  'pickedGeometry' (X3DChildNode)*
+|  'objectType' '[' (pickableObjectTypeValues)* ']'
+|  'pickedGeometry' '[' (X3DChildNode)* ']'
 |  'pickingGeometry' (X3DGeometryNode)
-|  'pickTarget' (X3DGroupingNode|X3DShapeNode|Inline)*
-|  'sortOrder' xsNMTOKEN
+|  'pickTarget' '[' (X3DGroupingNode|X3DShapeNode|Inline)* ']'
+|  'sortOrder' pickSensorSortOrderValues
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
@@ -7012,9 +7012,9 @@ WaveShaper
 : ('DEF' xsID)? 'WaveShaper' '{'
 (
    'channelCount' SFInt32
-|  'channelCountMode' SFString
-|  'channelInterpretation' SFString
-|  'children' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)*
+|  'channelCountMode' channelCountModeChoices
+|  'channelInterpretation' channelInterpretationChoices
+|  'children' '[' (Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper)* ']'
 |  'description' SFString
 |  'elapsedTime' SFTime
 |  'enabled' SFBool
@@ -7023,7 +7023,7 @@ WaveShaper
 |  'isActive' SFBool
 |  'isPaused' SFBool
 |  'metadata' (X3DMetadataObject)
-|  'oversample' SFString
+|  'oversample' waveShaperOversampleChoices
 |  'pauseTime' SFTime
 |  'resumeTime' SFTime
 |  'startTime' SFTime
@@ -7070,7 +7070,7 @@ component
    'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'level' SFInt32
-|  'name' xsNMTOKEN
+|  'name' componentNameChoices
 |  'style' SFString
 )*
 '}'
@@ -7103,7 +7103,7 @@ ExternProtoDeclare
    'appinfo' SFString
 |  'class' xsNMTOKENS
 |  'documentation' SFString
-|  'field' (field)*
+|  'field' '[' (field)* ']'
 |  'id' xsNMTOKEN
 |  'name' xsNMTOKEN
 |  'style' SFString
@@ -7114,15 +7114,15 @@ ExternProtoDeclare
 field
 :  'field' '{'
 (
-   'accessType' xsNMTOKEN
+   'accessType' accessTypeChoices
 |  'appinfo' SFString
-|  'children' (X3DNode)*
+|  'children' '[' (X3DNode)* ']'
 |  'class' xsNMTOKENS
 |  'documentation' SFString
 |  'id' xsNMTOKEN
 |  'name' xsNMTOKEN
 |  'style' SFString
-|  'type' xsNMTOKEN
+|  'type' fieldTypeChoices
 |  'value' SFString
 )*
 '}'
@@ -7130,7 +7130,7 @@ field
 fieldValue
 :  'fieldValue' '{'
 (
-   'children' (X3DNode)*
+   'children' '[' (X3DNode)* ']'
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'name' xsNMTOKEN
@@ -7143,11 +7143,11 @@ head
 :  'head' '{'
 (
    'class' xsNMTOKENS
-|  'component' (component)*
+|  'COMPONENT' '[' (component)* ']'
 |  'id' xsNMTOKEN
-|  'meta' (meta)*
+|  'META' '[' (meta)* ']'
 |  'style' SFString
-|  'unit' (unit)*
+|  'UNIT' '[' (unit)* ']'
 )*
 '}'
 ;
@@ -7167,7 +7167,7 @@ IS
 :  'IS' '{'
 (
    'class' xsNMTOKENS
-|  'connect' (connect)*
+|  'connect' '[' (connect)* ']'
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
@@ -7178,11 +7178,11 @@ meta
 (
    'class' xsNMTOKENS
 |  'content' SFString
-|  'dir' xsNMTOKEN
+|  'dir' metaDirectionChoices
 |  'http-equiv' SFString
 |  'id' xsNMTOKEN
 |  'lang' SFString
-|  'name' xsNMTOKEN
+|  'name' metaNameValues
 |  'scheme' SFString
 |  'style' SFString
 )*
@@ -7191,7 +7191,7 @@ meta
 ProtoBody
 :  'ProtoBody' '{'
 (
-   'children' (X3DNode)*
+   'children' '[' (X3DNode)* ']'
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
@@ -7216,7 +7216,7 @@ ProtoInterface
 :  'ProtoInterface' '{'
 (
    'class' xsNMTOKENS
-|  'field' (field)*
+|  'field' '[' (field)* ']'
 |  'id' xsNMTOKEN
 |  'style' SFString
 )*
@@ -7238,7 +7238,7 @@ ROUTE
 Scene
 :  'Scene' '{'
 (
-   'children' (X3DChildNode|X3DMetadataObject|LayerSet)*
+   'children' '[' (X3DChildNode|X3DMetadataObject|LayerSet)* ']'
 |  'class' xsNMTOKENS
 |  'id' xsNMTOKEN
 |  'style' SFString
@@ -7248,7 +7248,7 @@ Scene
 unit
 :  'unit' '{'
 (
-   'category' xsNMTOKEN
+   'category' unitCategoryChoices
 |  'class' xsNMTOKENS
 |  'conversionFactor' SFDouble
 |  'id' xsNMTOKEN
@@ -7263,10 +7263,10 @@ X3D
    'class' xsNMTOKENS
 |  'head' (head)
 |  'id' xsNMTOKEN
-|  'profile' xsNMTOKEN
+|  'PROFILE' profileNameChoices
 |  'Scene' (Scene)
 |  'style' SFString
-|  'version' xsNMTOKEN
+|  'version' x3dVersionChoices
 )*
 '}'
 ;
