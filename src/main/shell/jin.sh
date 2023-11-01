@@ -1,4 +1,6 @@
 #!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
 bash several.sh ../data/JinLOA4Canonical.x3d
 cd ../data
 node ../node/jin.js > centers.txt

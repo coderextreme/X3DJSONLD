@@ -1,4 +1,6 @@
 #!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
 
 export IN=`pwd`/"$1" 
 export OUT=`pwd`/`dirname "$1"`/`basename "$1" .x3d`.x3dj

@@ -1,4 +1,6 @@
 #!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
 
 echo 3.0
 py ../python/etgenerateJSONschema.py 3.0 < /c/x3d-code/www.web3d.org/specifications/X3dUnifiedObjectModel-3.0.xml | jsonlint > ../schema/x3d-3.0-JSONSchema.json

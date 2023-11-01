@@ -1,4 +1,6 @@
 #!/bin/bash -x
+set -euo pipefail
+IFS=$'\n\t'
 
 # run the proto preprocessor
 

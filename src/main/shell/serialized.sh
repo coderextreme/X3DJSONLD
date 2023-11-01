@@ -1,4 +1,6 @@
 #!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
 
 # get lists of files which haven't been converted to Java
 

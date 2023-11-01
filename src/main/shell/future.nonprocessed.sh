@@ -1,4 +1,6 @@
 #!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
 
 # get list of files which have X3D but don't have JSON
 
