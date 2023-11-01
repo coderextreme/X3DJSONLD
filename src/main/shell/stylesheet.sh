@@ -1,4 +1,6 @@
 #!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
 export PROCESSORS=${PROCESSORS-8}
 export XSLT=xslt3
 export RESULTS=stylesheetout.txt
