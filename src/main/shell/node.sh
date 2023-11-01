@@ -1,6 +1,8 @@
 #!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
 
-# old way of running files through nashorn
+# old way of running files through graaljs
 
 . ./classpath
 

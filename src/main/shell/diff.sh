@@ -1,4 +1,6 @@
 #!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
 
 . ./classpath
 
@@ -18,7 +20,7 @@ do
 	${NODE} ${NODEDIR}/xmldiff.js `dirname $i  | sed 's/.\/www_web3d_org/\/c\/x3d-code\/www.web3d.org/'`/`basename $i .new.json.intermediate.x3d`.x3d $i
 done
 
-# old way of comparing output from nashorn
+# old way of comparing output from graaljs
 
 for i in `find ../data -name '*.new.x3d'`
 do

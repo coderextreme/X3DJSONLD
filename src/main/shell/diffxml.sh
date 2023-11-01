@@ -1,7 +1,9 @@
 #!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
 
 . ./classpath
-# way of comparing output from nashorn
+# way of comparing output from graaljs
 
 for i in `find . -name '*.new.x3d'`
 do
