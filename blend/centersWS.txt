@@ -1,0 +1,134 @@
+Skeleton
+0 0 -2.95823e-32
+humanoid_root
+0 0 -2.95823e-32
+sacroiliac
+-6.02828e-05 -0.0487953 0.000259622
+l_hip
+-0.00600664 4.86199 0.0258689
+l_knee
+0.632165 -0.000942702 -0.0218624
+l_talocrural
+-1.19209e-08 1.05154 -7.15256e-08
+l_metatarsophalangeal_2
+-2.14577e-07 1.22365 -9.83477e-08
+l_tarsal_distal_interphalangeal_2
+3.57628e-08 0.269543 -1.19209e-08
+r_hip
+-0.00600664 4.86199 0.0258689
+r_knee
+-0.371319 -0.0093133 0.255446
+r_talocrural
+-2.5332e-08 1.00791 -1.3411e-08
+r_metatarsophalangeal_2
+1.19209e-08 1.21069 -3.09944e-07
+r_tarsal_distal_interphalangeal_2
+-1.37091e-07 0.244856 -2.38419e-07
+vl5
+-6.02828e-05 -0.0487953 0.000259622
+vl3
+2.29285e-10 2.69923 -1.15962e-09
+vt12
+2.98023e-09 0.222897 -1.35973e-08
+vt9
+5.58794e-10 0.221354 -1.59256e-08
+vt4
+-2.6077e-09 0.221224 -4.88013e-08
+l_sternoclavicular
+6.33299e-09 0.230443 4.93601e-09
+l_shoulder
+0.231818 -0.159132 -0.0695866
+l_elbow
+5.96046e-08 0.425543 -1.66893e-07
+l_radiocarpal
+1.49012e-07 0.610989 -5.96046e-09
+l_carpometacarpal_1
+5.96046e-08 0.606581 -8.41916e-08
+l_metacarpophalangeal_1
+-2.563e-07 0.0705006 -4.17233e-08
+l_carpal_interphalangeal_1
+6.25849e-08 0.090866 -1.3113e-07
+l_carpometacarpal_2
+5.96046e-08 0.606581 -8.41916e-08
+l_metacarpophalangeal_2
+0.00824935 0.070245 0.0474083
+l_carpal_proximal_interphalangeal_2
+3.57628e-08 0.180541 2.98023e-08
+l_carpal_distal_interphalangeal_2
+3.57628e-08 0.100184 3.57628e-08
+l_carpometacarpal_3
+5.96046e-08 0.606581 -8.41916e-08
+l_metacarpophalangeal_3
+0.00748079 -0.00861347 -0.00180886
+l_carpal_proximal_interphalangeal_3
+5.96046e-08 0.183302 -2.5034e-07
+l_carpal_distal_interphalangeal_3
+6.55651e-08 0.116451 -1.14739e-07
+l_carpometacarpal_4
+5.96046e-08 0.606581 -8.41916e-08
+l_metacarpophalangeal_4
+-0.00194269 -0.0467341 -0.0202627
+l_carpal_proximal_interphalangeal_4
+-3.57628e-08 0.169769 -2.6226e-07
+l_carpal_distal_interphalangeal_4
+-3.57628e-08 0.0971972 9.53674e-08
+l_carpometacarpal_5
+5.96046e-08 0.606581 -8.41916e-08
+l_metacarpophalangeal_5
+-0.0160443 -0.102727 -0.0549881
+l_carpal_proximal_interphalangeal_5
+4.47035e-09 0.131985 2.5332e-07
+l_carpal_distal_interphalangeal_5
+-1.19209e-08 0.0831431 -4.17233e-08
+vc7
+6.33299e-09 0.230443 4.93601e-09
+vc3
+7.30157e-08 0.294529 3.12924e-08
+skullbase
+-2.08616e-08 0.172234 5.12839e-08
+r_sternoclavicular
+6.33299e-09 0.230443 4.93601e-09
+r_shoulder
+-0.316977 -0.106526 -0.229429
+r_elbow
+9.53674e-08 0.400056 1.96695e-07
+r_radiocarpal
+-1.19209e-07 0.580767 -2.38419e-08
+r_carpometacarpal_1
+2.35252e-07 0.63663 0
+r_metacarpophalangeal_1
+-4.76837e-08 0.0870555 1.19209e-08
+r_carpal_interphalangeal_1
+5.96046e-08 0.0887248 -3.8147e-07
+r_carpometacarpal_2
+2.35252e-07 0.63663 0
+r_metacarpophalangeal_2
+-0.0532893 0.117645 0.0304679
+r_carpal_proximal_interphalangeal_2
+1.19209e-08 0.200307 1.57952e-07
+r_carpal_distal_interphalangeal_2
+2.98023e-08 0.096962 -1.2517e-07
+r_carpometacarpal_3
+2.35252e-07 0.63663 0
+r_metacarpophalangeal_3
+-0.00664537 0.0232517 0.0621772
+r_carpal_proximal_interphalangeal_3
+-1.78814e-08 0.206476 0
+r_carpal_distal_interphalangeal_3
+-1.19209e-08 0.110767 -2.02656e-07
+r_carpometacarpal_4
+2.35252e-07 0.63663 0
+r_metacarpophalangeal_4
+0.0103402 -0.0230945 0.0303
+r_carpal_proximal_interphalangeal_4
+-2.98023e-07 0.179757 8.9407e-08
+r_carpal_distal_interphalangeal_4
+-2.75671e-07 0.112128 -5.96046e-09
+r_carpometacarpal_5
+2.35252e-07 0.63663 0
+r_metacarpophalangeal_5
+0.034228 -0.0839285 -0.0512736
+r_carpal_proximal_interphalangeal_5
+2.68221e-08 0.139257 1.10269e-07
+r_carpal_distal_interphalangeal_5
+3.94881e-08 0.0501066 -2.38419e-08

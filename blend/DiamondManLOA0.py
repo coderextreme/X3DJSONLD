@@ -23,8 +23,10 @@
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
 ####################################################################################################
-
+print("<!--")
 from x3d import *
+import sys
+print("-->")
 
 newModel=X3D(profile='Immersive',version='4.0',
   head=head(
@@ -100,33 +102,33 @@ newModel=X3D(profile='Immersive',version='4.0',
 # Self-test diagnostics
 ####################################################################################################
 
-print('Self-test diagnostics for DiamondManLOA0.py:')
+print('Self-test diagnostics for DiamondManLOA0.py:', file=sys.stderr)
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
-    print(metaDiagnostics(newModel)) # display meta info, hint, warning, error, TODO values in this model
+    print(metaDiagnostics(newModel), file=sys.stderr) # display meta info, hint, warning, error, TODO values in this model
 # print('check newModel.XML() serialization...')
 newModelXML= newModel.XML() # test export method XML() for exceptions during export
 newModel.XMLvalidate()
-# print(newModelXML) # diagnostic
+print(newModelXML) # diagnostic
 
 try:
 #   print('check newModel.VRML() serialization...')
     newModelVRML=newModel.VRML() # test export method VRML() for exceptions during export
     # print(prependLineNumbers(newModelVRML)) # debug
-    print("Python-to-VRML export of VRML output successful", flush=True)
+    print("Python-to-VRML export of VRML output successful", flush=True, file=sys.stderr)
 except Exception as err: # usually BaseException
     # https://stackoverflow.com/questions/18176602/how-to-get-the-name-of-an-exception-that-was-caught-in-python
-    print("*** Python-to-VRML export of VRML output failed:", type(err).__name__, err)
+    print("*** Python-to-VRML export of VRML output failed:", type(err).__name__, err, file=sys.stderr)
     if newModelVRML: # may have failed to generate
-        print(prependLineNumbers(newModelVRML, err.lineno))
+        print(prependLineNumbers(newModelVRML, err.lineno), file=sys.stderr)
 
 try:
 #   print('check newModel.JSON() serialization...')
     newModelJSON=newModel.JSON() # test export method JSON() for exceptions during export
 #   print(prependLineNumbers(newModelJSON)) # debug
-    print("Python-to-JSON export of JSON output successful (under development)")
+    print("Python-to-JSON export of JSON output successful (under development)", file=sys.stderr)
 except Exception as err: # usually SyntaxError
-    print("*** Python-to-JSON export of JSON output failed:", type(err).__name__, err)
+    print("*** Python-to-JSON export of JSON output failed:", type(err).__name__, err, file=sys.stderr)
     if newModelJSON: # may have failed to generate
-        print(prependLineNumbers(newModelJSON,err.lineno))
+        print(prependLineNumbers(newModelJSON,err.lineno), file=sys.stderr)
 
-print("python DiamondManLOA0.py load and self-test diagnostics complete.")
+print("python DiamondManLOA0.py load and self-test diagnostics complete.", file=sys.stderr)
