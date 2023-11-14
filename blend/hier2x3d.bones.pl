@@ -150,7 +150,7 @@ for segment in segments:
 
 # Exit edit mode
 bpy.ops.object.mode_set(mode='OBJECT')
-bpy.ops.export_scene.x3dv(filepath="blenderSkeleton.html", export_format="HTML")
+# bpy.ops.export_scene.x3dv(filepath="blenderSkeleton.html", export_format="HTML")
 bpy.ops.export_scene.x3dv(filepath="blenderSkeleton.x3d", export_format="X3D")
 bpy.ops.export_scene.x3dv(filepath="blenderSkeleton.x3dv", export_format="X3DV")
 HUMANFOOTER
