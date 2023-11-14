@@ -1,0 +1,15 @@
+libfreewrl version 6.4.0
+-h for commandline use
+openGL version 4.6.0 NVIDIA 537.42
+GLSL shader max version 4.60 NVIDIA 460
+maximum texture size system/gpu: 16384 runtime/freewrl: 8192
+processor architecture x64
+maxiumum image texture units 32 
+depth bits 24
+only one valid Viewpoint
+only one valid Viewpoint
+only one valid Viewpoint
+calling kill_javascript()
+done kill_javascript
+Ending texture load thread gracefully
+finalizeRenderSceneUpdateScene
