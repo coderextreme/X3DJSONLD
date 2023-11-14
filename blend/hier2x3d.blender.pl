@@ -102,7 +102,7 @@ import bpy
 objs = bpy.data.objects
 objs.remove(objs["Cube"], do_unlink=True)
 
-skeleton = bpy.data.objects.new("humanoid_root", bpy.data.armatures.new("Armature"))
+skeleton = bpy.data.objects.new("Humanoid_collection", bpy.data.armatures.new("Humanoid"))
 bpy.context.collection.objects.link(skeleton)
 bpy.context.view_layer.objects.active = skeleton
 skeleton.select_set(True)
@@ -118,6 +118,7 @@ my $cenrj = $joints{$prev->{joint}};
 if ($cenrj) {
 	my @cenrj = split(/[ ,\t]+/, $cenrj);
 	$cenrj = "$cenrj[0], $cenrj[2], $cenrj[1]";
+	print STDOUT '("Armature", (0, 0, 0), (0, 0, 0)),'."\n";
 	print STDOUT " " x $root_indent. '("'.$prev->{joint}.'", ('.$cenrj.'), (0, 0, 0)),'."\n";
 }
 &printPython($prev);
@@ -134,6 +135,7 @@ for joint in joints:
 segments = [
 HUMANBODY
 print STDOUT $segments;
+print '("Armature", "humanoid_root")'."\n";
 print STDOUT << "HUMANFOOTER";
 ]
 
