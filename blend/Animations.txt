@@ -1,0 +1,1554 @@
+
+#DEF hanim_z100sTimer TimeSensor { cycleInterval 100 loop TRUE enabled TRUE }
+
+#DEF hanim_ActivateSensor ProximitySensor { size 1000000 1000000 1000000 }
+
+#ROUTE hanim_ActivateSensor.enterTime TO hanim_z100sTimer.startTime
+
+
+
+DEF SkipAnimation Group {
+
+ children [
+
+DEF SkipTimer TimeSensor { cycleInterval 1.73 loop TRUE enabled FALSE }
+
+DEF Skip_r_kneeRotInterp OrientationInterpolator {
+
+	key [ 0, 0.125, 0.2083, 0.2917, 0.375, 0.5, 0.6667, 0.7917, 0.9167, 1 ] 
+
+      	keyValue [
+
+      		 1 0 0 -0.0,
+
+      		 1 0 0 -0.33,
+
+		 1 0 0 -0.66,
+
+		 1 0 0 -1.0,
+
+		 1 0 0 -0.66, 
+
+                 1 0 0 -0.33,
+
+		 1 0 0 -0.0,
+
+		 1 0 0 -0.1,
+
+		 1 0 0 -0.2,
+
+		 1 0 0 -0.1
+
+		] }
+
+DEF Skip_r_hipRotInterp OrientationInterpolator {
+
+	key [ 0, 0.125, 0.2083, 0.2917, 0.375, 0.5, 0.6667, 0.7917, 0.9167, 1 ] 
+
+	keyValue [
+
+      		 -1 0 0 -0.0,
+
+      		 -1 0 0 -0.33,
+
+		 -1 0 0 -0.66,
+
+		 -1 0 0 -1.0,
+
+		 -1 0 0 -0.66, 
+
+                 -1 0 0 -0.33,
+
+		 -1 0 0 -0.0,
+
+		 -1 0 0 -0.1,
+
+		 -1 0 0 -0.2,
+
+		 -1 0 0 -0.1
+
+		 ] }
+
+
+
+DEF Skip_l_kneeRotInterp OrientationInterpolator {
+
+	key [ 0, 0.125, 0.2083, 0.2917, 0.375, 0.5, 0.6667, 0.7917, 0.9167, 1 ] 
+
+	keyValue [
+
+		 1 0 0 -0.0,
+
+		 1 0 0 -0.1,
+
+		 1 0 0 -0.2,
+
+		 1 0 0 -0.1
+
+      		 1 0 0 -0.0,
+
+      		 1 0 0 -0.33,
+
+		 1 0 0 -0.66,
+
+		 1 0 0 -1.0,
+
+		 1 0 0 -0.66, 
+
+                 1 0 0 -0.33,
+
+		] }
+
+
+
+DEF Skip_l_hipRotInterp OrientationInterpolator {
+
+	key [ 0, 0.125, 0.2083, 0.2917, 0.375, 0.5, 0.6667, 0.7917, 0.9167, 1 ] 
+
+	keyValue [
+
+		 -1 0 0 -0.0,
+
+		 -1 0 0 -0.1,
+
+		 -1 0 0 -0.2,
+
+		 -1 0 0 -0.1
+
+      		 -1 0 0 -0.0,
+
+      		 -1 0 0 -0.33,
+
+		 -1 0 0 -0.66,
+
+		 -1 0 0 -1.0,
+
+		 -1 0 0 -0.66, 
+
+                 -1 0 0 -0.33,
+
+		] }
+
+
+
+DEF Skip_whole_bodyTranInterp PositionInterpolator { 
+
+	key [ 0, 0.125, 0.2083, 0.2917, 0.375, 0.5, 0.6667, 0.7917, 0.9167, 1 ] 
+
+keyValue [
+
+	0 0 0
+
+	0 0.0 0
+
+	0 0.1 0
+
+	0 0.0 0
+
+	0 0 0
+
+	0 0 0
+
+	0 0 0
+
+	0 0.0 0
+
+	0 0.1 0
+
+	0 0.0 0
+
+	] }
+
+DEF Skip_r_shoulderPitch OrientationInterpolator {
+
+	key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ]
+
+	keyValue [ 1 0 0 0, 1 0 0 0.2, 1 0 0 0.22, 1 0 0 0.2, 1 0 0 0, 1 0 0 0 ]}
+
+DEF Skip_l_shoulderPitch OrientationInterpolator {
+
+	key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ]
+
+	keyValue [ 1 0 0 0, 1 0 0 -0.2, 1 0 0 -0.22, 1 0 0 -0.2, 1 0 0 0, 1 0 0 0 ]}
+
+DEF Skip_r_elbowPitch OrientationInterpolator {
+
+	key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ]
+
+	keyValue [ 1 0 0 0, 1 0 0 0.1, 1 0 0 0.11, 1 0 0 0.1, 1 0 0 0, 1 0 0 0 ]}
+
+DEF Skip_l_elbowPitch OrientationInterpolator {
+
+	key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ]
+
+	keyValue [ 1 0 0 0, 1 0 0 -0.1, 1 0 0 -0.11, 1 0 0 -0.1, 1 0 0 0, 1 0 0 0 ]}
+
+] }
+
+
+
+ROUTE SkipTimer.fraction_changed TO Skip_r_kneeRotInterp.set_fraction
+
+ROUTE SkipTimer.fraction_changed TO Skip_r_hipRotInterp.set_fraction
+
+ROUTE SkipTimer.fraction_changed TO Skip_l_kneeRotInterp.set_fraction
+
+ROUTE SkipTimer.fraction_changed TO Skip_l_hipRotInterp.set_fraction
+
+ROUTE SkipTimer.fraction_changed TO Skip_whole_bodyTranInterp.set_fraction
+
+ROUTE SkipTimer.fraction_changed TO Skip_l_shoulderPitch.set_fraction 
+
+ROUTE SkipTimer.fraction_changed TO Skip_r_shoulderPitch.set_fraction 
+
+ROUTE SkipTimer.fraction_changed TO Skip_l_elbowPitch.set_fraction 
+
+ROUTE SkipTimer.fraction_changed TO Skip_r_elbowPitch.set_fraction 
+
+
+
+ROUTE Skip_r_kneeRotInterp.value_changed TO hanim_r_knee.rotation
+
+ROUTE Skip_r_hipRotInterp.value_changed TO hanim_r_hip.rotation
+
+ROUTE Skip_l_kneeRotInterp.value_changed TO hanim_l_knee.rotation
+
+ROUTE Skip_l_hipRotInterp.value_changed TO hanim_l_hip.rotation
+
+ROUTE Skip_whole_bodyTranInterp.value_changed TO hanim_humanoid_root.translation
+
+ROUTE Skip_r_shoulderPitch.value_changed TO hanim_r_shoulder.rotation
+
+ROUTE Skip_l_shoulderPitch.value_changed TO hanim_l_shoulder.rotation
+
+ROUTE Skip_r_elbowPitch.value_changed TO hanim_r_elbow.rotation
+
+ROUTE Skip_l_elbowPitch.value_changed TO hanim_l_elbow.rotation
+# DEF hanim_Stand010Timer TimeSensor { cycleInterval 1.1 loop TRUE enabled TRUE } # 0.11000000000000001 - 0 = 0.11000000000000001, times 10 is 1.1
+# DEF hanim_Walk011Timer TimeSensor { cycleInterval 1.1 loop TRUE enabled TRUE } # 0.22000000000000003 - 0.11000000000000001 = 0.11000000000000001, times 10 is 1.1
+# DEF hanim_Stand022Timer TimeSensor { cycleInterval 3.3 loop TRUE enabled TRUE } # 0.55 - 0.22000000000000003 = 0.32999999999999996, times 10 is 3.3
+# DEF hanim_Walk013Timer TimeSensor { cycleInterval 0.7999999999999998 loop TRUE enabled TRUE } # 0.63 - 0.55 = 0.07999999999999999, times 10 is 0.7999999999999998
+# DEF hanim_Walk024Timer TimeSensor { cycleInterval 1 loop TRUE enabled TRUE } # 0.73 - 0.63 = 0.1, times 10 is 1
+# DEF hanim_Skip015Timer TimeSensor { cycleInterval 1.2000000000000002 loop TRUE enabled TRUE } # 0.85 - 0.73 = 0.12000000000000002, times 10 is 1.2000000000000002
+# DEF hanim_Stand036Timer TimeSensor { cycleInterval 1.5 loop TRUE enabled TRUE } # 1 - 0.85 = 0.15, times 10 is 1.5
+# DEF hanim_Stand037Timer TimeSensor { cycleInterval 0.01 loop TRUE enabled TRUE } # 0 - 1 = 0.001, times 10 is 0.01
+DEF hanim_Stand010Animation Group {
+ children [
+DEF hanim_Stand010Timer TimeSensor { cycleInterval 5.73 loop TRUE enabled FALSE }
+DEF hanim_Stand010_r_metatarsophalangeal_2Pitch OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.7, 1 ] keyValue [ 1 0 0 0, -1 0 0 0.015 1 0 0 0.17, -1 0 0 0.025, 1 0 0 0.01, 1 0 0 0 ]}
+DEF hanim_Stand010_r_talocruralRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand010_r_kneeRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand010_r_hipRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand010_l_talocruralRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand010_l_kneeRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand010_l_hipRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0  ] }
+DEF hanim_Stand010_r_radiocarpalRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand010_r_elbowRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand010_r_shoulderRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand010_l_radiocarpalRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand010_l_elbowRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand010_l_shoulderRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand010_headRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand010_neckRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+ # DEF hanim_Stand010_l_eyeballRotInterp OrientationInterpolator { key [ 0, 0.4, 0.7, 1 ] keyValue [ 0 0 1 0, -1 0 0 0.5, 1 0 0 0.45, 0 0 1 0 ] }
+ # DEF hanim_Stand010_r_eyeballRotInterp OrientationInterpolator { key [ 0, 0.4, 0.7, 1 ] keyValue [ 0 0 1 0, -1 0 0 0.5, 1 0 0 0.45, 0 0 1 0 ] }
+DEF hanim_Stand010_lower_bodyRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand010_upper_bodyRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand010_whole_bodyRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand010_whole_bodyTransInterp PositionInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 0, 0 0 0, 0 0 0 ] }
+DEF hanim_Stand010_l_sternoclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+ # DEF hanim_Stand010_l_acromioclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Stand010_r_sternoclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+ # DEF hanim_Stand010_r_acromioclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Stand010_sacroiliacYaw OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Stand010_vl5Yaw OrientationInterpolator { key [ 0, 0.2, 0.4, 0.5, 0.6, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Stand010_vc6Yaw OrientationInterpolator { key [0, 0.2, 0.4, 0.5, 0.6, 0.8, 1 ] keyValue [ 0 1 0 0, 0 1 0 0, 0 1 0 0, 0 1 0 0, -1 0 0 0, 0 -1 0 0, 0 1 0 0 ]}
+DEF hanim_Stand010_l_carpometacarpal_1Pitch OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [  0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Stand010_r_carpometacarpal_1Pitch OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [ 1 0 0 0, 1 0 0 0.5, 1 0 0 0.1, 1 0 0 0.27, 1 0 0 0.2, 1 0 0 0 ]}
+DEF hanim_Stand010_r_carpal_proximal_interphalangeal_2Roll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.5, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0.1, 0 0 1 0.2, 0 0 1 0.3, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Stand010_r_metacarpophalangeal_2Roll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.5, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0.4, 0 0 1 0.32, 0 0 1 0.25, 0 0 1 0.2, 0 0 1 0 ]}
+DEF hanim_Stand010_r_carpal_distal_interphalangeal_2Roll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.5, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0.2, 0 0 1 0.3, 0 0 1 0.35, 0 0 1 0.2, 0 0 1 0 ]}
+]
+# ex hanim_Stand010_
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_r_talocruralRotInterp.set_fraction
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_r_kneeRotInterp.set_fraction
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_r_hipRotInterp.set_fraction
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_l_talocruralRotInterp.set_fraction
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_l_kneeRotInterp.set_fraction
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_l_hipRotInterp.set_fraction
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_lower_bodyRotInterp.set_fraction
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_r_radiocarpalRotInterp.set_fraction
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_r_elbowRotInterp.set_fraction
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_r_shoulderRotInterp.set_fraction
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_l_radiocarpalRotInterp.set_fraction
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_l_elbowRotInterp.set_fraction
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_l_shoulderRotInterp.set_fraction
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_headRotInterp.set_fraction
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_neckRotInterp.set_fraction
+ # ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_l_eyeballRotInterp.set_fraction
+ # ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_r_eyeballRotInterp.set_fraction
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_upper_bodyRotInterp.set_fraction
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_whole_bodyRotInterp.set_fraction
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_whole_bodyTransInterp.set_fraction
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_l_sternoclavicularRoll.set_fraction 
+ # ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_l_acromioclavicularRoll.set_fraction 
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_r_sternoclavicularRoll.set_fraction 
+ # ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_r_acromioclavicularRoll.set_fraction 
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_r_metatarsophalangeal_2Pitch.set_fraction 
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_sacroiliacYaw.set_fraction 
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_vl5Yaw.set_fraction 
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_vc6Yaw.set_fraction 
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_l_carpometacarpal_1Pitch.set_fraction 
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_r_carpometacarpal_1Pitch.set_fraction
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_r_carpal_proximal_interphalangeal_2Roll.set_fraction
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_r_metacarpophalangeal_2Roll.set_fraction
+ROUTE hanim_Stand010Timer.fraction_changed TO hanim_Stand010_r_carpal_distal_interphalangeal_2Roll.set_fraction
+# ex hanim_Stand010_
+ROUTE hanim_Stand010_r_talocruralRotInterp.value_changed TO hanim_r_talocrural.rotation
+ROUTE hanim_Stand010_r_kneeRotInterp.value_changed TO hanim_r_knee.rotation
+ROUTE hanim_Stand010_r_hipRotInterp.value_changed TO hanim_r_hip.rotation
+ROUTE hanim_Stand010_l_talocruralRotInterp.value_changed TO hanim_l_talocrural.rotation
+ROUTE hanim_Stand010_l_kneeRotInterp.value_changed TO hanim_l_knee.rotation
+ROUTE hanim_Stand010_l_hipRotInterp.value_changed TO hanim_l_hip.rotation
+ROUTE hanim_Stand010_r_radiocarpalRotInterp.value_changed TO hanim_r_radiocarpal.rotation
+ROUTE hanim_Stand010_r_elbowRotInterp.value_changed TO hanim_r_elbow.rotation
+ROUTE hanim_Stand010_r_shoulderRotInterp.value_changed TO hanim_r_shoulder.rotation
+ROUTE hanim_Stand010_l_radiocarpalRotInterp.value_changed TO hanim_l_radiocarpal.rotation
+ROUTE hanim_Stand010_l_elbowRotInterp.value_changed TO hanim_l_elbow.rotation
+ROUTE hanim_Stand010_l_shoulderRotInterp.value_changed TO hanim_l_shoulder.rotation
+ROUTE hanim_Stand010_headRotInterp.value_changed TO hanim_skullbase.rotation
+ # ROUTE hanim_Stand010_neckRotInterp.value_changed TO hanim_vc7.rotation
+ # ROUTE hanim_Stand010_l_eyeballRotInterp.value_changed TO hanim_l_eyeball_joint.rotation
+ # ROUTE hanim_Stand010_r_eyeballRotInterp.value_changed TO hanim_r_eyeball_joint.rotation
+ # ROUTE hanim_Stand010_upper_bodyRotInterp.value_changed TO hanim_vl1.rotation
+ROUTE hanim_Stand010_lower_bodyRotInterp.value_changed TO hanim_sacroiliac.rotation
+ROUTE hanim_Stand010_whole_bodyRotInterp.value_changed TO hanim_humanoid_root.rotation
+ROUTE hanim_Stand010_whole_bodyTransInterp.value_changed TO hanim_humanoid_root.translation
+ROUTE hanim_Stand010_l_sternoclavicularRoll.value_changed TO hanim_l_sternoclavicular.rotation
+ # ROUTE hanim_Stand010_l_acromioclavicularRoll.value_changed TO hanim_l_acromioclavicular.rotation
+ROUTE hanim_Stand010_r_sternoclavicularRoll.value_changed TO hanim_r_sternoclavicular.rotation
+ # ROUTE hanim_Stand010_r_acromioclavicularRoll.value_changed TO hanim_r_acromioclavicular.rotation
+ROUTE hanim_Stand010_r_metatarsophalangeal_2Pitch.value_changed TO hanim_l_metatarsophalangeal_2.rotation 
+ROUTE hanim_Stand010_r_metatarsophalangeal_2Pitch.value_changed TO hanim_r_metatarsophalangeal_2.rotation 
+ROUTE hanim_Stand010_sacroiliacYaw.value_changed TO hanim_sacroiliac.rotation 
+ROUTE hanim_Stand010_vl5Yaw.value_changed TO hanim_vl5.rotation 
+ # ROUTE hanim_Stand010_vc6Yaw.value_changed TO hanim_vc6.rotation 
+ROUTE hanim_Stand010_l_carpometacarpal_1Pitch.value_changed TO hanim_l_carpometacarpal_1.rotation
+ROUTE hanim_Stand010_r_carpometacarpal_1Pitch.value_changed TO hanim_r_carpometacarpal_1.rotation
+ROUTE hanim_Stand010_r_carpal_proximal_interphalangeal_2Roll.value_changed TO hanim_r_carpal_proximal_interphalangeal_2.rotation
+ROUTE hanim_Stand010_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_metacarpophalangeal_2.rotation
+ROUTE hanim_Stand010_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_carpal_distal_interphalangeal_2.rotation
+ROUTE hanim_Stand010_r_carpal_proximal_interphalangeal_2Roll.value_changed TO hanim_r_carpal_proximal_interphalangeal_3.rotation
+ROUTE hanim_Stand010_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_metacarpophalangeal_3.rotation
+ROUTE hanim_Stand010_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_carpal_distal_interphalangeal_3.rotation
+ROUTE hanim_Stand010_r_carpal_proximal_interphalangeal_2Roll.value_changed TO hanim_r_carpal_proximal_interphalangeal_4.rotation
+ROUTE hanim_Stand010_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_metacarpophalangeal_4.rotation
+ROUTE hanim_Stand010_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_carpal_distal_interphalangeal_4.rotation
+ROUTE hanim_Stand010_r_carpal_proximal_interphalangeal_2Roll.value_changed TO hanim_r_carpal_proximal_interphalangeal_5.rotation
+ROUTE hanim_Stand010_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_metacarpophalangeal_5.rotation
+ROUTE hanim_Stand010_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_carpal_distal_interphalangeal_5.rotation
+}
+#Please don't worry about the little gliches now
+DEF hanim_Walk011Animation Group {
+ children [
+DEF hanim_Walk011Timer TimeSensor { cycleInterval 1.73 loop TRUE enabled FALSE }
+DEF hanim_Walk011_r_metatarsalPitch OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.7, 1 ] 
+      keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+#orig keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Walk011_r_ankleRotInterp OrientationInterpolator { key [ 0, 0.125, 0.2083, 0.375, 0.4583, 0.5, 0.6667, 0.75, 0.7917, 0.9167, 1 ] 
+      keyValue [ 0 0 1 0, -1 0 0 -0.3533, -1 0 0 -0.1072, 1 0 0 -0.2612, 1 0 0 -0.1268, -1 0 0 -0.01793, -1 0 0 -0.05824, -1 0 0 -0.2398, -1 0 0 -0.35, -1 0 0 -0.3322, 0 0 1 0 ] }
+#orig keyValue [ 0 0 1 0, -1 0 0 0.3533, -1 0 0 0.1072,  1 0 0 0.2612,  1 0 0 0.1268, -1 0 0 0.01793, -1 0 0 0.05824, -1 0 0 0.2398, -1 0 0 0.35, -1 0 0 0.3322, 0 0 1 0 ] }
+DEF hanim_Walk011_r_kneeRotInterp OrientationInterpolator { key [ 0, 0.125, 0.2083, 0.2917, 0.375, 0.5, 0.6667, 0.7917, 0.9167, 1 ] 
+      keyValue [  1 0 0 -0.8573,  1 0 0 -0.8926,  1 0 0 -0.5351,  1 0 0 -0.1756,  1 0 0 -0.1194,  1 0 0 -0.3153,  1 0 0 0.09354,  1 0 0 -0.08558,  1 0 0 -0.2475,  1 0 0 -0.8573 ] }
+#orig keyValue [  1 0 0 0.8573,  1 0 0 0.8926,  1 0 0 0.5351,  1 0 0 0.1756,  1 0 0 0.1194,  1 0 0 0.3153,  1 0 0 0.09354,  1 0 0 0.08558,  1 0 0 0.2475,  1 0 0 0.8573 ] }
+DEF hanim_Walk011_r_hipRotInterp OrientationInterpolator { key [ 0, 0.125, 0.2083, 0.2917, 0.375, 0.5, 0.6667, 0.7917, 0.9167, 1 ] 
+      keyValue [ -0.5831 0.03511 0.8116 -0.1481, -0.995 0.02296 0.09674 -0.4683, -1 0.00192 0.007964 -0.4732, -0.998 -0.0158 -0.06102 -0.5079, -0.9911 -0.03541 -0.1286 -0.5419, 
+                 -0.9131 -0.06243 -0.403 -0.3361, -0.4306 -0.07962 -0.899 -0.07038, 1 0 0 -0.2571, 0.9891 -0.02805 0.1444 -0.3879, -0.5831 0.03511 0.8116 -0.1481 ] }
+#orig keyValue [ -0.5831 0.03511 0.8116 0.1481, -0.995 0.02296 0.09674 0.4683, -1 0.00192 0.007964 0.4732, -0.998 -0.0158 -0.06102 0.5079, -0.9911 -0.03541 -0.1286 0.5419, 
+#orig            -0.9131 -0.06243 -0.403 0.3361, -0.4306 -0.07962 -0.899 0.07038, 1 0 0 0.2571, 0.9891 -0.02805 0.1444 0.3879, -0.5831 0.03511 0.8116 0.1481 ] }
+
+DEF hanim_Walk011_l_ankleRotInterp OrientationInterpolator { key [ 0, 0.125, 0.2083, 0.375, 0.6667, 0.9167, 1 ] 
+      keyValue [ -1 0 0 -0.06714, -1 0 0 -0.2152, -1 0 0 -0.3184, -1 0 0 -0.4717,  -1 0 0 -0.2912, 1 0 0 -0.1222, -1 0 0 -0.06714 ] }
+#orig keyValue [ -1 0 0 0.06714, -1 0 0 0.2152, -1 0 0 0.3184, -1 0 0 0.4717,  -1 0 0 0.2912, 1 0 0 0.1222, -1 0 0 0.06714 ] }
+DEF hanim_Walk011_l_kneeRotInterp OrientationInterpolator { key [ 0, 0.2083, 0.375, 0.5, 0.6667, 0.7917, 0.9167, 1 ] 
+      keyValue [ 1 0 0 -0.3226, 1 0 0 -0.1556, 1 0 0 -0.08678, 1 0 0 -0.8751, 1 0 0 -1.131, 1 0 0 -0.09961, 1 0 0 -0.3942, 1 0 0 -0.3226 ] }
+#orig keyValue [ 1 0 0 0.3226, 1 0 0 0.1556, 1 0 0 0.08678, 1 0 0 0.8751, 1 0 0 1.131, 1 0 0 0.09961, 1 0 0 0.3942, 1 0 0 0.3226 ] }
+DEF hanim_Walk011_l_hipRotInterp OrientationInterpolator { key [ 0, 0.25, 0.375, 0.5, 0.6667, 0.7917, 0.9167, 1 ] 
+      keyValue [ -0.873 0.06094 0.484 -0.2865, 0.9963 -0.01057 0.08481 -0.2488, 0.9965 0.01591 -0.08222 -0.3836, -0.7018 -0.03223 -0.7117 -0.1289, -1 0 0 -0.5518, -0.9964 0.02231 0.0817 -0.5351, -0.9809 0.04912 0.1881 -0.5204, -0.873 0.06094 0.484 -0.2865 ] }
+#orig keyValue [ -0.873 0.06094 0.484 0.2865, 0.9963 -0.01057 0.08481 0.2488, 0.9965 0.01591 -0.08222 0.3836, -0.7018 -0.03223 -0.7117 0.1289, -1 0 0 0.5518, -0.9964 0.02231 0.0817 0.5351, -0.9809 0.04912 0.1881 0.5204, -0.873 0.06094 0.484 0.2865 ] }
+
+DEF hanim_Walk011_lower_bodyRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] 
+      keyValue [ 0 0 -1 -0.1056, 0 0 1 -0.09018, 0 0 -1 -0.1056 ] }
+#orig keyValue [ 0 0 -1 0.1056, 0 0 1 0.09018, 0 0 -1 0.1056 ] }
+DEF hanim_Walk011_r_wristRotInterp OrientationInterpolator { key [ 0, 0.375, 0.9167, 1 ] 
+      keyValue [ -0.8129 0.4759 -0.3357 -0.1346, 0.1533 -0.9878 0.02582 -0.3902, -0.5701 0.7604 -0.311 -0.366, -0.8129 0.4759 -0.3357 -0.1346 ] }
+#orig keyValue [ -0.8129 0.4759 -0.3357 0.1346, 0.1533 -0.9878 0.02582 0.3902, -0.5701 0.7604 -0.311 0.366, -0.8129 0.4759 -0.3357 0.1346 ] }
+DEF hanim_Walk011_r_elbowRotInterp OrientationInterpolator { key [ 0, 0.375, 0.9167, 1 ] 
+      keyValue [ -1 0 0 -0.411508, -1 0 0 -0.0925011, -1 0 0 -0.572568, -1 0 0 -0.411508 ] }
+#orig keyValue [ -1 0 0 0.411508, -1 0 0 0.0925011, -1 0 0 0.572568, -1 0 0 0.411508 ] }
+DEF hanim_Walk011_r_shoulderRotInterp OrientationInterpolator { key [ 0, 0.375, 0.9167, 1 ] 
+      keyValue [ -1 0 2 -0.09346, 1 0 2 -0.3197, -1 0 2 -0.1564, -1 0 2 -0.09346 ] }
+#orig keyValue [ -1 0 0 0.09346, 1 0 0 0.3197, -1 0 0 0.1564, -1 0 0 0.09346 ] }
+DEF hanim_Walk011_l_wristRotInterp OrientationInterpolator { key [ 0, 0.375, 0.9167, 1 ] 
+      keyValue [ 0 -1 0 -0.461076, -0.330195 -0.927451 0.175516 -0.538852, 0.0327774 -0.999314 -0.0172185 -0.492033, 0 -1 0 -0.461076 ] }
+#orig keyValue [ 0 -1 0 0.461076, -0.330195 -0.927451 0.175516 0.538852, 0.0327774 -0.999314 -0.0172185 0.492033, 0 -1 0 0.461076 ] }
+DEF hanim_Walk011_l_elbowRotInterp OrientationInterpolator { key [ 0, 0.375, 0.9167, 1 ] 
+      keyValue [ -1 0 0 -0.0659878, -1 0 0 -0.488383, -1 0 0 -0.0177536, -1 0 0 -0.0659878 ] }
+#orig keyValue [ -1 0 0 0.0659878, -1 0 0 0.488383, -1 0 0 0.0177536, -1 0 0 0.0659878 ] }
+DEF hanim_Walk011_l_shoulderRotInterp OrientationInterpolator { key [ 0, 0.375, 0.9167, 1 ] 
+      keyValue [ 1 0 -2 -0.1189, -1 0 -1 -0.1861, 1 0 -1 -0.3357, 1 0 -1 -0.1189 ] }
+#orig keyValue [ 1 0 0 0.1189, -1 0 0 0.1861, 1 0 0 0.3357, 1 0 -2 0.1189 ] }
+
+#all following mostly just changed sign of scalar + some test axis moves
+DEF hanim_Walk011_headRotInterp OrientationInterpolator { key [ 0, 0.375, 0.4167, 0.5, 0.5833, 0.6667, 0.75, 0.8333, 0.9167, 1 ] 
+keyValue [ 0 1 0 -0.08642, 0 1 0 0.1825, 0 1 0 0.1505, 0 1 0 -0.1053, 0 1 0  0.04391, 0 -1 0  0.03119, 
+0 -1 0 0.07936, 0 -1 0 0.1616, 0 -1 0 0.155, 0 1 0 -0.08642 ] }
+DEF hanim_Walk011_neckRotInterp OrientationInterpolator { key [ 0, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Walk011_upper_bodyRotInterp OrientationInterpolator { key [ 0, 0.2083, 0.375, 0.75, 0.8333, 1 ] 
+keyValue [ 1 1 1 0.0826, -0.01972 -0.5974 0.8017 0.08231, 0.009296 -0.9648 0.2627 0.1734, 
+-0.01238 0.9549 -0.2968 0.08732, -0.008125 0.9691 -0.2463 0.158, 0 1 0 0.0826 ] }
+DEF hanim_Walk011_whole_bodyRotInterp OrientationInterpolator { key [ 0, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Walk011_whole_bodyTranInterp PositionInterpolator { 
+key [ 0, 0.04167, 0.125, 0.1667, 0.2083, 0.25, 0.2917, 0.375, 0.4583, 0.5, 0.5417, 0.5833, 0.625, 0.7083, 0.75, 0.7917, 0.875, 0.9167, 1 ] 
+keyValue [ 0 -0.00928 0, 0 -0.003858 0, 0 -0.008847 0, 0 -0.01486 0, 0 -0.02641 0, 0 -0.03934 0, 0 -0.0502 0, 0 -0.07469 0, 0 -0.02732 0, 0 -0.01608 0, 0 -0.01129 0, 0 -0.005819 0, 0 -0.002004 0, 0 -0.002579 0, 0 -0.0143 0, 0 -0.03799 0, 0 -0.05648 0, 0 -0.045 0, 0 -0.00928 0 ] }
+DEF hanim_Walk011_l_sternoclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Walk011_l_acromioclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Walk011_r_sternoclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Walk011_r_acromioclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Walk011_sacroiliacYaw OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Walk011_vl5Yaw OrientationInterpolator { key [ 0, 0.2, 0.4, 0.5, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0]}
+DEF hanim_Walk011_vc6Yaw OrientationInterpolator { key [0, 0.2, 0.4, 0.5, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Walk011_l_thumb1Pitch OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 1 0 0 -0.25, 1 0 0 -0.5, 1 0 0 -0.7, 1 0 0 -0.2, 0 0 1 0 ]}
+DEF hanim_Walk011_r_thumb1Pitch OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 1 0 0 -0.25, 1 0 0 -0.5, 1 0 0 -0.7, 1 0 0 -0.2, 0 0 1 0 ]}
+]}
+# ex hanim_Walk011_
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_r_ankleRotInterp.set_fraction
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_r_kneeRotInterp.set_fraction
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_r_hipRotInterp.set_fraction
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_l_ankleRotInterp.set_fraction
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_l_kneeRotInterp.set_fraction
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_l_hipRotInterp.set_fraction
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_lower_bodyRotInterp.set_fraction
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_r_wristRotInterp.set_fraction
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_r_elbowRotInterp.set_fraction
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_r_shoulderRotInterp.set_fraction
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_l_wristRotInterp.set_fraction
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_l_elbowRotInterp.set_fraction
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_l_shoulderRotInterp.set_fraction
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_headRotInterp.set_fraction
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_neckRotInterp.set_fraction
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_upper_bodyRotInterp.set_fraction
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_whole_bodyRotInterp.set_fraction
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_whole_bodyTranInterp.set_fraction
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_l_sternoclavicularRoll.set_fraction 
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_l_acromioclavicularRoll.set_fraction 
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_r_sternoclavicularRoll.set_fraction 
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_r_acromioclavicularRoll.set_fraction 
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_r_metatarsalPitch.set_fraction 
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_sacroiliacYaw.set_fraction 
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_vl5Yaw.set_fraction 
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_vc6Yaw.set_fraction 
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_l_thumb1Pitch.set_fraction 
+ROUTE hanim_Walk011Timer.fraction_changed TO hanim_Walk011_r_thumb1Pitch.set_fraction
+# ex hanim_Walk011_
+ROUTE hanim_Walk011_r_ankleRotInterp.value_changed TO hanim_r_talocrural.rotation
+ROUTE hanim_Walk011_r_kneeRotInterp.value_changed TO hanim_r_knee.rotation
+ROUTE hanim_Walk011_r_hipRotInterp.value_changed TO hanim_r_hip.rotation
+ROUTE hanim_Walk011_l_ankleRotInterp.value_changed TO hanim_l_talocrural.rotation
+ROUTE hanim_Walk011_l_kneeRotInterp.value_changed TO hanim_l_knee.rotation
+ROUTE hanim_Walk011_l_hipRotInterp.value_changed TO hanim_l_hip.rotation
+ROUTE hanim_Walk011_lower_bodyRotInterp.value_changed TO hanim_sacroiliac.rotation
+ROUTE hanim_Walk011_r_wristRotInterp.value_changed TO hanim_r_radiocarpal.rotation
+ROUTE hanim_Walk011_r_elbowRotInterp.value_changed TO hanim_r_elbow.rotation
+ROUTE hanim_Walk011_r_shoulderRotInterp.value_changed TO hanim_r_shoulder.rotation
+ROUTE hanim_Walk011_l_wristRotInterp.value_changed TO hanim_l_radiocarpal.rotation
+ROUTE hanim_Walk011_l_elbowRotInterp.value_changed TO hanim_l_elbow.rotation
+ROUTE hanim_Walk011_l_shoulderRotInterp.value_changed TO hanim_l_shoulder.rotation
+ROUTE hanim_Walk011_headRotInterp.value_changed TO hanim_skullbase.rotation
+#ROUTE hanim_Walk011_neckRotInterp.value_changed TO hanim_vc4.rotation
+#ROUTE hanim_Walk011_upper_bodyRotInterp.value_changed TO hanim_vl2.rotation
+ROUTE hanim_Walk011_whole_bodyRotInterp.value_changed TO hanim_humanoid_root.rotation
+ROUTE hanim_Walk011_whole_bodyTranInterp.value_changed TO hanim_humanoid_root.translation
+ROUTE hanim_Walk011_l_sternoclavicularRoll.value_changed TO hanim_l_sternoclavicular.rotation
+#ROUTE hanim_Walk011_l_acromioclavicularRoll.value_changed TO hanim_l_acromioclavicular.rotation
+ROUTE hanim_Walk011_r_sternoclavicularRoll.value_changed TO hanim_r_sternoclavicular.rotation
+#ROUTE hanim_Walk011_r_acromioclavicularRoll.value_changed TO hanim_r_acromioclavicular.rotation
+ROUTE hanim_Walk011_r_metatarsalPitch.value_changed TO hanim_l_metatarsophalangeal_2.rotation 
+ROUTE hanim_Walk011_r_metatarsalPitch.value_changed TO hanim_r_metatarsophalangeal_2.rotation 
+ROUTE hanim_Walk011_sacroiliacYaw.value_changed TO hanim_sacroiliac.rotation 
+ROUTE hanim_Walk011_vl5Yaw.value_changed TO hanim_vl5.rotation 
+#ROUTE hanim_Walk011_vc6Yaw.value_changed TO hanim_vc6.rotation 
+ROUTE hanim_Walk011_l_thumb1Pitch.value_changed TO hanim_l_carpometacarpal_1.rotation
+ROUTE hanim_Walk011_r_thumb1Pitch.value_changed TO hanim_r_carpometacarpal_1.rotation
+DEF hanim_Stand022Animation Group {
+ children [
+DEF hanim_Stand022Timer TimeSensor { cycleInterval 5.73 loop TRUE enabled FALSE }
+DEF hanim_Stand022_r_metatarsophalangeal_2Pitch OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.7, 1 ] keyValue [ 1 0 0 0, -1 0 0 0.015 1 0 0 0.17, -1 0 0 0.025, 1 0 0 0.01, 1 0 0 0 ]}
+DEF hanim_Stand022_r_talocruralRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand022_r_kneeRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand022_r_hipRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand022_l_talocruralRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand022_l_kneeRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand022_l_hipRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0  ] }
+DEF hanim_Stand022_r_radiocarpalRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand022_r_elbowRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand022_r_shoulderRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand022_l_radiocarpalRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand022_l_elbowRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand022_l_shoulderRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand022_headRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand022_neckRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+ # DEF hanim_Stand022_l_eyeballRotInterp OrientationInterpolator { key [ 0, 0.4, 0.7, 1 ] keyValue [ 0 0 1 0, -1 0 0 0.5, 1 0 0 0.45, 0 0 1 0 ] }
+ # DEF hanim_Stand022_r_eyeballRotInterp OrientationInterpolator { key [ 0, 0.4, 0.7, 1 ] keyValue [ 0 0 1 0, -1 0 0 0.5, 1 0 0 0.45, 0 0 1 0 ] }
+DEF hanim_Stand022_lower_bodyRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand022_upper_bodyRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand022_whole_bodyRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand022_whole_bodyTransInterp PositionInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 0, 0 0 0, 0 0 0 ] }
+DEF hanim_Stand022_l_sternoclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+ # DEF hanim_Stand022_l_acromioclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Stand022_r_sternoclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+ # DEF hanim_Stand022_r_acromioclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Stand022_sacroiliacYaw OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Stand022_vl5Yaw OrientationInterpolator { key [ 0, 0.2, 0.4, 0.5, 0.6, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Stand022_vc6Yaw OrientationInterpolator { key [0, 0.2, 0.4, 0.5, 0.6, 0.8, 1 ] keyValue [ 0 1 0 0, 0 1 0 0, 0 1 0 0, 0 1 0 0, -1 0 0 0, 0 -1 0 0, 0 1 0 0 ]}
+DEF hanim_Stand022_l_carpometacarpal_1Pitch OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [  0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Stand022_r_carpometacarpal_1Pitch OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [ 1 0 0 0, 1 0 0 0.5, 1 0 0 0.1, 1 0 0 0.27, 1 0 0 0.2, 1 0 0 0 ]}
+DEF hanim_Stand022_r_carpal_proximal_interphalangeal_2Roll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.5, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0.1, 0 0 1 0.2, 0 0 1 0.3, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Stand022_r_metacarpophalangeal_2Roll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.5, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0.4, 0 0 1 0.32, 0 0 1 0.25, 0 0 1 0.2, 0 0 1 0 ]}
+DEF hanim_Stand022_r_carpal_distal_interphalangeal_2Roll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.5, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0.2, 0 0 1 0.3, 0 0 1 0.35, 0 0 1 0.2, 0 0 1 0 ]}
+]
+# ex hanim_Stand022_
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_r_talocruralRotInterp.set_fraction
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_r_kneeRotInterp.set_fraction
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_r_hipRotInterp.set_fraction
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_l_talocruralRotInterp.set_fraction
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_l_kneeRotInterp.set_fraction
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_l_hipRotInterp.set_fraction
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_lower_bodyRotInterp.set_fraction
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_r_radiocarpalRotInterp.set_fraction
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_r_elbowRotInterp.set_fraction
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_r_shoulderRotInterp.set_fraction
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_l_radiocarpalRotInterp.set_fraction
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_l_elbowRotInterp.set_fraction
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_l_shoulderRotInterp.set_fraction
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_headRotInterp.set_fraction
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_neckRotInterp.set_fraction
+ # ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_l_eyeballRotInterp.set_fraction
+ # ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_r_eyeballRotInterp.set_fraction
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_upper_bodyRotInterp.set_fraction
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_whole_bodyRotInterp.set_fraction
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_whole_bodyTransInterp.set_fraction
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_l_sternoclavicularRoll.set_fraction 
+ # ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_l_acromioclavicularRoll.set_fraction 
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_r_sternoclavicularRoll.set_fraction 
+ # ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_r_acromioclavicularRoll.set_fraction 
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_r_metatarsophalangeal_2Pitch.set_fraction 
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_sacroiliacYaw.set_fraction 
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_vl5Yaw.set_fraction 
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_vc6Yaw.set_fraction 
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_l_carpometacarpal_1Pitch.set_fraction 
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_r_carpometacarpal_1Pitch.set_fraction
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_r_carpal_proximal_interphalangeal_2Roll.set_fraction
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_r_metacarpophalangeal_2Roll.set_fraction
+ROUTE hanim_Stand022Timer.fraction_changed TO hanim_Stand022_r_carpal_distal_interphalangeal_2Roll.set_fraction
+# ex hanim_Stand022_
+ROUTE hanim_Stand022_r_talocruralRotInterp.value_changed TO hanim_r_talocrural.rotation
+ROUTE hanim_Stand022_r_kneeRotInterp.value_changed TO hanim_r_knee.rotation
+ROUTE hanim_Stand022_r_hipRotInterp.value_changed TO hanim_r_hip.rotation
+ROUTE hanim_Stand022_l_talocruralRotInterp.value_changed TO hanim_l_talocrural.rotation
+ROUTE hanim_Stand022_l_kneeRotInterp.value_changed TO hanim_l_knee.rotation
+ROUTE hanim_Stand022_l_hipRotInterp.value_changed TO hanim_l_hip.rotation
+ROUTE hanim_Stand022_r_radiocarpalRotInterp.value_changed TO hanim_r_radiocarpal.rotation
+ROUTE hanim_Stand022_r_elbowRotInterp.value_changed TO hanim_r_elbow.rotation
+ROUTE hanim_Stand022_r_shoulderRotInterp.value_changed TO hanim_r_shoulder.rotation
+ROUTE hanim_Stand022_l_radiocarpalRotInterp.value_changed TO hanim_l_radiocarpal.rotation
+ROUTE hanim_Stand022_l_elbowRotInterp.value_changed TO hanim_l_elbow.rotation
+ROUTE hanim_Stand022_l_shoulderRotInterp.value_changed TO hanim_l_shoulder.rotation
+ROUTE hanim_Stand022_headRotInterp.value_changed TO hanim_skullbase.rotation
+ # ROUTE hanim_Stand022_neckRotInterp.value_changed TO hanim_vc7.rotation
+ # ROUTE hanim_Stand022_l_eyeballRotInterp.value_changed TO hanim_l_eyeball_joint.rotation
+ # ROUTE hanim_Stand022_r_eyeballRotInterp.value_changed TO hanim_r_eyeball_joint.rotation
+ # ROUTE hanim_Stand022_upper_bodyRotInterp.value_changed TO hanim_vl1.rotation
+ROUTE hanim_Stand022_lower_bodyRotInterp.value_changed TO hanim_sacroiliac.rotation
+ROUTE hanim_Stand022_whole_bodyRotInterp.value_changed TO hanim_humanoid_root.rotation
+ROUTE hanim_Stand022_whole_bodyTransInterp.value_changed TO hanim_humanoid_root.translation
+ROUTE hanim_Stand022_l_sternoclavicularRoll.value_changed TO hanim_l_sternoclavicular.rotation
+ # ROUTE hanim_Stand022_l_acromioclavicularRoll.value_changed TO hanim_l_acromioclavicular.rotation
+ROUTE hanim_Stand022_r_sternoclavicularRoll.value_changed TO hanim_r_sternoclavicular.rotation
+ # ROUTE hanim_Stand022_r_acromioclavicularRoll.value_changed TO hanim_r_acromioclavicular.rotation
+ROUTE hanim_Stand022_r_metatarsophalangeal_2Pitch.value_changed TO hanim_l_metatarsophalangeal_2.rotation 
+ROUTE hanim_Stand022_r_metatarsophalangeal_2Pitch.value_changed TO hanim_r_metatarsophalangeal_2.rotation 
+ROUTE hanim_Stand022_sacroiliacYaw.value_changed TO hanim_sacroiliac.rotation 
+ROUTE hanim_Stand022_vl5Yaw.value_changed TO hanim_vl5.rotation 
+ # ROUTE hanim_Stand022_vc6Yaw.value_changed TO hanim_vc6.rotation 
+ROUTE hanim_Stand022_l_carpometacarpal_1Pitch.value_changed TO hanim_l_carpometacarpal_1.rotation
+ROUTE hanim_Stand022_r_carpometacarpal_1Pitch.value_changed TO hanim_r_carpometacarpal_1.rotation
+ROUTE hanim_Stand022_r_carpal_proximal_interphalangeal_2Roll.value_changed TO hanim_r_carpal_proximal_interphalangeal_2.rotation
+ROUTE hanim_Stand022_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_metacarpophalangeal_2.rotation
+ROUTE hanim_Stand022_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_carpal_distal_interphalangeal_2.rotation
+ROUTE hanim_Stand022_r_carpal_proximal_interphalangeal_2Roll.value_changed TO hanim_r_carpal_proximal_interphalangeal_3.rotation
+ROUTE hanim_Stand022_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_metacarpophalangeal_3.rotation
+ROUTE hanim_Stand022_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_carpal_distal_interphalangeal_3.rotation
+ROUTE hanim_Stand022_r_carpal_proximal_interphalangeal_2Roll.value_changed TO hanim_r_carpal_proximal_interphalangeal_4.rotation
+ROUTE hanim_Stand022_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_metacarpophalangeal_4.rotation
+ROUTE hanim_Stand022_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_carpal_distal_interphalangeal_4.rotation
+ROUTE hanim_Stand022_r_carpal_proximal_interphalangeal_2Roll.value_changed TO hanim_r_carpal_proximal_interphalangeal_5.rotation
+ROUTE hanim_Stand022_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_metacarpophalangeal_5.rotation
+ROUTE hanim_Stand022_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_carpal_distal_interphalangeal_5.rotation
+}
+#Please don't worry about the little gliches now
+DEF hanim_Walk013Animation Group {
+ children [
+DEF hanim_Walk013Timer TimeSensor { cycleInterval 1.73 loop TRUE enabled FALSE }
+DEF hanim_Walk013_r_metatarsalPitch OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.7, 1 ] 
+      keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+#orig keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Walk013_r_ankleRotInterp OrientationInterpolator { key [ 0, 0.125, 0.2083, 0.375, 0.4583, 0.5, 0.6667, 0.75, 0.7917, 0.9167, 1 ] 
+      keyValue [ 0 0 1 0, -1 0 0 -0.3533, -1 0 0 -0.1072, 1 0 0 -0.2612, 1 0 0 -0.1268, -1 0 0 -0.01793, -1 0 0 -0.05824, -1 0 0 -0.2398, -1 0 0 -0.35, -1 0 0 -0.3322, 0 0 1 0 ] }
+#orig keyValue [ 0 0 1 0, -1 0 0 0.3533, -1 0 0 0.1072,  1 0 0 0.2612,  1 0 0 0.1268, -1 0 0 0.01793, -1 0 0 0.05824, -1 0 0 0.2398, -1 0 0 0.35, -1 0 0 0.3322, 0 0 1 0 ] }
+DEF hanim_Walk013_r_kneeRotInterp OrientationInterpolator { key [ 0, 0.125, 0.2083, 0.2917, 0.375, 0.5, 0.6667, 0.7917, 0.9167, 1 ] 
+      keyValue [  1 0 0 -0.8573,  1 0 0 -0.8926,  1 0 0 -0.5351,  1 0 0 -0.1756,  1 0 0 -0.1194,  1 0 0 -0.3153,  1 0 0 0.09354,  1 0 0 -0.08558,  1 0 0 -0.2475,  1 0 0 -0.8573 ] }
+#orig keyValue [  1 0 0 0.8573,  1 0 0 0.8926,  1 0 0 0.5351,  1 0 0 0.1756,  1 0 0 0.1194,  1 0 0 0.3153,  1 0 0 0.09354,  1 0 0 0.08558,  1 0 0 0.2475,  1 0 0 0.8573 ] }
+DEF hanim_Walk013_r_hipRotInterp OrientationInterpolator { key [ 0, 0.125, 0.2083, 0.2917, 0.375, 0.5, 0.6667, 0.7917, 0.9167, 1 ] 
+      keyValue [ -0.5831 0.03511 0.8116 -0.1481, -0.995 0.02296 0.09674 -0.4683, -1 0.00192 0.007964 -0.4732, -0.998 -0.0158 -0.06102 -0.5079, -0.9911 -0.03541 -0.1286 -0.5419, 
+                 -0.9131 -0.06243 -0.403 -0.3361, -0.4306 -0.07962 -0.899 -0.07038, 1 0 0 -0.2571, 0.9891 -0.02805 0.1444 -0.3879, -0.5831 0.03511 0.8116 -0.1481 ] }
+#orig keyValue [ -0.5831 0.03511 0.8116 0.1481, -0.995 0.02296 0.09674 0.4683, -1 0.00192 0.007964 0.4732, -0.998 -0.0158 -0.06102 0.5079, -0.9911 -0.03541 -0.1286 0.5419, 
+#orig            -0.9131 -0.06243 -0.403 0.3361, -0.4306 -0.07962 -0.899 0.07038, 1 0 0 0.2571, 0.9891 -0.02805 0.1444 0.3879, -0.5831 0.03511 0.8116 0.1481 ] }
+
+DEF hanim_Walk013_l_ankleRotInterp OrientationInterpolator { key [ 0, 0.125, 0.2083, 0.375, 0.6667, 0.9167, 1 ] 
+      keyValue [ -1 0 0 -0.06714, -1 0 0 -0.2152, -1 0 0 -0.3184, -1 0 0 -0.4717,  -1 0 0 -0.2912, 1 0 0 -0.1222, -1 0 0 -0.06714 ] }
+#orig keyValue [ -1 0 0 0.06714, -1 0 0 0.2152, -1 0 0 0.3184, -1 0 0 0.4717,  -1 0 0 0.2912, 1 0 0 0.1222, -1 0 0 0.06714 ] }
+DEF hanim_Walk013_l_kneeRotInterp OrientationInterpolator { key [ 0, 0.2083, 0.375, 0.5, 0.6667, 0.7917, 0.9167, 1 ] 
+      keyValue [ 1 0 0 -0.3226, 1 0 0 -0.1556, 1 0 0 -0.08678, 1 0 0 -0.8751, 1 0 0 -1.131, 1 0 0 -0.09961, 1 0 0 -0.3942, 1 0 0 -0.3226 ] }
+#orig keyValue [ 1 0 0 0.3226, 1 0 0 0.1556, 1 0 0 0.08678, 1 0 0 0.8751, 1 0 0 1.131, 1 0 0 0.09961, 1 0 0 0.3942, 1 0 0 0.3226 ] }
+DEF hanim_Walk013_l_hipRotInterp OrientationInterpolator { key [ 0, 0.25, 0.375, 0.5, 0.6667, 0.7917, 0.9167, 1 ] 
+      keyValue [ -0.873 0.06094 0.484 -0.2865, 0.9963 -0.01057 0.08481 -0.2488, 0.9965 0.01591 -0.08222 -0.3836, -0.7018 -0.03223 -0.7117 -0.1289, -1 0 0 -0.5518, -0.9964 0.02231 0.0817 -0.5351, -0.9809 0.04912 0.1881 -0.5204, -0.873 0.06094 0.484 -0.2865 ] }
+#orig keyValue [ -0.873 0.06094 0.484 0.2865, 0.9963 -0.01057 0.08481 0.2488, 0.9965 0.01591 -0.08222 0.3836, -0.7018 -0.03223 -0.7117 0.1289, -1 0 0 0.5518, -0.9964 0.02231 0.0817 0.5351, -0.9809 0.04912 0.1881 0.5204, -0.873 0.06094 0.484 0.2865 ] }
+
+DEF hanim_Walk013_lower_bodyRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] 
+      keyValue [ 0 0 -1 -0.1056, 0 0 1 -0.09018, 0 0 -1 -0.1056 ] }
+#orig keyValue [ 0 0 -1 0.1056, 0 0 1 0.09018, 0 0 -1 0.1056 ] }
+DEF hanim_Walk013_r_wristRotInterp OrientationInterpolator { key [ 0, 0.375, 0.9167, 1 ] 
+      keyValue [ -0.8129 0.4759 -0.3357 -0.1346, 0.1533 -0.9878 0.02582 -0.3902, -0.5701 0.7604 -0.311 -0.366, -0.8129 0.4759 -0.3357 -0.1346 ] }
+#orig keyValue [ -0.8129 0.4759 -0.3357 0.1346, 0.1533 -0.9878 0.02582 0.3902, -0.5701 0.7604 -0.311 0.366, -0.8129 0.4759 -0.3357 0.1346 ] }
+DEF hanim_Walk013_r_elbowRotInterp OrientationInterpolator { key [ 0, 0.375, 0.9167, 1 ] 
+      keyValue [ -1 0 0 -0.411508, -1 0 0 -0.0925011, -1 0 0 -0.572568, -1 0 0 -0.411508 ] }
+#orig keyValue [ -1 0 0 0.411508, -1 0 0 0.0925011, -1 0 0 0.572568, -1 0 0 0.411508 ] }
+DEF hanim_Walk013_r_shoulderRotInterp OrientationInterpolator { key [ 0, 0.375, 0.9167, 1 ] 
+      keyValue [ -1 0 2 -0.09346, 1 0 2 -0.3197, -1 0 2 -0.1564, -1 0 2 -0.09346 ] }
+#orig keyValue [ -1 0 0 0.09346, 1 0 0 0.3197, -1 0 0 0.1564, -1 0 0 0.09346 ] }
+DEF hanim_Walk013_l_wristRotInterp OrientationInterpolator { key [ 0, 0.375, 0.9167, 1 ] 
+      keyValue [ 0 -1 0 -0.461076, -0.330195 -0.927451 0.175516 -0.538852, 0.0327774 -0.999314 -0.0172185 -0.492033, 0 -1 0 -0.461076 ] }
+#orig keyValue [ 0 -1 0 0.461076, -0.330195 -0.927451 0.175516 0.538852, 0.0327774 -0.999314 -0.0172185 0.492033, 0 -1 0 0.461076 ] }
+DEF hanim_Walk013_l_elbowRotInterp OrientationInterpolator { key [ 0, 0.375, 0.9167, 1 ] 
+      keyValue [ -1 0 0 -0.0659878, -1 0 0 -0.488383, -1 0 0 -0.0177536, -1 0 0 -0.0659878 ] }
+#orig keyValue [ -1 0 0 0.0659878, -1 0 0 0.488383, -1 0 0 0.0177536, -1 0 0 0.0659878 ] }
+DEF hanim_Walk013_l_shoulderRotInterp OrientationInterpolator { key [ 0, 0.375, 0.9167, 1 ] 
+      keyValue [ 1 0 -2 -0.1189, -1 0 -1 -0.1861, 1 0 -1 -0.3357, 1 0 -1 -0.1189 ] }
+#orig keyValue [ 1 0 0 0.1189, -1 0 0 0.1861, 1 0 0 0.3357, 1 0 -2 0.1189 ] }
+
+#all following mostly just changed sign of scalar + some test axis moves
+DEF hanim_Walk013_headRotInterp OrientationInterpolator { key [ 0, 0.375, 0.4167, 0.5, 0.5833, 0.6667, 0.75, 0.8333, 0.9167, 1 ] 
+keyValue [ 0 1 0 -0.08642, 0 1 0 0.1825, 0 1 0 0.1505, 0 1 0 -0.1053, 0 1 0  0.04391, 0 -1 0  0.03119, 
+0 -1 0 0.07936, 0 -1 0 0.1616, 0 -1 0 0.155, 0 1 0 -0.08642 ] }
+DEF hanim_Walk013_neckRotInterp OrientationInterpolator { key [ 0, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Walk013_upper_bodyRotInterp OrientationInterpolator { key [ 0, 0.2083, 0.375, 0.75, 0.8333, 1 ] 
+keyValue [ 1 1 1 0.0826, -0.01972 -0.5974 0.8017 0.08231, 0.009296 -0.9648 0.2627 0.1734, 
+-0.01238 0.9549 -0.2968 0.08732, -0.008125 0.9691 -0.2463 0.158, 0 1 0 0.0826 ] }
+DEF hanim_Walk013_whole_bodyRotInterp OrientationInterpolator { key [ 0, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Walk013_whole_bodyTranInterp PositionInterpolator { 
+key [ 0, 0.04167, 0.125, 0.1667, 0.2083, 0.25, 0.2917, 0.375, 0.4583, 0.5, 0.5417, 0.5833, 0.625, 0.7083, 0.75, 0.7917, 0.875, 0.9167, 1 ] 
+keyValue [ 0 -0.00928 0, 0 -0.003858 0, 0 -0.008847 0, 0 -0.01486 0, 0 -0.02641 0, 0 -0.03934 0, 0 -0.0502 0, 0 -0.07469 0, 0 -0.02732 0, 0 -0.01608 0, 0 -0.01129 0, 0 -0.005819 0, 0 -0.002004 0, 0 -0.002579 0, 0 -0.0143 0, 0 -0.03799 0, 0 -0.05648 0, 0 -0.045 0, 0 -0.00928 0 ] }
+DEF hanim_Walk013_l_sternoclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Walk013_l_acromioclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Walk013_r_sternoclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Walk013_r_acromioclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Walk013_sacroiliacYaw OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Walk013_vl5Yaw OrientationInterpolator { key [ 0, 0.2, 0.4, 0.5, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0]}
+DEF hanim_Walk013_vc6Yaw OrientationInterpolator { key [0, 0.2, 0.4, 0.5, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Walk013_l_thumb1Pitch OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 1 0 0 -0.25, 1 0 0 -0.5, 1 0 0 -0.7, 1 0 0 -0.2, 0 0 1 0 ]}
+DEF hanim_Walk013_r_thumb1Pitch OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 1 0 0 -0.25, 1 0 0 -0.5, 1 0 0 -0.7, 1 0 0 -0.2, 0 0 1 0 ]}
+]}
+# ex hanim_Walk013_
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_r_ankleRotInterp.set_fraction
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_r_kneeRotInterp.set_fraction
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_r_hipRotInterp.set_fraction
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_l_ankleRotInterp.set_fraction
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_l_kneeRotInterp.set_fraction
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_l_hipRotInterp.set_fraction
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_lower_bodyRotInterp.set_fraction
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_r_wristRotInterp.set_fraction
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_r_elbowRotInterp.set_fraction
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_r_shoulderRotInterp.set_fraction
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_l_wristRotInterp.set_fraction
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_l_elbowRotInterp.set_fraction
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_l_shoulderRotInterp.set_fraction
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_headRotInterp.set_fraction
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_neckRotInterp.set_fraction
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_upper_bodyRotInterp.set_fraction
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_whole_bodyRotInterp.set_fraction
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_whole_bodyTranInterp.set_fraction
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_l_sternoclavicularRoll.set_fraction 
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_l_acromioclavicularRoll.set_fraction 
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_r_sternoclavicularRoll.set_fraction 
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_r_acromioclavicularRoll.set_fraction 
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_r_metatarsalPitch.set_fraction 
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_sacroiliacYaw.set_fraction 
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_vl5Yaw.set_fraction 
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_vc6Yaw.set_fraction 
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_l_thumb1Pitch.set_fraction 
+ROUTE hanim_Walk013Timer.fraction_changed TO hanim_Walk013_r_thumb1Pitch.set_fraction
+# ex hanim_Walk013_
+ROUTE hanim_Walk013_r_ankleRotInterp.value_changed TO hanim_r_talocrural.rotation
+ROUTE hanim_Walk013_r_kneeRotInterp.value_changed TO hanim_r_knee.rotation
+ROUTE hanim_Walk013_r_hipRotInterp.value_changed TO hanim_r_hip.rotation
+ROUTE hanim_Walk013_l_ankleRotInterp.value_changed TO hanim_l_talocrural.rotation
+ROUTE hanim_Walk013_l_kneeRotInterp.value_changed TO hanim_l_knee.rotation
+ROUTE hanim_Walk013_l_hipRotInterp.value_changed TO hanim_l_hip.rotation
+ROUTE hanim_Walk013_lower_bodyRotInterp.value_changed TO hanim_sacroiliac.rotation
+ROUTE hanim_Walk013_r_wristRotInterp.value_changed TO hanim_r_radiocarpal.rotation
+ROUTE hanim_Walk013_r_elbowRotInterp.value_changed TO hanim_r_elbow.rotation
+ROUTE hanim_Walk013_r_shoulderRotInterp.value_changed TO hanim_r_shoulder.rotation
+ROUTE hanim_Walk013_l_wristRotInterp.value_changed TO hanim_l_radiocarpal.rotation
+ROUTE hanim_Walk013_l_elbowRotInterp.value_changed TO hanim_l_elbow.rotation
+ROUTE hanim_Walk013_l_shoulderRotInterp.value_changed TO hanim_l_shoulder.rotation
+ROUTE hanim_Walk013_headRotInterp.value_changed TO hanim_skullbase.rotation
+#ROUTE hanim_Walk013_neckRotInterp.value_changed TO hanim_vc4.rotation
+#ROUTE hanim_Walk013_upper_bodyRotInterp.value_changed TO hanim_vl2.rotation
+ROUTE hanim_Walk013_whole_bodyRotInterp.value_changed TO hanim_humanoid_root.rotation
+ROUTE hanim_Walk013_whole_bodyTranInterp.value_changed TO hanim_humanoid_root.translation
+ROUTE hanim_Walk013_l_sternoclavicularRoll.value_changed TO hanim_l_sternoclavicular.rotation
+#ROUTE hanim_Walk013_l_acromioclavicularRoll.value_changed TO hanim_l_acromioclavicular.rotation
+ROUTE hanim_Walk013_r_sternoclavicularRoll.value_changed TO hanim_r_sternoclavicular.rotation
+#ROUTE hanim_Walk013_r_acromioclavicularRoll.value_changed TO hanim_r_acromioclavicular.rotation
+ROUTE hanim_Walk013_r_metatarsalPitch.value_changed TO hanim_l_metatarsophalangeal_2.rotation 
+ROUTE hanim_Walk013_r_metatarsalPitch.value_changed TO hanim_r_metatarsophalangeal_2.rotation 
+ROUTE hanim_Walk013_sacroiliacYaw.value_changed TO hanim_sacroiliac.rotation 
+ROUTE hanim_Walk013_vl5Yaw.value_changed TO hanim_vl5.rotation 
+#ROUTE hanim_Walk013_vc6Yaw.value_changed TO hanim_vc6.rotation 
+ROUTE hanim_Walk013_l_thumb1Pitch.value_changed TO hanim_l_carpometacarpal_1.rotation
+ROUTE hanim_Walk013_r_thumb1Pitch.value_changed TO hanim_r_carpometacarpal_1.rotation
+#Please don't worry about the little gliches now
+DEF hanim_Walk024Animation Group {
+ children [
+DEF hanim_Walk024Timer TimeSensor { cycleInterval 1.73 loop TRUE enabled FALSE }
+DEF hanim_Walk024_r_metatarsalPitch OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.7, 1 ] 
+      keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+#orig keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Walk024_r_ankleRotInterp OrientationInterpolator { key [ 0, 0.125, 0.2083, 0.375, 0.4583, 0.5, 0.6667, 0.75, 0.7917, 0.9167, 1 ] 
+      keyValue [ 0 0 1 0, -1 0 0 -0.3533, -1 0 0 -0.1072, 1 0 0 -0.2612, 1 0 0 -0.1268, -1 0 0 -0.01793, -1 0 0 -0.05824, -1 0 0 -0.2398, -1 0 0 -0.35, -1 0 0 -0.3322, 0 0 1 0 ] }
+#orig keyValue [ 0 0 1 0, -1 0 0 0.3533, -1 0 0 0.1072,  1 0 0 0.2612,  1 0 0 0.1268, -1 0 0 0.01793, -1 0 0 0.05824, -1 0 0 0.2398, -1 0 0 0.35, -1 0 0 0.3322, 0 0 1 0 ] }
+DEF hanim_Walk024_r_kneeRotInterp OrientationInterpolator { key [ 0, 0.125, 0.2083, 0.2917, 0.375, 0.5, 0.6667, 0.7917, 0.9167, 1 ] 
+      keyValue [  1 0 0 -0.8573,  1 0 0 -0.8926,  1 0 0 -0.5351,  1 0 0 -0.1756,  1 0 0 -0.1194,  1 0 0 -0.3153,  1 0 0 0.09354,  1 0 0 -0.08558,  1 0 0 -0.2475,  1 0 0 -0.8573 ] }
+#orig keyValue [  1 0 0 0.8573,  1 0 0 0.8926,  1 0 0 0.5351,  1 0 0 0.1756,  1 0 0 0.1194,  1 0 0 0.3153,  1 0 0 0.09354,  1 0 0 0.08558,  1 0 0 0.2475,  1 0 0 0.8573 ] }
+DEF hanim_Walk024_r_hipRotInterp OrientationInterpolator { key [ 0, 0.125, 0.2083, 0.2917, 0.375, 0.5, 0.6667, 0.7917, 0.9167, 1 ] 
+      keyValue [ -0.5831 0.03511 0.8116 -0.1481, -0.995 0.02296 0.09674 -0.4683, -1 0.00192 0.007964 -0.4732, -0.998 -0.0158 -0.06102 -0.5079, -0.9911 -0.03541 -0.1286 -0.5419, 
+                 -0.9131 -0.06243 -0.403 -0.3361, -0.4306 -0.07962 -0.899 -0.07038, 1 0 0 -0.2571, 0.9891 -0.02805 0.1444 -0.3879, -0.5831 0.03511 0.8116 -0.1481 ] }
+#orig keyValue [ -0.5831 0.03511 0.8116 0.1481, -0.995 0.02296 0.09674 0.4683, -1 0.00192 0.007964 0.4732, -0.998 -0.0158 -0.06102 0.5079, -0.9911 -0.03541 -0.1286 0.5419, 
+#orig            -0.9131 -0.06243 -0.403 0.3361, -0.4306 -0.07962 -0.899 0.07038, 1 0 0 0.2571, 0.9891 -0.02805 0.1444 0.3879, -0.5831 0.03511 0.8116 0.1481 ] }
+
+DEF hanim_Walk024_l_ankleRotInterp OrientationInterpolator { key [ 0, 0.125, 0.2083, 0.375, 0.6667, 0.9167, 1 ] 
+      keyValue [ -1 0 0 -0.06714, -1 0 0 -0.2152, -1 0 0 -0.3184, -1 0 0 -0.4717,  -1 0 0 -0.2912, 1 0 0 -0.1222, -1 0 0 -0.06714 ] }
+#orig keyValue [ -1 0 0 0.06714, -1 0 0 0.2152, -1 0 0 0.3184, -1 0 0 0.4717,  -1 0 0 0.2912, 1 0 0 0.1222, -1 0 0 0.06714 ] }
+DEF hanim_Walk024_l_kneeRotInterp OrientationInterpolator { key [ 0, 0.2083, 0.375, 0.5, 0.6667, 0.7917, 0.9167, 1 ] 
+      keyValue [ 1 0 0 -0.3226, 1 0 0 -0.1556, 1 0 0 -0.08678, 1 0 0 -0.8751, 1 0 0 -1.131, 1 0 0 -0.09961, 1 0 0 -0.3942, 1 0 0 -0.3226 ] }
+#orig keyValue [ 1 0 0 0.3226, 1 0 0 0.1556, 1 0 0 0.08678, 1 0 0 0.8751, 1 0 0 1.131, 1 0 0 0.09961, 1 0 0 0.3942, 1 0 0 0.3226 ] }
+DEF hanim_Walk024_l_hipRotInterp OrientationInterpolator { key [ 0, 0.25, 0.375, 0.5, 0.6667, 0.7917, 0.9167, 1 ] 
+      keyValue [ -0.873 0.06094 0.484 -0.2865, 0.9963 -0.01057 0.08481 -0.2488, 0.9965 0.01591 -0.08222 -0.3836, -0.7018 -0.03223 -0.7117 -0.1289, -1 0 0 -0.5518, -0.9964 0.02231 0.0817 -0.5351, -0.9809 0.04912 0.1881 -0.5204, -0.873 0.06094 0.484 -0.2865 ] }
+#orig keyValue [ -0.873 0.06094 0.484 0.2865, 0.9963 -0.01057 0.08481 0.2488, 0.9965 0.01591 -0.08222 0.3836, -0.7018 -0.03223 -0.7117 0.1289, -1 0 0 0.5518, -0.9964 0.02231 0.0817 0.5351, -0.9809 0.04912 0.1881 0.5204, -0.873 0.06094 0.484 0.2865 ] }
+
+DEF hanim_Walk024_lower_bodyRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] 
+      keyValue [ 0 0 -1 -0.1056, 0 0 1 -0.09018, 0 0 -1 -0.1056 ] }
+#orig keyValue [ 0 0 -1 0.1056, 0 0 1 0.09018, 0 0 -1 0.1056 ] }
+DEF hanim_Walk024_r_wristRotInterp OrientationInterpolator { key [ 0, 0.375, 0.9167, 1 ] 
+      keyValue [ -0.8129 0.4759 -0.3357 -0.1346, 0.1533 -0.9878 0.02582 -0.3902, -0.5701 0.7604 -0.311 -0.366, -0.8129 0.4759 -0.3357 -0.1346 ] }
+#orig keyValue [ -0.8129 0.4759 -0.3357 0.1346, 0.1533 -0.9878 0.02582 0.3902, -0.5701 0.7604 -0.311 0.366, -0.8129 0.4759 -0.3357 0.1346 ] }
+DEF hanim_Walk024_r_elbowRotInterp OrientationInterpolator { key [ 0, 0.375, 0.9167, 1 ] 
+      keyValue [ -1 0 0 -0.411508, -1 0 0 -0.0925011, -1 0 0 -0.572568, -1 0 0 -0.411508 ] }
+#orig keyValue [ -1 0 0 0.411508, -1 0 0 0.0925011, -1 0 0 0.572568, -1 0 0 0.411508 ] }
+DEF hanim_Walk024_r_shoulderRotInterp OrientationInterpolator { key [ 0, 0.375, 0.9167, 1 ] 
+      keyValue [ -1 0 2 -0.09346, 1 0 2 -0.3197, -1 0 2 -0.1564, -1 0 2 -0.09346 ] }
+#orig keyValue [ -1 0 0 0.09346, 1 0 0 0.3197, -1 0 0 0.1564, -1 0 0 0.09346 ] }
+DEF hanim_Walk024_l_wristRotInterp OrientationInterpolator { key [ 0, 0.375, 0.9167, 1 ] 
+      keyValue [ 0 -1 0 -0.461076, -0.330195 -0.927451 0.175516 -0.538852, 0.0327774 -0.999314 -0.0172185 -0.492033, 0 -1 0 -0.461076 ] }
+#orig keyValue [ 0 -1 0 0.461076, -0.330195 -0.927451 0.175516 0.538852, 0.0327774 -0.999314 -0.0172185 0.492033, 0 -1 0 0.461076 ] }
+DEF hanim_Walk024_l_elbowRotInterp OrientationInterpolator { key [ 0, 0.375, 0.9167, 1 ] 
+      keyValue [ -1 0 0 -0.0659878, -1 0 0 -0.488383, -1 0 0 -0.0177536, -1 0 0 -0.0659878 ] }
+#orig keyValue [ -1 0 0 0.0659878, -1 0 0 0.488383, -1 0 0 0.0177536, -1 0 0 0.0659878 ] }
+DEF hanim_Walk024_l_shoulderRotInterp OrientationInterpolator { key [ 0, 0.375, 0.9167, 1 ] 
+      keyValue [ 1 0 -2 -0.1189, -1 0 -1 -0.1861, 1 0 -1 -0.3357, 1 0 -1 -0.1189 ] }
+#orig keyValue [ 1 0 0 0.1189, -1 0 0 0.1861, 1 0 0 0.3357, 1 0 -2 0.1189 ] }
+
+#all following mostly just changed sign of scalar + some test axis moves
+DEF hanim_Walk024_headRotInterp OrientationInterpolator { key [ 0, 0.375, 0.4167, 0.5, 0.5833, 0.6667, 0.75, 0.8333, 0.9167, 1 ] 
+keyValue [ 0 1 0 -0.08642, 0 1 0 0.1825, 0 1 0 0.1505, 0 1 0 -0.1053, 0 1 0  0.04391, 0 -1 0  0.03119, 
+0 -1 0 0.07936, 0 -1 0 0.1616, 0 -1 0 0.155, 0 1 0 -0.08642 ] }
+DEF hanim_Walk024_neckRotInterp OrientationInterpolator { key [ 0, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Walk024_upper_bodyRotInterp OrientationInterpolator { key [ 0, 0.2083, 0.375, 0.75, 0.8333, 1 ] 
+keyValue [ 1 1 1 0.0826, -0.01972 -0.5974 0.8017 0.08231, 0.009296 -0.9648 0.2627 0.1734, 
+-0.01238 0.9549 -0.2968 0.08732, -0.008125 0.9691 -0.2463 0.158, 0 1 0 0.0826 ] }
+DEF hanim_Walk024_whole_bodyRotInterp OrientationInterpolator { key [ 0, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Walk024_whole_bodyTranInterp PositionInterpolator { 
+key [ 0, 0.04167, 0.125, 0.1667, 0.2083, 0.25, 0.2917, 0.375, 0.4583, 0.5, 0.5417, 0.5833, 0.625, 0.7083, 0.75, 0.7917, 0.875, 0.9167, 1 ] 
+keyValue [ 0 -0.00928 0, 0 -0.003858 0, 0 -0.008847 0, 0 -0.01486 0, 0 -0.02641 0, 0 -0.03934 0, 0 -0.0502 0, 0 -0.07469 0, 0 -0.02732 0, 0 -0.01608 0, 0 -0.01129 0, 0 -0.005819 0, 0 -0.002004 0, 0 -0.002579 0, 0 -0.0143 0, 0 -0.03799 0, 0 -0.05648 0, 0 -0.045 0, 0 -0.00928 0 ] }
+DEF hanim_Walk024_l_sternoclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Walk024_l_acromioclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Walk024_r_sternoclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Walk024_r_acromioclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Walk024_sacroiliacYaw OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Walk024_vl5Yaw OrientationInterpolator { key [ 0, 0.2, 0.4, 0.5, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0]}
+DEF hanim_Walk024_vc6Yaw OrientationInterpolator { key [0, 0.2, 0.4, 0.5, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Walk024_l_thumb1Pitch OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 1 0 0 -0.25, 1 0 0 -0.5, 1 0 0 -0.7, 1 0 0 -0.2, 0 0 1 0 ]}
+DEF hanim_Walk024_r_thumb1Pitch OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] 
+keyValue [ 0 0 1 0, 1 0 0 -0.25, 1 0 0 -0.5, 1 0 0 -0.7, 1 0 0 -0.2, 0 0 1 0 ]}
+]}
+# ex hanim_Walk024_
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_r_ankleRotInterp.set_fraction
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_r_kneeRotInterp.set_fraction
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_r_hipRotInterp.set_fraction
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_l_ankleRotInterp.set_fraction
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_l_kneeRotInterp.set_fraction
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_l_hipRotInterp.set_fraction
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_lower_bodyRotInterp.set_fraction
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_r_wristRotInterp.set_fraction
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_r_elbowRotInterp.set_fraction
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_r_shoulderRotInterp.set_fraction
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_l_wristRotInterp.set_fraction
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_l_elbowRotInterp.set_fraction
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_l_shoulderRotInterp.set_fraction
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_headRotInterp.set_fraction
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_neckRotInterp.set_fraction
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_upper_bodyRotInterp.set_fraction
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_whole_bodyRotInterp.set_fraction
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_whole_bodyTranInterp.set_fraction
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_l_sternoclavicularRoll.set_fraction 
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_l_acromioclavicularRoll.set_fraction 
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_r_sternoclavicularRoll.set_fraction 
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_r_acromioclavicularRoll.set_fraction 
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_r_metatarsalPitch.set_fraction 
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_sacroiliacYaw.set_fraction 
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_vl5Yaw.set_fraction 
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_vc6Yaw.set_fraction 
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_l_thumb1Pitch.set_fraction 
+ROUTE hanim_Walk024Timer.fraction_changed TO hanim_Walk024_r_thumb1Pitch.set_fraction
+# ex hanim_Walk024_
+ROUTE hanim_Walk024_r_ankleRotInterp.value_changed TO hanim_r_talocrural.rotation
+ROUTE hanim_Walk024_r_kneeRotInterp.value_changed TO hanim_r_knee.rotation
+ROUTE hanim_Walk024_r_hipRotInterp.value_changed TO hanim_r_hip.rotation
+ROUTE hanim_Walk024_l_ankleRotInterp.value_changed TO hanim_l_talocrural.rotation
+ROUTE hanim_Walk024_l_kneeRotInterp.value_changed TO hanim_l_knee.rotation
+ROUTE hanim_Walk024_l_hipRotInterp.value_changed TO hanim_l_hip.rotation
+ROUTE hanim_Walk024_lower_bodyRotInterp.value_changed TO hanim_sacroiliac.rotation
+ROUTE hanim_Walk024_r_wristRotInterp.value_changed TO hanim_r_radiocarpal.rotation
+ROUTE hanim_Walk024_r_elbowRotInterp.value_changed TO hanim_r_elbow.rotation
+ROUTE hanim_Walk024_r_shoulderRotInterp.value_changed TO hanim_r_shoulder.rotation
+ROUTE hanim_Walk024_l_wristRotInterp.value_changed TO hanim_l_radiocarpal.rotation
+ROUTE hanim_Walk024_l_elbowRotInterp.value_changed TO hanim_l_elbow.rotation
+ROUTE hanim_Walk024_l_shoulderRotInterp.value_changed TO hanim_l_shoulder.rotation
+ROUTE hanim_Walk024_headRotInterp.value_changed TO hanim_skullbase.rotation
+#ROUTE hanim_Walk024_neckRotInterp.value_changed TO hanim_vc4.rotation
+#ROUTE hanim_Walk024_upper_bodyRotInterp.value_changed TO hanim_vl2.rotation
+ROUTE hanim_Walk024_whole_bodyRotInterp.value_changed TO hanim_humanoid_root.rotation
+ROUTE hanim_Walk024_whole_bodyTranInterp.value_changed TO hanim_humanoid_root.translation
+ROUTE hanim_Walk024_l_sternoclavicularRoll.value_changed TO hanim_l_sternoclavicular.rotation
+#ROUTE hanim_Walk024_l_acromioclavicularRoll.value_changed TO hanim_l_acromioclavicular.rotation
+ROUTE hanim_Walk024_r_sternoclavicularRoll.value_changed TO hanim_r_sternoclavicular.rotation
+#ROUTE hanim_Walk024_r_acromioclavicularRoll.value_changed TO hanim_r_acromioclavicular.rotation
+ROUTE hanim_Walk024_r_metatarsalPitch.value_changed TO hanim_l_metatarsophalangeal_2.rotation 
+ROUTE hanim_Walk024_r_metatarsalPitch.value_changed TO hanim_r_metatarsophalangeal_2.rotation 
+ROUTE hanim_Walk024_sacroiliacYaw.value_changed TO hanim_sacroiliac.rotation 
+ROUTE hanim_Walk024_vl5Yaw.value_changed TO hanim_vl5.rotation 
+#ROUTE hanim_Walk024_vc6Yaw.value_changed TO hanim_vc6.rotation 
+ROUTE hanim_Walk024_l_thumb1Pitch.value_changed TO hanim_l_carpometacarpal_1.rotation
+ROUTE hanim_Walk024_r_thumb1Pitch.value_changed TO hanim_r_carpometacarpal_1.rotation
+DEF hanim_Skip015Animation Group {
+ children [
+DEF hanim_Skip015Timer TimeSensor { cycleInterval 1.73 loop TRUE enabled FALSE }
+DEF hanim_Skip015_r_kneeRotInterp OrientationInterpolator {
+	key [ 0, 0.125, 0.2083, 0.2917, 0.375, 0.5, 0.6667, 0.7917, 0.9167, 1 ] 
+      	keyValue [
+      		 1 0 0 -0.0,
+      		 1 0 0 -0.33,
+		 1 0 0 -0.66,
+		 1 0 0 -1.0,
+		 1 0 0 -0.66, 
+                 1 0 0 -0.33,
+		 1 0 0 -0.0,
+		 1 0 0 -0.1,
+		 1 0 0 -0.2,
+		 1 0 0 -0.1
+		] }
+DEF hanim_Skip015_r_hipRotInterp OrientationInterpolator {
+	key [ 0, 0.125, 0.2083, 0.2917, 0.375, 0.5, 0.6667, 0.7917, 0.9167, 1 ] 
+	keyValue [
+      		 -1 0 0 -0.0,
+      		 -1 0 0 -0.33,
+		 -1 0 0 -0.66,
+		 -1 0 0 -1.0,
+		 -1 0 0 -0.66, 
+                 -1 0 0 -0.33,
+		 -1 0 0 -0.0,
+		 -1 0 0 -0.1,
+		 -1 0 0 -0.2,
+		 -1 0 0 -0.1
+		 ] }
+
+DEF hanim_Skip015_l_kneeRotInterp OrientationInterpolator {
+	key [ 0, 0.125, 0.2083, 0.2917, 0.375, 0.5, 0.6667, 0.7917, 0.9167, 1 ] 
+	keyValue [
+		 1 0 0 -0.0,
+		 1 0 0 -0.1,
+		 1 0 0 -0.2,
+		 1 0 0 -0.1
+      		 1 0 0 -0.0,
+      		 1 0 0 -0.33,
+		 1 0 0 -0.66,
+		 1 0 0 -1.0,
+		 1 0 0 -0.66, 
+                 1 0 0 -0.33,
+		] }
+
+DEF hanim_Skip015_l_hipRotInterp OrientationInterpolator {
+	key [ 0, 0.125, 0.2083, 0.2917, 0.375, 0.5, 0.6667, 0.7917, 0.9167, 1 ] 
+	keyValue [
+		 -1 0 0 -0.0,
+		 -1 0 0 -0.1,
+		 -1 0 0 -0.2,
+		 -1 0 0 -0.1
+      		 -1 0 0 -0.0,
+      		 -1 0 0 -0.33,
+		 -1 0 0 -0.66,
+		 -1 0 0 -1.0,
+		 -1 0 0 -0.66, 
+                 -1 0 0 -0.33,
+		] }
+
+DEF hanim_Skip015_whole_bodyTranInterp PositionInterpolator { 
+	key [ 0, 0.125, 0.2083, 0.2917, 0.375, 0.5, 0.6667, 0.7917, 0.9167, 1 ] 
+keyValue [
+	0 0 0
+	0 0.0 0
+	0 0.1 0
+	0 0.0 0
+	0 0 0
+	0 0 0
+	0 0 0
+	0 0.0 0
+	0 0.1 0
+	0 0.0 0
+	] }
+DEF hanim_Skip015_r_shoulderPitch OrientationInterpolator {
+	key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ]
+	keyValue [ 1 0 0 0, 1 0 0 0.2, 1 0 0 0.22, 1 0 0 0.2, 1 0 0 0, 1 0 0 0 ]}
+DEF hanim_Skip015_l_shoulderPitch OrientationInterpolator {
+	key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ]
+	keyValue [ 1 0 0 0, 1 0 0 -0.2, 1 0 0 -0.22, 1 0 0 -0.2, 1 0 0 0, 1 0 0 0 ]}
+DEF hanim_Skip015_r_elbowPitch OrientationInterpolator {
+	key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ]
+	keyValue [ 1 0 0 0, 1 0 0 0.1, 1 0 0 0.11, 1 0 0 0.1, 1 0 0 0, 1 0 0 0 ]}
+DEF hanim_Skip015_l_elbowPitch OrientationInterpolator {
+	key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ]
+	keyValue [ 1 0 0 0, 1 0 0 -0.1, 1 0 0 -0.11, 1 0 0 -0.1, 1 0 0 0, 1 0 0 0 ]}
+] }
+
+ROUTE hanim_Skip015Timer.fraction_changed TO hanim_Skip015_r_kneeRotInterp.set_fraction
+ROUTE hanim_Skip015Timer.fraction_changed TO hanim_Skip015_r_hipRotInterp.set_fraction
+ROUTE hanim_Skip015Timer.fraction_changed TO hanim_Skip015_l_kneeRotInterp.set_fraction
+ROUTE hanim_Skip015Timer.fraction_changed TO hanim_Skip015_l_hipRotInterp.set_fraction
+ROUTE hanim_Skip015Timer.fraction_changed TO hanim_Skip015_whole_bodyTranInterp.set_fraction
+ROUTE hanim_Skip015Timer.fraction_changed TO hanim_Skip015_l_shoulderPitch.set_fraction 
+ROUTE hanim_Skip015Timer.fraction_changed TO hanim_Skip015_r_shoulderPitch.set_fraction 
+ROUTE hanim_Skip015Timer.fraction_changed TO hanim_Skip015_l_elbowPitch.set_fraction 
+ROUTE hanim_Skip015Timer.fraction_changed TO hanim_Skip015_r_elbowPitch.set_fraction 
+
+ROUTE hanim_Skip015_r_kneeRotInterp.value_changed TO hanim_r_knee.rotation
+ROUTE hanim_Skip015_r_hipRotInterp.value_changed TO hanim_r_hip.rotation
+ROUTE hanim_Skip015_l_kneeRotInterp.value_changed TO hanim_l_knee.rotation
+ROUTE hanim_Skip015_l_hipRotInterp.value_changed TO hanim_l_hip.rotation
+ROUTE hanim_Skip015_whole_bodyTranInterp.value_changed TO hanim_humanoid_root.translation
+ROUTE hanim_Skip015_r_shoulderPitch.value_changed TO hanim_r_shoulder.rotation
+ROUTE hanim_Skip015_l_shoulderPitch.value_changed TO hanim_l_shoulder.rotation
+ROUTE hanim_Skip015_r_elbowPitch.value_changed TO hanim_r_elbow.rotation
+ROUTE hanim_Skip015_l_elbowPitch.value_changed TO hanim_l_elbow.rotation
+DEF hanim_Stand036Animation Group {
+ children [
+DEF hanim_Stand036Timer TimeSensor { cycleInterval 5.73 loop TRUE enabled FALSE }
+DEF hanim_Stand036_r_metatarsophalangeal_2Pitch OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.7, 1 ] keyValue [ 1 0 0 0, -1 0 0 0.015 1 0 0 0.17, -1 0 0 0.025, 1 0 0 0.01, 1 0 0 0 ]}
+DEF hanim_Stand036_r_talocruralRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand036_r_kneeRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand036_r_hipRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand036_l_talocruralRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand036_l_kneeRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand036_l_hipRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0  ] }
+DEF hanim_Stand036_r_radiocarpalRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand036_r_elbowRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand036_r_shoulderRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand036_l_radiocarpalRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand036_l_elbowRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand036_l_shoulderRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand036_headRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand036_neckRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+ # DEF hanim_Stand036_l_eyeballRotInterp OrientationInterpolator { key [ 0, 0.4, 0.7, 1 ] keyValue [ 0 0 1 0, -1 0 0 0.5, 1 0 0 0.45, 0 0 1 0 ] }
+ # DEF hanim_Stand036_r_eyeballRotInterp OrientationInterpolator { key [ 0, 0.4, 0.7, 1 ] keyValue [ 0 0 1 0, -1 0 0 0.5, 1 0 0 0.45, 0 0 1 0 ] }
+DEF hanim_Stand036_lower_bodyRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand036_upper_bodyRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand036_whole_bodyRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand036_whole_bodyTransInterp PositionInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 0, 0 0 0, 0 0 0 ] }
+DEF hanim_Stand036_l_sternoclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+ # DEF hanim_Stand036_l_acromioclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Stand036_r_sternoclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+ # DEF hanim_Stand036_r_acromioclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Stand036_sacroiliacYaw OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Stand036_vl5Yaw OrientationInterpolator { key [ 0, 0.2, 0.4, 0.5, 0.6, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Stand036_vc6Yaw OrientationInterpolator { key [0, 0.2, 0.4, 0.5, 0.6, 0.8, 1 ] keyValue [ 0 1 0 0, 0 1 0 0, 0 1 0 0, 0 1 0 0, -1 0 0 0, 0 -1 0 0, 0 1 0 0 ]}
+DEF hanim_Stand036_l_carpometacarpal_1Pitch OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [  0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Stand036_r_carpometacarpal_1Pitch OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [ 1 0 0 0, 1 0 0 0.5, 1 0 0 0.1, 1 0 0 0.27, 1 0 0 0.2, 1 0 0 0 ]}
+DEF hanim_Stand036_r_carpal_proximal_interphalangeal_2Roll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.5, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0.1, 0 0 1 0.2, 0 0 1 0.3, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Stand036_r_metacarpophalangeal_2Roll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.5, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0.4, 0 0 1 0.32, 0 0 1 0.25, 0 0 1 0.2, 0 0 1 0 ]}
+DEF hanim_Stand036_r_carpal_distal_interphalangeal_2Roll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.5, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0.2, 0 0 1 0.3, 0 0 1 0.35, 0 0 1 0.2, 0 0 1 0 ]}
+]
+# ex hanim_Stand036_
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_r_talocruralRotInterp.set_fraction
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_r_kneeRotInterp.set_fraction
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_r_hipRotInterp.set_fraction
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_l_talocruralRotInterp.set_fraction
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_l_kneeRotInterp.set_fraction
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_l_hipRotInterp.set_fraction
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_lower_bodyRotInterp.set_fraction
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_r_radiocarpalRotInterp.set_fraction
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_r_elbowRotInterp.set_fraction
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_r_shoulderRotInterp.set_fraction
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_l_radiocarpalRotInterp.set_fraction
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_l_elbowRotInterp.set_fraction
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_l_shoulderRotInterp.set_fraction
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_headRotInterp.set_fraction
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_neckRotInterp.set_fraction
+ # ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_l_eyeballRotInterp.set_fraction
+ # ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_r_eyeballRotInterp.set_fraction
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_upper_bodyRotInterp.set_fraction
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_whole_bodyRotInterp.set_fraction
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_whole_bodyTransInterp.set_fraction
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_l_sternoclavicularRoll.set_fraction 
+ # ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_l_acromioclavicularRoll.set_fraction 
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_r_sternoclavicularRoll.set_fraction 
+ # ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_r_acromioclavicularRoll.set_fraction 
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_r_metatarsophalangeal_2Pitch.set_fraction 
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_sacroiliacYaw.set_fraction 
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_vl5Yaw.set_fraction 
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_vc6Yaw.set_fraction 
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_l_carpometacarpal_1Pitch.set_fraction 
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_r_carpometacarpal_1Pitch.set_fraction
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_r_carpal_proximal_interphalangeal_2Roll.set_fraction
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_r_metacarpophalangeal_2Roll.set_fraction
+ROUTE hanim_Stand036Timer.fraction_changed TO hanim_Stand036_r_carpal_distal_interphalangeal_2Roll.set_fraction
+# ex hanim_Stand036_
+ROUTE hanim_Stand036_r_talocruralRotInterp.value_changed TO hanim_r_talocrural.rotation
+ROUTE hanim_Stand036_r_kneeRotInterp.value_changed TO hanim_r_knee.rotation
+ROUTE hanim_Stand036_r_hipRotInterp.value_changed TO hanim_r_hip.rotation
+ROUTE hanim_Stand036_l_talocruralRotInterp.value_changed TO hanim_l_talocrural.rotation
+ROUTE hanim_Stand036_l_kneeRotInterp.value_changed TO hanim_l_knee.rotation
+ROUTE hanim_Stand036_l_hipRotInterp.value_changed TO hanim_l_hip.rotation
+ROUTE hanim_Stand036_r_radiocarpalRotInterp.value_changed TO hanim_r_radiocarpal.rotation
+ROUTE hanim_Stand036_r_elbowRotInterp.value_changed TO hanim_r_elbow.rotation
+ROUTE hanim_Stand036_r_shoulderRotInterp.value_changed TO hanim_r_shoulder.rotation
+ROUTE hanim_Stand036_l_radiocarpalRotInterp.value_changed TO hanim_l_radiocarpal.rotation
+ROUTE hanim_Stand036_l_elbowRotInterp.value_changed TO hanim_l_elbow.rotation
+ROUTE hanim_Stand036_l_shoulderRotInterp.value_changed TO hanim_l_shoulder.rotation
+ROUTE hanim_Stand036_headRotInterp.value_changed TO hanim_skullbase.rotation
+ # ROUTE hanim_Stand036_neckRotInterp.value_changed TO hanim_vc7.rotation
+ # ROUTE hanim_Stand036_l_eyeballRotInterp.value_changed TO hanim_l_eyeball_joint.rotation
+ # ROUTE hanim_Stand036_r_eyeballRotInterp.value_changed TO hanim_r_eyeball_joint.rotation
+ # ROUTE hanim_Stand036_upper_bodyRotInterp.value_changed TO hanim_vl1.rotation
+ROUTE hanim_Stand036_lower_bodyRotInterp.value_changed TO hanim_sacroiliac.rotation
+ROUTE hanim_Stand036_whole_bodyRotInterp.value_changed TO hanim_humanoid_root.rotation
+ROUTE hanim_Stand036_whole_bodyTransInterp.value_changed TO hanim_humanoid_root.translation
+ROUTE hanim_Stand036_l_sternoclavicularRoll.value_changed TO hanim_l_sternoclavicular.rotation
+ # ROUTE hanim_Stand036_l_acromioclavicularRoll.value_changed TO hanim_l_acromioclavicular.rotation
+ROUTE hanim_Stand036_r_sternoclavicularRoll.value_changed TO hanim_r_sternoclavicular.rotation
+ # ROUTE hanim_Stand036_r_acromioclavicularRoll.value_changed TO hanim_r_acromioclavicular.rotation
+ROUTE hanim_Stand036_r_metatarsophalangeal_2Pitch.value_changed TO hanim_l_metatarsophalangeal_2.rotation 
+ROUTE hanim_Stand036_r_metatarsophalangeal_2Pitch.value_changed TO hanim_r_metatarsophalangeal_2.rotation 
+ROUTE hanim_Stand036_sacroiliacYaw.value_changed TO hanim_sacroiliac.rotation 
+ROUTE hanim_Stand036_vl5Yaw.value_changed TO hanim_vl5.rotation 
+ # ROUTE hanim_Stand036_vc6Yaw.value_changed TO hanim_vc6.rotation 
+ROUTE hanim_Stand036_l_carpometacarpal_1Pitch.value_changed TO hanim_l_carpometacarpal_1.rotation
+ROUTE hanim_Stand036_r_carpometacarpal_1Pitch.value_changed TO hanim_r_carpometacarpal_1.rotation
+ROUTE hanim_Stand036_r_carpal_proximal_interphalangeal_2Roll.value_changed TO hanim_r_carpal_proximal_interphalangeal_2.rotation
+ROUTE hanim_Stand036_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_metacarpophalangeal_2.rotation
+ROUTE hanim_Stand036_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_carpal_distal_interphalangeal_2.rotation
+ROUTE hanim_Stand036_r_carpal_proximal_interphalangeal_2Roll.value_changed TO hanim_r_carpal_proximal_interphalangeal_3.rotation
+ROUTE hanim_Stand036_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_metacarpophalangeal_3.rotation
+ROUTE hanim_Stand036_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_carpal_distal_interphalangeal_3.rotation
+ROUTE hanim_Stand036_r_carpal_proximal_interphalangeal_2Roll.value_changed TO hanim_r_carpal_proximal_interphalangeal_4.rotation
+ROUTE hanim_Stand036_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_metacarpophalangeal_4.rotation
+ROUTE hanim_Stand036_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_carpal_distal_interphalangeal_4.rotation
+ROUTE hanim_Stand036_r_carpal_proximal_interphalangeal_2Roll.value_changed TO hanim_r_carpal_proximal_interphalangeal_5.rotation
+ROUTE hanim_Stand036_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_metacarpophalangeal_5.rotation
+ROUTE hanim_Stand036_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_carpal_distal_interphalangeal_5.rotation
+}
+DEF hanim_Stand037Animation Group {
+ children [
+DEF hanim_Stand037Timer TimeSensor { cycleInterval 5.73 loop TRUE enabled FALSE }
+DEF hanim_Stand037_r_metatarsophalangeal_2Pitch OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.7, 1 ] keyValue [ 1 0 0 0, -1 0 0 0.015 1 0 0 0.17, -1 0 0 0.025, 1 0 0 0.01, 1 0 0 0 ]}
+DEF hanim_Stand037_r_talocruralRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand037_r_kneeRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand037_r_hipRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand037_l_talocruralRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand037_l_kneeRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand037_l_hipRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0  ] }
+DEF hanim_Stand037_r_radiocarpalRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand037_r_elbowRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand037_r_shoulderRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand037_l_radiocarpalRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand037_l_elbowRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand037_l_shoulderRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand037_headRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand037_neckRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+ # DEF hanim_Stand037_l_eyeballRotInterp OrientationInterpolator { key [ 0, 0.4, 0.7, 1 ] keyValue [ 0 0 1 0, -1 0 0 0.5, 1 0 0 0.45, 0 0 1 0 ] }
+ # DEF hanim_Stand037_r_eyeballRotInterp OrientationInterpolator { key [ 0, 0.4, 0.7, 1 ] keyValue [ 0 0 1 0, -1 0 0 0.5, 1 0 0 0.45, 0 0 1 0 ] }
+DEF hanim_Stand037_lower_bodyRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand037_upper_bodyRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand037_whole_bodyRotInterp OrientationInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0 ] }
+DEF hanim_Stand037_whole_bodyTransInterp PositionInterpolator { key [ 0, 0.5, 1 ] keyValue [ 0 0 0, 0 0 0, 0 0 0 ] }
+DEF hanim_Stand037_l_sternoclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+ # DEF hanim_Stand037_l_acromioclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Stand037_r_sternoclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+ # DEF hanim_Stand037_r_acromioclavicularRoll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Stand037_sacroiliacYaw OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Stand037_vl5Yaw OrientationInterpolator { key [ 0, 0.2, 0.4, 0.5, 0.6, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Stand037_vc6Yaw OrientationInterpolator { key [0, 0.2, 0.4, 0.5, 0.6, 0.8, 1 ] keyValue [ 0 1 0 0, 0 1 0 0, 0 1 0 0, 0 1 0 0, -1 0 0 0, 0 -1 0 0, 0 1 0 0 ]}
+DEF hanim_Stand037_l_carpometacarpal_1Pitch OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [  0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Stand037_r_carpometacarpal_1Pitch OrientationInterpolator { key [ 0, 0.2, 0.4, 0.6, 0.8, 1 ] keyValue [ 1 0 0 0, 1 0 0 0.5, 1 0 0 0.1, 1 0 0 0.27, 1 0 0 0.2, 1 0 0 0 ]}
+DEF hanim_Stand037_r_carpal_proximal_interphalangeal_2Roll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.5, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0.1, 0 0 1 0.2, 0 0 1 0.3, 0 0 1 0, 0 0 1 0 ]}
+DEF hanim_Stand037_r_metacarpophalangeal_2Roll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.5, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0.4, 0 0 1 0.32, 0 0 1 0.25, 0 0 1 0.2, 0 0 1 0 ]}
+DEF hanim_Stand037_r_carpal_distal_interphalangeal_2Roll OrientationInterpolator { key [ 0, 0.2, 0.4, 0.5, 0.8, 1 ] keyValue [ 0 0 1 0, 0 0 1 0.2, 0 0 1 0.3, 0 0 1 0.35, 0 0 1 0.2, 0 0 1 0 ]}
+]
+# ex hanim_Stand037_
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_r_talocruralRotInterp.set_fraction
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_r_kneeRotInterp.set_fraction
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_r_hipRotInterp.set_fraction
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_l_talocruralRotInterp.set_fraction
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_l_kneeRotInterp.set_fraction
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_l_hipRotInterp.set_fraction
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_lower_bodyRotInterp.set_fraction
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_r_radiocarpalRotInterp.set_fraction
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_r_elbowRotInterp.set_fraction
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_r_shoulderRotInterp.set_fraction
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_l_radiocarpalRotInterp.set_fraction
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_l_elbowRotInterp.set_fraction
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_l_shoulderRotInterp.set_fraction
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_headRotInterp.set_fraction
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_neckRotInterp.set_fraction
+ # ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_l_eyeballRotInterp.set_fraction
+ # ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_r_eyeballRotInterp.set_fraction
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_upper_bodyRotInterp.set_fraction
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_whole_bodyRotInterp.set_fraction
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_whole_bodyTransInterp.set_fraction
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_l_sternoclavicularRoll.set_fraction 
+ # ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_l_acromioclavicularRoll.set_fraction 
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_r_sternoclavicularRoll.set_fraction 
+ # ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_r_acromioclavicularRoll.set_fraction 
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_r_metatarsophalangeal_2Pitch.set_fraction 
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_sacroiliacYaw.set_fraction 
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_vl5Yaw.set_fraction 
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_vc6Yaw.set_fraction 
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_l_carpometacarpal_1Pitch.set_fraction 
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_r_carpometacarpal_1Pitch.set_fraction
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_r_carpal_proximal_interphalangeal_2Roll.set_fraction
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_r_metacarpophalangeal_2Roll.set_fraction
+ROUTE hanim_Stand037Timer.fraction_changed TO hanim_Stand037_r_carpal_distal_interphalangeal_2Roll.set_fraction
+# ex hanim_Stand037_
+ROUTE hanim_Stand037_r_talocruralRotInterp.value_changed TO hanim_r_talocrural.rotation
+ROUTE hanim_Stand037_r_kneeRotInterp.value_changed TO hanim_r_knee.rotation
+ROUTE hanim_Stand037_r_hipRotInterp.value_changed TO hanim_r_hip.rotation
+ROUTE hanim_Stand037_l_talocruralRotInterp.value_changed TO hanim_l_talocrural.rotation
+ROUTE hanim_Stand037_l_kneeRotInterp.value_changed TO hanim_l_knee.rotation
+ROUTE hanim_Stand037_l_hipRotInterp.value_changed TO hanim_l_hip.rotation
+ROUTE hanim_Stand037_r_radiocarpalRotInterp.value_changed TO hanim_r_radiocarpal.rotation
+ROUTE hanim_Stand037_r_elbowRotInterp.value_changed TO hanim_r_elbow.rotation
+ROUTE hanim_Stand037_r_shoulderRotInterp.value_changed TO hanim_r_shoulder.rotation
+ROUTE hanim_Stand037_l_radiocarpalRotInterp.value_changed TO hanim_l_radiocarpal.rotation
+ROUTE hanim_Stand037_l_elbowRotInterp.value_changed TO hanim_l_elbow.rotation
+ROUTE hanim_Stand037_l_shoulderRotInterp.value_changed TO hanim_l_shoulder.rotation
+ROUTE hanim_Stand037_headRotInterp.value_changed TO hanim_skullbase.rotation
+ # ROUTE hanim_Stand037_neckRotInterp.value_changed TO hanim_vc7.rotation
+ # ROUTE hanim_Stand037_l_eyeballRotInterp.value_changed TO hanim_l_eyeball_joint.rotation
+ # ROUTE hanim_Stand037_r_eyeballRotInterp.value_changed TO hanim_r_eyeball_joint.rotation
+ # ROUTE hanim_Stand037_upper_bodyRotInterp.value_changed TO hanim_vl1.rotation
+ROUTE hanim_Stand037_lower_bodyRotInterp.value_changed TO hanim_sacroiliac.rotation
+ROUTE hanim_Stand037_whole_bodyRotInterp.value_changed TO hanim_humanoid_root.rotation
+ROUTE hanim_Stand037_whole_bodyTransInterp.value_changed TO hanim_humanoid_root.translation
+ROUTE hanim_Stand037_l_sternoclavicularRoll.value_changed TO hanim_l_sternoclavicular.rotation
+ # ROUTE hanim_Stand037_l_acromioclavicularRoll.value_changed TO hanim_l_acromioclavicular.rotation
+ROUTE hanim_Stand037_r_sternoclavicularRoll.value_changed TO hanim_r_sternoclavicular.rotation
+ # ROUTE hanim_Stand037_r_acromioclavicularRoll.value_changed TO hanim_r_acromioclavicular.rotation
+ROUTE hanim_Stand037_r_metatarsophalangeal_2Pitch.value_changed TO hanim_l_metatarsophalangeal_2.rotation 
+ROUTE hanim_Stand037_r_metatarsophalangeal_2Pitch.value_changed TO hanim_r_metatarsophalangeal_2.rotation 
+ROUTE hanim_Stand037_sacroiliacYaw.value_changed TO hanim_sacroiliac.rotation 
+ROUTE hanim_Stand037_vl5Yaw.value_changed TO hanim_vl5.rotation 
+ # ROUTE hanim_Stand037_vc6Yaw.value_changed TO hanim_vc6.rotation 
+ROUTE hanim_Stand037_l_carpometacarpal_1Pitch.value_changed TO hanim_l_carpometacarpal_1.rotation
+ROUTE hanim_Stand037_r_carpometacarpal_1Pitch.value_changed TO hanim_r_carpometacarpal_1.rotation
+ROUTE hanim_Stand037_r_carpal_proximal_interphalangeal_2Roll.value_changed TO hanim_r_carpal_proximal_interphalangeal_2.rotation
+ROUTE hanim_Stand037_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_metacarpophalangeal_2.rotation
+ROUTE hanim_Stand037_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_carpal_distal_interphalangeal_2.rotation
+ROUTE hanim_Stand037_r_carpal_proximal_interphalangeal_2Roll.value_changed TO hanim_r_carpal_proximal_interphalangeal_3.rotation
+ROUTE hanim_Stand037_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_metacarpophalangeal_3.rotation
+ROUTE hanim_Stand037_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_carpal_distal_interphalangeal_3.rotation
+ROUTE hanim_Stand037_r_carpal_proximal_interphalangeal_2Roll.value_changed TO hanim_r_carpal_proximal_interphalangeal_4.rotation
+ROUTE hanim_Stand037_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_metacarpophalangeal_4.rotation
+ROUTE hanim_Stand037_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_carpal_distal_interphalangeal_4.rotation
+ROUTE hanim_Stand037_r_carpal_proximal_interphalangeal_2Roll.value_changed TO hanim_r_carpal_proximal_interphalangeal_5.rotation
+ROUTE hanim_Stand037_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_metacarpophalangeal_5.rotation
+ROUTE hanim_Stand037_r_metacarpophalangeal_2Roll.value_changed TO hanim_r_carpal_distal_interphalangeal_5.rotation
+}
+#DEF Interface Group { # geometry and touchsensors to select animation
+# children [ 
+#  DEF cordsysfloor Transform { scale 0.175 0.175 0.175 
+#   children [ Inline { url ["JointCoordinateAxes.x3dv"] } ] }
+#  DEF HudProx ProximitySensor { center 0 0 0 size 50 50 50 }
+#  DEF HudXform Transform { 
+#   children [
+#    Transform { translation -0.2 0.15 -0.7 scale 0.02 0.02 0.02
+#     children [
+#      DEF Everything_Text Transform { translation 0 -12.2 0
+#       children [
+#	# DEF EverythingTimer TimeSensor { cycleInterval 30 loop TRUE enabled TRUE }
+#        DEF Everything_Touch TouchSensor {  }
+#        DEF EverythingText Shape {
+#         appearance Appearance { material DEF text_color Material { 
+#          ambientIntensity 1 diffuseColor 0.819 0.521 0.169 specularColor 0.819 0.521 0.169 emissiveColor 0.819 0.521 0.169 } }
+#         geometry Text { string ["Everything"] 
+#          fontStyle FontStyle {
+#            family [ "SANS"  ] 
+#          }
+#         }
+#        }
+#        DEF Everything_Back Shape {
+#         appearance Appearance { material DEF Clear Material { 
+#          ambientIntensity 1 emissiveColor 0 0.5 0 diffuseColor 0 0.5 0 
+#          transparency 0.8 } } 
+#         geometry DEF Backing IndexedFaceSet { 
+#	  creaseAngle 3.141593
+#          coord Coordinate { point [ -0.2 -0.25 -0.01 3.0 -0.25 -0.01 3.0 1 -0.01 -0.2 1 -0.01 ] } coordIndex [ 0 1 2 3 -1 ] }
+#        }
+#       ]
+#      }
+#     ]
+#    }
+#   ]
+#  }
+# ]
+#} 
+#
+#ROUTE HudProx.position_changed TO HudXform.translation
+#ROUTE HudProx.orientation_changed TO HudXform.rotation 
+
+DEF hanim_z100sTimer TimeSensor { cycleInterval 100 loop FALSE enabled TRUE startTime 1 }
+DEF hanim_ActivateSensor ProximitySensor { size 1000000 1000000 1000000 }
+ROUTE hanim_ActivateSensor.enterTime TO hanim_z100sTimer.startTime
+
+
+#DEF hanim_humanoid_root_TranslationInterpolator PositionInterpolator {
+#key [ 0 0.09 0.11 0.223 0.43 0.55 0.63 0.73 0.85 0.86 1 ]
+#keyValue [
+#-7.9962 0.400 3.000, #(0) (hanim_Stand01)
+#-7.9962 0.400 3.000, #(0.09) (hanim_Stand01)
+#-7.9962 0.400 3.000, #(0.11) (hanim_Stand01)
+#-7.9962 0.400 3.000, #(0.223) (hanim_Run01)
+#9.004 0.475 3.4999, #(0.433) (hanim_Turn01)  # removed
+#11.5048 0.475 3.3699, #(0.55) (hanim_Walk01)
+#16.0038 0.475 7.8699, #(0.63) (hanim_Walk01)
+#18.5038 0.475 14.8699, #(0.73) (hanim_Skip01)
+#23.0038 0.475 24.3699, #(0.85) (hanim_Stand01)
+#23.0038 0.475 24.3699, #(0.86) (hanim_Stand01)
+#23.0038 0.475 24.3699, #(1) (hanim_Stand01)
+#]}
+
+#ROUTE hanim_z100sTimer.fraction_changed TO hanim_humanoid_root_TranslationInterpolator.set_fraction
+#ROUTE hanim_humanoid_root_TranslationInterpolator.value_changed TO hanim_humanoid_root.translation
+
+DEF hanim_Pitch2Interpolator OrientationInterpolator {   key [   0 0.10 0.16 0.25 0.33 0.38 0.46 0.60 0.69 0.77 0.84 0.90 1 ]   keyValue [   0 0 1 0, 1 0 0 0.8, 0 0 1 0, 1 0 0 2, 0 0 1 0,   1 0 0 0.8, 0 0 1 0, 1 0 0 -0.8, 0 0 1 0, 1 0 0 -2,  0 0 1 0, 0 0 1 0, 0 0 1 0 ] } 
+#ROUTE hanim_z100sTimer.fraction_changed TO hanim_Pitch012Interpolator.set_fraction
+ROUTE hanim_z100sTimer.fraction_changed TO hanim_Pitch2Interpolator.set_fraction
+
+#ROUTE hanim_Pitch2Interpolator.value_changed TO hanim_humanoid_root.rotation
+#ROUTE hanim_Pitch2Interpolator.value_changed TO hanim_sacroiliac.rotation
+#ROUTE hanim_Pitch2Interpolator.value_changed TO hanim_l_hip.rotation
+#ROUTE hanim_Pitch2Interpolator.value_changed TO hanim_r_hip.rotation
+#ROUTE hanim_Pitch2Interpolator.value_changed TO hanim_l_knee.rotation
+#ROUTE hanim_Pitch2Interpolator.value_changed TO hanim_r_knee.rotation
+#ROUTE hanim_Pitch2Interpolator.value_changed TO hanim_l_talocrural.rotation
+#ROUTE hanim_Pitch2Interpolator.value_changed TO hanim_r_talocrural.rotation
+#ROUTE hanim_Pitch2Interpolator.value_changed TO hanim_l_metatarsophalangeal_2.rotation
+#ROUTE hanim_Pitch2Interpolator.value_changed TO hanim_r_metatarsophalangeal_2.rotation
+#ROUTE hanim_Pitch2Interpolator.value_changed TO hanim_vl2.rotation
+#ROUTE hanim_Pitch2Interpolator.value_changed TO hanim_vt11.rotation
+#ROUTE hanim_Pitch2Interpolator.value_changed TO hanim_vt5.rotation
+#ROUTE hanim_Pitch2Interpolator.value_changed TO hanim_vc4.rotation
+#ROUTE hanim_Pitch2Interpolator.value_changed TO hanim_skullbase.rotation
+#ROUTE hanim_Pitch2Interpolator.value_changed TO hanim_l_sternoclavicular.rotation
+#ROUTE hanim_Pitch2Interpolator.value_changed TO hanim_r_sternoclavicular.rotation
+#ROUTE hanim_Pitch2Interpolator.value_changed TO hanim_l_shoulder.rotation
+#ROUTE hanim_Pitch2Interpolator.value_changed TO hanim_r_shoulder.rotation
+#ROUTE hanim_Pitch2Interpolator.value_changed TO hanim_l_elbow.rotation
+#ROUTE hanim_Pitch2Interpolator.value_changed TO hanim_r_elbow.rotation
+#ROUTE hanim_Pitch2Interpolator.value_changed TO hanim_l_radiocarpal.rotation
+#ROUTE hanim_Pitch2Interpolator.value_changed TO hanim_r_radiocarpal.rotation
+
+DEF hanim_RotationInterpolator OrientationInterpolator { 
+key [ 0 0.23 0.54 0.75 1 ] 
+keyValue [ 0 0 1 0, 0 5 0 1, 0 0 1 0, 0 -5 0 1, 0 0 1 0 ] }
+
+#ROUTE hanim_z100sTimer.fraction_changed TO hanim_RotationInterpolator.set_fraction
+#ROUTE hanim_RotationInterpolator.value_changed TO hanim_humanoid_root.rotation
+#ROUTE hanim_RotationInterpolator.value_changed TO hanimView.rotation 
+ 
+DEF hanim_RollLeftFingers2 OrientationInterpolator {   key [ 0 0.10 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 ]   keyValue [ 0 0 1 0, 0 0 0.1 -1, 0 0 0.2 -1, 0 0 0.3 -1, 0 0 1 0, 0 0 1 0, 0 0 0.1 -1, 0 0 0.2 -1, 0 0 0.2 1, 0 0 0.4 -1, 0 0 1 0  ] } 
+
+ROUTE hanim_z100sTimer.fraction_changed TO hanim_RollLeftFingers2.set_fraction
+#ROUTE hanim_RollLeftFingers2.value_changed TO hanim_l_carpometacarpal_1.rotation
+#ROUTE hanim_RollLeftFingers2.value_changed TO hanim_l_metacarpophalangeal_1.rotation
+#ROUTE hanim_RollLeftFingers2.value_changed TO hanim_l_carpal_interphalangeal_1.rotation
+#ROUTE hanim_RollLeftFingers2.value_changed TO hanim_l_carpal_proximal_interphalangeal_2.rotation
+#ROUTE hanim_RollLeftFingers2.value_changed TO hanim_l_metacarpophalangeal_2.rotation
+#ROUTE hanim_RollLeftFingers2.value_changed TO hanim_l_carpal_distal_interphalangeal_2.rotation#ROUTE hanim_RollLeftFingers2.value_changed TO hanim_l_carpal_proximal_interphalangeal_3.rotation
+#ROUTE hanim_RollLeftFingers2.value_changed TO hanim_l_metacarpophalangeal_3.rotation
+#ROUTE hanim_RollLeftFingers2.value_changed TO hanim_l_carpal_distal_interphalangeal_3.rotation
+#ROUTE hanim_RollLeftFingers2.value_changed TO hanim_l_carpal_proximal_interphalangeal_4.rotation
+#ROUTE hanim_RollLeftFingers2.value_changed TO hanim_l_metacarpophalangeal_4.rotation
+#ROUTE hanim_RollLeftFingers2.value_changed TO hanim_l_carpal_distal_interphalangeal_4.rotation
+#ROUTE hanim_RollLeftFingers2.value_changed TO hanim_l_carpal_proximal_interphalangeal_5.rotation
+#ROUTE hanim_RollLeftFingers2.value_changed TO hanim_l_metacarpophalangeal_5.rotation
+#ROUTE hanim_RollLeftFingers2.value_changed TO hanim_l_carpal_distal_interphalangeal_5.rotation
+
+DEF hanim_RollRightFingers2 OrientationInterpolator { 
+key [ 0 0.10 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 ] 
+keyValue [ 0 0 1 0, 0 0 0.1 1, 0 0 0.2 1, 0 0 0.3 1, 0 0 1 0, 0 0 1 0, 0 0 0.1 1, 0 0 0.2 1, 0 0 0.2 -1, 0 0 0.4 1, 0 0 1 0 ] }
+
+ROUTE hanim_z100sTimer.fraction_changed TO hanim_RollRightFingers2.set_fraction
+#ROUTE hanim_RollRightFingers2.value_changed TO hanim_r_carpometacarpal_1.rotation 
+#ROUTE hanim_RollRightFingers2.value_changed TO hanim_r_metacarpophalangeal_1.rotation
+#ROUTE hanim_RollRightFingers2.value_changed TO hanim_r_carpal_interphalangeal_1.rotation
+#ROUTE hanim_RollRightFingers2.value_changed TO hanim_r_carpal_proximal_interphalangeal_2.rotation
+#ROUTE hanim_RollRightFingers2.value_changed TO hanim_r_metacarpophalangeal_2.rotation
+#ROUTE hanim_RollRightFingers2.value_changed TO hanim_r_carpal_distal_interphalangeal_2.rotation
+#ROUTE hanim_RollRightFingers2.value_changed TO hanim_r_carpal_proximal_interphalangeal_3.rotation
+#ROUTE hanim_RollRightFingers2.value_changed TO hanim_r_metacarpophalangeal_3.rotation
+#ROUTE hanim_RollRightFingers2.value_changed TO hanim_r_carpal_distal_interphalangeal_3.rotation
+#ROUTE hanim_RollRightFingers2.value_changed TO hanim_r_carpal_proximal_interphalangeal_4.rotation
+#ROUTE hanim_RollRightFingers2.value_changed TO hanim_r_metacarpophalangeal_4.rotation
+#ROUTE hanim_RollRightFingers2.value_changed TO hanim_r_carpal_distal_interphalangeal_4.rotation
+#ROUTE hanim_RollRightFingers2.value_changed TO hanim_r_carpal_proximal_interphalangeal_5.rotation
+#ROUTE hanim_RollRightFingers2.value_changed TO hanim_r_metacarpophalangeal_5.rotation
+#ROUTE hanim_RollRightFingers2.value_changed TO hanim_r_carpal_distal_interphalangeal_5.rotation
+
+
+# ROUTE Everything_Touch.touchTime TO hanim_z100sTimer.set_startTime
+DEF hanim_Stand010BooleanSequencer BooleanSequencer {
+	key [ 0 0.11 0.22 0.55 0.63 0.73 0.85 1 ]
+	keyValue [ TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE ]
+	# [ hanim_Stand01 hanim_Walk01 hanim_Stand02 hanim_Walk01 hanim_Walk02 hanim_Skip01 hanim_Stand03 hanim_Stand03 ]
+}
+DEF hanim_Stand010SPLITTERBooleanFilter BooleanFilter { }
+DEF hanim_Stand010FINALEBooleanFilter BooleanFilter { }
+DEF hanim_Stand010NEGATERBooleanFilter BooleanFilter { }
+DEF hanim_Stand010OffTimeTrigger TimeTrigger { }
+DEF hanim_Stand010OnTimeTrigger TimeTrigger { }
+ROUTE hanim_z100sTimer.isActive TO hanim_Stand010SPLITTERBooleanFilter.set_boolean
+ROUTE hanim_z100sTimer.fraction_changed TO hanim_Stand010BooleanSequencer.set_fraction
+ROUTE hanim_Stand010BooleanSequencer.value_changed TO hanim_Stand010SPLITTERBooleanFilter.set_boolean
+ROUTE hanim_Stand010SPLITTERBooleanFilter.inputTrue TO hanim_Stand010OnTimeTrigger.set_boolean
+ROUTE hanim_Stand010SPLITTERBooleanFilter.inputFalse TO hanim_Stand010OffTimeTrigger.set_boolean
+ROUTE hanim_Stand010SPLITTERBooleanFilter.inputTrue TO hanim_Stand010Timer.set_enabled
+ROUTE hanim_Stand010SPLITTERBooleanFilter.inputFalse TO hanim_Stand010Timer.set_enabled
+ROUTE hanim_Stand010OffTimeTrigger.triggerTime TO hanim_Stand010Timer.set_stopTime
+ROUTE hanim_Stand010OnTimeTrigger.triggerTime TO hanim_Stand010Timer.set_startTime
+DEF hanim_Walk011BooleanSequencer BooleanSequencer {
+	key [ 0 0.11 0.22 0.55 0.63 0.73 0.85 1 ]
+	keyValue [ FALSE TRUE FALSE FALSE FALSE FALSE FALSE FALSE ]
+	# [ hanim_Stand01 hanim_Walk01 hanim_Stand02 hanim_Walk01 hanim_Walk02 hanim_Skip01 hanim_Stand03 hanim_Stand03 ]
+}
+DEF hanim_Walk011SPLITTERBooleanFilter BooleanFilter { }
+DEF hanim_Walk011FINALEBooleanFilter BooleanFilter { }
+DEF hanim_Walk011NEGATERBooleanFilter BooleanFilter { }
+DEF hanim_Walk011OffTimeTrigger TimeTrigger { }
+DEF hanim_Walk011OnTimeTrigger TimeTrigger { }
+ROUTE hanim_z100sTimer.fraction_changed TO hanim_Walk011BooleanSequencer.set_fraction
+ROUTE hanim_Walk011BooleanSequencer.value_changed TO hanim_Walk011SPLITTERBooleanFilter.set_boolean
+ROUTE hanim_Walk011SPLITTERBooleanFilter.inputTrue TO hanim_Walk011OnTimeTrigger.set_boolean
+ROUTE hanim_Walk011SPLITTERBooleanFilter.inputFalse TO hanim_Walk011OffTimeTrigger.set_boolean
+ROUTE hanim_Walk011SPLITTERBooleanFilter.inputTrue TO hanim_Walk011Timer.set_enabled
+ROUTE hanim_Walk011SPLITTERBooleanFilter.inputFalse TO hanim_Walk011Timer.set_enabled
+ROUTE hanim_Walk011OffTimeTrigger.triggerTime TO hanim_Walk011Timer.set_stopTime
+ROUTE hanim_Walk011OnTimeTrigger.triggerTime TO hanim_Walk011Timer.set_startTime
+DEF hanim_Stand022BooleanSequencer BooleanSequencer {
+	key [ 0 0.11 0.22 0.55 0.63 0.73 0.85 1 ]
+	keyValue [ FALSE FALSE TRUE FALSE FALSE FALSE FALSE FALSE ]
+	# [ hanim_Stand01 hanim_Walk01 hanim_Stand02 hanim_Walk01 hanim_Walk02 hanim_Skip01 hanim_Stand03 hanim_Stand03 ]
+}
+DEF hanim_Stand022SPLITTERBooleanFilter BooleanFilter { }
+DEF hanim_Stand022FINALEBooleanFilter BooleanFilter { }
+DEF hanim_Stand022NEGATERBooleanFilter BooleanFilter { }
+DEF hanim_Stand022OffTimeTrigger TimeTrigger { }
+DEF hanim_Stand022OnTimeTrigger TimeTrigger { }
+ROUTE hanim_z100sTimer.fraction_changed TO hanim_Stand022BooleanSequencer.set_fraction
+ROUTE hanim_Stand022BooleanSequencer.value_changed TO hanim_Stand022SPLITTERBooleanFilter.set_boolean
+ROUTE hanim_Stand022SPLITTERBooleanFilter.inputTrue TO hanim_Stand022OnTimeTrigger.set_boolean
+ROUTE hanim_Stand022SPLITTERBooleanFilter.inputFalse TO hanim_Stand022OffTimeTrigger.set_boolean
+ROUTE hanim_Stand022SPLITTERBooleanFilter.inputTrue TO hanim_Stand022Timer.set_enabled
+ROUTE hanim_Stand022SPLITTERBooleanFilter.inputFalse TO hanim_Stand022Timer.set_enabled
+ROUTE hanim_Stand022OffTimeTrigger.triggerTime TO hanim_Stand022Timer.set_stopTime
+ROUTE hanim_Stand022OnTimeTrigger.triggerTime TO hanim_Stand022Timer.set_startTime
+DEF hanim_Walk013BooleanSequencer BooleanSequencer {
+	key [ 0 0.11 0.22 0.55 0.63 0.73 0.85 1 ]
+	keyValue [ FALSE FALSE FALSE TRUE FALSE FALSE FALSE FALSE ]
+	# [ hanim_Stand01 hanim_Walk01 hanim_Stand02 hanim_Walk01 hanim_Walk02 hanim_Skip01 hanim_Stand03 hanim_Stand03 ]
+}
+DEF hanim_Walk013SPLITTERBooleanFilter BooleanFilter { }
+DEF hanim_Walk013FINALEBooleanFilter BooleanFilter { }
+DEF hanim_Walk013NEGATERBooleanFilter BooleanFilter { }
+DEF hanim_Walk013OffTimeTrigger TimeTrigger { }
+DEF hanim_Walk013OnTimeTrigger TimeTrigger { }
+ROUTE hanim_z100sTimer.fraction_changed TO hanim_Walk013BooleanSequencer.set_fraction
+ROUTE hanim_Walk013BooleanSequencer.value_changed TO hanim_Walk013SPLITTERBooleanFilter.set_boolean
+ROUTE hanim_Walk013SPLITTERBooleanFilter.inputTrue TO hanim_Walk013OnTimeTrigger.set_boolean
+ROUTE hanim_Walk013SPLITTERBooleanFilter.inputFalse TO hanim_Walk013OffTimeTrigger.set_boolean
+ROUTE hanim_Walk013SPLITTERBooleanFilter.inputTrue TO hanim_Walk013Timer.set_enabled
+ROUTE hanim_Walk013SPLITTERBooleanFilter.inputFalse TO hanim_Walk013Timer.set_enabled
+ROUTE hanim_Walk013OffTimeTrigger.triggerTime TO hanim_Walk013Timer.set_stopTime
+ROUTE hanim_Walk013OnTimeTrigger.triggerTime TO hanim_Walk013Timer.set_startTime
+DEF hanim_Walk024BooleanSequencer BooleanSequencer {
+	key [ 0 0.11 0.22 0.55 0.63 0.73 0.85 1 ]
+	keyValue [ FALSE FALSE FALSE FALSE TRUE FALSE FALSE FALSE ]
+	# [ hanim_Stand01 hanim_Walk01 hanim_Stand02 hanim_Walk01 hanim_Walk02 hanim_Skip01 hanim_Stand03 hanim_Stand03 ]
+}
+DEF hanim_Walk024SPLITTERBooleanFilter BooleanFilter { }
+DEF hanim_Walk024FINALEBooleanFilter BooleanFilter { }
+DEF hanim_Walk024NEGATERBooleanFilter BooleanFilter { }
+DEF hanim_Walk024OffTimeTrigger TimeTrigger { }
+DEF hanim_Walk024OnTimeTrigger TimeTrigger { }
+ROUTE hanim_z100sTimer.fraction_changed TO hanim_Walk024BooleanSequencer.set_fraction
+ROUTE hanim_Walk024BooleanSequencer.value_changed TO hanim_Walk024SPLITTERBooleanFilter.set_boolean
+ROUTE hanim_Walk024SPLITTERBooleanFilter.inputTrue TO hanim_Walk024OnTimeTrigger.set_boolean
+ROUTE hanim_Walk024SPLITTERBooleanFilter.inputFalse TO hanim_Walk024OffTimeTrigger.set_boolean
+ROUTE hanim_Walk024SPLITTERBooleanFilter.inputTrue TO hanim_Walk024Timer.set_enabled
+ROUTE hanim_Walk024SPLITTERBooleanFilter.inputFalse TO hanim_Walk024Timer.set_enabled
+ROUTE hanim_Walk024OffTimeTrigger.triggerTime TO hanim_Walk024Timer.set_stopTime
+ROUTE hanim_Walk024OnTimeTrigger.triggerTime TO hanim_Walk024Timer.set_startTime
+DEF hanim_Skip015BooleanSequencer BooleanSequencer {
+	key [ 0 0.11 0.22 0.55 0.63 0.73 0.85 1 ]
+	keyValue [ FALSE FALSE FALSE FALSE FALSE TRUE FALSE FALSE ]
+	# [ hanim_Stand01 hanim_Walk01 hanim_Stand02 hanim_Walk01 hanim_Walk02 hanim_Skip01 hanim_Stand03 hanim_Stand03 ]
+}
+DEF hanim_Skip015SPLITTERBooleanFilter BooleanFilter { }
+DEF hanim_Skip015FINALEBooleanFilter BooleanFilter { }
+DEF hanim_Skip015NEGATERBooleanFilter BooleanFilter { }
+DEF hanim_Skip015OffTimeTrigger TimeTrigger { }
+DEF hanim_Skip015OnTimeTrigger TimeTrigger { }
+ROUTE hanim_z100sTimer.fraction_changed TO hanim_Skip015BooleanSequencer.set_fraction
+ROUTE hanim_Skip015BooleanSequencer.value_changed TO hanim_Skip015SPLITTERBooleanFilter.set_boolean
+ROUTE hanim_Skip015SPLITTERBooleanFilter.inputTrue TO hanim_Skip015OnTimeTrigger.set_boolean
+ROUTE hanim_Skip015SPLITTERBooleanFilter.inputFalse TO hanim_Skip015OffTimeTrigger.set_boolean
+ROUTE hanim_Skip015SPLITTERBooleanFilter.inputTrue TO hanim_Skip015Timer.set_enabled
+ROUTE hanim_Skip015SPLITTERBooleanFilter.inputFalse TO hanim_Skip015Timer.set_enabled
+ROUTE hanim_Skip015OffTimeTrigger.triggerTime TO hanim_Skip015Timer.set_stopTime
+ROUTE hanim_Skip015OnTimeTrigger.triggerTime TO hanim_Skip015Timer.set_startTime
+DEF hanim_Stand036BooleanSequencer BooleanSequencer {
+	key [ 0 0.11 0.22 0.55 0.63 0.73 0.85 1 ]
+	keyValue [ FALSE FALSE FALSE FALSE FALSE FALSE TRUE FALSE ]
+	# [ hanim_Stand01 hanim_Walk01 hanim_Stand02 hanim_Walk01 hanim_Walk02 hanim_Skip01 hanim_Stand03 hanim_Stand03 ]
+}
+DEF hanim_Stand036SPLITTERBooleanFilter BooleanFilter { }
+DEF hanim_Stand036FINALEBooleanFilter BooleanFilter { }
+DEF hanim_Stand036NEGATERBooleanFilter BooleanFilter { }
+DEF hanim_Stand036OffTimeTrigger TimeTrigger { }
+DEF hanim_Stand036OnTimeTrigger TimeTrigger { }
+ROUTE hanim_z100sTimer.fraction_changed TO hanim_Stand036BooleanSequencer.set_fraction
+ROUTE hanim_Stand036BooleanSequencer.value_changed TO hanim_Stand036SPLITTERBooleanFilter.set_boolean
+ROUTE hanim_Stand036SPLITTERBooleanFilter.inputTrue TO hanim_Stand036OnTimeTrigger.set_boolean
+ROUTE hanim_Stand036SPLITTERBooleanFilter.inputFalse TO hanim_Stand036OffTimeTrigger.set_boolean
+ROUTE hanim_Stand036SPLITTERBooleanFilter.inputTrue TO hanim_Stand036Timer.set_enabled
+ROUTE hanim_Stand036SPLITTERBooleanFilter.inputFalse TO hanim_Stand036Timer.set_enabled
+ROUTE hanim_Stand036OffTimeTrigger.triggerTime TO hanim_Stand036Timer.set_stopTime
+ROUTE hanim_Stand036OnTimeTrigger.triggerTime TO hanim_Stand036Timer.set_startTime
+DEF hanim_Stand037BooleanSequencer BooleanSequencer {
+	key [ 0 0.11 0.22 0.55 0.63 0.73 0.85 1 ]
+	keyValue [ FALSE FALSE FALSE FALSE FALSE FALSE FALSE TRUE ]
+	# [ hanim_Stand01 hanim_Walk01 hanim_Stand02 hanim_Walk01 hanim_Walk02 hanim_Skip01 hanim_Stand03 hanim_Stand03 ]
+}
+DEF hanim_Stand037SPLITTERBooleanFilter BooleanFilter { }
+DEF hanim_Stand037FINALEBooleanFilter BooleanFilter { }
+DEF hanim_Stand037NEGATERBooleanFilter BooleanFilter { }
+DEF hanim_Stand037OffTimeTrigger TimeTrigger { }
+DEF hanim_Stand037OnTimeTrigger TimeTrigger { }
+ROUTE hanim_z100sTimer.cycleTime TO hanim_Stand037Timer.set_stopTime
+ROUTE hanim_z100sTimer.isActive TO hanim_Stand037Timer.set_enabled
+DEF hanim_Stand037FINALETimeTrigger TimeTrigger { }
+ROUTE hanim_Stand037FINALEBooleanFilter.inputFalse TO hanim_Stand037FINALETimeTrigger.set_boolean
+ROUTE hanim_Stand037FINALETimeTrigger.triggerTime TO hanim_Stand037Timer.set_stopTime
+ROUTE hanim_z100sTimer.fraction_changed TO hanim_Stand037BooleanSequencer.set_fraction
+ROUTE hanim_Stand037BooleanSequencer.value_changed TO hanim_Stand037SPLITTERBooleanFilter.set_boolean
+ROUTE hanim_Stand037SPLITTERBooleanFilter.inputTrue TO hanim_Stand037OnTimeTrigger.set_boolean
+ROUTE hanim_Stand037SPLITTERBooleanFilter.inputFalse TO hanim_Stand037OffTimeTrigger.set_boolean
+ROUTE hanim_Stand037SPLITTERBooleanFilter.inputTrue TO hanim_Stand037Timer.set_enabled
+ROUTE hanim_Stand037SPLITTERBooleanFilter.inputFalse TO hanim_Stand037Timer.set_enabled
+ROUTE hanim_Stand037OffTimeTrigger.triggerTime TO hanim_Stand037Timer.set_stopTime
+ROUTE hanim_Stand037OnTimeTrigger.triggerTime TO hanim_Stand037Timer.set_startTime
+###########################################################################################
+ROUTE hanim_Stand010Timer.stopTime TO hanim_Walk011Timer.set_startTime
+ROUTE hanim_Stand010Timer.isActive TO hanim_Walk011NEGATERBooleanFilter.set_boolean
+ROUTE hanim_Walk011NEGATERBooleanFilter.inputNegate TO hanim_Stand010BooleanSequencer.next
+ROUTE hanim_Walk011Timer.stopTime TO hanim_Stand022Timer.set_startTime
+ROUTE hanim_Walk011Timer.isActive TO hanim_Stand022NEGATERBooleanFilter.set_boolean
+ROUTE hanim_Stand022NEGATERBooleanFilter.inputNegate TO hanim_Walk011BooleanSequencer.next
+ROUTE hanim_Stand022Timer.stopTime TO hanim_Walk013Timer.set_startTime
+ROUTE hanim_Stand022Timer.isActive TO hanim_Walk013NEGATERBooleanFilter.set_boolean
+ROUTE hanim_Walk013NEGATERBooleanFilter.inputNegate TO hanim_Stand022BooleanSequencer.next
+ROUTE hanim_Walk013Timer.stopTime TO hanim_Walk024Timer.set_startTime
+ROUTE hanim_Walk013Timer.isActive TO hanim_Walk024NEGATERBooleanFilter.set_boolean
+ROUTE hanim_Walk024NEGATERBooleanFilter.inputNegate TO hanim_Walk013BooleanSequencer.next
+ROUTE hanim_Walk024Timer.stopTime TO hanim_Skip015Timer.set_startTime
+ROUTE hanim_Walk024Timer.isActive TO hanim_Skip015NEGATERBooleanFilter.set_boolean
+ROUTE hanim_Skip015NEGATERBooleanFilter.inputNegate TO hanim_Walk024BooleanSequencer.next
+ROUTE hanim_Skip015Timer.stopTime TO hanim_Stand036Timer.set_startTime
+ROUTE hanim_Skip015Timer.isActive TO hanim_Stand036NEGATERBooleanFilter.set_boolean
+ROUTE hanim_Stand036NEGATERBooleanFilter.inputNegate TO hanim_Skip015BooleanSequencer.next
+ROUTE hanim_Stand036Timer.stopTime TO hanim_Stand037Timer.set_startTime
+ROUTE hanim_Stand036Timer.isActive TO hanim_Stand037NEGATERBooleanFilter.set_boolean
+ROUTE hanim_Stand037NEGATERBooleanFilter.inputNegate TO hanim_Stand036BooleanSequencer.next
+ROUTE hanim_Stand037Timer.stopTime TO hanim_Stand010Timer.set_startTime
+ROUTE hanim_Stand037Timer.isActive TO hanim_Stand010NEGATERBooleanFilter.set_boolean
+ROUTE hanim_Stand010NEGATERBooleanFilter.inputNegate TO hanim_Stand037BooleanSequencer.next
