@@ -60,7 +60,7 @@
 <CoordinateInterpolator key='' keyValue='' containerField='children' class='' id='' style=''/>
 <CoordinateInterpolator2D key='' keyValue='' containerField='children' class='' id='' style=''/>
 <Cylinder bottom='true' height='2' radius='1' side='true' solid='true' top='true' containerField='geometry' class='' id='' style=''/>
-<CylinderSensor autoOffset='true' axisRotation='0 1 0 0' description='' diskAngle='0.26179167' enabled='true' maxAngle='-1' minAngle='0' offset='0' containerField='children' class='' id='' style=''/>
+<CylinderSensor autoOffset='true' axisRotation='0 0 1 0' description='' diskAngle='0.26179167' enabled='true' maxAngle='-1' minAngle='0' offset='0' containerField='children' class='' id='' style=''/>
 <Delay channelCountMode='MAX' channelInterpretation='SPEAKERS' delayTime='0' description='' enabled='true' gain='1' maxDelayTime='1' pauseTime='0' resumeTime='0' startTime='0' stopTime='0' tailTime='0' containerField='children' class='' id='' style=''/>
 <DirectionalLight ambientIntensity='0' color='1 1 1' direction='0 0 -1' global='false' intensity='1' on='true' shadowIntensity='1' shadows='false' containerField='children' class='' id='' style=''/>
 <DISEntityManager address='localhost' applicationID='0' port='0' siteID='0' containerField='children' class='' id='' style=''/>
@@ -70,7 +70,7 @@
 <DynamicsCompressor attack='0.003' channelCountMode='MAX' channelInterpretation='SPEAKERS' description='' enabled='true' gain='1' knee='30' pauseTime='0' ratio='12' release='0.25' resumeTime='0' startTime='0' stopTime='0' tailTime='0' threshold='-24' containerField='children' class='' id='' style=''/>
 <EaseInEaseOut easeInEaseOut='' key='' containerField='children' class='' id='' style=''/>
 <EdgeEnhancementVolumeStyle edgeColor='0 0 0 1' enabled='true' gradientThreshold='0.4' containerField='renderStyle' class='' id='' style=''/>
-<ElevationGrid ccw='true' colorPerVertex='true' creaseAngle='0' height='0 0 0 0' normalPerVertex='true' solid='true' xDimension='2' xSpacing='1.0' zDimension='2' zSpacing='1.0' containerField='geometry' class='' id='' style=''/>
+<ElevationGrid ccw='true' colorPerVertex='true' creaseAngle='0' height='' normalPerVertex='true' solid='true' xDimension='0' xSpacing='1.0' zDimension='0' zSpacing='1.0' containerField='geometry' class='' id='' style=''/>
 <EspduTransform address='localhost' applicationID='0' articulationParameterArray='' articulationParameterChangeIndicatorArray='' articulationParameterCount='0' articulationParameterDesignatorArray='' articulationParameterIdPartAttachedToArray='' articulationParameterTypeArray='' bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' center='0 0 0' collisionType='0' deadReckoning='0' description='' detonationLocation='0 0 0' detonationRelativeLocation='0 0 0' detonationResult='0' enabled='true' entityCategory='0' entityCountry='0' entityDomain='0' entityExtra='0' entityID='0' entityKind='0' entitySpecific='0' entitySubcategory='0' eventApplicationID='0' eventEntityID='0' eventNumber='0' eventSiteID='0' fireMissionIndex='0' fired1='false' fired2='false' firingRange='0' firingRate='0' forceID='0' fuse='0' geoCoords='0 0 0' geoSystem='"GD" "WE"' linearAcceleration='0 0 0' linearVelocity='0 0 0' marking='' multicastRelayHost='' multicastRelayPort='0' munitionApplicationID='0' munitionEndPoint='0 0 0' munitionEntityID='0' munitionQuantity='0' munitionSiteID='0' munitionStartPoint='0 0 0' networkMode='standAlone' port='0' readInterval='0.1' rotation='0 0 1 0' rtpHeaderExpected='false' scale='1 1 1' scaleOrientation='0 0 1 0' siteID='0' translation='0 0 0' visible='true' warhead='0' writeInterval='1.0' containerField='children' class='' id='' style=''/>
 <ExplosionEmitter mass='0' on='true' position='0 0 0' speed='0' surfaceArea='0' variation='0.25' containerField='emitter' class='' id='' style=''/>
 <EXPORT AS='' localDEF='' class='' id='' style=''/>
@@ -87,7 +87,7 @@
 <Gain channelCountMode='MAX' channelInterpretation='SPEAKERS' description='' enabled='true' gain='1' pauseTime='0' resumeTime='0' startTime='0' stopTime='0' tailTime='0' containerField='children' class='' id='' style=''/>
 <GeneratedCubeMapTexture description='' size='128' update='NONE' containerField='texture' class='' id='' style=''/>
 <GeoCoordinate geoSystem='"GD" "WE"' point='' containerField='coord' class='' id='' style=''/>
-<GeoElevationGrid ccw='true' colorPerVertex='true' creaseAngle='0' geoGridOrigin='0 0 0' geoSystem='"GD" "WE"' height='0 0 0 0' normalPerVertex='true' solid='true' xDimension='2' xSpacing='1.0' yScale='1' zDimension='2' zSpacing='1.0' containerField='geometry' class='' id='' style=''/>
+<GeoElevationGrid ccw='true' colorPerVertex='true' creaseAngle='0' geoGridOrigin='0 0 0' geoSystem='"GD" "WE"' height='0 0' normalPerVertex='true' solid='true' xDimension='0' xSpacing='1.0' yScale='1' zDimension='0' zSpacing='1.0' containerField='geometry' class='' id='' style=''/>
 <GeoLocation bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' geoCoords='0 0 0' geoSystem='"GD" "WE"' visible='true' containerField='children' class='' id='' style=''/>
 <GeoLOD bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' center='0 0 0' child1Url='' child2Url='' child3Url='' child4Url='' geoSystem='"GD" "WE"' range='10' rootUrl='' visible='true' containerField='children' class='' id='' style=''/>
 <GeoMetadata autoRefresh='0' autoRefreshTimeLimit='3600' description='' load='true' summary='' url='' containerField='children' class='' id='' style=''/>
@@ -99,9 +99,9 @@
 <GeoViewpoint centerOfRotation='0 0 0' description='' farDistance='-1' fieldOfView='0.7854' geoSystem='"GD" "WE"' jump='true' nearDistance='-1' orientation='0 0 1 0' position='0 0 100000' retainUserOffsets='false' speedFactor='1.0' viewAll='false' containerField='children' class='' id='' style=''/>
 <Group bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' visible='true' containerField='children' class='' id='' style=''/>
 <HAnimDisplacer coordIndex='' description='' displacements='' name='' weight='0.0' containerField='displacers' class='' id='' style=''/>
-<HAnimHumanoid bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' center='0 0 0' description='' info='' jointBindingPositions='0 0 0' jointBindingRotations='0 0 1 0' jointBindingScales='0 0 0' loa='-1' name='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' skeletalConfiguration='BASIC' translation='0 0 0' version='2.0' visible='true' containerField='children' class='' id='' style=''/>
+<HAnimHumanoid bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' center='0 0 0' description='' info='' jointBindingPositions='' jointBindingRotations='' jointBindingScales='' loa='-1' motionsEnabled='' name='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' skeletalConfiguration='BASIC' translation='0 0 0' version='2.0' visible='true' containerField='children' class='' id='' style=''/>
 <HAnimJoint bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' center='0 0 0' description='' limitOrientation='0 0 1 0' llimit='0 0 0' name='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' skinCoordIndex='' skinCoordWeight='' stiffness='0 0 0' translation='0 0 0' ulimit='0 0 0' visible='true' containerField='children' class='' id='' style=''/>
-<HAnimMotion channels='' channelsEnabled='' description='' enabled='false' endFrame='0' frameDuration='0.1' frameIncrement='1' frameIndex='0' joints='' loa='-1' loop='false' name='' skeletalConfiguration='BASIC' startFrame='0' values='' containerField='children' class='' id='' style=''/>
+<HAnimMotion channels='' channelsEnabled='' description='' enabled='true' endFrame='0' frameDuration='0.1' frameIncrement='1' frameIndex='0' joints='' loa='-1' loop='false' name='' startFrame='0' values='' containerField='motions' class='' id='' style=''/>
 <HAnimSegment bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' centerOfMass='0 0 0' description='' mass='0' momentsOfInertia='0 0 0 0 0 0 0 0 0' name='' visible='true' containerField='children' class='' id='' style=''/>
 <HAnimSite bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' center='0 0 0' description='' name='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' visible='true' containerField='children' class='' id='' style=''/>
 <head class='' id='' style=''/>
@@ -176,7 +176,7 @@
 <PickableGroup bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' description='' objectType='"ALL"' pickable='true' visible='true' containerField='children' class='' id='' style=''/>
 <PixelTexture description='' image='0 0 0' repeatS='true' repeatT='true' containerField='texture' class='' id='' style=''/>
 <PixelTexture3D description='' image='0 0 0 0' repeatR='false' repeatS='false' repeatT='false' containerField='texture' class='' id='' style=''/>
-<PlaneSensor autoOffset='true' axisRotation='0 1 0 0' description='' enabled='true' maxPosition='-1 -1' minPosition='0 0' offset='0 0 0' containerField='children' class='' id='' style=''/>
+<PlaneSensor autoOffset='true' axisRotation='0 0 1 0' description='' enabled='true' maxPosition='-1 -1' minPosition='0 0' offset='0 0 0' containerField='children' class='' id='' style=''/>
 <PointEmitter direction='0 1 0' mass='0' on='true' position='0 0 0' speed='0' surfaceArea='0' variation='0.25' containerField='emitter' class='' id='' style=''/>
 <PointLight ambientIntensity='0' attenuation='1 0 0' color='1 1 1' global='true' intensity='1' location='0 0 0' on='true' radius='100' shadowIntensity='1' shadows='false' containerField='children' class='' id='' style=''/>
 <PointPickSensor description='' enabled='true' intersectionType='BOUNDS' matchCriterion='MATCH_ANY' objectType='"ALL"' sortOrder='CLOSEST' containerField='children' class='' id='' style=''/>
@@ -234,7 +234,7 @@
 <StreamAudioDestination channelCountMode='MAX' channelInterpretation='SPEAKERS' description='' enabled='true' gain='1' mediaDeviceID='' streamIdentifier='' containerField='children' class='' id='' style=''/>
 <StreamAudioSource channelCountMode='MAX' channelInterpretation='SPEAKERS' description='' enabled='true' gain='1' pauseTime='0' resumeTime='0' startTime='0' stopTime='0' streamIdentifier='' containerField='children' class='' id='' style=''/>
 <StringSensor deletionAllowed='true' description='' enabled='true' containerField='children' class='' id='' style=''/>
-<SurfaceEmitter coordIndex='-1' mass='0' on='true' speed='0' surfaceArea='0' variation='0.25' containerField='emitter' class='' id='' style=''/>
+<SurfaceEmitter mass='0' on='true' speed='0' surfaceArea='0' variation='0.25' containerField='emitter' class='' id='' style=''/>
 <Switch bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' visible='true' whichChoice='-1' containerField='children' class='' id='' style=''/>
 <TexCoordChaser2D duration='1' initialDestination='' initialValue='' containerField='children' class='' id='' style=''/>
 <TexCoordDamper2D initialDestination='' initialValue='' order='3' tau='0.3' tolerance='-1' containerField='children' class='' id='' style=''/>
@@ -247,9 +247,9 @@
 <TextureProjector ambientIntensity='0' color='1 1 1' description='' direction='0 0 1' farDistance='-1' fieldOfView='0.7854' global='true' intensity='1' location='0 0 0' nearDistance='-1' on='true' shadowIntensity='1' shadows='false' upVector='0 0 1' containerField='children' class='' id='' style=''/>
 <TextureProjectorParallel ambientIntensity='0' color='1 1 1' description='' direction='0 0 1' farDistance='-1' fieldOfView='-1 -1 1 1' global='true' intensity='1' location='0 0 0' nearDistance='-1' on='true' shadowIntensity='1' shadows='false' containerField='children' class='' id='' style=''/>
 <TextureProperties anisotropicDegree='1' borderColor='0 0 0 0' borderWidth='0' boundaryModeR='REPEAT' boundaryModeS='REPEAT' boundaryModeT='REPEAT' generateMipMaps='false' magnificationFilter='FASTEST' minificationFilter='FASTEST' textureCompression='FASTEST' texturePriority='0' containerField='textureProperties' class='' id='' style=''/>
-<TextureTransform center='0 0' rotation='0' scale='1 1' translation='0 0' containerField='textureTransform' class='' id='' style=''/>
-<TextureTransform3D center='0 0 0' rotation='0 0 1 0' scale='1 1 1' translation='0 0 0' containerField='textureTransform' class='' id='' style=''/>
-<TextureTransformMatrix3D matrix='1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1' containerField='textureTransform' class='' id='' style=''/>
+<TextureTransform center='0 0' mapping='' rotation='0' scale='1 1' translation='0 0' containerField='textureTransform' class='' id='' style=''/>
+<TextureTransform3D center='0 0 0' mapping='' rotation='0 0 1 0' scale='1 1 1' translation='0 0 0' containerField='textureTransform' class='' id='' style=''/>
+<TextureTransformMatrix3D mapping='' matrix='1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1' containerField='textureTransform' class='' id='' style=''/>
 <TimeSensor cycleInterval='1.0' description='' enabled='true' loop='false' pauseTime='0' resumeTime='0' startTime='0' stopTime='0' containerField='children' class='' id='' style=''/>
 <TimeTrigger containerField='children' class='' id='' style=''/>
 <ToneMappedVolumeStyle coolColor='0 0 1 0' enabled='true' warmColor='1 1 0 0' containerField='renderStyle' class='' id='' style=''/>

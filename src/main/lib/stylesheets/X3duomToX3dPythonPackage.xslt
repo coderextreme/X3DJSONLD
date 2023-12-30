@@ -198,7 +198,7 @@ except:
     
         <xsl:result-document href="{$X3dPackageDirectory}/x3d.py" method="text" omit-xml-declaration="yes" encoding="UTF-8" indent="no">
         
-        <xsl:text disable-output-escaping="yes"><![CDATA[]]></xsl:text>
+	 <xsl:text disable-output-escaping="yes"><![CDATA[]]></xsl:text>
 
         <!-- process elements -->
         
@@ -223,27 +223,6 @@ This work is part of the X3D Python Scene Access Interface Library (X3DPSAIL).
 import re
 
 _DEBUG = False       # options True False
-
-###############################################
-
-# Simple JSON list helper for enumerationing MFNode children -- John Carlson
-def JSONListHelper(fieldName="", childClass=None, children=None, indentLevel=0, syntax="JSON"):
-    result = ''
-    indent = '    ' * indentLevel
-    result = indent + '"-'+fieldName+'": ['
-    if children:
-        result +=     "\n"
-        if childClass is None:
-            result +=     (("").join(each.JSON(indentLevel=indentLevel+1, syntax=syntax) for each in children)).rstrip()
-        elif childClass is Comment:
-            result +=     ((",\n").join(each.JSON(indentLevel=indentLevel+4, syntax=syntax) for each in children if isinstance(each, childClass))).rstrip()
-        else:
-            result +=     (("").join(each.JSON(indentLevel=indentLevel+1, syntax=syntax) for each in children if isinstance(each, childClass))).rstrip()
-        if result.endswith(","):
-            result = result[:-1] # remove trailing comma from last element of list
-        result +=     "\n"
-    result += indent + "]"
-    return result
 
 ###############################################
 
@@ -696,7 +675,7 @@ class Comment(_X3DStatement):
         result = ''
         indent = '  ' * indentLevel
         if self.value:
-            result = indent + '{ "#comment" : "' + self.value + '" }' + ''  # John: removed comment for head join
+            result = indent + '{ "#comment" : "' + self.value + '" }' + '\n'
         return result
 
 def isComment(value):
@@ -2564,9 +2543,8 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             <xsl:when test="($fieldTypeName = 'MFString')">
                 <xsl:text>result = ''
         if self.__value: # walk each child in list, if any (avoid empty list recursion)
-            for each in self.__value: # debug MFString
-		if instance(each, SFString):
-                    result += '"'+ str(each).replace('"','&amp;quot;') + '"' + ' '
+            for each in self.__value:
+                result += '"' + str(each).replace('"','&amp;quot;') + '"' + ' '
         result = result.rstrip(' ')
         return result</xsl:text>
             </xsl:when>
@@ -2995,7 +2973,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
 
     # TODO confirm JSON Schema header
     JSON_HEADER = '''{
-    "X3D":
+    "X3D":,
     {
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
@@ -3893,6 +3871,9 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 lineNumber = 1
             if selfX3dXmlText: # might have failed to generate
                 print(prependLineNumbers(selfX3dXmlText,lineNumber))
+            # TODO handle xmldsig# namespace error by xmlschema library - otherwise trap/identify this error
+            # Submitted bug report: validation problem, xmldsig# namespace for XML digital signature #357
+            # https://github.com/sissaschool/xmlschema/issues/357
     # output function - - - - - - - - - -
     def VRML97(self, indentLevel=0):
         """ Provide VRML97 output serialization suitable for .wrl file. """
@@ -4252,35 +4233,21 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             result += str(self.head.JSON(indentLevel=indentLevel+1, syntax=syntax))
         if self.Scene and self.Scene.hasChild():
             result += str(self.Scene.JSON(indentLevel=indentLevel+1, syntax=syntax))
-            result += '\n' + indent + '}' + '\n'
-            result += '}' + '\n'
+        result += '}' + '\n'
 #       print('JSON serialization complete.', flush=True)
         return result</xsl:text>
             </xsl:when>
             <xsl:otherwise> <!-- non-X3D (i.e. non-root) JSON() -->
                 <xsl:text>
         result = indent ### confirm
-        # if _DEBUG: result += indent + '# invoked class function
-        # here we are DEBUG</xsl:text>
-        <xsl:if test="not(($elementName = 'head') or ($elementName = 'Scene') or ($elementName = 'component') or ($elementName = 'unit') or ($elementName = 'meta'))">
-                <xsl:text>
-        result += '{ '</xsl:text>
-        </xsl:if>
-        <xsl:if test="not(($elementName = 'component') or ($elementName = 'unit') or ($elementName = 'meta'))">
-
-                <xsl:text>
-        result += '"</xsl:text>
+        # if _DEBUG: result += indent + '# invoked class function </xsl:text>
                 <xsl:value-of select="$elementName"/>
-                <xsl:text>"'</xsl:text>
-
-                <xsl:text>
-        result += ' : ' </xsl:text>
-                <xsl:if test="(($elementName = 'head') or ($elementName = 'Scene'))">
-                        <xsl:text>
-        result += indent + '{\n'   # added this newline for DEBUG.  attributre group prints the {</xsl:text>
-                </xsl:if>
-        </xsl:if>
-        <xsl:text>
+                <xsl:text disable-output-escaping="yes"><![CDATA[.JSON(self=' + str(self) + ', indentLevel=' + str(indentLevel) + '), indent="' + indent + '"'
+        # print(result)
+        result += '"]]></xsl:text>
+                <xsl:value-of select="$elementName"/>
+                <xsl:text>":\n'
+        result += indent + '{\n'
         attributeResult = ''</xsl:text>
                 <!-- opening tag is unclosed since followed by attributes -->
                 <!-- output simple-type fields as JSON attributes -->
@@ -4330,8 +4297,10 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                             </xsl:otherwise>
                         </xsl:choose>
                         <xsl:text>
-            attributeResult += indent + </xsl:text>
-                        <xsl:text>'"@</xsl:text>
+            attributeResult += "</xsl:text>
+                        <xsl:value-of select="$indent"/>
+                        <xsl:text>    </xsl:text>
+                        <xsl:text>" + '"@</xsl:text>
                         <xsl:value-of select="translate($fieldName,'_','')"/><!-- de-mung class_ id_ and style attributes -->
                         <xsl:text>":"' + </xsl:text>
                         <xsl:choose>
@@ -4369,26 +4338,35 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         if attributeResult.endswith(","):
             attributeResult = attributeResult[:-1] # remove trailing comma from last element of list
         if attributeResult:
-            result += "{\n" + attributeResult + '\n'
-        if not self.hasChild():
-            if syntax.upper() != "JSON":
-                raise X3DValueError('.toJSON(syntax=' + syntax + ') is incorrect, allowed value is "JSON"')
-        <!--else:
-                </xsl:text>
+            result += "</xsl:text>
+                <xsl:value-of select="$indent"/>
+                <xsl:text>  </xsl:text>
+                <xsl:text>{\n</xsl:text>
+                <xsl:text>" + attributeResult + '\n' + "</xsl:text>
+                <xsl:value-of select="$indent"/>
+                <xsl:text>  </xsl:text>
+                <xsl:text>" + '}</xsl:text>
+                <!-- https://peps.python.org/pep-0008/#inline-comments -->
+            <!--<xsl:text>  # after adding attributeResult </xsl:text> debug -->
+                <xsl:text>\n'</xsl:text>
+                
+                <!-- close element -->
+                <xsl:text>
+        if not self.hasChild():</xsl:text>
+                <xsl:text>
+            if syntax.upper() == "JSON":
+                result += '</xsl:text>
+                <xsl:value-of select="$indent"/>
+                <xsl:text>}</xsl:text>
                 <xsl:if test="(count(following-sibling::*) > 0)">
                     <xsl:text>,</xsl:text>
                 </xsl:if>
-                <xsl:text>' + '\n'-->
-        else:
-            if attributeResult:</xsl:text>
-                <xsl:if test="(count(following-sibling::*) > 0)">
-                    <xsl:text>
-                result +=','</xsl:text>
-                </xsl:if>
-                <xsl:if test="(count(following-sibling::*) = 0)">
-                    <xsl:text>
-                pass</xsl:text>
-                </xsl:if>
+                <!-- https://peps.python.org/pep-0008/#inline-comments -->
+            <!--<xsl:text>  # </xsl:text><xsl:value-of select="$elementName"/><xsl:text> element singleton complete</xsl:text> debug -->
+                <xsl:text>' + '\n'
+            else:
+                raise X3DValueError('.toJSON(syntax=' + syntax + ') is incorrect, allowed value is "JSON"')
+        else:</xsl:text>
             <!--<xsl:text>
             result += '</xsl:text>
                 <xsl:value-of select="$indent"/>
@@ -4407,14 +4385,9 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                         <xsl:text> found self.children, now invoking JSON(' + str(indentLevel+1) + ')', flush=True)
                 # order is significant for component, unit, meta statements
                 if self.children: # walk each child in list, if any (avoid empty list recursion)
-                    # for each in self.children:
+                    for each in self.children:
                         # TODO check order of output: component unit meta
-                        # result += each.JSON(indentLevel=indentLevel+1, syntax=syntax)
-                        comments =  JSONListHelper("children", Comment, self.children, indentLevel=indentLevel+1, syntax=syntax)
-                        components = JSONListHelper("component", component, self.children, indentLevel=indentLevel+1, syntax=syntax)
-                        units = JSONListHelper("unit", unit, self.children, indentLevel=indentLevel+1, syntax=syntax)
-                        metas = JSONListHelper("meta", meta, self.children, indentLevel=indentLevel+1, syntax=syntax)
-                        result += ",\n".join([comments,  components, units, metas])+"\n"</xsl:text>
+                        result += each.JSON(indentLevel=indentLevel+1, syntax=syntax)</xsl:text>
                         </xsl:when>
                     <xsl:otherwise>
                         <xsl:for-each select="$allFields[contains(@type,'Node')]">
@@ -4467,20 +4440,10 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             if self.</xsl:text>
                         <xsl:value-of select="$fieldName"/>
                         <xsl:text>: # walk each child in list, if any (avoid empty list recursion)
-                </xsl:text>
-                                        <xsl:choose>
-                                            <xsl:when test="not(@type = 'MFNode')">
-                <xsl:text>
                 for each in self.</xsl:text>
                         <xsl:value-of select="$fieldName"/>
                         <xsl:text>:
                     result += each.JSON(indentLevel=indentLevel+1, syntax=syntax)</xsl:text>
-                                            </xsl:when>
-                                            <xsl:otherwise>
-                <xsl:text>
-                result +=  JSONListHelper("</xsl:text><xsl:value-of select="$fieldName"/><xsl:text>", None, self.</xsl:text> <xsl:value-of select="$fieldName"/> <xsl:text>, indentLevel=indentLevel+3, syntax=syntax)</xsl:text>
-                                            </xsl:otherwise>
-                                        </xsl:choose>
                                     </xsl:otherwise>
                                 </xsl:choose>
                             </xsl:if>
@@ -4488,16 +4451,10 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                     </xsl:otherwise>
                 </xsl:choose>
                 
-        <xsl:if test="not(($elementName = 'head') or ($elementName = 'component') or ($elementName = 'unit') or ($elementName = 'meta'))">
                 <xsl:text>
-        result += indent + '}\n' ### here1? </xsl:text>
-        </xsl:if>
-                <xsl:if test="(count(following-sibling::*) > 0)">
-                <xsl:text>
-        result += indent + '}' ### here2?
-        result +=',\n'</xsl:text>
-                </xsl:if>
-            <xsl:text>
+            result += indent + '}' ### here?</xsl:text>
+            <!--<xsl:text> + ' # </xsl:text><xsl:value-of select="$elementName"/><xsl:text> element with children complete '</xsl:text> debug -->
+                <xsl:text> + '\n'
 #       print('JSON serialization complete.', flush=True)
         return result</xsl:text>
             </xsl:otherwise>

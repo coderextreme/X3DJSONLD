@@ -1,0 +1,51 @@
+load('X3Dautoclass.js');
+var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
+ConfigurationProperties.showDefaultAttributes = false;
+ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
+ConfigurationProperties.deleteIntermediateFiles = false;
+ConfigurationProperties.setStripTrailingZeroes(true);
+      var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      .setHead(new head()
+        .addMeta(new meta().setName("filename").setContent("blenderLily.x3d"))
+        .addMeta(new meta().setName("copyright").setContent("2023"))
+        .addMeta(new meta().setName("reference").setContent("http://www.web3D.org"))
+        .addMeta(new meta().setName("generator").setContent("Blender 3.6.4"))
+        .addComponent(new component().setName("HAnim").setLevel(3)))
+      .setScene(new Scene()
+        .addChild(new NavigationInfo())
+        .addChild(new Background().setDEF("WO_World").setSkyColor(Java.to([0.05087609f,0.05087609f,0.05087609f], Java.type("float[]"))).setGroundColor(Java.to([0.05087609f,0.05087609f,0.05087609f], Java.type("float[]"))))
+        .addChild(new Transform()
+          .addChild(new Shape().setDEF("SiteShape")
+            .setAppearance(new Appearance()
+              .setMaterial(new Material().setDiffuseColor(Java.to([0f,0f,1f], Java.type("float[]")))))
+            .setGeometry(new Box().setSize(Java.to([0.05f,0.05f,0.05f], Java.type("float[]"))))))
+        .addChild(new Transform()
+          .addChild(new Shape().setDEF("JointShape")
+            .setAppearance(new Appearance().setDEF("JointAppearance")
+              .setMaterial(new Material().setDiffuseColor(Java.to([1f,0.5f,0f], Java.type("float[]"))).setTransparency(0.5f)))
+            .setGeometry(new Sphere().setRadius(0.06f))))
+        .addChild(new Transform().setDEF("Light_TRANSFORM").setTranslation(Java.to([4.07625f,1.00545f,5.90386f], Java.type("float[]"))).setRotation(Java.to([0.20594f,0.33152f,0.9207f,1.92627f], Java.type("float[]")))
+          .addChild(new PointLight().setDEF("LA_Light").setLocation(Java.to([-8.940697e-8f,-3.576279e-7f,4.61936e-7f], Java.type("float[]"))).setRadius(29.99998f)))
+        .addChild(new Transform().setDEF("Camera_TRANSFORM").setTranslation(Java.to([7.35889f,-6.92579f,4.95831f], Java.type("float[]"))).setRotation(Java.to([0.77344f,0.33383f,0.53884f,1.35072f], Java.type("float[]")))
+          .addChild(new Viewpoint().setDEF("CA_Camera").setPosition(Java.to([-3.92708e-7f,-2.123415e-7f,2.384186e-7f], Java.type("float[]"))).setFieldOfView(0.6911112f)))
+        .addChild(new Transform().setDEF("Light_001_TRANSFORM").setTranslation(Java.to([4.07625f,1.00545f,5.90386f], Java.type("float[]"))).setRotation(Java.to([0.20594f,0.33152f,0.9207f,1.92627f], Java.type("float[]")))
+          .addChild(new PointLight().setDEF("LA_Light_001").setLocation(Java.to([2.980232e-8f,-4.023314e-7f,1.043081e-7f], Java.type("float[]"))).setRadius(29.99998f)))
+        .addChild(new Transform().setDEF("Camera_001_TRANSFORM").setTranslation(Java.to([7.35889f,-6.92579f,4.95831f], Java.type("float[]"))).setRotation(Java.to([0.77344f,0.33383f,0.53884f,1.35072f], Java.type("float[]")))
+          .addChild(new Viewpoint().setDEF("CA_Camera_001").setPosition(Java.to([-2.421449e-7f,4.991889e-7f,-7.152557e-7f], Java.type("float[]"))).setFieldOfView(0.6911112f)))
+        .addChild(new Transform().setDEF("World_TRANSFORM").setRotation(Java.to([1f,0f,0f,1.5708f], Java.type("float[]"))).setScale(Java.to([0.01f,0.01f,0.01f], Java.type("float[]")))
+          .addChild(new Transform().setDEF("World_001_TRANSFORM")
+            .addChild(new Transform().setDEF("lily_7_3_animate_TRANSFORM")
+              .addChild(new Transform().setDEF("CINEMA_4D_Editor_TRANSFORM").setTranslation(Java.to([-2.3832f,26.84083f,170.6878f], Java.type("float[]"))).setRotation(Java.to([0.03965f,0.99809f,0.04742f,1.39469f], Java.type("float[]")))
+                .addChild(new Transform().setDEF("CINEMA_4D_Editor_001_TRANSFORM").setTranslation(Java.to([0.00001f,0f,0f], Java.type("float[]"))).setRotation(Java.to([0f,-1f,0f,3.14159f], Java.type("float[]")))
+                  .addChild(new Viewpoint().setDEF("CA_CINEMA_4D_Editor_001").setPosition(Java.to([-0.00002747774f,0.000004980713f,-0.000003484735f], Java.type("float[]"))).setFieldOfView(0.9272952f))))
+              .addChild(new Transform().setDEF("node_t_Lily_RV7_Shape_TRANSFORM")
+                .addChild(new Transform().setDEF("humanoid_root_TRANSFORM").setTranslation(Java.to([0f,-0.91969f,0f], Java.type("float[]"))).setRotation(Java.to([0f,-1f,0f,1.5708f], Java.type("float[]")))
+                  .addChild(new HAnimHumanoid().setDEF("hanim_armature_humanoid_root").setName("armature_humanoid_root"))))))
+          .addChild(new Transform().setDEF("Environment_TRANSFORM")
+            .addChild(new Transform().setDEF("Sky_TRANSFORM").setTranslation(Java.to([0f,305f,0f], Java.type("float[]"))).setRotation(Java.to([1f,0f,0f,3.14159f], Java.type("float[]")))
+              .addChild(new PointLight().setDEF("LA_Sky").setIntensity(0.005714286f).setLocation(Java.to([-9.59824e-19f,-0.00003051758f,-9.094947e-12f], Java.type("float[]"))).setRadius(0.25f)))
+            .addChild(new Transform().setDEF("DistantLight_TRANSFORM").setTranslation(Java.to([0f,305f,0f], Java.type("float[]"))).setRotation(Java.to([-0.99144f,0.13053f,0f,3.14159f], Java.type("float[]")))
+              .addChild(new DirectionalLight().setDEF("LA_DistantLight").setGlobal(true).setIntensity(0.005714286f).setAmbientIntensity(0.07f).setDirection(Java.to([5.329071e-15f,-3.552714e-15f,-1f], Java.type("float[]")))))))
+        .addChild(new Transform().setDEF("SkinnedMeshes_TRANSFORM").setRotation(Java.to([1f,0f,0f,1.5708f], Java.type("float[]"))).setScale(Java.to([0.01f,0.01f,0.01f], Java.type("float[]")))))      ;
+    X3D0.toFileX3D("../data/blenderLily.new.graal.x3d");
+    X3D0.toFileJSON("../data/blenderLily.new.graal.json");

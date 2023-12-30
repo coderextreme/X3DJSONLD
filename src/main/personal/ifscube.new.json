@@ -12,7 +12,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"http://coderextreme.net/X3DJSONLD/src/main/personal/ifscube.x3d"
+            "@content":"http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d"
           },
           {
             "@name":"description",
@@ -23,12 +23,8 @@
             "@content":"John Carlson"
           },
           {
-            "@name":"created",
-            "@content":"4 April 2017"
-          },
-          {
             "@name":"translated",
-            "@content":"02 September 2023"
+            "@content":"27 October 2023"
           },
           {
             "@name":"generator",

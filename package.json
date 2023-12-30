@@ -43,6 +43,7 @@
     "postinstall": "bash build.sh",
     "ajv": "bash ajv.sh",
     "buildthreex3dloader": "browserify src/main/node/threeLoadFile.js > src/main/node/bundle.js",
-    "test": "web-test-runner ./dist/**/*.spec.js"
+    "testxxx": "web-test-runner ./dist/**/*.spec.js",
+    "test": "node src/main/node/xml2all.js src/main/data/GrampsAnimations.x3d"
   }
 }

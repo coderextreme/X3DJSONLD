@@ -49,6 +49,7 @@ JavaScriptSerializer.prototype = {
 				str += this.postcode[postno];
 			}
 		}
+		str += "    "+element.nodeName+0+".toFileX3D(\""+clazz+".new.graal.x3d\");\n";
 		str += "    "+element.nodeName+0+".toFileJSON(\""+clazz+".new.graal.json\");\n";
 
 		return str;
@@ -415,7 +416,7 @@ JavaScriptSerializer.prototype = {
 					// console.error("JavaScript Comment Replacing "+node.nodeValue+" with "+y);
 				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
-				str += "\n"+("  ".repeat(n))+".setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) {
+				str += "\n"+("  ".repeat(n))+".setSourceCode(`"+node.nodeValue.split("[\r\n]?[\r\n]").map(function(x) {
 					return x.
 					        replace(/\\/g, '\\\\').
 						replace(/"/g, '\\"');
@@ -423,7 +424,7 @@ JavaScriptSerializer.prototype = {
 						replace(/\\n/g, "\\\\n")
 						*/
 					;
-					}).join('\\n\"+\n\"')+'")';
+					}).join('\\n\"+\n\"')+'`)';
 			}
 		}
 		return str;

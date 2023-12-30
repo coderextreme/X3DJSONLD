@@ -1,0 +1,51 @@
+load('X3Dautoclass.js');
+var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
+ConfigurationProperties.showDefaultAttributes = false;
+ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
+ConfigurationProperties.deleteIntermediateFiles = false;
+ConfigurationProperties.setStripTrailingZeroes(true);
+      var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      .setHead(new head()
+        .addMeta(new meta().setName("title").setContent("geo.x3d"))
+        .addMeta(new meta().setName("creator").setContent("John Carlson"))
+        .addMeta(new meta().setName("generator").setContent("manual"))
+        .addMeta(new meta().setName("generator").setContent("x3d-tidy V1.0.118, https://www.npmjs.com/package/x3d-tidy"))
+        .addComponent(new component().setName("Scripting").setLevel(1))
+        .addComponent(new component().setName("EnvironmentalEffects").setLevel(3))
+        .addComponent(new component().setName("Shaders").setLevel(1))
+        .addComponent(new component().setName("CubeMapTexturing").setLevel(1))
+        .addComponent(new component().setName("Texturing").setLevel(1))
+        .addComponent(new component().setName("Rendering").setLevel(1))
+        .addComponent(new component().setName("Shape").setLevel(4))
+        .addComponent(new component().setName("Grouping").setLevel(3))
+        .addComponent(new component().setName("Core").setLevel(1)))
+      .setScene(new Scene()
+        .addChild(new NavigationInfo().setType(Java.to(["ANY","EXAMINE","FLY","LOOKAT"], Java.type("java.lang.String[]"))))
+        .addChild(new Viewpoint().setDEF("Tour").setDescription("Tour Views"))
+        .addChild(new Background().setFrontUrl(Java.to(["../resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"], Java.type("java.lang.String[]"))).setBackUrl(Java.to(["../resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"], Java.type("java.lang.String[]"))).setLeftUrl(Java.to(["../resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"], Java.type("java.lang.String[]"))).setRightUrl(Java.to(["../resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"], Java.type("java.lang.String[]"))).setTopUrl(Java.to(["../resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"], Java.type("java.lang.String[]"))).setBottomUrl(Java.to(["../resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"], Java.type("java.lang.String[]"))))
+        .addChild(new Transform()
+          .addChild(new Shape()
+            .setAppearance(new Appearance()
+              .setMaterial(new Material().setDiffuseColor(Java.to([0.7f,0.7f,0.7f], Java.type("float[]"))).setSpecularColor(Java.to([0.5f,0.5f,0.5f], Java.type("float[]"))))
+              .setTexture(new ComposedCubeMapTexture().setDEF("texture"))
+              .addShaders(new ComposedShader().setLanguage("GLSL")
+                .addParts(new ShaderPart().setUrl(Java.to(["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"], Java.type("java.lang.String[]"))))
+                .addParts(new ShaderPart().setType("FRAGMENT").setDEF("common").setUrl(Java.to(["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"], Java.type("java.lang.String[]"))))
+                .addField(new field().setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("chromaticDispertion").setValue("0.98 1 1.033"))
+                .addField(new field().setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("cube")
+                  .addChild(new ComposedCubeMapTexture().setUSE("texture")))
+                .addField(new field().setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("bias").setValue("0.5"))
+                .addField(new field().setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("scale").setValue("0.5"))
+                .addField(new field().setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("power").setValue("2")))
+              .addShaders(new ComposedShader().setLanguage("GLSL")
+                .addParts(new ShaderPart().setUrl(Java.to(["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"], Java.type("java.lang.String[]"))))
+                .addParts(new ShaderPart().setType("FRAGMENT").setUrl(Java.to(["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"], Java.type("java.lang.String[]"))))
+                .addField(new field().setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("chromaticDispertion").setValue("0.98 1 1.033"))
+                .addField(new field().setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("cube")
+                  .addChild(new ComposedCubeMapTexture().setUSE("texture")))
+                .addField(new field().setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("bias").setValue("0.5"))
+                .addField(new field().setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("scale").setValue("0.5"))
+                .addField(new field().setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("power").setValue("2"))))
+            .setGeometry(new Sphere()))))      ;
+    X3D0.toFileX3D("../data/geo.new.graal.x3d");
+    X3D0.toFileJSON("../data/geo.new.graal.json");

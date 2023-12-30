@@ -120,7 +120,7 @@ processURLs: function(localArray, path) {
 					pc = "";
 				}
 			}
-			if (p == 0) {
+			if (p === 0) {
 				localArray[url] = path+localArray[url];
 			} else {
 				localArray[url] = pc+"/"+localArray[url];
@@ -304,15 +304,36 @@ CreateElement : function(xmlDoc, key, x3djsonNS, containerField) {
 		child = xmlDoc.createElement(key);
 	} else {
 		child = xmlDoc.createElementNS(x3djsonNS, key);
-		if (child == null || typeof child === 'undefined') {
+		if (child === null || typeof child === 'undefined') {
 			// console.error('Trouble creating element for', key);
 			child = xmlDoc.createElement(key);
 		}
 	}
-	if (typeof containerField !== 'undefined' && key.toLowerCase() !== containerField.toLowerCase()) {
-		if (containerField !== 'geometry') {
-			X3DJSONLD.elementSetAttribute(child, 'containerField', containerField);
-		}
+	if (typeof containerField !== 'undefined' && containerField !== 'geometry' &&
+				((containerField === "geometry"  && key === "IndexedFaceSet") ||
+				 (containerField === "geometry"  && key === "Text") ||
+				 (containerField === "geometry"  && key === "IndexedTriangleSet") ||
+				 (containerField === "geometry"  && key === "Sphere") ||
+				 (containerField === "geometry"  && key === "Cylinder") ||
+				 (containerField === "geometry"  && key === "Cone") ||
+				 (containerField === "geometry"  && key === "LineSet") ||
+				 (containerField === "geometry"  && key === "IndexedLineSet") ||
+				 (containerField === "geometry"  && key === "Box") ||
+				 (containerField === "geometry"  && key === "Extrusion") ||
+				 (containerField === "geometry"  && key === "GeoElevationGrid") ||
+				 (containerField === "shape"  && key === "Shape") ||
+				 (containerField === "skin"  && key === "Shape") ||
+				 (containerField.endsWith("exture")  && key === "ImageTexture") ||
+				 (key === "HAnimSegment") ||
+				 (key === "HAnimSite") ||
+				 (key === "HAnimMotion") ||
+				 (containerField === "skinCoord"  && key === "Coordinate") || // overwrite coord with skinCoord, if set
+				 (containerField === "skin"  && key === "IndexedFaceSet") ||
+				 ((containerField === "skinBindingCoords" || containerField === "skinCoord") && key === "Coordinate") ||
+				 ((containerField === "normal" || containerField === "skinBindingNormals" || containerField === "skinNormal") && key === "Normal") ||
+				 ((containerField === "skeleton" || containerField === "children" || containerField === "joints")  && key === "HAnimJoint")
+				)) {
+		X3DJSONLD.elementSetAttribute(child, 'containerField', containerField);
 	}
 	return child;
 },

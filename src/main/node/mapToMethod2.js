@@ -24,7 +24,13 @@ var mapToMethod2 = {
 		"field" : "addField"
 	},
 	"MetadataSet" : {
-		"ProtoInstance" : "setMetadata"
+		"ProtoInstance" : "setMetadata",
+		"MetadataBoolean" : "addValue",
+		"MetadataDouble" : "addValue",
+		"MetadataFloat" : "addValue",
+		"MetadataInteger" : "addValue",
+		"MetadataSet" : "addValue",
+		"MetadataString" : "addValue"
 	},
 	"RigidBody" : {
 		"CollidableShape" : "addGeometry"

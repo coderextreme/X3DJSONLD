@@ -25,7 +25,7 @@ class ClassPrinter:
         str += '"'+self.node.get('name')+'" : {\n'
         fields = self.node.iter("field")
         for field in fields:
-            str += '\t"' + field.get("name") + '" : "'+field.get("type")+'",\n';
+            str += '\t"' + field.get("name") + '" : "'+(field.get("type") if field.get("type") != 'xs:NMTOKEN' else "SFString")+'",\n';
         str += '},\n'
         self.printed = True
         return str

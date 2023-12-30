@@ -3,12 +3,11 @@
 <X3D profile='Interchange' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='ifscubeworks.x3d' name='title'/>
-    <meta content='http://coderextreme.net/X3DJSONLD/src/main/personal/ifscubeworks.x3d' name='identifier'/>
+    <meta content='http://coderextreme.net/X3DJSONLD/src/main/data/ifscubeworks.x3d' name='identifier'/>
     <meta content='Template for an Indexed Face Set' name='description'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='4 April 2017' name='created'/>
     <meta content='https://www.web3d.org/x3d/content/examples/license.html' name='license'/>
-    <meta content='X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
   </head>
   <Scene>
     <WorldInfo title='ifscubeworks.x3d'/>

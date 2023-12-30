@@ -77,6 +77,7 @@ Design summary:
 			<xs:enumeration value="MFVec3f"/>
 			<xs:enumeration value="MFVec4d"/>
 			<xs:enumeration value="MFVec4f"/>
+			<xs:enumeration value="xs:NMTOKEN"/>
 			<xs:enumeration value="xs:string"/><!-- allowed for sourceCode CDATA blocks -->
 		</xs:restriction>
 	</xs:simpleType>
