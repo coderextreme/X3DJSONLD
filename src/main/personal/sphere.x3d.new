@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Interchange" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="sphere.x3d"></meta>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Interchange" version="4.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="sphere.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="generator" content="manual"></meta>
-<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/sphere.x3d"></meta>
-<meta name="description" content="a sphere"></meta>
+<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/sphere.x3d"></meta>
+<component name="Scripting" level="1"></component>
 </head>
 <Scene><Group><Shape><Appearance><Material diffuseColor="1 1 1"></Material>
 </Appearance>
-<Sphere containerField="geometry"></Sphere>
+<Sphere></Sphere>
 </Shape>
 </Group>
 </Scene>

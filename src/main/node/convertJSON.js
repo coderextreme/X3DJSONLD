@@ -45,7 +45,7 @@ function convertJSON(options) {
 			continue;
 		}
 		var basefile = file.substr(0, file.lastIndexOf("."));
-		var file = basefile+".x3dj";
+		var file = basefile+".json";
 		console.log("Reading", file, domImpl);
 		var str = fs.readFileSync(file).toString();
 		if (typeof str === 'undefined') {
@@ -78,7 +78,7 @@ function convertJSON(options) {
 			// console.error("basefile0", basefile);
 			basefile = basefile.replace(/^C:\//, "")
 			basefile = basefile.replace(/^\.\.\//, "")
-			basefile = basefile.replace(/-|\.| /g, "_")
+			basefile = basefile.replace(/-| /g, "_")
 			// handle filenames with leading zeros and java keywords
 			basefile = basefile.replace(/^(.*[\\\/])([0-9].*|default|switch|for)$/, "$1_$2")
 

@@ -1190,6 +1190,7 @@ Recommended tool:
                             
                             -->
                             <xsl:variable name="fieldName" select="@name"/>
+                            <!-- debug
                             <xsl:if test="($concreteNodeName = 'UnlitMaterial') and (@name = 'emissiveColor')">
                                 <xsl:message>
                                         <xsl:text>****** found UnlitMaterial emissiveColor, $concreteNodeName=</xsl:text>
@@ -1210,6 +1211,7 @@ Recommended tool:
                                         </xsl:for-each>
                                 </xsl:message>
                             </xsl:if>
+                            -->
                             
                             <!-- avoid duplicating overrides (e.g. UnlitMaterial emissiveColor) -->
                             <xsl:choose>

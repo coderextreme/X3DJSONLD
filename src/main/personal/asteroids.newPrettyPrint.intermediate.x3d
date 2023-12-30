@@ -5,14 +5,13 @@
     <meta content='asteroids.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='manual' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/asteroids.x3d' name='identifier'/>
-    <meta content='asteroids' name='description'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/asteroids.x3d' name='identifier'/>
   </head>
   <Scene>
     <ProtoDeclare name='anyShape'>
       <ProtoInterface>
         <field name='myShape' accessType='inputOutput' type='MFNode'>
-          <Shape>
+          <Shape DEF='_1'>
             <Sphere/>
           </Shape>
         </field>

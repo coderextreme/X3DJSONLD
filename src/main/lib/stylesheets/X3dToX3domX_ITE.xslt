@@ -71,7 +71,8 @@ POSSIBILITY OF SUCH DAMAGE.
     <xsl:param name="urlScene"                 ></xsl:param>      <!-- X3D MFString url list -->
     
     <xsl:param name="urlX_ITE"                >https://create3000.github.io/code/x_ite</xsl:param> <!-- no trailing slash / -->
-    <xsl:param name="versionX_ITE"            >latest/dist</xsl:param>
+    <xsl:param name="versionX_ITE"            >latest</xsl:param>
+<!--<xsl:param name="versionX_ITE"            >latest/dist</xsl:param>-->
 <!--<xsl:param name="versionCobweb"           >x_ite@latest/dist</xsl:param>  1/1.28 or 2/2.6 or 3/3.1 or 3/3.2 or 3.3 or 4.0.5 or 4.1.5 4.6.11 or x_ite@latest/dist with no trailing slash / -->
     <xsl:param name="urlWebsiteX_ITE"         >https://create3000.github.io/x_ite</xsl:param>
 <!--<xsl:param name="urlWebsiteX_ITE"         >https://github.com/create3000/x_ite/wiki</xsl:param>-->
@@ -1188,14 +1189,17 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                       (local-name()='colorPerVertex' and string(.)='true') or
                       (local-name()='normalPerVertex' and string(.)='true') or
                       (local-name()='solid' and string(.)='true') or
-                      (local-name()='xDimension' and (string(.)='2')) or
+                      (local-name()='xDimension' and (string(.)='0')) or
                       (local-name()='xSpacing' and (string(.)='1' or string(.)='1.0')) or
-                      (local-name()='zDimension' and (string(.)='2')) or
+                      (local-name()='zDimension' and (string(.)='0')) or
                       (local-name()='zSpacing' and (string(.)='1' or string(.)='1.0')) or
                       (local-name()='yScale' and (string(.)='1' or string(.)='1.0')) or
-                      (local-name()='height' and (string(.)='0 0 0 0' or string(.)='0.0 0.0 0.0 0.0')) or
                       (local-name()='geoGridOrigin' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                       (local-name()='creaseAngle' and (string(.)='0' or string(.)='0.0')))) and
+                      not((local-name(..)='ElevationGrid') and
+                      (local-name()='height' and (string(.)='' or string(.)=''))) and
+                      not((local-name(..)='GeoElevationGrid') and
+                      (local-name()='height' and (string(.)='0 0' or string(.)='0.0 0.0'))) and
                       not( local-name(..)='Extrusion'	and
                       ((local-name()='beginCap' and string(.)='true') or
                       (local-name()='ccw' and string(.)='true') or
@@ -1574,7 +1578,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                       ((local-name()='containerField' and string(.)='children'))) and
                       not( local-name(..)='OscillatorSource' and
                       ((local-name()='containerField' and string(.)='children') or
-                      (local-name()='frequency' and (string(.)='0' or string(.)='0.0')))) and
+                      (local-name()='frequency' and (string(.)='440' or string(.)='440.0')))) and
                       not( local-name(..)='PeriodicWave' and
                       ((local-name()='containerField' and string(.)='children') or
                       (local-name()='type' and (string(.)='SQUARE')))) and
@@ -1771,9 +1775,6 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                        (local-name()='bboxCenter' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        (local-name()='bboxSize' and (string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')) or
                        (local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
-                       (local-name()='jointBindingPositions' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
-                       (local-name()='jointBindingRotations' and (string(.)='0 0 1 0' or string(.)='0 1 0 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0.0 1.0 0.0 0.0')) or
-                       (local-name()='jointBindingScales' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
                        (local-name()='loa' and (string(.)='-1')) or
                        (local-name()='version' and (($isHAnim1 = true() and (string(.)='1.0' or (string-length(string(.)) = 0))) or ($isHAnim2 = true() and string(.)='2.0'))) or
                        (local-name()='skeletalConfiguration' and (string(.)='BASIC')) or
@@ -1816,7 +1817,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                       (local-name()='vDimension' and (string(.)='0')) or
                       (local-name()='uOrder' and (string(.)='3')) or
                       (local-name()='vOrder' and (string(.)='3')))) and
-                      not((local-name(..)='NurbsCurve' or local-name(..)='NurbsSwungSurface') and
+                      not((local-name(..)='NurbsSweptSurface' or local-name(..)='NurbsSwungSurface') and
                       ((local-name()='ccw' or local-name()='solid') and (string(.)='true'))) and
                       not((contains(local-name(..),'SplinePositionInterpolator') or local-name(..)='SplineScalarInterpolator' or local-name(..)='SquadOrientationInterpolator') and
                       ((local-name()='closed' or local-name()='normalizeVelocity') and (string(.)='false')))" />
@@ -2491,6 +2492,19 @@ function toggleShowDebugLogs()
  ($nodename='IndexedQuadSet') or
  ($nodename='QuadSet'))">
                 <!-- CAD Geometry component -->
+                <xsl:text>true</xsl:text>
+            </xsl:when>
+            <xsl:when test="( string-length($nodename) > 0) and
+(($nodename='BooleanFilter') or
+ ($nodename='BooleanSequencer') or
+ ($nodename='BooleanToggle') or
+ ($nodename='BooleanTrigger') or
+ ($nodename='IntegerSequencer') or
+ ($nodename='IntegerTrigger') or
+ ($nodename='TimeTrigger'))">
+                <!-- Event Utilities component -->
+                <!-- https://andreasplesch.github.io/x3dom/dist/doc/author/nodes.html -->
+                <!-- https://web3d.org/pipermail/x3d-public_web3d.org/2023-September/019631.html -->
                 <xsl:text>true</xsl:text>
             </xsl:when>
 <!-- x3dom stubs

@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-3.3.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-3.3.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 3.3 of X3D -->
-<!-- Generated 2023-06-25-07:00 21:39:37.1030417-07:00 -->
+<!-- Generated 2023-11-05-08:00 18:13:12.2619356-08:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                         version="3.3"
                         xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -3222,8 +3222,7 @@
             <field name="size"
                     type="SFVec3f"
                     accessType="initializeOnly"
-                    default="0 0 0"
-                    minInclusive="0"/>
+                    default="0 0 0"/>
             <field name="DEF"
                     type="SFString"
                     accessType="inputOutput"
@@ -6789,6 +6788,10 @@
                     type="SFTime"
                     accessType="inputOnly"
                     description="set_triggerTime provides input time event, typical event sent is TouchSensor touchTime."/>
+            <field name="solid"
+                    type="SFBool"
+                    accessType="initializeOnly"
+                    default="true"/>
             <field name="triggerTrue"
                     type="SFBool"
                     accessType="outputOnly"
@@ -9740,7 +9743,7 @@
             <field name="axisRotation"
                     type="SFRotation"
                     accessType="inputOutput"
-                    default="0 1 0 0"
+                    default="0 0 1 0"
                     description="axisRotation determines local sensor coordinate system by rotating the local coordinate system."/>
             <field name="description"
                     type="SFString"
@@ -10182,8 +10185,14 @@
                     acceptableNodeTypes="RigidBody"
                     inheritedFrom="X3DRigidJointNode"
                     description="The body1 and body2 fields indicate the two RigidBody nodes connected by this joint."/>
-            <field name="body1AnchorPoint" type="SFVec3f" accessType="outputOnly"/>
-            <field name="body1Axis" type="SFVec3f" accessType="outputOnly"/>
+            <field name="body1AnchorPoint"
+                    type="SFVec3f"
+                    accessType="outputOnly"
+                    description="body1AnchorPoint describes anchorPoint position relative to local coordinate reference frame."/>
+            <field name="body1Axis"
+                    type="SFVec3f"
+                    accessType="outputOnly"
+                    description="body1Axis describes report the current location of the anchor point relative to the corresponding body."/>
             <field name="body2"
                     type="SFNode"
                     accessType="inputOutput"
@@ -10191,8 +10200,14 @@
                     acceptableNodeTypes="RigidBody"
                     inheritedFrom="X3DRigidJointNode"
                     description="The body1 and body2 fields indicate the two RigidBody nodes connected by this joint."/>
-            <field name="body2AnchorPoint" type="SFVec3f" accessType="outputOnly"/>
-            <field name="body2Axis" type="SFVec3f" accessType="outputOnly"/>
+            <field name="body2AnchorPoint"
+                    type="SFVec3f"
+                    accessType="outputOnly"
+                    description="body2AnchorPoint describes anchorPoint position relative to local coordinate reference frame."/>
+            <field name="body2Axis"
+                    type="SFVec3f"
+                    accessType="outputOnly"
+                    description="body1Axis describes report the current location of the anchor point relative to the corresponding body."/>
             <field name="desiredAngularVelocity1"
                     type="SFFloat"
                     accessType="inputOutput"
@@ -10473,7 +10488,6 @@
             <field name="height"
                     type="MFFloat"
                     accessType="initializeOnly"
-                    default="0 0 0 0"
                     description="Grid array of height vertices with upward direction along +Y axis, with xDimension rows and zDimension columns."/>
             <field name="IS"
                     type="SFNode"
@@ -10517,7 +10531,7 @@
             <field name="xDimension"
                     type="SFInt32"
                     accessType="initializeOnly"
-                    default="2"
+                    default="0"
                     minInclusive="0"
                     description="Number of elements in the height array along X direction."/>
             <field name="xSpacing"
@@ -10529,7 +10543,7 @@
             <field name="zDimension"
                     type="SFInt32"
                     accessType="initializeOnly"
-                    default="2"
+                    default="0"
                     minInclusive="0"
                     description="Number of elements in the height array along Z direction."/>
             <field name="zSpacing"
@@ -11205,33 +11219,33 @@
             <Inheritance baseType="X3DGeometryNode"/>
             <field name="beginCap"
                     type="SFBool"
-                    accessType="initializeOnly"
+                    accessType="inputOnly"
                     default="true"
                     description="Whether beginning cap is drawn (similar to Cylinder top cap)."/>
             <field name="ccw"
                     type="SFBool"
-                    accessType="initializeOnly"
+                    accessType="inputOnly"
                     default="true"
                     description="The ccw field indicates counterclockwise ordering of vertex-coordinates orientation."/>
             <field name="convex"
                     type="SFBool"
-                    accessType="initializeOnly"
+                    accessType="inputOnly"
                     default="true"
                     description="The convex field is a hint to renderers whether all polygons in a shape are convex (true), or possibly concave (false)."/>
             <field name="creaseAngle"
-                    type="SFFloat"
-                    accessType="initializeOnly"
+                    type="SFBool"
+                    accessType="inputOnly"
                     default="0"
                     minInclusive="0"
                     description="creaseAngle defines angle (in radians) where adjacent polygons are drawn with sharp edges or smooth shading."/>
             <field name="crossSection"
                     type="MFVec2f"
-                    accessType="initializeOnly"
+                    accessType="inputOnly"
                     default="1 1 1 -1 -1 -1 -1 1 1 1"
                     description="The crossSection array defines a silhouette outline of the outer Extrusion surface."/>
             <field name="endCap"
                     type="SFBool"
-                    accessType="initializeOnly"
+                    accessType="inputOnly"
                     default="true"
                     description="Whether end cap is drawn (similar to Cylinder bottom cap)."/>
             <field name="IS"
@@ -11249,12 +11263,12 @@
                     description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
             <field name="orientation"
                     type="MFRotation"
-                    accessType="inputOutput"
+                    accessType="inputOnly"
                     default="0 0 1 0"
                     description="The orientation array is a list of axis-angle 4-tuple values applied at each spine-aligned cross-section plane."/>
             <field name="scale"
                     type="MFVec2f"
-                    accessType="inputOutput"
+                    accessType="inputOnly"
                     default="1 1"
                     description="scale is a list of 2D-scale parameters applied at each spine-aligned cross-section plane."/>
             <field name="set_crossSection"
@@ -11280,7 +11294,7 @@
                     description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="spine"
                     type="MFVec3f"
-                    accessType="initializeOnly"
+                    accessType="inputOnly"
                     default="0 0 0 0 1 0"
                     description="The spine array defines a center-line sequence of 3D points that define a piecewise-linear curve forming a series of connected vertices."/>
             <field name="DEF"
@@ -12092,7 +12106,7 @@
             <field name="height"
                     type="MFDouble"
                     accessType="initializeOnly"
-                    default="0 0 0 0"
+                    default="0 0"
                     description="Contains xDimension rows * zDimension columns floating-point values for elevation above ellipsoid."/>
             <field name="IS"
                     type="SFNode"
@@ -12119,7 +12133,7 @@
                     default="true"
                     description="Whether Normal node vector values are applied to each point vertex (true) or per quadrilateral (false)."/>
             <field name="set_height"
-                    type="MFFloat"
+                    type="MFDouble"
                     accessType="inputOnly"
                     description="Contains xDimension rows * zDimension columns floating-point values for elevation above ellipsoid."/>
             <field name="solid"
@@ -12136,7 +12150,7 @@
             <field name="xDimension"
                     type="SFInt32"
                     accessType="initializeOnly"
-                    default="2"
+                    default="0"
                     minInclusive="0"
                     description="Number of elements in the height array along east-west X direction."/>
             <field name="xSpacing"
@@ -12154,7 +12168,7 @@
             <field name="zDimension"
                     type="SFInt32"
                     accessType="initializeOnly"
-                    default="2"
+                    default="0"
                     minInclusive="0"
                     description="Number of elements in the height array along north-south Z direction."/>
             <field name="zSpacing"
@@ -12699,7 +12713,6 @@
                     type="SFVec3f"
                     accessType="initializeOnly"
                     default="0 0 0"
-                    minInclusive="0"
                     inheritedFrom="X3DEnvironmentalSensorNode"
                     description="size of Proximity box."/>
             <field name="DEF"
@@ -13146,8 +13159,7 @@
             <Inheritance baseType="X3DGeometricPropertyNode"/>
             <field name="coordIndex"
                     type="MFInt32"
-                    accessType="initializeOnly"
-                    minInclusive="0"
+                    accessType="inputOutput"
                     description="Defines index values into the parent HAnimSegment or HAnimBody/HAnimHumanoid coordinate array for the mesh of vertices affected by this HAnimDisplacer."/>
             <field name="displacements"
                     type="MFVec3f"
@@ -14832,7 +14844,8 @@
             <field name="set_index"
                     type="MFInt32"
                     accessType="inputOnly"
-                    minInclusive="0"/>
+                    minInclusive="0"
+                    description="index values provide order in which coordinates are applied."/>
             <field name="solid"
                     type="SFBool"
                     accessType="initializeOnly"
@@ -14951,7 +14964,8 @@
             <field name="set_index"
                     type="MFInt32"
                     accessType="inputOnly"
-                    minInclusive="-1"/>
+                    minInclusive="-1"
+                    description="index list specifies triangles by connecting Coordinate vertices, each individual fan separated by -1 sentinel value."/>
             <field name="solid"
                     type="SFBool"
                     accessType="initializeOnly"
@@ -15070,7 +15084,8 @@
             <field name="set_index"
                     type="MFInt32"
                     accessType="inputOnly"
-                    minInclusive="0"/>
+                    minInclusive="0"
+                    description="index list specifies triangles by connecting Coordinate vertices."/>
             <field name="solid"
                     type="SFBool"
                     accessType="initializeOnly"
@@ -15189,7 +15204,8 @@
             <field name="set_index"
                     type="MFInt32"
                     accessType="inputOnly"
-                    minInclusive="-1"/>
+                    minInclusive="-1"
+                    description="index list specifies triangles by connecting Coordinate vertices for each individual strip, separated by -1 sentinel values."/>
             <field name="solid"
                     type="SFBool"
                     accessType="initializeOnly"
@@ -15725,7 +15741,7 @@
                     description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
             <field name="order"
                     type="MFInt32"
-                    accessType="initializeOnly"
+                    accessType="inputOutput"
                     default="0"
                     minInclusive="0"
                     description="The order list defines the order in which layers are rendered."/>
@@ -18225,7 +18241,7 @@
                     inheritedFrom="X3DNode"/>
             <field name="knot"
                     type="MFDouble"
-                    accessType="initializeOnly"
+                    accessType="inputOutput"
                     description="knot vector, where size = number of control points + order of curve."/>
             <field name="metadata"
                     type="SFNode"
@@ -18434,7 +18450,7 @@
                     inheritedFrom="X3DNode"/>
             <field name="knot"
                     type="MFDouble"
-                    accessType="initializeOnly"
+                    accessType="inputOutput"
                     description="knot vector, where size = number of control points + order of curve."/>
             <field name="metadata"
                     type="SFNode"
@@ -19933,7 +19949,7 @@
             <field name="axisRotation"
                     type="SFRotation"
                     accessType="inputOutput"
-                    default="0 1 0 0"
+                    default="0 0 1 0"
                     description="axisRotation determines local sensor coordinate system by rotating the local coordinate system."/>
             <field name="description"
                     type="SFString"
@@ -20165,7 +20181,7 @@
                     description="Enables/disables this light source."/>
             <field name="radius"
                     type="SFFloat"
-                    accessType="initializeOnly"
+                    accessType="inputOutput"
                     default="100"
                     minInclusive="0"
                     description="Maximum effective distance of light relative to local light position, affected by ancestor scaling.">
@@ -21534,7 +21550,6 @@
                     type="SFVec3f"
                     accessType="initializeOnly"
                     default="0 0 0"
-                    minInclusive="0"
                     inheritedFrom="X3DEnvironmentalSensorNode"
                     description="size of Proximity box."/>
             <field name="DEF"
@@ -21899,7 +21914,6 @@
                     type="SFVec2f"
                     accessType="initializeOnly"
                     default="2 2"
-                    minExclusive="0"
                     description="2D dimensions of Rectangle2D."/>
             <field name="solid"
                     type="SFBool"
@@ -23453,7 +23467,10 @@
                     acceptableNodeTypes="RigidBody"
                     inheritedFrom="X3DRigidJointNode"
                     description="The body1 and body2 fields indicate the two RigidBody nodes connected by this joint."/>
-            <field name="body1AnchorPoint" type="SFVec3f" accessType="outputOnly"/>
+            <field name="body1AnchorPoint"
+                    type="SFVec3f"
+                    accessType="outputOnly"
+                    description="body1AnchorPoint describes anchorPoint position relative to local coordinate reference frame."/>
             <field name="body2"
                     type="SFNode"
                     accessType="inputOutput"
@@ -23461,7 +23478,10 @@
                     acceptableNodeTypes="RigidBody"
                     inheritedFrom="X3DRigidJointNode"
                     description="The body1 and body2 fields indicate the two RigidBody nodes connected by this joint."/>
-            <field name="body2AnchorPoint" type="SFVec3f" accessType="outputOnly"/>
+            <field name="body2AnchorPoint"
+                    type="SFVec3f"
+                    accessType="outputOnly"
+                    description="body2AnchorPoint describes anchorPoint position relative to local coordinate reference frame."/>
             <field name="forceOutput"
                     type="MFString"
                     accessType="inputOutput"
@@ -24190,7 +24210,7 @@
                     description="Enables/disables this light source."/>
             <field name="radius"
                     type="SFFloat"
-                    accessType="initializeOnly"
+                    accessType="inputOutput"
                     default="100"
                     minInclusive="0"
                     description="Maximum effective distance of light relative to local light position, affected by ancestor scaling.">
@@ -24418,12 +24438,6 @@
                                appinfo="SurfaceEmitter generates particles from the surface of an object.">
             <componentInfo name="ParticleSystems" level="2"/>
             <Inheritance baseType="X3DParticleEmitterNode"/>
-            <field name="coordIndex"
-                    type="MFInt32"
-                    accessType="initializeOnly"
-                    default="-1"
-                    minInclusive="-1"
-                    description="coordIndex indices are applied to contained Coordinate values in order to define randomly generated initial geometry of the particles."/>
             <field name="IS"
                     type="SFNode"
                     accessType="inputOutput"
@@ -24444,10 +24458,6 @@
                     acceptableNodeTypes="X3DMetadataObject"
                     inheritedFrom="X3DNode"
                     description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
-            <field name="set_coordIndex"
-                    type="MFInt32"
-                    accessType="inputOnly"
-                    minInclusive="-1"/>
             <field name="speed"
                     type="SFFloat"
                     accessType="inputOutput"
@@ -26005,7 +26015,6 @@
                     type="SFVec3f"
                     accessType="initializeOnly"
                     default="0 0 0"
-                    minInclusive="0"
                     inheritedFrom="X3DEnvironmentalSensorNode"
                     description="size of intersection box, measured from center in meters."/>
             <field name="targetObject"
@@ -26942,8 +26951,14 @@
                     acceptableNodeTypes="RigidBody"
                     inheritedFrom="X3DRigidJointNode"
                     description="The body1 and body2 fields indicate the two RigidBody nodes connected by this joint."/>
-            <field name="body1AnchorPoint" type="SFVec3f" accessType="outputOnly"/>
-            <field name="body1Axis" type="SFVec3f" accessType="outputOnly"/>
+            <field name="body1AnchorPoint"
+                    type="SFVec3f"
+                    accessType="outputOnly"
+                    description="body1AnchorPoint describes anchorPoint position relative to local coordinate reference frame."/>
+            <field name="body1Axis"
+                    type="SFVec3f"
+                    accessType="outputOnly"
+                    description="body1Axis describes report the current location of the anchor point relative to the corresponding body."/>
             <field name="body2"
                     type="SFNode"
                     accessType="inputOutput"
@@ -26951,8 +26966,14 @@
                     acceptableNodeTypes="RigidBody"
                     inheritedFrom="X3DRigidJointNode"
                     description="The body1 and body2 fields indicate the two RigidBody nodes connected by this joint."/>
-            <field name="body2AnchorPoint" type="SFVec3f" accessType="outputOnly"/>
-            <field name="body2Axis" type="SFFloat" accessType="outputOnly"/>
+            <field name="body2AnchorPoint"
+                    type="SFVec3f"
+                    accessType="outputOnly"
+                    description="body2AnchorPoint describes anchorPoint position relative to local coordinate reference frame."/>
+            <field name="body2Axis"
+                    type="SFVec3f"
+                    accessType="outputOnly"
+                    description="body1Axis describes report the current location of the anchor point relative to the corresponding body."/>
             <field name="forceOutput"
                     type="MFString"
                     accessType="inputOutput"
@@ -27339,7 +27360,6 @@
                     type="SFVec3f"
                     accessType="initializeOnly"
                     default="0 0 0"
-                    minInclusive="0"
                     inheritedFrom="X3DEnvironmentalSensorNode"
                     description="size of visibility box, measured from center in meters."/>
             <field name="DEF"

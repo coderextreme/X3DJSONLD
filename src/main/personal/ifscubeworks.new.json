@@ -12,7 +12,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"http://coderextreme.net/X3DJSONLD/src/main/personal/ifscubeworks.x3d"
+            "@content":"http://coderextreme.net/X3DJSONLD/src/main/data/ifscubeworks.x3d"
           },
           {
             "@name":"description",
@@ -31,12 +31,8 @@
             "@content":"https://www.web3d.org/x3d/content/examples/license.html"
           },
           {
-            "@name":"generator",
-            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
-          },
-          {
             "@name":"translated",
-            "@content":"02 September 2023"
+            "@content":"27 October 2023"
           },
           {
             "@name":"generator",

@@ -583,7 +583,7 @@ window.myLoadJson = function myLoadJson(url) {
 	});
 }
 
-myLoadJson("../personal/sphereflowers.x3dj");
+myLoadJson("../personal/sphereflowers.json");
 
 function updateXml(json, path) {
 	//  This step is an important validation step.

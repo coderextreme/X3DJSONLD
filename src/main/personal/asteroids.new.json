@@ -20,15 +20,11 @@
           },
           {
             "@name":"identifier",
-            "@content":"https://coderextreme.net/X3DJSONLD/asteroids.x3d"
-          },
-          {
-            "@name":"description",
-            "@content":"asteroids"
+            "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/asteroids.x3d"
           },
           {
             "@name":"translated",
-            "@content":"02 September 2023"
+            "@content":"27 October 2023"
           },
           {
             "@name":"generator",
@@ -54,6 +50,7 @@
                       "-children":[
                         { "Shape":
                           {
+                            "@DEF":"_1",
                             "-geometry":
                               { "Sphere":
                                 {

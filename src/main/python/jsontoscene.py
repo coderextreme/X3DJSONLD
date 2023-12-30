@@ -81,10 +81,14 @@ def buildX3dObject(parentname, parentvalue, propertyname, propertyvalue, indent=
                 elif x.startswith("-") or x.startswith("@"):
                     x = x[1:]
                     field = buildX3d(tag, propertyvalue, x, o, indent+2)
-                    print(f"Warning, Field is {x}.{field} tag {tag} prop {propertyname} value {o}")
-                    if field is not None:
-                        # TODO, this should check access type
-                        setattr(x3dout, x, field);
+                    print(f"Warning, Field is {x3dout}.{x}.{field} prop {propertyname} value {o}")
+                    try:
+                        if field is not None:
+                            if X3dAccessTypesLookup[tag][x] not in ( "initializeOnly", "outputOnly"):  # Attempt to be secure
+                                setattr(x3dout, x, field);
+                    except (X3DTypeError, KeyError):
+                        print("Error: %s.%s.%s not found" % (x3dout, x, field))
+                        pass
                 elif tag is not None and not isinstance(tag, numbers.Real) and not tag.startswith("-") and not tag.startswith("@"):
                     print("3. Trying to set %s %s %s %s" % (tag, propertyname, x, o))
                     if X3dMethodLookup[tag] is not None:
@@ -115,15 +119,15 @@ def buildX3dObject(parentname, parentvalue, propertyname, propertyvalue, indent=
 
 def buildX3dArray(parentname, parentvalue, propertyname, propertyvalue, indent=0):
     print("buildX3dArray %s\n--%s\n--%s\n--%s\n" % (parentname, parentvalue, propertyname, propertyvalue[0]))
-    x3dout = MFNode()
+    x3dout = []
     if isinstance(propertyvalue[0], str):
-        x3dout = MFString(propertyvalue)
+        x3dout = propertyvalue
     elif isinstance(propertyvalue[0], int):
         x3dout = MFInt32(propertyvalue)
     elif isinstance(propertyvalue[0], bool):
-        x3dout = MFBoolean(propertyvalue)
+        x3dout = x3d.MFBoolean(propertyvalue)
     elif isinstance(propertyvalue[0], float):
-        x3dout = MFBoolean(propertyvalue)
+        x3dout = MFFloat(propertyvalue)
     elif isinstance(propertyvalue[0], dict):
         #try:
             count = 0
@@ -144,7 +148,7 @@ def buildX3dArray(parentname, parentvalue, propertyname, propertyvalue, indent=0
 def buildX3d(parentname, parentvalue, propertyname, propertyvalue, indent=0):
     print("buildX3d %s\n--%s\n--%s\n--%s\n" % (parentname, parentvalue, propertyname, propertyvalue))
     if isinstance(propertyvalue, str):
-        x3dout = SFString(propertyvalue)
+        x3dout = propertyvalue
     elif isinstance(propertyvalue, int):
         x3dout = SFInt32(propertyvalue)
     elif isinstance(propertyvalue, bool):
@@ -161,11 +165,11 @@ def buildX3d(parentname, parentvalue, propertyname, propertyvalue, indent=0):
     print("D. Returning %s" % x3dout)
     return x3dout
 
-with open("../data/HelloWorld.json") as f:
+with open("../data/ball.json") as f:
     dictionary = json.load(f)
     # pprint.pprint(dictionary)
     jsonout = buildJson(value=dictionary)
     pprint.pprint(jsonout)
     x3dout = buildX3d(None, None, "X3D", jsonout["X3D"], 0)
-    print(x3dout)
+    print(x3dout.XML())
     print("DONE")

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-  "title": "X3D V4.0 JSON Schema, generated 2023/10/26 19:40:59",
+  "title": "X3D V4.0 JSON Schema, generated 2023/12/30 06:09:39",
   "description": "Experimental JSON Schema for X3D V4.0",
   "type": "object",
   "properties": {
@@ -1368,6 +1368,9 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "-backMaterial": {
+              "$ref": "#/$defs/-X3DMaterialNodeSFNode"
+            },
             "-fillProperties": {
               "$ref": "#/$defs/-FillPropertiesSFNode"
             },
@@ -1558,7 +1561,7 @@
             },
             "@solid": {
               "default": false,
-              "$comment": "SFBool inputOutput",
+              "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
             "@startAngle": {
@@ -2959,7 +2962,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@size": {
-              "$comment": "SFVec3f inputOutput",
+              "$comment": "SFVec3f initializeOnly",
               "type": "array",
               "minItems": 3,
               "maxItems": 3,
@@ -2970,7 +2973,7 @@
             },
             "@solid": {
               "default": true,
-              "$comment": "SFBool inputOutput",
+              "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
             "@DEF": {
@@ -5521,6 +5524,9 @@
             "-right": {
               "$ref": "#/$defs/-X3DTexture2DNodeSFNode"
             },
+            "-textureProperties": {
+              "$ref": "#/$defs/-TexturePropertiesSFNode"
+            },
             "-topTexture": {
               "$ref": "#/$defs/-X3DTexture2DNodeSFNode"
             },
@@ -5864,7 +5870,7 @@
             },
             "@solid": {
               "default": true,
-              "$comment": "SFBool inputOutput",
+              "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
             "@DEF": {
@@ -7057,7 +7063,7 @@
             },
             "@solid": {
               "default": true,
-              "$comment": "SFBool inputOutput",
+              "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
             "@top": {
@@ -7143,11 +7149,11 @@
                   "type": "number"
                 },
                 {
-                  "default": 1,
+                  "default": 0,
                   "type": "number"
                 },
                 {
-                  "default": 0,
+                  "default": 1,
                   "type": "number"
                 },
                 {
@@ -7743,7 +7749,7 @@
             },
             "@solid": {
               "default": false,
-              "$comment": "SFBool inputOutput",
+              "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
             "@DEF": {
@@ -8372,7 +8378,6 @@
               "$comment": "MFFloat initializeOnly",
               "type": "array",
               "items": {
-                "default": 0,
                 "type": "number"
               }
             },
@@ -8389,14 +8394,14 @@
             },
             "@solid": {
               "default": true,
-              "$comment": "SFBool inputOutput",
+              "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
             "-texCoord": {
               "$ref": "#/$defs/-X3DSingleTextureCoordinateNodeSFNode"
             },
             "@xDimension": {
-              "default": 2,
+              "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
             },
@@ -8406,7 +8411,7 @@
               "type": "number"
             },
             "@zDimension": {
-              "default": 2,
+              "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
             },
@@ -9146,7 +9151,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@orientation": {
-              "$comment": "MFRotation inputOutput",
+              "$comment": "MFRotation initializeOnly",
               "type": "array",
               "minItems": 4,
               "prefixItems": [
@@ -9172,7 +9177,7 @@
               }
             },
             "@scale": {
-              "$comment": "MFVec2f inputOutput",
+              "$comment": "MFVec2f initializeOnly",
               "type": "array",
               "minItems": 2,
               "items": {
@@ -9182,7 +9187,7 @@
             },
             "@solid": {
               "default": true,
-              "$comment": "SFBool inputOutput",
+              "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
             "@spine": {
@@ -9398,8 +9403,11 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@name": {
-              "$comment": "SFString inputOutput",
-              "type": "string"
+              "$comment": "xs:NMTOKEN initializeOnly",
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
             },
             "@numComponents": {
               "default": 4,
@@ -10014,7 +10022,7 @@
             },
             "@size": {
               "default": 128,
-              "$comment": "SFInt32 inputOutput",
+              "$comment": "SFInt32 initializeOnly",
               "type": "integer"
             },
             "-textureProperties": {
@@ -10226,14 +10234,14 @@
             },
             "@solid": {
               "default": true,
-              "$comment": "SFBool inputOutput",
+              "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
             "-texCoord": {
               "$ref": "#/$defs/-X3DSingleTextureCoordinateNodeSFNode"
             },
             "@xDimension": {
-              "default": 2,
+              "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
             },
@@ -10248,7 +10256,7 @@
               "type": "number"
             },
             "@zDimension": {
-              "default": 2,
+              "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
             },
@@ -11503,10 +11511,9 @@
               "$ref": "#/$defs/IS"
             },
             "@coordIndex": {
-              "$comment": "MFInt32 initializeOnly",
+              "$comment": "MFInt32 inputOutput",
               "type": "array",
               "items": {
-                "minimum": 0,
                 "type": "integer"
               }
             },
@@ -11774,7 +11781,6 @@
               "type": "array",
               "minItems": 3,
               "items": {
-                "default": 0,
                 "type": "number"
               }
             },
@@ -11782,24 +11788,6 @@
               "$comment": "MFRotation inputOutput",
               "type": "array",
               "minItems": 4,
-              "prefixItems": [
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                }
-              ],
               "items": {
                 "type": "number"
               }
@@ -11809,7 +11797,6 @@
               "type": "array",
               "minItems": 3,
               "items": {
-                "default": 0,
                 "type": "number"
               }
             },
@@ -12440,7 +12427,7 @@
               "type": "string"
             },
             "@enabled": {
-              "default": false,
+              "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
@@ -13540,7 +13527,7 @@
             },
             "@solid": {
               "default": true,
-              "$comment": "SFBool inputOutput",
+              "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
             "-texCoord": {
@@ -13760,7 +13747,7 @@
             },
             "@solid": {
               "default": true,
-              "$comment": "SFBool inputOutput",
+              "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
             "-texCoord": {
@@ -13871,7 +13858,7 @@
             },
             "@solid": {
               "default": true,
-              "$comment": "SFBool inputOutput",
+              "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
             "-texCoord": {
@@ -13982,7 +13969,7 @@
             },
             "@solid": {
               "default": true,
-              "$comment": "SFBool inputOutput",
+              "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
             "-texCoord": {
@@ -14093,7 +14080,7 @@
             },
             "@solid": {
               "default": true,
-              "$comment": "SFBool inputOutput",
+              "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
             "-texCoord": {
@@ -14754,7 +14741,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@order": {
-              "$comment": "MFInt32 initializeOnly",
+              "$comment": "MFInt32 inputOutput",
               "type": "array",
               "items": {
                 "default": 0,
@@ -16146,8 +16133,11 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@name": {
-              "$comment": "SFString inputOutput",
-              "type": "string"
+              "$comment": "xs:NMTOKEN initializeOnly",
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
             },
             "@value": {
               "$comment": "MFMatrix3f inputOutput",
@@ -16222,8 +16212,11 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@name": {
-              "$comment": "SFString inputOutput",
-              "type": "string"
+              "$comment": "xs:NMTOKEN initializeOnly",
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
             },
             "@value": {
               "$comment": "MFMatrix4f inputOutput",
@@ -18072,7 +18065,7 @@
               "$ref": "#/$defs/-Coordinate-CoordinateDoubleSFNode"
             },
             "@knot": {
-              "$comment": "MFDouble initializeOnly",
+              "$comment": "MFDouble inputOutput",
               "type": "array",
               "items": {
                 "type": "number"
@@ -18163,7 +18156,7 @@
             },
             "@solid": {
               "default": true,
-              "$comment": "SFBool inputOutput",
+              "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
             "-texCoord": {
@@ -18297,7 +18290,7 @@
               "$ref": "#/$defs/-Coordinate-CoordinateDoubleSFNode"
             },
             "@knot": {
-              "$comment": "MFDouble initializeOnly",
+              "$comment": "MFDouble inputOutput",
               "type": "array",
               "items": {
                 "type": "number"
@@ -18605,7 +18598,7 @@
             },
             "@solid": {
               "default": true,
-              "$comment": "SFBool inputOutput",
+              "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
             "-trajectoryCurve": {
@@ -18686,7 +18679,7 @@
             },
             "@solid": {
               "default": true,
-              "$comment": "SFBool inputOutput",
+              "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
             "-trajectoryCurve": {
@@ -18877,7 +18870,7 @@
             },
             "@solid": {
               "default": true,
-              "$comment": "SFBool inputOutput",
+              "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
             "-texCoord": {
@@ -19433,10 +19426,8 @@
               "type": "number"
             },
             "@fieldOfView": {
-              "$comment": "SFVec4f inputOutput",
+              "$comment": "MFFloat inputOutput",
               "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
               "prefixItems": [
                 {
                   "default": -1,
@@ -19455,7 +19446,9 @@
                   "type": "number"
                 }
               ],
-              "items": false
+              "items": {
+                "type": "number"
+              }
             },
             "@jump": {
               "default": true,
@@ -19846,10 +19839,10 @@
               "type": "boolean"
             },
             "-color": {
-              "$ref": "#/$defs/-X3DColorNodeMFNode"
+              "$ref": "#/$defs/-X3DColorNodeSFNode"
             },
             "-colorRamp": {
-              "$ref": "#/$defs/-X3DColorNodeMFNode"
+              "$ref": "#/$defs/-X3DColorNodeSFNode"
             },
             "@colorKey": {
               "$comment": "MFFloat initializeOnly",
@@ -20582,11 +20575,11 @@
                   "type": "number"
                 },
                 {
-                  "default": 1,
+                  "default": 0,
                   "type": "number"
                 },
                 {
-                  "default": 0,
+                  "default": 1,
                   "type": "number"
                 },
                 {
@@ -20892,7 +20885,7 @@
             },
             "@radius": {
               "default": 100,
-              "$comment": "SFFloat initializeOnly",
+              "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@shadowIntensity": {
@@ -22642,7 +22635,7 @@
             },
             "@solid": {
               "default": true,
-              "$comment": "SFBool inputOutput",
+              "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
             "-texCoord": {
@@ -22930,19 +22923,18 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@size": {
-              "$comment": "SFVec2f inputOutput",
+              "$comment": "SFVec2f initializeOnly",
               "type": "array",
               "minItems": 2,
               "maxItems": 2,
               "items": {
                 "default": 2,
-                "exclusiveMinimum": 0,
                 "type": "number"
               }
             },
             "@solid": {
               "default": false,
-              "$comment": "SFBool inputOutput",
+              "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
             "@DEF": {
@@ -25592,7 +25584,7 @@
             },
             "@solid": {
               "default": true,
-              "$comment": "SFBool inputOutput",
+              "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
             "@DEF": {
@@ -25763,7 +25755,7 @@
             },
             "@closed": {
               "default": false,
-              "$comment": "SFBool initializeOnly",
+              "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
             "@key": {
@@ -25861,7 +25853,7 @@
             },
             "@closed": {
               "default": false,
-              "$comment": "SFBool initializeOnly",
+              "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
             "@key": {
@@ -25959,7 +25951,7 @@
             },
             "@closed": {
               "default": false,
-              "$comment": "SFBool initializeOnly",
+              "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
             "@key": {
@@ -26155,7 +26147,7 @@
             },
             "@radius": {
               "default": 100,
-              "$comment": "SFFloat initializeOnly",
+              "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@shadowIntensity": {
@@ -26717,15 +26709,6 @@
             "IS": {
               "$ref": "#/$defs/IS"
             },
-            "@coordIndex": {
-              "$comment": "MFInt32 initializeOnly",
-              "type": "array",
-              "items": {
-                "default": -1,
-                "minimum": -1,
-                "type": "integer"
-              }
-            },
             "@mass": {
               "default": 0,
               "$comment": "SFFloat inputOutput",
@@ -27122,7 +27105,7 @@
             },
             "@solid": {
               "default": false,
-              "$comment": "SFBool inputOutput",
+              "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
             "@string": {
@@ -28191,6 +28174,10 @@
                 "type": "number"
               }
             },
+            "@mapping": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
@@ -28290,6 +28277,10 @@
                 "default": 0,
                 "type": "number"
               }
+            },
+            "@mapping": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -28400,6 +28391,10 @@
             },
             "IS": {
               "$ref": "#/$defs/IS"
+            },
+            "@mapping": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
             },
             "@matrix": {
               "$comment": "SFMatrix4f inputOutput",
@@ -29541,7 +29536,7 @@
             },
             "@solid": {
               "default": true,
-              "$comment": "SFBool inputOutput",
+              "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
             "-texCoord": {
@@ -29644,7 +29639,7 @@
             },
             "@solid": {
               "default": true,
-              "$comment": "SFBool inputOutput",
+              "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
             "-texCoord": {
@@ -29717,7 +29712,7 @@
             },
             "@solid": {
               "default": false,
-              "$comment": "SFBool inputOutput",
+              "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
             "@vertices": {
@@ -29825,7 +29820,7 @@
             },
             "@solid": {
               "default": true,
-              "$comment": "SFBool inputOutput",
+              "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
             "@stripCount": {
@@ -30528,7 +30523,6 @@
               "maxItems": 3,
               "items": {
                 "default": 0,
-                "minimum": 0,
                 "type": "number"
               }
             },
@@ -32852,6 +32846,27 @@
       },
       "additionalProperties": false
     },
+    "-X3DMaterialNodeSFNode": {
+      "type": "object",
+      "properties": {
+        "Material": {
+          "$ref": "#/$defs/Material"
+        },
+        "PhysicalMaterial": {
+          "$ref": "#/$defs/PhysicalMaterial"
+        },
+        "UnlitMaterial": {
+          "$ref": "#/$defs/UnlitMaterial"
+        },
+        "TwoSidedMaterial": {
+          "$ref": "#/$defs/TwoSidedMaterial"
+        },
+        "ProtoInstance": {
+          "$ref": "#/$defs/ProtoInstance"
+        }
+      },
+      "additionalProperties": false
+    },
     "-FillPropertiesSFNode": {
       "type": "object",
       "properties": {
@@ -32869,27 +32884,6 @@
       "properties": {
         "LineProperties": {
           "$ref": "#/$defs/LineProperties"
-        },
-        "ProtoInstance": {
-          "$ref": "#/$defs/ProtoInstance"
-        }
-      },
-      "additionalProperties": false
-    },
-    "-X3DMaterialNodeSFNode": {
-      "type": "object",
-      "properties": {
-        "Material": {
-          "$ref": "#/$defs/Material"
-        },
-        "PhysicalMaterial": {
-          "$ref": "#/$defs/PhysicalMaterial"
-        },
-        "UnlitMaterial": {
-          "$ref": "#/$defs/UnlitMaterial"
-        },
-        "TwoSidedMaterial": {
-          "$ref": "#/$defs/TwoSidedMaterial"
         },
         "ProtoInstance": {
           "$ref": "#/$defs/ProtoInstance"
@@ -33842,6 +33836,18 @@
         "additionalProperties": false
       }
     },
+    "-TexturePropertiesSFNode": {
+      "type": "object",
+      "properties": {
+        "TextureProperties": {
+          "$ref": "#/$defs/TextureProperties"
+        },
+        "ProtoInstance": {
+          "$ref": "#/$defs/ProtoInstance"
+        }
+      },
+      "additionalProperties": false
+    },
     "-ShaderPartMFNode": {
       "$comment": "MFNode inputOutput",
       "type": "array",
@@ -33887,18 +33893,6 @@
         },
         "additionalProperties": false
       }
-    },
-    "-TexturePropertiesSFNode": {
-      "type": "object",
-      "properties": {
-        "TextureProperties": {
-          "$ref": "#/$defs/TextureProperties"
-        },
-        "ProtoInstance": {
-          "$ref": "#/$defs/ProtoInstance"
-        }
-      },
-      "additionalProperties": false
     },
     "-X3DComposableVolumeRenderStyleNodeMFNode": {
       "$comment": "MFNode inputOutput",
@@ -35640,29 +35634,6 @@
         }
       },
       "additionalProperties": false
-    },
-    "-X3DColorNodeMFNode": {
-      "$comment": "MFNode initializeOnly",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "Color": {
-            "$ref": "#/$defs/Color"
-          },
-          "ColorRGBA": {
-            "$ref": "#/$defs/ColorRGBA"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
     },
     "-X3DParticleEmitterNodeSFNode": {
       "type": "object",

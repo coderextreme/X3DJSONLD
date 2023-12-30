@@ -104,13 +104,14 @@ Recommended tools:
     <xsl:variable name="quot">"</xsl:variable>
     
     <xsl:variable name="maxROUTEdepth">
-        <!-- global variable -->
+        <!-- global variable.  note that if this value is too large, some recursion loops might not recover. -->
+        <!-- TODO: addditional tests are needed for detecting and avoiding ROUTE loops. -->
         <xsl:choose>
-            <xsl:when test="(count(//ROUTE) lt 20)">
+            <xsl:when test="(count(//ROUTE) lt 10)">
                 <xsl:value-of select="count(//ROUTE)"/>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:value-of select="number(20)"/>
+                <xsl:value-of select="number(10)"/>
             </xsl:otherwise>
         </xsl:choose>
         
@@ -167,6 +168,21 @@ a.prototype:visited {color: black}
 span.route {color: red}
 b.warning {color: #CC5500}
 b.error {color: #CC0000}
+
+/* https://stackoverflow.com/questions/10769016/display-image-on-text-link-hover-css-only 
+    position: relative;
+    left: 20px;*/
+.child {
+    float: right;
+    height: 0px;
+}
+.parent:hover {
+    background-color: lightyellow;
+}
+.parent:hover .child {
+    background-color: lightyellow;
+    height: 200px;
+}
 ]]>
                 </style>
 <!-- https://www.quackit.com/html/codes/tables/html_table_border.cfm -->
@@ -284,7 +300,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         <!-- used in X3dTidy.xslt and X3dToXhtml.xslt -->
             <!-- debug
             <xsl:message>
-                <xsl:text>*** output-humanoid-tree HAnimHumanoid commencing</xsl:text>
+                <xsl:text>[debug] output-humanoid-tree HAnimHumanoid commencing</xsl:text>
                 <xsl:text>&#10;</xsl:text>
             </xsl:message>
             -->
@@ -471,9 +487,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <!-- debug -->
                     <xsl:if test="(count(//ROUTE) gt number($maxROUTEdepth))">
                         <xsl:message>
-                            <xsl:text>*** total # ROUTE statements = </xsl:text>
+                            <xsl:text>[info] total # ROUTE statements = </xsl:text>
                             <xsl:value-of select="count(//ROUTE)"/>
-                            <xsl:text>, maxROUTEdepth=</xsl:text>
+                            <xsl:text>, event-cascade table-row maxROUTEdepth=</xsl:text>
                             <xsl:value-of select="$maxROUTEdepth"/>
                         </xsl:message>
                     </xsl:if>
@@ -491,7 +507,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <!-- check for missing DEF definitions -->
                         <xsl:if test="(count(//*[@DEF = $fromNodeDEF]) = 0)">
                             <xsl:message>
-                                <xsl:text>*** Error: no node found with origination DEF='</xsl:text>
+                                <xsl:text>[error] no node found with origination DEF='</xsl:text>
                                 <xsl:value-of select="$fromNodeDEF"/>
                                 <xsl:text>' for ROUTE fromField='</xsl:text>
                                 <xsl:value-of select="$fromFieldName"/>
@@ -506,7 +522,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         </xsl:if>
                         <xsl:if test="(count(//*[@DEF = $toNodeDEF]) = 0)">
                             <xsl:message>
-                                <xsl:text>*** Error: no node found with destination DEF='</xsl:text>
+                                <xsl:text>[error] no node found with destination DEF='</xsl:text>
                                 <xsl:value-of select="$toNodeDEF"/>
                                 <xsl:text>': ROUTE fromField='</xsl:text>
                                 <xsl:value-of select="$fromFieldName"/>
@@ -521,7 +537,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         </xsl:if>
                         <xsl:if test="(string-length($fromFieldName) = 0) or (string-length($fromNodeDEF) = 0) or (string-length($toFieldName) = 0) or (string-length($toNodeDEF) = 0)">
                             <xsl:message>
-                                <xsl:text>*** Error: node or field name missing: ROUTE fromField='</xsl:text>
+                                <xsl:text>[error] node or field name missing: ROUTE fromField='</xsl:text>
                                 <xsl:value-of select="$fromFieldName"/>
                                 <xsl:text>' fromNode='</xsl:text>
                                 <xsl:value-of select="$fromNodeDEF"/>
@@ -539,7 +555,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                     select="count(           //ROUTE[(@fromNode=$fromNodeDEF) and (@fromField=$fromFieldName) and (@toNode=$toNodeDEF) and (@toField=$toFieldName)])"/>
                         <xsl:if test="($precedingDuplicateRouteCount gt 1)"><!-- inclusive, apparently; just report on first occurrence -->
                             <xsl:message>
-                                <xsl:text>*** Error: </xsl:text>
+                                <xsl:text>[error] </xsl:text>
                                 <xsl:value-of select="$totalIdenticalRouteCount"/>
                                 <xsl:text> duplicate ROUTE statements found:  ROUTE fromField='</xsl:text>
                                 <xsl:value-of select="$fromFieldName"/>
@@ -557,7 +573,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:variable name="toNode" select="@toNode"/>
                         <xsl:if test="(preceding-sibling::*[@toNode = $toNode]) and not(following-sibling::*[@toNode = $toNode])">
                             <xsl:message>
-                                 <xsl:text>*** Warning: nodes with multiple fan-in of ROUTEd events can have timing variations and possibly varied behaviors: </xsl:text>
+                                 <xsl:text>[diagnostic] nodes with multiple fan-in from event ROUTEs might have timing variations and possibly inconsistent behaviors: </xsl:text>
                                 <xsl:value-of select="local-name(//*[@DEF = $toNode])"/>
                                  <xsl:text> DEF='</xsl:text>
                                 <xsl:value-of select="$toNode"/>
@@ -597,7 +613,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <xsl:text> </xsl:text><!-- keep whitespace character here to avoid singleton tag -->
                         </xsl:element>
                         <!--<xsl:value-of select="$routeTableCount"/><xsl:text> </xsl:text> -->
-                        <a href="#EventGraph">
+                        <a href="#EventGraph" title="bookmark link">
                             <xsl:text>Event Graph ROUTE Table</xsl:text>
                         </a>
                         <xsl:if test="($routeTableCount > 1)">
@@ -605,18 +621,27 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         </xsl:if>
                         <xsl:text> with </xsl:text>
                         <xsl:value-of select="count(//ROUTE)"/>
-                        <xsl:text> ROUTE</xsl:text>
+                        <xsl:text> </xsl:text>
+                        <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#ROUTE" title="X3D Tooltips: ROUTE" target="_blank">ROUTE</a>
+                        <xsl:text></xsl:text>
                         <xsl:if test="(count(//ROUTE) > 0)">
                             <xsl:text> connections</xsl:text>
                         </xsl:if>
                         <xsl:text> total</xsl:text>
                         <xsl:text>, showing </xsl:text>
                         <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/concepts.html#Eventmodel" target="_blank" title="X3D 4.0 Architecture, Concepts, Event Model">
-                            <xsl:text>event model</xsl:text>
+                            <xsl:text>event model relationships</xsl:text>
                         </a>
-                        <xsl:text> relationships for this scene.</xsl:text>
+                        <xsl:text> for this scene.</xsl:text>
                         </b>
                     </p>
+                    
+                    <!-- debug ROUTE statements
+                    <xsl:message>
+                        <xsl:text>[debug] Processing all candidate event-originating nodes, count($eventProducingNodes)=</xsl:text>
+                        <xsl:value-of select="count($eventProducingNodes)"/>
+                    </xsl:message> -->
+                    
                     <!-- all candidate event-originating nodes -->
                     <xsl:for-each select="$eventProducingNodes">
                         <xsl:sort select="local-name()" order="descending" case-order="upper-first" data-type="text"/>
@@ -631,7 +656,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
 
                         <!-- debug ROUTE statements
                         <xsl:message>
-                            <xsl:text>*** Processing </xsl:text>
+                            <xsl:text>[debug] Processing started for #</xsl:text>
+                            <xsl:value-of select="position()"/>
+                            <xsl:text>, </xsl:text>
                             <xsl:value-of select="local-name()"/>
                             <xsl:text> DEF='</xsl:text>
                             <xsl:value-of select="@DEF"/>
@@ -648,7 +675,17 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <xsl:text>&#10;</xsl:text>
                             <xsl:comment> EventGraph </xsl:comment>
                             <xsl:text>&#10;</xsl:text>
-                            <table border="1" style="border: 1px solid black; margin-left: auto; margin-right: auto; background-color:#DDEEFF;">
+                            <xsl:variable name="tableBackgroundColor">
+                                <xsl:choose>
+                                    <xsl:when test="not(count($OutgoingRoutes) > 0)">
+                                        <xsl:text>white</xsl:text>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:text>#DDEEFF</xsl:text>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </xsl:variable>
+                            <table border="1" style="border: 1px solid black; margin-left: auto; margin-right: auto; background-color:{$tableBackgroundColor};">
                                 <xsl:if test="(position() = 1)">
                                     <!-- start a row -->
                                     <xsl:comment>starting first row</xsl:comment> <!-- -->
@@ -673,15 +710,31 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                     </td>
                                 </xsl:if>
                             
-                                <!-- handle first-level trigger nodes -->
+                                <!-- handle first-level trigger nodes
+                                <xsl:message>
+                                    <xsl:text>[debug] handle first-level trigger nodes:</xsl:text>
+                                </xsl:message> -->
                                 <xsl:choose>
                                     <xsl:when test="(string-length(@USE) gt 0)">
-                                        <!-- ignore USE nodes -->
+                                        <!-- ignore USE nodes
+                                        <xsl:message>
+                                            <xsl:text>[debug] ignore USE nodes in table construction</xsl:text>
+                                        </xsl:message> -->
                                     </xsl:when>
                                     <xsl:when test="(local-name() = 'TimeSensor') and (count($IncomingRoutes) gt 0)">
                                         <!-- this clock is separately triggered and already handled in another animation chain -->
+                                        <!-- ignore TimeSensor nodes -->
+                                        <xsl:message>
+                                            <xsl:text>[debug] ignore TimeSensor nodes in animation chain</xsl:text>
+                                        </xsl:message>
                                     </xsl:when>
                                     <xsl:when test="(count($OutgoingRoutes) = 0)">
+                                        <!-- debug
+                                        <xsl:message>
+                                            <xsl:text>[debug] count($OutgoingRoutes) zero test: count($OutgoingRoutes)=</xsl:text>
+                                            <xsl:value-of select="count($OutgoingRoutes)"/>
+                                        </xsl:message>
+                                        -->
                                         <td style="text-align:right">
                                             <xsl:choose>
                                                 <xsl:when test="(string-length(@DEF) > 0)">
@@ -712,28 +765,54 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                             <br />
                                         </td>
                                     </xsl:when>
+                                    <xsl:when test="(count($OutgoingRoutes) ge number($maxROUTEdepth))">
+                                        <!-- debug ROUTE statements
+                                        <xsl:message>
+                                            <xsl:text>[debug] Processing </xsl:text>
+                                            <xsl:value-of select="local-name()"/>
+                                            <xsl:text> DEF='</xsl:text>
+                                            <xsl:value-of select="@DEF"/>
+                                            <xsl:text>' with </xsl:text>
+                                            <xsl:value-of select="count($IncomingRoutes)"/>
+                                            <xsl:text> IncomingRoutes, </xsl:text>
+                                            <xsl:value-of select="count($OutgoingRoutes)"/>
+                                            <xsl:text> OutgoingRoutes, </xsl:text>
+                                            <xsl:value-of select="count($SelfRoutes)"/>
+                                            <xsl:text> SelfRoutes </xsl:text>
+                                        </xsl:message> -->
+                                    </xsl:when>
                                     <xsl:otherwise>
-                                        <xsl:for-each select="$OutgoingRoutes[position() le number($maxROUTEdepth)]">
-                                            <xsl:variable name="toNodeDEF"     select="@toNode"/>
-                                            <xsl:variable name="toNodeName"    select="local-name(//*[@DEF = $toNodeDEF])"/>
-                                            <xsl:variable name=  "toFieldName" select="@toField"/>
+                                        <!-- debug
+                                        <xsl:message>
+                                            <xsl:text>[debug] looping on $OutgoingRoutes: count($OutgoingRoutes)=</xsl:text>
+                                            <xsl:value-of select="count($OutgoingRoutes)"/>
+                                        </xsl:message>
+                                        -->
+                                        <!-- likely should not be a for-each selection constraint [position() le number($maxROUTEdepth)] -->
+                                        <xsl:for-each select="$OutgoingRoutes">
+                                            <xsl:variable name= "toNodeDEF"    select="@toNode"/>
+                                            <xsl:variable name= "toNodeName"   select="local-name(//*[@DEF = $toNodeDEF])"/>
+                                            <xsl:variable name="toFieldName"   select="@toField"/>
                                             <xsl:variable name="fromFieldName" select="@fromField"/>
+                                            
+                                            <!-- debug
+                                            <xsl:message>
+                                                <xsl:text>[debug] first-level outer-loop trace #</xsl:text>
+                                                <xsl:value-of select="position()"/>
+                                                <xsl:text>: OutgoingRoute from </xsl:text>
+                                                <xsl:value-of select="$DEFname"/>
+                                                <xsl:text> to </xsl:text>
+                                                <xsl:value-of select="$toNodeDEF"/>
+                                            </xsl:message>
+                                            -->
 
                                             <xsl:choose>
                                                 <xsl:when test="(position() le number($maxROUTEdepth))">
-                                                    <!-- debug
-                                                    <xsl:message>
-                                                        <xsl:text>*** first-level outer-loop trace #</xsl:text>
-                                                        <xsl:value-of select="position()"/>
-                                                        <xsl:text>: from </xsl:text>
-                                                        <xsl:value-of select="$DEFname"/>
-                                                        <xsl:text> OutgoingRoute </xsl:text>
-                                                        <xsl:value-of select="position()"/>
-                                                        <xsl:text> to </xsl:text>
-                                                        <xsl:value-of select="$toNodeDEF"/>
-                                                    </xsl:message>
-                                                    -->
                                                     <!-- TODO avoid recursive looping !! -->
+        <!-- debug
+        <xsl:message>
+            <xsl:text>[debug] here 8a!</xsl:text>
+        </xsl:message> -->
                                                     <xsl:call-template name="tableElementEntries">
                                                         <xsl:with-param name="DEFname"      ><xsl:value-of select="$DEFname"/></xsl:with-param>
                                                         <xsl:with-param name="nodeName"     ><xsl:value-of select="$nodeName"/></xsl:with-param>
@@ -741,8 +820,12 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                                         <xsl:with-param name="toNodeDEF"    ><xsl:value-of select="$toNodeDEF"/></xsl:with-param>
                                                         <xsl:with-param name="toNodeName"   ><xsl:value-of select="$toNodeName"/></xsl:with-param>
                                                         <xsl:with-param name="toFieldName"  ><xsl:value-of select="$toFieldName"/></xsl:with-param>
-                                                        <xsl:with-param name="depth"        ><xsl:value-of select="$depth"/></xsl:with-param><!-- top -->
+                                                        <xsl:with-param name="depth"        ><xsl:text>1</xsl:text></xsl:with-param><!-- top -->
                                                     </xsl:call-template>
+        <!-- debug
+        <xsl:message>
+            <xsl:text>[debug] here 8b!</xsl:text>
+        </xsl:message> -->
 
                                                     <!-- row finished -->
                                                     <xsl:comment>row finished</xsl:comment>
@@ -756,7 +839,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                                 <xsl:otherwise>
                                                     <!-- should never get here -->
                                                     <xsl:message>
-                                                        <xsl:text>*** first-level outer-loop trace #</xsl:text>
+                                                        <xsl:text>[debug] first-level outer-loop trace #</xsl:text>
                                                         <xsl:value-of select="position()"/>
                                                         <xsl:text> failure!</xsl:text>
                                                     </xsl:message>
@@ -772,11 +855,27 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             </xsl:if>
                         </xsl:if>
                         <xsl:text>&#10;</xsl:text>
+                        <!-- debug ROUTE statements
+                        <xsl:message>
+                            <xsl:text>[debug] Processing complete for #</xsl:text>
+                            <xsl:value-of select="position()"/>
+                            <xsl:text>, </xsl:text>
+                            <xsl:value-of select="local-name()"/>
+                        </xsl:message> -->
                     </xsl:for-each>
+                    <br /> <!-- light blue margin -->
+        <!-- debug
+        <xsl:message>
+            <xsl:text>[debug] here 9!</xsl:text>
+        </xsl:message> -->
                         
                     </div>
                     <hr style="width:100%"/>
                 </xsl:if>
+        <!-- debug
+        <xsl:message>
+            <xsl:text>[debug] here 10!</xsl:text>
+        </xsl:message> -->
                 
                 <xsl:text>&#10;</xsl:text>
                 <span style="color:white">--></span>
@@ -805,7 +904,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:message>
-                                <xsl:text>*** Unrecognized archive identifier, corresponding version control archive unknown: </xsl:text>
+                                <xsl:text>[debug] Unrecognized archive identifier, corresponding version control archive unknown: </xsl:text>
                                 <xsl:value-of select="$identifierUrl"/>
                             </xsl:message>
                         </xsl:otherwise>
@@ -1018,7 +1117,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         
     </xsl:template>
 
-    <!-- ****** HAnimNode-indent:  callable template (recursive function) ****** -->
+    <!-- ** ** ** HAnimNode-indent:  callable template (recursive function) ** ** ** -->
     <!-- follows examples in Michael Kay's _XSLT_, first edition, pp. 551-554 -->
     <xsl:template name="HAnimNode-indent">
 		<!-- debug
@@ -1093,7 +1192,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:apply-templates select="comment()" />
                 </xsl:if>
 				
-				<!-- TODO avoid creating a second HAnimSegment -->
+		<!-- TODO avoid creating a second HAnimSegment -->
                 <xsl:if test="HAnimSegment">
                     <ul>
                         <xsl:for-each select="HAnimSegment">
@@ -1370,7 +1469,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                                     <xsl:text>--&gt;</xsl:text>
                                                     <xsl:text>&#10;</xsl:text>
                                                 </xsl:for-each>
-										<!-- TODO poor design, duplicated for-each loops within/alongside Transorm, should recurse instead -->
+					<!-- TODO poor design, duplicated for-each loops within/alongside Transorm, should recurse instead -->
                                         <xsl:for-each select="HAnimSite"> <!-- no Viewpoint child [not(Viewpoint)]-->
                                             <li>
                                                 <!--
@@ -1884,7 +1983,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                 <xsl:text>meta 'identifier' provides the unique Uniform Resource Identifier (URI) or url address for this resource</xsl:text>
                             </xsl:when>
                             <xsl:when test="(@name = 'image') or (@name = 'Image')">
-                                <xsl:text>meta 'image' provides name or reference link to a supporting image file</xsl:text>
+                                <xsl:text>meta 'Image' provides name or reference link to a supporting image file</xsl:text>
                             </xsl:when>
                             <xsl:when test="(@name = 'info')">
                                 <xsl:text>meta 'info' provides additional information of interest</xsl:text>
@@ -2451,7 +2550,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 <span class="route">
                     <xsl:element name="a">
                         <xsl:attribute name="title">
-                            <xsl:text>bookmark for this ROUTE is #ROUTE_</xsl:text>
+                            <xsl:text>HTML bookmark for this ROUTE is #ROUTE_</xsl:text>
                             <xsl:value-of select="(count(preceding::ROUTE) + 1)"/>
                         </xsl:attribute>
                         <xsl:attribute name="href">
@@ -2494,9 +2593,35 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         <xsl:choose>
             <!-- handle specially ordered cases first -->
             <xsl:when test="local-name()='meta'">
+                <!-- wrap hover help -->
+                <xsl:if test="(@name='image') or (@name='Image')">
+                    <xsl:text disable-output-escaping="yes">&lt;span</xsl:text>
+                    <xsl:text> class="parent"</xsl:text>
+                    <xsl:text disable-output-escaping="yes">&gt;</xsl:text>
+                    <!-- debug
+                    <xsl:message>
+                        <xsl:text>*** opening span tag class="parent" for Image</xsl:text>
+                    </xsl:message> -->
+                </xsl:if>
+                
                 <xsl:apply-templates select="@name" />
                 <xsl:apply-templates select="@content" />
                 <xsl:apply-templates select="@*[local-name()!='name' and local-name()!='content']"/><!-- safety net -->
+                
+                <!-- unwrap hover help -->
+                <xsl:if test="(@name='image') or (@name='Image')">
+                    <xsl:text>&#10;</xsl:text>
+                    <xsl:text disable-output-escaping="yes">&lt;img src="</xsl:text>
+                    <xsl:value-of select="@content"/>
+                    <xsl:text>" class="child"</xsl:text>
+                    <xsl:text disable-output-escaping="yes">/&gt;</xsl:text>
+                    <xsl:text disable-output-escaping="yes">&lt;/span&gt; </xsl:text>
+                    <!-- debug
+                    <xsl:message>
+                        <xsl:text>*** closing span tag class="child" for Image</xsl:text>
+                    </xsl:message>
+                    -->
+                </xsl:if>
             </xsl:when>
             <xsl:when test="local-name()='ROUTE'">
                 <!-- TODO identify type mismatches -->
@@ -2734,14 +2859,17 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       (local-name()='colorPerVertex' and string(.)='true') or
                       (local-name()='normalPerVertex' and string(.)='true') or
                       (local-name()='solid' and string(.)='true') or
-                      (local-name()='xDimension' and (string(.)='2')) or
+                      (local-name()='xDimension' and (string(.)='0')) or
                       (local-name()='xSpacing' and (string(.)='1' or string(.)='1.0')) or
-                      (local-name()='zDimension' and (string(.)='2')) or
+                      (local-name()='zDimension' and (string(.)='0')) or
                       (local-name()='zSpacing' and (string(.)='1' or string(.)='1.0')) or
                       (local-name()='yScale' and (string(.)='1' or string(.)='1.0')) or
-                      (local-name()='height' and (string(.)='0 0 0 0' or string(.)='0.0 0.0 0.0 0.0')) or
                       (local-name()='geoGridOrigin' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                       (local-name()='creaseAngle' and (string(.)='0' or string(.)='0.0')))) and
+                      not((local-name(..)='ElevationGrid') and
+                      (local-name()='height' and (string(.)='' or string(.)=''))) and
+                      not((local-name(..)='GeoElevationGrid') and
+                      (local-name()='height' and (string(.)='0 0' or string(.)='0.0 0.0'))) and
                       not( local-name(..)='Extrusion'	and
                       ((local-name()='beginCap' and string(.)='true') or
                       (local-name()='ccw' and string(.)='true') or
@@ -3122,7 +3250,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       ((local-name()='containerField' and string(.)='children'))) and
                       not( local-name(..)='OscillatorSource' and
                       ((local-name()='containerField' and string(.)='children') or
-                      (local-name()='frequency' and (string(.)='0' or string(.)='0.0')))) and
+                      (local-name()='frequency' and (string(.)='440' or string(.)='440.0')))) and
                       not( local-name(..)='PeriodicWave' and
                       ((local-name()='containerField' and string(.)='children') or
                       (local-name()='type' and (string(.)='SQUARE')))) and
@@ -3318,9 +3446,6 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                        (local-name()='bboxCenter' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        (local-name()='bboxSize' and (string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')) or
                        (local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
-                       (local-name()='jointBindingPositions' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
-                       (local-name()='jointBindingRotations' and (string(.)='0 0 1 0' or string(.)='0 1 0 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0.0 1.0 0.0 0.0')) or
-                       (local-name()='jointBindingScales' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
                        (local-name()='loa' and (string(.)='-1')) or
                        (local-name()='version' and (($isHAnim1 = true() and (string(.)='1.0' or (string-length(string(.)) = 0))) or ($isHAnim2 = true() and string(.)='2.0'))) or
                        (local-name()='skeletalConfiguration' and (string(.)='BASIC')) or
@@ -3363,7 +3488,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       (local-name()='vDimension' and (string(.)='0')) or
                       (local-name()='uOrder' and (string(.)='3')) or
                       (local-name()='vOrder' and (string(.)='3')))) and
-                      not((local-name(..)='NurbsCurve' or local-name(..)='NurbsSwungSurface') and
+                      not((local-name(..)='NurbsSweptSurface' or local-name(..)='NurbsSwungSurface') and
                       ((local-name()='ccw' or local-name()='solid') and (string(.)='true'))) and
                       not((contains(local-name(..),'SplinePositionInterpolator') or local-name(..)='SplineScalarInterpolator' or local-name(..)='SquadOrientationInterpolator') and
                       ((local-name()='closed' or local-name()='normalizeVelocity') and (string(.)='false')))" />
@@ -3587,6 +3712,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 $notFieldSpace and
                 not(contains(local-name(),'set_')) and
                 not(contains(local-name(),'_changed')) and
+                not($isX3D3 and starts-with(local-name(..),'Metadata') and (local-name()='containerField') and (string(.)='metadata')) and
                 not($isX3D4 and starts-with(local-name(..),'Metadata') and (local-name()='containerField') and (string(.)='value')) and
                 ." >
             <xsl:variable name="attributeTooltip">
@@ -4297,12 +4423,12 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
       </xsl:if>
     </xsl:template>
 
-    <!-- ****** XML text ****** -->
+    <!-- ** ** ** XML text ** ** ** -->
     <xsl:template match="text()">
       <!-- XML text is likely from digital signature nodes - try to swallow it here -->
     </xsl:template>
 
-    <!-- ****** XML comments ****** -->
+    <!-- ** ** ** XML comments ** ** ** -->
     <xsl:template match="comment()">
         <xsl:choose>
             <xsl:when test="(string(.)='Warning:  transitional DOCTYPE in source .x3d file')">
@@ -4345,7 +4471,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         </xsl:choose>
     </xsl:template>
 
-    <!-- ****** XML processing-instruction ****** -->
+    <!-- ** ** ** XML processing-instruction ** ** ** -->
     <xsl:template match="processing-instruction()">
         <span title="XML processing instruction, hidden as a comment"><code><xsl:text>&lt;-- </xsl:text></code><xsl:value-of select="."/><code><xsl:text> --&gt;&#10;</xsl:text></code></span>
     </xsl:template>
@@ -4568,14 +4694,14 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:text>&#10;</xsl:text>
                     </xsl:if>
                     <b><i>
-                        <xsl:text>Index for Viewpoint image</xsl:text>
+                        <xsl:text>Index for Viewpoint node</xsl:text>
                         <xsl:if test="count(//Viewpoint) > 1">
                             <xsl:text>s</xsl:text>
                         </xsl:if>
                         <xsl:text>: </xsl:text>
                     </i></b>
                     <xsl:for-each select="//Viewpoint">
-						<!-- TODO get unnamed viewpoints to appear last -->
+			<!-- TODO get unnamed viewpoints to appear last -->
                         <xsl:sort select="@DEF[string-length(string(.)) > 0]" order="ascending" case-order="upper-first" data-type="text"/>
                         <xsl:sort select="@DEF[string-length(string(.)) = 0]" order="ascending" case-order="upper-first" data-type="text"/>
                         <xsl:text>&#10;</xsl:text>
@@ -4714,12 +4840,20 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         </span>
     </xsl:template>
 
-    <!-- ****** URL-ize-MFString-elements:  callable template (recursive function) ****** -->
+    <!-- ** ** ** URL-ize-MFString-elements:  callable template (recursive function) ** ** ** -->
     <!-- follows examples in Michael Kay's _XSLT_, first edition, pp. 551-554 -->
     <xsl:template name="URL-ize-MFString-elements">
         <xsl:param name="list"/>
         <xsl:param name="urlsOnly"><xsl:text>false</xsl:text></xsl:param>
         <xsl:param name="insertBreaks"><xsl:text>true</xsl:text></xsl:param>
+        
+        <xsl:variable name="parentElement" select="local-name(..)"/>
+        <xsl:variable name="hasImagePreview" select="($parentElement = 'ImageTexture')   or 
+                                                     ($parentElement = 'Background')     or 
+                                                     ($parentElement = 'MetadataString') or 
+                                                     ($parentElement = 'Anchor')"/>
+        <!-- debug: <xsl:message><xsl:value-of select="$parentElement"/><xsl:text> $hasImagePreview=</xsl:text><xsl:value-of select="$hasImagePreview"/></xsl:message> -->
+
         <xsl:variable name="wlist" select="concat(normalize-space(string($list)),' ')"/>
         <!-- debug: <xsl:text>&#10;$wlist=[</xsl:text><xsl:value-of select="$wlist" disable-output-escaping="yes"/><xsl:text>]&#10;</xsl:text> -->
         <!-- debug: <xsl:message><xsl:text>$urlsOnly=</xsl:text><xsl:value-of select="$urlsOnly"/></xsl:message> -->
@@ -4733,6 +4867,12 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
             <xsl:variable name="quoted">
                 <xsl:value-of select="contains($nextURL,'&quot;')"/>
             </xsl:variable>
+            <xsl:variable name="isDisplayableImage" select="not(starts-with($nextURLunquoted, 'urn:')) and
+                                                            (ends-with($nextURLunquoted, '.png') or 
+                                                             ends-with($nextURLunquoted, '.gif') or 
+                                                             ends-with($nextURLunquoted, '.svg') or 
+                                                             ends-with($nextURLunquoted, '.jpg') or 
+                                                             ends-with($nextURLunquoted, '.jpeg'))"/>
             <!-- debug: <xsl:comment><xsl:text>$quoted=</xsl:text><xsl:value-of select="$quoted"/></xsl:comment> -->
             <!-- don't force &quot; substitution when working with plain text -->
             <!--	<value-of select="translate(substring-before($wlist,' '),'&quot;','')"/> -->
@@ -4780,7 +4920,26 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                 <xsl:attribute name="target">
                                     <xsl:text>_blank</xsl:text>
                                 </xsl:attribute>
+                                <xsl:if test="$hasImagePreview and $isDisplayableImage">
+                                    <!-- debug
+                                    <xsl:message>
+                                        <xsl:text>*** opening span tag class="parent" for Image</xsl:text>
+                                    </xsl:message> -->
+                                    <xsl:attribute name="class">
+                                        <xsl:text>parent</xsl:text>
+                                    </xsl:attribute>
+                                </xsl:if>
                                 <xsl:value-of select="$nextURLunquoted"/>
+                                <xsl:if test="$hasImagePreview and $isDisplayableImage">
+                                    <xsl:element name="img">
+                                        <xsl:attribute name="class">
+                                            <xsl:text>child</xsl:text>
+                                        </xsl:attribute>
+                                        <xsl:attribute name="src">
+                                            <xsl:value-of select="$nextURLunquoted"/>
+                                        </xsl:attribute>
+                                    </xsl:element>
+                                </xsl:if>
                             </xsl:element>
                             <xsl:if test="($quoted='true')">
                                 <xsl:text>&quot;</xsl:text>
@@ -4863,8 +5022,27 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:attribute name="target">
                             <xsl:text>_blank</xsl:text>
                         </xsl:attribute>
+                                <xsl:if test="$hasImagePreview and $isDisplayableImage">
+                                    <!-- debug
+                                    <xsl:message>
+                                        <xsl:text>*** opening span tag class="parent" for Image</xsl:text>
+                                    </xsl:message> -->
+                                    <xsl:attribute name="class">
+                                        <xsl:text>parent</xsl:text>
+                                    </xsl:attribute>
+                                </xsl:if>
                         <xsl:text>http://</xsl:text>
                         <xsl:value-of select="normalize-space(substring-after($nextURLunquoted,'http://'))"/>
+                                <xsl:if test="$hasImagePreview and $isDisplayableImage">
+                                    <xsl:element name="img">
+                                        <xsl:attribute name="class">
+                                            <xsl:text>child</xsl:text>
+                                        </xsl:attribute>
+                                        <xsl:attribute name="src">
+                                            <xsl:value-of select="$nextURLunquoted"/>
+                                        </xsl:attribute>
+                                    </xsl:element>
+                                </xsl:if>
                     </xsl:element>
                     <xsl:if test="($quoted='true')">
                         <xsl:text>&quot;</xsl:text>
@@ -4889,8 +5067,27 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:attribute name="target">
                             <xsl:text>_blank</xsl:text>
                         </xsl:attribute>
+                                <xsl:if test="$hasImagePreview and $isDisplayableImage">
+                                    <!-- debug
+                                    <xsl:message>
+                                        <xsl:text>*** opening span tag class="parent" for Image</xsl:text>
+                                    </xsl:message> -->
+                                    <xsl:attribute name="class">
+                                        <xsl:text>parent</xsl:text>
+                                    </xsl:attribute>
+                                </xsl:if>
                         <xsl:text>https://</xsl:text>
                         <xsl:value-of select="normalize-space(substring-after($nextURLunquoted,'https://'))"/>
+                                <xsl:if test="$hasImagePreview and $isDisplayableImage">
+                                    <xsl:element name="img">
+                                        <xsl:attribute name="class">
+                                            <xsl:text>child</xsl:text>
+                                        </xsl:attribute>
+                                        <xsl:attribute name="src">
+                                            <xsl:value-of select="$nextURLunquoted"/>
+                                        </xsl:attribute>
+                                    </xsl:element>
+                                </xsl:if>
                     </xsl:element>
                     <xsl:if test="($quoted='true')">
                         <xsl:text>&quot;</xsl:text>
@@ -4936,7 +5133,26 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:attribute name="target">
                             <xsl:text>_blank</xsl:text>
                         </xsl:attribute>
+                                <xsl:if test="$hasImagePreview and $isDisplayableImage">
+                                    <!-- debug
+                                    <xsl:message>
+                                        <xsl:text>*** opening span tag class="parent" for Image</xsl:text>
+                                    </xsl:message> -->
+                                    <xsl:attribute name="class">
+                                        <xsl:text>parent</xsl:text>
+                                    </xsl:attribute>
+                                </xsl:if>
                         <xsl:value-of select="$nextURLunquoted"/>
+                                <xsl:if test="$hasImagePreview and $isDisplayableImage">
+                                    <xsl:element name="img">
+                                        <xsl:attribute name="class">
+                                            <xsl:text>child</xsl:text>
+                                        </xsl:attribute>
+                                        <xsl:attribute name="src">
+                                            <xsl:value-of select="$nextURLunquoted"/>
+                                        </xsl:attribute>
+                                    </xsl:element>
+                                </xsl:if>
                     </xsl:element>
                     <xsl:if test="($quoted='true')">
                         <xsl:text>&quot;</xsl:text>
@@ -5033,7 +5249,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         <!-- debug 
         <xsl:if test="($countContainedNodesOfInterest > 0)">
             <xsl:message>
-                <xsl:text>*** $countContainedNodesOfInterest=</xsl:text>
+                <xsl:text>[debug] $countContainedNodesOfInterest=</xsl:text>
                 <xsl:value-of select="$countContainedNodesOfInterest"/>
                 <xsl:text> for </xsl:text>
                 <xsl:choose>
@@ -5163,7 +5379,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         <xsl:variable name="isHAnim2" select="$isX3D4 and ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'2')] and not($isHAnim1 = true())"/>
         <xsl:if test="($isHAnim1 = true()) and ($isHAnim2 = true())">
             <xsl:message>
-                <xsl:text>*** error in X3dTidy.xslt internal logic, $isHAnim1 and $isHAnim2 are both true, output-humanoid-tree entry </xsl:text>
+                <xsl:text>[diagnostic] error in X3dToXhtml.xslt internal logic, $isHAnim1 and $isHAnim2 are both true, output-humanoid-tree entry </xsl:text>
             </xsl:message>
         </xsl:if>
         
@@ -5180,7 +5396,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
             <!-- debug
             <xsl:if test="starts-with($describeSelf, 'HAnim')">
                 <xsl:message>
-                    <xsl:text>*** output-humanoid-tree trace: </xsl:text>
+                    <xsl:text>[debug] output-humanoid-tree trace: </xsl:text>
                     <xsl:value-of select="$describeSelf"/>
                 </xsl:message>
             </xsl:if> -->
@@ -5502,7 +5718,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
 
         <!-- debug
         <xsl:message>
-            <xsl:text>*** inner-loop recursion trace: depth=</xsl:text>
+            <xsl:text>[debug] [tableElementEntries] inner-loop recursion trace: depth=</xsl:text>
             <xsl:value-of select="$depth"/>
             <xsl:text>, from </xsl:text>
             <xsl:value-of select="$DEFname"/>
@@ -5510,19 +5726,22 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
             <xsl:value-of select="$toNodeDEF"/>
         </xsl:message>
         -->
+    <xsl:choose>
+      <xsl:when test="(number($depth) le number($maxROUTEdepth))">
+        <!-- do not continue to excessive depth, no possibility of recursing further from this template -->
         
         <xsl:variable name="multipleFanInFromNode" select="(count(//ROUTE[@toNode eq $DEFname])   > 1)"/>
         <xsl:variable name="multipleFanInToNode"   select="(count(//ROUTE[@toNode eq $toNodeDEF]) > 1)"/>
         
         <xsl:variable name="multipleFanInFromNodeTooltip">
             <xsl:if test="$multipleFanInFromNode">
-                <xsl:text>delivery order for multiple fan-in events may vary</xsl:text>
+                <xsl:text>nodes with multiple fan-in events may have varying delivery order</xsl:text>
             </xsl:if>
             <!-- otherwise empty -->
         </xsl:variable>
         <xsl:variable name="multipleFanInToNodeTooltip">
             <xsl:if test="$multipleFanInToNode">
-                <xsl:text>delivery order for multiple fan-in events may vary</xsl:text>
+                <xsl:text>nodes with multiple fan-in events may have varying delivery order</xsl:text>
             </xsl:if>
             <!-- otherwise empty -->
         </xsl:variable>
@@ -5586,11 +5805,15 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
+        <!-- debug
+        <xsl:message>
+            <xsl:text>[debug] here 1!</xsl:text>
+        </xsl:message> -->
         
         <xsl:choose>
             <xsl:when test="(number($depth) gt number($maxROUTEdepth))">
                 <xsl:message>
-                    <xsl:text>*** Warning [tableElementEntries #1]: ROUTE chain depth=</xsl:text>
+                    <xsl:text>[warning] [tableElementEntries #1]: ROUTE chain depth=</xsl:text>
                     <xsl:value-of select="$depth"/>
                     <xsl:text> exceeded internal limit of $maxROUTEdepth=</xsl:text>
                     <xsl:value-of select="$maxROUTEdepth"/>
@@ -5611,6 +5834,10 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
             </xsl:when>
             <xsl:otherwise>
                 <!-- continue tail recursion -->
+        <!-- debug
+        <xsl:message>
+            <xsl:text>[debug] here 2!</xsl:text>
+        </xsl:message> -->
                 
                 <td style="text-align:right; background-color:{$cellBackgroundColorFromNode};" title="{$multipleFanInFromNodeTooltip}">
                     <xsl:element name="a">
@@ -5618,20 +5845,35 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <xsl:text>#</xsl:text>
                             <xsl:value-of select="$DEFname"/>
                         </xsl:attribute>
+                        <xsl:attribute name="title">
+                            <xsl:text>DEF name</xsl:text>
+                        </xsl:attribute>
                         <xsl:value-of select="$DEFname"/>
                     </xsl:element>
                     <br />
                     <b>
-                        <xsl:value-of select="$nodeName"/>
+                        <span title="X3D node name">
+                            <xsl:value-of select="$nodeName"/>
+                        </span>
                     </b>
                     <br />
                     <b>
                         <xsl:element name="a">
                         <xsl:attribute name="title">
-                            <xsl:text>X3D Tooltips: </xsl:text>
+                            <xsl:text>X3D Tooltips: field </xsl:text>
                             <xsl:value-of select="$nodeName"/>
                             <xsl:text>.</xsl:text>
-                            <xsl:value-of select="$fromFieldName"/>
+                            <xsl:choose>
+                                <xsl:when test="starts-with($fromFieldName, 'set_') and not($fromFieldName = 'set_fraction')">
+                                    <xsl:value-of select="substring-after($fromFieldName, 'set_')"/>
+                                </xsl:when>
+                                <xsl:when test="ends-with($fromFieldName, '_changed') and not($fromFieldName = 'fraction_changed') and not($fromFieldName = 'value_changed')">
+                                    <xsl:value-of select="substring-before($fromFieldName, '_changed')"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="$fromFieldName"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
                         </xsl:attribute>
                         <xsl:attribute name="target">
                             <xsl:text>_blank</xsl:text>
@@ -5640,7 +5882,17 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <xsl:text>https://www.web3d.org/x3d/content/X3dTooltips.html#</xsl:text>
                             <xsl:value-of select="$nodeName"/>
                             <xsl:text>.</xsl:text>
-                            <xsl:value-of select="$fromFieldName"/>
+                            <xsl:choose>
+                                <xsl:when test="starts-with($fromFieldName, 'set_') and not($fromFieldName = 'set_fraction')">
+                                    <xsl:value-of select="substring-after($fromFieldName, 'set_')"/>
+                                </xsl:when>
+                                <xsl:when test="ends-with($fromFieldName, '_changed') and not($fromFieldName = 'value_changed')">
+                                    <xsl:value-of select="substring-before($fromFieldName, '_changed')"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="$fromFieldName"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
                         </xsl:attribute>
                         <xsl:value-of select="$fromFieldName"/>
                     </xsl:element> 
@@ -5660,6 +5912,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <xsl:attribute name="title">
                                 <xsl:text>X3D Tooltips: </xsl:text>
                                 <xsl:value-of select="$fromFieldType"/>
+                                <xsl:text> data type</xsl:text>
                             </xsl:attribute>
                             <xsl:attribute name="target">
                                 <xsl:text>_tooltip_type</xsl:text>
@@ -5672,6 +5925,10 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         </xsl:element>
                     </xsl:element>
                 </td>
+        <!-- debug
+        <xsl:message>
+            <xsl:text>[debug] here 3!</xsl:text>
+        </xsl:message> -->
                 <td style="vertical-align:middle; text-align:center; background-color:white;">
                     <!-- https://stackoverflow.com/questions/6183017/how-to-vertically-align-elements-in-td-tag -->
                     <xsl:element name="div">
@@ -5696,31 +5953,50 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <xsl:text>ROUTE</xsl:text>
                         </xsl:element>
                         <br />
-                        <xsl:text> TO </xsl:text>
+                        <xsl:text> event to </xsl:text>
                         <br />
                         <xsl:text disable-output-escaping="yes"> &amp;#160; </xsl:text> <!-- &nbsp; -->
                     </xsl:element>
                 </td>
+        <!-- debug
+        <xsl:message>
+            <xsl:text>[debug] here 4!</xsl:text>
+        </xsl:message> -->
                 <td style="text-align:left; background-color:{$cellBackgroundColorToNode};" title="{$multipleFanInToNodeTooltip}">
                     <xsl:element name="a">
                         <xsl:attribute name="href">
                             <xsl:text>#</xsl:text>
                             <xsl:value-of select="$toNodeDEF"/>
                         </xsl:attribute>
+                        <xsl:attribute name="title">
+                            <xsl:text>DEF name</xsl:text>
+                        </xsl:attribute>
                         <xsl:value-of select="$toNodeDEF"/>
                     </xsl:element>
                     <br />
                     <b>
-                        <xsl:value-of select="$toNodeName"/>
+                        <span title="X3D node name">
+                            <xsl:value-of select="$toNodeName"/>
+                        </span>
                     </b>
                     <br />
                     <b>
                         <xsl:element name="a">
                             <xsl:attribute name="title">
-                                <xsl:text>X3D Tooltips: </xsl:text>
+                                <xsl:text>X3D Tooltips: field </xsl:text>
                                 <xsl:value-of select="$toNodeName"/>
                                 <xsl:text>.</xsl:text>
-                                <xsl:value-of select="$toFieldName"/>
+                                <xsl:choose>
+                                    <xsl:when test="starts-with($toFieldName, 'set_') and not($toFieldName = 'set_fraction')">
+                                        <xsl:value-of select="substring-after($toFieldName, 'set_')"/>
+                                    </xsl:when>
+                                    <xsl:when test="ends-with($toFieldName, '_changed') and not($toFieldName = 'fraction_changed') and not($toFieldName = 'fraction_changed') and not($toFieldName = 'value_changed')">
+                                        <xsl:value-of select="substring-before($toFieldName, '_changed')"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="$toFieldName"/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
                             </xsl:attribute>
                             <xsl:attribute name="target">
                                 <xsl:text>_blank</xsl:text>
@@ -5729,7 +6005,17 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                 <xsl:text>https://www.web3d.org/x3d/content/X3dTooltips.html#</xsl:text>
                                 <xsl:value-of select="$toNodeName"/>
                                 <xsl:text>.</xsl:text>
-                                <xsl:value-of select="$toFieldName"/>
+                                <xsl:choose>
+                                    <xsl:when test="starts-with($toFieldName, 'set_') and not($toFieldName = 'set_fraction')">
+                                        <xsl:value-of select="substring-after($toFieldName, 'set_')"/>
+                                    </xsl:when>
+                                    <xsl:when test="ends-with($toFieldName, '_changed') and not($toFieldName = 'fraction_changed') and not($toFieldName = 'value_changed')">
+                                        <xsl:value-of select="substring-before($toFieldName, '_changed')"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="$toFieldName"/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
                             </xsl:attribute>
                             <xsl:value-of select="$toFieldName"/>
                         </xsl:element>
@@ -5748,6 +6034,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <xsl:attribute name="title">
                                 <xsl:text>X3D Tooltips: </xsl:text>
                                 <xsl:value-of select="$toFieldType"/>
+                                <xsl:text> data type</xsl:text>
                             </xsl:attribute>
                             <xsl:attribute name="target">
                                 <xsl:text>_tooltip_type</xsl:text>
@@ -5760,17 +6047,21 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         </xsl:element>
                     </xsl:element>
                 </td>
+        <!-- debug
+        <xsl:message>
+            <xsl:text>[debug] here 5!</xsl:text>
+        </xsl:message> -->
                 <xsl:choose>
                     <xsl:when test="(count(//*[@DEF eq $toNodeDEF]) > 1)">
                         <xsl:message>
-                            <xsl:text>*** Error, more than one node found with DEF='</xsl:text>
+                            <xsl:text>[error] more than one node found with DEF='</xsl:text>
                             <xsl:value-of select="$toNodeDEF"/>
                             <xsl:text>' and so not continuing</xsl:text>
                         </xsl:message>
                     </xsl:when>
                     <xsl:when test="($DEFname = $toNodeDEF)">
                         <xsl:message>
-                            <xsl:text>*** Warning: </xsl:text>
+                            <xsl:text>[warning] </xsl:text>
                             <xsl:value-of select="$nodeName"/>
                             <xsl:text> </xsl:text>
                             <xsl:text> DEF='</xsl:text>
@@ -5797,7 +6088,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:choose>
                             <xsl:when test="(number($depth) gt number($maxROUTEdepth))">
                                 <xsl:message>
-                                    <xsl:text>*** Warning [tableElementEntries #2]: ROUTE chain depth=</xsl:text>
+                                    <xsl:text>[warning] [tableElementEntries #2]: ROUTE chain depth=</xsl:text>
                                     <xsl:value-of select="$depth"/>
                                     <xsl:text> exceeded internal limit of $maxROUTEdepth=</xsl:text>
                                     <xsl:value-of select="$maxROUTEdepth"/>
@@ -5818,11 +6109,11 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             </xsl:when>
                             <xsl:when test="(count($newOutgoingRoutes) gt number($maxROUTEdepth))">
                                 <xsl:message>
-                                    <xsl:text>*** Warning: count($newOutgoingRoutes)=</xsl:text>
+                                    <xsl:text>[warning] count($newOutgoingRoutes)=</xsl:text>
                                     <xsl:value-of select="count($newOutgoingRoutes)"/>
-                                    <xsl:text> which exceeds internal limit of $maxROUTEdepth=</xsl:text>
+                                    <xsl:text> which exceeds internal table-generation limit of $maxROUTEdepth=</xsl:text>
                                     <xsl:value-of select="$maxROUTEdepth"/>
-                                    <xsl:text>, check for an illegal loop of ROUTE connections.</xsl:text>
+                                    <xsl:text>, check for an illegal loop across ROUTE connections in this event cascade.</xsl:text>
                                 </xsl:message>
                                 <xsl:message>
                                     <xsl:text>    ROUTE fromNode='</xsl:text>
@@ -5838,83 +6129,117 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                 <!-- done, end tail recursion -->
                             </xsl:when>
                             <xsl:otherwise>
-                                <!-- continue tail recursion -->
-                                <xsl:for-each select="$newOutgoingRoutes[position() le number($maxROUTEdepth)]">
-                                    <xsl:sort select="@fromField" order="ascending" case-order="upper-first" data-type="text"/>
+                                <xsl:if test="number($depth) lt number($maxROUTEdepth)">
+                                    <!-- continue tail recursion -->
+                                    <xsl:for-each select="$newOutgoingRoutes[position() lt number($maxROUTEdepth)]">
+                                        <xsl:sort select="@fromField" order="ascending" case-order="upper-first" data-type="text"/>
 
-                                    <xsl:variable name="toNodeDEF"     select="@toNode"/>
-                                    <xsl:variable name="toNodeName"    select="local-name(//*[@DEF eq $toNodeDEF])"/>
-                                    <xsl:variable name=  "toFieldName" select="@toField"/>
-                                    <xsl:variable name="fromFieldName" select="@fromField"/>
+                                        <xsl:variable name="toNodeDEF"     select="@toNode"/>
+                                        <xsl:variable name="toNodeName"    select="local-name(//*[@DEF eq $toNodeDEF])"/>
+                                        <xsl:variable name=  "toFieldName" select="@toField"/>
+                                        <xsl:variable name="fromFieldName" select="@fromField"/>
 
-                                    <td style="vertical-align:middle; text-align:center; background-color:lightgrey">
-                                        <!-- https://stackoverflow.com/questions/6183017/how-to-vertically-align-elements-in-td-tag -->
-                                        <i>
-                                            <xsl:text disable-output-escaping="yes">then</xsl:text> <!-- &amp;#160; &nbsp; -->
-                                        </i>
-                                    </td>
+                                        <td style="text-align:center; background-color:white; vertical-align:bottom;">
+                                            <!-- vertical-align:middle; https://stackoverflow.com/questions/6183017/how-to-vertically-align-elements-in-td-tag -->
 
-                                    <xsl:choose>
-                                        <xsl:when test="(position() gt number($maxROUTEdepth))">
-                                            <xsl:message>
-                                                <xsl:text>*** Warning [tableElementEntries #3]: ROUTE chain position()=</xsl:text>
-                                                <xsl:value-of select="position()"/>
-                                                <xsl:text> exceeded internal limit of $maxROUTEdepth=</xsl:text>
-                                                <xsl:value-of select="$maxROUTEdepth"/>
-                                                <xsl:text>, check for an illegal loop of ROUTE connections.</xsl:text>
-                                            </xsl:message>
-                                            <xsl:message>
-                                                <xsl:text>    ROUTE fromNode='</xsl:text>
-                                                <xsl:value-of select="$DEFname"/>
-                                                <xsl:text>' fromField='</xsl:text>
-                                                <xsl:value-of select="$fromFieldName"/>
-                                                <xsl:text>' toNode='</xsl:text>
-                                                <xsl:value-of select="$toNodeDEF"/>
-                                                <xsl:text>' toField='</xsl:text>
-                                                <xsl:value-of select="$toFieldName"/>
-                                                <xsl:text>'</xsl:text>
-                                            </xsl:message>
-                                            <!-- done, end tail recursion -->
-                                        </xsl:when>
-                                        <xsl:otherwise>
-                                            <!-- debug
-                                            <xsl:message>
-                                                <xsl:text>*** Warning [tableElementEntries #4]: ROUTE chain position()=</xsl:text>
-                                                <xsl:value-of select="position()"/>
-                                            </xsl:message>
-                                            -->
-                                            <xsl:call-template name="tableElementEntries">
-                                                <xsl:with-param name="DEFname"      ><xsl:value-of select="$newDEFname"/></xsl:with-param>
-                                                <xsl:with-param name="nodeName"     ><xsl:value-of select="$newNodeName"/></xsl:with-param>
-                                                <xsl:with-param name="fromFieldName"><xsl:value-of select="$fromFieldName"/></xsl:with-param>
-                                                <xsl:with-param name="toNodeDEF"    ><xsl:value-of select="$toNodeDEF"/></xsl:with-param>
-                                                <xsl:with-param name="toNodeName"   ><xsl:value-of select="$toNodeName"/></xsl:with-param>
-                                                <xsl:with-param name="toFieldName"  ><xsl:value-of select="$toFieldName"/></xsl:with-param>
-                                                <xsl:with-param name="depth"        ><xsl:value-of select="$depth + 1"/></xsl:with-param>
-                                            </xsl:call-template>
+                                            <span style="background-color:lightgrey;">
+                                                <i>
+                                                    <xsl:text>then</xsl:text>
+                                                </i>
+                                            </span>
+                                        </td>
 
-                                            <!-- finished with latest, time for a new row? -->
-                                            <xsl:if test="not(position() = last()) and not(position() gt number($maxROUTEdepth)) and not($depth gt number($maxROUTEdepth))">
-                                                <!-- start a new row -->
-                                                <xsl:text disable-output-escaping="yes">&#10;&lt;/tr>&#10;</xsl:text>
-                                                <xsl:text disable-output-escaping="yes">&#10;&lt;tr>&#10;</xsl:text>
-                                                <xsl:text disable-output-escaping="yes">         </xsl:text>
-                                                <xsl:if test="not(ends-with(local-name(), 'Sensor'))"> 
+                                        <xsl:choose>
+                                            <xsl:when test="(position() gt number($maxROUTEdepth))">
+                                                <xsl:message>
+                                                    <xsl:text>[warning] [tableElementEntries #3]: ROUTE chain position()=</xsl:text>
+                                                    <xsl:value-of select="position()"/>
+                                                    <xsl:text> exceeded internal limit of $maxROUTEdepth=</xsl:text>
+                                                    <xsl:value-of select="$maxROUTEdepth"/>
+                                                    <xsl:text>, check for an illegal loop of ROUTE connections.</xsl:text>
+                                                </xsl:message>
+                                                <xsl:message>
+                                                    <xsl:text>    ROUTE fromNode='</xsl:text>
+                                                    <xsl:value-of select="$DEFname"/>
+                                                    <xsl:text>' fromField='</xsl:text>
+                                                    <xsl:value-of select="$fromFieldName"/>
+                                                    <xsl:text>' toNode='</xsl:text>
+                                                    <xsl:value-of select="$toNodeDEF"/>
+                                                    <xsl:text>' toField='</xsl:text>
+                                                    <xsl:value-of select="$toFieldName"/>
+                                                    <xsl:text>'</xsl:text>
+                                                </xsl:message>
+                                                <!-- done, end tail recursion -->
+                                            </xsl:when>
+                                            <!-- avoid excessive recursing -->
+                                            <xsl:when test="(number($depth) le number($maxROUTEdepth))">
+                                                <!-- debug
+                                                <xsl:message>
+                                                    <xsl:text>[warning] [tableElementEntries #4a]: ROUTE chain position()=</xsl:text>
+                                                    <xsl:value-of select="position()"/>
+                                                </xsl:message>
+                                                -->
+                                                <xsl:call-template name="tableElementEntries">
+                                                    <xsl:with-param name="DEFname"      ><xsl:value-of select="$newDEFname"/></xsl:with-param>
+                                                    <xsl:with-param name="nodeName"     ><xsl:value-of select="$newNodeName"/></xsl:with-param>
+                                                    <xsl:with-param name="fromFieldName"><xsl:value-of select="$fromFieldName"/></xsl:with-param>
+                                                    <xsl:with-param name="toNodeDEF"    ><xsl:value-of select="$toNodeDEF"/></xsl:with-param>
+                                                    <xsl:with-param name="toNodeName"   ><xsl:value-of select="$toNodeName"/></xsl:with-param>
+                                                    <xsl:with-param name="toFieldName"  ><xsl:value-of select="$toFieldName"/></xsl:with-param>
+                                                    <xsl:with-param name="depth"        ><xsl:value-of select="$depth + 1"/></xsl:with-param>
+                                                </xsl:call-template>
+                                                <!-- debug
+                                                <xsl:message>
+                                                    <xsl:text>[warning] [tableElementEntries #4b]: ROUTE chain position()=</xsl:text>
+                                                    <xsl:value-of select="position()"/>
+                                                    <xsl:text>, depth=</xsl:text>
+                                                    <xsl:value-of select="$depth"/>
+                                                    <xsl:text>, template returned</xsl:text>
+                                                </xsl:message>
+                                                -->
+
+                                                <!-- finished with latest, time for a new row? -->
+                                                <xsl:if test="not(position() eq last()) and not(position() gt number($maxROUTEdepth)) and not($depth gt $maxROUTEdepth)">
+                                                    <!-- start a new row, indent according to nested depth -->
+                                                    <xsl:text disable-output-escaping="yes">&#10;&lt;/tr>&#10;</xsl:text>
+                                                    <xsl:text disable-output-escaping="yes">&#10;&lt;tr>&#10;</xsl:text>
+                                                    <xsl:text disable-output-escaping="yes">         </xsl:text>
                                                     <xsl:call-template name="indentTableColumns">
                                                         <xsl:with-param name="newDepth"      ><xsl:value-of select="$depth"/></xsl:with-param>
                                                     </xsl:call-template>
                                                 </xsl:if>
-                                            </xsl:if>
-                                        </xsl:otherwise>
-                                    </xsl:choose>
-                                </xsl:for-each>
+                                                <!-- debug
+                                                <xsl:message>
+                                                    <xsl:text>[warning] [tableElementEntries #4c]: ROUTE chain position()=</xsl:text>
+                                                    <xsl:value-of select="position()"/>
+                                                    <xsl:text>, depth=</xsl:text>
+                                                    <xsl:value-of select="$depth"/>
+                                                    <xsl:text>, template iteration at end of loop</xsl:text>
+                                                </xsl:message>
+                                                -->
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <!-- debug
+                                                -->
+                                                <xsl:message>
+                                                    <xsl:text>[warning] [tableElementEntries #4d]: excessive depth at position()=</xsl:text>
+                                                    <xsl:value-of select="position()"/>
+                                                    <xsl:text>, number($depth)=</xsl:text>
+                                                    <xsl:value-of select="number($depth)"/>
+                                                    <xsl:text>, number($maxROUTEdepth)=</xsl:text>
+                                                    <xsl:value-of select="number($maxROUTEdepth)"/>
+                                                </xsl:message>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                    </xsl:for-each>
+                                </xsl:if>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
                     <xsl:otherwise>
                         <!-- debug
                         <xsl:message>
-                            <xsl:text>*** inner-loop tail recursion complete: depth=</xsl:text>
+                            <xsl:text>[debug] inner-loop tail recursion complete: depth=</xsl:text>
                             <xsl:value-of select="$depth"/>
                             <xsl:text>, from </xsl:text>
                             <xsl:value-of select="$DEFname"/>
@@ -5926,10 +6251,38 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:comment>time to start new row</xsl:comment>
                     </xsl:otherwise>
                 </xsl:choose>
+        <!-- debug
+        <xsl:message>
+            <xsl:text>[debug] here 6!</xsl:text>
+        </xsl:message> -->
         
                 <!-- completed tail recursion for this event chain -->
             </xsl:otherwise>
         </xsl:choose>
+        <!-- debug
+        <xsl:message>
+            <xsl:text>[debug] here 7! tableElementEntries template complete...</xsl:text>
+        </xsl:message>  -->
+      
+      </xsl:when>
+      <xsl:otherwise>
+        <!-- debug
+        <xsl:message>
+            <xsl:text>[debug] stylesheet warning, attempted to recurse to depth=</xsl:text>
+            <xsl:value-of select="$depth"/>
+            <xsl:text>, from </xsl:text>
+            <xsl:value-of select="$DEFname"/>
+            <xsl:text>.</xsl:text>
+            <xsl:value-of select="$fromFieldName"/>
+            <xsl:text> to </xsl:text>
+            <xsl:value-of select="$toNodeDEF"/>
+            <xsl:text>.</xsl:text>
+            <xsl:value-of select="$toFieldName"/>
+        </xsl:message>
+        -->
+      </xsl:otherwise>
+    </xsl:choose>
+    
     </xsl:template>
 
     <xsl:template name="newHAnimNameValue">
@@ -5943,7 +6296,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                                                                              //HAnimHumanoid  [starts-with(@version,'2')])"/>
         <xsl:if test="($isHAnim1 = true()) and ($isHAnim2 = true())">
             <xsl:message>
-                <xsl:text>*** error in X3dTidy.xslt internal logic, $isHAnim1 and $isHAnim2 are both true, newNameValue entry for </xsl:text>
+                <xsl:text>[diagnostic] error in X3dToXhtml.xslt internal logic, $isHAnim1 and $isHAnim2 are both true, newNameValue entry for </xsl:text>
                 <xsl:value-of select="$nodeName "/>
                 <xsl:text> </xsl:text>
                 <xsl:value-of select="$nameValue"/>
@@ -5967,7 +6320,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:if test="not(substring-after($attributeValue,'_') = $newNameValue)">
                         <!-- debug
                             <xsl:message>
-                                <xsl:text>*** HAnim2 ROUTE check: </xsl:text>
+                                <xsl:text>[debug] HAnim2 ROUTE check: </xsl:text>
                                 <xsl:value-of select="local-name(..)"/>
                                 <xsl:text> </xsl:text>
                                 <xsl:value-of select="local-name()"/>
@@ -6165,7 +6518,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 <xsl:when test="(count(//*[@DEF = $parentElementDEF]) gt 1)">
                     <xsl:text>MoreThanOneNodeFound</xsl:text>
                         <xsl:message>
-                            <xsl:text>*** Error: more than one node found for DEF='</xsl:text>
+                            <xsl:text>[error] more than one node found for DEF='</xsl:text>
                             <xsl:value-of select="$parentElementDEF"/>
                             <xsl:text>'</xsl:text>
                         </xsl:message>
@@ -6173,7 +6526,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 <xsl:otherwise>
                     <xsl:text>NodeNotFound</xsl:text>
                         <xsl:message>
-                            <xsl:text>*** Error: node not found for DEF='</xsl:text>
+                            <xsl:text>[error] node not found for DEF='</xsl:text>
                             <xsl:value-of select="$parentElementDEF"/>
                             <xsl:text>'</xsl:text>
                         </xsl:message>
@@ -6183,6 +6536,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         
         <xsl:variable name="attributeName">
             <xsl:choose>
+                <xsl:when test="($parentElementName = 'Script') or ($parentElementName = 'ProtoInstance') or contains($parentElementName, 'Shader')">
+                    <xsl:value-of select="$attributeNameFull"/>
+                </xsl:when>
                 <xsl:when               test="starts-with($attributeNameFull, 'set_')">
                     <xsl:value-of select="substring-after($attributeNameFull, 'set_')"/>
                 </xsl:when>
@@ -6196,7 +6552,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         </xsl:variable>
         <!-- debug
         <xsl:message>
-            <xsl:text>*** diagnostic: attribute-type start, $parentElementDEF=</xsl:text>
+            <xsl:text>[debug] attribute-type start, $parentElementDEF=</xsl:text>
             <xsl:value-of select="$parentElementDEF"/>
             <xsl:text>, $attributeNameFull=</xsl:text>
             <xsl:value-of select="$attributeNameFull"/>
@@ -6214,7 +6570,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:value-of select="normalize-space(//Script[@DEF = $parentElementDEF]/field[@name = $attributeName]/@type)"/>
                     <!-- debug
                     <xsl:message>
-                        <xsl:text>*** diagnostic: Script DEF='</xsl:text>
+                        <xsl:text>[debug] Script DEF='</xsl:text>
                         <xsl:value-of select="$parentElementDEF"/>
                         <xsl:text>' field attributeName='</xsl:text>
                         <xsl:value-of select="$attributeName"/>
@@ -6252,7 +6608,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     </xsl:variable>
                     <!-- debug
                     <xsl:message>
-                        <xsl:text>*** diagnostic: ProtoInstance prototypeName='</xsl:text>
+                        <xsl:text>[debug] ProtoInstance prototypeName='</xsl:text>
                         <xsl:value-of select="$prototypeName"/>
                         <xsl:text>' prototypeDefinition='</xsl:text>
                         <xsl:value-of select="$prototypeDefinition"/>
@@ -6297,7 +6653,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <xsl:otherwise>
                                 <!-- FIELD_DECLARATION_NOT_FOUND -->
                                 <xsl:message>
-                                    <xsl:text>*** Error: attribute-type: FIELD_DECLARATION_NOT_FOUND, no ProtoDeclare or ExternProtoDeclare found for ProtoInstance name='</xsl:text>
+                                    <xsl:text>[error] attribute-type: FIELD_DECLARATION_NOT_FOUND, no ProtoDeclare or ExternProtoDeclare found for ProtoInstance name='</xsl:text>
                                     <xsl:value-of select="$parentProtoInstanceName"/>
                                     <xsl:text>' $parentElementName='</xsl:text>
                                     <xsl:value-of select="$parentElementName"/>
@@ -6312,7 +6668,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:value-of select="$fieldValuePriorDeclarationType"/>
                     <!-- debug
                     <xsl:message>
-                        <xsl:text>*** attribute-type: ProtoInstance name='</xsl:text>
+                        <xsl:text>[debug] attribute-type: ProtoInstance name='</xsl:text>
                         <xsl:value-of select="$parentProtoInstanceName"/>
                         <xsl:text>' $parentElementName='</xsl:text>
                         <xsl:value-of select="$parentElementName"/>
@@ -6369,31 +6725,33 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                           ($attributeName='oversample')         or
                           ($attributeName='reference')          or
                           ($attributeName='type')               or
-                            ($attributeName='lang')               or ($attributeName='xml:lang') or
-					      (starts-with($parentElementName,'field')         and (($attributeName='accessType') or ($attributeName='type')       or ($attributeName='appinfo') or ($attributeName='documentation'))) or
-					      (starts-with($parentElementName,'meta')          and (($attributeName='content')    or ($attributeName='http-equiv') or ($attributeName='scheme')  or ($attributeName='dir') or ($attributeName='lang') or ($attributeName='xml:lang'))) or
+                          ($attributeName='lang')               or ($attributeName='xml:lang') or
+                          (starts-with($parentElementName,'field')         and (($attributeName='accessType') or ($attributeName='type')       or ($attributeName='appinfo') or ($attributeName='documentation'))) or
+                          (starts-with($parentElementName,'meta')          and (($attributeName='content')    or ($attributeName='http-equiv') or ($attributeName='scheme')  or ($attributeName='dir') or ($attributeName='lang') or ($attributeName='xml:lang'))) or
                           (($parentElementName='component')                and not($attributeName='level')) or
                           (($parentElementName='unit')                     and not($attributeName='conversionFactor')) or
-					      ($parentElementName='Appearance'                 and $attributeName='alphaMode') or
-					      ($parentElementName='ArcClose2D'                 and $attributeName='closureType') or
-                            ($parentElementName='BiquadFilter'               and $attributeName='type') or
-					      ($parentElementName='BlendedVolumeStyle'         and (starts-with($attributeName,'weightFunction') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
+                          ($parentElementName='Appearance'                 and $attributeName='alphaMode') or
+                          ($parentElementName='ArcClose2D'                 and $attributeName='closureType') or
+                          ($parentElementName='BiquadFilter'               and $attributeName='type') or
+			  ($parentElementName='BlendedVolumeStyle'         and (starts-with($attributeName,'weightFunction') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
                           (ends-with($parentElementName,'Fog')             and $attributeName='fogType') or
-                            ($parentElementName='GeneratedCubeMapTexture'    and $attributeName='update') or
+                          ($parentElementName='GeneratedCubeMapTexture'    and $attributeName='update') or
                           ($parentElementName='HAnimHumanoid'              and (($attributeName='version') or ($attributeName='skeletalConfiguration'))) or
                           ($parentElementName='HAnimMotion'                and (($attributeName='channels') or ($attributeName='joints'))) or
-                            ($parentElementName='IMPORT'                     and (($attributeName='AS') or ($attributeName='importedDEF') or ($attributeName='inlineDEF'))) or
-                            (ends-with($parentElementName,'Material')	   and ends-with($attributeName,'Mapping')) or
+                          ($parentElementName='IMPORT'                     and (($attributeName='AS') or ($attributeName='importedDEF') or ($attributeName='inlineDEF'))) or
+                          ($parentElementName='KeySensor'                  and (($attributeName='keyPress') or ($attributeName='keyRelease'))) or
+                          ($parentElementName='StringSensor'               and (($attributeName='enteredText') or ($attributeName='finalText'))) or
+                          (ends-with($parentElementName,'Material')	   and ends-with($attributeName,'Mapping')) or
                           ($parentElementName='ParticleSystem'             and $attributeName='geometryType') or
-						  (ends-with($parentElementName,'PickSensor')      and ($attributeName='intersectionType' or $attributeName='matchCriterion' or $attributeName='sortOrder')) or
-						  ($parentElementName='ProjectionVolumeStyle'      and $attributeName='type') or
-						  ($parentElementName='ShadedVolumeStyle'          and $attributeName='phaseFunction') or
-					      ($parentElementName='ShaderPart'                 and $attributeName='type') or
-					      ($parentElementName='ShaderProgram'              and $attributeName='type') or
-					      ($parentElementName='TextureCoordinateGenerator' and $attributeName='mode') or
-					      ($parentElementName='TextureProperties'          and (starts-with($attributeName,'boundaryMode') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
+                          (ends-with($parentElementName,'PickSensor')      and ($attributeName='intersectionType' or $attributeName='matchCriterion' or $attributeName='sortOrder')) or
+                          ($parentElementName='ProjectionVolumeStyle'      and $attributeName='type') or
+                          ($parentElementName='ShadedVolumeStyle'          and $attributeName='phaseFunction') or
+                          ($parentElementName='ShaderPart'                 and $attributeName='type') or
+                          ($parentElementName='ShaderProgram'              and $attributeName='type') or
+                          ($parentElementName='TextureCoordinateGenerator' and $attributeName='mode') or
+                          ($parentElementName='TextureProperties'          and (starts-with($attributeName,'boundaryMode') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
                           ($parentElementName='WorldInfo'                  and $attributeName='title') or
-                            ($parentElementName='X3D'                        and (($attributeName='profile') or ($attributeName='version') or ($attributeName='noNamespaceSchemaLocation'))) or
+                          ($parentElementName='X3D'                        and (($attributeName='profile') or ($attributeName='version') or ($attributeName='noNamespaceSchemaLocation'))) or
                           ($parentElementName='XvlShell'                   and $attributeName='shellType')">
 			  <xsl:text>SFString</xsl:text>
 		  </xsl:when>
@@ -6436,8 +6794,12 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
 		  <xsl:when test="
 					($attributeName='boolean')           or
 					($attributeName='bind')              or
+					($attributeName='inputFalse')        or
+					($attributeName='inputTrue')         or
+					($attributeName='inputNegate')       or
 					($attributeName='isActive')          or
 					($attributeName='isBound')           or
+					($attributeName='isLoaded')            or
 					($attributeName='isOver')            or
 					($attributeName='isPaused')          or
 					($attributeName='triggerTrue')       or
@@ -6470,6 +6832,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
 					($attributeName='viewAll') or
 					($attributeName='visible') or
 					($parentElementName='AudioClip' and $attributeName='loop') or
+					($parentElementName='BooleanSequencer' and $attributeName='value') or
 					($parentElementName='BooleanToggle' and $attributeName='toggle') or
 					($parentElementName='Collision' and $attributeName='enabled') or
 					($parentElementName='CollisionSpace' and $attributeName='useGeometry') or
@@ -6483,6 +6846,8 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
 					($parentElementName='GeoInline' and $attributeName='load') or
 					($parentElementName='GeoOrigin' and $attributeName='rotateYUp') or
 					($parentElementName='GeoViewpoint' and $attributeName='headlight') or
+					($parentElementName='KeySensor' and ($attributeName='altKey' or $attributeName='controlKey' or $attributeName='shiftKey')) or
+					($parentElementName='StringSensor' and ($attributeName='deletionAllowed')) or
 					($parentElementName='ImageTexture' and ($attributeName='repeatS' or $attributeName='repeatT')) or
 					(contains($parentElementName,'Texture3D') and starts-with($attributeName,'repeat')) or
 					($parentElementName='Inline' and ($attributeName='load')) or
@@ -6650,6 +7015,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
 					($parentElementName='HAnimSegment' and $attributeName='mass') or
 					($parentElementName='IsoSurfaceVolumeData' and ($attributeName='contourStepSize' or $attributeName='surfaceTolerance')) or
 					($parentElementName='LineProperties'       and ($attributeName='linewidthScaleFactor')) or
+					($parentElementName='LoadSensor'           and ($attributeName='progress'))  or
 					(ends-with($parentElementName,'Material')  and ($attributeName='ambientIntensity' or $attributeName='metallic' or $attributeName='normalScale' or $attributeName='occlusionStrength' or $attributeName='roughness' or $attributeName='shininess' or $attributeName='transparency')) or
 					($parentElementName='ParticleSystem'       and ($attributeName='lifetimeVariation' or $attributeName='particleLifetime')) or
 					($parentElementName='TwoSidedMaterial'     and ($attributeName='backAmbientIntensity' or $attributeName='backShininess' or $attributeName='backTransparency')) or
@@ -6735,7 +7101,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     ($attributeName='timestamp')            or
                     ($attributeName='readInterval')         or
                     ($attributeName='writeInterval')        or
-                    ($parentElementName='LoadSensor'     and $attributeName='timeOut')  or
+                    ($parentElementName='LoadSensor'     and ($attributeName='loadTime') or ($attributeName='timeOut'))  or
                     ($parentElementName='AudioClip'      and ends-with($attributeName,'Time'))  or
                     ($parentElementName='EspduTransform' and ends-with($attributeName,'Time'))  or
                     ($parentElementName='HAnimMotion'    and $attributeName='frameDuration') or
@@ -6794,6 +7160,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
 					($parentElementName='GeoElevationGrid'   and $attributeName='geoGridOrigin') or
 					($parentElementName='GeoLOD'             and $attributeName='center') or
 					($parentElementName='GeoProximitySensor' and $attributeName='center') or
+					($parentElementName='GeoTouchSensor' and $attributeName='hitGeoCoord') or
 					($parentElementName='GeoViewpoint'       and ($attributeName='centerOfRotation' or $attributeName='position'))">
 			  <xsl:text>SFVec3d</xsl:text>
 		  </xsl:when>
@@ -6946,6 +7313,27 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     ($parentElementName='Matrix4VertexAttribute' and $attributeName='value')">
 			  <xsl:text>MFMatrix4f</xsl:text>
 		  </xsl:when>
+		  <!-- SFNode and MFNode are needed for type lookup when checking ROUTE connections -->
+		  <!-- SFNode -->
+		  <xsl:when test="
+                    ($localFieldType='SFNode')    or 
+                    (not($parentElementName='MetadataSet')     and  $attributeName='metadata') or
+                    ($parentElementName='Shape'            and (($attributeName='appearance')     or ($attributeName='geometry'))) or
+                    ($parentElementName='Appearance'       and (($attributeName='material')       or ($attributeName='texture')          or ($attributeName='textureTransform') or ($attributeName='acousticProperties') or
+                    ($attributeName='fillProperties') or ($attributeName='lineProperties')  or ($attributeName='pointProperties'))) or
+                    ($parentElementName='PhysicalMaterial' and (($attributeName='baseTexture')    or ($attributeName='emissiveTexture') or ($attributeName='metallicRoughnessTexture') or ($attributeName='normalTexture') or ($attributeName='occlusionTexture'))) or
+                    ($parentElementName='UnlitMaterial'    and (($attributeName='baseTexture')    or ($attributeName='emissiveTexture')                                                or ($attributeName='normalTexture')))">
+			  <xsl:text>SFNode</xsl:text>
+		  </xsl:when>
+		  <!-- MFNode -->
+		  <xsl:when test="
+                    ($localFieldType='MFNode')  or 
+                    ($attributeName='children') or
+                    ($attributeName='level') or
+                    ($parentElementName='MetadataSet' and $attributeName='metadata') or
+                    ($parentElementName='Appearance'  and $attributeName='shaders')">
+			  <xsl:text>MFNode</xsl:text>
+		  </xsl:when>
 		  <!-- MFInt32 --> <!-- must precede SFInt32 -->
 		  <xsl:when test="
 					($localFieldType='MFInt32')    or 
@@ -7003,6 +7391,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
 					($parentElementName='GeneratedCubeMapTexture' and $attributeName='size') or
 					(starts-with($parentElementName,'HAnim') and $attributeName='loa') or
                                         ($parentElementName='HAnimMotion' and (($attributeName='frameIncrement') or ($attributeName='frameIndex') or ($attributeName='startFrame') or ($attributeName='endFrame'))) or
+                                        ($parentElementName='KeySensor' and (($attributeName='actionKeyPress') or ($attributeName='actionKeyRelease'))) or
                                         ($parentElementName='IntegerTrigger' and (($attributeName='integerKey') or ($attributeName='triggerValue'))) or
 					($parentElementName='LayerSet' and ($attributeName='activeLayer')) or
 					($parentElementName='LineProperties' and ($attributeName='linetype')) or
@@ -7032,7 +7421,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
 				<xsl:otherwise>
 					<xsl:text>type_UNKNOWN</xsl:text>
 					<xsl:message>
-						  <xsl:text>*** Warning: X3dToXhtml.xslt attribute type not found for </xsl:text>
+						  <xsl:text>[warning] X3dToXhtml.xslt attribute type not found for </xsl:text>
 						  <xsl:value-of select="$parentElementName"/>
 						  <xsl:text> </xsl:text>
 						  <xsl:value-of select="$attributeNameFull"/>

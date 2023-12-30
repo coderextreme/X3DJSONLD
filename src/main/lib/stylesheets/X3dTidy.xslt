@@ -3065,14 +3065,17 @@ Recommended tools:
                       (local-name()='colorPerVertex' and string(.)='true') or
                       (local-name()='normalPerVertex' and string(.)='true') or
                       (local-name()='solid' and string(.)='true') or
-                      (local-name()='xDimension' and (string(.)='2')) or
+                      (local-name()='xDimension' and (string(.)='0')) or
                       (local-name()='xSpacing' and (string(.)='1' or string(.)='1.0')) or
-                      (local-name()='zDimension' and (string(.)='2')) or
+                      (local-name()='zDimension' and (string(.)='0')) or
                       (local-name()='zSpacing' and (string(.)='1' or string(.)='1.0')) or
                       (local-name()='yScale' and (string(.)='1' or string(.)='1.0')) or
-                      (local-name()='height' and (string(.)='0 0 0 0' or string(.)='0.0 0.0 0.0 0.0')) or
                       (local-name()='geoGridOrigin' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                       (local-name()='creaseAngle' and (string(.)='0' or string(.)='0.0')))) and
+                      not((local-name(..)='ElevationGrid') and
+                      (local-name()='height' and (string(.)='' or string(.)=''))) and
+                      not((local-name(..)='GeoElevationGrid') and
+                      (local-name()='height' and (string(.)='0 0' or string(.)='0.0 0.0'))) and
                       not( local-name(..)='Extrusion'	and
                       ((local-name()='beginCap' and string(.)='true') or
                       (local-name()='ccw' and string(.)='true') or
@@ -3451,7 +3454,7 @@ Recommended tools:
                       ((local-name()='containerField' and string(.)='children'))) and
                       not( local-name(..)='OscillatorSource' and
                       ((local-name()='containerField' and string(.)='children') or
-                      (local-name()='frequency' and (string(.)='0' or string(.)='0.0')))) and
+                      (local-name()='frequency' and (string(.)='440' or string(.)='440.0')))) and
                       not( local-name(..)='PeriodicWave' and
                       ((local-name()='containerField' and string(.)='children') or
                       (local-name()='type' and (string(.)='SQUARE')))) and
@@ -3646,9 +3649,6 @@ Recommended tools:
                        (local-name()='bboxCenter' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        (local-name()='bboxSize' and (string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')) or
                        (local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
-                       (local-name()='jointBindingPositions' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
-                       (local-name()='jointBindingRotations' and (string(.)='0 0 1 0' or string(.)='0 1 0 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0.0 1.0 0.0 0.0')) or
-                       (local-name()='jointBindingScales' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
                        (local-name()='loa' and (string(.)='-1')) or
                        (local-name()='version' and (($isHAnim1 = true() and (string(.)='1.0' or (string-length(string(.)) = 0))) or ($isHAnim2 = true() and string(.)='2.0'))) or
                        (local-name()='skeletalConfiguration' and (string(.)='BASIC')) or
@@ -3691,7 +3691,7 @@ Recommended tools:
                       (local-name()='vDimension' and (string(.)='0')) or
                       (local-name()='uOrder' and (string(.)='3')) or
                       (local-name()='vOrder' and (string(.)='3')))) and
-                      not((local-name(..)='NurbsCurve' or local-name(..)='NurbsSwungSurface') and
+                      not((local-name(..)='NurbsSweptSurface' or local-name(..)='NurbsSwungSurface') and
                       ((local-name()='ccw' or local-name()='solid') and (string(.)='true'))) and
                       not((contains(local-name(..),'SplinePositionInterpolator') or local-name(..)='SplineScalarInterpolator' or local-name(..)='SquadOrientationInterpolator') and
                       ((local-name()='closed' or local-name()='normalizeVelocity') and (string(.)='false')))" />
