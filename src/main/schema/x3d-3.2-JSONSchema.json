@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-3.2-JSONSchema.json",
-  "title": "X3D V3.2 JSON Schema, generated 2023/10/26 19:40:52",
+  "title": "X3D V3.2 JSON Schema, generated 2023/12/30 06:09:30",
   "description": "Experimental JSON Schema for X3D V3.2",
   "type": "object",
   "properties": {
@@ -4985,11 +4985,11 @@
                   "type": "number"
                 },
                 {
-                  "default": 1,
+                  "default": 0,
                   "type": "number"
                 },
                 {
-                  "default": 0,
+                  "default": 1,
                   "type": "number"
                 },
                 {
@@ -5715,7 +5715,6 @@
               "$comment": "MFFloat initializeOnly",
               "type": "array",
               "items": {
-                "default": 0,
                 "type": "number"
               }
             },
@@ -5739,7 +5738,7 @@
               "$ref": "#/$defs/-X3DTextureCoordinateNodeSFNode"
             },
             "@xDimension": {
-              "default": 2,
+              "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
             },
@@ -5749,7 +5748,7 @@
               "type": "number"
             },
             "@zDimension": {
-              "default": 2,
+              "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
             },
@@ -6438,157 +6437,13 @@
             "IS": {
               "$ref": "#/$defs/IS"
             },
-            "@beginCap": {
-              "default": true,
-              "$comment": "SFBool initializeOnly",
-              "type": "boolean"
-            },
-            "@ccw": {
-              "default": true,
-              "$comment": "SFBool initializeOnly",
-              "type": "boolean"
-            },
-            "@convex": {
-              "default": true,
-              "$comment": "SFBool initializeOnly",
-              "type": "boolean"
-            },
-            "@creaseAngle": {
-              "default": 0,
-              "$comment": "SFFloat initializeOnly",
-              "type": "number"
-            },
-            "@crossSection": {
-              "$comment": "MFVec2f initializeOnly",
-              "type": "array",
-              "minItems": 2,
-              "prefixItems": [
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": -1,
-                  "type": "number"
-                },
-                {
-                  "default": -1,
-                  "type": "number"
-                },
-                {
-                  "default": -1,
-                  "type": "number"
-                },
-                {
-                  "default": -1,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                }
-              ],
-              "items": {
-                "type": "number"
-              }
-            },
-            "@endCap": {
-              "default": true,
-              "$comment": "SFBool initializeOnly",
-              "type": "boolean"
-            },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-            },
-            "@orientation": {
-              "$comment": "MFRotation inputOutput",
-              "type": "array",
-              "minItems": 4,
-              "prefixItems": [
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                }
-              ],
-              "items": {
-                "type": "number"
-              }
-            },
-            "@scale": {
-              "$comment": "MFVec2f inputOutput",
-              "type": "array",
-              "minItems": 2,
-              "items": {
-                "default": 1,
-                "type": "number"
-              }
             },
             "@solid": {
               "default": true,
               "$comment": "SFBool initializeOnly",
               "type": "boolean"
-            },
-            "@spine": {
-              "$comment": "MFVec3f initializeOnly",
-              "type": "array",
-              "minItems": 3,
-              "prefixItems": [
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                }
-              ],
-              "items": {
-                "type": "number"
-              }
             },
             "@DEF": {
               "$comment": "SFString inputOutput",
@@ -7510,7 +7365,7 @@
               "$ref": "#/$defs/-X3DTextureCoordinateNodeSFNode"
             },
             "@xDimension": {
-              "default": 2,
+              "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
             },
@@ -7525,7 +7380,7 @@
               "type": "number"
             },
             "@zDimension": {
-              "default": 2,
+              "default": 0,
               "$comment": "SFInt32 initializeOnly",
               "type": "integer"
             },
@@ -8097,7 +7952,6 @@
               "maxItems": 3,
               "items": {
                 "default": 0,
-                "minimum": 0,
                 "type": "number"
               }
             },
@@ -8634,10 +8488,9 @@
               "$ref": "#/$defs/IS"
             },
             "@coordIndex": {
-              "$comment": "MFInt32 initializeOnly",
+              "$comment": "MFInt32 inputOutput",
               "type": "array",
               "items": {
-                "minimum": 0,
                 "type": "integer"
               }
             },
@@ -11104,7 +10957,7 @@
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
             "@order": {
-              "$comment": "MFInt32 initializeOnly",
+              "$comment": "MFInt32 inputOutput",
               "type": "array",
               "items": {
                 "default": 0,
@@ -13773,7 +13626,7 @@
               "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
             },
             "@knot": {
-              "$comment": "MFDouble initializeOnly",
+              "$comment": "MFDouble inputOutput",
               "type": "array",
               "items": {
                 "type": "number"
@@ -13982,7 +13835,7 @@
               "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
             },
             "@knot": {
-              "$comment": "MFDouble initializeOnly",
+              "$comment": "MFDouble inputOutput",
               "type": "array",
               "items": {
                 "type": "number"
@@ -15618,11 +15471,11 @@
                   "type": "number"
                 },
                 {
-                  "default": 1,
+                  "default": 0,
                   "type": "number"
                 },
                 {
-                  "default": 0,
+                  "default": 1,
                   "type": "number"
                 },
                 {
@@ -15907,7 +15760,7 @@
             },
             "@radius": {
               "default": 100,
-              "$comment": "SFFloat initializeOnly",
+              "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@DEF": {
@@ -17292,7 +17145,6 @@
               "maxItems": 3,
               "items": {
                 "default": 0,
-                "minimum": 0,
                 "type": "number"
               }
             },
@@ -17649,7 +17501,6 @@
               "maxItems": 2,
               "items": {
                 "default": 2,
-                "exclusiveMinimum": 0,
                 "type": "number"
               }
             },
@@ -20001,7 +19852,7 @@
             },
             "@radius": {
               "default": 100,
-              "$comment": "SFFloat initializeOnly",
+              "$comment": "SFFloat inputOutput",
               "type": "number"
             },
             "@DEF": {
@@ -20278,15 +20129,6 @@
             },
             "IS": {
               "$ref": "#/$defs/IS"
-            },
-            "@coordIndex": {
-              "$comment": "MFInt32 initializeOnly",
-              "type": "array",
-              "items": {
-                "default": -1,
-                "minimum": -1,
-                "type": "integer"
-              }
             },
             "@mass": {
               "default": 0,
@@ -21914,7 +21756,6 @@
               "maxItems": 3,
               "items": {
                 "default": 0,
-                "minimum": 0,
                 "type": "number"
               }
             },
@@ -23286,7 +23127,6 @@
               "maxItems": 3,
               "items": {
                 "default": 0,
-                "minimum": 0,
                 "type": "number"
               }
             },

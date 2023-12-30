@@ -1,7 +1,7 @@
 "use strict";
 
 const DOUBLE_SUFFIX = 'd';
-const FLOAT_SUFFIX = 'f';
+const FLOAT_SUFFIX = 'f ';
 
 function JavaSerializer() {
 this.code = [];
@@ -215,10 +215,6 @@ JavaSerializer.prototype = {
 								|| attrs[a].nodeValue == "segments" 
 							) {
 								method = "add"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
-							} else if (method === "addValue") {
-								if (attrs[a].nodeValue == "metadata") {
-									method = "addMetadata";
-								}
 							} else {
 								method = "set"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
 							}
@@ -572,7 +568,7 @@ JavaSerializer.prototype = {
 					// console.error("Java Comment Replacing "+node.nodeValue+" with "+y);
 				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
-				str += "\n"+("  ".repeat(n))+".setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) {
+				str += "\n"+("  ".repeat(n))+".setSourceCode(\""+node.nodeValue.split(/[\r\n][\r\n]?/).map(function(x) {
 					return x.
 					        replace(/\\/g, '\\\\').
 						replace(/"/g, '\\"')

@@ -281,6 +281,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <property name="X3DJSAIL.jars.dir"        location="${X3DJSAIL.relative.dir}/jars"/>
     <property name="X3DJSAIL.lib.dir"         location="${X3DJSAIL.relative.dir}/lib"/>
     <property name="X3DJSAIL.src.dir"         location="${X3DJSAIL.relative.dir}/src"/>
+    <property name="jaxb.dir"                 location="${X3DJSAIL.lib.dir}/support/jaxb" description="local path for JAXB directory"/>
     <property name="src.org.web3d.x3d.tests"     value="${X3DJSAIL.relative.dir}/tests"/><!-- tests -->
     <property name="nashorn.dir"                 value="nashorn"/>
 
@@ -3391,7 +3392,6 @@ POSSIBILITY OF SUCH DAMAGE.
     <!-- JAXB 2.3.1 (pre-Eclipse) https://javaee.github.io/jaxb-v2 -->
     <!-- https://javaee.github.io/jaxb-v2 -->
     <!-- https://dzone.com/articles/using-jaxb-for-xml-with-java -->
-    <property name="jaxb.dir" location="${X3DJSAIL.lib.dir}/support/jaxb" description="local path for JAXB directory"/>
     <taskdef name="xjc" classname="com.sun.tools.xjc.XJCTask">
         <classpath>
             <fileset dir="${jaxb.dir}" includes="*.jar"/>
@@ -3401,12 +3401,23 @@ POSSIBILITY OF SUCH DAMAGE.
     <target name="create.X3DUOM.JAXB.schema" description="build X3DUOM JAXB bindings">
         <echo message="Netbeans 11+ (Java 12+) prerequisite is to include following in your netbeans.conf file:"/>
         <echo message="  -J-Djavax.xml.bind.context.factory=com.sun.xml.bind.v2.ContextFactory"/>
+        <echo message="  see https://savage.nps.edu/Savage/developers.html#NetBeans"/>
+        <echo message="  see https://github.com/javaee/jaxb-v2"/>
+        
+        <echo message="  $jaxb.dir=${jaxb.dir}"/>
+        <fileset id="jaxb.contents" dir="${jaxb.dir}" includes="*"/> 
+        <property   name="property.jaxb.contents" refid="jaxb.contents"/>
+        <echo message="  $property.jaxb.contents=${property.jaxb.contents}"/>
+
         <delete failonerror="false">
             <fileset dir="${src.org.web3d.x3d.util.x3duom}"/><!-- includes JAXB-generated files -->
         </delete>
         <echo message="Ant xjc with classpath=${jaxb.dir}/*.jar"/>
         <xjc schema="../../specifications/X3dUnifiedObjectModel.xsd" package="org.web3d.x3d.util.x3duom"
-             classpath="${jaxb.dir}" destdir="java/src" header="true" readonly="true">
+             destdir="java/src" header="true" readonly="true">
+            <classpath>
+                <fileset dir="${jaxb.dir}" includes="*.jar"/>
+            </classpath>
         </xjc>
         <echo message="Compiling org.web3d.x3d.x3duom JAXB classes"/>
         <!-- avoid warning by using - -release rather than - -source and - -target, https://ant.apache.org/manual/Tasks/javac.html -->

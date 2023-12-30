@@ -1,0 +1,894 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="24716e6b-ed98-4684-bd7e-baa9ac39e38b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../.gradle/8.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.gradle/8.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.gradle/8.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.gradle/8.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.gradle/8.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.gradle/8.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.gradle/8.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.gradle/8.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.gradle/8.2.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.gradle/8.2.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.gradle/nb-cache/subprojects.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.gradle/nb-cache/subprojects.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../blend/blenderSkeleton.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../blend/blenderSkeleton.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../blend/blenderSkeleton.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../blend/blenderSkeleton.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../blend/blenderSkeleton.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../../../blend/blenderSkeleton.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../blend/blenderSkeleton.x3dv" beforeDir="false" afterPath="$PROJECT_DIR$/../../../blend/blenderSkeleton.x3dv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../blend/blenderskeleton.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../blend/blenderskeleton.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../blend/grampsweights.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../blend/grampsweights.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../blend/hier2x3d.blender.pl" beforeDir="false" afterPath="$PROJECT_DIR$/../../../blend/hier2x3d.blender.pl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../blend/hier2x3d.blender.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../../blend/hier2x3d.blender.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../blend/hier2x3d.bones.pl" beforeDir="false" afterPath="$PROJECT_DIR$/../../../blend/hier2x3d.bones.pl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../blend/hier2x3d.vrml.pl" beforeDir="false" afterPath="$PROJECT_DIR$/../../../blend/hier2x3d.vrml.pl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../blend/rungrampsweights.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../../blend/rungrampsweights.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../blend/sed.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../../blend/sed.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c/net/coderextreme/data/ball.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/net/coderextreme/data/ball.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c/net/coderextreme/data/sphereflowers.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/net/coderextreme/data/sphereflowers.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c/net/coderextreme/personal/BoxEm.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/net/coderextreme/personal/BoxEm.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c/net/coderextreme/personal/abox.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/net/coderextreme/personal/abox.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c/net/coderextreme/personal/app.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/net/coderextreme/personal/app.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c/net/coderextreme/personal/asmallbox.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/net/coderextreme/personal/asmallbox.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c/net/coderextreme/personal/asteroids.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/net/coderextreme/personal/asteroids.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c/net/coderextreme/personal/ball.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/net/coderextreme/personal/ball.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c/net/coderextreme/personal/bubbles.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/net/coderextreme/personal/bubbles.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c/net/coderextreme/personal/cube.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/net/coderextreme/personal/cube.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c/net/coderextreme/personal/freewrlflowers.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/net/coderextreme/personal/freewrlflowers.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c/net/coderextreme/personal/gears.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/net/coderextreme/personal/gears.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c/net/coderextreme/personal/geo.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/net/coderextreme/personal/geo.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c/net/coderextreme/personal/glflowers.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/net/coderextreme/personal/glflowers.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c/net/coderextreme/personal/ifscube.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/net/coderextreme/personal/ifscube.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c/net/coderextreme/personal/ifscubeworks.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/net/coderextreme/personal/ifscubeworks.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c/net/coderextreme/personal/john3.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/net/coderextreme/personal/john3.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c/net/coderextreme/personal/plainflowers.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/net/coderextreme/personal/plainflowers.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c/net/coderextreme/personal/qq3.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/net/coderextreme/personal/qq3.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c/net/coderextreme/personal/rubik.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/net/coderextreme/personal/rubik.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c/net/coderextreme/personal/rubikFurnace.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/net/coderextreme/personal/rubikFurnace.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c/net/coderextreme/personal/rubikOnFire.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/net/coderextreme/personal/rubikOnFire.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c/net/coderextreme/personal/sphere.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/net/coderextreme/personal/sphere.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c/net/coderextreme/personal/sphereflowers.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/net/coderextreme/personal/sphereflowers.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c/net/coderextreme/personal/x3domflowers.c" beforeDir="false" afterPath="$PROJECT_DIR$/../c/net/coderextreme/personal/x3domflowers.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/cmake/src/CMakeFiles/X3DJSONLD.dir/__/xerces-c-3.2.0/samples/src/DOMPrint/DOMPrintErrorHandler.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/net/coderextreme/data/ball.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/net/coderextreme/data/ball.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/net/coderextreme/data/sphereflowers.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/net/coderextreme/data/sphereflowers.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/BoxEm.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/BoxEm.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/abox.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/abox.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/app.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/app.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/asmallbox.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/asmallbox.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/asteroids.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/asteroids.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/ball.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/ball.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/bubbles.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/bubbles.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/cube.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/cube.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/freewrlflowers.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/freewrlflowers.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/gears.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/gears.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/geo.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/geo.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/glflowers.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/glflowers.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/ifscube.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/ifscube.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/ifscubeworks.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/ifscubeworks.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/john3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/john3.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/plainflowers.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/plainflowers.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/qq3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/qq3.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/rubik.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/rubik.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/rubikFurnace.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/rubikFurnace.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/rubikOnFire.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/rubikOnFire.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/sphere.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/sphere.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/sphereflowers.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/sphereflowers.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/x3domflowers.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/net/coderextreme/personal/x3domflowers.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/config.h" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/config.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/config.log" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/config.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/config.status" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/config.status" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/config/config.guess" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/config/config.guess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/config/config.sub" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/config/config.sub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/configure" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/configure" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/libtool" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/libtool" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/reconf" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/reconf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/samples/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/samples/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/scripts/run-test" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/scripts/run-test" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/src/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/src/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/src/xercesc/util/Xerces_autoconf_config.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/src/xercesc/util/Xerces_autoconf_config.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/src/xercesc/util/stamp-h2" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/src/xercesc/util/stamp-h2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/stamp-h1" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/stamp-h1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/tests/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.0/tests/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.3/config.log" beforeDir="false" afterPath="$PROJECT_DIR$/../cplusplus/xerces-c-3.2.3/config.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dart/net/coderextreme/data/ball.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../dart/net/coderextreme/data/ball.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dart/net/coderextreme/data/sphereflowers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../dart/net/coderextreme/data/sphereflowers.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dart/net/coderextreme/personal/BoxEm.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../dart/net/coderextreme/personal/BoxEm.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dart/net/coderextreme/personal/abox.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../dart/net/coderextreme/personal/abox.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dart/net/coderextreme/personal/app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../dart/net/coderextreme/personal/app.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dart/net/coderextreme/personal/asmallbox.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../dart/net/coderextreme/personal/asmallbox.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dart/net/coderextreme/personal/asteroids.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../dart/net/coderextreme/personal/asteroids.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dart/net/coderextreme/personal/ball.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../dart/net/coderextreme/personal/ball.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dart/net/coderextreme/personal/bubbles.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../dart/net/coderextreme/personal/bubbles.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dart/net/coderextreme/personal/cube.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../dart/net/coderextreme/personal/cube.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dart/net/coderextreme/personal/freewrlflowers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../dart/net/coderextreme/personal/freewrlflowers.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dart/net/coderextreme/personal/gears.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../dart/net/coderextreme/personal/gears.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dart/net/coderextreme/personal/geo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../dart/net/coderextreme/personal/geo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dart/net/coderextreme/personal/glflowers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../dart/net/coderextreme/personal/glflowers.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dart/net/coderextreme/personal/ifscube.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../dart/net/coderextreme/personal/ifscube.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dart/net/coderextreme/personal/ifscubeworks.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../dart/net/coderextreme/personal/ifscubeworks.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dart/net/coderextreme/personal/john3.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../dart/net/coderextreme/personal/john3.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dart/net/coderextreme/personal/plainflowers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../dart/net/coderextreme/personal/plainflowers.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dart/net/coderextreme/personal/qq3.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../dart/net/coderextreme/personal/qq3.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dart/net/coderextreme/personal/rubik.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../dart/net/coderextreme/personal/rubik.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dart/net/coderextreme/personal/rubikFurnace.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../dart/net/coderextreme/personal/rubikFurnace.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dart/net/coderextreme/personal/rubikOnFire.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../dart/net/coderextreme/personal/rubikOnFire.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dart/net/coderextreme/personal/sphere.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../dart/net/coderextreme/personal/sphere.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dart/net/coderextreme/personal/sphereflowers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../dart/net/coderextreme/personal/sphereflowers.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dart/net/coderextreme/personal/x3domflowers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../dart/net/coderextreme/personal/x3domflowers.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/AllenDutton.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/AllenDutton.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/ArchHalf.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/ArchHalf.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/ArchPrototype.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/ArchPrototype.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/ArtDecoExamples.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/ArtDecoExamples.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/ArtDecoPrototypes.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/ArtDecoPrototypes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/BoxEm.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/BoxEm.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/Bushes.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/Bushes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/CADPartChildNoTransformation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/CADPartChildNoTransformation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/CameraPrototypes.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/CameraPrototypes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/CameraShape.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/CameraShape.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/Cane.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/Cane.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/CoordinateAxes.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/CoordinateAxes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/DesignPatternsApparelMedicalSkinLayers.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/DesignPatternsApparelMedicalSkinLayers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/DonHumanoid.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/DonHumanoid.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/DonHumanoidNoSegSite.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/DonHumanoidNoSegSite.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/ExtrusionHeart.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/ExtrusionHeart.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/Filters.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/Filters.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/HAnimBehaviorPrototypes.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/HAnimBehaviorPrototypes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/HAnimModelFootLeft.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/HAnimModelFootLeft.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/HAnimModelFootRight.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/HAnimModelFootRight.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/HAnimModelHandLeft.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/HAnimModelHandLeft.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/HAnimModelHandRight.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/HAnimModelHandRight.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/HelloWorld.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/HelloWorld.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/HelloWorldCommented.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/HelloWorldCommented.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/HelloWorldMinimal.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/HelloWorldMinimal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/Humanoid1.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/Humanoid1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/Humanoid1NoSegSite.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/Humanoid1NoSegSite.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/Humanoid2.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/Humanoid2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/Humanoid2NoSegSite.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/Humanoid2NoSegSite.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/Humanoid3.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/Humanoid3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/Humanoid3NoSegSite.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/Humanoid3NoSegSite.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/Humanoid4.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/Humanoid4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/Humanoid4NoSegSite.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/Humanoid4NoSegSite.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/Humanoid4_1.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/Humanoid4_1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/IFS.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/IFS.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/IcosahedronSubdivisionLevel5.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/IcosahedronSubdivisionLevel5.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/InlineSoundSource.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/InlineSoundSource.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/JinLOA1.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/JinLOA1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/JinLOA4_1.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/JinLOA4_1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/JinLOA4_3.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/JinLOA4_3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/JinLOA4_4.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/JinLOA4_4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/JinLOA4_5.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/JinLOA4_5.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/JinLOA4_6.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/JinLOA4_6.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/JoeExample.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/JoeExample.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/JoeKick.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/JoeKick.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/JoeSkinTexcoordDisplacerKick.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/JoeSkinTexcoordDisplacerKick.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/JohnJoint.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/JohnJoint.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/JohnJoint2.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/JohnJoint2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/JohnJoint20.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/JohnJoint20.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/JohnJoint3.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/JohnJoint3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/JointCoordinateAxes.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/JointCoordinateAxes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/KoreanCharacter01Jin.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/KoreanCharacter01Jin.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/KoreanCharacter02Chul.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/KoreanCharacter02Chul.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/KoreanCharacter03Hyun.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/KoreanCharacter03Hyun.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/KoreanCharacter04Young.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/KoreanCharacter04Young.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/KoreanCharacter05Ju.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/KoreanCharacter05Ju.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/KoreanCharacter06Ga.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/KoreanCharacter06Ga.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/KoreanCharacter07No.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/KoreanCharacter07No.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/KoreanCharacter08Da.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/KoreanCharacter08Da.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/KoreanCharacter09Ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/KoreanCharacter09Ru.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/KoreanCharacter10Mi.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/KoreanCharacter10Mi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/KoreanCharacter11Min.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/KoreanCharacter11Min.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/KoreanCharacter12Sun.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/KoreanCharacter12Sun.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/KoreanCharacterMotionAnnexB01Jin.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/KoreanCharacterMotionAnnexB01Jin.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/KoreanCharacterMotionAnnexC01Jin.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/KoreanCharacterMotionAnnexC01Jin.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/KoreanCharacterMotionAnnexD01Jin.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/KoreanCharacterMotionAnnexD01Jin.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/KoreanCharacterMotionAnnexD01Jin.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/KoreanCharacterMotionAnnexD01Jin.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/KoreanCharacterMotionAnnexD01Jin.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../data/KoreanCharacterMotionAnnexD01Jin.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/KoreanCharacterMotionAnnexD01Jin.x3dj" beforeDir="false" afterPath="$PROJECT_DIR$/../data/KoreanCharacterMotionAnnexD01Jin.x3dj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/LOA1_JumpAnimation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/LOA1_JumpAnimation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/LOA1_KneelAnimation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/LOA1_KneelAnimation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/LOA1_RunAnimation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/LOA1_RunAnimation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/LOA1_StandAnimation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/LOA1_StandAnimation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/LOA1_StopAnimation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/LOA1_StopAnimation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/LOA1_SwimmingFlutterKickAnimation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/LOA1_SwimmingFlutterKickAnimation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/LOA1_WalkAnimation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/LOA1_WalkAnimation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/Leif4_5Final.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/Leif4_5Final.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/MainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/MainStage.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/Marine.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/Marine.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/MaskAndSnorkel.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/MaskAndSnorkel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/MyBounce.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/MyBounce.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/ObliqueStrategies.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/ObliqueStrategies.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/Pathway.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/Pathway.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/RotationTests.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/RotationTests.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/ScubaTank.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/ScubaTank.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/SimpleShader.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/SimpleShader.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/Size2tExample_revision2.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/Size2tExample_revision2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/SpatialAudioCameraAnimation.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/SpatialAudioCameraAnimation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/SplitChannels.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/SplitChannels.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/SquawLOD023.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/SquawLOD023.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/StandardHumanoid.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/StandardHumanoid.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/StandardHumanoidNoSegSite.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/StandardHumanoidNoSegSite.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/StringArrayEncodingExamples.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/StringArrayEncodingExamples.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/Teapot.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/Teapot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/TextExamples.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/TextExamples.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/ThreeDTexture.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/ThreeDTexture.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/Trebuchet.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/Trebuchet.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/ViewFrustumExample.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/ViewFrustumExample.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/ViewFrustumPrototype.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/ViewFrustumPrototype.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/abox.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/abox.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/arc.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/arc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/arc1.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/arc1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/arc2.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/arc2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/arc3.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/arc3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/arc4.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/arc4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/arcold.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/arcold.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/asmallbox.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/asmallbox.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/asteroids.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/asteroids.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/ball.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/ball.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/ball.new.graal.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/ball.new.graal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/ball.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/ball.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/ball.newPrettyPrint.intermediate.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../data/ball.newPrettyPrint.intermediate.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/ball.x3d.new" beforeDir="false" afterPath="$PROJECT_DIR$/../data/ball.x3d.new" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/ball.x3dj" beforeDir="false" afterPath="$PROJECT_DIR$/../data/ball.x3dj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/ballx3dom.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/ballx3dom.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/ballx_ite.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/ballx_ite.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/browser.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/browser.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/bub.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/bub.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/bubble.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/bubble.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/bubbles.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/bubbles.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/bubs.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/bubs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/bubs2.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/bubs2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/bubs3.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/bubs3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/cube.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/cube.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/extrusion.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/extrusion.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/flipp.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/flipp.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/flower3.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/flower3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/flowerproto.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/flowerproto.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/flowers.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/flowers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/flowers2.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/flowers2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/flowers4.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/flowers4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/flowers7.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/flowers7.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/force.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/force.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/forcenode.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/forcenode.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/fors.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/fors.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/fors2.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/fors2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/freewrlflowers.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/freewrlflowers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/gears.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/gears.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/geo.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/geo.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/geobubbles.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/geobubbles.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/glflowers.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/glflowers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/gridBack.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/gridBack.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/ifscube.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/ifscube.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/ifscubeworks.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/ifscubeworks.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/indexedfaceset_pixeltexture_entire.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/indexedfaceset_pixeltexture_entire.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/indexedfaceset_pixeltexture_part.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/indexedfaceset_pixeltexture_part.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/indexedfaceset_pixeltexture_plus.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/indexedfaceset_pixeltexture_plus.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/indexedfaceset_pixeltexture_whole.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/indexedfaceset_pixeltexture_whole.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/jumpcut_loadurl.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/jumpcut_loadurl.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/mirror.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/mirror.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/mirror2.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/mirror2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/plainflowers.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/plainflowers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/pp3.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/pp3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/qq3.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/qq3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/rgb_alpha.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/rgb_alpha.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/rubik.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/rubik.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/rubikFurnace.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/rubikFurnace.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/rubikOnFire.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/rubikOnFire.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/sphere.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/sphere.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/sphereflowers.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/sphereflowers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/sphereflowers.new.graal.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/sphereflowers.new.graal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/sphereflowers.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/sphereflowers.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/sphereflowers.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../data/sphereflowers.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/sphereflowers.x3dj" beforeDir="false" afterPath="$PROJECT_DIR$/../data/sphereflowers.x3dj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/text.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/text.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/x3dconnector.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/x3dconnector.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/x3dconnectorProto.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/x3dconnectorProto.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/x3domflowers.json" beforeDir="false" afterPath="$PROJECT_DIR$/../data/x3domflowers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/data/HAnimModelFootLeft.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/data/HAnimModelFootLeft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/data/HAnimModelFootRight.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/data/HAnimModelFootRight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/data/HAnimModelHandLeft.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/data/HAnimModelHandLeft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/data/HAnimModelHandRight.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/data/HAnimModelHandRight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/data/JinLOA1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/data/JinLOA1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/data/JinLOA4_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/data/JinLOA4_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/data/JinLOA4_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/data/JinLOA4_3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/data/JinLOA4_4.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/data/JinLOA4_4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/data/JinLOA4_5.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/data/JinLOA4_5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/data/JinLOA4_6.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/data/JinLOA4_6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/data/JoeKick.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/data/JoeKick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/data/ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/data/ball.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/data/sphereflowers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/data/sphereflowers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/personal/BoxEm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/personal/BoxEm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/personal/abox.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/personal/abox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/personal/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/personal/app.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/personal/asmallbox.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/personal/asmallbox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/personal/asteroids.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/personal/asteroids.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/personal/ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/personal/ball.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/personal/bubbles.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/personal/bubbles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/personal/cube.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/personal/cube.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/personal/freewrlflowers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/personal/freewrlflowers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/personal/gears.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/personal/gears.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/personal/geo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/personal/geo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/personal/glflowers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/personal/glflowers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/personal/ifscube.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/personal/ifscube.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/personal/ifscubeworks.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/personal/ifscubeworks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/personal/john3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/personal/john3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/personal/plainflowers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/personal/plainflowers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/personal/qq3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/personal/qq3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/personal/rubik.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/personal/rubik.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/personal/rubikFurnace.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/personal/rubikFurnace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/personal/rubikOnFire.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/personal/rubikOnFire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/personal/sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/personal/sphere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/personal/sphereflowers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/personal/sphereflowers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/coderextreme/personal/x3domflowers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/coderextreme/personal/x3domflowers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/AllAudioGraphNodesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/AllAudioGraphNodesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/AllenDutton.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/AllenDutton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/ArchHalf.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/ArchHalf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/ArchPrototype.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/ArchPrototype.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/ArtDecoExamples.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/ArtDecoExamples.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/ArtDecoPrototypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/ArtDecoPrototypes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/BoxEm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/BoxEm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/Bubbles.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/Bubbles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/Bushes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/Bushes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/CADPartChildNoTransformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/CADPartChildNoTransformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/CameraPrototypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/CameraPrototypes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/CameraShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/CameraShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/Cane.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/Cane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/CoordinateAxes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/CoordinateAxes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/DesignPatternsApparelMedicalSkinLayers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/DesignPatternsApparelMedicalSkinLayers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/DonHumanoid.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/DonHumanoid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/DonHumanoidNoSegSite.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/DonHumanoidNoSegSite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/ExtrusionHeart.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/ExtrusionHeart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/Filters.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/Filters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/HAnimBehaviorPrototypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/HAnimBehaviorPrototypes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/HAnimModelFootLeft.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/HAnimModelFootLeft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/HAnimModelFootRight.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/HAnimModelFootRight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/HAnimModelHandLeft.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/HAnimModelHandLeft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/HAnimModelHandRight.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/HAnimModelHandRight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/HelloWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/HelloWorldCommented.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/HelloWorldCommented.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/HelloWorldMinimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/HelloWorldMinimal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/Humanoid1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/Humanoid1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/Humanoid1NoSegSite.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/Humanoid1NoSegSite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/Humanoid2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/Humanoid2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/Humanoid2NoSegSite.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/Humanoid2NoSegSite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/Humanoid3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/Humanoid3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/Humanoid3NoSegSite.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/Humanoid3NoSegSite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/Humanoid4.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/Humanoid4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/Humanoid4NoSegSite.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/Humanoid4NoSegSite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/Humanoid4_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/Humanoid4_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/IFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/IFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/IcosahedronSubdivisionLevel5.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/IcosahedronSubdivisionLevel5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/InlineSoundSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/InlineSoundSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/JinLOA1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/JinLOA1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/JinLOA4_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/JinLOA4_3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/JinLOA4_4.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/JinLOA4_4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/JinLOA4_5.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/JinLOA4_5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/JinLOA4_6.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/JinLOA4_6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/JoeExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/JoeExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/JoeKick.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/JoeKick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/JoeSkinTexcoordDisplacerKick.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/JoeSkinTexcoordDisplacerKick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/JohnJoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/JohnJoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/JohnJoint2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/JohnJoint2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/JohnJoint20.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/JohnJoint20.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/JohnJoint3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/JohnJoint3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/JointCoordinateAxes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/JointCoordinateAxes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacter01Jin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacter01Jin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacter02Chul.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacter02Chul.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacter03Hyun.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacter03Hyun.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacter04Young.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacter04Young.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacter05Ju.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacter05Ju.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacter06Ga.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacter06Ga.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacter07No.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacter07No.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacter08Da.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacter08Da.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacter09Ru.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacter09Ru.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacter10Mi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacter10Mi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacter11Min.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacter11Min.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacter12Sun.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacter12Sun.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacterMotionAnnexB01Jin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacterMotionAnnexB01Jin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacterMotionAnnexC01Jin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacterMotionAnnexC01Jin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacterMotionAnnexD01Jin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/KoreanCharacterMotionAnnexD01Jin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/LOA1_JumpAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/LOA1_JumpAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/LOA1_KneelAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/LOA1_KneelAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/LOA1_RunAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/LOA1_RunAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/LOA1_StandAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/LOA1_StandAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/LOA1_StopAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/LOA1_StopAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/LOA1_SwimmingFlutterKickAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/LOA1_SwimmingFlutterKickAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/LOA1_WalkAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/LOA1_WalkAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/Leif4_5Final.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/Leif4_5Final.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/MainStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/MainStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/Marine.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/Marine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/MaskAndSnorkel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/MaskAndSnorkel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/MyBounce.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/MyBounce.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/ObliqueStrategies.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/ObliqueStrategies.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/Pathway.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/Pathway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/RotationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/RotationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/ScubaTank.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/ScubaTank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/SimpleShader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/SimpleShader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/Size2tExample_revision2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/Size2tExample_revision2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/SpatialAudioCameraAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/SpatialAudioCameraAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/SplitChannels.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/SplitChannels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/SquawLOD023.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/SquawLOD023.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/StandardHumanoid.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/StandardHumanoid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/StandardHumanoidNoSegSite.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/StandardHumanoidNoSegSite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/StringArrayEncodingExamples.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/StringArrayEncodingExamples.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/Teapot.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/Teapot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/TextExamples.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/TextExamples.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/ThreeDTexture.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/ThreeDTexture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/Trebuchet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/Trebuchet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/ViewFrustumExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/ViewFrustumExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/ViewFrustumPrototype.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/ViewFrustumPrototype.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/abox.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/abox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/app.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/arc.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/arc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/arc1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/arc1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/arc2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/arc2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/arc3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/arc3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/arc4.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/arc4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/arcold.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/arcold.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/asmallbox.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/asmallbox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/asteroids.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/asteroids.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/ball.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/ballx3dom.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/ballx3dom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/ballx_ite.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/ballx_ite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/browser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/browser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/bub.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/bub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/bubble.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/bubble.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/bubs.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/bubs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/bubs2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/bubs2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/bubs3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/bubs3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/cube.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/cube.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/extrusion.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/extrusion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/flipp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/flipp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/flower3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/flower3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/flowerproto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/flowerproto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/flowers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/flowers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/flowers2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/flowers2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/flowers4.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/flowers4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/flowers7.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/flowers7.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/force.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/force.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/forcenode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/forcenode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/fors.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/fors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/fors2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/fors2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/freewrlflowers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/freewrlflowers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/gears.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/gears.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/geo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/geo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/geobubbles.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/geobubbles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/glflowers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/glflowers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/gridBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/gridBack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/ifscube.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/ifscube.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/ifscubeworks.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/ifscubeworks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/indexedfaceset_pixeltexture_entire.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/indexedfaceset_pixeltexture_entire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/indexedfaceset_pixeltexture_part.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/indexedfaceset_pixeltexture_part.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/indexedfaceset_pixeltexture_plus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/indexedfaceset_pixeltexture_plus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/indexedfaceset_pixeltexture_whole.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/indexedfaceset_pixeltexture_whole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/jumpcut_loadurl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/jumpcut_loadurl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/mirror.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/mirror.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/mirror2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/mirror2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/plainflowers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/plainflowers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/pp3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/pp3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/qq3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/qq3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/rgb_alpha.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/rgb_alpha.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/rubik.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/rubik.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/rubikFurnace.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/rubikFurnace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/rubikOnFire.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/rubikOnFire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/sphere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/sphereflowers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/sphereflowers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/text.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/text.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/x3dconnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/x3dconnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/x3dconnectorProto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/x3dconnectorProto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/net/x3djsonld/data/x3domflowers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/net/x3djsonld/data/x3domflowers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/stylesheets/X3dToJava.xslt" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/stylesheets/X3dToJava.xslt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/stylesheets/X3dToJson.sef.json" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/stylesheets/X3dToJson.sef.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/stylesheets/X3dToX3domX_ITE.xslt" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/stylesheets/X3dToX3domX_ITE.xslt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/stylesheets/X3dToXhtml.xslt" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/stylesheets/X3dToXhtml.xslt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nashorn/net/coderextreme/data/ball.js" beforeDir="false" afterPath="$PROJECT_DIR$/../nashorn/net/coderextreme/data/ball.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nashorn/net/coderextreme/data/sphereflowers.js" beforeDir="false" afterPath="$PROJECT_DIR$/../nashorn/net/coderextreme/data/sphereflowers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/JavaSerializer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/JavaSerializer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/mapToMethod2.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/mapToMethod2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/coderextreme/data/ball.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/coderextreme/data/ball.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/coderextreme/data/sphereflowers.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/coderextreme/data/sphereflowers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/coderextreme/personal/BoxEm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/coderextreme/personal/BoxEm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/coderextreme/personal/abox.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/coderextreme/personal/abox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/coderextreme/personal/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/coderextreme/personal/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/coderextreme/personal/asmallbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/coderextreme/personal/asmallbox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/coderextreme/personal/asteroids.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/coderextreme/personal/asteroids.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/coderextreme/personal/ball.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/coderextreme/personal/ball.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/coderextreme/personal/bubbles.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/coderextreme/personal/bubbles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/coderextreme/personal/cube.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/coderextreme/personal/cube.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/coderextreme/personal/freewrlflowers.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/coderextreme/personal/freewrlflowers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/coderextreme/personal/gears.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/coderextreme/personal/gears.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/coderextreme/personal/geo.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/coderextreme/personal/geo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/coderextreme/personal/glflowers.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/coderextreme/personal/glflowers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/coderextreme/personal/ifscube.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/coderextreme/personal/ifscube.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/coderextreme/personal/ifscubeworks.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/coderextreme/personal/ifscubeworks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/coderextreme/personal/john3.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/coderextreme/personal/john3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/coderextreme/personal/plainflowers.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/coderextreme/personal/plainflowers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/coderextreme/personal/qq3.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/coderextreme/personal/qq3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/coderextreme/personal/rubik.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/coderextreme/personal/rubik.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/coderextreme/personal/rubikFurnace.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/coderextreme/personal/rubikFurnace.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/coderextreme/personal/rubikOnFire.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/coderextreme/personal/rubikOnFire.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/coderextreme/personal/sphere.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/coderextreme/personal/sphere.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/coderextreme/personal/sphereflowers.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/coderextreme/personal/sphereflowers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/coderextreme/personal/x3domflowers.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/coderextreme/personal/x3domflowers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/ecma/data/ball.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/ecma/data/ball.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/ecma/data/sphereflowers.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/ecma/data/sphereflowers.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/ecma/personal/BoxEm.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/ecma/personal/BoxEm.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/ecma/personal/abox.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/ecma/personal/abox.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/ecma/personal/app.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/ecma/personal/app.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/ecma/personal/asmallbox.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/ecma/personal/asmallbox.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/ecma/personal/asteroids.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/ecma/personal/asteroids.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/ecma/personal/ball.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/ecma/personal/ball.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/ecma/personal/bubbles.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/ecma/personal/bubbles.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/ecma/personal/cube.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/ecma/personal/cube.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/ecma/personal/freewrlflowers.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/ecma/personal/freewrlflowers.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/ecma/personal/gears.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/ecma/personal/gears.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/ecma/personal/geo.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/ecma/personal/geo.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/ecma/personal/glflowers.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/ecma/personal/glflowers.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/ecma/personal/ifscube.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/ecma/personal/ifscube.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/ecma/personal/ifscubeworks.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/ecma/personal/ifscubeworks.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/ecma/personal/john3.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/ecma/personal/john3.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/ecma/personal/plainflowers.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/ecma/personal/plainflowers.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/ecma/personal/qq3.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/ecma/personal/qq3.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/ecma/personal/rubik.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/ecma/personal/rubik.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/ecma/personal/rubikFurnace.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/ecma/personal/rubikFurnace.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/ecma/personal/rubikOnFire.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/ecma/personal/rubikOnFire.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/ecma/personal/sphere.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/ecma/personal/sphere.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/ecma/personal/sphereflowers.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/ecma/personal/sphereflowers.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/ecma/personal/x3domflowers.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/ecma/personal/x3domflowers.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/x3djsonld/data/KoreanCharacterMotionAnnexD01Jin.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/x3djsonld/data/KoreanCharacterMotionAnnexD01Jin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/x3djsonld/data/ball.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/x3djsonld/data/ball.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/x3djsonld/data/bubbles.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/x3djsonld/data/bubbles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/x3djsonld/data/flowerproto.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/x3djsonld/data/flowerproto.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/x3djsonld/data/sphereflowers.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/x3djsonld/data/sphereflowers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/x3djsonld/data/x3dconnector.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/x3djsonld/data/x3dconnector.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../node/net/x3djsonld/data/x3dconnectorProto.js" beforeDir="false" afterPath="$PROJECT_DIR$/../node/net/x3djsonld/data/x3dconnectorProto.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/BoxEm.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/BoxEm.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/BoxEm.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/BoxEm.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/BoxEm.newPrettyPrint.intermediate.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/BoxEm.newPrettyPrint.intermediate.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/BoxEm.x3d.new" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/BoxEm.x3d.new" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/MyBounce.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/MyBounce.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/MyBounce.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/MyBounce.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/abox.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/abox.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/abox.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/abox.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/abox.newPrettyPrint.intermediate.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/abox.newPrettyPrint.intermediate.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/abox.x3d.new" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/abox.x3d.new" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/app.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/app.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/app.newPrettyPrint.intermediate.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/app.newPrettyPrint.intermediate.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/app.x3d.new" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/app.x3d.new" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/arcold.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/arcold.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/arcold.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/arcold.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/asmallbox.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/asmallbox.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/asmallbox.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/asmallbox.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/asmallbox.newPrettyPrint.intermediate.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/asmallbox.newPrettyPrint.intermediate.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/asmallbox.x3d.new" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/asmallbox.x3d.new" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/asteroids.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/asteroids.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/asteroids.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/asteroids.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/asteroids.newPrettyPrint.intermediate.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/asteroids.newPrettyPrint.intermediate.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/asteroids.x3d.new" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/asteroids.x3d.new" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/ball.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/ball.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/ball.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/ball.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/ball.newPrettyPrint.intermediate.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/ball.newPrettyPrint.intermediate.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/ball.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/ball.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/ball.x3d.new" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/ball.x3d.new" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/browser.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/browser.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/browser.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/browser.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/bub.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/bub.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/bub.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/bub.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/bubble.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/bubble.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/bubble.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/bubble.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/bubbles.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/bubbles.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/bubbles.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/bubbles.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/bubbles.newPrettyPrint.intermediate.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/bubbles.newPrettyPrint.intermediate.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/bubbles.x3d.new" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/bubbles.x3d.new" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/bubs.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/bubs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/bubs.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/bubs.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/bubs2.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/bubs2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/bubs2.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/bubs2.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/bubs3.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/bubs3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/bubs3.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/bubs3.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/cube.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/cube.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/cube.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/cube.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/cube.newPrettyPrint.intermediate.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/cube.newPrettyPrint.intermediate.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/cube.x3d.new" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/cube.x3d.new" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/extrusion.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/extrusion.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/extrusion.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/extrusion.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/flower.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/flower.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/flower.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/flower.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/flower3.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/flower3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/flower3.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/flower3.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/flowerproto.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/flowerproto.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/flowerproto.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/flowerproto.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/flowers.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/flowers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/flowers.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/flowers.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/flowers2.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/flowers2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/flowers2.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/flowers2.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/flowers4.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/flowers4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/flowers4.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/flowers4.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/flowers7.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/flowers7.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/flowers7.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/flowers7.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/force.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/force.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/force.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/force.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/forcenode.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/forcenode.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/forcenode.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/forcenode.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/fors.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/fors.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/fors.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/fors.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/fors2.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/fors2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/fors2.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/fors2.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/freewrlflowers.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/freewrlflowers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/freewrlflowers.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/freewrlflowers.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/freewrlflowers.newPrettyPrint.intermediate.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/freewrlflowers.newPrettyPrint.intermediate.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/freewrlflowers.x3d.new" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/freewrlflowers.x3d.new" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/gears.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/gears.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/gears.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/gears.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/gears.newPrettyPrint.intermediate.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/gears.newPrettyPrint.intermediate.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/gears.x3d.new" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/gears.x3d.new" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/geo.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/geo.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/geo.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/geo.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/geo.newPrettyPrint.intermediate.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/geo.newPrettyPrint.intermediate.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/geo.x3d.new" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/geo.x3d.new" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/geobubbles.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/geobubbles.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/geobubbles.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/geobubbles.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/glflowers.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/glflowers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/glflowers.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/glflowers.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/glflowers.newPrettyPrint.intermediate.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/glflowers.newPrettyPrint.intermediate.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/glflowers.x3d.new" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/glflowers.x3d.new" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/ifscube.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/ifscube.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/ifscube.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/ifscube.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/ifscube.newPrettyPrint.intermediate.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/ifscube.newPrettyPrint.intermediate.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/ifscube.x3d.new" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/ifscube.x3d.new" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/ifscubeworks.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/ifscubeworks.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/ifscubeworks.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/ifscubeworks.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/ifscubeworks.newPrettyPrint.intermediate.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/ifscubeworks.newPrettyPrint.intermediate.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/ifscubeworks.x3d.new" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/ifscubeworks.x3d.new" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/john.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/john.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/john.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/john.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/john2.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/john2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/john2.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/john2.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/john3.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/john3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/john3.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/john3.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/john3.newPrettyPrint.intermediate.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/john3.newPrettyPrint.intermediate.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/john3.x3d.new" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/john3.x3d.new" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/mirror.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/mirror.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/mirror.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/mirror.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/mirror2.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/mirror2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/mirror2.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/mirror2.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/plainflowers.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/plainflowers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/plainflowers.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/plainflowers.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/plainflowers.newPrettyPrint.intermediate.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/plainflowers.newPrettyPrint.intermediate.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/plainflowers.x3d.new" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/plainflowers.x3d.new" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/pp3.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/pp3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/pp3.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/pp3.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/qq3.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/qq3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/qq3.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/qq3.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/qq3.newPrettyPrint.intermediate.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/qq3.newPrettyPrint.intermediate.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/qq3.x3d.new" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/qq3.x3d.new" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/rubik.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/rubik.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/rubik.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/rubik.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/rubik.newPrettyPrint.intermediate.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/rubik.newPrettyPrint.intermediate.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/rubik.x3d.new" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/rubik.x3d.new" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/rubikFurnace.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/rubikFurnace.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/rubikFurnace.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/rubikFurnace.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/rubikFurnace.newPrettyPrint.intermediate.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/rubikFurnace.newPrettyPrint.intermediate.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/rubikFurnace.x3d.new" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/rubikFurnace.x3d.new" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/rubikOnFire.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/rubikOnFire.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/rubikOnFire.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/rubikOnFire.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/rubikOnFire.newPrettyPrint.intermediate.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/rubikOnFire.newPrettyPrint.intermediate.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/rubikOnFire.x3d.new" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/rubikOnFire.x3d.new" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/sphere.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/sphere.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/sphere.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/sphere.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/sphere.newPrettyPrint.intermediate.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/sphere.newPrettyPrint.intermediate.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/sphere.x3d.new" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/sphere.x3d.new" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/sphereflowers.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/sphereflowers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/sphereflowers.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/sphereflowers.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/sphereflowers.new.x3d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/sphereflowers.newPrettyPrint.intermediate.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/sphereflowers.newPrettyPrint.intermediate.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/sphereflowers.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/sphereflowers.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/sphereflowers.x3d.new" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/sphereflowers.x3d.new" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/sphereflowers.x3dj" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/sphereflowers.x3dj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/text.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/text.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/text.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/text.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/x3domflowers.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/x3domflowers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/x3domflowers.new.json" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/x3domflowers.new.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/x3domflowers.newPrettyPrint.intermediate.x3d" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/x3domflowers.newPrettyPrint.intermediate.x3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../personal/x3domflowers.x3d.new" beforeDir="false" afterPath="$PROJECT_DIR$/../personal/x3domflowers.x3d.new" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/python.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/net/coderextreme/data/ball.py" beforeDir="false" afterPath="$PROJECT_DIR$/net/coderextreme/data/ball.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/net/x3djsonld/data/KoreanCharacterMotionAnnexD01Jin.py" beforeDir="false" afterPath="$PROJECT_DIR$/net/x3djsonld/data/KoreanCharacterMotionAnnexD01Jin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/net/x3djsonld/data/Leif4_5Final.py" beforeDir="false" afterPath="$PROJECT_DIR$/net/x3djsonld/data/Leif4_5Final.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/net/x3djsonld/data/ball.py" beforeDir="false" afterPath="$PROJECT_DIR$/net/x3djsonld/data/ball.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/net/x3djsonld/data/sphereflowers.py" beforeDir="false" afterPath="$PROJECT_DIR$/net/x3djsonld/data/sphereflowers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/net/x3djsonld/data/x3dconnector.py" beforeDir="false" afterPath="$PROJECT_DIR$/net/x3djsonld/data/x3dconnector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/net/x3djsonld/data/x3dconnectorProto.py" beforeDir="false" afterPath="$PROJECT_DIR$/net/x3djsonld/data/x3dconnectorProto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/all.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/all.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/combine.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/combine.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/commandLine.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/commandLine.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/commandlocal.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/commandlocal.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/compile.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/compile.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/convert.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/convert.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/copy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/copy.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/cp1252.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/cp1252.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/diff.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/diff.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/diffjson.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/diffjson.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/diffjsonnew.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/diffjsonnew.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/diffxml.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/diffxml.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/execute.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/execute.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/finish.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/finish.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/future.nonprocessed.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/future.nonprocessed.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/generateSchema.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/generateSchema.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/graal.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/graal.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/graallocal.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/graallocal.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/hanim.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/hanim.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/invalid.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/invalid.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/jin.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/jin.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/json2json.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/json2json.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/jsonlint.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/jsonlint.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/local.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/local.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/nashorn.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/nashorn.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/node.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/node.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/noncompiled.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/noncompiled.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/nonconverted.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/nonconverted.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/nonexecuted.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/nonexecuted.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/nonexecutedjs.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/nonexecutedjs.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/nonserialized.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/nonserialized.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/perlocal.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/perlocal.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/personal.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/personal.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/processJsonErrors.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/processJsonErrors.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/python.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/python.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/python0.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/python0.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/quotetest.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/quotetest.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/replacequote.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/replacequote.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/routetest.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/routetest.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/runToError.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/runToError.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/runjson.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/runjson.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/runppp.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/runppp.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/runsc.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/runsc.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/runt1.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/runt1.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/runt2.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/runt2.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/runt3.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/runt3.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/runtidy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/runtidy.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/serialize.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/serialize.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/serialized.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/serialized.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/several.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/several.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/stripnumbers.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/stripnumbers.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/stylesheet.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/stylesheet.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/sum.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/sum.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/tottl.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/tottl.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/tsc.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/tsc.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/ttllocal.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/ttllocal.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/unknown.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/unknown.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/x3d2py.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/x3d2py.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/x3djsonld.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/x3djsonld.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/x3djsonldlocal.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/x3djsonldlocal.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/x_ite.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/x_ite.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vrml/net/coderextreme/data/ball.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../vrml/net/coderextreme/data/ball.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vrml/net/coderextreme/data/sphereflowers.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/../vrml/net/coderextreme/data/sphereflowers.mjs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2Vasn4oyyGtZn7Op1pFChp7meLj" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/john/X3DJSONLD/src/main/data/x3dconnectorProto.json",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
+  <component name="RunManager" selected="Python.xmltoscene">
+    <configuration name="X3Dautoclass" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/X3Dautoclass.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pyclasses" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyclasses.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="xmltoscene" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/xmltoscene.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.xmltoscene" />
+        <item itemvalue="Python.X3Dautoclass" />
+        <item itemvalue="Python.pyclasses" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="24716e6b-ed98-4684-bd7e-baa9ac39e38b" name="Changes" comment="" />
+      <created>1695085688308</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1695085688308</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pyclasses.py</url>
+          <line>49</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

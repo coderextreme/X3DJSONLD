@@ -90,10 +90,11 @@ class ClassPrinter:
             fields = self.node.iter("field")
             for field in fields:
                 if field.get("type") == "MFNode" or field.get("type") == "SFNode":
-                    acnts = field.get("acceptableNodeTypes").split("|")
-                    for acnt in acnts:
-                        str += classes[acnt].listChildren(field.get("name"), field.get("type"))
-                        str += classes[acnt].listParents(field.get("name"), field.get("type"))
+                    if field.get("acceptableNodeTypes"):
+                        acnts = field.get("acceptableNodeTypes").split("|")
+                        for acnt in acnts:
+                            str += classes[acnt].listChildren(field.get("name"), field.get("type"))
+                            str += classes[acnt].listParents(field.get("name"), field.get("type"))
         str += '},\n'
         self.printed = True
         return str

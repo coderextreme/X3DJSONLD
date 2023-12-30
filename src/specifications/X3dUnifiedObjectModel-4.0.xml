@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2023-09-22-05:00 08:37:04.7286916-05:00 -->
+<!-- Generated 2023-12-17-08:00 10:25:32.3036123-08:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                         version="4.0"
                         xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -647,7 +647,7 @@
       <SimpleType name="generatedCubeMapTextureUpdateChoices"
                    baseType="xs:NMTOKEN"
                    appinfo="generatedCubeMapTextureUpdateChoices are strictly allowed enumeration values for GeneratedCubeMapTexture field named 'update'. This list is bounded, no additional values are allowed."
-                   documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/environmentalTexturing#GeneratedCubeMapTexture">
+                   documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/environmentalTexturing.html#GeneratedCubeMapTexture">
          <enumeration value="NONE" appinfo="no further texture updates are rendered"/>
          <enumeration value="NEXT_FRAME_ONLY" appinfo="render texture once at end of frame"/>
          <enumeration value="ALWAYS" appinfo="texture to be rendered every frame"/>
@@ -5821,7 +5821,7 @@
                     default="true"/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="true"/>
             <field name="texCoord"
                     type="SFNode"
@@ -6129,7 +6129,7 @@
          </InterfaceDefinition>
       </AbstractNodeType>
       <AbstractNodeType name="X3DEnvironmentTextureNode">
-         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/environmentalTexturing#X3DEnvironmentTextureNode"
+         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/environmentalTexturing.html#X3DEnvironmentTextureNode"
                                appinfo="Base type for all nodes that specify cubic environment map sources for texture images.">
             <componentInfo name="CubeMapTexturing" level="1"/>
             <Inheritance baseType="X3DTextureNode"/>
@@ -7286,7 +7286,7 @@
                     inheritedFrom="X3DNode"/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="true"/>
             <field name="texCoord"
                     type="SFNode"
@@ -9608,8 +9608,8 @@
                     acceptableNodeTypes="X3DMetadataObject"
                     inheritedFrom="X3DNode"/>
             <field name="name"
-                    type="SFString"
-                    accessType="inputOutput"
+                    type="xs:NMTOKEN"
+                    accessType="initializeOnly"
                     baseType="xs:NMTOKEN"/>
             <field name="DEF"
                     type="SFString"
@@ -10430,6 +10430,11 @@
                <enumeration value="BLEND"
                              appinfo="Blend combines partial transparency of textures and materials."/>
             </field>
+            <field name="backMaterial"
+                    type="SFNode"
+                    accessType="inputOutput"
+                    default="NULL"
+                    acceptableNodeTypes="X3DMaterialNode"/>
             <field name="fillProperties"
                     type="SFNode"
                     accessType="inputOutput"
@@ -10651,7 +10656,7 @@
                     description="circle radius, of which the arc is a portion."/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="false"
                     description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="startAngle"
@@ -12143,12 +12148,12 @@
                     description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
             <field name="size"
                     type="SFVec3f"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="2 2 2"
                     description="size x y z in meters."/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="true"
                     description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="DEF"
@@ -14521,7 +14526,7 @@
          </InterfaceDefinition>
       </ConcreteNode>
       <ConcreteNode name="ComposedCubeMapTexture">
-         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/environmentalTexturing#ComposedCubeMapTexture"
+         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/environmentalTexturing.html#ComposedCubeMapTexture"
                                appinfo="ComposedCubeMapTexture is a texture node that defines a cubic environment map source as an explicit set of images drawn from individual 2D texture nodes.">
             <componentInfo name="CubeMapTexturing" level="1"/>
             <Inheritance baseType="X3DEnvironmentTextureNode"/>
@@ -14578,6 +14583,12 @@
                     default="NULL"
                     acceptableNodeTypes="X3DTexture2DNode"
                     description="Parent ComposedCubeMapTexture element can contain up to six image nodes (ImageTexture PixelTexture MovieTexture, other texture nodes)."/>
+            <field name="textureProperties"
+                    type="SFNode"
+                    accessType="initializeOnly"
+                    default="NULL"
+                    acceptableNodeTypes="TextureProperties"
+                    description="Single contained TextureProperties node that can specify additional visual attributes applied to corresponding texture images."/>
             <field name="topTexture"
                     synonym="top"
                     type="SFNode"
@@ -14621,6 +14632,7 @@
                <NodeContentModel name="PixelTexture"/>
                <NodeContentModel name="MovieTexture"/>
                <NodeContentModel name="ProtoInstance"/>
+               <NodeContentModel name="TextureProperties"/>
             </ContentModel>
          </InterfaceDefinition>
       </ConcreteNode>
@@ -14917,7 +14929,7 @@
                     description="Whether to draw sides (other inside faces are not drawn)."/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="true"
                     description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="DEF"
@@ -16025,7 +16037,7 @@
                     description="Whether to draw sides (inside faces are never drawn)."/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="true"
                     description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="top"
@@ -16082,7 +16094,7 @@
             <field name="axisRotation"
                     type="SFRotation"
                     accessType="inputOutput"
-                    default="0 1 0 0"
+                    default="0 0 1 0"
                     description="axisRotation determines local sensor coordinate system by rotating the local coordinate system."/>
             <field name="description"
                     type="SFString"
@@ -16738,7 +16750,7 @@
                     description="Outer radius of circle, greater than or equal to inner radius."/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="false"
                     description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="DEF"
@@ -16803,8 +16815,14 @@
                     acceptableNodeTypes="RigidBody"
                     inheritedFrom="X3DRigidJointNode"
                     description="The body1 and body2 fields indicate the two RigidBody nodes connected by this joint."/>
-            <field name="body1AnchorPoint" type="SFVec3f" accessType="outputOnly"/>
-            <field name="body1Axis" type="SFVec3f" accessType="outputOnly"/>
+            <field name="body1AnchorPoint"
+                    type="SFVec3f"
+                    accessType="outputOnly"
+                    description="body1AnchorPoint describes anchorPoint position relative to local coordinate reference frame."/>
+            <field name="body1Axis"
+                    type="SFVec3f"
+                    accessType="outputOnly"
+                    description="body1Axis describes report the current location of the anchor point relative to the corresponding body."/>
             <field name="body2"
                     type="SFNode"
                     accessType="inputOutput"
@@ -16812,8 +16830,14 @@
                     acceptableNodeTypes="RigidBody"
                     inheritedFrom="X3DRigidJointNode"
                     description="The body1 and body2 fields indicate the two RigidBody nodes connected by this joint."/>
-            <field name="body2AnchorPoint" type="SFVec3f" accessType="outputOnly"/>
-            <field name="body2Axis" type="SFVec3f" accessType="outputOnly"/>
+            <field name="body2AnchorPoint"
+                    type="SFVec3f"
+                    accessType="outputOnly"
+                    description="body2AnchorPoint describes anchorPoint position relative to local coordinate reference frame."/>
+            <field name="body2Axis"
+                    type="SFVec3f"
+                    accessType="outputOnly"
+                    description="body1Axis describes report the current location of the anchor point relative to the corresponding body."/>
             <field name="desiredAngularVelocity1"
                     type="SFFloat"
                     accessType="inputOutput"
@@ -17336,7 +17360,6 @@
             <field name="height"
                     type="MFFloat"
                     accessType="initializeOnly"
-                    default="0 0 0 0"
                     description="Grid array of height vertices with upward direction along +Y axis, with xDimension rows and zDimension columns."/>
             <field name="IS"
                     type="SFNode"
@@ -17368,7 +17391,7 @@
                     description="Grid array of height vertices with upward direction along +Y axis, with xDimension rows and zDimension columns."/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="true"
                     description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="texCoord"
@@ -17380,7 +17403,7 @@
             <field name="xDimension"
                     type="SFInt32"
                     accessType="initializeOnly"
-                    default="2"
+                    default="0"
                     minInclusive="0"
                     description="Number of elements in the height array along X direction."/>
             <field name="xSpacing"
@@ -17392,7 +17415,7 @@
             <field name="zDimension"
                     type="SFInt32"
                     accessType="initializeOnly"
-                    default="2"
+                    default="0"
                     minInclusive="0"
                     description="Number of elements in the height array along Z direction."/>
             <field name="zSpacing"
@@ -18102,12 +18125,12 @@
                     description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
             <field name="orientation"
                     type="MFRotation"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="0 0 1 0"
                     description="The orientation array is a list of axis-angle 4-tuple values applied at each spine-aligned cross-section plane."/>
             <field name="scale"
                     type="MFVec2f"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="1 1"
                     description="scale is a list of 2D-scale parameters applied at each spine-aligned cross-section plane."/>
             <field name="set_crossSection"
@@ -18128,7 +18151,7 @@
                     description="The spine array defines a center-line sequence of 3D points that define a piecewise-linear curve forming a series of connected vertices."/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="true"
                     description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="spine"
@@ -18318,8 +18341,8 @@
                     inheritedFrom="X3DNode"
                     description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
             <field name="name"
-                    type="SFString"
-                    accessType="inputOutput"
+                    type="xs:NMTOKEN"
+                    accessType="initializeOnly"
                     inheritedFrom="X3DVertexAttributeNode"
                     baseType="xs:NMTOKEN"
                     description="Required name for this particular VertexAttribute instance."/>
@@ -18329,7 +18352,7 @@
                     default="4"
                     minInclusive="1"
                     maxInclusive="4"
-                    description="numComponents pecifies how many consecutive floating-point values should be grouped together per vertex."/>
+                    description="numComponents specifies how many consecutive floating-point values should be grouped together per vertex."/>
             <field name="value"
                     type="MFFloat"
                     accessType="inputOutput"
@@ -18898,7 +18921,7 @@
          </InterfaceDefinition>
       </ConcreteNode>
       <ConcreteNode name="GeneratedCubeMapTexture">
-         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/environmentalTexturing#GeneratedCubeMapTexture"
+         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/environmentalTexturing.html#GeneratedCubeMapTexture"
                                appinfo="GeneratedCubeMapTexture is a texture node that defines a cubic environment map that sources its data from internally generated images.">
             <componentInfo name="CubeMapTexturing" level="3"/>
             <Inheritance baseType="X3DEnvironmentTextureNode"/>
@@ -18922,7 +18945,7 @@
                     description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
             <field name="size"
                     type="SFInt32"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="128"
                     minExclusive="0"
                     description="size indicates the resolution of the generated images in number of pixels per side."/>
@@ -19100,7 +19123,7 @@
             <field name="height"
                     type="MFDouble"
                     accessType="initializeOnly"
-                    default="0 0 0 0"
+                    default="0 0"
                     description="Contains xDimension rows * zDimension columns floating-point values for elevation above ellipsoid."/>
             <field name="IS"
                     type="SFNode"
@@ -19127,12 +19150,12 @@
                     default="true"
                     description="Whether Normal node vector values are applied to each point vertex (true) or per quadrilateral (false)."/>
             <field name="set_height"
-                    type="MFFloat"
+                    type="MFDouble"
                     accessType="inputOnly"
                     description="Contains xDimension rows * zDimension columns floating-point values for elevation above ellipsoid."/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="true"
                     description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="texCoord"
@@ -19144,7 +19167,7 @@
             <field name="xDimension"
                     type="SFInt32"
                     accessType="initializeOnly"
-                    default="2"
+                    default="0"
                     minInclusive="0"
                     description="Number of elements in the height array along east-west X direction."/>
             <field name="xSpacing"
@@ -19162,7 +19185,7 @@
             <field name="zDimension"
                     type="SFInt32"
                     accessType="initializeOnly"
-                    default="2"
+                    default="0"
                     minInclusive="0"
                     description="Number of elements in the height array along north-south Z direction."/>
             <field name="zSpacing"
@@ -19829,7 +19852,7 @@
                     default="0 0 0"
                     minInclusive="0"
                     inheritedFrom="X3DEnvironmentalSensorNode"
-                    description="size of Proximity box."/>
+                    description="size of Proximity box around center location, oriented within local transformation frame."/>
             <field name="DEF"
                     type="SFString"
                     accessType="inputOutput"
@@ -20379,8 +20402,7 @@
             <Inheritance baseType="X3DGeometricPropertyNode"/>
             <field name="coordIndex"
                     type="MFInt32"
-                    accessType="initializeOnly"
-                    minInclusive="0"
+                    accessType="inputOutput"
                     description="Defines index values into the parent HAnimSegment or HAnimBody/HAnimHumanoid coordinate array for the mesh of vertices affected by this HAnimDisplacer."/>
             <field name="description"
                     type="SFString"
@@ -21243,17 +21265,14 @@
             <field name="jointBindingPositions"
                     type="MFVec3f"
                     accessType="inputOutput"
-                    default="0 0 0"
                     description="Specifies an array of position values for each HAnimJoint node in the joints field, in order, corresponding to each binding pose."/>
             <field name="jointBindingRotations"
                     type="MFRotation"
                     accessType="inputOutput"
-                    default="0 0 1 0"
                     description="Specifies an array of rotation values for each HAnimJoint node in the joints field, in order, corresponding to each binding pose."/>
             <field name="jointBindingScales"
                     type="MFVec3f"
                     accessType="inputOutput"
-                    default="0 0 0"
                     description="Specifies an array of scale values for each HAnimJoint node in the joints field, in order, corresponding to each binding pose."/>
             <field name="joints"
                     type="MFNode"
@@ -22509,7 +22528,7 @@
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
-                    default="false"
+                    default="true"
                     description="Enables/disables node operation."/>
             <field name="endFrame"
                     type="SFInt32"
@@ -22574,6 +22593,14 @@
                     accessType="inputOutput"
                     baseType="xs:NMTOKEN"
                     description="Unique name attribute must be defined so that HAnimMotion node can be identified at run time for animation purposes."/>
+            <field name="next"
+                    type="SFBool"
+                    accessType="inputOnly"
+                    description="Send next output value in values array, using/updating various frame values as appropriate."/>
+            <field name="previous"
+                    type="SFBool"
+                    accessType="inputOnly"
+                    description="Send previous output value in values array, using/updating various frame values as appropriate."/>
             <field name="startFrame"
                     type="SFInt32"
                     accessType="inputOutput"
@@ -24427,7 +24454,7 @@
          </InterfaceDefinition>
       </ConcreteNode>
       <ConcreteNode name="ImageCubeMapTexture">
-         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/environmentalTexturing#ImageCubeMapTexture"
+         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/environmentalTexturing.html#ImageCubeMapTexture"
                                appinfo="ImageCubeMapTexture is a texture node that defines a cubic environment map source as a single file format that contains multiple images, one for each side.">
             <componentInfo name="CubeMapTexturing" level="2"/>
             <Inheritance baseType="X3DEnvironmentTextureNode"/>
@@ -24868,7 +24895,7 @@
                     description="List of texture-coordinate indices mapping attached texture to corresponding coordinates."/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="true"
                     inheritedFrom="X3DComposedGeometryNode"
                     description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
@@ -25112,10 +25139,11 @@
             <field name="set_index"
                     type="MFInt32"
                     accessType="inputOnly"
-                    minInclusive="0"/>
+                    minInclusive="0"
+                    description="index values provide order in which coordinates are applied."/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="true"
                     inheritedFrom="X3DComposedGeometryNode"
                     description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
@@ -25242,10 +25270,11 @@
             <field name="set_index"
                     type="MFInt32"
                     accessType="inputOnly"
-                    minInclusive="-1"/>
+                    minInclusive="-1"
+                    description="index list specifies triangles by connecting Coordinate vertices, each individual fan separated by -1 sentinel value."/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="true"
                     inheritedFrom="X3DComposedGeometryNode"
                     description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
@@ -25372,10 +25401,11 @@
             <field name="set_index"
                     type="MFInt32"
                     accessType="inputOnly"
-                    minInclusive="0"/>
+                    minInclusive="0"
+                    description="index list specifies triangles by connecting Coordinate vertices."/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="true"
                     inheritedFrom="X3DComposedGeometryNode"
                     description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
@@ -25502,10 +25532,11 @@
             <field name="set_index"
                     type="MFInt32"
                     accessType="inputOnly"
-                    minInclusive="-1"/>
+                    minInclusive="-1"
+                    description="index list specifies triangles by connecting Coordinate vertices for each individual strip, separated by -1 sentinel values."/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="true"
                     inheritedFrom="X3DComposedGeometryNode"
                     description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
@@ -26166,7 +26197,7 @@
                     description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
             <field name="order"
                     type="MFInt32"
-                    accessType="initializeOnly"
+                    accessType="inputOutput"
                     default="0"
                     minInclusive="0"
                     description="The order list defines the order in which layers are rendered."/>
@@ -27582,8 +27613,8 @@
                     inheritedFrom="X3DNode"
                     description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
             <field name="name"
-                    type="SFString"
-                    accessType="inputOutput"
+                    type="xs:NMTOKEN"
+                    accessType="initializeOnly"
                     inheritedFrom="X3DVertexAttributeNode"
                     baseType="xs:NMTOKEN"
                     description="Required name for this particular VertexAttribute instance."/>
@@ -27645,8 +27676,8 @@
                     inheritedFrom="X3DNode"
                     description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
             <field name="name"
-                    type="SFString"
-                    accessType="inputOutput"
+                    type="xs:NMTOKEN"
+                    accessType="initializeOnly"
                     inheritedFrom="X3DVertexAttributeNode"
                     baseType="xs:NMTOKEN"
                     description="Required name for this particular VertexAttribute instance."/>
@@ -29312,7 +29343,7 @@
                     inheritedFrom="X3DNode"/>
             <field name="knot"
                     type="MFDouble"
-                    accessType="initializeOnly"
+                    accessType="inputOutput"
                     description="knot vector, where size = number of control points + order of curve."/>
             <field name="metadata"
                     type="SFNode"
@@ -29405,7 +29436,7 @@
                     description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="true"
                     inheritedFrom="X3DNurbsSurfaceGeometryNode"
                     description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
@@ -29545,7 +29576,7 @@
                     inheritedFrom="X3DNode"/>
             <field name="knot"
                     type="MFDouble"
-                    accessType="initializeOnly"
+                    accessType="inputOutput"
                     description="knot vector, where size = number of control points + order of curve."/>
             <field name="metadata"
                     type="SFNode"
@@ -29856,7 +29887,7 @@
                     description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="true"
                     description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="trajectoryCurve"
@@ -29935,7 +29966,7 @@
                     description="2D curve in the yz-plane that describes the cross-sectional shape of the object."/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="true"
                     description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="trajectoryCurve"
@@ -30111,7 +30142,7 @@
                     acceptableNodeTypes="Contour2D"/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="true"
                     inheritedFrom="X3DNurbsSurfaceGeometryNode"
                     description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
@@ -30595,7 +30626,7 @@
                     inheritedFrom="X3DViewpointNode"
                     description="farDistance defines maximum clipping plane distance allowed for object display."/>
             <field name="fieldOfView"
-                    type="SFVec4f"
+                    type="MFFloat"
                     accessType="inputOutput"
                     default="-1 -1 1 1"
                     description="Minimum and maximum extents of view in units of local coordinate system."/>
@@ -30988,8 +31019,9 @@
                     description="The castShadow field defines whether this Shape casts shadows as produced by lighting nodes."/>
             <field name="color"
                     synonym="colorRamp"
-                    type="MFNode"
+                    type="SFNode"
                     accessType="initializeOnly"
+                    default="NULL"
                     acceptableNodeTypes="X3DColorNode"
                     description="The color field contains Color|ColorRGBA nodes as a series of color values to be used at the given colorKey points in time."/>
             <field name="colorKey"
@@ -31744,7 +31776,7 @@
             <field name="axisRotation"
                     type="SFRotation"
                     accessType="inputOutput"
-                    default="0 1 0 0"
+                    default="0 0 1 0"
                     description="axisRotation determines local sensor coordinate system by rotating the local coordinate system."/>
             <field name="description"
                     type="SFString"
@@ -32002,7 +32034,7 @@
                     description="Enables/disables this light source."/>
             <field name="radius"
                     type="SFFloat"
-                    accessType="initializeOnly"
+                    accessType="inputOutput"
                     default="100"
                     minInclusive="0"
                     description="Maximum effective distance of light relative to local light position, affected by ancestor scaling.">
@@ -33580,7 +33612,7 @@
                     default="0 0 0"
                     minInclusive="0"
                     inheritedFrom="X3DEnvironmentalSensorNode"
-                    description="size of Proximity box."/>
+                    description="size of Proximity box around center location, oriented within local transformation frame."/>
             <field name="DEF"
                     type="SFString"
                     accessType="inputOutput"
@@ -33688,7 +33720,7 @@
                     description="Whether Normal node vector values are applied to each point vertex (true) or to each polygon face (false)."/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="true"
                     inheritedFrom="X3DComposedGeometryNode"
                     description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
@@ -33991,13 +34023,12 @@
                     description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
             <field name="size"
                     type="SFVec2f"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="2 2"
-                    minExclusive="0"
                     description="2D dimensions of Rectangle2D."/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="false"
                     description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="DEF"
@@ -35859,7 +35890,10 @@
                     acceptableNodeTypes="RigidBody"
                     inheritedFrom="X3DRigidJointNode"
                     description="The body1 and body2 fields indicate the two RigidBody nodes connected by this joint."/>
-            <field name="body1AnchorPoint" type="SFVec3f" accessType="outputOnly"/>
+            <field name="body1AnchorPoint"
+                    type="SFVec3f"
+                    accessType="outputOnly"
+                    description="body1AnchorPoint describes anchorPoint position relative to local coordinate reference frame."/>
             <field name="body2"
                     type="SFNode"
                     accessType="inputOutput"
@@ -35867,7 +35901,10 @@
                     acceptableNodeTypes="RigidBody"
                     inheritedFrom="X3DRigidJointNode"
                     description="The body1 and body2 fields indicate the two RigidBody nodes connected by this joint."/>
-            <field name="body2AnchorPoint" type="SFVec3f" accessType="outputOnly"/>
+            <field name="body2AnchorPoint"
+                    type="SFVec3f"
+                    accessType="outputOnly"
+                    description="body2AnchorPoint describes anchorPoint position relative to local coordinate reference frame."/>
             <field name="forceOutput"
                     type="MFString"
                     accessType="inputOutput"
@@ -36393,7 +36430,7 @@
                     description="Size in meters."/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="true"
                     description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="DEF"
@@ -36532,7 +36569,7 @@
             <Inheritance baseType="X3DInterpolatorNode"/>
             <field name="closed"
                     type="SFBool"
-                    accessType="initializeOnly"
+                    accessType="inputOutput"
                     default="false"
                     description="Whether or not the curve is closed (i."/>
             <field name="IS"
@@ -36617,7 +36654,7 @@
             <Inheritance baseType="X3DInterpolatorNode"/>
             <field name="closed"
                     type="SFBool"
-                    accessType="initializeOnly"
+                    accessType="inputOutput"
                     default="false"
                     description="Whether or not the curve is closed (i."/>
             <field name="IS"
@@ -36702,7 +36739,7 @@
             <Inheritance baseType="X3DInterpolatorNode"/>
             <field name="closed"
                     type="SFBool"
-                    accessType="initializeOnly"
+                    accessType="inputOutput"
                     default="false"
                     description="Whether or not the curve is closed (i."/>
             <field name="IS"
@@ -36867,7 +36904,7 @@
                     description="Enables/disables this light source."/>
             <field name="radius"
                     type="SFFloat"
-                    accessType="initializeOnly"
+                    accessType="inputOutput"
                     default="100"
                     minInclusive="0"
                     description="Maximum effective distance of light relative to local light position, affected by ancestor scaling.">
@@ -37460,12 +37497,6 @@
                                appinfo="SurfaceEmitter generates particles from the surface of an object.">
             <componentInfo name="ParticleSystems" level="2"/>
             <Inheritance baseType="X3DParticleEmitterNode"/>
-            <field name="coordIndex"
-                    type="MFInt32"
-                    accessType="initializeOnly"
-                    default="-1"
-                    minInclusive="-1"
-                    description="coordIndex indices are applied to contained Coordinate values in order to define randomly generated initial geometry of the particles."/>
             <field name="IS"
                     type="SFNode"
                     accessType="inputOutput"
@@ -37492,10 +37523,6 @@
                     default="true"
                     inheritedFrom="X3DParticleEmitterNode"
                     description="Enables/disables production of particles from this emitter node."/>
-            <field name="set_coordIndex"
-                    type="MFInt32"
-                    accessType="inputOnly"
-                    minInclusive="-1"/>
             <field name="speed"
                     type="SFFloat"
                     accessType="inputOutput"
@@ -37895,7 +37922,7 @@
                     description="origin of the text local coordinate system, in units of the coordinate system in which the Text node is embedded."/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="false"
                     description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="string"
@@ -38901,6 +38928,11 @@
                     default="NULL"
                     acceptableNodeTypes="IS"
                     inheritedFrom="X3DNode"/>
+            <field name="mapping"
+                    type="SFString"
+                    accessType="inputOutput"
+                    baseType="xs:NMTOKEN"
+                    description="The mapping label identifies which texture coordinates and transformations are used to compute texture effects from corresponding geometry on a given material."/>
             <field name="metadata"
                     type="SFNode"
                     accessType="inputOutput"
@@ -38974,6 +39006,11 @@
                     default="NULL"
                     acceptableNodeTypes="IS"
                     inheritedFrom="X3DNode"/>
+            <field name="mapping"
+                    type="SFString"
+                    accessType="inputOutput"
+                    baseType="xs:NMTOKEN"
+                    description="The mapping label identifies which texture coordinates and transformations are used to compute texture effects from corresponding geometry on a given material."/>
             <field name="metadata"
                     type="SFNode"
                     accessType="inputOutput"
@@ -39042,6 +39079,11 @@
                     default="NULL"
                     acceptableNodeTypes="IS"
                     inheritedFrom="X3DNode"/>
+            <field name="mapping"
+                    type="SFString"
+                    accessType="inputOutput"
+                    baseType="xs:NMTOKEN"
+                    description="The mapping label identifies which texture coordinates and transformations are used to compute texture effects from corresponding geometry on a given material."/>
             <field name="matrix"
                     type="SFMatrix4f"
                     accessType="inputOutput"
@@ -39644,7 +39686,7 @@
                     default="0 0 0"
                     minInclusive="0"
                     inheritedFrom="X3DEnvironmentalSensorNode"
-                    description="size of intersection box, measured from center in meters."/>
+                    description="size of transformation-traccking box around center location, oriented within local transformation frame."/>
             <field name="targetObject"
                     type="SFNode"
                     accessType="inputOutput"
@@ -40102,7 +40144,7 @@
                     description="Whether Normal node vector values are applied to each point vertex (true) or to each polygon face (false)."/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="true"
                     inheritedFrom="X3DComposedGeometryNode"
                     description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
@@ -40223,7 +40265,7 @@
                     description="Whether Normal node vector values are applied to each point vertex (true) or to each polygon face (false)."/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="true"
                     inheritedFrom="X3DComposedGeometryNode"
                     description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
@@ -40292,7 +40334,7 @@
                     description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="false"
                     description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
             <field name="vertices"
@@ -40406,7 +40448,7 @@
                     description="Whether Normal node vector values are applied to each point vertex (true) or to each polygon face (false)."/>
             <field name="solid"
                     type="SFBool"
-                    accessType="inputOutput"
+                    accessType="initializeOnly"
                     default="true"
                     inheritedFrom="X3DComposedGeometryNode"
                     description="Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off)."/>
@@ -40635,8 +40677,14 @@
                     acceptableNodeTypes="RigidBody"
                     inheritedFrom="X3DRigidJointNode"
                     description="The body1 and body2 fields indicate the two RigidBody nodes connected by this joint."/>
-            <field name="body1AnchorPoint" type="SFVec3f" accessType="outputOnly"/>
-            <field name="body1Axis" type="SFVec3f" accessType="outputOnly"/>
+            <field name="body1AnchorPoint"
+                    type="SFVec3f"
+                    accessType="outputOnly"
+                    description="body1AnchorPoint describes anchorPoint position relative to local coordinate reference frame."/>
+            <field name="body1Axis"
+                    type="SFVec3f"
+                    accessType="outputOnly"
+                    description="body1Axis describes report the current location of the anchor point relative to the corresponding body."/>
             <field name="body2"
                     type="SFNode"
                     accessType="inputOutput"
@@ -40644,8 +40692,14 @@
                     acceptableNodeTypes="RigidBody"
                     inheritedFrom="X3DRigidJointNode"
                     description="The body1 and body2 fields indicate the two RigidBody nodes connected by this joint."/>
-            <field name="body2AnchorPoint" type="SFVec3f" accessType="outputOnly"/>
-            <field name="body2Axis" type="SFFloat" accessType="outputOnly"/>
+            <field name="body2AnchorPoint"
+                    type="SFVec3f"
+                    accessType="outputOnly"
+                    description="body2AnchorPoint describes anchorPoint position relative to local coordinate reference frame."/>
+            <field name="body2Axis"
+                    type="SFVec3f"
+                    accessType="outputOnly"
+                    description="body1Axis describes report the current location of the anchor point relative to the corresponding body."/>
             <field name="forceOutput"
                     type="MFString"
                     accessType="inputOutput"
@@ -41026,8 +41080,7 @@
                     type="SFVec3f"
                     accessType="inputOutput"
                     default="0 0 0"
-                    minInclusive="0"
-                    description="Size of proximity box around center location within which ViewpointGroup is usable and displayed on viewpoint list."/>
+                    description="size of Proximity box around center location, oriented within local transformation frame, within which ViewpointGroup is usable and displayed on viewpoint list."/>
             <field name="DEF"
                     type="SFString"
                     accessType="inputOutput"
@@ -41227,7 +41280,7 @@
                     default="0 0 0"
                     minInclusive="0"
                     inheritedFrom="X3DEnvironmentalSensorNode"
-                    description="size of visibility box, measured from center in meters."/>
+                    description="size of visibility box around center location, oriented within local transformation frame."/>
             <field name="DEF"
                     type="SFString"
                     accessType="inputOutput"

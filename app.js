@@ -394,6 +394,6 @@ https.createServer({
   requestCert: false,
   rejectUnauthorized: false
 }, app)
-.listen(3000, '127.0.0.1', function () {
-  console.log('Example app listening on port 3000! Go to https://localhost:3000/')
+.listen(port, '127.0.0.1', function () {
+  console.log('Example app listening on port', port, "! Go to https://localhost:"+port+"/");
 })
