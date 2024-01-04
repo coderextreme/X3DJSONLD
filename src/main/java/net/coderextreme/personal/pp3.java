@@ -40,19 +40,21 @@ public class pp3 {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new pp3().initialize().toFileJSON("../personal/pp3.new.json");
+    X3D model = new pp3().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../personal/pp3.new.json");
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;
 ProtoInstance ProtoInstance1 = null;
 ProtoInstance ProtoInstance2 = null;
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("pp3.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("translator").setContent("John Carlson"))
         .addMeta(new meta().setName("created").setContent("5 May 2015"))
-        .addMeta(new meta().setName("modified").setContent("05 May 2017"))
+        .addMeta(new meta().setName("modified").setContent("23 Dec 2022"))
         .addMeta(new meta().setName("description").setContent("A process pipeline between three spheres (try typing on spheres and blue"))
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/x3d/pp3.x3d"))
         .addMeta(new meta().setName("generator").setContent("manual")))
@@ -61,32 +63,32 @@ ProtoInstance ProtoInstance2 = null;
           .setProtoBody(new ProtoBody()
             .addChild(new Group()
               .addComments("left")
-              .addChild(new Transform().setScale(new float[] {0.5f,0.5f,0.5f})
+              .addChild(new Transform().setScale(new float[] {0.5f ,0.5f ,0.5f })
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(new float[] {0.7f,1f,0f}).setTransparency(0.5f)))
-                  .setGeometry(new Extrusion().setCreaseAngle(0.785f).setCrossSection(new MFVec2f0().getArray()).setSpine(new MFVec3f1().getArray())))
+                    .setMaterial(new Material().setDiffuseColor(new float[] {0.7f ,1f ,0f }).setTransparency(0.5f )))
+                  .setGeometry(new Extrusion().setCreaseAngle(0.785f ).setCrossSection(new MFVec2f0().getArray()).setSpine(new MFVec3f1().getArray())))
                 .addComments("<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"))
               .addComments("right")
-              .addChild(new Transform().setScale(new float[] {0.5f,0.5f,0.5f})
+              .addChild(new Transform().setScale(new float[] {0.5f ,0.5f ,0.5f })
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(new float[] {0f,0.7f,1f}).setTransparency(0.5f)))
-                  .setGeometry(new Extrusion().setCreaseAngle(0.785f).setCrossSection(new MFVec2f2().getArray()).setSpine(new MFVec3f3().getArray())))
-                .addChild(new Transform().setTranslation(new float[] {2f,0f,0f})
+                    .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0.7f ,1f }).setTransparency(0.5f )))
+                  .setGeometry(new Extrusion().setCreaseAngle(0.785f ).setCrossSection(new MFVec2f2().getArray()).setSpine(new MFVec3f3().getArray())))
+                .addChild(new Transform().setTranslation(new float[] {2f ,0f ,0f })
                   .addChild(new Shape()
                     .setAppearance(new Appearance()
-                      .setMaterial(new Material().setDEF("MaterialLightBlue").setDiffuseColor(new float[] {1f,1f,1f})))
+                      .setMaterial(new Material().setDEF("MaterialLightBlue").setDiffuseColor(new float[] {1f ,1f ,1f })))
                     .setGeometry(new Text().setDEF("RightString").setString(new MFString4().getArray()))))
                 .addChild(new StringSensor().setDEF("RightSensor").setEnabled(false))
                 .addChild(new TouchSensor().setDescription("touch to activate").setDEF("RightTouch")))
               .addComments("up")
-              .addChild(new Transform().setScale(new float[] {0.5f,0.5f,0.5f})
+              .addChild(new Transform().setScale(new float[] {0.5f ,0.5f ,0.5f })
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(new float[] {0f,0.7f,1f}).setTransparency(0.5f)))
-                  .setGeometry(new Extrusion().setCreaseAngle(0.785f).setCrossSection(new MFVec2f5().getArray()).setSpine(new MFVec3f6().getArray())))
-                .addChild(new Transform().setTranslation(new float[] {-0.5f,2f,0f})
+                    .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0.7f ,1f }).setTransparency(0.5f )))
+                  .setGeometry(new Extrusion().setCreaseAngle(0.785f ).setCrossSection(new MFVec2f5().getArray()).setSpine(new MFVec3f6().getArray())))
+                .addChild(new Transform().setTranslation(new float[] {-0.5f ,2f ,0f })
                   .addChild(new Shape()
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("MaterialLightBlue")))
@@ -94,19 +96,19 @@ ProtoInstance ProtoInstance2 = null;
                 .addChild(new StringSensor().setDEF("UpSensor").setEnabled(false))
                 .addChild(new TouchSensor().setDescription("touch to activate").setDEF("UpTouch")))
               .addComments("down")
-              .addChild(new Transform().setScale(new float[] {0.5f,0.5f,0.5f})
+              .addChild(new Transform().setScale(new float[] {0.5f ,0.5f ,0.5f })
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(new float[] {0.7f,1f,0f}).setTransparency(0.5f)))
-                  .setGeometry(new Extrusion().setCreaseAngle(0.785f).setCrossSection(new MFVec2f8().getArray()).setSpine(new MFVec3f9().getArray())))
+                    .setMaterial(new Material().setDiffuseColor(new float[] {0.7f ,1f ,0f }).setTransparency(0.5f )))
+                  .setGeometry(new Extrusion().setCreaseAngle(0.785f ).setCrossSection(new MFVec2f8().getArray()).setSpine(new MFVec3f9().getArray())))
                 .addComments("<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"))
               .addComments("center")
               .addChild(new Transform()
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0.7f})))
+                    .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0.7f })))
                   .setGeometry(new Sphere()))
-                .addChild(new Transform().setScale(new float[] {0.5f,0.5f,0.5f}).setTranslation(new float[] {-0.5f,0f,1f})
+                .addChild(new Transform().setScale(new float[] {0.5f ,0.5f ,0.5f }).setTranslation(new float[] {-0.5f ,0f ,1f })
                   .addChild(new Shape()
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("MaterialLightBlue")))
@@ -159,63 +161,63 @@ ProtoInstance ProtoInstance2 = null;
             .addChild(new ROUTE().setFromField("uplines").setFromNode("UpSingleToMultiString").setToField("set_string").setToNode("UpString"))
             .addChild(new ROUTE().setFromField("isOver").setFromNode("UpTouch").setToField("set_enabled").setToNode("UpSensor"))))
         .addChild(new NavigationInfo())
-        .addChild(new Viewpoint().setDescription("Process pipes").setOrientation(new float[] {1f,0f,0f,-0.4f}).setPosition(new float[] {0f,5f,12f}))
-        .addChild(new Transform().setTranslation(new float[] {0f,-2.5f,0f})
+        .addChild(new Viewpoint().setDescription("Process pipes").setOrientation(new float[] {1f ,0f ,0f ,-0.4f }).setPosition(new float[] {0f ,5f ,12f }))
+        .addChild(new Transform().setTranslation(new float[] {0f ,-2.5f ,0f })
           .addChild(ProtoInstance0 = new ProtoInstance().setName("Process")))
         .addChild(new Transform()
           .addChild(ProtoInstance1 = new ProtoInstance().setName("Process")))
-        .addChild(new Transform().setTranslation(new float[] {0f,2.5f,0f})
+        .addChild(new Transform().setTranslation(new float[] {0f ,2.5f ,0f })
           .addChild(ProtoInstance2 = new ProtoInstance().setName("Process"))))      ;
     return X3D0;
     }
-protected class MFVec2f0 {
-  protected org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f});
+private class MFVec2f0 {
+  private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1f ,0f ,0.92f ,-0.38f ,0.71f ,-0.71f ,0.38f ,-0.92f ,0f ,-1f ,-0.38f ,-0.92f ,-0.71f ,-0.71f ,-0.92f ,-0.38f ,-1f ,0f ,-0.92f ,0.38f ,-0.71f ,0.71f ,-0.38f ,0.92f ,0f ,1f ,0.38f ,0.92f ,0.71f ,0.71f ,0.92f ,0.38f ,1f ,0f });
   }
 }
-protected class MFVec3f1 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-2.5f,0f,0f,-1.5f,0f,0f});
+private class MFVec3f1 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-2.5f ,0f ,0f ,-1.5f ,0f ,0f });
   }
 }
-protected class MFVec2f2 {
-  protected org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f});
+private class MFVec2f2 {
+  private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1f ,0f ,0.92f ,-0.38f ,0.71f ,-0.71f ,0.38f ,-0.92f ,0f ,-1f ,-0.38f ,-0.92f ,-0.71f ,-0.71f ,-0.92f ,-0.38f ,-1f ,0f ,-0.92f ,0.38f ,-0.71f ,0.71f ,-0.38f ,0.92f ,0f ,1f ,0.38f ,0.92f ,0.71f ,0.71f ,0.92f ,0.38f ,1f ,0f });
   }
 }
-protected class MFVec3f3 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1.5f,0f,0f,2.5f,0f,0f});
+private class MFVec3f3 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1.5f ,0f ,0f ,2.5f ,0f ,0f });
   }
 }
-protected class MFString4 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString4 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"r"});
   }
 }
-protected class MFVec2f5 {
-  protected org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f});
+private class MFVec2f5 {
+  private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1f ,0f ,0.92f ,-0.38f ,0.71f ,-0.71f ,0.38f ,-0.92f ,0f ,-1f ,-0.38f ,-0.92f ,-0.71f ,-0.71f ,-0.92f ,-0.38f ,-1f ,0f ,-0.92f ,0.38f ,-0.71f ,0.71f ,-0.38f ,0.92f ,0f ,1f ,0.38f ,0.92f ,0.71f ,0.71f ,0.92f ,0.38f ,1f ,0f });
   }
 }
-protected class MFVec3f6 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,1.5f,0f,0f,2.5f,0f});
+private class MFVec3f6 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,1.5f ,0f ,0f ,2.5f ,0f });
   }
 }
-protected class MFString7 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString7 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"u"});
   }
 }
-protected class MFVec2f8 {
-  protected org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f});
+private class MFVec2f8 {
+  private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1f ,0f ,0.92f ,-0.38f ,0.71f ,-0.71f ,0.38f ,-0.92f ,0f ,-1f ,-0.38f ,-0.92f ,-0.71f ,-0.71f ,-0.92f ,-0.38f ,-1f ,0f ,-0.92f ,0.38f ,-0.71f ,0.71f ,-0.38f ,0.92f ,0f ,1f ,0.38f ,0.92f ,0.71f ,0.71f ,0.92f ,0.38f ,1f ,0f });
   }
 }
-protected class MFVec3f9 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,-2.5f,0f,0f,-1.5f,0f});
+private class MFVec3f9 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,-2.5f ,0f ,0f ,-1.5f ,0f });
   }
 }
 }

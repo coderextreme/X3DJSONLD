@@ -159,24 +159,24 @@ public class Humanoid1NoSegSite
           .addChild(new HAnimJoint("hanim_r_shoulder").setName("r_shoulder").setCenter(-0.1907,1.4407,-0.0325).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})
             .addChild(new HAnimJoint("hanim_r_elbow").setName("r_elbow").setCenter(-0.1949,1.1388,-0.0620).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0})
               .addChild(new HAnimJoint("hanim_r_radiocarpal").setName("r_radiocarpal").setCenter(-0.1959,0.8694,-0.0521).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {0}).setSkinCoordWeight(new double[] {0.0}).setUlimit(new double[] {0.0,0.0,0.0}))))))
-      .addJoints(new HAnimJoint().setUSE("hanim_humanoid_root").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_sacroiliac").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_hip").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_knee").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_talocrural").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_metatarsophalangeal_2").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_hip").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_knee").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_talocrural").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_metatarsophalangeal_2").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_vl5").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_skullbase").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_shoulder").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_elbow").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_radiocarpal").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_shoulder").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_elbow").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_radiocarpal").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))));
+      .addJoints(new HAnimJoint().setUSE("hanim_humanoid_root"))
+      .addJoints(new HAnimJoint().setUSE("hanim_sacroiliac"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_hip"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_knee"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_talocrural"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_metatarsophalangeal_2"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_hip"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_knee"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_talocrural"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_metatarsophalangeal_2"))
+      .addJoints(new HAnimJoint().setUSE("hanim_vl5"))
+      .addJoints(new HAnimJoint().setUSE("hanim_skullbase"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_shoulder"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_elbow"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_radiocarpal"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_shoulder"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_elbow"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_radiocarpal"))));
             }
             catch (Exception ex)
             {       
@@ -332,16 +332,17 @@ public class Humanoid1NoSegSite
 	}
 	   
     /** 
-	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+     * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
+        System.out.println("Build this X3D model, showing diagnostics...");
         X3D thisExampleX3dModel = new Humanoid1NoSegSite().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
@@ -381,11 +382,13 @@ public class Humanoid1NoSegSite
 	
         if (validate)
         {
-                System.out.print("Java program \"net.x3djsonld.data.Humanoid1NoSegSite\" self-validation test results: ");
+            //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
-                if (validationResults.length() > 10)
+            //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
+                System.out.print("net.x3djsonld.data.Humanoid1NoSegSite self-validation test results: ");
+                if (!validationResults.equals("success"))
                     System.out.println();
-                System.out.println(validationResults);
+                System.out.println(validationResults.trim());
         }
     }
 }

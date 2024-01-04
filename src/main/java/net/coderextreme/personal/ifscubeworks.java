@@ -40,13 +40,15 @@ public class ifscubeworks {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new ifscubeworks().initialize().toFileJSON("../personal/ifscubeworks.new.json");
+    X3D model = new ifscubeworks().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../personal/ifscubeworks.new.json");
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("3.3")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("ifscubeworks.x3d"))
-        .addMeta(new meta().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/src/main/personal/ifscubeworks.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/src/main/data/ifscubeworks.x3d"))
         .addMeta(new meta().setName("description").setContent("Template for an Indexed Face Set"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("created").setContent("4 April 2017"))
@@ -62,34 +64,34 @@ public class ifscubeworks {
               .setColor(new Color().setColor(new MFColor5().getArray()))))))      ;
     return X3D0;
     }
-protected class MFInt320 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+private class MFInt320 {
+  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1});
   }
 }
-protected class MFInt321 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+private class MFInt321 {
+  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,0,1,2,3,4,5});
   }
 }
-protected class MFInt322 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+private class MFInt322 {
+  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1});
   }
 }
-protected class MFVec3f3 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,1f,0f,1f,1f,1f,1f,1f,1f,0f,1f});
+private class MFVec3f3 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,1f ,0f ,1f ,1f ,1f ,1f ,1f ,1f ,0f ,1f });
   }
 }
-protected class MFVec3f4 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1f,0f,0f,-1f,0f,0f,0f,1f,0f,0f,0f,-1f,0f,-1f,0f,0f,0f,1f});
+private class MFVec3f4 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1f ,0f ,0f ,-1f ,0f ,0f ,0f ,1f ,0f ,0f ,0f ,-1f ,0f ,-1f ,0f ,0f ,0f ,1f });
   }
 }
-protected class MFColor5 {
-  protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f,1f,0f});
+private class MFColor5 {
+  private org.web3d.x3d.jsail.fields.MFColor getArray() {
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f ,1f ,0f });
   }
 }
 }

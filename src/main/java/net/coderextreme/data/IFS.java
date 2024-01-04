@@ -47,6 +47,7 @@ public class IFS {
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
+        .addComponent(new component().setName("HAnim").setLevel(1))
         .addMeta(new meta().setName("title").setContent("IFS.x3d"))
         .addMeta(new meta().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/IFS.x3d"))
         .addMeta(new meta().setName("description").setContent("An attempt at a standard LOA-4 skeleton"))
@@ -54,17 +55,18 @@ public class IFS {
         .addMeta(new meta().setName("modified").setContent("18 Jan 2023"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("created").setContent("9 November 2020"))
-        .addComponent(new component().setName("HAnim").setLevel(1)))
+        .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new Group()
-          .addChild(new Transform().setTranslation(new float[] {0f,2.1f,0f})
+          .addComments("DEFS for markers of skeleton joints, segments, and sites")
+          .addChild(new Transform().setTranslation(new float[] {0f ,2.1f ,0f })
             .addChild(new Shape().setDEF("HAnimSiteShape")
-              .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,0f}).setTransparency(0.3f)))
-              .setGeometry(new IndexedFaceSet().setDEF("DiamondIFS").setSolid(false).setCreaseAngle(0.5f).setCoordIndex(new MFInt320().getArray())
+              .setGeometry(new IndexedFaceSet().setDEF("DiamondIFS").setCreaseAngle(0.5f ).setSolid(false).setCoordIndex(new MFInt320().getArray())
                 .setColor(new ColorRGBA().setDEF("HAnimSiteColorRGBA").setColor(new MFColorRGBA1().getArray()))
-                .setCoord(new Coordinate().setPoint(new MFVec3f2().getArray()))))))
-        .addChild(new NavigationInfo().setSpeed(1.5f))
+                .setCoord(new Coordinate().setPoint(new MFVec3f2().getArray())))
+              .setAppearance(new Appearance()
+                .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,0f }).setTransparency(0.3f ))))))
+        .addChild(new NavigationInfo().setSpeed(1.5f ))
         .addChild(new Viewpoint().setDescription("default")))      ;
     return X3D0;
     }
@@ -75,12 +77,12 @@ private class MFInt320 {
 }
 private class MFColorRGBA1 {
   private org.web3d.x3d.jsail.fields.MFColorRGBA getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColorRGBA(new float[] {1f,1f,0f,1f,1f,1f,0f,0.1f});
+    return new org.web3d.x3d.jsail.fields.MFColorRGBA(new float[] {1f ,1f ,0f ,1f ,1f ,1f ,0f ,0.1f });
   }
 }
 private class MFVec3f2 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0.01f,0f,-0.01f,0f,0f,0f,0f,0.01f,0.01f,0f,0f,0f,0f,-0.01f,0f,-0.01f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0.01f ,0f ,-0.01f ,0f ,0f ,0f ,0f ,0.01f ,0.01f ,0f ,0f ,0f ,0f ,-0.01f ,0f ,-0.01f ,0f });
   }
 }
 }

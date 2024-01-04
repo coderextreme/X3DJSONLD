@@ -67,7 +67,7 @@ head1.meta[11] = meta13;
 
 let meta14 = browser.currentScene.createNode("meta");
 meta14.name = "modified";
-meta14.content = "16 January 2011";
+meta14.content = "Sat, 30 Dec 2023 07:56:51 GMT";
 head1.meta[12] = meta14;
 
 let meta15 = browser.currentScene.createNode("meta");
@@ -85,110 +85,105 @@ meta17.name = "generator";
 meta17.content = "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html";
 head1.meta[15] = meta17;
 
-let meta18 = browser.currentScene.createNode("meta");
-meta18.name = "generator";
-meta18.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
-head1.meta[16] = meta18;
-
 head = head1;
 
-let NavigationInfo20 = browser.currentScene.createNode("NavigationInfo");
-NavigationInfo20.type = new MFString(new java.lang.String["EXAMINE","WALK","FLY","ANY"]);
+let NavigationInfo19 = browser.currentScene.createNode("NavigationInfo");
+NavigationInfo19.type = new MFString(new java.lang.String["EXAMINE","WALK","FLY","ANY"]);
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = NavigationInfo20;
+browser.currentScene.children[0] = NavigationInfo19;
 
-let Group21 = browser.currentScene.createNode("Group");
-let Transform22 = browser.currentScene.createNode("Transform");
-Transform22.translation = new SFVec3f(new float[6.14221,0.0694613,-0.000999451]);
-let Shape23 = browser.currentScene.createNode("Shape");
-let Appearance24 = browser.currentScene.createNode("Appearance");
-let Material25 = browser.currentScene.createNode("Material");
-Appearance24.material = Material25;
+let Group20 = browser.currentScene.createNode("Group");
+let Transform21 = browser.currentScene.createNode("Transform");
+Transform21.translation = new SFVec3f(new float[6.14221,0.0694613,-0.000999451]);
+let Shape22 = browser.currentScene.createNode("Shape");
+let Appearance23 = browser.currentScene.createNode("Appearance");
+let Material24 = browser.currentScene.createNode("Material");
+Appearance23.material = Material24;
 
-let PixelTexture26 = browser.currentScene.createNode("PixelTexture");
-PixelTexture26.DEF = "RgbOpacityCheckerboard";
-PixelTexture26.image = new SFImage(new int[2,2,4,-16776961,-65536,-65536,-16776961]);
-Appearance24.texture = PixelTexture26;
+let PixelTexture25 = browser.currentScene.createNode("PixelTexture");
+PixelTexture25.DEF = "RgbOpacityCheckerboard";
+PixelTexture25.image = new SFImage(new int[2,2,4,-16776961,-65536,-65536,-16776961]);
+Appearance23.texture = PixelTexture25;
 
-Shape23.appearance = Appearance24;
+Shape22.appearance = Appearance23;
 
-let Box27 = browser.currentScene.createNode("Box");
-Shape23.geometry = Box27;
+let Box26 = browser.currentScene.createNode("Box");
+Shape22.geometry = Box26;
 
-Transform22.child = new undefined();
+Transform21.child = new undefined();
 
-Transform22.child[0] = Shape23;
+Transform21.child[0] = Shape22;
 
-Group21.children = new MFNode();
+Group20.children = new MFNode();
 
-Group21.children[0] = Transform22;
+Group20.children[0] = Transform21;
 
-let Transform28 = browser.currentScene.createNode("Transform");
-Transform28.translation = new SFVec3f(new float[-4.85443,0.0694381,-0.00149918]);
-let Shape29 = browser.currentScene.createNode("Shape");
-let Appearance30 = browser.currentScene.createNode("Appearance");
-let Material31 = browser.currentScene.createNode("Material");
-Appearance30.material = Material31;
+let Transform27 = browser.currentScene.createNode("Transform");
+Transform27.translation = new SFVec3f(new float[-4.85443,0.0694381,-0.00149918]);
+let Shape28 = browser.currentScene.createNode("Shape");
+let Appearance29 = browser.currentScene.createNode("Appearance");
+let Material30 = browser.currentScene.createNode("Material");
+Appearance29.material = Material30;
 
-let PixelTexture32 = browser.currentScene.createNode("PixelTexture");
-PixelTexture32.USE = "RgbOpacityCheckerboard";
-Appearance30.texture = PixelTexture32;
+let PixelTexture31 = browser.currentScene.createNode("PixelTexture");
+PixelTexture31.USE = "RgbOpacityCheckerboard";
+Appearance29.texture = PixelTexture31;
 
-Shape29.appearance = Appearance30;
+Shape28.appearance = Appearance29;
 
-let Sphere33 = browser.currentScene.createNode("Sphere");
-Shape29.geometry = Sphere33;
+let Sphere32 = browser.currentScene.createNode("Sphere");
+Shape28.geometry = Sphere32;
 
-Transform28.child = new undefined();
+Transform27.child = new undefined();
 
-Transform28.child[0] = Shape29;
+Transform27.child[0] = Shape28;
 
-Group21.children[1] = Transform28;
+Group20.children[1] = Transform27;
 
-let Transform34 = browser.currentScene.createNode("Transform");
-Transform34.translation = new SFVec3f(new float[-1.47341,0.036672,-0.00175095]);
-let Shape35 = browser.currentScene.createNode("Shape");
-let Appearance36 = browser.currentScene.createNode("Appearance");
-let Material37 = browser.currentScene.createNode("Material");
-Appearance36.material = Material37;
+let Transform33 = browser.currentScene.createNode("Transform");
+Transform33.translation = new SFVec3f(new float[-1.47341,0.036672,-0.00175095]);
+let Shape34 = browser.currentScene.createNode("Shape");
+let Appearance35 = browser.currentScene.createNode("Appearance");
+let Material36 = browser.currentScene.createNode("Material");
+Appearance35.material = Material36;
 
-let PixelTexture38 = browser.currentScene.createNode("PixelTexture");
-PixelTexture38.USE = "RgbOpacityCheckerboard";
-Appearance36.texture = PixelTexture38;
+let PixelTexture37 = browser.currentScene.createNode("PixelTexture");
+PixelTexture37.USE = "RgbOpacityCheckerboard";
+Appearance35.texture = PixelTexture37;
 
-Shape35.appearance = Appearance36;
+Shape34.appearance = Appearance35;
 
-let Cone39 = browser.currentScene.createNode("Cone");
-Shape35.geometry = Cone39;
+let Cone38 = browser.currentScene.createNode("Cone");
+Shape34.geometry = Cone38;
 
-Transform34.child = new undefined();
+Transform33.child = new undefined();
 
-Transform34.child[0] = Shape35;
+Transform33.child[0] = Shape34;
 
-Group21.children[2] = Transform34;
+Group20.children[2] = Transform33;
 
-let Transform40 = browser.currentScene.createNode("Transform");
-Transform40.translation = new SFVec3f(new float[2.31094,0.0694206,-0.00187683]);
-let Shape41 = browser.currentScene.createNode("Shape");
-let Appearance42 = browser.currentScene.createNode("Appearance");
-let Material43 = browser.currentScene.createNode("Material");
-Appearance42.material = Material43;
+let Transform39 = browser.currentScene.createNode("Transform");
+Transform39.translation = new SFVec3f(new float[2.31094,0.0694206,-0.00187683]);
+let Shape40 = browser.currentScene.createNode("Shape");
+let Appearance41 = browser.currentScene.createNode("Appearance");
+let Material42 = browser.currentScene.createNode("Material");
+Appearance41.material = Material42;
 
-let PixelTexture44 = browser.currentScene.createNode("PixelTexture");
-PixelTexture44.USE = "RgbOpacityCheckerboard";
-Appearance42.texture = PixelTexture44;
+let PixelTexture43 = browser.currentScene.createNode("PixelTexture");
+PixelTexture43.USE = "RgbOpacityCheckerboard";
+Appearance41.texture = PixelTexture43;
 
-Shape41.appearance = Appearance42;
+Shape40.appearance = Appearance41;
 
-let Cylinder45 = browser.currentScene.createNode("Cylinder");
-Shape41.geometry = Cylinder45;
+let Cylinder44 = browser.currentScene.createNode("Cylinder");
+Shape40.geometry = Cylinder44;
 
-Transform40.child = new undefined();
+Transform39.child = new undefined();
 
-Transform40.child[0] = Shape41;
+Transform39.child[0] = Shape40;
 
-Group21.children[3] = Transform40;
+Group20.children[3] = Transform39;
 
-browser.currentScene.children[1] = Group21;
+browser.currentScene.children[1] = Group20;
 

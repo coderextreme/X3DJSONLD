@@ -18,8 +18,8 @@ var Material = require('./x3d.mjs');
 var SFColor = require('./x3d.mjs');
 var Box = require('./x3d.mjs');
 var Transform = require('./x3d.mjs');
-var SFVec3f = require('./x3d.mjs');
 var SFRotation = require('./x3d.mjs');
+var SFVec3f = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
@@ -37,7 +37,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("creator"),
-              content : new SFString("Carlson, II")})])})),
+              content : new SFString("Carlson, II")}),
+
+            new meta({
+              name : new SFString("creator"),
+              content : new SFString("Carlson, III")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
@@ -53,7 +57,7 @@ var X3D0 =  new X3D({
                     new Box({}))})])}),
 
             new Transform({
-              translation : new SFVec3f([1,2,3]),
               rotation : new SFRotation([7,8,9,3.14]),
-              scale : new SFVec3f([4,5,6])})])}))});
+              scale : new SFVec3f([4,5,6]),
+              translation : new SFVec3f([1,2,3])})])}))});
 console.log(X3D0.toXMLNode());

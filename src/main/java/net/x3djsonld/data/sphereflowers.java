@@ -5,7 +5,6 @@ import org.web3d.x3d.jsail.EnvironmentalEffects.*;
 import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.Grouping.*;
 import org.web3d.x3d.jsail.Navigation.*;
-import org.web3d.x3d.jsail.Sound.*;
 import org.web3d.x3d.jsail.Time.*;
 
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
@@ -26,6 +25,14 @@ import org.web3d.x3d.jsail.Time.*;
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
 			<td> John Carlson </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> created </i> </td>
+			<td> Jan 17 2022 </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
+			<td> Sep 3 2023 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -81,14 +88,16 @@ public class sphereflowers
     .addComponent(new component().setName("Core").setLevel(1))
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("sphereflowers.x3d"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John Carlson"))
+    .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("Jan 17 2022"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("Sep 3 2023"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("5 or more prismatic flowers"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/src/main/data/sphereflowers.x3d")))
   .setScene(new Scene()
     .addChild(new NavigationInfo())
-    .addChild(new Background().setBackUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"}).setBottomUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"}).setFrontUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"}).setLeftUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"}).setRightUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"}).setTopUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/src/main/resourcesall_probes/stpeters_cross/stpeters_top.png"}))
+    .addChild(new Background().setBackUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png"}).setBottomUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"}).setFrontUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_front.png"}).setLeftUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png"}).setRightUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png"}).setTopUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png"}))
     .addChild(new Group()
-      .addChild(new ExternProtoDeclare("FlowerProto").setName("FlowerProto").setUrl(new String[] {"../personal/flowerproto.json#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto"})
+      .addChild(new ExternProtoDeclare("FlowerProto").setName("FlowerProto").setUrl(new String[] {"../personal/flowerproto.json#FlowerProto"})
         .addField(new field().setName("vertex").setType(field.TYPE_MFSTRING).setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
         .addField(new field().setName("fragment").setType(field.TYPE_MFSTRING).setAccessType(field.ACCESSTYPE_INPUTOUTPUT)))
       .addChild(new ProtoDeclare("flower").setName("flower")
@@ -104,9 +113,11 @@ public class sphereflowers
       .addChild(new ProtoInstance("flower").setContainerField("children"))
       .addChild(new ProtoInstance("flower").setContainerField("children"))
       .addChild(new TimeSensor("SongTime").setLoop(true))
-      .addChild(new Sound().setMaxBack(100).setMaxFront(100).setMinBack(20).setMinFront(20)
-        .setSource(new AudioClip("AudioClip").setDescription("Chandubabamusic #1").setUrl(new String[] {"../resources/chandubabamusic1.wav","https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav"})))
-      .addChild(new ROUTE().setFromNode("SongTime").setFromField("cycleTime").setToNode("AudioClip").setToField("startTime"))));
+      .addComments(new String[] {"",
+"	        <Sound maxBack='100' maxFront='100' minBack='20' minFront='20' location='0 1 0'>",
+"			<AudioClip DEF='AudioClip' description='Chandubabamusic #1' url='\"../resources/chandubabamusic1.wav\"'/>",
+"		</Sound>",
+"      		<ROUTE fromField='cycleTime' fromNode='SongTime' toField='startTime' toNode='AudioClip'/>"})));
             }
             catch (Exception ex)
             {       
@@ -133,16 +144,17 @@ public class sphereflowers
 	}
 	   
     /** 
-	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+     * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
+        System.out.println("Build this X3D model, showing diagnostics...");
         X3D thisExampleX3dModel = new sphereflowers().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
@@ -182,11 +194,13 @@ public class sphereflowers
 	
         if (validate)
         {
-                System.out.print("Java program \"net.x3djsonld.data.sphereflowers\" self-validation test results: ");
+            //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
-                if (validationResults.length() > 10)
+            //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
+                System.out.print("net.x3djsonld.data.sphereflowers self-validation test results: ");
+                if (!validationResults.equals("success"))
                     System.out.println();
-                System.out.println(validationResults);
+                System.out.println(validationResults.trim());
         }
     }
 }

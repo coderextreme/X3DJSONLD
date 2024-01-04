@@ -1,9 +1,10 @@
 var java = require('java');
+var util = require('util');
 java.asyncOptions = {
   asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
   syncSuffix: "",              // Sync methods use the base name(!!)
   promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
-  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  promisify: util.promisify, // Needs Node.js version 8 or greater, see comment below
   ifReadOnlySuffix: "_alt"
 };
 var autoclass = require('../../../X3Dautoclass');
@@ -15,7 +16,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 var ProtoInstance0 = null;
 var ProtoInstance1 = null;
 var ProtoInstance2 = null;
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
       .setHead((new autoclass.head())
         .addMeta((new autoclass.meta()).setName("title").setContent("qq3.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
@@ -54,5 +55,5 @@ var ProtoInstance2 = null;
           .addChild(ProtoInstance1 = (new autoclass.ProtoInstance()).setName("Process")))
         .addChild((new autoclass.Transform()).setTranslation(java.newArray("float", [java.newFloat(0), java.newFloat(2.5), java.newFloat(0)]))
           .addChild(ProtoInstance2 = (new autoclass.ProtoInstance()).setName("Process"))))      ;
-    X3D0.toFileX3D("../personal/qq3.new.x3d");
+    X3D0.toFileX3D("../personal/qq3.new.node.x3d");
     process.exit(0);

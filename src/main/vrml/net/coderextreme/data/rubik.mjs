@@ -21,8 +21,8 @@ meta4.content = "manual";
 head1.meta[2] = meta4;
 
 let meta5 = browser.currentScene.createNode("meta");
-meta5.name = "identifier";
-meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/data/rubik.x3d";
+meta5.name = "generator";
+meta5.content = "x3d-tidy V1.0.118, https://www.npmjs.com/package/x3d-tidy";
 head1.meta[3] = meta5;
 
 head = head1;

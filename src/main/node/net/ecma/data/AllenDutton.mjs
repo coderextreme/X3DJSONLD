@@ -82,7 +82,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("4 July 2020")}),
+              content : new SFString("Sat, 30 Dec 2023 07:29:36 GMT")}),
 
             new meta({
               name : new SFString("warning"),
@@ -111,10 +111,6 @@ var X3D0 =  new X3D({
             new meta({
               name : new SFString("identifier"),
               content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/AllenDutton.x3d")}),
-
-            new meta({
-              name : new SFString("generator"),
-              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
           component : new SFNode(
             new component({
               name : new SFString("HAnim"),
@@ -127,7 +123,6 @@ var X3D0 =  new X3D({
 
             new HAnimHumanoid({
               DEF : new SFString("hanim_Humanoid"),
-              version : new SFString("2.0"),
               name : new SFString("Humanoid"),
               joints : new MFNode([
                 new HAnimJoint({

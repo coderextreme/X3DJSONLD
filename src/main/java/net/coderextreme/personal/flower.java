@@ -40,7 +40,9 @@ public class flower {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new flower().initialize().toFileJSON("../personal/flower.new.json");
+    X3D model = new flower().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../personal/flower.new.json");
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
@@ -52,13 +54,13 @@ public class flower {
         .addMeta(new meta().setName("description").setContent("a flower")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
-        .addChild(new DirectionalLight().setDirection(new float[] {0f,-0.8f,-0.2f}).setIntensity(0.5f))
+        .addChild(new DirectionalLight().setDirection(new float[] {0f ,-0.8f ,-0.2f }).setIntensity(0.5f ))
         .addChild(new Background().setSkyColor(new MFColor0().getArray()))
-        .addChild(new Viewpoint().setDescription("One mathematical orbital").setPosition(new float[] {0f,0f,50f}))
-        .addChild(new Transform().setTranslation(new float[] {0f,-1f,1f}).setRotation(new float[] {0f,1f,0f,3.1415926f}).setScale(new float[] {1.5f,1.5f,1.5f})
+        .addChild(new Viewpoint().setDescription("One mathematical orbital").setPosition(new float[] {0f ,0f ,50f }))
+        .addChild(new Transform().setTranslation(new float[] {0f ,-1f ,1f }).setRotation(new float[] {0f ,1f ,0f ,3.1415926f }).setScale(new float[] {1.5f ,1.5f ,1.5f })
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setTransparency(0.1f).setDiffuseColor(new float[] {0.9f,0.3f,0.3f}).setSpecularColor(new float[] {0.8f,0.8f,0.8f}).setShininess(0.145f)))
+              .setMaterial(new Material().setTransparency(0.1f ).setDiffuseColor(new float[] {0.9f ,0.3f ,0.3f }).setSpecularColor(new float[] {0.8f ,0.8f ,0.8f }).setShininess(0.145f )))
             .setGeometry(new IndexedFaceSet().setCcw(false).setConvex(false).setCoordIndex(new MFInt321().getArray()).setDEF("Orbit")
               .setCoord(new Coordinate().setDEF("OrbitCoordinates").setPoint(new MFVec3f2().getArray())))))
         .addChild(new Script().setDEF("OrbitScript")
@@ -146,19 +148,19 @@ public class flower {
         .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction")))      ;
     return X3D0;
     }
-protected class MFColor0 {
-  protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {1f,1f,1f});
+private class MFColor0 {
+  private org.web3d.x3d.jsail.fields.MFColor getArray() {
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {1f ,1f ,1f });
   }
 }
-protected class MFInt321 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+private class MFInt321 {
+  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1});
   }
 }
-protected class MFVec3f2 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,1f,0f,1f,0f,1f,0f,0f});
+private class MFVec3f2 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f });
   }
 }
 }

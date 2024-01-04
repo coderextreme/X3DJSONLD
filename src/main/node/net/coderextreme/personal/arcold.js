@@ -1,9 +1,10 @@
 var java = require('java');
+var util = require('util');
 java.asyncOptions = {
   asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
   syncSuffix: "",              // Sync methods use the base name(!!)
   promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
-  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  promisify: util.promisify, // Needs Node.js version 8 or greater, see comment below
   ifReadOnlySuffix: "_alt"
 };
 var autoclass = require('../../../X3Dautoclass');
@@ -25,12 +26,12 @@ var ProtoInstance9 = null;
 var ProtoInstance10 = null;
 var ProtoInstance11 = null;
 var ProtoInstance12 = null;
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
       .setHead((new autoclass.head())
         .addMeta((new autoclass.meta()).setName("title").setContent("arcold.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/arc.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("an attempt to implement an arc in a graph")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.Viewpoint()).setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(5)])).setDescription("a moving graph"))
@@ -198,5 +199,5 @@ ProtoInstance10
 ProtoInstance10
           .addFieldValue((new autoclass.fieldValue()).setName("rotscalenode")
             .addChild((new autoclass.Transform()).setUSE("rotscale3")));
-    X3D0.toFileX3D("../personal/arcold.new.x3d");
+    X3D0.toFileX3D("../personal/arcold.new.node.x3d");
     process.exit(0);

@@ -8,10 +8,10 @@ console.log("Problems loading fs. On browser?",e);
 var SFString = require('./x3d.mjs');
 var SFNode = require('./x3d.mjs');
 var head = require('./x3d.mjs');
-var MFNode = require('./x3d.mjs');
-var meta = require('./x3d.mjs');
 var component = require('./x3d.mjs');
 var SFInt32 = require('./x3d.mjs');
+var MFNode = require('./x3d.mjs');
+var meta = require('./x3d.mjs');
 var Scene = require('./x3d.mjs');
 var Group = require('./x3d.mjs');
 var Shape = require('./x3d.mjs');
@@ -22,9 +22,13 @@ var Sphere = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Interchange"),
-      version : new SFString("4.0"),
+      version : new SFString("3.3"),
       head : new SFNode(
         new head({
+          component : new SFNode(
+            new component({
+              name : new SFString("Scripting"),
+              level : new SFInt32(1)})),
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
@@ -41,10 +45,10 @@ var X3D0 =  new X3D({
             new meta({
               name : new SFString("identifier"),
               content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/sphere.x3d")}),
-          component : new SFNode(
-            new component({
-              name : new SFString("Scripting"),
-              level : new SFInt32(1)})])})),
+
+            new meta({
+              name : new SFString("description"),
+              content : new SFString("a sphere")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([

@@ -69,9 +69,9 @@ public class JoeExample {
 "      }"))
         .addChild(new Shape()
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f})))
+            .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0f })))
           .setGeometry(new Sphere()))
-        .addChild(new Sound().setMaxBack(1000f).setMaxFront(1000f).setMinBack(1000f).setMinFront(1000f)
+        .addChild(new Sound().setMaxBack(1000f ).setMaxFront(1000f ).setMinBack(1000f ).setMinFront(1000f )
           .setSource(new AudioClip().setDEF("Click").setStopTime(1d).setDescription("clicking sound").setUrl(new MFString0().getArray())))
         .addChild(new TouchSensor().setDEF("TS"))
         .addChild(new ROUTE().setFromNode("TS").setFromField("isOver").setToNode("OpenVault").setToField("combinationEntered"))
@@ -79,8 +79,8 @@ public class JoeExample {
         .addChild(new ROUTE().setFromNode("OpenVault").setFromField("vaultUnlocked").setToNode("Click").setToField("startTime")))      ;
     return X3D0;
     }
-protected class MFString0 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString0 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/chandubabamusic1.wav"});
   }
 }

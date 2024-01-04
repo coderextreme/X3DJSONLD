@@ -19,19 +19,20 @@ var SFVec3f = require('./x3d.mjs');
 var Transform = require('./x3d.mjs');
 var SFRotation = require('./x3d.mjs');
 var Shape = require('./x3d.mjs');
+var Sphere = require('./x3d.mjs');
 var Appearance = require('./x3d.mjs');
 var Material = require('./x3d.mjs');
 var SFColor = require('./x3d.mjs');
 var ImageTexture = require('./x3d.mjs');
-var Sphere = require('./x3d.mjs');
 var Text = require('./x3d.mjs');
 var FontStyle = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
-      version : new SFString("4.0"),
+      version : new SFString("3.3"),
       head : new SFNode(
         new head({
+          /*Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON*/
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
@@ -94,6 +95,18 @@ var X3D0 =  new X3D({
               content : new SFString("http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d")}),
 
             new meta({
+              name : new SFString("identifier"),
+              content : new SFString("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d")}),
+
+            new meta({
+              name : new SFString("license"),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/license.html")}),
+
+            new meta({
+              name : new SFString("generator"),
+              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
+
+            new meta({
               name : new SFString("reference"),
               content : new SFString("HelloWorld.wrl")}),
 
@@ -111,34 +124,29 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("HelloWorld.json")}),
-
-            new meta({
-              name : new SFString("identifier"),
-              content : new SFString("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d")}),
-
-            new meta({
-              name : new SFString("license"),
-              content : new SFString("https://www.web3d.org/x3d/content/examples/license.html")})])})),
+              content : new SFString("HelloWorld.json")})])})),
       Scene : new SFNode(
         new Scene({
+          /*Example scene to illustrate X3D nodes and fields (XML elements and attributes)*/
           children : new MFNode([
             new WorldInfo({
-              title : new SFString("Hello World!"),
-              info : new MFString(["Example scene to illustrate a simple X3D model"])}),
+              info : new MFString(["Example scene to illustrate a simple X3D model"]),
+              title : new SFString("Hello World!")}),
 
             new Group({
               children : new MFNode([
                 new Viewpoint({
                   DEF : new SFString("ViewUpClose"),
+                  centerOfRotation : new SFVec3f([0,-1,0]),
                   description : new SFString("Hello world!"),
-                  position : new SFVec3f([0,-1,7]),
-                  centerOfRotation : new SFVec3f([0,-1,0])}),
+                  position : new SFVec3f([0,-1,7])}),
 
                 new Transform({
                   rotation : new SFRotation([0,1,0,3]),
                   child : new SFNode(
                     new Shape({
+                      geometry : new SFNode(
+                        new Sphere({})),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
@@ -148,24 +156,22 @@ var X3D0 =  new X3D({
                           texture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("ImageCloudlessEarth"),
-                              url : new MFString(["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"])}))})),
-                      geometry : new SFNode(
-                        new Sphere({}))}))}),
+                              url : new MFString(["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"])}))}))}))}),
 
                 new Transform({
                   translation : new SFVec3f([0,-2,0]),
                   child : new SFNode(
                     new Shape({
-                      appearance : new SFNode(
-                        new Appearance({
-                          material : new SFNode(
-                            new Material({
-                              USE : new SFString("MaterialLightBlue")}))})),
                       geometry : new SFNode(
                         new Text({
                           DEF : new SFString("TextMessage"),
                           string : new MFString(["Hello","world!"]),
                           fontStyle : new SFNode(
                             new FontStyle({
-                              justify : new MFString(["MIDDLE","MIDDLE"])}))}))}))})])})])}))});
+                              justify : new MFString(["MIDDLE","MIDDLE"])}))})),
+                      appearance : new SFNode(
+                        new Appearance({
+                          material : new SFNode(
+                            new Material({
+                              USE : new SFString("MaterialLightBlue")}))}))}))})])})])}))});
 console.log(X3D0.toXMLNode());

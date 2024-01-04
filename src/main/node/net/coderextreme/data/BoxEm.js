@@ -22,7 +22,7 @@ var ProtoInstance3 = null;
         .addMeta((new autoclass.meta()).setName("title").setContent("BoxEm.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/box.x3d")))
+        .addMeta((new autoclass.meta()).setName("generator").setContent("x3d-tidy V1.0.118, https://www.npmjs.com/package/x3d-tidy")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.ProtoDeclare()).setName("anyShape")
           .setProtoInterface((new autoclass.ProtoInterface())
@@ -30,7 +30,7 @@ var ProtoInstance3 = null;
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("myShape")
               .addChild((new autoclass.Shape())
                 .setAppearance((new autoclass.Appearance())
-                  .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)]))))
+                  .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1f), java.newFloat(1f), java.newFloat(1f)]))))
                 .setGeometry((new autoclass.Sphere())))))
           .setProtoBody((new autoclass.ProtoBody())
             .addChild((new autoclass.Transform())
@@ -43,7 +43,7 @@ var ProtoInstance3 = null;
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("myShape")
               .addChild((new autoclass.Shape()).setDEF("_1")
                 .setAppearance((new autoclass.Appearance())
-                  .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)]))))
+                  .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1f), java.newFloat(1f), java.newFloat(1f)]))))
                 .setGeometry((new autoclass.Cylinder())))))
           .setProtoBody((new autoclass.ProtoBody())
             .addChild((new autoclass.Transform())
@@ -59,9 +59,9 @@ var ProtoInstance3 = null;
               .setIS((new autoclass.IS())
                 .addConnect((new autoclass.connect()).setNodeField("translation").setProtoField("ytranslation"))))))
         .addChild((new autoclass.NavigationInfo()).setType(java.newArray("java.lang.String", ["EXAMINE"])))
-        .addChild((new autoclass.Viewpoint()).setDescription("Cubes on Fire").setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(12)])))
+        .addChild((new autoclass.Viewpoint()).setDescription("Cubes on Fire").setPosition(java.newArray("float", [java.newFloat(0f), java.newFloat(0f), java.newFloat(12f)])))
         .addChild(ProtoInstance3 = (new autoclass.ProtoInstance()).setDEF("threepi").setName("three"))
-        .addChild((new autoclass.Transform()).setTranslation(java.newArray("float", [java.newFloat(0), java.newFloat(2), java.newFloat(0)]))
+        .addChild((new autoclass.Transform()).setTranslation(java.newArray("float", [java.newFloat(0f), java.newFloat(2f), java.newFloat(0f)]))
           .addChild((new autoclass.Shape()).setUSE("box"))))      ;
 ProtoInstance1
                 .addFieldValue((new autoclass.fieldValue()).setName("xtranslation").setValue("2 0 0"));
@@ -71,7 +71,7 @@ ProtoInstance3
           .addFieldValue((new autoclass.fieldValue()).setName("myShape")
             .addChild((new autoclass.Shape()).setDEF("box")
               .setAppearance((new autoclass.Appearance())
-                .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0)]))))
-              .setGeometry((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)])))));
+                .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0f), java.newFloat(1f), java.newFloat(0f)]))))
+              .setGeometry((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(1f), java.newFloat(1f), java.newFloat(1f)])))));
     X3D0.toFileX3D("../data/BoxEm.new.node.x3d");
     process.exit(0);

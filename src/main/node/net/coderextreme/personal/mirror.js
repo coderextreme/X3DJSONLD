@@ -1,9 +1,10 @@
 var java = require('java');
+var util = require('util');
 java.asyncOptions = {
   asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
   syncSuffix: "",              // Sync methods use the base name(!!)
   promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
-  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  promisify: util.promisify, // Needs Node.js version 8 or greater, see comment below
   ifReadOnlySuffix: "_alt"
 };
 var autoclass = require('../../../X3Dautoclass');
@@ -14,37 +15,39 @@ ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
       var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
       .setHead((new autoclass.head())
+        .addComponent((new autoclass.component()).setName("Scripting").setLevel(1))
         .addComponent((new autoclass.component()).setName("EnvironmentalEffects").setLevel(3))
         .addComponent((new autoclass.component()).setName("Shaders").setLevel(1))
         .addComponent((new autoclass.component()).setName("CubeMapTexturing").setLevel(1))
         .addComponent((new autoclass.component()).setName("Texturing").setLevel(1))
         .addComponent((new autoclass.component()).setName("Rendering").setLevel(1))
-        .addComponent((new autoclass.component()).setName("Shape").setLevel(1))
-        .addComponent((new autoclass.component()).setName("Grouping").setLevel(1))
+        .addComponent((new autoclass.component()).setName("Shape").setLevel(4))
+        .addComponent((new autoclass.component()).setName("Grouping").setLevel(3))
+        .addComponent((new autoclass.component()).setName("Core").setLevel(1))
         .addMeta((new autoclass.meta()).setName("title").setContent("mirror.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/mirror.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/mirror.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("sphere with alternating backgrounds")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.Viewpoint()).setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(5), java.newFloat(100)])).setDescription("Switch background and images texture"))
         .addChild((new autoclass.TextureBackground())
-          .setLeftTexture((new autoclass.ImageTexture()).setDEF("leftBack").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"])))
-          .setRightTexture((new autoclass.ImageTexture()).setDEF("rightBack").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"])))
-          .setFrontTexture((new autoclass.ImageTexture()).setDEF("frontBack").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"])))
-          .setBackTexture((new autoclass.ImageTexture()).setDEF("backBack").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"])))
-          .setTopTexture((new autoclass.ImageTexture()).setDEF("topBack").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"])))
-          .setBottomTexture((new autoclass.ImageTexture()).setDEF("bottomBack").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]))))
+          .setLeftTexture((new autoclass.ImageTexture()).setDEF("leftBackgroundTexture").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"])))
+          .setRightTexture((new autoclass.ImageTexture()).setDEF("rightBackgroundTexture").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"])))
+          .setFrontTexture((new autoclass.ImageTexture()).setDEF("frontBackgroundTexture").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"])))
+          .setBackTexture((new autoclass.ImageTexture()).setDEF("backBackgroundTexture").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"])))
+          .setTopTexture((new autoclass.ImageTexture()).setDEF("topBackgroundTexture").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"])))
+          .setBottomTexture((new autoclass.ImageTexture()).setDEF("bottomBackgroundTexture").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]))))
         .addChild((new autoclass.Transform())
           .addChild((new autoclass.Shape())
             .setAppearance((new autoclass.Appearance())
               .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0.7), java.newFloat(0.7), java.newFloat(0.7)])).setSpecularColor(java.newArray("float", [java.newFloat(0.5), java.newFloat(0.5), java.newFloat(0.5)])))
               .setTexture((new autoclass.ComposedCubeMapTexture())
-                .setBackTexture((new autoclass.ImageTexture()).setDEF("backShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"])))
-                .setBottomTexture((new autoclass.ImageTexture()).setDEF("bottomShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"])))
-                .setFrontTexture((new autoclass.ImageTexture()).setDEF("frontShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"])))
-                .setLeftTexture((new autoclass.ImageTexture()).setDEF("leftShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"])))
-                .setRightTexture((new autoclass.ImageTexture()).setDEF("rightShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"])))
+                .setTopTexture((new autoclass.ImageTexture()).setDEF("backShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"])))
+                .setTopTexture((new autoclass.ImageTexture()).setDEF("bottomShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"])))
+                .setTopTexture((new autoclass.ImageTexture()).setDEF("frontShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"])))
+                .setTopTexture((new autoclass.ImageTexture()).setDEF("leftShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"])))
+                .setTopTexture((new autoclass.ImageTexture()).setDEF("rightShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"])))
                 .setTopTexture((new autoclass.ImageTexture()).setDEF("topShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"]))))
               .addShaders((new autoclass.ComposedShader()).setDEF("x3dom").setLanguage("GLSL")
                 .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("chromaticDispertion").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
@@ -98,17 +101,17 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "        }"))
           .addChild((new autoclass.TimeSensor()).setDEF("Clock").setCycleInterval(45).setLoop(true))
           .addChild((new autoclass.ROUTE()).setFromNode("Clock").setFromField("fraction_changed").setToNode("UrlSelector").setToField("set_fraction"))
-          .addChild((new autoclass.ROUTE()).setFromNode("UrlSelector").setFromField("front_changed").setToNode("frontBack").setToField("url"))
-          .addChild((new autoclass.ROUTE()).setFromNode("UrlSelector").setFromField("back_changed").setToNode("backBack").setToField("url"))
-          .addChild((new autoclass.ROUTE()).setFromNode("UrlSelector").setFromField("left_changed").setToNode("leftBack").setToField("url"))
-          .addChild((new autoclass.ROUTE()).setFromNode("UrlSelector").setFromField("right_changed").setToNode("rightBack").setToField("url"))
-          .addChild((new autoclass.ROUTE()).setFromNode("UrlSelector").setFromField("top_changed").setToNode("topBack").setToField("url"))
-          .addChild((new autoclass.ROUTE()).setFromNode("UrlSelector").setFromField("bottom_changed").setToNode("bottomBack").setToField("url"))
+          .addChild((new autoclass.ROUTE()).setFromNode("UrlSelector").setFromField("front_changed").setToNode("frontBackgroundTexture").setToField("url"))
+          .addChild((new autoclass.ROUTE()).setFromNode("UrlSelector").setFromField("back_changed").setToNode("backBackgroundTexture").setToField("url"))
+          .addChild((new autoclass.ROUTE()).setFromNode("UrlSelector").setFromField("left_changed").setToNode("leftBackgroundTexture").setToField("url"))
+          .addChild((new autoclass.ROUTE()).setFromNode("UrlSelector").setFromField("right_changed").setToNode("rightBackgroundTexture").setToField("url"))
+          .addChild((new autoclass.ROUTE()).setFromNode("UrlSelector").setFromField("top_changed").setToNode("topBackgroundTexture").setToField("url"))
+          .addChild((new autoclass.ROUTE()).setFromNode("UrlSelector").setFromField("bottom_changed").setToNode("bottomBackgroundTexture").setToField("url"))
           .addChild((new autoclass.ROUTE()).setFromNode("UrlSelector").setFromField("front_changed").setToNode("frontShader").setToField("url"))
           .addChild((new autoclass.ROUTE()).setFromNode("UrlSelector").setFromField("back_changed").setToNode("backShader").setToField("url"))
           .addChild((new autoclass.ROUTE()).setFromNode("UrlSelector").setFromField("left_changed").setToNode("leftShader").setToField("url"))
           .addChild((new autoclass.ROUTE()).setFromNode("UrlSelector").setFromField("right_changed").setToNode("rightShader").setToField("url"))
           .addChild((new autoclass.ROUTE()).setFromNode("UrlSelector").setFromField("top_changed").setToNode("topShader").setToField("url"))
           .addChild((new autoclass.ROUTE()).setFromNode("UrlSelector").setFromField("bottom_changed").setToNode("bottomShader").setToField("url"))))      ;
-    X3D0.toFileX3D("../personal/mirror.new.x3d");
+    X3D0.toFileX3D("../personal/mirror.new.node.x3d");
     process.exit(0);

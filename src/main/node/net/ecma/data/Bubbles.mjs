@@ -26,13 +26,13 @@ var Material = require('./x3d.mjs');
 var SFColor = require('./x3d.mjs');
 var SFFloat = require('./x3d.mjs');
 var Sphere = require('./x3d.mjs');
+var ROUTE = require('./x3d.mjs');
 var Background = require('./x3d.mjs');
 var MFColor = require('./x3d.mjs');
-var ROUTE = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Interchange"),
-      version : new SFString("4.0"),
+      version : new SFString("3.3"),
       head : new SFNode(
         new head({
           meta : new MFNode([
@@ -62,7 +62,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")})])})),
+              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
+
+            new meta({
+              name : new SFString("license"),
+              content : new SFString("../license.html")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
@@ -88,7 +92,7 @@ var X3D0 =  new X3D({
                     new PositionInterpolator({
                       DEF : new SFString("BubblePath2"),
                       key : new MFFloat([0,0.3,0.64,0.85,1]),
-                      keyValue : new MFVec3f([0.1,0.1,0.1,0.2,0.4,0.25,0.3,0.5,0.46,0.75,0.5,0.575,0.03848348,1.989,1.098373])}),
+                      keyValue : new MFVec3f([0.1,0.1,0.1,0.2,0.4,0.25,0.3,0.5,0.46,0.75,0.5,0.575,0.038483478,1.989,1.098373])}),
 
                     new PositionInterpolator({
                       DEF : new SFString("BubblePath3"),
@@ -270,128 +274,128 @@ var X3D0 =  new X3D({
                                       transparency : new SFFloat(0.8)}))})),
                               geometry : new SFNode(
                                 new Sphere({
-                                  radius : new SFFloat(0.035)}))}))})])})])})])}),
+                                  radius : new SFFloat(0.035)}))}))}),
+
+                        new ROUTE({
+                          fromField : new SFString("fraction_changed"),
+                          fromNode : new SFString("BubbleClock"),
+                          toField : new SFString("set_fraction"),
+                          toNode : new SFString("BubblePath1")}),
+
+                        new ROUTE({
+                          fromField : new SFString("fraction_changed"),
+                          fromNode : new SFString("BubbleClock"),
+                          toField : new SFString("set_fraction"),
+                          toNode : new SFString("BubblePath2")}),
+
+                        new ROUTE({
+                          fromField : new SFString("fraction_changed"),
+                          fromNode : new SFString("BubbleClock"),
+                          toField : new SFString("set_fraction"),
+                          toNode : new SFString("BubblePath3")}),
+
+                        new ROUTE({
+                          fromField : new SFString("fraction_changed"),
+                          fromNode : new SFString("BubbleClock"),
+                          toField : new SFString("set_fraction"),
+                          toNode : new SFString("BubblePath4")}),
+
+                        new ROUTE({
+                          fromField : new SFString("fraction_changed"),
+                          fromNode : new SFString("BubbleClock"),
+                          toField : new SFString("set_fraction"),
+                          toNode : new SFString("BubblePath5")}),
+
+                        new ROUTE({
+                          fromField : new SFString("fraction_changed"),
+                          fromNode : new SFString("BubbleClock"),
+                          toField : new SFString("set_fraction"),
+                          toNode : new SFString("BubblePath6")}),
+
+                        new ROUTE({
+                          fromField : new SFString("fraction_changed"),
+                          fromNode : new SFString("BubbleClock"),
+                          toField : new SFString("set_fraction"),
+                          toNode : new SFString("BubblePath7")}),
+
+                        new ROUTE({
+                          fromField : new SFString("fraction_changed"),
+                          fromNode : new SFString("BubbleClock"),
+                          toField : new SFString("set_fraction"),
+                          toNode : new SFString("BubblePath8")}),
+
+                        new ROUTE({
+                          fromField : new SFString("fraction_changed"),
+                          fromNode : new SFString("BubbleClock"),
+                          toField : new SFString("set_fraction"),
+                          toNode : new SFString("BubblePath9")}),
+
+                        new ROUTE({
+                          fromField : new SFString("fraction_changed"),
+                          fromNode : new SFString("BubbleClock"),
+                          toField : new SFString("set_fraction"),
+                          toNode : new SFString("BubblePath10")}),
+
+                        new ROUTE({
+                          fromField : new SFString("value_changed"),
+                          fromNode : new SFString("BubblePath1"),
+                          toField : new SFString("set_translation"),
+                          toNode : new SFString("bubble1")}),
+
+                        new ROUTE({
+                          fromField : new SFString("value_changed"),
+                          fromNode : new SFString("BubblePath2"),
+                          toField : new SFString("set_translation"),
+                          toNode : new SFString("bubble2")}),
+
+                        new ROUTE({
+                          fromField : new SFString("value_changed"),
+                          fromNode : new SFString("BubblePath3"),
+                          toField : new SFString("set_translation"),
+                          toNode : new SFString("bubble3")}),
+
+                        new ROUTE({
+                          fromField : new SFString("value_changed"),
+                          fromNode : new SFString("BubblePath4"),
+                          toField : new SFString("set_translation"),
+                          toNode : new SFString("bubble4")}),
+
+                        new ROUTE({
+                          fromField : new SFString("value_changed"),
+                          fromNode : new SFString("BubblePath5"),
+                          toField : new SFString("set_translation"),
+                          toNode : new SFString("bubble5")}),
+
+                        new ROUTE({
+                          fromField : new SFString("value_changed"),
+                          fromNode : new SFString("BubblePath6"),
+                          toField : new SFString("set_translation"),
+                          toNode : new SFString("bubble6")}),
+
+                        new ROUTE({
+                          fromField : new SFString("value_changed"),
+                          fromNode : new SFString("BubblePath7"),
+                          toField : new SFString("set_translation"),
+                          toNode : new SFString("bubble7")}),
+
+                        new ROUTE({
+                          fromField : new SFString("value_changed"),
+                          fromNode : new SFString("BubblePath8"),
+                          toField : new SFString("set_translation"),
+                          toNode : new SFString("bubble8")}),
+
+                        new ROUTE({
+                          fromField : new SFString("value_changed"),
+                          fromNode : new SFString("BubblePath9"),
+                          toField : new SFString("set_translation"),
+                          toNode : new SFString("bubble9")}),
+
+                        new ROUTE({
+                          fromField : new SFString("value_changed"),
+                          fromNode : new SFString("BubblePath10"),
+                          toField : new SFString("set_translation"),
+                          toNode : new SFString("bubble10")})])})])})])}),
 
             new Background({
-              skyColor : new MFColor([0,0,0.6])}),
-
-            new ROUTE({
-              fromNode : new SFString("BubbleClock"),
-              fromField : new SFString("fraction_changed"),
-              toNode : new SFString("BubblePath1"),
-              toField : new SFString("set_fraction")}),
-
-            new ROUTE({
-              fromNode : new SFString("BubbleClock"),
-              fromField : new SFString("fraction_changed"),
-              toNode : new SFString("BubblePath2"),
-              toField : new SFString("set_fraction")}),
-
-            new ROUTE({
-              fromNode : new SFString("BubbleClock"),
-              fromField : new SFString("fraction_changed"),
-              toNode : new SFString("BubblePath3"),
-              toField : new SFString("set_fraction")}),
-
-            new ROUTE({
-              fromNode : new SFString("BubbleClock"),
-              fromField : new SFString("fraction_changed"),
-              toNode : new SFString("BubblePath4"),
-              toField : new SFString("set_fraction")}),
-
-            new ROUTE({
-              fromNode : new SFString("BubbleClock"),
-              fromField : new SFString("fraction_changed"),
-              toNode : new SFString("BubblePath5"),
-              toField : new SFString("set_fraction")}),
-
-            new ROUTE({
-              fromNode : new SFString("BubbleClock"),
-              fromField : new SFString("fraction_changed"),
-              toNode : new SFString("BubblePath6"),
-              toField : new SFString("set_fraction")}),
-
-            new ROUTE({
-              fromNode : new SFString("BubbleClock"),
-              fromField : new SFString("fraction_changed"),
-              toNode : new SFString("BubblePath7"),
-              toField : new SFString("set_fraction")}),
-
-            new ROUTE({
-              fromNode : new SFString("BubbleClock"),
-              fromField : new SFString("fraction_changed"),
-              toNode : new SFString("BubblePath8"),
-              toField : new SFString("set_fraction")}),
-
-            new ROUTE({
-              fromNode : new SFString("BubbleClock"),
-              fromField : new SFString("fraction_changed"),
-              toNode : new SFString("BubblePath9"),
-              toField : new SFString("set_fraction")}),
-
-            new ROUTE({
-              fromNode : new SFString("BubbleClock"),
-              fromField : new SFString("fraction_changed"),
-              toNode : new SFString("BubblePath10"),
-              toField : new SFString("set_fraction")}),
-
-            new ROUTE({
-              fromNode : new SFString("BubblePath1"),
-              fromField : new SFString("value_changed"),
-              toNode : new SFString("bubble1"),
-              toField : new SFString("translation")}),
-
-            new ROUTE({
-              fromNode : new SFString("BubblePath2"),
-              fromField : new SFString("value_changed"),
-              toNode : new SFString("bubble2"),
-              toField : new SFString("translation")}),
-
-            new ROUTE({
-              fromNode : new SFString("BubblePath3"),
-              fromField : new SFString("value_changed"),
-              toNode : new SFString("bubble3"),
-              toField : new SFString("translation")}),
-
-            new ROUTE({
-              fromNode : new SFString("BubblePath4"),
-              fromField : new SFString("value_changed"),
-              toNode : new SFString("bubble4"),
-              toField : new SFString("translation")}),
-
-            new ROUTE({
-              fromNode : new SFString("BubblePath5"),
-              fromField : new SFString("value_changed"),
-              toNode : new SFString("bubble5"),
-              toField : new SFString("translation")}),
-
-            new ROUTE({
-              fromNode : new SFString("BubblePath6"),
-              fromField : new SFString("value_changed"),
-              toNode : new SFString("bubble6"),
-              toField : new SFString("translation")}),
-
-            new ROUTE({
-              fromNode : new SFString("BubblePath7"),
-              fromField : new SFString("value_changed"),
-              toNode : new SFString("bubble7"),
-              toField : new SFString("translation")}),
-
-            new ROUTE({
-              fromNode : new SFString("BubblePath8"),
-              fromField : new SFString("value_changed"),
-              toNode : new SFString("bubble8"),
-              toField : new SFString("translation")}),
-
-            new ROUTE({
-              fromNode : new SFString("BubblePath9"),
-              fromField : new SFString("value_changed"),
-              toNode : new SFString("bubble9"),
-              toField : new SFString("translation")}),
-
-            new ROUTE({
-              fromNode : new SFString("BubblePath10"),
-              fromField : new SFString("value_changed"),
-              toNode : new SFString("bubble10"),
-              toField : new SFString("translation")})])}))});
+              skyColor : new MFColor([0,0,0.6])})])}))});
 console.log(X3D0.toXMLNode());

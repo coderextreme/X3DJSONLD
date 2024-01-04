@@ -66,7 +66,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("13 January 2014")}),
+              content : new SFString("Sat, 30 Dec 2023 07:46:15 GMT")}),
 
             new meta({
               name : new SFString("description"),
@@ -78,11 +78,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html")}),
-
-            new meta({
-              name : new SFString("generator"),
-              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")})])})),
+              content : new SFString("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
@@ -124,7 +120,7 @@ var X3D0 =  new X3D({
                     new Material({})),
                   texture : new SFNode(
                     new PixelTexture({
-                      image : new SFImage([2,2,4,-16776961,16711935,-1,-65281]),
+                      image : new SFImage([2,2,4,4278190335,16711935,4294967295,4294902015]),
                       repeatS : new SFBool(false),
                       repeatT : new SFBool(false)}))})),
               geometry : new SFNode(

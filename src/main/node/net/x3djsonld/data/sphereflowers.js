@@ -27,6 +27,14 @@ var autoclass = require('./X3Dautoclass');
 			<td> John Carlson </td>
 		</tr>
 		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> created </i> </td>
+			<td> Jan 17 2022 </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
+			<td> Sep 3 2023 </td>
+		</tr>
+		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
 			<td> 5 or more prismatic flowers </td>
 		</tr>
@@ -79,14 +87,16 @@ sphereflowers.prototype = {
     .addComponent((new autoclass.component()).setName("Core").setLevel(1))
     .addMeta((new autoclass.meta()).setName("title").setContent("sphereflowers.x3d"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
+    .addMeta((new autoclass.meta()).setName("created").setContent("Jan 17 2022"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("Sep 3 2023"))
     .addMeta((new autoclass.meta()).setName("description").setContent("5 or more prismatic flowers"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
     .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/sphereflowers.x3d")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.NavigationInfo()))
-    .addChild((new autoclass.Background()).setBackUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png\"")).setBottomUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png\"")).setFrontUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png\"")).setLeftUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png\"")).setRightUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png\"")).setTopUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/src/main/resourcesall_probes/stpeters_cross/stpeters_top.png\"")))
+    .addChild((new autoclass.Background()).setBackUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\"")).setBottomUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\"")).setFrontUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\"")).setLeftUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\"")).setRightUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\"")).setTopUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\"")))
     .addChild((new autoclass.Group())
-      .addChild((new autoclass.ExternProtoDeclare()).setName("FlowerProto").setUrl(new autoclass.MFString("\"../personal/flowerproto.json#FlowerProto\" \"https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto\""))
+      .addChild((new autoclass.ExternProtoDeclare()).setName("FlowerProto").setUrl(new autoclass.MFString("\"../personal/flowerproto.json#FlowerProto\""))
         .addField((new autoclass.field()).setName("vertex").setType("MFString").setAccessType("inputOutput"))
         .addField((new autoclass.field()).setName("fragment").setType("MFString").setAccessType("inputOutput")))
       .addChild((new autoclass.ProtoDeclare()).setName("flower")
@@ -102,8 +112,8 @@ sphereflowers.prototype = {
       .addChild((new autoclass.ProtoInstance()))
       .addChild((new autoclass.ProtoInstance()))
       .addChild((new autoclass.TimeSensor("SongTime")).setLoop(true))
-      .addChild((new autoclass.Sound()).setMaxBack(100).setMaxFront(100).setMinBack(20).setMinFront(20)
-        .setSource((new autoclass.AudioClip("AudioClip")).setDescription("Chandubabamusic #1").setUrl(new autoclass.MFString("\"../resources/chandubabamusic1.wav\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav\""))))
+      .addChild((new autoclass.Sound()).setLocation(0.0,1.0,0.0).setMaxBack(100).setMaxFront(100).setMinBack(20).setMinFront(20)
+        .setSource((new autoclass.AudioClip("AudioClip")).setDescription("Chandubabamusic #1").setUrl(new autoclass.MFString("\"../resources/chandubabamusic1.wav\""))))
       .addChild((new autoclass.ROUTE()).setFromNode("SongTime").setFromField("cycleTime").setToNode("AudioClip").setToField("startTime"))));
   },
   // end of initialize() method

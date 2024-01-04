@@ -1,9 +1,10 @@
 var java = require('java');
+var util = require('util');
 java.asyncOptions = {
   asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
   syncSuffix: "",              // Sync methods use the base name(!!)
   promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
-  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  promisify: util.promisify, // Needs Node.js version 8 or greater, see comment below
   ifReadOnlySuffix: "_alt"
 };
 var autoclass = require('../../../X3Dautoclass');
@@ -15,13 +16,13 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 var ProtoInstance0 = null;
 var ProtoInstance1 = null;
 var ProtoInstance2 = null;
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
       .setHead((new autoclass.head())
         .addMeta((new autoclass.meta()).setName("title").setContent("pp3.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("translator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("created").setContent("5 May 2015"))
-        .addMeta((new autoclass.meta()).setName("modified").setContent("05 May 2017"))
+        .addMeta((new autoclass.meta()).setName("modified").setContent("23 Dec 2022"))
         .addMeta((new autoclass.meta()).setName("description").setContent("A process pipeline between three spheres (try typing on spheres and blue"))
         .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/x3d/pp3.x3d"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manual")))
@@ -135,5 +136,5 @@ var ProtoInstance2 = null;
           .addChild(ProtoInstance1 = (new autoclass.ProtoInstance()).setName("Process")))
         .addChild((new autoclass.Transform()).setTranslation(java.newArray("float", [java.newFloat(0), java.newFloat(2.5), java.newFloat(0)]))
           .addChild(ProtoInstance2 = (new autoclass.ProtoInstance()).setName("Process"))))      ;
-    X3D0.toFileX3D("../personal/pp3.new.x3d");
+    X3D0.toFileX3D("../personal/pp3.new.node.x3d");
     process.exit(0);

@@ -68,7 +68,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("20 October 2019")}),
+              content : new SFString("Sat, 30 Dec 2023 07:57:57 GMT")}),
 
             new meta({
               name : new SFString("reference"),
@@ -103,16 +103,12 @@ var X3D0 =  new X3D({
               content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
 
             new meta({
+              name : new SFString("generator"),
+              content : new SFString("x3d-tidy V1.0.118, https://www.npmjs.com/package/x3d-tidy")}),
+
+            new meta({
               name : new SFString("info"),
               content : new SFString("World of Titania")}),
-
-            new meta({
-              name : new SFString("outputStyle"),
-              content : new SFString("nicest")}),
-
-            new meta({
-              name : new SFString("identifier"),
-              content : new SFString("https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d")}),
           component : new SFNode(
             new component({
               name : new SFString("Shaders"),

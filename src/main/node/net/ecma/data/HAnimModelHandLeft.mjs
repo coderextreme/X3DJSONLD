@@ -56,7 +56,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("23 December 2021")}),
+              content : new SFString("Sat, 30 Dec 2023 07:42:59 GMT")}),
 
             new meta({
               name : new SFString("TODO"),
@@ -113,10 +113,6 @@ var X3D0 =  new X3D({
             new meta({
               name : new SFString("identifier"),
               content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandLeft.x3d")}),
-
-            new meta({
-              name : new SFString("generator"),
-              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
           component : new SFNode(
             new component({
               name : new SFString("HAnim"),
@@ -129,7 +125,6 @@ var X3D0 =  new X3D({
 
             new HAnimHumanoid({
               DEF : new SFString("hanim_Hand_Left"),
-              version : new SFString("2.0"),
               name : new SFString("Hand_Left"),
               loa : new SFInt32(4),
               metadata : new MFNode([
@@ -436,12 +431,12 @@ var X3D0 =  new X3D({
                                                   point : new MFVec3f([0.15,0.5,0,0.2,0.7,0])}))}))})])}),
 
                                     new HAnimJoint({
-                                      DEF : new SFString("hanim_l_carpal_proximal_interphalangeal_1"),
+                                      DEF : new SFString("hanim_l_carpal_proximal_interphalangeal_2"),
                                       name : new SFString("l_carpal_proximal_interphalangeal_2"),
                                       center : new SFVec3f([0.2,0.7,0]),
                                       children : new MFNode([
                                         new HAnimSegment({
-                                          DEF : new SFString("hanim_l_carpal_middle_phalanx_1"),
+                                          DEF : new SFString("hanim_l_carpal_middle_phalanx_2"),
                                           name : new SFString("l_carpal_middle_phalanx_2"),
                                           children : new MFNode([
                                             new Transform({
@@ -465,7 +460,7 @@ var X3D0 =  new X3D({
                                                       point : new MFVec3f([0.2,0.7,0,0.24,0.87,0])}))}))})])}),
 
                                         new HAnimJoint({
-                                          DEF : new SFString("hanim_l_carpal_distal_interphalangeal_1"),
+                                          DEF : new SFString("hanim_l_carpal_distal_interphalangeal_2"),
                                           name : new SFString("l_carpal_distal_interphalangeal_2"),
                                           center : new SFVec3f([0.24,0.87,0]),
                                           children : new MFNode([
@@ -487,7 +482,7 @@ var X3D0 =  new X3D({
                                                           emissiveColor : new SFColor([1,1,1])}))})),
                                                   geometry : new SFNode(
                                                     new IndexedLineSet({
-                                                      DEF : new SFString("fingertip_l_carpal_distal_interphalangeal_1"),
+                                                      DEF : new SFString("fingertip_l_carpal_distal_interphalangeal_2"),
                                                       coordIndex : new MFInt32([0,1]),
                                                       coord : new SFNode(
                                                         new Coordinate({
@@ -581,12 +576,12 @@ var X3D0 =  new X3D({
                                                   point : new MFVec3f([0.03,0.5,0,0.05,0.75,0])}))}))})])}),
 
                                     new HAnimJoint({
-                                      DEF : new SFString("hanim_l_carpal_proximal_interphalangeal_2"),
+                                      DEF : new SFString("hanim_l_carpal_proximal_interphalangeal_3"),
                                       name : new SFString("l_carpal_proximal_interphalangeal_3"),
                                       center : new SFVec3f([0.05,0.75,0]),
                                       children : new MFNode([
                                         new HAnimSegment({
-                                          DEF : new SFString("hanim_l_carpal_middle_phalanx_2"),
+                                          DEF : new SFString("hanim_l_carpal_middle_phalanx_3"),
                                           name : new SFString("l_carpal_middle_phalanx_3"),
                                           children : new MFNode([
                                             new Transform({
@@ -610,7 +605,7 @@ var X3D0 =  new X3D({
                                                       point : new MFVec3f([0.05,0.75,0,0.08,0.96,0])}))}))})])}),
 
                                         new HAnimJoint({
-                                          DEF : new SFString("hanim_l_carpal_distal_interphalangeal_2"),
+                                          DEF : new SFString("hanim_l_carpal_distal_interphalangeal_3"),
                                           name : new SFString("l_carpal_distal_interphalangeal_3"),
                                           center : new SFVec3f([0.08,0.96,0]),
                                           children : new MFNode([
@@ -632,14 +627,14 @@ var X3D0 =  new X3D({
                                                           emissiveColor : new SFColor([1,1,1])}))})),
                                                   geometry : new SFNode(
                                                     new IndexedLineSet({
-                                                      DEF : new SFString("fingertip_l_carpal_distal_interphalangeal_2"),
+                                                      DEF : new SFString("fingertip_l_carpal_distal_interphalangeal_3"),
                                                       coordIndex : new MFInt32([0,1]),
                                                       coord : new SFNode(
                                                         new Coordinate({
                                                           point : new MFVec3f([0.08,0.96,0,0.09,1.05,0])}))}))})])})])})])})])})])})])}),
 
                         new HAnimJoint({
-                          DEF : new SFString("hanim_l_midcarpal_4_1"),
+                          DEF : new SFString("hanim_l_midcarpal_4_5"),
                           name : new SFString("l_midcarpal_4_5"),
                           center : new SFVec3f([-0.1,0.1,0]),
                           children : new MFNode([
@@ -740,12 +735,12 @@ var X3D0 =  new X3D({
                                                   point : new MFVec3f([-0.1,0.47,0,-0.1,0.7,0])}))}))})])}),
 
                                     new HAnimJoint({
-                                      DEF : new SFString("hanim_l_carpal_proximal_interphalangeal_3"),
+                                      DEF : new SFString("hanim_l_carpal_proximal_interphalangeal_4"),
                                       name : new SFString("l_carpal_proximal_interphalangeal_4"),
                                       center : new SFVec3f([-0.1,0.7,0]),
                                       children : new MFNode([
                                         new HAnimSegment({
-                                          DEF : new SFString("hanim_l_carpal_middle_phalanx_3"),
+                                          DEF : new SFString("hanim_l_carpal_middle_phalanx_4"),
                                           name : new SFString("l_carpal_middle_phalanx_4"),
                                           children : new MFNode([
                                             new Transform({
@@ -769,7 +764,7 @@ var X3D0 =  new X3D({
                                                       point : new MFVec3f([-0.1,0.7,0,-0.1,0.93,0])}))}))})])}),
 
                                         new HAnimJoint({
-                                          DEF : new SFString("hanim_l_carpal_distal_interphalangeal_3"),
+                                          DEF : new SFString("hanim_l_carpal_distal_interphalangeal_4"),
                                           name : new SFString("l_carpal_distal_interphalangeal_4"),
                                           center : new SFVec3f([-0.1,0.93,0]),
                                           children : new MFNode([
@@ -791,7 +786,7 @@ var X3D0 =  new X3D({
                                                           emissiveColor : new SFColor([1,1,1])}))})),
                                                   geometry : new SFNode(
                                                     new IndexedLineSet({
-                                                      DEF : new SFString("fingertip_l_carpal_distal_interphalangeal_3"),
+                                                      DEF : new SFString("fingertip_l_carpal_distal_interphalangeal_4"),
                                                       coordIndex : new MFInt32([0,1]),
                                                       coord : new SFNode(
                                                         new Coordinate({
@@ -856,12 +851,12 @@ var X3D0 =  new X3D({
                                                   point : new MFVec3f([-0.2,0.4,0,-0.23,0.63,0])}))}))})])}),
 
                                     new HAnimJoint({
-                                      DEF : new SFString("hanim_l_carpal_proximal_interphalangeal_4"),
+                                      DEF : new SFString("hanim_l_carpal_proximal_interphalangeal_5"),
                                       name : new SFString("l_carpal_proximal_interphalangeal_5"),
                                       center : new SFVec3f([-0.23,0.63,0]),
                                       children : new MFNode([
                                         new HAnimSegment({
-                                          DEF : new SFString("hanim_l_carpal_middle_phalanx_4"),
+                                          DEF : new SFString("hanim_l_carpal_middle_phalanx_5"),
                                           name : new SFString("l_carpal_middle_phalanx_5"),
                                           children : new MFNode([
                                             new Transform({
@@ -885,7 +880,7 @@ var X3D0 =  new X3D({
                                                       point : new MFVec3f([-0.23,0.63,0,-0.25,0.79,0])}))}))})])}),
 
                                         new HAnimJoint({
-                                          DEF : new SFString("hanim_l_carpal_distal_interphalangeal_4"),
+                                          DEF : new SFString("hanim_l_carpal_distal_interphalangeal_5"),
                                           name : new SFString("l_carpal_distal_interphalangeal_5"),
                                           center : new SFVec3f([-0.25,0.79,0]),
                                           children : new MFNode([
@@ -907,7 +902,7 @@ var X3D0 =  new X3D({
                                                           emissiveColor : new SFColor([1,1,1])}))})),
                                                   geometry : new SFNode(
                                                     new IndexedLineSet({
-                                                      DEF : new SFString("fingertip_l_carpal_distal_interphalangeal_4"),
+                                                      DEF : new SFString("fingertip_l_carpal_distal_interphalangeal_5"),
                                                       coordIndex : new MFInt32([0,1]),
                                                       coord : new SFNode(
                                                         new Coordinate({
@@ -935,9 +930,6 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_l_carpal_distal_phalanx_5")}),
 
                 new HAnimSegment({
-                  USE : new SFString("hanim_l_carpal_middle_phalanx_1")}),
-
-                new HAnimSegment({
                   USE : new SFString("hanim_l_carpal_middle_phalanx_2")}),
 
                 new HAnimSegment({
@@ -945,6 +937,9 @@ var X3D0 =  new X3D({
 
                 new HAnimSegment({
                   USE : new SFString("hanim_l_carpal_middle_phalanx_4")}),
+
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_carpal_middle_phalanx_5")}),
 
                 new HAnimSegment({
                   USE : new SFString("hanim_l_carpal_proximal_phalanx_1")}),
@@ -989,9 +984,6 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_humanoid_root")}),
 
                 new HAnimJoint({
-                  USE : new SFString("hanim_l_carpal_distal_interphalangeal_1")}),
-
-                new HAnimJoint({
                   USE : new SFString("hanim_l_carpal_distal_interphalangeal_2")}),
 
                 new HAnimJoint({
@@ -1001,10 +993,10 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_l_carpal_distal_interphalangeal_4")}),
 
                 new HAnimJoint({
-                  USE : new SFString("hanim_l_carpal_interphalangeal_1")}),
+                  USE : new SFString("hanim_l_carpal_distal_interphalangeal_5")}),
 
                 new HAnimJoint({
-                  USE : new SFString("hanim_l_carpal_proximal_interphalangeal_1")}),
+                  USE : new SFString("hanim_l_carpal_interphalangeal_1")}),
 
                 new HAnimJoint({
                   USE : new SFString("hanim_l_carpal_proximal_interphalangeal_2")}),
@@ -1014,6 +1006,9 @@ var X3D0 =  new X3D({
 
                 new HAnimJoint({
                   USE : new SFString("hanim_l_carpal_proximal_interphalangeal_4")}),
+
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_carpal_proximal_interphalangeal_5")}),
 
                 new HAnimJoint({
                   USE : new SFString("hanim_l_carpometacarpal_1")}),
@@ -1055,7 +1050,7 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_l_midcarpal_3")}),
 
                 new HAnimJoint({
-                  USE : new SFString("hanim_l_midcarpal_4_1")}),
+                  USE : new SFString("hanim_l_midcarpal_4_5")}),
 
                 new HAnimJoint({
                   USE : new SFString("hanim_l_radiocarpal")})])})])}))});

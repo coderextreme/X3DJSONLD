@@ -49,8 +49,8 @@ var X3D0 =  new X3D({
               content : new SFString("manual")}),
 
             new meta({
-              name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d")}),
+              name : new SFString("generator"),
+              content : new SFString("x3d-tidy V1.0.118, https://www.npmjs.com/package/x3d-tidy")}),
           component : new SFNode(
             new component({
               name : new SFString("Scripting"),
@@ -96,12 +96,12 @@ var X3D0 =  new X3D({
               description : new SFString("Tour Views")}),
 
             new Background({
-              frontUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]),
-              backUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]),
-              leftUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]),
-              rightUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]),
-              topUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]),
-              bottomUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])}),
+              frontUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png"]),
+              backUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png"]),
+              leftUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png"]),
+              rightUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png"]),
+              topUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png"]),
+              bottomUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])}),
 
             new Transform({
               child : new SFNode(
@@ -117,33 +117,33 @@ var X3D0 =  new X3D({
                           DEF : new SFString("texture"),
                           topTexture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"])})),
+                              url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png"])})),
                           topTexture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"])})),
+                              url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png"])})),
                           topTexture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"])})),
+                              url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png"])})),
                           topTexture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"])})),
+                              url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png"])})),
                           topTexture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])})),
+                              url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png"])})),
                           topTexture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])}))})),
+                              url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])}))})),
                       shaders : new SFNode(
                         new ComposedShader({
                           language : new SFString("GLSL"),
                           parts : new SFNode(
                             new ShaderPart({
-                              url : new MFString(["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"])})),
+                              ../shaders/x3dom.vs)})),
                           parts : new SFNode(
                             new ShaderPart({
                               type : "FRAGMENT",
                               DEF : new SFString("common"),
-                              url : new MFString(["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"])})),
+                              ../shaders/common.fs)})),
                           field : new MFNode([
                             new field({
                               type : field.TYPE_SFVEC3F,
@@ -181,11 +181,11 @@ var X3D0 =  new X3D({
                           language : new SFString("GLSL"),
                           parts : new SFNode(
                             new ShaderPart({
-                              url : new MFString(["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"])})),
+                              ../shaders/x_ite.vs)})),
                           parts : new SFNode(
                             new ShaderPart({
                               type : "FRAGMENT",
-                              url : new MFString(["../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"])})),
+                              ../shaders/x_itebubbles.fs)})),
                           field : new MFNode([
                             new field({
                               type : field.TYPE_SFVEC3F,

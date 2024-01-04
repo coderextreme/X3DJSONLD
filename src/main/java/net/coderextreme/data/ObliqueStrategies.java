@@ -51,7 +51,7 @@ public class ObliqueStrategies {
         .addMeta(new meta().setName("description").setContent("Text scripting and animation example using Oblique Strategies card set by Brian Eno."))
         .addMeta(new meta().setName("creator").setContent("Don Brutzman, John Kelly, Ben Cheng"))
         .addMeta(new meta().setName("created").setContent("3 November 2013"))
-        .addMeta(new meta().setName("modified").setContent("10 November 2019"))
+        .addMeta(new meta().setName("modified").setContent("Sat, 30 Dec 2023 07:55:52 GMT"))
         .addMeta(new meta().setName("reference").setContent("oblique.html"))
         .addMeta(new meta().setName("reference").setContent("ObliqueStrategies.txt"))
         .addMeta(new meta().setName("reference").setContent("ObliqueStrategiesScript.js"))
@@ -75,8 +75,7 @@ public class ObliqueStrategies {
         .addMeta(new meta().setName("TODO").setContent("multiliingual translation parameter"))
         .addMeta(new meta().setName("warning").setContent("under development, scene Sound/AudioClip triggering (or retrieved file format) not working"))
         .addMeta(new meta().setName("warning").setContent("TODO resolve potential error in Script node TextScript: parse problem line 15 \" var strategy = [];"))
-        .addMeta(new meta().setName("identifier").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategies.x3d"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")))
+        .addMeta(new meta().setName("identifier").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategies.x3d")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("ObliqueStrategies.x3d"))
         .addChild(new NavigationInfo().setType("\"NONE\""))
@@ -107,28 +106,28 @@ public class ObliqueStrategies {
           .addChild(new Shape()
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,1f})))
-            .setGeometry(new Text().setDEF("CardText").setString(new MFString7().getArray())
-              .setFontStyle(new FontStyle().setFamily(new MFString8().getArray()).setStyle("BOLD").setJustify(new MFString9().getArray()))))
+            .setGeometry(new Text().setDEF("CardText")
+              .setFontStyle(new FontStyle().setFamily(new MFString7().getArray()).setStyle("BOLD").setJustify(new MFString8().getArray()))))
           .addChild(new Sound().setDEF("CardSoundSpatialization").setMinBack(20f).setMinFront(20f).setMaxBack(100f).setMaxFront(100f)
-            .setSource(new AudioClip().setDEF("TextToSpeechAudioClip").setDescription("sends strategy text google translate").setUrl(new MFString10().getArray()))))
+            .setSource(new AudioClip().setDEF("TextToSpeechAudioClip").setDescription("sends strategy text google translate").setUrl(new MFString9().getArray()))))
         .addChild(new Transform().setTranslation(new float[] {-3.2f,2.5f,0f}).setScale(new float[] {0.4f,0.4f,0.4f})
           .addChild(new TouchSensor().setDEF("PreviousTextClickedSensor").setDescription("Select to see previous strategy"))
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("InterfaceAppearance")
               .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0.6f})))
-            .setGeometry(new Text().setString(new MFString11().getArray())
+            .setGeometry(new Text().setString(new MFString10().getArray())
               .setFontStyle(new FontStyle().setUSE("MessageFont"))))
           .addChild(new Transform().setScale(new float[] {2f,0.6f,1f})
             .addChild(new Shape().setDEF("TransparentClickSurface")
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setTransparency(1f)))
-              .setGeometry(new IndexedFaceSet().setSolid(false).setCoordIndex(new MFInt3212().getArray())
-                .setCoord(new Coordinate().setPoint(new MFVec3f13().getArray()))))))
+              .setGeometry(new IndexedFaceSet().setSolid(false).setCoordIndex(new MFInt3211().getArray())
+                .setCoord(new Coordinate().setPoint(new MFVec3f12().getArray()))))))
         .addChild(new Transform().setTranslation(new float[] {3.5f,2.5f,0f}).setScale(new float[] {0.4f,0.4f,0.4f})
           .addChild(new TouchSensor().setDEF("NextTextClickedSensor").setDescription("Select to see next strategy"))
           .addChild(new Shape()
             .setAppearance(new Appearance().setUSE("InterfaceAppearance"))
-            .setGeometry(new Text().setString(new MFString14().getArray())
+            .setGeometry(new Text().setString(new MFString13().getArray())
               .setFontStyle(new FontStyle().setUSE("MessageFont"))))
           .addChild(new Transform().setScale(new float[] {1.2f,0.6f,1f})
             .addChild(new Shape().setUSE("TransparentClickSurface"))))
@@ -136,15 +135,15 @@ public class ObliqueStrategies {
           .addChild(new TouchSensor().setUSE("RandomTextClickedSensor"))
           .addChild(new Shape()
             .setAppearance(new Appearance().setUSE("InterfaceAppearance"))
-            .setGeometry(new Text().setString(new MFString15().getArray())
+            .setGeometry(new Text().setString(new MFString14().getArray())
               .setFontStyle(new FontStyle().setUSE("MessageFont"))))
           .addChild(new Transform().setScale(new float[] {1.8f,0.6f,1f})
             .addChild(new Shape().setUSE("TransparentClickSurface"))))
         .addChild(new Transform().setTranslation(new float[] {3.3f,-0.5f,0f}).setScale(new float[] {0.4f,0.4f,0.4f})
-          .addChild(new Anchor().setDEF("TextToSpeechAnchor").setDescription("text to speech in browser").setUrl(new MFString16().getArray()).setParameter(new MFString17().getArray())
+          .addChild(new Anchor().setDEF("TextToSpeechAnchor").setDescription("text to speech in browser").setUrl(new MFString15().getArray()).setParameter(new MFString16().getArray())
             .addChild(new Shape()
               .setAppearance(new Appearance().setUSE("InterfaceAppearance"))
-              .setGeometry(new Text().setString(new MFString18().getArray())
+              .setGeometry(new Text().setString(new MFString17().getArray())
                 .setFontStyle(new FontStyle().setUSE("MessageFont"))))
             .addChild(new Transform().setScale(new float[] {1.8f,0.6f,1f})
               .addChild(new Shape().setUSE("TransparentClickSurface")))))
@@ -194,60 +193,55 @@ private class MFString6 {
 }
 private class MFString7 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Remove specifics and convert to ambiguities"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"SANS"});
   }
 }
 private class MFString8 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"SANS"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
 private class MFString9 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"MIDDLE","MIDDLE"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav"});
   }
 }
 private class MFString10 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"http://translate.google.com/translate_tts?tl=en&q=Remove%20specifics%20and%20convert%20to%20ambiguities"});
-  }
-}
-private class MFString11 {
-  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"previous"});
   }
 }
-private class MFInt3212 {
+private class MFInt3211 {
   private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,3,-1});
   }
 }
-private class MFVec3f13 {
+private class MFVec3f12 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1f,1f,0f,1f,-1f,0f,-1f,-1f,0f,-1f,1f,0f});
   }
 }
-private class MFString14 {
+private class MFString13 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"next"});
   }
 }
-private class MFString15 {
+private class MFString14 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"random"});
   }
 }
-private class MFString16 {
+private class MFString15 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"http://translate.google.com/translate_tts?tl=en&q=Remove%20specifics%20and%20convert%20to%20ambiguities"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change"});
   }
 }
-private class MFString17 {
+private class MFString16 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"target=_blank"});
   }
 }
-private class MFString18 {
+private class MFString17 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"speech"});
   }

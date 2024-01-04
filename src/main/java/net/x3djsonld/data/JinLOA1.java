@@ -335,24 +335,24 @@ public class JinLOA1
                         .setGeometry(new IndexedFaceSet().setCreaseAngle(3.14159).setCoordIndex(new int[] {4,2,0,-1,0,5,4,-1,6,1,3,-1,3,7,6,-1,1,6,5,-1,5,0,1,-1,8,4,5,-1,5,9,8,-1,10,6,7,-1,7,11,10,-1,9,5,6,-1,6,10,9,-1,12,8,9,-1,9,13,12,-1,14,10,11,-1,11,15,14,-1,13,9,10,-1,10,14,13,-1,4,16,2,-1,2,16,7,-1,7,3,2,-1,17,20,18,-1,18,19,17,-1,21,11,7,-1,7,16,21,-1,8,12,21,-1,12,15,11,-1,11,21,12,-1,13,14,15,-1,15,12,13,-1,8,17,19,-1,19,4,8,-1,4,19,18,-1,18,16,4,-1,16,18,20,-1,20,21,16,-1,21,20,17,-1,17,8,21,-1,22,23,27,-1,26,24,25,-1}).setTexCoordIndex(new int[] {4,7,5,-1,5,6,4,-1,2,0,1,-1,1,3,2,-1,14,17,15,-1,15,16,14,-1,8,4,6,-1,6,9,8,-1,38,41,39,-1,39,40,38,-1,18,37,36,-1,36,19,18,-1,10,8,9,-1,9,11,10,-1,42,38,40,-1,40,43,42,-1,20,18,19,-1,19,21,20,-1,22,23,24,-1,24,23,25,-1,25,26,24,-1,27,30,28,-1,28,29,27,-1,31,32,25,-1,25,23,31,-1,33,34,31,-1,34,35,32,-1,32,31,34,-1,20,21,35,-1,35,34,20,-1,8,13,12,-1,12,4,8,-1,22,29,28,-1,28,23,22,-1,23,28,30,-1,30,31,23,-1,31,30,27,-1,27,33,31,-1,14,26,24,-1,14,24,16,-1})
                           .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-1.2470,0.0700,0.7975,-1.2090,0.0872,-1.3490,0.7098,-0.0015,0.8912,0.7183,0.0002,-1.2830,0.9295,-0.6130,1.4780,-1.6470,-0.4252,1.3880,-1.5890,-0.3921,-1.9890,1.0440,-0.5947,-1.9840,0.8227,-2.5210,2.4080,-1.9510,-2.3340,2.0800,-1.8920,-2.3010,-2.4090,1.1920,-2.6140,-2.2480,0.5703,-3.9580,1.6940,-0.8836,-4.2,1.7500,-0.8251,-4.1670,-2.0710,0.7842,-3.9680,-1.9340,1.0370,-0.5968,-0.1872,1.6420,-2.5610,1.9410,1.9510,-0.9492,0.0580,1.9140,-1.0160,1.8850,1.6490,-2.5600,0.1377,1.0660,-2.6100,-0.2014,-1.2090,0.0872,-1.3490,0.7183,0.0002,-1.2830,0.7098,-0.0015,0.8912,-1.2470,0.0700,0.7975,-1.2090,0.0872,-1.3490,0.7098,-0.0015,0.8912})))
                           .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8107,0.9924,0.8122,0.9033,0.7694,0.9912,0.7683,0.9026,0.1329,0.0347,0.0307,0.0051,0.0134,0.0353,0.1366,0.0058,0.1249,0.1081,0.0147,0.1170,0.1349,0.1856,0.0462,0.1842,0.1559,0.0454,0.1480,0.1033,0.3244,0.0096,0.1758,0.0039,0.1759,0.0110,0.3241,0.0033,0.1730,0.1764,0.3074,0.1757,0.1732,0.1519,0.3074,0.1513,0.1756,0.0320,0.2159,0.0368,0.1791,0.0165,0.3169,0.0458,0.3158,0.0193,0.1720,0.0594,0.2087,0.0476,0.1736,0.0504,0.2073,0.0640,0.2362,0.0821,0.3267,0.0796,0.1717,0.0822,0.1726,0.1297,0.3077,0.1289,0.3074,0.1865,0.1742,0.1840,0.0061,0.1086,0.1366,0.0368,0.1241,0.1189,0.0168,0.0309,0.0211,0.1882,0.1400,0.1857})))))))))))))
-      .addJoints(new HAnimJoint().setUSE("hanim_humanoid_root").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_sacroiliac").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_vl5").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_skullbase").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_elbow").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_elbow").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_hip").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_hip").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_knee").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_knee").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_metatarsophalangeal_2").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_metatarsophalangeal_2").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_radiocarpal").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_radiocarpal").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_shoulder").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_shoulder").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_talocrural").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_talocrural").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
+      .addJoints(new HAnimJoint().setUSE("hanim_humanoid_root"))
+      .addJoints(new HAnimJoint().setUSE("hanim_sacroiliac"))
+      .addJoints(new HAnimJoint().setUSE("hanim_vl5"))
+      .addJoints(new HAnimJoint().setUSE("hanim_skullbase"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_elbow"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_elbow"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_hip"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_hip"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_knee"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_knee"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_metatarsophalangeal_2"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_metatarsophalangeal_2"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_radiocarpal"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_radiocarpal"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_shoulder"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_shoulder"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_talocrural"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_talocrural"))
       .addSegments(new HAnimSegment().setUSE("hanim_sacrum"))
       .addSegments(new HAnimSegment().setUSE("hanim_pelvis"))
       .addSegments(new HAnimSegment().setUSE("hanim_l5"))
@@ -985,16 +985,17 @@ public class JinLOA1
 	}
 	   
     /** 
-	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+     * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
+        System.out.println("Build this X3D model, showing diagnostics...");
         X3D thisExampleX3dModel = new JinLOA1().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
@@ -1034,11 +1035,13 @@ public class JinLOA1
 	
         if (validate)
         {
-                System.out.print("Java program \"net.x3djsonld.data.JinLOA1\" self-validation test results: ");
+            //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
-                if (validationResults.length() > 10)
+            //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
+                System.out.print("net.x3djsonld.data.JinLOA1 self-validation test results: ");
+                if (!validationResults.equals("success"))
                     System.out.println();
-                System.out.println(validationResults);
+                System.out.println(validationResults.trim());
         }
     }
 }

@@ -27,7 +27,7 @@ var Box = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
-      version : new SFString("4.0"),
+      version : new SFString("3.3"),
       head : new SFNode(
         new head({
           meta : new MFNode([
@@ -45,7 +45,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d")})])})),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d")}),
+
+            new meta({
+              name : new SFString("description"),
+              content : new SFString("a box")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
@@ -56,8 +60,8 @@ var X3D0 =  new X3D({
                   field : new MFNode([
                     new field({
                       type : field.TYPE_MFNODE,
-                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                       name : new SFString("myShape"),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                       children : new MFNode([
                         new Shape({
                           geometry : new SFNode(
@@ -80,8 +84,8 @@ var X3D0 =  new X3D({
                   field : new MFNode([
                     new field({
                       type : field.TYPE_MFNODE,
-                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                       name : new SFString("myShape"),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                       children : new MFNode([
                         new Shape({
                           geometry : new SFNode(
@@ -107,7 +111,6 @@ var X3D0 =  new X3D({
                   name : new SFString("myShape"),
                   children : new MFNode([
                     new Shape({
-                      DEF : new SFString("_1"),
                       geometry : new SFNode(
                         new Box({}))})])})])})])}))});
 console.log(X3D0.toXMLNode());

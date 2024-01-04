@@ -1,7 +1,7 @@
 "use strict";
 
 var DOUBLE_SUFFIX = '';
-var FLOAT_SUFFIX = 'f ';
+var FLOAT_SUFFIX = '';
 
 function NodeSerializer () {
 this.code = [];

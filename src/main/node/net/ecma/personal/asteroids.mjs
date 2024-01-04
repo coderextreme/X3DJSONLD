@@ -1,26 +1,30 @@
 'use strict';
-import fs from 'fs';
-import { X3D } from './x3d.mjs';
-import { SFString } from './x3d.mjs';
-import { SFNode } from './x3d.mjs';
-import { head } from './x3d.mjs';
-import { MFNode } from './x3d.mjs';
-import { meta } from './x3d.mjs';
-import { Scene } from './x3d.mjs';
-import { ProtoDeclare } from './x3d.mjs';
-import { ProtoInterface } from './x3d.mjs';
-import { field } from './x3d.mjs';
-import { Shape } from './x3d.mjs';
-import { Sphere } from './x3d.mjs';
-import { ProtoBody } from './x3d.mjs';
-import { Transform } from './x3d.mjs';
-import { IS } from './x3d.mjs';
-import { connect } from './x3d.mjs';
-import { ProtoInstance } from './x3d.mjs';
+var X3D = require('./x3d.mjs');
+try {
+	var fs = require('fs');
+} catch (e) {
+console.log("Problems loading fs. On browser?",e);
+}
+var SFString = require('./x3d.mjs');
+var SFNode = require('./x3d.mjs');
+var head = require('./x3d.mjs');
+var MFNode = require('./x3d.mjs');
+var meta = require('./x3d.mjs');
+var Scene = require('./x3d.mjs');
+var ProtoDeclare = require('./x3d.mjs');
+var ProtoInterface = require('./x3d.mjs');
+var field = require('./x3d.mjs');
+var Shape = require('./x3d.mjs');
+var Sphere = require('./x3d.mjs');
+var ProtoBody = require('./x3d.mjs');
+var Transform = require('./x3d.mjs');
+var IS = require('./x3d.mjs');
+var connect = require('./x3d.mjs');
+var ProtoInstance = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
-      version : new SFString("4.0"),
+      version : new SFString("3.3"),
       head : new SFNode(
         new head({
           meta : new MFNode([
@@ -38,7 +42,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/asteroids.x3d")}),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/asteroids.x3d")}),
 
             new meta({
               name : new SFString("description"),

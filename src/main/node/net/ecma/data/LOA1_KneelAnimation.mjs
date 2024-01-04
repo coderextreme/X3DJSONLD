@@ -11,6 +11,7 @@ var head = require('./x3d.mjs');
 var MFNode = require('./x3d.mjs');
 var meta = require('./x3d.mjs');
 var Scene = require('./x3d.mjs');
+var WorldInfo = require('./x3d.mjs');
 var ProtoDeclare = require('./x3d.mjs');
 var ProtoInterface = require('./x3d.mjs');
 var field = require('./x3d.mjs');
@@ -25,20 +26,19 @@ var MFVec3f = require('./x3d.mjs');
 var OrientationInterpolator = require('./x3d.mjs');
 var MFRotation = require('./x3d.mjs');
 var ROUTE = require('./x3d.mjs');
-var WorldInfo = require('./x3d.mjs');
 var Anchor = require('./x3d.mjs');
 var MFString = require('./x3d.mjs');
 var Shape = require('./x3d.mjs');
-var Appearance = require('./x3d.mjs');
-var Material = require('./x3d.mjs');
-var SFColor = require('./x3d.mjs');
 var Text = require('./x3d.mjs');
 var FontStyle = require('./x3d.mjs');
 var SFFloat = require('./x3d.mjs');
+var Appearance = require('./x3d.mjs');
+var Material = require('./x3d.mjs');
+var SFColor = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
-      version : new SFString("4.0"),
+      version : new SFString("3.3"),
       head : new SFNode(
         new head({
           meta : new MFNode([
@@ -96,10 +96,17 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")})])})),
+              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
+
+            new meta({
+              name : new SFString("license"),
+              content : new SFString("../license.html")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
+            new WorldInfo({
+              title : new SFString("LOA1_KneelAnimation.x3d")}),
+
             new ProtoDeclare({
               name : new SFString("LOA1_KneelAnimation"),
               ProtoInterface : new SFNode(
@@ -107,136 +114,138 @@ var X3D0 =  new X3D({
                   field : new MFNode([
                     new field({
                       type : field.TYPE_SFTIME,
-                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                       name : new SFString("cycleInterval"),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                       value : new SFString("2")}),
 
                     new field({
                       type : field.TYPE_SFBOOL,
-                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                       name : new SFString("enabled"),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                       value : new SFString("true")}),
 
                     new field({
                       type : field.TYPE_SFBOOL,
+                      name : new SFString("loop"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      name : new SFString("loop")}),
+                      value : new SFString("false")}),
 
                     new field({
                       type : field.TYPE_SFTIME,
+                      name : new SFString("startTime"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      name : new SFString("startTime")}),
+                      value : new SFString("0")}),
 
                     new field({
                       type : field.TYPE_SFTIME,
-                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                       name : new SFString("stopTime"),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                       value : new SFString("-1")}),
 
                     new field({
                       type : field.TYPE_SFFLOAT,
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                      name : new SFString("fraction_changed")}),
+                      name : new SFString("fraction_changed"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
 
                     new field({
                       type : field.TYPE_SFBOOL,
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                      name : new SFString("isActive")}),
+                      name : new SFString("isActive"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
 
                     new field({
                       type : field.TYPE_SFVEC3F,
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                      name : new SFString("HumanoidRoot_translation_changed")}),
+                      name : new SFString("HumanoidRoot_translation_changed"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                      name : new SFString("HumanoidRoot_rotation_changed")}),
+                      name : new SFString("HumanoidRoot_rotation_changed"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                      name : new SFString("lower_body_rotation_changed")}),
+                      name : new SFString("lower_body_rotation_changed"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                      name : new SFString("l_hip_rotation_changed")}),
+                      name : new SFString("l_hip_rotation_changed"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                      name : new SFString("l_knee_rotation_changed")}),
+                      name : new SFString("l_knee_rotation_changed"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                      name : new SFString("l_ankle_rotation_changed")}),
+                      name : new SFString("l_ankle_rotation_changed"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                      name : new SFString("l_midtarsal_rotation_changed")}),
+                      name : new SFString("l_midtarsal_rotation_changed"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                      name : new SFString("r_hip_rotation_changed")}),
+                      name : new SFString("r_hip_rotation_changed"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                      name : new SFString("r_knee_rotation_changed")}),
+                      name : new SFString("r_knee_rotation_changed"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                      name : new SFString("r_ankle_rotation_changed")}),
+                      name : new SFString("r_ankle_rotation_changed"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                      name : new SFString("r_midtarsal_rotation_changed")}),
+                      name : new SFString("r_midtarsal_rotation_changed"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                      name : new SFString("vl5_rotation_changed")}),
+                      name : new SFString("vl5_rotation_changed"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                      name : new SFString("skullbase_rotation_changed")}),
+                      name : new SFString("skullbase_rotation_changed"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                      name : new SFString("l_shoulder_rotation_changed")}),
+                      name : new SFString("l_shoulder_rotation_changed"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                      name : new SFString("l_elbow_rotation_changed")}),
+                      name : new SFString("l_elbow_rotation_changed"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                      name : new SFString("l_wrist_rotation_changed")}),
+                      name : new SFString("l_wrist_rotation_changed"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                      name : new SFString("r_shoulder_rotation_changed")}),
+                      name : new SFString("r_shoulder_rotation_changed"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                      name : new SFString("r_elbow_rotation_changed")}),
+                      name : new SFString("r_elbow_rotation_changed"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                      name : new SFString("r_wrist_rotation_changed")})])})),
+                      name : new SFString("r_wrist_rotation_changed"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
                   children : new MFNode([
@@ -248,12 +257,12 @@ var X3D0 =  new X3D({
                             new IS({
                               connect : new MFNode([
                                 new connect({
-                                  nodeField : new SFString("enabled"),
-                                  protoField : new SFString("enabled")}),
-
-                                new connect({
                                   nodeField : new SFString("cycleInterval"),
                                   protoField : new SFString("cycleInterval")}),
+
+                                new connect({
+                                  nodeField : new SFString("enabled"),
+                                  protoField : new SFString("enabled")}),
 
                                 new connect({
                                   nodeField : new SFString("loop"),
@@ -268,12 +277,12 @@ var X3D0 =  new X3D({
                                   protoField : new SFString("stopTime")}),
 
                                 new connect({
-                                  nodeField : new SFString("isActive"),
-                                  protoField : new SFString("isActive")}),
+                                  nodeField : new SFString("fraction_changed"),
+                                  protoField : new SFString("fraction_changed")}),
 
                                 new connect({
-                                  nodeField : new SFString("fraction_changed"),
-                                  protoField : new SFString("fraction_changed")})])}))}),
+                                  nodeField : new SFString("isActive"),
+                                  protoField : new SFString("isActive")})])}))}),
 
                         new PositionInterpolator({
                           DEF : new SFString("HUMANOIDROOT_POSITION_ANIMATOR"),
@@ -296,6 +305,7 @@ var X3D0 =  new X3D({
                                 new connect({
                                   nodeField : new SFString("value_changed"),
                                   protoField : new SFString("HumanoidRoot_rotation_changed")})])}))}),
+                      /*no SACROILIAC_ANIMATOR*/
 
                         new OrientationInterpolator({
                           DEF : new SFString("L_HIP_ANIMATOR"),
@@ -329,6 +339,7 @@ var X3D0 =  new X3D({
                                 new connect({
                                   nodeField : new SFString("value_changed"),
                                   protoField : new SFString("l_ankle_rotation_changed")})])}))}),
+                      /*no L_MIDTARSAL_ANIMATOR*/
 
                         new OrientationInterpolator({
                           DEF : new SFString("R_HIP_ANIMATOR"),
@@ -362,6 +373,7 @@ var X3D0 =  new X3D({
                                 new connect({
                                   nodeField : new SFString("value_changed"),
                                   protoField : new SFString("r_ankle_rotation_changed")})])}))}),
+                      /*no R_MIDTARSAL_ANIMATOR*/
 
                         new OrientationInterpolator({
                           DEF : new SFString("VL5_ANIMATOR"),
@@ -373,6 +385,7 @@ var X3D0 =  new X3D({
                                 new connect({
                                   nodeField : new SFString("value_changed"),
                                   protoField : new SFString("vl5_rotation_changed")})])}))}),
+                      /*no SKULLBASE_ANIMATOR*/
 
                         new OrientationInterpolator({
                           DEF : new SFString("L_SHOULDER_ANIMATOR"),
@@ -395,6 +408,7 @@ var X3D0 =  new X3D({
                                 new connect({
                                   nodeField : new SFString("value_changed"),
                                   protoField : new SFString("l_elbow_rotation_changed")})])}))}),
+                      /*no L_WRIST_ANIMATOR*/
 
                         new OrientationInterpolator({
                           DEF : new SFString("R_SHOULDER_ANIMATOR"),
@@ -416,105 +430,103 @@ var X3D0 =  new X3D({
                               connect : new MFNode([
                                 new connect({
                                   nodeField : new SFString("value_changed"),
-                                  protoField : new SFString("r_elbow_rotation_changed")})])}))})])}),
+                                  protoField : new SFString("r_elbow_rotation_changed")})])}))}),
+                      /*no R_WRIST_ANIMATOR*/])}),
 
                     new ROUTE({
-                      fromNode : new SFString("TIMER"),
                       fromField : new SFString("fraction_changed"),
-                      toNode : new SFString("HUMANOIDROOT_POSITION_ANIMATOR"),
-                      toField : new SFString("set_fraction")}),
+                      fromNode : new SFString("TIMER"),
+                      toField : new SFString("set_fraction"),
+                      toNode : new SFString("HUMANOIDROOT_POSITION_ANIMATOR")}),
 
                     new ROUTE({
-                      fromNode : new SFString("TIMER"),
                       fromField : new SFString("fraction_changed"),
-                      toNode : new SFString("HUMANOIDROOT_ANIMATOR"),
-                      toField : new SFString("set_fraction")}),
+                      fromNode : new SFString("TIMER"),
+                      toField : new SFString("set_fraction"),
+                      toNode : new SFString("HUMANOIDROOT_ANIMATOR")}),
 
                     new ROUTE({
-                      fromNode : new SFString("TIMER"),
                       fromField : new SFString("fraction_changed"),
-                      toNode : new SFString("L_HIP_ANIMATOR"),
-                      toField : new SFString("set_fraction")}),
+                      fromNode : new SFString("TIMER"),
+                      toField : new SFString("set_fraction"),
+                      toNode : new SFString("L_HIP_ANIMATOR")}),
 
                     new ROUTE({
-                      fromNode : new SFString("TIMER"),
                       fromField : new SFString("fraction_changed"),
-                      toNode : new SFString("L_KNEE_ANIMATOR"),
-                      toField : new SFString("set_fraction")}),
+                      fromNode : new SFString("TIMER"),
+                      toField : new SFString("set_fraction"),
+                      toNode : new SFString("L_KNEE_ANIMATOR")}),
 
                     new ROUTE({
-                      fromNode : new SFString("TIMER"),
                       fromField : new SFString("fraction_changed"),
-                      toNode : new SFString("L_ANKLE_ANIMATOR"),
-                      toField : new SFString("set_fraction")}),
+                      fromNode : new SFString("TIMER"),
+                      toField : new SFString("set_fraction"),
+                      toNode : new SFString("L_ANKLE_ANIMATOR")}),
 
                     new ROUTE({
-                      fromNode : new SFString("TIMER"),
                       fromField : new SFString("fraction_changed"),
-                      toNode : new SFString("R_HIP_ANIMATOR"),
-                      toField : new SFString("set_fraction")}),
+                      fromNode : new SFString("TIMER"),
+                      toField : new SFString("set_fraction"),
+                      toNode : new SFString("R_HIP_ANIMATOR")}),
 
                     new ROUTE({
-                      fromNode : new SFString("TIMER"),
                       fromField : new SFString("fraction_changed"),
-                      toNode : new SFString("R_KNEE_ANIMATOR"),
-                      toField : new SFString("set_fraction")}),
+                      fromNode : new SFString("TIMER"),
+                      toField : new SFString("set_fraction"),
+                      toNode : new SFString("R_KNEE_ANIMATOR")}),
 
                     new ROUTE({
-                      fromNode : new SFString("TIMER"),
                       fromField : new SFString("fraction_changed"),
-                      toNode : new SFString("R_ANKLE_ANIMATOR"),
-                      toField : new SFString("set_fraction")}),
+                      fromNode : new SFString("TIMER"),
+                      toField : new SFString("set_fraction"),
+                      toNode : new SFString("R_ANKLE_ANIMATOR")}),
 
                     new ROUTE({
-                      fromNode : new SFString("TIMER"),
                       fromField : new SFString("fraction_changed"),
-                      toNode : new SFString("VL5_ANIMATOR"),
-                      toField : new SFString("set_fraction")}),
+                      fromNode : new SFString("TIMER"),
+                      toField : new SFString("set_fraction"),
+                      toNode : new SFString("VL5_ANIMATOR")}),
 
                     new ROUTE({
-                      fromNode : new SFString("TIMER"),
                       fromField : new SFString("fraction_changed"),
-                      toNode : new SFString("L_SHOULDER_ANIMATOR"),
-                      toField : new SFString("set_fraction")}),
+                      fromNode : new SFString("TIMER"),
+                      toField : new SFString("set_fraction"),
+                      toNode : new SFString("L_SHOULDER_ANIMATOR")}),
 
                     new ROUTE({
-                      fromNode : new SFString("TIMER"),
                       fromField : new SFString("fraction_changed"),
-                      toNode : new SFString("L_ELBOW_ANIMATOR"),
-                      toField : new SFString("set_fraction")}),
+                      fromNode : new SFString("TIMER"),
+                      toField : new SFString("set_fraction"),
+                      toNode : new SFString("L_ELBOW_ANIMATOR")}),
 
                     new ROUTE({
-                      fromNode : new SFString("TIMER"),
                       fromField : new SFString("fraction_changed"),
-                      toNode : new SFString("R_SHOULDER_ANIMATOR"),
-                      toField : new SFString("set_fraction")}),
+                      fromNode : new SFString("TIMER"),
+                      toField : new SFString("set_fraction"),
+                      toNode : new SFString("R_SHOULDER_ANIMATOR")}),
 
                     new ROUTE({
-                      fromNode : new SFString("TIMER"),
                       fromField : new SFString("fraction_changed"),
-                      toNode : new SFString("R_ELBOW_ANIMATOR"),
-                      toField : new SFString("set_fraction")})])}))}),
-
-            new WorldInfo({
-              title : new SFString("LOA1_KneelAnimation.x3d")}),
+                      fromNode : new SFString("TIMER"),
+                      toField : new SFString("set_fraction"),
+                      toNode : new SFString("R_ELBOW_ANIMATOR")})])}))}),
 
             new Anchor({
               description : new SFString("InterchangableActorsViaDynamicRouting"),
-              url : new MFString(["InterchangableActorsViaDynamicRouting.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.x3d","InterchangableActorsViaDynamicRouting.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.wrl"]),
               parameter : new MFString(["target=_blank"]),
+              url : new MFString(["InterchangableActorsViaDynamicRouting.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.x3d","InterchangableActorsViaDynamicRouting.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.wrl"]),
               children : new MFNode([
                 new Shape({
-                  appearance : new SFNode(
-                    new Appearance({
-                      material : new SFNode(
-                        new Material({
-                          diffuseColor : new SFColor([1,1,0.2])}))})),
                   geometry : new SFNode(
                     new Text({
                       string : new MFString(["LOA1_KneelAnimation.x3d","defines a prototype","for animating a humanoid.","","Click this text to see","InterchangableActorsViaDynamicRouting example."]),
                       fontStyle : new SFNode(
                         new FontStyle({
-                          size : new SFFloat(0.8),
-                          justify : new MFString(["MIDDLE","MIDDLE"])}))}))})])})])}))});
+                          justify : new MFString(["MIDDLE","MIDDLE"]),
+                          size : new SFFloat(0.8)}))})),
+                  appearance : new SFNode(
+                    new Appearance({
+                      material : new SFNode(
+                        new Material({
+                          diffuseColor : new SFColor([1,1,0.2])}))}))})])})])}))});
 console.log(X3D0.toXMLNode());

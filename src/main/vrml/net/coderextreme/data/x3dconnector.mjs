@@ -5,7 +5,7 @@ X3D0.version = "3.3";
 let head1 = browser.currentScene.createNode("head");
 let meta2 = browser.currentScene.createNode("meta");
 meta2.name = "title";
-meta2.content = "x3dconnector";
+meta2.content = "x3dconnector.x3d";
 head1.meta = new MFNode();
 
 head1.meta[0] = meta2;

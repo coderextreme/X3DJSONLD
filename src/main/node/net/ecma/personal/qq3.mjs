@@ -1,32 +1,36 @@
 'use strict';
-import fs from 'fs';
-import { X3D } from './x3d.mjs';
-import { SFString } from './x3d.mjs';
-import { SFNode } from './x3d.mjs';
-import { head } from './x3d.mjs';
-import { MFNode } from './x3d.mjs';
-import { meta } from './x3d.mjs';
-import { Scene } from './x3d.mjs';
-import { ProtoDeclare } from './x3d.mjs';
-import { ProtoBody } from './x3d.mjs';
-import { Group } from './x3d.mjs';
-import { Transform } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
-import { Shape } from './x3d.mjs';
-import { Appearance } from './x3d.mjs';
-import { Material } from './x3d.mjs';
-import { SFColor } from './x3d.mjs';
-import { Extrusion } from './x3d.mjs';
-import { MFVec3f } from './x3d.mjs';
-import { SFFloat } from './x3d.mjs';
-import { MFVec2f } from './x3d.mjs';
-import { Viewpoint } from './x3d.mjs';
-import { SFRotation } from './x3d.mjs';
-import { ProtoInstance } from './x3d.mjs';
+var X3D = require('./x3d.mjs');
+try {
+	var fs = require('fs');
+} catch (e) {
+console.log("Problems loading fs. On browser?",e);
+}
+var SFString = require('./x3d.mjs');
+var SFNode = require('./x3d.mjs');
+var head = require('./x3d.mjs');
+var MFNode = require('./x3d.mjs');
+var meta = require('./x3d.mjs');
+var Scene = require('./x3d.mjs');
+var ProtoDeclare = require('./x3d.mjs');
+var ProtoBody = require('./x3d.mjs');
+var Group = require('./x3d.mjs');
+var Transform = require('./x3d.mjs');
+var SFVec3f = require('./x3d.mjs');
+var Shape = require('./x3d.mjs');
+var Appearance = require('./x3d.mjs');
+var Material = require('./x3d.mjs');
+var SFColor = require('./x3d.mjs');
+var Extrusion = require('./x3d.mjs');
+var MFVec3f = require('./x3d.mjs');
+var SFFloat = require('./x3d.mjs');
+var MFVec2f = require('./x3d.mjs');
+var Viewpoint = require('./x3d.mjs');
+var SFRotation = require('./x3d.mjs');
+var ProtoInstance = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
-      version : new SFString("4.0"),
+      version : new SFString("3.3"),
       head : new SFNode(
         new head({
           meta : new MFNode([
@@ -74,7 +78,7 @@ var X3D0 =  new X3D({
                       children : new MFNode([
                         new Transform({
                           scale : new SFVec3f([0.5,0.5,0.5]),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               DEF : new SFString("ShapeLeftDown"),
                               appearance : new SFNode(
@@ -86,12 +90,12 @@ var X3D0 =  new X3D({
                                 new Extrusion({
                                   spine : new MFVec3f([-2.5,0,0,-1.5,0,0]),
                                   creaseAngle : new SFFloat(0.785),
-                                  crossSection : new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0])}))})])}),
+                                  crossSection : new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0])}))}))}),
                       /*right*/
 
                         new Transform({
                           scale : new SFVec3f([0.5,0.5,0.5]),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               DEF : new SFString("ShapeUpRight"),
                               appearance : new SFNode(
@@ -103,21 +107,21 @@ var X3D0 =  new X3D({
                                 new Extrusion({
                                   spine : new MFVec3f([1.5,0,0,2.5,0,0]),
                                   creaseAngle : new SFFloat(0.785),
-                                  crossSection : new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0])}))})])}),
+                                  crossSection : new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0])}))}))}),
                       /*up*/
 
                         new Transform({
                           scale : new SFVec3f([0.5,0.5,0.5]),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
-                              USE : new SFString("ShapeUpRight")})])}),
+                              USE : new SFString("ShapeUpRight")}))}),
                       /*down*/
 
                         new Transform({
                           scale : new SFVec3f([0.5,0.5,0.5]),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
-                              USE : new SFString("ShapeLeftDown")})])})])})])}))}),
+                              USE : new SFString("ShapeLeftDown")}))})])})])}))}),
 
             new Viewpoint({
               description : new SFString("Process pipes"),

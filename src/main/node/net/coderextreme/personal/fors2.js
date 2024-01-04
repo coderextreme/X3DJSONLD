@@ -1,9 +1,10 @@
 var java = require('java');
+var util = require('util');
 java.asyncOptions = {
   asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
   syncSuffix: "",              // Sync methods use the base name(!!)
   promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
-  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  promisify: util.promisify, // Needs Node.js version 8 or greater, see comment below
   ifReadOnlySuffix: "_alt"
 };
 var autoclass = require('../../../X3Dautoclass');
@@ -15,13 +16,13 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 var ProtoInstance0 = null;
 var ProtoInstance1 = null;
 var ProtoInstance2 = null;
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
       .setHead((new autoclass.head())
         .addMeta((new autoclass.meta()).setName("creator").setContent("John W Carlson"))
         .addMeta((new autoclass.meta()).setName("created").setContent("December 13 2015"))
         .addMeta((new autoclass.meta()).setName("modified").setContent("April 18 2017"))
         .addMeta((new autoclass.meta()).setName("title").setContent("fors2.x3d"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/fors2.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/fors2.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("beginnings of a force directed graph in 3D"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
       .setScene((new autoclass.Scene())
@@ -112,5 +113,5 @@ ProtoInstance2
             .addFieldValue((new autoclass.fieldValue()).setName("positionA").setValue("0 0 0"));
 ProtoInstance2
             .addFieldValue((new autoclass.fieldValue()).setName("positionB").setValue("50 50 50"));
-    X3D0.toFileX3D("../personal/fors2.new.x3d");
+    X3D0.toFileX3D("../personal/fors2.new.node.x3d");
     process.exit(0);

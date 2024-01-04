@@ -1,7 +1,7 @@
 let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Interchange";
-X3D0.version = "4.0";
+X3D0.version = "3.3";
 let head1 = browser.currentScene.createNode("head");
 let meta2 = browser.currentScene.createNode("meta");
 meta2.name = "title";
@@ -40,220 +40,225 @@ meta8.name = "generator";
 meta8.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
 head1.meta[6] = meta8;
 
+let meta9 = browser.currentScene.createNode("meta");
+meta9.name = "license";
+meta9.content = "../license.html";
+head1.meta[7] = meta9;
+
 head = head1;
 
-let WorldInfo10 = browser.currentScene.createNode("WorldInfo");
-WorldInfo10.title = "ScubaTank.x3d";
+let WorldInfo11 = browser.currentScene.createNode("WorldInfo");
+WorldInfo11.title = "ScubaTank.x3d";
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = WorldInfo10;
+browser.currentScene.children[0] = WorldInfo11;
 
-let Transform11 = browser.currentScene.createNode("Transform");
-Transform11.DEF = "ScubaTank";
 let Transform12 = browser.currentScene.createNode("Transform");
-let Shape13 = browser.currentScene.createNode("Shape");
-let Appearance14 = browser.currentScene.createNode("Appearance");
-let Material15 = browser.currentScene.createNode("Material");
-Material15.DEF = "tank";
-Material15.ambientIntensity = 0.3;
-Material15.diffuseColor = new SFColor(new float[0.3,0.3,0.5]);
-Material15.specularColor = new SFColor(new float[0.7,0.7,0.8]);
-Material15.shininess = 0.1;
-Appearance14.material = Material15;
+Transform12.DEF = "ScubaTank";
+let Transform13 = browser.currentScene.createNode("Transform");
+let Shape14 = browser.currentScene.createNode("Shape");
+let Appearance15 = browser.currentScene.createNode("Appearance");
+let Material16 = browser.currentScene.createNode("Material");
+Material16.DEF = "tank";
+Material16.ambientIntensity = 0.3;
+Material16.diffuseColor = new SFColor(new float[0.3,0.3,0.5]);
+Material16.shininess = 0.1;
+Material16.specularColor = new SFColor(new float[0.7,0.7,0.8]);
+Appearance15.material = Material16;
 
-Shape13.appearance = Appearance14;
+Shape14.appearance = Appearance15;
 
-let Cylinder16 = browser.currentScene.createNode("Cylinder");
-Cylinder16.height = 0.7;
-Cylinder16.radius = 0.1;
-Shape13.geometry = Cylinder16;
+let Cylinder17 = browser.currentScene.createNode("Cylinder");
+Cylinder17.height = 0.7;
+Cylinder17.radius = 0.1;
+Shape14.geometry = Cylinder17;
 
-Transform12.child = new undefined();
+Transform13.child = new undefined();
 
-Transform12.child[0] = Shape13;
+Transform13.child[0] = Shape14;
 
-Transform11.children = new MFNode();
+Transform12.children = new MFNode();
 
-Transform11.children[0] = Transform12;
+Transform12.children[0] = Transform13;
 
-let Transform17 = browser.currentScene.createNode("Transform");
-Transform17.translation = new SFVec3f(new float[0,0.35,0]);
-let Shape18 = browser.currentScene.createNode("Shape");
-let Appearance19 = browser.currentScene.createNode("Appearance");
-let Material20 = browser.currentScene.createNode("Material");
-Material20.USE = "tank";
-Appearance19.material = Material20;
+let Transform18 = browser.currentScene.createNode("Transform");
+Transform18.translation = new SFVec3f(new float[0,0.35,0]);
+let Shape19 = browser.currentScene.createNode("Shape");
+let Appearance20 = browser.currentScene.createNode("Appearance");
+let Material21 = browser.currentScene.createNode("Material");
+Material21.USE = "tank";
+Appearance20.material = Material21;
 
-Shape18.appearance = Appearance19;
+Shape19.appearance = Appearance20;
 
-let Sphere21 = browser.currentScene.createNode("Sphere");
-Sphere21.radius = 0.098;
-Shape18.geometry = Sphere21;
+let Sphere22 = browser.currentScene.createNode("Sphere");
+Sphere22.radius = 0.098;
+Shape19.geometry = Sphere22;
 
-Transform17.child = new undefined();
+Transform18.child = new undefined();
 
-Transform17.child[0] = Shape18;
+Transform18.child[0] = Shape19;
 
-Transform11.children[1] = Transform17;
+Transform12.children[1] = Transform18;
 
-let Transform22 = browser.currentScene.createNode("Transform");
-Transform22.translation = new SFVec3f(new float[0,-0.35,0]);
-let Shape23 = browser.currentScene.createNode("Shape");
-Shape23.DEF = "tankBottom";
-let Appearance24 = browser.currentScene.createNode("Appearance");
-let Material25 = browser.currentScene.createNode("Material");
-Material25.DEF = "black";
-Material25.ambientIntensity = 0.3;
-Material25.diffuseColor = new SFColor(new float[0,0,0]);
-Appearance24.material = Material25;
+let Transform23 = browser.currentScene.createNode("Transform");
+Transform23.translation = new SFVec3f(new float[0,-0.35,0]);
+let Shape24 = browser.currentScene.createNode("Shape");
+Shape24.DEF = "tankBottom";
+let Appearance25 = browser.currentScene.createNode("Appearance");
+let Material26 = browser.currentScene.createNode("Material");
+Material26.DEF = "black";
+Material26.ambientIntensity = 0.3;
+Material26.diffuseColor = new SFColor(new float[0,0,0]);
+Appearance25.material = Material26;
 
-Shape23.appearance = Appearance24;
+Shape24.appearance = Appearance25;
 
-let Cylinder26 = browser.currentScene.createNode("Cylinder");
-Cylinder26.height = 0.06;
-Cylinder26.radius = 0.115;
-Shape23.geometry = Cylinder26;
+let Cylinder27 = browser.currentScene.createNode("Cylinder");
+Cylinder27.height = 0.06;
+Cylinder27.radius = 0.115;
+Shape24.geometry = Cylinder27;
 
-Transform22.child = new undefined();
+Transform23.child = new undefined();
 
-Transform22.child[0] = Shape23;
+Transform23.child[0] = Shape24;
 
-Transform11.children[2] = Transform22;
+Transform12.children[2] = Transform23;
 
-let Group27 = browser.currentScene.createNode("Group");
-Group27.DEF = "tankNozzle";
-let Transform28 = browser.currentScene.createNode("Transform");
+let Group28 = browser.currentScene.createNode("Group");
+Group28.DEF = "tankNozzle";
 let Transform29 = browser.currentScene.createNode("Transform");
-Transform29.translation = new SFVec3f(new float[0,0.45,0]);
-let Shape30 = browser.currentScene.createNode("Shape");
-Shape30.DEF = "pressure";
-let Appearance31 = browser.currentScene.createNode("Appearance");
-let Material32 = browser.currentScene.createNode("Material");
-Material32.DEF = "pressureColor";
-Material32.ambientIntensity = 0.4;
-Material32.diffuseColor = new SFColor(new float[0.91,0.91,0.91]);
-Material32.specularColor = new SFColor(new float[0.91,0.9,0.91]);
-Material32.shininess = 0.16;
-Appearance31.material = Material32;
+let Transform30 = browser.currentScene.createNode("Transform");
+Transform30.translation = new SFVec3f(new float[0,0.45,0]);
+let Shape31 = browser.currentScene.createNode("Shape");
+Shape31.DEF = "pressure";
+let Appearance32 = browser.currentScene.createNode("Appearance");
+let Material33 = browser.currentScene.createNode("Material");
+Material33.DEF = "pressureColor";
+Material33.ambientIntensity = 0.4;
+Material33.diffuseColor = new SFColor(new float[0.91,0.91,0.91]);
+Material33.shininess = 0.16;
+Material33.specularColor = new SFColor(new float[0.91,0.9,0.91]);
+Appearance32.material = Material33;
 
-Shape30.appearance = Appearance31;
+Shape31.appearance = Appearance32;
 
-let Cylinder33 = browser.currentScene.createNode("Cylinder");
-Cylinder33.height = 0.1;
-Cylinder33.radius = 0.015;
-Shape30.geometry = Cylinder33;
+let Cylinder34 = browser.currentScene.createNode("Cylinder");
+Cylinder34.height = 0.1;
+Cylinder34.radius = 0.015;
+Shape31.geometry = Cylinder34;
 
-Transform29.child = new undefined();
+Transform30.child = new undefined();
 
-Transform29.child[0] = Shape30;
+Transform30.child[0] = Shape31;
 
-Transform28.children = new MFNode();
+Transform29.children = new MFNode();
 
-Transform28.children[0] = Transform29;
+Transform29.children[0] = Transform30;
 
-let Transform34 = browser.currentScene.createNode("Transform");
-Transform34.translation = new SFVec3f(new float[0,0.5,0]);
-let Shape35 = browser.currentScene.createNode("Shape");
-Shape35.DEF = "pressureTop";
-let Appearance36 = browser.currentScene.createNode("Appearance");
-let Material37 = browser.currentScene.createNode("Material");
-Material37.USE = "black";
-Appearance36.material = Material37;
+let Transform35 = browser.currentScene.createNode("Transform");
+Transform35.translation = new SFVec3f(new float[0,0.5,0]);
+let Shape36 = browser.currentScene.createNode("Shape");
+Shape36.DEF = "pressureTop";
+let Appearance37 = browser.currentScene.createNode("Appearance");
+let Material38 = browser.currentScene.createNode("Material");
+Material38.USE = "black";
+Appearance37.material = Material38;
 
-Shape35.appearance = Appearance36;
+Shape36.appearance = Appearance37;
 
-let Cylinder38 = browser.currentScene.createNode("Cylinder");
-Cylinder38.height = 0.02;
-Cylinder38.radius = 0.025;
-Shape35.geometry = Cylinder38;
+let Cylinder39 = browser.currentScene.createNode("Cylinder");
+Cylinder39.height = 0.02;
+Cylinder39.radius = 0.025;
+Shape36.geometry = Cylinder39;
 
-Transform34.child = new undefined();
+Transform35.child = new undefined();
 
-Transform34.child[0] = Shape35;
+Transform35.child[0] = Shape36;
 
-Transform28.children[1] = Transform34;
+Transform29.children[1] = Transform35;
 
-let Transform39 = browser.currentScene.createNode("Transform");
-Transform39.translation = new SFVec3f(new float[-0.028,0.462,0]);
-Transform39.rotation = new SFRotation(new float[0,0,1,1.57]);
 let Transform40 = browser.currentScene.createNode("Transform");
-let Shape41 = browser.currentScene.createNode("Shape");
-Shape41.DEF = "connectorToRegulator";
-let Appearance42 = browser.currentScene.createNode("Appearance");
-let Material43 = browser.currentScene.createNode("Material");
-Material43.USE = "pressureColor";
-Appearance42.material = Material43;
+Transform40.rotation = new SFRotation(new float[0,0,1,1.57]);
+Transform40.translation = new SFVec3f(new float[-0.028,0.462,0]);
+let Transform41 = browser.currentScene.createNode("Transform");
+let Shape42 = browser.currentScene.createNode("Shape");
+Shape42.DEF = "connectorToRegulator";
+let Appearance43 = browser.currentScene.createNode("Appearance");
+let Material44 = browser.currentScene.createNode("Material");
+Material44.USE = "pressureColor";
+Appearance43.material = Material44;
 
-Shape41.appearance = Appearance42;
+Shape42.appearance = Appearance43;
 
-let Cylinder44 = browser.currentScene.createNode("Cylinder");
-Cylinder44.height = 0.03;
-Cylinder44.radius = 0.01;
-Shape41.geometry = Cylinder44;
+let Cylinder45 = browser.currentScene.createNode("Cylinder");
+Cylinder45.height = 0.03;
+Cylinder45.radius = 0.01;
+Shape42.geometry = Cylinder45;
 
-Transform40.child = new undefined();
+Transform41.child = new undefined();
 
-Transform40.child[0] = Shape41;
+Transform41.child[0] = Shape42;
 
-Transform39.children = new MFNode();
+Transform40.children = new MFNode();
 
-Transform39.children[0] = Transform40;
+Transform40.children[0] = Transform41;
 
-let Transform45 = browser.currentScene.createNode("Transform");
-Transform45.translation = new SFVec3f(new float[0,0.02,0]);
-let Shape46 = browser.currentScene.createNode("Shape");
-Shape46.DEF = "connectorToRegulatorTop";
-let Appearance47 = browser.currentScene.createNode("Appearance");
-let Material48 = browser.currentScene.createNode("Material");
-Material48.USE = "black";
-Appearance47.material = Material48;
+let Transform46 = browser.currentScene.createNode("Transform");
+Transform46.translation = new SFVec3f(new float[0,0.02,0]);
+let Shape47 = browser.currentScene.createNode("Shape");
+Shape47.DEF = "connectorToRegulatorTop";
+let Appearance48 = browser.currentScene.createNode("Appearance");
+let Material49 = browser.currentScene.createNode("Material");
+Material49.USE = "black";
+Appearance48.material = Material49;
 
-Shape46.appearance = Appearance47;
+Shape47.appearance = Appearance48;
 
-let Cylinder49 = browser.currentScene.createNode("Cylinder");
-Cylinder49.height = 0.02;
-Cylinder49.radius = 0.02;
-Shape46.geometry = Cylinder49;
+let Cylinder50 = browser.currentScene.createNode("Cylinder");
+Cylinder50.height = 0.02;
+Cylinder50.radius = 0.02;
+Shape47.geometry = Cylinder50;
 
-Transform45.child = new undefined();
+Transform46.child = new undefined();
 
-Transform45.child[0] = Shape46;
+Transform46.child[0] = Shape47;
 
-Transform39.children[1] = Transform45;
+Transform40.children[1] = Transform46;
 
-Transform28.children[2] = Transform39;
+Transform29.children[2] = Transform40;
 
-Group27.children = new MFNode();
+Group28.children = new MFNode();
 
-Group27.children[0] = Transform28;
+Group28.children[0] = Transform29;
 
-Transform11.children[3] = Group27;
+Transform12.children[3] = Group28;
 
-let Transform50 = browser.currentScene.createNode("Transform");
-Transform50.translation = new SFVec3f(new float[0,0.2,0]);
-let Shape51 = browser.currentScene.createNode("Shape");
-Shape51.DEF = "tankHoldBelt";
-let Appearance52 = browser.currentScene.createNode("Appearance");
-let Material53 = browser.currentScene.createNode("Material");
-Material53.USE = "black";
-Appearance52.material = Material53;
+let Transform51 = browser.currentScene.createNode("Transform");
+Transform51.translation = new SFVec3f(new float[0,0.2,0]);
+let Shape52 = browser.currentScene.createNode("Shape");
+Shape52.DEF = "tankHoldBelt";
+let Appearance53 = browser.currentScene.createNode("Appearance");
+let Material54 = browser.currentScene.createNode("Material");
+Material54.USE = "black";
+Appearance53.material = Material54;
 
-Shape51.appearance = Appearance52;
+Shape52.appearance = Appearance53;
 
-let Cylinder54 = browser.currentScene.createNode("Cylinder");
-Cylinder54.height = 0.1;
-Cylinder54.radius = 0.115;
-Shape51.geometry = Cylinder54;
+let Cylinder55 = browser.currentScene.createNode("Cylinder");
+Cylinder55.height = 0.1;
+Cylinder55.radius = 0.115;
+Shape52.geometry = Cylinder55;
 
-Transform50.child = new undefined();
+Transform51.child = new undefined();
 
-Transform50.child[0] = Shape51;
+Transform51.child[0] = Shape52;
 
-Transform11.children[4] = Transform50;
+Transform12.children[4] = Transform51;
 
-browser.currentScene.children[1] = Transform11;
+browser.currentScene.children[1] = Transform12;
 
-let Background55 = browser.currentScene.createNode("Background");
-Background55.skyColor = new MFColor(new float[0.6,0.6,0.6]);
-browser.currentScene.children[2] = Background55;
+let Background56 = browser.currentScene.createNode("Background");
+Background56.skyColor = new MFColor(new float[0.6,0.6,0.6]);
+browser.currentScene.children[2] = Background56;
 

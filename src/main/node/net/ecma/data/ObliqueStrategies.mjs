@@ -62,7 +62,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("10 November 2019")}),
+              content : new SFString("Sat, 30 Dec 2023 07:55:52 GMT")}),
 
             new meta({
               name : new SFString("reference"),
@@ -158,11 +158,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategies.x3d")}),
-
-            new meta({
-              name : new SFString("generator"),
-              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")})])})),
+              content : new SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategies.x3d")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
@@ -280,7 +276,6 @@ var X3D0 =  new X3D({
                   geometry : new SFNode(
                     new Text({
                       DEF : new SFString("CardText"),
-                      string : new MFString(["Remove specifics and convert to ambiguities"]),
                       fontStyle : new SFNode(
                         new FontStyle({
                           family : new MFString(["SANS"]),
@@ -297,7 +292,7 @@ var X3D0 =  new X3D({
                     new AudioClip({
                       DEF : new SFString("TextToSpeechAudioClip"),
                       description : new SFString("sends strategy text google translate"),
-                      url : new MFString(["http://translate.google.com/translate_tts?tl=en&q=Remove%20specifics%20and%20convert%20to%20ambiguities"])}))})])}),
+                      url : new MFString(["http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav"])}))})])}),
 
             new Transform({
               translation : new SFVec3f([-3.2,2.5,0]),
@@ -395,7 +390,7 @@ var X3D0 =  new X3D({
                 new Anchor({
                   DEF : new SFString("TextToSpeechAnchor"),
                   description : new SFString("text to speech in browser"),
-                  url : new MFString(["http://translate.google.com/translate_tts?tl=en&q=Remove%20specifics%20and%20convert%20to%20ambiguities"]),
+                  url : new MFString(["http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change"]),
                   parameter : new MFString(["target=_blank"]),
                   children : new MFNode([
                     new Shape({
