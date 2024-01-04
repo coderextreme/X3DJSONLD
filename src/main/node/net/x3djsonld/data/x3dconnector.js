@@ -20,7 +20,7 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnector">x3dconnector</a> </td>
+			<td> <a href="x3dconnector.x3d">x3dconnector.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -69,7 +69,7 @@ x3dconnector.prototype = {
   {
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
   .setHead((new autoclass.head())
-    .addMeta((new autoclass.meta()).setName("title").setContent("x3dconnector"))
+    .addMeta((new autoclass.meta()).setName("title").setContent("x3dconnector.x3d"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("Lost, Doug Sanden I think"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
     .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d"))

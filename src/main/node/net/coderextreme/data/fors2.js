@@ -60,7 +60,7 @@ var ProtoInstance2 = null;
             .addChild((new autoclass.ROUTE()).setFromNode("nodeClock").setFromField("fraction_changed").setToNode("NodePosition").setToField("set_fraction"))
             .addChild((new autoclass.ROUTE()).setFromNode("MoveBall").setFromField("keyValue").setToNode("NodePosition").setToField("keyValue"))
             .addChild((new autoclass.ROUTE()).setFromNode("NodePosition").setFromField("value_changed").setToNode("transform").setToField("set_translation"))))
-        .addChild((new autoclass.ProtoDeclare()).setName("cylinder")
+        .addChild((new autoclass.ProtoDeclare()).setName("cyl")
           .setProtoInterface((new autoclass.ProtoInterface())
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("positionA").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("positionB").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY)))
@@ -102,7 +102,7 @@ var ProtoInstance2 = null;
         .addChild((new autoclass.Transform()).setScale(java.newArray("float", [java.newFloat(0.1), java.newFloat(0.1), java.newFloat(0.1)]))
           .addChild(ProtoInstance0 = (new autoclass.ProtoInstance()).setName("node").setDEF("nodeA"))
           .addChild(ProtoInstance1 = (new autoclass.ProtoInstance()).setName("node").setDEF("nodeB"))
-          .addChild(ProtoInstance2 = (new autoclass.ProtoInstance()).setName("cylinder").setDEF("linkA")))
+          .addChild(ProtoInstance2 = (new autoclass.ProtoInstance()).setName("cyl").setDEF("linkA")))
         .addChild((new autoclass.ROUTE()).setFromNode("nodeA").setFromField("position").setToNode("linkA").setToField("positionA"))
         .addChild((new autoclass.ROUTE()).setFromNode("nodeB").setFromField("position").setToNode("linkA").setToField("positionB")))      ;
 ProtoInstance0

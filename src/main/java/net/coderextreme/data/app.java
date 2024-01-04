@@ -49,14 +49,15 @@ public class app {
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("app.x3d"))
         .addMeta(new meta().setName("creator").setContent("Carlson, I"))
-        .addMeta(new meta().setName("creator").setContent("Carlson, II")))
+        .addMeta(new meta().setName("creator").setContent("Carlson, II"))
+        .addMeta(new meta().setName("creator").setContent("Carlson, III")))
       .setScene(new Scene()
         .addChild(new Group()
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f})))
+              .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0f })))
             .setGeometry(new Box())))
-        .addChild(new Transform().setTranslation(new float[] {1f,2f,3f}).setRotation(new float[] {7f,8f,9f,3.14f}).setScale(new float[] {4f,5f,6f})))      ;
+        .addChild(new Transform().setRotation(new float[] {7f ,8f ,9f ,3.14f }).setScale(new float[] {4f ,5f ,6f }).setTranslation(new float[] {1f ,2f ,3f })))      ;
     return X3D0;
     }
 }

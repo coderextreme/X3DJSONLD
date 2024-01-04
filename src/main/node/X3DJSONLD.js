@@ -309,31 +309,10 @@ CreateElement : function(xmlDoc, key, x3djsonNS, containerField) {
 			child = xmlDoc.createElement(key);
 		}
 	}
-	if (typeof containerField !== 'undefined' && containerField !== 'geometry' &&
-				((containerField === "geometry"  && key === "IndexedFaceSet") ||
-				 (containerField === "geometry"  && key === "Text") ||
-				 (containerField === "geometry"  && key === "IndexedTriangleSet") ||
-				 (containerField === "geometry"  && key === "Sphere") ||
-				 (containerField === "geometry"  && key === "Cylinder") ||
-				 (containerField === "geometry"  && key === "Cone") ||
-				 (containerField === "geometry"  && key === "LineSet") ||
-				 (containerField === "geometry"  && key === "IndexedLineSet") ||
-				 (containerField === "geometry"  && key === "Box") ||
-				 (containerField === "geometry"  && key === "Extrusion") ||
-				 (containerField === "geometry"  && key === "GeoElevationGrid") ||
-				 (containerField === "shape"  && key === "Shape") ||
-				 (containerField === "skin"  && key === "Shape") ||
-				 (containerField.endsWith("exture")  && key === "ImageTexture") ||
-				 (key === "HAnimSegment") ||
-				 (key === "HAnimSite") ||
-				 (key === "HAnimMotion") ||
-				 (containerField === "skinCoord"  && key === "Coordinate") || // overwrite coord with skinCoord, if set
-				 (containerField === "skin"  && key === "IndexedFaceSet") ||
-				 ((containerField === "skinBindingCoords" || containerField === "skinCoord") && key === "Coordinate") ||
-				 ((containerField === "normal" || containerField === "skinBindingNormals" || containerField === "skinNormal") && key === "Normal") ||
-				 ((containerField === "skeleton" || containerField === "children" || containerField === "joints")  && key === "HAnimJoint")
-				)) {
-		X3DJSONLD.elementSetAttribute(child, 'containerField', containerField);
+	if (typeof containerField !== 'undefined') { // && key.toLowerCase() !== containerField.toLowerCase()) {
+		if (containerField !== 'geometry' && containerField !== 'coord') {
+			X3DJSONLD.elementSetAttribute(child, 'containerField', containerField);
+		}
 	}
 	return child;
 },
@@ -537,7 +516,7 @@ ConvertToX3DOM : function(xmlDoc, object, parentkey, element, path, containerFie
 			if (key === 'X3D') {
 				X3DJSONLD.ConvertToX3DOM(xmlDoc, object[key], key, element, path);
 			} else {
-				if (key === "-skin" || key === "-skeleton" || key === "-value" || key === "-segments") {
+				if (key === "-skin" || key === "-skeleton" || key === "-viewpoints" || key === "-value" || key === "-segments") {
 					let firstNode = object[key][0];
 					if (key === "-value") {
 						firstNode = object[key];
@@ -565,7 +544,9 @@ ConvertToX3DOM : function(xmlDoc, object, parentkey, element, path, containerFie
 		} else if (typeof object[key] === 'number') {
 			X3DJSONLD.elementSetAttribute(element, key.substring(1),object[key]);
 		} else if (typeof object[key] === 'string') {
-			if (key !== '#comment') {
+			if (key.substring(1) === 'type' && parentkey === '@NavigationInfo') {
+				X3DJSONLD.elementSetAttribute(element, key.substring(1), X3DJSONLD.NavigationInfoTypeToXML(object[key]));
+			} else if (key !== '#comment') {
 				// ordinary string attributes
 				X3DJSONLD.elementSetAttribute(element, key.substring(1), X3DJSONLD.JSONStringToXML(object[key]));
 			} else {
@@ -645,6 +626,18 @@ prepareDocument: function(DOMImplementation, jsobj) {
 
 	xmlDoc.insertBefore(xmlDoc.createProcessingInstruction('xml', 'version="1.0" encoding="'+jsobj.X3D["encoding"]+'"'), docType);
 	return xmlDoc;
+},
+
+NavigationInfoTypeToXML : function(str) {
+	let y = str;
+	console.log("X3DJSONLD jsonstring replacing "+ y);
+	str = y.replace(/\\/g, "");
+	if (y !== str) {
+		console.log("with                           "+ str);
+	} else {
+		console.log("ok");
+	}
+	return str;
 },
 
 /**

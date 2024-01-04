@@ -1,9 +1,10 @@
 var java = require('java');
+var util = require('util');
 java.asyncOptions = {
   asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
   syncSuffix: "",              // Sync methods use the base name(!!)
   promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
-  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  promisify: util.promisify, // Needs Node.js version 8 or greater, see comment below
   ifReadOnlySuffix: "_alt"
 };
 var autoclass = require('../../../X3Dautoclass');
@@ -113,5 +114,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.ROUTE()).setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("set_coordIndex"))
         .addChild((new autoclass.ROUTE()).setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
         .addChild((new autoclass.ROUTE()).setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction")))      ;
-    X3D0.toFileX3D("../personal/flower.new.x3d");
+    X3D0.toFileX3D("../personal/flower.new.node.x3d");
     process.exit(0);

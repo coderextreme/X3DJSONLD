@@ -91,28 +91,28 @@ public class ball
     .addChild(new WorldInfo().setTitle("ball.x3d"))
     .addChild(new NavigationInfo().setType("\"ANY\" \"EXAMINE\" \"FLY\" \"LOOKAT\""))
     .addChild(new Viewpoint().setDescription("Tour Views"))
-    .addChild(new Background().setBackUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"}).setBottomUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"}).setFrontUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"}).setLeftUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"}).setRightUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"}).setTopUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"}))
+    .addChild(new Background().setBackUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png"}).setBottomUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"}).setFrontUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_front.png"}).setLeftUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png"}).setRightUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png"}).setTopUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png"}))
     .addChild(new Transform()
       .addChild(new Shape()
         .setGeometry(new Sphere())
         .setAppearance(new Appearance()
           .setMaterial(new Material().setDiffuseColor(0.7,0.7,0.7).setSpecularColor(0.5,0.5,0.5))
           .setTexture(new ComposedCubeMapTexture("texture")
-            .setBackTexture(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"}))
-            .setBottomTexture(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"}))
-            .setFrontTexture(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"}))
-            .setLeftTexture(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"}))
-            .setRightTexture(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"}))
-            .setTopTexture(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"})))
+            .setBackTexture(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png"}))
+            .setBottomTexture(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"}))
+            .setFrontTexture(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_front.png"}))
+            .setLeftTexture(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png"}))
+            .setRightTexture(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png"}))
+            .setTopTexture(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png"})))
           .addComments(new String[] {"",
 "                    <ProgramShader DEF='ProgramShader' containerField='shaders' language='GLSL'>",
-"			<ShaderProgram url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' containerField='programs' type='VERTEX'>",
+"			<ShaderProgram url='\"../shaders/freewrl.vs\"' containerField='programs' type='VERTEX'>",
 "                        <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>",
 "                        <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'/>",
 "                        <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'/>",
 "                        <field name='power' accessType='initializeOnly' type='SFFloat' value='2'/>",
 "                        </ShaderProgram>",
-"			<ShaderProgram url='\"../shaders/freewrl.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' containerField='programs' type='FRAGMENT'/>",
+"			<ShaderProgram url='\"../shaders/freewrl.fs\"' containerField='programs' type='FRAGMENT'/>",
 "		    </ProgramShader>"})
           .addComments(new String[] {"",
 "                <ComposedShader language='GLSL'>",
@@ -123,8 +123,8 @@ public class ball
 "		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>",
 "		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>",
 "		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>",
-"		  <ShaderPart url='\"../shaders/contact.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/contact.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
-"		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
+"		  <ShaderPart url='\"../shaders/contact.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
+"		  <ShaderPart url='\"../shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
 "                </ComposedShader>"})
           .addComments(new String[] {"",
 "                <ComposedShader language='GLSL'>",
@@ -135,8 +135,8 @@ public class ball
 "		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>",
 "		  <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>",
 "		  <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>",
-"		  <ShaderPart url='\"../shaders/octaga.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/octaga.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
-"		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
+"		  <ShaderPart url='\"../shaders/octaga.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
+"		  <ShaderPart url='\"../shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
 "                </ComposedShader>"})
           .addComments(new String[] {"",
 "                <ComposedShader language='GLSL'>",
@@ -145,8 +145,8 @@ public class ball
 "		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>",
 "		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>",
 "		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>",
-"		  <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
-"		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
+"		  <ShaderPart url='\"../shaders/instant.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
+"		  <ShaderPart url='\"../shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
 "                </ComposedShader>"})
           .addComments(new String[] {""})
           .addShaders(new ComposedShader().setLanguage("GLSL")
@@ -156,8 +156,8 @@ public class ball
             .addField(new field().setName("bias").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.5))
             .addField(new field().setName("scale").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.5))
             .addField(new field().setName("power").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(2))
-            .addParts(new ShaderPart().setUrl(new String[] {"../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"}))
-            .addParts(new ShaderPart("common").setType("FRAGMENT").setUrl(new String[] {"../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"})))
+            .addParts(new ShaderPart().setUrl(new String[] {"../shaders/x3dom.vs"}))
+            .addParts(new ShaderPart("common").setType("FRAGMENT").setUrl(new String[] {"../shaders/common.fs"})))
           .addShaders(new ComposedShader().setLanguage("GLSL")
             .addField(new field().setName("chromaticDispertion").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(0.98,1.0,1.033)))
             .addField(new field().setName("cube").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
@@ -165,8 +165,8 @@ public class ball
             .addField(new field().setName("bias").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(0.5))
             .addField(new field().setName("scale").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(0.5))
             .addField(new field().setName("power").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(2))
-            .addParts(new ShaderPart().setUrl(new String[] {"../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"}))
-            .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new String[] {"../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"})))))));
+            .addParts(new ShaderPart().setUrl(new String[] {"../shaders/x_ite.vs"}))
+            .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new String[] {"../shaders/x_itebubbles.fs"})))))));
             }
             catch (Exception ex)
             {       
@@ -193,16 +193,17 @@ public class ball
 	}
 	   
     /** 
-	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+     * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
+        System.out.println("Build this X3D model, showing diagnostics...");
         X3D thisExampleX3dModel = new ball().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
@@ -242,11 +243,13 @@ public class ball
 	
         if (validate)
         {
-                System.out.print("Java program \"net.x3djsonld.data.ball\" self-validation test results: ");
+            //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
-                if (validationResults.length() > 10)
+            //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
+                System.out.print("net.x3djsonld.data.ball self-validation test results: ");
+                if (!validationResults.equals("success"))
                     System.out.println();
-                System.out.println(validationResults);
+                System.out.println(validationResults.trim());
         }
     }
 }

@@ -45,7 +45,7 @@ public class MaskAndSnorkel {
     model.toFileJSON("../data/MaskAndSnorkel.new.json");
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("MaskAndSnorkel.x3d"))
         .addMeta(new meta().setName("description").setContent("Diving mask and snorkel tube."))
@@ -53,7 +53,8 @@ public class MaskAndSnorkel {
         .addMeta(new meta().setName("created").setContent("January 24, 2001"))
         .addMeta(new meta().setName("modified").setContent("23 May 2020"))
         .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/MaskAndSnorkel.x3d"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+        .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("MaskAndSnorkel.x3d"))
         .addChild(new Background().setSkyColor(new MFColor0().getArray()))
@@ -61,27 +62,27 @@ public class MaskAndSnorkel {
           .addChild(new Transform()
             .addChild(new Shape().setDEF("maskFrame")
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDEF("frameColor").setDiffuseColor(new float[] {0f,0f,0f})))
-              .setGeometry(new IndexedFaceSet().setSolid(false).setCreaseAngle(1.45f).setCoordIndex(new MFInt321().getArray())
+                .setMaterial(new Material().setDEF("frameColor").setDiffuseColor(new float[] {0f ,0f ,0f })))
+              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt321().getArray()).setCreaseAngle(1.45f ).setSolid(false)
                 .setCoord(new Coordinate().setPoint(new MFVec3f2().getArray())))))
-          .addChild(new Transform().setDEF("snorkelHoldRing").setTranslation(new float[] {0.075f,0.075f,-0.02f})
+          .addChild(new Transform().setDEF("snorkelHoldRing").setTranslation(new float[] {0.075f ,0.075f ,-0.02f })
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setUSE("frameColor")))
-              .setGeometry(new Cylinder().setHeight(0.003f).setRadius(0.015f))))
+              .setGeometry(new Cylinder().setHeight(0.003f ).setRadius(0.015f ))))
           .addChild(new Group().setDEF("snorkel")
-            .addChild(new Transform().setTranslation(new float[] {0f,-0.02f,0f})
-              .addChild(new Transform().setTranslation(new float[] {0.035f,-0.07f,-0.02f}).setScale(new float[] {0.9f,0.9f,0.9f})
+            .addChild(new Transform().setTranslation(new float[] {0f ,-0.02f ,0f })
+              .addChild(new Transform().setScale(new float[] {0.9f ,0.9f ,0.9f }).setTranslation(new float[] {0.035f ,-0.07f ,-0.02f })
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDEF("snorkelTube").setDiffuseColor(new float[] {0.678f,1f,0.184f}).setTransparency(0.4f)))
+                    .setMaterial(new Material().setDEF("snorkelTube").setDiffuseColor(new float[] {0.678f ,1f ,0.184f }).setTransparency(0.4f )))
                   .setGeometry(new Extrusion().setCrossSection(new MFVec2f3().getArray()).setSpine(new MFVec3f4().getArray()))))
-              .addChild(new Transform().setTranslation(new float[] {0.01f,-0.04f,-0.02f}).setRotation(new float[] {0f,0f,1f,1.57f}).setScale(new float[] {0.9f,0.9f,0.9f})
+              .addChild(new Transform().setRotation(new float[] {0f ,0f ,1f ,1.57f }).setScale(new float[] {0.9f ,0.9f ,0.9f }).setTranslation(new float[] {0.01f ,-0.04f ,-0.02f })
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDEF("Mouthpiece").setDiffuseColor(new float[] {0.678f,1f,0.8f}).setTransparency(0.4f)))
+                    .setMaterial(new Material().setDEF("Mouthpiece").setDiffuseColor(new float[] {0.678f ,1f ,0.8f }).setTransparency(0.4f )))
                   .setGeometry(new Extrusion().setCrossSection(new MFVec2f5().getArray()).setSpine(new MFVec3f6().getArray()))))
-              .addChild(new Transform().setTranslation(new float[] {0.005f,-0.01f,-0.02f}).setRotation(new float[] {0f,0f,1f,-0.85f}).setScale(new float[] {0.9f,0.9f,0.9f})
+              .addChild(new Transform().setRotation(new float[] {0f ,0f ,1f ,-0.85f }).setScale(new float[] {0.9f ,0.9f ,0.9f }).setTranslation(new float[] {0.005f ,-0.01f ,-0.02f })
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("Mouthpiece")))
@@ -89,38 +90,38 @@ public class MaskAndSnorkel {
           .addChild(new Transform()
             .addChild(new Shape().setDEF("maskLensR")
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDEF("plastic").setDiffuseColor(new float[] {0.941f,0.973f,1f}).setTransparency(0.8f)))
-              .setGeometry(new IndexedFaceSet().setSolid(false).setCreaseAngle(1.45f).setCoordIndex(new MFInt329().getArray())
+                .setMaterial(new Material().setDEF("plastic").setDiffuseColor(new float[] {0.941f ,0.973f ,1f }).setTransparency(0.8f )))
+              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt329().getArray()).setCreaseAngle(1.45f ).setSolid(false)
                 .setCoord(new Coordinate().setPoint(new MFVec3f10().getArray())))))
           .addChild(new Transform()
             .addChild(new Shape().setDEF("maskLensL")
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setUSE("plastic")))
-              .setGeometry(new IndexedFaceSet().setSolid(false).setCreaseAngle(1.45f).setCoordIndex(new MFInt3211().getArray())
+              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3211().getArray()).setCreaseAngle(1.45f ).setSolid(false)
                 .setCoord(new Coordinate().setPoint(new MFVec3f12().getArray())))))
           .addChild(new Transform()
             .addChild(new Shape().setDEF("nose")
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDEF("plasticFit").setDiffuseColor(new float[] {0.678f,1f,0.184f}).setTransparency(0.7f)))
-              .setGeometry(new IndexedFaceSet().setSolid(false).setCreaseAngle(1.45f).setCoordIndex(new MFInt3213().getArray())
+                .setMaterial(new Material().setDEF("plasticFit").setDiffuseColor(new float[] {0.678f ,1f ,0.184f }).setTransparency(0.7f )))
+              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3213().getArray()).setCreaseAngle(1.45f ).setSolid(false)
                 .setCoord(new Coordinate().setPoint(new MFVec3f14().getArray())))))
           .addChild(new Transform()
             .addChild(new Shape().setDEF("faceFit")
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setUSE("plasticFit")))
-              .setGeometry(new IndexedFaceSet().setSolid(false).setCreaseAngle(1.45f).setCoordIndex(new MFInt3215().getArray())
+              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3215().getArray()).setCreaseAngle(1.45f ).setSolid(false)
                 .setCoord(new Coordinate().setPoint(new MFVec3f16().getArray())))))
           .addChild(new Transform()
             .addChild(new Shape().setDEF("belt")
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setUSE("plastic")))
-              .setGeometry(new IndexedFaceSet().setSolid(false).setCreaseAngle(1.45f).setCoordIndex(new MFInt3217().getArray())
+              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3217().getArray()).setCreaseAngle(1.45f ).setSolid(false)
                 .setCoord(new Coordinate().setPoint(new MFVec3f18().getArray())))))))      ;
     return X3D0;
     }
 private class MFColor0 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f,0f,0.9f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f ,0f ,0.9f });
   }
 }
 private class MFInt321 {
@@ -130,37 +131,37 @@ private class MFInt321 {
 }
 private class MFVec3f2 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0.08f,0f,0.02f,0.05f,0f,0.05f,0.05f,0f,0.06f,0.06f,0f,0.06f,0.09f,0f,0.05f,0.1f,0f,0f,0.1f,0f,-0.05f,0.1f,0f,-0.06f,0.09f,0f,-0.06f,0.06f,0f,-0.05f,0.05f,0f,-0.02f,0.05f,0f,0.005f,0.08f,0f,0.02f,0.055f,0f,0.05f,0.055f,0f,0.055f,0.06f,0f,0.055f,0.09f,0f,0.045f,0.095f,0f,0.005f,0.095f,0f,-0.005f,0.08f,0f,-0.02f,0.055f,0f,-0.05f,0.055f,0f,-0.055f,0.06f,0f,-0.055f,0.09f,0f,-0.045f,0.095f,0f,-0.005f,0.095f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0.08f ,0f ,0.02f ,0.05f ,0f ,0.05f ,0.05f ,0f ,0.06f ,0.06f ,0f ,0.06f ,0.09f ,0f ,0.05f ,0.1f ,0f ,0f ,0.1f ,0f ,-0.05f ,0.1f ,0f ,-0.06f ,0.09f ,0f ,-0.06f ,0.06f ,0f ,-0.05f ,0.05f ,0f ,-0.02f ,0.05f ,0f ,0.005f ,0.08f ,0f ,0.02f ,0.055f ,0f ,0.05f ,0.055f ,0f ,0.055f ,0.06f ,0f ,0.055f ,0.09f ,0f ,0.045f ,0.095f ,0f ,0.005f ,0.095f ,0f ,-0.005f ,0.08f ,0f ,-0.02f ,0.055f ,0f ,-0.05f ,0.055f ,0f ,-0.055f ,0.06f ,0f ,-0.055f ,0.09f ,0f ,-0.045f ,0.095f ,0f ,-0.005f ,0.095f ,0f });
   }
 }
 private class MFVec2f3 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0f,0.013f,0.00494f,0.01196f,0.00923f,0.00923f,0.01196f,0.00494f,0.013f,0f,0.01196f,-0.00494f,0.00923f,-0.00923f,0.00494f,-0.01196f,0f,0.013f,-0.00494f,-0.01196f,-0.00923f,-0.00923f,-0.01196f,-0.00494f,-0.013f,0f,-0.01196f,0.00494f,-0.00923f,0.00923f,-0.00494f,0.01196f,0f,0.013f});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0f ,0.013f ,0.00494f ,0.01196f ,0.00923f ,0.00923f ,0.01196f ,0.00494f ,0.013f ,0f ,0.01196f ,-0.00494f ,0.00923f ,-0.00923f ,0.00494f ,-0.01196f ,0f ,0.013f ,-0.00494f ,-0.01196f ,-0.00923f ,-0.00923f ,-0.01196f ,-0.00494f ,-0.013f ,0f ,-0.01196f ,0.00494f ,-0.00923f ,0.00923f ,-0.00494f ,0.01196f ,0f ,0.013f });
   }
 }
 private class MFVec3f4 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.01f,-0.04f,0f,0f,0f,0f,0.03f,0.05f,0f,0.05f,0.2f,0f,0.03f,0.4f,0.03f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.01f ,-0.04f ,0f ,0f ,0f ,0f ,0.03f ,0.05f ,0f ,0.05f ,0.2f ,0f ,0.03f ,0.4f ,0.03f });
   }
 }
 private class MFVec2f5 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0f,0.013f,0.00494f,0.01196f,0.00923f,0.00923f,0.01196f,0.00494f,0.013f,0f,0.01196f,-0.00494f,0.00923f,-0.00923f,0.00494f,-0.01196f,0f,0.013f,-0.00494f,-0.01196f,-0.00923f,-0.00923f,-0.01196f,-0.00494f,-0.013f,0f,-0.01196f,0.00494f,-0.00923f,0.00923f,-0.00494f,0.01196f,0f,0.013f});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0f ,0.013f ,0.00494f ,0.01196f ,0.00923f ,0.00923f ,0.01196f ,0.00494f ,0.013f ,0f ,0.01196f ,-0.00494f ,0.00923f ,-0.00923f ,0.00494f ,-0.01196f ,0f ,0.013f ,-0.00494f ,-0.01196f ,-0.00923f ,-0.00923f ,-0.01196f ,-0.00494f ,-0.013f ,0f ,-0.01196f ,0.00494f ,-0.00923f ,0.00923f ,-0.00494f ,0.01196f ,0f ,0.013f });
   }
 }
 private class MFVec3f6 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.01f,-0.03f,0f,0f,0f,0f,0.02f,0.01f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.01f ,-0.03f ,0f ,0f ,0f ,0f ,0.02f ,0.01f ,0f });
   }
 }
 private class MFVec2f7 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0f,0.013f,0.00494f,0.01196f,0.00923f,0.00923f,0.01196f,0.00494f,0.013f,0f,0.01196f,-0.00494f,0.00923f,-0.00923f,0.00494f,-0.01196f,0f,0.013f});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0f ,0.013f ,0.00494f ,0.01196f ,0.00923f ,0.00923f ,0.01196f ,0.00494f ,0.013f ,0f ,0.01196f ,-0.00494f ,0.00923f ,-0.00923f ,0.00494f ,-0.01196f ,0f ,0.013f });
   }
 }
 private class MFVec3f8 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.02f,-0.03f,0f,-0.01f,-0.03f,0f,0f,-0.0175f,0f,0f,-0.0135f,0f,-0.01f,0f,0f,-0.02f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.02f ,-0.03f ,0f ,-0.01f ,-0.03f ,0f ,0f ,-0.0175f ,0f ,0f ,-0.0135f ,0f ,-0.01f ,0f ,0f ,-0.02f ,0f ,0f });
   }
 }
 private class MFInt329 {
@@ -170,7 +171,7 @@ private class MFInt329 {
 }
 private class MFVec3f10 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0.08f,0f,0.02f,0.05f,0f,0.05f,0.05f,0f,0.06f,0.06f,0f,0.06f,0.09f,0f,0.05f,0.1f,0f,0f,0.1f,0f,-0.05f,0.1f,0f,-0.06f,0.09f,0f,-0.06f,0.06f,0f,-0.05f,0.05f,0f,-0.02f,0.05f,0f,0.005f,0.08f,0f,0.02f,0.055f,0f,0.05f,0.055f,0f,0.055f,0.06f,0f,0.055f,0.09f,0f,0.045f,0.095f,0f,0.005f,0.095f,0f,-0.005f,0.08f,0f,-0.02f,0.055f,0f,-0.05f,0.055f,0f,-0.055f,0.06f,0f,-0.055f,0.09f,0f,-0.045f,0.095f,0f,-0.005f,0.095f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0.08f ,0f ,0.02f ,0.05f ,0f ,0.05f ,0.05f ,0f ,0.06f ,0.06f ,0f ,0.06f ,0.09f ,0f ,0.05f ,0.1f ,0f ,0f ,0.1f ,0f ,-0.05f ,0.1f ,0f ,-0.06f ,0.09f ,0f ,-0.06f ,0.06f ,0f ,-0.05f ,0.05f ,0f ,-0.02f ,0.05f ,0f ,0.005f ,0.08f ,0f ,0.02f ,0.055f ,0f ,0.05f ,0.055f ,0f ,0.055f ,0.06f ,0f ,0.055f ,0.09f ,0f ,0.045f ,0.095f ,0f ,0.005f ,0.095f ,0f ,-0.005f ,0.08f ,0f ,-0.02f ,0.055f ,0f ,-0.05f ,0.055f ,0f ,-0.055f ,0.06f ,0f ,-0.055f ,0.09f ,0f ,-0.045f ,0.095f ,0f ,-0.005f ,0.095f ,0f });
   }
 }
 private class MFInt3211 {
@@ -180,7 +181,7 @@ private class MFInt3211 {
 }
 private class MFVec3f12 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0.08f,0f,0.02f,0.05f,0f,0.05f,0.05f,0f,0.06f,0.06f,0f,0.06f,0.09f,0f,0.05f,0.1f,0f,0f,0.1f,0f,-0.05f,0.1f,0f,-0.06f,0.09f,0f,-0.06f,0.06f,0f,-0.05f,0.05f,0f,-0.02f,0.05f,0f,0.005f,0.08f,0f,0.02f,0.055f,0f,0.05f,0.055f,0f,0.055f,0.06f,0f,0.055f,0.09f,0f,0.045f,0.095f,0f,0.005f,0.095f,0f,-0.005f,0.08f,0f,-0.02f,0.055f,0f,-0.05f,0.055f,0f,-0.055f,0.06f,0f,-0.055f,0.09f,0f,-0.045f,0.095f,0f,-0.005f,0.095f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0.08f ,0f ,0.02f ,0.05f ,0f ,0.05f ,0.05f ,0f ,0.06f ,0.06f ,0f ,0.06f ,0.09f ,0f ,0.05f ,0.1f ,0f ,0f ,0.1f ,0f ,-0.05f ,0.1f ,0f ,-0.06f ,0.09f ,0f ,-0.06f ,0.06f ,0f ,-0.05f ,0.05f ,0f ,-0.02f ,0.05f ,0f ,0.005f ,0.08f ,0f ,0.02f ,0.055f ,0f ,0.05f ,0.055f ,0f ,0.055f ,0.06f ,0f ,0.055f ,0.09f ,0f ,0.045f ,0.095f ,0f ,0.005f ,0.095f ,0f ,-0.005f ,0.08f ,0f ,-0.02f ,0.055f ,0f ,-0.05f ,0.055f ,0f ,-0.055f ,0.06f ,0f ,-0.055f ,0.09f ,0f ,-0.045f ,0.095f ,0f ,-0.005f ,0.095f ,0f });
   }
 }
 private class MFInt3213 {
@@ -190,7 +191,7 @@ private class MFInt3213 {
 }
 private class MFVec3f14 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0.08f,0f,0.02f,0.05f,0f,0.05f,0.05f,0f,0.06f,0.06f,0f,0.06f,0.09f,0f,0.05f,0.1f,0f,0f,0.1f,0f,-0.05f,0.1f,0f,-0.06f,0.09f,0f,-0.06f,0.06f,0f,-0.05f,0.05f,0f,-0.02f,0.05f,0f,0.005f,0.08f,0f,0.02f,0.055f,0f,0.05f,0.055f,0f,0.055f,0.06f,0f,0.055f,0.09f,0f,0.045f,0.095f,0f,0.005f,0.095f,0f,-0.005f,0.08f,0f,-0.02f,0.055f,0f,-0.05f,0.055f,0f,-0.055f,0.06f,0f,-0.055f,0.09f,0f,-0.045f,0.095f,0f,-0.005f,0.095f,0f,0f,0.04f,0.015f,0.05f,0.04f,-0.03f,0.06f,0.05f,-0.03f,0.07f,0.095f,-0.03f,0.055f,0.11f,-0.03f,0f,0.11f,-0.02f,-0.055f,0.11f,-0.03f,-0.07f,0.095f,-0.03f,-0.06f,0.05f,-0.03f,-0.05f,0.04f,-0.03f,-0.02f,0.04f,-0.02f,0.02f,0.04f,-0.02f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0.08f ,0f ,0.02f ,0.05f ,0f ,0.05f ,0.05f ,0f ,0.06f ,0.06f ,0f ,0.06f ,0.09f ,0f ,0.05f ,0.1f ,0f ,0f ,0.1f ,0f ,-0.05f ,0.1f ,0f ,-0.06f ,0.09f ,0f ,-0.06f ,0.06f ,0f ,-0.05f ,0.05f ,0f ,-0.02f ,0.05f ,0f ,0.005f ,0.08f ,0f ,0.02f ,0.055f ,0f ,0.05f ,0.055f ,0f ,0.055f ,0.06f ,0f ,0.055f ,0.09f ,0f ,0.045f ,0.095f ,0f ,0.005f ,0.095f ,0f ,-0.005f ,0.08f ,0f ,-0.02f ,0.055f ,0f ,-0.05f ,0.055f ,0f ,-0.055f ,0.06f ,0f ,-0.055f ,0.09f ,0f ,-0.045f ,0.095f ,0f ,-0.005f ,0.095f ,0f ,0f ,0.04f ,0.015f ,0.05f ,0.04f ,-0.03f ,0.06f ,0.05f ,-0.03f ,0.07f ,0.095f ,-0.03f ,0.055f ,0.11f ,-0.03f ,0f ,0.11f ,-0.02f ,-0.055f ,0.11f ,-0.03f ,-0.07f ,0.095f ,-0.03f ,-0.06f ,0.05f ,-0.03f ,-0.05f ,0.04f ,-0.03f ,-0.02f ,0.04f ,-0.02f ,0.02f ,0.04f ,-0.02f });
   }
 }
 private class MFInt3215 {
@@ -200,7 +201,7 @@ private class MFInt3215 {
 }
 private class MFVec3f16 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0.08f,0f,0.02f,0.05f,0f,0.05f,0.05f,0f,0.06f,0.06f,0f,0.06f,0.09f,0f,0.05f,0.1f,0f,0f,0.1f,0f,-0.05f,0.1f,0f,-0.06f,0.09f,0f,-0.06f,0.06f,0f,-0.05f,0.05f,0f,-0.02f,0.05f,0f,0.005f,0.08f,0f,0.02f,0.055f,0f,0.05f,0.055f,0f,0.055f,0.06f,0f,0.055f,0.09f,0f,0.045f,0.095f,0f,0.005f,0.095f,0f,-0.005f,0.08f,0f,-0.02f,0.055f,0f,-0.05f,0.055f,0f,-0.055f,0.06f,0f,-0.055f,0.09f,0f,-0.045f,0.095f,0f,-0.005f,0.095f,0f,0f,0.05f,0.015f,0.05f,0.04f,-0.03f,0.06f,0.05f,-0.03f,0.07f,0.095f,-0.03f,0.055f,0.11f,-0.03f,0f,0.11f,-0.02f,-0.055f,0.11f,-0.03f,-0.07f,0.095f,-0.03f,-0.06f,0.05f,-0.03f,-0.05f,0.04f,-0.03f,-0.02f,0.04f,-0.02f,0.02f,0.04f,-0.02f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0.08f ,0f ,0.02f ,0.05f ,0f ,0.05f ,0.05f ,0f ,0.06f ,0.06f ,0f ,0.06f ,0.09f ,0f ,0.05f ,0.1f ,0f ,0f ,0.1f ,0f ,-0.05f ,0.1f ,0f ,-0.06f ,0.09f ,0f ,-0.06f ,0.06f ,0f ,-0.05f ,0.05f ,0f ,-0.02f ,0.05f ,0f ,0.005f ,0.08f ,0f ,0.02f ,0.055f ,0f ,0.05f ,0.055f ,0f ,0.055f ,0.06f ,0f ,0.055f ,0.09f ,0f ,0.045f ,0.095f ,0f ,0.005f ,0.095f ,0f ,-0.005f ,0.08f ,0f ,-0.02f ,0.055f ,0f ,-0.05f ,0.055f ,0f ,-0.055f ,0.06f ,0f ,-0.055f ,0.09f ,0f ,-0.045f ,0.095f ,0f ,-0.005f ,0.095f ,0f ,0f ,0.05f ,0.015f ,0.05f ,0.04f ,-0.03f ,0.06f ,0.05f ,-0.03f ,0.07f ,0.095f ,-0.03f ,0.055f ,0.11f ,-0.03f ,0f ,0.11f ,-0.02f ,-0.055f ,0.11f ,-0.03f ,-0.07f ,0.095f ,-0.03f ,-0.06f ,0.05f ,-0.03f ,-0.05f ,0.04f ,-0.03f ,-0.02f ,0.04f ,-0.02f ,0.02f ,0.04f ,-0.02f });
   }
 }
 private class MFInt3217 {
@@ -210,7 +211,7 @@ private class MFInt3217 {
 }
 private class MFVec3f18 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0.08f,0f,0.02f,0.05f,0f,0.05f,0.05f,0f,0.06f,0.06f,0f,0.06f,0.09f,0f,0.05f,0.1f,0f,0f,0.1f,0f,-0.05f,0.1f,0f,-0.06f,0.09f,0f,-0.06f,0.06f,0f,-0.05f,0.05f,0f,-0.02f,0.05f,0f,0.005f,0.08f,0f,0.02f,0.055f,0f,0.05f,0.055f,0f,0.055f,0.06f,0f,0.055f,0.09f,0f,0.045f,0.095f,0f,0.005f,0.095f,0f,-0.005f,0.08f,0f,-0.02f,0.055f,0f,-0.05f,0.055f,0f,-0.055f,0.06f,0f,-0.055f,0.09f,0f,-0.045f,0.095f,0f,-0.005f,0.095f,0f,0f,0.05f,0.015f,0.05f,0.04f,-0.03f,0.06f,0.05f,-0.03f,0.07f,0.095f,-0.03f,0.055f,0.11f,-0.03f,0f,0.11f,-0.02f,-0.055f,0.11f,-0.03f,-0.07f,0.095f,-0.03f,-0.06f,0.05f,-0.03f,-0.05f,0.04f,-0.03f,-0.02f,0.04f,-0.02f,0.02f,0.04f,-0.02f,0.075f,0.06f,-0.135f,0.075f,0.09f,-0.135f,-0.075f,0.06f,-0.135f,-0.075f,0.09f,-0.135f,0.06f,0.09f,-0.165f,0.06f,0.06f,-0.165f,-0.06f,0.09f,-0.165f,-0.06f,0.06f,-0.165f,0f,0.09f,-0.2f,0f,0.06f,-0.175f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0.08f ,0f ,0.02f ,0.05f ,0f ,0.05f ,0.05f ,0f ,0.06f ,0.06f ,0f ,0.06f ,0.09f ,0f ,0.05f ,0.1f ,0f ,0f ,0.1f ,0f ,-0.05f ,0.1f ,0f ,-0.06f ,0.09f ,0f ,-0.06f ,0.06f ,0f ,-0.05f ,0.05f ,0f ,-0.02f ,0.05f ,0f ,0.005f ,0.08f ,0f ,0.02f ,0.055f ,0f ,0.05f ,0.055f ,0f ,0.055f ,0.06f ,0f ,0.055f ,0.09f ,0f ,0.045f ,0.095f ,0f ,0.005f ,0.095f ,0f ,-0.005f ,0.08f ,0f ,-0.02f ,0.055f ,0f ,-0.05f ,0.055f ,0f ,-0.055f ,0.06f ,0f ,-0.055f ,0.09f ,0f ,-0.045f ,0.095f ,0f ,-0.005f ,0.095f ,0f ,0f ,0.05f ,0.015f ,0.05f ,0.04f ,-0.03f ,0.06f ,0.05f ,-0.03f ,0.07f ,0.095f ,-0.03f ,0.055f ,0.11f ,-0.03f ,0f ,0.11f ,-0.02f ,-0.055f ,0.11f ,-0.03f ,-0.07f ,0.095f ,-0.03f ,-0.06f ,0.05f ,-0.03f ,-0.05f ,0.04f ,-0.03f ,-0.02f ,0.04f ,-0.02f ,0.02f ,0.04f ,-0.02f ,0.075f ,0.06f ,-0.135f ,0.075f ,0.09f ,-0.135f ,-0.075f ,0.06f ,-0.135f ,-0.075f ,0.09f ,-0.135f ,0.06f ,0.09f ,-0.165f ,0.06f ,0.06f ,-0.165f ,-0.06f ,0.09f ,-0.165f ,-0.06f ,0.06f ,-0.165f ,0f ,0.09f ,-0.2f ,0f ,0.06f ,-0.175f });
   }
 }
 }

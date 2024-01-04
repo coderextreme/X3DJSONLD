@@ -57,7 +57,7 @@ public class MyBounce {
         .addChild(new Transform().setDEF("transform")
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new float[] {0.7f,0.7f,0.7f}).setSpecularColor(new float[] {0.5f,0.5f,0.5f})))
+              .setMaterial(new Material().setDiffuseColor(new float[] {0.7f ,0.7f ,0.7f }).setSpecularColor(new float[] {0.5f ,0.5f ,0.5f })))
             .setGeometry(new Sphere())))
         .addChild(new Script().setDEF("Bounce2")
           .addField(new field().setType("SFVec3f").setName("set_translation").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("0 0 0"))

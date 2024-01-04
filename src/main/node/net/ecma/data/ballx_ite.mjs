@@ -49,8 +49,8 @@ var X3D0 =  new X3D({
               content : new SFString("manual")}),
 
             new meta({
-              name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d")}),
+              name : new SFString("generator"),
+              content : new SFString("x3d-tidy V1.0.118, https://www.npmjs.com/package/x3d-tidy")}),
           component : new SFNode(
             new component({
               name : new SFString("Scripting"),

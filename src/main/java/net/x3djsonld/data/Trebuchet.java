@@ -435,7 +435,7 @@ public class Trebuchet
           .addChild(new Transform().setUSE("launch"))
           .addChild(new Transform()
             .addChild(new TouchSensor().setUSE("LauncheeChoice"))
-            .addChild(new Switch().setUSE("projectilename").setWhichChoice(-1))
+            .addChild(new Switch().setUSE("projectilename"))
             .addChild(new Transform().setTranslation(2.5,0.0,0.0)
               .addChild(new Shape()
                 .setGeometry(new Box().setSize(5.0,.5,.5))
@@ -443,14 +443,14 @@ public class Trebuchet
                   .setMaterial(new Material().setTransparency(1))))))
           .addChild(new Transform().setScale(.5,.5,.5).setTranslation(0.0,-1.0,0.0)
             .addChild(new TouchSensor().setUSE("weightselector"))
-            .addChild(new Switch().setUSE("Weight").setWhichChoice(-1))
+            .addChild(new Switch().setUSE("Weight"))
             .addChild(new Transform().setTranslation(8.0,0.0,0.0)
               .addChild(new Shape()
                 .setGeometry(new Box().setSize(17.0,1.0,.5))
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setTransparency(1)))))))
         .addChild(new Transform("ProjectileTransform").setTranslation(14.25,1.25,0.0)
-          .addChild(new Switch().setUSE("projectile").setWhichChoice(-1))
+          .addChild(new Switch().setUSE("projectile"))
           .addChild(new Transform().setRotation(0.0,1.0,0.0,1.57).setTranslation(0.0,1.0,0.0)
             .addChild(new Viewpoint().setDescription("Projectile Cam").setPosition(0.0,0.0,15.0))))
         .addChild(new Transform().setTranslation(20.0,2.0,0.0)
@@ -629,16 +629,17 @@ function set_fraction ( fraction, eventTime )
 	}
 	   
     /** 
-	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+     * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
+        System.out.println("Build this X3D model, showing diagnostics...");
         X3D thisExampleX3dModel = new Trebuchet().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
@@ -678,11 +679,13 @@ function set_fraction ( fraction, eventTime )
 	
         if (validate)
         {
-                System.out.print("Java program \"net.x3djsonld.data.Trebuchet\" self-validation test results: ");
+            //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
-                if (validationResults.length() > 10)
+            //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
+                System.out.print("net.x3djsonld.data.Trebuchet self-validation test results: ");
+                if (!validationResults.equals("success"))
                     System.out.println();
-                System.out.println(validationResults);
+                System.out.println(validationResults.trim());
         }
     }
 }

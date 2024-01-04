@@ -71,10 +71,17 @@ function doOneErr(err, file, version) {
 function doSuppressCheck(err, file, version) {
 	let error = "";
 	let suppress = true;
-	if ('params' in err && 'missingProperty' in err.params && err.params.missingProperty === '@USE') {
+	if ('params' in err && 'type' in err.params && err.params.type === 'array' && err.instancePath.indexOf('NavigationInfo') >= 0 && err.instancePath.indexOf('@type') >= 0) {
+		if (suppress) {
+			console.log("Suppressing NavigationInfo.type as array.  Use $ node x3dvalidate.js --fullreport "+file+" file ... to reveal possibly confusing errors");
+			error += "Suppressed.  See console log\n";
+		} else {
+			error += doOneErr(err, file, version);
+		}
+	} else if ('params' in err && 'missingProperty' in err.params && err.params.missingProperty === '@USE') {
 		if (suppress) {
 			console.log("Suppressing @USE missing property.  Use $ node x3dvalidate.js --fullreport "+file+" ... to reveal possibly confusing errors");
-			error += "Suppressed.  See console log";
+			error += "Suppressed.  See console log\n";
 		} else {
 			error += doOneErr(err, file, version);
 
@@ -82,7 +89,7 @@ function doSuppressCheck(err, file, version) {
 	} else if ('params' in err && 'passingSchemas' in err.params && err.params.passingSchemas === null) {
 		if (suppress) {
 			console.log("Suppressing null passingSchemas.  Use $ node x3dvalidate.js --fullreport "+file+" file ... to reveal possibly confusing errors");
-			error += "Suppressed.  See console log";
+			error += "Suppressed.  See console log\n";
 		} else {
 			error += doOneErr(err, file, version);
 		}

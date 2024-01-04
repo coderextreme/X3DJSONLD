@@ -1,9 +1,10 @@
 var java = require('java');
+var util = require('util');
 java.asyncOptions = {
   asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
   syncSuffix: "",              // Sync methods use the base name(!!)
   promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
-  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  promisify: util.promisify, // Needs Node.js version 8 or greater, see comment below
   ifReadOnlySuffix: "_alt"
 };
 var autoclass = require('../../../X3Dautoclass');
@@ -12,13 +13,13 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
       .setHead((new autoclass.head())
         .addComponent((new autoclass.component()).setName("Scripting").setLevel(1))
         .addMeta((new autoclass.meta()).setName("title").setContent("MyBounce.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("description").setContent("3 prismatic spheres"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/SFVec3f.x3d")))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.NavigationInfo()))
         .addChild((new autoclass.Transform()).setDEF("transform")
@@ -66,5 +67,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.TimeSensor()).setDEF("TourTime").setCycleInterval(0.15).setLoop(true))
         .addChild((new autoclass.ROUTE()).setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce2").setToField("set_fraction"))
         .addChild((new autoclass.ROUTE()).setFromNode("Bounce2").setFromField("translation_changed").setToNode("transform").setToField("set_translation")))      ;
-    X3D0.toFileX3D("../personal/MyBounce.new.x3d");
+    X3D0.toFileX3D("../personal/MyBounce.new.node.x3d");
     process.exit(0);

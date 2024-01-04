@@ -40,11 +40,14 @@ public class app {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new app().initialize().toFileJSON("../personal/app.new.json");
+    X3D model = new app().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../personal/app.new.json");
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
+        .addMeta(new meta().setName("title").setContent("app.x3d"))
         .addMeta(new meta().setName("creator").setContent("Carlson, I"))
         .addMeta(new meta().setName("creator").setContent("Carlson, II"))
         .addMeta(new meta().setName("creator").setContent("Carlson, III")))
@@ -52,9 +55,9 @@ public class app {
         .addChild(new Group()
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f})))
+              .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0f })))
             .setGeometry(new Box())))
-        .addChild(new Transform().setRotation(new float[] {7f,8f,9f,3.14f}).setScale(new float[] {4f,5f,6f}).setTranslation(new float[] {1f,2f,3f})))      ;
+        .addChild(new Transform().setRotation(new float[] {7f ,8f ,9f ,3.14f }).setScale(new float[] {4f ,5f ,6f }).setTranslation(new float[] {1f ,2f ,3f })))      ;
     return X3D0;
     }
 }

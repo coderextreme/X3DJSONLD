@@ -43,7 +43,7 @@ var X3D0 =  new X3D({
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
-              content : new SFString("x3dconnector")}),
+              content : new SFString("x3dconnector.x3d")}),
 
             new meta({
               name : new SFString("creator"),

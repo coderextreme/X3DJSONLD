@@ -13,7 +13,9 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+      .addComments((new autoclass.CommentsBlock("All head/meta tags are optional, WorldInfo is also optional")))
+      .addComments((new autoclass.CommentsBlock("Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1")))
       .setHead((new autoclass.head())
         .addMeta((new autoclass.meta()).setName("title").setContent("HelloWorldMinimal.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("Hello World minimal example scene."))
@@ -28,7 +30,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("reference").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes"))
         .addMeta((new autoclass.meta()).setName("reference").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldMinimalIndex.html"))
         .addMeta((new autoclass.meta()).setName("identifier").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldMinimal.x3d"))
-        .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")))
+        .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+        .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.WorldInfo()).setTitle("HelloWorldMinimal.x3d"))
         .addChild((new autoclass.Shape())

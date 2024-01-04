@@ -76,7 +76,7 @@ public class ViewFrustumPrototype {
             .addField(new field().setType("SFBool").setName("trace").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("debug support, default false").setValue("false")))
           .setProtoBody(new ProtoBody()
             .addChild(new Switch().setDEF("VisibilitySwitch").setWhichChoice(-1)
-              .addChild(new Transform().setDEF("PositionTransform").setRotation(new float[] {0f,1f,0f,3.14159f})
+              .addChild(new Transform().setDEF("PositionTransform").setRotation(new float[] {0f ,1f ,0f ,3.14159f })
                 .addChild(new Transform().setDEF("OrientationTransform")
                   .addChild(new Shape()
                     .setGeometry(new IndexedLineSet().setDEF("FrustumLines").setCoordIndex(new MFInt320().getArray())
@@ -93,7 +93,7 @@ public class ViewFrustumPrototype {
                           .addConnect(new connect().setNodeField("diffuseColor").setProtoField("frustumColor"))
                           .addConnect(new connect().setNodeField("transparency").setProtoField("transparency"))))))
                   .addChild(new Shape()
-                    .setGeometry(new Sphere().setRadius(0.08f))
+                    .setGeometry(new Sphere().setRadius(0.08f ))
                     .setAppearance(new Appearance().setUSE("FrustumAppearance"))))))
             .addChild(new Script().setDEF("GeometryComputationScript").setDirectOutput(true).setUrl(new MFString2().getArray())
               .addField(new field().setType("SFBool").setName("visible").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Whether or not frustum geometry is rendered"))
@@ -130,38 +130,38 @@ public class ViewFrustumPrototype {
         .addChild(new Anchor().setDescription("ViewFrustum Example").setUrl(new MFString3().getArray())
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new float[] {0.8f,0.4f,0f})))
+              .setMaterial(new Material().setDiffuseColor(new float[] {0.8f ,0.4f ,0f })))
             .setGeometry(new Text().setString(new MFString4().getArray())
-              .setFontStyle(new FontStyle().setJustify(new MFString5().getArray()).setSize(0.8f))))))      ;
+              .setFontStyle(new FontStyle().setJustify(new MFString5().getArray()).setSize(0.8f ))))))      ;
     return X3D0;
     }
-protected class MFInt320 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+private class MFInt320 {
+  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,3,0,-1,4,5,6,7,4,-1,0,4,-1,1,5,-1,2,6,-1,3,7,-1});
   }
 }
-protected class MFVec3f1 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f});
+private class MFVec3f1 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f });
   }
 }
-protected class MFString2 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString2 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ViewFrustumPrototypeScript.js"});
   }
 }
-protected class MFString3 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString3 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ViewFrustumExample.x3d"});
   }
 }
-protected class MFString4 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString4 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ViewFrustumPrototype.x3d","is a Prototype declaration file.","For an example scene using the prototype,","click this text and view","ViewFrustumExample.x3d"});
   }
 }
-protected class MFString5 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString5 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }

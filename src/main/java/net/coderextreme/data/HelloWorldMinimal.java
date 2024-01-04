@@ -45,7 +45,9 @@ public class HelloWorldMinimal {
     model.toFileJSON("../data/HelloWorldMinimal.new.json");
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      .addComments("All head/meta tags are optional, WorldInfo is also optional")
+      .addComments("Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("HelloWorldMinimal.x3d"))
         .addMeta(new meta().setName("description").setContent("Hello World minimal example scene."))
@@ -60,7 +62,8 @@ public class HelloWorldMinimal {
         .addMeta(new meta().setName("reference").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes"))
         .addMeta(new meta().setName("reference").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldMinimalIndex.html"))
         .addMeta(new meta().setName("identifier").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldMinimal.x3d"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+        .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("HelloWorldMinimal.x3d"))
         .addChild(new Shape()

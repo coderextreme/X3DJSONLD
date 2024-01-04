@@ -57,9 +57,8 @@ ProtoInstance ProtoInstance6 = null;
         .addMeta(new meta().setName("title").setContent("sphereflowers.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("created").setContent("Jan 17 2022"))
-        .addMeta(new meta().setName("modified").setContent("Sep 03 2023"))
+        .addMeta(new meta().setName("modified").setContent("Sat, 30 Dec 2023 07:58:44 GMT"))
         .addMeta(new meta().setName("description").setContent("5 or more prismatic flowers"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
         .addComponent(new component().setName("Scripting").setLevel(1))
         .addComponent(new component().setName("EnvironmentalEffects").setLevel(3))
         .addComponent(new component().setName("Shaders").setLevel(1))
@@ -87,8 +86,8 @@ ProtoInstance ProtoInstance6 = null;
           .addChild(ProtoInstance5 = new ProtoInstance().setName("flower"))
           .addChild(ProtoInstance6 = new ProtoInstance().setName("flower"))
           .addChild(new TimeSensor().setDEF("SongTime").setLoop(true))
-          .addChild(new Sound().setMinBack(20f).setMinFront(20f).setMaxBack(100f).setMaxFront(100f)
-            .setSource(new AudioClip().setDEF("AudioClip").setDescription("Chandubabamusic #1").setUrl(new MFString7().getArray()))))
+          .addChild(new Sound().setLocation(new float[] {0f,1f,0f}).setMinBack(20f).setMinFront(20f).setMaxBack(100f).setMaxFront(100f)
+            .setSource(new AudioClip().setDEF("AudioClip").setDescription("Chandubabamusic #1").setUrl(new MFString7().getArray()).setStartTime(1703923124.156d))))
         .addChild(new ROUTE().setFromNode("SongTime").setFromField("cycleTime").setToNode("AudioClip").setToField("startTime")))      ;
 ProtoInstance0
                 .addFieldValue(new fieldValue().setName("vertex").setValue("\"../shaders/x_ite_flowers_chromatic.vs\""));
@@ -98,42 +97,42 @@ ProtoInstance0
     }
 private class MFString0 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../personal/flowerproto.json#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../personal/flowerproto.json#FlowerProto"});
   }
 }
 private class MFString1 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_front.png"});
   }
 }
 private class MFString2 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png"});
   }
 }
 private class MFString3 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png"});
   }
 }
 private class MFString4 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png"});
   }
 }
 private class MFString5 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/src/main/resourcesall_probes/stpeters_cross/stpeters_top.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png"});
   }
 }
 private class MFString6 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"});
   }
 }
 private class MFString7 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/chandubabamusic1.wav","https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/chandubabamusic1.wav"});
   }
 }
 }

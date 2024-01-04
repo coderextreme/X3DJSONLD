@@ -86,28 +86,28 @@ ball.prototype = {
     .addChild((new autoclass.WorldInfo()).setTitle("ball.x3d"))
     .addChild((new autoclass.NavigationInfo()).setType("\"ANY\" \"EXAMINE\" \"FLY\" \"LOOKAT\""))
     .addChild((new autoclass.Viewpoint()).setDescription("Tour Views"))
-    .addChild((new autoclass.Background()).setBackUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png\"")).setBottomUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png\"")).setFrontUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png\"")).setLeftUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png\"")).setRightUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png\"")).setTopUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png\"")))
+    .addChild((new autoclass.Background()).setBackUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\"")).setBottomUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\"")).setFrontUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\"")).setLeftUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\"")).setRightUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\"")).setTopUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\"")))
     .addChild((new autoclass.Transform())
       .addChild((new autoclass.Shape())
         .setGeometry((new autoclass.Sphere()))
         .setAppearance((new autoclass.Appearance())
           .setMaterial((new autoclass.Material()).setDiffuseColor(0.7,0.7,0.7).setSpecularColor(0.5,0.5,0.5))
           .setTexture((new autoclass.ComposedCubeMapTexture("texture"))
-            .setBackTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png\"")))
-            .setBottomTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png\"")))
-            .setFrontTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png\"")))
-            .setLeftTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png\"")))
-            .setRightTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png\"")))
-            .setTopTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png\""))))
+            .setBackTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\"")))
+            .setBottomTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\"")))
+            .setFrontTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\"")))
+            .setLeftTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\"")))
+            .setRightTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\"")))
+            .setTopTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\""))))
           .addComments(java.newArray("java.lang.String",["",
 "                    <ProgramShader DEF='ProgramShader' containerField='shaders' language='GLSL'>",
-"			<ShaderProgram url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' containerField='programs' type='VERTEX'>",
+"			<ShaderProgram url='\"../shaders/freewrl.vs\"' containerField='programs' type='VERTEX'>",
 "                        <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>",
 "                        <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'/>",
 "                        <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'/>",
 "                        <field name='power' accessType='initializeOnly' type='SFFloat' value='2'/>",
 "                        </ShaderProgram>",
-"			<ShaderProgram url='\"../shaders/freewrl.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' containerField='programs' type='FRAGMENT'/>",
+"			<ShaderProgram url='\"../shaders/freewrl.fs\"' containerField='programs' type='FRAGMENT'/>",
 "		    </ProgramShader>"]))
           .addComments(java.newArray("java.lang.String",["",
 "                <ComposedShader language='GLSL'>",
@@ -118,8 +118,8 @@ ball.prototype = {
 "		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>",
 "		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>",
 "		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>",
-"		  <ShaderPart url='\"../shaders/contact.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/contact.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
-"		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
+"		  <ShaderPart url='\"../shaders/contact.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
+"		  <ShaderPart url='\"../shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
 "                </ComposedShader>"]))
           .addComments(java.newArray("java.lang.String",["",
 "                <ComposedShader language='GLSL'>",
@@ -130,8 +130,8 @@ ball.prototype = {
 "		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>",
 "		  <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>",
 "		  <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>",
-"		  <ShaderPart url='\"../shaders/octaga.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/octaga.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
-"		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
+"		  <ShaderPart url='\"../shaders/octaga.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
+"		  <ShaderPart url='\"../shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
 "                </ComposedShader>"]))
           .addComments(java.newArray("java.lang.String",["",
 "                <ComposedShader language='GLSL'>",
@@ -140,8 +140,8 @@ ball.prototype = {
 "		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>",
 "		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>",
 "		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>",
-"		  <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
-"		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
+"		  <ShaderPart url='\"../shaders/instant.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
+"		  <ShaderPart url='\"../shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
 "                </ComposedShader>"]))
           .addComments(java.newArray("java.lang.String",[""]))
           .addShaders((new autoclass.ComposedShader()).setLanguage("GLSL")
@@ -151,8 +151,8 @@ ball.prototype = {
             .addField((new autoclass.field()).setName("bias").setType("SFFloat").setAccessType("inputOutput").setValue("0.5"))
             .addField((new autoclass.field()).setName("scale").setType("SFFloat").setAccessType("inputOutput").setValue("0.5"))
             .addField((new autoclass.field()).setName("power").setType("SFFloat").setAccessType("inputOutput").setValue("2"))
-            .addParts((new autoclass.ShaderPart()).setUrl(new autoclass.MFString("\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs\"")))
-            .addParts((new autoclass.ShaderPart("common")).setType("FRAGMENT").setUrl(new autoclass.MFString("\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\""))))
+            .addParts((new autoclass.ShaderPart()).setUrl(new autoclass.MFString("\"../shaders/x3dom.vs\"")))
+            .addParts((new autoclass.ShaderPart("common")).setType("FRAGMENT").setUrl(new autoclass.MFString("\"../shaders/common.fs\""))))
           .addShaders((new autoclass.ComposedShader()).setLanguage("GLSL")
             .addField((new autoclass.field()).setName("chromaticDispertion").setType("SFVec3f").setAccessType("initializeOnly").setValue("0.98 1 1.033"))
             .addField((new autoclass.field()).setName("cube").setType("SFNode").setAccessType("initializeOnly")
@@ -160,8 +160,8 @@ ball.prototype = {
             .addField((new autoclass.field()).setName("bias").setType("SFFloat").setAccessType("initializeOnly").setValue("0.5"))
             .addField((new autoclass.field()).setName("scale").setType("SFFloat").setAccessType("initializeOnly").setValue("0.5"))
             .addField((new autoclass.field()).setName("power").setType("SFFloat").setAccessType("initializeOnly").setValue("2"))
-            .addParts((new autoclass.ShaderPart()).setUrl(new autoclass.MFString("\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"")))
-            .addParts((new autoclass.ShaderPart()).setType("FRAGMENT").setUrl(new autoclass.MFString("\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs\""))))))));
+            .addParts((new autoclass.ShaderPart()).setUrl(new autoclass.MFString("\"../shaders/x_ite.vs\"")))
+            .addParts((new autoclass.ShaderPart()).setType("FRAGMENT").setUrl(new autoclass.MFString("\"../shaders/x_itebubbles.fs\""))))))));
   },
   // end of initialize() method
 

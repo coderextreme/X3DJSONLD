@@ -23,7 +23,7 @@ import org.web3d.x3d.jsail.Shape.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnector">x3dconnector</a> </td>
+			<td> <a href="x3dconnector.x3d">x3dconnector.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -73,7 +73,7 @@ public class x3dconnector
             try { // catch-all
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
   .setHead(new head()
-    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("x3dconnector"))
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("x3dconnector.x3d"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Lost, Doug Sanden I think"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("manual"))
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d"))
@@ -205,16 +205,17 @@ ecmascript:
 	}
 	   
     /** 
-	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+     * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
+        System.out.println("Build this X3D model, showing diagnostics...");
         X3D thisExampleX3dModel = new x3dconnector().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
@@ -254,11 +255,13 @@ ecmascript:
 	
         if (validate)
         {
-                System.out.print("Java program \"net.x3djsonld.data.x3dconnector\" self-validation test results: ");
+            //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
-                if (validationResults.length() > 10)
+            //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
+                System.out.print("net.x3djsonld.data.x3dconnector self-validation test results: ");
+                if (!validationResults.equals("success"))
                     System.out.println();
-                System.out.println(validationResults);
+                System.out.println(validationResults.trim());
         }
     }
 }

@@ -48,34 +48,34 @@ public class x3dconnector {
 ProtoInstance ProtoInstance0 = null;
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("x3dconnector"))
+        .addMeta(new meta().setName("title").setContent("x3dconnector.x3d"))
         .addMeta(new meta().setName("creator").setContent("Lost, Doug Sanden I think"))
         .addMeta(new meta().setName("generator").setContent("manual"))
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d"))
         .addMeta(new meta().setName("description").setContent("a generic proto to connect two objects")))
       .setScene(new Scene()
-        .addChild(new Viewpoint().setPosition(new float[] {0f,0f,5f}).setDescription("Only Viewpoint"))
+        .addChild(new Viewpoint().setPosition(new float[] {0f ,0f ,5f }).setDescription("Only Viewpoint"))
         .addChild(new Background().setSkyColor(new MFColor0().getArray()))
         .addChild(new Transform().setDEF("G1")
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new float[] {0.7f,0.2f,0.2f})))
-            .setGeometry(new Sphere().setRadius(0.1f)))
+              .setMaterial(new Material().setDiffuseColor(new float[] {0.7f ,0.2f ,0.2f })))
+            .setGeometry(new Sphere().setRadius(0.1f )))
           .addChild(new PlaneSensor().setDescription("Grab to move").setDEF("PS1"))
           .addChild(new ROUTE().setFromNode("PS1").setFromField("translation_changed").setToNode("G1").setToField("set_translation")))
-        .addChild(new Transform().setDEF("G2").setTranslation(new float[] {1f,-1f,0.01f})
+        .addChild(new Transform().setDEF("G2").setTranslation(new float[] {1f ,-1f ,0.01f })
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new float[] {0.2f,0.7f,0.2f})))
-            .setGeometry(new Sphere().setRadius(0.1f)))
-          .addChild(new PlaneSensor().setDescription("Grab to move").setOffset(new float[] {1f,-1f,0.01f}).setDEF("PS2"))
+              .setMaterial(new Material().setDiffuseColor(new float[] {0.2f ,0.7f ,0.2f })))
+            .setGeometry(new Sphere().setRadius(0.1f )))
+          .addChild(new PlaneSensor().setDescription("Grab to move").setOffset(new float[] {1f ,-1f ,0.01f }).setDEF("PS2"))
           .addChild(new ROUTE().setFromNode("PS2").setFromField("translation_changed").setToNode("G2").setToField("set_translation")))
         .addChild(new Transform().setDEF("transC1")
           .addChild(new Transform().setDEF("rotscaleC1")
             .addChild(new Shape()
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(new float[] {0.2f,0.7f,0.7f}).setTransparency(0.5f)))
-              .setGeometry(new Cylinder().setRadius(0.05f)))))
+                .setMaterial(new Material().setDiffuseColor(new float[] {0.2f ,0.7f ,0.7f }).setTransparency(0.5f )))
+              .setGeometry(new Cylinder().setRadius(0.05f )))))
         .addChild(new ProtoDeclare().setName("x3dconnector")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFNode").setName("startnode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
@@ -161,9 +161,9 @@ ProtoInstance0
           .addFieldValue(new fieldValue().setName("set_endpoint"));
     return X3D0;
     }
-protected class MFColor0 {
-  protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.4f,0.4f,0.4f});
+private class MFColor0 {
+  private org.web3d.x3d.jsail.fields.MFColor getArray() {
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.4f ,0.4f ,0.4f });
   }
 }
 }

@@ -40,17 +40,19 @@ public class asmallbox {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new asmallbox().initialize().toFileJSON("../personal/asmallbox.new.json");
+    X3D model = new asmallbox().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../personal/asmallbox.new.json");
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;
 ProtoInstance ProtoInstance1 = null;
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("asmallbox.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/abox.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d"))
         .addMeta(new meta().setName("description").setContent("a box")))
       .setScene(new Scene()
         .addChild(new ProtoDeclare().setName("anyShape")

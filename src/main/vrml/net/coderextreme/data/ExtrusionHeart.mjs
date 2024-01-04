@@ -1,7 +1,7 @@
 let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Immersive";
-X3D0.version = "4.0";
+X3D0.version = "3.0";
 let head1 = browser.currentScene.createNode("head");
 let meta2 = browser.currentScene.createNode("meta");
 meta2.name = "title";
@@ -40,37 +40,42 @@ meta8.name = "generator";
 meta8.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
 head1.meta[6] = meta8;
 
+let meta9 = browser.currentScene.createNode("meta");
+meta9.name = "license";
+meta9.content = "../license.html";
+head1.meta[7] = meta9;
+
 head = head1;
 
-let Viewpoint10 = browser.currentScene.createNode("Viewpoint");
-Viewpoint10.description = "Extrusion Heart";
-Viewpoint10.position = new SFVec3f(new float[0,-4,0]);
-Viewpoint10.orientation = new SFRotation(new float[1,0,0,1.57]);
+let Viewpoint11 = browser.currentScene.createNode("Viewpoint");
+Viewpoint11.description = "Extrusion Heart";
+Viewpoint11.orientation = new SFRotation(new float[1,0,0,1.57]);
+Viewpoint11.position = new SFVec3f(new float[0,-4,0]);
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = Viewpoint10;
+browser.currentScene.children[0] = Viewpoint11;
 
-let Transform11 = browser.currentScene.createNode("Transform");
-Transform11.translation = new SFVec3f(new float[0,-0.5,0]);
-let Shape12 = browser.currentScene.createNode("Shape");
-let Appearance13 = browser.currentScene.createNode("Appearance");
-let Material14 = browser.currentScene.createNode("Material");
-Material14.diffuseColor = new SFColor(new float[0.8,0.3,0.3]);
-Appearance13.material = Material14;
+let Transform12 = browser.currentScene.createNode("Transform");
+Transform12.translation = new SFVec3f(new float[0,-0.5,0]);
+let Shape13 = browser.currentScene.createNode("Shape");
+let Extrusion14 = browser.currentScene.createNode("Extrusion");
+Extrusion14.creaseAngle = 3.14159;
+Extrusion14.crossSection = new MFVec2f(new float[0,0.8,0.2,1,0.7,0.95,1,0.5,0.8,0,0.5,-0.3,0,-0.7,-0.5,-0.3,-0.8,0,-1,0.5,-0.7,0.95,-0.2,1,0,0.8]);
+Extrusion14.scale = new MFVec2f(new float[0.01,0.01,0.8,0.8,1,1,0.8,0.8,0.01,0.01]);
+Extrusion14.solid = False;
+Extrusion14.spine = new MFVec3f(new float[0,0,0,0,0.1,0,0,0.5,0,0,0.9,0,0,1,0]);
+Shape13.geometry = Extrusion14;
 
-Shape12.appearance = Appearance13;
+let Appearance15 = browser.currentScene.createNode("Appearance");
+let Material16 = browser.currentScene.createNode("Material");
+Material16.diffuseColor = new SFColor(new float[0.8,0.3,0.3]);
+Appearance15.material = Material16;
 
-let Extrusion15 = browser.currentScene.createNode("Extrusion");
-Extrusion15.solid = False;
-Extrusion15.creaseAngle = 3.14159;
-Extrusion15.crossSection = new MFVec2f(new float[0,0.8,0.2,1,0.7,0.95,1,0.5,0.8,0,0.5,-0.3,0,-0.7,-0.5,-0.3,-0.8,0,-1,0.5,-0.7,0.95,-0.2,1,0,0.8]);
-Extrusion15.scale = new MFVec2f(new float[0.01,0.01,0.8,0.8,1,1,0.8,0.8,0.01,0.01]);
-Extrusion15.spine = new MFVec3f(new float[0,0,0,0,0.1,0,0,0.5,0,0,0.9,0,0,1,0]);
-Shape12.geometry = Extrusion15;
+Shape13.appearance = Appearance15;
 
-Transform11.child = new undefined();
+Transform12.child = new undefined();
 
-Transform11.child[0] = Shape12;
+Transform12.child[0] = Shape13;
 
-browser.currentScene.children[1] = Transform11;
+browser.currentScene.children[1] = Transform12;
 

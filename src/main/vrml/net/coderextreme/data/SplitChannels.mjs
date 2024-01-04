@@ -32,7 +32,7 @@ head1.meta[4] = meta6;
 
 let meta7 = browser.currentScene.createNode("meta");
 meta7.name = "modified";
-meta7.content = "5 December 2021";
+meta7.content = "Sat, 30 Dec 2023 07:58:55 GMT";
 head1.meta[5] = meta7;
 
 let meta8 = browser.currentScene.createNode("meta");
@@ -55,306 +55,301 @@ meta11.name = "identifier";
 meta11.content = "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d";
 head1.meta[9] = meta11;
 
-let meta12 = browser.currentScene.createNode("meta");
-meta12.name = "generator";
-meta12.content = "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit";
-head1.meta[10] = meta12;
-
 head = head1;
 
-let WorldInfo14 = browser.currentScene.createNode("WorldInfo");
-WorldInfo14.title = "SplitChannels.x3d";
+let WorldInfo13 = browser.currentScene.createNode("WorldInfo");
+WorldInfo13.title = "SplitChannels.x3d";
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = WorldInfo14;
+browser.currentScene.children[0] = WorldInfo13;
 
-let NavigationInfo15 = browser.currentScene.createNode("NavigationInfo");
-browser.currentScene.children[1] = NavigationInfo15;
+let NavigationInfo14 = browser.currentScene.createNode("NavigationInfo");
+browser.currentScene.children[1] = NavigationInfo14;
 
-let Background16 = browser.currentScene.createNode("Background");
-Background16.skyColor = new MFColor(new float[0.2,0.2,0.21]);
-browser.currentScene.children[2] = Background16;
+let Background15 = browser.currentScene.createNode("Background");
+Background15.skyColor = new MFColor(new float[0.2,0.2,0.21]);
+browser.currentScene.children[2] = Background15;
 
-let Viewpoint17 = browser.currentScene.createNode("Viewpoint");
-Viewpoint17.position = new SFVec3f(new float[0,500,600]);
-Viewpoint17.orientation = new SFRotation(new float[1,0,0,-0.5]);
-Viewpoint17.retainUserOffsets = True;
-browser.currentScene.children[3] = Viewpoint17;
+let Viewpoint16 = browser.currentScene.createNode("Viewpoint");
+Viewpoint16.position = new SFVec3f(new float[0,500,600]);
+Viewpoint16.orientation = new SFRotation(new float[1,0,0,-0.5]);
+Viewpoint16.retainUserOffsets = True;
+browser.currentScene.children[3] = Viewpoint16;
 
+let Transform17 = browser.currentScene.createNode("Transform");
+Transform17.DEF = "PowerR";
+Transform17.translation = new SFVec3f(new float[100,400,400]);
 let Transform18 = browser.currentScene.createNode("Transform");
-Transform18.DEF = "PowerR";
-Transform18.translation = new SFVec3f(new float[100,400,400]);
-let Transform19 = browser.currentScene.createNode("Transform");
-Transform19.translation = new SFVec3f(new float[0,40,0]);
-Transform19.rotation = new SFRotation(new float[1,0,0,-0.5]);
-let Shape20 = browser.currentScene.createNode("Shape");
-let Appearance21 = browser.currentScene.createNode("Appearance");
-Appearance21.DEF = "audio_emit";
-let Material22 = browser.currentScene.createNode("Material");
-Material22.diffuseColor = new SFColor(new float[0,1,0]);
-Material22.specularColor = new SFColor(new float[0.01,0.01,0.01]);
-Material22.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
-Appearance21.material = Material22;
+Transform18.translation = new SFVec3f(new float[0,40,0]);
+Transform18.rotation = new SFRotation(new float[1,0,0,-0.5]);
+let Shape19 = browser.currentScene.createNode("Shape");
+let Appearance20 = browser.currentScene.createNode("Appearance");
+Appearance20.DEF = "audio_emit";
+let Material21 = browser.currentScene.createNode("Material");
+Material21.diffuseColor = new SFColor(new float[0,1,0]);
+Material21.specularColor = new SFColor(new float[0.01,0.01,0.01]);
+Material21.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
+Appearance20.material = Material21;
 
-Shape20.appearance = Appearance21;
+Shape19.appearance = Appearance20;
 
-let Box23 = browser.currentScene.createNode("Box");
-Box23.size = new SFVec3f(new float[10,80,0.01]);
-Shape20.geometry = Box23;
+let Box22 = browser.currentScene.createNode("Box");
+Box22.size = new SFVec3f(new float[10,80,0.01]);
+Shape19.geometry = Box22;
 
-Transform19.child = new undefined();
+Transform18.child = new undefined();
 
-Transform19.child[0] = Shape20;
+Transform18.child[0] = Shape19;
 
-Transform18.children = new MFNode();
+Transform17.children = new MFNode();
 
-Transform18.children[0] = Transform19;
+Transform17.children[0] = Transform18;
 
-let Transform24 = browser.currentScene.createNode("Transform");
-Transform24.translation = new SFVec3f(new float[-2.7,37,0]);
-Transform24.rotation = new SFRotation(new float[1,0,0,-0.5]);
-let Shape25 = browser.currentScene.createNode("Shape");
-let Appearance26 = browser.currentScene.createNode("Appearance");
-Appearance26.DEF = "audio_emit2";
-let Material27 = browser.currentScene.createNode("Material");
-Material27.diffuseColor = new SFColor(new float[0,1,0]);
-Material27.specularColor = new SFColor(new float[0.01,0.01,0.01]);
-Material27.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
-Appearance26.material = Material27;
+let Transform23 = browser.currentScene.createNode("Transform");
+Transform23.translation = new SFVec3f(new float[-2.7,37,0]);
+Transform23.rotation = new SFRotation(new float[1,0,0,-0.5]);
+let Shape24 = browser.currentScene.createNode("Shape");
+let Appearance25 = browser.currentScene.createNode("Appearance");
+Appearance25.DEF = "audio_emit2";
+let Material26 = browser.currentScene.createNode("Material");
+Material26.diffuseColor = new SFColor(new float[0,1,0]);
+Material26.specularColor = new SFColor(new float[0.01,0.01,0.01]);
+Material26.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
+Appearance25.material = Material26;
 
-let ImageTexture28 = browser.currentScene.createNode("ImageTexture");
-ImageTexture28.url = new MFString(new java.lang.String["images/line.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"]);
-Appearance26.texture = ImageTexture28;
+let ImageTexture27 = browser.currentScene.createNode("ImageTexture");
+ImageTexture27.url = new MFString(new java.lang.String["images/line.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"]);
+Appearance25.texture = ImageTexture27;
 
-Shape25.appearance = Appearance26;
+Shape24.appearance = Appearance25;
 
-let Box29 = browser.currentScene.createNode("Box");
-Box29.size = new SFVec3f(new float[25,83,0.01]);
-Shape25.geometry = Box29;
+let Box28 = browser.currentScene.createNode("Box");
+Box28.size = new SFVec3f(new float[25,83,0.01]);
+Shape24.geometry = Box28;
 
-Transform24.child = new undefined();
+Transform23.child = new undefined();
 
-Transform24.child[0] = Shape25;
+Transform23.child[0] = Shape24;
 
-Transform18.children[1] = Transform24;
+Transform17.children[1] = Transform23;
 
-let Transform30 = browser.currentScene.createNode("Transform");
-Transform30.DEF = "volumeRight";
-Transform30.translation = new SFVec3f(new float[0,-10,0]);
-Transform30.rotation = new SFRotation(new float[1,0,0,-0.5]);
-Transform30.scale = new SFVec3f(new float[10,10,10]);
-let Shape31 = browser.currentScene.createNode("Shape");
-let Appearance32 = browser.currentScene.createNode("Appearance");
-let Material33 = browser.currentScene.createNode("Material");
-Material33.ambientIntensity = 0.0933;
-Material33.diffuseColor = new SFColor(new float[0.345,0.345,0.882]);
-Material33.specularColor = new SFColor(new float[0.46,0.46,0.46]);
-Material33.shininess = 0.51;
-Appearance32.material = Material33;
+let Transform29 = browser.currentScene.createNode("Transform");
+Transform29.DEF = "volumeRight";
+Transform29.translation = new SFVec3f(new float[0,-10,0]);
+Transform29.rotation = new SFRotation(new float[1,0,0,-0.5]);
+Transform29.scale = new SFVec3f(new float[10,10,10]);
+let Shape30 = browser.currentScene.createNode("Shape");
+let Appearance31 = browser.currentScene.createNode("Appearance");
+let Material32 = browser.currentScene.createNode("Material");
+Material32.ambientIntensity = 0.0933;
+Material32.diffuseColor = new SFColor(new float[0.345,0.345,0.882]);
+Material32.specularColor = new SFColor(new float[0.46,0.46,0.46]);
+Material32.shininess = 0.51;
+Appearance31.material = Material32;
 
-Shape31.appearance = Appearance32;
+Shape30.appearance = Appearance31;
 
-let Text34 = browser.currentScene.createNode("Text");
-let FontStyle35 = browser.currentScene.createNode("FontStyle");
-FontStyle35.family = new MFString(new java.lang.String["Times"]);
-FontStyle35.style = "BOLD";
-Text34.fontStyle = FontStyle35;
+let Text33 = browser.currentScene.createNode("Text");
+let FontStyle34 = browser.currentScene.createNode("FontStyle");
+FontStyle34.family = new MFString(new java.lang.String["Times"]);
+FontStyle34.style = "BOLD";
+Text33.fontStyle = FontStyle34;
 
-Shape31.geometry = Text34;
+Shape30.geometry = Text33;
 
-Transform30.child = new undefined();
+Transform29.child = new undefined();
 
-Transform30.child[0] = Shape31;
+Transform29.child[0] = Shape30;
 
-Transform18.children[2] = Transform30;
+Transform17.children[2] = Transform29;
 
-browser.currentScene.children[4] = Transform18;
+browser.currentScene.children[4] = Transform17;
 
+let Transform35 = browser.currentScene.createNode("Transform");
+Transform35.DEF = "PowerL";
+Transform35.translation = new SFVec3f(new float[-100,400,400]);
 let Transform36 = browser.currentScene.createNode("Transform");
-Transform36.DEF = "PowerL";
-Transform36.translation = new SFVec3f(new float[-100,400,400]);
-let Transform37 = browser.currentScene.createNode("Transform");
-Transform37.translation = new SFVec3f(new float[0,40,0]);
-Transform37.rotation = new SFRotation(new float[1,0,0,-0.5]);
-let Shape38 = browser.currentScene.createNode("Shape");
-let Appearance39 = browser.currentScene.createNode("Appearance");
-Appearance39.DEF = "audio_emit3";
-let Material40 = browser.currentScene.createNode("Material");
-Material40.diffuseColor = new SFColor(new float[0,1,0]);
-Material40.specularColor = new SFColor(new float[0.01,0.01,0.01]);
-Material40.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
-Appearance39.material = Material40;
+Transform36.translation = new SFVec3f(new float[0,40,0]);
+Transform36.rotation = new SFRotation(new float[1,0,0,-0.5]);
+let Shape37 = browser.currentScene.createNode("Shape");
+let Appearance38 = browser.currentScene.createNode("Appearance");
+Appearance38.DEF = "audio_emit3";
+let Material39 = browser.currentScene.createNode("Material");
+Material39.diffuseColor = new SFColor(new float[0,1,0]);
+Material39.specularColor = new SFColor(new float[0.01,0.01,0.01]);
+Material39.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
+Appearance38.material = Material39;
 
-Shape38.appearance = Appearance39;
+Shape37.appearance = Appearance38;
 
-let Box41 = browser.currentScene.createNode("Box");
-Box41.size = new SFVec3f(new float[10,80,0.01]);
-Shape38.geometry = Box41;
+let Box40 = browser.currentScene.createNode("Box");
+Box40.size = new SFVec3f(new float[10,80,0.01]);
+Shape37.geometry = Box40;
 
-Transform37.child = new undefined();
+Transform36.child = new undefined();
 
-Transform37.child[0] = Shape38;
+Transform36.child[0] = Shape37;
 
-Transform36.children = new MFNode();
+Transform35.children = new MFNode();
 
-Transform36.children[0] = Transform37;
+Transform35.children[0] = Transform36;
 
-let Transform42 = browser.currentScene.createNode("Transform");
-Transform42.translation = new SFVec3f(new float[13.2,37,0]);
-Transform42.rotation = new SFRotation(new float[1,0,0,-0.5]);
-let Shape43 = browser.currentScene.createNode("Shape");
-let Appearance44 = browser.currentScene.createNode("Appearance");
-Appearance44.DEF = "audio_emit4";
-let Material45 = browser.currentScene.createNode("Material");
-Material45.diffuseColor = new SFColor(new float[0,1,0]);
-Material45.specularColor = new SFColor(new float[0.01,0.01,0.01]);
-Material45.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
-Appearance44.material = Material45;
+let Transform41 = browser.currentScene.createNode("Transform");
+Transform41.translation = new SFVec3f(new float[13.2,37,0]);
+Transform41.rotation = new SFRotation(new float[1,0,0,-0.5]);
+let Shape42 = browser.currentScene.createNode("Shape");
+let Appearance43 = browser.currentScene.createNode("Appearance");
+Appearance43.DEF = "audio_emit4";
+let Material44 = browser.currentScene.createNode("Material");
+Material44.diffuseColor = new SFColor(new float[0,1,0]);
+Material44.specularColor = new SFColor(new float[0.01,0.01,0.01]);
+Material44.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
+Appearance43.material = Material44;
 
-let ImageTexture46 = browser.currentScene.createNode("ImageTexture");
-ImageTexture46.url = new MFString(new java.lang.String["images/line.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"]);
-Appearance44.texture = ImageTexture46;
+let ImageTexture45 = browser.currentScene.createNode("ImageTexture");
+ImageTexture45.url = new MFString(new java.lang.String["images/line.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"]);
+Appearance43.texture = ImageTexture45;
 
-Shape43.appearance = Appearance44;
+Shape42.appearance = Appearance43;
 
-let Box47 = browser.currentScene.createNode("Box");
-Box47.size = new SFVec3f(new float[25,83,0.01]);
-Shape43.geometry = Box47;
+let Box46 = browser.currentScene.createNode("Box");
+Box46.size = new SFVec3f(new float[25,83,0.01]);
+Shape42.geometry = Box46;
 
-Transform42.child = new undefined();
+Transform41.child = new undefined();
 
-Transform42.child[0] = Shape43;
+Transform41.child[0] = Shape42;
 
-Transform36.children[1] = Transform42;
+Transform35.children[1] = Transform41;
 
-let Transform48 = browser.currentScene.createNode("Transform");
-Transform48.DEF = "volumeLeft";
-Transform48.translation = new SFVec3f(new float[0,-10,0]);
-Transform48.rotation = new SFRotation(new float[1,0,0,-0.5]);
-Transform48.scale = new SFVec3f(new float[10,10,10]);
-let Shape49 = browser.currentScene.createNode("Shape");
-let Appearance50 = browser.currentScene.createNode("Appearance");
-let Material51 = browser.currentScene.createNode("Material");
-Material51.ambientIntensity = 0.0933;
-Material51.diffuseColor = new SFColor(new float[0.345,0.345,0.882]);
-Material51.specularColor = new SFColor(new float[0.46,0.46,0.46]);
-Material51.shininess = 0.51;
-Appearance50.material = Material51;
+let Transform47 = browser.currentScene.createNode("Transform");
+Transform47.DEF = "volumeLeft";
+Transform47.translation = new SFVec3f(new float[0,-10,0]);
+Transform47.rotation = new SFRotation(new float[1,0,0,-0.5]);
+Transform47.scale = new SFVec3f(new float[10,10,10]);
+let Shape48 = browser.currentScene.createNode("Shape");
+let Appearance49 = browser.currentScene.createNode("Appearance");
+let Material50 = browser.currentScene.createNode("Material");
+Material50.ambientIntensity = 0.0933;
+Material50.diffuseColor = new SFColor(new float[0.345,0.345,0.882]);
+Material50.specularColor = new SFColor(new float[0.46,0.46,0.46]);
+Material50.shininess = 0.51;
+Appearance49.material = Material50;
 
-Shape49.appearance = Appearance50;
+Shape48.appearance = Appearance49;
 
-let Text52 = browser.currentScene.createNode("Text");
-let FontStyle53 = browser.currentScene.createNode("FontStyle");
-FontStyle53.family = new MFString(new java.lang.String["Times"]);
-FontStyle53.style = "BOLD";
-Text52.fontStyle = FontStyle53;
+let Text51 = browser.currentScene.createNode("Text");
+let FontStyle52 = browser.currentScene.createNode("FontStyle");
+FontStyle52.family = new MFString(new java.lang.String["Times"]);
+FontStyle52.style = "BOLD";
+Text51.fontStyle = FontStyle52;
 
-Shape49.geometry = Text52;
+Shape48.geometry = Text51;
 
-Transform48.child = new undefined();
+Transform47.child = new undefined();
 
-Transform48.child[0] = Shape49;
+Transform47.child[0] = Shape48;
 
-Transform36.children[2] = Transform48;
+Transform35.children[2] = Transform47;
 
-browser.currentScene.children[5] = Transform36;
+browser.currentScene.children[5] = Transform35;
 
-let Transform54 = browser.currentScene.createNode("Transform");
-let Shape55 = browser.currentScene.createNode("Shape");
-let Appearance56 = browser.currentScene.createNode("Appearance");
-Appearance56.DEF = "floor";
-let Material57 = browser.currentScene.createNode("Material");
-Material57.diffuseColor = new SFColor(new float[0.1,0.1,0.1]);
-Material57.specularColor = new SFColor(new float[0.5,0.6,0.7]);
-Material57.shininess = 0.8;
-Appearance56.material = Material57;
+let Transform53 = browser.currentScene.createNode("Transform");
+let Shape54 = browser.currentScene.createNode("Shape");
+let Appearance55 = browser.currentScene.createNode("Appearance");
+Appearance55.DEF = "floor";
+let Material56 = browser.currentScene.createNode("Material");
+Material56.diffuseColor = new SFColor(new float[0.1,0.1,0.1]);
+Material56.specularColor = new SFColor(new float[0.5,0.6,0.7]);
+Material56.shininess = 0.8;
+Appearance55.material = Material56;
 
-Shape55.appearance = Appearance56;
+Shape54.appearance = Appearance55;
 
-let Box58 = browser.currentScene.createNode("Box");
-Box58.size = new SFVec3f(new float[1500,10,500]);
-Shape55.geometry = Box58;
+let Box57 = browser.currentScene.createNode("Box");
+Box57.size = new SFVec3f(new float[1500,10,500]);
+Shape54.geometry = Box57;
 
-Transform54.child = new undefined();
+Transform53.child = new undefined();
 
-Transform54.child[0] = Shape55;
+Transform53.child[0] = Shape54;
 
-browser.currentScene.children[6] = Transform54;
+browser.currentScene.children[6] = Transform53;
 
-let ListenerPointSource59 = browser.currentScene.createNode("ListenerPointSource");
-ListenerPointSource59.trackCurrentView = True;
-browser.currentScene.children[7] = ListenerPointSource59;
+let ListenerPointSource58 = browser.currentScene.createNode("ListenerPointSource");
+ListenerPointSource58.trackCurrentView = True;
+browser.currentScene.children[7] = ListenerPointSource58;
 
-let StreamAudioDestination60 = browser.currentScene.createNode("StreamAudioDestination");
-let Gain61 = browser.currentScene.createNode("Gain");
-let ChannelMerger62 = browser.currentScene.createNode("ChannelMerger");
-let ChannelSelector63 = browser.currentScene.createNode("ChannelSelector");
-let Gain64 = browser.currentScene.createNode("Gain");
-ChannelSelector63.children = new MFNode();
+let StreamAudioDestination59 = browser.currentScene.createNode("StreamAudioDestination");
+let Gain60 = browser.currentScene.createNode("Gain");
+let ChannelMerger61 = browser.currentScene.createNode("ChannelMerger");
+let ChannelSelector62 = browser.currentScene.createNode("ChannelSelector");
+let Gain63 = browser.currentScene.createNode("Gain");
+ChannelSelector62.children = new MFNode();
 
-ChannelSelector63.children[0] = Gain64;
+ChannelSelector62.children[0] = Gain63;
 
-ChannelMerger62.children = new MFNode();
+ChannelMerger61.children = new MFNode();
 
-ChannelMerger62.children[0] = ChannelSelector63;
+ChannelMerger61.children[0] = ChannelSelector62;
 
-let ChannelSelector65 = browser.currentScene.createNode("ChannelSelector");
-ChannelSelector65.channelSelection = 1;
-let Gain66 = browser.currentScene.createNode("Gain");
-ChannelSelector65.children = new MFNode();
+let ChannelSelector64 = browser.currentScene.createNode("ChannelSelector");
+ChannelSelector64.channelSelection = 1;
+let Gain65 = browser.currentScene.createNode("Gain");
+ChannelSelector64.children = new MFNode();
 
-ChannelSelector65.children[0] = Gain66;
+ChannelSelector64.children[0] = Gain65;
 
-ChannelMerger62.children[1] = ChannelSelector65;
+ChannelMerger61.children[1] = ChannelSelector64;
 
-Gain61.children = new MFNode();
+Gain60.children = new MFNode();
 
-Gain61.children[0] = ChannelMerger62;
+Gain60.children[0] = ChannelMerger61;
 
-StreamAudioDestination60.children = new MFNode();
+StreamAudioDestination59.children = new MFNode();
 
-StreamAudioDestination60.children[0] = Gain61;
+StreamAudioDestination59.children[0] = Gain60;
 
-browser.currentScene.children[8] = StreamAudioDestination60;
+browser.currentScene.children[8] = StreamAudioDestination59;
 
-let ChannelSplitter67 = browser.currentScene.createNode("ChannelSplitter");
-ChannelSplitter67.DEF = "ChannelSplitter";
-ChannelSplitter67.channelCountMode = "EXPLICIT";
-let AudioClip68 = browser.currentScene.createNode("AudioClip");
-AudioClip68.description = "Violin";
-AudioClip68.url = new MFString(new java.lang.String["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"]);
-ChannelSplitter67.outputs = new MFNode();
+let ChannelSplitter66 = browser.currentScene.createNode("ChannelSplitter");
+ChannelSplitter66.DEF = "ChannelSplitter";
+ChannelSplitter66.channelCountMode = "EXPLICIT";
+let AudioClip67 = browser.currentScene.createNode("AudioClip");
+AudioClip67.description = "Violin";
+AudioClip67.url = new MFString(new java.lang.String["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"]);
+ChannelSplitter66.outputs = new MFNode();
 
-ChannelSplitter67.outputs[0] = AudioClip68;
+ChannelSplitter66.outputs[0] = AudioClip67;
 
-browser.currentScene.children[9] = ChannelSplitter67;
+browser.currentScene.children[9] = ChannelSplitter66;
 
-let Transform69 = browser.currentScene.createNode("Transform");
-Transform69.DEF = "Audio3";
-Transform69.translation = new SFVec3f(new float[0,100,0]);
-Transform69.rotation = new SFRotation(new float[1,0,0,-0.5]);
-let Shape70 = browser.currentScene.createNode("Shape");
-let Appearance71 = browser.currentScene.createNode("Appearance");
-Appearance71.DEF = "audio_emit5";
-let Material72 = browser.currentScene.createNode("Material");
-Material72.diffuseColor = new SFColor(new float[0.3,1,0.3]);
-Material72.specularColor = new SFColor(new float[0.01,0.01,0.01]);
-Material72.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
-Appearance71.material = Material72;
+let Transform68 = browser.currentScene.createNode("Transform");
+Transform68.DEF = "Audio3";
+Transform68.translation = new SFVec3f(new float[0,100,0]);
+Transform68.rotation = new SFRotation(new float[1,0,0,-0.5]);
+let Shape69 = browser.currentScene.createNode("Shape");
+let Appearance70 = browser.currentScene.createNode("Appearance");
+Appearance70.DEF = "audio_emit5";
+let Material71 = browser.currentScene.createNode("Material");
+Material71.diffuseColor = new SFColor(new float[0.3,1,0.3]);
+Material71.specularColor = new SFColor(new float[0.01,0.01,0.01]);
+Material71.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
+Appearance70.material = Material71;
 
-let ImageTexture73 = browser.currentScene.createNode("ImageTexture");
-ImageTexture73.url = new MFString(new java.lang.String["images/loudspeaker.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"]);
-Appearance71.texture = ImageTexture73;
+let ImageTexture72 = browser.currentScene.createNode("ImageTexture");
+ImageTexture72.url = new MFString(new java.lang.String["images/loudspeaker.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"]);
+Appearance70.texture = ImageTexture72;
 
-Shape70.appearance = Appearance71;
+Shape69.appearance = Appearance70;
 
-let Box74 = browser.currentScene.createNode("Box");
-Box74.size = new SFVec3f(new float[100,100,0.001]);
-Shape70.geometry = Box74;
+let Box73 = browser.currentScene.createNode("Box");
+Box73.size = new SFVec3f(new float[100,100,0.001]);
+Shape69.geometry = Box73;
 
-Transform69.child = new undefined();
+Transform68.child = new undefined();
 
-Transform69.child[0] = Shape70;
+Transform68.child[0] = Shape69;
 
-browser.currentScene.children[10] = Transform69;
+browser.currentScene.children[10] = Transform68;
 

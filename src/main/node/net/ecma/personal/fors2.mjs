@@ -1,42 +1,46 @@
 'use strict';
-import fs from 'fs';
-import { X3D } from './x3d.mjs';
-import { SFString } from './x3d.mjs';
-import { SFNode } from './x3d.mjs';
-import { head } from './x3d.mjs';
-import { MFNode } from './x3d.mjs';
-import { meta } from './x3d.mjs';
-import { Scene } from './x3d.mjs';
-import { ProtoDeclare } from './x3d.mjs';
-import { ProtoInterface } from './x3d.mjs';
-import { field } from './x3d.mjs';
-import { ProtoBody } from './x3d.mjs';
-import { Transform } from './x3d.mjs';
-import { IS } from './x3d.mjs';
-import { connect } from './x3d.mjs';
-import { Shape } from './x3d.mjs';
-import { Sphere } from './x3d.mjs';
-import { Appearance } from './x3d.mjs';
-import { Material } from './x3d.mjs';
-import { SFColor } from './x3d.mjs';
-import { PositionInterpolator } from './x3d.mjs';
-import { MFFloat } from './x3d.mjs';
-import { MFVec3f } from './x3d.mjs';
-import { Script } from './x3d.mjs';
-import { TimeSensor } from './x3d.mjs';
-import { SFTime } from './x3d.mjs';
-import { SFBool } from './x3d.mjs';
-import { ROUTE } from './x3d.mjs';
-import { Extrusion } from './x3d.mjs';
-import { SFFloat } from './x3d.mjs';
-import { MFVec2f } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
-import { ProtoInstance } from './x3d.mjs';
-import { fieldValue } from './x3d.mjs';
+var X3D = require('./x3d.mjs');
+try {
+	var fs = require('fs');
+} catch (e) {
+console.log("Problems loading fs. On browser?",e);
+}
+var SFString = require('./x3d.mjs');
+var SFNode = require('./x3d.mjs');
+var head = require('./x3d.mjs');
+var MFNode = require('./x3d.mjs');
+var meta = require('./x3d.mjs');
+var Scene = require('./x3d.mjs');
+var ProtoDeclare = require('./x3d.mjs');
+var ProtoInterface = require('./x3d.mjs');
+var field = require('./x3d.mjs');
+var ProtoBody = require('./x3d.mjs');
+var Transform = require('./x3d.mjs');
+var IS = require('./x3d.mjs');
+var connect = require('./x3d.mjs');
+var Shape = require('./x3d.mjs');
+var Sphere = require('./x3d.mjs');
+var Appearance = require('./x3d.mjs');
+var Material = require('./x3d.mjs');
+var SFColor = require('./x3d.mjs');
+var PositionInterpolator = require('./x3d.mjs');
+var MFFloat = require('./x3d.mjs');
+var MFVec3f = require('./x3d.mjs');
+var Script = require('./x3d.mjs');
+var TimeSensor = require('./x3d.mjs');
+var SFTime = require('./x3d.mjs');
+var SFBool = require('./x3d.mjs');
+var ROUTE = require('./x3d.mjs');
+var Extrusion = require('./x3d.mjs');
+var SFFloat = require('./x3d.mjs');
+var MFVec2f = require('./x3d.mjs');
+var SFVec3f = require('./x3d.mjs');
+var ProtoInstance = require('./x3d.mjs');
+var fieldValue = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
-      version : new SFString("4.0"),
+      version : new SFString("3.3"),
       head : new SFNode(
         new head({
           meta : new MFNode([
@@ -58,7 +62,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/fors2.x3d")}),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/fors2.x3d")}),
 
             new meta({
               name : new SFString("description"),
@@ -91,7 +95,7 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("translation"),
                               protoField : new SFString("position")})])})),
-                      children : new MFNode([
+                      child : new SFNode(
                         new Shape({
                           /*comment before Sphere*/
                           /*comment after Sphere*/
@@ -104,7 +108,7 @@ var X3D0 =  new X3D({
                               /*comment after Material*/
                               material : new SFNode(
                                 new Material({
-                                  diffuseColor : new SFColor([1,0,0])}))}))})])}),
+                                  diffuseColor : new SFColor([1,0,0])}))}))}))}),
 
                     new PositionInterpolator({
                       DEF : new SFString("NodePosition"),

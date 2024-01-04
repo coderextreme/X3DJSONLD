@@ -40,22 +40,24 @@ public class MyBounce {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new MyBounce().initialize().toFileJSON("../personal/MyBounce.new.json");
+    X3D model = new MyBounce().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../personal/MyBounce.new.json");
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
         .addComponent(new component().setName("Scripting").setLevel(1))
         .addMeta(new meta().setName("title").setContent("MyBounce.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("description").setContent("3 prismatic spheres"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/SFVec3f.x3d")))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
         .addChild(new Transform().setDEF("transform")
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new float[] {0.7f,0.7f,0.7f}).setSpecularColor(new float[] {0.5f,0.5f,0.5f})))
+              .setMaterial(new Material().setDiffuseColor(new float[] {0.7f ,0.7f ,0.7f }).setSpecularColor(new float[] {0.5f ,0.5f ,0.5f })))
             .setGeometry(new Sphere())))
         .addChild(new Script().setDEF("Bounce2")
           .addField(new field().setType("SFVec3f").setName("set_translation").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("0 0 0"))

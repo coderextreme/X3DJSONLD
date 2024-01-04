@@ -40,15 +40,17 @@ public class text {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new text().initialize().toFileJSON("../personal/text.new.json");
+    X3D model = new text().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../personal/text.new.json");
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
         .addMeta(new meta().setName("creator").setContent("John W Carlson"))
         .addMeta(new meta().setName("created").setContent("December 13 2015"))
         .addMeta(new meta().setName("title").setContent("text.x3d"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/text.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/text.x3d"))
         .addMeta(new meta().setName("description").setContent("test \\n text"))
         .addMeta(new meta().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
       .setScene(new Scene()
@@ -74,18 +76,18 @@ public class text {
 "			    var me = '\"1\" \"\"2\" \"\\n3\"';"))))      ;
     return X3D0;
     }
-protected class MFString0 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString0 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Node\"\"\""});
   }
 }
-protected class MFString1 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString1 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Node2","\\\\","\\\\\\\\","Node2"});
   }
 }
-protected class MFString2 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString2 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Node3 \\\\\\\\ \\\\ ","Node3\"\"\""});
   }
 }

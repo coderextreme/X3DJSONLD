@@ -20,11 +20,11 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid4NoSegSite.x3d">Humanoid4NoSegSite.x3d</a> </td>
+			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d">JohnBoy.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid4NoSegSite.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid4NoSegSite.x3d</a> </td>
+			<td> <a href="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -200,8 +200,8 @@ Humanoid4NoSegSite.prototype = {
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
-    .addMeta((new autoclass.meta()).setName("title").setContent("Humanoid4NoSegSite.x3d"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid4NoSegSite.x3d"))
+    .addMeta((new autoclass.meta()).setName("title").setContent("JohnBoy.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("An attempt at a standard LOA-4 skeleton"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("h2.pl"))
     .addMeta((new autoclass.meta()).setName("modified").setContent("14 Jan 2023"))
@@ -270,7 +270,7 @@ Humanoid4NoSegSite.prototype = {
                         .addChild((new autoclass.HAnimJoint("hanim_l_tarsal_proximal_interphalangeal_2")).setName("l_tarsal_proximal_interphalangeal_2").setCenter(0.0841,0.0041,0.0121).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [0])).setSkinCoordWeight(java.newArray("float", [0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
                           .addChild((new autoclass.HAnimJoint("hanim_l_tarsal_distal_interphalangeal_2")).setName("l_tarsal_distal_interphalangeal_2").setCenter(0.0841,0.0013,0.0216).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [0])).setSkinCoordWeight(java.newArray("float", [0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))))))
                   .addChild((new autoclass.HAnimJoint("hanim_l_cuneonavicular_3")).setName("l_cuneonavicular_3").setCenter(0.0928,0.0248,-0.0821).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [0])).setSkinCoordWeight(java.newArray("float", [0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
-                    .addChild((new autoclass.HAnimJoint("hanim_l_tarsometatarsal_3")).setName("l_tarsometatarsal_3").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                    .addChild((new autoclass.HAnimJoint("hanim_l_tarsometatarsal_3")).setName("l_tarsometatarsal_3").setCenter(0.0944,0.0175,-0.0625).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [0])).setSkinCoordWeight(java.newArray("float", [0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
                       .addChild((new autoclass.HAnimJoint("hanim_l_metatarsophalangeal_3")).setName("l_metatarsophalangeal_3").setCenter(0.0963,0.0065,-0.0065).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [0])).setSkinCoordWeight(java.newArray("float", [0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
                         .addChild((new autoclass.HAnimJoint("hanim_l_tarsal_proximal_interphalangeal_3")).setName("l_tarsal_proximal_interphalangeal_3").setCenter(0.0987,0.0034,0.0086).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [0])).setSkinCoordWeight(java.newArray("float", [0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
                           .addChild((new autoclass.HAnimJoint("hanim_l_tarsal_distal_interphalangeal_3")).setName("l_tarsal_distal_interphalangeal_3").setCenter(0.1002,0.0013,0.0178).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [0])).setSkinCoordWeight(java.newArray("float", [0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))))))))
@@ -298,7 +298,7 @@ Humanoid4NoSegSite.prototype = {
                         .addChild((new autoclass.HAnimJoint("hanim_r_tarsal_proximal_interphalangeal_2")).setName("r_tarsal_proximal_interphalangeal_2").setCenter(-0.0841,0.0041,0.0121).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [0])).setSkinCoordWeight(java.newArray("float", [0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
                           .addChild((new autoclass.HAnimJoint("hanim_r_tarsal_distal_interphalangeal_2")).setName("r_tarsal_distal_interphalangeal_2").setCenter(-0.0841,0.0013,0.0216).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [0])).setSkinCoordWeight(java.newArray("float", [0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))))))
                   .addChild((new autoclass.HAnimJoint("hanim_r_cuneonavicular_3")).setName("r_cuneonavicular_3").setCenter(-0.0928,0.0248,-0.0821).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [0])).setSkinCoordWeight(java.newArray("float", [0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
-                    .addChild((new autoclass.HAnimJoint("hanim_r_tarsometatarsal_3")).setName("r_tarsometatarsal_3").setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                    .addChild((new autoclass.HAnimJoint("hanim_r_tarsometatarsal_3")).setName("r_tarsometatarsal_3").setCenter(-0.0944,0.0175,-0.0625).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [0])).setSkinCoordWeight(java.newArray("float", [0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
                       .addChild((new autoclass.HAnimJoint("hanim_r_metatarsophalangeal_3")).setName("r_metatarsophalangeal_3").setCenter(-0.0963,0.0065,-0.0065).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [0])).setSkinCoordWeight(java.newArray("float", [0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
                         .addChild((new autoclass.HAnimJoint("hanim_r_tarsal_proximal_interphalangeal_3")).setName("r_tarsal_proximal_interphalangeal_3").setCenter(-0.0987,0.0034,0.0086).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [0])).setSkinCoordWeight(java.newArray("float", [0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
                           .addChild((new autoclass.HAnimJoint("hanim_r_tarsal_distal_interphalangeal_3")).setName("r_tarsal_distal_interphalangeal_3").setCenter(-0.1002,0.0013,0.0178).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [0])).setSkinCoordWeight(java.newArray("float", [0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))))))))

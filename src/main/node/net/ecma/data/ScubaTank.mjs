@@ -28,7 +28,7 @@ var MFColor = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Interchange"),
-      version : new SFString("4.0"),
+      version : new SFString("3.3"),
       head : new SFNode(
         new head({
           meta : new MFNode([
@@ -58,7 +58,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")})])})),
+              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
+
+            new meta({
+              name : new SFString("license"),
+              content : new SFString("../license.html")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
@@ -78,8 +82,8 @@ var X3D0 =  new X3D({
                               DEF : new SFString("tank"),
                               ambientIntensity : new SFFloat(0.3),
                               diffuseColor : new SFColor([0.3,0.3,0.5]),
-                              specularColor : new SFColor([0.7,0.7,0.8]),
-                              shininess : new SFFloat(0.1)}))})),
+                              shininess : new SFFloat(0.1),
+                              specularColor : new SFColor([0.7,0.7,0.8])}))})),
                       geometry : new SFNode(
                         new Cylinder({
                           height : new SFFloat(0.7),
@@ -132,8 +136,8 @@ var X3D0 =  new X3D({
                                       DEF : new SFString("pressureColor"),
                                       ambientIntensity : new SFFloat(0.4),
                                       diffuseColor : new SFColor([0.91,0.91,0.91]),
-                                      specularColor : new SFColor([0.91,0.9,0.91]),
-                                      shininess : new SFFloat(0.16)}))})),
+                                      shininess : new SFFloat(0.16),
+                                      specularColor : new SFColor([0.91,0.9,0.91])}))})),
                               geometry : new SFNode(
                                 new Cylinder({
                                   height : new SFFloat(0.1),
@@ -155,8 +159,8 @@ var X3D0 =  new X3D({
                                   radius : new SFFloat(0.025)}))}))}),
 
                         new Transform({
-                          translation : new SFVec3f([-0.028,0.462,0]),
                           rotation : new SFRotation([0,0,1,1.57]),
+                          translation : new SFVec3f([-0.028,0.462,0]),
                           children : new MFNode([
                             new Transform({
                               child : new SFNode(

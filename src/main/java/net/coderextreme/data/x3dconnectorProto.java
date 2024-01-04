@@ -50,7 +50,7 @@ ProtoInstance ProtoInstance1 = null;
 ProtoInstance ProtoInstance2 = null;
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("x3dconnectorProto"))
+        .addMeta(new meta().setName("title").setContent("x3dconnectorProto.x3d"))
         .addMeta(new meta().setName("creator").setContent("Lost, Doug Sanden I think"))
         .addMeta(new meta().setName("created").setContent("Unknown"))
         .addMeta(new meta().setName("modified").setContent("July 30 2023"))
@@ -60,54 +60,54 @@ ProtoInstance ProtoInstance2 = null;
         .addMeta(new meta().setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("Connector Proto"))
-        .addChild(new Viewpoint().setPosition(new float[] {0f,0f,5f}).setDescription("Only Viewpoint"))
+        .addChild(new Viewpoint().setPosition(new float[] {0f ,0f ,5f }).setDescription("Only Viewpoint"))
         .addChild(new Background().setSkyColor(new MFColor0().getArray()))
         .addChild(new Transform().setDEF("G1")
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new float[] {0.7f,0.2f,0.2f})))
-            .setGeometry(new Sphere().setRadius(0.1f)))
+              .setMaterial(new Material().setDiffuseColor(new float[] {0.7f ,0.2f ,0.2f })))
+            .setGeometry(new Sphere().setRadius(0.1f )))
           .addChild(new PlaneSensor().setDescription("Grab to move").setDEF("PS1"))
           .addChild(new ROUTE().setFromNode("PS1").setFromField("translation_changed").setToNode("G1").setToField("set_translation")))
-        .addChild(new Transform().setDEF("G2").setTranslation(new float[] {1f,-1f,0.01f})
+        .addChild(new Transform().setDEF("G2").setTranslation(new float[] {1f ,-1f ,0.01f })
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new float[] {0.2f,0.7f,0.2f})))
-            .setGeometry(new Sphere().setRadius(0.1f)))
-          .addChild(new PlaneSensor().setDescription("Grab to move").setOffset(new float[] {1f,-1f,0.01f}).setDEF("PS2"))
+              .setMaterial(new Material().setDiffuseColor(new float[] {0.2f ,0.7f ,0.2f })))
+            .setGeometry(new Sphere().setRadius(0.1f )))
+          .addChild(new PlaneSensor().setDescription("Grab to move").setOffset(new float[] {1f ,-1f ,0.01f }).setDEF("PS2"))
           .addChild(new ROUTE().setFromNode("PS2").setFromField("translation_changed").setToNode("G2").setToField("set_translation")))
-        .addChild(new Transform().setDEF("G3").setTranslation(new float[] {1f,1f,0.01f})
+        .addChild(new Transform().setDEF("G3").setTranslation(new float[] {1f ,1f ,0.01f })
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new float[] {0.2f,0.7f,0.2f})))
-            .setGeometry(new Sphere().setRadius(0.1f)))
-          .addChild(new PlaneSensor().setDescription("Grab to move").setOffset(new float[] {1f,1f,0.01f}).setDEF("PS3"))
+              .setMaterial(new Material().setDiffuseColor(new float[] {0.2f ,0.7f ,0.2f })))
+            .setGeometry(new Sphere().setRadius(0.1f )))
+          .addChild(new PlaneSensor().setDescription("Grab to move").setOffset(new float[] {1f ,1f ,0.01f }).setDEF("PS3"))
           .addChild(new ROUTE().setFromNode("PS3").setFromField("translation_changed").setToNode("G3").setToField("set_translation")))
-        .addChild(new Transform().setDEF("G4").setTranslation(new float[] {-1f,1f,0.01f})
+        .addChild(new Transform().setDEF("G4").setTranslation(new float[] {-1f ,1f ,0.01f })
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new float[] {0.2f,0.7f,0.2f})))
-            .setGeometry(new Sphere().setRadius(0.1f)))
-          .addChild(new PlaneSensor().setDescription("Grab to move").setOffset(new float[] {-1f,1f,0.01f}).setDEF("PS4"))
+              .setMaterial(new Material().setDiffuseColor(new float[] {0.2f ,0.7f ,0.2f })))
+            .setGeometry(new Sphere().setRadius(0.1f )))
+          .addChild(new PlaneSensor().setDescription("Grab to move").setOffset(new float[] {-1f ,1f ,0.01f }).setDEF("PS4"))
           .addChild(new ROUTE().setFromNode("PS4").setFromField("translation_changed").setToNode("G4").setToField("set_translation")))
         .addChild(new Transform().setDEF("transC1")
           .addChild(new Transform().setDEF("rotscaleC1")
             .addChild(new Shape()
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(new float[] {0.2f,0.7f,0.7f}).setTransparency(0.5f)))
-              .setGeometry(new Cylinder().setRadius(0.05f)))))
+                .setMaterial(new Material().setDiffuseColor(new float[] {0.2f ,0.7f ,0.7f }).setTransparency(0.5f )))
+              .setGeometry(new Cylinder().setRadius(0.05f )))))
         .addChild(new Transform().setDEF("transC2")
           .addChild(new Transform().setDEF("rotscaleC2")
             .addChild(new Shape()
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(new float[] {0.2f,0.7f,0.7f}).setTransparency(0.5f)))
-              .setGeometry(new Cylinder().setRadius(0.05f)))))
+                .setMaterial(new Material().setDiffuseColor(new float[] {0.2f ,0.7f ,0.7f }).setTransparency(0.5f )))
+              .setGeometry(new Cylinder().setRadius(0.05f )))))
         .addChild(new Transform().setDEF("transC3")
           .addChild(new Transform().setDEF("rotscaleC3")
             .addChild(new Shape()
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(new float[] {0.2f,0.7f,0.7f}).setTransparency(0.5f)))
-              .setGeometry(new Cylinder().setRadius(0.05f)))))
+                .setMaterial(new Material().setDiffuseColor(new float[] {0.2f ,0.7f ,0.7f }).setTransparency(0.5f )))
+              .setGeometry(new Cylinder().setRadius(0.05f )))))
         .addChild(new ProtoDeclare().setName("x3dconnector")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFNode").setName("startnode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
@@ -136,11 +136,11 @@ ProtoInstance ProtoInstance2 = null;
 "	    if (typeof endpoint === 'undefined') {\n"+
 "		return;\n"+
 "	    }\n"+
-"            let dif = endpoint.subtract(startpoint);\n"+
-"            let dist = dif.length()*0.5;\n"+
-"            let dif2 = dif.multiply(0.5);\n"+
-"            let norm = dif.normalize();\n"+
-"            let transl = startpoint.add(dif2);\n"+
+"            var dif = endpoint.subtract(startpoint);\n"+
+"            var dist = dif.length()*0.5;\n"+
+"            var dif2 = dif.multiply(0.5);\n"+
+"            var norm = dif.normalize();\n"+
+"            var transl = startpoint.add(dif2);\n"+
 "	    if (typeof Quaternion !== 'undefined') {\n"+
 "		    return {\n"+
 "			    scale : new SFVec3f(1.0,dist,1.0),\n"+
@@ -156,7 +156,7 @@ ProtoInstance ProtoInstance2 = null;
 "	    }\n"+
 "	}\n"+
 "	function recompute_and_route(startpoint, endpoint) {\n"+
-"	      let trafo = recompute(startpoint, endpoint);\n"+
+"	      var trafo = recompute(startpoint, endpoint);\n"+
 "	      if (trafo) {\n"+
 "		      transnode.translation = trafo.translation;\n"+
 "		      rotscalenode.rotation = trafo.rotation;\n"+
@@ -231,9 +231,9 @@ ProtoInstance2
           .addFieldValue(new fieldValue().setName("set_endpoint").setValue("0 0 0"));
     return X3D0;
     }
-protected class MFColor0 {
-  protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.4f,0.4f,0.4f});
+private class MFColor0 {
+  private org.web3d.x3d.jsail.fields.MFColor getArray() {
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.4f ,0.4f ,0.4f });
   }
 }
 }

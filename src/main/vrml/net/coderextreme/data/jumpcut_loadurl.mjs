@@ -47,7 +47,7 @@ head1.meta[7] = meta9;
 
 let meta10 = browser.currentScene.createNode("meta");
 meta10.name = "modified";
-meta10.content = "20 October 2019";
+meta10.content = "Sat, 30 Dec 2023 07:50:03 GMT";
 head1.meta[8] = meta10;
 
 let meta11 = browser.currentScene.createNode("meta");
@@ -65,95 +65,90 @@ meta13.name = "generator";
 meta13.content = "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html";
 head1.meta[11] = meta13;
 
-let meta14 = browser.currentScene.createNode("meta");
-meta14.name = "generator";
-meta14.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
-head1.meta[12] = meta14;
-
 head = head1;
 
-let WorldInfo16 = browser.currentScene.createNode("WorldInfo");
-WorldInfo16.title = "jumpcut_loadurl.x3d";
+let WorldInfo15 = browser.currentScene.createNode("WorldInfo");
+WorldInfo15.title = "jumpcut_loadurl.x3d";
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = WorldInfo16;
+browser.currentScene.children[0] = WorldInfo15;
 
-let Background17 = browser.currentScene.createNode("Background");
-Background17.skyColor = new MFColor(new float[0,0,1]);
-Background17.groundAngle = new MFFloat(new float[1.57]);
-Background17.groundColor = new MFColor(new float[0,0.5,0,0,0.5,0]);
-browser.currentScene.children[1] = Background17;
+let Background16 = browser.currentScene.createNode("Background");
+Background16.skyColor = new MFColor(new float[0,0,1]);
+Background16.groundAngle = new MFFloat(new float[1.57]);
+Background16.groundColor = new MFColor(new float[0,0.5,0,0,0.5,0]);
+browser.currentScene.children[1] = Background16;
 
-let NavigationInfo18 = browser.currentScene.createNode("NavigationInfo");
-NavigationInfo18.type = new MFString(new java.lang.String["EXAMINE","WALK","FLY","ANY"]);
-browser.currentScene.children[2] = NavigationInfo18;
+let NavigationInfo17 = browser.currentScene.createNode("NavigationInfo");
+NavigationInfo17.type = new MFString(new java.lang.String["EXAMINE","WALK","FLY","ANY"]);
+browser.currentScene.children[2] = NavigationInfo17;
+
+let Viewpoint18 = browser.currentScene.createNode("Viewpoint");
+Viewpoint18.DEF = "Front_View";
+Viewpoint18.description = "Front View";
+browser.currentScene.children[3] = Viewpoint18;
 
 let Viewpoint19 = browser.currentScene.createNode("Viewpoint");
-Viewpoint19.DEF = "Front_View";
-Viewpoint19.description = "Front View";
-browser.currentScene.children[3] = Viewpoint19;
+Viewpoint19.DEF = "Top_View";
+Viewpoint19.description = "Top View";
+Viewpoint19.position = new SFVec3f(new float[0,10,0]);
+Viewpoint19.orientation = new SFRotation(new float[1,0,0,-1.57]);
+browser.currentScene.children[4] = Viewpoint19;
 
-let Viewpoint20 = browser.currentScene.createNode("Viewpoint");
-Viewpoint20.DEF = "Top_View";
-Viewpoint20.description = "Top View";
-Viewpoint20.position = new SFVec3f(new float[0,10,0]);
-Viewpoint20.orientation = new SFRotation(new float[1,0,0,-1.57]);
-browser.currentScene.children[4] = Viewpoint20;
+let TouchSensor20 = browser.currentScene.createNode("TouchSensor");
+TouchSensor20.DEF = "STARTER";
+TouchSensor20.description = "touch to activate";
+browser.currentScene.children[5] = TouchSensor20;
 
-let TouchSensor21 = browser.currentScene.createNode("TouchSensor");
-TouchSensor21.DEF = "STARTER";
-TouchSensor21.description = "touch to activate";
-browser.currentScene.children[5] = TouchSensor21;
+let Transform21 = browser.currentScene.createNode("Transform");
+Transform21.DEF = "ROOT";
+let Shape22 = browser.currentScene.createNode("Shape");
+let Appearance23 = browser.currentScene.createNode("Appearance");
+let Material24 = browser.currentScene.createNode("Material");
+Appearance23.material = Material24;
 
-let Transform22 = browser.currentScene.createNode("Transform");
-Transform22.DEF = "ROOT";
-let Shape23 = browser.currentScene.createNode("Shape");
-let Appearance24 = browser.currentScene.createNode("Appearance");
-let Material25 = browser.currentScene.createNode("Material");
-Appearance24.material = Material25;
+Shape22.appearance = Appearance23;
 
-Shape23.appearance = Appearance24;
+let Box25 = browser.currentScene.createNode("Box");
+Shape22.geometry = Box25;
 
-let Box26 = browser.currentScene.createNode("Box");
-Shape23.geometry = Box26;
+Transform21.child = new undefined();
 
-Transform22.child = new undefined();
+Transform21.child[0] = Shape22;
 
-Transform22.child[0] = Shape23;
+browser.currentScene.children[6] = Transform21;
 
-browser.currentScene.children[6] = Transform22;
+let Script26 = browser.currentScene.createNode("Script");
+Script26.DEF = "MYSCRIPT";
+Script26.url = new MFString(new java.lang.String["jumpcut_loadurl.js","https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.js"]);
+let field27 = browser.currentScene.createNode("field");
+field27.accessType = "initializeOnly";
+field27.type = "MFString";
+field27.name = "myParameter";
+field27.value = "\"Top_View\"";
+Script26.field = new MFNode();
 
-let Script27 = browser.currentScene.createNode("Script");
-Script27.DEF = "MYSCRIPT";
-Script27.url = new MFString(new java.lang.String["jumpcut_loadurl.js","https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.js"]);
+Script26.field[0] = field27;
+
 let field28 = browser.currentScene.createNode("field");
 field28.accessType = "initializeOnly";
 field28.type = "MFString";
-field28.name = "myParameter";
-field28.value = "\"Top_View\"";
-Script27.field = new MFNode();
-
-Script27.field[0] = field28;
+field28.name = "myUrl";
+field28.value = "\"jumpcut_loadurl.x3d#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View\" \"jumpcut_loadurl.wrl#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View\"";
+Script26.field[1] = field28;
 
 let field29 = browser.currentScene.createNode("field");
-field29.accessType = "initializeOnly";
-field29.type = "MFString";
-field29.name = "myUrl";
-field29.value = "\"jumpcut_loadurl.x3d#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View\" \"jumpcut_loadurl.wrl#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View\"";
-Script27.field[1] = field29;
+field29.accessType = "inputOnly";
+field29.type = "SFBool";
+field29.name = "trigger_event";
+Script26.field[2] = field29;
 
-let field30 = browser.currentScene.createNode("field");
-field30.accessType = "inputOnly";
-field30.type = "SFBool";
-field30.name = "trigger_event";
-Script27.field[2] = field30;
+browser.currentScene.children[7] = Script26;
 
-browser.currentScene.children[7] = Script27;
-
-let ROUTE31 = browser.currentScene.createNode("ROUTE");
-ROUTE31.fromNode = "STARTER";
-ROUTE31.fromField = "isActive";
-ROUTE31.toNode = "MYSCRIPT";
-ROUTE31.toField = "trigger_event";
-browser.currentScene.children[8] = ROUTE31;
+let ROUTE30 = browser.currentScene.createNode("ROUTE");
+ROUTE30.fromNode = "STARTER";
+ROUTE30.fromField = "isActive";
+ROUTE30.toNode = "MYSCRIPT";
+ROUTE30.toField = "trigger_event";
+browser.currentScene.children[8] = ROUTE30;
 

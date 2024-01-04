@@ -12,7 +12,7 @@ export default function loadJson(url, loadValidator) {
 }
 
 $(document).ready(function() {
-	loadJson('../personal/sphereflowers.x3dj', loadValidator); // does load sphereflowers.x3dj
+	loadJson('../personal/sphereflowers.json', loadValidator); // does load sphereflowers.json
 });
 
 module.exports = loadJson;

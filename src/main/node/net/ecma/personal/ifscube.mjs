@@ -1,27 +1,31 @@
 'use strict';
-import fs from 'fs';
-import { X3D } from './x3d.mjs';
-import { SFString } from './x3d.mjs';
-import { SFNode } from './x3d.mjs';
-import { head } from './x3d.mjs';
-import { MFNode } from './x3d.mjs';
-import { meta } from './x3d.mjs';
-import { Scene } from './x3d.mjs';
-import { Group } from './x3d.mjs';
-import { Shape } from './x3d.mjs';
-import { IndexedFaceSet } from './x3d.mjs';
-import { SFFloat } from './x3d.mjs';
-import { MFInt32 } from './x3d.mjs';
-import { SFBool } from './x3d.mjs';
-import { Coordinate } from './x3d.mjs';
-import { MFVec3f } from './x3d.mjs';
-import { Normal } from './x3d.mjs';
-import { Color } from './x3d.mjs';
-import { MFColor } from './x3d.mjs';
+var X3D = require('./x3d.mjs');
+try {
+	var fs = require('fs');
+} catch (e) {
+console.log("Problems loading fs. On browser?",e);
+}
+var SFString = require('./x3d.mjs');
+var SFNode = require('./x3d.mjs');
+var head = require('./x3d.mjs');
+var MFNode = require('./x3d.mjs');
+var meta = require('./x3d.mjs');
+var Scene = require('./x3d.mjs');
+var Group = require('./x3d.mjs');
+var Shape = require('./x3d.mjs');
+var IndexedFaceSet = require('./x3d.mjs');
+var SFFloat = require('./x3d.mjs');
+var MFInt32 = require('./x3d.mjs');
+var SFBool = require('./x3d.mjs');
+var Coordinate = require('./x3d.mjs');
+var MFVec3f = require('./x3d.mjs');
+var Normal = require('./x3d.mjs');
+var Color = require('./x3d.mjs');
+var MFColor = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Interchange"),
-      version : new SFString("4.0"),
+      version : new SFString("3.3"),
       head : new SFNode(
         new head({
           meta : new MFNode([
@@ -31,7 +35,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("http://coderextreme.net/X3DJSONLD/src/main/personal/ifscube.x3d")}),
+              content : new SFString("http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d")}),
 
             new meta({
               name : new SFString("description"),

@@ -40,7 +40,9 @@ public class flowers2 {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new flowers2().initialize().toFileJSON("../personal/flowers2.new.json");
+    X3D model = new flowers2().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../personal/flowers2.new.json");
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;
@@ -54,14 +56,14 @@ ProtoInstance ProtoInstance1 = null;
         .addMeta(new meta().setName("created").setContent("23 January 2005"))
         .addMeta(new meta().setName("modified").setContent("21 March 2018"))
         .addMeta(new meta().setName("description").setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/flowers2.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"))
         .addMeta(new meta().setName("generator").setContent("manually written"))
         .addMeta(new meta().setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
-        .addChild(new Viewpoint().setDescription("Two mathematical orbitals").setPosition(new float[] {0f,0f,50f}))
+        .addChild(new Viewpoint().setDescription("Two mathematical orbitals").setPosition(new float[] {0f ,0f ,50f }))
         .addChild(new Group()
-          .addChild(new DirectionalLight().setDirection(new float[] {1f,1f,1f}))
+          .addChild(new DirectionalLight().setDirection(new float[] {1f ,1f ,1f }))
           .addChild(new ProtoDeclare().setName("orbit")
             .setProtoInterface(new ProtoInterface()
               .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("-8 0 0"))
@@ -193,24 +195,24 @@ ProtoInstance1
             .addFieldValue(new fieldValue().setName("transparency").setValue("0.5"));
     return X3D0;
     }
-protected class MFFloat0 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.5f,1f});
+private class MFFloat0 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0.5f ,1f });
   }
 }
-protected class MFRotation1 {
-  protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f,0f,0f,0f,1f,0f,0f,3.14f,1f,0f,0f,6.28f});
+private class MFRotation1 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f ,0f ,0f ,0f ,1f ,0f ,0f ,3.14f ,1f ,0f ,0f ,6.28f });
   }
 }
-protected class MFInt322 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+private class MFInt322 {
+  private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1});
   }
 }
-protected class MFVec3f3 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,1f,0f,1f,0f,1f,0f,0f});
+private class MFVec3f3 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f });
   }
 }
 }

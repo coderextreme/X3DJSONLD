@@ -1,7 +1,9 @@
 let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Immersive";
-X3D0.version = "4.0";
+X3D0.version = "3.3";
+//All head/meta tags are optional, WorldInfo is also optional
+//Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1
 let head1 = browser.currentScene.createNode("head");
 let meta2 = browser.currentScene.createNode("meta");
 meta2.name = "title";
@@ -75,18 +77,23 @@ meta15.name = "generator";
 meta15.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
 head1.meta[13] = meta15;
 
+let meta16 = browser.currentScene.createNode("meta");
+meta16.name = "license";
+meta16.content = "../license.html";
+head1.meta[14] = meta16;
+
 head = head1;
 
-let WorldInfo17 = browser.currentScene.createNode("WorldInfo");
-WorldInfo17.title = "HelloWorldMinimal.x3d";
+let WorldInfo18 = browser.currentScene.createNode("WorldInfo");
+WorldInfo18.title = "HelloWorldMinimal.x3d";
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = WorldInfo17;
+browser.currentScene.children[0] = WorldInfo18;
 
-let Shape18 = browser.currentScene.createNode("Shape");
-let Text19 = browser.currentScene.createNode("Text");
-Text19.string = new MFString(new java.lang.String["hello, world"]);
-Shape18.geometry = Text19;
+let Shape19 = browser.currentScene.createNode("Shape");
+let Text20 = browser.currentScene.createNode("Text");
+Text20.string = new MFString(new java.lang.String["hello, world"]);
+Shape19.geometry = Text20;
 
-browser.currentScene.children[1] = Shape18;
+browser.currentScene.children[1] = Shape19;
 
