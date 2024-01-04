@@ -1,9 +1,10 @@
 var java = require('java');
+var util = require('util');
 java.asyncOptions = {
   asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
   syncSuffix: "",              // Sync methods use the base name(!!)
   promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
-  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  promisify: util.promisify, // Needs Node.js version 8 or greater, see comment below
   ifReadOnlySuffix: "_alt"
 };
 var autoclass = require('../../../X3Dautoclass');
@@ -12,10 +13,10 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
-      var X3D0 =  (new autoclass.X3D()).setProfile("Interchange").setVersion("4.0")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Interchange").setVersion("3.3")
       .setHead((new autoclass.head())
         .addMeta((new autoclass.meta()).setName("title").setContent("ifscubeworks.x3d"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/src/main/personal/ifscubeworks.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/src/main/data/ifscubeworks.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("Template for an Indexed Face Set"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("created").setContent("4 April 2017"))
@@ -29,5 +30,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .setCoord((new autoclass.Coordinate()).setPoint(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(1), java.newFloat(1), java.newFloat(1), java.newFloat(1), java.newFloat(1), java.newFloat(1), java.newFloat(0), java.newFloat(1)])))
               .setNormal((new autoclass.Normal()).setVector(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(-1), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(-1), java.newFloat(0), java.newFloat(-1), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(1)])))
               .setColor((new autoclass.Color()).setColor(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0)])))))))      ;
-    X3D0.toFileX3D("../personal/ifscubeworks.new.x3d");
+    X3D0.toFileX3D("../personal/ifscubeworks.new.node.x3d");
     process.exit(0);

@@ -97,7 +97,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("27 January 2023")}),
+              content : new SFString("Sat, 30 Dec 2023 07:49:08 GMT")}),
 
             new meta({
               name : new SFString("creator"),
@@ -118,10 +118,6 @@ var X3D0 =  new X3D({
             new meta({
               name : new SFString("generator"),
               content : new SFString("BS studio translation from .x3dv by Joe using BS Contact")}),
-
-            new meta({
-              name : new SFString("generator"),
-              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
           component : new SFNode(
             new component({
               name : new SFString("HAnim"),
@@ -196,12 +192,13 @@ var X3D0 =  new X3D({
               children : new MFNode([
                 new HAnimHumanoid({
                   DEF : new SFString("Joe_Human"),
-                  version : new SFString("2.0"),
                   name : new SFString("Human"),
                   joints : new MFNode([
                     new HAnimJoint({
                       DEF : new SFString("Joe_HumanoidRoot"),
                       name : new SFString("HumanoidRoot"),
+                      translation : new SFVec3f([-0.06765416,0.07288204,-0.0774799]),
+                      rotation : new SFRotation([-1,0,0,0.345040215995291]),
                       center : new SFVec3f([0,0.875,0]),
                       metadata : new MFNode([
                         new MetadataSet({
@@ -253,6 +250,7 @@ var X3D0 =  new X3D({
                             new HAnimJoint({
                               DEF : new SFString("Joe_l_hip"),
                               name : new SFString("l_hip"),
+                              rotation : new SFRotation([1,0,0,0.565927395692145]),
                               center : new SFVec3f([0.1,0.92,0]),
                               skinCoordIndex : new MFInt32([89,90,94,95,96,97]),
                               skinCoordWeight : new MFFloat([0.65,1,1,1,1,1]),
@@ -260,6 +258,7 @@ var X3D0 =  new X3D({
                                 new HAnimJoint({
                                   DEF : new SFString("Joe_l_knee"),
                                   name : new SFString("l_knee"),
+                                  rotation : new SFRotation([0.763392428656297,0,0.645934981147672,0.52562724608952]),
                                   center : new SFVec3f([0.115,0.466,0]),
                                   skinCoordIndex : new MFInt32([334,335,336,337,338,339,340,341]),
                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
@@ -267,6 +266,7 @@ var X3D0 =  new X3D({
                                     new HAnimJoint({
                                       DEF : new SFString("Joe_l_ankle"),
                                       name : new SFString("l_ankle"),
+                                      rotation : new SFRotation([1,0,0,0.363360166549682]),
                                       center : new SFVec3f([0.115,0.069,0]),
                                       skinCoordIndex : new MFInt32([342,343,344,345]),
                                       skinCoordWeight : new MFFloat([1,1,1,1]),
@@ -295,6 +295,7 @@ var X3D0 =  new X3D({
                             new HAnimJoint({
                               DEF : new SFString("Joe_r_hip"),
                               name : new SFString("r_hip"),
+                              rotation : new SFRotation([-1,0,0,1]),
                               center : new SFVec3f([-0.1,0.92,0]),
                               skinCoordIndex : new MFInt32([91,92,98,99,100,101,362,363]),
                               skinCoordWeight : new MFFloat([0.65,1,0.8,1,1,1,0.4,0.8]),
@@ -302,6 +303,7 @@ var X3D0 =  new X3D({
                                 new HAnimJoint({
                                   DEF : new SFString("Joe_r_knee"),
                                   name : new SFString("r_knee"),
+                                  rotation : new SFRotation([1,0,0,1]),
                                   center : new SFVec3f([-0.05,0.466,0]),
                                   skinCoordIndex : new MFInt32([362,363,364,365,366,367,368,369,98]),
                                   skinCoordWeight : new MFFloat([0.6,0.2,1,1,1,1,1,1,0.2]),
@@ -309,6 +311,7 @@ var X3D0 =  new X3D({
                                     new HAnimJoint({
                                       DEF : new SFString("Joe_r_ankle"),
                                       name : new SFString("r_ankle"),
+                                      rotation : new SFRotation([1,0,0,1]),
                                       center : new SFVec3f([-0.115,0.069,0]),
                                       skinCoordIndex : new MFInt32([370,371,372,373]),
                                       skinCoordWeight : new MFFloat([1,1,1,1]),
@@ -451,6 +454,7 @@ var X3D0 =  new X3D({
                                                                                                         new HAnimJoint({
                                                                                                           DEF : new SFString("Joe_vc4"),
                                                                                                           name : new SFString("vc4"),
+                                                                                                          rotation : new SFRotation([0.994021384613154,0,0.109185561919829,0.674335589713011]),
                                                                                                           center : new SFVec3f([0,1.5675,-0.0256]),
                                                                                                           children : new MFNode([
                                                                                                             new HAnimJoint({
@@ -478,6 +482,7 @@ var X3D0 =  new X3D({
                                                                                                                             new HAnimDisplacer({
                                                                                                                               DEF : new SFString("Joe_skull_tip_raiser_action"),
                                                                                                                               name : new SFString("skull_tip_raiser_action"),
+                                                                                                                              weight : new SFFloat(0.1380161),
                                                                                                                               coordIndex : new MFInt32([0,1,2,3,4,5,6,7,8,9]),
                                                                                                                               displacements : new MFVec3f([0,0.15,0,0,0,0.15,-0.1,0,0.15,0.1,0,0.05,0,-0.02,0.05,-0.15,0,0,-0.05,0,0,0.15,0,0,0.05,0,0,0,0,-0.15])})),
                                                                                                                           children : new MFNode([
@@ -533,6 +538,7 @@ var X3D0 =  new X3D({
                                                                                                     new HAnimJoint({
                                                                                                       DEF : new SFString("Joe_l_shoulder"),
                                                                                                       name : new SFString("l_shoulder"),
+                                                                                                      rotation : new SFRotation([-0.171741892272205,0,0.985141980852893,1.4976478896092]),
                                                                                                       center : new SFVec3f([0.2,1.44,-0.04]),
                                                                                                       skinCoordIndex : new MFInt32([41,42,44,80,102,103,104,105]),
                                                                                                       skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
@@ -540,6 +546,7 @@ var X3D0 =  new X3D({
                                                                                                         new HAnimJoint({
                                                                                                           DEF : new SFString("Joe_l_elbow"),
                                                                                                           name : new SFString("l_elbow"),
+                                                                                                          rotation : new SFRotation([-0.999752381846956,-0.0222525277516283,0,0.732659741895115]),
                                                                                                           center : new SFVec3f([0.2,1.1388,-0.04]),
                                                                                                           skinCoordIndex : new MFInt32([45,46,47,109,110,111,112,113,115,116,117,118]),
                                                                                                           skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]),
@@ -547,6 +554,7 @@ var X3D0 =  new X3D({
                                                                                                             new HAnimJoint({
                                                                                                               DEF : new SFString("Joe_l_wrist"),
                                                                                                               name : new SFString("l_wrist"),
+                                                                                                              rotation : new SFRotation([0,0.879033564588118,0.476759889595913,0.863276065544871]),
                                                                                                               center : new SFVec3f([0.2,0.87,-0.04]),
                                                                                                               skinCoordIndex : new MFInt32([119,120,121,122,123,124,125,126]),
                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
@@ -701,6 +709,7 @@ var X3D0 =  new X3D({
                                                                                                     new HAnimJoint({
                                                                                                       DEF : new SFString("Joe_r_shoulder"),
                                                                                                       name : new SFString("r_shoulder"),
+                                                                                                      rotation : new SFRotation([0,0,-1,1.51126006245613]),
                                                                                                       center : new SFVec3f([-0.2,1.44,-0.04]),
                                                                                                       skinCoordIndex : new MFInt32([29,30,32,78,218,219,220,221,86,88]),
                                                                                                       skinCoordWeight : new MFFloat([0.1,1,1,1,1,1,1,1,0.3,0.2]),
@@ -708,6 +717,7 @@ var X3D0 =  new X3D({
                                                                                                         new HAnimJoint({
                                                                                                           DEF : new SFString("Joe_r_elbow"),
                                                                                                           name : new SFString("r_elbow"),
+                                                                                                          rotation : new SFRotation([-0.999752381846956,-0.0222525277516283,0,0.732659741895115]),
                                                                                                           center : new SFVec3f([-0.2,1.1388,-0.04]),
                                                                                                           skinCoordIndex : new MFInt32([33,34,35,225,226,227,228,229,231,232,233,234]),
                                                                                                           skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1,1,1,1]),
@@ -715,6 +725,7 @@ var X3D0 =  new X3D({
                                                                                                             new HAnimJoint({
                                                                                                               DEF : new SFString("Joe_r_wrist"),
                                                                                                               name : new SFString("r_wrist"),
+                                                                                                              rotation : new SFRotation([0,0,-0.999999999999969,0.112600631272834]),
                                                                                                               center : new SFVec3f([-0.2,0.89,-0.04]),
                                                                                                               skinCoordIndex : new MFInt32([235,236,237,238,239,240,241,242]),
                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
@@ -743,6 +754,7 @@ var X3D0 =  new X3D({
                                                                                                                 new HAnimJoint({
                                                                                                                   DEF : new SFString("Joe_r_index0"),
                                                                                                                   name : new SFString("r_index0"),
+                                                                                                                  rotation : new SFRotation([0,0,0.999999999999971,0.0900804996490504]),
                                                                                                                   center : new SFVec3f([-0.2,0.84,-0.015]),
                                                                                                                   skinCoordIndex : new MFInt32([245,246]),
                                                                                                                   skinCoordWeight : new MFFloat([1,1]),
@@ -750,6 +762,7 @@ var X3D0 =  new X3D({
                                                                                                                     new HAnimJoint({
                                                                                                                       DEF : new SFString("Joe_r_index1"),
                                                                                                                       name : new SFString("r_index1"),
+                                                                                                                      rotation : new SFRotation([0,0,1.00000000000001,0.13512074947357]),
                                                                                                                       center : new SFVec3f([-0.2,0.793,-0.015]),
                                                                                                                       skinCoordIndex : new MFInt32([254,255,256,269,270,271,279]),
                                                                                                                       skinCoordWeight : new MFFloat([0.5,0.5,0.5,1,1,1,0.5]),
@@ -757,6 +770,7 @@ var X3D0 =  new X3D({
                                                                                                                         new HAnimJoint({
                                                                                                                           DEF : new SFString("Joe_r_index2"),
                                                                                                                           name : new SFString("r_index2"),
+                                                                                                                          rotation : new SFRotation([0,0,1.00000000000001,0.13512074947357]),
                                                                                                                           center : new SFVec3f([-0.2,0.745,-0.015]),
                                                                                                                           skinCoordIndex : new MFInt32([282,283,284,285]),
                                                                                                                           skinCoordWeight : new MFFloat([1,1,1,1]),
@@ -764,6 +778,7 @@ var X3D0 =  new X3D({
                                                                                                                             new HAnimJoint({
                                                                                                                               DEF : new SFString("Joe_r_index3"),
                                                                                                                               name : new SFString("r_index3"),
+                                                                                                                              rotation : new SFRotation([0,0,1.00000000000001,0.13512074947357]),
                                                                                                                               center : new SFVec3f([-0.2,0.72,-0.015]),
                                                                                                                               skinCoordIndex : new MFInt32([286,287,288,289,290,291,292,293,294]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])})])}),
@@ -771,6 +786,7 @@ var X3D0 =  new X3D({
                                                                                                                 new HAnimJoint({
                                                                                                                   DEF : new SFString("Joe_r_middle0"),
                                                                                                                   name : new SFString("r_middle0"),
+                                                                                                                  rotation : new SFRotation([0,0,0.999999999999971,0.0900804996490504]),
                                                                                                                   center : new SFVec3f([-0.2,0.835,-0.04]),
                                                                                                                   skinCoordIndex : new MFInt32([247,248]),
                                                                                                                   skinCoordWeight : new MFFloat([1,1]),
@@ -778,6 +794,7 @@ var X3D0 =  new X3D({
                                                                                                                     new HAnimJoint({
                                                                                                                       DEF : new SFString("Joe_r_middle1"),
                                                                                                                       name : new SFString("r_middle1"),
+                                                                                                                      rotation : new SFRotation([0,0,1.00000000000001,0.13512074947357]),
                                                                                                                       center : new SFVec3f([-0.2,0.788,-0.04]),
                                                                                                                       skinCoordIndex : new MFInt32([272,273,279,280]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1,0.5,0.5]),
@@ -785,6 +802,7 @@ var X3D0 =  new X3D({
                                                                                                                         new HAnimJoint({
                                                                                                                           DEF : new SFString("Joe_r_middle2"),
                                                                                                                           name : new SFString("r_middle2"),
+                                                                                                                          rotation : new SFRotation([0,0,1.00000000000001,0.13512074947357]),
                                                                                                                           center : new SFVec3f([-0.2,0.74,-0.04]),
                                                                                                                           skinCoordIndex : new MFInt32([295,296,297,298]),
                                                                                                                           skinCoordWeight : new MFFloat([1,1,1,1]),
@@ -792,6 +810,7 @@ var X3D0 =  new X3D({
                                                                                                                             new HAnimJoint({
                                                                                                                               DEF : new SFString("Joe_r_middle3"),
                                                                                                                               name : new SFString("r_middle3"),
+                                                                                                                              rotation : new SFRotation([0,0,1.00000000000001,0.13512074947357]),
                                                                                                                               center : new SFVec3f([-0.2,0.7142,-0.04]),
                                                                                                                               skinCoordIndex : new MFInt32([299,300,301,302,303,304,305,306,307]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])})])}),
@@ -799,6 +818,7 @@ var X3D0 =  new X3D({
                                                                                                                 new HAnimJoint({
                                                                                                                   DEF : new SFString("Joe_r_ring0"),
                                                                                                                   name : new SFString("r_ring0"),
+                                                                                                                  rotation : new SFRotation([0,0,0.999999999999971,0.0900804996490504]),
                                                                                                                   center : new SFVec3f([-0.2,0.835,-0.065]),
                                                                                                                   skinCoordIndex : new MFInt32([249,250]),
                                                                                                                   skinCoordWeight : new MFFloat([1,1]),
@@ -806,6 +826,7 @@ var X3D0 =  new X3D({
                                                                                                                     new HAnimJoint({
                                                                                                                       DEF : new SFString("Joe_r_ring1"),
                                                                                                                       name : new SFString("r_ring1"),
+                                                                                                                      rotation : new SFRotation([0,0,1.00000000000001,0.13512074947357]),
                                                                                                                       center : new SFVec3f([-0.2,0.793,-0.065]),
                                                                                                                       skinCoordIndex : new MFInt32([274,275,280,281]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1,0.5,0.5]),
@@ -813,6 +834,7 @@ var X3D0 =  new X3D({
                                                                                                                         new HAnimJoint({
                                                                                                                           DEF : new SFString("Joe_r_ring2"),
                                                                                                                           name : new SFString("r_ring2"),
+                                                                                                                          rotation : new SFRotation([0,0,1.00000000000001,0.13512074947357]),
                                                                                                                           center : new SFVec3f([-0.2,0.74,-0.065]),
                                                                                                                           skinCoordIndex : new MFInt32([308,309,310,311]),
                                                                                                                           skinCoordWeight : new MFFloat([1,1,1,1]),
@@ -820,6 +842,7 @@ var X3D0 =  new X3D({
                                                                                                                             new HAnimJoint({
                                                                                                                               DEF : new SFString("Joe_r_ring3"),
                                                                                                                               name : new SFString("r_ring3"),
+                                                                                                                              rotation : new SFRotation([0,0,1.00000000000001,0.13512074947357]),
                                                                                                                               center : new SFVec3f([-0.2,0.7177,-0.065]),
                                                                                                                               skinCoordIndex : new MFInt32([312,313,314,315,316,317,318,319,320]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])})])}),
@@ -827,6 +850,7 @@ var X3D0 =  new X3D({
                                                                                                                 new HAnimJoint({
                                                                                                                   DEF : new SFString("Joe_r_pinky0"),
                                                                                                                   name : new SFString("r_pinky0"),
+                                                                                                                  rotation : new SFRotation([0,0,0.999999999999971,0.0900804996490504]),
                                                                                                                   center : new SFVec3f([-0.2,0.84,-0.085]),
                                                                                                                   skinCoordIndex : new MFInt32([251,252,253,281]),
                                                                                                                   skinCoordWeight : new MFFloat([1,1,1,0.5]),
@@ -834,6 +858,7 @@ var X3D0 =  new X3D({
                                                                                                                     new HAnimJoint({
                                                                                                                       DEF : new SFString("Joe_r_pinky1"),
                                                                                                                       name : new SFString("r_pinky1"),
+                                                                                                                      rotation : new SFRotation([0,0,1.00000000000001,0.13512074947357]),
                                                                                                                       center : new SFVec3f([-0.2,0.79,-0.085]),
                                                                                                                       skinCoordIndex : new MFInt32([276,277,278]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1,1]),
@@ -841,6 +866,7 @@ var X3D0 =  new X3D({
                                                                                                                         new HAnimJoint({
                                                                                                                           DEF : new SFString("Joe_r_pinky2"),
                                                                                                                           name : new SFString("r_pinky2"),
+                                                                                                                          rotation : new SFRotation([0,0,1.00000000000001,0.13512074947357]),
                                                                                                                           center : new SFVec3f([-0.2,0.755,-0.085]),
                                                                                                                           skinCoordIndex : new MFInt32([321,322,323,324]),
                                                                                                                           skinCoordWeight : new MFFloat([1,1,1,1]),
@@ -848,6 +874,7 @@ var X3D0 =  new X3D({
                                                                                                                             new HAnimJoint({
                                                                                                                               DEF : new SFString("Joe_r_pinky3"),
                                                                                                                               name : new SFString("r_pinky3"),
+                                                                                                                              rotation : new SFRotation([0,0,1.00000000000001,0.13512074947357]),
                                                                                                                               center : new SFVec3f([-0.2,0.735,-0.09]),
                                                                                                                               skinCoordIndex : new MFInt32([325,326,327,328,329,330,331,332,333]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])}),
@@ -1675,8 +1702,8 @@ var X3D0 =  new X3D({
               children : new MFNode([
                 new Transform({
                   DEF : new SFString("SBall"),
-                  translation : new SFVec3f([-0.916,0.37,-0.92]),
-                  rotation : new SFRotation([0.7,0,0.7,0.1]),
+                  translation : new SFVec3f([0.4245588,0.8168008,1.96121]),
+                  rotation : new SFRotation([-0.640701175204806,0.423088652864102,-0.640701175204806,3.22001831056749]),
                   scale : new SFVec3f([0.23,0.23,0.23]),
                   child : new SFNode(
                     new Shape({

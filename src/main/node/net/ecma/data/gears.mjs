@@ -59,12 +59,8 @@ var X3D0 =  new X3D({
               content : new SFString("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")}),
 
             new meta({
-              name : new SFString("license"),
-              content : new SFString("../license.html")}),
-
-            new meta({
-              name : new SFString("modified"),
-              content : new SFString("30 April 2017")})])})),
+              name : new SFString("generator"),
+              content : new SFString("x3d-tidy V1.0.118, https://www.npmjs.com/package/x3d-tidy")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([

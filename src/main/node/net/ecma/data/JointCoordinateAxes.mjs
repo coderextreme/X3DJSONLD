@@ -8,8 +8,9 @@ console.log("Problems loading fs. On browser?",e);
 var SFString = require('./x3d.mjs');
 var SFNode = require('./x3d.mjs');
 var head = require('./x3d.mjs');
-var Scene = require('./x3d.mjs');
 var MFNode = require('./x3d.mjs');
+var meta = require('./x3d.mjs');
+var Scene = require('./x3d.mjs');
 var NavigationInfo = require('./x3d.mjs');
 var SFBool = require('./x3d.mjs');
 var Group = require('./x3d.mjs');
@@ -32,7 +33,15 @@ var X3D0 =  new X3D({
       profile : new SFString("Immersive"),
       version : new SFString("4.0"),
       head : new SFNode(
-        new head({})),
+        new head({
+          meta : new MFNode([
+            new meta({
+              name : new SFString("converter"),
+              content : new SFString("x3d-tidy V1.0.56, https://www.npmjs.com/package/x3d-tidy")}),
+
+            new meta({
+              name : new SFString("converted"),
+              content : new SFString("Mon, 31 Jul 2023 03:48:04 GMT")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([

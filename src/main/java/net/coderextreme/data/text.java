@@ -45,49 +45,49 @@ public class text {
     model.toFileJSON("../data/text.new.json");
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("creator").setContent("John W Carlson"))
         .addMeta(new meta().setName("created").setContent("December 13 2015"))
         .addMeta(new meta().setName("title").setContent("text.x3d"))
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/text.x3d"))
-        .addMeta(new meta().setName("description").setContent("test \\n text"))
-        .addMeta(new meta().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
+        .addMeta(new meta().setName("description").setContent("test \\\\n text")))
       .setScene(new Scene()
         .addChild(new Transform()
           .addChild(new Shape()
+            .setAppearance(new Appearance()
+              .setMaterial(new Material()))
             .setGeometry(new Text().setString(new MFString0().getArray())
-              .setFontStyle(new FontStyle()))
-            .setAppearance(new Appearance()
-              .setMaterial(new Material())))
+              .setFontStyle(new FontStyle())))
           .addChild(new Shape()
+            .setAppearance(new Appearance()
+              .setMaterial(new Material()))
             .setGeometry(new Text().setString(new MFString1().getArray())
-              .setFontStyle(new FontStyle()))
-            .setAppearance(new Appearance()
-              .setMaterial(new Material())))
+              .setFontStyle(new FontStyle())))
           .addChild(new Shape()
-            .setGeometry(new Text().setString(new MFString2().getArray())
-              .setFontStyle(new FontStyle()))
             .setAppearance(new Appearance()
-              .setMaterial(new Material())))
+              .setMaterial(new Material()))
+            .setGeometry(new Text().setString(new MFString2().getArray())
+              .setFontStyle(new FontStyle())))
           .addChild(new Script()
-            .addField(new field().setType("MFString").setName("frontUrls").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("\"rnl_front.png\" \"uffizi_front.png\""))
+            .addField(new field().setType("MFString").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("frontUrls").setValue("\"rnl_front.png\" \"uffizi_front.png\""))
             .setSourceCode("ecmascript:\n"+
-"			    var me = '\"1\" \"\"2\" \"\\n3\"';"))))      ;
+"\n"+
+"			    var me = '\"1\" \"\\\"2\" \"\\n3\"';"))))      ;
     return X3D0;
     }
-protected class MFString0 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString0 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Node\"\"\""});
   }
 }
-protected class MFString1 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString1 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Node2","\\\\","\\\\\\\\","Node2"});
   }
 }
-protected class MFString2 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString2 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Node3 \\\\\\\\ \\\\ ","Node3\"\"\""});
   }
 }

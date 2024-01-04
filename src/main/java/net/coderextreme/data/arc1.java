@@ -56,7 +56,7 @@ ProtoInstance ProtoInstance2 = null;
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d"))
         .addMeta(new meta().setName("description").setContent("a generic proto to connect two objects")))
       .setScene(new Scene()
-        .addChild(new Viewpoint().setPosition(new float[] {0f,0f,5f}).setDescription("Only Viewpoint"))
+        .addChild(new Viewpoint().setPosition(new float[] {0f ,0f ,5f }).setDescription("Only Viewpoint"))
         .addChild(new Background().setSkyColor(new MFColor0().getArray()))
         .addChild(new ProtoDeclare().setName("point")
           .setProtoInterface(new ProtoInterface()
@@ -66,9 +66,9 @@ ProtoInstance ProtoInstance2 = null;
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("translation").setProtoField("translation")))
               .addChild(new Shape()
-                .setGeometry(new Sphere().setRadius(0.1f))
+                .setGeometry(new Sphere().setRadius(0.1f ))
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f}))))
+                  .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0f }))))
               .addChild(new PositionInterpolator().setDEF("PI1").setKey(new MFFloat1().getArray()).setKeyValue(new MFVec3f2().getArray()))
               .addChild(new Script().setDEF("MB1")
                 .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("50 50 0"))
@@ -95,8 +95,8 @@ ProtoInstance ProtoInstance2 = null;
           .addChild(new Transform().setDEF("rotscaleC1")
             .addChild(new Shape()
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(new float[] {0.2f,0.7f,0.7f}).setTransparency(0.5f)))
-              .setGeometry(new Cylinder().setRadius(0.05f)))))
+                .setMaterial(new Material().setDiffuseColor(new float[] {0.2f ,0.7f ,0.7f }).setTransparency(0.5f )))
+              .setGeometry(new Cylinder().setRadius(0.05f )))))
         .addChild(new ProtoDeclare().setName("x3dconnector")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFNode").setName("startnode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
@@ -182,19 +182,19 @@ ProtoInstance2
           .addFieldValue(new fieldValue().setName("set_endpoint"));
     return X3D0;
     }
-protected class MFColor0 {
-  protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.4f,0.4f,0.4f});
+private class MFColor0 {
+  private org.web3d.x3d.jsail.fields.MFColor getArray() {
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.4f ,0.4f ,0.4f });
   }
 }
-protected class MFFloat1 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+private class MFFloat1 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,1f });
   }
 }
-protected class MFVec3f2 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,0f,0f,5f,0f});
+private class MFVec3f2 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,0f ,0f ,5f ,0f });
   }
 }
 }

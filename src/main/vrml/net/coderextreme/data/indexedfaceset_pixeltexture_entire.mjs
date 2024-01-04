@@ -47,7 +47,7 @@ head1.meta[7] = meta9;
 
 let meta10 = browser.currentScene.createNode("meta");
 meta10.name = "modified";
-meta10.content = "13 January 2014";
+meta10.content = "Sat, 30 Dec 2023 07:46:15 GMT";
 head1.meta[8] = meta10;
 
 let meta11 = browser.currentScene.createNode("meta");
@@ -65,73 +65,68 @@ meta13.name = "generator";
 meta13.content = "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html";
 head1.meta[11] = meta13;
 
-let meta14 = browser.currentScene.createNode("meta");
-meta14.name = "generator";
-meta14.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
-head1.meta[12] = meta14;
-
 head = head1;
 
-let Viewpoint16 = browser.currentScene.createNode("Viewpoint");
-Viewpoint16.description = "Front View";
+let Viewpoint15 = browser.currentScene.createNode("Viewpoint");
+Viewpoint15.description = "Front View";
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = Viewpoint16;
+browser.currentScene.children[0] = Viewpoint15;
+
+let Viewpoint16 = browser.currentScene.createNode("Viewpoint");
+Viewpoint16.description = "Rear View";
+Viewpoint16.position = new SFVec3f(new float[0,0,-10]);
+Viewpoint16.orientation = new SFRotation(new float[0,1,0,3.14]);
+browser.currentScene.children[1] = Viewpoint16;
 
 let Viewpoint17 = browser.currentScene.createNode("Viewpoint");
-Viewpoint17.description = "Rear View";
-Viewpoint17.position = new SFVec3f(new float[0,0,-10]);
-Viewpoint17.orientation = new SFRotation(new float[0,1,0,3.14]);
-browser.currentScene.children[1] = Viewpoint17;
+Viewpoint17.description = "Top View";
+Viewpoint17.position = new SFVec3f(new float[0,10,0]);
+Viewpoint17.orientation = new SFRotation(new float[1,0,0,-1.57]);
+browser.currentScene.children[2] = Viewpoint17;
 
 let Viewpoint18 = browser.currentScene.createNode("Viewpoint");
-Viewpoint18.description = "Top View";
-Viewpoint18.position = new SFVec3f(new float[0,10,0]);
-Viewpoint18.orientation = new SFRotation(new float[1,0,0,-1.57]);
-browser.currentScene.children[2] = Viewpoint18;
+Viewpoint18.description = "Bottom View";
+Viewpoint18.position = new SFVec3f(new float[0,-10,0]);
+Viewpoint18.orientation = new SFRotation(new float[1,0,0,1.57]);
+browser.currentScene.children[3] = Viewpoint18;
 
 let Viewpoint19 = browser.currentScene.createNode("Viewpoint");
-Viewpoint19.description = "Bottom View";
-Viewpoint19.position = new SFVec3f(new float[0,-10,0]);
-Viewpoint19.orientation = new SFRotation(new float[1,0,0,1.57]);
-browser.currentScene.children[3] = Viewpoint19;
+Viewpoint19.description = "Right View";
+Viewpoint19.position = new SFVec3f(new float[10,0,0]);
+Viewpoint19.orientation = new SFRotation(new float[0,1,0,1.57]);
+browser.currentScene.children[4] = Viewpoint19;
 
 let Viewpoint20 = browser.currentScene.createNode("Viewpoint");
-Viewpoint20.description = "Right View";
-Viewpoint20.position = new SFVec3f(new float[10,0,0]);
-Viewpoint20.orientation = new SFRotation(new float[0,1,0,1.57]);
-browser.currentScene.children[4] = Viewpoint20;
+Viewpoint20.description = "Left View";
+Viewpoint20.position = new SFVec3f(new float[-10,0,0]);
+Viewpoint20.orientation = new SFRotation(new float[0,1,0,-1.57]);
+browser.currentScene.children[5] = Viewpoint20;
 
-let Viewpoint21 = browser.currentScene.createNode("Viewpoint");
-Viewpoint21.description = "Left View";
-Viewpoint21.position = new SFVec3f(new float[-10,0,0]);
-Viewpoint21.orientation = new SFRotation(new float[0,1,0,-1.57]);
-browser.currentScene.children[5] = Viewpoint21;
+let NavigationInfo21 = browser.currentScene.createNode("NavigationInfo");
+NavigationInfo21.type = new MFString(new java.lang.String["EXAMINE","WALK","FLY","ANY"]);
+browser.currentScene.children[6] = NavigationInfo21;
 
-let NavigationInfo22 = browser.currentScene.createNode("NavigationInfo");
-NavigationInfo22.type = new MFString(new java.lang.String["EXAMINE","WALK","FLY","ANY"]);
-browser.currentScene.children[6] = NavigationInfo22;
+let Shape22 = browser.currentScene.createNode("Shape");
+let Appearance23 = browser.currentScene.createNode("Appearance");
+let Material24 = browser.currentScene.createNode("Material");
+Appearance23.material = Material24;
 
-let Shape23 = browser.currentScene.createNode("Shape");
-let Appearance24 = browser.currentScene.createNode("Appearance");
-let Material25 = browser.currentScene.createNode("Material");
-Appearance24.material = Material25;
+let PixelTexture25 = browser.currentScene.createNode("PixelTexture");
+PixelTexture25.image = new SFImage(new int[2,2,4,-16776961,16711935,-1,-65281]);
+PixelTexture25.repeatS = False;
+PixelTexture25.repeatT = False;
+Appearance23.texture = PixelTexture25;
 
-let PixelTexture26 = browser.currentScene.createNode("PixelTexture");
-PixelTexture26.image = new SFImage(new int[2,2,4,-16776961,16711935,-1,-65281]);
-PixelTexture26.repeatS = False;
-PixelTexture26.repeatT = False;
-Appearance24.texture = PixelTexture26;
+Shape22.appearance = Appearance23;
 
-Shape23.appearance = Appearance24;
+let IndexedFaceSet26 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet26.coordIndex = new MFInt32(new int[0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]);
+let Coordinate27 = browser.currentScene.createNode("Coordinate");
+Coordinate27.point = new MFVec3f(new float[-2,1.5,1,-2,-1.5,1,2,1.5,1,2,-1.5,1,2,1.5,-1,2,-1.5,-1,-2,1.5,-1,-2,-1.5,-1]);
+IndexedFaceSet26.coord = Coordinate27;
 
-let IndexedFaceSet27 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet27.coordIndex = new MFInt32(new int[0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]);
-let Coordinate28 = browser.currentScene.createNode("Coordinate");
-Coordinate28.point = new MFVec3f(new float[-2,1.5,1,-2,-1.5,1,2,1.5,1,2,-1.5,1,2,1.5,-1,2,-1.5,-1,-2,1.5,-1,-2,-1.5,-1]);
-IndexedFaceSet27.coord = Coordinate28;
+Shape22.geometry = IndexedFaceSet26;
 
-Shape23.geometry = IndexedFaceSet27;
-
-browser.currentScene.children[7] = Shape23;
+browser.currentScene.children[7] = Shape22;
 

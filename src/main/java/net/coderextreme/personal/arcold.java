@@ -40,7 +40,9 @@ public class arcold {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new arcold().initialize().toFileJSON("../personal/arcold.new.json");
+    X3D model = new arcold().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../personal/arcold.new.json");
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;
@@ -56,34 +58,34 @@ ProtoInstance ProtoInstance9 = null;
 ProtoInstance ProtoInstance10 = null;
 ProtoInstance ProtoInstance11 = null;
 ProtoInstance ProtoInstance12 = null;
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("arcold.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/arc.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d"))
         .addMeta(new meta().setName("description").setContent("an attempt to implement an arc in a graph")))
       .setScene(new Scene()
-        .addChild(new Viewpoint().setPosition(new float[] {0f,0f,5f}).setDescription("a moving graph"))
+        .addChild(new Viewpoint().setPosition(new float[] {0f ,0f ,5f }).setDescription("a moving graph"))
         .addChild(new Background().setSkyColor(new MFColor0().getArray()))
         .addChild(new Transform().setDEF("trans1")
           .addChild(new Transform().setDEF("rotscale1")
             .addChild(new Shape()
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(new float[] {0.2f,0.7f,0.7f})))
-              .setGeometry(new Cylinder().setRadius(0.1f)))))
+                .setMaterial(new Material().setDiffuseColor(new float[] {0.2f ,0.7f ,0.7f })))
+              .setGeometry(new Cylinder().setRadius(0.1f )))))
         .addChild(new Transform().setDEF("trans2")
           .addChild(new Transform().setDEF("rotscale2")
             .addChild(new Shape()
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(new float[] {0.2f,0.7f,0.7f})))
-              .setGeometry(new Cylinder().setRadius(0.1f)))))
+                .setMaterial(new Material().setDiffuseColor(new float[] {0.2f ,0.7f ,0.7f })))
+              .setGeometry(new Cylinder().setRadius(0.1f )))))
         .addChild(new Transform().setDEF("trans3")
           .addChild(new Transform().setDEF("rotscale3")
             .addChild(new Shape()
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(new float[] {0.2f,0.7f,0.7f})))
-              .setGeometry(new Cylinder().setRadius(0.1f)))))
+                .setMaterial(new Material().setDiffuseColor(new float[] {0.2f ,0.7f ,0.7f })))
+              .setGeometry(new Cylinder().setRadius(0.1f )))))
         .addChild(new ProtoDeclare().setName("point")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")))
@@ -92,9 +94,9 @@ ProtoInstance ProtoInstance12 = null;
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("translation").setProtoField("translation")))
               .addChild(new Shape()
-                .setGeometry(new Sphere().setRadius(0.1f))
+                .setGeometry(new Sphere().setRadius(0.1f ))
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f}))))
+                  .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0f }))))
               .addChild(new PositionInterpolator().setDEF("PI1").setKey(new MFFloat1().getArray()).setKeyValue(new MFVec3f2().getArray()))
               .addChild(new Script().setDEF("MB1")
                 .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("50 50 0"))
@@ -231,19 +233,19 @@ ProtoInstance10
             .addChild(new Transform().setUSE("rotscale3")));
     return X3D0;
     }
-protected class MFColor0 {
-  protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.4f,0.4f,0.4f});
+private class MFColor0 {
+  private org.web3d.x3d.jsail.fields.MFColor getArray() {
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.4f ,0.4f ,0.4f });
   }
 }
-protected class MFFloat1 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+private class MFFloat1 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,1f });
   }
 }
-protected class MFVec3f2 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,0f,0f,5f,0f});
+private class MFVec3f2 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,0f ,0f ,5f ,0f });
   }
 }
 }

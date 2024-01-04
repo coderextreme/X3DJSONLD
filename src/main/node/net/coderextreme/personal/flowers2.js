@@ -1,9 +1,10 @@
 var java = require('java');
+var util = require('util');
 java.asyncOptions = {
   asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
   syncSuffix: "",              // Sync methods use the base name(!!)
   promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
-  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  promisify: util.promisify, // Needs Node.js version 8 or greater, see comment below
   ifReadOnlySuffix: "_alt"
 };
 var autoclass = require('../../../X3Dautoclass');
@@ -23,7 +24,7 @@ var ProtoInstance1 = null;
         .addMeta((new autoclass.meta()).setName("created").setContent("23 January 2005"))
         .addMeta((new autoclass.meta()).setName("modified").setContent("21 March 2018"))
         .addMeta((new autoclass.meta()).setName("description").setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/flowers2.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manually written"))
         .addMeta((new autoclass.meta()).setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html")))
       .setScene((new autoclass.Scene())
@@ -160,5 +161,5 @@ ProtoInstance1
             .addFieldValue((new autoclass.fieldValue()).setName("specularColor").setValue("0 0.5 1"));
 ProtoInstance1
             .addFieldValue((new autoclass.fieldValue()).setName("transparency").setValue("0.5"));
-    X3D0.toFileX3D("../personal/flowers2.new.x3d");
+    X3D0.toFileX3D("../personal/flowers2.new.node.x3d");
     process.exit(0);

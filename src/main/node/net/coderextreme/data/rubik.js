@@ -28,7 +28,7 @@ var ProtoInstance9 = null;
         .addMeta((new autoclass.meta()).setName("title").setContent("rubik.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/rubik.x3d")))
+        .addMeta((new autoclass.meta()).setName("generator").setContent("x3d-tidy V1.0.118, https://www.npmjs.com/package/x3d-tidy")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.ProtoDeclare()).setName("sphereproto")
           .setProtoInterface((new autoclass.ProtoInterface())
@@ -37,7 +37,7 @@ var ProtoInstance9 = null;
             .addChild((new autoclass.Transform())
               .addChild((new autoclass.Shape())
                 .setAppearance((new autoclass.Appearance())
-                  .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)]))))
+                  .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1f), java.newFloat(1f), java.newFloat(1f)]))))
                 .setGeometry((new autoclass.Sphere())))
               .setIS((new autoclass.IS())
                 .addConnect((new autoclass.connect()).setNodeField("translation").setProtoField("xtranslation"))))))
@@ -72,7 +72,7 @@ var ProtoInstance9 = null;
               .setIS((new autoclass.IS())
                 .addConnect((new autoclass.connect()).setNodeField("translation").setProtoField("ttranslation"))))))
         .addChild((new autoclass.NavigationInfo()).setType(java.newArray("java.lang.String", ["EXAMINE"])))
-        .addChild((new autoclass.Viewpoint()).setDescription("Rubiks Cube").setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(12)])))
+        .addChild((new autoclass.Viewpoint()).setDescription("Rubiks Cube").setPosition(java.newArray("float", [java.newFloat(0f), java.newFloat(0f), java.newFloat(12f)])))
         .addChild(ProtoInstance9 = (new autoclass.ProtoInstance()).setName("twentyseven")))      ;
 ProtoInstance1
                 .addFieldValue((new autoclass.fieldValue()).setName("xtranslation").setValue("2 0 0"));

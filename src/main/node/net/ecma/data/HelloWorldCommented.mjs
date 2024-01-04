@@ -18,18 +18,18 @@ var SFVec3f = require('./x3d.mjs');
 var Transform = require('./x3d.mjs');
 var SFRotation = require('./x3d.mjs');
 var Shape = require('./x3d.mjs');
+var Sphere = require('./x3d.mjs');
 var Appearance = require('./x3d.mjs');
 var Material = require('./x3d.mjs');
 var SFColor = require('./x3d.mjs');
 var ImageTexture = require('./x3d.mjs');
 var MFString = require('./x3d.mjs');
-var Sphere = require('./x3d.mjs');
 var Text = require('./x3d.mjs');
 var FontStyle = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
-      version : new SFString("4.0"),
+      version : new SFString("3.3"),
       head : new SFNode(
         new head({
           meta : new MFNode([
@@ -75,27 +75,45 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("license"),
-              content : new SFString("https://www.web3d.org/x3d/content/examples/license.html")})])})),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/license.html")}),
+
+            new meta({
+              name : new SFString("generator"),
+              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")})])})),
       Scene : new SFNode(
         new Scene({
+          /*Example scene to illustrate comments interspersed among X3D nodes and fields (XML elements and attributes)*/
+          /*WorldInfo begin*/
           children : new MFNode([
             new WorldInfo({
               title : new SFString("Hello world!")}),
+          /*WorldInfo complete, Group begin*/
 
             new Group({
+              /*Viewpoint begin*/
               children : new MFNode([
                 new Viewpoint({
                   DEF : new SFString("ViewUpClose"),
+                  centerOfRotation : new SFVec3f([0,-1,0]),
                   description : new SFString("Hello world!"),
-                  position : new SFVec3f([0,-1,7]),
-                  centerOfRotation : new SFVec3f([0,-1,0])}),
+                  position : new SFVec3f([0,-1,7])}),
+              /*Viewpoint complete, Transform begin*/
 
                 new Transform({
                   rotation : new SFRotation([0,1,0,3]),
+                  /*Shape begin*/
                   child : new SFNode(
                     new Shape({
+                      /*Sphere begin*/
+                      /*Sphere complete, Appearance begin*/
+                      /*Appearance complete*/
+                      geometry : new SFNode(
+                        new Sphere({})),
                       appearance : new SFNode(
                         new Appearance({
+                          /*Material begin*/
+                          /*Material complete, ImageTexture begin*/
+                          /*ImageTexture complete*/
                           material : new SFNode(
                             new Material({
                               DEF : new SFString("MaterialLightBlue"),
@@ -103,24 +121,35 @@ var X3D0 =  new X3D({
                           texture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("ImageCloudlessEarth"),
-                              url : new MFString(["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"])}))})),
-                      geometry : new SFNode(
-                        new Sphere({}))}))}),
+                              url : new MFString(["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"])}))}))})),
+                  /*Shape complete*/}),
+              /*Transform complete, Transform begin*/
 
                 new Transform({
                   translation : new SFVec3f([0,-2,0]),
+                  /*Shape begin*/
                   child : new SFNode(
                     new Shape({
-                      appearance : new SFNode(
-                        new Appearance({
-                          material : new SFNode(
-                            new Material({
-                              USE : new SFString("MaterialLightBlue")}))})),
+                      /*Text begin*/
+                      /*Text complete, Appearance begin*/
+                      /*Appearance complete*/
                       geometry : new SFNode(
                         new Text({
                           DEF : new SFString("TextMessage"),
                           string : new MFString(["Hello","world!"]),
+                          /*FontStyle begin*/
+                          /*FontStyle complete*/
                           fontStyle : new SFNode(
                             new FontStyle({
-                              justify : new MFString(["MIDDLE","MIDDLE"])}))}))}))})])})])}))});
+                              justify : new MFString(["MIDDLE","MIDDLE"])}))})),
+                      appearance : new SFNode(
+                        new Appearance({
+                          /*Material begin*/
+                          /*Material complete*/
+                          material : new SFNode(
+                            new Material({
+                              USE : new SFString("MaterialLightBlue")}))}))})),
+                  /*Shape complete*/}),
+              /*Transform complete*/])}),
+          /*Group complete*/])}))});
 console.log(X3D0.toXMLNode());

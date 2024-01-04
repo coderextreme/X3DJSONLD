@@ -1,9 +1,10 @@
 var java = require('java');
+var util = require('util');
 java.asyncOptions = {
   asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
   syncSuffix: "",              // Sync methods use the base name(!!)
   promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
-  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  promisify: util.promisify, // Needs Node.js version 8 or greater, see comment below
   ifReadOnlySuffix: "_alt"
 };
 var autoclass = require('../../../X3Dautoclass');
@@ -14,16 +15,19 @@ ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
       var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
       .setHead((new autoclass.head())
+        .addComponent((new autoclass.component()).setName("Scripting").setLevel(1))
+        .addComponent((new autoclass.component()).setName("EnvironmentalEffects").setLevel(3))
         .addComponent((new autoclass.component()).setName("Shaders").setLevel(1))
         .addComponent((new autoclass.component()).setName("CubeMapTexturing").setLevel(1))
         .addComponent((new autoclass.component()).setName("Texturing").setLevel(1))
         .addComponent((new autoclass.component()).setName("Rendering").setLevel(1))
         .addComponent((new autoclass.component()).setName("Shape").setLevel(4))
         .addComponent((new autoclass.component()).setName("Grouping").setLevel(3))
+        .addComponent((new autoclass.component()).setName("Core").setLevel(1))
         .addMeta((new autoclass.meta()).setName("title").setContent("mirror2.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/personal/mirror2.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/mirror2.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("a mirrored sphere")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.Viewpoint()).setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(5), java.newFloat(100)])).setDescription("Switch background and images texture"))
@@ -33,11 +37,11 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setAppearance((new autoclass.Appearance())
               .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0.7), java.newFloat(0.7), java.newFloat(0.7)])).setSpecularColor(java.newArray("float", [java.newFloat(0.5), java.newFloat(0.5), java.newFloat(0.5)])))
               .setTexture((new autoclass.ComposedCubeMapTexture())
-                .setBackTexture((new autoclass.ImageTexture()).setDEF("backShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"])))
-                .setBottomTexture((new autoclass.ImageTexture()).setDEF("bottomShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"])))
-                .setFrontTexture((new autoclass.ImageTexture()).setDEF("frontShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"])))
-                .setLeftTexture((new autoclass.ImageTexture()).setDEF("leftShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"])))
-                .setRightTexture((new autoclass.ImageTexture()).setDEF("rightShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"])))
+                .setTopTexture((new autoclass.ImageTexture()).setDEF("backShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"])))
+                .setTopTexture((new autoclass.ImageTexture()).setDEF("bottomShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"])))
+                .setTopTexture((new autoclass.ImageTexture()).setDEF("frontShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"])))
+                .setTopTexture((new autoclass.ImageTexture()).setDEF("leftShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"])))
+                .setTopTexture((new autoclass.ImageTexture()).setDEF("rightShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"])))
                 .setTopTexture((new autoclass.ImageTexture()).setDEF("topShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"]))))
               .addShaders((new autoclass.ComposedShader()).setDEF("x_ite").setLanguage("GLSL")
                 .addComments((new autoclass.CommentsBlock("http://hypertextbook.com/facts/2005/JustinChe.shtml")))
@@ -103,5 +107,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addChild((new autoclass.ROUTE()).setFromNode("UrlSelector").setFromField("right_changed").setToNode("rightShader").setToField("url"))
           .addChild((new autoclass.ROUTE()).setFromNode("UrlSelector").setFromField("top_changed").setToNode("topShader").setToField("url"))
           .addChild((new autoclass.ROUTE()).setFromNode("UrlSelector").setFromField("bottom_changed").setToNode("bottomShader").setToField("url"))))      ;
-    X3D0.toFileX3D("../personal/mirror2.new.x3d");
+    X3D0.toFileX3D("../personal/mirror2.new.node.x3d");
     process.exit(0);

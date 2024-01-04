@@ -417,31 +417,31 @@ public class HAnimModelHandLeft
                           .setMaterial(new Material().setEmissiveColor(1.0,1.0,1.0)))
                         .setGeometry(new IndexedLineSet("fingertip_l_carpal_distal_interphalangeal_5").setDEF("fingertip_l_carpal_distal_interphalangeal_5").setCoordIndex(new int[] {0,1})
                           .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.25,0.79,0.0,-0.26,0.85,0.0})))))))))))))
-      .addJoints(new HAnimJoint().setUSE("hanim_humanoid_root").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_distal_interphalangeal_2").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_distal_interphalangeal_3").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_distal_interphalangeal_4").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_distal_interphalangeal_5").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_interphalangeal_1").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_proximal_interphalangeal_2").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_proximal_interphalangeal_3").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_proximal_interphalangeal_4").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_proximal_interphalangeal_5").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_carpometacarpal_1").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_carpometacarpal_2").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_carpometacarpal_3").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_carpometacarpal_4").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_carpometacarpal_5").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_metacarpophalangeal_1").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_metacarpophalangeal_2").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_metacarpophalangeal_3").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_metacarpophalangeal_4").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_metacarpophalangeal_5").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_midcarpal_1").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_midcarpal_2").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_midcarpal_3").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_midcarpal_4_5").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_radiocarpal").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
+      .addJoints(new HAnimJoint().setUSE("hanim_humanoid_root"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_distal_interphalangeal_2"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_distal_interphalangeal_3"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_distal_interphalangeal_4"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_distal_interphalangeal_5"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_interphalangeal_1"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_proximal_interphalangeal_2"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_proximal_interphalangeal_3"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_proximal_interphalangeal_4"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_carpal_proximal_interphalangeal_5"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_carpometacarpal_1"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_carpometacarpal_2"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_carpometacarpal_3"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_carpometacarpal_4"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_carpometacarpal_5"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_metacarpophalangeal_1"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_metacarpophalangeal_2"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_metacarpophalangeal_3"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_metacarpophalangeal_4"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_metacarpophalangeal_5"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_midcarpal_1"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_midcarpal_2"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_midcarpal_3"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_midcarpal_4_5"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_radiocarpal"))
       .addSegments(new HAnimSegment().setUSE("hanim_l_capitate"))
       .addSegments(new HAnimSegment().setUSE("hanim_l_carpal"))
       .addSegments(new HAnimSegment().setUSE("hanim_l_carpal_distal_phalanx_1"))
@@ -492,16 +492,17 @@ public class HAnimModelHandLeft
 	}
 	   
     /** 
-	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+     * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
+        System.out.println("Build this X3D model, showing diagnostics...");
         X3D thisExampleX3dModel = new HAnimModelHandLeft().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
@@ -541,11 +542,13 @@ public class HAnimModelHandLeft
 	
         if (validate)
         {
-                System.out.print("Java program \"net.x3djsonld.data.HAnimModelHandLeft\" self-validation test results: ");
+            //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
-                if (validationResults.length() > 10)
+            //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
+                System.out.print("net.x3djsonld.data.HAnimModelHandLeft self-validation test results: ");
+                if (!validationResults.equals("success"))
                     System.out.println();
-                System.out.println(validationResults);
+                System.out.println(validationResults.trim());
         }
     }
 }

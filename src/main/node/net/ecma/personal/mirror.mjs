@@ -1,41 +1,49 @@
 'use strict';
-import fs from 'fs';
-import { X3D } from './x3d.mjs';
-import { SFString } from './x3d.mjs';
-import { SFNode } from './x3d.mjs';
-import { head } from './x3d.mjs';
-import { component } from './x3d.mjs';
-import { SFInt32 } from './x3d.mjs';
-import { MFNode } from './x3d.mjs';
-import { meta } from './x3d.mjs';
-import { Scene } from './x3d.mjs';
-import { Viewpoint } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
-import { TextureBackground } from './x3d.mjs';
-import { ImageTexture } from './x3d.mjs';
-import { MFString } from './x3d.mjs';
-import { Transform } from './x3d.mjs';
-import { Shape } from './x3d.mjs';
-import { Appearance } from './x3d.mjs';
-import { Material } from './x3d.mjs';
-import { SFColor } from './x3d.mjs';
-import { ComposedCubeMapTexture } from './x3d.mjs';
-import { ComposedShader } from './x3d.mjs';
-import { field } from './x3d.mjs';
-import { ShaderPart } from './x3d.mjs';
-import { Sphere } from './x3d.mjs';
-import { SFFloat } from './x3d.mjs';
-import { Script } from './x3d.mjs';
-import { SFBool } from './x3d.mjs';
-import { TimeSensor } from './x3d.mjs';
-import { SFTime } from './x3d.mjs';
-import { ROUTE } from './x3d.mjs';
+var X3D = require('./x3d.mjs');
+try {
+	var fs = require('fs');
+} catch (e) {
+console.log("Problems loading fs. On browser?",e);
+}
+var SFString = require('./x3d.mjs');
+var SFNode = require('./x3d.mjs');
+var head = require('./x3d.mjs');
+var component = require('./x3d.mjs');
+var SFInt32 = require('./x3d.mjs');
+var MFNode = require('./x3d.mjs');
+var meta = require('./x3d.mjs');
+var Scene = require('./x3d.mjs');
+var Viewpoint = require('./x3d.mjs');
+var SFVec3f = require('./x3d.mjs');
+var TextureBackground = require('./x3d.mjs');
+var ImageTexture = require('./x3d.mjs');
+var MFString = require('./x3d.mjs');
+var Transform = require('./x3d.mjs');
+var Shape = require('./x3d.mjs');
+var Appearance = require('./x3d.mjs');
+var Material = require('./x3d.mjs');
+var SFColor = require('./x3d.mjs');
+var ComposedCubeMapTexture = require('./x3d.mjs');
+var ComposedShader = require('./x3d.mjs');
+var field = require('./x3d.mjs');
+var ShaderPart = require('./x3d.mjs');
+var Sphere = require('./x3d.mjs');
+var SFFloat = require('./x3d.mjs');
+var Script = require('./x3d.mjs');
+var SFBool = require('./x3d.mjs');
+var TimeSensor = require('./x3d.mjs');
+var SFTime = require('./x3d.mjs');
+var ROUTE = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
       version : new SFString("4.0"),
       head : new SFNode(
         new head({
+          component : new SFNode(
+            new component({
+              name : new SFString("Scripting"),
+              level : new SFInt32(1)})),
           component : new SFNode(
             new component({
               name : new SFString("EnvironmentalEffects"),
@@ -59,10 +67,14 @@ var X3D0 =  new X3D({
           component : new SFNode(
             new component({
               name : new SFString("Shape"),
-              level : new SFInt32(1)})),
+              level : new SFInt32(4)})),
           component : new SFNode(
             new component({
               name : new SFString("Grouping"),
+              level : new SFInt32(3)})),
+          component : new SFNode(
+            new component({
+              name : new SFString("Core"),
               level : new SFInt32(1)})),
           meta : new MFNode([
             new meta({
@@ -79,7 +91,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/mirror.x3d")}),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/mirror.x3d")}),
 
             new meta({
               name : new SFString("description"),
@@ -94,31 +106,31 @@ var X3D0 =  new X3D({
             new TextureBackground({
               topTexture : new SFNode(
                 new ImageTexture({
-                  DEF : new SFString("leftBack"),
+                  DEF : new SFString("leftBackgroundTexture"),
                   url : new MFString(["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"])})),
               topTexture : new SFNode(
                 new ImageTexture({
-                  DEF : new SFString("rightBack"),
+                  DEF : new SFString("rightBackgroundTexture"),
                   url : new MFString(["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"])})),
               topTexture : new SFNode(
                 new ImageTexture({
-                  DEF : new SFString("frontBack"),
+                  DEF : new SFString("frontBackgroundTexture"),
                   url : new MFString(["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"])})),
               topTexture : new SFNode(
                 new ImageTexture({
-                  DEF : new SFString("backBack"),
+                  DEF : new SFString("backBackgroundTexture"),
                   url : new MFString(["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"])})),
               topTexture : new SFNode(
                 new ImageTexture({
-                  DEF : new SFString("topBack"),
+                  DEF : new SFString("topBackgroundTexture"),
                   url : new MFString(["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"])})),
               topTexture : new SFNode(
                 new ImageTexture({
-                  DEF : new SFString("bottomBack"),
+                  DEF : new SFString("bottomBackgroundTexture"),
                   url : new MFString(["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"])}))}),
 
             new Transform({
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
@@ -239,8 +251,8 @@ var X3D0 =  new X3D({
                               url : new MFString(["../shaders/x_itemix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs"])}))}))})),
                   geometry : new SFNode(
                     new Sphere({
-                      radius : new SFFloat(30)}))}),
-
+                      radius : new SFFloat(30)}))})),
+              children : new MFNode([
                 new Script({
                   DEF : new SFString("UrlSelector"),
                   directOutput : new SFBool(true),
@@ -354,37 +366,37 @@ ecmascript:eval (0
                 new ROUTE({
                   fromNode : new SFString("UrlSelector"),
                   fromField : new SFString("front_changed"),
-                  toNode : new SFString("frontBack"),
+                  toNode : new SFString("frontBackgroundTexture"),
                   toField : new SFString("url")}),
 
                 new ROUTE({
                   fromNode : new SFString("UrlSelector"),
                   fromField : new SFString("back_changed"),
-                  toNode : new SFString("backBack"),
+                  toNode : new SFString("backBackgroundTexture"),
                   toField : new SFString("url")}),
 
                 new ROUTE({
                   fromNode : new SFString("UrlSelector"),
                   fromField : new SFString("left_changed"),
-                  toNode : new SFString("leftBack"),
+                  toNode : new SFString("leftBackgroundTexture"),
                   toField : new SFString("url")}),
 
                 new ROUTE({
                   fromNode : new SFString("UrlSelector"),
                   fromField : new SFString("right_changed"),
-                  toNode : new SFString("rightBack"),
+                  toNode : new SFString("rightBackgroundTexture"),
                   toField : new SFString("url")}),
 
                 new ROUTE({
                   fromNode : new SFString("UrlSelector"),
                   fromField : new SFString("top_changed"),
-                  toNode : new SFString("topBack"),
+                  toNode : new SFString("topBackgroundTexture"),
                   toField : new SFString("url")}),
 
                 new ROUTE({
                   fromNode : new SFString("UrlSelector"),
                   fromField : new SFString("bottom_changed"),
-                  toNode : new SFString("bottomBack"),
+                  toNode : new SFString("bottomBackgroundTexture"),
                   toField : new SFString("url")}),
 
                 new ROUTE({

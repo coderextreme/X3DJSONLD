@@ -55,11 +55,10 @@ public class indexedfaceset_pixeltexture_entire {
         .addMeta(new meta().setName("info").setContent("Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, https://www.web3d.org/working-groups/x3d"))
         .addMeta(new meta().setName("translator").setContent("Michael Kass NIST, Don Brutzman NPS"))
         .addMeta(new meta().setName("translated").setContent("21 January 2001"))
-        .addMeta(new meta().setName("modified").setContent("13 January 2014"))
+        .addMeta(new meta().setName("modified").setContent("Sat, 30 Dec 2023 07:46:15 GMT"))
         .addMeta(new meta().setName("description").setContent("Test browser ability to completely map one PixelTexture onto the surface of an IndexedFaceSet geometry. Four colored squares should map onto each face of the IndexedFaceSet. The PixelTexture consists of red quarter (lower left), green quarter (lower right), white quarter (upper left) and yellow quarter (upper right). PixelTexture should map once onto the surface of the IndexedFaceSet, with the S (horizontal) axis of the texture corresponding to the X axis of the geometry."))
         .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/ConformanceNist/GeometricProperties/TextureCoordinate/indexedfaceset_pixeltexture_entire.x3d"))
-        .addMeta(new meta().setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")))
+        .addMeta(new meta().setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html")))
       .setScene(new Scene()
         .addChild(new Viewpoint().setDescription("Front View"))
         .addChild(new Viewpoint().setDescription("Rear View").setPosition(new float[] {0f,0f,-10f}).setOrientation(new float[] {0f,1f,0f,3.14f}))
@@ -71,7 +70,7 @@ public class indexedfaceset_pixeltexture_entire {
         .addChild(new Shape()
           .setAppearance(new Appearance()
             .setMaterial(new Material())
-            .setTexture(new PixelTexture().setImage(new int[] {2,2,4,-16776961,16711935,-1,-65281}).setRepeatS(false).setRepeatT(false)))
+            .setTexture(new PixelTexture().setImage(new int[] {2,2,4,0xFF0000FF,16711935,0xFFFFFFFF,0xFFFF00FF}).setRepeatS(false).setRepeatT(false)))
           .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt320().getArray())
             .setCoord(new Coordinate().setPoint(new MFVec3f1().getArray())))))      ;
     return X3D0;

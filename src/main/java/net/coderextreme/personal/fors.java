@@ -40,18 +40,20 @@ public class fors {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new fors().initialize().toFileJSON("../personal/fors.new.json");
+    X3D model = new fors().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../personal/fors.new.json");
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;
 ProtoInstance ProtoInstance1 = null;
 ProtoInstance ProtoInstance2 = null;
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
         .addMeta(new meta().setName("creator").setContent("John W Carlson"))
         .addMeta(new meta().setName("created").setContent("December 13 2015"))
         .addMeta(new meta().setName("title").setContent("fors.x3d"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/force.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d"))
         .addMeta(new meta().setName("description").setContent("beginnings of a force directed graph in 3D"))
         .addMeta(new meta().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
       .setScene(new Scene()
@@ -65,13 +67,13 @@ ProtoInstance ProtoInstance2 = null;
               .addChild(new Shape()
                 .setGeometry(new Sphere())
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f}))))
-              .addChild(new Transform().setTranslation(new float[] {1f,0f,0f})
+                  .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0f }))))
+              .addChild(new Transform().setTranslation(new float[] {1f ,0f ,0f })
                 .addChild(new Shape()
                   .setGeometry(new Text().setString(new MFString0().getArray())
-                    .setFontStyle(new FontStyle().setJustify(new MFString1().getArray()).setSize(5f)))
+                    .setFontStyle(new FontStyle().setJustify(new MFString1().getArray()).setSize(5f )))
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(new float[] {0f,0f,1f}))))))
+                    .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f }))))))
             .addChild(new PositionInterpolator().setDEF("NodePosition").setKey(new MFFloat2().getArray()).setKeyValue(new MFVec3f3().getArray()))
             .addChild(new Script().setDEF("MoveBall")
               .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("50 50 0"))
@@ -96,9 +98,9 @@ ProtoInstance ProtoInstance2 = null;
             .addField(new field().setType("SFVec3f").setName("set_positionB").setAccessType(field.ACCESSTYPE_INPUTONLY)))
           .setProtoBody(new ProtoBody()
             .addChild(new Shape()
-              .setGeometry(new Extrusion().setDEF("extrusion").setCreaseAngle(0.785f).setCrossSection(new MFVec2f4().getArray()).setSpine(new MFVec3f5().getArray()))
+              .setGeometry(new Extrusion().setDEF("extrusion").setCreaseAngle(0.785f ).setCrossSection(new MFVec2f4().getArray()).setSpine(new MFVec3f5().getArray()))
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(new float[] {0f,1f,0f}))))
+                .setMaterial(new Material().setDiffuseColor(new float[] {0f ,1f ,0f }))))
             .addChild(new Script().setDEF("MoveCylinder")
               .addField(new field().setType("MFVec3f").setName("spine").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 -50 0 0 50 0"))
               .addField(new field().setType("SFVec3f").setName("set_endA").setAccessType(field.ACCESSTYPE_INPUTONLY))
@@ -128,8 +130,8 @@ ProtoInstance ProtoInstance2 = null;
 "                    spine = value;\n"+
 "                }"))
             .addChild(new ROUTE().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine"))))
-        .addChild(new Transform().setDEF("HoldsContent").setScale(new float[] {0.1f,0.1f,0.1f})
-          .addChild(new PlaneSensor().setDEF("clickGenerator").setMinPosition(new float[] {-50f,-50f}).setMaxPosition(new float[] {50f,50f}).setDescription("click on background to add nodes, click on nodes to add links"))
+        .addChild(new Transform().setDEF("HoldsContent").setScale(new float[] {0.1f ,0.1f ,0.1f })
+          .addChild(new PlaneSensor().setDEF("clickGenerator").setMinPosition(new float[] {-50f ,-50f }).setMaxPosition(new float[] {50f ,50f }).setDescription("click on background to add nodes, click on nodes to add links"))
           .addChild(ProtoInstance0 = new ProtoInstance().setName("node").setDEF("nodeA"))
           .addChild(ProtoInstance1 = new ProtoInstance().setName("node").setDEF("nodeB"))
           .addChild(ProtoInstance2 = new ProtoInstance().setName("cylinder").setDEF("linkA")))
@@ -145,34 +147,34 @@ ProtoInstance2
             .addFieldValue(new fieldValue().setName("set_positionB").setValue("50 50 50"));
     return X3D0;
     }
-protected class MFString0 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString0 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Node"});
   }
 }
-protected class MFString1 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString1 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
-protected class MFFloat2 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+private class MFFloat2 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,1f });
   }
 }
-protected class MFVec3f3 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,0f,0f,5f,0f});
+private class MFVec3f3 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,0f ,0f ,5f ,0f });
   }
 }
-protected class MFVec2f4 {
-  protected org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f});
+private class MFVec2f4 {
+  private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1f ,0f ,0.92f ,-0.38f ,0.71f ,-0.71f ,0.38f ,-0.92f ,0f ,-1f ,-0.38f ,-0.92f ,-0.71f ,-0.71f ,-0.92f ,-0.38f ,-1f ,0f ,-0.92f ,0.38f ,-0.71f ,0.71f ,-0.38f ,0.92f ,0f ,1f ,0.38f ,0.92f ,0.71f ,0.71f ,0.92f ,0.38f ,1f ,0f });
   }
 }
-protected class MFVec3f5 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,-50f,0f,0f,50f,0f});
+private class MFVec3f5 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,-50f ,0f ,0f ,50f ,0f });
   }
 }
 }

@@ -45,27 +45,28 @@ public class ifscubeworks {
     model.toFileJSON("../data/ifscubeworks.new.json");
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("3.3")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("ifscubeworks.x3d"))
         .addMeta(new meta().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/src/main/data/ifscubeworks.x3d"))
         .addMeta(new meta().setName("description").setContent("Template for an Indexed Face Set"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("created").setContent("4 April 2017"))
-        .addMeta(new meta().setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html")))
+        .addMeta(new meta().setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html"))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("ifscubeworks.x3d"))
         .addChild(new Group()
           .addChild(new Shape()
-            .setGeometry(new IndexedFaceSet().setDEF("IndexedFaceSet").setNormalPerVertex(false).setColorIndex(new MFInt320().getArray()).setNormalIndex(new MFInt321().getArray()).setCoordIndex(new MFInt322().getArray())
-              .setColor(new Color().setColor(new MFColor3().getArray()))
+            .setGeometry(new IndexedFaceSet().setDEF("IndexedFaceSet").setCoordIndex(new MFInt320().getArray()).setNormalIndex(new MFInt321().getArray()).setNormalPerVertex(false).setColorIndex(new MFInt322().getArray())
+              .setCoord(new Coordinate().setPoint(new MFVec3f3().getArray()))
               .setNormal(new Normal().setVector(new MFVec3f4().getArray()))
-              .setCoord(new Coordinate().setPoint(new MFVec3f5().getArray()))))))      ;
+              .setColor(new Color().setColor(new MFColor5().getArray()))))))      ;
     return X3D0;
     }
 private class MFInt320 {
   private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1});
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1});
   }
 }
 private class MFInt321 {
@@ -75,22 +76,22 @@ private class MFInt321 {
 }
 private class MFInt322 {
   private org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1});
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1});
   }
 }
-private class MFColor3 {
-  private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f,1f,0f});
+private class MFVec3f3 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,1f ,0f ,1f ,1f ,1f ,1f ,1f ,1f ,0f ,1f });
   }
 }
 private class MFVec3f4 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1f,0f,0f,-1f,0f,0f,0f,1f,0f,0f,0f,-1f,0f,-1f,0f,0f,0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1f ,0f ,0f ,-1f ,0f ,0f ,0f ,1f ,0f ,0f ,0f ,-1f ,0f ,-1f ,0f ,0f ,0f ,1f });
   }
 }
-private class MFVec3f5 {
-  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,1f,0f,1f,1f,1f,1f,1f,1f,0f,1f});
+private class MFColor5 {
+  private org.web3d.x3d.jsail.fields.MFColor getArray() {
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f ,1f ,0f });
   }
 }
 }

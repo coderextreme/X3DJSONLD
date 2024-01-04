@@ -400,16 +400,17 @@ public class RotationTests
 	}
 	   
     /** 
-	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+     * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
+        System.out.println("Build this X3D model, showing diagnostics...");
         X3D thisExampleX3dModel = new RotationTests().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
@@ -449,11 +450,13 @@ public class RotationTests
 	
         if (validate)
         {
-                System.out.print("Java program \"net.x3djsonld.data.RotationTests\" self-validation test results: ");
+            //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
-                if (validationResults.length() > 10)
+            //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
+                System.out.print("net.x3djsonld.data.RotationTests self-validation test results: ");
+                if (!validationResults.equals("success"))
                     System.out.println();
-                System.out.println(validationResults);
+                System.out.println(validationResults.trim());
         }
     }
 }

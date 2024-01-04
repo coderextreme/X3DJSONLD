@@ -18,7 +18,9 @@ var MFString = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
-      version : new SFString("4.0"),
+      version : new SFString("3.3"),
+      /*All head/meta tags are optional, WorldInfo is also optional*/
+      /*Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1*/
       head : new SFNode(
         new head({
           meta : new MFNode([
@@ -76,7 +78,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")})])})),
+              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
+
+            new meta({
+              name : new SFString("license"),
+              content : new SFString("../license.html")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([

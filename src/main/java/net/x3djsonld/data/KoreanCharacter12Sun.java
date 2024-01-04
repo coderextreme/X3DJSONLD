@@ -328,24 +328,24 @@ public class KoreanCharacter12Sun
                     .setGeometry(new IndexedFaceSet().setCreaseAngle(1.57).setCoordIndex(getIndexedFaceSet_11_199_coordIndex()).setTexCoordIndex(getIndexedFaceSet_11_199_texCoordIndex())
                       .setCoord(new Coordinate().setPoint(getCoordinate_12_199_point()))
                       .setTexCoord(new TextureCoordinate().setPoint(getTextureCoordinate_12_200_point()))))))))))
-      .addJoints(new HAnimJoint().setUSE("hanim_humanoid_root").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_sacroiliac").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_skullbase").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_vl5").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_elbow").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_elbow").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_hip").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_hip").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_knee").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_knee").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_metatarsophalangeal_2").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_metatarsophalangeal_2").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_radiocarpal").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_radiocarpal").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_shoulder").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_shoulder").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_talocrural").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_talocrural").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
+      .addJoints(new HAnimJoint().setUSE("hanim_humanoid_root"))
+      .addJoints(new HAnimJoint().setUSE("hanim_sacroiliac"))
+      .addJoints(new HAnimJoint().setUSE("hanim_skullbase"))
+      .addJoints(new HAnimJoint().setUSE("hanim_vl5"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_elbow"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_elbow"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_hip"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_hip"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_knee"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_knee"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_metatarsophalangeal_2"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_metatarsophalangeal_2"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_radiocarpal"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_radiocarpal"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_shoulder"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_shoulder"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_talocrural"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_talocrural"))
       .addSegments(new HAnimSegment().setUSE("hanim_l5"))
       .addSegments(new HAnimSegment().setUSE("hanim_pelvis"))
       .addSegments(new HAnimSegment().setUSE("hanim_sacrum"))
@@ -1628,16 +1628,17 @@ public class KoreanCharacter12Sun
 	}
 	   
     /** 
-	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+     * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
+        System.out.println("Build this X3D model, showing diagnostics...");
         X3D thisExampleX3dModel = new KoreanCharacter12Sun().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
@@ -1677,11 +1678,13 @@ public class KoreanCharacter12Sun
 	
         if (validate)
         {
-                System.out.print("Java program \"net.x3djsonld.data.KoreanCharacter12Sun\" self-validation test results: ");
+            //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
-                if (validationResults.length() > 10)
+            //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
+                System.out.print("net.x3djsonld.data.KoreanCharacter12Sun self-validation test results: ");
+                if (!validationResults.equals("success"))
                     System.out.println();
-                System.out.println(validationResults);
+                System.out.println(validationResults.trim());
         }
     }
 }

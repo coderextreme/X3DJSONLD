@@ -17,10 +17,16 @@ var MFColor = require('./x3d.mjs');
 var Group = require('./x3d.mjs');
 var MetadataString = require('./x3d.mjs');
 var MFString = require('./x3d.mjs');
+var HAnimHumanoid = require('./x3d.mjs');
+var HAnimJoint = require('./x3d.mjs');
+var HAnimSegment = require('./x3d.mjs');
+var Shape = require('./x3d.mjs');
+var HAnimSite = require('./x3d.mjs');
+var IndexedFaceSet = require('./x3d.mjs');
+var Coordinate = require('./x3d.mjs');
 var Viewpoint = require('./x3d.mjs');
 var SFVec3f = require('./x3d.mjs');
 var Anchor = require('./x3d.mjs');
-var Shape = require('./x3d.mjs');
 var Appearance = require('./x3d.mjs');
 var Material = require('./x3d.mjs');
 var SFColor = require('./x3d.mjs');
@@ -61,7 +67,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("2 July 2023")}),
+              content : new SFString("Sat, 30 Dec 2023 07:36:02 GMT")}),
 
             new meta({
               name : new SFString("reference"),
@@ -85,11 +91,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayers.x3d")}),
-
-            new meta({
-              name : new SFString("generator"),
-              content : new SFString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")})])})),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayers.x3d")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
@@ -105,7 +107,133 @@ var X3D0 =  new X3D({
                 new MetadataString({
                   name : new SFString("HAnimArchitecture"),
                   reference : new SFString("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile"),
-                  value : new MFString(["E.4 Multiple humanoids per file"])})])}),
+                  value : new MFString(["E.4 Multiple humanoids per file"])}),
+              children : new MFNode([
+                new HAnimHumanoid({
+                  DEF : new SFString("a_SimpleSkeleton"),
+                  name : new SFString("SimpleSkeleton"),
+                  joints : new MFNode([
+                    new HAnimJoint({
+                      name : new SFString("humanoid_root"),
+                      children : new MFNode([
+                        new HAnimSegment({
+                          name : new SFString("sacrum"),
+                          children : new MFNode([
+                            new Shape({
+                              DEF : new SFString("JointVisualization")}),
+
+                            new Shape({
+                              DEF : new SFString("SegmentVisualization")}),
+
+                            new HAnimSite({
+                              DEF : new SFString("a_feature01_tip"),
+                              name : new SFString("feature01_tip"),
+                              children : new MFNode([
+                                new Shape({
+                                  DEF : new SFString("SiteVisualization")})])})])})])})])}),
+
+                new HAnimHumanoid({
+                  DEF : new SFString("b_SimpleSkeletonMesh"),
+                  name : new SFString("SimpleSkeletonMesh"),
+                  joints : new MFNode([
+                    new HAnimJoint({
+                      name : new SFString("humanoid_root"),
+                      children : new MFNode([
+                        new HAnimSegment({
+                          name : new SFString("sacrum"),
+                          children : new MFNode([
+                            new Shape({
+                              geometry : new SFNode(
+                                new IndexedFaceSet({
+                                  DEF : new SFString("SegmentBoneMesh")}))})])})])})])}),
+
+                new HAnimHumanoid({
+                  DEF : new SFString("c_SkinIndexedGeometry"),
+                  name : new SFString("SkinIndexedGeometry"),
+                  joints : new MFNode([
+                    new HAnimJoint({
+                      name : new SFString("humanoid_root"),
+                      children : new MFNode([
+                        new HAnimSegment({
+                          name : new SFString("sacrum")})])}),
+                  skin : new SFNode(
+                    new IndexedFaceSet({
+                      DEF : new SFString("SkinMeshIFS")})])}),
+
+                new HAnimHumanoid({
+                  DEF : new SFString("d_SkinShapeIndexedGeometry"),
+                  name : new SFString("SkinShapeIndexedGeometry"),
+                  joints : new MFNode([
+                    new HAnimJoint({
+                      name : new SFString("humanoid_root"),
+                      children : new MFNode([
+                        new HAnimSegment({
+                          name : new SFString("sacrum")})])}),
+                  skin : new SFNode(
+                    new Shape({
+                      geometry : new SFNode(
+                        new IndexedFaceSet({
+                          USE : new SFString("SkinMeshIFS")}))})])}),
+
+                new HAnimHumanoid({
+                  DEF : new SFString("e_SkinSwitchShapeIndexedGeometry"),
+                  name : new SFString("SkinSwitchShapeIndexedGeometry"),
+                  joints : new MFNode([
+                    new HAnimJoint({
+                      name : new SFString("humanoid_root"),
+                      children : new MFNode([
+                        new HAnimSegment({
+                          name : new SFString("sacrum")})])}),
+                  skin : new SFNode(
+                    new Shape({
+                      geometry : new SFNode(
+                        new IndexedFaceSet({
+                          DEF : new SFString("IndexedSkinMeshIFS"),
+                          coord : new SFNode(
+                            new Coordinate({
+                              DEF : new SFString("SkinMeshCoordinate")}))}))})])}),
+
+                new HAnimHumanoid({
+                  DEF : new SFString("f_SynthesizedSkinShapeIndexedTwoPartGeometry"),
+                  name : new SFString("SynthesizedSkinShapeIndexedTwoPartGeometry"),
+                  joints : new MFNode([
+                    new HAnimJoint({
+                      name : new SFString("humanoid_root"),
+                      children : new MFNode([
+                        new HAnimSegment({
+                          name : new SFString("sacrum")})])}),
+                  skin : new SFNode(
+                    new Shape({
+                      geometry : new SFNode(
+                        new IndexedFaceSet({
+                          DEF : new SFString("TwoPartIndexedSkinMesh"),
+                          coord : new SFNode(
+                            new Coordinate({
+                              DEF : new SFString("TwoPartSkinMesh")}))}))})])}),
+
+                new HAnimHumanoid({
+                  DEF : new SFString("g_ApparelSkinIndexedGeometryMultipleShapes"),
+                  name : new SFString("ApparelSkinIndexedGeometryMultipleShapes"),
+                  joints : new MFNode([
+                    new HAnimJoint({
+                      name : new SFString("humanoid_root"),
+                      children : new MFNode([
+                        new HAnimSegment({
+                          name : new SFString("sacrum")})])}),
+                  skin : new SFNode(
+                    new Shape({})])}),
+
+                new HAnimHumanoid({
+                  DEF : new SFString("h_AnatomySkinIndexedGeometryMultipleShapes"),
+                  name : new SFString("AnatomySkinIndexedGeometryMultipleShapes"),
+                  joints : new MFNode([
+                    new HAnimJoint({
+                      name : new SFString("humanoid_root"),
+                      children : new MFNode([
+                        new HAnimSegment({
+                          name : new SFString("sacrum")})])}),
+                  skin : new SFNode(
+                    new Shape({})])})])}),
 
             new Viewpoint({
               DEF : new SFString("ViewHelpText"),

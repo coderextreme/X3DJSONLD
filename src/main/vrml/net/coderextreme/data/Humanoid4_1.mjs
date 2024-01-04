@@ -3,9492 +3,10062 @@ let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "4.0";
 let head1 = browser.currentScene.createNode("head");
-let meta2 = browser.currentScene.createNode("meta");
-meta2.name = "title";
-meta2.content = "Humanoid4_1.x3d";
-head1.meta = new MFNode();
+let component2 = browser.currentScene.createNode("component");
+component2.name = "HAnim";
+component2.level = 1;
+head1.component = new MFNode();
 
-head1.meta[0] = meta2;
+head1.component[0] = component2;
 
 let meta3 = browser.currentScene.createNode("meta");
-meta3.name = "identifier";
-meta3.content = "http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid4_1.x3d";
+meta3.name = "title";
+meta3.content = "Humanoid4_1.x3d";
 head1.meta[1] = meta3;
 
 let meta4 = browser.currentScene.createNode("meta");
-meta4.name = "description";
-meta4.content = "An attempt at a standard LOA-4 skeleton";
+meta4.name = "identifier";
+meta4.content = "http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid4_1.x3d";
 head1.meta[2] = meta4;
 
 let meta5 = browser.currentScene.createNode("meta");
-meta5.name = "generator";
-meta5.content = "h2.pl";
+meta5.name = "description";
+meta5.content = "An attempt at a standard LOA-4 skeleton";
 head1.meta[3] = meta5;
 
 let meta6 = browser.currentScene.createNode("meta");
-meta6.name = "modified";
-meta6.content = "14 Jan 2023";
+meta6.name = "generator";
+meta6.content = "h2.pl";
 head1.meta[4] = meta6;
 
 let meta7 = browser.currentScene.createNode("meta");
-meta7.name = "creator";
-meta7.content = "John Carlson";
+meta7.name = "modified";
+meta7.content = "14 Jan 2023";
 head1.meta[5] = meta7;
 
 let meta8 = browser.currentScene.createNode("meta");
-meta8.name = "created";
-meta8.content = "9 November 2020";
+meta8.name = "creator";
+meta8.content = "John Carlson";
 head1.meta[6] = meta8;
 
-let component9 = browser.currentScene.createNode("component");
-component9.name = "HAnim";
-component9.level = 1;
-head1.component[7] = component9;
+let meta9 = browser.currentScene.createNode("meta");
+meta9.name = "created";
+meta9.content = "9 November 2020";
+head1.meta[7] = meta9;
+
+let meta10 = browser.currentScene.createNode("meta");
+meta10.name = "license";
+meta10.content = "../license.html";
+head1.meta[8] = meta10;
 
 head = head1;
 
-let Transform11 = browser.currentScene.createNode("Transform");
-let Shape12 = browser.currentScene.createNode("Shape");
-Shape12.DEF = "AxisLinesShape";
-let IndexedLineSet13 = browser.currentScene.createNode("IndexedLineSet");
-IndexedLineSet13.colorPerVertex = False;
-IndexedLineSet13.colorIndex = new MFInt32(new int[0,1,2]);
-IndexedLineSet13.coordIndex = new MFInt32(new int[0,1,-1,0,2,-1,0,3,-1]);
-let Color14 = browser.currentScene.createNode("Color");
-Color14.color = new MFColor(new float[1,0,0,0,0.6,0,0,0,1]);
-IndexedLineSet13.color = Color14;
-
+let Transform12 = browser.currentScene.createNode("Transform");
+//DEF for markerfor XYZ axes
+let Shape13 = browser.currentScene.createNode("Shape");
+Shape13.DEF = "AxisLinesShape";
+//RGB lines showing XYZ axes
+let IndexedLineSet14 = browser.currentScene.createNode("IndexedLineSet");
+IndexedLineSet14.colorIndex = new MFInt32(new int[0,1,2]);
+IndexedLineSet14.colorPerVertex = False;
+IndexedLineSet14.coordIndex = new MFInt32(new int[0,1,-1,0,2,-1,0,3,-1]);
 let Coordinate15 = browser.currentScene.createNode("Coordinate");
 Coordinate15.point = new MFVec3f(new float[0,0,0,0.1,0,0,0,0.1,0,0,0,0.1]);
-IndexedLineSet13.coord = Coordinate15;
+IndexedLineSet14.coord = Coordinate15;
 
-Shape12.geometry = IndexedLineSet13;
+let Color16 = browser.currentScene.createNode("Color");
+Color16.color = new MFColor(new float[1,0,0,0,0.6,0,0,0,1]);
+IndexedLineSet14.color = Color16;
 
-Transform11.child = new undefined();
+Shape13.geometry = IndexedLineSet14;
 
-Transform11.child[0] = Shape12;
+Transform12.child = new undefined();
+
+Transform12.child[0] = Shape13;
 
 browser.currentScene.children = new MFNode();
 
-browser.currentScene.children[0] = Transform11;
+browser.currentScene.children[0] = Transform12;
 
-let Group16 = browser.currentScene.createNode("Group");
-let Transform17 = browser.currentScene.createNode("Transform");
+let Group17 = browser.currentScene.createNode("Group");
+//DEFS for markers of skeleton joints, segments, and sites
 let Transform18 = browser.currentScene.createNode("Transform");
-Transform18.translation = new SFVec3f(new float[0,2,0]);
-let Shape19 = browser.currentScene.createNode("Shape");
-Shape19.DEF = "HAnimRootShape";
-let Appearance20 = browser.currentScene.createNode("Appearance");
-let Material21 = browser.currentScene.createNode("Material");
-Material21.DEF = "HAnimRootMaterial";
-Material21.diffuseColor = new SFColor(new float[0.8,0,0]);
-Material21.transparency = 0.3;
-Appearance20.material = Material21;
+let Transform19 = browser.currentScene.createNode("Transform");
+Transform19.translation = new SFVec3f(new float[0,2,0]);
+let Shape20 = browser.currentScene.createNode("Shape");
+Shape20.DEF = "HAnimRootShape";
+let Sphere21 = browser.currentScene.createNode("Sphere");
+Sphere21.radius = 0.02;
+Shape20.geometry = Sphere21;
 
-Shape19.appearance = Appearance20;
+let Appearance22 = browser.currentScene.createNode("Appearance");
+let Material23 = browser.currentScene.createNode("Material");
+Material23.DEF = "HAnimRootMaterial";
+Material23.diffuseColor = new SFColor(new float[0.8,0,0]);
+Material23.transparency = 0.3;
+Appearance22.material = Material23;
 
-let Sphere22 = browser.currentScene.createNode("Sphere");
-Sphere22.radius = 0.02;
-Shape19.geometry = Sphere22;
+Shape20.appearance = Appearance22;
 
-Transform18.child = new undefined();
+Transform19.child = new undefined();
 
-Transform18.child[0] = Shape19;
+Transform19.child[0] = Shape20;
 
-Transform17.children = new MFNode();
+Transform18.children = new MFNode();
 
-Transform17.children[0] = Transform18;
+Transform18.children[0] = Transform19;
 
-let Transform23 = browser.currentScene.createNode("Transform");
-Transform23.translation = new SFVec3f(new float[0,2.1,0]);
-let Shape24 = browser.currentScene.createNode("Shape");
-Shape24.DEF = "HAnimJointShape";
-let Appearance25 = browser.currentScene.createNode("Appearance");
-let Material26 = browser.currentScene.createNode("Material");
-Material26.DEF = "HAnimJointMaterial";
-Material26.diffuseColor = new SFColor(new float[0,0,0.8]);
-Material26.transparency = 0.3;
-Appearance25.material = Material26;
-
-Shape24.appearance = Appearance25;
-
-let Sphere27 = browser.currentScene.createNode("Sphere");
-Sphere27.radius = 0.02;
-Shape24.geometry = Sphere27;
-
-Transform23.child = new undefined();
-
-Transform23.child[0] = Shape24;
+let Transform24 = browser.currentScene.createNode("Transform");
+Transform24.translation = new SFVec3f(new float[0,2.1,0]);
+let Shape25 = browser.currentScene.createNode("Shape");
+Shape25.DEF = "HAnimJointShape";
+let Sphere26 = browser.currentScene.createNode("Sphere");
+Sphere26.radius = 0.02;
+Shape25.geometry = Sphere26;
 
-Transform17.children[1] = Transform23;
+let Appearance27 = browser.currentScene.createNode("Appearance");
+let Material28 = browser.currentScene.createNode("Material");
+Material28.DEF = "HAnimJointMaterial";
+Material28.diffuseColor = new SFColor(new float[0,0,0.8]);
+Material28.transparency = 0.3;
+Appearance27.material = Material28;
+
+Shape25.appearance = Appearance27;
+
+Transform24.child = new undefined();
+
+Transform24.child[0] = Shape25;
+
+Transform18.children[1] = Transform24;
+
+let Transform29 = browser.currentScene.createNode("Transform");
+Transform29.translation = new SFVec3f(new float[0,2.05,0]);
+let Shape30 = browser.currentScene.createNode("Shape");
+Shape30.DEF = "HAnimSegmentLine";
+let LineSet31 = browser.currentScene.createNode("LineSet");
+LineSet31.vertexCount = new MFInt32(new int[2]);
+let ColorRGBA32 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA32.DEF = "HAnimSegmentLineColorRGBA";
+ColorRGBA32.color = new MFColorRGBA(new float[1,1,0,1,1,1,0,0.1]);
+LineSet31.color = ColorRGBA32;
+
+let Coordinate33 = browser.currentScene.createNode("Coordinate");
+Coordinate33.point = new MFVec3f(new float[-0.05,0,0,0.05,0,0]);
+LineSet31.coord = Coordinate33;
+
+Shape30.geometry = LineSet31;
+
+Transform29.child = new undefined();
+
+Transform29.child[0] = Shape30;
+
+Transform18.children[2] = Transform29;
+
+let Transform34 = browser.currentScene.createNode("Transform");
+Transform34.translation = new SFVec3f(new float[0,2.1,0]);
+let Shape35 = browser.currentScene.createNode("Shape");
+Shape35.DEF = "HAnimSiteShape";
+let IndexedFaceSet36 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet36.DEF = "DiamondIFS";
+IndexedFaceSet36.creaseAngle = 0.5;
+IndexedFaceSet36.solid = False;
+IndexedFaceSet36.coordIndex = new MFInt32(new int[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1]);
+let ColorRGBA37 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA37.DEF = "HAnimSiteColorRGBA";
+ColorRGBA37.color = new MFColorRGBA(new float[1,1,0,1,1,1,0,0.1,1,1,0,1,1,1,0,0.1,1,1,0,1,1,1,0,0.1]);
+IndexedFaceSet36.color = ColorRGBA37;
+
+let Coordinate38 = browser.currentScene.createNode("Coordinate");
+Coordinate38.point = new MFVec3f(new float[0,0.01,0,-0.01,0,0,0,0,0.01,0.01,0,0,0,0,-0.01,0,-0.01,0]);
+IndexedFaceSet36.coord = Coordinate38;
 
-let Transform28 = browser.currentScene.createNode("Transform");
-Transform28.translation = new SFVec3f(new float[0,2.05,0]);
-let Shape29 = browser.currentScene.createNode("Shape");
-Shape29.DEF = "HAnimSegmentLine";
-let LineSet30 = browser.currentScene.createNode("LineSet");
-LineSet30.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA31 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA31.DEF = "HAnimSegmentLineColorRGBA";
-ColorRGBA31.color = new MFColorRGBA(new float[1,1,0,1,1,1,0,0.1]);
-LineSet30.color = ColorRGBA31;
-
-let Coordinate32 = browser.currentScene.createNode("Coordinate");
-Coordinate32.point = new MFVec3f(new float[-0.05,0,0,0.05,0,0]);
-LineSet30.coord = Coordinate32;
+Shape35.geometry = IndexedFaceSet36;
+
+let Appearance39 = browser.currentScene.createNode("Appearance");
+let Material40 = browser.currentScene.createNode("Material");
+Material40.diffuseColor = new SFColor(new float[1,1,0]);
+Material40.transparency = 0.3;
+Appearance39.material = Material40;
+
+Shape35.appearance = Appearance39;
+
+Transform34.child = new undefined();
+
+Transform34.child[0] = Shape35;
 
-Shape29.geometry = LineSet30;
+Transform18.children[3] = Transform34;
 
-Transform28.child = new undefined();
+Group17.children = new MFNode();
 
-Transform28.child[0] = Shape29;
+Group17.children[0] = Transform18;
 
-Transform17.children[2] = Transform28;
+browser.currentScene.children[1] = Group17;
+
+let NavigationInfo41 = browser.currentScene.createNode("NavigationInfo");
+NavigationInfo41.speed = 1.5;
+browser.currentScene.children[2] = NavigationInfo41;
 
-let Transform33 = browser.currentScene.createNode("Transform");
-Transform33.translation = new SFVec3f(new float[0,2.1,0]);
-let Shape34 = browser.currentScene.createNode("Shape");
-Shape34.DEF = "HAnimSiteShape";
-let Appearance35 = browser.currentScene.createNode("Appearance");
-let Material36 = browser.currentScene.createNode("Material");
-Material36.diffuseColor = new SFColor(new float[1,1,0]);
-Material36.transparency = 0.3;
-Appearance35.material = Material36;
+let Viewpoint42 = browser.currentScene.createNode("Viewpoint");
+Viewpoint42.description = "default";
+browser.currentScene.children[3] = Viewpoint42;
 
-Shape34.appearance = Appearance35;
+let HAnimHumanoid43 = browser.currentScene.createNode("HAnimHumanoid");
+HAnimHumanoid43.name = "HAnim";
+HAnimHumanoid43.DEF = "hanim_HAnim";
+HAnimHumanoid43.info = new MFString(new java.lang.String["humanoidVersion=2.0"]);
+HAnimHumanoid43.version = "2.0";
+//</LOD>
+let Coordinate44 = browser.currentScene.createNode("Coordinate");
+Coordinate44.USE = "TheSkinCoord";
+HAnimHumanoid43.skinCoord = Coordinate44;
 
-let IndexedFaceSet37 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet37.DEF = "DiamondIFS";
-IndexedFaceSet37.solid = False;
-IndexedFaceSet37.creaseAngle = 0.5;
-IndexedFaceSet37.coordIndex = new MFInt32(new int[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1]);
-let ColorRGBA38 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA38.DEF = "HAnimSiteColorRGBA";
-ColorRGBA38.color = new MFColorRGBA(new float[1,1,0,1,1,1,0,0.1,1,1,0,1,1,1,0,0.1,1,1,0,1,1,1,0,0.1]);
-IndexedFaceSet37.color = ColorRGBA38;
+let HAnimJoint45 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint45.name = "humanoid_root";
+HAnimJoint45.DEF = "hanim_humanoid_root";
+HAnimJoint45.center = new SFVec3f(new float[0,0.824,0.0277]);
+HAnimJoint45.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint45.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment46 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment46.name = "sacrum";
+HAnimSegment46.DEF = "hanim_sacrum";
+let Transform47 = browser.currentScene.createNode("Transform");
+Transform47.translation = new SFVec3f(new float[0,0.824,0.0277]);
+let Transform48 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape49 = browser.currentScene.createNode("Shape");
+Shape49.USE = "HAnimJointShape";
+Transform48.child = new undefined();
 
-let Coordinate39 = browser.currentScene.createNode("Coordinate");
-Coordinate39.point = new MFVec3f(new float[0,0.01,0,-0.01,0,0,0,0,0.01,0.01,0,0,0,0,-0.01,0,-0.01,0]);
-IndexedFaceSet37.coord = Coordinate39;
+Transform48.child[0] = Shape49;
 
-Shape34.geometry = IndexedFaceSet37;
+Transform47.children = new MFNode();
 
-Transform33.child = new undefined();
+Transform47.children[0] = Transform48;
 
-Transform33.child[0] = Shape34;
+HAnimSegment46.children = new MFNode();
 
-Transform17.children[3] = Transform33;
+HAnimSegment46.children[0] = Transform47;
 
-Group16.children = new MFNode();
+let Shape50 = browser.currentScene.createNode("Shape");
+let LineSet51 = browser.currentScene.createNode("LineSet");
+LineSet51.vertexCount = new MFInt32(new int[2]);
+let Coordinate52 = browser.currentScene.createNode("Coordinate");
+Coordinate52.point = new MFVec3f(new float[0,0.824,0.0277,0,0.9149,0.0016]);
+LineSet51.coord = Coordinate52;
 
-Group16.children[0] = Transform17;
+//from humanoid_root to sacroiliac vertices 2
+let ColorRGBA53 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA53.USE = "HAnimSegmentLineColorRGBA";
+LineSet51.color = ColorRGBA53;
 
-browser.currentScene.children[1] = Group16;
+Shape50.geometry = LineSet51;
 
-let NavigationInfo40 = browser.currentScene.createNode("NavigationInfo");
-NavigationInfo40.speed = 1.5;
-browser.currentScene.children[2] = NavigationInfo40;
+HAnimSegment46.children[1] = Shape50;
 
-let Viewpoint41 = browser.currentScene.createNode("Viewpoint");
-Viewpoint41.description = "default";
-browser.currentScene.children[3] = Viewpoint41;
+let HAnimSite54 = browser.currentScene.createNode("HAnimSite");
+HAnimSite54.name = "buttocks_standing_wall_contact_point_pt";
+HAnimSite54.DEF = "hanim_buttocks_standing_wall_contact_point_pt";
+let TouchSensor55 = browser.currentScene.createNode("TouchSensor");
+TouchSensor55.description = "HAnimSite buttocks_standing_wall_contact_point_pt";
+HAnimSite54.children = new MFNode();
 
-let HAnimHumanoid42 = browser.currentScene.createNode("HAnimHumanoid");
-HAnimHumanoid42.DEF = "hanim_HAnim";
-HAnimHumanoid42.version = "2.0";
-HAnimHumanoid42.name = "HAnim";
-HAnimHumanoid42.info = new MFString(new java.lang.String["humanoidVersion=2.0"]);
-let HAnimJoint43 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint43.DEF = "hanim_humanoid_root";
-HAnimJoint43.name = "humanoid_root";
-HAnimJoint43.center = new SFVec3f(new float[0,0.824,0.0277]);
-let HAnimSegment44 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment44.DEF = "hanim_sacrum";
-HAnimSegment44.name = "sacrum";
-let Transform45 = browser.currentScene.createNode("Transform");
-Transform45.translation = new SFVec3f(new float[0,0.824,0.0277]);
-let Transform46 = browser.currentScene.createNode("Transform");
-let Shape47 = browser.currentScene.createNode("Shape");
-Shape47.USE = "HAnimJointShape";
-Transform46.child = new undefined();
+HAnimSite54.children[0] = TouchSensor55;
 
-Transform46.child[0] = Shape47;
+let Shape56 = browser.currentScene.createNode("Shape");
+Shape56.USE = "HAnimSiteShape";
+HAnimSite54.children[1] = Shape56;
 
-Transform45.children = new MFNode();
+HAnimSegment46.children[2] = HAnimSite54;
 
-Transform45.children[0] = Transform46;
+let HAnimSite57 = browser.currentScene.createNode("HAnimSite");
+HAnimSite57.name = "crotch_pt";
+HAnimSite57.DEF = "hanim_crotch_pt";
+HAnimSite57.translation = new SFVec3f(new float[0.0034,0.8266,0.0257]);
+let TouchSensor58 = browser.currentScene.createNode("TouchSensor");
+TouchSensor58.description = "HAnimSite crotch_pt";
+HAnimSite57.children = new MFNode();
 
-HAnimSegment44.children = new MFNode();
+HAnimSite57.children[0] = TouchSensor58;
 
-HAnimSegment44.children[0] = Transform45;
+let Shape59 = browser.currentScene.createNode("Shape");
+Shape59.USE = "HAnimSiteShape";
+HAnimSite57.children[1] = Shape59;
 
-let Shape48 = browser.currentScene.createNode("Shape");
-let LineSet49 = browser.currentScene.createNode("LineSet");
-LineSet49.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA50 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA50.USE = "HAnimSegmentLineColorRGBA";
-LineSet49.color = ColorRGBA50;
+HAnimSegment46.children[3] = HAnimSite57;
 
-let Coordinate51 = browser.currentScene.createNode("Coordinate");
-Coordinate51.point = new MFVec3f(new float[0,0.824,0.0277,0,0.9149,0.0016]);
-LineSet49.coord = Coordinate51;
+let HAnimSite60 = browser.currentScene.createNode("HAnimSite");
+HAnimSite60.name = "l_asis_pt";
+HAnimSite60.DEF = "hanim_l_asis_pt";
+HAnimSite60.translation = new SFVec3f(new float[0.0925,0.9983,0.1052]);
+let TouchSensor61 = browser.currentScene.createNode("TouchSensor");
+TouchSensor61.description = "HAnimSite l_asis_pt";
+HAnimSite60.children = new MFNode();
 
-Shape48.geometry = LineSet49;
+HAnimSite60.children[0] = TouchSensor61;
 
-HAnimSegment44.children[1] = Shape48;
+let Shape62 = browser.currentScene.createNode("Shape");
+Shape62.USE = "HAnimSiteShape";
+HAnimSite60.children[1] = Shape62;
 
-let HAnimSite52 = browser.currentScene.createNode("HAnimSite");
-HAnimSite52.DEF = "hanim_buttocks_standing_wall_contact_point_pt";
-HAnimSite52.name = "buttocks_standing_wall_contact_point_pt";
-let TouchSensor53 = browser.currentScene.createNode("TouchSensor");
-TouchSensor53.description = "HAnimSite buttocks_standing_wall_contact_point_pt";
-HAnimSite52.children = new MFNode();
+HAnimSegment46.children[4] = HAnimSite60;
 
-HAnimSite52.children[0] = TouchSensor53;
+let HAnimSite63 = browser.currentScene.createNode("HAnimSite");
+HAnimSite63.name = "l_iliocristale_pt";
+HAnimSite63.DEF = "hanim_l_iliocristale_pt";
+HAnimSite63.translation = new SFVec3f(new float[0.1612,1.0537,0.0008]);
+let TouchSensor64 = browser.currentScene.createNode("TouchSensor");
+TouchSensor64.description = "HAnimSite l_iliocristale_pt";
+HAnimSite63.children = new MFNode();
 
-let Shape54 = browser.currentScene.createNode("Shape");
-Shape54.USE = "HAnimSiteShape";
-HAnimSite52.children[1] = Shape54;
+HAnimSite63.children[0] = TouchSensor64;
 
-HAnimSegment44.children[2] = HAnimSite52;
+let Shape65 = browser.currentScene.createNode("Shape");
+Shape65.USE = "HAnimSiteShape";
+HAnimSite63.children[1] = Shape65;
 
-let HAnimSite55 = browser.currentScene.createNode("HAnimSite");
-HAnimSite55.DEF = "hanim_crotch_pt";
-HAnimSite55.name = "crotch_pt";
-HAnimSite55.translation = new SFVec3f(new float[0.0034,0.8266,0.0257]);
-let TouchSensor56 = browser.currentScene.createNode("TouchSensor");
-TouchSensor56.description = "HAnimSite crotch_pt";
-HAnimSite55.children = new MFNode();
+HAnimSegment46.children[5] = HAnimSite63;
 
-HAnimSite55.children[0] = TouchSensor56;
+let HAnimSite66 = browser.currentScene.createNode("HAnimSite");
+HAnimSite66.name = "l_psis_pt";
+HAnimSite66.DEF = "hanim_l_psis_pt";
+HAnimSite66.translation = new SFVec3f(new float[0.0774,1.019,-0.1151]);
+let TouchSensor67 = browser.currentScene.createNode("TouchSensor");
+TouchSensor67.description = "HAnimSite l_psis_pt";
+HAnimSite66.children = new MFNode();
+
+HAnimSite66.children[0] = TouchSensor67;
 
-let Shape57 = browser.currentScene.createNode("Shape");
-Shape57.USE = "HAnimSiteShape";
-HAnimSite55.children[1] = Shape57;
+let Shape68 = browser.currentScene.createNode("Shape");
+Shape68.USE = "HAnimSiteShape";
+HAnimSite66.children[1] = Shape68;
 
-HAnimSegment44.children[3] = HAnimSite55;
+HAnimSegment46.children[6] = HAnimSite66;
 
-let HAnimSite58 = browser.currentScene.createNode("HAnimSite");
-HAnimSite58.DEF = "hanim_l_asis_pt";
-HAnimSite58.name = "l_asis_pt";
-HAnimSite58.translation = new SFVec3f(new float[0.0925,0.9983,0.1052]);
-let TouchSensor59 = browser.currentScene.createNode("TouchSensor");
-TouchSensor59.description = "HAnimSite l_asis_pt";
-HAnimSite58.children = new MFNode();
+let HAnimSite69 = browser.currentScene.createNode("HAnimSite");
+HAnimSite69.name = "l_trochanterion_pt";
+HAnimSite69.DEF = "hanim_l_trochanterion_pt";
+HAnimSite69.translation = new SFVec3f(new float[0.1677,0.8336,0.0303]);
+let TouchSensor70 = browser.currentScene.createNode("TouchSensor");
+TouchSensor70.description = "HAnimSite l_trochanterion_pt";
+HAnimSite69.children = new MFNode();
 
-HAnimSite58.children[0] = TouchSensor59;
+HAnimSite69.children[0] = TouchSensor70;
 
-let Shape60 = browser.currentScene.createNode("Shape");
-Shape60.USE = "HAnimSiteShape";
-HAnimSite58.children[1] = Shape60;
+let Shape71 = browser.currentScene.createNode("Shape");
+Shape71.USE = "HAnimSiteShape";
+HAnimSite69.children[1] = Shape71;
 
-HAnimSegment44.children[4] = HAnimSite58;
+HAnimSegment46.children[7] = HAnimSite69;
 
-let HAnimSite61 = browser.currentScene.createNode("HAnimSite");
-HAnimSite61.DEF = "hanim_l_iliocristale_pt";
-HAnimSite61.name = "l_iliocristale_pt";
-HAnimSite61.translation = new SFVec3f(new float[0.1612,1.0537,0.0008]);
-let TouchSensor62 = browser.currentScene.createNode("TouchSensor");
-TouchSensor62.description = "HAnimSite l_iliocristale_pt";
-HAnimSite61.children = new MFNode();
+let HAnimSite72 = browser.currentScene.createNode("HAnimSite");
+HAnimSite72.name = "r_asis_pt";
+HAnimSite72.DEF = "hanim_r_asis_pt";
+HAnimSite72.translation = new SFVec3f(new float[-0.0887,1.0021,0.1112]);
+let TouchSensor73 = browser.currentScene.createNode("TouchSensor");
+TouchSensor73.description = "HAnimSite r_asis_pt";
+HAnimSite72.children = new MFNode();
 
-HAnimSite61.children[0] = TouchSensor62;
+HAnimSite72.children[0] = TouchSensor73;
 
-let Shape63 = browser.currentScene.createNode("Shape");
-Shape63.USE = "HAnimSiteShape";
-HAnimSite61.children[1] = Shape63;
+let Shape74 = browser.currentScene.createNode("Shape");
+Shape74.USE = "HAnimSiteShape";
+HAnimSite72.children[1] = Shape74;
 
-HAnimSegment44.children[5] = HAnimSite61;
+HAnimSegment46.children[8] = HAnimSite72;
 
-let HAnimSite64 = browser.currentScene.createNode("HAnimSite");
-HAnimSite64.DEF = "hanim_l_psis_pt";
-HAnimSite64.name = "l_psis_pt";
-HAnimSite64.translation = new SFVec3f(new float[0.0774,1.019,-0.1151]);
-let TouchSensor65 = browser.currentScene.createNode("TouchSensor");
-TouchSensor65.description = "HAnimSite l_psis_pt";
-HAnimSite64.children = new MFNode();
+let HAnimSite75 = browser.currentScene.createNode("HAnimSite");
+HAnimSite75.name = "r_iliocristale_pt";
+HAnimSite75.DEF = "hanim_r_iliocristale_pt";
+HAnimSite75.translation = new SFVec3f(new float[-0.1525,1.0628,0.0035]);
+let TouchSensor76 = browser.currentScene.createNode("TouchSensor");
+TouchSensor76.description = "HAnimSite r_iliocristale_pt";
+HAnimSite75.children = new MFNode();
 
-HAnimSite64.children[0] = TouchSensor65;
+HAnimSite75.children[0] = TouchSensor76;
 
-let Shape66 = browser.currentScene.createNode("Shape");
-Shape66.USE = "HAnimSiteShape";
-HAnimSite64.children[1] = Shape66;
+let Shape77 = browser.currentScene.createNode("Shape");
+Shape77.USE = "HAnimSiteShape";
+HAnimSite75.children[1] = Shape77;
 
-HAnimSegment44.children[6] = HAnimSite64;
+HAnimSegment46.children[9] = HAnimSite75;
 
-let HAnimSite67 = browser.currentScene.createNode("HAnimSite");
-HAnimSite67.DEF = "hanim_l_trochanterion_pt";
-HAnimSite67.name = "l_trochanterion_pt";
-HAnimSite67.translation = new SFVec3f(new float[0.1677,0.8336,0.0303]);
-let TouchSensor68 = browser.currentScene.createNode("TouchSensor");
-TouchSensor68.description = "HAnimSite l_trochanterion_pt";
-HAnimSite67.children = new MFNode();
+let HAnimSite78 = browser.currentScene.createNode("HAnimSite");
+HAnimSite78.name = "r_psis_pt";
+HAnimSite78.DEF = "hanim_r_psis_pt";
+HAnimSite78.translation = new SFVec3f(new float[-0.0716,1.019,-0.1138]);
+let TouchSensor79 = browser.currentScene.createNode("TouchSensor");
+TouchSensor79.description = "HAnimSite r_psis_pt";
+HAnimSite78.children = new MFNode();
 
-HAnimSite67.children[0] = TouchSensor68;
+HAnimSite78.children[0] = TouchSensor79;
 
-let Shape69 = browser.currentScene.createNode("Shape");
-Shape69.USE = "HAnimSiteShape";
-HAnimSite67.children[1] = Shape69;
+let Shape80 = browser.currentScene.createNode("Shape");
+Shape80.USE = "HAnimSiteShape";
+HAnimSite78.children[1] = Shape80;
+
+HAnimSegment46.children[10] = HAnimSite78;
+
+let HAnimSite81 = browser.currentScene.createNode("HAnimSite");
+HAnimSite81.name = "r_trochanterion_pt";
+HAnimSite81.DEF = "hanim_r_trochanterion_pt";
+HAnimSite81.translation = new SFVec3f(new float[-0.1689,0.8419,0.0352]);
+let TouchSensor82 = browser.currentScene.createNode("TouchSensor");
+TouchSensor82.description = "HAnimSite r_trochanterion_pt";
+HAnimSite81.children = new MFNode();
 
-HAnimSegment44.children[7] = HAnimSite67;
+HAnimSite81.children[0] = TouchSensor82;
 
-let HAnimSite70 = browser.currentScene.createNode("HAnimSite");
-HAnimSite70.DEF = "hanim_r_asis_pt";
-HAnimSite70.name = "r_asis_pt";
-HAnimSite70.translation = new SFVec3f(new float[-0.0887,1.0021,0.1112]);
-let TouchSensor71 = browser.currentScene.createNode("TouchSensor");
-TouchSensor71.description = "HAnimSite r_asis_pt";
-HAnimSite70.children = new MFNode();
+let Shape83 = browser.currentScene.createNode("Shape");
+Shape83.USE = "HAnimSiteShape";
+HAnimSite81.children[1] = Shape83;
 
-HAnimSite70.children[0] = TouchSensor71;
+HAnimSegment46.children[11] = HAnimSite81;
 
-let Shape72 = browser.currentScene.createNode("Shape");
-Shape72.USE = "HAnimSiteShape";
-HAnimSite70.children[1] = Shape72;
+let Shape84 = browser.currentScene.createNode("Shape");
+let LineSet85 = browser.currentScene.createNode("LineSet");
+LineSet85.vertexCount = new MFInt32(new int[2]);
+let Coordinate86 = browser.currentScene.createNode("Coordinate");
+Coordinate86.point = new MFVec3f(new float[0,0.824,0.0277,0.0028,1.0568,-0.0776]);
+LineSet85.coord = Coordinate86;
 
-HAnimSegment44.children[8] = HAnimSite70;
+//from humanoid_root to vl5 vertices 2
+let ColorRGBA87 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA87.USE = "HAnimSegmentLineColorRGBA";
+LineSet85.color = ColorRGBA87;
 
-let HAnimSite73 = browser.currentScene.createNode("HAnimSite");
-HAnimSite73.DEF = "hanim_r_iliocristale_pt";
-HAnimSite73.name = "r_iliocristale_pt";
-HAnimSite73.translation = new SFVec3f(new float[-0.1525,1.0628,0.0035]);
-let TouchSensor74 = browser.currentScene.createNode("TouchSensor");
-TouchSensor74.description = "HAnimSite r_iliocristale_pt";
-HAnimSite73.children = new MFNode();
+Shape84.geometry = LineSet85;
 
-HAnimSite73.children[0] = TouchSensor74;
+HAnimSegment46.children[12] = Shape84;
 
-let Shape75 = browser.currentScene.createNode("Shape");
-Shape75.USE = "HAnimSiteShape";
-HAnimSite73.children[1] = Shape75;
+let HAnimSite88 = browser.currentScene.createNode("HAnimSite");
+HAnimSite88.name = "navel_pt";
+HAnimSite88.DEF = "hanim_navel_pt";
+HAnimSite88.translation = new SFVec3f(new float[0.0069,1.0966,0.1017]);
+let TouchSensor89 = browser.currentScene.createNode("TouchSensor");
+TouchSensor89.description = "HAnimSite navel_pt";
+HAnimSite88.children = new MFNode();
 
-HAnimSegment44.children[9] = HAnimSite73;
+HAnimSite88.children[0] = TouchSensor89;
 
-let HAnimSite76 = browser.currentScene.createNode("HAnimSite");
-HAnimSite76.DEF = "hanim_r_psis_pt";
-HAnimSite76.name = "r_psis_pt";
-HAnimSite76.translation = new SFVec3f(new float[-0.0716,1.019,-0.1138]);
-let TouchSensor77 = browser.currentScene.createNode("TouchSensor");
-TouchSensor77.description = "HAnimSite r_psis_pt";
-HAnimSite76.children = new MFNode();
+let Shape90 = browser.currentScene.createNode("Shape");
+Shape90.USE = "HAnimSiteShape";
+HAnimSite88.children[1] = Shape90;
 
-HAnimSite76.children[0] = TouchSensor77;
+HAnimSegment46.children[13] = HAnimSite88;
 
-let Shape78 = browser.currentScene.createNode("Shape");
-Shape78.USE = "HAnimSiteShape";
-HAnimSite76.children[1] = Shape78;
+let HAnimSite91 = browser.currentScene.createNode("HAnimSite");
+HAnimSite91.name = "waist_preferred_anterior_pt";
+HAnimSite91.DEF = "hanim_waist_preferred_anterior_pt";
+let TouchSensor92 = browser.currentScene.createNode("TouchSensor");
+TouchSensor92.description = "HAnimSite waist_preferred_anterior_pt";
+HAnimSite91.children = new MFNode();
 
-HAnimSegment44.children[10] = HAnimSite76;
+HAnimSite91.children[0] = TouchSensor92;
 
-let HAnimSite79 = browser.currentScene.createNode("HAnimSite");
-HAnimSite79.DEF = "hanim_r_trochanterion_pt";
-HAnimSite79.name = "r_trochanterion_pt";
-HAnimSite79.translation = new SFVec3f(new float[-0.1689,0.8419,0.0352]);
-let TouchSensor80 = browser.currentScene.createNode("TouchSensor");
-TouchSensor80.description = "HAnimSite r_trochanterion_pt";
-HAnimSite79.children = new MFNode();
+let Shape93 = browser.currentScene.createNode("Shape");
+Shape93.USE = "HAnimSiteShape";
+HAnimSite91.children[1] = Shape93;
 
-HAnimSite79.children[0] = TouchSensor80;
+HAnimSegment46.children[14] = HAnimSite91;
 
-let Shape81 = browser.currentScene.createNode("Shape");
-Shape81.USE = "HAnimSiteShape";
-HAnimSite79.children[1] = Shape81;
+let HAnimSite94 = browser.currentScene.createNode("HAnimSite");
+HAnimSite94.name = "waist_preferred_posterior_pt";
+HAnimSite94.DEF = "hanim_waist_preferred_posterior_pt";
+HAnimSite94.translation = new SFVec3f(new float[0.29,1.0915,-0.1091]);
+let TouchSensor95 = browser.currentScene.createNode("TouchSensor");
+TouchSensor95.description = "HAnimSite waist_preferred_posterior_pt";
+HAnimSite94.children = new MFNode();
 
-HAnimSegment44.children[11] = HAnimSite79;
+HAnimSite94.children[0] = TouchSensor95;
 
-let Shape82 = browser.currentScene.createNode("Shape");
-let LineSet83 = browser.currentScene.createNode("LineSet");
-LineSet83.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA84 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA84.USE = "HAnimSegmentLineColorRGBA";
-LineSet83.color = ColorRGBA84;
+let Shape96 = browser.currentScene.createNode("Shape");
+Shape96.USE = "HAnimSiteShape";
+HAnimSite94.children[1] = Shape96;
 
-let Coordinate85 = browser.currentScene.createNode("Coordinate");
-Coordinate85.point = new MFVec3f(new float[0,0.824,0.0277,0.0028,1.0568,-0.0776]);
-LineSet83.coord = Coordinate85;
+HAnimSegment46.children[15] = HAnimSite94;
 
-Shape82.geometry = LineSet83;
+HAnimJoint45.children = new MFNode();
 
-HAnimSegment44.children[12] = Shape82;
+HAnimJoint45.children[0] = HAnimSegment46;
 
-let HAnimSite86 = browser.currentScene.createNode("HAnimSite");
-HAnimSite86.DEF = "hanim_navel_pt";
-HAnimSite86.name = "navel_pt";
-HAnimSite86.translation = new SFVec3f(new float[0.0069,1.0966,0.1017]);
-let TouchSensor87 = browser.currentScene.createNode("TouchSensor");
-TouchSensor87.description = "HAnimSite navel_pt";
-HAnimSite86.children = new MFNode();
+let HAnimJoint97 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint97.name = "sacroiliac";
+HAnimJoint97.DEF = "hanim_sacroiliac";
+HAnimJoint97.center = new SFVec3f(new float[0,0.9149,0.0016]);
+HAnimJoint97.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint97.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment98 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment98.name = "pelvis";
+HAnimSegment98.DEF = "hanim_pelvis";
+let Transform99 = browser.currentScene.createNode("Transform");
+Transform99.translation = new SFVec3f(new float[0,0.9149,0.0016]);
+let Transform100 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape101 = browser.currentScene.createNode("Shape");
+Shape101.USE = "HAnimJointShape";
+Transform100.child = new undefined();
 
-HAnimSite86.children[0] = TouchSensor87;
+Transform100.child[0] = Shape101;
 
-let Shape88 = browser.currentScene.createNode("Shape");
-Shape88.USE = "HAnimSiteShape";
-HAnimSite86.children[1] = Shape88;
+Transform99.children = new MFNode();
 
-HAnimSegment44.children[13] = HAnimSite86;
+Transform99.children[0] = Transform100;
 
-let HAnimSite89 = browser.currentScene.createNode("HAnimSite");
-HAnimSite89.DEF = "hanim_waist_preferred_anterior_pt";
-HAnimSite89.name = "waist_preferred_anterior_pt";
-let TouchSensor90 = browser.currentScene.createNode("TouchSensor");
-TouchSensor90.description = "HAnimSite waist_preferred_anterior_pt";
-HAnimSite89.children = new MFNode();
+HAnimSegment98.children = new MFNode();
 
-HAnimSite89.children[0] = TouchSensor90;
+HAnimSegment98.children[0] = Transform99;
 
-let Shape91 = browser.currentScene.createNode("Shape");
-Shape91.USE = "HAnimSiteShape";
-HAnimSite89.children[1] = Shape91;
+let Shape102 = browser.currentScene.createNode("Shape");
+let LineSet103 = browser.currentScene.createNode("LineSet");
+LineSet103.vertexCount = new MFInt32(new int[2]);
+let Coordinate104 = browser.currentScene.createNode("Coordinate");
+Coordinate104.point = new MFVec3f(new float[0,0.9149,0.0016,0.0961,0.9124,-0.0001]);
+LineSet103.coord = Coordinate104;
 
-HAnimSegment44.children[14] = HAnimSite89;
+//from sacroiliac to l_hip vertices 2
+let ColorRGBA105 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA105.USE = "HAnimSegmentLineColorRGBA";
+LineSet103.color = ColorRGBA105;
 
-let HAnimSite92 = browser.currentScene.createNode("HAnimSite");
-HAnimSite92.DEF = "hanim_waist_preferred_posterior_pt";
-HAnimSite92.name = "waist_preferred_posterior_pt";
-HAnimSite92.translation = new SFVec3f(new float[0.29,1.0915,-0.1091]);
-let TouchSensor93 = browser.currentScene.createNode("TouchSensor");
-TouchSensor93.description = "HAnimSite waist_preferred_posterior_pt";
-HAnimSite92.children = new MFNode();
+Shape102.geometry = LineSet103;
 
-HAnimSite92.children[0] = TouchSensor93;
+HAnimSegment98.children[1] = Shape102;
 
-let Shape94 = browser.currentScene.createNode("Shape");
-Shape94.USE = "HAnimSiteShape";
-HAnimSite92.children[1] = Shape94;
+let HAnimSite106 = browser.currentScene.createNode("HAnimSite");
+HAnimSite106.name = "l_femoral_lateral_epicondyles_pt";
+HAnimSite106.DEF = "hanim_l_femoral_lateral_epicondyles_pt";
+HAnimSite106.translation = new SFVec3f(new float[0.1598,0.4967,0.0297]);
+let TouchSensor107 = browser.currentScene.createNode("TouchSensor");
+TouchSensor107.description = "HAnimSite l_femoral_lateral_epicondyles_pt";
+HAnimSite106.children = new MFNode();
 
-HAnimSegment44.children[15] = HAnimSite92;
+HAnimSite106.children[0] = TouchSensor107;
 
-HAnimJoint43.children = new MFNode();
+let Shape108 = browser.currentScene.createNode("Shape");
+Shape108.USE = "HAnimSiteShape";
+HAnimSite106.children[1] = Shape108;
 
-HAnimJoint43.children[0] = HAnimSegment44;
+HAnimSegment98.children[2] = HAnimSite106;
 
-let HAnimJoint95 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint95.DEF = "hanim_sacroiliac";
-HAnimJoint95.name = "sacroiliac";
-HAnimJoint95.center = new SFVec3f(new float[0,0.9149,0.0016]);
-let HAnimSegment96 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment96.DEF = "hanim_pelvis";
-HAnimSegment96.name = "pelvis";
-let Transform97 = browser.currentScene.createNode("Transform");
-Transform97.translation = new SFVec3f(new float[0,0.9149,0.0016]);
-let Transform98 = browser.currentScene.createNode("Transform");
-let Shape99 = browser.currentScene.createNode("Shape");
-Shape99.USE = "HAnimJointShape";
-Transform98.child = new undefined();
+let HAnimSite109 = browser.currentScene.createNode("HAnimSite");
+HAnimSite109.name = "l_femoral_medial_epicondyles_pt";
+HAnimSite109.DEF = "hanim_l_femoral_medial_epicondyles_pt";
+HAnimSite109.translation = new SFVec3f(new float[0.0398,0.4946,0.0303]);
+let TouchSensor110 = browser.currentScene.createNode("TouchSensor");
+TouchSensor110.description = "HAnimSite l_femoral_medial_epicondyles_pt";
+HAnimSite109.children = new MFNode();
 
-Transform98.child[0] = Shape99;
+HAnimSite109.children[0] = TouchSensor110;
 
-Transform97.children = new MFNode();
+let Shape111 = browser.currentScene.createNode("Shape");
+Shape111.USE = "HAnimSiteShape";
+HAnimSite109.children[1] = Shape111;
 
-Transform97.children[0] = Transform98;
+HAnimSegment98.children[3] = HAnimSite109;
 
-HAnimSegment96.children = new MFNode();
+let HAnimSite112 = browser.currentScene.createNode("HAnimSite");
+HAnimSite112.name = "l_knee_crease_pt";
+HAnimSite112.DEF = "hanim_l_knee_crease_pt";
+HAnimSite112.translation = new SFVec3f(new float[0.0993,0.4881,-0.0309]);
+let TouchSensor113 = browser.currentScene.createNode("TouchSensor");
+TouchSensor113.description = "HAnimSite l_knee_crease_pt";
+HAnimSite112.children = new MFNode();
 
-HAnimSegment96.children[0] = Transform97;
+HAnimSite112.children[0] = TouchSensor113;
 
-let Shape100 = browser.currentScene.createNode("Shape");
-let LineSet101 = browser.currentScene.createNode("LineSet");
-LineSet101.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA102 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA102.USE = "HAnimSegmentLineColorRGBA";
-LineSet101.color = ColorRGBA102;
+let Shape114 = browser.currentScene.createNode("Shape");
+Shape114.USE = "HAnimSiteShape";
+HAnimSite112.children[1] = Shape114;
 
-let Coordinate103 = browser.currentScene.createNode("Coordinate");
-Coordinate103.point = new MFVec3f(new float[0,0.9149,0.0016,0.0961,0.9124,-0.0001]);
-LineSet101.coord = Coordinate103;
+HAnimSegment98.children[4] = HAnimSite112;
 
-Shape100.geometry = LineSet101;
+let HAnimSite115 = browser.currentScene.createNode("HAnimSite");
+HAnimSite115.name = "l_suprapatella_pt";
+HAnimSite115.DEF = "hanim_l_suprapatella_pt";
+let TouchSensor116 = browser.currentScene.createNode("TouchSensor");
+TouchSensor116.description = "HAnimSite l_suprapatella_pt";
+HAnimSite115.children = new MFNode();
 
-HAnimSegment96.children[1] = Shape100;
+HAnimSite115.children[0] = TouchSensor116;
 
-let HAnimSite104 = browser.currentScene.createNode("HAnimSite");
-HAnimSite104.DEF = "hanim_l_femoral_lateral_epicondyles_pt";
-HAnimSite104.name = "l_femoral_lateral_epicondyles_pt";
-HAnimSite104.translation = new SFVec3f(new float[0.1598,0.4967,0.0297]);
-let TouchSensor105 = browser.currentScene.createNode("TouchSensor");
-TouchSensor105.description = "HAnimSite l_femoral_lateral_epicondyles_pt";
-HAnimSite104.children = new MFNode();
+let Shape117 = browser.currentScene.createNode("Shape");
+Shape117.USE = "HAnimSiteShape";
+HAnimSite115.children[1] = Shape117;
+
+HAnimSegment98.children[5] = HAnimSite115;
+
+let Shape118 = browser.currentScene.createNode("Shape");
+let LineSet119 = browser.currentScene.createNode("LineSet");
+LineSet119.vertexCount = new MFInt32(new int[2]);
+let Coordinate120 = browser.currentScene.createNode("Coordinate");
+Coordinate120.point = new MFVec3f(new float[0,0.9149,0.0016,-0.095,0.9171,0.0029]);
+LineSet119.coord = Coordinate120;
 
-HAnimSite104.children[0] = TouchSensor105;
+//from sacroiliac to r_hip vertices 2
+let ColorRGBA121 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA121.USE = "HAnimSegmentLineColorRGBA";
+LineSet119.color = ColorRGBA121;
 
-let Shape106 = browser.currentScene.createNode("Shape");
-Shape106.USE = "HAnimSiteShape";
-HAnimSite104.children[1] = Shape106;
+Shape118.geometry = LineSet119;
 
-HAnimSegment96.children[2] = HAnimSite104;
+HAnimSegment98.children[6] = Shape118;
 
-let HAnimSite107 = browser.currentScene.createNode("HAnimSite");
-HAnimSite107.DEF = "hanim_l_femoral_medial_epicondyles_pt";
-HAnimSite107.name = "l_femoral_medial_epicondyles_pt";
-HAnimSite107.translation = new SFVec3f(new float[0.0398,0.4946,0.0303]);
-let TouchSensor108 = browser.currentScene.createNode("TouchSensor");
-TouchSensor108.description = "HAnimSite l_femoral_medial_epicondyles_pt";
-HAnimSite107.children = new MFNode();
+let HAnimSite122 = browser.currentScene.createNode("HAnimSite");
+HAnimSite122.name = "r_femoral_lateral_epicondyles_pt";
+HAnimSite122.DEF = "hanim_r_femoral_lateral_epicondyles_pt";
+HAnimSite122.translation = new SFVec3f(new float[-0.1421,0.4992,0.031]);
+let TouchSensor123 = browser.currentScene.createNode("TouchSensor");
+TouchSensor123.description = "HAnimSite r_femoral_lateral_epicondyles_pt";
+HAnimSite122.children = new MFNode();
 
-HAnimSite107.children[0] = TouchSensor108;
+HAnimSite122.children[0] = TouchSensor123;
 
-let Shape109 = browser.currentScene.createNode("Shape");
-Shape109.USE = "HAnimSiteShape";
-HAnimSite107.children[1] = Shape109;
+let Shape124 = browser.currentScene.createNode("Shape");
+Shape124.USE = "HAnimSiteShape";
+HAnimSite122.children[1] = Shape124;
 
-HAnimSegment96.children[3] = HAnimSite107;
+HAnimSegment98.children[7] = HAnimSite122;
 
-let HAnimSite110 = browser.currentScene.createNode("HAnimSite");
-HAnimSite110.DEF = "hanim_l_knee_crease_pt";
-HAnimSite110.name = "l_knee_crease_pt";
-HAnimSite110.translation = new SFVec3f(new float[0.0993,0.4881,-0.0309]);
-let TouchSensor111 = browser.currentScene.createNode("TouchSensor");
-TouchSensor111.description = "HAnimSite l_knee_crease_pt";
-HAnimSite110.children = new MFNode();
+let HAnimSite125 = browser.currentScene.createNode("HAnimSite");
+HAnimSite125.name = "r_femoral_medial_epicondyles_pt";
+HAnimSite125.DEF = "hanim_r_femoral_medial_epicondyles_pt";
+HAnimSite125.translation = new SFVec3f(new float[-0.0221,0.5014,0.0289]);
+let TouchSensor126 = browser.currentScene.createNode("TouchSensor");
+TouchSensor126.description = "HAnimSite r_femoral_medial_epicondyles_pt";
+HAnimSite125.children = new MFNode();
 
-HAnimSite110.children[0] = TouchSensor111;
+HAnimSite125.children[0] = TouchSensor126;
 
-let Shape112 = browser.currentScene.createNode("Shape");
-Shape112.USE = "HAnimSiteShape";
-HAnimSite110.children[1] = Shape112;
+let Shape127 = browser.currentScene.createNode("Shape");
+Shape127.USE = "HAnimSiteShape";
+HAnimSite125.children[1] = Shape127;
 
-HAnimSegment96.children[4] = HAnimSite110;
+HAnimSegment98.children[8] = HAnimSite125;
 
-let HAnimSite113 = browser.currentScene.createNode("HAnimSite");
-HAnimSite113.DEF = "hanim_l_suprapatella_pt";
-HAnimSite113.name = "l_suprapatella_pt";
-let TouchSensor114 = browser.currentScene.createNode("TouchSensor");
-TouchSensor114.description = "HAnimSite l_suprapatella_pt";
-HAnimSite113.children = new MFNode();
+let HAnimSite128 = browser.currentScene.createNode("HAnimSite");
+HAnimSite128.name = "r_knee_crease_pt";
+HAnimSite128.DEF = "hanim_r_knee_crease_pt";
+HAnimSite128.translation = new SFVec3f(new float[-0.0825,0.4932,-0.0326]);
+let TouchSensor129 = browser.currentScene.createNode("TouchSensor");
+TouchSensor129.description = "HAnimSite r_knee_crease_pt";
+HAnimSite128.children = new MFNode();
 
-HAnimSite113.children[0] = TouchSensor114;
+HAnimSite128.children[0] = TouchSensor129;
 
-let Shape115 = browser.currentScene.createNode("Shape");
-Shape115.USE = "HAnimSiteShape";
-HAnimSite113.children[1] = Shape115;
+let Shape130 = browser.currentScene.createNode("Shape");
+Shape130.USE = "HAnimSiteShape";
+HAnimSite128.children[1] = Shape130;
 
-HAnimSegment96.children[5] = HAnimSite113;
+HAnimSegment98.children[9] = HAnimSite128;
 
-let Shape116 = browser.currentScene.createNode("Shape");
-let LineSet117 = browser.currentScene.createNode("LineSet");
-LineSet117.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA118 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA118.USE = "HAnimSegmentLineColorRGBA";
-LineSet117.color = ColorRGBA118;
+let HAnimSite131 = browser.currentScene.createNode("HAnimSite");
+HAnimSite131.name = "r_suprapatella_pt";
+HAnimSite131.DEF = "hanim_r_suprapatella_pt";
+let TouchSensor132 = browser.currentScene.createNode("TouchSensor");
+TouchSensor132.description = "HAnimSite r_suprapatella_pt";
+HAnimSite131.children = new MFNode();
 
-let Coordinate119 = browser.currentScene.createNode("Coordinate");
-Coordinate119.point = new MFVec3f(new float[0,0.9149,0.0016,-0.095,0.9171,0.0029]);
-LineSet117.coord = Coordinate119;
+HAnimSite131.children[0] = TouchSensor132;
 
-Shape116.geometry = LineSet117;
+let Shape133 = browser.currentScene.createNode("Shape");
+Shape133.USE = "HAnimSiteShape";
+HAnimSite131.children[1] = Shape133;
 
-HAnimSegment96.children[6] = Shape116;
+HAnimSegment98.children[10] = HAnimSite131;
 
-let HAnimSite120 = browser.currentScene.createNode("HAnimSite");
-HAnimSite120.DEF = "hanim_r_femoral_lateral_epicondyles_pt";
-HAnimSite120.name = "r_femoral_lateral_epicondyles_pt";
-HAnimSite120.translation = new SFVec3f(new float[-0.1421,0.4992,0.031]);
-let TouchSensor121 = browser.currentScene.createNode("TouchSensor");
-TouchSensor121.description = "HAnimSite r_femoral_lateral_epicondyles_pt";
-HAnimSite120.children = new MFNode();
+HAnimJoint97.children = new MFNode();
 
-HAnimSite120.children[0] = TouchSensor121;
+HAnimJoint97.children[0] = HAnimSegment98;
 
-let Shape122 = browser.currentScene.createNode("Shape");
-Shape122.USE = "HAnimSiteShape";
-HAnimSite120.children[1] = Shape122;
+let HAnimJoint134 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint134.name = "l_hip";
+HAnimJoint134.DEF = "hanim_l_hip";
+HAnimJoint134.center = new SFVec3f(new float[0.0961,0.9124,-0.0001]);
+HAnimJoint134.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint134.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment135 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment135.name = "l_thigh";
+HAnimSegment135.DEF = "hanim_l_thigh";
+let Transform136 = browser.currentScene.createNode("Transform");
+Transform136.translation = new SFVec3f(new float[0.0961,0.9124,-0.0001]);
+let Transform137 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape138 = browser.currentScene.createNode("Shape");
+Shape138.USE = "HAnimJointShape";
+Transform137.child = new undefined();
 
-HAnimSegment96.children[7] = HAnimSite120;
+Transform137.child[0] = Shape138;
 
-let HAnimSite123 = browser.currentScene.createNode("HAnimSite");
-HAnimSite123.DEF = "hanim_r_femoral_medial_epicondyles_pt";
-HAnimSite123.name = "r_femoral_medial_epicondyles_pt";
-HAnimSite123.translation = new SFVec3f(new float[-0.0221,0.5014,0.0289]);
-let TouchSensor124 = browser.currentScene.createNode("TouchSensor");
-TouchSensor124.description = "HAnimSite r_femoral_medial_epicondyles_pt";
-HAnimSite123.children = new MFNode();
+Transform136.children = new MFNode();
 
-HAnimSite123.children[0] = TouchSensor124;
+Transform136.children[0] = Transform137;
 
-let Shape125 = browser.currentScene.createNode("Shape");
-Shape125.USE = "HAnimSiteShape";
-HAnimSite123.children[1] = Shape125;
+HAnimSegment135.children = new MFNode();
 
-HAnimSegment96.children[8] = HAnimSite123;
+HAnimSegment135.children[0] = Transform136;
 
-let HAnimSite126 = browser.currentScene.createNode("HAnimSite");
-HAnimSite126.DEF = "hanim_r_knee_crease_pt";
-HAnimSite126.name = "r_knee_crease_pt";
-HAnimSite126.translation = new SFVec3f(new float[-0.0825,0.4932,-0.0326]);
-let TouchSensor127 = browser.currentScene.createNode("TouchSensor");
-TouchSensor127.description = "HAnimSite r_knee_crease_pt";
-HAnimSite126.children = new MFNode();
+let Shape139 = browser.currentScene.createNode("Shape");
+let LineSet140 = browser.currentScene.createNode("LineSet");
+LineSet140.vertexCount = new MFInt32(new int[2]);
+let Coordinate141 = browser.currentScene.createNode("Coordinate");
+Coordinate141.point = new MFVec3f(new float[0.0961,0.9124,-0.0001,0.104,0.4867,0.0308]);
+LineSet140.coord = Coordinate141;
 
-HAnimSite126.children[0] = TouchSensor127;
+//from l_hip to l_knee vertices 2
+let ColorRGBA142 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA142.USE = "HAnimSegmentLineColorRGBA";
+LineSet140.color = ColorRGBA142;
 
-let Shape128 = browser.currentScene.createNode("Shape");
-Shape128.USE = "HAnimSiteShape";
-HAnimSite126.children[1] = Shape128;
+Shape139.geometry = LineSet140;
 
-HAnimSegment96.children[9] = HAnimSite126;
+HAnimSegment135.children[1] = Shape139;
 
-let HAnimSite129 = browser.currentScene.createNode("HAnimSite");
-HAnimSite129.DEF = "hanim_r_suprapatella_pt";
-HAnimSite129.name = "r_suprapatella_pt";
-let TouchSensor130 = browser.currentScene.createNode("TouchSensor");
-TouchSensor130.description = "HAnimSite r_suprapatella_pt";
-HAnimSite129.children = new MFNode();
+let HAnimSite143 = browser.currentScene.createNode("HAnimSite");
+HAnimSite143.name = "l_lateral_malleolus_pt";
+HAnimSite143.DEF = "hanim_l_lateral_malleolus_pt";
+HAnimSite143.translation = new SFVec3f(new float[0.1308,0.0597,-0.1032]);
+let TouchSensor144 = browser.currentScene.createNode("TouchSensor");
+TouchSensor144.description = "HAnimSite l_lateral_malleolus_pt";
+HAnimSite143.children = new MFNode();
 
-HAnimSite129.children[0] = TouchSensor130;
+HAnimSite143.children[0] = TouchSensor144;
 
-let Shape131 = browser.currentScene.createNode("Shape");
-Shape131.USE = "HAnimSiteShape";
-HAnimSite129.children[1] = Shape131;
+let Shape145 = browser.currentScene.createNode("Shape");
+Shape145.USE = "HAnimSiteShape";
+HAnimSite143.children[1] = Shape145;
 
-HAnimSegment96.children[10] = HAnimSite129;
+HAnimSegment135.children[2] = HAnimSite143;
 
-HAnimJoint95.children = new MFNode();
+let HAnimSite146 = browser.currentScene.createNode("HAnimSite");
+HAnimSite146.name = "l_medial_malleolus_pt";
+HAnimSite146.DEF = "hanim_l_medial_malleolus_pt";
+HAnimSite146.translation = new SFVec3f(new float[0.089,0.0716,-0.0881]);
+let TouchSensor147 = browser.currentScene.createNode("TouchSensor");
+TouchSensor147.description = "HAnimSite l_medial_malleolus_pt";
+HAnimSite146.children = new MFNode();
 
-HAnimJoint95.children[0] = HAnimSegment96;
+HAnimSite146.children[0] = TouchSensor147;
 
-let HAnimJoint132 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint132.DEF = "hanim_l_hip";
-HAnimJoint132.name = "l_hip";
-HAnimJoint132.center = new SFVec3f(new float[0.0961,0.9124,-0.0001]);
-let HAnimSegment133 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment133.DEF = "hanim_l_thigh";
-HAnimSegment133.name = "l_thigh";
-let Transform134 = browser.currentScene.createNode("Transform");
-Transform134.translation = new SFVec3f(new float[0.0961,0.9124,-0.0001]);
-let Transform135 = browser.currentScene.createNode("Transform");
-let Shape136 = browser.currentScene.createNode("Shape");
-Shape136.USE = "HAnimJointShape";
-Transform135.child = new undefined();
+let Shape148 = browser.currentScene.createNode("Shape");
+Shape148.USE = "HAnimSiteShape";
+HAnimSite146.children[1] = Shape148;
 
-Transform135.child[0] = Shape136;
+HAnimSegment135.children[3] = HAnimSite146;
 
-Transform134.children = new MFNode();
+let HAnimSite149 = browser.currentScene.createNode("HAnimSite");
+HAnimSite149.name = "l_tibiale_pt";
+HAnimSite149.DEF = "hanim_l_tibiale_pt";
+let TouchSensor150 = browser.currentScene.createNode("TouchSensor");
+TouchSensor150.description = "HAnimSite l_tibiale_pt";
+HAnimSite149.children = new MFNode();
 
-Transform134.children[0] = Transform135;
+HAnimSite149.children[0] = TouchSensor150;
 
-HAnimSegment133.children = new MFNode();
+let Shape151 = browser.currentScene.createNode("Shape");
+Shape151.USE = "HAnimSiteShape";
+HAnimSite149.children[1] = Shape151;
 
-HAnimSegment133.children[0] = Transform134;
+HAnimSegment135.children[4] = HAnimSite149;
 
-let Shape137 = browser.currentScene.createNode("Shape");
-let LineSet138 = browser.currentScene.createNode("LineSet");
-LineSet138.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA139 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA139.USE = "HAnimSegmentLineColorRGBA";
-LineSet138.color = ColorRGBA139;
+HAnimJoint134.children = new MFNode();
+
+HAnimJoint134.children[0] = HAnimSegment135;
 
-let Coordinate140 = browser.currentScene.createNode("Coordinate");
-Coordinate140.point = new MFVec3f(new float[0.0961,0.9124,-0.0001,0.104,0.4867,0.0308]);
-LineSet138.coord = Coordinate140;
+let HAnimJoint152 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint152.name = "l_knee";
+HAnimJoint152.DEF = "hanim_l_knee";
+HAnimJoint152.center = new SFVec3f(new float[0.104,0.4867,0.0308]);
+HAnimJoint152.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint152.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment153 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment153.name = "l_calf";
+HAnimSegment153.DEF = "hanim_l_calf";
+let Transform154 = browser.currentScene.createNode("Transform");
+Transform154.translation = new SFVec3f(new float[0.104,0.4867,0.0308]);
+let Transform155 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape156 = browser.currentScene.createNode("Shape");
+Shape156.USE = "HAnimJointShape";
+Transform155.child = new undefined();
 
-Shape137.geometry = LineSet138;
+Transform155.child[0] = Shape156;
 
-HAnimSegment133.children[1] = Shape137;
+Transform154.children = new MFNode();
 
-let HAnimSite141 = browser.currentScene.createNode("HAnimSite");
-HAnimSite141.DEF = "hanim_l_lateral_malleolus_pt";
-HAnimSite141.name = "l_lateral_malleolus_pt";
-HAnimSite141.translation = new SFVec3f(new float[0.1308,0.0597,-0.1032]);
-let TouchSensor142 = browser.currentScene.createNode("TouchSensor");
-TouchSensor142.description = "HAnimSite l_lateral_malleolus_pt";
-HAnimSite141.children = new MFNode();
+Transform154.children[0] = Transform155;
 
-HAnimSite141.children[0] = TouchSensor142;
+HAnimSegment153.children = new MFNode();
 
-let Shape143 = browser.currentScene.createNode("Shape");
-Shape143.USE = "HAnimSiteShape";
-HAnimSite141.children[1] = Shape143;
+HAnimSegment153.children[0] = Transform154;
 
-HAnimSegment133.children[2] = HAnimSite141;
+let Shape157 = browser.currentScene.createNode("Shape");
+let LineSet158 = browser.currentScene.createNode("LineSet");
+LineSet158.vertexCount = new MFInt32(new int[2]);
+let Coordinate159 = browser.currentScene.createNode("Coordinate");
+Coordinate159.point = new MFVec3f(new float[0.104,0.4867,0.0308,0.1101,0.0656,-0.0736]);
+LineSet158.coord = Coordinate159;
 
-let HAnimSite144 = browser.currentScene.createNode("HAnimSite");
-HAnimSite144.DEF = "hanim_l_medial_malleolus_pt";
-HAnimSite144.name = "l_medial_malleolus_pt";
-HAnimSite144.translation = new SFVec3f(new float[0.089,0.0716,-0.0881]);
-let TouchSensor145 = browser.currentScene.createNode("TouchSensor");
-TouchSensor145.description = "HAnimSite l_medial_malleolus_pt";
-HAnimSite144.children = new MFNode();
+//from l_knee to l_talocrural vertices 2
+let ColorRGBA160 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA160.USE = "HAnimSegmentLineColorRGBA";
+LineSet158.color = ColorRGBA160;
 
-HAnimSite144.children[0] = TouchSensor145;
+Shape157.geometry = LineSet158;
 
-let Shape146 = browser.currentScene.createNode("Shape");
-Shape146.USE = "HAnimSiteShape";
-HAnimSite144.children[1] = Shape146;
+HAnimSegment153.children[1] = Shape157;
 
-HAnimSegment133.children[3] = HAnimSite144;
+let HAnimSite161 = browser.currentScene.createNode("HAnimSite");
+HAnimSite161.name = "l_calcaneus_posterior_pt";
+HAnimSite161.DEF = "hanim_l_calcaneus_posterior_pt";
+HAnimSite161.translation = new SFVec3f(new float[0.0974,0.0259,-0.1171]);
+let TouchSensor162 = browser.currentScene.createNode("TouchSensor");
+TouchSensor162.description = "HAnimSite l_calcaneus_posterior_pt";
+HAnimSite161.children = new MFNode();
 
-let HAnimSite147 = browser.currentScene.createNode("HAnimSite");
-HAnimSite147.DEF = "hanim_l_tibiale_pt";
-HAnimSite147.name = "l_tibiale_pt";
-let TouchSensor148 = browser.currentScene.createNode("TouchSensor");
-TouchSensor148.description = "HAnimSite l_tibiale_pt";
-HAnimSite147.children = new MFNode();
+HAnimSite161.children[0] = TouchSensor162;
 
-HAnimSite147.children[0] = TouchSensor148;
+let Shape163 = browser.currentScene.createNode("Shape");
+Shape163.USE = "HAnimSiteShape";
+HAnimSite161.children[1] = Shape163;
 
-let Shape149 = browser.currentScene.createNode("Shape");
-Shape149.USE = "HAnimSiteShape";
-HAnimSite147.children[1] = Shape149;
+HAnimSegment153.children[2] = HAnimSite161;
 
-HAnimSegment133.children[4] = HAnimSite147;
+let HAnimSite164 = browser.currentScene.createNode("HAnimSite");
+HAnimSite164.name = "l_sphyrion_pt";
+HAnimSite164.DEF = "hanim_l_sphyrion_pt";
+HAnimSite164.translation = new SFVec3f(new float[0.089,0.0575,-0.0943]);
+let TouchSensor165 = browser.currentScene.createNode("TouchSensor");
+TouchSensor165.description = "HAnimSite l_sphyrion_pt";
+HAnimSite164.children = new MFNode();
 
-HAnimJoint132.children = new MFNode();
+HAnimSite164.children[0] = TouchSensor165;
 
-HAnimJoint132.children[0] = HAnimSegment133;
+let Shape166 = browser.currentScene.createNode("Shape");
+Shape166.USE = "HAnimSiteShape";
+HAnimSite164.children[1] = Shape166;
 
-let HAnimJoint150 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint150.DEF = "hanim_l_knee";
-HAnimJoint150.name = "l_knee";
-HAnimJoint150.center = new SFVec3f(new float[0.104,0.4867,0.0308]);
-let HAnimSegment151 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment151.DEF = "hanim_l_calf";
-HAnimSegment151.name = "l_calf";
-let Transform152 = browser.currentScene.createNode("Transform");
-Transform152.translation = new SFVec3f(new float[0.104,0.4867,0.0308]);
-let Transform153 = browser.currentScene.createNode("Transform");
-let Shape154 = browser.currentScene.createNode("Shape");
-Shape154.USE = "HAnimJointShape";
-Transform153.child = new undefined();
+HAnimSegment153.children[3] = HAnimSite164;
 
-Transform153.child[0] = Shape154;
+HAnimJoint152.children = new MFNode();
 
-Transform152.children = new MFNode();
+HAnimJoint152.children[0] = HAnimSegment153;
 
-Transform152.children[0] = Transform153;
+let HAnimJoint167 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint167.name = "l_talocrural";
+HAnimJoint167.DEF = "hanim_l_talocrural";
+HAnimJoint167.center = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
+HAnimJoint167.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint167.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment168 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment168.name = "l_talus";
+HAnimSegment168.DEF = "hanim_l_talus";
+let Transform169 = browser.currentScene.createNode("Transform");
+Transform169.scale = new SFVec3f(new float[0.15,0.15,0.15]);
+Transform169.translation = new SFVec3f(new float[0.08,0.06,-0.025]);
+Transform169.rotation = new SFRotation(new float[1,0,0,-1.57]);
+//Transform left foot
+let Transform170 = browser.currentScene.createNode("Transform");
+//Empty Transform left foot
+let Shape171 = browser.currentScene.createNode("Shape");
+Shape171.USE = "HAnimJointShape";
+Transform170.child = new undefined();
 
-HAnimSegment151.children = new MFNode();
+Transform170.child[0] = Shape171;
 
-HAnimSegment151.children[0] = Transform152;
+Transform169.children = new MFNode();
 
-let Shape155 = browser.currentScene.createNode("Shape");
-let LineSet156 = browser.currentScene.createNode("LineSet");
-LineSet156.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA157 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA157.USE = "HAnimSegmentLineColorRGBA";
-LineSet156.color = ColorRGBA157;
+Transform169.children[0] = Transform170;
 
-let Coordinate158 = browser.currentScene.createNode("Coordinate");
-Coordinate158.point = new MFVec3f(new float[0.104,0.4867,0.0308,0.1101,0.0656,-0.0736]);
-LineSet156.coord = Coordinate158;
+HAnimSegment168.children = new MFNode();
 
-Shape155.geometry = LineSet156;
+HAnimSegment168.children[0] = Transform169;
 
-HAnimSegment151.children[1] = Shape155;
+let Shape172 = browser.currentScene.createNode("Shape");
+let LineSet173 = browser.currentScene.createNode("LineSet");
+LineSet173.vertexCount = new MFInt32(new int[2]);
+let Coordinate174 = browser.currentScene.createNode("Coordinate");
+Coordinate174.point = new MFVec3f(new float[0.1101,0.0656,-0.0736,3.4715,0.0374,0.6807]);
+LineSet173.coord = Coordinate174;
 
-let HAnimSite159 = browser.currentScene.createNode("HAnimSite");
-HAnimSite159.DEF = "hanim_l_calcaneus_posterior_pt";
-HAnimSite159.name = "l_calcaneus_posterior_pt";
-HAnimSite159.translation = new SFVec3f(new float[0.0974,0.0259,-0.1171]);
-let TouchSensor160 = browser.currentScene.createNode("TouchSensor");
-TouchSensor160.description = "HAnimSite l_calcaneus_posterior_pt";
-HAnimSite159.children = new MFNode();
+//from l_talocrural to l_talocalcaneonavicular vertices 2
+let ColorRGBA175 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA175.USE = "HAnimSegmentLineColorRGBA";
+LineSet173.color = ColorRGBA175;
 
-HAnimSite159.children[0] = TouchSensor160;
+Shape172.geometry = LineSet173;
 
-let Shape161 = browser.currentScene.createNode("Shape");
-Shape161.USE = "HAnimSiteShape";
-HAnimSite159.children[1] = Shape161;
+HAnimSegment168.children[1] = Shape172;
 
-HAnimSegment151.children[2] = HAnimSite159;
+let Shape176 = browser.currentScene.createNode("Shape");
+let LineSet177 = browser.currentScene.createNode("LineSet");
+LineSet177.vertexCount = new MFInt32(new int[2]);
+let Coordinate178 = browser.currentScene.createNode("Coordinate");
+Coordinate178.point = new MFVec3f(new float[0.1101,0.0656,-0.0736,3.9515,0.0653,-0.6895]);
+LineSet177.coord = Coordinate178;
 
-let HAnimSite162 = browser.currentScene.createNode("HAnimSite");
-HAnimSite162.DEF = "hanim_l_sphyrion_pt";
-HAnimSite162.name = "l_sphyrion_pt";
-HAnimSite162.translation = new SFVec3f(new float[0.089,0.0575,-0.0943]);
-let TouchSensor163 = browser.currentScene.createNode("TouchSensor");
-TouchSensor163.description = "HAnimSite l_sphyrion_pt";
-HAnimSite162.children = new MFNode();
+//from l_talocrural to l_calcaneocuboid vertices 2
+let ColorRGBA179 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA179.USE = "HAnimSegmentLineColorRGBA";
+LineSet177.color = ColorRGBA179;
 
-HAnimSite162.children[0] = TouchSensor163;
+Shape176.geometry = LineSet177;
 
-let Shape164 = browser.currentScene.createNode("Shape");
-Shape164.USE = "HAnimSiteShape";
-HAnimSite162.children[1] = Shape164;
+HAnimSegment168.children[2] = Shape176;
+
+HAnimJoint167.children = new MFNode();
 
-HAnimSegment151.children[3] = HAnimSite162;
+HAnimJoint167.children[0] = HAnimSegment168;
 
-HAnimJoint150.children = new MFNode();
+let HAnimJoint180 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint180.name = "l_talocalcaneonavicular";
+HAnimJoint180.DEF = "hanim_l_talocalcaneonavicular";
+HAnimJoint180.center = new SFVec3f(new float[3.4715,0.0374,0.6807]);
+HAnimJoint180.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint180.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment181 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment181.name = "l_navicular";
+HAnimSegment181.DEF = "hanim_l_navicular";
+let Transform182 = browser.currentScene.createNode("Transform");
+Transform182.translation = new SFVec3f(new float[3.4715,0.0374,0.6807]);
+let Transform183 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape184 = browser.currentScene.createNode("Shape");
+Shape184.USE = "HAnimJointShape";
+Transform183.child = new undefined();
 
-HAnimJoint150.children[0] = HAnimSegment151;
+Transform183.child[0] = Shape184;
 
-let HAnimJoint165 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint165.DEF = "hanim_l_talocrural";
-HAnimJoint165.name = "l_talocrural";
-HAnimJoint165.center = new SFVec3f(new float[0.1101,0.0656,-0.0736]);
-let HAnimSegment166 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment166.DEF = "hanim_l_talus";
-HAnimSegment166.name = "l_talus";
-let Transform167 = browser.currentScene.createNode("Transform");
-Transform167.translation = new SFVec3f(new float[0.08,0.06,-0.025]);
-Transform167.rotation = new SFRotation(new float[1,0,0,-1.57]);
-Transform167.scale = new SFVec3f(new float[0.15,0.15,0.15]);
-let Transform168 = browser.currentScene.createNode("Transform");
-let Shape169 = browser.currentScene.createNode("Shape");
-Shape169.USE = "HAnimJointShape";
-Transform168.child = new undefined();
+Transform182.children = new MFNode();
 
-Transform168.child[0] = Shape169;
+Transform182.children[0] = Transform183;
 
-Transform167.children = new MFNode();
+HAnimSegment181.children = new MFNode();
 
-Transform167.children[0] = Transform168;
+HAnimSegment181.children[0] = Transform182;
 
-HAnimSegment166.children = new MFNode();
+let Shape185 = browser.currentScene.createNode("Shape");
+let LineSet186 = browser.currentScene.createNode("LineSet");
+LineSet186.vertexCount = new MFInt32(new int[2]);
+let Coordinate187 = browser.currentScene.createNode("Coordinate");
+Coordinate187.point = new MFVec3f(new float[3.4715,0.0374,0.6807,2.9855,0.0311,1.2819]);
+LineSet186.coord = Coordinate187;
 
-HAnimSegment166.children[0] = Transform167;
+//from l_talocalcaneonavicular to l_cuneonavicular_1 vertices 2
+let ColorRGBA188 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA188.USE = "HAnimSegmentLineColorRGBA";
+LineSet186.color = ColorRGBA188;
 
-let Shape170 = browser.currentScene.createNode("Shape");
-let LineSet171 = browser.currentScene.createNode("LineSet");
-LineSet171.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA172 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA172.USE = "HAnimSegmentLineColorRGBA";
-LineSet171.color = ColorRGBA172;
+Shape185.geometry = LineSet186;
 
-let Coordinate173 = browser.currentScene.createNode("Coordinate");
-Coordinate173.point = new MFVec3f(new float[0.1101,0.0656,-0.0736,3.4715,0.0374,0.6807]);
-LineSet171.coord = Coordinate173;
+HAnimSegment181.children[1] = Shape185;
 
-Shape170.geometry = LineSet171;
+let Shape189 = browser.currentScene.createNode("Shape");
+let LineSet190 = browser.currentScene.createNode("LineSet");
+LineSet190.vertexCount = new MFInt32(new int[2]);
+let Coordinate191 = browser.currentScene.createNode("Coordinate");
+Coordinate191.point = new MFVec3f(new float[3.4715,0.0374,0.6807,3.6105,0.033,1.4168]);
+LineSet190.coord = Coordinate191;
 
-HAnimSegment166.children[1] = Shape170;
+//from l_talocalcaneonavicular to l_cuneonavicular_2 vertices 2
+let ColorRGBA192 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA192.USE = "HAnimSegmentLineColorRGBA";
+LineSet190.color = ColorRGBA192;
 
-let Shape174 = browser.currentScene.createNode("Shape");
-let LineSet175 = browser.currentScene.createNode("LineSet");
-LineSet175.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA176 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA176.USE = "HAnimSegmentLineColorRGBA";
-LineSet175.color = ColorRGBA176;
+Shape189.geometry = LineSet190;
 
-let Coordinate177 = browser.currentScene.createNode("Coordinate");
-Coordinate177.point = new MFVec3f(new float[0.1101,0.0656,-0.0736,3.9515,0.0653,-0.6895]);
-LineSet175.coord = Coordinate177;
+HAnimSegment181.children[2] = Shape189;
 
-Shape174.geometry = LineSet175;
+let Shape193 = browser.currentScene.createNode("Shape");
+let LineSet194 = browser.currentScene.createNode("LineSet");
+LineSet194.vertexCount = new MFInt32(new int[2]);
+let Coordinate195 = browser.currentScene.createNode("Coordinate");
+Coordinate195.point = new MFVec3f(new float[3.4715,0.0374,0.6807,4.1235,0.0328,1.3453]);
+LineSet194.coord = Coordinate195;
 
-HAnimSegment166.children[2] = Shape174;
+//from l_talocalcaneonavicular to l_cuneonavicular_3 vertices 2
+let ColorRGBA196 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA196.USE = "HAnimSegmentLineColorRGBA";
+LineSet194.color = ColorRGBA196;
 
-HAnimJoint165.children = new MFNode();
+Shape193.geometry = LineSet194;
 
-HAnimJoint165.children[0] = HAnimSegment166;
+HAnimSegment181.children[3] = Shape193;
 
-let HAnimJoint178 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint178.DEF = "hanim_l_talocalcaneonavicular";
-HAnimJoint178.name = "l_talocalcaneonavicular";
-HAnimJoint178.center = new SFVec3f(new float[3.4715,0.0374,0.6807]);
-let HAnimSegment179 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment179.DEF = "hanim_l_navicular";
-HAnimSegment179.name = "l_navicular";
-let Transform180 = browser.currentScene.createNode("Transform");
-Transform180.translation = new SFVec3f(new float[3.4715,0.0374,0.6807]);
-let Transform181 = browser.currentScene.createNode("Transform");
-let Shape182 = browser.currentScene.createNode("Shape");
-Shape182.USE = "HAnimJointShape";
-Transform181.child = new undefined();
+HAnimJoint180.children = new MFNode();
 
-Transform181.child[0] = Shape182;
+HAnimJoint180.children[0] = HAnimSegment181;
 
-Transform180.children = new MFNode();
+let HAnimJoint197 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint197.name = "l_cuneonavicular_1";
+HAnimJoint197.DEF = "hanim_l_cuneonavicular_1";
+HAnimJoint197.center = new SFVec3f(new float[2.9855,0.0311,1.2819]);
+HAnimJoint197.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint197.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment198 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment198.name = "l_cuneiform_1";
+HAnimSegment198.DEF = "hanim_l_cuneiform_1";
+let Transform199 = browser.currentScene.createNode("Transform");
+Transform199.translation = new SFVec3f(new float[2.9855,0.0311,1.2819]);
+let Transform200 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape201 = browser.currentScene.createNode("Shape");
+Shape201.USE = "HAnimJointShape";
+Transform200.child = new undefined();
 
-Transform180.children[0] = Transform181;
+Transform200.child[0] = Shape201;
 
-HAnimSegment179.children = new MFNode();
+Transform199.children = new MFNode();
 
-HAnimSegment179.children[0] = Transform180;
+Transform199.children[0] = Transform200;
 
-let Shape183 = browser.currentScene.createNode("Shape");
-let LineSet184 = browser.currentScene.createNode("LineSet");
-LineSet184.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA185 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA185.USE = "HAnimSegmentLineColorRGBA";
-LineSet184.color = ColorRGBA185;
+HAnimSegment198.children = new MFNode();
 
-let Coordinate186 = browser.currentScene.createNode("Coordinate");
-Coordinate186.point = new MFVec3f(new float[3.4715,0.0374,0.6807,2.9855,0.0311,1.2819]);
-LineSet184.coord = Coordinate186;
+HAnimSegment198.children[0] = Transform199;
 
-Shape183.geometry = LineSet184;
+let Shape202 = browser.currentScene.createNode("Shape");
+let LineSet203 = browser.currentScene.createNode("LineSet");
+LineSet203.vertexCount = new MFInt32(new int[2]);
+let Coordinate204 = browser.currentScene.createNode("Coordinate");
+Coordinate204.point = new MFVec3f(new float[2.9855,0.0311,1.2819,2.8635,0.0194,2.4285]);
+LineSet203.coord = Coordinate204;
 
-HAnimSegment179.children[1] = Shape183;
+//from l_cuneonavicular_1 to l_tarsometatarsal_1 vertices 2
+let ColorRGBA205 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA205.USE = "HAnimSegmentLineColorRGBA";
+LineSet203.color = ColorRGBA205;
 
-let Shape187 = browser.currentScene.createNode("Shape");
-let LineSet188 = browser.currentScene.createNode("LineSet");
-LineSet188.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA189 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA189.USE = "HAnimSegmentLineColorRGBA";
-LineSet188.color = ColorRGBA189;
+Shape202.geometry = LineSet203;
 
-let Coordinate190 = browser.currentScene.createNode("Coordinate");
-Coordinate190.point = new MFVec3f(new float[3.4715,0.0374,0.6807,3.6105,0.033,1.4168]);
-LineSet188.coord = Coordinate190;
+HAnimSegment198.children[1] = Shape202;
 
-Shape187.geometry = LineSet188;
+HAnimJoint197.children = new MFNode();
 
-HAnimSegment179.children[2] = Shape187;
+HAnimJoint197.children[0] = HAnimSegment198;
 
-let Shape191 = browser.currentScene.createNode("Shape");
-let LineSet192 = browser.currentScene.createNode("LineSet");
-LineSet192.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA193 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA193.USE = "HAnimSegmentLineColorRGBA";
-LineSet192.color = ColorRGBA193;
+let HAnimJoint206 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint206.name = "l_tarsometatarsal_1";
+HAnimJoint206.DEF = "hanim_l_tarsometatarsal_1";
+HAnimJoint206.center = new SFVec3f(new float[2.8635,0.0194,2.4285]);
+HAnimJoint206.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint206.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment207 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment207.name = "l_metatarsal_1";
+HAnimSegment207.DEF = "hanim_l_metatarsal_1";
+let Transform208 = browser.currentScene.createNode("Transform");
+Transform208.translation = new SFVec3f(new float[2.8635,0.0194,2.4285]);
+let Transform209 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape210 = browser.currentScene.createNode("Shape");
+Shape210.USE = "HAnimJointShape";
+Transform209.child = new undefined();
 
-let Coordinate194 = browser.currentScene.createNode("Coordinate");
-Coordinate194.point = new MFVec3f(new float[3.4715,0.0374,0.6807,4.1235,0.0328,1.3453]);
-LineSet192.coord = Coordinate194;
+Transform209.child[0] = Shape210;
 
-Shape191.geometry = LineSet192;
+Transform208.children = new MFNode();
 
-HAnimSegment179.children[3] = Shape191;
+Transform208.children[0] = Transform209;
 
-HAnimJoint178.children = new MFNode();
+HAnimSegment207.children = new MFNode();
 
-HAnimJoint178.children[0] = HAnimSegment179;
+HAnimSegment207.children[0] = Transform208;
 
-let HAnimJoint195 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint195.DEF = "hanim_l_cuneonavicular_1";
-HAnimJoint195.name = "l_cuneonavicular_1";
-HAnimJoint195.center = new SFVec3f(new float[2.9855,0.0311,1.2819]);
-let HAnimSegment196 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment196.DEF = "hanim_l_cuneiform_1";
-HAnimSegment196.name = "l_cuneiform_1";
-let Transform197 = browser.currentScene.createNode("Transform");
-Transform197.translation = new SFVec3f(new float[2.9855,0.0311,1.2819]);
-let Transform198 = browser.currentScene.createNode("Transform");
-let Shape199 = browser.currentScene.createNode("Shape");
-Shape199.USE = "HAnimJointShape";
-Transform198.child = new undefined();
+let Shape211 = browser.currentScene.createNode("Shape");
+let LineSet212 = browser.currentScene.createNode("LineSet");
+LineSet212.vertexCount = new MFInt32(new int[2]);
+let Coordinate213 = browser.currentScene.createNode("Coordinate");
+Coordinate213.point = new MFVec3f(new float[2.8635,0.0194,2.4285,2.7525,0.0077,4.6255]);
+LineSet212.coord = Coordinate213;
 
-Transform198.child[0] = Shape199;
+//from l_tarsometatarsal_1 to l_metatarsophalangeal_1 vertices 2
+let ColorRGBA214 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA214.USE = "HAnimSegmentLineColorRGBA";
+LineSet212.color = ColorRGBA214;
 
-Transform197.children = new MFNode();
+Shape211.geometry = LineSet212;
 
-Transform197.children[0] = Transform198;
+HAnimSegment207.children[1] = Shape211;
 
-HAnimSegment196.children = new MFNode();
+let HAnimSite215 = browser.currentScene.createNode("HAnimSite");
+HAnimSite215.name = "l_metatarsal_phalanx_1_pt";
+HAnimSite215.DEF = "hanim_l_metatarsal_phalanx_1_pt";
+let TouchSensor216 = browser.currentScene.createNode("TouchSensor");
+TouchSensor216.description = "HAnimSite l_metatarsal_phalanx_1_pt";
+HAnimSite215.children = new MFNode();
 
-HAnimSegment196.children[0] = Transform197;
+HAnimSite215.children[0] = TouchSensor216;
 
-let Shape200 = browser.currentScene.createNode("Shape");
-let LineSet201 = browser.currentScene.createNode("LineSet");
-LineSet201.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA202 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA202.USE = "HAnimSegmentLineColorRGBA";
-LineSet201.color = ColorRGBA202;
+let Shape217 = browser.currentScene.createNode("Shape");
+Shape217.USE = "HAnimSiteShape";
+HAnimSite215.children[1] = Shape217;
 
-let Coordinate203 = browser.currentScene.createNode("Coordinate");
-Coordinate203.point = new MFVec3f(new float[2.9855,0.0311,1.2819,2.8635,0.0194,2.4285]);
-LineSet201.coord = Coordinate203;
+HAnimSegment207.children[2] = HAnimSite215;
 
-Shape200.geometry = LineSet201;
+HAnimJoint206.children = new MFNode();
 
-HAnimSegment196.children[1] = Shape200;
+HAnimJoint206.children[0] = HAnimSegment207;
 
-HAnimJoint195.children = new MFNode();
+let HAnimJoint218 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint218.name = "l_metatarsophalangeal_1";
+HAnimJoint218.DEF = "hanim_l_metatarsophalangeal_1";
+HAnimJoint218.center = new SFVec3f(new float[2.7525,0.0077,4.6255]);
+HAnimJoint218.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint218.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment219 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment219.name = "l_tarsal_proximal_phalanx_1";
+HAnimSegment219.DEF = "hanim_l_tarsal_proximal_phalanx_1";
+let Transform220 = browser.currentScene.createNode("Transform");
+Transform220.translation = new SFVec3f(new float[2.7525,0.0077,4.6255]);
+let Transform221 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape222 = browser.currentScene.createNode("Shape");
+Shape222.USE = "HAnimJointShape";
+Transform221.child = new undefined();
 
-HAnimJoint195.children[0] = HAnimSegment196;
+Transform221.child[0] = Shape222;
 
-let HAnimJoint204 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint204.DEF = "hanim_l_tarsometatarsal_1";
-HAnimJoint204.name = "l_tarsometatarsal_1";
-HAnimJoint204.center = new SFVec3f(new float[2.8635,0.0194,2.4285]);
-let HAnimSegment205 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment205.DEF = "hanim_l_metatarsal_1";
-HAnimSegment205.name = "l_metatarsal_1";
-let Transform206 = browser.currentScene.createNode("Transform");
-Transform206.translation = new SFVec3f(new float[2.8635,0.0194,2.4285]);
-let Transform207 = browser.currentScene.createNode("Transform");
-let Shape208 = browser.currentScene.createNode("Shape");
-Shape208.USE = "HAnimJointShape";
-Transform207.child = new undefined();
+Transform220.children = new MFNode();
 
-Transform207.child[0] = Shape208;
+Transform220.children[0] = Transform221;
 
-Transform206.children = new MFNode();
+HAnimSegment219.children = new MFNode();
 
-Transform206.children[0] = Transform207;
+HAnimSegment219.children[0] = Transform220;
 
-HAnimSegment205.children = new MFNode();
+let Shape223 = browser.currentScene.createNode("Shape");
+let LineSet224 = browser.currentScene.createNode("LineSet");
+LineSet224.vertexCount = new MFInt32(new int[2]);
+let Coordinate225 = browser.currentScene.createNode("Coordinate");
+Coordinate225.point = new MFVec3f(new float[2.7525,0.0077,4.6255,2.7525,0.0077,4.6255]);
+LineSet224.coord = Coordinate225;
 
-HAnimSegment205.children[0] = Transform206;
+//from l_metatarsophalangeal_1 to l_tarsal_interphalangeal_1 vertices 2
+let ColorRGBA226 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA226.USE = "HAnimSegmentLineColorRGBA";
+LineSet224.color = ColorRGBA226;
 
-let Shape209 = browser.currentScene.createNode("Shape");
-let LineSet210 = browser.currentScene.createNode("LineSet");
-LineSet210.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA211 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA211.USE = "HAnimSegmentLineColorRGBA";
-LineSet210.color = ColorRGBA211;
+Shape223.geometry = LineSet224;
 
-let Coordinate212 = browser.currentScene.createNode("Coordinate");
-Coordinate212.point = new MFVec3f(new float[2.8635,0.0194,2.4285,2.7525,0.0077,4.6255]);
-LineSet210.coord = Coordinate212;
+HAnimSegment219.children[1] = Shape223;
 
-Shape209.geometry = LineSet210;
+let HAnimSite227 = browser.currentScene.createNode("HAnimSite");
+HAnimSite227.name = "l_tarsal_distal_phalanx_1_tip";
+HAnimSite227.DEF = "hanim_l_tarsal_distal_phalanx_1_tip";
+let TouchSensor228 = browser.currentScene.createNode("TouchSensor");
+TouchSensor228.description = "HAnimSite l_tarsal_distal_phalanx_1_tip";
+HAnimSite227.children = new MFNode();
 
-HAnimSegment205.children[1] = Shape209;
+HAnimSite227.children[0] = TouchSensor228;
 
-let HAnimSite213 = browser.currentScene.createNode("HAnimSite");
-HAnimSite213.DEF = "hanim_l_metatarsal_phalanx_1_pt";
-HAnimSite213.name = "l_metatarsal_phalanx_1_pt";
-let TouchSensor214 = browser.currentScene.createNode("TouchSensor");
-TouchSensor214.description = "HAnimSite l_metatarsal_phalanx_1_pt";
-HAnimSite213.children = new MFNode();
+let Shape229 = browser.currentScene.createNode("Shape");
+Shape229.USE = "HAnimSiteShape";
+HAnimSite227.children[1] = Shape229;
 
-HAnimSite213.children[0] = TouchSensor214;
+HAnimSegment219.children[2] = HAnimSite227;
 
-let Shape215 = browser.currentScene.createNode("Shape");
-Shape215.USE = "HAnimSiteShape";
-HAnimSite213.children[1] = Shape215;
+HAnimJoint218.children = new MFNode();
 
-HAnimSegment205.children[2] = HAnimSite213;
+HAnimJoint218.children[0] = HAnimSegment219;
 
-HAnimJoint204.children = new MFNode();
+let HAnimJoint230 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint230.name = "l_tarsal_interphalangeal_1";
+HAnimJoint230.DEF = "hanim_l_tarsal_interphalangeal_1";
+HAnimJoint230.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint230.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint218.children[1] = HAnimJoint230;
 
-HAnimJoint204.children[0] = HAnimSegment205;
+HAnimJoint206.children[1] = HAnimJoint218;
 
-let HAnimJoint216 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint216.DEF = "hanim_l_metatarsophalangeal_1";
-HAnimJoint216.name = "l_metatarsophalangeal_1";
-HAnimJoint216.center = new SFVec3f(new float[2.7525,0.0077,4.6255]);
-let HAnimSegment217 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment217.DEF = "hanim_l_tarsal_proximal_phalanx_1";
-HAnimSegment217.name = "l_tarsal_proximal_phalanx_1";
-let Transform218 = browser.currentScene.createNode("Transform");
-Transform218.translation = new SFVec3f(new float[2.7525,0.0077,4.6255]);
-let Transform219 = browser.currentScene.createNode("Transform");
-let Shape220 = browser.currentScene.createNode("Shape");
-Shape220.USE = "HAnimJointShape";
-Transform219.child = new undefined();
+HAnimJoint197.children[1] = HAnimJoint206;
 
-Transform219.child[0] = Shape220;
+HAnimJoint180.children[1] = HAnimJoint197;
 
-Transform218.children = new MFNode();
+let HAnimJoint231 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint231.name = "l_cuneonavicular_2";
+HAnimJoint231.DEF = "hanim_l_cuneonavicular_2";
+HAnimJoint231.center = new SFVec3f(new float[3.6105,0.033,1.4168]);
+HAnimJoint231.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint231.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment232 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment232.name = "l_cuneiform_2";
+HAnimSegment232.DEF = "hanim_l_cuneiform_2";
+let Transform233 = browser.currentScene.createNode("Transform");
+Transform233.translation = new SFVec3f(new float[3.6105,0.033,1.4168]);
+let Transform234 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape235 = browser.currentScene.createNode("Shape");
+Shape235.USE = "HAnimJointShape";
+Transform234.child = new undefined();
 
-Transform218.children[0] = Transform219;
+Transform234.child[0] = Shape235;
 
-HAnimSegment217.children = new MFNode();
+Transform233.children = new MFNode();
 
-HAnimSegment217.children[0] = Transform218;
+Transform233.children[0] = Transform234;
 
-let Shape221 = browser.currentScene.createNode("Shape");
-let LineSet222 = browser.currentScene.createNode("LineSet");
-LineSet222.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA223 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA223.USE = "HAnimSegmentLineColorRGBA";
-LineSet222.color = ColorRGBA223;
+HAnimSegment232.children = new MFNode();
 
-let Coordinate224 = browser.currentScene.createNode("Coordinate");
-Coordinate224.point = new MFVec3f(new float[2.7525,0.0077,4.6255,2.7525,0.0077,4.6255]);
-LineSet222.coord = Coordinate224;
+HAnimSegment232.children[0] = Transform233;
 
-Shape221.geometry = LineSet222;
+let Shape236 = browser.currentScene.createNode("Shape");
+let LineSet237 = browser.currentScene.createNode("LineSet");
+LineSet237.vertexCount = new MFInt32(new int[2]);
+let Coordinate238 = browser.currentScene.createNode("Coordinate");
+Coordinate238.point = new MFVec3f(new float[3.6105,0.033,1.4168,3.5555,0.0232,2.2895]);
+LineSet237.coord = Coordinate238;
 
-HAnimSegment217.children[1] = Shape221;
+//from l_cuneonavicular_2 to l_tarsometatarsal_2 vertices 2
+let ColorRGBA239 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA239.USE = "HAnimSegmentLineColorRGBA";
+LineSet237.color = ColorRGBA239;
 
-let HAnimSite225 = browser.currentScene.createNode("HAnimSite");
-HAnimSite225.DEF = "hanim_l_tarsal_distal_phalanx_1_tip";
-HAnimSite225.name = "l_tarsal_distal_phalanx_1_tip";
-let TouchSensor226 = browser.currentScene.createNode("TouchSensor");
-TouchSensor226.description = "HAnimSite l_tarsal_distal_phalanx_1_tip";
-HAnimSite225.children = new MFNode();
+Shape236.geometry = LineSet237;
 
-HAnimSite225.children[0] = TouchSensor226;
+HAnimSegment232.children[1] = Shape236;
 
-let Shape227 = browser.currentScene.createNode("Shape");
-Shape227.USE = "HAnimSiteShape";
-HAnimSite225.children[1] = Shape227;
+HAnimJoint231.children = new MFNode();
 
-HAnimSegment217.children[2] = HAnimSite225;
+HAnimJoint231.children[0] = HAnimSegment232;
 
-HAnimJoint216.children = new MFNode();
+let HAnimJoint240 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint240.name = "l_tarsometatarsal_2";
+HAnimJoint240.DEF = "hanim_l_tarsometatarsal_2";
+HAnimJoint240.center = new SFVec3f(new float[3.5555,0.0232,2.2895]);
+HAnimJoint240.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint240.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment241 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment241.name = "l_metatarsal_2";
+HAnimSegment241.DEF = "hanim_l_metatarsal_2";
+let Transform242 = browser.currentScene.createNode("Transform");
+Transform242.translation = new SFVec3f(new float[3.5555,0.0232,2.2895]);
+let Transform243 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape244 = browser.currentScene.createNode("Shape");
+Shape244.USE = "HAnimJointShape";
+Transform243.child = new undefined();
 
-HAnimJoint216.children[0] = HAnimSegment217;
+Transform243.child[0] = Shape244;
 
-let HAnimJoint228 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint228.DEF = "hanim_l_tarsal_interphalangeal_1";
-HAnimJoint228.name = "l_tarsal_interphalangeal_1";
-HAnimJoint216.children[1] = HAnimJoint228;
+Transform242.children = new MFNode();
 
-HAnimJoint204.children[1] = HAnimJoint216;
+Transform242.children[0] = Transform243;
 
-HAnimJoint195.children[1] = HAnimJoint204;
+HAnimSegment241.children = new MFNode();
 
-HAnimJoint178.children[1] = HAnimJoint195;
+HAnimSegment241.children[0] = Transform242;
 
-let HAnimJoint229 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint229.DEF = "hanim_l_cuneonavicular_2";
-HAnimJoint229.name = "l_cuneonavicular_2";
-HAnimJoint229.center = new SFVec3f(new float[3.6105,0.033,1.4168]);
-let HAnimSegment230 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment230.DEF = "hanim_l_cuneiform_2";
-HAnimSegment230.name = "l_cuneiform_2";
-let Transform231 = browser.currentScene.createNode("Transform");
-Transform231.translation = new SFVec3f(new float[3.6105,0.033,1.4168]);
-let Transform232 = browser.currentScene.createNode("Transform");
-let Shape233 = browser.currentScene.createNode("Shape");
-Shape233.USE = "HAnimJointShape";
-Transform232.child = new undefined();
+let Shape245 = browser.currentScene.createNode("Shape");
+let LineSet246 = browser.currentScene.createNode("LineSet");
+LineSet246.vertexCount = new MFInt32(new int[2]);
+let Coordinate247 = browser.currentScene.createNode("Coordinate");
+Coordinate247.point = new MFVec3f(new float[3.5555,0.0232,2.2895,3.6595,0.0085,4.8125]);
+LineSet246.coord = Coordinate247;
 
-Transform232.child[0] = Shape233;
+//from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 2
+let ColorRGBA248 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA248.USE = "HAnimSegmentLineColorRGBA";
+LineSet246.color = ColorRGBA248;
 
-Transform231.children = new MFNode();
+Shape245.geometry = LineSet246;
 
-Transform231.children[0] = Transform232;
+HAnimSegment241.children[1] = Shape245;
 
-HAnimSegment230.children = new MFNode();
+HAnimJoint240.children = new MFNode();
 
-HAnimSegment230.children[0] = Transform231;
+HAnimJoint240.children[0] = HAnimSegment241;
 
-let Shape234 = browser.currentScene.createNode("Shape");
-let LineSet235 = browser.currentScene.createNode("LineSet");
-LineSet235.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA236 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA236.USE = "HAnimSegmentLineColorRGBA";
-LineSet235.color = ColorRGBA236;
+let HAnimJoint249 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint249.name = "l_metatarsophalangeal_2";
+HAnimJoint249.DEF = "hanim_l_metatarsophalangeal_2";
+HAnimJoint249.center = new SFVec3f(new float[3.6595,0.0085,4.8125]);
+HAnimJoint249.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint249.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment250 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment250.name = "l_tarsal_proximal_phalanx_2";
+HAnimSegment250.DEF = "hanim_l_tarsal_proximal_phalanx_2";
+let Transform251 = browser.currentScene.createNode("Transform");
+Transform251.translation = new SFVec3f(new float[3.6595,0.0085,4.8125]);
+let Transform252 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape253 = browser.currentScene.createNode("Shape");
+Shape253.USE = "HAnimJointShape";
+Transform252.child = new undefined();
 
-let Coordinate237 = browser.currentScene.createNode("Coordinate");
-Coordinate237.point = new MFVec3f(new float[3.6105,0.033,1.4168,3.5555,0.0232,2.2895]);
-LineSet235.coord = Coordinate237;
+Transform252.child[0] = Shape253;
 
-Shape234.geometry = LineSet235;
+Transform251.children = new MFNode();
 
-HAnimSegment230.children[1] = Shape234;
+Transform251.children[0] = Transform252;
 
-HAnimJoint229.children = new MFNode();
+HAnimSegment250.children = new MFNode();
 
-HAnimJoint229.children[0] = HAnimSegment230;
+HAnimSegment250.children[0] = Transform251;
 
-let HAnimJoint238 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint238.DEF = "hanim_l_tarsometatarsal_2";
-HAnimJoint238.name = "l_tarsometatarsal_2";
-HAnimJoint238.center = new SFVec3f(new float[3.5555,0.0232,2.2895]);
-let HAnimSegment239 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment239.DEF = "hanim_l_metatarsal_2";
-HAnimSegment239.name = "l_metatarsal_2";
-let Transform240 = browser.currentScene.createNode("Transform");
-Transform240.translation = new SFVec3f(new float[3.5555,0.0232,2.2895]);
-let Transform241 = browser.currentScene.createNode("Transform");
-let Shape242 = browser.currentScene.createNode("Shape");
-Shape242.USE = "HAnimJointShape";
-Transform241.child = new undefined();
+let Shape254 = browser.currentScene.createNode("Shape");
+let LineSet255 = browser.currentScene.createNode("LineSet");
+LineSet255.vertexCount = new MFInt32(new int[2]);
+let Coordinate256 = browser.currentScene.createNode("Coordinate");
+Coordinate256.point = new MFVec3f(new float[3.6595,0.0085,4.8125,3.7385,0.0054,5.5315]);
+LineSet255.coord = Coordinate256;
 
-Transform241.child[0] = Shape242;
+//from l_metatarsophalangeal_2 to l_tarsal_proximal_interphalangeal_2 vertices 2
+let ColorRGBA257 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA257.USE = "HAnimSegmentLineColorRGBA";
+LineSet255.color = ColorRGBA257;
 
-Transform240.children = new MFNode();
+Shape254.geometry = LineSet255;
 
-Transform240.children[0] = Transform241;
+HAnimSegment250.children[1] = Shape254;
 
-HAnimSegment239.children = new MFNode();
+HAnimJoint249.children = new MFNode();
 
-HAnimSegment239.children[0] = Transform240;
+HAnimJoint249.children[0] = HAnimSegment250;
 
-let Shape243 = browser.currentScene.createNode("Shape");
-let LineSet244 = browser.currentScene.createNode("LineSet");
-LineSet244.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA245 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA245.USE = "HAnimSegmentLineColorRGBA";
-LineSet244.color = ColorRGBA245;
+let HAnimJoint258 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint258.name = "l_tarsal_proximal_interphalangeal_2";
+HAnimJoint258.DEF = "hanim_l_tarsal_proximal_interphalangeal_2";
+HAnimJoint258.center = new SFVec3f(new float[3.7385,0.0054,5.5315]);
+HAnimJoint258.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint258.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment259 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment259.name = "l_tarsal_middle_phalanx_2";
+HAnimSegment259.DEF = "hanim_l_tarsal_middle_phalanx_2";
+let Transform260 = browser.currentScene.createNode("Transform");
+Transform260.translation = new SFVec3f(new float[3.7385,0.0054,5.5315]);
+let Transform261 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape262 = browser.currentScene.createNode("Shape");
+Shape262.USE = "HAnimJointShape";
+Transform261.child = new undefined();
 
-let Coordinate246 = browser.currentScene.createNode("Coordinate");
-Coordinate246.point = new MFVec3f(new float[3.5555,0.0232,2.2895,3.6595,0.0085,4.8125]);
-LineSet244.coord = Coordinate246;
+Transform261.child[0] = Shape262;
 
-Shape243.geometry = LineSet244;
+Transform260.children = new MFNode();
 
-HAnimSegment239.children[1] = Shape243;
+Transform260.children[0] = Transform261;
 
-HAnimJoint238.children = new MFNode();
+HAnimSegment259.children = new MFNode();
 
-HAnimJoint238.children[0] = HAnimSegment239;
+HAnimSegment259.children[0] = Transform260;
 
-let HAnimJoint247 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint247.DEF = "hanim_l_metatarsophalangeal_2";
-HAnimJoint247.name = "l_metatarsophalangeal_2";
-HAnimJoint247.center = new SFVec3f(new float[3.6595,0.0085,4.8125]);
-let HAnimSegment248 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment248.DEF = "hanim_l_tarsal_proximal_phalanx_2";
-HAnimSegment248.name = "l_tarsal_proximal_phalanx_2";
-let Transform249 = browser.currentScene.createNode("Transform");
-Transform249.translation = new SFVec3f(new float[3.6595,0.0085,4.8125]);
-let Transform250 = browser.currentScene.createNode("Transform");
-let Shape251 = browser.currentScene.createNode("Shape");
-Shape251.USE = "HAnimJointShape";
-Transform250.child = new undefined();
+let Shape263 = browser.currentScene.createNode("Shape");
+let LineSet264 = browser.currentScene.createNode("LineSet");
+LineSet264.vertexCount = new MFInt32(new int[2]);
+let Coordinate265 = browser.currentScene.createNode("Coordinate");
+Coordinate265.point = new MFVec3f(new float[3.7385,0.0054,5.5315,3.7385,0.0017,5.9505]);
+LineSet264.coord = Coordinate265;
 
-Transform250.child[0] = Shape251;
+//from l_tarsal_proximal_interphalangeal_2 to l_tarsal_distal_interphalangeal_2 vertices 2
+let ColorRGBA266 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA266.USE = "HAnimSegmentLineColorRGBA";
+LineSet264.color = ColorRGBA266;
 
-Transform249.children = new MFNode();
+Shape263.geometry = LineSet264;
 
-Transform249.children[0] = Transform250;
+HAnimSegment259.children[1] = Shape263;
 
-HAnimSegment248.children = new MFNode();
+let HAnimSite267 = browser.currentScene.createNode("HAnimSite");
+HAnimSite267.name = "l_tarsal_distal_phalanx_2_tip";
+HAnimSite267.DEF = "hanim_l_tarsal_distal_phalanx_2_tip";
+HAnimSite267.translation = new SFVec3f(new float[0.1195,0.0079,0.1433]);
+let TouchSensor268 = browser.currentScene.createNode("TouchSensor");
+TouchSensor268.description = "HAnimSite l_tarsal_distal_phalanx_2_tip";
+HAnimSite267.children = new MFNode();
 
-HAnimSegment248.children[0] = Transform249;
+HAnimSite267.children[0] = TouchSensor268;
 
-let Shape252 = browser.currentScene.createNode("Shape");
-let LineSet253 = browser.currentScene.createNode("LineSet");
-LineSet253.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA254 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA254.USE = "HAnimSegmentLineColorRGBA";
-LineSet253.color = ColorRGBA254;
+let Shape269 = browser.currentScene.createNode("Shape");
+Shape269.USE = "HAnimSiteShape";
+HAnimSite267.children[1] = Shape269;
 
-let Coordinate255 = browser.currentScene.createNode("Coordinate");
-Coordinate255.point = new MFVec3f(new float[3.6595,0.0085,4.8125,3.7385,0.0054,5.5315]);
-LineSet253.coord = Coordinate255;
+HAnimSegment259.children[2] = HAnimSite267;
 
-Shape252.geometry = LineSet253;
+HAnimJoint258.children = new MFNode();
 
-HAnimSegment248.children[1] = Shape252;
+HAnimJoint258.children[0] = HAnimSegment259;
 
-HAnimJoint247.children = new MFNode();
+let HAnimJoint270 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint270.name = "l_tarsal_distal_interphalangeal_2";
+HAnimJoint270.DEF = "hanim_l_tarsal_distal_interphalangeal_2";
+HAnimJoint270.center = new SFVec3f(new float[3.7385,0.0017,5.9505]);
+HAnimJoint270.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint270.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint258.children[1] = HAnimJoint270;
 
-HAnimJoint247.children[0] = HAnimSegment248;
+HAnimJoint249.children[1] = HAnimJoint258;
 
-let HAnimJoint256 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint256.DEF = "hanim_l_tarsal_proximal_interphalangeal_1";
-HAnimJoint256.name = "l_tarsal_proximal_interphalangeal_2";
-HAnimJoint256.center = new SFVec3f(new float[3.7385,0.0054,5.5315]);
-let HAnimSegment257 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment257.DEF = "hanim_l_tarsal_middle_phalanx_1";
-HAnimSegment257.name = "l_tarsal_middle_phalanx_2";
-let Transform258 = browser.currentScene.createNode("Transform");
-Transform258.translation = new SFVec3f(new float[3.7385,0.0054,5.5315]);
-let Transform259 = browser.currentScene.createNode("Transform");
-let Shape260 = browser.currentScene.createNode("Shape");
-Shape260.USE = "HAnimJointShape";
-Transform259.child = new undefined();
+HAnimJoint240.children[1] = HAnimJoint249;
 
-Transform259.child[0] = Shape260;
+HAnimJoint231.children[1] = HAnimJoint240;
 
-Transform258.children = new MFNode();
+HAnimJoint180.children[2] = HAnimJoint231;
 
-Transform258.children[0] = Transform259;
+let HAnimJoint271 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint271.name = "l_cuneonavicular_3";
+HAnimJoint271.DEF = "hanim_l_cuneonavicular_3";
+HAnimJoint271.center = new SFVec3f(new float[4.1235,0.0328,1.3453]);
+HAnimJoint271.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint271.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment272 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment272.name = "l_cuneiform_3";
+HAnimSegment272.DEF = "hanim_l_cuneiform_3";
+let Transform273 = browser.currentScene.createNode("Transform");
+Transform273.translation = new SFVec3f(new float[4.1235,0.0328,1.3453]);
+let Transform274 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape275 = browser.currentScene.createNode("Shape");
+Shape275.USE = "HAnimJointShape";
+Transform274.child = new undefined();
 
-HAnimSegment257.children = new MFNode();
+Transform274.child[0] = Shape275;
 
-HAnimSegment257.children[0] = Transform258;
+Transform273.children = new MFNode();
 
-let Shape261 = browser.currentScene.createNode("Shape");
-let LineSet262 = browser.currentScene.createNode("LineSet");
-LineSet262.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA263 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA263.USE = "HAnimSegmentLineColorRGBA";
-LineSet262.color = ColorRGBA263;
+Transform273.children[0] = Transform274;
 
-let Coordinate264 = browser.currentScene.createNode("Coordinate");
-Coordinate264.point = new MFVec3f(new float[3.7385,0.0054,5.5315,3.7385,0.0017,5.9505]);
-LineSet262.coord = Coordinate264;
+HAnimSegment272.children = new MFNode();
 
-Shape261.geometry = LineSet262;
+HAnimSegment272.children[0] = Transform273;
 
-HAnimSegment257.children[1] = Shape261;
+let Shape276 = browser.currentScene.createNode("Shape");
+let LineSet277 = browser.currentScene.createNode("LineSet");
+LineSet277.vertexCount = new MFInt32(new int[2]);
+let Coordinate278 = browser.currentScene.createNode("Coordinate");
+Coordinate278.point = new MFVec3f(new float[4.1235,0.0328,1.3453,3.7385,0.0017,5.9505]);
+LineSet277.coord = Coordinate278;
 
-let HAnimSite265 = browser.currentScene.createNode("HAnimSite");
-HAnimSite265.DEF = "hanim_l_tarsal_distal_phalanx_2_tip";
-HAnimSite265.name = "l_tarsal_distal_phalanx_2_tip";
-HAnimSite265.translation = new SFVec3f(new float[0.1195,0.0079,0.1433]);
-let TouchSensor266 = browser.currentScene.createNode("TouchSensor");
-TouchSensor266.description = "HAnimSite l_tarsal_distal_phalanx_2_tip";
-HAnimSite265.children = new MFNode();
+//from l_cuneonavicular_3 to l_tarsometatarsal_3 vertices 2
+let ColorRGBA279 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA279.USE = "HAnimSegmentLineColorRGBA";
+LineSet277.color = ColorRGBA279;
 
-HAnimSite265.children[0] = TouchSensor266;
+Shape276.geometry = LineSet277;
 
-let Shape267 = browser.currentScene.createNode("Shape");
-Shape267.USE = "HAnimSiteShape";
-HAnimSite265.children[1] = Shape267;
+HAnimSegment272.children[1] = Shape276;
 
-HAnimSegment257.children[2] = HAnimSite265;
+HAnimJoint271.children = new MFNode();
 
-HAnimJoint256.children = new MFNode();
+HAnimJoint271.children[0] = HAnimSegment272;
 
-HAnimJoint256.children[0] = HAnimSegment257;
+let HAnimJoint280 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint280.name = "l_tarsometatarsal_3";
+HAnimJoint280.DEF = "hanim_l_tarsometatarsal_3";
+HAnimJoint280.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint280.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment281 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment281.name = "l_metatarsal_3";
+HAnimSegment281.DEF = "hanim_l_metatarsal_3";
+let Transform282 = browser.currentScene.createNode("Transform");
+Transform282.translation = new SFVec3f(new float[4.1235,0.0328,1.3453]);
+let Transform283 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape284 = browser.currentScene.createNode("Shape");
+Shape284.USE = "HAnimJointShape";
+Transform283.child = new undefined();
 
-let HAnimJoint268 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint268.DEF = "hanim_l_tarsal_distal_interphalangeal_1";
-HAnimJoint268.name = "l_tarsal_distal_interphalangeal_2";
-HAnimJoint268.center = new SFVec3f(new float[3.7385,0.0017,5.9505]);
-HAnimJoint256.children[1] = HAnimJoint268;
+Transform283.child[0] = Shape284;
 
-HAnimJoint247.children[1] = HAnimJoint256;
+Transform282.children = new MFNode();
 
-HAnimJoint238.children[1] = HAnimJoint247;
+Transform282.children[0] = Transform283;
 
-HAnimJoint229.children[1] = HAnimJoint238;
+HAnimSegment281.children = new MFNode();
 
-HAnimJoint178.children[2] = HAnimJoint229;
+HAnimSegment281.children[0] = Transform282;
 
-let HAnimJoint269 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint269.DEF = "hanim_l_cuneonavicular_3";
-HAnimJoint269.name = "l_cuneonavicular_3";
-HAnimJoint269.center = new SFVec3f(new float[4.1235,0.0328,1.3453]);
-let HAnimSegment270 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment270.DEF = "hanim_l_cuneiform_3";
-HAnimSegment270.name = "l_cuneiform_3";
-let Transform271 = browser.currentScene.createNode("Transform");
-Transform271.translation = new SFVec3f(new float[4.1235,0.0328,1.3453]);
-let Transform272 = browser.currentScene.createNode("Transform");
-let Shape273 = browser.currentScene.createNode("Shape");
-Shape273.USE = "HAnimJointShape";
-Transform272.child = new undefined();
+let Shape285 = browser.currentScene.createNode("Shape");
+let LineSet286 = browser.currentScene.createNode("LineSet");
+LineSet286.vertexCount = new MFInt32(new int[2]);
+let Coordinate287 = browser.currentScene.createNode("Coordinate");
+Coordinate287.point = new MFVec3f(new float[4.2795,0.0086,4.7055]);
+LineSet286.coord = Coordinate287;
 
-Transform272.child[0] = Shape273;
+//from l_tarsometatarsal_3 to l_metatarsophalangeal_3 vertices 1
+let ColorRGBA288 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA288.USE = "HAnimSegmentLineColorRGBA";
+LineSet286.color = ColorRGBA288;
 
-Transform271.children = new MFNode();
+Shape285.geometry = LineSet286;
 
-Transform271.children[0] = Transform272;
+HAnimSegment281.children[1] = Shape285;
 
-HAnimSegment270.children = new MFNode();
+HAnimJoint280.children = new MFNode();
 
-HAnimSegment270.children[0] = Transform271;
+HAnimJoint280.children[0] = HAnimSegment281;
 
-let Shape274 = browser.currentScene.createNode("Shape");
-let LineSet275 = browser.currentScene.createNode("LineSet");
-LineSet275.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA276 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA276.USE = "HAnimSegmentLineColorRGBA";
-LineSet275.color = ColorRGBA276;
+let HAnimJoint289 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint289.name = "l_metatarsophalangeal_3";
+HAnimJoint289.DEF = "hanim_l_metatarsophalangeal_3";
+HAnimJoint289.center = new SFVec3f(new float[4.2795,0.0086,4.7055]);
+HAnimJoint289.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint289.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment290 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment290.name = "l_tarsal_proximal_phalanx_3";
+HAnimSegment290.DEF = "hanim_l_tarsal_proximal_phalanx_3";
+let Transform291 = browser.currentScene.createNode("Transform");
+Transform291.translation = new SFVec3f(new float[4.2795,0.0086,4.7055]);
+let Transform292 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape293 = browser.currentScene.createNode("Shape");
+Shape293.USE = "HAnimJointShape";
+Transform292.child = new undefined();
 
-let Coordinate277 = browser.currentScene.createNode("Coordinate");
-Coordinate277.point = new MFVec3f(new float[4.1235,0.0328,1.3453,3.7385,0.0017,5.9505]);
-LineSet275.coord = Coordinate277;
+Transform292.child[0] = Shape293;
 
-Shape274.geometry = LineSet275;
+Transform291.children = new MFNode();
 
-HAnimSegment270.children[1] = Shape274;
+Transform291.children[0] = Transform292;
 
-HAnimJoint269.children = new MFNode();
+HAnimSegment290.children = new MFNode();
 
-HAnimJoint269.children[0] = HAnimSegment270;
+HAnimSegment290.children[0] = Transform291;
 
-let HAnimJoint278 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint278.DEF = "hanim_l_tarsometatarsal_3 ";
-HAnimJoint278.name = "l_tarsometatarsal_3 ";
-let HAnimSegment279 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment279.DEF = "hanim_l_metatarsal_3";
-HAnimSegment279.name = "l_metatarsal_3";
-let Transform280 = browser.currentScene.createNode("Transform");
-Transform280.translation = new SFVec3f(new float[4.1235,0.0328,1.3453]);
-let Transform281 = browser.currentScene.createNode("Transform");
-let Shape282 = browser.currentScene.createNode("Shape");
-Shape282.USE = "HAnimJointShape";
-Transform281.child = new undefined();
+let Shape294 = browser.currentScene.createNode("Shape");
+let LineSet295 = browser.currentScene.createNode("LineSet");
+LineSet295.vertexCount = new MFInt32(new int[2]);
+let Coordinate296 = browser.currentScene.createNode("Coordinate");
+Coordinate296.point = new MFVec3f(new float[4.2795,0.0086,4.7055,4.3855,0.0044,5.3745]);
+LineSet295.coord = Coordinate296;
 
-Transform281.child[0] = Shape282;
+//from l_metatarsophalangeal_3 to l_tarsal_proximal_interphalangeal_3 vertices 2
+let ColorRGBA297 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA297.USE = "HAnimSegmentLineColorRGBA";
+LineSet295.color = ColorRGBA297;
 
-Transform280.children = new MFNode();
+Shape294.geometry = LineSet295;
 
-Transform280.children[0] = Transform281;
+HAnimSegment290.children[1] = Shape294;
 
-HAnimSegment279.children = new MFNode();
+HAnimJoint289.children = new MFNode();
 
-HAnimSegment279.children[0] = Transform280;
+HAnimJoint289.children[0] = HAnimSegment290;
 
-let Shape283 = browser.currentScene.createNode("Shape");
-let LineSet284 = browser.currentScene.createNode("LineSet");
-LineSet284.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA285 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA285.USE = "HAnimSegmentLineColorRGBA";
-LineSet284.color = ColorRGBA285;
+let HAnimJoint298 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint298.name = "l_tarsal_proximal_interphalangeal_3";
+HAnimJoint298.DEF = "hanim_l_tarsal_proximal_interphalangeal_3";
+HAnimJoint298.center = new SFVec3f(new float[4.3855,0.0044,5.3745]);
+HAnimJoint298.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint298.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment299 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment299.name = "l_tarsal_middle_phalanx_3";
+HAnimSegment299.DEF = "hanim_l_tarsal_middle_phalanx_3";
+let Transform300 = browser.currentScene.createNode("Transform");
+Transform300.translation = new SFVec3f(new float[4.3855,0.0044,5.3745]);
+let Transform301 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape302 = browser.currentScene.createNode("Shape");
+Shape302.USE = "HAnimJointShape";
+Transform301.child = new undefined();
 
-let Coordinate286 = browser.currentScene.createNode("Coordinate");
-Coordinate286.point = new MFVec3f(new float[4.2795,0.0086,4.7055]);
-LineSet284.coord = Coordinate286;
+Transform301.child[0] = Shape302;
 
-Shape283.geometry = LineSet284;
+Transform300.children = new MFNode();
 
-HAnimSegment279.children[1] = Shape283;
+Transform300.children[0] = Transform301;
 
-HAnimJoint278.children = new MFNode();
+HAnimSegment299.children = new MFNode();
 
-HAnimJoint278.children[0] = HAnimSegment279;
+HAnimSegment299.children[0] = Transform300;
 
-let HAnimJoint287 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint287.DEF = "hanim_l_metatarsophalangeal_3";
-HAnimJoint287.name = "l_metatarsophalangeal_3";
-HAnimJoint287.center = new SFVec3f(new float[4.2795,0.0086,4.7055]);
-let HAnimSegment288 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment288.DEF = "hanim_l_tarsal_proximal_phalanx_3";
-HAnimSegment288.name = "l_tarsal_proximal_phalanx_3";
-let Transform289 = browser.currentScene.createNode("Transform");
-Transform289.translation = new SFVec3f(new float[4.2795,0.0086,4.7055]);
-let Transform290 = browser.currentScene.createNode("Transform");
-let Shape291 = browser.currentScene.createNode("Shape");
-Shape291.USE = "HAnimJointShape";
-Transform290.child = new undefined();
+let Shape303 = browser.currentScene.createNode("Shape");
+let LineSet304 = browser.currentScene.createNode("LineSet");
+LineSet304.vertexCount = new MFInt32(new int[2]);
+let Coordinate305 = browser.currentScene.createNode("Coordinate");
+Coordinate305.point = new MFVec3f(new float[4.3855,0.0044,5.3745,4.4545,0.0017,5.7845]);
+LineSet304.coord = Coordinate305;
 
-Transform290.child[0] = Shape291;
+//from l_tarsal_proximal_interphalangeal_3 to l_tarsal_distal_interphalangeal_3 vertices 2
+let ColorRGBA306 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA306.USE = "HAnimSegmentLineColorRGBA";
+LineSet304.color = ColorRGBA306;
 
-Transform289.children = new MFNode();
+Shape303.geometry = LineSet304;
 
-Transform289.children[0] = Transform290;
+HAnimSegment299.children[1] = Shape303;
 
-HAnimSegment288.children = new MFNode();
+let HAnimSite307 = browser.currentScene.createNode("HAnimSite");
+HAnimSite307.name = "l_tarsal_distal_phalanx_3_tip";
+HAnimSite307.DEF = "hanim_l_tarsal_distal_phalanx_3_tip";
+let TouchSensor308 = browser.currentScene.createNode("TouchSensor");
+TouchSensor308.description = "HAnimSite l_tarsal_distal_phalanx_3_tip";
+HAnimSite307.children = new MFNode();
 
-HAnimSegment288.children[0] = Transform289;
+HAnimSite307.children[0] = TouchSensor308;
 
-let Shape292 = browser.currentScene.createNode("Shape");
-let LineSet293 = browser.currentScene.createNode("LineSet");
-LineSet293.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA294 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA294.USE = "HAnimSegmentLineColorRGBA";
-LineSet293.color = ColorRGBA294;
+let Shape309 = browser.currentScene.createNode("Shape");
+Shape309.USE = "HAnimSiteShape";
+HAnimSite307.children[1] = Shape309;
 
-let Coordinate295 = browser.currentScene.createNode("Coordinate");
-Coordinate295.point = new MFVec3f(new float[4.2795,0.0086,4.7055,4.3855,0.0044,5.3745]);
-LineSet293.coord = Coordinate295;
+HAnimSegment299.children[2] = HAnimSite307;
 
-Shape292.geometry = LineSet293;
+HAnimJoint298.children = new MFNode();
 
-HAnimSegment288.children[1] = Shape292;
+HAnimJoint298.children[0] = HAnimSegment299;
 
-HAnimJoint287.children = new MFNode();
+let HAnimJoint310 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint310.name = "l_tarsal_distal_interphalangeal_3";
+HAnimJoint310.DEF = "hanim_l_tarsal_distal_interphalangeal_3";
+HAnimJoint310.center = new SFVec3f(new float[4.4545,0.0017,5.7845]);
+HAnimJoint310.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint310.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint298.children[1] = HAnimJoint310;
 
-HAnimJoint287.children[0] = HAnimSegment288;
+HAnimJoint289.children[1] = HAnimJoint298;
 
-let HAnimJoint296 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint296.DEF = "hanim_l_tarsal_proximal_interphalangeal_2";
-HAnimJoint296.name = "l_tarsal_proximal_interphalangeal_3";
-HAnimJoint296.center = new SFVec3f(new float[4.3855,0.0044,5.3745]);
-let HAnimSegment297 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment297.DEF = "hanim_l_tarsal_middle_phalanx_2";
-HAnimSegment297.name = "l_tarsal_middle_phalanx_3";
-let Transform298 = browser.currentScene.createNode("Transform");
-Transform298.translation = new SFVec3f(new float[4.3855,0.0044,5.3745]);
-let Transform299 = browser.currentScene.createNode("Transform");
-let Shape300 = browser.currentScene.createNode("Shape");
-Shape300.USE = "HAnimJointShape";
-Transform299.child = new undefined();
+HAnimJoint280.children[1] = HAnimJoint289;
 
-Transform299.child[0] = Shape300;
+HAnimJoint271.children[1] = HAnimJoint280;
 
-Transform298.children = new MFNode();
+HAnimJoint180.children[3] = HAnimJoint271;
 
-Transform298.children[0] = Transform299;
+HAnimJoint167.children[1] = HAnimJoint180;
 
-HAnimSegment297.children = new MFNode();
+let HAnimJoint311 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint311.name = "l_calcaneocuboid";
+HAnimJoint311.DEF = "hanim_l_calcaneocuboid";
+HAnimJoint311.center = new SFVec3f(new float[3.9515,0.0653,-0.6895]);
+HAnimJoint311.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint311.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment312 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment312.name = "l_calcaneus";
+HAnimSegment312.DEF = "hanim_l_calcaneus";
+let Transform313 = browser.currentScene.createNode("Transform");
+Transform313.translation = new SFVec3f(new float[3.9515,0.0653,-0.6895]);
+let Transform314 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape315 = browser.currentScene.createNode("Shape");
+Shape315.USE = "HAnimJointShape";
+Transform314.child = new undefined();
 
-HAnimSegment297.children[0] = Transform298;
+Transform314.child[0] = Shape315;
 
-let Shape301 = browser.currentScene.createNode("Shape");
-let LineSet302 = browser.currentScene.createNode("LineSet");
-LineSet302.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA303 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA303.USE = "HAnimSegmentLineColorRGBA";
-LineSet302.color = ColorRGBA303;
+Transform313.children = new MFNode();
 
-let Coordinate304 = browser.currentScene.createNode("Coordinate");
-Coordinate304.point = new MFVec3f(new float[4.3855,0.0044,5.3745,4.4545,0.0017,5.7845]);
-LineSet302.coord = Coordinate304;
+Transform313.children[0] = Transform314;
 
-Shape301.geometry = LineSet302;
+HAnimSegment312.children = new MFNode();
 
-HAnimSegment297.children[1] = Shape301;
+HAnimSegment312.children[0] = Transform313;
 
-let HAnimSite305 = browser.currentScene.createNode("HAnimSite");
-HAnimSite305.DEF = "hanim_l_tarsal_distal_phalanx_3_tip";
-HAnimSite305.name = "l_tarsal_distal_phalanx_3_tip";
-let TouchSensor306 = browser.currentScene.createNode("TouchSensor");
-TouchSensor306.description = "HAnimSite l_tarsal_distal_phalanx_3_tip";
-HAnimSite305.children = new MFNode();
+let Shape316 = browser.currentScene.createNode("Shape");
+let LineSet317 = browser.currentScene.createNode("LineSet");
+LineSet317.vertexCount = new MFInt32(new int[2]);
+let Coordinate318 = browser.currentScene.createNode("Coordinate");
+Coordinate318.point = new MFVec3f(new float[3.9515,0.0653,-0.6895,4.9085,0.0353,0.5574]);
+LineSet317.coord = Coordinate318;
 
-HAnimSite305.children[0] = TouchSensor306;
+//from l_calcaneocuboid to l_transversetarsal vertices 2
+let ColorRGBA319 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA319.USE = "HAnimSegmentLineColorRGBA";
+LineSet317.color = ColorRGBA319;
 
-let Shape307 = browser.currentScene.createNode("Shape");
-Shape307.USE = "HAnimSiteShape";
-HAnimSite305.children[1] = Shape307;
+Shape316.geometry = LineSet317;
 
-HAnimSegment297.children[2] = HAnimSite305;
+HAnimSegment312.children[1] = Shape316;
 
-HAnimJoint296.children = new MFNode();
+HAnimJoint311.children = new MFNode();
 
-HAnimJoint296.children[0] = HAnimSegment297;
+HAnimJoint311.children[0] = HAnimSegment312;
 
-let HAnimJoint308 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint308.DEF = "hanim_l_tarsal_distal_interphalangeal_2";
-HAnimJoint308.name = "l_tarsal_distal_interphalangeal_3";
-HAnimJoint308.center = new SFVec3f(new float[4.4545,0.0017,5.7845]);
-HAnimJoint296.children[1] = HAnimJoint308;
+let HAnimJoint320 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint320.name = "l_transversetarsal";
+HAnimJoint320.DEF = "hanim_l_transversetarsal";
+HAnimJoint320.center = new SFVec3f(new float[4.9085,0.0353,0.5574]);
+HAnimJoint320.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint320.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment321 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment321.name = "l_cuboid";
+HAnimSegment321.DEF = "hanim_l_cuboid";
+let Transform322 = browser.currentScene.createNode("Transform");
+Transform322.translation = new SFVec3f(new float[4.9085,0.0353,0.5574]);
+let Transform323 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape324 = browser.currentScene.createNode("Shape");
+Shape324.USE = "HAnimJointShape";
+Transform323.child = new undefined();
 
-HAnimJoint287.children[1] = HAnimJoint296;
+Transform323.child[0] = Shape324;
 
-HAnimJoint278.children[1] = HAnimJoint287;
+Transform322.children = new MFNode();
 
-HAnimJoint269.children[1] = HAnimJoint278;
+Transform322.children[0] = Transform323;
 
-HAnimJoint178.children[3] = HAnimJoint269;
+HAnimSegment321.children = new MFNode();
 
-HAnimJoint165.children[1] = HAnimJoint178;
+HAnimSegment321.children[0] = Transform322;
 
-let HAnimJoint309 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint309.DEF = "hanim_l_calcaneocuboid";
-HAnimJoint309.name = "l_calcaneocuboid";
-HAnimJoint309.center = new SFVec3f(new float[3.9515,0.0653,-0.6895]);
-let HAnimSegment310 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment310.DEF = "hanim_l_calcaneus";
-HAnimSegment310.name = "l_calcaneus";
-let Transform311 = browser.currentScene.createNode("Transform");
-Transform311.translation = new SFVec3f(new float[3.9515,0.0653,-0.6895]);
-let Transform312 = browser.currentScene.createNode("Transform");
-let Shape313 = browser.currentScene.createNode("Shape");
-Shape313.USE = "HAnimJointShape";
-Transform312.child = new undefined();
+let Shape325 = browser.currentScene.createNode("Shape");
+let LineSet326 = browser.currentScene.createNode("LineSet");
+LineSet326.vertexCount = new MFInt32(new int[2]);
+let Coordinate327 = browser.currentScene.createNode("Coordinate");
+Coordinate327.point = new MFVec3f(new float[4.9085,0.0353,0.5574,4.7245,0.0211,2.1725]);
+LineSet326.coord = Coordinate327;
 
-Transform312.child[0] = Shape313;
+//from l_transversetarsal to l_tarsometatarsal_4 vertices 2
+let ColorRGBA328 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA328.USE = "HAnimSegmentLineColorRGBA";
+LineSet326.color = ColorRGBA328;
 
-Transform311.children = new MFNode();
+Shape325.geometry = LineSet326;
 
-Transform311.children[0] = Transform312;
+HAnimSegment321.children[1] = Shape325;
 
-HAnimSegment310.children = new MFNode();
+let Shape329 = browser.currentScene.createNode("Shape");
+let LineSet330 = browser.currentScene.createNode("LineSet");
+LineSet330.vertexCount = new MFInt32(new int[2]);
+let Coordinate331 = browser.currentScene.createNode("Coordinate");
+Coordinate331.point = new MFVec3f(new float[4.9085,0.0353,0.5574,5.3615,0.0164,2.0085]);
+LineSet330.coord = Coordinate331;
 
-HAnimSegment310.children[0] = Transform311;
+//from l_transversetarsal to l_tarsometatarsal_5 vertices 2
+let ColorRGBA332 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA332.USE = "HAnimSegmentLineColorRGBA";
+LineSet330.color = ColorRGBA332;
 
-let Shape314 = browser.currentScene.createNode("Shape");
-let LineSet315 = browser.currentScene.createNode("LineSet");
-LineSet315.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA316 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA316.USE = "HAnimSegmentLineColorRGBA";
-LineSet315.color = ColorRGBA316;
+Shape329.geometry = LineSet330;
 
-let Coordinate317 = browser.currentScene.createNode("Coordinate");
-Coordinate317.point = new MFVec3f(new float[3.9515,0.0653,-0.6895,4.9085,0.0353,0.5574]);
-LineSet315.coord = Coordinate317;
+HAnimSegment321.children[2] = Shape329;
 
-Shape314.geometry = LineSet315;
+HAnimJoint320.children = new MFNode();
 
-HAnimSegment310.children[1] = Shape314;
+HAnimJoint320.children[0] = HAnimSegment321;
 
-HAnimJoint309.children = new MFNode();
+let HAnimJoint333 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint333.name = "l_tarsometatarsal_4";
+HAnimJoint333.DEF = "hanim_l_tarsometatarsal_4";
+HAnimJoint333.center = new SFVec3f(new float[4.7245,0.0211,2.1725]);
+HAnimJoint333.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint333.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment334 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment334.name = "l_metatarsal_4";
+HAnimSegment334.DEF = "hanim_l_metatarsal_4";
+let Transform335 = browser.currentScene.createNode("Transform");
+Transform335.translation = new SFVec3f(new float[4.7245,0.0211,2.1725]);
+let Transform336 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape337 = browser.currentScene.createNode("Shape");
+Shape337.USE = "HAnimJointShape";
+Transform336.child = new undefined();
 
-HAnimJoint309.children[0] = HAnimSegment310;
+Transform336.child[0] = Shape337;
 
-let HAnimJoint318 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint318.DEF = "hanim_l_transversetarsal";
-HAnimJoint318.name = "l_transversetarsal";
-HAnimJoint318.center = new SFVec3f(new float[4.9085,0.0353,0.5574]);
-let HAnimSegment319 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment319.DEF = "hanim_l_cuboid";
-HAnimSegment319.name = "l_cuboid";
-let Transform320 = browser.currentScene.createNode("Transform");
-Transform320.translation = new SFVec3f(new float[4.9085,0.0353,0.5574]);
-let Transform321 = browser.currentScene.createNode("Transform");
-let Shape322 = browser.currentScene.createNode("Shape");
-Shape322.USE = "HAnimJointShape";
-Transform321.child = new undefined();
+Transform335.children = new MFNode();
 
-Transform321.child[0] = Shape322;
+Transform335.children[0] = Transform336;
 
-Transform320.children = new MFNode();
+HAnimSegment334.children = new MFNode();
 
-Transform320.children[0] = Transform321;
+HAnimSegment334.children[0] = Transform335;
 
-HAnimSegment319.children = new MFNode();
+let Shape338 = browser.currentScene.createNode("Shape");
+let LineSet339 = browser.currentScene.createNode("LineSet");
+LineSet339.vertexCount = new MFInt32(new int[2]);
+let Coordinate340 = browser.currentScene.createNode("Coordinate");
+Coordinate340.point = new MFVec3f(new float[4.7245,0.0211,2.1725,4.8745,0.0076,4.5165]);
+LineSet339.coord = Coordinate340;
 
-HAnimSegment319.children[0] = Transform320;
+//from l_tarsometatarsal_4 to l_metatarsophalangeal_4 vertices 2
+let ColorRGBA341 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA341.USE = "HAnimSegmentLineColorRGBA";
+LineSet339.color = ColorRGBA341;
 
-let Shape323 = browser.currentScene.createNode("Shape");
-let LineSet324 = browser.currentScene.createNode("LineSet");
-LineSet324.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA325 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA325.USE = "HAnimSegmentLineColorRGBA";
-LineSet324.color = ColorRGBA325;
+Shape338.geometry = LineSet339;
 
-let Coordinate326 = browser.currentScene.createNode("Coordinate");
-Coordinate326.point = new MFVec3f(new float[4.9085,0.0353,0.5574,4.7245,0.0211,2.1725]);
-LineSet324.coord = Coordinate326;
+HAnimSegment334.children[1] = Shape338;
 
-Shape323.geometry = LineSet324;
+HAnimJoint333.children = new MFNode();
 
-HAnimSegment319.children[1] = Shape323;
+HAnimJoint333.children[0] = HAnimSegment334;
 
-let Shape327 = browser.currentScene.createNode("Shape");
-let LineSet328 = browser.currentScene.createNode("LineSet");
-LineSet328.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA329 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA329.USE = "HAnimSegmentLineColorRGBA";
-LineSet328.color = ColorRGBA329;
+let HAnimJoint342 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint342.name = "l_metatarsophalangeal_4";
+HAnimJoint342.DEF = "hanim_l_metatarsophalangeal_4";
+HAnimJoint342.center = new SFVec3f(new float[4.8745,0.0076,4.5165]);
+HAnimJoint342.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint342.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment343 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment343.name = "l_tarsal_proximal_phalanx_4";
+HAnimSegment343.DEF = "hanim_l_tarsal_proximal_phalanx_4";
+let Transform344 = browser.currentScene.createNode("Transform");
+Transform344.translation = new SFVec3f(new float[4.8745,0.0076,4.5165]);
+let Transform345 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape346 = browser.currentScene.createNode("Shape");
+Shape346.USE = "HAnimJointShape";
+Transform345.child = new undefined();
 
-let Coordinate330 = browser.currentScene.createNode("Coordinate");
-Coordinate330.point = new MFVec3f(new float[4.9085,0.0353,0.5574,5.3615,0.0164,2.0085]);
-LineSet328.coord = Coordinate330;
+Transform345.child[0] = Shape346;
 
-Shape327.geometry = LineSet328;
+Transform344.children = new MFNode();
 
-HAnimSegment319.children[2] = Shape327;
+Transform344.children[0] = Transform345;
 
-HAnimJoint318.children = new MFNode();
+HAnimSegment343.children = new MFNode();
 
-HAnimJoint318.children[0] = HAnimSegment319;
+HAnimSegment343.children[0] = Transform344;
 
-let HAnimJoint331 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint331.DEF = "hanim_l_tarsometatarsal_3";
-HAnimJoint331.name = "l_tarsometatarsal_4";
-HAnimJoint331.center = new SFVec3f(new float[4.7245,0.0211,2.1725]);
-let HAnimSegment332 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment332.DEF = "hanim_l_metatarsal_4";
-HAnimSegment332.name = "l_metatarsal_4";
-let Transform333 = browser.currentScene.createNode("Transform");
-Transform333.translation = new SFVec3f(new float[4.7245,0.0211,2.1725]);
-let Transform334 = browser.currentScene.createNode("Transform");
-let Shape335 = browser.currentScene.createNode("Shape");
-Shape335.USE = "HAnimJointShape";
-Transform334.child = new undefined();
+let Shape347 = browser.currentScene.createNode("Shape");
+let LineSet348 = browser.currentScene.createNode("LineSet");
+LineSet348.vertexCount = new MFInt32(new int[2]);
+let Coordinate349 = browser.currentScene.createNode("Coordinate");
+Coordinate349.point = new MFVec3f(new float[4.8745,0.0076,4.5165,5.0655,0.0049,5.1895]);
+LineSet348.coord = Coordinate349;
 
-Transform334.child[0] = Shape335;
+//from l_metatarsophalangeal_4 to l_tarsal_proximal_interphalangeal_4 vertices 2
+let ColorRGBA350 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA350.USE = "HAnimSegmentLineColorRGBA";
+LineSet348.color = ColorRGBA350;
 
-Transform333.children = new MFNode();
+Shape347.geometry = LineSet348;
 
-Transform333.children[0] = Transform334;
+HAnimSegment343.children[1] = Shape347;
 
-HAnimSegment332.children = new MFNode();
+HAnimJoint342.children = new MFNode();
 
-HAnimSegment332.children[0] = Transform333;
+HAnimJoint342.children[0] = HAnimSegment343;
 
-let Shape336 = browser.currentScene.createNode("Shape");
-let LineSet337 = browser.currentScene.createNode("LineSet");
-LineSet337.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA338 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA338.USE = "HAnimSegmentLineColorRGBA";
-LineSet337.color = ColorRGBA338;
+let HAnimJoint351 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint351.name = "l_tarsal_proximal_interphalangeal_4";
+HAnimJoint351.DEF = "hanim_l_tarsal_proximal_interphalangeal_4";
+HAnimJoint351.center = new SFVec3f(new float[5.0655,0.0049,5.1895]);
+HAnimJoint351.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint351.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment352 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment352.name = "l_tarsal_middle_phalanx_4";
+HAnimSegment352.DEF = "hanim_l_tarsal_middle_phalanx_4";
+let Transform353 = browser.currentScene.createNode("Transform");
+Transform353.translation = new SFVec3f(new float[5.0655,0.0049,5.1895]);
+let Transform354 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape355 = browser.currentScene.createNode("Shape");
+Shape355.USE = "HAnimJointShape";
+Transform354.child = new undefined();
 
-let Coordinate339 = browser.currentScene.createNode("Coordinate");
-Coordinate339.point = new MFVec3f(new float[4.7245,0.0211,2.1725,4.8745,0.0076,4.5165]);
-LineSet337.coord = Coordinate339;
+Transform354.child[0] = Shape355;
 
-Shape336.geometry = LineSet337;
+Transform353.children = new MFNode();
 
-HAnimSegment332.children[1] = Shape336;
+Transform353.children[0] = Transform354;
 
-HAnimJoint331.children = new MFNode();
+HAnimSegment352.children = new MFNode();
 
-HAnimJoint331.children[0] = HAnimSegment332;
+HAnimSegment352.children[0] = Transform353;
 
-let HAnimJoint340 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint340.DEF = "hanim_l_metatarsophalangeal_4";
-HAnimJoint340.name = "l_metatarsophalangeal_4";
-HAnimJoint340.center = new SFVec3f(new float[4.8745,0.0076,4.5165]);
-let HAnimSegment341 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment341.DEF = "hanim_l_tarsal_proximal_phalanx_4";
-HAnimSegment341.name = "l_tarsal_proximal_phalanx_4";
-let Transform342 = browser.currentScene.createNode("Transform");
-Transform342.translation = new SFVec3f(new float[4.8745,0.0076,4.5165]);
-let Transform343 = browser.currentScene.createNode("Transform");
-let Shape344 = browser.currentScene.createNode("Shape");
-Shape344.USE = "HAnimJointShape";
-Transform343.child = new undefined();
+let Shape356 = browser.currentScene.createNode("Shape");
+let LineSet357 = browser.currentScene.createNode("LineSet");
+LineSet357.vertexCount = new MFInt32(new int[2]);
+let Coordinate358 = browser.currentScene.createNode("Coordinate");
+Coordinate358.point = new MFVec3f(new float[5.0655,0.0049,5.1895,5.1325,0.0011,5.5175]);
+LineSet357.coord = Coordinate358;
 
-Transform343.child[0] = Shape344;
+//from l_tarsal_proximal_interphalangeal_4 to l_tarsal_distal_interphalangeal_4 vertices 2
+let ColorRGBA359 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA359.USE = "HAnimSegmentLineColorRGBA";
+LineSet357.color = ColorRGBA359;
 
-Transform342.children = new MFNode();
+Shape356.geometry = LineSet357;
 
-Transform342.children[0] = Transform343;
+HAnimSegment352.children[1] = Shape356;
 
-HAnimSegment341.children = new MFNode();
+let HAnimSite360 = browser.currentScene.createNode("HAnimSite");
+HAnimSite360.name = "l_tarsal_distal_phalanx_4_tip";
+HAnimSite360.DEF = "hanim_l_tarsal_distal_phalanx_4_tip";
+let TouchSensor361 = browser.currentScene.createNode("TouchSensor");
+TouchSensor361.description = "HAnimSite l_tarsal_distal_phalanx_4_tip";
+HAnimSite360.children = new MFNode();
 
-HAnimSegment341.children[0] = Transform342;
+HAnimSite360.children[0] = TouchSensor361;
 
-let Shape345 = browser.currentScene.createNode("Shape");
-let LineSet346 = browser.currentScene.createNode("LineSet");
-LineSet346.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA347 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA347.USE = "HAnimSegmentLineColorRGBA";
-LineSet346.color = ColorRGBA347;
+let Shape362 = browser.currentScene.createNode("Shape");
+Shape362.USE = "HAnimSiteShape";
+HAnimSite360.children[1] = Shape362;
 
-let Coordinate348 = browser.currentScene.createNode("Coordinate");
-Coordinate348.point = new MFVec3f(new float[4.8745,0.0076,4.5165,5.0655,0.0049,5.1895]);
-LineSet346.coord = Coordinate348;
+HAnimSegment352.children[2] = HAnimSite360;
 
-Shape345.geometry = LineSet346;
+HAnimJoint351.children = new MFNode();
 
-HAnimSegment341.children[1] = Shape345;
+HAnimJoint351.children[0] = HAnimSegment352;
 
-HAnimJoint340.children = new MFNode();
+let HAnimJoint363 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint363.name = "l_tarsal_distal_interphalangeal_4";
+HAnimJoint363.DEF = "hanim_l_tarsal_distal_interphalangeal_4";
+HAnimJoint363.center = new SFVec3f(new float[5.1325,0.0011,5.5175]);
+HAnimJoint363.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint363.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint351.children[1] = HAnimJoint363;
 
-HAnimJoint340.children[0] = HAnimSegment341;
+HAnimJoint342.children[1] = HAnimJoint351;
 
-let HAnimJoint349 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint349.DEF = "hanim_l_tarsal_proximal_interphalangeal_3";
-HAnimJoint349.name = "l_tarsal_proximal_interphalangeal_4";
-HAnimJoint349.center = new SFVec3f(new float[5.0655,0.0049,5.1895]);
-let HAnimSegment350 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment350.DEF = "hanim_l_tarsal_middle_phalanx_3";
-HAnimSegment350.name = "l_tarsal_middle_phalanx_4";
-let Transform351 = browser.currentScene.createNode("Transform");
-Transform351.translation = new SFVec3f(new float[5.0655,0.0049,5.1895]);
-let Transform352 = browser.currentScene.createNode("Transform");
-let Shape353 = browser.currentScene.createNode("Shape");
-Shape353.USE = "HAnimJointShape";
-Transform352.child = new undefined();
+HAnimJoint333.children[1] = HAnimJoint342;
 
-Transform352.child[0] = Shape353;
+HAnimJoint320.children[1] = HAnimJoint333;
 
-Transform351.children = new MFNode();
+let HAnimJoint364 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint364.name = "l_tarsometatarsal_5";
+HAnimJoint364.DEF = "hanim_l_tarsometatarsal_5";
+HAnimJoint364.center = new SFVec3f(new float[5.3615,0.0164,2.0085]);
+HAnimJoint364.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint364.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment365 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment365.name = "l_metatarsal_5";
+HAnimSegment365.DEF = "hanim_l_metatarsal_5";
+let Transform366 = browser.currentScene.createNode("Transform");
+Transform366.translation = new SFVec3f(new float[5.3615,0.0164,2.0085]);
+let Transform367 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape368 = browser.currentScene.createNode("Shape");
+Shape368.USE = "HAnimJointShape";
+Transform367.child = new undefined();
 
-Transform351.children[0] = Transform352;
+Transform367.child[0] = Shape368;
 
-HAnimSegment350.children = new MFNode();
+Transform366.children = new MFNode();
 
-HAnimSegment350.children[0] = Transform351;
+Transform366.children[0] = Transform367;
 
-let Shape354 = browser.currentScene.createNode("Shape");
-let LineSet355 = browser.currentScene.createNode("LineSet");
-LineSet355.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA356 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA356.USE = "HAnimSegmentLineColorRGBA";
-LineSet355.color = ColorRGBA356;
+HAnimSegment365.children = new MFNode();
 
-let Coordinate357 = browser.currentScene.createNode("Coordinate");
-Coordinate357.point = new MFVec3f(new float[5.0655,0.0049,5.1895,5.1325,0.0011,5.5175]);
-LineSet355.coord = Coordinate357;
+HAnimSegment365.children[0] = Transform366;
 
-Shape354.geometry = LineSet355;
+let Shape369 = browser.currentScene.createNode("Shape");
+let LineSet370 = browser.currentScene.createNode("LineSet");
+LineSet370.vertexCount = new MFInt32(new int[2]);
+let Coordinate371 = browser.currentScene.createNode("Coordinate");
+Coordinate371.point = new MFVec3f(new float[5.3615,0.0164,2.0085,5.5055,0.0067,4.3115]);
+LineSet370.coord = Coordinate371;
 
-HAnimSegment350.children[1] = Shape354;
+//from l_tarsometatarsal_5 to l_metatarsophalangeal_5 vertices 2
+let ColorRGBA372 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA372.USE = "HAnimSegmentLineColorRGBA";
+LineSet370.color = ColorRGBA372;
 
-let HAnimSite358 = browser.currentScene.createNode("HAnimSite");
-HAnimSite358.DEF = "hanim_l_tarsal_distal_phalanx_4_tip";
-HAnimSite358.name = "l_tarsal_distal_phalanx_4_tip";
-let TouchSensor359 = browser.currentScene.createNode("TouchSensor");
-TouchSensor359.description = "HAnimSite l_tarsal_distal_phalanx_4_tip";
-HAnimSite358.children = new MFNode();
+Shape369.geometry = LineSet370;
 
-HAnimSite358.children[0] = TouchSensor359;
+HAnimSegment365.children[1] = Shape369;
 
-let Shape360 = browser.currentScene.createNode("Shape");
-Shape360.USE = "HAnimSiteShape";
-HAnimSite358.children[1] = Shape360;
+let HAnimSite373 = browser.currentScene.createNode("HAnimSite");
+HAnimSite373.name = "l_metatarsal_phalanx_5_pt";
+HAnimSite373.DEF = "hanim_l_metatarsal_phalanx_5_pt";
+let TouchSensor374 = browser.currentScene.createNode("TouchSensor");
+TouchSensor374.description = "HAnimSite l_metatarsal_phalanx_5_pt";
+HAnimSite373.children = new MFNode();
 
-HAnimSegment350.children[2] = HAnimSite358;
+HAnimSite373.children[0] = TouchSensor374;
 
-HAnimJoint349.children = new MFNode();
+let Shape375 = browser.currentScene.createNode("Shape");
+Shape375.USE = "HAnimSiteShape";
+HAnimSite373.children[1] = Shape375;
 
-HAnimJoint349.children[0] = HAnimSegment350;
+HAnimSegment365.children[2] = HAnimSite373;
 
-let HAnimJoint361 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint361.DEF = "hanim_l_tarsal_distal_interphalangeal_3";
-HAnimJoint361.name = "l_tarsal_distal_interphalangeal_4";
-HAnimJoint361.center = new SFVec3f(new float[5.1325,0.0011,5.5175]);
-HAnimJoint349.children[1] = HAnimJoint361;
+HAnimJoint364.children = new MFNode();
 
-HAnimJoint340.children[1] = HAnimJoint349;
+HAnimJoint364.children[0] = HAnimSegment365;
 
-HAnimJoint331.children[1] = HAnimJoint340;
+let HAnimJoint376 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint376.name = "l_metatarsophalangeal_5";
+HAnimJoint376.DEF = "hanim_l_metatarsophalangeal_5";
+HAnimJoint376.center = new SFVec3f(new float[5.5055,0.0067,4.3115]);
+HAnimJoint376.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint376.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment377 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment377.name = "l_tarsal_proximal_phalanx_5";
+HAnimSegment377.DEF = "hanim_l_tarsal_proximal_phalanx_5";
+let Transform378 = browser.currentScene.createNode("Transform");
+Transform378.translation = new SFVec3f(new float[5.5055,0.0067,4.3115]);
+let Transform379 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape380 = browser.currentScene.createNode("Shape");
+Shape380.USE = "HAnimJointShape";
+Transform379.child = new undefined();
 
-HAnimJoint318.children[1] = HAnimJoint331;
+Transform379.child[0] = Shape380;
 
-let HAnimJoint362 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint362.DEF = "hanim_l_tarsometatarsal_4";
-HAnimJoint362.name = "l_tarsometatarsal_5";
-HAnimJoint362.center = new SFVec3f(new float[5.3615,0.0164,2.0085]);
-let HAnimSegment363 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment363.DEF = "hanim_l_metatarsal_5";
-HAnimSegment363.name = "l_metatarsal_5";
-let Transform364 = browser.currentScene.createNode("Transform");
-Transform364.translation = new SFVec3f(new float[5.3615,0.0164,2.0085]);
-let Transform365 = browser.currentScene.createNode("Transform");
-let Shape366 = browser.currentScene.createNode("Shape");
-Shape366.USE = "HAnimJointShape";
-Transform365.child = new undefined();
+Transform378.children = new MFNode();
 
-Transform365.child[0] = Shape366;
+Transform378.children[0] = Transform379;
 
-Transform364.children = new MFNode();
+HAnimSegment377.children = new MFNode();
 
-Transform364.children[0] = Transform365;
+HAnimSegment377.children[0] = Transform378;
 
-HAnimSegment363.children = new MFNode();
+let Shape381 = browser.currentScene.createNode("Shape");
+let LineSet382 = browser.currentScene.createNode("LineSet");
+LineSet382.vertexCount = new MFInt32(new int[2]);
+let Coordinate383 = browser.currentScene.createNode("Coordinate");
+Coordinate383.point = new MFVec3f(new float[5.5055,0.0067,4.3115,5.6085,0.003,4.6485]);
+LineSet382.coord = Coordinate383;
 
-HAnimSegment363.children[0] = Transform364;
+//from l_metatarsophalangeal_5 to l_tarsal_proximal_interphalangeal_5 vertices 2
+let ColorRGBA384 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA384.USE = "HAnimSegmentLineColorRGBA";
+LineSet382.color = ColorRGBA384;
 
-let Shape367 = browser.currentScene.createNode("Shape");
-let LineSet368 = browser.currentScene.createNode("LineSet");
-LineSet368.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA369 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA369.USE = "HAnimSegmentLineColorRGBA";
-LineSet368.color = ColorRGBA369;
+Shape381.geometry = LineSet382;
 
-let Coordinate370 = browser.currentScene.createNode("Coordinate");
-Coordinate370.point = new MFVec3f(new float[5.3615,0.0164,2.0085,5.5055,0.0067,4.3115]);
-LineSet368.coord = Coordinate370;
+HAnimSegment377.children[1] = Shape381;
 
-Shape367.geometry = LineSet368;
+HAnimJoint376.children = new MFNode();
 
-HAnimSegment363.children[1] = Shape367;
+HAnimJoint376.children[0] = HAnimSegment377;
 
-let HAnimSite371 = browser.currentScene.createNode("HAnimSite");
-HAnimSite371.DEF = "hanim_l_metatarsal_phalanx_5_pt";
-HAnimSite371.name = "l_metatarsal_phalanx_5_pt";
-let TouchSensor372 = browser.currentScene.createNode("TouchSensor");
-TouchSensor372.description = "HAnimSite l_metatarsal_phalanx_5_pt";
-HAnimSite371.children = new MFNode();
+let HAnimJoint385 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint385.name = "l_tarsal_proximal_interphalangeal_5";
+HAnimJoint385.DEF = "hanim_l_tarsal_proximal_interphalangeal_5";
+HAnimJoint385.center = new SFVec3f(new float[5.6085,0.003,4.6485]);
+HAnimJoint385.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint385.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment386 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment386.name = "l_tarsal_middle_phalanx_5";
+HAnimSegment386.DEF = "hanim_l_tarsal_middle_phalanx_5";
+let Transform387 = browser.currentScene.createNode("Transform");
+Transform387.translation = new SFVec3f(new float[5.6085,0.003,4.6485]);
+let Transform388 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape389 = browser.currentScene.createNode("Shape");
+Shape389.USE = "HAnimJointShape";
+Transform388.child = new undefined();
 
-HAnimSite371.children[0] = TouchSensor372;
+Transform388.child[0] = Shape389;
 
-let Shape373 = browser.currentScene.createNode("Shape");
-Shape373.USE = "HAnimSiteShape";
-HAnimSite371.children[1] = Shape373;
+Transform387.children = new MFNode();
 
-HAnimSegment363.children[2] = HAnimSite371;
+Transform387.children[0] = Transform388;
 
-HAnimJoint362.children = new MFNode();
+HAnimSegment386.children = new MFNode();
 
-HAnimJoint362.children[0] = HAnimSegment363;
+HAnimSegment386.children[0] = Transform387;
 
-let HAnimJoint374 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint374.DEF = "hanim_l_metatarsophalangeal_5";
-HAnimJoint374.name = "l_metatarsophalangeal_5";
-HAnimJoint374.center = new SFVec3f(new float[5.5055,0.0067,4.3115]);
-let HAnimSegment375 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment375.DEF = "hanim_l_tarsal_proximal_phalanx_5";
-HAnimSegment375.name = "l_tarsal_proximal_phalanx_5";
-let Transform376 = browser.currentScene.createNode("Transform");
-Transform376.translation = new SFVec3f(new float[5.5055,0.0067,4.3115]);
-let Transform377 = browser.currentScene.createNode("Transform");
-let Shape378 = browser.currentScene.createNode("Shape");
-Shape378.USE = "HAnimJointShape";
-Transform377.child = new undefined();
+let Shape390 = browser.currentScene.createNode("Shape");
+let LineSet391 = browser.currentScene.createNode("LineSet");
+LineSet391.vertexCount = new MFInt32(new int[2]);
+let Coordinate392 = browser.currentScene.createNode("Coordinate");
+Coordinate392.point = new MFVec3f(new float[5.6085,0.003,4.6485,5.6485,0,4.9925]);
+LineSet391.coord = Coordinate392;
 
-Transform377.child[0] = Shape378;
+//from l_tarsal_proximal_interphalangeal_5 to l_tarsal_distal_interphalangeal_5 vertices 2
+let ColorRGBA393 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA393.USE = "HAnimSegmentLineColorRGBA";
+LineSet391.color = ColorRGBA393;
 
-Transform376.children = new MFNode();
+Shape390.geometry = LineSet391;
 
-Transform376.children[0] = Transform377;
+HAnimSegment386.children[1] = Shape390;
 
-HAnimSegment375.children = new MFNode();
+let HAnimSite394 = browser.currentScene.createNode("HAnimSite");
+HAnimSite394.name = "l_tarsal_distal_phalanx_5_tip";
+HAnimSite394.DEF = "hanim_l_tarsal_distal_phalanx_5_tip";
+let TouchSensor395 = browser.currentScene.createNode("TouchSensor");
+TouchSensor395.description = "HAnimSite l_tarsal_distal_phalanx_5_tip";
+HAnimSite394.children = new MFNode();
 
-HAnimSegment375.children[0] = Transform376;
+HAnimSite394.children[0] = TouchSensor395;
 
-let Shape379 = browser.currentScene.createNode("Shape");
-let LineSet380 = browser.currentScene.createNode("LineSet");
-LineSet380.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA381 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA381.USE = "HAnimSegmentLineColorRGBA";
-LineSet380.color = ColorRGBA381;
+let Shape396 = browser.currentScene.createNode("Shape");
+Shape396.USE = "HAnimSiteShape";
+HAnimSite394.children[1] = Shape396;
 
-let Coordinate382 = browser.currentScene.createNode("Coordinate");
-Coordinate382.point = new MFVec3f(new float[5.5055,0.0067,4.3115,5.6085,0.003,4.6485]);
-LineSet380.coord = Coordinate382;
+HAnimSegment386.children[2] = HAnimSite394;
 
-Shape379.geometry = LineSet380;
+HAnimJoint385.children = new MFNode();
 
-HAnimSegment375.children[1] = Shape379;
+HAnimJoint385.children[0] = HAnimSegment386;
 
-HAnimJoint374.children = new MFNode();
+let HAnimJoint397 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint397.name = "l_tarsal_distal_interphalangeal_5";
+HAnimJoint397.DEF = "hanim_l_tarsal_distal_interphalangeal_5";
+HAnimJoint397.center = new SFVec3f(new float[5.6485,0,4.9925]);
+HAnimJoint397.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint397.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint385.children[1] = HAnimJoint397;
 
-HAnimJoint374.children[0] = HAnimSegment375;
+HAnimJoint376.children[1] = HAnimJoint385;
 
-let HAnimJoint383 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint383.DEF = "hanim_l_tarsal_proximal_interphalangeal_4";
-HAnimJoint383.name = "l_tarsal_proximal_interphalangeal_5";
-HAnimJoint383.center = new SFVec3f(new float[5.6085,0.003,4.6485]);
-let HAnimSegment384 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment384.DEF = "hanim_l_tarsal_middle_phalanx_4";
-HAnimSegment384.name = "l_tarsal_middle_phalanx_5";
-let Transform385 = browser.currentScene.createNode("Transform");
-Transform385.translation = new SFVec3f(new float[5.6085,0.003,4.6485]);
-let Transform386 = browser.currentScene.createNode("Transform");
-let Shape387 = browser.currentScene.createNode("Shape");
-Shape387.USE = "HAnimJointShape";
-Transform386.child = new undefined();
+HAnimJoint364.children[1] = HAnimJoint376;
 
-Transform386.child[0] = Shape387;
+HAnimJoint320.children[2] = HAnimJoint364;
 
-Transform385.children = new MFNode();
+HAnimJoint311.children[1] = HAnimJoint320;
 
-Transform385.children[0] = Transform386;
+HAnimJoint167.children[2] = HAnimJoint311;
 
-HAnimSegment384.children = new MFNode();
+HAnimJoint152.children[1] = HAnimJoint167;
 
-HAnimSegment384.children[0] = Transform385;
+HAnimJoint134.children[1] = HAnimJoint152;
 
-let Shape388 = browser.currentScene.createNode("Shape");
-let LineSet389 = browser.currentScene.createNode("LineSet");
-LineSet389.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA390 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA390.USE = "HAnimSegmentLineColorRGBA";
-LineSet389.color = ColorRGBA390;
+HAnimJoint97.children[1] = HAnimJoint134;
 
-let Coordinate391 = browser.currentScene.createNode("Coordinate");
-Coordinate391.point = new MFVec3f(new float[5.6085,0.003,4.6485,5.6485,0,4.9925]);
-LineSet389.coord = Coordinate391;
+let HAnimJoint398 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint398.name = "r_hip";
+HAnimJoint398.DEF = "hanim_r_hip";
+HAnimJoint398.center = new SFVec3f(new float[-0.095,0.9171,0.0029]);
+HAnimJoint398.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint398.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment399 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment399.name = "r_thigh";
+HAnimSegment399.DEF = "hanim_r_thigh";
+let Transform400 = browser.currentScene.createNode("Transform");
+Transform400.translation = new SFVec3f(new float[-0.095,0.9171,0.0029]);
+let Transform401 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape402 = browser.currentScene.createNode("Shape");
+Shape402.USE = "HAnimJointShape";
+Transform401.child = new undefined();
 
-Shape388.geometry = LineSet389;
+Transform401.child[0] = Shape402;
 
-HAnimSegment384.children[1] = Shape388;
+Transform400.children = new MFNode();
 
-let HAnimSite392 = browser.currentScene.createNode("HAnimSite");
-HAnimSite392.DEF = "hanim_l_tarsal_distal_phalanx_5_tip";
-HAnimSite392.name = "l_tarsal_distal_phalanx_5_tip";
-let TouchSensor393 = browser.currentScene.createNode("TouchSensor");
-TouchSensor393.description = "HAnimSite l_tarsal_distal_phalanx_5_tip";
-HAnimSite392.children = new MFNode();
+Transform400.children[0] = Transform401;
 
-HAnimSite392.children[0] = TouchSensor393;
+HAnimSegment399.children = new MFNode();
 
-let Shape394 = browser.currentScene.createNode("Shape");
-Shape394.USE = "HAnimSiteShape";
-HAnimSite392.children[1] = Shape394;
+HAnimSegment399.children[0] = Transform400;
 
-HAnimSegment384.children[2] = HAnimSite392;
+let Shape403 = browser.currentScene.createNode("Shape");
+let LineSet404 = browser.currentScene.createNode("LineSet");
+LineSet404.vertexCount = new MFInt32(new int[2]);
+let Coordinate405 = browser.currentScene.createNode("Coordinate");
+Coordinate405.point = new MFVec3f(new float[-0.095,0.9171,0.0029,-0.0867,0.4913,0.0318]);
+LineSet404.coord = Coordinate405;
 
-HAnimJoint383.children = new MFNode();
+//from r_hip to r_knee vertices 2
+let ColorRGBA406 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA406.USE = "HAnimSegmentLineColorRGBA";
+LineSet404.color = ColorRGBA406;
 
-HAnimJoint383.children[0] = HAnimSegment384;
+Shape403.geometry = LineSet404;
 
-let HAnimJoint395 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint395.DEF = "hanim_l_tarsal_distal_interphalangeal_4";
-HAnimJoint395.name = "l_tarsal_distal_interphalangeal_5";
-HAnimJoint395.center = new SFVec3f(new float[5.6485,0,4.9925]);
-HAnimJoint383.children[1] = HAnimJoint395;
+HAnimSegment399.children[1] = Shape403;
 
-HAnimJoint374.children[1] = HAnimJoint383;
+let HAnimSite407 = browser.currentScene.createNode("HAnimSite");
+HAnimSite407.name = "r_lateral_malleolus_pt";
+HAnimSite407.DEF = "hanim_r_lateral_malleolus_pt";
+HAnimSite407.translation = new SFVec3f(new float[-0.1006,0.0658,-0.1075]);
+let TouchSensor408 = browser.currentScene.createNode("TouchSensor");
+TouchSensor408.description = "HAnimSite r_lateral_malleolus_pt";
+HAnimSite407.children = new MFNode();
 
-HAnimJoint362.children[1] = HAnimJoint374;
+HAnimSite407.children[0] = TouchSensor408;
 
-HAnimJoint318.children[2] = HAnimJoint362;
+let Shape409 = browser.currentScene.createNode("Shape");
+Shape409.USE = "HAnimSiteShape";
+HAnimSite407.children[1] = Shape409;
 
-HAnimJoint309.children[1] = HAnimJoint318;
+HAnimSegment399.children[2] = HAnimSite407;
 
-HAnimJoint165.children[2] = HAnimJoint309;
+let HAnimSite410 = browser.currentScene.createNode("HAnimSite");
+HAnimSite410.name = "r_medial_malleolus_pt";
+HAnimSite410.DEF = "hanim_r_medial_malleolus_pt";
+HAnimSite410.translation = new SFVec3f(new float[-0.0591,0.076,-0.0928]);
+let TouchSensor411 = browser.currentScene.createNode("TouchSensor");
+TouchSensor411.description = "HAnimSite r_medial_malleolus_pt";
+HAnimSite410.children = new MFNode();
 
-HAnimJoint150.children[1] = HAnimJoint165;
+HAnimSite410.children[0] = TouchSensor411;
 
-HAnimJoint132.children[1] = HAnimJoint150;
+let Shape412 = browser.currentScene.createNode("Shape");
+Shape412.USE = "HAnimSiteShape";
+HAnimSite410.children[1] = Shape412;
 
-HAnimJoint95.children[1] = HAnimJoint132;
+HAnimSegment399.children[3] = HAnimSite410;
 
-let HAnimJoint396 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint396.DEF = "hanim_r_hip";
-HAnimJoint396.name = "r_hip";
-HAnimJoint396.center = new SFVec3f(new float[-0.095,0.9171,0.0029]);
-let HAnimSegment397 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment397.DEF = "hanim_r_thigh";
-HAnimSegment397.name = "r_thigh";
-let Transform398 = browser.currentScene.createNode("Transform");
-Transform398.translation = new SFVec3f(new float[-0.095,0.9171,0.0029]);
-let Transform399 = browser.currentScene.createNode("Transform");
-let Shape400 = browser.currentScene.createNode("Shape");
-Shape400.USE = "HAnimJointShape";
-Transform399.child = new undefined();
+let HAnimSite413 = browser.currentScene.createNode("HAnimSite");
+HAnimSite413.name = "r_tibiale_pt";
+HAnimSite413.DEF = "hanim_r_tibiale_pt";
+let TouchSensor414 = browser.currentScene.createNode("TouchSensor");
+TouchSensor414.description = "HAnimSite r_tibiale_pt";
+HAnimSite413.children = new MFNode();
 
-Transform399.child[0] = Shape400;
+HAnimSite413.children[0] = TouchSensor414;
 
-Transform398.children = new MFNode();
+let Shape415 = browser.currentScene.createNode("Shape");
+Shape415.USE = "HAnimSiteShape";
+HAnimSite413.children[1] = Shape415;
 
-Transform398.children[0] = Transform399;
+HAnimSegment399.children[4] = HAnimSite413;
 
-HAnimSegment397.children = new MFNode();
+HAnimJoint398.children = new MFNode();
 
-HAnimSegment397.children[0] = Transform398;
+HAnimJoint398.children[0] = HAnimSegment399;
 
-let Shape401 = browser.currentScene.createNode("Shape");
-let LineSet402 = browser.currentScene.createNode("LineSet");
-LineSet402.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA403 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA403.USE = "HAnimSegmentLineColorRGBA";
-LineSet402.color = ColorRGBA403;
+let HAnimJoint416 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint416.name = "r_knee";
+HAnimJoint416.DEF = "hanim_r_knee";
+HAnimJoint416.center = new SFVec3f(new float[-0.0867,0.4913,0.0318]);
+HAnimJoint416.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint416.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment417 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment417.name = "r_calf";
+HAnimSegment417.DEF = "hanim_r_calf";
+let Transform418 = browser.currentScene.createNode("Transform");
+Transform418.translation = new SFVec3f(new float[-0.0867,0.4913,0.0318]);
+let Transform419 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape420 = browser.currentScene.createNode("Shape");
+Shape420.USE = "HAnimJointShape";
+Transform419.child = new undefined();
 
-let Coordinate404 = browser.currentScene.createNode("Coordinate");
-Coordinate404.point = new MFVec3f(new float[-0.095,0.9171,0.0029,-0.0867,0.4913,0.0318]);
-LineSet402.coord = Coordinate404;
+Transform419.child[0] = Shape420;
 
-Shape401.geometry = LineSet402;
+Transform418.children = new MFNode();
 
-HAnimSegment397.children[1] = Shape401;
+Transform418.children[0] = Transform419;
 
-let HAnimSite405 = browser.currentScene.createNode("HAnimSite");
-HAnimSite405.DEF = "hanim_r_lateral_malleolus_pt";
-HAnimSite405.name = "r_lateral_malleolus_pt";
-HAnimSite405.translation = new SFVec3f(new float[-0.1006,0.0658,-0.1075]);
-let TouchSensor406 = browser.currentScene.createNode("TouchSensor");
-TouchSensor406.description = "HAnimSite r_lateral_malleolus_pt";
-HAnimSite405.children = new MFNode();
+HAnimSegment417.children = new MFNode();
 
-HAnimSite405.children[0] = TouchSensor406;
+HAnimSegment417.children[0] = Transform418;
 
-let Shape407 = browser.currentScene.createNode("Shape");
-Shape407.USE = "HAnimSiteShape";
-HAnimSite405.children[1] = Shape407;
+let Shape421 = browser.currentScene.createNode("Shape");
+let LineSet422 = browser.currentScene.createNode("LineSet");
+LineSet422.vertexCount = new MFInt32(new int[2]);
+let Coordinate423 = browser.currentScene.createNode("Coordinate");
+Coordinate423.point = new MFVec3f(new float[-0.0867,0.4913,0.0318,-0.0801,0.0712,-0.0766]);
+LineSet422.coord = Coordinate423;
 
-HAnimSegment397.children[2] = HAnimSite405;
+//from r_knee to r_talocrural vertices 2
+let ColorRGBA424 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA424.USE = "HAnimSegmentLineColorRGBA";
+LineSet422.color = ColorRGBA424;
 
-let HAnimSite408 = browser.currentScene.createNode("HAnimSite");
-HAnimSite408.DEF = "hanim_r_medial_malleolus_pt";
-HAnimSite408.name = "r_medial_malleolus_pt";
-HAnimSite408.translation = new SFVec3f(new float[-0.0591,0.076,-0.0928]);
-let TouchSensor409 = browser.currentScene.createNode("TouchSensor");
-TouchSensor409.description = "HAnimSite r_medial_malleolus_pt";
-HAnimSite408.children = new MFNode();
+Shape421.geometry = LineSet422;
 
-HAnimSite408.children[0] = TouchSensor409;
+HAnimSegment417.children[1] = Shape421;
 
-let Shape410 = browser.currentScene.createNode("Shape");
-Shape410.USE = "HAnimSiteShape";
-HAnimSite408.children[1] = Shape410;
+let HAnimSite425 = browser.currentScene.createNode("HAnimSite");
+HAnimSite425.name = "r_calcaneus_posterior_pt";
+HAnimSite425.DEF = "hanim_r_calcaneus_posterior_pt";
+HAnimSite425.translation = new SFVec3f(new float[-0.0692,0.0297,-0.1221]);
+let TouchSensor426 = browser.currentScene.createNode("TouchSensor");
+TouchSensor426.description = "HAnimSite r_calcaneus_posterior_pt";
+HAnimSite425.children = new MFNode();
 
-HAnimSegment397.children[3] = HAnimSite408;
+HAnimSite425.children[0] = TouchSensor426;
 
-let HAnimSite411 = browser.currentScene.createNode("HAnimSite");
-HAnimSite411.DEF = "hanim_r_tibiale_pt";
-HAnimSite411.name = "r_tibiale_pt";
-let TouchSensor412 = browser.currentScene.createNode("TouchSensor");
-TouchSensor412.description = "HAnimSite r_tibiale_pt";
-HAnimSite411.children = new MFNode();
+let Shape427 = browser.currentScene.createNode("Shape");
+Shape427.USE = "HAnimSiteShape";
+HAnimSite425.children[1] = Shape427;
 
-HAnimSite411.children[0] = TouchSensor412;
+HAnimSegment417.children[2] = HAnimSite425;
 
-let Shape413 = browser.currentScene.createNode("Shape");
-Shape413.USE = "HAnimSiteShape";
-HAnimSite411.children[1] = Shape413;
+let HAnimSite428 = browser.currentScene.createNode("HAnimSite");
+HAnimSite428.name = "r_sphyrion_pt";
+HAnimSite428.DEF = "hanim_r_sphyrion_pt";
+HAnimSite428.translation = new SFVec3f(new float[-0.0603,0.061,-0.1002]);
+let TouchSensor429 = browser.currentScene.createNode("TouchSensor");
+TouchSensor429.description = "HAnimSite r_sphyrion_pt";
+HAnimSite428.children = new MFNode();
 
-HAnimSegment397.children[4] = HAnimSite411;
+HAnimSite428.children[0] = TouchSensor429;
 
-HAnimJoint396.children = new MFNode();
+let Shape430 = browser.currentScene.createNode("Shape");
+Shape430.USE = "HAnimSiteShape";
+HAnimSite428.children[1] = Shape430;
 
-HAnimJoint396.children[0] = HAnimSegment397;
+HAnimSegment417.children[3] = HAnimSite428;
 
-let HAnimJoint414 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint414.DEF = "hanim_r_knee";
-HAnimJoint414.name = "r_knee";
-HAnimJoint414.center = new SFVec3f(new float[-0.0867,0.4913,0.0318]);
-let HAnimSegment415 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment415.DEF = "hanim_r_calf";
-HAnimSegment415.name = "r_calf";
-let Transform416 = browser.currentScene.createNode("Transform");
-Transform416.translation = new SFVec3f(new float[-0.0867,0.4913,0.0318]);
-let Transform417 = browser.currentScene.createNode("Transform");
-let Shape418 = browser.currentScene.createNode("Shape");
-Shape418.USE = "HAnimJointShape";
-Transform417.child = new undefined();
+HAnimJoint416.children = new MFNode();
 
-Transform417.child[0] = Shape418;
+HAnimJoint416.children[0] = HAnimSegment417;
 
-Transform416.children = new MFNode();
+let HAnimJoint431 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint431.name = "r_talocrural";
+HAnimJoint431.DEF = "hanim_r_talocrural";
+HAnimJoint431.center = new SFVec3f(new float[-0.0801,0.0712,-0.0766]);
+HAnimJoint431.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint431.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment432 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment432.name = "r_talus";
+HAnimSegment432.DEF = "hanim_r_talus";
+let Transform433 = browser.currentScene.createNode("Transform");
+Transform433.scale = new SFVec3f(new float[0.15,0.15,0.15]);
+Transform433.translation = new SFVec3f(new float[-0.05,0.06,-0.025]);
+Transform433.rotation = new SFRotation(new float[1,0,0,-1.57]);
+//Transform right foot
+let Transform434 = browser.currentScene.createNode("Transform");
+//Empty Transform right foot
+let Shape435 = browser.currentScene.createNode("Shape");
+Shape435.USE = "HAnimJointShape";
+Transform434.child = new undefined();
 
-Transform416.children[0] = Transform417;
+Transform434.child[0] = Shape435;
 
-HAnimSegment415.children = new MFNode();
+Transform433.children = new MFNode();
 
-HAnimSegment415.children[0] = Transform416;
+Transform433.children[0] = Transform434;
 
-let Shape419 = browser.currentScene.createNode("Shape");
-let LineSet420 = browser.currentScene.createNode("LineSet");
-LineSet420.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA421 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA421.USE = "HAnimSegmentLineColorRGBA";
-LineSet420.color = ColorRGBA421;
+HAnimSegment432.children = new MFNode();
 
-let Coordinate422 = browser.currentScene.createNode("Coordinate");
-Coordinate422.point = new MFVec3f(new float[-0.0867,0.4913,0.0318,-0.0801,0.0712,-0.0766]);
-LineSet420.coord = Coordinate422;
+HAnimSegment432.children[0] = Transform433;
 
-Shape419.geometry = LineSet420;
+let Shape436 = browser.currentScene.createNode("Shape");
+let LineSet437 = browser.currentScene.createNode("LineSet");
+LineSet437.vertexCount = new MFInt32(new int[2]);
+let Coordinate438 = browser.currentScene.createNode("Coordinate");
+Coordinate438.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766,-3.4725,0.0374,0.6807]);
+LineSet437.coord = Coordinate438;
 
-HAnimSegment415.children[1] = Shape419;
+//from r_talocrural to r_talocalcaneonavicular vertices 2
+let ColorRGBA439 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA439.USE = "HAnimSegmentLineColorRGBA";
+LineSet437.color = ColorRGBA439;
 
-let HAnimSite423 = browser.currentScene.createNode("HAnimSite");
-HAnimSite423.DEF = "hanim_r_calcaneus_posterior_pt";
-HAnimSite423.name = "r_calcaneus_posterior_pt";
-HAnimSite423.translation = new SFVec3f(new float[-0.0692,0.0297,-0.1221]);
-let TouchSensor424 = browser.currentScene.createNode("TouchSensor");
-TouchSensor424.description = "HAnimSite r_calcaneus_posterior_pt";
-HAnimSite423.children = new MFNode();
+Shape436.geometry = LineSet437;
 
-HAnimSite423.children[0] = TouchSensor424;
+HAnimSegment432.children[1] = Shape436;
 
-let Shape425 = browser.currentScene.createNode("Shape");
-Shape425.USE = "HAnimSiteShape";
-HAnimSite423.children[1] = Shape425;
+let Shape440 = browser.currentScene.createNode("Shape");
+let LineSet441 = browser.currentScene.createNode("LineSet");
+LineSet441.vertexCount = new MFInt32(new int[2]);
+let Coordinate442 = browser.currentScene.createNode("Coordinate");
+Coordinate442.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766,-3.9515,0.0653,-0.6895]);
+LineSet441.coord = Coordinate442;
 
-HAnimSegment415.children[2] = HAnimSite423;
+//from r_talocrural to r_calcaneocuboid vertices 2
+let ColorRGBA443 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA443.USE = "HAnimSegmentLineColorRGBA";
+LineSet441.color = ColorRGBA443;
 
-let HAnimSite426 = browser.currentScene.createNode("HAnimSite");
-HAnimSite426.DEF = "hanim_r_sphyrion_pt";
-HAnimSite426.name = "r_sphyrion_pt";
-HAnimSite426.translation = new SFVec3f(new float[-0.0603,0.061,-0.1002]);
-let TouchSensor427 = browser.currentScene.createNode("TouchSensor");
-TouchSensor427.description = "HAnimSite r_sphyrion_pt";
-HAnimSite426.children = new MFNode();
+Shape440.geometry = LineSet441;
 
-HAnimSite426.children[0] = TouchSensor427;
+HAnimSegment432.children[2] = Shape440;
 
-let Shape428 = browser.currentScene.createNode("Shape");
-Shape428.USE = "HAnimSiteShape";
-HAnimSite426.children[1] = Shape428;
+HAnimJoint431.children = new MFNode();
 
-HAnimSegment415.children[3] = HAnimSite426;
+HAnimJoint431.children[0] = HAnimSegment432;
 
-HAnimJoint414.children = new MFNode();
+let HAnimJoint444 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint444.name = "r_talocalcaneonavicular";
+HAnimJoint444.DEF = "hanim_r_talocalcaneonavicular";
+HAnimJoint444.center = new SFVec3f(new float[-3.4725,0.0374,0.6807]);
+HAnimJoint444.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint444.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment445 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment445.name = "r_navicular";
+HAnimSegment445.DEF = "hanim_r_navicular";
+let Transform446 = browser.currentScene.createNode("Transform");
+Transform446.translation = new SFVec3f(new float[-3.4725,0.0374,0.6807]);
+let Transform447 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape448 = browser.currentScene.createNode("Shape");
+Shape448.USE = "HAnimJointShape";
+Transform447.child = new undefined();
 
-HAnimJoint414.children[0] = HAnimSegment415;
+Transform447.child[0] = Shape448;
 
-let HAnimJoint429 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint429.DEF = "hanim_r_talocrural";
-HAnimJoint429.name = "r_talocrural";
-HAnimJoint429.center = new SFVec3f(new float[-0.0801,0.0712,-0.0766]);
-let HAnimSegment430 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment430.DEF = "hanim_r_talus";
-HAnimSegment430.name = "r_talus";
-let Transform431 = browser.currentScene.createNode("Transform");
-Transform431.translation = new SFVec3f(new float[-0.05,0.06,-0.025]);
-Transform431.rotation = new SFRotation(new float[1,0,0,-1.57]);
-Transform431.scale = new SFVec3f(new float[0.15,0.15,0.15]);
-let Transform432 = browser.currentScene.createNode("Transform");
-let Shape433 = browser.currentScene.createNode("Shape");
-Shape433.USE = "HAnimJointShape";
-Transform432.child = new undefined();
+Transform446.children = new MFNode();
 
-Transform432.child[0] = Shape433;
+Transform446.children[0] = Transform447;
 
-Transform431.children = new MFNode();
+HAnimSegment445.children = new MFNode();
 
-Transform431.children[0] = Transform432;
+HAnimSegment445.children[0] = Transform446;
 
-HAnimSegment430.children = new MFNode();
+let Shape449 = browser.currentScene.createNode("Shape");
+let LineSet450 = browser.currentScene.createNode("LineSet");
+LineSet450.vertexCount = new MFInt32(new int[2]);
+let Coordinate451 = browser.currentScene.createNode("Coordinate");
+Coordinate451.point = new MFVec3f(new float[-3.4725,0.0374,0.6807,-2.9855,0.0311,1.2819]);
+LineSet450.coord = Coordinate451;
 
-HAnimSegment430.children[0] = Transform431;
+//from r_talocalcaneonavicular to r_cuneonavicular_1 vertices 2
+let ColorRGBA452 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA452.USE = "HAnimSegmentLineColorRGBA";
+LineSet450.color = ColorRGBA452;
 
-let Shape434 = browser.currentScene.createNode("Shape");
-let LineSet435 = browser.currentScene.createNode("LineSet");
-LineSet435.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA436 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA436.USE = "HAnimSegmentLineColorRGBA";
-LineSet435.color = ColorRGBA436;
+Shape449.geometry = LineSet450;
 
-let Coordinate437 = browser.currentScene.createNode("Coordinate");
-Coordinate437.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766,-3.4725,0.0374,0.6807]);
-LineSet435.coord = Coordinate437;
+HAnimSegment445.children[1] = Shape449;
 
-Shape434.geometry = LineSet435;
+let Shape453 = browser.currentScene.createNode("Shape");
+let LineSet454 = browser.currentScene.createNode("LineSet");
+LineSet454.vertexCount = new MFInt32(new int[2]);
+let Coordinate455 = browser.currentScene.createNode("Coordinate");
+Coordinate455.point = new MFVec3f(new float[-3.4725,0.0374,0.6807,-3.6105,0.033,1.4168]);
+LineSet454.coord = Coordinate455;
 
-HAnimSegment430.children[1] = Shape434;
+//from r_talocalcaneonavicular to r_cuneonavicular_2 vertices 2
+let ColorRGBA456 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA456.USE = "HAnimSegmentLineColorRGBA";
+LineSet454.color = ColorRGBA456;
 
-let Shape438 = browser.currentScene.createNode("Shape");
-let LineSet439 = browser.currentScene.createNode("LineSet");
-LineSet439.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA440 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA440.USE = "HAnimSegmentLineColorRGBA";
-LineSet439.color = ColorRGBA440;
+Shape453.geometry = LineSet454;
 
-let Coordinate441 = browser.currentScene.createNode("Coordinate");
-Coordinate441.point = new MFVec3f(new float[-0.0801,0.0712,-0.0766,-3.9515,0.0653,-0.6895]);
-LineSet439.coord = Coordinate441;
+HAnimSegment445.children[2] = Shape453;
 
-Shape438.geometry = LineSet439;
+let Shape457 = browser.currentScene.createNode("Shape");
+let LineSet458 = browser.currentScene.createNode("LineSet");
+LineSet458.vertexCount = new MFInt32(new int[2]);
+let Coordinate459 = browser.currentScene.createNode("Coordinate");
+Coordinate459.point = new MFVec3f(new float[-3.4725,0.0374,0.6807,-4.1245,0.0328,1.3453]);
+LineSet458.coord = Coordinate459;
 
-HAnimSegment430.children[2] = Shape438;
+//from r_talocalcaneonavicular to r_cuneonavicular_3 vertices 2
+let ColorRGBA460 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA460.USE = "HAnimSegmentLineColorRGBA";
+LineSet458.color = ColorRGBA460;
 
-HAnimJoint429.children = new MFNode();
+Shape457.geometry = LineSet458;
 
-HAnimJoint429.children[0] = HAnimSegment430;
+HAnimSegment445.children[3] = Shape457;
 
-let HAnimJoint442 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint442.DEF = "hanim_r_talocalcaneonavicular";
-HAnimJoint442.name = "r_talocalcaneonavicular";
-HAnimJoint442.center = new SFVec3f(new float[-3.4725,0.0374,0.6807]);
-let HAnimSegment443 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment443.DEF = "hanim_r_navicular";
-HAnimSegment443.name = "r_navicular";
-let Transform444 = browser.currentScene.createNode("Transform");
-Transform444.translation = new SFVec3f(new float[-3.4725,0.0374,0.6807]);
-let Transform445 = browser.currentScene.createNode("Transform");
-let Shape446 = browser.currentScene.createNode("Shape");
-Shape446.USE = "HAnimJointShape";
-Transform445.child = new undefined();
+HAnimJoint444.children = new MFNode();
 
-Transform445.child[0] = Shape446;
+HAnimJoint444.children[0] = HAnimSegment445;
 
-Transform444.children = new MFNode();
+let HAnimJoint461 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint461.name = "r_cuneonavicular_1";
+HAnimJoint461.DEF = "hanim_r_cuneonavicular_1";
+HAnimJoint461.center = new SFVec3f(new float[-2.9855,0.0311,1.2819]);
+HAnimJoint461.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint461.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment462 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment462.name = "r_cuneiform_1";
+HAnimSegment462.DEF = "hanim_r_cuneiform_1";
+let Transform463 = browser.currentScene.createNode("Transform");
+Transform463.translation = new SFVec3f(new float[-2.9855,0.0311,1.2819]);
+let Transform464 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape465 = browser.currentScene.createNode("Shape");
+Shape465.USE = "HAnimJointShape";
+Transform464.child = new undefined();
 
-Transform444.children[0] = Transform445;
+Transform464.child[0] = Shape465;
 
-HAnimSegment443.children = new MFNode();
+Transform463.children = new MFNode();
 
-HAnimSegment443.children[0] = Transform444;
+Transform463.children[0] = Transform464;
 
-let Shape447 = browser.currentScene.createNode("Shape");
-let LineSet448 = browser.currentScene.createNode("LineSet");
-LineSet448.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA449 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA449.USE = "HAnimSegmentLineColorRGBA";
-LineSet448.color = ColorRGBA449;
+HAnimSegment462.children = new MFNode();
 
-let Coordinate450 = browser.currentScene.createNode("Coordinate");
-Coordinate450.point = new MFVec3f(new float[-3.4725,0.0374,0.6807,-2.9855,0.0311,1.2819]);
-LineSet448.coord = Coordinate450;
+HAnimSegment462.children[0] = Transform463;
 
-Shape447.geometry = LineSet448;
+let Shape466 = browser.currentScene.createNode("Shape");
+let LineSet467 = browser.currentScene.createNode("LineSet");
+LineSet467.vertexCount = new MFInt32(new int[2]);
+let Coordinate468 = browser.currentScene.createNode("Coordinate");
+Coordinate468.point = new MFVec3f(new float[-2.9855,0.0311,1.2819,-2.8645,0.0194,2.4285]);
+LineSet467.coord = Coordinate468;
 
-HAnimSegment443.children[1] = Shape447;
+//from r_cuneonavicular_1 to r_tarsometatarsal_1 vertices 2
+let ColorRGBA469 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA469.USE = "HAnimSegmentLineColorRGBA";
+LineSet467.color = ColorRGBA469;
 
-let Shape451 = browser.currentScene.createNode("Shape");
-let LineSet452 = browser.currentScene.createNode("LineSet");
-LineSet452.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA453 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA453.USE = "HAnimSegmentLineColorRGBA";
-LineSet452.color = ColorRGBA453;
+Shape466.geometry = LineSet467;
 
-let Coordinate454 = browser.currentScene.createNode("Coordinate");
-Coordinate454.point = new MFVec3f(new float[-3.4725,0.0374,0.6807,-3.6105,0.033,1.4168]);
-LineSet452.coord = Coordinate454;
+HAnimSegment462.children[1] = Shape466;
 
-Shape451.geometry = LineSet452;
+HAnimJoint461.children = new MFNode();
 
-HAnimSegment443.children[2] = Shape451;
+HAnimJoint461.children[0] = HAnimSegment462;
 
-let Shape455 = browser.currentScene.createNode("Shape");
-let LineSet456 = browser.currentScene.createNode("LineSet");
-LineSet456.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA457 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA457.USE = "HAnimSegmentLineColorRGBA";
-LineSet456.color = ColorRGBA457;
+let HAnimJoint470 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint470.name = "r_tarsometatarsal_1";
+HAnimJoint470.DEF = "hanim_r_tarsometatarsal_1";
+HAnimJoint470.center = new SFVec3f(new float[-2.8645,0.0194,2.4285]);
+HAnimJoint470.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint470.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment471 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment471.name = "r_metatarsal_1";
+HAnimSegment471.DEF = "hanim_r_metatarsal_1";
+let Transform472 = browser.currentScene.createNode("Transform");
+Transform472.translation = new SFVec3f(new float[-2.8645,0.0194,2.4285]);
+let Transform473 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape474 = browser.currentScene.createNode("Shape");
+Shape474.USE = "HAnimJointShape";
+Transform473.child = new undefined();
 
-let Coordinate458 = browser.currentScene.createNode("Coordinate");
-Coordinate458.point = new MFVec3f(new float[-3.4725,0.0374,0.6807,-4.1245,0.0328,1.3453]);
-LineSet456.coord = Coordinate458;
+Transform473.child[0] = Shape474;
 
-Shape455.geometry = LineSet456;
+Transform472.children = new MFNode();
 
-HAnimSegment443.children[3] = Shape455;
+Transform472.children[0] = Transform473;
 
-HAnimJoint442.children = new MFNode();
+HAnimSegment471.children = new MFNode();
 
-HAnimJoint442.children[0] = HAnimSegment443;
+HAnimSegment471.children[0] = Transform472;
 
-let HAnimJoint459 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint459.DEF = "hanim_r_cuneonavicular_1";
-HAnimJoint459.name = "r_cuneonavicular_1";
-HAnimJoint459.center = new SFVec3f(new float[-2.9855,0.0311,1.2819]);
-let HAnimSegment460 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment460.DEF = "hanim_r_cuneiform_1";
-HAnimSegment460.name = "r_cuneiform_1";
-let Transform461 = browser.currentScene.createNode("Transform");
-Transform461.translation = new SFVec3f(new float[-2.9855,0.0311,1.2819]);
-let Transform462 = browser.currentScene.createNode("Transform");
-let Shape463 = browser.currentScene.createNode("Shape");
-Shape463.USE = "HAnimJointShape";
-Transform462.child = new undefined();
+let Shape475 = browser.currentScene.createNode("Shape");
+let LineSet476 = browser.currentScene.createNode("LineSet");
+LineSet476.vertexCount = new MFInt32(new int[2]);
+let Coordinate477 = browser.currentScene.createNode("Coordinate");
+Coordinate477.point = new MFVec3f(new float[-2.8645,0.0194,2.4285,-2.7535,0.0077,4.6255]);
+LineSet476.coord = Coordinate477;
 
-Transform462.child[0] = Shape463;
+//from r_tarsometatarsal_1 to r_metatarsophalangeal_1 vertices 2
+let ColorRGBA478 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA478.USE = "HAnimSegmentLineColorRGBA";
+LineSet476.color = ColorRGBA478;
 
-Transform461.children = new MFNode();
+Shape475.geometry = LineSet476;
 
-Transform461.children[0] = Transform462;
+HAnimSegment471.children[1] = Shape475;
 
-HAnimSegment460.children = new MFNode();
+let HAnimSite479 = browser.currentScene.createNode("HAnimSite");
+HAnimSite479.name = "r_metatarsal_phalanx_1_pt";
+HAnimSite479.DEF = "hanim_r_metatarsal_phalanx_1_pt";
+let TouchSensor480 = browser.currentScene.createNode("TouchSensor");
+TouchSensor480.description = "HAnimSite r_metatarsal_phalanx_1_pt";
+HAnimSite479.children = new MFNode();
 
-HAnimSegment460.children[0] = Transform461;
+HAnimSite479.children[0] = TouchSensor480;
 
-let Shape464 = browser.currentScene.createNode("Shape");
-let LineSet465 = browser.currentScene.createNode("LineSet");
-LineSet465.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA466 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA466.USE = "HAnimSegmentLineColorRGBA";
-LineSet465.color = ColorRGBA466;
+let Shape481 = browser.currentScene.createNode("Shape");
+Shape481.USE = "HAnimSiteShape";
+HAnimSite479.children[1] = Shape481;
 
-let Coordinate467 = browser.currentScene.createNode("Coordinate");
-Coordinate467.point = new MFVec3f(new float[-2.9855,0.0311,1.2819,-2.8645,0.0194,2.4285]);
-LineSet465.coord = Coordinate467;
+HAnimSegment471.children[2] = HAnimSite479;
 
-Shape464.geometry = LineSet465;
+HAnimJoint470.children = new MFNode();
 
-HAnimSegment460.children[1] = Shape464;
+HAnimJoint470.children[0] = HAnimSegment471;
 
-HAnimJoint459.children = new MFNode();
+let HAnimJoint482 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint482.name = "r_metatarsophalangeal_1";
+HAnimJoint482.DEF = "hanim_r_metatarsophalangeal_1";
+HAnimJoint482.center = new SFVec3f(new float[-2.7535,0.0077,4.6255]);
+HAnimJoint482.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint482.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment483 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment483.name = "r_tarsal_proximal_phalanx_1";
+HAnimSegment483.DEF = "hanim_r_tarsal_proximal_phalanx_1";
+let Transform484 = browser.currentScene.createNode("Transform");
+Transform484.translation = new SFVec3f(new float[-2.7535,0.0077,4.6255]);
+let Transform485 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape486 = browser.currentScene.createNode("Shape");
+Shape486.USE = "HAnimJointShape";
+Transform485.child = new undefined();
 
-HAnimJoint459.children[0] = HAnimSegment460;
+Transform485.child[0] = Shape486;
 
-let HAnimJoint468 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint468.DEF = "hanim_r_tarsometatarsal_1";
-HAnimJoint468.name = "r_tarsometatarsal_1";
-HAnimJoint468.center = new SFVec3f(new float[-2.8645,0.0194,2.4285]);
-let HAnimSegment469 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment469.DEF = "hanim_r_metatarsal_1";
-HAnimSegment469.name = "r_metatarsal_1";
-let Transform470 = browser.currentScene.createNode("Transform");
-Transform470.translation = new SFVec3f(new float[-2.8645,0.0194,2.4285]);
-let Transform471 = browser.currentScene.createNode("Transform");
-let Shape472 = browser.currentScene.createNode("Shape");
-Shape472.USE = "HAnimJointShape";
-Transform471.child = new undefined();
+Transform484.children = new MFNode();
 
-Transform471.child[0] = Shape472;
+Transform484.children[0] = Transform485;
 
-Transform470.children = new MFNode();
+HAnimSegment483.children = new MFNode();
 
-Transform470.children[0] = Transform471;
+HAnimSegment483.children[0] = Transform484;
 
-HAnimSegment469.children = new MFNode();
+let Shape487 = browser.currentScene.createNode("Shape");
+let LineSet488 = browser.currentScene.createNode("LineSet");
+LineSet488.vertexCount = new MFInt32(new int[2]);
+let Coordinate489 = browser.currentScene.createNode("Coordinate");
+Coordinate489.point = new MFVec3f(new float[-2.7535,0.0077,4.6255,-2.7535,0.0077,4.6255]);
+LineSet488.coord = Coordinate489;
 
-HAnimSegment469.children[0] = Transform470;
+//from r_metatarsophalangeal_1 to r_tarsal_interphalangeal_1 vertices 2
+let ColorRGBA490 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA490.USE = "HAnimSegmentLineColorRGBA";
+LineSet488.color = ColorRGBA490;
 
-let Shape473 = browser.currentScene.createNode("Shape");
-let LineSet474 = browser.currentScene.createNode("LineSet");
-LineSet474.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA475 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA475.USE = "HAnimSegmentLineColorRGBA";
-LineSet474.color = ColorRGBA475;
+Shape487.geometry = LineSet488;
 
-let Coordinate476 = browser.currentScene.createNode("Coordinate");
-Coordinate476.point = new MFVec3f(new float[-2.8645,0.0194,2.4285,-2.7535,0.0077,4.6255]);
-LineSet474.coord = Coordinate476;
+HAnimSegment483.children[1] = Shape487;
 
-Shape473.geometry = LineSet474;
+let HAnimSite491 = browser.currentScene.createNode("HAnimSite");
+HAnimSite491.name = "r_tarsal_distal_phalanx_1_tip";
+HAnimSite491.DEF = "hanim_r_tarsal_distal_phalanx_1_tip";
+let TouchSensor492 = browser.currentScene.createNode("TouchSensor");
+TouchSensor492.description = "HAnimSite r_tarsal_distal_phalanx_1_tip";
+HAnimSite491.children = new MFNode();
 
-HAnimSegment469.children[1] = Shape473;
+HAnimSite491.children[0] = TouchSensor492;
 
-let HAnimSite477 = browser.currentScene.createNode("HAnimSite");
-HAnimSite477.DEF = "hanim_r_metatarsal_phalanx_1_pt";
-HAnimSite477.name = "r_metatarsal_phalanx_1_pt";
-let TouchSensor478 = browser.currentScene.createNode("TouchSensor");
-TouchSensor478.description = "HAnimSite r_metatarsal_phalanx_1_pt";
-HAnimSite477.children = new MFNode();
+let Shape493 = browser.currentScene.createNode("Shape");
+Shape493.USE = "HAnimSiteShape";
+HAnimSite491.children[1] = Shape493;
 
-HAnimSite477.children[0] = TouchSensor478;
+HAnimSegment483.children[2] = HAnimSite491;
 
-let Shape479 = browser.currentScene.createNode("Shape");
-Shape479.USE = "HAnimSiteShape";
-HAnimSite477.children[1] = Shape479;
+HAnimJoint482.children = new MFNode();
 
-HAnimSegment469.children[2] = HAnimSite477;
+HAnimJoint482.children[0] = HAnimSegment483;
 
-HAnimJoint468.children = new MFNode();
+let HAnimJoint494 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint494.name = "r_tarsal_interphalangeal_1";
+HAnimJoint494.DEF = "hanim_r_tarsal_interphalangeal_1";
+HAnimJoint494.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint494.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint482.children[1] = HAnimJoint494;
 
-HAnimJoint468.children[0] = HAnimSegment469;
+HAnimJoint470.children[1] = HAnimJoint482;
 
-let HAnimJoint480 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint480.DEF = "hanim_r_metatarsophalangeal_1";
-HAnimJoint480.name = "r_metatarsophalangeal_1";
-HAnimJoint480.center = new SFVec3f(new float[-2.7535,0.0077,4.6255]);
-let HAnimSegment481 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment481.DEF = "hanim_r_tarsal_proximal_phalanx_1";
-HAnimSegment481.name = "r_tarsal_proximal_phalanx_1";
-let Transform482 = browser.currentScene.createNode("Transform");
-Transform482.translation = new SFVec3f(new float[-2.7535,0.0077,4.6255]);
-let Transform483 = browser.currentScene.createNode("Transform");
-let Shape484 = browser.currentScene.createNode("Shape");
-Shape484.USE = "HAnimJointShape";
-Transform483.child = new undefined();
+HAnimJoint461.children[1] = HAnimJoint470;
 
-Transform483.child[0] = Shape484;
+HAnimJoint444.children[1] = HAnimJoint461;
 
-Transform482.children = new MFNode();
+let HAnimJoint495 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint495.name = "r_cuneonavicular_2";
+HAnimJoint495.DEF = "hanim_r_cuneonavicular_2";
+HAnimJoint495.center = new SFVec3f(new float[-3.6105,0.033,1.4168]);
+HAnimJoint495.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint495.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment496 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment496.name = "r_cuneiform_2";
+HAnimSegment496.DEF = "hanim_r_cuneiform_2";
+let Transform497 = browser.currentScene.createNode("Transform");
+Transform497.translation = new SFVec3f(new float[-3.6105,0.033,1.4168]);
+let Transform498 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape499 = browser.currentScene.createNode("Shape");
+Shape499.USE = "HAnimJointShape";
+Transform498.child = new undefined();
 
-Transform482.children[0] = Transform483;
+Transform498.child[0] = Shape499;
 
-HAnimSegment481.children = new MFNode();
+Transform497.children = new MFNode();
 
-HAnimSegment481.children[0] = Transform482;
+Transform497.children[0] = Transform498;
 
-let Shape485 = browser.currentScene.createNode("Shape");
-let LineSet486 = browser.currentScene.createNode("LineSet");
-LineSet486.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA487 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA487.USE = "HAnimSegmentLineColorRGBA";
-LineSet486.color = ColorRGBA487;
+HAnimSegment496.children = new MFNode();
 
-let Coordinate488 = browser.currentScene.createNode("Coordinate");
-Coordinate488.point = new MFVec3f(new float[-2.7535,0.0077,4.6255,-2.7535,0.0077,4.6255]);
-LineSet486.coord = Coordinate488;
+HAnimSegment496.children[0] = Transform497;
 
-Shape485.geometry = LineSet486;
+let Shape500 = browser.currentScene.createNode("Shape");
+let LineSet501 = browser.currentScene.createNode("LineSet");
+LineSet501.vertexCount = new MFInt32(new int[2]);
+let Coordinate502 = browser.currentScene.createNode("Coordinate");
+Coordinate502.point = new MFVec3f(new float[-3.6105,0.033,1.4168,-3.5565,0.0232,2.2895]);
+LineSet501.coord = Coordinate502;
 
-HAnimSegment481.children[1] = Shape485;
+//from r_cuneonavicular_2 to r_tarsometatarsal_2 vertices 2
+let ColorRGBA503 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA503.USE = "HAnimSegmentLineColorRGBA";
+LineSet501.color = ColorRGBA503;
 
-let HAnimSite489 = browser.currentScene.createNode("HAnimSite");
-HAnimSite489.DEF = "hanim_r_tarsal_distal_phalanx_1_tip";
-HAnimSite489.name = "r_tarsal_distal_phalanx_1_tip";
-let TouchSensor490 = browser.currentScene.createNode("TouchSensor");
-TouchSensor490.description = "HAnimSite r_tarsal_distal_phalanx_1_tip";
-HAnimSite489.children = new MFNode();
+Shape500.geometry = LineSet501;
 
-HAnimSite489.children[0] = TouchSensor490;
+HAnimSegment496.children[1] = Shape500;
 
-let Shape491 = browser.currentScene.createNode("Shape");
-Shape491.USE = "HAnimSiteShape";
-HAnimSite489.children[1] = Shape491;
+HAnimJoint495.children = new MFNode();
 
-HAnimSegment481.children[2] = HAnimSite489;
+HAnimJoint495.children[0] = HAnimSegment496;
 
-HAnimJoint480.children = new MFNode();
+let HAnimJoint504 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint504.name = "r_tarsometatarsal_2";
+HAnimJoint504.DEF = "hanim_r_tarsometatarsal_2";
+HAnimJoint504.center = new SFVec3f(new float[-3.5565,0.0232,2.2895]);
+HAnimJoint504.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint504.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment505 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment505.name = "r_metatarsal_2";
+HAnimSegment505.DEF = "hanim_r_metatarsal_2";
+let Transform506 = browser.currentScene.createNode("Transform");
+Transform506.translation = new SFVec3f(new float[-3.5565,0.0232,2.2895]);
+let Transform507 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape508 = browser.currentScene.createNode("Shape");
+Shape508.USE = "HAnimJointShape";
+Transform507.child = new undefined();
 
-HAnimJoint480.children[0] = HAnimSegment481;
+Transform507.child[0] = Shape508;
 
-let HAnimJoint492 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint492.DEF = "hanim_r_tarsal_interphalangeal_1";
-HAnimJoint492.name = "r_tarsal_interphalangeal_1";
-HAnimJoint480.children[1] = HAnimJoint492;
+Transform506.children = new MFNode();
 
-HAnimJoint468.children[1] = HAnimJoint480;
+Transform506.children[0] = Transform507;
 
-HAnimJoint459.children[1] = HAnimJoint468;
+HAnimSegment505.children = new MFNode();
 
-HAnimJoint442.children[1] = HAnimJoint459;
+HAnimSegment505.children[0] = Transform506;
 
-let HAnimJoint493 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint493.DEF = "hanim_r_cuneonavicular_2";
-HAnimJoint493.name = "r_cuneonavicular_2";
-HAnimJoint493.center = new SFVec3f(new float[-3.6105,0.033,1.4168]);
-let HAnimSegment494 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment494.DEF = "hanim_r_cuneiform_2";
-HAnimSegment494.name = "r_cuneiform_2";
-let Transform495 = browser.currentScene.createNode("Transform");
-Transform495.translation = new SFVec3f(new float[-3.6105,0.033,1.4168]);
-let Transform496 = browser.currentScene.createNode("Transform");
-let Shape497 = browser.currentScene.createNode("Shape");
-Shape497.USE = "HAnimJointShape";
-Transform496.child = new undefined();
+let Shape509 = browser.currentScene.createNode("Shape");
+let LineSet510 = browser.currentScene.createNode("LineSet");
+LineSet510.vertexCount = new MFInt32(new int[2]);
+let Coordinate511 = browser.currentScene.createNode("Coordinate");
+Coordinate511.point = new MFVec3f(new float[-3.5565,0.0232,2.2895,-3.6595,0.0085,4.8125]);
+LineSet510.coord = Coordinate511;
 
-Transform496.child[0] = Shape497;
+//from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 2
+let ColorRGBA512 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA512.USE = "HAnimSegmentLineColorRGBA";
+LineSet510.color = ColorRGBA512;
 
-Transform495.children = new MFNode();
+Shape509.geometry = LineSet510;
 
-Transform495.children[0] = Transform496;
+HAnimSegment505.children[1] = Shape509;
 
-HAnimSegment494.children = new MFNode();
+HAnimJoint504.children = new MFNode();
 
-HAnimSegment494.children[0] = Transform495;
+HAnimJoint504.children[0] = HAnimSegment505;
 
-let Shape498 = browser.currentScene.createNode("Shape");
-let LineSet499 = browser.currentScene.createNode("LineSet");
-LineSet499.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA500 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA500.USE = "HAnimSegmentLineColorRGBA";
-LineSet499.color = ColorRGBA500;
+let HAnimJoint513 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint513.name = "r_metatarsophalangeal_2";
+HAnimJoint513.DEF = "hanim_r_metatarsophalangeal_2";
+HAnimJoint513.center = new SFVec3f(new float[-3.6595,0.0085,4.8125]);
+HAnimJoint513.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint513.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment514 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment514.name = "r_tarsal_proximal_phalanx_2";
+HAnimSegment514.DEF = "hanim_r_tarsal_proximal_phalanx_2";
+let Transform515 = browser.currentScene.createNode("Transform");
+Transform515.translation = new SFVec3f(new float[-3.6595,0.0085,4.8125]);
+let Transform516 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape517 = browser.currentScene.createNode("Shape");
+Shape517.USE = "HAnimJointShape";
+Transform516.child = new undefined();
 
-let Coordinate501 = browser.currentScene.createNode("Coordinate");
-Coordinate501.point = new MFVec3f(new float[-3.6105,0.033,1.4168,-3.5565,0.0232,2.2895]);
-LineSet499.coord = Coordinate501;
+Transform516.child[0] = Shape517;
 
-Shape498.geometry = LineSet499;
+Transform515.children = new MFNode();
 
-HAnimSegment494.children[1] = Shape498;
+Transform515.children[0] = Transform516;
 
-HAnimJoint493.children = new MFNode();
+HAnimSegment514.children = new MFNode();
 
-HAnimJoint493.children[0] = HAnimSegment494;
+HAnimSegment514.children[0] = Transform515;
 
-let HAnimJoint502 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint502.DEF = "hanim_r_tarsometatarsal_2";
-HAnimJoint502.name = "r_tarsometatarsal_2";
-HAnimJoint502.center = new SFVec3f(new float[-3.5565,0.0232,2.2895]);
-let HAnimSegment503 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment503.DEF = "hanim_r_metatarsal_2";
-HAnimSegment503.name = "r_metatarsal_2";
-let Transform504 = browser.currentScene.createNode("Transform");
-Transform504.translation = new SFVec3f(new float[-3.5565,0.0232,2.2895]);
-let Transform505 = browser.currentScene.createNode("Transform");
-let Shape506 = browser.currentScene.createNode("Shape");
-Shape506.USE = "HAnimJointShape";
-Transform505.child = new undefined();
+let Shape518 = browser.currentScene.createNode("Shape");
+let LineSet519 = browser.currentScene.createNode("LineSet");
+LineSet519.vertexCount = new MFInt32(new int[2]);
+let Coordinate520 = browser.currentScene.createNode("Coordinate");
+Coordinate520.point = new MFVec3f(new float[-3.6595,0.0085,4.8125,-3.7385,0.0054,5.5315]);
+LineSet519.coord = Coordinate520;
 
-Transform505.child[0] = Shape506;
+//from r_metatarsophalangeal_2 to r_tarsal_proximal_interphalangeal_2 vertices 2
+let ColorRGBA521 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA521.USE = "HAnimSegmentLineColorRGBA";
+LineSet519.color = ColorRGBA521;
 
-Transform504.children = new MFNode();
+Shape518.geometry = LineSet519;
 
-Transform504.children[0] = Transform505;
+HAnimSegment514.children[1] = Shape518;
 
-HAnimSegment503.children = new MFNode();
+HAnimJoint513.children = new MFNode();
 
-HAnimSegment503.children[0] = Transform504;
+HAnimJoint513.children[0] = HAnimSegment514;
 
-let Shape507 = browser.currentScene.createNode("Shape");
-let LineSet508 = browser.currentScene.createNode("LineSet");
-LineSet508.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA509 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA509.USE = "HAnimSegmentLineColorRGBA";
-LineSet508.color = ColorRGBA509;
+let HAnimJoint522 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint522.name = "r_tarsal_proximal_interphalangeal_2";
+HAnimJoint522.DEF = "hanim_r_tarsal_proximal_interphalangeal_2";
+HAnimJoint522.center = new SFVec3f(new float[-3.7385,0.0054,5.5315]);
+HAnimJoint522.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint522.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment523 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment523.name = "r_tarsal_middle_phalanx_2";
+HAnimSegment523.DEF = "hanim_r_tarsal_middle_phalanx_2";
+let Transform524 = browser.currentScene.createNode("Transform");
+Transform524.translation = new SFVec3f(new float[-3.7385,0.0054,5.5315]);
+let Transform525 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape526 = browser.currentScene.createNode("Shape");
+Shape526.USE = "HAnimJointShape";
+Transform525.child = new undefined();
 
-let Coordinate510 = browser.currentScene.createNode("Coordinate");
-Coordinate510.point = new MFVec3f(new float[-3.5565,0.0232,2.2895,-3.6595,0.0085,4.8125]);
-LineSet508.coord = Coordinate510;
+Transform525.child[0] = Shape526;
 
-Shape507.geometry = LineSet508;
+Transform524.children = new MFNode();
 
-HAnimSegment503.children[1] = Shape507;
+Transform524.children[0] = Transform525;
 
-HAnimJoint502.children = new MFNode();
+HAnimSegment523.children = new MFNode();
 
-HAnimJoint502.children[0] = HAnimSegment503;
+HAnimSegment523.children[0] = Transform524;
 
-let HAnimJoint511 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint511.DEF = "hanim_r_metatarsophalangeal_2";
-HAnimJoint511.name = "r_metatarsophalangeal_2";
-HAnimJoint511.center = new SFVec3f(new float[-3.6595,0.0085,4.8125]);
-let HAnimSegment512 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment512.DEF = "hanim_r_tarsal_proximal_phalanx_2";
-HAnimSegment512.name = "r_tarsal_proximal_phalanx_2";
-let Transform513 = browser.currentScene.createNode("Transform");
-Transform513.translation = new SFVec3f(new float[-3.6595,0.0085,4.8125]);
-let Transform514 = browser.currentScene.createNode("Transform");
-let Shape515 = browser.currentScene.createNode("Shape");
-Shape515.USE = "HAnimJointShape";
-Transform514.child = new undefined();
+let Shape527 = browser.currentScene.createNode("Shape");
+let LineSet528 = browser.currentScene.createNode("LineSet");
+LineSet528.vertexCount = new MFInt32(new int[2]);
+let Coordinate529 = browser.currentScene.createNode("Coordinate");
+Coordinate529.point = new MFVec3f(new float[-3.7385,0.0054,5.5315,-3.7385,0.0017,5.9505]);
+LineSet528.coord = Coordinate529;
 
-Transform514.child[0] = Shape515;
+//from r_tarsal_proximal_interphalangeal_2 to r_tarsal_distal_interphalangeal_2 vertices 2
+let ColorRGBA530 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA530.USE = "HAnimSegmentLineColorRGBA";
+LineSet528.color = ColorRGBA530;
 
-Transform513.children = new MFNode();
+Shape527.geometry = LineSet528;
 
-Transform513.children[0] = Transform514;
+HAnimSegment523.children[1] = Shape527;
 
-HAnimSegment512.children = new MFNode();
+let HAnimSite531 = browser.currentScene.createNode("HAnimSite");
+HAnimSite531.name = "r_tarsal_distal_phalanx_2_tip";
+HAnimSite531.DEF = "hanim_r_tarsal_distal_phalanx_2_tip";
+HAnimSite531.translation = new SFVec3f(new float[-0.0883,0.0134,0.1383]);
+let TouchSensor532 = browser.currentScene.createNode("TouchSensor");
+TouchSensor532.description = "HAnimSite r_tarsal_distal_phalanx_2_tip";
+HAnimSite531.children = new MFNode();
 
-HAnimSegment512.children[0] = Transform513;
+HAnimSite531.children[0] = TouchSensor532;
 
-let Shape516 = browser.currentScene.createNode("Shape");
-let LineSet517 = browser.currentScene.createNode("LineSet");
-LineSet517.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA518 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA518.USE = "HAnimSegmentLineColorRGBA";
-LineSet517.color = ColorRGBA518;
+let Shape533 = browser.currentScene.createNode("Shape");
+Shape533.USE = "HAnimSiteShape";
+HAnimSite531.children[1] = Shape533;
 
-let Coordinate519 = browser.currentScene.createNode("Coordinate");
-Coordinate519.point = new MFVec3f(new float[-3.6595,0.0085,4.8125,-3.7385,0.0054,5.5315]);
-LineSet517.coord = Coordinate519;
+HAnimSegment523.children[2] = HAnimSite531;
 
-Shape516.geometry = LineSet517;
+HAnimJoint522.children = new MFNode();
 
-HAnimSegment512.children[1] = Shape516;
+HAnimJoint522.children[0] = HAnimSegment523;
 
-HAnimJoint511.children = new MFNode();
+let HAnimJoint534 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint534.name = "r_tarsal_distal_interphalangeal_2";
+HAnimJoint534.DEF = "hanim_r_tarsal_distal_interphalangeal_2";
+HAnimJoint534.center = new SFVec3f(new float[-3.7385,0.0017,5.9505]);
+HAnimJoint534.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint534.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint522.children[1] = HAnimJoint534;
 
-HAnimJoint511.children[0] = HAnimSegment512;
+HAnimJoint513.children[1] = HAnimJoint522;
 
-let HAnimJoint520 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint520.DEF = "hanim_r_tarsal_proximal_interphalangeal_1";
-HAnimJoint520.name = "r_tarsal_proximal_interphalangeal_2";
-HAnimJoint520.center = new SFVec3f(new float[-3.7385,0.0054,5.5315]);
-let HAnimSegment521 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment521.DEF = "hanim_r_tarsal_middle_phalanx_1";
-HAnimSegment521.name = "r_tarsal_middle_phalanx_2";
-let Transform522 = browser.currentScene.createNode("Transform");
-Transform522.translation = new SFVec3f(new float[-3.7385,0.0054,5.5315]);
-let Transform523 = browser.currentScene.createNode("Transform");
-let Shape524 = browser.currentScene.createNode("Shape");
-Shape524.USE = "HAnimJointShape";
-Transform523.child = new undefined();
+HAnimJoint504.children[1] = HAnimJoint513;
 
-Transform523.child[0] = Shape524;
+HAnimJoint495.children[1] = HAnimJoint504;
 
-Transform522.children = new MFNode();
+HAnimJoint444.children[2] = HAnimJoint495;
 
-Transform522.children[0] = Transform523;
+let HAnimJoint535 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint535.name = "r_cuneonavicular_3";
+HAnimJoint535.DEF = "hanim_r_cuneonavicular_3";
+HAnimJoint535.center = new SFVec3f(new float[-4.1245,0.0328,1.3453]);
+HAnimJoint535.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint535.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment536 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment536.name = "r_cuneiform_3";
+HAnimSegment536.DEF = "hanim_r_cuneiform_3";
+let Transform537 = browser.currentScene.createNode("Transform");
+Transform537.translation = new SFVec3f(new float[-4.1245,0.0328,1.3453]);
+let Transform538 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape539 = browser.currentScene.createNode("Shape");
+Shape539.USE = "HAnimJointShape";
+Transform538.child = new undefined();
 
-HAnimSegment521.children = new MFNode();
+Transform538.child[0] = Shape539;
 
-HAnimSegment521.children[0] = Transform522;
+Transform537.children = new MFNode();
 
-let Shape525 = browser.currentScene.createNode("Shape");
-let LineSet526 = browser.currentScene.createNode("LineSet");
-LineSet526.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA527 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA527.USE = "HAnimSegmentLineColorRGBA";
-LineSet526.color = ColorRGBA527;
+Transform537.children[0] = Transform538;
 
-let Coordinate528 = browser.currentScene.createNode("Coordinate");
-Coordinate528.point = new MFVec3f(new float[-3.7385,0.0054,5.5315,-3.7385,0.0017,5.9505]);
-LineSet526.coord = Coordinate528;
+HAnimSegment536.children = new MFNode();
 
-Shape525.geometry = LineSet526;
+HAnimSegment536.children[0] = Transform537;
 
-HAnimSegment521.children[1] = Shape525;
+let Shape540 = browser.currentScene.createNode("Shape");
+let LineSet541 = browser.currentScene.createNode("LineSet");
+LineSet541.vertexCount = new MFInt32(new int[2]);
+let Coordinate542 = browser.currentScene.createNode("Coordinate");
+Coordinate542.point = new MFVec3f(new float[-4.1245,0.0328,1.3453,-3.7385,0.0017,5.9505]);
+LineSet541.coord = Coordinate542;
 
-let HAnimSite529 = browser.currentScene.createNode("HAnimSite");
-HAnimSite529.DEF = "hanim_r_tarsal_distal_phalanx_2_tip";
-HAnimSite529.name = "r_tarsal_distal_phalanx_2_tip";
-HAnimSite529.translation = new SFVec3f(new float[-0.0883,0.0134,0.1383]);
-let TouchSensor530 = browser.currentScene.createNode("TouchSensor");
-TouchSensor530.description = "HAnimSite r_tarsal_distal_phalanx_2_tip";
-HAnimSite529.children = new MFNode();
+//from r_cuneonavicular_3 to r_tarsometatarsal_3 vertices 2
+let ColorRGBA543 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA543.USE = "HAnimSegmentLineColorRGBA";
+LineSet541.color = ColorRGBA543;
 
-HAnimSite529.children[0] = TouchSensor530;
+Shape540.geometry = LineSet541;
 
-let Shape531 = browser.currentScene.createNode("Shape");
-Shape531.USE = "HAnimSiteShape";
-HAnimSite529.children[1] = Shape531;
+HAnimSegment536.children[1] = Shape540;
 
-HAnimSegment521.children[2] = HAnimSite529;
+HAnimJoint535.children = new MFNode();
 
-HAnimJoint520.children = new MFNode();
+HAnimJoint535.children[0] = HAnimSegment536;
 
-HAnimJoint520.children[0] = HAnimSegment521;
+let HAnimJoint544 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint544.name = "r_tarsometatarsal_3";
+HAnimJoint544.DEF = "hanim_r_tarsometatarsal_3";
+HAnimJoint544.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint544.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment545 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment545.name = "r_metatarsal_3";
+HAnimSegment545.DEF = "hanim_r_metatarsal_3";
+let Transform546 = browser.currentScene.createNode("Transform");
+Transform546.translation = new SFVec3f(new float[-4.1245,0.0328,1.3453]);
+let Transform547 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape548 = browser.currentScene.createNode("Shape");
+Shape548.USE = "HAnimJointShape";
+Transform547.child = new undefined();
 
-let HAnimJoint532 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint532.DEF = "hanim_r_tarsal_distal_interphalangeal_1";
-HAnimJoint532.name = "r_tarsal_distal_interphalangeal_2";
-HAnimJoint532.center = new SFVec3f(new float[-3.7385,0.0017,5.9505]);
-HAnimJoint520.children[1] = HAnimJoint532;
+Transform547.child[0] = Shape548;
 
-HAnimJoint511.children[1] = HAnimJoint520;
+Transform546.children = new MFNode();
 
-HAnimJoint502.children[1] = HAnimJoint511;
+Transform546.children[0] = Transform547;
 
-HAnimJoint493.children[1] = HAnimJoint502;
+HAnimSegment545.children = new MFNode();
 
-HAnimJoint442.children[2] = HAnimJoint493;
+HAnimSegment545.children[0] = Transform546;
 
-let HAnimJoint533 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint533.DEF = "hanim_r_cuneonavicular_3";
-HAnimJoint533.name = "r_cuneonavicular_3";
-HAnimJoint533.center = new SFVec3f(new float[-4.1245,0.0328,1.3453]);
-let HAnimSegment534 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment534.DEF = "hanim_r_cuneiform_3";
-HAnimSegment534.name = "r_cuneiform_3";
-let Transform535 = browser.currentScene.createNode("Transform");
-Transform535.translation = new SFVec3f(new float[-4.1245,0.0328,1.3453]);
-let Transform536 = browser.currentScene.createNode("Transform");
-let Shape537 = browser.currentScene.createNode("Shape");
-Shape537.USE = "HAnimJointShape";
-Transform536.child = new undefined();
+let Shape549 = browser.currentScene.createNode("Shape");
+let LineSet550 = browser.currentScene.createNode("LineSet");
+LineSet550.vertexCount = new MFInt32(new int[2]);
+let Coordinate551 = browser.currentScene.createNode("Coordinate");
+Coordinate551.point = new MFVec3f(new float[-4.2795,0.0086,4.7055]);
+LineSet550.coord = Coordinate551;
 
-Transform536.child[0] = Shape537;
+//from r_tarsometatarsal_3 to r_metatarsophalangeal_3 vertices 1
+let ColorRGBA552 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA552.USE = "HAnimSegmentLineColorRGBA";
+LineSet550.color = ColorRGBA552;
 
-Transform535.children = new MFNode();
+Shape549.geometry = LineSet550;
 
-Transform535.children[0] = Transform536;
+HAnimSegment545.children[1] = Shape549;
 
-HAnimSegment534.children = new MFNode();
+HAnimJoint544.children = new MFNode();
 
-HAnimSegment534.children[0] = Transform535;
+HAnimJoint544.children[0] = HAnimSegment545;
 
-let Shape538 = browser.currentScene.createNode("Shape");
-let LineSet539 = browser.currentScene.createNode("LineSet");
-LineSet539.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA540 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA540.USE = "HAnimSegmentLineColorRGBA";
-LineSet539.color = ColorRGBA540;
+let HAnimJoint553 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint553.name = "r_metatarsophalangeal_3";
+HAnimJoint553.DEF = "hanim_r_metatarsophalangeal_3";
+HAnimJoint553.center = new SFVec3f(new float[-4.2795,0.0086,4.7055]);
+HAnimJoint553.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint553.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment554 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment554.name = "r_tarsal_proximal_phalanx_3";
+HAnimSegment554.DEF = "hanim_r_tarsal_proximal_phalanx_3";
+let Transform555 = browser.currentScene.createNode("Transform");
+Transform555.translation = new SFVec3f(new float[-4.2795,0.0086,4.7055]);
+let Transform556 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape557 = browser.currentScene.createNode("Shape");
+Shape557.USE = "HAnimJointShape";
+Transform556.child = new undefined();
 
-let Coordinate541 = browser.currentScene.createNode("Coordinate");
-Coordinate541.point = new MFVec3f(new float[-4.1245,0.0328,1.3453,-3.7385,0.0017,5.9505]);
-LineSet539.coord = Coordinate541;
+Transform556.child[0] = Shape557;
 
-Shape538.geometry = LineSet539;
+Transform555.children = new MFNode();
 
-HAnimSegment534.children[1] = Shape538;
+Transform555.children[0] = Transform556;
 
-HAnimJoint533.children = new MFNode();
+HAnimSegment554.children = new MFNode();
 
-HAnimJoint533.children[0] = HAnimSegment534;
+HAnimSegment554.children[0] = Transform555;
 
-let HAnimJoint542 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint542.DEF = "hanim_r_tarsometatarsal_3 ";
-HAnimJoint542.name = "r_tarsometatarsal_3 ";
-let HAnimSegment543 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment543.DEF = "hanim_r_metatarsal_3";
-HAnimSegment543.name = "r_metatarsal_3";
-let Transform544 = browser.currentScene.createNode("Transform");
-Transform544.translation = new SFVec3f(new float[-4.1245,0.0328,1.3453]);
-let Transform545 = browser.currentScene.createNode("Transform");
-let Shape546 = browser.currentScene.createNode("Shape");
-Shape546.USE = "HAnimJointShape";
-Transform545.child = new undefined();
+let Shape558 = browser.currentScene.createNode("Shape");
+let LineSet559 = browser.currentScene.createNode("LineSet");
+LineSet559.vertexCount = new MFInt32(new int[2]);
+let Coordinate560 = browser.currentScene.createNode("Coordinate");
+Coordinate560.point = new MFVec3f(new float[-4.2795,0.0086,4.7055,-4.3865,0.0044,5.3745]);
+LineSet559.coord = Coordinate560;
 
-Transform545.child[0] = Shape546;
+//from r_metatarsophalangeal_3 to r_tarsal_proximal_interphalangeal_3 vertices 2
+let ColorRGBA561 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA561.USE = "HAnimSegmentLineColorRGBA";
+LineSet559.color = ColorRGBA561;
 
-Transform544.children = new MFNode();
+Shape558.geometry = LineSet559;
 
-Transform544.children[0] = Transform545;
+HAnimSegment554.children[1] = Shape558;
 
-HAnimSegment543.children = new MFNode();
+HAnimJoint553.children = new MFNode();
 
-HAnimSegment543.children[0] = Transform544;
+HAnimJoint553.children[0] = HAnimSegment554;
 
-let Shape547 = browser.currentScene.createNode("Shape");
-let LineSet548 = browser.currentScene.createNode("LineSet");
-LineSet548.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA549 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA549.USE = "HAnimSegmentLineColorRGBA";
-LineSet548.color = ColorRGBA549;
+let HAnimJoint562 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint562.name = "r_tarsal_proximal_interphalangeal_3";
+HAnimJoint562.DEF = "hanim_r_tarsal_proximal_interphalangeal_3";
+HAnimJoint562.center = new SFVec3f(new float[-4.3865,0.0044,5.3745]);
+HAnimJoint562.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint562.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment563 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment563.name = "r_tarsal_middle_phalanx_3";
+HAnimSegment563.DEF = "hanim_r_tarsal_middle_phalanx_3";
+let Transform564 = browser.currentScene.createNode("Transform");
+Transform564.translation = new SFVec3f(new float[-4.3865,0.0044,5.3745]);
+let Transform565 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape566 = browser.currentScene.createNode("Shape");
+Shape566.USE = "HAnimJointShape";
+Transform565.child = new undefined();
 
-let Coordinate550 = browser.currentScene.createNode("Coordinate");
-Coordinate550.point = new MFVec3f(new float[-4.2795,0.0086,4.7055]);
-LineSet548.coord = Coordinate550;
+Transform565.child[0] = Shape566;
 
-Shape547.geometry = LineSet548;
+Transform564.children = new MFNode();
 
-HAnimSegment543.children[1] = Shape547;
+Transform564.children[0] = Transform565;
 
-HAnimJoint542.children = new MFNode();
+HAnimSegment563.children = new MFNode();
 
-HAnimJoint542.children[0] = HAnimSegment543;
+HAnimSegment563.children[0] = Transform564;
 
-let HAnimJoint551 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint551.DEF = "hanim_r_metatarsophalangeal_3";
-HAnimJoint551.name = "r_metatarsophalangeal_3";
-HAnimJoint551.center = new SFVec3f(new float[-4.2795,0.0086,4.7055]);
-let HAnimSegment552 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment552.DEF = "hanim_r_tarsal_proximal_phalanx_3";
-HAnimSegment552.name = "r_tarsal_proximal_phalanx_3";
-let Transform553 = browser.currentScene.createNode("Transform");
-Transform553.translation = new SFVec3f(new float[-4.2795,0.0086,4.7055]);
-let Transform554 = browser.currentScene.createNode("Transform");
-let Shape555 = browser.currentScene.createNode("Shape");
-Shape555.USE = "HAnimJointShape";
-Transform554.child = new undefined();
+let Shape567 = browser.currentScene.createNode("Shape");
+let LineSet568 = browser.currentScene.createNode("LineSet");
+LineSet568.vertexCount = new MFInt32(new int[2]);
+let Coordinate569 = browser.currentScene.createNode("Coordinate");
+Coordinate569.point = new MFVec3f(new float[-4.3865,0.0044,5.3745,-4.4545,0.0017,5.7845]);
+LineSet568.coord = Coordinate569;
 
-Transform554.child[0] = Shape555;
+//from r_tarsal_proximal_interphalangeal_3 to r_tarsal_distal_interphalangeal_3 vertices 2
+let ColorRGBA570 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA570.USE = "HAnimSegmentLineColorRGBA";
+LineSet568.color = ColorRGBA570;
 
-Transform553.children = new MFNode();
+Shape567.geometry = LineSet568;
 
-Transform553.children[0] = Transform554;
+HAnimSegment563.children[1] = Shape567;
 
-HAnimSegment552.children = new MFNode();
+let HAnimSite571 = browser.currentScene.createNode("HAnimSite");
+HAnimSite571.name = "r_tarsal_distal_phalanx_3_tip";
+HAnimSite571.DEF = "hanim_r_tarsal_distal_phalanx_3_tip";
+let TouchSensor572 = browser.currentScene.createNode("TouchSensor");
+TouchSensor572.description = "HAnimSite r_tarsal_distal_phalanx_3_tip";
+HAnimSite571.children = new MFNode();
 
-HAnimSegment552.children[0] = Transform553;
+HAnimSite571.children[0] = TouchSensor572;
 
-let Shape556 = browser.currentScene.createNode("Shape");
-let LineSet557 = browser.currentScene.createNode("LineSet");
-LineSet557.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA558 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA558.USE = "HAnimSegmentLineColorRGBA";
-LineSet557.color = ColorRGBA558;
+let Shape573 = browser.currentScene.createNode("Shape");
+Shape573.USE = "HAnimSiteShape";
+HAnimSite571.children[1] = Shape573;
 
-let Coordinate559 = browser.currentScene.createNode("Coordinate");
-Coordinate559.point = new MFVec3f(new float[-4.2795,0.0086,4.7055,-4.3865,0.0044,5.3745]);
-LineSet557.coord = Coordinate559;
+HAnimSegment563.children[2] = HAnimSite571;
 
-Shape556.geometry = LineSet557;
+HAnimJoint562.children = new MFNode();
 
-HAnimSegment552.children[1] = Shape556;
+HAnimJoint562.children[0] = HAnimSegment563;
 
-HAnimJoint551.children = new MFNode();
+let HAnimJoint574 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint574.name = "r_tarsal_distal_interphalangeal_3";
+HAnimJoint574.DEF = "hanim_r_tarsal_distal_interphalangeal_3";
+HAnimJoint574.center = new SFVec3f(new float[-4.4545,0.0017,5.7845]);
+HAnimJoint574.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint574.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint562.children[1] = HAnimJoint574;
 
-HAnimJoint551.children[0] = HAnimSegment552;
+HAnimJoint553.children[1] = HAnimJoint562;
 
-let HAnimJoint560 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint560.DEF = "hanim_r_tarsal_proximal_interphalangeal_2";
-HAnimJoint560.name = "r_tarsal_proximal_interphalangeal_3";
-HAnimJoint560.center = new SFVec3f(new float[-4.3865,0.0044,5.3745]);
-let HAnimSegment561 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment561.DEF = "hanim_r_tarsal_middle_phalanx_2";
-HAnimSegment561.name = "r_tarsal_middle_phalanx_3";
-let Transform562 = browser.currentScene.createNode("Transform");
-Transform562.translation = new SFVec3f(new float[-4.3865,0.0044,5.3745]);
-let Transform563 = browser.currentScene.createNode("Transform");
-let Shape564 = browser.currentScene.createNode("Shape");
-Shape564.USE = "HAnimJointShape";
-Transform563.child = new undefined();
+HAnimJoint544.children[1] = HAnimJoint553;
 
-Transform563.child[0] = Shape564;
+HAnimJoint535.children[1] = HAnimJoint544;
 
-Transform562.children = new MFNode();
+HAnimJoint444.children[3] = HAnimJoint535;
 
-Transform562.children[0] = Transform563;
+HAnimJoint431.children[1] = HAnimJoint444;
 
-HAnimSegment561.children = new MFNode();
+let HAnimJoint575 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint575.name = "r_calcaneocuboid";
+HAnimJoint575.DEF = "hanim_r_calcaneocuboid";
+HAnimJoint575.center = new SFVec3f(new float[-3.9515,0.0653,-0.6895]);
+HAnimJoint575.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint575.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment576 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment576.name = "r_calcaneus";
+HAnimSegment576.DEF = "hanim_r_calcaneus";
+let Transform577 = browser.currentScene.createNode("Transform");
+Transform577.translation = new SFVec3f(new float[-3.9515,0.0653,-0.6895]);
+let Transform578 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape579 = browser.currentScene.createNode("Shape");
+Shape579.USE = "HAnimJointShape";
+Transform578.child = new undefined();
 
-HAnimSegment561.children[0] = Transform562;
+Transform578.child[0] = Shape579;
 
-let Shape565 = browser.currentScene.createNode("Shape");
-let LineSet566 = browser.currentScene.createNode("LineSet");
-LineSet566.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA567 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA567.USE = "HAnimSegmentLineColorRGBA";
-LineSet566.color = ColorRGBA567;
+Transform577.children = new MFNode();
 
-let Coordinate568 = browser.currentScene.createNode("Coordinate");
-Coordinate568.point = new MFVec3f(new float[-4.3865,0.0044,5.3745,-4.4545,0.0017,5.7845]);
-LineSet566.coord = Coordinate568;
+Transform577.children[0] = Transform578;
 
-Shape565.geometry = LineSet566;
+HAnimSegment576.children = new MFNode();
 
-HAnimSegment561.children[1] = Shape565;
+HAnimSegment576.children[0] = Transform577;
 
-let HAnimSite569 = browser.currentScene.createNode("HAnimSite");
-HAnimSite569.DEF = "hanim_r_tarsal_distal_phalanx_3_tip";
-HAnimSite569.name = "r_tarsal_distal_phalanx_3_tip";
-let TouchSensor570 = browser.currentScene.createNode("TouchSensor");
-TouchSensor570.description = "HAnimSite r_tarsal_distal_phalanx_3_tip";
-HAnimSite569.children = new MFNode();
+let Shape580 = browser.currentScene.createNode("Shape");
+let LineSet581 = browser.currentScene.createNode("LineSet");
+LineSet581.vertexCount = new MFInt32(new int[2]);
+let Coordinate582 = browser.currentScene.createNode("Coordinate");
+Coordinate582.point = new MFVec3f(new float[-3.9515,0.0653,-0.6895,-4.9095,0.0353,0.5574]);
+LineSet581.coord = Coordinate582;
 
-HAnimSite569.children[0] = TouchSensor570;
+//from r_calcaneocuboid to r_transversetarsal vertices 2
+let ColorRGBA583 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA583.USE = "HAnimSegmentLineColorRGBA";
+LineSet581.color = ColorRGBA583;
 
-let Shape571 = browser.currentScene.createNode("Shape");
-Shape571.USE = "HAnimSiteShape";
-HAnimSite569.children[1] = Shape571;
+Shape580.geometry = LineSet581;
 
-HAnimSegment561.children[2] = HAnimSite569;
+HAnimSegment576.children[1] = Shape580;
 
-HAnimJoint560.children = new MFNode();
+HAnimJoint575.children = new MFNode();
 
-HAnimJoint560.children[0] = HAnimSegment561;
+HAnimJoint575.children[0] = HAnimSegment576;
 
-let HAnimJoint572 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint572.DEF = "hanim_r_tarsal_distal_interphalangeal_2";
-HAnimJoint572.name = "r_tarsal_distal_interphalangeal_3";
-HAnimJoint572.center = new SFVec3f(new float[-4.4545,0.0017,5.7845]);
-HAnimJoint560.children[1] = HAnimJoint572;
+let HAnimJoint584 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint584.name = "r_transversetarsal";
+HAnimJoint584.DEF = "hanim_r_transversetarsal";
+HAnimJoint584.center = new SFVec3f(new float[-4.9095,0.0353,0.5574]);
+HAnimJoint584.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint584.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment585 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment585.name = "r_cuboid";
+HAnimSegment585.DEF = "hanim_r_cuboid";
+let Transform586 = browser.currentScene.createNode("Transform");
+Transform586.translation = new SFVec3f(new float[-4.9095,0.0353,0.5574]);
+let Transform587 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape588 = browser.currentScene.createNode("Shape");
+Shape588.USE = "HAnimJointShape";
+Transform587.child = new undefined();
 
-HAnimJoint551.children[1] = HAnimJoint560;
+Transform587.child[0] = Shape588;
 
-HAnimJoint542.children[1] = HAnimJoint551;
+Transform586.children = new MFNode();
 
-HAnimJoint533.children[1] = HAnimJoint542;
+Transform586.children[0] = Transform587;
 
-HAnimJoint442.children[3] = HAnimJoint533;
+HAnimSegment585.children = new MFNode();
 
-HAnimJoint429.children[1] = HAnimJoint442;
+HAnimSegment585.children[0] = Transform586;
 
-let HAnimJoint573 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint573.DEF = "hanim_r_calcaneocuboid";
-HAnimJoint573.name = "r_calcaneocuboid";
-HAnimJoint573.center = new SFVec3f(new float[-3.9515,0.0653,-0.6895]);
-let HAnimSegment574 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment574.DEF = "hanim_r_calcaneus";
-HAnimSegment574.name = "r_calcaneus";
-let Transform575 = browser.currentScene.createNode("Transform");
-Transform575.translation = new SFVec3f(new float[-3.9515,0.0653,-0.6895]);
-let Transform576 = browser.currentScene.createNode("Transform");
-let Shape577 = browser.currentScene.createNode("Shape");
-Shape577.USE = "HAnimJointShape";
-Transform576.child = new undefined();
+let Shape589 = browser.currentScene.createNode("Shape");
+let LineSet590 = browser.currentScene.createNode("LineSet");
+LineSet590.vertexCount = new MFInt32(new int[2]);
+let Coordinate591 = browser.currentScene.createNode("Coordinate");
+Coordinate591.point = new MFVec3f(new float[-4.9095,0.0353,0.5574,-4.7255,0.0211,2.1725]);
+LineSet590.coord = Coordinate591;
 
-Transform576.child[0] = Shape577;
+//from r_transversetarsal to r_tarsometatarsal_4 vertices 2
+let ColorRGBA592 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA592.USE = "HAnimSegmentLineColorRGBA";
+LineSet590.color = ColorRGBA592;
 
-Transform575.children = new MFNode();
+Shape589.geometry = LineSet590;
 
-Transform575.children[0] = Transform576;
+HAnimSegment585.children[1] = Shape589;
 
-HAnimSegment574.children = new MFNode();
+let Shape593 = browser.currentScene.createNode("Shape");
+let LineSet594 = browser.currentScene.createNode("LineSet");
+LineSet594.vertexCount = new MFInt32(new int[2]);
+let Coordinate595 = browser.currentScene.createNode("Coordinate");
+Coordinate595.point = new MFVec3f(new float[-4.9095,0.0353,0.5574,-5.3615,0.0164,2.0085]);
+LineSet594.coord = Coordinate595;
 
-HAnimSegment574.children[0] = Transform575;
+//from r_transversetarsal to r_tarsometatarsal_5 vertices 2
+let ColorRGBA596 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA596.USE = "HAnimSegmentLineColorRGBA";
+LineSet594.color = ColorRGBA596;
 
-let Shape578 = browser.currentScene.createNode("Shape");
-let LineSet579 = browser.currentScene.createNode("LineSet");
-LineSet579.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA580 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA580.USE = "HAnimSegmentLineColorRGBA";
-LineSet579.color = ColorRGBA580;
+Shape593.geometry = LineSet594;
 
-let Coordinate581 = browser.currentScene.createNode("Coordinate");
-Coordinate581.point = new MFVec3f(new float[-3.9515,0.0653,-0.6895,-4.9095,0.0353,0.5574]);
-LineSet579.coord = Coordinate581;
+HAnimSegment585.children[2] = Shape593;
 
-Shape578.geometry = LineSet579;
+HAnimJoint584.children = new MFNode();
 
-HAnimSegment574.children[1] = Shape578;
+HAnimJoint584.children[0] = HAnimSegment585;
 
-HAnimJoint573.children = new MFNode();
+let HAnimJoint597 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint597.name = "r_tarsometatarsal_4";
+HAnimJoint597.DEF = "hanim_r_tarsometatarsal_4";
+HAnimJoint597.center = new SFVec3f(new float[-4.7255,0.0211,2.1725]);
+HAnimJoint597.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint597.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment598 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment598.name = "r_metatarsal_4";
+HAnimSegment598.DEF = "hanim_r_metatarsal_4";
+let Transform599 = browser.currentScene.createNode("Transform");
+Transform599.translation = new SFVec3f(new float[-4.7255,0.0211,2.1725]);
+let Transform600 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape601 = browser.currentScene.createNode("Shape");
+Shape601.USE = "HAnimJointShape";
+Transform600.child = new undefined();
 
-HAnimJoint573.children[0] = HAnimSegment574;
+Transform600.child[0] = Shape601;
 
-let HAnimJoint582 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint582.DEF = "hanim_r_transversetarsal";
-HAnimJoint582.name = "r_transversetarsal";
-HAnimJoint582.center = new SFVec3f(new float[-4.9095,0.0353,0.5574]);
-let HAnimSegment583 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment583.DEF = "hanim_r_cuboid";
-HAnimSegment583.name = "r_cuboid";
-let Transform584 = browser.currentScene.createNode("Transform");
-Transform584.translation = new SFVec3f(new float[-4.9095,0.0353,0.5574]);
-let Transform585 = browser.currentScene.createNode("Transform");
-let Shape586 = browser.currentScene.createNode("Shape");
-Shape586.USE = "HAnimJointShape";
-Transform585.child = new undefined();
+Transform599.children = new MFNode();
 
-Transform585.child[0] = Shape586;
+Transform599.children[0] = Transform600;
 
-Transform584.children = new MFNode();
+HAnimSegment598.children = new MFNode();
 
-Transform584.children[0] = Transform585;
+HAnimSegment598.children[0] = Transform599;
 
-HAnimSegment583.children = new MFNode();
+let Shape602 = browser.currentScene.createNode("Shape");
+let LineSet603 = browser.currentScene.createNode("LineSet");
+LineSet603.vertexCount = new MFInt32(new int[2]);
+let Coordinate604 = browser.currentScene.createNode("Coordinate");
+Coordinate604.point = new MFVec3f(new float[-4.7255,0.0211,2.1725,-4.8755,0.0076,4.5165]);
+LineSet603.coord = Coordinate604;
 
-HAnimSegment583.children[0] = Transform584;
+//from r_tarsometatarsal_4 to r_metatarsophalangeal_4 vertices 2
+let ColorRGBA605 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA605.USE = "HAnimSegmentLineColorRGBA";
+LineSet603.color = ColorRGBA605;
 
-let Shape587 = browser.currentScene.createNode("Shape");
-let LineSet588 = browser.currentScene.createNode("LineSet");
-LineSet588.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA589 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA589.USE = "HAnimSegmentLineColorRGBA";
-LineSet588.color = ColorRGBA589;
+Shape602.geometry = LineSet603;
 
-let Coordinate590 = browser.currentScene.createNode("Coordinate");
-Coordinate590.point = new MFVec3f(new float[-4.9095,0.0353,0.5574,-4.7255,0.0211,2.1725]);
-LineSet588.coord = Coordinate590;
+HAnimSegment598.children[1] = Shape602;
 
-Shape587.geometry = LineSet588;
+HAnimJoint597.children = new MFNode();
 
-HAnimSegment583.children[1] = Shape587;
+HAnimJoint597.children[0] = HAnimSegment598;
 
-let Shape591 = browser.currentScene.createNode("Shape");
-let LineSet592 = browser.currentScene.createNode("LineSet");
-LineSet592.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA593 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA593.USE = "HAnimSegmentLineColorRGBA";
-LineSet592.color = ColorRGBA593;
+let HAnimJoint606 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint606.name = "r_metatarsophalangeal_4";
+HAnimJoint606.DEF = "hanim_r_metatarsophalangeal_4";
+HAnimJoint606.center = new SFVec3f(new float[-4.8755,0.0076,4.5165]);
+HAnimJoint606.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint606.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment607 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment607.name = "r_tarsal_proximal_phalanx_4";
+HAnimSegment607.DEF = "hanim_r_tarsal_proximal_phalanx_4";
+let Transform608 = browser.currentScene.createNode("Transform");
+Transform608.translation = new SFVec3f(new float[-4.8755,0.0076,4.5165]);
+let Transform609 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape610 = browser.currentScene.createNode("Shape");
+Shape610.USE = "HAnimJointShape";
+Transform609.child = new undefined();
 
-let Coordinate594 = browser.currentScene.createNode("Coordinate");
-Coordinate594.point = new MFVec3f(new float[-4.9095,0.0353,0.5574,-5.3615,0.0164,2.0085]);
-LineSet592.coord = Coordinate594;
+Transform609.child[0] = Shape610;
 
-Shape591.geometry = LineSet592;
+Transform608.children = new MFNode();
 
-HAnimSegment583.children[2] = Shape591;
+Transform608.children[0] = Transform609;
 
-HAnimJoint582.children = new MFNode();
+HAnimSegment607.children = new MFNode();
 
-HAnimJoint582.children[0] = HAnimSegment583;
+HAnimSegment607.children[0] = Transform608;
 
-let HAnimJoint595 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint595.DEF = "hanim_r_tarsometatarsal_3";
-HAnimJoint595.name = "r_tarsometatarsal_4";
-HAnimJoint595.center = new SFVec3f(new float[-4.7255,0.0211,2.1725]);
-let HAnimSegment596 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment596.DEF = "hanim_r_metatarsal_4";
-HAnimSegment596.name = "r_metatarsal_4";
-let Transform597 = browser.currentScene.createNode("Transform");
-Transform597.translation = new SFVec3f(new float[-4.7255,0.0211,2.1725]);
-let Transform598 = browser.currentScene.createNode("Transform");
-let Shape599 = browser.currentScene.createNode("Shape");
-Shape599.USE = "HAnimJointShape";
-Transform598.child = new undefined();
+let Shape611 = browser.currentScene.createNode("Shape");
+let LineSet612 = browser.currentScene.createNode("LineSet");
+LineSet612.vertexCount = new MFInt32(new int[2]);
+let Coordinate613 = browser.currentScene.createNode("Coordinate");
+Coordinate613.point = new MFVec3f(new float[-4.8755,0.0076,4.5165,-5.0655,0.0049,5.1895]);
+LineSet612.coord = Coordinate613;
 
-Transform598.child[0] = Shape599;
+//from r_metatarsophalangeal_4 to r_tarsal_proximal_interphalangeal_4 vertices 2
+let ColorRGBA614 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA614.USE = "HAnimSegmentLineColorRGBA";
+LineSet612.color = ColorRGBA614;
 
-Transform597.children = new MFNode();
+Shape611.geometry = LineSet612;
 
-Transform597.children[0] = Transform598;
+HAnimSegment607.children[1] = Shape611;
 
-HAnimSegment596.children = new MFNode();
+HAnimJoint606.children = new MFNode();
 
-HAnimSegment596.children[0] = Transform597;
+HAnimJoint606.children[0] = HAnimSegment607;
 
-let Shape600 = browser.currentScene.createNode("Shape");
-let LineSet601 = browser.currentScene.createNode("LineSet");
-LineSet601.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA602 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA602.USE = "HAnimSegmentLineColorRGBA";
-LineSet601.color = ColorRGBA602;
+let HAnimJoint615 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint615.name = "r_tarsal_proximal_interphalangeal_4";
+HAnimJoint615.DEF = "hanim_r_tarsal_proximal_interphalangeal_4";
+HAnimJoint615.center = new SFVec3f(new float[-5.0655,0.0049,5.1895]);
+HAnimJoint615.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint615.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment616 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment616.name = "r_tarsal_middle_phalanx_4";
+HAnimSegment616.DEF = "hanim_r_tarsal_middle_phalanx_4";
+let Transform617 = browser.currentScene.createNode("Transform");
+Transform617.translation = new SFVec3f(new float[-5.0655,0.0049,5.1895]);
+let Transform618 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape619 = browser.currentScene.createNode("Shape");
+Shape619.USE = "HAnimJointShape";
+Transform618.child = new undefined();
 
-let Coordinate603 = browser.currentScene.createNode("Coordinate");
-Coordinate603.point = new MFVec3f(new float[-4.7255,0.0211,2.1725,-4.8755,0.0076,4.5165]);
-LineSet601.coord = Coordinate603;
+Transform618.child[0] = Shape619;
 
-Shape600.geometry = LineSet601;
+Transform617.children = new MFNode();
 
-HAnimSegment596.children[1] = Shape600;
+Transform617.children[0] = Transform618;
 
-HAnimJoint595.children = new MFNode();
+HAnimSegment616.children = new MFNode();
 
-HAnimJoint595.children[0] = HAnimSegment596;
+HAnimSegment616.children[0] = Transform617;
 
-let HAnimJoint604 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint604.DEF = "hanim_r_metatarsophalangeal_4";
-HAnimJoint604.name = "r_metatarsophalangeal_4";
-HAnimJoint604.center = new SFVec3f(new float[-4.8755,0.0076,4.5165]);
-let HAnimSegment605 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment605.DEF = "hanim_r_tarsal_proximal_phalanx_4";
-HAnimSegment605.name = "r_tarsal_proximal_phalanx_4";
-let Transform606 = browser.currentScene.createNode("Transform");
-Transform606.translation = new SFVec3f(new float[-4.8755,0.0076,4.5165]);
-let Transform607 = browser.currentScene.createNode("Transform");
-let Shape608 = browser.currentScene.createNode("Shape");
-Shape608.USE = "HAnimJointShape";
-Transform607.child = new undefined();
+let Shape620 = browser.currentScene.createNode("Shape");
+let LineSet621 = browser.currentScene.createNode("LineSet");
+LineSet621.vertexCount = new MFInt32(new int[2]);
+let Coordinate622 = browser.currentScene.createNode("Coordinate");
+Coordinate622.point = new MFVec3f(new float[-5.0655,0.0049,5.1895,-5.1335,0.0011,5.5175]);
+LineSet621.coord = Coordinate622;
 
-Transform607.child[0] = Shape608;
+//from r_tarsal_proximal_interphalangeal_4 to r_tarsal_distal_interphalangeal_4 vertices 2
+let ColorRGBA623 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA623.USE = "HAnimSegmentLineColorRGBA";
+LineSet621.color = ColorRGBA623;
 
-Transform606.children = new MFNode();
+Shape620.geometry = LineSet621;
 
-Transform606.children[0] = Transform607;
+HAnimSegment616.children[1] = Shape620;
 
-HAnimSegment605.children = new MFNode();
+let HAnimSite624 = browser.currentScene.createNode("HAnimSite");
+HAnimSite624.name = "r_tarsal_distal_phalanx_4_tip";
+HAnimSite624.DEF = "hanim_r_tarsal_distal_phalanx_4_tip";
+let TouchSensor625 = browser.currentScene.createNode("TouchSensor");
+TouchSensor625.description = "HAnimSite r_tarsal_distal_phalanx_4_tip";
+HAnimSite624.children = new MFNode();
 
-HAnimSegment605.children[0] = Transform606;
+HAnimSite624.children[0] = TouchSensor625;
 
-let Shape609 = browser.currentScene.createNode("Shape");
-let LineSet610 = browser.currentScene.createNode("LineSet");
-LineSet610.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA611 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA611.USE = "HAnimSegmentLineColorRGBA";
-LineSet610.color = ColorRGBA611;
+let Shape626 = browser.currentScene.createNode("Shape");
+Shape626.USE = "HAnimSiteShape";
+HAnimSite624.children[1] = Shape626;
 
-let Coordinate612 = browser.currentScene.createNode("Coordinate");
-Coordinate612.point = new MFVec3f(new float[-4.8755,0.0076,4.5165,-5.0655,0.0049,5.1895]);
-LineSet610.coord = Coordinate612;
+HAnimSegment616.children[2] = HAnimSite624;
 
-Shape609.geometry = LineSet610;
+HAnimJoint615.children = new MFNode();
 
-HAnimSegment605.children[1] = Shape609;
+HAnimJoint615.children[0] = HAnimSegment616;
 
-HAnimJoint604.children = new MFNode();
+let HAnimJoint627 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint627.name = "r_tarsal_distal_interphalangeal_4";
+HAnimJoint627.DEF = "hanim_r_tarsal_distal_interphalangeal_4";
+HAnimJoint627.center = new SFVec3f(new float[-5.1335,0.0011,5.5175]);
+HAnimJoint627.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint627.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint615.children[1] = HAnimJoint627;
 
-HAnimJoint604.children[0] = HAnimSegment605;
+HAnimJoint606.children[1] = HAnimJoint615;
 
-let HAnimJoint613 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint613.DEF = "hanim_r_tarsal_proximal_interphalangeal_3";
-HAnimJoint613.name = "r_tarsal_proximal_interphalangeal_4";
-HAnimJoint613.center = new SFVec3f(new float[-5.0655,0.0049,5.1895]);
-let HAnimSegment614 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment614.DEF = "hanim_r_tarsal_middle_phalanx_3";
-HAnimSegment614.name = "r_tarsal_middle_phalanx_4";
-let Transform615 = browser.currentScene.createNode("Transform");
-Transform615.translation = new SFVec3f(new float[-5.0655,0.0049,5.1895]);
-let Transform616 = browser.currentScene.createNode("Transform");
-let Shape617 = browser.currentScene.createNode("Shape");
-Shape617.USE = "HAnimJointShape";
-Transform616.child = new undefined();
+HAnimJoint597.children[1] = HAnimJoint606;
 
-Transform616.child[0] = Shape617;
+HAnimJoint584.children[1] = HAnimJoint597;
 
-Transform615.children = new MFNode();
+let HAnimJoint628 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint628.name = "r_tarsometatarsal_5";
+HAnimJoint628.DEF = "hanim_r_tarsometatarsal_5";
+HAnimJoint628.center = new SFVec3f(new float[-5.3615,0.0164,2.0085]);
+HAnimJoint628.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint628.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment629 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment629.name = "r_metatarsal_5";
+HAnimSegment629.DEF = "hanim_r_metatarsal_5";
+let Transform630 = browser.currentScene.createNode("Transform");
+Transform630.translation = new SFVec3f(new float[-5.3615,0.0164,2.0085]);
+let Transform631 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape632 = browser.currentScene.createNode("Shape");
+Shape632.USE = "HAnimJointShape";
+Transform631.child = new undefined();
 
-Transform615.children[0] = Transform616;
+Transform631.child[0] = Shape632;
 
-HAnimSegment614.children = new MFNode();
+Transform630.children = new MFNode();
 
-HAnimSegment614.children[0] = Transform615;
+Transform630.children[0] = Transform631;
 
-let Shape618 = browser.currentScene.createNode("Shape");
-let LineSet619 = browser.currentScene.createNode("LineSet");
-LineSet619.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA620 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA620.USE = "HAnimSegmentLineColorRGBA";
-LineSet619.color = ColorRGBA620;
+HAnimSegment629.children = new MFNode();
 
-let Coordinate621 = browser.currentScene.createNode("Coordinate");
-Coordinate621.point = new MFVec3f(new float[-5.0655,0.0049,5.1895,-5.1335,0.0011,5.5175]);
-LineSet619.coord = Coordinate621;
+HAnimSegment629.children[0] = Transform630;
 
-Shape618.geometry = LineSet619;
+let Shape633 = browser.currentScene.createNode("Shape");
+let LineSet634 = browser.currentScene.createNode("LineSet");
+LineSet634.vertexCount = new MFInt32(new int[2]);
+let Coordinate635 = browser.currentScene.createNode("Coordinate");
+Coordinate635.point = new MFVec3f(new float[-5.3615,0.0164,2.0085,-5.5055,0.0067,4.3115]);
+LineSet634.coord = Coordinate635;
 
-HAnimSegment614.children[1] = Shape618;
+//from r_tarsometatarsal_5 to r_metatarsophalangeal_5 vertices 2
+let ColorRGBA636 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA636.USE = "HAnimSegmentLineColorRGBA";
+LineSet634.color = ColorRGBA636;
 
-let HAnimSite622 = browser.currentScene.createNode("HAnimSite");
-HAnimSite622.DEF = "hanim_r_tarsal_distal_phalanx_4_tip";
-HAnimSite622.name = "r_tarsal_distal_phalanx_4_tip";
-let TouchSensor623 = browser.currentScene.createNode("TouchSensor");
-TouchSensor623.description = "HAnimSite r_tarsal_distal_phalanx_4_tip";
-HAnimSite622.children = new MFNode();
+Shape633.geometry = LineSet634;
 
-HAnimSite622.children[0] = TouchSensor623;
+HAnimSegment629.children[1] = Shape633;
 
-let Shape624 = browser.currentScene.createNode("Shape");
-Shape624.USE = "HAnimSiteShape";
-HAnimSite622.children[1] = Shape624;
+let HAnimSite637 = browser.currentScene.createNode("HAnimSite");
+HAnimSite637.name = "r_metatarsal_phalanx_5_pt";
+HAnimSite637.DEF = "hanim_r_metatarsal_phalanx_5_pt";
+let TouchSensor638 = browser.currentScene.createNode("TouchSensor");
+TouchSensor638.description = "HAnimSite r_metatarsal_phalanx_5_pt";
+HAnimSite637.children = new MFNode();
 
-HAnimSegment614.children[2] = HAnimSite622;
+HAnimSite637.children[0] = TouchSensor638;
 
-HAnimJoint613.children = new MFNode();
+let Shape639 = browser.currentScene.createNode("Shape");
+Shape639.USE = "HAnimSiteShape";
+HAnimSite637.children[1] = Shape639;
 
-HAnimJoint613.children[0] = HAnimSegment614;
+HAnimSegment629.children[2] = HAnimSite637;
 
-let HAnimJoint625 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint625.DEF = "hanim_r_tarsal_distal_interphalangeal_3";
-HAnimJoint625.name = "r_tarsal_distal_interphalangeal_4";
-HAnimJoint625.center = new SFVec3f(new float[-5.1335,0.0011,5.5175]);
-HAnimJoint613.children[1] = HAnimJoint625;
+HAnimJoint628.children = new MFNode();
 
-HAnimJoint604.children[1] = HAnimJoint613;
+HAnimJoint628.children[0] = HAnimSegment629;
 
-HAnimJoint595.children[1] = HAnimJoint604;
+let HAnimJoint640 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint640.name = "r_metatarsophalangeal_5";
+HAnimJoint640.DEF = "hanim_r_metatarsophalangeal_5";
+HAnimJoint640.center = new SFVec3f(new float[-5.5055,0.0067,4.3115]);
+HAnimJoint640.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint640.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment641 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment641.name = "r_tarsal_proximal_phalanx_5";
+HAnimSegment641.DEF = "hanim_r_tarsal_proximal_phalanx_5";
+let Transform642 = browser.currentScene.createNode("Transform");
+Transform642.translation = new SFVec3f(new float[-5.5055,0.0067,4.3115]);
+let Transform643 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape644 = browser.currentScene.createNode("Shape");
+Shape644.USE = "HAnimJointShape";
+Transform643.child = new undefined();
 
-HAnimJoint582.children[1] = HAnimJoint595;
+Transform643.child[0] = Shape644;
 
-let HAnimJoint626 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint626.DEF = "hanim_r_tarsometatarsal_4";
-HAnimJoint626.name = "r_tarsometatarsal_5";
-HAnimJoint626.center = new SFVec3f(new float[-5.3615,0.0164,2.0085]);
-let HAnimSegment627 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment627.DEF = "hanim_r_metatarsal_5";
-HAnimSegment627.name = "r_metatarsal_5";
-let Transform628 = browser.currentScene.createNode("Transform");
-Transform628.translation = new SFVec3f(new float[-5.3615,0.0164,2.0085]);
-let Transform629 = browser.currentScene.createNode("Transform");
-let Shape630 = browser.currentScene.createNode("Shape");
-Shape630.USE = "HAnimJointShape";
-Transform629.child = new undefined();
+Transform642.children = new MFNode();
 
-Transform629.child[0] = Shape630;
+Transform642.children[0] = Transform643;
 
-Transform628.children = new MFNode();
+HAnimSegment641.children = new MFNode();
 
-Transform628.children[0] = Transform629;
+HAnimSegment641.children[0] = Transform642;
 
-HAnimSegment627.children = new MFNode();
+let Shape645 = browser.currentScene.createNode("Shape");
+let LineSet646 = browser.currentScene.createNode("LineSet");
+LineSet646.vertexCount = new MFInt32(new int[2]);
+let Coordinate647 = browser.currentScene.createNode("Coordinate");
+Coordinate647.point = new MFVec3f(new float[-5.5055,0.0067,4.3115,-5.6085,0.003,4.6485]);
+LineSet646.coord = Coordinate647;
 
-HAnimSegment627.children[0] = Transform628;
+//from r_metatarsophalangeal_5 to r_tarsal_proximal_interphalangeal_5 vertices 2
+let ColorRGBA648 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA648.USE = "HAnimSegmentLineColorRGBA";
+LineSet646.color = ColorRGBA648;
 
-let Shape631 = browser.currentScene.createNode("Shape");
-let LineSet632 = browser.currentScene.createNode("LineSet");
-LineSet632.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA633 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA633.USE = "HAnimSegmentLineColorRGBA";
-LineSet632.color = ColorRGBA633;
+Shape645.geometry = LineSet646;
 
-let Coordinate634 = browser.currentScene.createNode("Coordinate");
-Coordinate634.point = new MFVec3f(new float[-5.3615,0.0164,2.0085,-5.5055,0.0067,4.3115]);
-LineSet632.coord = Coordinate634;
+HAnimSegment641.children[1] = Shape645;
 
-Shape631.geometry = LineSet632;
+HAnimJoint640.children = new MFNode();
 
-HAnimSegment627.children[1] = Shape631;
+HAnimJoint640.children[0] = HAnimSegment641;
 
-let HAnimSite635 = browser.currentScene.createNode("HAnimSite");
-HAnimSite635.DEF = "hanim_r_metatarsal_phalanx_5_pt";
-HAnimSite635.name = "r_metatarsal_phalanx_5_pt";
-let TouchSensor636 = browser.currentScene.createNode("TouchSensor");
-TouchSensor636.description = "HAnimSite r_metatarsal_phalanx_5_pt";
-HAnimSite635.children = new MFNode();
+let HAnimJoint649 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint649.name = "r_tarsal_proximal_interphalangeal_5";
+HAnimJoint649.DEF = "hanim_r_tarsal_proximal_interphalangeal_5";
+HAnimJoint649.center = new SFVec3f(new float[-5.6085,0.003,4.6485]);
+HAnimJoint649.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint649.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment650 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment650.name = "r_tarsal_middle_phalanx_5";
+HAnimSegment650.DEF = "hanim_r_tarsal_middle_phalanx_5";
+let Transform651 = browser.currentScene.createNode("Transform");
+Transform651.translation = new SFVec3f(new float[-5.6085,0.003,4.6485]);
+let Transform652 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape653 = browser.currentScene.createNode("Shape");
+Shape653.USE = "HAnimJointShape";
+Transform652.child = new undefined();
 
-HAnimSite635.children[0] = TouchSensor636;
+Transform652.child[0] = Shape653;
 
-let Shape637 = browser.currentScene.createNode("Shape");
-Shape637.USE = "HAnimSiteShape";
-HAnimSite635.children[1] = Shape637;
+Transform651.children = new MFNode();
 
-HAnimSegment627.children[2] = HAnimSite635;
+Transform651.children[0] = Transform652;
 
-HAnimJoint626.children = new MFNode();
+HAnimSegment650.children = new MFNode();
 
-HAnimJoint626.children[0] = HAnimSegment627;
+HAnimSegment650.children[0] = Transform651;
 
-let HAnimJoint638 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint638.DEF = "hanim_r_metatarsophalangeal_5";
-HAnimJoint638.name = "r_metatarsophalangeal_5";
-HAnimJoint638.center = new SFVec3f(new float[-5.5055,0.0067,4.3115]);
-let HAnimSegment639 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment639.DEF = "hanim_r_tarsal_proximal_phalanx_5";
-HAnimSegment639.name = "r_tarsal_proximal_phalanx_5";
-let Transform640 = browser.currentScene.createNode("Transform");
-Transform640.translation = new SFVec3f(new float[-5.5055,0.0067,4.3115]);
-let Transform641 = browser.currentScene.createNode("Transform");
-let Shape642 = browser.currentScene.createNode("Shape");
-Shape642.USE = "HAnimJointShape";
-Transform641.child = new undefined();
+let Shape654 = browser.currentScene.createNode("Shape");
+let LineSet655 = browser.currentScene.createNode("LineSet");
+LineSet655.vertexCount = new MFInt32(new int[2]);
+let Coordinate656 = browser.currentScene.createNode("Coordinate");
+Coordinate656.point = new MFVec3f(new float[-5.6085,0.003,4.6485,-5.6495,0,4.9925]);
+LineSet655.coord = Coordinate656;
 
-Transform641.child[0] = Shape642;
+//from r_tarsal_proximal_interphalangeal_5 to r_tarsal_distal_interphalangeal_5 vertices 2
+let ColorRGBA657 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA657.USE = "HAnimSegmentLineColorRGBA";
+LineSet655.color = ColorRGBA657;
 
-Transform640.children = new MFNode();
+Shape654.geometry = LineSet655;
 
-Transform640.children[0] = Transform641;
+HAnimSegment650.children[1] = Shape654;
 
-HAnimSegment639.children = new MFNode();
+let HAnimSite658 = browser.currentScene.createNode("HAnimSite");
+HAnimSite658.name = "r_tarsal_distal_phalanx_5_tip";
+HAnimSite658.DEF = "hanim_r_tarsal_distal_phalanx_5_tip";
+let TouchSensor659 = browser.currentScene.createNode("TouchSensor");
+TouchSensor659.description = "HAnimSite r_tarsal_distal_phalanx_5_tip";
+HAnimSite658.children = new MFNode();
 
-HAnimSegment639.children[0] = Transform640;
+HAnimSite658.children[0] = TouchSensor659;
 
-let Shape643 = browser.currentScene.createNode("Shape");
-let LineSet644 = browser.currentScene.createNode("LineSet");
-LineSet644.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA645 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA645.USE = "HAnimSegmentLineColorRGBA";
-LineSet644.color = ColorRGBA645;
+let Shape660 = browser.currentScene.createNode("Shape");
+Shape660.USE = "HAnimSiteShape";
+HAnimSite658.children[1] = Shape660;
 
-let Coordinate646 = browser.currentScene.createNode("Coordinate");
-Coordinate646.point = new MFVec3f(new float[-5.5055,0.0067,4.3115,-5.6085,0.003,4.6485]);
-LineSet644.coord = Coordinate646;
+HAnimSegment650.children[2] = HAnimSite658;
 
-Shape643.geometry = LineSet644;
+HAnimJoint649.children = new MFNode();
 
-HAnimSegment639.children[1] = Shape643;
+HAnimJoint649.children[0] = HAnimSegment650;
 
-HAnimJoint638.children = new MFNode();
+let HAnimJoint661 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint661.name = "r_tarsal_distal_interphalangeal_5";
+HAnimJoint661.DEF = "hanim_r_tarsal_distal_interphalangeal_5";
+HAnimJoint661.center = new SFVec3f(new float[-5.6495,0,4.9925]);
+HAnimJoint661.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint661.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint649.children[1] = HAnimJoint661;
 
-HAnimJoint638.children[0] = HAnimSegment639;
+HAnimJoint640.children[1] = HAnimJoint649;
 
-let HAnimJoint647 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint647.DEF = "hanim_r_tarsal_proximal_interphalangeal_4";
-HAnimJoint647.name = "r_tarsal_proximal_interphalangeal_5";
-HAnimJoint647.center = new SFVec3f(new float[-5.6085,0.003,4.6485]);
-let HAnimSegment648 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment648.DEF = "hanim_r_tarsal_middle_phalanx_4";
-HAnimSegment648.name = "r_tarsal_middle_phalanx_5";
-let Transform649 = browser.currentScene.createNode("Transform");
-Transform649.translation = new SFVec3f(new float[-5.6085,0.003,4.6485]);
-let Transform650 = browser.currentScene.createNode("Transform");
-let Shape651 = browser.currentScene.createNode("Shape");
-Shape651.USE = "HAnimJointShape";
-Transform650.child = new undefined();
+HAnimJoint628.children[1] = HAnimJoint640;
 
-Transform650.child[0] = Shape651;
+HAnimJoint584.children[2] = HAnimJoint628;
 
-Transform649.children = new MFNode();
+HAnimJoint575.children[1] = HAnimJoint584;
 
-Transform649.children[0] = Transform650;
+HAnimJoint431.children[2] = HAnimJoint575;
 
-HAnimSegment648.children = new MFNode();
+HAnimJoint416.children[1] = HAnimJoint431;
 
-HAnimSegment648.children[0] = Transform649;
+HAnimJoint398.children[1] = HAnimJoint416;
 
-let Shape652 = browser.currentScene.createNode("Shape");
-let LineSet653 = browser.currentScene.createNode("LineSet");
-LineSet653.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA654 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA654.USE = "HAnimSegmentLineColorRGBA";
-LineSet653.color = ColorRGBA654;
+HAnimJoint97.children[2] = HAnimJoint398;
 
-let Coordinate655 = browser.currentScene.createNode("Coordinate");
-Coordinate655.point = new MFVec3f(new float[-5.6085,0.003,4.6485,-5.6495,0,4.9925]);
-LineSet653.coord = Coordinate655;
+HAnimJoint45.children[1] = HAnimJoint97;
 
-Shape652.geometry = LineSet653;
+let HAnimJoint662 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint662.name = "vl5";
+HAnimJoint662.DEF = "hanim_vl5";
+HAnimJoint662.center = new SFVec3f(new float[0.0028,1.0568,-0.0776]);
+HAnimJoint662.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint662.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment663 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment663.name = "l5";
+HAnimSegment663.DEF = "hanim_l5";
+let Transform664 = browser.currentScene.createNode("Transform");
+Transform664.translation = new SFVec3f(new float[0.0028,1.0568,-0.0776]);
+let Transform665 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape666 = browser.currentScene.createNode("Shape");
+Shape666.USE = "HAnimJointShape";
+Transform665.child = new undefined();
 
-HAnimSegment648.children[1] = Shape652;
+Transform665.child[0] = Shape666;
 
-let HAnimSite656 = browser.currentScene.createNode("HAnimSite");
-HAnimSite656.DEF = "hanim_r_tarsal_distal_phalanx_5_tip";
-HAnimSite656.name = "r_tarsal_distal_phalanx_5_tip";
-let TouchSensor657 = browser.currentScene.createNode("TouchSensor");
-TouchSensor657.description = "HAnimSite r_tarsal_distal_phalanx_5_tip";
-HAnimSite656.children = new MFNode();
+Transform664.children = new MFNode();
 
-HAnimSite656.children[0] = TouchSensor657;
+Transform664.children[0] = Transform665;
 
-let Shape658 = browser.currentScene.createNode("Shape");
-Shape658.USE = "HAnimSiteShape";
-HAnimSite656.children[1] = Shape658;
+HAnimSegment663.children = new MFNode();
 
-HAnimSegment648.children[2] = HAnimSite656;
+HAnimSegment663.children[0] = Transform664;
 
-HAnimJoint647.children = new MFNode();
+let Shape667 = browser.currentScene.createNode("Shape");
+let LineSet668 = browser.currentScene.createNode("LineSet");
+LineSet668.vertexCount = new MFInt32(new int[2]);
+let Coordinate669 = browser.currentScene.createNode("Coordinate");
+Coordinate669.point = new MFVec3f(new float[0.0028,1.0568,-0.0776,0.0035,1.0925,-0.0787]);
+LineSet668.coord = Coordinate669;
 
-HAnimJoint647.children[0] = HAnimSegment648;
+//from vl5 to vl4 vertices 2
+let ColorRGBA670 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA670.USE = "HAnimSegmentLineColorRGBA";
+LineSet668.color = ColorRGBA670;
 
-let HAnimJoint659 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint659.DEF = "hanim_r_tarsal_distal_interphalangeal_4";
-HAnimJoint659.name = "r_tarsal_distal_interphalangeal_5";
-HAnimJoint659.center = new SFVec3f(new float[-5.6495,0,4.9925]);
-HAnimJoint647.children[1] = HAnimJoint659;
+Shape667.geometry = LineSet668;
 
-HAnimJoint638.children[1] = HAnimJoint647;
+HAnimSegment663.children[1] = Shape667;
 
-HAnimJoint626.children[1] = HAnimJoint638;
+HAnimJoint662.children = new MFNode();
 
-HAnimJoint582.children[2] = HAnimJoint626;
+HAnimJoint662.children[0] = HAnimSegment663;
 
-HAnimJoint573.children[1] = HAnimJoint582;
+let HAnimJoint671 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint671.name = "vl4";
+HAnimJoint671.DEF = "hanim_vl4";
+HAnimJoint671.center = new SFVec3f(new float[0.0035,1.0925,-0.0787]);
+HAnimJoint671.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint671.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment672 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment672.name = "l4";
+HAnimSegment672.DEF = "hanim_l4";
+let Transform673 = browser.currentScene.createNode("Transform");
+Transform673.translation = new SFVec3f(new float[0.0035,1.0925,-0.0787]);
+let Transform674 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape675 = browser.currentScene.createNode("Shape");
+Shape675.USE = "HAnimJointShape";
+Transform674.child = new undefined();
 
-HAnimJoint429.children[2] = HAnimJoint573;
+Transform674.child[0] = Shape675;
 
-HAnimJoint414.children[1] = HAnimJoint429;
+Transform673.children = new MFNode();
 
-HAnimJoint396.children[1] = HAnimJoint414;
+Transform673.children[0] = Transform674;
 
-HAnimJoint95.children[2] = HAnimJoint396;
+HAnimSegment672.children = new MFNode();
 
-HAnimJoint43.children[1] = HAnimJoint95;
+HAnimSegment672.children[0] = Transform673;
 
-let HAnimJoint660 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint660.DEF = "hanim_vl5";
-HAnimJoint660.name = "vl5";
-HAnimJoint660.center = new SFVec3f(new float[0.0028,1.0568,-0.0776]);
-let HAnimSegment661 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment661.DEF = "hanim_l5";
-HAnimSegment661.name = "l5";
-let Transform662 = browser.currentScene.createNode("Transform");
-Transform662.translation = new SFVec3f(new float[0.0028,1.0568,-0.0776]);
-let Transform663 = browser.currentScene.createNode("Transform");
-let Shape664 = browser.currentScene.createNode("Shape");
-Shape664.USE = "HAnimJointShape";
-Transform663.child = new undefined();
+let Shape676 = browser.currentScene.createNode("Shape");
+let LineSet677 = browser.currentScene.createNode("LineSet");
+LineSet677.vertexCount = new MFInt32(new int[2]);
+let Coordinate678 = browser.currentScene.createNode("Coordinate");
+Coordinate678.point = new MFVec3f(new float[0.0035,1.0925,-0.0787,0.0041,1.1276,-0.0796]);
+LineSet677.coord = Coordinate678;
 
-Transform663.child[0] = Shape664;
+//from vl4 to vl3 vertices 2
+let ColorRGBA679 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA679.USE = "HAnimSegmentLineColorRGBA";
+LineSet677.color = ColorRGBA679;
 
-Transform662.children = new MFNode();
+Shape676.geometry = LineSet677;
 
-Transform662.children[0] = Transform663;
+HAnimSegment672.children[1] = Shape676;
 
-HAnimSegment661.children = new MFNode();
+HAnimJoint671.children = new MFNode();
 
-HAnimSegment661.children[0] = Transform662;
+HAnimJoint671.children[0] = HAnimSegment672;
 
-let Shape665 = browser.currentScene.createNode("Shape");
-let LineSet666 = browser.currentScene.createNode("LineSet");
-LineSet666.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA667 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA667.USE = "HAnimSegmentLineColorRGBA";
-LineSet666.color = ColorRGBA667;
+let HAnimJoint680 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint680.name = "vl3";
+HAnimJoint680.DEF = "hanim_vl3";
+HAnimJoint680.center = new SFVec3f(new float[0.0041,1.1276,-0.0796]);
+HAnimJoint680.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint680.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment681 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment681.name = "l3";
+HAnimSegment681.DEF = "hanim_l3";
+let Transform682 = browser.currentScene.createNode("Transform");
+Transform682.translation = new SFVec3f(new float[0.0041,1.1276,-0.0796]);
+let Transform683 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape684 = browser.currentScene.createNode("Shape");
+Shape684.USE = "HAnimJointShape";
+Transform683.child = new undefined();
 
-let Coordinate668 = browser.currentScene.createNode("Coordinate");
-Coordinate668.point = new MFVec3f(new float[0.0028,1.0568,-0.0776,0.0035,1.0925,-0.0787]);
-LineSet666.coord = Coordinate668;
+Transform683.child[0] = Shape684;
 
-Shape665.geometry = LineSet666;
+Transform682.children = new MFNode();
 
-HAnimSegment661.children[1] = Shape665;
+Transform682.children[0] = Transform683;
 
-HAnimJoint660.children = new MFNode();
+HAnimSegment681.children = new MFNode();
 
-HAnimJoint660.children[0] = HAnimSegment661;
+HAnimSegment681.children[0] = Transform682;
 
-let HAnimJoint669 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint669.DEF = "hanim_vl4";
-HAnimJoint669.name = "vl4";
-HAnimJoint669.center = new SFVec3f(new float[0.0035,1.0925,-0.0787]);
-let HAnimSegment670 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment670.DEF = "hanim_l4";
-HAnimSegment670.name = "l4";
-let Transform671 = browser.currentScene.createNode("Transform");
-Transform671.translation = new SFVec3f(new float[0.0035,1.0925,-0.0787]);
-let Transform672 = browser.currentScene.createNode("Transform");
-let Shape673 = browser.currentScene.createNode("Shape");
-Shape673.USE = "HAnimJointShape";
-Transform672.child = new undefined();
+let Shape685 = browser.currentScene.createNode("Shape");
+let LineSet686 = browser.currentScene.createNode("LineSet");
+LineSet686.vertexCount = new MFInt32(new int[2]);
+let Coordinate687 = browser.currentScene.createNode("Coordinate");
+Coordinate687.point = new MFVec3f(new float[0.0041,1.1276,-0.0796,0.0045,1.1546,-0.08]);
+LineSet686.coord = Coordinate687;
 
-Transform672.child[0] = Shape673;
+//from vl3 to vl2 vertices 2
+let ColorRGBA688 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA688.USE = "HAnimSegmentLineColorRGBA";
+LineSet686.color = ColorRGBA688;
 
-Transform671.children = new MFNode();
+Shape685.geometry = LineSet686;
 
-Transform671.children[0] = Transform672;
+HAnimSegment681.children[1] = Shape685;
 
-HAnimSegment670.children = new MFNode();
+let HAnimSite689 = browser.currentScene.createNode("HAnimSite");
+HAnimSite689.name = "l_rib10_pt";
+HAnimSite689.DEF = "hanim_l_rib10_pt";
+HAnimSite689.translation = new SFVec3f(new float[0.0871,1.1925,0.0992]);
+let TouchSensor690 = browser.currentScene.createNode("TouchSensor");
+TouchSensor690.description = "HAnimSite l_rib10_pt";
+HAnimSite689.children = new MFNode();
 
-HAnimSegment670.children[0] = Transform671;
+HAnimSite689.children[0] = TouchSensor690;
 
-let Shape674 = browser.currentScene.createNode("Shape");
-let LineSet675 = browser.currentScene.createNode("LineSet");
-LineSet675.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA676 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA676.USE = "HAnimSegmentLineColorRGBA";
-LineSet675.color = ColorRGBA676;
+let Shape691 = browser.currentScene.createNode("Shape");
+Shape691.USE = "HAnimSiteShape";
+HAnimSite689.children[1] = Shape691;
 
-let Coordinate677 = browser.currentScene.createNode("Coordinate");
-Coordinate677.point = new MFVec3f(new float[0.0035,1.0925,-0.0787,0.0041,1.1276,-0.0796]);
-LineSet675.coord = Coordinate677;
+HAnimSegment681.children[2] = HAnimSite689;
 
-Shape674.geometry = LineSet675;
+let HAnimSite692 = browser.currentScene.createNode("HAnimSite");
+HAnimSite692.name = "r_rib10_pt";
+HAnimSite692.DEF = "hanim_r_rib10_pt";
+HAnimSite692.translation = new SFVec3f(new float[-0.0711,1.1941,0.1016]);
+let TouchSensor693 = browser.currentScene.createNode("TouchSensor");
+TouchSensor693.description = "HAnimSite r_rib10_pt";
+HAnimSite692.children = new MFNode();
 
-HAnimSegment670.children[1] = Shape674;
+HAnimSite692.children[0] = TouchSensor693;
 
-HAnimJoint669.children = new MFNode();
+let Shape694 = browser.currentScene.createNode("Shape");
+Shape694.USE = "HAnimSiteShape";
+HAnimSite692.children[1] = Shape694;
 
-HAnimJoint669.children[0] = HAnimSegment670;
+HAnimSegment681.children[3] = HAnimSite692;
 
-let HAnimJoint678 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint678.DEF = "hanim_vl3";
-HAnimJoint678.name = "vl3";
-HAnimJoint678.center = new SFVec3f(new float[0.0041,1.1276,-0.0796]);
-let HAnimSegment679 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment679.DEF = "hanim_l3";
-HAnimSegment679.name = "l3";
-let Transform680 = browser.currentScene.createNode("Transform");
-Transform680.translation = new SFVec3f(new float[0.0041,1.1276,-0.0796]);
-let Transform681 = browser.currentScene.createNode("Transform");
-let Shape682 = browser.currentScene.createNode("Shape");
-Shape682.USE = "HAnimJointShape";
-Transform681.child = new undefined();
+let HAnimSite695 = browser.currentScene.createNode("HAnimSite");
+HAnimSite695.name = "spine_2_middle_back_pt";
+HAnimSite695.DEF = "hanim_spine_2_middle_back_pt";
+let TouchSensor696 = browser.currentScene.createNode("TouchSensor");
+TouchSensor696.description = "HAnimSite spine_2_middle_back_pt";
+HAnimSite695.children = new MFNode();
 
-Transform681.child[0] = Shape682;
+HAnimSite695.children[0] = TouchSensor696;
 
-Transform680.children = new MFNode();
+let Shape697 = browser.currentScene.createNode("Shape");
+Shape697.USE = "HAnimSiteShape";
+HAnimSite695.children[1] = Shape697;
 
-Transform680.children[0] = Transform681;
+HAnimSegment681.children[4] = HAnimSite695;
 
-HAnimSegment679.children = new MFNode();
+HAnimJoint680.children = new MFNode();
 
-HAnimSegment679.children[0] = Transform680;
+HAnimJoint680.children[0] = HAnimSegment681;
 
-let Shape683 = browser.currentScene.createNode("Shape");
-let LineSet684 = browser.currentScene.createNode("LineSet");
-LineSet684.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA685 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA685.USE = "HAnimSegmentLineColorRGBA";
-LineSet684.color = ColorRGBA685;
+let HAnimJoint698 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint698.name = "vl2";
+HAnimJoint698.DEF = "hanim_vl2";
+HAnimJoint698.center = new SFVec3f(new float[0.0045,1.1546,-0.08]);
+HAnimJoint698.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint698.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment699 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment699.name = "l2";
+HAnimSegment699.DEF = "hanim_l2";
+let Transform700 = browser.currentScene.createNode("Transform");
+Transform700.translation = new SFVec3f(new float[0.0045,1.1546,-0.08]);
+let Transform701 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape702 = browser.currentScene.createNode("Shape");
+Shape702.USE = "HAnimJointShape";
+Transform701.child = new undefined();
 
-let Coordinate686 = browser.currentScene.createNode("Coordinate");
-Coordinate686.point = new MFVec3f(new float[0.0041,1.1276,-0.0796,0.0045,1.1546,-0.08]);
-LineSet684.coord = Coordinate686;
+Transform701.child[0] = Shape702;
 
-Shape683.geometry = LineSet684;
+Transform700.children = new MFNode();
 
-HAnimSegment679.children[1] = Shape683;
+Transform700.children[0] = Transform701;
 
-let HAnimSite687 = browser.currentScene.createNode("HAnimSite");
-HAnimSite687.DEF = "hanim_l_rib10_pt";
-HAnimSite687.name = "l_rib10_pt";
-HAnimSite687.translation = new SFVec3f(new float[0.0871,1.1925,0.0992]);
-let TouchSensor688 = browser.currentScene.createNode("TouchSensor");
-TouchSensor688.description = "HAnimSite l_rib10_pt";
-HAnimSite687.children = new MFNode();
+HAnimSegment699.children = new MFNode();
 
-HAnimSite687.children[0] = TouchSensor688;
+HAnimSegment699.children[0] = Transform700;
 
-let Shape689 = browser.currentScene.createNode("Shape");
-Shape689.USE = "HAnimSiteShape";
-HAnimSite687.children[1] = Shape689;
+let Shape703 = browser.currentScene.createNode("Shape");
+let LineSet704 = browser.currentScene.createNode("LineSet");
+LineSet704.vertexCount = new MFInt32(new int[2]);
+let Coordinate705 = browser.currentScene.createNode("Coordinate");
+Coordinate705.point = new MFVec3f(new float[0.0045,1.1546,-0.08,0.0048,1.1912,-0.0805]);
+LineSet704.coord = Coordinate705;
 
-HAnimSegment679.children[2] = HAnimSite687;
+//from vl2 to vl1 vertices 2
+let ColorRGBA706 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA706.USE = "HAnimSegmentLineColorRGBA";
+LineSet704.color = ColorRGBA706;
 
-let HAnimSite690 = browser.currentScene.createNode("HAnimSite");
-HAnimSite690.DEF = "hanim_r_rib10_pt";
-HAnimSite690.name = "r_rib10_pt";
-HAnimSite690.translation = new SFVec3f(new float[-0.0711,1.1941,0.1016]);
-let TouchSensor691 = browser.currentScene.createNode("TouchSensor");
-TouchSensor691.description = "HAnimSite r_rib10_pt";
-HAnimSite690.children = new MFNode();
+Shape703.geometry = LineSet704;
 
-HAnimSite690.children[0] = TouchSensor691;
+HAnimSegment699.children[1] = Shape703;
 
-let Shape692 = browser.currentScene.createNode("Shape");
-Shape692.USE = "HAnimSiteShape";
-HAnimSite690.children[1] = Shape692;
+HAnimJoint698.children = new MFNode();
 
-HAnimSegment679.children[3] = HAnimSite690;
+HAnimJoint698.children[0] = HAnimSegment699;
 
-let HAnimSite693 = browser.currentScene.createNode("HAnimSite");
-HAnimSite693.DEF = "hanim_spine_2_middle_back_pt";
-HAnimSite693.name = "spine_2_middle_back_pt";
-let TouchSensor694 = browser.currentScene.createNode("TouchSensor");
-TouchSensor694.description = "HAnimSite spine_2_middle_back_pt";
-HAnimSite693.children = new MFNode();
+let HAnimJoint707 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint707.name = "vl1";
+HAnimJoint707.DEF = "hanim_vl1";
+HAnimJoint707.center = new SFVec3f(new float[0.0048,1.1912,-0.0805]);
+HAnimJoint707.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint707.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment708 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment708.name = "l1";
+HAnimSegment708.DEF = "hanim_l1";
+let Transform709 = browser.currentScene.createNode("Transform");
+Transform709.translation = new SFVec3f(new float[0.0048,1.1912,-0.0805]);
+let Transform710 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape711 = browser.currentScene.createNode("Shape");
+Shape711.USE = "HAnimJointShape";
+Transform710.child = new undefined();
 
-HAnimSite693.children[0] = TouchSensor694;
+Transform710.child[0] = Shape711;
 
-let Shape695 = browser.currentScene.createNode("Shape");
-Shape695.USE = "HAnimSiteShape";
-HAnimSite693.children[1] = Shape695;
+Transform709.children = new MFNode();
 
-HAnimSegment679.children[4] = HAnimSite693;
+Transform709.children[0] = Transform710;
 
-HAnimJoint678.children = new MFNode();
+HAnimSegment708.children = new MFNode();
 
-HAnimJoint678.children[0] = HAnimSegment679;
+HAnimSegment708.children[0] = Transform709;
 
-let HAnimJoint696 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint696.DEF = "hanim_vl2";
-HAnimJoint696.name = "vl2";
-HAnimJoint696.center = new SFVec3f(new float[0.0045,1.1546,-0.08]);
-let HAnimSegment697 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment697.DEF = "hanim_l2";
-HAnimSegment697.name = "l2";
-let Transform698 = browser.currentScene.createNode("Transform");
-Transform698.translation = new SFVec3f(new float[0.0045,1.1546,-0.08]);
-let Transform699 = browser.currentScene.createNode("Transform");
-let Shape700 = browser.currentScene.createNode("Shape");
-Shape700.USE = "HAnimJointShape";
-Transform699.child = new undefined();
+let Shape712 = browser.currentScene.createNode("Shape");
+let LineSet713 = browser.currentScene.createNode("LineSet");
+LineSet713.vertexCount = new MFInt32(new int[2]);
+let Coordinate714 = browser.currentScene.createNode("Coordinate");
+Coordinate714.point = new MFVec3f(new float[0.0048,1.1912,-0.0805,0.0051,1.2278,-0.0808]);
+LineSet713.coord = Coordinate714;
 
-Transform699.child[0] = Shape700;
+//from vl1 to vt12 vertices 2
+let ColorRGBA715 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA715.USE = "HAnimSegmentLineColorRGBA";
+LineSet713.color = ColorRGBA715;
 
-Transform698.children = new MFNode();
+Shape712.geometry = LineSet713;
 
-Transform698.children[0] = Transform699;
+HAnimSegment708.children[1] = Shape712;
 
-HAnimSegment697.children = new MFNode();
+HAnimJoint707.children = new MFNode();
 
-HAnimSegment697.children[0] = Transform698;
+HAnimJoint707.children[0] = HAnimSegment708;
 
-let Shape701 = browser.currentScene.createNode("Shape");
-let LineSet702 = browser.currentScene.createNode("LineSet");
-LineSet702.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA703 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA703.USE = "HAnimSegmentLineColorRGBA";
-LineSet702.color = ColorRGBA703;
+let HAnimJoint716 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint716.name = "vt12";
+HAnimJoint716.DEF = "hanim_vt12";
+HAnimJoint716.center = new SFVec3f(new float[0.0051,1.2278,-0.0808]);
+HAnimJoint716.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint716.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment717 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment717.name = "t12";
+HAnimSegment717.DEF = "hanim_t12";
+let Transform718 = browser.currentScene.createNode("Transform");
+Transform718.translation = new SFVec3f(new float[0.0051,1.2278,-0.0808]);
+let Transform719 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape720 = browser.currentScene.createNode("Shape");
+Shape720.USE = "HAnimJointShape";
+Transform719.child = new undefined();
 
-let Coordinate704 = browser.currentScene.createNode("Coordinate");
-Coordinate704.point = new MFVec3f(new float[0.0045,1.1546,-0.08,0.0048,1.1912,-0.0805]);
-LineSet702.coord = Coordinate704;
+Transform719.child[0] = Shape720;
 
-Shape701.geometry = LineSet702;
+Transform718.children = new MFNode();
 
-HAnimSegment697.children[1] = Shape701;
+Transform718.children[0] = Transform719;
 
-HAnimJoint696.children = new MFNode();
+HAnimSegment717.children = new MFNode();
 
-HAnimJoint696.children[0] = HAnimSegment697;
+HAnimSegment717.children[0] = Transform718;
 
-let HAnimJoint705 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint705.DEF = "hanim_vl1";
-HAnimJoint705.name = "vl1";
-HAnimJoint705.center = new SFVec3f(new float[0.0048,1.1912,-0.0805]);
-let HAnimSegment706 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment706.DEF = "hanim_l1";
-HAnimSegment706.name = "l1";
-let Transform707 = browser.currentScene.createNode("Transform");
-Transform707.translation = new SFVec3f(new float[0.0048,1.1912,-0.0805]);
-let Transform708 = browser.currentScene.createNode("Transform");
-let Shape709 = browser.currentScene.createNode("Shape");
-Shape709.USE = "HAnimJointShape";
-Transform708.child = new undefined();
+let Shape721 = browser.currentScene.createNode("Shape");
+let LineSet722 = browser.currentScene.createNode("LineSet");
+LineSet722.vertexCount = new MFInt32(new int[2]);
+let Coordinate723 = browser.currentScene.createNode("Coordinate");
+Coordinate723.point = new MFVec3f(new float[0.0051,1.2278,-0.0808,0.0053,1.2679,-0.081]);
+LineSet722.coord = Coordinate723;
 
-Transform708.child[0] = Shape709;
+//from vt12 to vt11 vertices 2
+let ColorRGBA724 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA724.USE = "HAnimSegmentLineColorRGBA";
+LineSet722.color = ColorRGBA724;
 
-Transform707.children = new MFNode();
+Shape721.geometry = LineSet722;
 
-Transform707.children[0] = Transform708;
+HAnimSegment717.children[1] = Shape721;
 
-HAnimSegment706.children = new MFNode();
+HAnimJoint716.children = new MFNode();
 
-HAnimSegment706.children[0] = Transform707;
+HAnimJoint716.children[0] = HAnimSegment717;
 
-let Shape710 = browser.currentScene.createNode("Shape");
-let LineSet711 = browser.currentScene.createNode("LineSet");
-LineSet711.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA712 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA712.USE = "HAnimSegmentLineColorRGBA";
-LineSet711.color = ColorRGBA712;
+let HAnimJoint725 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint725.name = "vt11";
+HAnimJoint725.DEF = "hanim_vt11";
+HAnimJoint725.center = new SFVec3f(new float[0.0053,1.2679,-0.081]);
+HAnimJoint725.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint725.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment726 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment726.name = "t11";
+HAnimSegment726.DEF = "hanim_t11";
+let Transform727 = browser.currentScene.createNode("Transform");
+Transform727.translation = new SFVec3f(new float[0.0053,1.2679,-0.081]);
+let Transform728 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape729 = browser.currentScene.createNode("Shape");
+Shape729.USE = "HAnimJointShape";
+Transform728.child = new undefined();
 
-let Coordinate713 = browser.currentScene.createNode("Coordinate");
-Coordinate713.point = new MFVec3f(new float[0.0048,1.1912,-0.0805,0.0051,1.2278,-0.0808]);
-LineSet711.coord = Coordinate713;
+Transform728.child[0] = Shape729;
 
-Shape710.geometry = LineSet711;
+Transform727.children = new MFNode();
 
-HAnimSegment706.children[1] = Shape710;
+Transform727.children[0] = Transform728;
 
-HAnimJoint705.children = new MFNode();
+HAnimSegment726.children = new MFNode();
 
-HAnimJoint705.children[0] = HAnimSegment706;
+HAnimSegment726.children[0] = Transform727;
 
-let HAnimJoint714 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint714.DEF = "hanim_vt12";
-HAnimJoint714.name = "vt12";
-HAnimJoint714.center = new SFVec3f(new float[0.0051,1.2278,-0.0808]);
-let HAnimSegment715 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment715.DEF = "hanim_t12";
-HAnimSegment715.name = "t12";
-let Transform716 = browser.currentScene.createNode("Transform");
-Transform716.translation = new SFVec3f(new float[0.0051,1.2278,-0.0808]);
-let Transform717 = browser.currentScene.createNode("Transform");
-let Shape718 = browser.currentScene.createNode("Shape");
-Shape718.USE = "HAnimJointShape";
-Transform717.child = new undefined();
+let Shape730 = browser.currentScene.createNode("Shape");
+let LineSet731 = browser.currentScene.createNode("LineSet");
+LineSet731.vertexCount = new MFInt32(new int[2]);
+let Coordinate732 = browser.currentScene.createNode("Coordinate");
+Coordinate732.point = new MFVec3f(new float[0.0053,1.2679,-0.081,0.0056,1.2848,-0.0822]);
+LineSet731.coord = Coordinate732;
 
-Transform717.child[0] = Shape718;
+//from vt11 to vt10 vertices 2
+let ColorRGBA733 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA733.USE = "HAnimSegmentLineColorRGBA";
+LineSet731.color = ColorRGBA733;
 
-Transform716.children = new MFNode();
+Shape730.geometry = LineSet731;
 
-Transform716.children[0] = Transform717;
+HAnimSegment726.children[1] = Shape730;
 
-HAnimSegment715.children = new MFNode();
+let HAnimSite734 = browser.currentScene.createNode("HAnimSite");
+HAnimSite734.name = "substernale_pt";
+HAnimSite734.DEF = "hanim_substernale_pt";
+HAnimSite734.translation = new SFVec3f(new float[0.0085,1.2995,0.1147]);
+let TouchSensor735 = browser.currentScene.createNode("TouchSensor");
+TouchSensor735.description = "HAnimSite substernale_pt";
+HAnimSite734.children = new MFNode();
 
-HAnimSegment715.children[0] = Transform716;
+HAnimSite734.children[0] = TouchSensor735;
 
-let Shape719 = browser.currentScene.createNode("Shape");
-let LineSet720 = browser.currentScene.createNode("LineSet");
-LineSet720.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA721 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA721.USE = "HAnimSegmentLineColorRGBA";
-LineSet720.color = ColorRGBA721;
+let Shape736 = browser.currentScene.createNode("Shape");
+Shape736.USE = "HAnimSiteShape";
+HAnimSite734.children[1] = Shape736;
 
-let Coordinate722 = browser.currentScene.createNode("Coordinate");
-Coordinate722.point = new MFVec3f(new float[0.0051,1.2278,-0.0808,0.0053,1.2679,-0.081]);
-LineSet720.coord = Coordinate722;
+HAnimSegment726.children[2] = HAnimSite734;
 
-Shape719.geometry = LineSet720;
+HAnimJoint725.children = new MFNode();
 
-HAnimSegment715.children[1] = Shape719;
+HAnimJoint725.children[0] = HAnimSegment726;
 
-HAnimJoint714.children = new MFNode();
+let HAnimJoint737 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint737.name = "vt10";
+HAnimJoint737.DEF = "hanim_vt10";
+HAnimJoint737.center = new SFVec3f(new float[0.0056,1.2848,-0.0822]);
+HAnimJoint737.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint737.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment738 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment738.name = "t10";
+HAnimSegment738.DEF = "hanim_t10";
+let Transform739 = browser.currentScene.createNode("Transform");
+Transform739.translation = new SFVec3f(new float[0.0056,1.2848,-0.0822]);
+let Transform740 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape741 = browser.currentScene.createNode("Shape");
+Shape741.USE = "HAnimJointShape";
+Transform740.child = new undefined();
 
-HAnimJoint714.children[0] = HAnimSegment715;
+Transform740.child[0] = Shape741;
 
-let HAnimJoint723 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint723.DEF = "hanim_vt11";
-HAnimJoint723.name = "vt11";
-HAnimJoint723.center = new SFVec3f(new float[0.0053,1.2679,-0.081]);
-let HAnimSegment724 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment724.DEF = "hanim_t11";
-HAnimSegment724.name = "t11";
-let Transform725 = browser.currentScene.createNode("Transform");
-Transform725.translation = new SFVec3f(new float[0.0053,1.2679,-0.081]);
-let Transform726 = browser.currentScene.createNode("Transform");
-let Shape727 = browser.currentScene.createNode("Shape");
-Shape727.USE = "HAnimJointShape";
-Transform726.child = new undefined();
+Transform739.children = new MFNode();
 
-Transform726.child[0] = Shape727;
+Transform739.children[0] = Transform740;
 
-Transform725.children = new MFNode();
+HAnimSegment738.children = new MFNode();
 
-Transform725.children[0] = Transform726;
+HAnimSegment738.children[0] = Transform739;
 
-HAnimSegment724.children = new MFNode();
+let Shape742 = browser.currentScene.createNode("Shape");
+let LineSet743 = browser.currentScene.createNode("LineSet");
+LineSet743.vertexCount = new MFInt32(new int[2]);
+let Coordinate744 = browser.currentScene.createNode("Coordinate");
+Coordinate744.point = new MFVec3f(new float[0.0056,1.2848,-0.0822,0.0057,1.3126,-0.0838]);
+LineSet743.coord = Coordinate744;
 
-HAnimSegment724.children[0] = Transform725;
+//from vt10 to vt9 vertices 2
+let ColorRGBA745 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA745.USE = "HAnimSegmentLineColorRGBA";
+LineSet743.color = ColorRGBA745;
 
-let Shape728 = browser.currentScene.createNode("Shape");
-let LineSet729 = browser.currentScene.createNode("LineSet");
-LineSet729.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA730 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA730.USE = "HAnimSegmentLineColorRGBA";
-LineSet729.color = ColorRGBA730;
+Shape742.geometry = LineSet743;
 
-let Coordinate731 = browser.currentScene.createNode("Coordinate");
-Coordinate731.point = new MFVec3f(new float[0.0053,1.2679,-0.081,0.0056,1.2848,-0.0822]);
-LineSet729.coord = Coordinate731;
+HAnimSegment738.children[1] = Shape742;
 
-Shape728.geometry = LineSet729;
+let HAnimSite746 = browser.currentScene.createNode("HAnimSite");
+HAnimSite746.name = "l_thelion_pt";
+HAnimSite746.DEF = "hanim_l_thelion_pt";
+HAnimSite746.translation = new SFVec3f(new float[0.0918,1.3382,0.1192]);
+let TouchSensor747 = browser.currentScene.createNode("TouchSensor");
+TouchSensor747.description = "HAnimSite l_thelion_pt";
+HAnimSite746.children = new MFNode();
 
-HAnimSegment724.children[1] = Shape728;
+HAnimSite746.children[0] = TouchSensor747;
 
-let HAnimSite732 = browser.currentScene.createNode("HAnimSite");
-HAnimSite732.DEF = "hanim_substernale_pt";
-HAnimSite732.name = "substernale_pt";
-HAnimSite732.translation = new SFVec3f(new float[0.0085,1.2995,0.1147]);
-let TouchSensor733 = browser.currentScene.createNode("TouchSensor");
-TouchSensor733.description = "HAnimSite substernale_pt";
-HAnimSite732.children = new MFNode();
+let Shape748 = browser.currentScene.createNode("Shape");
+Shape748.USE = "HAnimSiteShape";
+HAnimSite746.children[1] = Shape748;
 
-HAnimSite732.children[0] = TouchSensor733;
+HAnimSegment738.children[2] = HAnimSite746;
 
-let Shape734 = browser.currentScene.createNode("Shape");
-Shape734.USE = "HAnimSiteShape";
-HAnimSite732.children[1] = Shape734;
+let HAnimSite749 = browser.currentScene.createNode("HAnimSite");
+HAnimSite749.name = "r_thelion_pt";
+HAnimSite749.DEF = "hanim_r_thelion_pt";
+HAnimSite749.translation = new SFVec3f(new float[-0.0736,1.3385,0.1217]);
+let TouchSensor750 = browser.currentScene.createNode("TouchSensor");
+TouchSensor750.description = "HAnimSite r_thelion_pt";
+HAnimSite749.children = new MFNode();
 
-HAnimSegment724.children[2] = HAnimSite732;
+HAnimSite749.children[0] = TouchSensor750;
 
-HAnimJoint723.children = new MFNode();
+let Shape751 = browser.currentScene.createNode("Shape");
+Shape751.USE = "HAnimSiteShape";
+HAnimSite749.children[1] = Shape751;
 
-HAnimJoint723.children[0] = HAnimSegment724;
+HAnimSegment738.children[3] = HAnimSite749;
 
-let HAnimJoint735 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint735.DEF = "hanim_vt10";
-HAnimJoint735.name = "vt10";
-HAnimJoint735.center = new SFVec3f(new float[0.0056,1.2848,-0.0822]);
-let HAnimSegment736 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment736.DEF = "hanim_t10";
-HAnimSegment736.name = "t10";
-let Transform737 = browser.currentScene.createNode("Transform");
-Transform737.translation = new SFVec3f(new float[0.0056,1.2848,-0.0822]);
-let Transform738 = browser.currentScene.createNode("Transform");
-let Shape739 = browser.currentScene.createNode("Shape");
-Shape739.USE = "HAnimJointShape";
-Transform738.child = new undefined();
+HAnimJoint737.children = new MFNode();
 
-Transform738.child[0] = Shape739;
+HAnimJoint737.children[0] = HAnimSegment738;
 
-Transform737.children = new MFNode();
+let HAnimJoint752 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint752.name = "vt9";
+HAnimJoint752.DEF = "hanim_vt9";
+HAnimJoint752.center = new SFVec3f(new float[0.0057,1.3126,-0.0838]);
+HAnimJoint752.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint752.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment753 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment753.name = "t9";
+HAnimSegment753.DEF = "hanim_t9";
+let Transform754 = browser.currentScene.createNode("Transform");
+Transform754.translation = new SFVec3f(new float[0.0057,1.3126,-0.0838]);
+let Transform755 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape756 = browser.currentScene.createNode("Shape");
+Shape756.USE = "HAnimJointShape";
+Transform755.child = new undefined();
 
-Transform737.children[0] = Transform738;
+Transform755.child[0] = Shape756;
 
-HAnimSegment736.children = new MFNode();
+Transform754.children = new MFNode();
 
-HAnimSegment736.children[0] = Transform737;
+Transform754.children[0] = Transform755;
 
-let Shape740 = browser.currentScene.createNode("Shape");
-let LineSet741 = browser.currentScene.createNode("LineSet");
-LineSet741.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA742 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA742.USE = "HAnimSegmentLineColorRGBA";
-LineSet741.color = ColorRGBA742;
+HAnimSegment753.children = new MFNode();
 
-let Coordinate743 = browser.currentScene.createNode("Coordinate");
-Coordinate743.point = new MFVec3f(new float[0.0056,1.2848,-0.0822,0.0057,1.3126,-0.0838]);
-LineSet741.coord = Coordinate743;
+HAnimSegment753.children[0] = Transform754;
 
-Shape740.geometry = LineSet741;
+let Shape757 = browser.currentScene.createNode("Shape");
+let LineSet758 = browser.currentScene.createNode("LineSet");
+LineSet758.vertexCount = new MFInt32(new int[2]);
+let Coordinate759 = browser.currentScene.createNode("Coordinate");
+Coordinate759.point = new MFVec3f(new float[0.0057,1.3126,-0.0838,0.0057,1.3382,-0.0845]);
+LineSet758.coord = Coordinate759;
 
-HAnimSegment736.children[1] = Shape740;
+//from vt9 to vt8 vertices 2
+let ColorRGBA760 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA760.USE = "HAnimSegmentLineColorRGBA";
+LineSet758.color = ColorRGBA760;
 
-let HAnimSite744 = browser.currentScene.createNode("HAnimSite");
-HAnimSite744.DEF = "hanim_l_thelion_pt";
-HAnimSite744.name = "l_thelion_pt";
-HAnimSite744.translation = new SFVec3f(new float[0.0918,1.3382,0.1192]);
-let TouchSensor745 = browser.currentScene.createNode("TouchSensor");
-TouchSensor745.description = "HAnimSite l_thelion_pt";
-HAnimSite744.children = new MFNode();
+Shape757.geometry = LineSet758;
 
-HAnimSite744.children[0] = TouchSensor745;
+HAnimSegment753.children[1] = Shape757;
 
-let Shape746 = browser.currentScene.createNode("Shape");
-Shape746.USE = "HAnimSiteShape";
-HAnimSite744.children[1] = Shape746;
+HAnimJoint752.children = new MFNode();
 
-HAnimSegment736.children[2] = HAnimSite744;
+HAnimJoint752.children[0] = HAnimSegment753;
 
-let HAnimSite747 = browser.currentScene.createNode("HAnimSite");
-HAnimSite747.DEF = "hanim_r_thelion_pt";
-HAnimSite747.name = "r_thelion_pt";
-HAnimSite747.translation = new SFVec3f(new float[-0.0736,1.3385,0.1217]);
-let TouchSensor748 = browser.currentScene.createNode("TouchSensor");
-TouchSensor748.description = "HAnimSite r_thelion_pt";
-HAnimSite747.children = new MFNode();
+let HAnimJoint761 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint761.name = "vt8";
+HAnimJoint761.DEF = "hanim_vt8";
+HAnimJoint761.center = new SFVec3f(new float[0.0057,1.3382,-0.0845]);
+HAnimJoint761.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint761.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment762 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment762.name = "t8";
+HAnimSegment762.DEF = "hanim_t8";
+let Transform763 = browser.currentScene.createNode("Transform");
+Transform763.translation = new SFVec3f(new float[0.0057,1.3382,-0.0845]);
+let Transform764 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape765 = browser.currentScene.createNode("Shape");
+Shape765.USE = "HAnimJointShape";
+Transform764.child = new undefined();
 
-HAnimSite747.children[0] = TouchSensor748;
+Transform764.child[0] = Shape765;
 
-let Shape749 = browser.currentScene.createNode("Shape");
-Shape749.USE = "HAnimSiteShape";
-HAnimSite747.children[1] = Shape749;
+Transform763.children = new MFNode();
 
-HAnimSegment736.children[3] = HAnimSite747;
+Transform763.children[0] = Transform764;
 
-HAnimJoint735.children = new MFNode();
+HAnimSegment762.children = new MFNode();
 
-HAnimJoint735.children[0] = HAnimSegment736;
+HAnimSegment762.children[0] = Transform763;
 
-let HAnimJoint750 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint750.DEF = "hanim_vt9";
-HAnimJoint750.name = "vt9";
-HAnimJoint750.center = new SFVec3f(new float[0.0057,1.3126,-0.0838]);
-let HAnimSegment751 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment751.DEF = "hanim_t9";
-HAnimSegment751.name = "t9";
-let Transform752 = browser.currentScene.createNode("Transform");
-Transform752.translation = new SFVec3f(new float[0.0057,1.3126,-0.0838]);
-let Transform753 = browser.currentScene.createNode("Transform");
-let Shape754 = browser.currentScene.createNode("Shape");
-Shape754.USE = "HAnimJointShape";
-Transform753.child = new undefined();
+let Shape766 = browser.currentScene.createNode("Shape");
+let LineSet767 = browser.currentScene.createNode("LineSet");
+LineSet767.vertexCount = new MFInt32(new int[2]);
+let Coordinate768 = browser.currentScene.createNode("Coordinate");
+Coordinate768.point = new MFVec3f(new float[0.0057,1.3382,-0.0845,0.0058,1.3625,-0.0833]);
+LineSet767.coord = Coordinate768;
 
-Transform753.child[0] = Shape754;
+//from vt8 to vt7 vertices 2
+let ColorRGBA769 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA769.USE = "HAnimSegmentLineColorRGBA";
+LineSet767.color = ColorRGBA769;
 
-Transform752.children = new MFNode();
+Shape766.geometry = LineSet767;
 
-Transform752.children[0] = Transform753;
+HAnimSegment762.children[1] = Shape766;
 
-HAnimSegment751.children = new MFNode();
+HAnimJoint761.children = new MFNode();
 
-HAnimSegment751.children[0] = Transform752;
+HAnimJoint761.children[0] = HAnimSegment762;
 
-let Shape755 = browser.currentScene.createNode("Shape");
-let LineSet756 = browser.currentScene.createNode("LineSet");
-LineSet756.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA757 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA757.USE = "HAnimSegmentLineColorRGBA";
-LineSet756.color = ColorRGBA757;
+let HAnimJoint770 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint770.name = "vt7";
+HAnimJoint770.DEF = "hanim_vt7";
+HAnimJoint770.center = new SFVec3f(new float[0.0058,1.3625,-0.0833]);
+HAnimJoint770.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint770.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment771 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment771.name = "t7";
+HAnimSegment771.DEF = "hanim_t7";
+let Transform772 = browser.currentScene.createNode("Transform");
+Transform772.translation = new SFVec3f(new float[0.0058,1.3625,-0.0833]);
+let Transform773 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape774 = browser.currentScene.createNode("Shape");
+Shape774.USE = "HAnimJointShape";
+Transform773.child = new undefined();
 
-let Coordinate758 = browser.currentScene.createNode("Coordinate");
-Coordinate758.point = new MFVec3f(new float[0.0057,1.3126,-0.0838,0.0057,1.3382,-0.0845]);
-LineSet756.coord = Coordinate758;
+Transform773.child[0] = Shape774;
 
-Shape755.geometry = LineSet756;
+Transform772.children = new MFNode();
 
-HAnimSegment751.children[1] = Shape755;
+Transform772.children[0] = Transform773;
 
-HAnimJoint750.children = new MFNode();
+HAnimSegment771.children = new MFNode();
 
-HAnimJoint750.children[0] = HAnimSegment751;
+HAnimSegment771.children[0] = Transform772;
 
-let HAnimJoint759 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint759.DEF = "hanim_vt8";
-HAnimJoint759.name = "vt8";
-HAnimJoint759.center = new SFVec3f(new float[0.0057,1.3382,-0.0845]);
-let HAnimSegment760 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment760.DEF = "hanim_t8";
-HAnimSegment760.name = "t8";
-let Transform761 = browser.currentScene.createNode("Transform");
-Transform761.translation = new SFVec3f(new float[0.0057,1.3382,-0.0845]);
-let Transform762 = browser.currentScene.createNode("Transform");
-let Shape763 = browser.currentScene.createNode("Shape");
-Shape763.USE = "HAnimJointShape";
-Transform762.child = new undefined();
+let Shape775 = browser.currentScene.createNode("Shape");
+let LineSet776 = browser.currentScene.createNode("LineSet");
+LineSet776.vertexCount = new MFInt32(new int[2]);
+let Coordinate777 = browser.currentScene.createNode("Coordinate");
+Coordinate777.point = new MFVec3f(new float[0.0058,1.3625,-0.0833,0.0059,1.3866,-0.08]);
+LineSet776.coord = Coordinate777;
 
-Transform762.child[0] = Shape763;
+//from vt7 to vt6 vertices 2
+let ColorRGBA778 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA778.USE = "HAnimSegmentLineColorRGBA";
+LineSet776.color = ColorRGBA778;
 
-Transform761.children = new MFNode();
+Shape775.geometry = LineSet776;
 
-Transform761.children[0] = Transform762;
+HAnimSegment771.children[1] = Shape775;
 
-HAnimSegment760.children = new MFNode();
+let HAnimSite779 = browser.currentScene.createNode("HAnimSite");
+HAnimSite779.name = "l_chest_midsagittal_plane_pt";
+HAnimSite779.DEF = "hanim_l_chest_midsagittal_plane_pt";
+let TouchSensor780 = browser.currentScene.createNode("TouchSensor");
+TouchSensor780.description = "HAnimSite l_chest_midsagittal_plane_pt";
+HAnimSite779.children = new MFNode();
 
-HAnimSegment760.children[0] = Transform761;
+HAnimSite779.children[0] = TouchSensor780;
 
-let Shape764 = browser.currentScene.createNode("Shape");
-let LineSet765 = browser.currentScene.createNode("LineSet");
-LineSet765.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA766 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA766.USE = "HAnimSegmentLineColorRGBA";
-LineSet765.color = ColorRGBA766;
+let Shape781 = browser.currentScene.createNode("Shape");
+Shape781.USE = "HAnimSiteShape";
+HAnimSite779.children[1] = Shape781;
 
-let Coordinate767 = browser.currentScene.createNode("Coordinate");
-Coordinate767.point = new MFVec3f(new float[0.0057,1.3382,-0.0845,0.0058,1.3625,-0.0833]);
-LineSet765.coord = Coordinate767;
+HAnimSegment771.children[2] = HAnimSite779;
 
-Shape764.geometry = LineSet765;
+let HAnimSite782 = browser.currentScene.createNode("HAnimSite");
+HAnimSite782.name = "mesosternale_pt";
+HAnimSite782.DEF = "hanim_mesosternale_pt";
+let TouchSensor783 = browser.currentScene.createNode("TouchSensor");
+TouchSensor783.description = "HAnimSite mesosternale_pt";
+HAnimSite782.children = new MFNode();
 
-HAnimSegment760.children[1] = Shape764;
+HAnimSite782.children[0] = TouchSensor783;
 
-HAnimJoint759.children = new MFNode();
+let Shape784 = browser.currentScene.createNode("Shape");
+Shape784.USE = "HAnimSiteShape";
+HAnimSite782.children[1] = Shape784;
 
-HAnimJoint759.children[0] = HAnimSegment760;
+HAnimSegment771.children[3] = HAnimSite782;
 
-let HAnimJoint768 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint768.DEF = "hanim_vt7";
-HAnimJoint768.name = "vt7";
-HAnimJoint768.center = new SFVec3f(new float[0.0058,1.3625,-0.0833]);
-let HAnimSegment769 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment769.DEF = "hanim_t7";
-HAnimSegment769.name = "t7";
-let Transform770 = browser.currentScene.createNode("Transform");
-Transform770.translation = new SFVec3f(new float[0.0058,1.3625,-0.0833]);
-let Transform771 = browser.currentScene.createNode("Transform");
-let Shape772 = browser.currentScene.createNode("Shape");
-Shape772.USE = "HAnimJointShape";
-Transform771.child = new undefined();
+let HAnimSite785 = browser.currentScene.createNode("HAnimSite");
+HAnimSite785.name = "r_chest_midsagittal_plane_pt";
+HAnimSite785.DEF = "hanim_r_chest_midsagittal_plane_pt";
+let TouchSensor786 = browser.currentScene.createNode("TouchSensor");
+TouchSensor786.description = "HAnimSite r_chest_midsagittal_plane_pt";
+HAnimSite785.children = new MFNode();
 
-Transform771.child[0] = Shape772;
+HAnimSite785.children[0] = TouchSensor786;
 
-Transform770.children = new MFNode();
+let Shape787 = browser.currentScene.createNode("Shape");
+Shape787.USE = "HAnimSiteShape";
+HAnimSite785.children[1] = Shape787;
 
-Transform770.children[0] = Transform771;
+HAnimSegment771.children[4] = HAnimSite785;
 
-HAnimSegment769.children = new MFNode();
+let HAnimSite788 = browser.currentScene.createNode("HAnimSite");
+HAnimSite788.name = "rear_center_midsagittal_plane_pt";
+HAnimSite788.DEF = "hanim_rear_center_midsagittal_plane_pt";
+let TouchSensor789 = browser.currentScene.createNode("TouchSensor");
+TouchSensor789.description = "HAnimSite rear_center_midsagittal_plane_pt";
+HAnimSite788.children = new MFNode();
 
-HAnimSegment769.children[0] = Transform770;
+HAnimSite788.children[0] = TouchSensor789;
 
-let Shape773 = browser.currentScene.createNode("Shape");
-let LineSet774 = browser.currentScene.createNode("LineSet");
-LineSet774.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA775 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA775.USE = "HAnimSegmentLineColorRGBA";
-LineSet774.color = ColorRGBA775;
+let Shape790 = browser.currentScene.createNode("Shape");
+Shape790.USE = "HAnimSiteShape";
+HAnimSite788.children[1] = Shape790;
 
-let Coordinate776 = browser.currentScene.createNode("Coordinate");
-Coordinate776.point = new MFVec3f(new float[0.0058,1.3625,-0.0833,0.0059,1.3866,-0.08]);
-LineSet774.coord = Coordinate776;
+HAnimSegment771.children[5] = HAnimSite788;
 
-Shape773.geometry = LineSet774;
+HAnimJoint770.children = new MFNode();
 
-HAnimSegment769.children[1] = Shape773;
+HAnimJoint770.children[0] = HAnimSegment771;
 
-let HAnimSite777 = browser.currentScene.createNode("HAnimSite");
-HAnimSite777.DEF = "hanim_l_chest_midsagittal_plane_pt";
-HAnimSite777.name = "l_chest_midsagittal_plane_pt";
-let TouchSensor778 = browser.currentScene.createNode("TouchSensor");
-TouchSensor778.description = "HAnimSite l_chest_midsagittal_plane_pt";
-HAnimSite777.children = new MFNode();
+let HAnimJoint791 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint791.name = "vt6";
+HAnimJoint791.DEF = "hanim_vt6";
+HAnimJoint791.center = new SFVec3f(new float[0.0059,1.3866,-0.08]);
+HAnimJoint791.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint791.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment792 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment792.name = "t6";
+HAnimSegment792.DEF = "hanim_t6";
+let Transform793 = browser.currentScene.createNode("Transform");
+Transform793.translation = new SFVec3f(new float[0.0059,1.3866,-0.08]);
+let Transform794 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape795 = browser.currentScene.createNode("Shape");
+Shape795.USE = "HAnimJointShape";
+Transform794.child = new undefined();
 
-HAnimSite777.children[0] = TouchSensor778;
+Transform794.child[0] = Shape795;
 
-let Shape779 = browser.currentScene.createNode("Shape");
-Shape779.USE = "HAnimSiteShape";
-HAnimSite777.children[1] = Shape779;
+Transform793.children = new MFNode();
 
-HAnimSegment769.children[2] = HAnimSite777;
+Transform793.children[0] = Transform794;
 
-let HAnimSite780 = browser.currentScene.createNode("HAnimSite");
-HAnimSite780.DEF = "hanim_mesosternale_pt";
-HAnimSite780.name = "mesosternale_pt";
-let TouchSensor781 = browser.currentScene.createNode("TouchSensor");
-TouchSensor781.description = "HAnimSite mesosternale_pt";
-HAnimSite780.children = new MFNode();
+HAnimSegment792.children = new MFNode();
 
-HAnimSite780.children[0] = TouchSensor781;
+HAnimSegment792.children[0] = Transform793;
 
-let Shape782 = browser.currentScene.createNode("Shape");
-Shape782.USE = "HAnimSiteShape";
-HAnimSite780.children[1] = Shape782;
+let Shape796 = browser.currentScene.createNode("Shape");
+let LineSet797 = browser.currentScene.createNode("LineSet");
+LineSet797.vertexCount = new MFInt32(new int[2]);
+let Coordinate798 = browser.currentScene.createNode("Coordinate");
+Coordinate798.point = new MFVec3f(new float[0.0059,1.3866,-0.08,0.006,1.4102,-0.0745]);
+LineSet797.coord = Coordinate798;
 
-HAnimSegment769.children[3] = HAnimSite780;
+//from vt6 to vt5 vertices 2
+let ColorRGBA799 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA799.USE = "HAnimSegmentLineColorRGBA";
+LineSet797.color = ColorRGBA799;
 
-let HAnimSite783 = browser.currentScene.createNode("HAnimSite");
-HAnimSite783.DEF = "hanim_r_chest_midsagittal_plane_pt";
-HAnimSite783.name = "r_chest_midsagittal_plane_pt";
-let TouchSensor784 = browser.currentScene.createNode("TouchSensor");
-TouchSensor784.description = "HAnimSite r_chest_midsagittal_plane_pt";
-HAnimSite783.children = new MFNode();
+Shape796.geometry = LineSet797;
 
-HAnimSite783.children[0] = TouchSensor784;
+HAnimSegment792.children[1] = Shape796;
 
-let Shape785 = browser.currentScene.createNode("Shape");
-Shape785.USE = "HAnimSiteShape";
-HAnimSite783.children[1] = Shape785;
+let HAnimSite800 = browser.currentScene.createNode("HAnimSite");
+HAnimSite800.name = "spine_1_middle_back_pt";
+HAnimSite800.DEF = "hanim_spine_1_middle_back_pt";
+let TouchSensor801 = browser.currentScene.createNode("TouchSensor");
+TouchSensor801.description = "HAnimSite spine_1_middle_back_pt";
+HAnimSite800.children = new MFNode();
 
-HAnimSegment769.children[4] = HAnimSite783;
+HAnimSite800.children[0] = TouchSensor801;
 
-let HAnimSite786 = browser.currentScene.createNode("HAnimSite");
-HAnimSite786.DEF = "hanim_rear_center_midsagittal_plane_pt";
-HAnimSite786.name = "rear_center_midsagittal_plane_pt";
-let TouchSensor787 = browser.currentScene.createNode("TouchSensor");
-TouchSensor787.description = "HAnimSite rear_center_midsagittal_plane_pt";
-HAnimSite786.children = new MFNode();
+let Shape802 = browser.currentScene.createNode("Shape");
+Shape802.USE = "HAnimSiteShape";
+HAnimSite800.children[1] = Shape802;
 
-HAnimSite786.children[0] = TouchSensor787;
+HAnimSegment792.children[2] = HAnimSite800;
 
-let Shape788 = browser.currentScene.createNode("Shape");
-Shape788.USE = "HAnimSiteShape";
-HAnimSite786.children[1] = Shape788;
+HAnimJoint791.children = new MFNode();
 
-HAnimSegment769.children[5] = HAnimSite786;
+HAnimJoint791.children[0] = HAnimSegment792;
 
-HAnimJoint768.children = new MFNode();
+let HAnimJoint803 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint803.name = "vt5";
+HAnimJoint803.DEF = "hanim_vt5";
+HAnimJoint803.center = new SFVec3f(new float[0.006,1.4102,-0.0745]);
+HAnimJoint803.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint803.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment804 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment804.name = "t5";
+HAnimSegment804.DEF = "hanim_t5";
+let Transform805 = browser.currentScene.createNode("Transform");
+Transform805.translation = new SFVec3f(new float[0.006,1.4102,-0.0745]);
+let Transform806 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape807 = browser.currentScene.createNode("Shape");
+Shape807.USE = "HAnimJointShape";
+Transform806.child = new undefined();
 
-HAnimJoint768.children[0] = HAnimSegment769;
+Transform806.child[0] = Shape807;
 
-let HAnimJoint789 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint789.DEF = "hanim_vt6";
-HAnimJoint789.name = "vt6";
-HAnimJoint789.center = new SFVec3f(new float[0.0059,1.3866,-0.08]);
-let HAnimSegment790 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment790.DEF = "hanim_t6";
-HAnimSegment790.name = "t6";
-let Transform791 = browser.currentScene.createNode("Transform");
-Transform791.translation = new SFVec3f(new float[0.0059,1.3866,-0.08]);
-let Transform792 = browser.currentScene.createNode("Transform");
-let Shape793 = browser.currentScene.createNode("Shape");
-Shape793.USE = "HAnimJointShape";
-Transform792.child = new undefined();
+Transform805.children = new MFNode();
 
-Transform792.child[0] = Shape793;
+Transform805.children[0] = Transform806;
 
-Transform791.children = new MFNode();
+HAnimSegment804.children = new MFNode();
 
-Transform791.children[0] = Transform792;
+HAnimSegment804.children[0] = Transform805;
 
-HAnimSegment790.children = new MFNode();
+let Shape808 = browser.currentScene.createNode("Shape");
+let LineSet809 = browser.currentScene.createNode("LineSet");
+LineSet809.vertexCount = new MFInt32(new int[2]);
+let Coordinate810 = browser.currentScene.createNode("Coordinate");
+Coordinate810.point = new MFVec3f(new float[0.006,1.4102,-0.0745,0.0061,1.432,-0.0675]);
+LineSet809.coord = Coordinate810;
 
-HAnimSegment790.children[0] = Transform791;
+//from vt5 to vt4 vertices 2
+let ColorRGBA811 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA811.USE = "HAnimSegmentLineColorRGBA";
+LineSet809.color = ColorRGBA811;
 
-let Shape794 = browser.currentScene.createNode("Shape");
-let LineSet795 = browser.currentScene.createNode("LineSet");
-LineSet795.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA796 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA796.USE = "HAnimSegmentLineColorRGBA";
-LineSet795.color = ColorRGBA796;
+Shape808.geometry = LineSet809;
 
-let Coordinate797 = browser.currentScene.createNode("Coordinate");
-Coordinate797.point = new MFVec3f(new float[0.0059,1.3866,-0.08,0.006,1.4102,-0.0745]);
-LineSet795.coord = Coordinate797;
+HAnimSegment804.children[1] = Shape808;
 
-Shape794.geometry = LineSet795;
+HAnimJoint803.children = new MFNode();
 
-HAnimSegment790.children[1] = Shape794;
+HAnimJoint803.children[0] = HAnimSegment804;
 
-let HAnimSite798 = browser.currentScene.createNode("HAnimSite");
-HAnimSite798.DEF = "hanim_spine_1_middle_back_pt";
-HAnimSite798.name = "spine_1_middle_back_pt";
-let TouchSensor799 = browser.currentScene.createNode("TouchSensor");
-TouchSensor799.description = "HAnimSite spine_1_middle_back_pt";
-HAnimSite798.children = new MFNode();
+let HAnimJoint812 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint812.name = "vt4";
+HAnimJoint812.DEF = "hanim_vt4";
+HAnimJoint812.center = new SFVec3f(new float[0.0061,1.432,-0.0675]);
+HAnimJoint812.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint812.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment813 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment813.name = "t4";
+HAnimSegment813.DEF = "hanim_t4";
+let Transform814 = browser.currentScene.createNode("Transform");
+Transform814.translation = new SFVec3f(new float[0.0061,1.432,-0.0675]);
+let Transform815 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape816 = browser.currentScene.createNode("Shape");
+Shape816.USE = "HAnimJointShape";
+Transform815.child = new undefined();
 
-HAnimSite798.children[0] = TouchSensor799;
+Transform815.child[0] = Shape816;
 
-let Shape800 = browser.currentScene.createNode("Shape");
-Shape800.USE = "HAnimSiteShape";
-HAnimSite798.children[1] = Shape800;
+Transform814.children = new MFNode();
 
-HAnimSegment790.children[2] = HAnimSite798;
+Transform814.children[0] = Transform815;
 
-HAnimJoint789.children = new MFNode();
+HAnimSegment813.children = new MFNode();
 
-HAnimJoint789.children[0] = HAnimSegment790;
+HAnimSegment813.children[0] = Transform814;
 
-let HAnimJoint801 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint801.DEF = "hanim_vt5";
-HAnimJoint801.name = "vt5";
-HAnimJoint801.center = new SFVec3f(new float[0.006,1.4102,-0.0745]);
-let HAnimSegment802 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment802.DEF = "hanim_t5";
-HAnimSegment802.name = "t5";
-let Transform803 = browser.currentScene.createNode("Transform");
-Transform803.translation = new SFVec3f(new float[0.006,1.4102,-0.0745]);
-let Transform804 = browser.currentScene.createNode("Transform");
-let Shape805 = browser.currentScene.createNode("Shape");
-Shape805.USE = "HAnimJointShape";
-Transform804.child = new undefined();
+let Shape817 = browser.currentScene.createNode("Shape");
+let LineSet818 = browser.currentScene.createNode("LineSet");
+LineSet818.vertexCount = new MFInt32(new int[2]);
+let Coordinate819 = browser.currentScene.createNode("Coordinate");
+Coordinate819.point = new MFVec3f(new float[0.0061,1.432,-0.0675,0.0062,1.4583,-0.057]);
+LineSet818.coord = Coordinate819;
 
-Transform804.child[0] = Shape805;
+//from vt4 to vt3 vertices 2
+let ColorRGBA820 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA820.USE = "HAnimSegmentLineColorRGBA";
+LineSet818.color = ColorRGBA820;
 
-Transform803.children = new MFNode();
+Shape817.geometry = LineSet818;
 
-Transform803.children[0] = Transform804;
+HAnimSegment813.children[1] = Shape817;
 
-HAnimSegment802.children = new MFNode();
+HAnimJoint812.children = new MFNode();
 
-HAnimSegment802.children[0] = Transform803;
+HAnimJoint812.children[0] = HAnimSegment813;
 
-let Shape806 = browser.currentScene.createNode("Shape");
-let LineSet807 = browser.currentScene.createNode("LineSet");
-LineSet807.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA808 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA808.USE = "HAnimSegmentLineColorRGBA";
-LineSet807.color = ColorRGBA808;
+let HAnimJoint821 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint821.name = "vt3";
+HAnimJoint821.DEF = "hanim_vt3";
+HAnimJoint821.center = new SFVec3f(new float[0.0062,1.4583,-0.057]);
+HAnimJoint821.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint821.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment822 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment822.name = "t3";
+HAnimSegment822.DEF = "hanim_t3";
+let Transform823 = browser.currentScene.createNode("Transform");
+Transform823.translation = new SFVec3f(new float[0.0062,1.4583,-0.057]);
+let Transform824 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape825 = browser.currentScene.createNode("Shape");
+Shape825.USE = "HAnimJointShape";
+Transform824.child = new undefined();
 
-let Coordinate809 = browser.currentScene.createNode("Coordinate");
-Coordinate809.point = new MFVec3f(new float[0.006,1.4102,-0.0745,0.0061,1.432,-0.0675]);
-LineSet807.coord = Coordinate809;
+Transform824.child[0] = Shape825;
 
-Shape806.geometry = LineSet807;
+Transform823.children = new MFNode();
 
-HAnimSegment802.children[1] = Shape806;
+Transform823.children[0] = Transform824;
 
-HAnimJoint801.children = new MFNode();
+HAnimSegment822.children = new MFNode();
 
-HAnimJoint801.children[0] = HAnimSegment802;
+HAnimSegment822.children[0] = Transform823;
 
-let HAnimJoint810 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint810.DEF = "hanim_vt4";
-HAnimJoint810.name = "vt4";
-HAnimJoint810.center = new SFVec3f(new float[0.0061,1.432,-0.0675]);
-let HAnimSegment811 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment811.DEF = "hanim_t4";
-HAnimSegment811.name = "t4";
-let Transform812 = browser.currentScene.createNode("Transform");
-Transform812.translation = new SFVec3f(new float[0.0061,1.432,-0.0675]);
-let Transform813 = browser.currentScene.createNode("Transform");
-let Shape814 = browser.currentScene.createNode("Shape");
-Shape814.USE = "HAnimJointShape";
-Transform813.child = new undefined();
+let Shape826 = browser.currentScene.createNode("Shape");
+let LineSet827 = browser.currentScene.createNode("LineSet");
+LineSet827.vertexCount = new MFInt32(new int[2]);
+let Coordinate828 = browser.currentScene.createNode("Coordinate");
+Coordinate828.point = new MFVec3f(new float[0.0062,1.4583,-0.057,0.0063,1.4761,-0.0484]);
+LineSet827.coord = Coordinate828;
 
-Transform813.child[0] = Shape814;
+//from vt3 to vt2 vertices 2
+let ColorRGBA829 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA829.USE = "HAnimSegmentLineColorRGBA";
+LineSet827.color = ColorRGBA829;
 
-Transform812.children = new MFNode();
+Shape826.geometry = LineSet827;
 
-Transform812.children[0] = Transform813;
+HAnimSegment822.children[1] = Shape826;
 
-HAnimSegment811.children = new MFNode();
+HAnimJoint821.children = new MFNode();
 
-HAnimSegment811.children[0] = Transform812;
+HAnimJoint821.children[0] = HAnimSegment822;
 
-let Shape815 = browser.currentScene.createNode("Shape");
-let LineSet816 = browser.currentScene.createNode("LineSet");
-LineSet816.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA817 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA817.USE = "HAnimSegmentLineColorRGBA";
-LineSet816.color = ColorRGBA817;
+let HAnimJoint830 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint830.name = "vt2";
+HAnimJoint830.DEF = "hanim_vt2";
+HAnimJoint830.center = new SFVec3f(new float[0.0063,1.4761,-0.0484]);
+HAnimJoint830.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint830.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment831 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment831.name = "t2";
+HAnimSegment831.DEF = "hanim_t2";
+let Transform832 = browser.currentScene.createNode("Transform");
+Transform832.translation = new SFVec3f(new float[0.0063,1.4761,-0.0484]);
+let Transform833 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape834 = browser.currentScene.createNode("Shape");
+Shape834.USE = "HAnimJointShape";
+Transform833.child = new undefined();
 
-let Coordinate818 = browser.currentScene.createNode("Coordinate");
-Coordinate818.point = new MFVec3f(new float[0.0061,1.432,-0.0675,0.0062,1.4583,-0.057]);
-LineSet816.coord = Coordinate818;
+Transform833.child[0] = Shape834;
 
-Shape815.geometry = LineSet816;
+Transform832.children = new MFNode();
 
-HAnimSegment811.children[1] = Shape815;
+Transform832.children[0] = Transform833;
 
-HAnimJoint810.children = new MFNode();
+HAnimSegment831.children = new MFNode();
 
-HAnimJoint810.children[0] = HAnimSegment811;
+HAnimSegment831.children[0] = Transform832;
 
-let HAnimJoint819 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint819.DEF = "hanim_vt3";
-HAnimJoint819.name = "vt3";
-HAnimJoint819.center = new SFVec3f(new float[0.0062,1.4583,-0.057]);
-let HAnimSegment820 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment820.DEF = "hanim_t3";
-HAnimSegment820.name = "t3";
-let Transform821 = browser.currentScene.createNode("Transform");
-Transform821.translation = new SFVec3f(new float[0.0062,1.4583,-0.057]);
-let Transform822 = browser.currentScene.createNode("Transform");
-let Shape823 = browser.currentScene.createNode("Shape");
-Shape823.USE = "HAnimJointShape";
-Transform822.child = new undefined();
+let Shape835 = browser.currentScene.createNode("Shape");
+let LineSet836 = browser.currentScene.createNode("LineSet");
+LineSet836.vertexCount = new MFInt32(new int[2]);
+let Coordinate837 = browser.currentScene.createNode("Coordinate");
+Coordinate837.point = new MFVec3f(new float[0.0063,1.4761,-0.0484,0.0065,1.4951,-0.0387]);
+LineSet836.coord = Coordinate837;
 
-Transform822.child[0] = Shape823;
+//from vt2 to vt1 vertices 2
+let ColorRGBA838 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA838.USE = "HAnimSegmentLineColorRGBA";
+LineSet836.color = ColorRGBA838;
 
-Transform821.children = new MFNode();
+Shape835.geometry = LineSet836;
 
-Transform821.children[0] = Transform822;
+HAnimSegment831.children[1] = Shape835;
 
-HAnimSegment820.children = new MFNode();
+let HAnimSite839 = browser.currentScene.createNode("HAnimSite");
+HAnimSite839.name = "cervicale_pt";
+HAnimSite839.DEF = "hanim_cervicale_pt";
+HAnimSite839.translation = new SFVec3f(new float[0.0064,1.52,-0.0815]);
+let TouchSensor840 = browser.currentScene.createNode("TouchSensor");
+TouchSensor840.description = "HAnimSite cervicale_pt";
+HAnimSite839.children = new MFNode();
 
-HAnimSegment820.children[0] = Transform821;
+HAnimSite839.children[0] = TouchSensor840;
 
-let Shape824 = browser.currentScene.createNode("Shape");
-let LineSet825 = browser.currentScene.createNode("LineSet");
-LineSet825.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA826 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA826.USE = "HAnimSegmentLineColorRGBA";
-LineSet825.color = ColorRGBA826;
+let Shape841 = browser.currentScene.createNode("Shape");
+Shape841.USE = "HAnimSiteShape";
+HAnimSite839.children[1] = Shape841;
 
-let Coordinate827 = browser.currentScene.createNode("Coordinate");
-Coordinate827.point = new MFVec3f(new float[0.0062,1.4583,-0.057,0.0063,1.4761,-0.0484]);
-LineSet825.coord = Coordinate827;
+HAnimSegment831.children[2] = HAnimSite839;
 
-Shape824.geometry = LineSet825;
+let HAnimSite842 = browser.currentScene.createNode("HAnimSite");
+HAnimSite842.name = "suprasternale_pt";
+HAnimSite842.DEF = "hanim_suprasternale_pt";
+HAnimSite842.translation = new SFVec3f(new float[0.0084,1.4714,0.0551]);
+let TouchSensor843 = browser.currentScene.createNode("TouchSensor");
+TouchSensor843.description = "HAnimSite suprasternale_pt";
+HAnimSite842.children = new MFNode();
 
-HAnimSegment820.children[1] = Shape824;
+HAnimSite842.children[0] = TouchSensor843;
 
-HAnimJoint819.children = new MFNode();
+let Shape844 = browser.currentScene.createNode("Shape");
+Shape844.USE = "HAnimSiteShape";
+HAnimSite842.children[1] = Shape844;
 
-HAnimJoint819.children[0] = HAnimSegment820;
+HAnimSegment831.children[3] = HAnimSite842;
 
-let HAnimJoint828 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint828.DEF = "hanim_vt2";
-HAnimJoint828.name = "vt2";
-HAnimJoint828.center = new SFVec3f(new float[0.0063,1.4761,-0.0484]);
-let HAnimSegment829 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment829.DEF = "hanim_t2";
-HAnimSegment829.name = "t2";
-let Transform830 = browser.currentScene.createNode("Transform");
-Transform830.translation = new SFVec3f(new float[0.0063,1.4761,-0.0484]);
-let Transform831 = browser.currentScene.createNode("Transform");
-let Shape832 = browser.currentScene.createNode("Shape");
-Shape832.USE = "HAnimJointShape";
-Transform831.child = new undefined();
+HAnimJoint830.children = new MFNode();
 
-Transform831.child[0] = Shape832;
+HAnimJoint830.children[0] = HAnimSegment831;
 
-Transform830.children = new MFNode();
+let HAnimJoint845 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint845.name = "vt1";
+HAnimJoint845.DEF = "hanim_vt1";
+HAnimJoint845.center = new SFVec3f(new float[0.0065,1.4951,-0.0387]);
+HAnimJoint845.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint845.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment846 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment846.name = "t1";
+HAnimSegment846.DEF = "hanim_t1";
+let Transform847 = browser.currentScene.createNode("Transform");
+Transform847.translation = new SFVec3f(new float[0.0065,1.4951,-0.0387]);
+let Transform848 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape849 = browser.currentScene.createNode("Shape");
+Shape849.USE = "HAnimJointShape";
+Transform848.child = new undefined();
 
-Transform830.children[0] = Transform831;
+Transform848.child[0] = Shape849;
 
-HAnimSegment829.children = new MFNode();
+Transform847.children = new MFNode();
 
-HAnimSegment829.children[0] = Transform830;
+Transform847.children[0] = Transform848;
 
-let Shape833 = browser.currentScene.createNode("Shape");
-let LineSet834 = browser.currentScene.createNode("LineSet");
-LineSet834.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA835 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA835.USE = "HAnimSegmentLineColorRGBA";
-LineSet834.color = ColorRGBA835;
+HAnimSegment846.children = new MFNode();
 
-let Coordinate836 = browser.currentScene.createNode("Coordinate");
-Coordinate836.point = new MFVec3f(new float[0.0063,1.4761,-0.0484,0.0065,1.4951,-0.0387]);
-LineSet834.coord = Coordinate836;
+HAnimSegment846.children[0] = Transform847;
 
-Shape833.geometry = LineSet834;
+let Shape850 = browser.currentScene.createNode("Shape");
+let LineSet851 = browser.currentScene.createNode("LineSet");
+LineSet851.vertexCount = new MFInt32(new int[2]);
+let Coordinate852 = browser.currentScene.createNode("Coordinate");
+Coordinate852.point = new MFVec3f(new float[0.0065,1.4951,-0.0387,0.0066,1.5132,-0.0301]);
+LineSet851.coord = Coordinate852;
 
-HAnimSegment829.children[1] = Shape833;
+//from vt1 to vc7 vertices 2
+let ColorRGBA853 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA853.USE = "HAnimSegmentLineColorRGBA";
+LineSet851.color = ColorRGBA853;
 
-let HAnimSite837 = browser.currentScene.createNode("HAnimSite");
-HAnimSite837.DEF = "hanim_cervicale_pt";
-HAnimSite837.name = "cervicale_pt";
-HAnimSite837.translation = new SFVec3f(new float[0.0064,1.52,-0.0815]);
-let TouchSensor838 = browser.currentScene.createNode("TouchSensor");
-TouchSensor838.description = "HAnimSite cervicale_pt";
-HAnimSite837.children = new MFNode();
+Shape850.geometry = LineSet851;
 
-HAnimSite837.children[0] = TouchSensor838;
+HAnimSegment846.children[1] = Shape850;
 
-let Shape839 = browser.currentScene.createNode("Shape");
-Shape839.USE = "HAnimSiteShape";
-HAnimSite837.children[1] = Shape839;
+let HAnimSite854 = browser.currentScene.createNode("HAnimSite");
+HAnimSite854.name = "l_neck_base_pt";
+HAnimSite854.DEF = "hanim_l_neck_base_pt";
+HAnimSite854.translation = new SFVec3f(new float[0.0646,1.5141,-0.038]);
+let TouchSensor855 = browser.currentScene.createNode("TouchSensor");
+TouchSensor855.description = "HAnimSite l_neck_base_pt";
+HAnimSite854.children = new MFNode();
 
-HAnimSegment829.children[2] = HAnimSite837;
+HAnimSite854.children[0] = TouchSensor855;
 
-let HAnimSite840 = browser.currentScene.createNode("HAnimSite");
-HAnimSite840.DEF = "hanim_suprasternale_pt";
-HAnimSite840.name = "suprasternale_pt";
-HAnimSite840.translation = new SFVec3f(new float[0.0084,1.4714,0.0551]);
-let TouchSensor841 = browser.currentScene.createNode("TouchSensor");
-TouchSensor841.description = "HAnimSite suprasternale_pt";
-HAnimSite840.children = new MFNode();
+let Shape856 = browser.currentScene.createNode("Shape");
+Shape856.USE = "HAnimSiteShape";
+HAnimSite854.children[1] = Shape856;
 
-HAnimSite840.children[0] = TouchSensor841;
+HAnimSegment846.children[2] = HAnimSite854;
 
-let Shape842 = browser.currentScene.createNode("Shape");
-Shape842.USE = "HAnimSiteShape";
-HAnimSite840.children[1] = Shape842;
+let HAnimSite857 = browser.currentScene.createNode("HAnimSite");
+HAnimSite857.name = "r_neck_base_pt";
+HAnimSite857.DEF = "hanim_r_neck_base_pt";
+HAnimSite857.translation = new SFVec3f(new float[-0.0419,1.5149,-0.022]);
+let TouchSensor858 = browser.currentScene.createNode("TouchSensor");
+TouchSensor858.description = "HAnimSite r_neck_base_pt";
+HAnimSite857.children = new MFNode();
 
-HAnimSegment829.children[3] = HAnimSite840;
+HAnimSite857.children[0] = TouchSensor858;
 
-HAnimJoint828.children = new MFNode();
+let Shape859 = browser.currentScene.createNode("Shape");
+Shape859.USE = "HAnimSiteShape";
+HAnimSite857.children[1] = Shape859;
 
-HAnimJoint828.children[0] = HAnimSegment829;
+HAnimSegment846.children[3] = HAnimSite857;
 
-let HAnimJoint843 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint843.DEF = "hanim_vt1";
-HAnimJoint843.name = "vt1";
-HAnimJoint843.center = new SFVec3f(new float[0.0065,1.4951,-0.0387]);
-let HAnimSegment844 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment844.DEF = "hanim_t1";
-HAnimSegment844.name = "t1";
-let Transform845 = browser.currentScene.createNode("Transform");
-Transform845.translation = new SFVec3f(new float[0.0065,1.4951,-0.0387]);
-let Transform846 = browser.currentScene.createNode("Transform");
-let Shape847 = browser.currentScene.createNode("Shape");
-Shape847.USE = "HAnimJointShape";
-Transform846.child = new undefined();
+let Shape860 = browser.currentScene.createNode("Shape");
+let LineSet861 = browser.currentScene.createNode("LineSet");
+LineSet861.vertexCount = new MFInt32(new int[2]);
+let Coordinate862 = browser.currentScene.createNode("Coordinate");
+Coordinate862.point = new MFVec3f(new float[0.0065,1.4951,-0.0387,0.082,1.4488,-0.0353]);
+LineSet861.coord = Coordinate862;
 
-Transform846.child[0] = Shape847;
+//from vt1 to l_sternoclavicular vertices 2
+let ColorRGBA863 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA863.USE = "HAnimSegmentLineColorRGBA";
+LineSet861.color = ColorRGBA863;
 
-Transform845.children = new MFNode();
+Shape860.geometry = LineSet861;
 
-Transform845.children[0] = Transform846;
+HAnimSegment846.children[4] = Shape860;
 
-HAnimSegment844.children = new MFNode();
+let HAnimSite864 = browser.currentScene.createNode("HAnimSite");
+HAnimSite864.name = "l_acromion_pt";
+HAnimSite864.DEF = "hanim_l_acromion_pt";
+HAnimSite864.translation = new SFVec3f(new float[0.2032,1.476,-0.049]);
+let TouchSensor865 = browser.currentScene.createNode("TouchSensor");
+TouchSensor865.description = "HAnimSite l_acromion_pt";
+HAnimSite864.children = new MFNode();
 
-HAnimSegment844.children[0] = Transform845;
+HAnimSite864.children[0] = TouchSensor865;
 
-let Shape848 = browser.currentScene.createNode("Shape");
-let LineSet849 = browser.currentScene.createNode("LineSet");
-LineSet849.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA850 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA850.USE = "HAnimSegmentLineColorRGBA";
-LineSet849.color = ColorRGBA850;
+let Shape866 = browser.currentScene.createNode("Shape");
+Shape866.USE = "HAnimSiteShape";
+HAnimSite864.children[1] = Shape866;
 
-let Coordinate851 = browser.currentScene.createNode("Coordinate");
-Coordinate851.point = new MFVec3f(new float[0.0065,1.4951,-0.0387,0.0066,1.5132,-0.0301]);
-LineSet849.coord = Coordinate851;
+HAnimSegment846.children[5] = HAnimSite864;
 
-Shape848.geometry = LineSet849;
+let HAnimSite867 = browser.currentScene.createNode("HAnimSite");
+HAnimSite867.name = "l_axilla_distal_pt";
+HAnimSite867.DEF = "hanim_l_axilla_distal_pt";
+HAnimSite867.translation = new SFVec3f(new float[0.1706,1.4072,-0.0875]);
+let TouchSensor868 = browser.currentScene.createNode("TouchSensor");
+TouchSensor868.description = "HAnimSite l_axilla_distal_pt";
+HAnimSite867.children = new MFNode();
 
-HAnimSegment844.children[1] = Shape848;
+HAnimSite867.children[0] = TouchSensor868;
 
-let HAnimSite852 = browser.currentScene.createNode("HAnimSite");
-HAnimSite852.DEF = "hanim_l_neck_base_pt";
-HAnimSite852.name = "l_neck_base_pt";
-HAnimSite852.translation = new SFVec3f(new float[0.0646,1.5141,-0.038]);
-let TouchSensor853 = browser.currentScene.createNode("TouchSensor");
-TouchSensor853.description = "HAnimSite l_neck_base_pt";
-HAnimSite852.children = new MFNode();
+let Shape869 = browser.currentScene.createNode("Shape");
+Shape869.USE = "HAnimSiteShape";
+HAnimSite867.children[1] = Shape869;
 
-HAnimSite852.children[0] = TouchSensor853;
+HAnimSegment846.children[6] = HAnimSite867;
 
-let Shape854 = browser.currentScene.createNode("Shape");
-Shape854.USE = "HAnimSiteShape";
-HAnimSite852.children[1] = Shape854;
+let HAnimSite870 = browser.currentScene.createNode("HAnimSite");
+HAnimSite870.name = "l_axilla_posterior_folds_pt";
+HAnimSite870.DEF = "hanim_l_axilla_posterior_folds_pt";
+let TouchSensor871 = browser.currentScene.createNode("TouchSensor");
+TouchSensor871.description = "HAnimSite l_axilla_posterior_folds_pt";
+HAnimSite870.children = new MFNode();
 
-HAnimSegment844.children[2] = HAnimSite852;
+HAnimSite870.children[0] = TouchSensor871;
 
-let HAnimSite855 = browser.currentScene.createNode("HAnimSite");
-HAnimSite855.DEF = "hanim_r_neck_base_pt";
-HAnimSite855.name = "r_neck_base_pt";
-HAnimSite855.translation = new SFVec3f(new float[-0.0419,1.5149,-0.022]);
-let TouchSensor856 = browser.currentScene.createNode("TouchSensor");
-TouchSensor856.description = "HAnimSite r_neck_base_pt";
-HAnimSite855.children = new MFNode();
+let Shape872 = browser.currentScene.createNode("Shape");
+Shape872.USE = "HAnimSiteShape";
+HAnimSite870.children[1] = Shape872;
 
-HAnimSite855.children[0] = TouchSensor856;
+HAnimSegment846.children[7] = HAnimSite870;
 
-let Shape857 = browser.currentScene.createNode("Shape");
-Shape857.USE = "HAnimSiteShape";
-HAnimSite855.children[1] = Shape857;
+let HAnimSite873 = browser.currentScene.createNode("HAnimSite");
+HAnimSite873.name = "l_axilla_proximal_pt";
+HAnimSite873.DEF = "hanim_l_axilla_proximal_pt";
+HAnimSite873.translation = new SFVec3f(new float[0.1777,1.4065,-0.0075]);
+let TouchSensor874 = browser.currentScene.createNode("TouchSensor");
+TouchSensor874.description = "HAnimSite l_axilla_proximal_pt";
+HAnimSite873.children = new MFNode();
 
-HAnimSegment844.children[3] = HAnimSite855;
+HAnimSite873.children[0] = TouchSensor874;
 
-let Shape858 = browser.currentScene.createNode("Shape");
-let LineSet859 = browser.currentScene.createNode("LineSet");
-LineSet859.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA860 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA860.USE = "HAnimSegmentLineColorRGBA";
-LineSet859.color = ColorRGBA860;
+let Shape875 = browser.currentScene.createNode("Shape");
+Shape875.USE = "HAnimSiteShape";
+HAnimSite873.children[1] = Shape875;
 
-let Coordinate861 = browser.currentScene.createNode("Coordinate");
-Coordinate861.point = new MFVec3f(new float[0.0065,1.4951,-0.0387,0.082,1.4488,-0.0353]);
-LineSet859.coord = Coordinate861;
+HAnimSegment846.children[8] = HAnimSite873;
 
-Shape858.geometry = LineSet859;
+let HAnimSite876 = browser.currentScene.createNode("HAnimSite");
+HAnimSite876.name = "l_clavicale_pt";
+HAnimSite876.DEF = "hanim_l_clavicale_pt";
+HAnimSite876.translation = new SFVec3f(new float[0.0271,1.4943,0.0394]);
+let TouchSensor877 = browser.currentScene.createNode("TouchSensor");
+TouchSensor877.description = "HAnimSite l_clavicale_pt";
+HAnimSite876.children = new MFNode();
 
-HAnimSegment844.children[4] = Shape858;
+HAnimSite876.children[0] = TouchSensor877;
 
-let HAnimSite862 = browser.currentScene.createNode("HAnimSite");
-HAnimSite862.DEF = "hanim_l_acromion_pt";
-HAnimSite862.name = "l_acromion_pt";
-HAnimSite862.translation = new SFVec3f(new float[0.2032,1.476,-0.049]);
-let TouchSensor863 = browser.currentScene.createNode("TouchSensor");
-TouchSensor863.description = "HAnimSite l_acromion_pt";
-HAnimSite862.children = new MFNode();
+let Shape878 = browser.currentScene.createNode("Shape");
+Shape878.USE = "HAnimSiteShape";
+HAnimSite876.children[1] = Shape878;
 
-HAnimSite862.children[0] = TouchSensor863;
+HAnimSegment846.children[9] = HAnimSite876;
 
-let Shape864 = browser.currentScene.createNode("Shape");
-Shape864.USE = "HAnimSiteShape";
-HAnimSite862.children[1] = Shape864;
+let Shape879 = browser.currentScene.createNode("Shape");
+let LineSet880 = browser.currentScene.createNode("LineSet");
+LineSet880.vertexCount = new MFInt32(new int[2]);
+let Coordinate881 = browser.currentScene.createNode("Coordinate");
+Coordinate881.point = new MFVec3f(new float[0.0065,1.4951,-0.0387,-0.0694,1.46,-0.033]);
+LineSet880.coord = Coordinate881;
 
-HAnimSegment844.children[5] = HAnimSite862;
+//from vt1 to r_sternoclavicular vertices 2
+let ColorRGBA882 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA882.USE = "HAnimSegmentLineColorRGBA";
+LineSet880.color = ColorRGBA882;
 
-let HAnimSite865 = browser.currentScene.createNode("HAnimSite");
-HAnimSite865.DEF = "hanim_l_axilla_distal_pt";
-HAnimSite865.name = "l_axilla_distal_pt";
-HAnimSite865.translation = new SFVec3f(new float[0.1706,1.4072,-0.0875]);
-let TouchSensor866 = browser.currentScene.createNode("TouchSensor");
-TouchSensor866.description = "HAnimSite l_axilla_distal_pt";
-HAnimSite865.children = new MFNode();
+Shape879.geometry = LineSet880;
 
-HAnimSite865.children[0] = TouchSensor866;
+HAnimSegment846.children[10] = Shape879;
 
-let Shape867 = browser.currentScene.createNode("Shape");
-Shape867.USE = "HAnimSiteShape";
-HAnimSite865.children[1] = Shape867;
+let HAnimSite883 = browser.currentScene.createNode("HAnimSite");
+HAnimSite883.name = "r_acromion_pt";
+HAnimSite883.DEF = "hanim_r_acromion_pt";
+HAnimSite883.translation = new SFVec3f(new float[-0.1905,1.4791,-0.0431]);
+let TouchSensor884 = browser.currentScene.createNode("TouchSensor");
+TouchSensor884.description = "HAnimSite r_acromion_pt";
+HAnimSite883.children = new MFNode();
 
-HAnimSegment844.children[6] = HAnimSite865;
+HAnimSite883.children[0] = TouchSensor884;
 
-let HAnimSite868 = browser.currentScene.createNode("HAnimSite");
-HAnimSite868.DEF = "hanim_l_axilla_posterior_folds_pt";
-HAnimSite868.name = "l_axilla_posterior_folds_pt";
-let TouchSensor869 = browser.currentScene.createNode("TouchSensor");
-TouchSensor869.description = "HAnimSite l_axilla_posterior_folds_pt";
-HAnimSite868.children = new MFNode();
+let Shape885 = browser.currentScene.createNode("Shape");
+Shape885.USE = "HAnimSiteShape";
+HAnimSite883.children[1] = Shape885;
 
-HAnimSite868.children[0] = TouchSensor869;
+HAnimSegment846.children[11] = HAnimSite883;
 
-let Shape870 = browser.currentScene.createNode("Shape");
-Shape870.USE = "HAnimSiteShape";
-HAnimSite868.children[1] = Shape870;
+let HAnimSite886 = browser.currentScene.createNode("HAnimSite");
+HAnimSite886.name = "r_axilla_distal_pt";
+HAnimSite886.DEF = "hanim_r_axilla_distal_pt";
+HAnimSite886.translation = new SFVec3f(new float[-0.1603,1.4098,-0.0826]);
+let TouchSensor887 = browser.currentScene.createNode("TouchSensor");
+TouchSensor887.description = "HAnimSite r_axilla_distal_pt";
+HAnimSite886.children = new MFNode();
 
-HAnimSegment844.children[7] = HAnimSite868;
+HAnimSite886.children[0] = TouchSensor887;
 
-let HAnimSite871 = browser.currentScene.createNode("HAnimSite");
-HAnimSite871.DEF = "hanim_l_axilla_proximal_pt";
-HAnimSite871.name = "l_axilla_proximal_pt";
-HAnimSite871.translation = new SFVec3f(new float[0.1777,1.4065,-0.0075]);
-let TouchSensor872 = browser.currentScene.createNode("TouchSensor");
-TouchSensor872.description = "HAnimSite l_axilla_proximal_pt";
-HAnimSite871.children = new MFNode();
+let Shape888 = browser.currentScene.createNode("Shape");
+Shape888.USE = "HAnimSiteShape";
+HAnimSite886.children[1] = Shape888;
 
-HAnimSite871.children[0] = TouchSensor872;
+HAnimSegment846.children[12] = HAnimSite886;
 
-let Shape873 = browser.currentScene.createNode("Shape");
-Shape873.USE = "HAnimSiteShape";
-HAnimSite871.children[1] = Shape873;
+let HAnimSite889 = browser.currentScene.createNode("HAnimSite");
+HAnimSite889.name = "r_axilla_posterior_folds_pt";
+HAnimSite889.DEF = "hanim_r_axilla_posterior_folds_pt";
+let TouchSensor890 = browser.currentScene.createNode("TouchSensor");
+TouchSensor890.description = "HAnimSite r_axilla_posterior_folds_pt";
+HAnimSite889.children = new MFNode();
 
-HAnimSegment844.children[8] = HAnimSite871;
+HAnimSite889.children[0] = TouchSensor890;
 
-let HAnimSite874 = browser.currentScene.createNode("HAnimSite");
-HAnimSite874.DEF = "hanim_l_clavicale_pt";
-HAnimSite874.name = "l_clavicale_pt";
-HAnimSite874.translation = new SFVec3f(new float[0.0271,1.4943,0.0394]);
-let TouchSensor875 = browser.currentScene.createNode("TouchSensor");
-TouchSensor875.description = "HAnimSite l_clavicale_pt";
-HAnimSite874.children = new MFNode();
+let Shape891 = browser.currentScene.createNode("Shape");
+Shape891.USE = "HAnimSiteShape";
+HAnimSite889.children[1] = Shape891;
 
-HAnimSite874.children[0] = TouchSensor875;
+HAnimSegment846.children[13] = HAnimSite889;
 
-let Shape876 = browser.currentScene.createNode("Shape");
-Shape876.USE = "HAnimSiteShape";
-HAnimSite874.children[1] = Shape876;
+let HAnimSite892 = browser.currentScene.createNode("HAnimSite");
+HAnimSite892.name = "r_axilla_proximal_pt";
+HAnimSite892.DEF = "hanim_r_axilla_proximal_pt";
+HAnimSite892.translation = new SFVec3f(new float[-0.1626,1.4072,-0.0031]);
+let TouchSensor893 = browser.currentScene.createNode("TouchSensor");
+TouchSensor893.description = "HAnimSite r_axilla_proximal_pt";
+HAnimSite892.children = new MFNode();
 
-HAnimSegment844.children[9] = HAnimSite874;
+HAnimSite892.children[0] = TouchSensor893;
 
-let Shape877 = browser.currentScene.createNode("Shape");
-let LineSet878 = browser.currentScene.createNode("LineSet");
-LineSet878.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA879 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA879.USE = "HAnimSegmentLineColorRGBA";
-LineSet878.color = ColorRGBA879;
+let Shape894 = browser.currentScene.createNode("Shape");
+Shape894.USE = "HAnimSiteShape";
+HAnimSite892.children[1] = Shape894;
 
-let Coordinate880 = browser.currentScene.createNode("Coordinate");
-Coordinate880.point = new MFVec3f(new float[0.0065,1.4951,-0.0387,-0.0694,1.46,-0.033]);
-LineSet878.coord = Coordinate880;
+HAnimSegment846.children[14] = HAnimSite892;
 
-Shape877.geometry = LineSet878;
+let HAnimSite895 = browser.currentScene.createNode("HAnimSite");
+HAnimSite895.name = "r_clavicale_pt";
+HAnimSite895.DEF = "hanim_r_clavicale_pt";
+HAnimSite895.translation = new SFVec3f(new float[-0.0115,1.4943,0.04]);
+let TouchSensor896 = browser.currentScene.createNode("TouchSensor");
+TouchSensor896.description = "HAnimSite r_clavicale_pt";
+HAnimSite895.children = new MFNode();
 
-HAnimSegment844.children[10] = Shape877;
+HAnimSite895.children[0] = TouchSensor896;
 
-let HAnimSite881 = browser.currentScene.createNode("HAnimSite");
-HAnimSite881.DEF = "hanim_r_acromion_pt";
-HAnimSite881.name = "r_acromion_pt";
-HAnimSite881.translation = new SFVec3f(new float[-0.1905,1.4791,-0.0431]);
-let TouchSensor882 = browser.currentScene.createNode("TouchSensor");
-TouchSensor882.description = "HAnimSite r_acromion_pt";
-HAnimSite881.children = new MFNode();
+let Shape897 = browser.currentScene.createNode("Shape");
+Shape897.USE = "HAnimSiteShape";
+HAnimSite895.children[1] = Shape897;
 
-HAnimSite881.children[0] = TouchSensor882;
+HAnimSegment846.children[15] = HAnimSite895;
 
-let Shape883 = browser.currentScene.createNode("Shape");
-Shape883.USE = "HAnimSiteShape";
-HAnimSite881.children[1] = Shape883;
+HAnimJoint845.children = new MFNode();
 
-HAnimSegment844.children[11] = HAnimSite881;
+HAnimJoint845.children[0] = HAnimSegment846;
 
-let HAnimSite884 = browser.currentScene.createNode("HAnimSite");
-HAnimSite884.DEF = "hanim_r_axilla_distal_pt";
-HAnimSite884.name = "r_axilla_distal_pt";
-HAnimSite884.translation = new SFVec3f(new float[-0.1603,1.4098,-0.0826]);
-let TouchSensor885 = browser.currentScene.createNode("TouchSensor");
-TouchSensor885.description = "HAnimSite r_axilla_distal_pt";
-HAnimSite884.children = new MFNode();
+let HAnimJoint898 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint898.name = "vc7";
+HAnimJoint898.DEF = "hanim_vc7";
+HAnimJoint898.center = new SFVec3f(new float[0.0066,1.5132,-0.0301]);
+HAnimJoint898.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint898.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment899 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment899.name = "c7";
+HAnimSegment899.DEF = "hanim_c7";
+let Transform900 = browser.currentScene.createNode("Transform");
+Transform900.translation = new SFVec3f(new float[0.0066,1.5132,-0.0301]);
+let Transform901 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape902 = browser.currentScene.createNode("Shape");
+Shape902.USE = "HAnimJointShape";
+Transform901.child = new undefined();
 
-HAnimSite884.children[0] = TouchSensor885;
+Transform901.child[0] = Shape902;
 
-let Shape886 = browser.currentScene.createNode("Shape");
-Shape886.USE = "HAnimSiteShape";
-HAnimSite884.children[1] = Shape886;
+Transform900.children = new MFNode();
 
-HAnimSegment844.children[12] = HAnimSite884;
+Transform900.children[0] = Transform901;
 
-let HAnimSite887 = browser.currentScene.createNode("HAnimSite");
-HAnimSite887.DEF = "hanim_r_axilla_posterior_folds_pt";
-HAnimSite887.name = "r_axilla_posterior_folds_pt";
-let TouchSensor888 = browser.currentScene.createNode("TouchSensor");
-TouchSensor888.description = "HAnimSite r_axilla_posterior_folds_pt";
-HAnimSite887.children = new MFNode();
+HAnimSegment899.children = new MFNode();
 
-HAnimSite887.children[0] = TouchSensor888;
+HAnimSegment899.children[0] = Transform900;
 
-let Shape889 = browser.currentScene.createNode("Shape");
-Shape889.USE = "HAnimSiteShape";
-HAnimSite887.children[1] = Shape889;
+let Shape903 = browser.currentScene.createNode("Shape");
+let LineSet904 = browser.currentScene.createNode("LineSet");
+LineSet904.vertexCount = new MFInt32(new int[2]);
+let Coordinate905 = browser.currentScene.createNode("Coordinate");
+Coordinate905.point = new MFVec3f(new float[0.0066,1.5132,-0.0301,0.0066,1.5357,-0.0143]);
+LineSet904.coord = Coordinate905;
 
-HAnimSegment844.children[13] = HAnimSite887;
+//from vc7 to vc6 vertices 2
+let ColorRGBA906 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA906.USE = "HAnimSegmentLineColorRGBA";
+LineSet904.color = ColorRGBA906;
 
-let HAnimSite890 = browser.currentScene.createNode("HAnimSite");
-HAnimSite890.DEF = "hanim_r_axilla_proximal_pt";
-HAnimSite890.name = "r_axilla_proximal_pt";
-HAnimSite890.translation = new SFVec3f(new float[-0.1626,1.4072,-0.0031]);
-let TouchSensor891 = browser.currentScene.createNode("TouchSensor");
-TouchSensor891.description = "HAnimSite r_axilla_proximal_pt";
-HAnimSite890.children = new MFNode();
+Shape903.geometry = LineSet904;
 
-HAnimSite890.children[0] = TouchSensor891;
+HAnimSegment899.children[1] = Shape903;
 
-let Shape892 = browser.currentScene.createNode("Shape");
-Shape892.USE = "HAnimSiteShape";
-HAnimSite890.children[1] = Shape892;
+HAnimJoint898.children = new MFNode();
 
-HAnimSegment844.children[14] = HAnimSite890;
+HAnimJoint898.children[0] = HAnimSegment899;
 
-let HAnimSite893 = browser.currentScene.createNode("HAnimSite");
-HAnimSite893.DEF = "hanim_r_clavicale_pt";
-HAnimSite893.name = "r_clavicale_pt";
-HAnimSite893.translation = new SFVec3f(new float[-0.0115,1.4943,0.04]);
-let TouchSensor894 = browser.currentScene.createNode("TouchSensor");
-TouchSensor894.description = "HAnimSite r_clavicale_pt";
-HAnimSite893.children = new MFNode();
+let HAnimJoint907 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint907.name = "vc6";
+HAnimJoint907.DEF = "hanim_vc6";
+HAnimJoint907.center = new SFVec3f(new float[0.0066,1.5357,-0.0143]);
+HAnimJoint907.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint907.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment908 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment908.name = "c6";
+HAnimSegment908.DEF = "hanim_c6";
+let Transform909 = browser.currentScene.createNode("Transform");
+Transform909.translation = new SFVec3f(new float[0.0066,1.5357,-0.0143]);
+let Transform910 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape911 = browser.currentScene.createNode("Shape");
+Shape911.USE = "HAnimJointShape";
+Transform910.child = new undefined();
 
-HAnimSite893.children[0] = TouchSensor894;
+Transform910.child[0] = Shape911;
 
-let Shape895 = browser.currentScene.createNode("Shape");
-Shape895.USE = "HAnimSiteShape";
-HAnimSite893.children[1] = Shape895;
+Transform909.children = new MFNode();
 
-HAnimSegment844.children[15] = HAnimSite893;
+Transform909.children[0] = Transform910;
 
-HAnimJoint843.children = new MFNode();
+HAnimSegment908.children = new MFNode();
 
-HAnimJoint843.children[0] = HAnimSegment844;
+HAnimSegment908.children[0] = Transform909;
 
-let HAnimJoint896 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint896.DEF = "hanim_vc7";
-HAnimJoint896.name = "vc7";
-HAnimJoint896.center = new SFVec3f(new float[0.0066,1.5132,-0.0301]);
-let HAnimSegment897 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment897.DEF = "hanim_c7";
-HAnimSegment897.name = "c7";
-let Transform898 = browser.currentScene.createNode("Transform");
-Transform898.translation = new SFVec3f(new float[0.0066,1.5132,-0.0301]);
-let Transform899 = browser.currentScene.createNode("Transform");
-let Shape900 = browser.currentScene.createNode("Shape");
-Shape900.USE = "HAnimJointShape";
-Transform899.child = new undefined();
+let Shape912 = browser.currentScene.createNode("Shape");
+let LineSet913 = browser.currentScene.createNode("LineSet");
+LineSet913.vertexCount = new MFInt32(new int[2]);
+let Coordinate914 = browser.currentScene.createNode("Coordinate");
+Coordinate914.point = new MFVec3f(new float[0.0066,1.5357,-0.0143,0.0066,1.552,-0.0082]);
+LineSet913.coord = Coordinate914;
 
-Transform899.child[0] = Shape900;
+//from vc6 to vc5 vertices 2
+let ColorRGBA915 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA915.USE = "HAnimSegmentLineColorRGBA";
+LineSet913.color = ColorRGBA915;
 
-Transform898.children = new MFNode();
+Shape912.geometry = LineSet913;
 
-Transform898.children[0] = Transform899;
+HAnimSegment908.children[1] = Shape912;
 
-HAnimSegment897.children = new MFNode();
+HAnimJoint907.children = new MFNode();
 
-HAnimSegment897.children[0] = Transform898;
+HAnimJoint907.children[0] = HAnimSegment908;
 
-let Shape901 = browser.currentScene.createNode("Shape");
-let LineSet902 = browser.currentScene.createNode("LineSet");
-LineSet902.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA903 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA903.USE = "HAnimSegmentLineColorRGBA";
-LineSet902.color = ColorRGBA903;
+let HAnimJoint916 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint916.name = "vc5";
+HAnimJoint916.DEF = "hanim_vc5";
+HAnimJoint916.center = new SFVec3f(new float[0.0066,1.552,-0.0082]);
+HAnimJoint916.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint916.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment917 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment917.name = "c5";
+HAnimSegment917.DEF = "hanim_c5";
+let Transform918 = browser.currentScene.createNode("Transform");
+Transform918.translation = new SFVec3f(new float[0.0066,1.552,-0.0082]);
+let Transform919 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape920 = browser.currentScene.createNode("Shape");
+Shape920.USE = "HAnimJointShape";
+Transform919.child = new undefined();
 
-let Coordinate904 = browser.currentScene.createNode("Coordinate");
-Coordinate904.point = new MFVec3f(new float[0.0066,1.5132,-0.0301,0.0066,1.5357,-0.0143]);
-LineSet902.coord = Coordinate904;
+Transform919.child[0] = Shape920;
 
-Shape901.geometry = LineSet902;
+Transform918.children = new MFNode();
 
-HAnimSegment897.children[1] = Shape901;
+Transform918.children[0] = Transform919;
 
-HAnimJoint896.children = new MFNode();
+HAnimSegment917.children = new MFNode();
 
-HAnimJoint896.children[0] = HAnimSegment897;
+HAnimSegment917.children[0] = Transform918;
 
-let HAnimJoint905 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint905.DEF = "hanim_vc6";
-HAnimJoint905.name = "vc6";
-HAnimJoint905.center = new SFVec3f(new float[0.0066,1.5357,-0.0143]);
-let HAnimSegment906 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment906.DEF = "hanim_c6";
-HAnimSegment906.name = "c6";
-let Transform907 = browser.currentScene.createNode("Transform");
-Transform907.translation = new SFVec3f(new float[0.0066,1.5357,-0.0143]);
-let Transform908 = browser.currentScene.createNode("Transform");
-let Shape909 = browser.currentScene.createNode("Shape");
-Shape909.USE = "HAnimJointShape";
-Transform908.child = new undefined();
+let Shape921 = browser.currentScene.createNode("Shape");
+let LineSet922 = browser.currentScene.createNode("LineSet");
+LineSet922.vertexCount = new MFInt32(new int[2]);
+let Coordinate923 = browser.currentScene.createNode("Coordinate");
+Coordinate923.point = new MFVec3f(new float[0.0066,1.552,-0.0082,0.0066,1.5662,-0.0084]);
+LineSet922.coord = Coordinate923;
 
-Transform908.child[0] = Shape909;
+//from vc5 to vc4 vertices 2
+let ColorRGBA924 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA924.USE = "HAnimSegmentLineColorRGBA";
+LineSet922.color = ColorRGBA924;
 
-Transform907.children = new MFNode();
+Shape921.geometry = LineSet922;
 
-Transform907.children[0] = Transform908;
+HAnimSegment917.children[1] = Shape921;
 
-HAnimSegment906.children = new MFNode();
+HAnimJoint916.children = new MFNode();
 
-HAnimSegment906.children[0] = Transform907;
+HAnimJoint916.children[0] = HAnimSegment917;
 
-let Shape910 = browser.currentScene.createNode("Shape");
-let LineSet911 = browser.currentScene.createNode("LineSet");
-LineSet911.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA912 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA912.USE = "HAnimSegmentLineColorRGBA";
-LineSet911.color = ColorRGBA912;
+let HAnimJoint925 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint925.name = "vc4";
+HAnimJoint925.DEF = "hanim_vc4";
+HAnimJoint925.center = new SFVec3f(new float[0.0066,1.5662,-0.0084]);
+HAnimJoint925.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint925.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment926 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment926.name = "c4";
+HAnimSegment926.DEF = "hanim_c4";
+let Transform927 = browser.currentScene.createNode("Transform");
+Transform927.translation = new SFVec3f(new float[0.0066,1.5662,-0.0084]);
+let Transform928 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape929 = browser.currentScene.createNode("Shape");
+Shape929.USE = "HAnimJointShape";
+Transform928.child = new undefined();
 
-let Coordinate913 = browser.currentScene.createNode("Coordinate");
-Coordinate913.point = new MFVec3f(new float[0.0066,1.5357,-0.0143,0.0066,1.552,-0.0082]);
-LineSet911.coord = Coordinate913;
+Transform928.child[0] = Shape929;
 
-Shape910.geometry = LineSet911;
+Transform927.children = new MFNode();
 
-HAnimSegment906.children[1] = Shape910;
+Transform927.children[0] = Transform928;
 
-HAnimJoint905.children = new MFNode();
+HAnimSegment926.children = new MFNode();
 
-HAnimJoint905.children[0] = HAnimSegment906;
+HAnimSegment926.children[0] = Transform927;
 
-let HAnimJoint914 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint914.DEF = "hanim_vc5";
-HAnimJoint914.name = "vc5";
-HAnimJoint914.center = new SFVec3f(new float[0.0066,1.552,-0.0082]);
-let HAnimSegment915 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment915.DEF = "hanim_c5";
-HAnimSegment915.name = "c5";
-let Transform916 = browser.currentScene.createNode("Transform");
-Transform916.translation = new SFVec3f(new float[0.0066,1.552,-0.0082]);
-let Transform917 = browser.currentScene.createNode("Transform");
-let Shape918 = browser.currentScene.createNode("Shape");
-Shape918.USE = "HAnimJointShape";
-Transform917.child = new undefined();
+let Shape930 = browser.currentScene.createNode("Shape");
+let LineSet931 = browser.currentScene.createNode("LineSet");
+LineSet931.vertexCount = new MFInt32(new int[2]);
+let Coordinate932 = browser.currentScene.createNode("Coordinate");
+Coordinate932.point = new MFVec3f(new float[0.0066,1.5662,-0.0084,0.0066,1.58,-0.0103]);
+LineSet931.coord = Coordinate932;
 
-Transform917.child[0] = Shape918;
+//from vc4 to vc3 vertices 2
+let ColorRGBA933 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA933.USE = "HAnimSegmentLineColorRGBA";
+LineSet931.color = ColorRGBA933;
 
-Transform916.children = new MFNode();
+Shape930.geometry = LineSet931;
 
-Transform916.children[0] = Transform917;
+HAnimSegment926.children[1] = Shape930;
 
-HAnimSegment915.children = new MFNode();
+HAnimJoint925.children = new MFNode();
 
-HAnimSegment915.children[0] = Transform916;
+HAnimJoint925.children[0] = HAnimSegment926;
 
-let Shape919 = browser.currentScene.createNode("Shape");
-let LineSet920 = browser.currentScene.createNode("LineSet");
-LineSet920.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA921 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA921.USE = "HAnimSegmentLineColorRGBA";
-LineSet920.color = ColorRGBA921;
+let HAnimJoint934 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint934.name = "vc3";
+HAnimJoint934.DEF = "hanim_vc3";
+HAnimJoint934.center = new SFVec3f(new float[0.0066,1.58,-0.0103]);
+HAnimJoint934.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint934.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment935 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment935.name = "c3";
+HAnimSegment935.DEF = "hanim_c3";
+let Transform936 = browser.currentScene.createNode("Transform");
+Transform936.translation = new SFVec3f(new float[0.0066,1.58,-0.0103]);
+let Transform937 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape938 = browser.currentScene.createNode("Shape");
+Shape938.USE = "HAnimJointShape";
+Transform937.child = new undefined();
 
-let Coordinate922 = browser.currentScene.createNode("Coordinate");
-Coordinate922.point = new MFVec3f(new float[0.0066,1.552,-0.0082,0.0066,1.5662,-0.0084]);
-LineSet920.coord = Coordinate922;
+Transform937.child[0] = Shape938;
 
-Shape919.geometry = LineSet920;
+Transform936.children = new MFNode();
 
-HAnimSegment915.children[1] = Shape919;
+Transform936.children[0] = Transform937;
 
-HAnimJoint914.children = new MFNode();
+HAnimSegment935.children = new MFNode();
 
-HAnimJoint914.children[0] = HAnimSegment915;
+HAnimSegment935.children[0] = Transform936;
 
-let HAnimJoint923 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint923.DEF = "hanim_vc4";
-HAnimJoint923.name = "vc4";
-HAnimJoint923.center = new SFVec3f(new float[0.0066,1.5662,-0.0084]);
-let HAnimSegment924 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment924.DEF = "hanim_c4";
-HAnimSegment924.name = "c4";
-let Transform925 = browser.currentScene.createNode("Transform");
-Transform925.translation = new SFVec3f(new float[0.0066,1.5662,-0.0084]);
-let Transform926 = browser.currentScene.createNode("Transform");
-let Shape927 = browser.currentScene.createNode("Shape");
-Shape927.USE = "HAnimJointShape";
-Transform926.child = new undefined();
+let Shape939 = browser.currentScene.createNode("Shape");
+let LineSet940 = browser.currentScene.createNode("LineSet");
+LineSet940.vertexCount = new MFInt32(new int[2]);
+let Coordinate941 = browser.currentScene.createNode("Coordinate");
+Coordinate941.point = new MFVec3f(new float[0.0066,1.58,-0.0103,0.0066,1.5928,-0.0103]);
+LineSet940.coord = Coordinate941;
 
-Transform926.child[0] = Shape927;
+//from vc3 to vc2 vertices 2
+let ColorRGBA942 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA942.USE = "HAnimSegmentLineColorRGBA";
+LineSet940.color = ColorRGBA942;
 
-Transform925.children = new MFNode();
+Shape939.geometry = LineSet940;
 
-Transform925.children[0] = Transform926;
+HAnimSegment935.children[1] = Shape939;
 
-HAnimSegment924.children = new MFNode();
+let HAnimSite943 = browser.currentScene.createNode("HAnimSite");
+HAnimSite943.name = "adams_apple_pt";
+HAnimSite943.DEF = "hanim_adams_apple_pt";
+let TouchSensor944 = browser.currentScene.createNode("TouchSensor");
+TouchSensor944.description = "HAnimSite adams_apple_pt";
+HAnimSite943.children = new MFNode();
 
-HAnimSegment924.children[0] = Transform925;
+HAnimSite943.children[0] = TouchSensor944;
 
-let Shape928 = browser.currentScene.createNode("Shape");
-let LineSet929 = browser.currentScene.createNode("LineSet");
-LineSet929.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA930 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA930.USE = "HAnimSegmentLineColorRGBA";
-LineSet929.color = ColorRGBA930;
+let Shape945 = browser.currentScene.createNode("Shape");
+Shape945.USE = "HAnimSiteShape";
+HAnimSite943.children[1] = Shape945;
 
-let Coordinate931 = browser.currentScene.createNode("Coordinate");
-Coordinate931.point = new MFVec3f(new float[0.0066,1.5662,-0.0084,0.0066,1.58,-0.0103]);
-LineSet929.coord = Coordinate931;
+HAnimSegment935.children[2] = HAnimSite943;
 
-Shape928.geometry = LineSet929;
+HAnimJoint934.children = new MFNode();
 
-HAnimSegment924.children[1] = Shape928;
+HAnimJoint934.children[0] = HAnimSegment935;
 
-HAnimJoint923.children = new MFNode();
+let HAnimJoint946 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint946.name = "vc2";
+HAnimJoint946.DEF = "hanim_vc2";
+HAnimJoint946.center = new SFVec3f(new float[0.0066,1.5928,-0.0103]);
+HAnimJoint946.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint946.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment947 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment947.name = "c2";
+HAnimSegment947.DEF = "hanim_c2";
+let Transform948 = browser.currentScene.createNode("Transform");
+Transform948.translation = new SFVec3f(new float[0.0066,1.5928,-0.0103]);
+let Transform949 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape950 = browser.currentScene.createNode("Shape");
+Shape950.USE = "HAnimJointShape";
+Transform949.child = new undefined();
 
-HAnimJoint923.children[0] = HAnimSegment924;
+Transform949.child[0] = Shape950;
 
-let HAnimJoint932 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint932.DEF = "hanim_vc3";
-HAnimJoint932.name = "vc3";
-HAnimJoint932.center = new SFVec3f(new float[0.0066,1.58,-0.0103]);
-let HAnimSegment933 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment933.DEF = "hanim_c3";
-HAnimSegment933.name = "c3";
-let Transform934 = browser.currentScene.createNode("Transform");
-Transform934.translation = new SFVec3f(new float[0.0066,1.58,-0.0103]);
-let Transform935 = browser.currentScene.createNode("Transform");
-let Shape936 = browser.currentScene.createNode("Shape");
-Shape936.USE = "HAnimJointShape";
-Transform935.child = new undefined();
+Transform948.children = new MFNode();
 
-Transform935.child[0] = Shape936;
+Transform948.children[0] = Transform949;
 
-Transform934.children = new MFNode();
+HAnimSegment947.children = new MFNode();
 
-Transform934.children[0] = Transform935;
+HAnimSegment947.children[0] = Transform948;
 
-HAnimSegment933.children = new MFNode();
+let Shape951 = browser.currentScene.createNode("Shape");
+let LineSet952 = browser.currentScene.createNode("LineSet");
+LineSet952.vertexCount = new MFInt32(new int[2]);
+let Coordinate953 = browser.currentScene.createNode("Coordinate");
+Coordinate953.point = new MFVec3f(new float[0.0066,1.5928,-0.0103,0.0066,1.6144,-0.0034]);
+LineSet952.coord = Coordinate953;
 
-HAnimSegment933.children[0] = Transform934;
+//from vc2 to vc1 vertices 2
+let ColorRGBA954 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA954.USE = "HAnimSegmentLineColorRGBA";
+LineSet952.color = ColorRGBA954;
 
-let Shape937 = browser.currentScene.createNode("Shape");
-let LineSet938 = browser.currentScene.createNode("LineSet");
-LineSet938.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA939 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA939.USE = "HAnimSegmentLineColorRGBA";
-LineSet938.color = ColorRGBA939;
+Shape951.geometry = LineSet952;
 
-let Coordinate940 = browser.currentScene.createNode("Coordinate");
-Coordinate940.point = new MFVec3f(new float[0.0066,1.58,-0.0103,0.0066,1.5928,-0.0103]);
-LineSet938.coord = Coordinate940;
+HAnimSegment947.children[1] = Shape951;
 
-Shape937.geometry = LineSet938;
+HAnimJoint946.children = new MFNode();
 
-HAnimSegment933.children[1] = Shape937;
+HAnimJoint946.children[0] = HAnimSegment947;
 
-let HAnimSite941 = browser.currentScene.createNode("HAnimSite");
-HAnimSite941.DEF = "hanim_adams_apple_pt";
-HAnimSite941.name = "adams_apple_pt";
-let TouchSensor942 = browser.currentScene.createNode("TouchSensor");
-TouchSensor942.description = "HAnimSite adams_apple_pt";
-HAnimSite941.children = new MFNode();
+let HAnimJoint955 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint955.name = "vc1";
+HAnimJoint955.DEF = "hanim_vc1";
+HAnimJoint955.center = new SFVec3f(new float[0.0066,1.6144,-0.0034]);
+HAnimJoint955.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint955.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment956 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment956.name = "c1";
+HAnimSegment956.DEF = "hanim_c1";
+let Transform957 = browser.currentScene.createNode("Transform");
+Transform957.translation = new SFVec3f(new float[0.0066,1.6144,-0.0034]);
+let Transform958 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape959 = browser.currentScene.createNode("Shape");
+Shape959.USE = "HAnimJointShape";
+Transform958.child = new undefined();
 
-HAnimSite941.children[0] = TouchSensor942;
+Transform958.child[0] = Shape959;
 
-let Shape943 = browser.currentScene.createNode("Shape");
-Shape943.USE = "HAnimSiteShape";
-HAnimSite941.children[1] = Shape943;
+Transform957.children = new MFNode();
 
-HAnimSegment933.children[2] = HAnimSite941;
+Transform957.children[0] = Transform958;
 
-HAnimJoint932.children = new MFNode();
+HAnimSegment956.children = new MFNode();
 
-HAnimJoint932.children[0] = HAnimSegment933;
+HAnimSegment956.children[0] = Transform957;
 
-let HAnimJoint944 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint944.DEF = "hanim_vc2";
-HAnimJoint944.name = "vc2";
-HAnimJoint944.center = new SFVec3f(new float[0.0066,1.5928,-0.0103]);
-let HAnimSegment945 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment945.DEF = "hanim_c2";
-HAnimSegment945.name = "c2";
-let Transform946 = browser.currentScene.createNode("Transform");
-Transform946.translation = new SFVec3f(new float[0.0066,1.5928,-0.0103]);
-let Transform947 = browser.currentScene.createNode("Transform");
-let Shape948 = browser.currentScene.createNode("Shape");
-Shape948.USE = "HAnimJointShape";
-Transform947.child = new undefined();
+let Shape960 = browser.currentScene.createNode("Shape");
+let LineSet961 = browser.currentScene.createNode("LineSet");
+LineSet961.vertexCount = new MFInt32(new int[2]);
+let Coordinate962 = browser.currentScene.createNode("Coordinate");
+Coordinate962.point = new MFVec3f(new float[0.0066,1.6144,-0.0034,0.0044,1.6209,0.0236]);
+LineSet961.coord = Coordinate962;
 
-Transform947.child[0] = Shape948;
+//from vc1 to skullbase vertices 2
+let ColorRGBA963 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA963.USE = "HAnimSegmentLineColorRGBA";
+LineSet961.color = ColorRGBA963;
 
-Transform946.children = new MFNode();
+Shape960.geometry = LineSet961;
 
-Transform946.children[0] = Transform947;
+HAnimSegment956.children[1] = Shape960;
 
-HAnimSegment945.children = new MFNode();
+let HAnimSite964 = browser.currentScene.createNode("HAnimSite");
+HAnimSite964.name = "glabella_pt";
+HAnimSite964.DEF = "hanim_glabella_pt";
+let TouchSensor965 = browser.currentScene.createNode("TouchSensor");
+TouchSensor965.description = "HAnimSite glabella_pt";
+HAnimSite964.children = new MFNode();
 
-HAnimSegment945.children[0] = Transform946;
+HAnimSite964.children[0] = TouchSensor965;
 
-let Shape949 = browser.currentScene.createNode("Shape");
-let LineSet950 = browser.currentScene.createNode("LineSet");
-LineSet950.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA951 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA951.USE = "HAnimSegmentLineColorRGBA";
-LineSet950.color = ColorRGBA951;
+let Shape966 = browser.currentScene.createNode("Shape");
+Shape966.USE = "HAnimSiteShape";
+HAnimSite964.children[1] = Shape966;
 
-let Coordinate952 = browser.currentScene.createNode("Coordinate");
-Coordinate952.point = new MFVec3f(new float[0.0066,1.5928,-0.0103,0.0066,1.6144,-0.0034]);
-LineSet950.coord = Coordinate952;
+HAnimSegment956.children[2] = HAnimSite964;
 
-Shape949.geometry = LineSet950;
+let HAnimSite967 = browser.currentScene.createNode("HAnimSite");
+HAnimSite967.name = "l_ectocanthus_pt";
+HAnimSite967.DEF = "hanim_l_ectocanthus_pt";
+let TouchSensor968 = browser.currentScene.createNode("TouchSensor");
+TouchSensor968.description = "HAnimSite l_ectocanthus_pt";
+HAnimSite967.children = new MFNode();
 
-HAnimSegment945.children[1] = Shape949;
+HAnimSite967.children[0] = TouchSensor968;
 
-HAnimJoint944.children = new MFNode();
+let Shape969 = browser.currentScene.createNode("Shape");
+Shape969.USE = "HAnimSiteShape";
+HAnimSite967.children[1] = Shape969;
 
-HAnimJoint944.children[0] = HAnimSegment945;
+HAnimSegment956.children[3] = HAnimSite967;
 
-let HAnimJoint953 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint953.DEF = "hanim_vc1";
-HAnimJoint953.name = "vc1";
-HAnimJoint953.center = new SFVec3f(new float[0.0066,1.6144,-0.0034]);
-let HAnimSegment954 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment954.DEF = "hanim_c1";
-HAnimSegment954.name = "c1";
-let Transform955 = browser.currentScene.createNode("Transform");
-Transform955.translation = new SFVec3f(new float[0.0066,1.6144,-0.0034]);
-let Transform956 = browser.currentScene.createNode("Transform");
-let Shape957 = browser.currentScene.createNode("Shape");
-Shape957.USE = "HAnimJointShape";
-Transform956.child = new undefined();
+let HAnimSite970 = browser.currentScene.createNode("HAnimSite");
+HAnimSite970.name = "l_infraorbitale_pt";
+HAnimSite970.DEF = "hanim_l_infraorbitale_pt";
+HAnimSite970.translation = new SFVec3f(new float[0.0341,1.6171,0.0752]);
+let TouchSensor971 = browser.currentScene.createNode("TouchSensor");
+TouchSensor971.description = "HAnimSite l_infraorbitale_pt";
+HAnimSite970.children = new MFNode();
 
-Transform956.child[0] = Shape957;
+HAnimSite970.children[0] = TouchSensor971;
 
-Transform955.children = new MFNode();
+let Shape972 = browser.currentScene.createNode("Shape");
+Shape972.USE = "HAnimSiteShape";
+HAnimSite970.children[1] = Shape972;
 
-Transform955.children[0] = Transform956;
+HAnimSegment956.children[4] = HAnimSite970;
 
-HAnimSegment954.children = new MFNode();
+let HAnimSite973 = browser.currentScene.createNode("HAnimSite");
+HAnimSite973.name = "l_tragion_pt";
+HAnimSite973.DEF = "hanim_l_tragion_pt";
+HAnimSite973.translation = new SFVec3f(new float[0.0739,1.6348,0.0282]);
+let TouchSensor974 = browser.currentScene.createNode("TouchSensor");
+TouchSensor974.description = "HAnimSite l_tragion_pt";
+HAnimSite973.children = new MFNode();
 
-HAnimSegment954.children[0] = Transform955;
+HAnimSite973.children[0] = TouchSensor974;
 
-let Shape958 = browser.currentScene.createNode("Shape");
-let LineSet959 = browser.currentScene.createNode("LineSet");
-LineSet959.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA960 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA960.USE = "HAnimSegmentLineColorRGBA";
-LineSet959.color = ColorRGBA960;
+let Shape975 = browser.currentScene.createNode("Shape");
+Shape975.USE = "HAnimSiteShape";
+HAnimSite973.children[1] = Shape975;
 
-let Coordinate961 = browser.currentScene.createNode("Coordinate");
-Coordinate961.point = new MFVec3f(new float[0.0066,1.6144,-0.0034,0.0044,1.6209,0.0236]);
-LineSet959.coord = Coordinate961;
+HAnimSegment956.children[5] = HAnimSite973;
 
-Shape958.geometry = LineSet959;
+let HAnimSite976 = browser.currentScene.createNode("HAnimSite");
+HAnimSite976.name = "nuchale_pt";
+HAnimSite976.DEF = "hanim_nuchale_pt";
+HAnimSite976.translation = new SFVec3f(new float[0.0039,1.5972,-0.0796]);
+let TouchSensor977 = browser.currentScene.createNode("TouchSensor");
+TouchSensor977.description = "HAnimSite nuchale_pt";
+HAnimSite976.children = new MFNode();
 
-HAnimSegment954.children[1] = Shape958;
+HAnimSite976.children[0] = TouchSensor977;
 
-let HAnimSite962 = browser.currentScene.createNode("HAnimSite");
-HAnimSite962.DEF = "hanim_glabella_pt";
-HAnimSite962.name = "glabella_pt";
-let TouchSensor963 = browser.currentScene.createNode("TouchSensor");
-TouchSensor963.description = "HAnimSite glabella_pt";
-HAnimSite962.children = new MFNode();
+let Shape978 = browser.currentScene.createNode("Shape");
+Shape978.USE = "HAnimSiteShape";
+HAnimSite976.children[1] = Shape978;
 
-HAnimSite962.children[0] = TouchSensor963;
+HAnimSegment956.children[6] = HAnimSite976;
 
-let Shape964 = browser.currentScene.createNode("Shape");
-Shape964.USE = "HAnimSiteShape";
-HAnimSite962.children[1] = Shape964;
+let HAnimSite979 = browser.currentScene.createNode("HAnimSite");
+HAnimSite979.name = "opisthocranion_pt";
+HAnimSite979.DEF = "hanim_opisthocranion_pt";
+let TouchSensor980 = browser.currentScene.createNode("TouchSensor");
+TouchSensor980.description = "HAnimSite opisthocranion_pt";
+HAnimSite979.children = new MFNode();
 
-HAnimSegment954.children[2] = HAnimSite962;
+HAnimSite979.children[0] = TouchSensor980;
 
-let HAnimSite965 = browser.currentScene.createNode("HAnimSite");
-HAnimSite965.DEF = "hanim_l_ectocanthus_pt";
-HAnimSite965.name = "l_ectocanthus_pt";
-let TouchSensor966 = browser.currentScene.createNode("TouchSensor");
-TouchSensor966.description = "HAnimSite l_ectocanthus_pt";
-HAnimSite965.children = new MFNode();
+let Shape981 = browser.currentScene.createNode("Shape");
+Shape981.USE = "HAnimSiteShape";
+HAnimSite979.children[1] = Shape981;
 
-HAnimSite965.children[0] = TouchSensor966;
+HAnimSegment956.children[7] = HAnimSite979;
 
-let Shape967 = browser.currentScene.createNode("Shape");
-Shape967.USE = "HAnimSiteShape";
-HAnimSite965.children[1] = Shape967;
+let HAnimSite982 = browser.currentScene.createNode("HAnimSite");
+HAnimSite982.name = "r_ectocanthus_pt";
+HAnimSite982.DEF = "hanim_r_ectocanthus_pt";
+let TouchSensor983 = browser.currentScene.createNode("TouchSensor");
+TouchSensor983.description = "HAnimSite r_ectocanthus_pt";
+HAnimSite982.children = new MFNode();
 
-HAnimSegment954.children[3] = HAnimSite965;
+HAnimSite982.children[0] = TouchSensor983;
 
-let HAnimSite968 = browser.currentScene.createNode("HAnimSite");
-HAnimSite968.DEF = "hanim_l_infraorbitale_pt";
-HAnimSite968.name = "l_infraorbitale_pt";
-HAnimSite968.translation = new SFVec3f(new float[0.0341,1.6171,0.0752]);
-let TouchSensor969 = browser.currentScene.createNode("TouchSensor");
-TouchSensor969.description = "HAnimSite l_infraorbitale_pt";
-HAnimSite968.children = new MFNode();
+let Shape984 = browser.currentScene.createNode("Shape");
+Shape984.USE = "HAnimSiteShape";
+HAnimSite982.children[1] = Shape984;
 
-HAnimSite968.children[0] = TouchSensor969;
+HAnimSegment956.children[8] = HAnimSite982;
 
-let Shape970 = browser.currentScene.createNode("Shape");
-Shape970.USE = "HAnimSiteShape";
-HAnimSite968.children[1] = Shape970;
+let HAnimSite985 = browser.currentScene.createNode("HAnimSite");
+HAnimSite985.name = "r_infraorbitale_pt";
+HAnimSite985.DEF = "hanim_r_infraorbitale_pt";
+HAnimSite985.translation = new SFVec3f(new float[-0.0237,1.6171,0.0752]);
+let TouchSensor986 = browser.currentScene.createNode("TouchSensor");
+TouchSensor986.description = "HAnimSite r_infraorbitale_pt";
+HAnimSite985.children = new MFNode();
 
-HAnimSegment954.children[4] = HAnimSite968;
+HAnimSite985.children[0] = TouchSensor986;
 
-let HAnimSite971 = browser.currentScene.createNode("HAnimSite");
-HAnimSite971.DEF = "hanim_l_tragion_pt";
-HAnimSite971.name = "l_tragion_pt";
-HAnimSite971.translation = new SFVec3f(new float[0.0739,1.6348,0.0282]);
-let TouchSensor972 = browser.currentScene.createNode("TouchSensor");
-TouchSensor972.description = "HAnimSite l_tragion_pt";
-HAnimSite971.children = new MFNode();
+let Shape987 = browser.currentScene.createNode("Shape");
+Shape987.USE = "HAnimSiteShape";
+HAnimSite985.children[1] = Shape987;
 
-HAnimSite971.children[0] = TouchSensor972;
+HAnimSegment956.children[9] = HAnimSite985;
 
-let Shape973 = browser.currentScene.createNode("Shape");
-Shape973.USE = "HAnimSiteShape";
-HAnimSite971.children[1] = Shape973;
+let HAnimSite988 = browser.currentScene.createNode("HAnimSite");
+HAnimSite988.name = "r_tragion_pt";
+HAnimSite988.DEF = "hanim_r_tragion_pt";
+HAnimSite988.translation = new SFVec3f(new float[-0.0646,1.6347,0.0302]);
+let TouchSensor989 = browser.currentScene.createNode("TouchSensor");
+TouchSensor989.description = "HAnimSite r_tragion_pt";
+HAnimSite988.children = new MFNode();
 
-HAnimSegment954.children[5] = HAnimSite971;
+HAnimSite988.children[0] = TouchSensor989;
 
-let HAnimSite974 = browser.currentScene.createNode("HAnimSite");
-HAnimSite974.DEF = "hanim_nuchale_pt";
-HAnimSite974.name = "nuchale_pt";
-HAnimSite974.translation = new SFVec3f(new float[0.0039,1.5972,-0.0796]);
-let TouchSensor975 = browser.currentScene.createNode("TouchSensor");
-TouchSensor975.description = "HAnimSite nuchale_pt";
-HAnimSite974.children = new MFNode();
+let Shape990 = browser.currentScene.createNode("Shape");
+Shape990.USE = "HAnimSiteShape";
+HAnimSite988.children[1] = Shape990;
 
-HAnimSite974.children[0] = TouchSensor975;
+HAnimSegment956.children[10] = HAnimSite988;
 
-let Shape976 = browser.currentScene.createNode("Shape");
-Shape976.USE = "HAnimSiteShape";
-HAnimSite974.children[1] = Shape976;
+let HAnimSite991 = browser.currentScene.createNode("HAnimSite");
+HAnimSite991.name = "sellion_pt";
+HAnimSite991.DEF = "hanim_sellion_pt";
+HAnimSite991.translation = new SFVec3f(new float[0.0058,1.6316,0.0852]);
+let TouchSensor992 = browser.currentScene.createNode("TouchSensor");
+TouchSensor992.description = "HAnimSite sellion_pt";
+HAnimSite991.children = new MFNode();
 
-HAnimSegment954.children[6] = HAnimSite974;
+HAnimSite991.children[0] = TouchSensor992;
 
-let HAnimSite977 = browser.currentScene.createNode("HAnimSite");
-HAnimSite977.DEF = "hanim_opisthocranion_pt";
-HAnimSite977.name = "opisthocranion_pt";
-let TouchSensor978 = browser.currentScene.createNode("TouchSensor");
-TouchSensor978.description = "HAnimSite opisthocranion_pt";
-HAnimSite977.children = new MFNode();
+let Shape993 = browser.currentScene.createNode("Shape");
+Shape993.USE = "HAnimSiteShape";
+HAnimSite991.children[1] = Shape993;
 
-HAnimSite977.children[0] = TouchSensor978;
+HAnimSegment956.children[11] = HAnimSite991;
 
-let Shape979 = browser.currentScene.createNode("Shape");
-Shape979.USE = "HAnimSiteShape";
-HAnimSite977.children[1] = Shape979;
+let HAnimSite994 = browser.currentScene.createNode("HAnimSite");
+HAnimSite994.name = "skull_vertex_pt";
+HAnimSite994.DEF = "hanim_skull_vertex_pt";
+HAnimSite994.translation = new SFVec3f(new float[0.005,1.7504,0.0055]);
+let TouchSensor995 = browser.currentScene.createNode("TouchSensor");
+TouchSensor995.description = "HAnimSite skull_vertex_pt";
+HAnimSite994.children = new MFNode();
 
-HAnimSegment954.children[7] = HAnimSite977;
+HAnimSite994.children[0] = TouchSensor995;
 
-let HAnimSite980 = browser.currentScene.createNode("HAnimSite");
-HAnimSite980.DEF = "hanim_r_ectocanthus_pt";
-HAnimSite980.name = "r_ectocanthus_pt";
-let TouchSensor981 = browser.currentScene.createNode("TouchSensor");
-TouchSensor981.description = "HAnimSite r_ectocanthus_pt";
-HAnimSite980.children = new MFNode();
+let Shape996 = browser.currentScene.createNode("Shape");
+Shape996.USE = "HAnimSiteShape";
+HAnimSite994.children[1] = Shape996;
 
-HAnimSite980.children[0] = TouchSensor981;
+HAnimSegment956.children[12] = HAnimSite994;
 
-let Shape982 = browser.currentScene.createNode("Shape");
-Shape982.USE = "HAnimSiteShape";
-HAnimSite980.children[1] = Shape982;
+HAnimJoint955.children = new MFNode();
 
-HAnimSegment954.children[8] = HAnimSite980;
+HAnimJoint955.children[0] = HAnimSegment956;
 
-let HAnimSite983 = browser.currentScene.createNode("HAnimSite");
-HAnimSite983.DEF = "hanim_r_infraorbitale_pt";
-HAnimSite983.name = "r_infraorbitale_pt";
-HAnimSite983.translation = new SFVec3f(new float[-0.0237,1.6171,0.0752]);
-let TouchSensor984 = browser.currentScene.createNode("TouchSensor");
-TouchSensor984.description = "HAnimSite r_infraorbitale_pt";
-HAnimSite983.children = new MFNode();
+let HAnimJoint997 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint997.name = "skullbase";
+HAnimJoint997.DEF = "hanim_skullbase";
+HAnimJoint997.center = new SFVec3f(new float[0.0044,1.6209,0.0236]);
+HAnimJoint997.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint997.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment998 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment998.name = "skull";
+HAnimSegment998.DEF = "hanim_skull";
+let Transform999 = browser.currentScene.createNode("Transform");
+Transform999.translation = new SFVec3f(new float[0.0044,1.6209,0.0236]);
+let Transform1000 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1001 = browser.currentScene.createNode("Shape");
+Shape1001.USE = "HAnimJointShape";
+Transform1000.child = new undefined();
 
-HAnimSite983.children[0] = TouchSensor984;
+Transform1000.child[0] = Shape1001;
 
-let Shape985 = browser.currentScene.createNode("Shape");
-Shape985.USE = "HAnimSiteShape";
-HAnimSite983.children[1] = Shape985;
+Transform999.children = new MFNode();
 
-HAnimSegment954.children[9] = HAnimSite983;
+Transform999.children[0] = Transform1000;
 
-let HAnimSite986 = browser.currentScene.createNode("HAnimSite");
-HAnimSite986.DEF = "hanim_r_tragion_pt";
-HAnimSite986.name = "r_tragion_pt";
-HAnimSite986.translation = new SFVec3f(new float[-0.0646,1.6347,0.0302]);
-let TouchSensor987 = browser.currentScene.createNode("TouchSensor");
-TouchSensor987.description = "HAnimSite r_tragion_pt";
-HAnimSite986.children = new MFNode();
+HAnimSegment998.children = new MFNode();
 
-HAnimSite986.children[0] = TouchSensor987;
+HAnimSegment998.children[0] = Transform999;
 
-let Shape988 = browser.currentScene.createNode("Shape");
-Shape988.USE = "HAnimSiteShape";
-HAnimSite986.children[1] = Shape988;
+let Shape1002 = browser.currentScene.createNode("Shape");
+let LineSet1003 = browser.currentScene.createNode("LineSet");
+LineSet1003.vertexCount = new MFInt32(new int[2]);
+let Coordinate1004 = browser.currentScene.createNode("Coordinate");
+Coordinate1004.point = new MFVec3f(new float[0.0044,1.6209,0.0236,2.2365,1.87,1.9285]);
+LineSet1003.coord = Coordinate1004;
 
-HAnimSegment954.children[10] = HAnimSite986;
+//from skullbase to l_eyelid_joint vertices 2
+let ColorRGBA1005 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1005.USE = "HAnimSegmentLineColorRGBA";
+LineSet1003.color = ColorRGBA1005;
 
-let HAnimSite989 = browser.currentScene.createNode("HAnimSite");
-HAnimSite989.DEF = "hanim_sellion_pt";
-HAnimSite989.name = "sellion_pt";
-HAnimSite989.translation = new SFVec3f(new float[0.0058,1.6316,0.0852]);
-let TouchSensor990 = browser.currentScene.createNode("TouchSensor");
-TouchSensor990.description = "HAnimSite sellion_pt";
-HAnimSite989.children = new MFNode();
+Shape1002.geometry = LineSet1003;
 
-HAnimSite989.children[0] = TouchSensor990;
+HAnimSegment998.children[1] = Shape1002;
 
-let Shape991 = browser.currentScene.createNode("Shape");
-Shape991.USE = "HAnimSiteShape";
-HAnimSite989.children[1] = Shape991;
+let Shape1006 = browser.currentScene.createNode("Shape");
+let LineSet1007 = browser.currentScene.createNode("LineSet");
+LineSet1007.vertexCount = new MFInt32(new int[2]);
+let Coordinate1008 = browser.currentScene.createNode("Coordinate");
+Coordinate1008.point = new MFVec3f(new float[0.0044,1.6209,0.0236,-2.2535,1.87,1.9285]);
+LineSet1007.coord = Coordinate1008;
 
-HAnimSegment954.children[11] = HAnimSite989;
+//from skullbase to r_eyelid_joint vertices 2
+let ColorRGBA1009 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1009.USE = "HAnimSegmentLineColorRGBA";
+LineSet1007.color = ColorRGBA1009;
 
-let HAnimSite992 = browser.currentScene.createNode("HAnimSite");
-HAnimSite992.DEF = "hanim_skull_vertex_pt";
-HAnimSite992.name = "skull_vertex_pt";
-HAnimSite992.translation = new SFVec3f(new float[0.005,1.7504,0.0055]);
-let TouchSensor993 = browser.currentScene.createNode("TouchSensor");
-TouchSensor993.description = "HAnimSite skull_vertex_pt";
-HAnimSite992.children = new MFNode();
+Shape1006.geometry = LineSet1007;
 
-HAnimSite992.children[0] = TouchSensor993;
+HAnimSegment998.children[2] = Shape1006;
 
-let Shape994 = browser.currentScene.createNode("Shape");
-Shape994.USE = "HAnimSiteShape";
-HAnimSite992.children[1] = Shape994;
+let Shape1010 = browser.currentScene.createNode("Shape");
+let LineSet1011 = browser.currentScene.createNode("LineSet");
+LineSet1011.vertexCount = new MFInt32(new int[2]);
+let Coordinate1012 = browser.currentScene.createNode("Coordinate");
+Coordinate1012.point = new MFVec3f(new float[0.0044,1.6209,0.0236,2.1305,1.8444,4.1555]);
+LineSet1011.coord = Coordinate1012;
 
-HAnimSegment954.children[12] = HAnimSite992;
+//from skullbase to l_eyeball_joint vertices 2
+let ColorRGBA1013 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1013.USE = "HAnimSegmentLineColorRGBA";
+LineSet1011.color = ColorRGBA1013;
 
-HAnimJoint953.children = new MFNode();
+Shape1010.geometry = LineSet1011;
 
-HAnimJoint953.children[0] = HAnimSegment954;
+HAnimSegment998.children[3] = Shape1010;
 
-let HAnimJoint995 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint995.DEF = "hanim_skullbase";
-HAnimJoint995.name = "skullbase";
-HAnimJoint995.center = new SFVec3f(new float[0.0044,1.6209,0.0236]);
-let HAnimSegment996 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment996.DEF = "hanim_skull";
-HAnimSegment996.name = "skull";
-let Transform997 = browser.currentScene.createNode("Transform");
-Transform997.translation = new SFVec3f(new float[0.0044,1.6209,0.0236]);
-let Transform998 = browser.currentScene.createNode("Transform");
-let Shape999 = browser.currentScene.createNode("Shape");
-Shape999.USE = "HAnimJointShape";
-Transform998.child = new undefined();
+let Shape1014 = browser.currentScene.createNode("Shape");
+let LineSet1015 = browser.currentScene.createNode("LineSet");
+LineSet1015.vertexCount = new MFInt32(new int[2]);
+let Coordinate1016 = browser.currentScene.createNode("Coordinate");
+Coordinate1016.point = new MFVec3f(new float[0.0044,1.6209,0.0236,-2.1475,1.8444,4.1555]);
+LineSet1015.coord = Coordinate1016;
 
-Transform998.child[0] = Shape999;
+//from skullbase to r_eyeball_joint vertices 2
+let ColorRGBA1017 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1017.USE = "HAnimSegmentLineColorRGBA";
+LineSet1015.color = ColorRGBA1017;
 
-Transform997.children = new MFNode();
+Shape1014.geometry = LineSet1015;
 
-Transform997.children[0] = Transform998;
+HAnimSegment998.children[4] = Shape1014;
 
-HAnimSegment996.children = new MFNode();
+let Shape1018 = browser.currentScene.createNode("Shape");
+let LineSet1019 = browser.currentScene.createNode("LineSet");
+LineSet1019.vertexCount = new MFInt32(new int[2]);
+let Coordinate1020 = browser.currentScene.createNode("Coordinate");
+Coordinate1020.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.9581,1.8563,5.2175]);
+LineSet1019.coord = Coordinate1020;
 
-HAnimSegment996.children[0] = Transform997;
+//from skullbase to l_eyebrow_joint vertices 2
+let ColorRGBA1021 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1021.USE = "HAnimSegmentLineColorRGBA";
+LineSet1019.color = ColorRGBA1021;
 
-let Shape1000 = browser.currentScene.createNode("Shape");
-let LineSet1001 = browser.currentScene.createNode("LineSet");
-LineSet1001.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1002 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1002.USE = "HAnimSegmentLineColorRGBA";
-LineSet1001.color = ColorRGBA1002;
+Shape1018.geometry = LineSet1019;
 
-let Coordinate1003 = browser.currentScene.createNode("Coordinate");
-Coordinate1003.point = new MFVec3f(new float[0.0044,1.6209,0.0236,2.2365,1.87,1.9285]);
-LineSet1001.coord = Coordinate1003;
+HAnimSegment998.children[5] = Shape1018;
 
-Shape1000.geometry = LineSet1001;
+let Shape1022 = browser.currentScene.createNode("Shape");
+let LineSet1023 = browser.currentScene.createNode("LineSet");
+LineSet1023.vertexCount = new MFInt32(new int[2]);
+let Coordinate1024 = browser.currentScene.createNode("Coordinate");
+Coordinate1024.point = new MFVec3f(new float[0.0044,1.6209,0.0236,-0.9751,1.8563,5.2175]);
+LineSet1023.coord = Coordinate1024;
 
-HAnimSegment996.children[1] = Shape1000;
+//from skullbase to r_eyebrow_joint vertices 2
+let ColorRGBA1025 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1025.USE = "HAnimSegmentLineColorRGBA";
+LineSet1023.color = ColorRGBA1025;
 
-let Shape1004 = browser.currentScene.createNode("Shape");
-let LineSet1005 = browser.currentScene.createNode("LineSet");
-LineSet1005.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1006 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1006.USE = "HAnimSegmentLineColorRGBA";
-LineSet1005.color = ColorRGBA1006;
+Shape1022.geometry = LineSet1023;
 
-let Coordinate1007 = browser.currentScene.createNode("Coordinate");
-Coordinate1007.point = new MFVec3f(new float[0.0044,1.6209,0.0236,-2.2535,1.87,1.9285]);
-LineSet1005.coord = Coordinate1007;
+HAnimSegment998.children[6] = Shape1022;
 
-Shape1004.geometry = LineSet1005;
+let Shape1026 = browser.currentScene.createNode("Shape");
+let LineSet1027 = browser.currentScene.createNode("LineSet");
+LineSet1027.vertexCount = new MFInt32(new int[2]);
+let Coordinate1028 = browser.currentScene.createNode("Coordinate");
+Coordinate1028.point = new MFVec3f(new float[0.0044,1.6209,0.0236,-0.0085,1.7229,1.148]);
+LineSet1027.coord = Coordinate1028;
 
-HAnimSegment996.children[2] = Shape1004;
+//from skullbase to temporomandibular vertices 2
+let ColorRGBA1029 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1029.USE = "HAnimSegmentLineColorRGBA";
+LineSet1027.color = ColorRGBA1029;
 
-let Shape1008 = browser.currentScene.createNode("Shape");
-let LineSet1009 = browser.currentScene.createNode("LineSet");
-LineSet1009.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1010 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1010.USE = "HAnimSegmentLineColorRGBA";
-LineSet1009.color = ColorRGBA1010;
+Shape1026.geometry = LineSet1027;
 
-let Coordinate1011 = browser.currentScene.createNode("Coordinate");
-Coordinate1011.point = new MFVec3f(new float[0.0044,1.6209,0.0236,2.1305,1.8444,4.1555]);
-LineSet1009.coord = Coordinate1011;
+HAnimSegment998.children[7] = Shape1026;
 
-Shape1008.geometry = LineSet1009;
+let HAnimSite1030 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1030.name = "l_gonion_pt";
+HAnimSite1030.DEF = "hanim_l_gonion_pt";
+HAnimSite1030.translation = new SFVec3f(new float[0.0631,1.553,0.033]);
+let TouchSensor1031 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1031.description = "HAnimSite l_gonion_pt";
+HAnimSite1030.children = new MFNode();
 
-HAnimSegment996.children[3] = Shape1008;
+HAnimSite1030.children[0] = TouchSensor1031;
 
-let Shape1012 = browser.currentScene.createNode("Shape");
-let LineSet1013 = browser.currentScene.createNode("LineSet");
-LineSet1013.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1014 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1014.USE = "HAnimSegmentLineColorRGBA";
-LineSet1013.color = ColorRGBA1014;
+let Shape1032 = browser.currentScene.createNode("Shape");
+Shape1032.USE = "HAnimSiteShape";
+HAnimSite1030.children[1] = Shape1032;
 
-let Coordinate1015 = browser.currentScene.createNode("Coordinate");
-Coordinate1015.point = new MFVec3f(new float[0.0044,1.6209,0.0236,-2.1475,1.8444,4.1555]);
-LineSet1013.coord = Coordinate1015;
+HAnimSegment998.children[8] = HAnimSite1030;
 
-Shape1012.geometry = LineSet1013;
+let HAnimSite1033 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1033.name = "menton_pt";
+HAnimSite1033.DEF = "hanim_menton_pt";
+let TouchSensor1034 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1034.description = "HAnimSite menton_pt";
+HAnimSite1033.children = new MFNode();
 
-HAnimSegment996.children[4] = Shape1012;
+HAnimSite1033.children[0] = TouchSensor1034;
 
-let Shape1016 = browser.currentScene.createNode("Shape");
-let LineSet1017 = browser.currentScene.createNode("LineSet");
-LineSet1017.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1018 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1018.USE = "HAnimSegmentLineColorRGBA";
-LineSet1017.color = ColorRGBA1018;
+let Shape1035 = browser.currentScene.createNode("Shape");
+Shape1035.USE = "HAnimSiteShape";
+HAnimSite1033.children[1] = Shape1035;
 
-let Coordinate1019 = browser.currentScene.createNode("Coordinate");
-Coordinate1019.point = new MFVec3f(new float[0.0044,1.6209,0.0236,0.9581,1.8563,5.2175]);
-LineSet1017.coord = Coordinate1019;
+HAnimSegment998.children[9] = HAnimSite1033;
 
-Shape1016.geometry = LineSet1017;
+let HAnimSite1036 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1036.name = "r_gonion_pt";
+HAnimSite1036.DEF = "hanim_r_gonion_pt";
+HAnimSite1036.translation = new SFVec3f(new float[-0.052,1.5529,0.0347]);
+let TouchSensor1037 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1037.description = "HAnimSite r_gonion_pt";
+HAnimSite1036.children = new MFNode();
 
-HAnimSegment996.children[5] = Shape1016;
+HAnimSite1036.children[0] = TouchSensor1037;
 
-let Shape1020 = browser.currentScene.createNode("Shape");
-let LineSet1021 = browser.currentScene.createNode("LineSet");
-LineSet1021.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1022 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1022.USE = "HAnimSegmentLineColorRGBA";
-LineSet1021.color = ColorRGBA1022;
+let Shape1038 = browser.currentScene.createNode("Shape");
+Shape1038.USE = "HAnimSiteShape";
+HAnimSite1036.children[1] = Shape1038;
 
-let Coordinate1023 = browser.currentScene.createNode("Coordinate");
-Coordinate1023.point = new MFVec3f(new float[0.0044,1.6209,0.0236,-0.9751,1.8563,5.2175]);
-LineSet1021.coord = Coordinate1023;
+HAnimSegment998.children[10] = HAnimSite1036;
 
-Shape1020.geometry = LineSet1021;
+let HAnimSite1039 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1039.name = "supramenton_pt";
+HAnimSite1039.DEF = "hanim_supramenton_pt";
+HAnimSite1039.translation = new SFVec3f(new float[0.0061,1.541,0.0805]);
+let TouchSensor1040 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1040.description = "HAnimSite supramenton_pt";
+HAnimSite1039.children = new MFNode();
 
-HAnimSegment996.children[6] = Shape1020;
+HAnimSite1039.children[0] = TouchSensor1040;
 
-let Shape1024 = browser.currentScene.createNode("Shape");
-let LineSet1025 = browser.currentScene.createNode("LineSet");
-LineSet1025.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1026 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1026.USE = "HAnimSegmentLineColorRGBA";
-LineSet1025.color = ColorRGBA1026;
+let Shape1041 = browser.currentScene.createNode("Shape");
+Shape1041.USE = "HAnimSiteShape";
+HAnimSite1039.children[1] = Shape1041;
 
-let Coordinate1027 = browser.currentScene.createNode("Coordinate");
-Coordinate1027.point = new MFVec3f(new float[0.0044,1.6209,0.0236,-0.0085,1.7229,1.148]);
-LineSet1025.coord = Coordinate1027;
+HAnimSegment998.children[11] = HAnimSite1039;
 
-Shape1024.geometry = LineSet1025;
+HAnimJoint997.children = new MFNode();
 
-HAnimSegment996.children[7] = Shape1024;
-
-let HAnimSite1028 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1028.DEF = "hanim_l_gonion_pt";
-HAnimSite1028.name = "l_gonion_pt";
-HAnimSite1028.translation = new SFVec3f(new float[0.0631,1.553,0.033]);
-let TouchSensor1029 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1029.description = "HAnimSite l_gonion_pt";
-HAnimSite1028.children = new MFNode();
-
-HAnimSite1028.children[0] = TouchSensor1029;
-
-let Shape1030 = browser.currentScene.createNode("Shape");
-Shape1030.USE = "HAnimSiteShape";
-HAnimSite1028.children[1] = Shape1030;
-
-HAnimSegment996.children[8] = HAnimSite1028;
-
-let HAnimSite1031 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1031.DEF = "hanim_menton_pt";
-HAnimSite1031.name = "menton_pt";
-let TouchSensor1032 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1032.description = "HAnimSite menton_pt";
-HAnimSite1031.children = new MFNode();
-
-HAnimSite1031.children[0] = TouchSensor1032;
-
-let Shape1033 = browser.currentScene.createNode("Shape");
-Shape1033.USE = "HAnimSiteShape";
-HAnimSite1031.children[1] = Shape1033;
-
-HAnimSegment996.children[9] = HAnimSite1031;
-
-let HAnimSite1034 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1034.DEF = "hanim_r_gonion_pt";
-HAnimSite1034.name = "r_gonion_pt";
-HAnimSite1034.translation = new SFVec3f(new float[-0.052,1.5529,0.0347]);
-let TouchSensor1035 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1035.description = "HAnimSite r_gonion_pt";
-HAnimSite1034.children = new MFNode();
-
-HAnimSite1034.children[0] = TouchSensor1035;
-
-let Shape1036 = browser.currentScene.createNode("Shape");
-Shape1036.USE = "HAnimSiteShape";
-HAnimSite1034.children[1] = Shape1036;
-
-HAnimSegment996.children[10] = HAnimSite1034;
-
-let HAnimSite1037 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1037.DEF = "hanim_supramenton_pt";
-HAnimSite1037.name = "supramenton_pt";
-HAnimSite1037.translation = new SFVec3f(new float[0.0061,1.541,0.0805]);
-let TouchSensor1038 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1038.description = "HAnimSite supramenton_pt";
-HAnimSite1037.children = new MFNode();
-
-HAnimSite1037.children[0] = TouchSensor1038;
-
-let Shape1039 = browser.currentScene.createNode("Shape");
-Shape1039.USE = "HAnimSiteShape";
-HAnimSite1037.children[1] = Shape1039;
-
-HAnimSegment996.children[11] = HAnimSite1037;
-
-HAnimJoint995.children = new MFNode();
-
-HAnimJoint995.children[0] = HAnimSegment996;
-
-let HAnimJoint1040 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1040.DEF = "hanim_l_eyelid_joint";
-HAnimJoint1040.name = "l_eyelid_joint";
-HAnimJoint1040.center = new SFVec3f(new float[2.2365,1.87,1.9285]);
-HAnimJoint995.children[1] = HAnimJoint1040;
-
-let HAnimJoint1041 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1041.DEF = "hanim_r_eyelid_joint";
-HAnimJoint1041.name = "r_eyelid_joint";
-HAnimJoint1041.center = new SFVec3f(new float[-2.2535,1.87,1.9285]);
-HAnimJoint995.children[2] = HAnimJoint1041;
+HAnimJoint997.children[0] = HAnimSegment998;
 
 let HAnimJoint1042 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1042.DEF = "hanim_l_eyeball_joint";
-HAnimJoint1042.name = "l_eyeball_joint";
-HAnimJoint1042.center = new SFVec3f(new float[2.1305,1.8444,4.1555]);
-HAnimJoint995.children[3] = HAnimJoint1042;
+HAnimJoint1042.name = "l_eyelid_joint";
+HAnimJoint1042.DEF = "hanim_l_eyelid_joint";
+HAnimJoint1042.center = new SFVec3f(new float[2.2365,1.87,1.9285]);
+HAnimJoint1042.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1042.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint997.children[1] = HAnimJoint1042;
 
 let HAnimJoint1043 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1043.DEF = "hanim_r_eyeball_joint";
-HAnimJoint1043.name = "r_eyeball_joint";
-HAnimJoint1043.center = new SFVec3f(new float[-2.1475,1.8444,4.1555]);
-HAnimJoint995.children[4] = HAnimJoint1043;
+HAnimJoint1043.name = "r_eyelid_joint";
+HAnimJoint1043.DEF = "hanim_r_eyelid_joint";
+HAnimJoint1043.center = new SFVec3f(new float[-2.2535,1.87,1.9285]);
+HAnimJoint1043.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1043.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint997.children[2] = HAnimJoint1043;
 
 let HAnimJoint1044 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1044.DEF = "hanim_l_eyebrow_joint";
-HAnimJoint1044.name = "l_eyebrow_joint";
-HAnimJoint1044.center = new SFVec3f(new float[0.9581,1.8563,5.2175]);
-HAnimJoint995.children[5] = HAnimJoint1044;
+HAnimJoint1044.name = "l_eyeball_joint";
+HAnimJoint1044.DEF = "hanim_l_eyeball_joint";
+HAnimJoint1044.center = new SFVec3f(new float[2.1305,1.8444,4.1555]);
+HAnimJoint1044.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1044.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint997.children[3] = HAnimJoint1044;
 
 let HAnimJoint1045 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1045.DEF = "hanim_r_eyebrow_joint";
-HAnimJoint1045.name = "r_eyebrow_joint";
-HAnimJoint1045.center = new SFVec3f(new float[-0.9751,1.8563,5.2175]);
-HAnimJoint995.children[6] = HAnimJoint1045;
+HAnimJoint1045.name = "r_eyeball_joint";
+HAnimJoint1045.DEF = "hanim_r_eyeball_joint";
+HAnimJoint1045.center = new SFVec3f(new float[-2.1475,1.8444,4.1555]);
+HAnimJoint1045.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1045.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint997.children[4] = HAnimJoint1045;
 
 let HAnimJoint1046 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1046.DEF = "hanim_temporomandibular";
-HAnimJoint1046.name = "temporomandibular";
-HAnimJoint1046.center = new SFVec3f(new float[-0.0085,1.7229,1.148]);
-HAnimJoint995.children[7] = HAnimJoint1046;
-
-HAnimJoint953.children[1] = HAnimJoint995;
-
-HAnimJoint944.children[1] = HAnimJoint953;
-
-HAnimJoint932.children[1] = HAnimJoint944;
-
-HAnimJoint923.children[1] = HAnimJoint932;
-
-HAnimJoint914.children[1] = HAnimJoint923;
-
-HAnimJoint905.children[1] = HAnimJoint914;
-
-HAnimJoint896.children[1] = HAnimJoint905;
-
-HAnimJoint843.children[1] = HAnimJoint896;
+HAnimJoint1046.name = "l_eyebrow_joint";
+HAnimJoint1046.DEF = "hanim_l_eyebrow_joint";
+HAnimJoint1046.center = new SFVec3f(new float[0.9581,1.8563,5.2175]);
+HAnimJoint1046.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1046.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint997.children[5] = HAnimJoint1046;
 
 let HAnimJoint1047 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1047.DEF = "hanim_l_sternoclavicular";
-HAnimJoint1047.name = "l_sternoclavicular";
-HAnimJoint1047.center = new SFVec3f(new float[0.082,1.4488,-0.0353]);
-let HAnimSegment1048 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1048.DEF = "hanim_l_clavicle";
-HAnimSegment1048.name = "l_clavicle";
-let Transform1049 = browser.currentScene.createNode("Transform");
-Transform1049.translation = new SFVec3f(new float[0.082,1.4488,-0.0353]);
-let Transform1050 = browser.currentScene.createNode("Transform");
-let Shape1051 = browser.currentScene.createNode("Shape");
-Shape1051.USE = "HAnimJointShape";
-Transform1050.child = new undefined();
+HAnimJoint1047.name = "r_eyebrow_joint";
+HAnimJoint1047.DEF = "hanim_r_eyebrow_joint";
+HAnimJoint1047.center = new SFVec3f(new float[-0.9751,1.8563,5.2175]);
+HAnimJoint1047.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1047.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint997.children[6] = HAnimJoint1047;
 
-Transform1050.child[0] = Shape1051;
+let HAnimJoint1048 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1048.name = "temporomandibular";
+HAnimJoint1048.DEF = "hanim_temporomandibular";
+HAnimJoint1048.center = new SFVec3f(new float[-0.0085,1.7229,1.148]);
+HAnimJoint1048.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1048.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint997.children[7] = HAnimJoint1048;
 
-Transform1049.children = new MFNode();
+HAnimJoint955.children[1] = HAnimJoint997;
 
-Transform1049.children[0] = Transform1050;
+HAnimJoint946.children[1] = HAnimJoint955;
 
-HAnimSegment1048.children = new MFNode();
+HAnimJoint934.children[1] = HAnimJoint946;
 
-HAnimSegment1048.children[0] = Transform1049;
+HAnimJoint925.children[1] = HAnimJoint934;
 
-let Shape1052 = browser.currentScene.createNode("Shape");
-let LineSet1053 = browser.currentScene.createNode("LineSet");
-LineSet1053.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1054 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1054.USE = "HAnimSegmentLineColorRGBA";
-LineSet1053.color = ColorRGBA1054;
-
-let Coordinate1055 = browser.currentScene.createNode("Coordinate");
-Coordinate1055.point = new MFVec3f(new float[0.082,1.4488,-0.0353,0.0962,1.4269,-0.0424]);
-LineSet1053.coord = Coordinate1055;
+HAnimJoint916.children[1] = HAnimJoint925;
 
-Shape1052.geometry = LineSet1053;
+HAnimJoint907.children[1] = HAnimJoint916;
 
-HAnimSegment1048.children[1] = Shape1052;
+HAnimJoint898.children[1] = HAnimJoint907;
 
-HAnimJoint1047.children = new MFNode();
+HAnimJoint845.children[1] = HAnimJoint898;
 
-HAnimJoint1047.children[0] = HAnimSegment1048;
+let HAnimJoint1049 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1049.name = "l_sternoclavicular";
+HAnimJoint1049.DEF = "hanim_l_sternoclavicular";
+HAnimJoint1049.center = new SFVec3f(new float[0.082,1.4488,-0.0353]);
+HAnimJoint1049.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1049.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1050 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1050.name = "l_clavicle";
+HAnimSegment1050.DEF = "hanim_l_clavicle";
+let Transform1051 = browser.currentScene.createNode("Transform");
+Transform1051.translation = new SFVec3f(new float[0.082,1.4488,-0.0353]);
+let Transform1052 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1053 = browser.currentScene.createNode("Shape");
+Shape1053.USE = "HAnimJointShape";
+Transform1052.child = new undefined();
 
-let HAnimJoint1056 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1056.DEF = "hanim_l_acromioclavicular";
-HAnimJoint1056.name = "l_acromioclavicular";
-HAnimJoint1056.center = new SFVec3f(new float[0.0962,1.4269,-0.0424]);
-let HAnimSegment1057 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1057.DEF = "hanim_l_scapula";
-HAnimSegment1057.name = "l_scapula";
-let Transform1058 = browser.currentScene.createNode("Transform");
-Transform1058.translation = new SFVec3f(new float[0.0962,1.4269,-0.0424]);
-let Transform1059 = browser.currentScene.createNode("Transform");
-let Shape1060 = browser.currentScene.createNode("Shape");
-Shape1060.USE = "HAnimJointShape";
-Transform1059.child = new undefined();
+Transform1052.child[0] = Shape1053;
 
-Transform1059.child[0] = Shape1060;
+Transform1051.children = new MFNode();
 
-Transform1058.children = new MFNode();
+Transform1051.children[0] = Transform1052;
 
-Transform1058.children[0] = Transform1059;
+HAnimSegment1050.children = new MFNode();
 
-HAnimSegment1057.children = new MFNode();
+HAnimSegment1050.children[0] = Transform1051;
 
-HAnimSegment1057.children[0] = Transform1058;
+let Shape1054 = browser.currentScene.createNode("Shape");
+let LineSet1055 = browser.currentScene.createNode("LineSet");
+LineSet1055.vertexCount = new MFInt32(new int[2]);
+let Coordinate1056 = browser.currentScene.createNode("Coordinate");
+Coordinate1056.point = new MFVec3f(new float[0.082,1.4488,-0.0353,0.0962,1.4269,-0.0424]);
+LineSet1055.coord = Coordinate1056;
 
-let Shape1061 = browser.currentScene.createNode("Shape");
-let LineSet1062 = browser.currentScene.createNode("LineSet");
-LineSet1062.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1063 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1063.USE = "HAnimSegmentLineColorRGBA";
-LineSet1062.color = ColorRGBA1063;
+//from l_sternoclavicular to l_acromioclavicular vertices 2
+let ColorRGBA1057 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1057.USE = "HAnimSegmentLineColorRGBA";
+LineSet1055.color = ColorRGBA1057;
+
+Shape1054.geometry = LineSet1055;
+
+HAnimSegment1050.children[1] = Shape1054;
+
+HAnimJoint1049.children = new MFNode();
 
-let Coordinate1064 = browser.currentScene.createNode("Coordinate");
-Coordinate1064.point = new MFVec3f(new float[0.0962,1.4269,-0.0424,0.2029,1.4376,-0.0387]);
-LineSet1062.coord = Coordinate1064;
+HAnimJoint1049.children[0] = HAnimSegment1050;
 
-Shape1061.geometry = LineSet1062;
+let HAnimJoint1058 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1058.name = "l_acromioclavicular";
+HAnimJoint1058.DEF = "hanim_l_acromioclavicular";
+HAnimJoint1058.center = new SFVec3f(new float[0.0962,1.4269,-0.0424]);
+HAnimJoint1058.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1058.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1059 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1059.name = "l_scapula";
+HAnimSegment1059.DEF = "hanim_l_scapula";
+let Transform1060 = browser.currentScene.createNode("Transform");
+Transform1060.translation = new SFVec3f(new float[0.0962,1.4269,-0.0424]);
+let Transform1061 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1062 = browser.currentScene.createNode("Shape");
+Shape1062.USE = "HAnimJointShape";
+Transform1061.child = new undefined();
 
-HAnimSegment1057.children[1] = Shape1061;
+Transform1061.child[0] = Shape1062;
 
-let HAnimSite1065 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1065.DEF = "hanim_l_bideltoid_pt";
-HAnimSite1065.name = "l_bideltoid_pt";
-let TouchSensor1066 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1066.description = "HAnimSite l_bideltoid_pt";
-HAnimSite1065.children = new MFNode();
+Transform1060.children = new MFNode();
 
-HAnimSite1065.children[0] = TouchSensor1066;
+Transform1060.children[0] = Transform1061;
 
-let Shape1067 = browser.currentScene.createNode("Shape");
-Shape1067.USE = "HAnimSiteShape";
-HAnimSite1065.children[1] = Shape1067;
+HAnimSegment1059.children = new MFNode();
 
-HAnimSegment1057.children[2] = HAnimSite1065;
+HAnimSegment1059.children[0] = Transform1060;
 
-let HAnimSite1068 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1068.DEF = "hanim_l_humeral_lateral_epicondyles_pt";
-HAnimSite1068.name = "l_humeral_lateral_epicondyles_pt";
-HAnimSite1068.translation = new SFVec3f(new float[0.228,1.1482,-0.11]);
-let TouchSensor1069 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1069.description = "HAnimSite l_humeral_lateral_epicondyles_pt";
-HAnimSite1068.children = new MFNode();
+let Shape1063 = browser.currentScene.createNode("Shape");
+let LineSet1064 = browser.currentScene.createNode("LineSet");
+LineSet1064.vertexCount = new MFInt32(new int[2]);
+let Coordinate1065 = browser.currentScene.createNode("Coordinate");
+Coordinate1065.point = new MFVec3f(new float[0.0962,1.4269,-0.0424,0.2029,1.4376,-0.0387]);
+LineSet1064.coord = Coordinate1065;
 
-HAnimSite1068.children[0] = TouchSensor1069;
+//from l_acromioclavicular to l_shoulder vertices 2
+let ColorRGBA1066 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1066.USE = "HAnimSegmentLineColorRGBA";
+LineSet1064.color = ColorRGBA1066;
 
-let Shape1070 = browser.currentScene.createNode("Shape");
-Shape1070.USE = "HAnimSiteShape";
-HAnimSite1068.children[1] = Shape1070;
+Shape1063.geometry = LineSet1064;
 
-HAnimSegment1057.children[3] = HAnimSite1068;
+HAnimSegment1059.children[1] = Shape1063;
 
-HAnimJoint1056.children = new MFNode();
+let HAnimSite1067 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1067.name = "l_bideltoid_pt";
+HAnimSite1067.DEF = "hanim_l_bideltoid_pt";
+let TouchSensor1068 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1068.description = "HAnimSite l_bideltoid_pt";
+HAnimSite1067.children = new MFNode();
 
-HAnimJoint1056.children[0] = HAnimSegment1057;
+HAnimSite1067.children[0] = TouchSensor1068;
 
-let HAnimJoint1071 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1071.DEF = "hanim_l_shoulder";
-HAnimJoint1071.name = "l_shoulder";
-HAnimJoint1071.center = new SFVec3f(new float[0.2029,1.4376,-0.0387]);
-let HAnimSegment1072 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1072.DEF = "hanim_l_upperarm";
-HAnimSegment1072.name = "l_upperarm";
-let Transform1073 = browser.currentScene.createNode("Transform");
-Transform1073.translation = new SFVec3f(new float[0.2029,1.4376,-0.0387]);
-let Transform1074 = browser.currentScene.createNode("Transform");
-let Shape1075 = browser.currentScene.createNode("Shape");
-Shape1075.USE = "HAnimJointShape";
-Transform1074.child = new undefined();
+let Shape1069 = browser.currentScene.createNode("Shape");
+Shape1069.USE = "HAnimSiteShape";
+HAnimSite1067.children[1] = Shape1069;
 
-Transform1074.child[0] = Shape1075;
+HAnimSegment1059.children[2] = HAnimSite1067;
 
-Transform1073.children = new MFNode();
+let HAnimSite1070 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1070.name = "l_humeral_lateral_epicondyles_pt";
+HAnimSite1070.DEF = "hanim_l_humeral_lateral_epicondyles_pt";
+HAnimSite1070.translation = new SFVec3f(new float[0.228,1.1482,-0.11]);
+let TouchSensor1071 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1071.description = "HAnimSite l_humeral_lateral_epicondyles_pt";
+HAnimSite1070.children = new MFNode();
 
-Transform1073.children[0] = Transform1074;
+HAnimSite1070.children[0] = TouchSensor1071;
 
-HAnimSegment1072.children = new MFNode();
+let Shape1072 = browser.currentScene.createNode("Shape");
+Shape1072.USE = "HAnimSiteShape";
+HAnimSite1070.children[1] = Shape1072;
 
-HAnimSegment1072.children[0] = Transform1073;
+HAnimSegment1059.children[3] = HAnimSite1070;
 
-let Shape1076 = browser.currentScene.createNode("Shape");
-let LineSet1077 = browser.currentScene.createNode("LineSet");
-LineSet1077.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1078 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1078.USE = "HAnimSegmentLineColorRGBA";
-LineSet1077.color = ColorRGBA1078;
+HAnimJoint1058.children = new MFNode();
 
-let Coordinate1079 = browser.currentScene.createNode("Coordinate");
-Coordinate1079.point = new MFVec3f(new float[0.2029,1.4376,-0.0387,0.2014,1.1357,-0.0682]);
-LineSet1077.coord = Coordinate1079;
+HAnimJoint1058.children[0] = HAnimSegment1059;
 
-Shape1076.geometry = LineSet1077;
+let HAnimJoint1073 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1073.name = "l_shoulder";
+HAnimJoint1073.DEF = "hanim_l_shoulder";
+HAnimJoint1073.center = new SFVec3f(new float[0.2029,1.4376,-0.0387]);
+HAnimJoint1073.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1073.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1074 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1074.name = "l_upperarm";
+HAnimSegment1074.DEF = "hanim_l_upperarm";
+let Transform1075 = browser.currentScene.createNode("Transform");
+Transform1075.translation = new SFVec3f(new float[0.2029,1.4376,-0.0387]);
+let Transform1076 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1077 = browser.currentScene.createNode("Shape");
+Shape1077.USE = "HAnimJointShape";
+Transform1076.child = new undefined();
 
-HAnimSegment1072.children[1] = Shape1076;
+Transform1076.child[0] = Shape1077;
 
-let HAnimSite1080 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1080.DEF = "hanim_l_humeral_medial_epicondyles_pt";
-HAnimSite1080.name = "l_humeral_medial_epicondyles_pt";
-HAnimSite1080.translation = new SFVec3f(new float[0.1735,1.1272,-0.1113]);
-let TouchSensor1081 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1081.description = "HAnimSite l_humeral_medial_epicondyles_pt";
-HAnimSite1080.children = new MFNode();
+Transform1075.children = new MFNode();
 
-HAnimSite1080.children[0] = TouchSensor1081;
+Transform1075.children[0] = Transform1076;
 
-let Shape1082 = browser.currentScene.createNode("Shape");
-Shape1082.USE = "HAnimSiteShape";
-HAnimSite1080.children[1] = Shape1082;
+HAnimSegment1074.children = new MFNode();
 
-HAnimSegment1072.children[2] = HAnimSite1080;
+HAnimSegment1074.children[0] = Transform1075;
+
+let Shape1078 = browser.currentScene.createNode("Shape");
+let LineSet1079 = browser.currentScene.createNode("LineSet");
+LineSet1079.vertexCount = new MFInt32(new int[2]);
+let Coordinate1080 = browser.currentScene.createNode("Coordinate");
+Coordinate1080.point = new MFVec3f(new float[0.2029,1.4376,-0.0387,0.2014,1.1357,-0.0682]);
+LineSet1079.coord = Coordinate1080;
 
-let HAnimSite1083 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1083.DEF = "hanim_l_olecranon_pt";
-HAnimSite1083.name = "l_olecranon_pt";
-HAnimSite1083.translation = new SFVec3f(new float[-0.1962,1.1375,-0.1123]);
-let TouchSensor1084 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1084.description = "HAnimSite l_olecranon_pt";
-HAnimSite1083.children = new MFNode();
+//from l_shoulder to l_elbow vertices 2
+let ColorRGBA1081 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1081.USE = "HAnimSegmentLineColorRGBA";
+LineSet1079.color = ColorRGBA1081;
 
-HAnimSite1083.children[0] = TouchSensor1084;
+Shape1078.geometry = LineSet1079;
 
-let Shape1085 = browser.currentScene.createNode("Shape");
-Shape1085.USE = "HAnimSiteShape";
-HAnimSite1083.children[1] = Shape1085;
+HAnimSegment1074.children[1] = Shape1078;
 
-HAnimSegment1072.children[3] = HAnimSite1083;
+let HAnimSite1082 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1082.name = "l_humeral_medial_epicondyles_pt";
+HAnimSite1082.DEF = "hanim_l_humeral_medial_epicondyles_pt";
+HAnimSite1082.translation = new SFVec3f(new float[0.1735,1.1272,-0.1113]);
+let TouchSensor1083 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1083.description = "HAnimSite l_humeral_medial_epicondyles_pt";
+HAnimSite1082.children = new MFNode();
 
-let HAnimSite1086 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1086.DEF = "hanim_l_radial_styloid_pt";
-HAnimSite1086.name = "l_radial_styloid_pt";
-HAnimSite1086.translation = new SFVec3f(new float[0.1901,0.8645,-0.0415]);
-let TouchSensor1087 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1087.description = "HAnimSite l_radial_styloid_pt";
-HAnimSite1086.children = new MFNode();
+HAnimSite1082.children[0] = TouchSensor1083;
 
-HAnimSite1086.children[0] = TouchSensor1087;
+let Shape1084 = browser.currentScene.createNode("Shape");
+Shape1084.USE = "HAnimSiteShape";
+HAnimSite1082.children[1] = Shape1084;
 
-let Shape1088 = browser.currentScene.createNode("Shape");
-Shape1088.USE = "HAnimSiteShape";
-HAnimSite1086.children[1] = Shape1088;
+HAnimSegment1074.children[2] = HAnimSite1082;
 
-HAnimSegment1072.children[4] = HAnimSite1086;
+let HAnimSite1085 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1085.name = "l_olecranon_pt";
+HAnimSite1085.DEF = "hanim_l_olecranon_pt";
+HAnimSite1085.translation = new SFVec3f(new float[-0.1962,1.1375,-0.1123]);
+let TouchSensor1086 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1086.description = "HAnimSite l_olecranon_pt";
+HAnimSite1085.children = new MFNode();
 
-let HAnimSite1089 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1089.DEF = "hanim_l_radiale_pt";
-HAnimSite1089.name = "l_radiale_pt";
-HAnimSite1089.translation = new SFVec3f(new float[0.2182,1.1212,-0.1167]);
-let TouchSensor1090 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1090.description = "HAnimSite l_radiale_pt";
-HAnimSite1089.children = new MFNode();
+HAnimSite1085.children[0] = TouchSensor1086;
 
-HAnimSite1089.children[0] = TouchSensor1090;
+let Shape1087 = browser.currentScene.createNode("Shape");
+Shape1087.USE = "HAnimSiteShape";
+HAnimSite1085.children[1] = Shape1087;
 
-let Shape1091 = browser.currentScene.createNode("Shape");
-Shape1091.USE = "HAnimSiteShape";
-HAnimSite1089.children[1] = Shape1091;
+HAnimSegment1074.children[3] = HAnimSite1085;
 
-HAnimSegment1072.children[5] = HAnimSite1089;
+let HAnimSite1088 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1088.name = "l_radial_styloid_pt";
+HAnimSite1088.DEF = "hanim_l_radial_styloid_pt";
+HAnimSite1088.translation = new SFVec3f(new float[0.1901,0.8645,-0.0415]);
+let TouchSensor1089 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1089.description = "HAnimSite l_radial_styloid_pt";
+HAnimSite1088.children = new MFNode();
 
-HAnimJoint1071.children = new MFNode();
+HAnimSite1088.children[0] = TouchSensor1089;
 
-HAnimJoint1071.children[0] = HAnimSegment1072;
+let Shape1090 = browser.currentScene.createNode("Shape");
+Shape1090.USE = "HAnimSiteShape";
+HAnimSite1088.children[1] = Shape1090;
 
-let HAnimJoint1092 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1092.DEF = "hanim_l_elbow";
-HAnimJoint1092.name = "l_elbow";
-HAnimJoint1092.center = new SFVec3f(new float[0.2014,1.1357,-0.0682]);
-let HAnimSegment1093 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1093.DEF = "hanim_l_forearm";
-HAnimSegment1093.name = "l_forearm";
-let Transform1094 = browser.currentScene.createNode("Transform");
-Transform1094.translation = new SFVec3f(new float[0.2014,1.1357,-0.0682]);
-let Transform1095 = browser.currentScene.createNode("Transform");
-let Shape1096 = browser.currentScene.createNode("Shape");
-Shape1096.USE = "HAnimJointShape";
-Transform1095.child = new undefined();
+HAnimSegment1074.children[4] = HAnimSite1088;
+
+let HAnimSite1091 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1091.name = "l_radiale_pt";
+HAnimSite1091.DEF = "hanim_l_radiale_pt";
+HAnimSite1091.translation = new SFVec3f(new float[0.2182,1.1212,-0.1167]);
+let TouchSensor1092 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1092.description = "HAnimSite l_radiale_pt";
+HAnimSite1091.children = new MFNode();
+
+HAnimSite1091.children[0] = TouchSensor1092;
 
-Transform1095.child[0] = Shape1096;
+let Shape1093 = browser.currentScene.createNode("Shape");
+Shape1093.USE = "HAnimSiteShape";
+HAnimSite1091.children[1] = Shape1093;
 
-Transform1094.children = new MFNode();
+HAnimSegment1074.children[5] = HAnimSite1091;
 
-Transform1094.children[0] = Transform1095;
+HAnimJoint1073.children = new MFNode();
 
-HAnimSegment1093.children = new MFNode();
+HAnimJoint1073.children[0] = HAnimSegment1074;
 
-HAnimSegment1093.children[0] = Transform1094;
+let HAnimJoint1094 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1094.name = "l_elbow";
+HAnimJoint1094.DEF = "hanim_l_elbow";
+HAnimJoint1094.center = new SFVec3f(new float[0.2014,1.1357,-0.0682]);
+HAnimJoint1094.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1094.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1095 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1095.name = "l_forearm";
+HAnimSegment1095.DEF = "hanim_l_forearm";
+let Transform1096 = browser.currentScene.createNode("Transform");
+Transform1096.translation = new SFVec3f(new float[0.2014,1.1357,-0.0682]);
+let Transform1097 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1098 = browser.currentScene.createNode("Shape");
+Shape1098.USE = "HAnimJointShape";
+Transform1097.child = new undefined();
 
-let Shape1097 = browser.currentScene.createNode("Shape");
-let LineSet1098 = browser.currentScene.createNode("LineSet");
-LineSet1098.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1099 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1099.USE = "HAnimSegmentLineColorRGBA";
-LineSet1098.color = ColorRGBA1099;
+Transform1097.child[0] = Shape1098;
 
-let Coordinate1100 = browser.currentScene.createNode("Coordinate");
-Coordinate1100.point = new MFVec3f(new float[0.2014,1.1357,-0.0682,0.1984,0.8663,-0.0583]);
-LineSet1098.coord = Coordinate1100;
+Transform1096.children = new MFNode();
 
-Shape1097.geometry = LineSet1098;
+Transform1096.children[0] = Transform1097;
 
-HAnimSegment1093.children[1] = Shape1097;
+HAnimSegment1095.children = new MFNode();
 
-let HAnimSite1101 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1101.DEF = "hanim_l_ulnar_styloid_pt";
-HAnimSite1101.name = "l_ulnar_styloid_pt";
-HAnimSite1101.translation = new SFVec3f(new float[-0.2142,0.8529,-0.0648]);
-let TouchSensor1102 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1102.description = "HAnimSite l_ulnar_styloid_pt";
-HAnimSite1101.children = new MFNode();
+HAnimSegment1095.children[0] = Transform1096;
 
-HAnimSite1101.children[0] = TouchSensor1102;
+let Shape1099 = browser.currentScene.createNode("Shape");
+let LineSet1100 = browser.currentScene.createNode("LineSet");
+LineSet1100.vertexCount = new MFInt32(new int[2]);
+let Coordinate1101 = browser.currentScene.createNode("Coordinate");
+Coordinate1101.point = new MFVec3f(new float[0.2014,1.1357,-0.0682,0.1984,0.8663,-0.0583]);
+LineSet1100.coord = Coordinate1101;
 
-let Shape1103 = browser.currentScene.createNode("Shape");
-Shape1103.USE = "HAnimSiteShape";
-HAnimSite1101.children[1] = Shape1103;
+//from l_elbow to l_radiocarpal vertices 2
+let ColorRGBA1102 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1102.USE = "HAnimSegmentLineColorRGBA";
+LineSet1100.color = ColorRGBA1102;
 
-HAnimSegment1093.children[2] = HAnimSite1101;
+Shape1099.geometry = LineSet1100;
 
-HAnimJoint1092.children = new MFNode();
+HAnimSegment1095.children[1] = Shape1099;
 
-HAnimJoint1092.children[0] = HAnimSegment1093;
+let HAnimSite1103 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1103.name = "l_ulnar_styloid_pt";
+HAnimSite1103.DEF = "hanim_l_ulnar_styloid_pt";
+HAnimSite1103.translation = new SFVec3f(new float[-0.2142,0.8529,-0.0648]);
+let TouchSensor1104 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1104.description = "HAnimSite l_ulnar_styloid_pt";
+HAnimSite1103.children = new MFNode();
 
-let HAnimJoint1104 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1104.DEF = "hanim_l_radiocarpal";
-HAnimJoint1104.name = "l_radiocarpal";
-HAnimJoint1104.center = new SFVec3f(new float[0.1984,0.8663,-0.0583]);
-let HAnimSegment1105 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1105.DEF = "hanim_l_carpal";
-HAnimSegment1105.name = "l_carpal";
-let Transform1106 = browser.currentScene.createNode("Transform");
-Transform1106.translation = new SFVec3f(new float[0.2,0.85,-0.05]);
-Transform1106.rotation = new SFRotation(new float[0,0,1,-3.14]);
-Transform1106.scale = new SFVec3f(new float[0.2,0.2,0.2]);
-let Transform1107 = browser.currentScene.createNode("Transform");
-Transform1107.rotation = new SFRotation(new float[0,1,0,-1.57]);
-let Shape1108 = browser.currentScene.createNode("Shape");
-Shape1108.USE = "HAnimJointShape";
-Transform1107.child = new undefined();
+HAnimSite1103.children[0] = TouchSensor1104;
 
-Transform1107.child[0] = Shape1108;
+let Shape1105 = browser.currentScene.createNode("Shape");
+Shape1105.USE = "HAnimSiteShape";
+HAnimSite1103.children[1] = Shape1105;
 
-Transform1106.children = new MFNode();
+HAnimSegment1095.children[2] = HAnimSite1103;
 
-Transform1106.children[0] = Transform1107;
+HAnimJoint1094.children = new MFNode();
 
-HAnimSegment1105.children = new MFNode();
+HAnimJoint1094.children[0] = HAnimSegment1095;
 
-HAnimSegment1105.children[0] = Transform1106;
+let HAnimJoint1106 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1106.name = "l_radiocarpal";
+HAnimJoint1106.DEF = "hanim_l_radiocarpal";
+HAnimJoint1106.center = new SFVec3f(new float[0.1984,0.8663,-0.0583]);
+HAnimJoint1106.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1106.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1107 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1107.name = "l_carpal";
+HAnimSegment1107.DEF = "hanim_l_carpal";
+let Transform1108 = browser.currentScene.createNode("Transform");
+Transform1108.scale = new SFVec3f(new float[0.2,0.2,0.2]);
+Transform1108.translation = new SFVec3f(new float[0.2,0.85,-0.05]);
+Transform1108.rotation = new SFRotation(new float[0,0,1,-3.14]);
+//Transform left hand
+let Transform1109 = browser.currentScene.createNode("Transform");
+Transform1109.rotation = new SFRotation(new float[0,1,0,-1.57]);
+//Transform left hand
+let Shape1110 = browser.currentScene.createNode("Shape");
+Shape1110.USE = "HAnimJointShape";
+Transform1109.child = new undefined();
 
-let Shape1109 = browser.currentScene.createNode("Shape");
-let LineSet1110 = browser.currentScene.createNode("LineSet");
-LineSet1110.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1111 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1111.USE = "HAnimSegmentLineColorRGBA";
-LineSet1110.color = ColorRGBA1111;
+Transform1109.child[0] = Shape1110;
 
-let Coordinate1112 = browser.currentScene.createNode("Coordinate");
-Coordinate1112.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,8.0485,0.9213,1.3235]);
-LineSet1110.coord = Coordinate1112;
+Transform1108.children = new MFNode();
 
-Shape1109.geometry = LineSet1110;
+Transform1108.children[0] = Transform1109;
 
-HAnimSegment1105.children[1] = Shape1109;
+HAnimSegment1107.children = new MFNode();
 
-let Shape1113 = browser.currentScene.createNode("Shape");
-let LineSet1114 = browser.currentScene.createNode("LineSet");
-LineSet1114.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1115 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1115.USE = "HAnimSegmentLineColorRGBA";
-LineSet1114.color = ColorRGBA1115;
+HAnimSegment1107.children[0] = Transform1108;
 
-let Coordinate1116 = browser.currentScene.createNode("Coordinate");
-Coordinate1116.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,8.0485,0.9225,0.8386]);
-LineSet1114.coord = Coordinate1116;
+let Shape1111 = browser.currentScene.createNode("Shape");
+let LineSet1112 = browser.currentScene.createNode("LineSet");
+LineSet1112.vertexCount = new MFInt32(new int[2]);
+let Coordinate1113 = browser.currentScene.createNode("Coordinate");
+Coordinate1113.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,8.0485,0.9213,1.3235]);
+LineSet1112.coord = Coordinate1113;
 
-Shape1113.geometry = LineSet1114;
+//from l_radiocarpal to l_midcarpal_1 vertices 2
+let ColorRGBA1114 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1114.USE = "HAnimSegmentLineColorRGBA";
+LineSet1112.color = ColorRGBA1114;
 
-HAnimSegment1105.children[2] = Shape1113;
+Shape1111.geometry = LineSet1112;
 
-let Shape1117 = browser.currentScene.createNode("Shape");
-let LineSet1118 = browser.currentScene.createNode("LineSet");
-LineSet1118.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1119 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1119.USE = "HAnimSegmentLineColorRGBA";
-LineSet1118.color = ColorRGBA1119;
+HAnimSegment1107.children[1] = Shape1111;
 
-let Coordinate1120 = browser.currentScene.createNode("Coordinate");
-Coordinate1120.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,8.0395,0.9246,0.2513]);
-LineSet1118.coord = Coordinate1120;
+let Shape1115 = browser.currentScene.createNode("Shape");
+let LineSet1116 = browser.currentScene.createNode("LineSet");
+LineSet1116.vertexCount = new MFInt32(new int[2]);
+let Coordinate1117 = browser.currentScene.createNode("Coordinate");
+Coordinate1117.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,8.0485,0.9225,0.8386]);
+LineSet1116.coord = Coordinate1117;
 
-Shape1117.geometry = LineSet1118;
+//from l_radiocarpal to l_midcarpal_2 vertices 2
+let ColorRGBA1118 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1118.USE = "HAnimSegmentLineColorRGBA";
+LineSet1116.color = ColorRGBA1118;
 
-HAnimSegment1105.children[3] = Shape1117;
+Shape1115.geometry = LineSet1116;
+
+HAnimSegment1107.children[2] = Shape1115;
+
+let Shape1119 = browser.currentScene.createNode("Shape");
+let LineSet1120 = browser.currentScene.createNode("LineSet");
+LineSet1120.vertexCount = new MFInt32(new int[2]);
+let Coordinate1121 = browser.currentScene.createNode("Coordinate");
+Coordinate1121.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,8.0395,0.9246,0.2513]);
+LineSet1120.coord = Coordinate1121;
 
-let Shape1121 = browser.currentScene.createNode("Shape");
-let LineSet1122 = browser.currentScene.createNode("LineSet");
-LineSet1122.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1123 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1123.USE = "HAnimSegmentLineColorRGBA";
-LineSet1122.color = ColorRGBA1123;
+//from l_radiocarpal to l_midcarpal_3 vertices 2
+let ColorRGBA1122 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1122.USE = "HAnimSegmentLineColorRGBA";
+LineSet1120.color = ColorRGBA1122;
 
-let Coordinate1124 = browser.currentScene.createNode("Coordinate");
-Coordinate1124.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,8.0395,0.921,-0.6795]);
-LineSet1122.coord = Coordinate1124;
+Shape1119.geometry = LineSet1120;
 
-Shape1121.geometry = LineSet1122;
+HAnimSegment1107.children[3] = Shape1119;
 
-HAnimSegment1105.children[4] = Shape1121;
+let Shape1123 = browser.currentScene.createNode("Shape");
+let LineSet1124 = browser.currentScene.createNode("LineSet");
+LineSet1124.vertexCount = new MFInt32(new int[2]);
+let Coordinate1125 = browser.currentScene.createNode("Coordinate");
+Coordinate1125.point = new MFVec3f(new float[0.1984,0.8663,-0.0583,8.0395,0.921,-0.6795]);
+LineSet1124.coord = Coordinate1125;
 
-HAnimJoint1104.children = new MFNode();
+//from l_radiocarpal to l_midcarpal_4_5 vertices 2
+let ColorRGBA1126 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1126.USE = "HAnimSegmentLineColorRGBA";
+LineSet1124.color = ColorRGBA1126;
 
-HAnimJoint1104.children[0] = HAnimSegment1105;
+Shape1123.geometry = LineSet1124;
 
-let HAnimJoint1125 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1125.DEF = "hanim_l_midcarpal_1";
-HAnimJoint1125.name = "l_midcarpal_1";
-HAnimJoint1125.center = new SFVec3f(new float[8.0485,0.9213,1.3235]);
-let HAnimSegment1126 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1126.DEF = "hanim_l_trapezium";
-HAnimSegment1126.name = "l_trapezium";
-let Transform1127 = browser.currentScene.createNode("Transform");
-Transform1127.translation = new SFVec3f(new float[8.0485,0.9213,1.3235]);
-let Transform1128 = browser.currentScene.createNode("Transform");
-let Shape1129 = browser.currentScene.createNode("Shape");
-Shape1129.USE = "HAnimJointShape";
-Transform1128.child = new undefined();
+HAnimSegment1107.children[4] = Shape1123;
 
-Transform1128.child[0] = Shape1129;
+HAnimJoint1106.children = new MFNode();
 
-Transform1127.children = new MFNode();
+HAnimJoint1106.children[0] = HAnimSegment1107;
 
-Transform1127.children[0] = Transform1128;
+let HAnimJoint1127 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1127.name = "l_midcarpal_1";
+HAnimJoint1127.DEF = "hanim_l_midcarpal_1";
+HAnimJoint1127.center = new SFVec3f(new float[8.0485,0.9213,1.3235]);
+HAnimJoint1127.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1127.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1128 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1128.name = "l_trapezium";
+HAnimSegment1128.DEF = "hanim_l_trapezium";
+let Transform1129 = browser.currentScene.createNode("Transform");
+Transform1129.translation = new SFVec3f(new float[8.0485,0.9213,1.3235]);
+let Transform1130 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1131 = browser.currentScene.createNode("Shape");
+Shape1131.USE = "HAnimJointShape";
+Transform1130.child = new undefined();
 
-HAnimSegment1126.children = new MFNode();
+Transform1130.child[0] = Shape1131;
 
-HAnimSegment1126.children[0] = Transform1127;
+Transform1129.children = new MFNode();
 
-let Shape1130 = browser.currentScene.createNode("Shape");
-let LineSet1131 = browser.currentScene.createNode("LineSet");
-LineSet1131.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1132 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1132.USE = "HAnimSegmentLineColorRGBA";
-LineSet1131.color = ColorRGBA1132;
+Transform1129.children[0] = Transform1130;
 
-let Coordinate1133 = browser.currentScene.createNode("Coordinate");
-Coordinate1133.point = new MFVec3f(new float[8.0485,0.9213,1.3235,0.1924,0.8472,-0.0534]);
-LineSet1131.coord = Coordinate1133;
+HAnimSegment1128.children = new MFNode();
 
-Shape1130.geometry = LineSet1131;
+HAnimSegment1128.children[0] = Transform1129;
 
-HAnimSegment1126.children[1] = Shape1130;
+let Shape1132 = browser.currentScene.createNode("Shape");
+let LineSet1133 = browser.currentScene.createNode("LineSet");
+LineSet1133.vertexCount = new MFInt32(new int[2]);
+let Coordinate1134 = browser.currentScene.createNode("Coordinate");
+Coordinate1134.point = new MFVec3f(new float[8.0485,0.9213,1.3235,0.1924,0.8472,-0.0534]);
+LineSet1133.coord = Coordinate1134;
 
-HAnimJoint1125.children = new MFNode();
+//from l_midcarpal_1 to l_carpometacarpal_1 vertices 2
+let ColorRGBA1135 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1135.USE = "HAnimSegmentLineColorRGBA";
+LineSet1133.color = ColorRGBA1135;
 
-HAnimJoint1125.children[0] = HAnimSegment1126;
+Shape1132.geometry = LineSet1133;
 
-let HAnimJoint1134 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1134.DEF = "hanim_l_carpometacarpal_1";
-HAnimJoint1134.name = "l_carpometacarpal_1";
-HAnimJoint1134.center = new SFVec3f(new float[0.1924,0.8472,-0.0534]);
-let HAnimSegment1135 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1135.DEF = "hanim_l_metacarpal_1";
-HAnimSegment1135.name = "l_metacarpal_1";
-let Transform1136 = browser.currentScene.createNode("Transform");
-Transform1136.translation = new SFVec3f(new float[0.1924,0.8472,-0.0534]);
-let Transform1137 = browser.currentScene.createNode("Transform");
-let Shape1138 = browser.currentScene.createNode("Shape");
-Shape1138.USE = "HAnimJointShape";
-Transform1137.child = new undefined();
+HAnimSegment1128.children[1] = Shape1132;
 
-Transform1137.child[0] = Shape1138;
+HAnimJoint1127.children = new MFNode();
 
-Transform1136.children = new MFNode();
+HAnimJoint1127.children[0] = HAnimSegment1128;
 
-Transform1136.children[0] = Transform1137;
+let HAnimJoint1136 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1136.name = "l_carpometacarpal_1";
+HAnimJoint1136.DEF = "hanim_l_carpometacarpal_1";
+HAnimJoint1136.center = new SFVec3f(new float[0.1924,0.8472,-0.0534]);
+HAnimJoint1136.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1136.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1137 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1137.name = "l_metacarpal_1";
+HAnimSegment1137.DEF = "hanim_l_metacarpal_1";
+let Transform1138 = browser.currentScene.createNode("Transform");
+Transform1138.translation = new SFVec3f(new float[0.1924,0.8472,-0.0534]);
+let Transform1139 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1140 = browser.currentScene.createNode("Shape");
+Shape1140.USE = "HAnimJointShape";
+Transform1139.child = new undefined();
 
-HAnimSegment1135.children = new MFNode();
+Transform1139.child[0] = Shape1140;
 
-HAnimSegment1135.children[0] = Transform1136;
+Transform1138.children = new MFNode();
 
-let Shape1139 = browser.currentScene.createNode("Shape");
-let LineSet1140 = browser.currentScene.createNode("LineSet");
-LineSet1140.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1141 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1141.USE = "HAnimSegmentLineColorRGBA";
-LineSet1140.color = ColorRGBA1141;
+Transform1138.children[0] = Transform1139;
 
-let Coordinate1142 = browser.currentScene.createNode("Coordinate");
-Coordinate1142.point = new MFVec3f(new float[0.1924,0.8472,-0.0534,0.1951,0.8226,0.0246]);
-LineSet1140.coord = Coordinate1142;
+HAnimSegment1137.children = new MFNode();
 
-Shape1139.geometry = LineSet1140;
+HAnimSegment1137.children[0] = Transform1138;
 
-HAnimSegment1135.children[1] = Shape1139;
+let Shape1141 = browser.currentScene.createNode("Shape");
+let LineSet1142 = browser.currentScene.createNode("LineSet");
+LineSet1142.vertexCount = new MFInt32(new int[2]);
+let Coordinate1143 = browser.currentScene.createNode("Coordinate");
+Coordinate1143.point = new MFVec3f(new float[0.1924,0.8472,-0.0534,0.1951,0.8226,0.0246]);
+LineSet1142.coord = Coordinate1143;
 
-HAnimJoint1134.children = new MFNode();
+//from l_carpometacarpal_1 to l_metacarpophalangeal_1 vertices 2
+let ColorRGBA1144 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1144.USE = "HAnimSegmentLineColorRGBA";
+LineSet1142.color = ColorRGBA1144;
 
-HAnimJoint1134.children[0] = HAnimSegment1135;
+Shape1141.geometry = LineSet1142;
 
-let HAnimJoint1143 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1143.DEF = "hanim_l_metacarpophalangeal_1";
-HAnimJoint1143.name = "l_metacarpophalangeal_1";
-HAnimJoint1143.center = new SFVec3f(new float[0.1951,0.8226,0.0246]);
-let HAnimSegment1144 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1144.DEF = "hanim_l_carpal_proximal_phalanx_1";
-HAnimSegment1144.name = "l_carpal_proximal_phalanx_1";
-let Transform1145 = browser.currentScene.createNode("Transform");
-Transform1145.translation = new SFVec3f(new float[0.1951,0.8226,0.0246]);
-let Transform1146 = browser.currentScene.createNode("Transform");
-let Shape1147 = browser.currentScene.createNode("Shape");
-Shape1147.USE = "HAnimJointShape";
-Transform1146.child = new undefined();
+HAnimSegment1137.children[1] = Shape1141;
 
-Transform1146.child[0] = Shape1147;
+HAnimJoint1136.children = new MFNode();
 
-Transform1145.children = new MFNode();
+HAnimJoint1136.children[0] = HAnimSegment1137;
 
-Transform1145.children[0] = Transform1146;
+let HAnimJoint1145 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1145.name = "l_metacarpophalangeal_1";
+HAnimJoint1145.DEF = "hanim_l_metacarpophalangeal_1";
+HAnimJoint1145.center = new SFVec3f(new float[0.1951,0.8226,0.0246]);
+HAnimJoint1145.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1145.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1146 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1146.name = "l_carpal_proximal_phalanx_1";
+HAnimSegment1146.DEF = "hanim_l_carpal_proximal_phalanx_1";
+let Transform1147 = browser.currentScene.createNode("Transform");
+Transform1147.translation = new SFVec3f(new float[0.1951,0.8226,0.0246]);
+let Transform1148 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1149 = browser.currentScene.createNode("Shape");
+Shape1149.USE = "HAnimJointShape";
+Transform1148.child = new undefined();
 
-HAnimSegment1144.children = new MFNode();
+Transform1148.child[0] = Shape1149;
 
-HAnimSegment1144.children[0] = Transform1145;
+Transform1147.children = new MFNode();
 
-let Shape1148 = browser.currentScene.createNode("Shape");
-let LineSet1149 = browser.currentScene.createNode("LineSet");
-LineSet1149.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1150 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1150.USE = "HAnimSegmentLineColorRGBA";
-LineSet1149.color = ColorRGBA1150;
+Transform1147.children[0] = Transform1148;
 
-let Coordinate1151 = browser.currentScene.createNode("Coordinate");
-Coordinate1151.point = new MFVec3f(new float[0.1951,0.8226,0.0246,0.1955,0.8159,0.0464]);
-LineSet1149.coord = Coordinate1151;
+HAnimSegment1146.children = new MFNode();
 
-Shape1148.geometry = LineSet1149;
+HAnimSegment1146.children[0] = Transform1147;
 
-HAnimSegment1144.children[1] = Shape1148;
+let Shape1150 = browser.currentScene.createNode("Shape");
+let LineSet1151 = browser.currentScene.createNode("LineSet");
+LineSet1151.vertexCount = new MFInt32(new int[2]);
+let Coordinate1152 = browser.currentScene.createNode("Coordinate");
+Coordinate1152.point = new MFVec3f(new float[0.1951,0.8226,0.0246,0.1955,0.8159,0.0464]);
+LineSet1151.coord = Coordinate1152;
 
-let HAnimSite1152 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1152.DEF = "hanim_l_carpal_distal_phalanx_1_tip";
-HAnimSite1152.name = "l_carpal_distal_phalanx_1_tip";
-let TouchSensor1153 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1153.description = "HAnimSite l_carpal_distal_phalanx_1_tip";
-HAnimSite1152.children = new MFNode();
+//from l_metacarpophalangeal_1 to l_carpal_interphalangeal_1 vertices 2
+let ColorRGBA1153 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1153.USE = "HAnimSegmentLineColorRGBA";
+LineSet1151.color = ColorRGBA1153;
 
-HAnimSite1152.children[0] = TouchSensor1153;
+Shape1150.geometry = LineSet1151;
 
-let Shape1154 = browser.currentScene.createNode("Shape");
-Shape1154.USE = "HAnimSiteShape";
-HAnimSite1152.children[1] = Shape1154;
+HAnimSegment1146.children[1] = Shape1150;
 
-HAnimSegment1144.children[2] = HAnimSite1152;
+let HAnimSite1154 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1154.name = "l_carpal_distal_phalanx_1_tip";
+HAnimSite1154.DEF = "hanim_l_carpal_distal_phalanx_1_tip";
+let TouchSensor1155 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1155.description = "HAnimSite l_carpal_distal_phalanx_1_tip";
+HAnimSite1154.children = new MFNode();
 
-HAnimJoint1143.children = new MFNode();
+HAnimSite1154.children[0] = TouchSensor1155;
 
-HAnimJoint1143.children[0] = HAnimSegment1144;
+let Shape1156 = browser.currentScene.createNode("Shape");
+Shape1156.USE = "HAnimSiteShape";
+HAnimSite1154.children[1] = Shape1156;
 
-let HAnimJoint1155 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1155.DEF = "hanim_l_carpal_interphalangeal_1";
-HAnimJoint1155.name = "l_carpal_interphalangeal_1";
-HAnimJoint1155.center = new SFVec3f(new float[0.1955,0.8159,0.0464]);
-HAnimJoint1143.children[1] = HAnimJoint1155;
+HAnimSegment1146.children[2] = HAnimSite1154;
 
-HAnimJoint1134.children[1] = HAnimJoint1143;
+HAnimJoint1145.children = new MFNode();
 
-HAnimJoint1125.children[1] = HAnimJoint1134;
+HAnimJoint1145.children[0] = HAnimSegment1146;
 
-HAnimJoint1104.children[1] = HAnimJoint1125;
+let HAnimJoint1157 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1157.name = "l_carpal_interphalangeal_1";
+HAnimJoint1157.DEF = "hanim_l_carpal_interphalangeal_1";
+HAnimJoint1157.center = new SFVec3f(new float[0.1955,0.8159,0.0464]);
+HAnimJoint1157.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1157.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1145.children[1] = HAnimJoint1157;
 
-let HAnimJoint1156 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1156.DEF = "hanim_l_midcarpal_2";
-HAnimJoint1156.name = "l_midcarpal_2";
-HAnimJoint1156.center = new SFVec3f(new float[8.0485,0.9225,0.8386]);
-let HAnimSegment1157 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1157.DEF = "hanim_l_trapezoid";
-HAnimSegment1157.name = "l_trapezoid";
-let Transform1158 = browser.currentScene.createNode("Transform");
-Transform1158.translation = new SFVec3f(new float[8.0485,0.9225,0.8386]);
-let Transform1159 = browser.currentScene.createNode("Transform");
-let Shape1160 = browser.currentScene.createNode("Shape");
-Shape1160.USE = "HAnimJointShape";
-Transform1159.child = new undefined();
+HAnimJoint1136.children[1] = HAnimJoint1145;
 
-Transform1159.child[0] = Shape1160;
+HAnimJoint1127.children[1] = HAnimJoint1136;
 
-Transform1158.children = new MFNode();
+HAnimJoint1106.children[1] = HAnimJoint1127;
 
-Transform1158.children[0] = Transform1159;
+let HAnimJoint1158 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1158.name = "l_midcarpal_2";
+HAnimJoint1158.DEF = "hanim_l_midcarpal_2";
+HAnimJoint1158.center = new SFVec3f(new float[8.0485,0.9225,0.8386]);
+HAnimJoint1158.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1158.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1159 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1159.name = "l_trapezoid";
+HAnimSegment1159.DEF = "hanim_l_trapezoid";
+let Transform1160 = browser.currentScene.createNode("Transform");
+Transform1160.translation = new SFVec3f(new float[8.0485,0.9225,0.8386]);
+let Transform1161 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1162 = browser.currentScene.createNode("Shape");
+Shape1162.USE = "HAnimJointShape";
+Transform1161.child = new undefined();
 
-HAnimSegment1157.children = new MFNode();
+Transform1161.child[0] = Shape1162;
 
-HAnimSegment1157.children[0] = Transform1158;
+Transform1160.children = new MFNode();
 
-let Shape1161 = browser.currentScene.createNode("Shape");
-let LineSet1162 = browser.currentScene.createNode("LineSet");
-LineSet1162.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1163 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1163.USE = "HAnimSegmentLineColorRGBA";
-LineSet1162.color = ColorRGBA1163;
+Transform1160.children[0] = Transform1161;
 
-let Coordinate1164 = browser.currentScene.createNode("Coordinate");
-Coordinate1164.point = new MFVec3f(new float[8.0485,0.9225,0.8386,0.1983,0.8024,-0.028]);
-LineSet1162.coord = Coordinate1164;
+HAnimSegment1159.children = new MFNode();
 
-Shape1161.geometry = LineSet1162;
+HAnimSegment1159.children[0] = Transform1160;
 
-HAnimSegment1157.children[1] = Shape1161;
+let Shape1163 = browser.currentScene.createNode("Shape");
+let LineSet1164 = browser.currentScene.createNode("LineSet");
+LineSet1164.vertexCount = new MFInt32(new int[2]);
+let Coordinate1165 = browser.currentScene.createNode("Coordinate");
+Coordinate1165.point = new MFVec3f(new float[8.0485,0.9225,0.8386,0.1983,0.8024,-0.028]);
+LineSet1164.coord = Coordinate1165;
 
-let HAnimSite1165 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1165.DEF = "hanim_l_metacarpal_phalanx_2_pt";
-HAnimSite1165.name = "l_metacarpal_phalanx_2_pt";
-HAnimSite1165.translation = new SFVec3f(new float[0.2009,0.8139,-0.0237]);
-let TouchSensor1166 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1166.description = "HAnimSite l_metacarpal_phalanx_2_pt";
-HAnimSite1165.children = new MFNode();
+//from l_midcarpal_2 to l_carpometacarpal_2 vertices 2
+let ColorRGBA1166 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1166.USE = "HAnimSegmentLineColorRGBA";
+LineSet1164.color = ColorRGBA1166;
 
-HAnimSite1165.children[0] = TouchSensor1166;
+Shape1163.geometry = LineSet1164;
 
-let Shape1167 = browser.currentScene.createNode("Shape");
-Shape1167.USE = "HAnimSiteShape";
-HAnimSite1165.children[1] = Shape1167;
+HAnimSegment1159.children[1] = Shape1163;
 
-HAnimSegment1157.children[2] = HAnimSite1165;
+let HAnimSite1167 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1167.name = "l_metacarpal_phalanx_2_pt";
+HAnimSite1167.DEF = "hanim_l_metacarpal_phalanx_2_pt";
+HAnimSite1167.translation = new SFVec3f(new float[0.2009,0.8139,-0.0237]);
+let TouchSensor1168 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1168.description = "HAnimSite l_metacarpal_phalanx_2_pt";
+HAnimSite1167.children = new MFNode();
 
-HAnimJoint1156.children = new MFNode();
+HAnimSite1167.children[0] = TouchSensor1168;
 
-HAnimJoint1156.children[0] = HAnimSegment1157;
+let Shape1169 = browser.currentScene.createNode("Shape");
+Shape1169.USE = "HAnimSiteShape";
+HAnimSite1167.children[1] = Shape1169;
 
-let HAnimJoint1168 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1168.DEF = "hanim_l_carpometacarpal_2";
-HAnimJoint1168.name = "l_carpometacarpal_2";
-HAnimJoint1168.center = new SFVec3f(new float[0.1983,0.8024,-0.028]);
-let HAnimSegment1169 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1169.DEF = "hanim_l_metacarpal_2";
-HAnimSegment1169.name = "l_metacarpal_2";
-let Transform1170 = browser.currentScene.createNode("Transform");
-Transform1170.translation = new SFVec3f(new float[0.1983,0.8024,-0.028]);
-let Transform1171 = browser.currentScene.createNode("Transform");
-let Shape1172 = browser.currentScene.createNode("Shape");
-Shape1172.USE = "HAnimJointShape";
-Transform1171.child = new undefined();
+HAnimSegment1159.children[2] = HAnimSite1167;
 
-Transform1171.child[0] = Shape1172;
+HAnimJoint1158.children = new MFNode();
 
-Transform1170.children = new MFNode();
+HAnimJoint1158.children[0] = HAnimSegment1159;
 
-Transform1170.children[0] = Transform1171;
+let HAnimJoint1170 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1170.name = "l_carpometacarpal_2";
+HAnimJoint1170.DEF = "hanim_l_carpometacarpal_2";
+HAnimJoint1170.center = new SFVec3f(new float[0.1983,0.8024,-0.028]);
+HAnimJoint1170.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1170.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1171 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1171.name = "l_metacarpal_2";
+HAnimSegment1171.DEF = "hanim_l_metacarpal_2";
+let Transform1172 = browser.currentScene.createNode("Transform");
+Transform1172.translation = new SFVec3f(new float[0.1983,0.8024,-0.028]);
+let Transform1173 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1174 = browser.currentScene.createNode("Shape");
+Shape1174.USE = "HAnimJointShape";
+Transform1173.child = new undefined();
 
-HAnimSegment1169.children = new MFNode();
+Transform1173.child[0] = Shape1174;
 
-HAnimSegment1169.children[0] = Transform1170;
+Transform1172.children = new MFNode();
 
-let Shape1173 = browser.currentScene.createNode("Shape");
-let LineSet1174 = browser.currentScene.createNode("LineSet");
-LineSet1174.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1175 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1175.USE = "HAnimSegmentLineColorRGBA";
-LineSet1174.color = ColorRGBA1175;
+Transform1172.children[0] = Transform1173;
 
-let Coordinate1176 = browser.currentScene.createNode("Coordinate");
-Coordinate1176.point = new MFVec3f(new float[0.1983,0.8024,-0.028,0.1983,0.7815,-0.028]);
-LineSet1174.coord = Coordinate1176;
+HAnimSegment1171.children = new MFNode();
 
-Shape1173.geometry = LineSet1174;
+HAnimSegment1171.children[0] = Transform1172;
 
-HAnimSegment1169.children[1] = Shape1173;
+let Shape1175 = browser.currentScene.createNode("Shape");
+let LineSet1176 = browser.currentScene.createNode("LineSet");
+LineSet1176.vertexCount = new MFInt32(new int[2]);
+let Coordinate1177 = browser.currentScene.createNode("Coordinate");
+Coordinate1177.point = new MFVec3f(new float[0.1983,0.8024,-0.028,0.1983,0.7815,-0.028]);
+LineSet1176.coord = Coordinate1177;
 
-HAnimJoint1168.children = new MFNode();
+//from l_carpometacarpal_2 to l_metacarpophalangeal_2 vertices 2
+let ColorRGBA1178 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1178.USE = "HAnimSegmentLineColorRGBA";
+LineSet1176.color = ColorRGBA1178;
 
-HAnimJoint1168.children[0] = HAnimSegment1169;
+Shape1175.geometry = LineSet1176;
 
-let HAnimJoint1177 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1177.DEF = "hanim_l_metacarpophalangeal_2";
-HAnimJoint1177.name = "l_metacarpophalangeal_2";
-HAnimJoint1177.center = new SFVec3f(new float[0.1983,0.7815,-0.028]);
-let HAnimSegment1178 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1178.DEF = "hanim_l_carpal_proximal_phalanx_2 ";
-HAnimSegment1178.name = "l_carpal_proximal_phalanx_2 ";
-let Transform1179 = browser.currentScene.createNode("Transform");
-Transform1179.translation = new SFVec3f(new float[0.1983,0.7815,-0.028]);
-let Transform1180 = browser.currentScene.createNode("Transform");
-let Shape1181 = browser.currentScene.createNode("Shape");
-Shape1181.USE = "HAnimJointShape";
-Transform1180.child = new undefined();
+HAnimSegment1171.children[1] = Shape1175;
 
-Transform1180.child[0] = Shape1181;
+HAnimJoint1170.children = new MFNode();
 
-Transform1179.children = new MFNode();
+HAnimJoint1170.children[0] = HAnimSegment1171;
 
-Transform1179.children[0] = Transform1180;
+let HAnimJoint1179 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1179.name = "l_metacarpophalangeal_2";
+HAnimJoint1179.DEF = "hanim_l_metacarpophalangeal_2";
+HAnimJoint1179.center = new SFVec3f(new float[0.1983,0.7815,-0.028]);
+HAnimJoint1179.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1179.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1180 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1180.name = "l_carpal_proximal_phalanx_2";
+HAnimSegment1180.DEF = "hanim_l_carpal_proximal_phalanx_2";
+let Transform1181 = browser.currentScene.createNode("Transform");
+Transform1181.translation = new SFVec3f(new float[0.1983,0.7815,-0.028]);
+let Transform1182 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1183 = browser.currentScene.createNode("Shape");
+Shape1183.USE = "HAnimJointShape";
+Transform1182.child = new undefined();
 
-HAnimSegment1178.children = new MFNode();
+Transform1182.child[0] = Shape1183;
 
-HAnimSegment1178.children[0] = Transform1179;
+Transform1181.children = new MFNode();
 
-let Shape1182 = browser.currentScene.createNode("Shape");
-let LineSet1183 = browser.currentScene.createNode("LineSet");
-LineSet1183.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1184 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1184.USE = "HAnimSegmentLineColorRGBA";
-LineSet1183.color = ColorRGBA1184;
+Transform1181.children[0] = Transform1182;
 
-let Coordinate1185 = browser.currentScene.createNode("Coordinate");
-Coordinate1185.point = new MFVec3f(new float[0.1983,0.7815,-0.028,0.2017,0.7363,-0.0248]);
-LineSet1183.coord = Coordinate1185;
+HAnimSegment1180.children = new MFNode();
 
-Shape1182.geometry = LineSet1183;
+HAnimSegment1180.children[0] = Transform1181;
 
-HAnimSegment1178.children[1] = Shape1182;
+let Shape1184 = browser.currentScene.createNode("Shape");
+let LineSet1185 = browser.currentScene.createNode("LineSet");
+LineSet1185.vertexCount = new MFInt32(new int[2]);
+let Coordinate1186 = browser.currentScene.createNode("Coordinate");
+Coordinate1186.point = new MFVec3f(new float[0.1983,0.7815,-0.028,0.2017,0.7363,-0.0248]);
+LineSet1185.coord = Coordinate1186;
 
-HAnimJoint1177.children = new MFNode();
+//from l_metacarpophalangeal_2 to l_carpal_proximal_interphalangeal_2 vertices 2
+let ColorRGBA1187 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1187.USE = "HAnimSegmentLineColorRGBA";
+LineSet1185.color = ColorRGBA1187;
 
-HAnimJoint1177.children[0] = HAnimSegment1178;
+Shape1184.geometry = LineSet1185;
 
-let HAnimJoint1186 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1186.DEF = "hanim_l_carpal_proximal_interphalangeal_1";
-HAnimJoint1186.name = "l_carpal_proximal_interphalangeal_2";
-HAnimJoint1186.center = new SFVec3f(new float[0.2017,0.7363,-0.0248]);
-let HAnimSegment1187 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1187.DEF = "hanim_l_carpal_middle_phalanx_1";
-HAnimSegment1187.name = "l_carpal_middle_phalanx_2";
-let Transform1188 = browser.currentScene.createNode("Transform");
-Transform1188.translation = new SFVec3f(new float[0.2017,0.7363,-0.0248]);
-let Transform1189 = browser.currentScene.createNode("Transform");
-let Shape1190 = browser.currentScene.createNode("Shape");
-Shape1190.USE = "HAnimJointShape";
-Transform1189.child = new undefined();
+HAnimSegment1180.children[1] = Shape1184;
 
-Transform1189.child[0] = Shape1190;
+HAnimJoint1179.children = new MFNode();
 
-Transform1188.children = new MFNode();
+HAnimJoint1179.children[0] = HAnimSegment1180;
 
-Transform1188.children[0] = Transform1189;
+let HAnimJoint1188 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1188.name = "l_carpal_proximal_interphalangeal_2";
+HAnimJoint1188.DEF = "hanim_l_carpal_proximal_interphalangeal_2";
+HAnimJoint1188.center = new SFVec3f(new float[0.2017,0.7363,-0.0248]);
+HAnimJoint1188.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1188.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1189 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1189.name = "l_carpal_middle_phalanx_2";
+HAnimSegment1189.DEF = "hanim_l_carpal_middle_phalanx_2";
+let Transform1190 = browser.currentScene.createNode("Transform");
+Transform1190.translation = new SFVec3f(new float[0.2017,0.7363,-0.0248]);
+let Transform1191 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1192 = browser.currentScene.createNode("Shape");
+Shape1192.USE = "HAnimJointShape";
+Transform1191.child = new undefined();
 
-HAnimSegment1187.children = new MFNode();
+Transform1191.child[0] = Shape1192;
 
-HAnimSegment1187.children[0] = Transform1188;
+Transform1190.children = new MFNode();
 
-let Shape1191 = browser.currentScene.createNode("Shape");
-let LineSet1192 = browser.currentScene.createNode("LineSet");
-LineSet1192.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1193 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1193.USE = "HAnimSegmentLineColorRGBA";
-LineSet1192.color = ColorRGBA1193;
+Transform1190.children[0] = Transform1191;
 
-let Coordinate1194 = browser.currentScene.createNode("Coordinate");
-Coordinate1194.point = new MFVec3f(new float[0.2017,0.7363,-0.0248,0.2028,0.7139,-0.0236]);
-LineSet1192.coord = Coordinate1194;
+HAnimSegment1189.children = new MFNode();
 
-Shape1191.geometry = LineSet1192;
+HAnimSegment1189.children[0] = Transform1190;
 
-HAnimSegment1187.children[1] = Shape1191;
+let Shape1193 = browser.currentScene.createNode("Shape");
+let LineSet1194 = browser.currentScene.createNode("LineSet");
+LineSet1194.vertexCount = new MFInt32(new int[2]);
+let Coordinate1195 = browser.currentScene.createNode("Coordinate");
+Coordinate1195.point = new MFVec3f(new float[0.2017,0.7363,-0.0248,0.2028,0.7139,-0.0236]);
+LineSet1194.coord = Coordinate1195;
 
-let HAnimSite1195 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1195.DEF = "hanim_l_carpal_distal_phalanx_2_tip";
-HAnimSite1195.name = "l_carpal_distal_phalanx_2_tip";
-let TouchSensor1196 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1196.description = "HAnimSite l_carpal_distal_phalanx_2_tip";
-HAnimSite1195.children = new MFNode();
+//from l_carpal_proximal_interphalangeal_2 to l_carpal_distal_interphalangeal_2 vertices 2
+let ColorRGBA1196 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1196.USE = "HAnimSegmentLineColorRGBA";
+LineSet1194.color = ColorRGBA1196;
 
-HAnimSite1195.children[0] = TouchSensor1196;
+Shape1193.geometry = LineSet1194;
 
-let Shape1197 = browser.currentScene.createNode("Shape");
-Shape1197.USE = "HAnimSiteShape";
-HAnimSite1195.children[1] = Shape1197;
+HAnimSegment1189.children[1] = Shape1193;
 
-HAnimSegment1187.children[2] = HAnimSite1195;
+let HAnimSite1197 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1197.name = "l_carpal_distal_phalanx_2_tip";
+HAnimSite1197.DEF = "hanim_l_carpal_distal_phalanx_2_tip";
+let TouchSensor1198 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1198.description = "HAnimSite l_carpal_distal_phalanx_2_tip";
+HAnimSite1197.children = new MFNode();
 
-let HAnimSite1198 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1198.DEF = "hanim_l_dactylion_pt";
-HAnimSite1198.name = "l_dactylion_pt";
-HAnimSite1198.translation = new SFVec3f(new float[0.2056,0.6743,-0.0482]);
-let TouchSensor1199 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1199.description = "HAnimSite l_dactylion_pt";
-HAnimSite1198.children = new MFNode();
+HAnimSite1197.children[0] = TouchSensor1198;
 
-HAnimSite1198.children[0] = TouchSensor1199;
+let Shape1199 = browser.currentScene.createNode("Shape");
+Shape1199.USE = "HAnimSiteShape";
+HAnimSite1197.children[1] = Shape1199;
 
-let Shape1200 = browser.currentScene.createNode("Shape");
-Shape1200.USE = "HAnimSiteShape";
-HAnimSite1198.children[1] = Shape1200;
+HAnimSegment1189.children[2] = HAnimSite1197;
 
-HAnimSegment1187.children[3] = HAnimSite1198;
+let HAnimSite1200 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1200.name = "l_dactylion_pt";
+HAnimSite1200.DEF = "hanim_l_dactylion_pt";
+HAnimSite1200.translation = new SFVec3f(new float[0.2056,0.6743,-0.0482]);
+let TouchSensor1201 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1201.description = "HAnimSite l_dactylion_pt";
+HAnimSite1200.children = new MFNode();
 
-HAnimJoint1186.children = new MFNode();
+HAnimSite1200.children[0] = TouchSensor1201;
 
-HAnimJoint1186.children[0] = HAnimSegment1187;
+let Shape1202 = browser.currentScene.createNode("Shape");
+Shape1202.USE = "HAnimSiteShape";
+HAnimSite1200.children[1] = Shape1202;
 
-let HAnimJoint1201 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1201.DEF = "hanim_l_carpal_distal_interphalangeal_1";
-HAnimJoint1201.name = "l_carpal_distal_interphalangeal_2";
-HAnimJoint1201.center = new SFVec3f(new float[0.2028,0.7139,-0.0236]);
-HAnimJoint1186.children[1] = HAnimJoint1201;
+HAnimSegment1189.children[3] = HAnimSite1200;
 
-HAnimJoint1177.children[1] = HAnimJoint1186;
+HAnimJoint1188.children = new MFNode();
 
-HAnimJoint1168.children[1] = HAnimJoint1177;
+HAnimJoint1188.children[0] = HAnimSegment1189;
 
-HAnimJoint1156.children[1] = HAnimJoint1168;
+let HAnimJoint1203 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1203.name = "l_carpal_distal_interphalangeal_2";
+HAnimJoint1203.DEF = "hanim_l_carpal_distal_interphalangeal_2";
+HAnimJoint1203.center = new SFVec3f(new float[0.2028,0.7139,-0.0236]);
+HAnimJoint1203.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1203.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1188.children[1] = HAnimJoint1203;
 
-HAnimJoint1104.children[2] = HAnimJoint1156;
+HAnimJoint1179.children[1] = HAnimJoint1188;
 
-let HAnimJoint1202 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1202.DEF = "hanim_l_midcarpal_3";
-HAnimJoint1202.name = "l_midcarpal_3";
-HAnimJoint1202.center = new SFVec3f(new float[8.0395,0.9246,0.2513]);
-let HAnimSegment1203 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1203.DEF = "hanim_l_capitate";
-HAnimSegment1203.name = "l_capitate";
-let Transform1204 = browser.currentScene.createNode("Transform");
-Transform1204.translation = new SFVec3f(new float[8.0395,0.9246,0.2513]);
-let Transform1205 = browser.currentScene.createNode("Transform");
-let Shape1206 = browser.currentScene.createNode("Shape");
-Shape1206.USE = "HAnimJointShape";
-Transform1205.child = new undefined();
+HAnimJoint1170.children[1] = HAnimJoint1179;
 
-Transform1205.child[0] = Shape1206;
+HAnimJoint1158.children[1] = HAnimJoint1170;
 
-Transform1204.children = new MFNode();
+HAnimJoint1106.children[2] = HAnimJoint1158;
 
-Transform1204.children[0] = Transform1205;
+let HAnimJoint1204 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1204.name = "l_midcarpal_3";
+HAnimJoint1204.DEF = "hanim_l_midcarpal_3";
+HAnimJoint1204.center = new SFVec3f(new float[8.0395,0.9246,0.2513]);
+HAnimJoint1204.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1204.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1205 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1205.name = "l_capitate";
+HAnimSegment1205.DEF = "hanim_l_capitate";
+let Transform1206 = browser.currentScene.createNode("Transform");
+Transform1206.translation = new SFVec3f(new float[8.0395,0.9246,0.2513]);
+let Transform1207 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1208 = browser.currentScene.createNode("Shape");
+Shape1208.USE = "HAnimJointShape";
+Transform1207.child = new undefined();
 
-HAnimSegment1203.children = new MFNode();
+Transform1207.child[0] = Shape1208;
 
-HAnimSegment1203.children[0] = Transform1204;
+Transform1206.children = new MFNode();
 
-let Shape1207 = browser.currentScene.createNode("Shape");
-let LineSet1208 = browser.currentScene.createNode("LineSet");
-LineSet1208.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1209 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1209.USE = "HAnimSegmentLineColorRGBA";
-LineSet1208.color = ColorRGBA1209;
+Transform1206.children[0] = Transform1207;
 
-let Coordinate1210 = browser.currentScene.createNode("Coordinate");
-Coordinate1210.point = new MFVec3f(new float[8.0395,0.9246,0.2513,0.1987,0.8029,-0.053]);
-LineSet1208.coord = Coordinate1210;
+HAnimSegment1205.children = new MFNode();
 
-Shape1207.geometry = LineSet1208;
+HAnimSegment1205.children[0] = Transform1206;
 
-HAnimSegment1203.children[1] = Shape1207;
+let Shape1209 = browser.currentScene.createNode("Shape");
+let LineSet1210 = browser.currentScene.createNode("LineSet");
+LineSet1210.vertexCount = new MFInt32(new int[2]);
+let Coordinate1211 = browser.currentScene.createNode("Coordinate");
+Coordinate1211.point = new MFVec3f(new float[8.0395,0.9246,0.2513,0.1987,0.8029,-0.053]);
+LineSet1210.coord = Coordinate1211;
 
-let HAnimSite1211 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1211.DEF = "hanim_l_metacarpal_phalanx_3_pt";
-HAnimSite1211.name = "l_metacarpal_phalanx_3_pt";
-let TouchSensor1212 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1212.description = "HAnimSite l_metacarpal_phalanx_3_pt";
-HAnimSite1211.children = new MFNode();
+//from l_midcarpal_3 to l_carpometacarpal_3 vertices 2
+let ColorRGBA1212 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1212.USE = "HAnimSegmentLineColorRGBA";
+LineSet1210.color = ColorRGBA1212;
 
-HAnimSite1211.children[0] = TouchSensor1212;
+Shape1209.geometry = LineSet1210;
 
-let Shape1213 = browser.currentScene.createNode("Shape");
-Shape1213.USE = "HAnimSiteShape";
-HAnimSite1211.children[1] = Shape1213;
+HAnimSegment1205.children[1] = Shape1209;
 
-HAnimSegment1203.children[2] = HAnimSite1211;
+let HAnimSite1213 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1213.name = "l_metacarpal_phalanx_3_pt";
+HAnimSite1213.DEF = "hanim_l_metacarpal_phalanx_3_pt";
+let TouchSensor1214 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1214.description = "HAnimSite l_metacarpal_phalanx_3_pt";
+HAnimSite1213.children = new MFNode();
 
-HAnimJoint1202.children = new MFNode();
+HAnimSite1213.children[0] = TouchSensor1214;
 
-HAnimJoint1202.children[0] = HAnimSegment1203;
+let Shape1215 = browser.currentScene.createNode("Shape");
+Shape1215.USE = "HAnimSiteShape";
+HAnimSite1213.children[1] = Shape1215;
 
-let HAnimJoint1214 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1214.DEF = "hanim_l_carpometacarpal_3";
-HAnimJoint1214.name = "l_carpometacarpal_3";
-HAnimJoint1214.center = new SFVec3f(new float[0.1987,0.8029,-0.053]);
-let HAnimSegment1215 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1215.DEF = "hanim_l_metacarpal_3";
-HAnimSegment1215.name = "l_metacarpal_3";
-let Transform1216 = browser.currentScene.createNode("Transform");
-Transform1216.translation = new SFVec3f(new float[0.1987,0.8029,-0.053]);
-let Transform1217 = browser.currentScene.createNode("Transform");
-let Shape1218 = browser.currentScene.createNode("Shape");
-Shape1218.USE = "HAnimJointShape";
-Transform1217.child = new undefined();
+HAnimSegment1205.children[2] = HAnimSite1213;
 
-Transform1217.child[0] = Shape1218;
+HAnimJoint1204.children = new MFNode();
 
-Transform1216.children = new MFNode();
+HAnimJoint1204.children[0] = HAnimSegment1205;
 
-Transform1216.children[0] = Transform1217;
+let HAnimJoint1216 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1216.name = "l_carpometacarpal_3";
+HAnimJoint1216.DEF = "hanim_l_carpometacarpal_3";
+HAnimJoint1216.center = new SFVec3f(new float[0.1987,0.8029,-0.053]);
+HAnimJoint1216.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1216.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1217 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1217.name = "l_metacarpal_3";
+HAnimSegment1217.DEF = "hanim_l_metacarpal_3";
+let Transform1218 = browser.currentScene.createNode("Transform");
+Transform1218.translation = new SFVec3f(new float[0.1987,0.8029,-0.053]);
+let Transform1219 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1220 = browser.currentScene.createNode("Shape");
+Shape1220.USE = "HAnimJointShape";
+Transform1219.child = new undefined();
 
-HAnimSegment1215.children = new MFNode();
+Transform1219.child[0] = Shape1220;
 
-HAnimSegment1215.children[0] = Transform1216;
+Transform1218.children = new MFNode();
 
-let Shape1219 = browser.currentScene.createNode("Shape");
-let LineSet1220 = browser.currentScene.createNode("LineSet");
-LineSet1220.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1221 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1221.USE = "HAnimSegmentLineColorRGBA";
-LineSet1220.color = ColorRGBA1221;
+Transform1218.children[0] = Transform1219;
 
-let Coordinate1222 = browser.currentScene.createNode("Coordinate");
-Coordinate1222.point = new MFVec3f(new float[0.1987,0.8029,-0.053,0.1987,0.7818,-0.053]);
-LineSet1220.coord = Coordinate1222;
+HAnimSegment1217.children = new MFNode();
 
-Shape1219.geometry = LineSet1220;
+HAnimSegment1217.children[0] = Transform1218;
 
-HAnimSegment1215.children[1] = Shape1219;
+let Shape1221 = browser.currentScene.createNode("Shape");
+let LineSet1222 = browser.currentScene.createNode("LineSet");
+LineSet1222.vertexCount = new MFInt32(new int[2]);
+let Coordinate1223 = browser.currentScene.createNode("Coordinate");
+Coordinate1223.point = new MFVec3f(new float[0.1987,0.8029,-0.053,0.1987,0.7818,-0.053]);
+LineSet1222.coord = Coordinate1223;
 
-HAnimJoint1214.children = new MFNode();
+//from l_carpometacarpal_3 to l_metacarpophalangeal_3 vertices 2
+let ColorRGBA1224 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1224.USE = "HAnimSegmentLineColorRGBA";
+LineSet1222.color = ColorRGBA1224;
 
-HAnimJoint1214.children[0] = HAnimSegment1215;
+Shape1221.geometry = LineSet1222;
 
-let HAnimJoint1223 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1223.DEF = "hanim_l_metacarpophalangeal_3";
-HAnimJoint1223.name = "l_metacarpophalangeal_3";
-HAnimJoint1223.center = new SFVec3f(new float[0.1987,0.7818,-0.053]);
-let HAnimSegment1224 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1224.DEF = "hanim_l_carpal_proximal_phalanx_2";
-HAnimSegment1224.name = "l_carpal_proximal_phalanx_3";
-let Transform1225 = browser.currentScene.createNode("Transform");
-Transform1225.translation = new SFVec3f(new float[0.1987,0.7818,-0.053]);
-let Transform1226 = browser.currentScene.createNode("Transform");
-let Shape1227 = browser.currentScene.createNode("Shape");
-Shape1227.USE = "HAnimJointShape";
-Transform1226.child = new undefined();
+HAnimSegment1217.children[1] = Shape1221;
 
-Transform1226.child[0] = Shape1227;
+HAnimJoint1216.children = new MFNode();
 
-Transform1225.children = new MFNode();
+HAnimJoint1216.children[0] = HAnimSegment1217;
 
-Transform1225.children[0] = Transform1226;
+let HAnimJoint1225 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1225.name = "l_metacarpophalangeal_3";
+HAnimJoint1225.DEF = "hanim_l_metacarpophalangeal_3";
+HAnimJoint1225.center = new SFVec3f(new float[0.1987,0.7818,-0.053]);
+HAnimJoint1225.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1225.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1226 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1226.name = "l_carpal_proximal_phalanx_3";
+HAnimSegment1226.DEF = "hanim_l_carpal_proximal_phalanx_3";
+let Transform1227 = browser.currentScene.createNode("Transform");
+Transform1227.translation = new SFVec3f(new float[0.1987,0.7818,-0.053]);
+let Transform1228 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1229 = browser.currentScene.createNode("Shape");
+Shape1229.USE = "HAnimJointShape";
+Transform1228.child = new undefined();
 
-HAnimSegment1224.children = new MFNode();
+Transform1228.child[0] = Shape1229;
 
-HAnimSegment1224.children[0] = Transform1225;
+Transform1227.children = new MFNode();
 
-let Shape1228 = browser.currentScene.createNode("Shape");
-let LineSet1229 = browser.currentScene.createNode("LineSet");
-LineSet1229.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1230 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1230.USE = "HAnimSegmentLineColorRGBA";
-LineSet1229.color = ColorRGBA1230;
+Transform1227.children[0] = Transform1228;
 
-let Coordinate1231 = browser.currentScene.createNode("Coordinate");
-Coordinate1231.point = new MFVec3f(new float[0.1987,0.7818,-0.053,0.2013,0.7273,-0.0503]);
-LineSet1229.coord = Coordinate1231;
+HAnimSegment1226.children = new MFNode();
 
-Shape1228.geometry = LineSet1229;
+HAnimSegment1226.children[0] = Transform1227;
 
-HAnimSegment1224.children[1] = Shape1228;
+let Shape1230 = browser.currentScene.createNode("Shape");
+let LineSet1231 = browser.currentScene.createNode("LineSet");
+LineSet1231.vertexCount = new MFInt32(new int[2]);
+let Coordinate1232 = browser.currentScene.createNode("Coordinate");
+Coordinate1232.point = new MFVec3f(new float[0.1987,0.7818,-0.053,0.2013,0.7273,-0.0503]);
+LineSet1231.coord = Coordinate1232;
 
-HAnimJoint1223.children = new MFNode();
+//from l_metacarpophalangeal_3 to l_carpal_proximal_interphalangeal_3 vertices 2
+let ColorRGBA1233 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1233.USE = "HAnimSegmentLineColorRGBA";
+LineSet1231.color = ColorRGBA1233;
 
-HAnimJoint1223.children[0] = HAnimSegment1224;
+Shape1230.geometry = LineSet1231;
 
-let HAnimJoint1232 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1232.DEF = "hanim_l_carpal_proximal_interphalangeal_2";
-HAnimJoint1232.name = "l_carpal_proximal_interphalangeal_3";
-HAnimJoint1232.center = new SFVec3f(new float[0.2013,0.7273,-0.0503]);
-let HAnimSegment1233 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1233.DEF = "hanim_l_carpal_middle_phalanx_2";
-HAnimSegment1233.name = "l_carpal_middle_phalanx_3";
-let Transform1234 = browser.currentScene.createNode("Transform");
-Transform1234.translation = new SFVec3f(new float[0.2013,0.7273,-0.0503]);
-let Transform1235 = browser.currentScene.createNode("Transform");
-let Shape1236 = browser.currentScene.createNode("Shape");
-Shape1236.USE = "HAnimJointShape";
-Transform1235.child = new undefined();
+HAnimSegment1226.children[1] = Shape1230;
 
-Transform1235.child[0] = Shape1236;
+HAnimJoint1225.children = new MFNode();
 
-Transform1234.children = new MFNode();
+HAnimJoint1225.children[0] = HAnimSegment1226;
 
-Transform1234.children[0] = Transform1235;
+let HAnimJoint1234 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1234.name = "l_carpal_proximal_interphalangeal_3";
+HAnimJoint1234.DEF = "hanim_l_carpal_proximal_interphalangeal_3";
+HAnimJoint1234.center = new SFVec3f(new float[0.2013,0.7273,-0.0503]);
+HAnimJoint1234.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1234.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1235 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1235.name = "l_carpal_middle_phalanx_3";
+HAnimSegment1235.DEF = "hanim_l_carpal_middle_phalanx_3";
+let Transform1236 = browser.currentScene.createNode("Transform");
+Transform1236.translation = new SFVec3f(new float[0.2013,0.7273,-0.0503]);
+let Transform1237 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1238 = browser.currentScene.createNode("Shape");
+Shape1238.USE = "HAnimJointShape";
+Transform1237.child = new undefined();
 
-HAnimSegment1233.children = new MFNode();
+Transform1237.child[0] = Shape1238;
 
-HAnimSegment1233.children[0] = Transform1234;
+Transform1236.children = new MFNode();
 
-let Shape1237 = browser.currentScene.createNode("Shape");
-let LineSet1238 = browser.currentScene.createNode("LineSet");
-LineSet1238.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1239 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1239.USE = "HAnimSegmentLineColorRGBA";
-LineSet1238.color = ColorRGBA1239;
+Transform1236.children[0] = Transform1237;
 
-let Coordinate1240 = browser.currentScene.createNode("Coordinate");
-Coordinate1240.point = new MFVec3f(new float[0.2013,0.7273,-0.0503,0.2026,0.7011,-0.0494]);
-LineSet1238.coord = Coordinate1240;
+HAnimSegment1235.children = new MFNode();
 
-Shape1237.geometry = LineSet1238;
+HAnimSegment1235.children[0] = Transform1236;
 
-HAnimSegment1233.children[1] = Shape1237;
+let Shape1239 = browser.currentScene.createNode("Shape");
+let LineSet1240 = browser.currentScene.createNode("LineSet");
+LineSet1240.vertexCount = new MFInt32(new int[2]);
+let Coordinate1241 = browser.currentScene.createNode("Coordinate");
+Coordinate1241.point = new MFVec3f(new float[0.2013,0.7273,-0.0503,0.2026,0.7011,-0.0494]);
+LineSet1240.coord = Coordinate1241;
 
-let HAnimSite1241 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1241.DEF = "hanim_l_carpal_distal_phalanx_3_tip";
-HAnimSite1241.name = "l_carpal_distal_phalanx_3_tip";
-let TouchSensor1242 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1242.description = "HAnimSite l_carpal_distal_phalanx_3_tip";
-HAnimSite1241.children = new MFNode();
+//from l_carpal_proximal_interphalangeal_3 to l_carpal_distal_interphalangeal_3 vertices 2
+let ColorRGBA1242 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1242.USE = "HAnimSegmentLineColorRGBA";
+LineSet1240.color = ColorRGBA1242;
 
-HAnimSite1241.children[0] = TouchSensor1242;
+Shape1239.geometry = LineSet1240;
 
-let Shape1243 = browser.currentScene.createNode("Shape");
-Shape1243.USE = "HAnimSiteShape";
-HAnimSite1241.children[1] = Shape1243;
+HAnimSegment1235.children[1] = Shape1239;
 
-HAnimSegment1233.children[2] = HAnimSite1241;
+let HAnimSite1243 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1243.name = "l_carpal_distal_phalanx_3_tip";
+HAnimSite1243.DEF = "hanim_l_carpal_distal_phalanx_3_tip";
+let TouchSensor1244 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1244.description = "HAnimSite l_carpal_distal_phalanx_3_tip";
+HAnimSite1243.children = new MFNode();
 
-HAnimJoint1232.children = new MFNode();
+HAnimSite1243.children[0] = TouchSensor1244;
 
-HAnimJoint1232.children[0] = HAnimSegment1233;
+let Shape1245 = browser.currentScene.createNode("Shape");
+Shape1245.USE = "HAnimSiteShape";
+HAnimSite1243.children[1] = Shape1245;
 
-let HAnimJoint1244 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1244.DEF = "hanim_l_carpal_distal_interphalangeal_2";
-HAnimJoint1244.name = "l_carpal_distal_interphalangeal_3";
-HAnimJoint1244.center = new SFVec3f(new float[0.2026,0.7011,-0.0494]);
-HAnimJoint1232.children[1] = HAnimJoint1244;
+HAnimSegment1235.children[2] = HAnimSite1243;
 
-HAnimJoint1223.children[1] = HAnimJoint1232;
+HAnimJoint1234.children = new MFNode();
 
-HAnimJoint1214.children[1] = HAnimJoint1223;
+HAnimJoint1234.children[0] = HAnimSegment1235;
 
-HAnimJoint1202.children[1] = HAnimJoint1214;
+let HAnimJoint1246 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1246.name = "l_carpal_distal_interphalangeal_3";
+HAnimJoint1246.DEF = "hanim_l_carpal_distal_interphalangeal_3";
+HAnimJoint1246.center = new SFVec3f(new float[0.2026,0.7011,-0.0494]);
+HAnimJoint1246.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1246.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1234.children[1] = HAnimJoint1246;
 
-HAnimJoint1104.children[3] = HAnimJoint1202;
+HAnimJoint1225.children[1] = HAnimJoint1234;
 
-let HAnimJoint1245 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1245.DEF = "hanim_l_midcarpal_4_1";
-HAnimJoint1245.name = "l_midcarpal_4_5";
-HAnimJoint1245.center = new SFVec3f(new float[8.0395,0.921,-0.6795]);
-let HAnimSegment1246 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1246.DEF = "hanim_l_hamate";
-HAnimSegment1246.name = "l_hamate";
-let Transform1247 = browser.currentScene.createNode("Transform");
-Transform1247.translation = new SFVec3f(new float[8.0395,0.921,-0.6795]);
-let Transform1248 = browser.currentScene.createNode("Transform");
-let Shape1249 = browser.currentScene.createNode("Shape");
-Shape1249.USE = "HAnimJointShape";
-Transform1248.child = new undefined();
+HAnimJoint1216.children[1] = HAnimJoint1225;
 
-Transform1248.child[0] = Shape1249;
+HAnimJoint1204.children[1] = HAnimJoint1216;
 
-Transform1247.children = new MFNode();
+HAnimJoint1106.children[3] = HAnimJoint1204;
 
-Transform1247.children[0] = Transform1248;
+let HAnimJoint1247 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1247.name = "l_midcarpal_4_5";
+HAnimJoint1247.DEF = "hanim_l_midcarpal_4_5";
+HAnimJoint1247.center = new SFVec3f(new float[8.0395,0.921,-0.6795]);
+HAnimJoint1247.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1247.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1248 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1248.name = "l_hamate";
+HAnimSegment1248.DEF = "hanim_l_hamate";
+let Transform1249 = browser.currentScene.createNode("Transform");
+Transform1249.translation = new SFVec3f(new float[8.0395,0.921,-0.6795]);
+let Transform1250 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1251 = browser.currentScene.createNode("Shape");
+Shape1251.USE = "HAnimJointShape";
+Transform1250.child = new undefined();
 
-HAnimSegment1246.children = new MFNode();
+Transform1250.child[0] = Shape1251;
 
-HAnimSegment1246.children[0] = Transform1247;
+Transform1249.children = new MFNode();
 
-let Shape1250 = browser.currentScene.createNode("Shape");
-let LineSet1251 = browser.currentScene.createNode("LineSet");
-LineSet1251.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1252 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1252.USE = "HAnimSegmentLineColorRGBA";
-LineSet1251.color = ColorRGBA1252;
+Transform1249.children[0] = Transform1250;
 
-let Coordinate1253 = browser.currentScene.createNode("Coordinate");
-Coordinate1253.point = new MFVec3f(new float[8.0395,0.921,-0.6795,0.1956,0.8019,-0.0794]);
-LineSet1251.coord = Coordinate1253;
+HAnimSegment1248.children = new MFNode();
 
-Shape1250.geometry = LineSet1251;
+HAnimSegment1248.children[0] = Transform1249;
 
-HAnimSegment1246.children[1] = Shape1250;
+let Shape1252 = browser.currentScene.createNode("Shape");
+let LineSet1253 = browser.currentScene.createNode("LineSet");
+LineSet1253.vertexCount = new MFInt32(new int[2]);
+let Coordinate1254 = browser.currentScene.createNode("Coordinate");
+Coordinate1254.point = new MFVec3f(new float[8.0395,0.921,-0.6795,0.1956,0.8019,-0.0794]);
+LineSet1253.coord = Coordinate1254;
 
-let Shape1254 = browser.currentScene.createNode("Shape");
-let LineSet1255 = browser.currentScene.createNode("LineSet");
-LineSet1255.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1256 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1256.USE = "HAnimSegmentLineColorRGBA";
-LineSet1255.color = ColorRGBA1256;
+//from l_midcarpal_4_5 to l_carpometacarpal_4 vertices 2
+let ColorRGBA1255 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1255.USE = "HAnimSegmentLineColorRGBA";
+LineSet1253.color = ColorRGBA1255;
 
-let Coordinate1257 = browser.currentScene.createNode("Coordinate");
-Coordinate1257.point = new MFVec3f(new float[8.0395,0.921,-0.6795,0.1925,0.8066,-0.1036]);
-LineSet1255.coord = Coordinate1257;
+Shape1252.geometry = LineSet1253;
 
-Shape1254.geometry = LineSet1255;
+HAnimSegment1248.children[1] = Shape1252;
 
-HAnimSegment1246.children[2] = Shape1254;
+let Shape1256 = browser.currentScene.createNode("Shape");
+let LineSet1257 = browser.currentScene.createNode("LineSet");
+LineSet1257.vertexCount = new MFInt32(new int[2]);
+let Coordinate1258 = browser.currentScene.createNode("Coordinate");
+Coordinate1258.point = new MFVec3f(new float[8.0395,0.921,-0.6795,0.1925,0.8066,-0.1036]);
+LineSet1257.coord = Coordinate1258;
 
-let HAnimSite1258 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1258.DEF = "hanim_l_metacarpal_phalanx_5_pt";
-HAnimSite1258.name = "l_metacarpal_phalanx_5_pt";
-HAnimSite1258.translation = new SFVec3f(new float[0.1929,0.786,-0.1122]);
-let TouchSensor1259 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1259.description = "HAnimSite l_metacarpal_phalanx_5_pt";
-HAnimSite1258.children = new MFNode();
+//from l_midcarpal_4_5 to l_carpometacarpal_5 vertices 2
+let ColorRGBA1259 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1259.USE = "HAnimSegmentLineColorRGBA";
+LineSet1257.color = ColorRGBA1259;
 
-HAnimSite1258.children[0] = TouchSensor1259;
+Shape1256.geometry = LineSet1257;
 
-let Shape1260 = browser.currentScene.createNode("Shape");
-Shape1260.USE = "HAnimSiteShape";
-HAnimSite1258.children[1] = Shape1260;
+HAnimSegment1248.children[2] = Shape1256;
 
-HAnimSegment1246.children[3] = HAnimSite1258;
+let HAnimSite1260 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1260.name = "l_metacarpal_phalanx_5_pt";
+HAnimSite1260.DEF = "hanim_l_metacarpal_phalanx_5_pt";
+HAnimSite1260.translation = new SFVec3f(new float[0.1929,0.786,-0.1122]);
+let TouchSensor1261 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1261.description = "HAnimSite l_metacarpal_phalanx_5_pt";
+HAnimSite1260.children = new MFNode();
 
-HAnimJoint1245.children = new MFNode();
+HAnimSite1260.children[0] = TouchSensor1261;
 
-HAnimJoint1245.children[0] = HAnimSegment1246;
+let Shape1262 = browser.currentScene.createNode("Shape");
+Shape1262.USE = "HAnimSiteShape";
+HAnimSite1260.children[1] = Shape1262;
 
-let HAnimJoint1261 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1261.DEF = "hanim_l_carpometacarpal_4";
-HAnimJoint1261.name = "l_carpometacarpal_4";
-HAnimJoint1261.center = new SFVec3f(new float[0.1956,0.8019,-0.0794]);
-let HAnimSegment1262 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1262.DEF = "hanim_l_metacarpal_4";
-HAnimSegment1262.name = "l_metacarpal_4";
-let Transform1263 = browser.currentScene.createNode("Transform");
-Transform1263.translation = new SFVec3f(new float[0.1956,0.8019,-0.0794]);
-let Transform1264 = browser.currentScene.createNode("Transform");
-let Shape1265 = browser.currentScene.createNode("Shape");
-Shape1265.USE = "HAnimJointShape";
-Transform1264.child = new undefined();
+HAnimSegment1248.children[3] = HAnimSite1260;
 
-Transform1264.child[0] = Shape1265;
+HAnimJoint1247.children = new MFNode();
 
-Transform1263.children = new MFNode();
+HAnimJoint1247.children[0] = HAnimSegment1248;
 
-Transform1263.children[0] = Transform1264;
+let HAnimJoint1263 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1263.name = "l_carpometacarpal_4";
+HAnimJoint1263.DEF = "hanim_l_carpometacarpal_4";
+HAnimJoint1263.center = new SFVec3f(new float[0.1956,0.8019,-0.0794]);
+HAnimJoint1263.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1263.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1264 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1264.name = "l_metacarpal_4";
+HAnimSegment1264.DEF = "hanim_l_metacarpal_4";
+let Transform1265 = browser.currentScene.createNode("Transform");
+Transform1265.translation = new SFVec3f(new float[0.1956,0.8019,-0.0794]);
+let Transform1266 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1267 = browser.currentScene.createNode("Shape");
+Shape1267.USE = "HAnimJointShape";
+Transform1266.child = new undefined();
 
-HAnimSegment1262.children = new MFNode();
+Transform1266.child[0] = Shape1267;
 
-HAnimSegment1262.children[0] = Transform1263;
+Transform1265.children = new MFNode();
 
-let Shape1266 = browser.currentScene.createNode("Shape");
-let LineSet1267 = browser.currentScene.createNode("LineSet");
-LineSet1267.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1268 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1268.USE = "HAnimSegmentLineColorRGBA";
-LineSet1267.color = ColorRGBA1268;
+Transform1265.children[0] = Transform1266;
 
-let Coordinate1269 = browser.currentScene.createNode("Coordinate");
-Coordinate1269.point = new MFVec3f(new float[0.1956,0.8019,-0.0794,0.1956,0.7815,-0.0794]);
-LineSet1267.coord = Coordinate1269;
+HAnimSegment1264.children = new MFNode();
 
-Shape1266.geometry = LineSet1267;
+HAnimSegment1264.children[0] = Transform1265;
 
-HAnimSegment1262.children[1] = Shape1266;
+let Shape1268 = browser.currentScene.createNode("Shape");
+let LineSet1269 = browser.currentScene.createNode("LineSet");
+LineSet1269.vertexCount = new MFInt32(new int[2]);
+let Coordinate1270 = browser.currentScene.createNode("Coordinate");
+Coordinate1270.point = new MFVec3f(new float[0.1956,0.8019,-0.0794,0.1956,0.7815,-0.0794]);
+LineSet1269.coord = Coordinate1270;
 
-HAnimJoint1261.children = new MFNode();
+//from l_carpometacarpal_4 to l_metacarpophalangeal_4 vertices 2
+let ColorRGBA1271 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1271.USE = "HAnimSegmentLineColorRGBA";
+LineSet1269.color = ColorRGBA1271;
 
-HAnimJoint1261.children[0] = HAnimSegment1262;
+Shape1268.geometry = LineSet1269;
 
-let HAnimJoint1270 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1270.DEF = "hanim_l_metacarpophalangeal_4";
-HAnimJoint1270.name = "l_metacarpophalangeal_4";
-HAnimJoint1270.center = new SFVec3f(new float[0.1956,0.7815,-0.0794]);
-let HAnimSegment1271 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1271.DEF = "hanim_l_carpal_proximal_phalanx_3";
-HAnimSegment1271.name = "l_carpal_proximal_phalanx_4";
-let Transform1272 = browser.currentScene.createNode("Transform");
-Transform1272.translation = new SFVec3f(new float[0.1956,0.7815,-0.0794]);
-let Transform1273 = browser.currentScene.createNode("Transform");
-let Shape1274 = browser.currentScene.createNode("Shape");
-Shape1274.USE = "HAnimJointShape";
-Transform1273.child = new undefined();
+HAnimSegment1264.children[1] = Shape1268;
 
-Transform1273.child[0] = Shape1274;
+HAnimJoint1263.children = new MFNode();
 
-Transform1272.children = new MFNode();
+HAnimJoint1263.children[0] = HAnimSegment1264;
 
-Transform1272.children[0] = Transform1273;
+let HAnimJoint1272 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1272.name = "l_metacarpophalangeal_4";
+HAnimJoint1272.DEF = "hanim_l_metacarpophalangeal_4";
+HAnimJoint1272.center = new SFVec3f(new float[0.1956,0.7815,-0.0794]);
+HAnimJoint1272.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1272.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1273 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1273.name = "l_carpal_proximal_phalanx_4";
+HAnimSegment1273.DEF = "hanim_l_carpal_proximal_phalanx_4";
+let Transform1274 = browser.currentScene.createNode("Transform");
+Transform1274.translation = new SFVec3f(new float[0.1956,0.7815,-0.0794]);
+let Transform1275 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1276 = browser.currentScene.createNode("Shape");
+Shape1276.USE = "HAnimJointShape";
+Transform1275.child = new undefined();
 
-HAnimSegment1271.children = new MFNode();
+Transform1275.child[0] = Shape1276;
 
-HAnimSegment1271.children[0] = Transform1272;
+Transform1274.children = new MFNode();
 
-let Shape1275 = browser.currentScene.createNode("Shape");
-let LineSet1276 = browser.currentScene.createNode("LineSet");
-LineSet1276.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1277 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1277.USE = "HAnimSegmentLineColorRGBA";
-LineSet1276.color = ColorRGBA1277;
+Transform1274.children[0] = Transform1275;
 
-let Coordinate1278 = browser.currentScene.createNode("Coordinate");
-Coordinate1278.point = new MFVec3f(new float[0.1956,0.7815,-0.0794,0.1973,0.7287,-0.0777]);
-LineSet1276.coord = Coordinate1278;
+HAnimSegment1273.children = new MFNode();
 
-Shape1275.geometry = LineSet1276;
+HAnimSegment1273.children[0] = Transform1274;
 
-HAnimSegment1271.children[1] = Shape1275;
+let Shape1277 = browser.currentScene.createNode("Shape");
+let LineSet1278 = browser.currentScene.createNode("LineSet");
+LineSet1278.vertexCount = new MFInt32(new int[2]);
+let Coordinate1279 = browser.currentScene.createNode("Coordinate");
+Coordinate1279.point = new MFVec3f(new float[0.1956,0.7815,-0.0794,0.1973,0.7287,-0.0777]);
+LineSet1278.coord = Coordinate1279;
 
-HAnimJoint1270.children = new MFNode();
+//from l_metacarpophalangeal_4 to l_carpal_proximal_interphalangeal_4 vertices 2
+let ColorRGBA1280 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1280.USE = "HAnimSegmentLineColorRGBA";
+LineSet1278.color = ColorRGBA1280;
 
-HAnimJoint1270.children[0] = HAnimSegment1271;
+Shape1277.geometry = LineSet1278;
 
-let HAnimJoint1279 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1279.DEF = "hanim_l_carpal_proximal_interphalangeal_3";
-HAnimJoint1279.name = "l_carpal_proximal_interphalangeal_4";
-HAnimJoint1279.center = new SFVec3f(new float[0.1973,0.7287,-0.0777]);
-let HAnimSegment1280 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1280.DEF = "hanim_l_carpal_middle_phalanx_3";
-HAnimSegment1280.name = "l_carpal_middle_phalanx_4";
-let Transform1281 = browser.currentScene.createNode("Transform");
-Transform1281.translation = new SFVec3f(new float[0.1973,0.7287,-0.0777]);
-let Transform1282 = browser.currentScene.createNode("Transform");
-let Shape1283 = browser.currentScene.createNode("Shape");
-Shape1283.USE = "HAnimJointShape";
-Transform1282.child = new undefined();
+HAnimSegment1273.children[1] = Shape1277;
 
-Transform1282.child[0] = Shape1283;
+HAnimJoint1272.children = new MFNode();
 
-Transform1281.children = new MFNode();
+HAnimJoint1272.children[0] = HAnimSegment1273;
 
-Transform1281.children[0] = Transform1282;
+let HAnimJoint1281 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1281.name = "l_carpal_proximal_interphalangeal_4";
+HAnimJoint1281.DEF = "hanim_l_carpal_proximal_interphalangeal_4";
+HAnimJoint1281.center = new SFVec3f(new float[0.1973,0.7287,-0.0777]);
+HAnimJoint1281.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1281.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1282 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1282.name = "l_carpal_middle_phalanx_4";
+HAnimSegment1282.DEF = "hanim_l_carpal_middle_phalanx_4";
+let Transform1283 = browser.currentScene.createNode("Transform");
+Transform1283.translation = new SFVec3f(new float[0.1973,0.7287,-0.0777]);
+let Transform1284 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1285 = browser.currentScene.createNode("Shape");
+Shape1285.USE = "HAnimJointShape";
+Transform1284.child = new undefined();
 
-HAnimSegment1280.children = new MFNode();
+Transform1284.child[0] = Shape1285;
 
-HAnimSegment1280.children[0] = Transform1281;
+Transform1283.children = new MFNode();
 
-let Shape1284 = browser.currentScene.createNode("Shape");
-let LineSet1285 = browser.currentScene.createNode("LineSet");
-LineSet1285.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1286 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1286.USE = "HAnimSegmentLineColorRGBA";
-LineSet1285.color = ColorRGBA1286;
+Transform1283.children[0] = Transform1284;
 
-let Coordinate1287 = browser.currentScene.createNode("Coordinate");
-Coordinate1287.point = new MFVec3f(new float[0.1973,0.7287,-0.0777,0.1983,0.7045,-0.0767]);
-LineSet1285.coord = Coordinate1287;
+HAnimSegment1282.children = new MFNode();
 
-Shape1284.geometry = LineSet1285;
+HAnimSegment1282.children[0] = Transform1283;
 
-HAnimSegment1280.children[1] = Shape1284;
+let Shape1286 = browser.currentScene.createNode("Shape");
+let LineSet1287 = browser.currentScene.createNode("LineSet");
+LineSet1287.vertexCount = new MFInt32(new int[2]);
+let Coordinate1288 = browser.currentScene.createNode("Coordinate");
+Coordinate1288.point = new MFVec3f(new float[0.1973,0.7287,-0.0777,0.1983,0.7045,-0.0767]);
+LineSet1287.coord = Coordinate1288;
 
-let HAnimSite1288 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1288.DEF = "hanim_l_carpal_distal_phalanx_4_tip";
-HAnimSite1288.name = "l_carpal_distal_phalanx_4_tip";
-let TouchSensor1289 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1289.description = "HAnimSite l_carpal_distal_phalanx_4_tip";
-HAnimSite1288.children = new MFNode();
+//from l_carpal_proximal_interphalangeal_4 to l_carpal_distal_interphalangeal_4 vertices 2
+let ColorRGBA1289 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1289.USE = "HAnimSegmentLineColorRGBA";
+LineSet1287.color = ColorRGBA1289;
 
-HAnimSite1288.children[0] = TouchSensor1289;
+Shape1286.geometry = LineSet1287;
 
-let Shape1290 = browser.currentScene.createNode("Shape");
-Shape1290.USE = "HAnimSiteShape";
-HAnimSite1288.children[1] = Shape1290;
+HAnimSegment1282.children[1] = Shape1286;
 
-HAnimSegment1280.children[2] = HAnimSite1288;
+let HAnimSite1290 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1290.name = "l_carpal_distal_phalanx_4_tip";
+HAnimSite1290.DEF = "hanim_l_carpal_distal_phalanx_4_tip";
+let TouchSensor1291 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1291.description = "HAnimSite l_carpal_distal_phalanx_4_tip";
+HAnimSite1290.children = new MFNode();
 
-HAnimJoint1279.children = new MFNode();
+HAnimSite1290.children[0] = TouchSensor1291;
 
-HAnimJoint1279.children[0] = HAnimSegment1280;
+let Shape1292 = browser.currentScene.createNode("Shape");
+Shape1292.USE = "HAnimSiteShape";
+HAnimSite1290.children[1] = Shape1292;
 
-let HAnimJoint1291 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1291.DEF = "hanim_l_carpal_distal_interphalangeal_3";
-HAnimJoint1291.name = "l_carpal_distal_interphalangeal_4";
-HAnimJoint1291.center = new SFVec3f(new float[0.1983,0.7045,-0.0767]);
-HAnimJoint1279.children[1] = HAnimJoint1291;
+HAnimSegment1282.children[2] = HAnimSite1290;
 
-HAnimJoint1270.children[1] = HAnimJoint1279;
+HAnimJoint1281.children = new MFNode();
 
-HAnimJoint1261.children[1] = HAnimJoint1270;
+HAnimJoint1281.children[0] = HAnimSegment1282;
 
-HAnimJoint1245.children[1] = HAnimJoint1261;
+let HAnimJoint1293 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1293.name = "l_carpal_distal_interphalangeal_4";
+HAnimJoint1293.DEF = "hanim_l_carpal_distal_interphalangeal_4";
+HAnimJoint1293.center = new SFVec3f(new float[0.1983,0.7045,-0.0767]);
+HAnimJoint1293.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1293.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1281.children[1] = HAnimJoint1293;
 
-let HAnimJoint1292 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1292.DEF = "hanim_l_carpometacarpal_5";
-HAnimJoint1292.name = "l_carpometacarpal_5";
-HAnimJoint1292.center = new SFVec3f(new float[0.1925,0.8066,-0.1036]);
-let HAnimSegment1293 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1293.DEF = "hanim_l_metacarpal_5";
-HAnimSegment1293.name = "l_metacarpal_5";
-let Transform1294 = browser.currentScene.createNode("Transform");
-Transform1294.translation = new SFVec3f(new float[0.1925,0.8066,-0.1036]);
-let Transform1295 = browser.currentScene.createNode("Transform");
-let Shape1296 = browser.currentScene.createNode("Shape");
-Shape1296.USE = "HAnimJointShape";
-Transform1295.child = new undefined();
+HAnimJoint1272.children[1] = HAnimJoint1281;
 
-Transform1295.child[0] = Shape1296;
+HAnimJoint1263.children[1] = HAnimJoint1272;
 
-Transform1294.children = new MFNode();
+HAnimJoint1247.children[1] = HAnimJoint1263;
 
-Transform1294.children[0] = Transform1295;
+let HAnimJoint1294 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1294.name = "l_carpometacarpal_5";
+HAnimJoint1294.DEF = "hanim_l_carpometacarpal_5";
+HAnimJoint1294.center = new SFVec3f(new float[0.1925,0.8066,-0.1036]);
+HAnimJoint1294.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1294.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1295 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1295.name = "l_metacarpal_5";
+HAnimSegment1295.DEF = "hanim_l_metacarpal_5";
+let Transform1296 = browser.currentScene.createNode("Transform");
+Transform1296.translation = new SFVec3f(new float[0.1925,0.8066,-0.1036]);
+let Transform1297 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1298 = browser.currentScene.createNode("Shape");
+Shape1298.USE = "HAnimJointShape";
+Transform1297.child = new undefined();
 
-HAnimSegment1293.children = new MFNode();
+Transform1297.child[0] = Shape1298;
 
-HAnimSegment1293.children[0] = Transform1294;
+Transform1296.children = new MFNode();
 
-let Shape1297 = browser.currentScene.createNode("Shape");
-let LineSet1298 = browser.currentScene.createNode("LineSet");
-LineSet1298.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1299 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1299.USE = "HAnimSegmentLineColorRGBA";
-LineSet1298.color = ColorRGBA1299;
+Transform1296.children[0] = Transform1297;
 
-let Coordinate1300 = browser.currentScene.createNode("Coordinate");
-Coordinate1300.point = new MFVec3f(new float[0.1925,0.8066,-0.1036,0.1925,0.7866,-0.1036]);
-LineSet1298.coord = Coordinate1300;
+HAnimSegment1295.children = new MFNode();
 
-Shape1297.geometry = LineSet1298;
+HAnimSegment1295.children[0] = Transform1296;
 
-HAnimSegment1293.children[1] = Shape1297;
+let Shape1299 = browser.currentScene.createNode("Shape");
+let LineSet1300 = browser.currentScene.createNode("LineSet");
+LineSet1300.vertexCount = new MFInt32(new int[2]);
+let Coordinate1301 = browser.currentScene.createNode("Coordinate");
+Coordinate1301.point = new MFVec3f(new float[0.1925,0.8066,-0.1036,0.1925,0.7866,-0.1036]);
+LineSet1300.coord = Coordinate1301;
 
-HAnimJoint1292.children = new MFNode();
+//from l_carpometacarpal_5 to l_metacarpophalangeal_5 vertices 2
+let ColorRGBA1302 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1302.USE = "HAnimSegmentLineColorRGBA";
+LineSet1300.color = ColorRGBA1302;
 
-HAnimJoint1292.children[0] = HAnimSegment1293;
+Shape1299.geometry = LineSet1300;
 
-let HAnimJoint1301 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1301.DEF = "hanim_l_metacarpophalangeal_5";
-HAnimJoint1301.name = "l_metacarpophalangeal_5";
-HAnimJoint1301.center = new SFVec3f(new float[0.1925,0.7866,-0.1036]);
-let HAnimSegment1302 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1302.DEF = "hanim_l_carpal_proximal_phalanx_4";
-HAnimSegment1302.name = "l_carpal_proximal_phalanx_5";
-let Transform1303 = browser.currentScene.createNode("Transform");
-Transform1303.translation = new SFVec3f(new float[0.1925,0.7866,-0.1036]);
-let Transform1304 = browser.currentScene.createNode("Transform");
-let Shape1305 = browser.currentScene.createNode("Shape");
-Shape1305.USE = "HAnimJointShape";
-Transform1304.child = new undefined();
+HAnimSegment1295.children[1] = Shape1299;
 
-Transform1304.child[0] = Shape1305;
+HAnimJoint1294.children = new MFNode();
 
-Transform1303.children = new MFNode();
+HAnimJoint1294.children[0] = HAnimSegment1295;
 
-Transform1303.children[0] = Transform1304;
+let HAnimJoint1303 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1303.name = "l_metacarpophalangeal_5";
+HAnimJoint1303.DEF = "hanim_l_metacarpophalangeal_5";
+HAnimJoint1303.center = new SFVec3f(new float[0.1925,0.7866,-0.1036]);
+HAnimJoint1303.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1303.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1304 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1304.name = "l_carpal_proximal_phalanx_5";
+HAnimSegment1304.DEF = "hanim_l_carpal_proximal_phalanx_5";
+let Transform1305 = browser.currentScene.createNode("Transform");
+Transform1305.translation = new SFVec3f(new float[0.1925,0.7866,-0.1036]);
+let Transform1306 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1307 = browser.currentScene.createNode("Shape");
+Shape1307.USE = "HAnimJointShape";
+Transform1306.child = new undefined();
 
-HAnimSegment1302.children = new MFNode();
+Transform1306.child[0] = Shape1307;
 
-HAnimSegment1302.children[0] = Transform1303;
+Transform1305.children = new MFNode();
 
-let Shape1306 = browser.currentScene.createNode("Shape");
-let LineSet1307 = browser.currentScene.createNode("LineSet");
-LineSet1307.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1308 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1308.USE = "HAnimSegmentLineColorRGBA";
-LineSet1307.color = ColorRGBA1308;
+Transform1305.children[0] = Transform1306;
 
-let Coordinate1309 = browser.currentScene.createNode("Coordinate");
-Coordinate1309.point = new MFVec3f(new float[0.1925,0.7866,-0.1036,0.1938,0.7452,-0.1024]);
-LineSet1307.coord = Coordinate1309;
+HAnimSegment1304.children = new MFNode();
 
-Shape1306.geometry = LineSet1307;
+HAnimSegment1304.children[0] = Transform1305;
 
-HAnimSegment1302.children[1] = Shape1306;
+let Shape1308 = browser.currentScene.createNode("Shape");
+let LineSet1309 = browser.currentScene.createNode("LineSet");
+LineSet1309.vertexCount = new MFInt32(new int[2]);
+let Coordinate1310 = browser.currentScene.createNode("Coordinate");
+Coordinate1310.point = new MFVec3f(new float[0.1925,0.7866,-0.1036,0.1938,0.7452,-0.1024]);
+LineSet1309.coord = Coordinate1310;
 
-HAnimJoint1301.children = new MFNode();
+//from l_metacarpophalangeal_5 to l_carpal_proximal_interphalangeal_5 vertices 2
+let ColorRGBA1311 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1311.USE = "HAnimSegmentLineColorRGBA";
+LineSet1309.color = ColorRGBA1311;
 
-HAnimJoint1301.children[0] = HAnimSegment1302;
+Shape1308.geometry = LineSet1309;
 
-let HAnimJoint1310 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1310.DEF = "hanim_l_carpal_proximal_interphalangeal_4";
-HAnimJoint1310.name = "l_carpal_proximal_interphalangeal_5";
-HAnimJoint1310.center = new SFVec3f(new float[0.1938,0.7452,-0.1024]);
-let HAnimSegment1311 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1311.DEF = "hanim_l_carpal_middle_phalanx_4";
-HAnimSegment1311.name = "l_carpal_middle_phalanx_5";
-let Transform1312 = browser.currentScene.createNode("Transform");
-Transform1312.translation = new SFVec3f(new float[0.1938,0.7452,-0.1024]);
-let Transform1313 = browser.currentScene.createNode("Transform");
-let Shape1314 = browser.currentScene.createNode("Shape");
-Shape1314.USE = "HAnimJointShape";
-Transform1313.child = new undefined();
+HAnimSegment1304.children[1] = Shape1308;
 
-Transform1313.child[0] = Shape1314;
+HAnimJoint1303.children = new MFNode();
 
-Transform1312.children = new MFNode();
+HAnimJoint1303.children[0] = HAnimSegment1304;
 
-Transform1312.children[0] = Transform1313;
+let HAnimJoint1312 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1312.name = "l_carpal_proximal_interphalangeal_5";
+HAnimJoint1312.DEF = "hanim_l_carpal_proximal_interphalangeal_5";
+HAnimJoint1312.center = new SFVec3f(new float[0.1938,0.7452,-0.1024]);
+HAnimJoint1312.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1312.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1313 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1313.name = "l_carpal_middle_phalanx_5";
+HAnimSegment1313.DEF = "hanim_l_carpal_middle_phalanx_5";
+let Transform1314 = browser.currentScene.createNode("Transform");
+Transform1314.translation = new SFVec3f(new float[0.1938,0.7452,-0.1024]);
+let Transform1315 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1316 = browser.currentScene.createNode("Shape");
+Shape1316.USE = "HAnimJointShape";
+Transform1315.child = new undefined();
 
-HAnimSegment1311.children = new MFNode();
+Transform1315.child[0] = Shape1316;
 
-HAnimSegment1311.children[0] = Transform1312;
+Transform1314.children = new MFNode();
 
-let Shape1315 = browser.currentScene.createNode("Shape");
-let LineSet1316 = browser.currentScene.createNode("LineSet");
-LineSet1316.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1317 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1317.USE = "HAnimSegmentLineColorRGBA";
-LineSet1316.color = ColorRGBA1317;
+Transform1314.children[0] = Transform1315;
 
-let Coordinate1318 = browser.currentScene.createNode("Coordinate");
-Coordinate1318.point = new MFVec3f(new float[0.1938,0.7452,-0.1024,0.1948,0.7277,-0.1017]);
-LineSet1316.coord = Coordinate1318;
+HAnimSegment1313.children = new MFNode();
 
-Shape1315.geometry = LineSet1316;
+HAnimSegment1313.children[0] = Transform1314;
 
-HAnimSegment1311.children[1] = Shape1315;
+let Shape1317 = browser.currentScene.createNode("Shape");
+let LineSet1318 = browser.currentScene.createNode("LineSet");
+LineSet1318.vertexCount = new MFInt32(new int[2]);
+let Coordinate1319 = browser.currentScene.createNode("Coordinate");
+Coordinate1319.point = new MFVec3f(new float[0.1938,0.7452,-0.1024,0.1948,0.7277,-0.1017]);
+LineSet1318.coord = Coordinate1319;
 
-let HAnimSite1319 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1319.DEF = "hanim_l_carpal_distal_phalanx_5_tip";
-HAnimSite1319.name = "l_carpal_distal_phalanx_5_tip";
-let TouchSensor1320 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1320.description = "HAnimSite l_carpal_distal_phalanx_5_tip";
-HAnimSite1319.children = new MFNode();
+//from l_carpal_proximal_interphalangeal_5 to l_carpal_distal_interphalangeal_5 vertices 2
+let ColorRGBA1320 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1320.USE = "HAnimSegmentLineColorRGBA";
+LineSet1318.color = ColorRGBA1320;
 
-HAnimSite1319.children[0] = TouchSensor1320;
+Shape1317.geometry = LineSet1318;
 
-let Shape1321 = browser.currentScene.createNode("Shape");
-Shape1321.USE = "HAnimSiteShape";
-HAnimSite1319.children[1] = Shape1321;
+HAnimSegment1313.children[1] = Shape1317;
 
-HAnimSegment1311.children[2] = HAnimSite1319;
+let HAnimSite1321 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1321.name = "l_carpal_distal_phalanx_5_tip";
+HAnimSite1321.DEF = "hanim_l_carpal_distal_phalanx_5_tip";
+let TouchSensor1322 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1322.description = "HAnimSite l_carpal_distal_phalanx_5_tip";
+HAnimSite1321.children = new MFNode();
 
-HAnimJoint1310.children = new MFNode();
+HAnimSite1321.children[0] = TouchSensor1322;
 
-HAnimJoint1310.children[0] = HAnimSegment1311;
+let Shape1323 = browser.currentScene.createNode("Shape");
+Shape1323.USE = "HAnimSiteShape";
+HAnimSite1321.children[1] = Shape1323;
 
-let HAnimJoint1322 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1322.DEF = "hanim_l_carpal_distal_interphalangeal_4";
-HAnimJoint1322.name = "l_carpal_distal_interphalangeal_5";
-HAnimJoint1322.center = new SFVec3f(new float[0.1948,0.7277,-0.1017]);
-HAnimJoint1310.children[1] = HAnimJoint1322;
+HAnimSegment1313.children[2] = HAnimSite1321;
 
-HAnimJoint1301.children[1] = HAnimJoint1310;
+HAnimJoint1312.children = new MFNode();
 
-HAnimJoint1292.children[1] = HAnimJoint1301;
+HAnimJoint1312.children[0] = HAnimSegment1313;
 
-HAnimJoint1245.children[2] = HAnimJoint1292;
+let HAnimJoint1324 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1324.name = "l_carpal_distal_interphalangeal_5";
+HAnimJoint1324.DEF = "hanim_l_carpal_distal_interphalangeal_5";
+HAnimJoint1324.center = new SFVec3f(new float[0.1948,0.7277,-0.1017]);
+HAnimJoint1324.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1324.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1312.children[1] = HAnimJoint1324;
 
-HAnimJoint1104.children[4] = HAnimJoint1245;
+HAnimJoint1303.children[1] = HAnimJoint1312;
 
-HAnimJoint1092.children[1] = HAnimJoint1104;
+HAnimJoint1294.children[1] = HAnimJoint1303;
 
-HAnimJoint1071.children[1] = HAnimJoint1092;
+HAnimJoint1247.children[2] = HAnimJoint1294;
 
-HAnimJoint1056.children[1] = HAnimJoint1071;
+HAnimJoint1106.children[4] = HAnimJoint1247;
 
-HAnimJoint1047.children[1] = HAnimJoint1056;
+HAnimJoint1094.children[1] = HAnimJoint1106;
 
-HAnimJoint843.children[2] = HAnimJoint1047;
+HAnimJoint1073.children[1] = HAnimJoint1094;
 
-let HAnimJoint1323 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1323.DEF = "hanim_r_sternoclavicular";
-HAnimJoint1323.name = "r_sternoclavicular";
-HAnimJoint1323.center = new SFVec3f(new float[-0.0694,1.46,-0.033]);
-let HAnimSegment1324 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1324.DEF = "hanim_r_clavicle";
-HAnimSegment1324.name = "r_clavicle";
-let Transform1325 = browser.currentScene.createNode("Transform");
-Transform1325.translation = new SFVec3f(new float[-0.0694,1.46,-0.033]);
-let Transform1326 = browser.currentScene.createNode("Transform");
-let Shape1327 = browser.currentScene.createNode("Shape");
-Shape1327.USE = "HAnimJointShape";
-Transform1326.child = new undefined();
+HAnimJoint1058.children[1] = HAnimJoint1073;
 
-Transform1326.child[0] = Shape1327;
+HAnimJoint1049.children[1] = HAnimJoint1058;
 
-Transform1325.children = new MFNode();
+HAnimJoint845.children[2] = HAnimJoint1049;
 
-Transform1325.children[0] = Transform1326;
+let HAnimJoint1325 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1325.name = "r_sternoclavicular";
+HAnimJoint1325.DEF = "hanim_r_sternoclavicular";
+HAnimJoint1325.center = new SFVec3f(new float[-0.0694,1.46,-0.033]);
+HAnimJoint1325.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1325.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1326 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1326.name = "r_clavicle";
+HAnimSegment1326.DEF = "hanim_r_clavicle";
+let Transform1327 = browser.currentScene.createNode("Transform");
+Transform1327.translation = new SFVec3f(new float[-0.0694,1.46,-0.033]);
+let Transform1328 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1329 = browser.currentScene.createNode("Shape");
+Shape1329.USE = "HAnimJointShape";
+Transform1328.child = new undefined();
 
-HAnimSegment1324.children = new MFNode();
+Transform1328.child[0] = Shape1329;
 
-HAnimSegment1324.children[0] = Transform1325;
+Transform1327.children = new MFNode();
 
-let Shape1328 = browser.currentScene.createNode("Shape");
-let LineSet1329 = browser.currentScene.createNode("LineSet");
-LineSet1329.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1330 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1330.USE = "HAnimSegmentLineColorRGBA";
-LineSet1329.color = ColorRGBA1330;
+Transform1327.children[0] = Transform1328;
 
-let Coordinate1331 = browser.currentScene.createNode("Coordinate");
-Coordinate1331.point = new MFVec3f(new float[-0.0694,1.46,-0.033,-0.0836,1.4281,-0.0401]);
-LineSet1329.coord = Coordinate1331;
+HAnimSegment1326.children = new MFNode();
 
-Shape1328.geometry = LineSet1329;
+HAnimSegment1326.children[0] = Transform1327;
 
-HAnimSegment1324.children[1] = Shape1328;
+let Shape1330 = browser.currentScene.createNode("Shape");
+let LineSet1331 = browser.currentScene.createNode("LineSet");
+LineSet1331.vertexCount = new MFInt32(new int[2]);
+let Coordinate1332 = browser.currentScene.createNode("Coordinate");
+Coordinate1332.point = new MFVec3f(new float[-0.0694,1.46,-0.033,-0.0836,1.4281,-0.0401]);
+LineSet1331.coord = Coordinate1332;
 
-HAnimJoint1323.children = new MFNode();
+//from r_sternoclavicular to r_acromioclavicular vertices 2
+let ColorRGBA1333 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1333.USE = "HAnimSegmentLineColorRGBA";
+LineSet1331.color = ColorRGBA1333;
 
-HAnimJoint1323.children[0] = HAnimSegment1324;
+Shape1330.geometry = LineSet1331;
 
-let HAnimJoint1332 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1332.DEF = "hanim_r_acromioclavicular";
-HAnimJoint1332.name = "r_acromioclavicular";
-HAnimJoint1332.center = new SFVec3f(new float[-0.0836,1.4281,-0.0401]);
-let HAnimSegment1333 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1333.DEF = "hanim_r_scapula";
-HAnimSegment1333.name = "r_scapula";
-let Transform1334 = browser.currentScene.createNode("Transform");
-Transform1334.translation = new SFVec3f(new float[-0.0836,1.4281,-0.0401]);
-let Transform1335 = browser.currentScene.createNode("Transform");
-let Shape1336 = browser.currentScene.createNode("Shape");
-Shape1336.USE = "HAnimJointShape";
-Transform1335.child = new undefined();
+HAnimSegment1326.children[1] = Shape1330;
 
-Transform1335.child[0] = Shape1336;
+HAnimJoint1325.children = new MFNode();
 
-Transform1334.children = new MFNode();
+HAnimJoint1325.children[0] = HAnimSegment1326;
 
-Transform1334.children[0] = Transform1335;
+let HAnimJoint1334 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1334.name = "r_acromioclavicular";
+HAnimJoint1334.DEF = "hanim_r_acromioclavicular";
+HAnimJoint1334.center = new SFVec3f(new float[-0.0836,1.4281,-0.0401]);
+HAnimJoint1334.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1334.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1335 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1335.name = "r_scapula";
+HAnimSegment1335.DEF = "hanim_r_scapula";
+let Transform1336 = browser.currentScene.createNode("Transform");
+Transform1336.translation = new SFVec3f(new float[-0.0836,1.4281,-0.0401]);
+let Transform1337 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1338 = browser.currentScene.createNode("Shape");
+Shape1338.USE = "HAnimJointShape";
+Transform1337.child = new undefined();
 
-HAnimSegment1333.children = new MFNode();
+Transform1337.child[0] = Shape1338;
 
-HAnimSegment1333.children[0] = Transform1334;
+Transform1336.children = new MFNode();
 
-let Shape1337 = browser.currentScene.createNode("Shape");
-let LineSet1338 = browser.currentScene.createNode("LineSet");
-LineSet1338.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1339 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1339.USE = "HAnimSegmentLineColorRGBA";
-LineSet1338.color = ColorRGBA1339;
+Transform1336.children[0] = Transform1337;
 
-let Coordinate1340 = browser.currentScene.createNode("Coordinate");
-Coordinate1340.point = new MFVec3f(new float[-0.0836,1.4281,-0.0401,-0.1907,1.4407,-0.0325]);
-LineSet1338.coord = Coordinate1340;
+HAnimSegment1335.children = new MFNode();
 
-Shape1337.geometry = LineSet1338;
+HAnimSegment1335.children[0] = Transform1336;
 
-HAnimSegment1333.children[1] = Shape1337;
+let Shape1339 = browser.currentScene.createNode("Shape");
+let LineSet1340 = browser.currentScene.createNode("LineSet");
+LineSet1340.vertexCount = new MFInt32(new int[2]);
+let Coordinate1341 = browser.currentScene.createNode("Coordinate");
+Coordinate1341.point = new MFVec3f(new float[-0.0836,1.4281,-0.0401,-0.1907,1.4407,-0.0325]);
+LineSet1340.coord = Coordinate1341;
 
-let HAnimSite1341 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1341.DEF = "hanim_r_bideltoid_pt";
-HAnimSite1341.name = "r_bideltoid_pt";
-let TouchSensor1342 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1342.description = "HAnimSite r_bideltoid_pt";
-HAnimSite1341.children = new MFNode();
+//from r_acromioclavicular to r_shoulder vertices 2
+let ColorRGBA1342 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1342.USE = "HAnimSegmentLineColorRGBA";
+LineSet1340.color = ColorRGBA1342;
 
-HAnimSite1341.children[0] = TouchSensor1342;
+Shape1339.geometry = LineSet1340;
 
-let Shape1343 = browser.currentScene.createNode("Shape");
-Shape1343.USE = "HAnimSiteShape";
-HAnimSite1341.children[1] = Shape1343;
+HAnimSegment1335.children[1] = Shape1339;
 
-HAnimSegment1333.children[2] = HAnimSite1341;
+let HAnimSite1343 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1343.name = "r_bideltoid_pt";
+HAnimSite1343.DEF = "hanim_r_bideltoid_pt";
+let TouchSensor1344 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1344.description = "HAnimSite r_bideltoid_pt";
+HAnimSite1343.children = new MFNode();
 
-let HAnimSite1344 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1344.DEF = "hanim_r_humeral_lateral_epicondyles_pt";
-HAnimSite1344.name = "r_humeral_lateral_epicondyles_pt";
-HAnimSite1344.translation = new SFVec3f(new float[-0.2224,1.1517,-0.1033]);
-let TouchSensor1345 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1345.description = "HAnimSite r_humeral_lateral_epicondyles_pt";
-HAnimSite1344.children = new MFNode();
+HAnimSite1343.children[0] = TouchSensor1344;
 
-HAnimSite1344.children[0] = TouchSensor1345;
+let Shape1345 = browser.currentScene.createNode("Shape");
+Shape1345.USE = "HAnimSiteShape";
+HAnimSite1343.children[1] = Shape1345;
 
-let Shape1346 = browser.currentScene.createNode("Shape");
-Shape1346.USE = "HAnimSiteShape";
-HAnimSite1344.children[1] = Shape1346;
+HAnimSegment1335.children[2] = HAnimSite1343;
 
-HAnimSegment1333.children[3] = HAnimSite1344;
+let HAnimSite1346 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1346.name = "r_humeral_lateral_epicondyles_pt";
+HAnimSite1346.DEF = "hanim_r_humeral_lateral_epicondyles_pt";
+HAnimSite1346.translation = new SFVec3f(new float[-0.2224,1.1517,-0.1033]);
+let TouchSensor1347 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1347.description = "HAnimSite r_humeral_lateral_epicondyles_pt";
+HAnimSite1346.children = new MFNode();
 
-HAnimJoint1332.children = new MFNode();
+HAnimSite1346.children[0] = TouchSensor1347;
 
-HAnimJoint1332.children[0] = HAnimSegment1333;
+let Shape1348 = browser.currentScene.createNode("Shape");
+Shape1348.USE = "HAnimSiteShape";
+HAnimSite1346.children[1] = Shape1348;
 
-let HAnimJoint1347 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1347.DEF = "hanim_r_shoulder";
-HAnimJoint1347.name = "r_shoulder";
-HAnimJoint1347.center = new SFVec3f(new float[-0.1907,1.4407,-0.0325]);
-let HAnimSegment1348 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1348.DEF = "hanim_r_upperarm";
-HAnimSegment1348.name = "r_upperarm";
-let Transform1349 = browser.currentScene.createNode("Transform");
-Transform1349.translation = new SFVec3f(new float[-0.1907,1.4407,-0.0325]);
-let Transform1350 = browser.currentScene.createNode("Transform");
-let Shape1351 = browser.currentScene.createNode("Shape");
-Shape1351.USE = "HAnimJointShape";
-Transform1350.child = new undefined();
+HAnimSegment1335.children[3] = HAnimSite1346;
 
-Transform1350.child[0] = Shape1351;
+HAnimJoint1334.children = new MFNode();
 
-Transform1349.children = new MFNode();
+HAnimJoint1334.children[0] = HAnimSegment1335;
 
-Transform1349.children[0] = Transform1350;
+let HAnimJoint1349 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1349.name = "r_shoulder";
+HAnimJoint1349.DEF = "hanim_r_shoulder";
+HAnimJoint1349.center = new SFVec3f(new float[-0.1907,1.4407,-0.0325]);
+HAnimJoint1349.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1349.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1350 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1350.name = "r_upperarm";
+HAnimSegment1350.DEF = "hanim_r_upperarm";
+let Transform1351 = browser.currentScene.createNode("Transform");
+Transform1351.translation = new SFVec3f(new float[-0.1907,1.4407,-0.0325]);
+let Transform1352 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1353 = browser.currentScene.createNode("Shape");
+Shape1353.USE = "HAnimJointShape";
+Transform1352.child = new undefined();
 
-HAnimSegment1348.children = new MFNode();
+Transform1352.child[0] = Shape1353;
 
-HAnimSegment1348.children[0] = Transform1349;
+Transform1351.children = new MFNode();
 
-let Shape1352 = browser.currentScene.createNode("Shape");
-let LineSet1353 = browser.currentScene.createNode("LineSet");
-LineSet1353.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1354 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1354.USE = "HAnimSegmentLineColorRGBA";
-LineSet1353.color = ColorRGBA1354;
+Transform1351.children[0] = Transform1352;
 
-let Coordinate1355 = browser.currentScene.createNode("Coordinate");
-Coordinate1355.point = new MFVec3f(new float[-0.1907,1.4407,-0.0325,-0.1949,1.1388,-0.062]);
-LineSet1353.coord = Coordinate1355;
+HAnimSegment1350.children = new MFNode();
 
-Shape1352.geometry = LineSet1353;
+HAnimSegment1350.children[0] = Transform1351;
 
-HAnimSegment1348.children[1] = Shape1352;
+let Shape1354 = browser.currentScene.createNode("Shape");
+let LineSet1355 = browser.currentScene.createNode("LineSet");
+LineSet1355.vertexCount = new MFInt32(new int[2]);
+let Coordinate1356 = browser.currentScene.createNode("Coordinate");
+Coordinate1356.point = new MFVec3f(new float[-0.1907,1.4407,-0.0325,-0.1949,1.1388,-0.062]);
+LineSet1355.coord = Coordinate1356;
 
-let HAnimSite1356 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1356.DEF = "hanim_r_humeral_medial_epicondyles_pt";
-HAnimSite1356.name = "r_humeral_medial_epicondyles_pt";
-HAnimSite1356.translation = new SFVec3f(new float[-0.168,1.1298,-0.1062]);
-let TouchSensor1357 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1357.description = "HAnimSite r_humeral_medial_epicondyles_pt";
-HAnimSite1356.children = new MFNode();
+//from r_shoulder to r_elbow vertices 2
+let ColorRGBA1357 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1357.USE = "HAnimSegmentLineColorRGBA";
+LineSet1355.color = ColorRGBA1357;
 
-HAnimSite1356.children[0] = TouchSensor1357;
+Shape1354.geometry = LineSet1355;
 
-let Shape1358 = browser.currentScene.createNode("Shape");
-Shape1358.USE = "HAnimSiteShape";
-HAnimSite1356.children[1] = Shape1358;
+HAnimSegment1350.children[1] = Shape1354;
 
-HAnimSegment1348.children[2] = HAnimSite1356;
+let HAnimSite1358 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1358.name = "r_humeral_medial_epicondyles_pt";
+HAnimSite1358.DEF = "hanim_r_humeral_medial_epicondyles_pt";
+HAnimSite1358.translation = new SFVec3f(new float[-0.168,1.1298,-0.1062]);
+let TouchSensor1359 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1359.description = "HAnimSite r_humeral_medial_epicondyles_pt";
+HAnimSite1358.children = new MFNode();
 
-let HAnimSite1359 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1359.DEF = "hanim_r_olecranon_pt";
-HAnimSite1359.name = "r_olecranon_pt";
-HAnimSite1359.translation = new SFVec3f(new float[-0.1907,1.1405,-0.1065]);
-let TouchSensor1360 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1360.description = "HAnimSite r_olecranon_pt";
-HAnimSite1359.children = new MFNode();
+HAnimSite1358.children[0] = TouchSensor1359;
 
-HAnimSite1359.children[0] = TouchSensor1360;
+let Shape1360 = browser.currentScene.createNode("Shape");
+Shape1360.USE = "HAnimSiteShape";
+HAnimSite1358.children[1] = Shape1360;
 
-let Shape1361 = browser.currentScene.createNode("Shape");
-Shape1361.USE = "HAnimSiteShape";
-HAnimSite1359.children[1] = Shape1361;
+HAnimSegment1350.children[2] = HAnimSite1358;
 
-HAnimSegment1348.children[3] = HAnimSite1359;
+let HAnimSite1361 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1361.name = "r_olecranon_pt";
+HAnimSite1361.DEF = "hanim_r_olecranon_pt";
+HAnimSite1361.translation = new SFVec3f(new float[-0.1907,1.1405,-0.1065]);
+let TouchSensor1362 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1362.description = "HAnimSite r_olecranon_pt";
+HAnimSite1361.children = new MFNode();
 
-let HAnimSite1362 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1362.DEF = "hanim_r_radial_styloid_pt";
-HAnimSite1362.name = "r_radial_styloid_pt";
-HAnimSite1362.translation = new SFVec3f(new float[-0.1884,0.8676,-0.036]);
-let TouchSensor1363 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1363.description = "HAnimSite r_radial_styloid_pt";
-HAnimSite1362.children = new MFNode();
+HAnimSite1361.children[0] = TouchSensor1362;
 
-HAnimSite1362.children[0] = TouchSensor1363;
+let Shape1363 = browser.currentScene.createNode("Shape");
+Shape1363.USE = "HAnimSiteShape";
+HAnimSite1361.children[1] = Shape1363;
 
-let Shape1364 = browser.currentScene.createNode("Shape");
-Shape1364.USE = "HAnimSiteShape";
-HAnimSite1362.children[1] = Shape1364;
+HAnimSegment1350.children[3] = HAnimSite1361;
 
-HAnimSegment1348.children[4] = HAnimSite1362;
+let HAnimSite1364 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1364.name = "r_radial_styloid_pt";
+HAnimSite1364.DEF = "hanim_r_radial_styloid_pt";
+HAnimSite1364.translation = new SFVec3f(new float[-0.1884,0.8676,-0.036]);
+let TouchSensor1365 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1365.description = "HAnimSite r_radial_styloid_pt";
+HAnimSite1364.children = new MFNode();
 
-let HAnimSite1365 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1365.DEF = "hanim_r_radiale_pt";
-HAnimSite1365.name = "r_radiale_pt";
-HAnimSite1365.translation = new SFVec3f(new float[-0.213,1.1305,-0.1091]);
-let TouchSensor1366 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1366.description = "HAnimSite r_radiale_pt";
-HAnimSite1365.children = new MFNode();
+HAnimSite1364.children[0] = TouchSensor1365;
 
-HAnimSite1365.children[0] = TouchSensor1366;
+let Shape1366 = browser.currentScene.createNode("Shape");
+Shape1366.USE = "HAnimSiteShape";
+HAnimSite1364.children[1] = Shape1366;
 
-let Shape1367 = browser.currentScene.createNode("Shape");
-Shape1367.USE = "HAnimSiteShape";
-HAnimSite1365.children[1] = Shape1367;
+HAnimSegment1350.children[4] = HAnimSite1364;
 
-HAnimSegment1348.children[5] = HAnimSite1365;
+let HAnimSite1367 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1367.name = "r_radiale_pt";
+HAnimSite1367.DEF = "hanim_r_radiale_pt";
+HAnimSite1367.translation = new SFVec3f(new float[-0.213,1.1305,-0.1091]);
+let TouchSensor1368 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1368.description = "HAnimSite r_radiale_pt";
+HAnimSite1367.children = new MFNode();
 
-HAnimJoint1347.children = new MFNode();
+HAnimSite1367.children[0] = TouchSensor1368;
 
-HAnimJoint1347.children[0] = HAnimSegment1348;
+let Shape1369 = browser.currentScene.createNode("Shape");
+Shape1369.USE = "HAnimSiteShape";
+HAnimSite1367.children[1] = Shape1369;
 
-let HAnimJoint1368 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1368.DEF = "hanim_r_elbow";
-HAnimJoint1368.name = "r_elbow";
-HAnimJoint1368.center = new SFVec3f(new float[-0.1949,1.1388,-0.062]);
-let HAnimSegment1369 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1369.DEF = "hanim_r_forearm";
-HAnimSegment1369.name = "r_forearm";
-let Transform1370 = browser.currentScene.createNode("Transform");
-Transform1370.translation = new SFVec3f(new float[-0.1949,1.1388,-0.062]);
-let Transform1371 = browser.currentScene.createNode("Transform");
-let Shape1372 = browser.currentScene.createNode("Shape");
-Shape1372.USE = "HAnimJointShape";
-Transform1371.child = new undefined();
+HAnimSegment1350.children[5] = HAnimSite1367;
 
-Transform1371.child[0] = Shape1372;
+HAnimJoint1349.children = new MFNode();
 
-Transform1370.children = new MFNode();
+HAnimJoint1349.children[0] = HAnimSegment1350;
 
-Transform1370.children[0] = Transform1371;
+let HAnimJoint1370 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1370.name = "r_elbow";
+HAnimJoint1370.DEF = "hanim_r_elbow";
+HAnimJoint1370.center = new SFVec3f(new float[-0.1949,1.1388,-0.062]);
+HAnimJoint1370.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1370.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1371 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1371.name = "r_forearm";
+HAnimSegment1371.DEF = "hanim_r_forearm";
+let Transform1372 = browser.currentScene.createNode("Transform");
+Transform1372.translation = new SFVec3f(new float[-0.1949,1.1388,-0.062]);
+let Transform1373 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1374 = browser.currentScene.createNode("Shape");
+Shape1374.USE = "HAnimJointShape";
+Transform1373.child = new undefined();
 
-HAnimSegment1369.children = new MFNode();
+Transform1373.child[0] = Shape1374;
 
-HAnimSegment1369.children[0] = Transform1370;
+Transform1372.children = new MFNode();
 
-let Shape1373 = browser.currentScene.createNode("Shape");
-let LineSet1374 = browser.currentScene.createNode("LineSet");
-LineSet1374.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1375 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1375.USE = "HAnimSegmentLineColorRGBA";
-LineSet1374.color = ColorRGBA1375;
+Transform1372.children[0] = Transform1373;
 
-let Coordinate1376 = browser.currentScene.createNode("Coordinate");
-Coordinate1376.point = new MFVec3f(new float[-0.1949,1.1388,-0.062,-0.1959,0.8694,-0.0521]);
-LineSet1374.coord = Coordinate1376;
+HAnimSegment1371.children = new MFNode();
 
-Shape1373.geometry = LineSet1374;
+HAnimSegment1371.children[0] = Transform1372;
 
-HAnimSegment1369.children[1] = Shape1373;
+let Shape1375 = browser.currentScene.createNode("Shape");
+let LineSet1376 = browser.currentScene.createNode("LineSet");
+LineSet1376.vertexCount = new MFInt32(new int[2]);
+let Coordinate1377 = browser.currentScene.createNode("Coordinate");
+Coordinate1377.point = new MFVec3f(new float[-0.1949,1.1388,-0.062,-0.1959,0.8694,-0.0521]);
+LineSet1376.coord = Coordinate1377;
 
-let HAnimSite1377 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1377.DEF = "hanim_r_ulnar_styloid_pt";
-HAnimSite1377.name = "r_ulnar_styloid_pt";
-HAnimSite1377.translation = new SFVec3f(new float[-0.2117,0.8562,-0.0584]);
-let TouchSensor1378 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1378.description = "HAnimSite r_ulnar_styloid_pt";
-HAnimSite1377.children = new MFNode();
+//from r_elbow to r_radiocarpal vertices 2
+let ColorRGBA1378 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1378.USE = "HAnimSegmentLineColorRGBA";
+LineSet1376.color = ColorRGBA1378;
 
-HAnimSite1377.children[0] = TouchSensor1378;
+Shape1375.geometry = LineSet1376;
 
-let Shape1379 = browser.currentScene.createNode("Shape");
-Shape1379.USE = "HAnimSiteShape";
-HAnimSite1377.children[1] = Shape1379;
+HAnimSegment1371.children[1] = Shape1375;
 
-HAnimSegment1369.children[2] = HAnimSite1377;
+let HAnimSite1379 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1379.name = "r_ulnar_styloid_pt";
+HAnimSite1379.DEF = "hanim_r_ulnar_styloid_pt";
+HAnimSite1379.translation = new SFVec3f(new float[-0.2117,0.8562,-0.0584]);
+let TouchSensor1380 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1380.description = "HAnimSite r_ulnar_styloid_pt";
+HAnimSite1379.children = new MFNode();
 
-HAnimJoint1368.children = new MFNode();
+HAnimSite1379.children[0] = TouchSensor1380;
 
-HAnimJoint1368.children[0] = HAnimSegment1369;
+let Shape1381 = browser.currentScene.createNode("Shape");
+Shape1381.USE = "HAnimSiteShape";
+HAnimSite1379.children[1] = Shape1381;
 
-let HAnimJoint1380 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1380.DEF = "hanim_r_radiocarpal";
-HAnimJoint1380.name = "r_radiocarpal";
-HAnimJoint1380.center = new SFVec3f(new float[-0.1959,0.8694,-0.0521]);
-let HAnimSegment1381 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1381.DEF = "hanim_r_carpal";
-HAnimSegment1381.name = "r_carpal";
-let Transform1382 = browser.currentScene.createNode("Transform");
-Transform1382.translation = new SFVec3f(new float[-0.2,0.85,-0.05]);
-Transform1382.rotation = new SFRotation(new float[0,0,1,-3.14]);
-Transform1382.scale = new SFVec3f(new float[0.2,0.2,0.2]);
-let Transform1383 = browser.currentScene.createNode("Transform");
-Transform1383.rotation = new SFRotation(new float[0,1,0,1.57]);
-let Shape1384 = browser.currentScene.createNode("Shape");
-Shape1384.USE = "HAnimJointShape";
-Transform1383.child = new undefined();
+HAnimSegment1371.children[2] = HAnimSite1379;
 
-Transform1383.child[0] = Shape1384;
+HAnimJoint1370.children = new MFNode();
 
-Transform1382.children = new MFNode();
+HAnimJoint1370.children[0] = HAnimSegment1371;
 
-Transform1382.children[0] = Transform1383;
+let HAnimJoint1382 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1382.name = "r_radiocarpal";
+HAnimJoint1382.DEF = "hanim_r_radiocarpal";
+HAnimJoint1382.center = new SFVec3f(new float[-0.1959,0.8694,-0.0521]);
+HAnimJoint1382.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1382.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1383 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1383.name = "r_carpal";
+HAnimSegment1383.DEF = "hanim_r_carpal";
+let Transform1384 = browser.currentScene.createNode("Transform");
+Transform1384.scale = new SFVec3f(new float[0.2,0.2,0.2]);
+Transform1384.translation = new SFVec3f(new float[-0.2,0.85,-0.05]);
+Transform1384.rotation = new SFRotation(new float[0,0,1,-3.14]);
+//Transform right hand
+let Transform1385 = browser.currentScene.createNode("Transform");
+Transform1385.rotation = new SFRotation(new float[0,1,0,1.57]);
+//Transform right hand
+let Shape1386 = browser.currentScene.createNode("Shape");
+Shape1386.USE = "HAnimJointShape";
+Transform1385.child = new undefined();
 
-HAnimSegment1381.children = new MFNode();
+Transform1385.child[0] = Shape1386;
 
-HAnimSegment1381.children[0] = Transform1382;
+Transform1384.children = new MFNode();
 
-let Shape1385 = browser.currentScene.createNode("Shape");
-let LineSet1386 = browser.currentScene.createNode("LineSet");
-LineSet1386.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1387 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1387.USE = "HAnimSegmentLineColorRGBA";
-LineSet1386.color = ColorRGBA1387;
+Transform1384.children[0] = Transform1385;
 
-let Coordinate1388 = browser.currentScene.createNode("Coordinate");
-Coordinate1388.point = new MFVec3f(new float[-0.1959,0.8694,-0.0521,-8.0515,0.9213,1.3235]);
-LineSet1386.coord = Coordinate1388;
+HAnimSegment1383.children = new MFNode();
 
-Shape1385.geometry = LineSet1386;
+HAnimSegment1383.children[0] = Transform1384;
 
-HAnimSegment1381.children[1] = Shape1385;
+let Shape1387 = browser.currentScene.createNode("Shape");
+let LineSet1388 = browser.currentScene.createNode("LineSet");
+LineSet1388.vertexCount = new MFInt32(new int[2]);
+let Coordinate1389 = browser.currentScene.createNode("Coordinate");
+Coordinate1389.point = new MFVec3f(new float[-0.1959,0.8694,-0.0521,-8.0515,0.9213,1.3235]);
+LineSet1388.coord = Coordinate1389;
 
-let Shape1389 = browser.currentScene.createNode("Shape");
-let LineSet1390 = browser.currentScene.createNode("LineSet");
-LineSet1390.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1391 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1391.USE = "HAnimSegmentLineColorRGBA";
-LineSet1390.color = ColorRGBA1391;
+//from r_radiocarpal to r_midcarpal_1 vertices 2
+let ColorRGBA1390 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1390.USE = "HAnimSegmentLineColorRGBA";
+LineSet1388.color = ColorRGBA1390;
 
-let Coordinate1392 = browser.currentScene.createNode("Coordinate");
-Coordinate1392.point = new MFVec3f(new float[-0.1959,0.8694,-0.0521,-8.0515,0.9225,0.8386]);
-LineSet1390.coord = Coordinate1392;
+Shape1387.geometry = LineSet1388;
 
-Shape1389.geometry = LineSet1390;
+HAnimSegment1383.children[1] = Shape1387;
 
-HAnimSegment1381.children[2] = Shape1389;
+let Shape1391 = browser.currentScene.createNode("Shape");
+let LineSet1392 = browser.currentScene.createNode("LineSet");
+LineSet1392.vertexCount = new MFInt32(new int[2]);
+let Coordinate1393 = browser.currentScene.createNode("Coordinate");
+Coordinate1393.point = new MFVec3f(new float[-0.1959,0.8694,-0.0521,-8.0515,0.9225,0.8386]);
+LineSet1392.coord = Coordinate1393;
 
-let Shape1393 = browser.currentScene.createNode("Shape");
-let LineSet1394 = browser.currentScene.createNode("LineSet");
-LineSet1394.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1395 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1395.USE = "HAnimSegmentLineColorRGBA";
-LineSet1394.color = ColorRGBA1395;
+//from r_radiocarpal to r_midcarpal_2 vertices 2
+let ColorRGBA1394 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1394.USE = "HAnimSegmentLineColorRGBA";
+LineSet1392.color = ColorRGBA1394;
 
-let Coordinate1396 = browser.currentScene.createNode("Coordinate");
-Coordinate1396.point = new MFVec3f(new float[-0.1959,0.8694,-0.0521,-8.0405,0.9246,0.2513]);
-LineSet1394.coord = Coordinate1396;
+Shape1391.geometry = LineSet1392;
 
-Shape1393.geometry = LineSet1394;
+HAnimSegment1383.children[2] = Shape1391;
 
-HAnimSegment1381.children[3] = Shape1393;
+let Shape1395 = browser.currentScene.createNode("Shape");
+let LineSet1396 = browser.currentScene.createNode("LineSet");
+LineSet1396.vertexCount = new MFInt32(new int[2]);
+let Coordinate1397 = browser.currentScene.createNode("Coordinate");
+Coordinate1397.point = new MFVec3f(new float[-0.1959,0.8694,-0.0521,-8.0405,0.9246,0.2513]);
+LineSet1396.coord = Coordinate1397;
 
-let Shape1397 = browser.currentScene.createNode("Shape");
-let LineSet1398 = browser.currentScene.createNode("LineSet");
-LineSet1398.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1399 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1399.USE = "HAnimSegmentLineColorRGBA";
-LineSet1398.color = ColorRGBA1399;
+//from r_radiocarpal to r_midcarpal_3 vertices 2
+let ColorRGBA1398 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1398.USE = "HAnimSegmentLineColorRGBA";
+LineSet1396.color = ColorRGBA1398;
 
-let Coordinate1400 = browser.currentScene.createNode("Coordinate");
-Coordinate1400.point = new MFVec3f(new float[-0.1959,0.8694,-0.0521,-8.0405,0.921,-0.6795]);
-LineSet1398.coord = Coordinate1400;
+Shape1395.geometry = LineSet1396;
 
-Shape1397.geometry = LineSet1398;
+HAnimSegment1383.children[3] = Shape1395;
 
-HAnimSegment1381.children[4] = Shape1397;
+let Shape1399 = browser.currentScene.createNode("Shape");
+let LineSet1400 = browser.currentScene.createNode("LineSet");
+LineSet1400.vertexCount = new MFInt32(new int[2]);
+let Coordinate1401 = browser.currentScene.createNode("Coordinate");
+Coordinate1401.point = new MFVec3f(new float[-0.1959,0.8694,-0.0521,-8.0405,0.921,-0.6795]);
+LineSet1400.coord = Coordinate1401;
 
-HAnimJoint1380.children = new MFNode();
+//from r_radiocarpal to r_midcarpal_4_5 vertices 2
+let ColorRGBA1402 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1402.USE = "HAnimSegmentLineColorRGBA";
+LineSet1400.color = ColorRGBA1402;
 
-HAnimJoint1380.children[0] = HAnimSegment1381;
+Shape1399.geometry = LineSet1400;
 
-let HAnimJoint1401 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1401.DEF = "hanim_r_midcarpal_1";
-HAnimJoint1401.name = "r_midcarpal_1";
-HAnimJoint1401.center = new SFVec3f(new float[-8.0515,0.9213,1.3235]);
-let HAnimSegment1402 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1402.DEF = "hanim_r_trapezium";
-HAnimSegment1402.name = "r_trapezium";
-let Transform1403 = browser.currentScene.createNode("Transform");
-Transform1403.translation = new SFVec3f(new float[-8.0515,0.9213,1.3235]);
-let Transform1404 = browser.currentScene.createNode("Transform");
-let Shape1405 = browser.currentScene.createNode("Shape");
-Shape1405.USE = "HAnimJointShape";
-Transform1404.child = new undefined();
+HAnimSegment1383.children[4] = Shape1399;
 
-Transform1404.child[0] = Shape1405;
+HAnimJoint1382.children = new MFNode();
 
-Transform1403.children = new MFNode();
+HAnimJoint1382.children[0] = HAnimSegment1383;
 
-Transform1403.children[0] = Transform1404;
+let HAnimJoint1403 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1403.name = "r_midcarpal_1";
+HAnimJoint1403.DEF = "hanim_r_midcarpal_1";
+HAnimJoint1403.center = new SFVec3f(new float[-8.0515,0.9213,1.3235]);
+HAnimJoint1403.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1403.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1404 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1404.name = "r_trapezium";
+HAnimSegment1404.DEF = "hanim_r_trapezium";
+let Transform1405 = browser.currentScene.createNode("Transform");
+Transform1405.translation = new SFVec3f(new float[-8.0515,0.9213,1.3235]);
+let Transform1406 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1407 = browser.currentScene.createNode("Shape");
+Shape1407.USE = "HAnimJointShape";
+Transform1406.child = new undefined();
 
-HAnimSegment1402.children = new MFNode();
+Transform1406.child[0] = Shape1407;
 
-HAnimSegment1402.children[0] = Transform1403;
+Transform1405.children = new MFNode();
 
-let Shape1406 = browser.currentScene.createNode("Shape");
-let LineSet1407 = browser.currentScene.createNode("LineSet");
-LineSet1407.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1408 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1408.USE = "HAnimSegmentLineColorRGBA";
-LineSet1407.color = ColorRGBA1408;
+Transform1405.children[0] = Transform1406;
 
-let Coordinate1409 = browser.currentScene.createNode("Coordinate");
-Coordinate1409.point = new MFVec3f(new float[-8.0515,0.9213,1.3235,-0.1899,0.8502,-0.0473]);
-LineSet1407.coord = Coordinate1409;
+HAnimSegment1404.children = new MFNode();
 
-Shape1406.geometry = LineSet1407;
+HAnimSegment1404.children[0] = Transform1405;
 
-HAnimSegment1402.children[1] = Shape1406;
+let Shape1408 = browser.currentScene.createNode("Shape");
+let LineSet1409 = browser.currentScene.createNode("LineSet");
+LineSet1409.vertexCount = new MFInt32(new int[2]);
+let Coordinate1410 = browser.currentScene.createNode("Coordinate");
+Coordinate1410.point = new MFVec3f(new float[-8.0515,0.9213,1.3235,-0.1899,0.8502,-0.0473]);
+LineSet1409.coord = Coordinate1410;
 
-HAnimJoint1401.children = new MFNode();
+//from r_midcarpal_1 to r_carpometacarpal_1 vertices 2
+let ColorRGBA1411 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1411.USE = "HAnimSegmentLineColorRGBA";
+LineSet1409.color = ColorRGBA1411;
 
-HAnimJoint1401.children[0] = HAnimSegment1402;
+Shape1408.geometry = LineSet1409;
 
-let HAnimJoint1410 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1410.DEF = "hanim_r_carpometacarpal_1";
-HAnimJoint1410.name = "r_carpometacarpal_1";
-HAnimJoint1410.center = new SFVec3f(new float[-0.1899,0.8502,-0.0473]);
-let HAnimSegment1411 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1411.DEF = "hanim_r_metacarpal_1";
-HAnimSegment1411.name = "r_metacarpal_1";
-let Transform1412 = browser.currentScene.createNode("Transform");
-Transform1412.translation = new SFVec3f(new float[-0.1899,0.8502,-0.0473]);
-let Transform1413 = browser.currentScene.createNode("Transform");
-let Shape1414 = browser.currentScene.createNode("Shape");
-Shape1414.USE = "HAnimJointShape";
-Transform1413.child = new undefined();
+HAnimSegment1404.children[1] = Shape1408;
 
-Transform1413.child[0] = Shape1414;
+HAnimJoint1403.children = new MFNode();
 
-Transform1412.children = new MFNode();
+HAnimJoint1403.children[0] = HAnimSegment1404;
 
-Transform1412.children[0] = Transform1413;
+let HAnimJoint1412 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1412.name = "r_carpometacarpal_1";
+HAnimJoint1412.DEF = "hanim_r_carpometacarpal_1";
+HAnimJoint1412.center = new SFVec3f(new float[-0.1899,0.8502,-0.0473]);
+HAnimJoint1412.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1412.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1413 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1413.name = "r_metacarpal_1";
+HAnimSegment1413.DEF = "hanim_r_metacarpal_1";
+let Transform1414 = browser.currentScene.createNode("Transform");
+Transform1414.translation = new SFVec3f(new float[-0.1899,0.8502,-0.0473]);
+let Transform1415 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1416 = browser.currentScene.createNode("Shape");
+Shape1416.USE = "HAnimJointShape";
+Transform1415.child = new undefined();
 
-HAnimSegment1411.children = new MFNode();
+Transform1415.child[0] = Shape1416;
 
-HAnimSegment1411.children[0] = Transform1412;
+Transform1414.children = new MFNode();
 
-let Shape1415 = browser.currentScene.createNode("Shape");
-let LineSet1416 = browser.currentScene.createNode("LineSet");
-LineSet1416.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1417 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1417.USE = "HAnimSegmentLineColorRGBA";
-LineSet1416.color = ColorRGBA1417;
+Transform1414.children[0] = Transform1415;
 
-let Coordinate1418 = browser.currentScene.createNode("Coordinate");
-Coordinate1418.point = new MFVec3f(new float[-0.1899,0.8502,-0.0473,-0.1874,0.8256,0.0306]);
-LineSet1416.coord = Coordinate1418;
+HAnimSegment1413.children = new MFNode();
 
-Shape1415.geometry = LineSet1416;
+HAnimSegment1413.children[0] = Transform1414;
 
-HAnimSegment1411.children[1] = Shape1415;
+let Shape1417 = browser.currentScene.createNode("Shape");
+let LineSet1418 = browser.currentScene.createNode("LineSet");
+LineSet1418.vertexCount = new MFInt32(new int[2]);
+let Coordinate1419 = browser.currentScene.createNode("Coordinate");
+Coordinate1419.point = new MFVec3f(new float[-0.1899,0.8502,-0.0473,-0.1874,0.8256,0.0306]);
+LineSet1418.coord = Coordinate1419;
 
-HAnimJoint1410.children = new MFNode();
+//from r_carpometacarpal_1 to r_metacarpophalangeal_1 vertices 2
+let ColorRGBA1420 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1420.USE = "HAnimSegmentLineColorRGBA";
+LineSet1418.color = ColorRGBA1420;
 
-HAnimJoint1410.children[0] = HAnimSegment1411;
+Shape1417.geometry = LineSet1418;
 
-let HAnimJoint1419 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1419.DEF = "hanim_r_metacarpophalangeal_1";
-HAnimJoint1419.name = "r_metacarpophalangeal_1";
-HAnimJoint1419.center = new SFVec3f(new float[-0.1874,0.8256,0.0306]);
-let HAnimSegment1420 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1420.DEF = "hanim_r_carpal_proximal_phalanx_1";
-HAnimSegment1420.name = "r_carpal_proximal_phalanx_1";
-let Transform1421 = browser.currentScene.createNode("Transform");
-Transform1421.translation = new SFVec3f(new float[-0.1874,0.8256,0.0306]);
-let Transform1422 = browser.currentScene.createNode("Transform");
-let Shape1423 = browser.currentScene.createNode("Shape");
-Shape1423.USE = "HAnimJointShape";
-Transform1422.child = new undefined();
+HAnimSegment1413.children[1] = Shape1417;
 
-Transform1422.child[0] = Shape1423;
+HAnimJoint1412.children = new MFNode();
 
-Transform1421.children = new MFNode();
+HAnimJoint1412.children[0] = HAnimSegment1413;
 
-Transform1421.children[0] = Transform1422;
+let HAnimJoint1421 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1421.name = "r_metacarpophalangeal_1";
+HAnimJoint1421.DEF = "hanim_r_metacarpophalangeal_1";
+HAnimJoint1421.center = new SFVec3f(new float[-0.1874,0.8256,0.0306]);
+HAnimJoint1421.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1421.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1422 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1422.name = "r_carpal_proximal_phalanx_1";
+HAnimSegment1422.DEF = "hanim_r_carpal_proximal_phalanx_1";
+let Transform1423 = browser.currentScene.createNode("Transform");
+Transform1423.translation = new SFVec3f(new float[-0.1874,0.8256,0.0306]);
+let Transform1424 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1425 = browser.currentScene.createNode("Shape");
+Shape1425.USE = "HAnimJointShape";
+Transform1424.child = new undefined();
 
-HAnimSegment1420.children = new MFNode();
+Transform1424.child[0] = Shape1425;
 
-HAnimSegment1420.children[0] = Transform1421;
+Transform1423.children = new MFNode();
 
-let Shape1424 = browser.currentScene.createNode("Shape");
-let LineSet1425 = browser.currentScene.createNode("LineSet");
-LineSet1425.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1426 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1426.USE = "HAnimSegmentLineColorRGBA";
-LineSet1425.color = ColorRGBA1426;
+Transform1423.children[0] = Transform1424;
 
-let Coordinate1427 = browser.currentScene.createNode("Coordinate");
-Coordinate1427.point = new MFVec3f(new float[-0.1874,0.8256,0.0306,-0.1864,0.819,0.0506]);
-LineSet1425.coord = Coordinate1427;
+HAnimSegment1422.children = new MFNode();
 
-Shape1424.geometry = LineSet1425;
+HAnimSegment1422.children[0] = Transform1423;
 
-HAnimSegment1420.children[1] = Shape1424;
+let Shape1426 = browser.currentScene.createNode("Shape");
+let LineSet1427 = browser.currentScene.createNode("LineSet");
+LineSet1427.vertexCount = new MFInt32(new int[2]);
+let Coordinate1428 = browser.currentScene.createNode("Coordinate");
+Coordinate1428.point = new MFVec3f(new float[-0.1874,0.8256,0.0306,-0.1864,0.819,0.0506]);
+LineSet1427.coord = Coordinate1428;
 
-let HAnimSite1428 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1428.DEF = "hanim_r_carpal_distal_phalanx_1_tip";
-HAnimSite1428.name = "r_carpal_distal_phalanx_1_tip";
-let TouchSensor1429 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1429.description = "HAnimSite r_carpal_distal_phalanx_1_tip";
-HAnimSite1428.children = new MFNode();
+//from r_metacarpophalangeal_1 to r_carpal_interphalangeal_1 vertices 2
+let ColorRGBA1429 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1429.USE = "HAnimSegmentLineColorRGBA";
+LineSet1427.color = ColorRGBA1429;
 
-HAnimSite1428.children[0] = TouchSensor1429;
+Shape1426.geometry = LineSet1427;
 
-let Shape1430 = browser.currentScene.createNode("Shape");
-Shape1430.USE = "HAnimSiteShape";
-HAnimSite1428.children[1] = Shape1430;
+HAnimSegment1422.children[1] = Shape1426;
 
-HAnimSegment1420.children[2] = HAnimSite1428;
+let HAnimSite1430 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1430.name = "r_carpal_distal_phalanx_1_tip";
+HAnimSite1430.DEF = "hanim_r_carpal_distal_phalanx_1_tip";
+let TouchSensor1431 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1431.description = "HAnimSite r_carpal_distal_phalanx_1_tip";
+HAnimSite1430.children = new MFNode();
 
-HAnimJoint1419.children = new MFNode();
+HAnimSite1430.children[0] = TouchSensor1431;
 
-HAnimJoint1419.children[0] = HAnimSegment1420;
+let Shape1432 = browser.currentScene.createNode("Shape");
+Shape1432.USE = "HAnimSiteShape";
+HAnimSite1430.children[1] = Shape1432;
 
-let HAnimJoint1431 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1431.DEF = "hanim_r_carpal_interphalangeal_1";
-HAnimJoint1431.name = "r_carpal_interphalangeal_1";
-HAnimJoint1431.center = new SFVec3f(new float[-0.1864,0.819,0.0506]);
-HAnimJoint1419.children[1] = HAnimJoint1431;
+HAnimSegment1422.children[2] = HAnimSite1430;
 
-HAnimJoint1410.children[1] = HAnimJoint1419;
+HAnimJoint1421.children = new MFNode();
 
-HAnimJoint1401.children[1] = HAnimJoint1410;
+HAnimJoint1421.children[0] = HAnimSegment1422;
 
-HAnimJoint1380.children[1] = HAnimJoint1401;
+let HAnimJoint1433 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1433.name = "r_carpal_interphalangeal_1";
+HAnimJoint1433.DEF = "hanim_r_carpal_interphalangeal_1";
+HAnimJoint1433.center = new SFVec3f(new float[-0.1864,0.819,0.0506]);
+HAnimJoint1433.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1433.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1421.children[1] = HAnimJoint1433;
 
-let HAnimJoint1432 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1432.DEF = "hanim_r_midcarpal_2";
-HAnimJoint1432.name = "r_midcarpal_2";
-HAnimJoint1432.center = new SFVec3f(new float[-8.0515,0.9225,0.8386]);
-let HAnimSegment1433 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1433.DEF = "hanim_r_trapezoid";
-HAnimSegment1433.name = "r_trapezoid";
-let Transform1434 = browser.currentScene.createNode("Transform");
-Transform1434.translation = new SFVec3f(new float[-8.0515,0.9225,0.8386]);
-let Transform1435 = browser.currentScene.createNode("Transform");
-let Shape1436 = browser.currentScene.createNode("Shape");
-Shape1436.USE = "HAnimJointShape";
-Transform1435.child = new undefined();
+HAnimJoint1412.children[1] = HAnimJoint1421;
 
-Transform1435.child[0] = Shape1436;
+HAnimJoint1403.children[1] = HAnimJoint1412;
 
-Transform1434.children = new MFNode();
+HAnimJoint1382.children[1] = HAnimJoint1403;
 
-Transform1434.children[0] = Transform1435;
+let HAnimJoint1434 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1434.name = "r_midcarpal_2";
+HAnimJoint1434.DEF = "hanim_r_midcarpal_2";
+HAnimJoint1434.center = new SFVec3f(new float[-8.0515,0.9225,0.8386]);
+HAnimJoint1434.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1434.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1435 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1435.name = "r_trapezoid";
+HAnimSegment1435.DEF = "hanim_r_trapezoid";
+let Transform1436 = browser.currentScene.createNode("Transform");
+Transform1436.translation = new SFVec3f(new float[-8.0515,0.9225,0.8386]);
+let Transform1437 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1438 = browser.currentScene.createNode("Shape");
+Shape1438.USE = "HAnimJointShape";
+Transform1437.child = new undefined();
 
-HAnimSegment1433.children = new MFNode();
+Transform1437.child[0] = Shape1438;
 
-HAnimSegment1433.children[0] = Transform1434;
+Transform1436.children = new MFNode();
 
-let Shape1437 = browser.currentScene.createNode("Shape");
-let LineSet1438 = browser.currentScene.createNode("LineSet");
-LineSet1438.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1439 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1439.USE = "HAnimSegmentLineColorRGBA";
-LineSet1438.color = ColorRGBA1439;
+Transform1436.children[0] = Transform1437;
 
-let Coordinate1440 = browser.currentScene.createNode("Coordinate");
-Coordinate1440.point = new MFVec3f(new float[-8.0515,0.9225,0.8386,-0.1961,0.8055,-0.0218]);
-LineSet1438.coord = Coordinate1440;
+HAnimSegment1435.children = new MFNode();
 
-Shape1437.geometry = LineSet1438;
+HAnimSegment1435.children[0] = Transform1436;
 
-HAnimSegment1433.children[1] = Shape1437;
+let Shape1439 = browser.currentScene.createNode("Shape");
+let LineSet1440 = browser.currentScene.createNode("LineSet");
+LineSet1440.vertexCount = new MFInt32(new int[2]);
+let Coordinate1441 = browser.currentScene.createNode("Coordinate");
+Coordinate1441.point = new MFVec3f(new float[-8.0515,0.9225,0.8386,-0.1961,0.8055,-0.0218]);
+LineSet1440.coord = Coordinate1441;
 
-let HAnimSite1441 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1441.DEF = "hanim_r_metacarpal_phalanx_2_pt";
-HAnimSite1441.name = "r_metacarpal_phalanx_2_pt";
-HAnimSite1441.translation = new SFVec3f(new float[-0.1977,0.8169,-0.0177]);
-let TouchSensor1442 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1442.description = "HAnimSite r_metacarpal_phalanx_2_pt";
-HAnimSite1441.children = new MFNode();
+//from r_midcarpal_2 to r_carpometacarpal_2 vertices 2
+let ColorRGBA1442 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1442.USE = "HAnimSegmentLineColorRGBA";
+LineSet1440.color = ColorRGBA1442;
 
-HAnimSite1441.children[0] = TouchSensor1442;
+Shape1439.geometry = LineSet1440;
 
-let Shape1443 = browser.currentScene.createNode("Shape");
-Shape1443.USE = "HAnimSiteShape";
-HAnimSite1441.children[1] = Shape1443;
+HAnimSegment1435.children[1] = Shape1439;
 
-HAnimSegment1433.children[2] = HAnimSite1441;
+let HAnimSite1443 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1443.name = "r_metacarpal_phalanx_2_pt";
+HAnimSite1443.DEF = "hanim_r_metacarpal_phalanx_2_pt";
+HAnimSite1443.translation = new SFVec3f(new float[-0.1977,0.8169,-0.0177]);
+let TouchSensor1444 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1444.description = "HAnimSite r_metacarpal_phalanx_2_pt";
+HAnimSite1443.children = new MFNode();
 
-HAnimJoint1432.children = new MFNode();
+HAnimSite1443.children[0] = TouchSensor1444;
 
-HAnimJoint1432.children[0] = HAnimSegment1433;
+let Shape1445 = browser.currentScene.createNode("Shape");
+Shape1445.USE = "HAnimSiteShape";
+HAnimSite1443.children[1] = Shape1445;
 
-let HAnimJoint1444 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1444.DEF = "hanim_r_carpometacarpal_2";
-HAnimJoint1444.name = "r_carpometacarpal_2";
-HAnimJoint1444.center = new SFVec3f(new float[-0.1961,0.8055,-0.0218]);
-let HAnimSegment1445 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1445.DEF = "hanim_r_metacarpal_2";
-HAnimSegment1445.name = "r_metacarpal_2";
-let Transform1446 = browser.currentScene.createNode("Transform");
-Transform1446.translation = new SFVec3f(new float[-0.1961,0.8055,-0.0218]);
-let Transform1447 = browser.currentScene.createNode("Transform");
-let Shape1448 = browser.currentScene.createNode("Shape");
-Shape1448.USE = "HAnimJointShape";
-Transform1447.child = new undefined();
+HAnimSegment1435.children[2] = HAnimSite1443;
 
-Transform1447.child[0] = Shape1448;
+HAnimJoint1434.children = new MFNode();
 
-Transform1446.children = new MFNode();
+HAnimJoint1434.children[0] = HAnimSegment1435;
 
-Transform1446.children[0] = Transform1447;
+let HAnimJoint1446 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1446.name = "r_carpometacarpal_2";
+HAnimJoint1446.DEF = "hanim_r_carpometacarpal_2";
+HAnimJoint1446.center = new SFVec3f(new float[-0.1961,0.8055,-0.0218]);
+HAnimJoint1446.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1446.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1447 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1447.name = "r_metacarpal_2";
+HAnimSegment1447.DEF = "hanim_r_metacarpal_2";
+let Transform1448 = browser.currentScene.createNode("Transform");
+Transform1448.translation = new SFVec3f(new float[-0.1961,0.8055,-0.0218]);
+let Transform1449 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1450 = browser.currentScene.createNode("Shape");
+Shape1450.USE = "HAnimJointShape";
+Transform1449.child = new undefined();
 
-HAnimSegment1445.children = new MFNode();
+Transform1449.child[0] = Shape1450;
 
-HAnimSegment1445.children[0] = Transform1446;
+Transform1448.children = new MFNode();
 
-let Shape1449 = browser.currentScene.createNode("Shape");
-let LineSet1450 = browser.currentScene.createNode("LineSet");
-LineSet1450.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1451 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1451.USE = "HAnimSegmentLineColorRGBA";
-LineSet1450.color = ColorRGBA1451;
+Transform1448.children[0] = Transform1449;
 
-let Coordinate1452 = browser.currentScene.createNode("Coordinate");
-Coordinate1452.point = new MFVec3f(new float[-0.1961,0.8055,-0.0218,-0.1961,0.7846,-0.0218]);
-LineSet1450.coord = Coordinate1452;
+HAnimSegment1447.children = new MFNode();
 
-Shape1449.geometry = LineSet1450;
+HAnimSegment1447.children[0] = Transform1448;
 
-HAnimSegment1445.children[1] = Shape1449;
+let Shape1451 = browser.currentScene.createNode("Shape");
+let LineSet1452 = browser.currentScene.createNode("LineSet");
+LineSet1452.vertexCount = new MFInt32(new int[2]);
+let Coordinate1453 = browser.currentScene.createNode("Coordinate");
+Coordinate1453.point = new MFVec3f(new float[-0.1961,0.8055,-0.0218,-0.1961,0.7846,-0.0218]);
+LineSet1452.coord = Coordinate1453;
 
-HAnimJoint1444.children = new MFNode();
+//from r_carpometacarpal_2 to r_metacarpophalangeal_2 vertices 2
+let ColorRGBA1454 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1454.USE = "HAnimSegmentLineColorRGBA";
+LineSet1452.color = ColorRGBA1454;
 
-HAnimJoint1444.children[0] = HAnimSegment1445;
+Shape1451.geometry = LineSet1452;
 
-let HAnimJoint1453 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1453.DEF = "hanim_r_metacarpophalangeal_2";
-HAnimJoint1453.name = "r_metacarpophalangeal_2";
-HAnimJoint1453.center = new SFVec3f(new float[-0.1961,0.7846,-0.0218]);
-let HAnimSegment1454 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1454.DEF = "hanim_r_carpal_proximal_phalanx_2 ";
-HAnimSegment1454.name = "r_carpal_proximal_phalanx_2 ";
-let Transform1455 = browser.currentScene.createNode("Transform");
-Transform1455.translation = new SFVec3f(new float[-0.1961,0.7846,-0.0218]);
-let Transform1456 = browser.currentScene.createNode("Transform");
-let Shape1457 = browser.currentScene.createNode("Shape");
-Shape1457.USE = "HAnimJointShape";
-Transform1456.child = new undefined();
+HAnimSegment1447.children[1] = Shape1451;
 
-Transform1456.child[0] = Shape1457;
+HAnimJoint1446.children = new MFNode();
 
-Transform1455.children = new MFNode();
+HAnimJoint1446.children[0] = HAnimSegment1447;
 
-Transform1455.children[0] = Transform1456;
+let HAnimJoint1455 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1455.name = "r_metacarpophalangeal_2";
+HAnimJoint1455.DEF = "hanim_r_metacarpophalangeal_2";
+HAnimJoint1455.center = new SFVec3f(new float[-0.1961,0.7846,-0.0218]);
+HAnimJoint1455.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1455.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1456 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1456.name = "r_carpal_proximal_phalanx_2";
+HAnimSegment1456.DEF = "hanim_r_carpal_proximal_phalanx_2";
+let Transform1457 = browser.currentScene.createNode("Transform");
+Transform1457.translation = new SFVec3f(new float[-0.1961,0.7846,-0.0218]);
+let Transform1458 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1459 = browser.currentScene.createNode("Shape");
+Shape1459.USE = "HAnimJointShape";
+Transform1458.child = new undefined();
 
-HAnimSegment1454.children = new MFNode();
+Transform1458.child[0] = Shape1459;
 
-HAnimSegment1454.children[0] = Transform1455;
+Transform1457.children = new MFNode();
 
-let Shape1458 = browser.currentScene.createNode("Shape");
-let LineSet1459 = browser.currentScene.createNode("LineSet");
-LineSet1459.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1460 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1460.USE = "HAnimSegmentLineColorRGBA";
-LineSet1459.color = ColorRGBA1460;
+Transform1457.children[0] = Transform1458;
 
-let Coordinate1461 = browser.currentScene.createNode("Coordinate");
-Coordinate1461.point = new MFVec3f(new float[-0.1961,0.7846,-0.0218,-0.1954,0.7393,-0.0185]);
-LineSet1459.coord = Coordinate1461;
+HAnimSegment1456.children = new MFNode();
 
-Shape1458.geometry = LineSet1459;
+HAnimSegment1456.children[0] = Transform1457;
 
-HAnimSegment1454.children[1] = Shape1458;
+let Shape1460 = browser.currentScene.createNode("Shape");
+let LineSet1461 = browser.currentScene.createNode("LineSet");
+LineSet1461.vertexCount = new MFInt32(new int[2]);
+let Coordinate1462 = browser.currentScene.createNode("Coordinate");
+Coordinate1462.point = new MFVec3f(new float[-0.1961,0.7846,-0.0218,-0.1954,0.7393,-0.0185]);
+LineSet1461.coord = Coordinate1462;
 
-HAnimJoint1453.children = new MFNode();
+//from r_metacarpophalangeal_2 to r_carpal_proximal_interphalangeal_2 vertices 2
+let ColorRGBA1463 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1463.USE = "HAnimSegmentLineColorRGBA";
+LineSet1461.color = ColorRGBA1463;
 
-HAnimJoint1453.children[0] = HAnimSegment1454;
+Shape1460.geometry = LineSet1461;
 
-let HAnimJoint1462 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1462.DEF = "hanim_r_carpal_proximal_interphalangeal_1";
-HAnimJoint1462.name = "r_carpal_proximal_interphalangeal_2";
-HAnimJoint1462.center = new SFVec3f(new float[-0.1954,0.7393,-0.0185]);
-let HAnimSegment1463 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1463.DEF = "hanim_r_carpal_middle_phalanx_1";
-HAnimSegment1463.name = "r_carpal_middle_phalanx_2";
-let Transform1464 = browser.currentScene.createNode("Transform");
-Transform1464.translation = new SFVec3f(new float[-0.1954,0.7393,-0.0185]);
-let Transform1465 = browser.currentScene.createNode("Transform");
-let Shape1466 = browser.currentScene.createNode("Shape");
-Shape1466.USE = "HAnimJointShape";
-Transform1465.child = new undefined();
+HAnimSegment1456.children[1] = Shape1460;
 
-Transform1465.child[0] = Shape1466;
+HAnimJoint1455.children = new MFNode();
 
-Transform1464.children = new MFNode();
+HAnimJoint1455.children[0] = HAnimSegment1456;
 
-Transform1464.children[0] = Transform1465;
+let HAnimJoint1464 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1464.name = "r_carpal_proximal_interphalangeal_2";
+HAnimJoint1464.DEF = "hanim_r_carpal_proximal_interphalangeal_2";
+HAnimJoint1464.center = new SFVec3f(new float[-0.1954,0.7393,-0.0185]);
+HAnimJoint1464.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1464.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1465 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1465.name = "r_carpal_middle_phalanx_2";
+HAnimSegment1465.DEF = "hanim_r_carpal_middle_phalanx_2";
+let Transform1466 = browser.currentScene.createNode("Transform");
+Transform1466.translation = new SFVec3f(new float[-0.1954,0.7393,-0.0185]);
+let Transform1467 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1468 = browser.currentScene.createNode("Shape");
+Shape1468.USE = "HAnimJointShape";
+Transform1467.child = new undefined();
 
-HAnimSegment1463.children = new MFNode();
+Transform1467.child[0] = Shape1468;
 
-HAnimSegment1463.children[0] = Transform1464;
+Transform1466.children = new MFNode();
 
-let Shape1467 = browser.currentScene.createNode("Shape");
-let LineSet1468 = browser.currentScene.createNode("LineSet");
-LineSet1468.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1469 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1469.USE = "HAnimSegmentLineColorRGBA";
-LineSet1468.color = ColorRGBA1469;
+Transform1466.children[0] = Transform1467;
 
-let Coordinate1470 = browser.currentScene.createNode("Coordinate");
-Coordinate1470.point = new MFVec3f(new float[-0.1954,0.7393,-0.0185,-0.1945,0.7169,-0.0173]);
-LineSet1468.coord = Coordinate1470;
+HAnimSegment1465.children = new MFNode();
 
-Shape1467.geometry = LineSet1468;
+HAnimSegment1465.children[0] = Transform1466;
 
-HAnimSegment1463.children[1] = Shape1467;
+let Shape1469 = browser.currentScene.createNode("Shape");
+let LineSet1470 = browser.currentScene.createNode("LineSet");
+LineSet1470.vertexCount = new MFInt32(new int[2]);
+let Coordinate1471 = browser.currentScene.createNode("Coordinate");
+Coordinate1471.point = new MFVec3f(new float[-0.1954,0.7393,-0.0185,-0.1945,0.7169,-0.0173]);
+LineSet1470.coord = Coordinate1471;
 
-let HAnimSite1471 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1471.DEF = "hanim_r_carpal_distal_phalanx_2_tip";
-HAnimSite1471.name = "r_carpal_distal_phalanx_2_tip";
-let TouchSensor1472 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1472.description = "HAnimSite r_carpal_distal_phalanx_2_tip";
-HAnimSite1471.children = new MFNode();
+//from r_carpal_proximal_interphalangeal_2 to r_carpal_distal_interphalangeal_2 vertices 2
+let ColorRGBA1472 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1472.USE = "HAnimSegmentLineColorRGBA";
+LineSet1470.color = ColorRGBA1472;
 
-HAnimSite1471.children[0] = TouchSensor1472;
+Shape1469.geometry = LineSet1470;
 
-let Shape1473 = browser.currentScene.createNode("Shape");
-Shape1473.USE = "HAnimSiteShape";
-HAnimSite1471.children[1] = Shape1473;
+HAnimSegment1465.children[1] = Shape1469;
 
-HAnimSegment1463.children[2] = HAnimSite1471;
+let HAnimSite1473 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1473.name = "r_carpal_distal_phalanx_2_tip";
+HAnimSite1473.DEF = "hanim_r_carpal_distal_phalanx_2_tip";
+let TouchSensor1474 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1474.description = "HAnimSite r_carpal_distal_phalanx_2_tip";
+HAnimSite1473.children = new MFNode();
 
-let HAnimSite1474 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1474.DEF = "hanim_r_dactylion_pt";
-HAnimSite1474.name = "r_dactylion_pt";
-HAnimSite1474.translation = new SFVec3f(new float[-0.1941,0.6772,-0.0423]);
-let TouchSensor1475 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1475.description = "HAnimSite r_dactylion_pt";
-HAnimSite1474.children = new MFNode();
+HAnimSite1473.children[0] = TouchSensor1474;
 
-HAnimSite1474.children[0] = TouchSensor1475;
+let Shape1475 = browser.currentScene.createNode("Shape");
+Shape1475.USE = "HAnimSiteShape";
+HAnimSite1473.children[1] = Shape1475;
 
-let Shape1476 = browser.currentScene.createNode("Shape");
-Shape1476.USE = "HAnimSiteShape";
-HAnimSite1474.children[1] = Shape1476;
+HAnimSegment1465.children[2] = HAnimSite1473;
 
-HAnimSegment1463.children[3] = HAnimSite1474;
+let HAnimSite1476 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1476.name = "r_dactylion_pt";
+HAnimSite1476.DEF = "hanim_r_dactylion_pt";
+HAnimSite1476.translation = new SFVec3f(new float[-0.1941,0.6772,-0.0423]);
+let TouchSensor1477 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1477.description = "HAnimSite r_dactylion_pt";
+HAnimSite1476.children = new MFNode();
 
-HAnimJoint1462.children = new MFNode();
+HAnimSite1476.children[0] = TouchSensor1477;
 
-HAnimJoint1462.children[0] = HAnimSegment1463;
+let Shape1478 = browser.currentScene.createNode("Shape");
+Shape1478.USE = "HAnimSiteShape";
+HAnimSite1476.children[1] = Shape1478;
 
-let HAnimJoint1477 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1477.DEF = "hanim_r_carpal_distal_interphalangeal_1";
-HAnimJoint1477.name = "r_carpal_distal_interphalangeal_2";
-HAnimJoint1477.center = new SFVec3f(new float[-0.1945,0.7169,-0.0173]);
-HAnimJoint1462.children[1] = HAnimJoint1477;
+HAnimSegment1465.children[3] = HAnimSite1476;
 
-HAnimJoint1453.children[1] = HAnimJoint1462;
+HAnimJoint1464.children = new MFNode();
 
-HAnimJoint1444.children[1] = HAnimJoint1453;
+HAnimJoint1464.children[0] = HAnimSegment1465;
 
-HAnimJoint1432.children[1] = HAnimJoint1444;
+let HAnimJoint1479 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1479.name = "r_carpal_distal_interphalangeal_2";
+HAnimJoint1479.DEF = "hanim_r_carpal_distal_interphalangeal_2";
+HAnimJoint1479.center = new SFVec3f(new float[-0.1945,0.7169,-0.0173]);
+HAnimJoint1479.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1479.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1464.children[1] = HAnimJoint1479;
 
-HAnimJoint1380.children[2] = HAnimJoint1432;
+HAnimJoint1455.children[1] = HAnimJoint1464;
 
-let HAnimJoint1478 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1478.DEF = "hanim_r_midcarpal_3";
-HAnimJoint1478.name = "r_midcarpal_3";
-HAnimJoint1478.center = new SFVec3f(new float[-8.0405,0.9246,0.2513]);
-let HAnimSegment1479 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1479.DEF = "hanim_r_capitate";
-HAnimSegment1479.name = "r_capitate";
-let Transform1480 = browser.currentScene.createNode("Transform");
-Transform1480.translation = new SFVec3f(new float[-8.0405,0.9246,0.2513]);
-let Transform1481 = browser.currentScene.createNode("Transform");
-let Shape1482 = browser.currentScene.createNode("Shape");
-Shape1482.USE = "HAnimJointShape";
-Transform1481.child = new undefined();
+HAnimJoint1446.children[1] = HAnimJoint1455;
 
-Transform1481.child[0] = Shape1482;
+HAnimJoint1434.children[1] = HAnimJoint1446;
 
-Transform1480.children = new MFNode();
+HAnimJoint1382.children[2] = HAnimJoint1434;
 
-Transform1480.children[0] = Transform1481;
+let HAnimJoint1480 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1480.name = "r_midcarpal_3";
+HAnimJoint1480.DEF = "hanim_r_midcarpal_3";
+HAnimJoint1480.center = new SFVec3f(new float[-8.0405,0.9246,0.2513]);
+HAnimJoint1480.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1480.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1481 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1481.name = "r_capitate";
+HAnimSegment1481.DEF = "hanim_r_capitate";
+let Transform1482 = browser.currentScene.createNode("Transform");
+Transform1482.translation = new SFVec3f(new float[-8.0405,0.9246,0.2513]);
+let Transform1483 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1484 = browser.currentScene.createNode("Shape");
+Shape1484.USE = "HAnimJointShape";
+Transform1483.child = new undefined();
 
-HAnimSegment1479.children = new MFNode();
+Transform1483.child[0] = Shape1484;
 
-HAnimSegment1479.children[0] = Transform1480;
+Transform1482.children = new MFNode();
 
-let Shape1483 = browser.currentScene.createNode("Shape");
-let LineSet1484 = browser.currentScene.createNode("LineSet");
-LineSet1484.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1485 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1485.USE = "HAnimSegmentLineColorRGBA";
-LineSet1484.color = ColorRGBA1485;
+Transform1482.children[0] = Transform1483;
 
-let Coordinate1486 = browser.currentScene.createNode("Coordinate");
-Coordinate1486.point = new MFVec3f(new float[-8.0405,0.9246,0.2513,-0.1972,0.806,-0.0468]);
-LineSet1484.coord = Coordinate1486;
+HAnimSegment1481.children = new MFNode();
 
-Shape1483.geometry = LineSet1484;
+HAnimSegment1481.children[0] = Transform1482;
 
-HAnimSegment1479.children[1] = Shape1483;
+let Shape1485 = browser.currentScene.createNode("Shape");
+let LineSet1486 = browser.currentScene.createNode("LineSet");
+LineSet1486.vertexCount = new MFInt32(new int[2]);
+let Coordinate1487 = browser.currentScene.createNode("Coordinate");
+Coordinate1487.point = new MFVec3f(new float[-8.0405,0.9246,0.2513,-0.1972,0.806,-0.0468]);
+LineSet1486.coord = Coordinate1487;
 
-let HAnimSite1487 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1487.DEF = "hanim_r_metacarpal_phalanx_3_pt";
-HAnimSite1487.name = "r_metacarpal_phalanx_3_pt";
-let TouchSensor1488 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1488.description = "HAnimSite r_metacarpal_phalanx_3_pt";
-HAnimSite1487.children = new MFNode();
+//from r_midcarpal_3 to r_carpometacarpal_3 vertices 2
+let ColorRGBA1488 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1488.USE = "HAnimSegmentLineColorRGBA";
+LineSet1486.color = ColorRGBA1488;
 
-HAnimSite1487.children[0] = TouchSensor1488;
+Shape1485.geometry = LineSet1486;
 
-let Shape1489 = browser.currentScene.createNode("Shape");
-Shape1489.USE = "HAnimSiteShape";
-HAnimSite1487.children[1] = Shape1489;
+HAnimSegment1481.children[1] = Shape1485;
 
-HAnimSegment1479.children[2] = HAnimSite1487;
+let HAnimSite1489 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1489.name = "r_metacarpal_phalanx_3_pt";
+HAnimSite1489.DEF = "hanim_r_metacarpal_phalanx_3_pt";
+let TouchSensor1490 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1490.description = "HAnimSite r_metacarpal_phalanx_3_pt";
+HAnimSite1489.children = new MFNode();
 
-HAnimJoint1478.children = new MFNode();
+HAnimSite1489.children[0] = TouchSensor1490;
 
-HAnimJoint1478.children[0] = HAnimSegment1479;
+let Shape1491 = browser.currentScene.createNode("Shape");
+Shape1491.USE = "HAnimSiteShape";
+HAnimSite1489.children[1] = Shape1491;
 
-let HAnimJoint1490 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1490.DEF = "hanim_r_carpometacarpal_3";
-HAnimJoint1490.name = "r_carpometacarpal_3";
-HAnimJoint1490.center = new SFVec3f(new float[-0.1972,0.806,-0.0468]);
-let HAnimSegment1491 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1491.DEF = "hanim_r_metacarpal_3";
-HAnimSegment1491.name = "r_metacarpal_3";
-let Transform1492 = browser.currentScene.createNode("Transform");
-Transform1492.translation = new SFVec3f(new float[-0.1972,0.806,-0.0468]);
-let Transform1493 = browser.currentScene.createNode("Transform");
-let Shape1494 = browser.currentScene.createNode("Shape");
-Shape1494.USE = "HAnimJointShape";
-Transform1493.child = new undefined();
+HAnimSegment1481.children[2] = HAnimSite1489;
 
-Transform1493.child[0] = Shape1494;
+HAnimJoint1480.children = new MFNode();
 
-Transform1492.children = new MFNode();
+HAnimJoint1480.children[0] = HAnimSegment1481;
 
-Transform1492.children[0] = Transform1493;
+let HAnimJoint1492 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1492.name = "r_carpometacarpal_3";
+HAnimJoint1492.DEF = "hanim_r_carpometacarpal_3";
+HAnimJoint1492.center = new SFVec3f(new float[-0.1972,0.806,-0.0468]);
+HAnimJoint1492.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1492.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1493 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1493.name = "r_metacarpal_3";
+HAnimSegment1493.DEF = "hanim_r_metacarpal_3";
+let Transform1494 = browser.currentScene.createNode("Transform");
+Transform1494.translation = new SFVec3f(new float[-0.1972,0.806,-0.0468]);
+let Transform1495 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1496 = browser.currentScene.createNode("Shape");
+Shape1496.USE = "HAnimJointShape";
+Transform1495.child = new undefined();
 
-HAnimSegment1491.children = new MFNode();
+Transform1495.child[0] = Shape1496;
 
-HAnimSegment1491.children[0] = Transform1492;
+Transform1494.children = new MFNode();
 
-let Shape1495 = browser.currentScene.createNode("Shape");
-let LineSet1496 = browser.currentScene.createNode("LineSet");
-LineSet1496.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1497 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1497.USE = "HAnimSegmentLineColorRGBA";
-LineSet1496.color = ColorRGBA1497;
+Transform1494.children[0] = Transform1495;
 
-let Coordinate1498 = browser.currentScene.createNode("Coordinate");
-Coordinate1498.point = new MFVec3f(new float[-0.1972,0.806,-0.0468,-0.1972,0.7849,-0.0468]);
-LineSet1496.coord = Coordinate1498;
+HAnimSegment1493.children = new MFNode();
 
-Shape1495.geometry = LineSet1496;
+HAnimSegment1493.children[0] = Transform1494;
 
-HAnimSegment1491.children[1] = Shape1495;
+let Shape1497 = browser.currentScene.createNode("Shape");
+let LineSet1498 = browser.currentScene.createNode("LineSet");
+LineSet1498.vertexCount = new MFInt32(new int[2]);
+let Coordinate1499 = browser.currentScene.createNode("Coordinate");
+Coordinate1499.point = new MFVec3f(new float[-0.1972,0.806,-0.0468,-0.1972,0.7849,-0.0468]);
+LineSet1498.coord = Coordinate1499;
 
-HAnimJoint1490.children = new MFNode();
+//from r_carpometacarpal_3 to r_metacarpophalangeal_3 vertices 2
+let ColorRGBA1500 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1500.USE = "HAnimSegmentLineColorRGBA";
+LineSet1498.color = ColorRGBA1500;
 
-HAnimJoint1490.children[0] = HAnimSegment1491;
+Shape1497.geometry = LineSet1498;
 
-let HAnimJoint1499 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1499.DEF = "hanim_r_metacarpophalangeal_3";
-HAnimJoint1499.name = "r_metacarpophalangeal_3";
-HAnimJoint1499.center = new SFVec3f(new float[-0.1972,0.7849,-0.0468]);
-let HAnimSegment1500 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1500.DEF = "hanim_r_carpal_proximal_phalanx_2";
-HAnimSegment1500.name = "r_carpal_proximal_phalanx_3";
-let Transform1501 = browser.currentScene.createNode("Transform");
-Transform1501.translation = new SFVec3f(new float[-0.1972,0.7849,-0.0468]);
-let Transform1502 = browser.currentScene.createNode("Transform");
-let Shape1503 = browser.currentScene.createNode("Shape");
-Shape1503.USE = "HAnimJointShape";
-Transform1502.child = new undefined();
+HAnimSegment1493.children[1] = Shape1497;
 
-Transform1502.child[0] = Shape1503;
+HAnimJoint1492.children = new MFNode();
 
-Transform1501.children = new MFNode();
+HAnimJoint1492.children[0] = HAnimSegment1493;
 
-Transform1501.children[0] = Transform1502;
+let HAnimJoint1501 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1501.name = "r_metacarpophalangeal_3";
+HAnimJoint1501.DEF = "hanim_r_metacarpophalangeal_3";
+HAnimJoint1501.center = new SFVec3f(new float[-0.1972,0.7849,-0.0468]);
+HAnimJoint1501.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1501.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1502 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1502.name = "r_carpal_proximal_phalanx_3";
+HAnimSegment1502.DEF = "hanim_r_carpal_proximal_phalanx_3";
+let Transform1503 = browser.currentScene.createNode("Transform");
+Transform1503.translation = new SFVec3f(new float[-0.1972,0.7849,-0.0468]);
+let Transform1504 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1505 = browser.currentScene.createNode("Shape");
+Shape1505.USE = "HAnimJointShape";
+Transform1504.child = new undefined();
 
-HAnimSegment1500.children = new MFNode();
+Transform1504.child[0] = Shape1505;
 
-HAnimSegment1500.children[0] = Transform1501;
+Transform1503.children = new MFNode();
 
-let Shape1504 = browser.currentScene.createNode("Shape");
-let LineSet1505 = browser.currentScene.createNode("LineSet");
-LineSet1505.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1506 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1506.USE = "HAnimSegmentLineColorRGBA";
-LineSet1505.color = ColorRGBA1506;
+Transform1503.children[0] = Transform1504;
 
-let Coordinate1507 = browser.currentScene.createNode("Coordinate");
-Coordinate1507.point = new MFVec3f(new float[-0.1972,0.7849,-0.0468,-0.195,0.7304,-0.0441]);
-LineSet1505.coord = Coordinate1507;
+HAnimSegment1502.children = new MFNode();
 
-Shape1504.geometry = LineSet1505;
+HAnimSegment1502.children[0] = Transform1503;
 
-HAnimSegment1500.children[1] = Shape1504;
+let Shape1506 = browser.currentScene.createNode("Shape");
+let LineSet1507 = browser.currentScene.createNode("LineSet");
+LineSet1507.vertexCount = new MFInt32(new int[2]);
+let Coordinate1508 = browser.currentScene.createNode("Coordinate");
+Coordinate1508.point = new MFVec3f(new float[-0.1972,0.7849,-0.0468,-0.195,0.7304,-0.0441]);
+LineSet1507.coord = Coordinate1508;
 
-HAnimJoint1499.children = new MFNode();
+//from r_metacarpophalangeal_3 to r_carpal_proximal_interphalangeal_3 vertices 2
+let ColorRGBA1509 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1509.USE = "HAnimSegmentLineColorRGBA";
+LineSet1507.color = ColorRGBA1509;
 
-HAnimJoint1499.children[0] = HAnimSegment1500;
+Shape1506.geometry = LineSet1507;
 
-let HAnimJoint1508 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1508.DEF = "hanim_r_carpal_proximal_interphalangeal_2";
-HAnimJoint1508.name = "r_carpal_proximal_interphalangeal_3";
-HAnimJoint1508.center = new SFVec3f(new float[-0.195,0.7304,-0.0441]);
-let HAnimSegment1509 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1509.DEF = "hanim_r_carpal_middle_phalanx_2";
-HAnimSegment1509.name = "r_carpal_middle_phalanx_3";
-let Transform1510 = browser.currentScene.createNode("Transform");
-Transform1510.translation = new SFVec3f(new float[-0.195,0.7304,-0.0441]);
-let Transform1511 = browser.currentScene.createNode("Transform");
-let Shape1512 = browser.currentScene.createNode("Shape");
-Shape1512.USE = "HAnimJointShape";
-Transform1511.child = new undefined();
+HAnimSegment1502.children[1] = Shape1506;
 
-Transform1511.child[0] = Shape1512;
+HAnimJoint1501.children = new MFNode();
 
-Transform1510.children = new MFNode();
+HAnimJoint1501.children[0] = HAnimSegment1502;
 
-Transform1510.children[0] = Transform1511;
+let HAnimJoint1510 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1510.name = "r_carpal_proximal_interphalangeal_3";
+HAnimJoint1510.DEF = "hanim_r_carpal_proximal_interphalangeal_3";
+HAnimJoint1510.center = new SFVec3f(new float[-0.195,0.7304,-0.0441]);
+HAnimJoint1510.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1510.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1511 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1511.name = "r_carpal_middle_phalanx_3";
+HAnimSegment1511.DEF = "hanim_r_carpal_middle_phalanx_3";
+let Transform1512 = browser.currentScene.createNode("Transform");
+Transform1512.translation = new SFVec3f(new float[-0.195,0.7304,-0.0441]);
+let Transform1513 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1514 = browser.currentScene.createNode("Shape");
+Shape1514.USE = "HAnimJointShape";
+Transform1513.child = new undefined();
 
-HAnimSegment1509.children = new MFNode();
+Transform1513.child[0] = Shape1514;
 
-HAnimSegment1509.children[0] = Transform1510;
+Transform1512.children = new MFNode();
 
-let Shape1513 = browser.currentScene.createNode("Shape");
-let LineSet1514 = browser.currentScene.createNode("LineSet");
-LineSet1514.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1515 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1515.USE = "HAnimSegmentLineColorRGBA";
-LineSet1514.color = ColorRGBA1515;
+Transform1512.children[0] = Transform1513;
 
-let Coordinate1516 = browser.currentScene.createNode("Coordinate");
-Coordinate1516.point = new MFVec3f(new float[-0.195,0.7304,-0.0441,-0.1939,0.7042,-0.0432]);
-LineSet1514.coord = Coordinate1516;
+HAnimSegment1511.children = new MFNode();
 
-Shape1513.geometry = LineSet1514;
+HAnimSegment1511.children[0] = Transform1512;
 
-HAnimSegment1509.children[1] = Shape1513;
+let Shape1515 = browser.currentScene.createNode("Shape");
+let LineSet1516 = browser.currentScene.createNode("LineSet");
+LineSet1516.vertexCount = new MFInt32(new int[2]);
+let Coordinate1517 = browser.currentScene.createNode("Coordinate");
+Coordinate1517.point = new MFVec3f(new float[-0.195,0.7304,-0.0441,-0.1939,0.7042,-0.0432]);
+LineSet1516.coord = Coordinate1517;
 
-let HAnimSite1517 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1517.DEF = "hanim_r_carpal_distal_phalanx_3_tip";
-HAnimSite1517.name = "r_carpal_distal_phalanx_3_tip";
-let TouchSensor1518 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1518.description = "HAnimSite r_carpal_distal_phalanx_3_tip";
-HAnimSite1517.children = new MFNode();
+//from r_carpal_proximal_interphalangeal_3 to r_carpal_distal_interphalangeal_3 vertices 2
+let ColorRGBA1518 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1518.USE = "HAnimSegmentLineColorRGBA";
+LineSet1516.color = ColorRGBA1518;
 
-HAnimSite1517.children[0] = TouchSensor1518;
+Shape1515.geometry = LineSet1516;
 
-let Shape1519 = browser.currentScene.createNode("Shape");
-Shape1519.USE = "HAnimSiteShape";
-HAnimSite1517.children[1] = Shape1519;
+HAnimSegment1511.children[1] = Shape1515;
 
-HAnimSegment1509.children[2] = HAnimSite1517;
+let HAnimSite1519 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1519.name = "r_carpal_distal_phalanx_3_tip";
+HAnimSite1519.DEF = "hanim_r_carpal_distal_phalanx_3_tip";
+let TouchSensor1520 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1520.description = "HAnimSite r_carpal_distal_phalanx_3_tip";
+HAnimSite1519.children = new MFNode();
 
-HAnimJoint1508.children = new MFNode();
+HAnimSite1519.children[0] = TouchSensor1520;
 
-HAnimJoint1508.children[0] = HAnimSegment1509;
+let Shape1521 = browser.currentScene.createNode("Shape");
+Shape1521.USE = "HAnimSiteShape";
+HAnimSite1519.children[1] = Shape1521;
 
-let HAnimJoint1520 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1520.DEF = "hanim_r_carpal_distal_interphalangeal_2";
-HAnimJoint1520.name = "r_carpal_distal_interphalangeal_3";
-HAnimJoint1520.center = new SFVec3f(new float[-0.1939,0.7042,-0.0432]);
-HAnimJoint1508.children[1] = HAnimJoint1520;
+HAnimSegment1511.children[2] = HAnimSite1519;
 
-HAnimJoint1499.children[1] = HAnimJoint1508;
+HAnimJoint1510.children = new MFNode();
 
-HAnimJoint1490.children[1] = HAnimJoint1499;
+HAnimJoint1510.children[0] = HAnimSegment1511;
 
-HAnimJoint1478.children[1] = HAnimJoint1490;
+let HAnimJoint1522 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1522.name = "r_carpal_distal_interphalangeal_3";
+HAnimJoint1522.DEF = "hanim_r_carpal_distal_interphalangeal_3";
+HAnimJoint1522.center = new SFVec3f(new float[-0.1939,0.7042,-0.0432]);
+HAnimJoint1522.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1522.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1510.children[1] = HAnimJoint1522;
 
-HAnimJoint1380.children[3] = HAnimJoint1478;
+HAnimJoint1501.children[1] = HAnimJoint1510;
 
-let HAnimJoint1521 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1521.DEF = "hanim_r_midcarpal_4_1";
-HAnimJoint1521.name = "r_midcarpal_4_5";
-HAnimJoint1521.center = new SFVec3f(new float[-8.0405,0.921,-0.6795]);
-let HAnimSegment1522 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1522.DEF = "hanim_r_hamate";
-HAnimSegment1522.name = "r_hamate";
-let Transform1523 = browser.currentScene.createNode("Transform");
-Transform1523.translation = new SFVec3f(new float[-8.0405,0.921,-0.6795]);
-let Transform1524 = browser.currentScene.createNode("Transform");
-let Shape1525 = browser.currentScene.createNode("Shape");
-Shape1525.USE = "HAnimJointShape";
-Transform1524.child = new undefined();
+HAnimJoint1492.children[1] = HAnimJoint1501;
 
-Transform1524.child[0] = Shape1525;
+HAnimJoint1480.children[1] = HAnimJoint1492;
 
-Transform1523.children = new MFNode();
+HAnimJoint1382.children[3] = HAnimJoint1480;
 
-Transform1523.children[0] = Transform1524;
+let HAnimJoint1523 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1523.name = "r_midcarpal_4_5";
+HAnimJoint1523.DEF = "hanim_r_midcarpal_4_5";
+HAnimJoint1523.center = new SFVec3f(new float[-8.0405,0.921,-0.6795]);
+HAnimJoint1523.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1523.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1524 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1524.name = "r_hamate";
+HAnimSegment1524.DEF = "hanim_r_hamate";
+let Transform1525 = browser.currentScene.createNode("Transform");
+Transform1525.translation = new SFVec3f(new float[-8.0405,0.921,-0.6795]);
+let Transform1526 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1527 = browser.currentScene.createNode("Shape");
+Shape1527.USE = "HAnimJointShape";
+Transform1526.child = new undefined();
 
-HAnimSegment1522.children = new MFNode();
+Transform1526.child[0] = Shape1527;
 
-HAnimSegment1522.children[0] = Transform1523;
+Transform1525.children = new MFNode();
 
-let Shape1526 = browser.currentScene.createNode("Shape");
-let LineSet1527 = browser.currentScene.createNode("LineSet");
-LineSet1527.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1528 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1528.USE = "HAnimSegmentLineColorRGBA";
-LineSet1527.color = ColorRGBA1528;
+Transform1525.children[0] = Transform1526;
 
-let Coordinate1529 = browser.currentScene.createNode("Coordinate");
-Coordinate1529.point = new MFVec3f(new float[-8.0405,0.921,-0.6795,-0.1951,0.8049,-0.0732]);
-LineSet1527.coord = Coordinate1529;
+HAnimSegment1524.children = new MFNode();
 
-Shape1526.geometry = LineSet1527;
+HAnimSegment1524.children[0] = Transform1525;
 
-HAnimSegment1522.children[1] = Shape1526;
+let Shape1528 = browser.currentScene.createNode("Shape");
+let LineSet1529 = browser.currentScene.createNode("LineSet");
+LineSet1529.vertexCount = new MFInt32(new int[2]);
+let Coordinate1530 = browser.currentScene.createNode("Coordinate");
+Coordinate1530.point = new MFVec3f(new float[-8.0405,0.921,-0.6795,-0.1951,0.8049,-0.0732]);
+LineSet1529.coord = Coordinate1530;
 
-let Shape1530 = browser.currentScene.createNode("Shape");
-let LineSet1531 = browser.currentScene.createNode("LineSet");
-LineSet1531.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1532 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1532.USE = "HAnimSegmentLineColorRGBA";
-LineSet1531.color = ColorRGBA1532;
+//from r_midcarpal_4_5 to r_carpometacarpal_4 vertices 2
+let ColorRGBA1531 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1531.USE = "HAnimSegmentLineColorRGBA";
+LineSet1529.color = ColorRGBA1531;
 
-let Coordinate1533 = browser.currentScene.createNode("Coordinate");
-Coordinate1533.point = new MFVec3f(new float[-8.0405,0.921,-0.6795,-0.1926,0.8096,-0.0975]);
-LineSet1531.coord = Coordinate1533;
+Shape1528.geometry = LineSet1529;
 
-Shape1530.geometry = LineSet1531;
+HAnimSegment1524.children[1] = Shape1528;
 
-HAnimSegment1522.children[2] = Shape1530;
+let Shape1532 = browser.currentScene.createNode("Shape");
+let LineSet1533 = browser.currentScene.createNode("LineSet");
+LineSet1533.vertexCount = new MFInt32(new int[2]);
+let Coordinate1534 = browser.currentScene.createNode("Coordinate");
+Coordinate1534.point = new MFVec3f(new float[-8.0405,0.921,-0.6795,-0.1926,0.8096,-0.0975]);
+LineSet1533.coord = Coordinate1534;
 
-let HAnimSite1534 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1534.DEF = "hanim_r_metacarpal_phalanx_5_pt";
-HAnimSite1534.name = "r_metacarpal_phalanx_5_pt";
-HAnimSite1534.translation = new SFVec3f(new float[-0.1929,0.789,-0.1064]);
-let TouchSensor1535 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1535.description = "HAnimSite r_metacarpal_phalanx_5_pt";
-HAnimSite1534.children = new MFNode();
+//from r_midcarpal_4_5 to r_carpometacarpal_5 vertices 2
+let ColorRGBA1535 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1535.USE = "HAnimSegmentLineColorRGBA";
+LineSet1533.color = ColorRGBA1535;
 
-HAnimSite1534.children[0] = TouchSensor1535;
+Shape1532.geometry = LineSet1533;
 
-let Shape1536 = browser.currentScene.createNode("Shape");
-Shape1536.USE = "HAnimSiteShape";
-HAnimSite1534.children[1] = Shape1536;
+HAnimSegment1524.children[2] = Shape1532;
 
-HAnimSegment1522.children[3] = HAnimSite1534;
+let HAnimSite1536 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1536.name = "r_metacarpal_phalanx_5_pt";
+HAnimSite1536.DEF = "hanim_r_metacarpal_phalanx_5_pt";
+HAnimSite1536.translation = new SFVec3f(new float[-0.1929,0.789,-0.1064]);
+let TouchSensor1537 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1537.description = "HAnimSite r_metacarpal_phalanx_5_pt";
+HAnimSite1536.children = new MFNode();
 
-HAnimJoint1521.children = new MFNode();
+HAnimSite1536.children[0] = TouchSensor1537;
 
-HAnimJoint1521.children[0] = HAnimSegment1522;
+let Shape1538 = browser.currentScene.createNode("Shape");
+Shape1538.USE = "HAnimSiteShape";
+HAnimSite1536.children[1] = Shape1538;
 
-let HAnimJoint1537 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1537.DEF = "hanim_r_carpometacarpal_4";
-HAnimJoint1537.name = "r_carpometacarpal_4";
-HAnimJoint1537.center = new SFVec3f(new float[-0.1951,0.8049,-0.0732]);
-let HAnimSegment1538 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1538.DEF = "hanim_r_metacarpal_4";
-HAnimSegment1538.name = "r_metacarpal_4";
-let Transform1539 = browser.currentScene.createNode("Transform");
-Transform1539.translation = new SFVec3f(new float[-0.1951,0.8049,-0.0732]);
-let Transform1540 = browser.currentScene.createNode("Transform");
-let Shape1541 = browser.currentScene.createNode("Shape");
-Shape1541.USE = "HAnimJointShape";
-Transform1540.child = new undefined();
+HAnimSegment1524.children[3] = HAnimSite1536;
 
-Transform1540.child[0] = Shape1541;
+HAnimJoint1523.children = new MFNode();
 
-Transform1539.children = new MFNode();
+HAnimJoint1523.children[0] = HAnimSegment1524;
 
-Transform1539.children[0] = Transform1540;
+let HAnimJoint1539 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1539.name = "r_carpometacarpal_4";
+HAnimJoint1539.DEF = "hanim_r_carpometacarpal_4";
+HAnimJoint1539.center = new SFVec3f(new float[-0.1951,0.8049,-0.0732]);
+HAnimJoint1539.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1539.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1540 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1540.name = "r_metacarpal_4";
+HAnimSegment1540.DEF = "hanim_r_metacarpal_4";
+let Transform1541 = browser.currentScene.createNode("Transform");
+Transform1541.translation = new SFVec3f(new float[-0.1951,0.8049,-0.0732]);
+let Transform1542 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1543 = browser.currentScene.createNode("Shape");
+Shape1543.USE = "HAnimJointShape";
+Transform1542.child = new undefined();
 
-HAnimSegment1538.children = new MFNode();
+Transform1542.child[0] = Shape1543;
 
-HAnimSegment1538.children[0] = Transform1539;
+Transform1541.children = new MFNode();
 
-let Shape1542 = browser.currentScene.createNode("Shape");
-let LineSet1543 = browser.currentScene.createNode("LineSet");
-LineSet1543.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1544 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1544.USE = "HAnimSegmentLineColorRGBA";
-LineSet1543.color = ColorRGBA1544;
+Transform1541.children[0] = Transform1542;
 
-let Coordinate1545 = browser.currentScene.createNode("Coordinate");
-Coordinate1545.point = new MFVec3f(new float[-0.1951,0.8049,-0.0732,-0.1951,0.7845,-0.0732]);
-LineSet1543.coord = Coordinate1545;
+HAnimSegment1540.children = new MFNode();
 
-Shape1542.geometry = LineSet1543;
+HAnimSegment1540.children[0] = Transform1541;
 
-HAnimSegment1538.children[1] = Shape1542;
+let Shape1544 = browser.currentScene.createNode("Shape");
+let LineSet1545 = browser.currentScene.createNode("LineSet");
+LineSet1545.vertexCount = new MFInt32(new int[2]);
+let Coordinate1546 = browser.currentScene.createNode("Coordinate");
+Coordinate1546.point = new MFVec3f(new float[-0.1951,0.8049,-0.0732,-0.1951,0.7845,-0.0732]);
+LineSet1545.coord = Coordinate1546;
 
-HAnimJoint1537.children = new MFNode();
+//from r_carpometacarpal_4 to r_metacarpophalangeal_4 vertices 2
+let ColorRGBA1547 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1547.USE = "HAnimSegmentLineColorRGBA";
+LineSet1545.color = ColorRGBA1547;
 
-HAnimJoint1537.children[0] = HAnimSegment1538;
+Shape1544.geometry = LineSet1545;
 
-let HAnimJoint1546 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1546.DEF = "hanim_r_metacarpophalangeal_4";
-HAnimJoint1546.name = "r_metacarpophalangeal_4";
-HAnimJoint1546.center = new SFVec3f(new float[-0.1951,0.7845,-0.0732]);
-let HAnimSegment1547 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1547.DEF = "hanim_r_carpal_proximal_phalanx_3";
-HAnimSegment1547.name = "r_carpal_proximal_phalanx_4";
-let Transform1548 = browser.currentScene.createNode("Transform");
-Transform1548.translation = new SFVec3f(new float[-0.1951,0.7845,-0.0732]);
-let Transform1549 = browser.currentScene.createNode("Transform");
-let Shape1550 = browser.currentScene.createNode("Shape");
-Shape1550.USE = "HAnimJointShape";
-Transform1549.child = new undefined();
+HAnimSegment1540.children[1] = Shape1544;
 
-Transform1549.child[0] = Shape1550;
+HAnimJoint1539.children = new MFNode();
 
-Transform1548.children = new MFNode();
+HAnimJoint1539.children[0] = HAnimSegment1540;
 
-Transform1548.children[0] = Transform1549;
+let HAnimJoint1548 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1548.name = "r_metacarpophalangeal_4";
+HAnimJoint1548.DEF = "hanim_r_metacarpophalangeal_4";
+HAnimJoint1548.center = new SFVec3f(new float[-0.1951,0.7845,-0.0732]);
+HAnimJoint1548.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1548.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1549 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1549.name = "r_carpal_proximal_phalanx_4";
+HAnimSegment1549.DEF = "hanim_r_carpal_proximal_phalanx_4";
+let Transform1550 = browser.currentScene.createNode("Transform");
+Transform1550.translation = new SFVec3f(new float[-0.1951,0.7845,-0.0732]);
+let Transform1551 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1552 = browser.currentScene.createNode("Shape");
+Shape1552.USE = "HAnimJointShape";
+Transform1551.child = new undefined();
 
-HAnimSegment1547.children = new MFNode();
+Transform1551.child[0] = Shape1552;
 
-HAnimSegment1547.children[0] = Transform1548;
+Transform1550.children = new MFNode();
 
-let Shape1551 = browser.currentScene.createNode("Shape");
-let LineSet1552 = browser.currentScene.createNode("LineSet");
-LineSet1552.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1553 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1553.USE = "HAnimSegmentLineColorRGBA";
-LineSet1552.color = ColorRGBA1553;
+Transform1550.children[0] = Transform1551;
 
-let Coordinate1554 = browser.currentScene.createNode("Coordinate");
-Coordinate1554.point = new MFVec3f(new float[-0.1951,0.7845,-0.0732,-0.192,0.7318,-0.0716]);
-LineSet1552.coord = Coordinate1554;
+HAnimSegment1549.children = new MFNode();
 
-Shape1551.geometry = LineSet1552;
+HAnimSegment1549.children[0] = Transform1550;
 
-HAnimSegment1547.children[1] = Shape1551;
+let Shape1553 = browser.currentScene.createNode("Shape");
+let LineSet1554 = browser.currentScene.createNode("LineSet");
+LineSet1554.vertexCount = new MFInt32(new int[2]);
+let Coordinate1555 = browser.currentScene.createNode("Coordinate");
+Coordinate1555.point = new MFVec3f(new float[-0.1951,0.7845,-0.0732,-0.192,0.7318,-0.0716]);
+LineSet1554.coord = Coordinate1555;
 
-HAnimJoint1546.children = new MFNode();
+//from r_metacarpophalangeal_4 to r_carpal_proximal_interphalangeal_4 vertices 2
+let ColorRGBA1556 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1556.USE = "HAnimSegmentLineColorRGBA";
+LineSet1554.color = ColorRGBA1556;
 
-HAnimJoint1546.children[0] = HAnimSegment1547;
+Shape1553.geometry = LineSet1554;
 
-let HAnimJoint1555 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1555.DEF = "hanim_r_carpal_proximal_interphalangeal_3";
-HAnimJoint1555.name = "r_carpal_proximal_interphalangeal_4";
-HAnimJoint1555.center = new SFVec3f(new float[-0.192,0.7318,-0.0716]);
-let HAnimSegment1556 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1556.DEF = "hanim_r_carpal_middle_phalanx_3";
-HAnimSegment1556.name = "r_carpal_middle_phalanx_4";
-let Transform1557 = browser.currentScene.createNode("Transform");
-Transform1557.translation = new SFVec3f(new float[-0.192,0.7318,-0.0716]);
-let Transform1558 = browser.currentScene.createNode("Transform");
-let Shape1559 = browser.currentScene.createNode("Shape");
-Shape1559.USE = "HAnimJointShape";
-Transform1558.child = new undefined();
+HAnimSegment1549.children[1] = Shape1553;
 
-Transform1558.child[0] = Shape1559;
+HAnimJoint1548.children = new MFNode();
 
-Transform1557.children = new MFNode();
+HAnimJoint1548.children[0] = HAnimSegment1549;
 
-Transform1557.children[0] = Transform1558;
+let HAnimJoint1557 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1557.name = "r_carpal_proximal_interphalangeal_4";
+HAnimJoint1557.DEF = "hanim_r_carpal_proximal_interphalangeal_4";
+HAnimJoint1557.center = new SFVec3f(new float[-0.192,0.7318,-0.0716]);
+HAnimJoint1557.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1557.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1558 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1558.name = "r_carpal_middle_phalanx_4";
+HAnimSegment1558.DEF = "hanim_r_carpal_middle_phalanx_4";
+let Transform1559 = browser.currentScene.createNode("Transform");
+Transform1559.translation = new SFVec3f(new float[-0.192,0.7318,-0.0716]);
+let Transform1560 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1561 = browser.currentScene.createNode("Shape");
+Shape1561.USE = "HAnimJointShape";
+Transform1560.child = new undefined();
 
-HAnimSegment1556.children = new MFNode();
+Transform1560.child[0] = Shape1561;
 
-HAnimSegment1556.children[0] = Transform1557;
+Transform1559.children = new MFNode();
 
-let Shape1560 = browser.currentScene.createNode("Shape");
-let LineSet1561 = browser.currentScene.createNode("LineSet");
-LineSet1561.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1562 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1562.USE = "HAnimSegmentLineColorRGBA";
-LineSet1561.color = ColorRGBA1562;
+Transform1559.children[0] = Transform1560;
 
-let Coordinate1563 = browser.currentScene.createNode("Coordinate");
-Coordinate1563.point = new MFVec3f(new float[-0.192,0.7318,-0.0716,-0.1908,0.7077,-0.0706]);
-LineSet1561.coord = Coordinate1563;
+HAnimSegment1558.children = new MFNode();
 
-Shape1560.geometry = LineSet1561;
+HAnimSegment1558.children[0] = Transform1559;
 
-HAnimSegment1556.children[1] = Shape1560;
+let Shape1562 = browser.currentScene.createNode("Shape");
+let LineSet1563 = browser.currentScene.createNode("LineSet");
+LineSet1563.vertexCount = new MFInt32(new int[2]);
+let Coordinate1564 = browser.currentScene.createNode("Coordinate");
+Coordinate1564.point = new MFVec3f(new float[-0.192,0.7318,-0.0716,-0.1908,0.7077,-0.0706]);
+LineSet1563.coord = Coordinate1564;
 
-let HAnimSite1564 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1564.DEF = "hanim_r_carpal_distal_phalanx_4_tip";
-HAnimSite1564.name = "r_carpal_distal_phalanx_4_tip";
-let TouchSensor1565 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1565.description = "HAnimSite r_carpal_distal_phalanx_4_tip";
-HAnimSite1564.children = new MFNode();
+//from r_carpal_proximal_interphalangeal_4 to r_carpal_distal_interphalangeal_4 vertices 2
+let ColorRGBA1565 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1565.USE = "HAnimSegmentLineColorRGBA";
+LineSet1563.color = ColorRGBA1565;
 
-HAnimSite1564.children[0] = TouchSensor1565;
+Shape1562.geometry = LineSet1563;
 
-let Shape1566 = browser.currentScene.createNode("Shape");
-Shape1566.USE = "HAnimSiteShape";
-HAnimSite1564.children[1] = Shape1566;
+HAnimSegment1558.children[1] = Shape1562;
 
-HAnimSegment1556.children[2] = HAnimSite1564;
+let HAnimSite1566 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1566.name = "r_carpal_distal_phalanx_4_tip";
+HAnimSite1566.DEF = "hanim_r_carpal_distal_phalanx_4_tip";
+let TouchSensor1567 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1567.description = "HAnimSite r_carpal_distal_phalanx_4_tip";
+HAnimSite1566.children = new MFNode();
 
-HAnimJoint1555.children = new MFNode();
+HAnimSite1566.children[0] = TouchSensor1567;
 
-HAnimJoint1555.children[0] = HAnimSegment1556;
+let Shape1568 = browser.currentScene.createNode("Shape");
+Shape1568.USE = "HAnimSiteShape";
+HAnimSite1566.children[1] = Shape1568;
 
-let HAnimJoint1567 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1567.DEF = "hanim_r_carpal_distal_interphalangeal_3";
-HAnimJoint1567.name = "r_carpal_distal_interphalangeal_4";
-HAnimJoint1567.center = new SFVec3f(new float[-0.1908,0.7077,-0.0706]);
-HAnimJoint1555.children[1] = HAnimJoint1567;
+HAnimSegment1558.children[2] = HAnimSite1566;
 
-HAnimJoint1546.children[1] = HAnimJoint1555;
+HAnimJoint1557.children = new MFNode();
 
-HAnimJoint1537.children[1] = HAnimJoint1546;
+HAnimJoint1557.children[0] = HAnimSegment1558;
 
-HAnimJoint1521.children[1] = HAnimJoint1537;
+let HAnimJoint1569 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1569.name = "r_carpal_distal_interphalangeal_4";
+HAnimJoint1569.DEF = "hanim_r_carpal_distal_interphalangeal_4";
+HAnimJoint1569.center = new SFVec3f(new float[-0.1908,0.7077,-0.0706]);
+HAnimJoint1569.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1569.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1557.children[1] = HAnimJoint1569;
 
-let HAnimJoint1568 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1568.DEF = "hanim_r_carpometacarpal_5";
-HAnimJoint1568.name = "r_carpometacarpal_5";
-HAnimJoint1568.center = new SFVec3f(new float[-0.1926,0.8096,-0.0975]);
-let HAnimSegment1569 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1569.DEF = "hanim_r_metacarpal_5";
-HAnimSegment1569.name = "r_metacarpal_5";
-let Transform1570 = browser.currentScene.createNode("Transform");
-Transform1570.translation = new SFVec3f(new float[-0.1926,0.8096,-0.0975]);
-let Transform1571 = browser.currentScene.createNode("Transform");
-let Shape1572 = browser.currentScene.createNode("Shape");
-Shape1572.USE = "HAnimJointShape";
-Transform1571.child = new undefined();
+HAnimJoint1548.children[1] = HAnimJoint1557;
 
-Transform1571.child[0] = Shape1572;
+HAnimJoint1539.children[1] = HAnimJoint1548;
 
-Transform1570.children = new MFNode();
+HAnimJoint1523.children[1] = HAnimJoint1539;
 
-Transform1570.children[0] = Transform1571;
+let HAnimJoint1570 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1570.name = "r_carpometacarpal_5";
+HAnimJoint1570.DEF = "hanim_r_carpometacarpal_5";
+HAnimJoint1570.center = new SFVec3f(new float[-0.1926,0.8096,-0.0975]);
+HAnimJoint1570.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1570.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1571 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1571.name = "r_metacarpal_5";
+HAnimSegment1571.DEF = "hanim_r_metacarpal_5";
+let Transform1572 = browser.currentScene.createNode("Transform");
+Transform1572.translation = new SFVec3f(new float[-0.1926,0.8096,-0.0975]);
+let Transform1573 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1574 = browser.currentScene.createNode("Shape");
+Shape1574.USE = "HAnimJointShape";
+Transform1573.child = new undefined();
 
-HAnimSegment1569.children = new MFNode();
+Transform1573.child[0] = Shape1574;
 
-HAnimSegment1569.children[0] = Transform1570;
+Transform1572.children = new MFNode();
 
-let Shape1573 = browser.currentScene.createNode("Shape");
-let LineSet1574 = browser.currentScene.createNode("LineSet");
-LineSet1574.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1575 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1575.USE = "HAnimSegmentLineColorRGBA";
-LineSet1574.color = ColorRGBA1575;
+Transform1572.children[0] = Transform1573;
 
-let Coordinate1576 = browser.currentScene.createNode("Coordinate");
-Coordinate1576.point = new MFVec3f(new float[-0.1926,0.8096,-0.0975,-0.1926,0.7896,-0.0975]);
-LineSet1574.coord = Coordinate1576;
+HAnimSegment1571.children = new MFNode();
 
-Shape1573.geometry = LineSet1574;
+HAnimSegment1571.children[0] = Transform1572;
 
-HAnimSegment1569.children[1] = Shape1573;
+let Shape1575 = browser.currentScene.createNode("Shape");
+let LineSet1576 = browser.currentScene.createNode("LineSet");
+LineSet1576.vertexCount = new MFInt32(new int[2]);
+let Coordinate1577 = browser.currentScene.createNode("Coordinate");
+Coordinate1577.point = new MFVec3f(new float[-0.1926,0.8096,-0.0975,-0.1926,0.7896,-0.0975]);
+LineSet1576.coord = Coordinate1577;
 
-HAnimJoint1568.children = new MFNode();
+//from r_carpometacarpal_5 to r_metacarpophalangeal_5 vertices 2
+let ColorRGBA1578 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1578.USE = "HAnimSegmentLineColorRGBA";
+LineSet1576.color = ColorRGBA1578;
 
-HAnimJoint1568.children[0] = HAnimSegment1569;
+Shape1575.geometry = LineSet1576;
 
-let HAnimJoint1577 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1577.DEF = "hanim_r_metacarpophalangeal_5";
-HAnimJoint1577.name = "r_metacarpophalangeal_5";
-HAnimJoint1577.center = new SFVec3f(new float[-0.1926,0.7896,-0.0975]);
-let HAnimSegment1578 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1578.DEF = "hanim_r_carpal_proximal_phalanx_4";
-HAnimSegment1578.name = "r_carpal_proximal_phalanx_5";
-let Transform1579 = browser.currentScene.createNode("Transform");
-Transform1579.translation = new SFVec3f(new float[-0.1926,0.7896,-0.0975]);
-let Transform1580 = browser.currentScene.createNode("Transform");
-let Shape1581 = browser.currentScene.createNode("Shape");
-Shape1581.USE = "HAnimJointShape";
-Transform1580.child = new undefined();
+HAnimSegment1571.children[1] = Shape1575;
 
-Transform1580.child[0] = Shape1581;
+HAnimJoint1570.children = new MFNode();
 
-Transform1579.children = new MFNode();
+HAnimJoint1570.children[0] = HAnimSegment1571;
 
-Transform1579.children[0] = Transform1580;
+let HAnimJoint1579 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1579.name = "r_metacarpophalangeal_5";
+HAnimJoint1579.DEF = "hanim_r_metacarpophalangeal_5";
+HAnimJoint1579.center = new SFVec3f(new float[-0.1926,0.7896,-0.0975]);
+HAnimJoint1579.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1579.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1580 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1580.name = "r_carpal_proximal_phalanx_5";
+HAnimSegment1580.DEF = "hanim_r_carpal_proximal_phalanx_5";
+let Transform1581 = browser.currentScene.createNode("Transform");
+Transform1581.translation = new SFVec3f(new float[-0.1926,0.7896,-0.0975]);
+let Transform1582 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1583 = browser.currentScene.createNode("Shape");
+Shape1583.USE = "HAnimJointShape";
+Transform1582.child = new undefined();
 
-HAnimSegment1578.children = new MFNode();
+Transform1582.child[0] = Shape1583;
 
-HAnimSegment1578.children[0] = Transform1579;
+Transform1581.children = new MFNode();
 
-let Shape1582 = browser.currentScene.createNode("Shape");
-let LineSet1583 = browser.currentScene.createNode("LineSet");
-LineSet1583.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1584 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1584.USE = "HAnimSegmentLineColorRGBA";
-LineSet1583.color = ColorRGBA1584;
+Transform1581.children[0] = Transform1582;
 
-let Coordinate1585 = browser.currentScene.createNode("Coordinate");
-Coordinate1585.point = new MFVec3f(new float[-0.1926,0.7896,-0.0975,-0.1902,0.7483,-0.0963]);
-LineSet1583.coord = Coordinate1585;
+HAnimSegment1580.children = new MFNode();
 
-Shape1582.geometry = LineSet1583;
+HAnimSegment1580.children[0] = Transform1581;
 
-HAnimSegment1578.children[1] = Shape1582;
+let Shape1584 = browser.currentScene.createNode("Shape");
+let LineSet1585 = browser.currentScene.createNode("LineSet");
+LineSet1585.vertexCount = new MFInt32(new int[2]);
+let Coordinate1586 = browser.currentScene.createNode("Coordinate");
+Coordinate1586.point = new MFVec3f(new float[-0.1926,0.7896,-0.0975,-0.1902,0.7483,-0.0963]);
+LineSet1585.coord = Coordinate1586;
 
-HAnimJoint1577.children = new MFNode();
+//from r_metacarpophalangeal_5 to r_carpal_proximal_interphalangeal_5 vertices 2
+let ColorRGBA1587 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1587.USE = "HAnimSegmentLineColorRGBA";
+LineSet1585.color = ColorRGBA1587;
 
-HAnimJoint1577.children[0] = HAnimSegment1578;
+Shape1584.geometry = LineSet1585;
 
-let HAnimJoint1586 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1586.DEF = "hanim_r_carpal_proximal_interphalangeal_4";
-HAnimJoint1586.name = "r_carpal_proximal_interphalangeal_5";
-HAnimJoint1586.center = new SFVec3f(new float[-0.1902,0.7483,-0.0963]);
-let HAnimSegment1587 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1587.DEF = "hanim_r_carpal_middle_phalanx_4";
-HAnimSegment1587.name = "r_carpal_middle_phalanx_5";
-let Transform1588 = browser.currentScene.createNode("Transform");
-Transform1588.translation = new SFVec3f(new float[-0.1902,0.7483,-0.0963]);
-let Transform1589 = browser.currentScene.createNode("Transform");
-let Shape1590 = browser.currentScene.createNode("Shape");
-Shape1590.USE = "HAnimJointShape";
-Transform1589.child = new undefined();
+HAnimSegment1580.children[1] = Shape1584;
 
-Transform1589.child[0] = Shape1590;
+HAnimJoint1579.children = new MFNode();
 
-Transform1588.children = new MFNode();
+HAnimJoint1579.children[0] = HAnimSegment1580;
 
-Transform1588.children[0] = Transform1589;
+let HAnimJoint1588 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1588.name = "r_carpal_proximal_interphalangeal_5";
+HAnimJoint1588.DEF = "hanim_r_carpal_proximal_interphalangeal_5";
+HAnimJoint1588.center = new SFVec3f(new float[-0.1902,0.7483,-0.0963]);
+HAnimJoint1588.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1588.llimit = new MFFloat(new float[0,0,0]);
+let HAnimSegment1589 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1589.name = "r_carpal_middle_phalanx_5";
+HAnimSegment1589.DEF = "hanim_r_carpal_middle_phalanx_5";
+let Transform1590 = browser.currentScene.createNode("Transform");
+Transform1590.translation = new SFVec3f(new float[-0.1902,0.7483,-0.0963]);
+let Transform1591 = browser.currentScene.createNode("Transform");
+//Empty Transform
+let Shape1592 = browser.currentScene.createNode("Shape");
+Shape1592.USE = "HAnimJointShape";
+Transform1591.child = new undefined();
 
-HAnimSegment1587.children = new MFNode();
+Transform1591.child[0] = Shape1592;
 
-HAnimSegment1587.children[0] = Transform1588;
+Transform1590.children = new MFNode();
 
-let Shape1591 = browser.currentScene.createNode("Shape");
-let LineSet1592 = browser.currentScene.createNode("LineSet");
-LineSet1592.vertexCount = new MFInt32(new int[2]);
-let ColorRGBA1593 = browser.currentScene.createNode("ColorRGBA");
-ColorRGBA1593.USE = "HAnimSegmentLineColorRGBA";
-LineSet1592.color = ColorRGBA1593;
+Transform1590.children[0] = Transform1591;
 
-let Coordinate1594 = browser.currentScene.createNode("Coordinate");
-Coordinate1594.point = new MFVec3f(new float[-0.1902,0.7483,-0.0963,-0.1908,0.754,-0.096]);
-LineSet1592.coord = Coordinate1594;
+HAnimSegment1589.children = new MFNode();
 
-Shape1591.geometry = LineSet1592;
+HAnimSegment1589.children[0] = Transform1590;
 
-HAnimSegment1587.children[1] = Shape1591;
+let Shape1593 = browser.currentScene.createNode("Shape");
+let LineSet1594 = browser.currentScene.createNode("LineSet");
+LineSet1594.vertexCount = new MFInt32(new int[2]);
+let Coordinate1595 = browser.currentScene.createNode("Coordinate");
+Coordinate1595.point = new MFVec3f(new float[-0.1902,0.7483,-0.0963,-0.1908,0.754,-0.096]);
+LineSet1594.coord = Coordinate1595;
 
-let HAnimSite1595 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1595.DEF = "hanim_r_carpal_distal_phalanx_5_tip";
-HAnimSite1595.name = "r_carpal_distal_phalanx_5_tip";
-let TouchSensor1596 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1596.description = "HAnimSite r_carpal_distal_phalanx_5_tip";
-HAnimSite1595.children = new MFNode();
+//from r_carpal_proximal_interphalangeal_5 to r_carpal_distal_interphalangeal_5 vertices 2
+let ColorRGBA1596 = browser.currentScene.createNode("ColorRGBA");
+ColorRGBA1596.USE = "HAnimSegmentLineColorRGBA";
+LineSet1594.color = ColorRGBA1596;
 
-HAnimSite1595.children[0] = TouchSensor1596;
+Shape1593.geometry = LineSet1594;
 
-let Shape1597 = browser.currentScene.createNode("Shape");
-Shape1597.USE = "HAnimSiteShape";
-HAnimSite1595.children[1] = Shape1597;
+HAnimSegment1589.children[1] = Shape1593;
 
-HAnimSegment1587.children[2] = HAnimSite1595;
+let HAnimSite1597 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1597.name = "r_carpal_distal_phalanx_5_tip";
+HAnimSite1597.DEF = "hanim_r_carpal_distal_phalanx_5_tip";
+let TouchSensor1598 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1598.description = "HAnimSite r_carpal_distal_phalanx_5_tip";
+HAnimSite1597.children = new MFNode();
 
-HAnimJoint1586.children = new MFNode();
+HAnimSite1597.children[0] = TouchSensor1598;
 
-HAnimJoint1586.children[0] = HAnimSegment1587;
+let Shape1599 = browser.currentScene.createNode("Shape");
+Shape1599.USE = "HAnimSiteShape";
+HAnimSite1597.children[1] = Shape1599;
 
-let HAnimJoint1598 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1598.DEF = "hanim_r_carpal_distal_interphalangeal_4";
-HAnimJoint1598.name = "r_carpal_distal_interphalangeal_5";
-HAnimJoint1598.center = new SFVec3f(new float[-0.1908,0.754,-0.096]);
-HAnimJoint1586.children[1] = HAnimJoint1598;
+HAnimSegment1589.children[2] = HAnimSite1597;
 
-HAnimJoint1577.children[1] = HAnimJoint1586;
+HAnimJoint1588.children = new MFNode();
 
-HAnimJoint1568.children[1] = HAnimJoint1577;
+HAnimJoint1588.children[0] = HAnimSegment1589;
 
-HAnimJoint1521.children[2] = HAnimJoint1568;
+let HAnimJoint1600 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1600.name = "r_carpal_distal_interphalangeal_5";
+HAnimJoint1600.DEF = "hanim_r_carpal_distal_interphalangeal_5";
+HAnimJoint1600.center = new SFVec3f(new float[-0.1908,0.754,-0.096]);
+HAnimJoint1600.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1600.llimit = new MFFloat(new float[0,0,0]);
+HAnimJoint1588.children[1] = HAnimJoint1600;
 
-HAnimJoint1380.children[4] = HAnimJoint1521;
+HAnimJoint1579.children[1] = HAnimJoint1588;
 
-HAnimJoint1368.children[1] = HAnimJoint1380;
+HAnimJoint1570.children[1] = HAnimJoint1579;
 
-HAnimJoint1347.children[1] = HAnimJoint1368;
+HAnimJoint1523.children[2] = HAnimJoint1570;
 
-HAnimJoint1332.children[1] = HAnimJoint1347;
+HAnimJoint1382.children[4] = HAnimJoint1523;
 
-HAnimJoint1323.children[1] = HAnimJoint1332;
+HAnimJoint1370.children[1] = HAnimJoint1382;
 
-HAnimJoint843.children[3] = HAnimJoint1323;
+HAnimJoint1349.children[1] = HAnimJoint1370;
 
-HAnimJoint828.children[1] = HAnimJoint843;
+HAnimJoint1334.children[1] = HAnimJoint1349;
 
-HAnimJoint819.children[1] = HAnimJoint828;
+HAnimJoint1325.children[1] = HAnimJoint1334;
 
-HAnimJoint810.children[1] = HAnimJoint819;
+HAnimJoint845.children[3] = HAnimJoint1325;
 
-HAnimJoint801.children[1] = HAnimJoint810;
+HAnimJoint830.children[1] = HAnimJoint845;
 
-HAnimJoint789.children[1] = HAnimJoint801;
+HAnimJoint821.children[1] = HAnimJoint830;
 
-HAnimJoint768.children[1] = HAnimJoint789;
+HAnimJoint812.children[1] = HAnimJoint821;
 
-HAnimJoint759.children[1] = HAnimJoint768;
+HAnimJoint803.children[1] = HAnimJoint812;
 
-HAnimJoint750.children[1] = HAnimJoint759;
+HAnimJoint791.children[1] = HAnimJoint803;
 
-HAnimJoint735.children[1] = HAnimJoint750;
+HAnimJoint770.children[1] = HAnimJoint791;
 
-HAnimJoint723.children[1] = HAnimJoint735;
+HAnimJoint761.children[1] = HAnimJoint770;
 
-HAnimJoint714.children[1] = HAnimJoint723;
+HAnimJoint752.children[1] = HAnimJoint761;
 
-HAnimJoint705.children[1] = HAnimJoint714;
+HAnimJoint737.children[1] = HAnimJoint752;
 
-HAnimJoint696.children[1] = HAnimJoint705;
+HAnimJoint725.children[1] = HAnimJoint737;
 
-HAnimJoint678.children[1] = HAnimJoint696;
+HAnimJoint716.children[1] = HAnimJoint725;
 
-HAnimJoint669.children[1] = HAnimJoint678;
+HAnimJoint707.children[1] = HAnimJoint716;
 
-HAnimJoint660.children[1] = HAnimJoint669;
+HAnimJoint698.children[1] = HAnimJoint707;
 
-HAnimJoint43.children[2] = HAnimJoint660;
+HAnimJoint680.children[1] = HAnimJoint698;
 
-HAnimHumanoid42.joints = new MFNode();
+HAnimJoint671.children[1] = HAnimJoint680;
 
-HAnimHumanoid42.joints[0] = HAnimJoint43;
+HAnimJoint662.children[1] = HAnimJoint671;
 
-let HAnimSite1599 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1599.USE = "hanim_buttocks_standing_wall_contact_point_pt";
-HAnimHumanoid42.viewpoints[1] = HAnimSite1599;
+HAnimJoint45.children[2] = HAnimJoint662;
 
-let HAnimSite1600 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1600.USE = "hanim_crotch_pt";
-HAnimHumanoid42.viewpoints[2] = HAnimSite1600;
+HAnimHumanoid43.joints = new MFNode();
 
-let HAnimSite1601 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1601.USE = "hanim_l_asis_pt";
-HAnimHumanoid42.viewpoints[3] = HAnimSite1601;
+HAnimHumanoid43.joints[0] = HAnimJoint45;
 
-let HAnimSite1602 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1602.USE = "hanim_l_iliocristale_pt";
-HAnimHumanoid42.viewpoints[4] = HAnimSite1602;
+let HAnimJoint1601 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1601.USE = "hanim_humanoid_root";
+HAnimHumanoid43.joints[1] = HAnimJoint1601;
 
-let HAnimSite1603 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1603.USE = "hanim_l_psis_pt";
-HAnimHumanoid42.viewpoints[5] = HAnimSite1603;
+let HAnimJoint1602 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1602.USE = "hanim_sacroiliac";
+HAnimHumanoid43.joints[2] = HAnimJoint1602;
 
-let HAnimSite1604 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1604.USE = "hanim_l_trochanterion_pt";
-HAnimHumanoid42.viewpoints[6] = HAnimSite1604;
+let HAnimJoint1603 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1603.USE = "hanim_l_hip";
+HAnimHumanoid43.joints[3] = HAnimJoint1603;
 
-let HAnimSite1605 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1605.USE = "hanim_r_asis_pt";
-HAnimHumanoid42.viewpoints[7] = HAnimSite1605;
+let HAnimJoint1604 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1604.USE = "hanim_l_knee";
+HAnimHumanoid43.joints[4] = HAnimJoint1604;
 
-let HAnimSite1606 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1606.USE = "hanim_r_iliocristale_pt";
-HAnimHumanoid42.viewpoints[8] = HAnimSite1606;
+let HAnimJoint1605 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1605.USE = "hanim_l_talocrural";
+HAnimHumanoid43.joints[5] = HAnimJoint1605;
 
-let HAnimSite1607 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1607.USE = "hanim_r_psis_pt";
-HAnimHumanoid42.viewpoints[9] = HAnimSite1607;
+let HAnimJoint1606 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1606.USE = "hanim_l_talocalcaneonavicular";
+HAnimHumanoid43.joints[6] = HAnimJoint1606;
 
-let HAnimSite1608 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1608.USE = "hanim_r_trochanterion_pt";
-HAnimHumanoid42.viewpoints[10] = HAnimSite1608;
+let HAnimJoint1607 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1607.USE = "hanim_l_cuneonavicular_1";
+HAnimHumanoid43.joints[7] = HAnimJoint1607;
 
-let HAnimSite1609 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1609.USE = "hanim_navel_pt";
-HAnimHumanoid42.viewpoints[11] = HAnimSite1609;
+let HAnimJoint1608 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1608.USE = "hanim_l_tarsometatarsal_1";
+HAnimHumanoid43.joints[8] = HAnimJoint1608;
 
-let HAnimSite1610 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1610.USE = "hanim_waist_preferred_anterior_pt";
-HAnimHumanoid42.viewpoints[12] = HAnimSite1610;
+let HAnimJoint1609 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1609.USE = "hanim_l_metatarsophalangeal_1";
+HAnimHumanoid43.joints[9] = HAnimJoint1609;
 
-let HAnimSite1611 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1611.USE = "hanim_waist_preferred_posterior_pt";
-HAnimHumanoid42.viewpoints[13] = HAnimSite1611;
+let HAnimJoint1610 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1610.USE = "hanim_l_tarsal_interphalangeal_1";
+HAnimHumanoid43.joints[10] = HAnimJoint1610;
 
-let HAnimSite1612 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1612.USE = "hanim_l_femoral_lateral_epicondyles_pt";
-HAnimHumanoid42.viewpoints[14] = HAnimSite1612;
+let HAnimJoint1611 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1611.USE = "hanim_l_cuneonavicular_2";
+HAnimHumanoid43.joints[11] = HAnimJoint1611;
 
-let HAnimSite1613 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1613.USE = "hanim_l_femoral_medial_epicondyles_pt";
-HAnimHumanoid42.viewpoints[15] = HAnimSite1613;
+let HAnimJoint1612 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1612.USE = "hanim_l_tarsometatarsal_2";
+HAnimHumanoid43.joints[12] = HAnimJoint1612;
 
-let HAnimSite1614 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1614.USE = "hanim_l_knee_crease_pt";
-HAnimHumanoid42.viewpoints[16] = HAnimSite1614;
+let HAnimJoint1613 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1613.USE = "hanim_l_metatarsophalangeal_2";
+HAnimHumanoid43.joints[13] = HAnimJoint1613;
 
-let HAnimSite1615 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1615.USE = "hanim_l_suprapatella_pt";
-HAnimHumanoid42.viewpoints[17] = HAnimSite1615;
+let HAnimJoint1614 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1614.USE = "hanim_l_tarsal_proximal_interphalangeal_2";
+HAnimHumanoid43.joints[14] = HAnimJoint1614;
 
-let HAnimSite1616 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1616.USE = "hanim_r_femoral_lateral_epicondyles_pt";
-HAnimHumanoid42.viewpoints[18] = HAnimSite1616;
+let HAnimJoint1615 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1615.USE = "hanim_l_tarsal_distal_interphalangeal_2";
+HAnimHumanoid43.joints[15] = HAnimJoint1615;
 
-let HAnimSite1617 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1617.USE = "hanim_r_femoral_medial_epicondyles_pt";
-HAnimHumanoid42.viewpoints[19] = HAnimSite1617;
+let HAnimJoint1616 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1616.USE = "hanim_l_cuneonavicular_3";
+HAnimHumanoid43.joints[16] = HAnimJoint1616;
 
-let HAnimSite1618 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1618.USE = "hanim_r_knee_crease_pt";
-HAnimHumanoid42.viewpoints[20] = HAnimSite1618;
+let HAnimJoint1617 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1617.USE = "hanim_l_tarsometatarsal_3";
+HAnimHumanoid43.joints[17] = HAnimJoint1617;
 
-let HAnimSite1619 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1619.USE = "hanim_r_suprapatella_pt";
-HAnimHumanoid42.viewpoints[21] = HAnimSite1619;
+let HAnimJoint1618 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1618.USE = "hanim_l_metatarsophalangeal_3";
+HAnimHumanoid43.joints[18] = HAnimJoint1618;
 
-let HAnimSite1620 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1620.USE = "hanim_l_lateral_malleolus_pt";
-HAnimHumanoid42.viewpoints[22] = HAnimSite1620;
+let HAnimJoint1619 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1619.USE = "hanim_l_tarsal_proximal_interphalangeal_3";
+HAnimHumanoid43.joints[19] = HAnimJoint1619;
 
-let HAnimSite1621 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1621.USE = "hanim_l_medial_malleolus_pt";
-HAnimHumanoid42.viewpoints[23] = HAnimSite1621;
+let HAnimJoint1620 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1620.USE = "hanim_l_tarsal_distal_interphalangeal_3";
+HAnimHumanoid43.joints[20] = HAnimJoint1620;
 
-let HAnimSite1622 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1622.USE = "hanim_l_tibiale_pt";
-HAnimHumanoid42.viewpoints[24] = HAnimSite1622;
+let HAnimJoint1621 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1621.USE = "hanim_l_calcaneocuboid";
+HAnimHumanoid43.joints[21] = HAnimJoint1621;
 
-let HAnimSite1623 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1623.USE = "hanim_l_calcaneus_posterior_pt";
-HAnimHumanoid42.viewpoints[25] = HAnimSite1623;
+let HAnimJoint1622 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1622.USE = "hanim_l_transversetarsal";
+HAnimHumanoid43.joints[22] = HAnimJoint1622;
 
-let HAnimSite1624 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1624.USE = "hanim_l_sphyrion_pt";
-HAnimHumanoid42.viewpoints[26] = HAnimSite1624;
+let HAnimJoint1623 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1623.USE = "hanim_l_tarsometatarsal_4";
+HAnimHumanoid43.joints[23] = HAnimJoint1623;
 
-let HAnimSite1625 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1625.USE = "hanim_l_metatarsal_phalanx_1_pt";
-HAnimHumanoid42.viewpoints[27] = HAnimSite1625;
+let HAnimJoint1624 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1624.USE = "hanim_l_metatarsophalangeal_4";
+HAnimHumanoid43.joints[24] = HAnimJoint1624;
 
-let HAnimSite1626 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1626.USE = "hanim_l_tarsal_distal_phalanx_1_tip";
-HAnimHumanoid42.viewpoints[28] = HAnimSite1626;
+let HAnimJoint1625 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1625.USE = "hanim_l_tarsal_proximal_interphalangeal_4";
+HAnimHumanoid43.joints[25] = HAnimJoint1625;
 
-let HAnimSite1627 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1627.USE = "hanim_l_tarsal_distal_phalanx_2_tip";
-HAnimHumanoid42.viewpoints[29] = HAnimSite1627;
+let HAnimJoint1626 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1626.USE = "hanim_l_tarsal_distal_interphalangeal_4";
+HAnimHumanoid43.joints[26] = HAnimJoint1626;
 
-let HAnimSite1628 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1628.USE = "hanim_l_tarsal_distal_phalanx_3_tip";
-HAnimHumanoid42.viewpoints[30] = HAnimSite1628;
+let HAnimJoint1627 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1627.USE = "hanim_l_tarsometatarsal_5";
+HAnimHumanoid43.joints[27] = HAnimJoint1627;
 
-let HAnimSite1629 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1629.USE = "hanim_l_tarsal_distal_phalanx_4_tip";
-HAnimHumanoid42.viewpoints[31] = HAnimSite1629;
+let HAnimJoint1628 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1628.USE = "hanim_l_metatarsophalangeal_5";
+HAnimHumanoid43.joints[28] = HAnimJoint1628;
 
-let HAnimSite1630 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1630.USE = "hanim_l_metatarsal_phalanx_5_pt";
-HAnimHumanoid42.viewpoints[32] = HAnimSite1630;
+let HAnimJoint1629 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1629.USE = "hanim_l_tarsal_proximal_interphalangeal_5";
+HAnimHumanoid43.joints[29] = HAnimJoint1629;
 
-let HAnimSite1631 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1631.USE = "hanim_l_tarsal_distal_phalanx_5_tip";
-HAnimHumanoid42.viewpoints[33] = HAnimSite1631;
+let HAnimJoint1630 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1630.USE = "hanim_l_tarsal_distal_interphalangeal_5";
+HAnimHumanoid43.joints[30] = HAnimJoint1630;
 
-let HAnimSite1632 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1632.USE = "hanim_r_lateral_malleolus_pt";
-HAnimHumanoid42.viewpoints[34] = HAnimSite1632;
+let HAnimJoint1631 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1631.USE = "hanim_r_hip";
+HAnimHumanoid43.joints[31] = HAnimJoint1631;
 
-let HAnimSite1633 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1633.USE = "hanim_r_medial_malleolus_pt";
-HAnimHumanoid42.viewpoints[35] = HAnimSite1633;
+let HAnimJoint1632 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1632.USE = "hanim_r_knee";
+HAnimHumanoid43.joints[32] = HAnimJoint1632;
 
-let HAnimSite1634 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1634.USE = "hanim_r_tibiale_pt";
-HAnimHumanoid42.viewpoints[36] = HAnimSite1634;
+let HAnimJoint1633 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1633.USE = "hanim_r_talocrural";
+HAnimHumanoid43.joints[33] = HAnimJoint1633;
 
-let HAnimSite1635 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1635.USE = "hanim_r_calcaneus_posterior_pt";
-HAnimHumanoid42.viewpoints[37] = HAnimSite1635;
+let HAnimJoint1634 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1634.USE = "hanim_r_talocalcaneonavicular";
+HAnimHumanoid43.joints[34] = HAnimJoint1634;
 
-let HAnimSite1636 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1636.USE = "hanim_r_sphyrion_pt";
-HAnimHumanoid42.viewpoints[38] = HAnimSite1636;
+let HAnimJoint1635 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1635.USE = "hanim_r_cuneonavicular_1";
+HAnimHumanoid43.joints[35] = HAnimJoint1635;
 
-let HAnimSite1637 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1637.USE = "hanim_r_metatarsal_phalanx_1_pt";
-HAnimHumanoid42.viewpoints[39] = HAnimSite1637;
+let HAnimJoint1636 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1636.USE = "hanim_r_tarsometatarsal_1";
+HAnimHumanoid43.joints[36] = HAnimJoint1636;
 
-let HAnimSite1638 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1638.USE = "hanim_r_tarsal_distal_phalanx_1_tip";
-HAnimHumanoid42.viewpoints[40] = HAnimSite1638;
+let HAnimJoint1637 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1637.USE = "hanim_r_metatarsophalangeal_1";
+HAnimHumanoid43.joints[37] = HAnimJoint1637;
 
-let HAnimSite1639 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1639.USE = "hanim_r_tarsal_distal_phalanx_2_tip";
-HAnimHumanoid42.viewpoints[41] = HAnimSite1639;
+let HAnimJoint1638 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1638.USE = "hanim_r_tarsal_interphalangeal_1";
+HAnimHumanoid43.joints[38] = HAnimJoint1638;
 
-let HAnimSite1640 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1640.USE = "hanim_r_tarsal_distal_phalanx_3_tip";
-HAnimHumanoid42.viewpoints[42] = HAnimSite1640;
+let HAnimJoint1639 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1639.USE = "hanim_r_cuneonavicular_2";
+HAnimHumanoid43.joints[39] = HAnimJoint1639;
 
-let HAnimSite1641 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1641.USE = "hanim_r_tarsal_distal_phalanx_4_tip";
-HAnimHumanoid42.viewpoints[43] = HAnimSite1641;
+let HAnimJoint1640 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1640.USE = "hanim_r_tarsometatarsal_2";
+HAnimHumanoid43.joints[40] = HAnimJoint1640;
 
-let HAnimSite1642 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1642.USE = "hanim_r_metatarsal_phalanx_5_pt";
-HAnimHumanoid42.viewpoints[44] = HAnimSite1642;
+let HAnimJoint1641 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1641.USE = "hanim_r_metatarsophalangeal_2";
+HAnimHumanoid43.joints[41] = HAnimJoint1641;
 
-let HAnimSite1643 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1643.USE = "hanim_r_tarsal_distal_phalanx_5_tip";
-HAnimHumanoid42.viewpoints[45] = HAnimSite1643;
+let HAnimJoint1642 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1642.USE = "hanim_r_tarsal_proximal_interphalangeal_2";
+HAnimHumanoid43.joints[42] = HAnimJoint1642;
 
-let HAnimSite1644 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1644.USE = "hanim_l_rib10_pt";
-HAnimHumanoid42.viewpoints[46] = HAnimSite1644;
+let HAnimJoint1643 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1643.USE = "hanim_r_tarsal_distal_interphalangeal_2";
+HAnimHumanoid43.joints[43] = HAnimJoint1643;
 
-let HAnimSite1645 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1645.USE = "hanim_r_rib10_pt";
-HAnimHumanoid42.viewpoints[47] = HAnimSite1645;
+let HAnimJoint1644 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1644.USE = "hanim_r_cuneonavicular_3";
+HAnimHumanoid43.joints[44] = HAnimJoint1644;
 
-let HAnimSite1646 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1646.USE = "hanim_spine_2_middle_back_pt";
-HAnimHumanoid42.viewpoints[48] = HAnimSite1646;
+let HAnimJoint1645 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1645.USE = "hanim_r_tarsometatarsal_3";
+HAnimHumanoid43.joints[45] = HAnimJoint1645;
 
-let HAnimSite1647 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1647.USE = "hanim_substernale_pt";
-HAnimHumanoid42.viewpoints[49] = HAnimSite1647;
+let HAnimJoint1646 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1646.USE = "hanim_r_metatarsophalangeal_3";
+HAnimHumanoid43.joints[46] = HAnimJoint1646;
 
-let HAnimSite1648 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1648.USE = "hanim_l_thelion_pt";
-HAnimHumanoid42.viewpoints[50] = HAnimSite1648;
+let HAnimJoint1647 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1647.USE = "hanim_r_tarsal_proximal_interphalangeal_3";
+HAnimHumanoid43.joints[47] = HAnimJoint1647;
 
-let HAnimSite1649 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1649.USE = "hanim_r_thelion_pt";
-HAnimHumanoid42.viewpoints[51] = HAnimSite1649;
+let HAnimJoint1648 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1648.USE = "hanim_r_tarsal_distal_interphalangeal_3";
+HAnimHumanoid43.joints[48] = HAnimJoint1648;
 
-let HAnimSite1650 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1650.USE = "hanim_l_chest_midsagittal_plane_pt";
-HAnimHumanoid42.viewpoints[52] = HAnimSite1650;
+let HAnimJoint1649 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1649.USE = "hanim_r_calcaneocuboid";
+HAnimHumanoid43.joints[49] = HAnimJoint1649;
 
-let HAnimSite1651 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1651.USE = "hanim_mesosternale_pt";
-HAnimHumanoid42.viewpoints[53] = HAnimSite1651;
+let HAnimJoint1650 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1650.USE = "hanim_r_transversetarsal";
+HAnimHumanoid43.joints[50] = HAnimJoint1650;
 
-let HAnimSite1652 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1652.USE = "hanim_r_chest_midsagittal_plane_pt";
-HAnimHumanoid42.viewpoints[54] = HAnimSite1652;
+let HAnimJoint1651 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1651.USE = "hanim_r_tarsometatarsal_4";
+HAnimHumanoid43.joints[51] = HAnimJoint1651;
 
-let HAnimSite1653 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1653.USE = "hanim_rear_center_midsagittal_plane_pt";
-HAnimHumanoid42.viewpoints[55] = HAnimSite1653;
+let HAnimJoint1652 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1652.USE = "hanim_r_metatarsophalangeal_4";
+HAnimHumanoid43.joints[52] = HAnimJoint1652;
 
-let HAnimSite1654 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1654.USE = "hanim_spine_1_middle_back_pt";
-HAnimHumanoid42.viewpoints[56] = HAnimSite1654;
+let HAnimJoint1653 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1653.USE = "hanim_r_tarsal_proximal_interphalangeal_4";
+HAnimHumanoid43.joints[53] = HAnimJoint1653;
 
-let HAnimSite1655 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1655.USE = "hanim_cervicale_pt";
-HAnimHumanoid42.viewpoints[57] = HAnimSite1655;
+let HAnimJoint1654 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1654.USE = "hanim_r_tarsal_distal_interphalangeal_4";
+HAnimHumanoid43.joints[54] = HAnimJoint1654;
 
-let HAnimSite1656 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1656.USE = "hanim_suprasternale_pt";
-HAnimHumanoid42.viewpoints[58] = HAnimSite1656;
+let HAnimJoint1655 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1655.USE = "hanim_r_tarsometatarsal_5";
+HAnimHumanoid43.joints[55] = HAnimJoint1655;
 
-let HAnimSite1657 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1657.USE = "hanim_l_neck_base_pt";
-HAnimHumanoid42.viewpoints[59] = HAnimSite1657;
+let HAnimJoint1656 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1656.USE = "hanim_r_metatarsophalangeal_5";
+HAnimHumanoid43.joints[56] = HAnimJoint1656;
 
-let HAnimSite1658 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1658.USE = "hanim_r_neck_base_pt";
-HAnimHumanoid42.viewpoints[60] = HAnimSite1658;
+let HAnimJoint1657 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1657.USE = "hanim_r_tarsal_proximal_interphalangeal_5";
+HAnimHumanoid43.joints[57] = HAnimJoint1657;
 
-let HAnimSite1659 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1659.USE = "hanim_l_acromion_pt";
-HAnimHumanoid42.viewpoints[61] = HAnimSite1659;
+let HAnimJoint1658 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1658.USE = "hanim_r_tarsal_distal_interphalangeal_5";
+HAnimHumanoid43.joints[58] = HAnimJoint1658;
 
-let HAnimSite1660 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1660.USE = "hanim_l_axilla_distal_pt";
-HAnimHumanoid42.viewpoints[62] = HAnimSite1660;
+let HAnimJoint1659 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1659.USE = "hanim_vl5";
+HAnimHumanoid43.joints[59] = HAnimJoint1659;
 
-let HAnimSite1661 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1661.USE = "hanim_l_axilla_posterior_folds_pt";
-HAnimHumanoid42.viewpoints[63] = HAnimSite1661;
+let HAnimJoint1660 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1660.USE = "hanim_vl4";
+HAnimHumanoid43.joints[60] = HAnimJoint1660;
 
-let HAnimSite1662 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1662.USE = "hanim_l_axilla_proximal_pt";
-HAnimHumanoid42.viewpoints[64] = HAnimSite1662;
+let HAnimJoint1661 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1661.USE = "hanim_vl3";
+HAnimHumanoid43.joints[61] = HAnimJoint1661;
 
-let HAnimSite1663 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1663.USE = "hanim_l_clavicale_pt";
-HAnimHumanoid42.viewpoints[65] = HAnimSite1663;
+let HAnimJoint1662 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1662.USE = "hanim_vl2";
+HAnimHumanoid43.joints[62] = HAnimJoint1662;
 
-let HAnimSite1664 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1664.USE = "hanim_r_acromion_pt";
-HAnimHumanoid42.viewpoints[66] = HAnimSite1664;
+let HAnimJoint1663 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1663.USE = "hanim_vl1";
+HAnimHumanoid43.joints[63] = HAnimJoint1663;
 
-let HAnimSite1665 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1665.USE = "hanim_r_axilla_distal_pt";
-HAnimHumanoid42.viewpoints[67] = HAnimSite1665;
+let HAnimJoint1664 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1664.USE = "hanim_vt12";
+HAnimHumanoid43.joints[64] = HAnimJoint1664;
 
-let HAnimSite1666 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1666.USE = "hanim_r_axilla_posterior_folds_pt";
-HAnimHumanoid42.viewpoints[68] = HAnimSite1666;
+let HAnimJoint1665 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1665.USE = "hanim_vt11";
+HAnimHumanoid43.joints[65] = HAnimJoint1665;
 
-let HAnimSite1667 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1667.USE = "hanim_r_axilla_proximal_pt";
-HAnimHumanoid42.viewpoints[69] = HAnimSite1667;
+let HAnimJoint1666 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1666.USE = "hanim_vt10";
+HAnimHumanoid43.joints[66] = HAnimJoint1666;
 
-let HAnimSite1668 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1668.USE = "hanim_r_clavicale_pt";
-HAnimHumanoid42.viewpoints[70] = HAnimSite1668;
+let HAnimJoint1667 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1667.USE = "hanim_vt9";
+HAnimHumanoid43.joints[67] = HAnimJoint1667;
 
-let HAnimSite1669 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1669.USE = "hanim_adams_apple_pt";
-HAnimHumanoid42.viewpoints[71] = HAnimSite1669;
+let HAnimJoint1668 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1668.USE = "hanim_vt8";
+HAnimHumanoid43.joints[68] = HAnimJoint1668;
 
-let HAnimSite1670 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1670.USE = "hanim_glabella_pt";
-HAnimHumanoid42.viewpoints[72] = HAnimSite1670;
+let HAnimJoint1669 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1669.USE = "hanim_vt7";
+HAnimHumanoid43.joints[69] = HAnimJoint1669;
 
-let HAnimSite1671 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1671.USE = "hanim_l_ectocanthus_pt";
-HAnimHumanoid42.viewpoints[73] = HAnimSite1671;
+let HAnimJoint1670 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1670.USE = "hanim_vt6";
+HAnimHumanoid43.joints[70] = HAnimJoint1670;
 
-let HAnimSite1672 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1672.USE = "hanim_l_infraorbitale_pt";
-HAnimHumanoid42.viewpoints[74] = HAnimSite1672;
+let HAnimJoint1671 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1671.USE = "hanim_vt5";
+HAnimHumanoid43.joints[71] = HAnimJoint1671;
 
-let HAnimSite1673 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1673.USE = "hanim_l_tragion_pt";
-HAnimHumanoid42.viewpoints[75] = HAnimSite1673;
+let HAnimJoint1672 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1672.USE = "hanim_vt4";
+HAnimHumanoid43.joints[72] = HAnimJoint1672;
 
-let HAnimSite1674 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1674.USE = "hanim_nuchale_pt";
-HAnimHumanoid42.viewpoints[76] = HAnimSite1674;
+let HAnimJoint1673 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1673.USE = "hanim_vt3";
+HAnimHumanoid43.joints[73] = HAnimJoint1673;
 
-let HAnimSite1675 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1675.USE = "hanim_opisthocranion_pt";
-HAnimHumanoid42.viewpoints[77] = HAnimSite1675;
+let HAnimJoint1674 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1674.USE = "hanim_vt2";
+HAnimHumanoid43.joints[74] = HAnimJoint1674;
 
-let HAnimSite1676 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1676.USE = "hanim_r_ectocanthus_pt";
-HAnimHumanoid42.viewpoints[78] = HAnimSite1676;
+let HAnimJoint1675 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1675.USE = "hanim_vt1";
+HAnimHumanoid43.joints[75] = HAnimJoint1675;
 
-let HAnimSite1677 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1677.USE = "hanim_r_infraorbitale_pt";
-HAnimHumanoid42.viewpoints[79] = HAnimSite1677;
+let HAnimJoint1676 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1676.USE = "hanim_vc7";
+HAnimHumanoid43.joints[76] = HAnimJoint1676;
 
-let HAnimSite1678 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1678.USE = "hanim_r_tragion_pt";
-HAnimHumanoid42.viewpoints[80] = HAnimSite1678;
+let HAnimJoint1677 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1677.USE = "hanim_vc6";
+HAnimHumanoid43.joints[77] = HAnimJoint1677;
 
-let HAnimSite1679 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1679.USE = "hanim_sellion_pt";
-HAnimHumanoid42.viewpoints[81] = HAnimSite1679;
+let HAnimJoint1678 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1678.USE = "hanim_vc5";
+HAnimHumanoid43.joints[78] = HAnimJoint1678;
 
-let HAnimSite1680 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1680.USE = "hanim_skull_vertex_pt";
-HAnimHumanoid42.viewpoints[82] = HAnimSite1680;
+let HAnimJoint1679 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1679.USE = "hanim_vc4";
+HAnimHumanoid43.joints[79] = HAnimJoint1679;
 
-let HAnimSite1681 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1681.USE = "hanim_l_gonion_pt";
-HAnimHumanoid42.viewpoints[83] = HAnimSite1681;
+let HAnimJoint1680 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1680.USE = "hanim_vc3";
+HAnimHumanoid43.joints[80] = HAnimJoint1680;
 
-let HAnimSite1682 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1682.USE = "hanim_menton_pt";
-HAnimHumanoid42.viewpoints[84] = HAnimSite1682;
+let HAnimJoint1681 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1681.USE = "hanim_vc2";
+HAnimHumanoid43.joints[81] = HAnimJoint1681;
 
-let HAnimSite1683 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1683.USE = "hanim_r_gonion_pt";
-HAnimHumanoid42.viewpoints[85] = HAnimSite1683;
+let HAnimJoint1682 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1682.USE = "hanim_vc1";
+HAnimHumanoid43.joints[82] = HAnimJoint1682;
 
-let HAnimSite1684 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1684.USE = "hanim_supramenton_pt";
-HAnimHumanoid42.viewpoints[86] = HAnimSite1684;
+let HAnimJoint1683 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1683.USE = "hanim_skullbase";
+HAnimHumanoid43.joints[83] = HAnimJoint1683;
 
-let HAnimSite1685 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1685.USE = "hanim_l_bideltoid_pt";
-HAnimHumanoid42.viewpoints[87] = HAnimSite1685;
+let HAnimJoint1684 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1684.USE = "hanim_l_eyelid_joint";
+HAnimHumanoid43.joints[84] = HAnimJoint1684;
 
-let HAnimSite1686 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1686.USE = "hanim_l_humeral_lateral_epicondyles_pt";
-HAnimHumanoid42.viewpoints[88] = HAnimSite1686;
+let HAnimJoint1685 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1685.USE = "hanim_r_eyelid_joint";
+HAnimHumanoid43.joints[85] = HAnimJoint1685;
 
-let HAnimSite1687 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1687.USE = "hanim_l_humeral_medial_epicondyles_pt";
-HAnimHumanoid42.viewpoints[89] = HAnimSite1687;
+let HAnimJoint1686 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1686.USE = "hanim_l_eyeball_joint";
+HAnimHumanoid43.joints[86] = HAnimJoint1686;
 
-let HAnimSite1688 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1688.USE = "hanim_l_olecranon_pt";
-HAnimHumanoid42.viewpoints[90] = HAnimSite1688;
+let HAnimJoint1687 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1687.USE = "hanim_r_eyeball_joint";
+HAnimHumanoid43.joints[87] = HAnimJoint1687;
 
-let HAnimSite1689 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1689.USE = "hanim_l_radial_styloid_pt";
-HAnimHumanoid42.viewpoints[91] = HAnimSite1689;
+let HAnimJoint1688 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1688.USE = "hanim_l_eyebrow_joint";
+HAnimHumanoid43.joints[88] = HAnimJoint1688;
 
-let HAnimSite1690 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1690.USE = "hanim_l_radiale_pt";
-HAnimHumanoid42.viewpoints[92] = HAnimSite1690;
+let HAnimJoint1689 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1689.USE = "hanim_r_eyebrow_joint";
+HAnimHumanoid43.joints[89] = HAnimJoint1689;
 
-let HAnimSite1691 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1691.USE = "hanim_l_ulnar_styloid_pt";
-HAnimHumanoid42.viewpoints[93] = HAnimSite1691;
+let HAnimJoint1690 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1690.USE = "hanim_temporomandibular";
+HAnimHumanoid43.joints[90] = HAnimJoint1690;
 
-let HAnimSite1692 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1692.USE = "hanim_l_carpal_distal_phalanx_1_tip";
-HAnimHumanoid42.viewpoints[94] = HAnimSite1692;
+let HAnimJoint1691 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1691.USE = "hanim_l_sternoclavicular";
+HAnimHumanoid43.joints[91] = HAnimJoint1691;
 
-let HAnimSite1693 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1693.USE = "hanim_l_metacarpal_phalanx_2_pt";
-HAnimHumanoid42.viewpoints[95] = HAnimSite1693;
+let HAnimJoint1692 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1692.USE = "hanim_l_acromioclavicular";
+HAnimHumanoid43.joints[92] = HAnimJoint1692;
 
-let HAnimSite1694 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1694.USE = "hanim_l_carpal_distal_phalanx_2_tip";
-HAnimHumanoid42.viewpoints[96] = HAnimSite1694;
+let HAnimJoint1693 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1693.USE = "hanim_l_shoulder";
+HAnimHumanoid43.joints[93] = HAnimJoint1693;
 
-let HAnimSite1695 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1695.USE = "hanim_l_dactylion_pt";
-HAnimHumanoid42.viewpoints[97] = HAnimSite1695;
+let HAnimJoint1694 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1694.USE = "hanim_l_elbow";
+HAnimHumanoid43.joints[94] = HAnimJoint1694;
 
-let HAnimSite1696 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1696.USE = "hanim_l_metacarpal_phalanx_3_pt";
-HAnimHumanoid42.viewpoints[98] = HAnimSite1696;
+let HAnimJoint1695 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1695.USE = "hanim_l_radiocarpal";
+HAnimHumanoid43.joints[95] = HAnimJoint1695;
 
-let HAnimSite1697 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1697.USE = "hanim_l_carpal_distal_phalanx_3_tip";
-HAnimHumanoid42.viewpoints[99] = HAnimSite1697;
+let HAnimJoint1696 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1696.USE = "hanim_l_midcarpal_1";
+HAnimHumanoid43.joints[96] = HAnimJoint1696;
 
-let HAnimSite1698 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1698.USE = "hanim_l_metacarpal_phalanx_5_pt";
-HAnimHumanoid42.viewpoints[100] = HAnimSite1698;
+let HAnimJoint1697 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1697.USE = "hanim_l_carpometacarpal_1";
+HAnimHumanoid43.joints[97] = HAnimJoint1697;
 
-let HAnimSite1699 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1699.USE = "hanim_l_carpal_distal_phalanx_4_tip";
-HAnimHumanoid42.viewpoints[101] = HAnimSite1699;
+let HAnimJoint1698 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1698.USE = "hanim_l_metacarpophalangeal_1";
+HAnimHumanoid43.joints[98] = HAnimJoint1698;
 
-let HAnimSite1700 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1700.USE = "hanim_l_carpal_distal_phalanx_5_tip";
-HAnimHumanoid42.viewpoints[102] = HAnimSite1700;
+let HAnimJoint1699 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1699.USE = "hanim_l_carpal_interphalangeal_1";
+HAnimHumanoid43.joints[99] = HAnimJoint1699;
 
-let HAnimSite1701 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1701.USE = "hanim_r_bideltoid_pt";
-HAnimHumanoid42.viewpoints[103] = HAnimSite1701;
+let HAnimJoint1700 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1700.USE = "hanim_l_midcarpal_2";
+HAnimHumanoid43.joints[100] = HAnimJoint1700;
 
-let HAnimSite1702 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1702.USE = "hanim_r_humeral_lateral_epicondyles_pt";
-HAnimHumanoid42.viewpoints[104] = HAnimSite1702;
+let HAnimJoint1701 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1701.USE = "hanim_l_carpometacarpal_2";
+HAnimHumanoid43.joints[101] = HAnimJoint1701;
 
-let HAnimSite1703 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1703.USE = "hanim_r_humeral_medial_epicondyles_pt";
-HAnimHumanoid42.viewpoints[105] = HAnimSite1703;
+let HAnimJoint1702 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1702.USE = "hanim_l_metacarpophalangeal_2";
+HAnimHumanoid43.joints[102] = HAnimJoint1702;
 
-let HAnimSite1704 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1704.USE = "hanim_r_olecranon_pt";
-HAnimHumanoid42.viewpoints[106] = HAnimSite1704;
+let HAnimJoint1703 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1703.USE = "hanim_l_carpal_proximal_interphalangeal_2";
+HAnimHumanoid43.joints[103] = HAnimJoint1703;
 
-let HAnimSite1705 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1705.USE = "hanim_r_radial_styloid_pt";
-HAnimHumanoid42.viewpoints[107] = HAnimSite1705;
+let HAnimJoint1704 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1704.USE = "hanim_l_carpal_distal_interphalangeal_2";
+HAnimHumanoid43.joints[104] = HAnimJoint1704;
 
-let HAnimSite1706 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1706.USE = "hanim_r_radiale_pt";
-HAnimHumanoid42.viewpoints[108] = HAnimSite1706;
+let HAnimJoint1705 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1705.USE = "hanim_l_midcarpal_3";
+HAnimHumanoid43.joints[105] = HAnimJoint1705;
 
-let HAnimSite1707 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1707.USE = "hanim_r_ulnar_styloid_pt";
-HAnimHumanoid42.viewpoints[109] = HAnimSite1707;
+let HAnimJoint1706 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1706.USE = "hanim_l_carpometacarpal_3";
+HAnimHumanoid43.joints[106] = HAnimJoint1706;
 
-let HAnimSite1708 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1708.USE = "hanim_r_carpal_distal_phalanx_1_tip";
-HAnimHumanoid42.viewpoints[110] = HAnimSite1708;
+let HAnimJoint1707 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1707.USE = "hanim_l_metacarpophalangeal_3";
+HAnimHumanoid43.joints[107] = HAnimJoint1707;
 
-let HAnimSite1709 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1709.USE = "hanim_r_metacarpal_phalanx_2_pt";
-HAnimHumanoid42.viewpoints[111] = HAnimSite1709;
+let HAnimJoint1708 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1708.USE = "hanim_l_carpal_proximal_interphalangeal_3";
+HAnimHumanoid43.joints[108] = HAnimJoint1708;
 
-let HAnimSite1710 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1710.USE = "hanim_r_carpal_distal_phalanx_2_tip";
-HAnimHumanoid42.viewpoints[112] = HAnimSite1710;
+let HAnimJoint1709 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1709.USE = "hanim_l_carpal_distal_interphalangeal_3";
+HAnimHumanoid43.joints[109] = HAnimJoint1709;
 
-let HAnimSite1711 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1711.USE = "hanim_r_dactylion_pt";
-HAnimHumanoid42.viewpoints[113] = HAnimSite1711;
+let HAnimJoint1710 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1710.USE = "hanim_l_midcarpal_4_5";
+HAnimHumanoid43.joints[110] = HAnimJoint1710;
 
-let HAnimSite1712 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1712.USE = "hanim_r_metacarpal_phalanx_3_pt";
-HAnimHumanoid42.viewpoints[114] = HAnimSite1712;
+let HAnimJoint1711 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1711.USE = "hanim_l_carpometacarpal_4";
+HAnimHumanoid43.joints[111] = HAnimJoint1711;
 
-let HAnimSite1713 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1713.USE = "hanim_r_carpal_distal_phalanx_3_tip";
-HAnimHumanoid42.viewpoints[115] = HAnimSite1713;
+let HAnimJoint1712 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1712.USE = "hanim_l_metacarpophalangeal_4";
+HAnimHumanoid43.joints[112] = HAnimJoint1712;
 
-let HAnimSite1714 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1714.USE = "hanim_r_metacarpal_phalanx_5_pt";
-HAnimHumanoid42.viewpoints[116] = HAnimSite1714;
+let HAnimJoint1713 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1713.USE = "hanim_l_carpal_proximal_interphalangeal_4";
+HAnimHumanoid43.joints[113] = HAnimJoint1713;
 
-let HAnimSite1715 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1715.USE = "hanim_r_carpal_distal_phalanx_4_tip";
-HAnimHumanoid42.viewpoints[117] = HAnimSite1715;
+let HAnimJoint1714 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1714.USE = "hanim_l_carpal_distal_interphalangeal_4";
+HAnimHumanoid43.joints[114] = HAnimJoint1714;
 
-let HAnimSite1716 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1716.USE = "hanim_r_carpal_distal_phalanx_5_tip";
-HAnimHumanoid42.viewpoints[118] = HAnimSite1716;
+let HAnimJoint1715 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1715.USE = "hanim_l_carpometacarpal_5";
+HAnimHumanoid43.joints[115] = HAnimJoint1715;
 
-let HAnimSegment1717 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1717.USE = "hanim_sacrum";
-HAnimHumanoid42.segments[119] = HAnimSegment1717;
+let HAnimJoint1716 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1716.USE = "hanim_l_metacarpophalangeal_5";
+HAnimHumanoid43.joints[116] = HAnimJoint1716;
 
-let HAnimSegment1718 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1718.USE = "hanim_pelvis";
-HAnimHumanoid42.segments[120] = HAnimSegment1718;
+let HAnimJoint1717 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1717.USE = "hanim_l_carpal_proximal_interphalangeal_5";
+HAnimHumanoid43.joints[117] = HAnimJoint1717;
 
-let HAnimSegment1719 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1719.USE = "hanim_l_thigh";
-HAnimHumanoid42.segments[121] = HAnimSegment1719;
+let HAnimJoint1718 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1718.USE = "hanim_l_carpal_distal_interphalangeal_5";
+HAnimHumanoid43.joints[118] = HAnimJoint1718;
 
-let HAnimSegment1720 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1720.USE = "hanim_l_calf";
-HAnimHumanoid42.segments[122] = HAnimSegment1720;
+let HAnimJoint1719 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1719.USE = "hanim_r_sternoclavicular";
+HAnimHumanoid43.joints[119] = HAnimJoint1719;
 
-let HAnimSegment1721 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1721.USE = "hanim_l_talus";
-HAnimHumanoid42.segments[123] = HAnimSegment1721;
+let HAnimJoint1720 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1720.USE = "hanim_r_acromioclavicular";
+HAnimHumanoid43.joints[120] = HAnimJoint1720;
 
-let HAnimSegment1722 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1722.USE = "hanim_l_navicular";
-HAnimHumanoid42.segments[124] = HAnimSegment1722;
+let HAnimJoint1721 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1721.USE = "hanim_r_shoulder";
+HAnimHumanoid43.joints[121] = HAnimJoint1721;
 
-let HAnimSegment1723 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1723.USE = "hanim_l_cuneiform_1";
-HAnimHumanoid42.segments[125] = HAnimSegment1723;
+let HAnimJoint1722 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1722.USE = "hanim_r_elbow";
+HAnimHumanoid43.joints[122] = HAnimJoint1722;
 
-let HAnimSegment1724 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1724.USE = "hanim_l_metatarsal_1";
-HAnimHumanoid42.segments[126] = HAnimSegment1724;
+let HAnimJoint1723 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1723.USE = "hanim_r_radiocarpal";
+HAnimHumanoid43.joints[123] = HAnimJoint1723;
 
-let HAnimSegment1725 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1725.USE = "hanim_l_tarsal_proximal_phalanx_1";
-HAnimHumanoid42.segments[127] = HAnimSegment1725;
+let HAnimJoint1724 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1724.USE = "hanim_r_midcarpal_1";
+HAnimHumanoid43.joints[124] = HAnimJoint1724;
 
-let HAnimSegment1726 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1726.USE = "hanim_l_cuneiform_2";
-HAnimHumanoid42.segments[128] = HAnimSegment1726;
+let HAnimJoint1725 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1725.USE = "hanim_r_carpometacarpal_1";
+HAnimHumanoid43.joints[125] = HAnimJoint1725;
 
-let HAnimSegment1727 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1727.USE = "hanim_l_metatarsal_2";
-HAnimHumanoid42.segments[129] = HAnimSegment1727;
+let HAnimJoint1726 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1726.USE = "hanim_r_metacarpophalangeal_1";
+HAnimHumanoid43.joints[126] = HAnimJoint1726;
 
-let HAnimSegment1728 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1728.USE = "hanim_l_tarsal_proximal_phalanx_2";
-HAnimHumanoid42.segments[130] = HAnimSegment1728;
+let HAnimJoint1727 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1727.USE = "hanim_r_carpal_interphalangeal_1";
+HAnimHumanoid43.joints[127] = HAnimJoint1727;
 
-let HAnimSegment1729 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1729.USE = "hanim_l_tarsal_middle_phalanx_1";
-HAnimHumanoid42.segments[131] = HAnimSegment1729;
+let HAnimJoint1728 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1728.USE = "hanim_r_midcarpal_2";
+HAnimHumanoid43.joints[128] = HAnimJoint1728;
 
-let HAnimSegment1730 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1730.USE = "hanim_l_cuneiform_3";
-HAnimHumanoid42.segments[132] = HAnimSegment1730;
+let HAnimJoint1729 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1729.USE = "hanim_r_carpometacarpal_2";
+HAnimHumanoid43.joints[129] = HAnimJoint1729;
 
-let HAnimSegment1731 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1731.USE = "hanim_l_metatarsal_3";
-HAnimHumanoid42.segments[133] = HAnimSegment1731;
+let HAnimJoint1730 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1730.USE = "hanim_r_metacarpophalangeal_2";
+HAnimHumanoid43.joints[130] = HAnimJoint1730;
 
-let HAnimSegment1732 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1732.USE = "hanim_l_tarsal_proximal_phalanx_3";
-HAnimHumanoid42.segments[134] = HAnimSegment1732;
+let HAnimJoint1731 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1731.USE = "hanim_r_carpal_proximal_interphalangeal_2";
+HAnimHumanoid43.joints[131] = HAnimJoint1731;
 
-let HAnimSegment1733 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1733.USE = "hanim_l_tarsal_middle_phalanx_2";
-HAnimHumanoid42.segments[135] = HAnimSegment1733;
+let HAnimJoint1732 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1732.USE = "hanim_r_carpal_distal_interphalangeal_2";
+HAnimHumanoid43.joints[132] = HAnimJoint1732;
 
-let HAnimSegment1734 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1734.USE = "hanim_l_calcaneus";
-HAnimHumanoid42.segments[136] = HAnimSegment1734;
+let HAnimJoint1733 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1733.USE = "hanim_r_midcarpal_3";
+HAnimHumanoid43.joints[133] = HAnimJoint1733;
 
-let HAnimSegment1735 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1735.USE = "hanim_l_cuboid";
-HAnimHumanoid42.segments[137] = HAnimSegment1735;
+let HAnimJoint1734 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1734.USE = "hanim_r_carpometacarpal_3";
+HAnimHumanoid43.joints[134] = HAnimJoint1734;
 
-let HAnimSegment1736 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1736.USE = "hanim_l_metatarsal_4";
-HAnimHumanoid42.segments[138] = HAnimSegment1736;
+let HAnimJoint1735 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1735.USE = "hanim_r_metacarpophalangeal_3";
+HAnimHumanoid43.joints[135] = HAnimJoint1735;
 
-let HAnimSegment1737 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1737.USE = "hanim_l_tarsal_proximal_phalanx_4";
-HAnimHumanoid42.segments[139] = HAnimSegment1737;
+let HAnimJoint1736 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1736.USE = "hanim_r_carpal_proximal_interphalangeal_3";
+HAnimHumanoid43.joints[136] = HAnimJoint1736;
 
-let HAnimSegment1738 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1738.USE = "hanim_l_tarsal_middle_phalanx_3";
-HAnimHumanoid42.segments[140] = HAnimSegment1738;
+let HAnimJoint1737 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1737.USE = "hanim_r_carpal_distal_interphalangeal_3";
+HAnimHumanoid43.joints[137] = HAnimJoint1737;
 
-let HAnimSegment1739 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1739.USE = "hanim_l_metatarsal_5";
-HAnimHumanoid42.segments[141] = HAnimSegment1739;
+let HAnimJoint1738 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1738.USE = "hanim_r_midcarpal_4_5";
+HAnimHumanoid43.joints[138] = HAnimJoint1738;
 
-let HAnimSegment1740 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1740.USE = "hanim_l_tarsal_proximal_phalanx_5";
-HAnimHumanoid42.segments[142] = HAnimSegment1740;
+let HAnimJoint1739 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1739.USE = "hanim_r_carpometacarpal_4";
+HAnimHumanoid43.joints[139] = HAnimJoint1739;
 
-let HAnimSegment1741 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1741.USE = "hanim_l_tarsal_middle_phalanx_4";
-HAnimHumanoid42.segments[143] = HAnimSegment1741;
+let HAnimJoint1740 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1740.USE = "hanim_r_metacarpophalangeal_4";
+HAnimHumanoid43.joints[140] = HAnimJoint1740;
 
-let HAnimSegment1742 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1742.USE = "hanim_r_thigh";
-HAnimHumanoid42.segments[144] = HAnimSegment1742;
+let HAnimJoint1741 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1741.USE = "hanim_r_carpal_proximal_interphalangeal_4";
+HAnimHumanoid43.joints[141] = HAnimJoint1741;
 
-let HAnimSegment1743 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1743.USE = "hanim_r_calf";
-HAnimHumanoid42.segments[145] = HAnimSegment1743;
+let HAnimJoint1742 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1742.USE = "hanim_r_carpal_distal_interphalangeal_4";
+HAnimHumanoid43.joints[142] = HAnimJoint1742;
 
-let HAnimSegment1744 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1744.USE = "hanim_r_talus";
-HAnimHumanoid42.segments[146] = HAnimSegment1744;
+let HAnimJoint1743 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1743.USE = "hanim_r_carpometacarpal_5";
+HAnimHumanoid43.joints[143] = HAnimJoint1743;
 
-let HAnimSegment1745 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1745.USE = "hanim_r_navicular";
-HAnimHumanoid42.segments[147] = HAnimSegment1745;
+let HAnimJoint1744 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1744.USE = "hanim_r_metacarpophalangeal_5";
+HAnimHumanoid43.joints[144] = HAnimJoint1744;
 
-let HAnimSegment1746 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1746.USE = "hanim_r_cuneiform_1";
-HAnimHumanoid42.segments[148] = HAnimSegment1746;
+let HAnimJoint1745 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1745.USE = "hanim_r_carpal_proximal_interphalangeal_5";
+HAnimHumanoid43.joints[145] = HAnimJoint1745;
+
+let HAnimJoint1746 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1746.USE = "hanim_r_carpal_distal_interphalangeal_5";
+HAnimHumanoid43.joints[146] = HAnimJoint1746;
 
 let HAnimSegment1747 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1747.USE = "hanim_r_metatarsal_1";
-HAnimHumanoid42.segments[149] = HAnimSegment1747;
+HAnimSegment1747.USE = "hanim_sacrum";
+HAnimHumanoid43.segments[147] = HAnimSegment1747;
 
 let HAnimSegment1748 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1748.USE = "hanim_r_tarsal_proximal_phalanx_1";
-HAnimHumanoid42.segments[150] = HAnimSegment1748;
+HAnimSegment1748.USE = "hanim_pelvis";
+HAnimHumanoid43.segments[148] = HAnimSegment1748;
 
 let HAnimSegment1749 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1749.USE = "hanim_r_cuneiform_2";
-HAnimHumanoid42.segments[151] = HAnimSegment1749;
+HAnimSegment1749.USE = "hanim_l_thigh";
+HAnimHumanoid43.segments[149] = HAnimSegment1749;
 
 let HAnimSegment1750 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1750.USE = "hanim_r_metatarsal_2";
-HAnimHumanoid42.segments[152] = HAnimSegment1750;
+HAnimSegment1750.USE = "hanim_l_calf";
+HAnimHumanoid43.segments[150] = HAnimSegment1750;
 
 let HAnimSegment1751 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1751.USE = "hanim_r_tarsal_proximal_phalanx_2";
-HAnimHumanoid42.segments[153] = HAnimSegment1751;
+HAnimSegment1751.USE = "hanim_l_talus";
+HAnimHumanoid43.segments[151] = HAnimSegment1751;
 
 let HAnimSegment1752 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1752.USE = "hanim_r_tarsal_middle_phalanx_1";
-HAnimHumanoid42.segments[154] = HAnimSegment1752;
+HAnimSegment1752.USE = "hanim_l_navicular";
+HAnimHumanoid43.segments[152] = HAnimSegment1752;
 
 let HAnimSegment1753 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1753.USE = "hanim_r_cuneiform_3";
-HAnimHumanoid42.segments[155] = HAnimSegment1753;
+HAnimSegment1753.USE = "hanim_l_cuneiform_1";
+HAnimHumanoid43.segments[153] = HAnimSegment1753;
 
 let HAnimSegment1754 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1754.USE = "hanim_r_metatarsal_3";
-HAnimHumanoid42.segments[156] = HAnimSegment1754;
+HAnimSegment1754.USE = "hanim_l_metatarsal_1";
+HAnimHumanoid43.segments[154] = HAnimSegment1754;
 
 let HAnimSegment1755 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1755.USE = "hanim_r_tarsal_proximal_phalanx_3";
-HAnimHumanoid42.segments[157] = HAnimSegment1755;
+HAnimSegment1755.USE = "hanim_l_tarsal_proximal_phalanx_1";
+HAnimHumanoid43.segments[155] = HAnimSegment1755;
 
 let HAnimSegment1756 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1756.USE = "hanim_r_tarsal_middle_phalanx_2";
-HAnimHumanoid42.segments[158] = HAnimSegment1756;
+HAnimSegment1756.USE = "hanim_l_cuneiform_2";
+HAnimHumanoid43.segments[156] = HAnimSegment1756;
 
 let HAnimSegment1757 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1757.USE = "hanim_r_calcaneus";
-HAnimHumanoid42.segments[159] = HAnimSegment1757;
+HAnimSegment1757.USE = "hanim_l_metatarsal_2";
+HAnimHumanoid43.segments[157] = HAnimSegment1757;
 
 let HAnimSegment1758 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1758.USE = "hanim_r_cuboid";
-HAnimHumanoid42.segments[160] = HAnimSegment1758;
+HAnimSegment1758.USE = "hanim_l_tarsal_proximal_phalanx_2";
+HAnimHumanoid43.segments[158] = HAnimSegment1758;
 
 let HAnimSegment1759 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1759.USE = "hanim_r_metatarsal_4";
-HAnimHumanoid42.segments[161] = HAnimSegment1759;
+HAnimSegment1759.USE = "hanim_l_tarsal_middle_phalanx_2";
+HAnimHumanoid43.segments[159] = HAnimSegment1759;
 
 let HAnimSegment1760 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1760.USE = "hanim_r_tarsal_proximal_phalanx_4";
-HAnimHumanoid42.segments[162] = HAnimSegment1760;
+HAnimSegment1760.USE = "hanim_l_cuneiform_3";
+HAnimHumanoid43.segments[160] = HAnimSegment1760;
 
 let HAnimSegment1761 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1761.USE = "hanim_r_tarsal_middle_phalanx_3";
-HAnimHumanoid42.segments[163] = HAnimSegment1761;
+HAnimSegment1761.USE = "hanim_l_metatarsal_3";
+HAnimHumanoid43.segments[161] = HAnimSegment1761;
 
 let HAnimSegment1762 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1762.USE = "hanim_r_metatarsal_5";
-HAnimHumanoid42.segments[164] = HAnimSegment1762;
+HAnimSegment1762.USE = "hanim_l_tarsal_proximal_phalanx_3";
+HAnimHumanoid43.segments[162] = HAnimSegment1762;
 
 let HAnimSegment1763 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1763.USE = "hanim_r_tarsal_proximal_phalanx_5";
-HAnimHumanoid42.segments[165] = HAnimSegment1763;
+HAnimSegment1763.USE = "hanim_l_tarsal_middle_phalanx_3";
+HAnimHumanoid43.segments[163] = HAnimSegment1763;
 
 let HAnimSegment1764 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1764.USE = "hanim_r_tarsal_middle_phalanx_4";
-HAnimHumanoid42.segments[166] = HAnimSegment1764;
+HAnimSegment1764.USE = "hanim_l_calcaneus";
+HAnimHumanoid43.segments[164] = HAnimSegment1764;
 
 let HAnimSegment1765 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1765.USE = "hanim_l5";
-HAnimHumanoid42.segments[167] = HAnimSegment1765;
+HAnimSegment1765.USE = "hanim_l_cuboid";
+HAnimHumanoid43.segments[165] = HAnimSegment1765;
 
 let HAnimSegment1766 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1766.USE = "hanim_l4";
-HAnimHumanoid42.segments[168] = HAnimSegment1766;
+HAnimSegment1766.USE = "hanim_l_metatarsal_4";
+HAnimHumanoid43.segments[166] = HAnimSegment1766;
 
 let HAnimSegment1767 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1767.USE = "hanim_l3";
-HAnimHumanoid42.segments[169] = HAnimSegment1767;
+HAnimSegment1767.USE = "hanim_l_tarsal_proximal_phalanx_4";
+HAnimHumanoid43.segments[167] = HAnimSegment1767;
 
 let HAnimSegment1768 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1768.USE = "hanim_l2";
-HAnimHumanoid42.segments[170] = HAnimSegment1768;
+HAnimSegment1768.USE = "hanim_l_tarsal_middle_phalanx_4";
+HAnimHumanoid43.segments[168] = HAnimSegment1768;
 
 let HAnimSegment1769 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1769.USE = "hanim_l1";
-HAnimHumanoid42.segments[171] = HAnimSegment1769;
+HAnimSegment1769.USE = "hanim_l_metatarsal_5";
+HAnimHumanoid43.segments[169] = HAnimSegment1769;
 
 let HAnimSegment1770 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1770.USE = "hanim_t12";
-HAnimHumanoid42.segments[172] = HAnimSegment1770;
+HAnimSegment1770.USE = "hanim_l_tarsal_proximal_phalanx_5";
+HAnimHumanoid43.segments[170] = HAnimSegment1770;
 
 let HAnimSegment1771 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1771.USE = "hanim_t11";
-HAnimHumanoid42.segments[173] = HAnimSegment1771;
+HAnimSegment1771.USE = "hanim_l_tarsal_middle_phalanx_5";
+HAnimHumanoid43.segments[171] = HAnimSegment1771;
 
 let HAnimSegment1772 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1772.USE = "hanim_t10";
-HAnimHumanoid42.segments[174] = HAnimSegment1772;
+HAnimSegment1772.USE = "hanim_r_thigh";
+HAnimHumanoid43.segments[172] = HAnimSegment1772;
 
 let HAnimSegment1773 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1773.USE = "hanim_t9";
-HAnimHumanoid42.segments[175] = HAnimSegment1773;
+HAnimSegment1773.USE = "hanim_r_calf";
+HAnimHumanoid43.segments[173] = HAnimSegment1773;
 
 let HAnimSegment1774 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1774.USE = "hanim_t8";
-HAnimHumanoid42.segments[176] = HAnimSegment1774;
+HAnimSegment1774.USE = "hanim_r_talus";
+HAnimHumanoid43.segments[174] = HAnimSegment1774;
 
 let HAnimSegment1775 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1775.USE = "hanim_t7";
-HAnimHumanoid42.segments[177] = HAnimSegment1775;
+HAnimSegment1775.USE = "hanim_r_navicular";
+HAnimHumanoid43.segments[175] = HAnimSegment1775;
 
 let HAnimSegment1776 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1776.USE = "hanim_t6";
-HAnimHumanoid42.segments[178] = HAnimSegment1776;
+HAnimSegment1776.USE = "hanim_r_cuneiform_1";
+HAnimHumanoid43.segments[176] = HAnimSegment1776;
 
 let HAnimSegment1777 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1777.USE = "hanim_t5";
-HAnimHumanoid42.segments[179] = HAnimSegment1777;
+HAnimSegment1777.USE = "hanim_r_metatarsal_1";
+HAnimHumanoid43.segments[177] = HAnimSegment1777;
 
 let HAnimSegment1778 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1778.USE = "hanim_t4";
-HAnimHumanoid42.segments[180] = HAnimSegment1778;
+HAnimSegment1778.USE = "hanim_r_tarsal_proximal_phalanx_1";
+HAnimHumanoid43.segments[178] = HAnimSegment1778;
 
 let HAnimSegment1779 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1779.USE = "hanim_t3";
-HAnimHumanoid42.segments[181] = HAnimSegment1779;
+HAnimSegment1779.USE = "hanim_r_cuneiform_2";
+HAnimHumanoid43.segments[179] = HAnimSegment1779;
 
 let HAnimSegment1780 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1780.USE = "hanim_t2";
-HAnimHumanoid42.segments[182] = HAnimSegment1780;
+HAnimSegment1780.USE = "hanim_r_metatarsal_2";
+HAnimHumanoid43.segments[180] = HAnimSegment1780;
 
 let HAnimSegment1781 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1781.USE = "hanim_t1";
-HAnimHumanoid42.segments[183] = HAnimSegment1781;
+HAnimSegment1781.USE = "hanim_r_tarsal_proximal_phalanx_2";
+HAnimHumanoid43.segments[181] = HAnimSegment1781;
 
 let HAnimSegment1782 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1782.USE = "hanim_c7";
-HAnimHumanoid42.segments[184] = HAnimSegment1782;
+HAnimSegment1782.USE = "hanim_r_tarsal_middle_phalanx_2";
+HAnimHumanoid43.segments[182] = HAnimSegment1782;
 
 let HAnimSegment1783 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1783.USE = "hanim_c6";
-HAnimHumanoid42.segments[185] = HAnimSegment1783;
+HAnimSegment1783.USE = "hanim_r_cuneiform_3";
+HAnimHumanoid43.segments[183] = HAnimSegment1783;
 
 let HAnimSegment1784 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1784.USE = "hanim_c5";
-HAnimHumanoid42.segments[186] = HAnimSegment1784;
+HAnimSegment1784.USE = "hanim_r_metatarsal_3";
+HAnimHumanoid43.segments[184] = HAnimSegment1784;
 
 let HAnimSegment1785 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1785.USE = "hanim_c4";
-HAnimHumanoid42.segments[187] = HAnimSegment1785;
+HAnimSegment1785.USE = "hanim_r_tarsal_proximal_phalanx_3";
+HAnimHumanoid43.segments[185] = HAnimSegment1785;
 
 let HAnimSegment1786 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1786.USE = "hanim_c3";
-HAnimHumanoid42.segments[188] = HAnimSegment1786;
+HAnimSegment1786.USE = "hanim_r_tarsal_middle_phalanx_3";
+HAnimHumanoid43.segments[186] = HAnimSegment1786;
 
 let HAnimSegment1787 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1787.USE = "hanim_c2";
-HAnimHumanoid42.segments[189] = HAnimSegment1787;
+HAnimSegment1787.USE = "hanim_r_calcaneus";
+HAnimHumanoid43.segments[187] = HAnimSegment1787;
 
 let HAnimSegment1788 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1788.USE = "hanim_c1";
-HAnimHumanoid42.segments[190] = HAnimSegment1788;
+HAnimSegment1788.USE = "hanim_r_cuboid";
+HAnimHumanoid43.segments[188] = HAnimSegment1788;
 
 let HAnimSegment1789 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1789.USE = "hanim_skull";
-HAnimHumanoid42.segments[191] = HAnimSegment1789;
+HAnimSegment1789.USE = "hanim_r_metatarsal_4";
+HAnimHumanoid43.segments[189] = HAnimSegment1789;
 
 let HAnimSegment1790 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1790.USE = "hanim_l_clavicle";
-HAnimHumanoid42.segments[192] = HAnimSegment1790;
+HAnimSegment1790.USE = "hanim_r_tarsal_proximal_phalanx_4";
+HAnimHumanoid43.segments[190] = HAnimSegment1790;
 
 let HAnimSegment1791 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1791.USE = "hanim_l_scapula";
-HAnimHumanoid42.segments[193] = HAnimSegment1791;
+HAnimSegment1791.USE = "hanim_r_tarsal_middle_phalanx_4";
+HAnimHumanoid43.segments[191] = HAnimSegment1791;
 
 let HAnimSegment1792 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1792.USE = "hanim_l_upperarm";
-HAnimHumanoid42.segments[194] = HAnimSegment1792;
+HAnimSegment1792.USE = "hanim_r_metatarsal_5";
+HAnimHumanoid43.segments[192] = HAnimSegment1792;
 
 let HAnimSegment1793 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1793.USE = "hanim_l_forearm";
-HAnimHumanoid42.segments[195] = HAnimSegment1793;
+HAnimSegment1793.USE = "hanim_r_tarsal_proximal_phalanx_5";
+HAnimHumanoid43.segments[193] = HAnimSegment1793;
 
 let HAnimSegment1794 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1794.USE = "hanim_l_carpal";
-HAnimHumanoid42.segments[196] = HAnimSegment1794;
+HAnimSegment1794.USE = "hanim_r_tarsal_middle_phalanx_5";
+HAnimHumanoid43.segments[194] = HAnimSegment1794;
 
 let HAnimSegment1795 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1795.USE = "hanim_l_trapezium";
-HAnimHumanoid42.segments[197] = HAnimSegment1795;
+HAnimSegment1795.USE = "hanim_l5";
+HAnimHumanoid43.segments[195] = HAnimSegment1795;
 
 let HAnimSegment1796 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1796.USE = "hanim_l_metacarpal_1";
-HAnimHumanoid42.segments[198] = HAnimSegment1796;
+HAnimSegment1796.USE = "hanim_l4";
+HAnimHumanoid43.segments[196] = HAnimSegment1796;
 
 let HAnimSegment1797 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1797.USE = "hanim_l_carpal_proximal_phalanx_1";
-HAnimHumanoid42.segments[199] = HAnimSegment1797;
+HAnimSegment1797.USE = "hanim_l3";
+HAnimHumanoid43.segments[197] = HAnimSegment1797;
 
 let HAnimSegment1798 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1798.USE = "hanim_l_trapezoid";
-HAnimHumanoid42.segments[200] = HAnimSegment1798;
+HAnimSegment1798.USE = "hanim_l2";
+HAnimHumanoid43.segments[198] = HAnimSegment1798;
 
 let HAnimSegment1799 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1799.USE = "hanim_l_metacarpal_2";
-HAnimHumanoid42.segments[201] = HAnimSegment1799;
+HAnimSegment1799.USE = "hanim_l1";
+HAnimHumanoid43.segments[199] = HAnimSegment1799;
 
 let HAnimSegment1800 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1800.USE = "hanim_l_carpal_proximal_phalanx_2 ";
-HAnimHumanoid42.segments[202] = HAnimSegment1800;
+HAnimSegment1800.USE = "hanim_t12";
+HAnimHumanoid43.segments[200] = HAnimSegment1800;
 
 let HAnimSegment1801 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1801.USE = "hanim_l_carpal_middle_phalanx_1";
-HAnimHumanoid42.segments[203] = HAnimSegment1801;
+HAnimSegment1801.USE = "hanim_t11";
+HAnimHumanoid43.segments[201] = HAnimSegment1801;
 
 let HAnimSegment1802 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1802.USE = "hanim_l_capitate";
-HAnimHumanoid42.segments[204] = HAnimSegment1802;
+HAnimSegment1802.USE = "hanim_t10";
+HAnimHumanoid43.segments[202] = HAnimSegment1802;
 
 let HAnimSegment1803 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1803.USE = "hanim_l_metacarpal_3";
-HAnimHumanoid42.segments[205] = HAnimSegment1803;
+HAnimSegment1803.USE = "hanim_t9";
+HAnimHumanoid43.segments[203] = HAnimSegment1803;
 
 let HAnimSegment1804 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1804.USE = "hanim_l_carpal_proximal_phalanx_2";
-HAnimHumanoid42.segments[206] = HAnimSegment1804;
+HAnimSegment1804.USE = "hanim_t8";
+HAnimHumanoid43.segments[204] = HAnimSegment1804;
 
 let HAnimSegment1805 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1805.USE = "hanim_l_carpal_middle_phalanx_2";
-HAnimHumanoid42.segments[207] = HAnimSegment1805;
+HAnimSegment1805.USE = "hanim_t7";
+HAnimHumanoid43.segments[205] = HAnimSegment1805;
 
 let HAnimSegment1806 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1806.USE = "hanim_l_hamate";
-HAnimHumanoid42.segments[208] = HAnimSegment1806;
+HAnimSegment1806.USE = "hanim_t6";
+HAnimHumanoid43.segments[206] = HAnimSegment1806;
 
 let HAnimSegment1807 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1807.USE = "hanim_l_metacarpal_4";
-HAnimHumanoid42.segments[209] = HAnimSegment1807;
+HAnimSegment1807.USE = "hanim_t5";
+HAnimHumanoid43.segments[207] = HAnimSegment1807;
 
 let HAnimSegment1808 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1808.USE = "hanim_l_carpal_proximal_phalanx_3";
-HAnimHumanoid42.segments[210] = HAnimSegment1808;
+HAnimSegment1808.USE = "hanim_t4";
+HAnimHumanoid43.segments[208] = HAnimSegment1808;
 
 let HAnimSegment1809 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1809.USE = "hanim_l_carpal_middle_phalanx_3";
-HAnimHumanoid42.segments[211] = HAnimSegment1809;
+HAnimSegment1809.USE = "hanim_t3";
+HAnimHumanoid43.segments[209] = HAnimSegment1809;
 
 let HAnimSegment1810 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1810.USE = "hanim_l_metacarpal_5";
-HAnimHumanoid42.segments[212] = HAnimSegment1810;
+HAnimSegment1810.USE = "hanim_t2";
+HAnimHumanoid43.segments[210] = HAnimSegment1810;
 
 let HAnimSegment1811 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1811.USE = "hanim_l_carpal_proximal_phalanx_4";
-HAnimHumanoid42.segments[213] = HAnimSegment1811;
+HAnimSegment1811.USE = "hanim_t1";
+HAnimHumanoid43.segments[211] = HAnimSegment1811;
 
 let HAnimSegment1812 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1812.USE = "hanim_l_carpal_middle_phalanx_4";
-HAnimHumanoid42.segments[214] = HAnimSegment1812;
+HAnimSegment1812.USE = "hanim_c7";
+HAnimHumanoid43.segments[212] = HAnimSegment1812;
 
 let HAnimSegment1813 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1813.USE = "hanim_r_clavicle";
-HAnimHumanoid42.segments[215] = HAnimSegment1813;
+HAnimSegment1813.USE = "hanim_c6";
+HAnimHumanoid43.segments[213] = HAnimSegment1813;
 
 let HAnimSegment1814 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1814.USE = "hanim_r_scapula";
-HAnimHumanoid42.segments[216] = HAnimSegment1814;
+HAnimSegment1814.USE = "hanim_c5";
+HAnimHumanoid43.segments[214] = HAnimSegment1814;
 
 let HAnimSegment1815 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1815.USE = "hanim_r_upperarm";
-HAnimHumanoid42.segments[217] = HAnimSegment1815;
+HAnimSegment1815.USE = "hanim_c4";
+HAnimHumanoid43.segments[215] = HAnimSegment1815;
 
 let HAnimSegment1816 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1816.USE = "hanim_r_forearm";
-HAnimHumanoid42.segments[218] = HAnimSegment1816;
+HAnimSegment1816.USE = "hanim_c3";
+HAnimHumanoid43.segments[216] = HAnimSegment1816;
 
 let HAnimSegment1817 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1817.USE = "hanim_r_carpal";
-HAnimHumanoid42.segments[219] = HAnimSegment1817;
+HAnimSegment1817.USE = "hanim_c2";
+HAnimHumanoid43.segments[217] = HAnimSegment1817;
 
 let HAnimSegment1818 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1818.USE = "hanim_r_trapezium";
-HAnimHumanoid42.segments[220] = HAnimSegment1818;
+HAnimSegment1818.USE = "hanim_c1";
+HAnimHumanoid43.segments[218] = HAnimSegment1818;
 
 let HAnimSegment1819 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1819.USE = "hanim_r_metacarpal_1";
-HAnimHumanoid42.segments[221] = HAnimSegment1819;
+HAnimSegment1819.USE = "hanim_skull";
+HAnimHumanoid43.segments[219] = HAnimSegment1819;
 
 let HAnimSegment1820 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1820.USE = "hanim_r_carpal_proximal_phalanx_1";
-HAnimHumanoid42.segments[222] = HAnimSegment1820;
+HAnimSegment1820.USE = "hanim_l_clavicle";
+HAnimHumanoid43.segments[220] = HAnimSegment1820;
 
 let HAnimSegment1821 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1821.USE = "hanim_r_trapezoid";
-HAnimHumanoid42.segments[223] = HAnimSegment1821;
+HAnimSegment1821.USE = "hanim_l_scapula";
+HAnimHumanoid43.segments[221] = HAnimSegment1821;
 
 let HAnimSegment1822 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1822.USE = "hanim_r_metacarpal_2";
-HAnimHumanoid42.segments[224] = HAnimSegment1822;
+HAnimSegment1822.USE = "hanim_l_upperarm";
+HAnimHumanoid43.segments[222] = HAnimSegment1822;
 
 let HAnimSegment1823 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1823.USE = "hanim_r_carpal_proximal_phalanx_2 ";
-HAnimHumanoid42.segments[225] = HAnimSegment1823;
+HAnimSegment1823.USE = "hanim_l_forearm";
+HAnimHumanoid43.segments[223] = HAnimSegment1823;
 
 let HAnimSegment1824 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1824.USE = "hanim_r_carpal_middle_phalanx_1";
-HAnimHumanoid42.segments[226] = HAnimSegment1824;
+HAnimSegment1824.USE = "hanim_l_carpal";
+HAnimHumanoid43.segments[224] = HAnimSegment1824;
 
 let HAnimSegment1825 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1825.USE = "hanim_r_capitate";
-HAnimHumanoid42.segments[227] = HAnimSegment1825;
+HAnimSegment1825.USE = "hanim_l_trapezium";
+HAnimHumanoid43.segments[225] = HAnimSegment1825;
 
 let HAnimSegment1826 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1826.USE = "hanim_r_metacarpal_3";
-HAnimHumanoid42.segments[228] = HAnimSegment1826;
+HAnimSegment1826.USE = "hanim_l_metacarpal_1";
+HAnimHumanoid43.segments[226] = HAnimSegment1826;
 
 let HAnimSegment1827 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1827.USE = "hanim_r_carpal_proximal_phalanx_2";
-HAnimHumanoid42.segments[229] = HAnimSegment1827;
+HAnimSegment1827.USE = "hanim_l_carpal_proximal_phalanx_1";
+HAnimHumanoid43.segments[227] = HAnimSegment1827;
 
 let HAnimSegment1828 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1828.USE = "hanim_r_carpal_middle_phalanx_2";
-HAnimHumanoid42.segments[230] = HAnimSegment1828;
+HAnimSegment1828.USE = "hanim_l_trapezoid";
+HAnimHumanoid43.segments[228] = HAnimSegment1828;
 
 let HAnimSegment1829 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1829.USE = "hanim_r_hamate";
-HAnimHumanoid42.segments[231] = HAnimSegment1829;
+HAnimSegment1829.USE = "hanim_l_metacarpal_2";
+HAnimHumanoid43.segments[229] = HAnimSegment1829;
 
 let HAnimSegment1830 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1830.USE = "hanim_r_metacarpal_4";
-HAnimHumanoid42.segments[232] = HAnimSegment1830;
+HAnimSegment1830.USE = "hanim_l_carpal_proximal_phalanx_2";
+HAnimHumanoid43.segments[230] = HAnimSegment1830;
 
 let HAnimSegment1831 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1831.USE = "hanim_r_carpal_proximal_phalanx_3";
-HAnimHumanoid42.segments[233] = HAnimSegment1831;
+HAnimSegment1831.USE = "hanim_l_carpal_middle_phalanx_2";
+HAnimHumanoid43.segments[231] = HAnimSegment1831;
 
 let HAnimSegment1832 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1832.USE = "hanim_r_carpal_middle_phalanx_3";
-HAnimHumanoid42.segments[234] = HAnimSegment1832;
+HAnimSegment1832.USE = "hanim_l_capitate";
+HAnimHumanoid43.segments[232] = HAnimSegment1832;
 
 let HAnimSegment1833 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1833.USE = "hanim_r_metacarpal_5";
-HAnimHumanoid42.segments[235] = HAnimSegment1833;
+HAnimSegment1833.USE = "hanim_l_metacarpal_3";
+HAnimHumanoid43.segments[233] = HAnimSegment1833;
 
 let HAnimSegment1834 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1834.USE = "hanim_r_carpal_proximal_phalanx_4";
-HAnimHumanoid42.segments[236] = HAnimSegment1834;
+HAnimSegment1834.USE = "hanim_l_carpal_proximal_phalanx_3";
+HAnimHumanoid43.segments[234] = HAnimSegment1834;
 
 let HAnimSegment1835 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1835.USE = "hanim_r_carpal_middle_phalanx_4";
-HAnimHumanoid42.segments[237] = HAnimSegment1835;
-
-let HAnimJoint1836 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1836.USE = "hanim_humanoid_root";
-HAnimHumanoid42.joints[238] = HAnimJoint1836;
-
-let HAnimJoint1837 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1837.USE = "hanim_sacroiliac";
-HAnimHumanoid42.joints[239] = HAnimJoint1837;
-
-let HAnimJoint1838 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1838.USE = "hanim_l_hip";
-HAnimHumanoid42.joints[240] = HAnimJoint1838;
-
-let HAnimJoint1839 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1839.USE = "hanim_l_knee";
-HAnimHumanoid42.joints[241] = HAnimJoint1839;
-
-let HAnimJoint1840 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1840.USE = "hanim_l_talocrural";
-HAnimHumanoid42.joints[242] = HAnimJoint1840;
-
-let HAnimJoint1841 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1841.USE = "hanim_l_talocalcaneonavicular";
-HAnimHumanoid42.joints[243] = HAnimJoint1841;
-
-let HAnimJoint1842 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1842.USE = "hanim_l_cuneonavicular_1";
-HAnimHumanoid42.joints[244] = HAnimJoint1842;
-
-let HAnimJoint1843 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1843.USE = "hanim_l_tarsometatarsal_1";
-HAnimHumanoid42.joints[245] = HAnimJoint1843;
-
-let HAnimJoint1844 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1844.USE = "hanim_l_metatarsophalangeal_1";
-HAnimHumanoid42.joints[246] = HAnimJoint1844;
-
-let HAnimJoint1845 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1845.USE = "hanim_l_tarsal_interphalangeal_1";
-HAnimHumanoid42.joints[247] = HAnimJoint1845;
-
-let HAnimJoint1846 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1846.USE = "hanim_l_cuneonavicular_2";
-HAnimHumanoid42.joints[248] = HAnimJoint1846;
-
-let HAnimJoint1847 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1847.USE = "hanim_l_tarsometatarsal_2";
-HAnimHumanoid42.joints[249] = HAnimJoint1847;
-
-let HAnimJoint1848 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1848.USE = "hanim_l_metatarsophalangeal_2";
-HAnimHumanoid42.joints[250] = HAnimJoint1848;
-
-let HAnimJoint1849 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1849.USE = "hanim_l_tarsal_proximal_interphalangeal_1";
-HAnimHumanoid42.joints[251] = HAnimJoint1849;
-
-let HAnimJoint1850 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1850.USE = "hanim_l_tarsal_distal_interphalangeal_1";
-HAnimHumanoid42.joints[252] = HAnimJoint1850;
-
-let HAnimJoint1851 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1851.USE = "hanim_l_cuneonavicular_3";
-HAnimHumanoid42.joints[253] = HAnimJoint1851;
-
-let HAnimJoint1852 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1852.USE = "hanim_l_tarsometatarsal_3 ";
-HAnimHumanoid42.joints[254] = HAnimJoint1852;
-
-let HAnimJoint1853 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1853.USE = "hanim_l_metatarsophalangeal_3";
-HAnimHumanoid42.joints[255] = HAnimJoint1853;
-
-let HAnimJoint1854 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1854.USE = "hanim_l_tarsal_proximal_interphalangeal_2";
-HAnimHumanoid42.joints[256] = HAnimJoint1854;
-
-let HAnimJoint1855 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1855.USE = "hanim_l_tarsal_distal_interphalangeal_2";
-HAnimHumanoid42.joints[257] = HAnimJoint1855;
-
-let HAnimJoint1856 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1856.USE = "hanim_l_calcaneocuboid";
-HAnimHumanoid42.joints[258] = HAnimJoint1856;
-
-let HAnimJoint1857 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1857.USE = "hanim_l_transversetarsal";
-HAnimHumanoid42.joints[259] = HAnimJoint1857;
-
-let HAnimJoint1858 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1858.USE = "hanim_l_tarsometatarsal_3";
-HAnimHumanoid42.joints[260] = HAnimJoint1858;
-
-let HAnimJoint1859 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1859.USE = "hanim_l_metatarsophalangeal_4";
-HAnimHumanoid42.joints[261] = HAnimJoint1859;
-
-let HAnimJoint1860 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1860.USE = "hanim_l_tarsal_proximal_interphalangeal_3";
-HAnimHumanoid42.joints[262] = HAnimJoint1860;
-
-let HAnimJoint1861 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1861.USE = "hanim_l_tarsal_distal_interphalangeal_3";
-HAnimHumanoid42.joints[263] = HAnimJoint1861;
-
-let HAnimJoint1862 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1862.USE = "hanim_l_tarsometatarsal_4";
-HAnimHumanoid42.joints[264] = HAnimJoint1862;
-
-let HAnimJoint1863 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1863.USE = "hanim_l_metatarsophalangeal_5";
-HAnimHumanoid42.joints[265] = HAnimJoint1863;
-
-let HAnimJoint1864 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1864.USE = "hanim_l_tarsal_proximal_interphalangeal_4";
-HAnimHumanoid42.joints[266] = HAnimJoint1864;
-
-let HAnimJoint1865 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1865.USE = "hanim_l_tarsal_distal_interphalangeal_4";
-HAnimHumanoid42.joints[267] = HAnimJoint1865;
-
-let HAnimJoint1866 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1866.USE = "hanim_r_hip";
-HAnimHumanoid42.joints[268] = HAnimJoint1866;
-
-let HAnimJoint1867 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1867.USE = "hanim_r_knee";
-HAnimHumanoid42.joints[269] = HAnimJoint1867;
-
-let HAnimJoint1868 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1868.USE = "hanim_r_talocrural";
-HAnimHumanoid42.joints[270] = HAnimJoint1868;
-
-let HAnimJoint1869 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1869.USE = "hanim_r_talocalcaneonavicular";
-HAnimHumanoid42.joints[271] = HAnimJoint1869;
-
-let HAnimJoint1870 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1870.USE = "hanim_r_cuneonavicular_1";
-HAnimHumanoid42.joints[272] = HAnimJoint1870;
-
-let HAnimJoint1871 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1871.USE = "hanim_r_tarsometatarsal_1";
-HAnimHumanoid42.joints[273] = HAnimJoint1871;
-
-let HAnimJoint1872 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1872.USE = "hanim_r_metatarsophalangeal_1";
-HAnimHumanoid42.joints[274] = HAnimJoint1872;
-
-let HAnimJoint1873 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1873.USE = "hanim_r_tarsal_interphalangeal_1";
-HAnimHumanoid42.joints[275] = HAnimJoint1873;
-
-let HAnimJoint1874 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1874.USE = "hanim_r_cuneonavicular_2";
-HAnimHumanoid42.joints[276] = HAnimJoint1874;
-
-let HAnimJoint1875 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1875.USE = "hanim_r_tarsometatarsal_2";
-HAnimHumanoid42.joints[277] = HAnimJoint1875;
-
-let HAnimJoint1876 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1876.USE = "hanim_r_metatarsophalangeal_2";
-HAnimHumanoid42.joints[278] = HAnimJoint1876;
-
-let HAnimJoint1877 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1877.USE = "hanim_r_tarsal_proximal_interphalangeal_1";
-HAnimHumanoid42.joints[279] = HAnimJoint1877;
-
-let HAnimJoint1878 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1878.USE = "hanim_r_tarsal_distal_interphalangeal_1";
-HAnimHumanoid42.joints[280] = HAnimJoint1878;
-
-let HAnimJoint1879 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1879.USE = "hanim_r_cuneonavicular_3";
-HAnimHumanoid42.joints[281] = HAnimJoint1879;
-
-let HAnimJoint1880 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1880.USE = "hanim_r_tarsometatarsal_3 ";
-HAnimHumanoid42.joints[282] = HAnimJoint1880;
-
-let HAnimJoint1881 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1881.USE = "hanim_r_metatarsophalangeal_3";
-HAnimHumanoid42.joints[283] = HAnimJoint1881;
-
-let HAnimJoint1882 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1882.USE = "hanim_r_tarsal_proximal_interphalangeal_2";
-HAnimHumanoid42.joints[284] = HAnimJoint1882;
-
-let HAnimJoint1883 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1883.USE = "hanim_r_tarsal_distal_interphalangeal_2";
-HAnimHumanoid42.joints[285] = HAnimJoint1883;
-
-let HAnimJoint1884 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1884.USE = "hanim_r_calcaneocuboid";
-HAnimHumanoid42.joints[286] = HAnimJoint1884;
-
-let HAnimJoint1885 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1885.USE = "hanim_r_transversetarsal";
-HAnimHumanoid42.joints[287] = HAnimJoint1885;
-
-let HAnimJoint1886 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1886.USE = "hanim_r_tarsometatarsal_3";
-HAnimHumanoid42.joints[288] = HAnimJoint1886;
-
-let HAnimJoint1887 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1887.USE = "hanim_r_metatarsophalangeal_4";
-HAnimHumanoid42.joints[289] = HAnimJoint1887;
-
-let HAnimJoint1888 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1888.USE = "hanim_r_tarsal_proximal_interphalangeal_3";
-HAnimHumanoid42.joints[290] = HAnimJoint1888;
-
-let HAnimJoint1889 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1889.USE = "hanim_r_tarsal_distal_interphalangeal_3";
-HAnimHumanoid42.joints[291] = HAnimJoint1889;
-
-let HAnimJoint1890 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1890.USE = "hanim_r_tarsometatarsal_4";
-HAnimHumanoid42.joints[292] = HAnimJoint1890;
-
-let HAnimJoint1891 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1891.USE = "hanim_r_metatarsophalangeal_5";
-HAnimHumanoid42.joints[293] = HAnimJoint1891;
-
-let HAnimJoint1892 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1892.USE = "hanim_r_tarsal_proximal_interphalangeal_4";
-HAnimHumanoid42.joints[294] = HAnimJoint1892;
-
-let HAnimJoint1893 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1893.USE = "hanim_r_tarsal_distal_interphalangeal_4";
-HAnimHumanoid42.joints[295] = HAnimJoint1893;
-
-let HAnimJoint1894 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1894.USE = "hanim_vl5";
-HAnimHumanoid42.joints[296] = HAnimJoint1894;
-
-let HAnimJoint1895 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1895.USE = "hanim_vl4";
-HAnimHumanoid42.joints[297] = HAnimJoint1895;
-
-let HAnimJoint1896 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1896.USE = "hanim_vl3";
-HAnimHumanoid42.joints[298] = HAnimJoint1896;
-
-let HAnimJoint1897 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1897.USE = "hanim_vl2";
-HAnimHumanoid42.joints[299] = HAnimJoint1897;
-
-let HAnimJoint1898 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1898.USE = "hanim_vl1";
-HAnimHumanoid42.joints[300] = HAnimJoint1898;
-
-let HAnimJoint1899 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1899.USE = "hanim_vt12";
-HAnimHumanoid42.joints[301] = HAnimJoint1899;
-
-let HAnimJoint1900 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1900.USE = "hanim_vt11";
-HAnimHumanoid42.joints[302] = HAnimJoint1900;
-
-let HAnimJoint1901 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1901.USE = "hanim_vt10";
-HAnimHumanoid42.joints[303] = HAnimJoint1901;
-
-let HAnimJoint1902 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1902.USE = "hanim_vt9";
-HAnimHumanoid42.joints[304] = HAnimJoint1902;
-
-let HAnimJoint1903 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1903.USE = "hanim_vt8";
-HAnimHumanoid42.joints[305] = HAnimJoint1903;
-
-let HAnimJoint1904 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1904.USE = "hanim_vt7";
-HAnimHumanoid42.joints[306] = HAnimJoint1904;
-
-let HAnimJoint1905 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1905.USE = "hanim_vt6";
-HAnimHumanoid42.joints[307] = HAnimJoint1905;
-
-let HAnimJoint1906 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1906.USE = "hanim_vt5";
-HAnimHumanoid42.joints[308] = HAnimJoint1906;
-
-let HAnimJoint1907 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1907.USE = "hanim_vt4";
-HAnimHumanoid42.joints[309] = HAnimJoint1907;
-
-let HAnimJoint1908 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1908.USE = "hanim_vt3";
-HAnimHumanoid42.joints[310] = HAnimJoint1908;
-
-let HAnimJoint1909 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1909.USE = "hanim_vt2";
-HAnimHumanoid42.joints[311] = HAnimJoint1909;
-
-let HAnimJoint1910 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1910.USE = "hanim_vt1";
-HAnimHumanoid42.joints[312] = HAnimJoint1910;
-
-let HAnimJoint1911 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1911.USE = "hanim_vc7";
-HAnimHumanoid42.joints[313] = HAnimJoint1911;
-
-let HAnimJoint1912 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1912.USE = "hanim_vc6";
-HAnimHumanoid42.joints[314] = HAnimJoint1912;
-
-let HAnimJoint1913 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1913.USE = "hanim_vc5";
-HAnimHumanoid42.joints[315] = HAnimJoint1913;
-
-let HAnimJoint1914 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1914.USE = "hanim_vc4";
-HAnimHumanoid42.joints[316] = HAnimJoint1914;
-
-let HAnimJoint1915 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1915.USE = "hanim_vc3";
-HAnimHumanoid42.joints[317] = HAnimJoint1915;
-
-let HAnimJoint1916 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1916.USE = "hanim_vc2";
-HAnimHumanoid42.joints[318] = HAnimJoint1916;
-
-let HAnimJoint1917 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1917.USE = "hanim_vc1";
-HAnimHumanoid42.joints[319] = HAnimJoint1917;
-
-let HAnimJoint1918 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1918.USE = "hanim_skullbase";
-HAnimHumanoid42.joints[320] = HAnimJoint1918;
-
-let HAnimJoint1919 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1919.USE = "hanim_l_eyelid_joint";
-HAnimHumanoid42.joints[321] = HAnimJoint1919;
-
-let HAnimJoint1920 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1920.USE = "hanim_r_eyelid_joint";
-HAnimHumanoid42.joints[322] = HAnimJoint1920;
-
-let HAnimJoint1921 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1921.USE = "hanim_l_eyeball_joint";
-HAnimHumanoid42.joints[323] = HAnimJoint1921;
-
-let HAnimJoint1922 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1922.USE = "hanim_r_eyeball_joint";
-HAnimHumanoid42.joints[324] = HAnimJoint1922;
-
-let HAnimJoint1923 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1923.USE = "hanim_l_eyebrow_joint";
-HAnimHumanoid42.joints[325] = HAnimJoint1923;
-
-let HAnimJoint1924 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1924.USE = "hanim_r_eyebrow_joint";
-HAnimHumanoid42.joints[326] = HAnimJoint1924;
-
-let HAnimJoint1925 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1925.USE = "hanim_temporomandibular";
-HAnimHumanoid42.joints[327] = HAnimJoint1925;
-
-let HAnimJoint1926 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1926.USE = "hanim_l_sternoclavicular";
-HAnimHumanoid42.joints[328] = HAnimJoint1926;
-
-let HAnimJoint1927 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1927.USE = "hanim_l_acromioclavicular";
-HAnimHumanoid42.joints[329] = HAnimJoint1927;
-
-let HAnimJoint1928 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1928.USE = "hanim_l_shoulder";
-HAnimHumanoid42.joints[330] = HAnimJoint1928;
-
-let HAnimJoint1929 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1929.USE = "hanim_l_elbow";
-HAnimHumanoid42.joints[331] = HAnimJoint1929;
-
-let HAnimJoint1930 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1930.USE = "hanim_l_radiocarpal";
-HAnimHumanoid42.joints[332] = HAnimJoint1930;
-
-let HAnimJoint1931 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1931.USE = "hanim_l_midcarpal_1";
-HAnimHumanoid42.joints[333] = HAnimJoint1931;
-
-let HAnimJoint1932 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1932.USE = "hanim_l_carpometacarpal_1";
-HAnimHumanoid42.joints[334] = HAnimJoint1932;
-
-let HAnimJoint1933 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1933.USE = "hanim_l_metacarpophalangeal_1";
-HAnimHumanoid42.joints[335] = HAnimJoint1933;
-
-let HAnimJoint1934 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1934.USE = "hanim_l_carpal_interphalangeal_1";
-HAnimHumanoid42.joints[336] = HAnimJoint1934;
-
-let HAnimJoint1935 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1935.USE = "hanim_l_midcarpal_2";
-HAnimHumanoid42.joints[337] = HAnimJoint1935;
-
-let HAnimJoint1936 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1936.USE = "hanim_l_carpometacarpal_2";
-HAnimHumanoid42.joints[338] = HAnimJoint1936;
-
-let HAnimJoint1937 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1937.USE = "hanim_l_metacarpophalangeal_2";
-HAnimHumanoid42.joints[339] = HAnimJoint1937;
-
-let HAnimJoint1938 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1938.USE = "hanim_l_carpal_proximal_interphalangeal_1";
-HAnimHumanoid42.joints[340] = HAnimJoint1938;
-
-let HAnimJoint1939 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1939.USE = "hanim_l_carpal_distal_interphalangeal_1";
-HAnimHumanoid42.joints[341] = HAnimJoint1939;
-
-let HAnimJoint1940 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1940.USE = "hanim_l_midcarpal_3";
-HAnimHumanoid42.joints[342] = HAnimJoint1940;
-
-let HAnimJoint1941 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1941.USE = "hanim_l_carpometacarpal_3";
-HAnimHumanoid42.joints[343] = HAnimJoint1941;
-
-let HAnimJoint1942 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1942.USE = "hanim_l_metacarpophalangeal_3";
-HAnimHumanoid42.joints[344] = HAnimJoint1942;
-
-let HAnimJoint1943 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1943.USE = "hanim_l_carpal_proximal_interphalangeal_2";
-HAnimHumanoid42.joints[345] = HAnimJoint1943;
-
-let HAnimJoint1944 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1944.USE = "hanim_l_carpal_distal_interphalangeal_2";
-HAnimHumanoid42.joints[346] = HAnimJoint1944;
-
-let HAnimJoint1945 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1945.USE = "hanim_l_midcarpal_4_1";
-HAnimHumanoid42.joints[347] = HAnimJoint1945;
-
-let HAnimJoint1946 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1946.USE = "hanim_l_carpometacarpal_4";
-HAnimHumanoid42.joints[348] = HAnimJoint1946;
-
-let HAnimJoint1947 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1947.USE = "hanim_l_metacarpophalangeal_4";
-HAnimHumanoid42.joints[349] = HAnimJoint1947;
-
-let HAnimJoint1948 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1948.USE = "hanim_l_carpal_proximal_interphalangeal_3";
-HAnimHumanoid42.joints[350] = HAnimJoint1948;
-
-let HAnimJoint1949 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1949.USE = "hanim_l_carpal_distal_interphalangeal_3";
-HAnimHumanoid42.joints[351] = HAnimJoint1949;
-
-let HAnimJoint1950 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1950.USE = "hanim_l_carpometacarpal_5";
-HAnimHumanoid42.joints[352] = HAnimJoint1950;
-
-let HAnimJoint1951 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1951.USE = "hanim_l_metacarpophalangeal_5";
-HAnimHumanoid42.joints[353] = HAnimJoint1951;
-
-let HAnimJoint1952 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1952.USE = "hanim_l_carpal_proximal_interphalangeal_4";
-HAnimHumanoid42.joints[354] = HAnimJoint1952;
-
-let HAnimJoint1953 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1953.USE = "hanim_l_carpal_distal_interphalangeal_4";
-HAnimHumanoid42.joints[355] = HAnimJoint1953;
-
-let HAnimJoint1954 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1954.USE = "hanim_r_sternoclavicular";
-HAnimHumanoid42.joints[356] = HAnimJoint1954;
-
-let HAnimJoint1955 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1955.USE = "hanim_r_acromioclavicular";
-HAnimHumanoid42.joints[357] = HAnimJoint1955;
-
-let HAnimJoint1956 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1956.USE = "hanim_r_shoulder";
-HAnimHumanoid42.joints[358] = HAnimJoint1956;
-
-let HAnimJoint1957 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1957.USE = "hanim_r_elbow";
-HAnimHumanoid42.joints[359] = HAnimJoint1957;
+HAnimSegment1835.USE = "hanim_l_carpal_middle_phalanx_3";
+HAnimHumanoid43.segments[235] = HAnimSegment1835;
+
+let HAnimSegment1836 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1836.USE = "hanim_l_hamate";
+HAnimHumanoid43.segments[236] = HAnimSegment1836;
+
+let HAnimSegment1837 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1837.USE = "hanim_l_metacarpal_4";
+HAnimHumanoid43.segments[237] = HAnimSegment1837;
+
+let HAnimSegment1838 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1838.USE = "hanim_l_carpal_proximal_phalanx_4";
+HAnimHumanoid43.segments[238] = HAnimSegment1838;
+
+let HAnimSegment1839 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1839.USE = "hanim_l_carpal_middle_phalanx_4";
+HAnimHumanoid43.segments[239] = HAnimSegment1839;
+
+let HAnimSegment1840 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1840.USE = "hanim_l_metacarpal_5";
+HAnimHumanoid43.segments[240] = HAnimSegment1840;
+
+let HAnimSegment1841 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1841.USE = "hanim_l_carpal_proximal_phalanx_5";
+HAnimHumanoid43.segments[241] = HAnimSegment1841;
+
+let HAnimSegment1842 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1842.USE = "hanim_l_carpal_middle_phalanx_5";
+HAnimHumanoid43.segments[242] = HAnimSegment1842;
+
+let HAnimSegment1843 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1843.USE = "hanim_r_clavicle";
+HAnimHumanoid43.segments[243] = HAnimSegment1843;
+
+let HAnimSegment1844 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1844.USE = "hanim_r_scapula";
+HAnimHumanoid43.segments[244] = HAnimSegment1844;
+
+let HAnimSegment1845 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1845.USE = "hanim_r_upperarm";
+HAnimHumanoid43.segments[245] = HAnimSegment1845;
+
+let HAnimSegment1846 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1846.USE = "hanim_r_forearm";
+HAnimHumanoid43.segments[246] = HAnimSegment1846;
+
+let HAnimSegment1847 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1847.USE = "hanim_r_carpal";
+HAnimHumanoid43.segments[247] = HAnimSegment1847;
+
+let HAnimSegment1848 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1848.USE = "hanim_r_trapezium";
+HAnimHumanoid43.segments[248] = HAnimSegment1848;
+
+let HAnimSegment1849 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1849.USE = "hanim_r_metacarpal_1";
+HAnimHumanoid43.segments[249] = HAnimSegment1849;
+
+let HAnimSegment1850 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1850.USE = "hanim_r_carpal_proximal_phalanx_1";
+HAnimHumanoid43.segments[250] = HAnimSegment1850;
+
+let HAnimSegment1851 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1851.USE = "hanim_r_trapezoid";
+HAnimHumanoid43.segments[251] = HAnimSegment1851;
+
+let HAnimSegment1852 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1852.USE = "hanim_r_metacarpal_2";
+HAnimHumanoid43.segments[252] = HAnimSegment1852;
+
+let HAnimSegment1853 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1853.USE = "hanim_r_carpal_proximal_phalanx_2";
+HAnimHumanoid43.segments[253] = HAnimSegment1853;
+
+let HAnimSegment1854 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1854.USE = "hanim_r_carpal_middle_phalanx_2";
+HAnimHumanoid43.segments[254] = HAnimSegment1854;
+
+let HAnimSegment1855 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1855.USE = "hanim_r_capitate";
+HAnimHumanoid43.segments[255] = HAnimSegment1855;
+
+let HAnimSegment1856 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1856.USE = "hanim_r_metacarpal_3";
+HAnimHumanoid43.segments[256] = HAnimSegment1856;
+
+let HAnimSegment1857 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1857.USE = "hanim_r_carpal_proximal_phalanx_3";
+HAnimHumanoid43.segments[257] = HAnimSegment1857;
+
+let HAnimSegment1858 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1858.USE = "hanim_r_carpal_middle_phalanx_3";
+HAnimHumanoid43.segments[258] = HAnimSegment1858;
+
+let HAnimSegment1859 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1859.USE = "hanim_r_hamate";
+HAnimHumanoid43.segments[259] = HAnimSegment1859;
+
+let HAnimSegment1860 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1860.USE = "hanim_r_metacarpal_4";
+HAnimHumanoid43.segments[260] = HAnimSegment1860;
+
+let HAnimSegment1861 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1861.USE = "hanim_r_carpal_proximal_phalanx_4";
+HAnimHumanoid43.segments[261] = HAnimSegment1861;
+
+let HAnimSegment1862 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1862.USE = "hanim_r_carpal_middle_phalanx_4";
+HAnimHumanoid43.segments[262] = HAnimSegment1862;
+
+let HAnimSegment1863 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1863.USE = "hanim_r_metacarpal_5";
+HAnimHumanoid43.segments[263] = HAnimSegment1863;
+
+let HAnimSegment1864 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1864.USE = "hanim_r_carpal_proximal_phalanx_5";
+HAnimHumanoid43.segments[264] = HAnimSegment1864;
+
+let HAnimSegment1865 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment1865.USE = "hanim_r_carpal_middle_phalanx_5";
+HAnimHumanoid43.segments[265] = HAnimSegment1865;
+
+let HAnimSite1866 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1866.USE = "hanim_buttocks_standing_wall_contact_point_pt";
+HAnimHumanoid43.viewpoints[266] = HAnimSite1866;
+
+let HAnimSite1867 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1867.USE = "hanim_crotch_pt";
+HAnimHumanoid43.viewpoints[267] = HAnimSite1867;
+
+let HAnimSite1868 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1868.USE = "hanim_l_asis_pt";
+HAnimHumanoid43.viewpoints[268] = HAnimSite1868;
+
+let HAnimSite1869 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1869.USE = "hanim_l_iliocristale_pt";
+HAnimHumanoid43.viewpoints[269] = HAnimSite1869;
+
+let HAnimSite1870 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1870.USE = "hanim_l_psis_pt";
+HAnimHumanoid43.viewpoints[270] = HAnimSite1870;
+
+let HAnimSite1871 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1871.USE = "hanim_l_trochanterion_pt";
+HAnimHumanoid43.viewpoints[271] = HAnimSite1871;
+
+let HAnimSite1872 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1872.USE = "hanim_r_asis_pt";
+HAnimHumanoid43.viewpoints[272] = HAnimSite1872;
+
+let HAnimSite1873 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1873.USE = "hanim_r_iliocristale_pt";
+HAnimHumanoid43.viewpoints[273] = HAnimSite1873;
+
+let HAnimSite1874 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1874.USE = "hanim_r_psis_pt";
+HAnimHumanoid43.viewpoints[274] = HAnimSite1874;
+
+let HAnimSite1875 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1875.USE = "hanim_r_trochanterion_pt";
+HAnimHumanoid43.viewpoints[275] = HAnimSite1875;
+
+let HAnimSite1876 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1876.USE = "hanim_navel_pt";
+HAnimHumanoid43.viewpoints[276] = HAnimSite1876;
+
+let HAnimSite1877 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1877.USE = "hanim_waist_preferred_anterior_pt";
+HAnimHumanoid43.viewpoints[277] = HAnimSite1877;
+
+let HAnimSite1878 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1878.USE = "hanim_waist_preferred_posterior_pt";
+HAnimHumanoid43.viewpoints[278] = HAnimSite1878;
+
+let HAnimSite1879 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1879.USE = "hanim_l_femoral_lateral_epicondyles_pt";
+HAnimHumanoid43.viewpoints[279] = HAnimSite1879;
+
+let HAnimSite1880 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1880.USE = "hanim_l_femoral_medial_epicondyles_pt";
+HAnimHumanoid43.viewpoints[280] = HAnimSite1880;
+
+let HAnimSite1881 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1881.USE = "hanim_l_knee_crease_pt";
+HAnimHumanoid43.viewpoints[281] = HAnimSite1881;
+
+let HAnimSite1882 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1882.USE = "hanim_l_suprapatella_pt";
+HAnimHumanoid43.viewpoints[282] = HAnimSite1882;
+
+let HAnimSite1883 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1883.USE = "hanim_r_femoral_lateral_epicondyles_pt";
+HAnimHumanoid43.viewpoints[283] = HAnimSite1883;
+
+let HAnimSite1884 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1884.USE = "hanim_r_femoral_medial_epicondyles_pt";
+HAnimHumanoid43.viewpoints[284] = HAnimSite1884;
+
+let HAnimSite1885 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1885.USE = "hanim_r_knee_crease_pt";
+HAnimHumanoid43.viewpoints[285] = HAnimSite1885;
+
+let HAnimSite1886 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1886.USE = "hanim_r_suprapatella_pt";
+HAnimHumanoid43.viewpoints[286] = HAnimSite1886;
+
+let HAnimSite1887 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1887.USE = "hanim_l_lateral_malleolus_pt";
+HAnimHumanoid43.viewpoints[287] = HAnimSite1887;
+
+let HAnimSite1888 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1888.USE = "hanim_l_medial_malleolus_pt";
+HAnimHumanoid43.viewpoints[288] = HAnimSite1888;
+
+let HAnimSite1889 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1889.USE = "hanim_l_tibiale_pt";
+HAnimHumanoid43.viewpoints[289] = HAnimSite1889;
+
+let HAnimSite1890 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1890.USE = "hanim_l_calcaneus_posterior_pt";
+HAnimHumanoid43.viewpoints[290] = HAnimSite1890;
+
+let HAnimSite1891 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1891.USE = "hanim_l_sphyrion_pt";
+HAnimHumanoid43.viewpoints[291] = HAnimSite1891;
+
+let HAnimSite1892 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1892.USE = "hanim_l_metatarsal_phalanx_1_pt";
+HAnimHumanoid43.viewpoints[292] = HAnimSite1892;
+
+let HAnimSite1893 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1893.USE = "hanim_l_tarsal_distal_phalanx_1_tip";
+HAnimHumanoid43.viewpoints[293] = HAnimSite1893;
+
+let HAnimSite1894 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1894.USE = "hanim_l_tarsal_distal_phalanx_2_tip";
+HAnimHumanoid43.viewpoints[294] = HAnimSite1894;
+
+let HAnimSite1895 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1895.USE = "hanim_l_tarsal_distal_phalanx_3_tip";
+HAnimHumanoid43.viewpoints[295] = HAnimSite1895;
+
+let HAnimSite1896 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1896.USE = "hanim_l_tarsal_distal_phalanx_4_tip";
+HAnimHumanoid43.viewpoints[296] = HAnimSite1896;
+
+let HAnimSite1897 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1897.USE = "hanim_l_metatarsal_phalanx_5_pt";
+HAnimHumanoid43.viewpoints[297] = HAnimSite1897;
+
+let HAnimSite1898 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1898.USE = "hanim_l_tarsal_distal_phalanx_5_tip";
+HAnimHumanoid43.viewpoints[298] = HAnimSite1898;
+
+let HAnimSite1899 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1899.USE = "hanim_r_lateral_malleolus_pt";
+HAnimHumanoid43.viewpoints[299] = HAnimSite1899;
+
+let HAnimSite1900 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1900.USE = "hanim_r_medial_malleolus_pt";
+HAnimHumanoid43.viewpoints[300] = HAnimSite1900;
+
+let HAnimSite1901 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1901.USE = "hanim_r_tibiale_pt";
+HAnimHumanoid43.viewpoints[301] = HAnimSite1901;
+
+let HAnimSite1902 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1902.USE = "hanim_r_calcaneus_posterior_pt";
+HAnimHumanoid43.viewpoints[302] = HAnimSite1902;
+
+let HAnimSite1903 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1903.USE = "hanim_r_sphyrion_pt";
+HAnimHumanoid43.viewpoints[303] = HAnimSite1903;
+
+let HAnimSite1904 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1904.USE = "hanim_r_metatarsal_phalanx_1_pt";
+HAnimHumanoid43.viewpoints[304] = HAnimSite1904;
+
+let HAnimSite1905 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1905.USE = "hanim_r_tarsal_distal_phalanx_1_tip";
+HAnimHumanoid43.viewpoints[305] = HAnimSite1905;
+
+let HAnimSite1906 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1906.USE = "hanim_r_tarsal_distal_phalanx_2_tip";
+HAnimHumanoid43.viewpoints[306] = HAnimSite1906;
+
+let HAnimSite1907 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1907.USE = "hanim_r_tarsal_distal_phalanx_3_tip";
+HAnimHumanoid43.viewpoints[307] = HAnimSite1907;
+
+let HAnimSite1908 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1908.USE = "hanim_r_tarsal_distal_phalanx_4_tip";
+HAnimHumanoid43.viewpoints[308] = HAnimSite1908;
+
+let HAnimSite1909 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1909.USE = "hanim_r_metatarsal_phalanx_5_pt";
+HAnimHumanoid43.viewpoints[309] = HAnimSite1909;
+
+let HAnimSite1910 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1910.USE = "hanim_r_tarsal_distal_phalanx_5_tip";
+HAnimHumanoid43.viewpoints[310] = HAnimSite1910;
+
+let HAnimSite1911 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1911.USE = "hanim_l_rib10_pt";
+HAnimHumanoid43.viewpoints[311] = HAnimSite1911;
+
+let HAnimSite1912 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1912.USE = "hanim_r_rib10_pt";
+HAnimHumanoid43.viewpoints[312] = HAnimSite1912;
+
+let HAnimSite1913 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1913.USE = "hanim_spine_2_middle_back_pt";
+HAnimHumanoid43.viewpoints[313] = HAnimSite1913;
+
+let HAnimSite1914 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1914.USE = "hanim_substernale_pt";
+HAnimHumanoid43.viewpoints[314] = HAnimSite1914;
+
+let HAnimSite1915 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1915.USE = "hanim_l_thelion_pt";
+HAnimHumanoid43.viewpoints[315] = HAnimSite1915;
+
+let HAnimSite1916 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1916.USE = "hanim_r_thelion_pt";
+HAnimHumanoid43.viewpoints[316] = HAnimSite1916;
+
+let HAnimSite1917 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1917.USE = "hanim_l_chest_midsagittal_plane_pt";
+HAnimHumanoid43.viewpoints[317] = HAnimSite1917;
+
+let HAnimSite1918 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1918.USE = "hanim_mesosternale_pt";
+HAnimHumanoid43.viewpoints[318] = HAnimSite1918;
+
+let HAnimSite1919 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1919.USE = "hanim_r_chest_midsagittal_plane_pt";
+HAnimHumanoid43.viewpoints[319] = HAnimSite1919;
+
+let HAnimSite1920 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1920.USE = "hanim_rear_center_midsagittal_plane_pt";
+HAnimHumanoid43.viewpoints[320] = HAnimSite1920;
+
+let HAnimSite1921 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1921.USE = "hanim_spine_1_middle_back_pt";
+HAnimHumanoid43.viewpoints[321] = HAnimSite1921;
+
+let HAnimSite1922 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1922.USE = "hanim_cervicale_pt";
+HAnimHumanoid43.viewpoints[322] = HAnimSite1922;
+
+let HAnimSite1923 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1923.USE = "hanim_suprasternale_pt";
+HAnimHumanoid43.viewpoints[323] = HAnimSite1923;
+
+let HAnimSite1924 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1924.USE = "hanim_l_neck_base_pt";
+HAnimHumanoid43.viewpoints[324] = HAnimSite1924;
+
+let HAnimSite1925 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1925.USE = "hanim_r_neck_base_pt";
+HAnimHumanoid43.viewpoints[325] = HAnimSite1925;
+
+let HAnimSite1926 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1926.USE = "hanim_l_acromion_pt";
+HAnimHumanoid43.viewpoints[326] = HAnimSite1926;
+
+let HAnimSite1927 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1927.USE = "hanim_l_axilla_distal_pt";
+HAnimHumanoid43.viewpoints[327] = HAnimSite1927;
+
+let HAnimSite1928 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1928.USE = "hanim_l_axilla_posterior_folds_pt";
+HAnimHumanoid43.viewpoints[328] = HAnimSite1928;
+
+let HAnimSite1929 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1929.USE = "hanim_l_axilla_proximal_pt";
+HAnimHumanoid43.viewpoints[329] = HAnimSite1929;
+
+let HAnimSite1930 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1930.USE = "hanim_l_clavicale_pt";
+HAnimHumanoid43.viewpoints[330] = HAnimSite1930;
+
+let HAnimSite1931 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1931.USE = "hanim_r_acromion_pt";
+HAnimHumanoid43.viewpoints[331] = HAnimSite1931;
+
+let HAnimSite1932 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1932.USE = "hanim_r_axilla_distal_pt";
+HAnimHumanoid43.viewpoints[332] = HAnimSite1932;
+
+let HAnimSite1933 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1933.USE = "hanim_r_axilla_posterior_folds_pt";
+HAnimHumanoid43.viewpoints[333] = HAnimSite1933;
+
+let HAnimSite1934 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1934.USE = "hanim_r_axilla_proximal_pt";
+HAnimHumanoid43.viewpoints[334] = HAnimSite1934;
+
+let HAnimSite1935 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1935.USE = "hanim_r_clavicale_pt";
+HAnimHumanoid43.viewpoints[335] = HAnimSite1935;
+
+let HAnimSite1936 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1936.USE = "hanim_adams_apple_pt";
+HAnimHumanoid43.viewpoints[336] = HAnimSite1936;
+
+let HAnimSite1937 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1937.USE = "hanim_glabella_pt";
+HAnimHumanoid43.viewpoints[337] = HAnimSite1937;
+
+let HAnimSite1938 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1938.USE = "hanim_l_ectocanthus_pt";
+HAnimHumanoid43.viewpoints[338] = HAnimSite1938;
+
+let HAnimSite1939 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1939.USE = "hanim_l_infraorbitale_pt";
+HAnimHumanoid43.viewpoints[339] = HAnimSite1939;
+
+let HAnimSite1940 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1940.USE = "hanim_l_tragion_pt";
+HAnimHumanoid43.viewpoints[340] = HAnimSite1940;
+
+let HAnimSite1941 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1941.USE = "hanim_nuchale_pt";
+HAnimHumanoid43.viewpoints[341] = HAnimSite1941;
+
+let HAnimSite1942 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1942.USE = "hanim_opisthocranion_pt";
+HAnimHumanoid43.viewpoints[342] = HAnimSite1942;
+
+let HAnimSite1943 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1943.USE = "hanim_r_ectocanthus_pt";
+HAnimHumanoid43.viewpoints[343] = HAnimSite1943;
+
+let HAnimSite1944 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1944.USE = "hanim_r_infraorbitale_pt";
+HAnimHumanoid43.viewpoints[344] = HAnimSite1944;
+
+let HAnimSite1945 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1945.USE = "hanim_r_tragion_pt";
+HAnimHumanoid43.viewpoints[345] = HAnimSite1945;
+
+let HAnimSite1946 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1946.USE = "hanim_sellion_pt";
+HAnimHumanoid43.viewpoints[346] = HAnimSite1946;
+
+let HAnimSite1947 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1947.USE = "hanim_skull_vertex_pt";
+HAnimHumanoid43.viewpoints[347] = HAnimSite1947;
+
+let HAnimSite1948 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1948.USE = "hanim_l_gonion_pt";
+HAnimHumanoid43.viewpoints[348] = HAnimSite1948;
+
+let HAnimSite1949 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1949.USE = "hanim_menton_pt";
+HAnimHumanoid43.viewpoints[349] = HAnimSite1949;
+
+let HAnimSite1950 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1950.USE = "hanim_r_gonion_pt";
+HAnimHumanoid43.viewpoints[350] = HAnimSite1950;
+
+let HAnimSite1951 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1951.USE = "hanim_supramenton_pt";
+HAnimHumanoid43.viewpoints[351] = HAnimSite1951;
+
+let HAnimSite1952 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1952.USE = "hanim_l_bideltoid_pt";
+HAnimHumanoid43.viewpoints[352] = HAnimSite1952;
+
+let HAnimSite1953 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1953.USE = "hanim_l_humeral_lateral_epicondyles_pt";
+HAnimHumanoid43.viewpoints[353] = HAnimSite1953;
+
+let HAnimSite1954 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1954.USE = "hanim_l_humeral_medial_epicondyles_pt";
+HAnimHumanoid43.viewpoints[354] = HAnimSite1954;
+
+let HAnimSite1955 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1955.USE = "hanim_l_olecranon_pt";
+HAnimHumanoid43.viewpoints[355] = HAnimSite1955;
+
+let HAnimSite1956 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1956.USE = "hanim_l_radial_styloid_pt";
+HAnimHumanoid43.viewpoints[356] = HAnimSite1956;
+
+let HAnimSite1957 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1957.USE = "hanim_l_radiale_pt";
+HAnimHumanoid43.viewpoints[357] = HAnimSite1957;
+
+let HAnimSite1958 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1958.USE = "hanim_l_ulnar_styloid_pt";
+HAnimHumanoid43.viewpoints[358] = HAnimSite1958;
+
+let HAnimSite1959 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1959.USE = "hanim_l_carpal_distal_phalanx_1_tip";
+HAnimHumanoid43.viewpoints[359] = HAnimSite1959;
 
-let HAnimJoint1958 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1958.USE = "hanim_r_radiocarpal";
-HAnimHumanoid42.joints[360] = HAnimJoint1958;
+let HAnimSite1960 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1960.USE = "hanim_l_metacarpal_phalanx_2_pt";
+HAnimHumanoid43.viewpoints[360] = HAnimSite1960;
 
-let HAnimJoint1959 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1959.USE = "hanim_r_midcarpal_1";
-HAnimHumanoid42.joints[361] = HAnimJoint1959;
+let HAnimSite1961 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1961.USE = "hanim_l_carpal_distal_phalanx_2_tip";
+HAnimHumanoid43.viewpoints[361] = HAnimSite1961;
 
-let HAnimJoint1960 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1960.USE = "hanim_r_carpometacarpal_1";
-HAnimHumanoid42.joints[362] = HAnimJoint1960;
+let HAnimSite1962 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1962.USE = "hanim_l_dactylion_pt";
+HAnimHumanoid43.viewpoints[362] = HAnimSite1962;
 
-let HAnimJoint1961 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1961.USE = "hanim_r_metacarpophalangeal_1";
-HAnimHumanoid42.joints[363] = HAnimJoint1961;
+let HAnimSite1963 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1963.USE = "hanim_l_metacarpal_phalanx_3_pt";
+HAnimHumanoid43.viewpoints[363] = HAnimSite1963;
 
-let HAnimJoint1962 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1962.USE = "hanim_r_carpal_interphalangeal_1";
-HAnimHumanoid42.joints[364] = HAnimJoint1962;
+let HAnimSite1964 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1964.USE = "hanim_l_carpal_distal_phalanx_3_tip";
+HAnimHumanoid43.viewpoints[364] = HAnimSite1964;
 
-let HAnimJoint1963 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1963.USE = "hanim_r_midcarpal_2";
-HAnimHumanoid42.joints[365] = HAnimJoint1963;
+let HAnimSite1965 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1965.USE = "hanim_l_metacarpal_phalanx_5_pt";
+HAnimHumanoid43.viewpoints[365] = HAnimSite1965;
 
-let HAnimJoint1964 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1964.USE = "hanim_r_carpometacarpal_2";
-HAnimHumanoid42.joints[366] = HAnimJoint1964;
+let HAnimSite1966 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1966.USE = "hanim_l_carpal_distal_phalanx_4_tip";
+HAnimHumanoid43.viewpoints[366] = HAnimSite1966;
 
-let HAnimJoint1965 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1965.USE = "hanim_r_metacarpophalangeal_2";
-HAnimHumanoid42.joints[367] = HAnimJoint1965;
+let HAnimSite1967 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1967.USE = "hanim_l_carpal_distal_phalanx_5_tip";
+HAnimHumanoid43.viewpoints[367] = HAnimSite1967;
 
-let HAnimJoint1966 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1966.USE = "hanim_r_carpal_proximal_interphalangeal_1";
-HAnimHumanoid42.joints[368] = HAnimJoint1966;
+let HAnimSite1968 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1968.USE = "hanim_r_bideltoid_pt";
+HAnimHumanoid43.viewpoints[368] = HAnimSite1968;
 
-let HAnimJoint1967 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1967.USE = "hanim_r_carpal_distal_interphalangeal_1";
-HAnimHumanoid42.joints[369] = HAnimJoint1967;
+let HAnimSite1969 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1969.USE = "hanim_r_humeral_lateral_epicondyles_pt";
+HAnimHumanoid43.viewpoints[369] = HAnimSite1969;
 
-let HAnimJoint1968 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1968.USE = "hanim_r_midcarpal_3";
-HAnimHumanoid42.joints[370] = HAnimJoint1968;
+let HAnimSite1970 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1970.USE = "hanim_r_humeral_medial_epicondyles_pt";
+HAnimHumanoid43.viewpoints[370] = HAnimSite1970;
 
-let HAnimJoint1969 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1969.USE = "hanim_r_carpometacarpal_3";
-HAnimHumanoid42.joints[371] = HAnimJoint1969;
+let HAnimSite1971 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1971.USE = "hanim_r_olecranon_pt";
+HAnimHumanoid43.viewpoints[371] = HAnimSite1971;
 
-let HAnimJoint1970 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1970.USE = "hanim_r_metacarpophalangeal_3";
-HAnimHumanoid42.joints[372] = HAnimJoint1970;
+let HAnimSite1972 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1972.USE = "hanim_r_radial_styloid_pt";
+HAnimHumanoid43.viewpoints[372] = HAnimSite1972;
 
-let HAnimJoint1971 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1971.USE = "hanim_r_carpal_proximal_interphalangeal_2";
-HAnimHumanoid42.joints[373] = HAnimJoint1971;
+let HAnimSite1973 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1973.USE = "hanim_r_radiale_pt";
+HAnimHumanoid43.viewpoints[373] = HAnimSite1973;
 
-let HAnimJoint1972 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1972.USE = "hanim_r_carpal_distal_interphalangeal_2";
-HAnimHumanoid42.joints[374] = HAnimJoint1972;
+let HAnimSite1974 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1974.USE = "hanim_r_ulnar_styloid_pt";
+HAnimHumanoid43.viewpoints[374] = HAnimSite1974;
 
-let HAnimJoint1973 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1973.USE = "hanim_r_midcarpal_4_1";
-HAnimHumanoid42.joints[375] = HAnimJoint1973;
+let HAnimSite1975 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1975.USE = "hanim_r_carpal_distal_phalanx_1_tip";
+HAnimHumanoid43.viewpoints[375] = HAnimSite1975;
 
-let HAnimJoint1974 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1974.USE = "hanim_r_carpometacarpal_4";
-HAnimHumanoid42.joints[376] = HAnimJoint1974;
+let HAnimSite1976 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1976.USE = "hanim_r_metacarpal_phalanx_2_pt";
+HAnimHumanoid43.viewpoints[376] = HAnimSite1976;
 
-let HAnimJoint1975 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1975.USE = "hanim_r_metacarpophalangeal_4";
-HAnimHumanoid42.joints[377] = HAnimJoint1975;
+let HAnimSite1977 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1977.USE = "hanim_r_carpal_distal_phalanx_2_tip";
+HAnimHumanoid43.viewpoints[377] = HAnimSite1977;
 
-let HAnimJoint1976 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1976.USE = "hanim_r_carpal_proximal_interphalangeal_3";
-HAnimHumanoid42.joints[378] = HAnimJoint1976;
+let HAnimSite1978 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1978.USE = "hanim_r_dactylion_pt";
+HAnimHumanoid43.viewpoints[378] = HAnimSite1978;
 
-let HAnimJoint1977 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1977.USE = "hanim_r_carpal_distal_interphalangeal_3";
-HAnimHumanoid42.joints[379] = HAnimJoint1977;
+let HAnimSite1979 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1979.USE = "hanim_r_metacarpal_phalanx_3_pt";
+HAnimHumanoid43.viewpoints[379] = HAnimSite1979;
 
-let HAnimJoint1978 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1978.USE = "hanim_r_carpometacarpal_5";
-HAnimHumanoid42.joints[380] = HAnimJoint1978;
+let HAnimSite1980 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1980.USE = "hanim_r_carpal_distal_phalanx_3_tip";
+HAnimHumanoid43.viewpoints[380] = HAnimSite1980;
 
-let HAnimJoint1979 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1979.USE = "hanim_r_metacarpophalangeal_5";
-HAnimHumanoid42.joints[381] = HAnimJoint1979;
+let HAnimSite1981 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1981.USE = "hanim_r_metacarpal_phalanx_5_pt";
+HAnimHumanoid43.viewpoints[381] = HAnimSite1981;
 
-let HAnimJoint1980 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1980.USE = "hanim_r_carpal_proximal_interphalangeal_4";
-HAnimHumanoid42.joints[382] = HAnimJoint1980;
+let HAnimSite1982 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1982.USE = "hanim_r_carpal_distal_phalanx_4_tip";
+HAnimHumanoid43.viewpoints[382] = HAnimSite1982;
 
-let HAnimJoint1981 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1981.USE = "hanim_r_carpal_distal_interphalangeal_4";
-HAnimHumanoid42.joints[383] = HAnimJoint1981;
+let HAnimSite1983 = browser.currentScene.createNode("HAnimSite");
+HAnimSite1983.USE = "hanim_r_carpal_distal_phalanx_5_tip";
+HAnimHumanoid43.viewpoints[383] = HAnimSite1983;
 
-let Coordinate1982 = browser.currentScene.createNode("Coordinate");
-HAnimHumanoid42.skinCoord = Coordinate1982;
-
-browser.currentScene.children[4] = HAnimHumanoid42;
+browser.currentScene.children[4] = HAnimHumanoid43;
 

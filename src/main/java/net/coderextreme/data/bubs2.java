@@ -49,122 +49,170 @@ ProtoInstance ProtoInstance0 = null;
 ProtoInstance ProtoInstance1 = null;
 ProtoInstance ProtoInstance2 = null;
 ProtoInstance ProtoInstance3 = null;
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("bubs2.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("description").setContent("Tour around a prismatic sphere"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d"))
-        .addMeta(new meta().setName("translated").setContent("13 March 2016"))
         .addMeta(new meta().setName("generator").setContent("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
+        .addMeta(new meta().setName("generator").setContent("x3d-tidy V1.0.118, https://www.npmjs.com/package/x3d-tidy"))
         .addComponent(new component().setName("Scripting").setLevel(1)))
       .setScene(new Scene()
-        .addChild(new NavigationInfo().setType("\"EXAMINE\""))
-        .addChild(new Viewpoint().setPosition(new float[] {0f,0f,4f}).setOrientation(new float[] {1f,0f,0f,0f}).setDescription("Bubbles in action"))
-        .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
         .addChild(new ProtoDeclare().setName("Bubble")
+          .setProtoInterface(new ProtoInterface())
           .setProtoBody(new ProtoBody()
             .addChild(new Transform().setDEF("body_trans")
               .addChild(new Shape()
-                .setGeometry(new Sphere().setRadius(0.25f))
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f}).setTransparency(0.2f))))
+                  .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f}).setTransparency(0.2f)))
+                .setGeometry(new Sphere().setRadius(0.25f)))
               .addChild(new Script().setDEF("bounce")
-                .addField(new field().setType("SFVec3f").setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
-                .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-                .addField(new field().setType("SFVec3f").setName("velocity").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-                .addField(new field().setType("SFVec3f").setName("scalvel").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-                .addField(new field().setType("SFFloat").setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("scale").setValue("1 1 1"))
+                .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("translation"))
+                .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("velocity"))
+                .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("scalvel"))
+                .addField(new field().setType("SFFloat").setAccessType(field.ACCESSTYPE_INPUTONLY).setName("set_fraction"))
                 .setSourceCode("ecmascript:\n"+
+"\n"+
 "function initialize() {\n"+
+"\n"+
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
 "\n"+
+"\n"+
 "    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\n"+
+"\n"+
 "}\n"+
 "\n"+
+"\n"+
 "function set_fraction(value) {\n"+
+"\n"+
 "    if (typeof translation === 'undefined') {\n"+
+"\n"+
 "		translation = new SFVec3f(0, 0, 0);\n"+
+"\n"+
 "    }\n"+
+"\n"+
 "    if (typeof velocity === 'undefined') {\n"+
+"\n"+
 "		velocity = new SFVec3f(0, 0, 0);\n"+
+"\n"+
 "    }\n"+
+"\n"+
 "    if (typeof scalvel === 'undefined') {\n"+
+"\n"+
 "		scalvel = new SFVec3f(0, 0, 0);\n"+
+"\n"+
 "    }\n"+
+"\n"+
 "    if (typeof scale === 'undefined') {\n"+
+"\n"+
 "		scale = new SFVec3f(1, 1, 1);\n"+
+"\n"+
 "    }\n"+
+"\n"+
 "    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);\n"+
+"\n"+
 "    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);\n"+
+"\n"+
 "    // if you get to far away or too big, explode\n"+
+"\n"+
 "    if ( Math.abs(translation.x) > 256) {\n"+
+"\n"+
 "	translation.x = 0;\n"+
+"\n"+
 "	initialize();\n"+
+"\n"+
 "    }\n"+
+"\n"+
 "    if ( Math.abs(translation.y) > 256) {\n"+
+"\n"+
 "	translation.y = 0;\n"+
+"\n"+
 "	initialize();\n"+
+"\n"+
 "    }\n"+
+"\n"+
 "    if ( Math.abs(translation.z) > 256) {\n"+
+"\n"+
 "	translation.z = 0;\n"+
+"\n"+
 "	initialize();\n"+
+"\n"+
 "    }\n"+
+"\n"+
 "    if (Math.abs(scale.x) > 20) {\n"+
+"\n"+
 "	scale.x = scale.x/20;\n"+
+"\n"+
 "	translation.x = 0;\n"+
+"\n"+
 "	initialize();\n"+
+"\n"+
 "    }\n"+
+"\n"+
 "    if (Math.abs(scale.y) > 20) {\n"+
+"\n"+
 "	scale.y = scale.y/20;\n"+
+"\n"+
 "	translation.y = 0;\n"+
+"\n"+
 "	initialize();\n"+
+"\n"+
 "    }\n"+
+"\n"+
 "    if (Math.abs(scale.z) > 20) {\n"+
+"\n"+
 "	scale.z = scale.z/20;\n"+
+"\n"+
 "	translation.z = 0;\n"+
+"\n"+
 "	initialize();\n"+
+"\n"+
 "    }\n"+
+"\n"+
 "}"))
-              .addChild(new TimeSensor().setDEF("bubbleClock").setCycleInterval(10d).setLoop(true))
-              .addChild(new ROUTE().setFromNode("bounce").setFromField("translation_changed").setToNode("body_trans").setToField("set_translation"))
-              .addChild(new ROUTE().setFromNode("bounce").setFromField("scale_changed").setToNode("body_trans").setToField("set_scale"))
-              .addChild(new ROUTE().setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction")))))
-        .addChild(ProtoInstance0 = new ProtoInstance().setName("Bubble").setDEF("bubbleA"))
-        .addChild(ProtoInstance1 = new ProtoInstance().setName("Bubble").setDEF("bubbleB"))
-        .addChild(ProtoInstance2 = new ProtoInstance().setName("Bubble").setDEF("bubbleC"))
-        .addChild(ProtoInstance3 = new ProtoInstance().setName("Bubble").setDEF("bubbleD")))      ;
+              .addChild(new TimeSensor().setDEF("bubbleClock").setCycleInterval(10d).setLoop(true)))
+            .addChild(new ROUTE().setFromNode("bounce").setFromField("translation").setToNode("body_trans").setToField("translation"))
+            .addChild(new ROUTE().setFromNode("bounce").setFromField("scale").setToNode("body_trans").setToField("scale"))
+            .addChild(new ROUTE().setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction"))))
+        .addChild(new NavigationInfo().setType("\"EXAMINE\""))
+        .addChild(new Viewpoint().setDescription("Bubbles in action").setPosition(new float[] {0f,0f,4f}))
+        .addChild(new Background().setFrontUrl(new MFString0().getArray()).setBackUrl(new MFString1().getArray()).setLeftUrl(new MFString2().getArray()).setRightUrl(new MFString3().getArray()).setTopUrl(new MFString4().getArray()).setBottomUrl(new MFString5().getArray()))
+        .addChild(ProtoInstance0 = new ProtoInstance().setDEF("bubbleA").setName("Bubble"))
+        .addChild(ProtoInstance1 = new ProtoInstance().setDEF("bubbleB").setName("Bubble"))
+        .addChild(ProtoInstance2 = new ProtoInstance().setDEF("bubbleC").setName("Bubble"))
+        .addChild(ProtoInstance3 = new ProtoInstance().setDEF("bubbleD").setName("Bubble")))      ;
     return X3D0;
     }
-protected class MFString0 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"});
-  }
-}
-protected class MFString1 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"});
-  }
-}
-protected class MFString2 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString0 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"});
   }
 }
-protected class MFString3 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString1 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"});
+  }
+}
+private class MFString2 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"});
   }
 }
-protected class MFString4 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString3 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"});
   }
 }
-protected class MFString5 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString4 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"});
+  }
+}
+private class MFString5 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"});
   }
 }
 }

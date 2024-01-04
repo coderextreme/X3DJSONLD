@@ -120,13 +120,13 @@ function loadXmlBrowsers(xml) {
 		if ($('#x3domxml') && $('#x3domxml').get() && $('#x3domxml').get().length > 0) {
 			$('#x3domxml').get()[0].innerHTML = xml.replace(/((?!<X3D).)*<X3D(.|\n)*<Scene[^>]*>((.|\n)*)<\/Scene>(.|\n)*/, '$3');
 		} else {
-			console.error("Couldn't find id #x3domxml");
+			console.warn("Couldn't find id #x3domxml");
 		}
 
 		if (typeof x3dom !== 'undefined') {
 			x3dom.reload();
 		} else {
-			console.error("Couldn't reload x3dom");
+			console.warn("Couldn't reload x3dom");
 		}
 	}
 }
@@ -218,7 +218,7 @@ window.loadX3DJS_X3DOM = function (selector, DOMImplementation, jsobj, path, NS,
 				callback(child, xml);
 			}
 		} else {
-			console.error("Cannot find X3DOM document in loadX3DJS_X3DOM(), no selector", selector);
+			console.warn("Cannot find X3DOM document in loadX3DJS_X3DOM(), no selector", selector);
 			// if no X3DOM, try our techniques.
 			var child;
 			var xml;
@@ -444,10 +444,10 @@ window.replaceX3DJSON = function replaceX3DJSON(selector, json, url, NS, next) {
 						console.error(e);
 					}
 				} else {
-					console.error("Cannot find X3DOM document in replaceX3DJSON()");
+					console.warn("Cannot find X3DOM document in replaceX3DJSON()");
 				}
 			} else {
-				console.error("Cannot find X3DOM document in replaceX3DJSON()");
+				console.warn("Cannot find X3DOM document in replaceX3DJSON()");
 			}
 			// remove all text nodes and CDATA in scripts (keep fields)
 			$(selector+" Script").contents().filter(function () {

@@ -52,7 +52,7 @@ ProtoInstance ProtoInstance0 = null;
         .addMeta(new meta().setName("description").setContent("Display view frustum associated with a given pair of Viewpoint and NavigationInfo nodes, illustrating ProtoInstance reuse of a separately declared prototype."))
         .addMeta(new meta().setName("creator").setContent("Don Brutzman"))
         .addMeta(new meta().setName("translated").setContent("16 August 2008"))
-        .addMeta(new meta().setName("modified").setContent("20 October 2019"))
+        .addMeta(new meta().setName("modified").setContent("Sat, 30 Dec 2023 08:00:26 GMT"))
         .addMeta(new meta().setName("reference").setContent("ViewFrustumPrototype.x3d"))
         .addMeta(new meta().setName("drawing").setContent("ViewFrustumComputation.png"))
         .addMeta(new meta().setName("Image").setContent("ViewFrustumOverheadView.png"))
@@ -60,8 +60,7 @@ ProtoInstance ProtoInstance0 = null;
         .addMeta(new meta().setName("Image").setContent("ViewpointCalculator.png"))
         .addMeta(new meta().setName("Image").setContent("ViewpointCalculatorComposed.png"))
         .addMeta(new meta().setName("subject").setContent("view culling frustum"))
-        .addMeta(new meta().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")))
+        .addMeta(new meta().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d")))
       .setScene(new Scene()
         .addChild(new ExternProtoDeclare().setName("ViewFrustum").setUrl(new MFString0().getArray())
           .addField(new field().setType("SFNode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("ViewpointNode"))
@@ -89,15 +88,7 @@ ProtoInstance0
           .addFieldValue(new fieldValue().setName("NavigationInfoNode")
             .addChild(new NavigationInfo().setDEF("_2").setVisibilityLimit(15f)));
 ProtoInstance0
-          .addFieldValue(new fieldValue().setName("visible").setValue("true"));
-ProtoInstance0
-          .addFieldValue(new fieldValue().setName("lineColor").setValue("0.9 0.9 0.9"));
-ProtoInstance0
-          .addFieldValue(new fieldValue().setName("frustumColor").setValue("0.8 0.8 0.8"));
-ProtoInstance0
           .addFieldValue(new fieldValue().setName("transparency").setValue("0.75"));
-ProtoInstance0
-          .addFieldValue(new fieldValue().setName("aspectRatio").setValue("0.75"));
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("trace").setValue("true"));
     return X3D0;

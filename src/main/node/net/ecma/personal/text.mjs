@@ -1,25 +1,29 @@
 'use strict';
-import fs from 'fs';
-import { X3D } from './x3d.mjs';
-import { SFString } from './x3d.mjs';
-import { SFNode } from './x3d.mjs';
-import { head } from './x3d.mjs';
-import { MFNode } from './x3d.mjs';
-import { meta } from './x3d.mjs';
-import { Scene } from './x3d.mjs';
-import { Transform } from './x3d.mjs';
-import { Shape } from './x3d.mjs';
-import { Text } from './x3d.mjs';
-import { MFString } from './x3d.mjs';
-import { FontStyle } from './x3d.mjs';
-import { Appearance } from './x3d.mjs';
-import { Material } from './x3d.mjs';
-import { Script } from './x3d.mjs';
-import { field } from './x3d.mjs';
+var X3D = require('./x3d.mjs');
+try {
+	var fs = require('fs');
+} catch (e) {
+console.log("Problems loading fs. On browser?",e);
+}
+var SFString = require('./x3d.mjs');
+var SFNode = require('./x3d.mjs');
+var head = require('./x3d.mjs');
+var MFNode = require('./x3d.mjs');
+var meta = require('./x3d.mjs');
+var Scene = require('./x3d.mjs');
+var Transform = require('./x3d.mjs');
+var Shape = require('./x3d.mjs');
+var Text = require('./x3d.mjs');
+var MFString = require('./x3d.mjs');
+var FontStyle = require('./x3d.mjs');
+var Appearance = require('./x3d.mjs');
+var Material = require('./x3d.mjs');
+var Script = require('./x3d.mjs');
+var field = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
-      version : new SFString("4.0"),
+      version : new SFString("3.3"),
       head : new SFNode(
         new head({
           meta : new MFNode([
@@ -37,7 +41,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://coderextreme.net/X3DJSONLD/text.x3d")}),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/text.x3d")}),
 
             new meta({
               name : new SFString("description"),
@@ -50,7 +54,7 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new Transform({
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   geometry : new SFNode(
                     new Text({
@@ -60,8 +64,8 @@ var X3D0 =  new X3D({
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
-                        new Material({}))}))}),
-
+                        new Material({}))}))})),
+              child : new SFNode(
                 new Shape({
                   geometry : new SFNode(
                     new Text({
@@ -71,8 +75,8 @@ var X3D0 =  new X3D({
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
-                        new Material({}))}))}),
-
+                        new Material({}))}))})),
+              child : new SFNode(
                 new Shape({
                   geometry : new SFNode(
                     new Text({
@@ -82,8 +86,8 @@ var X3D0 =  new X3D({
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
-                        new Material({}))}))}),
-
+                        new Material({}))}))})),
+              children : new MFNode([
                 new Script({
                   field : new MFNode([
                     new field({

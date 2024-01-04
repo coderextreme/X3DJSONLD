@@ -67,7 +67,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("5 December 2021")}),
+              content : new SFString("Sat, 30 Dec 2023 07:58:55 GMT")}),
 
             new meta({
               name : new SFString("reference"),
@@ -83,11 +83,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d")}),
-
-            new meta({
-              name : new SFString("generator"),
-              content : new SFString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")})])})),
+              content : new SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([

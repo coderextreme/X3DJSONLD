@@ -60,7 +60,7 @@ var ProtoInstance2 = null;
             .addChild((new autoclass.ROUTE()).setFromNode("nodeClock").setFromField("fraction_changed").setToNode("NodePosition").setToField("set_fraction"))
             .addChild((new autoclass.ROUTE()).setFromNode("MoveBall").setFromField("keyValue").setToNode("NodePosition").setToField("keyValue"))
             .addChild((new autoclass.ROUTE()).setFromNode("NodePosition").setFromField("value_changed").setToNode("transform").setToField("set_translation"))))
-        .addChild((new autoclass.ProtoDeclare()).setName("cylinder")
+        .addChild((new autoclass.ProtoDeclare()).setName("cyl")
           .setProtoInterface((new autoclass.ProtoInterface())
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("set_positionA").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("set_positionB").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY)))
@@ -102,7 +102,7 @@ var ProtoInstance2 = null;
           .addChild((new autoclass.PlaneSensor()).setDEF("clickGenerator").setMinPosition(java.newArray("float", [java.newFloat(-50), java.newFloat(-50)])).setMaxPosition(java.newArray("float", [java.newFloat(50), java.newFloat(50)])).setDescription("click on background to add nodes, click on nodes to add links"))
           .addChild(ProtoInstance0 = (new autoclass.ProtoInstance()).setName("node").setDEF("nodeA"))
           .addChild(ProtoInstance1 = (new autoclass.ProtoInstance()).setName("node").setDEF("nodeB"))
-          .addChild(ProtoInstance2 = (new autoclass.ProtoInstance()).setName("cylinder").setDEF("linkA")))
+          .addChild(ProtoInstance2 = (new autoclass.ProtoInstance()).setName("cyl").setDEF("linkA")))
         .addChild((new autoclass.ROUTE()).setFromNode("nodeA").setFromField("position").setToNode("linkA").setToField("set_positionA"))
         .addChild((new autoclass.ROUTE()).setFromNode("nodeB").setFromField("position").setToNode("linkA").setToField("set_positionB")))      ;
 ProtoInstance0

@@ -65,19 +65,19 @@ public class Trebuchet {
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("Trebuchet.x3d"))
         .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setGroundAngle(new MFFloat3().getArray()).setGroundColor(new MFColor4().getArray()).setLeftUrl(new MFString5().getArray()).setRightUrl(new MFString6().getArray()).setSkyAngle(new MFFloat7().getArray()).setSkyColor(new MFColor8().getArray()).setTopUrl(new MFString9().getArray()))
-        .addChild(new Sound().setMaxBack(1000f).setMaxFront(1000f)
+        .addChild(new Sound().setMaxBack(1000f ).setMaxFront(1000f )
           .setSource(new AudioClip().setDEF("HolyGrail").setDescription("HolyGrail").setLoop(true).setUrl(new MFString10().getArray())))
         .addChild(new Shape()
-          .setGeometry(new Box().setSize(new float[] {10000f,1f,10000f}))
+          .setGeometry(new Box().setSize(new float[] {10000f ,1f ,10000f }))
           .setAppearance(new Appearance()
             .setTexture(new ImageTexture().setUrl(new MFString11().getArray()))))
-        .addChild(new Transform().setRotation(new float[] {0f,1f,0f,1.57f}).setScale(new float[] {0.5f,0.5f,0.5f}).setTranslation(new float[] {10.5f,6.5f,4.5f})
+        .addChild(new Transform().setRotation(new float[] {0f ,1f ,0f ,1.57f }).setScale(new float[] {0.5f ,0.5f ,0.5f }).setTranslation(new float[] {10.5f ,6.5f ,4.5f })
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("TextAppearance")
-              .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f}).setEmissiveColor(new float[] {1f,1f,0f})))
+              .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0f }).setEmissiveColor(new float[] {1f ,1f ,0f })))
             .setGeometry(new Text().setString(new MFString12().getArray())
               .setFontStyle(new FontStyle()))))
-        .addChild(new Transform().setRotation(new float[] {0f,1f,0f,1.57f}).setScale(new float[] {0.5f,0.5f,0.5f}).setTranslation(new float[] {11f,5.5f,6f})
+        .addChild(new Transform().setRotation(new float[] {0f ,1f ,0f ,1.57f }).setScale(new float[] {0.5f ,0.5f ,0.5f }).setTranslation(new float[] {11f ,5.5f ,6f })
           .addChild(new Switch().setDEF("Weight").setWhichChoice(0)
             .addChild(new Group()
               .addChild(new Shape()
@@ -96,30 +96,30 @@ public class Trebuchet {
                 .setAppearance(new Appearance().setUSE("TextAppearance"))
                 .setGeometry(new Text().setString(new MFString16().getArray())))))
           .addChild(new TouchSensor().setDEF("weightselector").setDescription("weight selector"))
-          .addChild(new Transform().setTranslation(new float[] {8f,0f,0f})
+          .addChild(new Transform().setTranslation(new float[] {8f ,0f ,0f })
             .addChild(new Shape()
-              .setGeometry(new Box().setSize(new float[] {20f,1f,1f}))
+              .setGeometry(new Box().setSize(new float[] {20f ,1f ,1f }))
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setTransparency(1f))))))
-        .addChild(new Transform().setRotation(new float[] {0f,1f,0f,1.57f}).setTranslation(new float[] {10f,0.5f,4.5f})
-          .addChild(new Transform().setDEF("launch").setTranslation(new float[] {0f,2f,5f})
+                .setMaterial(new Material().setTransparency(1f ))))))
+        .addChild(new Transform().setRotation(new float[] {0f ,1f ,0f ,1.57f }).setTranslation(new float[] {10f ,0.5f ,4.5f })
+          .addChild(new Transform().setDEF("launch").setTranslation(new float[] {0f ,2f ,5f })
             .addChild(new Billboard()
               .addChild(new Shape()
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f})))
+                  .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0f })))
                 .setGeometry(new Text().setString(new MFString17().getArray())
                   .setFontStyle(new FontStyle())))
-              .addChild(new Transform().setTranslation(new float[] {2f,0.3f,0f})
+              .addChild(new Transform().setTranslation(new float[] {2f ,0.3f ,0f })
                 .addChild(new Shape()
-                  .setGeometry(new Box().setSize(new float[] {5f,1f,1f}))
+                  .setGeometry(new Box().setSize(new float[] {5f ,1f ,1f }))
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setTransparency(1f)))))
+                    .setMaterial(new Material().setTransparency(1f )))))
               .addChild(new Switch().setDEF("PigdogMonk").setWhichChoice(-1)
                 .addChild(new Group()
-                  .addChild(new Sound().setMaxBack(1000f).setMaxFront(1000f)
+                  .addChild(new Sound().setMaxBack(1000f ).setMaxFront(1000f )
                     .setSource(new AudioClip().setDEF("PigDogSound").setDescription("PigDogSound").setUrl(new MFString18().getArray()))))
                 .addChild(new Group()
-                  .addChild(new Sound().setMaxBack(1000f).setMaxFront(1000f)
+                  .addChild(new Sound().setMaxBack(1000f ).setMaxFront(1000f )
                     .setSource(new AudioClip().setDEF("MonkSound").setDescription("MonkSound").setUrl(new MFString19().getArray()))))))
             .addChild(new TouchSensor().setDEF("Launch").setDescription("launch!")))
           .addChild(new Transform()
@@ -128,264 +128,264 @@ public class Trebuchet {
                 .addChild(new Shape()
                   .setAppearance(new Appearance().setUSE("TextAppearance"))
                   .setGeometry(new Text().setString(new MFString20().getArray())
-                    .setFontStyle(new FontStyle().setSize(0.5f))))
-                .addChild(new Sound().setMaxBack(1000f).setMaxFront(1000f).setPriority(1f)
+                    .setFontStyle(new FontStyle().setSize(0.5f ))))
+                .addChild(new Sound().setMaxBack(1000f ).setMaxFront(1000f ).setPriority(1f )
                   .setSource(new AudioClip().setDEF("HolyHandGrenadeSound").setDescription("HolyHandGrenadeSound").setUrl(new MFString21().getArray()))))
               .addChild(new Group()
                 .addChild(new Shape()
                   .setAppearance(new Appearance().setUSE("TextAppearance"))
                   .setGeometry(new Text().setString(new MFString22().getArray())
-                    .setFontStyle(new FontStyle().setSize(0.5f))))
-                .addChild(new Sound().setMaxBack(1000f).setMaxFront(1000f)
+                    .setFontStyle(new FontStyle().setSize(0.5f ))))
+                .addChild(new Sound().setMaxBack(1000f ).setMaxFront(1000f )
                   .setSource(new AudioClip().setDEF("CowSound").setDescription("CowSound").setUrl(new MFString23().getArray()))))
               .addChild(new Group()
                 .addChild(new Shape()
                   .setAppearance(new Appearance().setUSE("TextAppearance"))
                   .setGeometry(new Text().setString(new MFString24().getArray())
-                    .setFontStyle(new FontStyle().setSize(0.5f))))
-                .addChild(new Sound().setMaxBack(1000f).setMaxFront(1000f).setPriority(1f)
+                    .setFontStyle(new FontStyle().setSize(0.5f ))))
+                .addChild(new Sound().setMaxBack(1000f ).setMaxFront(1000f ).setPriority(1f )
                   .setSource(new AudioClip().setDEF("HamsterSound").setDescription("HamsterSound").setUrl(new MFString25().getArray())))))))
-        .addChild(new Transform().setRotation(new float[] {0f,1f,0f,-1.67f})
-          .addChild(new Transform().setDEF("aft").setTranslation(new float[] {5f,5f,15f})
-            .addChild(new Transform().setTranslation(new float[] {-2.5f,-4.5f,-2f})
+        .addChild(new Transform().setRotation(new float[] {0f ,1f ,0f ,-1.67f })
+          .addChild(new Transform().setDEF("aft").setTranslation(new float[] {5f ,5f ,15f })
+            .addChild(new Transform().setTranslation(new float[] {-2.5f ,-4.5f ,-2f })
               .addChild(new Transform().setUSE("launch")))))
-        .addChild(new Transform().setTranslation(new float[] {0f,3f,0f})
+        .addChild(new Transform().setTranslation(new float[] {0f ,3f ,0f })
           .addChild(new Shape().setDEF("plank")
-            .setGeometry(new Box().setSize(new float[] {25f,1f,1f}))
+            .setGeometry(new Box().setSize(new float[] {25f ,1f ,1f }))
             .setAppearance(new Appearance().setDEF("wood")
               .setTexture(new ImageTexture().setDEF("woodTexture").setUrl(new MFString26().getArray()))))
-          .addChild(new Transform().setDEF("angledsupport").setRotation(new float[] {0f,0f,1f,1f}).setTranslation(new float[] {-5f,10f,0f})
+          .addChild(new Transform().setDEF("angledsupport").setRotation(new float[] {0f ,0f ,1f ,1f }).setTranslation(new float[] {-5f ,10f ,0f })
             .addChild(new Shape().setUSE("plank")))
-          .addChild(new Transform().setDEF("angledsupport2").setRotation(new float[] {0f,0f,1f,-1f}).setTranslation(new float[] {5f,10f,0f})
+          .addChild(new Transform().setDEF("angledsupport2").setRotation(new float[] {0f ,0f ,1f ,-1f }).setTranslation(new float[] {5f ,10f ,0f })
             .addChild(new Shape().setUSE("plank")))
-          .addChild(new Transform().setDEF("verticalsupport").setRotation(new float[] {0f,0f,1f,1.57f}).setScale(new float[] {0.9f,1f,1f}).setTranslation(new float[] {0f,11f,0f})
+          .addChild(new Transform().setDEF("verticalsupport").setRotation(new float[] {0f ,0f ,1f ,1.57f }).setScale(new float[] {0.9f ,1f ,1f }).setTranslation(new float[] {0f ,11f ,0f })
             .addChild(new Shape().setUSE("plank"))
             .addComments("Main Verticle Support"))
-          .addChild(new Transform().setDEF("horizontalsupport").setScale(new float[] {0.4f,1f,1f}).setTranslation(new float[] {0f,10f,0f})
+          .addChild(new Transform().setDEF("horizontalsupport").setScale(new float[] {0.4f ,1f ,1f }).setTranslation(new float[] {0f ,10f ,0f })
             .addChild(new Shape().setUSE("plank")))
-          .addChild(new Transform().setRotation(new float[] {0f,0f,1f,1.57f}).setScale(new float[] {0.6f,1f,1f}).setTranslation(new float[] {0f,5f,10f})
-            .addChild(new Transform().setRotation(new float[] {0f,1f,0f,0.4f})
+          .addChild(new Transform().setRotation(new float[] {0f ,0f ,1f ,1.57f }).setScale(new float[] {0.6f ,1f ,1f }).setTranslation(new float[] {0f ,5f ,10f })
+            .addChild(new Transform().setRotation(new float[] {0f ,1f ,0f ,0.4f })
               .addChild(new Shape().setUSE("plank"))))
-          .addChild(new Transform().setDEF("panel").setTranslation(new float[] {0f,18.2f,-0.3f})
+          .addChild(new Transform().setDEF("panel").setTranslation(new float[] {0f ,18.2f ,-0.3f })
             .addChild(new Shape()
-              .setGeometry(new Box().setSize(new float[] {5f,5f,0.5f}))
+              .setGeometry(new Box().setSize(new float[] {5f ,5f ,0.5f }))
               .setAppearance(new Appearance().setUSE("wood"))))
-          .addChild(new Transform().setRotation(new float[] {1f,0f,0f,-1.57f}).setTranslation(new float[] {0f,0.6f,2.5f})
-            .addChild(new Transform().setRotation(new float[] {0f,0f,1f,1.57f})
+          .addChild(new Transform().setRotation(new float[] {1f ,0f ,0f ,-1.57f }).setTranslation(new float[] {0f ,0.6f ,2.5f })
+            .addChild(new Transform().setRotation(new float[] {0f ,0f ,1f ,1.57f })
               .addChild(new Shape()
                 .setGeometry(new Extrusion().setBeginCap(false).setCrossSection(new MFVec2f27().getArray()).setEndCap(false).setSolid(false).setSpine(new MFVec3f28().getArray()))
                 .setAppearance(new Appearance().setUSE("wood")))))
-          .addChild(new Transform().setDEF("flinger").setCenter(new float[] {7f,0f,0f}).setRotation(new float[] {0f,0f,1f,0.82f}).setScale(new float[] {0.9f,1f,1f}).setTranslation(new float[] {-7f,18f,2.5f})
+          .addChild(new Transform().setDEF("flinger").setCenter(new float[] {7f ,0f ,0f }).setRotation(new float[] {0f ,0f ,1f ,0.82f }).setScale(new float[] {0.9f ,1f ,1f }).setTranslation(new float[] {-7f ,18f ,2.5f })
             .addChild(new Transform()
               .addChild(new Shape()
-                .setGeometry(new Box().setSize(new float[] {35f,1f,1f}))
+                .setGeometry(new Box().setSize(new float[] {35f ,1f ,1f }))
                 .setAppearance(new Appearance().setUSE("wood")))
-              .addChild(new Transform().setTranslation(new float[] {7f,0f,0f})
+              .addChild(new Transform().setTranslation(new float[] {7f ,0f ,0f })
                 .addChild(new Shape()
-                  .setGeometry(new Box().setSize(new float[] {8f,2f,2f}))
+                  .setGeometry(new Box().setSize(new float[] {8f ,2f ,2f }))
                   .setAppearance(new Appearance().setUSE("wood")))))
-            .addChild(new Transform().setRotation(new float[] {1f,0f,0f,1.57f}).setScale(new float[] {0.2f,0.2f,0.2f}).setTranslation(new float[] {-15f,-1f,0f})
+            .addChild(new Transform().setRotation(new float[] {1f ,0f ,0f ,1.57f }).setScale(new float[] {0.2f ,0.2f ,0.2f }).setTranslation(new float[] {-15f ,-1f ,0f })
               .addChild(new Shape().setDEF("Torus")
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setSpecularColor(new float[] {1f,1f,1f})))
-                .setGeometry(new Extrusion().setBeginCap(false).setConvex(false).setCreaseAngle(1.57f).setCrossSection(new MFVec2f29().getArray()).setEndCap(false).setSpine(new MFVec3f30().getArray())))
-              .addChild(new Transform().setTranslation(new float[] {1f,0f,2f})
+                  .setMaterial(new Material().setSpecularColor(new float[] {1f ,1f ,1f })))
+                .setGeometry(new Extrusion().setBeginCap(false).setConvex(false).setCreaseAngle(1.57f ).setCrossSection(new MFVec2f29().getArray()).setEndCap(false).setSpine(new MFVec3f30().getArray())))
+              .addChild(new Transform().setTranslation(new float[] {1f ,0f ,2f })
                 .addChild(new Shape()
                   .setAppearance(new Appearance().setDEF("rope")
                     .setTexture(new ImageTexture().setUSE("woodTexture")))
-                  .setGeometry(new Sphere().setRadius(1.5f)))
+                  .setGeometry(new Sphere().setRadius(1.5f )))
                 .addComments("knott")))
             .addComments("The Unicorn")
-            .addChild(new Transform().setRotation(new float[] {0f,0f,1f,1.2f}).setScale(new float[] {0.2f,0.2f,0.2f}).setTranslation(new float[] {-18.3f,0.3f,0f})
+            .addChild(new Transform().setRotation(new float[] {0f ,0f ,1f ,1.2f }).setScale(new float[] {0.2f ,0.2f ,0.2f }).setTranslation(new float[] {-18.3f ,0.3f ,0f })
               .addChild(new Shape()
-                .setGeometry(new Cylinder().setHeight(10f))
+                .setGeometry(new Cylinder().setHeight(10f ))
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setSpecularColor(new float[] {1f,1f,1f}))))
-              .addChild(new Transform().setTranslation(new float[] {0f,-2.5f,0f})
+                  .setMaterial(new Material().setSpecularColor(new float[] {1f ,1f ,1f }))))
+              .addChild(new Transform().setTranslation(new float[] {0f ,-2.5f ,0f })
                 .addChild(new Shape().setUSE("Torus"))
                 .addComments("The Unicorn")
-                .addChild(new Transform().setTranslation(new float[] {-2f,0f,0f})
+                .addChild(new Transform().setTranslation(new float[] {-2f ,0f ,0f })
                   .addChild(new Shape()
-                    .setGeometry(new Sphere().setRadius(1.5f))
+                    .setGeometry(new Sphere().setRadius(1.5f ))
                     .setAppearance(new Appearance().setUSE("rope")))
                   .addComments("Knott")))
-              .addChild(new Transform().setRotation(new float[] {0f,0f,1f,1.2f}).setTranslation(new float[] {15f,55f,-11f})
-                .addChild(new Transform().setScale(new float[] {5f,5f,5f})
+              .addChild(new Transform().setRotation(new float[] {0f ,0f ,1f ,1.2f }).setTranslation(new float[] {15f ,55f ,-11f })
+                .addChild(new Transform().setScale(new float[] {5f ,5f ,5f })
                   .addChild(new Shape()
                     .setAppearance(new Appearance().setUSE("rope"))
-                    .setGeometry(new Extrusion().setBeginCap(false).setCreaseAngle(0.76f).setCrossSection(new MFVec2f31().getArray()).setEndCap(false).setSolid(false).setSpine(new MFVec3f32().getArray()))))))
-            .addChild(new Transform().setRotation(new float[] {1f,0f,0f,-1.7f}).setTranslation(new float[] {-17f,-4.5f,0f})
-              .addChild(new Transform().setScale(new float[] {0.2f,0.2f,0.2f})
+                    .setGeometry(new Extrusion().setBeginCap(false).setCreaseAngle(0.76f ).setCrossSection(new MFVec2f31().getArray()).setEndCap(false).setSolid(false).setSpine(new MFVec3f32().getArray()))))))
+            .addChild(new Transform().setRotation(new float[] {1f ,0f ,0f ,-1.7f }).setTranslation(new float[] {-17f ,-4.5f ,0f })
+              .addChild(new Transform().setScale(new float[] {0.2f ,0.2f ,0.2f })
                 .addChild(new Shape().setUSE("Torus")
                   .addComments("Knot"))
-                .addChild(new Transform().setTranslation(new float[] {-1f,0f,1.7f})
+                .addChild(new Transform().setTranslation(new float[] {-1f ,0f ,1.7f })
                   .addChild(new Shape()
-                    .setGeometry(new Sphere().setRadius(1.5f))
+                    .setGeometry(new Sphere().setRadius(1.5f ))
                     .setAppearance(new Appearance().setUSE("rope"))))))
             .addChild(new Transform().setDEF("RnS")
               .addChild(new Transform().setDEF("ropes")
-                .addChild(new Transform().setRotation(new float[] {0f,0f,1f,-0.82f}).setTranslation(new float[] {7f,-26f,-2.5f})
+                .addChild(new Transform().setRotation(new float[] {0f ,0f ,1f ,-0.82f }).setTranslation(new float[] {7f ,-26f ,-2.5f })
                   .addChild(new Shape()
                     .setAppearance(new Appearance().setUSE("rope"))
-                    .setGeometry(new Extrusion().setBeginCap(false).setCreaseAngle(0.76f).setCrossSection(new MFVec2f33().getArray()).setEndCap(false).setSolid(false).setSpine(new MFVec3f34().getArray())))
+                    .setGeometry(new Extrusion().setBeginCap(false).setCreaseAngle(0.76f ).setCrossSection(new MFVec2f33().getArray()).setEndCap(false).setSolid(false).setSpine(new MFVec3f34().getArray())))
                   .addChild(new Shape()
                     .setAppearance(new Appearance().setUSE("rope"))
-                    .setGeometry(new Extrusion().setBeginCap(false).setCreaseAngle(0.76f).setCrossSection(new MFVec2f35().getArray()).setEndCap(false).setSolid(false).setSpine(new MFVec3f36().getArray())))))
-              .addChild(new Transform().setDEF("sling").setRotation(new float[] {0f,0f,1f,-0.82f}).setTranslation(new float[] {-4f,-15.3f,0f})
+                    .setGeometry(new Extrusion().setBeginCap(false).setCreaseAngle(0.76f ).setCrossSection(new MFVec2f35().getArray()).setEndCap(false).setSolid(false).setSpine(new MFVec3f36().getArray())))))
+              .addChild(new Transform().setDEF("sling").setRotation(new float[] {0f ,0f ,1f ,-0.82f }).setTranslation(new float[] {-4f ,-15.3f ,0f })
                 .addChild(new Transform()
-                  .addChild(new Transform().setRotation(new float[] {0f,1f,0f,-1.57f}).setScale(new float[] {1f,1.3f,1f}).setTranslation(new float[] {0.5f,0f,-1f})
-                    .addChild(new Transform().setRotation(new float[] {0f,0f,1f,1.57f})
-                      .addChild(new Transform().setScale(new float[] {0.3f,0.3f,0.3f})
+                  .addChild(new Transform().setRotation(new float[] {0f ,1f ,0f ,-1.57f }).setScale(new float[] {1f ,1.3f ,1f }).setTranslation(new float[] {0.5f ,0f ,-1f })
+                    .addChild(new Transform().setRotation(new float[] {0f ,0f ,1f ,1.57f })
+                      .addChild(new Transform().setScale(new float[] {0.3f ,0.3f ,0.3f })
                         .addChild(new Shape().setDEF("halfsling")
                           .setAppearance(new Appearance().setDEF("clear")
-                            .setMaterial(new Material().setTransparency(0.5f)))
+                            .setMaterial(new Material().setTransparency(0.5f )))
                           .setGeometry(new Extrusion().setCrossSection(new MFVec2f37().getArray()).setSpine(new MFVec3f38().getArray())))
-                        .addChild(new Transform().setScale(new float[] {0.3f,0.3f,0.3f}).setTranslation(new float[] {0f,-3.5f,11.5f})
+                        .addChild(new Transform().setScale(new float[] {0.3f ,0.3f ,0.3f }).setTranslation(new float[] {0f ,-3.5f ,11.5f })
                           .addChild(new Shape().setUSE("Torus"))
-                          .addChild(new Transform().setTranslation(new float[] {0f,0f,2f})
+                          .addChild(new Transform().setTranslation(new float[] {0f ,0f ,2f })
                             .addChild(new Shape()
                               .setAppearance(new Appearance().setUSE("rope"))
-                              .setGeometry(new Sphere().setRadius(1.5f))))))
-                      .addChild(new Transform().setScale(new float[] {0.3f,0.3f,0.3f}).setTranslation(new float[] {2f,0f,0f})
+                              .setGeometry(new Sphere().setRadius(1.5f ))))))
+                      .addChild(new Transform().setScale(new float[] {0.3f ,0.3f ,0.3f }).setTranslation(new float[] {2f ,0f ,0f })
                         .addChild(new Shape().setUSE("halfsling"))
-                        .addChild(new Transform().setScale(new float[] {0.3f,0.3f,0.3f}).setTranslation(new float[] {0f,-3.5f,11.3f})
+                        .addChild(new Transform().setScale(new float[] {0.3f ,0.3f ,0.3f }).setTranslation(new float[] {0f ,-3.5f ,11.3f })
                           .addChild(new Shape().setUSE("Torus"))
-                          .addChild(new Transform().setTranslation(new float[] {0f,0f,2f})
+                          .addChild(new Transform().setTranslation(new float[] {0f ,0f ,2f })
                             .addChild(new Shape()
                               .setAppearance(new Appearance().setUSE("rope"))
-                              .setGeometry(new Sphere().setRadius(1.5f))))))
-                      .addChild(new Transform().setTranslation(new float[] {1f,-1f,0f})
+                              .setGeometry(new Sphere().setRadius(1.5f ))))))
+                      .addChild(new Transform().setTranslation(new float[] {1f ,-1f ,0f })
                         .addChild(new Shape()
-                          .setGeometry(new Extrusion().setBeginCap(false).setCreaseAngle(0.785f).setCrossSection(new MFVec2f39().getArray()).setEndCap(false).setSolid(false).setSpine(new MFVec3f40().getArray()))
+                          .setGeometry(new Extrusion().setBeginCap(false).setCreaseAngle(0.785f ).setCrossSection(new MFVec2f39().getArray()).setEndCap(false).setSolid(false).setSpine(new MFVec3f40().getArray()))
                           .setAppearance(new Appearance().setUSE("clear")))))
                     .addChild(new TouchSensor().setDEF("LauncheeChoice").setDescription("launcher choice")))
-                  .addChild(new Transform().setDEF("projectiletransform").setScale(new float[] {0.01f,0.01f,0.01f})
+                  .addChild(new Transform().setDEF("projectiletransform").setScale(new float[] {0.01f ,0.01f ,0.01f })
                     .addChild(new Switch().setDEF("projectile").setWhichChoice(0)
                       .addChild(new Group()
-                        .addChild(new Transform().setTranslation(new float[] {0f,0.7f,0f})
+                        .addChild(new Transform().setTranslation(new float[] {0f ,0.7f ,0f })
                           .addChild(new Shape()
-                            .setGeometry(new Sphere().setRadius(0.7f))
+                            .setGeometry(new Sphere().setRadius(0.7f ))
                             .setAppearance(new Appearance().setDEF("black")
-                              .setMaterial(new Material().setDiffuseColor(new float[] {0f,0f,0f}).setSpecularColor(new float[] {1f,1f,1f}))))))
+                              .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,0f }).setSpecularColor(new float[] {1f ,1f ,1f }))))))
                       .addChild(new Group()
                         .addChild(new Transform()
                           .addChild(new Inline().setUrl(new MFString41().getArray()))))
                       .addChild(new Group()
-                        .addChild(new Transform().setRotation(new float[] {0f,1f,0f,1.57f}).setScale(new float[] {0.4f,0.4f,0.4f}).setTranslation(new float[] {0f,0.7f,0f})
+                        .addChild(new Transform().setRotation(new float[] {0f ,1f ,0f ,1.57f }).setScale(new float[] {0.4f ,0.4f ,0.4f }).setTranslation(new float[] {0f ,0.7f ,0f })
                           .addChild(new Inline().setUrl(new MFString42().getArray()))))))))))
-          .addChild(new Transform().setRotation(new float[] {1f,0f,0f,1.57f}).setTranslation(new float[] {0f,18f,2.5f})
+          .addChild(new Transform().setRotation(new float[] {1f ,0f ,0f ,1.57f }).setTranslation(new float[] {0f ,18f ,2.5f })
             .addChild(new Shape()
-              .setGeometry(new Cylinder().setHeight(8f).setRadius(0.4f))
+              .setGeometry(new Cylinder().setHeight(8f ).setRadius(0.4f ))
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(new float[] {0f,0f,0f}).setSpecularColor(new float[] {1f,1f,1f}))))
+                .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,0f }).setSpecularColor(new float[] {1f ,1f ,1f }))))
             .addComments("Top Pivot"))
           .addChild(new Transform().setDEF("verticalweight")
-            .addChild(new Transform().setTranslation(new float[] {4f,18f,1.8f})
+            .addChild(new Transform().setTranslation(new float[] {4f ,18f ,1.8f })
               .addChild(new Shape()
-                .setGeometry(new Box().setSize(new float[] {1f,10f,0.5f}))
+                .setGeometry(new Box().setSize(new float[] {1f ,10f ,0.5f }))
                 .setAppearance(new Appearance().setUSE("wood"))))
-            .addChild(new Transform().setTranslation(new float[] {4f,18f,3.2f})
+            .addChild(new Transform().setTranslation(new float[] {4f ,18f ,3.2f })
               .addChild(new Shape()
-                .setGeometry(new Box().setSize(new float[] {1f,10f,0.5f}))
+                .setGeometry(new Box().setSize(new float[] {1f ,10f ,0.5f }))
                 .setAppearance(new Appearance().setUSE("wood"))))
-            .addChild(new Transform().setTranslation(new float[] {4f,14f,2.5f})
+            .addChild(new Transform().setTranslation(new float[] {4f ,14f ,2.5f })
               .addComments("CounterWeight")
               .addChild(new Shape()
-                .setGeometry(new Cylinder().setHeight(4f).setRadius(1.5f))
+                .setGeometry(new Cylinder().setHeight(4f ).setRadius(1.5f ))
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new float[] {0f,0f,0f}).setSpecularColor(new float[] {1f,1f,1f})))))
-            .addChild(new Transform().setRotation(new float[] {1f,0f,0f,1.57f}).setTranslation(new float[] {4f,22f,2.5f})
+                  .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,0f }).setSpecularColor(new float[] {1f ,1f ,1f })))))
+            .addChild(new Transform().setRotation(new float[] {1f ,0f ,0f ,1.57f }).setTranslation(new float[] {4f ,22f ,2.5f })
               .addChild(new Shape()
-                .setGeometry(new Cylinder().setHeight(2.5f).setRadius(0.3f))
+                .setGeometry(new Cylinder().setHeight(2.5f ).setRadius(0.3f ))
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new float[] {0f,0f,0f}).setSpecularColor(new float[] {1f,1f,1f}))))))
-          .addChild(new Transform().setRotation(new float[] {0f,0f,1f,1.57f}).setScale(new float[] {0.2f,0.2f,0.2f}).setTranslation(new float[] {-11.5f,-1f,2f})
-            .addChild(new Transform().setDEF("screw").setRotation(new float[] {1f,0f,0f,1.57f})
+                  .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,0f }).setSpecularColor(new float[] {1f ,1f ,1f }))))))
+          .addChild(new Transform().setRotation(new float[] {0f ,0f ,1f ,1.57f }).setScale(new float[] {0.2f ,0.2f ,0.2f }).setTranslation(new float[] {-11.5f ,-1f ,2f })
+            .addChild(new Transform().setDEF("screw").setRotation(new float[] {1f ,0f ,0f ,1.57f })
               .addChild(new Shape().setUSE("Torus"))
-              .addChild(new Transform().setRotation(new float[] {1f,0f,0f,-1.57f}).setTranslation(new float[] {0f,0f,7f})
+              .addChild(new Transform().setRotation(new float[] {1f ,0f ,0f ,-1.57f }).setTranslation(new float[] {0f ,0f ,7f })
                 .addChild(new Shape()
-                  .setGeometry(new Cylinder().setHeight(10f).setRadius(0.7f))
+                  .setGeometry(new Cylinder().setHeight(10f ).setRadius(0.7f ))
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setSpecularColor(new float[] {1f,1f,1f}))))))
-            .addChild(new Transform().setTranslation(new float[] {0f,0f,7f})
+                    .setMaterial(new Material().setSpecularColor(new float[] {1f ,1f ,1f }))))))
+            .addChild(new Transform().setTranslation(new float[] {0f ,0f ,7f })
               .addChild(new Transform().setUSE("screw")))
             .addComments("Release Pin")
-            .addChild(new Transform().setDEF("Pin").setRotation(new float[] {1f,0f,0f,-1.57f}).setTranslation(new float[] {0f,0f,-3f})
+            .addChild(new Transform().setDEF("Pin").setRotation(new float[] {1f ,0f ,0f ,-1.57f }).setTranslation(new float[] {0f ,0f ,-3f })
               .addChild(new Transform().setUSE("screw"))))
-          .addChild(new Transform().setTranslation(new float[] {0f,0f,5f})
+          .addChild(new Transform().setTranslation(new float[] {0f ,0f ,5f })
             .addChild(new Shape().setUSE("plank"))
             .addChild(new Transform().setUSE("angledsupport"))
             .addChild(new Transform().setUSE("angledsupport2"))
             .addChild(new Transform().setUSE("verticalsupport"))
             .addChild(new Transform().setUSE("horizontalsupport"))
-            .addChild(new Transform().setRotation(new float[] {0f,1f,0f,1.57f}).setScale(new float[] {0.6f,1f,1f}).setTranslation(new float[] {0f,-11f,-2.5f})
+            .addChild(new Transform().setRotation(new float[] {0f ,1f ,0f ,1.57f }).setScale(new float[] {0.6f ,1f ,1f }).setTranslation(new float[] {0f ,-11f ,-2.5f })
               .addChild(new Transform().setUSE("horizontalsupport")))
-            .addChild(new Transform().setRotation(new float[] {0f,0f,1f,-1.57f}).setScale(new float[] {0.6f,1f,1f}).setTranslation(new float[] {0f,5f,-10f})
-              .addChild(new Transform().setRotation(new float[] {0f,1f,0f,0.4f})
+            .addChild(new Transform().setRotation(new float[] {0f ,0f ,1f ,-1.57f }).setScale(new float[] {0.6f ,1f ,1f }).setTranslation(new float[] {0f ,5f ,-10f })
+              .addChild(new Transform().setRotation(new float[] {0f ,1f ,0f ,0.4f })
                 .addChild(new Shape().setUSE("plank"))))
-            .addChild(new Transform().setTranslation(new float[] {0f,0f,0.6f})
+            .addChild(new Transform().setTranslation(new float[] {0f ,0f ,0.6f })
               .addChild(new Transform().setUSE("panel"))))
-          .addChild(new Transform().setTranslation(new float[] {10f,-1f,2.5f})
+          .addChild(new Transform().setTranslation(new float[] {10f ,-1f ,2.5f })
             .addChild(new Shape().setDEF("Axle")
-              .setGeometry(new Box().setSize(new float[] {1f,1f,8f}))
+              .setGeometry(new Box().setSize(new float[] {1f ,1f ,8f }))
               .setAppearance(new Appearance().setUSE("wood")))
-            .addChild(new Transform().setRotation(new float[] {1f,0f,0f,1.57f}).setTranslation(new float[] {0f,0f,4.5f})
+            .addChild(new Transform().setRotation(new float[] {1f ,0f ,0f ,1.57f }).setTranslation(new float[] {0f ,0f ,4.5f })
               .addChild(new Shape().setDEF("wheel")
-                .setGeometry(new Cylinder().setRadius(2f))
+                .setGeometry(new Cylinder().setRadius(2f ))
                 .setAppearance(new Appearance().setUSE("wood")))
               .addChild(new Shape().setDEF("tracks")
-                .setGeometry(new Sphere().setRadius(1.5f))
+                .setGeometry(new Sphere().setRadius(1.5f ))
                 .setAppearance(new Appearance().setUSE("black")))
-              .addChild(new Transform().setTranslation(new float[] {0f,0.55f,0f})
+              .addChild(new Transform().setTranslation(new float[] {0f ,0.55f ,0f })
                 .addChild(new Shape().setDEF("hub")
-                  .setGeometry(new Sphere().setRadius(1.5f))
+                  .setGeometry(new Sphere().setRadius(1.5f ))
                   .setAppearance(new Appearance().setUSE("black")))))
-            .addChild(new Transform().setRotation(new float[] {1f,0f,0f,1.57f}).setTranslation(new float[] {0f,0f,-4.5f})
+            .addChild(new Transform().setRotation(new float[] {1f ,0f ,0f ,1.57f }).setTranslation(new float[] {0f ,0f ,-4.5f })
               .addChild(new Shape().setUSE("wheel"))
               .addChild(new Shape().setUSE("tracks"))
-              .addChild(new Transform().setTranslation(new float[] {0f,-0.55f,0f})
+              .addChild(new Transform().setTranslation(new float[] {0f ,-0.55f ,0f })
                 .addChild(new Shape().setUSE("hub")))))
-          .addChild(new Transform().setTranslation(new float[] {-10f,-1f,2.5f})
+          .addChild(new Transform().setTranslation(new float[] {-10f ,-1f ,2.5f })
             .addChild(new Shape().setUSE("Axle"))
-            .addChild(new Transform().setRotation(new float[] {1f,0f,0f,1.57f}).setTranslation(new float[] {0f,0f,4.5f})
+            .addChild(new Transform().setRotation(new float[] {1f ,0f ,0f ,1.57f }).setTranslation(new float[] {0f ,0f ,4.5f })
               .addChild(new Shape().setUSE("wheel"))
               .addChild(new Shape().setUSE("tracks"))
-              .addChild(new Transform().setTranslation(new float[] {0f,0.55f,0f})
+              .addChild(new Transform().setTranslation(new float[] {0f ,0.55f ,0f })
                 .addChild(new Shape().setUSE("hub"))))
-            .addChild(new Transform().setRotation(new float[] {1f,0f,0f,1.57f}).setTranslation(new float[] {0f,0f,-4.5f})
+            .addChild(new Transform().setRotation(new float[] {1f ,0f ,0f ,1.57f }).setTranslation(new float[] {0f ,0f ,-4.5f })
               .addChild(new Shape().setUSE("wheel"))
               .addChild(new Shape().setUSE("tracks"))
-              .addChild(new Transform().setTranslation(new float[] {0f,-0.55f,0f})
+              .addChild(new Transform().setTranslation(new float[] {0f ,-0.55f ,0f })
                 .addChild(new Shape().setUSE("hub"))))
-            .addChild(new Transform().setRotation(new float[] {0f,1f,0f,-0.6f}).setTranslation(new float[] {0f,100f,400f})
-              .addChild(new Transform().setTranslation(new float[] {1f,3f,0f})
+            .addChild(new Transform().setRotation(new float[] {0f ,1f ,0f ,-0.6f }).setTranslation(new float[] {0f ,100f ,400f })
+              .addChild(new Transform().setTranslation(new float[] {1f ,3f ,0f })
                 .addChild(new Viewpoint().setDescription("Side")))
               .addChild(new Transform().setUSE("launch"))
               .addChild(new Transform()
                 .addChild(new TouchSensor().setUSE("LauncheeChoice"))
                 .addChild(new Switch().setUSE("projectilename"))
-                .addChild(new Transform().setTranslation(new float[] {2.5f,0f,0f})
+                .addChild(new Transform().setTranslation(new float[] {2.5f ,0f ,0f })
                   .addChild(new Shape()
-                    .setGeometry(new Box().setSize(new float[] {5f,0.5f,0.5f}))
+                    .setGeometry(new Box().setSize(new float[] {5f ,0.5f ,0.5f }))
                     .setAppearance(new Appearance()
-                      .setMaterial(new Material().setTransparency(1f))))))
-              .addChild(new Transform().setScale(new float[] {0.5f,0.5f,0.5f}).setTranslation(new float[] {0f,-1f,0f})
+                      .setMaterial(new Material().setTransparency(1f ))))))
+              .addChild(new Transform().setScale(new float[] {0.5f ,0.5f ,0.5f }).setTranslation(new float[] {0f ,-1f ,0f })
                 .addChild(new TouchSensor().setUSE("weightselector"))
                 .addChild(new Switch().setUSE("Weight"))
-                .addChild(new Transform().setTranslation(new float[] {8f,0f,0f})
+                .addChild(new Transform().setTranslation(new float[] {8f ,0f ,0f })
                   .addChild(new Shape()
-                    .setGeometry(new Box().setSize(new float[] {17f,1f,0.5f}))
+                    .setGeometry(new Box().setSize(new float[] {17f ,1f ,0.5f }))
                     .setAppearance(new Appearance()
-                      .setMaterial(new Material().setTransparency(1f)))))))
-            .addChild(new Transform().setDEF("ProjectileTransform").setTranslation(new float[] {14.25f,1.25f,0f})
+                      .setMaterial(new Material().setTransparency(1f )))))))
+            .addChild(new Transform().setDEF("ProjectileTransform").setTranslation(new float[] {14.25f ,1.25f ,0f })
               .addChild(new Switch().setUSE("projectile"))
-              .addChild(new Transform().setRotation(new float[] {0f,1f,0f,1.57f}).setTranslation(new float[] {0f,1f,0f})
-                .addChild(new Viewpoint().setDescription("Projectile Cam").setPosition(new float[] {0f,0f,15f}))))
-            .addChild(new Transform().setTranslation(new float[] {20f,2f,0f})
-              .addChild(new Transform().setDEF("Front").setRotation(new float[] {0f,1f,0f,1.57f})
+              .addChild(new Transform().setRotation(new float[] {0f ,1f ,0f ,1.57f }).setTranslation(new float[] {0f ,1f ,0f })
+                .addChild(new Viewpoint().setDescription("Projectile Cam").setPosition(new float[] {0f ,0f ,15f }))))
+            .addChild(new Transform().setTranslation(new float[] {20f ,2f ,0f })
+              .addChild(new Transform().setDEF("Front").setRotation(new float[] {0f ,1f ,0f ,1.57f })
                 .addChild(new Viewpoint().setDescription("Fore"))))
-            .addChild(new Transform().setTranslation(new float[] {-8f,4f,0f})
-              .addChild(new Transform().setRotation(new float[] {0f,1f,0f,-1.57f})
+            .addChild(new Transform().setTranslation(new float[] {-8f ,4f ,0f })
+              .addChild(new Transform().setRotation(new float[] {0f ,1f ,0f ,-1.57f })
                 .addChild(new Viewpoint().setDescription("Aft"))))
             .addChild(new Script().setDEF("WeightScript")
               .addField(new field().setType("SFBool").setName("set_boolean").setAccessType(field.ACCESSTYPE_INPUTONLY))
@@ -529,269 +529,269 @@ public class Trebuchet {
         .addChild(new ROUTE().setFromField("value_changed").setFromNode("pinpath").setToField("set_translation").setToNode("Pin")))      ;
     return X3D0;
     }
-protected class MFString0 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString0 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_back.jpg"});
   }
 }
-protected class MFString1 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString1 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_bottom.jpg"});
   }
 }
-protected class MFString2 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString2 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_front.jpg"});
   }
 }
-protected class MFFloat3 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1.309f,1.570796f});
+private class MFFloat3 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1.309f ,1.570796f });
   }
 }
-protected class MFColor4 {
-  protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.1f,0.1f,0f,0.4f,0.25f,0.2f,0.6f,0.6f,0.6f});
+private class MFColor4 {
+  private org.web3d.x3d.jsail.fields.MFColor getArray() {
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.1f ,0.1f ,0f ,0.4f ,0.25f ,0.2f ,0.6f ,0.6f ,0.6f });
   }
 }
-protected class MFString5 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString5 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_left.jpg"});
   }
 }
-protected class MFString6 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString6 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_right.jpg"});
   }
 }
-protected class MFFloat7 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1.309f,1.57079f});
+private class MFFloat7 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1.309f ,1.57079f });
   }
 }
-protected class MFColor8 {
-  protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f,0.2f,0.7f,0f,0.5f,1f,1f,1f,1f});
+private class MFColor8 {
+  private org.web3d.x3d.jsail.fields.MFColor getArray() {
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f ,0.2f ,0.7f ,0f ,0.5f ,1f ,1f ,1f ,1f });
   }
 }
-protected class MFString9 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString9 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_top.jpg"});
   }
 }
-protected class MFString10 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString10 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"holygral.mp3","http://www.nps.navy.mil/code32/vrml/holygral.mp3"});
   }
 }
-protected class MFString11 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString11 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"grass.jpg","https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/grass.jpg"});
   }
 }
-protected class MFString12 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString12 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Click Sling to Select Projectile"});
   }
 }
-protected class MFString13 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString13 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Click Here to Change Counter Weight (50 lbs)"});
   }
 }
-protected class MFString14 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString14 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Click Here to Change Counter Weight (500 lbs)"});
   }
 }
-protected class MFString15 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString15 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Click Here to Change Counter Weight (1000 lbs)"});
   }
 }
-protected class MFString16 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString16 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Click Here to Change Counter Weight (10000 lbs)"});
   }
 }
-protected class MFString17 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString17 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"LAUNCH"});
   }
 }
-protected class MFString18 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString18 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"pigdog.wav","http://www.nps.navy.mil/code32/vrml/pigdog.wav"});
   }
 }
-protected class MFString19 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString19 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"monks.wav","http://www.nps.navy.mil/code32/vrml/monks.wav"});
   }
 }
-protected class MFString20 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString20 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Bowling Ball (10 lbs)"});
   }
 }
-protected class MFString21 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString21 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"grenade.wav","http://www.nps.navy.mil/code32/vrml/grenade.wav"});
   }
 }
-protected class MFString22 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString22 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Cow (1000 lbs)"});
   }
 }
-protected class MFString23 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString23 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"lavache.wav","http://www.nps.navy.mil/code32/vrml/lavache.wav"});
   }
 }
-protected class MFString24 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString24 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Chicken (5 lbs)"});
   }
 }
-protected class MFString25 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString25 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"hamster.wav","http://www.nps.navy.mil/code32/vrml/hamster.wav"});
   }
 }
-protected class MFString26 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString26 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"wood.gif","https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/wood.gif"});
   }
 }
-protected class MFVec2f27 {
-  protected org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1f,-0.38f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,-0.38f,-1f,-1.1f,1f,-1.1f,1f,-0.38f});
+private class MFVec2f27 {
+  private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1f ,-0.38f ,0.92f ,-0.38f ,0.71f ,-0.71f ,0.38f ,-0.92f ,0f ,-1f ,-0.38f ,-0.92f ,-0.71f ,-0.71f ,-0.92f ,-0.38f ,-1f ,-0.38f ,-1f ,-1.1f ,1f ,-1.1f ,1f ,-0.38f });
   }
 }
-protected class MFVec3f28 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,6f,0f,0f,-11f,0f});
+private class MFVec3f28 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,6f ,0f ,0f ,-11f ,0f });
   }
 }
-protected class MFVec2f29 {
-  protected org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0.9f,0f,0.81f,-0.34f,0.63f,-0.63f,0.34f,-0.83f,0f,-0.9f,-0.34f,-0.81f,-0.63f,-0.63f,-0.81f,-0.34f,-0.9f,0f,-0.81f,0.34f,-0.63f,0.63f,-0.34f,0.81f,0f,0.9f,0.38f,0.81f,0.63f,0.63f,0.81f,0.34f,0.9f,0f});
+private class MFVec2f29 {
+  private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0.9f ,0f ,0.81f ,-0.34f ,0.63f ,-0.63f ,0.34f ,-0.83f ,0f ,-0.9f ,-0.34f ,-0.81f ,-0.63f ,-0.63f ,-0.81f ,-0.34f ,-0.9f ,0f ,-0.81f ,0.34f ,-0.63f ,0.63f ,-0.34f ,0.81f ,0f ,0.9f ,0.38f ,0.81f ,0.63f ,0.63f ,0.81f ,0.34f ,0.9f ,0f });
   }
 }
-protected class MFVec3f30 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {2f,0f,0f,1.85f,0f,0.77f,1.41f,0f,1.41f,0.77f,0f,1.85f,0f,0f,2f,-0.77f,0f,1.85f,-1.41f,0f,1.41f,-1.85f,0f,0.77f,-2f,0f,0f,-1.85f,0f,-0.77f,-1.41f,0f,-1.41f,-0.77f,0f,-1.85f,0f,0f,-2f,0.77f,0f,-1.85f,1.41f,0f,-1.41f,1.85f,0f,-0.77f,2f,0f,0f});
+private class MFVec3f30 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {2f ,0f ,0f ,1.85f ,0f ,0.77f ,1.41f ,0f ,1.41f ,0.77f ,0f ,1.85f ,0f ,0f ,2f ,-0.77f ,0f ,1.85f ,-1.41f ,0f ,1.41f ,-1.85f ,0f ,0.77f ,-2f ,0f ,0f ,-1.85f ,0f ,-0.77f ,-1.41f ,0f ,-1.41f ,-0.77f ,0f ,-1.85f ,0f ,0f ,-2f ,0.77f ,0f ,-1.85f ,1.41f ,0f ,-1.41f ,1.85f ,0f ,-0.77f ,2f ,0f ,0f });
   }
 }
-protected class MFVec2f31 {
-  protected org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0.1f,0f,0.092f,-0.038f,0.071f,-0.071f,0.038f,-0.092f,0f,-0.1f,-0.038f,-0.092f,-0.071f,-0.071f,-0.092f,-0.038f,-0.1f,0f,-0.092f,0.038f,-0.071f,0.071f,-0.038f,0.092f,0f,0.1f,0.038f,0.092f,0.071f,0.071f,0.092f,0.038f,0.1f,0f});
+private class MFVec2f31 {
+  private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0.1f ,0f ,0.092f ,-0.038f ,0.071f ,-0.071f ,0.038f ,-0.092f ,0f ,-0.1f ,-0.038f ,-0.092f ,-0.071f ,-0.071f ,-0.092f ,-0.038f ,-0.1f ,0f ,-0.092f ,0.038f ,-0.071f ,0.071f ,-0.038f ,0.092f ,0f ,0.1f ,0.038f ,0.092f ,0.071f ,0.071f ,0.092f ,0.038f ,0.1f ,0f });
   }
 }
-protected class MFVec3f32 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-15.2f,1.4f,2.2f,-12f,-0.8f,2.2f});
+private class MFVec3f32 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-15.2f ,1.4f ,2.2f ,-12f ,-0.8f ,2.2f });
   }
 }
-protected class MFVec2f33 {
-  protected org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0.1f,0f,0.092f,-0.038f,0.071f,-0.071f,0.038f,-0.092f,0f,-0.1f,-0.038f,-0.092f,-0.071f,-0.071f,-0.092f,-0.038f,-0.1f,0f,-0.092f,0.038f,-0.071f,0.071f,-0.038f,0.092f,0f,0.1f,0.038f,0.092f,0.071f,0.071f,0.092f,0.038f,0.1f,0f});
+private class MFVec2f33 {
+  private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0.1f ,0f ,0.092f ,-0.038f ,0.071f ,-0.071f ,0.038f ,-0.092f ,0f ,-0.1f ,-0.038f ,-0.092f ,-0.071f ,-0.071f ,-0.092f ,-0.038f ,-0.1f ,0f ,-0.092f ,0.038f ,-0.071f ,0.071f ,-0.038f ,0.092f ,0f ,0.1f ,0.038f ,0.092f ,0.071f ,0.071f ,0.092f ,0.038f ,0.1f ,0f });
   }
 }
-protected class MFVec3f34 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-33f,0.9f,2.5f,-18.5f,1.9f,2.55f});
+private class MFVec3f34 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-33f ,0.9f ,2.5f ,-18.5f ,1.9f ,2.55f });
   }
 }
-protected class MFVec2f35 {
-  protected org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0.1f,0f,0.092f,-0.038f,0.071f,-0.071f,0.038f,-0.092f,0f,-0.1f,-0.038f,-0.092f,-0.071f,-0.071f,-0.092f,-0.038f,-0.1f,0f,-0.092f,0.038f,-0.071f,0.071f,-0.038f,0.092f,0f,0.1f,0.038f,0.092f,0.071f,0.071f,0.092f,0.038f,0.1f,0f});
+private class MFVec2f35 {
+  private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0.1f ,0f ,0.092f ,-0.038f ,0.071f ,-0.071f ,0.038f ,-0.092f ,0f ,-0.1f ,-0.038f ,-0.092f ,-0.071f ,-0.071f ,-0.092f ,-0.038f ,-0.1f ,0f ,-0.092f ,0.038f ,-0.071f ,0.071f ,-0.038f ,0.092f ,0f ,0.1f ,0.038f ,0.092f ,0.071f ,0.071f ,0.092f ,0.038f ,0.1f ,0f });
   }
 }
-protected class MFVec3f36 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-35.7f,-0.8f,2.5f,-18.8f,-0.8f,2.55f});
+private class MFVec3f36 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-35.7f ,-0.8f ,2.5f ,-18.8f ,-0.8f ,2.55f });
   }
 }
-protected class MFVec2f37 {
-  protected org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0f,0f,0f,5f,0.5f,7f,1f,8f,2f,9f,3f,11f,3.5f,11.2f,4f,11f,5f,9f,6f,8f,6.5f,7f,6.7f,5f,6.7f,0f,0f,0f});
+private class MFVec2f37 {
+  private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0f ,0f ,0f ,5f ,0.5f ,7f ,1f ,8f ,2f ,9f ,3f ,11f ,3.5f ,11.2f ,4f ,11f ,5f ,9f ,6f ,8f ,6.5f ,7f ,6.7f ,5f ,6.7f ,0f ,0f ,0f });
   }
 }
-protected class MFVec3f38 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,0f,0.1f,0f,0f});
+private class MFVec3f38 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,0f ,0.1f ,0f ,0f });
   }
 }
-protected class MFVec2f39 {
-  protected org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f});
+private class MFVec2f39 {
+  private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1f ,0f ,0.92f ,-0.38f ,0.71f ,-0.71f ,0.38f ,-0.92f ,0f ,-1f ,-0.38f ,-0.92f ,-0.71f ,-0.71f ,-0.92f ,-0.38f ,-1f ,0f });
   }
 }
-protected class MFVec3f40 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,-1f,0f,0f,1f,0f});
+private class MFVec3f40 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,-1f ,0f ,0f ,1f ,0f });
   }
 }
-protected class MFString41 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString41 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"cow.wrl","http://www.uoguelph.ca/~dchiu/cow.wrl"});
   }
 }
-protected class MFString42 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+private class MFString42 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"vrml_ginger.wrl","http://home.inreach.com/ntamura/vrml/vrml_ginger.wrl"});
   }
 }
-protected class MFFloat43 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.1f,0.2f,0.2f,0.3f,0.9f});
+private class MFFloat43 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0.1f ,0.2f ,0.2f ,0.3f ,0.9f });
   }
 }
-protected class MFVec3f44 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1.4f,1.6f,0f,1f,-8f,0f,-3.5f,-12f,0f,-3.5f,-12f,0f,1.2f,-8f,0f,1.4f,1.6f,0f});
+private class MFVec3f44 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1.4f ,1.6f ,0f ,1f ,-8f ,0f ,-3.5f ,-12f ,0f ,-3.5f ,-12f ,0f ,1.2f ,-8f ,0f ,1.4f ,1.6f ,0f });
   }
 }
-protected class MFFloat45 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.1f,0.2f,0.2f,0.3f,0.9f});
+private class MFFloat45 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0.1f ,0.2f ,0.2f ,0.3f ,0.9f });
   }
 }
-protected class MFRotation46 {
-  protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0.82f,0f,0f,1f,-0.77f,0f,0f,1f,-1.57f,0f,0f,1f,-1.57f,0f,0f,1f,-0.77f,0f,0f,1f,0.82f});
+private class MFRotation46 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f ,0f ,1f ,0.82f ,0f ,0f ,1f ,-0.77f ,0f ,0f ,1f ,-1.57f ,0f ,0f ,1f ,-1.57f ,0f ,0f ,1f ,-0.77f ,0f ,0f ,1f ,0.82f });
   }
 }
-protected class MFFloat47 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.01f,0.95f,1f});
+private class MFFloat47 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0.01f ,0.95f ,1f });
   }
 }
-protected class MFVec3f48 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,-3f,0f,0f,-10f,0f,0f,-10f,0f,0f,-3f});
+private class MFVec3f48 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,-3f ,0f ,0f ,-10f ,0f ,0f ,-10f ,0f ,0f ,-3f });
   }
 }
-protected class MFFloat49 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.7f,1f});
+private class MFFloat49 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0.7f ,1f });
   }
 }
-protected class MFRotation50 {
-  protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,0f,0f,1f,-3.14f,0f,0f,1f,0f});
+private class MFRotation50 {
+  private org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f ,0f ,1f ,0f ,0f ,0f ,1f ,-3.14f ,0f ,0f ,1f ,0f });
   }
 }
-protected class MFFloat51 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.2f,0.98f,0.99f});
+private class MFFloat51 {
+  private org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0.2f ,0.98f ,0.99f });
   }
 }
-protected class MFVec3f52 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1f,1f,1f,0.01f,0.01f,0.01f,0.01f,0.01f,0.01f,1f,1f,1f});
+private class MFVec3f52 {
+  private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1f ,1f ,1f ,0.01f ,0.01f ,0.01f ,0.01f ,0.01f ,0.01f ,1f ,1f ,1f });
   }
 }
 }

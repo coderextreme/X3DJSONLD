@@ -50,7 +50,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("20 October 2019")}),
+              content : new SFString("Sat, 30 Dec 2023 08:00:26 GMT")}),
 
             new meta({
               name : new SFString("reference"),
@@ -82,11 +82,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d")}),
-
-            new meta({
-              name : new SFString("generator"),
-              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")})])})),
+              content : new SFString("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
@@ -175,23 +171,7 @@ var X3D0 =  new X3D({
                       visibilityLimit : new SFFloat(15)})])}),
 
                 new fieldValue({
-                  name : new SFString("visible"),
-                  value : new SFString("true")}),
-
-                new fieldValue({
-                  name : new SFString("lineColor"),
-                  value : new SFString("0.9 0.9 0.9")}),
-
-                new fieldValue({
-                  name : new SFString("frustumColor"),
-                  value : new SFString("0.8 0.8 0.8")}),
-
-                new fieldValue({
                   name : new SFString("transparency"),
-                  value : new SFString("0.75")}),
-
-                new fieldValue({
-                  name : new SFString("aspectRatio"),
                   value : new SFString("0.75")}),
 
                 new fieldValue({

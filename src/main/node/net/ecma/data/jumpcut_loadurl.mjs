@@ -70,7 +70,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("20 October 2019")}),
+              content : new SFString("Sat, 30 Dec 2023 07:50:03 GMT")}),
 
             new meta({
               name : new SFString("description"),
@@ -82,11 +82,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html")}),
-
-            new meta({
-              name : new SFString("generator"),
-              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")})])})),
+              content : new SFString("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([

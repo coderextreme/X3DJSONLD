@@ -290,23 +290,23 @@ public class AllenDutton
         .addChild(new Viewpoint("FrontView").setDescription("Front View").setPosition(0.0,0.854,2.57665))
         .addChild(new Viewpoint("SideView").setDescription("Side View").setOrientation(0.0,1.0,0.0,1.5708).setPosition(2.5929,0.854,0.0))
         .addChild(new Viewpoint("TopView").setDescription("Top View").setOrientation(1.0,0.0,0.0,-1.5708).setPosition(0.0,3.4495,0.0)))
-      .addJoints(new HAnimJoint().setUSE("hanim_humanoid_root").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_sacroiliac").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_skullbase").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_vc4").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_vl1").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_ankle").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_ankle").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_elbow").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_elbow").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_hip").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_hip").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_knee").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_knee").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_shoulder").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_shoulder").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_wrist").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_r_wrist").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
+      .addJoints(new HAnimJoint().setUSE("hanim_humanoid_root"))
+      .addJoints(new HAnimJoint().setUSE("hanim_sacroiliac"))
+      .addJoints(new HAnimJoint().setUSE("hanim_skullbase"))
+      .addJoints(new HAnimJoint().setUSE("hanim_vc4"))
+      .addJoints(new HAnimJoint().setUSE("hanim_vl1"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_ankle"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_ankle"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_elbow"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_elbow"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_hip"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_hip"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_knee"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_knee"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_shoulder"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_shoulder"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_wrist"))
+      .addJoints(new HAnimJoint().setUSE("hanim_r_wrist"))
       .addSegments(new HAnimSegment().setUSE("hanim_c4"))
       .addSegments(new HAnimSegment().setUSE("hanim_l1"))
       .addSegments(new HAnimSegment().setUSE("hanim_pelvis"))
@@ -3525,16 +3525,17 @@ public class AllenDutton
 	}
 	   
     /** 
-	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+     * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
+        System.out.println("Build this X3D model, showing diagnostics...");
         X3D thisExampleX3dModel = new AllenDutton().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
@@ -3574,11 +3575,13 @@ public class AllenDutton
 	
         if (validate)
         {
-                System.out.print("Java program \"net.x3djsonld.data.AllenDutton\" self-validation test results: ");
+            //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
-                if (validationResults.length() > 10)
+            //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
+                System.out.print("net.x3djsonld.data.AllenDutton self-validation test results: ");
+                if (!validationResults.equals("success"))
                     System.out.println();
-                System.out.println(validationResults);
+                System.out.println(validationResults.trim());
         }
     }
 }

@@ -27,8 +27,10 @@ var Background = require('./x3d.mjs');
 var TimeSensor = require('./x3d.mjs');
 var SFBool = require('./x3d.mjs');
 var Sound = require('./x3d.mjs');
+var SFVec3f = require('./x3d.mjs');
 var SFFloat = require('./x3d.mjs');
 var AudioClip = require('./x3d.mjs');
+var SFTime = require('./x3d.mjs');
 var ROUTE = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
@@ -51,15 +53,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("Sep 03 2023")}),
+              content : new SFString("Sat, 30 Dec 2023 07:58:44 GMT")}),
 
             new meta({
               name : new SFString("description"),
               content : new SFString("5 or more prismatic flowers")}),
-
-            new meta({
-              name : new SFString("generator"),
-              content : new SFString("X3D-Edit, https://savage.nps.edu/X3D-Edit")}),
           component : new SFNode(
             new component({
               name : new SFString("Scripting"),
@@ -97,7 +95,7 @@ var X3D0 =  new X3D({
           children : new MFNode([
             new ExternProtoDeclare({
               name : new SFString("FlowerProto"),
-              url : new MFString(["../personal/flowerproto.json#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto"]),
+              url : new MFString(["../personal/flowerproto.json#FlowerProto"]),
               field : new MFNode([
                 new field({
                   type : field.TYPE_MFSTRING,
@@ -132,12 +130,12 @@ var X3D0 =  new X3D({
             new NavigationInfo({}),
 
             new Background({
-              frontUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]),
-              backUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]),
-              leftUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]),
-              rightUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]),
-              topUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/src/main/resourcesall_probes/stpeters_cross/stpeters_top.png"]),
-              bottomUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])}),
+              frontUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png"]),
+              backUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png"]),
+              leftUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png"]),
+              rightUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png"]),
+              topUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png"]),
+              bottomUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])}),
 
             new Group({
               children : new MFNode([
@@ -164,6 +162,7 @@ var X3D0 =  new X3D({
                   loop : new SFBool(true)}),
 
                 new Sound({
+                  location : new SFVec3f([0,1,0]),
                   minBack : new SFFloat(20),
                   minFront : new SFFloat(20),
                   maxBack : new SFFloat(100),
@@ -172,7 +171,8 @@ var X3D0 =  new X3D({
                     new AudioClip({
                       DEF : new SFString("AudioClip"),
                       description : new SFString("Chandubabamusic #1"),
-                      url : new MFString(["../resources/chandubabamusic1.wav","https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav"])}))})])}),
+                      url : new MFString(["../resources/chandubabamusic1.wav"]),
+                      startTime : new SFTime(1703923124.156)}))})])}),
 
             new ROUTE({
               fromNode : new SFString("SongTime"),

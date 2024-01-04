@@ -1,42 +1,46 @@
 'use strict';
-import fs from 'fs';
-import { X3D } from './x3d.mjs';
-import { SFString } from './x3d.mjs';
-import { SFNode } from './x3d.mjs';
-import { head } from './x3d.mjs';
-import { MFNode } from './x3d.mjs';
-import { meta } from './x3d.mjs';
-import { Scene } from './x3d.mjs';
-import { ProtoDeclare } from './x3d.mjs';
-import { ProtoBody } from './x3d.mjs';
-import { Group } from './x3d.mjs';
-import { Transform } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
-import { Shape } from './x3d.mjs';
-import { Appearance } from './x3d.mjs';
-import { Material } from './x3d.mjs';
-import { SFColor } from './x3d.mjs';
-import { SFFloat } from './x3d.mjs';
-import { Extrusion } from './x3d.mjs';
-import { MFVec2f } from './x3d.mjs';
-import { MFVec3f } from './x3d.mjs';
-import { Text } from './x3d.mjs';
-import { MFString } from './x3d.mjs';
-import { StringSensor } from './x3d.mjs';
-import { SFBool } from './x3d.mjs';
-import { TouchSensor } from './x3d.mjs';
-import { Sphere } from './x3d.mjs';
-import { Script } from './x3d.mjs';
-import { field } from './x3d.mjs';
-import { ROUTE } from './x3d.mjs';
-import { NavigationInfo } from './x3d.mjs';
-import { Viewpoint } from './x3d.mjs';
-import { SFRotation } from './x3d.mjs';
-import { ProtoInstance } from './x3d.mjs';
+var X3D = require('./x3d.mjs');
+try {
+	var fs = require('fs');
+} catch (e) {
+console.log("Problems loading fs. On browser?",e);
+}
+var SFString = require('./x3d.mjs');
+var SFNode = require('./x3d.mjs');
+var head = require('./x3d.mjs');
+var MFNode = require('./x3d.mjs');
+var meta = require('./x3d.mjs');
+var Scene = require('./x3d.mjs');
+var ProtoDeclare = require('./x3d.mjs');
+var ProtoBody = require('./x3d.mjs');
+var Group = require('./x3d.mjs');
+var Transform = require('./x3d.mjs');
+var SFVec3f = require('./x3d.mjs');
+var Shape = require('./x3d.mjs');
+var Appearance = require('./x3d.mjs');
+var Material = require('./x3d.mjs');
+var SFColor = require('./x3d.mjs');
+var SFFloat = require('./x3d.mjs');
+var Extrusion = require('./x3d.mjs');
+var MFVec2f = require('./x3d.mjs');
+var MFVec3f = require('./x3d.mjs');
+var Text = require('./x3d.mjs');
+var MFString = require('./x3d.mjs');
+var StringSensor = require('./x3d.mjs');
+var SFBool = require('./x3d.mjs');
+var TouchSensor = require('./x3d.mjs');
+var Sphere = require('./x3d.mjs');
+var Script = require('./x3d.mjs');
+var field = require('./x3d.mjs');
+var ROUTE = require('./x3d.mjs');
+var NavigationInfo = require('./x3d.mjs');
+var Viewpoint = require('./x3d.mjs');
+var SFRotation = require('./x3d.mjs');
+var ProtoInstance = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
-      version : new SFString("4.0"),
+      version : new SFString("3.3"),
       head : new SFNode(
         new head({
           meta : new MFNode([
@@ -58,7 +62,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("05 May 2017")}),
+              content : new SFString("23 Dec 2022")}),
 
             new meta({
               name : new SFString("description"),
@@ -84,7 +88,7 @@ var X3D0 =  new X3D({
                       children : new MFNode([
                         new Transform({
                           scale : new SFVec3f([0.5,0.5,0.5]),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               appearance : new SFNode(
                                 new Appearance({
@@ -96,13 +100,13 @@ var X3D0 =  new X3D({
                                 new Extrusion({
                                   creaseAngle : new SFFloat(0.785),
                                   crossSection : new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]),
-                                  spine : new MFVec3f([-2.5,0,0,-1.5,0,0])}))}),
-                          /*<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>*/])}),
+                                  spine : new MFVec3f([-2.5,0,0,-1.5,0,0])}))})),
+                          /*<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>*/}),
                       /*right*/
 
                         new Transform({
                           scale : new SFVec3f([0.5,0.5,0.5]),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               appearance : new SFNode(
                                 new Appearance({
@@ -114,11 +118,11 @@ var X3D0 =  new X3D({
                                 new Extrusion({
                                   creaseAngle : new SFFloat(0.785),
                                   crossSection : new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]),
-                                  spine : new MFVec3f([1.5,0,0,2.5,0,0])}))}),
-
+                                  spine : new MFVec3f([1.5,0,0,2.5,0,0])}))})),
+                          children : new MFNode([
                             new Transform({
                               translation : new SFVec3f([2,0,0]),
-                              children : new MFNode([
+                              child : new SFNode(
                                 new Shape({
                                   appearance : new SFNode(
                                     new Appearance({
@@ -129,7 +133,7 @@ var X3D0 =  new X3D({
                                   geometry : new SFNode(
                                     new Text({
                                       DEF : new SFString("RightString"),
-                                      string : new MFString(["r"])}))})])}),
+                                      string : new MFString(["r"])}))}))}),
 
                             new StringSensor({
                               DEF : new SFString("RightSensor"),
@@ -142,7 +146,7 @@ var X3D0 =  new X3D({
 
                         new Transform({
                           scale : new SFVec3f([0.5,0.5,0.5]),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               appearance : new SFNode(
                                 new Appearance({
@@ -154,11 +158,11 @@ var X3D0 =  new X3D({
                                 new Extrusion({
                                   creaseAngle : new SFFloat(0.785),
                                   crossSection : new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]),
-                                  spine : new MFVec3f([0,1.5,0,0,2.5,0])}))}),
-
+                                  spine : new MFVec3f([0,1.5,0,0,2.5,0])}))})),
+                          children : new MFNode([
                             new Transform({
                               translation : new SFVec3f([-0.5,2,0]),
-                              children : new MFNode([
+                              child : new SFNode(
                                 new Shape({
                                   appearance : new SFNode(
                                     new Appearance({
@@ -168,7 +172,7 @@ var X3D0 =  new X3D({
                                   geometry : new SFNode(
                                     new Text({
                                       DEF : new SFString("UpString"),
-                                      string : new MFString(["u"])}))})])}),
+                                      string : new MFString(["u"])}))}))}),
 
                             new StringSensor({
                               DEF : new SFString("UpSensor"),
@@ -181,7 +185,7 @@ var X3D0 =  new X3D({
 
                         new Transform({
                           scale : new SFVec3f([0.5,0.5,0.5]),
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               appearance : new SFNode(
                                 new Appearance({
@@ -193,12 +197,12 @@ var X3D0 =  new X3D({
                                 new Extrusion({
                                   creaseAngle : new SFFloat(0.785),
                                   crossSection : new MFVec2f([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]),
-                                  spine : new MFVec3f([0,-2.5,0,0,-1.5,0])}))}),
-                          /*<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>*/])}),
+                                  spine : new MFVec3f([0,-2.5,0,0,-1.5,0])}))})),
+                          /*<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>*/}),
                       /*center*/
 
                         new Transform({
-                          children : new MFNode([
+                          child : new SFNode(
                             new Shape({
                               appearance : new SFNode(
                                 new Appearance({
@@ -206,12 +210,12 @@ var X3D0 =  new X3D({
                                     new Material({
                                       diffuseColor : new SFColor([1,0,0.7])}))})),
                               geometry : new SFNode(
-                                new Sphere({}))}),
-
+                                new Sphere({}))})),
+                          children : new MFNode([
                             new Transform({
                               scale : new SFVec3f([0.5,0.5,0.5]),
                               translation : new SFVec3f([-0.5,0,1]),
-                              children : new MFNode([
+                              child : new SFNode(
                                 new Shape({
                                   appearance : new SFNode(
                                     new Appearance({
@@ -220,7 +224,7 @@ var X3D0 =  new X3D({
                                           USE : new SFString("MaterialLightBlue")}))})),
                                   geometry : new SFNode(
                                     new Text({
-                                      DEF : new SFString("CenterString")}))})])}),
+                                      DEF : new SFString("CenterString")}))}))}),
 
                             new StringSensor({
                               DEF : new SFString("CenterSensor"),

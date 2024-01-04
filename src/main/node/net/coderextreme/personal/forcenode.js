@@ -1,9 +1,10 @@
 var java = require('java');
+var util = require('util');
 java.asyncOptions = {
   asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
   syncSuffix: "",              // Sync methods use the base name(!!)
   promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
-  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  promisify: util.promisify, // Needs Node.js version 8 or greater, see comment below
   ifReadOnlySuffix: "_alt"
 };
 var autoclass = require('../../../X3Dautoclass');
@@ -19,12 +20,12 @@ var ProtoInstance3 = null;
 var ProtoInstance4 = null;
 var ProtoInstance5 = null;
 var ProtoInstance6 = null;
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
       .setHead((new autoclass.head())
         .addMeta((new autoclass.meta()).setName("creator").setContent("John W Carlson"))
         .addMeta((new autoclass.meta()).setName("created").setContent("December 13 2015"))
         .addMeta((new autoclass.meta()).setName("title").setContent("forcenode.x3d"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/force.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("beginnings of a force directed graph in 3D"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
       .setScene((new autoclass.Scene())
@@ -162,5 +163,5 @@ ProtoInstance6
             .addFieldValue((new autoclass.fieldValue()).setName("set_positionA").setValue("50 50 50"));
 ProtoInstance6
             .addFieldValue((new autoclass.fieldValue()).setName("set_positionB").setValue("50 50 -50"));
-    X3D0.toFileX3D("../personal/forcenode.new.x3d");
+    X3D0.toFileX3D("../personal/forcenode.new.node.x3d");
     process.exit(0);

@@ -1,35 +1,39 @@
 'use strict';
-import fs from 'fs';
-import { X3D } from './x3d.mjs';
-import { SFString } from './x3d.mjs';
-import { SFNode } from './x3d.mjs';
-import { head } from './x3d.mjs';
-import { MFNode } from './x3d.mjs';
-import { meta } from './x3d.mjs';
-import { Scene } from './x3d.mjs';
-import { NavigationInfo } from './x3d.mjs';
-import { DirectionalLight } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
-import { SFFloat } from './x3d.mjs';
-import { Background } from './x3d.mjs';
-import { MFColor } from './x3d.mjs';
-import { Viewpoint } from './x3d.mjs';
-import { Transform } from './x3d.mjs';
-import { SFRotation } from './x3d.mjs';
-import { Shape } from './x3d.mjs';
-import { Appearance } from './x3d.mjs';
-import { Material } from './x3d.mjs';
-import { SFColor } from './x3d.mjs';
-import { IndexedFaceSet } from './x3d.mjs';
-import { SFBool } from './x3d.mjs';
-import { MFInt32 } from './x3d.mjs';
-import { Coordinate } from './x3d.mjs';
-import { MFVec3f } from './x3d.mjs';
-import { Script } from './x3d.mjs';
-import { field } from './x3d.mjs';
-import { TimeSensor } from './x3d.mjs';
-import { SFTime } from './x3d.mjs';
-import { ROUTE } from './x3d.mjs';
+var X3D = require('./x3d.mjs');
+try {
+	var fs = require('fs');
+} catch (e) {
+console.log("Problems loading fs. On browser?",e);
+}
+var SFString = require('./x3d.mjs');
+var SFNode = require('./x3d.mjs');
+var head = require('./x3d.mjs');
+var MFNode = require('./x3d.mjs');
+var meta = require('./x3d.mjs');
+var Scene = require('./x3d.mjs');
+var NavigationInfo = require('./x3d.mjs');
+var DirectionalLight = require('./x3d.mjs');
+var SFVec3f = require('./x3d.mjs');
+var SFFloat = require('./x3d.mjs');
+var Background = require('./x3d.mjs');
+var MFColor = require('./x3d.mjs');
+var Viewpoint = require('./x3d.mjs');
+var Transform = require('./x3d.mjs');
+var SFRotation = require('./x3d.mjs');
+var Shape = require('./x3d.mjs');
+var Appearance = require('./x3d.mjs');
+var Material = require('./x3d.mjs');
+var SFColor = require('./x3d.mjs');
+var IndexedFaceSet = require('./x3d.mjs');
+var SFBool = require('./x3d.mjs');
+var MFInt32 = require('./x3d.mjs');
+var Coordinate = require('./x3d.mjs');
+var MFVec3f = require('./x3d.mjs');
+var Script = require('./x3d.mjs');
+var field = require('./x3d.mjs');
+var TimeSensor = require('./x3d.mjs');
+var SFTime = require('./x3d.mjs');
+var ROUTE = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
@@ -76,7 +80,7 @@ var X3D0 =  new X3D({
               translation : new SFVec3f([0,-1,1]),
               rotation : new SFRotation([0,1,0,3.1415926]),
               scale : new SFVec3f([1.5,1.5,1.5]),
-              children : new MFNode([
+              child : new SFNode(
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
@@ -95,7 +99,7 @@ var X3D0 =  new X3D({
                       coord : new SFNode(
                         new Coordinate({
                           DEF : new SFString("OrbitCoordinates"),
-                          point : new MFVec3f([0,0,1,0,1,0,1,0,0])}))}))})])}),
+                          point : new MFVec3f([0,0,1,0,1,0,1,0,0])}))}))}))}),
 
             new Script({
               DEF : new SFString("OrbitScript"),

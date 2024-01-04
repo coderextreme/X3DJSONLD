@@ -28,7 +28,7 @@ var ProtoInstance9 = null;
         .addMeta((new autoclass.meta()).setName("title").setContent("rubikFurnace.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/rubikFurnace.x3d")))
+        .addMeta((new autoclass.meta()).setName("generator").setContent("x3d-tidy V1.0.118, https://www.npmjs.com/package/x3d-tidy")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.ProtoDeclare()).setName("anyShape")
           .setProtoInterface((new autoclass.ProtoInterface())
@@ -36,7 +36,7 @@ var ProtoInstance9 = null;
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("myShape")
               .addChild((new autoclass.Shape())
                 .setAppearance((new autoclass.Appearance())
-                  .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)]))))
+                  .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1f), java.newFloat(1f), java.newFloat(1f)]))))
                 .setGeometry((new autoclass.Sphere())))))
           .setProtoBody((new autoclass.ProtoBody())
             .addChild((new autoclass.Transform())
@@ -49,7 +49,7 @@ var ProtoInstance9 = null;
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("myShape")
               .addChild((new autoclass.Shape()).setDEF("_1")
                 .setAppearance((new autoclass.Appearance())
-                  .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)]))))
+                  .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1f), java.newFloat(1f), java.newFloat(1f)]))))
                 .setGeometry((new autoclass.Sphere())))))
           .setProtoBody((new autoclass.ProtoBody())
             .addChild((new autoclass.Transform())
@@ -70,7 +70,7 @@ var ProtoInstance9 = null;
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("myShape")
               .addChild((new autoclass.Shape()).setDEF("_2")
                 .setAppearance((new autoclass.Appearance())
-                  .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)]))))
+                  .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1f), java.newFloat(1f), java.newFloat(1f)]))))
                 .setGeometry((new autoclass.Sphere())))))
           .setProtoBody((new autoclass.ProtoBody())
             .addChild((new autoclass.Transform())
@@ -91,7 +91,7 @@ var ProtoInstance9 = null;
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("myShape")
               .addChild((new autoclass.Shape()).setDEF("_3")
                 .setAppearance((new autoclass.Appearance())
-                  .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)]))))
+                  .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1f), java.newFloat(1f), java.newFloat(1f)]))))
                 .setGeometry((new autoclass.Sphere())))))
           .setProtoBody((new autoclass.ProtoBody())
             .addChild((new autoclass.Transform())
@@ -107,7 +107,7 @@ var ProtoInstance9 = null;
               .setIS((new autoclass.IS())
                 .addConnect((new autoclass.connect()).setNodeField("translation").setProtoField("ttranslation"))))))
         .addChild((new autoclass.NavigationInfo()).setType(java.newArray("java.lang.String", ["EXAMINE"])))
-        .addChild((new autoclass.Viewpoint()).setDescription("Rubiks Cube on Fire").setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(12)])))
+        .addChild((new autoclass.Viewpoint()).setDescription("Rubiks Cube on Fire").setPosition(java.newArray("float", [java.newFloat(0f), java.newFloat(0f), java.newFloat(12f)])))
         .addChild(ProtoInstance9 = (new autoclass.ProtoInstance()).setName("twentyseven")))      ;
 ProtoInstance1
                 .addFieldValue((new autoclass.fieldValue()).setName("xtranslation").setValue("2 0 0"));
@@ -125,7 +125,7 @@ ProtoInstance9
           .addFieldValue((new autoclass.fieldValue()).setName("myShape")
             .addChild((new autoclass.Shape()).setDEF("_4")
               .setAppearance((new autoclass.Appearance())
-                .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0)]))))
-              .setGeometry((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)])))));
+                .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0f), java.newFloat(1f), java.newFloat(0f)]))))
+              .setGeometry((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(1f), java.newFloat(1f), java.newFloat(1f)])))));
     X3D0.toFileX3D("../data/rubikFurnace.new.node.x3d");
     process.exit(0);

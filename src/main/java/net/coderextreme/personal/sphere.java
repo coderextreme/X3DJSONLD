@@ -40,21 +40,24 @@ public class sphere {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new sphere().initialize().toFileJSON("../personal/sphere.new.json");
+    X3D model = new sphere().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../personal/sphere.new.json");
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("3.3")
       .setHead(new head()
+        .addComponent(new component().setName("Scripting").setLevel(1))
         .addMeta(new meta().setName("title").setContent("sphere.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/sphere.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/sphere.x3d"))
         .addMeta(new meta().setName("description").setContent("a sphere")))
       .setScene(new Scene()
         .addChild(new Group()
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,1f})))
+              .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
             .setGeometry(new Sphere()))))      ;
     return X3D0;
     }

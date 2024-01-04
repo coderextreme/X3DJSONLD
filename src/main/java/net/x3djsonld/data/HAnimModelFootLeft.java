@@ -421,33 +421,33 @@ public class HAnimModelFootLeft
                             .setMaterial(new Material().setEmissiveColor(1.0,1.0,1.0)))
                           .setGeometry(new IndexedLineSet("tiptoe_l_tarsal_distal_interphalangeal_5").setDEF("tiptoe_l_tarsal_distal_interphalangeal_5").setCoordIndex(new int[] {0,1})
                             .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.34,-1.05,0.0,0.34,-1.08,0.0}))))))))))))))
-      .addJoints(new HAnimJoint().setUSE("hanim_humanoid_root").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_calcaneocuboid").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_cuneonavicular_1").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_cuneonavicular_2").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_cuneonavicular_3").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_metatarsophalangeal_1").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_metatarsophalangeal_2").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_metatarsophalangeal_3").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_metatarsophalangeal_4").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_metatarsophalangeal_5").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_talocalcaneonavicular").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_talocrural").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsal_distal_interphalangeal_2").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsal_distal_interphalangeal_3").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsal_distal_interphalangeal_4").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsal_distal_interphalangeal_5").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsal_interphalangeal_1").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsal_proximal_interphalangeal_2").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsal_proximal_interphalangeal_3").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsal_proximal_interphalangeal_4").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsal_proximal_interphalangeal_5").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsometatarsal_1").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsometatarsal_2").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsometatarsal_3").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsometatarsal_4").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsometatarsal_5").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_l_transversetarsal").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
+      .addJoints(new HAnimJoint().setUSE("hanim_humanoid_root"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_calcaneocuboid"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_cuneonavicular_1"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_cuneonavicular_2"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_cuneonavicular_3"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_metatarsophalangeal_1"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_metatarsophalangeal_2"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_metatarsophalangeal_3"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_metatarsophalangeal_4"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_metatarsophalangeal_5"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_talocalcaneonavicular"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_talocrural"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsal_distal_interphalangeal_2"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsal_distal_interphalangeal_3"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsal_distal_interphalangeal_4"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsal_distal_interphalangeal_5"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsal_interphalangeal_1"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsal_proximal_interphalangeal_2"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsal_proximal_interphalangeal_3"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsal_proximal_interphalangeal_4"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsal_proximal_interphalangeal_5"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsometatarsal_1"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsometatarsal_2"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsometatarsal_3"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsometatarsal_4"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_tarsometatarsal_5"))
+      .addJoints(new HAnimJoint().setUSE("hanim_l_transversetarsal"))
       .addSegments(new HAnimSegment().setUSE("hanim_l_calcaneus"))
       .addSegments(new HAnimSegment().setUSE("hanim_l_cuboid"))
       .addSegments(new HAnimSegment().setUSE("hanim_l_cuneiform_1"))
@@ -500,16 +500,17 @@ public class HAnimModelFootLeft
 	}
 	   
     /** 
-	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+     * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
+        System.out.println("Build this X3D model, showing diagnostics...");
         X3D thisExampleX3dModel = new HAnimModelFootLeft().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
@@ -549,11 +550,13 @@ public class HAnimModelFootLeft
 	
         if (validate)
         {
-                System.out.print("Java program \"net.x3djsonld.data.HAnimModelFootLeft\" self-validation test results: ");
+            //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
-                if (validationResults.length() > 10)
+            //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
+                System.out.print("net.x3djsonld.data.HAnimModelFootLeft self-validation test results: ");
+                if (!validationResults.equals("success"))
                     System.out.println();
-                System.out.println(validationResults);
+                System.out.println(validationResults.trim());
         }
     }
 }

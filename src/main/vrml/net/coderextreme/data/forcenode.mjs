@@ -237,7 +237,7 @@ browser.currentScene.children[0] = ProtoDeclare9;
 
 let ProtoDeclare38 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="cylinder" ><ProtoInterface><field name="set_positionA" accessType="inputOnly" type="SFVec3f"></field>
+<ProtoDeclare name="cyl" ><ProtoInterface><field name="set_positionA" accessType="inputOnly" type="SFVec3f"></field>
 <field name="set_positionB" accessType="inputOnly" type="SFVec3f"></field>
 </ProtoInterface>
 <ProtoBody><Group><Shape><Extrusion DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 50 0"></Extrusion>
@@ -275,7 +275,7 @@ let ProtoDeclare38 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 </Group>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare38.name = "cylinder";
+ProtoDeclare38.name = "cyl";
 let ProtoInterface39 = browser.currentScene.createNode("ProtoInterface");
 let field40 = browser.currentScene.createNode("field");
 field40.name = "set_positionA";
@@ -452,7 +452,7 @@ ProtoInstance64.fieldValue[0] = fieldValue65;
 Transform56.children[4] = ProtoInstance64;
 
 let ProtoInstance66 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance66.name = "cylinder";
+ProtoInstance66.name = "cyl";
 ProtoInstance66.DEF = "linkA";
 let fieldValue67 = browser.currentScene.createNode("fieldValue");
 fieldValue67.name = "set_positionA";
@@ -469,7 +469,7 @@ ProtoInstance66.fieldValue[1] = fieldValue68;
 Transform56.children[5] = ProtoInstance66;
 
 let ProtoInstance69 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance69.name = "cylinder";
+ProtoInstance69.name = "cyl";
 ProtoInstance69.DEF = "linkB";
 let fieldValue70 = browser.currentScene.createNode("fieldValue");
 fieldValue70.name = "set_positionA";
@@ -486,7 +486,7 @@ ProtoInstance69.fieldValue[1] = fieldValue71;
 Transform56.children[6] = ProtoInstance69;
 
 let ProtoInstance72 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance72.name = "cylinder";
+ProtoInstance72.name = "cyl";
 ProtoInstance72.DEF = "linkC";
 let fieldValue73 = browser.currentScene.createNode("fieldValue");
 fieldValue73.name = "set_positionA";
