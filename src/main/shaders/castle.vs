@@ -1,4 +1,3 @@
-#version 460
 uniform vec3 chromaticDispertion;
 uniform float bias;
 uniform float scale;
