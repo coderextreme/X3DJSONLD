@@ -5,9 +5,9 @@ attribute vec4 castle_Vertex;
 attribute vec3 castle_Normal;
 
 uniform vec3 chromaticDispertion;
-uniform float bias = 0.5;
-uniform float scale = 0.5;
-uniform float power = 2.0;
+uniform float bias;
+uniform float scale;
+uniform float power;
 
 varying vec3 t;
 varying vec3 tr;
