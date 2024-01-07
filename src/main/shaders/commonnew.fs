@@ -1,6 +1,5 @@
 #version 300 es
 precision highp float;
-
 /*
 The MIT License (MIT)
 Copyright (c) 2011 Authors of J3D. All rights reserved.
@@ -11,35 +10,27 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-uniform mat4 x3d_ModelViewMatrix;
-uniform mat4 x3d_ProjectionMatrix;
-uniform mat3 x3d_NormalMatrix;
+uniform samplerCube cube;
 
-uniform vec3  chromaticDispertion;
-uniform float bias;
-uniform float scale;
-uniform float power;
+in vec3 t;
+in vec3 tr;
+in vec3 tg;
+in vec3 tb;
+in float rfac;
 
-in vec3 x3d_Normal;
-in vec4 x3d_Vertex;
+out vec4 fragColor;
 
-out vec3  t;
-out vec3  tr;
-out vec3  tg;
-out vec3  tb;
-out float rfac;
-
-void
-main ()
+void main()
 {
-  vec3 fragNormal = normalize (x3d_NormalMatrix * x3d_Normal);
-  vec3 incident   = normalize ((x3d_ModelViewMatrix * x3d_Vertex) .xyz);
+    vec4 refracted = texture(cube, t);
+    vec4 reflected = vec4(1.0);
 
-  t    = reflect (incident, fragNormal) * x3d_NormalMatrix;
-  tr   = refract (incident, fragNormal, chromaticDispertion .x) * x3d_NormalMatrix;
-  tg   = refract (incident, fragNormal, chromaticDispertion .y) * x3d_NormalMatrix;
-  tb   = refract (incident, fragNormal, chromaticDispertion .z) * x3d_NormalMatrix;
-  rfac = bias + scale * pow (clamp (0.5 + 0.5 * dot (incident, fragNormal), 0.0, 1.0), power);
+    reflected.r = texture(cube, tr).r;
+    reflected.g = texture(cube, tg).g;
+    reflected.b = texture(cube, tb).b;
 
-  gl_Position = x3d_ProjectionMatrix * x3d_ModelViewMatrix * x3d_Vertex;
+    fragColor = reflected * 0.5 + refracted * (1.0 - 0.5);
+    /*  IF there aren't normals, rfac isn't computed
+    fragColor = reflected * rfac + refracted * (1.0 - rfac);
+    */
 }
