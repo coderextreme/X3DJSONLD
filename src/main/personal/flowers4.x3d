@@ -86,7 +86,7 @@ function initialize() {
 	     cis.push(-1);
 	}
     }
-    coordIndexes = new MFInt32(cis);
+    coordIndexes = new MFInt32(...cis);
 }
 
 function updateCoordinates(resolution) {
@@ -106,7 +106,7 @@ function updateCoordinates(resolution) {
 	}
 	phi += delta;
      }
-     coordinates = new MFVec3f(crds);
+     coordinates = new MFVec3f(...crds);
 }
 
 function set_fraction(fraction, eventTime) {
