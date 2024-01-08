@@ -68,12 +68,6 @@
 			<![CDATA[
 			ecmascript:
 
-			var e = 5;
-			var f = 5;
-			var g = 5;
-			var h = 5;
-			var resolution = 100;
-
 			function initialize() {
 			     generateCoordinates();
 			     var arrIndex = 0;
