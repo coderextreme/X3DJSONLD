@@ -1,4 +1,6 @@
-precision highp float;
+#ifdef GL_ES
+  precision highp float;
+#endif
 
 /*
 The MIT License (MIT)
@@ -10,7 +12,8 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-uniform samplerCube fw_Texture_unit0;
+uniform samplerCube cube;
+
 varying vec3 t;
 varying vec3 tr;
 varying vec3 tg;
@@ -19,15 +22,15 @@ varying float rfac;
 
 void main()
 {
-    vec4 refracted = textureCube(fw_Texture_unit0, t);
+    vec4 refracted = textureCube(cube, t);
     vec4 reflected = vec4(1.0);
 
-    reflected.r = textureCube(fw_Texture_unit0, tr).r;
-    reflected.g = textureCube(fw_Texture_unit0, tg).g;
-    reflected.b = textureCube(fw_Texture_unit0, tb).b;
+    reflected.r = textureCube(cube, tr).r;
+    reflected.g = textureCube(cube, tg).g;
+    reflected.b = textureCube(cube, tb).b;
 
     gl_FragColor = reflected * 0.5 + refracted * (1.0 - 0.5);
-    /*  This can't figure out normals if there are none, so rfac is undefind
+    /*  IF there aren't normals, rfac isn't computed
     gl_FragColor = reflected * rfac + refracted * (1.0 - rfac);
     */
 }
