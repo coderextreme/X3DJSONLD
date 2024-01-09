@@ -50,12 +50,10 @@
 		<ProtoInstance name="flower"/>
 		<ProtoInstance name="flower"/>
                 <TimeSensor DEF='SongTime' loop='true'></TimeSensor>
-		<!--
 	        <Sound maxBack='100' maxFront='100' minBack='20' minFront='20' location='0 1 0'>
 			<AudioClip DEF='AudioClip' description='Chandubabamusic #1' url='"../resources/chandubabamusic1.wav"'/>
 		</Sound>
       		<ROUTE fromField='cycleTime' fromNode='SongTime' toField='startTime' toNode='AudioClip'/>
-		-->
 	</Group>
     </Scene>
 </X3D>
