@@ -64,15 +64,11 @@
             <field accessType="inputOnly" name="set_fraction" type="SFFloat"/>
             <field accessType="inputOutput" name="coordinates" type="MFVec3f"/>
             <field accessType="outputOnly" name="coordIndexes" type="MFInt32"/>
-<![CDATA[
-
-ecmascript:
-
-var e = 5;
-var f = 5;
-var g = 5;
-var h = 5;
-
+	    <field name='e' type='SFFloat' accessType='inputOutput' value='5'></field>
+	    <field name='f' type='SFFloat' accessType='inputOutput' value='5'></field>
+	    <field name='g' type='SFFloat' accessType='inputOutput' value='5'></field>
+	    <field name='h' type='SFFloat' accessType='inputOutput' value='5'></field>
+<![CDATA[ecmascript:
 function initialize() {
      var resolution = 100;
      updateCoordinates(resolution);
@@ -124,6 +120,9 @@ function set_fraction(fraction, eventTime) {
 	case 3:
 		h += Math.floor(Math.random() * 2) * 2 - 1;
 		break;
+	}
+	if (e < 1) {
+		e = 10;
 	}
 	if (f < 1) {
 		f = 10;
