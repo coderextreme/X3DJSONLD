@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-3.3.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-3.3.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 3.3 of X3D -->
-<!-- Generated 2023-11-05-08:00 18:13:12.2619356-08:00 -->
+<!-- Generated 2024-02-02-08:00 08:44:20.4311395-08:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                         version="3.3"
                         xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -11584,7 +11584,7 @@
                     default="4"
                     minInclusive="1"
                     maxInclusive="4"
-                    description="numComponents pecifies how many consecutive floating-point values should be grouped together per vertex."/>
+                    description="numComponents specifies how many consecutive floating-point values should be grouped together per vertex."/>
             <field name="value"
                     type="MFFloat"
                     accessType="inputOutput"
@@ -12714,7 +12714,7 @@
                     accessType="initializeOnly"
                     default="0 0 0"
                     inheritedFrom="X3DEnvironmentalSensorNode"
-                    description="size of Proximity box."/>
+                    description="size of Proximity box around center location, oriented within local transformation frame."/>
             <field name="DEF"
                     type="SFString"
                     accessType="inputOutput"
@@ -21551,7 +21551,7 @@
                     accessType="initializeOnly"
                     default="0 0 0"
                     inheritedFrom="X3DEnvironmentalSensorNode"
-                    description="size of Proximity box."/>
+                    description="size of Proximity box around center location, oriented within local transformation frame."/>
             <field name="DEF"
                     type="SFString"
                     accessType="inputOutput"
@@ -26016,7 +26016,7 @@
                     accessType="initializeOnly"
                     default="0 0 0"
                     inheritedFrom="X3DEnvironmentalSensorNode"
-                    description="size of intersection box, measured from center in meters."/>
+                    description="size of transformation-traccking box around center location, oriented within local transformation frame."/>
             <field name="targetObject"
                     type="SFNode"
                     accessType="inputOutput"
@@ -27201,7 +27201,7 @@
                     type="SFVec3f"
                     accessType="initializeOnly"
                     default="0 0 0"
-                    description="Size of proximity box around center location within which ViewpointGroup is usable and displayed on viewpoint list."/>
+                    description="size of Proximity box around center location, oriented within local transformation frame, within which ViewpointGroup is usable and displayed on viewpoint list."/>
             <field name="DEF"
                     type="SFString"
                     accessType="inputOutput"
@@ -27361,7 +27361,7 @@
                     accessType="initializeOnly"
                     default="0 0 0"
                     inheritedFrom="X3DEnvironmentalSensorNode"
-                    description="size of visibility box, measured from center in meters."/>
+                    description="size of visibility box around center location, oriented within local transformation frame."/>
             <field name="DEF"
                     type="SFString"
                     accessType="inputOutput"
