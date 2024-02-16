@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-3.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-3.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 3.0 of X3D -->
-<!-- Generated 2023-11-05-08:00 18:13:28.6415461-08:00 -->
+<!-- Generated 2024-02-02-08:00 08:44:37.2597605-08:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                         version="3.0"
                         xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -13415,7 +13415,7 @@
                     accessType="initializeOnly"
                     default="0 0 0"
                     inheritedFrom="X3DEnvironmentalSensorNode"
-                    description="size of Proximity box."/>
+                    description="size of Proximity box around center location, oriented within local transformation frame."/>
             <field name="DEF"
                     type="SFString"
                     accessType="inputOutput"
@@ -16236,7 +16236,7 @@
                     accessType="initializeOnly"
                     default="0 0 0"
                     inheritedFrom="X3DEnvironmentalSensorNode"
-                    description="size of visibility box, measured from center in meters."/>
+                    description="size of visibility box around center location, oriented within local transformation frame."/>
             <field name="DEF"
                     type="SFString"
                     accessType="inputOutput"
